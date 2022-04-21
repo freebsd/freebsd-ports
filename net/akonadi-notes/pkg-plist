@@ -1,8 +1,8 @@
-include/KF5/Akonadi/Notes/NoteUtils
-include/KF5/akonadi-notes_version.h
-include/KF5/akonadi/notes/NoteUtils
-include/KF5/akonadi/notes/akonadi-notes_export.h
-include/KF5/akonadi/notes/noteutils.h
+include/KF5/AkonadiNotes/Akonadi/NoteUtils
+include/KF5/AkonadiNotes/akonadi-notes_version.h
+include/KF5/AkonadiNotes/akonadi/NoteUtils
+include/KF5/AkonadiNotes/akonadi/akonadi-notes_export.h
+include/KF5/AkonadiNotes/akonadi/noteutils.h
 lib/cmake/KF5AkonadiNotes/KF5AkonadiNotesConfig.cmake
 lib/cmake/KF5AkonadiNotes/KF5AkonadiNotesConfigVersion.cmake
 lib/cmake/KF5AkonadiNotes/KF5AkonadiNotesTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -58,5 +58,6 @@ share/locale/tg/LC_MESSAGES/akonadinotes5.mo
 share/locale/tr/LC_MESSAGES/akonadinotes5.mo
 share/locale/ug/LC_MESSAGES/akonadinotes5.mo
 share/locale/uk/LC_MESSAGES/akonadinotes5.mo
+share/locale/vi/LC_MESSAGES/akonadinotes5.mo
 share/locale/zh_CN/LC_MESSAGES/akonadinotes5.mo
 share/locale/zh_TW/LC_MESSAGES/akonadinotes5.mo

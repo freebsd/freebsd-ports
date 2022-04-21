@@ -1,5 +1,3 @@
-share/qlogging-categories5/kimap.categories
-share/qlogging-categories5/kimap.renamecategories
 include/KF5/KIMAP/KIMAP/Acl
 include/KF5/KIMAP/KIMAP/AclJobBase
 include/KF5/KIMAP/KIMAP/AppendJob
@@ -127,7 +125,7 @@ include/KF5/KIMAP/kimap/statusjob.h
 include/KF5/KIMAP/kimap/storejob.h
 include/KF5/KIMAP/kimap/subscribejob.h
 include/KF5/KIMAP/kimap/unsubscribejob.h
-include/KF5/kimap_version.h
+include/KF5/KIMAP/kimap_version.h
 lib/cmake/KF5IMAP/KF5IMAPConfig.cmake
 lib/cmake/KF5IMAP/KF5IMAPConfigVersion.cmake
 lib/cmake/KF5IMAP/KF5IMAPTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -136,6 +134,7 @@ lib/libKF5IMAP.so
 lib/libKF5IMAP.so.5
 lib/libKF5IMAP.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KIMAP.pri
+share/locale/ar/LC_MESSAGES/libkimap5.mo
 share/locale/bs/LC_MESSAGES/libkimap5.mo
 share/locale/ca/LC_MESSAGES/libkimap5.mo
 share/locale/ca@valencia/LC_MESSAGES/libkimap5.mo
@@ -181,3 +180,5 @@ share/locale/ug/LC_MESSAGES/libkimap5.mo
 share/locale/uk/LC_MESSAGES/libkimap5.mo
 share/locale/zh_CN/LC_MESSAGES/libkimap5.mo
 share/locale/zh_TW/LC_MESSAGES/libkimap5.mo
+share/qlogging-categories5/kimap.categories
+share/qlogging-categories5/kimap.renamecategories

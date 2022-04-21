@@ -1,12 +1,12 @@
 bin/kturtle
 etc/xdg/kturtle.knsrc
 share/applications/org.kde.kturtle.desktop
-share/icons/hicolor/128x128/apps/kturtle.png
 share/icons/hicolor/16x16/apps/kturtle.png
 share/icons/hicolor/22x22/apps/kturtle.png
 share/icons/hicolor/32x32/apps/kturtle.png
 share/icons/hicolor/48x48/apps/kturtle.png
 share/icons/hicolor/64x64/apps/kturtle.png
+share/icons/hicolor/128x128/apps/kturtle.png
 share/katepart/syntax/logohighlightstyle.en_GB.xml
 share/katepart/syntax/logohighlightstyle.nb.xml
 share/katepart/syntax/logohighlightstyle.nds.xml

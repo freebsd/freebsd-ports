@@ -39,7 +39,7 @@ include/KF5/KLDAP/kldap/ldapsearchclientreadconfigserverjob.h
 include/KF5/KLDAP/kldap/ldapserver.h
 include/KF5/KLDAP/kldap/ldapurl.h
 include/KF5/KLDAP/kldap/ldif.h
-include/KF5/kldap_version.h
+include/KF5/KLDAP/kldap_version.h
 lib/cmake/KF5Ldap/KF5LdapConfig.cmake
 lib/cmake/KF5Ldap/KF5LdapConfigVersion.cmake
 lib/cmake/KF5Ldap/KF5LdapTargets-%%CMAKE_BUILD_TYPE%%.cmake

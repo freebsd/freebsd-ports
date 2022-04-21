@@ -1,12 +1,12 @@
 bin/killbots
 share/applications/org.kde.killbots.desktop
 share/config.kcfg/killbots.kcfg
-share/icons/hicolor/128x128/apps/killbots.png
 share/icons/hicolor/16x16/apps/killbots.png
 share/icons/hicolor/22x22/apps/killbots.png
 share/icons/hicolor/32x32/apps/killbots.png
 share/icons/hicolor/48x48/apps/killbots.png
 share/icons/hicolor/64x64/apps/killbots.png
+share/icons/hicolor/128x128/apps/killbots.png
 %%DATADIR%%/rulesets/classic.desktop
 %%DATADIR%%/rulesets/daleks.desktop
 %%DATADIR%%/rulesets/default.desktop
@@ -24,6 +24,7 @@ share/icons/hicolor/64x64/apps/killbots.png
 %%DATADIR%%/themes/robotkill.desktop
 %%DATADIR%%/themes/robotkill.png
 %%DATADIR%%/themes/robotkill.svgz
+share/locale/ar/LC_MESSAGES/killbots.mo
 share/locale/bs/LC_MESSAGES/killbots.mo
 share/locale/ca/LC_MESSAGES/killbots.mo
 share/locale/ca@valencia/LC_MESSAGES/killbots.mo

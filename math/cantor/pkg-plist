@@ -35,8 +35,8 @@ lib/cmake/Cantor/CantorTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Cantor/CantorTargets.cmake
 lib/libcantor_config.so
 lib/libcantorlibs.so
-lib/libcantorlibs.so.28
 lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
+lib/libcantorlibs.so.28
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_advancedplotassistant.so
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_creatematrixassistant.so
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_differentiateassistant.so
@@ -51,15 +51,15 @@ lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_runscriptassistant.so
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_solveassistant.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_kalgebrabackend.so
-%%QT_PLUGINDIR%%/cantor/backends/cantor_octavebackend.so
-%%QT_PLUGINDIR%%/cantor/panels/cantor_documentationpanelplugin.so
 %%LUAJIT%%%%QT_PLUGINDIR%%/cantor/backends/cantor_luabackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_maximabackend.so
+%%QT_PLUGINDIR%%/cantor/backends/cantor_octavebackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_pythonbackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_qalculatebackend.so
 %%R%%%%QT_PLUGINDIR%%/cantor/backends/cantor_rbackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_sagebackend.so
 %%QT_PLUGINDIR%%/cantor/backends/cantor_scilabbackend.so
+%%QT_PLUGINDIR%%/cantor/panels/cantor_documentationpanelplugin.so
 %%QT_PLUGINDIR%%/cantor/panels/cantor_filebrowserpanelplugin.so
 %%QT_PLUGINDIR%%/cantor/panels/cantor_helppanelplugin.so
 %%QT_PLUGINDIR%%/cantor/panels/cantor_tocpanelplugin.so
@@ -78,8 +78,8 @@ share/applications/org.kde.cantor.desktop
 %%DATADIR%%/xslt/latex.xsl
 share/config.kcfg/cantor.kcfg
 share/config.kcfg/cantor_libs.kcfg
-%%LUAJIT%%share/config.kcfg/luabackend.kcfg
 share/config.kcfg/kalgebrabackend.kcfg
+%%LUAJIT%%share/config.kcfg/luabackend.kcfg
 share/config.kcfg/maximabackend.kcfg
 share/config.kcfg/octavebackend.kcfg.in
 share/config.kcfg/pythonbackend.kcfg
@@ -87,7 +87,6 @@ share/config.kcfg/qalculatebackend.kcfg
 %%R%%share/config.kcfg/rserver.kcfg
 share/config.kcfg/sagebackend.kcfg
 share/config.kcfg/scilabbackend.kcfg
-share/icons/hicolor/128x128/apps/cantor.png
 share/icons/hicolor/16x16/apps/cantor.png
 share/icons/hicolor/22x22/apps/cantor.png
 share/icons/hicolor/32x32/apps/cantor.png
@@ -103,6 +102,7 @@ share/icons/hicolor/48x48/apps/rbackend.png
 share/icons/hicolor/48x48/apps/sagebackend.png
 share/icons/hicolor/48x48/apps/scilabbackend.png
 share/icons/hicolor/64x64/apps/cantor.png
+share/icons/hicolor/128x128/apps/cantor.png
 share/knsrcfiles/cantor-documentation.knsrc
 share/knsrcfiles/cantor.knsrc
 share/knsrcfiles/cantor_kalgebra.knsrc
@@ -130,6 +130,7 @@ share/kxmlgui5/cantor/cantor_runscript_assistant.rc
 share/kxmlgui5/cantor/cantor_scripteditor.rc
 share/kxmlgui5/cantor/cantor_shell.rc
 share/kxmlgui5/cantor/cantor_solve_assistant.rc
+share/locale/ar/LC_MESSAGES/cantor.mo
 share/locale/bs/LC_MESSAGES/cantor.mo
 share/locale/ca/LC_MESSAGES/cantor.mo
 share/locale/ca@valencia/LC_MESSAGES/cantor.mo

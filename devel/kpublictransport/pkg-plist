@@ -18,6 +18,7 @@ include/KPublicTransport/JourneyRequest
 include/KPublicTransport/Line
 include/KPublicTransport/Load
 include/KPublicTransport/Location
+include/KPublicTransport/LocationHistoryModel
 include/KPublicTransport/LocationQueryModel
 include/KPublicTransport/LocationReply
 include/KPublicTransport/LocationRequest
@@ -56,6 +57,7 @@ include/kpublictransport/kpublictransport_export.h
 include/kpublictransport/line.h
 include/kpublictransport/load.h
 include/kpublictransport/location.h
+include/kpublictransport/locationhistorymodel.h
 include/kpublictransport/locationquerymodel.h
 include/kpublictransport/locationreply.h
 include/kpublictransport/locationrequest.h

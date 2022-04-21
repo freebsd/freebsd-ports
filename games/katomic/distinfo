@@ -1,3 +1,3 @@
-TIMESTAMP = 1646143015
-SHA256 (KDE/release-service/21.12.3/katomic-21.12.3.tar.xz) = f0690cc7bc91e4c490278c6b2d2a6524a8c1d72ff076214105532ad3e6b695f8
-SIZE (KDE/release-service/21.12.3/katomic-21.12.3.tar.xz) = 1435268
+TIMESTAMP = 1650101733
+SHA256 (KDE/release-service/22.04.0/katomic-22.04.0.tar.xz) = 7268379909019e63bfce2673235d76bbee10aa41675d170fe6c2514f19d9440b
+SIZE (KDE/release-service/22.04.0/katomic-22.04.0.tar.xz) = 1438140

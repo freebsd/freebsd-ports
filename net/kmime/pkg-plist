@@ -20,7 +20,7 @@ include/KF5/KMime/kmime/kmime_message.h
 include/KF5/KMime/kmime/kmime_newsarticle.h
 include/KF5/KMime/kmime/kmime_types.h
 include/KF5/KMime/kmime/kmime_util.h
-include/KF5/kmime_version.h
+include/KF5/KMime/kmime_version.h
 lib/cmake/KF5Mime/KF5MimeConfig.cmake
 lib/cmake/KF5Mime/KF5MimeConfigVersion.cmake
 lib/cmake/KF5Mime/KF5MimeTargets-%%CMAKE_BUILD_TYPE%%.cmake

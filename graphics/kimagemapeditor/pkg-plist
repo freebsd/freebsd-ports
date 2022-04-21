@@ -1,13 +1,11 @@
 bin/kimagemapeditor
-share/qlogging-categories5/kimagemapeditor.categories
 %%QT_PLUGINDIR%%/kf5/parts/kimagemapeditorpart.so
 share/applications/org.kde.kimagemapeditor.desktop
-share/icons/hicolor/128x128/apps/kimagemapeditor.png
 share/icons/hicolor/16x16/apps/kimagemapeditor.png
 share/icons/hicolor/22x22/actions/addpoint.png
 share/icons/hicolor/22x22/actions/arrow.png
-share/icons/hicolor/22x22/actions/circle.png
 share/icons/hicolor/22x22/actions/circle2.png
+share/icons/hicolor/22x22/actions/circle.png
 share/icons/hicolor/22x22/actions/freehand.png
 share/icons/hicolor/22x22/actions/lower.png
 share/icons/hicolor/22x22/actions/polygon.png
@@ -18,6 +16,7 @@ share/icons/hicolor/22x22/apps/kimagemapeditor.png
 share/icons/hicolor/32x32/apps/kimagemapeditor.png
 share/icons/hicolor/48x48/apps/kimagemapeditor.png
 share/icons/hicolor/64x64/apps/kimagemapeditor.png
+share/icons/hicolor/128x128/apps/kimagemapeditor.png
 share/icons/hicolor/scalable/apps/kimagemapeditor.svgz
 %%DATADIR%%/addpointcursor.png
 %%DATADIR%%/freehandcursor.png
@@ -77,3 +76,4 @@ share/locale/uk/LC_MESSAGES/kimagemapeditor.mo
 share/locale/zh_CN/LC_MESSAGES/kimagemapeditor.mo
 share/locale/zh_TW/LC_MESSAGES/kimagemapeditor.mo
 share/metainfo/org.kde.kimagemapeditor.appdata.xml
+share/qlogging-categories5/kimagemapeditor.categories

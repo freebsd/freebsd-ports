@@ -1,7 +1,5 @@
 bin/ktuberling
 share/applications/org.kde.ktuberling.desktop
-share/icons/hicolor/128x128/apps/ktuberling.png
-share/icons/hicolor/128x128/mimetypes/application-x-tuberling.png
 share/icons/hicolor/16x16/apps/ktuberling.png
 share/icons/hicolor/16x16/mimetypes/application-x-tuberling.png
 share/icons/hicolor/22x22/apps/ktuberling.png
@@ -12,6 +10,8 @@ share/icons/hicolor/48x48/apps/ktuberling.png
 share/icons/hicolor/48x48/mimetypes/application-x-tuberling.png
 share/icons/hicolor/64x64/apps/ktuberling.png
 share/icons/hicolor/64x64/mimetypes/application-x-tuberling.png
+share/icons/hicolor/128x128/apps/ktuberling.png
+share/icons/hicolor/128x128/mimetypes/application-x-tuberling.png
 %%DATADIR%%/pics/butterflies.desktop
 %%DATADIR%%/pics/butterflies.svgz
 %%DATADIR%%/pics/butterflies.theme
@@ -540,8 +540,8 @@ share/icons/hicolor/64x64/mimetypes/application-x-tuberling.png
 %%DATADIR%%/sounds/el/shorts.ogg
 %%DATADIR%%/sounds/el/skirt.ogg
 %%DATADIR%%/sounds/el/spectacles.ogg
-%%DATADIR%%/sounds/el/stick.ogg
 %%DATADIR%%/sounds/el/stick2.ogg
+%%DATADIR%%/sounds/el/stick.ogg
 %%DATADIR%%/sounds/el/sunglasses.ogg
 %%DATADIR%%/sounds/el/tie.ogg
 %%DATADIR%%/sounds/el/tv_bicycle.ogg

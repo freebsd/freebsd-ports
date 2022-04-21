@@ -1,4 +1,3 @@
-share/qlogging-categories5/kio_audiocd.categories
 include/audiocdencoder.h
 include/audiocdplugins_export.h
 lib/libaudiocdplugins.so
@@ -323,5 +322,6 @@ share/locale/zh_TW/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/zh_TW/LC_MESSAGES/kcmaudiocd.mo
 share/locale/zh_TW/LC_MESSAGES/kio_audiocd.mo
 share/metainfo/org.kde.kio_audiocd.metainfo.xml
+share/qlogging-categories5/kio_audiocd.categories
 share/qlogging-categories5/kio_audiocd.renamecategories
 share/solid/actions/solid_audiocd.desktop

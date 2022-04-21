@@ -1,4 +1,3 @@
-share/qlogging-categories5/ksmtp.categories
 include/KPim/KSMTP/KSMTP/Job
 include/KPim/KSMTP/KSMTP/LoginJob
 include/KPim/KSMTP/KSMTP/SendJob
@@ -59,3 +58,4 @@ share/locale/ug/LC_MESSAGES/libksmtp5.mo
 share/locale/uk/LC_MESSAGES/libksmtp5.mo
 share/locale/zh_CN/LC_MESSAGES/libksmtp5.mo
 share/locale/zh_TW/LC_MESSAGES/libksmtp5.mo
+share/qlogging-categories5/ksmtp.categories

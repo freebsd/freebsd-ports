@@ -10,6 +10,7 @@ lib/libKF5CompactDisc.so
 lib/libKF5CompactDisc.so.5
 lib/libKF5CompactDisc.so.5.0.0
 share/locale/ar/LC_MESSAGES/libkcompactdisc.mo
+share/locale/be/LC_MESSAGES/libkcompactdisc.mo
 share/locale/bg/LC_MESSAGES/libkcompactdisc.mo
 share/locale/bs/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ca/LC_MESSAGES/libkcompactdisc.mo
@@ -32,7 +33,6 @@ share/locale/hi/LC_MESSAGES/libkcompactdisc.mo
 share/locale/hr/LC_MESSAGES/libkcompactdisc.mo
 share/locale/hu/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ia/LC_MESSAGES/libkcompactdisc.mo
-share/locale/be/LC_MESSAGES/libkcompactdisc.mo
 share/locale/is/LC_MESSAGES/libkcompactdisc.mo
 share/locale/it/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ja/LC_MESSAGES/libkcompactdisc.mo

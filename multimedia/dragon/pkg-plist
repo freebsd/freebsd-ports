@@ -16,12 +16,12 @@ man/sv/man1/dragon.1.gz
 man/tr/man1/dragon.1.gz
 man/uk/man1/dragon.1.gz
 share/applications/org.kde.dragonplayer.desktop
-share/icons/hicolor/128x128/apps/dragonplayer.png
 share/icons/hicolor/16x16/apps/dragonplayer.png
 share/icons/hicolor/22x22/apps/dragonplayer.png
 share/icons/hicolor/32x32/apps/dragonplayer.png
 share/icons/hicolor/48x48/apps/dragonplayer.png
 share/icons/hicolor/64x64/apps/dragonplayer.png
+share/icons/hicolor/128x128/apps/dragonplayer.png
 share/icons/hicolor/scalable/apps/dragonplayer.svgz
 share/icons/oxygen/16x16/actions/player-volume-muted.png
 share/icons/oxygen/22x22/actions/player-volume-muted.png

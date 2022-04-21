@@ -4,8 +4,8 @@ include/krdc/remoteview.h
 include/krdc/remoteviewfactory.h
 include/krdccore_export.h
 lib/libkrdccore.so
-lib/libkrdccore.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libkrdccore.so.5
+lib/libkrdccore.so.%%KDE_APPLICATIONS_VERSION%%
 %%FREERDP%%%%QT_PLUGINDIR%%/krdc/kcms/libkcm_krdc_rdpplugin.so
 %%QT_PLUGINDIR%%/krdc/kcms/libkcm_krdc_vncplugin.so
 %%FREERDP%%%%QT_PLUGINDIR%%/krdc/libkrdc_rdpplugin.so
@@ -14,8 +14,6 @@ lib/libkrdccore.so.5
 share/applications/org.kde.krdc.desktop
 share/config.kcfg/krdc.kcfg
 %%FREERDP%%share/kservices5/ServiceMenus/smb2rdc.desktop
-%%FREERDP%%share/kservices5/krdc_rdp_config.desktop
-share/kservices5/krdc_vnc_config.desktop
 share/kservicetypes5/krdc_plugin.desktop
 share/locale/ar/LC_MESSAGES/krdc.mo
 share/locale/be/LC_MESSAGES/krdc.mo

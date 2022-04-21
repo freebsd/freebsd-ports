@@ -21,12 +21,12 @@ share/applications/org.kde.kitenkanjibrowser.desktop
 share/applications/org.kde.kitenradselect.desktop
 share/config.kcfg/kiten.kcfg
 share/fonts/kanjistrokeorders/KanjiStrokeOrders.ttf
-share/icons/hicolor/128x128/apps/kiten.png
 share/icons/hicolor/16x16/apps/kiten.png
 share/icons/hicolor/22x22/apps/kiten.png
 share/icons/hicolor/32x32/apps/kiten.png
 share/icons/hicolor/48x48/apps/kiten.png
 share/icons/hicolor/64x64/apps/kiten.png
+share/icons/hicolor/128x128/apps/kiten.png
 share/icons/hicolor/scalable/apps/kiten.svgz
 %%DATADIR%%/edict
 %%DATADIR%%/kanjidic

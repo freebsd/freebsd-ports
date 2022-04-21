@@ -12,6 +12,7 @@ share/icons/hicolor/48x48/apps/artikulate.png
 share/icons/hicolor/64x64/apps/artikulate.png
 share/icons/hicolor/scalable/apps/artikulate.svg
 share/knsrcfiles/artikulate.knsrc
+share/locale/ar/LC_MESSAGES/artikulate.mo
 share/locale/az/LC_MESSAGES/artikulate.mo
 share/locale/bs/LC_MESSAGES/artikulate.mo
 share/locale/ca/LC_MESSAGES/artikulate.mo

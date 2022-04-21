@@ -1,15 +1,18 @@
 bin/konsole
 bin/konsoleprofile
-share/qlogging-categories5/konsole.categories
+lib/kconf_update_bin/konsole_globalaccel
 lib/libkonsoleapp.so.1
 lib/libkonsoleapp.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libkonsoleprivate.so.1
 lib/libkonsoleprivate.so.%%KDE_APPLICATIONS_VERSION%%
-%%QT_PLUGINDIR%%/konsoleplugins/konsole_sshmanagerplugin.so
 %%QT_PLUGINDIR%%/konsolepart.so
+%%QT_PLUGINDIR%%/konsoleplugins/konsole_quickcommandsplugin.so
+%%QT_PLUGINDIR%%/konsoleplugins/konsole_sshmanagerplugin.so
 share/applications/org.kde.konsole.desktop
-share/khotkeys/konsole.khotkeys
+share/kconf_update/konsole_globalaccel.upd
+share/kio/servicemenus/konsolerun.desktop
 share/knotifications5/konsole.notifyrc
+share/knsrcfiles/konsole.knsrc
 %%DATADIR%%/1x2-terminals.json
 %%DATADIR%%/2x1-terminals.json
 %%DATADIR%%/2x2-terminals.json
@@ -29,8 +32,6 @@ share/knotifications5/konsole.notifyrc
 %%DATADIR%%/linux.keytab
 %%DATADIR%%/macos.keytab
 %%DATADIR%%/solaris.keytab
-share/knsrcfiles/konsole.knsrc
-share/kservices5/ServiceMenus/konsolerun.desktop
 share/kservices5/konsolepart.desktop
 share/kservicetypes5/terminalemulator.desktop
 share/locale/ar/LC_MESSAGES/konsole.mo
@@ -97,3 +98,4 @@ share/locale/wa/LC_MESSAGES/konsole.mo
 share/locale/zh_CN/LC_MESSAGES/konsole.mo
 share/locale/zh_TW/LC_MESSAGES/konsole.mo
 share/metainfo/org.kde.konsole.appdata.xml
+share/qlogging-categories5/konsole.categories

@@ -1,12 +1,12 @@
 bin/kapptemplate
 share/applications/org.kde.kapptemplate.desktop
 share/config.kcfg/kapptemplate.kcfg
-share/icons/hicolor/128x128/apps/kapptemplate.png
 share/icons/hicolor/16x16/apps/kapptemplate.png
 share/icons/hicolor/22x22/apps/kapptemplate.png
 share/icons/hicolor/32x32/apps/kapptemplate.png
 share/icons/hicolor/48x48/apps/kapptemplate.png
 share/icons/hicolor/64x64/apps/kapptemplate.png
+share/icons/hicolor/128x128/apps/kapptemplate.png
 share/icons/hicolor/scalable/apps/kapptemplate.svg
 share/kdevappwizard/templates/kde-frameworks5-simple.tar.bz2
 share/kdevappwizard/templates/kde-frameworks5.tar.bz2

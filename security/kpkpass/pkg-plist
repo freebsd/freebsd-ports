@@ -1,4 +1,3 @@
-share/qlogging-categories5/org_kde_kpkpass.categories
 include/KPim/KPkPass/Barcode
 include/KPim/KPkPass/BoardingPass
 include/KPim/KPkPass/Field
@@ -17,4 +16,4 @@ lib/cmake/KPimPkPass/KPimPkPassTargets.cmake
 lib/libKPimPkPass.so
 lib/libKPimPkPass.so.5
 lib/libKPimPkPass.so.%%KDE_APPLICATIONS_SHLIB_VER%%
-share/mime/packages/application-vnd-apple-pkpass.xml
+share/qlogging-categories5/org_kde_kpkpass.categories

@@ -1,3 +1,3 @@
-TIMESTAMP = 1646142966
-SHA256 (KDE/release-service/21.12.3/kdebugsettings-21.12.3.tar.xz) = f8a33faf0f9caf6e442658f6193aae23049610b4334375019c03fa8b373ccfa6
-SIZE (KDE/release-service/21.12.3/kdebugsettings-21.12.3.tar.xz) = 92584
+TIMESTAMP = 1650101895
+SHA256 (KDE/release-service/22.04.0/kdebugsettings-22.04.0.tar.xz) = 413013e210fc55332bf2684197b82d5418fac951ab0433ab0cc14ce0b7d703ca
+SIZE (KDE/release-service/22.04.0/kdebugsettings-22.04.0.tar.xz) = 92560

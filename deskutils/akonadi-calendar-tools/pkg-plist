@@ -1,13 +1,11 @@
 bin/calendarjanitor
 bin/konsolekalendar
-share/qlogging-categories5/console.categories
-share/qlogging-categories5/console.renamecategories
 share/applications/konsolekalendar.desktop
-share/icons/hicolor/128x128/apps/konsolekalendar.png
 share/icons/hicolor/16x16/apps/konsolekalendar.png
 share/icons/hicolor/22x22/apps/konsolekalendar.png
 share/icons/hicolor/32x32/apps/konsolekalendar.png
 share/icons/hicolor/48x48/apps/konsolekalendar.png
+share/icons/hicolor/128x128/apps/konsolekalendar.png
 share/locale/ar/LC_MESSAGES/calendarjanitor.mo
 share/locale/ar/LC_MESSAGES/konsolekalendar.mo
 share/locale/az/LC_MESSAGES/calendarjanitor.mo
@@ -102,3 +100,5 @@ share/locale/zh_CN/LC_MESSAGES/calendarjanitor.mo
 share/locale/zh_CN/LC_MESSAGES/konsolekalendar.mo
 share/locale/zh_TW/LC_MESSAGES/calendarjanitor.mo
 share/locale/zh_TW/LC_MESSAGES/konsolekalendar.mo
+share/qlogging-categories5/console.categories
+share/qlogging-categories5/console.renamecategories

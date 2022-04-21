@@ -1,4 +1,5 @@
 bin/kmplot
+%%QT_PLUGINDIR%%/kf5/parts/kmplotpart.so
 man/ca/man1/kmplot.1.gz
 man/de/man1/kmplot.1.gz
 man/es/man1/kmplot.1.gz
@@ -14,19 +15,18 @@ man/pt_BR/man1/kmplot.1.gz
 man/ru/man1/kmplot.1.gz
 man/sv/man1/kmplot.1.gz
 man/uk/man1/kmplot.1.gz
-%%QT_PLUGINDIR%%/kf5/parts/kmplotpart.so
 share/applications/org.kde.kmplot.desktop
 share/config.kcfg/kmplot.kcfg
 share/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml
 share/dbus-1/interfaces/org.kde.kmplot.MainDlg.xml
 share/dbus-1/interfaces/org.kde.kmplot.Parser.xml
 share/dbus-1/interfaces/org.kde.kmplot.View.xml
-share/icons/hicolor/128x128/apps/kmplot.png
 share/icons/hicolor/16x16/apps/kmplot.png
 share/icons/hicolor/22x22/apps/kmplot.png
 share/icons/hicolor/32x32/apps/kmplot.png
 share/icons/hicolor/48x48/apps/kmplot.png
 share/icons/hicolor/64x64/apps/kmplot.png
+share/icons/hicolor/128x128/apps/kmplot.png
 share/icons/hicolor/scalable/apps/kmplot.svgz
 share/kservices5/kmplot_part.desktop
 share/kxmlgui5/kmplot/kmplot_part.rc

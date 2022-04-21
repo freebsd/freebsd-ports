@@ -1,12 +1,11 @@
 bin/kubrick
-share/qlogging-categories5/kubrick.categories
 share/applications/org.kde.kubrick.desktop
-share/icons/hicolor/128x128/apps/kubrick.png
 share/icons/hicolor/16x16/apps/kubrick.png
 share/icons/hicolor/22x22/apps/kubrick.png
 share/icons/hicolor/32x32/apps/kubrick.png
 share/icons/hicolor/48x48/apps/kubrick.png
 share/icons/hicolor/64x64/apps/kubrick.png
+share/icons/hicolor/128x128/apps/kubrick.png
 %%DATADIR%%/m333CTwirl2.kbk
 %%DATADIR%%/m333Complete.kbk
 %%DATADIR%%/m333E2prX.kbk
@@ -80,3 +79,4 @@ share/locale/uk/LC_MESSAGES/kubrick.mo
 share/locale/zh_CN/LC_MESSAGES/kubrick.mo
 share/locale/zh_TW/LC_MESSAGES/kubrick.mo
 share/metainfo/org.kde.kubrick.appdata.xml
+share/qlogging-categories5/kubrick.categories

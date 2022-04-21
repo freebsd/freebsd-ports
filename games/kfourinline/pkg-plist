@@ -1,14 +1,13 @@
 bin/kfourinline
 bin/kfourinlineproc
-share/qlogging-categories5/kfourinline.categories
 share/applications/org.kde.kfourinline.desktop
 share/config.kcfg/kwin4.kcfg
-share/icons/hicolor/128x128/apps/kfourinline.png
 share/icons/hicolor/16x16/apps/kfourinline.png
 share/icons/hicolor/22x22/apps/kfourinline.png
 share/icons/hicolor/32x32/apps/kfourinline.png
 share/icons/hicolor/48x48/apps/kfourinline.png
 share/icons/hicolor/64x64/apps/kfourinline.png
+share/icons/hicolor/128x128/apps/kfourinline.png
 %%DATADIR%%/grafix/default.desktop
 %%DATADIR%%/grafix/default.rc
 %%DATADIR%%/grafix/default.svg
@@ -76,3 +75,4 @@ share/locale/uk/LC_MESSAGES/kfourinline.mo
 share/locale/zh_CN/LC_MESSAGES/kfourinline.mo
 share/locale/zh_TW/LC_MESSAGES/kfourinline.mo
 share/metainfo/org.kde.kfourinline.appdata.xml
+share/qlogging-categories5/kfourinline.categories

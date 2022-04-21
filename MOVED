@@ -17134,3 +17134,4 @@ devel/py-installer03|devel/py-installer|2022-04-17|Remove obsoleted port. Use de
 games/cultivation||2022-04-18|Has expired: Abandonware with last release in 2010, non-portable build system
 devel/ros-rosinstall||2022-04-20|Has expired: Upstream has archived the project and is no longer being used in the ROS project
 devel/py-aiorpcX-legacy|devel/py-aiorpcX|2022-04-20|Has expired: Legacy port is no longer required, please use devel/py-aiorpcX instead
+net/kalarmcal|deskutils/kalarm|2022-04-21|Packages were merged

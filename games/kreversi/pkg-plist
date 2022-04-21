@@ -1,6 +1,5 @@
 bin/kreversi
 share/applications/org.kde.kreversi.desktop
-share/icons/hicolor/128x128/apps/kreversi.png
 share/icons/hicolor/16x16/actions/lastmoves.png
 share/icons/hicolor/16x16/actions/legalmoves.png
 share/icons/hicolor/16x16/apps/kreversi.png
@@ -14,6 +13,7 @@ share/icons/hicolor/48x48/actions/lastmoves.png
 share/icons/hicolor/48x48/actions/legalmoves.png
 share/icons/hicolor/48x48/apps/kreversi.png
 share/icons/hicolor/64x64/apps/kreversi.png
+share/icons/hicolor/128x128/apps/kreversi.png
 share/icons/hicolor/scalable/actions/lastmoves.svgz
 share/icons/hicolor/scalable/actions/legalmoves.svgz
 share/knotifications5/kreversi.notifyrc

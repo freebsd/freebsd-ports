@@ -1,3 +1,3 @@
-TIMESTAMP = 1646143121
-SHA256 (KDE/release-service/21.12.3/kdenetwork-filesharing-21.12.3.tar.xz) = 82df72afd718d62fd9c2ebb34ad27231ed0d46752c506cfa90c504218550daf8
-SIZE (KDE/release-service/21.12.3/kdenetwork-filesharing-21.12.3.tar.xz) = 380804
+TIMESTAMP = 1650101868
+SHA256 (KDE/release-service/22.04.0/kdenetwork-filesharing-22.04.0.tar.xz) = d4bdf540bb31244d271c56caa52c542d7cd019d175eca6dfa0ad525ed87652da
+SIZE (KDE/release-service/22.04.0/kdenetwork-filesharing-22.04.0.tar.xz) = 382596

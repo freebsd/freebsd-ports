@@ -1,3 +1,3 @@
-TIMESTAMP = 1646143046
-SHA256 (KDE/release-service/21.12.3/kcolorchooser-21.12.3.tar.xz) = fadc3df8e6b47de72681434ecc9370a92fc23cf2aa97c4988b60f524155fd64a
-SIZE (KDE/release-service/21.12.3/kcolorchooser-21.12.3.tar.xz) = 30328
+TIMESTAMP = 1650101769
+SHA256 (KDE/release-service/22.04.0/kcolorchooser-22.04.0.tar.xz) = d293263a499640d931a0a69d605e26a97b69cbfe49dd58fc89b20fa7f3fbc532
+SIZE (KDE/release-service/22.04.0/kcolorchooser-22.04.0.tar.xz) = 30404

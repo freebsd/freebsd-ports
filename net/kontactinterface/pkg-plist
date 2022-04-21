@@ -1,5 +1,3 @@
-share/qlogging-categories5/kontactinterface.categories
-share/qlogging-categories5/kontactinterface.renamecategories
 include/KF5/KontactInterface/KontactInterface/Core
 include/KF5/KontactInterface/KontactInterface/PimUniqueApplication
 include/KF5/KontactInterface/KontactInterface/Plugin
@@ -13,7 +11,7 @@ include/KF5/KontactInterface/kontactinterface/plugin.h
 include/KF5/KontactInterface/kontactinterface/processes.h
 include/KF5/KontactInterface/kontactinterface/summary.h
 include/KF5/KontactInterface/kontactinterface/uniqueapphandler.h
-include/KF5/kontactinterface_version.h
+include/KF5/KontactInterface/kontactinterface_version.h
 lib/cmake/KF5KontactInterface/KF5KontactInterfaceConfig.cmake
 lib/cmake/KF5KontactInterface/KF5KontactInterfaceConfigVersion.cmake
 lib/cmake/KF5KontactInterface/KF5KontactInterfaceTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -75,3 +73,5 @@ share/locale/uk/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/wa/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/zh_CN/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/zh_TW/LC_MESSAGES/kontactinterfaces5.mo
+share/qlogging-categories5/kontactinterface.categories
+share/qlogging-categories5/kontactinterface.renamecategories

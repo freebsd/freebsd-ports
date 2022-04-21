@@ -1,13 +1,12 @@
 bin/kblocks
-share/qlogging-categories5/kblocks.categories
 share/applications/org.kde.kblocks.desktop
 share/config.kcfg/kblocks.kcfg
-share/icons/hicolor/128x128/apps/kblocks.png
 share/icons/hicolor/16x16/apps/kblocks.png
 share/icons/hicolor/22x22/apps/kblocks.png
 share/icons/hicolor/32x32/apps/kblocks.png
 share/icons/hicolor/48x48/apps/kblocks.png
 share/icons/hicolor/64x64/apps/kblocks.png
+share/icons/hicolor/128x128/apps/kblocks.png
 %%DATADIR%%/sounds/block-fall.ogg
 %%DATADIR%%/sounds/block-move.ogg
 %%DATADIR%%/sounds/block-remove.ogg
@@ -73,3 +72,4 @@ share/locale/uk/LC_MESSAGES/kblocks.mo
 share/locale/zh_CN/LC_MESSAGES/kblocks.mo
 share/locale/zh_TW/LC_MESSAGES/kblocks.mo
 share/metainfo/org.kde.kblocks.appdata.xml
+share/qlogging-categories5/kblocks.categories

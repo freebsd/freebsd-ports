@@ -1,11 +1,9 @@
-share/qlogging-categories5/kmbox.categories
-share/qlogging-categories5/kmbox.renamecategories
 include/KF5/KMbox/KMbox/MBox
 include/KF5/KMbox/KMbox/MBoxEntry
 include/KF5/KMbox/kmbox/kmbox_export.h
 include/KF5/KMbox/kmbox/mbox.h
 include/KF5/KMbox/kmbox/mboxentry.h
-include/KF5/kmbox_version.h
+include/KF5/KMbox/kmbox_version.h
 lib/cmake/KF5Mbox/KF5MboxConfig.cmake
 lib/cmake/KF5Mbox/KF5MboxConfigVersion.cmake
 lib/cmake/KF5Mbox/KF5MboxTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -14,3 +12,5 @@ lib/libKF5Mbox.so
 lib/libKF5Mbox.so.5
 lib/libKF5Mbox.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KMbox.pri
+share/qlogging-categories5/kmbox.categories
+share/qlogging-categories5/kmbox.renamecategories

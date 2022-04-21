@@ -1,6 +1,6 @@
 bin/spectacle
-lib/kconf_update_bin/spectacle-migrate-shortcuts
 lib/kconf_update_bin/spectacle-migrate-rememberregion
+lib/kconf_update_bin/spectacle-migrate-shortcuts
 lib/systemd/user/app-org.kde.spectacle.service
 man/ca/man1/spectacle.1.gz
 man/de/man1/spectacle.1.gz

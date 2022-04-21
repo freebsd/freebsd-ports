@@ -1,11 +1,11 @@
 bin/knetwalk
 share/applications/org.kde.knetwalk.desktop
-share/icons/hicolor/128x128/apps/knetwalk.png
 share/icons/hicolor/16x16/apps/knetwalk.png
 share/icons/hicolor/22x22/apps/knetwalk.png
 share/icons/hicolor/32x32/apps/knetwalk.png
 share/icons/hicolor/48x48/apps/knetwalk.png
 share/icons/hicolor/64x64/apps/knetwalk.png
+share/icons/hicolor/128x128/apps/knetwalk.png
 %%DATADIR%%/qml/Cable.qml
 %%DATADIR%%/qml/CanvasItem.qml
 %%DATADIR%%/qml/Cell.qml

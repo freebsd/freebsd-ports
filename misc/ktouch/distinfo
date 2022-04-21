@@ -1,3 +1,3 @@
-TIMESTAMP = 1646143084
-SHA256 (KDE/release-service/21.12.3/ktouch-21.12.3.tar.xz) = cd0ab11fff7cb03c40569f9cdcdef9db723044b87372bb2126baeb82f20b2072
-SIZE (KDE/release-service/21.12.3/ktouch-21.12.3.tar.xz) = 4968736
+TIMESTAMP = 1650101879
+SHA256 (KDE/release-service/22.04.0/ktouch-22.04.0.tar.xz) = 1076cde2bf6f181fc24e97229816483480c08ae3034eedf9a4d32b68090e190f
+SIZE (KDE/release-service/22.04.0/ktouch-22.04.0.tar.xz) = 4981916

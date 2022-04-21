@@ -1,5 +1,6 @@
 %%QT_PLUGINDIR%%/kf5/parts/markdownpart.so
 share/kservices5/markdownpart.desktop
+share/locale/ar/LC_MESSAGES/markdownpart.mo
 share/locale/ca/LC_MESSAGES/markdownpart.mo
 share/locale/ca@valencia/LC_MESSAGES/markdownpart.mo
 share/locale/cs/LC_MESSAGES/markdownpart.mo

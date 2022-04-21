@@ -1,6 +1,5 @@
 bin/kruler
 share/applications/org.kde.kruler.desktop
-share/icons/hicolor/128x128/apps/kruler.png
 share/icons/hicolor/16x16/actions/kruler-east.png
 share/icons/hicolor/16x16/actions/kruler-north.png
 share/icons/hicolor/16x16/actions/kruler-south.png
@@ -14,6 +13,7 @@ share/icons/hicolor/22x22/apps/kruler.png
 share/icons/hicolor/32x32/apps/kruler.png
 share/icons/hicolor/48x48/apps/kruler.png
 share/icons/hicolor/64x64/apps/kruler.png
+share/icons/hicolor/128x128/apps/kruler.png
 share/knotifications5/kruler.notifyrc
 %%DATADIR%%/sounds/move.wav
 share/locale/ar/LC_MESSAGES/kruler.mo

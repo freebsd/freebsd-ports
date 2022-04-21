@@ -1,3 +1,3 @@
-TIMESTAMP = 1646142930
-SHA256 (KDE/release-service/21.12.3/konqueror-21.12.3.tar.xz) = fd8e66566ac926dbbdf701fcaa3ff154b857d72f033df75ee9d75260c3c17f7c
-SIZE (KDE/release-service/21.12.3/konqueror-21.12.3.tar.xz) = 7429028
+TIMESTAMP = 1650101885
+SHA256 (KDE/release-service/22.04.0/konqueror-22.04.0.tar.xz) = db55d614c64294860a7869e6570c10febbc42d4be595cdfdab3c327103710c68
+SIZE (KDE/release-service/22.04.0/konqueror-22.04.0.tar.xz) = 7683308

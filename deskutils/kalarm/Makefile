@@ -15,7 +15,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		unitconversion wallet widgetsaddons windowsystem xmlgui \
 		ecm_build
 # pim components
-USE_KDE+=	akonadi akonadicontacts akonadimime alarmcalendar calendarcore \
+USE_KDE+=	akonadi akonadicontacts akonadimime calendarcore \
 		calendarutils contacts globalaccel grantleetheme holidays identitymanagement \
 		idletime libkdepim mailcommon mailtransport mime \
 		pimcommon pimtextedit imap \

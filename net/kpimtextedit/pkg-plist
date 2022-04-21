@@ -33,6 +33,7 @@ include/KF5/KPIMTextEdit/kpimtextedit/abstractmarkupbuilder.h
 include/KF5/KPIMTextEdit/kpimtextedit/abstracttexttospeechinterface.h
 include/KF5/KPIMTextEdit/kpimtextedit/editorutil.h
 include/KF5/KPIMTextEdit/kpimtextedit/emoticonunicodetab.h
+include/KF5/KPIMTextEdit/kpimtextedit/kpimtextedit-texttospeech.h
 include/KF5/KPIMTextEdit/kpimtextedit/kpimtextedit_export.h
 include/KF5/KPIMTextEdit/kpimtextedit/markupdirector.h
 include/KF5/KPIMTextEdit/kpimtextedit/plaintexteditfindbar.h
@@ -61,7 +62,7 @@ include/KF5/KPIMTextEdit/kpimtextedit/texttospeechactions.h
 include/KF5/KPIMTextEdit/kpimtextedit/texttospeechinterface.h
 include/KF5/KPIMTextEdit/kpimtextedit/texttospeechwidget.h
 include/KF5/KPIMTextEdit/kpimtextedit/textutils.h
-include/KF5/kpimtextedit_version.h
+include/KF5/KPIMTextEdit/kpimtextedit_version.h
 lib/cmake/KF5PimTextEdit/KF5PimTextEditConfig.cmake
 lib/cmake/KF5PimTextEdit/KF5PimTextEditConfigVersion.cmake
 lib/cmake/KF5PimTextEdit/KF5PimTextEditTargets-%%CMAKE_BUILD_TYPE%%.cmake

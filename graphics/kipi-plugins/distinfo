@@ -1,3 +1,3 @@
-TIMESTAMP = 1646143044
-SHA256 (KDE/release-service/21.12.3/kipi-plugins-21.12.3.tar.xz) = fe471526e7c63924c6a30b647e2440a5f237bd782ca4d0b4f44c1a25da01c1c0
-SIZE (KDE/release-service/21.12.3/kipi-plugins-21.12.3.tar.xz) = 1546924
+TIMESTAMP = 1650101766
+SHA256 (KDE/release-service/22.04.0/kipi-plugins-22.04.0.tar.xz) = 1a93de48397153e9f92c20130569ea63f852b9b51c5cd53c0937d2b70b34b633
+SIZE (KDE/release-service/22.04.0/kipi-plugins-22.04.0.tar.xz) = 1523308

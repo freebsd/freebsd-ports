@@ -1,11 +1,8 @@
 bin/akonadi_indexing_agent
-share/qlogging-categories5/akonadi-search.categories
-share/qlogging-categories5/akonadi-search.renamecategories
-include/KF5/AkonadiSearch/Core/query.h
-include/KF5/AkonadiSearch/Core/resultiterator.h
-include/KF5/AkonadiSearch/Core/search_core_export.h
-include/KF5/AkonadiSearch/Core/searchstore.h
-include/KF5/AkonadiSearch/Core/term.h
+include/KF5/AkonadiSearch/Core/Query
+include/KF5/AkonadiSearch/Core/ResultIterator
+include/KF5/AkonadiSearch/Core/SearchStore
+include/KF5/AkonadiSearch/Core/Term
 include/KF5/AkonadiSearch/Debug/akonadisearchdebugdialog.h
 include/KF5/AkonadiSearch/Debug/akonadisearchdebugsearchpathcombobox.h
 include/KF5/AkonadiSearch/Debug/search_debug_export.h
@@ -24,7 +21,12 @@ include/KF5/AkonadiSearch/Xapian/xapiandocument.h
 include/KF5/AkonadiSearch/Xapian/xapianqueryparser.h
 include/KF5/AkonadiSearch/Xapian/xapiansearchstore.h
 include/KF5/AkonadiSearch/Xapian/xapiantermgenerator.h
-include/KF5/akonadi_search_version.h
+include/KF5/AkonadiSearch/akonadi_search_version.h
+include/KF5/AkonadiSearch/core/query.h
+include/KF5/AkonadiSearch/core/resultiterator.h
+include/KF5/AkonadiSearch/core/searchstore.h
+include/KF5/AkonadiSearch/core/term.h
+include/KF5/AkonadiSearch/search_core_export.h
 lib/cmake/KF5AkonadiSearch/KF5AkonadiSearchConfig.cmake
 lib/cmake/KF5AkonadiSearch/KF5AkonadiSearchConfigVersion.cmake
 lib/cmake/KF5AkonadiSearch/KF5AkonadiSearchTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -46,10 +48,9 @@ lib/libKF5AkonadiSearchXapian.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/akonadi/contactsearchstore.so
 %%QT_PLUGINDIR%%/akonadi/emailsearchstore.so
 %%QT_PLUGINDIR%%/akonadi/notesearchstore.so
-%%QT_PLUGINDIR%%/kcm_krunner_pimcontacts.so
+%%QT_PLUGINDIR%%/kf5/krunner/kcms/kcm_krunner_pimcontacts.so
 %%QT_PLUGINDIR%%/kf5/krunner/krunner_pimcontacts.so
 share/akonadi/agents/akonadiindexingagent.desktop
-share/kservices5/plasma-krunner-pimcontacts_config.desktop
 share/locale/ar/LC_MESSAGES/akonadi_search.mo
 share/locale/az/LC_MESSAGES/akonadi_search.mo
 share/locale/ca/LC_MESSAGES/akonadi_search.mo
@@ -88,3 +89,5 @@ share/locale/tr/LC_MESSAGES/akonadi_search.mo
 share/locale/uk/LC_MESSAGES/akonadi_search.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_search.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_search.mo
+share/qlogging-categories5/akonadi-search.categories
+share/qlogging-categories5/akonadi-search.renamecategories

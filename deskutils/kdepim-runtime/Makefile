@@ -25,7 +25,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		xmlgui
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime akonadinotes \
-		akonadicalendar akonadisearch alarmcalendar calendarcore \
+		akonadicalendar akonadisearch calendarcore \
 		calendarutils contacts gapi grantleetheme identitymanagement imap \
 		kontactinterface ldap libkdepim mailtransport mbox mime pimcommon \
 		pimtextedit syndication

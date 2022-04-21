@@ -1,7 +1,6 @@
 bin/step
 share/applications/org.kde.step.desktop
 share/config.kcfg/step.kcfg
-share/icons/hicolor/128x128/apps/step.png
 share/icons/hicolor/16x16/apps/step.png
 share/icons/hicolor/22x22/actions/pointer.png
 share/icons/hicolor/22x22/actions/step_object_Anchor.png
@@ -31,6 +30,7 @@ share/icons/hicolor/22x22/apps/step.png
 share/icons/hicolor/32x32/apps/step.png
 share/icons/hicolor/48x48/apps/step.png
 share/icons/hicolor/64x64/apps/step.png
+share/icons/hicolor/128x128/apps/step.png
 share/knsrcfiles/step.knsrc
 share/kxmlgui5/step/stepui.rc
 share/locale/ar/LC_MESSAGES/step.mo
@@ -151,8 +151,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/ca/graph.step
 %%DATADIR%%/examples/ca/liquid.step
 %%DATADIR%%/examples/ca/lissajous.step
-%%DATADIR%%/examples/ca/motor.step
 %%DATADIR%%/examples/ca/motor1.step
+%%DATADIR%%/examples/ca/motor.step
 %%DATADIR%%/examples/ca/note.step
 %%DATADIR%%/examples/ca/resonance.step
 %%DATADIR%%/examples/ca/softbody.step
@@ -168,8 +168,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/ca@valencia/graph.step
 %%DATADIR%%/examples/ca@valencia/liquid.step
 %%DATADIR%%/examples/ca@valencia/lissajous.step
-%%DATADIR%%/examples/ca@valencia/motor.step
 %%DATADIR%%/examples/ca@valencia/motor1.step
+%%DATADIR%%/examples/ca@valencia/motor.step
 %%DATADIR%%/examples/ca@valencia/note.step
 %%DATADIR%%/examples/ca@valencia/resonance.step
 %%DATADIR%%/examples/ca@valencia/softbody.step
@@ -185,8 +185,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/cs/graph.step
 %%DATADIR%%/examples/cs/liquid.step
 %%DATADIR%%/examples/cs/lissajous.step
-%%DATADIR%%/examples/cs/motor.step
 %%DATADIR%%/examples/cs/motor1.step
+%%DATADIR%%/examples/cs/motor.step
 %%DATADIR%%/examples/cs/note.step
 %%DATADIR%%/examples/cs/resonance.step
 %%DATADIR%%/examples/cs/softbody.step
@@ -202,8 +202,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/da/graph.step
 %%DATADIR%%/examples/da/liquid.step
 %%DATADIR%%/examples/da/lissajous.step
-%%DATADIR%%/examples/da/motor.step
 %%DATADIR%%/examples/da/motor1.step
+%%DATADIR%%/examples/da/motor.step
 %%DATADIR%%/examples/da/note.step
 %%DATADIR%%/examples/da/resonance.step
 %%DATADIR%%/examples/da/softbody.step
@@ -219,8 +219,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/de/graph.step
 %%DATADIR%%/examples/de/liquid.step
 %%DATADIR%%/examples/de/lissajous.step
-%%DATADIR%%/examples/de/motor.step
 %%DATADIR%%/examples/de/motor1.step
+%%DATADIR%%/examples/de/motor.step
 %%DATADIR%%/examples/de/note.step
 %%DATADIR%%/examples/de/resonance.step
 %%DATADIR%%/examples/de/softbody.step
@@ -238,8 +238,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/el/graph.step
 %%DATADIR%%/examples/el/liquid.step
 %%DATADIR%%/examples/el/lissajous.step
-%%DATADIR%%/examples/el/motor.step
 %%DATADIR%%/examples/el/motor1.step
+%%DATADIR%%/examples/el/motor.step
 %%DATADIR%%/examples/el/note.step
 %%DATADIR%%/examples/el/resonance.step
 %%DATADIR%%/examples/el/softbody.step
@@ -255,8 +255,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/en_GB/graph.step
 %%DATADIR%%/examples/en_GB/liquid.step
 %%DATADIR%%/examples/en_GB/lissajous.step
-%%DATADIR%%/examples/en_GB/motor.step
 %%DATADIR%%/examples/en_GB/motor1.step
+%%DATADIR%%/examples/en_GB/motor.step
 %%DATADIR%%/examples/en_GB/note.step
 %%DATADIR%%/examples/en_GB/resonance.step
 %%DATADIR%%/examples/en_GB/softbody.step
@@ -272,8 +272,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/es/graph.step
 %%DATADIR%%/examples/es/liquid.step
 %%DATADIR%%/examples/es/lissajous.step
-%%DATADIR%%/examples/es/motor.step
 %%DATADIR%%/examples/es/motor1.step
+%%DATADIR%%/examples/es/motor.step
 %%DATADIR%%/examples/es/note.step
 %%DATADIR%%/examples/es/resonance.step
 %%DATADIR%%/examples/es/softbody.step
@@ -289,8 +289,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/et/graph.step
 %%DATADIR%%/examples/et/liquid.step
 %%DATADIR%%/examples/et/lissajous.step
-%%DATADIR%%/examples/et/motor.step
 %%DATADIR%%/examples/et/motor1.step
+%%DATADIR%%/examples/et/motor.step
 %%DATADIR%%/examples/et/note.step
 %%DATADIR%%/examples/et/resonance.step
 %%DATADIR%%/examples/et/softbody.step
@@ -306,8 +306,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/eu/graph.step
 %%DATADIR%%/examples/eu/liquid.step
 %%DATADIR%%/examples/eu/lissajous.step
-%%DATADIR%%/examples/eu/motor.step
 %%DATADIR%%/examples/eu/motor1.step
+%%DATADIR%%/examples/eu/motor.step
 %%DATADIR%%/examples/eu/note.step
 %%DATADIR%%/examples/eu/resonance.step
 %%DATADIR%%/examples/eu/softbody.step
@@ -325,8 +325,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/fr/graph.step
 %%DATADIR%%/examples/fr/liquid.step
 %%DATADIR%%/examples/fr/lissajous.step
-%%DATADIR%%/examples/fr/motor.step
 %%DATADIR%%/examples/fr/motor1.step
+%%DATADIR%%/examples/fr/motor.step
 %%DATADIR%%/examples/fr/note.step
 %%DATADIR%%/examples/fr/resonance.step
 %%DATADIR%%/examples/fr/softbody.step
@@ -344,8 +344,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/ia/graph.step
 %%DATADIR%%/examples/ia/liquid.step
 %%DATADIR%%/examples/ia/lissajous.step
-%%DATADIR%%/examples/ia/motor.step
 %%DATADIR%%/examples/ia/motor1.step
+%%DATADIR%%/examples/ia/motor.step
 %%DATADIR%%/examples/ia/note.step
 %%DATADIR%%/examples/ia/resonance.step
 %%DATADIR%%/examples/ia/softbody.step
@@ -361,8 +361,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/it/graph.step
 %%DATADIR%%/examples/it/liquid.step
 %%DATADIR%%/examples/it/lissajous.step
-%%DATADIR%%/examples/it/motor.step
 %%DATADIR%%/examples/it/motor1.step
+%%DATADIR%%/examples/it/motor.step
 %%DATADIR%%/examples/it/note.step
 %%DATADIR%%/examples/it/resonance.step
 %%DATADIR%%/examples/it/softbody.step
@@ -378,8 +378,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/ja/graph.step
 %%DATADIR%%/examples/ja/liquid.step
 %%DATADIR%%/examples/ja/lissajous.step
-%%DATADIR%%/examples/ja/motor.step
 %%DATADIR%%/examples/ja/motor1.step
+%%DATADIR%%/examples/ja/motor.step
 %%DATADIR%%/examples/ja/note.step
 %%DATADIR%%/examples/ja/resonance.step
 %%DATADIR%%/examples/ja/softbody.step
@@ -397,8 +397,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/lt/graph.step
 %%DATADIR%%/examples/lt/liquid.step
 %%DATADIR%%/examples/lt/lissajous.step
-%%DATADIR%%/examples/lt/motor.step
 %%DATADIR%%/examples/lt/motor1.step
+%%DATADIR%%/examples/lt/motor.step
 %%DATADIR%%/examples/lt/note.step
 %%DATADIR%%/examples/lt/resonance.step
 %%DATADIR%%/examples/lt/softbody.step
@@ -414,16 +414,16 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/ml/graph.step
 %%DATADIR%%/examples/ml/liquid.step
 %%DATADIR%%/examples/ml/lissajous.step
-%%DATADIR%%/examples/ml/motor.step
 %%DATADIR%%/examples/ml/motor1.step
+%%DATADIR%%/examples/ml/motor.step
 %%DATADIR%%/examples/ml/note.step
 %%DATADIR%%/examples/ml/resonance.step
 %%DATADIR%%/examples/ml/softbody.step
 %%DATADIR%%/examples/ml/solar.step
 %%DATADIR%%/examples/ml/springs.step
 %%DATADIR%%/examples/ml/wave.step
-%%DATADIR%%/examples/motor.step
 %%DATADIR%%/examples/motor1.step
+%%DATADIR%%/examples/motor.step
 %%DATADIR%%/examples/nl/brownian.step
 %%DATADIR%%/examples/nl/doublependulum.step
 %%DATADIR%%/examples/nl/eightpendula.step
@@ -433,8 +433,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/nl/graph.step
 %%DATADIR%%/examples/nl/liquid.step
 %%DATADIR%%/examples/nl/lissajous.step
-%%DATADIR%%/examples/nl/motor.step
 %%DATADIR%%/examples/nl/motor1.step
+%%DATADIR%%/examples/nl/motor.step
 %%DATADIR%%/examples/nl/note.step
 %%DATADIR%%/examples/nl/resonance.step
 %%DATADIR%%/examples/nl/softbody.step
@@ -451,8 +451,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/pl/graph.step
 %%DATADIR%%/examples/pl/liquid.step
 %%DATADIR%%/examples/pl/lissajous.step
-%%DATADIR%%/examples/pl/motor.step
 %%DATADIR%%/examples/pl/motor1.step
+%%DATADIR%%/examples/pl/motor.step
 %%DATADIR%%/examples/pl/note.step
 %%DATADIR%%/examples/pl/resonance.step
 %%DATADIR%%/examples/pl/softbody.step
@@ -468,8 +468,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/pt/graph.step
 %%DATADIR%%/examples/pt/liquid.step
 %%DATADIR%%/examples/pt/lissajous.step
-%%DATADIR%%/examples/pt/motor.step
 %%DATADIR%%/examples/pt/motor1.step
+%%DATADIR%%/examples/pt/motor.step
 %%DATADIR%%/examples/pt/note.step
 %%DATADIR%%/examples/pt/resonance.step
 %%DATADIR%%/examples/pt/softbody.step
@@ -485,8 +485,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/pt_BR/graph.step
 %%DATADIR%%/examples/pt_BR/liquid.step
 %%DATADIR%%/examples/pt_BR/lissajous.step
-%%DATADIR%%/examples/pt_BR/motor.step
 %%DATADIR%%/examples/pt_BR/motor1.step
+%%DATADIR%%/examples/pt_BR/motor.step
 %%DATADIR%%/examples/pt_BR/note.step
 %%DATADIR%%/examples/pt_BR/resonance.step
 %%DATADIR%%/examples/pt_BR/softbody.step
@@ -503,8 +503,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/ru/graph.step
 %%DATADIR%%/examples/ru/liquid.step
 %%DATADIR%%/examples/ru/lissajous.step
-%%DATADIR%%/examples/ru/motor.step
 %%DATADIR%%/examples/ru/motor1.step
+%%DATADIR%%/examples/ru/motor.step
 %%DATADIR%%/examples/ru/note.step
 %%DATADIR%%/examples/ru/resonance.step
 %%DATADIR%%/examples/ru/softbody.step
@@ -520,8 +520,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/sk/graph.step
 %%DATADIR%%/examples/sk/liquid.step
 %%DATADIR%%/examples/sk/lissajous.step
-%%DATADIR%%/examples/sk/motor.step
 %%DATADIR%%/examples/sk/motor1.step
+%%DATADIR%%/examples/sk/motor.step
 %%DATADIR%%/examples/sk/note.step
 %%DATADIR%%/examples/sk/resonance.step
 %%DATADIR%%/examples/sk/softbody.step
@@ -537,8 +537,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/sl/graph.step
 %%DATADIR%%/examples/sl/liquid.step
 %%DATADIR%%/examples/sl/lissajous.step
-%%DATADIR%%/examples/sl/motor.step
 %%DATADIR%%/examples/sl/motor1.step
+%%DATADIR%%/examples/sl/motor.step
 %%DATADIR%%/examples/sl/note.step
 %%DATADIR%%/examples/sl/resonance.step
 %%DATADIR%%/examples/sl/softbody.step
@@ -557,8 +557,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/sv/graph.step
 %%DATADIR%%/examples/sv/liquid.step
 %%DATADIR%%/examples/sv/lissajous.step
-%%DATADIR%%/examples/sv/motor.step
 %%DATADIR%%/examples/sv/motor1.step
+%%DATADIR%%/examples/sv/motor.step
 %%DATADIR%%/examples/sv/note.step
 %%DATADIR%%/examples/sv/resonance.step
 %%DATADIR%%/examples/sv/softbody.step
@@ -574,8 +574,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/uk/graph.step
 %%DATADIR%%/examples/uk/liquid.step
 %%DATADIR%%/examples/uk/lissajous.step
-%%DATADIR%%/examples/uk/motor.step
 %%DATADIR%%/examples/uk/motor1.step
+%%DATADIR%%/examples/uk/motor.step
 %%DATADIR%%/examples/uk/note.step
 %%DATADIR%%/examples/uk/resonance.step
 %%DATADIR%%/examples/uk/softbody.step
@@ -592,8 +592,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/zh_CN/graph.step
 %%DATADIR%%/examples/zh_CN/liquid.step
 %%DATADIR%%/examples/zh_CN/lissajous.step
-%%DATADIR%%/examples/zh_CN/motor.step
 %%DATADIR%%/examples/zh_CN/motor1.step
+%%DATADIR%%/examples/zh_CN/motor.step
 %%DATADIR%%/examples/zh_CN/note.step
 %%DATADIR%%/examples/zh_CN/resonance.step
 %%DATADIR%%/examples/zh_CN/softbody.step
@@ -609,8 +609,8 @@ share/mime/packages/org.kde.step.xml
 %%DATADIR%%/examples/zh_TW/graph.step
 %%DATADIR%%/examples/zh_TW/liquid.step
 %%DATADIR%%/examples/zh_TW/lissajous.step
-%%DATADIR%%/examples/zh_TW/motor.step
 %%DATADIR%%/examples/zh_TW/motor1.step
+%%DATADIR%%/examples/zh_TW/motor.step
 %%DATADIR%%/examples/zh_TW/note.step
 %%DATADIR%%/examples/zh_TW/resonance.step
 %%DATADIR%%/examples/zh_TW/softbody.step

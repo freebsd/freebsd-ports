@@ -23,6 +23,7 @@ share/locale/en_GB/LC_MESSAGES/ktp-call-ui.mo
 share/locale/eo/LC_MESSAGES/ktp-call-ui.mo
 share/locale/es/LC_MESSAGES/ktp-call-ui.mo
 share/locale/et/LC_MESSAGES/ktp-call-ui.mo
+share/locale/eu/LC_MESSAGES/ktp-call-ui.mo
 share/locale/fi/LC_MESSAGES/ktp-call-ui.mo
 share/locale/fr/LC_MESSAGES/ktp-call-ui.mo
 share/locale/ga/LC_MESSAGES/ktp-call-ui.mo
@@ -35,7 +36,6 @@ share/locale/kk/LC_MESSAGES/ktp-call-ui.mo
 share/locale/km/LC_MESSAGES/ktp-call-ui.mo
 share/locale/ko/LC_MESSAGES/ktp-call-ui.mo
 share/locale/lt/LC_MESSAGES/ktp-call-ui.mo
-share/locale/eu/LC_MESSAGES/ktp-call-ui.mo
 share/locale/mr/LC_MESSAGES/ktp-call-ui.mo
 share/locale/nb/LC_MESSAGES/ktp-call-ui.mo
 share/locale/nds/LC_MESSAGES/ktp-call-ui.mo

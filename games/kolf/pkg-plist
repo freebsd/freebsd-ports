@@ -1,11 +1,11 @@
 bin/kolf
 share/applications/org.kde.kolf.desktop
-share/icons/hicolor/128x128/apps/kolf.png
 share/icons/hicolor/16x16/apps/kolf.png
 share/icons/hicolor/22x22/apps/kolf.png
 share/icons/hicolor/32x32/apps/kolf.png
 share/icons/hicolor/48x48/apps/kolf.png
 share/icons/hicolor/64x64/apps/kolf.png
+share/icons/hicolor/128x128/apps/kolf.png
 share/icons/hicolor/scalable/apps/kolf.svgz
 %%DATADIR%%/courses/Classic.kolf
 %%DATADIR%%/courses/Easy.kolf

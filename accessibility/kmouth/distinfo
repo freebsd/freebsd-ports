@@ -1,5 +1,3 @@
-TIMESTAMP = 1649954560
-SHA256 (KDE/release-service/21.12.3/kmouth-21.12.3.tar.xz) = 352e2dbde7a18fbea68a615dd12ba7f55aa4eaf49957a7db7feb6b51afb87377
-SIZE (KDE/release-service/21.12.3/kmouth-21.12.3.tar.xz) = 2107316
-SHA256 (KDE/release-service/21.12.3/cfb889ab38befe1e378d92ab9915aed14ec5843b.diff) = 13b18a172ee1d45d60f1fbb0667db03d2fb10e8d5072025d9fafd9c6c14ef2e8
-SIZE (KDE/release-service/21.12.3/cfb889ab38befe1e378d92ab9915aed14ec5843b.diff) = 961
+TIMESTAMP = 1650101796
+SHA256 (KDE/release-service/22.04.0/kmouth-22.04.0.tar.xz) = 3feabab5b75ddf54d017185b6b998ff1cbccf0cb1a23a8ccf6a546435f766017
+SIZE (KDE/release-service/22.04.0/kmouth-22.04.0.tar.xz) = 2104452

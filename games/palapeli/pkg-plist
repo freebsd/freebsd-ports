@@ -1,7 +1,4 @@
 bin/palapeli
-lib/libpala.so
-lib/libpala.so.0
-lib/libpala.so.0.2.0
 etc/xdg/palapeli-collectionrc
 include/Pala/Pala/Slicer
 include/Pala/Pala/SlicerJob
@@ -18,13 +15,14 @@ lib/cmake/Pala/PalaConfig.cmake
 lib/cmake/Pala/PalaConfigVersion.cmake
 lib/cmake/Pala/PalaTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Pala/PalaTargets.cmake
+lib/libpala.so
+lib/libpala.so.0
+lib/libpala.so.0.2.0
 %%QT_PLUGINDIR%%/palapelislicers/palapeli_goldbergslicer.so
 %%QT_PLUGINDIR%%/palapelislicers/palapeli_jigsawslicer.so
 %%QT_PLUGINDIR%%/palapelislicers/palapeli_rectslicer.so
 %%QT_PLUGINDIR%%/palathumbcreator.so
 share/applications/org.kde.palapeli.desktop
-share/icons/hicolor/128x128/apps/palapeli.png
-share/icons/hicolor/128x128/mimetypes/application-x-palapeli.png
 share/icons/hicolor/16x16/apps/palapeli.png
 share/icons/hicolor/16x16/mimetypes/application-x-palapeli.png
 share/icons/hicolor/24x24/apps/palapeli.png
@@ -35,6 +33,8 @@ share/icons/hicolor/48x48/apps/palapeli.png
 share/icons/hicolor/48x48/mimetypes/application-x-palapeli.png
 share/icons/hicolor/64x64/apps/palapeli.png
 share/icons/hicolor/64x64/mimetypes/application-x-palapeli.png
+share/icons/hicolor/128x128/apps/palapeli.png
+share/icons/hicolor/128x128/mimetypes/application-x-palapeli.png
 share/knotifications5/palapeli.notifyrc
 share/kservices5/ServiceMenus/palapeli_servicemenu.desktop
 share/kservices5/palathumbcreator.desktop

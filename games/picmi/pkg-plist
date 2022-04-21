@@ -1,12 +1,12 @@
 bin/picmi
 share/applications/org.kde.picmi.desktop
-share/icons/hicolor/128x128/apps/picmi.png
 share/icons/hicolor/16x16/apps/picmi.png
 share/icons/hicolor/22x22/apps/picmi.png
-share/icons/hicolor/256x256/apps/picmi.png
 share/icons/hicolor/32x32/apps/picmi.png
 share/icons/hicolor/48x48/apps/picmi.png
 share/icons/hicolor/64x64/apps/picmi.png
+share/icons/hicolor/128x128/apps/picmi.png
+share/icons/hicolor/256x256/apps/picmi.png
 share/kxmlgui5/picmi/picmiui.rc
 share/locale/bs/LC_MESSAGES/picmi.mo
 share/locale/ca/LC_MESSAGES/picmi.mo

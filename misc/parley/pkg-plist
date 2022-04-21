@@ -3,11 +3,11 @@ share/applications/org.kde.parley.desktop
 share/config.kcfg/documentsettings.kcfg
 share/config.kcfg/languagesettings.kcfg
 share/config.kcfg/parley.kcfg
-share/icons/hicolor/128x128/apps/parley.png
 share/icons/hicolor/16x16/apps/parley.png
 share/icons/hicolor/32x32/apps/parley.png
 share/icons/hicolor/48x48/apps/parley.png
 share/icons/hicolor/64x64/apps/parley.png
+share/icons/hicolor/128x128/apps/parley.png
 share/icons/hicolor/scalable/apps/parley-parley.svgz
 share/icons/hicolor/scalable/apps/parley-simple.svgz
 share/icons/hicolor/scalable/apps/parley.svgz

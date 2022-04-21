@@ -187,8 +187,8 @@ lib/cmake/KF5Torrent/KF5TorrentConfigVersion.cmake
 lib/cmake/KF5Torrent/KF5TorrentTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5Torrent/KF5TorrentTargets.cmake
 lib/libKF5Torrent.so
-lib/libKF5Torrent.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libKF5Torrent.so.6
+lib/libKF5Torrent.so.%%KDE_APPLICATIONS_VERSION%%
 share/locale/ar/LC_MESSAGES/libktorrent5.mo
 share/locale/be/LC_MESSAGES/libktorrent5.mo
 share/locale/bg/LC_MESSAGES/libktorrent5.mo

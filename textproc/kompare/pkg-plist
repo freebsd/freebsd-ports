@@ -6,13 +6,13 @@ lib/libkompareinterface.so.5
 %%QT_PLUGINDIR%%/kf5/parts/komparenavtreepart.so
 %%QT_PLUGINDIR%%/kf5/parts/komparepart.so
 share/applications/org.kde.kompare.desktop
-share/icons/hicolor/128x128/apps/kompare.png
 share/icons/hicolor/16x16/apps/kompare.png
 share/icons/hicolor/22x22/apps/kompare.png
 share/icons/hicolor/32x32/apps/kompare.png
 share/icons/hicolor/48x48/apps/kompare.png
+share/icons/hicolor/128x128/apps/kompare.png
 share/icons/hicolor/scalable/apps/kompare.svgz
-share/kservices5/ServiceMenus/kompare.desktop
+share/kio/servicemenus/kompare.desktop
 share/kservices5/komparenavtreepart.desktop
 share/kservices5/komparepart.desktop
 share/kservicetypes5/komparenavigationpart.desktop

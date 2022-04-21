@@ -1,13 +1,10 @@
 bin/kdf
 bin/kwikdisk
-share/qlogging-categories5/kdf.categories
 lib/libkdfprivate.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkdfprivate.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/libkcm_kdf.so
 share/applications/org.kde.kdf.desktop
 share/applications/org.kde.kwikdisk.desktop
-share/icons/hicolor/128x128/apps/kdf.png
-share/icons/hicolor/128x128/apps/kwikdisk.png
 share/icons/hicolor/16x16/apps/kcmdf.png
 share/icons/hicolor/16x16/apps/kdf.png
 share/icons/hicolor/16x16/apps/kwikdisk.png
@@ -21,6 +18,8 @@ share/icons/hicolor/48x48/apps/kdf.png
 share/icons/hicolor/48x48/apps/kwikdisk.png
 share/icons/hicolor/64x64/apps/kdf.png
 share/icons/hicolor/64x64/apps/kwikdisk.png
+share/icons/hicolor/128x128/apps/kdf.png
+share/icons/hicolor/128x128/apps/kwikdisk.png
 share/kservices5/kcmdf.desktop
 share/kxmlgui5/kdf/kdfui.rc
 share/locale/ar/LC_MESSAGES/kdf.mo
@@ -82,3 +81,4 @@ share/locale/uk/LC_MESSAGES/kdf.mo
 share/locale/zh_CN/LC_MESSAGES/kdf.mo
 share/locale/zh_TW/LC_MESSAGES/kdf.mo
 share/metainfo/org.kde.kdf.appdata.xml
+share/qlogging-categories5/kdf.categories

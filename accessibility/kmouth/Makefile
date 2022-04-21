@@ -1,8 +1,6 @@
 PORTNAME=	kmouth
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	accessibility kde kde-applications
-PATCH_SITES=	https://invent.kde.org/accessibility/kmouth/-/commit/
-PATCHFILES=	cfb889ab38befe1e378d92ab9915aed14ec5843b.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Speech synthesizer frontend for KDE

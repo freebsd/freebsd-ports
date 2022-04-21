@@ -1,11 +1,11 @@
 bin/kdiamond
 share/applications/org.kde.kdiamond.desktop
-share/icons/hicolor/128x128/apps/kdiamond.png
 share/icons/hicolor/16x16/apps/kdiamond.png
 share/icons/hicolor/22x22/apps/kdiamond.png
 share/icons/hicolor/32x32/apps/kdiamond.png
 share/icons/hicolor/48x48/apps/kdiamond.png
 share/icons/hicolor/64x64/apps/kdiamond.png
+share/icons/hicolor/128x128/apps/kdiamond.png
 %%DATADIR%%/kdiamond.kcfg
 %%DATADIR%%/themes/default.desktop
 %%DATADIR%%/themes/diamonds.desktop

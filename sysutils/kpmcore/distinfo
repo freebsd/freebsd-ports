@@ -1,3 +1,3 @@
-TIMESTAMP = 1646142967
-SHA256 (KDE/release-service/21.12.3/kpmcore-21.12.3.tar.xz) = 6ad7a6d04a1c28bca9e934a3d7664fcb91069f841a8292208764ff4eca5300a6
-SIZE (KDE/release-service/21.12.3/kpmcore-21.12.3.tar.xz) = 595940
+TIMESTAMP = 1650101892
+SHA256 (KDE/release-service/22.04.0/kpmcore-22.04.0.tar.xz) = b0ef165092fad3bd87d6084c65dee3d3134cc049f86c91793d73217c46f68dbb
+SIZE (KDE/release-service/22.04.0/kpmcore-22.04.0.tar.xz) = 599012

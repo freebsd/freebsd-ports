@@ -1,13 +1,12 @@
 bin/kshisen
-share/qlogging-categories5/kshisen.categories
 share/applications/org.kde.kshisen.desktop
 share/config.kcfg/kshisen.kcfg
-share/icons/hicolor/128x128/apps/kshisen.png
 share/icons/hicolor/16x16/apps/kshisen.png
 share/icons/hicolor/22x22/apps/kshisen.png
 share/icons/hicolor/32x32/apps/kshisen.png
 share/icons/hicolor/48x48/apps/kshisen.png
 share/icons/hicolor/64x64/apps/kshisen.png
+share/icons/hicolor/128x128/apps/kshisen.png
 share/locale/ar/LC_MESSAGES/kshisen.mo
 share/locale/be/LC_MESSAGES/kshisen.mo
 share/locale/bg/LC_MESSAGES/kshisen.mo
@@ -67,5 +66,6 @@ share/locale/uk/LC_MESSAGES/kshisen.mo
 share/locale/zh_CN/LC_MESSAGES/kshisen.mo
 share/locale/zh_TW/LC_MESSAGES/kshisen.mo
 share/metainfo/org.kde.kshisen.appdata.xml
+share/qlogging-categories5/kshisen.categories
 share/sounds/kshisen/tile-fall-tile.ogg
 share/sounds/kshisen/tile-touch.ogg

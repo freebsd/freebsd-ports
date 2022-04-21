@@ -1,6 +1,5 @@
 bin/ksirk
 bin/ksirkskineditor
-share/qlogging-categories5/ksirk.categories
 lib/libiris_ksirk.so
 lib/libiris_ksirk.so.2
 lib/libiris_ksirk.so.2.0.0
@@ -8,13 +7,14 @@ share/applications/org.kde.ksirk.desktop
 share/applications/org.kde.ksirkskineditor.desktop
 share/config.kcfg/ksirksettings.kcfg
 share/config.kcfg/ksirkskineditorsettings.kcfg
-share/icons/hicolor/128x128/apps/ksirk.png
 share/icons/hicolor/16x16/apps/ksirk.png
 share/icons/hicolor/22x22/apps/ksirk.png
 share/icons/hicolor/32x32/apps/ksirk.png
 share/icons/hicolor/48x48/apps/ksirk.png
 share/icons/hicolor/64x64/apps/ksirk.png
+share/icons/hicolor/128x128/apps/ksirk.png
 share/icons/hicolor/scalable/apps/ksirk.svgz
+share/knsrcfiles/ksirk.knsrc
 %%DATADIR%%/jabber.png
 %%DATADIR%%/skins/default/Data/world.desktop
 %%DATADIR%%/skins/default/Images/2DownArrow.png
@@ -55,7 +55,6 @@ share/icons/hicolor/scalable/apps/ksirk.svgz
 %%DATADIR%%/skins/skinsdir
 %%DATADIR%%skineditor/cross.png
 %%DATADIR%%skineditor/target.png
-share/knsrcfiles/ksirk.knsrc
 share/kxmlgui5/ksirk/ksirkui.rc
 share/kxmlgui5/ksirkskineditor/ksirkskineditorui.rc
 share/locale/ar/LC_MESSAGES/ksirk.mo
@@ -149,3 +148,4 @@ share/locale/zh_CN/LC_MESSAGES/ksirkskineditor.mo
 share/locale/zh_TW/LC_MESSAGES/ksirk.mo
 share/locale/zh_TW/LC_MESSAGES/ksirkskineditor.mo
 share/metainfo/org.kde.ksirk.appdata.xml
+share/qlogging-categories5/ksirk.categories
