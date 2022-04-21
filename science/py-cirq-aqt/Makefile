@@ -1,6 +1,6 @@
 PORTNAME=	cirq-aqt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.14.1
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cirq-core>0:science/py-cirq-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests>=2.18:www/py-requests@${PY_FLAVOR}
 
 USES=		python:3.8+
 USE_PYTHON=	distutils autoplist
