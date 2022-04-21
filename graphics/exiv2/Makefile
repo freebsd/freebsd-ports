@@ -46,7 +46,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-Source
 .include <bsd.port.options.mk>
 
 LDFLAGS_powerpc=	-lintl
-LDFLAGS_powerpc64=	-lintl
 LDFLAGS_mips=		-lintl
 LDFLAGS_mips64=		-lintl
 
