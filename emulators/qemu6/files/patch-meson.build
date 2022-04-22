@@ -1,0 +1,20 @@
+--- meson.build.orig	2021-12-10 18:55:23 UTC
++++ meson.build
+@@ -1901,14 +1901,10 @@ fdt_opt = get_option('fdt')
+ if have_system
+   if fdt_opt in ['enabled', 'auto', 'system']
+     have_internal = fs.exists(meson.current_source_dir() / 'dtc/libfdt/Makefile.libfdt')
+-    fdt = cc.find_library('fdt', kwargs: static_kwargs,
++    fdt = cc.find_library('fdt', kwargs: static_kwargs, dirs: '/usr/local/lib/',
+                           required: fdt_opt == 'system' or
+-                                    fdt_opt == 'enabled' and not have_internal)
+-    if fdt.found() and cc.links('''
+-       #include <libfdt.h>
+-       #include <libfdt_env.h>
+-       int main(void) { fdt_check_full(NULL, 0); return 0; }''',
+-         dependencies: fdt)
++                                    fdt_opt == 'enabled' )
++    if fdt.found()
+       fdt_opt = 'system'
+     elif have_internal
+       fdt_opt = 'internal'
