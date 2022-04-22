@@ -1,0 +1,4 @@
+Faraday Http Cache a Faraday middleware that respects HTTP cache,
+by checking expiration and validation of the stored responses.
+
+WWW: https://github.com/sourcelevel/faraday-http-cache
