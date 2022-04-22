@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	cysignals
-PORTVERSION=	1.11.1
+PORTVERSION=	1.11.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,10 +19,20 @@ LIB_DEPENDS=	libpari.so:math/pari
 USES=		autoreconf:build compiler:c++11-lang gettext localbase python:3.6+
 USE_PYTHON=	cython distutils
 
+TEST_TARGET=	check
+
+.if !defined(WITH_DEBUG)
+LDFLAGS+=	-s
+.endif
+
 OPTIONS_DEFINE=		DOCS
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.6,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_USES=		gmake
 PORTDOCS=		*
+
+pre-configure:
+	${REINPLACE_CMD} -e '/^PYTHON/s|python3|${PYTHON_CMD}|'	\
+		${WRKSRC}/Makefile
 
 do-build-DOCS-on:
 	(cd ${WRKSRC}/docs && ${GMAKE} html)
