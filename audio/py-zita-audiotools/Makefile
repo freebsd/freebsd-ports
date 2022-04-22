@@ -1,5 +1,5 @@
 PORTNAME=	zita-audiotools
-DISTVERSION=	1.0.0
+DISTVERSION=	1.3.0
 CATEGORIES=	audio python
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,6 @@ USE_PYTHON=	autoplist distutils
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}fmoo-audiotools
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/audiotools/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zita_audiotools/*.so
 
 .include <bsd.port.mk>
