@@ -1,8 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	pynac
-PORTVERSION=	0.7.27
-PORTREVISION=	4
+PORTVERSION=	0.7.29
 CATEGORIES=	math python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
 
@@ -31,6 +30,7 @@ GIAC_LIBS=		"-lm"
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 .include <bsd.port.mk>
