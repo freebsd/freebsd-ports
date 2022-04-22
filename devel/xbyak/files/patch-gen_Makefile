@@ -1,0 +1,23 @@
+--- gen/Makefile.orig	2022-04-22 18:01:34 UTC
++++ gen/Makefile
+@@ -24,16 +24,16 @@ $(TARGET): $(BIN)
+ 
+ VER=$(shell head -n 1 ../xbyak/xbyak_mnemonic.h|grep -o "[0-9.]*")
+ ../CMakeLists.txt: $(TARGET)
+-	sed -i -e 's/CXX VERSION [0-9.]*/CXX VERSION $(VER)/' $@
++	gsed -i -e 's/CXX VERSION [0-9.]*/CXX VERSION $(VER)/' $@
+ 
+ ../meson.build: $(TARGET)
+-	sed -i -e "s/version: '[0-9.]*',/version: '$(VER)',/" $@
++	gsed -i -e "s/version: '[0-9.]*',/version: '$(VER)',/" $@
+ 
+ ../readme.md: $(TARGET)
+-	sed -l 2 -i -e "s/Xbyak [0-9.]*/Xbyak $(VER)/" $@
++	gsed -l 2 -i -e "s/Xbyak [0-9.]*/Xbyak $(VER)/" $@
+ 
+ ../readme.txt: $(TARGET)
+-	sed -l 2 -i -e "s/Xbyak [0-9.]*/Xbyak $(VER)/" $@
++	gsed -l 2 -i -e "s/Xbyak [0-9.]*/Xbyak $(VER)/" $@
+ 
+ clean:
+ 	$(RM) $(BIN) $(TARGET)
