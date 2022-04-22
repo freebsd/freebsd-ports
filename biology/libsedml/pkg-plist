@@ -114,4 +114,4 @@ lib/cmake/sedml-static-config.cmake
 lib/libsedml-static.a
 lib/libsedml.so
 lib/libsedml.so.2
-lib/libsedml.so.2.0.30
+lib/libsedml.so.2.0.31
