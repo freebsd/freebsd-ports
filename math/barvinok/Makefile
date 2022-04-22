@@ -24,7 +24,4 @@ USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 
-GIT_URL=	https://repo.or.cz/barvinok.git
-GIT_HASH=	c58bec4907e26b9f91a734cf96c18615733ed565
-
 .include <bsd.port.mk>
