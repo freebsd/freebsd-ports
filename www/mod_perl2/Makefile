@@ -1,7 +1,7 @@
 # Created by: Lars Eggert <larse@isi.edu>
 
 PORTNAME=	mod_perl
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	APACHE/perl
