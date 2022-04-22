@@ -305,9 +305,9 @@ COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/fuzzer|profile\/InstrProfD
 .if ${OSVERSION} < 1300525
 # An unwind.h is require to build.  I think an in-tree one should be used
 # but this seems to work as a workaround...
-COMPILER_RT_BUILD_DEPENDS=	libunwind>0:devel/libunwind
+BUILD_DEPENDS+=	libunwind>0:devel/libunwind
 # Allow unwind.h to be found reliably
-COMPILER_RT_USES=	localbase
+USES+=	localbase
 .endif
 .endif
 
