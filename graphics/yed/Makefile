@@ -1,7 +1,7 @@
 # Created by: Eugene Mychlo <myc@barev.net>
 
 PORTNAME=	yed
-DISTVERSION=	3.21.1
+DISTVERSION=	3.22
 CATEGORIES=	graphics java
 MASTER_SITES=	#
 DISTNAME=	yEd-${DISTVERSION}
@@ -23,13 +23,13 @@ JAVA_VERSION=	1.8+
 
 DESKTOP_ENTRIES="yEd" "${COMMENT}" "" "yed" "Graphics;" false
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-NO_BUILD=	yes
-NO_ARCH=	yes
+WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 DOWNLOAD_URL?=	http://www.yworks.com/downloads\#yEd
 
