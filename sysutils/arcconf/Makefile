@@ -1,10 +1,10 @@
 # Created by: michael@fuckner.net
 
 PORTNAME=	arcconf
-DISTVERSION=	3_07_23971
+DISTVERSION=	4_01_24763
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.adaptec.com/raid/storage_manager/
+MASTER_SITES=	https://download.adaptec.com/raid/storage_manager/
 DISTNAME=	arcconf_v${DISTVERSION}
 
 MAINTAINER=	michael@fuckner.net
@@ -25,12 +25,12 @@ SUB_FILES+=	${PERIODICSCRIPT}
 
 PERIODICSCRIPT=	410.status-aac-raid
 
-DIST_TYPE=	12_x64
-
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 1300078
-RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libncurses.so.8:misc/compat12x
+.if ${OSREL:R} == 12
+DIST_TYPE=	12_x86_64
+.else
+DIST_TYPE=	13_x86_64
 .endif
 
 NO_BUILD=	yes
