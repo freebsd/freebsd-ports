@@ -39,5 +39,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/make.bat
 %%PORTDOCS%%%%DOCSDIR%%/messages.rst
 %%PORTDOCS%%%%DOCSDIR%%/numbers.rst
+%%PORTDOCS%%%%DOCSDIR%%/requirements.txt
 %%PORTDOCS%%%%DOCSDIR%%/setup.rst
 %%PORTDOCS%%%%DOCSDIR%%/support.rst
