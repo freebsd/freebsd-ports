@@ -1420,7 +1420,7 @@ lib/wine/%%WINEARCH%%-unix/qcap.so
 lib/wine/%%WINEARCH%%-unix/secur32.so
 lib/wine/%%WINEARCH%%-unix/win32u.so
 lib/wine/%%WINEARCH%%-unix/winebus.so
-lib/wine/%%WINEARCH%%-unix/wineoss.drv.so
+%%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.drv.so
 lib/wine/%%WINEARCH%%-unix/winevulkan.so
 %%X11%%lib/wine/%%WINEARCH%%-unix/winex11.drv.so
 lib/wine/%%WINEARCH%%-unix/winspool.so
@@ -2301,7 +2301,7 @@ lib/wine/%%WINEARCH%%-windows/winemapi.dll
 lib/wine/%%WINEARCH%%-windows/winemenubuilder.exe
 lib/wine/%%WINEARCH%%-windows/winemine.exe
 lib/wine/%%WINEARCH%%-windows/winemsibuilder.exe
-lib/wine/%%WINEARCH%%-windows/wineoss.drv
+%%OSS%%lib/wine/%%WINEARCH%%-windows/wineoss.drv
 lib/wine/%%WINEARCH%%-windows/winepath.exe
 lib/wine/%%WINEARCH%%-windows/wineps.drv
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/wineps16.drv16
