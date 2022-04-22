@@ -147,7 +147,6 @@ include/isc/hash.h
 include/isc/heap.h
 include/isc/hex.h
 include/isc/hmac.h
-include/isc/hp.h
 include/isc/ht.h
 include/isc/httpd.h
 include/isc/interfaceiter.h
@@ -176,7 +175,6 @@ include/isc/parseint.h
 include/isc/pool.h
 include/isc/portset.h
 include/isc/print.h
-include/isc/queue.h
 include/isc/quota.h
 include/isc/radix.h
 include/isc/random.h
@@ -244,19 +242,19 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/libbind9.so
-lib/libbind9-9.18.1.so
+lib/libbind9-9.18.2.so
 lib/libdns.so
-lib/libdns-9.18.1.so
+lib/libdns-9.18.2.so
 lib/libirs.so
-lib/libirs-9.18.1.so
+lib/libirs-9.18.2.so
 lib/libisc.so
-lib/libisc-9.18.1.so
+lib/libisc-9.18.2.so
 lib/libisccc.so
-lib/libisccc-9.18.1.so
+lib/libisccc-9.18.2.so
 lib/libisccfg.so
-lib/libisccfg-9.18.1.so
+lib/libisccfg-9.18.2.so
 lib/libns.so
-lib/libns-9.18.1.so
+lib/libns-9.18.2.so
 @comment man/man1/arpaname.1.gz
 @comment man/man1/delv.1.gz
 @comment man/man1/dig.1.gz
