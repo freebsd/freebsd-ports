@@ -1,5 +1,5 @@
 PORTNAME=	nats-streaming-server
-PORTVERSION=	0.24.4
+PORTVERSION=	0.24.5
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	net
@@ -18,7 +18,7 @@ GH_TUPLE=	armon:go-metrics:ec5e00d3c878:armon_go_metrics/vendor/github.com/armon
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		go-sql-driver:mysql:v1.6.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:7b82a4e95df4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:3147a52a75dd:golang_crypto/vendor/golang.org/x/crypto \
 		golang:sys:33da011f77ad:golang_sys/vendor/golang.org/x/sys \
 		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \
 		hashicorp:go-hclog:v1.1.0:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
@@ -32,7 +32,7 @@ GH_TUPLE=	armon:go-metrics:ec5e00d3c878:armon_go_metrics/vendor/github.com/armon
 		mattn:go-isatty:v0.0.10:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		nats-io:jwt:442af02fd36a:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:v2.8.0:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats-server:v2.8.1:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
 		nats-io:nats.go:v1.14.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
