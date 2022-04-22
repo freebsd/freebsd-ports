@@ -1,5 +1,6 @@
 bin/foot
 bin/footclient
+@sample etc/xdg/foot/foot.ini.sample
 %%PORTDOCS%%man/man1/foot.1.gz
 %%PORTDOCS%%man/man1/footclient.1.gz
 %%PORTDOCS%%man/man5/foot.ini.5.gz
@@ -14,17 +15,20 @@ share/bash-completion/completions/footclient
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 share/fish/vendor_completions.d/foot.fish
 share/fish/vendor_completions.d/footclient.fish
-%%PORTDOCS%%%%DATADIR%%/foot.ini
 %%DATADIR%%/themes/apprentice
 %%DATADIR%%/themes/derp
 %%DATADIR%%/themes/dracula
 %%DATADIR%%/themes/gruvbox-dark
 %%DATADIR%%/themes/gruvbox-light
 %%DATADIR%%/themes/hacktober
+%%DATADIR%%/themes/jetbrains-darcula
 %%DATADIR%%/themes/kitty
+%%DATADIR%%/themes/material-design
+%%DATADIR%%/themes/nord
 %%DATADIR%%/themes/nordiq
 %%DATADIR%%/themes/paper-color-dark
 %%DATADIR%%/themes/paper-color-light
+%%DATADIR%%/themes/rezza
 %%DATADIR%%/themes/selenized-black
 %%DATADIR%%/themes/selenized-dark
 %%DATADIR%%/themes/selenized-light

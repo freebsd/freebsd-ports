@@ -1,5 +1,5 @@
 PORTNAME=	foot
-DISTVERSION=	1.11.0
+DISTVERSION=	1.12.0
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -60,6 +60,16 @@ PLIST_FILES+=	share/site-terminfo/${PORTNAME:C,^.,&/&,} \
 .else
 MESON_ARGS+=	-Dterminfo=disabled -Ddefault-terminfo=xterm-256color
 .endif
+
+post-patch:
+# Respect PREFIX for system-wide config
+	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
+		${WRKSRC}/config.c \
+		${WRKSRC}/doc/${PORTNAME}.1.scd \
+		${WRKSRC}/doc/${PORTNAME}.ini.5.scd
+# Let @sample handle default files under etc/
+	@${REINPLACE_CMD} -e "/install.*sysconfdir/s/'[^']*/&', rename: &.sample/1" \
+		${WRKSRC}/meson.build
 
 .if !defined(DEFAULT_POST_BUILD)
 post-build-PGO-on:
