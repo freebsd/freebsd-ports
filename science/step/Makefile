@@ -22,7 +22,6 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 USE_QT=		concurrent core dbus declarative gui network opengl printsupport svg \
 		widgets xml \
 		buildtools_build qmake_build
-CXXFLAGS_powerpc64=	-Wno-error=return-type
 CXXFLAGS_powerpc=	-Wno-error=return-type
 CXXFLAGS_powerpcspe=	-Wno-error=return-type
 CXXFLAGS_sparc64=	-Wno-error=return-type
