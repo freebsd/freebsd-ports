@@ -1406,6 +1406,7 @@ share/applications/org.gnome.Evolution.desktop
 %%DATADIR%%/icons/hicolor/scalable/apps/im-msn.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-nov.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/im-yahoo.svg
+%%DATADIR%%/icons/hicolor/scalable/emblems/emblem-new.svg
 %%DATADIR%%/images/confidential-stamp.jpg
 %%DATADIR%%/images/draft-paper.png
 %%DATADIR%%/images/draft-stamp.jpg
