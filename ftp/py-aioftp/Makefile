@@ -1,5 +1,5 @@
 PORTNAME=	aioftp
-PORTVERSION=	0.21.1
+PORTVERSION=	0.21.2
 CATEGORIES=	ftp python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,5 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4-asyncio>=0:devel/py-pytest4-asyncio
 USES=		python:3.7+ pytest:4
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
-# https://github.com/aio-libs/aioftp/issues/152
-PYTEST_IGNORED_TESTS=	test_pasv_connection_pasv_forced_response_address
 
 .include <bsd.port.mk>
