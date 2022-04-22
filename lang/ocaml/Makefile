@@ -6,6 +6,8 @@ PORTVERSION=	4.07.1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ GENTOO \
 		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${_DISTFILES:M*.tar.*}
 PKGNAMESUFFIX=	${SFX}
 
 MAINTAINER=	michipili@gmail.com
@@ -49,28 +51,16 @@ CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" \
 
 OPTIONS_DEFINE=	X11 THREADS DOCS EXAMPLES
 OPTIONS_DEFAULT=X11 THREADS
-CMP_LIB_DESC=	Install compiler libraries
-
-MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
-PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]
-DOCSDISTNAME=	${DISTNAME:C/([[:digit:]]+)\.([[:digit:]]+)\.([[:digit:]]+)/\1.\2/}
 
 CONFLICTS=	metaocaml
 
-.include <bsd.port.options.mk>
+PORTDOCS=	htmlman ${DISTNAME:R}-refman.ps.gz ${DISTNAME:R}-refman.pdf
 
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES:=	${DISTNAME}${EXTRACT_SUFX} \
-		${DOCSDISTNAME}-refman-html.tar.gz:docs \
-		${DOCSDISTNAME}-refman.ps.gz:docs \
-		${DOCSDISTNAME}-refman.pdf:docs
-EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX} \
-		${DOCSDISTNAME}-refman-html.tar.gz
-PLIST_SUB+=	DOC=""
-PORTDOCS=	htmlman ${DOCSDISTNAME}-refman.ps.gz ${DOCSDISTNAME}-refman.pdf
-.else
-PLIST_SUB+=	DOC="@comment "
-.endif
+DOCS_DISTFILES=	${DISTNAME:R}-refman-html.tar.gz:docs \
+		${DISTNAME:R}-refman.ps.gz:docs \
+		${DISTNAME:R}-refman.pdf:docs
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 CONFIGURE_ARGS+=	-as "${AS} ${ASFLAGS} -meabi=5"
@@ -119,16 +109,6 @@ USE_GCC=	yes
 LLD_UNSAFE=	yes
 .endif
 
-post-extract:
-.if ${PORT_OPTIONS:MDOCS}
-	@if ! (cd ${WRKDIR} && \
-	  ${TAR} xf ${_DISTDIR}${DOCSDISTNAME}-refman-html.tar.gz \
-	) \
-	then \
-	  exit 1; \
-	fi;
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '\|MKLIB=|s|ar rc|${AR} rc|' \
@@ -157,8 +137,8 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR} && ${COPYTREE_SHARE} htmlman ${STAGEDIR}${DOCSDIR})
-	${INSTALL_DATA} ${_DISTDIR}${DOCSDISTNAME}-refman.ps.gz ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${_DISTDIR}${DOCSDISTNAME}-refman.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}${DISTNAME:R}-refman.ps.gz ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}${DISTNAME:R}-refman.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 # Spacetime profiling is only available for native code on 64-bit targets
 .if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
