@@ -1,20 +1,20 @@
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-
-DISTVERSION=	22.4.0
+DISTVERSION=	22.4.1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	4a6e36a98c0b.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	533e7ae79ff7.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	c0ecf4c2c725.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	005cbf7b180d.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	428eab9583eb.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	615ae63a9ca6.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	774ab04fbce1.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	762a39a7da08.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	e1d499bc31b5.patch:-p1 # https://github.com/intel/media-driver/pull/819
-PATCHFILES+=	721cc37f1b56.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	dc74b5f2fe82.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	921023462274.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	6de6d1940e88.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	8f3fa352bd79.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	2c68fd4a62fb.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	e850bcb7b6e1.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	22d91bd65702.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	d7f88bd305f8.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	d7280f526022.patch:-p1 # https://github.com/intel/media-driver/pull/819
+PATCHFILES+=	231c06faa4c4.patch:-p1 # https://github.com/intel/media-driver/pull/819
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VAAPI driver for Intel HD 5000 (Gen8) or newer

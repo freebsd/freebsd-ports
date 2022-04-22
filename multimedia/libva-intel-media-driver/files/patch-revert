@@ -6,7 +6,7 @@ cmrtlib/linux/hardware/drm_device.h:268:19: error: use of undeclared identifier 
     return maj == DRM_MAJOR;
                   ^
 
---- cmrtlib/linux/hardware/drm_device.h.orig	2022-01-12 07:51:21 UTC
+--- cmrtlib/linux/hardware/drm_device.h.orig	2022-05-08 00:14:20 UTC
 +++ cmrtlib/linux/hardware/drm_device.h
 @@ -53,7 +53,6 @@
  #endif
@@ -162,7 +162,7 @@ cmrtlib/linux/hardware/drm_device.h:268:19: error: use of undeclared identifier 
  
  static int32_t GetRendererFileDescriptor(char * drm_node)
  {
---- media_driver/linux/common/os/i915/include/xf86drm.h.orig	2022-01-12 07:51:21 UTC
+--- media_driver/linux/common/os/i915/include/xf86drm.h.orig	2022-04-22 04:04:55 UTC
 +++ media_driver/linux/common/os/i915/include/xf86drm.h
 @@ -713,6 +713,39 @@ extern char *drmGetRenderDeviceNameFromFd(int fd);
  
@@ -204,19 +204,20 @@ cmrtlib/linux/hardware/drm_device.h:268:19: error: use of undeclared identifier 
  #if defined(__cplusplus)
  }
  #endif
---- media_driver/linux/common/os/media_srcs.cmake.orig	2022-01-12 07:51:21 UTC
+--- media_driver/linux/common/os/media_srcs.cmake.orig	2022-04-22 04:04:55 UTC
 +++ media_driver/linux/common/os/media_srcs.cmake
-@@ -24,9 +24,6 @@ if(ENABLE_PRODUCTION_KMD)
+@@ -27,10 +27,6 @@ endif()
      media_include_subdirectory(i915_production)
  endif()
  
 -# This is to include drm_device.h in cmrtlib, no cpp file needed.
 -include_directories(${BS_DIR_MEDIA}/cmrtlib/linux/hardware)
 -
+-
  set(TMP_SOURCES_
      ${CMAKE_CURRENT_LIST_DIR}/hwinfo_linux.c
      ${CMAKE_CURRENT_LIST_DIR}/mos_context_specific.cpp
---- media_driver/linux/common/os/mos_interface.cpp.orig	2022-01-12 07:51:21 UTC
+--- media_driver/linux/common/os/mos_interface.cpp.orig	2022-04-22 04:04:55 UTC
 +++ media_driver/linux/common/os/mos_interface.cpp
 @@ -34,7 +34,6 @@
  #include "mos_os_virtualengine_scalability_specific_next.h"
@@ -226,9 +227,9 @@ cmrtlib/linux/hardware/drm_device.h:268:19: error: use of undeclared identifier 
  
  #if (_DEBUG || _RELEASE_INTERNAL)
  #include <stdlib.h>   //for simulate random OS API failure
---- media_driver/media_top_cmake.cmake.orig	2022-01-12 07:51:21 UTC
+--- media_driver/media_top_cmake.cmake.orig	2022-05-08 00:14:20 UTC
 +++ media_driver/media_top_cmake.cmake
-@@ -145,7 +145,7 @@ if (NOT DEFINED INCLUDED_LIBS OR "${INCLUDED_LIBS}" ST
+@@ -198,7 +198,7 @@ if (NOT DEFINED INCLUDED_LIBS OR "${INCLUDED_LIBS}" ST
      endif()
  
      target_compile_options( ${LIB_NAME} PUBLIC ${LIBGMM_CFLAGS_OTHER})
