@@ -1,0 +1,4 @@
+sniffglue is a network sniffer written in rust. Network packets are parsed
+concurrently using a thread pool to utilize all cpu cores.
+
+WWW: https://github.com/kpcyrd/sniffglue

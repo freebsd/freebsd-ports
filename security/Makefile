@@ -1167,6 +1167,7 @@
     SUBDIR += silktools
     SUBDIR += sks
     SUBDIR += smurflog
+    SUBDIR += sniffglue
     SUBDIR += snoopy
     SUBDIR += snort
     SUBDIR += snort-rep
