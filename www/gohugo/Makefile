@@ -1,6 +1,6 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.96.0
+DISTVERSION=	0.97.3
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -30,6 +30,7 @@ GH_TUPLE=	\
 		bep:godartsass:v0.14.0:bep_godartsass/vendor/github.com/bep/godartsass \
 		bep:golibsass:v1.0.0:bep_golibsass/vendor/github.com/bep/golibsass \
 		bep:gowebp:v0.1.0:bep_gowebp/vendor/github.com/bep/gowebp \
+		bep:overlayfs:v0.6.0:bep_overlayfs/vendor/github.com/bep/overlayfs \
 		bep:tmc:v0.5.1:bep_tmc/vendor/github.com/bep/tmc \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		clbanning:mxj:v2.5.5:clbanning_mxj_v2/vendor/github.com/clbanning/mxj/v2 \
@@ -38,20 +39,20 @@ GH_TUPLE=	\
 		disintegration:gift:v1.2.1:disintegration_gift/vendor/github.com/disintegration/gift \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		evanw:esbuild:v0.14.25:evanw_esbuild/vendor/github.com/evanw/esbuild \
+		evanw:esbuild:v0.14.36:evanw_esbuild/vendor/github.com/evanw/esbuild \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
-		frankban:quicktest:v1.14.2:frankban_quicktest/vendor/github.com/frankban/quicktest \
+		frankban:quicktest:v1.14.3:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		fsnotify:fsnotify:v1.5.1:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		getkin:kin-openapi:v0.93.0:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
+		getkin:kin-openapi:v0.94.0:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-openapi:jsonpointer:v0.19.5:go_openapi_jsonpointer/vendor/github.com/go-openapi/jsonpointer \
 		go-openapi:swag:v0.19.5:go_openapi_swag/vendor/github.com/go-openapi/swag \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gobuffalo:flect:v0.2.4:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
+		gobuffalo:flect:v0.2.5:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gohugoio:go-i18n:4c28c89f8013:gohugoio_go_i18n_v2/vendor/github.com/gohugoio/go-i18n \
 		gohugoio:locales:v0.14.0:gohugoio_locales/vendor/github.com/gohugoio/locales \
-		gohugoio:localescompressed:v0.15.0:gohugoio_localescompressed/vendor/github.com/gohugoio/localescompressed \
+		gohugoio:localescompressed:v1.0.1:gohugoio_localescompressed/vendor/github.com/gohugoio/localescompressed \
 		gohugoio:testmodBuilder:c56af20f2e95:gohugoio_testmodbuilder_mods/vendor/github.com/gohugoio/testmodBuilder \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
@@ -86,7 +87,7 @@ GH_TUPLE=	\
 		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
 		kyokomi:emoji:v2.2.9:kyokomi_emoji_v2/vendor/github.com/kyokomi/emoji/v2 \
-		magefile:mage:v1.12.1:magefile_mage/vendor/github.com/magefile/mage \
+		magefile:mage:v1.13.0:magefile_mage/vendor/github.com/magefile/mage \
 		mailru:easyjson:b2ccc519800e:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
 		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
@@ -97,22 +98,22 @@ GH_TUPLE=	\
 		nfnt:resize:83c6a9932646:nfnt_resize/vendor/github.com/nfnt/resize \
 		niklasfasching:go-org:v1.6.2:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
-		pelletier:go-toml:v2.0.0-beta.6:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
+		pelletier:go-toml:2377ac4bc04c:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rogpeppe:go-internal:v1.8.1:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		russross:blackfriday:v1.6.0:russross_blackfriday/vendor/github.com/russross/blackfriday \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		rwcarlsen:goexif:9e8deecbddbd:rwcarlsen_goexif/vendor/github.com/rwcarlsen/goexif \
-		sanity-io:litter:v1.5.2:sanity_io_litter/vendor/github.com/sanity-io/litter \
-		spf13:afero:v1.8.1:spf13_afero/vendor/github.com/spf13/afero \
+		sanity-io:litter:v1.5.4:sanity_io_litter/vendor/github.com/sanity-io/litter \
+		spf13:afero:v1.8.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.4.1:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.4.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:fsync:v0.9.0:spf13_fsync/vendor/github.com/spf13/fsync \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		tdewolff:minify:v2.10.0:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
-		tdewolff:parse:v2.5.27:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
+		tdewolff:minify:v2.11.1:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
+		tdewolff:parse:v2.5.28:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		yuin:goldmark:v1.4.11:yuin_goldmark/vendor/github.com/yuin/goldmark
 
@@ -158,7 +159,7 @@ PORTMANS=	hugo-completion-bash.1 hugo-completion-fish.1 hugo-completion-powershe
 
 SOURCE_DATE_EPOCH_CMD=	date -r $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e 's/[^0-9]//g') '+%FT%TZ%z'
 # COMMIT_ID should be the first 8 positions of the commit hash, characters should be UPPERCASE
-COMMIT_ID=		2FD4A7D3
+COMMIT_ID=		078053A
 
 do-build-MANPAGES-on:
 	@cd ${GO_WRKSRC} && ${GO_WRKDIR_BIN}/${PORTNAME} gen man --dir man/man1/
