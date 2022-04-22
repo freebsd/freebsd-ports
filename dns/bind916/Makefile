@@ -2,45 +2,29 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
-.if defined(BIND_TOOLS_SLAVE)
-# dns/bind-tools here
-PORTREVISION=	1
-.else
-# dns/bind916 here
-PORTREVISION=	1
-.endif
+PORTREVISION=	0
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
-.if defined(BIND_TOOLS_SLAVE)
-PKGNAMESUFFIX=	-tools
-.else
 PKGNAMESUFFIX=	916
-.endif
 DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
-.if defined(BIND_TOOLS_SLAVE)
-COMMENT=	Command line tools from BIND: delv, dig, host, nslookup...
-.else
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
-.endif
 
 # Uncomment when bind920 comes of age.
 # DEPRECATED=	End of life, please migrate to a newer version of BIND9
 # EXPIRATION_DATE=	2023-12-31
 
 LICENSE=	MPL20
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libuv.so:devel/libuv \
 		libxml2.so:textproc/libxml2
-.if !defined(BIND_TOOLS_SLAVE)
 RUN_DEPENDS=	bind-tools>0:dns/bind-tools
-.endif
 
 USES=		compiler:c11 cpe libedit pkgconfig ssl tar:xz
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.16.27
+ISCVERSION=	9.16.28
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -53,30 +37,25 @@ CONFIGURE_ARGS=	--disable-linux-caps \
 		--localstatedir=/var \
 		--sysconfdir=${ETCDIR} \
 		--with-dlopen=yes \
+		--without-python \
 		--with-libxml2 \
 		--with-openssl=${OPENSSLBASE} \
 		--with-readline="-L${LOCALBASE}/lib -ledit"
 ETCDIR=		${PREFIX}/etc/namedb
 
-.if defined(BIND_TOOLS_SLAVE)
-CONFIGURE_ARGS+=	--disable-shared
-EXTRA_PATCHES=		${PATCHDIR}/extrapatch-bind-tools
-.else
 USE_RC_SUBR=		named
 SUB_FILES=		named.conf pkg-message
-EXTRA_PATCHES=		${PATCHDIR}/extrapatch-no-bind-tools
 
 PORTDOCS=	*
 
 CONFLICTS=	bind9[0-9][0-9] bind9-devel
-.endif	# BIND_TOOLS_SLAVE
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFAULT=	DLZ_FILESYSTEM GSSAPI_NONE IDN JSON LMDB PYTHON \
+OPTIONS_DEFAULT=	DLZ_FILESYSTEM GSSAPI_NONE IDN JSON LMDB \
 			TCP_FASTOPEN MANPAGES DNSTAP
 OPTIONS_DEFINE=		DNSTAP DOCS FIXED_RRSET GEOIP IDN JSON LARGE_FILE LMDB \
-			OVERRIDECACHE PORTREVISION PYTHON QUERYTRACE \
+			OVERRIDECACHE PORTREVISION QUERYTRACE \
 			START_LATE TCP_FASTOPEN MANPAGES
 
 OPTIONS_RADIO=		CRYPTO
@@ -88,14 +67,6 @@ OPTIONS_GROUP_DLZ=	DLZ_BDB DLZ_FILESYSTEM DLZ_LDAP DLZ_MYSQL \
 
 OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
-
-.if defined(BIND_TOOLS_SLAVE)
-OPTIONS_EXCLUDE=	${OPTIONS_GROUP_DLZ} DNSTAP DOCS GEOIP LMDB \
-			OVERRIDECACHE PORTREVISION QUERYTRACE START_LATE \
-			TCP_FASTOPEN
-.else
-OPTIONS_EXCLUDE=	PYTHON
-.endif	# BIND_TOOLS_SLAVE
 
 OPTIONS_SUB=	yes
 
@@ -118,7 +89,6 @@ LMDB_DESC=		Use LMDB for zone management
 OVERRIDECACHE_DESC=	Use the override-cache patch
 NATIVE_PKCS11_DESC=	Use PKCS\#11 native API (**READ HELP**)
 PORTREVISION_DESC=	Show PORTREVISION in the version string
-PYTHON_DESC=		Build with Python utilities
 QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 START_LATE_DESC=	Start BIND late in the boot process (see help)
 TCP_FASTOPEN_DESC=	RFC 7413 support
@@ -188,11 +158,6 @@ OVERRIDECACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 
 NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
 
-PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply@${PY_FLAVOR}
-PYTHON_CONFIGURE_WITH=	python=${PYTHON_CMD}
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply@${PY_FLAVOR}
-PYTHON_USES=		python
-
 QUERYTRACE_CONFIGURE_ENABLE=	querytrace
 
 START_LATE_SUB_LIST=		NAMED_BEFORE="LOGIN" \
@@ -231,7 +196,6 @@ post-patch:
 		${WRKSRC}/doc/man/${FILE}in
 .endfor
 
-.if !defined(BIND_TOOLS_SLAVE)
 .  if ${PORTREVISION:N0}
 post-patch-PORTREVISION-on:
 	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
@@ -262,14 +226,5 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/CHANGES* ${WRKSRC}/HISTORY.md \
 		${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc/arm/_build/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/arm
-.else
-
-post-install-MANPAGES-on:
-	@(cd ${WRKSRC}/doc/man && ${SETENV} ${MAKE_ENV} ${FAKEROOT} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-
-# Can't use USE_PYTHON=autoplist
-post-install-PYTHON-on:
-	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -type f | ${SED} -e 's|${STAGEDIR}||' >> ${TMPPLIST}
-.endif	# BIND_TOOLS_SLAVE
 
 .include <bsd.port.post.mk>
