@@ -21,9 +21,4 @@ GNU_CONFIGURE=	yes
 
 NO_ARCH=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|g ; \
-		s|^pkgconfigdir.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig| ' \
-		${WRKSRC}/Makefile.am
-
 .include <bsd.port.mk>
