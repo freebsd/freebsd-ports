@@ -930,6 +930,8 @@ lib/calibre/calibre/gui2/search_restriction_mixin.py
 lib/calibre/calibre/gui2/shortcuts.py
 lib/calibre/calibre/gui2/splash_screen.py
 lib/calibre/calibre/gui2/store/__init__.py
+lib/calibre/calibre/gui2/store/amazon_base.py
+lib/calibre/calibre/gui2/store/amazon_live.py
 lib/calibre/calibre/gui2/store/basic_config.py
 lib/calibre/calibre/gui2/store/basic_config_widget_ui.py
 lib/calibre/calibre/gui2/store/config/__init__.py
@@ -1184,6 +1186,7 @@ lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/rpdb.py
 lib/calibre/calibre/scraper/__init__.py
 lib/calibre/calibre/scraper/simple.py
+lib/calibre/calibre/scraper/simple_backend.py
 lib/calibre/calibre/spell/__init__.py
 lib/calibre/calibre/spell/break_iterator.py
 lib/calibre/calibre/spell/dictionary.py
@@ -1799,6 +1802,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/mozilla-ca-certs.pem
 %%DATADIR%%/pdf-mathjax-loader.js
 %%DATADIR%%/pdf-preprint.js
+%%DATADIR%%/pin-template.svg
 %%DATADIR%%/quick_start/deu.epub
 %%DATADIR%%/quick_start/eng.epub
 %%DATADIR%%/quick_start/fra.epub
