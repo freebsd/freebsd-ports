@@ -1,7 +1,7 @@
 # Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
 
 PORTNAME=	drool
-DISTVERSION=	1.1.0
+DISTVERSION=	2.0.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/drool/
 
@@ -11,14 +11,12 @@ COMMENT=	Replay DNS traffic from packet capture files
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libev.so:devel/libev
+MY_DEPENDS=	dnsjit:dns/dnsjit
+BUILD_DEPENDS=	${MY_DEPENDS}
+RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		pkgconfig
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-CPPFLAGS+=	$$(pkg-config libev --cflags-only-I)
-LDFLAGS+=	$$(pkg-config libev --libs-only-L)
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DATADIR
 
 .include <bsd.port.mk>
