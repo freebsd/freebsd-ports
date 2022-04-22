@@ -48,7 +48,7 @@ VST3_BUILD_DEPENDS=	vst3sdk>0:audio/vst3sdk
 VST3_CXXFLAGS=		-DJUCE_CUSTOM_VST3_SDK=1 -fPIC
 VST3_PLIST_FILES=	lib/vst3/Dexed.so
 
-PORTSCOUT=	skipv:Nightly
+PORTSCOUT=	skipv:nightly
 
 post-patch-VST3-off:
 	@${REINPLACE_CMD} -e 's/FORMATS AU VST3 Standalone/FORMATS AU Standalone/' ${WRKSRC}/Source/CMakeLists.txt
