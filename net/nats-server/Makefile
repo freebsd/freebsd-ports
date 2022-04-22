@@ -1,5 +1,5 @@
 PORTNAME=	nats-server
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	net
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	nats-io
-GH_TUPLE=	golang:crypto:5e0467b6c7ce:golang_crypto/vendor/golang.org/x/crypto \
+GH_TUPLE=	golang:crypto:3147a52a75dd:golang_crypto/vendor/golang.org/x/crypto \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:5a964db01320:golang_sys/vendor/golang.org/x/sys \
 		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \
