@@ -27,6 +27,8 @@ CONFLICTS_INSTALL=	py*-alembic14
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^1\.6
+
 do-test:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/tox -e ${PY_FLAVOR}
 
