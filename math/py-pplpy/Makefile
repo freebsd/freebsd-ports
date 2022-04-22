@@ -2,7 +2,7 @@
 
 PORTNAME=	pplpy
 PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,14 +14,14 @@ LICENSE=	GPLv3
 
 BROKEN_aarch64=	runaway build, 7200 seconds with no output
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2-devel>0:math/py-gmpy2-devel@${PY_FLAVOR}	\
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 LIB_DEPENDS=	libgmp.so:math/gmp	\
 		libmpfr.so:math/mpfr	\
 		libmpc.so:math/mpc	\
 		libpari.so:math/pari	\
 		libppl.so:devel/ppl
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2-devel>0:math/py-gmpy2-devel@${PY_FLAVOR}	\
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
