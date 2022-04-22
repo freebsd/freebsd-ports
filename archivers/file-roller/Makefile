@@ -1,8 +1,7 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
 
 PORTNAME=	file-roller
-PORTVERSION=	3.40.0
-PORTREVISION=	3
+PORTVERSION=	3.42.0
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
