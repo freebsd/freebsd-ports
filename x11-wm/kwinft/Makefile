@@ -1,11 +1,7 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
-DISTVERSION=	5.24.0
+DISTVERSION=	5.24.1
 CATEGORIES=	x11-wm
-
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	1c81c5f3ef9a.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/163
-PATCHFILES+=	a6d7bb9acfef.patch:-p1 # https://gitlab.com/kwinft/kwinft/-/merge_requests/164
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland compositor and X11 window manager
@@ -43,7 +39,7 @@ USE_QT=		qmake_build buildtools_build core dbus declarative gui \
 		multimedia_run quickcontrols2_run widgets x11extras
 USE_XORG=	pixman x11 xcb xi
 SHEBANG_FILES=	kconf_update/*.py kconf_update/*.pl
-GL_COMMIT=	8d1c576db6061d963734b013cd10460155d73f6d
+GL_COMMIT=	022f157ce4bd14fbe069ab6fe41647b70d20f004
 PLIST_SUB=	VERSION=${PORTVERSION}
 LDFLAGS+=	-Wl,--as-needed # GL, ICE/SM/Xext, epoll-shim, glib, intl, Qt5*, KF5*
 
