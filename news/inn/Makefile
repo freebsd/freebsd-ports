@@ -43,9 +43,11 @@ UUCP_RNEWS_DESC=	Install rnews suitable for use with net/freebsd-uucp
 SETGID_INEWS_DESC=	Enable posting articles locally for all users
 
 .if ${BRANCH:U} == 2.7
-OPTIONS_DEFINE+=	SQLITE
-OPTIONS_DEFAULT+=	SQLITE
-SQLITE_DESC=		Enable SQLite (for ovsqlite overview method)
+OPTIONS_DEFINE+=		BLACKLISTD SQLITE
+OPTIONS_DEFAULT+=		BLACKLISTD SQLITE
+BLACKLISTD_DESC=		Enable blacklistd support
+BLACKLISTD_CONFIGURE_WITH=	blacklist
+SQLITE_DESC=			Enable SQLite (for ovsqlite overview method)
 
 PLIST_SUB+=		SNAPSHOT=""
 .else
