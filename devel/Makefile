@@ -4378,6 +4378,7 @@
     SUBDIR += py-cog
     SUBDIR += py-collective.monkeypatcher
     SUBDIR += py-colorama
+    SUBDIR += py-colored-traceback
     SUBDIR += py-coloredlogs
     SUBDIR += py-colorful
     SUBDIR += py-colorlog
