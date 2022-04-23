@@ -1,10 +1,10 @@
---- src/media/media.c.orig	2014-09-14 19:16:31 UTC
+--- src/media/media.c.orig	2022-04-16 21:14:04 UTC
 +++ src/media/media.c
 @@ -17,6 +17,7 @@
- #include "compat.h"
+ #include "compat/compat.h"
  
  #include <string.h>
 +#include <sys/types.h>
  
- #include "util.h"
- #include "tmpdir.h"
+ #include "common/util.h"
+ #include "common/tmpdir.h"
