@@ -28,8 +28,6 @@ post-patch:
 		-e 's/$$(INSTALLBINDIR)/$$(DESTDIR)$$(INSTALLBINDIR)/g' \
 		-e 's/$$(STUBLIBDIR)/$$(DESTDIR)$$(STUBLIBDIR)/g' \
 		-e 's/mkdir /& -p /g'
-	@${REINPLACE_CMD} -e 's|%%SCRIPTBASE%%|${PREFIX}/lib/ocaml/labltk/|g' \
-		${WRKSRC}/lib/Makefile
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ocaml/stublibs
