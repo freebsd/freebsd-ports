@@ -1,0 +1,7 @@
+TIMESTAMP = 1650640815
+SHA256 (solverstack-pastix-071d5ae165c744ec3e62f5bdd246b12f8fa90662_GL0.tar.gz) = c712f41d0dc2881fe9f8d91908b7d7e8a30d496fb60680992dd01a0cf06b288c
+SIZE (solverstack-pastix-071d5ae165c744ec3e62f5bdd246b12f8fa90662_GL0.tar.gz) = 1116421
+SHA256 (solverstack-spm-ebbd88ff3808c50e04119d0b42faf055c6eada2a_GL0.tar.gz) = bf744fc2dca9691f03a25585d7f304d230401a50649d93b9ef2d95b432bf44a6
+SIZE (solverstack-spm-ebbd88ff3808c50e04119d0b42faf055c6eada2a_GL0.tar.gz) = 698306
+SHA256 (solverstack-morse_cmake-31cd2bbb0d76f2b9fd83011d8f079d97540b0ba8_GL0.tar.gz) = b1bc4e97dece9260667409fa238798caf738e30a655a3c53ddf7a94163240329
+SIZE (solverstack-morse_cmake-31cd2bbb0d76f2b9fd83011d8f079d97540b0ba8_GL0.tar.gz) = 77602
