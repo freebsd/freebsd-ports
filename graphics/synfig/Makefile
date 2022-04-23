@@ -1,9 +1,8 @@
 # Created by: Yinghong.Liu <relaxbsd@gmail.com>
 
 PORTNAME=	synfig
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	19
 CATEGORIES=	graphics devel multimedia
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -21,6 +20,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libfftw3.so:math/fftw3 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libltdl.so:devel/libltdl \
 		libmng.so:graphics/libmng \
 		libpng.so:graphics/png \
