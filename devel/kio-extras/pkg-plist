@@ -47,8 +47,8 @@ share/kio_bookmarks/kio_bookmarks.css
 share/kio_docfilter/kio_docfilter.css
 share/kio_info/kde-info2html
 share/kio_info/kde-info2html.conf
-share/konqueror/dirtree/remote/mtp-network.desktop
-share/konqueror/dirtree/remote/smb-network.desktop
+%%MTP%%share/konqueror/dirtree/remote/mtp-network.desktop
+%%SAMBA%%share/konqueror/dirtree/remote/smb-network.desktop
 share/kservices5/directorythumbnail.desktop
 share/kservicetypes5/thumbcreator.desktop
 share/locale/ar/LC_MESSAGES/kfileaudiopreview5.mo
@@ -809,7 +809,7 @@ share/locale/zh_TW/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_sftp.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_smb.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_thumbnail.mo
-share/mime/packages/org.kde.kio.smb.xml
+%%SAMBA%%share/mime/packages/org.kde.kio.smb.xml
 share/qlogging-categories5/kio-extras.categories
 share/qlogging-categories5/kio-extras.renamecategories
 %%MTP%%share/remoteview/mtp-network.desktop
