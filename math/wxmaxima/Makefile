@@ -5,7 +5,7 @@ PORTVERSION=	22.04.0
 DISTVERSIONPREFIX=	Version-
 CATEGORIES=	math
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	WxWidgets GUI for the computer algebra system maxima
 
 LICENSE=	GPLv2
@@ -23,10 +23,10 @@ WX_CONF_ARGS=	absolute
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
 
-OPTIONS_DEFINE=	NLS DOCS
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
+NLS_USES=		gettext
 NLS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-CMakeLists.txt
 
 .include <bsd.port.mk>
