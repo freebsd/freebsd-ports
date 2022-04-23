@@ -15,14 +15,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
-		libnotify.so:devel/libnotify
+		libnotify.so:devel/libnotify \
+		libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	gtar:archivers/gtar
 
 PORTSCOUT=	limitw:1,even
 
 USES=		cpe desktop-file-utils gettext gnome libarchive localbase \
 		meson pkgconfig python:3.5+,build tar:xz
-USE_GNOME=	cairo gtk30
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dpackagekit=false
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
