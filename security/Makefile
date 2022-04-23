@@ -959,6 +959,7 @@
     SUBDIR += py-pywinrm
     SUBDIR += py-requests-credssp
     SUBDIR += py-requests-kerberos
+    SUBDIR += py-ropgadget
     SUBDIR += py-ropper
     SUBDIR += py-rsa
     SUBDIR += py-safe
