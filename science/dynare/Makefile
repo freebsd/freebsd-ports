@@ -1,6 +1,5 @@
 PORTNAME=	dynare
-DISTVERSION=	5.0
-PORTREVISION=	1
+DISTVERSION=	5.1
 CATEGORIES=	science # economics
 MASTER_SITES=	https://www.dynare.org/release/source/
 
@@ -30,6 +29,8 @@ USE_GCC=	yes # clang-11 fails: error: reference to local binding 'ii1' declared 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-matlab \
 		--disable-doc
+
+FCFLAGS+=	-fPIC # required because configure tests with -shared
 
 SUB_FILES=	pkg-message
 
