@@ -31,12 +31,15 @@ include/spdlog/details/tcp_client-windows.h
 include/spdlog/details/tcp_client.h
 include/spdlog/details/thread_pool-inl.h
 include/spdlog/details/thread_pool.h
+include/spdlog/details/udp_client-windows.h
+include/spdlog/details/udp_client.h
 include/spdlog/details/windows_include.h
 include/spdlog/fmt/bin_to_hex.h
 include/spdlog/fmt/chrono.h
 include/spdlog/fmt/compile.h
 include/spdlog/fmt/fmt.h
 include/spdlog/fmt/ostr.h
+include/spdlog/fmt/ranges.h
 include/spdlog/fmt/xchar.h
 include/spdlog/formatter.h
 include/spdlog/fwd.h
@@ -72,6 +75,7 @@ include/spdlog/sinks/stdout_sinks.h
 include/spdlog/sinks/syslog_sink.h
 include/spdlog/sinks/systemd_sink.h
 include/spdlog/sinks/tcp_sink.h
+include/spdlog/sinks/udp_sink.h
 include/spdlog/sinks/wincolor_sink-inl.h
 include/spdlog/sinks/wincolor_sink.h
 include/spdlog/sinks/win_eventlog_sink.h
