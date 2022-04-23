@@ -921,6 +921,7 @@
     SUBDIR += py-pgpy
     SUBDIR += py-plaso
     SUBDIR += py-potr
+    SUBDIR += py-pwntools
     SUBDIR += py-pyaes
     SUBDIR += py-pyaff4
     SUBDIR += py-pyaxo
