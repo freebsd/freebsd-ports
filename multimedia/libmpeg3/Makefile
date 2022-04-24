@@ -12,6 +12,9 @@ COMMENT=	Advanced editing and manipulation of MPEG streams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	liba52.so:audio/liba52
 
 USES=		alias gmake tar:bzip2
