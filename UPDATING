@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220424:
+  AFFECTS: users of emulators/qemu
+  AUTHOR: bofh@FreeBSD.org
+
+  emulators/qemu has been updated to 7.0.0. Previous 6.2.X branch has
+  been repocopied to emulators/qemu6. If someone wants to stick with 6.2.X
+  branch please use one of the following command:
+
+  # pkg install qemu6/qemu6-nox11(based on flavor used)
+    or
+  # portmaster -o emulators/qemu6 emulators/qemu
+    or
+  # portupgrade -o emulators/qemu6 emulators/qemu
+
 20220421:
   AFFECTS: users of lang/ruby27
   AUTHOR: yasu@FreeBSD.org
