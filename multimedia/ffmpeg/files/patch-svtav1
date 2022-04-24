@@ -9,6 +9,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/4e47ebf38b97
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/50bc87263576
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/d794b36a7788
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/51c0b9e829be
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/e3c4442b249a
 
 --- configure.orig	2021-10-24 20:47:11 UTC
 +++ configure
@@ -102,12 +103,14 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/51c0b9e829be
  } SvtContext;
  
  static const struct {
-@@ -151,7 +154,62 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
+@@ -151,49 +154,62 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
  {
      SvtContext *svt_enc = avctx->priv_data;
      const AVPixFmtDescriptor *desc;
 +    AVDictionaryEntry *en = NULL;
  
+-    param->source_width     = avctx->width;
+-    param->source_height    = avctx->height;
 +    // Update param from options
 +#if FF_API_SVTAV1_OPTS
 +    param->hierarchical_levels      = svt_enc->hierarchical_level;
@@ -115,11 +118,22 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/51c0b9e829be
 +    param->scene_change_detection   = svt_enc->scd;
 +    param->tile_columns             = svt_enc->tile_columns;
 +    param->tile_rows                = svt_enc->tile_rows;
-+
+ 
+-    desc = av_pix_fmt_desc_get(avctx->pix_fmt);
+-    param->encoder_bit_depth = desc->comp[0].depth;
 +    if (svt_enc->la_depth >= 0)
 +        param->look_ahead_distance  = svt_enc->la_depth;
 +#endif
-+
+ 
+-    if (desc->log2_chroma_w == 1 && desc->log2_chroma_h == 1)
+-        param->encoder_color_format   = EB_YUV420;
+-    else if (desc->log2_chroma_w == 1 && desc->log2_chroma_h == 0)
+-        param->encoder_color_format   = EB_YUV422;
+-    else if (!desc->log2_chroma_w && !desc->log2_chroma_h)
+-        param->encoder_color_format   = EB_YUV444;
+-    else {
+-        av_log(avctx, AV_LOG_ERROR , "Unsupported pixel format\n");
+-        return AVERROR(EINVAL);
 +    if (svt_enc->enc_mode >= 0)
 +        param->enc_mode             = svt_enc->enc_mode;
 +
@@ -129,10 +143,13 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/51c0b9e829be
 +            param->rate_control_mode = 1;
 +        else
 +            param->rate_control_mode = 2;
-+    }
++
++        param->max_qp_allowed       = avctx->qmax;
++        param->min_qp_allowed       = avctx->qmin;
+     }
 +    param->max_bit_rate             = avctx->rc_max_rate;
 +    param->vbv_bufsize              = avctx->rc_buffer_size;
-+
+ 
 +    if (svt_enc->crf > 0) {
 +        param->qp                   = svt_enc->crf;
 +        param->rate_control_mode    = 0;
@@ -142,33 +159,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/51c0b9e829be
 +        param->enable_adaptive_quantization = 0;
 +    }
 +
-+#if SVT_AV1_CHECK_VERSION(0, 9, 1)
-+    while ((en = av_dict_get(svt_enc->svtav1_opts, "", en, AV_DICT_IGNORE_SUFFIX))) {
-+        EbErrorType ret = svt_av1_enc_parse_parameter(param, en->key, en->value);
-+        if (ret != EB_ErrorNone) {
-+            int level = (avctx->err_recognition & AV_EF_EXPLODE) ? AV_LOG_ERROR : AV_LOG_WARNING;
-+            av_log(avctx, level, "Error parsing option %s: %s.\n", en->key, en->value);
-+            if (avctx->err_recognition & AV_EF_EXPLODE)
-+                return AVERROR(EINVAL);
-+        }
-+    }
-+#else
-+    if ((en = av_dict_get(svt_enc->svtav1_opts, "", NULL, AV_DICT_IGNORE_SUFFIX))) {
-+        int level = (avctx->err_recognition & AV_EF_EXPLODE) ? AV_LOG_ERROR : AV_LOG_WARNING;
-+        av_log(avctx, level, "svt-params needs libavcodec to be compiled with SVT-AV1 "
-+                             "headers >= 0.9.1.\n");
-+        if (avctx->err_recognition & AV_EF_EXPLODE)
-+            return AVERROR(ENOSYS);
-+    }
-+#endif
-+
-     param->source_width     = avctx->width;
-     param->source_height    = avctx->height;
- 
-@@ -169,6 +227,16 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
-         return AVERROR(EINVAL);
-     }
- 
++    desc = av_pix_fmt_desc_get(avctx->pix_fmt);
 +    param->color_primaries          = avctx->color_primaries;
 +    param->matrix_coefficients      = (desc->flags & AV_PIX_FMT_FLAG_RGB) ?
 +                                      AVCOL_SPC_RGB : avctx->colorspace;
@@ -182,10 +173,18 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/51c0b9e829be
      if (avctx->profile != FF_PROFILE_UNKNOWN)
          param->profile = avctx->profile;
  
-@@ -184,16 +252,6 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
-         param->profile = FF_PROFILE_AV1_HIGH;
-     }
+     if (avctx->level != FF_LEVEL_UNKNOWN)
+         param->level = avctx->level;
  
+-    if ((param->encoder_color_format == EB_YUV422 || param->encoder_bit_depth > 10)
+-         && param->profile != FF_PROFILE_AV1_PROFESSIONAL ) {
+-        av_log(avctx, AV_LOG_WARNING, "Forcing Professional profile\n");
+-        param->profile = FF_PROFILE_AV1_PROFESSIONAL;
+-    } else if (param->encoder_color_format == EB_YUV444 && param->profile != FF_PROFILE_AV1_HIGH) {
+-        av_log(avctx, AV_LOG_WARNING, "Forcing High profile\n");
+-        param->profile = FF_PROFILE_AV1_HIGH;
+-    }
+-
 -    // Update param from options
 -    param->hierarchical_levels      = svt_enc->hierarchical_level;
 -    param->enc_mode                 = svt_enc->enc_mode;
@@ -199,31 +198,72 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/51c0b9e829be
      if (avctx->gop_size > 0)
          param->intra_period_length  = avctx->gop_size - 1;
  
-@@ -205,19 +263,15 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
+@@ -205,19 +221,56 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
          param->frame_rate_denominator = avctx->time_base.num * avctx->ticks_per_frame;
      }
  
 -    if (param->rate_control_mode) {
-+    avctx->bit_rate                 = param->target_bit_rate;
-+    if (avctx->bit_rate) {
-         param->max_qp_allowed       = avctx->qmax;
-         param->min_qp_allowed       = avctx->qmin;
-     }
- 
--    param->intra_refresh_type       = 2; /* Real keyframes only */
+-        param->max_qp_allowed       = avctx->qmax;
+-        param->min_qp_allowed       = avctx->qmin;
 +    /* 2 = IDR, closed GOP, 1 = CRA, open GOP */
 +    param->intra_refresh_type = avctx->flags & AV_CODEC_FLAG_CLOSED_GOP ? 2 : 1;
++
++#if SVT_AV1_CHECK_VERSION(0, 9, 1)
++    while ((en = av_dict_get(svt_enc->svtav1_opts, "", en, AV_DICT_IGNORE_SUFFIX))) {
++        EbErrorType ret = svt_av1_enc_parse_parameter(param, en->key, en->value);
++        if (ret != EB_ErrorNone) {
++            int level = (avctx->err_recognition & AV_EF_EXPLODE) ? AV_LOG_ERROR : AV_LOG_WARNING;
++            av_log(avctx, level, "Error parsing option %s: %s.\n", en->key, en->value);
++            if (avctx->err_recognition & AV_EF_EXPLODE)
++                return AVERROR(EINVAL);
++        }
+     }
++#else
++    if ((en = av_dict_get(svt_enc->svtav1_opts, "", NULL, AV_DICT_IGNORE_SUFFIX))) {
++        int level = (avctx->err_recognition & AV_EF_EXPLODE) ? AV_LOG_ERROR : AV_LOG_WARNING;
++        av_log(avctx, level, "svt-params needs libavcodec to be compiled with SVT-AV1 "
++                             "headers >= 0.9.1.\n");
++        if (avctx->err_recognition & AV_EF_EXPLODE)
++            return AVERROR(ENOSYS);
++    }
++#endif
+ 
+-    param->intra_refresh_type       = 2; /* Real keyframes only */
++    param->source_width     = avctx->width;
++    param->source_height    = avctx->height;
  
 -    if (svt_enc->la_depth >= 0)
 -        param->look_ahead_distance  = svt_enc->la_depth;
--
++    param->encoder_bit_depth = desc->comp[0].depth;
+ 
 -    param->tile_columns = svt_enc->tile_columns;
 -    param->tile_rows    = svt_enc->tile_rows;
--
++    if (desc->log2_chroma_w == 1 && desc->log2_chroma_h == 1)
++        param->encoder_color_format   = EB_YUV420;
++    else if (desc->log2_chroma_w == 1 && desc->log2_chroma_h == 0)
++        param->encoder_color_format   = EB_YUV422;
++    else if (!desc->log2_chroma_w && !desc->log2_chroma_h)
++        param->encoder_color_format   = EB_YUV444;
++    else {
++        av_log(avctx, AV_LOG_ERROR , "Unsupported pixel format\n");
++        return AVERROR(EINVAL);
++    }
+ 
++    if ((param->encoder_color_format == EB_YUV422 || param->encoder_bit_depth > 10)
++         && param->profile != FF_PROFILE_AV1_PROFESSIONAL ) {
++        av_log(avctx, AV_LOG_WARNING, "Forcing Professional profile\n");
++        param->profile = FF_PROFILE_AV1_PROFESSIONAL;
++    } else if (param->encoder_color_format == EB_YUV444 && param->profile != FF_PROFILE_AV1_HIGH) {
++        av_log(avctx, AV_LOG_WARNING, "Forcing High profile\n");
++        param->profile = FF_PROFILE_AV1_HIGH;
++    }
++
++    avctx->bit_rate                 = param->target_bit_rate;
++
      return 0;
  }
  
-@@ -472,21 +526,22 @@ static const AVOption options[] = {
+@@ -472,21 +525,22 @@ static const AVOption options[] = {
  #define OFFSET(x) offsetof(SvtContext, x)
  #define VE AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_ENCODING_PARAM
  static const AVOption options[] = {
@@ -255,7 +295,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/51c0b9e829be
  
      FF_AV1_PROFILE_OPTS
  
-@@ -518,21 +573,20 @@ static const AVOption options[] = {
+@@ -518,21 +572,20 @@ static const AVOption options[] = {
          { LEVEL("7.3", 73) },
  #undef LEVEL
  
@@ -288,7 +328,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/51c0b9e829be
      {NULL},
  };
  
-@@ -544,9 +598,10 @@ static const AVCodecDefault eb_enc_defaults[] = {
+@@ -544,9 +597,10 @@ static const AVCodecDefault eb_enc_defaults[] = {
  };
  
  static const AVCodecDefault eb_enc_defaults[] = {
@@ -301,7 +341,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/51c0b9e829be
      { "qmax",      "63"    },
      { NULL },
  };
-@@ -561,12 +616,11 @@ AVCodec ff_libsvtav1_encoder = {
+@@ -561,12 +615,11 @@ AVCodec ff_libsvtav1_encoder = {
      .receive_packet = eb_receive_packet,
      .close          = eb_enc_close,
      .capabilities   = AV_CODEC_CAP_DELAY | AV_CODEC_CAP_OTHER_THREADS,
