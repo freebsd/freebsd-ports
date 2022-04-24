@@ -17,11 +17,11 @@ _INCLUDE_USES_LOCALBASE_POST_MK=yes
 CPPFLAGS+=	-isystem ${LOCALBASE}/include
 CFLAGS+=	-isystem ${LOCALBASE}/include
 CXXFLAGS+=	-isystem ${LOCALBASE}/include
-.if ${localbase_ARGS:Mldflags}
+.  if ${localbase_ARGS:Mldflags}
 LDFLAGS+=	-L${LOCALBASE}/lib
-.else
+.  else
 LIBS+=		-L${LOCALBASE}/lib
-.endif
+.  endif
 
 # Use CONFIGURE_ENV instead of CMAKE_ARGS because devel/cmake itself also needs
 # this, and CMAKE_ARGS is not used when bootstrapping CMake.

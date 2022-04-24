@@ -156,11 +156,11 @@ MASTER_SITES?=		KDE/${KDE_APPLICATIONS_BRANCH}/release-service/${KDE_APPLICATION
 # defines OPTION DOCS -- the _KDE_OPTIONS here is to
 # avoid make errors when there are no options defined at all.
 _KDE_OPTIONS=		bogus ${OPTIONS_DEFINE}
-.          if ${_KDE_OPTIONS:MDOCS}
+.        if ${_KDE_OPTIONS:MDOCS}
 DOCSDIR=		${PREFIX}/share/doc
 PORTDOCS?=		HTML/*
 USE_KDE+=		doctools_build
-.          endif
+.        endif
 # Further pass along a SHLIB_VER PLIST_SUB
 PLIST_SUB+=		KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_SHLIB_VER} \
 			KDE_APPLICATIONS_VERSION_SHORT="${KDE_APPLICATIONS_VERSION:R:R}"

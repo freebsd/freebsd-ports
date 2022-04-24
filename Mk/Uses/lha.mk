@@ -8,9 +8,9 @@ _INCLUDE_USES_LHA_MK=	yes
 
 EXTRACT_SUFX?=	.lzh
 
-.if !empty(lha_ARGS)
+.  if !empty(lha_ARGS)
 IGNORE=	Incorrect 'USES+=lha:${lha_ARGS}' expecting 'USES+=lha'
-.endif
+.  endif
 
 EXTRACT_DEPENDS+=	lha:archivers/lha
 EXTRACT_CMD?=		${LHA_CMD}

@@ -56,87 +56,87 @@ _INCLUDE_USES_EMACS_MK=	yes
 .undef _EMACS_RUN_DEP
 .undef _EMACS_NOFLAVORS
 _EMACS_ARGS=		${emacs_ARGS:S/,/ /g}
-.if ${_EMACS_ARGS:Mbuild}
+.  if ${_EMACS_ARGS:Mbuild}
 _EMACS_BUILD_DEP=	yes
 _EMACS_ARGS:=		${_EMACS_ARGS:Nbuild}
-.endif
-.if ${_EMACS_ARGS:Mrun}
+.  endif
+.  if ${_EMACS_ARGS:Mrun}
 _EMACS_RUN_DEP=		yes
 _EMACS_ARGS:=		${_EMACS_ARGS:Nrun}
-.endif
-.if ${_EMACS_ARGS:Mnoflavors}
+.  endif
+.  if ${_EMACS_ARGS:Mnoflavors}
 _EMACS_NOFLAVORS=	yes
 _EMACS_ARGS:=		${_EMACS_ARGS:Nnoflavors}
-.endif
+.  endif
 
 # If the port does not specify a build or run dependency, and does not define
 # EMACS_NO_DEPENDS, assume both dependencies are required.
-.if !defined(_EMACS_BUILD_DEP) && !defined(_EMACS_RUN_DEP) && \
+.  if !defined(_EMACS_BUILD_DEP) && !defined(_EMACS_RUN_DEP) && \
 	!defined(EMACS_NO_DEPENDS)
 _EMACS_BUILD_DEP=	yes
 _EMACS_RUN_DEP=		yes
-.endif
+.  endif
 
 # Only set FLAVORS when...
-.if defined(_EMACS_RUN_DEP) && !defined(_EMACS_NOFLAVORS)
+.  if defined(_EMACS_RUN_DEP) && !defined(_EMACS_NOFLAVORS)
 FLAVORS=	full canna nox devel_full devel_nox
 # Sort the default to be first
-.if defined(EMACS_DEFAULT)
+.    if defined(EMACS_DEFAULT)
 FLAVORS:=	${EMACS_DEFAULT} ${FLAVORS:N${EMACS_DEFAULT}}
-.endif
-.for flavor in ${EMACS_FLAVORS_EXCLUDE}
+.    endif
+.    for flavor in ${EMACS_FLAVORS_EXCLUDE}
 FLAVORS:=	${FLAVORS:N${flavor}}
-.endfor
-.endif
+.    endfor
+.  endif
 
 # Only set FLAVOR when...
-.if defined(_EMACS_RUN_DEP) && !defined(_EMACS_NOFLAVORS) && empty(FLAVOR)
-.if defined(EMACS_DEFAULT)
+.  if defined(_EMACS_RUN_DEP) && !defined(_EMACS_NOFLAVORS) && empty(FLAVOR)
+.    if defined(EMACS_DEFAULT)
 FLAVOR=	${EMACS_DEFAULT}
-.else
+.    else
 FLAVOR=	${FLAVORS:[1]}
-.endif # defined(EMACS_DEFAULT)
-.endif # !defined(_EMACS_NOFLAVORS) && defined(_EMACS_RUN_DEP) && empty(FLAVOR)
+.    endif # defined(EMACS_DEFAULT)
+.  endif # !defined(_EMACS_NOFLAVORS) && defined(_EMACS_RUN_DEP) && empty(FLAVOR)
 
-.if !empty(FLAVOR)
+.  if !empty(FLAVOR)
 EMACS_FLAVOR=	${FLAVOR}
-.else
+.  else
 EMACS_FLAVOR=	full
-.endif
+.  endif
 
-.if ${FLAVOR:Mdevel*}
+.  if ${FLAVOR:Mdevel*}
 EMACS_VER=		29.0.50
 EMACS_PORTDIR=		editors/emacs-devel
-.else
+.  else
 EMACS_VER=		28.1
 EMACS_PORTDIR=		editors/emacs
-.endif
+.  endif
 
 EMACS_MAJOR_VER=	${EMACS_VER:C/\..*//}
 EMACS_LIBDIR=		share/emacs
 EMACS_LIBDIR_WITH_VER=	share/emacs/${EMACS_VER}
 EMACS_PORT_NAME=	emacs${EMACS_MAJOR_VER}
 
-.if ${EMACS_FLAVOR} == "devel_full"
+.  if ${EMACS_FLAVOR} == "devel_full"
 EMACS_PKGNAMESUFFIX=	-emacs_devel
-.elif ${EMACS_FLAVOR} == "devel_nox"
+.  elif ${EMACS_FLAVOR} == "devel_nox"
 EMACS_PKGNAMESUFFIX=	-emacs_devel_nox
-.elif ${EMACS_FLAVOR} == "full"
+.  elif ${EMACS_FLAVOR} == "full"
 EMACS_PKGNAMESUFFIX=
-.else
+.  else
 EMACS_PKGNAMESUFFIX=	-emacs_${EMACS_FLAVOR}
-.endif
+.  endif
 
 EMACS_CMD=	${PREFIX}/bin/emacs-${EMACS_VER}
 EMACS_SITE_LISPDIR=	${EMACS_LIBDIR}/site-lisp
 EMACS_VERSION_SITE_LISPDIR=	${EMACS_LIBDIR_WITH_VER}/site-lisp
 
-.if defined(_EMACS_BUILD_DEP)
+.  if defined(_EMACS_BUILD_DEP)
 BUILD_DEPENDS+=		${EMACS_CMD}:${EMACS_PORTDIR}@${EMACS_FLAVOR:C/devel_//}
-.endif
-.if defined(_EMACS_RUN_DEP)
+.  endif
+.  if defined(_EMACS_RUN_DEP)
 RUN_DEPENDS+=	${EMACS_CMD}:${EMACS_PORTDIR}@${EMACS_FLAVOR:C/devel_//}
-.endif
+.  endif
 
 MAKE_ARGS+=	EMACS=${EMACS_CMD}
 SCRIPTS_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} \

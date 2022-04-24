@@ -70,43 +70,43 @@ _SDL_ttf2_LIB_DEPENDS=		libSDL2_ttf.so:graphics/sdl2_ttf
 _SDL_ttf2_REQUIRES=		sdl2
 
 # Basic checks
-.if !empty(sdl_ARGS)
+.  if !empty(sdl_ARGS)
 IGNORE=		USES=sdl takes no arguments
-.endif
+.  endif
 
-.if !defined(USE_SDL)
+.  if !defined(USE_SDL)
 IGNORE=		need to specify sdl component(s) with USE_SDL
-.endif
+.  endif
 
 # Expand implied dependencies on main SDL/SDL2 ports
 _USE_SDL=
-.for _component in ${USE_SDL}
-. if !${_SDL_USE_ALL:M${_component}}
+.  for _component in ${USE_SDL}
+.    if !${_SDL_USE_ALL:M${_component}}
 IGNORE=		uses unknown SDL component ${_component}
-. else
+.    else
 _USE_SDL+=	${_component} ${_SDL_${_component}_REQUIRES}
-. endif
-.endfor
+.    endif
+.  endfor
 
 # Provide LIB_DEPENDS
-.for _component in ${_USE_SDL:O:u}
+.  for _component in ${_USE_SDL:O:u}
 LIB_DEPENDS+=	${_SDL_${_component}_LIB_DEPENDS}
-.endfor
+.  endfor
 
 # Provide dependency on main SDL ports
-.if ${_USE_SDL:Msdl}
+.  if ${_USE_SDL:Msdl}
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 BUILD_DEPENDS+=	${SDL_CONFIG}:devel/sdl12
 CONFIGURE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
 MAKE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
-.endif
+.  endif
 
-.if ${_USE_SDL:Msdl2}
+.  if ${_USE_SDL:Msdl2}
 SDL2_CONFIG?=	${LOCALBASE}/bin/sdl2-config
 BUILD_DEPENDS+=	${SDL2_CONFIG}:devel/sdl20
 CONFIGURE_ENV+=	SDL2_CONFIG=${SDL2_CONFIG}
 MAKE_ENV+=	SDL2_CONFIG=${SDL2_CONFIG}
-.endif
+.  endif
 
 # _INCLUDE_USES_SDL_MK
 .endif

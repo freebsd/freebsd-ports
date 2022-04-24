@@ -67,17 +67,17 @@ DESTDIR_Include_MAINTAINER=		portmgr@FreeBSD.org
 
 _DESTDIRMKINCLUDED=	yes
 
-.if defined(WITH_DESTDIR_DEBUG)
+.  if defined(WITH_DESTDIR_DEBUG)
 DEBUG_MSG=	${ECHO_MSG} "DEBUG:"
-.else
+.  else
 DEBUG_MSG=	${TRUE}
-.endif
+.  endif
 
 DESTDIR_ENV_LIST?=
 DESTDIR_ENV=	CHROOTED=yes PATH=${PATH} TERM=${TERM}
-.for _var in ${DESTDIR_ENV_LIST:NDESTDIR:NCHROOTED:NPORTSDIR}
+.  for _var in ${DESTDIR_ENV_LIST:NDESTDIR:NCHROOTED:NPORTSDIR}
 DESTDIR_ENV+=	${_var}="${${_var}}"
-.endfor
+.  endfor
 
 # Processing DESTDIR_MOUNT_LIST into something more machine-readable
 # VAR:HOST_PATH:DEST_PATH
@@ -85,31 +85,31 @@ DESTDIR_ENV+=	${_var}="${${_var}}"
 # VAR:HOST_PATH -> VAR:HOST_PATH:TMP
 DESTDIR_MOUNT_LIST?=	PORTSDIR DISTDIR
 _DESTDIR_MOUNT_LIST=
-.for _entry in ${DESTDIR_MOUNT_LIST}
+.  for _entry in ${DESTDIR_MOUNT_LIST}
 __entry=${_entry}
-.if ${__entry:M*\:*\:*}
+.    if ${__entry:M*\:*\:*}
 _DESTDIR_MOUNT_LIST+=	${_entry}
-.elif ${__entry:M*\:*}
+.    elif ${__entry:M*\:*}
 _DESTDIR_MOUNT_LIST+=	${_entry}:___temp___
-.else
-.if defined(${_entry}) && !empty(${_entry})
+.    else
+.      if defined(${_entry}) && !empty(${_entry})
 _DESTDIR_MOUNT_LIST+=	${_entry}:${${_entry}}:___temp___
-.endif
-.endif
-.endfor
+.      endif
+.    endif
+.  endfor
 
 .MAIN:	all
-.for _target in ${.TARGETS}
+.  for _target in ${.TARGETS}
 ${_target}: pre-chroot do-chroot
 	@${TRUE}
-.endfor
+.  endfor
 
-.if !target(pre-chroot)
+.  if !target(pre-chroot)
 pre-chroot:
 	@${TRUE}
-.endif
+.  endif
 
-.if !target(do-chroot)
+.  if !target(do-chroot)
 do-chroot:
 	@if [ ! -d ${DESTDIR} ]; then \
 		${ECHO_MSG} "===>  Directory ${DESTDIR} does not exist"; \
@@ -216,5 +216,5 @@ do-chroot:
 		${RMDIR} $${_entry} || ${TRUE}; \
 	done; \
 	exit $$status
-.endif	# !target(do-chroot)
+.  endif	# !target(do-chroot)
 .endif	# !defined(_DESTDIRMKINCLUDED)

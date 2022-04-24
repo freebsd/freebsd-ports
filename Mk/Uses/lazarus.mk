@@ -42,19 +42,19 @@ LAZARUS_Include_MAINTAINER= acm@FreeBSD.org
 
 _INCLUDE_USES_LAZARUS_MK=   yes
 
-.if defined(DEFAULT_LAZARUS_VER)
+.  if defined(DEFAULT_LAZARUS_VER)
 WARNING+=	"DEFAULT_LAZARUS_VER is defined, consider using DEFAULT_VERSIONS=lazarus=${DEFAULT_LAZARUS_VER} instead"
-.endif
+.  endif
 
-.if ${lazarus_ARGS:Ngtk2:Nqt5:Nflavors}
+.  if ${lazarus_ARGS:Ngtk2:Nqt5:Nflavors}
 IGNORE=		Unknown argument for USES=lazarus: ${lazarus_ARGS:Ngtk2:Nqt5:Nflavors}
-.endif
+.  endif
 
-.if !empty(LAZARUS_NO_FLAVORS)
-.if ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt5}
+.  if !empty(LAZARUS_NO_FLAVORS)
+.    if ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt5}
 IGNORE=         Unknown argument for LAZARUS_NO_FLAVORS: ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt5}
-.endif
-.endif
+.    endif
+.  endif
 
 DEFAULT_LAZARUS_VER=	${LAZARUS_DEFAULT}
 DEFAULT_FPC_VER=	${FPC_DEFAULT}
@@ -78,29 +78,29 @@ MKINSTDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/fpmkinst/${BUILDNAME}
 
 LAZARUS_FLAVORS=	gtk2 qt5
 
-.if ${lazarus_ARGS:Mflavors}
-.	if defined(LAZARUS_NO_FLAVORS)
-.		for flavor in ${LAZARUS_NO_FLAVORS}
+.  if ${lazarus_ARGS:Mflavors}
+.    if defined(LAZARUS_NO_FLAVORS)
+.      for flavor in ${LAZARUS_NO_FLAVORS}
 FLAVORS:=	${LAZARUS_FLAVORS:N${flavor}}
-.		endfor
-.	else
+.      endfor
+.    else
 FLAVORS:=	${LAZARUS_FLAVORS}
-.	endif
+.    endif
 
-.	if empty(FLAVOR)
+.    if empty(FLAVOR)
 FLAVOR=		${FLAVORS:[1]}
-.	endif
-.endif
+.    endif
+.  endif
 
 LAZARUS_PKGNAMESUFFIX=	-${FLAVOR}
 
-.if !defined(WANT_LAZARUS_DEVEL)
+.  if !defined(WANT_LAZARUS_DEVEL)
 LAZARUS_DEVELSUFFIX=	#
-.else
+.  else
 LAZARUS_DEVELSUFFIX=	-devel
-.endif
+.  endif
 
-.if ${lazarus_ARGS:Mgtk2} || ${FLAVOR} == gtk2
+.  if ${lazarus_ARGS:Mgtk2} || ${FLAVOR} == gtk2
 BUILD_DEPENDS+=	${MKINSTDIR}/gtk2.fpm:x11-toolkits/fpc-gtk2
 LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
 		libgtk-x11-2.0.so:x11-toolkits/gtk20 \
@@ -109,13 +109,13 @@ LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
 		libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
 LCL_PLATFORM=	gtk2
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus${LAZARUS_DEVELSUFFIX}
-.endif
+.  endif
 
-.if ${lazarus_ARGS:Mqt5} || ${FLAVOR} == qt5
+.  if ${lazarus_ARGS:Mqt5} || ${FLAVOR} == qt5
 LIB_DEPENDS+=	libQt5Pas.so:x11-toolkits/qt5pas
 LCL_PLATFORM=	qt5
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-qt5${LAZARUS_DEVELSUFFIX}
-.endif
+.  endif
 
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild
 LAZBUILD_ARGS?=	# empty
@@ -127,15 +127,15 @@ _USES_POST+=	lazarus
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_LAZARUS_POST_MK)
 _INCLUDE_USES_LAZARUS_POST_MK=	yes
 
-.if !defined(NO_LAZBUILD)
-.if !target(do-build)
+.  if !defined(NO_LAZBUILD)
+.    if !target(do-build)
 do-build:
-.	for PROJECT_FILE in ${LAZARUS_PROJECT_FILES}
+.      for PROJECT_FILE in ${LAZARUS_PROJECT_FILES}
 		@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${LAZBUILD_CMD} \
 			${LAZBUILD_ARGS} --ws=${LCL_PLATFORM} --lazarusdir=${LAZARUS_DIR} ${PROJECT_FILE})
-.	endfor
-.endif # !target(do-build)
-.endif
+.      endfor
+.    endif # !target(do-build)
+.  endif
 
 .endif
 # End of _INCLUDE_USES_LAZARUS_POST_MK

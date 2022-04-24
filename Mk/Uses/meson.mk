@@ -20,9 +20,9 @@
 _INCLUDE_USES_MESON_MK=	yes
 
 # Sanity check
-.if !empty(meson_ARGS)
+.  if !empty(meson_ARGS)
 IGNORE=	Incorrect 'USES+= meson:${meson_ARGS}'. meson takes no arguments
-.endif
+.  endif
 
 BUILD_DEPENDS+=		meson>=0.57.1_1:devel/meson
 
@@ -45,12 +45,12 @@ CONFIGURE_ARGS+=	-Db_colorout=never
 INSTALL_TARGET=		install
 
 # should we have strip separate from WITH_DEBUG?
-.if defined(WITH_DEBUG)
+.  if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--buildtype debug
-.else
+.  else
 CONFIGURE_ARGS+=	--buildtype release \
 			--strip
-.endif
+.  endif
 
 HAS_CONFIGURE=		yes
 CONFIGURE_CMD=		meson

@@ -15,9 +15,9 @@ EXPIRATION_DATE=2022-06-30
 
 CC=	ada
 
-. if ${ada_ARGS:Mrun}
+.  if ${ada_ARGS:Mrun}
 RUN_DEPENDS+=	${LOCALBASE}/gcc6-aux/bin/ada:lang/gcc6-aux
-. endif
+.  endif
 
 BUILD_DEPENDS+=	${LOCALBASE}/gcc6-aux/bin/ada:lang/gcc6-aux
 MAKE_ENV+=	PATH=${LOCALBASE}/gcc6-aux/bin:${PATH} \

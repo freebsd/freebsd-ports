@@ -71,9 +71,9 @@
 .if !defined(_INCLUDE_USES_MONO_MK)
 _INCLUDE_USES_MONO_MK=	yes
 
-.if !empty(mono_ARGS:Nnuget:Nbuild)
+.  if !empty(mono_ARGS:Nnuget:Nbuild)
 IGNORE=	USES=mono only supports optional arguments nuget and build
-.endif
+.  endif
 
 # Set the location of the .wapi directory so we write to a location we
 # can always assume to be writable.
@@ -81,9 +81,9 @@ MONO_SHARED_DIR=	${WRKDIR}
 CONFIGURE_ENV+=		MONO_SHARED_DIR="${MONO_SHARED_DIR}"
 MAKE_ENV+=		MONO_SHARED_DIR="${MONO_SHARED_DIR}" TZ=UTC
 BUILD_DEPENDS+=		mono:lang/mono
-.if empty(mono_ARGS:Mbuild)
+.  if empty(mono_ARGS:Mbuild)
 RUN_DEPENDS+=		mono:lang/mono
-.endif
+.  endif
 
 # Set the location that webaps served by XSP should use.
 XSP_DOCROOT=		${PREFIX}/www/xsp
@@ -93,7 +93,7 @@ GACUTIL=${LOCALBASE}/bin/gacutil /root ${PREFIX}/lib/ /gacdir ${PREFIX}/lib
 GACUTIL_INSTALL=${GACUTIL} /i
 GACUTIL_INSTALL_PACKAGE=${GACUTIL} /i /package 1.0 /package 2.0
 
-.if ${mono_ARGS:Mnuget}
+.  if ${mono_ARGS:Mnuget}
 MAKE_ENV+=	NUGET_PACKAGES=${NUGET_PACKAGEDIR}
 
 # TODO: add nuget as a Port, use it for makenupkg
@@ -111,29 +111,29 @@ PAKET_PACKAGEDIR?=
 PAKET_DEPENDS?=
 NUGET_DEPENDS?=		${PAKET_DEPENDS}
 
-. for feed in ${NUGET_FEEDS}
+.    for feed in ${NUGET_FEEDS}
 ${feed}_DEPENDS?=
 ${feed}_FILE?=		${PKGDIR}/nupkg-${feed:tl}
 ${feed}_URL?=		https://dotnet.myget.org/F/${feed:tl:S/_/-/g}/api/v2/
 ${feed}_VERSION?=	v2
-.  if exists(${${feed}_FILE})
+.      if exists(${${feed}_FILE})
 ${feed}_EXTRA!=		${CAT} ${${feed}_FILE}
-.  else
+.      else
 ${feed}_EXTRA=
-.  endif
+.      endif
 MAKENUPKG_ENV+=		${feed:tl}_URL="${${feed}_URL}" ${feed:tl}_VERSION="${${feed}_VERSION}"
-.  for depend in ${${feed}_DEPENDS} ${${feed}_EXTRA}
-.   if empty(_NUGET_DEPENDS:M${depend})
+.      for depend in ${${feed}_DEPENDS} ${${feed}_EXTRA}
+.        if empty(_NUGET_DEPENDS:M${depend})
 id=		${depend:C/=.*$//}
 version=	${depend:C/^.*=//}
 group=		nuget_${depend:C/[.+=-]//g}
 nupkg=		${id:tl}.${version}.nupkg
 DISTFILES_${group}:=	${nupkg}:${group}
-.    if ${${feed}_VERSION} == v2
+.          if ${${feed}_VERSION} == v2
 MASTER_SITES_${group}:=	${${feed}_URL}package/${id}/${version}?dummy=/:${group}
-.    else
+.          else
 MASTER_SITES_${group}:=	${${feed}_URL}${id:tl}/${version}/:${group}
-.    endif
+.          endif
 NUGET_NUPKGS_${group}:=	${nupkg}:${depend}
 NUPKGS_${id}:=	${NUPKGS_${id}} ${version}
 
@@ -141,16 +141,16 @@ DISTFILES+=	${DISTFILES_nuget_${depend:S/.//g:S/-//g:S/=//g}}
 MASTER_SITES+=	${MASTER_SITES_nuget_${depend:S/.//g:S/-//g:S/=//g}}
 NUGET_NUPKGS+=	${NUGET_NUPKGS_nuget_${depend:S/.//g:S/-//g:S/=//g}}
 _NUGET_DEPENDS+=	${depend}
-.   endif
-.  endfor
-. endfor
+.        endif
+.      endfor
+.    endfor
 
 EXTRACT_ONLY?=	${_DISTFILES:N*.nupkg}
 
 _USES_extract+=	600:nuget-extract
 nuget-extract:
 	@${MKDIR} ${_NUGET_PACKAGEDIR} ${PAKET_PACKAGEDIR}
-. for nupkg in ${NUGET_NUPKGS}
+.    for nupkg in ${NUGET_NUPKGS}
 	@${MKDIR} ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}
 	@tar -xf ${DISTDIR}/${nupkg:C/:.*$//} -C ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|} \
 		-s/%2B/\+/g -s/%2B/\+/g -s/%2B/\+/g \
@@ -162,10 +162,10 @@ nuget-extract:
 	@${CP} ${DISTDIR}/${nupkg:C/:.*$//} ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/${nupkg:tl:C/^.*://:S/=/./}.nupkg
 	@openssl dgst -sha512 -binary ${DISTDIR}/${nupkg:C/:.*$//} | openssl enc -base64 | ${TR} -d "\n" \
 		> ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/${nupkg:tl:C/^.*://:S/=/./}.nupkg.sha512
-.  if ${NUGET_LAYOUT} == legacy
+.      if ${NUGET_LAYOUT} == legacy
 	@${CP} -a ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/ ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:S|=|.|}/
 	@${CP} -a ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/ ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C|=.*||}/
-.   if ${nupkg} != ${nupkg:tl}
+.        if ${nupkg} != ${nupkg:tl}
 	@(cd ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C|=.*||}; \
 		${MV} ${nupkg:tl:C/^.*://:C/=.*//}.nuspec ${nupkg:C/^.*://:C/=.*//}.nuspec; \
 		${MV} ${nupkg:tl:C/^.*://:S/=/./}.nupkg ${nupkg:C/^.*://:S/=/./}.nupkg; \
@@ -174,32 +174,32 @@ nuget-extract:
 		${MV} ${nupkg:tl:C/^.*://:C/=.*//}.nuspec ${nupkg:C/^.*://:C/=.*//}.nuspec; \
 		${MV} ${nupkg:tl:C/^.*://:S/=/./}.nupkg ${nupkg:C/^.*://:S/=/./}.nupkg; \
 		${MV} ${nupkg:tl:C/^.*://:S/=/./}.nupkg.sha512 ${nupkg:C/^.*://:S/=/./}.nupkg.sha512)
-.   endif
-.  elif ${NUGET_LAYOUT} == flat
+.        endif
+.      elif ${NUGET_LAYOUT} == flat
 	@${CP} -a ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}/ ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:C|=.*||}/
 	@${RM} -r ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}
-.   if ${nupkg} != ${nupkg:tl}
+.        if ${nupkg} != ${nupkg:tl}
 	@${CP} -a ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:C|=.*||}/ ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C|=.*||}/
 	@(cd ${_NUGET_PACKAGEDIR}/${nupkg:C/^.*://:C|=.*||}; \
 		${MV} ${nupkg:tl:C/^.*://:C/=.*//}.nuspec ${nupkg:C/^.*://:C/=.*//}.nuspec; \
 		${MV} ${nupkg:tl:C/^.*://:S/=/./}.nupkg ${nupkg:C/^.*://:S/=/./}.nupkg; \
 		${MV} ${nupkg:tl:C/^.*://:S/=/./}.nupkg.sha512 ${nupkg:C/^.*://:S/=/./}.nupkg.sha512)
-.   endif
-.  endif
-. endfor
+.        endif
+.      endif
+.    endfor
 	@${RLN} ${_NUGET_PACKAGEDIR} ${NUGET_PACKAGEDIR}
 	@${TOUCH} ${WRKDIR}/.nuget-sentinal
 
 _USES_extract+=	601:paket-extract
 paket-extract:
-. for nupkg in ${PAKET_DEPENDS}
+.    for nupkg in ${PAKET_DEPENDS}
 	@${RLN} ${_NUGET_PACKAGEDIR}/${nupkg:tl:S|=|/|} ${PAKET_PACKAGEDIR}/${nupkg:C/=.*//}
 	@(cd ${_NUGET_PACKAGEDIR}/${nupkg:tl:C/^.*://:S|=|/|}; \
 		${CP} ${nupkg:tl:C/^.*://:C/=.*//}.nuspec ${nupkg:C/^.*://:C/=.*//}.nuspec; \
 		${CP} ${nupkg:tl:C/^.*://:S/=/./}.nupkg ${nupkg:C/^.*://:S/=/./}.nupkg; \
 		${CP} ${nupkg:tl:C/^.*://:S/=/./}.nupkg.sha512 ${nupkg:C/^.*://:S/=/./}.nupkg.sha512)
-. endfor
-.endif
+.    endfor
+.  endif
 
 makenuget: patch
 	@${FIND} ${WRKSRC} -name packages.config | \

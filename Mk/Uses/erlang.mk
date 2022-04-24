@@ -39,29 +39,29 @@ PLIST_SUB+=		VERSION="${PORTVERSION}"
 BUILD_DEPENDS+=	erl:lang/erlang
 RUN_DEPENDS+=	erl:lang/erlang
 
-.if ${erlang_ARGS:Mrebar}
+.  if ${erlang_ARGS:Mrebar}
 BUILD_DEPENDS+=	rebar>=0:devel/rebar
-.endif
+.  endif
 
-.if ${erlang_ARGS:Mrebar3}
+.  if ${erlang_ARGS:Mrebar3}
 BUILD_DEPENDS+=	rebar3>=0:devel/rebar3
-.endif
+.  endif
 
-.for depend in ${ERL_BUILD_DEPS}
+.  for depend in ${ERL_BUILD_DEPS}
 BUILD_DEPENDS+=	${depend:T}>=0:${depend}
-.endfor
+.  endfor
 
-.for depend in ${ERL_RUN_DEPS}
+.  for depend in ${ERL_RUN_DEPS}
 RUN_DEPENDS+=	${depend:T}>=0:${depend}
-.endfor
+.  endfor
 
-.if ${erlang_ARGS:Mrebar}
+.  if ${erlang_ARGS:Mrebar}
 ERLANG_COMPILE=	${REBAR_CMD}
-.endif
+.  endif
 
-.if ${erlang_ARGS:Mrebar3}
+.  if ${erlang_ARGS:Mrebar3}
 ERLANG_COMPILE=	HOME=${WRKDIR} ${REBAR3_CMD}
-.endif
+.  endif
 
 _USES_patch+=	650:post-patch-erlang
 post-patch-erlang:
@@ -86,29 +86,29 @@ post-patch-erlang:
 	fi
 	@${RM} ${WRKSRC}/src/*.orig ${WRKSRC}/include/*.orig
 
-.if !target(do-build)
+.  if !target(do-build)
 do-build:
 # This will cause calls to local rebar and rebar3 to fail; makes it easier to spot them
 	@${RM} ${WRKSRC}/rebar ${WRKSRC}/rebar3
-.for target in ${REBAR_TARGETS}
+.    for target in ${REBAR_TARGETS}
 # Remove rebar.lock every time - it can be created again after each run of rebar3
 	@${RM} ${WRKSRC}/rebar.lock
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} REBAR_PROFILE=${REBAR_PROFILE} ${ERLANG_COMPILE} ${target}
-.endfor
-.endif # !target(do-build)
+.    endfor
+.  endif # !target(do-build)
 
-.if !target(do-install)
+.  if !target(do-install)
 do-install:
 	@${MKDIR} ${STAGEDIR}${ERL_APP_ROOT}
 	@${MKDIR} ${STAGEDIR}${ERL_APP_ROOT}/src
 	cd ${WRKSRC}/src && ${COPYTREE_SHARE} \* ${STAGEDIR}${ERL_APP_ROOT}/src
 	@${MKDIR} ${STAGEDIR}${ERL_APP_ROOT}/ebin
-.if ${erlang_ARGS:Mrebar3}
+.    if ${erlang_ARGS:Mrebar3}
 	${INSTALL_DATA} ${WRKSRC}/_build/${ERL_BUILD_NAME}/lib/${ERL_APP_NAME}/ebin/* \
 		${STAGEDIR}${ERL_APP_ROOT}/ebin
-.else
+.    else
 	${INSTALL_DATA} ${WRKSRC}/ebin/* ${STAGEDIR}${ERL_APP_ROOT}/ebin
-.endif
+.    endif
 	if [ -d ${WRKSRC}/include ]; then \
 		${MKDIR} ${STAGEDIR}${ERL_APP_ROOT}/include; \
 		cd ${WRKSRC}/include && ${COPYTREE_SHARE} \* ${STAGEDIR}${ERL_APP_ROOT}/include; \
@@ -117,20 +117,20 @@ do-install:
 		${MKDIR} ${STAGEDIR}${ERL_APP_ROOT}/priv; \
 		cd ${WRKSRC}/priv && ${COPYTREE_SHARE} \* ${STAGEDIR}${ERL_APP_ROOT}/priv; \
 	fi
-.if ${ERL_DOCS} != ""
+.    if ${ERL_DOCS} != ""
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${ERL_DOCS}
+.      for file in ${ERL_DOCS}
 	if [ -d "${WRKSRC}/${file}" ]; then \
 		cd ${WRKSRC} && ${COPYTREE_SHARE} ${file} ${STAGEDIR}${DOCSDIR}; \
 	else \
 		${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}; \
 	fi
-.endfor
-.endif # .if ${ERL_DOCS} != ""
-.if ${REBAR_TARGETS:Mescriptize}
+.      endfor
+.    endif # .if ${ERL_DOCS} != ""
+.    if ${REBAR_TARGETS:Mescriptize}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-.endif
-.endif # !target(do-install)
+.    endif
+.  endif # !target(do-install)
 
 .endif #!defined(_INCLUDE_USES_ERLANG_MK)

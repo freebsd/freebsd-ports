@@ -63,38 +63,38 @@
 .if !defined(_INCLUDE_USES_GO_MK)
 _INCLUDE_USES_GO_MK=	yes
 
-.if !empty(go_ARGS:Nmodules:Nno_targets:Nrun)
+.  if !empty(go_ARGS:Nmodules:Nno_targets:Nrun)
 IGNORE=	USES=go has invalid arguments: ${go_ARGS:Nmodules:Nno_targets:Nrun}
-.endif
+.  endif
 
 # Settable variables
 
-.if empty(GO_PKGNAME)
-.  if !empty(GH_SUBDIR)
+.  if empty(GO_PKGNAME)
+.    if !empty(GH_SUBDIR)
 GO_PKGNAME=	${GH_SUBDIR:S|^src/||}
-.  elif !empty(GL_SUBDIR)
+.    elif !empty(GL_SUBDIR)
 GO_PKGNAME=	${GL_SUBDIR:S|^src/||}
-.  else
+.    else
 GO_PKGNAME=	${PORTNAME}
+.    endif
 .  endif
-.endif
 
 GO_TARGET?=	${GO_PKGNAME}
 GO_TESTTARGET?=	./...
 
 GO_BUILDFLAGS+=	-v -buildmode=exe -trimpath
-.if !defined(WITH_DEBUG) && empty(GO_BUILDFLAGS:M-ldflags*)
+.  if !defined(WITH_DEBUG) && empty(GO_BUILDFLAGS:M-ldflags*)
 GO_BUILDFLAGS+=	-ldflags=-s
-.endif
+.  endif
 GO_TESTFLAGS+=	-v
 
 CGO_ENABLED?=	1
 CGO_CFLAGS+=	-I${LOCALBASE}/include
 CGO_LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if ${ARCH} == armv6 || ${ARCH} == armv7
+.  if ${ARCH} == armv6 || ${ARCH} == armv7
 GOARM?=		${ARCH:C/armv//}
-.endif
+.  endif
 
 GO_GOPROXY?=	https://proxy.golang.org
 GO_GOSUMDB?=	sum.golang.org
@@ -108,7 +108,7 @@ GO_ENV+=	CGO_ENABLED=${CGO_ENABLED} \
 		CGO_LDFLAGS="${CGO_LDFLAGS}" \
 		GOARM=${GOARM}
 
-.if ${go_ARGS:Mmodules}
+.  if ${go_ARGS:Mmodules}
 GO_BUILDFLAGS+=	-mod=vendor
 GO_TESTFLAGS+=	-mod=vendor
 GO_GOPATH=	${DISTDIR}/go/${PKGORIGIN:S,/,_,g}
@@ -118,7 +118,7 @@ GO_ENV+=	GOPATH="${GO_GOPATH}" \
 		GO111MODULE=on \
 		GOFLAGS=-modcacherw \
 		GOSUMDB=${GO_GOSUMDB}
-.  if defined(GO_MODULE)
+.    if defined(GO_MODULE)
 GO_MODNAME=	${GO_MODULE:C/^([^@]*)(@([^@]*)?)/\1/}
 GO_MODVERSION=	${GO_MODULE:C/^([^@]*)(@([^@]*)?)/\2/:M@*:S/^@//:S/^$/${DISTVERSIONFULL}/}
 GO_MODFILE=	${GO_MODVERSION}.mod
@@ -131,23 +131,23 @@ WRKSRC=		${WRKDIR}/${GO_MODNAME}@${GO_MODVERSION}
 FETCH_DEPENDS+=	${GO_CMD}:${GO_PORT} \
 		ca_root_nss>0:security/ca_root_nss
 USES+=		zip
-.  else
+.    else
 GO_ENV+=	GO_NO_VENDOR_CHECKS=1
-.  endif
-.else
+.    endif
+.  else
 GO_GOPATH=	${WRKDIR}
 GO_WRKSRC=	${WRKDIR}/src/${GO_PKGNAME}
 GO_ENV+=	GOPATH="${GO_GOPATH}" \
 		GOBIN="" \
 		GO111MODULE=off
-.endif
+.  endif
 
 GO_PORT?=	lang/go
 
 BUILD_DEPENDS+=	${GO_CMD}:${GO_PORT}
-.if ${go_ARGS:Mrun}
+.  if ${go_ARGS:Mrun}
 RUN_DEPENDS+=	${GO_CMD}:${GO_PORT}
-.endif
+.  endif
 
 _USES_POST+=	go
 .endif # !defined(_INCLUDE_USES_GO_MK)
@@ -155,26 +155,26 @@ _USES_POST+=	go
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_GO_POST_MK)
 _INCLUDE_USES_GO_POST_MK=	yes
 
-.if !target(post-fetch) && ${go_ARGS:Mmodules} && defined(GO_MODULE)
+.  if !target(post-fetch) && ${go_ARGS:Mmodules} && defined(GO_MODULE)
 post-fetch:
 	@${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";
 	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
 		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
 		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x)
-.endif
+.  endif
 
-.if !target(post-extract)
-.  if empty(go_ARGS)
+.  if !target(post-extract)
+.    if empty(go_ARGS)
 post-extract:
 	@${MKDIR} ${GO_WRKSRC:H}
 	@${LN} -sf ${WRKSRC} ${GO_WRKSRC}
-.  elif ${go_ARGS:Mmodules} && defined(GO_MODULE)
+.    elif ${go_ARGS:Mmodules} && defined(GO_MODULE)
 post-extract:
 	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} GOPROXY=off ${GO_CMD} mod vendor)
-.  endif 
-.endif
+.    endif 
+.  endif
 
-.if !target(do-build) && empty(go_ARGS:Mno_targets)
+.  if !target(do-build) && empty(go_ARGS:Mno_targets)
 do-build:
 	(cd ${GO_WRKSRC}; \
 	for t in ${GO_TARGET}; do \
@@ -187,9 +187,9 @@ do-build:
 			-o ${GO_WRKDIR_BIN}/$${out} \
 			$${pkg}; \
 	done)
-.endif
+.  endif
 
-.if !target(do-install) && empty(go_ARGS:Mno_targets)
+.  if !target(do-install) && empty(go_ARGS:Mno_targets)
 do-install:
 	for t in ${GO_TARGET}; do \
 		dst=$$(${ECHO_CMD} $${t} | \
@@ -202,36 +202,36 @@ do-install:
 		${ECHO_MSG} "===>  Installing $${src} as $${dst}"; \
 		${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/$${src} $${dst}; \
 	done
-.endif
+.  endif
 
-.if !target(do-test) && empty(go_ARGS:Mno_targets)
+.  if !target(do-test) && empty(go_ARGS:Mno_targets)
 do-test:
 	(cd ${GO_WRKSRC}; \
 	for t in ${GO_TESTTARGET}; do \
 		${ECHO_MSG} "===>  Testing $${t}"; \
 		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} test ${GO_TESTFLAGS} $${t}; \
 	done)
-.endif
+.  endif
 
-.if ${go_ARGS:Mmodules} && defined(GO_MODULE)
+.  if ${go_ARGS:Mmodules} && defined(GO_MODULE)
 gomod-clean:
-.if exists(${GO_CMD})
+.    if exists(${GO_CMD})
 	@${ECHO_MSG} "===>  Cleaning Go module cache"
 	@${SETENV} ${GO_ENV} ${GO_CMD} clean -modcache
-.else
+.    else
 	@${ECHO_MSG} "===>    Skipping since ${GO_CMD} is not installed"
-.endif
+.    endif
 
 # Hook up to distclean
-.if !target(post-clean) && !make(clean)
+.    if !target(post-clean) && !make(clean)
 post-clean: gomod-clean
 	@${RM} -r ${GO_GOPATH}
-.endif
-.endif
+.    endif
+.  endif
 
 # Helper targets for port maintainers
 
-.if ${go_ARGS:Mmodules} && !defined(GO_MODULE)
+.  if ${go_ARGS:Mmodules} && !defined(GO_MODULE)
 _MODULES2TUPLE_CMD=	modules2tuple
 gomod-vendor-deps:
 	@if ! type ${GO_CMD} > /dev/null 2>&1; then \
@@ -250,6 +250,6 @@ gomod-vendor-diff: gomod-vendor-deps patch
 	[ -r vendor/modules.txt ] && ${_MODULES2TUPLE_CMD} vendor/modules.txt | ${SED} 's|GH_TUPLE=|	|; s| \\$$||' | ${GREP} -v '		\\' > ${WRKDIR}/GH_TUPLE-new.txt && \
 	echo ${GH_TUPLE} | ${TR} -s " " "\n" | ${SED} "s|^|		|" > ${WRKDIR}/GH_TUPLE-old.txt && \
 	${DIFF} ${WRKDIR}/GH_TUPLE-old.txt ${WRKDIR}/GH_TUPLE-new.txt || exit 0
-.endif
+.  endif
 
 .endif # defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_GO_POST_MK)

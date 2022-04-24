@@ -45,9 +45,9 @@
 .if !defined(_INCLUDE_USES_BDB_MK)
 _INCLUDE_USES_BDB_MK=	yes
 
-.if !empty(bdb_ARGS)
+.  if !empty(bdb_ARGS)
 _bdb_ARGS:=	${bdb_ARGS}
-.endif
+.  endif
 _bdb_ARGS?=	yes
 
 # TODO: avoid malformed conditional with invalid _bdb_ARGS/BDB_DEFAULT
@@ -63,9 +63,9 @@ _DB_DEFAULTS=	5
 #   Since 2020-12-02, this name is not fitting too much but
 #   retained for now for compatibility. The name of this variable
 #   is subject to change especially once db6 were removed.
-. if defined(WITH_BDB6_PERMITTED)
+.  if defined(WITH_BDB6_PERMITTED)
 _DB_DEFAULTS+=	18
-. endif
+.  endif
 
 # Dependency lines for different db versions
 db5_DEPENDS=	libdb-5.3.so:databases/db5
@@ -76,120 +76,120 @@ db18_FIND=	${LOCALBASE}/include/db18/db.h
 
 # Override the global BDB_DEFAULT with the
 # port specific <BDB_UNIQUENAME>_WITH_BDB_VER
-.if defined(${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER)
+.  if defined(${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER)
 BDB_DEFAULT=	${${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER}
-.endif
+.  endif
 
 # Override _bdb_ARGS with global BDB_DEFAULT if the maintainer did not
 # ask for a more specific version.
-. if ${_bdb_ARGS} == yes
-.  if ${BDB_DEFAULT} != 1
+.  if ${_bdb_ARGS} == yes
+.    if ${BDB_DEFAULT} != 1
 _bdb_ARGS=	${BDB_DEFAULT}
-.  else
+.    else
 _bdb_ARGS:=	5+
+.    endif
 .  endif
-. endif
 
 # Compatiblity hack:
 # upgrade older plussed versions to 5+
 _BDB_OLDPLUSVERS=4+ 40+ 41+ 42+ 43+ 44+ 45+ 46+ 47+ 48+
-.for i in ${_bdb_ARGS}
-. if ${_BDB_OLDPLUSVERS:M${i}}
+.  for i in ${_bdb_ARGS}
+.    if ${_BDB_OLDPLUSVERS:M${i}}
 _bdb_ARGS:=	5+
-. endif
-.endfor
+.    endif
+.  endfor
 
 # 1. detect installed versions
 _INST_BDB_VER=
-.for bdb in ${_DB_PORTS}
-. if exists(${db${bdb}_FIND})
+.  for bdb in ${_DB_PORTS}
+.    if exists(${db${bdb}_FIND})
 _INST_BDB_VER+=${bdb}
-. endif
-.endfor
+.    endif
+.  endfor
 
 # 2. parse supported versions:
 # 2a. build list from _bdb_ARGS
 _SUPP_BDB_VER=
 __bdb_ARGS:=${_bdb_ARGS:C,\+$,,}
-.if !empty(_bdb_ARGS:M*+)
-. for bdb in ${_DB_PORTS}
-.  if ${__bdb_ARGS} <= ${bdb}
+.  if !empty(_bdb_ARGS:M*+)
+.    for bdb in ${_DB_PORTS}
+.      if ${__bdb_ARGS} <= ${bdb}
 _SUPP_BDB_VER+=${bdb:C/\.//}
-.  endif
-. endfor
-.else
+.      endif
+.    endfor
+.  else
 _SUPP_BDB_VER=${_bdb_ARGS}
-.endif
+.  endif
 # 2b. expand INVALID_BDB_VER if given with "+":
-.if !empty(INVALID_BDB_VER:M*+)
+.  if !empty(INVALID_BDB_VER:M*+)
 _INV_BDB:=${INVALID_BDB_VER:C,\+$,,}
 _INV_BDB_VER:=
-. for bdb in ${_DB_PORTS}
-.  if ${_INV_BDB} <= ${bdb}
+.    for bdb in ${_DB_PORTS}
+.      if ${_INV_BDB} <= ${bdb}
 _INV_BDB_VER+=${bdb:C/\.//}
-.  endif
-. endfor
-.else
+.      endif
+.    endfor
+.  else
 _INV_BDB_VER:=${INVALID_BDB_VER}
-.endif
+.  endif
 # 2c. strip versions from INVALID_BDB_VER out of _SUPP_BDB_VER
-.for unsupp in ${_INV_BDB_VER}
+.  for unsupp in ${_INV_BDB_VER}
 _SUPP_BDB_VER:=${_SUPP_BDB_VER:N${unsupp}}
-.endfor
+.  endfor
 
 # 3a. calculate intersection in _INST_BDB_VER to see if there
 # is a usable installed version
-.for i in ${_INST_BDB_VER}
-. if empty(_SUPP_BDB_VER:M${i})
+.  for i in ${_INST_BDB_VER}
+.    if empty(_SUPP_BDB_VER:M${i})
 _INST_BDB_VER:=	${_INST_BDB_VER:N${i}}
-. endif
-.endfor
+.    endif
+.  endfor
 _ELIGIBLE_BDB_VER:=${_INST_BDB_VER}
 
 # 3b. if there is no usable version installed, check defaults
-.if empty(_INST_BDB_VER)
+.  if empty(_INST_BDB_VER)
 _DFLT_BDB_VER:=${_DB_DEFAULTS}
 # make sure we use a reasonable version for package builds
 _WITH_BDB_HIGHEST=yes
-. for i in ${_DFLT_BDB_VER}
-.  if empty(_SUPP_BDB_VER:M${i})
+.    for i in ${_DFLT_BDB_VER}
+.      if empty(_SUPP_BDB_VER:M${i})
 _DFLT_BDB_VER:=	${_DFLT_BDB_VER:N${i}}
-.  endif
-. endfor
+.      endif
+.    endfor
 _ELIGIBLE_BDB_VER:=${_DFLT_BDB_VER}
-.endif
+.  endif
 
 # 4. elect a version
 _BDB_VER=
-.for i in ${_ELIGIBLE_BDB_VER}
-. if !empty(WITH_BDB_HIGHEST) || !empty(_WITH_BDB_HIGHEST) || empty(${_BDB_VER})
+.  for i in ${_ELIGIBLE_BDB_VER}
+.    if !empty(WITH_BDB_HIGHEST) || !empty(_WITH_BDB_HIGHEST) || empty(${_BDB_VER})
 _BDB_VER:=${i}
-. endif
-.endfor
+.    endif
+.  endfor
 
 # 5. catch errors or set variables
-.if empty(_BDB_VER)
+.  if empty(_BDB_VER)
 IGNORE=		cannot install: no eligible BerkeleyDB version. Requested: ${_bdb_ARGS}, incompatible: ${_INV_BDB_VER}. Try: make debug-bdb
-.else
-. if defined(BDB_BUILD_DEPENDS)
+.  else
+.    if defined(BDB_BUILD_DEPENDS)
 BUILD_DEPENDS+=	${db${_BDB_VER}_FIND}:${db${_BDB_VER}_DEPENDS:C/^libdb.*://}
-. else
+.    else
 LIB_DEPENDS+=	${db${_BDB_VER}_DEPENDS}
-. endif
-. if ${_BDB_VER} == 5
+.    endif
+.    if ${_BDB_VER} == 5
 BDB_LIB_NAME=		db-5.3
 BDB_LIB_CXX_NAME=	db_cxx-5.3
 BDB_LIB_DIR=		${LOCALBASE}/lib/db5
-. elif ${_BDB_VER} == 18
+.    elif ${_BDB_VER} == 18
 BDB_LIB_NAME=		db-18.1
 BDB_LIB_CXX_NAME=	db_cxx-18.1
 BDB_LIB_DIR=		${LOCALBASE}/lib/db18
-. endif
+.    endif
 BDB_LIB_NAME?=		db${_BDB_VER}
 BDB_LIB_CXX_NAME?=	db${_BDB_VER}_cxx
 BDB_INCLUDE_DIR?=	${LOCALBASE}/include/db${_BDB_VER}
 BDB_LIB_DIR?=		${LOCALBASE}/lib
-.endif
+.  endif
 BDB_VER=	${_BDB_VER}
 
 debug-bdb:
@@ -220,21 +220,21 @@ debug-bdb:
 # Obsolete variables - ports can define these to want users about
 # variables that may be in /etc/make.conf but that are no longer
 # effective:
-.if defined(OBSOLETE_BDB_VAR)
-. for var in ${OBSOLETE_BDB_VAR}
-.  if defined(${var})
+.  if defined(OBSOLETE_BDB_VAR)
+.    for var in ${OBSOLETE_BDB_VAR}
+.      if defined(${var})
 BAD_VAR+=	${var},
-.  endif
-. endfor
-. if defined(BAD_VAR)
+.      endif
+.    endfor
+.    if defined(BAD_VAR)
 _IGNORE_MSG=	Obsolete variable(s) ${BAD_VAR} use DEFAULT_VERSIONS or ${BDB_UNIQUENAME:tu:S,-,_,}_WITH_BDB_VER to select Berkeley DB version
-.  if defined(IGNORE)
+.      if defined(IGNORE)
 IGNORE+= ${_IGNORE_MSG}
-.  else
+.      else
 IGNORE=	${_IGNORE_MSG}
+.      endif
+.    endif
 .  endif
-. endif
-.endif
 
 
 .endif

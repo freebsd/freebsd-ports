@@ -34,72 +34,72 @@ _GS_VERSION=	7 8 9 agpl
 
 _GS_ARGS=		${ghostscript_ARGS}
 
-.if ${_GS_ARGS:N[789]:Nagpl:Nx11:Nbuild:Nrun:Ntest}
+.  if ${_GS_ARGS:N[789]:Nagpl:Nx11:Nbuild:Nrun:Ntest}
 IGNORE?=	Unknown ghostscript argument ${_GS_ARGS}
-.endif
+.  endif
 
-.if ${GHOSTSCRIPT_DEFAULT:N[789]:Nagpl}
+.  if ${GHOSTSCRIPT_DEFAULT:N[789]:Nagpl}
 IGNORE?=	Invalid GHOSTSCRIPT_DEFAULT value: ${GHOSTSCRIPT_DEFAULT}, please select one of ${_GS_VERSION}
-.endif
+.  endif
 
 # Make sure that no dependency or some other environment variable
 # pollutes the build/run dependency detection
 .undef _GS_BUILD_DEP
 .undef _GS_RUN_DEP
 .undef _GS_TEST_DEP
-.if ${_GS_ARGS:Mbuild}
+.  if ${_GS_ARGS:Mbuild}
 _GS_BUILD_DEP=	yes
-.endif
-.if ${_GS_ARGS:Mrun}
+.  endif
+.  if ${_GS_ARGS:Mrun}
 _GS_RUN_DEP=	yes
-.endif
-.if ${_GS_ARGS:Mtest}
+.  endif
+.  if ${_GS_ARGS:Mtest}
 _GS_TEST_DEP=	yes
-.endif
+.  endif
 
 # The port does not specify a build, run, or test dependency, assume that
 # a build and run dependency is required.
-.if !defined(_GS_BUILD_DEP) && !defined(_GS_RUN_DEP) && !defined(_GS_TEST_DEP)
+.  if !defined(_GS_BUILD_DEP) && !defined(_GS_RUN_DEP) && !defined(_GS_TEST_DEP)
 _GS_BUILD_DEP=	yes
 _GS_RUN_DEP=	yes
-.endif
+.  endif
 
 .undef _GS_SELECTED
-.for V in ${_GS_ARGS} ${GHOSTSCRIPT_DEFAULT}
+.  for V in ${_GS_ARGS} ${GHOSTSCRIPT_DEFAULT}
 _V=${V}
-.if ${_V:M9}
+.    if ${_V:M9}
 _GS_SELECTED?=		9
-.elif ${_V:Magpl}
+.    elif ${_V:Magpl}
 _GS_SELECTED?=		9-agpl
-.elif ${_V:M8}
+.    elif ${_V:M8}
 _GS_SELECTED?=		8
-.elif ${_V:M7}
+.    elif ${_V:M7}
 _GS_SELECTED?=		7
-.endif
-.endfor
+.    endif
+.  endfor
 
 # Resolve minor version number for X11.so library.
-.if !empty(_GS_SELECTED:M9-agpl)
+.  if !empty(_GS_SELECTED:M9-agpl)
 _GS_VERSION_MINOR=	9.16_2
-.elif !empty(_GS_SELECTED:M9)
+.  elif !empty(_GS_SELECTED:M9)
 _GS_VERSION_MINOR=	9.06_11
-.elif !empty(_GS_SELECTED:M8)
+.  elif !empty(_GS_SELECTED:M8)
 _GS_VERSION_MINOR=	8.71_19
-.elif !empty(_GS_SELECTED:M7)
+.  elif !empty(_GS_SELECTED:M7)
 _GS_VERSION_MINOR=	7.07_32
-.endif
+.  endif
 
 # dependencies
 _GS_PORT=	ghostscript${_GS_SELECTED}-base
 _GS_X11_PORT=	ghostscript${_GS_SELECTED}-x11
 
-.for type in BUILD RUN TEST
-.if defined(_GS_${type}_DEP)
+.  for type in BUILD RUN TEST
+.    if defined(_GS_${type}_DEP)
 ${type}_DEPENDS+=	${_GS_PORT}>=${_GS_VERSION_MINOR}:print/${_GS_PORT}
-.if ${_GS_ARGS:Mx11}
+.      if ${_GS_ARGS:Mx11}
 ${type}_DEPENDS+=	${_GS_X11_PORT}>=${_GS_VERSION_MINOR}:print/${_GS_X11_PORT}
-.endif
-.endif
-.endfor
+.      endif
+.    endif
+.  endfor
 
 .endif # _INCLUDE_USES_GHOSTSCRIPT_MK

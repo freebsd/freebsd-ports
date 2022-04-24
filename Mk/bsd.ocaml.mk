@@ -97,28 +97,28 @@ OCAML_LDCONF?=		${OCAML_LIBDIR}/ld.conf
 
 # ocaml-findlib-1.4.1_1 wants to edit our ld.conf file, which does not
 # work well with staging.
-.if defined(USE_OCAML_LDCONFIG)
-. if !target(ocaml-ldconfig)
+.  if defined(USE_OCAML_LDCONFIG)
+.    if !target(ocaml-ldconfig)
 OCAMLFIND_LDCONF?=	/dev/null
-. endif
-.endif
+.    endif
+.  endif
 
 OCAMLFIND_DESTDIR?=	${PREFIX}/${OCAML_SITELIBDIR}
 OCAMLFIND_LDCONF?=	${PREFIX}/${OCAML_LDCONF}
 
-.if defined(USE_OCAML)
-. if !defined(NO_OCAML_BUILDDEPENDS)
+.  if defined(USE_OCAML)
+.    if !defined(NO_OCAML_BUILDDEPENDS)
 EXTRACT_DEPENDS+=	${OCAMLC_DEPEND}
 PATCH_DEPENDS+=		${OCAMLC_DEPEND}
 BUILD_DEPENDS+=		${OCAMLC_DEPEND}
-. endif
-. if !defined(NO_OCAML_RUNDEPENDS)
+.    endif
+.    if !defined(NO_OCAML_RUNDEPENDS)
 RUN_DEPENDS+=		${OCAMLC_DEPEND}
-. endif
+.    endif
 PLIST_SUB+=	OCAML_SITELIBDIR="${OCAML_SITELIBDIR}"
-.endif
+.  endif
 
-.if defined(USE_OCAML_FINDLIB)
+.  if defined(USE_OCAML_FINDLIB)
 #
 # We'll additionally add ocamlfind to RUN_DEPENDS, since
 # if the port requires ocamlfind to install - it requires
@@ -135,64 +135,64 @@ MAKE_ENV+=	OCAMLFIND_DESTDIR="${STAGEDIR}${OCAMLFIND_DESTDIR}" \
 #
 OCAML_PKGDIRS?=	${PORTNAME}
 _USES_install+=	735:ocaml-findlib
-. if !target(ocaml-findlib)
+.    if !target(ocaml-findlib)
 ocaml-findlib:
-.  for DIR in ${OCAML_PKGDIRS}
-.   if defined(USE_OCAMLFIND_PLIST)
+.      for DIR in ${OCAML_PKGDIRS}
+.        if defined(USE_OCAMLFIND_PLIST)
 	@${FIND} ${STAGEDIR}${PREFIX}/${OCAML_SITELIBDIR}/${DIR}/ -type f -print | ${SED} -e \
 		's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-.   endif
+.        endif
 	@${ECHO_CMD} "@postunexec ${OCAMLFIND} remove ${DIR} 2>/dev/null" \
 		>> ${TMPPLIST}
-.  endfor
-. endif
-.endif
+.      endfor
+.    endif
+.  endif
 
-.if defined(USE_OCAML_CAMLP4)
+.  if defined(USE_OCAML_CAMLP4)
 BUILD_DEPENDS+=		${CAMLP4_DEPEND}
-.endif
+.  endif
 
-.if defined(USE_OCAML_TK)
-. if !defined(NO_OCAMLTK_BUILDDEPENDS)
+.  if defined(USE_OCAML_TK)
+.    if !defined(NO_OCAMLTK_BUILDDEPENDS)
 EXTRACT_DEPENDS+=	${OCAMLTK_DEPENDS}
 PATCH_DEPENDS+=		${OCAMLTK_DEPENDS}
 BUILD_DEPENDS+=		${OCAMLTK_DEPENDS}
-. endif
-. if !defined(NO_OCAMLTK_RUNDEPENDS)
+.    endif
+.    if !defined(NO_OCAMLTK_RUNDEPENDS)
 RUN_DEPENDS+=		${OCAMLTK_DEPENDS}
-. endif
-.endif
+.    endif
+.  endif
 
-.if defined(USE_OCAML_LDCONFIG)
+.  if defined(USE_OCAML_LDCONFIG)
 #
 # Directories under PREFIX for appending to ld.conf
 #
 OCAML_LDLIBS?=	${OCAML_SITELIBDIR}/${PORTNAME}
 _USES_install+=	740:ocaml-ldconfig
-. if !target(ocaml-ldconfig)
+.    if !target(ocaml-ldconfig)
 ocaml-ldconfig:
-.  for LIB in ${OCAML_LDLIBS}
+.      for LIB in ${OCAML_LDLIBS}
 	@${ECHO_CMD} "@postexec ${ECHO_CMD} "%D/${LIB}" >> %D/${OCAML_LDCONF}" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@postunexec ${SED} -i \"\" -e '/${LIB:S#/#\/#g}/d' %D/${OCAML_LDCONF}"  >> ${TMPPLIST}
-.  endfor
-. endif
-.endif
+.      endfor
+.    endif
+.  endif
 
-.if defined(USE_OCAML_WASH)
+.  if defined(USE_OCAML_WASH)
 PLIST_FILES+=	"@rmempty ${OCAML_LDCONF}"
-.endif
+.  endif
 
 .endif #!defined(OCAML_include)
 
 .if defined(_POSTMKINCLUDED)
 
-.if defined(USE_OCAML_FINDLIB)
+.  if defined(USE_OCAML_FINDLIB)
 
 pre-install: ${STAGEDIR}${OCAMLFIND_DESTDIR}
 ${STAGEDIR}${OCAMLFIND_DESTDIR}:
 	@${MKDIR} ${.TARGET}
 
-.endif
+.  endif
 
 .endif # _POSTMKINCLUDED

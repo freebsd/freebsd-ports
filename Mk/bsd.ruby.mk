@@ -97,23 +97,23 @@ Ruby_Include_MAINTAINER=	ruby@FreeBSD.org
 # RUBY_MODEXAMPLESDIR	- Installation path for the module's examples.
 #
 
-.if defined(RUBY_DEFAULT_VER)
+.  if defined(RUBY_DEFAULT_VER)
 WARNING+=	"RUBY_DEFAULT_VER is defined, consider using DEFAULT_VERSIONS=ruby=${RUBY_DEFAULT_VER} instead"
-.endif
+.  endif
 
 RUBY_DEFAULT_VER?=	${RUBY_DEFAULT}
 
 RUBY_VER?=		${RUBY_DEFAULT_VER}
 
-.if defined(RUBY)
-.if !exists(${RUBY})
+.  if defined(RUBY)
+.    if !exists(${RUBY})
 IGNORE=	cannot install: you set the variable RUBY to "${RUBY}", but it does not seem to exist.  Please specify an already installed ruby executable
-.endif
+.    endif
 
 _RUBY_TEST!=		${RUBY} -e 'begin; require "rbconfig"; puts "ok" ; rescue LoadError; puts "error"; end'
-.if !empty(_RUBY_TEST) && ${_RUBY_TEST} != "ok"
+.    if !empty(_RUBY_TEST) && ${_RUBY_TEST} != "ok"
 IGNORE=	cannot install: you set the variable RUBY to "${RUBY}", but it failed to include rbconfig.  Please specify a properly installed ruby executable
-.endif
+.    endif
 
 _RUBY_CONFIG=		${RUBY} -r rbconfig -e 'C = RbConfig::CONFIG' -e
 
@@ -125,13 +125,13 @@ RUBY_ARCH!=		${_RUBY_CONFIG} 'puts C["target"]'
 _RUBY_SYSLIBDIR!=	${_RUBY_CONFIG} 'puts C["libdir"]'
 _RUBY_SITEDIR!=		${_RUBY_CONFIG} 'puts C["sitedir"]'
 _RUBY_VENDORDIR!=	${_RUBY_CONFIG} 'puts C["vendordir"]'
-.else
+.  else
 RUBY?=			${LOCALBASE}/bin/ruby${RUBY_SUFFIX}
 
-.if defined(RUBY_VER)
+.    if defined(RUBY_VER)
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-. if ${RUBY_VER} == 2.7
+.      if ${RUBY_VER} == 2.7
 #
 # Ruby 2.7
 #
@@ -140,7 +140,7 @@ RUBY_PORTREVISION=	1
 RUBY_PORTEPOCH=		1
 RUBY27=			""	# PLIST_SUB helpers
 
-. elif ${RUBY_VER} == 3.0
+.      elif ${RUBY_VER} == 3.0
 #
 # Ruby 3.0
 #
@@ -148,7 +148,7 @@ RUBY_DISTVERSION=	3.0.4
 RUBY_PORTREVISION=	1
 RUBY_PORTEPOCH=		1
 RUBY30=			""	# PLIST_SUB helpers
-. elif ${RUBY_VER} == 3.1
+.      elif ${RUBY_VER} == 3.1
 #
 # Ruby 3.1
 #
@@ -157,7 +157,7 @@ RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
 RUBY31=			""	# PLIST_SUB helpers
 
-. elif ${RUBY_VER} == 3.2
+.      elif ${RUBY_VER} == 3.2
 #
 # Ruby 3.2
 #
@@ -168,30 +168,30 @@ RUBY32=			""	# PLIST_SUB helpers
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-. else
+.      else
 #
 # Other versions
 #
 IGNORE=	Only ruby 2.7, 3.0, 3.1 and 3.2 are supported
 _INVALID_RUBY_VER=	1
-. endif
+.      endif
 RUBY_VERSION=	${RUBY_DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}
-.endif # defined(RUBY_VER)
+.    endif # defined(RUBY_VER)
 
-.if !defined(_INVALID_RUBY_VER)
+.    if !defined(_INVALID_RUBY_VER)
 
 RUBY27?=		"@comment "
 RUBY30?=		"@comment "
 RUBY31?=		"@comment "
 RUBY32?=		"@comment "
 
-.if defined(BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E})
-.if ${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}} == "yes"
+.      if defined(BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E})
+.        if ${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}} == "yes"
 BROKEN=			does not build with Ruby ${RUBY_VER}
-.else
+.        else
 BROKEN=			${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}}
-.endif
-.endif
+.        endif
+.      endif
 
 RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
 
@@ -207,11 +207,11 @@ RUBY_ARCH?=		${ARCH}-${OPSYS:tl}${OSREL:C/\..*//}
 _RUBY_SYSLIBDIR?=	${PREFIX}/lib
 _RUBY_SITEDIR?=		${_RUBY_SYSLIBDIR}/ruby/site_ruby
 _RUBY_VENDORDIR?=	${_RUBY_SYSLIBDIR}/ruby/vendor_ruby
-.endif
-.endif
+.    endif
+.  endif
 #      defined(RUBY)
 
-.if !defined(_INVALID_RUBY_VER)
+.  if !defined(_INVALID_RUBY_VER)
 
 RUBY_DEFAULT_SUFFIX?=	${RUBY_DEFAULT_VER:S/.//}
 
@@ -234,9 +234,9 @@ RUBY_SHLIBVER?=		${RUBY_VER:S/.//}
 
 RUBY_CONFIGURE_ARGS+=	--program-prefix=""
 
-.if ${RUBY_VER} != ${RUBY_DEFAULT_VER}
+.    if ${RUBY_VER} != ${RUBY_DEFAULT_VER}
 DEPENDS_ARGS+=		RUBY_VER=${RUBY_VER}
-.endif
+.    endif
 
 RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 
@@ -292,14 +292,14 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY31=${RUBY31} \
 			RUBY32=${RUBY32}
 
-.if ${PORT_OPTIONS:MDEBUG}
+.    if ${PORT_OPTIONS:MDEBUG}
 RUBY_FLAGS+=	-d
-.endif
+.    endif
 
 #
 # extconf.rb support
 #
-.if defined(USE_RUBY_EXTCONF)
+.    if defined(USE_RUBY_EXTCONF)
 USE_RUBY=		yes
 
 RUBY_EXTCONF?=		extconf.rb
@@ -309,23 +309,23 @@ CONFIGURE_ENV+=		RB_USER_INSTALL=yes
 do-configure:	ruby-extconf-configure
 
 ruby-extconf-configure:
-.if defined(RUBY_EXTCONF_SUBDIRS)
-.for d in ${RUBY_EXTCONF_SUBDIRS}
+.      if defined(RUBY_EXTCONF_SUBDIRS)
+.        for d in ${RUBY_EXTCONF_SUBDIRS}
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} in ${d} to configure"
 	@cd ${CONFIGURE_WRKSRC}/${d}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
-.endfor
-.else
+.        endfor
+.      else
 	@${ECHO_MSG} "===>  Running ${RUBY_EXTCONF} to configure"
 	@cd ${CONFIGURE_WRKSRC}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS}
-.endif
-.endif
+.      endif
+.    endif
 
 #
 # setup.rb support
 #
-.if defined(USE_RUBY_SETUP)
+.    if defined(USE_RUBY_SETUP)
 RUBY_SETUP?=		setup.rb
 
 do-configure:	ruby-setup-configure
@@ -348,18 +348,18 @@ ruby-setup-install:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
 	@cd ${INSTALL_WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install --prefix=${STAGEDIR}
-.endif
+.    endif
 
-.if defined(USE_RUBY)
-.if !defined(RUBY_NO_BUILD_DEPENDS)
+.    if defined(USE_RUBY)
+.      if !defined(RUBY_NO_BUILD_DEPENDS)
 EXTRACT_DEPENDS+=	${DEPEND_RUBY}
 PATCH_DEPENDS+=		${DEPEND_RUBY}
 BUILD_DEPENDS+=		${DEPEND_RUBY}
-.endif
-.if !defined(RUBY_NO_RUN_DEPENDS)
+.      endif
+.      if !defined(RUBY_NO_RUN_DEPENDS)
 RUN_DEPENDS+=		${DEPEND_RUBY}
-.endif
-.endif
+.      endif
+.    endif
 
-.endif # _INVALID_RUBY_VER
+.  endif # _INVALID_RUBY_VER
 .endif

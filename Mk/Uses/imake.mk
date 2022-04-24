@@ -12,37 +12,37 @@
 .if !defined(_INCLUDE_USES_IMAKE_MK)
 _INCLUDE_USES_IMAKE_MK=	yes
 
-.if ${imake_ARGS:Nnotall:Nenv:Nnoman}
+.  if ${imake_ARGS:Nnotall:Nenv:Nnoman}
 IGNORE=		USES=imake:${imake_ARGS:S/ /,/g} is not a valid argument
-.endif
+.  endif
 
 BUILD_DEPENDS+=		imake:devel/imake
 
-.if defined(USE_GCC)
+.  if defined(USE_GCC)
 IMAKECPP=		${CPP}
 IMAKECPPFLAGS=		-DCppCmd=${CPP} -DCcCmd=${CC} -DCplusplusCmd=${CXX}
-.else
+.  else
 IMAKECPP=		tradcpp
 IMAKECPPFLAGS=		-DCppCmd=tradcpp -DCcCmd=${CC} -DCplusplusCmd=${CXX}
 BUILD_DEPENDS+=		tradcpp:devel/tradcpp
-.endif
+.  endif
 MAKE_ENV+=		IMAKECPP=${IMAKECPP} IMAKECPPFLAGS="${IMAKECPPFLAGS}"
 CONFIGURE_ENV+=		IMAKECPP=${IMAKECPP} IMAKECPPFLAGS="${IMAKECPPFLAGS}"
 
-.if ! ${imake_ARGS:Mnotall}
+.  if ! ${imake_ARGS:Mnotall}
 XMKMF_ARGS+=		-a
-.endif
+.  endif
 
-.if ! ${imake_ARGS:Menv}
-.if !target(do-configure)
+.  if ! ${imake_ARGS:Menv}
+.    if !target(do-configure)
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF} ${XMKMF_ARGS})
-.endif
+.    endif
 
-.if ! ${imake_ARGS:Mnoman}
+.    if ! ${imake_ARGS:Mnoman}
 LATE_INSTALL_ARGS=	install.man
-.endif
+.    endif
 
-.endif
+.  endif
 
 .endif

@@ -4,12 +4,12 @@
 # Warnings for everyone
 
 .for opt in ${ALL_OPTIONS:NDEBUG}
-.if defined(WITH_${opt})
+.  if defined(WITH_${opt})
 WARNING+=     "WITH_${opt} is unsupported, use WITH=${opt} on the command line, or one of these in /etc/make.conf, OPTIONS_SET+=${opt} to set it globally, or ${OPTIONS_NAME}_SET+=${opt} for only this port."
-.endif
-.if defined(WITHOUT_${opt})
+.  endif
+.  if defined(WITHOUT_${opt})
 WARNING+=     "WITHOUT_${opt} is unsupported, use WITHOUT=${opt} on the command line, or one of these in /etc/make.conf, OPTIONS_UNSET+=${opt} to set it globally, or ${OPTIONS_NAME}_UNSET+=${opt} for only this port."
-.endif
+.  endif
 .endfor
 
 ALL_UNSUPPORTED=	WITHOUT_NLS NOPORTDOCS NOPORTEXAMPLES WITH_BDB_VER \
@@ -35,21 +35,21 @@ PYTHON2_DEFAULT_VERSION_ALT=	"DEFAULT_VERSIONS=python2=${PYTHON2_DEFAULT_VERSION
 PYTHON3_DEFAULT_VERSION_ALT=	"DEFAULT_VERSIONS=python3=${PYTHON3_DEFAULT_VERSION:S/^python//}"
 
 .for a in ${ALL_DEPRECATED}
-.if defined(${a})
+.  if defined(${a})
 WARNING+=	"${a} is deprecated, please use ${${a}_ALT}"
-.endif
+.  endif
 .endfor
 
 .for a in ${ALL_NOTNEEDED}
-.if defined(${a})
+.  if defined(${a})
 WARNING+=	"${a} is not needed: ${${a}_REASON}"
-.endif
+.  endif
 .endfor
 
 .for a in ${ALL_UNSUPPORTED}
-.if defined(${a})
+.  if defined(${a})
 ERROR+=	"${a} is unsupported, please use ${${a}_ALT}"
-.endif
+.  endif
 .endfor
 
 
@@ -57,9 +57,9 @@ ERROR+=	"${a} is unsupported, please use ${${a}_ALT}"
 # Warnings only when DEVELOPER=yes
 
 .if exists(${.CURDIR}/../../Mk/bsd.port.mk) || ${OVERLAYS:tA:M${.CURDIR:H:H}} == ${.CURDIR:H:H}
-.if ${.CURDIR:H:T} != ${PKGCATEGORY}
+.  if ${.CURDIR:H:T} != ${PKGCATEGORY}
 DEV_ERROR+=	"The first entry in CATEGORIES should be the directory where the port lives"
-.endif
+.  endif
 .else
 DEV_WARNING+=	"Not validating first entry in CATEGORIES due to being outside of PORTSDIR. Please ensure this is proper when committing."
 .endif
@@ -105,9 +105,9 @@ DEV_ERROR+=	"All LIB_DEPENDS should use the new format and start out with lib.  
 .endif
 
 .if defined(LICENSE)
-.if ${LICENSE:MBSD}
+.  if ${LICENSE:MBSD}
 DEV_WARNING+=	"LICENSE must not contain BSD, instead use BSD[234]CLAUSE"
-.endif
+.  endif
 .elif !defined(DISABLE_LICENSES)
 .  if empty(USES:Mmetaport)
 DEV_WARNING+=	"Please set LICENSE for this port"
@@ -115,9 +115,9 @@ DEV_WARNING+=	"Please set LICENSE for this port"
 .endif
 
 .for _a in ${ONLY_FOR_ARCHS}
-.if defined(ONLY_FOR_ARCHS_REASON_${_a})
+.  if defined(ONLY_FOR_ARCHS_REASON_${_a})
 DEV_WARNING+=	"ONLY_FOR_ARCHS_${_a} is defined and ${_a} is in ONLY_FOR_ARCHS, the message will never be used."
-.endif
+.  endif
 .endfor
 
 .if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
@@ -126,25 +126,25 @@ DEV_ERROR+=	"USE_PYDISTUTILS=easy_install is no longer supported, please use USE
 
 .if defined(USE_PYTHON) && (${USE_PYTHON} == "yes" || ${USE_PYTHON:C/[-0-9.+]*//} == "")
 _PYTHON_VAL := ${USE_PYTHON}
-.if ${_PYTHON_VAL} != "yes"
+.  if ${_PYTHON_VAL} != "yes"
 DEV_ERROR+=	"USE_PYTHON=${_PYTHON_VAL} is no longer supported, please use USES=python:${_PYTHON_VAL}"
-.else
+.  else
 DEV_ERROR+=	"USE_PYTHON=yes is no longer supported, please use USES=python"
-.endif
+.  endif
 .endif
 .if defined(USE_PYTHON_RUN)
-.if ${USE_PYTHON_RUN} != "yes"
+.  if ${USE_PYTHON_RUN} != "yes"
 DEV_ERROR+=	"USE_PYTHON_RUN is no longer supported, please use USES=python:${USE_PYTHON_RUN},run"
-.else
+.  else
 DEV_ERROR+=	"USE_PYTHON_RUN is no longer supported, please use USES=python:run"
-.endif
+.  endif
 .endif
 .if defined(USE_PYTHON_BUILD)
-.if ${USE_PYTHON_BUILD} != "yes"
+.  if ${USE_PYTHON_BUILD} != "yes"
 DEV_ERROR+=	"USE_PYTHON_BUILD is no longer supported, please use USES=python:${USE_PYTHON_BUILD},build"
-.else
+.  else
 DEV_ERROR+=	"USE_PYTHON_BUILD is no longer supported, please use USES=python:build"
-.endif
+.  endif
 .endif
 
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} == YES
@@ -295,19 +295,19 @@ CARGO_USE_GITLAB_ALT=	CARGO_CRATES \(regenerate it with make cargo-crates\)
 CARGO_GIT_SUBDIR_ALT=	CARGO_CRATES \(regenerate it with make cargo-crates\)
 
 .for a in ${SANITY_DEPRECATED}
-.if defined(${a})
+.  if defined(${a})
 DEV_WARNING+=	"${a} is deprecated, please use ${${a}_ALT}"
-.endif
+.  endif
 .endfor
 
 .for a in ${SANITY_NOTNEEDED}
-.if defined(${a})
+.  if defined(${a})
 DEV_WARNING+=	"${a} is not needed: ${${a}_REASON}"
-.endif
+.  endif
 .endfor
 
 .for a in ${SANITY_UNSUPPORTED}
-.if defined(${a})
+.  if defined(${a})
 DEV_ERROR+=	"${a} is unsupported, please use ${${a}_ALT}"
-.endif
+.  endif
 .endfor

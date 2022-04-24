@@ -20,9 +20,9 @@ _INCLUDE_USES_MATE_MK= yes
 
 _USES_POST+=	mate
 
-.if !empty(mate_ARGS)
+.  if !empty(mate_ARGS)
 IGNORE=	USES=mate takes no arguments
-.endif
+.  endif
 
 # This section defines possible names of MATE components and all information
 # necessary for ports to use those components.
@@ -88,9 +88,9 @@ intlhack_PRE_PATCH=		${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${RE
 				 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";| ; \
 				 s|/usr/bin/iconv|${LOCALBASE}/bin/iconv|g ; \
 				 s|unpack *[(]'"'"'U\*'"'"'|unpack ('"'"'C*'"'"'|'
-.if ${USE_MATE:Mintlhack}!=""
+.  if ${USE_MATE:Mintlhack}!=""
 USE_MATE+=				intltool
-.endif
+.  endif
 
 libmatekbd_DETECT=		${LOCALBASE}/libdata/pkgconfig/libmatekbd.pc
 libmatekbd_BUILD_DEPENDS=	${libmatekbd_DETECT}:x11/libmatekbd
@@ -144,58 +144,58 @@ settingsdaemon_RUN_DEPENDS=	${settingsdaemon_DETECT}:sysutils/mate-settings-daem
 
 # End component definition section
 
-.if defined(USE_MATE)
+.  if defined(USE_MATE)
 # Comparing between USE_MATE and _USE_MATE_ALL to make sure the component
 # exists in _USE_MATE_ALL. If it does not exist then give an error about it.
 #. for component in ${USE_MATE:O:u:C/^([^:]+).*/\1/}
-. for component in ${USE_MATE:C/^([^:]+).*/\1/}
+.    for component in ${USE_MATE:C/^([^:]+).*/\1/}
 #. for component in ${USE_GNOME:C/^([^:]+).*/\1/}
-.  if ${_USE_MATE_ALL:M${component}}==""
+.      if ${_USE_MATE_ALL:M${component}}==""
 .error cannot install: Unknown component USE_MATE=${component}
-.  endif
-. endfor
+.      endif
+.    endfor
 
-. for component in ${USE_MATE:O:u:C/^([^:]+).*/\1/}
-.  if defined(${component}_PATCH_DEPENDS)
+.    for component in ${USE_MATE:O:u:C/^([^:]+).*/\1/}
+.      if defined(${component}_PATCH_DEPENDS)
 PATCH_DEPENDS+=	${${component}_PATCH_DEPENDS}
-.  endif
+.      endif
 
-.  if defined(${component}_DETECT)
-.   if ${USE_MATE:M${component}\:build}!=""
+.      if defined(${component}_DETECT)
+.        if ${USE_MATE:M${component}\:build}!=""
 BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
-.   elif ${USE_MATE:M${component}\:run}!=""
+.        elif ${USE_MATE:M${component}\:run}!=""
 RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
-.   else
-.    if defined(${component}_LIB_DEPENDS)
+.        else
+.          if defined(${component}_LIB_DEPENDS)
 LIB_DEPENDS+=	${${component}_LIB_DEPENDS}
-.    else
+.          else
 BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
 RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
-.    endif
-.   endif
-.  endif
+.          endif
+.        endif
+.      endif
 
-.  if defined(${component}_CONFIGURE_TARGET)
+.      if defined(${component}_CONFIGURE_TARGET)
 CONFIGURE_ARGS+=${${component}_CONFIGURE_ARGS}
-.  endif
+.      endif
 
-.  if defined(${component}_CONFIGURE_ENV)
+.      if defined(${component}_CONFIGURE_ENV)
 CONFIGURE_ENV+=	${${component}_CONFIGURE_ENV}
-.  endif
+.      endif
 
-.  if defined(${component}_MAKE_ENV)
+.      if defined(${component}_MAKE_ENV)
 MAKE_ENV+=	${${component}_MAKE_ENV}
-.  endif
+.      endif
 
-.  if !defined(CONFIGURE_TARGET) && defined(${component}_CONFIGURE_TARGET)
+.      if !defined(CONFIGURE_TARGET) && defined(${component}_CONFIGURE_TARGET)
 CONFIGURE_TARGET=	${${component}_CONFIGURE_TARGET}
-.  endif
+.      endif
 
-.  if defined(${component}_PRE_PATCH)
+.      if defined(${component}_PRE_PATCH)
 MATE_PRE_PATCH+=	; ${${component}_PRE_PATCH}
-.  endif
-. endfor
-.endif # USE_MATE check
+.      endif
+.    endfor
+.  endif # USE_MATE check
 
 .endif
 # End of optional part.
@@ -203,7 +203,7 @@ MATE_PRE_PATCH+=	; ${${component}_PRE_PATCH}
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_MATE_POST_MK)
 _INCLUDE_USES_MATE_POST_MK=     yes
 
-.if ${USE_MATE:Mautogen}!=""
+.  if ${USE_MATE:Mautogen}!=""
 
 CONFIGURE_ENV+=	NOCONFIGURE=yes
 
@@ -211,15 +211,15 @@ _USES_configure+=	295:mate-pre-configure
 
 mate-pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} ./autogen.sh)
-.endif
+.  endif
 
-.if defined(MATE_PRE_PATCH)
+.  if defined(MATE_PRE_PATCH)
 
 _USES_configure+=	445:mate-pre-configure-script
 
 mate-pre-configure-script:
 	@${MATE_PRE_PATCH:C/^;//1}
-.endif
+.  endif
 
 .endif
 # End of use part.

@@ -127,7 +127,7 @@ Licenses_Include_MAINTAINER=         portmgr@FreeBSD.org
 
 .if defined(_POSTMKINCLUDED) && !defined(BEFOREPORTMK)
 
-.if defined(LICENSE)
+.  if defined(LICENSE)
 
 # Include known licenses from database
 
@@ -167,37 +167,37 @@ _LICENSE_COOKIE?=	${WRKDIR}/.license_done.${PORTNAME}.${PREFIX:S/\//_/g}
 # _LICENSE_COMB		- Copy of LICENSE_COMB (but "single" instead of empty)
 
 _LICENSE?=			${LICENSE}
-.if !defined(LICENSE_COMB)
+.    if !defined(LICENSE_COMB)
 _LICENSE_COMB=		single
-.else
+.    else
 _LICENSE_COMB=		${LICENSE_COMB}
-.endif
+.    endif
 
 # Check if single or dual/multiple license
 #
 # Make sure LICENSE_COMB is only used with more than one license.
 
-.if ${_LICENSE_COMB} != "single" && ${_LICENSE_COMB} != "dual" && ${_LICENSE_COMB} != "multi"
+.    if ${_LICENSE_COMB} != "single" && ${_LICENSE_COMB} != "dual" && ${_LICENSE_COMB} != "multi"
 _LICENSE_ERROR?=	invalid value for LICENSE_COMB: "${_LICENSE_COMB}" (should be "single", "dual" or "multi")
-.endif
+.    endif
 
-.for lic in ${_LICENSE}
-.	if defined(_LICENSE_DEFINED)
-.		if ${_LICENSE_COMB} == "single"
+.    for lic in ${_LICENSE}
+.      if defined(_LICENSE_DEFINED)
+.        if ${_LICENSE_COMB} == "single"
 _LICENSE_ERROR?=	multiple licenses in LICENSE, but LICENSE_COMB is set to "single" (or undefined)
-.		else
+.        else
 _LICENSE_MULTI=		yes
-.		endif
-.	else
+.        endif
+.      else
 _LICENSE_DEFINED=	yes
-.	endif
-.endfor
-.if ${_LICENSE_COMB} != "single" && !defined(_LICENSE_MULTI)
+.      endif
+.    endfor
+.    if ${_LICENSE_COMB} != "single" && !defined(_LICENSE_MULTI)
 _LICENSE_ERROR?=	single license in LICENSE, but LICENSE_COMB is set to "${_LICENSE_COMB}" (requires more than one)
-.endif
-.if !defined(_LICENSE_DEFINED)
+.    endif
+.    if !defined(_LICENSE_DEFINED)
 _LICENSE_ERROR?=	no licenses present in LICENSE (empty string)
-.endif
+.    endif
 .undef _LICENSE_DEFINED
 .undef _LICENSE_MULTI
 
@@ -211,174 +211,174 @@ _LICENSE_ERROR?=	no licenses present in LICENSE (empty string)
 # Make sure required variables are defined, and remove conflicting (positive
 # and negative) duplicated components.
 
-.if ${_LICENSE_COMB} == "single"
+.    if ${_LICENSE_COMB} == "single"
 # Defaults to empty
 _LICENSE_GROUPS?=	#
 # Start
-.	for lic in ${_LICENSE}
-.		if ${_LICENSE_LIST:M${lic}} != ""
+.      for lic in ${_LICENSE}
+.        if ${_LICENSE_LIST:M${lic}} != ""
 # Case 1: license defined in the framework.
 _LICENSE_TYPE=		known
-.			for var in ${_LICENSE_LIST_PORT_VARS}
-.				if defined(LICENSE_${var})
+.          for var in ${_LICENSE_LIST_PORT_VARS}
+.            if defined(LICENSE_${var})
 _LICENSE_ERROR?=	redefining LICENSE_${var} is not allowed for known licenses, to define a custom license try another LICENSE name like ${_LICENSE}-variant
-.				endif
-.				if !defined(_LICENSE_${var}_${lic})
+.            endif
+.            if !defined(_LICENSE_${var}_${lic})
 _LICENSE_ERROR?=	ERROR: missing _LICENSE_${var}_${lic} in bsd.licenses.db.mk
-.				else
+.            else
 _LICENSE_${var}=	${_LICENSE_${var}_${lic}}
-.				endif
-.			endfor
+.            endif
+.          endfor
 # Check for LICENSE_FILE or at least LICENSE_TEXT (which simulates it)
-.			if !defined(LICENSE_FILE)
-.				if !defined(LICENSE_TEXT)
-.					if exists(${_LICENSE_STORE}/${lic})
+.          if !defined(LICENSE_FILE)
+.            if !defined(LICENSE_TEXT)
+.              if exists(${_LICENSE_STORE}/${lic})
 _LICENSE_FILE=		${_LICENSE_STORE}/${lic}
-.					else
+.              else
 # No license file in /usr/ports/Templates/Licenses
 _LICENSE_TEXT=		The license: ${_LICENSE} (${_LICENSE_NAME}) is standard, please read from the web.
 _LICENSE_FILE=		${WRKDIR}/${lic}
-.					endif
-.				else
+.              endif
+.            else
 _LICENSE_ERROR?=	defining LICENSE_TEXT is not allowed for known licenses
-.				endif
-.			else
+.            endif
+.          else
 _LICENSE_FILE=		${LICENSE_FILE}
-.			endif
+.          endif
 
-.		else
+.        else
 # Case 2: license only known by the port.
 _LICENSE_TYPE=		unknown
-.			for var in ${_LICENSE_LIST_PORT_VARS}
-.				if defined(LICENSE_${var})
+.          for var in ${_LICENSE_LIST_PORT_VARS}
+.            if defined(LICENSE_${var})
 _LICENSE_${var}=	${LICENSE_${var}}
-.				elif !defined(_LICENSE_${var})
+.            elif !defined(_LICENSE_${var})
 _LICENSE_ERROR?=	for unknown licenses, defining LICENSE_${var} is mandatory (otherwise use a known LICENSE)
-.				endif
-.			endfor
+.            endif
+.          endfor
 # Check LICENSE_PERMS for invalid, ambiguous and duplicate components
 __LICENSE_PERMS:=	#
-.			for comp in ${_LICENSE_PERMS}
-.				if ${_LICENSE_LIST_PERMS:M${comp:C/^no-//}} == ""
+.          for comp in ${_LICENSE_PERMS}
+.            if ${_LICENSE_LIST_PERMS:M${comp:C/^no-//}} == ""
 _LICENSE_ERROR?=	invalid LICENSE_PERMS component "${comp}"
-.				elif ${__LICENSE_PERMS:M${comp}} == "" && \
+.            elif ${__LICENSE_PERMS:M${comp}} == "" && \
 					 ${_LICENSE_PERMS:Mno-${comp:C/^no-//}} == ""
 __LICENSE_PERMS+=	${comp}
-.				endif
-.			endfor
+.            endif
+.          endfor
 _LICENSE_PERMS:=	${__LICENSE_PERMS}
 .			undef __LICENSE_PERMS
 # Check for LICENSE_FILE or at least LICENSE_TEXT (which simulates it)
-.			if !defined(LICENSE_FILE)
-.				if !defined(LICENSE_TEXT)
+.          if !defined(LICENSE_FILE)
+.            if !defined(LICENSE_TEXT)
 _LICENSE_ERROR?=	either LICENSE_FILE or LICENSE_TEXT must be defined
-.				else
+.            else
 _LICENSE_TEXT=		${LICENSE_TEXT}
 _LICENSE_FILE=		${WRKDIR}/${lic}
-.				endif
-.			else
+.            endif
+.          else
 _LICENSE_FILE=		${LICENSE_FILE}
-.			endif
-.		endif
+.          endif
+.        endif
 
 # Only one is allowed
-.		if defined(LICENSE_FILE) && defined(LICENSE_TEXT)
+.        if defined(LICENSE_FILE) && defined(LICENSE_TEXT)
 _LICENSE_ERROR?=	defining both LICENSE_FILE and LICENSE_TEXT is not allowed
-.		endif
+.        endif
 # Distfiles
-.		if !defined(LICENSE_DISTFILES)
+.        if !defined(LICENSE_DISTFILES)
 _LICENSE_DISTFILES=	${_DISTFILES}
-.		else
+.        else
 _LICENSE_DISTFILES=	${LICENSE_DISTFILES}
-.		endif
-.	endfor
+.        endif
+.      endfor
 
-.else
+.    else
 
-.	if defined(LICENSE_FILE)
-.		for lic in ${_LICENSE}
+.      if defined(LICENSE_FILE)
+.        for lic in ${_LICENSE}
 LICENSE_FILE_${lic}?=	${LICENSE_FILE}
-.		endfor
-.	endif
+.        endfor
+.      endif
 
-.	for lic in ${_LICENSE}
+.      for lic in ${_LICENSE}
 # Defaults to empty
 _LICENSE_GROUPS_${lic}?=#
-.		if ${_LICENSE_LIST:M${lic}} != ""
+.        if ${_LICENSE_LIST:M${lic}} != ""
 # Case 1: license defined in the framework.
 _LICENSE_TYPE_${lic}=	known
-.			for var in ${_LICENSE_LIST_PORT_VARS}
-.				if defined(LICENSE_${var}_${lic})
+.          for var in ${_LICENSE_LIST_PORT_VARS}
+.            if defined(LICENSE_${var}_${lic})
 _LICENSE_ERROR?=	redefining LICENSE_${var}_${lic} is not allowed for known licenses, to define a custom license try another LICENSE name for ${lic} like ${lic}-variant
-.				endif
-.				if !defined(_LICENSE_${var}_${lic})
+.            endif
+.            if !defined(_LICENSE_${var}_${lic})
 _LICENSE_ERROR?=	ERROR: missing _LICENSE_${var}_${lic} in bsd.licenses.db.mk
-.				endif
-.			endfor
+.            endif
+.          endfor
 # Check for LICENSE_FILE or at least LICENSE_TEXT (which simulates it)
-.			if !defined(LICENSE_FILE_${lic})
-.				if !defined(LICENSE_TEXT_${lic})
-.					if exists(${_LICENSE_STORE}/${lic})
+.          if !defined(LICENSE_FILE_${lic})
+.            if !defined(LICENSE_TEXT_${lic})
+.              if exists(${_LICENSE_STORE}/${lic})
 _LICENSE_FILE_${lic}=		${_LICENSE_STORE}/${lic}
-.					else
+.              else
 #  No license file in /usr/ports/Templates/Licenses
 _LICENSE_TEXT_${lic}=	The license: ${lic} (${_LICENSE_NAME_${lic}}) is standard, please read from the web.
 _LICENSE_FILE_${lic}=	${WRKDIR}/${lic}
-.					endif
-.				else
+.              endif
+.            else
 _LICENSE_ERROR?=	defining LICENSE_TEXT_${lic} is not allowed for known licenses
-.				endif
-.			else
+.            endif
+.          else
 _LICENSE_FILE_${lic}=	${LICENSE_FILE_${lic}}
-.			endif
+.          endif
 
-.		else
+.        else
 # Case 2: license only known by the port.
 _LICENSE_TYPE_${lic}=	unknown
-.			for var in ${_LICENSE_LIST_PORT_VARS}
-.				if defined(LICENSE_${var}_${lic})
+.          for var in ${_LICENSE_LIST_PORT_VARS}
+.            if defined(LICENSE_${var}_${lic})
 _LICENSE_${var}_${lic}=	${LICENSE_${var}_${lic}}
-.				elif !defined(_LICENSE_${var}_${lic})
+.            elif !defined(_LICENSE_${var}_${lic})
 _LICENSE_ERROR?=	for unknown licenses, defining LICENSE_${var}_${lic} is mandatory (otherwise use a known LICENSE)
-.				endif
-.			endfor
+.            endif
+.          endfor
 # Check LICENSE_PERMS for invalid, ambiguous and duplicate components
 __LICENSE_PERMS:=	#
-.			for comp in ${_LICENSE_PERMS_${lic}}
-.				if ${_LICENSE_LIST_PERMS:M${comp:C/^no-//}} == ""
+.          for comp in ${_LICENSE_PERMS_${lic}}
+.            if ${_LICENSE_LIST_PERMS:M${comp:C/^no-//}} == ""
 _LICENSE_ERROR?=		invalid LICENSE_PERMS_${var} component "${comp}"
-.				elif ${__LICENSE_PERMS:M${comp}} == "" && \
+.            elif ${__LICENSE_PERMS:M${comp}} == "" && \
 					 ${_LICENSE_PERMS_${lic}:Mno-${comp:C/^no-//}} == ""
 __LICENSE_PERMS+=		${comp}
-.				endif
-.			endfor
+.            endif
+.          endfor
 _LICENSE_PERMS_${lic}:=	${__LICENSE_PERMS}
 .			undef __LICENSE_PERMS
 # Check for LICENSE_FILE or at least LICENSE_TEXT (which simulates it)
-.			if !defined(LICENSE_FILE_${lic})
-.				if !defined(LICENSE_TEXT_${lic})
+.          if !defined(LICENSE_FILE_${lic})
+.            if !defined(LICENSE_TEXT_${lic})
 _LICENSE_ERROR?=		either LICENSE_FILE_${lic} or LICENSE_TEXT_${lic} must be defined
-.				else
+.            else
 _LICENSE_TEXT_${lic}=	${LICENSE_TEXT_${lic}}
 _LICENSE_FILE_${lic}=	${WRKDIR}/${lic}
-.				endif
-.			else
+.            endif
+.          else
 _LICENSE_FILE_${lic}=	${LICENSE_FILE_${lic}}
-.			endif
-.		endif
+.          endif
+.        endif
 
 # Only one is allowed
-.		if defined(LICENSE_FILE_${lic}) && defined(LICENSE_TEXT_${lic})
+.        if defined(LICENSE_FILE_${lic}) && defined(LICENSE_TEXT_${lic})
 _LICENSE_ERROR?=		defining both LICENSE_FILE_${lic} and LICENSE_TEXT_${lic}is not allowed
-.		endif
+.        endif
 # Distfiles
-.		if !defined(LICENSE_DISTFILES_${lic})
+.        if !defined(LICENSE_DISTFILES_${lic})
 _LICENSE_DISTFILES_${lic}=	${_DISTFILES}
-.		else
+.        else
 _LICENSE_DISTFILES_${lic}=	${LICENSE_DISTFILES_${lic}}
-.		endif
-.	endfor
-.endif
+.        endif
+.      endfor
+.    endif
 
 # Check if the user agrees with the license
 
@@ -391,129 +391,129 @@ LICENSES_GROUPS_REJECTED?=	#
 
 # Evaluate per-license status
 
-.if ${_LICENSE_COMB} == "single"
-.	for lic in ${_LICENSE}
-.		if ${LICENSES_REJECTED:M${lic}} != ""
+.    if ${_LICENSE_COMB} == "single"
+.      for lic in ${_LICENSE}
+.        if ${LICENSES_REJECTED:M${lic}} != ""
 _LICENSE_STATUS?=	rejected
-.		endif
-.		for group in ${_LICENSE_GROUPS}
-.			if ${LICENSES_GROUPS_REJECTED:M${group}} != ""
+.        endif
+.        for group in ${_LICENSE_GROUPS}
+.          if ${LICENSES_GROUPS_REJECTED:M${group}} != ""
 _LICENSE_STATUS?=	rejected
-.			endif
-.			if ${LICENSES_GROUPS_ACCEPTED:M${group}} != ""
+.          endif
+.          if ${LICENSES_GROUPS_ACCEPTED:M${group}} != ""
 _LICENSE_STATUS?=	accepted
-.			endif
-.		endfor
-.		if ${LICENSES_ACCEPTED:M${lic}} != ""
+.          endif
+.        endfor
+.        if ${LICENSES_ACCEPTED:M${lic}} != ""
 _LICENSE_STATUS?=	accepted
-.		endif
-.		if ${_LICENSE_PERMS:Mauto-accept} != "" && !defined(LICENSES_ASK)
+.        endif
+.        if ${_LICENSE_PERMS:Mauto-accept} != "" && !defined(LICENSES_ASK)
 _LICENSE_STATUS?=	accepted
-.		endif
+.        endif
 _LICENSE_STATUS?=	ask
-.	endfor
+.      endfor
 
-.else
-.	for lic in ${_LICENSE}
-.		if ${LICENSES_REJECTED:M${lic}} != ""
+.    else
+.      for lic in ${_LICENSE}
+.        if ${LICENSES_REJECTED:M${lic}} != ""
 _LICENSE_STATUS_${lic}?=	rejected
-.		endif
-.		for group in ${_LICENSE_GROUPS_${lic}}
-.			if ${LICENSES_GROUPS_REJECTED:M${group}} != ""
+.        endif
+.        for group in ${_LICENSE_GROUPS_${lic}}
+.          if ${LICENSES_GROUPS_REJECTED:M${group}} != ""
 _LICENSE_STATUS_${lic}?=	rejected
-.			endif
-.			if ${LICENSES_GROUPS_ACCEPTED:M${group}} != ""
+.          endif
+.          if ${LICENSES_GROUPS_ACCEPTED:M${group}} != ""
 _LICENSE_STATUS_${lic}?=	accepted
-.			endif
-.		endfor
-.		if ${LICENSES_ACCEPTED:M${lic}} != ""
+.          endif
+.        endfor
+.        if ${LICENSES_ACCEPTED:M${lic}} != ""
 _LICENSE_STATUS_${lic}?=	accepted
-.		endif
-.		if ${_LICENSE_PERMS_${lic}:Mauto-accept} != "" && !defined(LICENSES_ASK)
+.        endif
+.        if ${_LICENSE_PERMS_${lic}:Mauto-accept} != "" && !defined(LICENSES_ASK)
 _LICENSE_STATUS_${lic}?=	accepted
-.		endif
+.        endif
 _LICENSE_STATUS_${lic}?=	ask
-.	endfor
-.endif
+.      endfor
+.    endif
 
 # Evaluate general status
 
-.if ${_LICENSE_COMB} == "dual"
-.	for lic in ${_LICENSE}
-.		if ${_LICENSE_STATUS_${lic}} == "accepted"
+.    if ${_LICENSE_COMB} == "dual"
+.      for lic in ${_LICENSE}
+.        if ${_LICENSE_STATUS_${lic}} == "accepted"
 _LICENSE_STATUS=	accepted
-.		elif ${_LICENSE_STATUS_${lic}} == "ask"
+.        elif ${_LICENSE_STATUS_${lic}} == "ask"
 _LICENSE_STATUS?=	ask
 _LICENSE_TO_ASK+=	${lic}
-.		endif
+.        endif
 _LICENSE_STATUS?=	rejected
-.	endfor
+.      endfor
 
-.elif ${_LICENSE_COMB} == "multi"
-.	for lic in ${_LICENSE}
-.		if ${_LICENSE_STATUS_${lic}} == "rejected"
+.    elif ${_LICENSE_COMB} == "multi"
+.      for lic in ${_LICENSE}
+.        if ${_LICENSE_STATUS_${lic}} == "rejected"
 _LICENSE_STATUS=	rejected
-.		elif ${_LICENSE_STATUS_${lic}} == "ask"
+.        elif ${_LICENSE_STATUS_${lic}} == "ask"
 _LICENSE_STATUS?=	ask
 _LICENSE_TO_ASK+=	${lic}
-.		endif
-.	endfor
+.        endif
+.      endfor
 _LICENSE_STATUS?=	accepted
-.endif
+.    endif
 
 # For dual/multi licenses, after processing all sub-licenses, the following
 # must be determined: _LICENSE_NAME, _LICENSE_PERMS and _LICENSE_GROUPS.
 
-.if ${_LICENSE_COMB} == "dual"
+.    if ${_LICENSE_COMB} == "dual"
 _LICENSE_NAME=		Dual (any of): ${_LICENSE}
 # Calculate least restrictive permissions (union)
 _LICENSE_PERMS:=	#
-.	for lic in ${_LICENSE}
-.		for comp in ${_LICENSE_LIST_PERMS}
-.			if ${_LICENSE_PERMS_${lic}:M${comp}} != "" && \
+.      for lic in ${_LICENSE}
+.        for comp in ${_LICENSE_LIST_PERMS}
+.          if ${_LICENSE_PERMS_${lic}:M${comp}} != "" && \
 			   ${_LICENSE_PERMS:M${comp}} == ""
 _LICENSE_PERMS+=	${comp}
-.			endif
-.		endfor
-.	endfor
+.          endif
+.        endfor
+.      endfor
 # Calculate least restrictive groups (union)
 _LICENSE_GROUPS:=	#
-.	for lic in ${_LICENSE}
-.		for comp in ${_LICENSE_LIST_GROUPS}
-.			if ${_LICENSE_GROUPS_${lic}:M${comp}} != "" && \
+.      for lic in ${_LICENSE}
+.        for comp in ${_LICENSE_LIST_GROUPS}
+.          if ${_LICENSE_GROUPS_${lic}:M${comp}} != "" && \
 			   ${_LICENSE_GROUPS:M${comp}} == ""
 _LICENSE_GROUPS+=	${comp}
-.			endif
-.		endfor
-.	endfor
+.          endif
+.        endfor
+.      endfor
 
-.elif ${_LICENSE_COMB} == "multi"
+.    elif ${_LICENSE_COMB} == "multi"
 _LICENSE_NAME=		Multiple (all of): ${_LICENSE}
 # Calculate most restrictive permissions (intersection)
 _LICENSE_PERMS:=	${_LICENSE_LIST_PERMS}
-.	for lic in ${_LICENSE}
-.		for comp in ${_LICENSE_LIST_PERMS}
-.			if ${_LICENSE_PERMS_${lic}:M${comp}} == ""
+.      for lic in ${_LICENSE}
+.        for comp in ${_LICENSE_LIST_PERMS}
+.          if ${_LICENSE_PERMS_${lic}:M${comp}} == ""
 _LICENSE_PERMS:=	${_LICENSE_PERMS:N${comp}}
-.			endif
-.		endfor
-.	endfor
+.          endif
+.        endfor
+.      endfor
 # Calculate most restrictive groups (intersection)
 _LICENSE_GROUPS:=	${_LICENSE_LIST_GROUPS}
-.	for lic in ${_LICENSE}
-.		for comp in ${_LICENSE_LIST_GROUPS}
-.			if ${_LICENSE_GROUPS_${lic}:M${comp}} == ""
+.      for lic in ${_LICENSE}
+.        for comp in ${_LICENSE_LIST_GROUPS}
+.          if ${_LICENSE_GROUPS_${lic}:M${comp}} == ""
 _LICENSE_GROUPS:=	${_LICENSE_GROUPS:N${comp}}
-.			endif
-.		endfor
-.	endfor
-.endif
+.          endif
+.        endfor
+.      endfor
+.    endif
 
 # Prepare information for asking license to the user
 
-.if ${_LICENSE_STATUS} == "ask" && ${_LICENSE_COMB} != "single"
+.    if ${_LICENSE_STATUS} == "ask" && ${_LICENSE_COMB} != "single"
 _LICENSE_ASK_DATA!=	mktemp -ut portslicense
-.endif
+.    endif
 
 # Calculate restrictions and set RESTRICTED_FILES when
 # appropiate, together with cleaning targets.
@@ -522,103 +522,103 @@ _LICENSE_ASK_DATA!=	mktemp -ut portslicense
 # CDROM and FTP, but the current framework supports separating them (would
 # require better/new delete-package and delete-distfiles targets)
 
-.if ${_LICENSE_PERMS:Mpkg-mirror} == ""
+.    if ${_LICENSE_PERMS:Mpkg-mirror} == ""
 _LICENSE_RESTRICTED+=	delete-package
-.elif ${_LICENSE_PERMS:Mpkg-sell} == ""
+.    elif ${_LICENSE_PERMS:Mpkg-sell} == ""
 _LICENSE_CDROM+=		delete-package
-.endif
+.    endif
 
-.if ${_LICENSE_COMB} == "multi"
-.	for lic in ${_LICENSE}
-.		if ${_LICENSE_PERMS_${lic}:Mdist-mirror} == "" || ${_LICENSE_PERMS_${lic}:Mdist-sell} == ""
+.    if ${_LICENSE_COMB} == "multi"
+.      for lic in ${_LICENSE}
+.        if ${_LICENSE_PERMS_${lic}:Mdist-mirror} == "" || ${_LICENSE_PERMS_${lic}:Mdist-sell} == ""
 RESTRICTED_FILES+=		${_LICENSE_DISTFILES_${lic}}
-.		endif
-.	endfor
-.	if defined(RESTRICTED_FILES)
+.        endif
+.      endfor
+.      if defined(RESTRICTED_FILES)
 RESTRICTED_FILES+=		${_PATCHFILES}
 _LICENSE_RESTRICTED+=	delete-distfiles
 _LICENSE_CDROM+=		delete-distfiles
-.	endif
-.else
-.	if ${_LICENSE_PERMS:Mdist-mirror} == ""
+.      endif
+.    else
+.      if ${_LICENSE_PERMS:Mdist-mirror} == ""
 _LICENSE_RESTRICTED+=	delete-distfiles
 RESTRICTED_FILES=		${_PATCHFILES} ${_DISTFILES}
-.	elif ${_LICENSE_PERMS:Mdist-sell} == ""
+.      elif ${_LICENSE_PERMS:Mdist-sell} == ""
 _LICENSE_CDROM+=		delete-distfiles
 RESTRICTED_FILES=		${_PATCHFILES} ${_DISTFILES}
-.	endif
-.endif
+.      endif
+.    endif
 
-.if defined(_LICENSE_RESTRICTED)
+.    if defined(_LICENSE_RESTRICTED)
 # _LICENSE_RESTRICTED contains 'delete-distfiles' and 'delete-package' if
 # needed with RESTRICTED_FILES filled from above.
 clean-restricted:	${_LICENSE_RESTRICTED}
 clean-restricted-list: ${_LICENSE_RESTRICTED:C/$/-list/}
-.else
+.    else
 clean-restricted:
 clean-restricted-list:
-.endif
+.    endif
 
-.if defined(_LICENSE_CDROM)
+.    if defined(_LICENSE_CDROM)
 clean-for-cdrom:	${_LICENSE_CDROM}
 clean-for-cdrom-list: ${_LICENSE_CDROM:C/$/-list/}
-.else
+.    else
 clean-for-cdrom:
 clean-for-cdrom-list:
-.endif
+.    endif
 
 # Check variables are correctly defined and print status up to here
 
-.if ${_LICENSE_STATUS} == "ask" && defined(BATCH)
+.    if ${_LICENSE_STATUS} == "ask" && defined(BATCH)
 IGNORE=		License ${_LICENSE} needs confirmation, but BATCH is defined
-.endif
+.    endif
 
 # This should probably be incrementally done while parsing all the license
 # possibilities.
 debug-license: check-license
-.if ${_LICENSE_PERMS:Mdist-mirror}
+.    if ${_LICENSE_PERMS:Mdist-mirror}
 	@${ECHO_MSG} "===>  License allows mirroring distribution files"
-.else
+.    else
 	@${ECHO_MSG} "===>  License does not allow mirroring distribution files"
-.endif
-.if ${_LICENSE_PERMS:Mdist-sell}
+.    endif
+.    if ${_LICENSE_PERMS:Mdist-sell}
 	@${ECHO_MSG} "===>  License allows selling distribution files"
-.else
+.    else
 	@${ECHO_MSG} "===>  License does not allow selling distribution files"
-.endif
-.if ${_LICENSE_PERMS:Mpkg-mirror}
+.    endif
+.    if ${_LICENSE_PERMS:Mpkg-mirror}
 	@${ECHO_MSG} "===>  License allows mirroring pre-built packages"
-.else
+.    else
 	@${ECHO_MSG} "===>  License does not allow mirroring pre-build packages"
-.endif
-.if ${_LICENSE_PERMS:Mpkg-sell}
+.    endif
+.    if ${_LICENSE_PERMS:Mpkg-sell}
 	@${ECHO_MSG} "===>  License allows selling pre-build packages"
-.else
+.    else
 	@${ECHO_MSG} "===>  License does not allow selling pre-build packages"
-.endif
-.if ${_LICENSE_PERMS:Mauto-accept}
+.    endif
+.    if ${_LICENSE_PERMS:Mauto-accept}
 	@${ECHO_MSG} "===>  License allows being auto-accepted"
-.else
+.    else
 	@${ECHO_MSG} "===>  License requires manual intervention by the user to accept its terms"
-.endif
+.    endif
 
 
 check-license:
-.if defined(_LICENSE_ERROR)
+.    if defined(_LICENSE_ERROR)
 		@${ECHO_MSG} "===>  License not correctly defined: ${_LICENSE_ERROR}"
 		@exit 1
-.endif
-.if ${_LICENSE_STATUS} == "rejected"
+.    endif
+.    if ${_LICENSE_STATUS} == "rejected"
 		@${ECHO_MSG} "===>  License ${_LICENSE} rejected by the user"
 		@${ECHO_MSG}
 		@${ECHO_MSG} "If you want to install this port make sure the following license(s) are not present in LICENSES_REJECTED, either in make arguments or /etc/make.conf: ${_LICENSE}. Also check LICENSES_GROUPS_REJECTED in case they contain a group this license(s) belong to." | ${FMT}
 		@${ECHO_MSG}
 		@exit 1
-.elif ${_LICENSE_STATUS} == "accepted"
+.    elif ${_LICENSE_STATUS} == "accepted"
 		@${ECHO_MSG} "===>  License ${_LICENSE} accepted by the user"
-.elif ${_LICENSE_STATUS} == "ask"
+.    elif ${_LICENSE_STATUS} == "ask"
 		@${ECHO_MSG} "===>  License ${_LICENSE} needs confirmation, will ask later"
-.endif
+.    endif
 
 # Display, ask and save preference if requested
 
@@ -626,35 +626,35 @@ ask-license: ${_LICENSE_COOKIE}
 
 ${_LICENSE_COOKIE}:
 # Make sure all required license files exist
-.if ${_LICENSE_COMB} == "single"
-.	if !defined(LICENSE_FILE) && defined(_LICENSE_TEXT)
+.    if ${_LICENSE_COMB} == "single"
+.      if !defined(LICENSE_FILE) && defined(_LICENSE_TEXT)
 	@test -f ${_LICENSE_FILE} || ${ECHO_CMD} "${_LICENSE_TEXT}" | ${FMT} > ${_LICENSE_FILE}
-.	endif
+.      endif
 	@test -f ${_LICENSE_FILE} || \
 		(${ECHO_MSG} "===>  Missing license file for ${_LICENSE} in ${_LICENSE_FILE}"; exit 1)
-.else
-.	for lic in ${_LICENSE}
-.		if !defined(LICENSE_FILE_${lic}) && defined(_LICENSE_TEXT_${lic})
+.    else
+.      for lic in ${_LICENSE}
+.        if !defined(LICENSE_FILE_${lic}) && defined(_LICENSE_TEXT_${lic})
 	@test -f ${_LICENSE_FILE_${lic}} || ${ECHO_CMD} "${_LICENSE_TEXT_${lic}}" | ${FMT} > ${_LICENSE_FILE_${lic}}
-.		endif
+.        endif
 	@test -f ${_LICENSE_FILE_${lic}} || \
 		(${ECHO_MSG} "===>  Missing license file for ${lic} in ${_LICENSE_FILE_${lic}}"; exit 1)
-.	endfor
-.endif
+.      endfor
+.    endif
 
-.if ${_LICENSE_STATUS} == "ask"
-.	if !defined(NO_LICENSES_DIALOGS)
+.    if ${_LICENSE_STATUS} == "ask"
+.      if !defined(NO_LICENSES_DIALOGS)
 # Dialog interface
-.		if ${_LICENSE_COMB} == "single"
+.        if ${_LICENSE_COMB} == "single"
 	@${DIALOG} --title "License for ${PKGNAME} (${_LICENSE})" \
 		--yes-label Accept --no-label Reject --yesno \
 		"$$(${CAT} ${_LICENSE_FILE})" 21 76
 
-.		elif ${_LICENSE_COMB} == "dual"
+.        elif ${_LICENSE_COMB} == "dual"
 	@${RM} ${_LICENSE_ASK_DATA}
-.			for lic in ${_LICENSE_TO_ASK}
+.          for lic in ${_LICENSE_TO_ASK}
 	@${ECHO_CMD} "${lic}:${_LICENSE_FILE_${lic}}" >> ${_LICENSE_ASK_DATA}
-.			endfor
+.          endfor
 	@menu_cmd="${DIALOG} --hline \"This port requires you to accept at least one license\" --menu \"License for ${PKGNAME} (dual)\" 21 70 15"; \
 	trap '${RM} $$tmpfile' EXIT INT TERM; \
 	tmpfile=$$(mktemp -t portlicenses); \
@@ -676,11 +676,11 @@ ${_LICENSE_COOKIE}:
 		esac; \
 	done
 
-.		elif ${_LICENSE_COMB} == "multi"
+.        elif ${_LICENSE_COMB} == "multi"
 	@${RM} ${_LICENSE_ASK_DATA}
-.			for lic in ${_LICENSE_TO_ASK}
+.          for lic in ${_LICENSE_TO_ASK}
 	@${ECHO_CMD} "${lic}:${_LICENSE_FILE_${lic}}" >> ${_LICENSE_ASK_DATA}
-.			endfor
+.          endfor
 	@menu_cmd="${DIALOG} --hline \"This port requires you to accept all mentioned licenses\" --menu \"License for ${PKGNAME} (multi)\" 21 70 15"; \
 	trap '${RM} $$tmpfile' EXIT INT TERM; \
 	tmpfile=$$(mktemp -t portlicenses); \
@@ -699,117 +699,117 @@ ${_LICENSE_COOKIE}:
 				${DIALOG} --textbox "$${file}" 21 75 ;; \
 		esac; \
 	done
-.		endif
+.        endif
 
-.	else
+.      else
 # Text interface
 	@${ECHO_MSG}
-.		if ${_LICENSE_COMB} == "single"
+.        if ${_LICENSE_COMB} == "single"
 	@${ECHO_MSG} "To install the port you must agree to the license: ${_LICENSE} (${_LICENSE_NAME})." | ${FMT}
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can view the license at ${_LICENSE_FILE:S/${WRKDIR}\//${WRKDIR:T}\//}."
-.		elif ${_LICENSE_COMB} == "dual"
+.        elif ${_LICENSE_COMB} == "dual"
 	@${ECHO_MSG} "To install the port you must agree to any of the following licenses:"
-.		elif ${_LICENSE_COMB} == "multi"
+.        elif ${_LICENSE_COMB} == "multi"
 	@${ECHO_MSG} "To install the port you must agree to all of the following licenses:"
-.		endif
+.        endif
 	@${ECHO_MSG}
-.		if ${_LICENSE_COMB} != "single"
-.			for lic in ${_LICENSE_TO_ASK}
-.				if defined(WRKDIRPREFIX)
+.        if ${_LICENSE_COMB} != "single"
+.          for lic in ${_LICENSE_TO_ASK}
+.            if defined(WRKDIRPREFIX)
 	@${ECHO_MSG} "- ${lic} (${_LICENSE_NAME_${lic}}), available at ${_LICENSE_FILE_${lic}}"
-.				else
+.            else
 	@${ECHO_MSG} "- ${lic} (${_LICENSE_NAME_${lic}}), available at ${_LICENSE_FILE_${lic}:S/${WRKDIR}\//${WRKDIR:T}\//}"
-.				endif
-.			endfor
+.            endif
+.          endfor
 	@${ECHO_MSG}
-.		endif
+.        endif
 	@${ECHO_MSG} "If you agree with the corresponding license(s), add them to LICENSES_ACCEPTED either in make arguments or /etc/make.conf." | ${FMT}
 	@${ECHO_MSG}
 	@exit 1
-.	endif
+.      endif
 	@${RM} ${_LICENSE_ASK_DATA}
-.endif
+.    endif
 
 # Create report and catalog
-.if !defined(NO_LICENSES_INSTALL)
+.    if !defined(NO_LICENSES_INSTALL)
 	@${RM} ${_LICENSE_CATALOG_TMP} ${_LICENSE_REPORT_TMP}
-.	if ${_LICENSE_COMB} == "single"
+.      if ${_LICENSE_COMB} == "single"
 # Catalog
-.		for var in _LICENSE _LICENSE_NAME _LICENSE_PERMS _LICENSE_GROUPS _LICENSE_DISTFILES
+.        for var in _LICENSE _LICENSE_NAME _LICENSE_PERMS _LICENSE_GROUPS _LICENSE_DISTFILES
 	@${ECHO_CMD} "${var}=${${var}:C/^[[:blank:]]*//}" >> ${_LICENSE_CATALOG_TMP}
-.		endfor
+.        endfor
 # Report
 	@${ECHO_CMD} "This package has a single license: ${_LICENSE} (${_LICENSE_NAME})." > ${_LICENSE_REPORT_TMP}
-.	else
+.      else
 # Catalog
-.		for var in _LICENSE _LICENSE_COMB _LICENSE_NAME _LICENSE_PERMS _LICENSE_GROUPS
+.        for var in _LICENSE _LICENSE_COMB _LICENSE_NAME _LICENSE_PERMS _LICENSE_GROUPS
 	@${ECHO_CMD} "${var}=${${var}:C/^[[:blank:]]*//}" >> ${_LICENSE_CATALOG_TMP}
-.		endfor
-.		if ${_LICENSE_COMB} == "dual" && ${_LICENSE_STATUS} == "ask"
+.        endfor
+.        if ${_LICENSE_COMB} == "dual" && ${_LICENSE_STATUS} == "ask"
 	@${SED} -e 's/^/_LICENSE_SELECTED=/' ${_LICENSE_COOKIE} >> ${_LICENSE_CATALOG_TMP}
-.		endif
-.		for lic in ${_LICENSE}
-.			for var in NAME PERMS GROUPS DISTFILES
+.        endif
+.        for lic in ${_LICENSE}
+.          for var in NAME PERMS GROUPS DISTFILES
 	@${ECHO_CMD} "_LICENSE_${var}_${lic} =${_LICENSE_${var}_${lic}:C/^[[:blank:]]*//}" >> ${_LICENSE_CATALOG_TMP}
-.			endfor
-.		endfor
+.          endfor
+.        endfor
 # Report
-.		if ${_LICENSE_COMB} == "dual"
+.        if ${_LICENSE_COMB} == "dual"
 	@${ECHO_CMD} "This package has dual licenses (any of):"  >> ${_LICENSE_REPORT_TMP}
-.		elif ${_LICENSE_COMB} == "multi"
+.        elif ${_LICENSE_COMB} == "multi"
 	@${ECHO_CMD} "This package has multiple licenses (all of):"  >> ${_LICENSE_REPORT_TMP}
-.		endif
-.		for lic in ${_LICENSE}
+.        endif
+.        for lic in ${_LICENSE}
 	@${ECHO_CMD} "- ${lic} (${_LICENSE_NAME_${lic}})"  >> ${_LICENSE_REPORT_TMP}
-.		endfor
-.	endif
-.endif
+.        endfor
+.      endif
+.    endif
 
 # Cookie (done here)
 	@${TOUCH} ${_LICENSE_COOKIE}
 
 # Package list entries, and installation
 
-.if !defined(NO_LICENSES_INSTALL)
+.    if !defined(NO_LICENSES_INSTALL)
 PLIST_FILES+=	${_LICENSE_CATALOG} \
 				${_LICENSE_REPORT}
 
-.if ${_LICENSE_COMB} == "single"
+.      if ${_LICENSE_COMB} == "single"
 PLIST_FILES+=	${_LICENSE_DIR}/${_LICENSE}
-.else
-.	for lic in ${_LICENSE}
-.		if defined(_LICENSE_FILE_${lic})
+.      else
+.        for lic in ${_LICENSE}
+.          if defined(_LICENSE_FILE_${lic})
 PLIST_FILES+=	${_LICENSE_DIR}/${lic}
-.		endif
-.	endfor
-.endif
+.          endif
+.        endfor
+.      endif
 
 install-license:
 	@${MKDIR} ${STAGEDIR}${_LICENSE_DIR}
 	@${INSTALL_DATA} ${_LICENSE_CATALOG_TMP} ${STAGEDIR}${_LICENSE_CATALOG}
 	@${INSTALL_DATA} ${_LICENSE_REPORT_TMP} ${STAGEDIR}${_LICENSE_REPORT}
-.if ${_LICENSE_COMB} == "single"
+.      if ${_LICENSE_COMB} == "single"
 	@${INSTALL_DATA} ${_LICENSE_FILE} ${STAGEDIR}${_LICENSE_DIR}/${_LICENSE}
-.else
-.	for lic in ${_LICENSE}
+.      else
+.        for lic in ${_LICENSE}
 	@${INSTALL_DATA} ${_LICENSE_FILE_${lic}} ${STAGEDIR}${_LICENSE_DIR}/${lic}
-.	endfor
-.endif
-.endif
+.        endfor
+.      endif
+.    endif
 
-.else	# !LICENSE
+.  else	# !LICENSE
 
 debug-license:
-.	if defined(LICENSE_VERBOSE)
+.    if defined(LICENSE_VERBOSE)
 	@${ECHO_MSG} "===>  License debug empty, port has not defined LICENSE"
-.	endif
+.    endif
 
 check-license:
-.	if defined(LICENSE_VERBOSE)
+.    if defined(LICENSE_VERBOSE)
 	@${ECHO_MSG} "===>  License check disabled, port has not defined LICENSE"
-.	endif
+.    endif
 
-.endif	# LICENSE
+.  endif	# LICENSE
 
 .endif

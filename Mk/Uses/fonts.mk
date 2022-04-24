@@ -40,34 +40,34 @@
 .if !defined(_INCLUDE_USES_FONTS_MK)
 _INCLUDE_USES_FONTS_MK=	yes
 
-.if empty(fonts_ARGS)
+.  if empty(fonts_ARGS)
 fonts_ARGS=	fontsdir
-.endif
+.  endif
 
-.if !empty(fonts_ARGS:Nfc:Nfontsdir:Nnone)
+.  if !empty(fonts_ARGS:Nfc:Nfontsdir:Nnone)
 IGNORE=	USES=fonts - invalid ARGS (${fonts_ARGS})
-.endif
+.  endif
 
-.if !empty(fonts_ARGS:Mfc) || !empty(fonts_ARGS:Mfontsdir)
+.  if !empty(fonts_ARGS:Mfc) || !empty(fonts_ARGS:Mfontsdir)
 RUN_DEPENDS+=	fc-cache:x11-fonts/fontconfig
-.endif
-.if !empty(fonts_ARGS:Mfontsdir)
+.  endif
+.  if !empty(fonts_ARGS:Mfontsdir)
 RUN_DEPENDS+=	mkfontscale:x11-fonts/mkfontscale
-.endif
+.  endif
 
 FONTNAME?=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/share/fonts/${FONTNAME}
-.if !empty(fonts_ARGS:Mfontsdir)
+.  if !empty(fonts_ARGS:Mfontsdir)
 PLIST_FILES+=	"@${fonts_ARGS} ${FONTSDIR}"
-.endif
-.if defined(FONTPATHSPEC) && !empty(FONTPATHSPEC)
+.  endif
+.  if defined(FONTPATHSPEC) && !empty(FONTPATHSPEC)
 FONTPATHD?=	${LOCALBASE}/etc/X11/fontpath.d
 PLIST_FILES+=	"${FONTPATHD}/${FONTPATHSPEC}"
 _USES_install+=	690:fonts-install-fontpathd
 fonts-install-fontpathd:
 	@${MKDIR} ${STAGEDIR}${FONTPATHD}
 	${RLN} ${STAGEDIR}${FONTSDIR} ${STAGEDIR}${FONTPATHD}/${FONTPATHSPEC}
-.endif
+.  endif
 SUB_LIST+=	FONTSDIR="${FONTSDIR}"
 PLIST_SUB+=	FONTSDIR="${FONTSDIR:S,^${PREFIX}/,,}"
 .endif

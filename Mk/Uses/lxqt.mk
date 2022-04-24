@@ -18,9 +18,9 @@
 .if !defined(_INCLUDE_USES_LXQT_MK)
 _INCLUDE_USES_LXQT_MK=	yes
 
-.if !empty(lxqt_ARGS)
+.  if !empty(lxqt_ARGS)
 IGNORE=	Incorrect 'USES+=lxqt:${lxqt_ARGS} takes no arguments
-.endif
+.  endif
 
 _LXQT_PROJECT=	${DISTNAME:S/-${DISTVERSION}//:tl}
 
@@ -59,42 +59,42 @@ lxqt_USE_LXQT_REQ=	qtxdg
 
 qtxdg_LIB_DEPENDS=	libQt5Xdg.so:devel/libqtxdg
 
-.if defined(USE_LXQT)
+.  if defined(USE_LXQT)
 
 # First, expand all USE_LXQT_REQ recursively.
-.for comp in ${_USE_LXQT_ALL}
-. for subcomp in ${${comp}_USE_LXQT_REQ}
+.    for comp in ${_USE_LXQT_ALL}
+.      for subcomp in ${${comp}_USE_LXQT_REQ}
 ${comp}_USE_LXQT_REQ+=	${${subcomp}_USE_LXQT_REQ}
-. endfor
-.endfor
+.      endfor
+.    endfor
 
 # Then, use already expanded USE_LXQT_REQ to expand USE_LXQT.
-.for comp in ${USE_LXQT}
-. if empty(_USE_LXQT_ALL:M${comp})
+.    for comp in ${USE_LXQT}
+.      if empty(_USE_LXQT_ALL:M${comp})
 IGNORE=	cannot install: Unknown component ${comp}
-. else
+.      else
 _USE_LXQT+=	${${comp}_USE_LXQT_REQ} ${comp}
-. endif
-.endfor
+.      endif
+.    endfor
 
 # Remove duplicate components
 USE_LXQT=	${_USE_LXQT:O:u}
 
-.for comp in ${USE_LXQT}
-. if defined(${comp}_BUILD_DEPENDS)
+.    for comp in ${USE_LXQT}
+.      if defined(${comp}_BUILD_DEPENDS)
 BUILD_DEPENDS+=	${${comp}_BUILD_DEPENDS}
-. endif
+.      endif
 
-. if defined(${comp}_LIB_DEPENDS)
+.      if defined(${comp}_LIB_DEPENDS)
 LIB_DEPENDS+=	${${comp}_LIB_DEPENDS}
-. endif
+.      endif
 
-. if defined(${comp}_RUN_DEPENDS)
+.      if defined(${comp}_RUN_DEPENDS)
 RUN_DEPENDS+=	${${comp}_RUN_DEPENDS}
-. endif
-.endfor
+.      endif
+.    endfor
 
-.endif # end of defined(USE_LXQT)
+.  endif # end of defined(USE_LXQT)
 
 .endif # end of !defined(_INCLUDE_USES_LXQT_MK)
 

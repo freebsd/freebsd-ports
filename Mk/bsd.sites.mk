@@ -365,35 +365,35 @@ DEV_WARNING+=	"MASTER_SITES contains ${MASTER_SITES:M*/github.com/*/archive/*}, 
 #
 # GH_TUPLE      - above shortened to account:project:tagname[:group][/subdir]
 #
-.if defined(USE_GITHUB)
-.  if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
+.  if defined(USE_GITHUB)
+.    if defined(GH_TAGNAME) && ${GH_TAGNAME} == master
 IGNORE?=	Using master as GH_TAGNAME is invalid. \
 		Must use a tag or commit hash so the upstream does \
 		not "reroll" as soon as the branch is updated
-.  endif
-.  if defined(GH_TUPLE)
-.    for _tuple in ${GH_TUPLE}
+.    endif
+.    if defined(GH_TUPLE)
+.      for _tuple in ${GH_TUPLE}
 _t_tmp=${_tuple}
-.      if ${_t_tmp:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\4@:S/://:C/[a-zA-Z0-9_]//g}
+.        if ${_t_tmp:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\4@:S/://:C/[a-zA-Z0-9_]//g}
 check-makevars::
 	@${ECHO_MSG} "The ${_tuple} GH_TUPLE line has"
 	@${ECHO_MSG} "a tag containing something else than [a-zA-Z0-9_]"
 	@${FALSE}
-.      endif
-.    endfor
+.        endif
+.      endfor
 GH_ACCOUNT+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\1\4@}
 GH_PROJECT+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\2\4@}
 GH_TAGNAME+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\3\4@}
 GH_SUBDIR+=	${GH_TUPLE:C@^([^:]*):([^:]*):([^:]*)((:[^:/]*)?)((/.*)?)@\6\4@:M/*:S/^\///}
-.  endif
+.    endif
 # We are cheating and using backend URLS for GitHub here. See ports/194898
 # comment #15 for explanation as to why and how to deal with it if it breaks.
 MASTER_SITE_GITHUB+=		https://codeload.github.com/%SUBDIR%
 MASTER_SITE_GITHUB_CLOUD+=	https://cloud.github.com/downloads/%SUBDIR%
 
-.  if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${USE_GITHUB:Mnodefault}
+.    if !defined(MASTER_SITES) || !${MASTER_SITES:MGH} && !${MASTER_SITES:MGHC} && !${USE_GITHUB:Mnodefault}
 MASTER_SITES+=	GH
-.  endif
+.    endif
 GH_ACCOUNT_DEFAULT=	${PORTNAME}
 GH_ACCOUNT?=	${GH_ACCOUNT_DEFAULT}
 GH_PROJECT_DEFAULT=	${PORTNAME}
@@ -403,41 +403,41 @@ GH_TAGNAME_DEFAULT=	${DISTVERSIONFULL}
 GH_TAGNAME?=	${GH_TAGNAME_DEFAULT}
 # Iterate over GH_ACCOUNT, GH_PROJECT, GH_TAGNAME and GH_SUBDIR to extract groups
 _GITHUB_GROUPS= DEFAULT
-.  for _gh_v in GH_ACCOUNT GH_PROJECT GH_TAGNAME GH_SUBDIR
-.    for _v_ex in ${${_gh_v}}
+.    for _gh_v in GH_ACCOUNT GH_PROJECT GH_TAGNAME GH_SUBDIR
+.      for _v_ex in ${${_gh_v}}
 _GH_GROUPS=	${_v_ex:S/^${_v_ex:C@:[^/:]+$@@}//:S/^://}
-.      if !empty(_GH_GROUPS)
-.        for _group in ${_GH_GROUPS:S/,/ /g}
-.          if ${_group} == all || ${_group} == ALL || ${_group} == default
+.        if !empty(_GH_GROUPS)
+.          for _group in ${_GH_GROUPS:S/,/ /g}
+.            if ${_group} == all || ${_group} == ALL || ${_group} == default
 check-makevars::
 		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
 		@${ECHO_MSG} "used in group definitions. Please fix your ${_gh_v}"
 		@${FALSE}
-.          endif
-.          if !${_GITHUB_GROUPS:M${_group}}
+.            endif
+.            if !${_GITHUB_GROUPS:M${_group}}
 _GITHUB_GROUPS+=	${_group}
-.          endif
+.            endif
 ${_gh_v}_${_group}=	${_v_ex:C@^(.*):[^/:]+$@\1@}
-.        endfor
-.      else
+.          endfor
+.        else
 ${_gh_v}_DEFAULT=	${_v_ex:C@^(.*):[^/:]+$@\1@}
-.      endif
+.        endif
+.      endfor
 .    endfor
-.  endfor
 # Put the default values back into the variables so that the *default* behavior
 # is not changed.
 GH_ACCOUNT:=	${GH_ACCOUNT_DEFAULT}
 GH_PROJECT:=	${GH_PROJECT_DEFAULT}
 GH_TAGNAME:=	${GH_TAGNAME_DEFAULT}
 GH_SUBDIR:=	${GH_SUBDIR_DEFAULT}
-.  if defined(GH_TAGNAME)
+.    if defined(GH_TAGNAME)
 # If you change either of the _SANITIZED or _EXTRACT variables, please keep the
 # changes in sync with the GH_TAGNAME_${_group}_* variables 50 lines below.
 GH_TAGNAME_SANITIZED=	${GH_TAGNAME:S,/,-,g}
 # GitHub silently converts tags starting with v to not have v in the filename
 # and extraction directory.  It also replaces + with -.
 GH_TAGNAME_EXTRACT=	${GH_TAGNAME_SANITIZED:C/^[vV]([0-9])/\1/:S/+/-/g:C/--*/-/g}
-.  endif
+.    endif
 # This new scheme rerolls distfiles. Also ensure they are renamed to avoid
 # conflicts. Use _GITHUB_REV in case github changes their zipping or structure
 # which has happened before.
@@ -446,13 +446,13 @@ _GITHUB_EXTRACT_SUFX=	.tar.gz
 # Put the DEFAULT distfile first
 _GITHUB_CLONE_DIR?=	${WRKDIR}/git-clone
 _PORTS_DIRECTORIES+=	${_GITHUB_CLONE_DIR}
-.  if !${USE_GITHUB:Mnodefault} && empty(MASTER_SITES:MGHC)
+.    if !${USE_GITHUB:Mnodefault} && empty(MASTER_SITES:MGHC)
 # GH_TAGNAME defaults to DISTVERSIONFULL; Avoid adding DISTVERSIONFULL in twice
-.    if ${GH_TAGNAME} != ${DISTVERSIONFULL}
+.      if ${GH_TAGNAME} != ${DISTVERSIONFULL}
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSIONFULL}-${GH_TAGNAME_SANITIZED}
-.    else
+.      else
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME_SANITIZED}
-.    endif
+.      endif
 DISTNAME_DEFAULT:=	${DISTNAME}_GH${_GITHUB_REV}
 DISTFILE_DEFAULT=	${DISTNAME_DEFAULT}${_GITHUB_EXTRACT_SUFX}
 DISTNAME:=	${DISTNAME_DEFAULT}
@@ -461,20 +461,20 @@ git-clone: git-clone-DEFAULT
 git-clone-DEFAULT: ${_GITHUB_CLONE_DIR}
 	@git clone https://github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT_DEFAULT}.git ${_GITHUB_CLONE_DIR}/${GH_PROJECT_DEFAULT}
 	@${ECHO_MSG} "Cloned the default github repository into ${_GITHUB_CLONE_DIR}/${GH_PROJECT_DEFAULT}" | ${FMT_80}
-.  endif
-.  if !empty(GH_SUBDIR)
+.    endif
+.    if !empty(GH_SUBDIR)
 _SITES_extract:=	690:post-extract-gh-DEFAULT
 post-extract-gh-DEFAULT:
 	@${RMDIR} ${WRKSRC}/${GH_SUBDIR_DEFAULT} 2>/dev/null || :
 	@${MKDIR} ${WRKSRC}/${GH_SUBDIR_DEFAULT:H} 2>/dev/null || :
 	@${LN} -s ${GH_SUBDIR_DEFAULT:C/[^\/]//g:C/\//..\//g:S/^$/./} ${WRKSRC}/${GH_SUBDIR_DEFAULT}
-.  endif
+.    endif
 # If there are non default groups
-.  if !empty(_GITHUB_GROUPS:NDEFAULT)
+.    if !empty(_GITHUB_GROUPS:NDEFAULT)
 # Then for each of the remaining groups, add DISTFILES and MASTER_SITES
 # entries with the correct group and create {WRKSRC,DISTNAME,DISTFILES}_group
 # helper variables.
-.    for _group in ${_GITHUB_GROUPS:NDEFAULT}
+.      for _group in ${_GITHUB_GROUPS:NDEFAULT}
 GH_ACCOUNT_${_group}?=	${GH_ACCOUNT_DEFAULT}
 GH_PROJECT_${_group}?=	${GH_PROJECT_DEFAULT}
 GH_TAGNAME_${_group}?=	${GH_TAGNAME_DEFAULT}
@@ -488,7 +488,7 @@ DISTFILE_${_group}:=	${DISTNAME_${_group}}_GH${_GITHUB_REV}${_GITHUB_EXTRACT_SUF
 DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
 MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITE_GITHUB:S@%SUBDIR%@${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}/tar.gz/${GH_TAGNAME_${_group}}?dummy=/:${_group}@}
 WRKSRC_${_group}:=	${WRKDIR}/${GH_PROJECT_${_group}}-${GH_TAGNAME_${_group}_EXTRACT}
-.      if !empty(GH_SUBDIR_${_group})
+.        if !empty(GH_SUBDIR_${_group})
 # In order to sort the subdir extraction so that foo/bar is moved in before
 # foo/bar/baz, we count the number of / in the path and use it to order the
 # targets.  This handles up to 9 levels.  The max as of r463123 is 4.
@@ -498,16 +498,16 @@ post-extract-gh-${_group}:
 	@${MKDIR} ${WRKSRC}/${GH_SUBDIR_${_group}:H} 2>/dev/null || :
 	@${MV} ${WRKSRC_${_group}} ${WRKSRC}/${GH_SUBDIR_${_group}}
 	@${LN} -s ${WRKSRC:T}/${GH_SUBDIR_${_group}} ${WRKSRC_${_group}}
-.      endif
+.        endif
 git-clone: git-clone-${_group}
 git-clone-${_group}: ${_GITHUB_CLONE_DIR}
 	@git clone https://github.com/${GH_ACCOUNT_${_group}}/${GH_PROJECT_${_group}}.git ${_GITHUB_CLONE_DIR}/${GH_PROJECT_${_group}}
 	@${ECHO_MSG} "Cloned the ${_group} github repository into ${_GITHUB_CLONE_DIR}/${GH_PROJECT_${_group}}" | ${FMT_80}
-.    endfor
-.  endif
+.      endfor
+.    endif
 convert-to-gh-tuple:
 	@${ECHO_MSG} ${GH_ACCOUNT}:${GH_PROJECT}:${GH_TAGNAME} ${_GH_TUPLE_OUT:S/\/$//}
-.endif # defined(USE_GITHUB)
+.  endif # defined(USE_GITHUB)
 .endif # !defined(IGNORE_MASTER_SITE_GITHUB)
 
 .if !defined(IGNORE_MASTER_SITE_GITLAB)
@@ -532,27 +532,27 @@ convert-to-gh-tuple:
 #
 # GL_TUPLE      - above shortened to [site[:port][/webroot]:]account:project:commit:group[/subdir]
 #
-.if defined(USE_GITLAB)
-.  if defined(GL_TUPLE)
-.    for _tuple in ${GL_TUPLE}
-.      if ${_tuple:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\7@:S/^://:C/[a-f0-9]{40}//g}
+.  if defined(USE_GITLAB)
+.    if defined(GL_TUPLE)
+.      for _tuple in ${GL_TUPLE}
+.        if ${_tuple:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\7@:S/^://:C/[a-f0-9]{40}//g}
 check-makevars::
 	@${ECHO_MSG} "The ${_tuple}"
 	@${ECHO_MSG} "GL_TUPLE is improperly formatted or, the commit"
 	@${ECHO_MSG} "section contains something other than [a-f0-9]"
 	@${FALSE}
-.      endif
-.    endfor
+.        endif
+.      endfor
 GL_SITE+=	${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\1\8@:S@::@:@}
 GL_ACCOUNT+=	${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\5\8@}
 GL_PROJECT+=	${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\6\8@}
 GL_COMMIT+=	${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\7\8@}
 GL_SUBDIR+=	${GL_TUPLE:C@^(([^:]*://[^:/]*(:[0-9]{1,5})?(/[^:]*[^/])?:)?)([^:]*):([^:]*):([^:]*)(:[^:/]*)((/.*)?)@\9\8@:M/*:S/^\///}
-.  endif
+.    endif
 
-.  if empty(USE_GITLAB:Mnodefault)
+.    if empty(USE_GITLAB:Mnodefault)
 MASTER_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/archive/${GL_COMMIT}.tar.gz?dummy=/
-.  endif
+.    endif
 GL_SITE_DEFAULT=	https://gitlab.com
 GL_SITE?=	${GL_SITE_DEFAULT}
 GL_ACCOUNT_DEFAULT=	${PORTNAME}
@@ -560,27 +560,27 @@ GL_ACCOUNT?=	${GL_ACCOUNT_DEFAULT}
 GL_PROJECT_DEFAULT=	${PORTNAME}
 GL_PROJECT?=	${GL_PROJECT_DEFAULT}
 _GITLAB_GROUPS=	DEFAULT
-.  for _gl_v in GL_SITE GL_ACCOUNT GL_PROJECT GL_COMMIT GL_SUBDIR
-.    for _v_ex in ${${_gl_v}}
+.    for _gl_v in GL_SITE GL_ACCOUNT GL_PROJECT GL_COMMIT GL_SUBDIR
+.      for _v_ex in ${${_gl_v}}
 _GL_GROUPS=	${_v_ex:S/^${_v_ex:C@:[^/:]+$@@}//:S/^://}
-.      if !empty(_GL_GROUPS)
-.        for _group in ${_GL_GROUPS:S/,/ /g}
-.          if ${_group} == all || ${_group} == ALL || ${_group} == default
+.        if !empty(_GL_GROUPS)
+.          for _group in ${_GL_GROUPS:S/,/ /g}
+.            if ${_group} == all || ${_group} == ALL || ${_group} == default
 check-makevars::
 		@${ECHO_MSG} "Makefile error: the words all, ALL and default are reserved and cannot be"
 		@${ECHO_MSG} "used in group definitions. Please fix your ${_gl_v}"
 		@${FALSE}
-.          endif
-.          if !${_GITLAB_GROUPS:M${_group}}
+.            endif
+.            if !${_GITLAB_GROUPS:M${_group}}
 _GITLAB_GROUPS+=	${_group}
-.          endif
+.            endif
 ${_gl_v}_${_group}=	${_v_ex:C@^(.*):[^/:]+$@\1@}
-.        endfor
-.      else
+.          endfor
+.        else
 ${_gl_v}_DEFAULT=	${_v_ex:C@^(.*):[^/:]+$@\1@}
-.      endif
+.        endif
+.      endfor
 .    endfor
-.  endfor
 GL_SITE:=	${GL_SITE_DEFAULT}
 GL_ACCOUNT:=	${GL_ACCOUNT_DEFAULT}
 GL_PROJECT:=	${GL_PROJECT_DEFAULT}
@@ -593,27 +593,27 @@ _GITLAB_EXTRACT_SUFX=	.tar.gz
 
 _GITLAB_CLONE_DIR?=	${WRKDIR}/git-clone
 _PORTS_DIRECTORIES+=	${_GITLAB_CLONE_DIR}
-.  if !${USE_GITLAB:Mnodefault}
+.    if !${USE_GITLAB:Mnodefault}
 DISTNAME:=	${GL_ACCOUNT}-${GL_PROJECT}-${GL_COMMIT}_GL${_GITLAB_REV}
 DISTFILES+=	${DISTNAME}${_GITLAB_EXTRACT_SUFX}
 git-clone: git-clone-DEFAULT
 git-clone-DEFAULT: ${_GITLAB_CLONE_DIR}
 	@git clone ${GL_SITE_DEFAULT}/${GL_ACCOUNT_DEFAULT}/${GL_PROJECT_DEFAULT}.git ${_GITLAB_CLONE_DIR}/${GL_PROJECT_DEFAULT}
 	@${ECHO_MSG} "Cloned the default GitLab repository into ${_GITLAB_CLONE_DIR}/${GL_PROJECT_DEFAULT}" | ${FMT_80}
-.  endif
-.  if !empty(GL_SUBDIR)
+.    endif
+.    if !empty(GL_SUBDIR)
 _SITES_extract:=	69${GL_SUBDIR_${_group}:C=[^/]+= =g:[#]}:post-extract-gl-DEFAULT
 post-extract-gl-DEFAULT:
 	@${RMDIR} ${WRKSRC}/${GL_SUBDIR_DEFAULT} 2>/dev/null || :
 	@${MKDIR} ${WRKSRC}/${GL_SUBDIR_DEFAULT:H} 2>/dev/null || :
 	@${LN} -s ${GL_SUBDIR_DEFAULT:C/[^\/]//g:C/\//..\//g:S/^$/./} ${WRKSRC}/${GL_SUBDIR_DEFAULT}
-.  endif
-.  if !empty(_GITLAB_GROUPS:NDEFAULT)
-.    for _group in ${_GITLAB_GROUPS:NDEFAULT}
+.    endif
+.    if !empty(_GITLAB_GROUPS:NDEFAULT)
+.      for _group in ${_GITLAB_GROUPS:NDEFAULT}
 # We set GL_SITE earlier, we need to verify it's not empty
-.      if empty(GL_SITE_${_group})
+.        if empty(GL_SITE_${_group})
 GL_SITE_${_group}=	${GL_SITE_DEFAULT}
-.      endif
+.        endif
 GL_ACCOUNT_${_group}?=	${GL_ACCOUNT_DEFAULT}
 GL_PROJECT_${_group}?=	${GL_PROJECT_DEFAULT}
 
@@ -623,21 +623,21 @@ DISTFILE_${_group}:=	${DISTNAME_${_group}}${_GITLAB_EXTRACT_SUFX}
 DISTFILES:=	${DISTFILES} ${DISTFILE_${_group}}:${_group}
 MASTER_SITES:=	${MASTER_SITES} ${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}/-/archive/${GL_COMMIT_${_group}}.tar.gz?dummy=/:${_group}
 WRKSRC_${_group}:=	${WRKDIR}/${GL_PROJECT_${_group}}-${GL_COMMIT_${_group}}
-.      if !empty(GL_SUBDIR_${_group})
+.        if !empty(GL_SUBDIR_${_group})
 _SITES_extract:=	${_SITES_extract} 690:post-extract-gl-${_group}
 post-extract-gl-${_group}:
 	@${RMDIR} ${WRKSRC}/${GL_SUBDIR_${_group}} 2>/dev/null || :
 	@${MKDIR} ${WRKSRC}/${GL_SUBDIR_${_group}:H} 2>/dev/null || :
 	@${MV} ${WRKSRC_${_group}} ${WRKSRC}/${GL_SUBDIR_${_group}}
 	@${LN} -s ${WRKSRC:T}/${GL_SUBDIR_${_group}} ${WRKSRC_${_group}}
-.      endif
+.        endif
 git-clone: git-clone-${_group}
 git-clone-${_group}: ${_GITLAB_CLONE_DIR}
 	@git clone ${GL_SITE_${_group}}/${GL_ACCOUNT_${_group}}/${GL_PROJECT_${_group}}.git ${_GITLAB_CLONE_DIR}/${GL_PROJECT_${_group}}
 	@${ECHO_MSG} "Cloned the ${_group} GitLab repository into ${_GITLAB_CLONE_DIR}/${GL_PROJECT_${_group}}" | ${FMT_80}
-.    endfor
-.  endif
-.endif # defined(USE_GITLAB)
+.      endfor
+.    endif
+.  endif # defined(USE_GITLAB)
 .endif # !defined(IGNORE_MASTER_SITE_GITLAB)
 
 .if !defined(IGNORE_MASTER_SITE_GNOME)
@@ -955,12 +955,12 @@ MASTER_SITE_PERL_CPAN_BY+= \
 _PERL_CPAN_FLAG=${MASTER_SITE_SUBDIR:C/(CPAN):.*$/\1/}
 _PERL_CPAN_ID=	${MASTER_SITE_SUBDIR:C/^CPAN:(.)(.)(.*)$/\1\/\1\2\/\1\2\3/}
 
-.if !empty(_PERL_CPAN_ID) && ${_PERL_CPAN_FLAG:tl} == "cpan"
+.  if !empty(_PERL_CPAN_ID) && ${_PERL_CPAN_FLAG:tl} == "cpan"
     _PERL_CPAN_SORT=authors/id/${_PERL_CPAN_ID}
     MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/:S/%SUBDIR%\///:S/%SUBDIRPLUS%\//${PORTNAME:C/-.*//}\//}
-.else
+.  else
     MASTER_SITE_PERL_CPAN=${MASTER_SITE_PERL_CPAN_BY:S/%CPANSORT%/${_PERL_CPAN_SORT}/:S/%SUBDIRPLUS%\///}
-.endif
+.  endif
 
 .endif
 
@@ -1052,13 +1052,13 @@ MASTER_SITE_SAVANNAH+= \
 # List:		https://sourceforge.net/p/forge/documentation/Mirrors/
 # Updated:	2017-03-13
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
-.for p in https http
+.  for p in https http
 MASTER_SITE_SOURCEFORGE+= ${p}://downloads.sourceforge.net/project/%SUBDIR%/
-.for m in excellmedia freefr jaist nchc \
+.    for m in excellmedia freefr jaist nchc \
 	netcologne netix superb-dca2 superb-sea2 ufpr vorboss
 MASTER_SITE_SOURCEFORGE+= ${p}://${m}.dl.sourceforge.net/project/%SUBDIR%/
-.endfor
-.endfor
+.    endfor
+.  endfor
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEWARE)
@@ -1271,86 +1271,86 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 
 .if defined(MASTER_SITES) && ${MASTER_SITES:N*\:/*}
 
-.for _site__ in ${MASTER_SITES}
+.  for _site__ in ${MASTER_SITES}
 _site_=${_site__}
-.	if ${_site_:M*\:/*}
+.    if ${_site_:M*\:/*}
 MASTER_SITES_EXP+=	${_site_}
 MASTER_SITES_EXP:=	${MASTER_SITES_EXP}
-.	else
+.    else
 _site_urlpath_=	${_site_:C@^(.*):[^/:]+$@\1@}
-.		if ${_site_urlpath_:M*/*}
+.      if ${_site_urlpath_:M*/*}
 _site_url_=		${_site_urlpath_:C@^([^/]+)/.*$@\1@}
 _site_subdir_=	${_site_urlpath_:S/^${_site_urlpath_:C@^([^/]+)/.*$@\1@}//:S!^/!!:S!/$!!}
-.		else
+.      else
 _site_url_=		${_site_urlpath_}
 .undef _site_subdir_
-.		endif
+.      endif
 _site_group_=	${_site_:S/^${_site_:C@^(.*):[^/:]+$@\1@}//:S/^://}
-.		for _abbrev_ in ${MASTER_SITES_ABBREVS}
-.			if ${_site_url_} == ${_abbrev_:C/:.*//}
+.      for _abbrev_ in ${MASTER_SITES_ABBREVS}
+.        if ${_site_url_} == ${_abbrev_:C/:.*//}
 _site_url_=	${_abbrev_:C/.*://}
-.			endif
-.		endfor
-.		if !defined(MASTER_SITE_SUBDIR)
-.			for _subdir_ in ${MASTER_SITES_SUBDIRS}
-.				if ${_site_url_} == ${_subdir_:C/:.*//}
+.        endif
+.      endfor
+.      if !defined(MASTER_SITE_SUBDIR)
+.        for _subdir_ in ${MASTER_SITES_SUBDIRS}
+.          if ${_site_url_} == ${_subdir_:C/:.*//}
 _site_subdir_?=	${_subdir_:C/.*://}
-.				endif
-.			endfor
-.		endif
-.		ifdef MASTER_SITE_${_site_url_}
-.			ifdef _site_subdir_
+.          endif
+.        endfor
+.      endif
+.      ifdef MASTER_SITE_${_site_url_}
+.        ifdef _site_subdir_
 MASTER_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S^%SUBDIR%^${_site_subdir_}^:S/$/:${_site_group_}/:S/:$//}
-.			else
+.        else
 MASTER_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S/$/:${_site_group_}/:S/:$//}
-.			endif
+.        endif
 MASTER_SITES_EXP:=	${MASTER_SITES_EXP}
-.		endif
-.	endif
-.endfor
+.      endif
+.    endif
+.  endfor
 MASTER_SITES=	${MASTER_SITES_EXP}
 
 .endif
 
 .if defined(PATCH_SITES) && ${PATCH_SITES:N*\:/*}
 
-.for _site__ in ${PATCH_SITES}
+.  for _site__ in ${PATCH_SITES}
 _site_=${_site__}
-.	if ${_site_:M*\:/*}
+.    if ${_site_:M*\:/*}
 PATCH_SITES_EXP+=	${_site_}
 PATCH_SITES_EXP:=	${PATCH_SITES_EXP}
-.	else
+.    else
 _site_urlpath_=	${_site_:C@^(.*):[^/:]+$@\1@}
-.		if ${_site_urlpath_:M*/*}
+.      if ${_site_urlpath_:M*/*}
 _site_url_=		${_site_urlpath_:C@^([^/]+)/.*$@\1@}
 _site_subdir_=	${_site_urlpath_:S/^${_site_urlpath_:C@^([^/]+)/.*$@\1@}//:S!^/!!:S!/$!!}
-.		else
+.      else
 _site_url_=		${_site_urlpath_}
 .undef _site_subdir_
-.		endif
+.      endif
 _site_group_=	${_site_:S/^${_site_:C@^(.*):[^/:]+$@\1@}//:S/^://}
-.		for _abbrev_ in ${MASTER_SITES_ABBREVS}
-.			if ${_site_url_} == ${_abbrev_:C/:.*//}
+.      for _abbrev_ in ${MASTER_SITES_ABBREVS}
+.        if ${_site_url_} == ${_abbrev_:C/:.*//}
 _site_url_=	${_abbrev_:C/.*://}
-.			endif
-.		endfor
-.		if !defined(MASTER_SITE_SUBDIR)
-.			for _subdir_ in ${MASTER_SITES_SUBDIRS}
-.				if ${_site_url_} == ${_subdir_:C/:.*//}
+.        endif
+.      endfor
+.      if !defined(MASTER_SITE_SUBDIR)
+.        for _subdir_ in ${MASTER_SITES_SUBDIRS}
+.          if ${_site_url_} == ${_subdir_:C/:.*//}
 _site_subdir_?=	${_subdir_:C/.*://}
-.				endif
-.			endfor
-.		endif
-.		ifdef MASTER_SITE_${_site_url_}
-.			ifdef _site_subdir_
+.          endif
+.        endfor
+.      endif
+.      ifdef MASTER_SITE_${_site_url_}
+.        ifdef _site_subdir_
 PATCH_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S^%SUBDIR%^${_site_subdir_}^:S/$/:${_site_group_}/:S/:$//}
-.			else
+.        else
 PATCH_SITES_EXP+=	${MASTER_SITE_${_site_url_}:S/$/:${_site_group_}/:S/:$//}
-.			endif
+.        endif
 PATCH_SITES_EXP:=	${PATCH_SITES_EXP}
-.		endif
-.	endif
-.endfor
+.      endif
+.    endif
+.  endfor
 PATCH_SITES=	${PATCH_SITES_EXP}
 
 .endif

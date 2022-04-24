@@ -247,9 +247,9 @@ do-install:
 	${ECHO_CMD} '#!/bin/sh' > ${STAGEDIR}${PREFIX}/bin/${exe}
 	${ECHO_CMD} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 	${ECHO_CMD} 'export ${exe:S/-/_/}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
-.         for dep in ${${exe}_DATADIR_VARS}
+.        for dep in ${${exe}_DATADIR_VARS}
 	${ECHO_CMD} 'export ${dep:S/-/_/}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
-.         endfor
+.        endfor
 	${ECHO_CMD} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 	${ECHO_CMD} 'exec ${PREFIX}/${CABAL_LIBEXEC}/${exe} "$$@"' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${exe}

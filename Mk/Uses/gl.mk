@@ -25,30 +25,30 @@ _GL_glu_USE_XORG=		xorgproto
 _GL_glut_LIB_DEPENDS=		libglut.so:graphics/freeglut
 _GL_opengl_LIB_DEPENDS=		libOpenGL.so:graphics/libglvnd
 
-.if !empty(gl_ARGS)
+.  if !empty(gl_ARGS)
 IGNORE=	USES=gl takes no arguments
-.endif
+.  endif
 
-.if !defined(USE_GL)
+.  if !defined(USE_GL)
 IGNORE=		need to specify gl component with USE_GL
-.elif ${USE_GL:tl} == yes
+.  elif ${USE_GL:tl} == yes
 DEV_WARNING+=	"USE_GL=yes is deprecated, please add USE_GL=glu (default) or specify component"
 USE_GL=		glu
-.endif
+.  endif
 
-.for _component in ${USE_GL}
-.if !defined(_GL_${_component}_LIB_DEPENDS)
+.  for _component in ${USE_GL}
+.    if !defined(_GL_${_component}_LIB_DEPENDS)
 IGNORE=		uses unknown GL component
-.else
+.    else
 USE_XORG+=	${_GL_${_component}_USE_XORG}
 LIB_DEPENDS+=	${_GL_${_component}_LIB_DEPENDS}
-.endif
-.endfor
+.    endif
+.  endfor
 
 # We only need to include xorg.mk if we want USE_XORG modules
-.if defined(USE_XORG) && !empty(USE_XORG)
+.  if defined(USE_XORG) && !empty(USE_XORG)
 .include "${USESDIR}/xorg.mk"
-.endif
+.  endif
 
 # _INCLUDE_USES_GL_MK
 .endif

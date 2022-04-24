@@ -17,19 +17,19 @@ _INCLUDE_BSD_DEFAULT_VERSIONS_MK=	yes
 
 LOCALBASE?=	/usr/local
 
-.for lang in APACHE BDB COROSYNC EMACS FIREBIRD FORTRAN FPC GCC GHOSTSCRIPT GL \
+.  for lang in APACHE BDB COROSYNC EMACS FIREBIRD FORTRAN FPC GCC GHOSTSCRIPT GL \
 	IMAGEMAGICK JAVA LAZARUS LIBRSVG2 LINUX LLVM LUA MYSQL NINJA NODEJS PERL5 \
 	PGSQL PHP PYTHON PYTHON2 PYTHON3 RUBY RUST SAMBA SSL TCLTK VARNISH
-.if defined(${lang}_DEFAULT)
+.    if defined(${lang}_DEFAULT)
 ERROR+=	"The variable ${lang}_DEFAULT is set and it should only be defined through DEFAULT_VERSIONS+=${lang:tl}=${${lang}_DEFAULT} in /etc/make.conf"
-.endif
+.    endif
 #.undef ${lang}_DEFAULT
-.endfor
+.  endfor
 
-.for lang in ${DEFAULT_VERSIONS}
+.  for lang in ${DEFAULT_VERSIONS}
 _l=		${lang:C/=.*//g}
 ${_l:tu}_DEFAULT=	${lang:C/.*=//g}
-.endfor
+.  endfor
 
 # Possible values: 2.4
 APACHE_DEFAULT?=	2.4
@@ -47,11 +47,11 @@ FORTRAN_DEFAULT?=	gfortran
 FPC_DEFAULT?=		3.2.2
 # Possible values: 8 (last to support powerpcspe), 9, 10, 11
 # (Any other version is completely unsupported and not meant for general use.)
-.if ${ARCH} == "powerpcspe"
+.  if ${ARCH} == "powerpcspe"
 GCC_DEFAULT?=		8
-.else
+.  else
 GCC_DEFAULT?=		10
-.endif
+.  endif
 # Possible values: mesa-libs, mesa-devel
 GL_DEFAULT?=		mesa-libs
 # Possible values: 7, 8, 9, agpl
@@ -61,27 +61,27 @@ IMAGEMAGICK_DEFAULT?=	7
 # Possible values: 7, 8, 11, 12, 13, 14, 15, 16
 JAVA_DEFAULT?=		8
 # Possible values: 2.2.0, 2.3.0
-.if !defined(WANT_LAZARUS_DEVEL)
+.  if !defined(WANT_LAZARUS_DEVEL)
 LAZARUS_DEFAULT?=       2.2.0
-.else
+.  else
 LAZARUS_DEFAULT?=       2.3.0
-.endif
+.  endif
 # Possible values: rust, legacy
-.if empty(ARCH:Naarch64:Narmv6:Narmv7:Namd64:Ni386:Npowerpc64:Npowerpc64le:Npowerpc)
+.  if empty(ARCH:Naarch64:Narmv6:Narmv7:Namd64:Ni386:Npowerpc64:Npowerpc64le:Npowerpc)
 LIBRSVG2_DEFAULT?=	rust
-.else
+.  else
 LIBRSVG2_DEFAULT?=	legacy
-.endif
+.  endif
 # Possible values: c7
 LINUX_DEFAULT?=		c7
 # Possible values: 70, 80, 90, 10, 11, 12, 13, -devel (to be used when non-base compiler is required)
 # Please give notice to the Graphics Team (x11@FreeBSD.org) in advance before
 # bumping the LLVM version.
-.if ${ARCH} == powerpc
+.  if ${ARCH} == powerpc
 LLVM_DEFAULT?=		10
-.else
+.  else
 LLVM_DEFAULT?=		90
-.endif
+.  endif
 # Possible values: 5.1, 5.2, 5.3, 5.4
 LUA_DEFAULT?=		5.2
 # Possible values: 5.10, 5.20, 6.8
@@ -91,20 +91,20 @@ MYSQL_DEFAULT?=		5.7
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
 # Possible values: 5.30, 5.32, 5.34, devel
-.if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
+.  if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
 PERL5_DEFAULT?=		5.32
-.elif !defined(PERL5_DEFAULT)
+.  elif !defined(PERL5_DEFAULT)
 # There's no need to replace development versions, like "5.23" with "devel"
 # because 1) nobody is supposed to use it outside of poudriere, and 2) it must
 # be set manually in /etc/make.conf in the first place, and we're never getting
 # in here.
-.if !defined(_PERL5_FROM_BIN)
+.    if !defined(_PERL5_FROM_BIN)
 _PERL5_FROM_BIN!=	${LOCALBASE}/bin/perl -e 'printf "%vd\n", $$^V;'
-.endif
+.    endif
 _EXPORTED_VARS+=	_PERL5_FROM_BIN
 PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
-.endif
+.  endif
 # Possible values: 10, 11, 12, 13, 14
 PGSQL_DEFAULT?=		13
 # Possible values: 7.4, 8.0, 8.1
@@ -122,41 +122,41 @@ RUST_DEFAULT?=		rust
 # Possible values: 4.12, 4.13
 SAMBA_DEFAULT?=		4.12
 # Possible values: base, openssl, libressl, libressl-devel
-.if !defined(SSL_DEFAULT)
+.  if !defined(SSL_DEFAULT)
 #	If no preference was set, check for an installed base version
 #	but give an installed port preference over it.
-.  if	!defined(SSL_DEFAULT) && \
+.    if	!defined(SSL_DEFAULT) && \
 	!exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so) && \
 	exists(${DESTDIR}/usr/include/openssl/opensslv.h)
 SSL_DEFAULT=	base
-.  else
-.    if exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so)
-.      if defined(PKG_BIN)
+.    else
+.      if exists(${DESTDIR}/${LOCALBASE}/lib/libcrypto.so)
+.        if defined(PKG_BIN)
 # find installed port and use it for dependency
-.        if !defined(OPENSSL_INSTALLED)
-.          if defined(DESTDIR)
+.          if !defined(OPENSSL_INSTALLED)
+.            if defined(DESTDIR)
 PKGARGS=	-c ${DESTDIR}
-.          else
+.            else
 PKGARGS=
-.          endif
+.            endif
 OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.so || :
-.        endif
-.        if defined(OPENSSL_INSTALLED) && !empty(OPENSSL_INSTALLED)
+.          endif
+.          if defined(OPENSSL_INSTALLED) && !empty(OPENSSL_INSTALLED)
 SSL_DEFAULT:=		${OPENSSL_INSTALLED:T}
 WARNING+=	"You have ${OPENSSL_INSTALLED} installed but do not have DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT} set in your make.conf"
-.        endif
-.      else
+.          endif
+.        else
 check-makevars::
 	@${ECHO_MSG} "You have a ${LOCALBASE}/lib/libcrypto.so file installed, but the framework is unable"
 	@${ECHO_MSG} "to determine what port it comes from."
 	@${ECHO_MSG} "Add DEFAULT_VERSIONS+=ssl=<openssl package name> to your /etc/make.conf and try again."
 	@${FALSE}
+.        endif
 .      endif
 .    endif
-.  endif
 # Make sure we have a default in the end
 SSL_DEFAULT?=	base
-.endif
+.  endif
 # Possible values: 8.5, 8.6, 8.7
 TCLTK_DEFAULT?=		8.6
 

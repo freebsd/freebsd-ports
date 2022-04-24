@@ -18,44 +18,44 @@ _INCLUDE_QMAIL_MK=	yes
 
 QMAIL_PREFIX?=	/var/qmail
 
-.if empty(qmail_ARGS)
+.  if empty(qmail_ARGS)
 qmail_ARGS=	both
-.endif
+.  endif
 
-.if ${qmail_ARGS} == "build"
+.  if ${qmail_ARGS} == "build"
 BUILD_DEPENDS+=	${_QMAIL_DEPENDS}
-.elif ${qmail_ARGS} == "run"
+.  elif ${qmail_ARGS} == "run"
 RUN_DEPENDS+=	${_QMAIL_DEPENDS}
-.elif ${qmail_ARGS} == "both"
+.  elif ${qmail_ARGS} == "both"
 BUILD_DEPENDS+=	${_QMAIL_DEPENDS}
 RUN_DEPENDS+=	${_QMAIL_DEPENDS}
-.elif ${qmail_ARGS} == "vars"
-.else
+.  elif ${qmail_ARGS} == "vars"
+.  else
 IGNORE=	USES=qmail - invalid args: [${qmail_ARGS}] specified
-.endif
+.  endif
 
-.if ${qmail_ARGS} != "vars"
+.  if ${qmail_ARGS} != "vars"
 
 _QMAIL_VALID_SLAVEPORTS=	ldap mysql spamcontrol tls
 
-.  if defined(QMAIL_SLAVEPORT)
-.    for slave in ${_QMAIL_VALID_SLAVEPORTS}
-.      if ${QMAIL_SLAVEPORT:tl} == ${slave}
+.    if defined(QMAIL_SLAVEPORT)
+.      for slave in ${_QMAIL_VALID_SLAVEPORTS}
+.        if ${QMAIL_SLAVEPORT:tl} == ${slave}
 _QMAIL_SLAVEPORT_OKAY=	true
-.      endif
-.    endfor
+.        endif
+.      endfor
 
-.    if !defined(_QMAIL_SLAVEPORT_OKAY)
+.      if !defined(_QMAIL_SLAVEPORT_OKAY)
 IGNORE=	Invalid QMAIL_SLAVEPORT value. Only one can be set, valid values are: ${_QMAIL_VALID_SLAVEPORTS}
+.      endif
 .    endif
-.  endif
 
-.  if defined(QMAIL_SLAVEPORT)
+.    if defined(QMAIL_SLAVEPORT)
 _QMAIL_DEPENDS=	${QMAIL_PREFIX}/bin/qmail-send:mail/qmail-${QMAIL_SLAVEPORT:tl}
-.  else
+.    else
 _QMAIL_DEPENDS=	${QMAIL_PREFIX}/bin/qmail-send:mail/qmail
-.  endif
+.    endif
 
-.endif
+.  endif
 
 .endif

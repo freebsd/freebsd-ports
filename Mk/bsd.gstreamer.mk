@@ -488,75 +488,75 @@ pango_IMPL=	#
 .if defined(_POSTMKINCLUDED) && !defined(Gstreamer_Post_Include)
 Gstreamer_Post_Include=	bsd.gstreamer.mk
 
-.if (defined (USE_GSTREAMER) && defined(USE_GSTREAMER1))
+.  if (defined (USE_GSTREAMER) && defined(USE_GSTREAMER1))
 IGNORE=	USE_GSTREAMER and USE_GSTREAMER1 can't be used together
-.endif
+.  endif
 
 _GST_IMPL_LIST:=	#
 
-.if defined(USE_GSTREAMER)
+.  if defined(USE_GSTREAMER)
 # update this with the gst 1.0 version below
-. for ext in ${USE_GSTREAMER}
+.    for ext in ${USE_GSTREAMER}
 ${ext}_GST_PREFIX?=	gstreamer-plugins-
 ${ext}_GST_VERSION?=	${GST_VERSION}${GST_MINOR_VERSION}
 ${ext}_NAME?=		${ext}
-.  if ${_USE_GSTREAMER_ALL:M${ext}}!= "" && exists(${PORTSDIR}/${${ext}_DEPENDS})
+.      if ${_USE_GSTREAMER_ALL:M${ext}}!= "" && exists(${PORTSDIR}/${${ext}_DEPENDS})
 _GST_BUILD_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME}>=${${ext}_GST_VERSION}:${${ext}_DEPENDS}
 _GST_RUN_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME}>=${${ext}_GST_VERSION}:${${ext}_DEPENDS}
 _GST_GST_IMPL_LIST+=	${${ext}_IMPL}
-.  else
+.      else
 IGNORE=	cannot install: unknown gstreamer ${GST_VERSION} plugin -- ${ext}
-.  endif
-. endfor
+.      endif
+.    endfor
 
 # everything wants this
 _GST_BUILD_DEPENDS+= gstreamer-plugins>=0:multimedia/gstreamer-plugins
 _GST_LIB_DEPENDS+=   libgstreamer-0.10.so:multimedia/gstreamer
 _GST_RUN_DEPENDS+=   gstreamer-plugins>=0:multimedia/gstreamer-plugins
 
-. for plugin in ${_GST_IMPL_LIST:O:u}
+.    for plugin in ${_GST_IMPL_LIST:O:u}
 _GST_BUILD_DEPENDS+=	gstreamer-plugins-${plugin}>=0:multimedia/gstreamer-plugins-${plugin}
 _GST_RUN_DEPENDS+=	gstreamer-plugins-${plugin}>=0:multimedia/gstreamer-plugins-${plugin}
-. endfor
+.    endfor
 
 BUILD_DEPENDS+= ${_GST_BUILD_DEPENDS:O:u}
 LIB_DEPENDS+=   ${_GST_LIB_DEPENDS:O:u}
 RUN_DEPENDS+=   ${_GST_RUN_DEPENDS:O:u}
-.endif
+.  endif
 
-.if defined(USE_GSTREAMER1)
-. for ext in ${USE_GSTREAMER1}
+.  if defined(USE_GSTREAMER1)
+.    for ext in ${USE_GSTREAMER1}
 ${ext}_GST_PREFIX?=	gstreamer1-plugins-
 ${ext}_GST_VERSION?=	${GST1_VERSION}
 ${ext}_NAME10?=		${ext}
 ${ext}_GST_DEPENDS?=	${${ext}_DEPENDS:S,gstreamer-,gstreamer1-,}
-.  if ${_USE_GSTREAMER_ALL:M${ext}}!= "" && exists(${PORTSDIR}/${${ext}_GST_DEPENDS})
+.      if ${_USE_GSTREAMER_ALL:M${ext}}!= "" && exists(${PORTSDIR}/${${ext}_GST_DEPENDS})
 _GST_BUILD_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME10}>=${${ext}_GST_VERSION}:${${ext}_GST_DEPENDS}
 _GST_RUN_DEPENDS+=	${${ext}_GST_PREFIX}${${ext}_NAME10}>=${${ext}_GST_VERSION}:${${ext}_GST_DEPENDS}
-.   if defined(${ext}1_IMPL)
+.        if defined(${ext}1_IMPL)
 _GST_IMPL_LIST+=	${${ext}1_IMPL}
-.   else
+.        else
 _GST_IMPL_LIST+=	${${ext}_IMPL}
-.   endif
-.  else
+.        endif
+.      else
 IGNORE=	cannot install: unknown gstreamer ${GST1_VERSION} plugin -- ${ext}
-.  endif
-. endfor
+.      endif
+.    endfor
 
 # everything wants this
 _GST_BUILD_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}:multimedia/gstreamer1-plugins
 _GST_LIB_DEPENDS+=	libgstreamer-1.0.so:multimedia/gstreamer1
 _GST_RUN_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}:multimedia/gstreamer1-plugins
 
-. for plugin in ${_GST_IMPL_LIST:O:u}
+.    for plugin in ${_GST_IMPL_LIST:O:u}
 _GST_BUILD_DEPENDS+=	gstreamer1-plugins-${plugin}>=${GST1_VERSION}:multimedia/gstreamer1-plugins-${plugin}
 _GST_RUN_DEPENDS+=	gstreamer1-plugins-${plugin}>=${GST1_VERSION}:multimedia/gstreamer1-plugins-${plugin}
-. endfor
+.    endfor
 
 BUILD_DEPENDS+=	${_GST_BUILD_DEPENDS:O:u}
 LIB_DEPENDS+=	${_GST_LIB_DEPENDS:O:u}
 RUN_DEPENDS+=	${_GST_RUN_DEPENDS:O:u}
-.endif
+.  endif
 
 # The End
 .endif

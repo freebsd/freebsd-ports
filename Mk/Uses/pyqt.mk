@@ -160,17 +160,17 @@ SIP_ARGS=	--qmake ${QMAKE} \
 		--build-dir build \
 		--protected-is-public \
 		--api-dir ${PYQT_APIDIR}
-.	if ${PORTNAME} == "pyqt"
+.    if ${PORTNAME} == "pyqt"
 SIP_ARGS+=	--confirm-license
-.	endif
+.    endif
 
-.  if ${PORTNAME} == "pyqt"
-.    if !target(post-patch)
+.    if ${PORTNAME} == "pyqt"
+.      if !target(post-patch)
 post-patch:
 	${REINPLACE_CMD} -e "s#%%PYQT_DESIGNERDIR%%#${PYQT_DESIGNERDIR}#" ${WRKSRC}/project.py
 	${REINPLACE_CMD} -e "s#%%PYQT_QMLDIR%%#${PYQT_QMLDIR}#" ${WRKSRC}/project.py
-.    endif  # !target(post-patch)
-.  endif
+.      endif  # !target(post-patch)
+.    endif
 
 .    if !target(do-build)
 do-build:

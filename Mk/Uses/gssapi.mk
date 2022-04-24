@@ -77,15 +77,15 @@ _HEIMDAL_DEPENDS=${GSSAPILIBDIR}/libgssapi.so:security/heimdal
 _MITKRB5_DEPENDS=${GSSAPILIBDIR}/libkrb5support.so:security/krb5
 _HEADERS=	sys/types.h sys/stat.h stdint.h
 
-.if empty(gssapi_ARGS)
+.  if empty(gssapi_ARGS)
 gssapi_ARGS=	base
-.endif
-.for _A in ${gssapi_ARGS}
-_local:=	${_A}
-.if ${_local} == "base"
-.  if ${SSL_DEFAULT} != base
-IGNORE=	You are using OpenSSL from ports and have selected GSSAPI from base, please select another GSSAPI value
 .  endif
+.  for _A in ${gssapi_ARGS}
+_local:=	${_A}
+.    if ${_local} == "base"
+.      if ${SSL_DEFAULT} != base
+IGNORE=	You are using OpenSSL from ports and have selected GSSAPI from base, please select another GSSAPI value
+.      endif
 HEIMDAL_HOME=	/usr
 GSSAPIBASEDIR=	${HEIMDAL_HOME}
 GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib
@@ -94,66 +94,66 @@ _HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
 GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
 GSSAPILIBS=	-lkrb5 -lgssapi -lgssapi_krb5
 GSSAPILDFLAGS=
-.elif ${_local} == "heimdal"
+.    elif ${_local} == "heimdal"
 HEIMDAL_HOME?=	${LOCALBASE}
 GSSAPIBASEDIR=	${HEIMDAL_HOME}
 GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib/heimdal
 GSSAPIINCDIR=	${GSSAPIBASEDIR}/include/heimdal
 _HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
-.if !defined(_KRB_BOOTSTRAP)
+.      if !defined(_KRB_BOOTSTRAP)
 BUILD_DEPENDS+=	${_HEIMDAL_DEPENDS}
 RUN_DEPENDS+=	${_HEIMDAL_DEPENDS}
-.else
+.      else
 PREFIX=		${HEIMDAL_HOME}
-.endif
+.      endif
 GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
 GSSAPILIBS=	-lkrb5 -lgssapi
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 _RPATH=		${GSSAPILIBDIR}
-.elif ${_local} == "mit"
+.    elif ${_local} == "mit"
 KRB5_HOME?=	${LOCALBASE}
 GSSAPIBASEDIR=	${KRB5_HOME}
 GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib
 GSSAPIINCDIR=	${GSSAPIBASEDIR}/include
 _HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5.h
-.if !defined(_KRB_BOOTSTRAP)
+.      if !defined(_KRB_BOOTSTRAP)
 BUILD_DEPENDS+=	${_MITKRB5_DEPENDS}
 RUN_DEPENDS+=	${_MITKRB5_DEPENDS}
-.else
+.      else
 PREFIX=		${KRB5_HOME}
-.endif
+.      endif
 GSSAPILIBS=	-lkrb5 -lgssapi_krb5
 GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 _RPATH=		${GSSAPILIBDIR}
-.elif ${_local} == "bootstrap"
+.    elif ${_local} == "bootstrap"
 _KRB_BOOTSTRAP=	1
-.elif ${_local} == "flags"
+.    elif ${_local} == "flags"
 _KRB_USEFLAGS=	1
-.else
+.    else
 IGNORE=	USES=gssapi - invalid args: [${_local}] specified
-.endif
-.endfor
+.    endif
+.  endfor
 
 KRB5CONFIG=${GSSAPIBASEDIR}/bin/krb5-config
 
 # Fix up -Wl,-rpath in LDFLAGS
-.if defined(_RPATH) && !empty(_RPATH)
-.if !empty(LDFLAGS:M-Wl,-rpath,*)
-.for F in ${LDFLAGS:M-Wl,-rpath,*}
+.  if defined(_RPATH) && !empty(_RPATH)
+.    if !empty(LDFLAGS:M-Wl,-rpath,*)
+.      for F in ${LDFLAGS:M-Wl,-rpath,*}
 LDFLAGS:=	-Wl,-rpath,${_RPATH}:${F:S/-Wl,-rpath,//} \
 		${LDFLAGS:N-Wl,-rpath,*}
-.endfor
-.else
+.      endfor
+.    else
 LDFLAGS+=	-Wl,-rpath,${_RPATH}:/usr/lib
-.endif
+.    endif
 _DEBUG_KRB_RPATH=	-Wl,-rpath,${_RPATH}
-.endif
-.if defined(_KRB_USEFLAGS) && !empty(_KRB_USEFLAGS)
+.  endif
+.  if defined(_KRB_USEFLAGS) && !empty(_KRB_USEFLAGS)
 CPPFLAGS+=	${GSSAPICPPFLAGS}
 LDFLAGS+=	${GSSAPILDFLAGS}
 LDADD+=		${GSSAPILIBS}
-.endif
+.  endif
 GSSAPI_CONFIGURE_ARGS=	\
 	CFLAGS="${GSSAPICPPFLAGS} ${CFLAGS}" \
 	LDFLAGS="${GSSAPILDFLAGS} ${LDFLAGS}" \

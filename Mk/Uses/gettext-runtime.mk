@@ -9,18 +9,18 @@
 .if !defined(_INCLUDE_USES_GETTEXT_RUNTIME_MK)
 _INCLUDE_USES_GETTEXT_RUNTIME_MK=	yes
 
-.if empty(gettext-runtime_ARGS)
+.  if empty(gettext-runtime_ARGS)
 gettext-runtime_ARGS=	lib
-.endif
+.  endif
 
-.if ${gettext-runtime_ARGS:Mlib}
+.  if ${gettext-runtime_ARGS:Mlib}
 LIB_DEPENDS+=	libintl.so:devel/gettext-runtime
-.endif
-.if ${gettext-runtime_ARGS:Mbuild}
+.  endif
+.  if ${gettext-runtime_ARGS:Mbuild}
 BUILD_DEPENDS+=	gettext:devel/gettext-runtime
-.endif
-.if ${gettext-runtime_ARGS:Mrun}
+.  endif
+.  if ${gettext-runtime_ARGS:Mrun}
 RUN_DEPENDS+=	gettext:devel/gettext-runtime
-.endif
+.  endif
 
 .endif

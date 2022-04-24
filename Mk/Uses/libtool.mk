@@ -15,9 +15,9 @@
 _INCLUDE_USES_LIBTOOL_MK=	yes
 _USES_POST+=	libtool
 
-.if ${libtool_ARGS:Mbuild}
+.  if ${libtool_ARGS:Mbuild}
 BUILD_DEPENDS+=	libtool:devel/libtool
-.endif
+.  endif
 .endif
 
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_LIBTOOL_POST_MK)
@@ -67,16 +67,16 @@ patch-libtool:
 
 _USES_stage+=	790:patch-lafiles
 patch-lafiles:
-.if ${libtool_ARGS:Mkeepla}
+.  if ${libtool_ARGS:Mkeepla}
 	@${FIND} ${STAGEDIR} -type f -name '*.la' |			\
 		${XARGS} ${SED} -i '' -e "/dependency_libs=/s/=.*/=''/"
-.else
+.  else
 	@${FIND} ${STAGEDIR} -type l -exec ${SH} -c			\
 		'case `${REALPATH} -q "{}"` in				\
 			*.la) ${ECHO_CMD} "{}" ;; esac' \; |		\
 		${XARGS} ${GREP} -l 'libtool library' | ${XARGS} ${RM}
 	@${FIND} ${STAGEDIR} -type f -name '*.la' |			\
 		${XARGS} ${GREP} -l 'libtool library' | ${XARGS} ${RM}
-.endif
+.  endif
 
 .endif
