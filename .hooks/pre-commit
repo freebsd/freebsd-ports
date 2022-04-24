@@ -1,17 +1,15 @@
 #!/bin/sh
 #
-# Check that ports are hooked into the build
+# Runs every hook in pre-commit.d/ until the first failure
 #
 
-newish_makefiles=$(git diff --name-only --cached --diff-filter=ACR | grep -E '^[^/]+/[^/]+/Makefile$')
-if [ $? -eq 0 ] ; then
-	for newish_makefile in ${newish_makefiles} ; do
-		category=$(echo "${newish_makefile}" | awk -F '/' '{print $1}')
-		port=$(echo "${newish_makefile}" | awk -F '/' '{print $2}')
-		grep -q -E "^[[:space:]]+SUBDIR[[:space:]]\+=[[:space:]]*${port}\$" ${category}/Makefile
+hook_directory=$(realpath $(dirname $0))
+
+for hook in ${hook_directory}/pre-commit.d/* ; do
+	if [ -x "${hook}" ] ; then
+		${hook}
 		if [ $? -ne 0 ] ; then
-			echo "[pre-commit] ERROR: Missing 'SUBDIR += ${port}' in ${category}/Makefile"
 			exit 1
 		fi
-	done
-fi
+	fi
+done
