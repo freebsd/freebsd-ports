@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# Check that Mk/ files are properly indented
+#
+
+check_indentation() {
+	local mkfile="$1"
+	local name=$(echo "${mkfile}" | awk -F / '{print $NF}')
+	local tempdir=$(mktemp -d -t check_indentations-${name})
+	if [ $? -ne 0 ] ; then
+		echo "[pre-commit] failed to create tempdir"
+		exit 2
+	fi
+	cp ${mkfile} ${tempdir} && Tools/scripts/indent_make_if.pl ${tempdir}/${name}
+	if [ $? -ne 0 ] ; then
+		echo "[pre-commit] failed to run Tools/scripts/indent_make_if.pl"
+		exit 2
+	fi
+	cmp -s ${tempdir}/*
+	if [ $? -ne 0 ] ; then
+		echo "[pre-commit] ${name} is not properly indented -- please use ${tempdir}/${name} which was created using Tools/scripts/indent_make_if.pl"
+		exit 1
+	fi
+}
+
+modified_mks=$(git diff --name-only --cached --diff-filter=ACRM | grep -E '^Mk/.*\.mk$')
+if [ $? -eq 0 ] ; then
+	for modified_mk in ${modified_mks} ; do
+		check_indentation "${modified_mk}"
+	done
+fi
