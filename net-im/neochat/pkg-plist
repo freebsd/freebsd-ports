@@ -3,6 +3,7 @@ share/applications/org.kde.neochat.desktop
 share/icons/hicolor/scalable/apps/org.kde.neochat.svg
 share/icons/hicolor/scalable/apps/org.kde.neochat.tray.svg
 share/knotifications5/neochat.notifyrc
+share/krunner/dbusplugins/plasma-runner-neochat.desktop
 share/locale/ar/LC_MESSAGES/neochat.mo
 share/locale/az/LC_MESSAGES/neochat.mo
 share/locale/ca/LC_MESSAGES/neochat.mo
@@ -17,7 +18,9 @@ share/locale/fi/LC_MESSAGES/neochat.mo
 share/locale/fr/LC_MESSAGES/neochat.mo
 share/locale/hu/LC_MESSAGES/neochat.mo
 share/locale/ia/LC_MESSAGES/neochat.mo
+share/locale/id/LC_MESSAGES/neochat.mo
 share/locale/it/LC_MESSAGES/neochat.mo
+share/locale/ja/LC_MESSAGES/neochat.mo
 share/locale/ko/LC_MESSAGES/neochat.mo
 share/locale/nl/LC_MESSAGES/neochat.mo
 share/locale/nn/LC_MESSAGES/neochat.mo
@@ -29,7 +32,10 @@ share/locale/sk/LC_MESSAGES/neochat.mo
 share/locale/sl/LC_MESSAGES/neochat.mo
 share/locale/sv/LC_MESSAGES/neochat.mo
 share/locale/ta/LC_MESSAGES/neochat.mo
+share/locale/tok/LC_MESSAGES/neochat.mo
 share/locale/tr/LC_MESSAGES/neochat.mo
 share/locale/uk/LC_MESSAGES/neochat.mo
+share/locale/x-test/LC_MESSAGES/neochat.mo
 share/locale/zh_CN/LC_MESSAGES/neochat.mo
 share/metainfo/org.kde.neochat.appdata.xml
+
