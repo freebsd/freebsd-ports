@@ -993,6 +993,7 @@
     SUBDIR += rawtherapee
     SUBDIR += rayshade
     SUBDIR += reactphysics3d
+    SUBDIR += realesrgan-ncnn-vulkan
     SUBDIR += reallyslick
     SUBDIR += realsr-ncnn-vulkan
     SUBDIR += recastnavigation
