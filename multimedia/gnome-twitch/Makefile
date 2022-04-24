@@ -11,6 +11,10 @@ COMMENT=	GTK+ Twitch livestream player
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPL3
 
+BROKEN=		Doesn't work, multiple bug reports upstream
+DEPRECATED=	Unmaintained, please consider using www/yt-dlp or multimedia/streamlink
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libpeas-1.0.so:devel/libpeas \
 		libsoup-2.4.so:devel/libsoup \
