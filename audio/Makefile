@@ -419,6 +419,7 @@
     SUBDIR += libsndfile
     SUBDIR += libsonic
     SUBDIR += libsoxr
+    SUBDIR += libspecbleach
     SUBDIR += libtremor
     SUBDIR += libumidi
     SUBDIR += libvorbis
