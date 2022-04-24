@@ -4,6 +4,9 @@ DISTVERSION=	0.0.21-13400 # git rev-list --count HEAD
 DISTVERSIONSUFFIX=	-ge53bbd668b
 CATEGORIES=	emulators
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	41a05f95a057.patch:-p1 # https://github.com/RPCS3/rpcs3/pull/11868
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
 
