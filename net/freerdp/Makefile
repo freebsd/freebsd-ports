@@ -7,7 +7,6 @@ MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 
 PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES+=	b0768032196b.patch:-p1 # https://github.com/FreeRDP/FreeRDP/pull/7678
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Free implementation of Remote Desktop Protocol
