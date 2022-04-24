@@ -1,8 +1,8 @@
 # Created by: Torsten Blum <torstenb@FreeBSD.org>
 
 PORTNAME=	postfix
-DISTVERSION=	3.7.0
-PORTREVISION?=	2
+DISTVERSION=	3.7.1
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.porcupine.org/mirrors/postfix-release/ \
