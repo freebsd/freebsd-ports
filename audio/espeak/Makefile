@@ -12,6 +12,9 @@ COMMENT=	Software speech synthesizer
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Last release in 2014 and deprecated upstream
+EXPIRATION_DATE=2022-06-30
+
 CONFLICTS=	speak-1.[0-9]
 
 USES=		gmake zip
