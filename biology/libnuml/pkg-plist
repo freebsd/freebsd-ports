@@ -41,4 +41,4 @@ lib/cmake/numl-static-config.cmake
 lib/libnuml-static.a
 lib/libnuml.so
 lib/libnuml.so.1
-lib/libnuml.so.1.1.5
+lib/libnuml.so.1.1.6
