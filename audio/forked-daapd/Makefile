@@ -12,6 +12,9 @@ COMMENT=	DAAP (iTunes), MPD (Music Player Daemon) and RSP (Roku) media server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Deprecated upstream, project is now called OwnTone
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libavahi-client.so:net/avahi-app \
 		libavcodec.so:multimedia/ffmpeg \
