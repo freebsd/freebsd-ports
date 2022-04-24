@@ -28,6 +28,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/externals/sirit/externals/SPIRV-Headers/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	requires int128 and dynarmic backend
 BROKEN_aarch64=	https://github.com/yuzu-emu/yuzu/issues/5290
+BROKEN_FreeBSD_12=	htonl() in <x86/endian.h> fails -Werror=conversion
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		nlohmann-json>0:devel/nlohmann-json \
