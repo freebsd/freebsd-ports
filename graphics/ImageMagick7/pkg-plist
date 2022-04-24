@@ -484,7 +484,6 @@ man/man1/stream.1.gz
 %%DATADIR%%-7/english.xml
 %%DATADIR%%-7/francais.xml
 %%DATADIR%%-7/locale.xml
-%%PORTDOCS%%%%DOCSDIR%%-7/ChangeLog.md
 %%PORTDOCS%%%%DOCSDIR%%-7/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%-7/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%-7/images/ImageMagick.ico
