@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-signal
-PORTVERSION=	1.4.1
-PORTREVISION=	5
+PORTVERSION=	1.4.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
