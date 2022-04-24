@@ -1047,7 +1047,7 @@ _FLAVOR:=	${FLAVOR}
 .if !defined(PORTS_FEATURES) && empty(${PORTS_FEATURES:MFLAVORS})
 PORTS_FEATURES+=	FLAVORS
 .endif
-MINIMAL_PKG_VERSION=	1.15.9
+MINIMAL_PKG_VERSION=	1.17.2
 
 _PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
 						${STAGEDIR}${PREFIX} ${WRKDIR}/pkg ${BINARY_LINKDIR}
@@ -3294,13 +3294,7 @@ check-conflicts: check-build-conflicts check-install-conflicts
 .    if !target(check-build-conflicts)
 check-build-conflicts:
 .      if ( defined(CONFLICTS) || defined(CONFLICTS_BUILD) ) && !defined(DISABLE_CONFLICTS) && !defined(DEFER_CONFLICTS_CHECK)
-	@conflicts_with=$$( \
-	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} 2>/dev/null || : ; } \
-		| while read pkgname prfx orgn; do \
-		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
-			${ECHO_CMD} -n " $${pkgname}"; \
-		fi; \
-	done); \
+	@conflicts_with=$$(${PKG_QUERY} -ge "%n != ${PKGBASE}" "%n-%v" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} 2>/dev/null || : ; ) ; \
 	if [ -n "$${conflicts_with}" ]; then \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
@@ -3319,13 +3313,7 @@ check-build-conflicts:
 CONFLICT_WARNING_WAIT?=	10
 identify-install-conflicts:
 .      if ( defined(CONFLICTS) || defined(CONFLICTS_INSTALL) ) && !defined(DISABLE_CONFLICTS)
-	@conflicts_with=$$( \
-	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; } \
-		| while read pkgname prfx orgn; do \
-		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
-			${ECHO_CMD} -n " $${pkgname}"; \
-		fi; \
-	done); \
+	@conflicts_with=$$(${PKG_QUERY} -ge "%n != ${PKGBASE}" "%n-%v" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; ) ; \
 	if [ -n "$${conflicts_with}" ]; then \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
@@ -3343,14 +3331,7 @@ identify-install-conflicts:
 .    if !target(check-install-conflicts)
 check-install-conflicts:
 .      if ( defined(CONFLICTS) || defined(CONFLICTS_INSTALL) || ( defined(CONFLICTS_BUILD) && defined(DEFER_CONFLICTS_CHECK) ) ) && !defined(DISABLE_CONFLICTS)
-.        if defined(DEFER_CONFLICTS_CHECK)
-	@conflicts_with=$$( \
-	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; } \
-			| while read pkgname prfx orgn; do \
-		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
-			${ECHO_CMD} -n " $${pkgname}"; \
-		fi; \
-	done); \
+	@conflicts_with=$$(${PKG_QUERY} -ge "%n != ${PKGBASE}" "%n-%v" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; ) ; \
 	if [ -n "$${conflicts_with}" ]; then \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
@@ -3362,13 +3343,7 @@ check-install-conflicts:
 		exit 1; \
 	fi
 .        else
-	@conflicts_with=$$( \
-	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; } \
-			| while read pkgname prfx orgn; do \
-		if [ "/${PREFIX}" = "/$${prfx}" -a "/${PKGORIGIN}" != "/$${orgn}" ]; then \
-			${ECHO_CMD} -n " $${pkgname}"; \
-		fi; \
-	done); \
+	@conflicts_with=$$(${PKG_QUERY} -ge "%n != ${PKGBASE}" "%n-%v" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_INSTALL:C/.+/'&'/} 2>/dev/null || : ; ) ; \
 	if [ -n "$${conflicts_with}" ]; then \
 		${ECHO_MSG}; \
 		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
