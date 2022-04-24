@@ -12,6 +12,10 @@ COMMENT=	Command line tool for scanning webpages for Youtube links
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Doesn't work
+DEPRECATED=	Dead upstream, please consider using www/yt-dlp or multimedia/streamlink
+EXPIRATION_DATE=2022-06-30
+
 BUILD_DEPENDS=	p5-Getopt-ArgvFile>=1.11:devel/p5-Getopt-ArgvFile \
 		p5-Umph-Prompt>=0:multimedia/p5-Umph-Prompt \
 		p5-libwww>=5.835:www/p5-libwww
