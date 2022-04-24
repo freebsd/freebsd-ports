@@ -1,5 +1,5 @@
 PORTNAME=	iansui
-PORTVERSION=	0.940
+PORTVERSION=	0.943
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fonts
 
@@ -17,7 +17,7 @@ GH_ACCOUNT=	ButTaiwan
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-FONT_FILE=	Iansui${PORTVERSION:C/\.//:C/0+$//}-Regular.ttf
+FONT_FILE=	Iansui${PORTVERSION:C/\.//:C/[0-9]$//}-Regular.ttf
 
 PLIST_FILES=	${FONTSDIR}/${FONT_FILE}
 
