@@ -9,6 +9,9 @@ DISTFILES=	#none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert QuickTime movie files to streamable format
 
+DEPRECATED=	Obsolete, please consider using multimedia/Bento4, multimedia/gpac-mp4box or multimedia/ffmpeg
+EXPIRATION_DATE=2022-06-30
+
 PLIST_FILES=	bin/qt-faststart
 
 do-extract:
