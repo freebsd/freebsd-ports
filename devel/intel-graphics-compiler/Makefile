@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
+BROKEN_i386=	clang crashes during build
 
 BUILD_DEPENDS=	vc-intrinsics-${FLAVOR}>=0.1.0_1:devel/vc-intrinsics@${FLAVOR}
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
