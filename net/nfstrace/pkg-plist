@@ -14,6 +14,7 @@ include/nfstrace/api/rpc_types.h
 include/nfstrace/api/session.h
 include/nfstrace/api/xdr_types.h
 lib/nfstrace/libbreakdown.so
+lib/nfstrace/libjson.so
 lib/nfstrace/libtestanalyzer.so
 lib/nfstrace/libwatch.so
 share/man/man8/nfstrace.8.gz
