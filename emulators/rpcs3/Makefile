@@ -12,7 +12,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_ISCL=	${WRKSRC_cubeb}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
-BUILD_DEPENDS=	flatbuffers>=2.0.6:devel/flatbuffers
+BUILD_DEPENDS=	flatbuffers>0:devel/flatbuffers
 LIB_DEPENDS=	libxxhash.so:devel/xxhash \
 		libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
