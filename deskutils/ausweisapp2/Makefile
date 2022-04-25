@@ -1,5 +1,5 @@
 PORTNAME=	ausweisapp2
-DISTVERSION=	1.22.2
+DISTVERSION=	1.22.5
 CATEGORIES=	deskutils security
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -19,8 +19,9 @@ USES=		cmake compiler:c++17-lang pkgconfig qmake qt:5 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Governikus
 GH_PROJECT=	AusweisApp2
-USE_QT=		concurrent core declarative gui network quickcontrols2 svg \
-		websockets widgets buildtools_build linguisttools_build
+USE_QT=		concurrent core declarative graphicaleffects gui network \
+		quickcontrols2 svg websockets widgets \
+		buildtools_build linguisttools_build
 
 # The VENDOR variable controls the name of the directory in ${PREFIX}/share.
 CMAKE_ARGS=	-DVENDOR=${PORTNAME}
