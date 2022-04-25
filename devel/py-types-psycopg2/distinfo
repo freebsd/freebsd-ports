@@ -1,3 +1,3 @@
-TIMESTAMP = 1650539023
-SHA256 (types-psycopg2-2.9.12.tar.gz) = 93fe6b78bbfb3f266b35fa68ceb422d3579bae16a57144d72b11d6d407746c50
-SIZE (types-psycopg2-2.9.12.tar.gz) = 14635
+TIMESTAMP = 1650890646
+SHA256 (types-psycopg2-2.9.13.tar.gz) = 2015365ffcf0494fb6613c2ffe0144ebadb2068b340df89578c4a2581135210b
+SIZE (types-psycopg2-2.9.13.tar.gz) = 14747
