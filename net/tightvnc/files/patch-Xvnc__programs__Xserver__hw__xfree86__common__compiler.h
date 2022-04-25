@@ -5,7 +5,7 @@
  #define write_mem_barrier()   /* NOP */
  
 -#if !defined(FAKEIT) && !defined(__mc68000__)
-+#if !defined(FAKEIT) && !defined(__mc68000__) && !defined(__arm__)
++#if !defined(FAKEIT) && !defined(__mc68000__) && !defined(__arm__) && !defined(__powerpc__) && !defined(__riscv)
  #ifdef GCCUSESGAS
  
  /*
