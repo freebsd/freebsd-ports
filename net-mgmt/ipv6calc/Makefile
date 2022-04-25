@@ -19,15 +19,9 @@ GNU_CONFIGURE=	yes
 
 SHEBANG_FILES=	tools/*.pl tools/*.sh.in
 
-.include <bsd.port.pre.mk>
-
-.if !(${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64)
 CFLAGS+=	-Wno-unknown-warning-option
-.else
-CFLAGS+=	-Wno-uninitialized
-.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
