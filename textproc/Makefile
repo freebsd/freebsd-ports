@@ -1335,6 +1335,7 @@
     SUBDIR += py-iso-639
     SUBDIR += py-iso3166
     SUBDIR += py-j2cli
+    SUBDIR += py-jarowinkler
     SUBDIR += py-jc
     SUBDIR += py-jinja2-cli
     SUBDIR += py-jq
