@@ -198,6 +198,7 @@ include/snort/pub_sub/expect_events.h
 include/snort/pub_sub/finalize_packet_event.h
 include/snort/pub_sub/http_events.h
 include/snort/pub_sub/http_request_body_event.h
+include/snort/pub_sub/netflow_event.h
 include/snort/pub_sub/opportunistic_tls_event.h
 include/snort/pub_sub/sip_events.h
 include/snort/pub_sub/smb_events.h
@@ -268,6 +269,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/http_inspect.txt
 %%PORTDOCS%%%%DOCSDIR%%/http2_inspect.txt
 %%PORTDOCS%%%%DOCSDIR%%/iec104.txt
+%%PORTDOCS%%%%DOCSDIR%%/mms.txt
 %%PORTDOCS%%%%DOCSDIR%%/overview.txt
 %%PORTDOCS%%%%DOCSDIR%%/params.txt
 %%PORTDOCS%%%%DOCSDIR%%/perf_monitor.txt
