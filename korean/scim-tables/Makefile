@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM table based Korean input methods
 
 BUILD_DEPENDS=	scim-make-table:textproc/scim-table-imengine

@@ -7,7 +7,7 @@ CATEGORIES=	net security
 MASTER_SITES=	SF
 DISTNAME=	glFlow-${PORTVERSION}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetFlow tool for detecting DoS attacks
 
 USES=		ssl tar:tgz

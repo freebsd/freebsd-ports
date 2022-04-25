@@ -8,7 +8,7 @@ MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/ \
 		http://redundancy.redundancy.org/mirror/
 DISTNAME=	tth_C
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TeX to HTML translator
 
 RUN_DEPENDS=	ppmtogif:graphics/netpbm

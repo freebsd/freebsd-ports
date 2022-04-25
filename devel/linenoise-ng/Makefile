@@ -6,7 +6,7 @@ PORTREVISION=	2
 DISTVERSIONPREFIX=v
 CATEGORIES=	devel
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, portable readline replacement
 
 LICENSE=	BSD3CLAUSE

@@ -6,7 +6,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://tigerteam.se/dl/sbd/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netcat clone with more features and crypto
 
 ALL_TARGET=	unix

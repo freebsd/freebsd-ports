@@ -8,7 +8,7 @@ MASTER_SITES=	http://matthewwild.co.uk/projects/luaexpat/ \
 				http://redundancy.redundancy.org/mirror/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SAX XML parser based on Expat library
 
 LICENSE=	MIT

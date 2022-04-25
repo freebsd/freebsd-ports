@@ -7,7 +7,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	http://www.dwheeler.com/flawfinder/ \
 		PACKETSTORM/UNIX/security
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Examines source code looking for security weaknesses
 
 LICENSE=	GPLv2+

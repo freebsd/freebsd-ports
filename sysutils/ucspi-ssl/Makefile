@@ -5,7 +5,7 @@ PORTVERSION=	0.99b
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fehcom.de/ipnet/ucspi-ssl/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UCSPI tools for building SSL client-server applications
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: strnum

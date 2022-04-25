@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plug proxy daemon, forwards TCP/IP connections
 
 PLIST_FILES=	man/man1/plug.1.gz sbin/plug

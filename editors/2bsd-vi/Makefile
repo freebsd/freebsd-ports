@@ -8,7 +8,7 @@ MASTER_SITES=	SF/ex-${PORTNAME}/ex-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	2bsd-
 DISTNAME=	ex-${PORTVERSION}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The original vi editor, updated to run on modern OSes
 
 LICENSE=	BSD4CLAUSE

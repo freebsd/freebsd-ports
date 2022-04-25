@@ -1,4 +1,4 @@
-# Created by: David E. Thiel <lx@FreeBSD.org>
+# Created by: David E. Thiel <ports@FreeBSD.org>
 
 PORTNAME=	ncrack
 DISTVERSION=	0.7
