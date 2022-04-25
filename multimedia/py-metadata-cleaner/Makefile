@@ -1,5 +1,5 @@
 PORTNAME=	metadata-cleaner
-DISTVERSION=	2.2.1
+DISTVERSION=	2.2.2
 CATEGORIES=	multimedia audio graphics python textproc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mat2>0:multimedia/py-mat2@${PY_FLAVOR}
 USES=		gettext-tools gnome meson pkgconfig python shebangfix
 USE_GITLAB=	yes
 GL_ACCOUNT=	rmnvgr
-GL_COMMIT=	eabee44909c86a14a3dde2e984ffaf750d1a255a
+GL_COMMIT=	a2882d01d8003a58119531e844ae698136fa2210
 USE_GNOME=	gtk40 pygobject3 libadwaita
 GLIB_SCHEMAS=	fr.romainvigier.MetadataCleaner.gschema.xml
 USE_PYTHON=	concurrent flavors
