@@ -36,7 +36,6 @@ GH_TAG_DFXML_SCHEMA=	f2a702e
 GNU_CONFIGURE=	yes
 CXXFLAGS_powerpc=	-DBIG_ENDIAN
 CXXFLAGS_powerpcspe=	-DBIG_ENDIAN
-CXXFLAGS_powerpc64=	-DBIG_ENDIAN
 CONFIGURE_ARGS=	--enable-exiv2=true
 
 PLIST_FILES=	bin/bulk_extractor bin/test_be man/man1/bulk_extractor.1.gz
