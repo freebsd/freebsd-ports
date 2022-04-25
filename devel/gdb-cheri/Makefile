@@ -4,7 +4,7 @@
 #
 # [1] https://github.com/CTSRD-CHERI/cheribuild
 
-PORTNAME=	gdb-morello
+PORTNAME=	gdb-cheri
 PORTVERSION=	8.3
 PORTREVISION=	0
 CATEGORIES=	devel
