@@ -1,0 +1,17 @@
+%%GDB_LINK%%bin/gdb
+bin/gdb%%VER%%
+%%DATADIR%%/syscalls/aarch64-linux.xml
+%%DATADIR%%/syscalls/amd64-linux.xml
+%%DATADIR%%/syscalls/arm-linux.xml
+%%DATADIR%%/syscalls/freebsd.xml
+%%DATADIR%%/syscalls/gdb-syscalls.dtd
+%%DATADIR%%/syscalls/i386-linux.xml
+%%DATADIR%%/syscalls/mips-n32-linux.xml
+%%DATADIR%%/syscalls/mips-n64-linux.xml
+%%DATADIR%%/syscalls/mips-o32-linux.xml
+%%DATADIR%%/syscalls/ppc-linux.xml
+%%DATADIR%%/syscalls/ppc64-linux.xml
+%%DATADIR%%/syscalls/s390-linux.xml
+%%DATADIR%%/syscalls/s390x-linux.xml
+%%DATADIR%%/syscalls/sparc-linux.xml
+%%DATADIR%%/syscalls/sparc64-linux.xml
