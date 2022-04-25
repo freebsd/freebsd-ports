@@ -27,7 +27,7 @@ lib/libspamc.so.0
 %%SITE_PERL%%/Mail/SpamAssassin/AICache.pm
 %%SITE_PERL%%/Mail/SpamAssassin/ArchiveIterator.pm
 %%SITE_PERL%%/Mail/SpamAssassin/AsyncLoop.pm
-%%SITE_PERL%%/Mail/SpamAssassin/AutoWhitelist.pm
+%%SITE_PERL%%/Mail/SpamAssassin/AutoWelcomelist.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Bayes.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Bayes/CombineChi.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Bayes/CombineNaiveBayes.pm
@@ -84,7 +84,7 @@ lib/libspamc.so.0
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/DKIM.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/DNSEval.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/DecodeShortURLs.pm
-%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Dmarc.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/DMARC.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Esp.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/ExtractText.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/FreeMail.pm
@@ -103,7 +103,6 @@ lib/libspamc.so.0
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/PhishTag.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Phishing.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Pyzor.pm
-%%SITE_PERL%%/Mail/SpamAssassin/Plugin/RaciallyCharged.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Razor2.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/RelayCountry.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/RelayEval.pm
@@ -123,7 +122,7 @@ lib/libspamc.so.0
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/URILocalBL.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/VBounce.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/WLBLEval.pm
-%%SITE_PERL%%/Mail/SpamAssassin/Plugin/WhiteListSubject.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/WelcomeListSubject.pm
 %%SITE_PERL%%/Mail/SpamAssassin/PluginHandler.pm
 %%SITE_PERL%%/Mail/SpamAssassin/RegistryBoundaries.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Reporter.pm
@@ -151,7 +150,7 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::AICache.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::ArchiveIterator.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::AsyncLoop.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::AutoWhitelist.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::AutoWelcomelist.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Bayes.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::BayesStore::BDB.3.gz
@@ -191,7 +190,7 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DKIM.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DNSEval.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DecodeShortURLs.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Dmarc.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::DMARC.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Esp.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::ExtractText.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::FreeMail.3.gz
@@ -221,7 +220,7 @@ lib/libspamc.so.0
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::URIDetail.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::URILocalBL.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::VBounce.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::WhiteListSubject.3.gz
+%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::WelcomeListSubject.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::PluginHandler.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::RegistryBoundaries.3.gz
 %%PERL5_MAN3%%/Mail::SpamAssassin::SQLBasedAddrList.3.gz
