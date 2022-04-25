@@ -35,3 +35,10 @@
  # Specify for how many years a correspondent is considered recent. Recent
  # correspondents will be shown in a separate "Recent correspondents" filter as
  # well. Set to 0 to disable this filter.
+@@ -330,3 +330,6 @@ if _filename_parse_transforms:
+ # well. Set to 0 to disable this filter.
+ PAPERLESS_RECENT_CORRESPONDENT_YEARS = int(os.getenv(
+     "PAPERLESS_RECENT_CORRESPONDENT_YEARS", 0))
++
++# As hinted by django 3.2
++DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

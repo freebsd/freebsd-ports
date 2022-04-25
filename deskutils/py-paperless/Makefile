@@ -1,6 +1,6 @@
 PORTNAME=	paperless
 PORTVERSION=	2.7.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -104,6 +104,7 @@ do-install:
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.orig' -delete
 	@${RLN} ${STAGEDIR}${PYTHON_SITELIBDIR}/paperless/manage.py \
 		${STAGEDIR}${PREFIX}/bin/paperless
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/paperless
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && \
 		${COPYTREE_SHARE} static ${STAGEDIR}${WWWDIR}
