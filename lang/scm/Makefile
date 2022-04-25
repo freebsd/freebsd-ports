@@ -15,7 +15,6 @@ COMMENT=	Scheme interpreter
 LICENSE=	LGPL21
 
 BROKEN_aarch64=		fails to link: missing sbrk
-BROKEN_powerpc64=	fails to build: "/wrkdirs/usr/ports/lang/scm/work/slib/lineio.scm": read-char: Wrong type in arg1 #f
 BROKEN_riscv64=		fails to link: missing sbrk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
