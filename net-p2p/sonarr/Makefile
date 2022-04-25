@@ -1,5 +1,5 @@
 PORTNAME=	sonarr
-PORTVERSION=	3.0.7.1477
+PORTVERSION=	3.0.8.1507
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.sonarr.tv/v3/main/${PORTVERSION}/
 DISTNAME=	Sonarr.main.${PORTVERSION}.linux
