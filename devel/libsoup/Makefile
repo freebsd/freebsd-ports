@@ -62,7 +62,7 @@ MESON_ARGS=	-Dvapi=disabled \
 LIBVERSION=	1.11.1
 PLIST_SUB=	VERSION="2.4" LIBVERSION=${LIBVERSION}
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	limit:^2\.[0-9]?[02468]\.
 
 post-patch:
 	${REINPLACE_CMD} \
