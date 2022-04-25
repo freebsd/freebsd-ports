@@ -9,6 +9,9 @@ COMMENT=	Program used to time subtitles
 
 LICENSE=	GPLv2
 
+DEPRECATED=	please consider using multimedia/aegisub
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libharfbuzz.so:print/harfbuzz \
 		libfreetype.so:print/freetype2 \
@@ -28,6 +31,7 @@ LDFLAGS+=	-lgmodule-2.0
 OPTIONS_DEFINE=	GTKSPELL NLS
 OPTIONS_DEFAULT=GTKSPELL
 
+GTKSPELL_DESC=	Use gtkspell
 GTKSPELL_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
 
 .include <bsd.port.options.mk>
