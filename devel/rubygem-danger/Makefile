@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	danger
-PORTVERSION=	8.6.0
+PORTVERSION=	8.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
