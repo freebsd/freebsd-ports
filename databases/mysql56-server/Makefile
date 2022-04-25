@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 BROKEN_armv6=	qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 
 SLAVEDIRS=	databases/mysql56-client
-USES=		bison:build cmake:noninja cpe groff:run libedit localbase \
-		perl5 shebangfix ssl
+USES=		bison:build cmake:noninja compiler:c++11-lib cpe groff:run \
+		libedit localbase perl5 shebangfix ssl
 
 CPE_VENDOR=	oracle
 
@@ -133,16 +133,6 @@ PERFSCHM_SUB_LIST+=		PERFSCHEMRC=""
 PERFSCHM_SUB_LIST_OFF+=		PERFSCHEMRC="--skip-performance-schema"
 FEDERATED_SUB_LIST+=		FEDER="--federated"
 FEDERATED_SUB_LIST_OFF+=	FEDER=""
-.endif
-
-.include <bsd.port.options.mk>
-
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
-USES+=		compiler:gcc-c++11-lib
-USE_CXXSTD=	gnu++11
-.else
-USES+=		compiler:c++11-lib
-USE_CXXSTD=	c++11
 .endif
 
 .include <bsd.port.pre.mk>
