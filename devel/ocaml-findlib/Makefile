@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	findlib
-PORTVERSION=	1.7.3
+PORTVERSION=	1.8.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -27,18 +27,11 @@ MAKE_JOBS_UNSAFE=	yes
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 PORTDOCS=	*
 
-# Num library is not part of OCaml core since v4.06
-.if exists(${LOCALBASE}/lib/ocaml/num.cmi)
-PLIST_SUB+=	NUM=""
-.else
-PLIST_SUB+=	NUM="@comment "
-.endif
-
 OPTIONS_DEFINE=	TOOLBOX DOCS
 OPTIONS_DEFAULT=TOOLBOX
 OPTIONS_SUB=	yes
 
-TOOLBOX_DESC=	Include toolbox interface (requires OCaml with TK)
+TOOLBOX_DESC=	Include toolbox interface (requires OCaml with Tk)
 TOOLBOX_CONFIGURE_ON=	-with-toolbox
 TOOLBOX_RUN_DEPENDS=	labltk:x11-toolkits/ocaml-labltk
 TOOLBOX_BUILD_DEPENDS=	${TOOLBOX_RUN_DEPENDS}
@@ -51,6 +44,12 @@ post-install:
 	    ${OCAML_SITELIBDIR}/findlib/findlib.cmxs \
 	    ${OCAML_SITELIBDIR}/findlib/findlib_dynload.cmxs \
 	    ${OCAML_SITELIBDIR}/findlib/findlib_top.cmxs
+.if !exists(${LOCALBASE}/lib/ocaml/graphics.cmi)
+	@${REINPLACE_CMD} -e '/graphics\/META/d' ${TMPPLIST}
+.endif
+.if !exists(${LOCALBASE}/lib/ocaml/ocamlbuild/ocamlbuildlib.cma)
+	@${REINPLACE_CMD} -e '/ocamlbuild\/META/d' ${TMPPLIST}
+.endif
 # Spacetime profiling is only available for native code on 64-bit targets
 .if ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpcspe
 	@${REINPLACE_CMD} -e '/raw_spacetime/d' ${TMPPLIST}
