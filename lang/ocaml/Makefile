@@ -102,7 +102,7 @@ PLIST_SUB+=	PROF=""
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-asmcomp_power_arch.ml
-USE_GCC=	yes
+LLD_UNSAFE=	yes
 .endif
 
 .if ${ARCH} == powerpc64le
