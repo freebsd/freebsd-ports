@@ -1193,6 +1193,7 @@
     SUBDIR += p5-URI-Escape-JavaScript
     SUBDIR += p5-URI-Escape-XS
     SUBDIR += p5-URI-Fetch
+    SUBDIR += p5-URI-Normalize
     SUBDIR += p5-URI-ParseSearchString
     SUBDIR += p5-URI-Sequin
     SUBDIR += p5-URI-Title
