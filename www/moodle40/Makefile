@@ -2,6 +2,7 @@
 
 PORTNAME=	moodle
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	www education
 MASTER_SITES=	SF/moodle/Moodle/stable400/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
@@ -14,8 +15,9 @@ LICENSE=	GPLv3
 CONFLICTS=	moodle39-3.9.[0-9]* moodle310-3.10.[0-9]* moodle311-3.11.[0-9]*
 
 USES=		cpe php:flavors tar:tgz
-USE_PHP=	ctype curl dom fileinfo filter gd hash iconv intl json mbstring \
-		opcache openssl pcre session simplexml soap sodium spl tokenizer \
+USE_PHP=	ctype curl dom exif fileinfo filter gd hash \
+		iconv intl json mbstring opcache openssl \
+		pcre session simplexml soap sodium spl tokenizer \
 		xml xmlreader xmlrpc zip zlib
 IGNORE_WITH_PHP=	81
 
