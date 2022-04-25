@@ -1,6 +1,6 @@
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.1
+DISTVERSION=	0.11.2
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,12 +24,13 @@ CARGO_CRATES=	adler32-1.2.0 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
 		bumpalo-3.9.1 \
-		bytemuck-1.8.0 \
+		bytemuck-1.9.1 \
 		cast-0.2.7 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
-		clap-3.1.6 \
-		clap_derive-3.1.4 \
+		clap-3.1.12 \
+		clap_derive-3.1.7 \
+		clap_lex-0.1.1 \
 		crc32fast-1.3.2 \
 		criterion-0.3.5 \
 		criterion-plot-0.4.4 \
@@ -46,22 +47,22 @@ CARGO_CRATES=	adler32-1.2.0 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
 		env_logger-0.9.0 \
-		getrandom-0.2.5 \
+		getrandom-0.2.6 \
 		half-1.8.2 \
 		hashbrown-0.11.2 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		indexmap-1.8.0 \
+		indexmap-1.8.1 \
 		itertools-0.10.3 \
 		itoa-0.4.8 \
 		itoa-1.0.1 \
-		js-sys-0.3.56 \
+		js-sys-0.3.57 \
 		lazy_static-1.4.0 \
-		libc-0.2.121 \
-		libflate-1.1.2 \
+		libc-0.2.124 \
+		libflate-1.2.0 \
 		libflate_lz77-1.1.0 \
-		lock_api-0.4.6 \
-		log-0.4.14 \
+		lock_api-0.4.7 \
+		log-0.4.16 \
 		maplit-1.0.2 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \
@@ -74,7 +75,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		os_str_bytes-6.0.0 \
 		output_vt100-0.1.3 \
 		parking_lot-0.12.0 \
-		parking_lot_core-0.9.1 \
+		parking_lot_core-0.9.2 \
 		plotters-0.3.1 \
 		plotters-backend-0.3.2 \
 		plotters-svg-0.3.1 \
@@ -82,18 +83,18 @@ CARGO_CRATES=	adler32-1.2.0 \
 		predicates-2.1.1 \
 		predicates-core-1.0.3 \
 		predicates-tree-1.0.5 \
-		pretty_assertions-1.2.0 \
+		pretty_assertions-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.36 \
+		proc-macro2-1.0.37 \
 		quick-xml-0.22.0 \
-		quote-1.0.16 \
+		quote-1.0.18 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
-		rayon-1.5.1 \
-		rayon-core-1.9.1 \
-		redox_syscall-0.2.11 \
+		rayon-1.5.2 \
+		rayon-core-1.9.2 \
+		redox_syscall-0.2.13 \
 		regex-1.5.5 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
@@ -103,7 +104,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		semver-1.0.6 \
+		semver-1.0.7 \
 		serde-1.0.136 \
 		serde_cbor-0.11.2 \
 		serde_derive-1.0.136 \
@@ -111,7 +112,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		smallvec-1.8.0 \
 		str_stack-0.1.0 \
 		strsim-0.10.0 \
-		syn-1.0.89 \
+		syn-1.0.91 \
 		termcolor-1.1.3 \
 		termtree-0.2.4 \
 		testing_logger-0.1.1 \
@@ -124,26 +125,27 @@ CARGO_CRATES=	adler32-1.2.0 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.79 \
-		wasm-bindgen-backend-0.2.79 \
-		wasm-bindgen-macro-0.2.79 \
-		wasm-bindgen-macro-support-0.2.79 \
-		wasm-bindgen-shared-0.2.79 \
-		web-sys-0.3.56 \
+		wasm-bindgen-0.2.80 \
+		wasm-bindgen-backend-0.2.80 \
+		wasm-bindgen-macro-0.2.80 \
+		wasm-bindgen-macro-support-0.2.80 \
+		wasm-bindgen-shared-0.2.80 \
+		web-sys-0.3.57 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.32.0 \
-		windows_aarch64_msvc-0.32.0 \
-		windows_i686_gnu-0.32.0 \
-		windows_i686_msvc-0.32.0 \
-		windows_x86_64_gnu-0.32.0 \
-		windows_x86_64_msvc-0.32.0
+		windows-sys-0.34.0 \
+		windows_aarch64_msvc-0.34.0 \
+		windows_i686_gnu-0.34.0 \
+		windows_i686_msvc-0.34.0 \
+		windows_x86_64_gnu-0.34.0 \
+		windows_x86_64_msvc-0.34.0
 EXECUTABLES=	inferno-collapse-dtrace \
 		inferno-collapse-guess \
 		inferno-collapse-perf \
 		inferno-collapse-sample \
+		inferno-collapse-vsprof \
 		inferno-collapse-vtune \
 		inferno-diff-folded \
 		inferno-flamegraph
