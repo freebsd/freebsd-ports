@@ -40,9 +40,9 @@ Library selection is handled by libglvnd and/or libmap.conf.
  endif
  
  _xa = get_option('gallium-xa')
---- src/amd/vulkan/meson.build.orig	2022-02-25 15:38:08 UTC
+--- src/amd/vulkan/meson.build.orig	2022-04-25 20:18:42 UTC
 +++ src/amd/vulkan/meson.build
-@@ -92,7 +92,7 @@ libradv_files = files(
+@@ -94,7 +94,7 @@ libradv_files = files(
    'vk_format.h',
  )
  
@@ -51,14 +51,14 @@ Library selection is handled by libglvnd and/or libmap.conf.
  
  install_data(files_drirc, install_dir : join_paths(get_option('datadir'), 'drirc.d'))
  
-@@ -150,7 +150,7 @@ endif
- vulkan_radv_def = 'vulkan_radv.def'
+@@ -153,7 +153,7 @@ libvulkan_radeon = shared_library(
+ endif
  
  libvulkan_radeon = shared_library(
 -  'vulkan_radeon',
 +  'vulkan_radeon' + get_option('egl-lib-suffix'),
-   [libradv_files, radv_entrypoints, sha1_h],
-   vs_module_defs : vulkan_radv_def,
+   [libradv_files, radv_entrypoints, sha1_h, radix_sort_spv],
+   vs_module_defs : vulkan_api_def,
    include_directories : [
 --- src/egl/meson.build.orig	2020-12-03 22:36:27 UTC
 +++ src/egl/meson.build
