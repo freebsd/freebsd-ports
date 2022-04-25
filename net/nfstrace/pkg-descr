@@ -1,0 +1,9 @@
+nfstrace is an NFS and CIFS tracing/monitoring/capturing/analyzing tool.
+
+It performs live Ethernet 1 Gbps - 10 Gbps packets capturing and helps
+to determine NFS/CIFS procedures in raw network traffic. Furthermore, it
+performs filtration, dumping, compression, statistical analysis,
+visualization and provides the API for custom pluggable analysis
+modules.
+
+WWW: https://github.com/epam/nfstrace
