@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -33,6 +33,10 @@ SHEBANG_FILES=	\
 		clang/tools/scan-build-py/bin/analyze-build \
 		clang/tools/scan-build-py/bin/intercept-build \
 		clang/tools/scan-build-py/bin/scan-build \
+		clang/tools/scan-build-py/libexec/analyze-cc \
+		clang/tools/scan-build-py/libexec/analyze-c++ \
+		clang/tools/scan-build-py/libexec/intercept-cc \
+		clang/tools/scan-build-py/libexec/intercept-c++ \
 		clang/tools/scan-view/bin/scan-view \
 		clang/utils/hmaptool/hmaptool \
 		llvm/tools/opt-viewer/optrecord.py \
@@ -41,13 +45,6 @@ SHEBANG_FILES=	\
 		llvm/tools/opt-viewer/opt-viewer.py \
 		llvm/utils/lit/lit.py \
 		llvm/utils/llvm-lit/llvm-lit.in
-.if ${LLVM_SUFFIX} == "-cheri"
-SHEBANG_FILES+=	\
-		clang/tools/scan-build-py/libexec/analyze-cc \
-		clang/tools/scan-build-py/libexec/analyze-c++ \
-		clang/tools/scan-build-py/libexec/intercept-cc \
-		clang/tools/scan-build-py/libexec/intercept-c++
-.endif
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
@@ -67,7 +64,9 @@ GH_ACCOUNT=	CTSRD-CHERI
 GH_TAGNAME=	${LLVM_COMMIT}
 .endif
 
+.ifndef SNAPDATE
 .sinclude "${.PARSEDIR}/Makefile.snapshot"
+.endif
 
 OPTIONS_DEFINE=	CLANG DOCS LIT LLD
 OPTIONS_DEFAULT=	CLANG LIT LLD
@@ -118,9 +117,7 @@ COMMANDS+=	${CLANG_COMMANDS}
 MAN1SRCS+=	clang.1 \
 		diagtool.1 \
 		scan-build.1
-.if ${LLVM_SUFFIX} == "-cheri"
 MAN1SRCS+=	clang-tblgen.1
-.endif
 #DOCS_PLIST_FILES+=	man/man1/scan-build${LLVM_SUFFIX}.1.gz
 USES+=		gnome
 .endif
@@ -189,15 +186,10 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-symbolizer.1 \
 		opt.1
 
-.if ${LLVM_SUFFIX} == "-cheri"
 MAN1SRCS+= \
 		llvm-otool.1 \
 		llvm-tblgen.1 \
 		tblgen.1
-.else
-MAN1SRCS+= \
-		xxx-tblgen.1
-.endif
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/Makefile.COMMANDS"
@@ -222,10 +214,8 @@ post-install:
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}${FIRST_COMMAND}${COMMAND_SUFFIX} \
 	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}${command}${COMMAND_SUFFIX}
 .endfor
-.if ${LLVM_SUFFIX} == "-cheri"
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/CHERI/cheri-compressed-cap/.github/workflows
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/llvm/CHERI/cheri-compressed-cap/.github
-.endif
 
 post-install-DOCS-on:
 	${MV} ${STAGEDIR}${LLVM_PREFIX}/share/doc ${STAGEDIR}${DOCSDIR}
