@@ -1,4 +1,4 @@
-# Created by: David Thiel <ports@FreeBSD.org>
+# Created by: David Thiel <lx@FreeBSD.org>
 
 PORTREVISION=	0
 
