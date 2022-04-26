@@ -4949,6 +4949,7 @@
     SUBDIR += py-plette
     SUBDIR += py-plex
     SUBDIR += py-pluggy
+    SUBDIR += py-pluggy0
     SUBDIR += py-pluginbase
     SUBDIR += py-ply
     SUBDIR += py-pockets
