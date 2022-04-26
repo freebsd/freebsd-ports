@@ -1,9 +1,8 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	totp-cli
-PORTVERSION=	1.1.17
+PORTVERSION=	1.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -17,7 +16,8 @@ USES=		go:modules
 PLIST_FILES=	bin/totp-cli
 
 GH_ACCOUNT=	yitsushi
-GH_TUPLE=	golang:crypto:7b82a4e:golang_crypto/vendor/golang.org/x/crypto \
+GH_TUPLE=	go-yaml:yaml:496545a:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		golang:crypto:7b82a4e:golang_crypto/vendor/golang.org/x/crypto \
 		golang:sys:33da011:golang_sys/vendor/golang.org/x/sys \
 		golang:term:e5f449a:golang_term/vendor/golang.org/x/term \
 		golang:text:8db23f8:golang_text/vendor/golang.org/x/text \
