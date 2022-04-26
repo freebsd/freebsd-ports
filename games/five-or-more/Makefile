@@ -1,8 +1,7 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 
 PORTNAME=	five-or-more
-PORTVERSION=	3.32.2
-PORTREVISION=	2
+PORTVERSION=	3.32.3
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
