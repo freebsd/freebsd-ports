@@ -1,11 +1,11 @@
---- requirements/optional.txt.orig	2022-02-25 08:27:33 UTC
+--- requirements/optional.txt.orig	2022-04-20 09:24:34 UTC
 +++ requirements/optional.txt
 @@ -1,27 +1,27 @@
  -r required.txt
  
  # Format support
--aeidon==1.10.1        # Subtitles
-+aeidon>=1.10.1        # Subtitles
+-aeidon==1.11        # Subtitles
++aeidon>=1.11        # Subtitles
  # Format support
  BeautifulSoup4>=4.3  # Trados
  # Encoding detection
@@ -24,13 +24,13 @@
 -phply==1.2.5         # PHP
 +phply>=1.2.5         # PHP
  # To provide translations for language names without need for OS package.
--pycountry==22.1.10          # Languages
+-pycountry==22.3.5          # Languages
 -pyenchant==3.2.2     # spellcheck
-+pycountry>=22.1.10          # Languages
++pycountry>=22.3.5          # Languages
 +pyenchant>=3.2.2     # spellcheck
  # Windows Resources (rc2po and po2rc)
--pyparsing==3.0.7     # RC
-+pyparsing>=3.0.7     # RC
+-pyparsing==3.0.8     # RC
++pyparsing>=3.0.8     # RC
  # Faster matching in e.g. pot2po
  python-Levenshtein>=0.12    # Levenshtein
  # Format support
