@@ -1,5 +1,0 @@
-The axTLS project is an SSL client/server library using the TLSv1
-protocol.  It is designed to be small and fast, and is suited to
-embedded projects.  A web server is included.
-
-WWW: http://axtls.sourceforge.net/

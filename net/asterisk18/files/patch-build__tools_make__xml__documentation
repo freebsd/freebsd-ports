@@ -1,0 +1,11 @@
+--- build_tools/make_xml_documentation.orig	2022-03-17 15:40:57 UTC
++++ build_tools/make_xml_documentation
+@@ -228,7 +228,7 @@ for subdir in ${mod_subdirs} ; do
+ 					${XMLSTARLET} val -e -d "${source_tree}/doc/appdocsxml.dtd" "${i}" || { echo "" ; exit 1 ; }
+ 			fi
+ 		fi
+-		${SED} -r "/^\s*(<[?]xml|<.DOCTYPE|<.?docs)/d" "${i}" >> "${output_file}"
++		${SED} -r "/^[[:space:]]*(<[?]xml|<.DOCTYPE|<.?docs)/d" "${i}" >> "${output_file}"
+ 	done
+ done
+ echo "</docs>" >> "${output_file}"

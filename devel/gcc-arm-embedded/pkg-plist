@@ -1485,6 +1485,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/fastmath.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/fcntl.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/fenv.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/fnmatch.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/ftw.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/getopt.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/glob.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/grp.h
@@ -1500,6 +1501,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_default_types.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_endian.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_time.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/_types.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/acle-compat.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/ansi.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/endian.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/machine/fastmath.h
@@ -1552,6 +1554,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_stdint.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_timespec.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_timeval.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_types.h
+gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/_tz_structs.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/cdefs.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/config.h
 gcc-arm-embedded-%%FULL_VERSION%%/%%TARGET%%/include/sys/custom_file.h
@@ -3073,6 +3076,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/incl
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/gimplify-me.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/gimplify.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/glimits.h
+gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/gomp-constants.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/graph.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/graphds.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/graphite.h
@@ -3107,6 +3111,7 @@ gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/incl
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/insn-attr-common.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/insn-attr.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/insn-codes.h
+gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/insn-config.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/insn-constants.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/insn-flags.h
 gcc-arm-embedded-%%FULL_VERSION%%/lib/gcc/%%TARGET%%/%%GCC_VERSION%%/plugin/include/insn-modes-inline.h

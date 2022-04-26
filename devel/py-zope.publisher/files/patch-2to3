@@ -1,0 +1,1513 @@
+--- src/zope/publisher/ftp.py.orig	2012-07-02 06:19:44 UTC
++++ src/zope/publisher/ftp.py
+@@ -27,7 +27,7 @@ class FTPResponse(BaseResponse):
+ 
+     def getResult(self):
+         if getattr(self, '_exc', None) is not None:
+-            raise self._exc[0], self._exc[1], self._exc[2]
++            raise self._exc[0](self._exc[1]).with_traceback(self._exc[2])
+         return self._result
+ 
+     def handleException(self, exc_info):
+--- src/zope/publisher/http.py.orig	2012-07-02 06:19:44 UTC
++++ src/zope/publisher/http.py
+@@ -13,7 +13,7 @@
+ ##############################################################################
+ """HTTP Publisher
+ """
+-from cStringIO import StringIO
++from io import StringIO
+ from zope.i18n.interfaces import IUserPreferredCharsets
+ from zope.i18n.interfaces import IUserPreferredLanguages
+ from zope.i18n.locales import locales, LoadLocaleError
+@@ -31,13 +31,13 @@ from zope.publisher.interfaces.http import IHTTPVirtua
+ from zope.publisher.interfaces.http import IResult
+ from zope.publisher.interfaces.logginginfo import ILoggingInfo
+ from zope.publisher.skinnable import setDefaultSkin
+-import Cookie
++import http.cookies
+ import cgi
+ import logging
+ import tempfile
+ import types
+-import urllib
+-import urlparse
++import urllib.request, urllib.parse, urllib.error
++import urllib.parse
+ import zope.component
+ import zope.contenttype.parse
+ import zope.event
+@@ -65,7 +65,7 @@ def sane_environment(env):
+     # or HTTP_CGI_AUTHORIZATION hacks.
+     # It also makes sure PATH_INFO is a unicode string.
+     dict = {}
+-    for key, val in env.items():
++    for key, val in list(env.items()):
+         while key.startswith('REDIRECT_'):
+             key = key[9:]
+         dict[key] = val
+@@ -138,7 +138,7 @@ status_codes={}
+ def init_status_codes():
+     # Add mappings for builtin exceptions and
+     # provide text -> error code lookups.
+-    for key, val in status_reasons.items():
++    for key, val in list(status_reasons.items()):
+         status_codes[val.replace(' ', '').lower()] = key
+         status_codes[val.lower()] = key
+         status_codes[key] = key
+@@ -176,7 +176,7 @@ class URLGetter(object):
+                 return self.__request.getURL(i)
+             else:
+                 return self.__request.getApplicationURL(i)
+-        except IndexError, v:
++        except IndexError as v:
+             if v[0] == i:
+                 return default
+             raise
+@@ -352,7 +352,7 @@ class HTTPRequest(BaseRequest):
+         script = get_env('SCRIPT_NAME', '').strip()
+ 
+         # _script and the other _names are meant for URL construction
+-        self._app_names = filter(None, script.split('/'))
++        self._app_names = [_f for _f in script.split('/') if _f]
+ 
+         # get server URL and store it too, since we are already looking it up
+         server_url = get_env('SERVER_URL', None)
+@@ -379,9 +379,9 @@ class HTTPRequest(BaseRequest):
+         else:
+             protocol = 'http'
+ 
+-        if environ.has_key('HTTP_HOST'):
++        if 'HTTP_HOST' in environ:
+             host = environ['HTTP_HOST'].strip()
+-            hostname, port = urllib.splitport(host)
++            hostname, port = urllib.parse.splitport(host)
+         else:
+             hostname = environ.get('SERVER_NAME', '').strip()
+             port = environ.get('SERVER_PORT', '')
+@@ -401,13 +401,13 @@ class HTTPRequest(BaseRequest):
+ 
+         # ignore cookies on a CookieError
+         try:
+-            c = Cookie.SimpleCookie(text)
+-        except Cookie.CookieError, e:
++            c = http.cookies.SimpleCookie(text)
++        except http.cookies.CookieError as e:
+             eventlog.warn(e)
+             return result
+ 
+-        for k,v in c.items():
+-            result[unicode(k, ENCODING)] = unicode(v.value, ENCODING)
++        for k,v in list(c.items()):
++            result[str(k, ENCODING)] = str(v.value, ENCODING)
+ 
+         return result
+ 
+@@ -521,7 +521,7 @@ class HTTPRequest(BaseRequest):
+                 raise IndexError(level)
+             names = names[:-level]
+         # See: http://www.ietf.org/rfc/rfc2718.txt, Section 2.2.5
+-        names = [urllib.quote(name.encode("utf-8"), safe='/+@')
++        names = [urllib.parse.quote(name.encode("utf-8"), safe='/+@')
+                  for name in names]
+ 
+         if path_only:
+@@ -544,7 +544,7 @@ class HTTPRequest(BaseRequest):
+             names = self._app_names
+ 
+         # See: http://www.ietf.org/rfc/rfc2718.txt, Section 2.2.5
+-        names = [urllib.quote(name.encode("utf-8"), safe='/+@')
++        names = [urllib.parse.quote(name.encode("utf-8"), safe='/+@')
+                  for name in names]
+ 
+         if path_only:
+@@ -604,7 +604,7 @@ class HTTPRequest(BaseRequest):
+         d = {}
+         d.update(self._environ)
+         d.update(self._cookies)
+-        return d.keys()
++        return list(d.keys())
+ 
+ 
+ 
+@@ -645,7 +645,7 @@ class HTTPResponse(BaseResponse):
+         try:
+             status = int(status)
+         except ValueError:
+-            if isinstance(status, basestring):
++            if isinstance(status, str):
+                 status = status.lower()
+             # Use a standard status code, falling back to 500 for
+             # nonstandard values (such as "valueerror")
+@@ -701,7 +701,7 @@ class HTTPResponse(BaseResponse):
+         result.append(
+             ("X-Powered-By", "Zope (www.zope.org), Python (www.python.org)"))
+ 
+-        for key, values in headers.items():
++        for key, values in list(headers.items()):
+             if key.lower() == key:
+                 # only change non-literal header names
+                 key = '-'.join([k.capitalize() for k in key.split('-')])
+@@ -729,7 +729,7 @@ class HTTPResponse(BaseResponse):
+     def expireCookie(self, name, **kw):
+         'See IHTTPResponse'
+         dict = {'max_age':0, 'expires':'Wed, 31-Dec-97 23:59:59 GMT'}
+-        for k, v in kw.items():
++        for k, v in list(kw.items()):
+             if v is not None:
+                 dict[k] = v
+         cookies = self._cookies
+@@ -744,7 +744,7 @@ class HTTPResponse(BaseResponse):
+         cookies = self._cookies
+         cookie = cookies.setdefault(name, {})
+ 
+-        for k, v in kw.items():
++        for k, v in list(kw.items()):
+             if v is not None:
+                 cookie[k.lower()] = v
+ 
+@@ -764,7 +764,7 @@ class HTTPResponse(BaseResponse):
+             r = zope.component.queryMultiAdapter(
+                 (result, self._request), IResult)
+             if r is None:
+-                if isinstance(result, basestring):
++                if isinstance(result, str):
+                     r = result
+                 elif result is None:
+                     r = ''
+@@ -772,7 +772,7 @@ class HTTPResponse(BaseResponse):
+                     raise TypeError(
+                         'The result should be None, a string, or adaptable to '
+                         'IResult.')
+-            if isinstance(r, basestring):
++            if isinstance(r, str):
+                 r, headers = self._implicitResult(r)
+                 self._headers.update(dict((k, [v]) for (k, v) in headers))
+                 r = (r,) # chunking should be much larger than per character
+@@ -796,7 +796,7 @@ class HTTPResponse(BaseResponse):
+         encoding = getCharsetUsingRequest(self._request) or 'utf-8'
+         content_type = self.getHeader('content-type')
+ 
+-        if isinstance(body, unicode):
++        if isinstance(body, str):
+             if not unicode_mimetypes_re.match(content_type):
+                 raise ValueError(
+                     'Unicode results must have a text, RFC 3023, or '
+@@ -818,7 +818,7 @@ class HTTPResponse(BaseResponse):
+ 
+             params['charset'] = encoding
+             content_type = "%s/%s;" % (major, minor)
+-            content_type += ";".join(k + "=" + v for k, v in params.items())
++            content_type += ";".join(k + "=" + v for k, v in list(params.items()))
+ 
+         if content_type:
+             headers = [('content-type', content_type),
+@@ -833,13 +833,13 @@ class HTTPResponse(BaseResponse):
+         Calls self.setBody() with an error response.
+         """
+         t, v = exc_info[:2]
+-        if isinstance(t, (types.ClassType, type)):
++        if isinstance(t, type):
+             if issubclass(t, Redirect):
+                 self.redirect(v.getLocation())
+                 return
+             title = tname = t.__name__
+         else:
+-            title = tname = unicode(t)
++            title = tname = str(t)
+ 
+         # Throwing non-protocol-specific exceptions is a good way
+         # for apps to control the status code.
+@@ -851,15 +851,15 @@ class HTTPResponse(BaseResponse):
+ 
+     def internalError(self):
+         'See IPublisherResponse'
+-        self.setStatus(500, u"The engines can't take any more, Jim!")
++        self.setStatus(500, "The engines can't take any more, Jim!")
+ 
+     def _html(self, title, content):
+         t = cgi.escape(title)
+         return (
+-            u"<html><head><title>%s</title></head>\n"
+-            u"<body><h2>%s</h2>\n"
+-            u"%s\n"
+-            u"</body></html>\n" %
++            "<html><head><title>%s</title></head>\n"
++            "<body><h2>%s</h2>\n"
++            "%s\n"
++            "</body></html>\n" %
+             (t, t, content)
+             )
+ 
+@@ -900,14 +900,14 @@ class HTTPResponse(BaseResponse):
+ 
+     def _cookie_list(self):
+         try:
+-            c = Cookie.SimpleCookie()
+-        except Cookie.CookieError, e:
++            c = http.cookies.SimpleCookie()
++        except http.cookies.CookieError as e:
+             eventlog.warn(e)
+             return []
+-        for name, attrs in self._cookies.items():
++        for name, attrs in list(self._cookies.items()):
+             name = str(name)
+             c[name] = attrs['value'].encode(ENCODING)
+-            for k,v in attrs.items():
++            for k,v in list(attrs.items()):
+                 if k == 'value':
+                     continue
+                 if k == 'secure':
+@@ -918,7 +918,7 @@ class HTTPResponse(BaseResponse):
+                     k = 'max-age'
+                 elif k == 'comment':
+                     # Encode rather than throw an exception
+-                    v = urllib.quote(v.encode('utf-8'), safe="/?:@&+")
++                    v = urllib.parse.quote(v.encode('utf-8'), safe="/?:@&+")
+                 c[name][k] = str(v)
+         return str(c).splitlines()
+ 
+@@ -938,7 +938,7 @@ def sort_charsets(x, y):
+ 
+ 
+ def extract_host(url):
+-    scheme, host, path, query, fragment = urlparse.urlsplit(url)
++    scheme, host, path, query, fragment = urllib.parse.urlsplit(url)
+     if ':' not in host:
+         port = DEFAULT_PORTS.get(scheme)
+         if port:
+--- src/zope/publisher/interfaces/__init__.py.orig	2012-07-02 06:19:42 UTC
++++ src/zope/publisher/interfaces/__init__.py
+@@ -60,10 +60,10 @@ class NotFound(LookupError, TraversalException):
+ 
+     def __str__(self):
+         try:
+-            ob = `self.ob`
++            ob = repr(self.ob)
+         except:
+             ob = 'unprintable object'
+-        return 'Object: %s, name: %s' % (ob, `self.name`)
++        return 'Object: %s, name: %s' % (ob, repr(self.name))
+ 
+ class IDebugError(ITraversalException):
+     def getObject():
+--- src/zope/publisher/publish.py.orig	2012-07-02 06:19:44 UTC
++++ src/zope/publisher/publish.py
+@@ -64,8 +64,8 @@ def mapply(obj, positional=(), request={}):
+ 
+     unwrapped, wrapperCount = unwrapMethod(unwrapped)
+ 
+-    code = unwrapped.func_code
+-    defaults = unwrapped.func_defaults
++    code = unwrapped.__code__
++    defaults = unwrapped.__defaults__
+     names = code.co_varnames[wrapperCount:code.co_argcount]
+ 
+     nargs = len(names)
+@@ -154,7 +154,7 @@ def publish(request, handle_errors=True):
+ 
+                     break # Successful.
+ 
+-                except Retry, retryException:
++                except Retry as retryException:
+                     if request.supportsRetry():
+                         # Create a copy of the request and use it.
+                         newrequest = request.retry()
+@@ -187,7 +187,7 @@ def publish(request, handle_errors=True):
+ 
+         response = request.response
+         if to_raise is not None:
+-            raise to_raise[0], to_raise[1], to_raise[2]
++            raise to_raise[0](to_raise[1]).with_traceback(to_raise[2])
+ 
+     finally:
+         to_raise = None  # Avoid circ. ref.
+--- src/zope/publisher/tests/test_browserrequest.py.orig	2012-07-02 06:19:44 UTC
++++ src/zope/publisher/tests/test_browserrequest.py
+@@ -14,7 +14,7 @@
+ 
+ import sys
+ import unittest
+-from StringIO import StringIO
++from io import StringIO
+ 
+ from zope.interface import implements, directlyProvides, Interface
+ from zope.interface.verify import verifyObject
+@@ -101,12 +101,12 @@ class BrowserTests(HTTPTests):
+         class Item(object):
+             """Required docstring for the publisher."""
+             def __call__(self, a, b):
+-                return u"%s, %s" % (`a`, `b`)
++                return "%s, %s" % (repr(a), repr(b))
+ 
+         class Item3(object):
+             """Required docstring for the publisher."""
+             def __call__(self, *args):
+-                return u"..."
++                return "..."
+ 
+         class View(object):
+             """Required docstring for the publisher."""
+@@ -115,7 +115,7 @@ class BrowserTests(HTTPTests):
+ 
+             def index(self, a, b):
+                 """Required docstring for the publisher."""
+-                return u"%s, %s" % (`a`, `b`)
++                return "%s, %s" % (repr(a), repr(b))
+ 
+         class Item2(object):
+             """Required docstring for the publisher."""
+@@ -145,7 +145,7 @@ class BrowserTests(HTTPTests):
+ 
+     def testTraversalToItem(self):
+         res = self._publisherResults()
+-        self.failUnlessEqual(
++        self.assertEqual(
+             res,
+             "Status: 200 Ok\r\n"
+             "Content-Length: 7\r\n"
+@@ -159,7 +159,7 @@ class BrowserTests(HTTPTests):
+         request = self._createRequest()
+         response = request.response
+         publish(request)
+-        self.failIf(response.getBase())
++        self.assertFalse(response.getBase())
+ 
+     def testDefault(self):
+         extra = {'PATH_INFO': '/folder/item2'}
+@@ -183,7 +183,7 @@ class BrowserTests(HTTPTests):
+         should be catched"""
+ 
+         extra = {'REQUEST_METHOD':'POST',
+-                 'PATH_INFO': u'/',
++                 'PATH_INFO': '/',
+                  'CONTENT_TYPE': 'multipart/form-data;\
+                  boundary=---------------------------1'}
+ 
+@@ -201,17 +201,17 @@ class BrowserTests(HTTPTests):
+         its filename."""
+ 
+         extra = {'REQUEST_METHOD':'POST',
+-                 'PATH_INFO': u'/',
++                 'PATH_INFO': '/',
+                  'CONTENT_TYPE': 'multipart/form-data;\
+                  boundary=---------------------------1'}
+ 
+         request  = self._createRequest(extra, body=LARGE_FILE_BODY)
+         request.processInputs()
+-        self.assert_(request.form['upload'].name)
++        self.assertTrue(request.form['upload'].name)
+ 
+         request  = self._createRequest(extra, body=IE_FILE_BODY)
+         request.processInputs()
+-        self.assertEquals(request.form['upload'].filename, 'notepad.exe')
++        self.assertEqual(request.form['upload'].filename, 'notepad.exe')
+ 
+ 
+     def testDefault2(self):
+@@ -227,14 +227,14 @@ class BrowserTests(HTTPTests):
+         request = self._createRequest(extra)
+         response = request.response
+         publish(request)
+-        self.failIf(response.getBase())
++        self.assertFalse(response.getBase())
+ 
+     def testDefault4(self):
+         extra = {'PATH_INFO': '/folder/item2/view/'}
+         request = self._createRequest(extra)
+         response = request.response
+         publish(request)
+-        self.failIf(response.getBase())
++        self.assertFalse(response.getBase())
+ 
+     def testDefault6(self):
+         extra = {'PATH_INFO': '/folder/item2/'}
+@@ -258,7 +258,7 @@ class BrowserTests(HTTPTests):
+         request = self._createRequest()
+         publish(request)
+         self.assertEqual(request.form,
+-                         {u'a':u'5', u'b':6})
++                         {'a':'5', 'b':6})
+ 
+     def testFormNoEncodingUsesUTF8(self):
+         encoded = 'K\xc3\x83\xc2\xb6hlerstra\xc3\x83\xc2\x9fe'
+@@ -271,8 +271,8 @@ class BrowserTests(HTTPTests):
+         # many mainstream browsers do not send HTTP_ACCEPT_CHARSET
+         del request._environ['HTTP_ACCEPT_CHARSET']
+         publish(request)
+-        self.assert_(isinstance(request.form[u'street'], unicode))
+-        self.assertEqual(unicode(encoded, 'utf-8'), request.form['street'])
++        self.assertTrue(isinstance(request.form['street'], str))
++        self.assertEqual(str(encoded, 'utf-8'), request.form['street'])
+ 
+     def testFormAcceptsStarButNotUTF8(self):
+         extra = {
+@@ -287,100 +287,100 @@ class BrowserTests(HTTPTests):
+         extra = {'QUERY_STRING':'a:list=5&a:list=6&b=1'}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a':[u'5',u'6'], u'b':u'1'})
++        self.assertEqual(request.form, {'a':['5','6'], 'b':'1'})
+ 
+     def testQueryStringIgnoredForPOST(self):
+         request = self._createRequest(
+             {"REQUEST_METHOD": "POST",
+              'PATH_INFO': '/folder/item3'}, body='c=5&d:int=6')
+         publish(request)
+-        self.assertEqual(request.form, {u'c': u'5', u'd': 6})
++        self.assertEqual(request.form, {'c': '5', 'd': 6})
+         self.assertEqual(request.get('QUERY_STRING'), 'a=5&b:int=6')
+ 
+     def testFormTupleTypes(self):
+         extra = {'QUERY_STRING':'a:tuple=5&a:tuple=6&b=1'}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a':(u'5',u'6'), u'b':u'1'})
++        self.assertEqual(request.form, {'a':('5','6'), 'b':'1'})
+ 
+     def testFormTupleRecordTypes(self):
+         extra = {'QUERY_STRING':'a.x:tuple:record=5&a.x:tuple:record=6&b=1'}
+         request = self._createRequest(extra)
+         publish(request)
+-        keys = request.form.keys()
++        keys = list(request.form.keys())
+         keys.sort()
+-        self.assertEqual(keys, [u'a',u'b'])
+-        self.assertEqual(request.form[u'b'], u'1')
+-        self.assertEqual(request.form[u'a'].keys(), [u'x'])
+-        self.assertEqual(request.form[u'a'][u'x'], (u'5',u'6'))
+-        self.assertEqual(request.form[u'a'].x, (u'5',u'6'))
+-        self.assertEqual(str(request.form[u'a']), "{x: (u'5', u'6')}")
+-        self.assertEqual(repr(request.form[u'a']), "{x: (u'5', u'6')}")
++        self.assertEqual(keys, ['a','b'])
++        self.assertEqual(request.form['b'], '1')
++        self.assertEqual(list(request.form['a'].keys()), ['x'])
++        self.assertEqual(request.form['a']['x'], ('5','6'))
++        self.assertEqual(request.form['a'].x, ('5','6'))
++        self.assertEqual(str(request.form['a']), "{x: (u'5', u'6')}")
++        self.assertEqual(repr(request.form['a']), "{x: (u'5', u'6')}")
+ 
+     def testFormRecordsTypes(self):
+         extra = {'QUERY_STRING':'a.x:records=5&a.x:records=6&b=1'}
+         request = self._createRequest(extra)
+         publish(request)
+-        keys = request.form.keys()
++        keys = list(request.form.keys())
+         keys.sort()
+-        self.assertEqual(keys, [u'a',u'b'])
+-        self.assertEqual(request.form[u'b'], u'1')
+-        self.assertEqual(len(request.form[u'a']), 2)
+-        self.assertEqual(request.form[u'a'][0][u'x'], u'5')
+-        self.assertEqual(request.form[u'a'][0].x, u'5')
+-        self.assertEqual(request.form[u'a'][1][u'x'], u'6')
+-        self.assertEqual(request.form[u'a'][1].x, u'6')
+-        self.assertEqual(str(request.form[u'a']), "[{x: u'5'}, {x: u'6'}]")
+-        self.assertEqual(repr(request.form[u'a']), "[{x: u'5'}, {x: u'6'}]")
++        self.assertEqual(keys, ['a','b'])
++        self.assertEqual(request.form['b'], '1')
++        self.assertEqual(len(request.form['a']), 2)
++        self.assertEqual(request.form['a'][0]['x'], '5')
++        self.assertEqual(request.form['a'][0].x, '5')
++        self.assertEqual(request.form['a'][1]['x'], '6')
++        self.assertEqual(request.form['a'][1].x, '6')
++        self.assertEqual(str(request.form['a']), "[{x: u'5'}, {x: u'6'}]")
++        self.assertEqual(repr(request.form['a']), "[{x: u'5'}, {x: u'6'}]")
+ 
+     def testFormMultipleRecordsTypes(self):
+         extra = {'QUERY_STRING':'a.x:records:int=5&a.y:records:int=51'
+             '&a.x:records:int=6&a.y:records:int=61&b=1'}
+         request = self._createRequest(extra)
+         publish(request)
+-        keys = request.form.keys()
++        keys = list(request.form.keys())
+         keys.sort()
+-        self.assertEqual(keys, [u'a',u'b'])
+-        self.assertEqual(request.form[u'b'], u'1')
+-        self.assertEqual(len(request.form[u'a']), 2)
+-        self.assertEqual(request.form[u'a'][0][u'x'], 5)
+-        self.assertEqual(request.form[u'a'][0].x, 5)
+-        self.assertEqual(request.form[u'a'][0][u'y'], 51)
+-        self.assertEqual(request.form[u'a'][0].y, 51)
+-        self.assertEqual(request.form[u'a'][1][u'x'], 6)
+-        self.assertEqual(request.form[u'a'][1].x, 6)
+-        self.assertEqual(request.form[u'a'][1][u'y'], 61)
+-        self.assertEqual(request.form[u'a'][1].y, 61)
+-        self.assertEqual(str(request.form[u'a']),
++        self.assertEqual(keys, ['a','b'])
++        self.assertEqual(request.form['b'], '1')
++        self.assertEqual(len(request.form['a']), 2)
++        self.assertEqual(request.form['a'][0]['x'], 5)
++        self.assertEqual(request.form['a'][0].x, 5)
++        self.assertEqual(request.form['a'][0]['y'], 51)
++        self.assertEqual(request.form['a'][0].y, 51)
++        self.assertEqual(request.form['a'][1]['x'], 6)
++        self.assertEqual(request.form['a'][1].x, 6)
++        self.assertEqual(request.form['a'][1]['y'], 61)
++        self.assertEqual(request.form['a'][1].y, 61)
++        self.assertEqual(str(request.form['a']),
+             "[{x: 5, y: 51}, {x: 6, y: 61}]")
+-        self.assertEqual(repr(request.form[u'a']),
++        self.assertEqual(repr(request.form['a']),
+             "[{x: 5, y: 51}, {x: 6, y: 61}]")
+ 
+     def testFormListRecordTypes(self):
+         extra = {'QUERY_STRING':'a.x:list:record=5&a.x:list:record=6&b=1'}
+         request = self._createRequest(extra)
+         publish(request)
+-        keys = request.form.keys()
++        keys = list(request.form.keys())
+         keys.sort()
+-        self.assertEqual(keys, [u'a',u'b'])
+-        self.assertEqual(request.form[u'b'], u'1')
+-        self.assertEqual(request.form[u'a'].keys(), [u'x'])
+-        self.assertEqual(request.form[u'a'][u'x'], [u'5',u'6'])
+-        self.assertEqual(request.form[u'a'].x, [u'5',u'6'])
+-        self.assertEqual(str(request.form[u'a']), "{x: [u'5', u'6']}")
+-        self.assertEqual(repr(request.form[u'a']), "{x: [u'5', u'6']}")
++        self.assertEqual(keys, ['a','b'])
++        self.assertEqual(request.form['b'], '1')
++        self.assertEqual(list(request.form['a'].keys()), ['x'])
++        self.assertEqual(request.form['a']['x'], ['5','6'])
++        self.assertEqual(request.form['a'].x, ['5','6'])
++        self.assertEqual(str(request.form['a']), "{x: [u'5', u'6']}")
++        self.assertEqual(repr(request.form['a']), "{x: [u'5', u'6']}")
+ 
+     def testFormListTypes2(self):
+         extra = {'QUERY_STRING':'a=5&a=6&b=1'}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a':[u'5',u'6'], u'b':u'1'})
++        self.assertEqual(request.form, {'a':['5','6'], 'b':'1'})
+ 
+     def testFormIntTypes(self):
+         extra = {'QUERY_STRING':'a:int=5&b:int=-5&c:int=0&d:int=-0'}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a': 5, u'b': -5, u'c': 0, u'd': 0})
++        self.assertEqual(request.form, {'a': 5, 'b': -5, 'c': 0, 'd': 0})
+ 
+         extra = {'QUERY_STRING':'a:int='}
+         request = self._createRequest(extra)
+@@ -394,7 +394,7 @@ class BrowserTests(HTTPTests):
+         extra = {'QUERY_STRING':'a:float=5&b:float=-5.01&c:float=0'}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a': 5.0, u'b': -5.01, u'c': 0.0})
++        self.assertEqual(request.form, {'a': 5.0, 'b': -5.01, 'c': 0.0})
+ 
+         extra = {'QUERY_STRING':'a:float='}
+         request = self._createRequest(extra)
+@@ -408,7 +408,7 @@ class BrowserTests(HTTPTests):
+         extra = {'QUERY_STRING':'a:long=99999999999999&b:long=0L'}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a': 99999999999999, u'b': 0})
++        self.assertEqual(request.form, {'a': 99999999999999, 'b': 0})
+ 
+         extra = {'QUERY_STRING':'a:long='}
+         request = self._createRequest(extra)
+@@ -422,27 +422,27 @@ class BrowserTests(HTTPTests):
+         extra = {'QUERY_STRING':'a:tokens=a%20b%20c%20d&b:tokens='}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a': [u'a', u'b', u'c', u'd'],
+-                         u'b': []})
++        self.assertEqual(request.form, {'a': ['a', 'b', 'c', 'd'],
++                         'b': []})
+ 
+     def testFormStringTypes(self):
+         extra = {'QUERY_STRING':'a:string=test&b:string='}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a': u'test', u'b': u''})
++        self.assertEqual(request.form, {'a': 'test', 'b': ''})
+ 
+     def testFormLinesTypes(self):
+         extra = {'QUERY_STRING':'a:lines=a%0ab%0ac%0ad&b:lines='}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a': [u'a', u'b', u'c', u'd'],
+-                         u'b': []})
++        self.assertEqual(request.form, {'a': ['a', 'b', 'c', 'd'],
++                         'b': []})
+ 
+     def testFormTextTypes(self):
+         extra = {'QUERY_STRING':'a:text=a%0a%0db%0d%0ac%0dd%0ae&b:text='}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a': u'a\nb\nc\nd\ne', u'b': u''})
++        self.assertEqual(request.form, {'a': 'a\nb\nc\nd\ne', 'b': ''})
+ 
+     def testFormRequiredTypes(self):
+         extra = {'QUERY_STRING':'a:required=%20'}
+@@ -453,33 +453,33 @@ class BrowserTests(HTTPTests):
+         extra = {'QUERY_STRING':'a:boolean=&b:boolean=1&c:boolean=%20'}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a': False, u'b': True, u'c': True})
++        self.assertEqual(request.form, {'a': False, 'b': True, 'c': True})
+ 
+     def testFormDefaults(self):
+         extra = {'QUERY_STRING':'a:default=10&a=6&b=1'}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a':u'6', u'b':u'1'})
++        self.assertEqual(request.form, {'a':'6', 'b':'1'})
+ 
+     def testFormDefaults2(self):
+         extra = {'QUERY_STRING':'a:default=10&b=1'}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a':u'10', u'b':u'1'})
++        self.assertEqual(request.form, {'a':'10', 'b':'1'})
+ 
+     def testFormFieldName(self):
+         extra = {'QUERY_STRING':'c+%2B%2F%3D%26c%3Aint=6',
+                  'PATH_INFO': '/folder/item3/'}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'c +/=&c': 6})
++        self.assertEqual(request.form, {'c +/=&c': 6})
+ 
+     def testFormFieldValue(self):
+         extra = {'QUERY_STRING':'a=b+%2B%2F%3D%26b%3Aint',
+                  'PATH_INFO': '/folder/item3/'}
+         request = self._createRequest(extra)
+         publish(request)
+-        self.assertEqual(request.form, {u'a':u'b +/=&b:int'})
++        self.assertEqual(request.form, {'a':'b +/=&b:int'})
+ 
+     def testInterface(self):
+         request = self._createRequest()
+@@ -506,7 +506,7 @@ class BrowserTests(HTTPTests):
+         request = self._createRequest(extra)
+         publish(request)
+         self.assertEqual(request.headers.get('HTTP_REFERER'), 'http://localhost/')
+-        self.assertEqual(request.form, {u'HTTP_REFERER': u'peter'})
++        self.assertEqual(request.form, {'HTTP_REFERER': 'peter'})
+ 
+ 
+     def test_post_body_not_consumed_unnecessarily(self):
+--- src/zope/publisher/tests/test_http.py.orig	2012-07-02 06:19:44 UTC
++++ src/zope/publisher/tests/test_http.py
+@@ -17,8 +17,8 @@
+ import sys
+ import tempfile
+ import unittest
+-from cStringIO import StringIO
+-from Cookie import CookieError
++from io import StringIO
++from http.cookies import CookieError
+ from doctest import DocFileSuite
+ 
+ import zope.event
+@@ -128,19 +128,19 @@ class HTTPInputStreamTests(unittest.TestCase):
+ 
+         # HTTPInputStream understands both CONTENT_LENGTH...
+         stream = HTTPInputStream(StringIO(data), {'CONTENT_LENGTH': '100000'})
+-        self.assert_(isinstance(stream.getCacheStream(), TempFileType))
++        self.assertTrue(isinstance(stream.getCacheStream(), TempFileType))
+ 
+         # ... and HTTP_CONTENT_LENGTH.
+         stream = HTTPInputStream(StringIO(data), {'HTTP_CONTENT_LENGTH':
+                                                   '100000'})
+-        self.assert_(isinstance(stream.getCacheStream(), TempFileType))
++        self.assertTrue(isinstance(stream.getCacheStream(), TempFileType))
+ 
+         # If CONTENT_LENGTH is absent or empty, it takes the value
+         # given in HTTP_CONTENT_LENGTH:
+         stream = HTTPInputStream(StringIO(data),
+                                  {'CONTENT_LENGTH': '',
+                                   'HTTP_CONTENT_LENGTH': '100000'})
+-        self.assert_(isinstance(stream.getCacheStream(), TempFileType))
++        self.assertTrue(isinstance(stream.getCacheStream(), TempFileType))
+ 
+         # In fact, HTTPInputStream can be instantiated with both an
+         # empty CONTENT_LENGTH and an empty HTTP_CONTENT_LENGTH:
+@@ -165,7 +165,7 @@ class HTTPInputStreamTests(unittest.TestCase):
+                 return 'a'*size
+ 
+         stream = HTTPInputStream(NonClosingStream(), {'CONTENT_LENGTH': '10'})
+-        self.assertEquals(stream.getCacheStream().read(), 'aaaaaaaaaa')
++        self.assertEqual(stream.getCacheStream().read(), 'aaaaaaaaaa')
+         stream = HTTPInputStream(NonClosingStream(), {})
+         self.assertRaises(ServerHung, stream.getCacheStream)
+ 
+@@ -194,7 +194,7 @@ class HTTPTests(unittest.TestCase):
+         class Item(object):
+             """Required docstring for the publisher."""
+             def __call__(self, a, b):
+-                return "%s, %s" % (`a`, `b`)
++                return "%s, %s" % (repr(a), repr(b))
+ 
+         self.app = AppRoot()
+         self.app.folder = Folder()
+@@ -252,7 +252,7 @@ class HTTPTests(unittest.TestCase):
+ 
+     def testTraversalToItem(self):
+         res = self._publisherResults()
+-        self.failUnlessEqual(
++        self.assertEqual(
+             res,
+             "Status: 200 Ok\r\n"
+             "Content-Length: 6\r\n"
+@@ -266,27 +266,27 @@ class HTTPTests(unittest.TestCase):
+ 
+         request = self._createRequest(env, '')
+         location = request.response.redirect('http://foobar.com/redirected')
+-        self.assertEquals(location, 'http://foobar.com/redirected')
+-        self.assertEquals(request.response.getStatus(), 302)
+-        self.assertEquals(request.response.getHeader('location'), location)
++        self.assertEqual(location, 'http://foobar.com/redirected')
++        self.assertEqual(request.response.getStatus(), 302)
++        self.assertEqual(request.response.getHeader('location'), location)
+ 
+         # test HTTP/1.1
+         env = {'SERVER_PROTOCOL':'HTTP/1.1'}
+ 
+         request = self._createRequest(env, '')
+         location = request.response.redirect('http://foobar.com/redirected')
+-        self.assertEquals(request.response.getStatus(), 303)
++        self.assertEqual(request.response.getStatus(), 303)
+ 
+         # test explicit status
+         request = self._createRequest(env, '')
+         request.response.redirect('http://foobar.com/explicit', 304)
+-        self.assertEquals(request.response.getStatus(), 304)
++        self.assertEqual(request.response.getStatus(), 304)
+ 
+         # test non-string location, like URLGetter
+         request = self._createRequest(env, '')
+         request.response.redirect(request.URL)
+-        self.assertEquals(request.response.getStatus(), 303)
+-        self.assertEquals(request.response.getHeader('location'),
++        self.assertEqual(request.response.getStatus(), 303)
++        self.assertEqual(request.response.getHeader('location'),
+                           str(request.URL))
+ 
+     def testUntrustedRedirect(self):
+@@ -301,81 +301,81 @@ class HTTPTests(unittest.TestCase):
+         # host. They aren't really allowed per RFC but the response object
+         # supports them and people are probably using them.
+         location = request.response.redirect('/foo', trusted=False)
+-        self.assertEquals('/foo', location)
++        self.assertEqual('/foo', location)
+ 
+         # If we pass `trusted` for the redirect, we can redirect the browser
+         # anywhere we want, though.
+         location = request.response.redirect(
+             'http://my-friends.com', trusted=True)
+-        self.assertEquals('http://my-friends.com', location)
++        self.assertEqual('http://my-friends.com', location)
+ 
+         # We can redirect to our own full server URL, with or without a port
+         # being specified. Let's explicitly set a host name to test this is
+         # this is how virtual hosting works:
+         request.setApplicationServer('example.com')
+         location = request.response.redirect('http://example.com')
+-        self.assertEquals('http://example.com', location)
++        self.assertEqual('http://example.com', location)
+ 
+         request.setApplicationServer('example.com', port=8080)
+         location = request.response.redirect('http://example.com:8080')
+-        self.assertEquals('http://example.com:8080', location)
++        self.assertEqual('http://example.com:8080', location)
+ 
+         # The default port for HTTP and HTTPS may be omitted:
+         request.setApplicationServer('example.com')
+         location = request.response.redirect('http://example.com:80')
+-        self.assertEquals('http://example.com:80', location)
++        self.assertEqual('http://example.com:80', location)
+ 
+         request.setApplicationServer('example.com', port=80)
+         location = request.response.redirect('http://example.com')
+-        self.assertEquals('http://example.com', location)
++        self.assertEqual('http://example.com', location)
+ 
+         request.setApplicationServer('example.com', 'https')
+         location = request.response.redirect('https://example.com:443')
+-        self.assertEquals('https://example.com:443', location)
++        self.assertEqual('https://example.com:443', location)
+ 
+         request.setApplicationServer('example.com', 'https', 443)
+         location = request.response.redirect('https://example.com')
+-        self.assertEquals('https://example.com', location)
++        self.assertEqual('https://example.com', location)
+ 
+     def testUnregisteredStatus(self):
+         # verify we can set the status to an unregistered int value
+         request = self._createRequest({}, '')
+         request.response.setStatus(289)
+-        self.assertEquals(request.response.getStatus(), 289)
++        self.assertEqual(request.response.getStatus(), 289)
+ 
+     def testRequestEnvironment(self):
+         req = self._createRequest()
+         publish(req, handle_errors=0) # Force expansion of URL variables
+ 
+-        self.assertEquals(str(req.URL), 'http://foobar.com/folder/item')
+-        self.assertEquals(req.URL['-1'], 'http://foobar.com/folder')
+-        self.assertEquals(req.URL['-2'], 'http://foobar.com')
++        self.assertEqual(str(req.URL), 'http://foobar.com/folder/item')
++        self.assertEqual(req.URL['-1'], 'http://foobar.com/folder')
++        self.assertEqual(req.URL['-2'], 'http://foobar.com')
+         self.assertRaises(KeyError, req.URL.__getitem__, '-3')
+ 
+-        self.assertEquals(req.URL['0'], 'http://foobar.com')
+-        self.assertEquals(req.URL['1'], 'http://foobar.com/folder')
+-        self.assertEquals(req.URL['2'], 'http://foobar.com/folder/item')
++        self.assertEqual(req.URL['0'], 'http://foobar.com')
++        self.assertEqual(req.URL['1'], 'http://foobar.com/folder')
++        self.assertEqual(req.URL['2'], 'http://foobar.com/folder/item')
+         self.assertRaises(KeyError, req.URL.__getitem__, '3')
+ 
+-        self.assertEquals(req.URL.get('0'), 'http://foobar.com')
+-        self.assertEquals(req.URL.get('1'), 'http://foobar.com/folder')
+-        self.assertEquals(req.URL.get('2'), 'http://foobar.com/folder/item')
+-        self.assertEquals(req.URL.get('3', 'none'), 'none')
++        self.assertEqual(req.URL.get('0'), 'http://foobar.com')
++        self.assertEqual(req.URL.get('1'), 'http://foobar.com/folder')
++        self.assertEqual(req.URL.get('2'), 'http://foobar.com/folder/item')
++        self.assertEqual(req.URL.get('3', 'none'), 'none')
+ 
+-        self.assertEquals(req['SERVER_URL'], 'http://foobar.com')
+-        self.assertEquals(req['HTTP_HOST'], 'foobar.com')
+-        self.assertEquals(req['PATH_INFO'], '/folder/item')
+-        self.assertEquals(req['CONTENT_LENGTH'], '0')
++        self.assertEqual(req['SERVER_URL'], 'http://foobar.com')
++        self.assertEqual(req['HTTP_HOST'], 'foobar.com')
++        self.assertEqual(req['PATH_INFO'], '/folder/item')
++        self.assertEqual(req['CONTENT_LENGTH'], '0')
+         self.assertRaises(KeyError, req.__getitem__, 'HTTP_AUTHORIZATION')
+-        self.assertEquals(req['GATEWAY_INTERFACE'], 'TestFooInterface/1.0')
+-        self.assertEquals(req['HTTP_OFF_THE_WALL'], "Spam 'n eggs")
++        self.assertEqual(req['GATEWAY_INTERFACE'], 'TestFooInterface/1.0')
++        self.assertEqual(req['HTTP_OFF_THE_WALL'], "Spam 'n eggs")
+ 
+         self.assertRaises(KeyError, req.__getitem__,
+                           'HTTP_WE_DID_NOT_PROVIDE_THIS')
+ 
+     def testRequestLocale(self):
+         eq = self.assertEqual
+-        unless = self.failUnless
++        unless = self.assertTrue
+ 
+         from zope.publisher.browser import BrowserLanguages
+         from zope.publisher.interfaces.http import IHTTPRequest
+@@ -448,17 +448,17 @@ class HTTPTests(unittest.TestCase):
+         }
+         req = self._createRequest(extra_env=cookies)
+ 
+-        self.assertEquals(req.cookies[u'foo'], u'bar')
+-        self.assertEquals(req[u'foo'], u'bar')
++        self.assertEqual(req.cookies['foo'], 'bar')
++        self.assertEqual(req['foo'], 'bar')
+ 
+-        self.assertEquals(req.cookies[u'spam'], u'eggs')
+-        self.assertEquals(req[u'spam'], u'eggs')
++        self.assertEqual(req.cookies['spam'], 'eggs')
++        self.assertEqual(req['spam'], 'eggs')
+ 
+-        self.assertEquals(req.cookies[u'this'], u'Should be accepted')
+-        self.assertEquals(req[u'this'], u'Should be accepted')
++        self.assertEqual(req.cookies['this'], 'Should be accepted')
++        self.assertEqual(req['this'], 'Should be accepted')
+ 
+         # Reserved key
+-        self.failIf(req.cookies.has_key('path'))
++        self.assertFalse('path' in req.cookies)
+ 
+     def testCookieErrorToLog(self):
+         cookies = {
+@@ -467,23 +467,23 @@ class HTTPTests(unittest.TestCase):
+         }
+         req = self._createRequest(extra_env=cookies)
+ 
+-        self.failIf(req.cookies.has_key('foo'))
+-        self.failIf(req.has_key('foo'))
++        self.assertFalse('foo' in req.cookies)
++        self.assertFalse('foo' in req)
+ 
+-        self.failIf(req.cookies.has_key('spam'))
+-        self.failIf(req.has_key('spam'))
++        self.assertFalse('spam' in req.cookies)
++        self.assertFalse('spam' in req)
+ 
+-        self.failIf(req.cookies.has_key('ldap/OU'))
+-        self.failIf(req.has_key('ldap/OU'))
++        self.assertFalse('ldap/OU' in req.cookies)
++        self.assertFalse('ldap/OU' in req)
+ 
+         # Reserved key
+-        self.failIf(req.cookies.has_key('path'))
++        self.assertFalse('path' in req.cookies)
+ 
+     def testCookiesUnicode(self):
+         # Cookie values are assumed to be UTF-8 encoded
+         cookies = {'HTTP_COOKIE': r'key="\342\230\243";'}
+         req = self._createRequest(extra_env=cookies)
+-        self.assertEquals(req.cookies[u'key'], u'\N{BIOHAZARD SIGN}')
++        self.assertEqual(req.cookies['key'], '\N{BIOHAZARD SIGN}')
+ 
+     def testHeaders(self):
+         headers = {
+@@ -491,13 +491,13 @@ class HTTPTests(unittest.TestCase):
+             'Another-Test': 'another',
+         }
+         req = self._createRequest(extra_env=headers)
+-        self.assertEquals(req.headers[u'TEST_HEADER'], u'test')
+-        self.assertEquals(req.headers[u'TEST-HEADER'], u'test')
+-        self.assertEquals(req.headers[u'test_header'], u'test')
+-        self.assertEquals(req.getHeader('TEST_HEADER', literal=True), u'test')
+-        self.assertEquals(req.getHeader('TEST-HEADER', literal=True), None)
+-        self.assertEquals(req.getHeader('test_header', literal=True), None)
+-        self.assertEquals(req.getHeader('Another-Test', literal=True),
++        self.assertEqual(req.headers['TEST_HEADER'], 'test')
++        self.assertEqual(req.headers['TEST-HEADER'], 'test')
++        self.assertEqual(req.headers['test_header'], 'test')
++        self.assertEqual(req.getHeader('TEST_HEADER', literal=True), 'test')
++        self.assertEqual(req.getHeader('TEST-HEADER', literal=True), None)
++        self.assertEqual(req.getHeader('test_header', literal=True), None)
++        self.assertEqual(req.getHeader('Another-Test', literal=True),
+                           'another')
+ 
+     def testBasicAuth(self):
+@@ -505,19 +505,19 @@ class HTTPTests(unittest.TestCase):
+         req = self._createRequest()
+         verifyObject(IHTTPCredentials, req)
+         lpq = req._authUserPW()
+-        self.assertEquals(lpq, None)
++        self.assertEqual(lpq, None)
+         env = {}
+         login, password = ("tim", "123:456")
+         s = ("%s:%s" % (login, password)).encode("base64").rstrip()
+         env['HTTP_AUTHORIZATION'] = "Basic %s" % s
+         req = self._createRequest(env)
+         lpw = req._authUserPW()
+-        self.assertEquals(lpw, (login, password))
++        self.assertEqual(lpw, (login, password))
+ 
+     def testSetPrincipal(self):
+         req = self._createRequest()
+         req.setPrincipal(UserStub("jim"))
+-        self.assertEquals(req.response.authUser, 'jim')
++        self.assertEqual(req.response.authUser, 'jim')
+ 
+     def test_method(self):
+         r = self._createRequest(extra_env={'REQUEST_METHOD':'SPAM'})
+@@ -530,25 +530,25 @@ class HTTPTests(unittest.TestCase):
+         zope.event.subscribers.append(events.append)
+         req = self._createRequest()
+         req.setApplicationServer('foo')
+-        self.assertEquals(req._app_server, 'http://foo')
++        self.assertEqual(req._app_server, 'http://foo')
+         req.setApplicationServer('foo', proto='https')
+-        self.assertEquals(req._app_server, 'https://foo')
++        self.assertEqual(req._app_server, 'https://foo')
+         req.setApplicationServer('foo', proto='https', port=8080)
+-        self.assertEquals(req._app_server, 'https://foo:8080')
++        self.assertEqual(req._app_server, 'https://foo:8080')
+         req.setApplicationServer('foo', proto='http', port='9673')
+-        self.assertEquals(req._app_server, 'http://foo:9673')
++        self.assertEqual(req._app_server, 'http://foo:9673')
+         req.setApplicationServer('foo', proto='https', port=443)
+-        self.assertEquals(req._app_server, 'https://foo')
++        self.assertEqual(req._app_server, 'https://foo')
+         req.setApplicationServer('foo', proto='https', port='443')
+-        self.assertEquals(req._app_server, 'https://foo')
++        self.assertEqual(req._app_server, 'https://foo')
+         req.setApplicationServer('foo', port=80)
+-        self.assertEquals(req._app_server, 'http://foo')
++        self.assertEqual(req._app_server, 'http://foo')
+         req.setApplicationServer('foo', proto='telnet', port=80)
+-        self.assertEquals(req._app_server, 'telnet://foo:80')
++        self.assertEqual(req._app_server, 'telnet://foo:80')
+         zope.event.subscribers.pop()
+-        self.assertEquals(len(events), 8)
++        self.assertEqual(len(events), 8)
+         for event in events:
+-            self.assertEquals(event.request, req)
++            self.assertEqual(event.request, req)
+ 
+     def test_setApplicationNames(self):
+         events = []
+@@ -556,12 +556,12 @@ class HTTPTests(unittest.TestCase):
+         req = self._createRequest()
+         names = ['x', 'y', 'z']
+         req.setVirtualHostRoot(names)
+-        self.assertEquals(req._app_names, ['x', 'y', 'z'])
++        self.assertEqual(req._app_names, ['x', 'y', 'z'])
+         names[0] = 'muahahahaha'
+-        self.assertEquals(req._app_names, ['x', 'y', 'z'])
++        self.assertEqual(req._app_names, ['x', 'y', 'z'])
+         zope.event.subscribers.pop()
+-        self.assertEquals(len(events), 1)
+-        self.assertEquals(events[0].request, req)
++        self.assertEqual(len(events), 1)
++        self.assertEqual(events[0].request, req)
+ 
+     def test_setVirtualHostRoot(self):
+         events = []
+@@ -570,22 +570,22 @@ class HTTPTests(unittest.TestCase):
+         req._traversed_names = ['x', 'y']
+         req._last_obj_traversed = object()
+         req.setVirtualHostRoot()
+-        self.failIf(req._traversed_names)
+-        self.assertEquals(req._vh_root, req._last_obj_traversed)
++        self.assertFalse(req._traversed_names)
++        self.assertEqual(req._vh_root, req._last_obj_traversed)
+         zope.event.subscribers.pop()
+-        self.assertEquals(len(events), 1)
+-        self.assertEquals(events[0].request, req)
++        self.assertEqual(len(events), 1)
++        self.assertEqual(events[0].request, req)
+ 
+     def test_getVirtualHostRoot(self):
+         req = self._createRequest()
+-        self.assertEquals(req.getVirtualHostRoot(), None)
++        self.assertEqual(req.getVirtualHostRoot(), None)
+         req._vh_root = object()
+-        self.assertEquals(req.getVirtualHostRoot(), req._vh_root)
++        self.assertEqual(req.getVirtualHostRoot(), req._vh_root)
+ 
+     def test_traverse(self):
+         req = self._createRequest()
+         req.traverse(self.app)
+-        self.assertEquals(req._traversed_names, ['folder', 'item'])
++        self.assertEqual(req._traversed_names, ['folder', 'item'])
+ 
+         # setting it during traversal matters
+         req = self._createRequest()
+@@ -594,8 +594,8 @@ class HTTPTests(unittest.TestCase):
+                 req.setVirtualHostRoot()
+         req.publication.callTraversalHooks = hook
+         req.traverse(self.app)
+-        self.assertEquals(req._traversed_names, ['item'])
+-        self.assertEquals(req._vh_root, self.app.folder)
++        self.assertEqual(req._traversed_names, ['item'])
++        self.assertEqual(req._vh_root, self.app.folder)
+ 
+     def test_traverseDuplicateHooks(self):
+         """
+@@ -620,7 +620,7 @@ class HTTPTests(unittest.TestCase):
+         req.setPublication(publication)
+         req.setTraversalStack(req.getTraversalStack() + ["vh"])
+         req.traverse(self.app)
+-        self.assertEquals(len(hooks), 3)
++        self.assertEqual(len(hooks), 3)
+ 
+     def testInterface(self):
+         from zope.publisher.interfaces.http import IHTTPCredentials
+@@ -634,31 +634,31 @@ class HTTPTests(unittest.TestCase):
+         req = self._createRequest()
+         deduceServerURL = req._HTTPRequest__deduceServerURL
+         req._environ = {'HTTP_HOST': 'example.com:80'}
+-        self.assertEquals(deduceServerURL(), 'http://example.com')
++        self.assertEqual(deduceServerURL(), 'http://example.com')
+         req._environ = {'HTTP_HOST': 'example.com:8080'}
+-        self.assertEquals(deduceServerURL(), 'http://example.com:8080')
++        self.assertEqual(deduceServerURL(), 'http://example.com:8080')
+         req._environ = {'HTTP_HOST': 'example.com:443', 'HTTPS': 'on'}
+-        self.assertEquals(deduceServerURL(), 'https://example.com')
++        self.assertEqual(deduceServerURL(), 'https://example.com')
+         req._environ = {'HTTP_HOST': 'example.com:80', 'HTTPS': 'ON'}
+-        self.assertEquals(deduceServerURL(), 'https://example.com:80')
++        self.assertEqual(deduceServerURL(), 'https://example.com:80')
+         req._environ = {'HTTP_HOST': 'example.com:8080',
+                         'SERVER_PORT_SECURE': '1'}
+-        self.assertEquals(deduceServerURL(), 'https://example.com:8080')
++        self.assertEqual(deduceServerURL(), 'https://example.com:8080')
+         req._environ = {'SERVER_NAME': 'example.com', 'SERVER_PORT':'8080',
+                         'SERVER_PORT_SECURE': '0'}
+-        self.assertEquals(deduceServerURL(), 'http://example.com:8080')
++        self.assertEqual(deduceServerURL(), 'http://example.com:8080')
+         req._environ = {'SERVER_NAME': 'example.com'}
+-        self.assertEquals(deduceServerURL(), 'http://example.com')
++        self.assertEqual(deduceServerURL(), 'http://example.com')
+ 
+     def testUnicodeURLs(self):
+         # The request expects PATH_INFO to be utf-8 encoded when it gets it.
+         req = self._createRequest(
+             {'PATH_INFO': '/\xc3\xa4\xc3\xb6/\xc3\xbc\xc3\x9f/foo/bar.html'})
+         self.assertEqual(req._traversal_stack,
+-            [u'bar.html', u'foo', u'\u00fc\u00df', u'\u00e4\u00f6'])
++            ['bar.html', 'foo', '\u00fc\u00df', '\u00e4\u00f6'])
+         # the request should have converted PATH_INFO to unicode
+         self.assertEqual(req['PATH_INFO'],
+-            u'/\u00e4\u00f6/\u00fc\u00df/foo/bar.html')
++            '/\u00e4\u00f6/\u00fc\u00df/foo/bar.html')
+ 
+     def testResponseWriteFaile(self):
+         self.assertRaises(TypeError,
+@@ -673,7 +673,7 @@ class HTTPTests(unittest.TestCase):
+     def test_unacceptable_charset(self):
+         # Regression test for https://bugs.launchpad.net/zope3/+bug/98337
+         request = self._createRequest({'HTTP_ACCEPT_CHARSET': 'ISO-8859-1'})
+-        result = u"Latin a with ogonek\u0105 Cyrillic ya \u044f"
++        result = "Latin a with ogonek\u0105 Cyrillic ya \u044f"
+         provideAdapter(HTTPCharsets)
+         request.response.setHeader('Content-Type', 'text/plain')
+ 
+@@ -682,10 +682,10 @@ class HTTPTests(unittest.TestCase):
+         request.response.setResult(result)
+ 
+         body = request.response.consumeBody()
+-        self.assertEquals(request.response.getStatus(), 200)
+-        self.assertEquals(request.response.getHeader('Content-Type'),
++        self.assertEqual(request.response.getStatus(), 200)
++        self.assertEqual(request.response.getHeader('Content-Type'),
+                           'text/plain;charset=utf-8')
+-        self.assertEquals(body,
++        self.assertEqual(body,
+                           'Latin a with ogonek\xc4\x85 Cyrillic ya \xd1\x8f')
+ 
+ class ConcreteHTTPTests(HTTPTests):
+@@ -704,7 +704,7 @@ class ConcreteHTTPTests(HTTPTests):
+         r = self._createRequest(extra_env={"PATH_INFO": "/xxx"})
+         publish(r, handle_errors=0)
+         r.shiftNameToApplication()
+-        self.assertEquals(r.getApplicationURL(), appurl+"/xxx")
++        self.assertEqual(r.getApplicationURL(), appurl+"/xxx")
+ 
+         # Verify that we can only shift if we've traversed only a single name
+         r = self._createRequest(extra_env={"PATH_INFO": "/folder/item"})
+@@ -732,7 +732,7 @@ class TestHTTPResponse(unittest.TestCase):
+         response = self._createResponse()
+         assert(charset == 'utf-8')
+         if headers is not None:
+-            for hdr, val in headers.iteritems():
++            for hdr, val in headers.items():
+                 response.setHeader(hdr, val)
+         response.setResult(body)
+         return self._parseResult(response)
+@@ -755,10 +755,10 @@ class TestHTTPResponse(unittest.TestCase):
+         self.assertEqual(body, data)
+ 
+         # Make sure that no Content-Length header was added
+-        self.assert_('Content-Length' not in headers)
++        self.assertTrue('Content-Length' not in headers)
+ 
+     def testContentLength(self):
+-        eq = self.failUnlessEqual
++        eq = self.assertEqual
+ 
+         headers, body = self._getResultFromResponse("test", "utf-8",
+             {"content-type": "text/plain"})
+@@ -766,29 +766,29 @@ class TestHTTPResponse(unittest.TestCase):
+         eq("test", body)
+ 
+         headers, body = self._getResultFromResponse(
+-            u'\u0442\u0435\u0441\u0442', "utf-8",
++            '\u0442\u0435\u0441\u0442', "utf-8",
+             {"content-type": "text/plain"})
+         eq("8", headers["Content-Length"])
+         eq('\xd1\x82\xd0\xb5\xd1\x81\xd1\x82', body)
+ 
+     def testContentType(self):
+-        eq = self.failUnlessEqual
++        eq = self.assertEqual
+ 
+         headers, body = self._getResultFromResponse("test", "utf-8")
+         eq("", headers.get("Content-Type", ""))
+         eq("test", body)
+ 
+-        headers, body = self._getResultFromResponse(u"test",
++        headers, body = self._getResultFromResponse("test",
+             headers={"content-type": "text/plain"})
+         eq("text/plain;charset=utf-8", headers["Content-Type"])
+         eq("test", body)
+ 
+-        headers, body = self._getResultFromResponse(u"test", "utf-8",
++        headers, body = self._getResultFromResponse("test", "utf-8",
+             {"content-type": "text/html"})
+         eq("text/html;charset=utf-8", headers["Content-Type"])
+         eq("test", body)
+ 
+-        headers, body = self._getResultFromResponse(u"test", "utf-8",
++        headers, body = self._getResultFromResponse("test", "utf-8",
+             {"content-type": "text/plain;charset=cp1251"})
+         eq("text/plain;charset=cp1251", headers["Content-Type"])
+         eq("test", body)
+@@ -796,30 +796,30 @@ class TestHTTPResponse(unittest.TestCase):
+         # see https://bugs.launchpad.net/zope.publisher/+bug/98395
+         # RFC 3023 types and */*+xml output as unicode
+ 
+-        headers, body = self._getResultFromResponse(u"test", "utf-8",
++        headers, body = self._getResultFromResponse("test", "utf-8",
+             {"content-type": "text/xml"})
+         eq("text/xml;charset=utf-8", headers["Content-Type"])
+         eq("test", body)
+ 
+-        headers, body = self._getResultFromResponse(u"test", "utf-8",
++        headers, body = self._getResultFromResponse("test", "utf-8",
+             {"content-type": "application/xml"})
+         eq("application/xml;charset=utf-8", headers["Content-Type"])
+         eq("test", body)
+ 
+-        headers, body = self._getResultFromResponse(u"test", "utf-8",
++        headers, body = self._getResultFromResponse("test", "utf-8",
+             {"content-type": "text/xml-external-parsed-entity"})
+         eq("text/xml-external-parsed-entity;charset=utf-8",
+            headers["Content-Type"])
+         eq("test", body)
+ 
+-        headers, body = self._getResultFromResponse(u"test", "utf-8",
++        headers, body = self._getResultFromResponse("test", "utf-8",
+             {"content-type": "application/xml-external-parsed-entity"})
+         eq("application/xml-external-parsed-entity;charset=utf-8",
+            headers["Content-Type"])
+         eq("test", body)
+ 
+         # Mozilla XUL
+-        headers, body = self._getResultFromResponse(u"test", "utf-8",
++        headers, body = self._getResultFromResponse("test", "utf-8",
+             {"content-type": "application/vnd+xml"})
+         eq("application/vnd+xml;charset=utf-8", headers["Content-Type"])
+         eq("test", body)
+@@ -846,20 +846,20 @@ class TestHTTPResponse(unittest.TestCase):
+         c = self._getCookieFromResponse([
+                 ('foo', 'bar', {}),
+                 ])
+-        self.failUnless('foo=bar;' in c or 'foo=bar' in c,
++        self.assertTrue('foo=bar;' in c or 'foo=bar' in c,
+                         'foo=bar; not in %r' % c)
+ 
+         c = self._getCookieFromResponse([
+                 ('foo', 'bar', {}),
+                 ('alpha', 'beta', {}),
+                 ])
+-        self.failUnless('foo=bar;' in c or 'foo=bar' in c)
+-        self.failUnless('alpha=beta;' in c or 'alpha=beta' in c)
++        self.assertTrue('foo=bar;' in c or 'foo=bar' in c)
++        self.assertTrue('alpha=beta;' in c or 'alpha=beta' in c)
+ 
+         c = self._getCookieFromResponse([
+-                ('sign', u'\N{BIOHAZARD SIGN}', {}),
++                ('sign', '\N{BIOHAZARD SIGN}', {}),
+                 ])
+-        self.failUnless((r'sign="\342\230\243";' in c) or
++        self.assertTrue((r'sign="\342\230\243";' in c) or
+                         (r'sign="\342\230\243"' in c))
+ 
+         self.assertRaises(
+@@ -874,21 +874,21 @@ class TestHTTPResponse(unittest.TestCase):
+                     'domain': 'example.com',
+                     'pAth': '/froboz',
+                     'max_age': 3600,
+-                    'comment': u'blah;\N{BIOHAZARD SIGN}?',
++                    'comment': 'blah;\N{BIOHAZARD SIGN}?',
+                     'seCure': True,
+                     }),
+                 ])[0]
+-        self.failUnless('foo=bar;' in c or 'foo=bar' in c)
+-        self.failUnless('expires=Sat, 12 Jul 2014 23:26:28 GMT;' in c, repr(c))
+-        self.failUnless('Domain=example.com;' in c)
+-        self.failUnless('Path=/froboz;' in c)
+-        self.failUnless('Max-Age=3600;' in c)
+-        self.failUnless('Comment=blah%3B%E2%98%A3?;' in c, repr(c))
+-        self.failUnless('secure;' in c or 'secure' in c)
++        self.assertTrue('foo=bar;' in c or 'foo=bar' in c)
++        self.assertTrue('expires=Sat, 12 Jul 2014 23:26:28 GMT;' in c, repr(c))
++        self.assertTrue('Domain=example.com;' in c)
++        self.assertTrue('Path=/froboz;' in c)
++        self.assertTrue('Max-Age=3600;' in c)
++        self.assertTrue('Comment=blah%3B%E2%98%A3?;' in c, repr(c))
++        self.assertTrue('secure;' in c or 'secure' in c)
+ 
+         c = self._getCookieFromResponse([('foo', 'bar', {'secure': False})])[0]
+-        self.failUnless('foo=bar;' in c or 'foo=bar' in c)
+-        self.failIf('secure' in c)
++        self.assertTrue('foo=bar;' in c or 'foo=bar' in c)
++        self.assertFalse('secure' in c)
+ 
+     def test_handleException(self):
+         response = HTTPResponse()
+@@ -898,10 +898,10 @@ class TestHTTPResponse(unittest.TestCase):
+             exc_info = sys.exc_info()
+ 
+         response.handleException(exc_info)
+-        self.assertEquals(response.getHeader("content-type"),
++        self.assertEqual(response.getHeader("content-type"),
+             "text/html;charset=utf-8")
+-        self.assertEquals(response.getStatus(), 500)
+-        self.assert_(response.consumeBody() in
++        self.assertEqual(response.getStatus(), 500)
++        self.assertTrue(response.consumeBody() in
+             ["<html><head>"
+                "<title>&lt;type 'exceptions.ValueError'&gt;</title></head>\n"
+             "<body><h2>&lt;type 'exceptions.ValueError'&gt;</h2>\n"
+--- src/zope/publisher/tests/test_xmlrpcrequest.py.orig	2012-07-02 06:19:44 UTC
++++ src/zope/publisher/tests/test_xmlrpcrequest.py
+@@ -14,7 +14,7 @@
+ """XML-RPC Request Tests
+ """
+ import unittest
+-from StringIO import StringIO
++from io import StringIO
+ 
+ from zope.publisher.base import DefaultPublication
+ from zope.publisher.http import HTTPCharsets
+@@ -39,7 +39,7 @@ class TestXMLRPCRequest(XMLRPCRequest, HTTPCharsets):
+         XMLRPCRequest.__init__(self, *args, **kw)
+ 
+ 
+-xmlrpc_call = u'''<?xml version='1.0'?>
++xmlrpc_call = '''<?xml version='1.0'?>
+ <methodCall>
+   <methodName>action</methodName>
+   <params>
+@@ -81,7 +81,7 @@ class XMLRPCTests(unittest.TestCase):
+         class Item(object):
+ 
+             def __call__(self, a, b):
+-                return "%s, %s" % (`a`, `b`)
++                return "%s, %s" % (repr(a), repr(b))
+ 
+             def doit(self, a, b):
+                 return 'do something %s %s' % (a, b)
+@@ -90,7 +90,7 @@ class XMLRPCTests(unittest.TestCase):
+ 
+             def action(self, a):
+                 return "Parameter[type: %s; value: %s" %(
+-                    type(a).__name__, `a`)
++                    type(a).__name__, repr(a))
+ 
+         class Item2(object):
+             view = View()
+@@ -118,15 +118,15 @@ class XMLRPCTests(unittest.TestCase):
+     def testProcessInput(self):
+         req = self._createRequest({}, xmlrpc_call)
+         req.processInputs()
+-        self.failUnlessEqual(req.getPositionalArguments(), (1,))
+-        self.failUnlessEqual(tuple(req._path_suffix), ('action',))
++        self.assertEqual(req.getPositionalArguments(), (1,))
++        self.assertEqual(tuple(req._path_suffix), ('action',))
+ 
+ 
+     def testTraversal(self):
+         req = self._createRequest({}, xmlrpc_call)
+         req.processInputs()
+         action = req.traverse(self.app)
+-        self.failUnlessEqual(action(*req.getPositionalArguments()),
++        self.assertEqual(action(*req.getPositionalArguments()),
+                              "Parameter[type: int; value: 1")
+ 
+ 
+--- src/zope/publisher/xmlrpc.py.orig	2012-07-02 06:19:44 UTC
++++ src/zope/publisher/xmlrpc.py
+@@ -18,9 +18,9 @@ This module contains the XMLRPCRequest and XMLRPCRespo
+ __docformat__ = 'restructuredtext'
+ 
+ import sys
+-import xmlrpclib
++import xmlrpc.client
+ import datetime
+-from StringIO import StringIO
++from io import StringIO
+ 
+ import zope.component
+ import zope.interface
+@@ -53,7 +53,7 @@ class XMLRPCRequest(HTTPRequest):
+             if not line:
+                 break
+             lines += line
+-        self._args, function = xmlrpclib.loads(lines)
++        self._args, function = xmlrpc.client.loads(lines)
+ 
+         # Translate '.' to '/' in function to represent object traversal.
+         function = function.split('.')
+@@ -102,15 +102,15 @@ class XMLRPCResponse(HTTPResponse):
+         message instead of a generic HTML page.
+         """
+         body = premarshal(result)
+-        if isinstance(body, xmlrpclib.Fault):
++        if isinstance(body, xmlrpc.client.Fault):
+             # Convert Fault object to XML-RPC response.
+-            body = xmlrpclib.dumps(body, methodresponse=True)
++            body = xmlrpc.client.dumps(body, methodresponse=True)
+         else:
+             # Marshall our body as an XML-RPC response. Strings will be sent
+             # as strings, integers as integers, etc.  We do *not* convert
+             # everything to a string first.
+             try:
+-                body = xmlrpclib.dumps((body,), methodresponse=True,
++                body = xmlrpc.client.dumps((body,), methodresponse=True,
+                                        allow_none=True)
+             except:
+                 # We really want to catch all exceptions at this point!
+@@ -148,7 +148,7 @@ class XMLRPCResponse(HTTPResponse):
+         # Create an appropriate Fault object. Unfortunately, we throw away
+         # most of the debugging information. More useful error reporting is
+         # left as an exercise for the reader.
+-        Fault = xmlrpclib.Fault
++        Fault = xmlrpc.client.Fault
+         fault_text = None
+         try:
+             if isinstance(value, Fault):
+@@ -183,7 +183,7 @@ class PreMarshallerBase(object):
+         self.data = data
+ 
+     def __call__(self):
+-        raise Exception, "Not implemented"
++        raise Exception("Not implemented")
+ 
+ class DictPreMarshaller(PreMarshallerBase):
+     """Pre-marshaller for dicts"""
+@@ -191,48 +191,48 @@ class DictPreMarshaller(PreMarshallerBase):
+ 
+     def __call__(self):
+         return dict([(premarshal(k), premarshal(v))
+-                     for (k, v) in self.data.items()])
++                     for (k, v) in list(self.data.items())])
+ 
+ class ListPreMarshaller(PreMarshallerBase):
+     """Pre-marshaller for list"""
+     zope.component.adapts(list)
+ 
+     def __call__(self):
+-        return map(premarshal, self.data)
++        return list(map(premarshal, self.data))
+ 
+ class TuplePreMarshaller(ListPreMarshaller):
+     zope.component.adapts(tuple)
+ 
+ class BinaryPreMarshaller(PreMarshallerBase):
+     """Pre-marshaller for xmlrpc.Binary"""
+-    zope.component.adapts(xmlrpclib.Binary)
++    zope.component.adapts(xmlrpc.client.Binary)
+ 
+     def __call__(self):
+-        return xmlrpclib.Binary(self.data.data)
++        return xmlrpc.client.Binary(self.data.data)
+ 
+ class FaultPreMarshaller(PreMarshallerBase):
+     """Pre-marshaller for xmlrpc.Fault"""
+-    zope.component.adapts(xmlrpclib.Fault)
++    zope.component.adapts(xmlrpc.client.Fault)
+ 
+     def __call__(self):
+-        return xmlrpclib.Fault(
++        return xmlrpc.client.Fault(
+             premarshal(self.data.faultCode),
+             premarshal(self.data.faultString),
+             )
+ 
+ class DateTimePreMarshaller(PreMarshallerBase):
+     """Pre-marshaller for xmlrpc.DateTime"""
+-    zope.component.adapts(xmlrpclib.DateTime)
++    zope.component.adapts(xmlrpc.client.DateTime)
+ 
+     def __call__(self):
+-        return xmlrpclib.DateTime(self.data.value)
++        return xmlrpc.client.DateTime(self.data.value)
+ 
+ class PythonDateTimePreMarshaller(PreMarshallerBase):
+     """Pre-marshaller for datetime.datetime"""
+     zope.component.adapts(datetime.datetime)
+ 
+     def __call__(self):
+-        return xmlrpclib.DateTime(self.data.isoformat())
++        return xmlrpc.client.DateTime(self.data.isoformat())
+ 
+ def premarshal(data):
+     """Premarshal data before handing it to xmlrpclib for marhalling

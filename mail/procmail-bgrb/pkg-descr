@@ -1,0 +1,24 @@
+This is the BuGlessRB version of procmail, a fork of the original procmail
+at procmail.org.
+
+The procmail mail processing program can be used to create mail-servers,
+mailing lists, sort your incoming mail into separate folders/files (real
+convenient when subscribing to one or more mailing lists or for prioritising
+your mail), preprocess your mail, start any programs upon mail arrival
+(e.g. to generate different chimes on your workstation for different
+types of mail) or selectively forward certain incoming mail automatically
+to someone.
+
+Procmail can be used:
+        - and installed by an unprivileged user (for himself only).
+        - as a drop in replacement for the local delivery agent /bin/mail
+          (with biff/comsat support).
+        - as a general mailfilter for whole groups of messages (e.g. when
+          called from within sendmail.cf rules).
+
+The accompanying formail program enables you to generate autoreplies,
+split up digests/mailboxes into the original messages, do some very
+simple header-munging/extraction, or force mail into mail-format (with
+leading From line).
+
+WWW: https://github.com/BuGlessRB/procmail

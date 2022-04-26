@@ -31,10 +31,6 @@ query_repo()
 
 query_repo qemu qemu-cheri
 QEMU_COMMIT=$SHA
-query_repo libslirp
-LIBSLIRP_COMMIT=$SHA
-query_repo dtc
-DTC_COMMIT=$SHA
 
 cat <<EOF > Makefile.snapshot
 # Generated file!  Do not edit!  
@@ -44,8 +40,6 @@ cat <<EOF > Makefile.snapshot
 SNAPDATE=	${MAX_DATE}
 
 QEMU_COMMIT=		${QEMU_COMMIT}
-LIBSLIRP_COMMIT=	${LIBSLIRP_COMMIT}
-DTC_COMMIT=		${DTC_COMMIT}
 EOF
 
 rm -f $tmpfile

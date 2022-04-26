@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-10-15 04:21:04 UTC
+--- CMakeLists.txt.orig	2022-04-16 00:43:21 UTC
 +++ CMakeLists.txt
-@@ -104,11 +104,11 @@ endif (PLUGIN_RMM AND NOT ((CMAKE_CXX_COMPILER_ID STRE
+@@ -105,11 +105,11 @@ endif (PLUGIN_RMM AND NOT ((CMAKE_CXX_COMPILER_ID STRE
  if (PLUGIN_RMM AND NOT (CMAKE_SYSTEM_NAME STREQUAL "Linux"))
    message(SEND_ERROR "`PLUGIN_RMM` must be used with Linux.")
  endif (PLUGIN_RMM AND NOT (CMAKE_SYSTEM_NAME STREQUAL "Linux"))
@@ -17,16 +17,16 @@
  if (BUILD_STATIC_LIB AND (R_LIB OR JVM_BINDINGS))
    message(SEND_ERROR "Cannot build a static library libxgboost.a when R or JVM packages are enabled.")
  endif (BUILD_STATIC_LIB AND (R_LIB OR JVM_BINDINGS))
-@@ -160,7 +160,7 @@ endif (USE_NCCL)
- 
- # dmlc-core
- msvc_use_static_runtime()
+@@ -168,7 +168,7 @@ msvc_use_static_runtime()
+ if (FORCE_SHARED_CRT)
+   set(DMLC_FORCE_SHARED_CRT ON)
+ endif ()
 -add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
 +#add_subdirectory(${xgboost_SOURCE_DIR}/dmlc-core)
  
  if (MSVC)
    if (TARGET dmlc_unit_tests)
-@@ -177,7 +177,7 @@ endif (RABIT_BUILD_MPI)
+@@ -185,7 +185,7 @@ endif (RABIT_BUILD_MPI)
  
  # core xgboost
  add_subdirectory(${xgboost_SOURCE_DIR}/src)
@@ -35,7 +35,15 @@
  
  # Exports some R specific definitions and objects
  if (R_LIB)
-@@ -218,7 +218,7 @@ set_target_properties(runxgboost PROPERTIES OUTPUT_NAM
+@@ -219,14 +219,14 @@ target_link_libraries(runxgboost PRIVATE objxgboost)
+ target_include_directories(runxgboost
+   PRIVATE
+   ${xgboost_SOURCE_DIR}/include
+-  ${xgboost_SOURCE_DIR}/dmlc-core/include
++  #${xgboost_SOURCE_DIR}/dmlc-core/include
+   ${xgboost_SOURCE_DIR}/rabit/include
+ )
+ set_target_properties(runxgboost PROPERTIES OUTPUT_NAME xgboost)
  #-- End CLI for xgboost
  
  # Common setup for all targets
@@ -44,7 +52,7 @@
    xgboost_target_properties(${target})
    xgboost_target_link_libraries(${target})
    xgboost_target_defs(${target})
-@@ -269,7 +269,7 @@ install(DIRECTORY ${xgboost_SOURCE_DIR}/include/xgboos
+@@ -277,7 +277,7 @@ install(DIRECTORY ${xgboost_SOURCE_DIR}/include/xgboos
  #
  # https://github.com/dmlc/xgboost/issues/6085
  if (BUILD_STATIC_LIB)

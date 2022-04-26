@@ -23,11 +23,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		keybinder>0:x11/keybinder \
 		libnotify>0:devel/libnotify
 
-USES=		gmake gnome libtool localbase pathfix python:3.5+ \
+USES=		cpe gmake gnome libtool localbase pathfix python:3.5+ \
 		shebangfix
 USE_GNOME=	glib20 gtk30 intltool vte3
 USE_PYTHON=	distutils noflavors
 GLIB_SCHEMAS=	org.guake.gschema.xml
+CPE_VENDOR=	guake-project
 NO_ARCH=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

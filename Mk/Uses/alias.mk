@@ -11,18 +11,18 @@
 .if !defined(_INCLUDE_USES_ALIAS_MK)
 _INCLUDE_USES_ALIAS_MK=    yes
 
-.if ${OPSYS} != FreeBSD
+.  if ${OPSYS} != FreeBSD
 
-.if empty(alias_ARGS)
+.    if empty(alias_ARGS)
 CFLAGS+=	-D__FreeBSD__=9
-.else
-.  if ${alias_ARGS} == 9 || ${alias_ARGS} == 10 || ${alias_ARGS} == 11
+.    else
+.      if ${alias_ARGS} == 9 || ${alias_ARGS} == 10 || ${alias_ARGS} == 11
 CFLAGS+=	-D__FreeBSD__=${alias_ARGS}
-.  else
+.      else
 IGNORE=	invalid MAJOR RELEASE argument (${alias_ARGS}) for USES=alias
-.  endif
-.endif
+.      endif
+.    endif
 
-.endif # OPSYS != FreeBSD
+.  endif # OPSYS != FreeBSD
 
 .endif

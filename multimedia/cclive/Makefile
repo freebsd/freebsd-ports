@@ -11,7 +11,9 @@ COMMENT=	Lightweight command line video extraction tool
 
 LICENSE=	GPLv3
 
-BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: cannot find the flags to link with Boost date_time
+BROKEN=		Multiple bug reports upstream
+DEPRECATED=	Last release in 2013, please consider using www/yt-dlp or multimedia/streamlink
+EXPIRATION_DATE=2022-06-30
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \

@@ -1,0 +1,7 @@
+lib/lv2/nrepellent.lv2/manifest.ttl
+lib/lv2/nrepellent.lv2/nrepellent#stereo.ttl
+lib/lv2/nrepellent.lv2/nrepellent-adaptive#stereo.ttl
+lib/lv2/nrepellent.lv2/nrepellent-adaptive.so
+lib/lv2/nrepellent.lv2/nrepellent-adaptive.ttl
+lib/lv2/nrepellent.lv2/nrepellent.so
+lib/lv2/nrepellent.lv2/nrepellent.ttl

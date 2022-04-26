@@ -1,5 +1,5 @@
 PORTNAME=	tiled
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics editors games
 
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bjorn
 
 USES=		compiler:c++14-lang desktop-file-utils gl qmake qt:5 \
-		shared-mime-info xorg
+		pkgconfig shared-mime-info xorg
 USE_QT=		core gui widgets opengl network declarative \
 		buildtools_build linguisttools_build
 USE_GL=		gl

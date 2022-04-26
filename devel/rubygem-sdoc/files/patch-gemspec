@@ -1,0 +1,11 @@
+--- sdoc.gemspec.orig	2022-03-30 12:49:50 UTC
++++ sdoc.gemspec
+@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+   end
+ 
+   if s.respond_to? :add_runtime_dependency then
+-    s.add_runtime_dependency(%q<rdoc>.freeze, [">= 5.0", "< 6.4.0"])
++    s.add_runtime_dependency(%q<rdoc>.freeze, [">= 5.0"])
+   else
+     s.add_dependency(%q<rdoc>.freeze, [">= 5.0", "< 6.4.0"])
+   end

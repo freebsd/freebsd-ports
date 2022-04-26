@@ -20,5 +20,5 @@ methods you should know:
 - render(self, mode='human'): Render one frame of the environment. The default
   mode will do something human friendly, such as pop up a window.
 
-WWW: https://gym.openai.com/
+WWW: https://www.gymlibrary.ml/
 WWW: https://github.com/openai/gym

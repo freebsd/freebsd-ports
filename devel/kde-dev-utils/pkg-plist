@@ -3,11 +3,11 @@ bin/kuiviewer
 %%QT_PLUGINDIR%%/kf5/parts/kuiviewerpart.so
 %%QT_PLUGINDIR%%/quithumbnail.so
 share/applications/org.kde.kuiviewer.desktop
-share/icons/hicolor/128x128/apps/kuiviewer.png
 share/icons/hicolor/16x16/apps/kuiviewer.png
 share/icons/hicolor/32x32/apps/kuiviewer.png
 share/icons/hicolor/48x48/apps/kuiviewer.png
 share/icons/hicolor/64x64/apps/kuiviewer.png
+share/icons/hicolor/128x128/apps/kuiviewer.png
 share/icons/hicolor/scalable/apps/kuiviewer.svg
 share/kservices5/designerthumbnail.desktop
 share/kservices5/kuiviewer_part.desktop

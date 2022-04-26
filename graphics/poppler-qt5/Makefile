@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	2
 
 COMMENT=	Qt 5 bindings to poppler
 

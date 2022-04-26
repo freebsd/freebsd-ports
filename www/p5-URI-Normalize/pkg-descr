@@ -1,0 +1,23 @@
+URI::Normalize normalizes URIs according to RFC 3986.
+
+This has a number of useful applications in allowing URIs to be compared with
+fewer false negatives. For example, all of the following URIs will normalize to
+the same value:
+
+HTTPS://www.example.com:443/../test/../foo/index.html
+https://WWW.EXAMPLE.COM/./foo/index.html
+https://www.example.com/%66%6f%6f/index.html
+https://www.example.com/foo/index.html
+
+That is, they will all be normalized into the last value.
+
+Example:
+
+use URI;
+use URI::Normalize qw( normalize_uri remove_dot_segments );
+my $uri = URI->new('HTTPS://www.Example.com:443/../test/../foo/index.html');
+
+say normalize_uri($uri);       #> https://www.example.com/foo/index.html
+say remove_dot_segments($uri); #> HTTPS://www.Example.com:443/foo/index.html
+
+WWW: https://metacpan.org/pod/URI::Normalize

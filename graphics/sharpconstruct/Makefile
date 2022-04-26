@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgtkglextmm-x11-1.2.so:x11-toolkits/gtkglextmm \
 		libglademm-2.4.so:devel/libglademm24
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64le
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions
 
 USES=		gl tar:bzip2 gmake pkgconfig
@@ -28,8 +28,8 @@ PORTDATA=	*
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64le
-CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS
+.if ${ARCH:Mpowerpc64*}
+CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++11-lang

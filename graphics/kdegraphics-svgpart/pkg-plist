@@ -23,6 +23,7 @@ share/locale/hi/LC_MESSAGES/svgpart.mo
 share/locale/hr/LC_MESSAGES/svgpart.mo
 share/locale/hu/LC_MESSAGES/svgpart.mo
 share/locale/ia/LC_MESSAGES/svgpart.mo
+share/locale/id/LC_MESSAGES/svgpart.mo
 share/locale/is/LC_MESSAGES/svgpart.mo
 share/locale/it/LC_MESSAGES/svgpart.mo
 share/locale/ja/LC_MESSAGES/svgpart.mo
@@ -50,6 +51,7 @@ share/locale/sv/LC_MESSAGES/svgpart.mo
 share/locale/tr/LC_MESSAGES/svgpart.mo
 share/locale/ug/LC_MESSAGES/svgpart.mo
 share/locale/uk/LC_MESSAGES/svgpart.mo
+share/locale/vi/LC_MESSAGES/svgpart.mo
 share/locale/wa/LC_MESSAGES/svgpart.mo
 share/locale/zh_CN/LC_MESSAGES/svgpart.mo
 share/locale/zh_TW/LC_MESSAGES/svgpart.mo

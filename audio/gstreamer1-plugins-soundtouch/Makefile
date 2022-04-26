@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	audio
 
 COMMENT=	GStreamer soundtouch plugin

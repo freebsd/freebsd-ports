@@ -70,7 +70,7 @@
 # NOTE:	multiple logical instances are not supported by pkg and the original
 # pkg_tools at the moment.
 #
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_UNIQUEFILES_MK)
 _INCLUDE_USES_UNIQUEFILES_MK=	yes
@@ -82,13 +82,13 @@ UNIQUE_SUFFIX_FILES?=	# empty
 
 UNIQUE_SUFFIX_TYPES+=	SUFFIX
 
-.if ${uniquefiles_ARGS:Mdirs}
+.  if ${uniquefiles_ARGS:Mdirs}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUE_PREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${UNIQUE_PREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/${UNIQUE_PREFIX}${PORTNAME}
 WWWDIR=		${PREFIX}/www/${UNIQUE_PREFIX}${PORTNAME}
 ETCDIR=		${PREFIX}/etc/${UNIQUE_PREFIX}${PORTNAME}
-.endif
+.  endif
 
 UNIQUE_DEFAULT_LINKS?=		no
 UNIQUE_FIND_PREFIX_FILES?=	# empty
@@ -102,24 +102,24 @@ _INCLUDE_USES_UNIQUEFILES_POST_MK=     yes
 
 _UNIQUEPKGLIST=		${WRKDIR}/.PLIST.uniquefiles
 
-.if ${UNIQUE_DEFAULT_LINKS} == yes
+.  if ${UNIQUE_DEFAULT_LINKS} == yes
 _DO_CONDITIONAL_SYMLINK=	\
 	if [ ! -e ${STAGEDIR}${PREFIX}/$${fname} -a ! -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
 		${ECHO_MSG} "Link: @$${fname} --> $${newf}"; \
 		${RLN} ${STAGEDIR}${PREFIX}/$${newf} ${STAGEDIR}${PREFIX}/$${fname}; \
 		${ECHO_CMD} LINKED:$${newf}%%EXTRA_EXT%%:$${fname}%%EXTRA_EXT%% >> ${_UNIQUEPKGLIST}; \
 	fi
-.else
+.  else
 # We are not symlinking the renamed binary.
 _DO_CONDITIONAL_SYMLINK=	${DO_NADA}
-.endif
+.  endif
 
 _USES_stage+=	775:move-uniquefiles
 move-uniquefiles:
-.if ${UNIQUE_PREFIX_FILES} || ${UNIQUE_FIND_PREFIX_FILES}
+.  if ${UNIQUE_PREFIX_FILES} || ${UNIQUE_FIND_PREFIX_FILES}
 	@${ECHO_MSG} "===> Creating unique files: Move files needing PREFIX";
-.endif
-.for entry in ${UNIQUE_PREFIX_FILES}
+.  endif
+.  for entry in ${UNIQUE_PREFIX_FILES}
 	@fname=${entry}; \
 	if [ -e ${STAGEDIR}${PREFIX}/$${fname} -o -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
 		newf=$${fname%/*}/${UNIQUE_PREFIX}$${fname##*/} ; \
@@ -131,8 +131,8 @@ move-uniquefiles:
 		${ECHO_MSG} "Makefile error: UNIQUE (prefix): $${fname} not found"; \
 		${FALSE}; \
 	fi;
-.endfor
-.if ${UNIQUE_FIND_PREFIX_FILES}
+.  endfor
+.  if ${UNIQUE_FIND_PREFIX_FILES}
 	@for fname in `${UNIQUE_FIND_PREFIX_FILES}`; do \
 		if [ -e ${STAGEDIR}${PREFIX}/$${fname} -o -L ${STAGEDIR}${PREFIX}/$${fname} ]; then \
 			newf=$${fname%/*}/${UNIQUE_PREFIX}$${fname##*/} ; \
@@ -145,18 +145,18 @@ move-uniquefiles:
 			${FALSE}; \
 		fi; \
 	done;
-.endif
-
-.for sufxtype in ${UNIQUE_SUFFIX_TYPES}
-.  if (defined(UNIQUE_${sufxtype}_FILES) && ${UNIQUE_${sufxtype}_FILES}) || \
-     (defined(UNIQUE_FIND_${sufxtype}_FILES) && ${UNIQUE_FIND_${sufxtype}_FILES})
-.    if defined(UNIQUE_${sufxtype}_WITH_EXT) && ${UNIQUE_${sufxtype}_WITH_EXT}
-	@${ECHO_MSG} "===> Creating unique files: Move ${sufxtype:S|SUFFIX_||} files needing SUFFIX";
-.    else
-	@${ECHO_MSG} "===> Creating unique files: Move files needing SUFFIX";
-.    endif
 .  endif
-.  for entry in ${UNIQUE_${sufxtype}_FILES}
+
+.  for sufxtype in ${UNIQUE_SUFFIX_TYPES}
+.    if (defined(UNIQUE_${sufxtype}_FILES) && ${UNIQUE_${sufxtype}_FILES}) || \
+     (defined(UNIQUE_FIND_${sufxtype}_FILES) && ${UNIQUE_FIND_${sufxtype}_FILES})
+.      if defined(UNIQUE_${sufxtype}_WITH_EXT) && ${UNIQUE_${sufxtype}_WITH_EXT}
+	@${ECHO_MSG} "===> Creating unique files: Move ${sufxtype:S|SUFFIX_||} files needing SUFFIX";
+.      else
+	@${ECHO_MSG} "===> Creating unique files: Move files needing SUFFIX";
+.      endif
+.    endif
+.    for entry in ${UNIQUE_${sufxtype}_FILES}
 	@fname=${entry}; \
 	if [ -n "${UNIQUE_${sufxtype}_EXTRA_EXT}" ]; then \
 		fname=$${fname%${UNIQUE_${sufxtype}_EXTRA_EXT}}; \
@@ -172,8 +172,8 @@ move-uniquefiles:
 		${ECHO_MSG} "Makefile error: UNIQUE (suffix): $${fname} not found"; \
 		${FALSE}; \
 	fi;
-.  endfor
-.  if defined(UNIQUE_FIND_${sufxtype}_FILES) && ${UNIQUE_FIND_${sufxtype}_FILES}
+.    endfor
+.    if defined(UNIQUE_FIND_${sufxtype}_FILES) && ${UNIQUE_FIND_${sufxtype}_FILES}
 	@for fname in `${UNIQUE_FIND_${sufxtype}_FILES}`; do \
 		if [ -n "${UNIQUE_${sufxtype}_EXTRA_EXT}" ]; then \
 			fname=$${fname%${UNIQUE_${sufxtype}_EXTRA_EXT}}; \
@@ -190,8 +190,8 @@ move-uniquefiles:
 			${FALSE}; \
 		fi; \
 	done;
-.  endif
-.endfor
+.    endif
+.  endfor
 
 # Using .if exists(${_UNIQUEPKGPLIST} below instead of the sh test
 # does not work in poudriere. It works fine on the CLI, though...

@@ -1,6 +1,6 @@
---- src/mtest/Makefile.orig	Wed Oct 25 01:55:39 2000
-+++ src/mtest/Makefile	Mon Oct  1 03:42:11 2001
-@@ -19,24 +19,17 @@
+--- src/mtest/Makefile.orig	2022-04-17 00:12:02 UTC
++++ src/mtest/Makefile
+@@ -26,24 +26,17 @@
  
  
  C = ../c-client
@@ -13,7 +13,7 @@
 -CFLAGS = -I$C `cat $C/CFLAGS`
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
 +CFLAGS+=	-DNFSKLUDGE -I$(LOCALBASE)/include/c-client
-+LDFLAGS+=	-L$(LOCALBASE)/lib -lc-client4
++LDFLAGS+=	-L$(LOCALBASE)/lib -lc-client
  
  all:	mtest
  

@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	x11
 
 COMMENT=	GStreamer X and Xvideo output plugins

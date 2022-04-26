@@ -9,11 +9,8 @@ COMMENT=	Weak signal ham radio communication package
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
-		autoconf>=2.69:devel/autoconf \
-		automake>=1.16.1:devel/automake \
 		a2x:textproc/asciidoc \
 		git:devel/git \
-		libtool:devel/libtool \
 		${LOCALBASE}/share/xsl/docbook:textproc/docbook-xsl
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
@@ -42,7 +39,7 @@ _PATCHES=	wsjtx.patch hamlib.patch
 FFLAGS+=	-fallow-argument-mismatch
 .endif
 
-_HAMLIB_PATCHES=	configure.ac hamlib.pc.in tests/rigtestlibusb.c
+_HAMLIB_PATCHES=	configure hamlib.pc.in tests/rigtestlibusb.c
 make-hamlib-patch:
 	${MV} ${FILESDIR}/hamlib.patch ${FILESDIR}/hamlib.patch.old
 . for f in ${_HAMLIB_PATCHES}

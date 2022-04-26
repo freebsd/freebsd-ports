@@ -24,7 +24,7 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 # JAVA_VERSION		List of space-separated suitable java versions for the
 #					port. An optional "+" allows you to specify a range of
 #					versions. (allowed values: 7[+] 8[+] 11[+] 12[+] 13[+]
-#					14[+] 15[+] 16[+] 17[+])
+#					14[+] 15[+] 16[+] 17[+] 18[+])
 #
 # JAVA_OS			List of space-separated suitable JDK port operating systems
 #					for the port. (allowed values: native linux)
@@ -127,11 +127,11 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 # Stage 5: Define all settings for the port to use
 #
 
-.	if defined(USE_JAVA)
+.  if defined(USE_JAVA)
 
-.		if !defined(JAVA_VERSION) && empty(USE_JAVA:C/[0-9]*[\.]*[0-9]*[+]*//)
+.    if !defined(JAVA_VERSION) && empty(USE_JAVA:C/[0-9]*[\.]*[0-9]*[+]*//)
 JAVA_VERSION=${USE_JAVA}
-.		endif
+.    endif
 
 #-------------------------------------------------------------------------------
 # Stage 1: Define constants
@@ -150,18 +150,18 @@ PLIST_SUB+=		JAVASHAREDIR="${JAVASHAREDIR:S,^${PREFIX}/,,}" \
 SUB_LIST+=		JAVASHAREDIR="${JAVASHAREDIR}" \
 				JAVAJARDIR="${JAVAJARDIR}" \
 				JAVALIBDIR="${JAVALIBDIR}"
-.		if defined(JAVA_VERSION)
+.    if defined(JAVA_VERSION)
 SUB_LIST+=		JAVA_VERSION="${JAVA_VERSION}"
-.		endif
-.		if defined(JAVA_VENDOR)
+.    endif
+.    if defined(JAVA_VENDOR)
 SUB_LIST+=		JAVA_VENDOR="${JAVA_VENDOR}"
-.		endif
-.		if defined(JAVA_OS)
+.    endif
+.    if defined(JAVA_OS)
 SUB_LIST+=		JAVA_OS="${JAVA_OS}"
-.		endif
+.    endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	7 8 11 12 13 14 15 16 17
+__JAVA_VERSION_LIST=	7 8 11 12 13 14 15 16 17 18
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
 _JAVA_VENDOR_LIST=		openjdk oracle
@@ -186,6 +186,8 @@ _JAVA_PORT_NATIVE_OPENJDK_JDK_16_INFO=		PORT=java/openjdk16			HOME=${LOCALBASE}/
 											VERSION=16	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_17_INFO=		PORT=java/openjdk17			HOME=${LOCALBASE}/openjdk17 \
 											VERSION=17	OS=native	VENDOR=openjdk
+_JAVA_PORT_NATIVE_OPENJDK_JDK_18_INFO=		PORT=java/openjdk18			HOME=${LOCALBASE}/openjdk18 \
+											VERSION=18	OS=native	VENDOR=openjdk
 _JAVA_PORT_LINUX_ORACLE_JDK_8_INFO=		PORT=java/linux-oracle-jdk18	HOME=${LOCALBASE}/linux-oracle-jdk1.8.0 \
 											VERSION=8	OS=linux	VENDOR=oracle
 
@@ -207,6 +209,7 @@ __JAVA_PORTS_ALL=	\
 					JAVA_PORT_NATIVE_OPENJDK_JDK_14 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_15 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_16 \
+					JAVA_PORT_NATIVE_OPENJDK_JDK_18 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_7  \
 					JAVA_PORT_LINUX_ORACLE_JDK_8
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
@@ -225,106 +228,106 @@ _JDK_FILE=bin/javac
 # From here, the port is using bsd.java.mk v2.0
 
 # Error checking: defined JAVA_{HOME,PORT,PORT_VERSION,PORT_VENDOR,PORT_OS}
-.		for variable in JAVA_HOME JAVA_PORT JAVA_PORT_VERSION JAVA_PORT_VENDOR JAVA_PORT_OS
-.			if defined(${variable})
+.    for variable in JAVA_HOME JAVA_PORT JAVA_PORT_VERSION JAVA_PORT_VENDOR JAVA_PORT_OS
+.      if defined(${variable})
 check-makevars::
 	@${ECHO_CMD} "${PKGNAME}: Environment error: \"${variable}\" should not be defined -- clearing."
 .undef				${variable}
-.			endif
-.		endfor
+.      endif
+.    endfor
 
 # Error checking: JAVA_VERSION
-.if defined(JAVA_VERSION)
-.if !defined(_JAVA_VERSION_LIST_REGEXP)
+.    if defined(JAVA_VERSION)
+.      if !defined(_JAVA_VERSION_LIST_REGEXP)
 _JAVA_VERSION_LIST_REGEXP=	${_JAVA_VERSION_LIST:C/\+/\\+/:ts|}
-.endif
+.      endif
 
 check-makevars::
 	@( test ! -z "${JAVA_VERSION}" && ( ${ECHO_CMD} "${JAVA_VERSION}" | ${TR} " " "\n" | ${GREP} -Eq "${_JAVA_VERSION_LIST_REGEXP}")) || \
 	(${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_VERSION}\" is not a valid value for JAVA_VERSION. It should be one or more of: ${__JAVA_VERSION_LIST} (with an optional \"+\" suffix.)"; ${FALSE})
-.endif
+.    endif
 
 # Error checking: JAVA_VENDOR
-.if defined(JAVA_VENDOR)
-.if !defined(_JAVA_VENDOR_LIST_REGEXP)
+.    if defined(JAVA_VENDOR)
+.      if !defined(_JAVA_VENDOR_LIST_REGEXP)
 _JAVA_VENDOR_LIST_REGEXP=	${_JAVA_VENDOR_LIST:ts|}
-.endif
+.      endif
 
 check-makevars::
 	@( test ! -z "${JAVA_VENDOR}" && ( ${ECHO_CMD} "${JAVA_VENDOR}" | ${TR} " " "\n" | ${GREP} -Eq "${_JAVA_VENDOR_LIST_REGEXP}" )) || \
 	(${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_VENDOR}\" is not a valid value for JAVA_VENDOR. It should be one or more of: ${_JAVA_VENDOR_LIST}"; \
 	${FALSE})
-.endif
+.    endif
 
 # Error checking: JAVA_OS
-.if defined(JAVA_OS)
-.if !defined(_JAVA_OS_LIST_REGEXP)
+.    if defined(JAVA_OS)
+.      if !defined(_JAVA_OS_LIST_REGEXP)
 _JAVA_OS_LIST_REGEXP=	${_JAVA_OS_LIST:ts|}
-.endif
+.      endif
 
 check-makevars::
 	@( test ! -z "${JAVA_OS}" && ( ${ECHO_CMD} "${JAVA_OS}" | ${TR} " " "\n" | ${GREP} -Eq "${_JAVA_OS_LIST_REGEXP}")) || \
 	(${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_OS}\" is not a valid value for JAVA_OS. It should be one or more of: ${_JAVA_OS_LIST}"; \
 	${FALSE})
-.endif
+.    endif
 
 # Set default values for JAVA_BUILD and JAVA_RUN
 # When nothing is set, assume JAVA_BUILD=jdk and JAVA_RUN=jre
 # (unless NO_BUILD is set)
-.		if !defined(JAVA_EXTRACT) && !defined(JAVA_BUILD) && !defined(JAVA_RUN)
-.			if !defined(NO_BUILD)
+.    if !defined(JAVA_EXTRACT) && !defined(JAVA_BUILD) && !defined(JAVA_RUN)
+.      if !defined(NO_BUILD)
 JAVA_BUILD=	jdk
-.			endif
+.      endif
 JAVA_RUN=	jre
-.		endif
+.    endif
 
 # JDK dependency setting
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
-.		if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/1.7+/1.7 1.8+/:S/1.8+/1.8 11+/:S/1.7/7/:S/1.8/8/:S/7+/7 8+/:S/8+/8 11+/:S/11+/11 12+/:S/12+/12 13+/:S/13+/13 14+/:S/14+/14 15+/:S/15+/15 16+/:S/16+/16 17+/:S/17+/17/}
-.		else
+.    if defined(JAVA_VERSION)
+_JAVA_VERSION=	${JAVA_VERSION:S/1.7+/1.7 1.8+/:S/1.8+/1.8 11+/:S/1.7/7/:S/1.8/8/:S/7+/7 8+/:S/8+/8 11+/:S/11+/11 12+/:S/12+/12 13+/:S/13+/13 14+/:S/14+/14 15+/:S/15+/15 16+/:S/16+/16 17+/:S/17+/17 18+/:S/18+/18/}
+.    else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
-.		endif
-.		if defined(JAVA_OS)
+.    endif
+.    if defined(JAVA_OS)
 _JAVA_OS=	${JAVA_OS}
-.		else
+.    else
 _JAVA_OS=	${_JAVA_OS_LIST}
-.		endif
-.		if defined(JAVA_VENDOR)
+.    endif
+.    if defined(JAVA_VENDOR)
 _JAVA_VENDOR=	${JAVA_VENDOR}
-.		else
+.    else
 _JAVA_VENDOR=	${_JAVA_VENDOR_LIST}
-.		endif
+.    endif
 
-.		for A_JAVA_PORT in ${_JAVA_PORTS_ALL}
+.    for A_JAVA_PORT in ${_JAVA_PORTS_ALL}
 A_JAVA_PORT_INFO:=			${A_JAVA_PORT:S/^/\${_/:S/$/_INFO}/}
 A_JAVA_PORT_HOME=			${A_JAVA_PORT_INFO:MHOME=*:S,HOME=,,}
 A_JAVA_PORT_VERSION=		${A_JAVA_PORT_INFO:MVERSION=*:S,VERSION=,,}
 A_JAVA_PORT_OS=				${A_JAVA_PORT_INFO:MOS=*:S,OS=,,}
 A_JAVA_PORT_VENDOR=			${A_JAVA_PORT_INFO:MVENDOR=*:S,VENDOR=,,}
-.if !defined(_JAVA_PORTS_INSTALLED) && exists(${A_JAVA_PORT_HOME}/${_JDK_FILE})
+.      if !defined(_JAVA_PORTS_INSTALLED) && exists(${A_JAVA_PORT_HOME}/${_JDK_FILE})
 __JAVA_PORTS_INSTALLED+=	${A_JAVA_PORT}
-.endif
+.      endif
 
 # Because variables inside for loops are special (directly replaced as strings),
 # we are allowed to use them inside modifiers, where normally ${FOO:M${BAR}} is
 # not allowed.
 #
-.for ver in ${A_JAVA_PORT_VERSION}
-.for os in ${A_JAVA_PORT_OS}
-.for vendor in ${A_JAVA_PORT_VENDOR}
-.if ${_JAVA_VERSION:M${ver}} && ${_JAVA_OS:M${os}} && ${_JAVA_VENDOR:M${vendor}}
+.      for ver in ${A_JAVA_PORT_VERSION}
+.        for os in ${A_JAVA_PORT_OS}
+.          for vendor in ${A_JAVA_PORT_VENDOR}
+.            if ${_JAVA_VERSION:M${ver}} && ${_JAVA_OS:M${os}} && ${_JAVA_VENDOR:M${vendor}}
 __JAVA_PORTS_POSSIBLE+=		${A_JAVA_PORT}
-.endif
-.endfor
-.endfor
-.endfor
+.            endif
+.          endfor
+.        endfor
+.      endfor
 
-.		endfor
-.if !defined(_JAVA_PORTS_INSTALLED)
+.    endfor
+.    if !defined(_JAVA_PORTS_INSTALLED)
 _JAVA_PORTS_INSTALLED=		${__JAVA_PORTS_INSTALLED:C/ [ ]+/ /g}
-.endif
+.    endif
 _JAVA_PORTS_POSSIBLE=		${__JAVA_PORTS_POSSIBLE:C/ [ ]+/ /g}
 
 
@@ -336,27 +339,27 @@ _JAVA_PORTS_POSSIBLE=		${__JAVA_PORTS_POSSIBLE:C/ [ ]+/ /g}
 
 .		undef _JAVA_PORTS_INSTALLED_POSSIBLE
 
-.		for A_JAVA_PORT in ${_JAVA_PORTS_POSSIBLE}
+.    for A_JAVA_PORT in ${_JAVA_PORTS_POSSIBLE}
 __JAVA_PORTS_INSTALLED_POSSIBLE+=	${_JAVA_PORTS_INSTALLED:M${A_JAVA_PORT}}
-.		endfor
+.    endfor
 _JAVA_PORTS_INSTALLED_POSSIBLE=		${__JAVA_PORTS_INSTALLED_POSSIBLE:C/[ ]+//g}
 
-.		if ${_JAVA_PORTS_INSTALLED_POSSIBLE} != ""
-.                 for i in ${_JAVA_PORTS_INSTALLED_POSSIBLE}
-.                   if !defined(_JAVA_PORTS_INSTALLED_POSSIBLE_shortcircuit)
+.    if ${_JAVA_PORTS_INSTALLED_POSSIBLE} != ""
+.      for i in ${_JAVA_PORTS_INSTALLED_POSSIBLE}
+.        if !defined(_JAVA_PORTS_INSTALLED_POSSIBLE_shortcircuit)
 _JAVA_PORT=	$i
 _JAVA_PORTS_INSTALLED_POSSIBLE_shortcircuit=	1
-.                   endif
-.                 endfor
+.        endif
+.      endfor
 # If no installed JDK port fits, then pick one from the list of possible ones
-.		else
-.                 for i in ${_JAVA_PORTS_POSSIBLE}
-.                   if !defined(_JAVA_PORTS_POSSIBLE_shortcircuit)
+.    else
+.      for i in ${_JAVA_PORTS_POSSIBLE}
+.        if !defined(_JAVA_PORTS_POSSIBLE_shortcircuit)
 _JAVA_PORT=	$i
 _JAVA_PORTS_POSSIBLE_shortcircuit=	1
-.                   endif
-.                 endfor
-.		endif
+.        endif
+.      endfor
+.    endif
 
 _JAVA_PORT_INFO:=		${_JAVA_PORT:S/^/\${_/:S/$/_INFO}/}
 JAVA_PORT=				${_JAVA_PORT_INFO:MPORT=*:S,PORT=,,}
@@ -373,47 +376,47 @@ JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
 #
 
 # Ant Support: USE_ANT --> JAVA_BUILD=jdk
-.		if defined(USE_ANT)
+.    if defined(USE_ANT)
 JAVA_BUILD=		jdk
-.		endif
+.    endif
 
 # Add the JDK port to the dependencies
 DEPEND_JAVA=	${JAVA}:${JAVA_PORT}
-.		if defined(JAVA_EXTRACT)
+.    if defined(JAVA_EXTRACT)
 EXTRACT_DEPENDS+=	${DEPEND_JAVA}
-.		endif
-.		if defined(JAVA_BUILD)
-.			if defined(NO_BUILD)
+.    endif
+.    if defined(JAVA_BUILD)
+.      if defined(NO_BUILD)
 check-makevars::
 	@${ECHO_CMD} "${PKGNAME}: Makefile error: JAVA_BUILD and NO_BUILD cannot be set at the same time.";
 	@${FALSE}
-.			endif
+.      endif
 BUILD_DEPENDS+=		${DEPEND_JAVA}
-.		endif
-.		if defined(JAVA_RUN)
+.    endif
+.    if defined(JAVA_RUN)
 RUN_DEPENDS+=		${DEPEND_JAVA}
-.		endif
+.    endif
 
 # Ant support: default do-build target
-.		if defined(USE_ANT)
+.    if defined(USE_ANT)
 DESTDIRNAME?=		-Dfreebsd.ports.destdir
 ANT?=				${LOCALBASE}/bin/ant
 MAKE_ENV+=			JAVA_HOME=${JAVA_HOME}
 BUILD_DEPENDS+=		${ANT}:devel/apache-ant
 ALL_TARGET?=
-.			if !target(do-build)
+.      if !target(do-build)
 do-build:
 					@(cd ${BUILD_WRKSRC}; \
 						${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${ALL_TARGET})
-.			endif
-.			if !target(do-test) && defined(TEST_TARGET)
+.      endif
+.      if !target(do-test) && defined(TEST_TARGET)
 TEST_DEPENDS+=		${DEPEND_JAVA}
 TEST_DEPENDS+=		${ANT}:devel/apache-ant
 do-test:
 					@(cd ${TEST_WRKSRC}; \
 						${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${TEST_TARGET})
-.			endif
-.		endif
+.      endif
+.    endif
 
 #-----------------------------------------------------------------------------
 # Stage 5: Define all settings for the port to use
@@ -426,11 +429,11 @@ do-test:
 .		undef JAVAC
 
 # Then test if a JAVAC has to be set (JAVA_BUILD==jdk)
-.		if defined(JAVA_BUILD)
-.			if (${JAVA_BUILD:tu} == "JDK") && !defined(JAVAC)
+.    if defined(JAVA_BUILD)
+.      if (${JAVA_BUILD:tu} == "JDK") && !defined(JAVAC)
 JAVAC?=			${JAVA_HOME}/bin/javac
-.			endif
-.		endif
+.      endif
+.    endif
 
 # Define the location of some more executables.
 APPLETVIEWER?=	${JAVA_HOME}/bin/appletviewer
@@ -484,5 +487,5 @@ java-debug:
 	@${ECHO_CMD} "JAVAC=                          ${JAVAC}"
 	@${ECHO_CMD} "JAVA_CLASSES=                   ${JAVA_CLASSES}"
 
-.	endif
+.  endif
 .endif

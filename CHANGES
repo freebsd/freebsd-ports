@@ -10,6 +10,19 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20220415:
+AUTHOR: amdmi3@FreeBSD.org
+
+  A new USES has been added to handle testing with pytest.
+
+    USES=           pytest
+
+  Introduces dependency on pytest and adds do-test target which calls
+  pytest with the right environment and arguments.
+
+  Additionally, PYTEST_{IGNORED,BROKEN}_TESTS knobs are provided for
+  skipping failing tests in a convenient and documented way.
+
 20220218:
 AUTHOR: jrm@FreeBSD.org
 

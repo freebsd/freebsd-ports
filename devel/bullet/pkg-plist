@@ -330,6 +330,7 @@ include/bullet/BulletDynamics/Featherstone/btMultiBodyMLCPConstraintSolver.h
 include/bullet/BulletDynamics/Featherstone/btMultiBodyPoint2Point.h
 include/bullet/BulletDynamics/Featherstone/btMultiBodySliderConstraint.h
 include/bullet/BulletDynamics/Featherstone/btMultiBodySolverConstraint.h
+include/bullet/BulletDynamics/Featherstone/btMultiBodySphericalJointLimit.h
 include/bullet/BulletDynamics/Featherstone/btMultiBodySphericalJointMotor.h
 include/bullet/BulletDynamics/MLCPSolvers/btDantzigLCP.h
 include/bullet/BulletDynamics/MLCPSolvers/btDantzigSolver.h
@@ -351,6 +352,10 @@ include/bullet/BulletFileLoader/bDNA.h
 include/bullet/BulletFileLoader/bDefines.h
 include/bullet/BulletFileLoader/bFile.h
 include/bullet/BulletFileLoader/btBulletFile.h
+include/bullet/BulletSoftBody/BulletReducedDeformableBody/btReducedDeformableBody.h
+include/bullet/BulletSoftBody/BulletReducedDeformableBody/btReducedDeformableBodyHelpers.h
+include/bullet/BulletSoftBody/BulletReducedDeformableBody/btReducedDeformableBodySolver.h
+include/bullet/BulletSoftBody/BulletReducedDeformableBody/btReducedDeformableContactConstraint.h
 include/bullet/BulletSoftBody/DeformableBodyInplaceSolverIslandCallback.h
 include/bullet/BulletSoftBody/btCGProjection.h
 include/bullet/BulletSoftBody/btConjugateGradient.h

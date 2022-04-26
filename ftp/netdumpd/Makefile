@@ -1,7 +1,7 @@
 # Created by: Mark Johnston <markj@FreeBSD.org>
 
 PORTNAME=	netdumpd
-PORTVERSION=	20191031
+PORTVERSION=	20220406
 PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	LOCAL/markj

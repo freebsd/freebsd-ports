@@ -2850,6 +2850,7 @@ share/locale/id/LC_MESSAGES/kcm_nightcolor.mo
 share/locale/id/LC_MESSAGES/kcm_notifications.mo
 share/locale/id/LC_MESSAGES/kcm_style.mo
 share/locale/id/LC_MESSAGES/kcm_translations.mo
+share/locale/id/LC_MESSAGES/kcm_users.mo
 share/locale/id/LC_MESSAGES/kcmformats.mo
 share/locale/id/LC_MESSAGES/kcminit.mo
 share/locale/id/LC_MESSAGES/kfontinst.mo
@@ -2873,6 +2874,7 @@ share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.devicenotifier.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.digitalclock.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.icon.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.lock_logout.mo
+share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.manageinputmethod.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.mediacontroller.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.notifications.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.panelspacer.mo

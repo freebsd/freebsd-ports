@@ -1,0 +1,11 @@
+The wise choice for Ruby memoization.
+
+* Fast performance of memoized reads (with benchmarks)
+* Support for resetting and presetting memoized values
+* Support for memoization on frozen objects
+* Support for memoization of class and module methods
+* Support for inheritance of memoized class and instance methods
+* Documented and tested thread-safety guarantees
+* Full documentation and test coverage!
+
+WWW: https://github.com/panorama-ed/memo_wise

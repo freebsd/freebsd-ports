@@ -21,7 +21,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	GRAPH IPYTHON P0F_BASE MANUF MATPLOT NMAP PYCRYPTO PYX QUESO_BASE SOX
+OPTIONS_DEFINE=	GRAPH IPYTHON P0F_BASE MANUF MATPLOT NMAP PYCRYPTO PYX SOX
 GRAPH_DESC=	graph generation and visualization
 IPYTHON_DESC=	Use IPython (enhanced interactive shell)
 MANUF_DESC=	wireshark's MANUF MAC database
@@ -30,7 +30,6 @@ NMAP_DESC=	nmap OS signatures database
 P0F_BASE_DESC=	p0f OS signatures database
 PYCRYPTO_DESC=	Use py-crypto for WEP decoding
 PYX_DESC=	PostScript and PDF graphs drawing
-QUESO_BASE_DESC=queso OS signatures database
 SOX_DESC=	Support for VoIP
 
 GRAPH_USES=		magick:6,run
@@ -42,7 +41,6 @@ MATPLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY
 P0F_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/p0f.fp:net-mgmt/p0f
 PYCRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR}
 PYX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyx>0:graphics/py-pyx@${PY_FLAVOR}
-QUESO_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/queso.conf.sample:net/queso
 SOX_RUN_DEPENDS=	${LOCALBASE}/bin/sox:audio/sox
 
 post-patch:

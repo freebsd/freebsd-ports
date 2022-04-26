@@ -1,7 +1,7 @@
 # Created by: jseger@FreeBSD.org
 
 PORTNAME=	freetype2
-DISTVERSION=	2.11.1
+DISTVERSION=	2.12.0
 CATEGORIES=	print
 MASTER_SITES=	SAVANNAH/${PORTNAME:S/2//} \
 		SF/freetype/${PORTNAME}/${DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/

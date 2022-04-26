@@ -1,8 +1,7 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
 
 PORTNAME=	memcached
-PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,11 +20,6 @@ CONFIGURE_ARGS=	--enable-memcached-json \
 		--enable-memcached-protocol \
 		--enable-memcached-session \
 		--with-libmemcached-dir=${LOCALBASE}
-
-GH_ACCOUNT=	php-memcached-dev
-GH_PROJECT=	php-memcached
-GH_TAGNAME=	058e9f5
-USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	IGBINARY MSGPACK SASL
 OPTIONS_DEFAULT=SASL

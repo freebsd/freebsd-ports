@@ -2,7 +2,7 @@
 
 PORTNAME=	ddskk
 DISTVERSION=	16.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://ftp.ring.gr.jp/pub/elisp/skk/maintrunk/ \
 		http://www.ring.gr.jp/archives/elisp/skk/maintrunk/ \
@@ -14,6 +14,10 @@ COMMENT=	Simple Kana to Kanji conversion program on Emacsen
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/READMEs/COPYING
+
+.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
+BROKEN=		fails to build
+.endif
 
 USES=		emacs
 

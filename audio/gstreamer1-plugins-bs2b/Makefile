@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	audio
 
 COMMENT=	GStreamer Bauer Stereophonic to Banaural BSP (bs2b) plugin

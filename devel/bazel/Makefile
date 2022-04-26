@@ -1,7 +1,7 @@
 # Created by: Klaus Aehlig <aehlig@linta.de>
 
 PORTNAME=	bazel
-DISTVERSION=	5.0.0
+DISTVERSION=	5.1.0
 CATEGORIES=	devel java
 MASTER_SITES=	https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=	bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=		fails to package: cp: bazel: No such file or directory
 BROKEN_armv7=		fails to package: cp: bazel: No such file or directory
+BROKEN_i386=		fails to build: ./src/tools/singlejar/mapped_file_posix.inc:31:2: error: This code for 64 bit Unix.
 BROKEN_FreeBSD_12_powerpc64=	fails to compile: Action failed to execute: java.io.IOException: Cannot run program /usr/bin/clang
 
 BUILD_DEPENDS=	bash:shells/bash \
@@ -40,7 +41,7 @@ NO_WRKSUBDIR=	YES
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=	4
+FINALRC=	3
 
 .include <bsd.port.pre.mk>
 

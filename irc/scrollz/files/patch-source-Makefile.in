@@ -1,6 +1,6 @@
---- source/Makefile.in.orig	2011-04-29 17:21:18.000000000 +0900
-+++ source/Makefile.in	2013-03-09 19:07:14.372106954 +0900
-@@ -47,7 +47,7 @@
+--- source/Makefile.in.orig	2021-05-06 08:04:55 UTC
++++ source/Makefile.in
+@@ -47,7 +47,7 @@ IRCFLUSH_OBJECTS = ircflush.o ircsig.o
  INCLUDES = -I../include
  
  default:
@@ -9,7 +9,7 @@
  
  all: scrollz
  
-@@ -63,7 +63,7 @@
+@@ -63,7 +63,7 @@ clean::
  	$(RM) scrollz $(OBJECTS)
  
  install: scrollz
@@ -18,7 +18,7 @@
  
  # .o files needing special compilation flags
  
-@@ -86,7 +86,7 @@
+@@ -86,7 +86,7 @@ translat.o: Makefile ../Makefile
  	$(CC) $(CFLAGS) $(DEFS) $(PP_DEFS) $(INCLUDES) -DTRANSLATION_PATH=\"$(TRANS_DIR)/\" -c translat.c
  
  screen.o: Makefile ../Makefile
@@ -27,7 +27,7 @@
  
  # auxiliary programs
  
-@@ -96,7 +96,7 @@
+@@ -96,7 +96,7 @@ ircflush: $(IRCFLUSH_OBJECTS)
  ircio: $(IRCIO_OBJECTS)
  	$(CC) $(INCLUDES) $(CFLAGS) $(LDFLAGS) $(DEFS) $(PPS_DEFS) -o $@ $(IRCIO_OBJECTS) $(LIBS)
  
@@ -36,7 +36,7 @@
  	$(CC) $(INCLUDES) $(CFLAGS) $(LDFLAGS) $(DEFS) -o $@ $(WSERV_OBJECTS) $(LIBS)
  
  clean::
-@@ -106,7 +106,7 @@
+@@ -106,7 +106,7 @@ clean::
  	$(RM) ircio ircio.o newio.o
  
  clean::

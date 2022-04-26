@@ -1,6 +1,5 @@
 PORTNAME=	ros-urdfdom_headers
-DISTVERSION=	1.0.4
-PORTREVISION=	1
+DISTVERSION=	1.0.6
 CATEGORIES=	devel
 
 MAINTAINER=	trueos@norwegianrockcat.com

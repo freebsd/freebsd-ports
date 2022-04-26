@@ -238,7 +238,7 @@ CC=			clang
 CXX=		clang++
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057
+.if ${OPSYS} == FreeBSD
 SUB_LIST+=	LEGACY_LIMITS="@comment " \
 		MODERN_LIMITS=""
 .else

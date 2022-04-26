@@ -2,6 +2,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	6.1.1
+PORTREVISION=	2
 CATEGORIES=	math cad java
 MASTER_SITES=	https://cgit.scilab.org/scilab/snapshot/
 
@@ -109,7 +110,8 @@ GUI_CONFIGURE_OFF=	--without-gui \
 
 OCAML_IMPLIES=		GUI
 OCAML_CONFIGURE_WITH=	modelica
-OCAML_BUILD_DEPENDS=	ocaml:lang/ocaml
+OCAML_BUILD_DEPENDS=	ocaml:lang/ocaml \
+	${LOCALBASE}/lib/ocaml/site-lib/num/META:math/ocaml-num
 OCAML_RUN_DEPENDS=	ocaml:lang/ocaml
 
 TK_CONFIGURE_OFF=	--without-tk

@@ -1,0 +1,7 @@
+Automatically color Python's uncaught exception tracebacks.
+
+This one's for anybody who's ever struggled to read python's stacktraces
+on the terminal. Something about the two-lines-per-frame approach really
+just makes them tough to scan visually.
+
+WWW: https://pypi.org/project/colored-traceback/

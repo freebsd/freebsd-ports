@@ -2,7 +2,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	2
+PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -85,7 +85,7 @@ LIB_DEPENDS=								\
 		libClpSolver.so:math/clp				\
 		libCoinMP.so:math/coinmp				\
 		libCoinUtils.so:math/coinutils				\
-		libcoinmumps.so:math/ipopt				\
+		libcoinmumps.so:math/coin-or-mumps			\
 		libnauty.so:math/nauty					\
 		libopenblas.so:math/openblas				\
 		libOsi.so:math/osi					\
@@ -115,7 +115,7 @@ USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome iconv jpeg perl5 pkgconfig \
 		python:3.7 shared-mime-info ssl tar:${TARTYPE} xorg
 USE_GL=		gl glu
-USE_GNOME=	gtk20 libxslt libidl glib20
+USE_GNOME=	gdkpixbuf2 gtk20 libxslt libidl glib20
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_RUN=	jdk
@@ -131,8 +131,8 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m4\(Build:9823\)
-GITREVISION=	febe0adc7c
-TIMESTAMP=	1633255994
+GITREVISION=	5b75b699aa
+TIMESTAMP=	1649975926
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 

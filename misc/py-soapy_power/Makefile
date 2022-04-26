@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}SimpleSoapy>=1.5.0:misc/py-SimpleSoapy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}SimpleSpectral>0:science/py-SimpleSpectral@${PY_FLAVOR}
 
-USES=		python:3.4+
+USES=		python:3.8+
 USE_PYTHON=	distutils concurrent autoplist
 
 .include <bsd.port.mk>

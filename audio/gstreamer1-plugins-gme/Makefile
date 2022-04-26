@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	audio
 
 COMMENT=	GStreamer emulate gaming console sound processors plugin

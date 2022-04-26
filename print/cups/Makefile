@@ -104,9 +104,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\.default|.sample|'\
 		${WRKSRC}/cgi-bin/admin.c\
 		${WRKSRC}/conf/Makefile
-.if !empty(ARCH:Mpowerpc*)
-	@${REINPLACE_CMD} -e 's|@PIEFLAGS@||g' ${WRKSRC}/Makedefs.in
-.endif
 
 post-patch-DOCS-off:
 # Link to online documentation.

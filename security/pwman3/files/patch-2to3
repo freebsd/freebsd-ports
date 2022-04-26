@@ -1,0 +1,1226 @@
+--- pwman/data/drivers/mysql.py.orig	2007-02-04 18:44:43 UTC
++++ pwman/data/drivers/mysql.py
+@@ -24,7 +24,7 @@ from pwman.data.tags import Tag
+ 
+ import MySQLdb
+ import pwman.util.config as config
+-import cPickle
++import pickle
+ 
+ class MySQLDatabase(Database):
+     """MySQL Database implementation"""
+@@ -46,7 +46,7 @@ class MySQLDatabase(Database):
+             self._password = config.get_value('Database', 'password')
+             self._database = config.get_value('Database', 'database')
+             self._prefix = config.get_value('Database', 'table_prefix')
+-        except KeyError, e:
++        except KeyError as e:
+             raise DatabaseException(
+                 "MySQL: missing parameter [%s]" % (e))
+ 
+@@ -60,14 +60,14 @@ class MySQLDatabase(Database):
+ #                                     password = self._password)
+ #            self._cur = self._con.cursor()
+             self._checktables()
+-        except MySQLdb.DatabaseError, e:
++        except MySQLdb.DatabaseError as e:
+             raise DatabaseException("MySQL: %s" % (e))
+ 
+     def _get_cur(self):
+         try:
+             if (self._con != None):
+                 return self._con.cursor()
+-        except MySQLdb.DatabaseError, e:
++        except MySQLdb.DatabaseError as e:
+             pass
+         self._con = MySQLdb.connect(host = self._server,
+                                  port = int(self._port),
+@@ -105,7 +105,7 @@ class MySQLDatabase(Database):
+                 sql += ("SELECT NODE FROM %sLOOKUP LEFT JOIN %sTAGS ON TAG = %sTAGS.ID "
+                         + " WHERE %sTAGS.DATA = %%s") % (self._prefix, self._prefix,
+                                                              self._prefix, self._prefix)
+-                params.append(cPickle.dumps(t))
++                params.append(pickle.dumps(t))
+             sql += ") EXCEPT SELECT DATA FROM %sTAGS WHERE " %(self._prefix)
+             first = True
+             for t in self._filtertags:
+@@ -114,7 +114,7 @@ class MySQLDatabase(Database):
+                 else:
+                     first = False
+                 sql += "%sTAGS.DATA = %%s" % (self._prefix)
+-                params.append(cPickle.dumps(t))
++                params.append(pickle.dumps(t))
+         try:
+             cursor = self._get_cur()
+             cursor.execute(sql, params)
+@@ -122,11 +122,11 @@ class MySQLDatabase(Database):
+             tags = []
+             row = cursor.fetchone()
+             while (row != None):
+-                tag = cPickle.loads(str(row[0]))
++                tag = pickle.loads(str(row[0]))
+                 tags.append(tag)
+                 row = cursor.fetchone()
+             return tags
+-        except MySQLdb.DatabaseError, e:
++        except MySQLdb.DatabaseError as e:
+             raise DatabaseException("MySQL: %s" % (e))
+         
+     def getnodes(self, ids):
+@@ -151,11 +151,11 @@ class MySQLDatabase(Database):
+             
+             row = cursor.fetchone()
+             while row != None:
+-                node = cPickle.loads(str(row[1]))
++                node = pickle.loads(str(row[1]))
+                 node.set_id(row[0])
+                 nodes.append(node)
+                 row = cursor.fetchone()
+-        except MySQLdb.DatabaseError, e:
++        except MySQLdb.DatabaseError as e:
+             raise DatabaseException("MySQL: %s" % (e))
+         return nodes
+ 
+@@ -165,9 +165,9 @@ class MySQLDatabase(Database):
+         try:
+             cursor = self._get_cur()
+             sql = "UPDATE %sNODES SET DATA = %%s WHERE ID = %%s" % (self._prefix)
+-            cursor.execute(sql, (cPickle.dumps(node), id))
++            cursor.execute(sql, (pickle.dumps(node), id))
+             
+-        except MySQL.DatabaseError, e:
++        except MySQL.DatabaseError as e:
+             raise DatabaseException("MySQL: %s" % (e))
+         self._setnodetags(node)
+         self._checktags()
+@@ -179,13 +179,13 @@ class MySQLDatabase(Database):
+             sql = "INSERT INTO %sNODES(DATA) VALUES(%%s)" % (self._prefix)
+             if not isinstance(n, Node): raise DatabaseException(
+                 "Tried to insert foreign object into database [%s]", n)
+-            values = [cPickle.dumps(n)]
++            values = [pickle.dumps(n)]
+             try:
+                 cursor.execute(sql, values)
+-            except MySQLdb.DatabaseError, e:
++            except MySQLdb.DatabaseError as e:
+                 raise DatabaseException("MySQL: %s" % (e))
+             id = cursor.lastrowid
+-            print "id: %d" % (id)
++            print("id: %d" % (id))
+             n.set_id(id)
+ 
+             self._setnodetags(n)
+@@ -200,7 +200,7 @@ class MySQLDatabase(Database):
+                 sql = "DELETE FROM %sNODES WHERE ID = %%s" % (self._prefix)
+                 cursor.execute(sql, [n.get_id()])
+                 
+-            except MySQLdb.DatabaseError, e:
++            except MySQLdb.DatabaseError as e:
+                 raise DatabaseException("MySQL: %s" % (e))
+             self._deletenodetags(n)
+ 
+@@ -226,9 +226,9 @@ class MySQLDatabase(Database):
+                 sql += (("SELECT NODE FROM %sLOOKUP LEFT JOIN %sTAGS ON TAG = %sTAGS.ID"
+                          + " WHERE %sTAGS.DATA = %%s ") % (self._prefix, self._prefix,
+                                                            self._prefix, self._prefix))
+-                params.append(cPickle.dumps(t))
++                params.append(pickle.dumps(t))
+         try:
+-            print sql
++            print(sql)
+             cursor.execute(sql, params)
+ 
+             ids = []
+@@ -237,13 +237,13 @@ class MySQLDatabase(Database):
+                 ids.append(row[0])
+                 row = cursor.fetchone()
+             return ids
+-        except MySQLdb.DatabaseError, e:
++        except MySQLdb.DatabaseError as e:
+             raise DatabaseException("MySQL: %s" % (e))
+ 
+     def _commit(self):
+         try:
+             self._con.commit()
+-        except MySQLdb.DatabaseError, e:
++        except MySQLdb.DatabaseError as e:
+             self._con.rollback()
+             raise DatabaseException(
+                 "MySQL: Error commiting data to db [%s]" % (e))
+@@ -252,11 +252,11 @@ class MySQLDatabase(Database):
+         ids = []
+         cursor = self._get_cur()
+         for t in tags:
+-            pickled = cPickle.dumps(t)
++            pickled = pickle.dumps(t)
+             try:
+                 ids.append(self._tagidcache[pickled])
+                 continue
+-            except KeyError, e:
++            except KeyError as e:
+                 pass # not in cache
+             sql = "SELECT ID FROM %sTAGS WHERE DATA = %%s" % (self._prefix)
+             if not isinstance(t, Tag): raise DatabaseException(
+@@ -275,7 +275,7 @@ class MySQLDatabase(Database):
+                     id = cursor.lastrowid
+                     ids.append(id)
+                     self._tagidcache[pickled] = id
+-            except MySQLdb.DatabaseError, e:
++            except MySQLdb.DatabaseError as e:
+                 raise DatabaseException("MySQLdb: %s" % (e))
+         return ids
+ 
+@@ -285,7 +285,7 @@ class MySQLDatabase(Database):
+             sql = "DELETE FROM %sLOOKUP WHERE NODE = %%s" % (self._prefix)
+             cursor.execute(sql, [node.get_id()])
+             
+-        except MySQLdb.DatabaseError, e:
++        except MySQLdb.DatabaseError as e:
+             raise DatabaseException("MySQLdb: %s" % (e))
+         
+     def _setnodetags(self, node):
+@@ -299,7 +299,7 @@ class MySQLDatabase(Database):
+             try:
+                 cursor = self._get_cur()
+                 cursor.execute(sql, params)
+-            except MySQLdb.DatabaseError, e:
++            except MySQLdb.DatabaseError as e:
+                 raise DatabaseException("MySQLdb: %s" % (e))
+ 
+     def _checktags(self):
+@@ -310,7 +310,7 @@ class MySQLDatabase(Database):
+                    + "(SELECT TAG FROM %sLOOKUP GROUP BY TAG)") % (self._prefix,
+                                                                    self._prefix)
+             cursor.execute(sql)
+-        except MySQLdb.DatabaseError, e:
++        except MySQLdb.DatabaseError as e:
+             raise DatabaseException("MySQL: %s" % (e))
+         self._commit()
+ 
+@@ -342,7 +342,7 @@ class MySQLDatabase(Database):
+             
+             try:
+                 self._con.commit()
+-            except MySQLdb.DatabaseError, e:
++            except MySQLdb.DatabaseError as e:
+                 self._con.rollback()
+                 raise e
+ 
+@@ -353,7 +353,7 @@ class MySQLDatabase(Database):
+         cursor.execute(sql, values)
+         try:
+             self._con.commit()
+-        except MySQLdb.DatabaseError, e:
++        except MySQLdb.DatabaseError as e:
+             self._con.rollback()
+             raise DatabaseException(
+                 "MySQL: Error saving key [%s]" % (e))
+--- pwman/data/drivers/postgresql.py.orig	2007-02-04 18:44:43 UTC
++++ pwman/data/drivers/postgresql.py
+@@ -24,7 +24,7 @@ from pwman.data.tags import Tag
+ 
+ import pgdb
+ import pwman.util.config as config
+-import cPickle
++import pickle
+ 
+ class PostgresqlDatabase(Database):
+     """Postgresql Database implementation"""
+@@ -46,7 +46,7 @@ class PostgresqlDatabase(Database):
+             self._password = config.get_value('Database', 'password')
+             self._database = config.get_value('Database', 'database')
+             self._prefix = config.get_value('Database', 'table_prefix')
+-        except KeyError, e:
++        except KeyError as e:
+             raise DatabaseException(
+                 "Postgresql: missing parameter [%s]" % (e))
+ 
+@@ -60,14 +60,14 @@ class PostgresqlDatabase(Database):
+ #                                     password = self._password)
+ #            self._cur = self._con.cursor()
+             self._checktables()
+-        except pgdb.DatabaseError, e:
++        except pgdb.DatabaseError as e:
+             raise DatabaseException("Postgresql: %s" % (e))
+ 
+     def _get_cur(self):
+         try:
+             if (self._con != None):
+                 return self._con.cursor()
+-        except pgdb.DatabaseError, e:
++        except pgdb.DatabaseError as e:
+             pass
+         server = "%s:%s" % (self._server, self._port)
+         self._con = pgdb.connect(host = server,
+@@ -106,7 +106,7 @@ class PostgresqlDatabase(Database):
+                         + " WHERE %sTAGS.DATA = %%(%s)s") % (self._prefix, self._prefix,
+                                                              self._prefix, self._prefix,
+                                                              paramname)
+-                params[paramname] = cPickle.dumps(t)
++                params[paramname] = pickle.dumps(t)
+             sql += ") EXCEPT SELECT DATA FROM %sTAGS WHERE " %(self._prefix)
+             first = True
+             for t in self._filtertags:
+@@ -122,11 +122,11 @@ class PostgresqlDatabase(Database):
+             tags = []
+             row = cursor.fetchone()
+             while (row != None):
+-                tag = cPickle.loads(str(row[0]))
++                tag = pickle.loads(str(row[0]))
+                 tags.append(tag)
+                 row = cursor.fetchone()
+             return tags
+-        except pgdb.DatabaseError, e:
++        except pgdb.DatabaseError as e:
+             raise DatabaseException("Postgresql: %s" % (e))
+         
+     def getnodes(self, ids):
+@@ -151,11 +151,11 @@ class PostgresqlDatabase(Database):
+             
+             row = cursor.fetchone()
+             while row != None:
+-                node = cPickle.loads(str(row[1]))
++                node = pickle.loads(str(row[1]))
+                 node.set_id(row[0])
+                 nodes.append(node)
+                 row = cursor.fetchone()
+-        except pgdb.DatabaseError, e:
++        except pgdb.DatabaseError as e:
+             raise DatabaseException("Postgresql: %s" % (e))
+         return nodes
+ 
+@@ -165,10 +165,10 @@ class PostgresqlDatabase(Database):
+         try:
+             cursor = self._get_cur()
+             sql = "UPDATE %sNODES SET DATA = %%(data)s WHERE ID = %%(id)d" % (self._prefix)
+-            cursor.execute(sql, {"data":cPickle.dumps(node),
++            cursor.execute(sql, {"data":pickle.dumps(node),
+                                  "id": id})
+             
+-        except pgdb.DatabaseError, e:
++        except pgdb.DatabaseError as e:
+             raise DatabaseException("Postgresql: %s" % (e))
+         self._setnodetags(node)
+         self._checktags()
+@@ -180,10 +180,10 @@ class PostgresqlDatabase(Database):
+             sql = "INSERT INTO %sNODES(DATA) VALUES(%%(data)s)" % (self._prefix)
+             if not isinstance(n, Node): raise DatabaseException(
+                 "Tried to insert foreign object into database [%s]", n)
+-            values = {"data": cPickle.dumps(n)}
++            values = {"data": pickle.dumps(n)}
+             try:
+                 cursor.execute(sql, values)
+-            except pgdb.DatabaseError, e:
++            except pgdb.DatabaseError as e:
+                 raise DatabaseException("Postgresql: %s" % (e))
+             id = self._lastrowid("NODES")
+             n.set_id(id)
+@@ -200,7 +200,7 @@ class PostgresqlDatabase(Database):
+                 sql = "DELETE FROM %sNODES WHERE ID = %%(id)d" % (self._prefix)
+                 cursor.execute(sql, {"id": n.get_id()})
+                 
+-            except pgdb.DatabaseError, e:
++            except pgdb.DatabaseError as e:
+                 raise DatabaseException("Postgresql: %s" % (e))
+             self._deletenodetags(n)
+ 
+@@ -228,7 +228,7 @@ class PostgresqlDatabase(Database):
+                          + " WHERE %sTAGS.DATA = %%(%s)s ") % (self._prefix, self._prefix,
+                                                                self._prefix, self._prefix,
+                                                                paramname))
+-                params[paramname] = cPickle.dumps(t)
++                params[paramname] = pickle.dumps(t)
+         try:
+             cursor.execute(sql, params)
+ 
+@@ -238,13 +238,13 @@ class PostgresqlDatabase(Database):
+                 ids.append(row[0])
+                 row = cursor.fetchone()
+             return ids
+-        except pgdb.DatabaseError, e:
++        except pgdb.DatabaseError as e:
+             raise DatabaseException("Postgresql: %s" % (e))
+ 
+     def _commit(self):
+         try:
+             self._con.commit()
+-        except pgdb.DatabaseError, e:
++        except pgdb.DatabaseError as e:
+             self._con.rollback()
+             raise DatabaseException(
+                 "Postgresql: Error commiting data to db [%s]" % (e))
+@@ -253,11 +253,11 @@ class PostgresqlDatabase(Database):
+         ids = []
+         cursor = self._get_cur()
+         for t in tags:
+-            pickled = cPickle.dumps(t)
++            pickled = pickle.dumps(t)
+             try:
+                 ids.append(self._tagidcache[pickled])
+                 continue
+-            except KeyError, e:
++            except KeyError as e:
+                 pass # not in cache
+             sql = "SELECT ID FROM %sTAGS WHERE DATA = %%(tag)s" % (self._prefix)
+             if not isinstance(t, Tag): raise DatabaseException(
+@@ -276,7 +276,7 @@ class PostgresqlDatabase(Database):
+                     id = self._lastrowid("TAGS")
+                     ids.append(id)
+                     self._tagidcache[pickled] = id
+-            except pgdb.DatabaseError, e:
++            except pgdb.DatabaseError as e:
+                 raise DatabaseException("Postgresql: %s" % (e))
+         return ids
+ 
+@@ -286,7 +286,7 @@ class PostgresqlDatabase(Database):
+             sql = "DELETE FROM %sLOOKUP WHERE NODE = %%(node)d" % (self._prefix)
+             cursor.execute(sql, {"node":node.get_id()})
+             
+-        except pgdb.DatabaseError, e:
++        except pgdb.DatabaseError as e:
+             raise DatabaseException("Postgresql: %s" % (e))
+         
+     def _setnodetags(self, node):
+@@ -300,7 +300,7 @@ class PostgresqlDatabase(Database):
+             try:
+                 cursor = self._get_cur()
+                 cursor.execute(sql, params)
+-            except pgdb.DatabaseError, e:
++            except pgdb.DatabaseError as e:
+                 raise DatabaseException("Postgresql: %s" % (e))
+ 
+     def _checktags(self):
+@@ -311,7 +311,7 @@ class PostgresqlDatabase(Database):
+                    + "(SELECT TAG FROM %sLOOKUP GROUP BY TAG)") % (self._prefix,
+                                                                    self._prefix)
+             cursor.execute(sql)
+-        except pgdb.DatabaseError, e:
++        except pgdb.DatabaseError as e:
+             raise DatabaseException("Postgresql: %s" % (e))
+         self._commit()
+ 
+@@ -352,7 +352,7 @@ class PostgresqlDatabase(Database):
+             
+             try:
+                 self._con.commit()
+-            except pgdb.DatabaseError, e:
++            except pgdb.DatabaseError as e:
+                 self._con.rollback()
+                 raise e
+ 
+@@ -363,7 +363,7 @@ class PostgresqlDatabase(Database):
+         cursor.execute(sql, values)
+         try:
+             self._con.commit()
+-        except pgdb.DatabaseError, e:
++        except pgdb.DatabaseError as e:
+             self._con.rollback()
+             raise DatabaseException(
+                 "Postgresql: Error saving key [%s]" % (e))
+--- pwman/data/drivers/sqlite.py.orig	2007-02-04 18:44:43 UTC
++++ pwman/data/drivers/sqlite.py
+@@ -22,9 +22,9 @@ from pwman.data.tags import Tag
+ from pwman.data.nodes import Node
+ from pwman.data.tags import Tag
+ 
+-from pysqlite2 import dbapi2 as sqlite
++from sqlite3 import dbapi2 as sqlite
+ import pwman.util.config as config
+-import cPickle
++import pickle
+ 
+ class SQLiteDatabase(Database):
+     """SQLite Database implementation"""
+@@ -35,7 +35,7 @@ class SQLiteDatabase(Database):
+ 
+         try:
+             self._filename = config.get_value('Database', 'filename')
+-        except KeyError, e:
++        except KeyError as e:
+             raise DatabaseException(
+                 "SQLite: missing parameter [%s]" % (e))
+ 
+@@ -44,7 +44,7 @@ class SQLiteDatabase(Database):
+             self._con = sqlite.connect(self._filename)
+             self._cur = self._con.cursor()
+             self._checktables()
+-        except sqlite.DatabaseError, e:
++        except sqlite.DatabaseError as e:
+             raise DatabaseException("SQLite: %s" % (s))
+ 
+     def close(self):
+@@ -69,7 +69,7 @@ class SQLiteDatabase(Database):
+                     
+                 sql += ("SELECT NODE FROM LOOKUP OUTER JOIN TAGS ON TAG = TAGS.ID "
+                         + " WHERE TAGS.DATA = ?")
+-                params.append(cPickle.dumps(t))
++                params.append(pickle.dumps(t))
+             sql += ") EXCEPT SELECT DATA FROM TAGS WHERE "
+             first = True
+             for t in self._filtertags:
+@@ -78,18 +78,18 @@ class SQLiteDatabase(Database):
+                 else:
+                     first = False
+                 sql += "TAGS.DATA = ?"
+-                params.append(cPickle.dumps(t))
++                params.append(pickle.dumps(t))
+         try:
+             self._cur.execute(sql, params)
+ 
+             tags = []
+             row = self._cur.fetchone()
+             while (row != None):
+-                tag = cPickle.loads(str(row[0]))
++                tag = pickle.loads(str(row[0]))
+                 tags.append(tag)
+                 row = self._cur.fetchone()
+             return tags
+-        except sqlite.DatabaseError, e:
++        except sqlite.DatabaseError as e:
+             raise DatabaseException("SQLite: %s" % (e))
+         
+     def getnodes(self, ids):
+@@ -101,10 +101,10 @@ class SQLiteDatabase(Database):
+ 
+                 row = self._cur.fetchone()
+                 if row != None:
+-                    node = cPickle.loads(str(row[0]))
++                    node = pickle.loads(str(row[0]))
+                     node.set_id(i)
+                     nodes.append(node)
+-            except sqlite.DatabaseError, e:
++            except sqlite.DatabaseError as e:
+                 raise DatabaseException("SQLite: %s" % (e))
+         return nodes
+ 
+@@ -113,9 +113,9 @@ class SQLiteDatabase(Database):
+                 "Tried to insert foreign object into database [%s]" % node)
+         try:
+             sql = "UPDATE NODES SET DATA = ? WHERE ID = ?";
+-            self._cur.execute(sql, [cPickle.dumps(node), id])
++            self._cur.execute(sql, [pickle.dumps(node), id])
+             
+-        except sqlite.DatabaseError, e:
++        except sqlite.DatabaseError as e:
+             raise DatabaseException("SQLite: %s" % (e))
+         self._setnodetags(node)
+         self._checktags()
+@@ -126,10 +126,10 @@ class SQLiteDatabase(Database):
+             sql = "INSERT INTO NODES(DATA) VALUES(?)"
+             if not isinstance(n, Node): raise DatabaseException(
+                 "Tried to insert foreign object into database [%s]", n)
+-            value = cPickle.dumps(n)
++            value = pickle.dumps(n)
+             try:
+                 self._cur.execute(sql, [value])
+-            except sqlite.DatabaseError, e:
++            except sqlite.DatabaseError as e:
+                 raise DatabaseException("SQLite: %s" % (e))
+             id = self._cur.lastrowid
+             n.set_id(id)
+@@ -145,7 +145,7 @@ class SQLiteDatabase(Database):
+                 sql = "DELETE FROM NODES WHERE ID = ?";
+                 self._cur.execute(sql, [n.get_id()])
+                 
+-            except sqlite.DatabaseError, e:
++            except sqlite.DatabaseError as e:
+                 raise DatabaseException("SQLite: %s" % (e))
+             self._deletenodetags(n)
+ 
+@@ -167,7 +167,7 @@ class SQLiteDatabase(Database):
+                 sql += ("SELECT NODE FROM LOOKUP OUTER JOIN TAGS ON TAG = TAGS.ID"
+                         + " WHERE TAGS.DATA = ? ")
+ 
+-                params.append(cPickle.dumps(t))
++                params.append(pickle.dumps(t))
+         try:
+             self._cur.execute(sql, params)
+ 
+@@ -177,13 +177,13 @@ class SQLiteDatabase(Database):
+                 ids.append(row[0])
+                 row = self._cur.fetchone()
+             return ids
+-        except sqlite.DatabaseError, e:
++        except sqlite.DatabaseError as e:
+             raise DatabaseException("SQLite: %s" % (e))
+ 
+     def _commit(self):
+         try:
+             self._con.commit()
+-        except sqlite.DatabaseError, e:
++        except sqlite.DatabaseError as e:
+             self._con.rollback()
+             raise DatabaseException(
+                 "SQLite: Error commiting data to db [%s]" % (e))
+@@ -194,7 +194,7 @@ class SQLiteDatabase(Database):
+             sql = "SELECT ID FROM TAGS WHERE DATA = ?"
+             if not isinstance(t, Tag): raise DatabaseException(
+                 "Tried to insert foreign object into database [%s]", t)
+-            data = cPickle.dumps(t)
++            data = pickle.dumps(t)
+             
+             try:
+                 self._cur.execute(sql, [data])
+@@ -205,7 +205,7 @@ class SQLiteDatabase(Database):
+                     sql = "INSERT INTO TAGS(DATA) VALUES(?)"
+                     self._cur.execute(sql, [data])
+                     ids.append(self._cur.lastrowid)
+-            except sqlite.DatabaseError, e:
++            except sqlite.DatabaseError as e:
+                 raise DatabaseException("SQLite: %s" % (e))
+         return ids
+ 
+@@ -214,7 +214,7 @@ class SQLiteDatabase(Database):
+             sql = "DELETE FROM LOOKUP WHERE NODE = ?"
+             self._cur.execute(sql, [node.get_id()])
+             
+-        except sqlite.DatabaseError, e:
++        except sqlite.DatabaseError as e:
+             raise DatabaseException("SQLite: %s" % (e))
+         self._commit()
+         
+@@ -228,7 +228,7 @@ class SQLiteDatabase(Database):
+             
+             try:
+                 self._cur.execute(sql, params)
+-            except sqlite.DatabaseError, e:
++            except sqlite.DatabaseError as e:
+                 raise DatabaseException("SQLite: %s" % (e))
+         self._commit()
+ 
+@@ -236,7 +236,7 @@ class SQLiteDatabase(Database):
+         try:
+             sql = "DELETE FROM TAGS WHERE ID NOT IN (SELECT TAG FROM LOOKUP GROUP BY TAG)"
+             self._cur.execute(sql)
+-        except sqlite.DatabaseError, e:
++        except sqlite.DatabaseError as e:
+             raise DatabaseException("SQLite: %s" % (e))
+         self._commit()
+         
+@@ -263,7 +263,7 @@ class SQLiteDatabase(Database):
+             
+             try:
+                 self._con.commit()
+-            except DatabaseError, e:
++            except DatabaseError as e:
+                 self._con.rollback()
+                 raise e
+ 
+@@ -273,7 +273,7 @@ class SQLiteDatabase(Database):
+         self._cur.execute(sql, values)
+         try:
+             self._con.commit()
+-        except sqlite.DatabaseError, e:
++        except sqlite.DatabaseError as e:
+             self._con.rollback()
+             raise DatabaseException(
+                 "SQLite: Error saving key [%s]" % (e))
+--- pwman/data/factory.py.orig	2007-02-04 18:44:43 UTC
++++ pwman/data/factory.py
+@@ -45,19 +45,19 @@ def create(type):
+         try: 
+             from pwman.data.drivers import sqlite
+             db = sqlite.SQLiteDatabase()
+-        except ImportError, e:
++        except ImportError as e:
+             raise DatabaseException("python-sqlite not installed")
+     elif (type == "Postgresql"):
+         try:
+             from pwman.data.drivers import postgresql
+             db = postgresql.PostgresqlDatabase()
+-        except ImportError, e:
++        except ImportError as e:
+             raise DatabaseException("python-pygresql not installed")
+     elif (type == "MySQL"):
+         try:
+             from pwman.data.drivers import mysql
+             db = mysql.MySQLDatabase()
+-        except ImportError, e:
++        except ImportError as e:
+             raise DatabaseException("python-mysqldb not installed")
+     else:
+         raise DatabaseException("Unknown database type specified")
+--- pwman/ui/cli.py.orig	2007-02-04 18:44:44 UTC
++++ pwman/ui/cli.py
+@@ -40,12 +40,12 @@ import traceback
+ try:
+     import readline
+     _readline_available = True
+-except ImportError, e:
++except ImportError as e:
+     _readline_available = False
+ 
+ class CLICallback(Callback):
+     def getinput(self, question):
+-        return raw_input(question)
++        return input(question)
+     
+     def getsecret(self, question):
+         return getpass.getpass(question + ":")
+@@ -67,19 +67,19 @@ class ANSI(object):
+ class PwmanCli(cmd.Cmd):
+     def error(self, exception):
+         if (isinstance(exception, KeyboardInterrupt)):
+-            print
++            print()
+         else:
+ #            traceback.print_exc()
+-            print "Error: %s " % (exception)
++            print("Error: %s " % (exception))
+     
+     def do_EOF(self, args):
+         return self.do_exit(args)
+ 
+     def do_exit(self, args):
+-        print
++        print()
+         try:
+             self._db.close()
+-        except Exception, e:
++        except Exception as e:
+             self.error(e)
+         return True
+ 
+@@ -92,8 +92,8 @@ class PwmanCli(cmd.Cmd):
+             if m == None:
+                 ids.append(int(i))
+             else:
+-                ids += range(int(m.group(1)),
+-                             int(m.group(2))+1)
++                ids += list(range(int(m.group(1)),
++                             int(m.group(2))+1))
+         return ids
+     
+     def get_filesystem_path(self, default=""):
+@@ -108,7 +108,7 @@ class PwmanCli(cmd.Cmd):
+             length = getinput("Password length (default 7): ", "7")
+             length = int(length)
+             (password, dumpme) = generator.generate_password(length, length)
+-            print "New password: %s" % (password)
++            print("New password: %s" % (password))
+             return password
+         else:
+             return password
+@@ -153,30 +153,30 @@ class PwmanCli(cmd.Cmd):
+         
+     def print_node(self, node):
+         width = str(_defaultwidth)
+-        print "Node %d." % (node.get_id())
+-        print ("%"+width+"s %s") % (typeset("Username:", ANSI.Red),
+-                                    node.get_username())
+-        print ("%"+width+"s %s") % (typeset("Password:", ANSI.Red),
+-                                    node.get_password())
+-        print ("%"+width+"s %s") % (typeset("Url:", ANSI.Red),
+-                                    node.get_url())
+-        print ("%"+width+"s %s") % (typeset("Notes:", ANSI.Red),
+-                                    node.get_notes())
+-        print typeset("Tags: ", ANSI.Red),
++        print("Node %d." % (node.get_id()))
++        print(("%"+width+"s %s") % (typeset("Username:", ANSI.Red),
++                                    node.get_username()))
++        print(("%"+width+"s %s") % (typeset("Password:", ANSI.Red),
++                                    node.get_password()))
++        print(("%"+width+"s %s") % (typeset("Url:", ANSI.Red),
++                                    node.get_url()))
++        print(("%"+width+"s %s") % (typeset("Notes:", ANSI.Red),
++                                    node.get_notes()))
++        print(typeset("Tags: ", ANSI.Red), end=' ')
+         for t in node.get_tags():
+-            print "%s " % t.get_name(),
+-        print
++            print("%s " % t.get_name(), end=' ')
++        print()
+ 
+     def do_tags(self, arg):
+         tags = self._db.listtags()
+         if len(tags) > 0:
+             tags[0].get_name() # hack to get password request before output
+-        print "Tags: ",
++        print("Tags: ", end=' ')
+         if len(tags) == 0:
+-            print "None",
++            print("None", end=' ')
+         for t in tags:
+-            print "%s " % (t.get_name()),
+-        print
++            print("%s " % (t.get_name()), end=' ')
++        print()
+ 
+     def complete_filter(self, text, line, begidx, endidx):
+         strings = []
+@@ -202,19 +202,19 @@ class PwmanCli(cmd.Cmd):
+             self._db.filter(tags)
+ 
+             tags = self._db.currenttags()
+-            print "Current tags: ",
++            print("Current tags: ", end=' ')
+             if len(tags) == 0:
+-                print "None",
++                print("None", end=' ')
+             for t in tags:
+-                print "%s " % (t.get_name()),
+-            print
+-        except Exception, e:
++                print("%s " % (t.get_name()), end=' ')
++            print()
++        except Exception as e:
+             self.error(e)
+ 
+     def do_clear(self, args):
+         try:
+             self._db.clearfilter()
+-        except Exception, e:
++        except Exception as e:
+             self.error(e)
+ 
+ 
+@@ -225,7 +225,7 @@ class PwmanCli(cmd.Cmd):
+                 i = int(i)
+                 node = self._db.getnodes([i])[0]
+                 menu = CliMenu()
+-                print "Editing node %d." % (i)
++                print("Editing node %d." % (i))
+                 menu.add(CliMenuItem("Username", self.get_username,
+                                      node.get_username,
+                                      node.set_username))
+@@ -244,7 +244,7 @@ class PwmanCli(cmd.Cmd):
+ 
+                 menu.run()
+                 self._db.editnode(i, node)
+-            except Exception, e:
++            except Exception as e:
+                 self.error(e)
+ 
+ 
+@@ -263,7 +263,7 @@ class PwmanCli(cmd.Cmd):
+                     type = select("Select filetype:", types)
+                     imp = importer.Importer.get(type)
+                     imp.import_data(self._db, i)
+-        except Exception, e:
++        except Exception as e:
+             self.error(e)
+ 
+     def do_export(self, arg):
+@@ -292,8 +292,8 @@ class PwmanCli(cmd.Cmd):
+                 if not b:
+                     return
+                 exp.export_data(self._db, file, nodes)
+-            print "Data exported."
+-        except Exception, e:
++            print("Data exported.")
++        except Exception as e:
+             self.error(e)
+ 
+     def do_new(self, arg):
+@@ -306,8 +306,8 @@ class PwmanCli(cmd.Cmd):
+             tags = self.get_tags()
+             node.set_tags(tags)
+             self._db.addnodes([node])
+-            print "Password ID: %d" % (node.get_id())
+-        except Exception, e:
++            print("Password ID: %d" % (node.get_id()))
++        except Exception as e:
+             self.error(e)
+ 
+     def do_print(self, arg):
+@@ -315,7 +315,7 @@ class PwmanCli(cmd.Cmd):
+             try:
+                 node = self._db.getnodes([i])
+                 self.print_node(node[0])
+-            except Exception, e:
++            except Exception as e:
+                 self.error(e)
+ 
+     def do_rm(self, arg):
+@@ -330,8 +330,8 @@ class PwmanCli(cmd.Cmd):
+                               % (n.get_username(), n.get_url()), False)
+                  if b == True:
+                      self._db.removenodes([n])
+-                     print "%s@%s deleted" % (n.get_username(), n.get_url())
+-         except Exception, e:
++                     print("%s@%s deleted" % (n.get_username(), n.get_url()))
++         except Exception as e:
+              self.error(e)
+ 
+     def do_ls(self, args):
+@@ -359,28 +359,28 @@ class PwmanCli(cmd.Cmd):
+                 if len(tagstring) > 20:
+                     tagstring = tagstring[:17] + "..."
+                     
+-                print typeset("%5d. %-30s %-20s" % (n.get_id(), name, tagstring),
+-                              ANSI.Yellow, False)
++                print(typeset("%5d. %-30s %-20s" % (n.get_id(), name, tagstring),
++                              ANSI.Yellow, False))
+                 i += 1
+                 if i > 23:
+                     i = 0
+                     c = getonechar("Press <Space> for more, or 'Q' to cancel")
+                     if c == 'q':
+                         break
+-        except Exception, e:
++        except Exception as e:
+             self.error(e)
+ 
+     def do_forget(self, args):
+         try:
+             enc = CryptoEngine.get()
+             enc.forget()
+-        except Exception,e:
++        except Exception as e:
+             self.error(e)
+             
+     def do_passwd(self, args):
+         try:
+             self._db.changepassword()
+-        except Exception, e:
++        except Exception as e:
+             self.error(e)
+ 
+     def do_set(self, args):
+@@ -388,29 +388,29 @@ class PwmanCli(cmd.Cmd):
+         try:
+             if len(argstrs) == 0:
+                 conf = config.get_conf()
+-                for s in conf.keys():
+-                    for n in conf[s].keys():
+-                        print "%s.%s = %s" % (s, n, conf[s][n])
++                for s in list(conf.keys()):
++                    for n in list(conf[s].keys()):
++                        print("%s.%s = %s" % (s, n, conf[s][n]))
+             elif len(argstrs) == 1:
+                 r = re.compile("(.+)\.(.+)")
+                 m = r.match(argstrs[0])
+                 if m is None or len(m.groups()) != 2:
+-                    print "Invalid option format"
++                    print("Invalid option format")
+                     self.help_set()
+                     return
+-                print "%s.%s = %s" % (m.group(1), m.group(2),
+-                                      config.get_value(m.group(1), m.group(2)))
++                print("%s.%s = %s" % (m.group(1), m.group(2),
++                                      config.get_value(m.group(1), m.group(2))))
+             elif len(argstrs) == 2:
+                 r = re.compile("(.+)\.(.+)")
+                 m = r.match(argstrs[0])
+                 if m is None or len(m.groups()) != 2:
+-                    print "Invalid option format"
++                    print("Invalid option format")
+                     self.help_set()
+                     return
+                 config.set_value(m.group(1), m.group(2), argstrs[1])
+             else:
+                 self.help_set()
+-        except Exception, e:
++        except Exception as e:
+             self.error(e)
+ 
+     def do_save(self, args):
+@@ -420,103 +420,103 @@ class PwmanCli(cmd.Cmd):
+                 config.save(argstrs[0])
+             else:
+                 config.save()
+-            print "Config saved."
+-        except Exception, e:
++            print("Config saved.")
++        except Exception as e:
+             self.error(e)
+     
+     ##
+     ## Help functions
+     ##
+     def usage(self, string):
+-        print "Usage: %s" % (string)
++        print("Usage: %s" % (string))
+         
+     def help_ls(self):
+         self.help_list()
+         
+     def help_list(self):
+         self.usage("list")
+-        print "List nodes that match current filter. ls is an alias."
++        print("List nodes that match current filter. ls is an alias.")
+ 
+     def help_EOF(self):
+         self.help_quit()
+ 
+     def help_delete(self):
+         self.usage("delete <ID> ...")
+-        print "Deletes nodes. rm is an alias."
++        print("Deletes nodes. rm is an alias.")
+         self._mult_id_help()
+ 
+     def help_help(self):
+         self.usage("help [topic]")
+-        print "Prints a help message for a command."
++        print("Prints a help message for a command.")
+     
+     def help_edit(self):
+         self.usage("edit <ID> ... ")
+-        print "Edits a nodes."
++        print("Edits a nodes.")
+         self._mult_id_help()
+     
+     def help_import(self):
+         self.usage("import [filename] ...")
+-        print "Imports a nodes from a file."
++        print("Imports a nodes from a file.")
+ 
+     def help_export(self):
+         self.usage("export <ID> ... ")
+-        print "Exports a list of ids to an external format. If no IDs are specified, then all nodes under the current filter are exported."
++        print("Exports a list of ids to an external format. If no IDs are specified, then all nodes under the current filter are exported.")
+         self._mult_id_help()
+         
+     def help_new(self):
+         self.usage("new")
+-        print "Creates a new node."
++        print("Creates a new node.")
+     
+     def help_rm(self):
+         self.help_delete()
+     
+     def help_print(self):
+         self.usage("print <ID> ...")
+-        print "Displays a node. ",
++        print("Displays a node. ", end=' ')
+         self._mult_id_help()
+ 
+     def _mult_id_help(self):
+-        print "Multiple ids can be specified, separated by a space. A range of ids can be specified in the format n-N. e.g. 10-20 would specify all ids from 10 to 20 inclusive."
++        print("Multiple ids can be specified, separated by a space. A range of ids can be specified in the format n-N. e.g. 10-20 would specify all ids from 10 to 20 inclusive.")
+     
+     def help_exit(self):
+         self.usage("exit")
+-        print "Exits the application."
++        print("Exits the application.")
+ 
+     def help_save(self):
+         self.usage("save [filename]")
+-        print "Saves the current configuration to [filename]. If no filename is given, the configuration is saved to the file from which the initial configuration was loaded."
++        print("Saves the current configuration to [filename]. If no filename is given, the configuration is saved to the file from which the initial configuration was loaded.")
+ 
+     def help_set(self):
+         self.usage("set [configoption] [value]")
+-        print "Sets a configuration option. If no value is specified, the current value for [configoption] is output. If neither [configoption] nor [value] are specified, the whole current configuration is output. [configoption] must be of the format <section>.<option>"
++        print("Sets a configuration option. If no value is specified, the current value for [configoption] is output. If neither [configoption] nor [value] are specified, the whole current configuration is output. [configoption] must be of the format <section>.<option>")
+         
+     def help_ls(self):
+         self.help_list()
+     
+     def help_passwd(self):
+         self.usage("passwd")
+-        print "Changes the password on the database. "
++        print("Changes the password on the database. ")
+ 
+     def help_forget(self):
+         self.usage("forget")
+-        print "Forgets the database password. Your password will need to be reentered before accessing the database again."
++        print("Forgets the database password. Your password will need to be reentered before accessing the database again.")
+ 
+     def help_clear(self):
+         self.usage("clear")
+-        print "Clears the filter criteria. "
++        print("Clears the filter criteria. ")
+ 
+     def help_filter(self):
+         self.usage("filter <tag> ...")
+-        print "Filters nodes on tag. Arguments can be zero or more tags. Displays current tags if called without arguments."
++        print("Filters nodes on tag. Arguments can be zero or more tags. Displays current tags if called without arguments.")
+ 
+     def help_tags(self):
+         self.usage("tags")
+-        print "Displays all tags in used in the database."
++        print("Displays all tags in used in the database.")
+         
+     def postloop(self):
+         try:
+             readline.write_history_file(self._historyfile)
+-        except Exception, e:
++        except Exception as e:
+             pass
+     
+     def __init__(self, db):
+@@ -530,13 +530,13 @@ class PwmanCli(cmd.Cmd):
+             enc.set_callback(CLICallback())
+             self._db = db
+             self._db.open()
+-        except Exception, e:
++        except Exception as e:
+             self.error(e)
+             sys.exit(1)
+ 
+         try:
+             readline.read_history_file(self._historyfile)
+-        except Exception, e:
++        except Exception as e:
+             pass
+         
+         _colors = True
+@@ -549,7 +549,7 @@ _colors = True
+ 
+ def getonechar(question, width=_defaultwidth):
+     question = "%s " % (question)
+-    print question.ljust(width),
++    print(question.ljust(width), end=' ')
+     sys.stdout.flush()
+         
+     fd = sys.stdin.fileno()
+@@ -559,7 +559,7 @@ def getonechar(question, width=_defaultwidth):
+         ch = os.read(fd, 1)
+     finally:
+         tty.tcsetattr(fd, tty.TCSAFLUSH, tty_mode)
+-    print ch
++    print(ch)
+     return ch
+     
+ def getyesno(question, defaultyes=False, width=_defaultwidth):
+@@ -583,14 +583,14 @@ def getyesno(question, defaultyes=False, width=_defaul
+ 
+ def getinput(question, default="", completer=None, width=_defaultwidth):
+     if (not _readline_available):
+-        return raw_input(question.ljust(width))
++        return input(question.ljust(width))
+     else:
+         def defaulter(): readline.insert_text(default)
+         readline.set_startup_hook(defaulter)
+         oldcompleter = readline.get_completer()
+         readline.set_completer(completer)
+         
+-        x = raw_input(question.ljust(width))
++        x = input(question.ljust(width))
+ 
+         readline.set_completer(oldcompleter)
+         readline.set_startup_hook()
+@@ -598,7 +598,7 @@ def getinput(question, default="", completer=None, wid
+ 
+ def getpassword(question, width=_defaultwidth, echo=False):
+     if echo:
+-        print question.ljust(width),
++        print(question.ljust(width), end=' ')
+         return sys.stdin.readline().rstrip()
+     else:
+         return getpass.getpass(question.ljust(width))
+@@ -619,7 +619,7 @@ def typeset(text, color, bold=False, underline=False):
+ 
+ def select(question, possible):
+     for i in range(0, len(possible)):
+-        print ("%d - %-"+str(_defaultwidth)+"s") % (i+1, possible[i])
++        print(("%d - %-"+str(_defaultwidth)+"s") % (i+1, possible[i]))
+     while 1:
+         input = getonechar(question)
+         if input.isdigit() and int(input) in range(1, len(possible)+1):
+@@ -633,7 +633,7 @@ class CliMenu(object):
+         if (isinstance(item, CliMenuItem)):
+             self.items.append(item)
+         else:
+-            print item.__class__
++            print(item.__class__)
+ 
+     def run(self):
+         while True:
+@@ -648,9 +648,9 @@ class CliMenu(object):
+                 else:
+                     currentstr = current
+                     
+-                print ("%d - %-"+str(_defaultwidth)+"s %s") % (i, x.name+":",
+-                                                               currentstr)
+-            print "%c - Finish editing" % ('X')
++                print(("%d - %-"+str(_defaultwidth)+"s %s") % (i, x.name+":",
++                                                               currentstr))
++            print("%c - Finish editing" % ('X'))
+             option = getonechar("Enter your choice:")
+             try:
+                 # substract 1 because array subscripts start at 1
+@@ -660,7 +660,7 @@ class CliMenu(object):
+             except (ValueError,IndexError):
+                 if (option.upper() == 'X'):
+                     break
+-                print "Invalid selection"
++                print("Invalid selection")
+                 
+ class CliMenuItem(object):
+     def __init__(self, name, editor, getter, setter):
+--- pwman/util/config.py.orig	2007-02-04 18:44:44 UTC
++++ pwman/util/config.py
+@@ -17,7 +17,7 @@
+ # Copyright (C) 2006 Ivan Kelly <ivan@ivankelly.net>
+ #============================================================================
+ 
+-from ConfigParser import ConfigParser,ParsingError
++from configparser import ConfigParser,ParsingError
+ import copy
+ 
+ class ConfigException(Exception):
+@@ -41,17 +41,17 @@ def set_defaults(defaults):
+ 
+ def add_defaults(defaults):
+     global _defaults
+-    for n in defaults.keys():
+-        if not _defaults.has_key(n):
++    for n in list(defaults.keys()):
++        if n not in _defaults:
+             _defaults[n] = dict()
+-        for k in defaults[n].keys():
++        for k in list(defaults[n].keys()):
+             _defaults[n][k] = defaults[n][k]
+     
+ def get_value(section, name):
+     global _conf, _defaults
+     try:
+         return _conf[section][name]
+-    except KeyError, e:
++    except KeyError as e:
+         pass
+     
+     try:
+@@ -59,14 +59,14 @@ def get_value(section, name):
+         set_value(section, name, value)
+         return value
+     
+-    except KeyError, e:
++    except KeyError as e:
+         pass
+     
+     return ''
+ 
+ def set_value(section, name, value):
+     global _conf
+-    if not _conf.has_key(section):
++    if section not in _conf:
+         _conf[section] = dict()
+     _conf[section][name] = value
+ 
+@@ -88,9 +88,9 @@ def load(filename):
+         try:
+             fp = file(filename, "r")
+             res = parser.readfp(fp)
+-        except ParsingError,e:
++        except ParsingError as e:
+             raise ConfigException(e)
+-        except IOError, e:
++        except IOError as e:
+             raise ConfigNoConfigException(e)
+     finally:
+         if (fp):
+@@ -107,18 +107,18 @@ def save(filename=None):
+         filename = _file
+         
+     parser = ConfigParser()
+-    for key in _conf.keys():
++    for key in list(_conf.keys()):
+         if not parser.has_section(key):
+             parser.add_section(key)
+         sectiondict = _conf[key]
+         if (type(sectiondict) == dict):
+-            for optionkey in sectiondict.keys():
++            for optionkey in list(sectiondict.keys()):
+                 parser.set(key, optionkey, sectiondict[optionkey])
+     try:
+         fp = file(filename, "w+")
+         parser.write(fp)
+         fp.close()
+-    except IOError, e:
++    except IOError as e:
+         raise ConfigException(str(e))
+         
+                 

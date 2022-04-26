@@ -2,7 +2,7 @@
 
 PORTNAME=	octave-forge-missing-functions
 PORTVERSION=	1.0.2
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

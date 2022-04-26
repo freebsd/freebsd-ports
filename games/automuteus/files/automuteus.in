@@ -16,7 +16,7 @@ rcvar="automuteus_enable"
 load_rc_config $name
 
 : ${automuteus_enable:="NO"}
-: ${automuteus_conf:="%%PREFIX%%/etc/automuteus/config.txt"}
+: ${automuteus_conf:="%%PREFIX%%/etc/automuteus/automuteus.conf"}
 : ${automuteus_log:="/var/log/automuteus"}
 
 command="%%PREFIX%%/bin/automuteus"
@@ -27,10 +27,10 @@ stop_cmd="automuteus_stop"
 automuteus_start()
 {
 	check_startmsgs && echo "Starting ${name}."
+	source ${automuteus_conf}
 	/usr/sbin/daemon \
 		-p ${pidfile} \
 		/usr/bin/env \
-		"CONFIG_PATH=${automuteus_conf}" \
 		"LOG_PATH=${automuteus_log}" \
 		${command}
 }

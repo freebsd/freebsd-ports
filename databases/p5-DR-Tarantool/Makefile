@@ -14,7 +14,7 @@ COMMENT=	Perl driver for Tarantool
 LICENSE=	ART10
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+RUN_DEPENDS=	p5-AnyEvent>=0,1:devel/p5-AnyEvent \
 		p5-Devel-GlobalDestruction>=0:devel/p5-Devel-GlobalDestruction \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils

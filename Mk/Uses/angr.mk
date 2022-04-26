@@ -25,17 +25,17 @@ _INCLUDE_USES_ANGR_MK=	yes
 
 # Arguments validation.
 _valid_ARGS=    binaries nose
-.for _arg in ${angr_ARGS}
-.  if !${_valid_ARGS:M${_arg}}
+.  for _arg in ${angr_ARGS}
+.    if !${_valid_ARGS:M${_arg}}
 IGNORE=	USES=angr: invalid argument: ${_arg}
-.  endif
-.endfor
+.    endif
+.  endfor
 
 # Set the default angr version for all angr-related ports.
 ANGR_VERSION?=		9.0.5405
 ANGR_BINARIES_TAGNAME?=	v${ANGR_VERSION}
 
-.if "${angr_ARGS:Mbinaries}" != ""
+.  if "${angr_ARGS:Mbinaries}" != ""
 USE_GITHUB?=	yes
 GH_TUPLE+=	angr:binaries:${ANGR_BINARIES_TAGNAME}:binaries
 
@@ -43,15 +43,15 @@ GH_TUPLE+=	angr:binaries:${ANGR_BINARIES_TAGNAME}:binaries
 pre-test: angr-provide-test-binaries
 angr-provide-test-binaries:
 	@${LN} -Fs ${WRKSRC_binaries} ${WRKDIR}/binaries
-.endif # "${angr_ARGS:Mbinaries}" != ""
+.  endif # "${angr_ARGS:Mbinaries}" != ""
 
-.if "${angr_ARGS:Mnose}" != ""
+.  if "${angr_ARGS:Mnose}" != ""
 # Ensure that python.mk variables are available.
-.  if !${USES:Mpython*}
+.    if !${USES:Mpython*}
 python_ARGS=	test
 _USES_POST+=		python:test
 .include "${USESDIR}/python.mk"
-.  endif # !${USES:Mpython*}
+.    endif # !${USES:Mpython*}
 
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 TEST_WRKSRC?=	${WRKSRC}/tests
@@ -60,6 +60,6 @@ ANGR_NOSETESTS?=	nosetests-${PYTHON_VER}
 
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${ANGR_NOSETESTS})
-.endif # "${angr_ARGS:Mnose}" != ""
+.  endif # "${angr_ARGS:Mnose}" != ""
 
 .endif

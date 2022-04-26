@@ -1,0 +1,22 @@
+--- src/zope/generations/generations.py.orig	2011-12-22 19:48:30 UTC
++++ src/zope/generations/generations.py
+@@ -19,8 +19,8 @@ import transaction
+ import zope.component
+ import zope.interface
+ 
+-from interfaces import GenerationTooHigh, GenerationTooLow, UnableToEvolve
+-from interfaces import ISchemaManager, IInstallableSchemaManager
++from .interfaces import GenerationTooHigh, GenerationTooLow, UnableToEvolve
++from .interfaces import ISchemaManager, IInstallableSchemaManager
+ 
+ 
+ logger = logging.getLogger('zope.generations')
+@@ -147,7 +147,7 @@ class SchemaManager(object):
+ 
+         try:
+             evolver = __import__(name, {}, {}, ['*'])
+-        except ImportError, m:
++        except ImportError as m:
+             if str(m) not in ('No module named %s' % name,
+                               'No module named install'):
+                 # This was an import error *within* the module, so we re-raise.

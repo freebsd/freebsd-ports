@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}unix
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Utility for displaying AVI header information
 
+DEPRECATED=	Last release in 2008, please consider using multimedia/mediainfo or multimedia/ffmpeg instead
+EXPIRATION_DATE=2022-06-30
+
 USES=		bison gmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

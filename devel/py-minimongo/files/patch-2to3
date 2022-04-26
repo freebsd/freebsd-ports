@@ -1,0 +1,29 @@
+--- minimongo/config.py.orig	2011-04-13 04:54:06 UTC
++++ minimongo/config.py
+@@ -31,7 +31,7 @@ def _resolve_name(name, package, level):
+     if not hasattr(package, 'rindex'):
+         raise ValueError("'package' not set to a string")
+     dot = len(package)
+-    for x in xrange(level, 1, -1):
++    for x in range(level, 1, -1):
+         try:
+             dot = package.rindex('.', 0, dot)
+         except ValueError:
+@@ -66,7 +66,7 @@ if __name__ != '__main__':
+ 
+     try:
+         settings_modules.append(os.environ['MINIMONGO_SETTINGS_MODULE'])
+-    except KeyError, e:
++    except KeyError as e:
+         pass
+ 
+     # Here are the other 2 places that we try to import configs from:
+@@ -81,7 +81,7 @@ if __name__ != '__main__':
+             # Once we get a successfull config module import, we break out
+             # of the loop above.
+             break
+-        except ImportError, exc:
++        except ImportError as exc:
+             # Error importing this modlue, so we continue
+             pass
+ 

@@ -166,6 +166,7 @@ include/inn/xwrite.h
 lib/perl/INN/Config.pm
 lib/perl/INN/Utils/Shlock.pm
 lib/innreport_inn.pm
+lib/innreport-display.conf
 lib/innshellvars
 lib/innshellvars.pl
 lib/innshellvars.tcl

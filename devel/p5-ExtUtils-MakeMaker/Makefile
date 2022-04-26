@@ -1,7 +1,7 @@
 # Created by: Michael Johnson <ahze@ahze.net>
 
 PORTNAME=	ExtUtils-MakeMaker
-PORTVERSION=	7.62
+PORTVERSION=	7.64
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

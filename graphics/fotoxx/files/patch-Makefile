@@ -1,4 +1,4 @@
---- Makefile.orig	2022-01-27 10:17:01 UTC
+--- Makefile.orig	2022-04-01 11:30:07 UTC
 +++ Makefile
 @@ -1,40 +1,12 @@
  #  fotoxx Makefile
@@ -8,7 +8,7 @@
 -#  export DEBUG=x          debug build with address checking
  
 -
--#  Try to included fixed champlain-tile.h but none of this works
+-#  Try to fix warning from champlain-tile.h but none of this works
 -#  CXXFLAGS += -D GTimeVal=GDateTime
 -#  MAKEDIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 -#  CXXFLAGS += -I $(MAKEDIR)
@@ -34,7 +34,7 @@
  PKG_CONFIG ?= pkg-config
  
  CFLAGS = $(CXXFLAGS) $(CPPFLAGS) -c                                           \
-          `$(PKG_CONFIG) --cflags gtk+-3.0 --libs champlain-gtk-0.12`          \
+          `$(PKG_CONFIG) --cflags gtk+-3.0 --libs champlain-gtk-0.12`
  
  LIBS = `$(PKG_CONFIG) --libs gtk+-3.0`                                              \
 -         -lrt -lpthread -llcms2 -ltiff -lpng -ljpeg                                 \

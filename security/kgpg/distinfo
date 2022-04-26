@@ -1,3 +1,3 @@
-TIMESTAMP = 1646143083
-SHA256 (KDE/release-service/21.12.3/kgpg-21.12.3.tar.xz) = 632bcf685fc9604ecc09933d0257533fd208177abba75bc14c853cdec91bf8d7
-SIZE (KDE/release-service/21.12.3/kgpg-21.12.3.tar.xz) = 2955144
+TIMESTAMP = 1650101798
+SHA256 (KDE/release-service/22.04.0/kgpg-22.04.0.tar.xz) = 89c46c9d7137ef667ee8e1e80b8e25028d463c8355261c7d027b13e569c8e83c
+SIZE (KDE/release-service/22.04.0/kgpg-22.04.0.tar.xz) = 2955680

@@ -2,6 +2,7 @@
 
 PORTNAME=	ndpi
 PORTVERSION=	4.2.d20220210
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -11,7 +12,8 @@ COMMENT=	NTOP-maintained superset of the popular OpenDPI library
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjson-c.so:devel/json-c \
+LIB_DEPENDS=	librrd.so:databases/rrdtool \
+		libjson-c.so:devel/json-c \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 

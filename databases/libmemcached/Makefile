@@ -2,7 +2,7 @@ PORTNAME=	libmemcached
 PORTVERSION=	1.0.18
 PORTREVISION=	7
 CATEGORIES=	databases
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/libmemcached/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C and C++ client library to the memcached server

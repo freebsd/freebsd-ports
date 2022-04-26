@@ -1,5 +1,5 @@
---- src/imapd/Makefile.orig	2013-06-21 23:29:17.000000000 +0200
-+++ src/imapd/Makefile	2014-12-14 14:44:16.000000000 +0100
+--- src/imapd/Makefile.orig	2022-04-17 00:12:02 UTC
++++ src/imapd/Makefile
 @@ -26,11 +26,11 @@
  #     http://www.apache.org/licenses/LICENSE-2.0
  
@@ -16,18 +16,7 @@
  SHELL= /bin/sh
  
  
-@@ -38,7 +38,9 @@
- # causes the "Manage Mail" menu item to open the given URL, e.g. to point to
- # an alternative IMAP client (e.g. Pine) or perhaps to a homebrew mail
- # account management page.
--#NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://sourceforge.net/projects/re-alpine\"
-+.if defined(WITH_NETSCAPE_BRAIN_DAMAGE)
-+NSBD= -DNETSCAPE_BRAIN_DAMAGE=\"http://sourceforge.net/projects/re-alpine\"
-+.endif
- 
- # Un-comment to enable the ESEARCH command.  Unfortunately, the iOS4 Mail
- # client misinterprets the ESEARCH results due to an ambiguity in RFC 4731.
-@@ -46,23 +44,17 @@
+@@ -46,23 +46,17 @@ SHELL= /bin/sh
  
  # Get local definitions from c-client directory
  
@@ -40,7 +29,7 @@
  	-DALERTFILE=\"$(ALERT)\" -DNNTPFILE=\"$(NNTP)\" \
  	-DUSERALERTFILE=\"$(USERALERT)\" -DSHUTDOWNFILE=\"$(SHUTDOWN)\"
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
-+LDFLAGS+=	$(EXTRALDFLAGS) -L$(LOCALBASE)/lib -lc-client4
++LDFLAGS+=	$(EXTRALDFLAGS) -L$(LOCALBASE)/lib -lc-client
  
  all:	imapd
  

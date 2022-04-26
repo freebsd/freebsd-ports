@@ -1,0 +1,5 @@
+This is a PEP 561 type stub package for the `termcolor` package.
+It can be used by type-checking tools like mypy, PyCharm, pytype
+etc. to check code that uses `termcolor`.
+
+WWW: https://pypi.org/project/types-termcolor/

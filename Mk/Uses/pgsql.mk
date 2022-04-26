@@ -45,15 +45,15 @@ VALID_PGSQL_VER=	10 11 12 13 14
 #PGSQL99_LIBVER=6
 
 PGSQL_LIBVER=	5
-.for v in ${VALID_PGSQL_VER:S,.,,}
+.  for v in ${VALID_PGSQL_VER:S,.,,}
 PGSQL$v_LIBVER?=	${PGSQL_LIBVER}
-.endfor
+.  endfor
 
-.for v in ${PGSQL_DEFAULT}
-.  if ! ${VALID_PGSQL_VER:M$v}
+.  for v in ${PGSQL_DEFAULT}
+.    if ! ${VALID_PGSQL_VER:M$v}
 IGNORE=		Invalid PGSQL default version ${PGSQL_DEFAULT}; valid versions are ${VALID_PGSQL_VER}
-.  endif
-.endfor
+.    endif
+.  endfor
 
 .  for w in WITH DEFAULT
 .    ifdef $w_PGSQL_VER
@@ -134,20 +134,20 @@ PGSQL_VER=	${PGSQL_DEFAULT}
 PGSQL_VER_NODOT=	${PGSQL_VER:S,.,,}
 
 # And now we are checking if we can use it
-.   if defined(PGSQL${PGSQL_VER_NODOT}_LIBVER)
+.  if defined(PGSQL${PGSQL_VER_NODOT}_LIBVER)
 # Compat.  Please DO NOT use IGNORE_WITH_PGSQL!
 .    if defined(IGNORE_WITH_PGSQL)
 DEV_WARNING+=	"Do not set IGNORE_WITH_PGSQL, use the version argument to USES=pgsql"
-.	for ver in ${IGNORE_WITH_PGSQL}
-.		if (${PGSQL_VER} == ${ver})
+.      for ver in ${IGNORE_WITH_PGSQL}
+.        if (${PGSQL_VER} == ${ver})
 IGNORE?=		cannot install: does not work with postgresql${PGSQL_VER_NODOT}-client (PostgreSQL ${IGNORE_WITH_PGSQL} not supported)
-.		endif
-.	endfor
+.        endif
+.      endfor
 .    endif # IGNORE_WITH_PGSQL
 
-.if !defined(WANT_PGSQL) || ${WANT_PGSQL:Mlib}
+.    if !defined(WANT_PGSQL) || ${WANT_PGSQL:Mlib}
 LIB_DEPENDS+=	libpq.so.${PGSQL${PGSQL_VER_NODOT}_LIBVER}:databases/postgresql${PGSQL_VER_NODOT}-client
-.endif
+.    endif
 
 _USE_PGSQL_DEP=		client contrib docs pgtcl plperl plpython pltcl server
 _USE_PGSQL_DEP_client=	psql

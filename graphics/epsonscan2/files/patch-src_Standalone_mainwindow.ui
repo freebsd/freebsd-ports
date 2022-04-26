@@ -1,0 +1,38 @@
+--- src/Standalone/mainwindow.ui.orig	2022-02-17 18:30:36 UTC
++++ src/Standalone/mainwindow.ui
+@@ -1653,7 +1653,7 @@
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="page">
+-       <widget class="QWidget" name="layoutWidget">
++       <widget class="QWidget" name="horiz_layoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>13</x>
+@@ -1719,7 +1719,7 @@
+        </widget>
+       </widget>
+       <widget class="QWidget" name="page_2">
+-       <widget class="QWidget" name="layoutWidget">
++       <widget class="QWidget" name="horiz_layoutWidget_1">
+         <property name="geometry">
+          <rect>
+           <x>11</x>
+@@ -1786,7 +1786,7 @@
+          </item>
+         </layout>
+        </widget>
+-       <widget class="QWidget" name="layoutWidget">
++       <widget class="QWidget" name="horiz_layoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+@@ -1856,7 +1856,7 @@
+          </item>
+         </layout>
+        </widget>
+-       <widget class="QWidget" name="layoutWidget">
++       <widget class="QWidget" name="horiz_layoutWidget_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>

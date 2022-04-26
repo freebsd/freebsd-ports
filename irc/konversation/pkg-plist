@@ -1,7 +1,6 @@
 bin/konversation
 share/applications/org.kde.konversation.desktop
-share/icons/hicolor/128x128/actions/konv_message.png
-share/icons/hicolor/128x128/apps/konversation.png
+share/dbus-1/services/org.kde.konversation.service
 share/icons/hicolor/16x16/actions/konv_message.png
 share/icons/hicolor/16x16/apps/konversation.png
 share/icons/hicolor/22x22/actions/konv_message.png
@@ -12,6 +11,8 @@ share/icons/hicolor/48x48/actions/konv_message.png
 share/icons/hicolor/48x48/apps/konversation.png
 share/icons/hicolor/64x64/actions/konv_message.png
 share/icons/hicolor/64x64/apps/konversation.png
+share/icons/hicolor/128x128/actions/konv_message.png
+share/icons/hicolor/128x128/apps/konversation.png
 share/kconf_update/konversation-0.19-appearance.pl
 share/kconf_update/konversation-0.19-colorcodes.pl
 share/kconf_update/konversation-0.19-colors.pl

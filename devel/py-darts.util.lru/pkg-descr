@@ -1,5 +1,5 @@
-A LRUDict is basically a simple dictionary, which has a defined 
-maximum capacity, that may be supplied at construction time, or 
+A LRUDict is basically a simple dictionary, which has a defined
+maximum capacity, that may be supplied at construction time, or
 modified at run-time via the capacity property:
 >>> cache = LRUDict(1)
 >>> cache.capacity

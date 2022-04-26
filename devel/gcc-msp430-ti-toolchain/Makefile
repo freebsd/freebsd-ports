@@ -1,6 +1,6 @@
 PORTNAME=	gcc-msp430-ti-toolchain
 PORTVERSION=	${TI_VERSION}.${RELEASE_DATE}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${GCC_REL_VERSION}:gcc \
 		SOURCEWARE/binutils/releases:binutils \
@@ -45,16 +45,16 @@ USE_CSTD=	gnu89
 
 GNU_CONFIGURE=		yes
 
-TI_VERSION=		9.2.0.0
-GCC_REL_VERSION=	9.2.0
-GCC_VERSION=		9.2.0
-SUPPORT_VERSION=	1.210
+TI_VERSION=		9.3.1.2
+GCC_REL_VERSION=	9.3.0
+GCC_VERSION=		9.3.1
+SUPPORT_VERSION=	1.212
 BINUTILS_VERSION=	2.34
 GDB_VERSION=		9.1
 NEWLIB_VERSION=		2.4.0
-PATCHSET_VERSION=	9.2.0.50
+PATCHSET_VERSION=	9.3.1.11
 DOC_VERSION=		646f
-RELEASE_DATE=		20200612
+RELEASE_DATE=		20210722
 TARGET=			msp430-elf
 
 CPE_PRODUCT=	gcc
@@ -94,7 +94,7 @@ pre-patch:
 	@${ECHO_MSG} "===> Apply distribution patches..."
 	@${ECHO_MSG} "====> Patch gcc"
 	@cd ${WRKDIR}/gcc-${GCC_REL_VERSION} && \
-	 ${PATCH} ${DIST_PATCH_ARGS} < ${WRKDIR}/msp430-gcc-${PATCHSET_VERSION}-source-patches/gcc-${GCC_REL_VERSION:S/./_/g}-release.patch
+	 ${PATCH} ${DIST_PATCH_ARGS} < ${WRKDIR}/msp430-gcc-${PATCHSET_VERSION}-source-patches/gcc-${GCC_REL_VERSION}.patch
 	@${ECHO_MSG} "====> Patch binutils"
 	@cd ${WRKDIR}/binutils-${BINUTILS_VERSION} && \
 	 ${MKDIR} sim/testsuite/sim/msp430 && \

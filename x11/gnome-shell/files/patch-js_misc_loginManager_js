@@ -1,5 +1,3 @@
-$OpenBSD: patch-js_misc_loginManager_js,v 1.10 2020/05/14 15:28:46 jasper Exp $
-
 Index: js/misc/loginManager.js
 --- js/misc/loginManager.js.orig
 +++ js/misc/loginManager.js
@@ -25,7 +23,7 @@ Index: js/misc/loginManager.js
      } catch (e) {
          return false;
      }
-@@ -84,7 +90,7 @@ function getLoginManager() {
+@@ -81,7 +87,7 @@ function getLoginManager() {
          if (haveSystemd())
              _loginManager = new LoginManagerSystemd();
          else
@@ -34,11 +32,10 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -199,6 +205,82 @@ var LoginManagerSystemd = class {
-     }
+@@ -204,6 +210,79 @@ var LoginManagerSystemd = class {
  };
  Signals.addSignalMethods(LoginManagerSystemd.prototype);
-+
+ 
 +var LoginManagerConsoleKit = class {
 +    constructor () {
 +        this._proxy = new ConsoleKitManager(Gio.DBus.system,
@@ -76,7 +73,9 @@ Index: js/misc/loginManager.js
 +            if (error) {
 +                asyncCallback(false, false);
 +            } else {
-+                asyncCallback(result[0], false);
++                let needsAuth = result[0] == 'challenge';
++                let canSuspend = needsAuth || result[0] == 'yes';
++                asyncCallback(canSuspend, needsAuth);
 +            }
 +        });
 +    }
@@ -89,24 +88,19 @@ Index: js/misc/loginManager.js
 +        this._proxy.SuspendRemote(true);
 +    }
 +
-+    inhibit(reason, callback) {
-+        let inVariant = GLib.Variant.new('(ssss)',
-+                                         ['sleep',
-+                                          'GNOME Shell',
-+                                          reason,
-+                                          'delay']);
-+        this._proxy.call_with_unix_fd_list('Inhibit', inVariant, 0, -1, null, null,
-+            (proxy, result) => {
-+                let fd = -1;
-+                try {
-+                    let [outVariant, fdList] = proxy.call_with_unix_fd_list_finish(result);
-+                    fd = fdList.steal_fds()[0];
-+                    callback(new Gio.UnixInputStream({ fd: fd }));
-+                } catch(e) {
-+                    logError(e, "Error getting ConsoleKit inhibitor");
-+                    callback(null);
-+                }
-+            });
++    async inhibit(reason, callback) {
++        try {
++            const inVariant = new GLib.Variant('(ssss)',
++                ['sleep', 'GNOME Shell', reason, 'delay']);
++            const [outVariant_, fdList] =
++                await this._proxy.call_with_unix_fd_list('Inhibit',
++                    inVariant, 0, -1, null, null);
++            const [fd] = fdList.steal_fds();
++            callback(new Gio.UnixInputStream({ fd }));
++        } catch (e) {
++            logError(e, 'Error getting ConsoleKit inhibitor');
++            callback(null);
++        }
 +    }
 +
 +    _prepareForSleep(proxy, sender, [aboutToSuspend]) {
@@ -114,6 +108,21 @@ Index: js/misc/loginManager.js
 +    }
 +}
 +Signals.addSignalMethods(LoginManagerConsoleKit.prototype);
- 
++
  var LoginManagerDummy = class {
      getCurrentSessionProxy(_callback) {
+         // we could return a DummySession object that fakes whatever callers
+@@ -213,13 +292,6 @@ var LoginManagerDummy = class {
+ 
+     canSuspend(asyncCallback) {
+         asyncCallback(false, false);
+-    }
+-
+-    canRebootToBootLoaderMenu(asyncCallback) {
+-        asyncCallback(false, false);
+-    }
+-
+-    setRebootToBootLoaderMenu() {
+     }
+ 
+     listSessions(asyncCallback) {

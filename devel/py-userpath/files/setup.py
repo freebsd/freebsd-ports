@@ -28,7 +28,6 @@ setup(
         ],
     },
     packages=[
-        'tests',
         'userpath',
     ],
 )

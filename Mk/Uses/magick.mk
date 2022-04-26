@@ -46,9 +46,9 @@ IGNORE=		Incorrect USES=magick:${magick_ARGS} - multiple versions defined
 .    endif
 .  endfor
 # Fallback to the default version
-.if empty(_magick_version)
+.  if empty(_magick_version)
 _magick_version=	${IMAGEMAGICK_DEFAULT}
-.endif
+.  endif
 
 #=== Flavor selection ===
 _magick_flavors=	nox11
@@ -71,9 +71,9 @@ _magick_depend=		#
 _magick_depend+=	${_depend}
 .    endif
 .  endfor
-.if empty(_magick_depend)
+.  if empty(_magick_depend)
 _magick_depend=		lib
-.endif
+.  endif
 
 #=== Dependency setup ===
 _MAGICK_PORT=	graphics/ImageMagick${_magick_version}${_magick_flavor}

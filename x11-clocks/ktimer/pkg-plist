@@ -1,9 +1,9 @@
 bin/ktimer
 share/applications/org.kde.ktimer.desktop
-share/icons/hicolor/128x128/apps/ktimer.png
 share/icons/hicolor/16x16/apps/ktimer.png
 share/icons/hicolor/32x32/apps/ktimer.png
 share/icons/hicolor/48x48/apps/ktimer.png
+share/icons/hicolor/128x128/apps/ktimer.png
 share/locale/ar/LC_MESSAGES/ktimer.mo
 share/locale/be/LC_MESSAGES/ktimer.mo
 share/locale/bg/LC_MESSAGES/ktimer.mo
@@ -60,6 +60,7 @@ share/locale/tg/LC_MESSAGES/ktimer.mo
 share/locale/tr/LC_MESSAGES/ktimer.mo
 share/locale/ug/LC_MESSAGES/ktimer.mo
 share/locale/uk/LC_MESSAGES/ktimer.mo
+share/locale/vi/LC_MESSAGES/ktimer.mo
 share/locale/zh_CN/LC_MESSAGES/ktimer.mo
 share/locale/zh_TW/LC_MESSAGES/ktimer.mo
 share/metainfo/org.kde.ktimer.appdata.xml

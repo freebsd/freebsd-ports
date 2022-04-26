@@ -1,5 +1,6 @@
 PORTNAME=	immortal
 PORTVERSION=	0.24.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nbari@tequila.io

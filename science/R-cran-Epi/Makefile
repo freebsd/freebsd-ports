@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	Epi
-PORTVERSION=	2.44
+PORTVERSION=	2.46
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,7 +12,6 @@ LICENSE=	GPLv2
 
 CRAN_DEPENDS=	R-cran-cmprsk>0:science/R-cran-cmprsk \
 		R-cran-etm>0:science/R-cran-etm \
-		R-cran-purrr>0:devel/R-cran-purrr \
 		R-cran-plyr>0:devel/R-cran-plyr \
 		R-cran-dplyr>0:math/R-cran-dplyr \
 		R-cran-numDeriv>0:math/R-cran-numDeriv \

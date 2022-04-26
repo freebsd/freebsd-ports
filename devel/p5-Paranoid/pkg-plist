@@ -7,6 +7,11 @@
 %%SITE_PERL%%/Paranoid/Filesystem.pm
 %%SITE_PERL%%/Paranoid/Glob.pm
 %%SITE_PERL%%/Paranoid/IO.pm
+%%SITE_PERL%%/Paranoid/IO/FileMultiplexer.pm
+%%SITE_PERL%%/Paranoid/IO/FileMultiplexer/Block.pm
+%%SITE_PERL%%/Paranoid/IO/FileMultiplexer/Block/BATHeader.pm
+%%SITE_PERL%%/Paranoid/IO/FileMultiplexer/Block/FileHeader.pm
+%%SITE_PERL%%/Paranoid/IO/FileMultiplexer/Block/StreamHeader.pm
 %%SITE_PERL%%/Paranoid/IO/Line.pm
 %%SITE_PERL%%/Paranoid/IO/Lockfile.pm
 %%SITE_PERL%%/Paranoid/Input.pm
@@ -28,6 +33,11 @@
 %%PERL5_MAN3%%/Paranoid::Filesystem.3.gz
 %%PERL5_MAN3%%/Paranoid::Glob.3.gz
 %%PERL5_MAN3%%/Paranoid::IO.3.gz
+%%PERL5_MAN3%%/Paranoid::IO::FileMultiplexer.3.gz
+%%PERL5_MAN3%%/Paranoid::IO::FileMultiplexer::Block.3.gz
+%%PERL5_MAN3%%/Paranoid::IO::FileMultiplexer::Block::BATHeader.3.gz
+%%PERL5_MAN3%%/Paranoid::IO::FileMultiplexer::Block::FileHeader.3.gz
+%%PERL5_MAN3%%/Paranoid::IO::FileMultiplexer::Block::StreamHeader.3.gz
 %%PERL5_MAN3%%/Paranoid::IO::Line.3.gz
 %%PERL5_MAN3%%/Paranoid::IO::Lockfile.3.gz
 %%PERL5_MAN3%%/Paranoid::Input.3.gz

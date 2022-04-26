@@ -188,7 +188,6 @@
     SUBDIR += netmagis-www
     SUBDIR += netmask
     SUBDIR += netspoc
-    SUBDIR += netustad
     SUBDIR += networkmgr
     SUBDIR += netxms
     SUBDIR += nfdump

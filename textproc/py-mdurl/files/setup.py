@@ -21,5 +21,5 @@ setup(name='mdurl',
       packages=packages,
       package_data=package_data,
       package_dir=package_dir,
-      python_requires='>=3.6',
+      python_requires='>=3.7',
      )

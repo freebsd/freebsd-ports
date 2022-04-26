@@ -41,6 +41,8 @@ include/volk/volk_32f_exp_32f.h
 include/volk/volk_32f_expfast_32f.h
 include/volk/volk_32f_index_max_16u.h
 include/volk/volk_32f_index_max_32u.h
+include/volk/volk_32f_index_min_16u.h
+include/volk/volk_32f_index_min_32u.h
 include/volk/volk_32f_invsqrt_32f.h
 include/volk/volk_32f_log2_32f.h
 include/volk/volk_32f_null_32f.h
@@ -87,6 +89,8 @@ include/volk/volk_32fc_deinterleave_real_32f.h
 include/volk/volk_32fc_deinterleave_real_64f.h
 include/volk/volk_32fc_index_max_16u.h
 include/volk/volk_32fc_index_max_32u.h
+include/volk/volk_32fc_index_min_16u.h
+include/volk/volk_32fc_index_min_32u.h
 include/volk/volk_32fc_magnitude_32f.h
 include/volk/volk_32fc_magnitude_squared_32f.h
 include/volk/volk_32fc_s32f_atan2_32f.h
@@ -159,7 +163,7 @@ lib/cmake/volk/VolkTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/volk/VolkTargets.cmake
 lib/libvolk.so
 lib/libvolk.so.2.5
-lib/libvolk.so.2.5.0
+lib/libvolk.so.2.5.1
 %%PYTHON_SITELIBDIR%%/volk_modtool/__init__.py
 %%PYTHON_SITELIBDIR%%/volk_modtool/__init__.pyc
 %%PYTHON_SITELIBDIR%%/volk_modtool/__init__.pyo

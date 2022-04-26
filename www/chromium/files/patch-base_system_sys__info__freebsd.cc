@@ -1,6 +1,6 @@
---- base/system/sys_info_freebsd.cc.orig	2021-04-14 18:40:48 UTC
+--- base/system/sys_info_freebsd.cc.orig	2022-03-25 21:59:56 UTC
 +++ base/system/sys_info_freebsd.cc
-@@ -9,30 +9,95 @@
+@@ -9,30 +9,106 @@
  #include <sys/sysctl.h>
  
  #include "base/notreached.h"
@@ -9,6 +9,17 @@
  
  namespace base {
  
++int SysInfo::NumberOfProcessors() {
++  int mib[] = {CTL_HW, HW_NCPU};
++  int ncpu;
++  size_t size = sizeof(ncpu);
++  if (sysctl(mib, base::size(mib), &ncpu, &size, NULL, 0) < 0) {
++    NOTREACHED();
++    return 1;
++  }
++  return ncpu;
++}
++
  int64_t SysInfo::AmountOfPhysicalMemoryImpl() {
 -  int pages, page_size;
 +  int pages, page_size, r = 0;

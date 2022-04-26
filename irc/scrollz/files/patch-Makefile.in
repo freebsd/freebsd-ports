@@ -1,5 +1,5 @@
---- Makefile.in.orig	2011-04-29 17:21:18.000000000 +0900
-+++ Makefile.in	2013-03-09 19:35:03.628110600 +0900
+--- Makefile.in.orig	2021-05-06 08:04:55 UTC
++++ Makefile.in
 @@ -31,14 +31,14 @@
  # @(#)$Id: Makefile.in,v 1.23 2006-10-31 12:31:27 f Exp $
  
@@ -28,10 +28,10 @@
  datarootdir = @datarootdir@
 -mandir = @mandir@
 +mandir = @mandir@/man1
-
+ 
  DESTDIR =
  
-@@ -105,7 +105,7 @@
+@@ -106,7 +106,7 @@ INSTALL_IRCFLUSH = $(bindir)/ircflush
  
  # This program allows you to use screen/xterm's to put new irc windows
  # on new screen/xterm windows.
@@ -40,7 +40,7 @@
  
  # This command will be used to install the irc help files.  If you don't
  # want to install them, replace with the following:
-@@ -126,14 +126,13 @@
+@@ -127,14 +127,13 @@ INSTALL_DATA = ./bsdinstall -c -m 644
  VERSION = @VERSION@
  
  SHELL = /bin/sh
@@ -56,7 +56,7 @@
  	'IRCSHARE=$(IRCSHARE)'				\
  	'IRCPATH=$(IRC_PATH)'				\
  	'LDFLAGS=$(LDFLAGS)'				\
-@@ -143,32 +142,23 @@
+@@ -144,32 +143,23 @@ MFLAGS ='CC=$(CC)'					\
  	'LN=$(LN)'					\
  	'RM=$(RM)'
  
@@ -95,7 +95,7 @@
  installbin: installirc
  
  installirc: scrollz installdirs
-@@ -189,8 +179,8 @@
+@@ -190,8 +180,8 @@ installio: ircio installdirs
  installflush: ircflush installdirs
  	$(INSTALL) source/ircflush $(DESTDIR)/$(INSTALL_IRCFLUSH)
  

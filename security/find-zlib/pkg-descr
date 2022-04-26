@@ -1,5 +1,0 @@
-This is a script to scan files for statically linked zlib (libz)
-code.  Programs which contain such code may be affected by the
-double free() security bug.
-
-WWW: http://zlib.net/

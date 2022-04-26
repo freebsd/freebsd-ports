@@ -5,7 +5,8 @@ SRCS=	freezero.c \
 	getdtablecount.c \
 	imsg.c \
 	imsg-buffer.c \
-	recallocarray.c
+	recallocarray.c \
+	siphash.c
 
 CFLAGS+= -I${.CURDIR}
 

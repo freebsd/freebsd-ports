@@ -1,3 +1,3 @@
-TIMESTAMP = 1627157193
-SHA256 (cfitsio-4.0.0.tar.gz) = b2a8efba0b9f86d3e1bd619f662a476ec18112b4f27cc441cc680a4e3777425e
-SIZE (cfitsio-4.0.0.tar.gz) = 4746177
+TIMESTAMP = 1649423660
+SHA256 (cfitsio-4.1.0.tar.gz) = b367c695d2831958e7166921c3b356d5dfa51b1ecee505b97416ba39d1b6c17a
+SIZE (cfitsio-4.1.0.tar.gz) = 4305184

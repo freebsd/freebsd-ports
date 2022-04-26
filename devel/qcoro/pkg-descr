@@ -1,0 +1,6 @@
+QCoro - Coroutines for Qt
+
+The QCoro library provides set of tools to make use of the C++20 coroutines in
+connection with certain asynchronous Qt actions.
+
+WWW: https://github.com/danvratil/qcoro

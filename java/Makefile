@@ -6,13 +6,11 @@
     SUBDIR += apache-commons-codec
     SUBDIR += apache-commons-collections
     SUBDIR += apache-commons-dbcp
-    SUBDIR += apache-commons-discovery
     SUBDIR += apache-commons-httpclient
     SUBDIR += apache-commons-lang
     SUBDIR += apache-commons-lang3
     SUBDIR += apache-commons-logging
     SUBDIR += apache-commons-pool
-    SUBDIR += apache-commons-primitives
     SUBDIR += aparapi
     SUBDIR += avis
     SUBDIR += berkeley-db
@@ -24,7 +22,6 @@
     SUBDIR += bouncycastle
     SUBDIR += bouncycastle15
     SUBDIR += cos
-    SUBDIR += cryptix-jce
     SUBDIR += dbvis
     SUBDIR += eclipse
     SUBDIR += eclipse-EPIC
@@ -97,6 +94,7 @@
     SUBDIR += openjdk16
     SUBDIR += openjdk17
     SUBDIR += openjdk17-jre
+    SUBDIR += openjdk18
     SUBDIR += openjdk7
     SUBDIR += openjdk7-jre
     SUBDIR += openjdk8

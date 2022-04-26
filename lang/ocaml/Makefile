@@ -2,11 +2,12 @@
 # for committer: bump PORTREVISION for math/facile whenever ocaml gets updated
 
 PORTNAME=	ocaml
-PORTVERSION=	4.05.0
-PORTREVISION=	1
+PORTVERSION=	4.07.1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${DISTNAME:R}/ GENTOO \
 		http://caml.inria.fr/pub/distrib/${DISTNAME:R}/:docs
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${_DISTFILES:M*.tar.*}
 PKGNAMESUFFIX=	${SFX}
 
 MAINTAINER=	michipili@gmail.com
@@ -18,7 +19,6 @@ LICENSE_NAME_QPL10=	Q Public License, Version 1.0
 LICENSE_FILE_QPL10=	${WRKSRC}/LICENSE
 LICENSE_PERMS_QPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_aarch64=		Does not build: sh: as: not found
 BROKEN_riscv64=		fails to build: hasgot.c:3:12: use of undeclared identifier 'secure_getenv'
 BROKEN_sparc64=	No rule to make target 'none.o', needed by 'libasmrun.a'
 BROKEN_mips64=	No ASM support
@@ -27,7 +27,7 @@ BROKEN_mips=	No ASM support
 BUILD_DEPENDS=	as:devel/binutils
 RUN_DEPENDS=	as:devel/binutils
 
-USES=		cpe compiler:c11 gmake tar:xz
+USES=		cpe compiler:c11 gmake shebangfix tar:xz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	inria
 HAS_CONFIGURE=	yes
@@ -39,6 +39,11 @@ LDFLAGS_armv6=	-Wl,-znotext
 LDFLAGS_armv7=	-Wl,-znotext
 LDFLAGS_i386=	-Wl,-znotext
 
+SHEBANG_LANG=	awk
+awk_OLD_CMD=	/bin/awk
+awk_CMD=	/usr/bin/awk
+SHEBANG_FILES=	tools/ocaml-instr-graph tools/ocaml-instr-report
+
 CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" \
 		-cc "${CC}" \
 		-aspp "${CC} -c" \
@@ -46,27 +51,16 @@ CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" \
 
 OPTIONS_DEFINE=	X11 THREADS DOCS EXAMPLES
 OPTIONS_DEFAULT=X11 THREADS
-CMP_LIB_DESC=	Install compiler libraries
-
-MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
-DOCSDISTNAME=	${DISTNAME:C/([[:digit:]]+)\.([[:digit:]]+)\.([[:digit:]]+)/\1.\2/}
 
 CONFLICTS=	metaocaml
 
-.include <bsd.port.options.mk>
+PORTDOCS=	htmlman ${DISTNAME:R}-refman.ps.gz ${DISTNAME:R}-refman.pdf
 
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES:=	${DISTNAME}${EXTRACT_SUFX} \
-		${DOCSDISTNAME}-refman-html.tar.gz:docs \
-		${DOCSDISTNAME}-refman.ps.gz:docs \
-		${DOCSDISTNAME}-refman.pdf:docs
-EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX} \
-		${DOCSDISTNAME}-refman-html.tar.gz
-PLIST_SUB+=	DOC=""
-PORTDOCS=	htmlman ${DOCSDISTNAME}-refman.ps.gz ${DOCSDISTNAME}-refman.pdf
-.else
-PLIST_SUB+=	DOC="@comment "
-.endif
+DOCS_DISTFILES=	${DISTNAME:R}-refman-html.tar.gz:docs \
+		${DISTNAME:R}-refman.ps.gz:docs \
+		${DISTNAME:R}-refman.pdf:docs
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 CONFIGURE_ARGS+=	-as "${AS} ${ASFLAGS} -meabi=5"
@@ -107,36 +101,26 @@ PLIST_SUB+=	PROF=""
 .endif
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-asmcomp_power_arch.ml
-USE_GCC=	yes
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-asmcomp_power_arch.ml
+LLD_UNSAFE=	yes
 .endif
 
 .if ${ARCH} == powerpc64le
-USE_GCC=	yes
-.endif
-
-post-extract:
-.if ${PORT_OPTIONS:MDOCS}
-	@if ! (cd ${WRKDIR} && \
-	  ${TAR} xf ${_DISTDIR}${DOCSDISTNAME}-refman-html.tar.gz \
-	) \
-	then \
-	  exit 1; \
-	fi;
+LLD_UNSAFE=	yes
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '\|MKLIB=|s|ar rc|${AR} rc|' \
 		-e '\|RANLIB|s|ranlib|${RANLIB}|' \
-		-e '\|bytecclinkopts=|s|""|"${LDFLAGS}"|' \
-		-e "\|nativecclinkopts=|s|''|\"${LDFLAGS:C/-Wl,//}\"|" \
+		-e '\|^ldflags=|s|""|"${LDFLAGS}"|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,$$(ARCH),$$(SYSTEM_ARCH),' \
 		${WRKSRC}/Makefile ${WRKSRC}/Makefile.tools \
 		${WRKSRC}/asmrun/Makefile \
+		${WRKSRC}/ocamltest/Makefile \
 		${WRKSRC}/otherlibs/systhreads/Makefile \
-		${WRKSRC}/testsuite/tests/asmcomp/Makefile
+		${WRKSRC}/testsuite/tests/asmgen/Makefile
 
 post-configure:
 	@${REINPLACE_CMD} -E \
@@ -153,8 +137,8 @@ post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR} && ${COPYTREE_SHARE} htmlman ${STAGEDIR}${DOCSDIR})
-	${INSTALL_DATA} ${_DISTDIR}${DOCSDISTNAME}-refman.ps.gz ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${_DISTDIR}${DOCSDISTNAME}-refman.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}${DISTNAME:R}-refman.ps.gz ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}${DISTNAME:R}-refman.pdf ${STAGEDIR}${DOCSDIR}
 .endif
 # Spacetime profiling is only available for native code on 64-bit targets
 .if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc

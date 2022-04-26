@@ -1,6 +1,6 @@
-%%SITE_ARCH%%/auto/Sereal/Decoder/Decoder.so
 %%SITE_ARCH%%/Sereal/Decoder.pm
 %%SITE_ARCH%%/Sereal/Decoder/Constants.pm
 %%SITE_ARCH%%/Sereal/Performance.pm
+%%SITE_ARCH%%/auto/Sereal/Decoder/Decoder.so
 %%PERL5_MAN3%%/Sereal::Decoder.3.gz
 %%PERL5_MAN3%%/Sereal::Performance.3.gz

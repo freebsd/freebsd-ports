@@ -1,5 +1,6 @@
 PORTNAME=	rt
 DISTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	50
@@ -72,7 +73,7 @@ AP_MODFASTCGI_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:www/mod_f
 				${FASTCGI_DEPS}
 
 EXTERNALAUTH_DESC=		Extension to authenticate users against an external source
-EXTERNALAUTH_DEPENDS=		${EXTERNALAUTH_DEPS}
+EXTERNALAUTH_RUN_DEPENDS=	${EXTERNALAUTH_DEPS}
 
 LIGHTTPD_DESC=			Deploy with lighttpd and mod_fastcgi
 LIGHTTPD_RUN_DEPENDS=		${LOCALBASE}/sbin/lighttpd:www/lighttpd \

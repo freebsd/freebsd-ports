@@ -6,6 +6,7 @@
 %%SITE_PERL%%/SNMP/Info/Bridge.pm
 %%SITE_PERL%%/SNMP/Info/CDP.pm
 %%SITE_PERL%%/SNMP/Info/CiscoAgg.pm
+%%SITE_PERL%%/SNMP/Info/CiscoBGP.pm
 %%SITE_PERL%%/SNMP/Info/CiscoConfig.pm
 %%SITE_PERL%%/SNMP/Info/CiscoPortSecurity.pm
 %%SITE_PERL%%/SNMP/Info/CiscoPower.pm
@@ -147,6 +148,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Bridge.3.gz
 %%PERL5_MAN3%%/SNMP::Info::CDP.3.gz
 %%PERL5_MAN3%%/SNMP::Info::CiscoAgg.3.gz
+%%PERL5_MAN3%%/SNMP::Info::CiscoBGP.3.gz
 %%PERL5_MAN3%%/SNMP::Info::CiscoConfig.3.gz
 %%PERL5_MAN3%%/SNMP::Info::CiscoPortSecurity.3.gz
 %%PERL5_MAN3%%/SNMP::Info::CiscoPower.3.gz

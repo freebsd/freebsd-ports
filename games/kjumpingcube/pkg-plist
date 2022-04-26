@@ -1,13 +1,12 @@
 bin/kjumpingcube
-share/qlogging-categories5/kjumpingcube.categories
 share/applications/org.kde.kjumpingcube.desktop
 share/config.kcfg/kjumpingcube.kcfg
-share/icons/hicolor/128x128/apps/kjumpingcube.png
 share/icons/hicolor/16x16/apps/kjumpingcube.png
 share/icons/hicolor/22x22/apps/kjumpingcube.png
 share/icons/hicolor/32x32/apps/kjumpingcube.png
 share/icons/hicolor/48x48/apps/kjumpingcube.png
 share/icons/hicolor/64x64/apps/kjumpingcube.png
+share/icons/hicolor/128x128/apps/kjumpingcube.png
 %%DATADIR%%/pics/default.desktop
 %%DATADIR%%/pics/default.svg
 share/locale/ar/LC_MESSAGES/kjumpingcube.mo
@@ -70,3 +69,4 @@ share/locale/vi/LC_MESSAGES/kjumpingcube.mo
 share/locale/zh_CN/LC_MESSAGES/kjumpingcube.mo
 share/locale/zh_TW/LC_MESSAGES/kjumpingcube.mo
 share/metainfo/org.kde.kjumpingcube.appdata.xml
+share/qlogging-categories5/kjumpingcube.categories

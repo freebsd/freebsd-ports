@@ -9,30 +9,30 @@
 # 'wrapper'	will automatically create BINARY_WRAPPER to use base
 #		byacc with a wrapper to mimic a bit more bison
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_BISON_MK)
 _INCLUDE_USES_BISON_MK=	yes
 
 _BISON_DEPENDS=	bison:devel/bison
 
-.if empty(bison_ARGS)
+.  if empty(bison_ARGS)
 bison_ARGS=	build
-.endif
+.  endif
 
-.if ${bison_ARGS} == "build"
+.  if ${bison_ARGS} == "build"
 BUILD_DEPENDS+=	${_BISON_DEPENDS}
-.elif ${bison_ARGS} == "run"
+.  elif ${bison_ARGS} == "run"
 RUN_DEPENDS+=	${_BISON_DEPENDS}
-.elif ${bison_ARGS} == "both"
+.  elif ${bison_ARGS} == "both"
 BUILD_DEPENDS+=	${_BISON_DEPENDS}
 RUN_DEPENDS+=	${_BISON_DEPENDS}
-.elif ${bison_ARGS} == "alias"
+.  elif ${bison_ARGS} == "alias"
 BINARY_ALIAS+=	bison=byacc
-.elif ${bison_ARGS} == "wrapper"
+.  elif ${bison_ARGS} == "wrapper"
 BINARY_WRAPPERS+=	bison
-.else
+.  else
 IGNORE=	USES=bison - invalid args: [${bison_ARGS}] specified
-.endif
+.  endif
 
 .endif

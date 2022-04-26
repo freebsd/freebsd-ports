@@ -73,7 +73,6 @@
     SUBDIR += autojump
     SUBDIR += automount
     SUBDIR += automounter
-    SUBDIR += autopsy
     SUBDIR += avfs
     SUBDIR += azure-agent
     SUBDIR += b2sum
@@ -274,6 +273,7 @@
     SUBDIR += diskonaut
     SUBDIR += diskscrub
     SUBDIR += disktype
+    SUBDIR += diskus
     SUBDIR += dmg2img
     SUBDIR += dmidecode
     SUBDIR += dnf
@@ -439,6 +439,7 @@
     SUBDIR += fusefs-zip
     SUBDIR += fvcool
     SUBDIR += fwup
+    SUBDIR += fx
     SUBDIR += g15daemon
     SUBDIR += gaffitter
     SUBDIR += ganglia-monitor-core
@@ -1022,6 +1023,7 @@
     SUBDIR += pxattr
     SUBDIR += pxp-agent
     SUBDIR += py-ansible-base
+    SUBDIR += py-ansible-compat
     SUBDIR += py-ansible-core
     SUBDIR += py-ansible-core211
     SUBDIR += py-ansible-lint
@@ -1165,7 +1167,6 @@
     SUBDIR += rubygem-capistrano-ext
     SUBDIR += rubygem-capistrano-harrow
     SUBDIR += rubygem-chef
-    SUBDIR += rubygem-chef-api
     SUBDIR += rubygem-chef-bin
     SUBDIR += rubygem-chef-cleanroom
     SUBDIR += rubygem-chef-config
@@ -1213,10 +1214,10 @@
     SUBDIR += rubygem-puppetfile-resolver
     SUBDIR += rubygem-puppetserver-ca
     SUBDIR += rubygem-r10k
+    SUBDIR += rubygem-redfish_client
     SUBDIR += rubygem-rubyipmi
     SUBDIR += rubygem-serverspec
     SUBDIR += rubygem-shellany
-    SUBDIR += rubygem-smart_proxy_chef
     SUBDIR += rubygem-smart_proxy_dynflow
     SUBDIR += rubygem-smart_proxy_remote_execution_ssh
     SUBDIR += rubygem-smart_proxy_salt
@@ -1318,6 +1319,7 @@
     SUBDIR += spinner
     SUBDIR += spiped
     SUBDIR += squashfs-tools
+    SUBDIR += squashfs-tools-ng
     SUBDIR += ssd_report
     SUBDIR += sshsudo
     SUBDIR += ssync
@@ -1519,7 +1521,6 @@
     SUBDIR += watchfolder
     SUBDIR += watchman
     SUBDIR += watchmen
-    SUBDIR += webjob
     SUBDIR += webmin
     SUBDIR += weedit
     SUBDIR += wemux

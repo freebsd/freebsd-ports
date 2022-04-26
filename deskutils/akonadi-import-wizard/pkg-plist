@@ -1,6 +1,4 @@
 bin/akonadiimportwizard
-share/qlogging-categories5/importwizard.categories
-share/qlogging-categories5/importwizard.renamecategories
 include/KF5/KPim/ImportWizard/AbstractAddressBook
 include/KF5/KPim/ImportWizard/AbstractBase
 include/KF5/KPim/ImportWizard/AbstractCalendar
@@ -33,9 +31,9 @@ lib/libKPimImportWizard.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/importwizard/thunderbirdimporterplugin.so
 %%QT_PLUGINDIR%%/importwizard/trojitaimporterplugin.so
 share/applications/org.kde.akonadiimportwizard.desktop
+share/icons/hicolor/64x64/apps/kontact-import-wizard.png
 share/icons/hicolor/128x128/apps/kontact-import-wizard.png
 share/icons/hicolor/256x256/apps/kontact-import-wizard.png
-share/icons/hicolor/64x64/apps/kontact-import-wizard.png
 share/importwizard/pics/step1.png
 share/locale/ar/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/az/LC_MESSAGES/akonadiimportwizard.mo
@@ -80,3 +78,5 @@ share/locale/ug/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/uk/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/zh_CN/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/zh_TW/LC_MESSAGES/akonadiimportwizard.mo
+share/qlogging-categories5/importwizard.categories
+share/qlogging-categories5/importwizard.renamecategories

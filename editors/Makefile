@@ -188,7 +188,6 @@
     SUBDIR += libreoffice-vec
     SUBDIR += libreoffice-xh
     SUBDIR += libreoffice-zu
-    SUBDIR += libreoffice6
     SUBDIR += linux-bcompare
     SUBDIR += linux-sublime
     SUBDIR += linux-sublime-text4

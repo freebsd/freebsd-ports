@@ -1,0 +1,21 @@
+
+PORTNAME=	pytest-markdown
+PORTVERSION=	1.0.2
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pytest_markdown-${PORTVERSION}
+
+MAINTAINER=	matthew@FreeBSD.org
+COMMENT=	Test your markdown docs with pytest
+
+LICENSE=	APACHE20
+
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=6.0.1:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}CommonMark>=0.9.1:textproc/py-CommonMark@${PY_FLAVOR}
+
+USES=		python:3.7+
+USE_PYTHON=	autoplist distutils
+
+.include <bsd.port.mk>

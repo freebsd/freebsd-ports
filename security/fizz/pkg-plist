@@ -117,6 +117,7 @@ include/fizz/protocol/test/Mocks.h
 include/fizz/protocol/test/ProtocolTest.h
 include/fizz/protocol/test/TestMessages.h
 include/fizz/protocol/test/Utilities.h
+include/fizz/record/BufAndPaddingPolicy.h
 include/fizz/record/EncryptedRecordLayer.h
 include/fizz/record/Extensions-inl.h
 include/fizz/record/Extensions.h

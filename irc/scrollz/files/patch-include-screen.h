@@ -1,5 +1,5 @@
---- include/screen.h.orig	2011-04-29 17:21:18.000000000 +0900
-+++ include/screen.h	2013-03-11 23:30:07.063088471 +0900
+--- include/screen.h.orig	2021-05-06 08:04:55 UTC
++++ include/screen.h
 @@ -47,6 +47,7 @@
  #define ST_NOTHING      -1
  #define ST_SCREEN       0

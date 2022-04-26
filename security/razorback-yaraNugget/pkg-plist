@@ -1,7 +1,0 @@
-@sample etc/razorback/yara.conf.sample
-etc/razorback/yara/banker.rules
-etc/razorback/yara/packer.rules
-lib/razorback/yaraNugget.so.2.0.0
-lib/razorback/yaraNugget.so.2
-lib/razorback/yaraNugget.so
-lib/razorback/yaraNugget.a

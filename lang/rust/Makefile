@@ -38,8 +38,7 @@ CPE_VENDOR=	rust-lang
 
 MAKE_ENV=	DESTDIR=${STAGEDIR} \
 		LIBGIT2_NO_PKG_CONFIG=1 \
-		OPENSSL_DIR="${OPENSSLBASE}" \
-		RUST_BACKTRACE=1
+		OPENSSL_DIR="${OPENSSLBASE}"
 TEST_ENV=	${MAKE_ENV} \
 		ALLOW_NONZERO_RLIMIT_CORE=1
 
@@ -98,6 +97,7 @@ IGNORE=		is only for FreeBSD
 # bfd to link rustc_driver; lld currently can't
 BUILD_DEPENDS+=	ld.bfd:devel/binutils
 .else
+MAKE_ENV+=	RUST_BACKTRACE=1
 # rls needs 64-bit atomics
 _RUST_TOOLS+=	rls
 .endif

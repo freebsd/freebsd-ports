@@ -5,40 +5,40 @@
 # DOS2UNIX_GLOB		list of glob pattern find(1) will match with
 # DOS2UNIX_WRKSRC	top-level path for directory traversal instead of ${WRKSRC}
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_DOS2UNIX_MK)
 _INCLUDE_USES_DOS2UNIX_MK=	yes
 
-.if !empty(dos2unix_ARGS)
+.  if !empty(dos2unix_ARGS)
 IGNORE=	USES=dos2unix takes no arguments
-.endif
+.  endif
 
-.if !defined(DOS2UNIX_FILES) && !defined(DOS2UNIX_REGEX) && !defined(DOS2UNIX_GLOB)
+.  if !defined(DOS2UNIX_FILES) && !defined(DOS2UNIX_REGEX) && !defined(DOS2UNIX_GLOB)
 _DOS2UNIX_ALL=	yes
-.endif
+.  endif
 
 DOS2UNIX_WRKSRC?=	${WRKSRC}
 
 _USES_patch+=	200:dos2unix
 dos2unix:
 	@${ECHO_MSG} "===>   Converting DOS text files to UNIX text files"
-.if defined(_DOS2UNIX_ALL)
+.  if defined(_DOS2UNIX_ALL)
 	@${FIND} ${DOS2UNIX_WRKSRC} -type f -print0 | \
 		${XARGS} -0 ${SED} -i '' -e 's/$$//'
-.else
-.if defined(DOS2UNIX_FILES)
+.  else
+.    if defined(DOS2UNIX_FILES)
 	@(cd ${DOS2UNIX_WRKSRC}; \
 		${ECHO_CMD} ${DOS2UNIX_FILES} | ${XARGS} ${SED} -i '' -e 's/$$//' )
-.elif defined(DOS2UNIX_REGEX)
+.    elif defined(DOS2UNIX_REGEX)
 	@${FIND} -E ${DOS2UNIX_WRKSRC} -type f -iregex '${DOS2UNIX_REGEX}' -print0 | \
 		${XARGS} -0 ${SED} -i '' -e 's/$$//'
-.else
-.for f in ${DOS2UNIX_GLOB}
+.    else
+.      for f in ${DOS2UNIX_GLOB}
 	@${FIND} ${DOS2UNIX_WRKSRC} -type f -name '${f}' -print0 | \
 		${XARGS} -0 ${SED} -i '' -e 's/$$//'
-.endfor
-.endif
-.endif
+.      endfor
+.    endif
+.  endif
 
 .endif

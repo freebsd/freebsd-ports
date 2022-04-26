@@ -24,7 +24,7 @@
 
 name="irrd4"
 rcvar=irrd4_enable
-command="%%PREFIX%%/bin/twistd"
+command="%%PREFIX%%/bin/irrd"
 
 load_rc_config $name
 
@@ -39,6 +39,6 @@ required_files="${irrd4_config}"
 command_interpreter="%%PYTHON_CMD%%"
 pidfile=${irrd4_pidfile}
 
-command_args="--originalname -u ${irrd4_uid} -g ${irrd4_gid} --pidfile ${pidfile} -l ${irrd4_logfile} irrd -c ${irrd4_config}"
+command_args="--config ${irrd4_config}"
 
 run_rc_command "$1"

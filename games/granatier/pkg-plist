@@ -1,5 +1,4 @@
 bin/granatier
-share/qlogging-categories5/granatier.categories
 share/applications/org.kde.granatier.desktop
 share/config.kcfg/granatier.kcfg
 %%DATADIR%%/arenas/clanbomber_Arena.desktop
@@ -108,12 +107,12 @@ share/config.kcfg/granatier.kcfg
 %%DATADIR%%/themes/waterbomb.desktop
 %%DATADIR%%/themes/waterbomb.svgz
 %%DATADIR%%/themes/waterbomb_preview.png
-share/icons/hicolor/128x128/apps/granatier.png
 share/icons/hicolor/16x16/apps/granatier.png
 share/icons/hicolor/22x22/apps/granatier.png
 share/icons/hicolor/32x32/apps/granatier.png
 share/icons/hicolor/48x48/apps/granatier.png
 share/icons/hicolor/64x64/apps/granatier.png
+share/icons/hicolor/128x128/apps/granatier.png
 share/locale/ar/LC_MESSAGES/granatier.mo
 share/locale/bg/LC_MESSAGES/granatier.mo
 share/locale/bs/LC_MESSAGES/granatier.mo
@@ -164,3 +163,4 @@ share/locale/uk/LC_MESSAGES/granatier.mo
 share/locale/zh_CN/LC_MESSAGES/granatier.mo
 share/locale/zh_TW/LC_MESSAGES/granatier.mo
 share/metainfo/org.kde.granatier.appdata.xml
+share/qlogging-categories5/granatier.categories

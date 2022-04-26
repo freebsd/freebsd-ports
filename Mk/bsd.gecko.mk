@@ -14,7 +14,7 @@
 # system.
 
 .if defined(USE_GECKO)
-.if !defined(_POSTMKINCLUDED) && !defined(Gecko_Pre_Include)
+.  if !defined(_POSTMKINCLUDED) && !defined(Gecko_Pre_Include)
 Gecko_Pre_Include=	bsd.gecko.mk
 
 # This file contains some reusable components for mozilla ports. It's of
@@ -67,9 +67,9 @@ USE_GL=		gl
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xt
-.if ${MOZILLA_VER:R:R} >= 96
+.    if ${MOZILLA_VER:R:R} >= 96
 USE_XORG+=	xrandr xtst
-.endif
+.    endif
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 LDFLAGS+=		-Wl,--as-needed
@@ -92,22 +92,22 @@ MOZ_OPTIONS+=	--prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${BUILD_WRKSRC}"
 
 MOZ_OPTIONS+=	--with-libclang-path="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib"
-.if !exists(/usr/bin/llvm-objdump)
+.    if !exists(/usr/bin/llvm-objdump)
 MOZ_EXPORT+=	LLVM_OBJDUMP="${LOCALBASE}/bin/llvm-objdump${LLVM_DEFAULT}"
-.endif
+.    endif
 # Ignore Mk/bsd.default-versions.mk but respect make.conf(5) unless LTO is enabled
-.if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*} || ${PORT_OPTIONS:MLTO}
+.    if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*} || ${PORT_OPTIONS:MLTO}
 LLVM_DEFAULT=	13 # chase bundled LLVM in lang/rust for LTO
 LLVM_VERSION=	13.0.1 # keep in sync with devel/wasi-compiler-rt${LLVM_DEFAULT}
-.endif
+.    endif
 # Require newer Clang than what's in base system unless user opted out
-. if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
+.    if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 CPP=			${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
 CC=				${LOCALBASE}/bin/clang${LLVM_DEFAULT}
 CXX=			${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
 USES:=			${USES:Ncompiler\:*} # XXX avoid warnings
-. endif
+.    endif
 
 MOZSRC?=	${WRKSRC}
 PLISTF?=	${WRKDIR}/plist_files
@@ -116,21 +116,21 @@ MOZCONFIG?=		${WRKSRC}/.mozconfig
 MOZILLA_PLIST_DIRS?=	bin lib share/pixmaps share/applications
 
 # Adjust -C target-cpu if -march/-mcpu is set by bsd.cpu.mk
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.    if ${ARCH} == amd64 || ${ARCH} == i386
 RUSTFLAGS+=	${CFLAGS:M-march=*:S/-march=/-C target-cpu=/}
-.elif ${ARCH:Mpowerpc64*}
+.    elif ${ARCH:Mpowerpc64*}
 RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/:S/power/pwr/}
-.else
+.    else
 RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
-.endif
+.    endif
 
 # Standard depends
 _ALL_DEPENDS=	av1 event ffi graphite harfbuzz icu jpeg nspr nss png pixman sqlite vpx webp
 
-.if exists(${FILESDIR}/patch-bug1559213)
+.    if exists(${FILESDIR}/patch-bug1559213)
 av1_LIB_DEPENDS=	libaom.so:multimedia/aom libdav1d.so:multimedia/dav1d
 av1_MOZ_OPTIONS=	--with-system-av1
-.endif
+.    endif
 
 event_LIB_DEPENDS=	libevent.so:devel/libevent
 event_MOZ_OPTIONS=	--with-system-libevent
@@ -138,13 +138,13 @@ event_MOZ_OPTIONS=	--with-system-libevent
 ffi_LIB_DEPENDS=	libffi.so:devel/libffi
 ffi_MOZ_OPTIONS=	--enable-system-ffi
 
-.if exists(${FILESDIR}/patch-bug847568)
+.    if exists(${FILESDIR}/patch-bug847568)
 graphite_LIB_DEPENDS=	libgraphite2.so:graphics/graphite2
 graphite_MOZ_OPTIONS=	--with-system-graphite2
 
 harfbuzz_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 harfbuzz_MOZ_OPTIONS=	--with-system-harfbuzz
-.endif
+.    endif
 
 icu_LIB_DEPENDS=		libicui18n.so:devel/icu
 icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api
@@ -164,9 +164,9 @@ pixman_MOZ_OPTIONS=	--enable-system-pixman
 
 png_LIB_DEPENDS=	libpng.so:graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
-.if ${MOZILLA_VER:R:R} >= 97
+.    if ${MOZILLA_VER:R:R} >= 97
 png_MOZ_OPTIONS=	--with-system-png
-.endif
+.    endif
 
 sqlite_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 sqlite_MOZ_OPTIONS=	--enable-system-sqlite
@@ -178,24 +178,24 @@ vpx_MOZ_OPTIONS=	--with-system-libvpx
 webp_LIB_DEPENDS=	libwebp.so:graphics/webp
 webp_MOZ_OPTIONS=	--with-system-webp
 
-.for use in ${USE_MOZILLA}
+.    for use in ${USE_MOZILLA}
 ${use:S/-/_WITHOUT_/}=	${TRUE}
-.endfor
+.    endfor
 
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-.for dep in ${_ALL_DEPENDS} ${USE_MOZILLA:M+*:S/+//}
-.if !defined(_WITHOUT_${dep})
+.    for dep in ${_ALL_DEPENDS} ${USE_MOZILLA:M+*:S/+//}
+.      if !defined(_WITHOUT_${dep})
 BUILD_DEPENDS+=	${${dep}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${${dep}_LIB_DEPENDS}
 RUN_DEPENDS+=	${${dep}_RUN_DEPENDS}
 USES+=		${${dep}_USES}
 MOZ_OPTIONS+=	${${dep}_MOZ_OPTIONS}
-.else
+.      else
 BUILD_DEPENDS+=	${-${dep}_BUILD_DEPENDS}
-.endif
-.endfor
+.      endif
+.    endfor
 
 # Standard options
 MOZ_OPTIONS+=	\
@@ -210,158 +210,158 @@ MOZ_OPTIONS+=	\
 MOZ_EXPORT+=	MOZ_GOOGLE_LOCATION_SERVICE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8
 MOZ_EXPORT+=	MOZ_GOOGLE_SAFEBROWSING_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8
 
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+.    if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=		-O3
 MOZ_EXPORT+=	MOZ_OPTIMIZE_FLAGS="${CFLAGS:M-O*}"
 MOZ_OPTIONS+=	--enable-optimize
-.else
+.    else
 MOZ_OPTIONS+=	--disable-optimize
-.  if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+.      if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
 # ld 2.17 barfs on Stylo built with -C opt-level=0
 USE_BINUTILS=	yes
 LDFLAGS+=		-B${LOCALBASE}/bin
-.  endif
-.endif
+.      endif
+.    endif
 
-.if ${PORT_OPTIONS:MCANBERRA}
+.    if ${PORT_OPTIONS:MCANBERRA}
 RUN_DEPENDS+=	libcanberra>0:audio/libcanberra
-.endif
+.    endif
 
-.if ${PORT_OPTIONS:MDBUS}
+.    if ${PORT_OPTIONS:MDBUS}
 BUILD_DEPENDS+=	libnotify>0:devel/libnotify
 LIB_DEPENDS+=	libdbus-1.so:devel/dbus \
 				libdbus-glib-1.so:devel/dbus-glib
-.else
+.    else
 MOZ_OPTIONS+=	--disable-dbus
-.endif
+.    endif
 
-.if ${PORT_OPTIONS:MFFMPEG}
+.    if ${PORT_OPTIONS:MFFMPEG}
 # dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
 RUN_DEPENDS+=	ffmpeg>=0.8,1:multimedia/ffmpeg
-.endif
+.    endif
 
-.if ${PORT_OPTIONS:MLIBPROXY}
+.    if ${PORT_OPTIONS:MLIBPROXY}
 LIB_DEPENDS+=	libproxy.so:net/libproxy
 MOZ_OPTIONS+=	--enable-libproxy
-.else
+.    else
 MOZ_OPTIONS+=	--disable-libproxy
-.endif
+.    endif
 
-.if ${PORT_OPTIONS:MLTO}
+.    if ${PORT_OPTIONS:MLTO}
 MOZ_OPTIONS+=	--enable-lto=cross
-.endif
+.    endif
 
-.if ${PORT_OPTIONS:MALSA}
+.    if ${PORT_OPTIONS:MALSA}
 BUILD_DEPENDS+=	${LOCALBASE}/include/alsa/asoundlib.h:audio/alsa-lib
 MOZ_OPTIONS+=	--enable-alsa
-.endif
+.    endif
 
-.if ${PORT_OPTIONS:MJACK}
+.    if ${PORT_OPTIONS:MJACK}
 BUILD_DEPENDS+=	${LOCALBASE}/include/jack/jack.h:audio/jack
 MOZ_OPTIONS+=	--enable-jack
-.endif
+.    endif
 
-.if ${PORT_OPTIONS:MPULSEAUDIO}
+.    if ${PORT_OPTIONS:MPULSEAUDIO}
 BUILD_DEPENDS+=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio
 MOZ_OPTIONS+=	--enable-pulseaudio
-.else
+.    else
 MOZ_OPTIONS+=	--disable-pulseaudio
-.endif
+.    endif
 
-.if ${PORT_OPTIONS:MSNDIO}
+.    if ${PORT_OPTIONS:MSNDIO}
 BUILD_DEPENDS+=	${LOCALBASE}/include/sndio.h:audio/sndio
 post-patch-SNDIO-on:
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
 		-e '/DISABLE_LIBSNDIO_DLOPEN/d' \
 		${MOZSRC}/media/libcubeb/src/moz.build
-.endif
+.    endif
 
-.if ${PORT_OPTIONS:MDEBUG}
+.    if ${PORT_OPTIONS:MDEBUG}
 MOZ_OPTIONS+=	--enable-debug --disable-release
 STRIP=	# ports/184285
-.else
+.    else
 MOZ_OPTIONS+=	--disable-debug --disable-debug-symbols --enable-release
-. if ${ARCH:Maarch64} || (defined(MACHINE_CPU) && ${MACHINE_CPU:Msse2})
+.      if ${ARCH:Maarch64} || (defined(MACHINE_CPU) && ${MACHINE_CPU:Msse2})
 MOZ_OPTIONS+=	--enable-rust-simd
-. endif
-.endif
+.      endif
+.    endif
 
-.if ${PORT_OPTIONS:MPROFILE}
+.    if ${PORT_OPTIONS:MPROFILE}
 MOZ_OPTIONS+=	--enable-profiling
 STRIP=
-.else
+.    else
 MOZ_OPTIONS+=	--disable-profiling
-.endif
+.    endif
 
-.if ${PORT_OPTIONS:MTEST}
+.    if ${PORT_OPTIONS:MTEST}
 USE_XORG+=		xscrnsaver
 MOZ_OPTIONS+=	--enable-tests
-.else
+.    else
 MOZ_OPTIONS+=	--disable-tests
-.endif
+.    endif
 
-.if !defined(STRIP) || ${STRIP} == ""
+.    if !defined(STRIP) || ${STRIP} == ""
 MOZ_OPTIONS+=	--disable-strip --disable-install-strip
-.else
+.    else
 MOZ_OPTIONS+=	--enable-strip --enable-install-strip
-.endif
+.    endif
 
 # _MAKE_JOBS is only available after bsd.port.post.mk, thus cannot be
 # used in .mozconfig. And client.mk automatically uses -jN where N
 # is what multiprocessing.cpu_count() returns.
-.if defined(DISABLE_MAKE_JOBS) || defined(MAKE_JOBS_UNSAFE)
+.    if defined(DISABLE_MAKE_JOBS) || defined(MAKE_JOBS_UNSAFE)
 MAKE_JOBS_NUMBER=	1
-.endif
-.if defined(MAKE_JOBS_NUMBER)
+.    endif
+.    if defined(MAKE_JOBS_NUMBER)
 MOZ_MAKE_FLAGS+=-j${MAKE_JOBS_NUMBER}
-.endif
+.    endif
 
-.if defined(MOZ_MAKE_FLAGS)
+.    if defined(MOZ_MAKE_FLAGS)
 MOZ_MK_OPTIONS+=MOZ_MAKE_FLAGS="${MOZ_MAKE_FLAGS}"
-.endif
+.    endif
 
-.if ${ARCH} == amd64
-. if ${USE_MOZILLA:M-nss}
+.    if ${ARCH} == amd64
+.      if ${USE_MOZILLA:M-nss}
 USE_BINUTILS=	# intel-gcm.s
 CFLAGS+=	-B${LOCALBASE}/bin
 LDFLAGS+=	-B${LOCALBASE}/bin
-. endif
-.elif ${ARCH:Mpowerpc*}
+.      endif
+.    elif ${ARCH:Mpowerpc*}
 BUILD_DEPENDS+=	as:devel/binutils
-. if ${ARCH} == "powerpc64"
+.      if ${ARCH} == "powerpc64"
 MOZ_EXPORT+=	UNAME_m="${ARCH}"
-. endif
-.endif
+.      endif
+.    endif
 
-.else # bsd.port.post.mk
+.  else # bsd.port.post.mk
 
 post-patch: gecko-post-patch
 
 gecko-post-patch:
 	@${RM} ${MOZCONFIG}
-.if !defined(NOMOZCONFIG)
-.for arg in ${MOZ_OPTIONS}
+.    if !defined(NOMOZCONFIG)
+.      for arg in ${MOZ_OPTIONS}
 	@${ECHO_CMD} ac_add_options ${arg:Q} >> ${MOZCONFIG}
-.endfor
-.for arg in ${MOZ_MK_OPTIONS}
+.      endfor
+.      for arg in ${MOZ_MK_OPTIONS}
 	@${ECHO_CMD} mk_add_options ${arg:Q} >> ${MOZCONFIG}
-.endfor
-.for var in ${MOZ_EXPORT}
+.      endfor
+.      for var in ${MOZ_EXPORT}
 	@${ECHO_CMD} export ${var:Q} >> ${MOZCONFIG}
-.endfor
-.endif # .if !defined(NOMOZCONFIG)
-.if ${USE_MOZILLA:M-nspr}
+.      endfor
+.    endif # .if !defined(NOMOZCONFIG)
+.    if ${USE_MOZILLA:M-nspr}
 	@${ECHO_MSG} "===>  Applying NSPR patches"
 	@for i in ${.CURDIR}/../../devel/nspr/files/patch-*; do \
 		${PATCH} ${PATCH_ARGS} -d ${MOZSRC}/nsprpub < $$i; \
 	done
-.endif
-.if ${USE_MOZILLA:M-nss}
+.    endif
+.    if ${USE_MOZILLA:M-nss}
 	@${ECHO_MSG} "===>  Applying NSS patches"
 	@for i in ${.CURDIR}/../../security/nss/files/patch-*; do \
 		${PATCH} ${PATCH_ARGS} -d ${MOZSRC}/security/nss < $$i; \
 	done
-.endif
+.    endif
 	@if [ -f ${WRKSRC}/config/baseconfig.mk ] ; then \
 		${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 			${WRKSRC}/config/baseconfig.mk; \
@@ -392,12 +392,12 @@ post-install-script: gecko-create-plist
 gecko-create-plist:
 # Create the plist
 	${RM} ${PLISTF}
-.for dir in ${MOZILLA_PLIST_DIRS}
+.    for dir in ${MOZILLA_PLIST_DIRS}
 	@cd ${STAGEDIR}${PREFIX}/${dir} && ${FIND} -H -s * ! -type d | \
 		${SED} -e 's|^|${dir}/|' >> ${PLISTF}
-.endfor
+.    endfor
 	${CAT} ${PLISTF} | ${SORT} >> ${TMPPLIST}
 
-.endif
+.  endif
 .endif
 # HERE THERE BE TACOS -- adamw

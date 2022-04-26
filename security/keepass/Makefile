@@ -1,7 +1,7 @@
 # Created by: Ben Woods <woodsb02@FreeBSD.org>
 
 PORTNAME=	keepass
-PORTVERSION=	2.49
+PORTVERSION=	2.50
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/KeePass%202.x/${PORTVERSION}
 DISTNAME=	KeePass-${PORTVERSION}-Source

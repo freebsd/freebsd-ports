@@ -1,7 +1,7 @@
 # Created by: Thomas Abthorpe <thomas@goodking.ca>
 
 PORTNAME=	Compress-Raw-Zlib
-PORTVERSION=	2.101
+PORTVERSION=	2.103
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

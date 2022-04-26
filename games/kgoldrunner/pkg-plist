@@ -1,11 +1,11 @@
 bin/kgoldrunner
 share/applications/org.kde.kgoldrunner.desktop
-share/icons/hicolor/128x128/apps/kgoldrunner.png
 share/icons/hicolor/16x16/apps/kgoldrunner.png
 share/icons/hicolor/22x22/apps/kgoldrunner.png
 share/icons/hicolor/32x32/apps/kgoldrunner.png
 share/icons/hicolor/48x48/apps/kgoldrunner.png
 share/icons/hicolor/64x64/apps/kgoldrunner.png
+share/icons/hicolor/128x128/apps/kgoldrunner.png
 %%DATADIR%%/system/game_CM.txt
 %%DATADIR%%/system/game_GMEP.txt
 %%DATADIR%%/system/game_GMGR.txt

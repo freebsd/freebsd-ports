@@ -6,7 +6,7 @@ PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smart Common Input Method platform
 
 LICENSE=	LGPL21

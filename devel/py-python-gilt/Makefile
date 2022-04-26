@@ -23,7 +23,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-helpers-namespace>0:devel/py-pytest-helpers-namespace@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yapf>=0.16.3:textproc/py-yapf@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}yapf>=0.16.3:textproc/py-yapf@${PY_FLAVOR} \
+		git:devel/git
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils

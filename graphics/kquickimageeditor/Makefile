@@ -1,8 +1,7 @@
 PORTNAME=	kquickimageeditor
-DISTVERSION=	0.1.2
-PORTREVISION=	1
+DISTVERSION=	0.2.0
 CATEGORIES=	graphics
-MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION:R}
+MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Simple image editor for QtQuick applications

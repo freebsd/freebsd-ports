@@ -1,19 +1,19 @@
---- configure.orig	2018-09-06 07:41:13 UTC
+--- configure.orig	2021-04-22 18:04:21 UTC
 +++ configure
-@@ -360,10 +360,10 @@ if [ z$NOX11 = z ]; then
+@@ -330,10 +330,10 @@ if [ z$NOX11 = z ]; then
  
  	XOK=0
  
 -	XINCLUDE=-I/usr/X11R6/include
 +	XINCLUDE=-I${LOCALBASE}/include
- 	$CXX $CXXFLAGS _test_x11.cc -c -o _test_x11.o $XINCLUDE 2> /dev/null
+ 	$CC $CFLAGS _test_x11.c -c -o _test_x11.o $XINCLUDE 2> /dev/null
  
--	XLIB="-L/usr/X11R6/lib -lX11"
-+	XLIB="-L${LOCALBASE}/lib -lX11"
- 	$CXX $CXXFLAGS _test_x11.o -o _test_x11 $XLIB 2> /dev/null
+-	XLIB="-L/usr/X11R6/lib -lX11 -Wl,-rpath,/usr/X11R6/lib"
++	XLIB="-L${LOCALBASE}/lib -lX11 -Wl,-rpath,${LOCALBASE}/lib"
+ 	$CC $CFLAGS _test_x11.o -o _test_x11 $XLIB 2> /dev/null
  
  	if [ -x _test_x11 ]; then
-@@ -578,22 +578,6 @@ else
+@@ -539,27 +539,6 @@ else
  	fi
  fi
  rm -f _testprog _testprog.error _testprog.stdout
@@ -21,15 +21,20 @@
 -
 -#  -O optimization for non-debug builds. Try -O and -O3.
 -if [ ! z"$DEBUG" = zYES ]; then
--	$CXX $CXXFLAGS -O _testprog.cc -o _testprog 2> /dev/null
+-	printf "checking whether -O3 or -O can be used (non-DEBUG build)... "
+-	$CC $CFLAGS -O _testprog.c -o _testprog 2> /dev/null
 -	if [ -x _testprog ]; then
 -		rm -f _testprog
--		$CXX $CXXFLAGS -O3 _testprog.cc -o _testprog 2> /dev/null
+-		$CC $CFLAGS -O3 _testprog.c -o _testprog 2> /dev/null
 -		if [ -x _testprog ]; then
--			CXXFLAGS="-O3 $CXXFLAGS"
+-			CFLAGS="-O3 $CFLAGS"
+-			printf "yes, -O3\n"
 -		else
--			CXXFLAGS="-O $CXXFLAGS"
+-			CFLAGS="-O $CFLAGS"
+-			printf "yes, -O\n"
 -		fi
+-	else
+-		printf "no\n"
 -	fi
 -fi
 -rm -f _testprog

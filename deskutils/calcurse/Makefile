@@ -1,7 +1,7 @@
 # Created by: Herbert J. Skuhra <h.skuhra@gmail.com>
 
 PORTNAME=	calcurse
-DISTVERSION=	4.7.1
+DISTVERSION=	4.8.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://calcurse.org/files/ \
 		https://fossies.org/linux/privat/

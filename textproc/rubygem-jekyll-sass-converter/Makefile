@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	jekyll-sass-converter
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

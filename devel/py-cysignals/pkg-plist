@@ -3,7 +3,6 @@ bin/cysignals-CSI
 %%PYTHON_SITELIBDIR%%/cysignals/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/cysignals/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/cysignals/alarm%%PYTHON_EXT_SUFFIX%%.so
-%%PYTHON_SITELIBDIR%%/cysignals/cysetjmp.h
 %%PYTHON_SITELIBDIR%%/cysignals/cysignals_config.h
 %%PYTHON_SITELIBDIR%%/cysignals/macros.h
 %%PYTHON_SITELIBDIR%%/cysignals/memory.pxd

@@ -1,5 +1,5 @@
 PORTNAME=	libretro-beetle_psx
-PORTVERSION=	0.20210128
+PORTVERSION=	0.20220211
 PORTREVISION=	1
 CATEGORIES=	games
 
@@ -15,7 +15,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-psx-libretro
-GH_TAGNAME=	3ec155d
+GH_TAGNAME=	88929ae
 
 PLIST_FILES=	lib/libretro/mednafen_psx_libretro.so
 

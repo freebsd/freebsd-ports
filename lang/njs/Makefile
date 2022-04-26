@@ -1,8 +1,7 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	njs
-DISTVERSION=	0.7.2
-PORTREVISION=	1
+DISTVERSION=	0.7.3
 CATEGORIES=	lang www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -13,10 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe
 
-CPE_VENDOR=	nginx
+CPE_VENDOR=	f5
 
 USE_GITHUB=	yes
-GH_TUPLE=	nginx:njs:0.7.2
+GH_TUPLE=	nginx:njs:0.7.3
 HAS_CONFIGURE=	yes
 
 OPTIONS_DEFINE=		SSL

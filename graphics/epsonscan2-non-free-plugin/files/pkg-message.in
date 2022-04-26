@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+The graphics/epsonscan2 scanner driver is the main Epson scanner port.
+
+This port provides the Linux binaries needed to access the scanner over
+the network and for some older USB models.  This port requires the kernel
+Linux emulation and emulators/linux_base-c7 ports.  Depending on your scanner
+model, if you do not need network access, you may not need this port or the
+Linux emulator.
+
+Please read %%PREFIX%%/lib/epsonscan2/Read_me.FreeBSD for further details
+of how to configure and use this software.
+
+Note that es2intif requires FreeBSD 13.x or 14.x kernel later than 2022/03/05
+for operation with scanner models shown with [*] in
+%%PREFIX%%/lib/epsonscan2/Read_me.FreeBSD.
+EOM
+}
+]

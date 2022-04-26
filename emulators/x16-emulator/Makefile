@@ -1,5 +1,5 @@
 PORTNAME=	x16-emulator
-DISTVERSION=	r38
+DISTVERSION=	r40
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
@@ -26,7 +26,7 @@ DESKTOP_ENTRIES=	"Commander X16" \
 PLIST_FILES=	bin/x16emu
 
 post-patch:
-	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/main.c
+	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/src/main.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x16emu ${STAGEDIR}${PREFIX}/bin

@@ -1,0 +1,12 @@
+lux is an image viewer for 'normal' images and the most common types of
+panoramic images, typically showing a 'rectilinear' view to the image
+data, which looks as if this view had been taken with an 'ordinary'
+lens.  The view can be zoomed, panned, scrolled, rotated and modified in
+several ways.  lux displays images, it does not modify them.  But it can
+produce high-quality images from the view it shows.  lux can also
+produce synoptic views of several images and do stitching, HDR blending,
+exposure fusions, focus stacks and deghosting, usually from 'PTO' files,
+processing a subset of the panotools standard used by panorama stitching
+software like hugin.
+
+WWW: https://bitbucket.org/kfj/pv

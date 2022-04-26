@@ -133,9 +133,9 @@ _USE_QT_ALL=		assistant dbus declarative declarative-test designer doc gui help 
 			scripttools sql sql-mysql sql-odbc sql-pgsql \
 			sql-sqlite2 sql-sqlite3 svg testlib webkit \
 			xml xmlpatterns
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.  if ${ARCH} == amd64 || ${ARCH} == i386
 _USE_QT_ALL+=	sql-ibase
-.endif
+.  endif
 
 _USE_QT5_ONLY=		3d buildtools charts concurrent connectivity \
 			core datavis3d diag examples gamepad \

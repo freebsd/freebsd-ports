@@ -1,6 +1,7 @@
 PORTNAME=	phpfpm_exporter
 PORTVERSION=	0.4.1
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	gasol.wu@gmail.com

@@ -2,7 +2,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	3.8.1
-PORTREVISION=	0
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -48,9 +48,6 @@ USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_SDL=	sdl2
 USE_XORG=	ice sm x11 xext xrandr
-
-CONFLICTS_BUILD=	darktable38
-CONFLICTS_INSTALL=	darktable38
 
 SHEBANG_FILES=	tools/*.sh
 
@@ -122,7 +119,7 @@ WEBP_CMAKE_BOOL=	USE_WEBP
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH} == powerpc64le
+.if ${ARCH} == aarch64
 CMAKE_ARGS+=	-DUSE_OPENCL:BOOL=OFF
 CXXFLAGS+=	-DGDK_DISABLE_DEPRECATED
 PLIST_SUB+=	NO_OPENCL="@comment "

@@ -1,7 +1,7 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 
 PORTNAME=	gnome-chess
-PORTVERSION=	41.1
+PORTVERSION=	42.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
 		itstool:textproc/itstool \
 		vala:lang/vala
+LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita
 
 PORTSCOUT=	limitw:1,even
 

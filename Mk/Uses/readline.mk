@@ -3,14 +3,14 @@
 # Feature:	readline
 # Usage:	USES=readline
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_READLINE_MK)
 _INCLUDE_USES_READLINE_MK=	yes
 
-.if !empty(readline_ARGS)
+.  if !empty(readline_ARGS)
 IGNORE= Incorrect 'USES+= readline:${readline_ARGS}' readline takes no arguments
-.endif
+.  endif
 
 LIB_DEPENDS+=		libreadline.so.8:devel/readline
 CPPFLAGS+=		-I${LOCALBASE}/include

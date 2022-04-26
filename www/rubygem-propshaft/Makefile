@@ -11,8 +11,6 @@ COMMENT=	Deliver assets for Rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-BROKEN_RUBY26=	yes
-
 RUN_DEPENDS=	rubygem-actionpack70>=7.0.0:www/rubygem-actionpack70 \
 		rubygem-activesupport70>=7.0.0:devel/rubygem-activesupport70 \
 		rubygem-rack>=0,3:www/rubygem-rack \

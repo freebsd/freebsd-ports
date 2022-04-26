@@ -2,6 +2,7 @@
 
 PORTNAME=	dvdauthor
 PORTVERSION=	0.7.2.20211105
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org

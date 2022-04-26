@@ -333,3 +333,4 @@ src/snort_dynamicsrc/util_unfold.h
 @dir etc/snort/rules
 @dir etc/snort/preproc_rules
 @dir etc/snort
+@dir /var/log/snort

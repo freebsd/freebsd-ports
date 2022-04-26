@@ -1,0 +1,1071 @@
+--- Expressions.py.orig	2003-03-01 20:25:13 UTC
++++ Expressions.py
+@@ -20,14 +20,14 @@ for Python expressions, string literals, and paths.
+ __version__='$Revision: 1.2 $'[11:-2]
+ 
+ import re, sys
+-from TALES import Engine, CompilerError, _valid_name, NAME_RE, \
++from .TALES import Engine, CompilerError, _valid_name, NAME_RE, \
+      Undefined, Default, _parse_expr
+ 
+ _engine = None
+ def getEngine():
+     global _engine
+     if _engine is None:
+-        from PathIterator import Iterator
++        from .PathIterator import Iterator
+         _engine = Engine(Iterator)
+         installHandlers(_engine)
+     return _engine
+@@ -42,7 +42,7 @@ def installHandlers(engine):
+     reg('not', NotExpr)
+     reg('defer', DeferExpr)
+ 
+-from PythonExpr import getSecurityManager, PythonExpr
++from .PythonExpr import getSecurityManager, PythonExpr
+ try:
+     from zExceptions import Unauthorized
+ except ImportError:
+@@ -78,7 +78,7 @@ def render(ob, ns):
+                     ob = call_with_ns(ob, ns, 2)
+                 else:
+                     ob = ob()
+-            except AttributeError, n:
++            except AttributeError as n:
+                 if str(n) != '__call__':
+                     raise
+     return ob
+@@ -88,7 +88,7 @@ class SubPathExpr:
+         self._path = path = path.strip().split('/')
+         self._base = base = path.pop(0)
+         if not _valid_name(base):
+-            raise CompilerError, 'Invalid variable name "%s"' % base
++            raise CompilerError('Invalid variable name "%s"' % base)
+         # Parse path
+         self._dp = dp = []
+         for i in range(len(path)):
+@@ -178,10 +178,10 @@ class PathExpr:
+         return self._eval(econtext)
+ 
+     def __str__(self):
+-        return '%s expression %s' % (self._name, `self._s`)
++        return '%s expression %s' % (self._name, repr(self._s))
+ 
+     def __repr__(self):
+-        return '%s:%s' % (self._name, `self._s`)
++        return '%s:%s' % (self._name, repr(self._s))
+ 
+ 
+ _interp = re.compile(r'\$(%(n)s)|\${(%(n)s(?:/[^}]*)*)}' % {'n': NAME_RE})
+@@ -205,8 +205,8 @@ class StringExpr:
+                     exp = exp[m.end():]
+                     m = _interp.search(exp)
+                 if '$' in exp:
+-                    raise CompilerError, (
+-                        '$ must be doubled or followed by a simple path')
++                    raise CompilerError((
++                        '$ must be doubled or followed by a simple path'))
+                 parts.append(exp)
+             expr = ''.join(parts)
+         self._expr = expr
+@@ -222,10 +222,10 @@ class StringExpr:
+         return self._expr % tuple(vvals)
+ 
+     def __str__(self):
+-        return 'string expression %s' % `self._s`
++        return 'string expression %s' % repr(self._s)
+ 
+     def __repr__(self):
+-        return 'string:%s' % `self._s`
++        return 'string:%s' % repr(self._s)
+ 
+ class NotExpr:
+     def __init__(self, name, expr, compiler):
+@@ -239,7 +239,7 @@ class NotExpr:
+         return (not econtext.evaluateBoolean(self._c)) and 1 or 0
+ 
+     def __repr__(self):
+-        return 'not:%s' % `self._s`
++        return 'not:%s' % repr(self._s)
+ 
+ class DeferWrapper:
+     def __init__(self, expr, econtext):
+@@ -261,7 +261,7 @@ class DeferExpr:
+         return DeferWrapper(self._c, econtext)
+ 
+     def __repr__(self):
+-        return 'defer:%s' % `self._s`
++        return 'defer:%s' % repr(self._s)
+ 
+ class TraversalError:
+     def __init__(self, path, name):
+@@ -295,7 +295,7 @@ def restrictedTraverse(self, path, securityManager,  
+                 # the object has the attribute "__getitem__"
+                 # instead of blindly catching exceptions.
+                 o = object[name]
+-            except AttributeError, exc:
++            except AttributeError as exc:
+                 if str(exc).find('__getitem__') >= 0:
+                     # The object does not support the item interface.
+                     # Try to re-raise the original attribute error.
+@@ -303,7 +303,7 @@ def restrictedTraverse(self, path, securityManager,  
+                     # ExtensionClass instances.
+                     get(object, name)
+                 raise
+-            except TypeError, exc:
++            except TypeError as exc:
+                 if str(exc).find('unsubscriptable') >= 0:
+                     # The object does not support the item interface.
+                     # Try to re-raise the original attribute error.
+--- MultiMapping.py.orig	2003-03-01 14:59:53 UTC
++++ MultiMapping.py
+@@ -1,20 +1,21 @@
+ import operator
++from functools import reduce
+ 
+ class MultiMapping:
+     def __init__(self, *stores):
+         self.stores = list(stores)
+     def __getitem__(self, key):
+         for store in self.stores:
+-            if store.has_key(key):
++            if key in store:
+                 return store[key]
+-        raise KeyError, key
++        raise KeyError(key)
+     _marker = []
+     def get(self, key, default=_marker):
+         for store in self.stores:
+-            if store.has_key(key):
++            if key in store:
+                 return store[key]
+         if default is self._marker:
+-            raise KeyError, key
++            raise KeyError(key)
+         return default
+     def __len__(self):
+         return reduce(operator.add, [len(x) for x in stores], 0)
+@@ -25,5 +26,5 @@ class MultiMapping:
+     def items(self):
+         l = []
+         for store in self.stores:
+-            l = l + store.items()
++            l = l + list(store.items())
+         return l
+--- PythonExpr.py.orig	2003-03-01 20:25:13 UTC
++++ PythonExpr.py
+@@ -16,7 +16,7 @@
+ 
+ __version__='$Revision: 1.2 $'[11:-2]
+ 
+-from TALES import CompilerError
++from .TALES import CompilerError
+ from sys import exc_info
+ 
+ class getSecurityManager:
+@@ -30,16 +30,16 @@ class PythonExpr:
+         self.expr = expr = expr.strip().replace('\n', ' ')
+         try:
+             d = {}
+-            exec 'def f():\n return %s\n' % expr.strip() in d
++            exec('def f():\n return %s\n' % expr.strip(), d)
+             self._f = d['f']
+         except:
+-            raise CompilerError, ('Python expression error:\n'
+-                                  '%s: %s') % exc_info()[:2]
++            raise CompilerError(('Python expression error:\n'
++                                  '%s: %s') % exc_info()[:2])
+         self._get_used_names()
+ 
+     def _get_used_names(self):
+         self._f_varnames = vnames = []
+-        for vname in self._f.func_code.co_names:
++        for vname in self._f.__code__.co_names:
+             if vname[0] not in '$_':
+                 vnames.append(vname)
+ 
+@@ -62,7 +62,7 @@ class PythonExpr:
+     def __call__(self, econtext):
+         __traceback_info__ = self.expr
+         f = self._f
+-        f.func_globals.update(self._bind_used_names(econtext))
++        f.__globals__.update(self._bind_used_names(econtext))
+         return f()
+ 
+     def __str__(self):
+--- TALES.py.orig	2003-03-01 20:25:13 UTC
++++ TALES.py
+@@ -18,9 +18,9 @@ An implementation of a generic TALES engine
+ __version__='$Revision: 1.2 $'[11:-2]
+ 
+ import re, sys, ZTUtils
+-from MultiMapping import MultiMapping
+-from TAL.ustr import ustr
+-from GlobalTranslationService import getGlobalTranslationService
++from .MultiMapping import MultiMapping
++from .TAL.ustr import ustr
++from .GlobalTranslationService import getGlobalTranslationService
+ 
+ StringType = type('')
+ 
+@@ -65,7 +65,7 @@ class Iterator(ZTUtils.Iterator):
+         self.name = name
+         self._context = context
+ 
+-    def next(self):
++    def __next__(self):
+         if ZTUtils.Iterator.next(self):
+             self._context.setLocal(self.name, self.item)
+             return 1
+@@ -104,10 +104,10 @@ class Engine:
+ 
+     def registerType(self, name, handler):
+         if not _valid_name(name):
+-            raise RegistrationError, 'Invalid Expression type "%s".' % name
++            raise RegistrationError('Invalid Expression type "%s".' % name)
+         types = self.types
+-        if types.has_key(name):
+-            raise RegistrationError, (
++        if name in types:
++            raise RegistrationError(
+                 'Multiple registrations for Expression type "%s".' %
+                 name)
+         types[name] = handler
+@@ -126,7 +126,7 @@ class Engine:
+         try:
+             handler = self.types[type]
+         except KeyError:
+-            raise CompilerError, (
++            raise CompilerError(
+                 'Unrecognized expression type "%s".' % type)
+         return handler(type, expr, self)
+ 
+@@ -282,4 +282,4 @@ class SimpleExpr:
+     def __call__(self, econtext):
+         return self._name, self._expr
+     def __repr__(self):
+-        return '<SimpleExpr %s %s>' % (self._name, `self._expr`)
++        return '<SimpleExpr %s %s>' % (self._name, repr(self._expr))
+--- TAL/HTMLParser.py.orig	2003-03-01 20:25:14 UTC
++++ TAL/HTMLParser.py
+@@ -8,7 +8,7 @@
+ # and CDATA (character data -- only end tags are special).
+ 
+ 
+-import markupbase
++from . import markupbase
+ import re
+ 
+ # Regular expressions used for parsing
+@@ -285,7 +285,7 @@ class HTMLParser(markupbase.ParserBase):
+             else:
+                 offset = offset + len(self.__starttag_text)
+             self.error("junk characters in start tag: %s"
+-                       % `rawdata[k:endpos][:20]`)
++                       % repr(rawdata[k:endpos][:20]))
+         if end[-2:] == '/>':
+             # XHTML-style empty tag: <span attr="value" />
+             self.handle_startendtag(tag, attrs)
+@@ -337,7 +337,7 @@ class HTMLParser(markupbase.ParserBase):
+         j = match.end()
+         match = endtagfind.match(rawdata, i) # </ + tag + >
+         if not match:
+-            self.error("bad end tag: %s" % `rawdata[i:j]`)
++            self.error("bad end tag: %s" % repr(rawdata[i:j]))
+         tag = match.group(1).lower()
+         if (  self.cdata_endtag is not None
+               and tag != self.cdata_endtag):
+@@ -388,7 +388,7 @@ class HTMLParser(markupbase.ParserBase):
+         pass
+ 
+     def unknown_decl(self, data):
+-        self.error("unknown declaration: " + `data`)
++        self.error("unknown declaration: " + repr(data))
+ 
+     # Internal -- helper to remove special character quoting
+     def unescape(self, s):
+--- TAL/HTMLTALParser.py.orig	2003-03-01 20:25:14 UTC
++++ TAL/HTMLTALParser.py
+@@ -17,9 +17,9 @@ Parse HTML and compile to TALInterpreter intermediate 
+ 
+ import sys
+ 
+-from TALGenerator import TALGenerator
+-from HTMLParser import HTMLParser, HTMLParseError
+-from TALDefs import \
++from .TALGenerator import TALGenerator
++from .HTMLParser import HTMLParser, HTMLParseError
++from .TALDefs import \
+      ZOPE_METAL_NS, ZOPE_TAL_NS, ZOPE_I18N_NS, METALError, TALError, I18NError
+ 
+ BOOLEAN_HTML_ATTRS = [
+@@ -61,7 +61,7 @@ BLOCK_LEVEL_HTML_TAGS = [
+     ]
+ 
+ TIGHTEN_IMPLICIT_CLOSE_TAGS = (PARA_LEVEL_HTML_TAGS
+-                               + BLOCK_CLOSING_TAG_MAP.keys())
++                               + list(BLOCK_CLOSING_TAG_MAP.keys()))
+ 
+ 
+ class NestingError(HTMLParseError):
+@@ -118,7 +118,7 @@ class HTMLTALParser(HTMLParser):
+         f.close()
+         try:
+             self.parseString(data)
+-        except TALError, e:
++        except TALError as e:
+             e.setFile(file)
+             raise
+ 
+@@ -175,7 +175,7 @@ class HTMLTALParser(HTMLParser):
+         if tag in EMPTY_HTML_TAGS:
+             return
+         close_to = -1
+-        if BLOCK_CLOSING_TAG_MAP.has_key(tag):
++        if tag in BLOCK_CLOSING_TAG_MAP:
+             blocks_to_close = BLOCK_CLOSING_TAG_MAP[tag]
+             for i in range(len(self.tagstack)):
+                 t = self.tagstack[i]
+@@ -287,19 +287,19 @@ class HTMLTALParser(HTMLParser):
+             if ns and ns != 'unknown':
+                 item = (key, value, ns)
+             if ns == 'tal':
+-                if taldict.has_key(keybase):
++                if keybase in taldict:
+                     raise TALError("duplicate TAL attribute " +
+-                                   `keybase`, self.getpos())
++                                   repr(keybase), self.getpos())
+                 taldict[keybase] = value
+             elif ns == 'metal':
+-                if metaldict.has_key(keybase):
++                if keybase in metaldict:
+                     raise METALError("duplicate METAL attribute " +
+-                                     `keybase`, self.getpos())
++                                     repr(keybase), self.getpos())
+                 metaldict[keybase] = value
+             elif ns == 'i18n':
+-                if i18ndict.has_key(keybase):
++                if keybase in i18ndict:
+                     raise I18NError("duplicate i18n attribute " +
+-                                    `keybase`, self.getpos())
++                                    repr(keybase), self.getpos())
+                 i18ndict[keybase] = value
+             attrlist.append(item)
+         if namens in ('metal', 'tal'):
+--- TAL/ITALES.py.orig	2003-03-01 20:25:14 UTC
++++ TAL/ITALES.py
+@@ -51,13 +51,14 @@ class ITALESEngine(Interface):
+         using the 'is' operator in Python.
+         """
+ 
+-    def setPosition((lineno, offset)):
++    def setPosition(xxx_todo_changeme):
+         """Inform the engine of the current position in the source file.
+ 
+         This is used to allow the evaluation engine to report
+         execution errors so that site developers can more easily
+         locate the offending expression.
+         """
++        (lineno, offset) = xxx_todo_changeme
+ 
+     def setSourceFile(filename):
+         """Inform the engine of the name of the current source file.
+@@ -112,12 +113,13 @@ class ITALESEngine(Interface):
+         No constraints are imposed on the return value.
+         """
+ 
+-    def createErrorInfo(exception, (lineno, offset)):
++    def createErrorInfo(exception, xxx_todo_changeme1):
+         """Returns an ITALESErrorInfo object.
+ 
+         The returned object is used to provide information about the
+         error condition for the on-error handler.
+         """
++        (lineno, offset) = xxx_todo_changeme1
+ 
+     def setGlobal(name, value):
+         """Set a global variable.
+--- TAL/TALDefs.py.orig	2003-03-01 20:25:14 UTC
++++ TAL/TALDefs.py
+@@ -17,7 +17,7 @@ Common definitions used by TAL and METAL compilation a
+ 
+ from types import ListType, TupleType
+ 
+-from ITALES import ITALESErrorInfo
++from .ITALES import ITALESErrorInfo
+ 
+ TAL_VERSION = "1.4"
+ 
+@@ -118,17 +118,17 @@ def parseAttributeReplacements(arg):
+     for part in splitParts(arg):
+         m = _attr_re.match(part)
+         if not m:
+-            raise TALError("Bad syntax in attributes:" + `part`)
++            raise TALError("Bad syntax in attributes:" + repr(part))
+         name, expr = m.group(1, 2)
+-        if dict.has_key(name):
+-            raise TALError("Duplicate attribute name in attributes:" + `part`)
++        if name in dict:
++            raise TALError("Duplicate attribute name in attributes:" + repr(part))
+         dict[name] = expr
+     return dict
+ 
+ def parseSubstitution(arg, position=(None, None)):
+     m = _subst_re.match(arg)
+     if not m:
+-        raise TALError("Bad syntax in substitution text: " + `arg`, position)
++        raise TALError("Bad syntax in substitution text: " + repr(arg), position)
+     key, expr = m.group(1, 2)
+     if not key:
+         key = "text"
+--- TAL/TALGenerator.py.orig	2003-03-01 20:25:14 UTC
++++ TAL/TALGenerator.py
+@@ -18,12 +18,12 @@ Code generator for TALInterpreter intermediate code.
+ import re
+ import cgi
+ 
+-import TALDefs
++from . import TALDefs
+ 
+-from TALDefs import NAME_RE, TAL_VERSION
+-from TALDefs import I18NError, METALError, TALError
+-from TALDefs import parseSubstitution
+-from TranslationContext import TranslationContext, DEFAULT_DOMAIN
++from .TALDefs import NAME_RE, TAL_VERSION
++from .TALDefs import I18NError, METALError, TALError
++from .TALDefs import parseSubstitution
++from .TranslationContext import TranslationContext, DEFAULT_DOMAIN
+ 
+ I18N_REPLACE = 1
+ I18N_CONTENT = 2
+@@ -75,7 +75,7 @@ class TALGenerator:
+             endsep = "/>"
+         else:
+             endsep = " />"
+-        for cursor in xrange(len(program)+1):
++        for cursor in range(len(program)+1):
+             try:
+                 item = program[cursor]
+             except IndexError:
+@@ -203,8 +203,8 @@ class TALGenerator:
+     def compileExpression(self, expr):
+         try:
+             return self.expressionCompiler.compile(expr)
+-        except self.CompilerError, err:
+-            raise TALError('%s in expression %s' % (err.args[0], `expr`),
++        except self.CompilerError as err:
++            raise TALError('%s in expression %s' % (err.args[0], repr(expr)),
+                            self.position)
+ 
+     def pushProgram(self):
+@@ -265,7 +265,7 @@ class TALGenerator:
+             m = re.match(
+                 r"(?s)\s*(?:(global|local)\s+)?(%s)\s+(.*)\Z" % NAME_RE, part)
+             if not m:
+-                raise TALError("invalid define syntax: " + `part`,
++                raise TALError("invalid define syntax: " + repr(part),
+                                self.position)
+             scope, name, expr = m.group(1, 2, 3)
+             scope = scope or "local"
+@@ -299,7 +299,7 @@ class TALGenerator:
+     def emitRepeat(self, arg):
+         m = re.match("(?s)\s*(%s)\s+(.*)\Z" % NAME_RE, arg)
+         if not m:
+-            raise TALError("invalid repeat syntax: " + `arg`,
++            raise TALError("invalid repeat syntax: " + repr(arg),
+                            self.position)
+         name, expr = m.group(1, 2)
+         cexpr = self.compileExpression(expr)
+@@ -362,11 +362,11 @@ class TALGenerator:
+     def emitDefineMacro(self, macroName):
+         program = self.popProgram()
+         macroName = macroName.strip()
+-        if self.macros.has_key(macroName):
+-            raise METALError("duplicate macro definition: %s" % `macroName`,
++        if macroName in self.macros:
++            raise METALError("duplicate macro definition: %s" % repr(macroName),
+                              self.position)
+         if not re.match('%s$' % NAME_RE, macroName):
+-            raise METALError("invalid macro name: %s" % `macroName`,
++            raise METALError("invalid macro name: %s" % repr(macroName),
+                              self.position)
+         self.macros[macroName] = program
+         self.inMacroDef = self.inMacroDef - 1
+@@ -382,18 +382,18 @@ class TALGenerator:
+         program = self.popProgram()
+         slotName = slotName.strip()
+         if not re.match('%s$' % NAME_RE, slotName):
+-            raise METALError("invalid slot name: %s" % `slotName`,
++            raise METALError("invalid slot name: %s" % repr(slotName),
+                              self.position)
+         self.emit("defineSlot", slotName, program)
+ 
+     def emitFillSlot(self, slotName):
+         program = self.popProgram()
+         slotName = slotName.strip()
+-        if self.slots.has_key(slotName):
+-            raise METALError("duplicate fill-slot name: %s" % `slotName`,
++        if slotName in self.slots:
++            raise METALError("duplicate fill-slot name: %s" % repr(slotName),
+                              self.position)
+         if not re.match('%s$' % NAME_RE, slotName):
+-            raise METALError("invalid slot name: %s" % `slotName`,
++            raise METALError("invalid slot name: %s" % repr(slotName),
+                              self.position)
+         self.slots[slotName] = program
+         self.inMacroUse = 1
+@@ -457,13 +457,13 @@ class TALGenerator:
+         newlist = []
+         for item in attrlist:
+             key = item[0]
+-            if repldict.has_key(key):
++            if key in repldict:
+                 expr, xlat = repldict[key]
+                 item = item[:2] + ("replace", expr, xlat)
+                 del repldict[key]
+             newlist.append(item)
+         # Add dynamic-only attributes
+-        for key, (expr, xlat) in repldict.items():
++        for key, (expr, xlat) in list(repldict.items()):
+             newlist.append((key, None, "insert", expr, xlat))
+         return newlist
+ 
+@@ -478,25 +478,25 @@ class TALGenerator:
+             return
+ 
+         self.position = position
+-        for key, value in taldict.items():
++        for key, value in list(taldict.items()):
+             if key not in TALDefs.KNOWN_TAL_ATTRIBUTES:
+-                raise TALError("bad TAL attribute: " + `key`, position)
++                raise TALError("bad TAL attribute: " + repr(key), position)
+             if not (value or key == 'omit-tag'):
+                 raise TALError("missing value for TAL attribute: " +
+-                               `key`, position)
+-        for key, value in metaldict.items():
++                               repr(key), position)
++        for key, value in list(metaldict.items()):
+             if key not in TALDefs.KNOWN_METAL_ATTRIBUTES:
+-                raise METALError("bad METAL attribute: " + `key`,
++                raise METALError("bad METAL attribute: " + repr(key),
+                                  position)
+             if not value:
+                 raise TALError("missing value for METAL attribute: " +
+-                               `key`, position)
+-        for key, value in i18ndict.items():
++                               repr(key), position)
++        for key, value in list(i18ndict.items()):
+             if key not in TALDefs.KNOWN_I18N_ATTRIBUTES:
+-                raise I18NError("bad i18n attribute: " + `key`, position)
++                raise I18NError("bad i18n attribute: " + repr(key), position)
+             if not value and key in ("attributes", "data", "id"):
+                 raise I18NError("missing value for i18n attribute: " +
+-                                `key`, position)
++                                repr(key), position)
+         todo = {}
+         defineMacro = metaldict.get("define-macro")
+         useMacro = metaldict.get("use-macro")
+@@ -655,10 +655,10 @@ class TALGenerator:
+                 i18nattrs = ()
+             # Convert repldict's name-->expr mapping to a
+             # name-->(compiled_expr, translate) mapping
+-            for key, value in repldict.items():
++            for key, value in list(repldict.items()):
+                 repldict[key] = self.compileExpression(value), key in i18nattrs
+             for key in i18nattrs:
+-                if not repldict.has_key(key):
++                if key not in repldict:
+                     repldict[key] = None, 1
+         else:
+             repldict = {}
+--- TAL/TALInterpreter.py.orig	2003-03-01 20:25:14 UTC
++++ TAL/TALInterpreter.py
+@@ -21,13 +21,13 @@ import re
+ from types import ListType
+ from cgi import escape
+ # Do not use cStringIO here!  It's not unicode aware. :(
+-from StringIO import StringIO
+-from ustr import ustr
++from io import StringIO
++from .ustr import ustr
+ 
+-from TALDefs import TAL_VERSION, TALError, METALError
+-from TALDefs import isCurrentVersion, getProgramVersion, getProgramMode
+-from TALGenerator import TALGenerator
+-from TranslationContext import TranslationContext
++from .TALDefs import TAL_VERSION, TALError, METALError
++from .TALDefs import isCurrentVersion, getProgramVersion, getProgramMode
++from .TALGenerator import TALGenerator
++from .TranslationContext import TranslationContext
+ 
+ BOOLEAN_HTML_ATTRS = [
+     # List of Boolean attributes in HTML that should be rendered in
+@@ -64,7 +64,7 @@ def interpolate(text, mapping):
+     # Now substitute with the variables in mapping.
+     for string in to_replace:
+         var = _get_var_regex.findall(string)[0]
+-        if mapping.has_key(var):
++        if var in mapping:
+             # Call ustr because we may have an integer for instance.
+             subst = ustr(mapping[var])
+             try:
+@@ -73,7 +73,7 @@ def interpolate(text, mapping):
+                 # subst contains high-bit chars...
+                 # As we have no way of knowing the correct encoding,
+                 # substitue something instead of raising an exception.
+-                subst = `subst`[1:-1]
++                subst = repr(subst)[1:-1]
+                 text = text.replace(string, subst)
+     return text
+ 
+@@ -90,7 +90,7 @@ class AltTALGenerator(TALGenerator):
+ 
+     def emit(self, *args):
+         if self.enabled:
+-            apply(TALGenerator.emit, (self,) + args)
++            TALGenerator.emit(*(self,) + args)
+ 
+     def emitStartElement(self, name, attrlist, taldict, metaldict, i18ndict,
+                          position=(None, None), isend=0):
+@@ -176,7 +176,7 @@ class TALInterpreter:
+     def pushMacro(self, macroName, slots, entering=1):
+         if len(self.macroStack) >= self.stackLimit:
+             raise METALError("macro nesting limit (%d) exceeded "
+-                             "by %s" % (self.stackLimit, `macroName`))
++                             "by %s" % (self.stackLimit, repr(macroName)))
+         self.macroStack.append([macroName, slots, entering, self.i18nContext])
+ 
+     def popMacro(self):
+@@ -273,12 +273,13 @@ class TALInterpreter:
+         self.do_startTag(stuff, self.endsep, self.endlen)
+     bytecode_handlers["startEndTag"] = do_startEndTag
+ 
+-    def do_startTag(self, (name, attrList),
++    def do_startTag(self, xxx_todo_changeme,
+                     end=">", endlen=1, _len=len):
+         # The bytecode generator does not cause calls to this method
+         # for start tags with no attributes; those are optimized down
+         # to rawtext events.  Hence, there is no special "fast path"
+         # for that case.
++        (name, attrList) = xxx_todo_changeme
+         L = ["<", name]
+         append = L.append
+         col = self.col + _len(name) + 1
+@@ -393,8 +394,9 @@ class TALInterpreter:
+         self.restoreOutputState(state)
+         self.interpret(program)
+ 
+-    def do_optTag(self, (name, cexpr, tag_ns, isend, start, program),
++    def do_optTag(self, xxx_todo_changeme1,
+                   omit=0):
++        (name, cexpr, tag_ns, isend, start, program) = xxx_todo_changeme1
+         if tag_ns and not self.showtal:
+             return self.no_tag(start, program)
+ 
+@@ -419,10 +421,11 @@ class TALInterpreter:
+         for i in range(len(self.macroStack)):
+             what, macroName, slots = self.macroStack[i][:3]
+             sys.stderr.write("| %2d. %-12s %-12s %s\n" %
+-                             (i, what, macroName, slots and slots.keys()))
++                             (i, what, macroName, slots and list(slots.keys())))
+         sys.stderr.write("+--------------------------------------\n")
+ 
+-    def do_rawtextBeginScope(self, (s, col, position, closeprev, dict)):
++    def do_rawtextBeginScope(self, xxx_todo_changeme2):
++        (s, col, position, closeprev, dict) = xxx_todo_changeme2
+         self._stream_write(s)
+         self.col = col
+         self.position = position
+@@ -435,7 +438,8 @@ class TALInterpreter:
+             self.engine.beginScope()
+             self.scopeLevel = self.scopeLevel + 1
+ 
+-    def do_rawtextBeginScope_tal(self, (s, col, position, closeprev, dict)):
++    def do_rawtextBeginScope_tal(self, xxx_todo_changeme3):
++        (s, col, position, closeprev, dict) = xxx_todo_changeme3
+         self._stream_write(s)
+         self.col = col
+         self.position = position
+@@ -469,11 +473,13 @@ class TALInterpreter:
+     def do_setLocal(self, notused):
+         pass
+ 
+-    def do_setLocal_tal(self, (name, expr)):
++    def do_setLocal_tal(self, xxx_todo_changeme4):
++        (name, expr) = xxx_todo_changeme4
+         self.engine.setLocal(name, self.engine.evaluateValue(expr))
+     bytecode_handlers["setLocal"] = do_setLocal
+ 
+-    def do_setGlobal_tal(self, (name, expr)):
++    def do_setGlobal_tal(self, xxx_todo_changeme5):
++        (name, expr) = xxx_todo_changeme5
+         self.engine.setGlobal(name, self.engine.evaluateValue(expr))
+     bytecode_handlers["setGlobal"] = do_setLocal
+ 
+@@ -588,7 +594,8 @@ class TALInterpreter:
+     def do_insertStructure(self, stuff):
+         self.interpret(stuff[2])
+ 
+-    def do_insertStructure_tal(self, (expr, repldict, block)):
++    def do_insertStructure_tal(self, xxx_todo_changeme6):
++        (expr, repldict, block) = xxx_todo_changeme6
+         structure = self.engine.evaluateStructure(expr)
+         if structure is None:
+             return
+@@ -607,7 +614,7 @@ class TALInterpreter:
+     bytecode_handlers["insertStructure"] = do_insertStructure
+ 
+     def insertHTMLStructure(self, text, repldict):
+-        from HTMLTALParser import HTMLTALParser
++        from .HTMLTALParser import HTMLTALParser
+         gen = AltTALGenerator(repldict, self.engine.getCompiler(), 0)
+         p = HTMLTALParser(gen) # Raises an exception if text is invalid
+         p.parseString(text)
+@@ -615,7 +622,7 @@ class TALInterpreter:
+         self.interpret(program)
+ 
+     def insertXMLStructure(self, text, repldict):
+-        from TALParser import TALParser
++        from .TALParser import TALParser
+         gen = AltTALGenerator(repldict, self.engine.getCompiler(), 0)
+         p = TALParser(gen)
+         gen.enable(0)
+@@ -627,12 +634,14 @@ class TALInterpreter:
+         program, macros = gen.getCode()
+         self.interpret(program)
+ 
+-    def do_loop(self, (name, expr, block)):
++    def do_loop(self, xxx_todo_changeme7):
++        (name, expr, block) = xxx_todo_changeme7
+         self.interpret(block)
+ 
+-    def do_loop_tal(self, (name, expr, block)):
++    def do_loop_tal(self, xxx_todo_changeme8):
++        (name, expr, block) = xxx_todo_changeme8
+         iterator = self.engine.setRepeat(name, expr)
+-        while iterator.next():
++        while next(iterator):
+             self.interpret(block)
+     bytecode_handlers["loop"] = do_loop
+ 
+@@ -654,22 +663,26 @@ class TALInterpreter:
+         # XXX We need to pass in one of context or target_language
+         return self.engine.translate(self.i18nContext.domain, msgid, i18ndict)
+ 
+-    def do_rawtextColumn(self, (s, col)):
++    def do_rawtextColumn(self, xxx_todo_changeme9):
++        (s, col) = xxx_todo_changeme9
+         self._stream_write(s)
+         self.col = col
+     bytecode_handlers["rawtextColumn"] = do_rawtextColumn
+ 
+-    def do_rawtextOffset(self, (s, offset)):
++    def do_rawtextOffset(self, xxx_todo_changeme10):
++        (s, offset) = xxx_todo_changeme10
+         self._stream_write(s)
+         self.col = self.col + offset
+     bytecode_handlers["rawtextOffset"] = do_rawtextOffset
+ 
+-    def do_condition(self, (condition, block)):
++    def do_condition(self, xxx_todo_changeme11):
++        (condition, block) = xxx_todo_changeme11
+         if not self.tal or self.engine.evaluateBoolean(condition):
+             self.interpret(block)
+     bytecode_handlers["condition"] = do_condition
+ 
+-    def do_defineMacro(self, (macroName, macro)):
++    def do_defineMacro(self, xxx_todo_changeme12):
++        (macroName, macro) = xxx_todo_changeme12
+         macs = self.macroStack
+         if len(macs) == 1:
+             entering = macs[-1][2]
+@@ -682,7 +695,8 @@ class TALInterpreter:
+         self.interpret(macro)
+     bytecode_handlers["defineMacro"] = do_defineMacro
+ 
+-    def do_useMacro(self, (macroName, macroExpr, compiledSlots, block)):
++    def do_useMacro(self, xxx_todo_changeme13):
++        (macroName, macroExpr, compiledSlots, block) = xxx_todo_changeme13
+         if not self.metal:
+             self.interpret(block)
+             return
+@@ -692,12 +706,12 @@ class TALInterpreter:
+         else:
+             if not isCurrentVersion(macro):
+                 raise METALError("macro %s has incompatible version %s" %
+-                                 (`macroName`, `getProgramVersion(macro)`),
++                                 (repr(macroName), repr(getProgramVersion(macro))),
+                                  self.position)
+             mode = getProgramMode(macro)
+             if mode != (self.html and "html" or "xml"):
+                 raise METALError("macro %s has incompatible mode %s" %
+-                                 (`macroName`, `mode`), self.position)
++                                 (repr(macroName), repr(mode)), self.position)
+         self.pushMacro(macroName, compiledSlots)
+         prev_source = self.sourceFile
+         self.interpret(macro)
+@@ -707,13 +721,15 @@ class TALInterpreter:
+         self.popMacro()
+     bytecode_handlers["useMacro"] = do_useMacro
+ 
+-    def do_fillSlot(self, (slotName, block)):
++    def do_fillSlot(self, xxx_todo_changeme14):
+         # This is only executed if the enclosing 'use-macro' evaluates
+         # to 'default'.
++        (slotName, block) = xxx_todo_changeme14
+         self.interpret(block)
+     bytecode_handlers["fillSlot"] = do_fillSlot
+ 
+-    def do_defineSlot(self, (slotName, block)):
++    def do_defineSlot(self, xxx_todo_changeme15):
++        (slotName, block) = xxx_todo_changeme15
+         if not self.metal:
+             self.interpret(block)
+             return
+@@ -734,10 +750,12 @@ class TALInterpreter:
+         self.interpret(block)
+     bytecode_handlers["defineSlot"] = do_defineSlot
+ 
+-    def do_onError(self, (block, handler)):
++    def do_onError(self, xxx_todo_changeme16):
++        (block, handler) = xxx_todo_changeme16
+         self.interpret(block)
+ 
+-    def do_onError_tal(self, (block, handler)):
++    def do_onError_tal(self, xxx_todo_changeme17):
++        (block, handler) = xxx_todo_changeme17
+         state = self.saveState()
+         self.stream = stream = self.StringIO()
+         self._stream_write = stream.write
+@@ -792,4 +810,4 @@ class FasterStringIO(StringIO):
+ 
+ 
+ def _write_ValueError(s):
+-    raise ValueError, "I/O operation on closed file"
++    raise ValueError("I/O operation on closed file")
+--- TAL/TALParser.py.orig	2003-03-01 20:25:14 UTC
++++ TAL/TALParser.py
+@@ -15,9 +15,9 @@
+ Parse XML and compile to TALInterpreter intermediate code.
+ """
+ 
+-from XMLParser import XMLParser
+-from TALDefs import XML_NS, ZOPE_I18N_NS, ZOPE_METAL_NS, ZOPE_TAL_NS
+-from TALGenerator import TALGenerator
++from .XMLParser import XMLParser
++from .TALDefs import XML_NS, ZOPE_I18N_NS, ZOPE_METAL_NS, ZOPE_TAL_NS
++from .TALGenerator import TALGenerator
+ 
+ class TALParser(XMLParser):
+ 
+@@ -56,7 +56,7 @@ class TALParser(XMLParser):
+                 attrlist.append((key, value))
+         else:
+             # attrs is a dict of {name: value}
+-            attrlist = attrs.items()
++            attrlist = list(attrs.items())
+             attrlist.sort() # For definiteness
+         name, attrlist, taldict, metaldict, i18ndict \
+               = self.process_ns(name, attrlist)
+@@ -80,7 +80,7 @@ class TALParser(XMLParser):
+                 taldict[keybase] = value
+                 item = item + ("tal",)
+             elif ns == 'i18n':
+-                assert 0, "dealing with i18n: " + `(keybase, value)`
++                assert 0, "dealing with i18n: " + repr((keybase, value))
+                 i18ndict[keybase] = value
+                 item = item + ('i18n',)
+             fixedattrlist.append(item)
+@@ -135,7 +135,7 @@ def test():
+         file = sys.argv[1]
+     p.parseFile(file)
+     program, macros = p.getCode()
+-    from TALInterpreter import TALInterpreter
++    from .TALInterpreter import TALInterpreter
+     from DummyEngine import DummyEngine
+     engine = DummyEngine(macros)
+     TALInterpreter(program, macros, engine, sys.stdout, wrap=0)()
+--- TAL/markupbase.py.orig	2003-03-01 20:25:14 UTC
++++ TAL/markupbase.py
+@@ -85,7 +85,7 @@ class ParserBase:
+                     self.error("unexpected '[' char in declaration")
+             else:
+                 self.error(
+-                    "unexpected %s char in declaration" % `rawdata[j]`)
++                    "unexpected %s char in declaration" % repr(rawdata[j]))
+             if j < 0:
+                 return j
+         return -1 # incomplete
+@@ -106,7 +106,7 @@ class ParserBase:
+                 if s != "<!":
+                     self.updatepos(declstartpos, j + 1)
+                     self.error("unexpected char in internal subset (in %s)"
+-                               % `s`)
++                               % repr(s))
+                 if (j + 2) == n:
+                     # end of buffer; incomplete
+                     return -1
+@@ -124,7 +124,7 @@ class ParserBase:
+                 if name not in ("attlist", "element", "entity", "notation"):
+                     self.updatepos(declstartpos, j + 2)
+                     self.error(
+-                        "unknown declaration %s in internal subset" % `name`)
++                        "unknown declaration %s in internal subset" % repr(name))
+                 # handle the individual names
+                 meth = getattr(self, "_parse_doctype_" + name)
+                 j = meth(j, declstartpos)
+@@ -155,7 +155,7 @@ class ParserBase:
+                 j = j + 1
+             else:
+                 self.updatepos(declstartpos, j)
+-                self.error("unexpected char %s in internal subset" % `c`)
++                self.error("unexpected char %s in internal subset" % repr(c))
+         # end of buffer reached
+         return -1
+ 
+--- ZTUtils/Batch.py.orig	2003-03-01 20:25:14 UTC
++++ ZTUtils/Batch.py
+@@ -81,10 +81,10 @@ class Batch:
+ 
+     def __getitem__(self, index):
+         if index < 0:
+-            if index + self.end < self.first: raise IndexError, index
++            if index + self.end < self.first: raise IndexError(index)
+             return self._sequence[index + self.end]
+ 
+-        if index >= self.length: raise IndexError, index
++        if index >= self.length: raise IndexError(index)
+         return self._sequence[index+self.first]
+ 
+     def __len__(self):
+--- ZTUtils/Iterator.py.orig	2003-03-01 20:25:14 UTC
++++ ZTUtils/Iterator.py
+@@ -34,16 +34,16 @@ class Iterator:
+                 self._inner = inner
+                 self._prep_next = inner.prep_next
+                 return
+-        raise TypeError, "Iterator does not support %s" % `seq`
++        raise TypeError("Iterator does not support %s" % repr(seq))
+ 
+     def __getattr__(self, name):
+         try:
+             inner = getattr(self._inner, 'it_' + name)
+         except AttributeError:
+-            raise AttributeError, name
++            raise AttributeError(name)
+         return inner(self)
+ 
+-    def next(self):
++    def __next__(self):
+         if not (hasattr(self, '_next') or self._prep_next(self)):
+             return 0
+         self.index = i = self.nextIndex
+@@ -171,7 +171,7 @@ class IterInner(InnerBase):
+ 
+     def prep_next(self, it):
+         try:
+-            it._next = it.seq.next()
++            it._next = next(it.seq)
+         except StopIteration:
+             it._prep_next = self.no_next
+             it.end = 1
+@@ -183,12 +183,12 @@ class IterIter:
+     def __init__(self, it):
+         self.it = it
+         self.skip = it.nextIndex > 0 and not it.end
+-    def next(self):
++    def __next__(self):
+         it = self.it
+         if self.skip:
+             self.skip = 0
+             return it.item
+-        if it.next():
++        if next(it):
+             return it.item
+         raise StopIteration
+ 
+--- ZTUtils/Tree.py.orig	2003-03-01 20:25:14 UTC
++++ ZTUtils/Tree.py
+@@ -51,7 +51,7 @@ class TreeNode:
+     def __getattr__(self, name):
+         if name == 'depth':
+             return self._depth()
+-        raise AttributeError, name
++        raise AttributeError(name)
+ 
+ _marker = []
+ 
+@@ -153,7 +153,7 @@ class TreeMaker:
+         child_exp = expanded
+         if not simple_type(expanded):
+             # Assume a mapping
+-            expanded = expanded.has_key(node.id)
++            expanded = node.id in expanded
+             child_exp = child_exp.get(node.id)
+ 
+         expanded = expanded or (not subtree and self._expand_root)
+@@ -218,7 +218,7 @@ class TreeMaker:
+ 
+ def simple_type(ob,
+                 is_simple={type(''):1, type(0):1, type(0.0):1,
+-                           type(0L):1, type(None):1 }.has_key):
++                           type(0):1, type(None):1 }.has_key):
+     return is_simple(type(ob))
+ 
+ from binascii import b2a_base64, a2b_base64
+--- __init__.py.orig	2003-03-01 22:29:42 UTC
++++ __init__.py
+@@ -19,12 +19,12 @@ __version__='$Revision: 1.3 $'[11:-2]
+ 
+ import sys
+ 
+-from TAL.TALParser import TALParser
+-from TAL.HTMLTALParser import HTMLTALParser
+-from TAL.TALGenerator import TALGenerator
++from .TAL.TALParser import TALParser
++from .TAL.HTMLTALParser import HTMLTALParser
++from .TAL.TALGenerator import TALGenerator
+ # Do not use cStringIO here!  It's not unicode aware. :(
+-from TAL.TALInterpreter import TALInterpreter, FasterStringIO
+-from Expressions import getEngine
++from .TAL.TALInterpreter import TALInterpreter, FasterStringIO
++from .Expressions import getEngine
+ 
+ 
+ class PageTemplate:
+@@ -49,7 +49,7 @@ class PageTemplate:
+     def __getattr__(self, name):
+         if name == 'macros':
+             return self.pt_macros()
+-        raise AttributeError, name
++        raise AttributeError(name)
+ 
+     def pt_edit(self, text, content_type):
+         if content_type:
+@@ -83,7 +83,7 @@ class PageTemplate:
+         __traceback_supplement__ = (PageTemplateTracebackSupplement, self)
+ 
+         if self._v_errors:
+-            raise PTRuntimeError, 'Page Template %s has errors: (%s)' % (self.id, ', '.join(self._v_errors))
++            raise PTRuntimeError('Page Template %s has errors: (%s)' % (self.id, ', '.join(self._v_errors)))
+         output = self.StringIO()
+         c = self.pt_getContext()
+         c.update(extra_context)
+@@ -95,7 +95,7 @@ class PageTemplate:
+         return output.getvalue()
+ 
+     def __call__(self, *args, **kwargs):
+-        if not kwargs.has_key('args'):
++        if 'args' not in kwargs:
+             kwargs['args'] = args
+         return self.pt_render(extra_context={'options': kwargs})
+ 
+@@ -121,7 +121,7 @@ class PageTemplate:
+             self._cook()
+         if self._v_errors:
+             __traceback_supplement__ = (PageTemplateTracebackSupplement, self)
+-            raise PTRuntimeError, 'Page Template %s has errors.' % self.id
++            raise PTRuntimeError('Page Template %s has errors.' % self.id)
+         return self._v_macros
+ 
+     def pt_source_file(self):

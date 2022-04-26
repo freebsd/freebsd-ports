@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2022-02-28 16:54:41 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2022-03-25 21:59:56 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -30,7 +30,7 @@ extern const base::Feature kUseClientConfigIPH;
  extern const base::Feature kIPHDummyFeature;
@@ -9,8 +9,8 @@
  extern const base::Feature kIPHDesktopSharedHighlightingFeature;
  extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusHelpBubbleScreenReaderPromoFeature;
-@@ -169,7 +169,7 @@ extern const base::Feature kIPHBadgedTranslateManualTr
- extern const base::Feature kIPHDiscoverFeedHeaderFeature;
+@@ -174,7 +174,7 @@ extern const base::Feature kIPHDiscoverFeedHeaderFeatu
+ extern const base::Feature kIPHDefaultSiteViewFeature;
  #endif  // BUILDFLAG(IS_IOS)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

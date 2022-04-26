@@ -1,12 +1,11 @@
 bin/kfloppy
-share/qlogging-categories5/kfloppy.categories
 share/applications/org.kde.kfloppy.desktop
-share/icons/hicolor/128x128/apps/kfloppy.png
 share/icons/hicolor/16x16/apps/kfloppy.png
 share/icons/hicolor/22x22/apps/kfloppy.png
 share/icons/hicolor/32x32/apps/kfloppy.png
 share/icons/hicolor/48x48/apps/kfloppy.png
 share/icons/hicolor/64x64/apps/kfloppy.png
+share/icons/hicolor/128x128/apps/kfloppy.png
 share/locale/ar/LC_MESSAGES/kfloppy.mo
 share/locale/be/LC_MESSAGES/kfloppy.mo
 share/locale/bg/LC_MESSAGES/kfloppy.mo
@@ -67,3 +66,4 @@ share/locale/wa/LC_MESSAGES/kfloppy.mo
 share/locale/zh_CN/LC_MESSAGES/kfloppy.mo
 share/locale/zh_TW/LC_MESSAGES/kfloppy.mo
 share/metainfo/org.kde.kfloppy.appdata.xml
+share/qlogging-categories5/kfloppy.categories

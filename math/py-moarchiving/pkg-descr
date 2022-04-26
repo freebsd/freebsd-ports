@@ -1,0 +1,7 @@
+The Python class moarchiving.BiobjectiveNondominatedSortedList implements a
+bi-objective non-dominated archive with list as parent class. It is heavily
+based on the bisect module. It provides easy and fast access to the overall
+hypervolume, the contributing hypervolume of each element, and to the uncrowded
+hypervolume improvement of any given point in objective space.
+
+WWW: https://github.com/CMA-ES/moarchiving

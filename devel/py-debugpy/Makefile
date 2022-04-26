@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	debugpy
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	EPL MIT
 LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
-USES=		dos2unix python:3.6+ zip
+USES=		dos2unix python:3.7+ zip
 USE_PYTHON=	autoplist concurrent cython distutils
 
 post-install:

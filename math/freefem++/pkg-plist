@@ -14,6 +14,7 @@ lib/ff++/%%VER%%/%%ETCDIR%%.pref
 lib/ff++/%%VER%%/idp/CC.idp
 lib/ff++/%%VER%%/idp/DDM-Schwarz-macro.idp
 lib/ff++/%%VER%%/idp/DDM-funcs-v2.idp
+lib/ff++/%%VER%%/idp/ElasticLaw2d.idp
 lib/ff++/%%VER%%/idp/ExtractDofsonBorder.idp
 lib/ff++/%%VER%%/idp/Heat3d.idp
 lib/ff++/%%VER%%/idp/MPIGMRESmacro.idp
@@ -166,6 +167,7 @@ lib/ff++/%%VER%%/lib/Element_P2bulle3.so
 lib/ff++/%%VER%%/lib/Element_P2pnc.so
 lib/ff++/%%VER%%/lib/Element_P3.so
 lib/ff++/%%VER%%/lib/Element_P3dc.so
+lib/ff++/%%VER%%/lib/Element_P3pnc.so
 lib/ff++/%%VER%%/lib/Element_P4.so
 lib/ff++/%%VER%%/lib/Element_P4dc.so
 lib/ff++/%%VER%%/lib/Element_PkEdge.so

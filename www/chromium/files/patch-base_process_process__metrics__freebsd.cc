@@ -1,4 +1,4 @@
---- base/process/process_metrics_freebsd.cc.orig	2021-10-01 01:36:37 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2022-03-25 21:59:56 UTC
 +++ base/process/process_metrics_freebsd.cc
 @@ -3,21 +3,41 @@
  // found in the LICENSE file.
@@ -44,7 +44,22 @@
  
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
-@@ -37,7 +57,7 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
+@@ -27,17 +47,18 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+ 
+ double ProcessMetrics::GetPlatformIndependentCPUUsage() {
+   struct kinfo_proc info;
+-  int mib[] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, process_};
+-  size_t length = sizeof(info);
++  size_t length = sizeof(struct kinfo_proc);
+ 
++  int mib[] =  {CTL_KERN, KERN_PROC, KERN_PROC_PID, process_ };
++
+   if (sysctl(mib, base::size(mib), &info, &length, NULL, 0) < 0)
+-    return 0;
++    return 0.0;
+ 
+-  return (info.ki_pctcpu / FSCALE) * 100.0;
++  return static_cast<double>((info.ki_pctcpu * 100.0) / FSCALE);
  }
  
  TimeDelta ProcessMetrics::GetCumulativeCPUUsage() {
@@ -53,7 +68,7 @@
    return TimeDelta();
  }
  
-@@ -68,4 +88,221 @@ size_t GetSystemCommitCharge() {
+@@ -68,4 +89,221 @@ size_t GetSystemCommitCharge() {
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
  }
  

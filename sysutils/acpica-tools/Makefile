@@ -1,5 +1,5 @@
 PORTNAME=	acpica
-PORTVERSION=	20210930
+PORTVERSION=	20220331
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL/jkim

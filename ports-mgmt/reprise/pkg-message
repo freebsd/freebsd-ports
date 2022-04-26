@@ -1,0 +1,9 @@
+[
+{ type: install
+  message: <<EOM
+Reprise is experimental software. Expect all kinds of failures and
+filesystem, jail and mountpoint leftovers you'll have to clean up
+manually.
+EOM
+}
+]

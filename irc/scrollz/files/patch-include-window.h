@@ -1,5 +1,5 @@
---- include/window.h.orig	2011-04-29 17:21:18.000000000 +0900
-+++ include/window.h	2013-03-09 18:47:08.841093765 +0900
+--- include/window.h.orig	2021-05-06 08:04:55 UTC
++++ include/window.h
 @@ -42,7 +42,7 @@
   * CREATE, that allows you to start new iscreen or xterm windows
   * connected to the ircII client.

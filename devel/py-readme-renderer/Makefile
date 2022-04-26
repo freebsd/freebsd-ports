@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	readme-renderer
-PORTVERSION=	32.0
+PORTVERSION=	34.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	MD
 MD_DESC=	Markdown support
 
-MD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cmarkgfm>=0.5.0<0.7.0:textproc/py-cmarkgfm@${PY_FLAVOR}
+MD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cmarkgfm>=0.8.0:textproc/py-cmarkgfm@${PY_FLAVOR}
 
 .include <bsd.port.mk>

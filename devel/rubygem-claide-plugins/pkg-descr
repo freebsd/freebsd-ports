@@ -1,0 +1,7 @@
+This CLAide plugin shows information about all available
+CLAide plugins (yes, this is very meta!). This plugin adds
+the "plugins" subcommand to a binary so that you can list
+all plugins (registered in the reference JSON hosted at
+ CocoaPods/cocoapods-plugins)
+
+WWW: https://github.com/cocoapods/claide-plugins

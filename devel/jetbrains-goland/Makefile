@@ -1,5 +1,5 @@
 PORTNAME=	goland
-PORTVERSION=	2021.3.4
+PORTVERSION=	2022.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
@@ -22,7 +22,7 @@ CPE_VENDOR=	jetbrains
 USE_JAVA=	yes
 JAVA_VERSION=	11+
 
-SHEBANG_FILES=	bin/printenv.py bin/restart.py
+SHEBANG_FILES=	bin/restart.py
 
 NO_ARCH=	yes
 NO_BUILD=	yes

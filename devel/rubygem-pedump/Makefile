@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	pedump
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

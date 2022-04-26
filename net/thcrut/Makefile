@@ -6,7 +6,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://thc.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Local network discovery tool
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: ip_tcp_sync_addr

@@ -1,0 +1,141 @@
+--- belier/options.py.orig	2009-11-01 20:35:14 UTC
++++ belier/options.py
+@@ -51,10 +51,10 @@ class Options:
+         if self._options[0].nomfichier is not None:
+             fichierentree = abspath(expanduser(self._options[0].nomfichier))
+             if not exists(fichierentree):
+-                print _("%s : no such file") % fichierentree
++                print(_("%s : no such file") % fichierentree)
+                 sys.exit(1)
+             elif not isfile(fichierentree):
+-                print _("%s is not a file") % fichierentree
++                print(_("%s is not a file") % fichierentree)
+                 sys.exit(1)
+             else:
+                 self._options[0].nomfichier = fichierentree
+@@ -62,19 +62,19 @@ class Options:
+         if self._options[0].repsortie is not None:
+             repertoiresortie = abspath(expanduser(self._options[0].repsortie))
+             if not exists(repertoiresortie):
+-                print _("%s : no such directory") % repertoiresortie
++                print(_("%s : no such directory") % repertoiresortie)
+                 sys.exit(1)
+             elif not isdir(repertoiresortie):
+-                print _("%s is not a directory") % repertoiresortie
++                print(_("%s is not a directory") % repertoiresortie)
+                 sys.exit(1)
+             else:
+                 self._options[0].repsortie = repertoiresortie
+ 
+         if self._options[0].delai is not None:
+             if self._options[0].delai < -1 or \
+-                self._options[0].delai > sys.maxint:
+-                print _("The given value is not valid%sThe delay value \
+-must be >= -1 and <= value of an integer on your system" % linesep)
++                self._options[0].delai > sys.maxsize:
++                print(_("The given value is not valid%sThe delay value \
++must be >= -1 and <= value of an integer on your system" % linesep))
+                 sys.exit(1)
+             
+     def lesoptions(self):
+--- belier/optionstunnel.py.orig	2009-11-01 20:35:14 UTC
++++ belier/optionstunnel.py
+@@ -30,15 +30,15 @@ class OptionsTunnel:
+     def parse_ligne(self, ligne):
+         """Parse la ligne qui indique les numéros de ports"""
+         if len(ligne.split()) != 2:
+-            print _('You should have two tunnel options arguments \
+-(source port and destination port)')
++            print(_('You should have two tunnel options arguments \
++(source port and destination port)'))
+             sys.exit(1)
+         for port in ligne.split():
+             if not port.isdigit():
+-                print _('A port number should only contain digits')
++                print(_('A port number should only contain digits'))
+                 sys.exit(1)
+             if int(port) > 65535:
+-                print _('A port number can not exceed 65535')
++                print(_('A port number can not exceed 65535'))
+                 sys.exit(1)
+         self._source, self._destination = ligne.split()
+ 
+--- belier/terminal.py.orig	2009-11-01 20:35:14 UTC
++++ belier/terminal.py
+@@ -21,7 +21,7 @@ import stat
+ from os import linesep, chmod, sep
+ from os.path import expanduser, abspath, join
+ 
+-from optionstunnel import OptionsTunnel
++from .optionstunnel import OptionsTunnel
+ 
+ SSHOPTS = '-o NoHostAuthenticationForLocalhost=yes -o StrictHostKeyChecking=no'
+ 
+@@ -60,41 +60,41 @@ class Terminal:
+                 self._ordres = open(expanduser(nomfichier), 'r').readlines()
+             else:
+                 self._ordres = sys.stdin.readlines()
+-        except IOError, message:
+-            print message
++        except IOError as message:
++            print(message)
+             sys.exit(1)
+         except KeyboardInterrupt:
+-            print _("Belier has been stopped manually by the user")
++            print(_("Belier has been stopped manually by the user"))
+             sys.exit(1)
+         # deux passes pour étudier les ordres
+-        for boucle in xrange(2):
+-            for num in xrange(len(self._ordres)):
++        for boucle in range(2):
++            for num in range(len(self._ordres)):
+                 # 1ère passe : on écarte les erreurs banales
+                 if boucle == 0 and self._ordres[num] != linesep:
+                     if '\0' in self._ordres[num]:
+-                        print _("The file format is invalid \
+-It may be a binary file ?")
++                        print(_("The file format is invalid \
++It may be a binary file ?"))
+                         sys.exit(1)
+                     self._ordres[num] = self.remplace_guillemets_motdepasse(
+                                                             self._ordres[num])
+                     if len(self._ordres[num].split(' ')) > 5:
+-                        print _("Incorrect argument number \
+-on the order file line")
++                        print(_("Incorrect argument number \
++on the order file line"))
+                         sys.exit(1)
+                     identifiant = self._ordres[num].split(' ')[0]
+                     if len(identifiant) <= 2 and identifiant != linesep:
+-                        print _("A hostname must contain at \
+-least two characters (rfc952)")
++                        print(_("A hostname must contain at \
++least two characters (rfc952)"))
+                         sys.exit(1)
+                     ipoudns = identifiant.split('@')[-1]
+                     if len(ipoudns) > 255:
+-                        print _('Your domain name size \
+-exceeds 255 characters')
++                        print(_('Your domain name size \
++exceeds 255 characters'))
+                         sys.exit(1)
+                     for hostname in ipoudns.split('.'):
+                         if len(hostname) > 64:
+-                            print _("Your hostname size \
+-exceeds 64 characters")
++                            print(_("Your hostname size \
++exceeds 64 characters"))
+                             sys.exit(1)
+                     if self._ordres[num].split()[-1] == '-c'+ linesep or \
+                         self._ordres[num].split()[-1] == '-c':
+@@ -175,8 +175,8 @@ exceeds 64 characters")
+             try:
+                 open(resultat, 'w').writelines(self._script)
+                 chmod(resultat, stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR )
+-            except IOError, message:
+-                print message
++            except IOError as message:
++                print(message)
+                 sys.exit(1)
+             # compteur à zéro pour le prochain bloc d'ordres
+             self._script = [self._entetel1, self._entetel2]

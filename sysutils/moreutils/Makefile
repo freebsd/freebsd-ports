@@ -2,6 +2,7 @@
 
 PORTNAME=	moreutils
 PORTVERSION=	0.67
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.joeyh.name/index.cgi/moreutils.git/snapshot/ \
 		LOCAL/sunpoet
@@ -12,7 +13,7 @@ COMMENT=	Additional Unix utilities
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run
+#RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run
 
 USES=		gmake perl5 shebangfix
 
@@ -54,7 +55,7 @@ post-patch:
 
 post-build:
 .for man in ${PERL_MANPAGES:R}
-	${LOCALBASE}/bin/pod2man --center=" " --release="${PORTNAME}" ${WRKSRC}/${man} > ${WRKSRC}/${man}.1
+	${LOCALBASE}/bin/pod2man --center=moreutils --release=${PORTVERSION} ${WRKSRC}/${man} > ${WRKSRC}/${man}.1
 .endfor
 
 do-install:

@@ -1,6 +1,4 @@
 bin/sieveeditor
-share/qlogging-categories5/sieveeditor.categories
-share/qlogging-categories5/sieveeditor.renamecategories
 lib/libsieveeditor.so.5
 lib/libsieveeditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/applications/org.kde.sieveeditor.desktop
@@ -41,3 +39,5 @@ share/locale/uk/LC_MESSAGES/sieveeditor.mo
 share/locale/zh_CN/LC_MESSAGES/sieveeditor.mo
 share/locale/zh_TW/LC_MESSAGES/sieveeditor.mo
 share/metainfo/org.kde.sieveeditor.appdata.xml
+share/qlogging-categories5/sieveeditor.categories
+share/qlogging-categories5/sieveeditor.renamecategories

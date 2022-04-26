@@ -3,7 +3,6 @@
 %%ETCDIR%%/edit-config
 @sample(netdata,netdata,0640) %%ETCDIR%%/netdata.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/apps_groups.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/aws_kinesis.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/ap.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/apcupsd.conf.sample
@@ -35,7 +34,6 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/adaptec_raid.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/anomalies.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apcupsd.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/backend.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/bcache.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/beanstalkd.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/bind_rndc.conf.sample
@@ -53,7 +51,6 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/entropy.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/exporting.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/fping.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/fronius.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/gearman.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/geth.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/go.d.plugin.conf.sample
@@ -75,6 +72,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/mysql.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/net.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/netfilter.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/nut.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/pihole.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/portcheck.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/processes.conf.sample
@@ -86,7 +84,6 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/riakkv.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/scaleio.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/softnet.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/stiebeleltron.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/swap.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/synchronization.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/systemdunits.conf.sample
@@ -183,6 +180,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/w1sensor.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/web_log.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/zscores.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/asterisk.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/example.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/k6.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/stream.conf.sample
@@ -193,8 +191,6 @@ libexec/netdata/charts.d/libreswan.chart.sh
 libexec/netdata/charts.d/nut.chart.sh
 libexec/netdata/charts.d/opensips.chart.sh
 libexec/netdata/charts.d/sensors.chart.sh
-libexec/netdata/node.d/fronius.node.js
-libexec/netdata/node.d/named.node.js
 libexec/netdata/node.d/node_modules/asn1-ber.js
 libexec/netdata/node.d/node_modules/extend.js
 libexec/netdata/node.d/node_modules/lib/ber/errors.js
@@ -205,9 +201,7 @@ libexec/netdata/node.d/node_modules/lib/ber/writer.js
 libexec/netdata/node.d/node_modules/net-snmp.js
 libexec/netdata/node.d/node_modules/netdata.js
 libexec/netdata/node.d/node_modules/pixl-xml.js
-libexec/netdata/node.d/sma_webbox.node.js
 libexec/netdata/node.d/snmp.node.js
-libexec/netdata/node.d/stiebeleltron.node.js
 libexec/netdata/plugins.d/acl.sh
 libexec/netdata/plugins.d/alarm-email.sh
 libexec/netdata/plugins.d/alarm-notify.sh
@@ -432,8 +426,8 @@ sbin/netdatacli
 %%DATADIR%%/web/netdata-swagger.json
 %%DATADIR%%/web/netdata-swagger.yaml
 %%DATADIR%%/web/old/index.html
-%%NO_CLOUD%%%%DATADIR%%/web/precache-manifest.1d631b7147c099be7a389f5c3b8efd15.js
-%%CLOUD%%%%DATADIR%%/web/precache-manifest.55bf0765e4092267255469aff90b2f26.js
+%%NO_CLOUD%%%%DATADIR%%/web/precache-manifest.5a5faa4cbd28d508ee7ec061e0ea1eb2.js
+%%CLOUD%%%%DATADIR%%/web/precache-manifest.34ebb83b69a8a6741865723124721c81.js
 %%DATADIR%%/web/refresh-badges.js
 %%DATADIR%%/web/robots.txt
 %%DATADIR%%/web/service-worker.js
@@ -442,59 +436,59 @@ sbin/netdatacli
 %%DATADIR%%/web/static/css/2.20fd0a40.chunk.css.map
 %%DATADIR%%/web/static/css/4.a36e3b73.chunk.css
 %%DATADIR%%/web/static/css/4.a36e3b73.chunk.css.map
-%%DATADIR%%/web/static/css/main.a46a34fa.chunk.css
-%%DATADIR%%/web/static/css/main.a46a34fa.chunk.css.map
+%%DATADIR%%/web/static/css/main.102ce44c.chunk.css
+%%DATADIR%%/web/static/css/main.102ce44c.chunk.css.map
 %%DATADIR%%/web/static/img/netdata-logomark.svg
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/10.ecb21ee9.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/10.ecb21ee9.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.624460c3.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.624460c3.chunk.js.LICENSE
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.624460c3.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/3.1940a136.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/3.1940a136.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/4.7e63c38c.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/4.7e63c38c.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.f4ae3e6e.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.f4ae3e6e.chunk.js.LICENSE
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.f4ae3e6e.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/6.f1862d34.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/6.f1862d34.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/7.d77aa2e3.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/7.d77aa2e3.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/8.8d5b5133.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/8.8d5b5133.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/9.8f628a72.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/9.8f628a72.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.b88127e8.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.b88127e8.chunk.js.LICENSE
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.b88127e8.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/runtime-main.0ec2aaf9.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/runtime-main.0ec2aaf9.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/10.eb10af4d.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/10.eb10af4d.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/2.da522cd4.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/2.da522cd4.chunk.js.LICENSE
-%%CLOUD%%%%DATADIR%%/web/static/js/2.da522cd4.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/3.6267b47a.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/3.6267b47a.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/4.89bcbd92.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/4.89bcbd92.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/5.8d493428.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/5.8d493428.chunk.js.LICENSE
-%%CLOUD%%%%DATADIR%%/web/static/js/5.8d493428.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/6.fd3732fc.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/6.fd3732fc.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/7.c4cdb9f0.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/7.c4cdb9f0.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/8.11ff05e7.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/8.11ff05e7.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/9.84b7c771.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/9.84b7c771.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/main.e3f3d31b.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/main.e3f3d31b.chunk.js.LICENSE
-%%CLOUD%%%%DATADIR%%/web/static/js/main.e3f3d31b.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/runtime-main.ec4d2459.js
-%%CLOUD%%%%DATADIR%%/web/static/js/runtime-main.ec4d2459.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/10.891b1f66.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/10.891b1f66.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.82b5987e.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.82b5987e.chunk.js.LICENSE
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.82b5987e.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/3.5ba29950.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/3.5ba29950.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/4.eb022d3f.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/4.eb022d3f.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.3d1bc2ff.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.3d1bc2ff.chunk.js.LICENSE
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.3d1bc2ff.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/6.6cb16d11.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/6.6cb16d11.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/7.c9d300fc.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/7.c9d300fc.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/8.fa6b99b9.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/8.fa6b99b9.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/9.da02b76a.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/9.da02b76a.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.764875d0.chunk.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.764875d0.chunk.js.LICENSE
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.764875d0.chunk.js.map
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/runtime-main.a2f5edbb.js
+%%NO_CLOUD%%%%DATADIR%%/web/static/js/runtime-main.a2f5edbb.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/10.44d9d40b.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/10.44d9d40b.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/2.d50fa4b3.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/2.d50fa4b3.chunk.js.LICENSE
+%%CLOUD%%%%DATADIR%%/web/static/js/2.d50fa4b3.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/3.d49f0857.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/3.d49f0857.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/4.8b70c754.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/4.8b70c754.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/5.29dab1cd.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/5.29dab1cd.chunk.js.LICENSE
+%%CLOUD%%%%DATADIR%%/web/static/js/5.29dab1cd.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/6.7b15cdf3.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/6.7b15cdf3.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/7.cf6bc66f.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/7.cf6bc66f.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/8.b1a4b595.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/8.b1a4b595.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/9.50358509.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/9.50358509.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/main.485cc284.chunk.js
+%%CLOUD%%%%DATADIR%%/web/static/js/main.485cc284.chunk.js.LICENSE
+%%CLOUD%%%%DATADIR%%/web/static/js/main.485cc284.chunk.js.map
+%%CLOUD%%%%DATADIR%%/web/static/js/runtime-main.b352aa47.js
+%%CLOUD%%%%DATADIR%%/web/static/js/runtime-main.b352aa47.js.map
 %%DATADIR%%/web/static/media/ibm-plex-sans-latin-100.245539db.woff2
 %%DATADIR%%/web/static/media/ibm-plex-sans-latin-100.9a582f3a.woff
 %%DATADIR%%/web/static/media/ibm-plex-sans-latin-100italic.1ea7c5d2.woff

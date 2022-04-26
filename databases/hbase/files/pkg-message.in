@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-HBase binaries are installed in %%PREFIX%%/hbase/bin/
-Consider adding this directory to your $PATH.
-EOM
-}
-]

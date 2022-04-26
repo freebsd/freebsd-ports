@@ -1,5 +1,5 @@
 PORTNAME=	libretro-emux
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20211014
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com

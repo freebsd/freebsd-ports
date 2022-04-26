@@ -1,7 +1,8 @@
 # Created by: Sergey Akifyev <asa@agava.com>
 
 PORTNAME=	libqalculate
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 

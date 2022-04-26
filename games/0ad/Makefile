@@ -1,6 +1,6 @@
 PORTNAME=	0ad
 PORTVERSION=	0.0.25b
-PORTREVISION=	8
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://releases.wildfiregames.com/ \
 		SF/zero-ad/releases
@@ -67,6 +67,8 @@ post-patch:
 			-e '1441s/"execinfo",/& "ssp_nonshared",/' \
 		${WRKSRC}/build/premake/premake5.lua
 .endif
+	@${ECHO_CMD} "patch < ../setuptools.diff" >> ${WRKSRC}/libraries/source/spidermonkey/patch.sh
+	@${CP} ${FILESDIR}/setuptools.diff ${WRKSRC}/libraries/source/spidermonkey/
 
 pre-build:
 	(cd ${WRKSRC}/build/workspaces && ${SETENV} ${MAKE_ENV} ./update-workspaces.sh --bindir=${PREFIX}/bin --datadir=${DATADIR} --libdir=${PREFIX}/lib/${PORTNAME})

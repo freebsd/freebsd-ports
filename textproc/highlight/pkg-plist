@@ -13,6 +13,7 @@ man/man5/filetypes.conf.5.gz
 %%GUI%%%%DATADIR%%/gui_files/l10n/highlight_es_ES.qm
 %%GUI%%%%DATADIR%%/gui_files/l10n/highlight_fr_FR.qm
 %%GUI%%%%DATADIR%%/gui_files/l10n/highlight_it_IT.qm
+%%GUI%%%%DATADIR%%/gui_files/l10n/highlight_ja_JP.qm
 %%GUI%%%%DATADIR%%/gui_files/l10n/highlight_zh_CN.qm
 %%DATADIR%%/langDefs/abap.lang
 %%DATADIR%%/langDefs/abc.lang
@@ -64,6 +65,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/coffeescript.lang
 %%DATADIR%%/langDefs/coldfusion.lang
 %%DATADIR%%/langDefs/conf.lang
+%%DATADIR%%/langDefs/critic.lang
 %%DATADIR%%/langDefs/crk.lang
 %%DATADIR%%/langDefs/crystal.lang
 %%DATADIR%%/langDefs/cs_block_regex.lang
@@ -118,6 +120,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/innosetup.lang
 %%DATADIR%%/langDefs/interlis.lang
 %%DATADIR%%/langDefs/io.lang
+%%DATADIR%%/langDefs/jam.lang
 %%DATADIR%%/langDefs/jasmin.lang
 %%DATADIR%%/langDefs/java.lang
 %%DATADIR%%/langDefs/javascript.lang
@@ -163,6 +166,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/nginx.lang
 %%DATADIR%%/langDefs/nice.lang
 %%DATADIR%%/langDefs/nim.lang
+%%DATADIR%%/langDefs/nix.lang
 %%DATADIR%%/langDefs/nsis.lang
 %%DATADIR%%/langDefs/nxc.lang
 %%DATADIR%%/langDefs/oberon.lang
@@ -194,6 +198,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/psl.lang
 %%DATADIR%%/langDefs/pure.lang
 %%DATADIR%%/langDefs/purebasic.lang
+%%DATADIR%%/langDefs/purescript.lang
 %%DATADIR%%/langDefs/pyrex.lang
 %%DATADIR%%/langDefs/python.lang
 %%DATADIR%%/langDefs/q.lang

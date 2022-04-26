@@ -1,13 +1,12 @@
 # We follow the beta channel on https://omahaproxy.appspot.com/
-# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.9-lkgr
+# https://chromium.googlesource.com/v8/v8/+/refs/heads/10.0-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	9.9.115.5
+PORTVERSION=	10.1.124.6
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
 PKGNAMESUFFIX=	-beta
-DISTFILES=	v8-${PORTVERSION}.tar.gz \
-		build-${BUILD_REV}.tar.gz \
+DISTFILES=	build-${BUILD_REV}.tar.gz \
 		buildtools-${BUILDTOOLS_REV}.tar.gz \
 		clang-${CLANG_REV}.tar.gz \
 		common-${COMMON_REV}.tar.gz \
@@ -35,22 +34,23 @@ USE_GNOME=	glib20
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 MAKE_ARGS=	-C out/Release
-NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
 
 SUB_FILES=	v8.pc v8_libbase.pc v8_libplatform.pc
+
+USE_GITHUB=	yes
 
 CPE_VENDOR=	google
 
 CONFLICTS_INSTALL=	v8
 
-BUILD_REV=	f3be6e847f004923466a350274aae3fbf048c19c
-BUILDTOOLS_REV=	f78b4b9f33bd8ef9944d5ce643daff1c31880189
-CLANG_REV=	df50898d39a35c2467fa89f8d7a6eedac1fd6aa4
-COMMON_REV=	7f36dbc19d31e2aad895c60261ca8f726442bfbb
-GOOGLETEST_REV=	c9643a2e45ed0cb18b8409c62994be7c6e66dc1b
-ICU_REV=	b9f6d0a5c5375dc4643f35360d257dba37c1d3e1
-ZLIB_REV=	fc5cfd78a357d5bb7735a58f383634faaafe706a
+BUILD_REV=	3d9590754d5d23e62d15472c5baf6777ca59df20
+BUILDTOOLS_REV=	113dd1badbcbffea108a8c95ac7c89c22bfd25f3
+CLANG_REV=	b60d34c100e5a8f4b01d838527f000faab673da3
+COMMON_REV=	d115b033c4e53666b535cbd1985ffe60badad082
+GOOGLETEST_REV=	ae5e06dd35c6137d335331b0815cf1f60fd7e3c5
+ICU_REV=	8a5b728e4f43b0eabdb9ea450f956d67cfb22719
+ZLIB_REV=	b0676a1f52484bf53a1a49d0e48ff8abc430fafe
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using

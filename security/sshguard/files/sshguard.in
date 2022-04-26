@@ -60,7 +60,7 @@
 name=sshguard
 rcvar=sshguard_enable
 
-set_rcvar sshguard_blacklist "120:/var/db/sshguard/blacklist.db" "Blacklisting threshold and path to blacklist file (colon-separated)"
+set_rcvar sshguard_blacklist "" "Blacklisting threshold and path to blacklist file (colon-separated)"
 set_rcvar sshguard_danger_thresh "" "Attack threshold"
 set_rcvar sshguard_pidfile "/var/run/sshguard.pid" "Path to PID file"
 set_rcvar sshguard_release_interval "" "Time before releasing first-time attackers (s)"

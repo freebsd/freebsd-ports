@@ -1,5 +1,5 @@
 bin/vagrant
-%%GEMS_DIR%%cache/vagrant-%%PORTVERSION%%.gem
+%%GEMS_DIR%%/cache/vagrant-%%PORTVERSION%%.gem
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.vimrc
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/.yardopts
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/CHANGELOG.md
@@ -1068,6 +1068,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/vagrant-spec.config.example.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/vagrant.gemspec
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/version.txt
-%%GEMS_DIR%%specifications/vagrant-%%PORTVERSION%%.gemspec
+%%GEMS_DIR%%/specifications/vagrant-%%PORTVERSION%%.gemspec
 %%DATADIR%%/embedded/rgloader/loader.rb
-@dir %%GEMS_DIR%%extensions
+@dir %%GEMS_DIR%%/extensions
+@dir %%GEMS_DIR%%/plugins

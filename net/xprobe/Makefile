@@ -4,7 +4,7 @@ PORTNAME=	xprobe2
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	SF/xprobe/${PORTNAME}/Xprobe2%20${PORTVERSION}
+MASTER_SITES=	SF/xprobe/xprobe2/Xprobe2%20${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ICMP active OS fingerprint scanner

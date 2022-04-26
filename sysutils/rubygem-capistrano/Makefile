@@ -1,7 +1,7 @@
 # Created by: Roderick van Domburg <r.s.a.vandomburg@student.utwente.nl>
 
 PORTNAME=	capistrano
-PORTVERSION=	3.16.0
+PORTVERSION=	3.17.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

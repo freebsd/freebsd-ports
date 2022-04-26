@@ -1,6 +1,5 @@
 PORTNAME=	luv
-DISTVERSION=	1.41.0-0
-PORTREVISION=	3
+DISTVERSION=	1.43.0-0
 CATEGORIES=	devel
 
 MAINTAINER=	checo1705@secmail.pro
@@ -45,7 +44,7 @@ CMAKE_ARGS=	-DLUA_BUILD_TYPE=System \
 
 PLIST_FILES=	lib/libluv.so \
 		lib/libluv.so.1 \
-		lib/libluv.so.1.41.0 \
+		lib/libluv.so.1.43.0 \
 		libdata/pkgconfig/libluv.pc \
 		include/luv/util.h \
 		include/luv/luv.h \

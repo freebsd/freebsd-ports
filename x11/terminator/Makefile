@@ -2,7 +2,7 @@
 
 PORTNAME=	terminator
 PORTVERSION=	2.1.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 python
 MASTER_SITES=	https://github.com/gnome-terminator/terminator/archive/
 DISTNAME=	v${PORTVERSION}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libkeybinder-3.0.so:x11/keybinder-gtk3 \
 
 USES=		gnome python:3.5+ shebangfix gettext
 USE_GNOME=	intltool pygobject3 vte3
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils noflavors
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

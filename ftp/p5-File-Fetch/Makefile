@@ -1,7 +1,7 @@
 # Created by: Aaron Dalton <aaron@FreeBSD.org>
 
 PORTNAME=	File-Fetch
-PORTVERSION=	1.00
+PORTVERSION=	1.04
 CATEGORIES=	ftp www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

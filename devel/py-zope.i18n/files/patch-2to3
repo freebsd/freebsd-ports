@@ -1,0 +1,529 @@
+--- src/zope/i18n/format.py.orig	2012-03-15 13:58:09 UTC
++++ src/zope/i18n/format.py
+@@ -86,7 +86,7 @@ class DateTimeFormat(object):
+ 
+         # Map the parsing results to a datetime object
+         ordered = [None, None, None, None, None, None, None]
+-        bin_pattern = filter(lambda x: isinstance(x, tuple), bin_pattern)
++        bin_pattern = [x for x in bin_pattern if isinstance(x, tuple)]
+ 
+         # Handle years; note that only 'yy' and 'yyyy' are allowed
+         if ('y', 2) in bin_pattern:
+@@ -124,7 +124,7 @@ class DateTimeFormat(object):
+ 
+         # Shortcut for the simple int functions
+         dt_fields_map = {'d': 2, 'H': 3, 'm': 4, 's': 5, 'S': 6}
+-        for field in dt_fields_map.keys():
++        for field in list(dt_fields_map.keys()):
+             entry = _findFormattingCharacterInPattern(field, bin_pattern)
+             if not entry: continue
+             pos = dt_fields_map[field]
+@@ -186,7 +186,7 @@ class DateTimeFormat(object):
+         else:
+             bin_pattern = self._bin_pattern
+ 
+-        text = u''
++        text = ''
+         info = buildDateTimeInfo(obj, self.calendar, bin_pattern)
+         for elem in bin_pattern:
+             text += info.get(elem, elem)
+@@ -209,18 +209,18 @@ class NumberFormat(object):
+     def __init__(self, pattern=None, symbols={}):
+         # setup default symbols
+         self.symbols = {
+-            u'decimal': u'.',
+-            u'group': u',',
+-            u'list':  u';',
+-            u'percentSign': u'%',
+-            u'nativeZeroDigit': u'0',
+-            u'patternDigit': u'#',
+-            u'plusSign': u'+',
+-            u'minusSign': u'-',
+-            u'exponential': u'E',
+-            u'perMille': u'\xe2\x88\x9e',
+-            u'infinity': u'\xef\xbf\xbd',
+-            u'nan': '' }
++            'decimal': '.',
++            'group': ',',
++            'list':  ';',
++            'percentSign': '%',
++            'nativeZeroDigit': '0',
++            'patternDigit': '#',
++            'plusSign': '+',
++            'minusSign': '-',
++            'exponential': 'E',
++            'perMille': '\xe2\x88\x9e',
++            'infinity': '\xef\xbf\xbd',
++            'nan': '' }
+         self.symbols.update(symbols)
+         self._pattern = pattern
+         self._bin_pattern = None
+@@ -360,7 +360,7 @@ class NumberFormat(object):
+             # The exponential might have a mandatory sign; remove it from the
+             # bin_pattern and remember the setting
+             exp_bin_pattern = bin_pattern[EXPONENTIAL]
+-            plus_sign = u''
++            plus_sign = ''
+             if exp_bin_pattern.startswith('+'):
+                 plus_sign = self.symbols['plusSign']
+                 exp_bin_pattern = exp_bin_pattern[1:]
+@@ -444,7 +444,7 @@ class NumberFormat(object):
+             text += bin_pattern[PADDING4]*post_padding
+ 
+         # TODO: Need to make sure unicode is everywhere
+-        return unicode(text)
++        return str(text)
+ 
+ 
+ 
+@@ -599,7 +599,7 @@ def buildDateTimeInfo(dt, calendar, pattern):
+     """Create the bits and pieces of the datetime object that can be put
+     together."""
+     if isinstance(dt, datetime.time):
+-        dt = datetime.datetime(1969, 01, 01, dt.hour, dt.minute, dt.second,
++        dt = datetime.datetime(1969, 0o1, 0o1, dt.hour, dt.minute, dt.second,
+                                dt.microsecond)
+     elif (isinstance(dt, datetime.date) and
+           not isinstance(dt, datetime.datetime)):
+@@ -631,8 +631,8 @@ def buildDateTimeInfo(dt, calendar, pattern):
+     tz_name = tzinfo.tzname(dt) or tz_defaultname
+     tz_fullname = getattr(tzinfo, 'zone', None) or tz_name
+ 
+-    info = {('y', 2): unicode(dt.year)[2:],
+-            ('y', 4): unicode(dt.year),
++    info = {('y', 2): str(dt.year)[2:],
++            ('y', 4): str(dt.year),
+             }
+ 
+     # Generic Numbers
+@@ -643,7 +643,7 @@ def buildDateTimeInfo(dt, calendar, pattern):
+                          ('S', dt.microsecond), ('w', int(dt.strftime('%W'))),
+                          ('W', week_in_month)):
+         for entry in _findFormattingCharacterInPattern(field, pattern):
+-            info[entry] = (u'%%.%ii' %entry[1]) %value
++            info[entry] = ('%%.%ii' %entry[1]) %value
+ 
+     # am/pm marker (Text)
+     for entry in _findFormattingCharacterInPattern('a', pattern):
+@@ -657,9 +657,9 @@ def buildDateTimeInfo(dt, calendar, pattern):
+     # time zone (Text)
+     for entry in _findFormattingCharacterInPattern('z', pattern):
+         if entry[1] == 1:
+-            info[entry] = u"%s%i%.2i" %(tz_sign, tz_hours, tz_mins)
++            info[entry] = "%s%i%.2i" %(tz_sign, tz_hours, tz_mins)
+         elif entry[1] == 2:
+-            info[entry] = u"%s%.2i:%.2i" %(tz_sign, tz_hours, tz_mins)
++            info[entry] = "%s%.2i:%.2i" %(tz_sign, tz_hours, tz_mins)
+         elif entry[1] == 3:
+             info[entry] = tz_name
+         else:
+@@ -668,9 +668,9 @@ def buildDateTimeInfo(dt, calendar, pattern):
+     # month in year (Text and Number)
+     for entry in _findFormattingCharacterInPattern('M', pattern):
+         if entry[1] == 1:
+-            info[entry] = u'%i' %dt.month
++            info[entry] = '%i' %dt.month
+         elif entry[1] == 2:
+-            info[entry] = u'%.2i' %dt.month
++            info[entry] = '%.2i' %dt.month
+         elif entry[1] == 3:
+             info[entry] = calendar.months[dt.month][1]
+         else:
+@@ -679,9 +679,9 @@ def buildDateTimeInfo(dt, calendar, pattern):
+     # day in week (Text and Number)
+     for entry in _findFormattingCharacterInPattern('E', pattern):
+         if entry[1] == 1:
+-            info[entry] = u'%i' %weekday
++            info[entry] = '%i' %weekday
+         elif entry[1] == 2:
+-            info[entry] = u'%.2i' %weekday
++            info[entry] = '%.2i' %weekday
+         elif entry[1] == 3:
+             info[entry] = calendar.days[dt.weekday() + 1][1]
+         else:
+--- src/zope/i18n/locales/tests/test_locales.py.orig	2012-03-15 13:58:06 UTC
++++ src/zope/i18n/locales/tests/test_locales.py
+@@ -35,7 +35,7 @@ class TestILocaleProvider(TestCase):
+         self.locales = self._makeNewProvider()
+ 
+     def testInterfaceConformity(self):
+-        self.assert_(ILocaleProvider.providedBy(self.locales))
++        self.assertTrue(ILocaleProvider.providedBy(self.locales))
+ 
+     def test_getLocale(self):
+         locale = self.locales.getLocale(None, None, None)
+@@ -66,10 +66,10 @@ class TestLocaleProvider(TestILocaleProvider):
+ 
+     def test_loadLocale(self):
+         self.locales.loadLocale(None, None, None)
+-        self.assertEqual(self.locales._locales.keys(), [(None, None, None)])
++        self.assertEqual(list(self.locales._locales.keys()), [(None, None, None)])
+ 
+         self.locales.loadLocale('en', None, None)
+-        self.assert_(('en', None, None) in self.locales._locales.keys())
++        self.assertTrue(('en', None, None) in list(self.locales._locales.keys()))
+ 
+     def test_loadLocaleFailure(self):
+         self.assertRaises(LoadLocaleError, self.locales.loadLocale, 'zzz')
+@@ -97,19 +97,19 @@ class TestLocaleAndProvider(TestCase):
+     def test_getDateFormatter(self):
+         formatter = self.locale.dates.getFormatter('date', 'medium')
+         self.assertEqual(formatter.getPattern(), 'MMM d, yyyy')
+-        self.assertEqual(formatter.format(datetime.date(2003, 01, 02)),
++        self.assertEqual(formatter.format(datetime.date(2003, 0o1, 0o2)),
+                          'Jan 2, 2003')
+         self.assertEqual(formatter.parse('Jan 2, 2003'),
+-                         datetime.date(2003, 01, 02))
++                         datetime.date(2003, 0o1, 0o2))
+ 
+     def test_getDateTimeFormatter(self):
+         formatter = self.locale.dates.getFormatter('dateTime', 'medium')
+         self.assertEqual(formatter.getPattern(), 'MMM d, yyyy h:mm:ss a')
+         self.assertEqual(
+-            formatter.format(datetime.datetime(2003, 01, 02, 12, 30)),
++            formatter.format(datetime.datetime(2003, 0o1, 0o2, 12, 30)),
+             'Jan 2, 2003 12:30:00 PM')
+         self.assertEqual(formatter.parse('Jan 2, 2003 12:30:00 PM'),
+-                         datetime.datetime(2003, 01, 02, 12, 30))
++                         datetime.datetime(2003, 0o1, 0o2, 12, 30))
+ 
+     def test_getNumberFormatter(self):
+         formatter = self.locale.numbers.getFormatter('decimal')
+@@ -124,13 +124,13 @@ class TestGlobalLocaleProvider(TestCase):
+ 
+     def testLoading(self):
+         locales.loadLocale(None, None, None)
+-        self.assert_(locales._locales.has_key((None, None, None)))
++        self.assertTrue((None, None, None) in locales._locales)
+         locales.loadLocale('en', None, None)
+-        self.assert_(locales._locales.has_key(('en', None, None)))
++        self.assertTrue(('en', None, None) in locales._locales)
+         locales.loadLocale('en', 'US', None)
+-        self.assert_(locales._locales.has_key(('en', 'US', None)))
++        self.assertTrue(('en', 'US', None) in locales._locales)
+         locales.loadLocale('en', 'US', 'POSIX')
+-        self.assert_(locales._locales.has_key(('en', 'US', 'POSIX')))
++        self.assertTrue(('en', 'US', 'POSIX') in locales._locales)
+ 
+     def test_getLocale(self):
+         locale = locales.getLocale('en', 'GB')
+--- src/zope/i18n/tests/test_formats.py.orig	2012-03-15 13:58:09 UTC
++++ src/zope/i18n/tests/test_formats.py
+@@ -34,7 +34,7 @@ class LocaleStub(object):
+ 
+ class LocaleCalendarStub(object):
+ 
+-    type = u'gregorian'
++    type = 'gregorian'
+ 
+     months = { 1: ('Januar', 'Jan'),     2: ('Februar', 'Feb'),
+                3: ('Maerz', 'Mrz'),      4: ('April', 'Apr'),
+@@ -59,7 +59,7 @@ class LocaleCalendarStub(object):
+         return [self.months.get(type, (None, None))[0] for type in range(1, 13)]
+ 
+     def getMonthTypeFromName(self, name):
+-        for item in self.months.items():
++        for item in list(self.months.items()):
+             if item[1][0] == name:
+                 return item[0]
+ 
+@@ -67,7 +67,7 @@ class LocaleCalendarStub(object):
+         return [self.months.get(type, (None, None))[1] for type in range(1, 13)]
+ 
+     def getMonthTypeFromAbbreviation(self, abbr):
+-        for item in self.months.items():
++        for item in list(self.months.items()):
+             if item[1][1] == abbr:
+                 return item[0]
+ 
+@@ -75,7 +75,7 @@ class LocaleCalendarStub(object):
+         return [self.days.get(type, (None, None))[0] for type in range(1, 8)]
+ 
+     def getDayTypeFromName(self, name):
+-        for item in self.days.items():
++        for item in list(self.days.items()):
+             if item[1][0] == name:
+                 return item[0]
+ 
+@@ -83,7 +83,7 @@ class LocaleCalendarStub(object):
+         return [self.days.get(type, (None, None))[1] for type in range(1, 8)]
+ 
+     def getDayTypeFromAbbreviation(self, abbr):
+-        for item in self.days.items():
++        for item in list(self.days.items()):
+             if item[1][1] == abbr:
+                 return item[0]
+ 
+@@ -171,14 +171,14 @@ class TestDateTimePatternParser(TestCase):
+         # Quote not closed
+         try:
+             parseDateTimePattern("HH' Uhr")
+-        except DateTimePatternParseError, err:
++        except DateTimePatternParseError as err:
+             self.assertEqual(
+                 str(err), 'The quote starting at character 2 is not closed.')
+         # Test correct length of characters in datetime fields
+         try:
+             parseDateTimePattern("HHHHH")
+-        except DateTimePatternParseError, err:
+-            self.assert_(str(err).endswith('You have: 5'))
++        except DateTimePatternParseError as err:
++            self.assertTrue(str(err).endswith('You have: 5'))
+ 
+ 
+ class TestBuildDateTimeParseInfo(TestCase):
+@@ -222,9 +222,9 @@ class TestBuildDateTimeParseInfo(TestCase):
+         self.assertEqual(self.info(('M', 2)), '([0-9]{2})')
+ 
+     def testMonthNames(self):
+-        names = [u'Januar', u'Februar', u'Maerz', u'April',
+-                 u'Mai', u'Juni', u'Juli', u'August', u'September', u'Oktober',
+-                 u'November', u'Dezember']
++        names = ['Januar', 'Februar', 'Maerz', 'April',
++                 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober',
++                 'November', 'Dezember']
+         self.assertEqual(self.info(('M', 4)), '('+'|'.join(names)+')')
+ 
+     def testMonthAbbr(self):
+@@ -255,26 +255,26 @@ class TestDateTimeFormat(TestCase):
+     format = DateTimeFormat(calendar=LocaleCalendarStub())
+ 
+     def testInterfaceConformity(self):
+-        self.assert_(IDateTimeFormat.providedBy(self.format))
++        self.assertTrue(IDateTimeFormat.providedBy(self.format))
+ 
+     def testParseSimpleDateTime(self):
+         # German short
+         self.assertEqual(
+             self.format.parse('02.01.03 21:48', 'dd.MM.yy HH:mm'),
+-            datetime.datetime(2003, 01, 02, 21, 48))
++            datetime.datetime(2003, 0o1, 0o2, 21, 48))
+ 
+     def testParseRealDateTime(self):
+         # German medium
+         self.assertEqual(
+             self.format.parse('02.01.2003 21:48:01', 'dd.MM.yyyy HH:mm:ss'),
+-            datetime.datetime(2003, 01, 02, 21, 48, 01))
++            datetime.datetime(2003, 0o1, 0o2, 21, 48, 0o1))
+ 
+         # German long
+         # TODO: The parser does not support timezones yet.
+         self.assertEqual(self.format.parse(
+             '2. Januar 2003 21:48:01 +100',
+             'd. MMMM yyyy HH:mm:ss z'),
+-            datetime.datetime(2003, 01, 02, 21, 48, 01,
++            datetime.datetime(2003, 0o1, 0o2, 21, 48, 0o1,
+                               tzinfo=pytz.timezone('Europe/Berlin')))
+ 
+         # German full
+@@ -282,13 +282,13 @@ class TestDateTimeFormat(TestCase):
+         self.assertEqual(self.format.parse(
+             'Donnerstag, 2. Januar 2003 21:48 Uhr +100',
+             "EEEE, d. MMMM yyyy H:mm' Uhr 'z"),
+-            datetime.datetime(2003, 01, 02, 21, 48,
++            datetime.datetime(2003, 0o1, 0o2, 21, 48,
+                               tzinfo=pytz.timezone('Europe/Berlin')))
+ 
+     def testParseAMPMDateTime(self):
+         self.assertEqual(
+             self.format.parse('02.01.03 09:48 nachm.', 'dd.MM.yy hh:mm a'),
+-            datetime.datetime(2003, 01, 02, 21, 48))
++            datetime.datetime(2003, 0o1, 0o2, 21, 48))
+ 
+     def testParseTimeZone(self):
+         dt = self.format.parse('09:48 -600', 'HH:mm z')
+@@ -352,28 +352,28 @@ class TestDateTimeFormat(TestCase):
+     def testParse12PM(self):
+         self.assertEqual(
+             self.format.parse('01.01.03 12:00 nachm.', 'dd.MM.yy hh:mm a'),
+-            datetime.datetime(2003, 01, 01, 12, 00, 00, 00))
++            datetime.datetime(2003, 0o1, 0o1, 12, 00, 00, 00))
+ 
+     def testParseUnusualFormats(self):
+         self.assertEqual(
+             self.format.parse('001. Januar 03 0012:00',
+                               'ddd. MMMMM yy HHHH:mm'),
+-            datetime.datetime(2003, 01, 01, 12, 00, 00, 00))
++            datetime.datetime(2003, 0o1, 0o1, 12, 00, 00, 00))
+         self.assertEqual(
+             self.format.parse('0001. Jan 2003 0012:00 vorm.',
+                               'dddd. MMM yyyy hhhh:mm a'),
+-            datetime.datetime(2003, 01, 01, 00, 00, 00, 00))
++            datetime.datetime(2003, 0o1, 0o1, 00, 00, 00, 00))
+ 
+     def testFormatSimpleDateTime(self):
+         # German short
+         self.assertEqual(
+-            self.format.format(datetime.datetime(2003, 01, 02, 21, 48),
++            self.format.format(datetime.datetime(2003, 0o1, 0o2, 21, 48),
+                               'dd.MM.yy HH:mm'),
+             '02.01.03 21:48')
+ 
+     def testFormatRealDateTime(self):
+         tz = pytz.timezone('Europe/Berlin')
+-        dt = datetime.datetime(2003, 01, 02, 21, 48, 01, tzinfo=tz)
++        dt = datetime.datetime(2003, 0o1, 0o2, 21, 48, 0o1, tzinfo=tz)
+         # German medium
+         self.assertEqual(
+             self.format.format(dt, 'dd.MM.yyyy HH:mm:ss'),
+@@ -391,47 +391,47 @@ class TestDateTimeFormat(TestCase):
+ 
+     def testFormatAMPMDateTime(self):
+         self.assertEqual(self.format.format(
+-            datetime.datetime(2003, 01, 02, 21, 48),
++            datetime.datetime(2003, 0o1, 0o2, 21, 48),
+             'dd.MM.yy hh:mm a'),
+             '02.01.03 09:48 nachm.')
+ 
+     def testFormatAllWeekdays(self):
+         for day in range(1, 8):
+             self.assertEqual(self.format.format(
+-                datetime.datetime(2003, 01, day+5, 21, 48),
++                datetime.datetime(2003, 0o1, day+5, 21, 48),
+                 "EEEE, d. MMMM yyyy H:mm' Uhr 'z"),
+                 '%s, %i. Januar 2003 21:48 Uhr +000' %(
+                 self.format.calendar.days[day][0], day+5))
+ 
+     def testFormatTimeZone(self):
+         self.assertEqual(self.format.format(
+-            datetime.datetime(2003, 01, 02, 12, 00), 'z'),
++            datetime.datetime(2003, 0o1, 0o2, 12, 00), 'z'),
+             '+000')
+         self.assertEqual(self.format.format(
+-            datetime.datetime(2003, 01, 02, 12, 00), 'zz'),
++            datetime.datetime(2003, 0o1, 0o2, 12, 00), 'zz'),
+             '+00:00')
+         self.assertEqual(self.format.format(
+-            datetime.datetime(2003, 01, 02, 12, 00), 'zzz'),
++            datetime.datetime(2003, 0o1, 0o2, 12, 00), 'zzz'),
+             'UTC')
+         self.assertEqual(self.format.format(
+-            datetime.datetime(2003, 01, 02, 12, 00), 'zzzz'),
++            datetime.datetime(2003, 0o1, 0o2, 12, 00), 'zzzz'),
+             'UTC')
+         tz = pytz.timezone('US/Eastern')
+         self.assertEqual(self.format.format(
+-            datetime.datetime(2003, 01, 02, 12, tzinfo=tz), 'z'),
++            datetime.datetime(2003, 0o1, 0o2, 12, tzinfo=tz), 'z'),
+             '-500')
+         self.assertEqual(self.format.format(
+-            datetime.datetime(2003, 01, 02, 12, tzinfo=tz), 'zz'),
++            datetime.datetime(2003, 0o1, 0o2, 12, tzinfo=tz), 'zz'),
+             '-05:00')
+         self.assertEqual(self.format.format(
+-            datetime.datetime(2003, 01, 02, 12, tzinfo=tz), 'zzz'),
++            datetime.datetime(2003, 0o1, 0o2, 12, tzinfo=tz), 'zzz'),
+             'EST')
+         self.assertEqual(self.format.format(
+-            datetime.datetime(2003, 01, 02, 12, tzinfo=tz), 'zzzz'),
++            datetime.datetime(2003, 0o1, 0o2, 12, tzinfo=tz), 'zzzz'),
+             'US/Eastern')
+ 
+     def testFormatWeekDay(self):
+-        date = datetime.date(2003, 01, 02)
++        date = datetime.date(2003, 0o1, 0o2)
+         self.assertEqual(self.format.format(date, "E"),
+                          '4')
+         self.assertEqual(self.format.format(date, "EE"),
+@@ -455,7 +455,7 @@ class TestDateTimeFormat(TestCase):
+                          '05')
+ 
+     def testFormatDayOfWeekInMonth(self):
+-        date = datetime.date(2003, 01, 02)
++        date = datetime.date(2003, 0o1, 0o2)
+         self.assertEqual(self.format.format(date, "F"),
+                          '1')
+         self.assertEqual(self.format.format(date, "FF"),
+@@ -526,11 +526,11 @@ class TestDateTimeFormat(TestCase):
+ 
+     def testFormatSimpleHourRepresentation(self):
+         self.assertEqual(
+-            self.format.format(datetime.datetime(2003, 01, 02, 23, 00),
++            self.format.format(datetime.datetime(2003, 0o1, 0o2, 23, 00),
+                                'dd.MM.yy h:mm:ss a'),
+             '02.01.03 11:00:00 nachm.')
+         self.assertEqual(
+-            self.format.format(datetime.datetime(2003, 01, 02, 02, 00),
++            self.format.format(datetime.datetime(2003, 0o1, 0o2, 0o2, 00),
+                                'dd.MM.yy h:mm:ss a'),
+             '02.01.03 2:00:00 vorm.')
+         self.assertEqual(
+@@ -549,54 +549,54 @@ class TestDateTimeFormat(TestCase):
+     def testFormatDayInYear(self):
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 1, 3), 'D'),
+-            u'3')
++            '3')
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 1, 3), 'DD'),
+-            u'03')
++            '03')
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 1, 3), 'DDD'),
+-            u'003')
++            '003')
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 12, 31), 'D'),
+-            u'365')
++            '365')
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 12, 31), 'DD'),
+-            u'365')
++            '365')
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 12, 31), 'DDD'),
+-            u'365')
++            '365')
+         self.assertEqual(
+             self.format.format(datetime.date(2004, 12, 31), 'DDD'),
+-            u'366')
++            '366')
+ 
+     def testFormatDayOfWeekInMOnth(self):
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 1, 3), 'F'),
+-            u'1')
++            '1')
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 1, 10), 'F'),
+-            u'2')
++            '2')
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 1, 17), 'F'),
+-            u'3')
++            '3')
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 1, 24), 'F'),
+-            u'4')
++            '4')
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 1, 31), 'F'),
+-            u'5')
++            '5')
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 1, 6), 'F'),
+-            u'1')
++            '1')
+ 
+     def testFormatUnusualFormats(self):
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 1, 3), 'DDD-yyyy'),
+-            u'003-2003')
++            '003-2003')
+         self.assertEqual(
+             self.format.format(datetime.date(2003, 1, 10),
+                                "F. EEEE 'im' MMMM, yyyy"),
+-            u'2. Freitag im Januar, 2003')
++            '2. Freitag im Januar, 2003')
+ 
+ 
+ 
+@@ -828,7 +828,7 @@ class TestNumberFormat(TestCase):
+         'infinity': 'oo', 'nan': 'N/A'})
+ 
+     def testInterfaceConformity(self):
+-        self.assert_(INumberFormat.providedBy(self.format))
++        self.assertTrue(INumberFormat.providedBy(self.format))
+ 
+     def testParseSimpleInteger(self):
+         self.assertEqual(self.format.parse('23341', '###0'),

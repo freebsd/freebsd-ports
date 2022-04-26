@@ -118,7 +118,6 @@ bin/squirrel-sql
 %%DATADIR%%/lib/jsqlparser-3.3-SNAPSHOT.jar
 %%DATADIR%%/lib/log4j.jar
 %%DATADIR%%/lib/markdowngeneratorJava1_6.jar
-%%DATADIR%%/lib/nanoxml.jar
 %%DATADIR%%/lib/org.eclipse.equinox.common.jar
 %%DATADIR%%/lib/poi-ooxml-schemas.jar
 %%DATADIR%%/lib/poi-ooxml.jar
@@ -286,6 +285,11 @@ bin/squirrel-sql
 %%DATADIR%%/plugins/hibernate/doc/licence.txt
 %%DATADIR%%/plugins/hibernate/doc/readme.html
 %%DATADIR%%/plugins/hibernate/doc/session.png
+%%DATADIR%%/plugins/highresicon.jar
+%%DATADIR%%/plugins/highresicon/doc/changes.txt
+%%DATADIR%%/plugins/highresicon/doc/licence.txt
+%%DATADIR%%/plugins/highresicon/doc/readme.txt
+%%DATADIR%%/plugins/highresicon/lib/xbrz-1.8.jar
 %%DATADIR%%/plugins/i18n.jar
 %%DATADIR%%/plugins/i18n/doc/changes.txt
 %%DATADIR%%/plugins/i18n/doc/licence.txt
@@ -316,7 +320,7 @@ bin/squirrel-sql
 %%DATADIR%%/plugins/laf/doc/tinylaf-license.txt
 %%DATADIR%%/plugins/laf/doc/tonic-licence.txt
 %%DATADIR%%/plugins/laf/lafs/JTattoo-1.6.10.jar
-%%DATADIR%%/plugins/laf/lafs/flatlaf-1.0.jar
+%%DATADIR%%/plugins/laf/lafs/flatlaf-1.1.2.jar
 %%DATADIR%%/plugins/laf/lafs/ilf-gpl.jar
 %%DATADIR%%/plugins/laf/lafs/jgoodies-common-1.8.1.jar
 %%DATADIR%%/plugins/laf/lafs/jgoodies-looks-2.5.3.jar

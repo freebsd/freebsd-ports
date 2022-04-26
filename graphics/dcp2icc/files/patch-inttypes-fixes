@@ -90,10 +90,10 @@
  	
  	if ( ! XMP_LitNMatch ( strValue, "0x", 2 ) ) {
 -		count = sscanf ( strValue, "%lld%c", &result, &nextCh );
-+		count = sscanf ( strValue, "%"PRId64"%c", &result, &nextCh );
++		count = sscanf ( strValue, "%" PRId64 "%c", &result, &nextCh );
  	} else {
 -		count = sscanf ( strValue, "%llx%c", &result, &nextCh );
-+		count = sscanf ( strValue, "%"PRIx64"%c", &result, &nextCh );
++		count = sscanf ( strValue, "%" PRIx64 "%c", &result, &nextCh );
  	}
  
  	if ( count != 1 ) XMP_Throw ( "Invalid integer string", kXMPErr_BadParam );
@@ -113,7 +113,7 @@
  				char buffer [32];	// A 64-bit number is at most 20 digits.
  				this->xmpObj.DeleteProperty ( kXMP_NS_DM, "duration" );	// Delete the whole struct.
 -				snprintf ( buffer, sizeof(buffer), "%llu", mvhd.duration );	// AUDIT: The buffer is big enough.
-+				snprintf ( buffer, sizeof(buffer), "%"PRIu64, mvhd.duration );	// AUDIT: The buffer is big enough.
++				snprintf ( buffer, sizeof(buffer), "%" PRIu64, mvhd.duration );	// AUDIT: The buffer is big enough.
  				this->xmpObj.SetStructField ( kXMP_NS_DM, "duration", kXMP_NS_DM, "value", &buffer[0] );
  				snprintf ( buffer, sizeof(buffer), "1/%u", mvhd.timescale );	// AUDIT: The buffer is big enough.
  				this->xmpObj.SetStructField ( kXMP_NS_DM, "duration", kXMP_NS_DM, "scale", &buffer[0] );
@@ -132,7 +132,7 @@
  	
  		char strValue[20];
 -		snprintf ( strValue, sizeof(strValue), "%lu", binValue );	// AUDIT: Using sizeof(strValue) is safe.
-+		snprintf ( strValue, sizeof(strValue), "%"PRIu32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
++		snprintf ( strValue, sizeof(strValue), "%" PRIu32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
  	
  		xmp->SetProperty ( xmpNS, xmpProp, strValue );
  
@@ -141,7 +141,7 @@
  	
  		char strValue[40];
 -		snprintf ( strValue, sizeof(strValue), "%lu/%lu", binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
-+		snprintf ( strValue, sizeof(strValue), "%"PRIu32"/%"PRIu32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
++		snprintf ( strValue, sizeof(strValue), "%" PRIu32 "/%" PRIu32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
  	
  		xmp->SetProperty ( xmpNS, xmpProp, strValue );
  
@@ -150,7 +150,7 @@
  	
  		char strValue[40];
 -		snprintf ( strValue, sizeof(strValue), "%ld/%ld", binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
-+		snprintf ( strValue, sizeof(strValue), "%"PRId32"/%"PRId32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
++		snprintf ( strValue, sizeof(strValue), "%" PRId32 "/%" PRId32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
  	
  		xmp->SetProperty ( xmpNS, xmpProp, strValue );
  
@@ -177,7 +177,7 @@
  	
  		char strValue[20];
 -		snprintf ( strValue, sizeof(strValue), "%ld", binValue );	// AUDIT: Using sizeof(strValue) is safe.
-+		snprintf ( strValue, sizeof(strValue), "%"PRId32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
++		snprintf ( strValue, sizeof(strValue), "%" PRId32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
  	
  		xmp->SetProperty ( xmpNS, xmpProp, strValue );
  
@@ -186,7 +186,7 @@
  	
  			char strValue[20];
 -			snprintf ( strValue, sizeof(strValue), "%lu", binValue );	// AUDIT: Using sizeof(strValue) is safe.
-+			snprintf ( strValue, sizeof(strValue), "%"PRIu32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
++			snprintf ( strValue, sizeof(strValue), "%" PRIu32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
  	
  			xmp->AppendArrayItem ( xmpNS, xmpProp, kXMP_PropArrayIsOrdered, strValue );
  	
@@ -195,7 +195,7 @@
  	
  			char strValue[40];
 -			snprintf ( strValue, sizeof(strValue), "%lu/%lu", binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
-+			snprintf ( strValue, sizeof(strValue), "%"PRIu32"/%"PRIu32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
++			snprintf ( strValue, sizeof(strValue), "%" PRIu32 "/%" PRIu32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
  	
  			xmp->AppendArrayItem ( xmpNS, xmpProp, kXMP_PropArrayIsOrdered, strValue );
  	
@@ -204,7 +204,7 @@
  	
  			char strValue[40];
 -			snprintf ( strValue, sizeof(strValue), "%ld/%ld", binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
-+			snprintf ( strValue, sizeof(strValue), "%"PRId32"/%"PRId32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
++			snprintf ( strValue, sizeof(strValue), "%" PRId32 "/%" PRId32, binNum, binDenom );	// AUDIT: Using sizeof(strValue) is safe.
  	
  			xmp->AppendArrayItem ( xmpNS, xmpProp, kXMP_PropArrayIsOrdered, strValue );
  	
@@ -231,7 +231,7 @@
  	
  			char strValue[20];
 -			snprintf ( strValue, sizeof(strValue), "%ld", binValue );	// AUDIT: Using sizeof(strValue) is safe.
-+			snprintf ( strValue, sizeof(strValue), "%"PRId32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
++			snprintf ( strValue, sizeof(strValue), "%" PRId32, binValue );	// AUDIT: Using sizeof(strValue) is safe.
  	
  			xmp->AppendArrayItem ( xmpNS, xmpProp, kXMP_PropArrayIsOrdered, strValue );
  	
@@ -240,7 +240,7 @@
  			}
  	
 -			snprintf ( buffer, sizeof(buffer), "%ld/%ld", binNum, binDenom );	// AUDIT: Use of sizeof(buffer) is safe.
-+			snprintf ( buffer, sizeof(buffer), "%"PRId32"/%"PRId32, binNum, binDenom );	// AUDIT: Use of sizeof(buffer) is safe.
++			snprintf ( buffer, sizeof(buffer), "%" PRId32 "/%" PRId32, binNum, binDenom );	// AUDIT: Use of sizeof(buffer) is safe.
  	
  			xmp->AppendArrayItem ( xmpNS, arrayPath.c_str(), kXMP_PropArrayIsOrdered, buffer );
  	
@@ -249,7 +249,7 @@
  			}
  	
 -			snprintf ( buffer, sizeof(buffer), "%lu/%lu", binNum, binDenom );	// AUDIT: Use of sizeof(buffer) is safe.
-+			snprintf ( buffer, sizeof(buffer), "%"PRIu32"/%"PRIu32, binNum, binDenom );	// AUDIT: Use of sizeof(buffer) is safe.
++			snprintf ( buffer, sizeof(buffer), "%" PRIu32 "/%" PRIu32, binNum, binDenom );	// AUDIT: Use of sizeof(buffer) is safe.
  	
  			xmp->AppendArrayItem ( xmpNS, arrayPath.c_str(), kXMP_PropArrayIsOrdered, buffer );
  	
@@ -267,7 +267,7 @@
  		if ( (degDenom == 1) && (minDenom == 1) && (secDenom == 1) ) {
  		
 -			snprintf ( buffer, sizeof(buffer), "%lu,%lu,%lu%c", degNum, minNum, secNum, ref );	// AUDIT: Using sizeof(buffer is safe.
-+			snprintf ( buffer, sizeof(buffer), "%"PRIu32",%"PRIu32",%"PRIu32"%c", degNum, minNum, secNum, ref );	// AUDIT: Using sizeof(buffer is safe.
++			snprintf ( buffer, sizeof(buffer), "%" PRIu32 ",%" PRIu32 ",%" PRIu32 "%c", degNum, minNum, secNum, ref );	// AUDIT: Using sizeof(buffer is safe.
  		
  		} else {
  		

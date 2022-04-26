@@ -1,5 +1,5 @@
-%%QT_PLUGINDIR%%/kcm_cron.so
 lib/libexec/kauth/kcron_helper
+%%QT_PLUGINDIR%%/kcm_cron.so
 share/dbus-1/system-services/local.kcron.crontab.service
 share/dbus-1/system.d/local.kcron.crontab.conf
 share/kservices5/kcm_cron.desktop

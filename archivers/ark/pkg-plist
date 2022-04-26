@@ -1,8 +1,6 @@
 bin/ark
-share/qlogging-categories5/ark.categories
 lib/libkerfuffle.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkerfuffle.so.%%KDE_APPLICATIONS_SHLIB_VER%%
-%%QT_PLUGINDIR%%/kf5/parts/arkpart.so
 %%QT_PLUGINDIR%%/kerfuffle/kerfuffle_cli7z.so
 %%QT_PLUGINDIR%%/kerfuffle/kerfuffle_clirar.so
 %%QT_PLUGINDIR%%/kerfuffle/kerfuffle_cliunarchiver.so
@@ -16,6 +14,7 @@ lib/libkerfuffle.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/compressfileitemaction.so
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/extractfileitemaction.so
 %%QT_PLUGINDIR%%/kf5/kio_dnd/extracthere.so
+%%QT_PLUGINDIR%%/kf5/parts/arkpart.so
 man/ca/man1/ark.1.gz
 man/de/man1/ark.1.gz
 man/es/man1/ark.1.gz
@@ -31,9 +30,9 @@ man/sv/man1/ark.1.gz
 man/uk/man1/ark.1.gz
 share/applications/org.kde.ark.desktop
 share/config.kcfg/ark.kcfg
-share/icons/hicolor/128x128/apps/ark.png
 share/icons/hicolor/48x48/apps/ark.png
 share/icons/hicolor/64x64/apps/ark.png
+share/icons/hicolor/128x128/apps/ark.png
 share/icons/hicolor/scalable/apps/ark.svgz
 share/kservices5/ark_part.desktop
 share/kservicetypes5/kerfufflePlugin.desktop
@@ -98,3 +97,4 @@ share/locale/uk/LC_MESSAGES/ark.mo
 share/locale/zh_CN/LC_MESSAGES/ark.mo
 share/locale/zh_TW/LC_MESSAGES/ark.mo
 share/metainfo/org.kde.ark.appdata.xml
+share/qlogging-categories5/ark.categories

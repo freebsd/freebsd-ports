@@ -3,7 +3,7 @@
 PORTNAME=	CoinMP
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	1.8.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,9 +19,11 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libCgl.so:math/cgl \
 		libClp.so:math/clp \
 		libcoinasl.so:math/asl \
-		libcoinmumps.so:math/ipopt \
+		libcoinmumps.so:math/coin-or-mumps \
 		libCoinUtils.so:math/coinutils \
-		libopenblas.so:math/openblas
+		libnauty.so:math/nauty \
+		libopenblas.so:math/openblas \
+		libOsi.so:math/osi
 
 USES=		compiler:c++11-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

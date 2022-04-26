@@ -1,5 +1,5 @@
 PORTNAME=	gem-compare
-PORTVERSION=	0.0.7
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,6 +8,8 @@ COMMENT=	RubyGems plugin for comparing gem versions
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_RUBY27=	yes
 
 RUN_DEPENDS=	rubygem-curb>=0:ftp/rubygem-curb \
 		rubygem-diffy>=0:textproc/rubygem-diffy \

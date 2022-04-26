@@ -1,0 +1,2238 @@
+--- src/piddle/PixMapWrapper.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/PixMapWrapper.py
+@@ -93,7 +93,7 @@ class PixMapWrapper:
+ 
+ 	def __setattr__(self, attr, val):
+ 		if attr == 'baseAddr':
+-			raise 'UseErr', "don't assign to .baseAddr -- assign to .data instead"
++			raise('UseErr', "don't assign to .baseAddr -- assign to .data instead")
+ 		elif attr == 'data':
+ 			self.__dict__['data'] = val
+ 			self._stuff('baseAddr', id(self.data) + MacOS.string_id_to_buffer)
+@@ -109,7 +109,7 @@ class PixMapWrapper:
+ 		elif attr == 'hRes' or attr == 'vRes':
+ 			# 16.16 fixed format, so just shift 16 bits
+ 			self._stuff(attr, int(val) << 16)
+-		elif attr in _pmElemFormat.keys():
++		elif attr in list(_pmElemFormat.keys()):
+ 			# any other pm attribute -- just stuff
+ 			self._stuff(attr, val)
+ 		else:
+@@ -129,7 +129,7 @@ class PixMapWrapper:
+ 		elif attr == 'hRes' or attr == 'vRes':
+ 			# 16.16 fixed format, so just shift 16 bits
+ 			return self._unstuff(attr) >> 16
+-		elif attr in _pmElemFormat.keys():
++		elif attr in list(_pmElemFormat.keys()):
+ 			# any other pm attribute -- just unstuff
+ 			return self._unstuff(attr)
+ 		else:
+@@ -151,7 +151,7 @@ class PixMapWrapper:
+ 		if y2 == None:
+ 			dest[3] = y1 + src[3]-src[1]
+ 		if not port: port = Qd.GetPort()
+-		print "blit port:", port
++		print("blit port:", port)
+ 		Qd.CopyBits(self.PixMap(), port.portBits, src, tuple(dest),
+ 				QuickDraw.srcCopy, None)
+ 
+@@ -186,7 +186,7 @@ class PixMapWrapper:
+ 		# so convert if necessary
+ 		if format != imgformat.macrgb and format != imgformat.macrgb16:
+ 			# (LATER!)
+-			raise "NotImplementedError", "conversion to macrgb or macrgb16"
++			raise("NotImplementedError", "conversion to macrgb or macrgb16")
+ 		self.data = s
+ 		self.bounds = (0,0,width,height)
+ 		self.cmpCount = 3
+@@ -207,7 +207,7 @@ class PixMapWrapper:
+ 			return self.data
+ 		# otherwise, convert to the requested format
+ 		# (LATER!)
+-			raise "NotImplementedError", "data format conversion"
++			raise("NotImplementedError", "data format conversion")
+ 
+ 	def fromImage(self,im):
+ 		"""Initialize this PixMap from a PIL Image object."""
+--- src/piddle/aigen.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/aigen.py
+@@ -344,7 +344,7 @@ class FontCache:
+ 		
+ 	def loadfont(self, fontname):
+ 		filename = AFMDIR + os.sep + fontname + '.afm'
+-		print 'cache loading',filename
++		print('cache loading',filename)
+ 		assert os.path.exists(filename)
+ 		widths = parseAFMfile(filename)
+ 		self.__widtharrays[fontname] = widths
+@@ -357,7 +357,7 @@ class FontCache:
+ 				return self.__widtharrays[fontname]
+ 			except:
+ 				# font not found, use Courier
+-				print 'Font',fontname,'not found - using Courier for widths'
++				print('Font',fontname,'not found - using Courier for widths')
+ 				return self.getfont('courier')
+ 	
+ 
+@@ -369,7 +369,7 @@ class FontCache:
+ 		return w
+ 	def status(self):
+ 		#returns loaded fonts
+-		return self.__widtharrays.keys()
++		return list(self.__widtharrays.keys())
+ 		
+ TheFontCache = FontCache()
+ 
+@@ -443,8 +443,8 @@ class AIDocument:
+ 		self.transforms.originy = 0
+ #		self.info.boundingBox = boundingbox
+ 		lx,ly, ux,uy, tx = boundingbox
+-		print 'setBoundingBox', lx,ly, ux,uy, tx
+-		print 'setBoundingBox', ux-lx,uy-ly
++		print('setBoundingBox', lx,ly, ux,uy, tx)
++		print('setBoundingBox', ux-lx,uy-ly)
+ 		self.info.pagesize = (ux-lx), (uy-ly)
+ 		##XXX If the ArtSize is smaller than Letter Freehand always draws the 
+ 		##XXX origin as if the Art board was Letter sized, however the arboard 
+@@ -459,7 +459,7 @@ class AIDocument:
+ #		print self.transforms
+ #		print self.transforms.originx
+ #		print self.transforms.originy
+-		print 'setBoundingBox', lx,ly, ux,uy
++		print('setBoundingBox', lx,ly, ux,uy)
+ 		self.info.boundingBox = lx, ly, ux, uy
+ 		self.transforms.height = uy
+ 		
+@@ -479,16 +479,16 @@ class AIDocument:
+ 	
+ 	def printXref(self):
+ 		self.startxref = sys.stdout.tell()
+-		print 'xref'
+-		print 0,len(self.objects) + 1
+-		print '0000000000 65535 f'
++		print('xref')
++		print(0,len(self.objects) + 1)
++		print('0000000000 65535 f')
+ 		for pos in self.xref:
+-			print '%0.10d 00000 n' % pos
++			print('%0.10d 00000 n' % pos)
+ 	
+ 	def printTrailer(self):
+-		print '''%%PageTrailer
++		print('''%%PageTrailer
+ gsave annotatepage grestore showpage
+-%%Trailer'''
++%%Trailer''')
+ #		print '<< /Size %d /Root %d 0 R /Info %d 0 R>>' % (len(self.objects) + 1, 1, self.infopos)
+ #		print 'startxref'
+ #		print self.startxref
+@@ -496,7 +496,6 @@ gsave annotatepage grestore showpage
+ 	def printAI(self):
+ 		"prints it to standard output.  Logs positions for doing trailer"
+ #		print "%AI-1.0"
+-#		print "%’“¦²"
+ 		i = 1
+ 		self.xref = []
+ #		print self.objects
+@@ -510,7 +509,7 @@ gsave annotatepage grestore showpage
+ #			i = i + 1
+ #		self.printXref()
+ 		self.printTrailer()
+-		print "%%EOF",
++		print("%%EOF", end=' ')
+ 
+ 
+ 	def addPage(self, page):
+@@ -570,10 +569,10 @@ class OutputGrabber:
+ def testOutputGrabber():
+ 	gr = OutputGrabber()
+ 	for i in range(10):
+-		print 'line',i
++		print('line',i)
+ 	data = gr.getData()
+ 	gr.close()
+-	print 'Data...',data
++	print('Data...',data)
+ 	
+ 
+ ##############################################################
+@@ -587,7 +586,7 @@ def testOutputGrabber():
+ class AIObject:
+ 	"Base class for all AI objects"
+ 	def printAI(self):
+-		print '% base AI object'
++		print('% base AI object')
+ 	
+ 		
+ class AILiteral(AIObject):
+@@ -595,7 +594,7 @@ class AILiteral(AIObject):
+ 	def __init__(self, text):
+ 		self.text = text
+ 	def printAI(self):
+-		print self.text
++		print(self.text)
+ 
+ 
+ 
+@@ -608,7 +607,7 @@ class AICatalog(AIObject):
+ /Outlines %d 0 R
+ >>'''
+ 	def printAI(self):
+-		print self.template % (self.RefPages, self.RefOutlines)
++		print(self.template % (self.RefPages, self.RefOutlines))
+ 
+ class AIHeader(AIObject):
+ 	# no features implemented yet
+@@ -622,26 +621,26 @@ class AIHeader(AIObject):
+ 		self.datestr = time.strftime("%x %I:%M %p", now)
+ 				
+ 	def printAI(self):
+-		print "%!PS-Adobe-3.0"
+-		print "%%Creator: PIDDLE Adobe Illustrator backend"
+-		print "%%Title: " +'(%s)' % self.title
+-		print "%%For: " +'(%s)' % self.author
+-		print "%%CreationDate: " +'(%s)' % self.datestr
+-		print "%%DocumentProcessColors: Black"""
+-		print '%%BoundingBox: ' + '%s %s %s %s' % self.boundingBox
++		print("%!PS-Adobe-3.0")
++		print("%%Creator: PIDDLE Adobe Illustrator backend")
++		print("%%Title: " +'(%s)' % self.title)
++		print("%%For: " +'(%s)' % self.author)
++		print("%%CreationDate: " +'(%s)' % self.datestr)
++		print("%%DocumentProcessColors: Black""")
++		print('%%BoundingBox: ' + '%s %s %s %s' % self.boundingBox)
+ 		#%%DocumentProcessColors: Cyan Magenta Yellow
+ 		#%%DocumentCustomColors: (PANTONE 156 CV)
+ 		#%%RGBCustomColor: red green blue (customcolorname)
+ 		#%%DocumentFonts: CooperBlack
+ 		#%%+ Minion-Regular
+ 		#%%DocumentFiles: WrathOfRalph
+-		print "%AI5_FileFormat 3"
+-		print "%AI3_ColorUsage: Color"
+-		print '%AI5_ArtSize: ' + '%s %s' % self.pagesize
+-		print '%AI5_Templatebox: ' + '%s %s' % self.pagesize
++		print("%AI5_FileFormat 3")
++		print("%AI3_ColorUsage: Color")
++		print('%AI5_ArtSize: ' + '%s %s' % self.pagesize)
++		print('%AI5_Templatebox: ' + '%s %s' % self.pagesize)
+ 		#%AI7_ImageSettings: flag
+-		print '%AI5_TargetResolution: 300'
+-		print '%%EndComments'		
++		print('%AI5_TargetResolution: 300')
++		print('%%EndComments')		
+ 
+ 
+ class AIProlog(AIObject):
+@@ -649,18 +648,18 @@ class AIProlog(AIObject):
+ 	def __init__(self):
+ 		self.FontList = []
+ 	def printAI(self):
+-		print '%%BeginProlog'
+-		print '%%EndProlog'
++		print('%%BeginProlog')
++		print('%%EndProlog')
+ 
+ class AISetUp(AIObject):
+ 	"null outline, does nothing yet"
+ 	def __init__(self):
+ 		self.FontList = []
+ 	def printAI(self):
+-		print '%%BeginSetup'
++		print('%%BeginSetup')
+ 		if self.FontList:
+ 			pass
+-		print '%%EndSetup'
++		print('%%EndSetup')
+ 	
+ class AIPageCollection(AIObject):
+ 	"presumes PageList attribute set (list of integers)"
+@@ -671,7 +670,7 @@ class AIPageCollection(AIObject):
+ 		for page in self.PageList:
+ 			result = result + str(page) + ' 0 R '
+ 		result = result + ']\n>>'
+-		print result
++		print(result)
+ 
+ #class AIBody(AIObject):
+ #	"""The Bastard.  Needs list of Resources etc. Use a standard one for now.
+@@ -776,14 +775,14 @@ class AIStream(AIObject):
+ 
+ 			
+ #		print '<< /Length %d >>' % length
+-		print '''%AI5_BeginLayer
++		print('''%AI5_BeginLayer
+ 1 1 1 1 0 0 0 79 128 255 Lb
+-(Foreground) Ln'''
+-		print self.transformAI(self.originx, self.originy, self.height)
++(Foreground) Ln''')
++		print(self.transformAI(self.originx, self.originy, self.height))
+ 
+ #		print 'XXXX', self.data
+-		print '''LB
+-%AI5_EndLayer--'''
++		print('''LB
++%AI5_EndLayer--''')
+ 
+ 	def transformAI(self, ox, oy, ty):
+ #		print 'transformAI', ox, oy
+@@ -806,7 +805,7 @@ class AIStream(AIObject):
+ 			
+ class AIImage(AIObject):
+ 	def printAI(self):
+-		print """<<
++		print("""<<
+ /Type /XObject
+ /Subtype /Image
+ /Name /Im0
+@@ -823,7 +822,7 @@ stream
+ B2BBC2 BB6F84 31BFC2 18EA3C 0E3E00 07FC00 03F800
+ 1E1800 1FF800>
+ endstream
+-endobj"""
++endobj""")
+ 			
+ class AIType1Font(AIObject):
+ 	def __init__(self, key, font):
+@@ -837,11 +836,11 @@ class AIType1Font(AIObject):
+ /Encoding /WinAnsiEncoding
+ >>"""
+ 	def printAI(self):
+-		print self.template % (self.keyname, self.fontname)
++		print(self.template % (self.keyname, self.fontname))
+ 
+ class AIProcSet(AIObject):
+ 	def printAI(self):
+-		print "[/AI /Text]"
++		print("[/AI /Text]")
+ 
+ 
+ 
+@@ -876,4 +875,4 @@ def MakeFontDictionary(startpos, count):
+ 	
+ 
+ #if __name__ == '__main__':
+-#	print 'For test scripts, run test1.py to test7.py'
+\ No newline at end of file
++#	print 'For test scripts, run test1.py to test7.py'
+--- src/piddle/discipline.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/discipline.py
+@@ -4,28 +4,28 @@ from piddle import *
+ def checkMethods(parentMethod, childMethod):
+ 	"Make sure the child's method obey's the parent's interface; return 1 if OK."
+ 	# get the parameter names
+-	pf = parentMethod.func_code
+-	cf = childMethod.func_code
++	pf = parentMethod.__code__
++	cf = childMethod.__code__
+ 	pargs = pf.co_varnames[:pf.co_argcount]
+ 	cargs = cf.co_varnames[:cf.co_argcount]
+ 	
+ 	# make sure they match, at least as far as the parent's go
+ 	if len(cargs) < len(pargs):
+-		print "too few args"
++		print("too few args")
+ 		return 0	
+ 	for i in range(len(pargs)):
+ 		if pargs[i] != cargs[i]:
+-			print "arg names don't match"
++			print("arg names don't match")
+ 			return 0
+ 
+ 	# if child has any additional arguments, make sure
+ 	# they have default values
+ 	extras = len(cargs) - len(pargs)
+-	defs = childMethod.func_defaults
++	defs = childMethod.__defaults__
+ 	if extras and (defs is None or len(defs) < extras):
+-		print "need %s defaults, got %s" % (extras, defs)
+-		print cargs
+-		print pargs
++		print("need %s defaults, got %s" % (extras, defs))
++		print(cargs)
++		print(pargs)
+ 		return 0
+ 	
+ 	# otherwise, it's OK
+@@ -41,17 +41,17 @@ def checkClasses(parent, child):
+ 		if type(item) != MethodType or name[0] == '_':
+ 			pass  # print "     %s is not a public method" % name
+ 		elif name in parentDir:
+-			if not checkMethods(getattr(parent, name).im_func, item.im_func):
+-				print "NAUGHTY CHILD disobeys arguments to", name
++			if not checkMethods(getattr(parent, name).__func__, item.__func__):
++				print("NAUGHTY CHILD disobeys arguments to", name)
+ 			else:
+-				print "     %s looks OK" % name
++				print("     %s looks OK" % name)
+ 		else:
+-			print "     %s is unique to the child" % name
++			print("     %s is unique to the child" % name)
+ 
+-foo = raw_input("backend to check (e.g., PDF):")
++foo = input("backend to check (e.g., PDF):")
+ if foo:
+ 	canvasname = foo+"Canvas"
+ 	module = __import__("piddle"+foo, globals(), locals(), [canvasname] )
+ 	child = getattr(module, canvasname)
+-	print "\nChecking %s...\n" % canvasname
++	print("\nChecking %s...\n" % canvasname)
+ 	checkClasses( Canvas, child )
+--- src/piddle/pdfdoc.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/pdfdoc.py
+@@ -18,7 +18,7 @@ import sys
+ import string
+ import time
+ import tempfile
+-import cStringIO
++import io
+ from types import *
+ from math import sin, cos, pi, ceil
+ 
+@@ -152,10 +152,10 @@ class PDFDocument:
+ 
+     
+     def printTrailer(self):
+-        print 'trailer'
+-        print '<< /Size %d /Root %d 0 R /Info %d 0 R>>' % (len(self.objects) + 1, 1, self.infopos)
+-        print 'startxref'
+-        print self.startxref
++        print('trailer')
++        print(('<< /Size %d /Root %d 0 R /Info %d 0 R>>' % (len(self.objects) + 1, 1, self.infopos)))
++        print('startxref')
++        print((self.startxref))
+ 
+     def writeTrailer(self, f):
+         f.write('trailer' + LINEEND)
+@@ -176,7 +176,6 @@ class PDFDocument:
+         i = 1
+         self.xref = []
+         f.write("%PDF-1.2" + LINEEND)  # for CID support
+-        f.write("%íì¶¾" + LINEEND)
+         for obj in self.objects:
+             pos = f.tell()
+             self.xref.append(pos)
+@@ -201,20 +200,19 @@ class PDFDocument:
+ 
+     def printPDF(self):
+         "prints it to standard output.  Logs positions for doing trailer"
+-        print "%PDF-1.0"
+-        print "%íì¶¾"
++        print("%PDF-1.0")
+         i = 1
+         self.xref = []
+         for obj in self.objects:
+             pos = sys.stdout.tell()
+             self.xref.append(pos)
+-            print i, '0 obj'
++            print(i, '0 obj')
+             obj.printPDF()
+-            print 'endobj'
++            print('endobj')
+             i = i + 1
+         self.printXref()
+         self.printTrailer()
+-        print "%%EOF",
++        print("%%EOF", end=' ')
+ 
+     def addPage(self, page):
+         """adds page and stream at end.  Maintains pages list"""
+@@ -235,16 +233,16 @@ class PDFDocument:
+         #self.objects.append(page.stream)
+ 
+     def hasFont(self, psfontname):
+-        return self.fontMapping.has_key(psfontname)
++        return psfontname in self.fontMapping
+ 
+     def getInternalFontName(self, psfontname):
+         try:
+             return self.fontMapping[psfontname]
+         except:
+-            raise PDFError, "Font %s not available in document" % psfontname
++            raise PDFError("Font %s not available in document" % psfontname)
+ 
+     def getAvailableFonts(self):
+-        fontnames = self.fontMapping.keys()
++        fontnames = list(self.fontMapping.keys())
+         fontnames.sort()
+         return fontnames
+     
+@@ -284,10 +282,10 @@ class OutputGrabber:
+ def testOutputGrabber():
+     gr = OutputGrabber()
+     for i in range(10):
+-        print 'line',i
++        print('line',i)
+     data = gr.getData()
+     gr.close()
+-    print 'Data...',data
++    print('Data...',data)
+     
+ 
+ ##############################################################
+@@ -562,4 +560,4 @@ def MakeFontDictionary(startpos, count):
+     return dict
+         
+ if __name__ == '__main__':
+-    print 'For test scripts, run test1.py to test6.py'
++    print('For test scripts, run test1.py to test6.py')
+--- src/piddle/pdfgen.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/pdfgen.py
+@@ -53,7 +53,7 @@ import sys
+ import string
+ import time
+ import tempfile
+-import cStringIO
++import io
+ from types import *
+ from math import sin, cos, tan, pi, ceil
+ 
+@@ -570,12 +570,12 @@ class Canvas:
+         try: 
+             import Image
+         except ImportError:
+-            print 'Python Imaging Library not available'
++            print('Python Imaging Library not available')
+             return
+         try:
+             import zlib
+         except ImportError:
+-            print 'zlib not available'
++            print('zlib not available')
+             return
+             
+         self._currentPageHasImages = 1
+@@ -605,9 +605,9 @@ class Canvas:
+                 #write in blocks of (??) 60 characters per line to a list
+                 compressed = imageFile.read()
+                 encoded = pdfutils._AsciiBase85Encode(compressed)
+-                outstream = cStringIO.StringIO(encoded)
++                outstream = io.StringIO(encoded)
+                 dataline = outstream.read(60)
+-                while dataline <> "":
++                while dataline != "":
+                     imagedata.append(dataline)
+                     dataline = outstream.read(60)
+                 imagedata.append('EI')
+@@ -618,7 +618,7 @@ class Canvas:
+                 cachedname = os.path.splitext(image)[0] + '.a85'
+                 imagedata = open(cachedname,'rb').readlines()
+                 #trim off newlines...
+-                imagedata = map(string.strip, imagedata)
++                imagedata = list(map(string.strip, imagedata))
+                 
+                 #parse line two for width, height
+                 words = string.split(imagedata[1])
+@@ -643,9 +643,9 @@ class Canvas:
+             encoded = pdfutils._AsciiBase85Encode(compressed) #...sadly this isn't
+ 
+             #write in blocks of (??) 60 characters per line to a list
+-            outstream = cStringIO.StringIO(encoded)
++            outstream = io.StringIO(encoded)
+             dataline = outstream.read(60)
+-            while dataline <> "":
++            while dataline != "":
+                 imagedata.append(dataline)
+                 dataline = outstream.read(60)
+             imagedata.append('EI')
+@@ -680,48 +680,48 @@ class Canvas:
+     # This is based on Thomas Merz's code from GhostScript (viewjpeg.ps)
+     def readJPEGInfo(self, image):
+         "Read width, height and number of components from JPEG file"
+-    	import struct
++        import struct
+ 
+-	#Acceptable JPEG Markers:
+-	#  SROF0=baseline, SOF1=extended sequential or SOF2=progressive
+-	validMarkers = [0xC0, 0xC1, 0xC2]
++        #Acceptable JPEG Markers:
++        #  SROF0=baseline, SOF1=extended sequential or SOF2=progressive
++        validMarkers = [0xC0, 0xC1, 0xC2]
+ 
+-	#JPEG markers without additional parameters
+-	noParamMarkers = \
+-	    [ 0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0xD5, 0xD6, 0xD7, 0xD8, 0x01 ]
++        #JPEG markers without additional parameters
++        noParamMarkers = \
++            [ 0xD0, 0xD1, 0xD2, 0xD3, 0xD4, 0xD5, 0xD6, 0xD7, 0xD8, 0x01 ]
+ 
+-	#Unsupported JPEG Markers
+-	unsupportedMarkers = \
+-	    [ 0xC3, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF ]
++        #Unsupported JPEG Markers
++        unsupportedMarkers = \
++            [ 0xC3, 0xC5, 0xC6, 0xC7, 0xC8, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF ]
+ 
+-	#read JPEG marker segments until we find SOFn marker or EOF
+-	done = 0
+-	while not done:
+-	    x = struct.unpack('B', image.read(1))
+-	    if x[0] == 0xFF:			#found marker
+-	    	x = struct.unpack('B', image.read(1))
+-		#print "Marker: ", '%0.2x' % x[0]
+-		#check marker type is acceptable and process it
+-		if x[0] in validMarkers:
+-		    image.seek(2, 1)		#skip segment length
+-		    x = struct.unpack('B', image.read(1)) #data precision
+-		    if x[0] != 8:
+-			raise 'PDFError', ' JPEG must have 8 bits per component'
+-		    y = struct.unpack('BB', image.read(2))
+-		    height = (y[0] << 8) + y[1] 
+-		    y = struct.unpack('BB', image.read(2))
+-		    width =  (y[0] << 8) + y[1]
+-		    y = struct.unpack('B', image.read(1))
+-		    color =  y[0]
+-		    return width, height, color
+-		    done = 1
+-		elif x[0] in unsupportedMarkers:
+-		    raise 'PDFError', ' Unsupported JPEG marker: %0.2x' % x[0]
+-		elif x[0] not in noParamMarkers:
+-		    #skip segments with parameters
+-		    #read length and skip the data
+-		    x = struct.unpack('BB', image.read(2))
+-		    image.seek( (x[0] << 8) + x[1] - 2, 1)	
++        #read JPEG marker segments until we find SOFn marker or EOF
++        done = 0
++        while not done:
++            x = struct.unpack('B', image.read(1))
++            if x[0] == 0xFF:    #found marker
++                x = struct.unpack('B', image.read(1))
++                #print "Marker: ", '%0.2x' % x[0]
++                #check marker type is acceptable and process it
++                if x[0] in validMarkers:
++                    image.seek(2, 1)    #skip segment length
++                    x = struct.unpack('B', image.read(1)) #data precision
++                    if x[0] != 8:
++                        raise('PDFError', ' JPEG must have 8 bits per component')
++                    y = struct.unpack('BB', image.read(2))
++                    height = (y[0] << 8) + y[1] 
++                    y = struct.unpack('BB', image.read(2))
++                    width =  (y[0] << 8) + y[1]
++                    y = struct.unpack('B', image.read(1))
++                    color =  y[0]
++                    return width, height, color
++                    done = 1
++                elif x[0] in unsupportedMarkers:
++                    raise('PDFError', ' Unsupported JPEG marker: %0.2x' % x[0])
++                elif x[0] not in noParamMarkers:
++                    #skip segments with parameters
++                    #read length and skip the data
++                    x = struct.unpack('BB', image.read(2))
++                    image.seek((x[0] << 8) + x[1] - 2, 1)
+ 
+     def setPageCompression(self, onoff=1):
+         """Possible values 1 or 0 (1 for 'on' is the default).
+@@ -763,17 +763,17 @@ class Canvas:
+         if direction in [0,90,180,270]:
+             direction_arg = '/Di /%d' % direction
+         else:
+-            raise 'PDFError', ' directions allowed are 0,90,180,270'
++            raise('PDFError', ' directions allowed are 0,90,180,270')
+         
+         if dimension in ['H', 'V']:
+             dimension_arg = '/Dm /%s' % dimension
+         else:
+-            raise'PDFError','dimension values allowed are H and V'
++            raise('PDFError','dimension values allowed are H and V')
+         
+         if motion in ['I','O']:
+             motion_arg = '/M /%s' % motion
+         else:
+-            raise'PDFError','motion values allowed are I and O'
++            raise('PDFError','motion values allowed are I and O')
+ 
+ 
+         # this says which effects require which argument types from above
+@@ -789,7 +789,7 @@ class Canvas:
+         try:
+             args = PageTransitionEffects[effectname]
+         except KeyError:
+-            raise 'PDFError', 'Unknown Effect Name "%s"' % effectname
++            raise('PDFError', 'Unknown Effect Name "%s"' % effectname)
+             self._pageTransitionString = ''
+             return
+         
+@@ -1033,7 +1033,7 @@ class PDFTextObject:
+         if type(stuff) == StringType:
+             lines = string.split(string.strip(stuff), '\n')
+             if trim==1:
+-                lines = map(string.strip,lines)
++                lines = list(map(string.strip,lines))
+         elif type(stuff) == ListType:
+             lines = stuff
+         elif type(stuff) == TupleType:
+@@ -1055,4 +1055,4 @@ class PDFTextObject:
+ 
+ 
+ if __name__ == '__main__':
+-    print 'For test scripts, run testpdfgen.py'
++    print('For test scripts, run testpdfgen.py')
+--- src/piddle/pdfgeom.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/pdfgeom.py
+@@ -10,7 +10,7 @@ So far, just Robert Kern's bezierArc.
+ from math import sin, cos, pi, ceil
+ 
+ def bezierArc(x1,y1, x2,y2, startAng=0, extent=90):
+-    """bezierArc(x1,y1, x2,y2, startAng=0, extent=90) --> List of BÈzier
++    """bezierArc(x1,y1, x2,y2, startAng=0, extent=90) --> List of Bezier
+ curve control points.
+ 
+ (x1, y1) and (x2, y2) are the corners of the enclosing rectangle.  The
+@@ -22,7 +22,7 @@ semi-circle.
+ 
+ The resulting coordinates are of the form (x1,y1, x2,y2, x3,y3, x4,y4)
+ such that the curve goes from (x1, y1) to (x4, y4) with (x2, y2) and
+-(x3, y3) as their respective BÈzier control points."""
++(x3, y3) as their respective Bezier control points."""
+ 
+     x1,y1, x2,y2 = min(x1,x2), max(y1,y2), max(x1,x2), min(y1,y2)
+ 
+--- src/piddle/pdfmetrics.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/pdfmetrics.py
+@@ -93,7 +93,7 @@ class FontCache:
+         
+     def loadfont(self, fontname):
+         filename = AFMDIR + os.sep + fontname + '.afm'
+-        print 'cache loading',filename
++        print('cache loading',filename)
+         assert os.path.exists(filename)
+         widths = parseAFMfile(filename)
+         self.__widtharrays[fontname] = widths
+@@ -107,7 +107,7 @@ class FontCache:
+                 return self.__widtharrays[fontname]
+             except:
+                 # font not found, use Courier
+-                print 'Font',fontname,'not found - using Courier for widths'
++                print('Font',fontname,'not found - using Courier for widths')
+                 return self.getfont('courier')
+     
+ 
+@@ -120,7 +120,7 @@ class FontCache:
+ 
+     def status(self):
+         #returns loaded fonts
+-        return self.__widtharrays.keys()
++        return list(self.__widtharrays.keys())
+         
+ TheFontCache = FontCache()
+ 
+--- src/piddle/pdfutils.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/pdfutils.py
+@@ -3,7 +3,7 @@
+ 
+ import os
+ import string
+-import cStringIO
++import io
+ 
+ LINEEND = '\015\012'
+ 
+@@ -32,9 +32,9 @@ def cacheImageFile(filename):
+     encoded = _AsciiBase85Encode(compressed) #...sadly this isn't
+     
+     #write in blocks of 60 characters per line
+-    outstream = cStringIO.StringIO(encoded)
++    outstream = io.StringIO(encoded)
+     dataline = outstream.read(60)
+-    while dataline <> "":
++    while dataline != "":
+         code.append(dataline)
+         dataline = outstream.read(60)
+     
+@@ -45,7 +45,7 @@ def cacheImageFile(filename):
+     f = open(cachedname,'wb')
+     f.write(string.join(code, LINEEND)+LINEEND)
+     f.close()
+-    print 'cached image as %s' % cachedname
++    print('cached image as %s' % cachedname)
+ 
+ 
+ def preProcessImages(spec):
+@@ -54,14 +54,14 @@ def preProcessImages(spec):
+     to save huge amounts of time when repeatedly building image
+     documents."""
+     import types
+-    if type(spec) is types.StringType:
++    if type(spec) is bytes:
+         filelist = glob.glob(spec)
+     else:  #list or tuple OK
+         filelist = spec
+ 
+     for filename in filelist:
+         if cachedImageExists(filename):
+-            print 'cached version of %s already exists' % filename
++            print('cached version of %s already exists' % filename)
+         else:
+             cacheImageFile(filename)
+         
+@@ -111,7 +111,7 @@ def _AsciiHexEncode(input):
+     """This is a verbose encoding used for binary data within
+     a PDF file.  One byte binary becomes two bytes of ASCII."""
+     "Helper function used by images"
+-    output = cStringIO.StringIO()
++    output = io.StringIO()
+     for char in input:
+         output.write('%02x' % ord(char))
+     output.write('>')
+@@ -126,7 +126,7 @@ def _AsciiHexDecode(input):
+     stripped = stripped[:-1]  #chop off terminator
+     assert len(stripped) % 2 == 0, 'Ascii Hex stream has odd number of bytes'
+     i = 0
+-    output = cStringIO.StringIO()
++    output = io.StringIO()
+     while i < len(stripped):
+         twobytes = stripped[i:i+2]
+         output.write(chr(eval('0x'+twobytes)))
+@@ -136,21 +136,21 @@ def _AsciiHexDecode(input):
+ 
+ def _AsciiHexTest(text='What is the average velocity of a sparrow?'):
+     "Do the obvious test for whether Ascii Hex encoding works"
+-    print 'Plain text:', text
++    print('Plain text:', text)
+     encoded = _AsciiHexEncode(text)
+-    print 'Encoded:', encoded
++    print('Encoded:', encoded)
+     decoded = _AsciiHexDecode(encoded)
+-    print 'Decoded:', decoded
++    print('Decoded:', decoded)
+     if decoded == text:
+-        print 'Passed'
++        print('Passed')
+     else:
+-        print 'Failed!'
++        print('Failed!')
+     
+ def _AsciiBase85Encode(input):
+     """This is a compact encoding used for binary data within
+     a PDF file.  Four bytes of binary data become five bytes of
+     ASCII.  This is the default method used for encoding images."""
+-    outstream = cStringIO.StringIO()
++    outstream = io.StringIO()
+     # special rules apply if not a multiple of four bytes.  
+     whole_word_count, remainder_size = divmod(len(input), 4)
+     cut = 4 * whole_word_count
+@@ -163,7 +163,7 @@ def _AsciiBase85Encode(input):
+         b3 = ord(body[offset+2])
+         b4 = ord(body[offset+3])
+     
+-        num = 16777216L * b1 + 65536 * b2 + 256 * b3 + b4
++        num = 16777216 * b1 + 65536 * b2 + 256 * b3 + b4
+ 
+         if num == 0:
+             #special case
+@@ -194,7 +194,7 @@ def _AsciiBase85Encode(input):
+         b3 = ord(lastbit[2])
+         b4 = ord(lastbit[3])
+ 
+-        num = 16777216L * b1 + 65536 * b2 + 256 * b3 + b4
++        num = 16777216 * b1 + 65536 * b2 + 256 * b3 + b4
+ 
+         #solve for c1..c5
+         temp, c5 = divmod(num, 85)
+@@ -217,7 +217,7 @@ def _AsciiBase85Encode(input):
+ def _AsciiBase85Decode(input):
+     """This is not used - Acrobat Reader decodes for you - but a round
+     trip is essential for testing."""
+-    outstream = cStringIO.StringIO()
++    outstream = io.StringIO()
+     #strip all whitespace
+     stripped = string.join(string.split(input),'')
+     #check end
+@@ -229,7 +229,7 @@ def _AsciiBase85Decode(input):
+     # special rules apply if not a multiple of five bytes.  
+     whole_word_count, remainder_size = divmod(len(stripped), 5)
+     #print '%d words, %d leftover' % (whole_word_count, remainder_size)
+-    assert remainder_size <> 1, 'invalid Ascii 85 stream!'
++    assert remainder_size != 1, 'invalid Ascii 85 stream!'
+     cut = 5 * whole_word_count
+     body, lastbit = stripped[0:cut], stripped[cut:]
+     
+@@ -301,14 +301,14 @@ def _wrap(input, columns=60):
+ 
+ def _AsciiBase85Test(text='What is the average velocity of a sparrow?'):
+     "Do the obvious test for whether Base 85 encoding works"
+-    print 'Plain text:', text
++    print('Plain text:', text)
+     encoded = _AsciiBase85Encode(text)
+-    print 'Encoded:', encoded
++    print('Encoded:', encoded)
+     decoded = _AsciiBase85Decode(encoded)
+-    print 'Decoded:', decoded
++    print('Decoded:', decoded)
+     if decoded == text:
+-        print 'Passed'
++        print('Passed')
+     else:
+-        print 'Failed!'
++        print('Failed!')
+ 
+ 
+--- src/piddle/piddle.py.orig	2002-06-03 13:48:50 UTC
++++ src/piddle/piddle.py
+@@ -143,7 +143,7 @@ class Color:
+ 		d["blue"] = _float(blue)
+ 
+ 	def __setattr__(self, name, value):
+-		raise TypeError, "piddle.Color has read-only attributes"
++		raise TypeError("piddle.Color has read-only attributes")
+ 
+ 	def __mul__(self,x):
+ 		return Color(self.red*x, self.green*x, self.blue*x)
+@@ -369,7 +369,7 @@ class Font:
+                                          self.underline, repr(self.face))
+ 
+     def __setattr__(self, name, value):
+-        raise TypeError, "piddle.Font has read-only attributes"
++        raise TypeError("piddle.Font has read-only attributes")
+ 
+ 
+ #-------------------------------------------------------------------------
+@@ -453,25 +453,23 @@ class Canvas:
+                 but which might be buffered should be flushed to the screen"
+ 		pass
+ 
+-        def save(self, file=None, format=None):
++	def save(self, file=None, format=None):
+ 
+-                """For backends that can be save to a file or sent to a
+-                stream, create a valid file out of what's currently been
+-                drawn on the canvas.  Trigger any finalization here.
+-                Though some backends may allow further drawing after this call,
+-                presume that this is not possible for maximum portability
++		"""For backends that can be save to a file or sent to a
++		stream, create a valid file out of what's currently been
++		drawn on the canvas.  Trigger any finalization here.
++		Though some backends may allow further drawing after this call,
++		presume that this is not possible for maximum portability
+ 
+-                file may be either a string or a file object with a write method
+-                     if left as the default, the canvas's current name will be used
++		file may be either a string or a file object with a write method
++		     if left as the default, the canvas's current name will be used
+ 
+-                format may be used to specify the type of file format to use as
+-                     well as any corresponding extension to use for the filename
+-                     This is an optional argument and backends may ignore it if
+-                     they only produce one file format."""
+-                pass 
++		format may be used to specify the type of file format to use as
++		     well as any corresponding extension to use for the filename
++		     This is an optional argument and backends may ignore it if
++		     they only produce one file format."""
++		pass 
+ 
+-                                
+-	
+ 	def setInfoLine(self, s):
+ 		"For interactive Canvases, displays the given string in the \
+ 		'info line' somewhere where the user can probably see it."
+@@ -481,7 +479,7 @@ class Canvas:
+ 	def stringWidth(self, s, font=None):
+ 		"Return the logical width of the string if it were drawn \
+ 		in the current font (defaults to self.font)."
+-		raise NotImplementedError, 'stringWidth'
++		raise NotImplementedError('stringWidth')
+ 	
+ 	def fontHeight(self, font=None):
+ 		"Find the height of one line of text (baseline to baseline) of the given font."
+@@ -492,11 +490,11 @@ class Canvas:
+ 		
+ 	def fontAscent(self, font=None):
+ 		"Find the ascent (height above base) of the given font."
+-		raise NotImplementedError, 'fontAscent'
++		raise NotImplementedError('fontAscent')
+ 	
+ 	def fontDescent(self, font=None):
+ 		"Find the descent (extent below base) of the given font."
+-		raise NotImplementedError, 'fontDescent'		
++		raise NotImplementedError('fontDescent')
+ 		
+ 	#------------- drawing helpers --------------
+ 
+@@ -602,7 +600,7 @@ class Canvas:
+ 
+ 	def drawLine(self, x1,y1, x2,y2, color=None, width=None):
+ 		"Draw a straight line between x1,y1 and x2,y2."
+-		raise NotImplementedError, 'drawLine'
++		raise NotImplementedError('drawLine')
+ 	
+ 	def drawLines(self, lineList, color=None, width=None):
+ 		"Draw a set of lines of uniform color and width.  \
+@@ -617,7 +615,7 @@ class Canvas:
+ 	def drawString(self, s, x,y, font=None, color=None, angle=0):
+ 		"Draw a string starting at location x,y."
+ 		# NOTE: the baseline goes on y; drawing covers (y-ascent,y+descent)
+-		raise NotImplementedError, 'drawString'
++		raise NotImplementedError('drawString')
+ 
+ 
+ 	#	For fillable shapes, edgeColor defaults to self.defaultLineColor,
+@@ -627,7 +625,7 @@ class Canvas:
+ 
+ 	def drawCurve(self, x1,y1, x2,y2, x3,y3, x4,y4, 
+ 				edgeColor=None, edgeWidth=None, fillColor=None, closed=0):
+-		"Draw a Bézier curve with control points x1,y1 to x4,y4."
++		"Draw a Bezier curve with control points x1,y1 to x4,y4."
+ 
+ 		pointlist = self.curvePoints(x1, y1, x2, y2, x3, y3, x4, y4)
+ 		self.drawPolygon(pointlist,
+@@ -697,7 +695,7 @@ class Canvas:
+ 		pointlist: a list of (x,y) tuples defining vertices
+ 		closed: if 1, adds an extra segment connecting the last point to the first
+ 		"""
+-		raise NotImplementedError, 'drawPolygon'
++		raise NotImplementedError('drawPolygon')
+ 	
+ 	def drawFigure(self, partList,
+ 				edgeColor=None, edgeWidth=None, fillColor=None, closed=0):
+@@ -719,7 +717,7 @@ class Canvas:
+ 			elif op == figureCurve:
+ 				pointList.extend(apply(self.curvePoints,args))
+ 			else:
+-				raise TypeError, "unknown figure operator: "+op
++				raise TypeError("unknown figure operator: ", op)
+ 	
+ 		self.drawPolygon(pointList, edgeColor, edgeWidth, fillColor, closed=closed)
+ 
+@@ -729,7 +727,7 @@ class Canvas:
+ 	def drawImage(self, image, x1,y1, x2=None,y2=None):
+ 		"""Draw a PIL Image into the specified rectangle.  If x2 and y2 are
+ 		omitted, they are calculated from the image size."""
+-		raise NotImplementedError, 'drawImage'
++		raise NotImplementedError('drawImage')
+ 
+ 
+ 
+@@ -748,9 +746,9 @@ def getFileObject(file):
+                         if hasattr(file, "write"):
+                                 fileobj = file
+                         else:
+-                                raise 'Invalid file argument to save'
++                                raise('Invalid file argument to save')
+         else:
+-                raise 'Invalid file argument to save'
++                raise('Invalid file argument to save')
+         
+         return fileobj
+ 
+--- src/piddle/piddleAI.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddleAI.py
+@@ -19,7 +19,7 @@ from piddle import *
+ import aigen
+ import string
+ import zlib
+-import cStringIO
++import io
+ 
+ from math import sin, cos, pi, ceil
+ 
+@@ -35,7 +35,7 @@ class AICanvas(Canvas):
+ 
+ 	def __init__(self, size=(0,0), name='piddle.ai'):
+ 		Canvas.__init__(self, size, name=name)
+-		print name
++		print(name)
+ 		if name[-3:] == '.ai':
+ 			self.name = name
+ 		else:
+@@ -91,7 +91,7 @@ class AICanvas(Canvas):
+ 		self.setBoundingBox()
+ 		stream = self.winding + '\n' + self.winOrder
+ 		stream = [stream] + self.code
+- 		self.doc.setPage(stream)
++		self.doc.setPage(stream)
+ 
+ 	def save(self, file=None, format=None):
+ 		"""Saves the file.  If holding data, do
+@@ -99,7 +99,7 @@ class AICanvas(Canvas):
+ 		if len(self.code):  
+ 			self.showPage()
+ 		self.doc.SaveToFile(self.name)
+-		print 'saved', self.name
++		print('saved', self.name)
+ 
+ 
+ 
+@@ -428,7 +428,7 @@ class AICanvas(Canvas):
+ 			sl.append('l')
+ #			print sl
+ #			print sk
+-			if i <> 0:
++			if i != 0:
+ 				self.code.append(tuple(sl))
+ 			self.code.append(tuple(sk))
+ 
+@@ -474,10 +474,10 @@ class AICanvas(Canvas):
+ 			edgeWidth=None, fillColor=None, closed=0):
+ 		start = pointlist[0]
+ 		pointlist = pointlist[1:]
+-		x1 = min(map(lambda (x,y) : x, pointlist))
+-		x2 = max(map(lambda (x,y) : x, pointlist))
+-		y1 = min(map(lambda (x,y) : y, pointlist))
+-		y2 = max(map(lambda (x,y) : y, pointlist))
++		x1 = min([x_y[0] for x_y in pointlist])
++		x2 = max([x_y1[0] for x_y1 in pointlist])
++		y1 = min([x_y2[1] for x_y2 in pointlist])
++		y2 = max([x_y3[1] for x_y3 in pointlist])
+ 		self._updateFillColor(fillColor)
+ 		self._updateLineWidth(edgeWidth)
+ 		self._updateLineColor(edgeColor)
+@@ -505,7 +505,7 @@ class AICanvas(Canvas):
+ 
+ 
+ 	def drawString():
+-		print "Sorry Not yet impemented"
++		print("Sorry Not yet impemented")
+ 
+ 
+ 
+--- src/piddle/piddleFIG.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddleFIG.py
+@@ -363,7 +363,7 @@ class FIGCanvas(Canvas):
+ 
+     def clear(self):
+         """Reset canvas to its default state."""
+-        raise NotImplementedError, "clear"
++        raise NotImplementedError("clear")
+ 
+     def save(self, file=None, format=None):
+         """Write the current document to a file or stream and close the file.
+@@ -472,7 +472,7 @@ class FIGCanvas(Canvas):
+             }
+         self.code.append(code)
+         line = []
+-        pointlist = map(lambda p, f=bp: (p[0]*bp, p[1]*bp), pointlist)
++        pointlist = list(map(lambda p, f=bp: (p[0]*bp, p[1]*bp), pointlist))
+         for coords in pointlist:
+             code = self.coord_fmt % coords
+             line.append(code)
+@@ -537,7 +537,7 @@ class FIGCanvas(Canvas):
+         self.code.append(code)
+         code = []
+         pointlist = [(x1, y1), (x1, y2), (x2, y2), (x2, y1), (x1, y1)]
+-        pointlist = map(lambda p, f=bp: (p[0]*bp, p[1]*bp), pointlist)
++        pointlist = list(map(lambda p, f=bp: (p[0]*bp, p[1]*bp), pointlist))
+         for coords in pointlist:
+             code.append(self.coord_fmt % coords)
+         code = " ".join(code)
+--- src/piddle/piddleGL.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddleGL.py
+@@ -61,7 +61,7 @@ try:
+         def vertexCB(self, O):
+             glVertex2d(O[0], O[1])
+         def combineCB(self, p1, p2, p3):
+-            print len(p3)
++            print(len(p3))
+             return p3[0][-1]
+         def edgeFlagCB(self, *args):
+             pass
+@@ -149,7 +149,7 @@ class _GLCanvas(Canvas):
+                 glCallList(list)
+             else:
+                 func, args, kw = list
+-                apply(func, args, kw)
++                func(*args, **kw)
+         glFlush()
+         
+     def drawLine(self, x1,y1, x2,y2, color=None, width=None):
+@@ -274,7 +274,7 @@ class _GLCanvas(Canvas):
+             try:
+                 import Image
+             except ImportError:
+-                raise ImportError, 'Saving to a non-PPM format is not available because PIL is not installed'
++                raise ImportError('Saving to a non-PPM format is not available because PIL is not installed')
+             savefname = base+'.ppm'
+             glSavePPM(savefname, self._width, self._height)
+             i = Image.open(savefname)
+@@ -357,7 +357,7 @@ def getGLTTFontWrapper():
+             if face is None: face = 'arial'
+             face = string.lower(face)
+             self.face = face
+-            if self.maps.has_key(face):
++            if face in self.maps:
+                 face = self.maps[face]
+             if bold:
+                 if italic:
+@@ -421,16 +421,16 @@ try:
+             pass
+ 
+         def keyboard(*args):
+-            print args
++            print(args)
+ 
+         def mainloop(self):
+             glutMainLoop()
+-    if _debug: print "# GlutCanvas available"
++    if _debug: print("# GlutCanvas available")
+ except NameError:
+     pass
+ 
+ try:
+-    import Tkinter
++    import tkinter
+     from OpenGL.Tk import RawOpengl
+     class TkInteractive:
+         def __init__(self):
+@@ -463,7 +463,7 @@ try:
+                    'height':height})
+             self._width = width
+             self._height = height
+-            apply(RawOpengl.__init__, (self,), kw)
++            RawOpengl.__init__(*(self,), **kw)
+             _GLCanvas.__init__(self, size=size, name=name)
+             TkInteractive.__init__(self)
+             self.bind('<Configure>', self.resize)
+@@ -474,7 +474,7 @@ try:
+             self.configure(width=w, height=h)
+             self._width = w
+             self._height= h 
+-            Tkinter.Frame.configure(self)
++            tkinter.Frame.configure(self)
+ 
+         def redraw(self):
+             if self._inList: self._saveList()
+@@ -489,7 +489,7 @@ try:
+ 
+         def setInfoLine(self, s):
+             pass
+-    if _debug: print "# ToglCanvas available"
++    if _debug: print("# ToglCanvas available")
+ except ImportError:
+     pass
+ 
+@@ -498,7 +498,7 @@ try:
+ except NameError:
+     GLCanvas = GlutCanvas
+ except NameError:
+-    raise ImportError, "Couldn't get either GLUT or Togl loaded"
++    raise ImportError("Couldn't get either GLUT or Togl loaded")
+ 
+ def getGLUTFontWrapper():
+     class GLUTFontWrapper:
+@@ -516,7 +516,7 @@ def getGLUTFontWrapper():
+             self.size=font.size
+             if face is None: face = 'glutStrokeRomanFixed'
+             face = string.lower(face)
+-            if self.maps.has_key(face):
++            if face in self.maps:
+                 face = self.maps[face]
+             self.glutface = face
+         def stringWidth(self, s):
+@@ -562,6 +562,6 @@ except ImportError:
+ 
+ if _debug:
+     if FontSupport == 0:	
+-        print "# Can't find font support"
++        print("# Can't find font support")
+     else:
+-        print "# Using fonts from:", FontWrapper.__name__
++        print("# Using fonts from:", FontWrapper.__name__)
+--- src/piddle/piddleGTK/core.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddleGTK/core.py
+@@ -98,7 +98,7 @@ class BasicCanvas(piddle.Canvas):
+         # and make sure the canvas is big enough:
+         iwidth = iheight = 0
+         for i in range(len(lineList)):
+-            x1, y1, x2, y2 = map(int, map(round, lineList[i]))
++            x1, y1, x2, y2 = list(map(int, list(map(round, lineList[i]))))
+             iwidth = max(iwidth, x1, x2)
+             iheight = max(iheight, y1, y2)
+         #
+@@ -120,7 +120,7 @@ class BasicCanvas(piddle.Canvas):
+             return
+         angle = int(round(angle))
+         if angle != 0:
+-            raise NotImplementedError, "rotated text not implemented"
++            raise NotImplementedError("rotated text not implemented")
+         if font is None:
+             font = self.defaultFont
+         lines = string.split(s, "\n")
+@@ -163,7 +163,7 @@ class BasicCanvas(piddle.Canvas):
+     def drawPolygon(self, pointlist, edgeColor=None, edgeWidth=None,
+                     fillColor=None, closed=0):
+         if len(pointlist) < 3:
+-            raise ValueError, "too few points in the point list"
++            raise ValueError("too few points in the point list")
+         # XXX lots more should be checked
+         if edgeColor is None:
+             edgeColor = self.defaultLineColor
+@@ -227,7 +227,7 @@ class BasicCanvas(piddle.Canvas):
+     def ensure_size(self, width, height):
+         # like __ensure_size(), but doesn't return buffer
+         if (width <= 0) or (height <= 0):
+-            raise ValueError, "width and height must both be positive"
++            raise ValueError("width and height must both be positive")
+         self.__ensure_size(width, height)
+ 
+ 
+@@ -303,7 +303,7 @@ def _font_to_gdkfont(font):
+     try:
+         return _xlfd_to_gdkfont(xlfd)
+     except RuntimeError:
+-        print "failed to load", xlfd
++        print("failed to load", xlfd)
+         raise
+ 
+ 
+--- src/piddle/piddleGTK/tests.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddleGTK/tests.py
+@@ -36,8 +36,8 @@ def main():
+     top.add(bbox)
+     top.connect("destroy", gtk.mainquit)
+     top.connect("delete_event", gtk.mainquit)
+-    tests = map((lambda test: (string.capitalize(test.__name__), test)),
+-                piddletest.tests)
++    tests = list(map((lambda test: (string.capitalize(test.__name__), test)),
++                piddletest.tests))
+     tests.extend(testitems)
+     for name, test in tests:
+         b = gtk.GtkButton(name)
+@@ -118,7 +118,7 @@ def font_mapping(canvasClass):
+         key = piddleGTK.core._font_to_key(font)
+         xlfd = piddleGTK.core._fontkey_to_xlfd(key)
+         f.write("%s\n" % font)
+-        f.write("    %s\n" % `key`)
++        f.write("    %s\n" % repr(key))
+         f.write("    %s\n\n" % xlfd)
+     # just have to have a .flush() method:
+     return f
+@@ -143,7 +143,7 @@ def onOver(canvas, x, y):
+     canvas.setInfoLine("onOver(%s, %s)" % (x, y))
+ 
+ def onKey(canvas, key, modifiers):
+-    canvas.setInfoLine("onKey(%s, %s)" % (`key`, modifiers))
++    canvas.setInfoLine("onKey(%s, %s)" % (repr(key), modifiers))
+ 
+ 
+ 
+--- src/piddle/piddlePDF.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddlePDF.py
+@@ -16,7 +16,7 @@ self.pdf which offers numerous lower-level drawing rou
+ 
+ #standard python library modules
+ import string
+-import cStringIO
++import io
+ import pdfmetrics
+ import glob
+ import os
+@@ -134,7 +134,7 @@ class PDFCanvas(Canvas):
+                
+         #if they specified a size smaller than page,
+         # be helpful and centre their diagram
+-        if self.pagesize <> self.drawingsize:
++        if self.pagesize != self.drawingsize:
+             dx = 0.5 * (self.pagesize[0] - self.drawingsize[0])
+             dy = 0.5 * (self.pagesize[1] - self.drawingsize[1])
+             self.pdf.translate(dx, dy)
+@@ -183,7 +183,7 @@ class PDFCanvas(Canvas):
+             
+         if hasattr(file, 'write'):
+             self.pdf.save(fileobj=file)
+-        elif isinstance(file, types.StringType):
++        elif isinstance(file, bytes):
+             self.pdf.save(filename=file)
+         else:
+             self.pdf.save()
+@@ -236,7 +236,7 @@ class PDFCanvas(Canvas):
+             face = 'serif'
+         else:
+             face = string.lower(font.face)
+-        while font_face_map.has_key(face):
++        while face in font_face_map:
+             face = font_face_map[face]
+         #step 2, - resolve bold/italic to get the right PS font name
+         psname = ps_font_map[(face, font.bold, font.italic)]
+@@ -305,8 +305,8 @@ class PDFCanvas(Canvas):
+         else:
+             self.pdf.drawPath(
+                         path,
+-                        (edge <> transparent),  #whether to stroke
+-                        (fill <> transparent)   #whether to fill
++                        (edge != transparent),  #whether to stroke
++                        (fill != transparent)   #whether to fill
+                         )
+         
+     #------------- drawing methods --------------
+@@ -372,7 +372,7 @@ class PDFCanvas(Canvas):
+             # inserting basic commands here  to see if can get working
+             textobj = self.pdf.beginText()
+ 
+-            if col <> self.defaultFillColor:
++            if col != self.defaultFillColor:
+                 textobj.setFillColorRGB(col.red,col.green, col.blue)
+ 
+             if angle != 0 :
+--- src/piddle/piddlePIL.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddlePIL.py
+@@ -42,10 +42,10 @@ else:
+ # load font metrics
+ try:
+     f = open(os.path.join(_fontprefix,'metrics.dat'), 'rb')
+-    import cPickle
+-    _widthmaps = cPickle.load(f)
+-    _ascents = cPickle.load(f)
+-    _descents = cPickle.load(f)
++    import pickle
++    _widthmaps = pickle.load(f)
++    _ascents = pickle.load(f)
++    _descents = pickle.load(f)
+     f.close()
+ except:
+     Log.write("Warning: unable to load font metrics!\n")
+@@ -86,12 +86,12 @@ def _matchingFontPath(font):
+     if type(face) == StringType:
+         path = _pilFontPath(face,size,font.bold)
+         path = string.split(path,os.sep)[-1]
+-        if path in _widthmaps.keys(): return path
++        if path in list(_widthmaps.keys()): return path
+     else:
+         for item in font.face:
+             path = _pilFontPath(item,size,font.bold)
+             path = string.split(path,os.sep)[-1]
+-            if path in _widthmaps.keys(): return path
++            if path in list(_widthmaps.keys()): return path
+     # not found?  Try it with courier, which should always be there
+     path = _pilFontPath('courier',size,font.bold)
+     return string.split(path,os.sep)[-1]
+@@ -126,7 +126,7 @@ class PILCanvas( Canvas ):
+         self._pen = ImageDraw.ImageDraw(self._image)
+         self._pen.setink(0)
+         self._setFont( Font() )
+-        self._pilversion = map(string.atoi, string.split(Image.VERSION, "."))
++        self._pilversion = list(map(string.atoi, string.split(Image.VERSION, ".")))
+         Canvas.__init__(self, size, name)
+         
+     def __setattr__(self, attribute, value):
+@@ -157,7 +157,7 @@ class PILCanvas( Canvas ):
+                 # below here, file is guaranteed to be a string
+         if format == None:
+             if '.' not in file:
+-                raise TypeError, 'no file type given to save()'
++                raise TypeError('no file type given to save()')
+             filename = file
+         else:
+             filename = file + '.' + format
+@@ -344,7 +344,8 @@ class PILCanvas( Canvas ):
+         temppen = ImageDraw.ImageDraw(tempimg)
+         temppen.setink( (255,255,255) )
+         pilfont = _pilFont(font)
+-        if not pilfont: raise "bad font!", font
++        if not pilfont:
++            raise("bad font!", font)
+         temppen.setfont( pilfont )
+         pos = [4, int(tempsize/2 - self.fontAscent(font)) - self.fontDescent(font)]
+         temppen.text( pos, s )
+@@ -391,8 +392,8 @@ def test():
+     canvas = PILCanvas()
+ 
+     canvas.defaultLineColor = Color(0.7,0.7,1.0)    # light blue
+-    canvas.drawLines( map(lambda i:(i*10,0,i*10,300), range(30)) )
+-    canvas.drawLines( map(lambda i:(0,i*10,300,i*10), range(30)) )
++    canvas.drawLines( [(i*10,0,i*10,300) for i in range(30)] )
++    canvas.drawLines( [(0,i*10,300,i*10) for i in range(30)] )
+     canvas.defaultLineColor = black     
+     
+     canvas.drawLine(10,200, 20,190, color=red)
+--- src/piddle/piddlePS.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddlePS.py
+@@ -38,7 +38,7 @@ piddlePS - a PostScript backend for the PIDDLE drawing
+ 
+ 
+ from piddle import *
+-import string, cStringIO
++import string, io
+ import piddlePSmetrics # for font info
+ import math
+ 
+@@ -309,7 +309,7 @@ translate
+         # once again, fall back to default, redundant, no?
+         face = string.lower(PiddleLegalFonts["serif"])  
+         for reqFace in requested:
+-            if PiddleLegalFonts.has_key(string.lower(reqFace)):
++            if string.lower(reqFace) in PiddleLegalFonts:
+                 face = string.lower(PiddleLegalFonts[string.lower(reqFace)])
+                 break
+ 
+@@ -591,7 +591,7 @@ translate
+                self.code.extend([
+                   'gsave',
+                   '%s %s neg translate' % (x,y),
+-                  `angle`+' rotate'])
++                  repr(angle)+' rotate'])
+                down = 0
+                for line in lines :
+                   self._drawStringOneLine(line, 0, 0+down, font, color, angle)
+@@ -770,7 +770,7 @@ translate
+                    figureCode.append("%s %s neg lineto" % tuple(args[:2]))
+                figureCode.append("%s %s neg %s %s neg %s %s neg curveto" % tuple(args[2:]))
+            else:
+-               raise TypeError, "unknown figure operator: "+op
++               raise TypeError("unknown figure operator: "+op)
+ 
+        if closed:
+            figureCode.append("closepath")
+@@ -798,10 +798,10 @@ translate
+        try:
+            import Image
+        except ImportError:
+-           print 'Python Imaging Library not available'
++           print('Python Imaging Library not available')
+            return
+        # For now let's start with 24 bit RGB images (following piddlePDF again)
+-       print "Trying to drawImage in piddlePS"
++       print("Trying to drawImage in piddlePS")
+        component_depth = 8
+        myimage = image.convert('RGB')
+        imgwidth, imgheight = myimage.size
+@@ -811,7 +811,7 @@ translate
+             y2 = y1 + imgheight
+        drawwidth = x2 - x1
+        drawheight = y2 - y1
+-       print 'Image size (%d, %d); Draw size (%d, %d)' % (imgwidth, imgheight, drawwidth, drawheight)
++       print('Image size (%d, %d); Draw size (%d, %d)' % (imgwidth, imgheight, drawwidth, drawheight))
+        # now I need to tell postscript how big image is
+ 
+        # "image operators assume that they receive sample data from
+@@ -851,15 +851,15 @@ translate
+        # piddlePDF again
+ 
+        rawimage = myimage.tostring()
+-       assert(len(rawimage) == imgwidth*imgheight, 'Wrong amount of data for image') 
++       assert(len(rawimage) == imgwidth*imgheight, 'Wrong amount of data for image')
+        #compressed = zlib.compress(rawimage) # no zlib at moment
+        hex_encoded = self._AsciiHexEncode(rawimage)
+        
+        # write in blocks of 78 chars per line
+-       outstream = cStringIO.StringIO(hex_encoded)
++       outstream = io.StringIO(hex_encoded)
+ 
+        dataline = outstream.read(78)
+-       while dataline <> "":
++       while dataline != "":
+            self.code.append(dataline)
+            dataline= outstream.read(78)
+        self.code.append('% end of image data') # for clarity
+@@ -870,7 +870,7 @@ translate
+        
+     def _AsciiHexEncode(self, input):  # also based on piddlePDF
+         "Helper function used by images"
+-        output = cStringIO.StringIO()
++        output = io.StringIO()
+         for char in input:
+             output.write('%02x' % ord(char))
+         output.reset()
+@@ -880,7 +880,7 @@ translate
+         try:
+             import Image
+         except ImportError:
+-            print 'Python Imaging Library not available'
++            print('Python Imaging Library not available')
+             return
+                # I don't have zlib -cwl
+ #         try:
+@@ -892,12 +892,12 @@ translate
+ 
+         ### what sort of image are we to draw
+         if image.mode=='L' :
+-            print 'found image.mode= L'
++            print('found image.mode= L')
+             imBitsPerComponent = 8
+             imNumComponents = 1
+             myimage = image 
+         elif image.mode == '1':
+-            print 'found image.mode= 1'
++            print('found image.mode= 1')
+             myimage = image.convert('L')
+             imNumComponents = 1
+             myimage = image 
+@@ -923,7 +923,7 @@ translate
+             self.code.append('/DeviceRGB setcolorspace')
+         elif imNumComponents == 1 :
+             self.code.append('/DeviceGray setcolorspace')
+-            print 'setting colorspace gray'
++            print('setting colorspace gray')
+         # create the image dictionary
+         self.code.append("""
+ <<
+@@ -942,15 +942,15 @@ translate
+                           'image'])
+         # after image operator just need to dump image dat to file as hexstring
+         rawimage = myimage.tostring()
+-        assert(len(rawimage) == imwidth*imheight, 'Wrong amount of data for image') 
++        assert(len(rawimage) == imwidth*imheight, 'Wrong amount of data for image')
+         #compressed = zlib.compress(rawimage) # no zlib at moment
+         hex_encoded = self._AsciiHexEncode(rawimage)
+        
+         # write in blocks of 78 chars per line
+-        outstream = cStringIO.StringIO(hex_encoded)
++        outstream = io.StringIO(hex_encoded)
+ 
+         dataline = outstream.read(78)
+-        while dataline <> "":
++        while dataline != "":
+             self.code.append(dataline)
+             dataline= outstream.read(78)
+         self.code.append('> % end of image data') # > is EOD for hex encoded filterfor clarity
+--- src/piddle/piddlePSmetrics.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddlePSmetrics.py
+@@ -125,7 +125,7 @@ class FontCache:
+         
+     def loadfont(self, fontname):
+         filename = AFMDIR + os.sep + fontname + '.afm'
+-        print 'cache loading',filename
++        print('cache loading',filename)
+         assert os.path.exists(filename)
+         widths = parseAFMfile(filename)
+         self.__widtharrays[fontname] = widths
+@@ -139,7 +139,7 @@ class FontCache:
+                 return self.__widtharrays[fontname]
+             except:
+                 # font not found, use Courier
+-                print 'Font',fontname,'not found - using Courier for widths'
++                print('Font',fontname,'not found - using Courier for widths')
+                 return self.getfont('courier')
+     
+ 
+@@ -152,7 +152,7 @@ class FontCache:
+ 
+     def status(self):
+         #returns loaded fonts
+-        return self.__widtharrays.keys()
++        return list(self.__widtharrays.keys())
+         
+ TheFontCache = FontCache()
+ 
+@@ -168,7 +168,7 @@ def psStringWidth(text, font, encoding):
+     try:
+         widths = _psWidths[encoding][string.lower(font) ]
+     except:
+-        raise KeyError, "Improper encoding %s or font name %s" % (encoding, font)
++        raise KeyError("Improper encoding %s or font name %s" % (encoding, font))
+     w = 0
+     for char in text:
+         w = w + widths[ord(char)]
+--- src/piddle/piddleQD.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddleQD.py
+@@ -63,7 +63,7 @@ _curCanvas = None
+ 
+ # global dictionary mapping font names to QD font IDs
+ _fontMap = {}
+-for item in filter(lambda x:x[0]!='_',dir(Fonts)):
++for item in [x for x in dir(Fonts) if x[0]!='_']:
+ 	_fontMap[string.lower(item)] = Fonts.__dict__[item]
+ _fontMap['system'] = Fonts.kFontIDGeneva
+ _fontMap['monospaced'] = Fonts.kFontIDMonaco
+@@ -248,7 +248,7 @@ class QDCanvas( Canvas ):
+ 					return 0	# font not found!
+ 
+ 			# cache the fontID for quicker reference next time!
+-                        font.__dict__['_QDfontID'] = fontID
++			font.__dict__['_QDfontID'] = fontID
+ 			# font._QDfontID = fontID
+ 			Qd.TextFont(fontID)
+ 		
+@@ -569,19 +569,19 @@ def test():
+ 	#import Image
+ 	#canvas.drawImage( Image.open(path), 0,0,300,300 );
+ 
+-	def myOnClick(canvas,x,y): print "clicked %s,%s" % (x,y)
++	def myOnClick(canvas,x,y): print("clicked %s,%s" % (x,y))
+ 	canvas.onClick = myOnClick
+ 
+ 	def myOnOver(canvas,x,y): canvas.setInfoLine( "mouse is over %s,%s" % (x,y) )
+ 
+ 	canvas.onOver = myOnOver
+ 
+-	def myOnKey(canvas,key,mods): print "pressed %s with modifiers %s" % (key,mods)
++	def myOnKey(canvas,key,mods): print("pressed %s with modifiers %s" % (key,mods))
+ 	canvas.onKey = myOnKey
+ 	
+ 
+-	canvas.drawLines( map(lambda i:(i*10,0,i*10,300), range(30)) )
+-	canvas.drawLines( map(lambda i:(0,i*10,300,i*10), range(30)) )
++	canvas.drawLines( [(i*10,0,i*10,300) for i in range(30)] )
++	canvas.drawLines( [(0,i*10,300,i*10) for i in range(30)] )
+ 	canvas.defaultLineColor = black		
+ 	
+ 	canvas.drawLine(10,200, 20,190, color=red)
+--- src/piddle/piddleSVG/piddleSVG.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddleSVG/piddleSVG.py
+@@ -72,7 +72,7 @@ def _PointListToSVG(points,dupFirst=0):
+ 
+   """
+   outStr = ''
+-  for i in xrange(len(points)):
++  for i in range(len(points)):
+     outStr = outStr + '%.2f,%.2f '%(points[i][0],points[i][1])
+   # add back on the first point.  This is not required in the spec,
+   #  but Adobe's beta-quality viewer seems to not like it being skipped
+@@ -159,7 +159,7 @@ class SVGCanvas( Canvas ):
+         familyStr = '\'%s\''%(face)
+       else:
+         familyStr = face
+-      for i in xrange(1,len(font.face)):
++      for i in range(1,len(font.face)):
+         face = font.face[i]
+         if len(string.split(face)) > 1:
+           familyStr = ', \'%s\''%(face)
+@@ -241,14 +241,14 @@ class SVGCanvas( Canvas ):
+   def save(self, type=''):
+     if type == '':
+       if '.' not in self.name:
+-        raise TypeError, 'no file type given to save()'
++        raise TypeError('no file type given to save()')
+       filename = self.name
+     else:
+       filename = self.name + '.' + type
+     outFile = open(filename,'w+')
+     outFile.write(self._txt+'</svg>')
+     outFile.close()
+-    print filename, "saved"
++    print(filename, "saved")
+ 
+ 
+   #------------- drawing methods --------------
+@@ -515,7 +515,7 @@ class SVGCanvas( Canvas ):
+         pathStr = pathStr + self._FormArcStr(x1,y1,x2,y2,theta1,extent)
+ 
+       else:
+-        raise TypeError, "unknown figure operator: "+op
++        raise TypeError("unknown figure operator: "+op)
+ 
+     if closed == 1:
+       pathStr = pathStr + 'Z'
+@@ -568,8 +568,8 @@ def test():
+   canvas = SVGCanvas(name="test")
+ 
+   canvas.defaultLineColor = Color(0.7,0.7,1.0)	# light blue
+-  canvas.drawLines( map(lambda i:(i*10,0,i*10,300), range(30)) )
+-  canvas.drawLines( map(lambda i:(0,i*10,300,i*10), range(30)) )
++  canvas.drawLines( [(i*10,0,i*10,300) for i in range(30)] )
++  canvas.drawLines( [(0,i*10,300,i*10) for i in range(30)] )
+   canvas.defaultLineColor = black		
+ 
+   canvas.drawLine(10,200, 20,190, color=red)
+--- src/piddle/piddleTK2/piddleTK.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddleTK2/piddleTK.py
+@@ -15,7 +15,7 @@ You can find the latest version of this file:
+     via http://piddle.sourceforge.net
+ """ 
+ 
+-import Tkinter, tkFont
++import tkinter, tkinter.font
+ tk = Tkinter
+ import piddle 
+ import string
+@@ -120,7 +120,7 @@ class FontManager:
+             # check if the user specified a generic face type
+             # like serif or monospaced. check is case-insenstive.
+             f = string.lower(font.face)
+-            if self.__alt_faces.has_key(f):
++            if f in self.__alt_faces:
+                 family = self.__alt_faces[f]
+             else:
+                 family = font.face
+@@ -138,7 +138,7 @@ class FontManager:
+         key = (family,size,weight,slant,underline)
+ 
+         # check if we've already seen this font.
+-        if self.font_cache.has_key(key):
++        if key in self.font_cache:
+             # yep, don't bother creating a new one. just fetch it.
+             font = self.font_cache[key]
+         else:
+@@ -146,7 +146,7 @@ class FontManager:
+             # this way we will return info about the actual font
+             # selected by Tk, which may be different than what we ask
+             # for if it's not availible.
+-            font = tkFont.Font(self.master, family=family, size=size, weight=weight,
++            font = tkinter.font.Font(self.master, family=family, size=size, weight=weight,
+                                slant=slant,underline=underline)
+             self.font_cache[(family,size,weight,slant,underline)] = font
+         
+@@ -204,7 +204,7 @@ class BaseTKCanvas(tk.Canvas, piddle.Canvas): 
+         tk.Canvas.update(self) 
+   
+     def clear(self): 
+-        map(self.delete,self._item_ids) 
++        list(map(self.delete,self._item_ids)) 
+         self._item_ids = [] 
+         
+     def _colorToTkColor(self, c): 
+@@ -259,7 +259,7 @@ class BaseTKCanvas(tk.Canvas, piddle.Canvas): 
+         font  = self._font_manager.getTkFontString(font or self.defaultFont) 
+         new_item = self.create_text(x, y, text=s, 
+                                     font=font, fill=color, 
+-                                    anchor=Tkinter.W) 
++                                    anchor=tkinter.W) 
+         self._item_ids.append(new_item)
+ 
+     def _drawRotatedString(self, s, x,y, font=None, color=None, angle=0):
+@@ -292,7 +292,8 @@ class BaseTKCanvas(tk.Canvas, piddle.Canvas): 
+         temppen.setink( (255,255,255) )
+         pilfont = pp._pilFont(font)
+ 
+-        if not pilfont: raise "bad font!", font
++        if not pilfont:
++                raise("bad font!", font)
+ 
+         temppen.setfont( pilfont )
+         pos = [4, int(tempsize/2 - pilCan.fontAscent(font)) - pilCan.fontDescent(font)]
+@@ -390,7 +391,7 @@ class BaseTKCanvas(tk.Canvas, piddle.Canvas): 
+             if fillColor == self.__TRANSPARENT:
+                 # draw open-ended set of lines
+                 d = { 'fill':edgeColor, 'width': edgeWidth}
+-                new_item = apply(self.create_line, pointlist, d)
++                new_item = self.create_line(*pointlist, **d)
+             else:
+                 # open filled shape.
+                 # draw it twice:
+@@ -403,7 +404,7 @@ class BaseTKCanvas(tk.Canvas, piddle.Canvas): 
+                 self._item_ids.append(new_item)
+                 
+                 d = { 'fill':edgeColor, 'width': edgeWidth}
+-                new_item = apply(self.create_line, pointlist, d)
++                new_item = self.create_line(*pointlist, **d)
+                                                    
+         self._item_ids.append(new_item) 
+   
+@@ -433,7 +434,7 @@ class BaseTKCanvas(tk.Canvas, piddle.Canvas): 
+         # unless I keep a copy of this PhotoImage, it seems to be garbage collected
+         # and the image is removed from the display after this function. weird
+         itk = ImageTk.PhotoImage(myimage, master=self)
+-        new_item = self.create_image(x1, y1, image=itk, anchor=Tkinter.NW)
++        new_item = self.create_image(x1, y1, image=itk, anchor=tkinter.NW)
+         self._item_ids.append(new_item) 
+         self._images.append(itk)
+ 
+--- src/piddle/piddleVCR.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddleVCR.py
+@@ -167,7 +167,7 @@ class VCRCanvas( Canvas ):
+ 
+     def drawCurve(self, x1,y1, x2,y2, x3,y3, x4,y4, 
+                 edgeColor=None, edgeWidth=None, fillColor=None, closed=0):
+-        "Draw a Bézier curve with control points x1,y1 to x4,y4."
++        "Draw a Bezier curve with control points x1,y1 to x4,y4."
+ 
+         self._recordfunc("drawCurve", x1,y1,x2,y2,x3,y3,x4,y4,edgeColor,edgeWidth,fillColor,closed)
+ 
+@@ -223,7 +223,7 @@ class VCRCanvas( Canvas ):
+         self._recordfunc("drawFigure", partList, edgeColor,edgeWidth,fillColor,closed)
+ 
+     def drawImage(self, image, x1,y1, x2=None,y2=None):
+-        print "Warning!!! piddleVCR does not implent drawImage"
++        print("Warning!!! piddleVCR does not implent drawImage")
+         # These are thoughts on how to implement this using a shelf to store image
+         # it kept everyting contained in one file
+ #          import shelve
+--- src/piddle/piddleWX.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddleWX.py
+@@ -159,11 +159,11 @@ class _WXCanvasDefaultStatusBar(wxStatusBar):
+     self.redraw()
+ 
+   def OnOver(self, x, y):
+-    self.text = `x` + "," + `y`
++    self.text = repr(x) + "," + repr(y)
+     self.redraw()
+ 
+   def OnClick(self, x, y):
+-    self.text = `x` + "," + `y`
++    self.text = repr(x) + "," + repr(y)
+     self.click.SetValue(true)
+     self.redraw()
+ 
+--- src/piddle/piddleWxDc.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddleWxDc.py
+@@ -56,7 +56,7 @@ class PiddleWxDc(piddle.Canvas):
+           if default_color is not None:
+             return self._getWXbrush(default_color)
+           else:
+-            raise "WXcanvas error:  Cannot create brush."
++            raise("WXcanvas error:  Cannot create brush.")
+ 
+         return wxBrush(wxcolor)
+ 
+@@ -75,7 +75,7 @@ class PiddleWxDc(piddle.Canvas):
+           if default_color is not None:
+             return self._getWXpen(width, default_color)
+           else:
+-            raise "WXcanvas error:  Cannot create pen."
++            raise("WXcanvas error:  Cannot create pen.")
+ 
+         return wxPen(wxcolor, width)
+ 
+@@ -236,7 +236,7 @@ class PiddleWxDc(piddle.Canvas):
+         #  instead of just 2-tuples.  Therefore, pointlist must be re-created as
+         #  only 2-tuples
+ 
+-        pointlist = map(lambda i: tuple(i), pointlist)
++        pointlist = [tuple(i) for i in pointlist]
+         if closed == 1:
+             pointlist.append(pointlist[0])
+ 
+@@ -260,11 +260,11 @@ class PiddleWxDc(piddle.Canvas):
+         try:
+             from PIL import Image
+         except ImportError:
+-            print 'PIL not installed as package'
++            print('PIL not installed as package')
+             try:
+                 import Image
+             except ImportError:
+-                raise "PIL not available!"
++                raise("PIL not available!")
+ 
+         if (x2 and y2 and x2>x1 and y2>y1):
+             imgPil = image.resize((x2-x1,y2-y1))
+--- src/piddle/piddletest.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/piddletest.py
+@@ -40,8 +40,8 @@ def basics(canvasClass):
+ def drawBasics(canvas):
+ 	saver = StateSaver(canvas) # leave canvas state as you found it, restores state when leaves scope
+ 	canvas.defaultLineColor = Color(0.7,0.7,1.0)	# light blue
+-	canvas.drawLines( map(lambda i:(i*10,0,i*10,300), range(30)) )
+-	canvas.drawLines( map(lambda i:(0,i*10,300,i*10), range(30)) )
++	canvas.drawLines( [(i*10,0,i*10,300) for i in range(30)] )
++	canvas.drawLines( [(0,i*10,300,i*10) for i in range(30)] )
+ 	canvas.defaultLineColor = black
+ 	
+ 	canvas.drawLine(10,200, 20,190, color=red)
+@@ -222,8 +222,8 @@ def drawRotstring(canvas):
+ 		canvas.drawString(s2, 150, 150, angle=ang)
+ 		cnum = (cnum+1) % len(colors)
+ 
+-      	canvas.drawString( "This is  a\nrotated\nmulti-line string!!!", 350, 100, angle= -90, font=Font(underline=1) )
+-        #canvas.drawString( "This is  a\nrotated\nmulti-line string!!!", 400, 175, angle= -45, font=Font(underline=1) )
++		canvas.drawString( "This is  a\nrotated\nmulti-line string!!!", 350, 100, angle= -90, font=Font(underline=1) )
++		#canvas.drawString( "This is  a\nrotated\nmulti-line string!!!", 400, 175, angle= -45, font=Font(underline=1) )
+ 	return canvas
+ 
+ #----------------------------------------------------------------------
+@@ -232,32 +232,32 @@ def tkTest(testfunc):
+ 	# piddleTK tests are called from here because need TK's event loop
+ 	try :
+ 		import piddleTK
+-		import Tkinter
++		import tkinter
+ 	except:
+-		print "A module needed for piddleTK is not available, select another backend"
++		print("A module needed for piddleTK is not available, select another backend")
+ 		return
+ 
+-	root = Tkinter.Tk()
+-	frame = Tkinter.Frame(root)  # label='piddletestTK'
++	root = tkinter.Tk()
++	frame = tkinter.Frame(root)  # label='piddletestTK'
+ 
+ 	#tkcanvas = piddleTK.TKCanvas(size=(400,400), name='piddletestTK', master = frame)
+-        # try new Tk canvas
+-        tkcanvas = piddleTK.TKCanvas(size=(400,400), name='piddletestTK', master = frame)
+-	bframe = Tkinter.Frame(root)
++	# try new Tk canvas
++	tkcanvas = piddleTK.TKCanvas(size=(400,400), name='piddletestTK', master = frame)
++	bframe = tkinter.Frame(root)
+ 
+-	minimalB=Tkinter.Button(bframe, text='minimal test',
+-				command= lambda c=tkcanvas : (c.clear(),drawMinimal(c), c.flush())).pack(side=Tkinter.LEFT)
+-	basicB = Tkinter.Button(bframe, text='basic test',
+-				command= lambda c=tkcanvas: (c.clear(),drawBasics(c),c.flush()) ).pack(side=Tkinter.LEFT)
+-	spectB =Tkinter.Button(bframe, text='spectrum test',
+-			       command= lambda c=tkcanvas: (c.clear(),drawSpectrum(c),c.flush()) ).pack(side=Tkinter.LEFT)
+-	stringsB = Tkinter.Button(bframe, text='strings test',
+-				  command= lambda c=tkcanvas:(c.clear(),drawStrings(c),c.flush()) ).pack(side=Tkinter.LEFT)
+-	rotstrB = Tkinter.Button(bframe, text='rotated strings test',
+-				 command= lambda c=tkcanvas:(c.clear(), drawRotstring(c),c.flush()) ).pack(side=Tkinter.LEFT)
+-	advancedB = Tkinter.Button(bframe, text='advanced test',
+-				   command= lambda c=tkcanvas:(c.clear(), drawAdvanced(c),c.flush() ) ).pack(side=Tkinter.LEFT)
+-        bframe.pack(side=Tkinter.TOP)
++	minimalB=tkinter.Button(bframe, text='minimal test',
++				command= lambda c=tkcanvas : (c.clear(),drawMinimal(c), c.flush())).pack(side=tkinter.LEFT)
++	basicB = tkinter.Button(bframe, text='basic test',
++				command= lambda c=tkcanvas: (c.clear(),drawBasics(c),c.flush()) ).pack(side=tkinter.LEFT)
++	spectB =tkinter.Button(bframe, text='spectrum test',
++			       command= lambda c=tkcanvas: (c.clear(),drawSpectrum(c),c.flush()) ).pack(side=tkinter.LEFT)
++	stringsB = tkinter.Button(bframe, text='strings test',
++				  command= lambda c=tkcanvas:(c.clear(),drawStrings(c),c.flush()) ).pack(side=tkinter.LEFT)
++	rotstrB = tkinter.Button(bframe, text='rotated strings test',
++				 command= lambda c=tkcanvas:(c.clear(), drawRotstring(c),c.flush()) ).pack(side=tkinter.LEFT)
++	advancedB = tkinter.Button(bframe, text='advanced test',
++				   command= lambda c=tkcanvas:(c.clear(), drawAdvanced(c),c.flush() ) ).pack(side=tkinter.LEFT)
++	bframe.pack(side=tkinter.TOP)
+ 	frame.pack()
+ 	# try to draw before running mainloop
+ 	if testfunc== minimal:
+@@ -272,11 +272,11 @@ def tkTest(testfunc):
+ 		drawStrings(tkcanvas)
+ 	elif testfunc == rotstring :
+ 		drawRotstring(tkcanvas)
+-        else :
+-                print "Illegal testfunc handed to tkTest"
+-                raise "Unsupported testfunc"
++	else:
++		print("Illegal testfunc handed to tkTest")
++		raise("Unsupported testfunc")
+ 
+-        tkcanvas.flush() 
++	tkcanvas.flush()
+ 	
+ 	root.mainloop()
+ 	root.destroy()
+@@ -287,25 +287,25 @@ def wxTest(testfunc):
+ 		import piddleWX
+ 		from wxPython.wx import wxApp
+ 	except:
+-		print "A module needed for piddleWX is not available, select another backend"
++		print("A module needed for piddleWX is not available, select another backend")
+ 		return
+ 
+-        global wx_app
+-        if not globals().has_key("wx_app"):
+-                class CanvasApp(wxApp):
+-                        "The wxApp that runs canvas.  Initializes windows, and handles redrawing"
+-                        def OnInit(self):
+-                                return 1
++	global wx_app
++	if "wx_app" not in globals():
++		class CanvasApp(wxApp):
++			"The wxApp that runs canvas.  Initializes windows, and handles redrawing"
++			def OnInit(self):
++				return 1
+ 
+-                wx_app = CanvasApp(0)
++		wx_app = CanvasApp(0)
+ 
+ 	# run the test, passing the canvas class and returning the canvas
+ 	canvas = testfunc(piddleWX.WXCanvas)
+-	
++
+ 	canvas.flush()
+ 
+-        # Run the main loop
+-        wx_app.MainLoop()
++	# Run the main loop
++	wx_app.MainLoop()
+ 
+ 
+ def runtest(backend, testfunc):
+@@ -330,15 +330,15 @@ def runtest(backend, testfunc):
+ 	
+ 	# do post-test cleanup
+ 	canvas.flush()
+-        # handle save's here
++	# handle save's here
+ 	if backend == 'piddlePIL':
+ 		canvas.save(format='png')		# save as a PNG file
+-        elif backend == 'piddleVCR':
++	elif backend == 'piddleVCR':
+ 		filename = canvas.name + ".vcr"
+ 		canvas.save(filename)
+-		print filename, "saved"
+-        else:     # if backend == 'piddlePS' or backend== 'piddlePDF':
+-                canvas.save()  # should be "pass'ed" by Canvas's that don't use save
++		print(filename, "saved")
++	else:     # if backend == 'piddlePS' or backend== 'piddlePDF':
++		canvas.save()  # should be "pass'ed" by Canvas's that don't use save
+ 
+ 
+ def mainLoop():
+@@ -358,34 +358,34 @@ def mainLoop():
+ 			else: bflag = ''
+ 			if i == test: tflag = '==>'
+ 			else: tflag = ''
+-			print "%10s %-20s %10s %-20s" % (bflag, bstr, tflag, tstr)
++			print("%10s %-20s %10s %-20s" % (bflag, bstr, tflag, tstr))
+ 			i = i+1		
+-		print
++		print()
+ 		
+-		inp = raw_input("Selection (0 to exit): ")
+-		print
++		inp = input("Selection (0 to exit): ")
++		print()
+ 
+ 		if inp == '0': return
+ 		if inp:
+ 			testinp = ''
+ 			if inp[-1] in string.letters: testinp = inp[-1]
+ 			elif inp[0] in string.letters: testinp = inp[0]
+-			backinp = string.join(filter(lambda x:x in '0123456789',inp))
++			backinp = string.join([x for x in inp if x in '0123456789'])
+ 			if backinp:
+ 				backend = int(backinp)-1
+ 				if backend < len(backends):
+ 					docstr = __import__(backends[backend]).__doc__
+-					if docstr: print docstr
+-					else: print "<no doc string>"
++					if docstr: print(docstr)
++					else: print("<no doc string>")
+ 				else: backend = None
+ 			if testinp:
+ 				test = ord(string.upper(testinp[0])) - ord('A')
+ 				if test >= 0 and test < len(tests):
+ 					docstr = tests[test].__doc__
+ 					if docstr:
+-                                          print docstr
++					    print(docstr)
+ 				else: test = None
+-		print
++		print()
+ 		
+ 		# now, if we have a valid backend and test, run it
+ 		if backend != None and test != None:
+--- src/piddle/polyfunc.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/polyfunc.py
+@@ -168,7 +168,7 @@ class AffineMatrix:
+ 
+         # would like to reshape the sequence, do w/ a loop for now
+         res = []
+-        for ii in xrange(0,N, 2):
++        for ii in range(0,N, 2):
+             pt = self.transformPt( (seq[ii], seq[ii+1]) )
+             res.extend(pt)
+ 
+@@ -214,7 +214,7 @@ class CoordFrame:
+ def drawCircleAt(canvas, x,y,r, **kw):
+     # useful for marking a particular location w/ a glyph
+     df = canvas.__class__
+-    apply(df.drawEllipse, (canvas, x-r, y-r, x+r,y+r), kw)
++    df.drawEllipse(*(canvas, x-r, y-r, x+r,y+r), **kw)
+ 
+ 
+ def drawCubicPolynomial(canvas, frame, xinterval, A=0.0, B=0.0, C=0.0, D=0.0,
+@@ -288,7 +288,7 @@ def runtest():
+         frame.drawFrameBox(canvas)
+         # draw a family of quadratics w/in the box w/ x-intercept x=0
+         NA = 10.0
+-        for AA in xrange(1,NA,2):
++        for AA in range(1,NA,2):
+             drawQuad(canvas, frame, xinterval=(-10,10), A= AA/NA, B=0.0)
+             
+         # now some other assorted quadratics
+@@ -316,7 +316,7 @@ def runtest():
+     
+         
+ if __name__== '__main__':
+-    print 'Running test drawing assorted quadratics to qtest.ps'
++    print('Running test drawing assorted quadratics to qtest.ps')
+     import piddle
+     runtest()
+ 
+--- src/piddle/stringformat.py.orig	2002-06-03 13:46:30 UTC
++++ src/piddle/stringformat.py
+@@ -139,14 +139,14 @@ class StringSegment:
+ 			return y
+ 	
+ 	def dump(self):
+-		print "StringSegment: ]%s[" % self.s
+-		print "\tsuper = ", self.super
+-		print "\tsub = ", self.sub
+-		print "\tbold = ", self.bold
+-		print "\titalic = ",self.italic
+-		print "\tunderline = ", self.underline
+-		print "\twidth = ", self.width
+-		print "\tgreek = ", self.greek
++		print("StringSegment: ]%s[" % self.s)
++		print("\tsuper = ", self.super)
++		print("\tsub = ", self.sub)
++		print("\tbold = ", self.bold)
++		print("\titalic = ",self.italic)
++		print("\tunderline = ", self.underline)
++		print("\twidth = ", self.width)
++		print("\tgreek = ", self.greek)
+ 
+ #------------------------------------------------------------------	
+ # The StringFormatter will be able to format the following xml
+@@ -245,7 +245,7 @@ class StringFormatter(xmllib.XMLParser):
+ 		}
+ 		
+ 		# automatically add handlers for all of the greek characters
+-		for item in greekchars.keys():
++		for item in list(greekchars.keys()):
+ 			self.elements[item] = (lambda attr,self=self,letter=greekchars[item]: \
+ 				self.start_greek(attr,letter), self.end_greek)
+ 				
+@@ -253,7 +253,7 @@ class StringFormatter(xmllib.XMLParser):
+ 		self.greek = 0
+ 		# set up dictionary for greek characters, this is a class variable
+ 		# should I copy it and then update it?
+-		for item in greekchars.keys():
++		for item in list(greekchars.keys()):
+ 			self.entitydefs[item] = '<%s/>' % item
+ 
+ 	#----------------------------------------------------------------
+@@ -386,15 +386,15 @@ def test1():
+ 	drawString(canvas,"<u><b>hello there</b></u><super>hi</super>",10,20)
+ 	drawString(canvas,"hello!",10,40)
+ 
+-	print "'hello!' width = ", stringWidth(canvas,"hello!")
+-	print "'hello!' PIDDLE width = ", canvas.stringWidth("hello!")
++	print("'hello!' width = ", stringWidth(canvas,"hello!"))
++	print("'hello!' PIDDLE width = ", canvas.stringWidth("hello!"))
+ 
+ 	drawString(canvas, "<b>hello!</b> goodbye", 10,60) 
+-	print "'<b>hello!</b> goodbye' width = ", stringWidth(canvas,"<b>hello!</b> goodbye")
++	print("'<b>hello!</b> goodbye' width = ", stringWidth(canvas,"<b>hello!</b> goodbye"))
+ 	drawString(canvas, "hello!", 10,80, Font(bold=1)) 
+-	print "'hello!' Font(bold=1) PIDDLE width = ", canvas.stringWidth("hello!",Font(bold=1))
++	print("'hello!' Font(bold=1) PIDDLE width = ", canvas.stringWidth("hello!",Font(bold=1)))
+ 	drawString(canvas, " goodbye", 10,100) 
+-	print "' goodbye' PIDDLE width = ", canvas.stringWidth(" goodbye")
++	print("' goodbye' PIDDLE width = ", canvas.stringWidth(" goodbye"))
+ 	canvas.flush()
+ 
+ def test2():
+@@ -493,21 +493,21 @@ def stringformatTest():
+ 		"<b><sub>bold+sub</sub></b> hello <u><super>underline+super</super></u>")
+ 	
+ 	# break down the various string widths
+-	print 'sw("<b><sub>bold+sub</sub></b>") = ', stringWidth(canvas,"<b><sub>bold+sub</sub></b>")
+-	print 'sw(" hello ") = ', stringWidth(canvas," hello ")
+-	print 'sw("<u><super>underline+super</super></u>") = ', \
+-		stringWidth(canvas,"<u><super>underline+super</super></u>")
++	print('sw("<b><sub>bold+sub</sub></b>") = ', stringWidth(canvas,"<b><sub>bold+sub</sub></b>"))
++	print('sw(" hello ") = ', stringWidth(canvas," hello "))
++	print('sw("<u><super>underline+super</super></u>") = ', \
++		stringWidth(canvas,"<u><super>underline+super</super></u>"))
+ 	
+ 	pwidth1 = canvas.stringWidth("bold+sub",Font(size=canvas.defaultFont.size-sizedelta, bold=1))
+-	print "pwidth1 = ", pwidth1
++	print("pwidth1 = ", pwidth1)
+ 	pwidth2 = canvas.stringWidth(" hello ")
+-	print "pwidth2 = ", pwidth2
++	print("pwidth2 = ", pwidth2)
+ 	pwidth3 = canvas.stringWidth("underline+super",
+ 		Font(size=canvas.defaultFont.size-sizedelta,underline=1))
+-	print "pwidth3 = ", pwidth3	
++	print("pwidth3 = ", pwidth3)	
+ 
+ 	# these should be the same
+-	print "sfwidth = ", sfwidth, " pwidth = ", pwidth1+pwidth2+pwidth3
++	print("sfwidth = ", sfwidth, " pwidth = ", pwidth1+pwidth2+pwidth3)
+ 
+ 	################################################### testing greek characters
+ 	# looks better in a larger font
+@@ -515,21 +515,21 @@ def stringformatTest():
+ 	x = 10
+ 	y = canvas.defaultFont.size*1.5
+ 	drawString(canvas,"&alpha; &beta; <chi/> &Delta; <delta/>",x,y, Font(size=16), color = blue)
+-	print "line starting with alpha should be font size 16"	
++	print("line starting with alpha should be font size 16")	
+ 	y = y+30
+ 	drawString(canvas,"&epsiv; &eta; &Gamma; <gamma/>",x,y, color = green)	
+ 	y = y+30
+ 	drawString(canvas,"&iota; &kappa; &Lambda; <lambda/>",x,y, color = blue)	
+ 	y = y+30
+ 	drawString(canvas,"<u>&mu;</u> &nu; <b>&Omega;</b> <omega/>",x,y, color = green)	
+-	print "mu should be underlined, Omega should be big and bold"
++	print("mu should be underlined, Omega should be big and bold")
+ 	y = y+30
+ 	drawString(canvas,"&omicron; &Phi; &phi; <phiv/>",x,y, color = blue)	
+ 	y = y+30
+ 	drawString(canvas,"&Pi; &pi; &piv; <Psi/> &psi; &rho;",x,y, color = green)	
+ 	y = y+30
+ 	drawString(canvas,"<u>&Sigma; &sigma; &sigmav; <tau/></u>",x,y, color = blue)	
+-	print "line starting with sigma should be completely underlined"
++	print("line starting with sigma should be completely underlined")
+ 	y = y+30
+ 	drawString(canvas,"&Theta; &theta; &thetav; <Xi/> &xi; &zeta;",x,y, color = green)	
+ 	y= y+30

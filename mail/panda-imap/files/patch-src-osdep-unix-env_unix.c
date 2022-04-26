@@ -1,6 +1,6 @@
---- src/osdep/unix/env_unix.c.orig	2013-06-21 23:29:17.000000000 +0200
-+++ src/osdep/unix/env_unix.c	2014-11-23 22:48:04.000000000 +0100
-@@ -76,7 +76,7 @@
+--- src/osdep/unix/env_unix.c.orig	2022-04-17 00:12:02 UTC
++++ src/osdep/unix/env_unix.c
+@@ -79,7 +79,7 @@ static char *sslDHParams = NIL;	/* specified SSL Diffi
  static short anonymous = NIL;	/* is anonymous */
  static short blackBox = NIL;	/* is a black box */
  static short closedBox = NIL;	/* is a closed box (uses chroot() jail) */

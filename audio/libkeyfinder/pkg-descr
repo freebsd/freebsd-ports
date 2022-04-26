@@ -1,14 +1,14 @@
 libkeyfinder is a small C++11 library for estimating the musical key of digital
 audio. It is published under the GNU General Public License version 3 or later.
 
-It was written by Ibrahim Shaath who wrote it in 2011 as part of a master's 
-thesis in computer science. A GUI application to use it is available for macOS 
-and Windows, however that is no longer maintained and does not build on 
+It was written by Ibrahim Shaath who wrote it in 2011 as part of a master's
+thesis in computer science. A GUI application to use it is available for macOS
+and Windows, however that is no longer maintained and does not build on
 contemporary Linux distributions.
 
-In 2020, Ibrahim handed over maintenance of libkeyfinder to the Mixxx DJ 
-software team who incorporated it into Mixxx as of Mixxx 2.3. If you want to 
-discuss anything related to libkeyfinder with us, please get in touch on the 
+In 2020, Ibrahim handed over maintenance of libkeyfinder to the Mixxx DJ
+software team who incorporated it into Mixxx as of Mixxx 2.3. If you want to
+discuss anything related to libkeyfinder with us, please get in touch on the
 Mixxx Zulip chat. Contributions are welcome by opening pull requests and issues
 on GitHub.
 

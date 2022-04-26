@@ -35,6 +35,7 @@ include/pynac/print.h
 include/pynac/pseries.h
 include/pynac/ptr.h
 include/pynac/py_funcs.h
+include/pynac/pynac-config.h
 include/pynac/registrar.h
 include/pynac/relational.h
 include/pynac/sum.h
@@ -47,5 +48,5 @@ include/pynac/version.h
 include/pynac/wildcard.h
 lib/libpynac.so
 lib/libpynac.so.18
-lib/libpynac.so.18.3.5
+lib/libpynac.so.18.3.7
 libdata/pkgconfig/pynac.pc

@@ -137,6 +137,12 @@
 %%WWWDIR%%/files/update/7049.sql
 %%WWWDIR%%/files/update/7050.sql
 %%WWWDIR%%/files/update/7051.sql
+%%WWWDIR%%/files/update/7052.sql
+%%WWWDIR%%/files/update/7053.sql
+%%WWWDIR%%/files/update/7054.sql
+%%WWWDIR%%/files/update/7055.sql
+%%WWWDIR%%/files/update/7056.sql
+%%WWWDIR%%/files/update/7057.sql
 %%WWWDIR%%/image/adjustment.png
 %%WWWDIR%%/image/apple-logo.png
 %%WWWDIR%%/image/binary.png
@@ -906,6 +912,7 @@
 %%WWWDIR%%/plugins/main_sections/ms_teledeploy/ms_tele_stats.php
 %%WWWDIR%%/plugins/main_sections/ms_teledeploy/views/activate_form_view.php
 %%WWWDIR%%/plugins/main_sections/ms_teledeploy/views/package_form_view.php
+%%WWWDIR%%/plugins/main_sections/ms_upload_file/ms_local_import.php
 %%WWWDIR%%/plugins/main_sections/ms_upload_file/ms_upload_file.php
 %%WWWDIR%%/plugins/main_sections/ms_upload_file/ms_upload_file_popup.php
 %%WWWDIR%%/plugins/main_sections/ms_upload_file/ms_view_file.php
@@ -1180,7 +1187,6 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-vi.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh_cn.php
-%%WWWDIR%%/vendor/phpmailer/phpmailer/phpunit.xml.dist
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/Exception.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/OAuth.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/PHPMailer.php

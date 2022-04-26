@@ -19,6 +19,7 @@ include/libprelude/idmef-data.h
 include/libprelude/idmef-message-helpers.h
 include/libprelude/idmef-message-id.h
 include/libprelude/idmef-message-print.h
+include/libprelude/idmef-message-print-json.h
 include/libprelude/idmef-message-read.h
 include/libprelude/idmef-message-write.h
 include/libprelude/idmef-object.h
@@ -67,14 +68,15 @@ include/libprelude/prelude-string.h
 include/libprelude/prelude-thread.h
 include/libprelude/prelude-timer.h
 lib/libprelude.so
-lib/libprelude.so.23
-lib/libprelude.so.23.1.0
+lib/libprelude.so.28
+lib/libprelude.so.28.1.0
 lib/libpreludecpp.so
-lib/libpreludecpp.so.8
-lib/libpreludecpp.so.8.0.0
+lib/libpreludecpp.so.12
+lib/libpreludecpp.so.12.0.1
 %%PERL%%%%SITE_ARCH%%/Prelude.pm
 %%PERL%%%%SITE_ARCH%%/auto/Prelude/Prelude.so
 libdata/pkgconfig/libprelude.pc
+man/man1/libprelude-config.1.gz
 man/man1/prelude-admin.1.gz
 share/aclocal/libprelude.m4
 %%PORTDOCS%%share/gtk-doc/html/libprelude/api-index-full.html
@@ -82,8 +84,8 @@ share/aclocal/libprelude.m4
 %%PORTDOCS%%share/gtk-doc/html/libprelude/deprecated-api-index.html
 %%PORTDOCS%%share/gtk-doc/html/libprelude/home.png
 %%PORTDOCS%%share/gtk-doc/html/libprelude/index.html
-%%PORTDOCS%%share/gtk-doc/html/libprelude/index.sgml
 %%PORTDOCS%%share/gtk-doc/html/libprelude/left.png
+%%PORTDOCS%%share/gtk-doc/html/libprelude/left-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/libprelude/libprelude-idmef-additional-data.html
 %%PORTDOCS%%share/gtk-doc/html/libprelude/libprelude-idmef-criteria.html
 %%PORTDOCS%%share/gtk-doc/html/libprelude/libprelude-idmef-criterion-value.html
@@ -117,12 +119,13 @@ share/aclocal/libprelude.m4
 %%PORTDOCS%%share/gtk-doc/html/libprelude/libprelude-prelude-string.html
 %%PORTDOCS%%share/gtk-doc/html/libprelude/libprelude-prelude-timer.html
 %%PORTDOCS%%share/gtk-doc/html/libprelude/libprelude-prelude.html
-%%PORTDOCS%%share/gtk-doc/html/libprelude/libprelude.devhelp
 %%PORTDOCS%%share/gtk-doc/html/libprelude/libprelude.devhelp2
 %%PORTDOCS%%share/gtk-doc/html/libprelude/object-tree.html
 %%PORTDOCS%%share/gtk-doc/html/libprelude/right.png
+%%PORTDOCS%%share/gtk-doc/html/libprelude/right-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/libprelude/style.css
 %%PORTDOCS%%share/gtk-doc/html/libprelude/up.png
+%%PORTDOCS%%share/gtk-doc/html/libprelude/up-insensitive.png
 %%DATADIR%%/swig/libpreludecpp.i
 %%PERL%%%%DATADIR%%/swig/perl/libpreludecpp-perl.i
 @dir(,,711) %%ETCDIR%%/profile

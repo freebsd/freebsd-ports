@@ -1,0 +1,11 @@
+--- src/Controller/CMakeLists.txt.orig	2021-11-25 00:56:54 UTC
++++ src/Controller/CMakeLists.txt
+@@ -171,7 +171,7 @@ target_link_libraries( epsonscan2
+ 	dl
+ 	commonutility
+ 	${Boost_LIBRARIES}
+-	usb-1.0
++	${usb_LIBRARY}
+ )
+ 
+ install(TARGETS epsonscan2 DESTINATION ${EPSON_INSTALL_ROOT}${EPSON_INSTALL_PATH})

@@ -1,12 +1,11 @@
 bin/lskat
-share/qlogging-categories5/lskat.categories
 share/applications/org.kde.lskat.desktop
-share/icons/hicolor/128x128/apps/lskat.png
 share/icons/hicolor/16x16/apps/lskat.png
 share/icons/hicolor/22x22/apps/lskat.png
 share/icons/hicolor/32x32/apps/lskat.png
 share/icons/hicolor/48x48/apps/lskat.png
 share/icons/hicolor/64x64/apps/lskat.png
+share/icons/hicolor/128x128/apps/lskat.png
 share/locale/ar/LC_MESSAGES/lskat.mo
 share/locale/be/LC_MESSAGES/lskat.mo
 share/locale/bg/LC_MESSAGES/lskat.mo
@@ -75,3 +74,4 @@ share/locale/zh_TW/LC_MESSAGES/lskat.mo
 %%DATADIR%%/grafix/oxygen.rc
 %%DATADIR%%/grafix/oxygen.svg
 share/metainfo/org.kde.lskat.appdata.xml
+share/qlogging-categories5/lskat.categories

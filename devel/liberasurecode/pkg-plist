@@ -26,7 +26,7 @@ lib/libXorcode.so.1.0.1
 lib/liberasurecode.a
 lib/liberasurecode.so
 lib/liberasurecode.so.1
-lib/liberasurecode.so.1.4.0
+lib/liberasurecode.so.1.6.3
 lib/liberasurecode_rs_vand.a
 lib/liberasurecode_rs_vand.so
 lib/liberasurecode_rs_vand.so.1
@@ -36,4 +36,3 @@ lib/libnullcode.so
 lib/libnullcode.so.1
 lib/libnullcode.so.1.0.1
 libdata/pkgconfig/erasurecode-1.pc
-@dir %%DATADIR%%/html/liberasurecode

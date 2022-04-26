@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	POE
-PORTVERSION=	1.368
+PORTVERSION=	1.370
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,16 +23,17 @@ RUN_DEPENDS=	p5-Curses>=1.08:devel/p5-Curses \
 		p5-URI>=1.30:net/p5-URI \
 		p5-libwww>=5.79:www/p5-libwww
 
-OPTIONS_DEFINE=	EXAMPLES
+USES=		perl5 shebangfix
+USE_PERL5=	configure
 
 CONFIGURE_ARGS=	--default
 NO_ARCH=	yes
-USES=		perl5 shebangfix
-USE_PERL5=	configure
 
 PORTEXAMPLES=	*
 
 SHEBANG_FILES=	examples/*.perl lib/POE/Wheel/Curses.pm
+
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

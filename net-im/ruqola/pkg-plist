@@ -14,6 +14,7 @@ share/doc/HTML/en/ruqola/index.docbook
 share/icons/hicolor/22x22/apps/ruqola.png
 share/icons/hicolor/32x32/apps/ruqola.png
 share/icons/hicolor/48x48/apps/ruqola.png
+share/icons/hicolor/128x128/apps/ruqola.png
 share/knotifications5/ruqola.notifyrc
 share/metainfo/org.kde.ruqola.appdata.xml
 share/qlogging-categories5/ruqola.categories

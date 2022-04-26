@@ -1,6 +1,6 @@
 PORTNAME=	herbstluftwm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.4
 CATEGORIES=	x11-wm
 
 MAINTAINER=	uzsolt@uzsolt.hu
@@ -15,7 +15,7 @@ USES=		cmake compiler:c++11-lang gnome \
 		localbase:ldflags pkgconfig shebangfix xorg
 USE_GITHUB=	yes
 USE_GNOME=	glib20
-USE_XORG=	x11 xext xft xinerama xrandr
+USE_XORG=	x11 xext xfixes xft xinerama xrandr xrender
 
 SHEBANG_FILES=	doc/gendoc.py scripts/*.sh share/*.sh
 

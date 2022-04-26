@@ -1,5 +1,6 @@
 PORTNAME=	synctex
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
@@ -20,8 +21,24 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--with-system-kpathsea \
 		--with-system-zlib \
-		--with-x=no \
-		--without-mf-x-toolkit
+		--without-gmp-includes \
+		--without-gmp-libdir \
+		--without-mf-x-toolkit \
+		--without-mpfr-includes \
+		--without-mpfr-libdir \
+		--without-system-cairo \
+		--without-system-freetype2 \
+		--without-system-gmp \
+		--without-system-graphite2 \
+		--without-system-harfbuzz \
+		--without-system-icu \
+		--without-system-libpng \
+		--without-system-mpfr \
+		--without-system-pixman \
+		--without-system-ptexenc \
+		--without-system-teckit \
+		--without-system-zziplib \
+		--without-x
 
 INSTALL_TARGET=	install-strip
 

@@ -13,6 +13,8 @@ COMMENT=	Generate Two-Factor Codes
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+IGNORE=		crashes with libadwaita >= 1.0
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgraphene-1.0.so:graphics/graphene \
 		libzbar.so:graphics/zbar

@@ -165,42 +165,42 @@ USE_TEX:=	${USE_TEX:tu:NFULL} ${_USE_TEX_FULLLIST:tu}
 .for _UU in ${USE_TEX:tu}
 _U:=	${_UU}	# ugly but necessary in for loop
 _VOP:=
-. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXMF) && empty(_U:M*[<>=]*)
+.  if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXMF) && empty(_U:M*[<>=]*)
 _U:=	${_U}>=${TEXLIVE_VERSION}
-. endif
-. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MBASE) && empty(_U:M*[<>=]*)
+.  endif
+.  if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MBASE) && empty(_U:M*[<>=]*)
 _U:=	${_U}>=${TEXLIVE_VERSION}
-. endif
-. if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MKPATHSEA) || \
+.  endif
+.  if !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MKPATHSEA) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MPTEXENC) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUA) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MTEXLUAJIT) || \
      !empty(_U:tu:C/[<>=][^\:]*//:C/\:.*$//:MSYNCTEX)
 _U:=	${_U}:lib
-. endif
-. if !empty(_U:M*[<>=]*)
-_VOP:=	${_U:C/^[^<>=]*//:C/\:.*$//}
-. endif
-. if empty(_U:M*\:*)
-_C:=	BUILD RUN
-. else
-_C:=	${_U:C/.*://:S/,/ /g:C/[<>=][^\:]*//g}
-. endif
-#. warning DEBUG: ${_U}: _VOP=${_VOP}, _C=${_C}
-. for _CC in ${_C:tu}
-_V:=${_UU:C/[<>=][^\:]*//:C/\:.*$//}
-.  if defined(_USE_TEX_${_V}_PORT)
-.   if !empty(_VOP)
-.    for _T in ${_USE_TEX_${_V}_PKGNAME}${_VOP}:${_USE_TEX_${_V}_PORT}
-TEX_${_CC}_DEPENDS+=	${_T}
-.    endfor
-.   else
-.    for _T in ${_USE_TEX_${_V}_DEP}:${_USE_TEX_${_V}_PORT}
-TEX_${_CC}_DEPENDS+=	${_T}
-.    endfor
-.   endif
 .  endif
-. endfor
+.  if !empty(_U:M*[<>=]*)
+_VOP:=	${_U:C/^[^<>=]*//:C/\:.*$//}
+.  endif
+.  if empty(_U:M*\:*)
+_C:=	BUILD RUN
+.  else
+_C:=	${_U:C/.*://:S/,/ /g:C/[<>=][^\:]*//g}
+.  endif
+#. warning DEBUG: ${_U}: _VOP=${_VOP}, _C=${_C}
+.  for _CC in ${_C:tu}
+_V:=${_UU:C/[<>=][^\:]*//:C/\:.*$//}
+.    if defined(_USE_TEX_${_V}_PORT)
+.      if !empty(_VOP)
+.        for _T in ${_USE_TEX_${_V}_PKGNAME}${_VOP}:${_USE_TEX_${_V}_PORT}
+TEX_${_CC}_DEPENDS+=	${_T}
+.        endfor
+.      else
+.        for _T in ${_USE_TEX_${_V}_DEP}:${_USE_TEX_${_V}_PORT}
+TEX_${_CC}_DEPENDS+=	${_T}
+.        endfor
+.      endif
+.    endif
+.  endfor
 .endfor
 
 .for _C in EXTRACT BUILD LIB RUN
@@ -215,14 +215,14 @@ ${_C}_DEPENDS+=	${TEX_${_C}_DEPENDS:O:u}
     !empty(USE_TEX:Mupdmap)
 .PHONY:	do-texhash
 do-texhash:
-. if !empty(USE_TEX:Mtexhash-bootstrap)
+.  if !empty(USE_TEX:Mtexhash-bootstrap)
 	@${ECHO_CMD} "@postexec ${LOCALBASE}/bin/mktexlsr " \
 		"${TEXHASHDIRS:S,^,%D/,}" >> ${TMPPLIST}
 	@for D in ${TEXHASHDIRS}; do \
 		${ECHO_CMD} "@rmtry $$D/ls-R"; \
 		${ECHO_CMD} "@dir $$D"; \
 	done >> ${TMPPLIST}
-. else
+.  else
 	@${ECHO_CMD} "@postexec for D in ${TEXHASHDIRS:S,^,${PREFIX}/,}; do " \
 		"if [ -r \$$D/ls-R ]; then " \
 			"${LOCALBASE}/bin/mktexlsr \$$D; " \
@@ -231,14 +231,14 @@ do-texhash:
 		"if [ -r \$$D/ls-R ]; then " \
 			"${LOCALBASE}/bin/mktexlsr \$$D; " \
 		"fi; done" >> ${TMPPLIST}
-. endif
+.  endif
 
 post-install-script: do-texhash
 .endif
 
 .if !empty(USE_TEX:Mfmtutil)
 .PHONY:	do-fmtutil
-. for F in ${TEX_FORMATS}
+.  for F in ${TEX_FORMATS}
 do-fmtutil: post-install-$F do-fmtutil-$F
 do-fmtutil-$F:
 	${TEST} -n '${TEX_FORMAT_${F:tu}}'
@@ -269,7 +269,7 @@ do-fmtutil-$F:
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_FILES}
 _PLIST_DIRS+=${TEX_FORMAT_${F:tu}_DIRS}
 _PLIST_FILES+=	${TEX_FORMAT_${F:tu}_BIN}
-. endfor
+.  endfor
 post-install-script: do-fmtutil
 PLIST_FILES=	${_PLIST_FILES:O:u}
 PLIST_DIRS=	${_PLIST_DIRS:O:u} ${TEXMFVARDIR}/web2c

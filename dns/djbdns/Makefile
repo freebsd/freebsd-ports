@@ -11,7 +11,7 @@ MASTER_SITES=	https://cr.yp.to/djbdns/ \
 DISTNAME=	djbdns-${DJBDNS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	lx@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Collection of secure and reliable DNS tools
 
 # Converted from LEGAL_TEXT

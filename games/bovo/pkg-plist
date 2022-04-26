@@ -8,12 +8,12 @@ share/applications/org.kde.bovo.desktop
 %%DATADIR%%/themes/scribble/themerc
 %%DATADIR%%/themes/spacy/theme.svg
 %%DATADIR%%/themes/spacy/themerc
-share/icons/hicolor/128x128/apps/bovo.png
 share/icons/hicolor/16x16/apps/bovo.png
 share/icons/hicolor/22x22/apps/bovo.png
 share/icons/hicolor/32x32/apps/bovo.png
 share/icons/hicolor/48x48/apps/bovo.png
 share/icons/hicolor/64x64/apps/bovo.png
+share/icons/hicolor/128x128/apps/bovo.png
 share/locale/ar/LC_MESSAGES/bovo.mo
 share/locale/be/LC_MESSAGES/bovo.mo
 share/locale/bg/LC_MESSAGES/bovo.mo

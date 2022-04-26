@@ -1,5 +1,3 @@
-TIMESTAMP = 1632341672
-SHA256 (gnome/gnome-font-viewer-41.0.tar.xz) = 5dd410331be070e4e034397f2754980e073851d50a2119f2fbf96adc6fe2e876
-SIZE (gnome/gnome-font-viewer-41.0.tar.xz) = 179672
-SHA256 (gnome/218166246e29.patch) = 3d60253beebf7bd6faa46b04e4059cd7c860e6146fb6c0e608ea06b8bb86546c
-SIZE (gnome/218166246e29.patch) = 1333
+TIMESTAMP = 1648054810
+SHA256 (gnome/gnome-font-viewer-42.0.tar.xz) = cfa2b8dfff21a105a1a021dadfa213f13627e6a179a77c7b59fdcedaca848dcc
+SIZE (gnome/gnome-font-viewer-42.0.tar.xz) = 287644

@@ -12,6 +12,9 @@ COMMENT=	Bootstrap forms for django
 
 LICENSE=	MIT
 
+DEPRECATED=	No longer maintained, not compatible with newer versions of Django
+EXPIRATION_DATE=	2022-06-30
+
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 

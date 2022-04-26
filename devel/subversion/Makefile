@@ -1,6 +1,6 @@
 # Created by: rooneg@electricjellyfish.net
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
@@ -24,7 +24,7 @@ OPTIONS_DEFINE=	\
 		TEST		\
 		TOOLS
 
-OPTIONS_DEFAULT=FREEBSD_TEMPLATE GPG_AGENT SERF TOOLS
+OPTIONS_DEFAULT=GPG_AGENT SERF TOOLS
 
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
 GPG_AGENT_DESC=		Enable GPG agent password store
@@ -56,9 +56,11 @@ CONFIGURE_ARGS+=	--without-gnome-keyring \
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
 SUB_LIST+=	SVNSERVE_BIN_EXT=".bin"
 PLIST_SUB+=	NO_SVNSERVE_WRAPPER="@comment "
+SVNSERVE_EXT=	.bin
 .else
 SUB_LIST+=	SVNSERVE_BIN_EXT=""
 PLIST_SUB+=	NO_SVNSERVE_WRAPPER=""
+SVNSERVE_EXT=
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
@@ -84,6 +86,15 @@ WITH_REPOSITORY_CREATION=	yes
 .if defined(WITH_REPOSITORY_CREATION)
 MKREPOS_TARGET=	_mkrepos
 .endif
+
+
+BINS_TO_STRIP= svn svnadmin svnbench svndumpfilter svnfsfs svnlook svnmucc \
+		svnrdump svnserve${SVNSERVE_EXT} svnsync svnversion
+
+TOOLS_TO_STRIP=	fsfs-access-map svn-mergeinfo-normalizer \
+		 svn-populate-node-origins-index svnauthz \
+		 svnauthz-validate svnconflict svndiff svndiff3 \
+		 svndiff4 svnmover svnraisetreeconflict x509-parser
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -114,9 +125,9 @@ pre-everything::
 pre-configure:
 .if ${PORT_OPTIONS:MBDB}
 	@BDB_VERSION=`${APR_APU_DIR}/${APU_CONFIG} --db-version`; \
-	if [ "$${BDB_VERSION}" != "4" -a "$${BDB_VERSION}" != "5" -a "$${BDB_VERSION}" != "6" ] ; then \
+	if [ "$${BDB_VERSION}" != "4" -a "$${BDB_VERSION}" != "5" -a "$${BDB_VERSION}" != "6"  -a "$${BDB_VERSION}" != "18" ] ; then \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You should build `'"devel/apr1' with Berkeley DB (4, 5 or 6) support to use subversion with it." ; \
+		${ECHO_MSG} 'You should build `'"devel/apr1' with Berkeley DB (4, 5, 6 or 18) support to use subversion with it." ; \
 		${ECHO_MSG} 'Please rebuild `'"devel/apr1' with option "'`'"BDB' and try again." ; \
 		${ECHO_MSG} "" ; \
 		${ECHO_MSG} "Or you can disable Berkeley DB support. Only 'fs' repository backend will be available." ; \
@@ -148,7 +159,9 @@ post-build-TOOLS-on:
 	@${MAKE} -C ${WRKSRC} tools ${MAKE_ARGS}
 
 post-install:	${MKREPOS_TARGET}
-	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	for F in ${BINS_TO_STRIP} ; do \
+	 ${STRIP_CMD} "${STAGEDIR}${PREFIX}/bin/$${F}" ; \
+	done
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -162,7 +175,10 @@ post-install-SVNSERVE_WRAPPER-on:
 
 post-install-TOOLS-on:
 	@${MAKE} -C ${WRKSRC} install-tools ${MAKE_ARGS}
-	-@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	for F in ${TOOLS_TO_STRIP} ; do \
+	 ${STRIP_CMD} "${STAGEDIR}${PREFIX}/bin/$${F}" ; \
+	done
+ 
 
 # ===============================================================================
 repository:	_mkrepos

@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# PROVIDE: gotosocial
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable GotoSocial
+#
+# gotosocial_enable (bool): Set it to YES to enable gotosocial.
+#                           Default is "NO".
+# gotosocial_user   (user): Set user to run gotosocial.
+#                           Default is "gotosocial".
+# gotosocial_group (group): Set group to run gotosocial.
+#                           Default is "gotosocial".
+# gotosocial_config (file): Set gotosocial config file.
+#                           Default is "%%PREFIX%%/etc/gotosocial/config.yaml".
+# gotosocial_dir    (dir):  Set DB and certificate storage dir
+#                           Default is "/var/db/gotosocial/".
+
+. /etc/rc.subr
+
+name=gotosocial
+rcvar=gotosocial_enable
+desc="Golang fediverse server"
+
+load_rc_config "$name"
+
+: ${gotosocial_enable:=NO}
+: ${gotosocial_config:=%%PREFIX%%/etc/gotosocial/config.yaml}
+: ${gotosocial_user=%%USER%%}
+: ${gotosocial_group=%%GROUP%%}
+: ${gotosocial_dir=%%DBDIR%%}
+
+procname="%%PREFIX%%/bin/${name}"
+command=/usr/sbin/daemon
+command_args="-c -T ${name} ${procname} --config-path ${gotosocial_config} server start"
+
+start_precmd="${name}_prestart"
+
+gotosocial_prestart()
+{
+    if [ ! -d ${gotosocial_dir} ]; then
+        install -d -m 0750 -o ${gotosocial_user} -g ${gotosocial_group} \
+            ${gotosocial_dir} ${gotosocial_dir}/certs
+    fi
+}
+
+run_rc_command "$1"

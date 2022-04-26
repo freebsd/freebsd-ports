@@ -1,0 +1,5 @@
+This package provides a drop-in alternative to subprocess.run that
+captures the output while still printing it in real-time, just the way
+tee does.
+
+WWW: https://github.com/pycontribs/subprocess-tee

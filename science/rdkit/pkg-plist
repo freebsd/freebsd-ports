@@ -163,6 +163,7 @@ include/rdkit/GraphMol/FragCatalog/FragCatParams.h
 include/rdkit/GraphMol/FragCatalog/FragCatalogEntry.h
 include/rdkit/GraphMol/FragCatalog/FragCatalogUtils.h
 include/rdkit/GraphMol/FragCatalog/FragFPGenerator.h
+include/rdkit/GraphMol/GenericGroups/GenericGroups.h
 include/rdkit/GraphMol/GraphMol.h
 include/rdkit/GraphMol/MMPA/MMPA.h
 include/rdkit/GraphMol/MolAlign/AlignMolecules.h
@@ -175,13 +176,8 @@ include/rdkit/GraphMol/MolChemicalFeatures/FeatureParser.h
 include/rdkit/GraphMol/MolChemicalFeatures/MolChemicalFeature.h
 include/rdkit/GraphMol/MolChemicalFeatures/MolChemicalFeatureDef.h
 include/rdkit/GraphMol/MolChemicalFeatures/MolChemicalFeatureFactory.h
-include/rdkit/GraphMol/MolDraw2D/DrawText.h
-include/rdkit/GraphMol/MolDraw2D/DrawTextFT.h
-include/rdkit/GraphMol/MolDraw2D/DrawTextFTJS.h
-include/rdkit/GraphMol/MolDraw2D/DrawTextFTSVG.h
-include/rdkit/GraphMol/MolDraw2D/DrawTextJS.h
-include/rdkit/GraphMol/MolDraw2D/DrawTextSVG.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2D.h
+include/rdkit/GraphMol/MolDraw2D/MolDraw2DHelpers.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2DJS.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2DSVG.h
 include/rdkit/GraphMol/MolDraw2D/MolDraw2DUtils.h
@@ -388,6 +384,9 @@ lib/libRDKitForceFieldHelpers.so.1.%%SHLIB_VER%%
 lib/libRDKitFragCatalog.so
 lib/libRDKitFragCatalog.so.1
 lib/libRDKitFragCatalog.so.1.%%SHLIB_VER%%
+lib/libRDKitGenericGroups.so
+lib/libRDKitGenericGroups.so.1
+lib/libRDKitGenericGroups.so.1.%%SHLIB_VER%%
 lib/libRDKitGraphMol.so
 lib/libRDKitGraphMol.so.1
 lib/libRDKitGraphMol.so.1.%%SHLIB_VER%%
@@ -513,6 +512,7 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Descriptors3D.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Draw/FreeSans.ttf
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Draw/IPythonConsole.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Draw/InteractiveRenderer.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Draw/MolDrawing.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Draw/SimilarityMaps.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Draw/__init__.py
@@ -625,7 +625,9 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/fmcs/fmcs
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/fmcs/fmcs.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/inchi.py
+%%PYTHON%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/nbtests/ChEMBL_quinolones.tsv
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/nbtests/github4823.ipynb
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/nbtests/rdkit-structure-renderer.ipynb
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdAbbreviations.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdCIPLabeler.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/rdChemReactions.so

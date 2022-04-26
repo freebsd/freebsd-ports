@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	cgi
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,5 @@ USES=		cpe gem
 USE_RUBY=	yes
 
 CPE_VENDOR=	ruby-lang
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>

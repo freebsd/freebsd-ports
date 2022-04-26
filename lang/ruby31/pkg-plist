@@ -1566,7 +1566,6 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d61/structrb__global__vm__lock__struct.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d66/internal_2enumerator_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d6c/structbackref__name__tag.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d70/rb__mjit__min__header-3_81_81_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d72/structmagic__comment.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d73/structar__table__struct.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d74/structwmap__iter__arg.html
@@ -2556,6 +2555,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/da7/flag__enum_8h__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/da7/flag__enum_8h__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/da7/flag__enum_8h__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/da8/rb__mjit__min__header-3_81_82_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/db8/feature_8h__dep__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/db8/feature_8h__dep__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/db8/feature_8h__dep__incl.png
@@ -3318,7 +3318,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dir_4a0596afa8ae2a1c3c95b15b25dc60fa.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dir_4d2a760764f2f01f9d5f8efa641e6a6e.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dir_5183dadf5f88c523a2d4106a0d1c0fc8.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dir_51f19e88bc37de7d12cc3a95%%RUBY_SUFFIX%%4ed120.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dir_51f19e88bc37de7d12cc3a95314ed120.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dir_55965a0b7f896966aebdf0768b7cd008.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dir_5604030fd4a44b495b2161760383f09d.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dir_6254b12ba856c51c40734b4d13efdf1c.html

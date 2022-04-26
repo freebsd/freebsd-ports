@@ -2,14 +2,15 @@ bin/gnome-characters
 lib/org.gnome.Characters/girepository-1.0/Gc-1.0.typelib
 lib/org.gnome.Characters/libgc.so
 share/applications/org.gnome.Characters.desktop
-share/dbus-1/services/org.gnome.Characters.BackgroundService.service
 share/dbus-1/services/org.gnome.Characters.service
 share/gnome-shell/search-providers/org.gnome.Characters.search-provider.ini
 share/icons/hicolor/scalable/apps/org.gnome.Characters.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Characters-symbolic.svg
+share/locale/ab/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/af/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ar/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/be/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/bg/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ca/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ca@valencia/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ckb/LC_MESSAGES/org.gnome.Characters.mo
@@ -53,6 +54,7 @@ share/locale/pt/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/pt_BR/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ro/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ru/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/sat/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sk/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sl/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sr/LC_MESSAGES/org.gnome.Characters.mo
@@ -67,8 +69,5 @@ share/locale/zh_TW/LC_MESSAGES/org.gnome.Characters.mo
 share/metainfo/org.gnome.Characters.appdata.xml
 share/org.gnome.Characters/gir-1.0/Gc-1.0.gir
 share/org.gnome.Characters/org.gnome.Characters
-share/org.gnome.Characters/org.gnome.Characters.BackgroundService
-share/org.gnome.Characters/org.gnome.Characters.BackgroundService.data.gresource
-share/org.gnome.Characters/org.gnome.Characters.BackgroundService.src.gresource
 share/org.gnome.Characters/org.gnome.Characters.data.gresource
 share/org.gnome.Characters/org.gnome.Characters.src.gresource

@@ -130,29 +130,29 @@ horde-timeobjects-DEPEND=	${LOCALBASE}/${HORDE_DIR}/timeobjects/lib/Driver.php:d
 horde-trean-DEPEND=		${LOCALBASE}/${HORDE_DIR}/trean/index.php:www/horde-trean
 horde-turba-DEPEND=		${LOCALBASE}/${HORDE_DIR}/turba/index.php:mail/horde-turba
 
-.if defined(USE_HORDE_RUN)
-. for DEP in ${USE_HORDE_RUN}
-.  if !defined(horde-${DEP}-DEPEND)
+.  if defined(USE_HORDE_RUN)
+.    for DEP in ${USE_HORDE_RUN}
+.      if !defined(horde-${DEP}-DEPEND)
 UNKNOWN_HORDE_PACKAGES+=	${DEP}
-.  else
+.      else
 RUN_DEPENDS+=	${horde-${DEP}-DEPEND}@${PHP_FLAVOR}
+.      endif
+.    endfor
 .  endif
-. endfor
-.endif
 
-.if defined(USE_HORDE_BUILD)
-. for DEP in ${USE_HORDE_BUILD}
-.  if !defined(horde-${DEP}-DEPEND)
+.  if defined(USE_HORDE_BUILD)
+.    for DEP in ${USE_HORDE_BUILD}
+.      if !defined(horde-${DEP}-DEPEND)
 UNKNOWN_HORDE_PACKAGES+=	${DEP}
-.  else
+.      else
 BUILD_DEPENDS+=	${horde-${DEP}-DEPEND}@${PHP_FLAVOR}
+.      endif
+.    endfor
 .  endif
-. endfor
-.endif
 
-.if defined(UNKNOWN_HORDE_PACKAGES)
+.  if defined(UNKNOWN_HORDE_PACKAGES)
 IGNORE=	unknown Horde package(s): ${UNKNOWN_HORDE_PACKAGES}
-.endif
+.  endif
 
 .include "${USESDIR}/pear.mk"
 .endif

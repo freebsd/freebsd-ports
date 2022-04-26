@@ -1,6 +1,6 @@
 rocr
 
-HPC market enhanced HSA based runtime 
+HPC market enhanced HSA based runtime
 
 The user-mode API interfaces and libraries necessary for host applications to
 launch compute kernels to available HSA ROCm kernel agents.

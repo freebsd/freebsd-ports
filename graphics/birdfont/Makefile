@@ -3,11 +3,16 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.29.6
 CATEGORIES=	graphics x11-fonts
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for vector graphics and TTF, OTF, EOT and SVG fonts
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPLv3.txt
+
+# Seems to be a Vala problem: there is no string
+# "BIRD_FONT_TEST_BIRD_FONT_NOT_STARTED" in the source code;
+# there's only "NOT_STARTED".
+BROKEN=	build/libbirdfont/TestBirdFont.c:107:46: error: use of undeclared identifier 'BIRD_FONT_TEST_BIRD_FONT_NOT_STARTED'
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}doit>0:devel/py-doit@${PY_FLAVOR} \
 		valac:lang/vala

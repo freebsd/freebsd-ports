@@ -6,6 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Handle data on a grid: NumPy n-dimensional arrays
 
+BROKEN=		does not fetch: Fetched file size mismatch (expected 2210700, actual 2210686)
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 

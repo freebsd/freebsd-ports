@@ -1,0 +1,69 @@
+From e492e3d78520ff02aa4626f447ab2eea97cab2cc Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@FreeBSD.org>
+Date: Sun, 24 Apr 2022 17:45:57 +0200
+Subject: [PATCH 2/2] Fix build with akonadi-contacts 22.04
+
+---
+ src/addressprovider_akonadi.cpp | 7 ++++++-
+ src/addressprovider_akonadi.h   | 5 +++++
+ src/addressselectorwidget.h     | 7 ++++++-
+ 3 files changed, 17 insertions(+), 2 deletions(-)
+
+diff --git src/addressprovider_akonadi.cpp src/addressprovider_akonadi.cpp
+index 4a809a8..33e232a 100644
+--- src/addressprovider_akonadi.cpp
++++ src/addressprovider_akonadi.cpp
+@@ -21,7 +21,12 @@
+ #include <QDebug>
+ 
+ #ifdef HAVE_AKONADI
+-#include "akonadi/contact/contactsearchjob.h"
++#include <AkonadiContact/akonadi-contact_version.h>
++#if AKONADICONTACT_VERSION >= QT_VERSION_CHECK(5, 20, 0)
++#include <AkonadiContact/akonadi/contactsearchjob.h>
++#else
++#include <akonadi/contact/contactsearchjob.h>
++#endif
+ #include <akonadi_version.h>
+ #if AKONADI_VERSION >= QT_VERSION_CHECK(5, 18, 41)
+ #include <Akonadi/ItemFetchJob>
+diff --git src/addressprovider_akonadi.h src/addressprovider_akonadi.h
+index 14f6aa2..4130f8a 100644
+--- src/addressprovider_akonadi.h
++++ src/addressprovider_akonadi.h
+@@ -25,7 +25,12 @@
+ 
+ #ifdef HAVE_AKONADI
+ #include <kjob.h>
++#include <AkonadiContact/akonadi-contact_version.h>
++#if AKONADICONTACT_VERSION >= QT_VERSION_CHECK(5, 20, 0)
++#include <AkonadiContact/akonadi/contactstreemodel.h>
++#else
+ #include <akonadi/contact/contactstreemodel.h>
++#endif
+ #include <akonadi_version.h>
+ #if AKONADI_VERSION >= QT_VERSION_CHECK(5, 18, 41)
+ #include <Akonadi/Session>
+diff --git src/addressselectorwidget.h src/addressselectorwidget.h
+index cb3428e..7a661c6 100644
+--- src/addressselectorwidget.h
++++ src/addressselectorwidget.h
+@@ -23,9 +23,14 @@
+ #include <QSplitter>
+ 
+ #ifdef HAVE_AKONADI
++#include <AkonadiContact/akonadi-contact_version.h>
++#if AKONADICONTACT_VERSION >= QT_VERSION_CHECK(5, 20, 0)
++#include <AkonadiContact/Akonadi/ContactViewer>
++#include <AkonadiContact/Akonadi/ContactEditorDialog>
++#else
+ #include <Akonadi/Contact/ContactViewer>
+ #include <Akonadi/Contact/ContactEditorDialog>
+-
++#endif
+ #endif
+ 
+ #include <kcontacts/addressee.h>
+-- 
+2.36.0
+

@@ -1,7 +1,5 @@
 bin/akonadi_notes_agent
 bin/knotes
-share/qlogging-categories5/knotes.categories
-share/qlogging-categories5/knotes.renamecategories
 lib/libknotesprivate.so.5
 lib/libknotesprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libnotesharedprivate.so.5
@@ -21,7 +19,6 @@ share/config.kcfg/knotesglobalconfig.kcfg
 share/config.kcfg/notesagentsettings.kcfg
 share/dbus-1/interfaces/org.kde.KNotes.xml
 share/dbus-1/interfaces/org.kde.kontact.KNotes.xml
-share/icons/hicolor/128x128/apps/knotes.png
 share/icons/hicolor/16x16/actions/knotes_alarm.png
 share/icons/hicolor/16x16/actions/knotes_close.png
 share/icons/hicolor/16x16/actions/knotes_date.png
@@ -31,8 +28,8 @@ share/icons/hicolor/22x22/apps/knotes.png
 share/icons/hicolor/32x32/apps/knotes.png
 share/icons/hicolor/48x48/apps/knotes.png
 share/icons/hicolor/64x64/apps/knotes.png
+share/icons/hicolor/128x128/apps/knotes.png
 share/icons/hicolor/scalable/apps/knotes.svg
-share/knsrcfiles/knotes_printing_theme.knsrc
 %%DATADIR%%/print/themes/background-color/theme.desktop
 %%DATADIR%%/print/themes/background-color/theme.html
 %%DATADIR%%/print/themes/big-title/theme.desktop
@@ -40,15 +37,7 @@ share/knsrcfiles/knotes_printing_theme.knsrc
 %%DATADIR%%/print/themes/default/theme.desktop
 %%DATADIR%%/print/themes/default/theme.html
 share/knotifications5/akonadi_notes_agent.notifyrc
-share/kservices5/kcm_knote_action.desktop
-share/kservices5/kcm_knote_collection.desktop
-share/kservices5/kcm_knote_display.desktop
-share/kservices5/kcm_knote_editor.desktop
-share/kservices5/kcm_knote_misc.desktop
-share/kservices5/kcm_knote_network.desktop
-share/kservices5/kcm_knote_print.desktop
-share/kservices5/kcmknotessummary.desktop
-share/kservices5/kontact/knotesplugin.desktop
+share/knsrcfiles/knotes_printing_theme.knsrc
 share/kxmlgui5/knotes/knotes_part.rc
 share/kxmlgui5/knotes/knotesappui.rc
 share/kxmlgui5/knotes/knotesui.rc
@@ -184,3 +173,5 @@ share/locale/zh_TW/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/zh_TW/LC_MESSAGES/knotes.mo
 share/locale/zh_TW/LC_MESSAGES/libnoteshared.mo
 share/metainfo/org.kde.knotes.appdata.xml
+share/qlogging-categories5/knotes.categories
+share/qlogging-categories5/knotes.renamecategories

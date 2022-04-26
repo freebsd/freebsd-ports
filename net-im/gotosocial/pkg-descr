@@ -1,0 +1,11 @@
+GoToSocial is an ActivityPub social network server, written in Golang.
+
+With GoToSocial, you can keep in touch with your friends, post, read,
+and share images and articles. All without being tracked or advertised
+to!
+
+GoToSocial provides a lightweight, customizable, and safety-focused
+entryway into the Fediverse, and is comparable to (but distinct from)
+existing projects such as Mastodon, Pleroma, Friendica, and PixelFed.
+
+WWW: https://docs.gotosocial.org/en/latest/

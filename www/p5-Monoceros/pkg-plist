@@ -1,6 +1,8 @@
-%%PERL5_MAN3%%/Monoceros.3.gz
-%%PERL5_MAN3%%/Plack::Middleware::MonocerosStatus.3.gz
 %%SITE_PERL%%/Monoceros.pm
 %%SITE_PERL%%/Monoceros/Server.pm
 %%SITE_PERL%%/Plack/Handler/Monoceros.pm
 %%SITE_PERL%%/Plack/Middleware/MonocerosStatus.pm
+%%PERL5_MAN3%%/Monoceros.3.gz
+%%PERL5_MAN3%%/Monoceros::Server.3.gz
+%%PERL5_MAN3%%/Plack::Handler::Monoceros.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::MonocerosStatus.3.gz

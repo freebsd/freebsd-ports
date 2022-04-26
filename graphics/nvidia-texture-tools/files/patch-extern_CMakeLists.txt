@@ -1,0 +1,10 @@
+--- extern/CMakeLists.txt.orig	2020-08-24 06:27:21 UTC
++++ extern/CMakeLists.txt
+@@ -5,7 +5,5 @@ ADD_SUBDIRECTORY(EtcLib)
+ ADD_SUBDIRECTORY(rg_etc1_v104)
+ #ADD_SUBDIRECTORY(etcpack)
+ 
+-ADD_SUBDIRECTORY(libsquish-1.15)
+-
+ ADD_SUBDIRECTORY(CMP_Core)
+ 

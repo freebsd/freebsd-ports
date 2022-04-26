@@ -1,7 +1,6 @@
 PORTNAME=	taskwarrior-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.1
-PORTREVISION=	1
+DISTVERSION=	0.22.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	alexis.praga@free.fr
@@ -17,7 +16,7 @@ GH_ACCOUNT=	kdheepak
 CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
 		aho-corasick-0.7.18 \
-		anyhow-1.0.52 \
+		anyhow-1.0.56 \
 		arc-swap-0.4.8 \
 		async-attributes-1.1.2 \
 		async-channel-1.6.1 \
@@ -33,7 +32,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		backtrace-0.3.63 \
-		better-panic-0.2.0 \
+		better-panic-0.3.0 \
 		bitflags-1.3.2 \
 		blocking-1.1.0 \
 		bumpalo-3.8.0 \
@@ -42,17 +41,15 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		cc-1.0.72 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-3.0.0 \
-		clap_complete-3.0.0 \
-		clap_derive-3.0.0 \
-		clicolors-control-1.0.1 \
+		clap-3.1.6 \
+		clap_complete-3.1.1 \
+		clap_derive-3.1.4 \
 		clipboard-win-4.2.2 \
 		concurrent-queue-1.2.2 \
-		console-0.9.2 \
+		console-0.15.0 \
 		crossbeam-utils-0.8.5 \
-		crossterm-0.20.0 \
 		crossterm-0.22.1 \
-		crossterm_winapi-0.8.0 \
+		crossterm-0.23.1 \
 		crossterm_winapi-0.9.0 \
 		ctor-0.1.21 \
 		darling-0.10.2 \
@@ -75,22 +72,22 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		fastrand-1.6.0 \
 		fd-lock-3.0.2 \
 		fnv-1.0.7 \
-		futures-0.3.19 \
-		futures-channel-0.3.19 \
-		futures-core-0.3.19 \
-		futures-executor-0.3.19 \
-		futures-io-0.3.19 \
+		futures-0.3.21 \
+		futures-channel-0.3.21 \
+		futures-core-0.3.21 \
+		futures-executor-0.3.21 \
+		futures-io-0.3.21 \
 		futures-lite-1.12.0 \
-		futures-macro-0.3.19 \
-		futures-sink-0.3.19 \
-		futures-task-0.3.19 \
+		futures-macro-0.3.21 \
+		futures-sink-0.3.21 \
+		futures-task-0.3.21 \
 		futures-timer-3.0.2 \
-		futures-util-0.3.19 \
+		futures-util-0.3.21 \
 		getrandom-0.2.3 \
 		gimli-0.26.1 \
 		gloo-timers-0.2.2 \
 		hashbrown-0.11.2 \
-		heck-0.3.3 \
+		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
 		ident_case-1.0.1 \
@@ -103,7 +100,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		lazy_static-1.4.0 \
 		libc-0.2.112 \
 		linked-hash-map-0.5.4 \
-		lock_api-0.4.5 \
+		lock_api-0.4.6 \
 		log-0.4.14 \
 		log-mdc-0.1.0 \
 		log4rs-1.0.0 \
@@ -126,7 +123,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		os_str_bytes-6.0.0 \
 		parking-2.0.0 \
 		parking_lot-0.11.2 \
+		parking_lot-0.12.0 \
 		parking_lot_core-0.8.5 \
+		parking_lot_core-0.9.1 \
 		path-clean-0.1.0 \
 		pin-project-lite-0.2.8 \
 		pin-utils-0.1.0 \
@@ -137,23 +136,22 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		proc-macro2-1.0.36 \
 		quote-1.0.14 \
 		radix_trie-0.2.1 \
-		rand-0.8.4 \
+		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
-		rand_hc-0.3.1 \
 		redox_syscall-0.1.57 \
 		redox_syscall-0.2.10 \
 		redox_users-0.4.0 \
-		regex-1.5.4 \
+		regex-1.5.5 \
 		regex-syntax-0.6.25 \
 		rustc-demangle-0.1.21 \
 		rustyline-9.1.2 \
 		ryu-1.0.9 \
 		scopeguard-1.1.0 \
-		serde-1.0.132 \
+		serde-1.0.136 \
 		serde-value-0.7.0 \
-		serde_derive-1.0.132 \
-		serde_json-1.0.73 \
+		serde_derive-1.0.136 \
+		serde_json-1.0.79 \
 		serde_yaml-0.8.23 \
 		shellexpand-2.1.0 \
 		shlex-1.1.0 \
@@ -169,16 +167,16 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		syn-1.0.84 \
 		synstructure-0.12.6 \
 		termcolor-1.1.2 \
-		termios-0.3.3 \
-		textwrap-0.14.2 \
+		terminal_size-0.1.17 \
+		textwrap-0.15.0 \
 		thiserror-1.0.30 \
 		thiserror-impl-1.0.30 \
 		thread-id-3.3.0 \
 		time-0.1.44 \
 		traitobject-0.1.0 \
-		tui-0.16.0 \
+		tui-0.17.0 \
 		typemap-0.3.3 \
-		unicode-segmentation-1.8.0 \
+		unicode-segmentation-1.9.0 \
 		unicode-truncate-0.2.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
@@ -187,7 +185,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		uuid-0.8.2 \
 		value-bag-1.0.0-alpha.8 \
 		version_check-0.9.4 \
-		versions-3.0.3 \
+		versions-4.0.0 \
 		waker-fn-1.1.0 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.78 \
@@ -203,14 +201,19 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.28.0 \
+		windows-sys-0.32.0 \
 		windows_aarch64_msvc-0.28.0 \
+		windows_aarch64_msvc-0.32.0 \
 		windows_i686_gnu-0.28.0 \
+		windows_i686_gnu-0.32.0 \
 		windows_i686_msvc-0.28.0 \
+		windows_i686_msvc-0.32.0 \
 		windows_x86_64_gnu-0.28.0 \
+		windows_x86_64_gnu-0.32.0 \
 		windows_x86_64_msvc-0.28.0 \
+		windows_x86_64_msvc-0.32.0 \
 		yaml-rust-0.4.5 \
 		task-hookrs@git+https://github.com/kdheepak/task-hookrs\#6f04ee63c0d58bb0fe9bd6563457df52b5b5f84d
-
 PLIST_FILES=	bin/taskwarrior-tui
 
 post-install:

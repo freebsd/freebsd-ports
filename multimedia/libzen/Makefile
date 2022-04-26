@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	libzen
-PORTVERSION=	21.09
+PORTVERSION=	22.03
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -12,8 +12,6 @@ COMMENT=	ZenLib used by MediaInfo and its library
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/../../../License.txt
-
-CONFLICTS_INSTALL=	mediainfo-0.[0-6]* mediainfo-0.7.[0-5]*
 
 USES=		compiler:c++11-lang libtool pathfix tar:xz
 

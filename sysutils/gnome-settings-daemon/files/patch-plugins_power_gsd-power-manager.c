@@ -1,6 +1,9 @@
---- plugins/power/gsd-power-manager.c.orig	2020-09-13 22:34:14 UTC
+Inhibit support (login1 -> ConsoleKit).
+
+Index: plugins/power/gsd-power-manager.c
+--- plugins/power/gsd-power-manager.c.orig
 +++ plugins/power/gsd-power-manager.c
-@@ -70,9 +70,9 @@
+@@ -74,9 +74,9 @@
  #define GSD_POWER_MANAGER_NOTIFY_TIMEOUT_SHORT          10 * 1000 /* ms */
  #define GSD_POWER_MANAGER_NOTIFY_TIMEOUT_LONG           30 * 1000 /* ms */
  

@@ -1,6 +1,6 @@
---- chrome/updater/updater.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/updater/updater.cc.orig	2022-03-25 21:59:56 UTC
 +++ chrome/updater/updater.cc
-@@ -38,7 +38,7 @@
+@@ -41,7 +41,7 @@
  #include "chrome/updater/win/win_util.h"
  #elif BUILDFLAG(IS_MAC)
  #include "chrome/updater/app/server/mac/server.h"

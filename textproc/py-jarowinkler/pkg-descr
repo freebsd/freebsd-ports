@@ -1,0 +1,5 @@
+JaroWinkler is a library to calculate the Jaro and Jaro-Winkler
+similarity. It is easy to use, is far more performant than all
+alternatives and is designed to integrate seemingless with RapidFuzz.
+
+WWW: https://github.com/maxbachmann/JaroWinkler

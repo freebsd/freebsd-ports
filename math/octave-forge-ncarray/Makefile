@@ -2,7 +2,7 @@
 
 PORTNAME=	octave-forge-ncarray
 PORTVERSION=	1.0.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

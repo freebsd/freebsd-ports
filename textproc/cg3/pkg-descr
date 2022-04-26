@@ -1,0 +1,17 @@
+Constraint Grammar (CG) parsers are at the core of most of VISL's live
+applications. The Constraint Grammar concept was launched by Fred
+Karlsson in the early 90'ies (Karlsson et.al.1995), and CG parsers have
+since been written for a large variety of languages, routinely achieving
+F-scores for PoS (word class) of over 99%. A number of syntactic CG
+systems have reported F-scores of around 95%. VISL's own Constraint
+Grammar systems are inspired by Eckhard Bick's PALAVRAS parser for
+Portuguese (Bick 2000), and use, as a novelty, subclause function,
+generalized dependency markers and semantic prototype tags. For most
+languages, a lexicon based morphological analyzer provides input to the
+first CG level, while the output of the last CG-level can be converted
+into syntactic tree structures by specially designed Phrase Structure
+Grammars (PSG's), using syntactic functions, not words, as terminals.
+Other, hybrid combinations are, however, feasible. Thus, the French
+system uses PoS information from a probabilistic tagger.
+
+WWW: https://visl.sdu.dk/constraint_grammar.html

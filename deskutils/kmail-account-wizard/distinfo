@@ -1,3 +1,3 @@
-TIMESTAMP = 1646143062
-SHA256 (KDE/release-service/21.12.3/kmail-account-wizard-21.12.3.tar.xz) = ef9227b88d842cb52bd6f96a1a5dd30fbfbc6377074cb56e745ac7b84dcd222b
-SIZE (KDE/release-service/21.12.3/kmail-account-wizard-21.12.3.tar.xz) = 168856
+TIMESTAMP = 1650101804
+SHA256 (KDE/release-service/22.04.0/kmail-account-wizard-22.04.0.tar.xz) = a789d393fad7ae094368c085ffdc39ecdc02b595efb4dadcd80854133ac26b5f
+SIZE (KDE/release-service/22.04.0/kmail-account-wizard-22.04.0.tar.xz) = 171580

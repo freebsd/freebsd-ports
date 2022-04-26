@@ -4,14 +4,14 @@
 # Feature:	gettext
 # Usage:	USES=gettext
 #
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	tijl@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GETTEXT_MK)
 _INCLUDE_USES_GETTEXT_MK=	yes
 
-.if !empty(gettext_ARGS)
+.  if !empty(gettext_ARGS)
 IGNORE=		USES=gettext does not take arguments
-.endif
+.  endif
 
 .include "${USESDIR}/gettext-runtime.mk"
 .include "${USESDIR}/gettext-tools.mk"

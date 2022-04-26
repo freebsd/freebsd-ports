@@ -2,6 +2,7 @@
 
 PORTNAME=	s2
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	s2>=${PORTVERSION}:graphics/s2 \
 		swig:devel/swig
 LIB_DEPENDS=	libs2.so:graphics/s2
 
-USES=		cmake localbase:ldflags python
+USES=		cmake compiler:c++11-lang localbase:ldflags python
 
 WRKSRC_SUBDIR=	src/python
 
@@ -26,10 +27,8 @@ USE_GITHUB=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++11-lang
+.if ${ARCH} == powerpc64 && !defined(CPUTYPE)
+CXXFLAGS+=	-mcpu=power7
 .endif
 
 .include <bsd.port.mk>

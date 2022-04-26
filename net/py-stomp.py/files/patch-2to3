@@ -1,0 +1,13 @@
+--- stomp/backwardsock25.py.orig	2016-11-13 14:00:03 UTC
++++ stomp/backwardsock25.py
+@@ -25,8 +25,8 @@ def get_socket(host, port, timeout=None):
+             sock.connect(sa)
+             return sock
+ 
+-        except error, msg:
++        except error as msg:
+             if sock is not None:
+                 sock.close()
+ 
+-    raise error, ERRMSG
++    raise error(ERRMSG)

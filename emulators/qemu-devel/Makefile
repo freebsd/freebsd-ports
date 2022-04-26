@@ -2,6 +2,7 @@
 
 PORTNAME=	qemu
 DISTVERSION=	6.1.0.20210928
+PORTREVISION=	2
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -37,7 +38,6 @@ GL_TUPLE=	qemu-project:keycodemapdb:d21009b1c9f94b740ea66be8e48a1d8ad8124023:key
 		qemu-project:meson:5fa0fd3b473f792bd7333cf6ae6e2f4c851b6108:meson/meson \
 		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/tests/fp/berkeley-softfloat-3 \
 		qemu-project:berkeley-testfloat-3:5a59dcec19327396a011a17fd924aed4fec416b3:berkeleytestfloat3/tests/fp/berkeley-testfloat-3
-#BROKEN_powerpc64=	fails to compile: In function aio_bh_poll: internal compiler error: Segmentation fault
 
 #.if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 #.endif

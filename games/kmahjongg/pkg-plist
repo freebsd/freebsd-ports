@@ -1,13 +1,12 @@
 bin/kmahjongg
-share/qlogging-categories5/kmahjongg.categories
 share/applications/org.kde.kmahjongg.desktop
 share/config.kcfg/kmahjongg.kcfg
-share/icons/hicolor/128x128/apps/kmahjongg.png
 share/icons/hicolor/16x16/apps/kmahjongg.png
 share/icons/hicolor/22x22/apps/kmahjongg.png
 share/icons/hicolor/32x32/apps/kmahjongg.png
 share/icons/hicolor/48x48/apps/kmahjongg.png
 share/icons/hicolor/64x64/apps/kmahjongg.png
+share/icons/hicolor/128x128/apps/kmahjongg.png
 share/icons/hicolor/scalable/apps/kmahjongg.svgz
 %%DATADIR%%/layouts/4_winds.desktop
 %%DATADIR%%/layouts/4_winds.layout
@@ -33,10 +32,10 @@ share/icons/hicolor/scalable/apps/kmahjongg.svgz
 %%DATADIR%%/layouts/bat.layout
 %%DATADIR%%/layouts/bug.desktop
 %%DATADIR%%/layouts/bug.layout
-%%DATADIR%%/layouts/castle.desktop
-%%DATADIR%%/layouts/castle.layout
 %%DATADIR%%/layouts/castle2.desktop
 %%DATADIR%%/layouts/castle2.layout
+%%DATADIR%%/layouts/castle.desktop
+%%DATADIR%%/layouts/castle.layout
 %%DATADIR%%/layouts/cat.desktop
 %%DATADIR%%/layouts/cat.layout
 %%DATADIR%%/layouts/chains.desktop
@@ -213,3 +212,4 @@ share/locale/wa/LC_MESSAGES/kmahjongg.mo
 share/locale/zh_CN/LC_MESSAGES/kmahjongg.mo
 share/locale/zh_TW/LC_MESSAGES/kmahjongg.mo
 share/metainfo/org.kde.kmahjongg.appdata.xml
+share/qlogging-categories5/kmahjongg.categories

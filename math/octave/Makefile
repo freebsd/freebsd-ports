@@ -2,7 +2,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -119,6 +119,7 @@ pre-configure:
 
 post-install:
 	(cd ${STAGEDIR}${DATADIR} && ${LN} -s ${PORTVERSION}/imagelib  .)
+	${RM} -r ${STAGEDIR}${DATADIR}/${PORTVERSION}/etc/tests/fixed/${WRKDIR:C+/++:C+/.*++}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

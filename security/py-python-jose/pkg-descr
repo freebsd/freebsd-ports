@@ -1,6 +1,6 @@
 A JOSE implementation in Python
 
-The JavaScript Object Signing and Encryption (JOSE) technologies - JSON Web 
+The JavaScript Object Signing and Encryption (JOSE) technologies - JSON Web
 Signature (JWS), JSON Web Encryption (JWE), JSON Web Key (JWK), and JSON Web
 Algorithms (JWA) - collectively can be used to encrypt and/or sign content
 using a variety of algorithms. While the full set of permutations is extremely

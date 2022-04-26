@@ -1,5 +1,6 @@
 PORTNAME=	replex
 PORTVERSION=	0.1.6.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/dinoex
@@ -21,8 +22,6 @@ PORTDOCS=	CHANGES README TODO
 .endif
 
 post-patch:
-	@${GREP} -lR "<stdint\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<stdint\.h>|<inttypes.h>|g'
 	@${REINPLACE_CMD} -e 's|-m32||' -e \
 		's|-L. -lreplex|libreplex.a $${LIBS}|g' ${WRKSRC}/Makefile
 

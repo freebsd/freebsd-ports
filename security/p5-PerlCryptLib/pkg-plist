@@ -1,5 +1,5 @@
-%%PERL5_MAN3%%/PerlCryptLib.3.gz
 %%SITE_ARCH%%/PerlCryptLib.ph
 %%SITE_ARCH%%/PerlCryptLib.pm
 %%SITE_ARCH%%/auto/PerlCryptLib/PerlCryptLib.so
 %%SITE_ARCH%%/auto/PerlCryptLib/autosplit.ix
+%%PERL5_MAN3%%/PerlCryptLib.3.gz

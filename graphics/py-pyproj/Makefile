@@ -1,7 +1,8 @@
 # Created by: TAOKA Fumiyoshi
 
 PORTNAME=	pyproj
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +13,9 @@ COMMENT=	Cython wrapper to provide python interfaces to PROJ.4 functions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	proj>=7.2.0,1:graphics/proj
+BUILD_DEPENDS=	proj>=8.0.0,1:graphics/proj
 LIB_DEPENDS=	libproj.so:graphics/proj
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent cython distutils

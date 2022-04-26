@@ -1,6 +1,5 @@
 PORTNAME=	ros-urdfdom
-DISTVERSION=	1.0.4
-PORTREVISION=	1
+DISTVERSION=	3.0.2
 CATEGORIES=	devel
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -8,10 +7,10 @@ COMMENT=	Unified Robot Description Format (URDF) parsers
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	ros-urdfdom_headers>0:devel/ros-urdfdom_headers
+BUILD_DEPENDS=	ros-urdfdom_headers>=1.0.6:devel/ros-urdfdom_headers
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libconsole_bridge.so:devel/ros-console_bridge
-RUN_DEPENDS=	ros-urdfdom_headers>0:devel/ros-urdfdom_headers
+RUN_DEPENDS=	ros-urdfdom_headers>=1.0.6:devel/ros-urdfdom_headers
 
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes

@@ -9,6 +9,9 @@ COMMENT=	Espeak dialplan application for Asterisk
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on deprecated audio/espeaak
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	libespeak.so:audio/espeak \
 		libsamplerate.so:audio/libsamplerate
 

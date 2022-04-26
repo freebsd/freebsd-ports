@@ -20,6 +20,18 @@
  #include "P2_Handler.hpp"
  
  #include "MD5.h"
+@@ -679,9 +681,9 @@ void P2_MetaHandler::SetStartTimecodeFromLegacyXML ( X
+ 
+ 				} else if ( p2FrameRate == "59.94p" ) {
+ 
+-					if ( p2DropFrameFlag == "true" ) {
++					if ( std::strcmp ( p2DropFrameFlag, "true" ) == 0 ) {
+ 						dmTimeFormat = "5994DropTimecode";
+-					} else if ( p2DropFrameFlag == "false" ) {
++					} else if ( std::strcmp ( p2DropFrameFlag, "false" ) == 0 ) {
+ 						dmTimeFormat = "5994NonDropTimecode";
+ 					}
+ 
 --- XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/SonyHDV_Handler.cpp	2008-10-06 07:18:56 UTC
 +++ XMP-Toolkit-SDK-4.4.2/source/XMPFiles/FileHandlers/SonyHDV_Handler.cpp
 @@ -7,6 +7,8 @@

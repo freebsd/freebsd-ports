@@ -5,7 +5,6 @@ lib/scidavis/plugins/libexplin.so
 lib/scidavis/plugins/libfitRational0.so
 lib/scidavis/plugins/libfitRational1.so
 lib/scidavis/plugins/libplanck_wavelength.so
-share/appdata/scidavis.appdata.xml
 share/applications/scidavis.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
@@ -22,6 +21,7 @@ share/icons/locolor/16x16/apps/scidavis.png
 share/icons/locolor/22x22/apps/scidavis.png
 share/icons/locolor/32x32/apps/scidavis.png
 share/man/man1/scidavis.1.gz
+share/metainfo/scidavis.appdata.xml
 share/mime/packages/scidavis.xml
 share/mimelnk/application/x-sciprj.desktop
 %%PYTHON%%%%DATADIR%%/scidavisUtil.py
@@ -34,6 +34,5 @@ share/mimelnk/application/x-sciprj.desktop
 %%NLS%%%%DATADIR%%/translations/scidavis_pl.qm
 %%NLS%%%%DATADIR%%/translations/scidavis_pt-br.qm
 %%NLS%%%%DATADIR%%/translations/scidavis_ru.qm
-%%NLS%%%%DATADIR%%/translations/scidavis_sv.qm
 %%NLS%%%%DATADIR%%/translations/scidavis_zh-cn.qm
 %%NLS%%%%DATADIR%%/translations/scidavis_zh-tw.qm

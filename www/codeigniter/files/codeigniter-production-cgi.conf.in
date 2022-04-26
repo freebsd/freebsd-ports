@@ -6,12 +6,6 @@ Action php-script %%PHPCGI%%
 AddHandler php-script .php
  
 DocumentRoot %%WWWDIR%%
-%%HASHMARK%%Alias /user_guide %%DOCSDIR%%
-
-%%HASHMARK%%<Location /user_guide>
-%%HASHMARK%%    Order deny,allow
-%%HASHMARK%%    Allow from all
-%%HASHMARK%%</Location>
 
 <Location />
     Order deny,allow

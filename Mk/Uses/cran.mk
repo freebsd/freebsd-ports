@@ -27,49 +27,49 @@ WRKSRC?=	${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 R_COMMAND=	${LOCALBASE}/bin/R
 
-.if !target(do-test)
+.  if !target(do-test)
 R_POSTCMD_CHECK_OPTIONS?=	--timings
 
-.if !exists(${LOCALBASE}/bin/pdflatex)
+.    if !exists(${LOCALBASE}/bin/pdflatex)
 R_POSTCMD_CHECK_OPTIONS+=	--no-manual --no-build-vignettes
-.endif
+.    endif
 
 do-test:
 	@${FIND} ${WRKSRC} \( -name '*.o' -o -name '*.so' \) -delete
 	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE \
 	${R_COMMAND} ${R_PRECMD_CHECK_OPTIONS} CMD check \
 	${R_POSTCMD_CHECK_OPTIONS} ${PORTNAME}
-.endif
+.  endif
 
-.if !target(do-install)
+.  if !target(do-install)
 R_POSTCMD_INSTALL_OPTIONS+=	-l ${STAGEDIR}${PREFIX}/${R_LIB_DIR}
 R_POSTCMD_INSTALL_OPTIONS+=	--install-tests
 
-.if empty(PORT_OPTIONS:MDOCS)
+.    if empty(PORT_OPTIONS:MDOCS)
 R_POSTCMD_INSTALL_OPTIONS+=	--no-docs --no-html
-.endif
+.    endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${R_LIB_DIR}
 	@cd ${WRKDIR} ; ${SETENV} ${MAKE_ENV} ${R_COMMAND} \
 	${R_PRECMD_INSTALL_OPTIONS} CMD INSTALL \
 	${R_POSTCMD_INSTALL_OPTIONS} ${PORTNAME}
-.endif
+.  endif
 
-.if ${cran_ARGS:Mauto-plist}
+.  if ${cran_ARGS:Mauto-plist}
 _USES_install+=	750:cran-auto-plist
 cran-auto-plist:
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${R_MOD_DIR} \( -type f -or -type l \) -print | \
 		${SED} -E -e 's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
-.endif
+.  endif
 
-.if ${cran_ARGS:Mcompiles}
+.  if ${cran_ARGS:Mcompiles}
 _USES_install+= 755:cran-strip
 cran-strip:
 	${FIND} ${STAGEDIR}${PREFIX}/${R_MOD_DIR} -name '*.so' -exec ${STRIP_CMD} {} +
 .include "${USESDIR}/fortran.mk"
-.else
+.  else
 NO_ARCH=	yes
-.endif
+.  endif
 
 .endif #_INCLUDE_USES_CRAN_MK

@@ -10,6 +10,9 @@ COMMENT=	MPEG transport, program, and elementary stream tools
 
 LICENSE=	MPL11
 
+DEPRECATED=	Obsolete, please consider using multimedia/ffmpeg
+EXPIRATION_DATE=2022-06-30
+
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		gmake tar:tgz

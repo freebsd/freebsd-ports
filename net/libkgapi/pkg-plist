@@ -1,4 +1,3 @@
-share/qlogging-categories5/libkgapi.categories
 include/KPim/KGAPI/KGAPI/Account
 include/KPim/KGAPI/KGAPI/AccountInfo
 include/KPim/KGAPI/KGAPI/AccountInfoFetchJob
@@ -355,3 +354,4 @@ share/locale/ug/LC_MESSAGES/libkgapi_qt.qm
 share/locale/uk/LC_MESSAGES/libkgapi_qt.qm
 share/locale/zh_CN/LC_MESSAGES/libkgapi_qt.qm
 share/locale/zh_TW/LC_MESSAGES/libkgapi_qt.qm
+share/qlogging-categories5/libkgapi.categories

@@ -1,6 +1,6 @@
 PORTNAME=	cucumber
 PORTVERSION=	7.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,9 +14,9 @@ RUN_DEPENDS=	rubygem-builder>=3.2.4<4:devel/rubygem-builder \
 		rubygem-cucumber-core>=10.1.0<11:devel/rubygem-cucumber-core \
 		rubygem-cucumber-create-meta>=6.0.1<7:devel/rubygem-cucumber-create-meta \
 		rubygem-cucumber-cucumber-expressions14>=14.0.0<15:devel/rubygem-cucumber-cucumber-expressions14 \
-		rubygem-cucumber-gherkin>=22.0.0<23:textproc/rubygem-cucumber-gherkin \
+		rubygem-cucumber-gherkin22>=22.0.0<23:textproc/rubygem-cucumber-gherkin22 \
 		rubygem-cucumber-html-formatter17>=17.0.0<18:textproc/rubygem-cucumber-html-formatter17 \
-		rubygem-cucumber-messages>=17.1.1<18:devel/rubygem-cucumber-messages \
+		rubygem-cucumber-messages17>=17.1.1<18:devel/rubygem-cucumber-messages17 \
 		rubygem-cucumber-wire>=6.2.0<7:devel/rubygem-cucumber-wire \
 		rubygem-diff-lcs>=1.4.4<2:textproc/rubygem-diff-lcs \
 		rubygem-mime-types>=3.3.1<4:misc/rubygem-mime-types \

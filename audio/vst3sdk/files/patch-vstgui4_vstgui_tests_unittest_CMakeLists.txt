@@ -1,6 +1,6 @@
---- vstgui4/vstgui/tests/unittest/CMakeLists.txt.orig	2021-03-22 20:23:26 UTC
+--- vstgui4/vstgui/tests/unittest/CMakeLists.txt.orig	2021-12-07 16:20:00 UTC
 +++ vstgui4/vstgui/tests/unittest/CMakeLists.txt
-@@ -116,7 +116,7 @@ if(UNIX AND NOT CMAKE_HOST_APPLE)
+@@ -118,7 +118,7 @@ if(UNIX AND NOT CMAKE_HOST_APPLE)
  	)
  	set(${target}_PLATFORM_LIBS
  		${LINUX_LIBRARIES}

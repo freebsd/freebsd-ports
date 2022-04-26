@@ -70,6 +70,7 @@
     SUBDIR += py-FreeBSD-ports
     SUBDIR += py-pytoport
     SUBDIR += py-skog
+    SUBDIR += reprise
     SUBDIR += sccache-overlay
     SUBDIR += synth
     SUBDIR += wanted-ports

@@ -1,7 +1,7 @@
 # Created by: Michael Vasilenko <acid@stu.cn.ua>
 
 PORTNAME=	links
-PORTVERSION=	2.25
+PORTVERSION=	2.26
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	links-0* links-hacked links1
+
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --without-pmshell --without-atheos \
@@ -70,14 +72,17 @@ CIPHERSTRING?=	HIGH:!SSLv2:!aNULL:!eNULL:@STRENGTH
 
 .if ${PORT_OPTIONS:MDIRECTFB} || ${PORT_OPTIONS:MSVGALIB} || ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	libpng.so:graphics/png \
-		libtiff.so:graphics/tiff
+		libtiff.so:graphics/tiff \
+		libwebp.so:graphics/webp
 USES+=		jpeg pkgconfig
 CONFIGURE_ARGS+=	--enable-graphics
 .else
 .if ${PORT_OPTIONS:MSVG}
 IGNORE=	option SVG requires one of DIRECTFB, SVGALIB, or X11
 .endif
-CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg --without-libtiff
+CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg \
+			--without-librsvg --without-libtiff \
+			--without-libwebp
 .endif
 
 .if ${PORT_OPTIONS:MX11}

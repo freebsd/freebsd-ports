@@ -1,0 +1,2038 @@
+--- paida/math/array/matrix.py.orig	2022-03-18 21:34:04 UTC
++++ paida/math/array/matrix.py
+@@ -12,8 +12,8 @@ class matrix:
+ 		if hasattr(data, '__iter__'):
+ 			if not hasattr(data[0], '__iter__'):
+ 				data = [data]
+-			self._indicesR = range(len(data))
+-			self._indicesC = range(len(data[0]))
++			self._indicesR = list(range(len(data)))
++			self._indicesC = list(range(len(data[0])))
+ 			self.data = copy.deepcopy(data)
+ 
+ 	def _createCopyLinked(self, indicesR, indicesC):
+@@ -35,7 +35,7 @@ class matrix:
+ 		return matrix(data = result)
+ 
+ 	def _format(self, data):
+-		return `data`
++		return repr(data)
+ 
+ 	def __str__(self):
+ 		if len(self._indicesR) == 1:
+@@ -574,7 +574,7 @@ class matrix:
+ 			V, H, ort = self._orthes(V, H, ort)
+ 			d, e, V, H = self._hqr2(d, e, V, H)
+ 
+-		eigenvalues = zip(d, e)
++		eigenvalues = list(zip(d, e))
+ 		eigenvectors = []
+ 		for j in range(n):
+ 			eigenvector = []
+--- paida/math/optimize/pyoptimize.py.orig	2022-03-18 21:34:04 UTC
++++ paida/math/optimize/pyoptimize.py
+@@ -55,7 +55,7 @@ def _constraint(evaluatorParameterSpace, constraints):
+ 	for constraint in constraints:
+ 		### Jython2.1 doesn't understand exec(code, globals(), locals()) properly.
+ 		#eval(constraint, _normalNameSpace, evaluatorParameterSpace)
+-		exec constraint in _normalNameSpace, evaluatorParameterSpace
++		exec(constraint, _normalNameSpace, evaluatorParameterSpace)
+ 
+ def copyEvaluatorParameterSpace(evaluatorParameterSpace):
+ 	newEvaluatorParameterSpace = evaluatorParameterSpace.copy()
+@@ -261,7 +261,7 @@ def fmin_ncg(evaluatorValue, evaluatorGradient, evalua
+ 			break
+ 
+ 		### Compute a search direction by applying the CG method.
+-		gradient = map(evaluatorGradient, [evaluatorParameterSpace] * nFreeParameters, freeIndices)
++		gradient = list(map(evaluatorGradient, [evaluatorParameterSpace] * nFreeParameters, freeIndices))
+ 		maggrad = 0.0
+ 		psupi = []
+ 		dri0 = 0.0
+@@ -364,16 +364,16 @@ def fmin_ncg(evaluatorValue, evaluatorGradient, evalua
+ 		warnflag = 1
+ 		mesg = "Maximum number of iterations has been exceeded."
+ 		if display:
+-			print mesg
+-			print "\tCurrent function value: %f" % fval
+-			print "\tIterations: %d" % nIterations
++			print(mesg)
++			print("\tCurrent function value: %f" % fval)
++			print("\tIterations: %d" % nIterations)
+ 	else:
+ 		warnflag = 0
+ 		mesg = "Optimization terminated successfully."
+ 		if display:
+-			print mesg
+-			print "\tCurrent function value: %f" % fval
+-			print "\tIterations: %d" % nIterations
++			print(mesg)
++			print("\tCurrent function value: %f" % fval)
++			print("\tIterations: %d" % nIterations)
+ 
+ 	return fval, hessian, warnflag, mesg
+ 
+@@ -492,7 +492,7 @@ def geneticAlgorithm(evaluatorValue, evaluatorGradient
+ 						island2.terminate()
+ 					fval, hessian, warnflag, mesg = result
+ 					if display:
+-						print mesg
++						print(mesg)
+ 					threadEvaluatorParameterSpace = island.getEvaluatorParameterSpace()
+ 					_i2o(threadEvaluatorParameterSpace, limits, freeIndices, freeParameterNames)
+ 					updateEvaluatorParameterSpace(threadEvaluatorParameterSpace, evaluatorParameterSpace)
+@@ -514,7 +514,7 @@ def geneticAlgorithm(evaluatorValue, evaluatorGradient
+ 					warnflag = 1
+ 					mesg = "Maximum number of iterations has been exceeded."
+ 					if display:
+-						print mesg
++						print(mesg)
+ 					threadEvaluatorParameterSpace = island.getEvaluatorParameterSpace()
+ 					_i2o(threadEvaluatorParameterSpace, limits, freeIndices, freeParameterNames)
+ 					updateEvaluatorParameterSpace(threadEvaluatorParameterSpace, evaluatorParameterSpace)
+@@ -782,8 +782,8 @@ class _Island(threading.Thread):
+ 					islanders[migratorIndex] = migrators[i]
+ 
+ 			if display:
+-				print self, generation
+-				print best, evaluationMinimum / ndf
++				print(self, generation)
++				print(best, evaluationMinimum / ndf)
+ 
+ 		condition = migrationService.getCondition()
+ 		condition.acquire()
+--- paida/math/pylapack/ilaenv.py.orig	2022-03-18 21:34:04 UTC
++++ paida/math/pylapack/ilaenv.py
+@@ -211,7 +211,7 @@ def ilaenv(ispec, name, opts, n1, n2, n3, n4):
+ 		c3 = subnam[3:6]
+ 		c4 = c3[1:3]
+ 		error = 'ilaenv(ispec = %d) is not implemented yet.' % ispec
+-		print error
++		print(error)
+ 		raise error
+ 	elif ispec == 3:
+ 		subnam = name.upper()
+@@ -224,39 +224,39 @@ def ilaenv(ispec, name, opts, n1, n2, n3, n4):
+ 		c3 = subnam[3:6]
+ 		c4 = c3[1:3]
+ 		error = 'ilaenv(ispec = %d) is not implemented yet.' % ispec
+-		print error
++		print(error)
+ 		raise error
+ 	elif ispec == 4:
+ 		error = 'ilaenv(ispec = %d) is not implemented yet.' % ispec
+-		print error
++		print(error)
+ 		raise error
+ 	elif ispec == 5:
+ 		error = 'ilaenv(ispec = %d) is not implemented yet.' % ispec
+-		print error
++		print(error)
+ 		raise error
+ 	elif ispec == 6:
+ 		error = 'ilaenv(ispec = %d) is not implemented yet.' % ispec
+-		print error
++		print(error)
+ 		raise error
+ 	elif ispec == 7:
+ 		error = 'ilaenv(ispec = %d) is not implemented yet.' % ispec
+-		print error
++		print(error)
+ 		raise error
+ 	elif ispec == 8:
+ 		error = 'ilaenv(ispec = %d) is not implemented yet.' % ispec
+-		print error
++		print(error)
+ 		raise error
+ 	elif ispec == 9:
+ 		error = 'ilaenv(ispec = %d) is not implemented yet.' % ispec
+-		print error
++		print(error)
+ 		raise error
+ 	elif ispec == 10:
+ 		error = 'ilaenv(ispec = %d) is not implemented yet.' % ispec
+-		print error
++		print(error)
+ 		raise error
+ 	elif ispec == 11:
+ 		error = 'ilaenv(ispec = %d) is not implemented yet.' % ispec
+-		print error
++		print(error)
+ 		raise error
+ 	else:
+ 		return -1
+--- paida/math/pylapack/pyblas/xerbla.py.orig	2022-03-18 21:34:04 UTC
++++ paida/math/pylapack/pyblas/xerbla.py
+@@ -31,5 +31,5 @@ def xerbla(srname, info):
+ 	The position of the invalid parameter in the parameter list of the calling routine.
+ 	"""
+ 	
+-	print ' ** On entry to %s parameter number %d had an illegal value' % (srname, info[0])
++	print(' ** On entry to %s parameter number %d had an illegal value' % (srname, info[0]))
+ 	raise stop()
+--- paida/paida_core/IBaseStyle.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/IBaseStyle.py
+@@ -6,7 +6,7 @@ import types
+ class _convertException:
+ 	def __init__(self, message=None):
+ 		if message != None:
+-			print message
++			print(message)
+ 
+ class baseParameter:
+ 	def __init__(self, default):
+@@ -39,11 +39,11 @@ class listParameter(baseParameter):
+ 		baseParameter.__init__(self, default)
+ 
+ 	def convert(self, dataString):
+-		if isinstance(dataString, types.StringTypes):
++		if isinstance(dataString, (str,)):
+ 			return list(eval(dataString))
+-		elif isinstance(dataString, types.ListType):
++		elif isinstance(dataString, list):
+ 			return dataString
+-		elif isinstance(dataString, types.TupleType):
++		elif isinstance(dataString, tuple):
+ 			return list(dataString)
+ 		else:
+ 			raise _convertException('The parameter was not converted to list type.')
+@@ -216,7 +216,7 @@ class IBaseStyle:
+ 		return self._parameters[parameterName]
+ 
+ 	def availableParameters(self):
+-		names = self._parameters.keys()
++		names = list(self._parameters.keys())
+ 		names.sort()
+ 		return names
+ 
+@@ -262,5 +262,5 @@ class IBaseStyle:
+ 
+ 
+ import paida.paida_gui.PRoot
+-if not locals().has_key('fontList'):
++if 'fontList' not in locals():
+ 	fontList, defaultFont = paida.paida_gui.PRoot.getFontList(['Courier', 'courier'])
+--- paida/paida_core/IFilter.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/IFilter.py
+@@ -28,7 +28,7 @@ class IFilter:
+ 			return bool(eval(self._code, self._globals, {'_row': self._tupleRows[self._tupleObject._rowIndex]}))
+ 		else:
+ 			if self._count >= self._rowsToProcess:
+-				raise IndexError, "Reached to the specified rowsToProcess."
++				raise IndexError("Reached to the specified rowsToProcess.")
+ 			else:
+ 				self._count += 1
+ 				return bool(eval(self._code, self._globals, {'_row': self._tupleRows[self._tupleObject._rowIndex]}))
+--- paida/paida_core/IFitter.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/IFitter.py
+@@ -83,12 +83,12 @@ class IFitter:
+ 		return self._fitMethod
+ 
+ 	def fitParameterSettings(self, name):
+-		if not self._fitParameterSettings.has_key(name):
++		if name not in self._fitParameterSettings:
+ 			self._fitParameterSettings[name] = IFitParameterSettings(name)
+ 		return self._fitParameterSettings[name]
+ 
+ 	def listParameterSettings(self):
+-		return self._fitParameterSettings.keys()
++		return list(self._fitParameterSettings.keys())
+ 
+ 	def resetParameterSettings(self):
+ 		self._fitParameterSettings = {}
+@@ -139,13 +139,13 @@ class IFitter:
+ 			self._checkFitType(fitData)
+ 			_function = data2
+ 			guessed = False
+-		elif isinstance(data1, IFitData) and isinstance(data2, types.StringTypes) and (data3 == None):
++		elif isinstance(data1, IFitData) and isinstance(data2, (str,)) and (data3 == None):
+ 			fitData = data1
+ 			self._checkFitType(fitData)
+ 			_functionFactory = IFunctionFactory(None)
+ 			_function = _functionFactory.createFunctionByName(data2, data2, inner = True)
+ 			guessed = False
+-		elif isinstance(data1, IFitData) and isinstance(data2, types.StringTypes) and hasattr(data3, '__iter__'):
++		elif isinstance(data1, IFitData) and isinstance(data2, (str,)) and hasattr(data3, '__iter__'):
+ 			fitData = data1
+ 			self._checkFitType(fitData)
+ 			_functionFactory = IFunctionFactory(None)
+@@ -186,84 +186,84 @@ class IFitter:
+ 			fitData.create3DConnection(data1)
+ 			return self.fit(fitData, data2)
+ 
+-		elif isinstance(data1, IHistogram1D) and isinstance(data2, types.StringTypes) and (data3 == None):
++		elif isinstance(data1, IHistogram1D) and isinstance(data2, (str,)) and (data3 == None):
+ 			fitData = IFitData()
+ 			fitData.create1DConnection(data1)
+ 			return self.fit(fitData, data2)
+-		elif isinstance(data1, IProfile1D) and isinstance(data2, types.StringTypes) and (data3 == None):
++		elif isinstance(data1, IProfile1D) and isinstance(data2, (str,)) and (data3 == None):
+ 			fitData = IFitData()
+ 			fitData.create1DConnection(data1)
+ 			return self.fit(fitData, data2)
+-		elif isinstance(data1, ICloud1D) and isinstance(data2, types.StringTypes) and (data3 == None):
++		elif isinstance(data1, ICloud1D) and isinstance(data2, (str,)) and (data3 == None):
+ 			fitData = IFitData()
+ 			fitData.create1DConnection(data1)
+ 			return self.fit(fitData, data2)
+-		elif isinstance(data1, IHistogram2D) and isinstance(data2, types.StringTypes) and (data3 == None):
++		elif isinstance(data1, IHistogram2D) and isinstance(data2, (str,)) and (data3 == None):
+ 			fitData = IFitData()
+ 			fitData.create2DConnection(data1)
+ 			return self.fit(fitData, data2)
+-		elif isinstance(data1, IProfile2D) and isinstance(data2, types.StringTypes) and (data3 == None):
++		elif isinstance(data1, IProfile2D) and isinstance(data2, (str,)) and (data3 == None):
+ 			fitData = IFitData()
+ 			fitData.create2DConnection(data1)
+ 			return self.fit(fitData, data2)
+-		elif isinstance(data1, ICloud2D) and isinstance(data2, types.StringTypes) and (data3 == None):
++		elif isinstance(data1, ICloud2D) and isinstance(data2, (str,)) and (data3 == None):
+ 			fitData = IFitData()
+ 			fitData.create2DConnection(data1)
+ 			return self.fit(fitData, data2)
+-		elif isinstance(data1, IHistogram3D) and isinstance(data2, types.StringTypes) and (data3 == None):
++		elif isinstance(data1, IHistogram3D) and isinstance(data2, (str,)) and (data3 == None):
+ 			fitData = IFitData()
+ 			fitData.create3DConnection(data1)
+ 			return self.fit(fitData, data2)
+-		elif isinstance(data1, ICloud3D) and isinstance(data2, types.StringTypes) and (data3 == None):
++		elif isinstance(data1, ICloud3D) and isinstance(data2, (str,)) and (data3 == None):
+ 			fitData = IFitData()
+ 			fitData.create3DConnection(data1)
+ 			return self.fit(fitData, data2)
+ 
+-		elif isinstance(data1, IHistogram1D) and isinstance(data2, types.StringTypes) and hasattr(data3, '__iter__'):
++		elif isinstance(data1, IHistogram1D) and isinstance(data2, (str,)) and hasattr(data3, '__iter__'):
+ 			fitData = IFitData()
+ 			fitData.create1DConnection(data1)
+ 			return self.fit(fitData, data2, data3)
+-		elif isinstance(data1, IProfile1D) and isinstance(data2, types.StringTypes) and hasattr(data3, '__iter__'):
++		elif isinstance(data1, IProfile1D) and isinstance(data2, (str,)) and hasattr(data3, '__iter__'):
+ 			fitData = IFitData()
+ 			fitData.create1DConnection(data1)
+ 			return self.fit(fitData, data2, data3)
+-		elif isinstance(data1, ICloud1D) and isinstance(data2, types.StringTypes) and hasattr(data3, '__iter__'):
++		elif isinstance(data1, ICloud1D) and isinstance(data2, (str,)) and hasattr(data3, '__iter__'):
+ 			fitData = IFitData()
+ 			fitData.create1DConnection(data1)
+ 			return self.fit(fitData, data2, data3)
+-		elif isinstance(data1, IHistogram2D) and isinstance(data2, types.StringTypes) and hasattr(data3, '__iter__'):
++		elif isinstance(data1, IHistogram2D) and isinstance(data2, (str,)) and hasattr(data3, '__iter__'):
+ 			fitData = IFitData()
+ 			fitData.create2DConnection(data1)
+ 			return self.fit(fitData, data2, data3)
+-		elif isinstance(data1, IProfile2D) and isinstance(data2, types.StringTypes) and hasattr(data3, '__iter__'):
++		elif isinstance(data1, IProfile2D) and isinstance(data2, (str,)) and hasattr(data3, '__iter__'):
+ 			fitData = IFitData()
+ 			fitData.create2DConnection(data1)
+ 			return self.fit(fitData, data2, data3)
+-		elif isinstance(data1, ICloud2D) and isinstance(data2, types.StringTypes) and hasattr(data3, '__iter__'):
++		elif isinstance(data1, ICloud2D) and isinstance(data2, (str,)) and hasattr(data3, '__iter__'):
+ 			fitData = IFitData()
+ 			fitData.create2DConnection(data1)
+ 			return self.fit(fitData, data2, data3)
+-		elif isinstance(data1, IHistogram3D) and isinstance(data2, types.StringTypes) and hasattr(data3, '__iter__'):
++		elif isinstance(data1, IHistogram3D) and isinstance(data2, (str,)) and hasattr(data3, '__iter__'):
+ 			fitData = IFitData()
+ 			fitData.create3DConnection(data1)
+ 			return self.fit(fitData, data2, data3)
+-		elif isinstance(data1, ICloud3D) and isinstance(data2, types.StringTypes) and hasattr(data3, '__iter__'):
++		elif isinstance(data1, ICloud3D) and isinstance(data2, (str,)) and hasattr(data3, '__iter__'):
+ 			fitData = IFitData()
+ 			fitData.create3DConnection(data1)
+ 			return self.fit(fitData, data2, data3)
+ 
+ 		elif isinstance(data1, IDataPointSet) and isinstance(data2, IFunction) and (data3 == None):
+-			indices = range(data1.dimension())
++			indices = list(range(data1.dimension()))
+ 			fitData = IFitData()
+ 			fitData.createConnection(data1, indices[:-1], indices[-1])
+ 			return self.fit(fitData, data2)
+-		elif isinstance(data1, IDataPointSet) and isinstance(data2, types.StringTypes) and (data3 == None):
+-			indices = range(data1.dimension())
++		elif isinstance(data1, IDataPointSet) and isinstance(data2, (str,)) and (data3 == None):
++			indices = list(range(data1.dimension()))
+ 			fitData = IFitData()
+ 			fitData.createConnection(data1, indices[:-1], indices[-1])
+ 			return self.fit(fitData, data2)
+-		elif isinstance(data1, IDataPointSet) and isinstance(data2, types.StringTypes) and hasattr(data3, '__iter__'):
+-			indices = range(data1.dimension())
++		elif isinstance(data1, IDataPointSet) and isinstance(data2, (str,)) and hasattr(data3, '__iter__'):
++			indices = list(range(data1.dimension()))
+ 			fitData = IFitData()
+ 			fitData.createConnection(data1, indices[:-1], indices[-1])
+ 			return self.fit(fitData, data2, data3)
+@@ -362,7 +362,7 @@ class IFitter:
+ 				raise RuntimeError()
+ 
+ 			### Verbose mode?
+-			if self._option.has_key('verbose'):
++			if 'verbose' in self._option:
+ 				if self._option['verbose'] == True:
+ 					verbose = True
+ 				else:
+@@ -376,7 +376,7 @@ class IFitter:
+ 			elif engineName in ['SimpleGA', 'GA']:
+ 				minimum, hessian, warnflag, mesg = geneticAlgorithm(evaluatorValue, evaluatorGradient, evaluatorHessian, evaluatorParameterSpace, freeParameterNames, limits, constraints, freeIndices, fixedIndices, ndf, display = verbose)
+ 			else:
+-				raise RuntimeError, 'Unknown engine name:', engineName
++				raise RuntimeError('Unknown engine name:').with_traceback(engineName)
+ 			resultValues = _function.parameters()
+ 
+ 			### Is valid?
+@@ -540,7 +540,7 @@ class IFitter:
+ 		for parameterIndex, parameterName in enumerate(function.parameterNames()):
+ 			parameterValue = function.parameter(parameterName)
+ 			### This parameter has any setting?
+-			if fitParameterSettings.has_key(parameterName):
++			if parameterName in fitParameterSettings:
+ 				setting = fitParameterSettings[parameterName]
+ 				### This parameter is fixed or bound?
+ 				if setting.isFixed():
+--- paida/paida_core/IFunction.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/IFunction.py
+@@ -89,7 +89,7 @@ class IFunction:
+ 			codeletList.append(expression)
+ 			codeletList.append('catalog')
+ 		else:
+-			raise ValueError, 'Unknown typeName "%s".' % typeName
++			raise ValueError('Unknown typeName "%s".' % typeName)
+ 		self._codeletString = ':'.join(codeletList)
+ 
+ 	def _getParentFactory(self):
+@@ -146,12 +146,12 @@ class IFunction:
+ 		for constraint in constraints:
+ 			### Jython2.1 doesn't understand exec(code, globals(), locals()) properly.
+ 			#eval(constraint, _normalNameSpace, parameterNameSpace)
+-			exec constraint in innerNameSpace, parameterNameSpace
++			exec(constraint, innerNameSpace, parameterNameSpace)
+ 		fp = eval(compiledDeriv0, innerNameSpace, parameterNameSpace)
+ 		parameterNameSpace.update(currents)
+ 		parameterNameSpace[parameterName] -= eps2
+ 		for constraint in constraints:
+-			exec constraint in innerNameSpace, parameterNameSpace
++			exec(constraint, innerNameSpace, parameterNameSpace)
+ 		fm = eval(compiledDeriv0, innerNameSpace, parameterNameSpace)
+ 		result = (fp - fm) / 2.0 / eps2
+ 		parameterNameSpace.update(currents)
+@@ -205,42 +205,42 @@ class IFunction:
+ 
+ 		if parameterIndex1 == parameterIndex2:
+ 			for constraint in constraints:
+-				exec constraint in innerNameSpace, parameterNameSpace
++				exec(constraint, innerNameSpace, parameterNameSpace)
+ 			fc = eval(compiledDeriv0, innerNameSpace, parameterNameSpace)
+ 			parameterNameSpace.update(currents)
+ 			parameterNameSpace[parameterName1] += eps
+ 			for constraint in constraints:
+-				exec constraint in innerNameSpace, parameterNameSpace
++				exec(constraint, innerNameSpace, parameterNameSpace)
+ 			fp = eval(compiledDeriv0, innerNameSpace, parameterNameSpace)
+ 			parameterNameSpace.update(currents)
+ 			parameterNameSpace[parameterName1] -= eps
+ 			for constraint in constraints:
+-				exec constraint in innerNameSpace, parameterNameSpace
++				exec(constraint, innerNameSpace, parameterNameSpace)
+ 			fm = eval(compiledDeriv0, innerNameSpace, parameterNameSpace)
+ 			result = (fp + fm - 2.0 * fc) / eps**2
+ 		else:
+ 			parameterNameSpace[parameterName1] += eps
+ 			parameterNameSpace[parameterName2] += eps
+ 			for constraint in constraints:
+-				exec constraint in innerNameSpace, parameterNameSpace
++				exec(constraint, innerNameSpace, parameterNameSpace)
+ 			fpp = eval(compiledDeriv0, innerNameSpace, parameterNameSpace)
+ 			parameterNameSpace.update(currents)
+ 			parameterNameSpace[parameterName1] -= eps
+ 			parameterNameSpace[parameterName2] -= eps
+ 			for constraint in constraints:
+-				exec constraint in innerNameSpace, parameterNameSpace
++				exec(constraint, innerNameSpace, parameterNameSpace)
+ 			fmm = eval(compiledDeriv0, innerNameSpace, parameterNameSpace)
+ 			parameterNameSpace.update(currents)
+ 			parameterNameSpace[parameterName1] += eps
+ 			parameterNameSpace[parameterName2] -= eps
+ 			for constraint in constraints:
+-				exec constraint in innerNameSpace, parameterNameSpace
++				exec(constraint, innerNameSpace, parameterNameSpace)
+ 			fpm = eval(compiledDeriv0, innerNameSpace, parameterNameSpace)
+ 			parameterNameSpace.update(currents)
+ 			parameterNameSpace[parameterName1] -= eps
+ 			parameterNameSpace[parameterName2] += eps
+ 			for constraint in constraints:
+-				exec constraint in innerNameSpace, parameterNameSpace
++				exec(constraint, innerNameSpace, parameterNameSpace)
+ 			fmp = eval(compiledDeriv0, innerNameSpace, parameterNameSpace)
+ 			result = (fpp + fmm - fpm - fmp) / eps**2 / 4.0
+ 
+--- paida/paida_core/IFunctionFactory.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/IFunctionFactory.py
+@@ -311,7 +311,7 @@ class IFunctionFactory:
+ 
+ 	def _log(self, data):
+ 		if data._0 in self._zeros:
+-			raise ValueError, 'Called log(0.0).'
++			raise ValueError('Called log(0.0).')
+ 		elif data._1 in self._zeros:
+ 			_0 = 'log(%s)' % (data._0)
+ 			_1 = '0.0'
+@@ -424,7 +424,7 @@ class IFunctionFactory:
+ 		evalNameSpace = {}
+ 		eval2NameSpace = {}
+ 		evalExpression = ''
+-		functionNameList = innerNameSpace.keys()
++		functionNameList = list(innerNameSpace.keys())
+ 		try:
+ 			while 1:
+ 				item = parser.get_token()
+@@ -515,7 +515,7 @@ class IFunctionFactory:
+ 		parser = _Shlex(expression)
+ 		evalNameSpace = {}
+ 		evalExpression = ''
+-		functionNameList = innerNameSpace.keys()
++		functionNameList = list(innerNameSpace.keys())
+ 		try:
+ 			while 1:
+ 				item = parser.get_token()
+@@ -561,28 +561,28 @@ class IFunctionFactory:
+ 							if item in functionNameList:
+ 								item2 = parser.get_token()
+ 								if item2 != '.':
+-									raise RuntimeError, 'Expected "." but "%s".' % (item2)
++									raise RuntimeError('Expected "." but "%s".' % (item2))
+ 								item2 = parser.get_token()
+ 								if item2 != '_getDeriv1':
+-									raise RuntimeError, 'Expected "_getDeriv1" but "%s".' % (item2)
++									raise RuntimeError('Expected "_getDeriv1" but "%s".' % (item2))
+ 								item2 = parser.get_token()
+ 								if item2 != '(':
+-									raise RuntimeError, 'Expected "(" but "%s".' % (item2)
++									raise RuntimeError('Expected "(" but "%s".' % (item2))
+ 								item2 = parser.get_token()
+ 								if item2 != '_parameterNameSpace_':
+-									raise RuntimeError, 'Expected "_parameterNameSpace_" but "%s".' % (item2)
++									raise RuntimeError('Expected "_parameterNameSpace_" but "%s".' % (item2))
+ 								item2 = parser.get_token()
+ 								if item2 != ',':
+-									raise RuntimeError, 'Expected "," but "%s".' % (item2)
++									raise RuntimeError('Expected "," but "%s".' % (item2))
+ 								item2 = parser.get_token()
+ 								if item2 != ' ':
+-									raise RuntimeError, 'Expected " " but "%s".' % (item2)
++									raise RuntimeError('Expected " " but "%s".' % (item2))
+ 
+ 								deriv1Index = int(parser.get_token())
+ 
+ 								item2 = parser.get_token()
+ 								if item2 != ')':
+-									raise RuntimeError, 'Expected ")" but "%s".' % (item2)
++									raise RuntimeError('Expected ")" but "%s".' % (item2))
+ 
+ 								innerFunction = innerNameSpace[item]
+ 								if innerFunction._deriv1 == None:
+@@ -624,7 +624,7 @@ class IFunctionFactory:
+ 	def createFunctionByName(self, path, expression, parameterNamePrefix = None, inner = False):
+ 		parameterNames, dimension = self._getParameterNamesByName(expression)
+ 		if parameterNames == None:
+-			raise ValueError, 'The expression contains unknown function name.'
++			raise ValueError('The expression contains unknown function name.')
+ 		newParameterNames = []
+ 		for parameterName in parameterNames:
+ 			if parameterNamePrefix == None:
+@@ -655,7 +655,7 @@ class IFunctionFactory:
+ 		if inner == False:
+ 			if self._catalog.add(name, newFunction) == False:
+ 				### Catalogging failed.
+-				raise RuntimeError, 'Catalogging "%s" function failed.' % name
++				raise RuntimeError('Catalogging "%s" function failed.' % name)
+ 			self._tree._mkObject(path, newFunction)
+ 		return newFunction
+ 
+@@ -705,7 +705,7 @@ class IFunctionFactory:
+ 		if inner == False:
+ 			if self._catalog.add(name, newFunction) == False:
+ 				### Catalogging failed.
+-				raise RuntimeError, 'Catalogging "%s" function failed.' % name
++				raise RuntimeError('Catalogging "%s" function failed.' % name)
+ 			self._tree._mkObject(path, newFunction)
+ 		return newFunction
+ 
+--- paida/paida_core/IPlotter.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/IPlotter.py
+@@ -61,7 +61,7 @@ class IPlotter:
+ 		return self._parameters[parameterName]
+ 
+ 	def availableParameters(self):
+-		names = self._parameters.keys()
++		names = list(self._parameters.keys())
+ 		names.sort()
+ 		return names
+ 
+@@ -222,22 +222,22 @@ class IPlotter:
+ 				y = self._tabY
+ 				w = 1.0 - 2 * x
+ 				h = 1.0 - 2 * y
+-			elif (type(x) == types.FloatType) and (y == None) and (w == None) and (h == None):
++			elif (type(x) == float) and (y == None) and (w == None) and (h == None):
+ 				x = float(x)
+ 				y = self._tabY
+ 				w = 1.0 - x - self._tabX
+ 				h = 1.0 - 2 * y
+-			elif (type(x) == types.FloatType) and (type(y) == types.FloatType) and (w == None) and (h == None):
++			elif (type(x) == float) and (type(y) == float) and (w == None) and (h == None):
+ 				x = float(x)
+ 				y = float(y)
+ 				w = 1.0 - x - self._tabX
+ 				h = 1.0 - y - self._tabY
+-			elif (type(x) == types.FloatType) and (type(y) == types.FloatType) and (type(w) == types.FloatType) and (h == None):
++			elif (type(x) == float) and (type(y) == float) and (type(w) == float) and (h == None):
+ 				x = float(x)
+ 				y = float(y)
+ 				w = float(w)
+ 				h = 1.0 - y - self._tabY
+-			elif (type(x) == types.FloatType) and (type(y) == types.FloatType) and (type(w) == types.FloatType) and (type(h) == types.FloatType):
++			elif (type(x) == float) and (type(y) == float) and (type(w) == float) and (type(h) == float):
+ 				x = float(x)
+ 				y = float(y)
+ 				w = float(w)
+@@ -258,12 +258,12 @@ class IPlotter:
+ 			columns = 1
+ 			rows = 1
+ 			index = 0
+-		elif (type(columns) == types.IntType) and (rows == None) and (index == None):
++		elif (type(columns) == int) and (rows == None) and (index == None):
+ 			rows = 1
+ 			index = 0
+-		elif (type(columns) == types.IntType) and (type(rows) == types.IntType) and (index == None):
++		elif (type(columns) == int) and (type(rows) == int) and (index == None):
+ 			index = 0
+-		elif (type(columns) == types.IntType) and (type(rows) == types.IntType) and (type(index) == types.IntType):
++		elif (type(columns) == int) and (type(rows) == int) and (type(index) == int):
+ 			pass
+ 		else:
+ 			raise IllegalArgumentException()
+@@ -294,7 +294,7 @@ class IPlotter:
+ 		else:
+ 			raise IllegalArgumentException()
+ 
+-	def next(self):
++	def __next__(self):
+ 		self.setCurrentRegionNumber((self.currentRegionNumber() + 1) % self.numberOfRegions())
+ 		return self.currentRegion()
+ 
+@@ -389,7 +389,7 @@ class IPlotter:
+ 			self._getGuiPlotter().setImageWrite(fileName, self._parameterData('landscape'), fileType)
+ 
+ 		else:
+-			raise RuntimeError, 'Unknown GUI engine name "%s".' % engineName
++			raise RuntimeError('Unknown GUI engine name "%s".' % engineName)
+ 
+ 	def _postScriptCreate(self, fileName):
+ 		### Get postscript strings.
+@@ -467,7 +467,7 @@ class IPlotter:
+ 		self._getGuiPlotter().setTitle(title)
+ 
+ 	def setTitle(self, title):
+-		if type(title) in types.StringTypes:
++		if type(title) in (str,):
+ 			self._setWindowTitle(title)
+ 			tags = ['globalTitle']
+ 			guiPlotter = self._getGuiPlotter()
+--- paida/paida_core/IPlotterRegion.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/IPlotterRegion.py
+@@ -592,10 +592,10 @@ class IPlotterRegion:
+ 		elif (isinstance(data1, IHistogram1D)) and (isinstance(data2, IPlotterStyle)) and (data3 == None):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(None)
+-		elif (isinstance(data1, IHistogram1D)) and (type(data2) in types.StringTypes) and (data3 == None):
++		elif (isinstance(data1, IHistogram1D)) and (type(data2) in (str,)) and (data3 == None):
+ 			plotterStyle = self.style()
+ 			options = optionAnalyzer(data2)
+-		elif (isinstance(data1, IHistogram1D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in types.StringTypes):
++		elif (isinstance(data1, IHistogram1D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in (str,)):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(data3)
+ 
+@@ -605,10 +605,10 @@ class IPlotterRegion:
+ 		elif (isinstance(data1, IHistogram2D)) and (isinstance(data2, IPlotterStyle)) and (data3 == None):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(None)
+-		elif (isinstance(data1, IHistogram2D)) and (type(data2) in types.StringTypes) and (data3 == None):
++		elif (isinstance(data1, IHistogram2D)) and (type(data2) in (str,)) and (data3 == None):
+ 			plotterStyle = self.style()
+ 			options = optionAnalyzer(data2)
+-		elif (isinstance(data1, IHistogram2D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in types.StringTypes):
++		elif (isinstance(data1, IHistogram2D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in (str,)):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(data3)
+ 
+@@ -618,10 +618,10 @@ class IPlotterRegion:
+ 		elif (isinstance(data1, IHistogram3D)) and (isinstance(data2, IPlotterStyle)) and (data3 == None):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(None)
+-		elif (isinstance(data1, IHistogram3D)) and (type(data2) in types.StringTypes) and (data3 == None):
++		elif (isinstance(data1, IHistogram3D)) and (type(data2) in (str,)) and (data3 == None):
+ 			plotterStyle = self.style()
+ 			options = optionAnalyzer(data2)
+-		elif (isinstance(data1, IHistogram3D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in types.StringTypes):
++		elif (isinstance(data1, IHistogram3D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in (str,)):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(data3)
+ 
+@@ -631,10 +631,10 @@ class IPlotterRegion:
+ 		elif (isinstance(data1, ICloud1D)) and (isinstance(data2, IPlotterStyle)) and (data3 == None):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(None)
+-		elif (isinstance(data1, ICloud1D)) and (type(data2) in types.StringTypes) and (data3 == None):
++		elif (isinstance(data1, ICloud1D)) and (type(data2) in (str,)) and (data3 == None):
+ 			plotterStyle = self.style()
+ 			options = optionAnalyzer(data2)
+-		elif (isinstance(data1, ICloud1D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in types.StringTypes):
++		elif (isinstance(data1, ICloud1D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in (str,)):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(data3)
+ 
+@@ -644,10 +644,10 @@ class IPlotterRegion:
+ 		elif (isinstance(data1, ICloud2D)) and (isinstance(data2, IPlotterStyle)) and (data3 == None):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(None)
+-		elif (isinstance(data1, ICloud2D)) and (type(data2) in types.StringTypes) and (data3 == None):
++		elif (isinstance(data1, ICloud2D)) and (type(data2) in (str,)) and (data3 == None):
+ 			plotterStyle = self.style()
+ 			options = optionAnalyzer(data2)
+-		elif (isinstance(data1, ICloud2D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in types.StringTypes):
++		elif (isinstance(data1, ICloud2D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in (str,)):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(data3)
+ 
+@@ -657,10 +657,10 @@ class IPlotterRegion:
+ 		elif (isinstance(data1, ICloud3D)) and (isinstance(data2, IPlotterStyle)) and (data3 == None):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(None)
+-		elif (isinstance(data1, ICloud3D)) and (type(data2) in types.StringTypes) and (data3 == None):
++		elif (isinstance(data1, ICloud3D)) and (type(data2) in (str,)) and (data3 == None):
+ 			plotterStyle = self.style()
+ 			options = optionAnalyzer(data2)
+-		elif (isinstance(data1, ICloud3D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in types.StringTypes):
++		elif (isinstance(data1, ICloud3D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in (str,)):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(data3)
+ 
+@@ -670,10 +670,10 @@ class IPlotterRegion:
+ 		elif (isinstance(data1, IProfile1D)) and (isinstance(data2, IPlotterStyle)) and (data3 == None):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(None)
+-		elif (isinstance(data1, IProfile1D)) and (type(data2) in types.StringTypes) and (data3 == None):
++		elif (isinstance(data1, IProfile1D)) and (type(data2) in (str,)) and (data3 == None):
+ 			plotterStyle = self.style()
+ 			options = optionAnalyzer(data2)
+-		elif (isinstance(data1, IProfile1D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in types.StringTypes):
++		elif (isinstance(data1, IProfile1D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in (str,)):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(data3)
+ 
+@@ -683,10 +683,10 @@ class IPlotterRegion:
+ 		elif (isinstance(data1, IProfile2D)) and (isinstance(data2, IPlotterStyle)) and (data3 == None):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(None)
+-		elif (isinstance(data1, IProfile2D)) and (type(data2) in types.StringTypes) and (data3 == None):
++		elif (isinstance(data1, IProfile2D)) and (type(data2) in (str,)) and (data3 == None):
+ 			plotterStyle = self.style()
+ 			options = optionAnalyzer(data2)
+-		elif (isinstance(data1, IProfile2D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in types.StringTypes):
++		elif (isinstance(data1, IProfile2D)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in (str,)):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(data3)
+ 
+@@ -696,10 +696,10 @@ class IPlotterRegion:
+ 		elif (isinstance(data1, IFunction)) and (isinstance(data2, IPlotterStyle)) and (data3 == None):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(None)
+-		elif (isinstance(data1, IFunction)) and (type(data2) in types.StringTypes) and (data3 == None):
++		elif (isinstance(data1, IFunction)) and (type(data2) in (str,)) and (data3 == None):
+ 			plotterStyle = self.style()
+ 			options = optionAnalyzer(data2)
+-		elif (isinstance(data1, IFunction)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in types.StringTypes):
++		elif (isinstance(data1, IFunction)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in (str,)):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(data3)
+ 
+@@ -709,10 +709,10 @@ class IPlotterRegion:
+ 		elif (isinstance(data1, IDataPointSet)) and (isinstance(data2, IPlotterStyle)) and (data3 == None):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(None)
+-		elif (isinstance(data1, IDataPointSet)) and (type(data2) in types.StringTypes) and (data3 == None):
++		elif (isinstance(data1, IDataPointSet)) and (type(data2) in (str,)) and (data3 == None):
+ 			plotterStyle = self.style()
+ 			options = optionAnalyzer(data2)
+-		elif (isinstance(data1, IDataPointSet)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in types.StringTypes):
++		elif (isinstance(data1, IDataPointSet)) and (isinstance(data2, IPlotterStyle)) and (type(data3) in (str,)):
+ 			plotterStyle = data2
+ 			options = optionAnalyzer(data3)
+ 
+@@ -816,7 +816,7 @@ class IPlotterRegion:
+ 					return False
+ 
+ 	def _needReplace(self, options):
+-		if options.has_key('mode'):
++		if 'mode' in options:
+ 			if options['mode'] == 'replace':
+ 				return True
+ 			elif options['mode'] == 'overlay':
+@@ -830,7 +830,7 @@ class IPlotterRegion:
+ 	def _needRescale(self, options):
+ 		if self._needReplace(options):
+ 			return False
+-		elif options.has_key('rescale'):
++		elif 'rescale' in options:
+ 			if options['rescale'] == True:
+ 				if self._getNItemData() == 1:
+ 					return False
+@@ -868,63 +868,63 @@ class IPlotterRegion:
+ 	def _getOrderedBins2D(self, axisX, axisY, surfaceYZz, surfaceZXz):
+ 		if surfaceYZz < 0.0 and surfaceZXz < 0.0:
+ 			#0
+-			binsX = range(axisX.bins() - 1, -1, -1)
+-			binsY = range(axisY.bins() - 1, -1, -1)
++			binsX = list(range(axisX.bins() - 1, -1, -1))
++			binsY = list(range(axisY.bins() - 1, -1, -1))
+ 		elif surfaceYZz < 0.0 and surfaceZXz >= 0.0:
+ 			#3
+-			binsX = range(axisX.bins() - 1, -1, -1)
+-			binsY = range(axisY.bins())
++			binsX = list(range(axisX.bins() - 1, -1, -1))
++			binsY = list(range(axisY.bins()))
+ 		elif surfaceYZz >= 0.0 and surfaceZXz < 0.0:
+ 			#1
+-			binsX = range(axisX.bins())
+-			binsY = range(axisY.bins() - 1, -1, -1)
++			binsX = list(range(axisX.bins()))
++			binsY = list(range(axisY.bins() - 1, -1, -1))
+ 		elif surfaceYZz >= 0.0 and surfaceZXz >= 0.0:
+ 			#2
+-			binsX = range(axisX.bins())
+-			binsY = range(axisY.bins())
++			binsX = list(range(axisX.bins()))
++			binsY = list(range(axisY.bins()))
+ 		return binsX, binsY
+ 
+ 	def _getOrderedBins3D(self, axisX, axisY, axisZ, surfaceXYz, surfaceYZz, surfaceZXz):
+ 		if surfaceXYz < 0.0 and surfaceYZz < 0.0 and surfaceZXz < 0.0:
+ 			#0
+-			binsX = range(axisX.bins() - 1, -1, -1)
+-			binsY = range(axisY.bins() - 1, -1, -1)
+-			binsZ = range(axisZ.bins() - 1, -1, -1)
++			binsX = list(range(axisX.bins() - 1, -1, -1))
++			binsY = list(range(axisY.bins() - 1, -1, -1))
++			binsZ = list(range(axisZ.bins() - 1, -1, -1))
+ 		elif surfaceXYz < 0.0 and surfaceYZz < 0.0 and surfaceZXz >= 0.0:
+ 			#3
+-			binsX = range(axisX.bins() - 1, -1, -1)
+-			binsY = range(axisY.bins())
+-			binsZ = range(axisZ.bins() - 1, -1, -1)
++			binsX = list(range(axisX.bins() - 1, -1, -1))
++			binsY = list(range(axisY.bins()))
++			binsZ = list(range(axisZ.bins() - 1, -1, -1))
+ 		elif surfaceXYz < 0.0 and surfaceYZz >= 0.0 and surfaceZXz < 0.0:
+ 			#1
+-			binsX = range(axisX.bins())
+-			binsY = range(axisY.bins() - 1, -1, -1)
+-			binsZ = range(axisZ.bins() - 1, -1, -1)
++			binsX = list(range(axisX.bins()))
++			binsY = list(range(axisY.bins() - 1, -1, -1))
++			binsZ = list(range(axisZ.bins() - 1, -1, -1))
+ 		elif surfaceXYz < 0.0 and surfaceYZz >= 0.0 and surfaceZXz >= 0.0:
+ 			#2
+-			binsX = range(axisX.bins())
+-			binsY = range(axisY.bins())
+-			binsZ = range(axisZ.bins() - 1, -1, -1)
++			binsX = list(range(axisX.bins()))
++			binsY = list(range(axisY.bins()))
++			binsZ = list(range(axisZ.bins() - 1, -1, -1))
+ 		elif surfaceXYz >= 0.0 and surfaceYZz < 0.0 and surfaceZXz < 0.0:
+ 			#4
+-			binsX = range(axisX.bins() - 1, -1, -1)
+-			binsY = range(axisY.bins() - 1, -1, -1)
+-			binsZ = range(axisZ.bins())
++			binsX = list(range(axisX.bins() - 1, -1, -1))
++			binsY = list(range(axisY.bins() - 1, -1, -1))
++			binsZ = list(range(axisZ.bins()))
+ 		elif surfaceXYz >= 0.0 and surfaceYZz < 0.0 and surfaceZXz >= 0.0:
+ 			#7
+-			binsX = range(axisX.bins() - 1, -1, -1)
+-			binsY = range(axisY.bins())
+-			binsZ = range(axisZ.bins())
++			binsX = list(range(axisX.bins() - 1, -1, -1))
++			binsY = list(range(axisY.bins()))
++			binsZ = list(range(axisZ.bins()))
+ 		elif surfaceXYz >= 0.0 and surfaceYZz >= 0.0 and surfaceZXz < 0.0:
+ 			#5
+-			binsX = range(axisX.bins())
+-			binsY = range(axisY.bins() - 1, -1, -1)
+-			binsZ = range(axisZ.bins())
++			binsX = list(range(axisX.bins()))
++			binsY = list(range(axisY.bins() - 1, -1, -1))
++			binsZ = list(range(axisZ.bins()))
+ 		elif surfaceXYz >= 0.0 and surfaceYZz >= 0.0 and surfaceZXz >= 0.0:
+ 			#6
+-			binsX = range(axisX.bins())
+-			binsY = range(axisY.bins())
+-			binsZ = range(axisZ.bins())
++			binsX = list(range(axisX.bins()))
++			binsY = list(range(axisY.bins()))
++			binsZ = list(range(axisZ.bins()))
+ 		return binsX, binsY, binsZ
+ 
+ 	def _plotHistogram1D(self, item, plotterStyle, options):
+@@ -973,7 +973,7 @@ class IPlotterRegion:
+ 		parameterShowMarkers = dataStyle._parameterData('showMarkers')
+ 		parameterShowErrorBars = dataStyle._parameterData('showErrorBars')
+ 		binsX = [axisX.UNDERFLOW_BIN]
+-		binsX.extend(range(axisX.bins()))
++		binsX.extend(list(range(axisX.bins())))
+ 		binsX.append(axisX.OVERFLOW_BIN)
+ 		previousHeight = y1
+ 		tempFillLineStyle = ILineStyle()
+@@ -1057,7 +1057,7 @@ class IPlotterRegion:
+ 		parameterShowErrorBars = dataStyle._parameterData('showErrorBars')
+ 
+ 		if parameterFormat == 'histogram':
+-			if options.has_key('nBinsX'):
++			if 'nBinsX' in options:
+ 				nBinsX = int(options['nBinsX'])
+ 			else:
+ 				nBinsX = 50
+@@ -1144,7 +1144,7 @@ class IPlotterRegion:
+ 		parameterShowMarkers = dataStyle._parameterData('showMarkers')
+ 		parameterShowErrorBars = dataStyle._parameterData('showErrorBars')
+ 		binsX = [axisX.UNDERFLOW_BIN]
+-		binsX.extend(range(axisX.bins()))
++		binsX.extend(list(range(axisX.bins())))
+ 		binsX.append(axisX.OVERFLOW_BIN)
+ 		tempErrorLineStyle = ILineStyle()
+ 		if dataStyle._getCustomized('errorBarsColor'):
+@@ -1299,13 +1299,13 @@ class IPlotterRegion:
+ 				bestLowerY, bestUpperY = self._getAxisValueRangeY()
+ 			else:
+ 				### X range.
+-				if options.has_key('minX'):
++				if 'minX' in options:
+ 					bestLowerX = float(options['minX'])
+ 				elif self._getXLimits()[0] != None:
+ 					bestLowerX = self._getXLimits()[0]
+ 				else:
+ 					bestLowerX = -10.0
+-				if options.has_key('maxX'):
++				if 'maxX' in options:
+ 					bestUpperX = float(options['maxX'])
+ 				elif self._getXLimits()[1] != None:
+ 					bestUpperX = self._getXLimits()[1]
+@@ -1313,13 +1313,13 @@ class IPlotterRegion:
+ 					bestUpperX = 10.0
+ 
+ 				### Y range.
+-				if options.has_key('minY'):
++				if 'minY' in options:
+ 					bestLowerY = float(options['minY'])
+ 				elif self._getYLimits()[0] != None:
+ 					bestLowerY = self._getYLimits()[0]
+ 				else:
+ 					bestLowerY = -10.0
+-				if options.has_key('maxY'):
++				if 'maxY' in options:
+ 					bestUpperY = float(options['maxY'])
+ 				elif self._getYLimits()[1] != None:
+ 					bestUpperY = self._getYLimits()[1]
+@@ -1336,11 +1336,11 @@ class IPlotterRegion:
+ 		convertX, convertY = self._getConvertersToCanvas()
+ 
+ 		### Plot.
+-		if options.has_key('minX'):
++		if 'minX' in options:
+ 			functionLowerX = float(options['minX'])
+ 		else:
+ 			functionLowerX = lowerX
+-		if options.has_key('maxX'):
++		if 'maxX' in options:
+ 			functionUpperX = float(options['maxX'])
+ 		else:
+ 			functionUpperX = upperX
+@@ -1627,11 +1627,11 @@ class IPlotterRegion:
+ 		parameterShowErrorBars = dataStyle._parameterData('showErrorBars')
+ 
+ 		if parameterFormat == 'histogram':
+-			if options.has_key('nBinsX'):
++			if 'nBinsX' in options:
+ 				nBinsX = int(options['nBinsX'])
+ 			else:
+ 				nBinsX = 50
+-			if options.has_key('nBinsY'):
++			if 'nBinsY' in options:
+ 				nBinsY = int(options['nBinsY'])
+ 			else:
+ 				nBinsY = 50
+@@ -2071,13 +2071,13 @@ class IPlotterRegion:
+ 				bestLowerZ, bestUpperZ = self._getAxisValueRangeZ()
+ 			else:
+ 				### X range.
+-				if options.has_key('minX'):
++				if 'minX' in options:
+ 					bestLowerX = float(options['minX'])
+ 				elif self._getXLimits()[0] != None:
+ 					bestLowerX = self._getXLimits()[0]
+ 				else:
+ 					bestLowerX = -10.0
+-				if options.has_key('maxX'):
++				if 'maxX' in options:
+ 					bestUpperX = float(options['maxX'])
+ 				elif self._getXLimits()[1] != None:
+ 					bestUpperX = self._getXLimits()[1]
+@@ -2085,13 +2085,13 @@ class IPlotterRegion:
+ 					bestUpperX = 10.0
+ 
+ 				### Y range.
+-				if options.has_key('minY'):
++				if 'minY' in options:
+ 					bestLowerY = float(options['minY'])
+ 				elif self._getYLimits()[0] != None:
+ 					bestLowerY = self._getYLimits()[0]
+ 				else:
+ 					bestLowerY = -10.0
+-				if options.has_key('maxY'):
++				if 'maxY' in options:
+ 					bestUpperY = float(options['maxY'])
+ 				elif self._getYLimits()[1] != None:
+ 					bestUpperY = self._getYLimits()[1]
+@@ -2099,13 +2099,13 @@ class IPlotterRegion:
+ 					bestUpperY = 10.0
+ 
+ 				### Z range.
+-				if options.has_key('minZ'):
++				if 'minZ' in options:
+ 					bestLowerZ = float(options['minZ'])
+ 				elif self._getZLimits()[0] != None:
+ 					bestLowerZ = self._getZLimits()[0]
+ 				else:
+ 					bestLowerZ = -10.0
+-				if options.has_key('maxZ'):
++				if 'maxZ' in options:
+ 					bestUpperZ = float(options['maxZ'])
+ 				elif self._getZLimits()[1] != None:
+ 					bestUpperZ = self._getZLimits()[1]
+@@ -2159,19 +2159,19 @@ class IPlotterRegion:
+ 		ticksY.sort()
+ 		ticksZ.sort()
+ 
+-		if options.has_key('minX'):
++		if 'minX' in options:
+ 			bestLowerX = float(options['minX'])
+ 		else:
+ 			bestLowerX = lowerX
+-		if options.has_key('maxX'):
++		if 'maxX' in options:
+ 			bestUpperX = float(options['maxX'])
+ 		else:
+ 			bestUpperX = upperX
+-		if options.has_key('minY'):
++		if 'minY' in options:
+ 			bestLowerY = float(options['minY'])
+ 		else:
+ 			bestLowerY = lowerY
+-		if options.has_key('maxY'):
++		if 'maxY' in options:
+ 			bestUpperY = float(options['maxY'])
+ 		else:
+ 			bestUpperY = upperY
+@@ -2499,15 +2499,15 @@ class IPlotterRegion:
+ 		parameterShowErrorBars = dataStyle._parameterData('showErrorBars')
+ 
+ 		if parameterFormat == 'histogram':
+-			if options.has_key('nBinsX'):
++			if 'nBinsX' in options:
+ 				nBinsX = int(options['nBinsX'])
+ 			else:
+ 				nBinsX = 50
+-			if options.has_key('nBinsY'):
++			if 'nBinsY' in options:
+ 				nBinsY = int(options['nBinsY'])
+ 			else:
+ 				nBinsY = 50
+-			if options.has_key('nBinsZ'):
++			if 'nBinsZ' in options:
+ 				nBinsZ = int(options['nBinsZ'])
+ 			else:
+ 				nBinsZ = 50
+@@ -4452,7 +4452,7 @@ class IPlotterRegion:
+ 					spanT = 2.0 * factor
+ 					subDivider = 4.0
+ 				else:
+-					raise RuntimeError, '%s:%s:%s:%s' % (rangeMin, rangeMax, scaling, axisType)
++					raise RuntimeError('%s:%s:%s:%s' % (rangeMin, rangeMax, scaling, axisType))
+ 
+ 				minI = int(floor(rangeMin / spanT))
+ 				maxI = int(rangeMax / spanT)
+@@ -4512,7 +4512,7 @@ class IPlotterRegion:
+ 				elif logLengthS == 9:
+ 					logSpan = 2 * logFactor
+ 				else:
+-					raise RuntimeError, '%s:%s:%s:%s' % (rangeMin, rangeMax, scaling, axisType)
++					raise RuntimeError('%s:%s:%s:%s' % (rangeMin, rangeMax, scaling, axisType))
+ 
+ 				current = logMinF
+ 				while (current <= logMax + pat):
+@@ -4528,7 +4528,7 @@ class IPlotterRegion:
+ 								ticksSub.append(tickValue)
+ 
+ 			else:
+-				raise RuntimeError, '%s:%s:%s:%s' % (rangeMin, rangeMax, scaling, axisType)
++				raise RuntimeError('%s:%s:%s:%s' % (rangeMin, rangeMax, scaling, axisType))
+ 
+ 		return tickLower, tickUpper, ticksMain, ticksSub
+ 
+@@ -4655,7 +4655,7 @@ class IPlotterRegion:
+ 		return self._parameters[parameterName]
+ 
+ 	def availableParameters(self):
+-		names = self._parameters.keys()
++		names = list(self._parameters.keys())
+ 		names.sort()
+ 		return names
+ 
+--- paida/paida_core/IRangeSet.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/IRangeSet.py
+@@ -7,7 +7,7 @@ class InfinityBase:
+ 	def __abs__(self):
+ 		return InfinityPositive()
+ 
+-	def __nonzero__(self):
++	def __bool__(self):
+ 		return True
+ 
+ 	def __radd__(self, v):
+@@ -20,11 +20,11 @@ class InfinityBase:
+ 		return self.__mul__(v)
+ 
+ 	def __rdiv__(self, v):
+-		if type(v) == types.IntType:
++		if type(v) == int:
+ 			return 0
+-		elif type(v) == types.LongType:
+-			return 0L
+-		elif type(v) == types.FloatType:
++		elif type(v) == int:
++			return 0
++		elif type(v) == float:
+ 			return 0.0
+ 		else:
+ 			raise RuntimeException("Inf cannot divide %s" % (type(v)))
+@@ -79,22 +79,22 @@ class InfinityPositive(InfinityBase):
+ 		if v < 0:
+ 			raise RuntimeException("negative value power by positive Inf")
+ 		elif v == 0:
+-			if type(v) == types.IntType:
++			if type(v) == int:
+ 				return 0
+-			elif type(v) == types.LongType:
+-				return 0L
+-			elif type(v) == types.FloatType:
++			elif type(v) == int:
++				return 0
++			elif type(v) == float:
+ 				return 0.0
+ 			else:
+ 				raise RuntimeException()
+ 		elif 0 < v < 1:
+ 			return 0.0
+ 		elif v == 1:
+-			if type(v) == types.IntType:
++			if type(v) == int:
+ 				return 1
+-			elif type(v) == types.LongType:
+-				return 1L
+-			elif type(v) == types.FloatType:
++			elif type(v) == int:
++				return 1
++			elif type(v) == float:
+ 				return 1.0
+ 			else:
+ 				raise RuntimeException()
+@@ -168,7 +168,7 @@ class InfinityNegative(InfinityBase):
+ 		return InfinityNegative()
+ 
+ 	def __pow__(self, v):
+-		if type(v) == types.IntType:
++		if type(v) == int:
+ 			if (v % 2) == 0:
+ 				return InfinityPositive()
+ 			else:
+@@ -193,20 +193,20 @@ class InfinityNegative(InfinityBase):
+ 		elif 0 < v < 1:
+ 			return InfinityPositive()
+ 		elif v == 1:
+-			if type(v) == types.IntType:
++			if type(v) == int:
+ 				return 1
+-			elif type(v) == types.LongType:
+-				return 1L
+-			elif type(v) == types.FloatType:
++			elif type(v) == int:
++				return 1
++			elif type(v) == float:
+ 				return 1.0
+ 			else:
+ 				raise RuntimeException()
+ 		elif 1 < v:
+-			if type(v) == types.IntType:
++			if type(v) == int:
+ 				return 0
+-			elif type(v) == types.LongType:
+-				return 0L
+-			elif type(v) == types.FloatType:
++			elif type(v) == int:
++				return 0
++			elif type(v) == float:
+ 				return 0.0
+ 			else:
+ 				raise RuntimeException()
+--- paida/paida_core/ITreeElementTree.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/ITreeElementTree.py
+@@ -31,9 +31,9 @@ encoding = 'ISO-8859-1'
+ class _baseHandler(object):
+ 	directions = {'x': 0, 'y': 1, 'z': 2}
+ 	def evaluator(self, data):
+-		if data == u'OVERFLOW':
++		if data == 'OVERFLOW':
+ 			return IAxis.OVERFLOW_BIN
+-		elif data == u'UNDERFLOW':
++		elif data == 'UNDERFLOW':
+ 			return IAxis.UNDERFLOW_BIN
+ 		elif data == 'NaN':
+ 			return 0.0
+@@ -49,7 +49,7 @@ class _annotationHandler(_baseHandler):
+ 		### Some implementations ommit annotation node when its content is empty.
+ 		if element is not None:
+ 			for item in element.findall('item'):
+-				self.annotation._addItem(str(item.get('key')), str(item.get('value')), item.get('sticky') == u'true')
++				self.annotation._addItem(str(item.get('key')), str(item.get('value')), item.get('sticky') == 'true')
+ 
+ 
+ # in contrast to namedHandler, it is not assumed here that the
+@@ -431,7 +431,7 @@ class _tupleHandler(_namedParser):
+ 
+ 	def process_columns(self, fileIterator):
+ 		while 1:
+-			event, item = fileIterator.next()
++			event, item = next(fileIterator)
+ 			name = item.tag
+ 			if name == 'columns':
+ 				if event == 'start':
+@@ -472,7 +472,7 @@ class _tupleHandler(_namedParser):
+ 		### I think column will be always initialized to zero at (name == 'row and event == 'start')?
+ 		#column = 0
+ 		while 1:
+-			event, item = fileIterator.next()
++			event, item = next(fileIterator)
+ 			name = item.tag
+ 			if name == 'entry' and event == 'end':
+ 				tuple._rowBuffer[column] = converters[column](item.get('value'))
+@@ -508,7 +508,7 @@ class _cloud1dHandler(_namedParser):
+ 		fill = self.cloud1d.fill
+ 		self.entries1d = False
+ 		while 1:
+-			event, item = fileIterator.next()
++			event, item = next(fileIterator)
+ 			name = item.tag
+ 			if name == 'entries1d':
+ 				self.entries1d = True
+@@ -555,7 +555,7 @@ class _cloud2dHandler(_namedParser):
+ 		
+ 		self.entries2d = False
+ 		while 1:
+-			event, item = fileIterator.next()
++			event, item = next(fileIterator)
+ 			name = item.tag
+ 			if name == 'entries2d':
+ 				self.entries2d = True
+@@ -611,7 +611,7 @@ class _cloud3dHandler(_namedParser):
+ 		fill = self.cloud3d.fill
+ 		self.entries3d = False
+ 		while 1:
+-			event, item = fileIterator.next()
++			event, item = next(fileIterator)
+ 			name = item.tag
+ 			if name == 'entries3d':
+ 				self.entries3d = True
+@@ -830,7 +830,7 @@ class _dataPointSetHandler(_namedHandler):
+ 
+ 	def process_dataPoint(self, fileIterator, toBeCleared):
+ 		while 1:
+-			event, item = fileIterator.next()
++			event, item = next(fileIterator)
+ 			name = item.tag
+ 			if name == 'dataPoint':
+ 				if event == 'start':
+@@ -861,7 +861,7 @@ class _dataPointSetHandler(_namedHandler):
+ class _functionHandler(_namedHandler):
+ 	def __init__(self, element, functionFactory):
+ 		_namedHandler.__init__(self, element)
+-		self.isNormalized = (element.get('isNormalized') == u'true')
++		self.isNormalized = (element.get('isNormalized') == 'true')
+ 		codelet = self.process_codelet(element.find('codelet'))
+ 		self.function = functionFactory._createCopy(codelet, self.name, inner = False)
+ 		self.process_parameters(element.find('parameters'))
+@@ -922,8 +922,8 @@ class ITree:
+ 						fileObj.read(1)
+ 						fileObj.seek(0)
+ 					except ImportError:
+-						print 'PAIDA: gzip module is unavailable.'
+-						print 'PAIDA: all files are treated as unzipped.'
++						print('PAIDA: gzip module is unavailable.')
++						print('PAIDA: all files are treated as unzipped.')
+ 						fileObj = file(fileName, 'r')
+ 					except IOError:
+ 						fileObj.close()
+@@ -1447,9 +1447,9 @@ class ITree:
+ 				xmlEscape = self._xmlEscape
+ 				### Base.
+ 				if object._option is None:
+-						storeFile.write('%s<cloud1d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, `object.lowerEdge()`, `object.upperEdge()`, footer))
++						storeFile.write('%s<cloud1d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, repr(object.lowerEdge()), repr(object.upperEdge()), footer))
+ 				else:
+-						storeFile.write('%s<cloud1d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), `object.lowerEdge()`, `object.upperEdge()`, footer))
++						storeFile.write('%s<cloud1d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), repr(object.lowerEdge()), repr(object.upperEdge()), footer))
+ 
+ 				### Annotation.
+ 				self._writeAnnotation(storeFile, object, header + '\t', footer)
+@@ -1468,9 +1468,9 @@ class ITree:
+ 				xmlEscape = self._xmlEscape
+ 				### Base.
+ 				if object._option is None:
+-						storeFile.write('%s<cloud2d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, `object.lowerEdgeX()`, `object.upperEdgeX()`, `object.lowerEdgeY()`, `object.upperEdgeY()`, footer))
++						storeFile.write('%s<cloud2d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, repr(object.lowerEdgeX()), repr(object.upperEdgeX()), repr(object.lowerEdgeY()), repr(object.upperEdgeY()), footer))
+ 				else:
+-						storeFile.write('%s<cloud2d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), `object.lowerEdgeX()`, `object.upperEdgeX()`, `object.lowerEdgeY()`, `object.upperEdgeY()`, footer))
++						storeFile.write('%s<cloud2d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), repr(object.lowerEdgeX()), repr(object.upperEdgeX()), repr(object.lowerEdgeY()), repr(object.upperEdgeY()), footer))
+ 
+ 				### Annotation.
+ 				self._writeAnnotation(storeFile, object, header + '\t', footer)
+@@ -1489,9 +1489,9 @@ class ITree:
+ 				xmlEscape = self._xmlEscape
+ 				### Base.
+ 				if object._option is None:
+-						storeFile.write('%s<cloud3d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s" lowerEdgeZ="%s" upperEdgeZ="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, `object.lowerEdgeX()`, `object.upperEdgeX()`, `object.lowerEdgeY()`, `object.upperEdgeY()`, `object.lowerEdgeZ()`, `object.upperEdgeZ()`, footer))
++						storeFile.write('%s<cloud3d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s" lowerEdgeZ="%s" upperEdgeZ="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, repr(object.lowerEdgeX()), repr(object.upperEdgeX()), repr(object.lowerEdgeY()), repr(object.upperEdgeY()), repr(object.lowerEdgeZ()), repr(object.upperEdgeZ()), footer))
+ 				else:
+-						storeFile.write('%s<cloud3d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s" lowerEdgeZ="%s" upperEdgeZ="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), `object.lowerEdgeX()`, `object.upperEdgeX()`, `object.lowerEdgeY()`, `object.upperEdgeY()`, `object.lowerEdgeZ()`, `object.upperEdgeZ()`, footer))
++						storeFile.write('%s<cloud3d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s" lowerEdgeZ="%s" upperEdgeZ="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), repr(object.lowerEdgeX()), repr(object.upperEdgeX()), repr(object.lowerEdgeY()), repr(object.upperEdgeY()), repr(object.lowerEdgeZ()), repr(object.upperEdgeZ()), footer))
+ 
+ 				### Annotation.
+ 				self._writeAnnotation(storeFile, object, header + '\t', footer)
+@@ -1549,10 +1549,10 @@ class ITree:
+ 
+ 				for i in range(dimension):
+ 						axis = axes[i]
+-						storeFile.write('%s<axis direction="%s" min="%s" max="%s" numberOfBins="%s">%s' % (header, directions[i], `axis.lowerEdge()`, `axis.upperEdge()`, axis.bins(), footer))
++						storeFile.write('%s<axis direction="%s" min="%s" max="%s" numberOfBins="%s">%s' % (header, directions[i], repr(axis.lowerEdge()), repr(axis.upperEdge()), axis.bins(), footer))
+ 						if axis.isFixedBinning() == False:
+ 								for i in range(axis.bins() - 1):
+-										storeFile.write('%s\t<binBorder value="%s"/>%s' % (header, `axis.binUpperEdge(i)`, footer))
++										storeFile.write('%s\t<binBorder value="%s"/>%s' % (header, repr(axis.binUpperEdge(i)), footer))
+ 						storeFile.write(header + '</axis>' + footer)
+ 
+ 		def _writeStatistics(self, storeFile, object, header, footer):
+@@ -1700,7 +1700,7 @@ class ITree:
+ 		def _writeParameters(self, storeFile, object, header, footer):
+ 				storeFile.write(header + '<parameters>' + footer)
+ 				for parameterName in object.parameterNames():
+-						storeFile.write('%s\t<parameter name="%s" value="%s"/>%s' % (header, self._xmlEscape(parameterName), `object.parameter(parameterName)`, footer))
++						storeFile.write('%s\t<parameter name="%s" value="%s"/>%s' % (header, self._xmlEscape(parameterName), repr(object.parameter(parameterName)), footer))
+ 				storeFile.write(header + '</parameters>' + footer)
+ 
+ 		def _writeDataPoint(self, storeFile, object, header, footer):
+@@ -1709,25 +1709,25 @@ class ITree:
+ 						dataPoint = object.point(i)
+ 						for j in range(dataPoint.dimension()):
+ 								measurement = dataPoint.coordinate(j)
+-								storeFile.write('%s\t<measurement value="%s" errorPlus="%s" errorMinus="%s"/>%s' % (header, `measurement.value()`, `measurement.errorPlus()`, `measurement.errorMinus()`, footer))
++								storeFile.write('%s\t<measurement value="%s" errorPlus="%s" errorMinus="%s"/>%s' % (header, repr(measurement.value()), repr(measurement.errorPlus()), repr(measurement.errorMinus()), footer))
+ 						storeFile.write(header + '</dataPoint>' + footer)
+ 
+ 		def _writeEntries1d(self, storeFile, object, header, footer):
+ 				storeFile.write(header + '<entries1d>' + footer)
+ 				for i in range(object.entries()):
+-						storeFile.write('%s\t<entry1d valueX="%s" weight="%s"/>%s' % (header, `object.value(i)`, `object.weight(i)`, footer))
++						storeFile.write('%s\t<entry1d valueX="%s" weight="%s"/>%s' % (header, repr(object.value(i)), repr(object.weight(i)), footer))
+ 				storeFile.write(header + '</entries1d>' + footer)
+ 
+ 		def _writeEntries2d(self, storeFile, object, header, footer):
+ 				storeFile.write(header + '<entries2d>' + footer)
+ 				for i in range(object.entries()):
+-						storeFile.write('%s\t<entry2d valueX="%s" valueY="%s" weight="%s"/>%s' % (header, `object.valueX(i)`, `object.valueY(i)`, `object.weight(i)`, footer))
++						storeFile.write('%s\t<entry2d valueX="%s" valueY="%s" weight="%s"/>%s' % (header, repr(object.valueX(i)), repr(object.valueY(i)), repr(object.weight(i)), footer))
+ 				storeFile.write(header + '</entries2d>' + footer)
+ 
+ 		def _writeEntries3d(self, storeFile, object, header, footer):
+ 				storeFile.write(header + '<entries3d>' + footer)
+ 				for i in range(object.entries()):
+-						storeFile.write('%s\t<entry3d valueX="%s" valueY="%s" valueZ="%s" weight="%s"/>%s' % (header, `object.valueX(i)`, `object.valueY(i)`, `object.valueZ(i)`, `object.weight(i)`, footer))
++						storeFile.write('%s\t<entry3d valueX="%s" valueY="%s" valueZ="%s" weight="%s"/>%s' % (header, repr(object.valueX(i)), repr(object.valueY(i)), repr(object.valueZ(i)), repr(object.weight(i)), footer))
+ 				storeFile.write(header + '</entries3d>' + footer)
+ 
+ 		def _writeColumns(self, storeFile, object, header, footer):
+@@ -1751,7 +1751,7 @@ class ITree:
+ 										elif columnType in [PTypes.String, PTypes.Character]:
+ 												storeFile.write('%s\t<column name="%s=%s" type="%s"/>%s' % (header, columnName, xmlEscape(columnDefault), columnType.TYPE, footer))
+ 										else:
+-												storeFile.write('%s\t<column name="%s=%s" type="%s"/>%s' % (header, columnName, `columnDefault`, columnType.TYPE, footer))
++												storeFile.write('%s\t<column name="%s=%s" type="%s"/>%s' % (header, columnName, repr(columnDefault), columnType.TYPE, footer))
+ 				storeFile.write(header + '</columns>' + footer)
+ 
+ 		def _columnWalker(self, expression, ituple):
+@@ -1775,7 +1775,7 @@ class ITree:
+ 										elif columnType in [PTypes.String, PTypes.Character]:
+ 												expression += '%s %s="%s", ' % (columnType.TYPE, columnName, columnDefault)
+ 										else:
+-												expression += '%s %s=%s, ' % (columnType.TYPE, columnName, `columnDefault`)
++												expression += '%s %s=%s, ' % (columnType.TYPE, columnName, repr(columnDefault))
+ 				if expression.endswith(', '):
+ 						return self._xmlEscape(expression[:-2] + '}')
+ 				else:
+@@ -1835,7 +1835,7 @@ class ITree:
+ 								elif columnType in PTypesStringCharacter:
+ 										storeFileWrite('%s\t<entry value="%s"/>%s' % (header, xmlEscape(rowData[columnIndex]), footer))
+ 								else:
+-										storeFileWrite('%s\t<entry value="%s"/>%s' % (header, `rowData[columnIndex]`, footer))
++										storeFileWrite('%s\t<entry value="%s"/>%s' % (header, repr(rowData[columnIndex]), footer))
+ 						storeFileWrite(xml_rowEnd)
+ 
+ 		def _xmlEscape(self, data):
+@@ -1851,7 +1851,7 @@ class ITree:
+ 				### Store file creation.
+ 				try:
+ 						import gzip
+-						if self._options.has_key('compress'):
++						if 'compress' in self._options:
+ 								if self._options['compress']:
+ 										storeFile = gzip.open(self._fileName, 'w')
+ 								else:
+@@ -1859,8 +1859,8 @@ class ITree:
+ 						else:
+ 								storeFile = gzip.open(self._fileName, 'w')
+ 				except ImportError:
+-						print 'PAIDA: gzip module is unavailable.'
+-						print 'PAIDA: all files are saved as unzipped.'
++						print('PAIDA: gzip module is unavailable.')
++						print('PAIDA: all files are saved as unzipped.')
+ 						storeFile = file(self._fileName, 'w')
+ 
+ 				### Initial strings.
+--- paida/paida_core/ITreeOld.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/ITreeOld.py
+@@ -26,7 +26,7 @@ import sys
+ import os
+ import xml.sax
+ import xml.sax.saxutils
+-import StringIO
++import io
+ from math import sqrt
+ 
+ encoding = 'ISO-8859-1'
+@@ -45,7 +45,7 @@ class _handler_initial(xml.sax.handler.ContentHandler)
+ 
+ class _handler_EntityResolver(xml.sax.handler.EntityResolver):
+ 	def resolveEntity(self, publicId, systemId):
+-		return StringIO.StringIO()
++		return io.StringIO()
+ 
+ class _handler_base(xml.sax.handler.ContentHandler):
+ 	def __init__(self, parent):
+@@ -54,9 +54,9 @@ class _handler_base(xml.sax.handler.ContentHandler):
+ 		self.parser = parent.parser
+ 
+ 	def evaluator(self, data):
+-		if data == u'OVERFLOW':
++		if data == 'OVERFLOW':
+ 			return IAxis.OVERFLOW_BIN
+-		elif data == u'UNDERFLOW':
++		elif data == 'UNDERFLOW':
+ 			return IAxis.UNDERFLOW_BIN
+ 		elif data == 'NaN':
+ 			return 0.0
+@@ -237,7 +237,7 @@ class _handler_annotation(_handler_base):
+ class _handler_item(_handler_base):
+ 	def startElement(self, name, attributes):
+ 		try:
+-			if attributes['sticky'] == u'true':
++			if attributes['sticky'] == 'true':
+ 				self.parent.annotation._addItem(str(attributes['key']), str(attributes['value']), True)
+ 			else:
+ 				self.parent.annotation._addItem(str(attributes['key']), str(attributes['value']), False)
+@@ -459,7 +459,7 @@ class _handler_bin1d_histogram1d(_handler_base):
+ 			error = self.evaluator(attributes['error'])
+ 		except KeyError:
+ 			error = sqrt(entries)
+-		if attributes.has_key('error2'):
++		if 'error2' in attributes:
+ 			raise RuntimeError('error2 is not supported in histograms.')
+ 
+ 		try:
+@@ -599,7 +599,7 @@ class _handler_bin2d_histogram2d(_handler_base):
+ 			error = self.evaluator(attributes['error'])
+ 		except KeyError:
+ 			error = sqrt(entries)
+-		if attributes.has_key('error2'):
++		if 'error2' in attributes:
+ 			raise RuntimeError('error2 is not supported in histograms.')
+ 
+ 		try:
+@@ -767,7 +767,7 @@ class _handler_bin3d_histogram3d(_handler_base):
+ 			error = self.evaluator(attributes['error'])
+ 		except KeyError:
+ 			error = sqrt(entries)
+-		if attributes.has_key('error2'):
++		if 'error2' in attributes:
+ 			raise RuntimeError('error2 is not supported in histograms.')
+ 
+ 		try:
+@@ -1548,7 +1548,7 @@ class _handler_bin1d_profile1d(_handler_base):
+ 			error = self.evaluator(attributes['error'])
+ 		except KeyError:
+ 			error = sqrt(entries)
+-		if attributes.has_key('error2'):
++		if 'error2' in attributes:
+ 			raise RuntimeError('error2 is not supported in histograms.')
+ 
+ 		try:
+@@ -1722,7 +1722,7 @@ class _handler_bin2d_profile2d(_handler_base):
+ 			error = self.evaluator(attributes['error'])
+ 		except KeyError:
+ 			error = sqrt(entries)
+-		if attributes.has_key('error2'):
++		if 'error2' in attributes:
+ 			raise RuntimeError('error2 is not supported in histograms.')
+ 
+ 		try:
+@@ -1922,8 +1922,8 @@ class _handler_function(_handler_base):
+ 			except KeyError:
+ 				self.path = '/'
+ 
+-			if attributes.has_key('isNormalized'):
+-				if attributes['isNormalized'] == u'true':
++			if 'isNormalized' in attributes:
++				if attributes['isNormalized'] == 'true':
+ 					self.isNormalized = True
+ 				else:
+ 					self.isNormalized = False
+@@ -2104,8 +2104,8 @@ class ITree:
+ 					fileObj.close()
+ 					fileObj = gzip.open(fileName)
+ 			except ImportError:
+-				print 'PAIDA: gzip module is unavailable.'
+-				print 'PAIDA: all files are treated as unzipped.'
++				print('PAIDA: gzip module is unavailable.')
++				print('PAIDA: all files are treated as unzipped.')
+ 				fileObj = file(fileName, 'r')
+ 			except IOError:
+ 				fileObj = file(fileName, 'r')
+@@ -2124,9 +2124,9 @@ class ITree:
+ 			except xml.sax._exceptions.SAXParseException:
+ 				errorMessage = 'The file "%s" is broken. Stopped reading.' % fileName
+ 				if readOnly:
+-					raise IOError, errorMessage
++					raise IOError(errorMessage)
+ 				else:
+-					print errorMessage
++					print(errorMessage)
+ 			fileObj.close()
+ 
+ 	def _setGuiTree(self, guiTree):
+@@ -2644,9 +2644,9 @@ class ITree:
+ 		xmlEscape = self._xmlEscape
+ 		### Base.
+ 		if object._option == None:
+-			storeFile.write('%s<cloud1d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, `object.lowerEdge()`, `object.upperEdge()`, footer))
++			storeFile.write('%s<cloud1d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, repr(object.lowerEdge()), repr(object.upperEdge()), footer))
+ 		else:
+-			storeFile.write('%s<cloud1d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), `object.lowerEdge()`, `object.upperEdge()`, footer))
++			storeFile.write('%s<cloud1d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), repr(object.lowerEdge()), repr(object.upperEdge()), footer))
+ 
+ 		### Annotation.
+ 		self._writeAnnotation(storeFile, object, header + '\t', footer)
+@@ -2665,9 +2665,9 @@ class ITree:
+ 		xmlEscape = self._xmlEscape
+ 		### Base.
+ 		if object._option == None:
+-			storeFile.write('%s<cloud2d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, `object.lowerEdgeX()`, `object.upperEdgeX()`, `object.lowerEdgeY()`, `object.upperEdgeY()`, footer))
++			storeFile.write('%s<cloud2d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, repr(object.lowerEdgeX()), repr(object.upperEdgeX()), repr(object.lowerEdgeY()), repr(object.upperEdgeY()), footer))
+ 		else:
+-			storeFile.write('%s<cloud2d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), `object.lowerEdgeX()`, `object.upperEdgeX()`, `object.lowerEdgeY()`, `object.upperEdgeY()`, footer))
++			storeFile.write('%s<cloud2d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), repr(object.lowerEdgeX()), repr(object.upperEdgeX()), repr(object.lowerEdgeY()), repr(object.upperEdgeY()), footer))
+ 
+ 		### Annotation.
+ 		self._writeAnnotation(storeFile, object, header + '\t', footer)
+@@ -2686,9 +2686,9 @@ class ITree:
+ 		xmlEscape = self._xmlEscape
+ 		### Base.
+ 		if object._option == None:
+-			storeFile.write('%s<cloud3d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s" lowerEdgeZ="%s" upperEdgeZ="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, `object.lowerEdgeX()`, `object.upperEdgeX()`, `object.lowerEdgeY()`, `object.upperEdgeY()`, `object.lowerEdgeZ()`, `object.upperEdgeZ()`, footer))
++			storeFile.write('%s<cloud3d name="%s" maxEntries="%s" title="%s" path="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s" lowerEdgeZ="%s" upperEdgeZ="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, repr(object.lowerEdgeX()), repr(object.upperEdgeX()), repr(object.lowerEdgeY()), repr(object.upperEdgeY()), repr(object.lowerEdgeZ()), repr(object.upperEdgeZ()), footer))
+ 		else:
+-			storeFile.write('%s<cloud3d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s" lowerEdgeZ="%s" upperEdgeZ="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), `object.lowerEdgeX()`, `object.upperEdgeX()`, `object.lowerEdgeY()`, `object.upperEdgeY()`, `object.lowerEdgeZ()`, `object.upperEdgeZ()`, footer))
++			storeFile.write('%s<cloud3d name="%s" maxEntries="%s" title="%s" path="%s" options="%s" lowerEdgeX="%s" upperEdgeX="%s" lowerEdgeY="%s" upperEdgeY="%s" lowerEdgeZ="%s" upperEdgeZ="%s">%s' % (header, xmlEscape(object._name), object.maxEntries(), xmlEscape(object.title()), path, xmlEscape(object._getOptionString()), repr(object.lowerEdgeX()), repr(object.upperEdgeX()), repr(object.lowerEdgeY()), repr(object.upperEdgeY()), repr(object.lowerEdgeZ()), repr(object.upperEdgeZ()), footer))
+ 
+ 		### Annotation.
+ 		self._writeAnnotation(storeFile, object, header + '\t', footer)
+@@ -2746,10 +2746,10 @@ class ITree:
+ 
+ 		for i in range(dimension):
+ 			axis = axes[i]
+-			storeFile.write('%s<axis direction="%s" min="%s" max="%s" numberOfBins="%s">%s' % (header, directions[i], `axis.lowerEdge()`, `axis.upperEdge()`, axis.bins(), footer))
++			storeFile.write('%s<axis direction="%s" min="%s" max="%s" numberOfBins="%s">%s' % (header, directions[i], repr(axis.lowerEdge()), repr(axis.upperEdge()), axis.bins(), footer))
+ 			if axis.isFixedBinning() == False:
+ 				for i in range(axis.bins() - 1):
+-					storeFile.write('%s\t<binBorder value="%s"/>%s' % (header, `axis.binUpperEdge(i)`, footer))
++					storeFile.write('%s\t<binBorder value="%s"/>%s' % (header, repr(axis.binUpperEdge(i)), footer))
+ 			storeFile.write(header + '</axis>' + footer)
+ 
+ 	def _writeStatistics(self, storeFile, object, header, footer):
+@@ -2897,7 +2897,7 @@ class ITree:
+ 	def _writeParameters(self, storeFile, object, header, footer):
+ 		storeFile.write(header + '<parameters>' + footer)
+ 		for parameterName in object.parameterNames():
+-			storeFile.write('%s\t<parameter name="%s" value="%s"/>%s' % (header, self._xmlEscape(parameterName), `object.parameter(parameterName)`, footer))
++			storeFile.write('%s\t<parameter name="%s" value="%s"/>%s' % (header, self._xmlEscape(parameterName), repr(object.parameter(parameterName)), footer))
+ 		storeFile.write(header + '</parameters>' + footer)
+ 
+ 	def _writeDataPoint(self, storeFile, object, header, footer):
+@@ -2906,25 +2906,25 @@ class ITree:
+ 			dataPoint = object.point(i)
+ 			for j in range(dataPoint.dimension()):
+ 				measurement = dataPoint.coordinate(j)
+-				storeFile.write('%s\t<measurement value="%s" errorPlus="%s" errorMinus="%s"/>%s' % (header, `measurement.value()`, `measurement.errorPlus()`, `measurement.errorMinus()`, footer))
++				storeFile.write('%s\t<measurement value="%s" errorPlus="%s" errorMinus="%s"/>%s' % (header, repr(measurement.value()), repr(measurement.errorPlus()), repr(measurement.errorMinus()), footer))
+ 			storeFile.write(header + '</dataPoint>' + footer)
+ 
+ 	def _writeEntries1d(self, storeFile, object, header, footer):
+ 		storeFile.write(header + '<entries1d>' + footer)
+ 		for i in range(object.entries()):
+-			storeFile.write('%s\t<entry1d valueX="%s" weight="%s"/>%s' % (header, `object.value(i)`, `object.weight(i)`, footer))
++			storeFile.write('%s\t<entry1d valueX="%s" weight="%s"/>%s' % (header, repr(object.value(i)), repr(object.weight(i)), footer))
+ 		storeFile.write(header + '</entries1d>' + footer)
+ 
+ 	def _writeEntries2d(self, storeFile, object, header, footer):
+ 		storeFile.write(header + '<entries2d>' + footer)
+ 		for i in range(object.entries()):
+-			storeFile.write('%s\t<entry2d valueX="%s" valueY="%s" weight="%s"/>%s' % (header, `object.valueX(i)`, `object.valueY(i)`, `object.weight(i)`, footer))
++			storeFile.write('%s\t<entry2d valueX="%s" valueY="%s" weight="%s"/>%s' % (header, repr(object.valueX(i)), repr(object.valueY(i)), repr(object.weight(i)), footer))
+ 		storeFile.write(header + '</entries2d>' + footer)
+ 
+ 	def _writeEntries3d(self, storeFile, object, header, footer):
+ 		storeFile.write(header + '<entries3d>' + footer)
+ 		for i in range(object.entries()):
+-			storeFile.write('%s\t<entry3d valueX="%s" valueY="%s" valueZ="%s" weight="%s"/>%s' % (header, `object.valueX(i)`, `object.valueY(i)`, `object.valueZ(i)`, `object.weight(i)`, footer))
++			storeFile.write('%s\t<entry3d valueX="%s" valueY="%s" valueZ="%s" weight="%s"/>%s' % (header, repr(object.valueX(i)), repr(object.valueY(i)), repr(object.valueZ(i)), repr(object.weight(i)), footer))
+ 		storeFile.write(header + '</entries3d>' + footer)
+ 
+ 	def _writeColumns(self, storeFile, object, header, footer):
+@@ -2948,7 +2948,7 @@ class ITree:
+ 					elif columnType in [PTypes.String, PTypes.Character]:
+ 						storeFile.write('%s\t<column name="%s=%s" type="%s"/>%s' % (header, columnName, xmlEscape(columnDefault), columnType.TYPE, footer))
+ 					else:
+-						storeFile.write('%s\t<column name="%s=%s" type="%s"/>%s' % (header, columnName, `columnDefault`, columnType.TYPE, footer))
++						storeFile.write('%s\t<column name="%s=%s" type="%s"/>%s' % (header, columnName, repr(columnDefault), columnType.TYPE, footer))
+ 		storeFile.write(header + '</columns>' + footer)
+ 
+ 	def _columnWalker(self, expression, ituple):
+@@ -2972,7 +2972,7 @@ class ITree:
+ 					elif columnType in [PTypes.String, PTypes.Character]:
+ 						expression += '%s %s="%s", ' % (columnType.TYPE, columnName, columnDefault)
+ 					else:
+-						expression += '%s %s=%s, ' % (columnType.TYPE, columnName, `columnDefault`)
++						expression += '%s %s=%s, ' % (columnType.TYPE, columnName, repr(columnDefault))
+ 		if expression.endswith(', '):
+ 			return self._xmlEscape(expression[:-2] + '}')
+ 		else:
+@@ -3032,7 +3032,7 @@ class ITree:
+ 				elif columnType in PTypesStringCharacter:
+ 					storeFileWrite('%s\t<entry value="%s"/>%s' % (header, xmlEscape(rowData[columnIndex]), footer))
+ 				else:
+-					storeFileWrite('%s\t<entry value="%s"/>%s' % (header, `rowData[columnIndex]`, footer))
++					storeFileWrite('%s\t<entry value="%s"/>%s' % (header, repr(rowData[columnIndex]), footer))
+ 			storeFileWrite(xml_rowEnd)
+ 
+ 	def _xmlEscape(self, data):
+@@ -3048,7 +3048,7 @@ class ITree:
+ 		### Store file creation.
+ 		try:
+ 			import gzip
+-			if self._options.has_key('compress'):
++			if 'compress' in self._options:
+ 				if self._options['compress']:
+ 					storeFile = gzip.open(self._fileName, 'w')
+ 				else:
+@@ -3056,8 +3056,8 @@ class ITree:
+ 			else:
+ 				storeFile = gzip.open(self._fileName, 'w')
+ 		except ImportError:
+-			print 'PAIDA: gzip module is unavailable.'
+-			print 'PAIDA: all files are saved as unzipped.'
++			print('PAIDA: gzip module is unavailable.')
++			print('PAIDA: all files are saved as unzipped.')
+ 			storeFile = file(self._fileName, 'w')
+ 
+ 		### Initial strings.
+--- paida/paida_core/ITuple.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/ITuple.py
+@@ -75,13 +75,13 @@ class ITuple(object):
+ 
+ 	def skip(self, nRows):
+ 		if nRows < 0:
+-			raise ValueError, 'Must be positive.'
++			raise ValueError('Must be positive.')
+ 		elif self._rowIndex + nRows >= len(self._rows):
+-			raise ValueError, 'Beyond the rows range.'
++			raise ValueError('Beyond the rows range.')
+ 		else:
+ 			return self._rowIndex + nRows
+ 
+-	def next(self):
++	def __next__(self):
+ 		if self._rowIndex + 1 >= len(self._rows):
+ 			return False
+ 		else:
+@@ -90,7 +90,7 @@ class ITuple(object):
+ 
+ 	def setRow(self, rowIndex):
+ 		if rowIndex >= len(self._rows):
+-			raise ValueError, 'Beyond the rows range.'
++			raise ValueError('Beyond the rows range.')
+ 		else:
+ 			self._rowIndex = rowIndex
+ 
+@@ -123,9 +123,9 @@ class ITuple(object):
+ 
+ 	def getLong(self, columnIndex):
+ 		if self._rowIndex == -1:
+-			return long(self._rowBuffer[columnIndex])
++			return int(self._rowBuffer[columnIndex])
+ 		else:
+-			return long(self._rows[self._rowIndex][columnIndex])
++			return int(self._rows[self._rowIndex][columnIndex])
+ 
+ 	def getChar(self, columnIndex):
+ 		if self._rowIndex == -1:
+@@ -186,7 +186,7 @@ class ITuple(object):
+ 		columnConverter = self._columnConverters[columnIndex]
+ 		if columnConverter == int:
+ 			return PAIDA_Types.Integer
+-		elif columnConverter == long:
++		elif columnConverter == int:
+ 			return PAIDA_Types.Long
+ 		elif columnConverter == float:
+ 			return PAIDA_Types.Double
+@@ -278,25 +278,25 @@ class ITuple(object):
+ 			evaluatDoubleX = evaluatorX.evaluateDouble
+ 			self.start()
+ 			if (filterObject == None) and (weightObject == None):
+-				while self.next():
++				while next(self):
+ 					histogramFill(evaluatDoubleX())
+ 			elif (filterObject != None) and (weightObject == None):
+ 				filterObject.initialize(self)
+ 				filterAccept = filterObject.accept
+-				while self.next():
++				while next(self):
+ 					if filterAccept():
+ 						histogramFill(evaluatDoubleX())
+ 			elif (filterObject == None) and (weightObject != None):
+ 				weightObject.initialize(self)
+ 				weightDouble = weightObject.evaluateDouble
+-				while self.next():
++				while next(self):
+ 					histogramFill(evaluatDoubleX(), weightDouble())
+ 			else:
+ 				filterObject.initialize(self)
+ 				filterAccept = filterObject.accept
+ 				weightObject.initialize(self)
+ 				weightDouble = weightObject.evaluateDouble
+-				while self.next():
++				while next(self):
+ 					if filterAccept():
+ 						histogramFill(evaluatDoubleX(), weightDouble())
+ 
+@@ -330,25 +330,25 @@ class ITuple(object):
+ 			evaluatDoubleY = evaluatorY.evaluateDouble
+ 			self.start()
+ 			if (filterObject == None) and (weightObject == None):
+-				while self.next():
++				while next(self):
+ 					histogramFill(evaluatDoubleX(), evaluatDoubleY())
+ 			elif (filterObject != None) and (weightObject == None):
+ 				filterObject.initialize(self)
+ 				filterAccept = filterObject.accept
+-				while self.next():
++				while next(self):
+ 					if filterAccept():
+ 						histogramFill(evaluatDoubleX(), evaluatDoubleY())
+ 			elif (filterObject == None) and (weightObject != None):
+ 				weightObject.initialize(self)
+ 				weightDouble = weightObject.evaluateDouble
+-				while self.next():
++				while next(self):
+ 					histogramFill(evaluatDoubleX(), evaluatDoubleY(), weightDouble())
+ 			else:
+ 				filterObject.initialize(self)
+ 				filterAccept = filterObject.accept
+ 				weightObject.initialize(self)
+ 				weightDouble = weightObject.evaluateDouble
+-				while self.next():
++				while next(self):
+ 					if filterAccept():
+ 						histogramFill(evaluatDoubleX(), evaluatDoubleY(), weightDouble())
+ 
+@@ -388,25 +388,25 @@ class ITuple(object):
+ 			evaluatDoubleZ = evaluatorZ.evaluateDouble
+ 			self.start()
+ 			if (filterObject == None) and (weightObject == None):
+-				while self.next():
++				while next(self):
+ 					histogramFill(evaluatDoubleX(), evaluatDoubleY(), evaluatDoubleZ())
+ 			elif (filterObject != None) and (weightObject == None):
+ 				filterObject.initialize(self)
+ 				filterAccept = filterObject.accept
+-				while self.next():
++				while next(self):
+ 					if filterAccept():
+ 						histogramFill(evaluatDoubleX(), evaluatDoubleY(), evaluatDoubleZ())
+ 			elif (filterObject == None) and (weightObject != None):
+ 				weightObject.initialize(self)
+ 				weightDouble = weightObject.evaluateDouble
+-				while self.next():
++				while next(self):
+ 					histogramFill(evaluatDoubleX(), evaluatDoubleY(), evaluatDoubleZ(), weightDouble())
+ 			else:
+ 				filterObject.initialize(self)
+ 				filterAccept = filterObject.accept
+ 				weightObject.initialize(self)
+ 				weightDouble = weightObject.evaluateDouble
+-				while self.next():
++				while next(self):
+ 					if filterAccept():
+ 						histogramFill(evaluatDoubleX(), evaluatDoubleY(), evaluatDoubleZ(), weightDouble())
+ 
+--- paida/paida_core/ITupleFactory.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/ITupleFactory.py
+@@ -26,15 +26,15 @@ class ITupleFactory(object):
+ 			columnTypes = data2
+ 			columnString = self._createColumnString(columnTypes, columnNames)
+ 			optionString = ''
+-		elif hasattr(data1, '__iter__') and hasattr(data2, '__iter__') and (type(data3) in types.StringTypes):
++		elif hasattr(data1, '__iter__') and hasattr(data2, '__iter__') and (type(data3) in (str,)):
+ 			columnNames = data1
+ 			columnTypes = data2
+ 			columnString = self._createColumnString(columnTypes, columnNames)
+ 			optionString = data3
+-		elif (type(data1) in types.StringTypes) and (data2 == None) and (data3 == None):
++		elif (type(data1) in (str,)) and (data2 == None) and (data3 == None):
+ 			columnString = data1
+ 			optionString = ''
+-		elif (type(data1) in types.StringTypes) and (type(data2) in types.StringTypes) and (data3 == None):
++		elif (type(data1) in (str,)) and (type(data2) in (str,)) and (data3 == None):
+ 			columnString = data1
+ 			optionString = data2
+ 
+@@ -106,7 +106,7 @@ class ITupleFactory(object):
+ 					converter = int
+ 					columnName = parser.get_token()
+ 				elif token in ['long']:
+-					converter = long
++					converter = int
+ 					columnName = parser.get_token()
+ 				elif token in ['float', 'double']:
+ 					converter = float
+@@ -172,7 +172,7 @@ class ITupleFactory(object):
+ 					columnDefault = None
+ 					breakFlag = True
+ 				else:
+-					raise RuntimeError, 'Unknown character "%s"' % token
++					raise RuntimeError('Unknown character "%s"' % token)
+ 
+ 				columnNames.append(columnName)
+ 				columnDefaults.append(columnDefault)
+@@ -185,7 +185,7 @@ class ITupleFactory(object):
+ 	def createChained(self, name, title, dataList):
+ 		if dataList == []:
+ 			raise IllegalArgumentException()
+-		elif isinstance(dataList[0], types.StringTypes):
++		elif isinstance(dataList[0], (str,)):
+ 			tupleObjects = []
+ 			for item in dataList:
+ 				tupleObjects.append(self._tree.find(item))
+@@ -208,7 +208,7 @@ class ITupleFactory(object):
+ 
+ 	def createFiltered(self, name, tupleObject, filterObject, columnNames = None):
+ 		if columnNames == None:
+-			columnIndices = range(tupleObject.columns())
++			columnIndices = list(range(tupleObject.columns()))
+ 		else:
+ 			columnIndices = []
+ 			for columnName in columnNames:
+@@ -269,9 +269,9 @@ class ITupleFactory(object):
+ 	def createFilter(self, expression, rowsToProcess = None, startingRow = None):
+ 		if (rowsToProcess == None) and (startingRow == None):
+ 			return IFilter(expression)
+-		elif isinstance(rowsToProcess, types.IntType) and (startingRow == None):
++		elif isinstance(rowsToProcess, int) and (startingRow == None):
+ 			return IFilter(expression, rowsToProcess)
+-		elif isinstance(rowsToProcess, types.IntType) and isinstance(startingRow, types.IntType):
++		elif isinstance(rowsToProcess, int) and isinstance(startingRow, int):
+ 			return IFilter(expression, rowsToProcess, startingRow)
+ 		else:
+ 			raise IllegalArgumentException()
+--- paida/paida_core/PAbsorber.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/PAbsorber.py
+@@ -1,3 +1,4 @@
++from functools import reduce
+ ### enumerate
+ try:
+ 	_temp = enumerate
+@@ -10,14 +11,6 @@ except NameError:
+ 			i += 1
+ 		return result
+ 
+-### True, False
+-try:
+-	_temp = True
+-	_temp = False
+-except NameError:
+-	True = 1
+-	False = 0
+-
+ ### bool
+ try:
+ 	_temp = bool
+@@ -38,9 +31,9 @@ except NameError:
+ ### StringTypes
+ try:
+ 	import types
+-	_temp = types.StringTypes
++	_temp = (str,)
+ except AttributeError:
+-	types.StringTypes = (types.StringType, types.UnicodeType)
++	(str,) = (bytes, str)
+ 
+ ### file()
+ try:
+--- paida/paida_core/PExceptions.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_core/PExceptions.py
+@@ -11,14 +11,14 @@ class BaseException:
+ 		message = self.getMessage()
+ 		if message == None:
+ 			message = '(No exception message)'
+-		print ' #########################'
+-		print ' #   Exception Message   #'
+-		print ' #########################'
+-		print ' ' + self.__class__.__name__
+-		print ' ========================='
+-		print ' ' + message
+-		print ' #########################'
+-		print ''
++		print(' #########################')
++		print(' #   Exception Message   #')
++		print(' #########################')
++		print(' ' + self.__class__.__name__)
++		print(' =========================')
++		print(' ' + message)
++		print(' #########################')
++		print('')
+ 		
+ 	def getMessage(self):
+ 		return self.message
+--- paida/paida_gui/PGuiSelector.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_gui/PGuiSelector.py
+@@ -12,18 +12,18 @@ def setGuiEngineName(guiEngineName):
+ 		pass
+ 	elif guiEngineName == 'tkinter':
+ 		try:
+-			import Tkinter
++			import tkinter
+ 		except ImportError:
+-			print 'PAIDA: "tkinter" GUI engine is unavailable.'
+-			print 'PAIDA: "batch" GUI engine is selected.'
++			print('PAIDA: "tkinter" GUI engine is unavailable.')
++			print('PAIDA: "batch" GUI engine is selected.')
+ 			guiEngineName = 'batch'
+ 	elif guiEngineName == 'swing':
+ 		pass
+ 	elif guiEngineName == 'batch':
+ 		pass
+ 	else:
+-		print 'PAIDA: "%s" GUI engine was not found.' % guiEngineName
+-		print 'PAIDA: "batch" GUI engine is selected.'
++		print('PAIDA: "%s" GUI engine was not found.' % guiEngineName)
++		print('PAIDA: "batch" GUI engine is selected.')
+ 		guiEngineName = 'batch'
+ 	global _guiEngineName
+ 	_guiEngineName = guiEngineName
+--- paida/paida_gui/swing/PRoot.py.orig	2022-03-18 21:34:04 UTC
++++ paida/paida_gui/swing/PRoot.py
+@@ -871,7 +871,7 @@ class _Plotter(_Base):
+ 				self._edt_create_styledMarker(style, tags, styleX + fontWidth / 2.0, lineY + fontHalf)
+ 				style.setParameter('size', originalSize)
+ 			else:
+-				raise RuntimeError, 'Unknown style in legends.'
++				raise RuntimeError('Unknown style in legends.')
+ 			self._edt_create_styledText(textStyle, tags, descriptionX, lineY, description, NW)
+ 			lineY += fontHeight + spacerY
+ 
+@@ -1023,7 +1023,7 @@ class _Plotter(_Base):
+ 		elif lineType == 'dash-dot-dot':
+ 			return BasicStroke(lineStyle.thickness(), BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 2.0, [6.0, 2.0, 4.0, 2.0, 4.0, 2.0], 0.0)
+ 		else:
+-			raise RuntimeError, 'Unknown line type "%s".' % lineType
++			raise RuntimeError('Unknown line type "%s".' % lineType)
+ 
+ 	def _getSwingColor(self, color):
+ 		if color == '':
+@@ -1047,7 +1047,7 @@ class _Plotter(_Base):
+ 				g = int(color[5:7], 16)
+ 				b = int(color[9:11], 16)
+ 			else:
+-				raise RuntimeError, 'Unknown color name "%s".' % color
++				raise RuntimeError('Unknown color name "%s".' % color)
+ 			return Color(r, g, b)
+ 		elif color == 'white':
+ 			return Color.white
+@@ -1066,7 +1066,7 @@ class _Plotter(_Base):
+ 		elif color == 'yellow':
+ 			return Color.yellow
+ 		else:
+-			raise RuntimeError, 'Unknown color name "%s".' % color
++			raise RuntimeError('Unknown color name "%s".' % color)
+ 
+ 	def _edt_delete(self, tags):
+ 		panel = self._getViewComponent()
+@@ -1226,7 +1226,7 @@ class _Plotter(_Base):
+ 			x0 = x
+ 			y0 = y + metrics.getAscent()
+ 		else:
+-			raise RuntimeError, 'Unknown anchor "%s".' % anchor
++			raise RuntimeError('Unknown anchor "%s".' % anchor)
+ 
+ 		graphics = self._getGraphics()
+ 		graphics.setFont(swingFont)
+--- paida/tools/TupleString.py.orig	2022-03-18 21:34:04 UTC
++++ paida/tools/TupleString.py
+@@ -63,9 +63,9 @@ class TupleItem:
+ 			return tupleString
+ 
+ def createTuple():
+-	print 'Warning:'
+-	print 'createTuple() will be removed'
+-	print 'use create() alternatively'
++	print('Warning:')
++	print('createTuple() will be removed')
++	print('use create() alternatively')
+ 	return create()
+ 
+ def create():

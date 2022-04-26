@@ -2,6 +2,7 @@
 
 PORTNAME=	doxygen
 PORTVERSION=	1.9.3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/rel-${PORTVERSION} \
@@ -33,6 +34,7 @@ QT5_DESC=	Install Doxywizard GUI with Qt5
 SEARCH_DESC=	Build external search tools (doxysearch and doxyindexer)
 
 DOCS_USES=		ghostscript:build
+DOCS_USE=		TEX=base:build,dvipsk:build,pdftex:build
 DOCS_ALL_TARGET=	docs
 DOCS_BUILD_DEPENDS=	dot:graphics/graphviz
 DOCS_CMAKE_BOOL=	build_doc
@@ -40,7 +42,6 @@ DOCS_PLIST_FILES=	man/man1/doxygen.1.gz \
 			man/man1/doxyindexer.1.gz \
 			man/man1/doxysearch.1.gz \
 			man/man1/doxywizard.1.gz
-DOCS_IMPLIES=		LATEX
 PORTDOCS=		*
 
 GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz

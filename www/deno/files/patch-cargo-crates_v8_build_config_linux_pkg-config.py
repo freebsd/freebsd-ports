@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.40.2/build/config/linux/pkg-config.py.orig	2020-06-26 16:27:54 UTC
-+++ cargo-crates/v8-0.40.2/build/config/linux/pkg-config.py
+--- cargo-crates/v8-0.41.0/build/config/linux/pkg-config.py.orig	2020-06-26 16:27:54 UTC
++++ cargo-crates/v8-0.41.0/build/config/linux/pkg-config.py
 @@ -59,8 +59,12 @@ def SetConfigPath(options):
      print("You must specify an architecture via -a if using a sysroot.")
      sys.exit(1)

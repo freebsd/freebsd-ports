@@ -1,6 +1,6 @@
 This is a collection of scripts around the use of ports and packages.
 
-It allows you to: 
+It allows you to:
 - check library dependencies without producing false positives (pkg_libchk)
 - lets you manage the autoremove flag for leaf packages (pkg_trim)
 - remove obsolete or damaged distfiles (distviper)

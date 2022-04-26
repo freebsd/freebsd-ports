@@ -1,0 +1,8 @@
+The NTC templates project provides a large collection of TextFSM Templates
+(text parsers) for a variety of Networking Vendors.
+
+In addition to the templates, there is a function that will convert the CLI
+output into a CliTable object; the resulting text table is converted into a
+list of dictionaries mapping the column headers with each row in the table.
+
+WWW: https://github.com/networktocode/ntc-templates

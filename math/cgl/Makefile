@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/Cgl/LICENSE
 
 LIB_DEPENDS=	libcoinasl.so:math/asl \
 		libblas.so:math/blas \
-		libcoinmetis.so:math/ipopt \
 		libCoinUtils.so:math/coinutils \
 		libClp.so:math/clp \
 		libcoinmumps.so:math/coin-or-mumps \

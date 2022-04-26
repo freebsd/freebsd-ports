@@ -1,10 +1,10 @@
 bin/khelpcenter
-share/qlogging-categories5/khelpcenter.categories
 lib/libexec/khc_mansearch.pl
 lib/libexec/khc_xapianindexer
 lib/libexec/khc_xapiansearch
-share/applications/org.kde.Help.desktop
+share/applications/org.kde.khelpcenter.desktop
 share/config.kcfg/khelpcenter.kcfg
+share/dbus-1/services/org.kde.khelpcenter.service
 share/kde4/services/khelpcenter.desktop
 %%DATADIR%%/glossary.xslt
 %%DATADIR%%/plugins/Applications/.directory
@@ -98,4 +98,5 @@ share/locale/vi/LC_MESSAGES/khelpcenter5.mo
 share/locale/wa/LC_MESSAGES/khelpcenter5.mo
 share/locale/zh_CN/LC_MESSAGES/khelpcenter5.mo
 share/locale/zh_TW/LC_MESSAGES/khelpcenter5.mo
-share/metainfo/org.kde.Help.appdata.xml
+share/metainfo/org.kde.khelpcenter.metainfo.xml
+share/qlogging-categories5/khelpcenter.categories

@@ -12,13 +12,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.MIT
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.APACHE2
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
-
-USES=		python:3.5+
+USES=		python:3.5+ pytest
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
-
-do-test:
-	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
 
 .include <bsd.port.mk>

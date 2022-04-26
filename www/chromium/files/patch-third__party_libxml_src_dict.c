@@ -1,17 +1,6 @@
---- third_party/libxml/src/dict.c.orig	2022-02-07 13:39:41 UTC
+--- third_party/libxml/src/dict.c.orig	2022-03-25 21:59:56 UTC
 +++ third_party/libxml/src/dict.c
-@@ -38,8 +38,8 @@
-  *  list we will use the BigKey algo as soon as the hash size grows
-  *  over MIN_DICT_SIZE so this actually works
-  */
--#if defined(HAVE_RAND) && defined(HAVE_SRAND) && defined(HAVE_TIME) && \
--    !defined(FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION)
-+#if (defined(HAVE_RAND) && defined(HAVE_SRAND) && defined(HAVE_TIME) && \
-+    !defined(FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION)) || defined(HAVE_ARC4RANDOM)
- #define DICT_RANDOMIZATION
- #endif
- 
-@@ -140,7 +140,7 @@ static xmlRMutexPtr xmlDictMutex = NULL;
+@@ -135,7 +135,7 @@ static xmlRMutexPtr xmlDictMutex = NULL;
  static int xmlDictInitialized = 0;
  
  #ifdef DICT_RANDOMIZATION
@@ -20,7 +9,7 @@
  /*
   * Internal data for random function, protected by xmlDictMutex
   */
-@@ -181,7 +181,7 @@ int __xmlInitializeDict(void) {
+@@ -176,7 +176,7 @@ int __xmlInitializeDict(void) {
          return(0);
      xmlRMutexLock(xmlDictMutex);
  
@@ -29,7 +18,7 @@
  #ifdef HAVE_RAND_R
      rand_seed = time(NULL);
      rand_r(& rand_seed);
-@@ -201,13 +201,17 @@ int __xmlRandom(void) {
+@@ -196,13 +196,17 @@ int __xmlRandom(void) {
      if (xmlDictInitialized == 0)
          __xmlInitializeDict();
  

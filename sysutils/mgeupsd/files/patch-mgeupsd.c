@@ -1,6 +1,6 @@
---- mgeupsd.c.old	Sat Dec 26 02:42:52 1998
-+++ mgeupsd.c	Sat Mar 17 23:59:09 2001
-@@ -33,9 +33,9 @@
+--- mgeupsd.c.orig	1998-12-26 10:42:52 UTC
++++ mgeupsd.c
+@@ -33,9 +33,9 @@ int RTS = TIOCM_RTS, use_syslog = 0;
  #define BS_TDP 12
  
  /* status file for init */
@@ -12,7 +12,7 @@
  #define RUNDIR	"/var/run"
  char lockfile[40] = {0,};
  char pidfile[40] = {0,};
-@@ -640,7 +640,7 @@
+@@ -640,7 +640,7 @@ operate:
  		  else
  		    {
  #ifndef TEST
@@ -21,7 +21,7 @@
  			syslog (LOG_CRIT, "Process %u doesn not exist! Can't send SIGPWR", init_pid);
  #endif
  		    }
-@@ -677,7 +677,7 @@
+@@ -677,7 +677,7 @@ operate:
  		      else
  			{
  #ifndef TEST
@@ -30,7 +30,7 @@
  			    syslog (LOG_CRIT, "Process %u doesn not exist! Can't send SIGPWR", init_pid);
  #endif
  			}
-@@ -711,7 +711,7 @@
+@@ -711,7 +711,7 @@ operate:
  		  else
  		    {
  #ifndef TEST
@@ -39,7 +39,7 @@
  			syslog (LOG_CRIT, "Process %u doesn not exist! Can't send SIGPWR", init_pid);
  #endif
  		    }
-@@ -758,4 +758,5 @@
+@@ -758,4 +758,5 @@ operate:
  	    }
  	}			/* while(1) */
      }

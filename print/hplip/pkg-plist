@@ -1898,14 +1898,6 @@ share/ppd/HP/hp-smart_tank_plus_570_series.ppd.gz
 share/ppd/HP/hp-smart_tank_plus_650_series.ppd.gz
 share/ppd/HP/hp-smart_tank_wireless_450_series.ppd.gz
 share/ppd/HP/hp-tango.ppd.gz
-@dir %%DATADIR%%/data/images/128x128
-@dir %%DATADIR%%/data/images/16x16
-@dir %%DATADIR%%/data/images/24x24
-@dir %%DATADIR%%/data/images/256x256
-@dir %%DATADIR%%/data/images/32x32
-@dir %%DATADIR%%/data/images/64x64
-@dir %%DATADIR%%/data/images/devices
-@dir %%DATADIR%%/data/images/other
 %%X11%%@dir %%DATADIR%%/ui5/plugins
 @dir /var/lib/hp
 @dir /var/lib

@@ -1,5 +1,5 @@
 PORTNAME=	nanoc-cli
-PORTVERSION=	4.11.19
+DISTVERSION=	4.12.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +10,12 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-cri>=2.15:devel/rubygem-cri \
 		rubygem-diff-lcs>=1.3:textproc/rubygem-diff-lcs \
-		rubygem-zeitwerk>=2.1:devel/rubygem-zeitwerk \
-		rubygem-nanoc-core>=4.11:www/rubygem-nanoc-core
+		rubygem-nanoc-core=4.12.5:www/rubygem-nanoc-core \
+		rubygem-zeitwerk>=2.1:devel/rubygem-zeitwerk
 
 USES=		gem
-NO_ARCH=	yes
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

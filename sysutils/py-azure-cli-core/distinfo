@@ -1,3 +1,3 @@
-TIMESTAMP = 1644875827
-SHA256 (azure-cli-core-2.33.1.tar.gz) = 13f50a70f2015b650ea49162d62fc1937d010a8e6c5503d86809fb834636ccb8
-SIZE (azure-cli-core-2.33.1.tar.gz) = 160914
+TIMESTAMP = 1649515299
+SHA256 (azure-cli-core-2.35.0.tar.gz) = 0e010e7c63e830be56b718c64025f99ff18e4bc42cfe0c14a3e3131f0ba1493e
+SIZE (azure-cli-core-2.35.0.tar.gz) = 161146

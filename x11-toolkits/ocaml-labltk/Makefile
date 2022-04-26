@@ -1,32 +1,33 @@
 # Created by: Michael Grünewald <michipili@gmail.com>
 
 PORTNAME=	labltk
-PORTVERSION=	8.06.3
+PORTVERSION=	8.06.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://download.ocamlcore.org/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Objective Caml interface to Tk
 
 LICENSE=	LGPL20
 
 USES=		gmake tk
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	-tkdefs "-I${LOCALBASE}/include -I${TCL_INCLUDEDIR}\
+		-I${TK_INCLUDEDIR}" \
+		-tklibs "-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER}\
+		-ltk${TK_SHLIB_VER}" -verbose
 MAKE_JOBS_UNSAFE=yes
-MAKE_ENV+=	STAGEDIR="${STAGEDIR}"
 USE_OCAML=	yes
 
 ALL_TARGET=	all opt
 
 post-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile*' | ${XARGS} ${REINPLACE_CMD} \
-		-e 's/$$(INSTALLDIR)/$$(STAGEDIR)$$(INSTALLDIR)/g' \
-		-e 's/$$(INSTALLBINDIR)/$$(STAGEDIR)$$(INSTALLBINDIR)/g' \
-		-e 's/$$(STUBLIBDIR)/$$(STAGEDIR)$$(STUBLIBDIR)/g' \
+		-e 's/$$(INSTALLDIR)/$$(DESTDIR)$$(INSTALLDIR)/g' \
+		-e 's/$$(INSTALLBINDIR)/$$(DESTDIR)$$(INSTALLBINDIR)/g' \
+		-e 's/$$(STUBLIBDIR)/$$(DESTDIR)$$(STUBLIBDIR)/g' \
 		-e 's/mkdir /& -p /g'
-	@${REINPLACE_CMD} -e 's|%%SCRIPTBASE%%|${PREFIX}/lib/ocaml/labltk/|g' \
-		${WRKSRC}/lib/Makefile
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ocaml/stublibs

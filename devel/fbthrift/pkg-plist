@@ -115,6 +115,7 @@ include/thrift/lib/cpp2/TypeClass.h
 include/thrift/lib/cpp2/async/AsyncClient.h
 include/thrift/lib/cpp2/async/AsyncProcessor.h
 include/thrift/lib/cpp2/async/AsyncProcessorHelper.h
+include/thrift/lib/cpp2/async/AsyncProcessorHolder.h
 include/thrift/lib/cpp2/async/ChannelCallbacks.h
 include/thrift/lib/cpp2/async/ClientBufferedStream.h
 include/thrift/lib/cpp2/async/ClientChannel.h
@@ -209,12 +210,15 @@ include/thrift/lib/cpp2/op/Hash.h
 include/thrift/lib/cpp2/op/Patch.h
 include/thrift/lib/cpp2/op/StdHasher.h
 include/thrift/lib/cpp2/op/Testing.h
+include/thrift/lib/cpp2/op/detail/BasePatch.h
 include/thrift/lib/cpp2/op/detail/Clear.h
 include/thrift/lib/cpp2/op/detail/Compare.h
 include/thrift/lib/cpp2/op/detail/Create.h
 include/thrift/lib/cpp2/op/detail/Hash.h
 include/thrift/lib/cpp2/op/detail/HashProtocol.h
 include/thrift/lib/cpp2/op/detail/Patch.h
+include/thrift/lib/cpp2/op/detail/StructPatch.h
+include/thrift/lib/cpp2/op/detail/ValuePatch.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol-inl.h
 include/thrift/lib/cpp2/protocol/BinaryProtocol.h
 include/thrift/lib/cpp2/protocol/CompactProtocol-inl.h
@@ -296,6 +300,7 @@ include/thrift/lib/cpp2/security/extensions/ThriftParametersServerExtension.h
 include/thrift/lib/cpp2/security/extensions/Types.h
 include/thrift/lib/cpp2/server/AdaptiveConcurrency.h
 include/thrift/lib/cpp2/server/BaseThriftServer.h
+include/thrift/lib/cpp2/server/ConcurrencyControllerBase.h
 include/thrift/lib/cpp2/server/ConcurrencyControllerInterface.h
 include/thrift/lib/cpp2/server/ControlServerInterface.h
 include/thrift/lib/cpp2/server/Cpp2ConnContext.h
@@ -326,6 +331,8 @@ include/thrift/lib/cpp2/server/StatusServerInterface.h
 include/thrift/lib/cpp2/server/ThriftProcessor.h
 include/thrift/lib/cpp2/server/ThriftServer.h
 include/thrift/lib/cpp2/server/TransportRoutingHandler.h
+include/thrift/lib/cpp2/server/WeightedRequestPileQueue-inl.h
+include/thrift/lib/cpp2/server/WeightedRequestPileQueue.h
 include/thrift/lib/cpp2/server/peeking/PeekingManager.h
 include/thrift/lib/cpp2/server/peeking/TLSHelper.h
 include/thrift/lib/cpp2/test/IndirectionWrapperTest.h

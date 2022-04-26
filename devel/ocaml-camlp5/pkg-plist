@@ -83,6 +83,13 @@ lib/ocaml/camlp5/pa_macro.cmi
 lib/ocaml/camlp5/pa_macro.cmo
 lib/ocaml/camlp5/pa_macro.cmx
 lib/ocaml/camlp5/pa_macro.o
+lib/ocaml/camlp5/pa_macro_gram.cmi
+lib/ocaml/camlp5/pa_macro_gram.cmo
+lib/ocaml/camlp5/pa_macro_gram.cmx
+lib/ocaml/camlp5/pa_macro_gram.o
+lib/ocaml/camlp5/pa_macro_print.cmo
+lib/ocaml/camlp5/pa_macro_print.cmx
+lib/ocaml/camlp5/pa_macro_print.o
 lib/ocaml/camlp5/pa_mkast.cmo
 lib/ocaml/camlp5/pa_mkast.cmx
 lib/ocaml/camlp5/pa_mkast.o

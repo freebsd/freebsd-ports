@@ -32,9 +32,9 @@
 .if !defined(_INCLUDE_USES_ELIXIR_MK)
 _INCLUDE_USES_ELIXIR_MK=yes
 
-.if !empty(elixir_ARGS)
+.  if !empty(elixir_ARGS)
 IGNORE=	USES=elixir does not require args
-.endif
+.  endif
 
 ELIXIR_APP_NAME?=	${PORTNAME}
 ELIXIR_LIB_ROOT?=	${LOCALBASE}/lib/elixir/lib
@@ -59,35 +59,35 @@ MIX_EXTRA_FILES?=
 BUILD_DEPENDS+=	elixir:lang/elixir
 RUN_DEPENDS+=	elixir:lang/elixir
 
-.for depend in ${MIX_BUILD_DEPS}
+.  for depend in ${MIX_BUILD_DEPS}
 BUILD_DEPENDS+=	${depend:T}>=0:${depend}
-.endfor
+.  endfor
 
-.for depend in ${MIX_RUN_DEPS}
+.  for depend in ${MIX_RUN_DEPS}
 RUN_DEPENDS+=	${depend:T}>=0:${depend}
-.endfor
+.  endfor
 
-.if !target(do-build)
+.  if !target(do-build)
 do-build:
-.if ${MIX_REWRITE} != ""
+.    if ${MIX_REWRITE} != ""
 	@${REINPLACE_CMD} -i '' -E -e "s@\{.*(only|optional): .*},?@@" ${WRKSRC}/mix.exs
-.for depend in ${MIX_BUILD_DEPS}
+.      for depend in ${MIX_BUILD_DEPS}
 	@if [ $$(echo ${depend:T} | sed -e "s/erlang-//") != ${depend:T} ]; then \
 		${REINPLACE_CMD} -i '' -E -e "s@\{ *:(${depend:T:S/erlang-//}), *(github:|\").*} *,?@@" ${WRKSRC}/mix.exs; \
 	else \
 		${REINPLACE_CMD} -i '' -E -e "s@\{ *:(${depend:T:S/elixir-//}), *(github:|\").*}@{ :\1, path: \"${ELIXIR_LIB_ROOT}/\\1\", compile: false }@" ${WRKSRC}/mix.exs; \
 	fi
-.endfor
-.endif
+.      endfor
+.    endif
 	@${RM} ${WRKSRC}/mix.lock
 	@cd ${WRKSRC} && ${MIX_COMPILE}
-.for app in ${MIX_EXTRA_APPS}
+.    for app in ${MIX_EXTRA_APPS}
 	@${RM} ${WRKSRC}/${app}/mix.lock
 	@cd ${WRKSRC}/${app} && ${MIX_COMPILE}
-.endfor
-.endif # .if !target(do-build)
+.    endfor
+.  endif # .if !target(do-build)
 
-.if !target(do-install)
+.  if !target(do-install)
 do-install:
 	@${MKDIR} ${STAGEDIR}${ELIXIR_APP_ROOT}
 	@${MKDIR} ${STAGEDIR}${ELIXIR_APP_ROOT}/lib
@@ -99,26 +99,26 @@ do-install:
 		${MKDIR} ${STAGEDIR}${ELIXIR_APP_ROOT}/priv; \
 		cd ${WRKSRC}/priv && ${COPYTREE_SHARE} \* ${STAGEDIR}${ELIXIR_APP_ROOT}/priv; \
 	fi
-.if ${MIX_DOC_FILES} != "" || ${MIX_DOC_DIRS} != ""
+.    if ${MIX_DOC_FILES} != "" || ${MIX_DOC_DIRS} != ""
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.endif
-.for file in ${MIX_DOC_FILES}
+.    endif
+.    for file in ${MIX_DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
-.for dir in ${MIX_DOC_DIRS}
+.    endfor
+.    for dir in ${MIX_DOC_DIRS}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DOCSDIR}
-.endfor
-.for file in ${MIX_EXTRA_FILES}
+.    endfor
+.    for file in ${MIX_EXTRA_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${ELIXIR_APP_ROOT}
-.endfor
-.for dir in ${MIX_EXTRA_DIRS}
+.    endfor
+.    for dir in ${MIX_EXTRA_DIRS}
 	@${MKDIR} ${STAGEDIR}${ELIXIR_APP_ROOT}/${dir}
 	cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${STAGEDIR}${ELIXIR_APP_ROOT}/${dir}
-.endfor
-.for app in ${MIX_EXTRA_APPS}
+.    endfor
+.    for app in ${MIX_EXTRA_APPS}
 	${INSTALL_DATA} ${WRKSRC}/${app}/_build/${MIX_BUILD_NAME}/lib/*/ebin/* \
 		${STAGEDIR}${ELIXIR_APP_ROOT}/ebin
-.endfor
-.endif # .if !target(do-install)
+.    endfor
+.  endif # .if !target(do-install)
 
 .endif #!defined(_INCLUDE_USES_ELIXIR_MK)

@@ -7,8 +7,8 @@ bin/gdb%%VER%%
 man/man1/gdb%%VER%%.1.gz
 %%GDB_LINK%%%%KGDB%%man/man1/kgdb.1.gz
 %%KGDB%%man/man1/kgdb%%VER%%.1.gz
-%%LIBCXX%%%%DATADIR%%/auto-load/usr/lib/libc++.so.1-gdb.py
-%%LIBCXX%%%%DATADIR%%/auto-load/usr/lib/libc++.so.1-gdb.pyc
+%%LIBCXX%%%%DATADIR%%/auto-load%%LIBCXX_DIR%%/libc++.so.1-gdb.py
+%%LIBCXX%%%%DATADIR%%/auto-load%%LIBCXX_DIR%%/libc++.so.1-gdb.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/__init__.py
 %%PYTHON%%%%DATADIR%%/python/gdb/__init__.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/FrameDecorator.py

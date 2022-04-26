@@ -2,6 +2,7 @@
 
 PORTNAME=	icecast
 PORTVERSION=	2.4.4
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://downloads.xiph.org/releases/icecast/:source \
@@ -25,7 +26,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtheora.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis
 
-USES=		cpe gmake gnome localbase ssl
+USES=		cpe gmake gnome localbase pkgconfig ssl
 USE_GNOME=	libxml2 libxslt
 
 GNU_CONFIGURE=	yes

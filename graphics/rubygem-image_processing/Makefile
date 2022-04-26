@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	image_processing
-PORTVERSION=	1.12.1
+PORTVERSION=	1.12.2
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 

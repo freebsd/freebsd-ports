@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-POE-Test-Loops>=1.035:devel/p5-POE-Test-Loops \
 		${RUN_DEPENDS}
-RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+RUN_DEPENDS=	p5-AnyEvent>=0,1:devel/p5-AnyEvent \
 		p5-POE>=1.289:devel/p5-POE
 
 USES=		perl5

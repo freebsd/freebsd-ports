@@ -1,7 +1,7 @@
 # Created by: Yoshiaki UCHIKAWA <yoshiaki@kt.rim.or.jp>
 
 PORTNAME=	pari
-DISTVERSION=	2.13.3
+DISTVERSION=	2.13.4
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/unix/

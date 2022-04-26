@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	audio
 
 COMMENT=	GStreamer Ogg bitstream plugin

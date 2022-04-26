@@ -1,5 +1,5 @@
 PORTNAME=	picard-plugins
-PORTVERSION=	2.0.20220214
+PORTVERSION=	2.0.20220402
 CATEGORIES=	audio python
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -12,7 +12,7 @@ USES=		python:3.7+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
-GH_TAGNAME=	dac5623
+GH_TAGNAME=	ca84f7b
 
 PORTSCOUT=	limit:^2\.
 

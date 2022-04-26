@@ -18,7 +18,7 @@ USE_KDE=	archive attica auth bookmarks codecs completion config \
 		sonnet textwidgets wallet widgetsaddons windowsystem xmlgui \
 		ecm_build \
 		init_run
-USE_QT=		concurrent core dbus gui network phonon4 widgets xml \
+USE_QT=		concurrent core dbus gui multimedia network phonon4 widgets xml \
 		buildtools_build qmake_build
 
 SHEBANG_FILES=	data/scripts/bug \

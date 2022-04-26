@@ -1,11 +1,19 @@
-From cba80ebe02962504fbe404b1baf484a5000f44b4
-From: Jeremie Dimino <jdimino@janestreet.com>
-Date: Tue, 12 Jul 2016 17:08:10 +0100
-Subject: [PATCH] 114.01+04
-
---- lib/conv.ml.orig	2016-03-09 15:44:55 UTC
+--- lib/conv.ml.orig	2015-08-18 11:17:27 UTC
 +++ lib/conv.ml
-@@ -185,7 +185,7 @@ module Exn_converter = struct
+@@ -92,9 +92,9 @@ let sexp_of_float_vec vec =
+ 
+ let sexp_of_bigstring (bstr : bigstring) =
+   let n = Array1.dim bstr in
+-  let str = String.create n in
+-  for i = 0 to n - 1 do str.[i] <- bstr.{i} done;
+-  Atom str
++  let str = Bytes.create n in
++  for i = 0 to n - 1 do Bytes.set str i bstr.{i} done;
++  Atom (Bytes.unsafe_to_string str)
+ 
+ let sexp_of_float32_vec (vec : float32_vec) = sexp_of_float_vec vec
+ let sexp_of_float64_vec (vec : float64_vec) = sexp_of_float_vec vec
+@@ -183,7 +183,7 @@ module Exn_converter = struct
  
    (* [Obj.extension_id] works on both the exception itself, and the extension slot of the
       exception. *)
@@ -14,7 +22,7 @@ Subject: [PATCH] 114.01+04
      let id = Obj.extension_id slot in
      let old_exn_id_map = !exn_id_map in
      let new_exn_id_map = Exn_ids.remove id old_exn_id_map in
-@@ -196,7 +196,7 @@ module Exn_converter = struct
+@@ -194,7 +194,7 @@ module Exn_converter = struct
        exn_id_map := new_exn_id_map
  
    let add_auto ?(finalise = true) exn sexp_of_exn =
@@ -23,7 +31,7 @@ Subject: [PATCH] 114.01+04
      let rec loop () =
        let old_exn_id_map = !exn_id_map in
        let new_exn_id_map = Exn_ids.add id sexp_of_exn old_exn_id_map in
-@@ -205,13 +205,18 @@ module Exn_converter = struct
+@@ -203,13 +203,18 @@ module Exn_converter = struct
          loop ()
        else begin
          exn_id_map := new_exn_id_map;

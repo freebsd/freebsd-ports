@@ -20,6 +20,12 @@ SHEBANG_FILES=	bsfilter/bsfilter
 
 OPTIONS_DEFINE=	EXAMPLES
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER:M3*} != ""
+RUN_DEPENDS+=	rubygem-sdbm>=1.0.0:databases/rubygem-sdbm
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bsfilter/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -30,4 +36,4 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${DIR} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

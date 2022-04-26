@@ -1,0 +1,205 @@
+--- src/zope/password/tests/test_zpasswd.py.orig	2010-05-27 08:08:11 UTC
++++ src/zope/password/tests/test_zpasswd.py
+@@ -19,7 +19,7 @@ $Id: test_zpasswd.py 112138 2010-05-07 15:23:02Z ulif 
+ import os
+ import sys
+ import unittest, doctest
+-from StringIO import StringIO
++from io import StringIO
+ 
+ from zope.password import password, zpasswd
+ 
+@@ -51,23 +51,23 @@ class ArgumentParsingTestCase(TestBase):
+         argv = ["foo/bar.py"] + args
+         options = zpasswd.parse_args(argv)
+         self.assertEqual(options.program, "bar.py")
+-        self.assert_(options.version)
++        self.assertTrue(options.version)
+         return options
+ 
+     def check_stdout_content(self, args):
+         try:
+             options = self.parse_args(args)
+-        except SystemExit, e:
++        except SystemExit as e:
+             self.assertEqual(e.code, 0)
+-            self.assert_(self.stdout.getvalue())
+-            self.failIf(self.stderr.getvalue())
++            self.assertTrue(self.stdout.getvalue())
++            self.assertFalse(self.stderr.getvalue())
+         else:
+             self.fail("expected SystemExit")
+ 
+     def test_no_arguments(self):
+         options = self.parse_args([])
+-        self.assert_(options.managers)
+-        self.assert_(not options.destination)
++        self.assertTrue(options.managers)
++        self.assertTrue(not options.destination)
+ 
+     def test_version_long(self):
+         self.check_stdout_content(["--version"])
+@@ -88,11 +88,11 @@ class ArgumentParsingTestCase(TestBase):
+ 
+     def test_config_short(self):
+         options = self.parse_args(["-c", self.config])
+-        self.assert_(options.managers)
++        self.assertTrue(options.managers)
+ 
+     def test_config_long(self):
+         options = self.parse_args(["--config", self.config])
+-        self.assert_(options.managers)
++        self.assertTrue(options.managers)
+ 
+ class ControlledInputApplication(zpasswd.Application):
+ 
+@@ -123,19 +123,19 @@ class InputCollectionTestCase(TestBase):
+ 
+     def check_principal(self, expected):
+         output = self.stdout.getvalue()
+-        self.failUnless(output)
++        self.assertTrue(output)
+ 
+         principal_lines = output.splitlines()[-(len(expected) + 1):-1]
+         for line, expline in zip(principal_lines, expected):
+-            self.failUnlessEqual(line.strip(), expline)
++            self.assertEqual(line.strip(), expline)
+ 
+     def test_principal_information(self):
+         options = self.createOptions()
+         app = ControlledInputApplication(options,
+             ["id", "title", "login", "1", "passwd", "passwd", "description"])
+         app.process()
+-        self.failUnless(not self.stderr.getvalue())
+-        self.failUnless(app.all_input_consumed())
++        self.assertTrue(not self.stderr.getvalue())
++        self.assertTrue(app.all_input_consumed())
+         self.check_principal([
+             '<principal',
+             'id="id"',
+--- src/zope/password/zpasswd.py.orig	2010-05-27 08:08:11 UTC
++++ src/zope/password/zpasswd.py
+@@ -29,7 +29,7 @@ def main(argv=None):
+         argv = sys.argv
+     try:
+         options = parse_args(argv)
+-    except SystemExit, e:
++    except SystemExit as e:
+         if e.code:
+             return 2
+         else:
+@@ -39,7 +39,7 @@ def main(argv=None):
+         return app.process()
+     except KeyboardInterrupt:
+         return 1
+-    except SystemExit, e:
++    except SystemExit as e:
+         return e.code
+ 
+ class Principal(object):
+@@ -135,7 +135,7 @@ class Application(object):
+ 
+     def read_input_line(self, prompt):
+         # The tests replace this to make sure the right things happen.
+-        return raw_input(prompt)
++        return input(prompt)
+ 
+     def read_password(self, prompt):
+         # The tests replace this to make sure the right things happen.
+@@ -145,7 +145,7 @@ class Application(object):
+         except KeyboardInterrupt:
+             # The cursor was left on the same line as the prompt,
+             # which we don't like.  Print a blank line.
+-            print
++            print()
+             raise
+ 
+     def process(self):
+@@ -159,9 +159,9 @@ class Application(object):
+         principal = self.get_principal()
+ 
+         if destination is sys.stdout:
+-            print self.title
+-        print >>destination, principal
+-        print
++            print(self.title)
++        print(principal, file=destination)
++        print()
+ 
+         return 0
+ 
+@@ -185,21 +185,21 @@ class Application(object):
+         while True:
+             value = self.read_input_line(prompt).strip()
+             if not value and error:
+-                print >>sys.stderr, error
++                print(error, file=sys.stderr)
+                 continue
+             return value
+ 
+     def get_password_manager(self):
+         default = 0
+         self.print_message("Password manager:")
+-        print
++        print()
+         managers = self.options.managers
+ 
+         for i, (name, manager) in enumerate(managers):
+-            print "% i. %s" % (i + 1, name)
++            print("% i. %s" % (i + 1, name))
+             if name == 'SSHA':
+                 default = i
+-        print
++        print()
+         self.need_blank_line = True
+         while True:
+             password_manager = self.read_input_line(
+@@ -212,8 +212,8 @@ class Application(object):
+                 if index > 0 and index <= len(managers):
+                     index -= 1
+                     break
+-            print >>sys.stderr, "You must select a password manager"
+-        print "%s password manager selected" % managers[index][0]
++            print("You must select a password manager", file=sys.stderr)
++        print("%s password manager selected" % managers[index][0])
+         return managers[index]
+ 
+     def get_password(self):
+@@ -221,23 +221,23 @@ class Application(object):
+         while True:
+             password = self.read_password("Password: ")
+             if not password:
+-                print >>sys.stderr, "Password may not be empty"
++                print("Password may not be empty", file=sys.stderr)
+                 continue
+             if password != password.strip() or password.split() != [password]:
+-                print >>sys.stderr, "Password may not contain spaces"
++                print("Password may not contain spaces", file=sys.stderr)
+                 continue
+             break
+         again = self.read_password("Verify password: ")
+         if again != password:
+-            print >>sys.stderr, "Password not verified!"
++            print("Password not verified!", file=sys.stderr)
+             sys.exit(1)
+         return password
+ 
+     def print_message(self, message):
+         if self.need_blank_line:
+-            print
++            print()
+             self.need_blank_line = False
+-        print message
++        print(message)
+ 
+ def get_password_managers(config_path=None):
+     if not config_path:
+@@ -247,7 +247,7 @@ def get_password_managers(config_path=None):
+         from zope.component import getUtilitiesFor
+         from zope.password.interfaces import IPasswordManager
+ 
+-        print "Loading configuration..."
++        print("Loading configuration...")
+         config = xmlconfig.file(config_path)
+         managers = []
+         for name, manager in getUtilitiesFor(IPasswordManager):

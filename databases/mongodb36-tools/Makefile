@@ -1,6 +1,7 @@
 PORTNAME=	mongodb36-tools
 PORTVERSION=	3.6.3
 DISTVERSIONPREFIX=	r
+PORTREVISION=	1
 CATEGORIES=	databases net
 
 MAINTAINER=	numisemis@yahoo.com

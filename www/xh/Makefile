@@ -1,7 +1,6 @@
 PORTNAME=	xh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.1
-PORTREVISION=	3
+DISTVERSION=	0.15.0
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -22,7 +21,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		alloc-stdlib-0.2.1 \
 		ansi_term-0.11.0 \
 		anyhow-1.0.44 \
-		assert_cmd-1.0.8 \
+		assert_cmd-2.0.2 \
 		assert_matches-1.5.0 \
 		async-compression-0.3.8 \
 		atty-0.2.14 \
@@ -40,6 +39,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bytes-1.1.0 \
 		cc-1.0.70 \
 		cfg-if-1.0.0 \
+		chardetng-0.1.15 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
 		console-0.14.1 \
@@ -60,7 +60,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.28 \
+		encoding_rs-0.8.29 \
 		encoding_rs_io-0.1.7 \
 		flate2-1.0.21 \
 		float-cmp-0.8.0 \
@@ -116,7 +116,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		mio-0.7.13 \
 		miow-0.3.7 \
 		native-tls-0.2.8 \
-		netrc-rs-0.1.2 \
 		normalize-line-endings-0.3.0 \
 		ntapi-0.3.6 \
 		num-integer-0.1.44 \
@@ -130,6 +129,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		openssl-0.10.36 \
 		openssl-probe-0.1.4 \
 		openssl-sys-0.9.66 \
+		os_display-0.1.3 \
 		pem-0.8.3 \
 		percent-encoding-2.1.0 \
 		pin-project-lite-0.2.7 \
@@ -164,6 +164,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		rpassword-5.0.1 \
 		rustc_version-0.2.3 \
 		rustls-0.19.1 \
+		rustls-native-certs-0.5.0 \
 		ryu-1.0.5 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
@@ -179,7 +180,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		serde_urlencoded-0.7.0 \
 		sha1-0.6.0 \
 		sha2-0.9.8 \
-		shell-escape-0.1.5 \
 		slab-0.4.4 \
 		socket2-0.4.1 \
 		spin-0.5.2 \
@@ -220,7 +220,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-bidi-0.3.6 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.8.0 \
-		unicode-width-0.1.8 \
+		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
 		unindent-0.1.7 \
 		untrusted-0.7.1 \

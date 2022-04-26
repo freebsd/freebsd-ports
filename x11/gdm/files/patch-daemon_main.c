@@ -1,6 +1,6 @@
---- daemon/main.c.orig	2022-01-12 14:15:56 UTC
+--- daemon/main.c.orig	2022-03-21 18:12:40 UTC
 +++ daemon/main.c
-@@ -289,6 +289,7 @@ is_debug_set (void)
+@@ -281,6 +281,7 @@ is_debug_set (void)
          return debug;
  }
  
@@ -8,7 +8,7 @@
  /* SIGUSR1 is used by the X server to tell us that we're ready, so
   * block it. We'll unblock it in the worker thread in gdm-server.c
   */
-@@ -301,6 +302,7 @@ block_sigusr1 (void)
+@@ -293,6 +294,7 @@ block_sigusr1 (void)
          sigaddset (&mask, SIGUSR1);
          sigprocmask (SIG_BLOCK, &mask, NULL);
  }
@@ -16,7 +16,7 @@
  
  int
  main (int    argc,
-@@ -321,7 +323,9 @@ main (int    argc,
+@@ -313,7 +315,9 @@ main (int    argc,
                  { NULL }
          };
  

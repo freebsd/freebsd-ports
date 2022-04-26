@@ -1,0 +1,9 @@
+--- config/settings.d/puppetca_puppet_cert.yml.example.orig	2019-12-22 22:37:03 UTC
++++ config/settings.d/puppetca_puppet_cert.yml.example
+@@ -1,4 +1,4 @@
+ ---
+-#:ssldir: /var/lib/puppet/ssl
++#:ssldir: /var/puppet/ssl
+ #:puppetca_use_sudo: true
+-#:sudo_command: /usr/bin/sudo
++#:sudo_command: %%LOCALBASE%%/bin/sudo

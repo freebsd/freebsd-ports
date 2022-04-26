@@ -1339,8 +1339,8 @@
 %%WWWDIR%%/locale/lv/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/lv/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/make_mo.sh
-%%WWWDIR%%/locale/nb-NO/LC_MESSAGES/frontend.mo
-%%WWWDIR%%/locale/nb-NO/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/nb_NO/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/nb_NO/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/nl/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/nl/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/pl/LC_MESSAGES/frontend.mo
@@ -1355,8 +1355,8 @@
 %%WWWDIR%%/locale/ru/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/sk/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/sk/LC_MESSAGES/frontend.po
-%%WWWDIR%%/locale/sv-SE/LC_MESSAGES/frontend.mo
-%%WWWDIR%%/locale/sv-SE/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/uk/LC_MESSAGES/frontend.mo

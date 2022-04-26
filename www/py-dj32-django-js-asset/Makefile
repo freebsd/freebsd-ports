@@ -1,9 +1,9 @@
 PORTNAME=	django-js-asset
-DISTVERSION=	1.2.2
-PORTREVISION=	1
+DISTVERSION=	2.0.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj32-
+DISTNAME=	django_js_asset-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Insert script tags with additional attributes for django.forms.Media

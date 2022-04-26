@@ -1,5 +1,6 @@
 bin/kig
 bin/pykig.py
+%%QT_PLUGINDIR%%/kf5/parts/kigpart.so
 man/ca/man1/kig.1.gz
 man/de/man1/kig.1.gz
 man/es/man1/kig.1.gz
@@ -12,10 +13,7 @@ man/pt_BR/man1/kig.1.gz
 man/ru/man1/kig.1.gz
 man/sv/man1/kig.1.gz
 man/uk/man1/kig.1.gz
-%%QT_PLUGINDIR%%/kf5/parts/kigpart.so
 share/applications/org.kde.kig.desktop
-share/icons/hicolor/128x128/apps/kig.png
-share/icons/hicolor/128x128/mimetypes/application-x-kig.png
 share/icons/hicolor/16x16/apps/kig.png
 share/icons/hicolor/16x16/mimetypes/application-x-kig.png
 share/icons/hicolor/22x22/apps/kig.png
@@ -26,6 +24,8 @@ share/icons/hicolor/48x48/apps/kig.png
 share/icons/hicolor/48x48/mimetypes/application-x-kig.png
 share/icons/hicolor/64x64/apps/kig.png
 share/icons/hicolor/64x64/mimetypes/application-x-kig.png
+share/icons/hicolor/128x128/apps/kig.png
+share/icons/hicolor/128x128/mimetypes/application-x-kig.png
 share/icons/hicolor/scalable/apps/kig.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-kig.svgz
 share/katepart5/syntax/python-kig.xml

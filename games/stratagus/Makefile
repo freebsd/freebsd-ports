@@ -38,6 +38,8 @@ MNG_CMAKE_BOOL=		WITH_MNG
 
 THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 THEORA_CMAKE_BOOL=	WITH_THEORA
+# XXX: does not build otherwise, remove after upstream bug is fixed: https://github.com/Wargus/stratagus/issues/396
+THEORA_IMPLIES=		VORBIS
 
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 			libogg.so:audio/libogg

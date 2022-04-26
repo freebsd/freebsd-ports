@@ -10,7 +10,7 @@ LICENSE=	ISCL
 
 USES=		uidfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	jbeich # mirror
+GH_ACCOUNT=	sdaoden
 GH_PROJECT=	s-toolbox
 GH_TAGNAME=	cdbe3ce
 PLIST_FILES=	lib/${PORTNAME}.so \

@@ -1,5 +1,5 @@
 PORTNAME=	libretro-vbanext
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220327
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -13,7 +13,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	vba-next
-GH_TAGNAME=	c24bf52
+GH_TAGNAME=	ebd175d
 
 PLIST_FILES=	lib/libretro/vba_next_libretro.so
 

@@ -3,4 +3,4 @@ numerical/scientific/number-theoretic calculations. It allows use of most
 PARI functions as Perl functions, and (almost) seamless merging of PARI
 and Perl data.
 
-WWW: https://metacpan.org/release/Math-Pari
+WWW: https://metacpan.org/dist/Math-Pari

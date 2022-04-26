@@ -54,7 +54,6 @@ lib/R/include/R_ext/Parse.h
 lib/R/include/R_ext/Print.h
 lib/R/include/R_ext/PrtUtil.h
 lib/R/include/R_ext/QuartzDevice.h
-lib/R/include/R_ext/R-ftp-http.h
 lib/R/include/R_ext/RS.h
 lib/R/include/R_ext/RStartup.h
 lib/R/include/R_ext/Rallocators.h
@@ -74,7 +73,6 @@ lib/R/include/Rinterface.h
 lib/R/include/Rinternals.h
 lib/R/include/Rmath.h
 lib/R/include/Rversion.h
-lib/R/include/S.h
 lib/R/lib/libR.so
 lib/R/lib/libR.so.%%FULLVER%%
 lib/R/lib/libR.so.%%MAJORVER%%
@@ -780,8 +778,6 @@ lib/R/library/mgcv/help/paths.rds
 lib/R/library/mgcv/html/00Index.html
 lib/R/library/mgcv/html/R.css
 lib/R/library/mgcv/libs/mgcv.so
-%%NLS%%lib/R/library/mgcv/po/it/LC_MESSAGES/R-mgcv.mo
-%%NLS%%lib/R/library/mgcv/po/it/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/de/LC_MESSAGES/R-mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/de/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/en@quot/LC_MESSAGES/R-mgcv.mo
@@ -795,7 +791,6 @@ lib/R/library/mgcv/libs/mgcv.so
 lib/R/library/nlme/CITATION
 lib/R/library/nlme/DESCRIPTION
 lib/R/library/nlme/INDEX
-lib/R/library/nlme/LICENCE
 lib/R/library/nlme/Meta/Rd.rds
 lib/R/library/nlme/Meta/data.rds
 lib/R/library/nlme/Meta/features.rds
@@ -1371,9 +1366,13 @@ lib/R/library/translations/DESCRIPTION
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R-grDevices.mo
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R-grid.mo
+%%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R-methods.mo
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R-parallel.mo
+%%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R-splines.mo
+%%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R-tcltk.mo
+%%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R-tools.mo
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/R.mo
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/RGui.mo
@@ -1385,6 +1384,7 @@ lib/R/library/translations/DESCRIPTION
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/splines.mo
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/stats.mo
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/tcltk.mo
+%%NLS%%lib/R/library/translations/lt/LC_MESSAGES/tools.mo
 %%NLS%%lib/R/library/translations/lt/LC_MESSAGES/utils.mo
 %%NLS%%lib/R/library/translations/nn/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/translations/nn/LC_MESSAGES/R.mo
@@ -1499,11 +1499,13 @@ lib/R/library/translations/DESCRIPTION
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R-grDevices.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R-grid.mo
+%%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R-methods.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R-parallel.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R-splines.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R-tcltk.mo
+%%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R-tools.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/R.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/RGui.mo
@@ -1517,7 +1519,7 @@ lib/R/library/translations/DESCRIPTION
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/tcltk.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/tools.mo
 %%NLS%%lib/R/library/translations/zh_TW/LC_MESSAGES/utils.mo
-lib/R/library/utils/DESCRIPTION
+%%NLS%%lib/R/library/utils/DESCRIPTION
 lib/R/library/utils/INDEX
 lib/R/library/utils/Meta/Rd.rds
 lib/R/library/utils/Meta/features.rds
@@ -1591,11 +1593,7 @@ lib/R/share/texmf/bibtex/bst/jss.bst
 lib/R/share/texmf/tex/latex/Rd.sty
 lib/R/share/texmf/tex/latex/Sweave.sty
 lib/R/share/texmf/tex/latex/jss.cls
-lib/R/share/texmf/tex/latex/omsaer.fd
-lib/R/share/texmf/tex/latex/omsaett.fd
 lib/R/share/texmf/tex/latex/omscmtt.fd
-lib/R/share/texmf/tex/latex/ts1aer.fd
-lib/R/share/texmf/tex/latex/ts1aett.fd
 libdata/pkgconfig/libR.pc
 man/man1/R.1.gz
 man/man1/Rscript.1.gz

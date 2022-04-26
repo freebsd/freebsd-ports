@@ -94,6 +94,7 @@
     SUBDIR += dma
     SUBDIR += dot-forward
     SUBDIR += dovecot
+    SUBDIR += dovecot-fts-elastic
     SUBDIR += dovecot-fts-flatcurve
     SUBDIR += dovecot-fts-xapian
     SUBDIR += dovecot-pigeonhole
@@ -481,6 +482,7 @@
     SUBDIR += postsrsd
     SUBDIR += prepflog
     SUBDIR += procmail
+    SUBDIR += procmail-bgrb
     SUBDIR += proxsmtp
     SUBDIR += py-Products.SecureMailHost
     SUBDIR += py-afew
@@ -550,7 +552,6 @@
     SUBDIR += rblcheck
     SUBDIR += renattach
     SUBDIR += ripmime
-    SUBDIR += rlytest
     SUBDIR += rmilter
     SUBDIR += roundcube
     SUBDIR += roundcube-automatic_addressbook

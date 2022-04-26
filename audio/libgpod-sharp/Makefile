@@ -1,5 +1,6 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
 
+PORTREVISION=	2
 PKGNAMESUFFIX=	-sharp
 
 MAINTAINER=	mono@FreeBSD.org

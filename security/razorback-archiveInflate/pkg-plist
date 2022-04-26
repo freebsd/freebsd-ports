@@ -1,5 +1,0 @@
-@sample etc/razorback/archive_inflate.conf.sample
-lib/razorback/archiveInflate.so.2.0.0
-lib/razorback/archiveInflate.so.2
-lib/razorback/archiveInflate.so
-lib/razorback/archiveInflate.a

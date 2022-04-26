@@ -1,6 +1,7 @@
 PORTNAME=	nebula
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://git.zx2c4.com/wintun-go/snapshot/:wintungo
 DISTFILES=	wintun-go-${GO_WINTUN_REV}.tar.xz:wintungo

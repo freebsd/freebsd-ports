@@ -3,6 +3,7 @@
 PORTNAME=	git-credential-gopass
 PORTVERSION=	1.12.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	ehaupt@FreeBSD.org

@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Socket support for the Lua language
 
 LICENSE=	MIT

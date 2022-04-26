@@ -1,4 +1,4 @@
-D programming language compile-time constant to test if target platform desktop 
+D programming language compile-time constant to test if target platform desktop
 environments usually follow freedesktop specifications.
 
 WWW: https://github.com/FreeSlave/isfreedesktop

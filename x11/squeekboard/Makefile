@@ -1,7 +1,6 @@
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.0
-PORTREVISION=	1
+DISTVERSION=	1.17.1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,10 +24,11 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_COMMIT=	c912b73c4b229b61ce30d2923988e3277f3fe5a8
+GL_COMMIT=	2faa98d85f1142383ec8ad1487616c1a7ad1882f
 SHEBANG_FILES=	tools/entry.py
 MAKE_ENV=	${CARGO_ENV}
 MESON_ARGS=	-Dstrict=false
+MESON_ARGS+=	-Donline=false # XXX Cargo.lock
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-entry \
 		bin/${PORTNAME}-test-layout \

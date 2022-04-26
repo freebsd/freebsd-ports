@@ -2,6 +2,7 @@
 
 PORTNAME=	reportlab
 PORTVERSION=	3.5.68
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP \
 		https://www.reportlab.com/ftp/
@@ -34,9 +35,6 @@ PORTDOCS=	reportlab-userguide.pdf
 
 OPTIONS_DEFINE=	CJK FREETYPE DOCS
 OPTIONS_DEFAULT=CJK FREETYPE
-# XXX disable this 20190809 while linimon investigates why having it
-# enabled consumes all memory and swap during poudriere builds.
-OPTIONS_EXCLUDE_powerpc64=	DOCS
 CJK_DESC=	Adobe CMaps
 CJK_RUN_DEPENDS=	${LOCALBASE}/share/fonts/adobe-cmaps/ac15/cid2code.txt:print/adobe-cmaps
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2

@@ -1,8 +1,6 @@
 bin/contactprintthemeeditor
 bin/contactthemeeditor
 bin/headerthemeeditor
-share/qlogging-categories5/grantleeditor.categories
-share/qlogging-categories5/grantleeditor.renamecategories
 lib/libgrantleethemeeditor.so.5
 lib/libgrantleethemeeditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/applications/org.kde.contactprintthemeeditor.desktop
@@ -151,3 +149,5 @@ share/locale/zh_TW/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/zh_TW/LC_MESSAGES/contactthemeeditor.mo
 share/locale/zh_TW/LC_MESSAGES/headerthemeeditor.mo
 share/locale/zh_TW/LC_MESSAGES/libgrantleethemeeditor.mo
+share/qlogging-categories5/grantleeditor.categories
+share/qlogging-categories5/grantleeditor.renamecategories

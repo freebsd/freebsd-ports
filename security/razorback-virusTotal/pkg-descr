@@ -1,9 +1,0 @@
-Razorback is a framework for an intelligence driven security solution.
-It consists of a Dispatcher at the core of the system, surrounded by
-Nuggets of varying types.
-
-This nugget checks the VirusTotal API for the MD5 of the submitted file.
-If the file is found, the short data of the alert will contain the results
-from the JSON response from VirusTotal.
-
-WWW: http://razorbacktm.sourceforge.net/

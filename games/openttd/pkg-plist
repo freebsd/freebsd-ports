@@ -20,6 +20,7 @@ man/man6/openttd.6.gz
 %%DATADIR%%/ai/compat_12.nut
 %%DATADIR%%/baseset/no_music.obm
 %%DATADIR%%/baseset/no_sound.obs
+%%DATADIR%%/baseset/openttd.32.bmp
 %%DATADIR%%/baseset/openttd.grf
 %%DATADIR%%/baseset/opntitle.dat
 %%DATADIR%%/baseset/orig_dos.obg

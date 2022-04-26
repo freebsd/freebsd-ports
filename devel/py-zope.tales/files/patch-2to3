@@ -1,0 +1,393 @@
+--- src/zope/tales/expressions.py.orig	2012-05-23 15:44:50 UTC
++++ src/zope/tales/expressions.py
+@@ -93,7 +93,7 @@ class SubPathExpr(object):
+             # check for initial function
+             raise engine.getCompilerError()(
+                 'Namespace function specified in first subpath element')
+-        elif isinstance(first, basestring):
++        elif isinstance(first, str):
+             # check for initial ?
+             raise engine.getCompilerError()(
+                 'Dynamic name specified in first subpath element')
+@@ -122,11 +122,11 @@ class SubPathExpr(object):
+         for element in compiled_path:
+             if isinstance(element, tuple):
+                 ob = self._traverser(ob, element, econtext)
+-            elif isinstance(element, basestring):
++            elif isinstance(element, str):
+                 val = vars[element]
+                 # If the value isn't a string, assume it's a sequence
+                 # of path names.
+-                if isinstance(val, basestring):
++                if isinstance(val, str):
+                     val = (val,)
+                 ob = self._traverser(ob, val, econtext)
+             elif callable(element):
+@@ -207,7 +207,7 @@ class PathExpr(object):
+         # support calling old style classes which don't have a
+         # __call__.
+         if (getattr(ob, '__call__', _marker) is not _marker
+-            or isinstance(ob, types.ClassType)):
++            or isinstance(ob, type)):
+             return ob()
+         return ob
+ 
+@@ -217,10 +217,10 @@ class PathExpr(object):
+         return self._eval(econtext)
+ 
+     def __str__(self):
+-        return '%s expression (%s)' % (self._name, `self._s`)
++        return '%s expression (%s)' % (self._name, repr(self._s))
+ 
+     def __repr__(self):
+-        return '<PathExpr %s:%s>' % (self._name, `self._s`)
++        return '<PathExpr %s:%s>' % (self._name, repr(self._s))
+ 
+ 
+ 
+@@ -265,10 +265,10 @@ class StringExpr(object):
+         return self._expr % tuple(vvals)
+ 
+     def __str__(self):
+-        return 'string expression (%s)' % `self._s`
++        return 'string expression (%s)' % repr(self._s)
+ 
+     def __repr__(self):
+-        return '<StringExpr %s>' % `self._s`
++        return '<StringExpr %s>' % repr(self._s)
+ 
+ 
+ class NotExpr(object):
+@@ -282,7 +282,7 @@ class NotExpr(object):
+         return int(not econtext.evaluateBoolean(self._c))
+ 
+     def __repr__(self):
+-        return '<NotExpr %s>' % `self._s`
++        return '<NotExpr %s>' % repr(self._s)
+ 
+ 
+ class DeferWrapper(object):
+@@ -308,7 +308,7 @@ class DeferExpr(object):
+         return DeferWrapper(self._c, econtext)
+ 
+     def __repr__(self):
+-        return '<DeferExpr %s>' % `self._s`
++        return '<DeferExpr %s>' % repr(self._s)
+ 
+ 
+ class LazyWrapper(DeferWrapper):
+@@ -331,7 +331,7 @@ class LazyExpr(DeferExpr):
+         return LazyWrapper(self._c, econtext)
+ 
+     def __repr__(self):
+-        return 'lazy:%s' % `self._s`
++        return 'lazy:%s' % repr(self._s)
+ 
+ 
+ class SimpleModuleImporter(object):
+--- src/zope/tales/pythonexpr.py.orig	2012-05-23 15:44:50 UTC
++++ src/zope/tales/pythonexpr.py
+@@ -23,7 +23,7 @@ class PythonExpr(object):
+         self.text = text
+         try:
+             code = self._compile(text, '<string>')
+-        except SyntaxError, e:
++        except SyntaxError as e:
+             raise engine.getCompilerError()(str(e))
+         self._code = code
+         self._varnames = code.co_names
+--- src/zope/tales/tests/simpleexpr.py.orig	2012-05-23 15:44:50 UTC
++++ src/zope/tales/tests/simpleexpr.py
+@@ -27,4 +27,4 @@ class SimpleExpr(object):
+     def __call__(self, econtext):
+         return self._name, self._expr
+     def __repr__(self):
+-        return '<SimpleExpr %s %s>' % (self._name, `self._expr`)
++        return '<SimpleExpr %s %s>' % (self._name, repr(self._expr))
+--- src/zope/tales/tests/test_expressions.py.orig	2012-05-23 15:44:50 UTC
++++ src/zope/tales/tests/test_expressions.py
+@@ -35,7 +35,7 @@ class Data(object):
+ class ErrorGenerator:
+ 
+     def __getitem__(self, name):
+-        import __builtin__
++        import builtins
+         if name == 'Undefined':
+             e = Undefined
+         else:
+@@ -111,7 +111,7 @@ class ExpressionTests(ExpressionTestBase):        
+         from zope.tales.tales import CompilerError
+         try:
+             self.engine.compile('?x')
+-        except CompilerError,e:
++        except CompilerError as e:
+             self.assertEqual(e.args[0],
+                              'Dynamic name specified in first subpath element')
+         else:
+@@ -122,14 +122,14 @@ class ExpressionTests(ExpressionTestBase):        
+             pass
+         self.context.vars['oldstyleclass'] = AnOldStyleClass
+         expr = self.engine.compile('oldstyleclass')
+-        self.assert_(isinstance(expr(self.context), AnOldStyleClass))
++        self.assertTrue(isinstance(expr(self.context), AnOldStyleClass))
+             
+     def testString(self):
+         expr = self.engine.compile('string:Fred')
+         context=self.context
+         result = expr(context)
+         self.assertEqual(result, 'Fred')
+-        self.failUnless(isinstance(result, str))
++        self.assertTrue(isinstance(result, str))
+ 
+     def testStringSub(self):
+         expr = self.engine.compile('string:A$B')
+@@ -162,16 +162,16 @@ class ExpressionTests(ExpressionTestBase):        
+ 
+     def testStringUnicode(self):
+         # Unicode string expressions should return unicode strings
+-        expr = self.engine.compile(u'string:Fred')
++        expr = self.engine.compile('string:Fred')
+         context=self.context
+         result = expr(context)
+-        self.assertEqual(result, u'Fred')
+-        self.failUnless(isinstance(result, unicode))
++        self.assertEqual(result, 'Fred')
++        self.assertTrue(isinstance(result, str))
+ 
+     def testStringFailureWhenMixed(self):
+         # Mixed Unicode and 8bit string interpolation fails with a
+         # UnicodeDecodeError, assuming there is no default encoding
+-        expr = self.engine.compile(u'string:a ${eightBits}')
++        expr = self.engine.compile('string:a ${eightBits}')
+         self.assertRaises(UnicodeDecodeError, expr, self.context)
+ 
+     def testPython(self):
+@@ -210,7 +210,7 @@ class ExpressionTests(ExpressionTestBase):        
+                          self.context.vars['acallable'])
+         self.assertEqual(eval('foo | string:x'), 'x')
+         self.assertEqual(eval('foo | string:$one'), '1')
+-        self.assert_(eval('foo | exists:x'))
++        self.assertTrue(eval('foo | exists:x'))
+ 
+     def testEmptyPathSegmentRaisesCompilerError(self):
+         CompilerError = self.engine.getCompilerError()
+@@ -246,13 +246,13 @@ class ExpressionTests(ExpressionTestBase):        
+         from zope.tales.expressions import DeferWrapper
+         expr = self.engine.compile('defer: b')
+         context=self.context
+-        self.failUnless(isinstance(expr(context), DeferWrapper))
++        self.assertTrue(isinstance(expr(context), DeferWrapper))
+ 
+     def test_lazy_expression_returns_wrapper(self):
+         from zope.tales.expressions import LazyWrapper
+         expr = self.engine.compile('lazy: b')
+         context=self.context
+-        self.failUnless(isinstance(expr(context), LazyWrapper))
++        self.assertTrue(isinstance(expr(context), LazyWrapper))
+ 
+ 
+ class FunctionTests(ExpressionTestBase):
+@@ -279,7 +279,7 @@ class FunctionTests(ExpressionTestBase):
+             def __getitem__(self,key):
+                 if key=='jump':
+                     return self.context._d
+-                raise KeyError,key
++                raise KeyError(key)
+             
+         self.TestNameSpace = TestNameSpace
+         self.engine.registerFunctionNamespace('namespace', self.TestNameSpace)
+@@ -308,7 +308,7 @@ class FunctionTests(ExpressionTestBase):
+         from zope.tales.tales import CompilerError
+         try:
+             self.engine.compile('adapterTest/badnamespace:title')
+-        except CompilerError,e:
++        except CompilerError as e:
+             self.assertEqual(e.args[0],'Unknown namespace "badnamespace"')
+         else:
+             self.fail('Engine accepted unknown namespace')
+@@ -337,7 +337,7 @@ class FunctionTests(ExpressionTestBase):
+         from zope.tales.tales import CompilerError
+         try:
+             self.engine.compile('adapterTest/1foo:bar')
+-        except CompilerError,e:
++        except CompilerError as e:
+             self.assertEqual(e.args[0],
+                              'Invalid namespace name "1foo"')
+         else:
+@@ -348,8 +348,8 @@ class FunctionTests(ExpressionTestBase):
+         try:
+             expr = self.engine.compile('adapterTest/namespace:title')
+             expr(self.context)
+-        except KeyError,e: 
+-            self.assertEquals(e.args[0],'title')
++        except KeyError as e: 
++            self.assertEqual(e.args[0],'title')
+         else:
+             self.fail('Engine accepted unknown function')
+ 
+--- src/zope/tales/tests/test_tales.py.orig	2012-05-23 15:44:50 UTC
++++ src/zope/tales/tests/test_tales.py
+@@ -30,7 +30,7 @@ class TALESTests(unittest.TestCase):
+         # Test sample Iterator class
+         context = Harness(self)
+         it = tales.Iterator('name', (), context)
+-        self.assert_( not it.next(), "Empty iterator")
++        self.assertTrue( not next(it), "Empty iterator")
+         context._complete_()
+ 
+     def testIterator1(self):
+@@ -38,7 +38,7 @@ class TALESTests(unittest.TestCase):
+         context = Harness(self)
+         it = tales.Iterator('name', (1,), context)
+         context._assert_('setLocal', 'name', 1)
+-        self.assert_( it.next() and not it.next(), "Single-element iterator")
++        self.assertTrue( next(it) and not next(it), "Single-element iterator")
+         context._complete_()
+ 
+     def testIterator2(self):
+@@ -48,15 +48,15 @@ class TALESTests(unittest.TestCase):
+         for c in 'text':
+             context._assert_('setLocal', 'text', c)
+         for c in 'text':
+-            self.assert_(it.next(), "Multi-element iterator")
+-        self.assert_( not it.next(), "Multi-element iterator")
++            self.assertTrue(next(it), "Multi-element iterator")
++        self.assertTrue( not next(it), "Multi-element iterator")
+         context._complete_()
+ 
+     def testRegisterType(self):
+         # Test expression type registration
+         e = tales.ExpressionEngine()
+         e.registerType('simple', SimpleExpr)
+-        self.assert_( e.getTypes()['simple'] == SimpleExpr)
++        self.assertTrue( e.getTypes()['simple'] == SimpleExpr)
+ 
+     def testRegisterTypeUnique(self):
+         # Test expression type registration uniqueness
+@@ -67,7 +67,7 @@ class TALESTests(unittest.TestCase):
+         except tales.RegistrationError:
+             pass
+         else:
+-            self.assert_( 0, "Duplicate registration accepted.")
++            self.assertTrue( 0, "Duplicate registration accepted.")
+ 
+     def testRegisterTypeNameConstraints(self):
+         # Test constraints on expression type names
+@@ -78,15 +78,15 @@ class TALESTests(unittest.TestCase):
+             except tales.RegistrationError:
+                 pass
+             else:
+-                self.assert_( 0, 'Invalid type name "%s" accepted.' % name)
++                self.assertTrue( 0, 'Invalid type name "%s" accepted.' % name)
+ 
+     def testCompile(self):
+         # Test expression compilation
+         e = tales.ExpressionEngine()
+         e.registerType('simple', SimpleExpr)
+         ce = e.compile('simple:x')
+-        self.assert_( ce(None) == ('simple', 'x'), (
+-            'Improperly compiled expression %s.' % `ce`))
++        self.assertTrue( ce(None) == ('simple', 'x'), (
++            'Improperly compiled expression %s.' % repr(ce)))
+ 
+     def testGetContext(self):
+         # Test Context creation
+@@ -97,13 +97,13 @@ class TALESTests(unittest.TestCase):
+     def getContext(self, **kws):
+         e = tales.ExpressionEngine()
+         e.registerType('simple', SimpleExpr)
+-        return apply(e.getContext, (), kws)
++        return e.getContext(*(), **kws)
+ 
+     def testContext0(self):
+         # Test use of Context
+         se = self.getContext().evaluate('simple:x')
+-        self.assert_( se == ('simple', 'x'), (
+-            'Improperly evaluated expression %s.' % `se`))
++        self.assertTrue( se == ('simple', 'x'), (
++            'Improperly evaluated expression %s.' % repr(se)))
+ 
+     def testVariables(self):
+         # Test variables
+@@ -113,22 +113,22 @@ class TALESTests(unittest.TestCase):
+         ctxt.setLocal('v2', 2)
+ 
+         c = ctxt.vars
+-        self.assert_( c['v1'] == 1, 'Variable "v1"')
++        self.assertTrue( c['v1'] == 1, 'Variable "v1"')
+ 
+         ctxt.beginScope()
+         ctxt.setLocal('v1', 3)
+         ctxt.setGlobal('g', 1)
+ 
+         c = ctxt.vars
+-        self.assert_( c['v1'] == 3, 'Inner scope')
+-        self.assert_( c['v2'] == 2, 'Outer scope')
+-        self.assert_( c['g'] == 1, 'Global')
++        self.assertTrue( c['v1'] == 3, 'Inner scope')
++        self.assertTrue( c['v2'] == 2, 'Outer scope')
++        self.assertTrue( c['g'] == 1, 'Global')
+ 
+         ctxt.endScope()
+ 
+         c = ctxt.vars
+-        self.assert_( c['v1'] == 1, "Uncovered local")
+-        self.assert_( c['g'] == 1, "Global from inner scope")
++        self.assertTrue( c['v1'] == 1, "Uncovered local")
++        self.assertTrue( c['g'] == 1, "Global from inner scope")
+ 
+         ctxt.endScope()
+ 
+@@ -142,7 +142,7 @@ class Harness(object):
+         self._callstack.append((name, args, kwargs))
+ 
+     def _complete_(self):
+-        self._testcase.assert_(len(self._callstack) == 0,
++        self._testcase.assertTrue(len(self._callstack) == 0,
+                                "Harness methods called")
+ 
+     def __getattr__(self, name):
+@@ -159,19 +159,19 @@ class HarnessMethod(object):
+         self = self._harness
+ 
+         cs = self._callstack
+-        self._testcase.assert_(
++        self._testcase.assertTrue(
+             len(cs),
+             'Unexpected harness method call "%s".' % name
+             )
+-        self._testcase.assert_(
++        self._testcase.assertTrue(
+             cs[0][0] == name, 
+             'Harness method name "%s" called, "%s" expected.' %
+             (name, cs[0][0])
+             )
+         
+         name, aargs, akwargs = self._callstack.pop(0)
+-        self._testcase.assert_(aargs == args, "Harness method arguments")
+-        self._testcase.assert_(akwargs == kwargs,
++        self._testcase.assertTrue(aargs == args, "Harness method arguments")
++        self._testcase.assertTrue(akwargs == kwargs,
+                                 "Harness method keyword args")
+ 
+ 
+--- src/zope/tales/tests/test_traverser.py.orig	2012-05-23 15:44:50 UTC
++++ src/zope/tales/tests/test_traverser.py
+@@ -17,7 +17,7 @@ class ItemTraversable(object):
+     def __getitem__(self, name):
+         if name == 'attr':
+             return 'foo'
+-        raise KeyError, name
++        raise KeyError(name)
+ 
+ class AllTraversable(AttrTraversable, ItemTraversable):
+     """Traversable by attribute and item access"""
+@@ -33,7 +33,7 @@ def getitem(ob, name, default=_marker):
+     except KeyError:
+         if default is not _marker:
+             return default
+-        raise KeyError, name
++        raise KeyError(name)
+     else:
+         return item
+ 

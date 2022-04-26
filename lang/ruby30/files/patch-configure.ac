@@ -1,6 +1,15 @@
---- configure.ac.orig	2018-12-28 12:03:09 UTC
-+++ configure.ac
-@@ -2678,7 +2678,7 @@ AS_IF([test "$with_dln_a_out" != yes], [
+--- configure.ac.orig	2022-04-12 11:48:55 UTC
++++ configure.ac	2022-04-23
+@@ -1231,7 +1231,7 @@ AC_CHECK_HEADERS(utime.h)
+ AC_CHECK_HEADERS(time.h)
+ AC_CHECK_HEADERS(ucontext.h)
+ AC_CHECK_HEADERS(utime.h)
+-AS_CASE("$target_cpu", [x64|x86_64|i[3-6]86*], [
++AS_CASE("$target_cpu", [amd64|x64|x86_64|i[3-6]86*], [
+   AC_CHECK_HEADERS(x86intrin.h)
+ ])
+ 
+@@ -2825,7 +2825,7 @@ AS_IF([test "$with_dln_a_out" != yes], [
  			: ${LDSHARED='$(CC) -shared'}
  			AS_IF([test "$rb_cv_binary_elf" = yes], [
  			    LDFLAGS="$LDFLAGS -rdynamic"
@@ -9,7 +18,7 @@
  			], [
  			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
  			])
-@@ -3163,6 +3163,7 @@ AS_CASE("$enable_shared", [yes], [
+@@ -3324,6 +3324,7 @@ AS_CASE("$enable_shared", [yes], [
      [freebsd*|dragonfly*], [
  	LIBRUBY_SO='lib$(RUBY_SO_NAME).$(SOEXT).$(MAJOR)$(MINOR)'
  	LIBRUBY_SONAME='$(LIBRUBY_SO)'

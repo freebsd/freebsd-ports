@@ -1,8 +1,7 @@
 # Created by: Eric van Gyzen <vangyzen@stat.duke.edu>
 
 PORTNAME=	mcmc-jags
-DISTVERSION=	4.3.0
-PORTREVISION=	7
+DISTVERSION=	4.3.1
 CATEGORIES=	math
 MASTER_SITES=	SF/mcmc-jags/JAGS/${S}.x/Source/:1 \
 		SF/mcmc-jags/Examples/${S}.x/:2 \

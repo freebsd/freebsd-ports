@@ -1,0 +1,44 @@
+--- doc/meson.build.orig	2022-03-09 17:46:34 UTC
++++ doc/meson.build
+@@ -27,21 +27,23 @@ version_xml = configure_file(
+     input: 'version.xml.in',
+     configuration: cdata)
+ 
+-gnome.gtkdoc('UPower',
+-    main_xml: 'upower-docs.xml',
+-    src_dir: meson.source_root() / 'libupower-glib',
+-    dependencies: [ libupower_glib_dep ],
+-    scan_args: ['--rebuild-types', '--rebuild-sections'],
+-    content_files: [
+-        version_xml,
+-        ifaces_refs,
+-        'man/UPower.xml',
+-        'man/upowerd.xml',
+-        'man/upower.xml',
+-        '../COPYING',
+-    ],
+-    ignore_headers: [
+-        'config.h',
+-    ],
+-    install: get_option('gtk-doc')
+-)
++if get_option('gtk-doc')
++  gnome.gtkdoc('UPower',
++      main_xml: 'upower-docs.xml',
++      src_dir: meson.source_root() / 'libupower-glib',
++      dependencies: [ libupower_glib_dep ],
++      scan_args: ['--rebuild-types', '--rebuild-sections'],
++      content_files: [
++          version_xml,
++          ifaces_refs,
++          'man/UPower.xml',
++          'man/upowerd.xml',
++          'man/upower.xml',
++          '../COPYING',
++      ],
++      ignore_headers: [
++          'config.h',
++      ],
++      install: get_option('gtk-doc')
++  )
++endif

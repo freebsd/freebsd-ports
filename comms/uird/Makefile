@@ -6,7 +6,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://kbinstuff.googlepages.com/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Universal IR Receiver Daemon
 
 USES=		perl5 gmake tar:tgz

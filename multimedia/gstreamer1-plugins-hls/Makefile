@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
 COMMENT=	GStreamer HTTP Live Streaming (HLS) plugin

@@ -1,7 +1,7 @@
 # Created by: Motoyuki Kasahara <m-kasahr@sra.co.jp>
 
 PORTNAME=	libtool
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Generic shared library support script
 
@@ -15,14 +15,9 @@ RUN_DEPENDS=	gm4:devel/m4
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install
-MAKE_ARGS=	MAKEINFOFLAGS=--no-split
+TEST_TARGET=	check
+
 NO_ARCH=	yes
-USES+=		makeinfo
-
 INFO=		libtool
-
-post-patch:
-	@${RM} ${WRKSRC}/doc/*.info*
-	@${TOUCH} ${WRKSRC}/doc/libtool.1
 
 .include <bsd.port.mk>

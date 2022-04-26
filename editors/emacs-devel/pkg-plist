@@ -1651,6 +1651,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/multisession.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/nadvice.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/nadvice.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/oclosure.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/oclosure.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-x.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.el.gz
@@ -4197,6 +4199,7 @@ share/applications/emacsclient-mail.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/search.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sheap.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sheap.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sort.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sound.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/sqlite.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/syntax.c

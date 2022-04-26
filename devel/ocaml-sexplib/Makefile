@@ -16,6 +16,7 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE-Tywith.txt
 
 BUILD_DEPENDS=	ocaml-type_conv>=0:devel/ocaml-type_conv
 BUILD_DEPENDS+=	ocamlbuild:devel/ocaml-ocamlbuild
+BUILD_DEPENDS+=	${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
 RUN_DEPENDS=	ocaml-type_conv>=0:devel/ocaml-type_conv
 
 OPTIONS_DEFINE=	DOCS

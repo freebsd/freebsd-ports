@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	docdir=${DOCSDIR}
 
-CXXFLAGS_powerpc64=	-Wno-error=deprecated
 CXXFLAGS_powerpc=	-Wno-error=deprecated
 CXXFLAGS_powerpcspe=	-Wno-error=deprecated
 CXXFLAGS_mips=		-Wno-error=deprecated

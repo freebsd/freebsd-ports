@@ -1,7 +1,7 @@
 # Created by: Guerkan Karaman <gk.freebsd@googlemail.com>
 
 PORTNAME=	ipxe
-DISTVERSION=	g20220216
+DISTVERSION=	g20220406
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -20,7 +20,7 @@ USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
 USE_GCC=	yes:build
 USE_GITHUB=	yes
-GH_TAGNAME=	bc5c612f756b11c0
+GH_TAGNAME=	70995397e5bdfd34
 USE_PERL5=	build
 MAKE_ARGS=	AR=${AR} \
 		ARCH=${ARCH:S/amd64/i386/} \
@@ -82,8 +82,6 @@ ISO_BUILD_DEPENDS=	mkisofs:sysutils/cdrtools
 ISO_MAKE_ARGS=		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
 			LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
 ISO_ALL_TARGET=		bin/ipxe.iso
-
-PORTSCOUT=		skipv:1.20.1
 
 .include <bsd.port.pre.mk>
 

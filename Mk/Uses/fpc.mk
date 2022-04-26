@@ -27,13 +27,13 @@ FPC_Include_MAINTAINER= acm@FreeBSD.org
 
 _INCLUDE_USES_FPC_MK=   yes
 
-.if defined(DEFAULT_FPC_VER)
+.  if defined(DEFAULT_FPC_VER)
 WARNING+=	"DEFAULT_FPC_VER is defined, consider using DEFAULT_VERSIONS=fpc=${DEFAULT_FPC_VER} instead"
-.endif
+.  endif
 
-.if ${fpc_ARGS:Nrun:Nbase:Nall}
+.  if ${fpc_ARGS:Nrun:Nbase:Nall}
 IGNORE=		Unknown argument for USES=fpc: ${fpc_ARGS:Nrun:Nbase:Nall}
-.endif
+.  endif
 
 DEFAULT_FPC_VER=	${FPC_DEFAULT}
 # When adding a version, please keep the comment in
@@ -41,22 +41,22 @@ DEFAULT_FPC_VER=	${FPC_DEFAULT}
 FPC_VER=		${DEFAULT_FPC_VER}
 FPC_ARCH=		${ARCH:S/amd64/x86_64/}
 
-.if exists(${LOCALBASE}/bin/fpc)
+.  if exists(${LOCALBASE}/bin/fpc)
 FPC_CURRENT_VER!=	${LOCALBASE}/bin/fpc -iV
-.	if ${FPC_CURRENT_VER} != ${FPC_VER}
+.    if ${FPC_CURRENT_VER} != ${FPC_VER}
 IGNORE=	incompatible fpc ${FPC_CURRENT_VER} compiler, please install ${FPC_VER} version
-.	endif
-.endif
+.    endif
+.  endif
 
-.if ${ARCH} == "i386"
+.  if ${ARCH} == "i386"
 PPNAME=			ppc386
-.elif ${ARCH} == "amd64"
+.  elif ${ARCH} == "amd64"
 PPNAME=			ppcx64
-.else
+.  else
 PPNAME=			ppc_not_yet_ported
 ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
-.endif
+.  endif
 
 BUILD_DEPENDS+=		${LOCALBASE}/bin/as:devel/binutils \
 			${PPNAME}:lang/fpc
@@ -79,22 +79,22 @@ _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dblib dbus dts fastcgi \
 		rtl-unicode sdl sqlite svgalib symbolic syslog tplylib unzip \
 		users utmp uuid vcl-compat webidl x11 xforms zlib
 
-.if ${fpc_ARGS:Mbase}
+.  if ${fpc_ARGS:Mbase}
 USE_FPC=	gdbint graph httpd22 httpd24 ibase mysql odbc oracle pasjpeg \
 		postgres pthreads regexpr sqlite
-.endif
+.  endif
 
-.if ${fpc_ARGS:Mall}
+.  if ${fpc_ARGS:Mall}
 USE_FPC=	${_FPC_ALL_UNITS}
-.endif
+.  endif
 
-.if defined(USE_FPC) && ${USE_FPC:tl} != "yes"
-.	for UNITS in ${USE_FPC}
-.		if ${_FPC_ALL_UNITS:M${UNITS}}==""
+.  if defined(USE_FPC) && ${USE_FPC:tl} != "yes"
+.    for UNITS in ${USE_FPC}
+.      if ${_FPC_ALL_UNITS:M${UNITS}}==""
 IGNORE= cannot install: unknown FPC unit ${UNITS}
-.		endif
-.	endfor
-.endif
+.      endif
+.    endfor
+.  endif
 
 # Base units
 gdbint_UNIT=	devel/fpc-gdbint
@@ -205,12 +205,12 @@ zlib_UNIT=	devel/fpc-zlib
 .endif
 
 .if defined(USE_FPC)
-.	for UNIT in ${USE_FPC}
-.		if ${_FPC_ALL_UNITS:M${UNIT}} != ""
+.  for UNIT in ${USE_FPC}
+.    if ${_FPC_ALL_UNITS:M${UNIT}} != ""
 BUILD_DEPENDS+= ${MKINSTDIR}/${UNIT}.fpm:${${UNIT:S/-/_/}_UNIT}
-.			if ${fpc_ARGS:Mrun} || ${fpc_ARGS:Mbase}
+.      if ${fpc_ARGS:Mrun} || ${fpc_ARGS:Mbase}
 RUN_DEPENDS+=   ${MKINSTDIR}/${UNIT}.fpm:${${UNIT:S/-/_/}_UNIT}
-.			endif
-.		endif
-.	endfor
+.      endif
+.    endif
+.  endfor
 .endif

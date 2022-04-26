@@ -9,12 +9,12 @@ share/applications/org.kde.blinken.desktop
 %%DATADIR%%/sounds/4.wav
 %%DATADIR%%/sounds/lose.wav
 share/config.kcfg/blinken.kcfg
-share/icons/hicolor/128x128/apps/blinken.png
 share/icons/hicolor/16x16/apps/blinken.png
 share/icons/hicolor/22x22/apps/blinken.png
 share/icons/hicolor/32x32/apps/blinken.png
 share/icons/hicolor/48x48/apps/blinken.png
 share/icons/hicolor/64x64/apps/blinken.png
+share/icons/hicolor/128x128/apps/blinken.png
 share/icons/hicolor/scalable/apps/blinken.svgz
 share/locale/ar/LC_MESSAGES/blinken.mo
 share/locale/be/LC_MESSAGES/blinken.mo

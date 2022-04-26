@@ -1,0 +1,526 @@
+--- src/DateTime/DateTime.py.orig	2013-01-20 10:51:06 UTC
++++ src/DateTime/DateTime.py
+@@ -11,7 +11,7 @@
+ #
+ ##############################################################################
+ 
+-import copy_reg
++import copyreg
+ import math
+ import re
+ from time import altzone
+@@ -23,14 +23,14 @@ from time import timezone
+ from time import tzname
+ from datetime import datetime
+ 
+-from pytz_support import PytzCache
++from .pytz_support import PytzCache
+ from zope.interface import implements
+ 
+-from interfaces import IDateTime
+-from interfaces import DateTimeError
+-from interfaces import SyntaxError
+-from interfaces import DateError
+-from interfaces import TimeError
++from .interfaces import IDateTime
++from .interfaces import DateTimeError
++from .interfaces import SyntaxError
++from .interfaces import DateError
++from .interfaces import TimeError
+ 
+ default_datefmt = None
+ 
+@@ -65,7 +65,7 @@ to_year = int(i * 365 + i / 4 - i / 100 + i / 400 - 69
+ to_month = tm[yr % 4 == 0 and (yr % 100 != 0 or yr % 400 == 0)][mo]
+ EPOCH = ((to_year + to_month + dy +
+     (hr / 24.0 + mn / 1440.0 + sc / 86400.0)) * 86400)
+-jd1901 = 2415385L
++jd1901 = 2415385
+ 
+ _TZINFO = PytzCache()
+ 
+@@ -201,14 +201,14 @@ def _calcDependentSecond(tz, t):
+     # Calculates the timezone-dependent second (integer part only)
+     # from the timezone-independent second.
+     fset = _tzoffset(tz, t)
+-    return fset + long(math.floor(t)) + long(EPOCH) - 86400L
++    return fset + int(math.floor(t)) + int(EPOCH) - 86400
+ 
+ 
+ def _calcDependentSecond2(yr, mo, dy, hr, mn, sc):
+     # Calculates the timezone-dependent second (integer part only)
+     # from the date given.
+     ss = int(hr) * 3600 + int(mn) * 60 + int(sc)
+-    x = long(_julianday(yr, mo, dy) - jd1901) * 86400 + ss
++    x = int(_julianday(yr, mo, dy) - jd1901) * 86400 + ss
+     return x
+ 
+ 
+@@ -216,14 +216,14 @@ def _calcIndependentSecondEtc(tz, x, ms):
+     # Derive the timezone-independent second from the timezone
+     # dependent second.
+     fsetAtEpoch = _tzoffset(tz, 0.0)
+-    nearTime = x - fsetAtEpoch - long(EPOCH) + 86400L + ms
++    nearTime = x - fsetAtEpoch - int(EPOCH) + 86400 + ms
+     # nearTime is now within an hour of being correct.
+     # Recalculate t according to DST.
+-    fset = long(_tzoffset(tz, nearTime))
++    fset = int(_tzoffset(tz, nearTime))
+     d = (x - fset) / 86400.0 + (ms / 86400.0)
+-    t = x - fset - long(EPOCH) + 86400L + ms
++    t = x - fset - int(EPOCH) + 86400 + ms
+     micros = (x + 86400 - fset) * 1000000 + \
+-             long(round(ms * 1000000.0)) - long(EPOCH * 1000000.0)
++             int(round(ms * 1000000.0)) - int(EPOCH * 1000000.0)
+     s = d - math.floor(d)
+     return (s, d, t, micros)
+ 
+@@ -250,41 +250,41 @@ def _calcYMDHMS(x, ms):
+ 
+ 
+ def _julianday(yr, mo, dy):
+-    y, m, d = long(yr), long(mo), long(dy)
+-    if m > 12L:
+-        y = y + m / 12L
+-        m = m % 12L
+-    elif m < 1L:
++    y, m, d = int(yr), int(mo), int(dy)
++    if m > 12:
++        y = y + m / 12
++        m = m % 12
++    elif m < 1:
+         m = -m
+-        y = y - m / 12L - 1L
+-        m = 12L - m % 12L
+-    if y > 0L:
+-        yr_correct = 0L
++        y = y - m / 12 - 1
++        m = 12 - m % 12
++    if y > 0:
++        yr_correct = 0
+     else:
+-        yr_correct = 3L
+-    if m < 3L:
+-        y, m = y - 1L, m + 12L
+-    if y * 10000L + m * 100L + d > 15821014L:
+-        b = 2L - y / 100L + y / 400L
++        yr_correct = 3
++    if m < 3:
++        y, m = y - 1, m + 12
++    if y * 10000 + m * 100 + d > 15821014:
++        b = 2 - y / 100 + y / 400
+     else:
+-        b = 0L
+-    return ((1461L * y - yr_correct) / 4L +
+-        306001L * (m + 1L) / 10000L + d + 1720994L + b)
++        b = 0
++    return ((1461 * y - yr_correct) / 4 +
++        306001 * (m + 1) / 10000 + d + 1720994 + b)
+ 
+ 
+ def _calendarday(j):
+-    j = long(j)
+-    if (j < 2299160L):
+-        b = j + 1525L
++    j = int(j)
++    if (j < 2299160):
++        b = j + 1525
+     else:
+-        a = (4L * j - 7468861L) / 146097L
+-        b = j + 1526L + a - a / 4L
+-    c = (20L * b - 2442L) / 7305L
+-    d = 1461L * c / 4L
+-    e = 10000L * (b - d) / 306001L
+-    dy = int(b - d - 306001L * e / 10000L)
+-    mo = (e < 14L) and int(e - 1L) or int(e - 13L)
+-    yr = (mo > 2) and (c - 4716L) or (c - 4715L)
++        a = (4 * j - 7468861) / 146097
++        b = j + 1526 + a - a / 4
++    c = (20 * b - 2442) / 7305
++    d = 1461 * c / 4
++    e = 10000 * (b - d) / 306001
++    dy = int(b - d - 306001 * e / 10000)
++    mo = (e < 14) and int(e - 1) or int(e - 13)
++    yr = (mo > 2) and (c - 4716) or (c - 4715)
+     return (int(yr), int(mo), int(dy))
+ 
+ 
+@@ -317,7 +317,7 @@ def safegmtime(t):
+     '''gmtime with a safety zone.'''
+     try:
+         t_int = int(t)
+-        if isinstance(t_int, long):
++        if isinstance(t_int, int):
+             raise OverflowError # Python 2.3 fix: int can return a long!
+         return gmtime(t_int)
+     except (ValueError, OverflowError):
+@@ -329,7 +329,7 @@ def safelocaltime(t):
+     '''localtime with a safety zone.'''
+     try:
+         t_int = int(t)
+-        if isinstance(t_int, long):
++        if isinstance(t_int, int):
+             raise OverflowError # Python 2.3 fix: int can return a long!
+         return localtime(t_int)
+     except (ValueError, OverflowError):
+@@ -453,15 +453,15 @@ class DateTime(object):
+     def __setstate__(self, value):
+         if isinstance(value, tuple):
+             self._parse_args(value[0], value[2])
+-            self._micros = long(value[0] * 1000000)
++            self._micros = int(value[0] * 1000000)
+             self._timezone_naive = value[1]
+         else:
+-            for k, v in value.items():
++            for k, v in list(value.items()):
+                 if k in self.__slots__:
+                     setattr(self, k, v)
+             # BBB: support for very old DateTime pickles
+             if '_micros' not in value:
+-                self._micros = long(value['_t'] * 1000000)
++                self._micros = int(value['_t'] * 1000000)
+             if '_timezone_naive' not in value:
+                 self._timezone_naive = False
+ 
+@@ -729,7 +729,7 @@ class DateTime(object):
+                     tz = self._calcTimezoneName(x, ms)
+                 s, d, t, microsecs = _calcIndependentSecondEtc(tz, x, ms)
+ 
+-            elif (isinstance(arg, basestring) and
++            elif (isinstance(arg, str) and
+                   arg.lower() in _TZINFO._zidx):
+                 # Current time, to be displayed in specified timezone
+                 t, tz = time(), _TZINFO._zmap[arg.lower()]
+@@ -739,7 +739,7 @@ class DateTime(object):
+                 x = _calcDependentSecond(tz, t)
+                 yr, mo, dy, hr, mn, sc = _calcYMDHMS(x, ms)
+ 
+-            elif isinstance(arg, basestring):
++            elif isinstance(arg, str):
+                 # Date/time string
+ 
+                 iso8601 = iso8601Match(arg.strip())
+@@ -780,7 +780,7 @@ class DateTime(object):
+                 sc = sc + ms
+ 
+         elif ac==2:
+-            if isinstance(args[1], basestring):
++            if isinstance(args[1], str):
+                 # Seconds from epoch (gmt) and timezone
+                 t, tz = args
+                 ms = (t - math.floor(t))
+@@ -800,7 +800,7 @@ class DateTime(object):
+                 x_float = d * 86400.0
+                 x_floor = math.floor(x_float)
+                 ms = x_float - x_floor
+-                x = long(x_floor)
++                x = int(x_floor)
+                 yr, mo, dy, hr, mn, sc = _calcYMDHMS(x, ms)
+                 s, d, t, microsecs = _calcIndependentSecondEtc(tz, x, ms)
+         else:
+@@ -838,7 +838,7 @@ class DateTime(object):
+                 tz = self._calcTimezoneName(x, ms)
+             s, d, t, microsecs = _calcIndependentSecondEtc(tz, x, ms)
+ 
+-        self._dayoffset = int((_julianday(yr, mo, dy) + 2L) % 7)
++        self._dayoffset = int((_julianday(yr, mo, dy) + 2) % 7)
+         # Round to nearest microsecond in platform-independent way.  You
+         # cannot rely on C sprintf (Python '%') formatting to round
+         # consistently; doing it ourselves ensures that all but truly
+@@ -855,7 +855,7 @@ class DateTime(object):
+         # self._micros is the time since the epoch
+         # in long integer microseconds.
+         if microsecs is None:
+-            microsecs = long(math.floor(t * 1000000.0))
++            microsecs = int(math.floor(t * 1000000.0))
+         self._micros = microsecs
+ 
+     def localZone(self, ltm=None):
+@@ -875,7 +875,7 @@ class DateTime(object):
+         if not _multipleZones:
+             return _localzone0
+         fsetAtEpoch = _tzoffset(_localzone0, 0.0)
+-        nearTime = x - fsetAtEpoch - long(EPOCH) + 86400L + ms
++        nearTime = x - fsetAtEpoch - int(EPOCH) + 86400 + ms
+         # nearTime is within an hour of being correct.
+         try:
+             ltm = safelocaltime(nearTime)
+@@ -887,7 +887,7 @@ class DateTime(object):
+             yr, mo, dy, hr, mn, sc = _calcYMDHMS(x, 0)
+             yr = ((yr - 1970) % 28) + 1970
+             x = _calcDependentSecond2(yr, mo, dy, hr, mn, sc)
+-            nearTime = x - fsetAtEpoch - long(EPOCH) + 86400L + ms
++            nearTime = x - fsetAtEpoch - int(EPOCH) + 86400 + ms
+ 
+             # nearTime might still be negative if we are east of Greenwich.
+             # But we can asume on 1969/12/31 were no timezone changes.
+@@ -1242,7 +1242,7 @@ class DateTime(object):
+         long integer microseconds.
+         """
+         if isinstance(t, float):
+-            return self._micros > long(t * 1000000)
++            return self._micros > int(t * 1000000)
+         try:
+             return self._micros > t._micros
+         except AttributeError:
+@@ -1263,7 +1263,7 @@ class DateTime(object):
+         long integer microseconds.
+         """
+         if isinstance(t, float):
+-            return self._micros >= long(t * 1000000)
++            return self._micros >= int(t * 1000000)
+         try:
+             return self._micros >= t._micros
+         except AttributeError:
+@@ -1283,7 +1283,7 @@ class DateTime(object):
+         long integer microseconds.
+         """
+         if isinstance(t, float):
+-            return self._micros == long(t * 1000000)
++            return self._micros == int(t * 1000000)
+         try:
+             return self._micros == t._micros
+         except AttributeError:
+@@ -1328,7 +1328,7 @@ class DateTime(object):
+         long integer microseconds.
+         """
+         if isinstance(t, float):
+-            return self._micros < long(t * 1000000)
++            return self._micros < int(t * 1000000)
+         try:
+             return self._micros < t._micros
+         except AttributeError:
+@@ -1348,7 +1348,7 @@ class DateTime(object):
+         long integer microseconds.
+         """
+         if isinstance(t, float):
+-            return self._micros <= long(t * 1000000)
++            return self._micros <= int(t * 1000000)
+         try:
+             return self._micros <= t._micros
+         except AttributeError:
+@@ -1543,13 +1543,13 @@ class DateTime(object):
+         # pass them to strftime and convert them back to unicode if necessary.
+ 
+         format_is_unicode = False
+-        if isinstance(format, unicode):
++        if isinstance(format, str):
+             format = format.encode('utf-8')
+             format_is_unicode = True
+         ds = datetime(zself._year, zself._month, zself._day, zself._hour,
+                zself._minute, int(zself._nearsec),
+                microseconds).strftime(format)
+-        return format_is_unicode and unicode(ds, 'utf-8') or ds
++        return format_is_unicode and str(ds, 'utf-8') or ds
+ 
+     # General formats from previous DateTime
+     def Date(self):
+@@ -1737,7 +1737,7 @@ class DateTime(object):
+         omicros = round(o * 86400000000)
+         tmicros = self.micros() + omicros
+         t = tmicros / 1000000.0
+-        d = (tmicros + long(EPOCH*1000000)) / 86400000000.0
++        d = (tmicros + int(EPOCH*1000000)) / 86400000000.0
+         s = d - math.floor(d)
+         ms = t - math.floor(t)
+         x = _calcDependentSecond(tz, t)
+@@ -1789,7 +1789,7 @@ class DateTime(object):
+ 
+     def __long__(self):
+         """Convert to a long-int number of seconds since the epoch (gmt)."""
+-        return long(self.micros() / 1000000)
++        return int(self.micros() / 1000000)
+ 
+     def __float__(self):
+         """Convert to floating-point number of seconds since the epoch (gmt).
+@@ -1917,7 +1917,7 @@ class DateTime(object):
+ # Provide the _dt_reconstructor function here, in case something
+ # accidentally creates a reference to this function
+ 
+-orig_reconstructor = copy_reg._reconstructor
++orig_reconstructor = copyreg._reconstructor
+ 
+ 
+ def _dt_reconstructor(cls, base, state):
+--- src/DateTime/pytz_support.py.orig	2011-12-09 05:59:48 UTC
++++ src/DateTime/pytz_support.py
+@@ -18,7 +18,7 @@ import pytz
+ import pytz.reference
+ from pytz.tzinfo import StaticTzInfo, memorized_timedelta
+ from datetime import datetime, timedelta
+-from interfaces import DateTimeError
++from .interfaces import DateTimeError
+ 
+ EPOCH = datetime.utcfromtimestamp(0).replace(tzinfo=pytz.utc)
+ 
+@@ -198,7 +198,7 @@ def _static_timezone_factory(data):
+     return cls()
+ 
+ _numeric_timezones = dict((key, _static_timezone_factory(data))
+-                           for key, data in _numeric_timezone_data.items())
++                           for key, data in list(_numeric_timezone_data.items()))
+ 
+ 
+ class Timezone:
+@@ -238,7 +238,7 @@ class PytzCache:
+     _zlst = pytz.common_timezones + _old_zlst # used by DateTime.TimeZones
+     _zmap = dict((name.lower(), name) for name in pytz.all_timezones)
+     _zmap.update(_old_zmap) # These must take priority
+-    _zidx = _zmap.keys()
++    _zidx = list(_zmap.keys())
+ 
+     def __getitem__(self, key):
+         name = self._zmap.get(key.lower(), key) # fallback to key
+@@ -248,4 +248,4 @@ class PytzCache:
+             try:
+                 return Timezone(_numeric_timezones[name])
+             except KeyError:
+-                raise DateTimeError,'Unrecognized timezone: %s' % key
++                raise DateTimeError('Unrecognized timezone: %s' % key)
+--- src/DateTime/tests/testDateTime.py.orig	2013-01-20 10:50:50 UTC
++++ src/DateTime/tests/testDateTime.py
+@@ -12,7 +12,7 @@
+ #
+ ##############################################################################
+ 
+-import cPickle
++import pickle
+ import math
+ import os
+ import time
+@@ -22,7 +22,7 @@ from DateTime.DateTime import _findLocalTimeZoneName
+ from DateTime import DateTime
+ from datetime import date, datetime, tzinfo, timedelta
+ import pytz
+-import legacy
++from . import legacy
+ 
+ try:
+     __file__
+@@ -69,7 +69,7 @@ class DateTimeTests(unittest.TestCase):
+     def testBug1203(self):
+         # 01:59:60 occurred in old DateTime
+         dt = DateTime(7200, 'GMT')
+-        self.assert_(str(dt).find('60') < 0, dt)
++        self.assertTrue(str(dt).find('60') < 0, dt)
+ 
+     def testDSTInEffect(self):
+         # Checks GMT offset for a DST date in the US/Eastern time zone
+@@ -116,7 +116,7 @@ class DateTimeTests(unittest.TestCase):
+         dt = DateTime()
+         dt1 = DateTime(float(dt), dt.timezone())
+         self.assertEqual(str(dt), str(dt1), (dt, dt1))
+-        dt1 = DateTime(float(dt), unicode(dt.timezone()))
++        dt1 = DateTime(float(dt), str(dt.timezone()))
+         self.assertEqual(str(dt), str(dt1), (dt, dt1))
+ 
+     def testConstructor6(self):
+@@ -154,7 +154,7 @@ class DateTimeTests(unittest.TestCase):
+         # Fails when an 1800 date is displayed with negative signs
+         dt = DateTime('1830/5/6 12:31:46.213 pm')
+         dt1 = dt.toZone('GMT+6')
+-        self.assert_(str(dt1).find('-') < 0, (dt, dt1))
++        self.assertTrue(str(dt1).find('-') < 0, (dt, dt1))
+ 
+     def testSubtraction(self):
+         # Reconstruction of a DateTime from its parts, with subtraction
+@@ -212,22 +212,22 @@ class DateTimeTests(unittest.TestCase):
+ 
+     def test_pickle(self):
+         dt = DateTime()
+-        data = cPickle.dumps(dt, 1)
+-        new = cPickle.loads(data)
++        data = pickle.dumps(dt, 1)
++        new = pickle.loads(data)
+         for key in DateTime.__slots__:
+             self.assertEqual(getattr(dt, key), getattr(new, key))
+ 
+     def test_pickle_with_tz(self):
+         dt = DateTime('2002/5/2 8:00am GMT+8')
+-        data = cPickle.dumps(dt, 1)
+-        new = cPickle.loads(data)
++        data = pickle.dumps(dt, 1)
++        new = pickle.loads(data)
+         for key in DateTime.__slots__:
+             self.assertEqual(getattr(dt, key), getattr(new, key))
+ 
+     def test_pickle_with_micros(self):
+         dt = DateTime('2002/5/2 8:00:14.123 GMT+8')
+-        data = cPickle.dumps(dt, 1)
+-        new = cPickle.loads(data)
++        data = pickle.dumps(dt, 1)
++        new = pickle.loads(data)
+         for key in DateTime.__slots__:
+             self.assertEqual(getattr(dt, key), getattr(new, key))
+ 
+@@ -245,7 +245,7 @@ class DateTimeTests(unittest.TestCase):
+             '\x1bM\xd2\x07U\x08_nearsecq\x1cG\x00\x00\x00\x00\x00\x00\x00'
+             '\x00U\x07_pmhourq\x1dK\x08U\n_dayoffsetq\x1eK\x04U\x04timeq'
+             '\x1fG?\xd5UUUV\x00\x00ub.')
+-        new = cPickle.loads(data)
++        new = pickle.loads(data)
+         for key in DateTime.__slots__:
+             self.assertEqual(getattr(dt, key), getattr(new, key))
+ 
+@@ -262,7 +262,7 @@ class DateTimeTests(unittest.TestCase):
+             '\x04_dayq\x19K\x02U\x05_yearq\x1aM\xd2\x07U\x08_nearsecq'
+             '\x1bG\x00\x00\x00\x00\x00\x00\x00\x00U\x07_pmhourq\x1cK\x08U'
+             '\n_dayoffsetq\x1dK\x04U\x04timeq\x1eG?\xd5UUUV\x00\x00ub.')
+-        new = cPickle.loads(data)
++        new = pickle.loads(data)
+         for key in DateTime.__slots__:
+             self.assertEqual(getattr(dt, key), getattr(new, key))
+ 
+@@ -288,7 +288,7 @@ class DateTimeTests(unittest.TestCase):
+         dsec = (dt.millis() - dt1.millis()) / 1000.0
+         ddays = math.floor((dsec / 86400.0) + 0.5)
+ 
+-        self.assertEqual(ddays, 3000000L, ddays)
++        self.assertEqual(ddays, 3000000, ddays)
+ 
+     def test_tzoffset(self):
+         # Test time-zone given as an offset
+@@ -523,7 +523,7 @@ class DateTimeTests(unittest.TestCase):
+ 
+     def test_calcTimezoneName(self):
+         from DateTime.interfaces import TimeError
+-        timezone_dependent_epoch = 2177452800L
++        timezone_dependent_epoch = 2177452800
+         try:
+             DateTime()._calcTimezoneName(timezone_dependent_epoch, 0)
+         except TimeError:
+@@ -556,8 +556,8 @@ class DateTimeTests(unittest.TestCase):
+ 
+     def testStrftimeUnicode(self):
+         dt = DateTime('2002-05-02T08:00:00+00:00')
+-        ok = dt.strftime('Le %d/%m/%Y a %Hh%M').replace('a', u'\xe0')
+-        self.assertEqual(dt.strftime(u'Le %d/%m/%Y \xe0 %Hh%M'), ok)
++        ok = dt.strftime('Le %d/%m/%Y a %Hh%M').replace('a', '\xe0')
++        self.assertEqual(dt.strftime('Le %d/%m/%Y \xe0 %Hh%M'), ok)
+     
+     def testTimezoneNaiveHandling(self):
+         # checks that we assign timezone naivity correctly
+@@ -615,11 +615,11 @@ class DateTimeTests(unittest.TestCase):
+         t1 = time.mktime(datetime(2002, 1, 1).timetuple())
+         t2 = time.mktime(datetime(2002, 7, 1).timetuple())
+         
+-        for name in legacy._zlst + legacy._zmap.keys() + legacy._data.keys():
+-            self.failUnless(name.lower() in _TZINFO._zidx, 'legacy timezone  %s cannot be looked up' % name)            
++        for name in legacy._zlst + list(legacy._zmap.keys()) + list(legacy._data.keys()):
++            self.assertTrue(name.lower() in _TZINFO._zidx, 'legacy timezone  %s cannot be looked up' % name)            
+         
+         failures = []
+-        for name, zone in legacy.timezones.iteritems():
++        for name, zone in legacy.timezones.items():
+             newzone = _TZINFO[name]
+             # The name of the new zone might change (eg GMT+6 rather than GMT+0600)
+             if zone.info(t1)[:2] != newzone.info(t1)[:2] or zone.info(t2)[:2] != newzone.info(t2)[:2]:
+@@ -637,7 +637,7 @@ class DateTimeTests(unittest.TestCase):
+             
+         real_failures = list(set(failures).difference(set(expected_failures)))
+             
+-        self.failIf(real_failures, '\n'.join(real_failures))
++        self.assertFalse(real_failures, '\n'.join(real_failures))
+     
+     def testBasicTZ(self):
+         #psycopg2 supplies it's own tzinfo instances, with no `zone` attribute

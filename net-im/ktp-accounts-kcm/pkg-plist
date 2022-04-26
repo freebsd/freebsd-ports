@@ -1,3 +1,5 @@
+lib/libktpaccountskcminternal.so.9
+lib/libktpaccountskcminternal.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kaccounts/ui/ktpaccountskcm_plugin_kaccounts.so
 %%QT_PLUGINDIR%%/ktpaccountskcm_plugin_gabble.so
 %%QT_PLUGINDIR%%/ktpaccountskcm_plugin_haze.so
@@ -6,8 +8,6 @@
 %%QT_PLUGINDIR%%/ktpaccountskcm_plugin_salut.so
 %%QT_PLUGINDIR%%/ktpaccountskcm_plugin_sipe.so
 %%QT_PLUGINDIR%%/ktpaccountskcm_plugin_sunshine.so
-lib/libktpaccountskcminternal.so.%%KDE_APPLICATIONS_VERSION%%
-lib/libktpaccountskcminternal.so.9
 share/accounts/providers/kde/ktp-gadugadu.provider
 share/accounts/providers/kde/ktp-generic.provider
 share/accounts/providers/kde/ktp-haze-aim.provider

@@ -1,5 +1,5 @@
 PORTNAME=	napalm
-DISTVERSION=	3.3.1
+DISTVERSION=	3.4.0
 CATEGORIES=	net-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}junos-eznc>=2.2.1:net-mgmt/py-junos-eznc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ncclient>0:net-mgmt/py-ncclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}netmiko>=3.1.0:security/py-netmiko@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}netmiko>=3.3.0<4.0.0:security/py-netmiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=2.6.0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyeapi>=0.8.2:net-mgmt/py-pyeapi@${PY_FLAVOR} \

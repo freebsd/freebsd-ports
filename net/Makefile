@@ -249,7 +249,6 @@
     SUBDIR += honeyd
     SUBDIR += hostapd
     SUBDIR += hostapd-devel
-    SUBDIR += hping
     SUBDIR += hping3
     SUBDIR += hsflowd
     SUBDIR += htpdate
@@ -268,7 +267,6 @@
     SUBDIR += ilbc
     SUBDIR += imapproxy
     SUBDIR += incidenceeditor
-    SUBDIR += inlets
     SUBDIR += intel-em-kmod
     SUBDIR += intel-ix-kmod
     SUBDIR += intel-ixl-kmod
@@ -301,7 +299,6 @@
     SUBDIR += jwhois
     SUBDIR += k6
     SUBDIR += kafka
-    SUBDIR += kalarmcal
     SUBDIR += kamailio
     SUBDIR += kcalutils
     SUBDIR += kcat
@@ -369,6 +366,7 @@
     SUBDIR += libgravatar
     SUBDIR += libgrss
     SUBDIR += libgweather
+    SUBDIR += libgweather4
     SUBDIR += libilbc
     SUBDIR += libiscsi
     SUBDIR += libkgapi
@@ -512,6 +510,7 @@
     SUBDIR += netwib
     SUBDIR += nfs-ganesha-kmod
     SUBDIR += nfsshell
+    SUBDIR += nfstrace
     SUBDIR += ng_mikrotik_eoip
     SUBDIR += ngrep
     SUBDIR += nifmon
@@ -1073,6 +1072,7 @@
     SUBDIR += py-paho-mqtt
     SUBDIR += py-pamqp
     SUBDIR += py-pcapy
+    SUBDIR += py-pcapy-ng
     SUBDIR += py-port-for
     SUBDIR += py-portend
     SUBDIR += py-pyenet
@@ -1153,6 +1153,7 @@
     SUBDIR += py-txrestapi
     SUBDIR += py-uritemplate
     SUBDIR += py-uritools
+    SUBDIR += py-url-normalize
     SUBDIR += py-urlextract
     SUBDIR += py-urllib3
     SUBDIR += py-whois
@@ -1168,7 +1169,6 @@
     SUBDIR += qt5-network
     SUBDIR += qt5-networkauth
     SUBDIR += quagga
-    SUBDIR += queso
     SUBDIR += quiche
     SUBDIR += quiterss
     SUBDIR += quoted
@@ -1318,6 +1318,7 @@
     SUBDIR += rubygem-netrc
     SUBDIR += rubygem-network_interface
     SUBDIR += rubygem-nkf
+    SUBDIR += rubygem-no_proxy_fix
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
     SUBDIR += rubygem-octokit
@@ -1448,7 +1449,6 @@
     SUBDIR += ssldump
     SUBDIR += sslh
     SUBDIR += ssspl
-    SUBDIR += ssvnc
     SUBDIR += stone
     SUBDIR += storj
     SUBDIR += stund
@@ -1565,6 +1565,7 @@
     SUBDIR += wireguard-go
     SUBDIR += wireguard-kmod
     SUBDIR += wireguard-tools
+    SUBDIR += wireproxy
     SUBDIR += wireshark
     SUBDIR += wireshark-lite
     SUBDIR += wlan2eth

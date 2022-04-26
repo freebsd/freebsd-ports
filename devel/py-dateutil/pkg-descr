@@ -1,4 +1,4 @@
-The dateutil module provides powerful extensions to the standard
-datetime module.
+The dateutil module provides powerful extensions to the standard datetime
+module, available in Python.
 
-WWW: https://dateutil.readthedocs.io
+WWW: https://github.com/dateutil/dateutil

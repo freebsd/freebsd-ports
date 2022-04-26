@@ -1,14 +1,24 @@
---- block/export/fuse.c.orig	2021-12-10 19:29:04 UTC
+--- block/export/fuse.c.orig	2022-04-22 18:57:58 UTC
 +++ block/export/fuse.c
-@@ -618,47 +618,7 @@ static void fuse_fallocate(fuse_req_t req, fuse_ino_t 
+@@ -637,12 +637,6 @@ static void fuse_fallocate(fuse_req_t req, fuse_ino_t 
          return;
      }
  
+-#ifdef CONFIG_FALLOCATE_PUNCH_HOLE
 -    if (mode & FALLOC_FL_KEEP_SIZE) {
 -        length = MIN(length, blk_len - offset);
 -    }
+-#endif /* CONFIG_FALLOCATE_PUNCH_HOLE */
 -
--    if (mode & FALLOC_FL_PUNCH_HOLE) {
+     if (!mode) {
+         /* We can only fallocate at the EOF with a truncate */
+         if (offset < blk_len) {
+@@ -662,44 +656,6 @@ static void fuse_fallocate(fuse_req_t req, fuse_ino_t 
+         ret = fuse_do_truncate(exp, offset + length, true,
+                                PREALLOC_MODE_FALLOC);
+     }
+-#ifdef CONFIG_FALLOCATE_PUNCH_HOLE
+-    else if (mode & FALLOC_FL_PUNCH_HOLE) {
 -        if (!(mode & FALLOC_FL_KEEP_SIZE)) {
 -            fuse_reply_err(req, EINVAL);
 -            return;
@@ -22,6 +32,7 @@
 -            length -= size;
 -        } while (ret == 0 && length > 0);
 -    }
+-#endif /* CONFIG_FALLOCATE_PUNCH_HOLE */
 -#ifdef CONFIG_FALLOCATE_ZERO_RANGE
 -    else if (mode & FALLOC_FL_ZERO_RANGE) {
 -        if (!(mode & FALLOC_FL_KEEP_SIZE) && offset + length > blk_len) {
@@ -44,8 +55,6 @@
 -        } while (ret == 0 && length > 0);
 -    }
 -#endif /* CONFIG_FALLOCATE_ZERO_RANGE */
--    else if (!mode) {
-+    if (!mode) {
-         /* We can only fallocate at the EOF with a truncate */
-         if (offset < blk_len) {
-             fuse_reply_err(req, EOPNOTSUPP);
+     else {
+         ret = -EOPNOTSUPP;
+     }

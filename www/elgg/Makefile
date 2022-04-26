@@ -5,7 +5,7 @@ PORTVERSION=	3.3.23
 CATEGORIES=	www
 MASTER_SITES=	http://elgg.org/download/
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blogging and social networking platform
 
 LICENSE=	GPLv2

@@ -1,3 +1,4 @@
 %%SITE_PERL%%/Geo/IPfree.pm
+%%SITE_PERL%%/Geo/IPfree.pod
 %%SITE_PERL%%/Geo/ipscountry.dat
 %%PERL5_MAN3%%/Geo::IPfree.3.gz

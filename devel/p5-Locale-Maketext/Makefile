@@ -1,7 +1,7 @@
 # Created by: Frank Mayhar <frank@exit.com>
 
 PORTNAME=	Locale-Maketext
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

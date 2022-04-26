@@ -1,7 +1,11 @@
 bin/CloudCompare
 bin/ccViewer
-lib/cloudcompare/libCC_CORE_LIB.so
+lib/cloudcompare/libCCAppCommon.so
+lib/cloudcompare/libCCCoreLib.so
+lib/cloudcompare/libCCPluginAPI.so
+lib/cloudcompare/libCC_FBO_LIB.so
 lib/cloudcompare/libQCC_DB_LIB.so
+lib/cloudcompare/libQCC_GL_LIB.so
 lib/cloudcompare/libQCC_IO_LIB.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQANIMATION_PLUGIN.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQBROOM_PLUGIN.so
@@ -32,10 +36,13 @@ share/applications/cloudcompare.desktop
 %%PLUGINS%%%%DATADIR%%/shaders/EDL/edl_shade.vert
 %%PLUGINS%%%%DATADIR%%/shaders/SSAO/ssao.frag
 %%PLUGINS%%%%DATADIR%%/shaders/SSAO/ssao.vert
+%%DATADIR%%/translations/CloudCompare_de.qm
 %%DATADIR%%/translations/CloudCompare_es_AR.qm
 %%DATADIR%%/translations/CloudCompare_fr.qm
 %%DATADIR%%/translations/CloudCompare_ja.qm
+%%DATADIR%%/translations/CloudCompare_kr.qm
 %%DATADIR%%/translations/CloudCompare_pt.qm
 %%DATADIR%%/translations/CloudCompare_ru.qm
+%%DATADIR%%/translations/CloudCompare_zh.qm
 share/pixmaps/ccViewer.png
 share/pixmaps/cloudcompare.png

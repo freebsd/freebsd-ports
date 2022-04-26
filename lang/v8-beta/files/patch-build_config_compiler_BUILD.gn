@@ -1,4 +1,4 @@
---- build/config/compiler/BUILD.gn.orig	2022-01-23 11:59:03 UTC
+--- build/config/compiler/BUILD.gn.orig	2022-04-04 20:12:27 UTC
 +++ build/config/compiler/BUILD.gn
 @@ -140,7 +140,7 @@ declare_args() {
    #
@@ -27,7 +27,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
  
      # TODO(hans): Remove this once Clang generates better optimized debug info
-@@ -917,7 +917,7 @@ config("compiler_cpu_abi") {
+@@ -929,7 +929,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -36,7 +36,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1238,7 +1238,7 @@ config("compiler_deterministic") {
+@@ -1250,7 +1250,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -45,7 +45,7 @@
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1251,7 +1251,7 @@ config("compiler_deterministic") {
+@@ -1263,7 +1263,7 @@ config("compiler_deterministic") {
        # and -fcoverage-compilation-dir=.
        cflags += [ "-ffile-compilation-dir=." ]
      }
@@ -54,7 +54,7 @@
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1502,7 +1502,7 @@ config("default_warnings") {
+@@ -1517,7 +1517,7 @@ config("default_warnings") {
        "-Wno-unneeded-internal-declaration",
      ]
  
@@ -63,7 +63,7 @@
        if (is_win) {
          # TODO(thakis): https://crbug.com/617318
          # Currently goma can not handle case sensitiveness for windows well.
-@@ -1791,7 +1791,7 @@ config("thin_archive") {
+@@ -1853,7 +1853,7 @@ config("thin_archive") {
    # archives.
    # TODO(crbug.com/1221615): Enable on is_apple if use_lld once that no longer
    # confuses lldb.
@@ -72,7 +72,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2289,7 +2289,7 @@ config("symbols") {
+@@ -2354,7 +2354,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if ((!is_nacl || is_clang) && current_os != "zos") {
@@ -81,7 +81,7 @@
      }
  
      if (!is_nacl && is_clang && !is_tsan && !is_asan &&
-@@ -2329,7 +2329,7 @@ config("symbols") {
+@@ -2394,7 +2394,7 @@ config("symbols") {
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      _enable_gdb_index =
          symbol_level == 2 && !is_apple && !is_nacl && current_cpu != "x86" &&
@@ -90,7 +90,7 @@
          # Disable on non-fission 32-bit Android because it pushes
          # libcomponents_unittests over the 4gb size limit.
          !(is_android && !use_debug_fission && current_cpu != "x64" &&
-@@ -2347,7 +2347,7 @@ config("symbols") {
+@@ -2412,7 +2412,7 @@ config("symbols") {
    }
  
    if (is_clang && (!is_nacl || is_nacl_saigo) && current_os != "zos") {

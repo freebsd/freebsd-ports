@@ -1,0 +1,4 @@
+GtkSourceView is a text widget for Gtk+-3 that provides syntax highlighting
+and other features typically expected in a source code editor.
+
+WWW: https://wiki.gnome.org/Projects/GtkSourceView

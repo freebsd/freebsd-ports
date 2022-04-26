@@ -11,7 +11,7 @@ COMMENT=	Small x86 CPU identification library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64le powerpc64 powerpc
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	anrieff

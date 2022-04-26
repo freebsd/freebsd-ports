@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	14.8.4
+DISTVERSION=	14.10.0
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -14,12 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # it fixes segfaults reported here: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259848
 
 # define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.33.0:devel/git \
+MY_DEPENDS=	git>=2.35.1:devel/git \
 		rubygem-bundler>=2.1.4:sysutils/rubygem-bundler \
 		rubygem-rugged>=1.2<2:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.12.1<8:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.8.0<1.9.0:textproc/rubygem-gitlab-markup \
-		rubygem-activesupport61>=6.1.4.6<6.1.5:devel/rubygem-activesupport61 \
+		rubygem-activesupport61>=6.1.4.7<6.1.5:devel/rubygem-activesupport61 \
 		rubygem-rdoc>=6.3.2<7.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.2<4.2.8:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
@@ -29,7 +29,7 @@ MY_DEPENDS=	git>=2.33.0:devel/git \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
 		rubygem-gitlab-labkit>=0.22.0<0.23:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
-		rubygem-google-protobuf>=3.19.0<3.20:devel/rubygem-google-protobuf
+		rubygem-google-protobuf319>=3.19.0<3.20:devel/rubygem-google-protobuf319
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 		bash>0:shells/bash \
 		${MY_DEPENDS}
@@ -49,7 +49,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	d35ed2db0cdea9f7494a7f6758c06bacf0160c53
+GL_COMMIT=	1478932866d068186c3a8af85fa11e5a97f5558e
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -115,7 +115,7 @@ GH_TUPLE=	\
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:4dd72447c267:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
-		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
+		golang:time:0e9765cccd65:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cloud:v0.23.0:google_go_cloud/vendor/gocloud.dev \
@@ -155,7 +155,7 @@ GH_TUPLE=	\
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		kelseyhightower:envconfig:v1.3.0:kelseyhightower_envconfig/vendor/github.com/kelseyhightower/envconfig \
 		kevinburke:ssh_config:4977a11b4351:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
-		libgit2:git2go:v33.0.6:libgit2_git2go_v33/vendor/github.com/libgit2/git2go/v33 \
+		libgit2:git2go:v33.0.9:libgit2_git2go_v33/vendor/github.com/libgit2/git2go/v33 \
 		lightstep:lightstep-tracer-common:a8dfcb80d3a7:lightstep_lightstep_tracer_common_gogo/vendor/github.com/lightstep/lightstep-tracer-common \
 		lightstep:lightstep-tracer-go:v0.24.0:lightstep_lightstep_tracer_go/vendor/github.com/lightstep/lightstep-tracer-go \
 		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
@@ -200,6 +200,7 @@ GH_TUPLE=	\
 
 GL_TUPLE=	gitlab-org:gitlab-shell:50da611814d256c77e689977265ec7e07633a4dc:gitlab_org_gitlab_shell/vendor/gitlab.com/gitlab-org/gitlab-shell \
 		gitlab-org:labkit:397363e2404ac0276b1959373a1c1c2bc1610d67:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+
 
 # 13dd
 post-extract:

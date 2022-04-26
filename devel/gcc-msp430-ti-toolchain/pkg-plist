@@ -3573,6 +3573,7 @@ gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/exceptions/libstdc++.a
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/exceptions/libsupc++.a
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/exceptions/msp430-sim.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/exceptions/msp430xl-sim.ld
+gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/exceptions/msp430xl-sim-rom.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/gcrt0.o
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/intr_vectors.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/libc.a
@@ -3588,6 +3589,7 @@ gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/libstdc++.a-gdb.py
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/libsupc++.a
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/msp430-sim.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/msp430xl-sim.ld
+gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/430/msp430xl-sim-rom.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/crt0.o
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/exceptions/crt0.o
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/exceptions/gcrt0.o
@@ -3605,6 +3607,7 @@ gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/exceptions/libstdc++.a-gdb
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/exceptions/libsupc++.a
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/exceptions/msp430-sim.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/exceptions/msp430xl-sim.ld
+gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/exceptions/msp430xl-sim-rom.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/gcrt0.o
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/intr_vectors.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/crt0.o
@@ -3624,6 +3627,7 @@ gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/exceptions/libstdc++
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/exceptions/libsupc++.a
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/exceptions/msp430-sim.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/exceptions/msp430xl-sim.ld
+gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/exceptions/msp430xl-sim-rom.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/crt0.o
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/exceptions/crt0.o
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/exceptions/gcrt0.o
@@ -3641,6 +3645,7 @@ gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/ex
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/exceptions/libsupc++.a
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/exceptions/msp430-sim.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/exceptions/msp430xl-sim.ld
+gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/exceptions/msp430xl-sim-rom.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/gcrt0.o
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/intr_vectors.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/libc.a
@@ -3656,6 +3661,7 @@ gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/li
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/libsupc++.a
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/msp430-sim.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/msp430xl-sim.ld
+gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/full-memory-range/msp430xl-sim-rom.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/gcrt0.o
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/intr_vectors.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/libc.a
@@ -3671,6 +3677,7 @@ gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/libstdc++.a-gdb.py
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/libsupc++.a
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/msp430-sim.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/msp430xl-sim.ld
+gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/large/msp430xl-sim-rom.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/ldscripts/msp430X.x
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/ldscripts/msp430X.xbn
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/ldscripts/msp430X.xn
@@ -3694,6 +3701,7 @@ gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/libstdc++.a-gdb.py
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/libsupc++.a
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/msp430-sim.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/msp430xl-sim.ld
+gcc-msp430-ti-toolchain-%%TI_VERSION%%/%%TARGET%%/lib/msp430xl-sim-rom.ld
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/share/gcc-%%GCC_VERSION%%/python/libstdcxx/__init__.py
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/__init__.py
 gcc-msp430-ti-toolchain-%%TI_VERSION%%/share/gcc-%%GCC_VERSION%%/python/libstdcxx/v6/printers.py

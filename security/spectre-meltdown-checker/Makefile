@@ -1,6 +1,6 @@
 PORTNAME=	spectre-meltdown-checker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.44
+DISTVERSION=	0.45
 CATEGORIES=	security
 
 MAINTAINER=	pkubaj@FreeBSD.org

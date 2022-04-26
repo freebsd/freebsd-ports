@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	security
 
 COMMENT=	GStreamer Datagram TLS (dtls) plugin

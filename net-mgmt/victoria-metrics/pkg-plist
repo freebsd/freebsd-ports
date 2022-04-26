@@ -48,6 +48,15 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-ha-monitoring-via-vm-cluster.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-monitoring-via-vm-cluster.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-monitoring-via-vm-single.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/multi-regional-setup-dedicated-regions.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/multi-regional-setup-dedicated-regions.png
+%%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/README.md
+%%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/quickstart-instance-create.png
+%%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/quickstart-instance-provisioning.png
+%%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/quickstart-instances.png
+%%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/quickstart-token-usage.png
+%%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/quickstart-tokens.png
+%%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/quickstart.md
 %%PORTDOCS%%%%DOCSDIR%%/operator/README.md
 %%PORTDOCS%%%%DOCSDIR%%/operator/VictoriaMetrics-Operator.md
 %%PORTDOCS%%%%DOCSDIR%%/operator/additional-scrape.MD

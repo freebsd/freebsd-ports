@@ -1,5 +1,0 @@
-@sample etc/razorback/virustotal.conf.sample
-lib/razorback/virusTotal.so.2.0.0
-lib/razorback/virusTotal.so.2
-lib/razorback/virusTotal.so
-lib/razorback/virusTotal.a

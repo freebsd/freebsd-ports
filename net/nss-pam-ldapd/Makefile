@@ -1,8 +1,7 @@
 # Created by: melifaro@ipfw.ru
 
 PORTNAME=		nss-pam-ldapd
-PORTVERSION=		0.9.11
-PORTREVISION=		1
+PORTVERSION=		0.9.12
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
 			ZI

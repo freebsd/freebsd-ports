@@ -48,7 +48,7 @@
 # Usage:	USES=autoreconf or USES=autoreconf:args
 # Valid args:	build	Don't run autoreconf, only add build dependencies
 #
-# MAINTAINER:	portmgr@FreeBSD.org
+# MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_AUTORECONF_MK)
 _INCLUDE_USES_AUTORECONF_MK=	yes
@@ -65,27 +65,27 @@ _INCLUDE_USES_AUTORECONF_POST_MK=	yes
 BUILD_DEPENDS+=	autoconf>=2.69:devel/autoconf \
 		automake>=1.16.1:devel/automake
 
-.if defined(libtool_ARGS) && empty(libtool_ARGS:Mbuild)
+.  if defined(libtool_ARGS) && empty(libtool_ARGS:Mbuild)
 BUILD_DEPENDS+=	libtoolize:devel/libtool
-.endif
+.  endif
 
-.if empty(autoreconf_ARGS)
+.  if empty(autoreconf_ARGS)
 _USES_configure+=	470:do-autoreconf
 do-autoreconf:
-.for f in AUTHORS ChangeLog INSTALL NEWS README
+.    for f in AUTHORS ChangeLog INSTALL NEWS README
 # Don't modify time stamps if the files already exist
 	@test -e ${AUTORECONF_WRKSRC}/${f} || ${TOUCH} ${AUTORECONF_WRKSRC}/${f}
-.endfor
-.if defined(_USE_GNOME) && ${_USE_GNOME:Mintltool}
+.    endfor
+.    if defined(_USE_GNOME) && ${_USE_GNOME:Mintltool}
 	@(cd ${AUTORECONF_WRKSRC} && \
 		if test -f configure.ac; then configure=configure.ac; \
 		else configure=configure.in; fi && \
 		if ${EGREP} -q '^(AC|IT)_PROG_INTLTOOL' $${configure}; \
 		then ${LOCALBASE}/bin/intltoolize -f -c; fi)
-.endif
+.    endif
 	@(cd ${AUTORECONF_WRKSRC} && ${AUTORECONF} -f -i)
-.elif ! ${autoreconf_ARGS:Mbuild}
+.  elif ! ${autoreconf_ARGS:Mbuild}
 IGNORE= Incorrect 'USES+=autoreconf:${autoreconf_ARGS}' expecting 'USES+=autoreconf[:build]'
-.endif
+.  endif
 
 .endif

@@ -2,6 +2,7 @@
 
 PORTNAME=	fvwm3
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${PORTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/:icons
@@ -25,6 +26,7 @@ CPE_VENDOR=	fvwm
 CPE_PRODUCT=	fvwm
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PORTREVISION=	1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_path_PYTHON=${PYTHON_CMD}

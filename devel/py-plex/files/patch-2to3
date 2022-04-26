@@ -1,0 +1,517 @@
+--- Plex/Lexicons.py.orig	2003-07-08 08:35:31 UTC
++++ Plex/Lexicons.py
+@@ -8,11 +8,11 @@
+ 
+ import types
+ 
+-import Actions
+-import DFA
+-import Errors
+-import Machines
+-import Regexps
++from . import Actions
++from . import DFA
++from . import Errors
++from . import Machines
++from . import Regexps
+ 
+ # debug_flags for Lexicon constructor
+ DUMP_NFA = 1
+@@ -111,10 +111,10 @@ class Lexicon:
+   tables = None # StateTableMachine
+ 
+   def __init__(self, specifications, debug = None, debug_flags = 7, timings = None):
+-    if type(specifications) <> types.ListType:
++    if type(specifications) != list:
+       raise Errors.InvalidScanner("Scanner definition is not a list")
+     if timings:
+-      from Timing import time
++      from .Timing import time
+       total_time = 0.0
+       time1 = time()
+     nfa = Machines.Machine()
+@@ -127,7 +127,7 @@ class Lexicon:
+           self.add_token_to_machine(
+             nfa, user_initial_state, token, token_number)
+           token_number = token_number + 1
+-      elif type(spec) == types.TupleType:
++      elif type(spec) == tuple:
+         self.add_token_to_machine(
+           nfa, default_initial_state, spec, token_number)
+         token_number = token_number + 1
+@@ -172,13 +172,13 @@ class Lexicon:
+       re.build_machine(machine, initial_state, final_state, 
+                        match_bol = 1, nocase = 0)
+       final_state.set_action(action, priority = -token_number)
+-    except Errors.PlexError, e:
++    except Errors.PlexError as e:
+       raise e.__class__("Token number %d: %s" % (token_number, e))
+ 
+   def parse_token_definition(self, token_spec):
+-    if type(token_spec) <> types.TupleType:
++    if type(token_spec) != tuple:
+       raise Errors.InvalidToken("Token definition is not a tuple")
+-    if len(token_spec) <> 2:
++    if len(token_spec) != 2:
+       raise Errors.InvalidToken("Wrong number of items in token definition")
+     pattern, action = token_spec
+     if not isinstance(pattern, Regexps.RE):
+--- Plex/Machines.py.orig	2003-07-08 08:35:31 UTC
++++ Plex/Machines.py
+@@ -8,12 +8,12 @@
+ 
+ import string
+ import sys
+-from sys import maxint
++from sys import maxsize
+ from types import TupleType
+ 
+-from Transitions import TransitionMap
++from .Transitions import TransitionMap
+ 
+-LOWEST_PRIORITY = -sys.maxint
++LOWEST_PRIORITY = -sys.maxsize
+ 
+ class Machine:
+   """A collection of Nodes representing an NFA or DFA."""
+@@ -54,7 +54,7 @@ class Machine:
+     file.write("Plex.Machine:\n")
+     if self.initial_states is not None:
+       file.write("   Initial states:\n")
+-      for (name, state) in self.initial_states.items():
++      for (name, state) in list(self.initial_states.items()):
+         file.write("      '%s': %d\n" % (name, state.number))
+     for s in self.states:
+       s.dump(file)
+@@ -150,13 +150,13 @@ class FastMachine:
+       for old_state in old_machine.states:
+         new_state = self.new_state()
+         old_to_new[old_state] = new_state
+-      for name, old_state in old_machine.initial_states.items():
++      for name, old_state in list(old_machine.initial_states.items()):
+         initial_states[name] = old_to_new[old_state]
+       for old_state in old_machine.states:
+         new_state = old_to_new[old_state]
+-        for event, old_state_set in old_state.transitions.items():
++        for event, old_state_set in list(old_state.transitions.items()):
+           if old_state_set:
+-            new_state[event] = old_to_new[old_state_set.keys()[0]]
++            new_state[event] = old_to_new[list(old_state_set.keys())[0]]
+           else:
+             new_state[event] = None
+         new_state['action'] = old_state.action
+@@ -182,7 +182,7 @@ class FastMachine:
+       code0, code1 = event
+       if code0 == -maxint:
+         state['else'] = new_state
+-      elif code1 <> maxint:
++      elif code1 != maxint:
+         while code0 < code1:
+           state[chr(code0)] = new_state
+           code0 = code0 + 1
+@@ -195,7 +195,7 @@ class FastMachine:
+   def dump(self, file):
+     file.write("Plex.FastMachine:\n")
+     file.write("   Initial states:\n")
+-    for name, state in self.initial_states.items():
++    for name, state in list(self.initial_states.items()):
+       file.write("      %s: %s\n" % (repr(name), state['number']))
+     for state in self.states:
+       self.dump_state(state, file)
+@@ -214,7 +214,7 @@ class FastMachine:
+   def dump_transitions(self, state, file):
+     chars_leading_to_state = {}
+     special_to_state = {}
+-    for (c, s) in state.items():
++    for (c, s) in list(state.items()):
+       if len(c) == 1:
+         chars = chars_leading_to_state.get(id(s), None)
+         if chars is None:
+@@ -229,7 +229,7 @@ class FastMachine:
+       if char_list:
+         ranges = self.chars_to_ranges(char_list)
+         ranges_to_state[ranges] = state
+-    ranges_list = ranges_to_state.keys()
++    ranges_list = list(ranges_to_state.keys())
+     ranges_list.sort()
+     for ranges in ranges_list:
+       key = self.ranges_to_string(ranges)
+@@ -256,9 +256,10 @@ class FastMachine:
+     return tuple(result)
+   
+   def ranges_to_string(self, range_list):
+-    return string.join(map(self.range_to_string, range_list), ",")
++    return string.join(list(map(self.range_to_string, range_list)), ",")
+   
+-  def range_to_string(self, (c1, c2)):
++  def range_to_string(self, xxx_todo_changeme):
++    (c1, c2) = xxx_todo_changeme
+     if c1 == c2:
+       return repr(c1)
+     else:
+--- Plex/Regexps.py.orig	2003-07-08 08:35:31 UTC
++++ Plex/Regexps.py
+@@ -9,9 +9,9 @@
+ import array
+ import string
+ import types
+-from sys import maxint
++from sys import maxsize
+ 
+-import Errors
++from . import Errors
+ 
+ #
+ #	 Constants
+@@ -81,9 +81,9 @@ def CodeRanges(code_list):
+ 	an RE which will match a character in any of the ranges.
+ 	"""
+ 	re_list = []
+-	for i in xrange(0, len(code_list), 2):
++	for i in range(0, len(code_list), 2):
+ 		re_list.append(CodeRange(code_list[i], code_list[i + 1]))
+-	return apply(Alt, tuple(re_list))
++	return Alt(*tuple(re_list))
+ 
+ def CodeRange(code1, code2):
+ 	"""
+@@ -152,12 +152,12 @@ class RE:
+ 			self.wrong_type(num, value, "Plex.RE instance")
+ 
+ 	def check_string(self, num, value):
+-		if type(value) <> type(''):
++		if type(value) != type(''):
+ 			self.wrong_type(num, value, "string")
+ 	
+ 	def check_char(self, num, value):
+ 		self.check_string(num, value)
+-		if len(value) <> 1:
++		if len(value) != 1:
+ 			raise Errors.PlexValueError("Invalid value for argument %d of Plex.%s."
+ 				"Expected a string of length 1, got: %s" % (
+ 					num, self.__class__.__name__, repr(value)))
+@@ -294,7 +294,7 @@ class Seq(RE):
+ 
+ 	def __init__(self, *re_list):
+ 		nullable = 1
+-		for i in xrange(len(re_list)):
++		for i in range(len(re_list)):
+ 			re = re_list[i]
+ 			self.check_re(i, re)
+ 			nullable = nullable and re.nullable
+@@ -319,7 +319,7 @@ class Seq(RE):
+ 		else:
+ 			s1 = initial_state
+ 			n = len(re_list)
+-			for i in xrange(n):
++			for i in range(n):
+ 				if i < n - 1:
+ 					s2 = m.new_state()
+ 				else:
+@@ -330,7 +330,7 @@ class Seq(RE):
+ 				match_bol = re.match_nl or (match_bol and re.nullable)
+ 
+ 	def calc_str(self):
+-		return "Seq(%s)" % string.join(map(str, self.re_list), ",")
++		return "Seq(%s)" % string.join(list(map(str, self.re_list)), ",")
+ 
+ 
+ class Alt(RE):
+@@ -369,7 +369,7 @@ class Alt(RE):
+ 				re.build_machine(m, initial_state, final_state, 0, nocase)
+ 
+ 	def calc_str(self):
+-		return "Alt(%s)" % string.join(map(str, self.re_list), ",")
++		return "Alt(%s)" % string.join(list(map(str, self.re_list)), ",")
+ 
+ 
+ class Rep1(RE):
+@@ -437,7 +437,7 @@ def Str1(s):
+ 	"""
+ 	Str1(s) is an RE which matches the literal string |s|.
+ 	"""
+-	result = apply(Seq, tuple(map(Char, s)))
++	result = Seq(*tuple(map(Char, s)))
+ 	result.str = "Str(%s)" % repr(s)
+ 	return result
+ 
+@@ -449,8 +449,8 @@ def Str(*strs):
+ 	if len(strs) == 1:
+ 		return Str1(strs[0])
+ 	else:
+-		result = apply(Alt, tuple(map(Str1, strs)))
+-		result.str = "Str(%s)" % string.join(map(repr, strs), ",")
++		result = Alt(*tuple(map(Str1, strs)))
++		result.str = "Str(%s)" % string.join(list(map(repr, strs)), ",")
+ 		return result
+ 
+ def Any(s):
+@@ -495,7 +495,7 @@ def Range(s1, s2 = None):
+ 		ranges = []
+ 		for i in range(0, len(s1), 2):
+ 			ranges.append(CodeRange(ord(s1[i]), ord(s1[i+1]) + 1))
+-		result = apply(Alt, tuple(ranges))
++		result = Alt(*tuple(ranges))
+ 		result.str = "Range(%s)" % repr(s1)
+ 	return result
+ 
+--- Plex/Scanners.py.orig	2003-07-08 08:35:31 UTC
++++ Plex/Scanners.py
+@@ -7,8 +7,8 @@
+ #
+ #=======================================================================
+ 
+-import Errors
+-from Regexps import BOL, EOL, EOF
++from . import Errors
++from .Regexps import BOL, EOL, EOF
+ 
+ class Scanner:
+   """
+@@ -122,8 +122,8 @@ class Scanner:
+     action = self.run_machine_inlined()
+     if action:
+       if self.trace:
+-        print "Scanner: read: Performing", action, "%d:%d" % (
+-          self.start_pos, self.cur_pos)
++        print("Scanner: read: Performing", action, "%d:%d" % (
++          self.start_pos, self.cur_pos))
+       base = self.buf_start_pos
+       text = self.buffer[self.start_pos - base : self.cur_pos - base]
+       return (text, action)
+@@ -163,8 +163,8 @@ class Scanner:
+     trace = self.trace
+     while 1:
+       if trace: #TRACE#
+-        print "State %d, %d/%d:%s -->" % ( #TRACE#
+-          state['number'], input_state, cur_pos, repr(cur_char)),  #TRACE#
++        print("State %d, %d/%d:%s -->" % ( #TRACE#
++          state['number'], input_state, cur_pos, repr(cur_char)), end=' ')  #TRACE#
+       # Begin inlined self.save_for_backup()
+       #action = state.action #@slow
+       action = state['action'] #@fast
+@@ -179,7 +179,7 @@ class Scanner:
+         new_state = c and state.get('else') #@fast
+       if new_state:
+         if trace: #TRACE#
+-          print "State %d" % new_state['number']  #TRACE#
++          print("State %d" % new_state['number'])  #TRACE#
+         state = new_state
+         # Begin inlined: self.next_char()
+         if input_state == 1:
+@@ -228,7 +228,7 @@ class Scanner:
+         # End inlined self.next_char()
+       else: # not new_state
+         if trace: #TRACE#
+-          print "blocked"  #TRACE#
++          print("blocked")  #TRACE#
+         # Begin inlined: action = self.back_up()
+         if backup_state:
+           (action, cur_pos, cur_line, cur_line_start, 
+@@ -245,7 +245,7 @@ class Scanner:
+     self.next_pos	 = next_pos
+     if trace: #TRACE#
+       if action: #TRACE#
+-        print "Doing", action #TRACE#
++        print("Doing", action) #TRACE#
+     return action
+     
+ #	def transition(self):
+@@ -288,7 +288,7 @@ class Scanner:
+   def next_char(self):
+     input_state = self.input_state
+     if self.trace:
+-      print "Scanner: next:", " "*20, "[%d] %d" % (input_state, self.cur_pos),
++      print("Scanner: next:", " "*20, "[%d] %d" % (input_state, self.cur_pos), end=' ')
+     if input_state == 1:
+       self.cur_pos = self.next_pos
+       c = self.read_char()
+@@ -314,7 +314,7 @@ class Scanner:
+     else: # input_state = 5
+       self.cur_char = ''
+     if self.trace:
+-      print "--> [%d] %d %s" % (input_state, self.cur_pos, repr(self.cur_char))
++      print("--> [%d] %d %s" % (input_state, self.cur_pos, repr(self.cur_char)))
+     
+ #	def read_char(self):
+ #		"""
+--- Plex/test_tm.py.orig	2003-07-08 08:35:31 UTC
++++ Plex/test_tm.py
+@@ -4,14 +4,14 @@ sys.stderr = sys.stdout
+ from TransitionMaps import TransitionMap
+ 
+ m = TransitionMap()
+-print m
++print(m)
+ 
+ def add(c, s):
+-  print
+-  print "adding", repr(c), "-->", repr(s)
++  print()
++  print("adding", repr(c), "-->", repr(s))
+   m.add_transition(c, s)
+-  print m
+-  print "keys:", m.keys()
++  print(m)
++  print("keys:", list(m.keys()))
+ 
+ add('a','alpha')
+ add('e', 'eta')
+--- Plex/Traditional.py.orig	2003-07-08 08:35:31 UTC
++++ Plex/Traditional.py
+@@ -6,8 +6,8 @@
+ #
+ #=======================================================================
+ 
+-from Regexps import *
+-from Errors import PlexError
++from .Regexps import *
++from .Errors import PlexError
+ 
+ class RegexpSyntaxError(PlexError):
+   pass
+@@ -25,7 +25,7 @@ class REParser:
+     self.s = s
+     self.i = -1
+     self.end = 0
+-    self.next()
++    next(self)
+   
+   def parse_re(self):
+     re = self.parse_alt()
+@@ -39,9 +39,9 @@ class REParser:
+     if self.c == '|':
+       re_list = [re]
+       while self.c == '|':
+-        self.next()
++        next(self)
+         re_list.append(self.parse_seq())
+-      re = apply(Alt, tuple(re_list))
++      re = Alt(*tuple(re_list))
+     return re
+       
+   def parse_seq(self):
+@@ -49,7 +49,7 @@ class REParser:
+     re_list = []
+     while not self.end and not self.c in "|)":
+       re_list.append(self.parse_mod())
+-    return apply(Seq, tuple(re_list))
++    return Seq(*tuple(re_list))
+   
+   def parse_mod(self):
+     """Parse a primitive regexp followed by *, +, ? modifiers."""
+@@ -61,7 +61,7 @@ class REParser:
+         re = Rep1(re)
+       else: # self.c == '?'
+         re = Opt(re)
+-      self.next()
++      next(self)
+     return re
+ 
+   def parse_prim(self):
+@@ -91,16 +91,16 @@ class REParser:
+     invert = 0
+     if self.c == '^':
+       invert = 1
+-      self.next()
++      next(self)
+     if self.c == ']':
+       char_list.append(']')
+-      self.next()
+-    while not self.end and self.c <> ']':
++      next(self)
++    while not self.end and self.c != ']':
+       c1 = self.get()
+-      if self.c == '-' and self.lookahead(1) <> ']':
+-        self.next()
++      if self.c == '-' and self.lookahead(1) != ']':
++        next(self)
+         c2 = self.get()
+-        for a in xrange(ord(c1), ord(c2) + 1):
++        for a in range(ord(c1), ord(c2) + 1):
+           char_list.append(chr(a))
+       else:
+         char_list.append(c1)
+@@ -110,7 +110,7 @@ class REParser:
+     else:
+       return Any(chars)
+   
+-  def next(self):
++  def __next__(self):
+     """Advance to the next char."""
+     s = self.s
+     i = self.i = self.i + 1
+@@ -124,7 +124,7 @@ class REParser:
+     if self.end:
+       self.error("Premature end of string")
+     c = self.c
+-    self.next()
++    next(self)
+     return c
+     
+   def lookahead(self, n):
+@@ -141,7 +141,7 @@ class REParser:
+     Raises an exception otherwise.
+     """
+     if self.c == c:
+-      self.next()
++      next(self)
+     else:
+       self.error("Missing %s" % repr(c))
+   
+--- Plex/Transitions.py.orig	2007-01-27 02:58:25 UTC
++++ Plex/Transitions.py
+@@ -7,7 +7,7 @@
+ 
+ from copy import copy
+ import string
+-from sys import maxint
++from sys import maxsize
+ from types import TupleType
+ 
+ class TransitionMap:
+@@ -107,7 +107,7 @@ class TransitionMap:
+         result.append(((code0, code1), set))
+       code0 = code1
+       i = i + 2
+-    for event, set in self.special.items():
++    for event, set in list(self.special.items()):
+       if set:
+         result.append((event, set))
+     return result
+@@ -177,7 +177,7 @@ class TransitionMap:
+         map_strs.append(state_set_str(map[i]))
+       i = i + 1
+     special_strs = {}
+-    for event, set in self.special.items():
++    for event, set in list(self.special.items()):
+       special_strs[event] = state_set_str(set)
+     return "[%s]+%s" % (
+       string.join(map_strs, ","), 
+@@ -189,7 +189,7 @@ class TransitionMap:
+   def check(self):
+     """Check data structure integrity."""
+     if not self.map[-3] < self.map[-1]:
+-      print self
++      print(self)
+       assert 0
+   
+   def dump(self, file):
+@@ -199,7 +199,7 @@ class TransitionMap:
+     while i < n:
+       self.dump_range(map[i], map[i + 2], map[i + 1], file)
+       i = i + 2
+-    for event, set in self.special.items():
++    for event, set in list(self.special.items()):
+       if set:
+         if not event:
+           event = 'empty'
+@@ -242,7 +242,7 @@ class TransitionMap:
+ #			set1[state] = 1
+ 
+ def state_set_str(set):
+-  state_list = set.keys()
++  state_list = list(set.keys())
+   str_list = []
+   for state in state_list:
+     str_list.append("S%d" % state.number)

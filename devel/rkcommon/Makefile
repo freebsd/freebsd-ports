@@ -23,4 +23,10 @@ CMAKE_TESTING_ON=	BUILD_TESTING
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != aarch64 && ${ARCH} != amd64 && !${ARCH:Marmv?} && ${ARCH} != i386
+CMAKE_ARGS+=	-DRKCOMMON_NO_SIMD:BOOL=ON
+.endif
+
 .include <bsd.port.mk>

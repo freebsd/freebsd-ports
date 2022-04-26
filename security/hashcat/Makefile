@@ -1,6 +1,7 @@
 PORTNAME=	hashcat
 PORTVERSION=	6.2.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -37,6 +38,8 @@ OPTIONS_DEFAULT=	BRAIN
 BRAIN_DESC=		Build Hashcat Brain
 BRAIN_MAKE_ARGS_OFF=	ENABLE_BRAIN=0
 BRAIN_CFLAGS=		-DWITH_BRAIN -Ideps/git/xxHash
+
+CFLAGS_aarch64+=	-march=armv8-a+crc+crypto
 
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/libhashcat.so.${PORTVERSION}

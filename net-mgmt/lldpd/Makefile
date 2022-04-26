@@ -2,6 +2,7 @@
 
 PORTNAME=	lldpd
 PORTVERSION=	1.0.13
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://media.luffy.cx/files/${PORTNAME}/
 

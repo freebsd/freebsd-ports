@@ -1,5 +1,5 @@
 PORTNAME=	libretro-pcsx_rearmed
-PORTVERSION=	0.20210215
+PORTVERSION=	0.20220405
 PORTREVISION=	1
 CATEGORIES=	games
 
@@ -15,7 +15,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	pcsx_rearmed
-GH_TAGNAME=	c2d67cd
+GH_TAGNAME=	46a38bd
 
 PLIST_FILES=	lib/libretro/pcsx_rearmed_libretro.so
 

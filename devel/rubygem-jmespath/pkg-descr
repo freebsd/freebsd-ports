@@ -1,3 +1,4 @@
-Implements JMESPath for Ruby
+jmespath.rb is an implementation of JMESPath for Ruby. This implementation
+supports searching JSON documents as well as native Ruby data structures.
 
 WWW: https://github.com/jmespath/jmespath.rb

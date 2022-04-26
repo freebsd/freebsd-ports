@@ -1,5 +1,5 @@
 PORTNAME=	cacti
-PORTVERSION=	1.2.19
+PORTVERSION=	1.2.20
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/

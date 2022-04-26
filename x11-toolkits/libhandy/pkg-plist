@@ -27,6 +27,7 @@ include/libhandy-1/hdy-preferences-window.h
 include/libhandy-1/hdy-search-bar.h
 include/libhandy-1/hdy-squeezer.h
 include/libhandy-1/hdy-status-page.h
+include/libhandy-1/hdy-style-manager.h
 include/libhandy-1/hdy-swipe-group.h
 include/libhandy-1/hdy-swipe-tracker.h
 include/libhandy-1/hdy-swipeable.h
@@ -49,13 +50,17 @@ libdata/pkgconfig/libhandy-1.pc
 share/gir-1.0/Handy-1.gir
 share/glade/catalogs/libhandy-1.xml
 share/locale/ca/LC_MESSAGES/libhandy.mo
+share/locale/cs/LC_MESSAGES/libhandy.mo
 share/locale/de/LC_MESSAGES/libhandy.mo
 share/locale/en_GB/LC_MESSAGES/libhandy.mo
 share/locale/es/LC_MESSAGES/libhandy.mo
 share/locale/eu/LC_MESSAGES/libhandy.mo
+share/locale/fa/LC_MESSAGES/libhandy.mo
 share/locale/fi/LC_MESSAGES/libhandy.mo
 share/locale/fr/LC_MESSAGES/libhandy.mo
 share/locale/fur/LC_MESSAGES/libhandy.mo
+share/locale/gl/LC_MESSAGES/libhandy.mo
+share/locale/hu/LC_MESSAGES/libhandy.mo
 share/locale/id/LC_MESSAGES/libhandy.mo
 share/locale/nl/LC_MESSAGES/libhandy.mo
 share/locale/oc/LC_MESSAGES/libhandy.mo
@@ -67,5 +72,6 @@ share/locale/sl/LC_MESSAGES/libhandy.mo
 share/locale/sr/LC_MESSAGES/libhandy.mo
 share/locale/sv/LC_MESSAGES/libhandy.mo
 share/locale/uk/LC_MESSAGES/libhandy.mo
+share/locale/zh_CN/LC_MESSAGES/libhandy.mo
 share/vala/vapi/libhandy-1.deps
 share/vala/vapi/libhandy-1.vapi

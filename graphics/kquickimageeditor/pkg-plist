@@ -2,6 +2,11 @@ lib/cmake/KQuickImageEditor/KQuickImageEditorConfig.cmake
 lib/cmake/KQuickImageEditor/KQuickImageEditorConfigVersion.cmake
 %%QT_MKSPECDIR%%/modules/qt_KQuickImageEditor.pri
 %%QT_QMLDIR%%/org/kde/kquickimageeditor/BasicResizeHandle.qml
+%%QT_QMLDIR%%/org/kde/kquickimageeditor/CropBackground.qml
+%%QT_QMLDIR%%/org/kde/kquickimageeditor/RectangleCutout.qml
+%%QT_QMLDIR%%/org/kde/kquickimageeditor/SelectionBackground.qml
+%%QT_QMLDIR%%/org/kde/kquickimageeditor/SelectionHandle.qml
+%%QT_QMLDIR%%/org/kde/kquickimageeditor/SelectionTool.qml
 %%QT_QMLDIR%%/org/kde/kquickimageeditor/libkquickimageeditorplugin.so
 %%QT_QMLDIR%%/org/kde/kquickimageeditor/plugins.qmltypes
 %%QT_QMLDIR%%/org/kde/kquickimageeditor/qmldir

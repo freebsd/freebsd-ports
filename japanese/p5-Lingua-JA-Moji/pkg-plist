@@ -1,11 +1,11 @@
-%%PERL5_MAN3%%/Lingua::JA::Moji-ja.3.gz
-%%PERL5_MAN3%%/Lingua::JA::Moji.3.gz
 %%SITE_PERL%%/Lingua/JA/Moji-ja.pod
 %%SITE_PERL%%/Lingua/JA/Moji.pm
 %%SITE_PERL%%/Lingua/JA/Moji.pod
+%%SITE_PERL%%/Lingua/JA/Moji/bad-kanji.txt
 %%SITE_PERL%%/Lingua/JA/Moji/bracketed2kanji.txt
 %%SITE_PERL%%/Lingua/JA/Moji/circled2kanji.txt
 %%SITE_PERL%%/Lingua/JA/Moji/first2hangul.txt
+%%SITE_PERL%%/Lingua/JA/Moji/hentaigana.json
 %%SITE_PERL%%/Lingua/JA/Moji/katakana2braille.txt
 %%SITE_PERL%%/Lingua/JA/Moji/katakana2circled.txt
 %%SITE_PERL%%/Lingua/JA/Moji/katakana2cyrillic.txt
@@ -15,3 +15,6 @@
 %%SITE_PERL%%/Lingua/JA/Moji/rest2hangul.txt
 %%SITE_PERL%%/Lingua/JA/Moji/romaji2katakana.txt
 %%SITE_PERL%%/Lingua/JA/Moji/square-katakana.txt
+%%SITE_PERL%%/Lingua/JA/Moji/yurei-moji.txt
+%%PERL5_MAN3%%/Lingua::JA::Moji-ja.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Moji.3.gz

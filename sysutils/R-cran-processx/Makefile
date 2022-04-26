@@ -1,5 +1,5 @@
 PORTNAME=	processx
-DISTVERSION=	3.5.2
+DISTVERSION=	3.5.3
 CATEGORIES=	sysutils
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,10 +11,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-ps>=1.2.0:sysutils/R-cran-ps
-TEST_DEPENDS=	R-cran-callr>=3.2.0:devel/R-cran-callr \
-		R-cran-cli>0:devel/R-cran-cli \
+TEST_DEPENDS=	R-cran-callr>=3.7.0:devel/R-cran-callr \
+		R-cran-cli>=1.1.0:devel/R-cran-cli \
 		R-cran-covr>0:devel/R-cran-covr \
-		R-cran-testthat>0:devel/R-cran-testthat \
+		R-cran-testthat>=3.0.0:devel/R-cran-testthat \
 		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-curl>0:ftp/R-cran-curl
 

@@ -1,7 +1,7 @@
 # Created by: Bartlomiej Rutkowski <r@robakdesign.com>
 
 PORTNAME=	ilias
-PORTVERSION=	5.4.25
+PORTVERSION=	7.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www education
 
@@ -10,64 +10,44 @@ COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
 
 LICENSE=	GPLv2
 
-CONFLICTS=	ilias6
-PORTSCOUT=	limit:^5\.
-
-RUN_DEPENDS=	zip:archivers/zip \
-		${UNZIP_CMD}:archivers/unzip \
-		${LOCALBASE}/share/pear/PEAR.php:devel/pear@${PHP_FLAVOR} \
-		${LOCALBASE}/share/pear/Auth/Auth.php:security/pear-Auth@${PHP_FLAVOR} \
-		${LOCALBASE}/share/pear/MDB2.php:databases/pear-MDB2@${PHP_FLAVOR} \
-		${LOCALBASE}/share/pear/HTML/Template/IT.php:devel/pear-HTML_Template_IT@${PHP_FLAVOR}
 LIB_DEPENDS=	libpng.so:graphics/png
+RUN_DEPENDS=	${LOCALBASE}/share/pear/Auth/Auth.php:security/pear-Auth@${PHP_FLAVOR} \
+		${LOCALBASE}/share/pear/HTML/Template/IT.php:devel/pear-HTML_Template_IT@${PHP_FLAVOR} \
+		${LOCALBASE}/share/pear/MDB2.php:databases/pear-MDB2@${PHP_FLAVOR} \
+		${LOCALBASE}/share/pear/PEAR.php:devel/pear@${PHP_FLAVOR} \
+		${UNZIP_CMD}:archivers/unzip \
+		composer:devel/php-composer \
+		zip:archivers/zip
 
+USES=		cpe jpeg magick:6,run php
 USE_GITHUB=	yes
 GH_ACCOUNT=	ILIAS-eLearning
 GH_PROJECT=	ILIAS
-
-USES=		cpe jpeg magick:6,run php
+USE_PHP=	curl dom gd ldap pcre pdf pdo_mysql session simplexml soap \
+		xmlrpc xmlwriter xsl zlib
 IGNORE_WITH_PHP=	80 81
+
+CONFLICTS=	ilias6
+
 NO_BUILD=	yes
-PLIST=		${WRKDIR}/plist
-USE_PHP=	pdo_mysql session zlib gd pdf dom xsl pcre simplexml
-ILIASDIR=	www/ilias
-ILIASDATADIR=	www/iliasdata
-PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	ILIASDATADIR=${ILIASDATADIR}
 
-OPTIONS_DEFINE=		SCORM2004 CHECKER MAIL
-SCORM2004_USE=		php=json
+PLIST=		${WRKDIR}/plist
+PLIST_SUB=	ILIASDATADIR=${ILIASDATADIR}
+
+OPTIONS_DEFINE=	CHECKER MAIL SCORM2004
+
 CHECKER_RUN_DEPENDS=	${LOCALBASE}/share/pear/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 MAIL_RUN_DEPENDS=	${LOCALBASE}/share/pear/Mail.php:mail/pear-Mail@${PHP_FLAVOR}
+SCORM2004_USE=		PHP=json
 
-EXTRA_FILES=	%%WWWDIR%%/libs/composer/vendor/bin/generate_vcards \
-		%%WWWDIR%%/libs/composer/vendor/bin/naturalselection \
-		%%WWWDIR%%/libs/composer/vendor/bin/sabredav \
-		%%WWWDIR%%/libs/composer/vendor/bin/vobject \
-		%%WWWDIR%%/libs/composer/vendor/simplesamlphp/simplesamlphp/locales/no \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/_mocha \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/esparse \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/esvalidate \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/flat \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/he \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/js-yaml \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/mime \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/mkdirp \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/mocha \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/semver \
+ILIASDIR=	www/ilias
+ILIASDATADIR=	www/iliasdata
+
+EXTRA_FILES=	%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/mime \
 		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/uuid \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/which \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/js-yaml/node_modules/.bin/esparse \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/js-yaml/node_modules/.bin/esvalidate \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/he \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/js-yaml \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/mkdirp \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/mocha/node_modules/.bin/which \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/node-environment-flags/node_modules/.bin/semver \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/send/node_modules/.bin/mime \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/superagent/node_modules/.bin/mime \
-		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/yargs-unparser/node_modules/.bin/flat
+		%%WWWDIR%%/Modules/Chatroom/chat/node_modules/send/node_modules/.bin/mime
 
 pre-install:
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}

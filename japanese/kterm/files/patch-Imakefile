@@ -17,7 +17,7 @@
  /*
   * add -DWTMP and -DLASTLOG if you want them.
   */
-@@ -27,9 +37,12 @@ XCOMM $Id: Imakefile,v 6.3 1996/07/12 05:01:03 kagotan
+@@ -27,7 +37,7 @@ XCOMM $Id: Imakefile,v 6.3 1996/07/12 05:01:03 kagotan
   OSMAJORVERSION = OSMajorVersion
   OSMINORVERSION = OSMinorVersion
  
@@ -25,13 +25,8 @@
 +   MAIN_DEFINES = $(TTYGROUPDEF) $(PUCCPTYDDEF) \
  		  -DOSMAJORVERSION=$(OSMAJORVERSION) \
  		  -DOSMINORVERSION=$(OSMINORVERSION)
-+#if defined(OSRelVersion) && OSRelVersion < 900007
-+   MAIN_DEFINES+= -DUTMP
-+#endif
     MISC_DEFINES = /* -DALLOWLOGFILEEXEC */ 
-     XKB_DEFINES = XkbClientDefines
-         DEFINES = $(XKB_DEFINES) $(XPOLL_DEF) -DKTERM -DSTATUSLINE -DKEEPALIVE -DWALLPAPER
-@@ -72,7 +85,7 @@ XCOMM $Id: Imakefile,v 6.3 1996/07/12 05:01:03 kagotan
+@@ -72,7 +82,7 @@ XCOMM $Id: Imakefile,v 6.3 1996/07/12 05:01:03 kagotan
  #endif
  #endif
  

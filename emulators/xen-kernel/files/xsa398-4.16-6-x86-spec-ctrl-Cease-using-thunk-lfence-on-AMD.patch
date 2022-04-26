@@ -1,0 +1,118 @@
+From c374a8c5cc74535e16410b7a0d9e92bf5de54f79 Mon Sep 17 00:00:00 2001
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Date: Mon, 7 Mar 2022 16:35:52 +0000
+Subject: x86/spec-ctrl: Cease using thunk=lfence on AMD
+
+AMD have updated their Spectre v2 guidance, and lfence/jmp is no longer
+considered safe.  AMD are recommending using retpoline everywhere.
+
+Retpoline is incompatible with CET.  All CET-capable hardware has efficient
+IBRS (specifically, not something retrofitted in microcode), so use IBRS (and
+STIBP for consistency sake).
+
+This is a logical change on AMD, but not on Intel as the default calculations
+would end up with these settings anyway.  Leave behind a message if IBRS is
+found to be missing.
+
+Also update the default heuristics to never select THUNK_LFENCE.  This causes
+AMD CPUs to change their default to retpoline.
+
+Also update the printed message to include the AMD MSR_SPEC_CTRL settings, and
+STIBP now that we set it for consistency sake.
+
+This is part of XSA-398 / CVE-2021-26401.
+
+Signed-off-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+(cherry picked from commit 8d03080d2a339840d3a59e0932a94f804e45110d)
+
+diff --git a/docs/misc/xen-command-line.pandoc b/docs/misc/xen-command-line.pandoc
+index 995197f4b23e..f606dc0e14c1 100644
+--- a/docs/misc/xen-command-line.pandoc
++++ b/docs/misc/xen-command-line.pandoc
+@@ -2269,9 +2269,9 @@ to use.
+ 
+ If Xen was compiled with INDIRECT_THUNK support, `bti-thunk=` can be used to
+ select which of the thunks gets patched into the `__x86_indirect_thunk_%reg`
+-locations.  The default thunk is `retpoline` (generally preferred for Intel
+-hardware), with the alternatives being `jmp` (a `jmp *%reg` gadget, minimal
+-overhead), and `lfence` (an `lfence; jmp *%reg` gadget, preferred for AMD).
++locations.  The default thunk is `retpoline` (generally preferred), with the
++alternatives being `jmp` (a `jmp *%reg` gadget, minimal overhead), and
++`lfence` (an `lfence; jmp *%reg` gadget).
+ 
+ On hardware supporting IBRS (Indirect Branch Restricted Speculation), the
+ `ibrs=` option can be used to force or prevent Xen using the feature itself.
+diff --git a/xen/arch/x86/spec_ctrl.c b/xen/arch/x86/spec_ctrl.c
+index cbeeb199037e..ae076bec3ab0 100644
+--- a/xen/arch/x86/spec_ctrl.c
++++ b/xen/arch/x86/spec_ctrl.c
+@@ -367,14 +367,19 @@ static void __init print_details(enum ind_thunk thunk, uint64_t caps)
+                "\n");
+ 
+     /* Settings for Xen's protection, irrespective of guests. */
+-    printk("  Xen settings: BTI-Thunk %s, SPEC_CTRL: %s%s%s, Other:%s%s%s%s%s\n",
++    printk("  Xen settings: BTI-Thunk %s, SPEC_CTRL: %s%s%s%s, Other:%s%s%s%s%s\n",
+            thunk == THUNK_NONE      ? "N/A" :
+            thunk == THUNK_RETPOLINE ? "RETPOLINE" :
+            thunk == THUNK_LFENCE    ? "LFENCE" :
+            thunk == THUNK_JMP       ? "JMP" : "?",
+-           !boot_cpu_has(X86_FEATURE_IBRSB)          ? "No" :
++           (!boot_cpu_has(X86_FEATURE_IBRSB) &&
++            !boot_cpu_has(X86_FEATURE_IBRS))         ? "No" :
+            (default_xen_spec_ctrl & SPEC_CTRL_IBRS)  ? "IBRS+" :  "IBRS-",
+-           !boot_cpu_has(X86_FEATURE_SSBD)           ? "" :
++           (!boot_cpu_has(X86_FEATURE_STIBP) &&
++            !boot_cpu_has(X86_FEATURE_AMD_STIBP))    ? "" :
++           (default_xen_spec_ctrl & SPEC_CTRL_STIBP) ? " STIBP+" : " STIBP-",
++           (!boot_cpu_has(X86_FEATURE_SSBD) &&
++            !boot_cpu_has(X86_FEATURE_AMD_SSBD))     ? "" :
+            (default_xen_spec_ctrl & SPEC_CTRL_SSBD)  ? " SSBD+" : " SSBD-",
+            !(caps & ARCH_CAPS_TSX_CTRL)              ? "" :
+            (opt_tsx & 1)                             ? " TSX+" : " TSX-",
+@@ -945,10 +950,23 @@ void __init init_speculation_mitigations(void)
+     /*
+      * First, disable the use of retpolines if Xen is using shadow stacks, as
+      * they are incompatible.
++     *
++     * In the absence of retpolines, IBRS needs to be used for speculative
++     * safety.  All CET-capable hardware has efficient IBRS.
+      */
+-    if ( cpu_has_xen_shstk &&
+-         (opt_thunk == THUNK_DEFAULT || opt_thunk == THUNK_RETPOLINE) )
+-        thunk = THUNK_JMP;
++    if ( cpu_has_xen_shstk )
++    {
++        if ( !has_spec_ctrl )
++            printk(XENLOG_WARNING "?!? CET active, but no MSR_SPEC_CTRL?\n");
++        else if ( opt_ibrs == -1 )
++        {
++            opt_ibrs = ibrs = true;
++            default_xen_spec_ctrl |= SPEC_CTRL_IBRS | SPEC_CTRL_STIBP;
++        }
++
++        if ( opt_thunk == THUNK_DEFAULT || opt_thunk == THUNK_RETPOLINE )
++            thunk = THUNK_JMP;
++    }
+ 
+     /*
+      * Has the user specified any custom BTI mitigations?  If so, follow their
+@@ -968,16 +986,10 @@ void __init init_speculation_mitigations(void)
+         if ( IS_ENABLED(CONFIG_INDIRECT_THUNK) )
+         {
+             /*
+-             * AMD's recommended mitigation is to set lfence as being dispatch
+-             * serialising, and to use IND_THUNK_LFENCE.
+-             */
+-            if ( cpu_has_lfence_dispatch )
+-                thunk = THUNK_LFENCE;
+-            /*
+-             * On Intel hardware, we'd like to use retpoline in preference to
++             * On all hardware, we'd like to use retpoline in preference to
+              * IBRS, but only if it is safe on this hardware.
+              */
+-            else if ( retpoline_safe(caps) )
++            if ( retpoline_safe(caps) )
+                 thunk = THUNK_RETPOLINE;
+             else if ( has_spec_ctrl )
+                 ibrs = true;

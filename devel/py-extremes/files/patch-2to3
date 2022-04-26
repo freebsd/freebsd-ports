@@ -1,0 +1,11 @@
+--- peak/util/extremes.py.orig	2007-11-21 06:50:24 UTC
++++ peak/util/extremes.py
+@@ -32,7 +32,7 @@ class Extreme(object):     # Courtesy of PEP 326
+         return self.__cmp__(other)>=0
+ 
+     def __ne__(self,other):
+-        return self.__cmp__(other)<>0
++        return self.__cmp__(other)!=0
+ 
+ Max = Extreme(1, "Max")
+ Min = Extreme(-1, "Min")

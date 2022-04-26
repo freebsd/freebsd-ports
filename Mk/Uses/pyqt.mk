@@ -65,7 +65,7 @@ MASTER_SITES_QSCI2=	RIVERBANK/QScintilla/${PORTVERSION} \
 
 SIP_VERSION=		6.5.1
 SIP4_VERSION=		4.19.25
-QSCI2_VERSION=		2.13.1
+QSCI2_VERSION=		2.13.2
 PYQT5_VERSION=		5.15.6
 PYQTCHART_VERSION=	5.15.5
 PYQTNETWORKAUTH_VERSION=5.15.5
@@ -160,17 +160,17 @@ SIP_ARGS=	--qmake ${QMAKE} \
 		--build-dir build \
 		--protected-is-public \
 		--api-dir ${PYQT_APIDIR}
-.	if ${PORTNAME} == "pyqt"
+.    if ${PORTNAME} == "pyqt"
 SIP_ARGS+=	--confirm-license
-.	endif
+.    endif
 
-.  if ${PORTNAME} == "pyqt"
-.    if !target(post-patch)
+.    if ${PORTNAME} == "pyqt"
+.      if !target(post-patch)
 post-patch:
 	${REINPLACE_CMD} -e "s#%%PYQT_DESIGNERDIR%%#${PYQT_DESIGNERDIR}#" ${WRKSRC}/project.py
 	${REINPLACE_CMD} -e "s#%%PYQT_QMLDIR%%#${PYQT_QMLDIR}#" ${WRKSRC}/project.py
-.    endif  # !target(post-patch)
-.  endif
+.      endif  # !target(post-patch)
+.    endif
 
 .    if !target(do-build)
 do-build:

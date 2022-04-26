@@ -1,5 +1,5 @@
 PORTNAME=	libretro-uae
-PORTVERSION=	0.20200527
+PORTVERSION=	0.20220404
 PORTREVISION=	1
 CATEGORIES=	games
 
@@ -16,7 +16,8 @@ USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	8333daa
+GH_PROJECT=	libretro-uae
+GH_TAGNAME=	8c44289
 
 CFLAGS+=	-fcommon
 
@@ -24,8 +25,8 @@ LDFLAGS_i386=	-Wl,-z,notext
 
 PLIST_FILES=	lib/libretro/puae_libretro.so
 
-post-patch:
-	${REINPLACE_CMD} 's/" GIT_VERSION/${GH_TAGNAME}"/' ${WRKSRC}/libretro/libretro.c
+#post-patch:
+#	${REINPLACE_CMD} 's/" GIT_VERSION/${GH_TAGNAME}"/' ${WRKSRC}/libretro/libretro.c
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;

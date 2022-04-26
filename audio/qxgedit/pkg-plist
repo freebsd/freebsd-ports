@@ -3,6 +3,6 @@ bin/qxgedit
 man/fr/man1/qxgedit.1.gz
 man/man1/qxgedit.1.gz
 share/applications/org.rncbc.qxgedit.desktop
-share/icons/hicolor/32x32/apps/qxgedit.png
-share/icons/hicolor/scalable/apps/qxgedit.svg
-share/metainfo/org.rncbc.qxgedit.xml
+share/icons/hicolor/32x32/apps/org.rncbc.qxgedit.png
+share/icons/hicolor/scalable/apps/org.rncbc.qxgedit.svg
+share/metainfo/org.rncbc.qxgedit.metainfo.xml

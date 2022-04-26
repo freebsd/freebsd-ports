@@ -23,6 +23,7 @@
     SUBDIR += dolphin-emu
     SUBDIR += dosbox
     SUBDIR += dosbox-staging
+    SUBDIR += dosbox-x
     SUBDIR += dps8m
     SUBDIR += dynamips-community
     SUBDIR += edumips64
@@ -110,6 +111,7 @@
     SUBDIR += qemu-user-static
     SUBDIR += qemu-user-static-devel
     SUBDIR += qemu5
+    SUBDIR += qemu6
     SUBDIR += qmc2
     SUBDIR += quasi88
     SUBDIR += ripes

@@ -1,13 +1,10 @@
---- config/configure.orig	2020-12-15 16:52:00.017999000 -0800
-+++ config/configure	2020-12-15 16:53:04.758080000 -0800
-@@ -66,6 +66,10 @@
+--- config/configure.orig	2021-01-09 22:11:10 UTC
++++ config/configure
+@@ -66,6 +66,7 @@ expr "$MAKE_VERSION" '>=' '3.81' || AC_FAIL "ERROR: $M
  AC_SUB bup_make "$MAKE"
  
  bup_python="$(type -p "$PYTHON")"
 +test -z "$bup_python" && bup_python="$(bup_find_prog python3.9 '')"
-+test -z "$bup_python" && bup_python="$(bup_find_prog python3.8 '')"
-+test -z "$bup_python" && bup_python="$(bup_find_prog python3.7 '')"
-+test -z "$bup_python" && bup_python="$(bup_find_prog python3.6 '')"
- test -z "$bup_python" && bup_python="$(bup_find_prog python2.7 '')"
- test -z "$bup_python" && bup_python="$(bup_find_prog python2.6 '')"
- test -z "$bup_python" && bup_python="$(bup_find_prog python2 '')"
+ test -z "$bup_python" && bup_python="$(bup_find_prog python3.8 '')"
+ test -z "$bup_python" && bup_python="$(bup_find_prog python3.7 '')"
+ test -z "$bup_python" && bup_python="$(bup_find_prog python3.6 '')"

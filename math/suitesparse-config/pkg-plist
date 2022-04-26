@@ -1,6 +1,6 @@
 include/suitesparse/SuiteSparse_config.h
 lib/libsuitesparseconfig.so
 lib/libsuitesparseconfig.so.5
-lib/libsuitesparseconfig.so.5.10.1
+lib/libsuitesparseconfig.so.5.12.0
 %%PORTDOCS%%%%DOCSDIR%%/SUITESPARSECONFIG_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/SuiteSparse_README.md

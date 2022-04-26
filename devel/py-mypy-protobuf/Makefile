@@ -12,7 +12,7 @@ COMMENT=	Generate mypy stub files from protobuf specs
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	protobuf>=3.17.3,1:devel/protobuf \
+RUN_DEPENDS=	protobuf>=3.19.3,1:devel/protobuf \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.19.3,1:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-protobuf>=3.19.5:devel/py-types-protobuf@${PY_FLAVOR}
 

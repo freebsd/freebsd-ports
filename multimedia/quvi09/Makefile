@@ -4,7 +4,7 @@ PORTNAME=	quvi
 PORTVERSION=	0.9.5
 PORTREVISION=	2
 CATEGORIES=	multimedia devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}/${PORTNAME}/ \
+MASTER_SITES=	SF/quvi/${PORTVERSION:R}/quvi/ \
 		LOCAL/sunpoet
 PKGNAMESUFFIX=	09
 
@@ -14,9 +14,9 @@ COMMENT=	Command line tool for parsing flash media stream URLs
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	libcurl.so:ftp/curl
-RUN_DEPENDS=	libquvi09>=0.9:multimedia/libquvi09
+BUILD_DEPENDS=	libquvi09>=0.9:multimedia/libquvi09
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libquvi-0.9.so:multimedia/libquvi09
 
 USES=		gettext-runtime gnome pkgconfig tar:xz
 

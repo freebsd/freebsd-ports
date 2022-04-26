@@ -32,6 +32,7 @@ include/groonga/groonga/arrow.h
 include/groonga/groonga/arrow.hpp
 include/groonga/groonga/bulk.hpp
 include/groonga/groonga/cache.h
+include/groonga/groonga/cast.h
 include/groonga/groonga/column.h
 include/groonga/groonga/command.h
 include/groonga/groonga/config.h
@@ -116,6 +117,7 @@ lib/groonga/plugins/query_expanders/tsv.so
 %%RUBY%%lib/groonga/plugins/sharding/logical_table_remove.rb
 %%RUBY%%lib/groonga/plugins/sharding/parameters.rb
 %%RUBY%%lib/groonga/plugins/sharding/range_expression_builder.rb
+%%RUBY%%lib/groonga/plugins/sharding/window.rb
 %%RUBY%%lib/groonga/scripts/ruby/accessor.rb
 %%RUBY%%lib/groonga/scripts/ruby/backtrace_entry.rb
 %%RUBY%%lib/groonga/scripts/ruby/command.rb

@@ -1,7 +1,6 @@
 PORTNAME=	stylua
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.4
-PORTREVISION=	1
+DISTVERSION=	0.13.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -15,7 +14,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	JohnnyMorganz
 GH_PROJECT=	StyLua
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		ansi_term-0.11.0 \
 		anyhow-1.0.53 \
 		assert_cmd-2.0.4 \
 		atty-0.2.14 \
@@ -27,11 +25,13 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		cast-0.2.7 \
 		cfg-if-1.0.0 \
 		clap-2.33.3 \
+		clap-3.1.6 \
+		clap_derive-3.1.4 \
 		console-0.15.0 \
 		convert_case-0.4.0 \
 		criterion-0.3.5 \
 		criterion-plot-0.4.4 \
-		crossbeam-channel-0.5.2 \
+		crossbeam-channel-0.5.4 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.5 \
 		crossbeam-utils-0.8.7 \
@@ -43,22 +43,24 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		dtoa-0.4.8 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
+		env_logger-0.9.0 \
 		fnv-1.0.7 \
 		full_moon-0.15.1 \
 		full_moon_derive-0.10.0 \
 		globset-0.4.8 \
 		half-1.7.1 \
 		hashbrown-0.11.2 \
-		heck-0.3.3 \
+		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		ignore-0.4.18 \
 		indexmap-1.7.0 \
 		insta-1.12.0 \
 		itertools-0.10.1 \
 		itoa-0.4.8 \
+		itoa-1.0.1 \
 		js-sys-0.3.55 \
 		lazy_static-1.4.0 \
-		libc-0.2.102 \
+		libc-0.2.119 \
 		linked-hash-map-0.5.4 \
 		log-0.4.14 \
 		memchr-2.4.1 \
@@ -67,6 +69,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		num_cpus-1.13.1 \
 		once_cell-1.9.0 \
 		oorandom-11.1.3 \
+		os_str_bytes-6.0.0 \
 		paste-0.1.18 \
 		paste-impl-0.1.18 \
 		peg-0.7.0 \
@@ -100,26 +103,24 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		serde-1.0.136 \
 		serde_cbor-0.11.2 \
 		serde_derive-1.0.136 \
-		serde_json-1.0.68 \
+		serde_json-1.0.79 \
 		serde_yaml-0.8.21 \
 		similar-2.1.0 \
 		smol_str-0.1.18 \
-		strsim-0.8.0 \
-		structopt-0.3.26 \
-		structopt-derive-0.4.18 \
+		strsim-0.10.0 \
 		syn-1.0.76 \
+		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
 		termtree-0.2.4 \
 		textwrap-0.11.0 \
+		textwrap-0.15.0 \
 		thread_local-1.1.3 \
 		threadpool-1.8.1 \
 		tinytemplate-1.2.1 \
 		toml-0.5.8 \
 		ucd-trie-0.1.3 \
-		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
-		vec_map-0.8.2 \
 		version_check-0.9.3 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \

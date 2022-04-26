@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%201.4.X%20%28stable%29/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common logging library for Bourne shell scripts
 
 USES=		cpe

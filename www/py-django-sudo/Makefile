@@ -12,6 +12,9 @@ COMMENT=	Sudo mode is an extra layer of security for Django
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Abandoned upstream, not compatible with newer versions of Django
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=0:www/py-django22@${PY_FLAVOR}
 
 USES=		python:3.5+

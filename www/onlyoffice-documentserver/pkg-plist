@@ -22856,6 +22856,8 @@ lib/libkernel_network.so
 @dir %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/img/load-mask
 @dir %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/img/doc-formats
 @dir %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/img/load-mask
+@owner onlyoffice
+@group onlyoffice
 @dir /var/db/onlyoffice/documentserver/App_Data/cache/files
 @dir /var/db/onlyoffice/documentserver/App_Data/cache
 @dir /var/db/onlyoffice/documentserver/App_Data/docbuilder
@@ -22867,11 +22869,10 @@ lib/libkernel_network.so
 @dir /var/log/onlyoffice/documentserver/metrics
 @dir /var/log/onlyoffice/documentserver
 @dir /var/log/onlyoffice
+@group
+@owner
 @dir %%WWWDIR%%/Data
 @dir %%WWWDIR%%/documentserver/fonts
-@postexec chown -R %%DS_USERNAME%%:%%DS_GROUPNAME%% /var/db/onlyoffice/documentserver
-@postexec chown -R %%DS_USERNAME%%:%%DS_GROUPNAME%% /var/log/onlyoffice/documentserver
-@postexec chown -R %%DS_USERNAME%%:%%DS_GROUPNAME%% %D/%%WWWDIR%%/documentserver
 @postunexec rm -rf %D/%%WWWDIR%%/documentserver/fonts
 @postunexec rm -rf %D/%%WWWDIR%%/documentserver/sdkjs/slide/themes/theme*
 @postunexec rm -rf %D/%%WWWDIR%%/documentserver/sdkjs/common/Images/themes*

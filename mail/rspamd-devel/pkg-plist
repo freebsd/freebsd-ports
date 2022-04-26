@@ -313,6 +313,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/css/FooTable.Glyphicons.css
 %%DATADIR%%/www/css/bootstrap.min.css
 %%DATADIR%%/www/css/d3evolution.css
+%%DATADIR%%/www/css/d3pie.css
 %%DATADIR%%/www/css/font-glyphicons.css
 %%DATADIR%%/www/css/footable.standalone.min.css
 %%DATADIR%%/www/css/nprogress.css

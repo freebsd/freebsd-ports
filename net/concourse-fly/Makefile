@@ -1,5 +1,6 @@
 PORTNAME=	concourse
 PORTVERSION=	6.7.1
+PORTREVISION=	1
 CATEGORIES=	net sysutils
 MASTER_SITES=	LOCAL/dumbbell/concourse/
 PKGNAMESUFFIX=	-fly

@@ -1,6 +1,6 @@
---- src/synfig/main.cpp.orig	2017-04-02 22:19:06 UTC
-+++ src/synfig/main.cpp
-@@ -198,7 +198,7 @@ synfig::Main::Main(const synfig::String& basepath,Prog
+--- src/synfig/main.cpp.orig	2022-04-20 18:01:09.451858000 -0700
++++ src/synfig/main.cpp	2022-04-20 19:15:23.316538000 -0700
+@@ -224,7 +224,7 @@
  
  	unsigned int i;
  #ifdef _DEBUG
@@ -9,35 +9,34 @@
  	std::set_terminate(__gnu_cxx::__verbose_terminate_handler);
  #endif
  #endif
-@@ -490,7 +490,11 @@ synfig::get_binary_path(const String &fallback_path)
- 
+@@ -546,7 +546,11 @@
  	/* Read from /proc/self/exe (symlink) */
- 	char* path2 = (char*)malloc(buf_size);
+ 	//char* path2 = (char*)malloc(buf_size);
+ 	char* path2 = new char[buf_size];
+-	strncpy(path2, "/proc/self/exe", buf_size - 1);
 +#if defined(__FreeBSD__) || defined (__DragonFly__)
-+        strncpy(path2, "/proc/curproc/file", buf_size - 1);
++		strncpy(path2, "/proc/curproc/file", buf_size - 1);
 +#else
- 	strncpy(path2, "/proc/self/exe", buf_size - 1);
++		strncpy(path2, "/proc/self/exe", buf_size - 1);
 +#endif
  
  	while (1) {
  		int i;
-@@ -524,9 +528,10 @@ synfig::get_binary_path(const String &fallback_path)
- 		/* path is a symlink. Continue loop and resolve this. */
- 		strncpy(path, path2, buf_size - 1);
- 	}
--	
-+
- 	free(path2);
+@@ -584,6 +588,7 @@
+ 	//free(path2);
+ 	delete[] path2;
  
 +#if ! (defined(__FreeBSD__) || defined(__DragonFly__))
  	if (result == "")
  	{
  		/* readlink() or stat() failed; this can happen when the program is
-@@ -568,6 +573,7 @@ synfig::get_binary_path(const String &fallback_path)
+@@ -625,7 +630,8 @@
  		free(line);
  		fclose(f);
  	}
+-	
 +#endif
- 	
++
  	free(path);
  
+ #endif

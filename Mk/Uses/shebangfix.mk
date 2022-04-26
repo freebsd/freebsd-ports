@@ -31,17 +31,17 @@
 #
 #   perl_CMD=	${SETENV} perl
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_SHEBANGFIX_MK)
 _INCLUDE_USES_SHEBANGFIX_MK=	yes
 
 SHEBANG_LANG+=	bash java ksh perl php python ruby tcl tk
 
-.if ${USES:Mlua*}
+.  if ${USES:Mlua*}
 SHEBANG_LANG+=	lua
 lua_CMD?=	${LOCALBASE}/bin/${LUA_CMD}
-.endif
+.  endif
 
 tcl_OLD_CMD+=	/usr/bin/tclsh
 tcl_CMD?=	${TCLSH}
@@ -49,58 +49,58 @@ tcl_CMD?=	${TCLSH}
 tk_OLD_CMD+=	/usr/bin/wish
 tk_CMD?=	${WISH}
 
-.if ${USES:Mpython*}
+.  if ${USES:Mpython*}
 python_CMD?=	${PYTHON_CMD}
-.endif
+.  endif
 
 # Replace the same patterns for all langs and setup a default, that may have
 # been set already above with ?=.
-.for lang in ${SHEBANG_LANG}
+.  for lang in ${SHEBANG_LANG}
 ${lang}_CMD?= ${LOCALBASE}/bin/${lang}
 ${lang}_OLD_CMD+= "/usr/bin/env ${lang}"
 ${lang}_OLD_CMD+= /bin/${lang}
 ${lang}_OLD_CMD+= /usr/bin/${lang}
 ${lang}_OLD_CMD+= /usr/local/bin/${lang}
-.endfor
+.  endfor
 
-.for pyver in 2 3
+.  for pyver in 2 3
 python_OLD_CMD+= "/usr/bin/env python${pyver}"
 python_OLD_CMD+= /bin/python${pyver}
 python_OLD_CMD+= /usr/bin/python${pyver}
 python_OLD_CMD+= /usr/local/bin/python${pyver}
-.endfor
+.  endfor
 
-.for lang in ${SHEBANG_LANG}
-.  if !defined(${lang}_CMD)
+.  for lang in ${SHEBANG_LANG}
+.    if !defined(${lang}_CMD)
 IGNORE+=	missing definition for ${lang}_CMD
-.  endif
-.  if !defined(${lang}_OLD_CMD)
+.    endif
+.    if !defined(${lang}_OLD_CMD)
 IGNORE+=	missing definition for ${lang}_OLD_CMD
-.  endif
-.  for old_cmd in ${${lang}_OLD_CMD}
+.    endif
+.    for old_cmd in ${${lang}_OLD_CMD}
 _SHEBANG_REINPLACE_ARGS+=	-e "1s|^\#![[:space:]]*${old_cmd:C/\"//g}\([[:space:]]\)|\#!${${lang}_CMD}\1|"
 _SHEBANG_REINPLACE_ARGS+=	-e "1s|^\#![[:space:]]*${old_cmd:C/\"//g}$$|\#!${${lang}_CMD}|"
+.    endfor
 .  endfor
-.endfor
 
 _USES_patch+=	210:fix-shebang
 fix-shebang:
-.if defined(SHEBANG_REGEX)
+.  if defined(SHEBANG_REGEX)
 	@cd ${WRKSRC}; \
 		${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
 		-exec ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS} {} +
-.endif
-.if defined(SHEBANG_GLOB)
-.  for f in ${SHEBANG_GLOB}
+.  endif
+.  if defined(SHEBANG_GLOB)
+.    for f in ${SHEBANG_GLOB}
 	@cd ${WRKSRC}; \
 		${FIND} . -type f -name '${f}' \
 		-exec ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS} {} +
-.  endfor
-.endif
-.if defined(SHEBANG_FILES)
+.    endfor
+.  endif
+.  if defined(SHEBANG_FILES)
 	@cd ${WRKSRC}; \
 		${FIND} ${SHEBANG_FILES} -type f \
 		-exec ${SED} -i '' ${_SHEBANG_REINPLACE_ARGS} {} +
-.endif
+.  endif
 
 .endif

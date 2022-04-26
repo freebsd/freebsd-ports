@@ -1,12 +1,12 @@
 bin/kspaceduel
 share/applications/org.kde.kspaceduel.desktop
 share/config.kcfg/kspaceduel.kcfg
-share/icons/hicolor/128x128/apps/kspaceduel.png
 share/icons/hicolor/16x16/apps/kspaceduel.png
 share/icons/hicolor/22x22/apps/kspaceduel.png
 share/icons/hicolor/32x32/apps/kspaceduel.png
 share/icons/hicolor/48x48/apps/kspaceduel.png
 share/icons/hicolor/64x64/apps/kspaceduel.png
+share/icons/hicolor/128x128/apps/kspaceduel.png
 %%DATADIR%%/icons/hicolor/16x16/actions/spnewgame.png
 %%DATADIR%%/icons/hicolor/16x16/actions/spnewround.png
 %%DATADIR%%/icons/hicolor/16x16/actions/sppausegame.png

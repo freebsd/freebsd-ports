@@ -1,0 +1,7 @@
+Advanced file manager for Unix-like systems written in Vala.  Supports
+multiple panes (single, dual, quad) with multiple tabs in each pane.
+Supports archive creation, extraction, and browsing.  Support for cloud
+storage; running and managing KVM images, modifying PDF documents and
+image files, booting ISO files in KVM, writing ISO files to USB drives.
+
+WWW: https://teejee2008.github.io/polo/

@@ -180,12 +180,14 @@ include/KF5/KIOGui/KEMailClientLauncherJob
 include/KF5/KIOGui/KIO/ApplicationLauncherJob
 include/KF5/KIOGui/KIO/CommandLauncherJob
 include/KF5/KIOGui/KIO/FavIconRequestJob
+include/KF5/KIOGui/KIO/KCoreUrlNavigator
 include/KF5/KIOGui/KIO/OpenUrlJob
 include/KF5/KIOGui/KTerminalLauncherJob
 include/KF5/KIOGui/kemailclientlauncherjob.h
 include/KF5/KIOGui/kio/applicationlauncherjob.h
 include/KF5/KIOGui/kio/commandlauncherjob.h
 include/KF5/KIOGui/kio/faviconrequestjob.h
+include/KF5/KIOGui/kio/kcoreurlnavigator.h
 include/KF5/KIOGui/kio/openurljob.h
 include/KF5/KIOGui/kiogui_export.h
 include/KF5/KIOGui/kterminallauncherjob.h
@@ -944,6 +946,7 @@ share/kservices5/searchproviders/yahoo_image.desktop
 share/kservices5/searchproviders/yahoo_local.desktop
 share/kservices5/searchproviders/yahoo_shopping.desktop
 share/kservices5/searchproviders/yahoo_video.desktop
+share/kservices5/searchproviders/yandex.desktop
 share/kservices5/searchproviders/youtube.desktop
 share/kservices5/smb.desktop
 share/kservices5/webshortcuts.desktop

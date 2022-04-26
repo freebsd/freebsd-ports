@@ -1,6 +1,0 @@
-bin/lgrind
-share/texmf-dist/doc/latex/lgrind/lgrind.dvi
-share/texmf-dist/tex/latex/lgrind/lgrind.sty
-share/texmf-dist/tex/latex/lgrind/lgrindef
-man/man1/lgrind.1.gz
-man/man5/lgrindef.5.gz

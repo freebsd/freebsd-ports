@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec %%JAVA_CMD%% -jar -Xmx256m %%JAVASHAREDIR%%/%%JBROFUZZ%%/%%JBROFUZZ%%.jar "$@"

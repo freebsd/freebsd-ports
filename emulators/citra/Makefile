@@ -1,5 +1,5 @@
 PORTNAME=	citra
-PORTVERSION=	s20220305
+PORTVERSION=	s20220423
 PORTREVISION?=	0
 CATEGORIES=	emulators
 .if make(makesum)
@@ -24,11 +24,13 @@ LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 LICENSE_FILE_MIT=	${WRKSRC}/externals/enet/LICENSE
 LICENSE_FILE_OpenSSL=	${WRKSRC}/externals/libressl/COPYING
 
+BROKEN_aarch64=	https://github.com/citra-emu/citra/issues/5921
+
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	ac98458e0
+GH_TAGNAME=	1382035d4
 GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		citra-emu:ext-libressl-portable:8289d0d:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \

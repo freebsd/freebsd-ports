@@ -28,60 +28,60 @@ Database_Include_MAINTAINER=		ports@FreeBSD.org
 # OPENLDAP_VER
 #				- Detected OpenLDAP version.
 
-.if defined(USE_OPENLDAP)
+.  if defined(USE_OPENLDAP)
 DEFAULT_OPENLDAP_VER?=	24
 # OpenLDAP client versions currently supported
 OPENLDAP24_LIB=		libldap-2.4.so.2
 OPENLDAP25_LIB=		libldap-2.5.so.0
 OPENLDAP26_LIB=		libldap.so.2
 
-.if exists(${LOCALBASE}/bin/ldapwhoami)
+.    if exists(${LOCALBASE}/bin/ldapwhoami)
 _OPENLDAP_VER!=	${LOCALBASE}/bin/ldapwhoami -VV 2>&1 | ${GREP} ldapwhoami | ${SED} -E 's/.*OpenLDAP: ldapwhoami (2)\.([0-9]).*/\1\2/'
-.endif
+.    endif
 
-.if defined(WANT_OPENLDAP_VER)
-.if defined(WITH_OPENLDAP_VER) && ${WITH_OPENLDAP_VER} != ${WANT_OPENLDAP_VER}
+.    if defined(WANT_OPENLDAP_VER)
+.      if defined(WITH_OPENLDAP_VER) && ${WITH_OPENLDAP_VER} != ${WANT_OPENLDAP_VER}
 IGNORE=		cannot install: the port wants openldap${WANT_OPENLDAP_VER}-client and you try to install openldap${WITH_OPENLDAP_VER}-client
-.endif
+.      endif
 OPENLDAP_VER=	${WANT_OPENLDAP_VER}
-.elif defined(WITH_OPENLDAP_VER)
+.    elif defined(WITH_OPENLDAP_VER)
 OPENLDAP_VER=	${WITH_OPENLDAP_VER}
-.else
-.if defined(_OPENLDAP_VER)
+.    else
+.      if defined(_OPENLDAP_VER)
 OPENLDAP_VER=	${_OPENLDAP_VER}
-.else
+.      else
 OPENLDAP_VER=	${DEFAULT_OPENLDAP_VER}
-.endif
-.endif # WANT_OPENLDAP_VER
+.      endif
+.    endif # WANT_OPENLDAP_VER
 
-.if defined(_OPENLDAP_VER)
-.if ${_OPENLDAP_VER} != ${OPENLDAP_VER}
+.    if defined(_OPENLDAP_VER)
+.      if ${_OPENLDAP_VER} != ${OPENLDAP_VER}
 IGNORE=	cannot install: OpenLDAP versions mismatch: openldap${_OPENLDAP_VER}-client is installed and wanted version is openldap${OPENLDAP_VER}-client
-.endif
-.endif
+.      endif
+.    endif
 
 CFLAGS+=	-DLDAP_DEPRECATED
 
 _OPENLDAP_CLIENT_PKG!=	${PKG_INFO} -Ex openldap.\*-client 2>/dev/null; ${ECHO_CMD}
 
 # And now we are checking if we can use it
-.if defined(OPENLDAP${OPENLDAP_VER}_LIB)
+.    if defined(OPENLDAP${OPENLDAP_VER}_LIB)
 # compatability shim
-.if defined(BROKEN_WITH_OPENLDAP)
+.      if defined(BROKEN_WITH_OPENLDAP)
 IGNORE_WITH_OPENLDAP=${BROKEN_WITH_OPENLDAP}
-.endif
-.if defined(IGNORE_WITH_OPENLDAP)
-.	for VER in ${IGNORE_WITH_OPENLDAP}
-.		if (${OPENLDAP_VER} == "${VER}")
+.      endif
+.      if defined(IGNORE_WITH_OPENLDAP)
+.        for VER in ${IGNORE_WITH_OPENLDAP}
+.          if (${OPENLDAP_VER} == "${VER}")
 IGNORE=		cannot install: doesn't work with OpenLDAP version: ${OPENLDAP_VER} (Doesn't support OpenLDAP ${IGNORE_WITH_OPENLDAP})
-.		endif
-.	endfor
-.endif # IGNORE_WITH_OPENLDAP
+.          endif
+.        endfor
+.      endif # IGNORE_WITH_OPENLDAP
 LIB_DEPENDS+=	${OPENLDAP${OPENLDAP_VER}_LIB}:net/openldap${OPENLDAP_VER}-client
-.else
+.    else
 IGNORE=		cannot install: unknown OpenLDAP version: ${OPENLDAP_VER}
-.endif # Check for correct libs
+.    endif # Check for correct libs
 
-.endif # defined(USE_OPENLDAP)
+.  endif # defined(USE_OPENLDAP)
 
 .endif # defined(_POSTMKINCLUDED) && !defined(Ldap_Post_Include)

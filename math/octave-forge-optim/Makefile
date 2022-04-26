@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-optim
-PORTVERSION=	1.6.1
-PORTREVISION=	2
+PORTVERSION=	1.6.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -25,6 +24,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/struct.tar.gz:math/octave-forge-struct
 GNU_CONFIGURE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
+
+USES+=		shebangfix
+SHEBANG_FILES=	*.pl
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure

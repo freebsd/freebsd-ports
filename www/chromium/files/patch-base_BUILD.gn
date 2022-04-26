@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2022-02-28 16:54:41 UTC
+--- base/BUILD.gn.orig	2022-03-25 21:59:56 UTC
 +++ base/BUILD.gn
-@@ -993,7 +993,7 @@ mixed_component("base") {
+@@ -999,7 +999,7 @@ mixed_component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -9,7 +9,7 @@
        sources += [
          "cpu_affinity_posix.cc",
          "cpu_affinity_posix.h",
-@@ -1004,6 +1004,12 @@ mixed_component("base") {
+@@ -1010,6 +1010,12 @@ mixed_component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -22,7 +22,7 @@
    }
  
    if (is_win) {
-@@ -1462,11 +1468,23 @@ mixed_component("base") {
+@@ -1478,11 +1484,23 @@ mixed_component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
    if (!use_sysroot &&
@@ -47,7 +47,7 @@
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1490,7 +1508,7 @@ mixed_component("base") {
+@@ -1506,7 +1524,7 @@ mixed_component("base") {
        ]
        configs += [ "//base/allocator:mac_no_default_new_delete_symbols" ]
      }
@@ -56,7 +56,7 @@
        sources += [
          "allocator/allocator_shim_override_cpp_symbols.h",
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
-@@ -1550,7 +1568,7 @@ mixed_component("base") {
+@@ -1563,7 +1581,7 @@ mixed_component("base") {
    # Allow more direct string conversions on platforms with native utf8
    # strings
    # TODO(crbug/1052397): Consider replacing is_ash with is_chromeos once lacros switches to target_os=chromeos
@@ -65,7 +65,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2222,6 +2240,42 @@ mixed_component("base") {
+@@ -2243,6 +2261,42 @@ mixed_component("base") {
      }
    }
  
@@ -108,7 +108,7 @@
    # iOS
    if (is_ios) {
      sources -= [
-@@ -3465,7 +3519,7 @@ test("base_unittests") {
+@@ -3495,7 +3549,7 @@ test("base_unittests") {
      }
    }
  
@@ -117,7 +117,7 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3513,7 +3567,7 @@ test("base_unittests") {
+@@ -3543,7 +3597,7 @@ test("base_unittests") {
        "posix/unix_domain_socket_unittest.cc",
        "task/thread_pool/task_tracker_posix_unittest.cc",
      ]
@@ -126,7 +126,7 @@
        sources += [
          "cpu_affinity_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3525,7 +3579,7 @@ test("base_unittests") {
+@@ -3555,7 +3609,7 @@ test("base_unittests") {
    # Allow more direct string conversions on platforms with native utf8
    # strings
    # TODO(crbug/1052397): Consider replacing is_ash with is_chromeos once lacros switches to target_os=chromeos
@@ -135,7 +135,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3689,7 +3743,7 @@ test("base_unittests") {
+@@ -3724,7 +3778,7 @@ test("base_unittests") {
      }
    }
  

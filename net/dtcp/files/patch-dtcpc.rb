@@ -1,8 +1,6 @@
-Index: dtcpc.rb
-diff -u dtcpc.rb.orig dtcpc.rb
---- dtcpc.rb.orig	2013-06-02 23:05:51.000000000 +0900
-+++ dtcpc.rb	2014-05-22 17:24:50.852383194 +0900
-@@ -422,6 +422,10 @@
+--- dtcpc.rb.orig	2013-06-02 14:05:51 UTC
++++ dtcpc.rb
+@@ -422,6 +422,10 @@ class Interface
      execute("ifconfig #{@name} mtu #{mtu}")
    end
  
@@ -13,7 +11,7 @@ diff -u dtcpc.rb.orig dtcpc.rb
    def linklocal
      `ifconfig #{@name} inet6`.each_line { |s|
        if s =~ /inet6 (fe80::[^ ]*)/
-@@ -461,6 +465,9 @@
+@@ -461,6 +465,9 @@ class ClonedInterface < Interface
  	end
        }
      end
@@ -23,7 +21,7 @@ diff -u dtcpc.rb.orig dtcpc.rb
      @created = true
    end
  
-@@ -520,6 +527,9 @@
+@@ -520,6 +527,9 @@ class NetgraphInterface < Interface
      if !@tunif || @tunif == "ng"
        @name = mkpeer
        @created = true
@@ -33,7 +31,12 @@ diff -u dtcpc.rb.orig dtcpc.rb
        return
      end
  
-@@ -535,6 +545,9 @@
+@@ -531,10 +541,13 @@ class NetgraphInterface < Interface
+     shutdown(@tunif)
+ 
+     bogus = Array.new
+-    while TRUE
++    while true
        @name = mkpeer
        if @name == @tunif
  	@created = true
@@ -43,7 +46,16 @@ diff -u dtcpc.rb.orig dtcpc.rb
  	break
        end
  
-@@ -927,6 +940,7 @@
+@@ -899,7 +912,7 @@ class DTCPClient
+ 
+   def keep_alive(sock)
+     begin
+-      while TRUE
++      while true
+ 	debugmsg("sleep(60)\n")
+ 	sleep 60
+ 	sendmsg(sock, "ping")
+@@ -927,6 +940,7 @@ ousername = username
  password = ''
  tunif = TUNIF
  cloning = TUNIF_CLONING
@@ -51,7 +63,7 @@ diff -u dtcpc.rb.orig dtcpc.rb
  tuntype = 'tunnelonly'
  route_type = 'static'
  static_routes = 'default'
-@@ -949,7 +963,7 @@
+@@ -949,7 +963,7 @@ pidfile = PIDFILE
  # exit 0
  
  begin
@@ -60,7 +72,7 @@ diff -u dtcpc.rb.orig dtcpc.rb
  rescue
    usage()
    exit 0
-@@ -965,6 +979,7 @@
+@@ -965,6 +979,7 @@ cloning = false if params["c"]
  $debug = params["d"]
  daemonize = params["D"]
  pidfile = params["f"] if params["f"]
@@ -68,3 +80,12 @@ diff -u dtcpc.rb.orig dtcpc.rb
  tunif = params["i"] if params["i"]
  loop = params["l"]
  mtu = params["m"].to_i if params["m"]
+@@ -1013,7 +1028,7 @@ begin
+ 			      rtadvd_disable)
+     dtcpc = DTCPClient.new(dst, port, username, password, tuntype, behind_nat,
+ 			   mtu, udp_tunnel, udp_tunnel_port)
+-    while TRUE
++    while true
+       interrupt = nil
+       begin
+ 	trap("SIGHUP") {

@@ -1,0 +1,55 @@
+--- src/zope/deferredimport/deferredmodule.py.orig	2010-09-25 12:48:49 UTC
++++ src/zope/deferredimport/deferredmodule.py
+@@ -65,7 +65,7 @@ class ModuleProxy(zope.proxy.ProxyBase):
+         try:
+             get = self.__deferred_definitions__.pop(name)
+         except KeyError:
+-            raise AttributeError, name
++            raise AttributeError(name)
+         v = get.get()
+         setattr(self, name, v)
+         return v
+@@ -108,7 +108,7 @@ def define(**names):
+     """
+     module = initialize(2)
+     __deferred_definitions__ = module.__deferred_definitions__
+-    for name, specifier in names.iteritems():
++    for name, specifier in names.items():
+         __deferred_definitions__[name] = Deferred(name, specifier)
+ 
+ def defineFrom(from_name, *names):
+@@ -135,7 +135,7 @@ def deprecated(message, **names):
+     """
+     module = initialize(2)
+     __deferred_definitions__ = module.__deferred_definitions__
+-    for name, specifier in names.iteritems():
++    for name, specifier in names.items():
+         __deferred_definitions__[name] = DeferredAndDeprecated(
+             name, specifier, message)
+ 
+--- src/zope/deferredimport/tests.py.orig	2010-09-25 12:48:49 UTC
++++ src/zope/deferredimport/tests.py
+@@ -39,20 +39,20 @@ def warn(message, type_, stacklevel):
+     for i in range(lineno):
+         line = file.readline()
+ 
+-    print "%s:%s: %s: %s\n  %s" % (
++    print("%s:%s: %s: %s\n  %s" % (
+         path,
+         frame.f_lineno,
+         type_.__name__,
+         message,
+         line.strip(),
+-        )
++        ))
+ 
+ 
+ def setUp(test):
+     d = test.globs['tmp_d'] = tempfile.mkdtemp('deferredimport')
+ 
+     def create_module(**modules):
+-        for name, src in modules.iteritems():
++        for name, src in modules.items():
+             f = open(os.path.join(d, name+'.py'), 'w')
+             f.write(src)
+             f.close()

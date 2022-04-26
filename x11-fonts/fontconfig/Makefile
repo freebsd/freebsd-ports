@@ -2,7 +2,7 @@
 
 PORTNAME=	fontconfig
 DISTVERSION=	2.13.94
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://www.freedesktop.org/software/fontconfig/release/
@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
 
-USES=		cpe gperf meson pkgconfig python:3.6+,build shebangfix tar:xz
+USES=		cpe gperf meson pkgconfig python:3.6+,build shebangfix tar:xz \
+		trigger
 CPE_VENDOR=	fontconfig_project
 USE_LDCONFIG=	yes
 
@@ -26,8 +27,6 @@ SHEBANG_FILES=	conf.d/link_confs.py \
 		fc-lang/fc-lang.py
 
 TEST_TARGET=	test
-SUB_FILES=	pkg-install
-SUB_LIST=	PREFIX=${PREFIX}
 
 # Custom configuration variables
 FCDEFAULTFONTS=	${PREFIX}/share/fonts

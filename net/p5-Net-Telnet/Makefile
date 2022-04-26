@@ -1,6 +1,5 @@
 PORTNAME=	Net-Telnet
-PORTVERSION=	3.04
-PORTREVISION=	1
+PORTVERSION=	3.05
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +12,7 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

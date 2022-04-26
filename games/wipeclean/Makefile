@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	wipeclean
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/ehaupt

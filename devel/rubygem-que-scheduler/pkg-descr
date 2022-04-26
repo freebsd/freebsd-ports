@@ -1,0 +1,6 @@
+que-scheduler is an extension to Que that adds support for scheduling items
+using a cron style configuration file. It works by running as a que job itself,
+determining what needs to be run, enqueueing those jobs, then enqueueing itself
+to check again later.
+
+WWW: https://github.com/hlascelles/que-scheduler

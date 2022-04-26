@@ -421,7 +421,7 @@ _LICENSE_GROUPS_ZPL21=	GPL OSI
 # Set default permissions if not defined
 
 .for lic in ${_LICENSE_LIST}
-.	if !defined(_LICENSE_PERMS_${lic})
+.  if !defined(_LICENSE_PERMS_${lic})
 _LICENSE_PERMS_${lic}=	${_LICENSE_PERMS_DEFAULT}
-.	endif
+.  endif
 .endfor

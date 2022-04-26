@@ -1,6 +1,6 @@
 PORTNAME=	coq
 PORTVERSION=	8.6
-PORTREVISION=	8
+PORTREVISION=	11
 PORTEPOCH=	3
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${PORTVERSION}/files/ \
@@ -18,7 +18,8 @@ BROKEN_armv7=	fails to compile: Fatal error: exception Invalid_argument("index o
 BROKEN_powerpc=	fails to link
 
 BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
-		ocamlfind:devel/ocaml-findlib
+		ocamlfind:devel/ocaml-findlib \
+		${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
@@ -33,7 +34,7 @@ CONFIGURE_ARGS=	-prefix ${PREFIX} \
 		-emacslib ${PREFIX}/share/emacs/site-lisp/coq \
 		-usecamlp5 \
 		-byteonly
-MAKE_ENV=	VERBOSE=1
+MAKE_ENV=	VERBOSE=1 USERFLAGS=-unsafe-string
 ALL_TARGET=	world
 
 CONFLICTS_INSTALL=	coq coq-emacs_* # bin/coq-tex bin/coq_makefile bin/coqc bin/coqchk bin/coqdep bin/coqdoc bin/coqide bin/coqmktop bin/coqtop bin/coqtop.byte bin/coqwc bin/coqworkmgr bin/gallina
@@ -56,8 +57,11 @@ add-plist-post:
 	@${DO_NADA}
 
 post-patch:
-	${REINPLACE_CMD} -e '/show_latex_mes/s/)$$/; true)/' \
-	    ${WRKSRC}/Makefile.doc
+	@${REINPLACE_CMD} -e '/show_latex_mes/s/)$$/; true)/' \
+		${WRKSRC}/Makefile.doc
+# Allow passing USERFLAGS down to inner make(1) via environment
+	@${REINPLACE_CMD} -e '/User compilation flag/,+1d' \
+		${WRKSRC}/configure.ml
 
 post-install:
 	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} ${STRIP_FILES}

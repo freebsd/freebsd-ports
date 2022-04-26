@@ -1,5 +1,5 @@
 PORTNAME=	Barcode-ZBar
-PORTVERSION=	0.04
+PORTVERSION=	0.10
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,7 @@ LIB_DEPENDS=	libzbar.so:graphics/zbar
 
 USES=		perl5
 USE_PERL5=	configure
+
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 pre-install:

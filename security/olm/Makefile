@@ -1,6 +1,6 @@
 PORTNAME=	olm
 DISTVERSIONPREFIX=
-DISTVERSION=	3.2.6
+DISTVERSION=	3.2.11
 CATEGORIES=	security
 MASTER_SITES=	https://gitlab.matrix.org/matrix-org/olm/-/archive/${DISTVERSION}/
 
@@ -14,5 +14,7 @@ USES=		cmake compiler:c++11-lang cpe \
 		localbase:ldflags tar:bz2
 
 CPE_VENDOR=	matrix
+
+PLIST_SUB=	SOVER=${DISTVERSION}
 
 .include <bsd.port.mk>

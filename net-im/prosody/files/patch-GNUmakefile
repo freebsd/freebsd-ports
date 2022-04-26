@@ -1,4 +1,4 @@
---- GNUmakefile.orig	2020-01-02 09:49:37 UTC
+--- GNUmakefile.orig	2022-03-08 12:34:39 UTC
 +++ GNUmakefile
 @@ -6,7 +6,7 @@ CONFIG = $(DESTDIR)$(SYSCONFDIR)
  MODULES = $(DESTDIR)$(LIBDIR)/prosody/modules
@@ -9,15 +9,20 @@
  
  INSTALLEDSOURCE = $(LIBDIR)/prosody
  INSTALLEDCONFIG = $(SYSCONFDIR)
-@@ -57,9 +57,10 @@ install: prosody.install prosodyctl.install prosody.cf
- 	$(INSTALL_DATA) plugins/mod_mam/*.lua $(MODULES)/mod_mam
+@@ -35,7 +35,7 @@ install-etc: prosody.cfg.lua.install
+ 	$(MKDIR) $(CONFIG)
+ 	$(MKDIR) $(CONFIG)/certs
  	$(INSTALL_DATA) certs/* $(CONFIG)/certs
- 	$(INSTALL_DATA) man/prosodyctl.man $(MAN)/man1/prosodyctl.1
 -	test -f $(CONFIG)/prosody.cfg.lua || $(INSTALL_DATA) prosody.cfg.lua.install $(CONFIG)/prosody.cfg.lua
 +	$(INSTALL_DATA) prosody.cfg.lua.install $(CONFIG)/prosody.cfg.lua.sample
- 	-test -f prosody.version && $(INSTALL_DATA) prosody.version $(SOURCE)/prosody.version
- 	$(MAKE) install -C util-src
-+	$(MAKE) install -C tools/migration
+ 
+ install-bin: prosody.install prosodyctl.install
+ 	$(MKDIR) $(BIN)
+@@ -89,6 +89,7 @@ install-data:
+ 	$(MKDIR_PRIVATE) $(DATA)
+ 
+ install: install-util install-net install-core install-plugins install-bin install-etc install-man install-meta install-data
++	$(MAKE) -C tools/migration install
  
  clean:
  	rm -f prosody.install

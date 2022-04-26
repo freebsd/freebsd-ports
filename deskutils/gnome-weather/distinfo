@@ -1,5 +1,3 @@
-TIMESTAMP = 1632933617
-SHA256 (gnome/gnome-weather-41.0.tar.xz) = e5614eb74297e072960d6447557fa9fbfccf24bfcb314944b6d976640ee62dee
-SIZE (gnome/gnome-weather-41.0.tar.xz) = 943500
-SHA256 (gnome/4be71525f071.patch) = 0ebf05647fd27e6e7002d97de76a74a76481fa0dda1a926fa6c14b9a6f269a6f
-SIZE (gnome/4be71525f071.patch) = 794
+TIMESTAMP = 1650388173
+SHA256 (gnome/gnome-weather-42.0.tar.xz) = 579ee691d853e5bb3ff50e8c7b43f85ae9dd7e5b3a649e02c254a2d9b807b465
+SIZE (gnome/gnome-weather-42.0.tar.xz) = 233552

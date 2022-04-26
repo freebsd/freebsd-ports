@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/HTML/Escape.pm
+%%SITE_ARCH%%/HTML/Escape/PurePerl.pm
+%%SITE_ARCH%%/auto/HTML/Escape/Escape.so
+%%PERL5_MAN3%%/HTML::Escape.3.gz

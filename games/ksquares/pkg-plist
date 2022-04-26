@@ -1,12 +1,12 @@
 bin/ksquares
 share/applications/org.kde.ksquares.desktop
 share/config.kcfg/ksquares.kcfg
-share/icons/hicolor/128x128/apps/ksquares.png
 share/icons/hicolor/16x16/apps/ksquares.png
 share/icons/hicolor/22x22/apps/ksquares.png
 share/icons/hicolor/32x32/apps/ksquares.png
 share/icons/hicolor/48x48/apps/ksquares.png
 share/icons/hicolor/64x64/apps/ksquares.png
+share/icons/hicolor/128x128/apps/ksquares.png
 share/locale/ar/LC_MESSAGES/ksquares.mo
 share/locale/be/LC_MESSAGES/ksquares.mo
 share/locale/bs/LC_MESSAGES/ksquares.mo

@@ -19,4 +19,6 @@ TEST_DEPENDS=	p5-JSON>=0:converters/p5-JSON
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

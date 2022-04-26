@@ -13,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 CONFLICTS_INSTALL=	julius
 
-BROKEN_riscv64=		fails to link: julius-caesariii-1.5.1,1.log: cannot open /nxb-bin/usr/lib/clang/11.0.0/lib/freebsd/libclang_rt.profile-riscv64.a: No such file or directory
-
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cmake sdl

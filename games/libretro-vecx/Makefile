@@ -1,5 +1,5 @@
 PORTNAME=	libretro-vecx
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220327
 PORTREVISION=	1
 CATEGORIES=	games
 
@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	9af0702
+GH_TAGNAME=	141af28
 
 PLIST_FILES=	lib/libretro/vecx_libretro.so
 

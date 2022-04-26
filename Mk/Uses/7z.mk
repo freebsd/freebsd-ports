@@ -17,29 +17,29 @@ _INCLUDE_USES_7Z_MK=	yes
 7-ZIP_AFTER_ARGS?=	# empty
 7-ZIP_WRKDIR?=		${EXTRACT_WRKDIR}
 
-.if !empty(7z_ARGS:N7-zip:Npartial)
+.  if !empty(7z_ARGS:N7-zip:Npartial)
 IGNORE=			USES=7z has invalid arguments: ${7z_ARGS:N7-zip:Npartial}
-.endif
+.  endif
 
-.if ${7z_ARGS:M7-zip}
+.  if ${7z_ARGS:M7-zip}
 EXTRACT_DEPENDS+=	${7-ZIP_CMD}:archivers/7-zip
-.endif
+.  endif
 
-.if ! ${7z_ARGS:Mpartial}
+.  if ! ${7z_ARGS:Mpartial}
 EXTRACT_SUFX?=		.7z
-.endif
+.  endif
 
-.if ${7z_ARGS:M7-zip} && ! ${7z_ARGS:Mpartial}
+.  if ${7z_ARGS:M7-zip} && ! ${7z_ARGS:Mpartial}
 EXTRACT_CMD?=		${7-ZIP_CMD}
 EXTRACT_BEFORE_ARGS?=	${7-ZIP_BEFORE_ARGS}
 EXTRACT_AFTER_ARGS?=	${7-ZIP_AFTER_ARGS}
-.endif
+.  endif
 
-.if ! ${7z_ARGS:M7-zip} && ${7z_ARGS:Mpartial} && defined(EXTRACT_ONLY)
+.  if ! ${7z_ARGS:M7-zip} && ${7z_ARGS:Mpartial} && defined(EXTRACT_ONLY)
 EXTRACT_ONLY+=		${EXTRACT_ONLY_7z}
-.endif
+.  endif
 
-.if ${7z_ARGS:M7-zip} && ${7z_ARGS:Mpartial}
+.  if ${7z_ARGS:M7-zip} && ${7z_ARGS:Mpartial}
 EXTRACT_ONLY?=		${DISTFILES:N*\:*7z*:C/:.*//}
 EXTRACT_ONLY_7z?=	${DISTFILES:M*\:*7z*:C/:.*//}
 
@@ -52,6 +52,6 @@ do-7-zip-extract:
 			exit 1; \
 		fi; \
 	done
-.endif
+.  endif
 
 .endif

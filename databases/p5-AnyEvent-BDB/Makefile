@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-AnyEvent>=3.81:devel/p5-AnyEvent \
+RUN_DEPENDS=	p5-AnyEvent>=3.81,1:devel/p5-AnyEvent \
 		p5-BDB>=1.5:databases/p5-BDB
 
 USES=		perl5

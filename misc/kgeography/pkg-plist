@@ -1,12 +1,12 @@
 bin/kgeography
 share/applications/org.kde.kgeography.desktop
 share/config.kcfg/kgeography.kcfg
-share/icons/hicolor/128x128/apps/kgeography.png
 share/icons/hicolor/16x16/apps/kgeography.png
 share/icons/hicolor/22x22/apps/kgeography.png
 share/icons/hicolor/32x32/apps/kgeography.png
 share/icons/hicolor/48x48/apps/kgeography.png
 share/icons/hicolor/64x64/apps/kgeography.png
+share/icons/hicolor/128x128/apps/kgeography.png
 share/icons/hicolor/scalable/apps/kgeography.svgz
 %%DATADIR%%/afghanistan.kgm
 %%DATADIR%%/afghanistan.png

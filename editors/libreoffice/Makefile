@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		gperf>=3.1:devel/gperf \
+		${LOCALBASE}/include/libcuckoo/cuckoohash_map.hh:devel/libcuckoo \
 		mdds>=2.0:devel/mdds \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
@@ -84,7 +85,14 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libZXing.so:textproc/zxing-cpp \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libxcb-icccm.so:x11/xcb-util-wm \
-		libserf-1.so:www/serf
+		libserf-1.so:www/serf \
+		${LIB_DEPENDS_${ARCH}}
+LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_armv7=	libunwind.so:devel/libunwind
+LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64le=	libunwind.so:devel/libunwind
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
@@ -98,7 +106,6 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
 DISTFILES+=	skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz:src
-DISTFILES+=	libcuckoo-93217f8d391718380c508a722ab9acd5e9081233.tar.gz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -125,7 +132,7 @@ USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 
 OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF5 LTO MMEDIA PDFIUM PGSQL MARIADB QT5 SDK TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA PDFIUM QT5
-OPTIONS_EXCLUDE=	GTK4
+#OPTIONS_EXCLUDE=	GTK4
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
 GTK4_DESC=	GTK+ 4 GUI toolkit support (broken)
@@ -265,7 +272,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-parallelism=${MAKE_JOBS_NUMBER} \
 		--with-system-abseil \
 		--with-system-cppunit \
-		--with-system-cuckoo=no \
+		--with-system-cuckoo \
 		--with-system-curl \
 		--with-system-dicts \
 		--with-system-gpgmepp \

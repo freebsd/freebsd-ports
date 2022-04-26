@@ -1,0 +1,319 @@
+--- weberror/evalcontext.py.orig	2016-04-10 01:43:23 UTC
++++ weberror/evalcontext.py
+@@ -1,4 +1,4 @@
+-from cStringIO import StringIO
++from io import StringIO
+ import traceback
+ import threading
+ import pdb
+@@ -32,7 +32,7 @@ class EvalContext(object):
+             sys.stdout = out
+             try:
+                 code = compile(s, '<web>', "single", 0, 1)
+-                exec code in self.namespace, self.globs
++                exec(code, self.namespace, self.globs)
+                 debugger.set_continue()
+             except KeyboardInterrupt:
+                 raise
+--- weberror/evalexception.py.orig	2016-04-10 01:43:23 UTC
++++ weberror/evalexception.py
+@@ -22,18 +22,18 @@ to see the full debuggable traceback.  Also, this URL 
+ ``wsgi.errors``, so you can open it up in another browser window.
+ 
+ """
+-import httplib
++import http.client
+ import sys
+ import os
+ import cgi
+ import traceback
+-from cStringIO import StringIO
++from io import StringIO
+ import pprint
+ import itertools
+ import time
+ import re
+ import types
+-import urllib
++import urllib.request, urllib.parse, urllib.error
+ 
+ from pkg_resources import resource_filename
+ 
+@@ -43,7 +43,7 @@ from paste import request
+ from paste import urlparser
+ from paste.util import import_string
+ 
+-import evalcontext
++from . import evalcontext
+ from weberror import errormiddleware, formatter, collector
+ from weberror.util import security
+ from tempita import HTMLTemplate
+@@ -124,7 +124,7 @@ def wsgiapp():
+                 form['environ'] = environ
+                 try:
+                     res = func(*args, **form.mixed())
+-                except ValueError, ve:
++                except ValueError as ve:
+                     status = '500 Server Error'
+                     res = '<html>There was an error: %s</html>' % \
+                         html_quote(ve)
+@@ -150,7 +150,7 @@ def get_debug_info(func):
+         debugcount = req.params['debugcount']
+         try:
+             debugcount = int(debugcount)
+-        except ValueError, e:
++        except ValueError as e:
+             return exc.HTTPBadRequest(
+                 "Invalid value for debugcount (%r): %s"
+                 % (debugcount, e))
+@@ -197,7 +197,7 @@ def get_debug_count(req):
+     elif 'weberror.evalexception.debug_count' in environ:
+         return environ['weberror.evalexception.debug_count']
+     else:
+-        next = debug_counter.next()
++        next = next(debug_counter)
+         environ['weberror.evalexception.debug_count'] = next
+         environ['paste.evalexception.debug_count'] = next
+         return next
+@@ -279,7 +279,7 @@ class EvalException(object):
+             libraries=self.libraries)[0]
+         host = req.GET['host']
+         headers = req.headers
+-        conn = httplib.HTTPConnection(host)
++        conn = http.client.HTTPConnection(host)
+         headers = {'Content-Length':len(long_xml_er), 
+                    'Content-Type':'application/xml'}
+         conn.request("POST", req.GET['path'], long_xml_er, headers=headers)
+@@ -311,7 +311,7 @@ class EvalException(object):
+         """
+         res = Response(content_type='text/x-json')
+         data = [];
+-        items = self.debug_infos.values()
++        items = list(self.debug_infos.values())
+         items.sort(lambda a, b: cmp(a.created, b.created))
+         data = [item.json() for item in items]
+         res.body = repr(data)
+@@ -525,7 +525,7 @@ class DebugInfo(object):
+             if id(frame) == tbid:
+                 return frame
+         else:
+-            raise ValueError, (
++            raise ValueError(
+                 "No frame by id %s found from %r" % (tbid, self.frames))
+ 
+     def wsgi_application(self, environ, start_response):
+@@ -601,7 +601,7 @@ class EvalHTMLFormatter(formatter.HTMLFormatter):
+ 
+ def make_table(items):
+     if hasattr(items, 'items'):
+-        items = items.items()
++        items = list(items.items())
+         items.sort()
+     return table_template.substitute(
+         html_quote=html_quote,
+@@ -641,7 +641,7 @@ def pprint_format(value, safe=False):
+     out = StringIO()
+     try:
+         pprint.pprint(value, out)
+-    except Exception, e:
++    except Exception as e:
+         if safe:
+             out.write('Error: %s' % e)
+         else:
+@@ -781,12 +781,12 @@ def make_eval_exception(app, global_conf, xmlhttp_key=
+         xmlhttp_key = global_conf.get('xmlhttp_key', '_')
+     if reporters is None:
+         reporters = global_conf.get('error_reporters')
+-    if reporters and isinstance(reporters, basestring):
++    if reporters and isinstance(reporters, str):
+         reporter_strings = reporters.split()
+         reporters = []
+         for reporter_string in reporter_strings:
+             reporter = import_string.eval_import(reporter_string)
+-            if isinstance(reporter, (type, types.ClassType)):
++            if isinstance(reporter, type):
+                 reporter = reporter()
+             reporters.append(reporter)
+     return EvalException(app, xmlhttp_key=xmlhttp_key, reporters=reporters)
+--- weberror/formatter.py.orig	2016-04-10 01:43:23 UTC
++++ weberror/formatter.py
+@@ -63,7 +63,7 @@ class AbstractFormatter(object):
+     def format_collected_data(self, exc_data):
+         general_data = {}
+         if self.show_extra_data:
+-            for name, value_list in exc_data.extra_data.items():
++            for name, value_list in list(exc_data.extra_data.items()):
+                 if isinstance(name, tuple):
+                     importance, title = name
+                 else:
+@@ -116,17 +116,17 @@ class AbstractFormatter(object):
+             if res:
+                 lines.append(res)
+         etype = exc_data.exception_type
+-        if not isinstance(etype, basestring):
++        if not isinstance(etype, str):
+             etype = etype.__name__
+         exc_info = self.format_exception_info(
+             etype,
+             exc_data.exception_value)
+         data_by_importance = {'important': [], 'normal': [],
+                               'supplemental': [], 'extra': []}
+-        for (importance, name), value in general_data.items():
++        for (importance, name), value in list(general_data.items()):
+             data_by_importance[importance].append(
+                 (name, value))
+-        for value in data_by_importance.values():
++        for value in list(data_by_importance.values()):
+             value.sort()
+         return self.format_combine(data_by_importance, lines, exc_info)
+ 
+@@ -269,12 +269,12 @@ class TextFormatter(AbstractFormatter):
+                 return '%s: %s' % (title, s)
+         elif isinstance(value, dict):
+             lines = ['\n', title, '-'*len(title)]
+-            items = value.items()
++            items = list(value.items())
+             items.sort()
+             for n, v in items:
+                 try:
+                     v = repr(v)
+-                except Exception, e:
++                except Exception as e:
+                     v = 'Cannot display: %s' % e
+                 v = truncate(v)
+                 lines.append('  %s: %s' % (n, v))
+@@ -346,7 +346,7 @@ class HTMLFormatter(TextFormatter):
+         elif (isinstance(value, (list, tuple))
+               and self.long_item_list(value)):
+             return '%s: <tt>[<br>\n&nbsp; &nbsp; %s]</tt>' % (
+-                title, ',<br>&nbsp; &nbsp; '.join(map(self.quote, map(repr, value))))
++                title, ',<br>&nbsp; &nbsp; '.join(map(self.quote, list(map(repr, value)))))
+         else:
+             return '%s: <tt>%s</tt>' % (title, self.quote(repr(value)))
+ 
+@@ -370,7 +370,7 @@ class HTMLFormatter(TextFormatter):
+ 
+     def zebra_table(self, title, rows, table_class="variables"):
+         if isinstance(rows, dict):
+-            rows = rows.items()
++            rows = list(rows.items())
+             rows.sort()
+         table = ['<table class="%s">' % table_class,
+                  '<tr class="header"><th colspan="2">%s</th></tr>'
+@@ -379,7 +379,7 @@ class HTMLFormatter(TextFormatter):
+         for name, value in rows:
+             try:
+                 value = repr(value)
+-            except Exception, e:
++            except Exception as e:
+                 value = 'Cannot print: %s' % e
+             odd = not odd
+             table.append(
+@@ -423,7 +423,7 @@ def get_libraries(libs=None):
+         return {}
+     
+ def create_text_node(doc, elem, text):
+-    if not isinstance(text, basestring):
++    if not isinstance(text, str):
+         try:
+             text = escaping.removeIllegalChars(repr(text))
+         except:
+@@ -449,7 +449,7 @@ class XMLFormatter(AbstractFormatter):
+         libs = get_libraries(self.extra_kwargs.get('libraries'))
+         if libs:
+             libraries = newdoc.createElement('libraries')
+-            for k, v in libs.iteritems():
++            for k, v in libs.items():
+                 lib = newdoc.createElement('library')
+                 lib.attributes['version'] = v
+                 lib.attributes['name'] = k
+@@ -493,7 +493,7 @@ class XMLFormatter(AbstractFormatter):
+             #     variables.appendChild(variable)
+         
+         etype = exc_data.exception_type
+-        if not isinstance(etype, basestring):
++        if not isinstance(etype, str):
+             etype = etype.__name__
+         
+         top_element.appendChild(self.format_exception_info(
+@@ -677,6 +677,6 @@ def make_pre_wrappable(html, wrap_limit=60,
+     return '\n'.join(lines)
+ 
+ def convert_to_str(s):
+-    if isinstance(s, unicode):
++    if isinstance(s, str):
+         return s.encode('utf8')
+     return s
+--- weberror/pdbcapture.py.orig	2016-04-10 01:43:23 UTC
++++ weberror/pdbcapture.py
+@@ -50,7 +50,7 @@ class PdbCapture(object):
+                 return self.media_app(environ, start_response)
+             resp = self.internal_request(req)
+             return resp(environ, start_response)
+-        id = self.counter.next()
++        id = next(self.counter)
+         state = dict(id=id,
+                      event=threading.Event(),
+                      base_url=req.application_url,
+@@ -66,7 +66,7 @@ class PdbCapture(object):
+             resp = state['response']
+             return resp(environ, start_response)
+         if 'exc_info' in state:
+-            raise state['exc_info'][0], state['exc_info'][1], state['exc_info'][2]
++            raise state['exc_info'][0](state['exc_info'][1]).with_traceback(state['exc_info'][2])
+         self.states[id] = state
+         tmpl = self.get_template('pdbcapture_response.html')
+         body = tmpl.substitute(req=req, state=state, id=id)
+--- weberror/util/security.py.orig	2016-04-10 01:43:23 UTC
++++ weberror/util/security.py
+@@ -21,7 +21,7 @@ else:
+         expected_len = len(expected)
+         result = actual_len ^ expected_len
+         if expected_len > 0:
+-            for i in xrange(actual_len):
++            for i in range(actual_len):
+                 result |= ord(actual[i]) ^ ord(expected[i % expected_len])
+         return result == 0
+ 
+@@ -43,7 +43,7 @@ def valid_csrf_token(secret, token):
+     try:
+         expiry_ts, hashed = token.split(',')
+         expiry_dt = datetime.utcfromtimestamp(int(expiry_ts))
+-    except ValueError, e:
++    except ValueError as e:
+         return False
+ 
+     if expiry_dt < datetime.utcnow():
+--- weberror/util/serial_number_generator.py.orig	2016-04-10 01:43:23 UTC
++++ weberror/util/serial_number_generator.py
+@@ -19,7 +19,7 @@ base = len(good_characters)
+ 
+ def lazy_result(return_type, dummy_initial=None):
+     """Decorator to allow for on-demand evaluation (limited scope of use!)"""
+-    if not issubclass(return_type, basestring):
++    if not issubclass(return_type, str):
+         raise NotImplementedError
+ 
+     class _lazy_class(return_type):
+@@ -54,7 +54,7 @@ def make_identifier(number):
+     """
+     Encodes a number as an identifier.
+     """
+-    if not isinstance(number, (int, long)):
++    if not isinstance(number, int):
+         raise ValueError(
+             "You can only make identifiers out of integers (not %r)"
+             % number)
+@@ -90,10 +90,10 @@ def hash_identifier(s, length, pad=True, hasher=md5, p
+         # Accept sha/md5 modules as well as callables
+         hasher = hasher.new
+     if length > 26 and hasher is md5:
+-        raise ValueError, (
++        raise ValueError(
+             "md5 cannot create hashes longer than 26 characters in "
+             "length (you gave %s)" % length)
+-    if isinstance(s, unicode):
++    if isinstance(s, str):
+         s = s.encode('utf-8')
+     h = hasher(str(s))
+     bin_hash = h.digest()

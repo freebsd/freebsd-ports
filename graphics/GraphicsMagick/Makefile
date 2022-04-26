@@ -1,7 +1,8 @@
 # Created by: Ron van Daal
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.37
+PORTVERSION=	1.3.38
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
@@ -25,8 +26,10 @@ USE_LDCONFIG=	yes
 # Use fonts installed by x11-fonts/webfonts by default
 WINDOWS_FONT_DIR?=	${LOCALBASE}/share/fonts/webfonts
 
-OPTIONS_DEFINE=	BZIP2 DOCS FPX FREETYPE JASPER JBIG JPEG LCMS2 LZMA OPENMP Q8BIT PNG SSE TEST TIFF UMEM WEBP WMF X11 XML ZLIB ZSTD
+OPTIONS_DEFINE=	BZIP2 DOCS FPX FREETYPE HEIF JASPER JBIG JPEG JXL LCMS2 LZMA OPENMP Q8BIT PNG SSE TEST TIFF UMEM WEBP WMF X11 XML ZLIB ZSTD
 OPTIONS_DEFAULT=BZIP2 FREETYPE JASPER JBIG JPEG LCMS2 LZMA OPENMP PNG TIFF WEBP WMF X11 XML ZLIB
+HEIF_DESC=	HEIF support via libheif library
+JXL_DESC=	JPEG XL image format via libjxl (BROKEN now)
 Q8BIT_DESC=	Use 8-bit pixels (speed) instead of 16-bit (quality)
 UMEM_DESC=	UMEM memory allocation library support
 TEST_DESC=	Run bundled self-tests after build
@@ -36,12 +39,17 @@ FPX_CONFIGURE_WITH=	fpx
 FPX_LIB_DEPENDS=	libfpx.so:graphics/libfpx
 FREETYPE_CONFIGURE_WITH=ttf
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
+HEIF_CONFIGURE_WITH=	heif
+HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
 JASPER_CONFIGURE_WITH=	jp2
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 JBIG_CONFIGURE_WITH=	jbig
 JBIG_LIB_DEPENDS=	libjbig.so:graphics/jbigkit
 JPEG_CONFIGURE_WITH=	jpeg
 JPEG_USES=		jpeg
+JXL_CONFIGURE_WITH=	jxl
+JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
+JXL_BROKEN=		does not build: use of undeclared identifier 'JxlEncoderFrameSettings'
 LCMS2_CONFIGURE_WITH=	lcms2
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 LZMA_CONFIGURE_WITH=	lzma
@@ -75,7 +83,7 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMP}
-.if ${ARCH} != aarch64 && ${ARCH} != amd64 && ${ARCH} != powerpc64 && ${ARCH} != powerpc64le
+.if ${ARCH} != aarch64 && ${ARCH} != amd64 && ${ARCH} != powerpc64 && ${ARCH} != powerpc64le && ${ARCH} != riscv64
 USES+=		compiler:gcc-c++11-lib
 .endif
 .endif

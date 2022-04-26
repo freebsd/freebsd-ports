@@ -1,13 +1,13 @@
 bin/zanshin
 bin/zanshin-migrator
+%%QT_PLUGINDIR%%/kontact5/kontact_zanshinplugin.so
 %%QT_PLUGINDIR%%/krunner_zanshin.so
 %%QT_PLUGINDIR%%/zanshin_part.so
-%%QT_PLUGINDIR%%/kontact5/kontact_zanshinplugin.so
 share/applications/org.kde.zanshin.desktop
-share/icons/hicolor/128x128/apps/zanshin.png
-share/icons/hicolor/256x256/apps/zanshin.png
 share/icons/hicolor/48x48/apps/zanshin.png
 share/icons/hicolor/64x64/apps/zanshin.png
+share/icons/hicolor/128x128/apps/zanshin.png
+share/icons/hicolor/256x256/apps/zanshin.png
 share/icons/hicolor/scalable/apps/zanshin.svgz
 share/kservices5/kontact/zanshin_plugin.desktop
 share/kservices5/plasma-runner-zanshin.desktop

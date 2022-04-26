@@ -1,13 +1,10 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gnome-settings-daemon
-PORTVERSION=	3.38.2
+PORTVERSION=	42.1
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	28e28e9e5983.patch:-p1 # meson >= 0.60
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 settings daemon
@@ -15,42 +12,44 @@ COMMENT=	GNOME 3 settings daemon
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
-		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
-		libpolkit-gobject-1.so:sysutils/polkit \
-		libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libcanberra.so:audio/libcanberra \
 		libcolord.so:graphics/colord \
-		liblcms2.so:graphics/lcms2 \
-		libpulse.so:audio/pulseaudio \
-		libnotify.so:devel/libnotify \
-		libgeoclue-2.so:net/geoclue \
-		libupower-glib.so:sysutils/upower \
-		libgeocode-glib.so:net/geocode-glib \
-		libgweather-3.so:net/libgweather \
 		libcups.so:print/cups \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libgeoclue-2.so:net/geoclue \
+		libgeocode-glib.so:net/geocode-glib \
+		libgweather-4.so:net/libgweather4 \
+		liblcms2.so:graphics/lcms2 \
+		libnotify.so:devel/libnotify \
+		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
-		libnspr4.so:devel/nspr
+		libpolkit-gobject-1.so:sysutils/polkit \
+		libpulse.so:audio/pulseaudio \
+		libupower-glib.so:sysutils/upower
 
 PORTSCOUT=	limitw:1,even
 
 USE_XORG=	x11 xext xi xtst
 USE_GNOME=	cairo gnomedesktop3 gtk30
-USES=		gettext gnome localbase:ldflags meson perl5 \
-		pkgconfig python:3.6+,build tar:xz xorg
+USES=		gettext gnome localbase:ldflags meson perl5 pkgconfig \
+		python:3.6+,build tar:xz xorg
 USE_PERL5=	build
 #		-Dnssdb_dir=${LOCALBASE}/share/certs/ca-root-nss.crt
-MESON_ARGS=	-Dnssdb_dir=${LOCALBASE}/share/certs/ \
-		-Dalsa=false \
-		-Drfkill=false \
-		-Dnetwork_manager=false \
-		-Dsystemd=false \
-		-Dwwan=false \
+MESON_ARGS=	-Dalsa=false \
+		-Dcolord=false \
 		-Dcups=true \
-		-Dsmartcard=true
+		-Dnetwork_manager=false \
+		-Dnssdb_dir=${LOCALBASE}/share/certs/ \
+		-Drfkill=false \
+		-Dsmartcard=true \
+		-Dsystemd=false \
+		-Dwwan=false
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 # wayland doesn't build yet, undefined symbol
-MESON_ARGS+=	-Dwayland=false -Dgudev=false
+MESON_ARGS+=	-Dgudev=false \
+		-Dwayland=false
 #WAYLAND_MESON_TRUE=	wayland gudev
 #WAYLAND_LIB_DEPENDS=	libgudev-1.0.so:devel/libgudev \
 #			libwayland-client.so:graphics/wayland

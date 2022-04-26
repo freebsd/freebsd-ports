@@ -22,6 +22,7 @@ man/man7/jira-man.7.gz
 man/man7/jira-me.7.gz
 man/man7/jira-open.7.gz
 man/man7/jira-project.7.gz
+man/man7/jira-sprint-add.7.gz
 man/man7/jira-sprint-list.7.gz
 man/man7/jira-sprint.7.gz
 man/man7/jira-version.7.gz

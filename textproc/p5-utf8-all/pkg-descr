@@ -1,0 +1,8 @@
+The use utf8 pragma tells the Perl parser to allow UTF-8 in the
+program text in the current lexical scope. This also means that
+you can now use literal Unicode characters as part of strings,
+variable names, and regular expressions.
+
+utf8::all goes further.
+
+WWW: https://metacpan.org/release/utf8-all

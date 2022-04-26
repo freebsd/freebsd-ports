@@ -1,4 +1,4 @@
---- ext/mysql_api/mysql.c.orig	2020-05-29 23:08:40 UTC
+--- ext/mysql_api/mysql.c.orig	2022-03-10 04:04:50 UTC
 +++ ext/mysql_api/mysql.c
 @@ -273,7 +273,10 @@ static VALUE real_connect(int argc, VALUE* argv, VALUE
      rb_thread_start_timer();
@@ -22,6 +22,21 @@
      GetMysqlStruct(obj)->connection = Qtrue;
  
      return obj;
+@@ -875,12 +881,12 @@ static VALUE stmt_init(VALUE obj)
+     MYSQL *m = GetHandler(obj);
+     MYSQL_STMT *s;
+     struct mysql_stmt* stmt;
+-    my_bool true = 1;
++    my_bool mytrue = 1;
+     VALUE st_obj;
+ 
+     if ((s = mysql_stmt_init(m)) == NULL)
+ 	mysql_raise(m);
+-    if (mysql_stmt_attr_set(s, STMT_ATTR_UPDATE_MAX_LENGTH, &true))
++    if (mysql_stmt_attr_set(s, STMT_ATTR_UPDATE_MAX_LENGTH, &mytrue))
+ 	rb_raise(rb_eArgError, "mysql_stmt_attr_set() failed");
+     st_obj = Data_Make_Struct(cMysqlStmt, struct mysql_stmt, 0, free_mysqlstmt, stmt);
+     memset(stmt, 0, sizeof(*stmt));
 @@ -917,13 +923,21 @@ static VALUE query_with_result_set(VALUE obj, VALUE fl
  /*	reconnect()	*/
  static VALUE reconnect(VALUE obj)

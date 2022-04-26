@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/common/chrome_paths.cc.orig	2022-03-25 21:59:56 UTC
 +++ chrome/common/chrome_paths.cc
 @@ -44,14 +44,14 @@
  
@@ -27,7 +27,7 @@
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
-@@ -411,10 +411,12 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -407,10 +407,12 @@ bool PathProvider(int key, base::FilePath* result) {
        if (!base::PathExists(cur))  // We don't want to create this
          return false;
        break;
@@ -41,7 +41,7 @@
  #else
        cur = base::FilePath(FILE_PATH_LITERAL("/etc/chromium/policies"));
  #endif
-@@ -426,7 +428,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -422,7 +424,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                              \
      ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
       BUILDFLAG(CHROMIUM_BRANDING)) ||                          \
@@ -50,7 +50,7 @@
      case chrome::DIR_USER_EXTERNAL_EXTENSIONS: {
        if (!base::PathService::Get(chrome::DIR_USER_DATA, &cur))
          return false;
-@@ -434,7 +436,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -430,7 +432,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
      }
  #endif
@@ -59,7 +59,7 @@
      case chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS: {
        cur = base::FilePath(kFilepathSinglePrefExtensions);
        break;
-@@ -479,7 +481,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -475,7 +477,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
  #endif
  
@@ -68,7 +68,7 @@
      case chrome::DIR_NATIVE_MESSAGING:
  #if BUILDFLAG(IS_MAC)
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-@@ -493,6 +495,9 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -489,6 +491,9 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(FILE_PATH_LITERAL(
            "/etc/opt/chrome/native-messaging-hosts"));

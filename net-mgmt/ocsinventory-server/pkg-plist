@@ -61,6 +61,9 @@
 %%DATADIR%%/Api/Ocsinventory/Restapi/Computer/Get/Computers.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Computer/Get/ComputersListId.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Computer/Get/ComputersSearch.pm
+%%DATADIR%%/Api/Ocsinventory/Restapi/Cve/Get/CveComputer.pm
+%%DATADIR%%/Api/Ocsinventory/Restapi/Cve/Get/CveCvss.pm
+%%DATADIR%%/Api/Ocsinventory/Restapi/Cve/Get/CveSoftware.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Ipdiscover/Get/Ipdiscover.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Ipdiscover/Get/IpdiscoverNetwork.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Ipdiscover/Get/IpdiscoverTag.pm
@@ -70,6 +73,7 @@
 %%DATADIR%%/Api/Ocsinventory/Restapi/Snmp/Get/SnmpId.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Snmp/Get/SnmpIdField.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Snmp/Get/SnmpListId.pm
+%%DATADIR%%/Api/Ocsinventory/Restapi/Software/Get/Softwares.pm
 %%DATADIR%%/binutils/create-release-tarball.sh
 %%DATADIR%%/binutils/docker-download.sh
 %%DATADIR%%/binutils/ipdiscover-util.README

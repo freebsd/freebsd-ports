@@ -147,20 +147,20 @@ _WX_LIB_wx_3.1=		wx_baseu-3.1
 # Set _WX_SHVER_comp_ver to 0 and _WX_FILE_comp_ver for libs appropriately.
 # Set _WX_DEPTYPE_comp_ver for "python" to "run", and others to "lib".
 
-.	for comp in ${_WX_COMPS_ALL}
+.  for comp in ${_WX_COMPS_ALL}
 _WX_COMP=		${comp}
-.		for ver in ${_WX_VERS_ALL}
-.			if defined(_WX_LIB_${comp}_${ver})
+.    for ver in ${_WX_VERS_ALL}
+.      if defined(_WX_LIB_${comp}_${ver})
 _WX_SHVER_${comp}_${ver}=	0
 _WX_FILE_${comp}_${ver}=	${LOCALBASE}/lib/lib${_WX_LIB_${comp}_${ver}}.so.${_WX_SHVER_${comp}_${ver}}
-.			endif
-.			if ${_WX_COMP} == "python"
+.      endif
+.      if ${_WX_COMP} == "python"
 _WX_DEPTYPE_${comp}_${ver}=	run
-.			else
+.      else
 _WX_DEPTYPE_${comp}_${ver}=	lib
-.			endif
-.		endfor
-.	endfor
+.      endif
+.    endfor
+.  endfor
 .endif		# !_WX_Defined_Done
 
 #
@@ -200,33 +200,33 @@ _WX_PYSUFX=		-unicode
 # Fill _HAVE_WX with the installed components.
 
 .	undef _HAVE_WX
-.	for __WANT_WX in ${_WANT_WX}
+.  for __WANT_WX in ${_WANT_WX}
 # Check if _WANT_WX contains more than one word.
-.		if defined(_HAVE_WX)
+.    if defined(_HAVE_WX)
 IGNORE?=		selected multiple values for WANT_WX: ${_WANT_WX}
-.		endif
+.    endif
 _HAVE_WX=		#
 # Check for all versions.
-.		if ${_WANT_WX:tl} == "yes"
-.			for comp in ${_WX_COMPS_ALL}
-.				for ver in ${_WX_VER_FINAL}
+.    if ${_WANT_WX:tl} == "yes"
+.      for comp in ${_WX_COMPS_ALL}
+.        for ver in ${_WX_VER_FINAL}
 _WX_COMP=		_WX_FILE_${comp}_${ver}
-.					if defined(${_WX_COMP}) && exists(${${_WX_COMP}})
+.          if defined(${_WX_COMP}) && exists(${${_WX_COMP}})
 _HAVE_WX+=		${comp}-${ver}
-.					endif
-.				endfor
-.			endfor
+.          endif
+.        endfor
+.      endfor
 # Check for a specific version.
-.		elif ${_WX_VERS_ALL:M${__WANT_WX}}
-.			for comp in ${_WX_COMPS_ALL}
-.				if exists(${_WX_FILE_${comp}_${__WANT_WX}})
+.    elif ${_WX_VERS_ALL:M${__WANT_WX}}
+.      for comp in ${_WX_COMPS_ALL}
+.        if exists(${_WX_FILE_${comp}_${__WANT_WX}})
 _HAVE_WX+=		${comp}
-.				endif
-.			endfor
-.		else
+.        endif
+.      endfor
+.    else
 IGNORE?=		selected an invalid value for WANT_WX: ${__WANT_WX}
-.		endif
-.	endfor
+.    endif
+.  endfor
 .endif		# _WANT_WX
 
 # Requested by the user.
@@ -259,19 +259,19 @@ _WX_Version_Done=	yes
 # Detect duplicated components.
 
 _WX_COMPS_FINAL=	#
-.for comp in ${WX_COMPS}
+.  for comp in ${WX_COMPS}
 _WX_COMP=		${comp:C/:([[:alpha:]]+)$//}
-.	for __WX_COMP in ${_WX_COMP}
-.		if ${_WX_COMPS_ALL:M${__WX_COMP}} == ""
+.    for __WX_COMP in ${_WX_COMP}
+.      if ${_WX_COMPS_ALL:M${__WX_COMP}} == ""
 IGNORE?=		selected an invalid wxWidgets component: ${__WX_COMP}
-.		endif
-.	endfor
-.	for newcomp in ${_WX_COMP}
-.		if ${_WX_COMPS_FINAL:M${newcomp}} == "" && !defined(IGNORE)
+.      endif
+.    endfor
+.    for newcomp in ${_WX_COMP}
+.      if ${_WX_COMPS_FINAL:M${newcomp}} == "" && !defined(IGNORE)
 _WX_COMPS_FINAL+=	${newcomp}
-.		endif
-.	endfor
-.endfor
+.      endif
+.    endfor
+.  endfor
 
 # Set defaults (if one isn't present).
 
@@ -290,69 +290,69 @@ USE_WX_NOT?=		#
 # _WX_VER_MERGED	- List of requested version without disallowed ones.
 #
 
-.for list in VER VER_NOT
+.  for list in VER VER_NOT
 _WX_${list}_LIST=	#
-.	for ver in ${USE_WX${list:C/VER//}}
+.    for ver in ${USE_WX${list:C/VER//}}
 _WX_VER_CHECK:=		${ver:C/^([[:digit:]]+(\.[[:digit:]]+)*)$/\1-\1/}
 _WX_VER_MIN:=		${_WX_VER_CHECK:C/([[:digit:]]+(\.[[:digit:]]+)*)[-+].*/\1/}
 _WX_VER_MAX:=		${_WX_VER_CHECK:C/.*-([[:digit:]]+(\.[[:digit:]]+)*)/\1/}
 # Minimum version not specified.
-.		if ${_WX_VER_MIN} == ${_WX_VER_CHECK}
+.      if ${_WX_VER_MIN} == ${_WX_VER_CHECK}
 .			undef _WX_VER_MIN
-.			for v in ${_WX_VERS_ALL}
-.				if ${_WX_VER_CHECK:C/[-+]//} == ${v} || ${_WX_VERS_SKIP:M${v}} == ""
+.        for v in ${_WX_VERS_ALL}
+.          if ${_WX_VER_CHECK:C/[-+]//} == ${v} || ${_WX_VERS_SKIP:M${v}} == ""
 _WX_VER_MIN?=		${v}
-.				endif
-.			endfor
-.		endif
+.          endif
+.        endfor
+.      endif
 # Maximum version not specified.
-.		if ${_WX_VER_MAX} == ${_WX_VER_CHECK}
-.			for v in ${_WX_VERS_ALL}
-.				if ${_WX_VER_CHECK:C/[-+]//} == ${v} || ${_WX_VERS_SKIP:M${v}} == ""
+.      if ${_WX_VER_MAX} == ${_WX_VER_CHECK}
+.        for v in ${_WX_VERS_ALL}
+.          if ${_WX_VER_CHECK:C/[-+]//} == ${v} || ${_WX_VERS_SKIP:M${v}} == ""
 _WX_VER_MAX=		${v}
-.				endif
-.			endfor
-.		endif
+.          endif
+.        endfor
+.      endif
 # Expand versions and add valid ones to each list.
-.		for v in ${_WX_VERS_ALL}
-.			if ${_WX_VER_MIN} <= ${v} && ${_WX_VER_MAX} >= ${v} && \
+.      for v in ${_WX_VERS_ALL}
+.        if ${_WX_VER_MIN} <= ${v} && ${_WX_VER_MAX} >= ${v} && \
 			   ${_WX_${list}_LIST:M${v}} == ""
 _WX_${list}_LIST+=	${v}
-.			endif
-.		endfor
-.	endfor
-.endfor
+.        endif
+.      endfor
+.    endfor
+.  endfor
 
 # Merge the lists into a single list of valid versions.
 
 _WX_VER_MERGED=		#
-.for ver in ${_WX_VER_LIST}
-.	if ${_WX_VER_NOT_LIST:M${ver}} == ""
+.  for ver in ${_WX_VER_LIST}
+.    if ${_WX_VER_NOT_LIST:M${ver}} == ""
 _WX_VER_MERGED+=	${ver}
-.	endif
-.endfor
+.    endif
+.  endfor
 
 # Check for a null version.
 
-.if empty(_WX_VER_MERGED)
+.  if empty(_WX_VER_MERGED)
 IGNORE?=		selected a null or invalid wxWidgets version
-.endif
+.  endif
 
 # Avoid versions which have unavailable components.
 
-.for ver in ${_WX_VER_MERGED}
-.	for comp in ${_WX_COMPS_FINAL}
-.		if !defined(_WX_PORT_${comp}_${ver})
+.  for ver in ${_WX_VER_MERGED}
+.    for comp in ${_WX_COMPS_FINAL}
+.      if !defined(_WX_PORT_${comp}_${ver})
 _WX_WRONG_COMPS+=	${comp}
 _WX_WRONG_VERS+=	${ver}
 _WX_VER_MERGED:=	${_WX_VER_MERGED:N${ver}}
-.		endif
-.	endfor
-.endfor
+.      endif
+.    endfor
+.  endfor
 
-.if empty(_WX_VER_MERGED)
+.  if empty(_WX_VER_MERGED)
 IGNORE?=		selected wxWidgets versions (${_WX_WRONG_VERS}) which do not have the selected components (${_WX_WRONG_COMPS})
-.endif
+.  endif
 
 #
 # Unicode support.
@@ -361,11 +361,11 @@ IGNORE?=		selected wxWidgets versions (${_WX_WRONG_VERS}) which do not have the 
 # Create a list of capable versions.
 
 _WX_VER_UC=		#
-.for ver in ${_WX_VER_MERGED}
-.	if ${_WX_VERS_UC_ALL:M${ver}} != ""
+.  for ver in ${_WX_VER_MERGED}
+.    if ${_WX_VERS_UC_ALL:M${ver}} != ""
 _WX_VER_UC+=		${ver}
-.	endif
-.endfor
+.    endif
+.  endfor
 
 # Set Unicode variables.
 
@@ -375,11 +375,11 @@ _WX_PYSUFX=		-unicode
 
 # Remove unusable installed versions.
 
-.for ver in ${_WX_VER_INSTALLED}
-.	if ${_WX_VER_FINAL:M${ver}} == ""
+.  for ver in ${_WX_VER_INSTALLED}
+.    if ${_WX_VER_FINAL:M${ver}} == ""
 _WX_VER_INSTALLED:=	${_WX_VER_INSTALLED:N${ver}}
-.	endif
-.endfor
+.    endif
+.  endfor
 
 #
 # Choose final version.
@@ -393,28 +393,28 @@ _WX_VER_INSTALLED:=	${_WX_VER_INSTALLED:N${ver}}
 # 4) _WX_VER_FINAL	- Available versions.
 
 
-.for list in _WX_VER_FINAL ${_WX_VERS_LISTS}
-.	if defined(${list})
-.		for ver in ${${list}}
-.			if ${_WX_VER_FINAL:M${ver}} != ""
+.  for list in _WX_VER_FINAL ${_WX_VERS_LISTS}
+.    if defined(${list})
+.      for ver in ${${list}}
+.        if ${_WX_VER_FINAL:M${ver}} != ""
 _WX_VER=		${ver}
-.			endif
-.		endfor
-.	endif
-.endfor
+.        endif
+.      endfor
+.    endif
+.  endfor
 
 #
 # Set variables.
 #
 
-.if ${_WX_VER} == 3.1
+.  if ${_WX_VER} == 3.1
 _GTKVER=	3
-.elif ${_WX_VER} == 3.0
+.  elif ${_WX_VER} == 3.0
 _GTKVER=	${WANT_WXGTK_VER:U3}
 _GTKFLAVOR=	gtk${_GTKVER}
-.else
+.  else
 _GTKVER=	2
-.endif
+.  endif
 
 WX_CONFIG?=		${LOCALBASE}/bin/wxgtk${_GTKVER}${_WX_UC}-${_WX_VER}-config
 WXRC_CMD?=		${LOCALBASE}/bin/wxrc-gtk${_GTKVER}${_WX_UC}-${_WX_VER}
@@ -445,33 +445,33 @@ WX_COMPS?=		wx
 # Detect invalid and duplicated components.
 
 _WX_COMPS_FINAL=	#
-.for comp in ${WX_COMPS}
+.  for comp in ${WX_COMPS}
 _WX_COMP=		${comp:C/:([[:alpha:]]+)$//}
-.	if ${_WX_COMP} == ${comp}
+.    if ${_WX_COMP} == ${comp}
 _WX_DEP_TYPE=		${_WX_DEPTYPE_${comp}_${_WX_VER}}
-.	else
+.    else
 _WX_DEP_TYPE=		${comp:C/.+:([[:alpha:]]+)$/\1/}
-.	endif
+.    endif
 _WX_COMP_NEW=		${_WX_COMP}_${_WX_DEP_TYPE}
-.	for __WX_COMP in ${_WX_COMP}
-.		if ${_WX_COMPS_ALL:M${__WX_COMP}} == ""
+.    for __WX_COMP in ${_WX_COMP}
+.      if ${_WX_COMPS_ALL:M${__WX_COMP}} == ""
 IGNORE?=		selected an invalid wxWidgets component: ${__WX_COMP}
-.		endif
-.	endfor
-.	for __WX_DEP_TYPE in ${_WX_DEP_TYPE}
-.		if ${_WX_DEP_TYPES_ALL:M${__WX_DEP_TYPE}} == ""
+.      endif
+.    endfor
+.    for __WX_DEP_TYPE in ${_WX_DEP_TYPE}
+.      if ${_WX_DEP_TYPES_ALL:M${__WX_DEP_TYPE}} == ""
 IGNORE?=		selected an invalid wxWidgets dependency type: ${__WX_DEP_TYPE}
-.		endif
-.	endfor
-.	if !defined(_WX_PORT_${_WX_COMP}_${_WX_VER})
+.      endif
+.    endfor
+.    if !defined(_WX_PORT_${_WX_COMP}_${_WX_VER})
 IGNORE?=		selected a wxWidgets component (${_WX_COMP}) which is not available for the selected version (${_WX_VER})
-.	endif
-.	for newcomp in ${_WX_COMP_NEW}
-.		if ${_WX_COMPS_FINAL:M${newcomp}} == "" && !defined(IGNORE)
+.    endif
+.    for newcomp in ${_WX_COMP_NEW}
+.      if ${_WX_COMPS_FINAL:M${newcomp}} == "" && !defined(IGNORE)
 _WX_COMPS_FINAL+=	${newcomp}
-.		endif
-.	endfor
-.endfor
+.      endif
+.    endfor
+.  endfor
 
 # Add dependencies.
 #
@@ -479,23 +479,23 @@ _WX_COMPS_FINAL+=	${newcomp}
 # _WX_COMP		- Component part.
 # _WX_DEP_TYPE		- Dependency type part.
 
-.for comp in ${_WX_COMPS_FINAL}
+.  for comp in ${_WX_COMPS_FINAL}
 _WX_COMP=		${comp:C/_([[:alpha:]]+)$//}
 _WX_DEP_TYPE=		${comp:C/.+_([[:alpha:]]+)$/\1/}
 # XXX Need a .for loop here so the variable is expanded before the assignment.
-.	for comp_part in ${_WX_COMP}
-.		if ${_WX_DEP_TYPE} == "lib"
-.			if defined(_WX_LIB_${_WX_COMP}_${_WX_VER})
+.    for comp_part in ${_WX_COMP}
+.      if ${_WX_DEP_TYPE} == "lib"
+.        if defined(_WX_LIB_${_WX_COMP}_${_WX_VER})
 LIB_DEPENDS+=		lib${_WX_LIB_${comp_part}_${_WX_VER}}.so:${_WX_PORT_${comp_part}_${_WX_VER}}
-.			else
+.        else
 BUILD_DEPENDS+=		${_WX_FILE_${comp_part}_${_WX_VER}}:${_WX_PORT_${comp_part}_${_WX_VER}}
 RUN_DEPENDS+=		${_WX_FILE_${comp_part}_${_WX_VER}}:${_WX_PORT_${comp_part}_${_WX_VER}}
-.			endif
-.		else
+.        endif
+.      else
 ${_WX_DEP_TYPE:tu}_DEPENDS+=	${_WX_FILE_${comp_part}_${_WX_VER}}:${_WX_PORT_${comp_part}_${_WX_VER}}
-.		endif
-.	endfor
-.endfor
+.      endif
+.    endfor
+.  endfor
 
 #
 # Set build related variables.
@@ -504,15 +504,15 @@ ${_WX_DEP_TYPE:tu}_DEPENDS+=	${_WX_FILE_${comp_part}_${_WX_VER}}:${_WX_PORT_${co
 MAKE_ENV+=		WX_CONFIG=${WX_CONFIG}
 CONFIGURE_ENV+=		WX_CONFIG=${WX_CONFIG}
 
-.if defined(WX_CONF_ARGS)
-.	if ${WX_CONF_ARGS:tl} == "absolute"
+.  if defined(WX_CONF_ARGS)
+.    if ${WX_CONF_ARGS:tl} == "absolute"
 CONFIGURE_ARGS+=	--with-wx-config=${WX_CONFIG}
-.	elif ${WX_CONF_ARGS:tl} == "relative"
+.    elif ${WX_CONF_ARGS:tl} == "relative"
 CONFIGURE_ARGS+=	--with-wx=${LOCALBASE} \
 			--with-wx-config=${WX_CONFIG:T}
-.	else
+.    else
 IGNORE?=		selected an invalid wxWidgets configure argument type: ${WX_CONF_ARGS}
-.	endif
-.endif
+.    endif
+.  endif
 
 .endif		# _POSTMKINCLUDED

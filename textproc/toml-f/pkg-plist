@@ -31,5 +31,5 @@ lib/cmake/toml-f/toml-f-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/toml-f/toml-f-targets.cmake
 lib/libtoml-f.so
 lib/libtoml-f.so.0
-lib/libtoml-f.so.0.2.2
+lib/libtoml-f.so.0.2.3
 libdata/pkgconfig/toml-f.pc

@@ -1,5 +1,5 @@
 PORTNAME=	stagit
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	www
 MASTER_SITES=	https://codemadness.org/releases/stagit/
 

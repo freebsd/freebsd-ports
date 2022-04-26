@@ -759,6 +759,7 @@
 %%WWWDIR%%/go/modules/business/business/language/en.php
 %%WWWDIR%%/go/modules/business/business/language/it.php
 %%WWWDIR%%/go/modules/business/business/language/nl.php
+%%WWWDIR%%/go/modules/business/business/language/pt_br.php
 %%WWWDIR%%/go/modules/business/business/language/pt_pt.php
 %%WWWDIR%%/go/modules/business/business/model/Activity.php
 %%WWWDIR%%/go/modules/business/business/model/ActivityBudget.php
@@ -787,6 +788,7 @@
 %%WWWDIR%%/go/modules/business/fileconverter/Module.php
 %%WWWDIR%%/go/modules/business/fileconverter/composer.json
 %%WWWDIR%%/go/modules/business/fileconverter/composer.lock
+%%WWWDIR%%/go/modules/business/fileconverter/language/de.php
 %%WWWDIR%%/go/modules/business/fileconverter/model/Settings.php
 %%WWWDIR%%/go/modules/business/fileconverter/service/Convertio.php
 %%WWWDIR%%/go/modules/business/fileconverter/service/IService.php
@@ -841,6 +843,7 @@
 %%WWWDIR%%/go/modules/business/newsletters/install/uninstall.sql
 %%WWWDIR%%/go/modules/business/newsletters/install/updates.php
 %%WWWDIR%%/go/modules/business/newsletters/language/bg.php
+%%WWWDIR%%/go/modules/business/newsletters/language/cn.php
 %%WWWDIR%%/go/modules/business/newsletters/language/cs.php
 %%WWWDIR%%/go/modules/business/newsletters/language/de.php
 %%WWWDIR%%/go/modules/business/newsletters/language/en.php
@@ -881,6 +884,7 @@
 %%WWWDIR%%/go/modules/business/onlyoffice/filehandler/Onlyoffice.php
 %%WWWDIR%%/go/modules/business/onlyoffice/icon.png
 %%WWWDIR%%/go/modules/business/onlyoffice/install/updates.php
+%%WWWDIR%%/go/modules/business/onlyoffice/language/cn.php
 %%WWWDIR%%/go/modules/business/onlyoffice/language/de.php
 %%WWWDIR%%/go/modules/business/onlyoffice/language/en.php
 %%WWWDIR%%/go/modules/business/onlyoffice/language/mn.php
@@ -908,6 +912,7 @@
 %%WWWDIR%%/go/modules/business/studio/install/uninstall.sql
 %%WWWDIR%%/go/modules/business/studio/install/updates.php
 %%WWWDIR%%/go/modules/business/studio/language/bg.php
+%%WWWDIR%%/go/modules/business/studio/language/cn.php
 %%WWWDIR%%/go/modules/business/studio/language/de.php
 %%WWWDIR%%/go/modules/business/studio/language/en.php
 %%WWWDIR%%/go/modules/business/studio/language/it.php
@@ -1005,6 +1010,7 @@
 %%WWWDIR%%/go/modules/community/addressbook/install/updates.php
 %%WWWDIR%%/go/modules/community/addressbook/install/upgrade.sql
 %%WWWDIR%%/go/modules/community/addressbook/language/bg.php
+%%WWWDIR%%/go/modules/community/addressbook/language/cn.php
 %%WWWDIR%%/go/modules/community/addressbook/language/cs.php
 %%WWWDIR%%/go/modules/community/addressbook/language/de.php
 %%WWWDIR%%/go/modules/community/addressbook/language/en.php
@@ -1067,7 +1073,9 @@
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/Dark/style.css
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/resources/addressbook.png
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/resources/facebook.png
+%%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/resources/instagram.png
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/resources/linkedin.png
+%%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/resources/tiktok.png
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/resources/twitter.png
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/src/_addressbook.scss
 %%WWWDIR%%/go/modules/community/addressbook/views/extjs3/themes/default/src/style.scss
@@ -1109,6 +1117,7 @@
 %%WWWDIR%%/go/modules/community/bookmarks/language/bg.php
 %%WWWDIR%%/go/modules/community/bookmarks/language/bn_bd.php
 %%WWWDIR%%/go/modules/community/bookmarks/language/ca.php
+%%WWWDIR%%/go/modules/community/bookmarks/language/cn.php
 %%WWWDIR%%/go/modules/community/bookmarks/language/cs.php
 %%WWWDIR%%/go/modules/community/bookmarks/language/de.php
 %%WWWDIR%%/go/modules/community/bookmarks/language/en.php
@@ -1157,6 +1166,7 @@
 %%WWWDIR%%/go/modules/community/comments/install/install.sql
 %%WWWDIR%%/go/modules/community/comments/install/uninstall.sql
 %%WWWDIR%%/go/modules/community/comments/install/updates.php
+%%WWWDIR%%/go/modules/community/comments/language/cn.php
 %%WWWDIR%%/go/modules/community/comments/language/cs.php
 %%WWWDIR%%/go/modules/community/comments/language/de.php
 %%WWWDIR%%/go/modules/community/comments/language/en.php
@@ -1200,6 +1210,7 @@
 %%WWWDIR%%/go/modules/community/dokuwiki/INSTALL.TXT
 %%WWWDIR%%/go/modules/community/dokuwiki/Module.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/bg.php
+%%WWWDIR%%/go/modules/community/dokuwiki/language/cn.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/de.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/en.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/fr.php
@@ -1450,6 +1461,7 @@
 %%WWWDIR%%/go/modules/community/multi_instance/install/install.sql
 %%WWWDIR%%/go/modules/community/multi_instance/install/uninstall.sql
 %%WWWDIR%%/go/modules/community/multi_instance/install/updates.php
+%%WWWDIR%%/go/modules/community/multi_instance/language/cn.php
 %%WWWDIR%%/go/modules/community/multi_instance/language/cs.php
 %%WWWDIR%%/go/modules/community/multi_instance/language/de.php
 %%WWWDIR%%/go/modules/community/multi_instance/language/en.php
@@ -1530,6 +1542,7 @@
 %%WWWDIR%%/go/modules/community/notes/views/extjs3/themes/default/style.css
 %%WWWDIR%%/go/modules/community/notesencrypt/Module.php
 %%WWWDIR%%/go/modules/community/notesencrypt/language/bg.php
+%%WWWDIR%%/go/modules/community/notesencrypt/language/cn.php
 %%WWWDIR%%/go/modules/community/notesencrypt/language/de.php
 %%WWWDIR%%/go/modules/community/notesencrypt/language/en.php
 %%WWWDIR%%/go/modules/community/notesencrypt/language/fr.php
@@ -1712,6 +1725,7 @@
 %%WWWDIR%%/modules/assistant/filehandler/Assistant.php
 %%WWWDIR%%/modules/assistant/install/install.sql
 %%WWWDIR%%/modules/assistant/language/bg.php
+%%WWWDIR%%/modules/assistant/language/cn.php
 %%WWWDIR%%/modules/assistant/language/cs.php
 %%WWWDIR%%/modules/assistant/language/de.php
 %%WWWDIR%%/modules/assistant/language/en.php
@@ -1864,6 +1878,7 @@
 %%WWWDIR%%/modules/billing/install/updatescripts/9_move_bcc_from_books_to_statuses.php
 %%WWWDIR%%/modules/billing/install/updatescripts/manual_sync_order_totals.php
 %%WWWDIR%%/modules/billing/language/bg.php
+%%WWWDIR%%/modules/billing/language/cn.php
 %%WWWDIR%%/modules/billing/language/cs.php
 %%WWWDIR%%/modules/billing/language/de.php
 %%WWWDIR%%/modules/billing/language/en.php
@@ -2187,39 +2202,7 @@
 %%WWWDIR%%/modules/carddav/CarddavModule.php
 %%WWWDIR%%/modules/carddav/addressbook.php
 %%WWWDIR%%/modules/carddav/install/updates.inc.php
-%%WWWDIR%%/modules/cron/CronModule.php
-%%WWWDIR%%/modules/cron/controller/CronGroupController.php
-%%WWWDIR%%/modules/cron/controller/CronUserController.php
-%%WWWDIR%%/modules/cron/language/bg.php
-%%WWWDIR%%/modules/cron/language/bn_bd.php
-%%WWWDIR%%/modules/cron/language/cs.php
-%%WWWDIR%%/modules/cron/language/de.php
-%%WWWDIR%%/modules/cron/language/en.php
-%%WWWDIR%%/modules/cron/language/es.php
-%%WWWDIR%%/modules/cron/language/fr.php
-%%WWWDIR%%/modules/cron/language/hr.php
-%%WWWDIR%%/modules/cron/language/hu.php
-%%WWWDIR%%/modules/cron/language/id.php
-%%WWWDIR%%/modules/cron/language/mn.php
-%%WWWDIR%%/modules/cron/language/nb.php
-%%WWWDIR%%/modules/cron/language/nl.php
-%%WWWDIR%%/modules/cron/language/pl.php
 %%WWWDIR%%/modules/cron/language/pt_br.php
-%%WWWDIR%%/modules/cron/language/pt_pt.php
-%%WWWDIR%%/modules/cron/themes/Default/images/add-cron.png
-%%WWWDIR%%/modules/cron/themes/Default/images/cron.png
-%%WWWDIR%%/modules/cron/themes/Default/style.css
-%%WWWDIR%%/modules/cron/themes/ExtJS/images/add-cron.png
-%%WWWDIR%%/modules/cron/themes/ExtJS/images/cron.png
-%%WWWDIR%%/modules/cron/themes/ExtJS/style.css
-%%WWWDIR%%/modules/cron/views/Extjs3/CronDialog.js
-%%WWWDIR%%/modules/cron/views/Extjs3/CronGrid.js
-%%WWWDIR%%/modules/cron/views/Extjs3/MainPanel.js
-%%WWWDIR%%/modules/cron/views/Extjs3/ParametersPanel.js
-%%WWWDIR%%/modules/cron/views/Extjs3/PeriodGrid.js
-%%WWWDIR%%/modules/cron/views/Extjs3/SettingsDialog.js
-%%WWWDIR%%/modules/cron/views/Extjs3/Stores.js
-%%WWWDIR%%/modules/cron/views/Extjs3/scripts.txt
 %%WWWDIR%%/modules/customcss/CustomcssModule.php
 %%WWWDIR%%/modules/customcss/MainPanel.js
 %%WWWDIR%%/modules/customcss/controller/CustomcssController.php
@@ -2308,8 +2291,10 @@
 %%WWWDIR%%/modules/defaultsite/views/site/tickets/ticket.php
 %%WWWDIR%%/modules/defaultsite/views/site/tickets/ticketcreated.php
 %%WWWDIR%%/modules/defaultsite/views/site/tickets/ticketlist.php
+%%WWWDIR%%/modules/demodata/language/cn.php
 %%WWWDIR%%/modules/demodata/language/it.php
 %%WWWDIR%%/modules/demodata/language/nb.php
+%%WWWDIR%%/modules/demodata/language/pt_br.php
 %%WWWDIR%%/modules/documenttemplates/DocumenttemplatesModule.php
 %%WWWDIR%%/modules/documenttemplates/EmailTemplateDialog.js
 %%WWWDIR%%/modules/documenttemplates/NewOODocumentMenuItem.js
@@ -2323,6 +2308,7 @@
 %%WWWDIR%%/modules/documenttemplates/controller/TemplateController.php
 %%WWWDIR%%/modules/documenttemplates/install/letter_template.docx
 %%WWWDIR%%/modules/documenttemplates/language/bg.php
+%%WWWDIR%%/modules/documenttemplates/language/cn.php
 %%WWWDIR%%/modules/documenttemplates/language/cs.php
 %%WWWDIR%%/modules/documenttemplates/language/de.php
 %%WWWDIR%%/modules/documenttemplates/language/en.php
@@ -2661,6 +2647,7 @@
 %%WWWDIR%%/modules/filesearch/install/updates.inc.php
 %%WWWDIR%%/modules/filesearch/install/updatescripts/1_install_cron.php
 %%WWWDIR%%/modules/filesearch/language/bg.php
+%%WWWDIR%%/modules/filesearch/language/cn.php
 %%WWWDIR%%/modules/filesearch/language/cs.php
 %%WWWDIR%%/modules/filesearch/language/de.php
 %%WWWDIR%%/modules/filesearch/language/en.php
@@ -2742,6 +2729,7 @@
 %%WWWDIR%%/modules/hoursapproval2/Hoursapproval2Module.php
 %%WWWDIR%%/modules/hoursapproval2/controller/ApproveController.php
 %%WWWDIR%%/modules/hoursapproval2/language/bg.php
+%%WWWDIR%%/modules/hoursapproval2/language/cn.php
 %%WWWDIR%%/modules/hoursapproval2/language/cs.php
 %%WWWDIR%%/modules/hoursapproval2/language/de.php
 %%WWWDIR%%/modules/hoursapproval2/language/en.php
@@ -2787,6 +2775,7 @@
 %%WWWDIR%%/modules/leavedays/install/updatescripts/1_store_national_holiday_hours.php
 %%WWWDIR%%/modules/leavedays/install/updatescripts/2_update_to_credit_types.php
 %%WWWDIR%%/modules/leavedays/language/bg.php
+%%WWWDIR%%/modules/leavedays/language/cn.php
 %%WWWDIR%%/modules/leavedays/language/cs.php
 %%WWWDIR%%/modules/leavedays/language/de.php
 %%WWWDIR%%/modules/leavedays/language/en.php
@@ -2910,6 +2899,7 @@
 %%WWWDIR%%/modules/postfixadmin/language/bg.php
 %%WWWDIR%%/modules/postfixadmin/language/bn_bd.php
 %%WWWDIR%%/modules/postfixadmin/language/ca.php
+%%WWWDIR%%/modules/postfixadmin/language/cn.php
 %%WWWDIR%%/modules/postfixadmin/language/cs.php
 %%WWWDIR%%/modules/postfixadmin/language/de.php
 %%WWWDIR%%/modules/postfixadmin/language/el.php
@@ -2943,6 +2933,7 @@
 %%WWWDIR%%/modules/pr2analyzer/Pr2analyzerModule.php
 %%WWWDIR%%/modules/pr2analyzer/controller/TimeController.php
 %%WWWDIR%%/modules/pr2analyzer/language/bg.php
+%%WWWDIR%%/modules/pr2analyzer/language/cn.php
 %%WWWDIR%%/modules/pr2analyzer/language/cs.php
 %%WWWDIR%%/modules/pr2analyzer/language/de.php
 %%WWWDIR%%/modules/pr2analyzer/language/en.php
@@ -2976,7 +2967,6 @@
 %%WWWDIR%%/modules/projects2/AdvancedSearchWindow.js
 %%WWWDIR%%/modules/projects2/CsvImportDialog.js
 %%WWWDIR%%/modules/projects2/CustomFieldSetDialog.js
-%%WWWDIR%%/modules/projects2/InvoiceDialog.js
 %%WWWDIR%%/modules/projects2/MainPanel.js
 %%WWWDIR%%/modules/projects2/NavigationPanel.js
 %%WWWDIR%%/modules/projects2/Portlet.js
@@ -3048,6 +3038,7 @@
 %%WWWDIR%%/modules/projects2/install/updatescripts/budget_to_income.php
 %%WWWDIR%%/modules/projects2/install/updatescripts/share_existing_statuses.php
 %%WWWDIR%%/modules/projects2/language/bg.php
+%%WWWDIR%%/modules/projects2/language/cn.php
 %%WWWDIR%%/modules/projects2/language/cs.php
 %%WWWDIR%%/modules/projects2/language/de.php
 %%WWWDIR%%/modules/projects2/language/en.php
@@ -3192,6 +3183,7 @@
 %%WWWDIR%%/modules/savemailas/install/install.sql
 %%WWWDIR%%/modules/savemailas/install/updates.php
 %%WWWDIR%%/modules/savemailas/language/bg.php
+%%WWWDIR%%/modules/savemailas/language/cn.php
 %%WWWDIR%%/modules/savemailas/language/cs.php
 %%WWWDIR%%/modules/savemailas/language/de.php
 %%WWWDIR%%/modules/savemailas/language/en.php
@@ -3255,6 +3247,7 @@
 %%WWWDIR%%/modules/sieve/controller/SieveController.php
 %%WWWDIR%%/modules/sieve/language/bg.php
 %%WWWDIR%%/modules/sieve/language/bn_bd.php
+%%WWWDIR%%/modules/sieve/language/cn.php
 %%WWWDIR%%/modules/sieve/language/cs.php
 %%WWWDIR%%/modules/sieve/language/de.php
 %%WWWDIR%%/modules/sieve/language/en.php
@@ -3304,6 +3297,7 @@
 %%WWWDIR%%/modules/site/install/updates.inc.php
 %%WWWDIR%%/modules/site/language/bg.php
 %%WWWDIR%%/modules/site/language/bn_bd.php
+%%WWWDIR%%/modules/site/language/cn.php
 %%WWWDIR%%/modules/site/language/cs.php
 %%WWWDIR%%/modules/site/language/de.php
 %%WWWDIR%%/modules/site/language/en.php
@@ -3464,6 +3458,7 @@
 %%WWWDIR%%/modules/smime/install/updates.php
 %%WWWDIR%%/modules/smime/language/bg.php
 %%WWWDIR%%/modules/smime/language/bn_bd.php
+%%WWWDIR%%/modules/smime/language/cn.php
 %%WWWDIR%%/modules/smime/language/cs.php
 %%WWWDIR%%/modules/smime/language/de.php
 %%WWWDIR%%/modules/smime/language/en.php
@@ -3553,6 +3548,7 @@
 %%WWWDIR%%/modules/sync/install/uninstall.sql
 %%WWWDIR%%/modules/sync/install/updates.inc.php
 %%WWWDIR%%/modules/sync/language/bg.php
+%%WWWDIR%%/modules/sync/language/cn.php
 %%WWWDIR%%/modules/sync/language/cs.php
 %%WWWDIR%%/modules/sync/language/de.php
 %%WWWDIR%%/modules/sync/language/en.php
@@ -3588,6 +3584,7 @@
 %%WWWDIR%%/modules/tasks/install/uninstall.sql
 %%WWWDIR%%/modules/tasks/install/updates.inc.php
 %%WWWDIR%%/modules/tasks/language/bg.php
+%%WWWDIR%%/modules/tasks/language/cn.php
 %%WWWDIR%%/modules/tasks/language/de.php
 %%WWWDIR%%/modules/tasks/language/mn.php
 %%WWWDIR%%/modules/tasks/language/nb.php
@@ -3652,6 +3649,7 @@
 %%WWWDIR%%/modules/tickets/install/updatescripts/7_set_last_agent_and_contact_response_time.php
 %%WWWDIR%%/modules/tickets/install/updatescripts/8_install_cron.php
 %%WWWDIR%%/modules/tickets/language/bg.php
+%%WWWDIR%%/modules/tickets/language/cn.php
 %%WWWDIR%%/modules/tickets/language/cs.php
 %%WWWDIR%%/modules/tickets/language/de.php
 %%WWWDIR%%/modules/tickets/language/en.php
@@ -3711,6 +3709,7 @@
 %%WWWDIR%%/modules/timeregistration2/install/uninstall.sql
 %%WWWDIR%%/modules/timeregistration2/install/updates.inc.php
 %%WWWDIR%%/modules/timeregistration2/language/bg.php
+%%WWWDIR%%/modules/timeregistration2/language/cn.php
 %%WWWDIR%%/modules/timeregistration2/language/cs.php
 %%WWWDIR%%/modules/timeregistration2/language/de.php
 %%WWWDIR%%/modules/timeregistration2/language/en.php
@@ -3753,36 +3752,6 @@
 %%WWWDIR%%/modules/timeregistration2/views/Extjs3/WeekGrid.js
 %%WWWDIR%%/modules/timeregistration2/views/Extjs3/YearGrid.js
 %%WWWDIR%%/modules/timeregistration2/views/Extjs3/YearOverviewGrid.js
-%%WWWDIR%%/modules/tools/ToolsModule.php
-%%WWWDIR%%/modules/tools/controller/ToolsController.php
-%%WWWDIR%%/modules/tools/language/bg.php
-%%WWWDIR%%/modules/tools/language/bn_bd.php
-%%WWWDIR%%/modules/tools/language/ca.php
-%%WWWDIR%%/modules/tools/language/cn.php
-%%WWWDIR%%/modules/tools/language/cs.php
-%%WWWDIR%%/modules/tools/language/da.php
-%%WWWDIR%%/modules/tools/language/de.php
-%%WWWDIR%%/modules/tools/language/el.php
-%%WWWDIR%%/modules/tools/language/en.php
-%%WWWDIR%%/modules/tools/language/es.php
-%%WWWDIR%%/modules/tools/language/et.php
-%%WWWDIR%%/modules/tools/language/fi.php
-%%WWWDIR%%/modules/tools/language/fr.php
-%%WWWDIR%%/modules/tools/language/hr.php
-%%WWWDIR%%/modules/tools/language/hu.php
-%%WWWDIR%%/modules/tools/language/id.php
-%%WWWDIR%%/modules/tools/language/it.php
-%%WWWDIR%%/modules/tools/language/ko.php
-%%WWWDIR%%/modules/tools/language/nb.php
-%%WWWDIR%%/modules/tools/language/nl.php
-%%WWWDIR%%/modules/tools/language/pl.php
-%%WWWDIR%%/modules/tools/language/pt_br.php
-%%WWWDIR%%/modules/tools/language/ro.php
-%%WWWDIR%%/modules/tools/language/ru.php
-%%WWWDIR%%/modules/tools/language/sv.php
-%%WWWDIR%%/modules/tools/language/th.php
-%%WWWDIR%%/modules/tools/language/tr.php
-%%WWWDIR%%/modules/tools/language/zh_tw.php
 %%WWWDIR%%/modules/workflow/WorkflowModule.php
 %%WWWDIR%%/modules/workflow/action/AbstractAction.php
 %%WWWDIR%%/modules/workflow/action/Approve.php
@@ -4119,6 +4088,7 @@
 %%WWWDIR%%/modules/zpushadmin/install/uninstall.sql
 %%WWWDIR%%/modules/zpushadmin/install/updates.php
 %%WWWDIR%%/modules/zpushadmin/language/bg.php
+%%WWWDIR%%/modules/zpushadmin/language/cn.php
 %%WWWDIR%%/modules/zpushadmin/language/cs.php
 %%WWWDIR%%/modules/zpushadmin/language/de.php
 %%WWWDIR%%/modules/zpushadmin/language/en.php

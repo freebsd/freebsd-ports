@@ -2,6 +2,7 @@
 
 PORTNAME=	netpbm
 DISTVERSION=	10.91.01
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/
 

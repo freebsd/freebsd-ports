@@ -1,11 +1,11 @@
 bin/kbounce
 share/applications/org.kde.kbounce.desktop
-share/icons/hicolor/128x128/apps/kbounce.png
 share/icons/hicolor/16x16/apps/kbounce.png
 share/icons/hicolor/22x22/apps/kbounce.png
 share/icons/hicolor/32x32/apps/kbounce.png
 share/icons/hicolor/48x48/apps/kbounce.png
 share/icons/hicolor/64x64/apps/kbounce.png
+share/icons/hicolor/128x128/apps/kbounce.png
 %%DATADIR%%/sounds/death.wav
 %%DATADIR%%/sounds/reflect.wav
 %%DATADIR%%/sounds/seconds.wav

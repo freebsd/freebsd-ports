@@ -1,5 +1,5 @@
 PORTNAME=	cligen
-PORTVERSION=	4.8.0
+PORTVERSION=	5.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
@@ -13,7 +13,7 @@ USES=		bison:alias compiler:c11 gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	clicon
 
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

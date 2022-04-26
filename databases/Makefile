@@ -10,7 +10,6 @@
     SUBDIR += R-cran-sqldf
     SUBDIR += WWWdb
     SUBDIR += adminer
-    SUBDIR += adodb
     SUBDIR += adodb5
     SUBDIR += akonadi
     SUBDIR += apache-commons-dbutils
@@ -105,7 +104,6 @@
     SUBDIR += grass7
     SUBDIR += grass8
     SUBDIR += hashtypes
-    SUBDIR += hbase
     SUBDIR += hiredis
     SUBDIR += hsqldb
     SUBDIR += influxdb
@@ -116,7 +114,6 @@
     SUBDIR += ipa_sdb
     SUBDIR += iplike
     SUBDIR += isql-viewer
-    SUBDIR += jasperreports
     SUBDIR += jdb
     SUBDIR += jdbc-oracle11g
     SUBDIR += jetbrains-datagrip
@@ -245,7 +242,6 @@
     SUBDIR += ods2sql
     SUBDIR += opendbviewer
     SUBDIR += opendbx
-    SUBDIR += opentsdb
     SUBDIR += ora2pg
     SUBDIR += oracle8-client
     SUBDIR += p5-Amazon-SimpleDB
@@ -742,6 +738,7 @@
     SUBDIR += py-aiosqlite
     SUBDIR += py-alembic
     SUBDIR += py-alembic14
+    SUBDIR += py-alembic16
     SUBDIR += py-apsw
     SUBDIR += py-asyncmy
     SUBDIR += py-asyncpg
@@ -853,7 +850,6 @@
     SUBDIR += recutils
     SUBDIR += redis
     SUBDIR += redis-devel
-    SUBDIR += redis5
     SUBDIR += redis6
     SUBDIR += redis_exporter
     SUBDIR += redisdesktopmanager
@@ -973,6 +969,7 @@
     SUBDIR += rubygem-redis-actionpack-rails52
     SUBDIR += rubygem-redis-actionpack-rails60
     SUBDIR += rubygem-redis-actionpack-rails61
+    SUBDIR += rubygem-redis-actionpack52-rails61
     SUBDIR += rubygem-redis-namespace
     SUBDIR += rubygem-redis44
     SUBDIR += rubygem-sdbm

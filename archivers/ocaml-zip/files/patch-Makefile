@@ -1,11 +1,11 @@
---- Makefile.orig	2015-10-01 02:48:15 UTC
+--- Makefile.orig	2020-12-12 18:30:13 UTC
 +++ Makefile
-@@ -56,7 +56,7 @@ clean:
+@@ -64,7 +64,7 @@ libcamlzip$(EXT_LIB): $(C_OBJS)
+ .ml.cmx:
+ 	$(OCAMLOPT) -c $<
+ .c.o:
+-	$(OCAMLC) -c -ccopt -g $(ZLIB_I_OPT) $<
++	$(OCAMLC) -c -ccopt "$(CFLAGS)" $(ZLIB_I_OPT) $<
  
- install:
- 	mkdir -p $(INSTALLDIR)
--	${BSD_INSTALL_DATA} zip.cma zip.cmi gzip.cmi zip.mli gzip.mli libcamlzip.a $(INSTALLDIR)
-+	${BSD_INSTALL_DATA} zip.cma zip.cmi gzip.cmi zip.mli gzip.mli zlib.cmi zlib.mli libcamlzip.a $(INSTALLDIR)
- 	if test -f dllcamlzip.so; then \
- 	  ${BSD_INSTALL_DATA} dllcamlzip.so $(INSTALLDIR); \
-           installdir=$(INSTALLDIR); \
+ clean:
+ 	rm -f *.cm*

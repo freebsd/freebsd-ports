@@ -42,7 +42,7 @@ PREFIX=${TIGHTVNC_BASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH:Mpowerpc*} || ${ARCH} == riscv64
+.if ${ARCH} == aarch64
 USE_GCC=	yes
 .endif
 

@@ -1,6 +1,6 @@
---- src/ipopd/ipop3d.c.orig	2008-06-04 20:18:34.000000000 +0200
-+++ src/ipopd/ipop3d.c	2009-01-16 10:19:50.000000000 +0100
-@@ -113,7 +113,7 @@
+--- src/ipopd/ipop3d.c.orig	2022-04-17 00:12:02 UTC
++++ src/ipopd/ipop3d.c
+@@ -113,7 +113,7 @@ int main (int argc,char *argv[])
      (((s = strrchr (argv[0],'/')) || (s = strrchr (argv[0],'\\'))) ?
       s+1 : argv[0]) : "ipop3d";
  				/* set service name before linkage */

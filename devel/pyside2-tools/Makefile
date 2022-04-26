@@ -30,12 +30,21 @@ SHEBANG_FILES=	pyside_tool.py
 
 CMAKE_ARGS+=	"-DUSE_PYTHON_VERSION=${PYTHON_VER}"
 
-.include <bsd.port.pre.mk>
-
 WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION:C/^([0-9].[0-9]+.[0-9])(.[0-9])?/\1/}/sources/pyside2-tools
 
-.if ${ARCH} == amd64 || ${ARCH} == i386
+OPTIONS_DEFINE_i386=	WEBENGINE
+OPTIONS_DEFINE_amd64=	WEBENGINE
+OPTIONS_DEFAULT_i386=	WEBENGINE
+OPTIONS_DEFAULT_amd64=	WEBENGINE
+
+WEBENGINE_DESC=	Enable QtWebEngine support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MWEBENGINE}
 USE_QT+=	webengine
+.else
+CMAKE_ARGS+=	-DDISABLE_QtWebEngine:BOOL=TRUE
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

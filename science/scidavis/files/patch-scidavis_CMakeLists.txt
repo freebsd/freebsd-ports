@@ -1,11 +1,19 @@
---- scidavis/CMakeLists.txt.orig	2021-05-05 01:51:49 UTC
+--- scidavis/CMakeLists.txt.orig	2022-04-16 07:39:19 UTC
 +++ scidavis/CMakeLists.txt
-@@ -135,7 +135,7 @@ if (NOT CMAKE_CROSS_COMPILING)
+@@ -36,7 +36,6 @@ add_executable( scidavis
+ message(${QM_FILES})
+ 
+ # SciDAVis expects qm files to be in the translations directory. qt5_create_translation puts them somewhere else
+-add_custom_command(TARGET scidavis COMMAND cp ${QM_FILES} translations)
+ 
+ target_link_libraries( scidavis libscidavis )
+ 
+@@ -146,7 +145,7 @@ endif()
        if( MULTI_CONFIG )
-         install( FILES scidavisrc.py ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIG>/scidavisrc.pyc DESTINATION etc )
+         install( FILES scidavisrc.py ${CMAKE_CURRENT_BINARY_DIR}/$<CONFIG>/scidavisrc.pyc DESTINATION ${PYTHON_SCRIPTDIR} )
        else()
--        install( FILES scidavisrc.py ${CMAKE_CURRENT_BINARY_DIR}/scidavisrc.pyc DESTINATION etc )
-+        install( FILES scidavisrc.py DESTINATION etc )
+-        install( FILES scidavisrc.py ${CMAKE_CURRENT_BINARY_DIR}/scidavisrc.pyc DESTINATION ${PYTHON_SCRIPTDIR} )
++        install( FILES scidavisrc.py DESTINATION ${PYTHON_SCRIPTDIR} )
        endif()
        install( FILES scidavisUtil.py DESTINATION share/scidavis )
      endif()

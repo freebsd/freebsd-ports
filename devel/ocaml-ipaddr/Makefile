@@ -24,7 +24,12 @@ USE_OCAML_CAMLP4=	yes
 USE_OCAMLFIND_PLIST=	yes
 USE_OCAML_LDCONFIG=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e '/^SETUP =/s,ocaml,& -unsafe-string,' \
+		${WRKSRC}/Makefile
+
 do-configure:
-	cd ${WRKSRC}; ocaml setup.ml -configure ${CONFIGURE_ARGS}
+	cd ${CONFIGURE_WRKSRC} && ocaml -unsafe-string setup.ml \
+		-configure ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>

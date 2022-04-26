@@ -1,10 +1,19 @@
-Requests-cache is a transparent persistent cache for requests (version
->= 1.1.0) library.
+requests-cache is a transparent, persistent cache that provides an easy way to
+get better performance with the python requests library.
 
 Features:
-
-  * Transparent caching
-  * Persistence (with support for SQLite, MongoDB or Redis)
-  * Cached object expiration
+- Ease of use: Keep using the requests library you're already familiar with. Add
+  caching with a drop-in replacement for requests.Session, or install globally
+  to add caching to all requests functions.
+- Performance: Get sub-millisecond response times for cached responses. When
+  they expire, you still save time with conditional requests.
+- Persistence: Works with several storage backends including SQLite, Redis,
+  MongoDB, and DynamoDB; or save responses as plain JSON files, YAML, and more
+- Customization: Works out of the box with zero config, but with a robust set of
+  features for configuring and extending the library to suit your needs
+- Expiration: Keep your cache fresh using Cache-Control, eagerly cache
+  everything for long-term storage, use URL patterns for selective caching, or
+  any combination of strategies
+- Compatibility: Can be combined with other popular libraries based on requests
 
 WWW: https://github.com/reclosedev/requests-cache

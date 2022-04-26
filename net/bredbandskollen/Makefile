@@ -25,12 +25,6 @@ OPTIONS_DEFINE=	GNUTLS
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_MAKE_ARGS=	GNUTLS=1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:Mpowerpc*}
-EXTRA_PATCHES=	${FILESDIR}/extra-src_framework_socketreceiver.h
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's/CXX = c++/CXX ?= c++/g' \
 	${WRKSRC}/src/framework/mk.inc
@@ -39,4 +33,4 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/cli ${STAGEDIR}/${PREFIX}/bin/bbk_cli
 	${LN} -sf bbk_cli ${STAGEDIR}/${PREFIX}/bin/bredbandskollen
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

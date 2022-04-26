@@ -1906,11 +1906,13 @@ share/locale/id/LC_MESSAGES/kcm_baloofile.mo
 share/locale/id/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/id/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/id/LC_MESSAGES/kcm_keys.mo
+share/locale/id/LC_MESSAGES/kcm_landingpage.mo
 share/locale/id/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/id/LC_MESSAGES/kcm_search.mo
 share/locale/id/LC_MESSAGES/kcm_smserver.mo
 share/locale/id/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/id/LC_MESSAGES/kcm_splashscreen.mo
+share/locale/id/LC_MESSAGES/kcm_tablet.mo
 share/locale/id/LC_MESSAGES/kcm_touchpad.mo
 share/locale/id/LC_MESSAGES/kcm_workspace.mo
 share/locale/id/LC_MESSAGES/kcmkclock.mo

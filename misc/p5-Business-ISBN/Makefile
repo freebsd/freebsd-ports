@@ -1,7 +1,7 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
 
 PORTNAME=	Business-ISBN
-PORTVERSION=	3.006
+PORTVERSION=	3.007
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN/Business CPAN
 MASTER_SITE_SUBDIR=	CPAN:BDFOY

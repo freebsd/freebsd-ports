@@ -18,8 +18,6 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 USES=		localbase python:3.6-3.9
 USE_PYTHON=	distutils autoplist
 
-CONFLICTS=	${PYTHON_PKGNAMEPREFIX}gmpy2-devel-2.1*
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gmpy2/gmpy2*.so
 

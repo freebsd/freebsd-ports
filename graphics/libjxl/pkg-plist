@@ -33,5 +33,3 @@ libdata/pkgconfig/libjxl_threads.pc
 %%MANPAGES%%share/man/man1/djxl.1.gz
 share/mime/packages/image-jxl.xml
 %%PIXBUF%%share/thumbnailers/jxl.thumbnailer
-%%PIXBUF%%@postexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
-%%PIXBUF%%@postunexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true

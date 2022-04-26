@@ -15,14 +15,14 @@
 .if !defined(_INCLUDE_USES_WAF_MK)
 _INCLUDE_USES_WAF_MK=	yes
 
-.if !empty(waf_ARGS)
+.  if !empty(waf_ARGS)
 IGNORE=	Incorrect 'USES+= waf:${waf_ARGS}' waf takes no arguments
-.endif
+.  endif
 
-.if !${USES:Mpython*}
+.  if !${USES:Mpython*}
 python_ARGS=	build
 .include "${USESDIR}/python.mk"
-.endif
+.  endif
 
 MAKEFILE=	#
 MAKE_FLAGS=	#

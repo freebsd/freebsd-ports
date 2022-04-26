@@ -4,6 +4,8 @@ include/librssguard/services/abstract/cacheforserviceroot.h
 include/librssguard/services/abstract/category.h
 include/librssguard/services/abstract/feed.h
 include/librssguard/services/abstract/gui/authenticationdetails.h
+include/librssguard/services/abstract/gui/formaccountdetails.h
+include/librssguard/services/abstract/gui/formcategorydetails.h
 include/librssguard/services/abstract/gui/formfeeddetails.h
 include/librssguard/services/abstract/importantnode.h
 include/librssguard/services/abstract/label.h
@@ -12,6 +14,7 @@ include/librssguard/services/abstract/recyclebin.h
 include/librssguard/services/abstract/rootitem.h
 include/librssguard/services/abstract/serviceentrypoint.h
 include/librssguard/services/abstract/serviceroot.h
+include/librssguard/services/abstract/unreadnode.h
 lib/librssguard.so
 share/applications/com.github.rssguard.desktop
 share/icons/hicolor/512x512/apps/rssguard.png

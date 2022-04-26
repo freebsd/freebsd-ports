@@ -1,15 +1,14 @@
 bin/kanagram
 share/applications/org.kde.kanagram.desktop
 share/config.kcfg/kanagram.kcfg
-share/icons/hicolor/128x128/apps/kanagram.png
 share/icons/hicolor/16x16/apps/kanagram.png
 share/icons/hicolor/24x24/apps/kanagram.png
 share/icons/hicolor/32x32/apps/kanagram.png
 share/icons/hicolor/48x48/apps/kanagram.png
 share/icons/hicolor/64x64/apps/kanagram.png
 share/icons/hicolor/80x80/apps/kanagram-harmattan.png
+share/icons/hicolor/128x128/apps/kanagram.png
 share/icons/hicolor/scalable/apps/kanagram.svgz
-share/knsrcfiles/kanagram.knsrc
 %%DATADIR%%/ui/Blackboard.qml
 %%DATADIR%%/ui/LetterButton.qml
 %%DATADIR%%/ui/icons/1player.png
@@ -38,6 +37,7 @@ share/knsrcfiles/kanagram.knsrc
 %%DATADIR%%/ui/sounds/right.wav
 %%DATADIR%%/ui/sounds/wrong.ogg
 %%DATADIR%%/ui/sounds/wrong.wav
+share/knsrcfiles/kanagram.knsrc
 share/locale/ar/LC_MESSAGES/kanagram.mo
 share/locale/be/LC_MESSAGES/kanagram.mo
 share/locale/bg/LC_MESSAGES/kanagram.mo

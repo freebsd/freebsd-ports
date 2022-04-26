@@ -1,3 +1,3 @@
-TIMESTAMP = 1631470424
-SHA256 (azure-mgmt-sqlvirtualmachine-1.0.0b1.zip) = 4ab153bd4fbaed4dc2a4c2cf64c6b05ee45d4886d3b1f6afda315922c6563e6c
-SIZE (azure-mgmt-sqlvirtualmachine-1.0.0b1.zip) = 66717
+TIMESTAMP = 1649514335
+SHA256 (azure-mgmt-sqlvirtualmachine-1.0.0b2.zip) = ceab0bb9f8d498e975671bbc421633b042988284be9bc193a51c9d97b8ef5cc9
+SIZE (azure-mgmt-sqlvirtualmachine-1.0.0b2.zip) = 69702

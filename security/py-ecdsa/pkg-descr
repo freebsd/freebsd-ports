@@ -1,18 +1,24 @@
-This is an easy-to-use implementation of ECDSA cryptography (Elliptic Curve
-Digital Signature Algorithm), implemented purely in Python, released under
-the MIT license. With this library, you can quickly create keypairs (signing
-key and verifying key), sign messages, and verify the signatures. The keys
-and signatures are very short, making them easy to handle and incorporate
-into other protocols.
+This is an easy-to-use implementation of ECC (Elliptic Curve Cryptography) with
+support for ECDSA (Elliptic Curve Digital Signature Algorithm) and ECDH
+(Elliptic Curve Diffie-Hellman), implemented purely in Python, released under
+the MIT license. With this library, you can quickly create key pairs (signing
+key and verifying key), sign messages, and verify the signatures. You can also
+agree on a shared secret key based on exchanged public keys. The keys and
+signatures are very short, making them easy to handle and incorporate into other
+protocols.
 
-Features
+This library provides key generation, signing, verifying, and shared secret
+derivation for five popular NIST "Suite B" GF(p) (prime field) curves, with key
+lengths of 192, 224, 256, 384, and 521 bits. The "short names" for these curves,
+as known by the OpenSSL tool (openssl ecparam -list_curves), are: prime192v1,
+secp224r1, prime256v1, secp384r1, and secp521r1. It includes the 256-bit curve
+secp256k1 used by Bitcoin. There is also support for the regular (non-twisted)
+variants of Brainpool curves from 160 to 512 bits. The "short names" of those
+curves are: brainpoolP160r1, brainpoolP192r1, brainpoolP224r1, brainpoolP256r1,
+brainpoolP320r1, brainpoolP384r1, brainpoolP512r1. Few of the small curves from
+SEC standard are also included (mainly to speed-up testing of the library),
+those are: secp112r1, secp112r2, secp128r1, and secp160r1. No other curves are
+included, but it is not too hard to add support for more curves over prime
+fields.
 
-This library provides key generation, signing, and verifying, for five
-popular NIST "Suite B" GF(p) curves, with key lengths of 192, 224, 256, 384,
-and 521 bits. The "short names" for these curves, as known by the OpenSSL
-tool (`openssl ecparam --list_curves`), are: prime192v1, secp224r1,
-prime256v1, secp384r1, and secp521r1. It also includes the 256-bit curve used
-by Bitcoin, whose short name is secp256k1. No other curves are included, but
-it would not be too hard to add more.
-
-WWW: https://github.com/warner/python-ecdsa
+WWW: https://github.com/tlsfuzzer/python-ecdsa

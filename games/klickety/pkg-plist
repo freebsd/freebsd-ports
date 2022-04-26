@@ -1,8 +1,6 @@
 bin/klickety
 share/applications/org.kde.klickety.desktop
 share/applications/org.kde.ksame.desktop
-share/icons/hicolor/128x128/apps/klickety.png
-share/icons/hicolor/128x128/apps/ksame.png
 share/icons/hicolor/16x16/apps/klickety.png
 share/icons/hicolor/16x16/apps/ksame.png
 share/icons/hicolor/22x22/apps/klickety.png
@@ -13,6 +11,8 @@ share/icons/hicolor/48x48/apps/klickety.png
 share/icons/hicolor/48x48/apps/ksame.png
 share/icons/hicolor/64x64/apps/klickety.png
 share/icons/hicolor/64x64/apps/ksame.png
+share/icons/hicolor/128x128/apps/klickety.png
+share/icons/hicolor/128x128/apps/ksame.png
 share/kconf_update/klickety-2.0-inherit-ksame-highscore.pl
 share/kconf_update/klickety.upd
 %%DATADIR%%/klickety.kcfg

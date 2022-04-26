@@ -1,5 +1,6 @@
 PORTNAME=	tpm2-abrmd
 DISTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-abrmd/releases/download/${DISTVERSION}/
 
@@ -24,6 +25,9 @@ GROUPS=		_tss
 USERS=		_tss
 
 SUB_LIST=	DBUS_DAEMON=dbus
+
+pre-install:
+	@${INSTALL_DATA} ${FILESDIR}/tpm2-abrmd-devd.conf ${STAGEDIR}${PREFIX}/etc/devd
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/systemd/system-preset/tpm2-abrmd.preset

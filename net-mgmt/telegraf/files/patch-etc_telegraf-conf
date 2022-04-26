@@ -1,11 +1,11 @@
---- etc/telegraf.conf.orig	2018-08-07 18:32:57 UTC
-+++ etc/telegraf.conf
+--- etc/telegraf.conf.orig	1979-11-30 01:00:00.000000000 +0100
++++ etc/telegraf.conf	2022-03-23 23:38:56.047612000 +0100
 @@ -61,7 +61,7 @@
-   ##       when interval = "250ms", precision will be "1ms"
-   ## Precision will NOT be used for service inputs. It is up to each individual
-   ## service input to set the timestamp at the appropriate precision.
+ 
+   ## Collected metrics are rounded to the precision specified. Precision is
+   ## specified as an interval with an integer + unit (e.g. 0s, 10ms, 2us, 4s).
 -  ## Valid time units are "ns", "us" (or "µs"), "ms", "s".
 +  ## Valid time units are "ns", "us", "ms", "s".
-   precision = ""
- 
-   ## Logging configuration:
+   ##
+   ## By default or when set to "0s", precision will be set to the same
+   ## timestamp order as the collection interval, with the maximum being 1s:

@@ -1,3 +1,3 @@
-TIMESTAMP = 1646142972
-SHA256 (KDE/release-service/21.12.3/kdialog-21.12.3.tar.xz) = a370f03edd88913d7cecf2bc9b61e2bd1466418fa1534a8f415a0057186ea111
-SIZE (KDE/release-service/21.12.3/kdialog-21.12.3.tar.xz) = 116336
+TIMESTAMP = 1650101897
+SHA256 (KDE/release-service/22.04.0/kdialog-22.04.0.tar.xz) = ac47479b576b87e8a82d62f4b685941b6ab54a44a06391c4c0762db159930589
+SIZE (KDE/release-service/22.04.0/kdialog-22.04.0.tar.xz) = 116584

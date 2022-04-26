@@ -1,5 +1,5 @@
 PORTNAME=	openTSNE
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	math python # statistics
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.20:science/py-scikit-learn@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang localbase:ldflags python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils cython autoplist
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -name "*.so" | ${XARGS} ${STRIP_CMD}

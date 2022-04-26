@@ -1,13 +1,13 @@
 PORTNAME=	msp430-debug-stack
-PORTVERSION=	3.15.0.1
-PORTREVISION=	0
+PORTVERSION=	3.15.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPDS/3_15_0_000/export/ \
-		http://www.ti.com/lit/ug/slau320ai/:doc1 \
-		http://www.ti.com/lit/ug/slau656b/:doc2
+MASTER_SITES=	https://dr-download.ti.com/software-development/driver-or-library/MD-4vnqcP1Wk4/${PORTVERSION}/ \
+		http://www.ti.com/lit/ug/slau320aj/:doc1 \
+		http://www.ti.com/lit/ug/slau656d/:doc2
 DISTFILES=	MSPDebugStack_OS_Package_${PORTVERSION:S/./_/g}.zip \
-		slau320ai.pdf:doc1 \
-		slau656b.pdf:doc2
+		slau320aj.pdf:doc1 \
+		slau656d.pdf:doc2
 EXTRACT_ONLY=	MSPDebugStack_OS_Package_${PORTVERSION:S/./_/g}.zip
 
 MAINTAINER=	lev@FreeBSD.org
@@ -46,8 +46,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/libmsp430
 	${INSTALL_DATA} ${WRKSRC}/DLL430_v3/include/* ${STAGEDIR}${PREFIX}/include/libmsp430/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/slau320ai.pdf ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/slau656b.pdf ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/slau320aj.pdf ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/slau656d.pdf ${STAGEDIR}${DOCSDIR}/
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd
 	${INSTALL_DATA} ${FILESDIR}/mspfet.conf ${STAGEDIR}${PREFIX}/etc/devd
 

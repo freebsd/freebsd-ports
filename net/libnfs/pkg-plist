@@ -1,6 +1,7 @@
 bin/nfs-cat
 bin/nfs-cp
 bin/nfs-ls
+bin/nfs-stat
 lib/libnfs.a
 lib/libnfs.so
 lib/libnfs.so.%%SHLIB%%

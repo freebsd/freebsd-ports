@@ -1,0 +1,11 @@
+--- daemon_runner.py.orig	2014-04-28 21:03:22 UTC
++++ daemon_runner.py
+@@ -68,7 +68,7 @@ def watch_process(args, pid_file=None):
+ 
+     try:
+         pidfile = acquire_pidfile_lock(pid_file)
+-    except Exception, e:
++    except Exception as e:
+         sys.stderr.write("Couldn't acquire pidfile lock {0}, owned by {1} ({2})\n".format(pid_file, get_pid(pid_file), e))
+         sys.exit(1)
+ 

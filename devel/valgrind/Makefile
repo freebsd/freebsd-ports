@@ -1,7 +1,7 @@
 # Created by: Simon Barner <barner@gmx.de>
 
 PORTNAME=	valgrind
-PORTVERSION=	3.18.1
+PORTVERSION=	3.19.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/valgrind

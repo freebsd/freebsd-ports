@@ -1,0 +1,14 @@
+Reference:	https://github.com/protocolbuffers/protobuf/issues/9792
+		http://pb2.nyi.freebsd.org/data/123i386-default-foo/2022-04-16_08h34m58s/logs/errors/protobuf-3.20.0,1.log
+
+--- src/google/protobuf/arenastring.cc.orig	2022-03-25 21:52:12 UTC
++++ src/google/protobuf/arenastring.cc
+@@ -64,7 +64,7 @@ constexpr size_t kNewAlign = alignof(std::max_align_t)
+ #endif
+ constexpr size_t kStringAlign = alignof(std::string);
+ 
+-static_assert((kStringAlign > kNewAlign ? kStringAlign : kNewAlign) >= 8, "");
++//static_assert((kStringAlign > kNewAlign ? kStringAlign : kNewAlign) >= 8, "");
+ static_assert(alignof(ExplicitlyConstructedArenaString) >= 8, "");
+ 
+ }  // namespace

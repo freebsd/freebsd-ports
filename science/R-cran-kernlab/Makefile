@@ -1,8 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	kernlab
-DISTVERSION=	0.9-29
-PORTREVISION=	1
+DISTVERSION=	0.9-30
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,6 +10,6 @@ COMMENT=	Kernel-Based Machine Learning Lab
 
 LICENSE=	GPLv2
 
-USES=		cran:auto-plist,compiles
+USES=		compiler:c++11-lang cran:auto-plist,compiles
 
 .include <bsd.port.mk>

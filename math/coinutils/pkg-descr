@@ -5,6 +5,6 @@ utilities include:
 * Vector classes
 * Matrix classes
 * MPS file reading
-* Comparing floating point numbers with a tolerance 
+* Comparing floating point numbers with a tolerance
 
 WWW: https://projects.coin-or.org/CoinUtils

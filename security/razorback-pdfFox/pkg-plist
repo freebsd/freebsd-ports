@@ -1,5 +1,0 @@
-@sample etc/razorback/pdffox.conf.sample
-lib/razorback/pdfFox.so.2.0.0
-lib/razorback/pdfFox.so.2
-lib/razorback/pdfFox.so
-lib/razorback/pdfFox.a

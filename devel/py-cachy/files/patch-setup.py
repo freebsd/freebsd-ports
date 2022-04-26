@@ -1,6 +1,16 @@
 --- setup.py.orig	1970-01-01 00:00:00 UTC
 +++ setup.py
-@@ -14,7 +14,7 @@ package_data = \
+@@ -5,16 +5,14 @@ packages = \
+ ['cachy',
+  'cachy.contracts',
+  'cachy.serializers',
+- 'cachy.stores',
+- 'tests',
+- 'tests.stores']
++ 'cachy.stores']
+ 
+ package_data = \
+ {'': ['*']}
  
  extras_require = \
  {'memcached': ['python-memcached>=1.59,<2.0'],

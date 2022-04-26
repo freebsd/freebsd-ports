@@ -9,7 +9,7 @@
 .if !defined(_INCLUDE_USES_FAKEROOT_MK)
 _INCLUDE_USES_FAKEROOT_MK=	yes
 BUILD_DEPENDS+=	fakeroot:security/fakeroot
-.if ${UID} != 0
+.  if ${UID} != 0
 FAKEROOT?=	fakeroot
-.endif
+.  endif
 .endif

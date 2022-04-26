@@ -1,20 +1,23 @@
---- meson.build.orig	2022-01-12 14:15:56 UTC
+--- meson.build.orig	2022-03-21 18:12:40 UTC
 +++ meson.build
-@@ -37,7 +37,12 @@ gdm_screenshot_dir = (get_option('screenshot-dir') != 
+@@ -37,8 +37,14 @@ config_h_dir = include_directories('.')
  config_h_dir = include_directories('.')
  
  # Dependencies
 -udev_dep = dependency('udev')
+-gudev_dep = dependency('gudev-1.0', version: '>= 232')
 +if host_machine.system() == 'linux'
 +  udev_dep = dependency('udev')
++  gudev_dep = dependency('gudev-1.0', version: '>= 232')
 +else
 +  udev_dep = declare_dependency()
++  gudev_dep = declare_dependency()
 +  udev_dir = '/usr/local/lib/udev/rules.d'
 +endif
  
  glib_min_version = '2.56.0'
  
-@@ -88,17 +93,22 @@ if find_x_server_out != ''
+@@ -89,17 +95,22 @@ else
  else
    # what to do, what to do, this is wrong, but this just sets the
    # defaults, perhaps this user is cross compiling or some such
@@ -42,7 +45,7 @@
    systemd_multiseat_x = find_program('systemd-multi-seat-x',
      required: false,
      dirs: [
-@@ -255,6 +265,7 @@ conf.set('HAVE_UT_UT_TIME', utmp_has_time_field)
+@@ -257,6 +268,7 @@ conf.set('ENABLE_IPV6', get_option('ipv6'))
  conf.set('HAVE_UT_UT_TV', utmp_has_tv_field)
  conf.set('HAVE_UT_UT_SYSLEN', utmp_has_syslen_field)
  conf.set('ENABLE_IPV6', get_option('ipv6'))

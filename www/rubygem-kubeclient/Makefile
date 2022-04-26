@@ -14,9 +14,11 @@ RUN_DEPENDS=	rubygem-http4>=3.0<5.0:www/rubygem-http4 \
 		rubygem-recursive-open-struct>=1.1.1<2.0:devel/rubygem-recursive-open-struct \
 		rubygem-rest-client>=2.0<3:www/rubygem-rest-client
 
-USES=		gem
+USES=		cpe gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	redhat
 
 .include <bsd.port.mk>

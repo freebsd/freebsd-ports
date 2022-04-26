@@ -1,8 +1,8 @@
 # Created by: dwm
 
 PORTNAME=	icu
-DISTVERSION=	70_1
-PORTREVISION?=	1 # keep for icu-lx
+DISTVERSION=	71_1
+PORTREVISION?=	0 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	https://github.com/unicode-org/${PORTNAME}/releases/download/release-${DISTVERSION:S/rc/-&/:S/_/-/g}/ \

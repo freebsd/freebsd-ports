@@ -1,7 +1,7 @@
 # Created by: jupengfei <jupengfei@gmail.com>
 
 PORTNAME=	Paranoid
-PORTVERSION=	2.08
+PORTVERSION=	2.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

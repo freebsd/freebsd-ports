@@ -1,4 +1,4 @@
---- chrome/app/google_chrome_strings.grd.orig	2022-02-28 16:54:41 UTC
+--- chrome/app/google_chrome_strings.grd.orig	2022-03-25 21:59:56 UTC
 +++ chrome/app/google_chrome_strings.grd
 @@ -303,7 +303,7 @@ chromium_strings.grd. -->
            Welcome to Chrome; new browser window opened
@@ -9,7 +9,7 @@
          <message name="IDS_FIRST_RUN_DIALOG_WINDOW_TITLE" desc="Window title of First Run dialog on Mac and Linux, displayed in title bar">
            Welcome to Google Chrome
          </message>
-@@ -818,7 +818,7 @@ Google Chrome is unable to recover your settings.
+@@ -863,7 +863,7 @@ Permissions you've already given to websites and apps 
        </if>
  
        <!-- about:browser-switch strings -->
@@ -18,7 +18,7 @@
          <message name="IDS_ABOUT_BROWSER_SWITCH_DESCRIPTION_UNKNOWN_BROWSER" desc="Description shown while waiting for an alternative browser to open, when the browser name is not auto-detected">
            Your system administrator has configured Google Chrome to open an alternative browser to access <ph name="TARGET_URL_HOSTNAME">$1<ex>example.com</ex></ph>.
          </message>
-@@ -944,7 +944,7 @@ Google Chrome is unable to recover your settings.
+@@ -1012,7 +1012,7 @@ Permissions you've already given to websites and apps 
        </message>
  
        <!-- ProcessSingleton -->

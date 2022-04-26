@@ -1,0 +1,1119 @@
+--- src/zope/tal/driver.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/driver.py
+@@ -43,7 +43,7 @@ import sys
+ import getopt
+ 
+ if __name__ == "__main__":
+-    import setpath                      # Local hack to tweak sys.path etc.
++    from . import setpath                      # Local hack to tweak sys.path etc.
+ 
+ # Import local classes
+ import zope.tal.taldefs
+@@ -104,9 +104,9 @@ ENGINES = {'test23.html': TestEngine,
+            }
+ 
+ def usage(code, msg=''):
+-    print >> sys.stderr, __doc__
++    print(__doc__, file=sys.stderr)
+     if msg:
+-        print >> sys.stderr, msg
++        print(msg, file=sys.stderr)
+     sys.exit(code)
+ 
+ def main():
+@@ -120,7 +120,7 @@ def main():
+     try:
+         opts, args = getopt.getopt(sys.argv[1:], "hHxlmstia",
+                                    ['help', 'html', 'xml'])
+-    except getopt.error, msg:
++    except getopt.error as msg:
+         usage(2, msg)
+     for opt, arg in opts:
+         if opt in ('-h', '--help'):
+--- src/zope/tal/dummyengine.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/dummyengine.py
+@@ -100,12 +100,12 @@ class DummyEngine(object):
+         if type == "not":
+             return not self.evaluate(expr)
+         if type == "exists":
+-            return self.locals.has_key(expr) or self.globals.has_key(expr)
++            return expr in self.locals or expr in self.globals
+         if type == "python":
+             try:
+                 return eval(expr, self.globals, self.locals)
+             except:
+-                raise TALExpressionError("evaluation error in %s" % `expr`)
++                raise TALExpressionError("evaluation error in %s" % repr(expr))
+         if type == "position":
+             # Insert the current source file name, line number,
+             # and column offset.
+@@ -114,17 +114,17 @@ class DummyEngine(object):
+             else:
+                 lineno, offset = None, None
+             return '%s (%s,%s)' % (self.source_file, lineno, offset)
+-        raise TALExpressionError("unrecognized expression: " + `expression`)
++        raise TALExpressionError("unrecognized expression: " + repr(expression))
+ 
+     # implementation; can be overridden
+     def evaluatePathOrVar(self, expr):
+         expr = expr.strip()
+-        if self.locals.has_key(expr):
++        if expr in self.locals:
+             return self.locals[expr]
+-        elif self.globals.has_key(expr):
++        elif expr in self.globals:
+             return self.globals[expr]
+         else:
+-            raise TALExpressionError("unknown variable: %s" % `expr`)
++            raise TALExpressionError("unknown variable: %s" % repr(expr))
+ 
+     def evaluateValue(self, expr):
+         return self.evaluate(expr)
+@@ -134,7 +134,7 @@ class DummyEngine(object):
+ 
+     def evaluateText(self, expr):
+         text = self.evaluate(expr)
+-        if isinstance(text, (str, unicode, Message)):
++        if isinstance(text, (str, Message)):
+             return text
+         if text is not None and text is not Default:
+             text = str(text)
+@@ -159,7 +159,7 @@ class DummyEngine(object):
+             macro = self.macros[localName]
+         else:
+             # External macro
+-            import driver
++            from . import driver
+             program, macros = driver.compilefile(file)
+             macro = macros.get(localName)
+             if not macro:
+@@ -208,7 +208,7 @@ class DummyEngine(object):
+             locals = self.locals.copy()
+ 
+         assert lang == 'text/server-python'
+-        import sys, StringIO
++        import sys, io
+ 
+         # Removing probable comments
+         if code.strip().startswith('<!--') and code.strip().endswith('-->'):
+@@ -216,15 +216,15 @@ class DummyEngine(object):
+ 
+         # Prepare code.
+         lines = code.split('\n')
+-        lines = filter(lambda l: l.strip() != '', lines)
++        lines = [l for l in lines if l.strip() != '']
+         code = '\n'.join(lines)
+         # This saves us from all indentation issues :)
+         if code.startswith(' ') or code.startswith('\t'):
+             code = 'if 1 == 1:\n' + code + '\n'
+         tmp = sys.stdout
+-        sys.stdout = StringIO.StringIO()
++        sys.stdout = io.StringIO()
+         try:
+-            exec code in globals, locals
++            exec(code, globals, locals)
+         finally:
+             result = sys.stdout
+             sys.stdout = tmp
+@@ -246,7 +246,7 @@ class Iterator(object):
+         self.engine = engine
+         self.nextIndex = 0
+ 
+-    def next(self):
++    def __next__(self):
+         i = self.nextIndex
+         try:
+             item = self.seq[i]
+@@ -264,7 +264,7 @@ class DummyTranslationDomain(object):
+     msgids = {} 
+ 
+     def appendMsgid(self, domain, data):
+-        if not self.msgids.has_key(domain):
++        if domain not in self.msgids:
+             self.msgids[domain] = []
+         self.msgids[domain].append(data)    
+     
+@@ -308,7 +308,7 @@ class DummyTranslationDomain(object):
+         self.appendMsgid(domain, (msgid, mapping))
+         
+         def repl(m):
+-            return unicode(mapping[m.group(m.lastindex).lower()])
++            return str(mapping[m.group(m.lastindex).lower()])
+         cre = re.compile(r'\$(?:([_A-Za-z][-\w]*)|\{([_A-Za-z][-\w]*)\})')
+         return cre.sub(repl, text)
+ 
+--- src/zope/tal/htmltalparser.py.orig	2012-02-14 09:53:32 UTC
++++ src/zope/tal/htmltalparser.py
+@@ -14,7 +14,7 @@
+ """Parse HTML and compile to TALInterpreter intermediate code.
+ """
+ 
+-from HTMLParser import HTMLParser, HTMLParseError
++from html.parser import HTMLParser, HTMLParseError
+ 
+ from zope.tal.taldefs import (ZOPE_METAL_NS, ZOPE_TAL_NS, ZOPE_I18N_NS,
+                               METALError, TALError, I18NError)
+@@ -118,7 +118,7 @@ class HTMLTALParser(HTMLParser):
+         f.close()
+         try:
+             self.parseString(data)
+-        except TALError, e:
++        except TALError as e:
+             e.setFile(file)
+             raise
+ 
+@@ -141,7 +141,7 @@ class HTMLTALParser(HTMLParser):
+              = self.process_ns(tag, attrs)
+         if tag in EMPTY_HTML_TAGS and "content" in taldict:
+             raise TALError(
+-                "empty HTML tags cannot use tal:content: %s" % `tag`,
++                "empty HTML tags cannot use tal:content: %s" % repr(tag),
+                 self.getpos())
+         # Support for inline Python code.
+         if tag == 'script':
+@@ -163,7 +163,7 @@ class HTMLTALParser(HTMLParser):
+         if "content" in taldict:
+             if tag in EMPTY_HTML_TAGS:
+                 raise TALError(
+-                    "empty HTML tags cannot use tal:content: %s" % `tag`,
++                    "empty HTML tags cannot use tal:content: %s" % repr(tag),
+                     self.getpos())
+             self.gen.emitStartElement(tag, attrlist, taldict, metaldict,
+                                       i18ndict, self.getpos())
+--- src/zope/tal/interfaces.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/interfaces.py
+@@ -61,13 +61,14 @@ class ITALExpressionEngine(Interface):
+         using the 'is' operator in Python.
+         """
+ 
+-    def setPosition((lineno, offset)):
++    def setPosition(xxx_todo_changeme):
+         """Inform the engine of the current position in the source file.
+ 
+         This is used to allow the evaluation engine to report
+         execution errors so that site developers can more easily
+         locate the offending expression.
+         """
++        (lineno, offset) = xxx_todo_changeme
+ 
+     def setSourceFile(filename):
+         """Inform the engine of the name of the current source file.
+@@ -128,12 +129,13 @@ class ITALExpressionEngine(Interface):
+         No constraints are imposed on the return value.
+         """
+ 
+-    def createErrorInfo(exception, (lineno, offset)):
++    def createErrorInfo(exception, xxx_todo_changeme1):
+         """Returns an ITALExpressionErrorInfo object.
+ 
+         The returned object is used to provide information about the
+         error condition for the on-error handler.
+         """
++        (lineno, offset) = xxx_todo_changeme1
+ 
+     def setGlobal(name, value):
+         """Set a global variable.
+--- src/zope/tal/ndiff.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/ndiff.py
+@@ -114,6 +114,7 @@ TRACE = 0
+ 
+ # define what "junk" means
+ import re
++from functools import reduce
+ 
+ def IS_LINE_JUNK(line, pat=re.compile(r"\s*#?\s*$").match):
+     return pat(line) is not None
+@@ -209,7 +210,7 @@ class SequenceMatcher(object):
+         b = self.b
+         self.b2j = b2j = {}
+         self.b2jhas = b2jhas = b2j.has_key
+-        for i in xrange(len(b)):
++        for i in range(len(b)):
+             elt = b[i]
+             if b2jhas(elt):
+                 b2j[elt].append(i)
+@@ -222,7 +223,7 @@ class SequenceMatcher(object):
+         # saved.
+         isjunk, junkdict = self.isjunk, {}
+         if isjunk:
+-            for elt in b2j.keys():
++            for elt in list(b2j.keys()):
+                 if isjunk(elt):
+                     junkdict[elt] = 1   # value irrelevant; it's a set
+                     del b2j[elt]
+@@ -281,7 +282,7 @@ class SequenceMatcher(object):
+         # junk-free match ending with a[i-1] and b[j]
+         j2len = {}
+         nothing = []
+-        for i in xrange(alo, ahi):
++        for i in range(alo, ahi):
+             # look at all instances of a[i] in b; note that because
+             # b2j has no junk keys, the loop is skipped if a[i] is junk
+             j2lenget = j2len.get
+@@ -314,8 +315,8 @@ class SequenceMatcher(object):
+             bestsize = bestsize + 1
+ 
+         if TRACE:
+-            print "get_matching_blocks", alo, ahi, blo, bhi
+-            print "    returns", besti, bestj, bestsize
++            print("get_matching_blocks", alo, ahi, blo, bhi)
++            print("    returns", besti, bestj, bestsize)
+         return besti, bestj, bestsize
+ 
+     def get_matching_blocks(self):
+@@ -326,7 +327,7 @@ class SequenceMatcher(object):
+         self.__helper(0, la, 0, lb, self.matching_blocks)
+         self.matching_blocks.append((la, lb, 0))
+         if TRACE:
+-            print '*** matching blocks', self.matching_blocks
++            print('*** matching blocks', self.matching_blocks)
+         return self.matching_blocks
+ 
+     # builds list of matching blocks covering a[alo:ahi] and
+@@ -417,8 +418,8 @@ class SequenceMatcher(object):
+ 
+ # meant for dumping lines
+ def dump(tag, x, lo, hi):
+-    for i in xrange(lo, hi):
+-        print tag, x[i],
++    for i in range(lo, hi):
++        print(tag, x[i], end=' ')
+ 
+ def plain_replace(a, alo, ahi, b, blo, bhi):
+     assert alo < ahi and blo < bhi
+@@ -438,7 +439,7 @@ def plain_replace(a, alo, ahi, b, blo, bhi):
+ 
+ def fancy_replace(a, alo, ahi, b, blo, bhi):
+     if TRACE:
+-        print '*** fancy_replace', alo, ahi, blo, bhi
++        print('*** fancy_replace', alo, ahi, blo, bhi)
+         dump('>', a, alo, ahi)
+         dump('<', b, blo, bhi)
+ 
+@@ -451,10 +452,10 @@ def fancy_replace(a, alo, ahi, b, blo, bhi):
+     # search for the pair that matches best without being identical
+     # (identical lines must be junk lines, & we don't want to synch up
+     # on junk -- unless we have to)
+-    for j in xrange(blo, bhi):
++    for j in range(blo, bhi):
+         bj = b[j]
+         cruncher.set_seq2(bj)
+-        for i in xrange(alo, ahi):
++        for i in range(alo, ahi):
+             ai = a[i]
+             if ai == bj:
+                 if eqi is None:
+@@ -486,7 +487,7 @@ def fancy_replace(a, alo, ahi, b, blo, bhi):
+     # a[best_i] very similar to b[best_j]; eqi is None iff they're not
+     # identical
+     if TRACE:
+-        print '*** best_ratio', best_ratio, best_i, best_j
++        print('*** best_ratio', best_ratio, best_i, best_j)
+         dump('>', a, best_i, best_i+1)
+         dump('<', b, best_j, best_j+1)
+ 
+@@ -512,11 +513,11 @@ def fancy_replace(a, alo, ahi, b, blo, bhi):
+                 atags = atags + ' ' * la
+                 btags = btags + ' ' * lb
+             else:
+-                raise ValueError('unknown tag ' + `tag`)
++                raise ValueError('unknown tag ' + repr(tag))
+         printq(aelt, belt, atags, btags)
+     else:
+         # the synch pair is identical
+-        print ' ', aelt,
++        print(' ', aelt, end=' ')
+ 
+     # pump out diffs from after the synch point
+     fancy_helper(a, best_i+1, ahi, b, best_j+1, bhi)
+@@ -537,12 +538,12 @@ def printq(aline, bline, atags, btags):
+     common = min(count_leading(aline, "\t"),
+                  count_leading(bline, "\t"))
+     common = min(common, count_leading(atags[:common], " "))
+-    print "-", aline,
++    print("-", aline, end=' ')
+     if count_leading(atags, " ") < len(atags):
+-        print "?", "\t" * common + atags[common:]
+-    print "+", bline,
++        print("?", "\t" * common + atags[common:])
++    print("+", bline, end=' ')
+     if count_leading(btags, " ") < len(btags):
+-        print "?", "\t" * common + btags[common:]
++        print("?", "\t" * common + btags[common:])
+ 
+ def count_leading(line, ch):
+     i, n = 0, len(line)
+@@ -562,7 +563,7 @@ def fail(msg):
+ def fopen(fname):
+     try:
+         return open(fname, 'r')
+-    except IOError, detail:
++    except IOError as detail:
+         return fail("couldn't open " + fname + ": " + str(detail))
+ 
+ # open two files & spray the diff to stdout; return false iff a problem
+@@ -586,7 +587,7 @@ def fcompare(f1name, f2name):
+         elif tag == 'equal':
+             dump(' ', a, alo, ahi)
+         else:
+-            raise ValueError('unknown tag ' + `tag`)
++            raise ValueError('unknown tag ' + repr(tag))
+ 
+     return 1
+ 
+@@ -597,7 +598,7 @@ def main(args):
+     import getopt
+     try:
+         opts, args = getopt.getopt(args, "qr:")
+-    except getopt.error, detail:
++    except getopt.error as detail:
+         return fail(str(detail))
+     noisy = 1
+     qseen = rseen = 0
+@@ -621,8 +622,8 @@ def main(args):
+         return fail("need 2 filename args")
+     f1name, f2name = args
+     if noisy:
+-        print '-:', f1name
+-        print '+:', f2name
++        print('-:', f1name)
++        print('+:', f2name)
+     return fcompare(f1name, f2name)
+ 
+ def restore(which):
+@@ -631,7 +632,7 @@ def restore(which):
+     prefixes = ("  ", tag)
+     for line in sys.stdin.readlines():
+         if line[:2] in prefixes:
+-            print line[2:],
++            print(line[2:], end=' ')
+ 
+ if __name__ == '__main__':
+     import sys
+--- src/zope/tal/runtest.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/runtest.py
+@@ -19,24 +19,24 @@ import os
+ import sys
+ import traceback
+ 
+-from cStringIO import StringIO
++from io import StringIO
+ 
+ if __name__ == "__main__":
+-    import setpath                      # Local hack to tweak sys.path etc.
++    from . import setpath                      # Local hack to tweak sys.path etc.
+ 
+ import zope.tal.driver
+ import zope.tal.tests.utils
+ 
+ def showdiff(a, b):
+-    import ndiff
++    from . import ndiff
+     cruncher = ndiff.SequenceMatcher(ndiff.IS_LINE_JUNK, a, b)
+     for tag, alo, ahi, blo, bhi in cruncher.get_opcodes():
+         if tag == "equal":
+             continue
+-        print nicerange(alo, ahi) + tag[0] + nicerange(blo, bhi)
++        print(nicerange(alo, ahi) + tag[0] + nicerange(blo, bhi))
+         ndiff.dump('<', a, alo, ahi)
+         if a and b:
+-            print '---'
++            print('---')
+         ndiff.dump('>', b, blo, bhi)
+ 
+ def nicerange(lo, hi):
+@@ -80,10 +80,10 @@ def main():
+         if arg.find("_sa") >= 0 and "-a" not in opts:
+             locopts.append("-a")
+         if not unittesting:
+-            print arg,
++            print(arg, end=' ')
+             sys.stdout.flush()
+         if zope.tal.tests.utils.skipxml and arg.endswith(".xml"):
+-            print "SKIPPED (XML parser not available)"
++            print("SKIPPED (XML parser not available)")
+             continue
+         save = sys.stdout, sys.argv
+         try:
+@@ -98,13 +98,13 @@ def main():
+         except:
+             errors = 1
+             if quiet:
+-                print sys.exc_type
++                print(sys.exc_info()[0])
+                 sys.stdout.flush()
+             else:
+                 if unittesting:
+-                    print
++                    print()
+                 else:
+-                    print "Failed:"
++                    print("Failed:")
+                     sys.stdout.flush()
+                 traceback.print_exc()
+             continue
+@@ -116,7 +116,7 @@ def main():
+             f = open(outfile)
+         except IOError:
+             expected = None
+-            print "(missing file %s)" % outfile,
++            print("(missing file %s)" % outfile, end=' ')
+         else:
+             expected = f.readlines()
+             f.close()
+@@ -127,12 +127,12 @@ def main():
+             actual = readlines(stdout)
+         if actual == expected:
+             if not unittesting:
+-                print "OK"
++                print("OK")
+         else:
+             if unittesting:
+-                print
++                print()
+             else:
+-                print "not OK"
++                print("not OK")
+             errors = 1
+             if not quiet and expected is not None:
+                 showdiff(expected, actual)
+--- src/zope/tal/talgenerator.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/talgenerator.py
+@@ -69,7 +69,7 @@ class TALGenerator(object):
+         output = []
+         collect = []
+         cursor = 0
+-        for cursor in xrange(len(program)+1):
++        for cursor in range(len(program)+1):
+             try:
+                 item = program[cursor]
+             except IndexError:
+@@ -197,8 +197,8 @@ class TALGenerator(object):
+     def compileExpression(self, expr):
+         try:
+             return self.expressionCompiler.compile(expr)
+-        except self.CompilerError, err:
+-            raise TALError('%s in expression %s' % (err.args[0], `expr`),
++        except self.CompilerError as err:
++            raise TALError('%s in expression %s' % (err.args[0], repr(expr)),
+                            self.position)
+ 
+     def pushProgram(self):
+@@ -259,7 +259,7 @@ class TALGenerator(object):
+             m = re.match(
+                 r"(?s)\s*(?:(global|local)\s+)?(%s)\s+(.*)\Z" % NAME_RE, part)
+             if not m:
+-                raise TALError("invalid define syntax: " + `part`,
++                raise TALError("invalid define syntax: " + repr(part),
+                                self.position)
+             scope, name, expr = m.group(1, 2, 3)
+             scope = scope or "local"
+@@ -293,7 +293,7 @@ class TALGenerator(object):
+     def emitRepeat(self, arg):
+         m = re.match("(?s)\s*(%s)\s+(.*)\Z" % NAME_RE, arg)
+         if not m:
+-            raise TALError("invalid repeat syntax: " + `arg`,
++            raise TALError("invalid repeat syntax: " + repr(arg),
+                            self.position)
+         name, expr = m.group(1, 2)
+         cexpr = self.compileExpression(expr)
+@@ -346,11 +346,11 @@ class TALGenerator(object):
+     def emitDefineMacro(self, macroName):
+         program = self.popProgram()
+         macroName = macroName.strip()
+-        if self.macros.has_key(macroName):
+-            raise METALError("duplicate macro definition: %s" % `macroName`,
++        if macroName in self.macros:
++            raise METALError("duplicate macro definition: %s" % repr(macroName),
+                              self.position)
+         if not re.match('%s$' % NAME_RE, macroName):
+-            raise METALError("invalid macro name: %s" % `macroName`,
++            raise METALError("invalid macro name: %s" % repr(macroName),
+                              self.position)
+         self.macros[macroName] = program
+         self.inMacroDef = self.inMacroDef - 1
+@@ -374,18 +374,18 @@ class TALGenerator(object):
+         program = self.popProgram()
+         slotName = slotName.strip()
+         if not re.match('%s$' % NAME_RE, slotName):
+-            raise METALError("invalid slot name: %s" % `slotName`,
++            raise METALError("invalid slot name: %s" % repr(slotName),
+                              self.position)
+         self.emit("defineSlot", slotName, program)
+ 
+     def emitFillSlot(self, slotName):
+         program = self.popProgram()
+         slotName = slotName.strip()
+-        if self.slots.has_key(slotName):
+-            raise METALError("duplicate fill-slot name: %s" % `slotName`,
++        if slotName in self.slots:
++            raise METALError("duplicate fill-slot name: %s" % repr(slotName),
+                              self.position)
+         if not re.match('%s$' % NAME_RE, slotName):
+-            raise METALError("invalid slot name: %s" % `slotName`,
++            raise METALError("invalid slot name: %s" % repr(slotName),
+                              self.position)
+         self.slots[slotName] = program
+         self.inMacroUse = 1
+@@ -449,13 +449,13 @@ class TALGenerator(object):
+         newlist = []
+         for item in attrlist:
+             key = item[0]
+-            if repldict.has_key(key):
++            if key in repldict:
+                 expr, xlat, msgid = repldict[key]
+                 item = item[:2] + ("replace", expr, xlat, msgid)
+                 del repldict[key]
+             newlist.append(item)
+         # Add dynamic-only attributes
+-        for key, (expr, xlat, msgid) in repldict.items():
++        for key, (expr, xlat, msgid) in list(repldict.items()):
+             newlist.append((key, None, "insert", expr, xlat, msgid))
+         return newlist
+ 
+@@ -482,25 +482,25 @@ class TALGenerator(object):
+             taldict["content"] = taldict.pop("replace")
+             replaced = True
+ 
+-        for key, value in taldict.items():
++        for key, value in list(taldict.items()):
+             if key not in taldefs.KNOWN_TAL_ATTRIBUTES:
+-                raise TALError("bad TAL attribute: " + `key`, position)
++                raise TALError("bad TAL attribute: " + repr(key), position)
+             if not (value or key == 'omit-tag'):
+                 raise TALError("missing value for TAL attribute: " +
+-                               `key`, position)
+-        for key, value in metaldict.items():
++                               repr(key), position)
++        for key, value in list(metaldict.items()):
+             if key not in taldefs.KNOWN_METAL_ATTRIBUTES:
+-                raise METALError("bad METAL attribute: " + `key`,
++                raise METALError("bad METAL attribute: " + repr(key),
+                                  position)
+             if not value:
+                 raise TALError("missing value for METAL attribute: " +
+-                               `key`, position)
+-        for key, value in i18ndict.items():
++                               repr(key), position)
++        for key, value in list(i18ndict.items()):
+             if key not in taldefs.KNOWN_I18N_ATTRIBUTES:
+-                raise I18NError("bad i18n attribute: " + `key`, position)
++                raise I18NError("bad i18n attribute: " + repr(key), position)
+             if not value and key in ("attributes", "data", "id"):
+                 raise I18NError("missing value for i18n attribute: " +
+-                                `key`, position)
++                                repr(key), position)
+ 
+         todo = {}
+         defineMacro = metaldict.get("define-macro")
+@@ -681,7 +681,7 @@ class TALGenerator(object):
+                 i18nattrs = {}
+             # Convert repldict's name-->expr mapping to a
+             # name-->(compiled_expr, translate) mapping
+-            for key, value in repldict.items():
++            for key, value in list(repldict.items()):
+                 if i18nattrs.get(key, None):
+                     raise I18NError(
+                         "attribute [%s] cannot both be part of tal:attributes"
+--- src/zope/tal/talgettext.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/talgettext.py
+@@ -62,16 +62,16 @@ NLSTR = '"\n"'
+ 
+ def usage(code, msg=''):
+     # Python 2.1 required
+-    print >> sys.stderr, __doc__
++    print(__doc__, file=sys.stderr)
+     if msg:
+-        print >> sys.stderr, msg
++        print(msg, file=sys.stderr)
+     sys.exit(code)
+ 
+ 
+ class POTALInterpreter(TALInterpreter):
+     def translate(self, msgid, default=None, i18ndict=None, obj=None):
+         if default is None:
+-            default = getattr(msgid, 'default', unicode(msgid))
++            default = getattr(msgid, 'default', str(msgid))
+         # If no i18n dict exists yet, create one.
+         if i18ndict is None:
+             i18ndict = {}
+@@ -126,15 +126,15 @@ class POEngine(DummyEngine):
+         if msgid not in domain:
+             domain[msgid] = []
+         else:
+-            msgids = domain.keys()
++            msgids = list(domain.keys())
+             idx = msgids.index(msgid)
+             existing_msgid = msgids[idx]
+             if msgid.default != existing_msgid.default:
+                 references = '\n'.join([location[0]+':'+str(location[1]) for location in domain[msgid]])
+-                print >> sys.stderr, (u"Warning: msgid '%s' in %s already exists " \
++                print(("Warning: msgid '%s' in %s already exists " \
+                          "with a different default (bad: %s, should be: %s)\n" \
+                          "The references for the existent value are:\n%s\n" % \
+-                         (msgid, self.file+':'+str(position), msgid.default.encode('utf-8'), existing_msgid.default.encode('utf-8'), references)).encode('utf-8')
++                         (msgid, self.file+':'+str(position), msgid.default.encode('utf-8'), existing_msgid.default.encode('utf-8'), references)).encode('utf-8'), file=sys.stderr)
+         domain[msgid].append((self.file, position))
+         return 'x'
+ 
+@@ -170,8 +170,8 @@ class UpdatePOEngine(POEngine):
+ 
+         try:
+             lines = open(self._filename).readlines()
+-        except IOError, msg:
+-            print >> sys.stderr, msg
++        except IOError as msg:
++            print(msg, file=sys.stderr)
+             sys.exit(1)
+ 
+         section = None
+@@ -213,9 +213,9 @@ class UpdatePOEngine(POEngine):
+             elif section == STR:
+                 msgstr += '%s\n' % l
+             else:
+-                print >> sys.stderr, 'Syntax error on %s:%d' % (infile, lno), \
+-                      'before:'
+-                print >> sys.stderr, l
++                print('Syntax error on %s:%d' % (infile, lno), \
++                      'before:', file=sys.stderr)
++                print(l, file=sys.stderr)
+                 sys.exit(1)
+         # Add last entry
+         if section == STR:
+@@ -243,7 +243,7 @@ def main():
+             sys.argv[1:],
+             'ho:u:',
+             ['help', 'output=', 'update='])
+-    except getopt.error, msg:
++    except getopt.error as msg:
+         usage(1, msg)
+ 
+     outfile = None
+@@ -261,7 +261,7 @@ def main():
+             engine = UpdatePOEngine(filename=arg)
+ 
+     if not args:
+-        print 'nothing to do'
++        print('nothing to do')
+         return
+ 
+     # We don't care about the rendered output of the .pt file
+@@ -284,7 +284,7 @@ def main():
+             POTALInterpreter(program, macros, engine, stream=Devnull(),
+                              metal=False)()
+         except: # Hee hee, I love bare excepts!
+-            print 'There was an error processing', filename
++            print('There was an error processing', filename)
+             traceback.print_exc()
+ 
+     # Now output the keys in the engine.  Write them to a file if --output or
+@@ -295,7 +295,7 @@ def main():
+         outfile = file(outfile, update_mode and "a" or "w")
+ 
+     catalog = {}
+-    for domain in engine.catalog.keys():
++    for domain in list(engine.catalog.keys()):
+         catalog.update(engine.catalog[domain])
+ 
+     messages = catalog.copy()
+@@ -304,10 +304,10 @@ def main():
+     except AttributeError:
+         pass
+     if '' not in messages:
+-        print >> outfile, pot_header % {'time': time.ctime(),
+-                                        'version': __version__}
++        print(pot_header % {'time': time.ctime(),
++                                        'version': __version__}, file=outfile)
+ 
+-    msgids = catalog.keys()
++    msgids = list(catalog.keys())
+     # TODO: You should not sort by msgid, but by filename and position. (SR)
+     msgids.sort()
+     for msgid in msgids:
+--- src/zope/tal/talinterpreter.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/talinterpreter.py
+@@ -29,7 +29,7 @@ from zope.tal.translationcontext import TranslationCon
+ # Avoid constructing this tuple over and over
+ I18nMessageTypes = (Message,)
+ 
+-TypesToTranslate = I18nMessageTypes + (str, unicode)
++TypesToTranslate = I18nMessageTypes + (str, str)
+ 
+ BOOLEAN_HTML_ATTRS = frozenset([
+     # List of Boolean attributes in HTML that should be rendered in
+@@ -251,7 +251,7 @@ class TALInterpreter(object):
+     def pushMacro(self, macroName, slots, definingName, extending):
+         if len(self.macroStack) >= self.stackLimit:
+             raise METALError("macro nesting limit (%d) exceeded "
+-                             "by %s" % (self.stackLimit, `macroName`))
++                             "by %s" % (self.stackLimit, repr(macroName)))
+         self.macroStack.append(
+             MacroStackItem((macroName, slots, definingName, extending,
+                             True, self.i18nContext)))
+@@ -371,12 +371,13 @@ class TALInterpreter(object):
+         self.do_startTag(stuff, self.endsep, self.endlen)
+     bytecode_handlers["startEndTag"] = do_startEndTag
+ 
+-    def do_startTag(self, (name, attrList),
++    def do_startTag(self, xxx_todo_changeme,
+                     end=">", endlen=1, _len=len):
+         # The bytecode generator does not cause calls to this method
+         # for start tags with no attributes; those are optimized down
+         # to rawtext events.  Hence, there is no special "fast path"
+         # for that case.
++        (name, attrList) = xxx_todo_changeme
+         self._currentTag = name
+         L = ["<", name]
+         append = L.append
+@@ -507,8 +508,9 @@ class TALInterpreter(object):
+         self.restoreOutputState(state)
+         self.interpret(program)
+ 
+-    def do_optTag(self, (name, cexpr, tag_ns, isend, start, program),
++    def do_optTag(self, xxx_todo_changeme1,
+                   omit=0):
++        (name, cexpr, tag_ns, isend, start, program) = xxx_todo_changeme1
+         if tag_ns and not self.showtal:
+             return self.no_tag(start, program)
+ 
+@@ -528,7 +530,8 @@ class TALInterpreter(object):
+             self.do_optTag(stuff)
+     bytecode_handlers["optTag"] = do_optTag
+ 
+-    def do_rawtextBeginScope(self, (s, col, position, closeprev, dict)):
++    def do_rawtextBeginScope(self, xxx_todo_changeme2):
++        (s, col, position, closeprev, dict) = xxx_todo_changeme2
+         self._stream_write(s)
+         self.col = col
+         self.do_setPosition(position)
+@@ -540,7 +543,8 @@ class TALInterpreter(object):
+             self.engine.beginScope()
+             self.scopeLevel = self.scopeLevel + 1
+ 
+-    def do_rawtextBeginScope_tal(self, (s, col, position, closeprev, dict)):
++    def do_rawtextBeginScope_tal(self, xxx_todo_changeme3):
++        (s, col, position, closeprev, dict) = xxx_todo_changeme3
+         self._stream_write(s)
+         self.col = col
+         engine = self.engine
+@@ -574,11 +578,13 @@ class TALInterpreter(object):
+     def do_setLocal(self, notused):
+         pass
+ 
+-    def do_setLocal_tal(self, (name, expr)):
++    def do_setLocal_tal(self, xxx_todo_changeme4):
++        (name, expr) = xxx_todo_changeme4
+         self.engine.setLocal(name, self.engine.evaluateValue(expr))
+     bytecode_handlers["setLocal"] = do_setLocal
+ 
+-    def do_setGlobal_tal(self, (name, expr)):
++    def do_setGlobal_tal(self, xxx_todo_changeme5):
++        (name, expr) = xxx_todo_changeme5
+         self.engine.setGlobal(name, self.engine.evaluateValue(expr))
+     bytecode_handlers["setGlobal"] = do_setLocal
+ 
+@@ -670,7 +676,7 @@ class TALInterpreter(object):
+                 value = self.translate(value)
+ 
+             if not structure:
+-                value = cgi.escape(unicode(value))
++                value = cgi.escape(str(value))
+ 
+         # Either the i18n:name tag is nested inside an i18n:translate in which
+         # case the last item on the stack has the i18n dictionary and string
+@@ -733,7 +739,8 @@ class TALInterpreter(object):
+     bytecode_handlers["insertStructure"] = do_insertStructure
+     bytecode_handlers["insertI18nStructure"] = do_insertStructure
+ 
+-    def do_insertStructure_tal(self, (expr, repldict, block)):
++    def do_insertStructure_tal(self, xxx_todo_changeme6):
++        (expr, repldict, block) = xxx_todo_changeme6
+         structure = self.engine.evaluateStructure(expr)
+         if structure is None:
+             return
+@@ -743,7 +750,7 @@ class TALInterpreter(object):
+         if isinstance(structure, I18nMessageTypes):
+             text = self.translate(structure)
+         else:
+-            text = unicode(structure)
++            text = str(structure)
+         if not (repldict or self.strictinsert):
+             # Take a shortcut, no error checking
+             self.stream_write(text)
+@@ -753,15 +760,16 @@ class TALInterpreter(object):
+         else:
+             self.insertXMLStructure(text, repldict)
+ 
+-    def do_insertI18nStructure_tal(self, (expr, repldict, block)):
++    def do_insertI18nStructure_tal(self, xxx_todo_changeme7):
+         # TODO: Code duplication is BAD, we need to fix it later
++        (expr, repldict, block) = xxx_todo_changeme7
+         structure = self.engine.evaluateStructure(expr)
+         if structure is not None:
+             if structure is self.Default:
+                 self.interpret(block)
+             else:
+                 if not isinstance(structure, TypesToTranslate):
+-                    structure = unicode(structure)
++                    structure = str(structure)
+                 text = self.translate(structure)
+                 if not (repldict or self.strictinsert):
+                     # Take a shortcut, no error checking
+@@ -807,19 +815,21 @@ class TALInterpreter(object):
+         self._stream_write(output)
+     bytecode_handlers["evaluateCode"] = do_evaluateCode
+ 
+-    def do_loop(self, (name, expr, block)):
++    def do_loop(self, xxx_todo_changeme8):
++        (name, expr, block) = xxx_todo_changeme8
+         self.interpret(block)
+ 
+-    def do_loop_tal(self, (name, expr, block)):
++    def do_loop_tal(self, xxx_todo_changeme9):
++        (name, expr, block) = xxx_todo_changeme9
+         iterator = self.engine.setRepeat(name, expr)
+-        while iterator.next():
++        while next(iterator):
+             self.interpret(block)
+     bytecode_handlers["loop"] = do_loop
+ 
+     def translate(self, msgid, default=None, i18ndict=None,
+                   obj=None, domain=None):
+         if default is None:
+-            default = getattr(msgid, 'default', unicode(msgid))
++            default = getattr(msgid, 'default', str(msgid))
+         if i18ndict is None:
+             i18ndict = {}
+         if domain is None:
+@@ -832,30 +842,35 @@ class TALInterpreter(object):
+         return self.engine.translate(msgid, self.i18nContext.domain,
+                                      i18ndict, default=default)
+ 
+-    def do_rawtextColumn(self, (s, col)):
++    def do_rawtextColumn(self, xxx_todo_changeme10):
++        (s, col) = xxx_todo_changeme10
+         self._stream_write(s)
+         self.col = col
+     bytecode_handlers["rawtextColumn"] = do_rawtextColumn
+ 
+-    def do_rawtextOffset(self, (s, offset)):
++    def do_rawtextOffset(self, xxx_todo_changeme11):
++        (s, offset) = xxx_todo_changeme11
+         self._stream_write(s)
+         self.col = self.col + offset
+     bytecode_handlers["rawtextOffset"] = do_rawtextOffset
+ 
+-    def do_condition(self, (condition, block)):
++    def do_condition(self, xxx_todo_changeme12):
++        (condition, block) = xxx_todo_changeme12
+         if not self.tal or self.engine.evaluateBoolean(condition):
+             self.interpret(block)
+     bytecode_handlers["condition"] = do_condition
+ 
+-    def do_defineMacro(self, (macroName, macro)):
++    def do_defineMacro(self, xxx_todo_changeme13):
++        (macroName, macro) = xxx_todo_changeme13
+         wasInUse = self.inUseDirective
+         self.inUseDirective = False
+         self.interpret(macro)
+         self.inUseDirective = wasInUse
+     bytecode_handlers["defineMacro"] = do_defineMacro
+ 
+-    def do_useMacro(self, (macroName, macroExpr, compiledSlots, block),
++    def do_useMacro(self, xxx_todo_changeme14,
+                     definingName=None, extending=False):
++        (macroName, macroExpr, compiledSlots, block) = xxx_todo_changeme14
+         if not self.metal:
+             self.interpret(block)
+             return
+@@ -865,12 +880,12 @@ class TALInterpreter(object):
+         else:
+             if not isCurrentVersion(macro):
+                 raise METALError("macro %s has incompatible version %s" %
+-                                 (`macroName`, `getProgramVersion(macro)`),
++                                 (repr(macroName), repr(getProgramVersion(macro))),
+                                  self.position)
+             mode = getProgramMode(macro)
+             if mode != (self.html and "html" or "xml"):
+                 raise METALError("macro %s has incompatible mode %s" %
+-                                 (`macroName`, `mode`), self.position)
++                                 (repr(macroName), repr(mode)), self.position)
+         self.pushMacro(macroName, compiledSlots, definingName, extending)
+ 
+         # We want 'macroname' name to be always available as a variable
+@@ -891,23 +906,26 @@ class TALInterpreter(object):
+         self.engine.setLocal('macroname', outer)
+     bytecode_handlers["useMacro"] = do_useMacro
+ 
+-    def do_extendMacro(self, (macroName, macroExpr, compiledSlots, block,
+-                              definingName)):
++    def do_extendMacro(self, xxx_todo_changeme15):
+         # extendMacro results from a combination of define-macro and
+         # use-macro.  definingName has the value of the
+         # metal:define-macro attribute.
++        (macroName, macroExpr, compiledSlots, block,
++                              definingName) = xxx_todo_changeme15
+         extending = self.metal and self.inUseDirective
+         self.do_useMacro((macroName, macroExpr, compiledSlots, block),
+                          definingName, extending)
+     bytecode_handlers["extendMacro"] = do_extendMacro
+ 
+-    def do_fillSlot(self, (slotName, block)):
++    def do_fillSlot(self, xxx_todo_changeme16):
+         # This is only executed if the enclosing 'use-macro' evaluates
+         # to 'default'.
++        (slotName, block) = xxx_todo_changeme16
+         self.interpret(block)
+     bytecode_handlers["fillSlot"] = do_fillSlot
+ 
+-    def do_defineSlot(self, (slotName, block)):
++    def do_defineSlot(self, xxx_todo_changeme17):
++        (slotName, block) = xxx_todo_changeme17
+         if not self.metal:
+             self.interpret(block)
+             return
+@@ -949,10 +967,12 @@ class TALInterpreter(object):
+         self.interpret(block)
+     bytecode_handlers["defineSlot"] = do_defineSlot
+ 
+-    def do_onError(self, (block, handler)):
++    def do_onError(self, xxx_todo_changeme18):
++        (block, handler) = xxx_todo_changeme18
+         self.interpret(block)
+ 
+-    def do_onError_tal(self, (block, handler)):
++    def do_onError_tal(self, xxx_todo_changeme19):
++        (block, handler) = xxx_todo_changeme19
+         state = self.saveState()
+         self.stream = stream = self.StringIO()
+         self._stream_write = stream.write
+@@ -1004,7 +1024,7 @@ class FasterStringIO(list):
+             self.append(value)
+ 
+     def getvalue(self):
+-        return u''.join(self)
++        return ''.join(self)
+ 
+ 
+ def _write_ValueError(s):
+--- src/zope/tal/tests/markbench.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/tests/markbench.py
+@@ -25,7 +25,7 @@ import getopt
+ import sys
+ import time
+ 
+-from cStringIO import StringIO
++from io import StringIO
+ 
+ #from zope.documenttemplate.dt_html import HTMLFile
+ 
+@@ -108,14 +108,14 @@ def compare(n, count, profiler=None, verbose=1):
+         t1 = int(time_zpt(tal_fn % n, count) * 1000 + 0.5)
+         t2 = int(time_tal(tal_fn % n, count) * 1000 + 0.5)
+         t3 = 'n/a' # int(time_dtml(dtml_fn % n, count) * 1000 + 0.5)
+-        print '%.2d: %10s %10s %10s' % (n, t1, t2, t3)
++        print('%.2d: %10s %10s %10s' % (n, t1, t2, t3))
+     if profiler:
+         profile_tal(tal_fn % n, count, profiler)
+ 
+ def main(count, profiler=None, verbose=1):
+     n = 1
+     if verbose:
+-        print '##: %10s %10s %10s' % ('ZPT', 'TAL', 'DTML')
++        print('##: %10s %10s %10s' % ('ZPT', 'TAL', 'DTML'))
+     while os.path.isfile(tal_fn % n) and os.path.isfile(dtml_fn % n):
+         compare(n, count, profiler, verbose)
+         n = n + 1
+@@ -127,7 +127,7 @@ def get_signal_name(sig):
+             return name
+     return None
+ 
+-data = {'x':'X', 'r2': range(2), 'r8': range(8), 'r64': range(64)}
++data = {'x':'X', 'r2': list(range(2)), 'r8': list(range(8)), 'r64': list(range(64))}
+ for i in range(10):
+     data['x%s' % i] = 'X%s' % i
+ 
+@@ -160,9 +160,9 @@ if __name__ == "__main__":
+             sys.exit(rc)
+         elif rc < 0:
+             sig = -rc
+-            print >>sys.stderr, (
++            print((
+                 "Process exited, signal %d (%s)."
+-                % (sig, get_signal_name(sig) or "<unknown signal>"))
++                % (sig, get_signal_name(sig) or "<unknown signal>")), file=sys.stderr)
+             sys.exit(1)
+         os.chdir(pwd)
+ 
+@@ -180,6 +180,6 @@ if __name__ == "__main__":
+         p.sort_stats('time', 'calls')
+         try:
+             p.print_stats(20)
+-        except IOError, e:
++        except IOError as e:
+             if e.errno != errno.EPIPE:
+                 raise
+--- src/zope/tal/tests/test_files.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/tests/test_files.py
+@@ -53,7 +53,7 @@ class FileTestCase(unittest.TestCase):
+                 zope.tal.runtest.main()
+             finally:
+                 os.chdir(pwd)
+-        except SystemExit, what:
++        except SystemExit as what:
+             if what.code:
+                 self.fail("output for %s didn't match" % self.__file)
+ 
+--- src/zope/tal/tests/utils.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/tests/utils.py
+@@ -50,8 +50,8 @@ def run_suite(suite, outf=None, errf=None):
+ ##         print
+     newerrs = len(result.errors) + len(result.failures)
+     if newerrs:
+-        print "'Errors' indicate exceptions other than AssertionError."
+-        print "'Failures' indicate AssertionError"
++        print("'Errors' indicate exceptions other than AssertionError.")
++        print("'Failures' indicate AssertionError")
+         if errf is None:
+             errf = sys.stderr
+         errf.write("%d errors, %d failures\n"
+--- src/zope/tal/timer.py.orig	2012-02-14 07:21:28 UTC
++++ src/zope/tal/timer.py
+@@ -18,7 +18,7 @@ import getopt
+ import sys
+ import time
+ 
+-from cStringIO import StringIO
++from io import StringIO
+ 
+ from zope.tal.driver import FILE, compilefile, interpretit
+ 
+@@ -27,8 +27,8 @@ def main():
+     count = 10
+     try:
+         opts, args = getopt.getopt(sys.argv[1:], "n:")
+-    except getopt.error, msg:
+-        print msg
++    except getopt.error as msg:
++        print(msg)
+         sys.exit(2)
+     for o, a in opts:
+         if o == "-n":
+@@ -36,7 +36,7 @@ def main():
+     if not args:
+         args = [FILE]
+     for file in args:
+-        print file
++        print(file)
+         dummyfile = StringIO()
+         it = timefunc(count, compilefile, file)
+         timefunc(count, interpretit, it, None, dummyfile)
+@@ -46,7 +46,7 @@ def timefunc(count, func, *args):
+     sys.stderr.flush()
+     t0 = time.clock()
+     for i in range(count):
+-        result = apply(func, args)
++        result = func(*args)
+     t1 = time.clock()
+     sys.stderr.write("%6.3f secs for %d calls, i.e. %4.0f msecs per call\n"
+                      % ((t1-t0), count, 1000*(t1-t0)/count))

@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	sfsmisc
-DISTVERSION=	1.1-12
+DISTVERSION=	1.1-13
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

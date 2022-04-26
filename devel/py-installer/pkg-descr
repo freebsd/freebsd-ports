@@ -7,4 +7,4 @@ wheels and installing packages from wheels.
 - Extensible simple implementations of the abstractions.
 - Platform-independent Python script wrapper generation.
 
-WWW: https://github.com/pradyunsg/installer
+WWW: https://github.com/pypa/installer

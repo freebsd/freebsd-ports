@@ -112,41 +112,41 @@ _WEBPLUGIN_APPS_ALL=		${_WEBPLUGIN_APPS_ALL_LINUX} \
 				${_WEBPLUGIN_APPS_ALL_NATIVE}
 
 _WEBPLUGIN_TEST=	${_WEBPLUGIN_APPS_ALL}
-.if ${webplugin_ARGS} == all || empty(webplugin_ARGS)
+.  if ${webplugin_ARGS} == all || empty(webplugin_ARGS)
 _WEBPLUGIN_PATTERN=	*
-.elif ${webplugin_ARGS} == native
+.  elif ${webplugin_ARGS} == native
 _WEBPLUGIN_PATTERN=	*
 _WEBPLUGIN_TEST=	${_WEBPLUGIN_APPS_ALL_NATIVE}
-.elif ${webplugin_ARGS} == linux
+.  elif ${webplugin_ARGS} == linux
 _WEBPLUGIN_PATTERN=	*
 _WEBPLUGIN_TEST=	${_WEBPLUGIN_APPS_ALL_LINUX}
-.else
+.  else
 _WEBPLUGIN_PATTERN=	${webplugin_ARGS}
-.endif
+.  endif
 
-.if !defined(WEBPLUGIN_FILES)
+.  if !defined(WEBPLUGIN_FILES)
 IGNORE=	Cannot be installed: WEBPLUGIN_FILES is empty. Please, add plug-in files to it
-.endif
+.  endif
 
-.for _TEMP_APP__ in ${_WEBPLUGIN_APPS_ALL}
+.  for _TEMP_APP__ in ${_WEBPLUGIN_APPS_ALL}
 _TEMP_APP_=${_TEMP_APP__}
 _TEMP_FLAG_=0
-.	for _TEMP_USE__ in ${USE_webplugin}
+.    for _TEMP_USE__ in ${USE_webplugin}
 _TEMP_USE_=${_TEMP_USE__}
-.		if !${_TEMP_APP_:C!${_TEMP_USE_:S/*/.*/:S/?/./}!!} || \
+.      if !${_TEMP_APP_:C!${_TEMP_USE_:S/*/.*/:S/?/./}!!} || \
 		( ${_TEMP_APP_:Mlinux-*} && ${_TEMP_USE_:Mlinux} ) || \
 		( ${_TEMP_APP_:Nlinux-*} && ${_TEMP_USE_:Mnative} )
 _TEMP_FLAG_=1
-.		endif
-.	endfor
-.	if	${_TEMP_FLAG_}
+.      endif
+.    endfor
+.    if	${_TEMP_FLAG_}
 USE_WEBPLUGIN_EXP+=	${_TEMP_APP__}
-.	endif
-.endfor
+.    endif
+.  endfor
 
-.for p in ${_WEBPLUGIN_PATTERN}
+.  for p in ${_WEBPLUGIN_PATTERN}
 _WEBPLUGIN_MATCHED+=	${_WEBPLUGIN_TEST:M${p}}
-.endfor
+.  endfor
 
 _WEBPLUGIN_LIBDIR=		${LOCALBASE}/lib/browser_plugins
 _WEBPLUGIN_SLDIR=		${_WEBPLUGIN_LIBDIR}/symlinks
@@ -159,18 +159,18 @@ _WEBPLUGIN_LINKFARMS=	${_WEBPLUGIN_APPS} ${_WEBPLUGIN_SLDIRS}
 WEBPLUGIN_DIR?=		${_WEBPLUGIN_LIBDIR:S,^${LOCALBASE}/,${PREFIX}/,}/${WEBPLUGIN_NAME}
 
 PLIST_SUB+=		WEBPLUGIN_DIR="${WEBPLUGIN_DIR:S,^${PREFIX}/,,}"
-.for d in ${_WEBPLUGIN_LINKFARMS}
-.for l in ${WEBPLUGIN_FILES}
+.  for d in ${_WEBPLUGIN_LINKFARMS}
+.    for l in ${WEBPLUGIN_FILES}
 PLIST_FILES+=	${d}/${l}
-.endfor
-.endfor
+.    endfor
+.  endfor
 
 _USES_install+=	600:webplugin-post-install
 webplugin-post-install:
-.for d in ${_WEBPLUGIN_LINKFARMS}
+.  for d in ${_WEBPLUGIN_LINKFARMS}
 	${MKDIR} ${STAGEDIR}${d}
-.for l in ${WEBPLUGIN_FILES}
+.    for l in ${WEBPLUGIN_FILES}
 	${LN} -sf ${l:S,^,${WEBPLUGIN_DIR}/,} ${STAGEDIR}${d}/
-.endfor
-.endfor
+.    endfor
+.  endfor
 .endif

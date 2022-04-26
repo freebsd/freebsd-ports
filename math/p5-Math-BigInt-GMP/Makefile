@@ -1,7 +1,7 @@
 # Created by: Maxime Henrion <mux@FreeBSD.org>
 
 PORTNAME=	Math-BigInt-GMP
-PORTVERSION=	1.6009
+PORTVERSION=	1.6010
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

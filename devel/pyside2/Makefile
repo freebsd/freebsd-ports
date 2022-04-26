@@ -28,18 +28,26 @@ USE_QT=		3d buildtools_build charts concurrent core datavis3d declarative \
 CMAKE_ARGS+=	"-DUSE_PYTHON_VERSION=${PYTHON_VER}" \
 		"-DPYTHON_EXECUTABLE=${PYTHON_CMD}"
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE_i386=	WEBENGINE
+OPTIONS_DEFINE_amd64=	WEBENGINE
+OPTIONS_DEFAULT_i386=	WEBENGINE
+OPTIONS_DEFAULT_amd64=	WEBENGINE
+
+WEBENGINE_DESC=	Enable QtWebEngine support
 
 PLIST_SUB+=	PYVERSTR=.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
 WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION:C/^([0-9].[0-9]+.[0-9])(.[0-9])?/\1/}/sources/pyside2
 
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MWEBENGINE}
 PLIST_SUB+=	WEBENGINE=""
 USE_QT+=	webengine
 .else
 PLIST_SUB+=	WEBENGINE="@comment "
+CMAKE_ARGS+=	-DDISABLE_QtWebEngine:BOOL=TRUE
 .endif
 
 post-install:
@@ -50,4 +58,4 @@ post-install:
 		-f -d ${PYTHONPREFIX_SITELIBDIR} \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

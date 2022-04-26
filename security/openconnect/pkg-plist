@@ -1,14 +1,14 @@
-sbin/openconnect
 include/openconnect.h
 lib/libopenconnect.so
 lib/libopenconnect.so.5
-lib/libopenconnect.so.5.6.0
+lib/libopenconnect.so.5.7.0
 libdata/pkgconfig/openconnect.pc
 libexec/openconnect/csd-post.sh
 libexec/openconnect/csd-wrapper.sh
+libexec/openconnect/hipreport-android.sh
 libexec/openconnect/hipreport.sh
 libexec/openconnect/tncc-emulate.py
 libexec/openconnect/tncc-wrapper.py
 man/man8/openconnect.8.gz
-libexec/openconnect/hipreport-android.sh
+sbin/openconnect
 share/bash-completion/completions/openconnect

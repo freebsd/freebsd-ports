@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	openjph
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,6 +16,7 @@ NOT_FOR_ARCHS_REASON=	is currently 64-bit only
 USES=		cmake compiler:c++11-lang # pathfix
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 

@@ -1,4 +1,4 @@
---- requirements/optional.txt.orig	2021-10-27 09:01:25 UTC
+--- requirements/optional.txt.orig	2022-02-25 08:27:33 UTC
 +++ requirements/optional.txt
 @@ -1,27 +1,27 @@
  -r required.txt
@@ -9,8 +9,8 @@
  # Format support
  BeautifulSoup4>=4.3  # Trados
  # Encoding detection
--chardet==4.0.0              # chardet
-+chardet>=4.0.0              # chardet
+-charset-normalizer==2.0.12   # chardet
++charset-normalizer>=2.0.12   # chardet
  # Tmserver backend
 -cheroot==8.6.0       # tmserver
 +cheroot>=8.6.0       # tmserver
@@ -29,12 +29,12 @@
 +pycountry>=22.1.10          # Languages
 +pyenchant>=3.2.2     # spellcheck
  # Windows Resources (rc2po and po2rc)
--pyparsing==3.0.6     # RC
-+pyparsing>=3.0.6     # RC
+-pyparsing==3.0.7     # RC
++pyparsing>=3.0.7     # RC
  # Faster matching in e.g. pot2po
  python-Levenshtein>=0.12    # Levenshtein
  # Format support
--ruamel.yaml==0.17.20 # YAML
+-ruamel.yaml==0.17.21 # YAML
 +ruamel.yaml>=0.16.12 # YAML
  # Format support
 -vobject==0.9.6.1     # iCal

@@ -1,0 +1,4233 @@
+--- formless/annotate.py.orig	2015-10-20 22:44:09 UTC
++++ formless/annotate.py
+@@ -22,11 +22,11 @@ from formless import iformless
+ class count(object):
+     def __init__(self):
+         self.id = 0
+-    def next(self):
++    def __next__(self):
+         self.id += 1
+         return self.id
+ 
+-nextId = count().next
++nextId = count().__next__
+ 
+ 
+ class InputError(Exception):
+@@ -102,7 +102,7 @@ class Typed(Attribute):
+     required = False
+     requiredFailMessage = 'Please enter a value'
+     null = None
+-    unicode = False
++    str = False
+ 
+     __name__ = ''
+ 
+@@ -114,7 +114,7 @@ class Typed(Attribute):
+         required=None,
+         requiredFailMessage=None,
+         null=None,
+-        unicode=None,
++        str=None,
+         **attributes):
+ 
+         self.id = nextId()
+@@ -130,15 +130,15 @@ class Typed(Attribute):
+             self.requiredFailMessage = requiredFailMessage
+         if null is not None:
+             self.null = null
+-        if unicode is not None:
+-            self.unicode = unicode
++        if str is not None:
++            self.str = str
+         self.attributes = attributes
+ 
+     def getAttribute(self, name, default=None):
+         return self.attributes.get(name, default)
+ 
+     def coerce(self, val, configurable):
+-        raise NotImplementedError, "Implement in %s" % util.qual(self.__class__)
++        raise NotImplementedError("Implement in %s" % util.qual(self.__class__))
+ 
+ 
+ #######################################
+@@ -209,7 +209,7 @@ class Integer(Typed):
+         except ValueError:
+             if sys.version_info < (2,3): # Long/Int aren't integrated
+                 try:
+-                    return long(val)
++                    return int(val)
+                 except ValueError:
+                     raise InputError("'%s' is not an integer." % val)
+             
+@@ -540,7 +540,7 @@ class Binding(object):
+         return self.original.__class__.__name__.lower()
+ 
+     def configure(self, boundTo, results):
+-        raise NotImplementedError, "Implement in %s" % util.qual(self.__class__)
++        raise NotImplementedError("Implement in %s" % util.qual(self.__class__))
+ 
+     def coerce(self, val, configurable):
+         if hasattr(self.original, 'coerce'):
+@@ -617,7 +617,7 @@ class GroupBinding(Binding):
+         self.complexType = typedValue.complexType
+ 
+     def configure(self, boundTo, group):
+-        print "CONFIGURING GROUP BINDING", boundTo, group
++        print("CONFIGURING GROUP BINDING", boundTo, group)
+ 
+ 
+ def _sorter(x, y):
+@@ -670,7 +670,7 @@ def nameToLabel(mname):
+ def labelAndDescriptionFromDocstring(docstring):
+     if docstring is None:
+         docstring = ''
+-    docs = filter(lambda x: x, [x.strip() for x in docstring.split('\n')])
++    docs = [x for x in [x.strip() for x in docstring.split('\n')] if x]
+     if len(docs) > 1:
+         return docs[0], '\n'.join(docs[1:])
+     else:
+@@ -723,7 +723,7 @@ class MetaTypedInterface(InterfaceClass):
+         cls.complexType = True
+         possibleActions = []
+         actionAttachers = []
+-        for key, value in dct.items():
++        for key, value in list(dct.items()):
+             if key[0] == '_': continue
+ 
+             if isinstance(value, MetaTypedInterface):
+--- formless/configurable.py.orig	2015-10-20 22:44:09 UTC
++++ formless/configurable.py
+@@ -66,7 +66,7 @@ class Configurable(object):
+             try:
+                 binding = self.bindingDict[name]
+             except KeyError:
+-                raise RuntimeError, "%s is not an exposed binding on object %s." % (name, self.boundTo)
++                raise RuntimeError("%s is not an exposed binding on object %s." % (name, self.boundTo))
+         binding.boundTo = self.boundTo
+         return binding
+ 
+@@ -125,7 +125,7 @@ class Configurable(object):
+ 
+ class NotFoundConfigurable(Configurable):
+     def getBinding(self, context, name):
+-        raise RuntimeError, self.original
++        raise RuntimeError(self.original)
+ 
+ 
+ class TypedInterfaceConfigurable(Configurable):
+--- formless/processors.py.orig	2015-10-20 22:44:09 UTC
++++ formless/processors.py
+@@ -21,7 +21,7 @@ faketag = tags.html()
+ def exceptblock(f, handler, exception, *a, **kw):
+     try:
+         result = f(*a, **kw)
+-    except exception, e:
++    except exception as e:
+         return handler(e)
+     if isinstance(result, Deferred):
+         def _(fail):
+@@ -91,7 +91,7 @@ class ProcessMethodBinding(components.Adapter):
+         typedValue = self.original.typedValue
+         results = {}
+         failures = {}
+-        if data.has_key('----'):
++        if '----' in data:
+             ## ---- is the "direct object", the one argument you can specify using the command line without saying what the argument name is
+             data[typedValue.arguments[0].name] = data['----']
+             del data['----']
+@@ -101,7 +101,7 @@ class ProcessMethodBinding(components.Adapter):
+                 context = WovenContext(context, faketag)
+                 context.remember(binding, iformless.IBinding)
+                 results[name] = iformless.IInputProcessor(binding.typedValue).process(context, boundTo, data.get(name, ['']))
+-            except formless.InputError, e:
++            except formless.InputError as e:
+                 results[name] = data.get(name, [''])[0]
+                 failures[name] = e.reason
+ 
+@@ -130,14 +130,14 @@ class ProcessPropertyBinding(components.Adapter):
+         result = {}
+         try:
+             result[binding.name] = iformless.IInputProcessor(binding.typedValue).process(context, boundTo, data.get(binding.name, ['']))
+-        except formless.InputError, e:
++        except formless.InputError as e:
+             result[binding.name] = data.get(binding.name, [''])
+             raise formless.ValidateError({binding.name: e.reason}, e.reason, result)
+ 
+         if autoConfigure:
+             try:
+                 return self.original.configure(boundTo, result)
+-            except formless.InputError, e:
++            except formless.InputError as e:
+                 result[binding.name] = data.get(binding.name, [''])
+                 raise formless.ValidateError({binding.name: e.reason}, e.reason, result)
+         return result
+@@ -150,7 +150,7 @@ class ProcessTyped(components.Adapter):
+         """
+         typed = self.original
+         val = data[0]
+-        if typed.unicode:
++        if typed.str:
+             try:
+                 val = val.decode(getPOSTCharset(context), 'replace')
+             except LookupError:
+@@ -164,7 +164,7 @@ class ProcessTyped(components.Adapter):
+                 return typed.null
+         try:
+             return typed.coerce(val, boundTo)
+-        except TypeError, e:
++        except TypeError as e:
+             warnings.warn('Typed.coerce takes two values now, the value to coerce and the configurable in whose context the coerce is taking place. %s %s' % (typed.__class__, typed))
+             return typed.coerce(val)
+ 
+@@ -190,7 +190,7 @@ class ProcessPassword(components.Adapter):
+             else:
+                 return typed.null
+         val = data[0]
+-        if typed.unicode:
++        if typed.str:
+             try:
+                 val = val.decode(getPOSTCharset(context), 'replace')
+             except LookupError:
+--- formless/webform.py.orig	2015-10-20 22:44:09 UTC
++++ formless/webform.py
+@@ -4,8 +4,8 @@
+ # See LICENSE for details.
+ 
+ 
+-from __future__ import generators
+ 
++
+ import warnings
+ from zope.interface import implements, Interface
+ 
+@@ -66,7 +66,7 @@ class BaseInputRenderer(components.Adapter):
+         return context.tag
+ 
+     def input(self, context, slot, data, name, value):
+-        raise NotImplementedError, "Implement in subclass"
++        raise NotImplementedError("Implement in subclass")
+ 
+ class PasswordRenderer(BaseInputRenderer):
+     def input(self, context, slot, data, name, value):
+@@ -437,7 +437,7 @@ def renderForms(configurableKey='', bindingNames=None,
+             if bindingDefaults is None:
+                 available = configurable.getBindingNames(context)
+             else:
+-                available = bindingDefaults.iterkeys()
++                available = iter(bindingDefaults.keys())
+ 
+             def _callback(binding):
+                 renderer = iformless.IBindingRenderer(binding, defaultBindingRenderer)
+--- nevow/_flat.py.orig	2016-05-08 19:28:50 UTC
++++ nevow/_flat.py
+@@ -61,7 +61,7 @@ class FlattenerError(Exception):
+         @return: A string representation of C{obj}.
+         @rtype: L{str}
+         """
+-        if isinstance(obj, (str, unicode)):
++        if isinstance(obj, str):
+             # It's somewhat unlikely that there will ever be a str in the roots
+             # list.  However, something like a MemoryError during a str.replace
+             # call (eg, replacing " with &quot;) could possibly cause this.
+@@ -175,7 +175,7 @@ def _ctxForRequest(request, slotData, renderFactory, i
+     ctx.remember(request, IRequest)
+     for slotGroup in slotData:
+         if slotGroup is not None:
+-            for k, v in slotGroup.items():
++            for k, v in list(slotGroup.items()):
+                 ctx.fillSlots(k, v)
+     if renderFactory is not None:
+         ctx.remember(_OldRendererFactory(renderFactory), IRendererFactory)
+@@ -224,7 +224,7 @@ def _flatten(request, write, root, slotData, renderFac
+     @return: An iterator which yields C{str}, L{Deferred}, and more iterators
+         of the same type.
+     """
+-    if isinstance(root, unicode):
++    if isinstance(root, str):
+         root = root.encode('utf-8')
+     elif isinstance(root, WovenContext):
+         # WovenContext is supported via the getFlattener case, but that is a
+@@ -268,13 +268,13 @@ def _flatten(request, write, root, slotData, renderFac
+                                    False, True)
+                 else:
+                     write('<')
+-                    if isinstance(root.tagName, unicode):
++                    if isinstance(root.tagName, str):
+                         tagName = root.tagName.encode('ascii')
+                     else:
+                         tagName = str(root.tagName)
+                     write(tagName)
+-                    for k, v in sorted(root.attributes.iteritems()):
+-                        if isinstance(k, unicode):
++                    for k, v in sorted(root.attributes.items()):
++                        if isinstance(k, str):
+                             k = k.encode('ascii')
+                         write(" " + k + "=\"")
+                         yield _flatten(request, write, v, slotData,
+@@ -310,7 +310,7 @@ def _flatten(request, write, root, slotData, renderFac
+         write(root.num)
+         write(';')
+     elif isinstance(root, xml):
+-        if isinstance(root.content, unicode):
++        if isinstance(root.content, str):
+             write(root.content.encode('utf-8'))
+         else:
+             write(root.content)
+@@ -409,10 +409,10 @@ def flatten(request, write, root, inAttribute, inXML):
+             # In Python 2.5, after an exception, a generator's gi_frame is
+             # None.
+             frame = stack[-1].gi_frame
+-            element = stack[-1].next()
++            element = next(stack[-1])
+         except StopIteration:
+             stack.pop()
+-        except Exception, e:
++        except Exception as e:
+             stack.pop()
+             roots = []
+             for generator in stack:
+@@ -423,7 +423,8 @@ def flatten(request, write, root, inAttribute, inXML):
+             if type(element) is str:
+                 write(element)
+             elif isinstance(element, Deferred):
+-                def cbx((original, toFlatten)):
++                def cbx(xxx_todo_changeme):
++                    (original, toFlatten) = xxx_todo_changeme
+                     stack.append(toFlatten)
+                     return original
+                 yield element.addCallback(cbx)
+@@ -456,7 +457,7 @@ def _flattensome(state, write, schedule, result):
+     """
+     while True:
+         try:
+-            element = state.next()
++            element = next(state)
+         except StopIteration:
+             result.callback(None)
+         except:
+--- nevow/accessors.py.orig	2015-10-20 22:44:09 UTC
++++ nevow/accessors.py
+@@ -48,7 +48,7 @@ class DirectiveAccessor(tpc.Adapter):
+         data = context.locate(IData)
+         container = IContainer(data, None)
+         if container is None:
+-            raise NoAccessor, "%r does not implement IContainer, and there is no registered adapter." % data
++            raise NoAccessor("%r does not implement IContainer, and there is no registered adapter." % data)
+         child = container.child(context, self.original.name)
+         return child
+ 
+--- nevow/athena.py.orig	2016-05-08 19:28:50 UTC
++++ nevow/athena.py
+@@ -1,6 +1,6 @@
+ # -*- test-case-name: nevow.test.test_athena -*-
+ 
+-import itertools, os, re, warnings, StringIO
++import itertools, os, re, warnings, io
+ 
+ from zope.interface import implements
+ 
+@@ -49,7 +49,7 @@ class LivePageError(Exception):
+     """
+     Base exception for LivePage errors.
+     """
+-    jsClass = u'Divmod.Error'
++    jsClass = 'Divmod.Error'
+ 
+ 
+ 
+@@ -58,7 +58,7 @@ class NoSuchMethod(LivePageError):
+     Raised when an attempt is made to invoke a method which is not defined or
+     exposed.
+     """
+-    jsClass = u'Nevow.Athena.NoSuchMethod'
++    jsClass = 'Nevow.Athena.NoSuchMethod'
+ 
+     def __init__(self, objectID, methodName):
+         self.objectID = objectID
+@@ -186,7 +186,7 @@ class AthenaModule(object):
+         Calculate our dependencies given the path to our source.
+         """
+         depgen = self._extractImports(file(jsFile, 'rU'))
+-        return self.packageDeps + dict.fromkeys(depgen).keys()
++        return self.packageDeps + list(dict.fromkeys(depgen).keys())
+ 
+ 
+     def dependencies(self):
+@@ -300,7 +300,7 @@ def _collectPackageBelow(baseDir, extension):
+             path = os.path.join(root, dir, '__init__.' + extension)
+             if not os.path.exists(path):
+                 path = EMPTY
+-            mapping[unicode(name, 'ascii')] = path
++            mapping[str(name, 'ascii')] = path
+             _revMap[os.path.join(root, dir)] = name + '.'
+ 
+         for fn in filenames:
+@@ -315,7 +315,7 @@ def _collectPackageBelow(baseDir, extension):
+ 
+             name = stem + fn[:-(len(extension) + 1)]
+             path = os.path.join(root, fn)
+-            mapping[unicode(name, 'ascii')] = path
++            mapping[str(name, 'ascii')] = path
+     return mapping
+ 
+ 
+@@ -540,11 +540,11 @@ def getJSFailure(exc, modules):
+     """
+     Convert a serialized client-side exception to a Failure.
+     """
+-    text = '%s: %s' % (exc[u'name'], exc[u'message'])
++    text = '%s: %s' % (exc['name'], exc['message'])
+ 
+     frames = []
+-    if u'stack' in exc:
+-        frames = parseStack(exc[u'stack'])
++    if 'stack' in exc:
++        frames = parseStack(exc['stack'])
+ 
+     return failure.Failure(JSException(text), exc_tb=buildTraceback(frames, modules))
+ 
+@@ -618,8 +618,8 @@ class ConnectionLost(Exception):
+     pass
+ 
+ 
+-CLOSE = u'close'
+-UNLOAD = u'unload'
++CLOSE = 'close'
++UNLOAD = 'unload'
+ 
+ class ReliableMessageDelivery(object):
+     """
+@@ -775,8 +775,8 @@ class ReliableMessageDelivery(object):
+ 
+ 
+     def _unregisterDeferredAsOutputChannel(self, deferred):
+-        for i in xrange(len(self.outputs)):
+-            if self.outputs[i][0].im_self is deferred:
++        for i in range(len(self.outputs)):
++            if self.outputs[i][0].__self__ is deferred:
+                 output, timeout = self.outputs.pop(i)
+                 timeout.cancel()
+                 break
+@@ -1007,7 +1007,7 @@ class LivePage(rend.Page, _HasJSClass, _HasCSSModule):
+     @ivar _localObjectIDCounter: A callable that will return a new
+         locally-unique object ID each time it is called.
+     """
+-    jsClass = u'Nevow.Athena.PageWidget'
++    jsClass = 'Nevow.Athena.PageWidget'
+     cssModule = None
+ 
+     factory = LivePageFactory()
+@@ -1140,7 +1140,7 @@ class LivePage(rend.Page, _HasJSClass, _HasCSSModule):
+         if self.cssModuleRoot is None:
+             self.cssModuleRoot = location.child(self.clientID).child('cssmodule')
+ 
+-        self._requestIDCounter = itertools.count().next
++        self._requestIDCounter = itertools.count().__next__
+ 
+         self._messageDeliverer = ReliableMessageDelivery(
+             self,
+@@ -1151,7 +1151,7 @@ class LivePage(rend.Page, _HasJSClass, _HasCSSModule):
+             connectionMade=self._connectionMade)
+         self._remoteCalls = {}
+         self._localObjects = {}
+-        self._localObjectIDCounter = itertools.count().next
++        self._localObjectIDCounter = itertools.count().__next__
+ 
+         self.addLocalObject(self)
+ 
+@@ -1252,7 +1252,7 @@ class LivePage(rend.Page, _HasJSClass, _HasCSSModule):
+         """
+         Invoke connectionMade on all attached widgets.
+         """
+-        for widget in self._localObjects.values():
++        for widget in list(self._localObjects.values()):
+             widget.connectionMade()
+         self._didConnect = True
+ 
+@@ -1274,10 +1274,10 @@ class LivePage(rend.Page, _HasJSClass, _HasCSSModule):
+                 d.errback(reason)
+             calls = self._remoteCalls
+             self._remoteCalls = {}
+-            for (reqID, resD) in calls.iteritems():
++            for (reqID, resD) in calls.items():
+                 resD.errback(reason)
+             if self._didConnect:
+-                for widget in self._localObjects.values():
++                for widget in list(self._localObjects.values()):
+                     widget.connectionLost(reason)
+             self.factory.removeClient(self.clientID)
+ 
+@@ -1316,8 +1316,8 @@ class LivePage(rend.Page, _HasJSClass, _HasCSSModule):
+ 
+ 
+     def callRemote(self, methodName, *args):
+-        requestID = u's2c%i' % (self._requestIDCounter(),)
+-        message = (u'call', (unicode(methodName, 'ascii'), requestID, args))
++        requestID = 's2c%i' % (self._requestIDCounter(),)
++        message = ('call', (str(methodName, 'ascii'), requestID, args))
+         resultD = defer.Deferred()
+         self._remoteCalls[requestID] = resultD
+         self.addMessage(message)
+@@ -1439,12 +1439,13 @@ class LivePage(rend.Page, _HasJSClass, _HasCSSModule):
+         raise AttributeError(methodName)
+ 
+ 
+-    def liveTransportMessageReceived(self, ctx, (action, args)):
++    def liveTransportMessageReceived(self, ctx, xxx_todo_changeme):
+         """
+         A message was received from the reliable transport layer.  Process it by
+         dispatching it first to myself, then later to application code if
+         applicable.
+         """
++        (action, args) = xxx_todo_changeme
+         method = getattr(self, 'action_' + action)
+         method(ctx, *args)
+ 
+@@ -1472,11 +1473,11 @@ class LivePage(rend.Page, _HasJSClass, _HasCSSModule):
+                         result.value.args)
+                 else:
+                     result = (
+-                        u'Divmod.Error',
+-                        [u'%s: %s' % (
++                        'Divmod.Error',
++                        ['%s: %s' % (
+                                 result.type.__name__.decode('ascii'),
+                                 result.getErrorMessage().decode('ascii'))])
+-            message = (u'respond', (unicode(requestId), success, result))
++            message = ('respond', (str(requestId), success, result))
+             self.addMessage(message)
+         result.addBoth(_cbCall)
+ 
+@@ -1517,7 +1518,7 @@ def _rewriteEventHandlerToAttribute(tag):
+     """
+     if isinstance(tag, stan.Tag):
+         extraAttributes = {}
+-        for i in xrange(len(tag.children) - 1, -1, -1):
++        for i in range(len(tag.children) - 1, -1, -1):
+             if isinstance(tag.children[i], stan.Tag) and tag.children[i].tagName == 'athena:handler':
+                 info = tag.children.pop(i)
+                 name = info.attributes['event'].encode('ascii')
+@@ -1565,7 +1566,7 @@ def _rewriteAthenaId(tag):
+             if headers is not None:
+                 ids = headers.split()
+                 headers = [_mangleId(headerId) for headerId in ids]
+-                for n in xrange(len(headers) - 1, 0, -1):
++                for n in range(len(headers) - 1, 0, -1):
+                     headers.insert(n, ' ')
+                 tag.attributes['headers'] = headers
+     return tag
+@@ -1580,7 +1581,7 @@ def rewriteAthenaIds(root):
+ 
+ 
+ class _LiveMixin(_HasJSClass, _HasCSSModule):
+-    jsClass = u'Nevow.Athena.Widget'
++    jsClass = 'Nevow.Athena.Widget'
+     cssModule = None
+ 
+     preprocessors = [rewriteEventHandlerNodes, rewriteAthenaIds]
+@@ -1633,7 +1634,7 @@ class _LiveMixin(_HasJSClass, _HasCSSModule):
+         C{self.page}, add this object to the page and fill the I{athena:id}
+         slot with this object's Athena identifier.
+         """
+-        assert isinstance(self.jsClass, unicode), "jsClass must be a unicode string"
++        assert isinstance(self.jsClass, str), "jsClass must be a unicode string"
+ 
+         if self.page is None:
+             raise OrphanedFragment(self)
+@@ -1681,7 +1682,7 @@ class _LiveMixin(_HasJSClass, _HasCSSModule):
+         # different module from whence nevow.athena and nevow.testutil could
+         # import it. -exarkun
+         from nevow.testutil import FakeRequest
+-        s = StringIO.StringIO()
++        s = io.StringIO()
+         for _ in _flat.flatten(FakeRequest(), s.write, what, False, False):
+             pass
+         return s.getvalue()
+@@ -1713,15 +1714,15 @@ class _LiveMixin(_HasJSClass, _HasCSSModule):
+         del children[0]
+ 
+         self._structuredCache = {
+-            u'requiredModules': [(name, flat.flatten(url).decode('utf-8'))
++            'requiredModules': [(name, flat.flatten(url).decode('utf-8'))
+                                  for (name, url) in requiredModules],
+-            u'requiredCSSModules': [flat.flatten(url).decode('utf-8')
++            'requiredCSSModules': [flat.flatten(url).decode('utf-8')
+                                     for url in requiredCSSModules],
+-            u'class': self.jsClass,
+-            u'id': self._athenaID,
+-            u'initArguments': tuple(self.getInitialArguments()),
+-            u'markup': markup,
+-            u'children': children}
++            'class': self.jsClass,
++            'id': self._athenaID,
++            'initArguments': tuple(self.getInitialArguments()),
++            'markup': markup,
++            'children': children}
+         return self._structuredCache
+ 
+ 
+@@ -1741,9 +1742,9 @@ class _LiveMixin(_HasJSClass, _HasCSSModule):
+         # This will only be set if _structured() is being run.
+         if context.get('children') is not None:
+             context.get('children').append({
+-                    u'class': self.jsClass,
+-                    u'id': self._athenaID,
+-                    u'initArguments': self.getInitialArguments()})
++                    'class': self.jsClass,
++                    'id': self._athenaID,
++                    'initArguments': self.getInitialArguments()})
+             context.get('requiredModules').extend(requiredModules)
+             context.get('requiredCSSModules').extend(requiredCSSModules)
+             return tag
+@@ -1792,7 +1793,7 @@ class _LiveMixin(_HasJSClass, _HasCSSModule):
+         return self.page.callRemote(
+             "Nevow.Athena.callByAthenaID",
+             self._athenaID,
+-            unicode(methodName, 'ascii'),
++            str(methodName, 'ascii'),
+             varargs)
+ 
+ 
+@@ -1998,7 +1999,7 @@ class IntrospectionFragment(LiveFragment):
+     the state of a live page.
+     """
+ 
+-    jsClass = u'Nevow.Athena.IntrospectionWidget'
++    jsClass = 'Nevow.Athena.IntrospectionWidget'
+ 
+     docFactory = loaders.stan(
+         tags.span(render=tags.directive('liveFragment'))[
+--- nevow/canvas.py.orig	2015-10-20 22:44:09 UTC
++++ nevow/canvas.py
+@@ -11,7 +11,7 @@ from nevow.flat import flatten
+ from nevow.stan import Proto, Tag
+ from itertools import count
+ 
+-cn = count().next
++cn = count().__next__
+ cookie = lambda: str(cn())
+ 
+ _hookup = {}
+@@ -193,7 +193,7 @@ class GroupBase(object):
+             l[[a(v=x) for x in colors]],
+             l[[a(v=x) for x in alphas]],
+             l[[a(v=x) for x in ratios]],
+-            d[[i(k=k, v=v) for (k, v) in matrix.items()]])
++            d[[i(k=k, v=v) for (k, v) in list(matrix.items())]])
+ 
+     def text(self, text, x, y, height, width):
+         """Place the given text on the canvas using the given x, y, height and width.
+@@ -212,7 +212,7 @@ class GroupBase(object):
+         cook = cookie()
+         I = Image(cook, self)
+         self.call('image', cook, where)
+-        print "IMAGE", where
++        print("IMAGE", where)
+         return I
+ 
+     def sound(self, where, stream=True):
+@@ -354,18 +354,18 @@ class CanvasSocket(GroupBase):
+ 
+     def handle_onMouseUp(self, info):
+         if self.delegate.onMouseUp:
+-            self.delegate.onMouseUp(self, *map(int, map(float, info.split())))
++            self.delegate.onMouseUp(self, *list(map(int, list(map(float, info.split())))))
+ 
+     def handle_onMouseDown(self, info):
+         if self.delegate.onMouseDown:
+-            self.delegate.onMouseDown(self, *map(int, map(float, info.split())))
++            self.delegate.onMouseDown(self, *list(map(int, list(map(float, info.split())))))
+ 
+     def handle_onMouseMove(self, info):
+         if self.delegate.onMouseMove:
+-            self.delegate.onMouseMove(self, *map(int, map(float, info.split())))
++            self.delegate.onMouseMove(self, *list(map(int, list(map(float, info.split())))))
+ 
+     def handle_diagnostic(self, info):
+-        print "Trace", info
++        print("Trace", info)
+ 
+ canvasServerMessage = loaders.stan(tags.html["This server dispatches for nevow canvas events."])
+ 
+--- nevow/context.py.orig	2015-10-20 22:44:09 UTC
++++ nevow/context.py
+@@ -2,8 +2,8 @@
+ # Copyright (c) 2004 Divmod.
+ # See LICENSE for details.
+ 
+-from __future__ import generators
+ 
++
+ import warnings
+ 
+ from nevow import stan
+@@ -109,7 +109,7 @@ class WebContext(object):
+ 
+             contextParent = currentContext.parent
+             if contextParent is None:
+-                raise KeyError, "Interface %s was not remembered." % key
++                raise KeyError("Interface %s was not remembered." % key)
+ 
+             currentContext = contextParent
+ 
+@@ -151,7 +151,7 @@ class WebContext(object):
+                 if data is not Unset:
+                     return data
+             if currentContext.parent is None:
+-                raise KeyError, "Slot named '%s' was not filled." % name
++                raise KeyError("Slot named '%s' was not filled." % name)
+             currentContext = currentContext.parent
+ 
+     def clone(self, deep=True, cloneTags=True):
+--- nevow/dirlist.py.orig	2015-10-20 22:44:09 UTC
++++ nevow/dirlist.py
+@@ -5,7 +5,7 @@
+ 
+ # system imports
+ import os
+-import urllib
++import urllib.request, urllib.parse, urllib.error
+ import stat
+ 
+ # twisted imports
+@@ -49,7 +49,7 @@ class DirectoryLister(rend.Page):
+         files = []; dirs = []
+ 
+         for path in directory:
+-            url = urllib.quote(path, '/')
++            url = urllib.parse.quote(path, '/')
+             if os.path.isdir(os.path.join(self.path, path)):
+                 url = url + '/'
+                 dirs.append({
+@@ -65,7 +65,7 @@ class DirectoryLister(rend.Page):
+                     self.contentTypes, self.contentEncodings, self.defaultType)
+                 try:
+                     filesize = os.stat(os.path.join(self.path, path))[stat.ST_SIZE]
+-                except OSError, x:
++                except OSError as x:
+                     if x.errno != 2 and x.errno != 13:
+                         raise x
+                 else:
+@@ -80,7 +80,7 @@ class DirectoryLister(rend.Page):
+ 
+     def data_header(self, context, data):
+         request = context.locate(inevow.IRequest)
+-        return "Directory listing for %s" % urllib.unquote(request.uri)
++        return "Directory listing for %s" % urllib.parse.unquote(request.uri)
+ 
+     def render_tableLink(self, context, data):
+         return tags.a(href=data['link'])[data['linktext']]
+--- nevow/entities.py.orig	2015-10-20 22:44:09 UTC
++++ nevow/entities.py
+@@ -10,7 +10,8 @@ import types
+ 
+ __by_number = {}
+ 
+-def makeEntity((name, num, description)):
++def makeEntity(xxx_todo_changeme):
++    (name, num, description) = xxx_todo_changeme
+     from nevow.stan import Entity
+     e = Entity(name, num, description)
+     __by_number[types.IntType(num)] = e
+--- nevow/events.py.orig	2015-10-20 22:44:09 UTC
++++ nevow/events.py
+@@ -16,7 +16,7 @@ class EventNotification:
+         Returns a token which should be passed to unsubscribe when done.
+         """
+         if DEBUG:
+-            print "SUBSCRIBE", self, identifier, subscriber
++            print("SUBSCRIBE", self, identifier, subscriber)
+         self._subscribers.setdefault(identifier, []).append(subscriber)
+         return identifier, subscriber
+ 
+@@ -24,7 +24,7 @@ class EventNotification:
+         """Unsubscribe the given token from events.
+         """
+         if DEBUG:
+-            print "UNSUBSCRIBE", token
++            print("UNSUBSCRIBE", token)
+         identifier, reference = token
+         self._subscribers[identifier].remove(reference)
+ 
+@@ -32,14 +32,14 @@ class EventNotification:
+         """Notify the listeners on a given identifier that an event has occurred.
+         """
+         if DEBUG:
+-            print "PUBLISH", self, identifier,
++            print("PUBLISH", self, identifier, end=' ')
+         subscribers = self._subscribers.get(identifier, [])
+         for sub in subscribers:
+             sub(*args)
+             if DEBUG:
+-                print "NOTIFY SUBSCRIBER", sub
++                print("NOTIFY SUBSCRIBER", sub)
+         if DEBUG:
+-            print "done"
++            print("done")
+ 
+     def nextId(self):
+         self._currentId += 1
+--- nevow/flat/flatstan.py.orig	2016-01-26 23:52:18 UTC
++++ nevow/flat/flatstan.py
+@@ -1,10 +1,10 @@
+ # Copyright (c) 2004 Divmod.
+ # See LICENSE for details.
+ 
+-from __future__ import generators
+ 
+-import urllib, warnings
+ 
++import urllib.request, urllib.parse, urllib.error, warnings
++
+ from twisted.python import log, failure
+ 
+ from nevow import util
+@@ -38,7 +38,7 @@ def TagSerializer(original, context, contextIsMine=Fal
+     visible = bool(original.tagName)
+     
+     if visible and context.isAttrib:
+-        raise RuntimeError, "Tried to render tag '%s' in an tag attribute context." % (original.tagName)
++        raise RuntimeError("Tried to render tag '%s' in an tag attribute context." % (original.tagName))
+ 
+     if context.precompile and original.macro:
+         toBeRenderedBy = original.macro
+@@ -53,7 +53,7 @@ def TagSerializer(original, context, contextIsMine=Fal
+     ## TODO: Do we really need to bypass precompiling for *all* specials?
+     ## Perhaps just render?
+     if context.precompile and (
+-        [x for x in original._specials.values() 
++        [x for x in list(original._specials.values()) 
+         if x is not None and x is not Unset]
+         or original.slotData):
+         ## The tags inside this one get a "fresh" parent chain, because
+@@ -111,7 +111,7 @@ def TagSerializer(original, context, contextIsMine=Fal
+     yield '<%s' % original.tagName
+     if original.attributes:
+         attribContext = WovenContext(parent=context, precompile=context.precompile, isAttrib=True)
+-        for (k, v) in sorted(original.attributes.iteritems()):
++        for (k, v) in sorted(original.attributes.items()):
+             if v is None:
+                 continue
+             yield ' %s="' % k
+@@ -155,7 +155,7 @@ def StringSerializer(original, context):
+     if context.inURL:
+         # The magic string "-_.!*'()" also appears in url.py.  Thinking about
+         # changing this?  Change that, too.
+-        return urllib.quote(original, safe="-_.!*'()")
++        return urllib.parse.quote(original, safe="-_.!*'()")
+     ## quote it
+     if context.inJS:
+         original = _jsSingleQuoteQuote(original)
+@@ -235,7 +235,7 @@ def FunctionSerializer(original, context, nocontextfun
+                 else:
+                     result = original(context, data)
+         except StopIteration:
+-            raise RuntimeError, "User function %r raised StopIteration." % original
++            raise RuntimeError("User function %r raised StopIteration." % original)
+         return serialize(result, context)
+ 
+ 
+--- nevow/guard.py.orig	2016-02-17 12:51:40 UTC
++++ nevow/guard.py
+@@ -16,7 +16,7 @@ try:
+     from hashlib import md5
+ except ImportError:
+     from md5 import md5
+-import StringIO
++import io
+ 
+ from zope.interface import implements
+ 
+@@ -68,7 +68,7 @@ class GuardSession(components.Componentized):
+         # XXX TODO: need to actually sort avatars by login order!
+         if len(self.portals) != 1:
+             raise RuntimeError("Ambiguous request for current avatar.")
+-        return self.portals.values()[0][0]
++        return list(self.portals.values())[0][0]
+ 
+     def resourceForPortal(self, port):
+         return self.portals.get(port)
+@@ -86,7 +86,7 @@ class GuardSession(components.Componentized):
+             raise RuntimeError("Ambiguous request for current avatar.")
+         self.setResourceForPortal(
+             rsrc,
+-            self.portals.keys()[0],
++            list(self.portals.keys())[0],
+             logout)
+ 
+     def setResourceForPortal(self, rsrc, port, logout):
+@@ -148,7 +148,7 @@ class GuardSession(components.Componentized):
+         del self.guard.sessions[self.uid]
+ 
+         # Logout of all portals
+-        for portal in self.portals.keys():
++        for portal in list(self.portals.keys()):
+             self.portalLogout(portal)
+ 
+         for c in self.expireCallbacks:
+@@ -170,7 +170,7 @@ class GuardSession(components.Componentized):
+         self.checkExpiredID = None
+         # If I haven't been touched in 15 minutes:
+         if time.time() - self.lastModified > self.lifetime / 2:
+-            if self.guard.sessions.has_key(self.uid):
++            if self.uid in self.guard.sessions:
+                 self.expire()
+             else:
+                 log.msg("no session to expire: %s" % str(self.uid))
+@@ -180,7 +180,7 @@ class GuardSession(components.Componentized):
+                                                     self.checkExpired)
+     def __getstate__(self):
+         d = self.__dict__.copy()
+-        if d.has_key('checkExpiredID'):
++        if 'checkExpiredID' in d:
+             del d['checkExpiredID']
+         return d
+ 
+@@ -196,7 +196,7 @@ def urlToChild(ctx, *ar, **kw):
+         u = u.child(stan.xml(segment))
+     if inevow.IRequest(ctx).method == 'POST':
+         u = u.clear()
+-    for k,v in kw.items():
++    for k,v in list(kw.items()):
+         u = u.replace(k, v)
+ 
+     return u
+@@ -272,7 +272,8 @@ class SessionWrapper:
+     def renderHTTP(self, ctx):
+         request = inevow.IRequest(ctx)
+         d = defer.maybeDeferred(self._delegate, ctx, [])
+-        def _cb((resource, segments), ctx):
++        def _cb(xxx_todo_changeme1, ctx):
++            (resource, segments) = xxx_todo_changeme1
+             assert not segments
+             res = inevow.IResource(resource)
+             return res.renderHTTP(ctx)
+@@ -425,7 +426,7 @@ class SessionWrapper:
+         if spoof and hasattr(session, 'args'):
+             request.args = session.args
+             request.fields = session.fields
+-            request.content = StringIO.StringIO()
++            request.content = io.StringIO()
+             request.content.close()
+             request.method = session.method
+             request.requestHeaders = session._requestHeaders
+@@ -450,9 +451,10 @@ class SessionWrapper:
+ 
+         if authCommand == LOGIN_AVATAR:
+             subSegments = segments[1:]
+-            def unmangleURL((res,segs)):
++            def unmangleURL(xxx_todo_changeme):
+                 # Tell the session that we just logged in so that it will
+                 # remember form values for us.
++                (res,segs) = xxx_todo_changeme
+                 session.justLoggedIn = True
+                 # Then, generate a redirect back to where we're supposed to be
+                 # by looking at the root of the site and calculating the path
+@@ -533,7 +535,8 @@ class SessionWrapper:
+             self._cbLoginSuccess, session, segments
+         )
+ 
+-    def _cbLoginSuccess(self, (iface, res, logout), session, segments):
++    def _cbLoginSuccess(self, xxx_todo_changeme2, session, segments):
++        (iface, res, logout) = xxx_todo_changeme2
+         session.setResourceForPortal(res, self.portal, logout)
+         return res, segments
+ 
+--- nevow/json.py.orig	2016-05-08 19:28:50 UTC
++++ nevow/json.py
+@@ -43,12 +43,12 @@ class StringTokenizer(object):
+         SLASH = "\\"
+ 
+         IT = iter(s)
+-        bits = [IT.next()]
++        bits = [next(IT)]
+         for char in IT:
+             bits.append(char)
+             if char == SLASH:
+                 try:
+-                    bits.append(IT.next())
++                    bits.append(next(IT))
+                 except StopIteration:
+                     return None
+             if char == '"':
+@@ -82,9 +82,9 @@ class WhitespaceToken(object):
+ 
+ def jsonlong(s):
+     if 'e' in s:
+-        m, e = map(long, s.split('e', 1))
++        m, e = list(map(int, s.split('e', 1)))
+     else:
+-        m, e = long(s), 0
++        m, e = int(s), 0
+     return m * 10 ** e
+ 
+ # list of tuples, the first element is a compiled regular expression the second
+@@ -115,7 +115,7 @@ def tokenise(s):
+                 tok, tokstr = action(m.group(0))
+                 break
+         else:
+-            raise ValueError, "Invalid Input, %r" % (s[:10],)
++            raise ValueError("Invalid Input, %r" % (s[:10],))
+ 
+         if tok is not WhitespaceToken:
+             tokens.append(tok)
+@@ -126,7 +126,7 @@ def tokenise(s):
+ def accept(want, tokens):
+     t = tokens.pop(0)
+     if want != t:
+-        raise ParseError, "Unexpected %r, %s expected" % (t , want)
++        raise ParseError("Unexpected %r, %s expected" % (t , want))
+ 
+ def parseValue(tokens):
+     if tokens[0] == '{':
+@@ -141,28 +141,28 @@ def parseValue(tokens):
+     if type(tokens[0]) == StringToken:
+         return parseString(tokens)
+ 
+-    if type(tokens[0]) in (int, float, long):
++    if type(tokens[0]) in (int, float, int):
+         return tokens.pop(0), tokens
+ 
+-    raise ParseError, "Unexpected %r" % tokens[0]
++    raise ParseError("Unexpected %r" % tokens[0])
+ 
+ 
+ _stringExpr = re.compile(
+-    ur'(?:\\x(?P<unicode>[a-fA-F0-9]{2})) # Match hex-escaped unicode' u'\n'
+-    ur'|' u'\n'
+-    ur'(?:\\u(?P<unicode2>[a-fA-F0-9]{4})) # Match hex-escaped high unicode' u'\n'
+-    ur'|' u'\n'
+-    ur'(?P<control>\\[fbntr\\"]) # Match escaped control characters' u'\n',
++    r'(?:\\x(?P<unicode>[a-fA-F0-9]{2})) # Match hex-escaped unicode' '\n'
++    r'|' '\n'
++    r'(?:\\u(?P<unicode2>[a-fA-F0-9]{4})) # Match hex-escaped high unicode' '\n'
++    r'|' '\n'
++    r'(?P<control>\\[fbntr\\"]) # Match escaped control characters' '\n',
+     re.VERBOSE)
+ 
+ _controlMap = {
+-    u'\\f': u'\f',
+-    u'\\b': u'\b',
+-    u'\\n': u'\n',
+-    u'\\t': u'\t',
+-    u'\\r': u'\r',
+-    u'\\"': u'"',
+-    u'\\\\': u'\\',
++    '\\f': '\f',
++    '\\b': '\b',
++    '\\n': '\n',
++    '\\t': '\t',
++    '\\r': '\r',
++    '\\"': '"',
++    '\\\\': '\\',
+     }
+ 
+ def _stringSub(m):
+@@ -170,14 +170,14 @@ def _stringSub(m):
+     if u is None:
+         u = m.group('unicode2')
+     if u is not None:
+-        return unichr(int(u, 16))
++        return chr(int(u, 16))
+     c = m.group('control')
+     return _controlMap[c]
+ 
+ 
+ def parseString(tokens):
+     if type(tokens[0]) is not StringToken:
+-        raise ParseError, "Unexpected %r" % tokens[0]
++        raise ParseError("Unexpected %r" % tokens[0])
+     s = _stringExpr.sub(_stringSub, tokens.pop(0)[1:-1].decode('utf-8'))
+     return s, tokens
+ 
+@@ -229,27 +229,27 @@ def parse(s):
+     tokens = tokenise(s)
+     value, tokens = parseValue(tokens)
+     if tokens:
+-        raise ParseError, "Unexpected %r" % tokens[0]
++        raise ParseError("Unexpected %r" % tokens[0])
+     return value
+ 
+ class CycleError(Exception):
+     pass
+ 
+-_translation = dict([(o, u'\\x%02x' % (o,)) for o in range(0x20)])
++_translation = dict([(o, '\\x%02x' % (o,)) for o in range(0x20)])
+ 
+ # Characters which cannot appear as literals in the output
+ _translation.update({
+-    ord(u'\\'): u'\\\\',
+-    ord(u'"'): ur'\"',
+-    ord(u'\f'): ur'\f',
+-    ord(u'\b'): ur'\b',
+-    ord(u'\n'): ur'\n',
+-    ord(u'\t'): ur'\t',
+-    ord(u'\r'): ur'\r',
++    ord('\\'): '\\\\',
++    ord('"'): r'\"',
++    ord('\f'): r'\f',
++    ord('\b'): r'\b',
++    ord('\n'): r'\n',
++    ord('\t'): r'\t',
++    ord('\r'): r'\r',
+     # The next two are sneaky, see
+     # http://timelessrepo.com/json-isnt-a-javascript-subset
+-    ord(u'\u2028'): u'\\u2028',
+-    ord(u'\u2029'): u'\\u2029',
++    ord('\u2028'): '\\u2028',
++    ord('\u2029'): '\\u2029',
+     })
+ 
+ def stringEncode(s):
+@@ -259,18 +259,18 @@ def stringEncode(s):
+ def _serialize(obj, w, seen):
+     from nevow import athena
+ 
+-    if isinstance(obj, types.BooleanType):
++    if isinstance(obj, bool):
+         if obj:
+             w('true')
+         else:
+             w('false')
+-    elif isinstance(obj, (int, long, float)):
++    elif isinstance(obj, (int, float)):
+         w(str(obj))
+-    elif isinstance(obj, unicode):
++    elif isinstance(obj, str):
+         w('"')
+         w(stringEncode(obj))
+         w('"')
+-    elif isinstance(obj, types.NoneType):
++    elif isinstance(obj, type(None)):
+         w('null')
+     elif id(obj) in seen:
+         raise CycleError(type(obj))
+@@ -283,7 +283,7 @@ def _serialize(obj, w, seen):
+         w(']')
+     elif isinstance(obj, dict):
+         w('{')
+-        for n, (k, v) in enumerate(obj.iteritems()):
++        for n, (k, v) in enumerate(obj.items()):
+             _serialize(k, w, seen)
+             w(':')
+             _serialize(v, w, seen)
+--- nevow/livetrial/testcase.py.orig	2015-10-20 22:44:09 UTC
++++ nevow/livetrial/testcase.py
+@@ -62,7 +62,7 @@ class TestCase(athena.LiveFragment, unittest.TestCase)
+ 
+         Subclasses may want to override this.
+         """
+-        return u''
++        return ''
+ 
+ 
+     def head(self):
+@@ -150,11 +150,11 @@ class TestLoader(runner.TestLoader):
+ 
+ 
+     def loadMethod(self, method):
+-        raise NotImplementedError, 'livetests must be classes'
++        raise NotImplementedError('livetests must be classes')
+ 
+ 
+     def loadClass(self, klass):
+-        if not (isinstance(klass, type) or isinstance(klass, types.ClassType)):
++        if not (isinstance(klass, type) or isinstance(klass, type)):
+             raise TypeError("%r is not a class" % (klass,))
+         if not self.isTestCase(klass):
+             raise ValueError("%r is not a test case" % (klass,))
+@@ -171,7 +171,7 @@ class TestLoader(runner.TestLoader):
+ 
+ 
+     def isTestCase(self, obj):
+-        return isinstance(obj, (type, types.ClassType)) and issubclass(obj, TestCase) and obj is not TestCase
++        return isinstance(obj, type) and issubclass(obj, TestCase) and obj is not TestCase
+ 
+ 
+     def _findTestClasses(self, module):
+--- nevow/query.py.orig	2015-10-20 22:44:09 UTC
++++ nevow/query.py
+@@ -47,7 +47,7 @@ class QueryList(tpc.Adapter):
+                     yield x.clone(deep=False, clearPattern=True)
+ 
+         if default is None:
+-            raise stan.NodeNotFound, ("pattern", pattern)
++            raise stan.NodeNotFound("pattern", pattern)
+         if hasattr(default, 'clone'):
+             while True: yield default.clone(deep=False)
+         else:
+@@ -86,13 +86,13 @@ class QuerySlot(QueryList):
+ 
+ class QueryNeverFind(tpc.Adapter):
+     def patternGenerator(self, pattern, default=None):
+-        raise stan.NodeNotFound, ('pattern', pattern)
++        raise stan.NodeNotFound('pattern', pattern)
+ 
+     def allPatterns(self, pattern):
+         return []
+ 
+     def onePattern(self, pattern):
+-        raise stan.NodeNotFound, ('pattern', pattern)
++        raise stan.NodeNotFound('pattern', pattern)
+ 
+     def _locatePatterns(self, pattern, default, loop=True):
+         return []
+--- nevow/rend.py.orig	2016-02-17 12:51:40 UTC
++++ nevow/rend.py
+@@ -18,7 +18,7 @@ Mostly, you'll use the renderers:
+ """
+ 
+ from time import time as now
+-from cStringIO import StringIO
++from io import StringIO
+ import random
+ import warnings
+ 
+@@ -298,7 +298,7 @@ class ConfigurableFactory:
+         ...
+         ...     docFactory = stan(render_forms).
+         """
+-        if filter(lambda x: issubclass(x, annotate.TypedInterface), providedBy(self)):
++        if [x for x in providedBy(self) if issubclass(x, annotate.TypedInterface)]:
+             warnings.warn("[0.5] Subclassing TypedInterface to declare annotations is deprecated. Please provide bind_* methods on your Page or Fragment subclass instead.", DeprecationWarning)
+             from formless import configurable
+             return configurable.TypedInterfaceConfigurable(self)
+@@ -329,7 +329,7 @@ def defaultsFactory(ctx):
+     defaults = webform.FormDefaults()
+     if co is not None:
+         e = iformless.IFormErrors(co, {})
+-        for k, v in e.items():
++        for k, v in list(e.items()):
+             defaults.getAllDefaults(k).update(v.partialForm)
+     return defaults
+ 
+@@ -341,7 +341,7 @@ def errorsFactory(ctx):
+     errs = webform.FormErrors()
+     if co is not None:
+         e = iformless.IFormErrors(co, {})
+-        for k, v in e.items():
++        for k, v in list(e.items()):
+             errs.updateErrors(k, v.errors)
+             errs.setError(k, v.formErrorMessage)
+     return errs
+@@ -408,7 +408,7 @@ class Fragment(DataFactory, RenderFactory, MacroFactor
+             finally:
+                 self.docFactory.pattern = old
+                 self.docFactory.precompiledDoc = None
+-        except TypeError, e:
++        except TypeError as e:
+             # Avert your eyes now! I don't want to catch anything but IQ
+             # adaption exceptions here but all I get is TypeError. This whole
+             # section of code is a complete hack anyway so one more won't
+@@ -546,7 +546,7 @@ class Page(Fragment, ConfigurableFactory, ChildLookupM
+ 
+         def finishRequest():
+             carryover = request.args.get('_nevow_carryover_', [None])[0]
+-            if carryover is not None and _CARRYOVER.has_key(carryover):
++            if carryover is not None and carryover in _CARRYOVER:
+                 del _CARRYOVER[carryover]
+             if self.afterRender is not None:
+                 return util.maybeDeferred(self.afterRender,ctx)
+@@ -668,7 +668,7 @@ class Page(Fragment, ConfigurableFactory, ChildLookupM
+                 magicCookie = '%s%s%s' % (now(),request.getClientIP(),random.random())
+                 refpath = refpath.replace('_nevow_carryover_', magicCookie)
+                 _CARRYOVER[magicCookie] = C = tpc.Componentized()
+-                for k, v in aspects.iteritems():
++                for k, v in aspects.items():
+                     C.setComponent(k, v)
+ 
+             destination = flat.flatten(refpath, ctx)
+@@ -768,7 +768,7 @@ def mapping(context, data):
+        <td><nevow:slot name="email"/></td>
+      </tr>
+     """
+-    for k, v in data.items():
++    for k, v in list(data.items()):
+         context.fillSlots(k, v)
+     return context.tag
+ 
+@@ -799,7 +799,7 @@ class FourOhFour:
+         # Look for an application-remembered handler
+         try:
+             notFoundHandler = ctx.locate(inevow.ICanHandleNotFound)
+-        except KeyError, e:
++        except KeyError as e:
+             return self.notFound
+         # Call the application-remembered handler but if there are any errors
+         # then log it and fallback to the standard message.
+@@ -809,7 +809,7 @@ class FourOhFour:
+             log.err()
+             return self.notFound
+ 
+-    def __nonzero__(self):
++    def __bool__(self):
+         return False
+ 
+ 
+--- nevow/scripts/nit.py.orig	2015-10-20 22:44:09 UTC
++++ nevow/scripts/nit.py
+@@ -50,7 +50,7 @@ def run():
+     config = NitOptions()
+     try:
+         config.parseOptions()
+-    except UsageError, ue:
++    except UsageError as ue:
+         raise SystemExit("%s: %s" % (sys.argv[0], ue))
+     else:
+         if not config['testmodules']:
+--- nevow/scripts/xmlgettext.py.orig	2015-10-20 22:44:09 UTC
++++ nevow/scripts/xmlgettext.py
+@@ -1,5 +1,5 @@
+ from xml.dom import pulldom
+-from cStringIO import StringIO
++from io import StringIO
+ from twisted.python import usage
+ import nevow
+ 
+@@ -38,14 +38,14 @@ class LineBasedStream(object):
+ 
+ def getMsgID(node):
+     out = StringIO()
+-    print >>out, 'msgid ""'
++    print('msgid ""', file=out)
+     for child in node.childNodes:
+         s = child.toxml('utf-8')
+         s = s.replace('\\', '\\\\')
+         s = s.replace('"', '\\"')
+         s = s.replace('\n', '\\n')
+-        print >>out, '"%s"' % s
+-    print >>out, 'msgstr ""'
++        print('"%s"' % s, file=out)
++    print('msgstr ""', file=out)
+     return out.getvalue()
+ 
+ def process(filename, messages):
+@@ -67,14 +67,14 @@ def process(filename, messages):
+ 
+ 
+ def report(messages):
+-    for msgid, locations in messages.items():
++    for msgid, locations in list(messages.items()):
+         for line in locations:
+-            print line
+-        print msgid
++            print(line)
++        print(msgid)
+ 
+ class GettextOptions(usage.Options):
+     def opt_version(self):
+-        print 'Nevow version:', nevow.__version__
++        print('Nevow version:', nevow.__version__)
+         usage.Options.opt_version(self)
+ 
+     def parseArgs(self, *files):
+--- nevow/stan.py.orig	2016-01-26 23:52:18 UTC
++++ nevow/stan.py
+@@ -21,7 +21,7 @@ code. See nevow.stan.Tag for details, and nevow.tags f
+ prototypes for all of the XHTML element types.
+ """
+ 
+-from __future__ import generators
++
+ from zope.interface import implements
+ 
+ from nevow import inevow
+@@ -147,7 +147,7 @@ class slot(object):
+         """Prevent an infinite loop if someone tries to do
+             for x in slot('foo'):
+         """
+-        raise NotImplementedError, "Stan slot instances are not iterable."
++        raise NotImplementedError("Stan slot instances are not iterable.")
+ 
+ 
+ 
+@@ -362,11 +362,11 @@ class Tag(object):
+             return self
+ 
+         for name in self.specials:
+-            if kw.has_key(name):
++            if name in kw:
+                 setattr(self, name, kw[name])
+                 del kw[name]
+ 
+-        for k, v in kw.iteritems():
++        for k, v in kw.items():
+             if k[-1] == '_':
+                 k = k[:-1]
+             elif k[0] == '_':
+@@ -403,7 +403,7 @@ class Tag(object):
+         """Prevent an infinite loop if someone tries to do
+             for x in stantaginstance:
+         """
+-        raise NotImplementedError, "Stan tag instances are not iterable."
++        raise NotImplementedError("Stan tag instances are not iterable.")
+ 
+     def _clearSpecials(self):
+         """Clears all the specials in this tag. For use by flatstan.
+@@ -496,7 +496,7 @@ class Tag(object):
+ 
+ 
+ class UnsetClass:
+-    def __nonzero__(self):
++    def __bool__(self):
+         return False
+     def __repr__(self):
+         return "Unset"
+@@ -546,18 +546,18 @@ class PatternTag(object):
+     through a sequence of matching patterns.'''
+ 
+     def __init__(self, patterner):
+-        self.pat = patterner.next()
++        self.pat = next(patterner)
+         self.patterner = patterner
+ 
+-    def next(self):
++    def __next__(self):
+         if self.pat:
+             p, self.pat = self.pat, None
+             return p
+-        return self.patterner.next()
++        return next(self.patterner)
+ 
+ 
+ def makeForwarder(name):
+-    return lambda self, *args, **kw: getattr(self.next(), name)(*args, **kw)
++    return lambda self, *args, **kw: getattr(next(self), name)(*args, **kw)
+ 
+ for forward in ['__call__', '__getitem__', 'fillSlots']:
+     setattr(PatternTag, forward, makeForwarder(forward))
+@@ -591,7 +591,7 @@ def _locatePatterns(tag, pattern, default, loop=True):
+                 yield cloned
+ 
+     if default is None:
+-        raise NodeNotFound, ("pattern", pattern)
++        raise NodeNotFound("pattern", pattern)
+     if hasattr(default, 'clone'):
+         while True:  yield default.clone(deep=False)
+     else:
+--- nevow/static.py.orig	2015-10-20 22:44:09 UTC
++++ nevow/static.py
+@@ -7,7 +7,7 @@
+ 
+ # System Imports
+ import os, string, time
+-import cStringIO
++import io
+ import traceback
+ import warnings
+ StringIO = cStringIO
+@@ -144,7 +144,7 @@ def loadMimeTypes(mimetype_locations=['/etc/mime.types
+ def getTypeAndEncoding(filename, types, encodings, defaultType):
+     p, ext = os.path.splitext(filename)
+     ext = ext.lower()
+-    if encodings.has_key(ext):
++    if ext in encodings:
+         enc = encodings[ext]
+         ext = os.path.splitext(p)[1].lower()
+     else:
+@@ -300,7 +300,7 @@ class File:
+ 
+         try:
+             f = self.openForReading()
+-        except IOError, e:
++        except IOError as e:
+             import errno
+             if e[0] == errno.EACCES:
+                 return ForbiddenResource().render(request)
+--- nevow/test/test_athena.py.orig	2016-02-17 12:51:40 UTC
++++ nevow/test/test_athena.py
+@@ -1,6 +1,6 @@
+ 
+ import os, sets
+-from itertools import izip
++
+ from xml.dom.minidom import parseString
+ 
+ from twisted.trial import unittest
+@@ -35,7 +35,7 @@ class MappingResourceTests(unittest.TestCase):
+         L{athena.MappingResource} isn't directly renderable.
+         """
+         m = athena.MappingResource({})
+-        self.failUnless(isinstance(m.renderHTTP(None), rend.FourOhFour))
++        self.assertTrue(isinstance(m.renderHTTP(None), rend.FourOhFour))
+ 
+ 
+     def test_lookupNonExistentKey(self):
+@@ -44,7 +44,7 @@ class MappingResourceTests(unittest.TestCase):
+         for a non-existent key.
+         """
+         m = athena.MappingResource({'name': 'value'})
+-        self.assertEquals(m.locateChild(None, ('key',)), rend.NotFound)
++        self.assertEqual(m.locateChild(None, ('key',)), rend.NotFound)
+ 
+ 
+     def test_lookupKey(self):
+@@ -55,8 +55,8 @@ class MappingResourceTests(unittest.TestCase):
+         m = athena.MappingResource({'name': 'value'})
+         m.resourceFactory = sets.Set
+         resource, segments = m.locateChild(None, ('name',))
+-        self.assertEquals(segments, [])
+-        self.assertEquals(resource, sets.Set('value'))
++        self.assertEqual(segments, [])
++        self.assertEqual(resource, sets.Set('value'))
+ 
+ 
+ 
+@@ -68,7 +68,7 @@ class ModuleRegistryTestMixin:
+         """
+         C{getModuleForName} should return the right kind of module.
+         """
+-        moduleName = u'test_getModuleForName'
++        moduleName = 'test_getModuleForName'
+         mapping = {moduleName: self.mktemp()}
+         reg = self.registryClass(mapping)
+         mod = reg.getModuleForName(moduleName)
+@@ -82,7 +82,7 @@ class ModuleRegistryTestMixin:
+         C{getModuleForName} should get angry if we ask for a module which
+         doesn't exist.
+         """
+-        moduleName = u'test_getModuleForName'
++        moduleName = 'test_getModuleForName'
+         reg = self.registryClass({})
+         self.assertRaises(
+             RuntimeError,
+@@ -104,7 +104,7 @@ class CSSRegistryTests(unittest.TestCase, ModuleRegist
+         L{athena.CSSRegistry} should initialize its mapping from
+         L{athena.allCSSPackages} as needed.
+         """
+-        moduleName = u'test_getModuleForNameLoad'
++        moduleName = 'test_getModuleForNameLoad'
+         origAllCSSPackages = athena.allCSSPackages
+         theCSSPackages = {moduleName: self.mktemp()}
+         athena.allCSSPackages = lambda: theCSSPackages
+@@ -131,7 +131,7 @@ class JSDependenciesTests(unittest.TestCase, ModuleReg
+         L{athena.JSDependencies} should initialize its mapping from
+         L{athena.allCSSPackages} as needed.
+         """
+-        moduleName = u'test_getModuleForNameLoad'
++        moduleName = 'test_getModuleForNameLoad'
+         origAllJavascriptPackages = athena.allJavascriptPackages
+         theJavascriptPackages = {moduleName: self.mktemp()}
+         athena.allJavascriptPackages = lambda: theJavascriptPackages
+@@ -180,7 +180,7 @@ the end
+         m2 = self.moduleClass.getOrCreate('testmodule', modules)
+ 
+         self.assertTrue(isinstance(m1, self.moduleClass))
+-        self.assertEquals(m1.name, 'testmodule')
++        self.assertEqual(m1.name, 'testmodule')
+ 
+         self.assertIdentical(m1, m2)
+ 
+@@ -219,7 +219,7 @@ the end
+         m = self.moduleClass.getOrCreate('testmodule', modules)
+         deps = [d.name for d in m.dependencies()]
+         deps.sort()
+-        self.assertEquals(deps, ['Another', 'ExampleModule', 'Module'])
++        self.assertEqual(deps, ['Another', 'ExampleModule', 'Module'])
+ 
+ 
+     def test_allDependencies(self):
+@@ -246,7 +246,7 @@ the end
+                 # that depends upon them.
+                 self.assertIn(d, allDeps)
+                 self.assertIn(depMod, allDeps)
+-                self.failUnless(allDeps.index(d) < allDeps.index(depMod))
++                self.assertTrue(allDeps.index(d) < allDeps.index(depMod))
+ 
+ 
+     def test_crlfNewlines(self):
+@@ -268,7 +268,7 @@ the end
+         module = self.moduleClass('Foo', modules)
+         fooDependencies = list(module.dependencies())
+         self.assertEqual(len(fooDependencies), 1)
+-        self.assertEqual(fooDependencies[0].name, u'Bar')
++        self.assertEqual(fooDependencies[0].name, 'Bar')
+ 
+ 
+     def test_dependencyCaching(self):
+@@ -290,15 +290,15 @@ the end
+         m._extractImports = _extractImports
+ 
+         list(m.dependencies())
+-        self.assertEquals(m.extractCounter, 1)
++        self.assertEqual(m.extractCounter, 1)
+ 
+         list(m.dependencies())
+-        self.assertEquals(m.extractCounter, 1)
++        self.assertEqual(m.extractCounter, 1)
+ 
+         newTime = m.lastModified
+         os.utime(testModuleFilename, (newTime + 1, newTime + 1))
+         list(m.dependencies())
+-        self.assertEquals(m.extractCounter, 2)
++        self.assertEqual(m.extractCounter, 2)
+ 
+ 
+     def test_packageDependencies(self):
+@@ -306,11 +306,11 @@ the end
+         L{athena.AthenaModule} should include a module's package in its
+         dependencies.
+         """
+-        modules = {u'Foo': self.mktemp(), u'Foo.Bar': self.mktemp()}
+-        file(modules[u'Foo'], 'wb').close()
+-        file(modules[u'Foo.Bar'], 'wb').close()
+-        foo = self.moduleClass.getOrCreate(u'Foo', modules)
+-        bar = self.moduleClass.getOrCreate(u'Foo.Bar', modules)
++        modules = {'Foo': self.mktemp(), 'Foo.Bar': self.mktemp()}
++        file(modules['Foo'], 'wb').close()
++        file(modules['Foo.Bar'], 'wb').close()
++        foo = self.moduleClass.getOrCreate('Foo', modules)
++        bar = self.moduleClass.getOrCreate('Foo.Bar', modules)
+         self.assertIn(foo, bar.allDependencies())
+ 
+ 
+@@ -318,7 +318,7 @@ the end
+         """
+         L{athena.AthenaModule} should C{repr} to something helpful.
+         """
+-        moduleName = u'Foo.Bar'
++        moduleName = 'Foo.Bar'
+         module = self.moduleClass(
+             moduleName, {moduleName: self.mktemp()})
+         self.assertEqual(
+@@ -445,11 +445,11 @@ class ModuleInteractionTests(unittest.TestCase):
+         namespaces.
+         """
+         cssModule = athena.CSSModule.getOrCreate(
+-            u'test_separateModuleNamespace',
+-            {u'test_separateModuleNamespace': self.mktemp()})
++            'test_separateModuleNamespace',
++            {'test_separateModuleNamespace': self.mktemp()})
+         jsModule = athena.JSModule.getOrCreate(
+-            u'test_separateModuleNamespace',
+-            {u'test_separateModuleNamespace': self.mktemp()})
++            'test_separateModuleNamespace',
++            {'test_separateModuleNamespace': self.mktemp()})
+         self.assertNotIdentical(cssModule, jsModule)
+         self.assertTrue(isinstance(cssModule, athena.CSSModule))
+         self.assertTrue(isinstance(jsModule, athena.JSModule))
+@@ -477,10 +477,10 @@ class _AutoPackageTestMixin:
+             return path
+ 
+         expected = {
+-            u'Foo': childPath('Foo', '__init__.' + self.moduleExtension),
+-            u'Foo.Bar': childPath('Foo', 'Bar.' + self.moduleExtension),
+-            u'Foo.Baz': util.sibpath(athena.__file__, 'empty-module.' + self.moduleExtension),
+-            u'Foo.Baz.Quux': childPath('Foo', 'Baz', 'Quux.' + self.moduleExtension)}
++            'Foo': childPath('Foo', '__init__.' + self.moduleExtension),
++            'Foo.Bar': childPath('Foo', 'Bar.' + self.moduleExtension),
++            'Foo.Baz': util.sibpath(athena.__file__, 'empty-module.' + self.moduleExtension),
++            'Foo.Baz.Quux': childPath('Foo', 'Baz', 'Quux.' + self.moduleExtension)}
+ 
+         childPath('Foo', '.foo.' + self.moduleExtension)
+         os.mkdir(os.path.join(packageDir, 'Foo', '.test'))
+@@ -489,10 +489,10 @@ class _AutoPackageTestMixin:
+         childPath('Foo', 'Zot.other')
+ 
+         package = self.packageFactory(packageDir)
+-        for module, path in expected.iteritems():
++        for module, path in expected.items():
+             m = package.mapping.pop(module)
+-            self.assertEquals(m, path)
+-        self.assertEquals(package.mapping, {})
++            self.assertEqual(m, path)
++        self.assertEqual(package.mapping, {})
+ 
+ 
+ 
+@@ -558,7 +558,7 @@ class UtilitiesTests(unittest.TestCase):
+         tag = tags.span[athena.handler(event='onclick', handler='bar')]
+         mutated = athena._rewriteEventHandlerToAttribute(tag)
+         output = flat.flatten(mutated)
+-        self.assertEquals(
++        self.assertEqual(
+             output,
+             '<span onclick="' + expectedOutput + '"></span>')
+ 
+@@ -569,7 +569,7 @@ class UtilitiesTests(unittest.TestCase):
+         macro is.
+         """
+         tag = ["hello", " ", "world"]
+-        self.assertEquals(
++        self.assertEqual(
+             athena._rewriteEventHandlerToAttribute(tag),
+             tag)
+ 
+@@ -618,7 +618,7 @@ class UtilitiesTests(unittest.TestCase):
+         renderDeferred = renderPage(page)
+         def rendered(result):
+             page.action_close(None)
+-            self.assertEquals(preprocessed, [[tag]])
++            self.assertEqual(preprocessed, [[tag]])
+         renderDeferred.addCallback(rendered)
+         return renderDeferred
+ 
+@@ -683,7 +683,7 @@ class StandardLibraryTestCase(unittest.TestCase):
+     def _importTest(self, moduleName):
+         mod = self.deps.getModuleForName(moduleName)
+         inspect = [dep for dep in mod.allDependencies() if dep.name == moduleName]
+-        self.failUnless(inspect)
++        self.assertTrue(inspect)
+ 
+ 
+     def test_divmodImport(self):
+@@ -777,14 +777,14 @@ class Nesting(unittest.TestCase):
+         tf1.setFragmentParent(lp)
+         tf2.setFragmentParent(tf1)
+ 
+-        self.assertEquals(lp.liveFragmentChildren, [tf1])
+-        self.assertEquals(tf1.liveFragmentChildren, [tf2])
+-        self.assertEquals(tf2.liveFragmentChildren, [])
+-        self.assertEquals(tf2.fragmentParent, tf1)
+-        self.assertEquals(tf1.fragmentParent, lp)
++        self.assertEqual(lp.liveFragmentChildren, [tf1])
++        self.assertEqual(tf1.liveFragmentChildren, [tf2])
++        self.assertEqual(tf2.liveFragmentChildren, [])
++        self.assertEqual(tf2.fragmentParent, tf1)
++        self.assertEqual(tf1.fragmentParent, lp)
+ 
+-        self.assertEquals(tf2.page, lp)
+-        self.assertEquals(tf1.page, lp)
++        self.assertEqual(tf2.page, lp)
++        self.assertEqual(tf1.page, lp)
+ 
+ 
+     def testInsideOutFragmentNesting(self):
+@@ -799,13 +799,13 @@ class Nesting(unittest.TestCase):
+         innerFragment.setFragmentParent(outerFragment)
+         outerFragment.setFragmentParent(page)
+ 
+-        self.assertEquals(page.liveFragmentChildren, [outerFragment])
+-        self.assertEquals(outerFragment.fragmentParent, page)
+-        self.assertEquals(outerFragment.page, page)
++        self.assertEqual(page.liveFragmentChildren, [outerFragment])
++        self.assertEqual(outerFragment.fragmentParent, page)
++        self.assertEqual(outerFragment.page, page)
+ 
+-        self.assertEquals(outerFragment.liveFragmentChildren, [innerFragment])
+-        self.assertEquals(innerFragment.fragmentParent, outerFragment)
+-        self.assertEquals(innerFragment.page, page)
++        self.assertEqual(outerFragment.liveFragmentChildren, [innerFragment])
++        self.assertEqual(innerFragment.fragmentParent, outerFragment)
++        self.assertEqual(innerFragment.page, page)
+ 
+ 
+ 
+@@ -816,14 +816,14 @@ class Tracebacks(unittest.TestCase):
+ 
+     stack = '\n'.join(['%s@%s:%d' % frame for frame in frames])
+ 
+-    exc = {u'name': 'SomeError',
+-           u'message': 'An error occurred.',
+-           u'stack': stack}
++    exc = {'name': 'SomeError',
++           'message': 'An error occurred.',
++           'stack': stack}
+ 
+     def testStackParsing(self):
+         p = athena.parseStack(self.stack)
+-        for iframe, oframe in izip(self.frames[::-1], p):
+-            self.assertEquals(oframe, iframe)
++        for iframe, oframe in zip(self.frames[::-1], p):
++            self.assertEqual(oframe, iframe)
+ 
+     def testStackLengthAndOrder(self):
+         f = athena.getJSFailure(self.exc, {})
+@@ -842,7 +842,8 @@ class _DelayedCall(object):
+ 
+ 
+ def mappend(transport):
+-    def send((ack, messages)):
++    def send(xxx_todo_changeme):
++        (ack, messages) = xxx_todo_changeme
+         transport.append(messages[:])
+     return send
+ 
+@@ -900,9 +901,9 @@ class Transport(unittest.TestCase):
+         """
+         self.rdm.addOutput(mappend(self.transport))
+         self.rdm.addMessage(self.theMessage)
+-        self.assertEquals(self.transport, [[(0, self.theMessage)]])
++        self.assertEqual(self.transport, [[(0, self.theMessage)]])
+         self.rdm.addMessage(self.theMessage)
+-        self.assertEquals(self.transport, [[(0, self.theMessage)]])
++        self.assertEqual(self.transport, [[(0, self.theMessage)]])
+ 
+ 
+     def testSendMessageQueued(self):
+@@ -912,7 +913,7 @@ class Transport(unittest.TestCase):
+         """
+         self.rdm.addMessage(self.theMessage)
+         self.rdm.addOutput(mappend(self.transport))
+-        self.assertEquals(self.transport, [[(0, self.theMessage)]])
++        self.assertEqual(self.transport, [[(0, self.theMessage)]])
+ 
+ 
+     def testMultipleQueuedMessages(self):
+@@ -923,7 +924,7 @@ class Transport(unittest.TestCase):
+         self.rdm.addMessage(self.theMessage)
+         self.rdm.addMessage(self.theMessage.encode('hex'))
+         self.rdm.addOutput(mappend(self.transport))
+-        self.assertEquals(self.transport, [[(0, self.theMessage), (1, self.theMessage.encode('hex'))]])
++        self.assertEqual(self.transport, [[(0, self.theMessage), (1, self.theMessage.encode('hex'))]])
+ 
+ 
+     def testMultipleQueuedOutputs(self):
+@@ -935,8 +936,8 @@ class Transport(unittest.TestCase):
+         self.rdm.addOutput(mappend(self.transport))
+         self.rdm.addOutput(mappend(secondTransport))
+         self.rdm.addMessage(self.theMessage)
+-        self.assertEquals(self.transport, [[(0, self.theMessage)]])
+-        self.assertEquals(secondTransport, [])
++        self.assertEqual(self.transport, [[(0, self.theMessage)]])
++        self.assertEqual(secondTransport, [])
+ 
+ 
+     def testMessageRedelivery(self):
+@@ -951,15 +952,15 @@ class Transport(unittest.TestCase):
+         self.rdm.addMessage(self.theMessage)
+         self.rdm.addMessage(secondMessage)
+         self.rdm.addOutput(mappend(self.transport))
+-        self.assertEquals(self.transport, [[(0, self.theMessage), (1, secondMessage)]])
++        self.assertEqual(self.transport, [[(0, self.theMessage), (1, secondMessage)]])
+         self.rdm.addOutput(mappend(secondTransport))
+-        self.assertEquals(secondTransport, [[(0, self.theMessage), (1, secondMessage)]])
++        self.assertEqual(secondTransport, [[(0, self.theMessage), (1, secondMessage)]])
+         self.rdm.basketCaseReceived(None, [0, []])
+         self.rdm.addOutput(mappend(thirdTransport))
+-        self.assertEquals(thirdTransport, [[(1, secondMessage)]])
++        self.assertEqual(thirdTransport, [[(1, secondMessage)]])
+         self.rdm.basketCaseReceived(None, [1, []])
+         self.rdm.addOutput(mappend(fourthTransport))
+-        self.assertEquals(fourthTransport, [])
++        self.assertEqual(fourthTransport, [])
+ 
+ 
+     def testConnectTimeout(self):
+@@ -969,15 +970,15 @@ class Transport(unittest.TestCase):
+         established.
+         """
+         n, f, a, kw = self.scheduled.pop()
+-        self.failIf(self.scheduled, "Too many tasks scheduled.")
++        self.assertFalse(self.scheduled, "Too many tasks scheduled.")
+ 
+-        self.assertEquals(n, self.connectTimeout)
++        self.assertEqual(n, self.connectTimeout)
+         f(*a, **kw)
+ 
+-        self.assertEquals(len(self.events), 1)
++        self.assertEqual(len(self.events), 1)
+         self.events[0].trap(athena.ConnectFailed)
+ 
+-        self.failIf(self.scheduled, "Unexpected task scheduled after connect failed.")
++        self.assertFalse(self.scheduled, "Unexpected task scheduled after connect failed.")
+ 
+ 
+     def testConnectSucceeds(self):
+@@ -985,12 +986,12 @@ class Transport(unittest.TestCase):
+         Test that the connection timeout is cancelled when an output channel is
+         added.
+         """
+-        self.failUnless(self.scheduled, "No connect timeout scheduled.") # Sanity check
++        self.assertTrue(self.scheduled, "No connect timeout scheduled.") # Sanity check
+         self.rdm.addOutput(mappend(self.transport))
+         n, f, a, kw = self.scheduled.pop()
+-        self.assertEquals(n, self.idleTimeout)
+-        self.failIf(self.scheduled, "Output channel added but there is still a task pending.")
+-        self.assertEquals(self.transport, [], "Received unexpected output.")
++        self.assertEqual(n, self.idleTimeout)
++        self.assertFalse(self.scheduled, "Output channel added but there is still a task pending.")
++        self.assertEqual(self.transport, [], "Received unexpected output.")
+ 
+ 
+     def test_connectionMade(self):
+@@ -1016,15 +1017,15 @@ class Transport(unittest.TestCase):
+         self.rdm.addOutput(mappend(self.transport))
+ 
+         n, f, a, kw = self.scheduled.pop()
+-        self.failIf(self.scheduled, "Too many tasks scheduled.")
++        self.assertFalse(self.scheduled, "Too many tasks scheduled.")
+ 
+-        self.assertEquals(n, self.transportlessTimeout)
++        self.assertEqual(n, self.transportlessTimeout)
+         f(*a, **kw)
+ 
+-        self.assertEquals(len(self.events), 1)
++        self.assertEqual(len(self.events), 1)
+         self.events[0].trap(athena.ConnectionLost)
+ 
+-        self.failIf(self.scheduled, "Unexpected task scheduled after connection lost.")
++        self.assertFalse(self.scheduled, "Unexpected task scheduled after connection lost.")
+ 
+ 
+     def testMessageConsumedOutputTimeout(self):
+@@ -1037,15 +1038,15 @@ class Transport(unittest.TestCase):
+         self.rdm.addMessage(self.theMessage)
+ 
+         n, f, a, kw = self.scheduled.pop()
+-        self.failIf(self.scheduled, "Too many tasks scheduled.")
++        self.assertFalse(self.scheduled, "Too many tasks scheduled.")
+ 
+-        self.assertEquals(n, self.transportlessTimeout)
++        self.assertEqual(n, self.transportlessTimeout)
+         f(*a, **kw)
+ 
+-        self.assertEquals(len(self.events), 1)
++        self.assertEqual(len(self.events), 1)
+         self.events[0].trap(athena.ConnectionLost)
+ 
+-        self.failIf(self.scheduled, "Unexpected task scheduled after connection lost.")
++        self.assertFalse(self.scheduled, "Unexpected task scheduled after connection lost.")
+ 
+ 
+     def testOutputConnectionAdded(self):
+@@ -1056,17 +1057,17 @@ class Transport(unittest.TestCase):
+         self.rdm.addMessage(self.theMessage)
+         self.rdm.addOutput(mappend(self.transport))
+ 
+-        self.assertEquals(len(self.scheduled), 1, "Transportless timeout not created.")
++        self.assertEqual(len(self.scheduled), 1, "Transportless timeout not created.")
+         n, f, a, kw = self.scheduled[0]
+-        self.assertEquals(n, self.transportlessTimeout, "Unexpected task still scheduled after output added.")
++        self.assertEqual(n, self.transportlessTimeout, "Unexpected task still scheduled after output added.")
+ 
+         self.rdm.basketCaseReceived(None, [0, []])
+ 
+         n, f, a, kw = self.scheduled.pop()
+-        self.assertEquals(n, self.idleTimeout)
++        self.assertEqual(n, self.idleTimeout)
+ 
+-        self.failIf(self.scheduled, "Unexpected task still scheduled after output added.")
+-        self.failIf(self.events, "Unexpectedly received some kind of event.")
++        self.assertFalse(self.scheduled, "Unexpected task still scheduled after output added.")
++        self.assertFalse(self.events, "Unexpectedly received some kind of event.")
+ 
+ 
+     def testIdleOutputTimeout(self):
+@@ -1077,12 +1078,12 @@ class Transport(unittest.TestCase):
+         self.rdm.addOutput(mappend(self.transport))
+ 
+         n, f, a, kw = self.scheduled.pop()
+-        self.assertEquals(n, self.idleTimeout)
+-        self.failIf(self.scheduled, "Unexpected tasks still scheduled in addition to idle timeout task.")
++        self.assertEqual(n, self.idleTimeout)
++        self.assertFalse(self.scheduled, "Unexpected tasks still scheduled in addition to idle timeout task.")
+ 
+         f(*a, **kw)
+ 
+-        self.assertEquals(self.transport, [[]])
++        self.assertEqual(self.transport, [[]])
+ 
+ 
+     def testIdleTimeoutStartsOutputlessTimeout(self):
+@@ -1093,16 +1094,16 @@ class Transport(unittest.TestCase):
+         self.rdm.addOutput(mappend(self.transport))
+ 
+         n, f, a, kw = self.scheduled.pop()
+-        self.assertEquals(n, self.idleTimeout)
++        self.assertEqual(n, self.idleTimeout)
+         f(*a, **kw)
+ 
+-        self.failIf(self.events, "Unexpectedly received some events.")
++        self.assertFalse(self.events, "Unexpectedly received some events.")
+ 
+         n, f, a, kw = self.scheduled.pop()
+-        self.assertEquals(n, self.transportlessTimeout)
++        self.assertEqual(n, self.transportlessTimeout)
+         f(*a, **kw)
+ 
+-        self.assertEquals(len(self.events), 1)
++        self.assertEqual(len(self.events), 1)
+         self.events[0].trap(athena.ConnectionLost)
+ 
+ 
+@@ -1116,15 +1117,15 @@ class Transport(unittest.TestCase):
+ 
+         # The connection timeout should have been cancelled and
+         # replaced with an idle timeout.
+-        self.assertEquals(len(self.scheduled), 1)
++        self.assertEqual(len(self.scheduled), 1)
+         n, f, a, kw = self.scheduled[0]
+-        self.assertEquals(n, self.idleTimeout)
++        self.assertEqual(n, self.idleTimeout)
+ 
+         self.rdm.addMessage(self.theMessage)
+-        self.assertEquals(self.transport, [])
++        self.assertEqual(self.transport, [])
+ 
+         self.rdm.unpause()
+-        self.assertEquals(self.transport, [[(0, self.theMessage)]])
++        self.assertEqual(self.transport, [[(0, self.theMessage)]])
+ 
+ 
+     def testTransportlessPause(self):
+@@ -1137,10 +1138,10 @@ class Transport(unittest.TestCase):
+ 
+         self.rdm.pause()
+         self.rdm.addMessage(self.theMessage)
+-        self.assertEquals(self.transport, [])
++        self.assertEqual(self.transport, [])
+ 
+         self.rdm.unpause()
+-        self.assertEquals(self.transport, [[(0, self.theMessage)]])
++        self.assertEqual(self.transport, [[(0, self.theMessage)]])
+ 
+ 
+     def testMessagelessPause(self):
+@@ -1153,10 +1154,10 @@ class Transport(unittest.TestCase):
+ 
+         self.rdm.pause()
+         self.rdm.addMessage(self.theMessage)
+-        self.assertEquals(self.transport, [])
++        self.assertEqual(self.transport, [])
+ 
+         self.rdm.unpause()
+-        self.assertEquals(self.transport, [[(0, self.theMessage)]])
++        self.assertEqual(self.transport, [[(0, self.theMessage)]])
+ 
+ 
+     def testStaleMessages(self):
+@@ -1170,7 +1171,7 @@ class Transport(unittest.TestCase):
+             [-1, [[0, self.theMessage],
+                   [1, self.theMessage + "-1"],
+                   [2, self.theMessage + "-2"]]])
+-        self.assertEquals(
++        self.assertEqual(
+             self.outgoingMessages,
+             [(None, self.theMessage),
+              (None, self.theMessage + "-1"),
+@@ -1180,14 +1181,14 @@ class Transport(unittest.TestCase):
+         self.rdm.basketCaseReceived(
+             None,
+             [-1, [[1, self.theMessage + "-1"]]])
+-        self.assertEquals(
++        self.assertEqual(
+             self.outgoingMessages,
+             [])
+ 
+         self.rdm.basketCaseReceived(
+             None,
+             [-1, [[2, self.theMessage + "-2"]]])
+-        self.assertEquals(
++        self.assertEqual(
+             self.outgoingMessages,
+             [])
+ 
+@@ -1202,11 +1203,11 @@ class Transport(unittest.TestCase):
+         self.rdm.addOutput(mappend(self.transport))
+         self.rdm.addOutput(mappend(self.transport))
+         self.rdm.close()
+-        self.assertEquals(self.transport, [[(0, (athena.CLOSE, []))], [(0, (athena.CLOSE, []))]])
++        self.assertEqual(self.transport, [[(0, (athena.CLOSE, []))], [(0, (athena.CLOSE, []))]])
+ 
+         self.transport = []
+         self.rdm.addOutput(mappend(self.transport))
+-        self.assertEquals(self.transport, [[(0, (athena.CLOSE, []))]])
++        self.assertEqual(self.transport, [[(0, (athena.CLOSE, []))]])
+ 
+ 
+     def testCloseBeforeConnect(self):
+@@ -1215,7 +1216,7 @@ class Transport(unittest.TestCase):
+         ever established properly cleans up any timeouts.
+         """
+         self.rdm.close()
+-        self.failIf(self.scheduled, "Expected no scheduled calls.")
++        self.assertFalse(self.scheduled, "Expected no scheduled calls.")
+ 
+ 
+     def test_closeExcessOnReceived(self):
+@@ -1226,9 +1227,9 @@ class Transport(unittest.TestCase):
+         self.rdm.addOutput(mappend(self.transport))
+         self.rdm.addOutput(mappend(secondTransport))
+         d = self.rdm.basketCaseReceived(None, [0, []])
+-        self.assertEquals(self.transport, [[]])
+-        self.assertEquals(secondTransport, [[]])
+-        self.failIf(d.called)
++        self.assertEqual(self.transport, [[]])
++        self.assertEqual(secondTransport, [[]])
++        self.assertFalse(d.called)
+ 
+ 
+     def test_closeExcessOnUnpaused(self):
+@@ -1461,7 +1462,7 @@ class LiveMixinTestsMixin(CSSModuleTestMixin):
+         Our element's glue should include inline stylesheet references.
+         """
+         element = self.elementFactory()
+-        element.cssModule = u'TestCSSModuleDependencies.Dependor'
++        element.cssModule = 'TestCSSModuleDependencies.Dependor'
+         element.docFactory = loaders.stan(
+             tags.div(render=tags.directive(self.liveGlueRenderer)))
+ 
+@@ -1472,8 +1473,8 @@ class LiveMixinTestsMixin(CSSModuleTestMixin):
+         def cbRendered(result):
+             expected = flat.flatten(
+                 page.getStylesheetStan(
+-                    [page.getCSSModuleURL(u'TestCSSModuleDependencies.Dependee'),
+-                     page.getCSSModuleURL(u'TestCSSModuleDependencies.Dependor')]))
++                    [page.getCSSModuleURL('TestCSSModuleDependencies.Dependee'),
++                     page.getCSSModuleURL('TestCSSModuleDependencies.Dependor')]))
+             self.assertIn(expected, result)
+         D.addCallback(cbRendered)
+         return D
+@@ -1484,7 +1485,7 @@ class LiveMixinTestsMixin(CSSModuleTestMixin):
+         Our element's glue shouldn't include redundant stylesheet references.
+         """
+         element = self.elementFactory()
+-        element.cssModule = u'TestCSSModuleDependencies.Dependor'
++        element.cssModule = 'TestCSSModuleDependencies.Dependor'
+         element.docFactory = loaders.stan(
+             tags.div(render=tags.directive(self.liveGlueRenderer)))
+ 
+@@ -1499,8 +1500,8 @@ class LiveMixinTestsMixin(CSSModuleTestMixin):
+         def cbRendered(result):
+             expected = flat.flatten(
+                 page.getStylesheetStan(
+-                    [page.getCSSModuleURL(u'TestCSSModuleDependencies.Dependee'),
+-                     page.getCSSModuleURL(u'TestCSSModuleDependencies.Dependor')]))
++                    [page.getCSSModuleURL('TestCSSModuleDependencies.Dependee'),
++                     page.getCSSModuleURL('TestCSSModuleDependencies.Dependor')]))
+             self.assertIn(expected, result)
+         D.addCallback(cbRendered)
+         return D
+@@ -1569,7 +1570,7 @@ class LivePageTests(unittest.TestCase, CSSModuleTestMi
+         calling a single JavaScript function.
+         """
+         bc = self.page._bootstrapCall(
+-            "SomeModule.someMethod", [u"one", 2, {u"three": 4.1}])
++            "SomeModule.someMethod", ["one", 2, {"three": 4.1}])
+         self.assertEqual(
+             bc, 'SomeModule.someMethod("one", 2, {"three":4.1});')
+ 
+@@ -1579,14 +1580,14 @@ class LivePageTests(unittest.TestCase, CSSModuleTestMi
+         L{LivePage.render_liveglue} should include modules that the
+         L{LivePage}'s jsClass depends on.
+         """
+-        self.page.jsClass = u'PythonTestSupport.Dependor.PageTest'
++        self.page.jsClass = 'PythonTestSupport.Dependor.PageTest'
+         freq = FakeRequest()
+         self.page._becomeLive(url.URL.fromRequest(freq))
+         ctx = WovenContext(tag=tags.div())
+         ctx.remember(freq, IRequest)
+         self.assertEqual(self.page.render_liveglue(ctx, None), ctx.tag)
+-        expectDependor = flat.flatten(self.page.getImportStan(u'PythonTestSupport.Dependor'))
+-        expectDependee = flat.flatten(self.page.getImportStan(u'PythonTestSupport.Dependee'))
++        expectDependor = flat.flatten(self.page.getImportStan('PythonTestSupport.Dependor'))
++        expectDependee = flat.flatten(self.page.getImportStan('PythonTestSupport.Dependee'))
+         result = flat.flatten(ctx.tag, ctx)
+         self.assertIn(expectDependor, result)
+         self.assertIn(expectDependee, result)
+@@ -1597,7 +1598,7 @@ class LivePageTests(unittest.TestCase, CSSModuleTestMi
+         L{athena.LivePage.render_liveglue} should include CSS modules that
+         the top-level C{cssModule} depends on.
+         """
+-        self.page.cssModule = u'TestCSSModuleDependencies.Dependor'
++        self.page.cssModule = 'TestCSSModuleDependencies.Dependor'
+         self.page.cssModules = self._makeCSSRegistry()
+ 
+         self.page._becomeLive(url.URL())
+@@ -1606,8 +1607,8 @@ class LivePageTests(unittest.TestCase, CSSModuleTestMi
+         self.assertEqual(self.page.render_liveglue(ctx, None), ctx.tag)
+         expected = flat.flatten(
+             self.page.getStylesheetStan(
+-                [self.page.getCSSModuleURL(u'TestCSSModuleDependencies.Dependee'),
+-                 self.page.getCSSModuleURL(u'TestCSSModuleDependencies.Dependor')]))
++                [self.page.getCSSModuleURL('TestCSSModuleDependencies.Dependee'),
++                 self.page.getCSSModuleURL('TestCSSModuleDependencies.Dependor')]))
+         self.assertIn(expected, flat.flatten(ctx.tag, ctx))
+ 
+ 
+@@ -1631,9 +1632,9 @@ class LivePageTests(unittest.TestCase, CSSModuleTestMi
+               # Nevow's URL quoting rules are weird, but this is the URL
+               # flattener's fault, not mine.  Adjust to taste if that changes
+               # (it won't) -glyph
+-              [u"http://localhost/'%22"]),
++              ["http://localhost/'%22"]),
+              ("Nevow.Athena.bootstrap",
+-              [u'Nevow.Athena.PageWidget', u'asdf'])])
++              ['Nevow.Athena.PageWidget', 'asdf'])])
+ 
+ 
+     def test_renderReconnect(self):
+@@ -1683,7 +1684,7 @@ class LivePageTests(unittest.TestCase, CSSModuleTestMi
+         page = athena.LivePage(
+             cssModuleRoot=theCSSModuleRoot)
+         self.assertEqual(
+-            page.getCSSModuleURL(u'X.Y'),
++            page.getCSSModuleURL('X.Y'),
+             theCSSModuleRoot.child('X.Y'))
+ 
+ 
+@@ -1857,7 +1858,7 @@ class WidgetSubcommandTests(unittest.TestCase):
+         """
+         options = widgetServiceMaker.options()
+         options.parseOptions(['--element', qual(DummyLiveElement)])
+-        self.assertEquals(options['element'], DummyLiveElement)
++        self.assertEqual(options['element'], DummyLiveElement)
+ 
+ 
+     def test_invalidWidgetOption(self):
+@@ -1897,8 +1898,8 @@ class WidgetSubcommandTests(unittest.TestCase):
+         Verify that the necessary interfaces for the object to be found as a
+         twistd subcommand plugin are provided.
+         """
+-        self.failUnless(IPlugin.providedBy(widgetServiceMaker))
+-        self.failUnless(IServiceMaker.providedBy(widgetServiceMaker))
++        self.assertTrue(IPlugin.providedBy(widgetServiceMaker))
++        self.assertTrue(IServiceMaker.providedBy(widgetServiceMaker))
+ 
+ 
+     def test_makeService(self):
+@@ -1910,11 +1911,11 @@ class WidgetSubcommandTests(unittest.TestCase):
+                 'element': DummyLiveElement,
+                 'port': 8080,
+                 })
+-        self.failUnless(isinstance(service, TCPServer))
++        self.assertTrue(isinstance(service, TCPServer))
+         self.assertEqual(service.args[0], 8080)
+-        self.failUnless(isinstance(service.args[1], NevowSite))
+-        self.failUnless(isinstance(service.args[1].resource, WidgetPluginRoot))
+-        self.failUnless(isinstance(service.args[1].resource.elementFactory(),
++        self.assertTrue(isinstance(service.args[1], NevowSite))
++        self.assertTrue(isinstance(service.args[1].resource, WidgetPluginRoot))
++        self.assertTrue(isinstance(service.args[1].resource.elementFactory(),
+                                    DummyLiveElement))
+ 
+ 
+@@ -1924,7 +1925,7 @@ class WidgetSubcommandTests(unittest.TestCase):
+         particular LiveElement properly renders that element.
+         """
+         element = DummyLiveElement()
+-        element.jsClass = u'Dummy.ClassName'
++        element.jsClass = 'Dummy.ClassName'
+         element.docFactory = stan('the element')
+         page = ElementRenderingLivePage(element)
+         renderDeferred = renderLivePage(page)
+@@ -1951,8 +1952,8 @@ class WidgetSubcommandTests(unittest.TestCase):
+         page2, seg = w.locateChild(None, [''])
+ 
+         # Make sure the pages aren't the same.
+-        self.failUnless(isinstance(page1, ElementRenderingLivePage))
+-        self.failUnless(isinstance(page2, ElementRenderingLivePage))
++        self.assertTrue(isinstance(page1, ElementRenderingLivePage))
++        self.assertTrue(isinstance(page2, ElementRenderingLivePage))
+         self.assertNotIdentical(page1, page2)
+ 
+         # Make sure the elements aren't the same.
+@@ -1974,7 +1975,7 @@ class WidgetSubcommandTests(unittest.TestCase):
+         w = WidgetPluginRoot(DummyLiveElement)
+         page1, seg = w.locateChild(None, [''])
+         page1.element.docFactory = stan('the element')
+-        page1.element.jsClass = u'Dummy.ClassName'
++        page1.element.jsClass = 'Dummy.ClassName'
+         def cbCheckPageByClientID(result):
+             req = FakeRequest()
+             ctx = WovenContext()
+--- nevow/test/test_errorhandler.py.orig	2015-10-20 22:44:10 UTC
++++ nevow/test/test_errorhandler.py
+@@ -61,25 +61,28 @@ class Test404(testutil.TestCase):
+         """
+         root = Root()
+         def later(resource):
+-            self.failUnless(isinstance(resource, rend.FourOhFour))
+-            def morelater((code, html)):
+-                self.assertEquals(rend.FourOhFour.notFound, html)
+-                self.assertEquals(code, 404)
++            self.assertTrue(isinstance(resource, rend.FourOhFour))
++            def morelater(xxx_todo_changeme):
++                (code, html) = xxx_todo_changeme
++                self.assertEqual(rend.FourOhFour.notFound, html)
++                self.assertEqual(code, 404)
+             return renderResource('/foo').addCallback(morelater)
+         return getResource(root, '/foo').addCallback(later)
+ 
+     def test_remembered404Handler(self):
+-        def later((code, html)):
+-            self.assertEquals(html, NotFoundHandler.html)
+-            self.assertEquals(code, 404)
++        def later(xxx_todo_changeme1):
++            (code, html) = xxx_todo_changeme1
++            self.assertEqual(html, NotFoundHandler.html)
++            self.assertEqual(code, 404)
+ 
+         return renderResource('/foo', notFoundHandler=NotFoundHandler()).addCallback(later)
+ 
+     def test_keyErroringNotFoundHandler(self):
+-        def later((code, html)):
+-            self.assertEquals(rend.FourOhFour.notFound, html)
+-            self.assertEquals(code, 404)
++        def later(xxx_todo_changeme2):
++            (code, html) = xxx_todo_changeme2
++            self.assertEqual(rend.FourOhFour.notFound, html)
++            self.assertEqual(code, 404)
+             fe = self.flushLoggedErrors(BrokenException)
+-            self.assertEquals(len(fe), 1)
++            self.assertEqual(len(fe), 1)
+         return renderResource('/foo', notFoundHandler=BadNotFoundHandler()).addCallback(later)
+ 
+--- nevow/test/test_flatstan.py.orig	2015-10-20 22:44:10 UTC
++++ nevow/test/test_flatstan.py
+@@ -49,21 +49,21 @@ class Base(TestCase):
+ 
+ class TestSimpleSerialization(Base):
+     def test_serializeProto(self):
+-        self.assertEquals(self.render(proto), '<hello />')
++        self.assertEqual(self.render(proto), '<hello />')
+ 
+     def test_serializeTag(self):
+         tag = proto(someAttribute="someValue")
+-        self.assertEquals(self.render(tag), '<hello someAttribute="someValue"></hello>')
++        self.assertEqual(self.render(tag), '<hello someAttribute="someValue"></hello>')
+ 
+     def test_serializeChildren(self):
+         tag = proto(someAttribute="someValue")[
+             proto
+         ]
+-        self.assertEquals(self.render(tag), '<hello someAttribute="someValue"><hello /></hello>')
++        self.assertEqual(self.render(tag), '<hello someAttribute="someValue"><hello /></hello>')
+ 
+     def test_serializeWithData(self):
+         tag = proto(data=5)
+-        self.assertEquals(self.render(tag), '<hello></hello>')
++        self.assertEqual(self.render(tag), '<hello></hello>')
+ 
+     def test_adaptRenderer(self):
+         ## This is an implementation of the "adapt" renderer
+@@ -72,19 +72,19 @@ class TestSimpleSerialization(Base):
+                 data
+             ]
+         tag = proto(data=5, render=_)
+-        self.assertEquals(self.render(tag), '<hello>5</hello>')
++        self.assertEqual(self.render(tag), '<hello>5</hello>')
+ 
+     def test_serializeDataWithRenderer(self):
+         tag = proto(data=5, render=str)
+-        self.assertEquals(self.render(tag), '5')
++        self.assertEqual(self.render(tag), '5')
+ 
+     def test_noContextRenderer(self):
+         def _(data):
+             return data
+         tag = proto(data=5, render=_)
+-        self.assertEquals(self.render(tag), '5')
++        self.assertEqual(self.render(tag), '5')
+         tag = proto(data=5, render=lambda data: data)
+-        self.assertEquals(self.render(tag), '5')
++        self.assertEqual(self.render(tag), '5')
+ 
+     def test_aBunchOfChildren(self):
+         tag = proto[
+@@ -92,28 +92,28 @@ class TestSimpleSerialization(Base):
+             5,
+             "A friend in need is a friend indeed"
+         ]
+-        self.assertEquals(self.render(tag), '<hello>A Child5A friend in need is a friend indeed</hello>')
++        self.assertEqual(self.render(tag), '<hello>A Child5A friend in need is a friend indeed</hello>')
+ 
+     def test_basicPythonTypes(self):
+         tag = proto(data=5)[
+             "A string; ",
+-            u"A unicode string; ",
++            "A unicode string; ",
+             5, " (An integer) ",
+             1.0, " (A float) ",
+-            1L, " (A long) ",
++            1, " (A long) ",
+             True, " (A bool) ",
+             ["A ", "List; "],
+             stan.xml("<xml /> Some xml; "),
+             lambda data: "A function"
+         ]
+         if self.hasBools:
+-            self.assertEquals(self.render(tag), "<hello>A string; A unicode string; 5 (An integer) 1.0 (A float) 1 (A long) True (A bool) A List; <xml /> Some xml; A function</hello>")
++            self.assertEqual(self.render(tag), "<hello>A string; A unicode string; 5 (An integer) 1.0 (A float) 1 (A long) True (A bool) A List; <xml /> Some xml; A function</hello>")
+         else:
+-            self.assertEquals(self.render(tag), "<hello>A string; A unicode string; 5 (An integer) 1.0 (A float) 1 (A long) 1 (A bool) A List; <xml /> Some xml; A function</hello>")
++            self.assertEqual(self.render(tag), "<hello>A string; A unicode string; 5 (An integer) 1.0 (A float) 1 (A long) 1 (A bool) A List; <xml /> Some xml; A function</hello>")
+ 
+     def test_escaping(self):
+         tag = proto(foo="<>&\"'")["<>&\"'"]
+-        self.assertEquals(self.render(tag), '<hello foo="&lt;&gt;&amp;&quot;\'">&lt;&gt;&amp;"\'</hello>')
++        self.assertEqual(self.render(tag), '<hello foo="&lt;&gt;&amp;&quot;\'">&lt;&gt;&amp;"\'</hello>')
+ 
+ 
+ class TestComplexSerialization(Base):
+@@ -127,11 +127,11 @@ class TestComplexSerialization(Base):
+             ]
+         ]
+         prelude, context, postlude = self.render(tag, precompile=True)
+-        self.assertEquals(prelude, "<html><body><div><p>Here's a string</p>")
+-        self.assertEquals(context.tag.tagName, "p")
+-        self.assertEquals(context.tag.data, 5)
+-        self.assertEquals(context.tag.render, str)
+-        self.assertEquals(postlude, '</div></body></html>')
++        self.assertEqual(prelude, "<html><body><div><p>Here's a string</p>")
++        self.assertEqual(context.tag.tagName, "p")
++        self.assertEqual(context.tag.data, 5)
++        self.assertEqual(context.tag.render, str)
++        self.assertEqual(postlude, '</div></body></html>')
+ 
+     def test_precompileSlotData(self):
+         """Test that tags with slotData are not precompiled out of the
+@@ -140,7 +140,7 @@ class TestComplexSerialization(Base):
+         tag = tags.p[tags.slot('foo')]
+         tag.fillSlots('foo', 'bar')
+         precompiled = self.render(tag, precompile=True)
+-        self.assertEquals(self.render(precompiled), '<p>bar</p>')
++        self.assertEqual(self.render(precompiled), '<p>bar</p>')
+ 
+ 
+     def test_precompiledSlotLocation(self):
+@@ -186,7 +186,7 @@ class TestComplexSerialization(Base):
+         result1 = self.render(doc, precompile=True)
+         result2 = self.render(doc, precompile=True)
+         rendered = self.render(result2)
+-        self.assertEquals(rendered, "<html><body><p>Hello</p><p>5</p></body></html>")
++        self.assertEqual(rendered, "<html><body><p>Hello</p><p>5</p></body></html>")
+ 
+     def test_precompilePrecompiled(self):
+         def render_same(context, data):
+@@ -203,7 +203,7 @@ class TestComplexSerialization(Base):
+         result1 = self.render(doc, precompile=True)
+         result2 = self.render(result1, precompile=True)
+         rendered = self.render(result2)
+-        self.assertEquals(rendered, "<html><body><p>Hello</p><p>5</p></body></html>")
++        self.assertEqual(rendered, "<html><body><p>Hello</p><p>5</p></body></html>")
+ 
+     def test_precompileDoesntChangeOriginal(self):
+         doc = tags.html(data="foo")[tags.p['foo'], tags.p['foo']]
+@@ -211,37 +211,37 @@ class TestComplexSerialization(Base):
+         result = self.render(doc, precompile=True)
+         rendered = self.render(result)
+ 
+-        self.assertEquals(len(doc.children), 2)
+-        self.assertEquals(rendered, "<html><p>foo</p><p>foo</p></html>")
++        self.assertEqual(len(doc.children), 2)
++        self.assertEqual(rendered, "<html><p>foo</p><p>foo</p></html>")
+ 
+     def test_precompileNestedDynamics(self):
+         tag = self.makeComplex()
+         prelude, dynamic, postlude = self.render(tag, precompile=True)
+-        self.assertEquals(prelude, '<html><body>')
++        self.assertEqual(prelude, '<html><body>')
+ 
+-        self.assertEquals(dynamic.tag.tagName, 'table')
+-        self.failUnless(dynamic.tag.children)
+-        self.assertEquals(dynamic.tag.data, 5)
++        self.assertEqual(dynamic.tag.tagName, 'table')
++        self.assertTrue(dynamic.tag.children)
++        self.assertEqual(dynamic.tag.data, 5)
+ 
+         childPrelude, childDynamic, childPostlude = dynamic.tag.children
+ 
+-        self.assertEquals(childPrelude, '<tr><td>')
+-        self.assertEquals(childDynamic.tag.tagName, 'span')
+-        self.assertEquals(childDynamic.tag.render, str)
+-        self.assertEquals(childPostlude, '</td></tr>')
++        self.assertEqual(childPrelude, '<tr><td>')
++        self.assertEqual(childDynamic.tag.tagName, 'span')
++        self.assertEqual(childDynamic.tag.render, str)
++        self.assertEqual(childPostlude, '</td></tr>')
+ 
+-        self.assertEquals(postlude, '</body></html>')
++        self.assertEqual(postlude, '</body></html>')
+ 
+     def test_precompileThenRender(self):
+         tag = self.makeComplex()
+         prerendered = self.render(tag, precompile=True)
+-        self.assertEquals(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
++        self.assertEqual(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
+ 
+     def test_precompileThenMultipleRenders(self):
+         tag = self.makeComplex()
+         prerendered = self.render(tag, precompile=True)
+-        self.assertEquals(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
+-        self.assertEquals(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
++        self.assertEqual(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
++        self.assertEqual(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
+ 
+     def test_patterns(self):
+         tag = tags.html[
+@@ -253,12 +253,12 @@ class TestComplexSerialization(Base):
+                 ]
+             ]
+         ]
+-        self.assertEquals(self.render(tag), "<html><body><ol><li>one</li><li>two</li><li>three</li></ol></body></html>")
++        self.assertEqual(self.render(tag), "<html><body><ol><li>one</li><li>two</li><li>three</li></ol></body></html>")
+ 
+     def test_precompilePatternWithNoChildren(self):
+         tag = tags.img(pattern='item')
+         pc = flat.precompile(tag)
+-        self.assertEquals(pc[0].tag.children, [])
++        self.assertEqual(pc[0].tag.children, [])
+ 
+     def test_slots(self):
+         tag = tags.html[
+@@ -272,7 +272,7 @@ class TestComplexSerialization(Base):
+                 ]
+             ]
+         ]
+-        self.assertEquals(self.render(tag), "<html><body><table><tr><td>Header one.</td><td>Header two.</td></tr><tr><td>One: 1</td><td>Two: 2</td></tr></table></body></html>")
++        self.assertEqual(self.render(tag), "<html><body><table><tr><td>Header one.</td><td>Header two.</td></tr><tr><td>One: 1</td><td>Two: 2</td></tr></table></body></html>")
+ 
+ 
+     def test_slotAttributeEscapingWhenPrecompiled(self):
+@@ -291,7 +291,7 @@ class TestComplexSerialization(Base):
+         # this test passes if the precompile test is skipped.
+         precompiled = self.render(tag, precompile=True)
+ 
+-        self.assertEquals(self.render(precompiled), '<input value="&quot;meow&quot;" />')
++        self.assertEqual(self.render(precompiled), '<input value="&quot;meow&quot;" />')
+ 
+ 
+     def test_nestedpatterns(self):
+@@ -309,7 +309,7 @@ class TestComplexSerialization(Base):
+                 ]
+             ]
+         ]
+-        self.assertEquals(self.render(tag), "<html><body><table><tr><td>col1</td><td>col2</td><td>col3</td></tr><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></table></body></html>")
++        self.assertEqual(self.render(tag), "<html><body><table><tr><td>col1</td><td>col2</td><td>col3</td></tr><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></table></body></html>")
+ 
+     def test_cloning(self):
+         def data_foo(context, data):  return [{'foo':'one'}, {'foo':'two'}]
+@@ -334,24 +334,24 @@ class TestComplexSerialization(Base):
+             ]
+         ]
+         document=self.render(document, precompile=True)
+-        self.assertEquals(self.render(document), '<html><body><ul><li><a href="test/one">link</a></li><li><a href="test/two">link</a></li></ul><ul><li>fooone</li><li>footwo</li></ul></body></html>')
++        self.assertEqual(self.render(document), '<html><body><ul><li><a href="test/one">link</a></li><li><a href="test/two">link</a></li></ul><ul><li>fooone</li><li>footwo</li></ul></body></html>')
+ 
+     def test_singletons(self):
+         for x in ('img', 'br', 'hr', 'base', 'meta', 'link', 'param', 'area',
+             'input', 'col', 'basefont', 'isindex', 'frame'):
+-            self.assertEquals(self.render(tags.Proto(x)()), '<%s />' % x)
++            self.assertEqual(self.render(tags.Proto(x)()), '<%s />' % x)
+ 
+     def test_nosingleton(self):
+         for x in ('div', 'span', 'script', 'iframe'):
+-            self.assertEquals(self.render(tags.Proto(x)()), '<%(tag)s></%(tag)s>' % {'tag': x})
++            self.assertEqual(self.render(tags.Proto(x)()), '<%(tag)s></%(tag)s>' % {'tag': x})
+ 
+     def test_nested_data(self):
+         def checkContext(ctx, data):
+-            self.assertEquals(data, "inner")
+-            self.assertEquals(ctx.locate(inevow.IData, depth=2), "outer")
++            self.assertEqual(data, "inner")
++            self.assertEqual(ctx.locate(inevow.IData, depth=2), "outer")
+             return 'Hi'
+         tag = tags.html(data="outer")[tags.span(render=lambda ctx,data: ctx.tag, data="inner")[checkContext]]
+-        self.assertEquals(self.render(tag), "<html><span>Hi</span></html>")
++        self.assertEqual(self.render(tag), "<html><span>Hi</span></html>")
+ 
+     def test_nested_remember(self):
+         class IFoo(Interface):
+@@ -360,11 +360,11 @@ class TestComplexSerialization(Base):
+             implements(IFoo)
+ 
+         def checkContext(ctx, data):
+-            self.assertEquals(ctx.locate(IFoo), Foo("inner"))
+-            self.assertEquals(ctx.locate(IFoo, depth=2), Foo("outer"))
++            self.assertEqual(ctx.locate(IFoo), Foo("inner"))
++            self.assertEqual(ctx.locate(IFoo, depth=2), Foo("outer"))
+             return 'Hi'
+         tag = tags.html(remember=Foo("outer"))[tags.span(render=lambda ctx,data: ctx.tag, remember=Foo("inner"))[checkContext]]
+-        self.assertEquals(self.render(tag), "<html><span>Hi</span></html>")
++        self.assertEqual(self.render(tag), "<html><span>Hi</span></html>")
+ 
+     def test_deferredRememberInRenderer(self):
+         class IFoo(Interface):
+@@ -376,7 +376,7 @@ class TestComplexSerialization(Base):
+             return IFoo(ctx)
+         tag = tags.invisible(render=rememberIt)[tags.invisible(render=locateIt)]
+         self.render(tag, wantDeferred=True).addCallback(
+-            lambda result: self.assertEquals(result, "bar"))
++            lambda result: self.assertEqual(result, "bar"))
+ 
+     def test_deferredFromNestedFunc(self):
+         def outer(ctx, data):
+@@ -384,14 +384,14 @@ class TestComplexSerialization(Base):
+                 return defer.succeed(tags.p['Hello'])
+             return inner
+         self.render(tags.invisible(render=outer), wantDeferred=True).addCallback(
+-            lambda result: self.assertEquals(result, '<p>Hello</p>'))
++            lambda result: self.assertEqual(result, '<p>Hello</p>'))
+ 
+     def test_dataContextCreation(self):
+         data = {'foo':'oof', 'bar':'rab'}
+         doc = tags.p(data=data)[tags.slot('foo'), tags.slot('bar')]
+         doc.fillSlots('foo', tags.invisible(data=tags.directive('foo'), render=str))
+         doc.fillSlots('bar', lambda ctx,data: data['bar'])
+-        self.assertEquals(flat.flatten(doc), '<p>oofrab</p>')
++        self.assertEqual(flat.flatten(doc), '<p>oofrab</p>')
+ 
+     def test_leaky(self):
+         def foo(ctx, data):
+@@ -403,7 +403,7 @@ class TestComplexSerialization(Base):
+                 tags.slot("bar"),
+                 tags.invisible(render=str)])
+ 
+-        self.assertEquals(result, '<div>one</div>')
++        self.assertEqual(result, '<div>one</div>')
+ 
+ 
+ class TestMultipleRenderWithDirective(Base):
+@@ -433,37 +433,37 @@ class TestMultipleRenderWithDirective(Base):
+ class TestEntity(Base):
+     def test_it(self):
+         val = self.render(entities.nbsp)
+-        self.assertEquals(val, '&#160;')
++        self.assertEqual(val, '&#160;')
+ 
+     def test_nested(self):
+         val = self.render(tags.html(src=entities.quot)[entities.amp])
+-        self.assertEquals(val, '<html src="&quot;">&amp;</html>')
++        self.assertEqual(val, '<html src="&quot;">&amp;</html>')
+ 
+     def test_xml(self):
+         val = self.render([entities.lt, entities.amp, entities.gt])
+-        self.assertEquals(val, '&lt;&amp;&gt;')
++        self.assertEqual(val, '&lt;&amp;&gt;')
+ 
+ 
+ class TestNoneAttribute(Base):
+ 
+     def test_simple(self):
+         val = self.render(tags.html(foo=None)["Bar"])
+-        self.assertEquals(val, "<html>Bar</html>")
++        self.assertEqual(val, "<html>Bar</html>")
+ 
+     def test_slot(self):
+         val = self.render(tags.html().fillSlots('bar', None)(foo=tags.slot('bar'))["Bar"])
+-        self.assertEquals(val, "<html>Bar</html>")
++        self.assertEqual(val, "<html>Bar</html>")
+     test_slot.skip = "Attribute name flattening must happen later for this to work"
+ 
+     def test_deepSlot(self):
+         val = self.render(tags.html().fillSlots('bar', lambda c,d: None)(foo=tags.slot('bar'))["Bar"])
+-        self.assertEquals(val, "<html>Bar</html>")
++        self.assertEqual(val, "<html>Bar</html>")
+     test_deepSlot.skip = "Attribute name flattening must happen later for this to work"
+ 
+     def test_deferredSlot(self):
+         self.render(tags.html().fillSlots('bar', defer.succeed(None))(foo=tags.slot('bar'))["Bar"],
+                     wantDeferred=True).addCallback(
+-            lambda val: self.assertEquals(val, "<html>Bar</html>"))
++            lambda val: self.assertEqual(val, "<html>Bar</html>"))
+     test_deferredSlot.skip = "Attribute name flattening must happen later for this to work"
+ 
+ 
+@@ -478,7 +478,7 @@ class TestKey(Base):
+                 tags.div(key="two", render=appendKey)[
+                     tags.div(render=appendKey)[
+                         tags.div(key="four", render=appendKey)]]])
+-        self.assertEquals(val, ["one", "one.two", "one.two", "one.two.four"])
++        self.assertEqual(val, ["one", "one.two", "one.two", "one.two.four"])
+ 
+ 
+ 
+@@ -507,7 +507,7 @@ class TestDeferFlatten(Base):
+         # The actual test
+         notquiteglobals = {}
+         def finished(spam):
+-            print 'FINISHED'
++            print('FINISHED')
+         def error(failure):
+             notquiteglobals['exception'] = failure.value
+         def checker(result):
+--- nevow/test/test_guard.py.orig	2016-04-15 14:17:07 UTC
++++ nevow/test/test_guard.py
+@@ -84,7 +84,7 @@ class FakeHTTPRequest(appserver.NevowRequest):
+         appserver.NevowRequest.__init__(self, *args, **kw)
+         self._pchn = self.channel
+         self._cookieCache = {}
+-        from cStringIO import StringIO
++        from io import StringIO
+         self.content = StringIO()
+         self.requestHeaders.setRawHeaders(b'host', [b'fake.com'])
+         self.written = StringIO()
+@@ -117,7 +117,7 @@ class FakeHTTPRequest(appserver.NevowRequest):
+ 
+     def addCookie(self, k, v, *args,**kw):
+         appserver.NevowRequest.addCookie(self,k,v,*args,**kw)
+-        assert not self._cookieCache.has_key(k), "Should not be setting duplicate cookies!"
++        assert k not in self._cookieCache, "Should not be setting duplicate cookies!"
+         self._cookieCache[k] = (v, args, kw)
+         self.channel.received_cookies[k] = v
+ 
+@@ -211,7 +211,7 @@ class GuardTestSuper(TestCase):
+     sessions = {}
+ 
+     def tearDown(self):
+-        for sz in self.sessions.values():
++        for sz in list(self.sessions.values()):
+             sz.expire()
+ 
+     def createPortal(self, realmFactory=None):
+@@ -237,7 +237,7 @@ def getGuard(channel):
+     resource = channel.site.resource
+     while isinstance(resource, ParentPage):
+         assert len(resource.children) == 1
+-        resource = resource.children.values()[0]
++        resource = list(resource.children.values())[0]
+     return resource
+ 
+ 
+@@ -254,7 +254,7 @@ class GetLoggedInAvatar(rend.Page):
+ class GetLoggedInAnonymous(rend.Page):
+     def child_(self, ctx): return self
+     def renderHTTP(self, ctx):
+-        raise RuntimeError, "We weren't supposed to get here."
++        raise RuntimeError("We weren't supposed to get here.")
+ 
+ class GetLoggedInRealm:
+     implements(IRealm)
+@@ -307,8 +307,8 @@ class GuardTestFuncs:
+         # each time, and there should only ever be one session.
+         for x in range(3):
+             req = chan.makeFakeRequest('%s/' % self.getGuardPath(), "test", "test")
+-            self.assertEquals(req.written.getvalue(), "Yes")
+-            self.assertEquals(len(self.sessions), 1)
++            self.assertEqual(req.written.getvalue(), "Yes")
++            self.assertEqual(len(self.sessions), 1)
+ 
+ 
+     def test_sessionInit(self):
+@@ -326,28 +326,28 @@ class GuardTestFuncs:
+         # The first thing that happens when we attempt to browse with no session
+         # is a cookie being set and a redirect being issued to the session url
+         req = chan.makeFakeRequest('%s/xxx/yyy/' % self.getGuardPath())
+-        self.assertEquals( len(req._cookieCache.values()), 1, "Bad number of cookies in response.")
++        self.assertEqual( len(list(req._cookieCache.values())), 1, "Bad number of cookies in response.")
+         # The redirect is set immediately and should have a path segment at the beginning matching our cookie
+-        self.failUnless(req.responseHeaders.hasHeader('location'))
+-        cookie = req._cookieCache.values()[0][0]
++        self.assertTrue(req.responseHeaders.hasHeader('location'))
++        cookie = list(req._cookieCache.values())[0][0]
+ 
+         # The URL should have the cookie segment in it and the correct path segments at the end
+-        self.assertEquals(req.responseHeaders.getRawHeaders('location')[0],
++        self.assertEqual(req.responseHeaders.getRawHeaders('location')[0],
+             'http://fake.com%s/%s/xxx/yyy/' % (self.getGuardPath(), guard.SESSION_KEY+cookie, ))
+ 
+         # Now, let's follow the redirect
+         req = req.followRedirect()
+         # Our session should now be set up and we will be redirected to our final destination
+-        self.assertEquals(
++        self.assertEqual(
+             req.responseHeaders.getRawHeaders('location')[0].split('?')[0],
+             'http://fake.com%s/xxx/yyy/' % self.getGuardPath())
+ 
+         # Let's follow the redirect to the final page
+         req = req.followRedirect()
+-        self.failIf(req.responseHeaders.hasHeader('location'))
++        self.assertFalse(req.responseHeaders.hasHeader('location'))
+ 
+         # We should have the final resource, which is an anonymous resource
+-        self.assertEquals(req.written.getvalue(), "No")
++        self.assertEqual(req.written.getvalue(), "No")
+ 
+ 
+     def test_sessionInit_noCookies(self):
+@@ -367,23 +367,23 @@ class GuardTestFuncs:
+         # is a cookie being set and a redirect being issued to the session url
+         req = chan.makeFakeRequest('%s/xxx/yyy/' % self.getGuardPath(), requestClass=FakeHTTPRequest_noCookies)
+         # The redirect is set immediately and should have a path segment at the beginning matching our session id
+-        self.failUnless(req.responseHeaders.hasHeader('location'))
++        self.assertTrue(req.responseHeaders.hasHeader('location'))
+ 
+         # The URL should have the session id segment in it and the correct path segments at the end
+         [location] = req.responseHeaders.getRawHeaders('location')
+         prefix = 'http://fake.com%s/%s' % (self.getGuardPath(), guard.SESSION_KEY)
+         suffix = '/xxx/yyy/'
+-        self.failUnless(location.startswith(prefix))
+-        self.failUnless(location.endswith(suffix))
++        self.assertTrue(location.startswith(prefix))
++        self.assertTrue(location.endswith(suffix))
+         for c in location[len(prefix):-len(suffix)]:
+-            self.failUnless(c in '0123456789abcdef')
++            self.assertTrue(c in '0123456789abcdef')
+ 
+         # Now, let's follow the redirect
+         req = req.followRedirect()
+-        self.failIf(req.responseHeaders.hasHeader('location'))
++        self.assertFalse(req.responseHeaders.hasHeader('location'))
+ 
+         # We should have the final resource, which is an anonymous resource
+-        self.assertEquals(req.written.getvalue(), "No")
++        self.assertEqual(req.written.getvalue(), "No")
+ 
+ 
+     def testUsernamePassword(self):
+@@ -393,18 +393,18 @@ class GuardTestFuncs:
+ 
+         # Check the anonymous page
+         req = chan.makeFakeRequest('%s/' % self.getGuardPath()).followAllRedirects()
+-        self.assertEquals(req.written.getvalue(), "No")
++        self.assertEqual(req.written.getvalue(), "No")
+ 
+         # Check the logged in page
+         req = chan.makeFakeRequest('%s/__login__/?username=test&password=test' % self.getGuardPath()).followAllRedirects()
+-        self.assertEquals(req.written.getvalue(), "Yes")
++        self.assertEqual(req.written.getvalue(), "Yes")
+ 
+         # Log out
+         chan.makeFakeRequest("%s/__logout__" % self.getGuardPath()).followRedirect()
+ 
+         # Get the anonymous page again
+         k = chan.makeFakeRequest("%s/" % self.getGuardPath())
+-        self.assertEquals(k.written.getvalue(), "No")
++        self.assertEqual(k.written.getvalue(), "No")
+ 
+ 
+     def testLoginWithNoSession(self):
+@@ -413,7 +413,7 @@ class GuardTestFuncs:
+         chan = self.createGuard(p)
+ 
+         req = chan.makeFakeRequest('%s/__login__/?username=test&password=test' % self.getGuardPath()).followAllRedirects()
+-        self.assertEquals(req.written.getvalue(), "Yes")
++        self.assertEqual(req.written.getvalue(), "Yes")
+ 
+ 
+     def test_sessionNegotiationSavesRequestParameters(self):
+@@ -431,7 +431,7 @@ class GuardTestFuncs:
+ 
+         request = channel.makeFakeRequest(
+             '%s/?foo=1&bar=2' % self.getGuardPath()).followAllRedirects()
+-        self.assertEquals(request.written.getvalue(), '')
++        self.assertEqual(request.written.getvalue(), '')
+         self.assertEqual(
+             renders, [({'foo': ['1'], 'bar': ['2']},
+                        None,
+@@ -473,7 +473,7 @@ class GuardTestFuncs:
+             self.getGuardPath() + '/__login__?username=test&password=test')
+         request = request.followAllRedirects()
+ 
+-        self.assertEquals(request.written.getvalue(), '')
++        self.assertEqual(request.written.getvalue(), '')
+         self.assertEqual(
+             renders, [({'foo': ['1'], 'bar': ['2']},
+                        None,
+@@ -506,7 +506,7 @@ class GuardTestFuncs:
+             self.getGuardPath() + '/__login__?username=test&password=test')
+         request = request.followAllRedirects()
+ 
+-        self.assertEquals(request.written.getvalue(), '')
++        self.assertEqual(request.written.getvalue(), '')
+         self.assertEqual(
+             renders, [({'username': ['test'], 'password': ['test']},
+                        None,
+@@ -522,16 +522,16 @@ class GuardTestFuncs:
+ 
+         req = chan.makeFakeRequest('%s/' % self.getGuardPath(), requestClass=FakeHTTPRequest_noCookies).followAllRedirects()
+         # We should have the final resource, which is an anonymous resource
+-        self.assertEquals(req.written.getvalue(), "No")
++        self.assertEqual(req.written.getvalue(), "No")
+ 
+         # now try requesting just the guard path
+-        self.failUnless(req.path.startswith('%s/%s' % (self.getGuardPath(), guard.SESSION_KEY)))
+-        self.failUnless(req.path.endswith('/'))
++        self.assertTrue(req.path.startswith('%s/%s' % (self.getGuardPath(), guard.SESSION_KEY)))
++        self.assertTrue(req.path.endswith('/'))
+         req = chan.makeFakeRequest(req.path[:-1], requestClass=FakeHTTPRequest_noCookies).followAllRedirects()
+ 
+         # it should work just as well as with the slash
+         # (not actually the same page, but SillyPage always says the same thing here)
+-        self.assertEquals(req.written.getvalue(), "No")
++        self.assertEqual(req.written.getvalue(), "No")
+ 
+     def testTrailingSlashMatters_noCookies(self):
+         class TrailingSlashPage(rend.Page):
+@@ -563,15 +563,15 @@ class GuardTestFuncs:
+ 
+         req = chan.makeFakeRequest('%s/' % self.getGuardPath(), requestClass=FakeHTTPRequest_noCookies).followAllRedirects()
+         # We should have the final resource, which is an anonymous resource
+-        self.assertEquals(req.written.getvalue(), "Anonymous %s/" % self.getGuardPath())
++        self.assertEqual(req.written.getvalue(), "Anonymous %s/" % self.getGuardPath())
+ 
+         # now try requesting just the guard path
+-        self.failUnless(req.path.startswith('%s/%s' % (self.getGuardPath(), guard.SESSION_KEY)))
+-        self.failUnless(req.path.endswith('/'))
++        self.assertTrue(req.path.startswith('%s/%s' % (self.getGuardPath(), guard.SESSION_KEY)))
++        self.assertTrue(req.path.endswith('/'))
+         req = chan.makeFakeRequest(req.path[:-1], requestClass=FakeHTTPRequest_noCookies).followAllRedirects()
+ 
+         # it should no longer have the trailing slash
+-        self.assertEquals(req.written.getvalue(), "Anonymous %s" % self.getGuardPath())
++        self.assertEqual(req.written.getvalue(), "Anonymous %s" % self.getGuardPath())
+ 
+     def testTrailingSlashMatters_withCookies(self):
+         # omitting the trailing slash when not using session keys can
+@@ -608,21 +608,21 @@ class GuardTestFuncs:
+ 
+         req = chan.makeFakeRequest('%s/' % self.getGuardPath()).followAllRedirects()
+         # We should have the final resource, which is an anonymous resource
+-        self.assertEquals(req.written.getvalue(), "Anonymous %s/" % self.getGuardPath())
++        self.assertEqual(req.written.getvalue(), "Anonymous %s/" % self.getGuardPath())
+ 
+         req = chan.makeFakeRequest('%s' % self.getGuardPath()).followAllRedirects()
+         # We should have the final resource, which is an anonymous resource
+-        self.assertEquals(req.written.getvalue(), "Anonymous %s" % self.getGuardPath())
++        self.assertEqual(req.written.getvalue(), "Anonymous %s" % self.getGuardPath())
+ 
+     def testPlainTextCookie(self):
+         """Cookies from non-SSL sites have no secure attribute."""
+         p = self.createPortal()
+         chan = self.createGuard(p)
+         req = chan.makeFakeRequest('%s/xxx/yyy/' % self.getGuardPath())
+-        self.assertEquals( len(req._cookieCache.values()), 1, "Bad number of cookies in response.")
+-        cookie, a, kw = req._cookieCache.values()[0]
++        self.assertEqual( len(list(req._cookieCache.values())), 1, "Bad number of cookies in response.")
++        cookie, a, kw = list(req._cookieCache.values())[0]
+         secure = kw.get('secure', None)
+-        self.failIf(secure)
++        self.assertFalse(secure)
+ 
+     def testPlainTextCookie_evenWithSecureCookies(self):
+         """Cookies from non-SSL sites have no secure attribute, even if secureCookie is true."""
+@@ -631,10 +631,10 @@ class GuardTestFuncs:
+         gu = getGuard(chan)
+         gu.secureCookies = False
+         req = chan.makeFakeRequest('%s/xxx/yyy/' % self.getGuardPath())
+-        self.assertEquals( len(req._cookieCache.values()), 1, "Bad number of cookies in response.")
+-        cookie, a, kw = req._cookieCache.values()[0]
++        self.assertEqual( len(list(req._cookieCache.values())), 1, "Bad number of cookies in response.")
++        cookie, a, kw = list(req._cookieCache.values())[0]
+         secure = kw.get('secure', None)
+-        self.failIf(secure)
++        self.assertFalse(secure)
+ 
+     def testSecureCookie_secureCookies(self):
+         """Cookies from SSL sites have secure=True."""
+@@ -642,10 +642,10 @@ class GuardTestFuncs:
+         chan = self.createGuard(p)
+         req = chan.makeFakeRequest('%s/xxx/yyy/' % self.getGuardPath(),
+                                    requestClass=FakeHTTPRequest_forceSSL)
+-        self.assertEquals( len(req._cookieCache.values()), 1, "Bad number of cookies in response.")
+-        cookie, a, kw = req._cookieCache.values()[0]
++        self.assertEqual( len(list(req._cookieCache.values())), 1, "Bad number of cookies in response.")
++        cookie, a, kw = list(req._cookieCache.values())[0]
+         secure = kw.get('secure', None)
+-        self.failUnless(secure)
++        self.assertTrue(secure)
+ 
+     def testSecureCookie_noSecureCookies(self):
+         """Cookies from SSL sites do not have secure=True if secureCookies is false."""
+@@ -655,10 +655,10 @@ class GuardTestFuncs:
+         gu.secureCookies = False
+         req = chan.makeFakeRequest('%s/xxx/yyy/' % self.getGuardPath(),
+                                    requestClass=FakeHTTPRequest_forceSSL)
+-        self.assertEquals( len(req._cookieCache.values()), 1, "Bad number of cookies in response.")
+-        cookie, a, kw = req._cookieCache.values()[0]
++        self.assertEqual( len(list(req._cookieCache.values())), 1, "Bad number of cookies in response.")
++        cookie, a, kw = list(req._cookieCache.values())[0]
+         secure = kw.get('secure', None)
+-        self.failIf(secure)
++        self.assertFalse(secure)
+ 
+     def testPersistentCookie_persistentCookies(self):
+         """Cookies from sites are saved to disk because SessionWrapper.persistentCookies=True."""
+@@ -668,8 +668,8 @@ class GuardTestFuncs:
+         gu.persistentCookies = True
+         req = chan.makeFakeRequest('%s/xxx/yyy/' % self.getGuardPath(),
+                                    requestClass=FakeHTTPRequest)
+-        self.assertEquals( len(req._cookieCache.values()), 1, "Bad number of cookies in response.")
+-        cookie, a, kw = req._cookieCache.values()[0]
++        self.assertEqual( len(list(req._cookieCache.values())), 1, "Bad number of cookies in response.")
++        cookie, a, kw = list(req._cookieCache.values())[0]
+         expires = kw.get('expires', None)
+         self.failIfIdentical(expires, None)
+ 
+@@ -679,8 +679,8 @@ class GuardTestFuncs:
+         chan = self.createGuard(p)
+         req = chan.makeFakeRequest('%s/xxx/yyy/' % self.getGuardPath(),
+                                    requestClass=FakeHTTPRequest)
+-        self.assertEquals( len(req._cookieCache.values()), 1, "Bad number of cookies in response.")
+-        cookie, a, kw = req._cookieCache.values()[0]
++        self.assertEqual( len(list(req._cookieCache.values())), 1, "Bad number of cookies in response.")
++        cookie, a, kw = list(req._cookieCache.values())[0]
+         expires = kw.get('expires', None)
+         self.failUnlessIdentical(expires, None)
+ 
+@@ -691,13 +691,13 @@ class GuardTestFuncs:
+         p = self.createPortal()
+         chan = self.createGuard(p)
+         req = chan.makeFakeRequest('%s/xxx/yyy/' % self.getGuardPath())
+-        self.assertEquals( len(req._cookieCache.values()), 1, "Bad number of cookies in response.")
+-        cookie, a, kw = req._cookieCache.values()[0]
++        self.assertEqual( len(list(req._cookieCache.values())), 1, "Bad number of cookies in response.")
++        cookie, a, kw = list(req._cookieCache.values())[0]
+         path = kw.get('path', None)
+         wanted = self.getGuardPath()
+         if wanted == '':
+             wanted = '/'
+-        self.failUnlessEqual(path, wanted)
++        self.assertEqual(path, wanted)
+ 
+ 
+     def test_defaultCookieDomain(self):
+@@ -707,7 +707,7 @@ class GuardTestFuncs:
+         portal = self.createPortal()
+         channel = self.createGuard(portal)
+         request = channel.makeFakeRequest('%s/abc' % (self.getGuardPath(),))
+-        cookie, args, kwargs = request._cookieCache.values()[0]
++        cookie, args, kwargs = list(request._cookieCache.values())[0]
+         self.assertEqual(kwargs['domain'], None)
+ 
+ 
+@@ -729,7 +729,7 @@ class GuardTestFuncs:
+         channel = self.createGuard(portal)
+ 
+         request = channel.makeFakeRequest('%s/abc' % (self.getGuardPath(),))
+-        cookie, args, kwargs = request._cookieCache.values()[0]
++        cookie, args, kwargs = list(request._cookieCache.values())[0]
+         self.assertEqual(kwargs['domain'], 'example.com')
+         self.assertEqual(requests, [request])
+ 
+@@ -740,8 +740,8 @@ class GuardTestFuncs:
+         chan = self.createGuard(p)
+ 
+         req = chan.makeFakeRequest('%s/__login__/sub/path?username=test&password=test' % self.getGuardPath()).followAllRedirects()
+-        self.assertEquals(req.written.getvalue(), "Yes")
+-        self.assertEquals(req.path, '%s/sub/path' % self.getGuardPath())
++        self.assertEqual(req.written.getvalue(), "Yes")
++        self.assertEqual(req.path, '%s/sub/path' % self.getGuardPath())
+ 
+     def testLoginExtraPath_withSlash(self):
+         p = self.createPortal()
+@@ -749,8 +749,8 @@ class GuardTestFuncs:
+         chan = self.createGuard(p)
+ 
+         req = chan.makeFakeRequest('%s/__login__/sub/path/?username=test&password=test' % self.getGuardPath()).followAllRedirects()
+-        self.assertEquals(req.written.getvalue(), "Yes")
+-        self.assertEquals(req.path, '%s/sub/path/' % self.getGuardPath())
++        self.assertEqual(req.written.getvalue(), "Yes")
++        self.assertEqual(req.path, '%s/sub/path/' % self.getGuardPath())
+ 
+     def testLogoutExtraPath(self):
+         p = self.createPortal()
+@@ -758,12 +758,12 @@ class GuardTestFuncs:
+         chan = self.createGuard(p)
+ 
+         req = chan.makeFakeRequest('%s/__login__?username=test&password=test' % self.getGuardPath()).followAllRedirects()
+-        self.assertEquals(req.written.getvalue(), "Yes")
++        self.assertEqual(req.written.getvalue(), "Yes")
+ 
+         # Log out
+         req2 = chan.makeFakeRequest("%s/__logout__/sub/path" % self.getGuardPath()).followRedirect()
+-        self.assertEquals(req2.written.getvalue(), "No")
+-        self.assertEquals(req2.path, '%s/sub/path' % self.getGuardPath())
++        self.assertEqual(req2.written.getvalue(), "No")
++        self.assertEqual(req2.path, '%s/sub/path' % self.getGuardPath())
+ 
+     def testLogoutExtraPath_withSlash(self):
+         p = self.createPortal()
+@@ -771,12 +771,12 @@ class GuardTestFuncs:
+         chan = self.createGuard(p)
+ 
+         req = chan.makeFakeRequest('%s/__login__?username=test&password=test' % self.getGuardPath()).followAllRedirects()
+-        self.assertEquals(req.written.getvalue(), "Yes")
++        self.assertEqual(req.written.getvalue(), "Yes")
+ 
+         # Log out
+         req2 = chan.makeFakeRequest("%s/__logout__/sub/path/" % self.getGuardPath()).followRedirect()
+-        self.assertEquals(req2.written.getvalue(), "No")
+-        self.assertEquals(req2.path, '%s/sub/path/' % self.getGuardPath())
++        self.assertEqual(req2.written.getvalue(), "No")
++        self.assertEqual(req2.path, '%s/sub/path/' % self.getGuardPath())
+ 
+     def testGetLoggedInRoot_getLogin(self):
+         p = self.createPortal(realmFactory=GetLoggedInRealm)
+@@ -784,7 +784,7 @@ class GuardTestFuncs:
+         chan = self.createGuard(p)
+ 
+         req = chan.makeFakeRequest('%s/__login__?username=test&password=test' % self.getGuardPath()).followAllRedirects()
+-        self.assertEquals(req.written.getvalue(), "GetLoggedInAvatar")
++        self.assertEqual(req.written.getvalue(), "GetLoggedInAvatar")
+ 
+     def testGetLoggedInRoot_httpAuthLogin(self):
+ 
+@@ -793,8 +793,8 @@ class GuardTestFuncs:
+         chan = self.createGuard(p)
+         for x in range(4):
+             req = chan.makeFakeRequest('%s/' % self.getGuardPath(), "test", "test")
+-            self.assertEquals(req.written.getvalue(), "GetLoggedInAvatar")
+-        self.assertEquals(len(self.sessions),1)
++            self.assertEqual(req.written.getvalue(), "GetLoggedInAvatar")
++        self.assertEqual(len(self.sessions),1)
+ 
+     def testErrorPage_httpAuth(self):
+         """Failed HTTP Auth results in a 403 error."""
+@@ -806,12 +806,12 @@ class GuardTestFuncs:
+         req = chan.makeFakeRequest('%s' % self.getGuardPath(),
+                                    "test", "invalid-password")
+         self.assertFalse(req.responseHeaders.hasHeader('location'))
+-        self.assertEquals(req.code, 403)
+-        self.assertEquals(req.written.getvalue(),
++        self.assertEqual(req.code, 403)
++        self.assertEqual(req.written.getvalue(),
+                           '<html><head><title>Forbidden</title></head>'
+                           +'<body><h1>Forbidden</h1>Request was forbidden.'
+                           +'</body></html>')
+-        self.assertEquals(req.path, self.getGuardPath())
++        self.assertEqual(req.path, self.getGuardPath())
+ 
+     def testErrorPage_httpAuth_deep(self):
+         """Failed HTTP Auth results in a 403 error."""
+@@ -823,12 +823,12 @@ class GuardTestFuncs:
+         req = chan.makeFakeRequest('%s/quux/thud' % self.getGuardPath(),
+                                    "test", "invalid-password")
+         self.assertFalse(req.responseHeaders.hasHeader('location'))
+-        self.assertEquals(req.code, 403)
+-        self.assertEquals(req.written.getvalue(),
++        self.assertEqual(req.code, 403)
++        self.assertEqual(req.written.getvalue(),
+                           '<html><head><title>Forbidden</title></head>'
+                           +'<body><h1>Forbidden</h1>Request was forbidden.'
+                           +'</body></html>')
+-        self.assertEquals(req.path, '%s/quux/thud' % self.getGuardPath())
++        self.assertEqual(req.path, '%s/quux/thud' % self.getGuardPath())
+ 
+     def testErrorPage_getLogin(self):
+         """Failed normal login results in anonymous view of the same page."""
+@@ -840,11 +840,11 @@ class GuardTestFuncs:
+         req = chan.makeFakeRequest(
+             '%s/__login__?username=test&password=invalid-password'
+             % self.getGuardPath()).followAllRedirects()
+-        self.assertEquals(req.written.getvalue(), 'No')
++        self.assertEqual(req.written.getvalue(), 'No')
+         wanted = self.getGuardPath()
+         if wanted == '':
+             wanted = '/'
+-        self.assertEquals(req.path, wanted)
++        self.assertEqual(req.path, wanted)
+ 
+     def testErrorPage_getLogin_deep(self):
+         """Failed normal login results in anonymous view of the same page."""
+@@ -856,8 +856,8 @@ class GuardTestFuncs:
+         req = chan.makeFakeRequest(
+             '%s/__login__/quux/thud?username=test&password=invalid-password'
+             % self.getGuardPath()).followAllRedirects()
+-        self.assertEquals(req.written.getvalue(), 'No')
+-        self.assertEquals(req.path, '%s/quux/thud' % self.getGuardPath())
++        self.assertEqual(req.written.getvalue(), 'No')
++        self.assertEqual(req.path, '%s/quux/thud' % self.getGuardPath())
+ 
+ 
+ class ParentPage(rend.Page):
+--- nevow/test/test_howtolistings.py.orig	2015-10-20 22:44:10 UTC
++++ nevow/test/test_howtolistings.py
+@@ -13,6 +13,7 @@ from nevow.testutil import renderLivePage, JavaScriptT
+ from nevow.athena import jsDeps, expose
+ 
+ from nevow import plugins
++import importlib
+ 
+ 
+ class ExampleTestBase(object):
+@@ -53,7 +54,7 @@ class ExampleTestBase(object):
+         jsDeps._loadPlugins = True
+         # Even more horrible!  nevow.plugins.__path__ needs to be recomputed
+         # each time for the new value of sys.path.
+-        reload(plugins)
++        importlib.reload(plugins)
+ 
+ 
+     def tearDown(self):
+@@ -64,7 +65,7 @@ class ExampleTestBase(object):
+         sys.modules.clear()
+         sys.modules.update(self.originalModules)
+         sys.path[:] = self.originalPath
+-        reload(plugins)
++        importlib.reload(plugins)
+ 
+ 
+ 
+@@ -83,7 +84,7 @@ class ExampleJavaScriptTestCase(JavaScriptTestCase):
+         base.examplePath = self.examplePath
+         try:
+             base.setUp()
+-        except SkipTest, e:
++        except SkipTest as e:
+             result.startTest(self)
+             result.addSkip(self, str(e))
+             result.stopTest(self)
+@@ -152,8 +153,8 @@ class Echo00(ExampleTestBase, TestCase):
+         eb = EchoElement()
+         echoed = []
+         eb.callRemote = lambda method, message: echoed.append((method, message))
+-        eb.say(u'HELLO... Hello... hello...')
+-        self.assertEquals(echoed, [('addText', u'HELLO... Hello... hello...')])
++        eb.say('HELLO... Hello... hello...')
++        self.assertEqual(echoed, [('addText', 'HELLO... Hello... hello...')])
+ 
+ 
+ 
+@@ -205,8 +206,8 @@ class RenderAndChat01(ExampleTestBase, TestCase):
+         from chatthing.chatterbox import ChatterElement, ChatRoom
+         cb = ChatterElement(ChatRoom())
+         setUsername = expose.get(cb, 'setUsername')
+-        setUsername(u'jethro')
+-        self.assertIdentical(u'jethro', cb.username)
++        setUsername('jethro')
++        self.assertIdentical('jethro', cb.username)
+ 
+ 
+     def test_loginThenWall(self):
+@@ -220,14 +221,14 @@ class RenderAndChat01(ExampleTestBase, TestCase):
+         cr = ChatRoom()
+         user1 = cr.makeChatter()
+         user1.wall = lambda msg: jethroHeard.append(msg)
+-        user1.setUsername(u'jethro')
++        user1.setUsername('jethro')
+         user2 = cr.makeChatter()
+         user2.wall = lambda msg: cletusHeard.append(msg)
+-        user2.setUsername(u'cletus')
+-        self.assertEquals(jethroHeard,
+-                          [u' * user jethro has joined the room',
+-                           u' * user cletus has joined the room'])
+-        self.assertEquals(cletusHeard, [u' * user cletus has joined the room'])
++        user2.setUsername('cletus')
++        self.assertEqual(jethroHeard,
++                          [' * user jethro has joined the room',
++                           ' * user cletus has joined the room'])
++        self.assertEqual(cletusHeard, [' * user cletus has joined the room'])
+ 
+ 
+     def test_sayThenHear(self):
+@@ -239,18 +240,18 @@ class RenderAndChat01(ExampleTestBase, TestCase):
+         cr = ChatRoom()
+         user1 = cr.makeChatter()
+         user1.wall = lambda msg: msg
+-        user1.setUsername(u'jethro')
++        user1.setUsername('jethro')
+         user2 = cr.makeChatter()
+         user2.wall = lambda msg: msg
+-        user2.setUsername(u'cletus')
++        user2.setUsername('cletus')
+         jethroHeard = []
+         cletusHeard = []
+         user1.hear = lambda who, what: jethroHeard.append((who,what))
+         user2.hear = lambda who, what: cletusHeard.append((who,what))
+         say = expose.get(user1, 'say')
+-        say(u'Hey, Cletus!')
+-        self.assertEquals(jethroHeard, cletusHeard)
+-        self.assertEquals(cletusHeard, [(u'jethro', u'Hey, Cletus!')])
++        say('Hey, Cletus!')
++        self.assertEqual(jethroHeard, cletusHeard)
++        self.assertEqual(cletusHeard, [('jethro', 'Hey, Cletus!')])
+ 
+ 
+     def test_wallTellsClient(self):
+@@ -262,8 +263,8 @@ class RenderAndChat01(ExampleTestBase, TestCase):
+         cb = ChatRoom().makeChatter()
+         heard = []
+         cb.callRemote = lambda method, msg: heard.append((method, msg))
+-        cb.wall(u'Message for everyone...')
+-        self.assertEquals(heard, [('displayMessage', u'Message for everyone...')])
++        cb.wall('Message for everyone...')
++        self.assertEqual(heard, [('displayMessage', 'Message for everyone...')])
+ 
+     def test_hearTellsClient(self):
+         """
+@@ -274,6 +275,6 @@ class RenderAndChat01(ExampleTestBase, TestCase):
+         cb = ChatRoom().makeChatter()
+         heard = []
+         cb.callRemote = lambda method, who, what: heard.append((method, who, what))
+-        cb.hear(u'Hello', u'Chat')
+-        self.assertEquals(heard, [('displayUserMessage', u'Hello', u'Chat')])
++        cb.hear('Hello', 'Chat')
++        self.assertEqual(heard, [('displayUserMessage', 'Hello', 'Chat')])
+ 
+--- nevow/test/test_i18n.py.orig	2015-10-20 22:44:10 UTC
++++ nevow/test/test_i18n.py
+@@ -1,7 +1,7 @@
+ from zope.interface import implements
+ 
+ from twisted.trial import unittest
+-from cStringIO import StringIO
++from io import StringIO
+ from nevow import inevow, flat, context, tags, loaders, rend
+ from nevow import i18n
+ from nevow.testutil import FakeRequest
+@@ -11,7 +11,7 @@ def mockTranslator(s, languages=None, domain=None):
+     if domain is not None:
+         args['domain'] = domain
+     return 'MOCK(%s)[%s]' % (', '.join(['%s=%r' % (k,v)
+-                                        for k,v in args.items()]),
++                                        for k,v in list(args.items())]),
+                              s)
+ 
+ class Misc(unittest.TestCase):
+@@ -21,13 +21,13 @@ class Misc(unittest.TestCase):
+     def test_simple_flat(self):
+         s = i18n._('foo')
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, 'foo')
++        self.assertEqual(r, 'foo')
+ 
+     def test_translator(self):
+         _ = i18n.Translator(translator=mockTranslator)
+         s = _('foo')
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, 'MOCK()[foo]')
++        self.assertEqual(r, 'MOCK()[foo]')
+ 
+ class Config(unittest.TestCase):
+     def test_remember(self):
+@@ -41,13 +41,13 @@ class Domain(unittest.TestCase):
+                             domain='bar')
+         s = _('foo')
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, "MOCK(domain='bar')[foo]")
++        self.assertEqual(r, "MOCK(domain='bar')[foo]")
+ 
+     def test_runTime(self):
+         _ = i18n.Translator(translator=mockTranslator)
+         s = _('foo', domain='baz')
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, "MOCK(domain='baz')[foo]")
++        self.assertEqual(r, "MOCK(domain='baz')[foo]")
+ 
+     def test_context(self):
+         _ = i18n.Translator(translator=mockTranslator)
+@@ -56,7 +56,7 @@ class Domain(unittest.TestCase):
+         ctx.remember(cfg)
+         s = _('foo')
+         r = flat.ten.flatten(s, ctx)
+-        self.assertEquals(r, "MOCK(domain='thud')[foo]")
++        self.assertEqual(r, "MOCK(domain='thud')[foo]")
+ 
+     def test_runTime_beats_all(self):
+         _ = i18n.Translator(translator=mockTranslator,
+@@ -66,7 +66,7 @@ class Domain(unittest.TestCase):
+         ctx.remember(cfg)
+         s = _('foo', domain='baz')
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, "MOCK(domain='baz')[foo]")
++        self.assertEqual(r, "MOCK(domain='baz')[foo]")
+ 
+ 
+     def test_classInit_beats_context(self):
+@@ -77,14 +77,14 @@ class Domain(unittest.TestCase):
+         ctx.remember(cfg)
+         s = _('foo')
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, "MOCK(domain='baz')[foo]")
++        self.assertEqual(r, "MOCK(domain='baz')[foo]")
+ 
+ class Format(unittest.TestCase):
+     def test_simple(self):
+         _ = i18n.Translator(translator=mockTranslator)
+         s = _('foo %s') % 'bar'
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, "MOCK()[foo bar]")
++        self.assertEqual(r, "MOCK()[foo bar]")
+ 
+     def test_multiple(self):
+         _ = i18n.Translator(translator=mockTranslator)
+@@ -92,7 +92,7 @@ class Format(unittest.TestCase):
+         s = s % 'bar %s'
+         s = s % 'baz'
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, "MOCK()[foo bar baz]")
++        self.assertEqual(r, "MOCK()[foo bar baz]")
+ 
+ 
+ 
+@@ -101,7 +101,7 @@ class Languages(unittest.TestCase):
+         request = FakeRequest(headers={})
+         ctx = context.RequestContext(tag=request)
+         r = inevow.ILanguages(ctx)
+-        self.assertEquals(r, [])
++        self.assertEqual(r, [])
+ 
+     def test_oneLanguage(self):
+         request = FakeRequest(headers={
+@@ -109,7 +109,7 @@ class Languages(unittest.TestCase):
+             })
+         ctx = context.RequestContext(tag=request)
+         r = inevow.ILanguages(ctx)
+-        self.assertEquals(r, ['fo'])
++        self.assertEqual(r, ['fo'])
+ 
+     def test_multipleLanguages(self):
+         request = FakeRequest(headers={
+@@ -117,7 +117,7 @@ class Languages(unittest.TestCase):
+             })
+         ctx = context.RequestContext(tag=request)
+         r = inevow.ILanguages(ctx)
+-        self.assertEquals(r, ['fo', 'ba', 'th'])
++        self.assertEqual(r, ['fo', 'ba', 'th'])
+ 
+     def test_quality_simple(self):
+         request = FakeRequest(headers={
+@@ -125,7 +125,7 @@ class Languages(unittest.TestCase):
+             })
+         ctx = context.RequestContext(tag=request)
+         r = inevow.ILanguages(ctx)
+-        self.assertEquals(r, ['fo'])
++        self.assertEqual(r, ['fo'])
+ 
+     def test_quality_sort(self):
+         request = FakeRequest(headers={
+@@ -133,7 +133,7 @@ class Languages(unittest.TestCase):
+             })
+         ctx = context.RequestContext(tag=request)
+         r = inevow.ILanguages(ctx)
+-        self.assertEquals(r, ['xy', 'fo', 'ba'])
++        self.assertEqual(r, ['xy', 'fo', 'ba'])
+ 
+     def test_quality_invalid_notQ(self):
+         request = FakeRequest(headers={
+@@ -141,7 +141,7 @@ class Languages(unittest.TestCase):
+             })
+         ctx = context.RequestContext(tag=request)
+         r = inevow.ILanguages(ctx)
+-        self.assertEquals(r, ['ba', 'fo'])
++        self.assertEqual(r, ['ba', 'fo'])
+ 
+     def test_quality_invalid_notFloat(self):
+         request = FakeRequest(headers={
+@@ -149,7 +149,7 @@ class Languages(unittest.TestCase):
+             })
+         ctx = context.RequestContext(tag=request)
+         r = inevow.ILanguages(ctx)
+-        self.assertEquals(r, ['ba', 'fo'])
++        self.assertEqual(r, ['ba', 'fo'])
+ 
+ class Render(unittest.TestCase):
+     def makePage(self, content):
+@@ -172,15 +172,15 @@ class Render(unittest.TestCase):
+ 
+     def test_empty(self):
+         return self.makePage(['']).addCallback(
+-            lambda r: self.assertEquals(r, 'MOCK()[]'))
++            lambda r: self.assertEqual(r, 'MOCK()[]'))
+ 
+     def test_simple(self):
+         return self.makePage(['foo']).addCallback(
+-            lambda r: self.assertEquals(r, 'MOCK()[foo]'))
++            lambda r: self.assertEqual(r, 'MOCK()[foo]'))
+ 
+     def test_stan(self):
+         return self.makePage([tags.p['You should really avoid tags in i18n input.']]).addCallback(
+-            lambda r: self.assertEquals(r, 'MOCK()[<p>You should really avoid tags in i18n input.</p>]'))
++            lambda r: self.assertEqual(r, 'MOCK()[<p>You should really avoid tags in i18n input.</p>]'))
+ 
+ class InterpolateTests:
+     def test_mod_string(self):
+@@ -188,7 +188,7 @@ class InterpolateTests:
+                    'foo bar')
+ 
+     def test_mod_unicode(self):
+-        self.check('foo %s', u'bar',
++        self.check('foo %s', 'bar',
+                    'foo bar')
+ 
+     def test_mod_int(self):
+@@ -255,7 +255,7 @@ class InterpolateMixin:
+         self._ = i18n.Translator(translator=mockTranslator)
+ 
+     def mangle(self, s):
+-        raise NotImplementedError, 'override mangle somewhere'
++        raise NotImplementedError('override mangle somewhere')
+ 
+     def check(self, fmt, args, *wants):
+         got = self.mangle(self._(fmt) % args)
+@@ -296,24 +296,24 @@ class UNGettext(unittest.TestCase):
+     def test_simple_flat_one(self):
+         s = i18n.ungettext('%d foo', '%d foos', 1)
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, '%d foo')
++        self.assertEqual(r, '%d foo')
+ 
+     def test_simple_flat_many(self):
+         s = i18n.ungettext('%d foo', '%d foos', 42)
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, '%d foos')
++        self.assertEqual(r, '%d foos')
+ 
+     def test_simple_flat_many(self):
+         s = i18n.ungettext('%d foo', '%d foos', 42)
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, '%d foos')
++        self.assertEqual(r, '%d foos')
+ 
+     def test_format_one(self):
+         s = i18n.ungettext('%d foo', '%d foos', 1) % 1
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, "1 foo")
++        self.assertEqual(r, "1 foo")
+ 
+     def test_format_many(self):
+         s = i18n.ungettext('%d foo', '%d foos', 42) % 42
+         r = flat.ten.flatten(s, None)
+-        self.assertEquals(r, "42 foos")
++        self.assertEqual(r, "42 foos")
+--- nevow/test/test_newflat.py.orig	2016-05-08 19:28:50 UTC
++++ nevow/test/test_newflat.py
+@@ -5,7 +5,7 @@
+ Tests for L{nevow._flat}.
+ """
+ 
+-import sys, traceback, StringIO
++import sys, traceback, io
+ 
+ from zope.interface import implements
+ 
+@@ -34,7 +34,7 @@ from nevow.context import WovenContext
+ # lambda to avoid adding anything else to this namespace.  The result will
+ # be a string which agrees with the one the traceback module will put into a
+ # traceback for frames associated with functions defined in this file.
+-HERE = (lambda: None).func_code.co_filename
++HERE = (lambda: None).__code__.co_filename
+ 
+ 
+ class TrivialRenderable(object):
+@@ -118,7 +118,7 @@ class FlattenTests(TestCase, FlattenMixin):
+         """
+         Helper to get a string from L{flatten}.
+         """
+-        s = StringIO.StringIO()
++        s = io.StringIO()
+         for _ in flatten(request, s.write, root, inAttribute, inXML):
+             pass
+         return s.getvalue()
+@@ -193,8 +193,8 @@ class FlattenTests(TestCase, FlattenMixin):
+         An instance of L{unicode} is flattened to the UTF-8 representation of
+         itself.
+         """
+-        self.assertStringEqual(self.flatten(u'bytes<>&"\0'), 'bytes<>&"\0')
+-        unich = u"\N{LATIN CAPITAL LETTER E WITH GRAVE}"
++        self.assertStringEqual(self.flatten('bytes<>&"\0'), 'bytes<>&"\0')
++        unich = "\N{LATIN CAPITAL LETTER E WITH GRAVE}"
+         self.assertStringEqual(self.flatten(unich), unich.encode('utf-8'))
+ 
+ 
+@@ -203,7 +203,7 @@ class FlattenTests(TestCase, FlattenMixin):
+         An L{xml} instance is flattened to the UTF-8 representation of itself.
+         """
+         self.assertStringEqual(self.flatten(xml("foo")), "foo")
+-        unich = u"\N{LATIN CAPITAL LETTER E WITH GRAVE}"
++        unich = "\N{LATIN CAPITAL LETTER E WITH GRAVE}"
+         self.assertStringEqual(self.flatten(xml(unich)), unich.encode('utf-8'))
+ 
+ 
+@@ -303,8 +303,8 @@ class FlattenTests(TestCase, FlattenMixin):
+         A L{Tag} with a C{tagName} attribute which is C{unicode} instead of
+         C{str} is flattened to an XML representation.
+         """
+-        self.assertStringEqual(self.flatten(Tag(u'div')), "<div></div>")
+-        self.assertStringEqual(self.flatten(Tag(u'div')['']), "<div></div>")
++        self.assertStringEqual(self.flatten(Tag('div')), "<div></div>")
++        self.assertStringEqual(self.flatten(Tag('div')['']), "<div></div>")
+ 
+ 
+     def test_unicodeAttributeName(self):
+@@ -313,7 +313,7 @@ class FlattenTests(TestCase, FlattenMixin):
+         is flattened to an XML representation.
+         """
+         self.assertStringEqual(
+-            self.flatten(Tag(u'div', {u'foo': 'bar'})), '<div foo="bar"></div>')
++            self.flatten(Tag('div', {'foo': 'bar'})), '<div foo="bar"></div>')
+ 
+ 
+     def test_stringTagAttributes(self):
+@@ -820,7 +820,7 @@ class FlattenTests(TestCase, FlattenMixin):
+         significantly greater than the Python maximum recursion limit.
+         """
+         obj = ["foo"]
+-        for i in xrange(1000):
++        for i in range(1000):
+             obj = [obj]
+         self._nestingTest(obj, "foo")
+ 
+@@ -831,7 +831,7 @@ class FlattenTests(TestCase, FlattenMixin):
+         significantly greater than the Python maximum recursion limit.
+         """
+         tag = div()[slot("foo-0")]
+-        for i in xrange(1000):
++        for i in range(1000):
+             tag.fillSlots("foo-" + str(i), slot("foo-" + str(i + 1)))
+         tag.fillSlots("foo-1000", "bar")
+         self._nestingTest(tag, "<div>bar</div>")
+@@ -844,7 +844,7 @@ class FlattenTests(TestCase, FlattenMixin):
+         """
+         n = 1000
+         tag = div["foo"]
+-        for i in xrange(n - 1):
++        for i in range(n - 1):
+             tag = div[tag]
+         self._nestingTest(tag, "<div>" * n + "foo" + "</div>" * n)
+ 
+@@ -855,7 +855,7 @@ class FlattenTests(TestCase, FlattenMixin):
+         nesting significantly greater than the Python maximum recursion limit.
+         """
+         obj = TrivialRenderable("foo")
+-        for i in xrange(1000):
++        for i in range(1000):
+             obj = TrivialRenderable(obj)
+         self._nestingTest(obj, "foo")
+ 
+@@ -971,13 +971,13 @@ class FlattenerErrorTests(TestCase):
+         """
+         self.assertEqual(
+             str(FlattenerError(
+-                    RuntimeError("reason"), [u'abc\N{SNOWMAN}xyz'], [])),
++                    RuntimeError("reason"), ['abc\N{SNOWMAN}xyz'], [])),
+             "Exception while flattening:\n"
+             "  u'abc\\u2603xyz'\n" # Codepoint for SNOWMAN
+             "RuntimeError: reason\n")
+         self.assertEqual(
+             str(FlattenerError(
+-                    RuntimeError("reason"), [u'01234567\N{SNOWMAN}9' * 10],
++                    RuntimeError("reason"), ['01234567\N{SNOWMAN}9' * 10],
+                     [])),
+             "Exception while flattening:\n"
+             "  u'01234567\\u2603901234567\\u26039<...>01234567\\u2603901234567"
+@@ -1048,7 +1048,7 @@ class FlattenerErrorTests(TestCase):
+ 
+         try:
+             f()
+-        except RuntimeError, exc:
++        except RuntimeError as exc:
+             # Get the traceback, minus the info for *this* frame
+             tbinfo = traceback.extract_tb(sys.exc_info()[2])[1:]
+         else:
+@@ -1062,8 +1062,8 @@ class FlattenerErrorTests(TestCase):
+             "  File \"%s\", line %d, in g\n"
+             "    raise RuntimeError(\"reason\")\n"
+             "RuntimeError: reason\n" % (
+-                HERE, f.func_code.co_firstlineno + 1,
+-                HERE, g.func_code.co_firstlineno + 1))
++                HERE, f.__code__.co_firstlineno + 1,
++                HERE, g.__code__.co_firstlineno + 1))
+ 
+ 
+ 
+@@ -1234,8 +1234,8 @@ class DeferflattenTests(TestCase, FlattenMixin):
+         frames allowed by the Python recursion limit succeeds if all the
+         L{Deferred}s have results already.
+         """
+-        results = [str(i) for i in xrange(1000)]
+-        deferreds = map(succeed, results)
++        results = [str(i) for i in range(1000)]
++        deferreds = list(map(succeed, results))
+         limit = sys.getrecursionlimit()
+         sys.setrecursionlimit(100)
+         try:
+--- nevow/test/test_passobj.py.orig	2015-10-20 22:44:10 UTC
++++ nevow/test/test_passobj.py
+@@ -65,7 +65,7 @@ class ObjectTester:
+         ]
+ 
+     def someMethod(self, one, two):
+-        print "ONE TWO", `one`, `two`
++        print("ONE TWO", repr(one), repr(two))
+ 
+     def frobber(self, frobber, frobee):
+         return frobber.frobazz(frobee)
+@@ -193,7 +193,7 @@ class AnotherTest:
+                 return "Breakpoint in file %s at line %s" % (self.fn, self.ln)
+ 
+         breakpoints = BreakpointRemover()
+-        for fn in debugInstance.breaks.keys():
++        for fn in list(debugInstance.breaks.keys()):
+             for lineno in debugInstance.breaks[fn]:
+                 breakpoints.append(BP(fn, lineno))
+         return breakpoints
+--- nevow/test/test_url.py.orig	2016-02-16 18:41:30 UTC
++++ nevow/test/test_url.py
+@@ -5,7 +5,7 @@
+ Tests for L{nevow.url}.
+ """
+ 
+-import urlparse, urllib
++import urllib.parse, urllib.request, urllib.parse, urllib.error
+ 
+ from nevow import context, url, inevow, util, loaders
+ from nevow import tags
+@@ -88,7 +88,7 @@ class _IncompatibleSignatureURL(url.URL):
+ class TestURL(TestCase):
+     def test_fromString(self):
+         urlpath = url.URL.fromString(theurl)
+-        self.assertEquals(theurl, str(urlpath))
++        self.assertEqual(theurl, str(urlpath))
+ 
+     def test_roundtrip(self):
+         tests = (
+@@ -108,34 +108,34 @@ class TestURL(TestCase):
+             )
+         for test in tests:
+             result = str(url.URL.fromString(test))
+-            self.assertEquals(test, result)
++            self.assertEqual(test, result)
+ 
+     def test_fromRequest(self):
+         request = FakeRequest(uri='/a/nice/path/?zot=23&zut',
+                               currentSegments=["a", "nice", "path", ""],
+                               headers={'host': 'www.foo.com:80'})
+         urlpath = url.URL.fromRequest(request)
+-        self.assertEquals(theurl, str(urlpath))
++        self.assertEqual(theurl, str(urlpath))
+ 
+     def test_fromContext(self):
+ 
+         r = FakeRequest(uri='/a/b/c')
+         urlpath = url.URL.fromContext(context.RequestContext(tag=r))
+-        self.assertEquals('http://localhost/', str(urlpath))
++        self.assertEqual('http://localhost/', str(urlpath))
+ 
+         r.prepath = ['a']
+         urlpath = url.URL.fromContext(context.RequestContext(tag=r))
+-        self.assertEquals('http://localhost/a', str(urlpath))
++        self.assertEqual('http://localhost/a', str(urlpath))
+ 
+         r = FakeRequest(uri='/a/b/c?foo=bar')
+         r.prepath = ['a','b']
+         urlpath = url.URL.fromContext(context.RequestContext(tag=r))
+-        self.assertEquals('http://localhost/a/b?foo=bar', str(urlpath))
++        self.assertEqual('http://localhost/a/b?foo=bar', str(urlpath))
+ 
+     def test_equality(self):
+         urlpath = url.URL.fromString(theurl)
+-        self.failUnlessEqual(urlpath, url.URL.fromString(theurl))
+-        self.failIfEqual(urlpath, url.URL.fromString('ftp://www.anotherinvaliddomain.com/foo/bar/baz/?zot=21&zut'))
++        self.assertEqual(urlpath, url.URL.fromString(theurl))
++        self.assertNotEqual(urlpath, url.URL.fromString('ftp://www.anotherinvaliddomain.com/foo/bar/baz/?zot=21&zut'))
+ 
+ 
+     def test_fragmentEquality(self):
+@@ -148,7 +148,7 @@ class TestURL(TestCase):
+ 
+     def test_parent(self):
+         urlpath = url.URL.fromString(theurl)
+-        self.assertEquals("http://www.foo.com:80/a/nice/?zot=23&zut",
++        self.assertEqual("http://www.foo.com:80/a/nice/?zot=23&zut",
+                           str(urlpath.parent()))
+ 
+ 
+@@ -167,98 +167,98 @@ class TestURL(TestCase):
+ 
+     def test_parentdir(self):
+         urlpath = url.URL.fromString(theurl)
+-        self.assertEquals("http://www.foo.com:80/a/nice/?zot=23&zut",
++        self.assertEqual("http://www.foo.com:80/a/nice/?zot=23&zut",
+                           str(urlpath.parentdir()))
+         urlpath = url.URL.fromString('http://www.foo.com/a')
+-        self.assertEquals("http://www.foo.com/",
++        self.assertEqual("http://www.foo.com/",
+                           str(urlpath.parentdir()))
+         urlpath = url.URL.fromString('http://www.foo.com/a/')
+-        self.assertEquals("http://www.foo.com/",
++        self.assertEqual("http://www.foo.com/",
+                           str(urlpath.parentdir()))
+         urlpath = url.URL.fromString('http://www.foo.com/a/b')
+-        self.assertEquals("http://www.foo.com/",
++        self.assertEqual("http://www.foo.com/",
+                           str(urlpath.parentdir()))
+         urlpath = url.URL.fromString('http://www.foo.com/a/b/')
+-        self.assertEquals("http://www.foo.com/a/",
++        self.assertEqual("http://www.foo.com/a/",
+                           str(urlpath.parentdir()))
+         urlpath = url.URL.fromString('http://www.foo.com/a/b/c')
+-        self.assertEquals("http://www.foo.com/a/",
++        self.assertEqual("http://www.foo.com/a/",
+                           str(urlpath.parentdir()))
+         urlpath = url.URL.fromString('http://www.foo.com/a/b/c/')
+-        self.assertEquals("http://www.foo.com/a/b/",
++        self.assertEqual("http://www.foo.com/a/b/",
+                           str(urlpath.parentdir()))
+         urlpath = url.URL.fromString('http://www.foo.com/a/b/c/d')
+-        self.assertEquals("http://www.foo.com/a/b/",
++        self.assertEqual("http://www.foo.com/a/b/",
+                           str(urlpath.parentdir()))
+         urlpath = url.URL.fromString('http://www.foo.com/a/b/c/d/')
+-        self.assertEquals("http://www.foo.com/a/b/c/",
++        self.assertEqual("http://www.foo.com/a/b/c/",
+                           str(urlpath.parentdir()))
+ 
+     def test_parent_root(self):
+         urlpath = url.URL.fromString('http://www.foo.com/')
+-        self.assertEquals("http://www.foo.com/",
++        self.assertEqual("http://www.foo.com/",
+                           str(urlpath.parentdir()))
+-        self.assertEquals("http://www.foo.com/",
++        self.assertEqual("http://www.foo.com/",
+                           str(urlpath.parentdir().parentdir()))
+ 
+     def test_child(self):
+         urlpath = url.URL.fromString(theurl)
+-        self.assertEquals("http://www.foo.com:80/a/nice/path/gong?zot=23&zut",
++        self.assertEqual("http://www.foo.com:80/a/nice/path/gong?zot=23&zut",
+                           str(urlpath.child('gong')))
+-        self.assertEquals("http://www.foo.com:80/a/nice/path/gong%2F?zot=23&zut",
++        self.assertEqual("http://www.foo.com:80/a/nice/path/gong%2F?zot=23&zut",
+                           str(urlpath.child('gong/')))
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/gong%2Fdouble?zot=23&zut",
+             str(urlpath.child('gong/double')))
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/gong%2Fdouble%2F?zot=23&zut",
+             str(urlpath.child('gong/double/')))
+ 
+     def test_child_init_tuple(self):
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com/a/b/c",
+             str(url.URL(netloc="www.foo.com",
+                         pathsegs=['a', 'b']).child("c")))
+ 
+     def test_child_init_root(self):
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com/c",
+             str(url.URL(netloc="www.foo.com").child("c")))
+ 
+     def test_sibling(self):
+         urlpath = url.URL.fromString(theurl)
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/sister?zot=23&zut",
+             str(urlpath.sibling('sister')))
+         # use an url without trailing '/' to check child removal
+         theurl2 = "http://www.foo.com:80/a/nice/path?zot=23&zut"
+         urlpath = url.URL.fromString(theurl2)
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/sister?zot=23&zut",
+             str(urlpath.sibling('sister')))
+ 
+     def test_curdir(self):
+         urlpath = url.URL.fromString(theurl)
+-        self.assertEquals(theurl, str(urlpath))
++        self.assertEqual(theurl, str(urlpath))
+         # use an url without trailing '/' to check object removal
+         theurl2 = "http://www.foo.com:80/a/nice/path?zot=23&zut"
+         urlpath = url.URL.fromString(theurl2)
+-        self.assertEquals("http://www.foo.com:80/a/nice/?zot=23&zut",
++        self.assertEqual("http://www.foo.com:80/a/nice/?zot=23&zut",
+                           str(urlpath.curdir()))
+ 
+     def test_click(self):
+         urlpath = url.URL.fromString(theurl)
+         # a null uri should be valid (return here)
+-        self.assertEquals("http://www.foo.com:80/a/nice/path/?zot=23&zut",
++        self.assertEqual("http://www.foo.com:80/a/nice/path/?zot=23&zut",
+                           str(urlpath.click("")))
+         # a simple relative path remove the query
+-        self.assertEquals("http://www.foo.com:80/a/nice/path/click",
++        self.assertEqual("http://www.foo.com:80/a/nice/path/click",
+                           str(urlpath.click("click")))
+         # an absolute path replace path and query
+-        self.assertEquals("http://www.foo.com:80/click",
++        self.assertEqual("http://www.foo.com:80/click",
+                           str(urlpath.click("/click")))
+         # replace just the query
+-        self.assertEquals("http://www.foo.com:80/a/nice/path/?burp",
++        self.assertEqual("http://www.foo.com:80/a/nice/path/?burp",
+                           str(urlpath.click("?burp")))
+         # one full url to another should not generate '//' between netloc and pathsegs 
+         self.failIfIn("//foobar", str(urlpath.click('http://www.foo.com:80/foobar')))
+@@ -266,13 +266,13 @@ class TestURL(TestCase):
+         # from a url with no query clicking a url with a query,
+         # the query should be handled properly
+         u = url.URL.fromString('http://www.foo.com:80/me/noquery')
+-        self.failUnlessEqual('http://www.foo.com:80/me/17?spam=158',
++        self.assertEqual('http://www.foo.com:80/me/17?spam=158',
+                              str(u.click('/me/17?spam=158')))
+ 
+         # Check that everything from the path onward is removed when the click link
+         # has no path.
+         u = url.URL.fromString('http://localhost/foo?abc=def')
+-        self.failUnlessEqual(str(u.click('http://www.python.org')), 'http://www.python.org/')
++        self.assertEqual(str(u.click('http://www.python.org')), 'http://www.python.org/')
+ 
+ 
+     def test_cloneUnchanged(self):
+@@ -383,146 +383,146 @@ class TestURL(TestCase):
+             ['http://localhost/a/b/c', 'd//e', 'http://localhost/a/b/d//e'],
+             ]
+         for start, click, result in tests:
+-            self.assertEquals(
++            self.assertEqual(
+                 str(url.URL.fromString(start).click(click)),
+                 result
+                 )
+ 
+     def test_add(self):
+         urlpath = url.URL.fromString(theurl)
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot=23&zut&burp",
+             str(urlpath.add("burp")))
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot=23&zut&burp=xxx",
+             str(urlpath.add("burp", "xxx")))
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot=23&zut&burp=xxx&zing",
+             str(urlpath.add("burp", "xxx").add("zing")))
+         # note the inversion!
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot=23&zut&zing&burp=xxx",
+             str(urlpath.add("zing").add("burp", "xxx")))
+         # note the two values for the same name
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot=23&zut&burp=xxx&zot=32",
+             str(urlpath.add("burp", "xxx").add("zot", 32)))
+ 
+     def test_add_noquery(self):
+         # fromString is a different code path, test them both
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?foo=bar",
+             str(url.URL.fromString("http://www.foo.com:80/a/nice/path/")
+                 .add("foo", "bar")))
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com/?foo=bar",
+             str(url.URL(netloc="www.foo.com").add("foo", "bar")))
+ 
+     def test_replace(self):
+         urlpath = url.URL.fromString(theurl)
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot=32&zut",
+             str(urlpath.replace("zot", 32)))
+         # replace name without value with name/value and vice-versa
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot&zut=itworked",
+             str(urlpath.replace("zot").replace("zut", "itworked")))
+         # Q: what happens when the query has two values and we replace?
+         # A: we replace both values with a single one
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot=32&zut",
+             str(urlpath.add("zot", "xxx").replace("zot", 32)))
+ 
+     def test_fragment(self):
+         urlpath = url.URL.fromString(theurl)
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot=23&zut#hiboy",
+             str(urlpath.anchor("hiboy")))
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot=23&zut",
+             str(urlpath.anchor()))
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot=23&zut",
+             str(urlpath.anchor('')))
+ 
+     def test_clear(self):
+         urlpath = url.URL.fromString(theurl)
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zut",
+             str(urlpath.clear("zot")))
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zot=23",
+             str(urlpath.clear("zut")))
+         # something stranger, query with two values, both should get cleared
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/?zut",
+             str(urlpath.add("zot", 1971).clear("zot")))
+         # two ways to clear the whole query
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/",
+             str(urlpath.clear("zut").clear("zot")))
+-        self.assertEquals(
++        self.assertEqual(
+             "http://www.foo.com:80/a/nice/path/",
+             str(urlpath.clear()))
+ 
+     def test_secure(self):
+-        self.assertEquals(str(url.URL.fromString('http://localhost/').secure()), 'https://localhost/')
+-        self.assertEquals(str(url.URL.fromString('http://localhost/').secure(True)), 'https://localhost/')
+-        self.assertEquals(str(url.URL.fromString('https://localhost/').secure()), 'https://localhost/')
+-        self.assertEquals(str(url.URL.fromString('https://localhost/').secure(False)), 'http://localhost/')
+-        self.assertEquals(str(url.URL.fromString('http://localhost/').secure(False)), 'http://localhost/')
+-        self.assertEquals(str(url.URL.fromString('http://localhost/foo').secure()), 'https://localhost/foo')
+-        self.assertEquals(str(url.URL.fromString('http://localhost/foo?bar=1').secure()), 'https://localhost/foo?bar=1')
+-        self.assertEquals(str(url.URL.fromString('http://localhost/').secure(port=443)), 'https://localhost/')
+-        self.assertEquals(str(url.URL.fromString('http://localhost:8080/').secure(port=8443)), 'https://localhost:8443/')
+-        self.assertEquals(str(url.URL.fromString('https://localhost:8443/').secure(False, 8080)), 'http://localhost:8080/')
++        self.assertEqual(str(url.URL.fromString('http://localhost/').secure()), 'https://localhost/')
++        self.assertEqual(str(url.URL.fromString('http://localhost/').secure(True)), 'https://localhost/')
++        self.assertEqual(str(url.URL.fromString('https://localhost/').secure()), 'https://localhost/')
++        self.assertEqual(str(url.URL.fromString('https://localhost/').secure(False)), 'http://localhost/')
++        self.assertEqual(str(url.URL.fromString('http://localhost/').secure(False)), 'http://localhost/')
++        self.assertEqual(str(url.URL.fromString('http://localhost/foo').secure()), 'https://localhost/foo')
++        self.assertEqual(str(url.URL.fromString('http://localhost/foo?bar=1').secure()), 'https://localhost/foo?bar=1')
++        self.assertEqual(str(url.URL.fromString('http://localhost/').secure(port=443)), 'https://localhost/')
++        self.assertEqual(str(url.URL.fromString('http://localhost:8080/').secure(port=8443)), 'https://localhost:8443/')
++        self.assertEqual(str(url.URL.fromString('https://localhost:8443/').secure(False, 8080)), 'http://localhost:8080/')
+ 
+ 
+     def test_eq_same(self):
+         u = url.URL.fromString('http://localhost/')
+-        self.failUnless(u == u, "%r != itself" % u)
++        self.assertTrue(u == u, "%r != itself" % u)
+ 
+     def test_eq_similar(self):
+         u1 = url.URL.fromString('http://localhost/')
+         u2 = url.URL.fromString('http://localhost/')
+-        self.failUnless(u1 == u2, "%r != %r" % (u1, u2))
++        self.assertTrue(u1 == u2, "%r != %r" % (u1, u2))
+ 
+     def test_eq_different(self):
+         u1 = url.URL.fromString('http://localhost/a')
+         u2 = url.URL.fromString('http://localhost/b')
+-        self.failIf(u1 == u2, "%r != %r" % (u1, u2))
++        self.assertFalse(u1 == u2, "%r != %r" % (u1, u2))
+ 
+     def test_eq_apples_vs_oranges(self):
+         u = url.URL.fromString('http://localhost/')
+-        self.failIf(u == 42, "URL must not equal a number.")
+-        self.failIf(u == object(), "URL must not equal an object.")
++        self.assertFalse(u == 42, "URL must not equal a number.")
++        self.assertFalse(u == object(), "URL must not equal an object.")
+ 
+     def test_ne_same(self):
+         u = url.URL.fromString('http://localhost/')
+-        self.failIf(u != u, "%r == itself" % u)
++        self.assertFalse(u != u, "%r == itself" % u)
+ 
+     def test_ne_similar(self):
+         u1 = url.URL.fromString('http://localhost/')
+         u2 = url.URL.fromString('http://localhost/')
+-        self.failIf(u1 != u2, "%r == %r" % (u1, u2))
++        self.assertFalse(u1 != u2, "%r == %r" % (u1, u2))
+ 
+     def test_ne_different(self):
+         u1 = url.URL.fromString('http://localhost/a')
+         u2 = url.URL.fromString('http://localhost/b')
+-        self.failUnless(u1 != u2, "%r == %r" % (u1, u2))
++        self.assertTrue(u1 != u2, "%r == %r" % (u1, u2))
+ 
+     def test_ne_apples_vs_oranges(self):
+         u = url.URL.fromString('http://localhost/')
+-        self.failUnless(u != 42, "URL must differ from a number.")
+-        self.failUnless(u != object(), "URL must be differ from an object.")
++        self.assertTrue(u != 42, "URL must differ from a number.")
++        self.assertTrue(u != object(), "URL must be differ from an object.")
+ 
+     def test_parseEqualInParamValue(self):
+         u = url.URL.fromString('http://localhost/?=x=x=x')
+-        self.failUnless(u.query == ['=x=x=x'])
+-        self.failUnless(str(u) == 'http://localhost/?=x%3Dx%3Dx')
++        self.assertTrue(u.query == ['=x=x=x'])
++        self.assertTrue(str(u) == 'http://localhost/?=x%3Dx%3Dx')
+         u = url.URL.fromString('http://localhost/?foo=x=x=x&bar=y')
+-        self.failUnless(u.query == ['foo=x=x=x', 'bar=y'])
+-        self.failUnless(str(u) == 'http://localhost/?foo=x%3Dx%3Dx&bar=y')
++        self.assertTrue(u.query == ['foo=x=x=x', 'bar=y'])
++        self.assertTrue(str(u) == 'http://localhost/?foo=x%3Dx%3Dx&bar=y')
+ 
+ class Serialization(TestCase):
+ 
+@@ -536,13 +536,13 @@ class Serialization(TestCase):
+         u = url.URL(scheme, loc, path, query, fragment)
+         s = flatten(url.URL(scheme, loc, path, query, fragment))
+ 
+-        parsedScheme, parsedLoc, parsedPath, parsedQuery, parsedFragment = urlparse.urlsplit(s)
++        parsedScheme, parsedLoc, parsedPath, parsedQuery, parsedFragment = urllib.parse.urlsplit(s)
+ 
+-        self.assertEquals(scheme, parsedScheme)
+-        self.assertEquals(loc, parsedLoc)
+-        self.assertEquals('/' + '/'.join(map(lambda p: urllib.quote(p,safe=''),path)), parsedPath)
+-        self.assertEquals(query, url.unquerify(parsedQuery))
+-        self.assertEquals(fragment, parsedFragment)
++        self.assertEqual(scheme, parsedScheme)
++        self.assertEqual(loc, parsedLoc)
++        self.assertEqual('/' + '/'.join([urllib.parse.quote(p,safe='') for p in path]), parsedPath)
++        self.assertEqual(query, url.unquerify(parsedQuery))
++        self.assertEqual(fragment, parsedFragment)
+ 
+     def test_slotQueryParam(self):
+         original = 'http://foo/bar?baz=bamf'
+@@ -553,7 +553,7 @@ class Serialization(TestCase):
+             ctx.fillSlots('param', 5)
+             return ctx.tag
+ 
+-        self.assertEquals(flatten(tags.invisible(render=fillIt)[u]), original + '&toot=5')
++        self.assertEqual(flatten(tags.invisible(render=fillIt)[u]), original + '&toot=5')
+ 
+     def test_childQueryParam(self):
+         original = 'http://foo/bar'
+@@ -564,7 +564,7 @@ class Serialization(TestCase):
+             ctx.fillSlots('param', 'baz')
+             return ctx.tag
+ 
+-        self.assertEquals(flatten(tags.invisible(render=fillIt)[u]), original + '/baz')
++        self.assertEqual(flatten(tags.invisible(render=fillIt)[u]), original + '/baz')
+ 
+     def test_strangeSegs(self):
+         base = 'http://localhost/'
+@@ -572,35 +572,35 @@ class Serialization(TestCase):
+             (r'/foo/', '%2Ffoo%2F'),
+             (r'c:\foo\bar bar', 'c%3A%5Cfoo%5Cbar%20bar'),
+             (r'&<>', '%26%3C%3E'),
+-            (u'!"\N{POUND SIGN}$%^&*()_+'.encode('utf-8'), '!%22%C2%A3%24%25%5E%26*()_%2B'),
++            ('!"\N{POUND SIGN}$%^&*()_+'.encode('utf-8'), '!%22%C2%A3%24%25%5E%26*()_%2B'),
+             )
+         for test, result in tests:
+             u = url.URL.fromString(base).child(test)
+-            self.assertEquals(flatten(u), base+result)
++            self.assertEqual(flatten(u), base+result)
+ 
+     def test_urlContent(self):
+         u = url.URL.fromString('http://localhost/').child(r'<c:\foo\bar&>')
+-        self.assertEquals(flatten(tags.p[u]), '<p>http://localhost/%3Cc%3A%5Cfoo%5Cbar%26%3E</p>')
++        self.assertEqual(flatten(tags.p[u]), '<p>http://localhost/%3Cc%3A%5Cfoo%5Cbar%26%3E</p>')
+ 
+     def test_urlAttr(self):
+         u = url.URL.fromString('http://localhost/').child(r'<c:\foo\bar&>')
+-        self.assertEquals(flatten(tags.img(src=u)), '<img src="http://localhost/%3Cc%3A%5Cfoo%5Cbar%26%3E" />')
++        self.assertEqual(flatten(tags.img(src=u)), '<img src="http://localhost/%3Cc%3A%5Cfoo%5Cbar%26%3E" />')
+ 
+     def test_urlSlot(self):
+         u = url.URL.fromString('http://localhost/').child(r'<c:\foo\bar&>')
+         tag = tags.img(src=tags.slot('src'))
+         tag.fillSlots('src', u)
+-        self.assertEquals(flatten(tag), '<img src="http://localhost/%3Cc%3A%5Cfoo%5Cbar%26%3E" />')
++        self.assertEqual(flatten(tag), '<img src="http://localhost/%3Cc%3A%5Cfoo%5Cbar%26%3E" />')
+ 
+     def test_urlXmlAttrSlot(self):
+         u = url.URL.fromString('http://localhost/').child(r'<c:\foo\bar&>')
+         tag = tags.invisible[loaders.xmlstr('<img xmlns:n="http://nevow.com/ns/nevow/0.1" src="#"><n:attr name="src"><n:slot name="src"/></n:attr></img>')]
+         tag.fillSlots('src', u)
+-        self.assertEquals(flatten(tag), '<img src="http://localhost/%3Cc%3A%5Cfoo%5Cbar%26%3E" />')
++        self.assertEqual(flatten(tag), '<img src="http://localhost/%3Cc%3A%5Cfoo%5Cbar%26%3E" />')
+ 
+     def test_safe(self):
+         u = url.URL.fromString('http://localhost/').child(r"foo-_.!*'()bar")
+-        self.assertEquals(flatten(tags.p[u]), r"<p>http://localhost/foo-_.!*'()bar</p>")
++        self.assertEqual(flatten(tags.p[u]), r"<p>http://localhost/foo-_.!*'()bar</p>")
+ 
+     def test_urlintagwithmultipleamps(self):
+         """
+@@ -610,11 +610,11 @@ class Serialization(TestCase):
+         The ampersand must be quoted for the attribute to be valid.
+         """
+         tag = tags.invisible[tags.a(href=url.URL.fromString('http://localhost/').add('foo', 'bar').add('baz', 'spam'))]
+-        self.assertEquals(flatten(tag), '<a href="http://localhost/?foo=bar&amp;baz=spam"></a>')
++        self.assertEqual(flatten(tag), '<a href="http://localhost/?foo=bar&amp;baz=spam"></a>')
+ 
+         tag = tags.invisible[loaders.xmlstr('<a xmlns:n="http://nevow.com/ns/nevow/0.1" href="#"><n:attr name="href"><n:slot name="href"/></n:attr></a>')]
+         tag.fillSlots('href', url.URL.fromString('http://localhost/').add('foo', 'bar').add('baz', 'spam'))
+-        self.assertEquals(flatten(tag), '<a href="http://localhost/?foo=bar&amp;baz=spam"></a>')
++        self.assertEqual(flatten(tag), '<a href="http://localhost/?foo=bar&amp;baz=spam"></a>')
+ 
+ 
+     def test_rfc1808(self):
+@@ -623,7 +623,7 @@ class Serialization(TestCase):
+         base = url.URL.fromString(rfc1808_relative_link_base)
+         for link, result in rfc1808_relative_link_tests:
+             #print link
+-            self.failUnlessEqual(result, flatten(base.click(link)))
++            self.assertEqual(result, flatten(base.click(link)))
+     test_rfc1808.todo = 'Many of these fail miserably at the moment; often with a / where there shouldn\'t be'
+ 
+ 
+@@ -632,9 +632,9 @@ class Serialization(TestCase):
+         L{URLSerializer} should provide basic IRI (RFC 3987) support by
+         encoding Unicode to UTF-8 before percent-encoding.
+         """
+-        iri = u'http://localhost/expos\xe9?doppelg\xe4nger=Bryan O\u2019Sullivan#r\xe9sum\xe9'
++        iri = 'http://localhost/expos\xe9?doppelg\xe4nger=Bryan O\u2019Sullivan#r\xe9sum\xe9'
+         uri = 'http://localhost/expos%C3%A9?doppelg%C3%A4nger=Bryan%20O%E2%80%99Sullivan#r%C3%A9sum%C3%A9'
+-        self.assertEquals(flatten(url.URL.fromString(iri)), uri)
++        self.assertEqual(flatten(url.URL.fromString(iri)), uri)
+ 
+ 
+ 
+@@ -652,17 +652,19 @@ class RedirectResource(TestCase):
+     def test_urlRedirect(self):
+         u = "http://localhost/"
+         D = self.renderResource(url.URL.fromString(u))
+-        def after((html, redirected_to)):
++        def after(xxx_todo_changeme):
++            (html, redirected_to) = xxx_todo_changeme
+             self.assertIn(u, html)
+-            self.assertEquals(u, redirected_to)
++            self.assertEqual(u, redirected_to)
+         return D.addCallback(after)
+ 
+ 
+     def test_urlRedirectWithParams(self):
+         D = self.renderResource(url.URL.fromString("http://localhost/").child('child').add('foo', 'bar'))
+-        def after((html, redirected_to)):
++        def after(xxx_todo_changeme1):
++            (html, redirected_to) = xxx_todo_changeme1
+             self.assertIn("http://localhost/child?foo=bar", html)
+-            self.assertEquals("http://localhost/child?foo=bar", redirected_to)
++            self.assertEqual("http://localhost/child?foo=bar", redirected_to)
+         return D.addCallback(after)
+ 
+ 
+@@ -671,16 +673,18 @@ class RedirectResource(TestCase):
+             url.URL.fromString("http://localhost/")
+             .child(util.succeed('child')).add('foo',util.succeed('bar'))
+             )
+-        def after((html, redirected_to)):
++        def after(xxx_todo_changeme2):
++            (html, redirected_to) = xxx_todo_changeme2
+             self.assertIn("http://localhost/child?foo=bar", html)
+-            self.assertEquals("http://localhost/child?foo=bar", redirected_to)
++            self.assertEqual("http://localhost/child?foo=bar", redirected_to)
+         return D.addCallback(after)
+ 
+ 
+     def test_deferredURLOverlayParam(self):
+         D = self.renderResource(url.here.child(util.succeed('child')).add('foo',util.succeed('bar')))
+-        def after((html, redirected_to)):
++        def after(xxx_todo_changeme3):
++            (html, redirected_to) = xxx_todo_changeme3
+             self.assertIn("http://localhost/child?foo=bar", html)
+-            self.assertEquals("http://localhost/child?foo=bar", redirected_to)
++            self.assertEqual("http://localhost/child?foo=bar", redirected_to)
+         return D.addCallback(after)
+ 
+--- nevow/testutil.py.orig	2016-02-17 12:51:40 UTC
++++ nevow/testutil.py
+@@ -118,7 +118,7 @@ class FakeRequest(Componentized):
+         self.site = FakeSite()
+         self.requestHeaders = Headers()
+         if headers:
+-            for k, v in headers.iteritems():
++            for k, v in headers.items():
+                 self.requestHeaders.setRawHeaders(k, [v])
+         if cookies is not None:
+             self.cookies = cookies
+@@ -515,7 +515,7 @@ Divmod.UnitTest.runRemote(Divmod.UnitTest.loadFromModu
+     def run(self, result):
+         try:
+             self.checkDependencies()
+-        except NotSupported, e:
++        except NotSupported as e:
+             result.startTest(self)
+             result.addSkip(self, str(e))
+             result.stopTest(self)
+@@ -596,7 +596,7 @@ class CSSModuleTestMixin:
+             return fname
+ 
+         return athena.CSSRegistry(
+-            {u'TestCSSModuleDependencies': makeModule(),
+-             u'TestCSSModuleDependencies.Dependor': makeModule(
++            {'TestCSSModuleDependencies': makeModule(),
++             'TestCSSModuleDependencies.Dependor': makeModule(
+                 '// import TestCSSModuleDependencies.Dependee\n'),
+-             u'TestCSSModuleDependencies.Dependee': makeModule()})
++             'TestCSSModuleDependencies.Dependee': makeModule()})

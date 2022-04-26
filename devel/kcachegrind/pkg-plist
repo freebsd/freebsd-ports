@@ -5,10 +5,10 @@ bin/memprof2calltree
 bin/op2calltree
 bin/pprof2calltree
 share/applications/org.kde.kcachegrind.desktop
-share/icons/hicolor/128x128/apps/kcachegrind.png
 share/icons/hicolor/32x32/apps/kcachegrind.png
 share/icons/hicolor/48x48/apps/kcachegrind.png
 share/icons/hicolor/64x64/apps/kcachegrind.png
+share/icons/hicolor/128x128/apps/kcachegrind.png
 %%DATADIR%%/icons/hicolor/16x16/actions/move.png
 %%DATADIR%%/icons/hicolor/16x16/actions/percent.png
 %%DATADIR%%/icons/hicolor/22x22/actions/hidetemplates.png

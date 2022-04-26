@@ -1,7 +1,7 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
 
 PORTNAME=	Crypt-Argon2
-DISTVERSION=	0.011
+DISTVERSION=	0.012
 CATEGORIES=	security
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-

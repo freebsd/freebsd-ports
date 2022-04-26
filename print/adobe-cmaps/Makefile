@@ -15,6 +15,7 @@ COMMENT=	Adobe CMap collection
 
 USES=		fonts
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 INSTDIRS=	ac15 ag15 ai0 aj16 aj20 ak12 rksj-cmaps
 FONTSDIR=	${PREFIX}/share/fonts/${PORTNAME}

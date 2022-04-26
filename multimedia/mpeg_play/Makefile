@@ -11,6 +11,9 @@ EXTRACT_SUFX=	-patched-src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to play mpeg movies on X displays
 
+DEPRECATED=	Obsolete, please consider using multimedia/mpv or multimedia/vlc
+EXPIRATION_DATE=2022-06-30
+
 NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64 riscv64
 NOT_FOR_ARCHS_REASON=	fails to build: Unknown endianness of architecture
 

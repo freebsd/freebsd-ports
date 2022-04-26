@@ -89,8 +89,8 @@ lib/libssl.so.52
 lib/libssl.so.52.0.0
 lib/libtls.a
 lib/libtls.so
-lib/libtls.so.24
-lib/libtls.so.24.0.1
+lib/libtls.so.25
+lib/libtls.so.25.0.0
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/libtls.pc

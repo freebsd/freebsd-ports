@@ -3,4 +3,6 @@ replaces the depency of GiNaC on CLN by a dependency instead of Python.
 It is a lite version of GiNaC as well, not implementing all the features
 of the full GiNaC, and it is *only* meant to be used as a Python library.
 
+Note: since Sage-9.5, Pynac has been merged into the Sage library source code.
+
 WWW: http://pynac.org/

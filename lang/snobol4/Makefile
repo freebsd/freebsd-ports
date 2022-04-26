@@ -1,11 +1,12 @@
 # Created by: Wes Peters <wes@softweyr.com>
 
 PORTNAME=	snobol4
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.snobol4.org/snobol/
+MASTER_SITES=	ftp://ftp.regressive.org/snobol/
 
-MAINTAINER=	phil@snobol4.org
+MAINTAINER=	snobol4@regressive.org
 COMMENT=	Full SNOBOL4 language with SPITBOL, BLOCKS, and other extensions
 
 LICENSE=	BSD2CLAUSE

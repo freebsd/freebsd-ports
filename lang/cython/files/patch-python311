@@ -1,0 +1,62 @@
+Obtained from:	https://github.com/cython/cython/commit/7537910a2d2e3892359ef639fe9262f017634461
+
+--- Cython/Utility/Coroutine.c.orig	2022-02-16 23:58:31 UTC
++++ Cython/Utility/Coroutine.c
+@@ -490,6 +490,12 @@ static int __pyx_Generator_init(void); /*proto*/
+ 
+ #include <structmember.h>
+ #include <frameobject.h>
++#if PY_VERSION_HEX >= 0x030b00a6
++  #ifndef Py_BUILD_CORE
++    #define Py_BUILD_CORE 1
++  #endif
++  #include "internal/pycore_frame.h"
++#endif
+ 
+ #define __Pyx_Coroutine_Undelegate(gen) Py_CLEAR((gen)->yieldfrom)
+ 
+--- Cython/Utility/Exceptions.c.orig	2022-02-16 23:58:31 UTC
++++ Cython/Utility/Exceptions.c
+@@ -705,6 +705,12 @@ static void __Pyx_AddTraceback(const char *funcname, i
+ #include "compile.h"
+ #include "frameobject.h"
+ #include "traceback.h"
++#if PY_VERSION_HEX >= 0x030b00a6
++  #ifndef Py_BUILD_CORE
++    #define Py_BUILD_CORE 1
++  #endif
++  #include "internal/pycore_frame.h"
++#endif
+ 
+ static PyCodeObject* __Pyx_CreateCodeObjectForTraceback(
+             const char *funcname, int c_line,
+--- Cython/Utility/ObjectHandling.c.orig	2022-02-16 23:58:31 UTC
++++ Cython/Utility/ObjectHandling.c
+@@ -1996,6 +1996,12 @@ static PyObject *__Pyx_PyFunction_FastCallDict(PyObjec
+   static size_t __pyx_pyframe_localsplus_offset = 0;
+ 
+   #include "frameobject.h"
++#if PY_VERSION_HEX >= 0x030b00a6
++  #ifndef Py_BUILD_CORE
++    #define Py_BUILD_CORE 1
++  #endif
++  #include "internal/pycore_frame.h"
++#endif
+   // This is the long runtime version of
+   //     #define __Pyx_PyFrame_GetLocalsplus(frame)  ((frame)->f_localsplus)
+   // offsetof(PyFrameObject, f_localsplus) differs between regular C-Python and Stackless Python.
+--- Cython/Utility/Profile.c.orig	2022-02-16 23:58:31 UTC
++++ Cython/Utility/Profile.c
+@@ -38,6 +38,12 @@
+   #include "compile.h"
+   #include "frameobject.h"
+   #include "traceback.h"
++#if PY_VERSION_HEX >= 0x030b00a6
++  #ifndef Py_BUILD_CORE
++    #define Py_BUILD_CORE 1
++  #endif
++  #include "internal/pycore_frame.h"
++#endif
+ 
+   #if CYTHON_PROFILE_REUSE_FRAME
+     #define CYTHON_FRAME_MODIFIER static

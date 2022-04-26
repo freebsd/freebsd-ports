@@ -14,6 +14,8 @@ LICENSE=	MIT
 USES=		python:3.7+
 USE_PYTHON=	cython distutils
 
+CFLAGS_powerpc64=	-mpower8-vector
+
 .if ! defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif

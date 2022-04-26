@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	redis
-DISTVERSION=	7.0.0.20220301
+DISTVERSION=	7.0.0.20220331
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES+=		compiler:c11 cpe gmake
 CPE_VENDOR=	redislabs
 USE_GITHUB=	yes
-GH_TUPLE=	redis:redis:4a45386
+GH_TUPLE=	redis:redis:b8eb2a7
 
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
@@ -68,7 +68,7 @@ LDFLAGS+=	-Wl,-E
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
 
-CONFLICTS?=	redis-6.* redis5-5.* redis6-6.*
+CONFLICTS?=	redis-6.* redis6-6.*
 
 USE_RC_SUBR=	redis sentinel
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb redis-cli \

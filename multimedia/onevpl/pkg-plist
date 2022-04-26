@@ -7,6 +7,8 @@ bin/sample_encode
 bin/sample_multi_transcode
 bin/sample_vpp
 bin/vpl-inspect
+etc/modulefiles/vpl
+etc/vpl/vars.sh
 include/vpl/mfx.h
 include/vpl/mfxadapter.h
 include/vpl/mfxbrc.h
@@ -14,6 +16,7 @@ include/vpl/mfxcommon.h
 include/vpl/mfxdefs.h
 include/vpl/mfxdispatcher.h
 include/vpl/mfxdispatcherprefixedfunctions.h
+include/vpl/mfxencodestats.h
 include/vpl/mfximplcaps.h
 include/vpl/mfxjpeg.h
 include/vpl/mfxmvc.h
@@ -51,16 +54,13 @@ lib/cmake/vpl/VPLConfig.cmake
 lib/cmake/vpl/VPLConfigVersion.cmake
 lib/libvpl.so
 lib/libvpl.so.2
-lib/libvpl.so.2.6
-lib/oneVPL/libvpl_wayland.so
+lib/libvpl.so.2.7
 %%PYTHON%%%%PYTHON_LIBDIR%%/pyvpl%%PYTHON_EXT_SUFFIX%%.so
+lib/vpl/libvpl_wayland.so
 libdata/pkgconfig/vpl.pc
-%%DATADIR%%/env/vars.sh
-%%DATADIR%%/examples/content/cars_128x96.h265
-%%DATADIR%%/examples/content/cars_128x96.i420
-%%DATADIR%%/examples/content/cars_128x96.mjpeg
-%%DATADIR%%/examples/content/cars_128x96.nv12
+%%DATADIR%%/examples/content/cars_320x240.h265
 %%DATADIR%%/examples/content/cars_320x240.i420
+%%DATADIR%%/examples/content/cars_320x240.mjpeg
 %%DATADIR%%/examples/content/cars_320x240.nv12
 %%DATADIR%%/examples/coreAPI/legacy-decode/CMakeLists.txt
 %%DATADIR%%/examples/coreAPI/legacy-decode/License.txt
@@ -174,4 +174,5 @@ libdata/pkgconfig/vpl.pc
 %%PYTHON%%%%DATADIR%%/examples/preview/python/hello-vpp-py/License.txt
 %%PYTHON%%%%DATADIR%%/examples/preview/python/hello-vpp-py/README.md
 %%PYTHON%%%%DATADIR%%/examples/preview/python/hello-vpp-py/hello-vpp.py
-%%DATADIR%%/modulefiles/vpl
+%%DATADIR%%/licensing/license.txt
+%%DATADIR%%/licensing/third-party-programs.txt

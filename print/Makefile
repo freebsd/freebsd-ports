@@ -92,7 +92,6 @@
     SUBDIR += latex-resume
     SUBDIR += latex2rtf
     SUBDIR += latexdiff
-    SUBDIR += lgrind
     SUBDIR += libharu
     SUBDIR += libijs
     SUBDIR += libmspub01
@@ -189,6 +188,7 @@
     SUBDIR += py-preppy
     SUBDIR += py-psautohint
     SUBDIR += py-pycups
+    SUBDIR += py-pypdf3
     SUBDIR += py-python-ly
     SUBDIR += py-relatorio
     SUBDIR += py-reportlab

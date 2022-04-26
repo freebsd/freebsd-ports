@@ -1,5 +1,5 @@
 PORTNAME=	fnc
-DISTVERSION=	0.9
+DISTVERSION=	0.10
 CATEGORIES=	devel
 MASTER_SITES=	https://fnc.bsdbox.org/tarball/${DISTVERSION}/ \
 		https://distfiles.pirateparty.in/ashish/
@@ -14,5 +14,14 @@ USES=		ncurses
 
 PLIST_FILES=	bin/fnc \
 		man/man1/fnc.1.gz
+
+# For patch application
+post-extract:
+	${REINPLACE_CMD} -e '/^VERSION/s/${DISTVERSION}$$/%%VERSION%%/' \
+		${WRKSRC}/fnc.bld.mk
+
+pre-build:
+	${REINPLACE_CMD} -e '/^VERSION/s/%%VERSION%%/${DISTVERSION}$$/' \
+		${WRKSRC}/fnc.bld.mk
 
 .include <bsd.port.mk>

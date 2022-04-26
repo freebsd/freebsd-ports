@@ -1,0 +1,8 @@
+Minimal, fast alternative to 'du -sh'
+
+Simple program that computes the total size of the current directory.
+It is a parallelized version of du -sh. On my 8-core laptop,
+it is about ten times faster than du with a cold disk cache and
+more than three times faster with a warm disk cache.
+
+WWW: https://github.com/sharkdp/diskus/

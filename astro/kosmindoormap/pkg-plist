@@ -1,5 +1,4 @@
 include/KOSM/Datatypes
-include/kosm/stringpool.h
 include/KOSM/Element
 include/KOSMIndoorMap/EquipmentModel
 include/KOSMIndoorMap/FloorLevelModel
@@ -21,6 +20,7 @@ include/kosm/datatypes.h
 include/kosm/element.h
 include/kosm/internal.h
 include/kosm/kosm_export.h
+include/kosm/stringpool.h
 include/kosmindoormap/equipmentmodel.h
 include/kosmindoormap/floorlevelmodel.h
 include/kosmindoormap/gatemodel.h

@@ -1,5 +1,5 @@
 PORTNAME=	zabbix6
-DISTVERSION=	6.0.2
+DISTVERSION=	6.0.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
 PKGNAMESUFFIX?=	-server
@@ -83,7 +83,7 @@ OPTIONS_SINGLE_DB?=	MYSQL PGSQL ORACLE
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
 
 MYSQL_CONFIGURE_WITH=	mysql
-MYSQL_USES+=		compiler:c11 mysql
+MYSQL_USES+=		compiler:c11 mysql:80
 
 PGSQL_CONFIGURE_WITH=	postgresql
 PGSQL_USES+=		pgsql

@@ -25,7 +25,7 @@ OPTIONS_DEFINE=		DOCS EXAMPLES PDFDOCS
 OPTIONS_SUB=		yes
 PDFDOCS_DESC=		Build PDF documentation (implies DOCS)
 PDFDOCS_IMPLIES=	DOCS
-PDFDOCS_BUILD_DEPENDS=	pdflatex:print/tex-formats
+PDFDOCS_BUILD_DEPENDS=	pdflatex:print/tex-formats dvips:print/tex-dvipsk
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

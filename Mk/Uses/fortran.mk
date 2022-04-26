@@ -9,21 +9,21 @@
 .if !defined(_INCLUDE_USES_FORTRAN_MK)
 _INCLUDE_USES_FORTRAN_MK=	yes
 
-.if empty(fortran_ARGS)
+.  if empty(fortran_ARGS)
 fortran_ARGS=	${FORTRAN_DEFAULT}
-.endif
+.  endif
 
-.if ${fortran_ARGS} == flang
-.if ${ARCH} == amd64
+.  if ${fortran_ARGS} == flang
+.    if ${ARCH} == amd64
 BUILD_DEPENDS+=	flang>0:devel/flang
 RUN_DEPENDS+=	flang>0:devel/flang
 F77=		flang
 FC=		flang
 LDFLAGS+=	-L${LOCALBASE}/flang/lib -Wl,--as-needed -lflang -lexecinfo -Wl,--no-as-needed
-.else
+.    else
 IGNORE=		USES=fortran: flang argument only available for amd64
-.endif
-.elif ${fortran_ARGS} == gfortran
+.    endif
+.  elif ${fortran_ARGS} == gfortran
 _GCC_VER=	${GCC_DEFAULT:S/.//}
 BUILD_DEPENDS+=	gfortran${_GCC_VER}:lang/gcc${_GCC_VER}
 RUN_DEPENDS+=	gfortran${_GCC_VER}:lang/gcc${_GCC_VER}
@@ -33,9 +33,9 @@ FFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 FCFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 		-L${LOCALBASE}/lib/gcc${_GCC_VER} -B${LOCALBASE}/bin
-.else
+.  else
 IGNORE=		USES=fortran: invalid arguments: ${fortran_ARGS}
-.endif
+.  endif
 
 USE_BINUTILS=	yes
 CONFIGURE_ENV+=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}" FCFLAGS="${FCFLAGS}"

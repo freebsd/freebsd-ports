@@ -14,7 +14,7 @@
 # ``make DISTVERSION=xxx.yy.zz -DNO_CHECKSUM'' should typically work.
 
 PORTNAME?=	nvidia-driver
-DISTVERSION?=	470.86
+DISTVERSION?=	510.60.02
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
@@ -64,9 +64,12 @@ SUB_FILES+=	nvidia.conf
 SUB_FILES+=	pkg-deinstall pkg-install
 .endif
 SUB_PATCHES=	extra-patch-src-Makefile \
-		extra-patch-src-nv-freebsd.h \
-		extra-patch-src-nvidia_dev.c \
+		extra-patch-src-nv-freebsd.h
+.if ${NVVERSION} < 510.03901
+SUB_PATCHES+=	extra-patch-src-nvidia_dev.c \
 		extra-patch-src-nvidia_pci.c
+.endif
+
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
 EXTENSIONSDIR?=	${MODULESDIR}/extensions/.nvidia
@@ -90,7 +93,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_nvidia-modeset_nvidia-modeset-freebs
 .  endif
 SUB_PATCHES+=	extra-patch-src-nvidia_ctl.c \
 		extra-patch-src-nvidia_linux.c
-.else
+.elif ${NVVERSION} < 510.03901
 EXTRA_PATCHES+=	${FILESDIR}/460-patch-src-nvidia-nvidia_ctl.c \
 		${FILESDIR}/460-patch-src-nvidia-nvidia_linux.c \
 		${FILESDIR}/460-patch-src_nvidia-modeset_nvidia-modeset-freebsd.c

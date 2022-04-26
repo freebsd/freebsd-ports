@@ -30,17 +30,16 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask-sqlalchemy>=0:databases/py-flask-sqla
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mongoengine>=0:databases/py-mongoengine@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydocstyle>=0:devel/py-pydocstyle@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cache>=0:devel/py-pytest-cache@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-flakes>=0:devel/py-pytest-flakes@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest4-cache>=0:devel/py-pytest4-cache@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest4-cov>=0:devel/py-pytest4-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest4-flakes>=0:devel/py-pytest4-flakes@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest4>=0:devel/py-pytest4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy12>=0:databases/py-sqlalchemy12@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-translations>=0:devel/py-pytest-translations@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-pep8>=0:devel/py-pytest-pep8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-peewee>=0:www/py-flask-peewee@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pony>=0:databases/py-pony@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flask-mongoengine>=0:www/py-flask-mongoengine@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-flakes>=0:devel/py-pytest-flakes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>=0:devel/py-pyflakes@${PY_FLAVOR}
 
 USES=		python:3.6+

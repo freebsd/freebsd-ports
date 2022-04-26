@@ -1,0 +1,5 @@
+HTML::Escape provides a function which escapes HTML's special characters. It
+performs a similar function to PHP's htmlspecialchars. It escapes the following
+characters: " & ' < > ` { }
+
+WWW: https://metacpan.org/dist/HTML-Escape

@@ -1,8 +1,8 @@
 OCamlbuild is a generic build tool, that has built-in rules for building
 OCaml library and programs.
 
-OCamlbuild was distributed as part of the OCaml distribution for OCaml
-versions between 3.10.0 and 4.02.3.  Starting from OCaml 4.03, it is now
-released separately.
+In recent years, the OCaml community has converged towards a more recent
+and faster build tool: Dune.  It is available as `devel/ocaml-dune' port.
+When choosing a build system, one should probably use Dune instead.
 
 WWW: https://github.com/ocaml/ocamlbuild

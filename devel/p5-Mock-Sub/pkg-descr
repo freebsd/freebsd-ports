@@ -1,0 +1,6 @@
+Easy to use and very lightweight module for mocking out sub calls. Very useful
+for testing areas of your own modules where getting coverage may be difficult
+due to nothing to test against, and/or to reduce test run time by eliminating
+the need to call subs that you really don't want or need to test.
+
+WWW: https://metacpan.org/dist/Mock-Sub

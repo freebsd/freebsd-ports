@@ -1,7 +1,7 @@
 # Created by: Eric Anholt
 
 PORTNAME=	git
-PORTVERSION=	2.36.0.rc0
+DISTVERSION=	2.36.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git/testing
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

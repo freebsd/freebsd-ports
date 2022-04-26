@@ -29,7 +29,7 @@ RUN_DEPENDS?=	dconf-editor:devel/dconf-editor \
 		zenity>=3.0.0:x11/zenity \
 		seahorse>=3.0.0:security/seahorse \
 		gnome-control-center>=3.0.0:sysutils/gnome-control-center \
-		${LOCALBASE}/share/gnome-background-properties/gnome-backgrounds.xml:x11-themes/gnome-backgrounds \
+		gnome-backgrounds>=0:x11-themes/gnome-backgrounds \
 		caribou>=0:accessibility/caribou \
 		${LOCALBASE}/share/sounds/freedesktop/index.theme:audio/freedesktop-sound-theme
 

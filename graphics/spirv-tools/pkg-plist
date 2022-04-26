@@ -12,6 +12,9 @@ include/spirv-tools/libspirv.h
 include/spirv-tools/libspirv.hpp
 include/spirv-tools/linker.hpp
 include/spirv-tools/optimizer.hpp
+lib/cmake/SPIRV-Tools-diff/SPIRV-Tools-diffConfig.cmake
+lib/cmake/SPIRV-Tools-diff/SPIRV-Tools-diffTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SPIRV-Tools-diff/SPIRV-Tools-diffTargets.cmake
 lib/cmake/SPIRV-Tools-link/SPIRV-Tools-linkConfig.cmake
 lib/cmake/SPIRV-Tools-link/SPIRV-Tools-linkTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPIRV-Tools-link/SPIRV-Tools-linkTargets.cmake
@@ -27,6 +30,7 @@ lib/cmake/SPIRV-Tools-reduce/SPIRV-Tools-reduceTarget.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsConfig.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget.cmake
+lib/libSPIRV-Tools-diff.a
 lib/libSPIRV-Tools-link.a
 lib/libSPIRV-Tools-lint.a
 lib/libSPIRV-Tools-opt.a

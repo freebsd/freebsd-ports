@@ -11,5 +11,5 @@ lib/cmake/Olm/OlmTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Olm/OlmTargets.cmake
 lib/libolm.so
 lib/libolm.so.3
-lib/libolm.so.3.2.6
+lib/libolm.so.%%SOVER%%
 libdata/pkgconfig/olm.pc

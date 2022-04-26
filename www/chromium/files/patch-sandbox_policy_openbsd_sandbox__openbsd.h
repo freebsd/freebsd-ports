@@ -1,6 +1,6 @@
---- sandbox/policy/openbsd/sandbox_openbsd.h.orig	2022-02-07 13:39:41 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.h.orig	2022-03-25 21:59:56 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.h
-@@ -0,0 +1,278 @@
+@@ -0,0 +1,282 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -178,6 +178,9 @@
 +  // Returns true if we started Seccomp BPF.
 +  bool seccomp_bpf_started() const;
 +
++  // Returns true if unveil(2) is used.
++  bool unveil_initialized() const;
++
 +  // Check the policy and eventually start the seccomp-bpf sandbox. This should
 +  // never be called with threads started. If we detect that threads have
 +  // started we will crash.
@@ -261,6 +264,7 @@
 +  int proc_fd_;
 +
 +  bool seccomp_bpf_started_;
++  bool unveil_initialized_;
 +  // The value returned by GetStatus(). Gets computed once and then cached.
 +  int sandbox_status_flags_;
 +  // Did PreinitializeSandbox() run?

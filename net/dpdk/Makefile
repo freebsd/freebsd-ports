@@ -1,5 +1,5 @@
 PORTNAME=	dpdk
-DISTVERSION=	19.11.7
+DISTVERSION=	19.11.12
 CATEGORIES=	net
 MASTER_SITES=	http://fast.dpdk.org/rel/
 

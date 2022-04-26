@@ -2,6 +2,7 @@
 
 PORTNAME=	Mathics3
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -62,7 +63,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	${PORTNAME:tl}
 
-USES=		python:3.7+ shebangfix
+USES=		python:3.8+ shebangfix
 USE_PYTHON=	distutils noflavors
 SHEBANG_GLOB=	*.py
 

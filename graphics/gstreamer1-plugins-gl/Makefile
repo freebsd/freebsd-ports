@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer GL graphics plugin

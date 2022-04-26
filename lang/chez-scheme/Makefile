@@ -1,7 +1,7 @@
 # Created by: Ashish SHUKLA <ashish@FreeBSD.org>
 
 PORTNAME=	chez-scheme
-PORTVERSION=	9.5.6
+PORTVERSION=	9.5.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 MASTER_SITES=	http://distfiles.pirateparty.in/ashish/:boot \
@@ -25,9 +25,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
 GH_PROJECT=	ChezScheme
 GH_TUPLE=	nanopass:nanopass-framework-scheme:v1.9.2:nanopass/nanopass \
-		madler:zlib:v1.2.11:zlib/zlib \
+		madler:zlib:v1.2.12:zlib/zlib \
 		dybvig:stex:v1.2.2:stex/stex \
-		lz4:lz4:3d67671:lz4/lz4
+		lz4:lz4:v1.9.3:lz4/lz4
 
 OPTIONS_DEFAULT=	X11
 OPTIONS_DEFINE=	X11
@@ -37,6 +37,7 @@ ALL_TARGET=	build
 CONFLICTS_INSTALL=	petite-chez
 STRIP_FILES=	bin/petite bin/${PORTNAME} bin/${PORTNAME}-script
 CHEZ_LIBDIR=lib/csv${PORTVERSION}
+CFLAGS+=	-fPIC
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -luuid
 CONFIGURE_ARGS=	--installprefix=${PREFIX} \

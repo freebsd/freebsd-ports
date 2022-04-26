@@ -1,3 +1,5 @@
-TIMESTAMP = 1646598591
-SHA256 (TokTok-c-toxcore-v0.2.17_GH0.tar.gz) = d9cdf5d690fe8e217dcaba5b988fb943bbe7bda919a2fde6d9506df047e5f4cb
-SIZE (TokTok-c-toxcore-v0.2.17_GH0.tar.gz) = 560639
+TIMESTAMP = 1650443954
+SHA256 (TokTok-c-toxcore-v0.2.18_GH0.tar.gz) = 1fba883638fd18985fd41acd35fed198c2cdd6e91651eb1c3fe602b610b535fe
+SIZE (TokTok-c-toxcore-v0.2.18_GH0.tar.gz) = 613087
+SHA256 (camgunz-cmp-4c3737d1a172ee74d2b35b5fd6865d1fe9dac7af_GH0.tar.gz) = a13a479f747854b990cee074cdc7a7309ec6e025059b7213b9ca311860de1b02
+SIZE (camgunz-cmp-4c3737d1a172ee74d2b35b5fd6865d1fe9dac7af_GH0.tar.gz) = 40334

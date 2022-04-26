@@ -161,7 +161,7 @@ man/man3/nutscan_scan_ipmi.3.gz
 man/man3/nutscan_scan_nut.3.gz
 man/man3/nutscan_scan_snmp.3.gz
 man/man3/nutscan_scan_usb.3.gz
-man/man3/nutscan_scan_xml_http.3.gz
+man/man3/nutscan_scan_xml_http_range.3.gz
 man/man3/upscli_add_host_cert.3.gz
 man/man3/upscli_cleanup.3.gz
 man/man3/upscli_connect.3.gz

@@ -1,5 +1,6 @@
 PORTNAME=	ultralist
 DISTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	lcook@FreeBSD.org

@@ -33,21 +33,15 @@ start_precmd=start_precmd
 start_precmd()
 {
 	if [ ! -d ${synapse_pidfile%/*} ] ; then
-		install -d -o %%USERS%% -g wheel ${synapse_pidfile%/*};
+		install -d -o ${synapse_user} -g wheel ${synapse_pidfile%/*};
 	fi
 
 	if [ ! -d ${synapse_dbdir} ] ; then
-		install -d -o %%USERS%% -g wheel ${synapse_dbdir};
+		install -d -o ${synapse_user} -g wheel ${synapse_dbdir};
 	fi
 
 	if [ ! -d ${synapse_logdir} ] ; then
-		install -d -o %%USERS%% -g wheel ${synapse_logdir};
-	fi
-
-	if $(grep -q CHANGEME ${synapse_conf}) ; then
-		echo "Error: Default secret values in config."
-		echo "Please replace the CHANGEME values in ${synapse_conf}"
-		exit 1
+		install -d -o ${synapse_user} -g wheel ${synapse_logdir};
 	fi
 }
 

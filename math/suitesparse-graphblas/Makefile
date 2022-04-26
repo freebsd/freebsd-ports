@@ -1,8 +1,7 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
 
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	5.0.5
-PORTREVISION=	1
+PORTVERSION=	7.0.3
 CATEGORIES=	math
 
 COMMENT=	Graph algorithms in the language of linear algebra

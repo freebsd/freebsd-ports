@@ -1,5 +1,5 @@
 PORTNAME=	testthat
-DISTVERSION=	3.1.2
+DISTVERSION=	3.1.3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-R6>=2.2.0:devel/R-cran-R6 \
 		R-cran-brio>0:devel/R-cran-brio \
 		R-cran-callr>=3.5.1:devel/R-cran-callr \
-		R-cran-cli>=2.2.0:devel/R-cran-cli \
+		R-cran-cli>=3.1.1:devel/R-cran-cli \
 		R-cran-crayon>=1.3.4:devel/R-cran-crayon \
 		R-cran-desc>0:devel/R-cran-desc \
 		R-cran-ellipsis>=0.2.0:devel/R-cran-ellipsis \
@@ -23,8 +23,8 @@ RUN_DEPENDS=	R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-pkgload>0:devel/R-cran-pkgload \
 		R-cran-praise>0:devel/R-cran-praise \
-		R-cran-rlang>=0.4.9:devel/R-cran-rlang \
-		R-cran-waldo>=0.2.4:devel/R-cran-waldo \
+		R-cran-rlang>=1.0.1:devel/R-cran-rlang \
+		R-cran-waldo>=0.3.1:devel/R-cran-waldo \
 		R-cran-withr>=2.4.3:devel/R-cran-withr \
 		R-cran-digest>0:security/R-cran-digest \
 		R-cran-processx>0:sysutils/R-cran-processx \

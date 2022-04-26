@@ -1,6 +1,7 @@
 PORTNAME=	consul-replicate
 PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org

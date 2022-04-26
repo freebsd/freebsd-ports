@@ -1,6 +1,6 @@
 %%CURL%%bin/elf2dmp
+bin/qemu-arm
 bin/qemu-edid
-bin/qemu-ga
 bin/qemu-i386
 bin/qemu-img
 bin/qemu-io
@@ -43,8 +43,6 @@ include/qemu-plugin.h
 %%PORTDOCS%%man/man1/qemu-img.1.gz
 %%PORTDOCS%%man/man7/qemu-block-drivers.7.gz
 %%PORTDOCS%%man/man7/qemu-cpu-models.7.gz
-%%PORTDOCS%%man/man8/qemu-ga.8.gz
-%%PORTDOCS%%man/man7/qemu-ga-ref.7.gz
 %%PORTDOCS%%man/man8/qemu-nbd.8.gz
 %%PORTDOCS%%man/man8/qemu-pr-helper.8.gz
 %%PORTDOCS%%man/man7/qemu-qmp-ref.7.gz
@@ -125,9 +123,7 @@ include/qemu-plugin.h
 %%DATADIR%%/openbios-sparc32
 %%DATADIR%%/openbios-sparc64
 %%DATADIR%%/opensbi-riscv32-generic-fw_dynamic.bin
-%%DATADIR%%/opensbi-riscv32-generic-fw_dynamic.elf
 %%DATADIR%%/opensbi-riscv64-generic-fw_dynamic.bin
-%%DATADIR%%/opensbi-riscv64-generic-fw_dynamic.elf
 %%DATADIR%%/palcode-clipper
 %%DATADIR%%/petalogix-ml605.dtb
 %%DATADIR%%/pxe-e1000.rom
@@ -160,6 +156,8 @@ include/qemu-plugin.h
 %%DATADIR%%/pvh.bin
 %%DATADIR%%/vgabios-bochs-display.bin
 %%DATADIR%%/vgabios-ramfb.bin
+%%DATADIR%%/vof-nvram.bin
+%%DATADIR%%/vof.bin
 share/icons/hicolor/128x128/apps/qemu.png
 share/icons/hicolor/16x16/apps/qemu.png
 share/icons/hicolor/24x24/apps/qemu.png

@@ -1,5 +1,5 @@
 PORTNAME=	nvidia-libs
-DISTVERSION?=	470.86
+DISTVERSION?=	510.60.02
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11 linux
@@ -121,7 +121,11 @@ PLIST_RE+=	'\,${LINUXBASE}.*libGLESv(1_CM|2)_nvidia\.so,d' \
 		'\,${LINUXBASE}.*libGLX_(nvidia|indirect)\.so,d' \
 		'\,${LINUXBASE}.*libnvidia-ptxjitcompiler\.so,d'
 .endif
-.if ${NVVERSION} >= 470.04201 # 470.42.01
+.if ${NVVERSION} >= 495.02905 # 495.29.05
+LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.9
+LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.9 libnvidia-egl-wayland.so.1
+PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.9/'
+.elif ${NVVERSION} >= 470.04201 # 470.42.01
 LINUX_LIBS+=	libnvidia-egl-wayland.so.1.1.7
 LINUX_LINKS+=	libnvidia-egl-wayland.so.1.1.7 libnvidia-egl-wayland.so.1
 PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.1.1.7/'
@@ -168,25 +172,29 @@ PLIST_RE+=	'\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.${PORTVERSION}/'
 .else
 PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-egl-wayland\.so,d'
 .endif
+.if ${NVVERSION} >= 331.013 && ${NVVERSION} < 495.02905
+LINUX_LIBS+=	libnvidia-ifr.so.${PORTVERSION}
+LINUX_LINKS+=	libnvidia-ifr.so.${PORTVERSION} libnvidia-ifr.so.1 \
+		libnvidia-ifr.so.${PORTVERSION} libnvidia-ifr.so
+LINUX32_LIBS+=	libnvidia-ifr.so.${PORTVERSION}
+LINUX32_LINKS+=	libnvidia-ifr.so.${PORTVERSION} libnvidia-ifr.so.1 \
+		libnvidia-ifr.so.${PORTVERSION} libnvidia-ifr.so
+.else
+PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-ifr,d'
+.endif
 .if ${NVVERSION} >= 331.013
 LINUX_LIBS+=	libnvidia-eglcore.so.${PORTVERSION} \
 		libnvidia-fbc.so.${PORTVERSION} \
-		libnvidia-glsi.so.${PORTVERSION} \
-		libnvidia-ifr.so.${PORTVERSION}
+		libnvidia-glsi.so.${PORTVERSION}
 LINUX_LINKS+=	libnvidia-fbc.so.${PORTVERSION} libnvidia-fbc.so.1 \
-		libnvidia-fbc.so.${PORTVERSION} libnvidia-fbc.so \
-		libnvidia-ifr.so.${PORTVERSION} libnvidia-ifr.so.1 \
-		libnvidia-ifr.so.${PORTVERSION} libnvidia-ifr.so
+		libnvidia-fbc.so.${PORTVERSION} libnvidia-fbc.so
 LINUX32_LIBS+=	libnvidia-eglcore.so.${PORTVERSION} \
 		libnvidia-fbc.so.${PORTVERSION} \
-		libnvidia-glsi.so.${PORTVERSION} \
-		libnvidia-ifr.so.${PORTVERSION}
+		libnvidia-glsi.so.${PORTVERSION}
 LINUX32_LINKS+=	libnvidia-fbc.so.${PORTVERSION} libnvidia-fbc.so.1 \
-		libnvidia-fbc.so.${PORTVERSION} libnvidia-fbc.so \
-		libnvidia-ifr.so.${PORTVERSION} libnvidia-ifr.so.1 \
-		libnvidia-ifr.so.${PORTVERSION} libnvidia-ifr.so
+		libnvidia-fbc.so.${PORTVERSION} libnvidia-fbc.so
 .else
-PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-(eglcore|fbc|glsi|ifr),d'
+PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-(eglcore|fbc|glsi),d'
 .endif
 .if ${NVVERSION} >= 310.014
 LINUX_LIBS+=	libnvidia-encode.so.${PORTVERSION}
@@ -240,12 +248,15 @@ LINUX_DATA+=	nvidia_icd.json /etc/vulkan/icd.d
 .else
 PLIST_RE+=	'\,${LINUXBASE}/etc/vulkan,d'
 .endif
-.if ${NVVERSION} >= 410.057
-LINUX_LIBS+=	libnvidia-cbl.so.${PORTVERSION} \
-		libnvidia-rtcore.so.${PORTVERSION}
+.if ${NVVERSION} >= 410.057 && ${NVVERSION} < 495.02905
+LINUX_LIBS+=	libnvidia-cbl.so.${PORTVERSION}
 .else
-PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-cbl\.so,d' \
-		'\,${LINUXBASE}.*libnvidia-rtcore\.so,d'
+PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-cbl\.so,d'
+.endif
+.if ${NVVERSION} >= 410.057
+LINUX_LIBS+=	libnvidia-rtcore.so.${PORTVERSION}
+.else
+PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-rtcore\.so,d'
 .endif
 .if ${NVVERSION} >= 396.018
 LINUX_LIBS+=	libnvidia-glvkspirv.so.${PORTVERSION}

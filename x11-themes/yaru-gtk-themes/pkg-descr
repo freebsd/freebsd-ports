@@ -2,7 +2,9 @@ Yaru is the default GTK theme for Ubuntu, backed by the community.
 
 Supported Desktop Environments:
 
+* Cinnamon
 * Gnome-Shell
 * Metacity
+* XFCE
 
 WWW: https://github.com/ubuntu/yaru

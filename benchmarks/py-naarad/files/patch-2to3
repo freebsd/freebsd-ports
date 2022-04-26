@@ -1,0 +1,9 @@
+--- src/naarad/run_steps/local_cmd.py.orig	2015-04-23 21:55:51 UTC
++++ src/naarad/run_steps/local_cmd.py
+@@ -82,5 +82,5 @@ class Local_Cmd(Run_Step):
+       if self.process.poll() is None:
+         self.process.kill()
+         logger.warning('Waited %d seconds for run_step to terminate. Killing now....', CONSTANTS.SECONDS_TO_KILL_AFTER_SIGTERM)
+-    except OSError, e:
++    except OSError as e:
+       logger.error('Error while trying to kill the subprocess: %s', e)

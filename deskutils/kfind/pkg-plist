@@ -1,5 +1,4 @@
 bin/kfind
-share/qlogging-categories5/kfind.categories
 man/ca/man1/kfind.1.gz
 man/de/man1/kfind.1.gz
 man/es/man1/kfind.1.gz
@@ -17,12 +16,12 @@ man/sr/man1/kfind.1.gz
 man/sv/man1/kfind.1.gz
 man/uk/man1/kfind.1.gz
 share/applications/org.kde.kfind.desktop
-share/icons/hicolor/128x128/apps/kfind.png
 share/icons/hicolor/16x16/apps/kfind.png
 share/icons/hicolor/22x22/apps/kfind.png
 share/icons/hicolor/32x32/apps/kfind.png
 share/icons/hicolor/48x48/apps/kfind.png
 share/icons/hicolor/64x64/apps/kfind.png
+share/icons/hicolor/128x128/apps/kfind.png
 share/icons/hicolor/scalable/apps/kfind.svgz
 share/locale/ar/LC_MESSAGES/kfind.mo
 share/locale/ast/LC_MESSAGES/kfind.mo
@@ -87,3 +86,4 @@ share/locale/wa/LC_MESSAGES/kfind.mo
 share/locale/zh_CN/LC_MESSAGES/kfind.mo
 share/locale/zh_TW/LC_MESSAGES/kfind.mo
 share/metainfo/org.kde.kfind.appdata.xml
+share/qlogging-categories5/kfind.categories

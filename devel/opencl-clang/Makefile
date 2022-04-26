@@ -1,6 +1,7 @@
 PORTNAME=	opencl-clang
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
+DISTVERSION_llvm14=	14.0.0
 DISTVERSION_llvm13=	13.0.0
 DISTVERSION_llvm12=	12.0.0
 DISTVERSION_llvm11=	11.0.0
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
 		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}
 
-FLAVORS=	${13 12 11:L:S/^/llvm/}
+FLAVORS=	${14 13 12 11:L:S/^/llvm/}
 
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes

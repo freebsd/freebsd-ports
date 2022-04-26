@@ -1,7 +1,7 @@
 # Created by: Tony Narlock <tony@git-pull.com>
 
 PORTNAME=	libtmux
-PORTVERSION=	0.10.3
+PORTVERSION=	0.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

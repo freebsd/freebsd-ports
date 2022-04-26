@@ -4,14 +4,14 @@
 # Usage:	USES=makeinfo
 # Valid ARGS:	none
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_MAKEINFO_MK)
 _INCLUDE_USES_MAKEINFO_MK=	yes
 
-.if !empty(makeinfo_ARGS)
+.  if !empty(makeinfo_ARGS)
 IGNORE=	USES=makeinfo - expects no arguments
-.endif
+.  endif
 
 # Depend specifically on makeinfo from ports
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:print/texinfo

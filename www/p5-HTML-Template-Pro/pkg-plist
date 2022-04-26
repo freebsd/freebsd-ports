@@ -1,8 +1,8 @@
-%%SITE_ARCH%%/auto/HTML/Template/Pro/Pro.so
 %%SITE_ARCH%%/HTML/Template/PerlInterface.pod
 %%SITE_ARCH%%/HTML/Template/Pro.pm
 %%SITE_ARCH%%/HTML/Template/Pro/WrapAssociate.pm
 %%SITE_ARCH%%/HTML/Template/SYNTAX.pod
+%%SITE_ARCH%%/auto/HTML/Template/Pro/Pro.so
 %%PERL5_MAN3%%/HTML::Template::PerlInterface.3.gz
 %%PERL5_MAN3%%/HTML::Template::Pro.3.gz
 %%PERL5_MAN3%%/HTML::Template::SYNTAX.3.gz

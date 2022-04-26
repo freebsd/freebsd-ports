@@ -8,4 +8,6 @@ USES=		nodejs:17,run
 
 MASTERDIR=	${.CURDIR}/../npm
 
+PORTSCOUT=	ignore:1
+
 .include "${MASTERDIR}/Makefile"

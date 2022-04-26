@@ -1,5 +1,6 @@
 PORTNAME=	rssroll
 PORTVERSION=	0.6.2
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net

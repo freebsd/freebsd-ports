@@ -1,10 +1,10 @@
---- config/settings.d/realm_freeipa.yml.example.orig	2018-12-06 13:30:25.000000000 +0100
-+++ config/settings.d/realm_freeipa.yml.example	2019-02-11 22:24:18.091737000 +0100
-@@ -1,8 +1,8 @@
+--- config/settings.d/realm_freeipa.yml.example.orig      2021-10-26 14:48:17.000000000 +0200
++++ config/settings.d/realm_freeipa.yml.example   2021-11-24 12:26:05.935474000 +0100
+@@ -1,9 +1,9 @@
  ---
  # Authentication for Kerberos-based Realms
 -:keytab_path: /etc/foreman-proxy/freeipa.keytab
-+:realm_keytab: %%LOCALBASE%%/etc/foreman-proxy/freeipa.keytab
++:keytab_path: %%LOCALBASE%%/etc/foreman-proxy/freeipa.keytab
  :principal: realm-proxy@EXAMPLE.COM
  
 -:ipa_config: /etc/ipa/default.conf

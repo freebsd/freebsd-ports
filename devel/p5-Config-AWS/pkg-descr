@@ -1,0 +1,13 @@
+Config::AWS is a small distribution with generic methods to correctly parse the
+contents of config files for the AWS CLI client as described in the AWS
+documentation.
+
+Although it is common to see these files parsed as standard INI files, this is
+not appropriate since AWS config files have an idiosyncratic format for nested
+values (as shown in the link above).
+
+Standard INI parsers (like Config::INI) are not made to parse this sort of
+structure (nor should they). So Config::AWS exists to provide a suitable and
+lightweight ad-hoc parser that can be used in other applications.
+
+WWW: https://metacpan.org/dist/Config-AWS

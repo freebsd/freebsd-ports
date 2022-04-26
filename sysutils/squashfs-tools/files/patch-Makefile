@@ -1,6 +1,6 @@
---- Makefile.orig	2019-08-29 01:58:04 UTC
+--- Makefile.orig	2022-03-17 19:32:02 UTC
 +++ Makefile
-@@ -97,7 +97,7 @@ COMP_DEFAULT = gzip
+@@ -101,7 +101,7 @@ COMP_DEFAULT = gzip
  # If your C library or build/target environment doesn't support XATTRs then
  # comment out the next line to build Mksquashfs and Unsquashfs without XATTR
  # support
@@ -9,7 +9,7 @@
  
  # Select whether you wish xattrs to be stored by Mksquashfs and extracted
  # by Unsquashfs by default.  If selected users can disable xattr support by
-@@ -105,7 +105,7 @@ XATTR_SUPPORT = 1
+@@ -109,7 +109,7 @@ XATTR_SUPPORT = 1
  #
  # If unselected, Mksquashfs/Unsquashfs won't store and extract xattrs by
  # default.  Users can enable xattrs by using the -xattrs option.
@@ -18,7 +18,7 @@
  
  
  ###############################################
-@@ -160,7 +160,7 @@ UNSQUASHFS_OBJS = unsquashfs.o unsquash-1.o unsquash-2
+@@ -177,7 +177,7 @@ UNSQUASHFS_OBJS = unsquashfs.o unsquash-1.o unsquash-2
  
  CFLAGS ?= -O2
  CFLAGS += $(EXTRA_CFLAGS) $(INCLUDEDIR) -D_FILE_OFFSET_BITS=64 \
@@ -27,15 +27,15 @@
  	-Wall
  
  LIBS = -lpthread -lm
-@@ -200,6 +200,7 @@ endif
+@@ -217,6 +217,7 @@ endif
  
  ifeq ($(LZO_SUPPORT),1)
  CFLAGS += -DLZO_SUPPORT
 +INCLUDEDIR += -I$(LOCALBASE)/include
  MKSQUASHFS_OBJS += lzo_wrapper.o
  UNSQUASHFS_OBJS += lzo_wrapper.o
- LIBS += $(LZO_LIBDIR) -llzo2
-@@ -208,17 +209,19 @@ endif
+ LIBS += -llzo2
+@@ -225,17 +226,19 @@ endif
  
  ifeq ($(LZ4_SUPPORT),1)
  CFLAGS += -DLZ4_SUPPORT
@@ -57,13 +57,19 @@
  COMPRESSORS += zstd
  endif
  
-@@ -360,6 +363,6 @@ clean:
+@@ -417,9 +420,9 @@ clean:
  
  .PHONY: install
  install: mksquashfs unsquashfs
 -	mkdir -p $(INSTALL_DIR)
 -	cp mksquashfs $(INSTALL_DIR)
 -	cp unsquashfs $(INSTALL_DIR)
+-	ln -fs unsquashfs $(INSTALL_DIR)/sqfscat
+-	ln -fs mksquashfs $(INSTALL_DIR)/sqfstar
+-	../generate-manpages/install-manpages.sh $(shell pwd)/.. "$(INSTALL_MANPAGES_DIR)"
 +	mkdir -p $(DESTDIR)$(PREFIX)/bin
 +	${BSD_INSTALL_PROGRAM} mksquashfs $(DESTDIR)$(PREFIX)/bin
 +	${BSD_INSTALL_PROGRAM} unsquashfs $(DESTDIR)$(PREFIX)/bin
++	ln -fs unsquashfs $(DESTDIR)$(INSTALL_DIR)/sqfscat
++	ln -fs mksquashfs $(DESTDIR)$(INSTALL_DIR)/sqfstar
++	../generate-manpages/install-manpages.sh $(shell pwd)/.. "$(DESTDIR)$(INSTALL_MANPAGES_DIR)"

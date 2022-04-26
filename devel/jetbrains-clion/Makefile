@@ -1,5 +1,5 @@
 PORTNAME=	clion
-PORTVERSION=	2021.3.4
+PORTVERSION=	2022.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/cpp/
 PKGNAMEPREFIX=	jetbrains-
@@ -24,7 +24,7 @@ JAVA_VERSION=	11+
 
 CPE_VENDOR=	jetbrains
 
-SHEBANG_FILES=	bin/printenv.py bin/restart.py \
+SHEBANG_FILES=	bin/restart.py \
 		plugins/python-ce/helpers/typeshed/scripts/generate_proto_stubs.sh
 
 NO_ARCH=	yes

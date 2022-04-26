@@ -1,5 +1,14 @@
---- configure.ac.orig	2019-10-19 17:01:57 UTC
+--- configure.ac.orig	2022-04-16 21:14:04 UTC
 +++ configure.ac
+@@ -2,7 +2,7 @@
+ # Process this file with autoconf to produce a configure script.
+ #
+ 
+-AC_PREREQ([2.71])
++AC_PREREQ([2.69])
+ AC_INIT([driftnet],[1.4.0],[david.sephirot@gmail.com])
+ 
+ AC_CANONICAL_HOST
 @@ -22,7 +22,7 @@ build_linux=no
  build_mac=no
  
@@ -9,12 +18,15 @@
          build_linux=yes
          ;;
      cygwin*|mingw*)
-@@ -69,7 +69,7 @@ AC_ARG_ENABLE([debug],
+@@ -69,9 +69,9 @@ AC_ARG_ENABLE([debug],
      [enable_debug=yes])
  
  if test "x$enable_debug" = xyes; then
 -    CFLAGS="-O2 -g -DDEBUG"
 +    CFLAGS+="-O2 -g -DDEBUG"
  else
- 	CFLAGS="-O2 -DNDEBUG"
+-	CFLAGS="-O2 -DNDEBUG"
++	CFLAGS+="-O2 -DNDEBUG"
  fi
+ #AM_CONDITIONAL(ENABLE_DEBUG, test "$enable_debug" = "yes")
+ 

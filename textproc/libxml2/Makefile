@@ -1,81 +1,75 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
 
 PORTNAME=	libxml2
-DISTVERSION=	2.9.12
-PORTREVISION?=	0
+DISTVERSION=	2.9.13
+PORTREVISION?=	2
 CATEGORIES?=	textproc gnome
-MASTER_SITES=	http://xmlsoft.org/sources/
-DIST_SUBDIR=	gnome2
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
+DIST_SUBDIR=	gnome
 
-MAINTAINER?=	desktop@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
 
-LICENSE=	MIT TRIO
-LICENSE_COMB=	multi
-LICENSE_NAME_TRIO=	Trio License
-LICENSE_FILE_MIT=	${WRKSRC}/COPYING
-LICENSE_FILE_TRIO=	${FILESDIR}/LICENSE.TRIO
-LICENSE_PERMS_TRIO=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	MIT
 
-USES+=		compiler cpe iconv libtool pathfix pkgconfig shebangfix
-GNU_CONFIGURE=	yes
+# Upstream offers CMake in addition to autotools, but we use the latter.
+# CMake is a heavy build system, heavier than autotools, and this
+# port has many consumers of its core functionality. Some such
+# consumers, especially when optioned appropriately (and users have
+# a right to do so), may become dependencies of dependencies of CMake.
+# Additionally, some consumers rely on symbol versioning that CMake
+# does not support (as of Q2 2022) without a hack. Please consider the
+# effects of the ecosystem and technical merits before considering
+# switching build systems again. Any changes to this end not dogfooded
+# thoroughly may be reverted.
+USES+=		cpe iconv libtool localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	xmlsoft
-SHEBANG_FILES=	*.py */*.py */*/*.py
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-CONFIGURE_ARGS?=--with-iconv=${ICONV_PREFIX} \
-		--with-html-dir=${PREFIX}/share/doc \
-		--with-html-subdir=${PORTNAME} \
-		--without-icu \
-		--with-lzma=/usr \
-		--without-python
-
 PLIST_SUB+=	LIBVERSION=${DISTVERSION}
 
-.if !defined(MASTERDIR)
+# Don't build with Python support unless requested
+CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
+			--with-html-subdir=${PORTNAME} \
+			--with-lzma=/usr \
+			--${LIBXML2_SLAVE:Dwith:Uwithout}-python${LIBXML2_SLAVE:D=${PYTHON_CMD}:U}
 
-OPTIONS_DEFINE=		MEM_DEBUG SCHEMA THREAD_ALLOC THREADS VALIDATION \
-			XMLLINT_HIST
-OPTIONS_DEFAULT=	SCHEMA VALIDATION THREADS
+OPTIONS_DEFINE=	DOCS ICU MEM_DEBUG READLINE THREAD_ALLOC
+OPTIONS_DEFAULT=	READLINE
+OPTIONS_SUB=		yes
 
 MEM_DEBUG_DESC=		Memory debugging (DEVELOPERS ONLY!)
-SCHEMA_DESC=		XML schema support
+READLINE_DESC=		History for xmllint
 THREAD_ALLOC_DESC=	Per-thread memory (DEVELOPERS ONLY!)
-VALIDATION_DESC=	Validation support
-XMLLINT_HIST_DESC=	History for xmllint
 
+ICU_LIB_DEPENDS=		libicudata.so:devel/icu
+ICU_CONFIGURE_WITH=		icu
 MEM_DEBUG_CONFIGURE_WITH=	mem-debug
-SCHEMA_CONFIGURE_WITH=		schemas
+READLINE_LIB_DEPENDS=		libreadline.so:devel/readline
+READLINE_CONFIGURE_WITH=	history \
+				readline
 THREAD_ALLOC_CONFIGURE_WITH=	thread-alloc
-THREADS_CONFIGURE_WITH=		threads
-VALIDATION_CONFIGURE_OFF=	--without-valid
-XMLLINT_HIST_CONFIGURE_WITH=	history
-
-.endif # !defined(MASTERDIR)
-
-.if !defined(MASTERDIR)
-post-install:
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/gtk-doc
-.endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
-.for d in . doc doc/devhelp doc/examples
-	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-data-local||' \
-		${WRKSRC}/${d}/Makefile.in
-.endfor
 .for f in catalog.c xmlcatalog.c xmllint.c doc/xmllint.1
 	@${REINPLACE_CMD} -e \
 		's|/etc/xml/catalog|${LOCALBASE}/share/xml/catalog|g; \
 		 s|/etc/sgml/catalog|${LOCALBASE}/share/sgml/catalog|g' \
 		${WRKSRC}/${f}
 .endfor
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-	@${REINPLACE_CMD} -e 's/ -Wno-array-bounds//' ${WRKSRC}/configure
+
+.if !defined(LIBXML2_SLAVE)
+post-install:
+# Documentation should be in DOCSDIR
+	@${MV} ${STAGEDIR}${PREFIX}/share/gtk-doc/html/libxml2 \
+		${STAGEDIR}${DOCSDIR}/devhelp
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/gtk-doc
+# Install remaining documentation that's not connected to autotools
+	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

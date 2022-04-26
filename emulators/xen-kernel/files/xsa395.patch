@@ -1,0 +1,42 @@
+From 4cc924c3e3a0d53306d08b04720c427d1c298ba8 Mon Sep 17 00:00:00 2001
+From: Julien Grall <jgrall@amazon.com>
+Date: Wed, 5 Jan 2022 18:09:20 +0000
+Subject: [PATCH] passthrough/x86: stop pirq iteration immediately in case of
+ error
+
+pt_pirq_iterate() will iterate in batch over all the PIRQs. The outer
+loop will bail out if 'rc' is non-zero but the inner loop will continue.
+
+This means 'rc' will get clobbered and we may miss any errors (such as
+-ERESTART in the case of the callback pci_clean_dpci_irq()).
+
+This is CVE-2022-23035 / XSA-395.
+
+Fixes: c24536b636f2 ("replace d->nr_pirqs sized arrays with radix tree")
+Fixes: f6dd295381f4 ("dpci: replace tasklet with softirq")
+Signed-off-by: Julien Grall <jgrall@amazon.com>
+Signed-off-by: Jan Beulich <jbeulich@suse.com>
+Reviewed-by: Roger Pau Monné <roger.pau@citrix.com>
+---
+ xen/drivers/passthrough/x86/hvm.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/xen/drivers/passthrough/x86/hvm.c b/xen/drivers/passthrough/x86/hvm.c
+index 351daafdc9bf..0b37cd145b60 100644
+--- a/xen/drivers/passthrough/x86/hvm.c
++++ b/xen/drivers/passthrough/x86/hvm.c
+@@ -732,7 +732,11 @@ int pt_pirq_iterate(struct domain *d,
+ 
+             pirq = pirqs[i]->pirq;
+             if ( (pirq_dpci->flags & HVM_IRQ_DPCI_MAPPED) )
++            {
+                 rc = cb(d, pirq_dpci, arg);
++                if ( rc )
++                    break;
++            }
+         }
+     } while ( !rc && ++pirq < d->nr_pirqs && n == ARRAY_SIZE(pirqs) );
+ 
+-- 
+2.32.0
+

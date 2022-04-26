@@ -486,6 +486,7 @@
     SUBDIR += ntl
     SUBDIR += numdiff
     SUBDIR += obake
+    SUBDIR += ocaml-num
     SUBDIR += ocaml-ocamlgraph
     SUBDIR += ocaml-zarith
     SUBDIR += ocamlgsl
@@ -819,6 +820,7 @@
     SUBDIR += py-claripy
     SUBDIR += py-cma
     SUBDIR += py-cmaes
+    SUBDIR += py-cmyt
     SUBDIR += py-colormath
     SUBDIR += py-cryptominisat
     SUBDIR += py-cvxopt
@@ -834,12 +836,12 @@
     SUBDIR += py-fastdtw
     SUBDIR += py-flax
     SUBDIR += py-fpylll
+    SUBDIR += py-fraction
     SUBDIR += py-fvcore
     SUBDIR += py-gau2grid
     SUBDIR += py-gimmik
     SUBDIR += py-gmpy
     SUBDIR += py-gmpy2
-    SUBDIR += py-gmpy2-devel
     SUBDIR += py-grandalf
     SUBDIR += py-graphillion
     SUBDIR += py-gym
@@ -867,10 +869,10 @@
     SUBDIR += py-matplotlib2
     SUBDIR += py-mip
     SUBDIR += py-mixsimulator
+    SUBDIR += py-moarchiving
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
     SUBDIR += py-munkres10
-    SUBDIR += py-mutatormath
     SUBDIR += py-ndindex
     SUBDIR += py-networkx
     SUBDIR += py-nevergrad
@@ -946,7 +948,6 @@
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
     SUBDIR += py-sym
-    SUBDIR += py-symcxx
     SUBDIR += py-sympy
     SUBDIR += py-theano
     SUBDIR += py-topologic

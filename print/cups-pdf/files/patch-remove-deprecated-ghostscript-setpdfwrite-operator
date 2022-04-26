@@ -1,0 +1,27 @@
+https://github.com/archlinux/svntogit-packages/commit/ff157761a0dffe4eb19b46c61b422dcdb2e1c8d9
+
+--- extra/cups-pdf.conf.orig	2022-04-01 11:22:32 UTC
++++ extra/cups-pdf.conf
+@@ -250,9 +250,9 @@ GSTmp /tmp
+ ### Key: GSCall (config)
+ ## command line for calling GhostScript (!!! DO NOT USE NEWLINES !!!)
+ ## MacOSX: for using pstopdf set this to %s %s -o %s %s
+-### Default: %s -q -dCompatibilityLevel=%s -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile="%s" -dAutoRotatePages=/PageByPage -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dPDFSETTINGS=/prepress -c .setpdfwrite -f %s
++### Default: %s -q -dCompatibilityLevel=%s -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile="%s" -dAutoRotatePages=/PageByPage -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dPDFSETTINGS=/prepress -c -f %s
+ 
+-#GSCall %s -q -dCompatibilityLevel=%s -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile="%s" -dAutoRotatePages=/PageByPage -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dPDFSETTINGS=/prepress -c .setpdfwrite -f %s
++#GSCall %s -q -dCompatibilityLevel=%s -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile="%s" -dAutoRotatePages=/PageByPage -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dPDFSETTINGS=/prepress -c -f %s
+ 
+ ### Key: PDFVer (config, ppd, lptopions)
+ ##  PDF version to be created - can be "1.5", "1.4", "1.3" or "1.2" 
+--- src/cups-pdf.h.orig	2022-04-01 11:22:32 UTC
++++ src/cups-pdf.h
+@@ -58,7 +58,7 @@ struct {
+   { "AnonDirName", SEC_CONF|SEC_PPD, { "/var/spool/cups-pdf/ANONYMOUS" } },
+   { "AnonUser", SEC_CONF|SEC_PPD, { "nobody" } },
+   { "GhostScript", SEC_CONF|SEC_PPD, { "/usr/bin/gs" } },
+-  { "GSCall", SEC_CONF|SEC_PPD, { "%s -q -dCompatibilityLevel=%s -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile=\"%s\" -dAutoRotatePages=/PageByPage -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dPDFSETTINGS=/prepress -c .setpdfwrite -f %s" } },
++  { "GSCall", SEC_CONF|SEC_PPD, { "%s -q -dCompatibilityLevel=%s -dNOPAUSE -dBATCH -dSAFER -sDEVICE=pdfwrite -sOutputFile=\"%s\" -dAutoRotatePages=/PageByPage -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dPDFSETTINGS=/prepress -c -f %s" } },
+   { "Grp", SEC_CONF|SEC_PPD, { "lp" } },
+   { "GSTmp", SEC_CONF|SEC_PPD, { "TMPDIR=/var/tmp" } },
+   { "Log", SEC_CONF|SEC_PPD, { "/var/log/cups" } },

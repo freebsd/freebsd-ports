@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/scim/scim-tables/${PORTVERSION}
 DISTNAME=	scim-tables-${PORTVERSION}
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM table based input method engine
 
 BUILD_DEPENDS=	scim:textproc/scim

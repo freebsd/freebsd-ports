@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Check that ports are hooked into the build
+#
+
+newish_makefiles=$(git diff --name-only --cached --diff-filter=ACR | grep -E '^[^/]+/[^/]+/Makefile$')
+if [ $? -eq 0 ] ; then
+	for newish_makefile in ${newish_makefiles} ; do
+		category=$(echo "${newish_makefile}" | awk -F '/' '{print $1}')
+		port=$(echo "${newish_makefile}" | awk -F '/' '{print $2}')
+		grep -q -E "^[[:space:]]+SUBDIR[[:space:]]\+=[[:space:]]*${port}\$" ${category}/Makefile
+		if [ $? -ne 0 ] ; then
+			echo "[pre-commit] ERROR: Missing 'SUBDIR += ${port}' in ${category}/Makefile"
+			exit 1
+		fi
+	done
+fi

@@ -22,6 +22,8 @@ GH_ACCOUNT=	hivert
 
 USES=		cmake compiler:c++11-lang localbase:ldflags
 
+NO_ARCH=	yes
+
 #OPTIONS_DEFINE=	DOXYGEN TEST
 OPTIONS_DEFINE=		DOXYGEN
 OPTIONS_SUB=		yes

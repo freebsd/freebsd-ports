@@ -1,5 +1,6 @@
 PORTNAME=	scribus
 PORTVERSION=	1.5.8
+PORTREVISION=	4
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/

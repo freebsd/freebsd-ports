@@ -1,17 +1,17 @@
---- cmake/Libraries.cmake.orig	2021-12-24 17:02:28 UTC
+--- cmake/Libraries.cmake.orig	2022-04-25 13:11:06 +0200
 +++ cmake/Libraries.cmake
-@@ -122,11 +122,9 @@ elseif(MAC)
- 	find_library(OSX_FOUNDATION Foundation)
- 	find_library(OSX_SERVICEMANAGEMENT ServiceManagement)
+@@ -124,11 +124,9 @@
  elseif(UNIX)
+ 	find_package(PkgConfig REQUIRED)
+ 
 -	if(LINUX)
--		find_library(LIBUDEV NAMES udev ludev libudev)
--		if(NOT LIBUDEV)
+-		pkg_check_modules(UDEV IMPORTED_TARGET libudev)
+-		if(NOT TARGET PkgConfig::UDEV)
 -			message(STATUS "Hardware detection disabled - Missing libudev")
 -		endif()
-+	find_library(LIBUDEV NAMES udev ludev libudev)
-+	if(NOT LIBUDEV)
++	pkg_check_modules(UDEV IMPORTED_TARGET libudev)
++	if(NOT TARGET PkgConfig::UDEV)
 +		message(STATUS "Hardware detection disabled - Missing libudev")
  	endif()
  
- 	find_package(PkgConfig REQUIRED)
+ 	pkg_check_modules(PCSC REQUIRED libpcsclite)

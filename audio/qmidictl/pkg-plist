@@ -1,10 +1,7 @@
 bin/qmidictl
 man/fr/man1/qmidictl.1.gz
 man/man1/qmidictl.1.gz
-share/applications/hildon/org.rncbc.qmidictl.desktop
-share/icons/hicolor/26x26/hildon/qmidictl.png
-share/icons/hicolor/32x32/hildon/qmidictl.png
-share/icons/hicolor/48x48/hildon/qmidictl.png
-share/icons/hicolor/64x64/hildon/qmidictl.png
-share/icons/hicolor/scalable/apps/qmidictl.svg
-share/metainfo/org.rncbc.qmidictl.xml
+share/applications/org.rncbc.qmidictl.desktop
+share/icons/hicolor/32x32/apps/org.rncbc.qmidictl.png
+share/icons/hicolor/scalable/apps/org.rncbc.qmidictl.svg
+share/metainfo/org.rncbc.qmidictl.metainfo.xml

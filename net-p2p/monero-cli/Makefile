@@ -15,6 +15,7 @@ COMMENT=	Private, secure, untraceable, decentralised digital currency (CLI)
 LICENSE=	BSD3CLAUSE
 
 BROKEN_i386=	fails to compile: register r15d is only available in 64-bit mode
+BROKEN_aarch64=	fails to compile: uses unavailable HWCAP_AES and getauxval
 
 LIB_DEPENDS=	\
 		libboost_chrono.so:devel/boost-libs \

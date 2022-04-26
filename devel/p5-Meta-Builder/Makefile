@@ -1,6 +1,5 @@
 PORTNAME=	Meta-Builder
-PORTVERSION=	0.003
-PORTREVISION=	2
+PORTVERSION=	0.004
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -17,6 +16,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 
 USES=		perl5
 USE_PERL5=	modbuild
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

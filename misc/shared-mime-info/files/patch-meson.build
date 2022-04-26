@@ -1,0 +1,11 @@
+--- meson.build.orig	2022-03-28 04:52:01 UTC
++++ meson.build
+@@ -74,7 +74,7 @@ configure_file(
+         'prefix': get_option('prefix'),
+         'VERSION': meson.project_version()
+     },
+-    install_dir: get_option('datadir') / 'pkgconfig'
++    install_dir: join_paths(get_option('prefix'), 'libdata/pkgconfig')
+ )
+ 
+ if get_option('update-mimedb')

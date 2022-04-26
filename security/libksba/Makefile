@@ -3,7 +3,7 @@
 PORTNAME=	libksba
 PORTVERSION=	1.6.0
 CATEGORIES=	security
-MASTER_SITES=	GNUPG/${PORTNAME}
+MASTER_SITES=	GNUPG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to make X.509 certificates

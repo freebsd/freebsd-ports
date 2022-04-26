@@ -1,7 +1,7 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
 
 PORTNAME=	remmina
-DISTVERSION=	1.4.17
+DISTVERSION=	1.4.25
 CATEGORIES=	net gnome
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -10,7 +10,8 @@ COMMENT=	GTK+ Remote Desktop Client
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
+		libjson-glib-1.0.so:devel/json-glib \
 		libpcre2-8.so:devel/pcre2 \
 		libsodium.so:security/libsodium \
 		libsoup-2.4.so:devel/libsoup \
@@ -26,11 +27,11 @@ USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pat
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
-GL_COMMIT=	0ef1621b3e16b3168213147a2bfca39da2c2668f
+GL_COMMIT=	f7bb20c1b8b0efdcada70f942b9db0b8d14207e7
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 
-USE_XORG=	ice sm x11 xext xkbfile
+USE_XORG=	ice sm x11 xext
 
 SHEBANG_FILES=	data/desktop/remmina-file-wrapper.in
 bash_CMD=	${SH}
@@ -41,33 +42,38 @@ CONFLICTS_INSTALL=	remmina-plugin*
 
 OPTIONS_DEFINE=		AVAHI CUPS GCRYPT NLS SSH TERM
 OPTIONS_DEFAULT=	AVAHI CUPS GCRYPT NLS SSH TERM \
-			EXEC NX RDP SECRET SPICE ST VNC WWW XDMCP
+			EXEC RDP SECRET SPICE VNC WWW BASH
 OPTIONS_GROUP=		PLUGINS
-OPTIONS_GROUP_PLUGINS=	EXEC KWALLET NX RDP SECRET SPICE ST VNC WWW XDMCP
+OPTIONS_GROUP_PLUGINS=	EXEC KWALLET RDP SECRET SPICE VNC WWW
+OPTIONS_SINGLE=		SHELL
+OPTIONS_SINGLE_SHELL=	BASH ZSH
 OPTIONS_SUB=		yes
 
 .if ${FLAVOR:U} == lite
-OPTIONS_EXCLUDE=	AVAHI CUPS KWALLET NX SECRET SPICE SSH TERM WWW XDMCP
+OPTIONS_EXCLUDE=	AVAHI CUPS KWALLET SECRET SPICE SSH TERM WWW
 COMMENT+=		(lite flavor)
 .endif
 
 AVAHI_DESC=		Build with Avahi support
+BASH_DESC=		Use BASH for shell wrapper scripts
 EXEC_DESC=		Plugin to execute a command
 GCRYPT_DESC=		Build with libgcrypt support for password encryption
-NX_DESC=		NX protocol plugin
 RDP_DESC=		Remote Desktop Protocol plugin
 SECRET_DESC=		GNOME Keyring plugin
+SHELL_DESC=		Shell Scripts
 SPICE_DESC=		Spice protocol plugin
 SSH_DESC=		Build with SSH tunneling support
-ST_DESC=		(Simple) Terminal Plugin
 TERM_DESC=		Build with terminal support
 VNC_DESC=		VNC protocol plugin
 WWW_DESC=		Plugin to open an authenticated web browser
-XDMCP_DESC=		XDMCP protocol plugin
+ZSH_DESC=		Use ZSH for shell wrapper scripts
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 			libavahi-ui-gtk3.so:net/avahi-gtk3
 AVAHI_CMAKE_BOOL=	WITH_AVAHI
+
+BASH_RUN_DEPENDS=	bash:shells/bash
+BASH_VARS=		SH_BIN=${PREFIX}/bin/bash
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CMAKE_BOOL=	WITH_CUPS
@@ -81,9 +87,7 @@ KWALLET_CMAKE_BOOL=	WITH_KF5WALLET
 
 NLS_CMAKE_BOOL=		WITH_TRANSLATIONS
 
-NX_IMPLIES=		SSH
-
-RDP_LIB_DEPENDS=	libfreerdp2.so:net/freerdp
+RDP_LIB_DEPENDS=	libfreerdp2.so:net/freerdp libxkbfile.so:x11/libxkbfile
 
 SECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 SECRET_RUN_DEPENDS=	gnome-keyring:security/gnome-keyring
@@ -95,8 +99,6 @@ SPICE_CMAKE_BOOL=	WITH_SPICE
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_CMAKE_BOOL=		WITH_LIBSSH
 SSH_LDFLAGS=		-fstack-protector
-
-ST_IMPLIES=		EXEC
 
 TERM_USE=		gnome=vte3
 TERM_CMAKE_BOOL=	WITH_VTE
@@ -110,7 +112,10 @@ WWW_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 			libsoup-2.4.so:devel/libsoup \
 			libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
-XDMCP_RUN_DEPENDS=	Xephyr:x11-servers/xephyr
+ZSH_RUN_DEPENDS=	zsh:shells/zsh
+ZSH_VARS=		SH_BIN=${PREFIX}/bin/zsh
+
+bash_CMD=		${SH_BIN}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,FreeBSD,FreeBSD|DragonFly,' \
@@ -126,10 +131,6 @@ post-patch-KWALLET-off:
 	${REINPLACE_CMD} -e '/add_definitions(-DWITH_KF5WALLET)/d' ${WRKSRC}/plugins/CMakeLists.txt
 	${REINPLACE_CMD} -e '/add_subdirectory(kwallet)/d' ${WRKSRC}/plugins/CMakeLists.txt
 
-post-patch-NX-off:
-	${REINPLACE_CMD} -e '/find_required_package(XKBFILE)/d' ${WRKSRC}/plugins/CMakeLists.txt
-	${REINPLACE_CMD} -e '/add_subdirectory(nx)/d' ${WRKSRC}/plugins/CMakeLists.txt
-
 post-patch-RDP-off:
 	${REINPLACE_CMD} -e '/find_suggested_package(FREERDP)/d' ${WRKSRC}/plugins/CMakeLists.txt
 	${REINPLACE_CMD} -e '/add_subdirectory(rdp)/d' ${WRKSRC}/plugins/CMakeLists.txt
@@ -144,17 +145,11 @@ post-patch-SPICE-off:
 post-patch-SSH-off:
 	${REINPLACE_CMD} -e '/find_suggested_package(LIBSSH)/d' ${WRKSRC}/plugins/CMakeLists.txt
 
-post-patch-ST-off:
-	${REINPLACE_CMD} -e '/add_subdirectory(st)/d' ${WRKSRC}/plugins/CMakeLists.txt
-
 post-patch-VNC-off:
 	${REINPLACE_CMD} -e' /find_suggested_package(LIBVNCSERVER)/d' ${WRKSRC}/plugins/CMakeLists.txt
 	${REINPLACE_CMD} -e '/add_subdirectory(vnc)/d' ${WRKSRC}/plugins/CMakeLists.txt
 
 post-patch-WWW-off:
 	${REINPLACE_CMD} -e '/add_subdirectory(www)/d' ${WRKSRC}/plugins/CMakeLists.txt
-
-post-patch-XDMCP-off:
-	${REINPLACE_CMD} -e '/add_subdirectory(xdmcp)/d' ${WRKSRC}/plugins/CMakeLists.txt
 
 .include <bsd.port.mk>

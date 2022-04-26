@@ -1,5 +1,6 @@
 PORTNAME=	mkdocs-redirects
-DISTVERSION=	1.0.3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.4
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,8 +17,7 @@ TEST_DEPENDS=	${RUN_DEPENDS} \
 
 USES=		python:3.6+
 USE_GITHUB=	yes
-GH_ACCOUNT=	datarobot
-GH_TAGNAME=	07ef89796ec97be3c6ea2681441992d5d4bfa87b
+GH_ACCOUNT=	mkdocs
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

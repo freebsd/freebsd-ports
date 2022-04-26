@@ -1,5 +1,5 @@
 PORTNAME=	s-nail
-DISTVERSION=	14.9.23
+DISTVERSION=	14.9.24
 CATEGORIES=	mail
 MASTER_SITES=	https://www.sdaoden.eu/downloads/
 

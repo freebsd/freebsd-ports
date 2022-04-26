@@ -42,40 +42,40 @@ thunar_USE_XFCE_REQ=	xfconf libmenu
 xfconf_LIB_DEPENDS=	libxfconf-0.so:x11/xfce4-conf
 xfconf_USE_XFCE_REQ=	libutil
 
-.if defined(USE_XFCE)
+.  if defined(USE_XFCE)
 # First, expand all USE_XFCE_REQ recursively.
-.for comp in ${_USE_XFCE_ALL}
-. for subcomp in ${${comp}_USE_XFCE_REQ}
+.    for comp in ${_USE_XFCE_ALL}
+.      for subcomp in ${${comp}_USE_XFCE_REQ}
 ${comp}_USE_XFCE_REQ+=${${subcomp}_USE_XFCE_REQ}
-. endfor
-.endfor
+.      endfor
+.    endfor
 
 # Then, use already expanded USE_XFCE_REQ to expand USE_XFCE.
-.for comp in ${USE_XFCE}
-. if ${_USE_XFCE_ALL:M${comp}} == ""
+.    for comp in ${USE_XFCE}
+.      if ${_USE_XFCE_ALL:M${comp}} == ""
 IGNORE=	cannot install: Unknown component ${comp}
-. endif
+.      endif
 _USE_XFCE+=	${${comp}_USE_XFCE_REQ} ${comp}
-.endfor
+.    endfor
 
 # Remove duplicate components
 USE_XFCE=	${_USE_XFCE:O:u}
 
-.for comp in ${USE_XFCE}
-. if defined(${comp}_BUILD_DEPENDS)
+.    for comp in ${USE_XFCE}
+.      if defined(${comp}_BUILD_DEPENDS)
 BUILD_DEPENDS+=	${${comp}_BUILD_DEPENDS}
-. endif
+.      endif
 
-. if defined(${comp}_LIB_DEPENDS)
+.      if defined(${comp}_LIB_DEPENDS)
 LIB_DEPENDS+=	${${comp}_LIB_DEPENDS}
-. endif
+.      endif
 
-. if defined(${comp}_RUN_DEPENDS)
+.      if defined(${comp}_RUN_DEPENDS)
 RUN_DEPENDS+=	${${comp}_RUN_DEPENDS}
-. endif
-.endfor
+.      endif
+.    endfor
 
-.endif # end of defined(USE_XFCE)
+.  endif # end of defined(USE_XFCE)
 
 .endif
 

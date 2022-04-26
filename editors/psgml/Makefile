@@ -2,7 +2,7 @@
 
 PORTNAME=	psgml
 PORTVERSION=	1.4.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	editors elisp
 MASTER_SITES=	SF/${PORTNAME}/ALPHA%20${PORTNAME}/1.3.2
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -15,6 +15,10 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Major mode for editing SGML and XML documents for Emacs
 
 LICENSE=	GPLv2
+
+.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
+BROKEN=		fails to build
+.endif
 
 USES=		emacs
 

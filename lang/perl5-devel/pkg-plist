@@ -729,6 +729,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/sbox32_hash.h
 %%ARCH_LIB%%/CORE/scope.h
 %%ARCH_LIB%%/CORE/sv.h
+%%ARCH_LIB%%/CORE/sv_inline.h
 %%ARCH_LIB%%/CORE/thread.h
 %%ARCH_LIB%%/CORE/time64.h
 %%ARCH_LIB%%/CORE/time64_config.h
@@ -971,7 +972,10 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5320delta.1.gz
 %%MAN1%%/perl5321delta.1.gz
 %%MAN1%%/perl5340delta.1.gz
+%%MAN1%%/perl5341delta.1.gz
 %%MAN1%%/perl5350delta.1.gz
+%%MAN1%%/perl53510delta.1.gz
+%%MAN1%%/perl53511delta.1.gz
 %%MAN1%%/perl5351delta.1.gz
 %%MAN1%%/perl5352delta.1.gz
 %%MAN1%%/perl5353delta.1.gz
@@ -1065,7 +1069,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perllinux.1.gz
 %%MAN1%%/perllocale.1.gz
 %%MAN1%%/perllol.1.gz
-%%MAN1%%/perlmacos.1.gz
 %%MAN1%%/perlmacosx.1.gz
 %%MAN1%%/perlmod.1.gz
 %%MAN1%%/perlmodinstall.1.gz
@@ -1779,7 +1782,10 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5320delta.pod
 %%PRIV_LIB%%/pod/perl5321delta.pod
 %%PRIV_LIB%%/pod/perl5340delta.pod
+%%PRIV_LIB%%/pod/perl5341delta.pod
 %%PRIV_LIB%%/pod/perl5350delta.pod
+%%PRIV_LIB%%/pod/perl53510delta.pod
+%%PRIV_LIB%%/pod/perl53511delta.pod
 %%PRIV_LIB%%/pod/perl5351delta.pod
 %%PRIV_LIB%%/pod/perl5352delta.pod
 %%PRIV_LIB%%/pod/perl5353delta.pod
@@ -1871,7 +1877,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perllinux.pod
 %%PRIV_LIB%%/pod/perllocale.pod
 %%PRIV_LIB%%/pod/perllol.pod
-%%PRIV_LIB%%/pod/perlmacos.pod
 %%PRIV_LIB%%/pod/perlmacosx.pod
 %%PRIV_LIB%%/pod/perlmod.pod
 %%PRIV_LIB%%/pod/perlmodinstall.pod

@@ -9,6 +9,9 @@ COMMENT=	Closed caption extractor for MPEG and H264 files
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on expired multimedia/schroedinger
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgmp.so:math/gmp \

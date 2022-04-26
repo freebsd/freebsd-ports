@@ -47,6 +47,8 @@
 #
 # IGNORE_WITH_PHP=N - The port doesn't work with PHP version N.
 #
+# BUILD_ONLY_DEFAULT_PHP_FLAVOR - explicitely marks non-default ignored (use in make.conf)
+#
 # You may combine multiple php:* arguments.
 # Don't specify any php:* argument if your port will work with every PHP SAPI.
 #
@@ -62,14 +64,14 @@ _INCLUDE_USES_PHP_MK=	yes
 _PHP_VALID_ARGS=	build cgi cli embed ext flavors mod noflavors pecl \
 			phpize web zend
 _PHP_UNKNOWN_ARGS=
-.for arg in ${php_ARGS}
-.  if empty(_PHP_VALID_ARGS:M${arg})
+.  for arg in ${php_ARGS}
+.    if empty(_PHP_VALID_ARGS:M${arg})
 _PHP_UNKNOWN_ARGS+=	${arg}
-.  endif
-.endfor
-.if !empty(_PHP_UNKNOWN_ARGS)
+.    endif
+.  endfor
+.  if !empty(_PHP_UNKNOWN_ARGS)
 IGNORE=	has unknown USES=php arguments: ${_PHP_UNKNOWN_ARGS}
-.endif
+.  endif
 
 .  if ${php_ARGS:Mbuild} && ( ${php_ARGS:Mphpize} || ${php_ARGS:Mext} || ${php_ARGS:Mzend} )
 DEV_WARNING+=	"USES=php:build is included in USES=php:phpize, USES=php:ext, and USES=php:zend, so it is not needed"
@@ -128,9 +130,14 @@ IGNORE=	does not work with PHP versions "${IGNORE_WITH_PHP}" and "${_INSTALLED_P
 PHP_VER?=	${PHP_DEFAULT:S/.//}
 .  endif # .if exists(${PHPBASE}/etc/php.conf)
 
+.  if defined(BUILD_ONLY_DEFAULT_PHP_FLAVOR)
+# Only build php ports of the default flavor
+_ALL_FLAVOR_VERSIONS=	${PHP_VER}
+.  else
 # Use the "default" php version as the first version for flavors, so that it
 # gets to be the default flavor.
 _ALL_FLAVOR_VERSIONS=	${PHP_VER} ${_ALL_PHP_VERSIONS:N${PHP_VER}}
+.  endif
 
 # If we want flavors, fill in FLAVORS with the allowed PHP versions, if some
 # cannot be used, or all of them if they all can.
@@ -157,9 +164,9 @@ FLAVOR=	${FLAVORS:[1]}
 .    endif
 .  endif
 
-.if ${PHP_VER} == 74 && (${ARCH:Mmips*} || (${ARCH:Mpowerpc*} && !exists(/usr/bin/clang)) || ${ARCH} == sparc64)
+.  if ${PHP_VER} == 74 && (${ARCH:Mmips*} || (${ARCH:Mpowerpc*} && !exists(/usr/bin/clang)) || ${ARCH} == sparc64)
 USE_GCC=	yes
-.endif
+.  endif
 
 # This variable is for dependencies lines, so you write:
 # ${PHP_PKGNAMEPREFIX}foo:devel/php-foo@${PHP_FLAVOR}
@@ -392,7 +399,6 @@ calendar_DEPENDS=	misc/php${PHP_VER}-calendar
 ctype_DEPENDS=	textproc/php${PHP_VER}-ctype
 curl_DEPENDS=	ftp/php${PHP_VER}-curl
 dba_DEPENDS=	databases/php${PHP_VER}-dba
-dbase_DEPENDS=	databases/php${PHP_VER}-dbase
 dom_DEPENDS=	textproc/php${PHP_VER}-dom
 enchant_DEPENDS=	textproc/php${PHP_VER}-enchant
 exif_DEPENDS=	graphics/php${PHP_VER}-exif
@@ -407,21 +413,20 @@ iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary@${PHP_FLAVOR}
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 intl_DEPENDS=	devel/php${PHP_VER}-intl
-.if ${PHP_VER} < 80
+.    if ${PHP_VER} < 80
 json_DEPENDS=	devel/php${PHP_VER}-json
-.endif
+.    endif
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
 mcrypt_DEPENDS=	security/pecl-mcrypt@${PHP_FLAVOR}
 memcache_DEPENDS=	databases/pecl-memcache@${PHP_FLAVOR}
 memcached_DEPENDS=	databases/pecl-memcached@${PHP_FLAVOR}
-mssql_DEPENDS=	databases/php${PHP_VER}-mssql
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
 opcache_DEPENDS=	www/php${PHP_VER}-opcache
-.if ${PHP_VER} < 80
+.    if ${PHP_VER} < 80
 openssl_DEPENDS=security/php${PHP_VER}-openssl
-.endif
+.    endif
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
 pdf_DEPENDS=	print/pecl-pdflib@${PHP_FLAVOR}
 pdo_DEPENDS=	databases/php${PHP_VER}-pdo
@@ -446,7 +451,6 @@ soap_DEPENDS=	net/php${PHP_VER}-soap
 sockets_DEPENDS=net/php${PHP_VER}-sockets
 sodium_DEPENDS=	security/php${PHP_VER}-sodium
 sqlite3_DEPENDS=databases/php${PHP_VER}-sqlite3
-sybase_ct_DEPENDS=	databases/php${PHP_VER}-sybase_ct
 sysvmsg_DEPENDS=devel/php${PHP_VER}-sysvmsg
 sysvsem_DEPENDS=devel/php${PHP_VER}-sysvsem
 sysvshm_DEPENDS=devel/php${PHP_VER}-sysvshm
@@ -454,11 +458,11 @@ tidy_DEPENDS=	www/php${PHP_VER}-tidy
 tokenizer_DEPENDS=	devel/php${PHP_VER}-tokenizer
 xml_DEPENDS=	textproc/php${PHP_VER}-xml
 xmlreader_DEPENDS=	textproc/php${PHP_VER}-xmlreader
-.if ${PHP_VER} >= 80
+.    if ${PHP_VER} >= 80
 xmlrpc_DEPENDS=	net/pecl-xmlrpc@${PHP_FLAVOR}
-.else
+.    else
 xmlrpc_DEPENDS=	net/php${PHP_VER}-xmlrpc
-.endif
+.    endif
 xmlwriter_DEPENDS=	textproc/php${PHP_VER}-xmlwriter
 xsl_DEPENDS=	textproc/php${PHP_VER}-xsl
 zip_DEPENDS=	archivers/php${PHP_VER}-zip

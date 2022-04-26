@@ -1,6 +1,6 @@
 PORTNAME=	esptool
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2
+DISTVERSION=	3.3
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>=3.0:comms/py-pyserial@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ecdsa>0:security/py-ecdsa@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}ecdsa>=0.16.0:security/py-ecdsa@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}bitstring>=3.1.6:devel/py-bitstring@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}cryptography>=2.1.4:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reedsolo>=1.5.3,<=1.5.4:devel/py-reedsolo@${PY_FLAVOR}
@@ -41,7 +41,7 @@ do-test:
 		test/test_modules.py; \
 		do ${SETENV} ${TEST_ENV} ${PYTHON_CMD} $${test}; done
 	@cd ${TEST_WRKSRC} && for chip in \
-		esp32 esp32s2 esp32s3beta2 esp32s3 esp32c3 esp32h2; \
+		esp32 esp32c2 esp32c3 esp32s2 esp32s3 esp32s3beta2 esp32h2beta1; \
 		do ${SETENV} ${TEST_ENV} ${PYTHON_CMD} \
 		test/test_espefuse_host.py $${chip}; done
 .if exists(${ESPTOOL_SERIALPORT})

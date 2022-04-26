@@ -1,0 +1,113 @@
+--- qspin/jones.py.orig	2016-08-28 06:00:41 UTC
++++ qspin/jones.py
+@@ -71,61 +71,61 @@ def vsth():
+ szc = 0.5*np.matrix([[1,-i],[i,1]]) - 0.5*np.matrix([[1,i],[-i,1]])
+ 
+ def photon():
+-    print '----------------'
+-    print '|H>'
++    print('----------------')
++    print('|H>')
+     J,a,rho = jones(0,0,'blue')
+-    print 'J = ',J.T
+-    print 'a = ',a
+-    print 'rho = '
+-    print rho
+-    print 'spins'
+-    print np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho)
+-    print '----------------'
+-    print '|V>'
++    print('J = ',J.T)
++    print('a = ',a)
++    print('rho = ')
++    print(rho)
++    print('spins')
++    print(np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho))
++    print('----------------')
++    print('|V>')
+     J,a,rho = jones(pi,0,'blue')
+-    print 'J = ',J.T
+-    print 'a = ',a
+-    print 'rho = '
+-    print rho
+-    print 'spins'
+-    print np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho)
+-    print '----------------'
+-    print '|D> = |H>+|V>'
++    print('J = ',J.T)
++    print('a = ',a)
++    print('rho = ')
++    print(rho)
++    print('spins')
++    print(np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho))
++    print('----------------')
++    print('|D> = |H>+|V>')
+     J,a,rho = jones(pi/2,0,'green')
+-    print 'J = ',J.T
+-    print 'a = ',a
+-    print 'rho = '
+-    print rho
+-    print 'spins'
+-    print np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho)
+-    print '----------------'
+-    print '|A> = |H>-|V>'
++    print('J = ',J.T)
++    print('a = ',a)
++    print('rho = ')
++    print(rho)
++    print('spins')
++    print(np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho))
++    print('----------------')
++    print('|A> = |H>-|V>')
+     J,a,rho = jones(pi/2,pi,'green')
+-    print 'J = ',J.T
+-    print 'a = ',a
+-    print 'rho = '
+-    print rho
+-    print 'spins'
+-    print np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho)
+-    print '----------------'
+-    print '|L> = |H>+i|V>'
++    print('J = ',J.T)
++    print('a = ',a)
++    print('rho = ')
++    print(rho)
++    print('spins')
++    print(np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho))
++    print('----------------')
++    print('|L> = |H>+i|V>')
+     J,a,rho = jones(pi/2,pi/2,'red')
+-    print 'J = ',J.T
+-    print 'a = ',a
+-    print 'rho = '
+-    print rho
+-    print 'spins'
+-    print np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho)
+-    print '----------------'
+-    print '|R> = |H>-i|V>'
++    print('J = ',J.T)
++    print('a = ',a)
++    print('rho = ')
++    print(rho)
++    print('spins')
++    print(np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho))
++    print('----------------')
++    print('|R> = |H>-i|V>')
+     J,a,rho = jones(pi/2,-pi/2,'red')
+-    print 'J = ',J.T
+-    print 'a = ',a
+-    print 'rho = '
+-    print rho
+-    print 'spins'
+-    print np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho)
+-    print '----------------'
++    print('J = ',J.T)
++    print('a = ',a)
++    print('rho = ')
++    print(rho)
++    print('spins')
++    print(np.trace(sx*rho),np.trace(sy*rho),np.trace(sz*rho))
++    print('----------------')
+ 
+ V = np.matrix([1,0]).T
+ H = np.matrix([0,1]).T

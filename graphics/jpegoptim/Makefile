@@ -1,10 +1,9 @@
 # Created by: Devaux Fabien <fab@gcu.info>
 
 PORTNAME=	jpegoptim
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.kokkonen.net/tjko/src/ \
-		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility to optimize jpeg files
@@ -14,12 +13,15 @@ LICENSE_COMB=	dual
 
 USES=		cpe jpeg
 CPE_VENDOR=	${PORTNAME}_project
+USE_GITHUB=	yes
+GH_ACCOUNT=	tjko
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}
 
-PLIST_FILES=	bin/jpegoptim man/man1/jpegoptim.1.gz
-
 MAKE_ENV+=	INSTALL_ROOT=${STAGEDIR}
+
+PLIST_FILES=	bin/jpegoptim \
+		man/man1/jpegoptim.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \

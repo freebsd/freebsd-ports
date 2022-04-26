@@ -22,6 +22,7 @@ include/cpr/parameters.h
 include/cpr/payload.h
 include/cpr/proxies.h
 include/cpr/proxyauth.h
+include/cpr/range.h
 include/cpr/redirect.h
 include/cpr/response.h
 include/cpr/session.h

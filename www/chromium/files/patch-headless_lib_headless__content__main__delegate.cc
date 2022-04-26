@@ -1,6 +1,6 @@
---- headless/lib/headless_content_main_delegate.cc.orig	2022-02-28 16:54:41 UTC
+--- headless/lib/headless_content_main_delegate.cc.orig	2022-03-25 21:59:56 UTC
 +++ headless/lib/headless_content_main_delegate.cc
-@@ -331,7 +331,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
+@@ -336,7 +336,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
    if (process_type != switches::kZygoteProcess) {
      g_headless_crash_client.Pointer()->set_crash_dumps_dir(
          options()->crash_dumps_dir);

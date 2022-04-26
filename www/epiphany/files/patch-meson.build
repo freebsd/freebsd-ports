@@ -1,14 +1,14 @@
---- meson.build.orig	2021-09-16 20:23:49 UTC
-+++ meson.build
-@@ -96,7 +96,6 @@ libhandy_dep = dependency('libhandy-1', version: '>= 1
+--- meson.build.orig	2022-03-17 12:43:27.777304400 -0700
++++ meson.build	2022-03-23 13:37:09.142845000 -0700
+@@ -95,7 +95,6 @@
  libsecret_dep = dependency('libsecret-1', version: '>= 0.19.0')
  libxml_dep = dependency('libxml-2.0', version: '>= 2.6.12')
  nettle_dep = dependency('nettle', version: nettle_requirement)
--portal_dep = dependency('libportal', version: '>= 0.0.2', required: get_option('libportal'))
+-portal_dep = dependency('libportal-gtk3', version: '>= 0.5', required: get_option('libportal'))
  sqlite3_dep = dependency('sqlite3', version: '>= 3.22')
  
  if get_option('soup2').enabled()
-@@ -108,8 +107,6 @@ else
+@@ -107,8 +106,6 @@
    webkit2gtk_dep = dependency('webkit2gtk-4.1', version: webkitgtk_requirement)
    webkit2gtk_web_extension_dep = dependency('webkit2gtk-web-extension-4.1', version: webkitgtk_requirement)
  endif

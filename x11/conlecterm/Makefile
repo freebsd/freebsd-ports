@@ -1,7 +1,7 @@
 PORTNAME=	conlecterm
 PORTVERSION=	1.4.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	hsw@bitmark.com
@@ -24,55 +24,59 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	hxw
 
-USE_CABAL=	X11-1.9.1 \
-		aeson-1.5.3.0 \
-		alex-3.2.5 \
-		assoc-1.0.2 \
-		attoparsec-0.13.2.4 \
-		base-compat-0.11.1 \
-		base-compat-batteries-0.11.1 \
-		base-orphans-0.8.2 \
-		bifunctors-5.5.7 \
-		cabal-doctest-1.0.8_1 \
-		cairo-0.13.8.1 \
-		comonad-5.0.6_1 \
-		data-default-0.7.1.1 \
+USE_CABAL=	OneTuple-0.3.1_2 \
+		QuickCheck-2.14.2 \
+		StateVar-1.2.2 \
+		X11-1.10.2 \
+		aeson-2.0.3.0 \
+		alex-3.2.7.1 \
+		assoc-1.0.2_2 \
+		attoparsec-0.14.4_1 \
+		base-compat-0.12.1 \
+		base-compat-batteries-0.12.1_2 \
+		base-orphans-0.8.6 \
+		bifunctors-5.5.11_1 \
+		cairo-0.13.8.2 \
+		comonad-5.0.8_1 \
+		contravariant-1.5.5 \
 		data-default-class-0.1.2.0 \
-		data-default-instances-containers-0.0.1 \
-		data-default-instances-dlist-0.0.1 \
-		data-default-instances-old-locale-0.0.1 \
-		data-fix-0.3.0 \
-		distributive-0.6.2_1 \
+		data-fix-0.3.2_2 \
+		distributive-0.6.2.1_1 \
 		dlist-1.0 \
-		glib-0.13.8.1 \
-		gtk2hs-buildtools-0.13.8.0 \
-		gtk3-0.15.5 \
-		happy-1.19.12 \
-		hashable-1.3.0.0_1 \
-		hashtables-1.2.3.4 \
-		integer-logarithms-1.0.3_2 \
-		old-locale-1.0.0.7_2 \
-		pango-0.13.8.1 \
-		primitive-0.7.1.0 \
-		random-1.2.0 \
-		scientific-0.3.6.2 \
-		splitmix-0.1.0.1 \
-		strict-0.4 \
-		tagged-0.8.6_2 \
-		th-abstraction-0.3.2.0 \
-		these-1.1.1.1 \
-		time-compat-1.9.3 \
-		transformers-compat-0.6.5 \
-		unordered-containers-0.2.12.0 \
-		utf8-string-1.0.1.1_3 \
-		uuid-types-1.0.3_3 \
-		vector-0.12.1.2
+		gio-0.13.8.2 \
+		glib-0.13.8.2 \
+		gtk2hs-buildtools-0.13.8.3 \
+		gtk3-0.15.7 \
+		happy-1.20.0 \
+		hashable-1.4.0.2 \
+		hashtables-1.3 \
+		indexed-traversable-0.1.2_1 \
+		indexed-traversable-instances-0.1.1 \
+		integer-logarithms-1.0.3.1_2 \
+		pango-0.13.8.2 \
+		primitive-0.7.3.0 \
+		random-1.2.1 \
+		scientific-0.3.7.0_2 \
+		semialign-1.2.0.1_1 \
+		semigroupoids-5.3.7 \
+		splitmix-0.1.0.4 \
+		strict-0.4.0.1_4 \
+		tagged-0.8.6.1_2 \
+		text-short-0.1.5 \
+		th-abstraction-0.4.3.0 \
+		these-1.1.1.1_5 \
+		time-compat-1.9.6.1_3 \
+		transformers-compat-0.7.1_1 \
+		unordered-containers-0.2.17.0 \
+		utf8-string-1.0.2 \
+		uuid-types-1.0.5_2 \
+		vector-0.12.3.1_1 \
+		witherable-0.4.2_2
 
 PLIST_FILES+=	share/applications/conlecterm.desktop
 PLIST_FILES+=	share/icons/hicolor/scalable/apps/conlecterm.svg
 
-PORTEXAMPLES=	\
-		conlecterm.conf \
+PORTEXAMPLES=	conlecterm.conf \
 		conlecterm.css \
 		tabs.css
 

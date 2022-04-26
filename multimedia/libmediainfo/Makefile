@@ -1,8 +1,7 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	libmediainfo
-PORTVERSION=	21.09
-PORTREVISION=	1
+PORTVERSION=	22.03
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -16,12 +15,6 @@ LICENSE_FILE=	${WRKSRC}/../../../License.html
 
 LIB_DEPENDS=	libzen.so:multimedia/libzen
 
-CONFLICTS_INSTALL=	mediainfo-0.[0-6]* mediainfo-0.7.[0-5]*
-
-OPTIONS_DEFINE=	CURL MMS TINYXML2
-OPTIONS_DEFAULT=TINYXML2
-TINYXML2_DESC=	Use textproc/tinyxml2 instead of bundled one
-
 USES=		alias compiler:c++11-lang libtool localbase pathfix pkgconfig tar:xz
 
 CFLAGS+=	-D_POSIX_PRIORITY_SCHEDULING
@@ -32,6 +25,10 @@ USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/MediaInfoLib/Project/GNU/Library
+
+OPTIONS_DEFINE=	CURL MMS TINYXML2
+OPTIONS_DEFAULT=TINYXML2
+TINYXML2_DESC=	Use textproc/tinyxml2 instead of bundled one
 
 CURL_CONFIGURE_ON=	--with-libcurl=${LOCALBASE}
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl

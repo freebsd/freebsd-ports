@@ -1,7 +1,8 @@
 # Created by: clement
 
 PORTNAME=	weechat
-DISTVERSION=	3.4.1
+DISTVERSION=	3.5
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -14,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls \
-		libgpg-error.so:security/libgpg-error
+		libgpg-error.so:security/libgpg-error \
+		libzstd.so:archivers/zstd
 
 USES=		cmake cpe ncurses libtool pkgconfig tar:xz
 USE_LDCONFIG=	yes
@@ -26,9 +28,6 @@ OPTIONS_DEFINE=		BACKTRACE DOCS CA_BUNDLE HEADLESS ICON ICONV \
 OPTIONS_DEFAULT=	ASPELL BACKTRACE CA_BUNDLE CHARSET HEADLESS \
 			ICON LUA MANPAGES PERL PYTHON RUBY TCL TYPING
 OPTIONS_SUB=		yes
-
-# BROKEN: ruby.h: error: wrong number of arguments specified for 'deprecated' attribute
-OPTIONS_EXCLUDE_powerpc64=	RUBY
 
 OPTIONS_GROUP=		PLUGINS
 OPTIONS_GROUP_PLUGINS=	ASPELL CHARSET GUILE JAVASCRIPT LUA PERL PHP PYTHON \

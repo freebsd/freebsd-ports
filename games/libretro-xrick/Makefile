@@ -1,5 +1,5 @@
 PORTNAME=	libretro-xrick
-PORTVERSION=	0.20201218
+PORTVERSION=	0.20220331
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -7,15 +7,15 @@ COMMENT=	Libretro implementation of "Rick Dangerous"
 
 LICENSE=	GPLv2
 
-USES=		gmake localbase sdl dos2unix
+USES=		gmake localbase sdl
 USE_SDL=	sdl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	xrick-libretro
-GH_TAGNAME=	0aad6c6
+GH_TAGNAME=	10d7318
 
-MAKEFILE=	Makefile.libretro
+MAKEFILE=	Makefile.freebsd
 DOS2UNIX_FILES=	${MAKEFILE}
 
 PLIST_FILES=	lib/libretro/xrick_libretro.so

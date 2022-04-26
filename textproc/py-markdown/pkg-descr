@@ -1,13 +1,18 @@
-This is a Python implementation of John Gruber's Markdown. It is almost
-completely compliant with the reference implementation, though there are a
-few very minor differences.
+Python-Markdown is a Python implementation of John Gruber's Markdown. It is
+almost completely compliant with the reference implementation, though there are
+a few known issues.
 
-Features:
+In addition to the basic markdown syntax, Python-Markdown supports the following
+features:
+- International Input: Python-Markdown will accept input in any language
+  supported by Unicode including bi-directional text. In fact the test suite
+  includes documents written in Russian and Arabic.
+- Extensions: Various extensions are provided (including extra) to change and/or
+  extend the base syntax. Additionally, a public Extension API is available to
+  write your own extensions.
+- Output Formats: Python-Markdown can output documents with either HTML or XHTML
+  style tags. See the Library Reference for details.
+- Command Line Interface: In addition to being a Python Library, a command line
+  script is available for your convenience.
 
-  * International Input
-  * Extensions
-  * Output Formats
-  * "Safe Modes"
-  * Command Line Interface
-
-WWW: https://pythonhosted.org/Markdown/
+WWW: https://github.com/Python-Markdown/markdown

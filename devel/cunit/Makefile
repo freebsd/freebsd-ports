@@ -4,7 +4,7 @@ PORTNAME=	cunit
 PORTVERSION=	2.1.3
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/CUnit/${PORTVERSION:R}-${PORTVERSION:E}
+MASTER_SITES=	SF/cunit/CUnit/${PORTVERSION:R}-${PORTVERSION:E}
 DISTNAME=	CUnit-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,6 +12,17 @@ COMMENT=	Automated unit testing framework for C
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		autoreconf gmake libtool pathfix tar:bzip2
+
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+USE_LDCONFIG=	yes
+
+DATADIR=	${PREFIX}/share/CUnit
+DOCSDIR=	${PREFIX}/share/doc/CUnit
+EXAMPLESDIR=	${PREFIX}/share/examples/CUnit
 
 CONFLICTS_INSTALL=	c-unit
 
@@ -26,16 +37,6 @@ DEBUG_DESC=	Debug interface
 EXAMPLES_DESC=	Example programs
 MEMTRACE_DESC=	Internal memory tracking
 TEST_DESC=	Internal test program
-
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
-USE_LDCONFIG=	yes
-USES=		autoreconf gmake libtool pathfix tar:bzip2
-
-DATADIR=	${PREFIX}/share/CUnit
-DOCSDIR=	${PREFIX}/share/doc/CUnit
-EXAMPLESDIR=	${PREFIX}/share/examples/CUnit
 
 AUTOMATED_CONFIGURE_ENABLE=	automated
 BASIC_CONFIGURE_ENABLE=	basic

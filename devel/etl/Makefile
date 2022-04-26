@@ -5,7 +5,7 @@ PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel lang
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Voria Extended Class and Template Library
 
 LICENSE=	GPLv2+

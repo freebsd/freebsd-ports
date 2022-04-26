@@ -1,7 +1,7 @@
 # Created by: Sheldon Hearn <sheldonh@FreeBSD.org>
 
 PORTNAME=	DBD-Sybase
-PORTVERSION=	1.16
+PORTVERSION=	1.19
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,12 +13,13 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 LIB_DEPENDS=	libct.so:databases/freetds
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 
-CONFIGURE_ENV=	SYBASE=${LOCALBASE}
 USES=		gettext perl5
 USE_PERL5=	configure
+
+CONFIGURE_ENV=	SYBASE=${LOCALBASE}
 
 .if defined(BATCH)
 CONFIGURE_ARGS=	< /dev/null

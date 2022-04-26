@@ -1,24 +1,24 @@
---- hamlib/configure.ac.orig	2021-11-03 20:39:16.000000000 -0400
-+++ hamlib/configure.ac	2021-12-28 12:12:44.629890000 -0500
-@@ -269,7 +269,7 @@
- dnl The host_os variable is set by the AC_CANONICAL_HOST macro above.
- AS_CASE(["$host_os"],
-     [freebsd*], [
+--- hamlib/configure.orig	2022-01-02 11:10:19.000000000 +0100
++++ hamlib/configure	2022-04-13 12:51:01.174492000 +0200
+@@ -19135,7 +19135,7 @@
+ case "$host_os" in #(
+   freebsd*) :
+ 
 -	AM_CPPFLAGS="-I/usr/local/include ${AM_CPPFLAGS}"
 +	AM_CPPFLAGS="${AM_CPPFLAGS} -I/usr/local/include"
  	AM_LDFLAGS="${AM_LDFLAGS} -L/usr/local/lib"
- 	AC_SUBST([AM_LDFLAGS])],
+ 	 ;; #(
+   darwin* | rhapsody*) :
+@@ -19211,6 +19211,7 @@
+ fi
  
-@@ -317,6 +317,7 @@
- AC_MSG_RESULT([$cf_with_libusb])
- AM_CONDITIONAL([HAVE_LIBUSB], [test x"${cf_with_libusb}" = "xyes"])
  
 +LIBUSB_LIBS="-lusb"
  LIBUSB=""
- AC_ARG_VAR([LIBUSB_CFLAGS], [C compiler flags for libusb, overriding configure defaults])
- AC_ARG_VAR([LIBUSB_LIBS], [linker flags for libusb, overriding configure check (useful for specifying static libusb-1.0.a (see INSTALL))])
---- hamlib/hamlib.pc.in.orig	2021-11-03 20:39:16.000000000 -0400
-+++ hamlib/hamlib.pc.in	2021-12-28 12:19:09.120541000 -0500
+ 
+ 
+--- hamlib/hamlib.pc.in.orig	2022-01-02 11:10:11.000000000 +0100
++++ hamlib/hamlib.pc.in	2022-04-13 12:34:36.119285000 +0200
 @@ -7,7 +7,6 @@
  Description: Library to control radio and rotator equipment.
  URL: @PACKAGE_URL@
@@ -29,8 +29,8 @@
 -Libs.private: @MATH_LIBS@ @DL_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@
 +Libs: -L${libdir} ${libdir}/libhamlib.a
 +Libs.private: @MATH_LIBS@ @DL_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@ -lusb
---- hamlib/tests/rigtestlibusb.c.orig	2021-11-03 20:39:16.000000000 -0400
-+++ hamlib/tests/rigtestlibusb.c	2021-12-28 12:12:44.630778000 -0500
+--- hamlib/tests/rigtestlibusb.c.orig	2022-01-02 11:10:11.000000000 +0100
++++ hamlib/tests/rigtestlibusb.c	2022-04-13 12:34:36.119728000 +0200
 @@ -115,7 +115,10 @@
      printf("      wSpeedSupported:       %u\n", ss_usb_cap->wSpeedSupported);
      printf("      bFunctionalitySupport: %u\n", ss_usb_cap->bFunctionalitySupport);

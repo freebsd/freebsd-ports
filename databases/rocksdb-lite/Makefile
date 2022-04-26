@@ -2,7 +2,7 @@
 
 PORTREVISION=	0
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Persistent key-value store for fast storage environments (lite version)
 
 LITE=		yes

@@ -1,0 +1,633 @@
+The FreeBSD port of the Seiko/Epson epsonscan2 driver is mostly working.
+Some bugs present in the Linux version have been found and fixed here in
+this version.
+
+There are two ports:
+	graphics/epsonscan2	Native FreeBSD port of the Epson
+				scanner engine and the GUI front-end.
+				This supports scanners connected via
+				USB cable.
+
+	graphics/epsonscan2-non-free-plugin
+				Port of the Linux binary that supports
+				scanner access over networks as well as
+				USB access to some older scanner models.
+				This port requires the kernel Linux
+				emulator modules as well as the userland
+				Linux libraries.
+
+The epsonscan2 package provides support for a variety of Seiko/Epson
+scanners.  The specific model names are stored as hashed strings in the
+driver and there does not appear to be a text file listing the supported
+models, so it is not possible to know what they all are!  However, the
+driver does include the USB product ID codes that it supports.  A full
+list of these USB product ID codes is included at the end of this file.
+
+The epsonscan2 package provides a complete alternative to the usual
+sane/xsane way of doing things.  The epsonscan2 command provides both a
+full GUI interface as well as a command line interface to the scanner.
+
+There is also a libsane-epsonscan2.so back-end for sane, and it does
+work, but requires some manual configuration first.
+
+The epsonscan2 package only works with scanners connected via USB cable,
+but not even all USB scanners.  Some older models also require the
+non-free-plugin port for USB access.  See the list of USB product IDs
+at the end of this file for which models also require the non-free-plugin
+for USB access.
+
+To access a network-connected scanner, the es2netif binary in the
+epsonscan2-non-free-plugin port is also required.  As mentioned, some
+older models require the es2intif binary from this port for USB access.
+es2netif and es2intif are Linux binaries that interface between the
+epsonscan2 driver and the scanner.  es2netif is a program that talks
+to a scanner over network sockets and works well.  es2intif appears
+to provide support for firmware downloads to the scanner device over
+USB and may not be fully working at this time.  These binaries require
+the kernel Linux emulator modules and the Linux userland support in
+emulators/linux_base-c7.  The kernel Linux modules include:
+	linux.ko
+	linux64.ko
+	linux_common.ko
+	linprocfs.ko
+	linsysfs.ko
+	fdescfs.ko
+	pty.ko
+
+Epson provides additional web documentation for epsonscan2 at this URL:
+	https://download.ebz.epson.net/man/linux/epsonscan2_e.html
+
+
+SYSTEM CONFIGURATION
+
+To access a USB scanner as a non-root user, you will need to ensure
+that the USB devices are readable.  Configure as follows:
+In /etc/rc.conf:
+	devfs_system_ruleset="system"
+	devfs_set_rulesets="%%LINUXBASE%%/dev=system"
+In /etc/devfs.rules:
+	[system=5]
+	add path 'usb' mode 0755
+	add path 'usb/*' mode 0666
+	add path 'ugen*' mode 0666
+	add path 'usbctl' mode 0666
+
+
+DETECTING SCANNERS
+
+You can run:
+	epsonscan2 -l
+to list discovered scanners.
+
+If your USB scanner is not found, make sure that it is displayed when
+you run:
+	usbconfig dump_device_desc
+and that its vendorID and productID are on the list at the bottom of
+this file.
+
+If your network scanner is not found, make sure that it is configured
+with an IPv4 address (the epsonscan2 driver ignores IPv6 scanners).
+Also make sure that the scanner has mDNS/Bonjour enabled and that when
+you run:
+	avahi-browse -at
+you can see the scanner with IPv4 in the domain _scanner._tcp.  If your
+scanner does not support the mDNS/Bonjour protocol, you can manually
+configure the scanner's IP address like this:
+	epsonscan2 -i ipv4.address
+
+
+SCANNING WITH THE EPSON GUI
+
+To use with the GUI front-end, just run:
+	 epsonscan2
+It will look for USB and network scanners and list them.  Choose the
+scanner you want and click Next.  The scanning menu will show, allowing
+you to set scanning parameters and acquire a preview or scan the image.
+
+NOTE again, that it might well detect network scanners without the
+non-free-module installed, but it will not talk to a network scanner
+without that module.
+
+
+SCANNING FROM THE COMMAND-LINE
+
+The command-line syntax is:
+	epsonscan2 -s ConfigFile.SF2
+
+This will initiate a scan based on the parameters in the configuration
+file and save the output where the config directs it.  A config file is
+created when you use the GUI; look for the file:
+	~/.epsonscan2/Settings/MODEL/UserSettings.SF2
+
+Alternatively, you can create a config file using:
+	epsonscan2 -c
+
+You must then edit the file and set at least the following parameters:
+	The JpegQuality values are in the range [0..100].  If set to 0,
+	no image will be produced:
+		JpegQuality:		30
+		JpegQualityForJpeg:	85
+		JpegQualityForPdf:	50
+	The Resolution is likely to include 75, 150, 200, 300, 600, 1200,
+	2400, 9600 but the values are device dependent:
+		Resolution:		200
+	The ScanArea defines where is scanned.  It is the page size in
+	inches multiplied by the Resolution value:
+		ScanAreaHeight:		2200
+		ScanAreaWidth:		1700
+	Threshold must also be set:
+		Threshold:		110
+
+NOTE: If Resolution is left at 0, epsonscan2 -s will likely core dump
+      with a floating point exception!
+
+
+SCANNING WITH SANE
+
+The epsonscan2 package includes a libsane-epsonscan2.so backend.
+
+The port creates a sane config file in:
+	%%PREFIX/etc/sane.d/dll.d/epsonscan2
+but this does not seem to do anything on FreeBSD.  You must also edit
+the file:
+	%%PREFIX/etc/sane.d/dll.conf
+and add:
+	epsonscan2
+to that file.  To speed device searches up, you can also comment out all
+the ones you are not using.
+
+For a USB scanner, you do not need this next part.  For a network scanner,
+you do.  The libsane-epsonscan2.so module does not use the main epsonscan2
+code that finds network scanners using the mDNS/Bonjour protocol.  Instead,
+it uses a static hint file telling it where to find network scanners.  It
+will not find network scanners without this file.  Create the hint file
+using:
+	epsonscan2 -i ipv4.address
+or edit:
+	~/.epsonscan2/Network/epsonscan2.conf
+and put in it:
+	[Network]
+	ipv4.address
+There can be multiple scanner ipv4.address entries, one per line.
+E.g.:
+	[Network]
+	192.168.3.30
+	192.168.4.17
+
+The libsane-epsonscan2.so backend uses a scanner configuration file in:
+	~/.epsonscan2/DefaultSettings.SF2
+
+If you have already scanned using epsonscan2, there will be a config
+file in:
+	~/.epsonscan2/Settings/MODEL/UserSettings.SF2
+Copy or link this file to the DefaultSettings.SF2 path above.  Or,
+create a new file using "epsonscan2 -c", adjust its parameter values as
+described above, and put the file in the DefaultSettings.SF2 path.
+
+Then, scanimage should work:
+	Try:
+		scanimage -o foo.pnm
+		scanimage --mode Color -o foo.pnm
+	For A4 paper size:
+		scanimage --mode Color --scan-area A4 -o foo.pnm
+		scanimage --mode Color -x 210 -y 297 -o foo.pnm
+	For US Letter paper size:
+		scanimage --mode Color --scan-area Letter -o foo.pnm
+		scanimage --mode Color -x 215.9 -y 279.4 -o foo.pnm
+
+
+SCANNING WITH XSANE
+
+This doesn't work.  See KNOWN PROBLEMS, below.
+
+
+COMMON PROBLEMS
+
+Read the sections above for fuller details on each of these.
+
+0. The scanner is not found.
+	If the scanner is connected bu USB cable, run:
+		usbconfig dump_device_desc
+	The following values are supported by this driver:
+		idVendor = 0x04b8 
+		idProduct = (see list at end of this file)
+
+	If the scanner is connected by Ethernet or WiFi, and for some
+	older USB models, the graphics/epsonscan2-non-free-plugin
+	port must also be installed and the kernel Linux support must
+	be enabled (see above).
+
+1. epsonscan2 -s scans but the "img.pdf" file contains a blank image.
+	Make sure that the config file contains valid settings e.g.:
+		JpegQuality:		30
+		JpegQualityForJpeg:	85
+		JpegQualityForPdf:	50
+		Resolution:		200
+		ScanAreaHeight:		2200
+		ScanAreaWidth:		1700
+		Threshold:		110
+
+2. epsonscan2 -s scans but does not save the file.
+	Make sure that the config file contains valid settings for:
+		FileNameOverwrite:	"0" to use sequential file
+					names, "1" to use the same
+					filename each time
+		FileNamePrefix:		any file name; a number will
+					be appended if FileNameOverwrite
+					is set to "0"
+		UserDefinePath:		"./" for the current directory
+
+3. epsonscan2 -s scans then says "Not enough memory".
+	Various things can cause this.  Usually the problem is an
+	excessively large scan area or too large values for the image
+	enhancer.  Check the following in your config file:
+		Resolution:		200
+		ScanAreaHeight:		2200
+		ScanAreaWidth:		1700
+		Threshold:		110
+		textEnhance		0
+		textEnhanceNoiseReductionLevel	0
+		textEnhancePaperCreaseReduction	0
+		textEnhanceSensitivity	0
+		thresholdAdjustment	0
+
+4. epsonscan2 works with USB scanners but not with network scanners.
+	Make sure that:
+	a.  You have the non-free-plugin port installed and the kernel
+	    Linux emulator enabled.
+
+5. epsonscan2 scans but then prints:
+	ERROR : Unable to save scanned files.
+	/tmp/epsonWork/_12345/: No such file or directory
+	Make sure that:
+	a.  The working dir, /tmp/epsonWork is writable by the user
+	    running the scan.
+
+6. scanimage works with USB scanners but not with network scanners.
+	Make sure that:
+	a.  You have the non-free-plugin port installed and the kernel
+	    Linux emulator enabled.
+	b.  You added the network scanner's IPv4 address to the file:
+		~/.epsonscan2/Networks/epsonscan2.conf
+
+7. scanimage scans but the image is in reverse video.
+	Specifiy the scan mode using any of:
+		scanimage --mode Monochrome ...
+		scanimage --mode Grayscale ...
+		scanimage --mode Color ...
+
+KNOWN PROBLEMS
+
+There are two known problems on FreeBSD at the moment:
+
+0.  es2intif core dumps.
+	The older scanners that require the es2intif program require a
+	small patch to the linux_libusb code.  Make sure that you have
+	port devel/linux_libusb-13.1.0 or later and a 13.x or 14.x kernel
+	newer than 2022/03/05.
+
+1.  xsane scans but then core dumps.
+	This isn't working.  This appears to be a bug in xsane.  After
+	receiving the image data, xsane processes the image in
+	xsane_read_image_data() which calls xsane_progress_update() to
+	update a progress bar widget.  It core dumps when calling
+	gtk_main_iteration() from that!  Since the xsane port on FreeBSD
+	is unmaintained, this won't get fixed until someone decides to
+	take a look at it.
+
+Good luck!
+
+
+DEBUGGING
+
+The epsonscan2 driver provides a debugging trace if the directory:
+	/tmp/epson
+exists.  It also saves various files in that directory too.
+
+The sane backend component provides a debugging trace by setting the
+following environment variable:
+	export SANE_DEBUG_EPSONSCAN=IMG
+	scanimage -L
+
+The xsane program can be debugged by setting the environment variable:
+	export XSANE_DEBUG=99
+	xsane
+
+
+LIST OF SUPPORTED USB PRODUCT IDs
+
+The following USB product IDs are supported by the epsonscan2 driver.
+Descriptons have been added where they can be determined.
+
+[*] Models with the [*] require the non-free-plugin port even for USB
+    access.
+
+USB
+Vendor ID	Description
+0x04B8		Seiko/Epson Corporation
+
+Product ID	Description
+0x0023
+0x0024
+0x0129		ES-10000G [Expression 10000XL]
+0x012B		ES-H300 [GT-2500]
+0x012C		GT-X900 [Perfection V700/V750 Photo]
+0x0130		GT-X770 [Perfection V500]
+0x0133		GT-1500 [GT-D1000]
+0x0135		GT-X970
+0x0136		ES-D400 [GT-S80]
+0x0137		ES-D200 [GT-S50]
+0x0138		ES-H7200 [GT-20000]
+0x013A	[*]	GT-X820 [Perfection V600 Photo]
+0x013B	[*]
+0x013C	[*]
+0x013D	[*]
+0x0142	[*]	GT-F730 [GT-S630/Perfection V33/V330 Photo]
+0x0143		GT-S55
+0x0144		GT-S85
+0x0145
+0x0146
+0x0147
+0x014A	[*]
+0x014B
+0x014C
+0x014D
+0x0150
+0x0151		Perfection V800 Photo
+0x0152
+0x0153
+0x0154
+0x0155
+0x0156
+0x0157
+0x0159
+0x015A
+0x015B
+0x015C
+0x015D
+0x015E
+0x015F
+0x0160
+0x0162
+0x0163
+0x0164
+0x0165
+0x0166
+0x0167
+0x0168
+0x0169
+0x016B
+0x016C
+0x016D
+0x016E
+0x016F
+0x0170
+0x0171
+0x0172
+0x0173
+0x0176
+0x0177
+0x0178
+0x0179
+0x017A
+0x017B
+0x017C
+0x017D
+0x017E
+0x017F
+0x0180
+0x0181
+0x0182
+0x0183
+0x0184
+0x0185
+0x0186
+0x0187
+0x0188
+0x0189
+0x018A
+0x018B
+0x018C
+0x018D
+0x018E
+0x018F
+0x0190
+0x0191
+0x0192
+0x0869		PX-1600F
+0x0879		EP-904A/EP-904F [Artisan 837/Stylus Photo PX830FWD Series]
+0x087B		EP-804A/EP-804AR/EP-804AW [Stylus Photo PX730WD/Artisan 730 Series]
+0x087C		PX-1700F
+0x087D		PX-B750F/WP-4525 Series
+0x0899
+0x08A5
+0x08A9
+0x08AA
+0x08AC
+0x08AD
+0x08AE
+0x08AF
+0x08B0
+0x08B3
+0x08B4
+0x08B5
+0x08B6
+0x08B7
+0x08B8
+0x08B9
+0x08BC
+0x08BD
+0x08BE
+0x08BF
+0x08C0
+0x08C1
+0x08C2
+0x08C3
+0x08C4
+0x08C5
+0x08C6
+0x08C7
+0x08C8
+0x08C9
+0x08CA
+0x08CC
+0x08CD
+0x08CE
+0x08CF
+0x08D0
+0x08D1
+0x08D2
+0x08D3
+0x1101
+0x1102
+0x1103
+0x1104
+0x1105
+0x1106
+0x1107
+0x1108
+0x1109
+0x110A
+0x110B
+0x110C
+0x110D
+0x110F
+0x1111
+0x1112
+0x1113
+0x1114		XP-440 [Expression Home Small-in-One Printer]
+0x1115
+0x1116
+0x1117
+0x1118
+0x1119
+0x111A
+0x111B
+0x111C
+0x111D
+0x111E
+0x111F
+0x1120
+0x1121
+0x1122
+0x1123
+0x1125
+0x1126
+0x1127
+0x1128
+0x1129		ET-4750 [WorkForce ET-4750 EcoTank All-in-One]
+0x112A
+0x112B
+0x112C
+0x112D
+0x112E
+0x112F
+0x1130
+0x1131
+0x1132
+0x1133
+0x1134
+0x1135
+0x1136
+0x1137
+0x1138
+0x1139
+0x113A
+0x113B
+0x113C
+0x113D
+0x113E
+0x113F
+0x1140
+0x1141
+0x1142
+0x1143
+0x1145
+0x1146
+0x1147
+0x1148
+0x1149
+0x114A
+0x114B
+0x114C
+0x114D
+0x114E
+0x114F
+0x1150
+0x1151
+0x1152
+0x1153
+0x1154
+0x1155		WorkForce ST-3000 Series
+0x1156
+0x1157
+0x1158
+0x1159
+0x115A
+0x115B
+0x115C
+0x115D
+0x115E
+0x115F
+0x1160
+0x1161
+0x1162
+0x1163
+0x1164
+0x1165
+0x1166
+0x1167
+0x1168		Workforce WF-7820/7840 Series
+0x1169
+0x116A
+0x116B
+0x116C
+0x116D
+0x116E
+0x116F
+0x1170
+0x1171
+0x1172
+0x1173
+0x1174
+0x1175
+0x1176
+0x1177
+0x117A
+0x117B
+0x117C
+0x117D
+0x117E
+0x117F
+0x1180
+0x1181
+0x1182
+0x1183
+0x1184
+0x1185
+0x1186
+0x1187
+0x1188
+0x1189
+0x118A
+0x118B
+0x118C
+0x118D
+0x118E
+0x118F
+0x1190
+0x1191
+0x1192
+0x1193
+0x1194
+0x1195
+0x1196
+0x1197
+0x1198
+0x1199
+0x119A
+0x119B
+0x119C
+0x119D
+0x119E
+0x119F
+0x11A0
+0x11A1
+0x11A2
+0x11A3
+0x11A4
+0x11A5
+0x11A6
+0x11A7
+0x11A8
+0x11A9
+0x11AA
+0x11AB
+0x11AE
+0x11AF
+0x11B0
+0x11B1
+0x11B2
+0x11B3
+
+End

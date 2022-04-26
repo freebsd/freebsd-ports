@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	LWP-Authen-OAuth2
-PORTVERSION=	0.16
+PORTVERSION=	0.19
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,6 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-JSON>0:converters/p5-JSON
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

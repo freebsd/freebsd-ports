@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+RUN_DEPENDS=	p5-AnyEvent>=0,1:devel/p5-AnyEvent \
 		p5-Net-SSLeay>=1.45:security/p5-Net-SSLeay
 TEST_DEPENDS=	p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace \
 		p5-Test-TCP>=0:devel/p5-Test-TCP

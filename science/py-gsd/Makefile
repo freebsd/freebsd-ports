@@ -1,5 +1,5 @@
 PORTNAME=	gsd
-DISTVERSION=	2.5.1
+DISTVERSION=	2.5.2
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,5 +15,8 @@ RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils cython autoplist
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/gsd/fl*.so
 
 .include <bsd.port.mk>

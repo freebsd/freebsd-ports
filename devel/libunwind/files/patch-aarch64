@@ -1,0 +1,64 @@
+Reference:	https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=262447
+		https://github.com/libunwind/libunwind/pull/344
+
+--- include/libunwind-aarch64.h.orig	2021-12-01 00:46:39 UTC
++++ include/libunwind-aarch64.h
+@@ -226,15 +226,24 @@ typedef struct
+ #else
+ /* On AArch64, we can directly use ucontext_t as the unwind context.  */
+ typedef ucontext_t unw_tdep_context_t;
++#if defined(__FreeBSD__)
++typedef ucontext_t unw_fpsimd_context_t;
+ #endif
++#endif
+ 
+ 
+ #include "libunwind-common.h"
+ #include "libunwind-dynamic.h"
+ 
++#if defined(__FreeBSD__)
++#define UNW_BASE register uint64_t unw_base __asm__ ("x0") = (uint64_t) unw_ctx->uc_mcontext.mc_gpregs.gp_x[0];
++#else
++#define UNW_BASE register uint64_t unw_base __asm__ ("x0") = (uint64_t) unw_ctx->uc_mcontext.regs;
++#endif
++
+ #define unw_tdep_getcontext(uc) ({					\
+   unw_tdep_context_t *unw_ctx = (uc);					\
+-  register uint64_t unw_base __asm__ ("x0") = (uint64_t) unw_ctx->uc_mcontext.regs; \
++  UNW_BASE \
+   __asm__ __volatile__ (					        \
+      "stp x0, x1, [%[base], #0]\n" \
+      "stp x2, x3, [%[base], #16]\n" \
+--- src/aarch64/Ginit.c.orig	2021-11-30 17:12:31 UTC
++++ src/aarch64/Ginit.c
+@@ -47,9 +47,17 @@ static inline void *
+ uc_addr (unw_tdep_context_t *uc, int reg)
+ {
+   if (reg >= UNW_AARCH64_X0 && reg < UNW_AARCH64_V0)
++#if defined(__FreeBSD__)
++    return &uc->uc_mcontext.mc_gpregs.gp_x[reg];
++#else
+     return &uc->uc_mcontext.regs[reg];
++#endif
+   else if (reg >= UNW_AARCH64_V0 && reg <= UNW_AARCH64_V31)
++#if defined(__FreeBSD__)
++    return &GET_FPCTX(uc)->uc_mcontext.mc_fpregs.fp_q[reg - UNW_AARCH64_V0];
++#else
+     return &GET_FPCTX(uc)->vregs[reg - UNW_AARCH64_V0];
++#endif
+   else
+     return NULL;
+ }
+--- src/aarch64/unwind_i.h.orig	2020-04-28 15:49:14 UTC
++++ src/aarch64/unwind_i.h
+@@ -59,6 +59,10 @@ extern int aarch64_local_resume (unw_addr_space_t as, 
+   } while (0)
+ #endif
+ 
++#if defined(__FreeBSD__)
++#define GET_FPCTX(uc) ((unw_tdep_context_t *)(&uc->uc_mcontext.mc_spare))
++#else
+ #define GET_FPCTX(uc) ((unw_fpsimd_context_t *)(&uc->uc_mcontext.__reserved))
++#endif
+ 
+ #endif /* unwind_i_h */

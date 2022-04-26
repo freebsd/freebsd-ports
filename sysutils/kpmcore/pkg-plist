@@ -37,8 +37,8 @@ include/kpmcore/fs/iso9660.h
 include/kpmcore/fs/jfs.h
 include/kpmcore/fs/linuxraidmember.h
 include/kpmcore/fs/linuxswap.h
-include/kpmcore/fs/luks.h
 include/kpmcore/fs/luks2.h
+include/kpmcore/fs/luks.h
 include/kpmcore/fs/lvm2_pv.h
 include/kpmcore/fs/minix.h
 include/kpmcore/fs/nilfs2.h
@@ -85,9 +85,9 @@ lib/cmake/KPMcore/KPMcoreTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPMcore/KPMcoreTargets.cmake
 lib/libexec/kpmcore_externalcommand
 lib/libkpmcore.so
-lib/libkpmcore.so.11
+lib/libkpmcore.so.12
 lib/libkpmcore.so.%%KDE_APPLICATIONS_VERSION%%
-%%QT_PLUGINDIR%%/libpmdummybackendplugin.so
+%%QT_PLUGINDIR%%/kpmcore/pmdummybackendplugin.so
 share/dbus-1/system-services/org.kde.kpmcore.helperinterface.service
 share/dbus-1/system.d/org.kde.kpmcore.helperinterface.conf
 share/locale/ar/LC_MESSAGES/kpmcore.mo

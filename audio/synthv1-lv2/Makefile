@@ -1,6 +1,6 @@
 PORTNAME=	synthv1
 DISTVERSIONPREFIX=	${PORTNAME}_
-DISTVERSION=	0_9_24
+DISTVERSION=	0_9_25
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libjack.so:audio/jack \
 		liblo.so:audio/liblo
 
-USES=		cmake compiler:c++17-lang gl pkgconfig qt:5 \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:5 \
 		shared-mime-info
 USE_GL=		gl
 USE_QT=		core gui widgets xml buildtools_build linguisttools_build qmake_build

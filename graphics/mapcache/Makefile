@@ -1,8 +1,7 @@
 # Created by: Ryan Melcer <rmelcer@iteris.com>
 
 PORTNAME=		mapcache
-DISTVERSION=		1.10.0
-PORTREVISION=	1
+DISTVERSION=		1.12.1
 CATEGORIES=		graphics
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 

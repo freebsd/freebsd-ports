@@ -1,5 +1,5 @@
 PORTNAME=	libretro-prboom
-PORTVERSION=	0.20210214
+PORTVERSION=	0.20220327
 CATEGORIES=	games
 
 MAINTAINER=	dmenelkir@gmail.com
@@ -12,7 +12,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	cc80175
+GH_TAGNAME=	b22a6b1
 
 PLIST_FILES=	lib/libretro/prboom_libretro.so
 

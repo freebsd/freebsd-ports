@@ -10,6 +10,8 @@ include/rapidfuzz/distance/Hamming.hpp
 include/rapidfuzz/distance/Hamming.impl
 include/rapidfuzz/distance/Indel.hpp
 include/rapidfuzz/distance/Indel.impl
+include/rapidfuzz/distance/LCSseq.hpp
+include/rapidfuzz/distance/LCSseq.impl
 include/rapidfuzz/distance/Levenshtein.hpp
 include/rapidfuzz/distance/Levenshtein.impl
 include/rapidfuzz/fuzz.hpp
@@ -19,6 +21,8 @@ lib/Hamming.hpp
 lib/Hamming.impl
 lib/Indel.hpp
 lib/Indel.impl
+lib/LCSseq.hpp
+lib/LCSseq.impl
 lib/Levenshtein.hpp
 lib/Levenshtein.impl
 lib/cmake/rapidfuzz/rapidfuzzConfig.cmake

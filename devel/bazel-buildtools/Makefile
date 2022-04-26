@@ -1,5 +1,6 @@
 PORTNAME=	bazel-buildtools
 DISTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

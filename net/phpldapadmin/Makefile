@@ -13,14 +13,14 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe php:web,flavors tar:tgz
-USE_PHP=	gettext ldap openssl pcre session xml iconv hash
+CPE_VENDOR=	phpldapadmin_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	leenooks
 GH_PROJECT=	phpLDAPadmin
+USE_PHP=	gettext hash iconv ldap openssl pcre session xml
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-CPE_VENDOR=	phpldapadmin_project
 
 OPTIONS_DEFINE=	MCRYPT
 
@@ -45,7 +45,7 @@ SUB_FILES+=	pkg-message
 
 post-patch:
 	cd ${WRKSRC} ;							    \
-	cp lib/Attribute.php lib/PLAAttribute.php;			    \
+	${CP} lib/Attribute.php lib/PLAAttribute.php;			    \
 	${FIND} . ! -type d ! -name ${CFGFILE}.example ! -name .cvsignore   \
 	    ! -name .gitignore ! -name *.orig 				    \
 	    ! -name Attribute.php | ${SORT} |				    \

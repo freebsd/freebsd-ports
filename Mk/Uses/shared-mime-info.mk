@@ -9,9 +9,9 @@
 .if !defined(_INCLUDE_USES_SHARED_MIME_INFO_MK)
 _INCLUDE_USES_SHARED_MIME_INFO_MK=	yes
 
-.if !empty(shared-mime-info_ARGS)
+.  if !empty(shared-mime-info_ARGS)
 IGNORE=	USES=shared-mime-info does not require args
-.endif
+.  endif
 
 BUILD_DEPENDS+=	update-mime-database:misc/shared-mime-info
 RUN_DEPENDS+=	update-mime-database:misc/shared-mime-info

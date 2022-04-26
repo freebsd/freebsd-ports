@@ -317,6 +317,7 @@
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/GulpReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/JanaReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/MagresReader.js
+%%WWWDIR%%/j2s/J/adapter/readers/xtal/OptimadeReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/PWmatReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/ShelxReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/SiestaReader.js
@@ -325,6 +326,7 @@
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/VaspPoscarReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/Wien2kReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/XcrysdenReader.js
+%%WWWDIR%%/j2s/J/adapter/writers/XtlWriter.js
 %%WWWDIR%%/j2s/J/adapter/smarter/Atom.js
 %%WWWDIR%%/j2s/J/adapter/smarter/AtomIterator.js
 %%WWWDIR%%/j2s/J/adapter/smarter/AtomSetCollection.js
@@ -593,7 +595,6 @@
 %%WWWDIR%%/j2s/J/jvxl/readers/XmlReader.js
 %%WWWDIR%%/j2s/J/jvxl/readers/XplorReader.js
 %%WWWDIR%%/j2s/J/jvxl/readers/XsfReader.js
-%%WWWDIR%%/j2s/J/modelkit/Constraint.js
 %%WWWDIR%%/j2s/J/modelkit/ModelKit.js
 %%WWWDIR%%/j2s/J/modelkit/ModelKitPopup.js
 %%WWWDIR%%/j2s/J/modelkit/ModelKitPopupResourceBundle.js
@@ -1711,6 +1712,7 @@
 %%WWWDIR%%/jsme/license.txt
 %%WWWDIR%%/jsme/release_notes.txt
 %%WWWDIR%%/jsmetest.htm
+%%WWWDIR%%/jsmetest3.htm
 %%WWWDIR%%/jsmetest2.htm
 %%WWWDIR%%/jsmol.htm
 %%WWWDIR%%/jsmola.htm

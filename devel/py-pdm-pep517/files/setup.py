@@ -20,7 +20,10 @@ setup_kwargs = {
     'packages': [
         'pdm.pep517',
         'pdm.pep517._vendor',
+        'pdm.pep517._vendor.boolean',
         'pdm.pep517._vendor.cerberus',
+        'pdm.pep517._vendor.license_expression',
+        'pdm.pep517._vendor.license_expression.data',
         'pdm.pep517._vendor.packaging',
         'pdm.pep517._vendor.pyparsing',
         'pdm.pep517._vendor.pyparsing.diagram',
@@ -32,7 +35,6 @@ setup_kwargs = {
     'keywords': ['packaging', 'PEP 517', 'build'],
     'classifiers': [
         'Development Status :: 3 - Alpha',
-        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',

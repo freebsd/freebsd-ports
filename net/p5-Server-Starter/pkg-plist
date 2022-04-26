@@ -1,5 +1,5 @@
 bin/start_server
 %%SITE_PERL%%/Server/Starter.pm
 %%SITE_PERL%%/Server/Starter/Guard.pm
-%%PERL5_MAN3%%/Server::Starter.3.gz
 %%PERL5_MAN1%%/start_server.1.gz
+%%PERL5_MAN3%%/Server::Starter.3.gz

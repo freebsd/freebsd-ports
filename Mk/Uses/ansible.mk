@@ -40,23 +40,23 @@
 _INCLUDE_USES_ANSIBLE_MK=	yes
 
 _valid_ARGS=    env module plugin
-.for _arg in ${ansible_ARGS}
-.  if !${_valid_ARGS:M${_arg}}
+.  for _arg in ${ansible_ARGS}
+.    if !${_valid_ARGS:M${_arg}}
 IGNORE=	USES=ansible: invalid argument: ${_arg}
-.  endif
-.endfor
-.if ${ansible_ARGS:[#]} != 1
+.    endif
+.  endfor
+.  if ${ansible_ARGS:[#]} != 1
 IGNORE=	USES=ansible: too many arguments: ${ansible_ARGS}
-.endif
-.if empty(ansible_ARGS)
+.  endif
+.  if empty(ansible_ARGS)
 IGNORE=	USES=ansible: no arguments specified
-.endif
+.  endif
 
-.if !${USES:Mpython*}
+.  if !${USES:Mpython*}
 python_ARGS=	env
 _USES_POST+=		python:env
 .include "${USESDIR}/python.mk"
-.endif
+.  endif
 
 ANSIBLE_CMD?=		${LOCALBASE}/bin/ansible
 ANSIBLE_DOC_CMD?=	${LOCALBASE}/bin/ansible-doc
@@ -65,16 +65,16 @@ ANSIBLE_RUN_DEPENDS?=	${PYTHON_PKGNAMEPREFIX}ansible>0:sysutils/ansible@${PY_FLA
 ANSIBLE_DATADIR?=		${PREFIX}/share/${PYTHON_PKGNAMEPREFIX}ansible
 ANSIBLE_ETCDIR?=		${PREFIX}/etc/ansible
 ANSIBLE_PLUGINS_PREFIX?=	${ANSIBLE_DATADIR}/plugins
-.if ${ansible_ARGS} == "module"
+.  if ${ansible_ARGS} == "module"
 ANSIBLE_MODULESDIR?=		${ANSIBLE_PLUGINS_PREFIX}/modules
-.elif ${ansible_ARGS} == "plugin"
-.  if empty(ANSIBLE_PLUGIN_TYPE)
+.  elif ${ansible_ARGS} == "plugin"
+.    if empty(ANSIBLE_PLUGIN_TYPE)
 IGNORE=	ANSIBLE_PLUGIN_TYPE must be set
-.  endif
+.    endif
 ANSIBLE_PLUGINSDIR?=		${ANSIBLE_PLUGINS_PREFIX}/${ANSIBLE_PLUGIN_TYPE}
-.endif
+.  endif
 
-.if ${ansible_ARGS} == "module" || ${ansible_ARGS} == "plugin"
+.  if ${ansible_ARGS} == "module" || ${ansible_ARGS} == "plugin"
 RUN_DEPENDS+=	${ANSIBLE_RUN_DEPENDS}
-.endif
+.  endif
 .endif

@@ -1,5 +1,6 @@
 PORTNAME=	mongodb-tools
 DISTVERSION=	100.5.2
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	ronald-lists@klop.ws

@@ -18,7 +18,7 @@
 +#ifndef __FreeBSD__
  	long hwcaps = getauxval(AT_HWCAP2);
 +#else
-+	long hwcaps;
++	u_long hwcaps;
 +	elf_aux_info(AT_HWCAP2, &hwcaps, sizeof(hwcaps));
 +#endif
  

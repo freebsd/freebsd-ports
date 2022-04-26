@@ -1,0 +1,5 @@
+With this library you can use YARA from your Python programs. It covers all
+YARA’s features, from compiling, saving and loading rules to scanning files,
+strings and processes.
+
+WWW: https://github.com/MobSF/yara-python-dex

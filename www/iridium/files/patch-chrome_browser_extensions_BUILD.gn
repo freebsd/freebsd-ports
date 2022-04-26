@@ -1,0 +1,13 @@
+--- chrome/browser/extensions/BUILD.gn.orig	2022-04-01 07:48:30 UTC
++++ chrome/browser/extensions/BUILD.gn
+@@ -1299,6 +1299,10 @@ static_library("extensions") {
+     deps += [ "//chrome/services/printing/public/mojom" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [ "api/image_writer_private/removable_storage_provider_linux.cc" ]
++  }
++
+   if (enable_service_discovery) {
+     sources += [
+       "api/mdns/mdns_api.cc",

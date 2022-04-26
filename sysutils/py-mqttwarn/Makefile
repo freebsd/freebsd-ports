@@ -1,5 +1,5 @@
 PORTNAME=	mqttwarn
-DISTVERSION=	0.22.0
+DISTVERSION=	0.28.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -69,6 +69,9 @@ SSH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>2.4.1:security/py-paramiko@${PY
 TWILIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twilio>6.11.0:devel/py-twilio@${PY_FLAVOR}
 TWITTER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-twitter>=3.4.1:net/py-python-twitter@${PY_FLAVOR}
 WEBSOCKET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}websocket-client>=0.47.0:www/py-websocket-client@${PY_FLAVOR}
+
+post-patch:
+	@${RM} ${WRKSRC}/tests/bad_funcs.py
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=

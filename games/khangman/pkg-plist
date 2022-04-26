@@ -15,12 +15,12 @@ man/sv/man6/khangman.6.gz
 man/uk/man6/khangman.6.gz
 share/applications/org.kde.khangman.desktop
 share/config.kcfg/khangman.kcfg
-share/icons/hicolor/128x128/apps/khangman.png
 share/icons/hicolor/16x16/apps/khangman.png
 share/icons/hicolor/22x22/apps/khangman.png
 share/icons/hicolor/32x32/apps/khangman.png
 share/icons/hicolor/48x48/apps/khangman.png
 share/icons/hicolor/64x64/apps/khangman.png
+share/icons/hicolor/128x128/apps/khangman.png
 share/icons/hicolor/scalable/apps/khangman.svgz
 %%DATADIR%%/ca.txt
 %%DATADIR%%/cs.txt
@@ -58,7 +58,6 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 %%DATADIR%%/qml/MainSettingsDialog.qml
 %%DATADIR%%/qml/MySelectionDialog.qml
 %%DATADIR%%/qml/gallows/gallows1.png
-%%DATADIR%%/qml/gallows/gallows10.png
 %%DATADIR%%/qml/gallows/gallows2.png
 %%DATADIR%%/qml/gallows/gallows3.png
 %%DATADIR%%/qml/gallows/gallows4.png
@@ -67,6 +66,7 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 %%DATADIR%%/qml/gallows/gallows7.png
 %%DATADIR%%/qml/gallows/gallows8.png
 %%DATADIR%%/qml/gallows/gallows9.png
+%%DATADIR%%/qml/gallows/gallows10.png
 %%DATADIR%%/qml/main.qml
 %%DATADIR%%/qml/sounds/EW_Dialogue_Appear.ogg
 %%DATADIR%%/qml/sounds/EW_Dialogue_Appear.wav

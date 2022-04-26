@@ -1,5 +1,5 @@
 PORTNAME=	profanity
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12.1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -11,16 +11,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 LIB_DEPENDS=	libmesode.so:net-im/libmesode \
 		libcurl.so:ftp/curl \
-		libotr.so.5:security/libotr \
+		libotr.so:security/libotr \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libgpgme.so:security/gpgme \
 		libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgcrypt.so:security/libgcrypt \
 		libsignal-protocol-c.so:net/libsignal-protocol-c \
-		libsqlite3.so:databases/sqlite3
+		libstrophe.so:net-im/libstrophe
 
-USES=		cpe ncurses pkgconfig ssl python readline autoreconf libtool gnome
+USES=		cpe ncurses pkgconfig ssl python:3.8+ readline autoreconf libtool gnome \
+		sqlite:3
 CPE_VENDOR=	${PORTNAME}_project
 USE_GNOME=	glib20
 USE_GITHUB=	yes
@@ -41,7 +42,10 @@ NOTIFY_CONFIGURE_ENABLE=notifications
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} "s,python-config,${PYTHON_VERSION}-config,g" \
+	${REINPLACE_CMD} "s,python3-embed,python-${PYTHON_VER}-embed,g" \
 		${WRKSRC}/configure.ac
+
+post-install:
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/man/man1 "-name *\.1"
 
 .include <bsd.port.post.mk>

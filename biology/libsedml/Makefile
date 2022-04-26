@@ -1,6 +1,6 @@
 PORTNAME=	libsedml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.28
+DISTVERSION=	2.0.31
 CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,10 @@ GH_ACCOUNT=	fbergmann
 GH_PROJECT=	libSEDML
 
 post-install:
+	# no need to install LICENSE, README, VERSION
 	@${RM} -r ${STAGEDIR}${DATADIR}
+	# workaround for https://github.com/fbergmann/libSEDML/issues/163
+	${RM} -r ${STAGEDIR}${PREFIX}/share/cmake
 
 # the project builds static libs with -fPIC, see https://github.com/fbergmann/libSEDML/issues/155
 

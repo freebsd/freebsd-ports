@@ -1,7 +1,7 @@
 # Created by: Hye-Shik Chang
 
 PORTNAME=	pyparsing
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +22,8 @@ DIAGRAMS_DESC=	Diagram support
 
 DIAGRAMS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}railroad-diagrams>=0:graphics/py-railroad-diagrams@${PY_FLAVOR}
+
+post-patch:
+	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

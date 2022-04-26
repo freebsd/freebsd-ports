@@ -1,0 +1,21 @@
+SquashFS is a highly compressed, read-only file system often used as
+a root file system on embedded devices, live systems, or simply as a
+compressed archive format.
+
+This project originally started out as a fork of squashfs-tools 4.3,
+after encountering some short comings and realizing that there have
+been no updates on the SourceForge site or mailing list for a long
+time.  Even before the first public release, the fork was replaced
+with a complete re-write after growing frustrated with the existing
+code base.
+
+The utilities provided by squashfs-tools-ng offer alternative tooling
+and are intentionally named differently, so both packages can be
+installed side by side.
+
+The actual guts of squashfs-tools-ng are encapsulated in a library
+with a generic API designed to make SquashFS available to other
+applications as an embeddable, extensible archive format (or simply
+to read, write, or manipulate SquashFS file systems).
+
+WWW: https://infraroot.at/projects/squashfs-tools-ng/

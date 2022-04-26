@@ -1,7 +1,7 @@
 # Created by: Andrew Lewis <freeghb@gmail.com>
 
 PORTNAME=	luasec
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}

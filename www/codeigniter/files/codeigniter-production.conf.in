@@ -3,12 +3,6 @@ AddType application/x-httpd-php-source .phps
 DirectoryIndex index.php index.html
 
 DocumentRoot %%WWWDIR%%
-%%HASHMARK%%Alias /user_guide %%DOCSDIR%%
-
-%%HASHMARK%%<Location /user_guide>
-%%HASHMARK%%    Order deny,allow
-%%HASHMARK%%    Allow from all
-%%HASHMARK%%</Location>
 
 <Location />
     Order deny,allow

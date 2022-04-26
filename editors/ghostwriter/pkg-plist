@@ -1,7 +1,7 @@
 bin/ghostwriter
-share/appdata/ghostwriter.appdata.xml
 share/applications/ghostwriter.desktop
 %%DATADIR%%/translations/ghostwriter_ar.qm
+%%DATADIR%%/translations/ghostwriter_ca.qm
 %%DATADIR%%/translations/ghostwriter_cs.qm
 %%DATADIR%%/translations/ghostwriter_de.qm
 %%DATADIR%%/translations/ghostwriter_en.qm
@@ -9,10 +9,12 @@ share/applications/ghostwriter.desktop
 %%DATADIR%%/translations/ghostwriter_fr.qm
 %%DATADIR%%/translations/ghostwriter_it.qm
 %%DATADIR%%/translations/ghostwriter_ja.qm
+%%DATADIR%%/translations/ghostwriter_nb_NO.qm
 %%DATADIR%%/translations/ghostwriter_nl.qm
 %%DATADIR%%/translations/ghostwriter_pl.qm
 %%DATADIR%%/translations/ghostwriter_pt_BR.qm
 %%DATADIR%%/translations/ghostwriter_ru.qm
+%%DATADIR%%/translations/ghostwriter_sv.qm
 %%DATADIR%%/translations/ghostwriter_zh.qm
 share/icons/hicolor/128x128/apps/ghostwriter.png
 share/icons/hicolor/16x16/apps/ghostwriter.png
@@ -24,4 +26,4 @@ share/icons/hicolor/48x48/apps/ghostwriter.png
 share/icons/hicolor/64x64/apps/ghostwriter.png
 share/icons/hicolor/scalable/apps/ghostwriter.svg
 share/man/man1/ghostwriter.1.gz
-share/pixmaps/ghostwriter.xpm
+share/metainfo/ghostwriter.appdata.xml

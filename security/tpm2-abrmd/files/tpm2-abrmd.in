@@ -12,13 +12,61 @@
 . /etc/rc.subr
 
 name=tpm2_abrmd
-desc=TPM2 Access Broker & Resource Management Daemon
+desc="TPM2 Access Broker & Resource Management Daemon"
 rcvar=tpm2_abrmd_enable
 load_rc_config ${name}
 
 : ${tpm2_abrmd_enable:=NO}
 
 command=%%PREFIX%%/sbin/tpm2-abrmd
-tpm2_abrmd_user=_tss
+tpm2_abrmd_user="_tss"
+tpm2_abrmd_group="_tss"
+pidfile="/var/run/${name}.pid"
+logfile="/var/log/${name}.log"
+start_cmd="tpm2_abrmd_start"
+stop_cmd="tpm2_abrmd_stop"
+status_cmd="tpm2_abrmd_status"
+
+is_process_running() {
+    [ -f ${pidfile} ] && procstat `cat ${pidfile}` >/dev/null 2>&1
+}
+
+tpm2_abrmd_start()
+{
+    if is_process_running; then
+        echo "${name} already running as pid $(cat $pidfile)"
+        return 1
+    fi
+
+    touch $logfile
+    chmod 640 $logfile
+    chown -R ${tpm2_abrmd_user}:${tpm2_abrmd_group} ${logfile}
+    /usr/sbin/daemon -P ${pidfile} -u ${tpm2_abrmd_user} ${command} >>${logfile} 2>&1
+
+    if is_process_running; then
+        echo "Started ${name}, pid $(cat ${pidfile})"
+    else
+        echo "Failed to start ${name}"
+    fi
+}
+
+tpm2_abrmd_stop()
+{
+    if is_process_running; then
+        echo "Stopping ${name}"
+        kill -- -$(cat ${pidfile})
+        /bin/rm -f ${pidfile}
+    else
+        echo "${name} isn't running"
+    fi
+}
+
+tpm2_abrmd_status() {
+    if is_process_running; then
+        echo "${name} is running as pid $(cat ${pidfile})"
+    else
+        echo "${name} isn't running"
+    fi
+}
 
 run_rc_command "$1"

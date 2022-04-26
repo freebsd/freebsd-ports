@@ -11,6 +11,8 @@ LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 		libvorbisfile.so:audio/libvorbis \
 		libnvtt.so:graphics/nvidia-texture-tools
 
+BROKEN=		does not link: ld: error: undefined symbol: nv::mem::malloc
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	abramcumner
 GH_TAGNAME=	52721d2

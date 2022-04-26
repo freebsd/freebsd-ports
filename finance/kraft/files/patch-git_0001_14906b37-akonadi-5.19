@@ -1,0 +1,92 @@
+From 3894d1d013310d9212c1df42dbde2161dec16645 Mon Sep 17 00:00:00 2001
+From: Klaas Freitag <kraft@freisturz.de>
+Date: Sat, 9 Oct 2021 12:00:44 +0200
+Subject: [PATCH 1/2] Merge pull request #116 from
+ kossebau/prepareforakonadi2112
+
+Adapt to new Akonadi includes in Akonadi 5.19
+---
+ src/addressprovider_akonadi.cpp | 15 ++++++++++++++-
+ src/addressprovider_akonadi.h   |  8 +++++++-
+ src/addressselectorwidget.cpp   |  6 ++++++
+ 3 files changed, 27 insertions(+), 2 deletions(-)
+
+diff --git src/addressprovider_akonadi.cpp src/addressprovider_akonadi.cpp
+index edb9d0c..4a809a8 100644
+--- src/addressprovider_akonadi.cpp
++++ src/addressprovider_akonadi.cpp
+@@ -21,16 +21,29 @@
+ #include <QDebug>
+ 
+ #ifdef HAVE_AKONADI
++#include "akonadi/contact/contactsearchjob.h"
++#include <akonadi_version.h>
++#if AKONADI_VERSION >= QT_VERSION_CHECK(5, 18, 41)
++#include <Akonadi/ItemFetchJob>
++#include <Akonadi/ItemFetchScope>
++
++#include <Akonadi/CollectionFetchJob>
++
++#include <Akonadi/ItemFetchJob>
++#include <Akonadi/ItemFetchScope>
++#include <Akonadi/EntityDisplayAttribute>
++#include <Akonadi/Control>
++#else
+ #include <AkonadiCore/ItemFetchJob>
+ #include <AkonadiCore/ItemFetchScope>
+ 
+-#include "akonadi/contact/contactsearchjob.h"
+ #include <AkonadiCore/CollectionFetchJob>
+ 
+ #include <AkonadiCore/ItemFetchJob>
+ #include <AkonadiCore/ItemFetchScope>
+ #include <AkonadiCore/entitydisplayattribute.h>
+ #include <AkonadiCore/control.h>
++#endif
+ 
+ using namespace Akonadi;
+ #endif
+diff --git src/addressprovider_akonadi.h src/addressprovider_akonadi.h
+index fde0f44..14f6aa2 100644
+--- src/addressprovider_akonadi.h
++++ src/addressprovider_akonadi.h
+@@ -25,9 +25,15 @@
+ 
+ #ifdef HAVE_AKONADI
+ #include <kjob.h>
++#include <akonadi/contact/contactstreemodel.h>
++#include <akonadi_version.h>
++#if AKONADI_VERSION >= QT_VERSION_CHECK(5, 18, 41)
++#include <Akonadi/Session>
++#include <Akonadi/ChangeRecorder>
++#else
+ #include <AkonadiCore/session.h>
+ #include <AkonadiCore/changerecorder.h>
+-#include <akonadi/contact/contactstreemodel.h>
++#endif
+ #endif
+ 
+ class QAbstractItemModel;
+diff --git src/addressselectorwidget.cpp src/addressselectorwidget.cpp
+index ad450c9..bf0c95d 100644
+--- src/addressselectorwidget.cpp
++++ src/addressselectorwidget.cpp
+@@ -37,9 +37,15 @@
+ #include <kcontacts/contactgroup.h>
+ 
+ #ifdef HAVE_AKONADI
++#include <akonadi_version.h>
++#if AKONADI_VERSION >= QT_VERSION_CHECK(5, 18, 41)
++#include <Akonadi/EntityTreeModel>
++#include <Akonadi/EntityTreeView>
++#else
+ #include <entitytreemodel.h>
+ #include <entitytreeview.h>
+ #endif
++#endif
+ 
+ /* ==================================================================== */
+ AddressSortProxyModel::AddressSortProxyModel(AddressProvider *provider, QObject *parent)
+-- 
+2.36.0
+

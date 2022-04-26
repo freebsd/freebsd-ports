@@ -2,6 +2,7 @@
 
 PORTNAME=	libffcall
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -22,12 +23,6 @@ CONFIGURE_ARGS=		--enable-shared
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=		-fPIC
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH:Mpowerpc64*}
-USES+=		compiler:gcc-c++11-lib
-.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavcall.so \

@@ -18,7 +18,7 @@ USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
 
 # Versioning values, to reduce plist churn (match with devel/kdevelop)
-PLATFORM_VER=	35
+PLATFORM_VER=	36
 PLIST_SUB+=	PLATFORM_VER=${PLATFORM_VER}
 
 # Does not build with jobs.

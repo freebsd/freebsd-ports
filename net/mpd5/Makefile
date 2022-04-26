@@ -2,7 +2,7 @@
 
 PORTNAME=	mpd
 DISTVERSION=	5.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Mpd5/Mpd-${PORTVERSION}
 PKGNAMESUFFIX=	5
@@ -50,7 +50,8 @@ USE_RC_SUBR=	mpd5
 CONFSUF=	conf secret script
 DOCSDIR=	${PREFIX}/share/doc/mpd5
 PORTDOCS=	README mpd*
-PLIST_FILES=	${CONFSUF:S/^/etc\/mpd5\/mpd./:S/$/.sample/} sbin/mpd5
+PLIST_FILES=	${CONFSUF:C|(.*)|"@sample etc/mpd5/mpd.\1.sample"|} \
+		sbin/mpd5
 
 .if !defined(WITHOUT_MAN)
 PLIST_FILES+=	man/man8/mpd5.8.gz

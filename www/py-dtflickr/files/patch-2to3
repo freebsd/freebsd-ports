@@ -1,0 +1,103 @@
+--- dtflickr/__init__.py.orig	2009-09-21 01:59:19 UTC
++++ dtflickr/__init__.py
+@@ -19,10 +19,10 @@
+ #  limitations under the License.
+ 
+ import hashlib
+-import _methods
++from . import _methods
+ import re
+ import time
+-import urllib, urllib2
++import urllib.request, urllib.parse, urllib.error, urllib.request, urllib.error, urllib.parse
+ 
+ try:
+ 	import simplejson as json
+@@ -50,7 +50,7 @@ for namespace, methods in _methods.namespaces:
+ 	for method, documentation in methods:
+ 		code += ' def ' + method + '(self, **arguments):\n  ' + repr(documentation) + '\n  return self._execute(\'' + method + '\', **arguments)\n'
+ 
+-	exec code in globals(), locals()
++	exec(code, globals(), locals())
+ 
+ del namespace, methods, method, documentation, code
+ 
+@@ -92,19 +92,19 @@ class Flickr:
+ 			self.__signature = None
+ 
+ 		for namespace, methods in _methods.namespaces:
+-			exec 'self.' + namespace + ' = ' + _methods.namespace(namespace) + '(self)'
++			exec('self.' + namespace + ' = ' + _methods.namespace(namespace) + '(self)')
+ 
+ 		self.__cache = {}
+ 
+ 	def _execute(self, method, **arguments):
+-		for name, value in arguments.iteritems():
+-			arguments[name] = unicode(value).encode('utf8')
++		for name, value in arguments.items():
++			arguments[name] = str(value).encode('utf8')
+ 
+ 		arguments['api_key'] = self.__api_key
+ 		arguments['format'] = 'json'
+ 		arguments['method'] = 'flickr.' + method
+ 		arguments['nojsoncallback'] = 1
+-		parameters = arguments.items()
++		parameters = list(arguments.items())
+ 
+ 		parameters.sort()
+ 
+@@ -112,31 +112,31 @@ class Flickr:
+ 			signature = self.__signature.copy()
+ 
+ 			for name, value in parameters:
+-				signature.update(name + unicode(value).encode('utf8'))
++				signature.update(name + str(value).encode('utf8'))
+ 
+ 			parameters.append(('api_sig', signature.hexdigest()))
+ 
+-		parameters = urllib.urlencode(parameters)
++		parameters = urllib.parse.urlencode(parameters)
+ 		cached = self.__cache.get(parameters)
+ 
+ 		if cached is not None and cached[0] > time.time():
+ 			response = cached[1]
+ 			now = time.time()
+ 
+-			for parameters, cached in self.__cache.items():
++			for parameters, cached in list(self.__cache.items()):
+ 				if cached[0] <= now:
+ 					del self.__cache[parameters]
+ 
+ 			return response
+ 
+-		response = json.load(urllib2.urlopen('http://api.flickr.com/services/rest/', parameters), object_hook = Response)
++		response = json.load(urllib.request.urlopen('http://api.flickr.com/services/rest/', parameters), object_hook = Response)
+ 
+ 		if response.stat == 'ok':
+ 			self.__cache[parameters] = (time.time() + 60, response)
+ 
+ 			return response
+ 		else:
+-			raise Failure, response
++			raise Failure(response)
+ 
+ class Response:
+ 	def __init__(self, data):
+@@ -158,7 +158,7 @@ class Response:
+ 		return self.__data[name]
+ 
+ 	def __iter__(self):
+-		return self.__data.iteritems()
++		return iter(self.__data.items())
+ 
+ 	def __contains__(self, name):
+ 		return name in self.__data
+@@ -230,7 +230,7 @@ def getBuddyiconURL(person, flickr = None):
+ 	  flickr (Optional)
+ 	    A Flickr API instance used to get a person response.
+ 	"""
+-	if isinstance(person, basestring):
++	if isinstance(person, str):
+ 		assert flickr is not None and isinstance(flickr, Flickr)
+ 
+ 		person = flickr.people.getInfo(user_id = person).person

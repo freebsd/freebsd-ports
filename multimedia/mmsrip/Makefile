@@ -11,6 +11,9 @@ COMMENT=	MMS ripper - a client for the proprietary protocol mms://
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Obsolete, Microsoft deprecated MMS in 2003
+EXPIRATION_DATE=2022-06-30
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/mmsrip \

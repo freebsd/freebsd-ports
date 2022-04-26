@@ -1,0 +1,138 @@
+--- src/zope/structuredtext/docbook.py.orig	2010-12-03 16:46:32 UTC
++++ src/zope/structuredtext/docbook.py
+@@ -81,7 +81,7 @@ class DocBook:
+                 getattr(self, self.element_types[c.getNodeName()]
+                        )(c, level, output)
+             except:
+-                print "failed", c.getNodeName(), c
++                print("failed", c.getNodeName(), c)
+         output('</title>\n')
+ 
+     def description(self, doc, level, output):
+--- src/zope/structuredtext/stng.py.orig	2010-12-03 16:46:32 UTC
++++ src/zope/structuredtext/stng.py
+@@ -14,7 +14,7 @@
+ """
+ 
+ import re
+-import stdom
++from . import stdom
+ 
+ __metaclass__ = type
+ 
+@@ -50,7 +50,7 @@ def display(struct):
+     orignal paragraphs.
+     """
+     if struct.getColorizableTexts():
+-        print '\n'.join(struct.getColorizableTexts())
++        print('\n'.join(struct.getColorizableTexts()))
+     if struct.getSubparagraphs():
+         for x in struct.getSubparagraphs():
+             display(x)
+@@ -61,7 +61,7 @@ def display2(struct):
+     orignal paragraphs.
+     """
+     if struct.getNodeValue():
+-        print struct.getNodeValue(),"\n"
++        print(struct.getNodeValue(),"\n")
+     if struct.getSubparagraphs():
+         for x in struct.getSubparagraphs():
+             display(x)
+@@ -70,11 +70,11 @@ def findlevel(levels,indent):
+     """Remove all level information of levels with a greater level of
+     indentation. Then return which level should insert this paragraph
+     """
+-    keys = levels.keys()
++    keys = list(levels.keys())
+     for key in keys:
+         if levels[key] > indent:
+             del(levels[key])
+-    keys = levels.keys()
++    keys = list(levels.keys())
+     if not(keys):
+         return 0
+     else:
+@@ -180,8 +180,8 @@ class StructuredTextParagraph(stdom.Element):
+         self._src = src
+         self._subs = list(subs)
+ 
+-        self._attributes = kw.keys()
+-        for k, v in kw.items():
++        self._attributes = list(kw.keys())
++        for k, v in list(kw.items()):
+             setattr(self, k, v)
+ 
+     def getChildren(self):
+@@ -223,7 +223,7 @@ class StructuredTextParagraph(stdom.Element):
+           ('%s(' % self.__class__.__name__)
+           +str(self._src)+', ['
+           )
+-        for p in self._subs: a(`p`)
++        for p in self._subs: a(repr(p))
+         a((' '*(self.indent or 0))+'])')
+         return '\n'.join(r)
+ 
+@@ -248,7 +248,7 @@ class StructuredTextDocument(StructuredTextParagraph):
+     def __repr__(self):
+         r=[]; a=r.append
+         a('%s([' % self.__class__.__name__)
+-        for p in self._subs: a(`p`+',')
++        for p in self._subs: a(repr(p)+',')
+         a('])')
+         return '\n'.join(r)
+ 
+@@ -470,8 +470,8 @@ class StructuredTextMarkup(stdom.Element):
+ 
+     def __init__(self, value, **kw):
+         self._value = value
+-        self._attributes = kw.keys()
+-        for key, value in kw.items():
++        self._attributes = list(kw.keys())
++        for key, value in list(kw.items()):
+             setattr(self, key, value)
+ 
+     def getChildren(self):
+@@ -487,7 +487,7 @@ class StructuredTextMarkup(stdom.Element):
+         self._value=v[0]
+ 
+     def __repr__(self):
+-        return '%s(%s)' % (self.__class__.__name__, `self._value`)
++        return '%s(%s)' % (self.__class__.__name__, repr(self._value))
+ 
+ class StructuredTextLiteral(StructuredTextMarkup):
+     def getColorizableTexts(self):
+--- src/zope/structuredtext/tests.py.orig	2010-12-03 16:46:32 UTC
++++ src/zope/structuredtext/tests.py
+@@ -45,7 +45,7 @@ class StngTests(unittest.TestCase):
+             doc = Document()
+             raw_text = readFile(regressions, f)
+             text = stng.structurize(raw_text)
+-            self.assert_(doc(text))
++            self.assertTrue(doc(text))
+ 
+     def testRegressionsTests(self):
+         # HTML regression test
+@@ -73,9 +73,9 @@ class BasicTests(unittest.TestCase):
+         doc = DocumentWithImages()(doc)
+         output = HTMLWithImages()(doc, level=1)
+         if not expected in output:
+-            print "Text:     ", stxtxt.encode('utf-8')
+-            print "Converted:", output.encode('utf-8')
+-            print "Expected: ", expected.encode('utf-8')
++            print("Text:     ", stxtxt.encode('utf-8'))
++            print("Converted:", output.encode('utf-8'))
++            print("Expected: ", expected.encode('utf-8'))
+             self.fail("'%s' not in result" % expected)        
+ 
+     def testUnderline(self):
+@@ -279,8 +279,8 @@ class BasicTests(unittest.TestCase):
+     def testUnicodeContent(self):
+         # This fails because ST uses the default locale to get "letters"
+         # whereas it should use \w+ and re.U if the string is Unicode.
+-        self._test(u"h\xe9 **y\xe9** xx",
+-                  u"h\xe9 <strong>y\xe9</strong> xx")
++        self._test("h\xe9 **y\xe9** xx",
++                  "h\xe9 <strong>y\xe9</strong> xx")
+ 
+ def test_suite():
+     suite = unittest.TestSuite()

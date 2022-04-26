@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2022-03-25 21:59:56 UTC
 +++ chrome/browser/ui/views/tabs/tab_drag_controller.cc
-@@ -468,7 +468,7 @@ void TabDragController::Init(TabDragContext* source_co
+@@ -480,7 +480,7 @@ void TabDragController::Init(TabDragContext* source_co
    //     synchronous on desktop Linux, so use that.
    // - Chrome OS
    //     Releasing capture on Ash cancels gestures so avoid it.
@@ -9,7 +9,7 @@
    can_release_capture_ = false;
  #endif
    start_point_in_screen_ = gfx::Point(source_view_offset, mouse_offset.y());
-@@ -916,7 +916,7 @@ TabDragController::DragBrowserToNewTabStrip(TabDragCon
+@@ -1021,7 +1021,7 @@ TabDragController::DragBrowserToNewTabStrip(TabDragCon
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,7 +18,7 @@
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -2128,7 +2128,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -2350,7 +2350,7 @@ TabDragController::Liveness TabDragController::GetLoca
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

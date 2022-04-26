@@ -1,5 +1,5 @@
 PORTNAME=	lebiniou-data
-DISTVERSION=	3.65.0
+DISTVERSION=	3.66.0
 CATEGORIES=	multimedia graphics 
 
 MAINTAINER=	olivier@biniou.info
@@ -12,7 +12,7 @@ USES=		autoreconf
 
 USE_GITLAB=	YES
 GL_ACCOUNT=	lebiniou
-GL_COMMIT=	fabf3b808f55cff1acf838c47d4a023c18bbe65e
+GL_COMMIT=	18949ea967b3616d251ea7eeac7f2409991a9030
 
 GNU_CONFIGURE=	YES
 

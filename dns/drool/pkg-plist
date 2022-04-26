@@ -1,7 +1,6 @@
 bin/drool
 man/man1/drool.1.gz
-man/man5/drool.conf.5.gz
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NOTES.md
-%%PORTDOCS%%%%DOCSDIR%%/README.md
+man/man1/drool-replay.1.gz
+man/man1/drool-respdiff.1.gz
+%%DATADIR%%/lib/drool/replay.lua
+%%DATADIR%%/lib/drool/respdiff.lua

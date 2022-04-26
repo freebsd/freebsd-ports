@@ -11,6 +11,9 @@ COMMENT=	Enterprise scalable realtime graphing platform
 
 LICENSE=	APACHE20
 
+DEPRECATED=	No support for newer versions of Django
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:graphics/py-cairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}carbon>=${PORTVERSION}:databases/py-carbon@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-tagging>=0.4.2:www/py-django-tagging@${PY_FLAVOR} \

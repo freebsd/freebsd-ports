@@ -1,0 +1,3414 @@
+--- groopm/PCA.py.orig	2014-11-26 01:01:33 UTC
++++ groopm/PCA.py
+@@ -79,7 +79,7 @@ class PCA:
+         try:
+             self.sumvariance /= self.sumvariance[-1]
+         except:
+-            print len(A), len(self.sumvariance), len(self.eigen)
++            print(len(A), len(self.sumvariance), len(self.eigen))
+             raise
+ 
+         self.npc = np.searchsorted( self.sumvariance, fraction ) + 1
+@@ -127,13 +127,13 @@ class Center:
+     def __init__( self, A, axis=0, scale=True, verbose=1 ):
+         self.mean = A.mean(axis=axis)
+         if verbose:
+-            print "Center -= A.mean:", self.mean
++            print("Center -= A.mean:", self.mean)
+         A -= self.mean
+         if scale:
+             std = A.std(axis=axis)
+             self.std = np.where( std, std, 1. )
+             if verbose:
+-                print "Center /= A.std:", self.std
++                print("Center /= A.std:", self.std)
+             A /= self.std
+         else:
+             self.std = np.ones( A.shape[-1] )
+--- groopm/bin.py.orig	2015-03-06 07:01:36 UTC
++++ groopm/bin.py
+@@ -59,8 +59,8 @@ from numpy import (around as np_around,
+                    median as np_median,
+                    std as np_std)
+ 
+-from ellipsoid import EllipsoidTool
+-from groopmExceptions import ModeNotAppropriateException
++from .ellipsoid import EllipsoidTool
++from .groopmExceptions import ModeNotAppropriateException
+ 
+ np.seterr(all='raise')
+ 
+@@ -155,7 +155,7 @@ class Bin:
+         """Combine the contigs of another bin with this one"""
+         # consume all the other bins rowIndices
+         if(verbose):
+-            print "    BIN:",deadBin.id,"will be consumed by BIN:",self.id
++            print("    BIN:",deadBin.id,"will be consumed by BIN:",self.id)
+         self.rowIndices = np.concatenate([self.rowIndices, deadBin.rowIndices])
+         self.binSize  = self.rowIndices.shape[0]
+ 
+@@ -326,7 +326,7 @@ class Bin:
+             try:
+                 return ET.getMinVolEllipse(bin_points, retA=retA)
+             except:
+-                print bin_points
++                print(bin_points)
+                 raise
+         else: # minimum bounding ellipse of a point is 0
+             if retA:
+@@ -474,13 +474,13 @@ class Bin:
+                 fig.set_size_inches(10,4)
+                 plt.savefig(fileName,dpi=300)
+             except:
+-                print "Error saving image:", fileName, sys.exc_info()[0]
++                print("Error saving image:", fileName, sys.exc_info()[0])
+                 raise
+         else:
+             try:
+                 plt.show()
+             except:
+-                print "Error showing image:", sys.exc_info()[0]
++                print("Error showing image:", sys.exc_info()[0])
+                 raise
+         del fig
+ 
+@@ -504,13 +504,13 @@ class Bin:
+                 fig.set_size_inches(6,6)
+                 plt.savefig(fileName+".png",dpi=300)
+             except:
+-                print "Error saving image:", fileName, sys.exc_info()[0]
++                print("Error saving image:", fileName, sys.exc_info()[0])
+                 raise
+         elif(show):
+             try:
+                 plt.show()
+             except:
+-                print "Error showing image:", sys.exc_info()[0]
++                print("Error showing image:", sys.exc_info()[0])
+                 raise
+         plt.close(fig)
+         del fig
+@@ -636,8 +636,8 @@ class Bin:
+ 
+         If you pass through an EllipsoidTool then it will plot the minimum bounding ellipse as well!
+         """
+-        disp_vals = np.array(zip([kPCA1[i] for i in self.rowIndices],
+-                                 [kPCA2[i] for i in self.rowIndices]))
++        disp_vals = np.array(list(zip([kPCA1[i] for i in self.rowIndices],
++                                 [kPCA2[i] for i in self.rowIndices])))
+         disp_lens = np.array([np.sqrt(contigLengths[i]) for i in self.rowIndices])
+ 
+         # reshape
+@@ -695,7 +695,7 @@ class Bin:
+             data = [str(self.id), str(isLikelyChimeric[self.id]), str(self.totalBP), str(self.binSize), gcm_str, gcs_str]
+             cov_mean = np.mean(covProfiles[self.rowIndices], axis=0)
+             cov_std = np.std(covProfiles[self.rowIndices], axis=0)
+-            for i in xrange(0, len(cov_mean)):
++            for i in range(0, len(cov_mean)):
+                 data.append('%.4f' % cov_mean[i])
+                 data.append('%.4f' % cov_std[i])
+             stream.write(separator.join(data)+"\n")
+--- groopm/binManager.py.orig	2015-03-06 07:02:49 UTC
++++ groopm/binManager.py
+@@ -85,11 +85,11 @@ from scipy.stats import f_oneway, distributions
+ from scipy.cluster.vq import kmeans,vq
+ 
+ # GroopM imports
+-from profileManager import ProfileManager
+-from bin import Bin, mungeCbar
+-import groopmExceptions as ge
+-from groopmUtils import makeSurePathExists
+-from ellipsoid import EllipsoidTool
++from .profileManager import ProfileManager
++from .bin import Bin, mungeCbar
++from . import groopmExceptions as ge
++from .groopmUtils import makeSurePathExists
++from .ellipsoid import EllipsoidTool
+ 
+ np_seterr(all='raise')
+ 
+@@ -182,15 +182,15 @@ class BinManager:
+                 if self.PM.numStoits == 3:
+                     self.PM.transformedCP = self.PM.covProfiles
+                 else:
+-                    print "Number of stoits != 3. You need to transform"
++                    print("Number of stoits != 3. You need to transform")
+                     self.PM.transformCP(timer, silent=silent)
+             if not silent:
+-                print "    Making bin objects"
++                print("    Making bin objects")
+             self.makeBins(self.getBinMembers())
+             if not silent:
+-                print "    Loaded %d bins from database" % len(self.bins)
++                print("    Loaded %d bins from database" % len(self.bins))
+         if not silent:
+-            print "    %s" % timer.getTimeStamp()
++            print("    %s" % timer.getTimeStamp())
+             sys_stdout.flush()
+ 
+     def getBinMembers(self):
+@@ -210,7 +210,7 @@ class BinManager:
+ 
+         # we need to get the largest BinId in use
+         if len(bin_members) > 0:
+-            self.nextFreeBinId = np_max(bin_members.keys())
++            self.nextFreeBinId = np_max(list(bin_members.keys()))
+         return bin_members
+ 
+     def makeBins(self, binMembers, zeroIsBin=False):
+@@ -224,8 +224,8 @@ class BinManager:
+                     self.bins[bid] = Bin(np_array(binMembers[bid]), bid, self.PM.scaleFactor-1)
+                     self.bins[bid].makeBinDist(self.PM.transformedCP, self.PM.averageCoverages, self.PM.kmerNormPC1, self.PM.kmerPCs, self.PM.contigGCs, self.PM.contigLengths)
+         if len(invalid_bids) != 0:
+-            print "MT bins!"
+-            print invalid_bids
++            print("MT bins!")
++            print(invalid_bids)
+             exit(-1)
+ 
+     def saveBins(self, binAssignments={}, nuke=False):
+@@ -384,7 +384,7 @@ class BinManager:
+                     all_links[key] = links[link]
+ 
+         # sort and return
+-        return sorted(all_links.iteritems(), key=itemgetter(1), reverse=True)
++        return sorted(iter(all_links.items()), key=itemgetter(1), reverse=True)
+ 
+     def getWithinLinkProfiles(self):
+         """Determine the average number of links between contigs for all bins"""
+@@ -468,7 +468,7 @@ class BinManager:
+         (bin_assignment_update, bids) = self.getSplitties(bid, n, mode)
+ 
+         if(auto and saveBins):
+-            print 'here!!!!'
++            print('here!!!!')
+             # charge on through
+             self.deleteBins([bids[0]], force=True)  # delete the combined bin
+             # save new bins
+@@ -536,12 +536,12 @@ class BinManager:
+             parts = 0
+             while(not_got_parts):
+                 try:
+-                    parts = int(raw_input("Enter new number of parts:"))
++                    parts = int(input("Enter new number of parts:"))
+                 except ValueError:
+-                    print "You need to enter an integer value!"
++                    print("You need to enter an integer value!")
+                     parts = 0
+                 if(1 == parts):
+-                    print "Don't be a silly sausage!"
++                    print("Don't be a silly sausage!")
+                 elif(0 != parts):
+                     not_got_parts = False
+                     self.split(bid,
+@@ -664,7 +664,7 @@ class BinManager:
+         F_cutoff =  distributions.f.ppf(confidence, 2, len(dist1)+len(dist2)-2)
+         F_value = f_oneway(dist1,dist2)[0]
+         if tag != "":
+-            print "%s [V: %f, C: %f]" % (tag, F_value, F_cutoff)
++            print("%s [V: %f, C: %f]" % (tag, F_value, F_cutoff))
+         return F_value < F_cutoff
+ 
+     def merge(self, bids, auto=False, manual=False, newBid=False, saveBins=False, verbose=False, printInstructions=True, use_elipses=True):
+@@ -715,11 +715,11 @@ class BinManager:
+                 self.deleteBins([tmp_bin.id], force=True)
+                 user_option = self.promptOnMerge(bids=[parent_bin.id,dead_bin.id])
+                 if(user_option == "N"):
+-                    print "Merge skipped"
++                    print("Merge skipped")
+                     ret_val = 1
+                     continue_merge=False
+                 elif(user_option == "Q"):
+-                    print "All mergers skipped"
++                    print("All mergers skipped")
+                     return 0
+                 else:
+                     ret_val = 2
+@@ -799,7 +799,7 @@ class BinManager:
+                         try:
+                             del self.PM.binnedRowIndices[row_index]
+                         except KeyError:
+-                            print bid, row_index, "FUNG"
++                            print(bid, row_index, "FUNG")
+                         self.PM.binIds[row_index] = 0
+ 
+                         bin_assignment_update[row_index] = 0
+@@ -826,7 +826,7 @@ class BinManager:
+ # UI
+ 
+     def printMergeInstructions(self):
+-        raw_input( "****************************************************************\n"
++        input( "****************************************************************\n"
+                    " MERGING INSTRUCTIONS - PLEASE READ CAREFULLY\n"
+                    "****************************************************************\n"
+                    " The computer cannot always be trusted to perform bin mergers\n"
+@@ -836,10 +836,10 @@ class BinManager:
+                    " to continue with the merging operation.\n"
+                    " The image on the far right shows the bins after merging\n"
+                    " Press any key to produce plots...")
+-        print "****************************************************************"
++        print("****************************************************************")
+ 
+     def printSplitInstructions(self):
+-        raw_input( "****************************************************************\n"
++        input( "****************************************************************\n"
+                    " SPLITTING INSTRUCTIONS - PLEASE READ CAREFULLY\n"
+                    "****************************************************************\n"
+                    " The computer cannot always be trusted to perform bin splits\n"
+@@ -848,7 +848,7 @@ class BinManager:
+                    " be split. Look carefully at each plot and then close the plot\n"
+                    " to continue with the splitting operation.\n\n"
+                    " Press any key to produce plots...")
+-        print "****************************************************************"
++        print("****************************************************************")
+ 
+     def getPlotterMergeIds(self):
+         """Prompt the user for ids to be merged and check that it's all good"""
+@@ -856,7 +856,7 @@ class BinManager:
+         ret_bids = []
+         while(input_not_ok):
+             ret_bids = []
+-            option = raw_input("Please enter 'space' separated bin Ids or 'q' to quit: ")
++            option = input("Please enter 'space' separated bin Ids or 'q' to quit: ")
+             if(option.upper() == 'Q'):
+                 return []
+             bids = option.split(" ")
+@@ -866,13 +866,13 @@ class BinManager:
+                     i_bid = int(bid)
+                     # check that it's in the bins list
+                     if(i_bid not in self.bins):
+-                        print "**Error: bin",bid,"not found"
++                        print("**Error: bin",bid,"not found")
+                         input_not_ok = True
+                         break
+                     input_not_ok = False
+                     ret_bids.append(i_bid)
+                 except ValueError:
+-                    print "**Error: invalid value:", bid
++                    print("**Error: invalid value:", bid)
+                     input_not_ok = True
+                     break
+         return ret_bids
+@@ -889,19 +889,19 @@ class BinManager:
+                 bin_str += " and "+str(bids[i])
+         while(input_not_ok):
+             if(minimal):
+-                option = raw_input(" Merge? ("+vrs+") : ")
++                option = input(" Merge? ("+vrs+") : ")
+             else:
+-                option = raw_input(" ****WARNING**** About to merge bins"+bin_str+"\n" \
++                option = input(" ****WARNING**** About to merge bins"+bin_str+"\n" \
+                                    " If you continue you *WILL* overwrite existing bins!\n" \
+                                    " You have been shown a 3d plot of the bins to be merged.\n" \
+                                    " Continue only if you're sure this is what you want to do!\n" \
+                                    " y = yes, n = no, q = no and quit merging\n" \
+                                    " Merge? ("+vrs+") : ")
+             if(option.upper() in valid_responses):
+-                print "****************************************************************"
++                print("****************************************************************")
+                 return option.upper()
+             else:
+-                print "Error, unrecognised choice '"+option.upper()+"'"
++                print("Error, unrecognised choice '"+option.upper()+"'")
+                 minimal = True
+ 
+     def promptOnSplit(self, parts, mode, minimal=False):
+@@ -911,9 +911,9 @@ class BinManager:
+         vrs = ",".join([str.lower(str(x)) for x in valid_responses])
+         while(input_not_ok):
+             if(minimal):
+-                option = raw_input(" Split? ("+vrs+") : ")
++                option = input(" Split? ("+vrs+") : ")
+             else:
+-                option = raw_input(" ****WARNING**** About to split bin into "+str(parts)+" parts\n" \
++                option = input(" ****WARNING**** About to split bin into "+str(parts)+" parts\n" \
+                                    " If you continue you *WILL* overwrite existing bins!\n" \
+                                    " You have been shown a 3d plot of the bin after splitting.\n" \
+                                    " Continue only if you're sure this is what you want to do!\n" \
+@@ -923,13 +923,13 @@ class BinManager:
+                                    " Split? ("+vrs+") : ")
+             if(option.upper() in valid_responses):
+                 if(option.upper() == 'K' and mode.upper() == 'KMER' or option.upper() == 'C' and mode.upper() == 'COV' or option.upper() == 'L' and mode.upper() == 'LEN'):
+-                    print "Error, you are already using that profile to split!"
++                    print("Error, you are already using that profile to split!")
+                     minimal=True
+                 else:
+-                    print "****************************************************************"
++                    print("****************************************************************")
+                     return option.upper()
+             else:
+-                print "Error, unrecognised choice '"+option.upper()+"'"
++                print("Error, unrecognised choice '"+option.upper()+"'")
+                 minimal = True
+ 
+     def promptOnDelete(self, bids, minimal=False):
+@@ -940,19 +940,19 @@ class BinManager:
+         bids_str = ",".join([str.lower(str(x)) for x in bids])
+         while(input_not_ok):
+             if(minimal):
+-                option = raw_input(" Delete? ("+vrs+") : ")
++                option = input(" Delete? ("+vrs+") : ")
+             else:
+-                option = raw_input(" ****WARNING**** About to delete bin(s):\n" \
++                option = input(" ****WARNING**** About to delete bin(s):\n" \
+                                    " "+bids_str+"\n" \
+                                    " If you continue you *WILL* overwrite existing bins!\n" \
+                                    " Continue only if you're sure this is what you want to do!\n" \
+                                    " y = yes, n = no\n"\
+                                    " Delete? ("+vrs+") : ")
+             if(option.upper() in valid_responses):
+-                print "****************************************************************"
++                print("****************************************************************")
+                 return option.upper()
+             else:
+-                print "Error, unrecognised choice '"+option.upper()+"'"
++                print("Error, unrecognised choice '"+option.upper()+"'")
+                 minimal = True
+ 
+ #------------------------------------------------------------------------------
+@@ -1039,10 +1039,10 @@ class BinManager:
+ 
+         # find the mean and stdev
+         if(not makeKillList):
+-            return (np_mean(np_array(Ms.values())), np_std(np_array(Ms.values())), np_median(np_array(Ss.values())), np_std(np_array(Ss.values())))
++            return (np_mean(np_array(list(Ms.values()))), np_std(np_array(list(Ms.values()))), np_median(np_array(list(Ss.values()))), np_std(np_array(list(Ss.values()))))
+ 
+         else:
+-            cutoff = np_mean(np_array(Ms.values())) + tolerance * np_std(np_array(Ms.values()))
++            cutoff = np_mean(np_array(list(Ms.values()))) + tolerance * np_std(np_array(list(Ms.values())))
+             kill_list = []
+             for bid in Ms:
+                 if(Ms[bid] > cutoff):
+@@ -1054,7 +1054,7 @@ class BinManager:
+ 
+         return a list of potentially confounding kmer indices
+         """
+-        print "    Measuring kmer type variances"
++        print("    Measuring kmer type variances")
+         means = np_array([])
+         stdevs = np_array([])
+         bids = np_array([])
+@@ -1094,12 +1094,12 @@ class BinManager:
+                 return_indices.append(sort_within_indices[i])
+ 
+         if(plot):
+-            print "BETWEEN"
++            print("BETWEEN")
+             for i in range(0,number_to_trim):
+-                print names[sort_between_indices[i]]
+-            print "WITHIN"
++                print(names[sort_between_indices[i]])
++            print("WITHIN")
+             for i in range(0,number_to_trim):
+-                print names[sort_within_indices[i]]
++                print(names[sort_within_indices[i]])
+ 
+             plt.figure(1)
+             plt.subplot(211)
+@@ -1126,7 +1126,7 @@ class BinManager:
+                 stdout = open(fileName, 'w')
+                 self.printInner(outFormat, stdout)
+             except:
+-                print "Error diverting stout to file:", fileName, exc_info()[0]
++                print("Error diverting stout to file:", fileName, exc_info()[0])
+                 raise
+         else:
+             self.printInner(outFormat)
+@@ -1139,14 +1139,14 @@ class BinManager:
+             stream.write(separator.join(["#\"bid\"","\"cid\"","\"length\"","\"GC\""])+"\n")
+         elif(outFormat == 'bins'):
+             header = ["\"bin id\"","\"Likely chimeric\"","\"length (bp)\"","\"# seqs\"","\"GC mean\"","\"GC std\""]
+-            for i in xrange(0, len(self.PM.covProfiles[0])):
++            for i in range(0, len(self.PM.covProfiles[0])):
+                 header.append("\"Coverage " + str(i+1) + " mean\"")
+                 header.append("\"Coverage " + str(i+1) + " std\"")
+             stream.write(separator.join(header) + "\n")
+         elif(outFormat == 'full'):
+             pass
+         else:
+-            print "Error: Unrecognised format:", outFormat
++            print("Error: Unrecognised format:", outFormat)
+             return
+ 
+         for bid in self.getBids():
+@@ -1224,13 +1224,13 @@ class BinManager:
+             try:
+                 plt.savefig(fileName,dpi=300)
+             except:
+-                print "Error saving image:", fileName, exc_info()[0]
++                print("Error saving image:", fileName, exc_info()[0])
+                 raise
+         else:
+             try:
+                 plt.show()
+             except:
+-                print "Error showing image:", exc_info()[0]
++                print("Error showing image:", exc_info()[0])
+                 raise
+ 
+         plt.close(fig)
+@@ -1344,7 +1344,7 @@ class BinManager:
+         try:
+             plt.show()
+         except:
+-            print "Error showing image:", exc_info()[0]
++            print("Error showing image:", exc_info()[0])
+             raise
+ 
+         plt.close(fig)
+@@ -1369,10 +1369,10 @@ class BinManager:
+             self.bins[bid].makeBinDist(self.PM.transformedCP, self.PM.averageCoverages, self.PM.kmerNormPC1, self.PM.kmerPCs, self.PM.contigGCs, self.PM.contigLengths)
+ 
+         if(sideBySide):
+-            print "Plotting side by side"
+-            self.plotSideBySide(self.bins.keys(), tag=FNPrefix, ignoreContigLengths=ignoreContigLengths)
++            print("Plotting side by side")
++            self.plotSideBySide(list(self.bins.keys()), tag=FNPrefix, ignoreContigLengths=ignoreContigLengths)
+         else:
+-            print "Plotting bins"
++            print("Plotting bins")
+             for bid in self.getBids():
+                 if folder != '':
+                     self.bins[bid].plotBin(self.PM.transformedCP, self.PM.contigGCs, self.PM.kmerNormPC1,
+@@ -1387,7 +1387,7 @@ class BinManager:
+     def plotBinCoverage(self, plotEllipses=False, plotContigLengs=False, printID=False):
+         """Make plots of all the bins"""
+ 
+-        print "Plotting first 3 stoits in untransformed coverage space"
++        print("Plotting first 3 stoits in untransformed coverage space")
+ 
+         # plot contigs in coverage space
+         fig = plt.figure()
+@@ -1452,7 +1452,7 @@ class BinManager:
+             plt.show()
+             plt.close(fig)
+         except:
+-            print "Error showing image", exc_info()[0]
++            print("Error showing image", exc_info()[0])
+             raise
+ 
+         del fig
+@@ -1504,13 +1504,13 @@ class BinManager:
+                 fig.set_size_inches(12,6)
+                 plt.savefig(fileName,dpi=300)
+             except:
+-                print "Error saving image:", fileName, exc_info()[0]
++                print("Error saving image:", fileName, exc_info()[0])
+                 raise
+         elif(show):
+             try:
+                 plt.show()
+             except:
+-                print "Error showing image:", exc_info()[0]
++                print("Error showing image:", exc_info()[0])
+                 raise
+         plt.close(fig)
+         del fig
+@@ -1554,7 +1554,7 @@ class BinManager:
+             plt.show()
+             plt.close(fig)
+         except:
+-            print "Error showing image", exc_info()[0]
++            print("Error showing image", exc_info()[0])
+             raise
+         del fig
+ 
+@@ -1563,7 +1563,7 @@ class BinManager:
+         (bin_centroid_points, _bin_centroid_colors, bin_centroid_gc, _bids) = self.findCoreCentres(processChimeric=showChimeric)
+         fig = plt.figure()
+         ax = fig.add_subplot(111, projection='3d')
+-        print bin_centroid_gc
++        print(bin_centroid_gc)
+         sc = ax.scatter(bin_centroid_points[:,0], bin_centroid_points[:,1], bin_centroid_points[:,2], edgecolors='k', c=bin_centroid_gc, cmap=self.PM.colorMapGC, vmin=0.0, vmax=1.0)
+         sc.set_edgecolors = sc.set_facecolors = lambda *args:None # disable depth transparency effect
+ 
+@@ -1588,7 +1588,7 @@ class BinManager:
+             plt.show()
+             plt.close(fig)
+         except:
+-            print "Error showing image", exc_info()[0]
++            print("Error showing image", exc_info()[0])
+             raise
+         del fig
+ 
+--- groopm/cluster.py.orig	2015-03-06 04:42:51 UTC
++++ groopm/cluster.py
+@@ -95,11 +95,11 @@ from scipy.spatial.distance import pdist, squareform, 
+ from scipy.misc import imsave
+ 
+ # GroopM imports
+-from profileManager import ProfileManager
+-from binManager import BinManager
+-from refine import GrubbsTester, RefineEngine
+-from PCA import PCA, Center
+-from groopmExceptions import BinNotFoundException
++from .profileManager import ProfileManager
++from .binManager import BinManager
++from .refine import GrubbsTester, RefineEngine
++from .PCA import PCA, Center
++from .groopmExceptions import BinNotFoundException
+ 
+ np_seterr(all='raise')
+ 
+@@ -160,22 +160,22 @@ class ClusterEngine:
+                 vrs = ",".join([str.lower(str(x)) for x in valid_responses])
+                 while(input_not_ok):
+                     if(minimal):
+-                        option = raw_input(" Overwrite? ("+vrs+") : ")
++                        option = input(" Overwrite? ("+vrs+") : ")
+                     else:
+-                        option = raw_input(" ****WARNING**** Database: '"+self.PM.dbFileName+"' has already been clustered.\n" \
++                        option = input(" ****WARNING**** Database: '"+self.PM.dbFileName+"' has already been clustered.\n" \
+                                            " If you continue you *MAY* overwrite existing bins!\n" \
+                                            " Overwrite? ("+vrs+") : ")
+                     if(option.upper() in valid_responses):
+-                        print "****************************************************************"
++                        print("****************************************************************")
+                         if(option.upper() == "N"):
+-                            print "Operation cancelled"
++                            print("Operation cancelled")
+                             return False
+                         else:
+                             break
+                     else:
+-                        print "Error, unrecognised choice '"+option.upper()+"'"
++                        print("Error, unrecognised choice '"+option.upper()+"'")
+                         minimal = True
+-            print "Will Overwrite database",self.PM.dbFileName
++            print("Will Overwrite database",self.PM.dbFileName)
+         return True
+ 
+ #------------------------------------------------------------------------------
+@@ -189,10 +189,10 @@ class ClusterEngine:
+ 
+         # get some data
+         self.PM.loadData(self.timer, "length >= "+str(coreCut))
+-        print "    %s" % self.timer.getTimeStamp()
++        print("    %s" % self.timer.getTimeStamp())
+ 
+         # transform the data
+-        print "    Loading transformed data"
++        print("    Loading transformed data")
+         self.PM.transformCP(self.timer)
+         # plot the transformed space (if we've been asked to...)
+         #if(self.debugPlots >= 3):
+@@ -201,15 +201,15 @@ class ClusterEngine:
+         # now we can make this guy
+         self.TSpan = np_mean([np_norm(self.PM.corners[i] - self.PM.TCentre) for i in range(self.PM.numStoits)])
+ 
+-        print "    %s" % self.timer.getTimeStamp()
++        print("    %s" % self.timer.getTimeStamp())
+ 
+         # cluster and bin!
+-        print "Create cores"
++        print("Create cores")
+         self.initialiseCores(kmerThreshold, coverageThreshold)
+-        print "    %s" % self.timer.getTimeStamp()
++        print("    %s" % self.timer.getTimeStamp())
+ 
+         # condense cores
+-        print "Refine cores [begin: %d]" % len(self.BM.bins)
++        print("Refine cores [begin: %d]" % len(self.BM.bins))
+         if self.finalPlot:
+             prfx = "CORE"
+         else:
+@@ -217,9 +217,9 @@ class ClusterEngine:
+         self.RE.refineBins(self.timer, auto=True, saveBins=False, plotFinal=prfx, gf=gf)
+ 
+         # Now save all the stuff to disk!
+-        print "Saving bins"
++        print("Saving bins")
+         self.BM.saveBins(nuke=True)
+-        print "    %s" % self.timer.getTimeStamp()
++        print("    %s" % self.timer.getTimeStamp())
+ 
+     def initialiseCores(self, kmerThreshold, coverageThreshold):
+         """Process contigs and form CORE bins"""
+@@ -230,8 +230,8 @@ class ClusterEngine:
+         # We can make a heat map and look for hot spots
+         self.populateImageMaps()
+         sub_counter = 0
+-        print "     .... .... .... .... .... .... .... .... .... ...."
+-        print "%4d" % sub_counter,
++        print("     .... .... .... .... .... .... .... .... .... ....")
++        print("%4d" % sub_counter, end=' ')
+         new_line_counter = 0
+         num_bins = 0
+ 
+@@ -303,13 +303,13 @@ class ClusterEngine:
+                         self.updatePostBin(bin)
+ 
+                         new_line_counter += 1
+-                        print "% 4d" % bin.binSize,
++                        print("% 4d" % bin.binSize, end=' ')
+ 
+                         # make the printing prettier
+                         if(new_line_counter > 9):
+                             new_line_counter = 0
+                             sub_counter += 10
+-                            print "\n%4d" % sub_counter,
++                            print("\n%4d" % sub_counter, end=' ')
+ 
+                         if(self.debugPlots >= 1):
+                             #***slow plot!
+@@ -317,7 +317,7 @@ class ClusterEngine:
+ 
+                     except BinNotFoundException: pass
+ 
+-        print "\n     .... .... .... .... .... .... .... .... .... ...."
++        print("\n     .... .... .... .... .... .... .... .... .... ....")
+ 
+     def findNewClusterCenters(self, kmerThreshold, coverageThreshold):
+         """Find a putative cluster"""
+@@ -498,32 +498,32 @@ class ClusterEngine:
+                 k_dist_matrix = squareform(pdist(k_dat, 'cityblock'))
+                 k_radius = np_median(np_sort(k_dist_matrix)[:,eps_neighbours])
+             except MemoryError:
+-                print "\n"
+-                print '*******************************************************************************'
+-                print '*********************************    ERROR    *********************************'
+-                print '*******************************************************************************'
+-                print 'GroopM is attempting to do some maths on a putative bin which contains:'
+-                print
+-                print '\t\t%d contigs'  % (len(rowIndices))
+-                print
+-                print 'This has caused your machine to run out of memory.'
+-                print 'The most likely cause is that your samples are very different from each other.'
+-                print 'You can confirm this by running:'
+-                print
+-                print '\t\tgroopm explore -m allcontigs %s' % self.PM.dbFileName
+-                print
+-                print 'If you notice only vertical "spears" of contigs at the corners of the plot then'
+-                print 'this means that your samples are very different and you are not getting a good'
+-                print 'mapping from all samples to all contigs. You may get more mileage by assembling'
+-                print 'and binning your samples separately.'
+-                print
+-                print 'If you notice "clouds" of contigs then congratulations! You have found a bug.'
+-                print 'Please let me know at "%s or via github.com/minillinim/GroopM' % __email__
+-                print
+-                print 'GroopM is aborting... sorry'
+-                print
+-                print '*******************************************************************************'
+-                print "\n"
++                print("\n")
++                print('*******************************************************************************')
++                print('*********************************    ERROR    *********************************')
++                print('*******************************************************************************')
++                print('GroopM is attempting to do some maths on a putative bin which contains:')
++                print()
++                print('\t\t%d contigs'  % (len(rowIndices)))
++                print()
++                print('This has caused your machine to run out of memory.')
++                print('The most likely cause is that your samples are very different from each other.')
++                print('You can confirm this by running:')
++                print()
++                print('\t\tgroopm explore -m allcontigs %s' % self.PM.dbFileName)
++                print()
++                print('If you notice only vertical "spears" of contigs at the corners of the plot then')
++                print('this means that your samples are very different and you are not getting a good')
++                print('mapping from all samples to all contigs. You may get more mileage by assembling')
++                print('and binning your samples separately.')
++                print()
++                print('If you notice "clouds" of contigs then congratulations! You have found a bug.')
++                print('Please let me know at "%s or via github.com/minillinim/GroopM' % __email__)
++                print()
++                print('GroopM is aborting... sorry')
++                print()
++                print('*******************************************************************************')
++                print("\n")
+                 exit(-1)
+ 
+             # find nearest neighbours to each point in whitened coverage space,
+@@ -1341,7 +1341,7 @@ class HoughPartitioner:
+         diffs *= (len(diffs)-1)
+ 
+         # make it 2D
+-        t_data = np_array(zip(diffs, np_arange(d_len)))
++        t_data = np_array(list(zip(diffs, np_arange(d_len))))
+         ###MMM FIX
+         #im_shape = (int(np_max(t_data, axis=0)[0]+1), d_len)
+         im_shape = (d_len, d_len)
+@@ -1532,7 +1532,7 @@ class HoughPartitioner:
+         if imgTag is not None:
+             # make a pretty picture
+             fff = np_ones(imShape) * 255
+-            for p in found_line.keys():
++            for p in list(found_line.keys()):
+                 fff[p[0],p[1]] = 220
+             for p in tData:
+                 fff[p[0],p[1]] = 0
+@@ -1573,7 +1573,7 @@ class HoughPartitioner:
+                 if real_index not in assigned:
+                     tmp[real_index] = None
+                     assigned[real_index] = None
+-            centre = np_array(tmp.keys())
++            centre = np_array(list(tmp.keys()))
+             if len(centre) > 0:
+                 return np_array([centre])
+             # nuffin
+@@ -1593,7 +1593,7 @@ class HoughPartitioner:
+             if real_index not in assigned:
+                 tmp[real_index] = None
+                 assigned[real_index] = None
+-        centre = np_array(tmp.keys())
++        centre = np_array(list(tmp.keys()))
+ 
+         rets = []
+ 
+@@ -1609,8 +1609,8 @@ class HoughPartitioner:
+                         tmp[real_index] = None
+                         assigned[real_index] = None
+ 
+-                if len(tmp.keys()) > 0:
+-                    rets.append(np_array(tmp.keys()))
++                if len(list(tmp.keys())) > 0:
++                    rets.append(np_array(list(tmp.keys())))
+ 
+             else:
+                 # otherwise we keep working with ranges
+@@ -1643,8 +1643,8 @@ class HoughPartitioner:
+                         tmp[real_index] = None
+                         assigned[real_index] = None
+ 
+-                if len(tmp.keys()) > 0:
+-                    rets.append(np_array(tmp.keys()))
++                if len(list(tmp.keys())) > 0:
++                    rets.append(np_array(list(tmp.keys())))
+             else:
+                 right_p = self.recursiveSelect(tData,
+                                                imShape,
+@@ -1723,40 +1723,40 @@ class HoughPartitioner:
+                 iry = half_rows + int(r/dr)
+                 accumulator[iry, theta_index] -= 1
+         """
+-        cos_sin_array = np_array(zip([np_sin(dth * theta_index) for theta_index in range(cols)],
+-                                     [np_cos(dth * theta_index) for theta_index in range(cols)]))
++        cos_sin_array = np_array(list(zip([np_sin(dth * theta_index) for theta_index in range(cols)],
++                                     [np_cos(dth * theta_index) for theta_index in range(cols)])))
+         Rs = np_array(np_sum(np_reshape([p * cos_sin_array for p in data], (d_len*cols,2)),
+                              axis=1)/dr).astype('int') + half_rows
+-        Cs = np_array(range(cols)*d_len)
++        Cs = np_array(list(range(cols))*d_len)
+ 
+         try:
+             flat_indices = Rs * cols + Cs
+         except ValueError:
+-            print "\n"
+-            print '*******************************************************************************'
+-            print '*********************************    ERROR    *********************************'
+-            print '*******************************************************************************'
+-            print 'GroopM is attempting to do some maths on a putative bin which contains'
+-            print 'too many contigs.'
+-            print
+-            print 'This has resulted in a buffer overflow in the numpy library... oops.'
+-            print 'The most likely cause is that your samples are very different from each other.'
+-            print 'You can confirm this by running:'
+-            print
+-            print '\t\tgroopm explore -c 0 -m allcontigs <dbfilename>'
+-            print
+-            print 'If you notice only vertical "spears" of contigs at the corners of the plot then'
+-            print 'this means that your samples are very different and you are not getting a good'
+-            print 'mapping from all samples to all contigs. You may get more mileage by assembling'
+-            print 'and binning your samples separately.'
+-            print
+-            print 'If you notice "clouds" of contigs then congratulations! You have found a bug.'
+-            print 'Please let me know at "%s or via github.com/minillinim/GroopM' % __email__
+-            print
+-            print 'GroopM is aborting... sorry'
+-            print
+-            print '*******************************************************************************'
+-            print "\n"
++            print("\n")
++            print('*******************************************************************************')
++            print('*********************************    ERROR    *********************************')
++            print('*******************************************************************************')
++            print('GroopM is attempting to do some maths on a putative bin which contains')
++            print('too many contigs.')
++            print()
++            print('This has resulted in a buffer overflow in the numpy library... oops.')
++            print('The most likely cause is that your samples are very different from each other.')
++            print('You can confirm this by running:')
++            print()
++            print('\t\tgroopm explore -c 0 -m allcontigs <dbfilename>')
++            print()
++            print('If you notice only vertical "spears" of contigs at the corners of the plot then')
++            print('this means that your samples are very different and you are not getting a good')
++            print('mapping from all samples to all contigs. You may get more mileage by assembling')
++            print('and binning your samples separately.')
++            print()
++            print('If you notice "clouds" of contigs then congratulations! You have found a bug.')
++            print('Please let me know at "%s or via github.com/minillinim/GroopM' % __email__)
++            print()
++            print('GroopM is aborting... sorry')
++            print()
++            print('*******************************************************************************')
++            print("\n")
+             exit(-1)
+ 
+         # update the accumulator with integer decrements
+--- groopm/groopm.py.orig	2014-11-26 01:01:33 UTC
++++ groopm/groopm.py
+@@ -52,14 +52,14 @@ __status__ = "Released"
+ import matplotlib as mpl
+ 
+ # GroopM imports
+-import mstore
+-import cluster
+-import refine
+-import binManager
+-import groopmUtils
+-import groopmTimekeeper as gtime
+-from groopmExceptions import ExtractModeNotAppropriateException
+-from mstore import GMDataManager
++from . import mstore
++from . import cluster
++from . import refine
++from . import binManager
++from . import groopmUtils
++from . import groopmTimekeeper as gtime
++from .groopmExceptions import ExtractModeNotAppropriateException
++from .mstore import GMDataManager
+ 
+ ###############################################################################
+ ###############################################################################
+@@ -100,12 +100,12 @@ class GroopMOptionsParser():
+         timer = gtime.TimeKeeper()
+         if(options.subparser_name == 'parse'):
+             # parse raw input
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in data parsing mode..." % self.GMVersion
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in data parsing mode..." % self.GMVersion)
++            print("*******************************************************************************")
+             # check this here:
+             if len(options.bamfiles) < 3:
+-                print "Sorry, You must supply at least 3 bamFiles to use GroopM. (You supplied %d)\n Exiting..." % len(options.bamfiles)
++                print("Sorry, You must supply at least 3 bamFiles to use GroopM. (You supplied %d)\n Exiting..." % len(options.bamfiles))
+                 return
+             GMdata = mstore.GMDataManager()
+             success = GMdata.createDB(options.bamfiles,
+@@ -116,13 +116,13 @@ class GroopMOptionsParser():
+                                       force=options.force,
+                                       threads=options.threads)
+             if not success:
+-                print options.dbname,"not updated"
++                print(options.dbname,"not updated")
+ 
+         elif(options.subparser_name == 'core'):
+             # make bin cores
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in core creation mode..." % self.GMVersion
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in core creation mode..." % self.GMVersion)
++            print("*******************************************************************************")
+             CE = cluster.ClusterEngine(options.dbname,
+                                        timer,
+                                        force=options.force,
+@@ -139,9 +139,9 @@ class GroopMOptionsParser():
+ 
+         elif(options.subparser_name == 'refine'):
+             # refine bin cores
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in core refining mode..." % self.GMVersion
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in core refining mode..." % self.GMVersion)
++            print("*******************************************************************************")
+             bids = []
+             #if options.bids is not None:
+             #    bids = options.bids
+@@ -158,7 +158,7 @@ class GroopMOptionsParser():
+                 pfx="REFINED"
+             else:
+                 pfx=""
+-            print "Refine bins"
++            print("Refine bins")
+ 
+             RE.refineBins(timer,
+                           auto=auto,
+@@ -167,9 +167,9 @@ class GroopMOptionsParser():
+ 
+         elif(options.subparser_name == 'recruit'):
+             # make bin cores
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in bin expansion mode..." % self.GMVersion
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in bin expansion mode..." % self.GMVersion)
++            print("*******************************************************************************")
+             RE = refine.RefineEngine(timer,
+                                      dbFileName=options.dbname,
+                                      getUnbinned=True,
+@@ -183,9 +183,9 @@ class GroopMOptionsParser():
+ 
+         elif(options.subparser_name == 'extract'):
+             # Extract data
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in '%s' extraction mode..." % (self.GMVersion, options.mode)
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in '%s' extraction mode..." % (self.GMVersion, options.mode))
++            print("*******************************************************************************")
+             bids = []
+             if options.bids is not None:
+                 bids = options.bids
+@@ -220,35 +220,35 @@ class GroopMOptionsParser():
+                 raise ExtractModeNotAppropriateException("mode: "+ options.mode + " is unknown")
+         elif(options.subparser_name == 'merge'):
+             # make bin cores
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in bin merging mode..." % self.GMVersion
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in bin merging mode..." % self.GMVersion)
++            print("*******************************************************************************")
+             BM = binManager.BinManager(dbFileName=options.dbname)
+             BM.loadBins(timer, makeBins=True, silent=False)
+             BM.merge(options.bids, options.force, saveBins=True)
+ 
+         elif(options.subparser_name == 'split'):
+             # make bin cores
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in bin splitting mode..." % self.GMVersion
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in bin splitting mode..." % self.GMVersion)
++            print("*******************************************************************************")
+             BM = binManager.BinManager(dbFileName=options.dbname)
+             BM.loadBins(timer, makeBins=True, silent=False)
+             BM.split(options.bid, options.parts, mode=options.mode, saveBins=True, auto=options.force)
+ 
+         elif(options.subparser_name == 'delete'):
+             # make bin cores
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in bin deleting mode..." % self.GMVersion
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in bin deleting mode..." % self.GMVersion)
++            print("*******************************************************************************")
+             BM = binManager.BinManager(dbFileName=options.dbname)
+             BM.loadBins(timer, makeBins=True, silent=True)#, bids=options.bids)
+             BM.deleteBins(options.bids, force=options.force, saveBins=True, freeBinnedRowIndices=True)
+ 
+         elif(options.subparser_name == 'plot'):
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in bin plotting mode..." % self.GMVersion
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in bin plotting mode..." % self.GMVersion)
++            print("*******************************************************************************")
+             BM = binManager.BinManager(dbFileName=options.dbname)
+ 
+             if options.bids is None:
+@@ -266,9 +266,9 @@ class GroopMOptionsParser():
+ 
+         elif(options.subparser_name == 'explore'):
+             # make bin cores
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in bin '%s' explorer mode..." % (self.GMVersion, options.mode)
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in bin '%s' explorer mode..." % (self.GMVersion, options.mode))
++            print("*******************************************************************************")
+             transform=True^options.no_transform
+             bids = []
+             if options.bids is not None:
+@@ -297,13 +297,13 @@ class GroopMOptionsParser():
+             elif (options.mode == 'sidebyside'):
+                 BE.plotSideBySide(timer, coreCut=options.cutoff)
+             else:
+-                print "**Error: unknown mode:",options.mode
++                print("**Error: unknown mode:",options.mode)
+ 
+         elif(options.subparser_name == 'flyover'):
+             # make bin cores
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Making a flyover..." % self.GMVersion
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Making a flyover..." % self.GMVersion)
++            print("*******************************************************************************")
+             bids = []
+             if options.bids is not None:
+                 bids = options.bids
+@@ -323,9 +323,9 @@ class GroopMOptionsParser():
+ 
+         elif(options.subparser_name == 'highlight'):
+             # make bin cores
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in highlighter mode..." % self.GMVersion
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in highlighter mode..." % self.GMVersion)
++            print("*******************************************************************************")
+             bids = []
+             if options.bids is not None:
+                 bids = options.bids
+@@ -355,9 +355,9 @@ class GroopMOptionsParser():
+             BM.printBins(options.format, fileName=options.outfile)
+ 
+         elif(options.subparser_name == 'dump'):
+-            print "*******************************************************************************"
+-            print " [[GroopM %s]] Running in data dumping mode..." % self.GMVersion
+-            print "*******************************************************************************"
++            print("*******************************************************************************")
++            print(" [[GroopM %s]] Running in data dumping mode..." % self.GMVersion)
++            print("*******************************************************************************")
+ 
+             # prep fields. Do this first cause users are mot likely to
+             # mess this part up!
+@@ -365,8 +365,8 @@ class GroopMOptionsParser():
+             fields = options.fields.split(',')
+             for field in fields:
+                 if field not in allowable_fields:
+-                    print "ERROR: field '%s' not recognised. Allowable fields are:" % field
+-                    print '\t',",".join(allowable_fields)
++                    print("ERROR: field '%s' not recognised. Allowable fields are:" % field)
++                    print('\t',",".join(allowable_fields))
+                     return
+             if options.separator == '\\t':
+                 separator = '\t'
+--- groopm/groopmUtils.py.orig	2014-11-26 01:01:33 UTC
++++ groopm/groopmUtils.py
+@@ -62,8 +62,8 @@ np.seterr(all='raise')
+ from scipy.spatial.distance import cdist, squareform
+ 
+ # GroopM imports
+-import binManager
+-import mstore
++from . import binManager
++from . import mstore
+ 
+ # other local imports
+ from bamm.bamExtractor import BamExtractor as BMBE
+@@ -126,16 +126,16 @@ class GMExtractor:
+                         import gzip
+                         GM_open = gzip.open
+                 except:
+-                    print "Error when guessing contig file mimetype"
++                    print("Error when guessing contig file mimetype")
+                     raise
+                 with GM_open(file_name, "r") as f:
+                     contigs = CP.getWantedSeqs(f, self.PM.contigNames, storage=contigs)
+         except:
+-            print "Could not parse contig file:",fasta[0],sys.exc_info()[0]
++            print("Could not parse contig file:",fasta[0],sys.exc_info()[0])
+             raise
+ 
+         # now print out the sequences
+-        print "Writing files"
++        print("Writing files")
+         for bid in self.BM.getBids():
+             if self.BM.PM.isLikelyChimeric[bid]:
+                 file_name = os.path.join(self.outDir, "%s_bin_%d.chimeric.fna" % (self.prefix, bid))
+@@ -148,9 +148,9 @@ class GMExtractor:
+                         if(cid in contigs):
+                             f.write(">%s\n%s\n" % (cid, contigs[cid]))
+                         else:
+-                            print "These are not the contigs you're looking for. ( %s )" % (cid)
++                            print("These are not the contigs you're looking for. ( %s )" % (cid))
+             except:
+-                print "Could not open file for writing:",file_name,sys.exc_info()[0]
++                print("Could not open file for writing:",file_name,sys.exc_info()[0])
+                 raise
+ 
+     def extractReads(self,
+@@ -177,7 +177,7 @@ class GMExtractor:
+         self.BM.loadBins(timer, makeBins=True,silent=False,bids=self.bids)
+         self.PM = self.BM.PM
+ 
+-        print "Extracting reads"
++        print("Extracting reads")
+ 
+         # work out a set of targets to pass to the parser
+         targets = []
+@@ -268,16 +268,16 @@ class BinExplorer:
+                          transform = self.transform,
+                          cutOff=coreCut)
+         if len(self.BM.bins) == 0:
+-            print "Sorry, no bins to plot"
++            print("Sorry, no bins to plot")
+         else:
+-            print "Plotting image"
++            print("Plotting image")
+             if self.bids == []:
+                 self.bids = self.BM.getBids()
+ 
+             if testing:
+                 # ignore labelling files provided
+                 self.binLabelsFile = "none"
+-                raw_input( "****************************************************************\n"
++                input( "****************************************************************\n"
+                            " IMAGE MAKING INSTRUCTIONS - PLEASE READ CAREFULLY\n"
+                            "****************************************************************\n"
+                            " You are using GroopM in highlight mode. Congratulations!\n"
+@@ -290,7 +290,7 @@ class BinExplorer:
+                            " parameters to what you saw here, set bin labels, contig colours...\n\n"
+                            " Good Luck!\n\n"
+                            " Press return to continue...")
+-                print "****************************************************************"
++                print("****************************************************************")
+ 
+             # bids as labels and randomise colours
+             self.LP = LabelParser(self.BM.getBids())
+@@ -457,9 +457,9 @@ class BinExplorer:
+                          cutOff=coreCut,
+                          getUnbinned=True,)
+         if len(self.BM.bins) == 0:
+-            print "Sorry, no bins to plot"
++            print("Sorry, no bins to plot")
+         else:
+-            print "Plotting flyover"
++            print("Plotting flyover")
+ 
+             import itertools
+             all_bids = self.BM.getBids()
+@@ -475,7 +475,7 @@ class BinExplorer:
+             elev_increment = total_elev_shift / total_frames
+             self.BM.setColorMap(self.cmString)
+ 
+-            print "Need",total_frames,"frames:"
++            print("Need",total_frames,"frames:")
+ 
+             """
+             Handle taking out bins as "fade packets", assign indices to a list
+@@ -510,17 +510,17 @@ class BinExplorer:
+             # make the fade schedule for the remaining bins
+             remaining_frames = float(total_frames - fade_schedules[0])
+             num_fade_gs = float(len(fade_groups) - 1)
+-            fade_schedules += [len(i) for i in self.splitCeil(range(int(remaining_frames)), int(num_fade_gs))]
++            fade_schedules += [len(i) for i in self.splitCeil(list(range(int(remaining_frames))), int(num_fade_gs))]
+ 
+             if False:
+-                print len(self.BM.getBids()), num_fade_gs
+-                print fade_groups
+-                print fade_schedules
++                print(len(self.BM.getBids()), num_fade_gs)
++                print(fade_groups)
++                print(fade_schedules)
+ 
+             # plot all contigs first and then fade out
+             fig = plt.figure()
+             while len(fade_groups) >= 1:
+-                print "Rendering frame: %d of: %d" % (int(current_frame),int(total_frames))
++                print("Rendering frame: %d of: %d" % (int(current_frame),int(total_frames)))
+                 # get the next fade group and fade schedule
+                 faders = fade_groups.pop(0)
+                 fade_schedule = fade_schedules.pop(0)
+@@ -555,16 +555,16 @@ class BinExplorer:
+                          bids=self.bids,
+                          transform=self.transform)
+         if len(self.BM.bins) == 0:
+-            print "Sorry, no bins to plot"
++            print("Sorry, no bins to plot")
+         else:
+-            print "Plotting bin profiles"
++            print("Plotting bin profiles")
+             self.BM.setColorMap(self.cmString)
+             self.BM.plotProfileDistributions()
+ 
+     def plotContigs(self, timer, coreCut, all=False):
+         """plot contigs"""
+         if all:
+-            print "Plotting all contigs"
++            print("Plotting all contigs")
+             self.PM.plotAll(timer, coreCut, transform=self.transform, ignoreContigLengths=self.ignoreContigLengths)
+         else:
+             self.BM.loadBins(timer,
+@@ -574,9 +574,9 @@ class BinExplorer:
+                              transform=self.transform,
+                              cutOff=coreCut)
+             if len(self.BM.bins) == 0:
+-                print "Sorry, no bins to plot"
++                print("Sorry, no bins to plot")
+             else:
+-                print "Plotting binned contigs"
++                print("Plotting binned contigs")
+                 self.BM.setColorMap(self.cmString)
+                 if self.bids == []:
+                     self.bids = self.BM.getBids()
+@@ -592,9 +592,9 @@ class BinExplorer:
+                          cutOff=coreCut,
+                          transform=self.transform)
+         if len(self.BM.bins) == 0:
+-            print "Sorry, no bins to plot"
++            print("Sorry, no bins to plot")
+         else:
+-            print "Plotting bin assignments"
++            print("Plotting bin assignments")
+             if self.bids == []:
+                 self.bids = self.BM.getBids()
+ 
+@@ -696,9 +696,9 @@ class BinExplorer:
+                          transform=self.transform,
+                          cutOff=coreCut)
+         if len(self.BM.bins) == 0:
+-            print "Sorry, no bins to plot"
++            print("Sorry, no bins to plot")
+         else:
+-            print "Plotting bin points"
++            print("Plotting bin points")
+             self.BM.setColorMap(self.cmString)
+             self.BM.plotBinPoints()
+ 
+@@ -726,9 +726,9 @@ class BinExplorer:
+         self.BM.setColorMap(self.cmString)
+ 
+         if len(self.BM.bins) == 0:
+-            print "Sorry, no bins to plot"
++            print("Sorry, no bins to plot")
+         else:
+-            print "Plotting side by side graphs"
++            print("Plotting side by side graphs")
+             (bin_centroid_points, bin_centroid_colors, bin_centroid_gc, bin_ids) = self.BM.findCoreCentres()
+             self.plotCoresVsContigs(bin_centroid_points, bin_centroid_colors)
+ 
+@@ -743,15 +743,15 @@ class BinExplorer:
+                          bids=self.bids,
+                          transform=self.transform)
+         if len(self.BM.bins) == 0:
+-            print "Sorry, no bins to plot"
++            print("Sorry, no bins to plot")
+         else:
+-            print "Plotting bin IDs"
++            print("Plotting bin IDs")
+             self.BM.setColorMap(self.cmString)
+             self.BM.plotBinIds()
+ 
+     def plotUnbinned(self, timer, coreCut):
+         """Plot all contigs over a certain length which are unbinned"""
+-        print "Plotting unbinned contigs"
++        print("Plotting unbinned contigs")
+         self.PM.plotUnbinned(timer, coreCut, transform=self.transform, ignoreContigLengths=self.ignoreContigLengths)
+ 
+     def plotSideBySide(self, timer, coreCut):
+@@ -763,7 +763,7 @@ class BinExplorer:
+                          transform=self.transform,
+                          cutOff=coreCut)
+         if len(self.BM.bins) == 0:
+-            print "Sorry, no bins to plot"
++            print("Sorry, no bins to plot")
+         else:
+             self.BM.setColorMap(self.cmString)
+             self.BM.plotBins(sideBySide=True,
+@@ -779,9 +779,9 @@ class BinExplorer:
+                          transform=self.transform,
+                          cutOff=coreCut)
+         if len(self.BM.bins) == 0:
+-            print "Sorry, no bins to plot"
++            print("Sorry, no bins to plot")
+         else:
+-            print "Plotting all bins together"
++            print("Plotting all bins together")
+             self.BM.setColorMap(self.cmString)
+             if self.bids == []:
+                 p_bids = self.BM.getBids()
+@@ -832,7 +832,7 @@ class BinExplorer:
+                 plt.show()
+                 plt.close(fig)
+             except:
+-                print "Error showing image", sys.exc_info()[0]
++                print("Error showing image", sys.exc_info()[0])
+                 raise
+             del fig
+         else:
+@@ -859,7 +859,7 @@ class BinExplorer:
+                 plt.savefig(f_name1,dpi=dpi,format=format)
+                 plt.close(fig)
+             except:
+-                print "Error saving image",f_name1, sys.exc_info()[0]
++                print("Error saving image",f_name1, sys.exc_info()[0])
+                 raise
+             del fig
+ 
+@@ -893,7 +893,7 @@ class BinExplorer:
+                 plt.savefig(f_name2,dpi=dpi,format=format)
+                 plt.close(fig)
+             except:
+-                print "Error saving image",f_name1, sys.exc_info()[0]
++                print("Error saving image",f_name1, sys.exc_info()[0])
+                 raise
+             del fig
+ 
+@@ -1137,9 +1137,9 @@ class LabelParser:
+                     try:
+                         self.contig2Cols[name_2_row_index[cid]] = self.rgb(fields[1])
+                     except KeyError:
+-                        print "ERROR: contig name %s not recognised" % cid
++                        print("ERROR: contig name %s not recognised" % cid)
+         except:
+-            print "ERROR: parsing labels file: %s" % labelFileName
++            print("ERROR: parsing labels file: %s" % labelFileName)
+             raise
+ 
+         # now we parse the rest of the contig names and colour the null colour
+@@ -1178,7 +1178,7 @@ class LabelParser:
+                         except IndexError: pass
+                         self.loaded[bid] = True
+         except:
+-            print "ERROR parsing labels file: %s" % labelFileName
++            print("ERROR parsing labels file: %s" % labelFileName)
+             raise
+ 
+     def setDefaultBinLabels(self, bids):
+@@ -1192,7 +1192,7 @@ class LabelParser:
+         S = 1.0
+         V = 1.0
+         if setLoaded:
+-            for bid in self.bin2Str.keys():
++            for bid in list(self.bin2Str.keys()):
+                 self.loaded[bid] = True
+         num_bins = len(self.bin2Str)
+         offset = 0.5
+@@ -1201,7 +1201,7 @@ class LabelParser:
+         cols = [htr(H, S, V) for H in Hs]
+         np.random.shuffle(cols)
+         i = 0
+-        for bid in self.bin2Str.keys():
++        for bid in list(self.bin2Str.keys()):
+             if self.loaded[bid]:
+                 # assign the color we picked
+                 self.bin2Cols[bid] = cols[i]
+--- groopm/mstore.py.orig	2015-03-06 04:42:41 UTC
++++ groopm/mstore.py
+@@ -58,7 +58,7 @@ import numpy as np
+ from scipy.spatial.distance import cdist, squareform
+ 
+ # GroopM imports
+-from PCA import PCA, Center
++from .PCA import PCA, Center
+ 
+ # BamM imports
+ try:
+@@ -66,7 +66,7 @@ try:
+     from bamm.cWrapper import *
+     from bamm.bamFile import BM_coverageType as BMCT
+ except ImportError:
+-    print """ERROR: There was an error importing BamM. This probably means that
++    print("""ERROR: There was an error importing BamM. This probably means that
+ BamM is not installed properly or not in your PYTHONPATH. Installation
+ instructions for BamM are located at:
+ 
+@@ -79,7 +79,7 @@ you still encounter this error. Please lodge a bug rep
+ 
+ Exiting...
+ --------------------------------------------------------------------------------
+-"""
++""")
+     import sys
+     sys.exit(-1)
+ 
+@@ -217,12 +217,12 @@ class GMDataManager:
+                 if(not force):
+                     user_option = self.promptOnOverwrite(dbFileName)
+                     if(user_option != "Y"):
+-                        print "Operation cancelled"
++                        print("Operation cancelled")
+                         return False
+                     else:
+-                        print "Overwriting database",dbFileName
++                        print("Overwriting database",dbFileName)
+         except IOError as e:
+-            print "Creating new database", dbFileName
++            print("Creating new database", dbFileName)
+ 
+         # create the db
+         try:
+@@ -251,19 +251,19 @@ class GMDataManager:
+                         import gzip
+                         GM_open = gzip.open
+                 except:
+-                    print "Error when guessing contig file mimetype"
++                    print("Error when guessing contig file mimetype")
+                     raise
+                 try:
+                     with GM_open(contigsFile, "r") as f:
+                         try:
+                             (con_names, con_gcs, con_lengths, con_ksigs) = conParser.parse(f, cutoff, kse)
+                             num_cons = len(con_names)
+-                            cid_2_indices = dict(zip(con_names, range(num_cons)))
++                            cid_2_indices = dict(list(zip(con_names, list(range(num_cons)))))
+                         except:
+-                            print "Error parsing contigs"
++                            print("Error parsing contigs")
+                             raise
+                 except:
+-                    print "Could not parse contig file:",contigsFile,exc_info()[0]
++                    print("Could not parse contig file:",contigsFile,exc_info()[0])
+                     raise
+ 
+                 #------------------------
+@@ -280,15 +280,15 @@ class GMDataManager:
+                 if len(bad_indices) > 0:
+                     # report the bad contigs to the user
+                     # and strip them before writing to the DB
+-                    print "****************************************************************"
+-                    print " IMPORTANT! - there are %d contigs with 0 coverage" % len(bad_indices)
+-                    print " across all stoits. They will be ignored:"
+-                    print "****************************************************************"
+-                    for i in xrange(0, min(5, len(bad_indices))):
+-                        print con_names[bad_indices[i]]
++                    print("****************************************************************")
++                    print(" IMPORTANT! - there are %d contigs with 0 coverage" % len(bad_indices))
++                    print(" across all stoits. They will be ignored:")
++                    print("****************************************************************")
++                    for i in range(0, min(5, len(bad_indices))):
++                        print(con_names[bad_indices[i]])
+                     if len(bad_indices) > 5:
+-                      print '(+ %d additional contigs)' % (len(bad_indices)-5)
+-                    print "****************************************************************"
++                      print('(+ %d additional contigs)' % (len(bad_indices)-5))
++                    print("****************************************************************")
+ 
+                     con_names = con_names[good_indices]
+                     con_lengths = con_lengths[good_indices]
+@@ -314,14 +314,14 @@ class GMDataManager:
+                                        expectedrows=num_cons
+                                        )
+                 except:
+-                    print "Error creating KMERSIG table:", exc_info()[0]
++                    print("Error creating KMERSIG table:", exc_info()[0])
+                     raise
+ 
+                 # compute the PCA of the ksigs and store these too
+                 pc_ksigs, sumvariance = conParser.PCAKSigs(con_ksigs)
+ 
+                 db_desc = []
+-                for i in xrange(0, len(pc_ksigs[0])):
++                for i in range(0, len(pc_ksigs[0])):
+                   db_desc.append(('pc' + str(i+1), float))
+ 
+                 try:
+@@ -332,7 +332,7 @@ class GMDataManager:
+                                        expectedrows=num_cons
+                                        )
+                 except:
+-                    print "Error creating KMERVALS table:", exc_info()[0]
++                    print("Error creating KMERVALS table:", exc_info()[0])
+                     raise
+ 
+                 #------------------------
+@@ -378,7 +378,7 @@ class GMDataManager:
+                                        title="Bam based coverage",
+                                        expectedrows=num_cons)
+                 except:
+-                    print "Error creating coverage table:", exc_info()[0]
++                    print("Error creating coverage table:", exc_info()[0])
+                     raise
+ 
+                 # transformed coverages
+@@ -392,7 +392,7 @@ class GMDataManager:
+                                        title="Transformed coverage",
+                                        expectedrows=num_cons)
+                 except:
+-                    print "Error creating transformed coverage table:", exc_info()[0]
++                    print("Error creating transformed coverage table:", exc_info()[0])
+                     raise
+ 
+                 # transformed coverage corners
+@@ -406,7 +406,7 @@ class GMDataManager:
+                                        title="Transformed coverage corners",
+                                        expectedrows=len(stoitColNames))
+                 except:
+-                    print "Error creating transformed coverage corner table:", exc_info()[0]
++                    print("Error creating transformed coverage corner table:", exc_info()[0])
+                     raise
+ 
+                 # normalised coverages
+@@ -418,16 +418,16 @@ class GMDataManager:
+                                        title="Normalised coverage",
+                                        expectedrows=num_cons)
+                 except:
+-                    print "Error creating normalised coverage table:", exc_info()[0]
++                    print("Error creating normalised coverage table:", exc_info()[0])
+                     raise
+ 
+                 #------------------------
+                 # Add a table for the contigs
+                 #------------------------
+                 self.setBinAssignments((h5file, meta_group),
+-                                       image=zip(con_names,
++                                       image=list(zip(con_names,
+                                                  [0]*num_cons,
+-                                                 con_lengths, con_gcs)
++                                                 con_lengths, con_gcs))
+                                        )
+ 
+                 #------------------------
+@@ -435,7 +435,7 @@ class GMDataManager:
+                 #------------------------
+                 self.initBinStats((h5file, meta_group))
+ 
+-                print "    %s" % timer.getTimeStamp()
++                print("    %s" % timer.getTimeStamp())
+ 
+                 #------------------------
+                 # contig links
+@@ -454,9 +454,9 @@ class GMDataManager:
+                                        title="ContigLinks",
+                                        expectedrows=len(rowwise_links))
+                 except:
+-                    print "Error creating links table:", exc_info()[0]
++                    print("Error creating links table:", exc_info()[0])
+                     raise
+-                print "    %s" % timer.getTimeStamp()
++                print("    %s" % timer.getTimeStamp())
+ 
+                 #------------------------
+                 # Add metadata
+@@ -475,12 +475,12 @@ class GMDataManager:
+ 
+                 # kmer signature variance table
+                 pc_var = [sumvariance[0]]
+-                for i in xrange(1, len(sumvariance)):
++                for i in range(1, len(sumvariance)):
+                   pc_var.append(sumvariance[i]-sumvariance[i-1])
+                 pc_var = tuple(pc_var)
+ 
+                 db_desc = []
+-                for i in xrange(0, len(pc_var)):
++                for i in range(0, len(pc_var)):
+                     db_desc.append(('pc' + str(i+1) + '_var', float))
+ 
+                 try:
+@@ -491,20 +491,20 @@ class GMDataManager:
+                                             expectedrows=1
+                                             )
+                 except:
+-                    print "Error creating tmp_kpca_variance table:", exc_info()[0]
++                    print("Error creating tmp_kpca_variance table:", exc_info()[0])
+                     raise
+ 
+         except:
+-            print "Error creating database:", dbFileName, exc_info()[0]
++            print("Error creating database:", dbFileName, exc_info()[0])
+             raise
+ 
+-        print "****************************************************************"
+-        print "Data loaded successfully!"
+-        print " ->",num_cons,"contigs"
+-        print " ->",len(stoitColNames),"BAM files"
+-        print "Written to: '"+dbFileName+"'"
+-        print "****************************************************************"
+-        print "    %s" % timer.getTimeStamp()
++        print("****************************************************************")
++        print("Data loaded successfully!")
++        print(" ->",num_cons,"contigs")
++        print(" ->",len(stoitColNames),"BAM files")
++        print("Written to: '"+dbFileName+"'")
++        print("****************************************************************")
++        print("    %s" % timer.getTimeStamp())
+ 
+         # all good!
+         return True
+@@ -516,17 +516,17 @@ class GMDataManager:
+         vrs = ",".join([str.lower(str(x)) for x in valid_responses])
+         while(input_not_ok):
+             if(minimal):
+-                option = raw_input(" Overwrite? ("+vrs+") : ")
++                option = input(" Overwrite? ("+vrs+") : ")
+             else:
+ 
+-                option = raw_input(" ****WARNING**** Database: '"+dbFileName+"' exists.\n" \
++                option = input(" ****WARNING**** Database: '"+dbFileName+"' exists.\n" \
+                                    " If you continue you *WILL* delete any previous analyses!\n" \
+                                    " Overwrite? ("+vrs+") : ")
+             if(option.upper() in valid_responses):
+-                print "****************************************************************"
++                print("****************************************************************")
+                 return option.upper()
+             else:
+-                print "Error, unrecognised choice '"+option.upper()+"'"
++                print("Error, unrecognised choice '"+option.upper()+"'")
+                 minimal = True
+ 
+ #------------------------------------------------------------------------------
+@@ -538,7 +538,7 @@ class GMDataManager:
+         this_DB_version = self.getGMDBFormat(dbFileName)
+         if __current_GMDB_version__ == this_DB_version:
+             if not silent:
+-                print "    GroopM DB version (%s) up to date" % this_DB_version
++                print("    GroopM DB version (%s) up to date" % this_DB_version)
+             return
+ 
+         # now, if we get here then we need to do some work
+@@ -558,14 +558,14 @@ class GMDataManager:
+ 
+     def upgradeDB_0_to_1(self, dbFileName):
+         """Upgrade a GM db from version 0 to version 1"""
+-        print "*******************************************************************************\n"
+-        print "              *** Upgrading GM DB from version 0 to version 1 ***"
+-        print ""
+-        print "                            please be patient..."
+-        print ""
++        print("*******************************************************************************\n")
++        print("              *** Upgrading GM DB from version 0 to version 1 ***")
++        print("")
++        print("                            please be patient...")
++        print("")
+         # the change in this version is that we'll be saving the first
+         # two kmerSig PCA's in a separate table
+-        print "    Calculating and storing the kmerSig PCAs"
++        print("    Calculating and storing the kmerSig PCAs")
+ 
+         # compute the PCA of the ksigs
+         ksigs = self.getKmerSigs(dbFileName)
+@@ -585,26 +585,26 @@ class GMDataManager:
+                                               expectedrows=num_cons
+                                               )
+                 except:
+-                    print "Error creating KMERVALS table:", exc_info()[0]
++                    print("Error creating KMERVALS table:", exc_info()[0])
+                     raise
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+         # update the formatVersion field and we're done
+         self.setGMDBFormat(dbFileName, 1)
+-        print "*******************************************************************************"
++        print("*******************************************************************************")
+ 
+     def upgradeDB_1_to_2(self, dbFileName):
+         """Upgrade a GM db from version 1 to version 2"""
+-        print "*******************************************************************************\n"
+-        print "              *** Upgrading GM DB from version 1 to version 2 ***"
+-        print ""
+-        print "                            please be patient..."
+-        print ""
++        print("*******************************************************************************\n")
++        print("              *** Upgrading GM DB from version 1 to version 2 ***")
++        print("")
++        print("                            please be patient...")
++        print("")
+         # the change in this version is that we'll be saving a variable number of kmerSig PCA's
+         # and GC information for each contig
+-        print "    Calculating and storing the kmer signature PCAs"
++        print("    Calculating and storing the kmer signature PCAs")
+ 
+         # grab any data needed from database before opening if for modification
+         bin_ids = self.getBins(dbFileName)
+@@ -617,7 +617,7 @@ class GMDataManager:
+         num_cons = len(pc_ksigs)
+ 
+         db_desc = []
+-        for i in xrange(0, len(pc_ksigs[0])):
++        for i in range(0, len(pc_ksigs[0])):
+           db_desc.append(('pc' + str(i+1), float))
+ 
+         try:
+@@ -639,11 +639,11 @@ class GMDataManager:
+                     h5file.renameNode(pg, 'kpca', 'tmp_kpca', overwrite=True)
+ 
+                 except:
+-                    print "Error creating kpca table:", exc_info()[0]
++                    print("Error creating kpca table:", exc_info()[0])
+                     raise
+ 
+                 # Add GC
+-                contigFile = raw_input('\nPlease specify fasta file containing the bam reference sequences: ')
++                contigFile = input('\nPlease specify fasta file containing the bam reference sequences: ')
+                 with open(contigFile, "r") as f:
+                     try:
+                         contigInfo = {}
+@@ -657,7 +657,7 @@ class GMDataManager:
+                         con_gcs = np.array([contigInfo[cid][1] for cid in con_names])
+                         con_lengths = np.array([contigInfo[cid][0] for cid in con_names])
+                     except:
+-                        print "Error parsing contigs"
++                        print("Error parsing contigs")
+                         raise
+ 
+                 # remove any contigs not in the current DB (these were removed due to having zero coverage)
+@@ -670,27 +670,27 @@ class GMDataManager:
+ 
+                 mg = h5file.getNode('/', name='meta')
+                 self.setBinAssignments((h5file, mg),
+-                               image=zip(con_names,
++                               image=list(zip(con_names,
+                                          bin_ids,
+-                                         con_lengths, con_gcs)
++                                         con_lengths, con_gcs))
+                                )
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+         # update the formatVersion field and we're done
+         self.setGMDBFormat(dbFileName, 2)
+-        print "*******************************************************************************"
++        print("*******************************************************************************")
+ 
+     def upgradeDB_2_to_3(self, dbFileName):
+         """Upgrade a GM db from version 2 to version 3"""
+-        print "*******************************************************************************\n"
+-        print "              *** Upgrading GM DB from version 2 to version 3 ***"
+-        print ""
+-        print "                            please be patient..."
+-        print ""
++        print("*******************************************************************************\n")
++        print("              *** Upgrading GM DB from version 2 to version 3 ***")
++        print("")
++        print("                            please be patient...")
++        print("")
+         # the change in this version is that we'll be saving the variance for each kmerSig PCA
+-        print "    Calculating and storing variance of kmer signature PCAs"
++        print("    Calculating and storing variance of kmer signature PCAs")
+ 
+         # compute the PCA of the ksigs
+         conParser = ContigParser()
+@@ -699,12 +699,12 @@ class GMDataManager:
+ 
+         # calcualte variance of each PC
+         pc_var = [sumvariance[0]]
+-        for i in xrange(1, len(sumvariance)):
++        for i in range(1, len(sumvariance)):
+           pc_var.append(sumvariance[i]-sumvariance[i-1])
+         pc_var = tuple(pc_var)
+ 
+         db_desc = []
+-        for i in xrange(0, len(pc_var)):
++        for i in range(0, len(pc_var)):
+           db_desc.append(('pc' + str(i+1) + '_var', float))
+ 
+         try:
+@@ -726,26 +726,26 @@ class GMDataManager:
+                     h5file.renameNode(meta, 'kpca_variance', 'tmp_kpca_variance', overwrite=True)
+ 
+                 except:
+-                    print "Error creating kpca_variance table:", exc_info()[0]
++                    print("Error creating kpca_variance table:", exc_info()[0])
+                     raise
+         except:
+-            print "Error opening DB:", dbFileName, exc_info()[0]
++            print("Error opening DB:", dbFileName, exc_info()[0])
+             raise
+ 
+         # update the formatVersion field and we're done
+         self.setGMDBFormat(dbFileName, 3)
+-        print "*******************************************************************************"
++        print("*******************************************************************************")
+ 
+     def upgradeDB_3_to_4(self, dbFileName):
+         """Upgrade a GM db from version 3 to version 4"""
+-        print "*******************************************************************************\n"
+-        print "              *** Upgrading GM DB from version 3 to version 4 ***"
+-        print ""
+-        print "                            please be patient..."
+-        print ""
++        print("*******************************************************************************\n")
++        print("              *** Upgrading GM DB from version 3 to version 4 ***")
++        print("")
++        print("                            please be patient...")
++        print("")
+         # the change in this version is that we'll be saving the variance for each kmerSig PCA
+-        print "    Adding chimeric flag for each bin."
+-        print "    !!! Groopm core must be run again for this flag to be properly set. !!!"
++        print("    Adding chimeric flag for each bin.")
++        print("    !!! Groopm core must be run again for this flag to be properly set. !!!")
+ 
+         # read existing data in 'bins' table
+         try:
+@@ -755,7 +755,7 @@ class GMDataManager:
+                 for row in all_rows:
+                     ret_dict[row[0]] = row[1]
+         except:
+-            print "Error opening DB:", dbFileName, exc_info()[0]
++            print("Error opening DB:", dbFileName, exc_info()[0])
+             raise
+ 
+         # write new table with chimeric flag set to False by default
+@@ -785,28 +785,28 @@ class GMDataManager:
+                                        title="Bin information",
+                                        expectedrows=1)
+                 except:
+-                    print "Error creating META table:", exc_info()[0]
++                    print("Error creating META table:", exc_info()[0])
+                     raise
+ 
+                 h5file.renameNode(mg, 'bins', 'tmp_bins', overwrite=True)
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+         # update the formatVersion field and we're done
+         self.setGMDBFormat(dbFileName, 4)
+-        print "*******************************************************************************"
++        print("*******************************************************************************")
+ 
+     def upgradeDB_4_to_5(self, dbFileName):
+         """Upgrade a GM db from version 4 to version 5"""
+-        print "*******************************************************************************\n"
+-        print "              *** Upgrading GM DB from version 4 to version 5 ***"
+-        print ""
+-        print "                            please be patient..."
+-        print ""
++        print("*******************************************************************************\n")
++        print("              *** Upgrading GM DB from version 4 to version 5 ***")
++        print("")
++        print("                            please be patient...")
++        print("")
+         # the change in this version is that we'll be saving the transformed coverage coords
+-        print "    Saving transformed coverage profiles"
+-        print "    You will not need to re-run parse or core due to this change"
++        print("    Saving transformed coverage profiles")
++        print("    You will not need to re-run parse or core due to this change")
+ 
+         # we need to get the raw coverage profiles and the kmerPCA1 data
+         indices = self.getConditionalIndices(dbFileName, silent=False, checkUpgrade=False)
+@@ -849,7 +849,7 @@ class GMDataManager:
+                                    title="Bam based coverage",
+                                    expectedrows=CT.numContigs)
+             except:
+-                print "Error creating coverage table:", exc_info()[0]
++                print("Error creating coverage table:", exc_info()[0])
+                 raise
+ 
+             h5file.renameNode(profile_group, 'coverage', 'tmp_coverages', overwrite=True)
+@@ -865,7 +865,7 @@ class GMDataManager:
+                                    title="Transformed coverage",
+                                    expectedrows=CT.numContigs)
+             except:
+-                print "Error creating transformed coverage table:", exc_info()[0]
++                print("Error creating transformed coverage table:", exc_info()[0])
+                 raise
+ 
+             # transformed coverage corners
+@@ -879,7 +879,7 @@ class GMDataManager:
+                                    title="Transformed coverage corners",
+                                    expectedrows=CT.numStoits)
+             except:
+-                print "Error creating transformed coverage corner table:", exc_info()[0]
++                print("Error creating transformed coverage corner table:", exc_info()[0])
+                 raise
+ 
+ 
+@@ -892,7 +892,7 @@ class GMDataManager:
+                                    title="Normalised coverage",
+                                    expectedrows=CT.numContigs)
+             except:
+-                print "Error creating normalised coverage table:", exc_info()[0]
++                print("Error creating normalised coverage table:", exc_info()[0])
+                 raise
+ 
+         # stoit col names may have been shuffled
+@@ -912,7 +912,7 @@ class GMDataManager:
+ 
+         # update the formatVersion field and we're done
+         self.setGMDBFormat(dbFileName, 5)
+-        print "*******************************************************************************"
++        print("*******************************************************************************")
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -925,7 +925,7 @@ class GMDataManager:
+             with tables.openFile(dbFileName, mode='r') as h5file:
+                 full_record = [list(x) for x in h5file.root.links.links.readWhere("contig1 >= 0")]
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+         if indices == []:
+@@ -958,7 +958,7 @@ class GMDataManager:
+             with tables.openFile(dbFileName, mode='r') as h5file:
+                 return np.array([x.nrow for x in h5file.root.meta.contigs.where(condition)])
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def getCoverageProfiles(self, dbFileName, condition='', indices=np.array([])):
+@@ -972,7 +972,7 @@ class GMDataManager:
+                         condition = "cid != ''" # no condition breaks everything!
+                     return np.array([list(h5file.root.profile.coverage[x.nrow]) for x in h5file.root.meta.contigs.where(condition)])
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def getTransformedCoverageProfiles(self, dbFileName, condition='', indices=np.array([])):
+@@ -986,7 +986,7 @@ class GMDataManager:
+                         condition = "cid != ''" # no condition breaks everything!
+                     return np.array([list(h5file.root.profile.transCoverage[x.nrow]) for x in h5file.root.meta.contigs.where(condition)])
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def getNormalisedCoverageProfiles(self, dbFileName, condition='', indices=np.array([])):
+@@ -1000,12 +1000,12 @@ class GMDataManager:
+                         condition = "cid != ''" # no condition breaks everything!
+                     return np.array([list(h5file.root.profile.normCoverage[x.nrow]) for x in h5file.root.meta.contigs.where(condition)])
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def nukeBins(self, dbFileName):
+         """Reset all bin information, completely"""
+-        print "    Clearing all old bin information from",dbFileName
++        print("    Clearing all old bin information from",dbFileName)
+         self.setBinStats(dbFileName, [])
+         self.setNumBins(dbFileName, 0)
+         self.setBinAssignments(dbFileName, updates={}, nuke=True)
+@@ -1061,13 +1061,13 @@ class GMDataManager:
+                                        title="Bin information",
+                                        expectedrows=1)
+                 except:
+-                    print "Error creating META table:", exc_info()[0]
++                    print("Error creating META table:", exc_info()[0])
+                     raise
+ 
+                 # rename the tmp table to overwrite
+                 h5file.renameNode(mg, 'bins', 'tmp_bins', overwrite=True)
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def getBinStats(self, dbFileName):
+@@ -1085,7 +1085,7 @@ class GMDataManager:
+ 
+                 return ret_dict
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+         return {}
+ 
+@@ -1100,7 +1100,7 @@ class GMDataManager:
+                         condition = "cid != ''" # no condition breaks everything!
+                     return np.array([list(x)[1] for x in h5file.root.meta.contigs.readWhere(condition)]).ravel()
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def setBinAssignments(self, storage, updates=None, image=None, nuke=False):
+@@ -1135,17 +1135,17 @@ class GMDataManager:
+                 bins = self.getBins(dbFileName)
+ 
+             # now apply the updates
+-            for tr in updates.keys():
++            for tr in list(updates.keys()):
+                 bins[tr] = updates[tr]
+ 
+             # and build the image
+-            image = np.array(zip(contig_names, bins, contig_lengths, contig_gcs),
++            image = np.array(list(zip(contig_names, bins, contig_lengths, contig_gcs)),
+                              dtype=db_desc)
+ 
+             try:
+                 h5file = tables.openFile(dbFileName, mode='a')
+             except:
+-                print "Error opening DB:",dbFileName, exc_info()[0]
++                print("Error opening DB:",dbFileName, exc_info()[0])
+                 raise
+             meta_group = h5file.getNode('/', name='meta')
+             closeh5 = True
+@@ -1157,7 +1157,7 @@ class GMDataManager:
+             image = np.array(image,
+                              dtype=db_desc)
+         else:
+-            print "get with the program dude"
++            print("get with the program dude")
+             return
+ 
+         # now we write the data
+@@ -1174,7 +1174,7 @@ class GMDataManager:
+                                title="Contig information",
+                                expectedrows=num_cons)
+         except:
+-            print "Error creating CONTIG table:", exc_info()[0]
++            print("Error creating CONTIG table:", exc_info()[0])
+             raise
+ 
+         # rename the tmp table to overwrite
+@@ -1193,7 +1193,7 @@ class GMDataManager:
+                         condition = "cid != ''" # no condition breaks everything!
+                     return np.array([list(x)[0] for x in h5file.root.meta.contigs.readWhere(condition)]).ravel()
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def getContigLengths(self, dbFileName, condition='', indices=np.array([])):
+@@ -1207,7 +1207,7 @@ class GMDataManager:
+                         condition = "cid != ''" # no condition breaks everything!
+                     return np.array([list(x)[2] for x in h5file.root.meta.contigs.readWhere(condition)]).ravel()
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def getContigGCs(self, dbFileName, condition='', indices=np.array([])):
+@@ -1221,7 +1221,7 @@ class GMDataManager:
+                         condition = "cid != ''" # no condition breaks everything!
+                     return np.array([list(x)[3] for x in h5file.root.meta.contigs.readWhere(condition)]).ravel()
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def getKmerSigs(self, dbFileName, condition='', indices=np.array([])):
+@@ -1235,7 +1235,7 @@ class GMDataManager:
+                         condition = "cid != ''" # no condition breaks everything!
+                     return np.array([list(h5file.root.profile.kms[x.nrow]) for x in h5file.root.meta.contigs.where(condition)])
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def getKmerPCAs(self, dbFileName, condition='', indices=np.array([])):
+@@ -1249,7 +1249,7 @@ class GMDataManager:
+                         condition = "cid != ''" # no condition breaks everything!
+                     return np.array([list(h5file.root.profile.kpca[x.nrow]) for x in h5file.root.meta.contigs.where(condition)])
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+ #------------------------------------------------------------------------------
+@@ -1261,7 +1261,7 @@ class GMDataManager:
+             with tables.openFile(dbFileName, mode='r') as h5file:
+                 return np.array(list(h5file.root.meta.kpca_variance[0]))
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def getTransformedCoverageCorners(self, dbFileName):
+@@ -1270,7 +1270,7 @@ class GMDataManager:
+             with tables.openFile(dbFileName, mode='r') as h5file:
+                 return np.array([list(x) for x in h5file.root.meta.transCoverageCorners.read()])
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def setMeta(self, h5file, metaData, overwrite=False):
+@@ -1310,7 +1310,7 @@ class GMDataManager:
+                                "Descriptive data",
+                                expectedrows=1)
+         except:
+-            print "Error creating META table:", exc_info()[0]
++            print("Error creating META table:", exc_info()[0])
+             raise
+ 
+         if overwrite:
+@@ -1324,7 +1324,7 @@ class GMDataManager:
+                 # theres only one value
+                 return h5file.root.meta.meta.read()[fieldName][0]
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def setGMDBFormat(self, dbFileName, version):
+@@ -1344,7 +1344,7 @@ class GMDataManager:
+             with tables.openFile(dbFileName, mode='a', rootUEP="/") as h5file:
+                 self.setMeta(h5file, meta_data, overwrite=True)
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def getGMDBFormat(self, dbFileName):
+@@ -1397,7 +1397,7 @@ class GMDataManager:
+             with tables.openFile(dbFileName, mode='a', rootUEP="/") as h5file:
+                 self.setMeta(h5file, meta_data, overwrite=True)
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def getNumBins(self, dbFileName):
+@@ -1417,7 +1417,7 @@ class GMDataManager:
+             with tables.openFile(dbFileName, mode='r') as h5file:
+                 return h5file.root.meta.meta.read()['clustered']
+         except:
+-            print "Error opening database:", dbFileName, exc_info()[0]
++            print("Error opening database:", dbFileName, exc_info()[0])
+             raise
+ 
+     def setClustered(self, dbFileName, state):
+@@ -1437,7 +1437,7 @@ class GMDataManager:
+             with tables.openFile(dbFileName, mode='a', rootUEP="/") as h5file:
+                 self.setMeta(h5file, meta_data, overwrite=True)
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+     def isComplete(self, dbFileName):
+@@ -1446,7 +1446,7 @@ class GMDataManager:
+             with tables.openFile(dbFileName, mode='r') as h5file:
+                 return h5file.root.meta.meta.read()['complete']
+         except:
+-            print "Error opening database:", dbFileName, exc_info()[0]
++            print("Error opening database:", dbFileName, exc_info()[0])
+             raise
+ 
+     def setComplete(self, dbFileName, state):
+@@ -1466,7 +1466,7 @@ class GMDataManager:
+             with tables.openFile(dbFileName, mode='a', rootUEP="/") as h5file:
+                 self.setMeta(h5file, meta_data, overwrite=True)
+         except:
+-            print "Error opening DB:",dbFileName, exc_info()[0]
++            print("Error opening DB:",dbFileName, exc_info()[0])
+             raise
+ 
+ #------------------------------------------------------------------------------
+@@ -1543,7 +1543,7 @@ class GMDataManager:
+                         fh.write(separator+data_converters[j](data_arrays[j][i]))
+                     fh.write('\n')
+         except:
+-            print "Error opening output file %s for writing" % outFile
++            print("Error opening output file %s for writing" % outFile)
+             raise
+ 
+ ###############################################################################
+@@ -1574,7 +1574,7 @@ class ContigParser:
+ 
+     def parse(self, contigFile, cutoff, kse):
+         """Do the heavy lifting of parsing"""
+-        print "Parsing contigs"
++        print("Parsing contigs")
+         contigInfo = {} # save everything here first so we can sort accordingly
+         for cid,seq in self.readFasta(contigFile):
+             if len(seq) >= cutoff:
+@@ -1619,7 +1619,7 @@ class ContigParser:
+ 
+     def getWantedSeqs(self, contigFile, wanted, storage={}):
+         """Do the heavy lifting of parsing"""
+-        print "Parsing contigs"
++        print("Parsing contigs")
+         for cid,seq in self.readFasta(contigFile):
+             if(cid in wanted):
+                 storage[cid] = seq
+@@ -1696,7 +1696,7 @@ class KmerSigEngine:
+         returns a tuple of floats which is the kmer sig
+         """
+         # tmp storage
+-        sig = dict(zip(self.kmerCols, [0.0] * self.numMers))
++        sig = dict(list(zip(self.kmerCols, [0.0] * self.numMers)))
+         # the number fo kmers in this sequence
+         num_mers = len(seq)-self.kLen+1
+         for i in range(0,num_mers):
+@@ -1710,7 +1710,7 @@ class KmerSigEngine:
+         try:
+             return tuple([sig[x] / num_mers for x in self.kmerCols])
+         except ZeroDivisionError:
+-            print "***WARNING*** Sequence '%s' is not playing well with the kmer signature engine " % seq
++            print("***WARNING*** Sequence '%s' is not playing well with the kmer signature engine " % seq)
+             return tuple([0.0] * self.numMers)
+ 
+ ###############################################################################
+@@ -1724,7 +1724,7 @@ class BamParser:
+ 
+     def parse(self, bamFiles, contigNames, cid2Indices, threads):
+         """Parse multiple bam files and store the results in the main DB"""
+-        print "Parsing BAM files using %d threads" % threads
++        print("Parsing BAM files using %d threads" % threads)
+ 
+         BP = BMBP(BMCT(CT.P_MEAN_TRIMMED, 5, 5))
+         BP.parseBams(bamFiles,
+@@ -1736,8 +1736,8 @@ class BamParser:
+         # we need to make sure that the ordering of contig names is consistent
+         # first we get a dict that connects a contig name to the index in
+         # the coverages array
+-        con_name_lookup = dict(zip(BP.BFI.contigNames,
+-                                   range(len(BP.BFI.contigNames))))
++        con_name_lookup = dict(list(zip(BP.BFI.contigNames,
++                                   list(range(len(BP.BFI.contigNames))))))
+ 
+         # Next we build the cov_sigs array by appending the coverage
+         # profiles in the same order. We need to handle the case where
+@@ -1799,7 +1799,7 @@ class CoverageTransformer:
+         self.kmerNormPC1 = kmerNormPC1
+         self.covProfiles = coverageProfiles
+         self.stoitColNames = stoitColNames
+-        self.indices = range(self.numContigs)
++        self.indices = list(range(self.numContigs))
+         self.scaleFactor = scaleFactor
+ 
+         # things we care about!
+@@ -1814,8 +1814,8 @@ class CoverageTransformer:
+             shrinkFn = lambda x:x
+ 
+         if(not silent):
+-            print "    Reticulating splines"
+-            print "    Dimensionality reduction"
++            print("    Reticulating splines")
++            print("    Dimensionality reduction")
+ 
+         unit_vectors = [(np.cos(i*2*np.pi/self.numStoits),np.sin(i*2*np.pi/self.numStoits)) for i in range(self.numStoits)]
+ 
+@@ -1954,13 +1954,13 @@ class CoverageTransformer:
+             # so we need to make sure that we get all the nodes in the ordering list
+             trier = 0   # start of a new disjoint ring
+             ordering = [trier]
+-            while len(ordering) < len(lr_dict.keys()):
++            while len(ordering) < len(list(lr_dict.keys())):
+                 try:
+                     adding_index = lr_dict[trier][0]    # ok IF this guy has a registered neighbour
+                     if adding_index in ordering:        # NOT ok if the neighbour is already in the list
+                         raise IndexError()
+                     ordering.append(adding_index)
+-                    while len(ordering) < len(lr_dict.keys()):  # try consume the entire ring
++                    while len(ordering) < len(list(lr_dict.keys())):  # try consume the entire ring
+                         # len(ordering) >= 2
+                         last = ordering[-1]
+                         if lr_dict[last][0] == ordering[-2]:    # bi-directionality means this will always work
+@@ -1973,7 +1973,7 @@ class CoverageTransformer:
+                                 # stick (2 city system)
+                                 while(trier in ordering):       # find the next index NOT in the ordering
+                                     trier += 1
+-                                if trier < len(lr_dict.keys()): # make sure it makes sense
++                                if trier < len(list(lr_dict.keys())): # make sure it makes sense
+                                     ordering.append(trier)
+                                 break
+                         else:
+@@ -1985,14 +1985,14 @@ class CoverageTransformer:
+                     # single point
+                     while(trier in ordering):
+                         trier += 1
+-                    if trier < len(lr_dict.keys()): # make sure it makes sense
++                    if trier < len(list(lr_dict.keys())): # make sure it makes sense
+                         ordering.append(trier)
+ 
+         # sanity check
+         if len(ordering) != self.numStoits:
+-            print "WATTUP, ordering is looking wrong!"
+-            print ordering
+-            print lr_dict
++            print("WATTUP, ordering is looking wrong!")
++            print(ordering)
++            print(lr_dict)
+ 
+         # reshuffle the contig order!
+         # yay for bubble sort!
+--- groopm/profileManager.py.orig	2015-03-06 07:00:49 UTC
++++ groopm/profileManager.py
+@@ -96,10 +96,10 @@ from scipy.spatial import KDTree as kdt
+ from scipy.stats import f_oneway, distributions
+ 
+ # GroopM imports
+-from PCA import PCA, Center
+-from mstore import GMDataManager
+-from bin import Bin, mungeCbar
+-import groopmExceptions as ge
++from .PCA import PCA, Center
++from .mstore import GMDataManager
++from .bin import Bin, mungeCbar
++from . import groopmExceptions as ge
+ 
+ np_seterr(all='raise')
+ 
+@@ -179,7 +179,7 @@ class ProfileManager:
+         if(silent):
+             verbose=False
+         if verbose:
+-            print "Loading data from:", self.dbFileName
++            print("Loading data from:", self.dbFileName)
+ 
+         try:
+             self.numStoits = self.getNumStoits()
+@@ -188,19 +188,19 @@ class ProfileManager:
+                                                                   condition=condition,
+                                                                   silent=silent)
+             if(verbose):
+-                print "    Loaded indices with condition:", condition
++                print("    Loaded indices with condition:", condition)
+             self.numContigs = len(self.indices)
+ 
+             if self.numContigs == 0:
+-                print "    ERROR: No contigs loaded using condition:", condition
++                print("    ERROR: No contigs loaded using condition:", condition)
+                 return
+ 
+             if(not silent):
+-                print "    Working with: %d contigs" % self.numContigs
++                print("    Working with: %d contigs" % self.numContigs)
+ 
+             if(loadCovProfiles):
+                 if(verbose):
+-                    print "    Loading coverage profiles"
++                    print("    Loading coverage profiles")
+                 self.covProfiles = self.dataManager.getCoverageProfiles(self.dbFileName, indices=self.indices)
+                 self.normCoverages = self.dataManager.getNormalisedCoverageProfiles(self.dbFileName, indices=self.indices)
+ 
+@@ -209,14 +209,14 @@ class ProfileManager:
+ 
+             if loadRawKmers:
+                 if(verbose):
+-                    print "    Loading RAW kmer sigs"
++                    print("    Loading RAW kmer sigs")
+                 self.kmerSigs = self.dataManager.getKmerSigs(self.dbFileName, indices=self.indices)
+ 
+             if(loadKmerPCs):
+                 self.kmerPCs = self.dataManager.getKmerPCAs(self.dbFileName, indices=self.indices)
+ 
+                 if(verbose):
+-                    print "    Loading PCA kmer sigs (" + str(len(self.kmerPCs[0])) + " dimensional space)"
++                    print("    Loading PCA kmer sigs (" + str(len(self.kmerPCs[0])) + " dimensional space)")
+ 
+                 self.kmerNormPC1 = np_copy(self.kmerPCs[:,0])
+                 self.kmerNormPC1 -= np_min(self.kmerNormPC1)
+@@ -226,26 +226,26 @@ class ProfileManager:
+                 self.kmerVarPC = self.dataManager.getKmerVarPC(self.dbFileName, indices=self.indices)
+ 
+                 if(verbose):
+-                    print "    Loading PCA kmer variance (total variance: %.2f" % np_sum(self.kmerVarPC) + ")"
++                    print("    Loading PCA kmer variance (total variance: %.2f" % np_sum(self.kmerVarPC) + ")")
+ 
+             if(loadContigNames):
+                 if(verbose):
+-                    print "    Loading contig names"
++                    print("    Loading contig names")
+                 self.contigNames = self.dataManager.getContigNames(self.dbFileName, indices=self.indices)
+ 
+             if(loadContigLengths):
+                 self.contigLengths = self.dataManager.getContigLengths(self.dbFileName, indices=self.indices)
+                 if(verbose):
+-                    print "    Loading contig lengths (Total: %d BP)" % ( sum(self.contigLengths) )
++                    print("    Loading contig lengths (Total: %d BP)" % ( sum(self.contigLengths) ))
+ 
+             if(loadContigGCs):
+                 self.contigGCs = self.dataManager.getContigGCs(self.dbFileName, indices=self.indices)
+                 if(verbose):
+-                    print "    Loading contig GC ratios (Average GC: %0.3f)" % ( np_mean(self.contigGCs) )
++                    print("    Loading contig GC ratios (Average GC: %0.3f)" % ( np_mean(self.contigGCs) ))
+ 
+             if(makeColors):
+                 if(verbose):
+-                    print "    Creating color map"
++                    print("    Creating color map")
+ 
+                 # use HSV to RGB to generate colors
+                 S = 1       # SAT and VAL remain fixed at 1. Reduce to make
+@@ -254,7 +254,7 @@ class ProfileManager:
+ 
+             if(loadBins):
+                 if(verbose):
+-                    print "    Loading bin assignments"
++                    print("    Loading bin assignments")
+ 
+                 self.binIds = self.dataManager.getBins(self.dbFileName, indices=self.indices)
+ 
+@@ -289,7 +289,7 @@ class ProfileManager:
+             self.stoitColNames = self.getStoitColNames()
+ 
+         except:
+-            print "Error loading DB:", self.dbFileName, exc_info()[0]
++            print("Error loading DB:", self.dbFileName, exc_info()[0])
+             raise
+ 
+     def reduceIndices(self, deadRowIndices):
+@@ -419,7 +419,7 @@ class ProfileManager:
+         # we'd like to take it down to about 1500 or so RI's
+         # but we'd like to do this in a repeatable way
+         ideal_contig_num = 1500
+-        sub_cons = range(len(self.indices))
++        sub_cons = list(range(len(self.indices)))
+         while len(sub_cons) > ideal_contig_num:
+             # select every second contig when sorted by norm cov
+             cov_sorted = np_argsort(self.normCoverages[sub_cons])
+@@ -497,7 +497,7 @@ class ProfileManager:
+     def transformCP(self, timer, silent=False, nolog=False):
+         """Do the main transformation on the coverage profile data"""
+         if(not silent):
+-            print "    Reticulating splines"
++            print("    Reticulating splines")
+         self.transformedCP = self.dataManager.getTransformedCoverageProfiles(self.dbFileName, indices=self.indices)
+         self.corners = self.dataManager.getTransformedCoverageCorners(self.dbFileName)
+         self.TCentre = np_mean(self.corners, axis=0)
+@@ -530,7 +530,7 @@ class ProfileManager:
+     def createColorMapHSV(self):
+       S = 1.0
+       V = 1.0
+-      return LinearSegmentedColormap.from_list('GC', [htr((1.0 + np_sin(np_pi * (val/1000.0) - np_pi/2))/2., S, V) for val in xrange(0, 1000)], N=1000)
++      return LinearSegmentedColormap.from_list('GC', [htr((1.0 + np_sin(np_pi * (val/1000.0) - np_pi/2))/2., S, V) for val in range(0, 1000)], N=1000)
+ 
+     def setColorMap(self, colorMapStr):
+         if colorMapStr == 'HSV':
+@@ -617,7 +617,7 @@ class ProfileManager:
+             if self.numStoits == 3:
+                 self.transformedCP = self.covProfiles
+             else:
+-                print "Number of stoits != 3. You need to transform"
++                print("Number of stoits != 3. You need to transform")
+                 self.transformCP(timer)
+ 
+         fig = plt.figure()
+@@ -633,7 +633,7 @@ class ProfileManager:
+             plt.show()
+             plt.close(fig)
+         except:
+-            print "Error showing image", exc_info()[0]
++            print("Error showing image", exc_info()[0])
+             raise
+         del fig
+ 
+@@ -646,7 +646,7 @@ class ProfileManager:
+             if self.numStoits == 3:
+                 self.transformedCP = self.covProfiles
+             else:
+-                print "Number of stoits != 3. You need to transform"
++                print("Number of stoits != 3. You need to transform")
+                 self.transformCP(timer)
+ 
+         fig = plt.figure()
+@@ -691,7 +691,7 @@ class ProfileManager:
+             plt.show()
+             plt.close(fig)
+         except:
+-            print "Error showing image", exc_info()[0]
++            print("Error showing image", exc_info()[0])
+             raise
+         del fig
+ 
+@@ -801,7 +801,7 @@ class ProfileManager:
+             ax = fig.add_subplot(111, projection='3d')
+             if len(restrictedBids) == 0:
+                 if highlight is None:
+-                    print "BF:", np_shape(self.transformedCP)
++                    print("BF:", np_shape(self.transformedCP))
+                     if ignoreContigLengths:
+                         sc = ax.scatter(self.transformedCP[:,0],
+                                    self.transformedCP[:,1],
+@@ -895,7 +895,7 @@ class ProfileManager:
+                                     marker='.')
+                     sc.set_edgecolors = sc.set_facecolors = lambda *args:None # disable depth transparency effect
+ 
+-                    print np_shape(disp_vals), np_shape(hide_vals), np_shape(self.transformedCP)
++                    print(np_shape(disp_vals), np_shape(hide_vals), np_shape(self.transformedCP))
+ 
+                 # render color bar
+                 cbar = plt.colorbar(sc, shrink=0.5)
+@@ -914,7 +914,7 @@ class ProfileManager:
+                         r_cols = np_append(r_cols, self.contigGCs[i])
+                         num_added += 1
+                 r_trans = np_reshape(r_trans, (num_added,3))
+-                print np_shape(r_trans)
++                print(np_shape(r_trans))
+                 #r_cols = np_reshape(r_cols, (num_added,3))
+                 sc = ax.scatter(r_trans[:,0],
+                                 r_trans[:,1],
+@@ -958,13 +958,13 @@ class ProfileManager:
+                     fig.set_size_inches(primaryWidth,primaryWidth)
+                 plt.savefig(fileName,dpi=dpi,format=format)
+             except:
+-                print "Error saving image",fileName, exc_info()[0]
++                print("Error saving image",fileName, exc_info()[0])
+                 raise
+         elif(show):
+             try:
+                 plt.show()
+             except:
+-                print "Error showing image", exc_info()[0]
++                print("Error showing image", exc_info()[0])
+                 raise
+         if del_fig:
+             plt.close(fig)
+@@ -1075,13 +1075,13 @@ class ProfileManager:
+                 fig.set_size_inches(primaryWidth,primaryWidth)
+                 plt.savefig(fileName,dpi=dpi,format=format)
+             except:
+-                print "Error saving image",fileName, exc_info()[0]
++                print("Error saving image",fileName, exc_info()[0])
+                 raise
+         else:
+             try:
+                 plt.show()
+             except:
+-                print "Error showing image", exc_info()[0]
++                print("Error showing image", exc_info()[0])
+                 raise
+ 
+ ###############################################################################
+--- groopm/refine.py.orig	2014-11-26 01:01:33 UTC
++++ groopm/refine.py
+@@ -87,11 +87,11 @@ from scipy.spatial import KDTree as kdt
+ from scipy.spatial.distance import cdist, squareform, pdist
+ 
+ # GroopM imports
+-from binManager import BinManager
+-from ellipsoid import EllipsoidTool
+-from PCA import PCA, Center
+-import groopmExceptions as ge
+-from som import SOM
++from .binManager import BinManager
++from .ellipsoid import EllipsoidTool
++from .PCA import PCA, Center
++from . import groopmExceptions as ge
++from .som import SOM
+ np_seterr(all='raise')
+ 
+ ###############################################################################
+@@ -150,23 +150,23 @@ class RefineEngine:
+             ignoreRanges=True
+ 
+         if auto:
+-            print "    Start automatic bin refinement"
+-            num_binned = len(self.PM.binnedRowIndices.keys())
++            print("    Start automatic bin refinement")
++            num_binned = len(list(self.PM.binnedRowIndices.keys()))
+             perc = "%.2f" % round((float(num_binned)/float(self.PM.numContigs))*100,2)
+-            print "   ",num_binned,"contigs across",len(self.BM.bins.keys()),"cores (",perc,"% )"
++            print("   ",num_binned,"contigs across",len(list(self.BM.bins.keys())),"cores (",perc,"% )")
+ 
+             graph = self.autoRefineBins(timer, makeGraph=gf!="")
+             if graph is not None:
+-                print "    Writing graph to:", gf
++                print("    Writing graph to:", gf)
+                 try:
+                     with open(gf, "w") as gv_fh:
+                         gv_fh.write(graph)
+                 except:
+-                    print "Error writing graph to:", gf
++                    print("Error writing graph to:", gf)
+ 
+-            num_binned = len(self.PM.binnedRowIndices.keys())
++            num_binned = len(list(self.PM.binnedRowIndices.keys()))
+             perc = "%.2f" % round((float(num_binned)/float(self.PM.numContigs))*100,2)
+-            print "   ",num_binned,"contigs across",len(self.BM.bins.keys()),"cores (",perc,"% )"
++            print("   ",num_binned,"contigs across",len(list(self.BM.bins.keys())),"cores (",perc,"% )")
+ 
+             if plotFinal != "":
+                 bids = self.BM.getBids()
+@@ -196,28 +196,28 @@ class RefineEngine:
+             user_option = self.promptOnPlotterRefine()
+ 
+             if(user_option == 'Q'):
+-                print '\nBye!'
++                print('\nBye!')
+                 return
+ 
+             elif(user_option == 'C'):
+-                print "Select colormap:"
+-                print "  1. HSV"
+-                print "  2. Accent"
+-                print "  3. Blues"
+-                print "  4. Spectral"
+-                print "  5. Grayscale"
+-                print "  6. Discrete (14 colors)"
+-                print "  7. Discrete paired (14 colors)"
++                print("Select colormap:")
++                print("  1. HSV")
++                print("  2. Accent")
++                print("  3. Blues")
++                print("  4. Spectral")
++                print("  5. Grayscale")
++                print("  6. Discrete (14 colors)")
++                print("  7. Discrete paired (14 colors)")
+ 
+                 bValid = False
+                 while(not bValid):
+                     try:
+-                        colormap_id = int(raw_input(" Enter colormap number (e.g., 1): "))
++                        colormap_id = int(input(" Enter colormap number (e.g., 1): "))
+                         if colormap_id < 1 or colormap_id > 7:
+                             raise ValueError('Invalid colormap id.')
+                         bValid = True
+                     except ValueError:
+-                        print "Colormap must be specified as a number between 1 and 7."
++                        print("Colormap must be specified as a number between 1 and 7.")
+ 
+                 if colormap_id == 1:
+                     self.PM.setColorMap('HSV')
+@@ -238,19 +238,19 @@ class RefineEngine:
+                 if use_elipses:
+                     ET = None
+                     use_elipses = False
+-                    print "\nEllipses off"
++                    print("\nEllipses off")
+                 else:
+                     ET = self.ET
+                     use_elipses = True
+-                    print "\nEllipses on"
++                    print("\nEllipses on")
+ 
+             elif(user_option == 'X'):
+                 if show_chimeric_bins:
+                     show_chimeric_bins = False
+-                    print "\nHiding likely chimeric bins."
++                    print("\nHiding likely chimeric bins.")
+                 else:
+                     show_chimeric_bins = True
+-                    print "\nShowing likely chimeric bins."
++                    print("\nShowing likely chimeric bins.")
+ 
+             elif(user_option == 'R'):
+                 self.BM.plotBinIds(ignoreRanges=ignoreRanges, showChimeric=show_chimeric_bins)
+@@ -277,7 +277,7 @@ class RefineEngine:
+                 have_range = False
+                 while(not have_range):
+                     try:
+-                        gc_range_str = raw_input(" Enter GC range to examine (e.g., 0.5-0.6): ")
++                        gc_range_str = input(" Enter GC range to examine (e.g., 0.5-0.6): ")
+ 
+                         if '-' not in gc_range_str:
+                             raise ValueError('Incorrectly formatted GC range.')
+@@ -289,7 +289,7 @@ class RefineEngine:
+ 
+                         have_range = True
+                     except ValueError:
+-                        print "GC ranges must be entered as 'a-b' (e.g., 0.5-0.6)."
++                        print("GC ranges must be entered as 'a-b' (e.g., 0.5-0.6).")
+                 self.BM.plotBinIds(gc_range=gc_range, ignoreRanges=ignoreRanges)
+ 
+             elif(user_option == 'B'):
+@@ -299,17 +299,17 @@ class RefineEngine:
+                 while(not have_bid):
+                     have_bid = True
+                     try:
+-                        usr_bids = raw_input(" Enter 'space' seperated bin id(s) to plot: ")
++                        usr_bids = input(" Enter 'space' seperated bin id(s) to plot: ")
+                         bids = [int(i) for i in usr_bids.split(" ")]
+                         if bids == [-1]:
+                             bids = self.BM.getBids()
+                         else:
+                             for bid in bids:
+                                 if bid not in self.BM.bins:
+-                                    print "ERROR: Bin %d not found!" % bid
++                                    print("ERROR: Bin %d not found!" % bid)
+                                     have_bid &= False
+                     except ValueError:
+-                        print "You need to enter an integer value!"
++                        print("You need to enter an integer value!")
+ 
+                 if len(bids) > 0:
+                     self.BM.plotSelectBins(bids, plotMers=True, ET=ET)
+@@ -320,22 +320,22 @@ class RefineEngine:
+                 have_parts = False
+                 while(not have_bid):
+                     try:
+-                        bid = int(raw_input(" Enter bid to split: "))
++                        bid = int(input(" Enter bid to split: "))
+                         if bid not in self.BM.bins:
+-                            print "ERROR: Bin %d not found!" % bid
++                            print("ERROR: Bin %d not found!" % bid)
+                         else:
+                             have_bid = True
+                     except ValueError:
+-                        print "You need to enter an integer value!"
++                        print("You need to enter an integer value!")
+                 while(not have_parts):
+                     try:
+-                        parts = int(raw_input(" Enter number of parts to split into: "))
++                        parts = int(input(" Enter number of parts to split into: "))
+                         if(parts < 2):
+-                            print "ERROR: Need to choose 2 or more parts"
++                            print("ERROR: Need to choose 2 or more parts")
+                         else:
+                             have_parts = True
+                     except ValueError:
+-                        print "You need to enter an integer value!"
++                        print("You need to enter an integer value!")
+                 self.BM.split(bid,
+                               parts,
+                               mode='kmer',
+@@ -350,23 +350,23 @@ class RefineEngine:
+                 have_radius = False
+                 while(not have_bid):
+                     try:
+-                        bid = int(raw_input(" Enter bid of interest: "))
++                        bid = int(input(" Enter bid of interest: "))
+                         if bid not in self.BM.bins:
+-                            print "ERROR: Bin %d not found!" % bid
++                            print("ERROR: Bin %d not found!" % bid)
+                         else:
+                             have_bid = True
+                     except ValueError:
+-                        print "You need to enter an integer value!"
++                        print("You need to enter an integer value!")
+                 while(not have_radius):
+                     try:
+-                        usr_radius = raw_input(" Enter radius to select from [default 100]: ")
++                        usr_radius = input(" Enter radius to select from [default 100]: ")
+                         if usr_radius == "":
+                             radius = 100
+                         else:
+                             radius = int(usr_radius)
+                         have_radius = True
+                     except ValueError:
+-                        print "You need to enter an integer value!"
++                        print("You need to enter an integer value!")
+ 
+                 # we need to find all points in an area about the centroid of
+                 # this bin
+@@ -397,9 +397,9 @@ class RefineEngine:
+                 # reshape
+                 disp_vals = np_reshape(disp_vals, (num_points, 3))
+ 
+-                print " Points are located in bins:"
++                print(" Points are located in bins:")
+                 for seen_bid in seen_bids:
+-                    print "    %d - %d occurances" % (seen_bid, len(seen_bids[seen_bid]))
++                    print("    %d - %d occurances" % (seen_bid, len(seen_bids[seen_bid])))
+ 
+                 fig = plt.figure()
+                 ax = fig.add_subplot(1,1,1, projection='3d')
+@@ -423,7 +423,7 @@ class RefineEngine:
+                 try:
+                     plt.show()
+                 except:
+-                    print "Error showing image:", sys.exc_info()[0]
++                    print("Error showing image:", sys.exc_info()[0])
+                     raise
+                 plt.close(fig)
+                 del fig
+@@ -459,7 +459,7 @@ class RefineEngine:
+         # identify and remove outlier bins
+         if markLikelyChimeric:
+             nuked = self.markLikelyChimericBins()
+-            print "    %s" % timer.getTimeStamp()
++            print("    %s" % timer.getTimeStamp())
+             sys_stdout.flush()
+ 
+             if makeGraph:
+@@ -472,7 +472,7 @@ class RefineEngine:
+         # merge bins together
+         if mergeSimilarBins:
+             self.mergeSimilarBins(graph=graph, verbose=False)
+-            print "    %s" % timer.getTimeStamp()
++            print("    %s" % timer.getTimeStamp())
+             sys_stdout.flush()
+ 
+         if plotAfterOB:
+@@ -485,12 +485,12 @@ class RefineEngine:
+                                               self.PM.contigGCs,
+                                               self.PM.contigLengths)
+             self.BM.plotBins(FNPrefix="AFTER_OB", ET=self.ET)
+-            print "    %s" % timer.getTimeStamp()
++            print("    %s" % timer.getTimeStamp())
+             sys_stdout.flush()
+ 
+         if shuffleRefine:
+             nuked = self.shuffleRefineContigs(timer)
+-            print "    %s" % timer.getTimeStamp()
++            print("    %s" % timer.getTimeStamp())
+             sys_stdout.flush()
+             if makeGraph:
+                 # Make sure we know these guys were deleted
+@@ -501,7 +501,7 @@ class RefineEngine:
+ 
+         if removeDuds:
+             nuked = self.removeDuds()
+-            print "    %s" % timer.getTimeStamp()
++            print("    %s" % timer.getTimeStamp())
+             sys_stdout.flush()
+             if makeGraph:
+                 # Make sure we know these guys were deleted
+@@ -516,7 +516,7 @@ class RefineEngine:
+     def markLikelyChimericBins(self, verbose=False):
+         """ Identify bins which contain mixed genomes based on GC.
+               Small bins are nuked, large bins are flagged as chimeric. """
+-        print "    Identifying possible chimeric bins"
++        print("    Identifying possible chimeric bins")
+         sys_stdout.flush()
+ 
+         # first we need to build a distribution!
+@@ -553,8 +553,8 @@ class RefineEngine:
+                            freeBinnedRowIndices=True,
+                            saveBins=False)
+ 
+-        print "    Identified %d likely chimeric bin(s), removed %d small chimeric bin(s)" % (num_chimeric_bins, len(dead_bins))
+-        print "    %s" % ",".join(str(u) for u in dead_bins)
++        print("    Identified %d likely chimeric bin(s), removed %d small chimeric bin(s)" % (num_chimeric_bins, len(dead_bins)))
++        print("    %s" % ",".join(str(u) for u in dead_bins))
+         return dead_bins
+ 
+     def mergeSimilarBins(self, verbose=False, graph=None, silent=False):
+@@ -565,7 +565,7 @@ class RefineEngine:
+         orig_num_bins = len(self.BM.getNonChimericBinIds())
+ 
+         if not silent:
+-            print "    Merging similar bins (%d) with kCut %0.2f (+/-%0.3f) cCut %0.2f (+/-%0.3f)" % (orig_num_bins, kCutMedian, kCutStd, cCutMedian, cCutStd)
++            print("    Merging similar bins (%d) with kCut %0.2f (+/-%0.3f) cCut %0.2f (+/-%0.3f)" % (orig_num_bins, kCutMedian, kCutStd, cCutMedian, cCutStd))
+ 
+         # identify merging groups and then merge them
+         mergers = self.findMergeGroups(kCutMedian, kCutStd, cCutMedian, cCutStd, verbose=verbose)
+@@ -575,7 +575,7 @@ class RefineEngine:
+             bins_removed = self.combineMergers(merge, kCutMedian, kCutStd, cCutMedian, cCutStd, graph=graph)
+             num_bins_removed += len(bins_removed)
+         if not silent:
+-            print "    Merged %d of %d cores leaving %d cores total" % (num_bins_removed, orig_num_bins, len(self.BM.getNonChimericBinIds()))
++            print("    Merged %d of %d cores leaving %d cores total" % (num_bins_removed, orig_num_bins, len(self.BM.getNonChimericBinIds())))
+ 
+         return num_bins_removed
+ 
+@@ -666,10 +666,10 @@ class RefineEngine:
+             common_neighbors = set(cov_neighbor_list).intersection(set(kmer_neighbor_list))
+ 
+             if verbose:
+-                print "++++++++++"
+-                print bid, cov_neighbor_list
+-                print bid, kmer_neighbor_list
+-                print bid, common_neighbors
++                print("++++++++++")
++                print(bid, cov_neighbor_list)
++                print(bid, kmer_neighbor_list)
++                print(bid, common_neighbors)
+ 
+             # test each neighbor in turn
+             for i, neighbor_index in enumerate(common_neighbors):
+@@ -680,8 +680,8 @@ class RefineEngine:
+                     merged_query_bid = merged_bins[merged_query_bid]
+ 
+                 if verbose:
+-                    print "++++++++++"
+-                    print base_bid, query_bid, merged_base_bid, merged_query_bid
++                    print("++++++++++")
++                    print(base_bid, query_bid, merged_base_bid, merged_query_bid)
+ #-----
+ # TIME WASTERS
+ 
+@@ -689,7 +689,7 @@ class RefineEngine:
+                 seen_key = self.BM.makeBidKey(base_bid, query_bid)
+                 if(seen_key in processed_pairs or merged_base_bid == merged_query_bid):
+                     if verbose:
+-                        print "TW"
++                        print("TW")
+                     continue
+                 processed_pairs[seen_key] = True
+ 
+@@ -708,7 +708,7 @@ class RefineEngine:
+                                                          )
+                 if lengths_wrong:
+                     if verbose:
+-                        print "LW"
++                        print("LW")
+                     continue
+ 
+ #-----
+@@ -719,15 +719,15 @@ class RefineEngine:
+                 c_dist_bw = self.cDistBetweenBins(base_bin, query_bin)
+ 
+                 if verbose:
+-                    print 'k_dist_bw, c_dist_bw'
+-                    print k_dist_bw, c_dist_bw
+-                    print '---------------------'
++                    print('k_dist_bw, c_dist_bw')
++                    print(k_dist_bw, c_dist_bw)
++                    print('---------------------')
+ 
+ 
+                 if k_dist_bw < kCutMedian and c_dist_bw < cCutMedian:
+                     if verbose:
+-                        print 'MERGED'
+-                        print '---------------------'
++                        print('MERGED')
++                        print('---------------------')
+ 
+                     if merged_query_bid < merged_base_bid:
+                         merged_bins[merged_base_bid] = merged_query_bid
+@@ -773,7 +773,7 @@ class RefineEngine:
+ 
+                 if not INTT:
+                     if verbose:
+-                        print "KINTT"
++                        print("KINTT")
+                     continue
+ #-----
+ # MINIMUM BOUNDING COVERAGE ELLIPSOID
+@@ -802,7 +802,7 @@ class RefineEngine:
+ 
+                 if not intersects:
+                     if verbose:
+-                        print "CINTT"
++                        print("CINTT")
+                     continue
+ 
+                 # We only get here if we're going to merge the bins
+@@ -869,7 +869,7 @@ class RefineEngine:
+             cur_bin = self.BM.getBin(cur_bid)
+ 
+             dists = []
+-            for i in xrange(1, len(sorted_bid)):
++            for i in range(1, len(sorted_bid)):
+                 frag_bid = sorted_bid[i]
+                 frag_bin = self.BM.getBin(frag_bid)
+ 
+@@ -1069,14 +1069,14 @@ class RefineEngine:
+                  iterations=800,
+                  silent=silent,
+                  weightImgFileNamePrefix=animateFilePrefix)
+-        print "    --"
+-        print "    %s" % timer.getTimeStamp()
++        print("    --")
++        print("    %s" % timer.getTimeStamp())
+         if render:
+             SS.renderWeights("S1")
+ 
+         if maskBoundaries:
+             if not silent:
+-                print "    Creating boundary mask"
++                print("    Creating boundary mask")
+             # make a boundary mask
+             if render:
+                 SS.makeBoundaryMask(plotMaskFile="S2.png")
+@@ -1086,23 +1086,23 @@ class RefineEngine:
+         if defineBins:
+             # assign regions on som surface to specific bins
+             if not silent:
+-                print "    Defining bin regions"
++                print("    Defining bin regions")
+             SS.defineBinRegions(bids, training_data, render=render)
+             if render:
+                 SS.renderBoundaryMask("S5.png")
+         if maskBoundaries:
+             # mask out regions where we don't like it
+             if not silent:
+-                print "    Masking SOM classifier"
++                print("    Masking SOM classifier")
+             SS.maskBoundaries(addNoise=False, doFlat=True)
+         if render:
+             SS.renderWeights("S6")
+ 
+-        print "    %s" % timer.getTimeStamp()
++        print("    %s" % timer.getTimeStamp())
+         if retrain:
+             # retrain bin regions using contigs from the bin
+             if not silent:
+-                print "    Retraining SOM classifier"
++                print("    Retraining SOM classifier")
+             for i in range(len(bids)):
+                 bid = bids[i]
+                 sys_stdout.write("\r    Retraining on bin: %d (%d of %d)" % (bid, i+1, len(bids)))
+@@ -1117,7 +1117,7 @@ class RefineEngine:
+                                 render=render)
+             if render:
+                 SS.renderWeights("gg")
+-            print "    --"
++            print("    --")
+ 
+         if render:
+             SS.renderWeights("S7")
+@@ -1148,8 +1148,8 @@ class RefineEngine:
+ 
+         # now we'd like to centre the weights and mask within an
+         # appropriately sized square
+-        min_p = np_min(maskPoints.keys(), axis=0)
+-        max_p = np_max(maskPoints.keys(), axis=0)
++        min_p = np_min(list(maskPoints.keys()), axis=0)
++        max_p = np_max(list(maskPoints.keys()), axis=0)
+         diffs = max_p - min_p
+         small_side = np_min(diffs)
+         sweights = np_copy(SS.weights.nodes[min_p[0]:min_p[0]+diffs[0]+1,min_p[1]:min_p[1]+diffs[1]+1])
+@@ -1158,7 +1158,7 @@ class RefineEngine:
+         # shift and mask out all other bins
+         shifted_mask_points = {}
+         shifted_bin_mask = np_ones((diffs[0]+1,diffs[1]+1))
+-        for (r,c) in maskPoints.keys():
++        for (r,c) in list(maskPoints.keys()):
+             shift = maskPoints[(r,c)] - min_p
+             shifted_bin_mask[shift[0],shift[1]] = 0
+             shifted_mask_points[(shift[0], shift[1])] = shift
+@@ -1174,7 +1174,7 @@ class RefineEngine:
+ 
+         #SS.weights.renderSurface("D_%d.png"%bid, nodes=sweights)
+         # update the torusMesh values appropriately
+-        for (r,c) in maskPoints.keys():
++        for (r,c) in list(maskPoints.keys()):
+             shift = maskPoints[(r,c)] - min_p
+             SS.weights.nodes[r,c] = sweights[shift[0], shift[1]]
+         SS.weights.fixFlatNodes()
+@@ -1185,7 +1185,7 @@ class RefineEngine:
+ 
+     def shuffleRefineContigs(self, timer, inclusivity=2):
+         """refine bins by shuffling contigs around"""
+-        print "    Start shuffle refinement"
++        print("    Start shuffle refinement")
+ 
+         # first, build a SOM
+         bids = self.BM.getBids()
+@@ -1198,7 +1198,7 @@ class RefineEngine:
+                                                defineBins=True,
+                                                retrain=True)
+ 
+-        print "    %s" % timer.getTimeStamp()
++        print("    %s" % timer.getTimeStamp())
+ 
+         # now do the shuffle refinement, keep an eye out for
+         new_assignments = {}
+@@ -1280,30 +1280,30 @@ class RefineEngine:
+                     nones[old_bid] = 1
+ 
+ 
+-	if False:
+-            print "    ------------------------------------------------------"
+-            print "     BID    ORIG    CHGE    SAME    NEWS    NONE    TOTAL"
+-            print "    ------------------------------------------------------"
++        if False:
++            print("    ------------------------------------------------------")
++            print("     BID    ORIG    CHGE    SAME    NEWS    NONE    TOTAL")
++            print("    ------------------------------------------------------")
+             for bid in bids:
+-                print "   %4d    %5d   " % (bid, self.BM.bins[bid].binSize),
++                print("   %4d    %5d   " % (bid, self.BM.bins[bid].binSize), end=' ')
+                 if bid in wrongs:
+-                    print "%04d   " % wrongs[bid],
++                    print("%04d   " % wrongs[bid], end=' ')
+                 else:
+-                    print "0000   ",
++                    print("0000   ", end=' ')
+                 if bid in rights:
+-                    print "%04d   " % rights[bid],
++                    print("%04d   " % rights[bid], end=' ')
+                 else:
+-                    print "0000   ",
++                    print("0000   ", end=' ')
+                 if bid in news:
+-                    print "%04d   " % news[bid],
++                    print("%04d   " % news[bid], end=' ')
+                 else:
+-                    print "0000   ",
++                    print("0000   ", end=' ')
+                 if bid in nones:
+-                    print "%04d   " % nones[bid],
++                    print("%04d   " % nones[bid], end=' ')
+                 else:
+-                    print "0000   ",
+-                print "%04d   " % len(new_assignments[bid])
+-            print "\n    ---------------------------------------------"
++                    print("0000   ", end=' ')
++                print("%04d   " % len(new_assignments[bid]))
++            print("\n    ---------------------------------------------")
+ 
+         # now get ready for saving.
+         # first, we nuke all non-chimeric bins
+@@ -1335,7 +1335,7 @@ class RefineEngine:
+ 
+     def removeDuds(self, ms=20, mv=1000000, verbose=False):
+         """Run this after refining to remove scrappy leftovers"""
+-        print "    Removing dud cores (min %d contigs or %d bp)" % (ms, mv)
++        print("    Removing dud cores (min %d contigs or %d bp)" % (ms, mv))
+         deleters = []
+         for bid in self.BM.getBids():
+             self.BM.bins[bid]
+@@ -1343,13 +1343,13 @@ class RefineEngine:
+                 # delete this chap!
+                 deleters.append(bid)
+         if verbose:
+-            print "duds", deleters
++            print("duds", deleters)
+         if len(deleters) > 0:
+             self.BM.deleteBins(deleters,
+                                force=True,
+                                freeBinnedRowIndices=True,
+                                saveBins=False)
+-        print "    Removed %d cores leaving %d cores" % (len(deleters), len(self.BM.bins))
++        print("    Removed %d cores leaving %d cores" % (len(deleters), len(self.BM.bins)))
+         return deleters
+ 
+ #------------------------------------------------------------------------------
+@@ -1509,7 +1509,7 @@ class RefineEngine:
+         step_size = float(len(row_indices)) / sample_size
+         si = []
+         index = 0.0
+-        for _i in xrange(0, sample_size):
++        for _i in range(0, sample_size):
+             si.append(row_indices[sorted_indices[int(index)]])
+             index += step_size
+ 
+@@ -1568,10 +1568,10 @@ class RefineEngine:
+             indices2 = bin2.rowIndices
+ 
+         angles = []
+-        for i in xrange(0, min(len(bin1.rowIndices), max_in_bin)):
++        for i in range(0, min(len(bin1.rowIndices), max_in_bin)):
+             r1 = indices1[i]
+ 
+-            for j in xrange(0, min(len(bin2.rowIndices), max_in_bin)):
++            for j in range(0, min(len(bin2.rowIndices), max_in_bin)):
+                 r2 = indices2[j]
+                 try:
+                     ang = np_arccos(np_dot(self.PM.covProfiles[r1], self.PM.covProfiles[r2]) /
+@@ -2051,7 +2051,7 @@ class RefineEngine:
+ 
+     def recruitWrapper(self, timer, inclusivity=2, step=200, nukeAll=False, saveBins=False):
+         """Recuit more contigs to the bins"""
+-        print "Recruiting unbinned contigs"
++        print("Recruiting unbinned contigs")
+ 
+         # make a list of all the cov and kmer vals
+         total_expanded = 0
+@@ -2090,9 +2090,9 @@ class RefineEngine:
+ 
+         # talk to the user
+         perc_binned = float(total_binned)/float(total_contigs)
+-        print "    Planned steps = ", steps
+-        print "    BEGIN: %0.4f" % perc_binned +"%"+" of %d requested contigs in bins" % total_contigs
+-        print "    %d contigs unbinned" % total_unbinned
++        print("    Planned steps = ", steps)
++        print("    BEGIN: %0.4f" % perc_binned +"%"+" of %d requested contigs in bins" % total_contigs)
++        print("    %d contigs unbinned" % total_unbinned)
+ 
+         # build the classifier on all the existing bins
+         (SS, minz, maxz, side) = self.buildSOM(timer,
+@@ -2100,7 +2100,7 @@ class RefineEngine:
+                                                defineBins=True,
+                                                retrain=True)
+ 
+-        print "    %s" % timer.getTimeStamp()
++        print("    %s" % timer.getTimeStamp())
+ 
+         # go through the steps we decided on
+         affected_bids = list(np_copy(self.BM.getBids()))
+@@ -2132,7 +2132,7 @@ class RefineEngine:
+             block -= minz
+             block /= maxz
+ 
+-            print "    Recruiting contigs above: %d (%d contigs)" % (cutoff, len(unbinned_rows))
++            print("    Recruiting contigs above: %d (%d contigs)" % (cutoff, len(unbinned_rows)))
+ 
+             for i in range(len(unbinned_rows)):
+                 putative_bid = SS.classifyContig(block[i])
+@@ -2159,21 +2159,21 @@ class RefineEngine:
+             for row_index in new_binned:
+                 del unbinned[row_index]
+ 
+-            print "    Recruited: %d contigs" % this_step_binned
+-            print "    %s" % timer.getTimeStamp()
++            print("    Recruited: %d contigs" % this_step_binned)
++            print("    %s" % timer.getTimeStamp())
+             sys_stdout.flush()
+ 
+         # talk to the user
+         perc_recruited = float(total_expanded)/float(total_unbinned)
+         perc_binned = float(total_binned)/float(total_contigs)
+-        print "    Recruited %0.4f" % perc_recruited +"%"+" of %d unbinned contigs" % total_unbinned
+-        print "    END: %0.4f" % perc_binned +"%"+" of %d requested contigs in bins" % total_contigs
+-        print "    %s" % timer.getTimeStamp()
++        print("    Recruited %0.4f" % perc_recruited +"%"+" of %d unbinned contigs" % total_unbinned)
++        print("    END: %0.4f" % perc_binned +"%"+" of %d requested contigs in bins" % total_contigs)
++        print("    %s" % timer.getTimeStamp())
+         sys_stdout.flush()
+ 
+         # now save
+         if(saveBins):
+-            print "Saving bins"
++            print("Saving bins")
+             self.BM.saveBins()
+ 
+ #------------------------------------------------------------------------------
+@@ -2183,7 +2183,7 @@ class RefineEngine:
+         """Output a valid graphviz dot file"""
+         op = "digraph refine {\n"
+         # render nodes
+-        for bid in graph[0].keys():
++        for bid in list(graph[0].keys()):
+             op += graph[0][bid]
+         # render edges
+         op += "\n".join(graph[1])
+@@ -2191,7 +2191,7 @@ class RefineEngine:
+         return op
+ 
+     def printRefinePlotterInstructions(self):
+-        raw_input( "****************************************************************\n"
++        input( "****************************************************************\n"
+                    " REFINING INSTRUCTIONS - PLEASE READ CAREFULLY\n"+
+                    "****************************************************************\n"
+                    " You have chosen to refine in plotter mode. Congratulations!\n"
+@@ -2201,7 +2201,7 @@ class RefineEngine:
+                    " Follow the instructions to merge or split these bins\n\n"
+                    " Good Luck!\n\n"
+                    " Press return to continue...")
+-        print "****************************************************************"
++        print("****************************************************************")
+ 
+     def promptOnPlotterRefine(self, minimal=False):
+         """Find out what the user wishes to do next when refining bins"""
+@@ -2210,9 +2210,9 @@ class RefineEngine:
+         vrs = ",".join([str.lower(str(x)) for x in valid_responses])
+         while(input_not_ok):
+             if(minimal):
+-                option = raw_input(" What next? ("+vrs+") : ")
++                option = input(" What next? ("+vrs+") : ")
+             else:
+-                option = raw_input("\n Please choose from the following options:\n" \
++                option = input("\n Please choose from the following options:\n" \
+                                    "------------------------------------------------------------\n" \
+                                    " r = plot entire space using bin ids\n" \
+                                    " p = plot entire space with bins as points\n" \
+@@ -2231,7 +2231,7 @@ class RefineEngine:
+             if(option.upper() in valid_responses):
+                 return option.upper()
+             else:
+-                print "Error, unrecognised choice '"+option+"'"
++                print("Error, unrecognised choice '"+option+"'")
+                 minimal=True
+ 
+     def PCA2Col(self, PCAs):
+@@ -2409,7 +2409,7 @@ class GrubbsTester:
+             idx = 999
+ 
+         if verbose:
+-            print np_mean(compVals+[maxVal]), np_std(compVals+[maxVal], ddof=1), maxVal, v, idx, self.critVs[idx], v > self.critVs[idx]
++            print(np_mean(compVals+[maxVal]), np_std(compVals+[maxVal], ddof=1), maxVal, v, idx, self.critVs[idx], v > self.critVs[idx])
+ 
+         return v > self.critVs[idx]
+ 
+--- groopm/som.py.orig	2014-11-26 01:01:33 UTC
++++ groopm/som.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python
+-from __future__ import division
++
+ ###############################################################################
+ #                                                                             #
+ # som.py                                                                      #
+@@ -77,12 +77,13 @@ from math import log, exp
+ import numpy as np
+ from scipy.spatial.distance import cdist
+ from PIL import Image, ImageDraw
++from functools import reduce
+ np.seterr(all='raise')
+ 
+ # GroopM imports
+-from torusMesh import TorusMesh as TM
+-from rainbow import Rainbow
+-import groopmExceptions as ge
++from .torusMesh import TorusMesh as TM
++from .rainbow import Rainbow
++from . import groopmExceptions as ge
+ 
+ ###############################################################################
+ ###############################################################################
+@@ -193,7 +194,7 @@ class SOM:
+                         # we only need to return a tuple
+                         nt = self.makeNTuple(s_bid,q_bid)
+                         neighbours[nt] = True
+-        return neighbours.keys()
++        return list(neighbours.keys())
+ 
+     def makeNTuple(self, bid1, bid2):
+         """A way for making standard tuples from bids"""
+@@ -228,7 +229,7 @@ class SOM:
+         """
+ 
+         if not silent:
+-            print "    Start SOM training. Side: %d Max: %d iterations" % (self.side, iterations)
++            print("    Start SOM training. Side: %d Max: %d iterations" % (self.side, iterations))
+ 
+         if radius == 0.0:
+             radius = self.radius
+@@ -376,7 +377,7 @@ class SOM:
+                 weights = np.clip(weights + deltasheet[rows:2*rows,cols:2*cols], 0, 1)
+             else:
+                 delta_fold = deltasheet[rows:2*rows,cols:2*cols]
+-                for (r,c) in mask.keys():
++                for (r,c) in list(mask.keys()):
+                     weights[r,c] = np.clip(weights[r,c] + delta_fold[r,c], 0, 1)
+                     flat_nodes = weights.reshape((rows*cols, self.dimension))
+ 
+@@ -386,7 +387,7 @@ class SOM:
+             # make a tmp image, perhaps
+             if(weightImgFileNamePrefix != ""):
+                 filename = "%s_%04d.jpg" % (weightImgFileNamePrefix, i)
+-                print " writing: %s" % filename
++                print(" writing: %s" % filename)
+                 self.weights.renderSurface(filename)
+ 
+         return weights
+@@ -467,7 +468,7 @@ class SOM:
+         # get all the points within this region
+         points = self.floodFill(startR, startC, self.boundaryMask)
+         collision_bid = 0
+-        for (r,c) in points.keys():
++        for (r,c) in list(points.keys()):
+             if self.binAssignments[r,c] != 0:
+                 if self.binAssignments[r,c] != bid:
+                     # we have already assigned this point to a bin
+@@ -487,7 +488,7 @@ class SOM:
+                 # rebuild the mask with a new cutoff
+                 mc = mc/2
+                 mask = np.copy(self.boundaryMask)
+-                for (r,c) in points.keys():
++                for (r,c) in list(points.keys()):
+                     if self.VS_flat[r,c] > mc:
+                         mask[r,c] = 1.
+                     else:
+@@ -497,15 +498,15 @@ class SOM:
+                 new_points = self.floodFill(startR, startC, mask)
+                 #print len(collision_points.keys()), len(new_points.keys())
+                 #print collision_points.keys()[0] in new_points
+-                if len(collision_points.keys()) == 0 or len(new_points.keys()) == 0:
++                if len(list(collision_points.keys())) == 0 or len(list(new_points.keys())) == 0:
+                     continue
+                 # there should be no overlap
+-                if collision_points.keys()[0] not in new_points:
++                if list(collision_points.keys())[0] not in new_points:
+                     # we have resolved the issue
+                     resolved = True
+                     # now we need to fix the binAssignments and boundary mask
+                     self.boundaryMask = mask
+-                    for (r,c) in points.keys():
++                    for (r,c) in list(points.keys()):
+                         if (r,c) in new_points:
+                             # assign this point to the new bid
+                             self.binAssignments[r,c] = bid
+@@ -517,7 +518,7 @@ class SOM:
+                     break
+ 
+             if not resolved:
+-                print "Cannot repair map, bin %d may be incorrectly merged with bin %d" % (bid, collision_bid)
++                print("Cannot repair map, bin %d may be incorrectly merged with bin %d" % (bid, collision_bid))
+                 return
+ 
+     def makeBinMask(self, profile, fileName="", dim=False):
+@@ -526,7 +527,7 @@ class SOM:
+         points = self.floodFill(r, c, self.boundaryMask)
+         if fileName != "":
+             ret_mask = np.ones_like(self.boundaryMask)
+-            for (r,c) in points.keys():
++            for (r,c) in list(points.keys()):
+                 ret_mask[r,c] = 0
+             self.renderBoundaryMask(fileName, mask=ret_mask)
+ 
+@@ -600,7 +601,7 @@ class SOM:
+             img = img.resize((self.weights.columns*10, self.weights.rows*10),Image.NEAREST)
+             img.save(filename)
+         except:
+-            print sys.exc_info()[0]
++            print(sys.exc_info()[0])
+             raise
+ 
+     def renderBoundaryMask(self, fileName, mask=None, colMap=None):
+@@ -625,7 +626,7 @@ class SOM:
+             img = img.resize((self.side*10, self.side*10),Image.NEAREST)
+             img.save(fileName)
+         except:
+-            print sys.exc_info()[0]
++            print(sys.exc_info()[0])
+             raise
+ 
+     def transColour(self, val):
+@@ -659,7 +660,7 @@ class SOM:
+             img = img.resize((self.weights.columns*10, self.weights.rows*10),Image.NEAREST)
+             img.save(fileName)
+         except:
+-            print sys.exc_info()[0]
++            print(sys.exc_info()[0])
+             raise
+ 
+ ###############################################################################
+--- groopm/torusMesh.py.orig	2014-11-26 01:01:33 UTC
++++ groopm/torusMesh.py
+@@ -250,7 +250,7 @@ class TorusMesh:
+             img = img.resize((columns*10, rows*10),Image.NEAREST)
+             img.save(fileName)
+         except:
+-            print sys.exc_info()[0]
++            print(sys.exc_info()[0])
+             raise
+         
+ ###############################################################################

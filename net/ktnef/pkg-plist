@@ -1,5 +1,3 @@
-share/qlogging-categories5/ktnef.categories
-share/qlogging-categories5/ktnef.renamecategories
 include/KF5/KTNEF/KTNEF/Formatter
 include/KF5/KTNEF/KTNEF/KTNEFAttach
 include/KF5/KTNEF/KTNEF/KTNEFDefs
@@ -17,7 +15,7 @@ include/KF5/KTNEF/ktnef/ktnefparser.h
 include/KF5/KTNEF/ktnef/ktnefproperty.h
 include/KF5/KTNEF/ktnef/ktnefpropertyset.h
 include/KF5/KTNEF/ktnef/ktnefwriter.h
-include/KF5/ktnef_version.h
+include/KF5/KTNEF/ktnef_version.h
 lib/cmake/KF5Tnef/KF5TnefConfig.cmake
 lib/cmake/KF5Tnef/KF5TnefConfigVersion.cmake
 lib/cmake/KF5Tnef/KF5TnefTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -75,3 +73,5 @@ share/locale/ug/LC_MESSAGES/libktnef5.mo
 share/locale/uk/LC_MESSAGES/libktnef5.mo
 share/locale/zh_CN/LC_MESSAGES/libktnef5.mo
 share/locale/zh_TW/LC_MESSAGES/libktnef5.mo
+share/qlogging-categories5/ktnef.categories
+share/qlogging-categories5/ktnef.renamecategories

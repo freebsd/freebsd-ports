@@ -1,0 +1,312 @@
+--- restclient/bin/rest_cli.py.orig	2009-08-19 17:00:34 UTC
++++ restclient/bin/rest_cli.py
+@@ -17,12 +17,12 @@
+ import os
+ import sys
+ from optparse import OptionParser, OptionGroup
+-import urlparse
+-import urllib
++import urllib.parse
++import urllib.request, urllib.parse, urllib.error
+ 
+ # python 2.6 and above compatibility
+ try:
+-    from urlparse import parse_qs as _parse_qs
++    from urllib.parse import parse_qs as _parse_qs
+ except ImportError:
+     from cgi import parse_qs as _parse_qs
+ 
+@@ -31,7 +31,7 @@ from restclient.transport import useCurl, CurlTranspor
+ 
+ class Url(object):
+     def __init__(self, string):
+-        parts = urlparse.urlsplit(urllib.unquote(string))
++        parts = urllib.parse.urlsplit(urllib.parse.unquote(string))
+         if parts[0] != 'http' and parts[0] != 'https':
+             raise ValueError('Invalid url: %s.' % string)
+ 
+@@ -74,8 +74,8 @@ def make_query(string, method='GET', fname=None, 
+         list_headers=None, output=None, proxy=None):
+     try:
+         uri = Url(string)
+-    except ValueError, e:
+-        print >>sys.stderr, e
++    except ValueError as e:
++        print(e, file=sys.stderr)
+         return 
+ 
+     transport = None 
+@@ -84,7 +84,7 @@ def make_query(string, method='GET', fname=None, 
+         try:
+             proxy_url = Url(proxy)
+         except:
+-            print >>sys.stderr, "proxy url is invalid"
++            print("proxy url is invalid", file=sys.stderr)
+             return
+         proxy_infos = { "proxy_host": proxy_url.hostname }
+         if proxy_url.port is not None:
+@@ -132,7 +132,7 @@ def make_query(string, method='GET', fname=None, 
+             f.write(data)
+             f.close()
+         except:
+-            print >>sys.stderr, "Can't save result in %s" % output
++            print("Can't save result in %s" % output, file=sys.stderr)
+             return
+ 
+ 
+--- restclient/errors.py.orig	2009-08-19 17:00:34 UTC
++++ restclient/errors.py
+@@ -38,7 +38,7 @@ class ResourceError(Exception):
+             return self.msg
+         try:
+             return self._fmt % self.__dict__
+-        except (NameError, ValueError, KeyError), e:
++        except (NameError, ValueError, KeyError) as e:
+             return 'Unprintable exception %s: %s' \
+                 % (self.__class__.__name__, str(e))
+         
+--- restclient/rest.py.orig	2009-08-23 09:33:14 UTC
++++ restclient/rest.py
+@@ -57,9 +57,9 @@ This module provide a common interface for all HTTP eq
+ import cgi
+ import mimetypes
+ import os
+-import StringIO
++import io
+ import types
+-import urllib
++import urllib.request, urllib.parse, urllib.error
+ 
+ try:
+     import chardet
+@@ -337,13 +337,13 @@ class RestClient(object):
+                 except IOError:
+                     pass
+                 size = int(os.fstat(body.fileno())[6])
+-            elif isinstance(body, types.StringTypes):
++            elif isinstance(body, (str,)):
+                 size = len(body)
+                 body = to_bytestring(body)
+             elif isinstance(body, dict):
+                 _headers.setdefault('Content-Type', "application/x-www-form-urlencoded; charset=utf-8")
+                 body = form_encode(body)
+-                print body
++                print(body)
+                 size = len(body)
+             else:
+                 raise RequestError('Unable to calculate '
+@@ -360,7 +360,7 @@ class RestClient(object):
+         try:
+             resp, data = self.transport.request(self.make_uri(uri, path, **params), 
+                 method=method, body=body, headers=_headers)
+-        except TransportError, e:
++        except TransportError as e:
+             raise RequestError(str(e))
+ 
+         self.status  = status_code = resp.status
+@@ -444,7 +444,7 @@ class RestClient(object):
+         _path = []
+         trailing_slash = False       
+         for s in path:
+-            if s is not None and isinstance(s, basestring):
++            if s is not None and isinstance(s, str):
+                 if len(s) > 1 and s.endswith('/'):
+                     trailing_slash = True
+                 else:
+@@ -463,7 +463,7 @@ class RestClient(object):
+             retval.append(path_str)
+ 
+         params = []
+-        for k, v in query.items():
++        for k, v in list(query.items()):
+             if type(v) in (list, tuple):
+                 params.extend([(k, i) for i in v if i is not None])
+             elif v is not None:
+@@ -478,16 +478,16 @@ class RestClient(object):
+ 
+ def url_quote(s, charset='utf-8', safe='/:'):
+     """URL encode a single string with a given encoding."""
+-    if isinstance(s, unicode):
++    if isinstance(s, str):
+         s = s.encode(charset)
+     elif not isinstance(s, str):
+         s = str(s)
+-    return urllib.quote(s, safe=safe)
++    return urllib.parse.quote(s, safe=safe)
+ 
+ def url_encode(obj, charset="utf8", encode_keys=False):
+     if isinstance(obj, dict):
+         items = []
+-        for k, v in obj.iteritems():
++        for k, v in obj.items():
+             if not isinstance(v, (tuple, list)):
+                 v = [v]
+             items.append((k, v))
+@@ -496,7 +496,7 @@ def url_encode(obj, charset="utf8", encode_keys=False)
+ 
+     tmp = []
+     for key, values in items:
+-        if encode_keys and isinstance(key, unicode):
++        if encode_keys and isinstance(key, str):
+             key = key.encode(charset)
+         else:
+             key = str(key)
+@@ -504,18 +504,18 @@ def url_encode(obj, charset="utf8", encode_keys=False)
+         for value in values:
+             if value is None:
+                 continue
+-            elif isinstance(value, unicode):
++            elif isinstance(value, str):
+                 value = value.encode(charset)
+             else:
+                 value = str(value)
+-        tmp.append('%s=%s' % (urllib.quote(key),
+-            urllib.quote_plus(value)))
++        tmp.append('%s=%s' % (urllib.parse.quote(key),
++            urllib.parse.quote_plus(value)))
+ 
+     return '&'.join(tmp)
+     
+ def form_encode(obj, charser="utf8"):
+     tmp = []
+-    for key, value in obj.items():
++    for key, value in list(obj.items()):
+         tmp.append("%s=%s" % (url_quote(key), 
+                 url_quote(value)))
+     return to_bytestring("&".join(tmp))
+@@ -596,39 +596,39 @@ def _getCharacterEncoding(http_headers, xml_data):
+         elif xml_data[:4] == '\x00\x3c\x00\x3f':
+             # UTF-16BE
+             sniffed_xml_encoding = 'utf-16be'
+-            xml_data = unicode(xml_data, 'utf-16be').encode('utf-8')
++            xml_data = str(xml_data, 'utf-16be').encode('utf-8')
+         elif (len(xml_data) >= 4) and (xml_data[:2] == '\xfe\xff') and (xml_data[2:4] != '\x00\x00'):
+             # UTF-16BE with BOM
+             sniffed_xml_encoding = 'utf-16be'
+-            xml_data = unicode(xml_data[2:], 'utf-16be').encode('utf-8')
++            xml_data = str(xml_data[2:], 'utf-16be').encode('utf-8')
+         elif xml_data[:4] == '\x3c\x00\x3f\x00':
+             # UTF-16LE
+             sniffed_xml_encoding = 'utf-16le'
+-            xml_data = unicode(xml_data, 'utf-16le').encode('utf-8')
++            xml_data = str(xml_data, 'utf-16le').encode('utf-8')
+         elif (len(xml_data) >= 4) and (xml_data[:2] == '\xff\xfe') and (xml_data[2:4] != '\x00\x00'):
+             # UTF-16LE with BOM
+             sniffed_xml_encoding = 'utf-16le'
+-            xml_data = unicode(xml_data[2:], 'utf-16le').encode('utf-8')
++            xml_data = str(xml_data[2:], 'utf-16le').encode('utf-8')
+         elif xml_data[:4] == '\x00\x00\x00\x3c':
+             # UTF-32BE
+             sniffed_xml_encoding = 'utf-32be'
+-            xml_data = unicode(xml_data, 'utf-32be').encode('utf-8')
++            xml_data = str(xml_data, 'utf-32be').encode('utf-8')
+         elif xml_data[:4] == '\x3c\x00\x00\x00':
+             # UTF-32LE
+             sniffed_xml_encoding = 'utf-32le'
+-            xml_data = unicode(xml_data, 'utf-32le').encode('utf-8')
++            xml_data = str(xml_data, 'utf-32le').encode('utf-8')
+         elif xml_data[:4] == '\x00\x00\xfe\xff':
+             # UTF-32BE with BOM
+             sniffed_xml_encoding = 'utf-32be'
+-            xml_data = unicode(xml_data[4:], 'utf-32be').encode('utf-8')
++            xml_data = str(xml_data[4:], 'utf-32be').encode('utf-8')
+         elif xml_data[:4] == '\xff\xfe\x00\x00':
+             # UTF-32LE with BOM
+             sniffed_xml_encoding = 'utf-32le'
+-            xml_data = unicode(xml_data[4:], 'utf-32le').encode('utf-8')
++            xml_data = str(xml_data[4:], 'utf-32le').encode('utf-8')
+         elif xml_data[:3] == '\xef\xbb\xbf':
+             # UTF-8 with BOM
+             sniffed_xml_encoding = 'utf-8'
+-            xml_data = unicode(xml_data[3:], 'utf-8').encode('utf-8')
++            xml_data = str(xml_data[3:], 'utf-8').encode('utf-8')
+         else:
+             # ASCII-compatible
+             pass
+@@ -652,7 +652,7 @@ def _getCharacterEncoding(http_headers, xml_data):
+         true_encoding = http_encoding or 'us-ascii'
+     elif http_content_type.startswith('text/'):
+         true_encoding = http_encoding or 'us-ascii'
+-    elif http_headers and (not http_headers.has_key('content-type')):
++    elif http_headers and ('content-type' not in http_headers):
+         true_encoding = xml_encoding or 'iso-8859-1'
+     else:
+         true_encoding = xml_encoding or 'utf-8'
+--- restclient/transport/_curl.py.orig	2009-08-19 17:00:34 UTC
++++ restclient/transport/_curl.py
+@@ -20,7 +20,7 @@ curl transport
+ """
+ 
+ import re
+-import StringIO
++import io
+ import sys
+ 
+ 
+@@ -36,7 +36,7 @@ except ImportError:
+     
+ NORMALIZE_SPACE = re.compile(r'(?:\r\n)?[ \t]+')
+ def _normalize_headers(headers):
+-    return dict([ (key.lower(), NORMALIZE_SPACE.sub(value, ' ').strip())  for (key, value) in headers.iteritems()])
++    return dict([ (key.lower(), NORMALIZE_SPACE.sub(value, ' ').strip())  for (key, value) in headers.items()])
+ 
+ 
+ def _get_pycurl_errcode(symbol, default):
+@@ -164,8 +164,8 @@ class CurlTransport(HTTPTransportBase):
+             else: # no timeout by default
+                 c.setopt(pycurl.TIMEOUT, 0)
+ 
+-            data = StringIO.StringIO()
+-            header = StringIO.StringIO()
++            data = io.StringIO()
++            header = io.StringIO()
+             c.setopt(pycurl.WRITEFUNCTION, data.write)
+             c.setopt(pycurl.HEADERFUNCTION, header.write)
+             c.setopt(pycurl.URL, url)
+@@ -226,7 +226,7 @@ class CurlTransport(HTTPTransportBase):
+                     content = body
+                 else:
+                     body = to_bytestring(body)
+-                    content = StringIO.StringIO(body)
++                    content = io.StringIO(body)
+                     if 'Content-Length' in headers:
+                         del headers['Content-Length']
+                     content_length = len(body)
+@@ -240,14 +240,14 @@ class CurlTransport(HTTPTransportBase):
+             if headers:
+                 _normalize_headers(headers)
+                 c.setopt(pycurl.HTTPHEADER,
+-                        ["%s: %s" % pair for pair in sorted(headers.iteritems())])
++                        ["%s: %s" % pair for pair in sorted(headers.items())])
+ 
+             try:
+                 c.perform()
+-            except pycurl.error, e:
++            except pycurl.error as e:
+                 if e[0] != CURLE_SEND_ERROR:
+                     if restclient.debuglevel > 0:
+-                        print >>sys.stderr, str(e)
++                        print(str(e), file=sys.stderr)
+                     raise TransportError(e)
+ 
+             response_headers = self._parseHeaders(header)
+--- restclient/transport/base.py.orig	2009-08-19 17:00:34 UTC
++++ restclient/transport/base.py
+@@ -46,7 +46,7 @@ class HTTPResponse(dict):
+     reason = "Ok"
+ 
+     def __init__(self, info):
+-        for key, value in info.iteritems(): 
++        for key, value in info.items(): 
+             self[key] = value 
+         self.status = int(self.get('status', self.status))
+         self.final_url = self.get('final_url', self.final_url)
+@@ -55,7 +55,7 @@ class HTTPResponse(dict):
+         if name == 'dict':
+             return self 
+         else:  
+-            raise AttributeError, name
++            raise AttributeError(name)
+ 
+     def __repr__(self):
+         return "<%s status %s for %s>" % (self.__class__.__name__,

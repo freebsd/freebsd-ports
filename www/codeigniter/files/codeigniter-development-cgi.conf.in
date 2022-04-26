@@ -5,13 +5,7 @@ DirectoryIndex index.php index.html
 Action php-script %%PHPCGI%%
 AddHandler php-script .php
 
-%%HASHMARK%%Alias /codeigniter/user_guide %%DOCSDIR%%
 Alias /codeigniter %%WWWDIR%%
-
-%%HASHMARK%%<Directory %%DOCSDIR%%>
-%%HASHMARK%%    Order deny,allow
-%%HASHMARK%%    Allow from all
-%%HASHMARK%%</Directory>
 
 <Location /codeigniter>
     Order deny,allow

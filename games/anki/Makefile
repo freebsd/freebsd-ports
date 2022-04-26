@@ -1,8 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	anki
-DISTVERSION=	2.1.48
-PORTREVISION=	6
+DISTVERSION=	2.1.49
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache
@@ -13,6 +12,8 @@ COMMENT=	Flashcard trainer with spaced repetition
 
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_aarch64=	needs adjustments (e.g. "//platforms:freebsd_arm64") for the shipped Bazel rules files to include several files during build.
 
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc
 NOT_FOR_ARCHS_REASON=	the bazel build framework supports only 64-bit systems.
@@ -430,7 +431,7 @@ MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
-_MY_BUILDHASH=	fb07bad3
+_MY_BUILDHASH=	dc80804a
 # Path of the local bazel repositories
 _MY_LOCALREPO=	${WRKSRC}/local_repos
 # Path of cache that is used by www/yarn
@@ -589,6 +590,6 @@ make-yarn-cache:
 		&& ${LOCALBASE}/bin/yarn --cache-folder ${_MY_YARNCACHE} install
 	@cd ${WRKDIR} \
 		&& ${TAR} -czf ${PORTNAME}-yarn-cache-${DISTVERSION}${EXTRACT_SUFX} .yarn \
-		&& ${ECHO} "Please upload the file ${WRKDIR}/${PORTNAME}-yarn-cache-${DISTVERSION}${EXTRACT_SUFX}"
+		&& ${ECHO_CMD} "Please upload the file ${WRKDIR}/${PORTNAME}-yarn-cache-${DISTVERSION}${EXTRACT_SUFX}"
 
 .include <bsd.port.mk>

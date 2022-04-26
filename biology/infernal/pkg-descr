@@ -5,7 +5,7 @@ It is based on Covariance Model (CM), which scores a combination of sequence
 consensus and RNA secondary structure consensus, and thus is more capable of
 identifying RNA homologs than using primary sequence profile.
 
-The Rfam database of RNA families is based on Infernal. 
+The Rfam database of RNA families is based on Infernal.
 
 Citation:
 Nawrocki & Eddy (2013) Infernal 1.1: 100-fold faster RNA homology searches,

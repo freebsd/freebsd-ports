@@ -1,0 +1,44 @@
+--- anyjson/__init__.py.orig	2012-06-21 23:08:51 UTC
++++ anyjson/__init__.py
+@@ -85,8 +85,8 @@ class _JsonImplementation(object):
+         TypeError if the object could not be serialized."""
+         try:
+             return self._encode(data)
+-        except self._encode_error, exc:
+-            raise TypeError, TypeError(*exc.args), sys.exc_info()[2]
++        except self._encode_error as exc:
++            raise TypeError(TypeError(*exc.args)).with_traceback(sys.exc_info()[2])
+     serialize = dumps
+ 
+     def loads(self, s):
+@@ -97,8 +97,8 @@ class _JsonImplementation(object):
+             if self._filedecode and not isinstance(s, basestring):
+                 return self._filedecode(StringIO(s))
+             return self._decode(s)
+-        except self._decode_error, exc:
+-            raise ValueError, ValueError(*exc.args), sys.exc_info()[2]
++        except self._decode_error as exc:
++            raise ValueError(ValueError(*exc.args)).with_traceback(sys.exc_info()[2])
+     deserialize = loads
+ 
+ 
+@@ -117,7 +117,7 @@ if __name__ == "__main__":
+     # We do NOT try to load a compatible module because that may throw an
+     # exception, which renders the package uninstallable with easy_install
+     # (It trys to execfile the script when installing, to make sure it works)
+-    print "Running anyjson as a stand alone script is not supported"
++    print("Running anyjson as a stand alone script is not supported")
+     sys.exit(1)
+ else:
+     for modspec in _modules:
+--- setup.py.orig	2012-06-21 22:59:59 UTC
++++ setup.py
+@@ -2,8 +2,6 @@ import os
+ import sys
+ 
+ extra = {}
+-if sys.version_info >= (3, 0):
+-    extra.update(use_2to3=True)
+ 
+ try:
+     from setuptools import setup, find_packages

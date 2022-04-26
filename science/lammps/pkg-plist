@@ -77,6 +77,7 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/CH.airebo
 %%DATADIR%%/potentials/CH.airebo-m
 %%DATADIR%%/potentials/CH.rebo
+%%DATADIR%%/potentials/CHAu.ILP
 %%DATADIR%%/potentials/CH_taper.KC
 %%DATADIR%%/potentials/CdTe.bop.table
 %%DATADIR%%/potentials/CdTe.sw
@@ -145,6 +146,7 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Mo5.2.mgpt.README
 %%DATADIR%%/potentials/Mo5.2.mgpt.parmin
 %%DATADIR%%/potentials/Mo5.2.mgpt.potin
+%%DATADIR%%/potentials/MoS2.ILP
 %%DATADIR%%/potentials/Mo_Chen_PRM2017.snap
 %%DATADIR%%/potentials/Mo_Chen_PRM2017.snapcoeff
 %%DATADIR%%/potentials/Mo_Chen_PRM2017.snapparam

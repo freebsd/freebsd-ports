@@ -1,0 +1,9 @@
+--- assets/chezmoi.io/mkdocs.yml.orig	2022-03-26 14:40:26 UTC
++++ assets/chezmoi.io/mkdocs.yml
+@@ -236,3 +236,6 @@ plugins:
+       docs/security.md: developer/security.md
+       docs/templating.md: user-guide/templating.md
+ - search
++
++extra_javascript:
++- mermaid.min.js

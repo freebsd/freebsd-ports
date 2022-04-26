@@ -1,5 +1,7 @@
-TIMESTAMP = 1614984580
-SHA256 (michaelwillis-dragonfly-reverb-3.2.5_GH0.tar.gz) = cf3fad225e8566c2f2157b84f726fab31b269a2892ac4ba7ec51ccc9a8b998a5
-SIZE (michaelwillis-dragonfly-reverb-3.2.5_GH0.tar.gz) = 20814074
-SHA256 (DISTRHO-DPF-226f219_GH0.tar.gz) = 21fa101a2d665c369970db71bef9cc019d6e9c1b5a8780706bf957788c244efe
-SIZE (DISTRHO-DPF-226f219_GH0.tar.gz) = 2121352
+TIMESTAMP = 1650427062
+SHA256 (michaelwillis-dragonfly-reverb-3.2.6_GH0.tar.gz) = baef74277e82a798854806f928d388cac748befdeb018d883d6d433c065abde0
+SIZE (michaelwillis-dragonfly-reverb-3.2.6_GH0.tar.gz) = 20815434
+SHA256 (DISTRHO-DPF-39cd498_GH0.tar.gz) = 79aebe9949989ae8aa428bf9e826767fa6abbc6de588b855f971db21330a3077
+SIZE (DISTRHO-DPF-39cd498_GH0.tar.gz) = 3375602
+SHA256 (DISTRHO-pugl-b1d9703_GH0.tar.gz) = d5947dd3aebbb4d223a2922036150b4f5340da478dcd536394e07130385f7124
+SIZE (DISTRHO-pugl-b1d9703_GH0.tar.gz) = 192794

@@ -1,12 +1,11 @@
 bin/kbreakout
-share/qlogging-categories5/kbreakout.categories
 share/applications/org.kde.kbreakout.desktop
-share/icons/hicolor/128x128/apps/kbreakout.png
 share/icons/hicolor/16x16/apps/kbreakout.png
 share/icons/hicolor/22x22/apps/kbreakout.png
 share/icons/hicolor/32x32/apps/kbreakout.png
 share/icons/hicolor/48x48/apps/kbreakout.png
 share/icons/hicolor/64x64/apps/kbreakout.png
+share/icons/hicolor/128x128/apps/kbreakout.png
 share/icons/hicolor/scalable/apps/kbreakout.svg
 %%DATADIR%%/levelsets/default.levelset
 %%DATADIR%%/qml/Ball.qml
@@ -89,3 +88,4 @@ share/locale/wa/LC_MESSAGES/kbreakout.mo
 share/locale/zh_CN/LC_MESSAGES/kbreakout.mo
 share/locale/zh_TW/LC_MESSAGES/kbreakout.mo
 share/metainfo/org.kde.kbreakout.appdata.xml
+share/qlogging-categories5/kbreakout.categories

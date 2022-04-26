@@ -1,0 +1,480 @@
+--- svgmath/fonts/afm.py.orig	2022-03-18 18:47:45 UTC
++++ svgmath/fonts/afm.py
+@@ -1,5 +1,5 @@
+ import sys, glyphlist
+-from metric import FontMetric, CharMetric, FontFormatError 
++from .metric import FontMetric, CharMetric, FontFormatError 
+ 
+ def parseLength(s): return 0.001 * float(s)
+ 
+@@ -23,7 +23,7 @@ class AFMMetric (FontMetric):
+     def readFontMetrics(self, afmfile):
+         line = afmfile.readline()
+         if not line.startswith("StartFontMetrics"):
+-            raise AFMFormatError, "File is not an AFM file"
++            raise AFMFormatError("File is not an AFM file")
+         # TODO: AFM version control    
+             
+         while True:
+@@ -49,7 +49,7 @@ class AFMMetric (FontMetric):
+                 elif tokens[0] == "Weight":
+                     self.weight = tokens[1].strip()
+                 elif tokens[0] == "FontBBox":
+-                    self.bbox = map (parseLength, tokens[1].split())
++                    self.bbox = list(map (parseLength, tokens[1].split()))
+                 elif tokens[0] == "CapHeight":
+                     self.capheight = parseLength(tokens[1])
+                 elif tokens[0] == "XHeight":
+@@ -88,7 +88,7 @@ class AFMMetric (FontMetric):
+             if d[0] == "W" or d[0] == "WX" or d[0] == "W0X":
+                 width = parseLength(d[1])
+             elif d[0] == "B" and len(d) == 5:
+-                bbox = map (parseLength, d[1:])
++                bbox = list(map (parseLength, d[1:]))
+             elif d[0] == "N":            
+                 glyphname = d[1]
+ 
+@@ -137,6 +137,6 @@ def main():
+     if len (sys.argv) == 2: 
+         AFMMetric(sys.argv[1], log=sys.stderr).dump() 
+     else:
+-        print """Usage: AFM.py <path to AFM file>"""
++        print("""Usage: AFM.py <path to AFM file>""")
+ 
+ if __name__ == "__main__": main()
+--- svgmath/fonts/glyphlist.py.orig	2022-03-18 18:47:45 UTC
++++ svgmath/fonts/glyphlist.py
+@@ -15,13 +15,13 @@ class GlyphList(dict):
+             if len (codelist) != 1: continue # no support for compounds
+             codepoint = int (codelist[0], 16) 
+ 
+-            if glyph in self.keys(): 
++            if glyph in list(self.keys()): 
+                 self[glyph].append(codepoint)
+             else: 
+                 self[glyph] = [codepoint]
+                 
+     def lookup(self, glyphname):
+-        if glyphname in self.keys(): return self.get(glyphname)
++        if glyphname in list(self.keys()): return self.get(glyphname)
+         else: return defaultGlyphList.get(glyphname)
+             
+ 
+@@ -34,8 +34,8 @@ def main():
+     else:
+         glyphList = defaultGlyphList
+ 
+-    for entry, value in glyphList.items():
+-        print entry, " => ", value 
++    for entry, value in list(glyphList.items()):
++        print(entry, " => ", value) 
+ 
+ if __name__ == "__main__":
+     main()
+--- svgmath/fonts/metric.py.orig	2022-03-18 18:47:45 UTC
++++ svgmath/fonts/metric.py
+@@ -37,28 +37,28 @@ class FontMetric:
+     def postParse(self):
+         # Get Ascender from the 'd' glyph
+         if self.ascender is None:
+-            cm = self.chardata.get(ord(u'd'))
++            cm = self.chardata.get(ord('d'))
+             if cm is not None:
+                 self.descender = cm.bbox[3]
+             else: self.ascender = 0.7 
+         
+         # Get Descender from the 'p' glyph
+         if self.descender is None:
+-            cm = self.chardata.get(ord(u'p'))
++            cm = self.chardata.get(ord('p'))
+             if cm is not None:
+                 self.descender = cm.bbox[1]
+             else: self.descender = -0.2 
+         
+         # Get CapHeight from the 'H' glyph
+         if self.capheight is None:
+-            cm = self.chardata.get(ord(u'H'))
++            cm = self.chardata.get(ord('H'))
+             if cm is not None:
+                 self.capheight = cm.bbox[3]
+             else: self.capheight = self.ascender 
+        
+         # Get XHeight from the 'H' glyph
+         if self.xheight is None:
+-            cm = self.chardata.get(ord(u'x'))
++            cm = self.chardata.get(ord('x'))
+             if cm is not None:
+                 self.xheight = cm.bbox[3]
+             else: self.xheight = 0.45 
+@@ -69,7 +69,7 @@ class FontMetric:
+         # "equal", "minus", "plus", "less", "greater", "periodcentered")
+         # Default is CapHeight / 2, or 0.3 if there's no CapHeight.
+         if self.axisposition is None:             
+-            for ch in [ord(u'+'), 0x2212, ord(u'='), ord(u'<'), ord(u'>'), 0xB7]:
++            for ch in [ord('+'), 0x2212, ord('='), ord('<'), ord('>'), 0xB7]:
+                 cm = self.chardata.get(ch)
+                 if cm is not None:
+                     self.axisposition = (cm.bbox[1] + cm.bbox[3]) / 2
+@@ -80,7 +80,7 @@ class FontMetric:
+         if self.underlinethickness is not None:
+             self.rulewidth = self.underlinethickness
+         else:
+-            for ch in [0x2013, 0x2014, 0x2015, 0x2212, ord(u'-')]:
++            for ch in [0x2013, 0x2014, 0x2015, 0x2212, ord('-')]:
+                 cm = self.chardata.get(ch)
+                 if cm is not None:
+                     self.rulewidth = cm.bbox[3] - cm.bbox[1]
+@@ -107,35 +107,35 @@ class FontMetric:
+         else: self.vgap = self.rulewidth * 2
+         
+         # Set missing glyph to be a space    
+-        self.missingGlyph = self.chardata.get(ord(u' ')) or self.chardata.get(0xA0)
++        self.missingGlyph = self.chardata.get(ord(' ')) or self.chardata.get(0xA0)
+    
+     def dump(self):
+-        print "FontName: ", self.fontname
+-        print "FullName: ", self.fullname
+-        print "FontFamily: ", self.family
+-        print "Weight: ", self.weight
+-        print "FontBBox: ", 
++        print("FontName: ", self.fontname)
++        print("FullName: ", self.fullname)
++        print("FontFamily: ", self.family)
++        print("Weight: ", self.weight)
++        print("FontBBox: ", end=' ') 
+         for x in self.bbox:
+-            print x,
+-        print            
+-        print "CapHeight: ", self.capheight
+-        print "XHeight: ", self.xheight
+-        print "Ascender: ", self.ascender
+-        print "Descender: ", self.descender
+-        print "StdHW: ", self.stdhw
+-        print "StdVW: ", self.stdvw
+-        print "UnderlinePosition: ", self.underlineposition
+-        print "UnderlineThickness: ", self.underlinethickness
+-        print "ItalicAngle: ", self.italicangle
+-        print "CharWidth: ", self.charwidth
+-        print "MathematicalBaseline: ", self.axisposition
+-        print "Character data: "
+-        chars = self.chardata.items()
++            print(x, end=' ')
++        print()            
++        print("CapHeight: ", self.capheight)
++        print("XHeight: ", self.xheight)
++        print("Ascender: ", self.ascender)
++        print("Descender: ", self.descender)
++        print("StdHW: ", self.stdhw)
++        print("StdVW: ", self.stdvw)
++        print("UnderlinePosition: ", self.underlineposition)
++        print("UnderlineThickness: ", self.underlinethickness)
++        print("ItalicAngle: ", self.italicangle)
++        print("CharWidth: ", self.charwidth)
++        print("MathematicalBaseline: ", self.axisposition)
++        print("Character data: ")
++        chars = list(self.chardata.items())
+         chars.sort(key = lambda c: c[0])
+         for i, cm in chars:
+             if cm is None: continue
+-            print "    ", ("U+%04X" % i), cm.name+":", "  W", cm.width, "  B",
++            print("    ", ("U+%04X" % i), cm.name+":", "  W", cm.width, "  B", end=' ')
+             for x in cm.bbox: 
+-                print x,
+-            print
++                print(x, end=' ')
++            print()
+     
+\ No newline at end of file
+--- svgmath/fonts/ttf.py.orig	2022-03-18 18:47:45 UTC
++++ svgmath/fonts/ttf.py
+@@ -1,5 +1,5 @@
+ import sys 
+-from metric import FontMetric, CharMetric, FontFormatError 
++from .metric import FontMetric, CharMetric, FontFormatError 
+ 
+ def readUnsigned(ff, size): 
+     res = 0;
+@@ -41,14 +41,14 @@ class TTFMetric (FontMetric):
+         
+     def readFontMetrics(self, ff):
+         version = ff.read(4)
+-        if map(ord, version) == [0, 1, 0, 0]:
++        if list(map(ord, version)) == [0, 1, 0, 0]:
+             self.fonttype="TTF"
+         elif version == "OTTO":
+             # self.fonttype="OTF"
+             # At the moment, I cannot parse bbox data out from CFF
+-            raise TTFFormatError, "OpenType/CFF fonts are unsupported"
++            raise TTFFormatError("OpenType/CFF fonts are unsupported")
+         else:
+-            raise TTFFormatError, "Not a TrueType file"
++            raise TTFFormatError("Not a TrueType file")
+         
+         numTables = readUnsigned(ff, 2)
+         tables = {}
+@@ -61,15 +61,15 @@ class TTFMetric (FontMetric):
+             tables[tag] = (offset, length)
+ 
+         def switchTable(tableTag):
+-            if tableTag not in tables.keys():
+-                raise TTFFormatError, "Required table "+tableTag+" missing in TrueType file"
++            if tableTag not in list(tables.keys()):
++                raise TTFFormatError("Required table "+tableTag+" missing in TrueType file")
+             return tables[tableTag]
+             
+         (offset, length) = switchTable("head")
+         ff.seek(offset+12)
+         magic = readUnsigned(ff, 4)
+         if magic != 0x5F0F3CF5:
+-            raise TTFFormatError, "Magic number in 'head' table does not match the spec"
++            raise TTFFormatError("Magic number in 'head' table does not match the spec")
+         skip(ff, 2)
+         self.unitsPerEm = readUnsigned(ff, 2)
+         emScale = 1.0 / self.unitsPerEm
+@@ -107,24 +107,24 @@ class TTFMetric (FontMetric):
+             nameOffset = readUnsigned(ff, 2)
+         
+             if platformID == 3 and encodingID == 1:
+-                if languageID in englishCodes or nameID not in uniNames.keys(): 
++                if languageID in englishCodes or nameID not in list(uniNames.keys()): 
+                     uniNames[nameID] = (nameOffset, nameLength)
+             elif platformID == 1 and encodingID == 0:
+-                if languageID == 0 or nameID not in macNames.keys():
++                if languageID == 0 or nameID not in list(macNames.keys()):
+                     macNames[nameID] = (nameOffset, nameLength)
+ 
+         def getName (code):
+-            if code in macNames.keys():
++            if code in list(macNames.keys()):
+                 (nameOffset, nameLength) = macNames[code]
+                 ff.seek (storageOffset + nameOffset)
+                 return ff.read(nameLength)
+                 # FIXME: repair Mac encoding here
+-            elif code in uniNames.keys():
++            elif code in list(uniNames.keys()):
+                 (nameOffset, nameLength) = uniNames[code]
+                 ff.seek (storageOffset + nameOffset)
+-                result = u""
++                result = ""
+                 for i in range (0, nameLength/2):
+-                    result += unichr(readUnsigned(ff, 2))
++                    result += chr(readUnsigned(ff, 2))
+                 return result
+        
+         self.family = getName(1)
+@@ -198,7 +198,7 @@ class TTFMetric (FontMetric):
+             encodingScheme = "Symbol"
+             subtableOffset = cmapEncodings.get((3, 0))            
+             if subtableOffset is None: 
+-                raise TTFFormatError, "Cannot use font '%s': no known subtable in 'cmap' table" % self.fullname
++                raise TTFFormatError("Cannot use font '%s': no known subtable in 'cmap' table" % self.fullname)
+             else:
+                 if self.log:
+                     self.log.write("WARNING: font '%s' is a symbolic font - Unicode mapping may be unreliable\n" % self.fullname) 
+@@ -207,7 +207,7 @@ class TTFMetric (FontMetric):
+ 
+         tableFormat = readUnsigned(ff, 2)
+         if tableFormat != 4:
+-            raise TTFFormatError, "Unsupported format in 'cmap' table: %d" % tableFormat
++            raise TTFFormatError("Unsupported format in 'cmap' table: %d" % tableFormat)
+         
+         subtableLength = readUnsigned(ff, 2)
+         skip (ff, 2)
+@@ -264,7 +264,7 @@ class TTFMetric (FontMetric):
+             for i in range (0, self.numGlyphs+1):
+                 glyphIndex.append(readUnsigned(ff, 4))        
+         else:
+-            raise TTFFormatError, "Invalid indexToLocFormat value (%d) in 'head' table" % str(self.indexToLocFormat)
++            raise TTFFormatError("Invalid indexToLocFormat value (%d) in 'head' table" % str(self.indexToLocFormat))
+         
+         (offset, length) = switchTable("glyf")
+         for i in range (0, self.numGlyphs):
+@@ -284,6 +284,6 @@ def main():
+     if len (sys.argv) == 2: 
+         TTFMetric(sys.argv[1], log=sys.stderr).dump() 
+     else:
+-        print """Usage: TTF.py <path to TTF file>"""
++        print("""Usage: TTF.py <path to TTF file>""")
+ 
+ if __name__ == "__main__": main()
+--- svgmath/mathconfig.py.orig	2022-03-18 18:47:45 UTC
++++ svgmath/mathconfig.py
+@@ -2,9 +2,9 @@
+ 
+ import os, sys 
+ from xml import sax
+-from fonts.afm import AFMMetric
+-from fonts.ttf import TTFMetric
+-from fonts.metric import FontFormatError
++from .fonts.afm import AFMMetric
++from .fonts.ttf import TTFMetric
++from .fonts.metric import FontFormatError
+ 
+ class MathConfig(sax.ContentHandler):
+     """Configuration for MathML-to-SVG formatter.
+@@ -26,47 +26,47 @@ class MathConfig(sax.ContentHandler):
+             parser.setContentHandler(self)
+             parser.setFeature(sax.handler.feature_namespaces, 0)
+             parser.parse(configfile)
+-        except sax.SAXException, xcpt:
+-            print "Error parsing configuration file ", configfile, ": ", xcpt.getMessage()
++        except sax.SAXException as xcpt:
++            print("Error parsing configuration file ", configfile, ": ", xcpt.getMessage())
+             sys.exit(1)
+ 
+     
+     def startElement(self, name, attributes):
+-        if name == u"config":
+-            self.verbose = (attributes.get(u"verbose") == u"true") 
+-            self.debug = (attributes.get(u"debug", u"")).replace(u",", u" ").split()
++        if name == "config":
++            self.verbose = (attributes.get("verbose") == "true") 
++            self.debug = (attributes.get("debug", "")).replace(",", " ").split()
+ 
+-        elif name == u"defaults":
++        elif name == "defaults":
+             self.defaults.update(attributes)
+             
+-        elif name == u"fallback":
+-            familyattr = attributes.get(u"family", u"")
+-            self.fallbackFamilies = [" ".join(x.split()) for x in familyattr.split(u",")]
++        elif name == "fallback":
++            familyattr = attributes.get("family", "")
++            self.fallbackFamilies = [" ".join(x.split()) for x in familyattr.split(",")]
+ 
+-        elif name == u"family":
+-            self.currentFamily = attributes.get(u"name", u"")
++        elif name == "family":
++            self.currentFamily = attributes.get("name", "")
+             self.currentFamily = "".join(self.currentFamily.lower().split())
+ 
+-        elif name == u"font":
+-            weight = attributes.get(u"weight", u"normal")
+-            style = attributes.get(u"style", u"normal")
++        elif name == "font":
++            weight = attributes.get("weight", "normal")
++            style = attributes.get("style", "normal")
+             fontfullname = self.currentFamily;
+-            if weight != u"normal":
+-                fontfullname += u" " + weight
+-            if style != u"normal":
+-                fontfullname += u" " + style
++            if weight != "normal":
++                fontfullname += " " + weight
++            if style != "normal":
++                fontfullname += " " + style
+             try:
+-                if u"afm" in attributes.keys():
+-                    fontpath = attributes.get(u"afm")
+-                    metric = AFMMetric(fontpath, attributes.get(u"glyph-list"), sys.stderr)
+-                elif u"ttf" in attributes.keys():
+-                    fontpath = attributes.get(u"ttf")
++                if "afm" in list(attributes.keys()):
++                    fontpath = attributes.get("afm")
++                    metric = AFMMetric(fontpath, attributes.get("glyph-list"), sys.stderr)
++                elif "ttf" in list(attributes.keys()):
++                    fontpath = attributes.get("ttf")
+                     metric = TTFMetric(fontpath, sys.stderr)
+                 else:
+                     sys.stderr.write("Bad record in configuration file: font is neither AFM nor TTF\n")
+                     sys.stderr.write("Font entry for '%s' ignored\n" % fontfullname)
+                     return
+-            except FontFormatError, err:
++            except FontFormatError as err:
+                 sys.stderr.write("Invalid or unsupported file format in '%s': %s\n" % (fontpath, err.message))
+                 sys.stderr.write("Font entry for '%s' ignored\n" % fontfullname)
+                 return
+@@ -76,41 +76,41 @@ class MathConfig(sax.ContentHandler):
+                 sys.stderr.write("Font entry for '%s' ignored\n" % fontfullname)
+                 return
+                  
+-            self.fonts[weight+u" "+style+u" "+self.currentFamily] = metric
++            self.fonts[weight+" "+style+" "+self.currentFamily] = metric
+                 
+-        elif name == u"mathvariant":
+-            variantattr = attributes.get(u"name")
+-            familyattr = attributes.get(u"family", "")
+-            splitFamily = [" ".join(x.split()) for x in familyattr.split(u",")] 
+-            weightattr = attributes.get(u"weight", u"normal")
+-            styleattr = attributes.get(u"style", u"normal")
++        elif name == "mathvariant":
++            variantattr = attributes.get("name")
++            familyattr = attributes.get("family", "")
++            splitFamily = [" ".join(x.split()) for x in familyattr.split(",")] 
++            weightattr = attributes.get("weight", "normal")
++            styleattr = attributes.get("style", "normal")
+             self.variants[variantattr] = (weightattr, styleattr, splitFamily)
+ 
+-        elif name == u"operator-style":
+-            opname = attributes.get(u"operator")
++        elif name == "operator-style":
++            opname = attributes.get("operator")
+             if opname:
+                 styling = {}
+                 styling.update(attributes)
+-                del styling[u"operator"]
++                del styling["operator"]
+                 self.opstyles[opname] = styling
+             else:
+                 sys.stderr.write("Bad record in configuration file: operator-style with no operator attribute\n")            
+ 
+         
+     def endElement(self, name):
+-        if name == u"family":
++        if name == "family":
+             self.currentFamily = None
+ 
+ 
+     def findfont(self, weight, style, family):
+         """Finds a metric for family+weight+style."""
+-        weight = (weight or u"normal").strip()
+-        style = (style or u"normal").strip()
+-        family = "".join((family or u"").lower().split())
++        weight = (weight or "normal").strip()
++        style = (style or "normal").strip()
++        family = "".join((family or "").lower().split())
+         
+-        for w in [weight, u"normal"]:
+-            for s in [style, u"normal"]:                
+-                metric = self.fonts.get(w+u" "+s+u" "+family)
++        for w in [weight, "normal"]:
++            for s in [style, "normal"]:                
++                metric = self.fonts.get(w+" "+s+" "+family)
+                 if metric: return metric
+         return None
+ 
+@@ -121,20 +121,20 @@ def main():
+     else:
+         config = MathConfig(sys.argv[1])
+         
+-    print "Options:  verbose =", config.verbose, " debug =", config.debug
+-    print "Fonts:"
+-    for (font, metric) in config.fonts.items():
+-        print "    ", font, "-->", metric.fontname
+-    print "Math variants:"
+-    for (variant, value) in config.variants.items():
+-        print "    ", variant, "-->", value
+-    print "Defaults:"
+-    for (attr, value) in config.defaults.items():
+-        print "    ", attr, "=", value
+-    print "Operator styling:"
+-    for (opname, value) in config.opstyles.items():
+-        print "    ", repr(opname), ":", value
+-    print "Fallback font families:", config.fallbackFamilies  
++    print("Options:  verbose =", config.verbose, " debug =", config.debug)
++    print("Fonts:")
++    for (font, metric) in list(config.fonts.items()):
++        print("    ", font, "-->", metric.fontname)
++    print("Math variants:")
++    for (variant, value) in list(config.variants.items()):
++        print("    ", variant, "-->", value)
++    print("Defaults:")
++    for (attr, value) in list(config.defaults.items()):
++        print("    ", attr, "=", value)
++    print("Operator styling:")
++    for (opname, value) in list(config.opstyles.items()):
++        print("    ", repr(opname), ":", value)
++    print("Fallback font families:", config.fallbackFamilies)  
+         
+     
+ if __name__ == "__main__": main()

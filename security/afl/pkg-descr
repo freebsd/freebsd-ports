@@ -1,7 +1,0 @@
-American fuzzy lop is a fuzzer that employs a novel type of compile-time
-instrumentation and genetic algorithms to automatically discover clean,
-interesting test cases that trigger new internal states in the targeted
-binary. This substantially improves the functional coverage for the
-fuzzed code.
-
-WWW: http://lcamtuf.coredump.cx/afl/

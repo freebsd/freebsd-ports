@@ -1,6 +1,6 @@
---- base/debug/stack_trace_posix.cc.orig	2022-02-28 16:54:41 UTC
+--- base/debug/stack_trace_posix.cc.orig	2022-03-25 21:59:56 UTC
 +++ base/debug/stack_trace_posix.cc
-@@ -37,7 +37,7 @@
+@@ -38,7 +38,7 @@
  #include <AvailabilityMacros.h>
  #endif
  

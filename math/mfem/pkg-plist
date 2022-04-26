@@ -22,9 +22,19 @@ include/mfem/fem/complex_fem.hpp
 include/mfem/fem/conduitdatacollection.hpp
 include/mfem/fem/convergence.hpp
 include/mfem/fem/datacollection.hpp
+include/mfem/fem/doftrans.hpp
 include/mfem/fem/eltrans.hpp
 include/mfem/fem/estimators.hpp
 include/mfem/fem/fe.hpp
+include/mfem/fem/fe/fe_base.hpp
+include/mfem/fem/fe/fe_fixed_order.hpp
+include/mfem/fem/fe/fe_h1.hpp
+include/mfem/fem/fe/fe_l2.hpp
+include/mfem/fem/fe/fe_nd.hpp
+include/mfem/fem/fe/fe_nurbs.hpp
+include/mfem/fem/fe/fe_pos.hpp
+include/mfem/fem/fe/fe_rt.hpp
+include/mfem/fem/fe/fe_ser.hpp
 include/mfem/fem/fe_coll.hpp
 include/mfem/fem/fem.hpp
 include/mfem/fem/fespace.hpp
@@ -68,6 +78,7 @@ include/mfem/fem/tfespace.hpp
 include/mfem/fem/tintrules.hpp
 include/mfem/fem/tmop.hpp
 include/mfem/fem/tmop/tmop_pa.hpp
+include/mfem/fem/tmop_amr.hpp
 include/mfem/fem/tmop_tools.hpp
 include/mfem/fem/transfer.hpp
 include/mfem/general/adios2stream.hpp
@@ -162,6 +173,7 @@ include/mfem/mesh/pmesh.hpp
 include/mfem/mesh/pncmesh.hpp
 include/mfem/mesh/point.hpp
 include/mfem/mesh/pumi.hpp
+include/mfem/mesh/pyramid.hpp
 include/mfem/mesh/quadrilateral.hpp
 include/mfem/mesh/segment.hpp
 include/mfem/mesh/tetrahedron.hpp
@@ -177,6 +189,6 @@ lib/cmake/mfem/MFEMConfigVersion.cmake
 lib/cmake/mfem/MFEMTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mfem/MFEMTargets.cmake
 lib/libmfem.so
-lib/libmfem.so.4.3.0
+lib/libmfem.so.4.4.0
 %%DATADIR%%/config.mk
 %%DATADIR%%/test.mk

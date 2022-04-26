@@ -1,13 +1,12 @@
 bin/filelight
-share/qlogging-categories5/filelight.categories
 etc/xdg/filelightrc
 share/applications/org.kde.filelight.desktop
-share/icons/hicolor/128x128/apps/filelight.png
 share/icons/hicolor/16x16/apps/filelight.png
 share/icons/hicolor/22x22/apps/filelight.png
 share/icons/hicolor/32x32/apps/filelight.png
 share/icons/hicolor/48x48/apps/filelight.png
 share/icons/hicolor/64x64/apps/filelight.png
+share/icons/hicolor/128x128/apps/filelight.png
 share/kxmlgui5/filelight/filelightui.rc
 share/locale/ar/LC_MESSAGES/filelight.mo
 share/locale/ast/LC_MESSAGES/filelight.mo
@@ -57,3 +56,4 @@ share/locale/uk/LC_MESSAGES/filelight.mo
 share/locale/zh_CN/LC_MESSAGES/filelight.mo
 share/locale/zh_TW/LC_MESSAGES/filelight.mo
 share/metainfo/org.kde.filelight.appdata.xml
+share/qlogging-categories5/filelight.categories

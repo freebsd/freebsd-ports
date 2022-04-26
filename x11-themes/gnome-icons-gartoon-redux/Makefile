@@ -2,7 +2,7 @@
 
 PORTNAME=	gartoon-redux
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/1.x/${PORTVERSION}/+download/
 

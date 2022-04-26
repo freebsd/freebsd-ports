@@ -1,7 +1,7 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
 
 PORTNAME=	whois
-PORTVERSION=	5.0.2
+PORTVERSION=	5.1.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

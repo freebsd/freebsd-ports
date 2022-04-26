@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
-TEST_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent
+TEST_DEPENDS=	p5-AnyEvent>=0,1:devel/p5-AnyEvent
 
 USES=		perl5
 USE_PERL5=	configure
@@ -27,8 +27,8 @@ OPTIONS_DEFAULT=ANYEVENT EVENT
 ANYEVENT_DESC=	Use AnyEvent as underlying event handler
 EVENT_DESC=	Use Event as underlying event handler
 
-ANYEVENT_BUILD_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent
-ANYEVENT_RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent
+ANYEVENT_BUILD_DEPENDS=	p5-AnyEvent>=0,1:devel/p5-AnyEvent
+ANYEVENT_RUN_DEPENDS=	p5-AnyEvent>=0,1:devel/p5-AnyEvent
 EVENT_BUILD_DEPENDS=	p5-Event>=0:devel/p5-Event
 EVENT_RUN_DEPENDS=	p5-Event>=0:devel/p5-Event
 

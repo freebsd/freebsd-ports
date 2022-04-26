@@ -21,6 +21,7 @@ RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=20:www/nextcloud@${PHP_FLAVOR}
 
 USES=		cpe gettext php:flavors
 USE_PHP=	imap
+IGNORE_WITH_PHP=81
 
 CPE_VENDOR=	nextcloud
 

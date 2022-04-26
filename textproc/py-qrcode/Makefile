@@ -17,6 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.8:devel/py-six@${PY_FLAVOR} \
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 post-patch:
 	${REINPLACE_CMD} -e 's|share/\(man/man1\)|\1|' ${WRKSRC}/setup.py
 

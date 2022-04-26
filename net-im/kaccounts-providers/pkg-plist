@@ -2,8 +2,8 @@ etc/signon-ui/webkit-options.d/accounts.google.com.conf
 etc/signon-ui/webkit-options.d/api.twitter.com.conf
 etc/signon-ui/webkit-options.d/identi.ca.conf
 etc/signon-ui/webkit-options.d/www.facebook.com.conf
-%%QT_PLUGINDIR%%/kaccounts/ui/owncloud_plugin_kaccounts.so
 %%QT_PLUGINDIR%%/kaccounts/ui/nextcloud_plugin_kaccounts.so
+%%QT_PLUGINDIR%%/kaccounts/ui/owncloud_plugin_kaccounts.so
 share/accounts/providers/kde/google.provider
 share/accounts/providers/kde/nextcloud.provider
 share/accounts/providers/kde/owncloud.provider

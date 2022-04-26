@@ -9,28 +9,28 @@
 #			Valid values: graphics/jpeg-turbo, graphics/mozjpeg
 #			Default value: graphics/jpeg-turbo
 #
-# MAINTAINER: portmgr@FreeBSD.org
+# MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_JPEG_MK)
 
 _INCLUDE_USES_JPEG_MK=	yes
 JPEG_PORT?=	graphics/jpeg-turbo
 
-.if empty(jpeg_ARGS)
+.  if empty(jpeg_ARGS)
 jpeg_ARGS=	lib
-.endif
+.  endif
 
-.if ${jpeg_ARGS} == lib
+.  if ${jpeg_ARGS} == lib
 LIB_DEPENDS+=	libjpeg.so:${JPEG_PORT}
-.elif ${jpeg_ARGS} == build
+.  elif ${jpeg_ARGS} == build
 BUILD_DEPENDS+=	cjpeg:${JPEG_PORT}
-.elif ${jpeg_ARGS} == run
+.  elif ${jpeg_ARGS} == run
 RUN_DEPENDS+=	cjpeg:${JPEG_PORT}
-.elif ${jpeg_ARGS} == both
+.  elif ${jpeg_ARGS} == both
 BUILD_DEPENDS+=	cjpeg:${JPEG_PORT}
 RUN_DEPENDS+=	cjpeg:${JPEG_PORT}
-.else
+.  else
 IGNORE=		USES=jpeg - invalid args: [${jpeg_ARGS}] specified
-.endif
+.  endif
 
 .endif

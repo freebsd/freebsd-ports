@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	ccured
 
-BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild \
+		${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
 
 ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
 USES=		gmake perl5

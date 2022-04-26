@@ -1,0 +1,8 @@
+oscrypto is a compilation-free, always up-to-date encryption library for Python
+that works on Windows, OS X, Linux and BSD.
+
+The library integrates with the encryption library that is part of the operating
+system. This means that a compiler is never needed, and OS security updates take
+care of patching vulnerabilities.
+
+WWW: https://github.com/wbond/oscrypto

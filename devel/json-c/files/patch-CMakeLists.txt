@@ -1,8 +1,8 @@
 Avoid use of newlocale(3) that results in increasing memory usage
 
---- CMakeLists.txt.orig	2020-07-26 15:08:19 UTC
+--- CMakeLists.txt.orig	2022-04-14 01:09:51 UTC
 +++ CMakeLists.txt
-@@ -177,7 +177,7 @@ if (HAVE_STDLIB_H)
+@@ -198,7 +198,7 @@ if (HAVE_STDLIB_H)
  endif()
  if (HAVE_LOCALE_H)
      check_symbol_exists(setlocale   "locale.h" HAVE_SETLOCALE)
@@ -11,3 +11,12 @@ Avoid use of newlocale(3) that results in increasing memory usage
  endif()
  if (HAVE_STRINGS_H)
      check_symbol_exists(strcasecmp  "strings.h" HAVE_STRCASECMP)
+@@ -432,8 +432,6 @@ configure_file(json.h.cmakein ${PROJECT_BINARY_DIR}/js
+ 
+ include_directories(${PROJECT_SOURCE_DIR})
+ include_directories(${PROJECT_BINARY_DIR})
+-
+-add_subdirectory(doc)
+ 
+ # "uninstall" custom target for make generators in unix like operating systems
+ # and if that target is not present

@@ -5,6 +5,7 @@ bin/vouch-proxy
 %%ETCDIR%%/config.yml_example_gitea
 %%ETCDIR%%/config.yml_example_github
 %%ETCDIR%%/config.yml_example_github_enterprise
+%%ETCDIR%%/config.yml_example_gitlab_ce
 %%ETCDIR%%/config.yml_example_google
 %%ETCDIR%%/config.yml_example_homeassistant
 %%ETCDIR%%/config.yml_example_indieauth

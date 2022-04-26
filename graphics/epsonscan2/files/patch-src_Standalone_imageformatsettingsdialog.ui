@@ -1,0 +1,38 @@
+--- src/Standalone/imageformatsettingsdialog.ui.orig	2022-02-17 18:27:50 UTC
++++ src/Standalone/imageformatsettingsdialog.ui
+@@ -112,7 +112,7 @@
+        <string>IMAGEFORMATOPTION_JPG_006</string>
+       </property>
+      </widget>
+-     <widget class="QWidget" name="layoutWidget">
++     <widget class="QWidget" name="vert_layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+@@ -160,7 +160,7 @@
+        <string notr="true">:</string>
+       </property>
+      </widget>
+-     <widget class="QWidget" name="layoutWidget">
++     <widget class="QWidget" name="horiz_layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+@@ -345,7 +345,7 @@
+        <number>999</number>
+       </property>
+      </widget>
+-     <widget class="QWidget" name="layoutWidget">
++     <widget class="QWidget" name="vert_layoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+@@ -422,7 +422,7 @@
+        <string>IMAGEFORMATOPTION_JPG_006</string>
+       </property>
+      </widget>
+-     <widget class="QWidget" name="layoutWidget_2">
++     <widget class="QWidget" name="horiz_layoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>

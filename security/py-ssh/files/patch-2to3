@@ -1,0 +1,941 @@
+--- ssh/auth_handler.py.orig	2012-04-19 22:17:28 UTC
++++ ssh/auth_handler.py
+@@ -198,7 +198,7 @@ class AuthHandler (object):
+             if self.auth_method == 'password':
+                 m.add_boolean(False)
+                 password = self.password
+-                if isinstance(password, unicode):
++                if isinstance(password, str):
+                     password = password.encode('UTF-8')
+                 m.add_string(password)
+             elif self.auth_method == 'publickey':
+@@ -308,7 +308,7 @@ class AuthHandler (object):
+             keyblob = m.get_string()
+             try:
+                 key = self.transport._key_info[keytype](Message(keyblob))
+-            except SSHException, e:
++            except SSHException as e:
+                 self.transport._log(INFO, 'Auth rejected: public key: %s' % str(e))
+                 key = None
+             except:
+--- ssh/channel.py.orig	2012-05-05 04:45:50 UTC
++++ ssh/channel.py
+@@ -607,7 +607,7 @@ class Channel (object):
+         """
+         try:
+             out = self.in_buffer.read(nbytes, self.timeout)
+-        except PipeTimeout, e:
++        except PipeTimeout as e:
+             raise socket.timeout()
+ 
+         ack = self._check_add_window(len(out))
+@@ -657,7 +657,7 @@ class Channel (object):
+         """
+         try:
+             out = self.in_stderr_buffer.read(nbytes, self.timeout)
+-        except PipeTimeout, e:
++        except PipeTimeout as e:
+             raise socket.timeout()
+             
+         ack = self._check_add_window(len(out))
+--- ssh/client.py.orig	2012-09-10 18:40:40 UTC
++++ ssh/client.py
+@@ -189,8 +189,8 @@ class SSHClient (object):
+         """
+         f = open(filename, 'w')
+         f.write('# SSH host keys collected by ssh\n')
+-        for hostname, keys in self._host_keys.iteritems():
+-            for keytype, key in keys.iteritems():
++        for hostname, keys in self._host_keys.items():
++            for keytype, key in keys.items():
+                 f.write('%s %s %s\n' % (hostname, keytype, key.get_base64()))
+         f.close()
+ 
+@@ -326,7 +326,7 @@ class SSHClient (object):
+ 
+         if key_filename is None:
+             key_filenames = []
+-        elif isinstance(key_filename, (str, unicode)):
++        elif isinstance(key_filename, str):
+             key_filenames = [ key_filename ]
+         else:
+             key_filenames = key_filename
+@@ -434,7 +434,7 @@ class SSHClient (object):
+                 two_factor = (allowed_types == ['password'])
+                 if not two_factor:
+                     return
+-            except SSHException, e:
++            except SSHException as e:
+                 saved_exception = e
+ 
+         if not two_factor:
+@@ -448,7 +448,7 @@ class SSHClient (object):
+                         if not two_factor:
+                             return
+                         break
+-                    except SSHException, e:
++                    except SSHException as e:
+                         saved_exception = e
+ 
+         if not two_factor and allow_agent:
+@@ -464,7 +464,7 @@ class SSHClient (object):
+                     if not two_factor:
+                         return
+                     break
+-                except SSHException, e:
++                except SSHException as e:
+                     saved_exception = e
+ 
+         if not two_factor:
+@@ -496,16 +496,16 @@ class SSHClient (object):
+                     if not two_factor:
+                         return
+                     break
+-                except SSHException, e:
++                except SSHException as e:
+                     saved_exception = e
+-                except IOError, e:
++                except IOError as e:
+                     saved_exception = e
+ 
+         if password is not None:
+             try:
+                 self._transport.auth_password(username, password)
+                 return
+-            except SSHException, e:
++            except SSHException as e:
+                 saved_exception = e
+         elif two_factor:
+             raise SSHException('Two-factor authentication requires a password')
+--- ssh/dsskey.py.orig	2012-04-19 22:17:28 UTC
++++ ssh/dsskey.py
+@@ -93,7 +93,7 @@ class DSSKey (PKey):
+ 
+     def sign_ssh_data(self, rng, data):
+         digest = SHA.new(data).digest()
+-        dss = DSA.construct((long(self.y), long(self.g), long(self.p), long(self.q), long(self.x)))
++        dss = DSA.construct((int(self.y), int(self.g), int(self.p), int(self.q), int(self.x)))
+         # generate a suitable k
+         qsize = len(util.deflate_long(self.q, 0))
+         while True:
+@@ -128,7 +128,7 @@ class DSSKey (PKey):
+         sigS = util.inflate_long(sig[20:], 1)
+         sigM = util.inflate_long(SHA.new(data).digest(), 1)
+ 
+-        dss = DSA.construct((long(self.y), long(self.g), long(self.p), long(self.q)))
++        dss = DSA.construct((int(self.y), int(self.g), int(self.p), int(self.q)))
+         return dss.verify(sigM, (sigR, sigS))
+ 
+     def _encode_key(self):
+@@ -184,7 +184,7 @@ class DSSKey (PKey):
+         # DSAPrivateKey = { version = 0, p, q, g, y, x }
+         try:
+             keylist = BER(data).decode()
+-        except BERException, x:
++        except BERException as x:
+             raise SSHException('Unable to parse key file: ' + str(x))
+         if (type(keylist) is not list) or (len(keylist) < 6) or (keylist[0] != 0):
+             raise SSHException('not a valid DSA private key file (bad ber encoding)')
+--- ssh/hostkeys.py.orig	2012-07-15 23:45:13 UTC
++++ ssh/hostkeys.py
+@@ -79,7 +79,7 @@ class HostKeyEntry:
+                 key = DSSKey(data=base64.decodestring(key))
+             else:
+                 return None
+-        except binascii.Error, e:
++        except binascii.Error as e:
+             raise InvalidHostKey(line, e)
+ 
+         return cls(names, key)
+@@ -277,7 +277,7 @@ class HostKeys (UserDict.DictMixin):
+         if len(entry) == 0:
+             self._entries.append(HostKeyEntry([hostname], None))
+             return
+-        for key_type in entry.keys():
++        for key_type in list(entry.keys()):
+             found = False
+             for e in self._entries:
+                 if (hostname in e.hostnames) and (e.key.get_name() == key_type):
+@@ -298,7 +298,7 @@ class HostKeys (UserDict.DictMixin):
+ 
+     def values(self):
+         ret = []
+-        for k in self.keys():
++        for k in list(self.keys()):
+             ret.append(self.lookup(k))
+         return ret
+ 
+--- ssh/kex_group1.py.orig	2012-04-19 22:17:28 UTC
++++ ssh/kex_group1.py
+@@ -29,10 +29,10 @@ from ssh.message import Message
+ from ssh.ssh_exception import SSHException
+ 
+ 
+-_MSG_KEXDH_INIT, _MSG_KEXDH_REPLY = range(30, 32)
++_MSG_KEXDH_INIT, _MSG_KEXDH_REPLY = list(range(30, 32))
+ 
+ # draft-ietf-secsh-transport-09.txt, page 17
+-P = 0xFFFFFFFFFFFFFFFFC90FDAA22168C234C4C6628B80DC1CD129024E088A67CC74020BBEA63B139B22514A08798E3404DDEF9519B3CD3A431B302B0A6DF25F14374FE1356D6D51C245E485B576625E7EC6F44C42E9A637ED6B0BFF5CB6F406B7EDEE386BFB5A899FA5AE9F24117C4B1FE649286651ECE65381FFFFFFFFFFFFFFFFL
++P = 0xFFFFFFFFFFFFFFFFC90FDAA22168C234C4C6628B80DC1CD129024E088A67CC74020BBEA63B139B22514A08798E3404DDEF9519B3CD3A431B302B0A6DF25F14374FE1356D6D51C245E485B576625E7EC6F44C42E9A637ED6B0BFF5CB6F406B7EDEE386BFB5A899FA5AE9F24117C4B1FE649286651ECE65381FFFFFFFFFFFFFFFF
+ G = 2
+ 
+ 
+@@ -42,9 +42,9 @@ class KexGroup1(object):
+ 
+     def __init__(self, transport):
+         self.transport = transport
+-        self.x = 0L
+-        self.e = 0L
+-        self.f = 0L
++        self.x = 0
++        self.e = 0
++        self.f = 0
+ 
+     def start_kex(self):
+         self._generate_x()
+--- ssh/message.py.orig	2012-04-19 22:17:28 UTC
++++ ssh/message.py
+@@ -21,7 +21,7 @@ Implementation of an SSH2 "message".
+ """
+ 
+ import struct
+-import cStringIO
++import io
+ 
+ from ssh import util
+ 
+@@ -46,9 +46,9 @@ class Message (object):
+         @type content: string
+         """
+         if content != None:
+-            self.packet = cStringIO.StringIO(content)
++            self.packet = io.StringIO(content)
+         else:
+-            self.packet = cStringIO.StringIO()
++            self.packet = io.StringIO()
+ 
+     def __str__(self):
+         """
+@@ -275,8 +275,8 @@ class Message (object):
+             return self.add_string(i)
+         elif type(i) is int:
+             return self.add_int(i)
+-        elif type(i) is long:
+-            if i > 0xffffffffL:
++        elif type(i) is int:
++            if i > 0xffffffff:
+                 return self.add_mpint(i)
+             else:
+                 return self.add_int(i)
+--- ssh/packet.py.orig	2012-09-10 18:40:40 UTC
++++ ssh/packet.py
+@@ -93,8 +93,8 @@ class Packetizer (object):
+         self.__mac_key_in = ''
+         self.__compress_engine_out = None
+         self.__compress_engine_in = None
+-        self.__sequence_number_out = 0L
+-        self.__sequence_number_in = 0L
++        self.__sequence_number_out = 0
++        self.__sequence_number_in = 0
+ 
+         # lock around outbound writes (packet computation)
+         self.__write_lock = threading.RLock()
+@@ -217,7 +217,7 @@ class Packetizer (object):
+                 n -= len(x)
+             except socket.timeout:
+                 got_timeout = True
+-            except socket.error, e:
++            except socket.error as e:
+                 # on Linux, sometimes instead of socket.timeout, we get
+                 # EAGAIN.  this is a bug in recent (> 2.6.9) kernels but
+                 # we need to work around it.
+@@ -246,7 +246,7 @@ class Packetizer (object):
+                 n = self.__socket.send(out)
+             except socket.timeout:
+                 retry_write = True
+-            except socket.error, e:
++            except socket.error as e:
+                 if (type(e.args) is tuple) and (len(e.args) > 0) and (e.args[0] == errno.EAGAIN):
+                     retry_write = True
+                 elif (type(e.args) is tuple) and (len(e.args) > 0) and (e.args[0] == errno.EINTR):
+@@ -311,7 +311,7 @@ class Packetizer (object):
+             if self.__block_engine_out != None:
+                 payload = struct.pack('>I', self.__sequence_number_out) + packet
+                 out += compute_hmac(self.__mac_key_out, payload, self.__mac_engine_out)[:self.__mac_size_out]
+-            self.__sequence_number_out = (self.__sequence_number_out + 1) & 0xffffffffL
++            self.__sequence_number_out = (self.__sequence_number_out + 1) & 0xffffffff
+             self.write_all(out)
+ 
+             self.__sent_bytes += len(out)
+@@ -371,7 +371,7 @@ class Packetizer (object):
+ 
+         msg = Message(payload[1:])
+         msg.seqno = self.__sequence_number_in
+-        self.__sequence_number_in = (self.__sequence_number_in + 1) & 0xffffffffL
++        self.__sequence_number_in = (self.__sequence_number_in + 1) & 0xffffffff
+ 
+         # check for rekey
+         raw_packet_size = packet_size + self.__mac_size_in + 4
+@@ -469,7 +469,7 @@ class Packetizer (object):
+                 break
+             except socket.timeout:
+                 pass
+-            except EnvironmentError, e:
++            except EnvironmentError as e:
+                 if ((type(e.args) is tuple) and (len(e.args) > 0) and
+                     (e.args[0] == errno.EINTR)):
+                     pass
+--- ssh/pkey.py.orig	2012-04-19 22:17:28 UTC
++++ ssh/pkey.py
+@@ -304,7 +304,7 @@ class PKey (object):
+         # if we trudged to the end of the file, just try to cope.
+         try:
+             data = base64.decodestring(''.join(lines[start:end]))
+-        except base64.binascii.Error, e:
++        except base64.binascii.Error as e:
+             raise SSHException('base64 decoding error: ' + str(e))
+         if 'proc-type' not in headers:
+             # unencryped: done
+@@ -346,9 +346,9 @@ class PKey (object):
+ 
+         @raise IOError: if there was an error writing the file.
+         """
+-        f = open(filename, 'w', 0600)
++        f = open(filename, 'w', 0o600)
+         # grrr... the mode doesn't always take hold
+-        os.chmod(filename, 0600)
++        os.chmod(filename, 0o600)
+         self._write_private_key(tag, f, data, password)
+         f.close()
+ 
+@@ -356,7 +356,7 @@ class PKey (object):
+         f.write('-----BEGIN %s PRIVATE KEY-----\n' % tag)
+         if password is not None:
+             # since we only support one cipher here, use it
+-            cipher_name = self._CIPHER_TABLE.keys()[0]
++            cipher_name = list(self._CIPHER_TABLE.keys())[0]
+             cipher = self._CIPHER_TABLE[cipher_name]['cipher']
+             keysize = self._CIPHER_TABLE[cipher_name]['keysize']
+             blocksize = self._CIPHER_TABLE[cipher_name]['blocksize']
+--- ssh/server.py.orig	2012-05-06 22:10:09 UTC
++++ ssh/server.py
+@@ -48,7 +48,7 @@ class InteractiveQuery (object):
+         self.instructions = instructions
+         self.prompts = []
+         for x in prompts:
+-            if (type(x) is str) or (type(x) is unicode):
++            if (type(x) is str) or (type(x) is str):
+                 self.add_prompt(x)
+             else:
+                 self.add_prompt(x[0], x[1])
+@@ -602,7 +602,7 @@ class SubsystemHandler (threading.Thread):
+         try:
+             self.__transport._log(DEBUG, 'Starting handler for subsystem %s' % self.__name)
+             self.start_subsystem(self.__name, self.__transport, self.__channel)
+-        except Exception, e:
++        except Exception as e:
+             self.__transport._log(ERROR, 'Exception in subsystem handler for "%s": %s' %
+                                   (self.__name, str(e)))
+             self.__transport._log(ERROR, util.tb_strings())
+--- ssh/sftp_attr.py.orig	2012-04-19 22:17:28 UTC
++++ ssh/sftp_attr.py
+@@ -44,7 +44,7 @@ class SFTPAttributes (object):
+     FLAG_UIDGID = 2
+     FLAG_PERMISSIONS = 4
+     FLAG_AMTIME = 8
+-    FLAG_EXTENDED = 0x80000000L
++    FLAG_EXTENDED = 0x80000000
+ 
+     def __init__(self):
+         """
+@@ -139,11 +139,11 @@ class SFTPAttributes (object):
+             msg.add_int(self.st_mode)
+         if self._flags & self.FLAG_AMTIME:
+             # throw away any fractional seconds
+-            msg.add_int(long(self.st_atime))
+-            msg.add_int(long(self.st_mtime))
++            msg.add_int(int(self.st_atime))
++            msg.add_int(int(self.st_mtime))
+         if self._flags & self.FLAG_EXTENDED:
+             msg.add_int(len(self.attr))
+-            for key, val in self.attr.iteritems():
++            for key, val in self.attr.items():
+                 msg.add_string(key)
+                 msg.add_string(val)
+         return
+@@ -158,7 +158,7 @@ class SFTPAttributes (object):
+             out += 'mode=' + oct(self.st_mode) + ' '
+         if (self.st_atime is not None) and (self.st_mtime is not None):
+             out += 'atime=%d mtime=%d ' % (self.st_atime, self.st_mtime)
+-        for k, v in self.attr.iteritems():
++        for k, v in self.attr.items():
+             out += '"%s"=%r ' % (str(k), v)
+         out += ']'
+         return out
+@@ -194,13 +194,13 @@ class SFTPAttributes (object):
+                 ks = 's'
+             else:
+                 ks = '?'
+-            ks += self._rwx((self.st_mode & 0700) >> 6, self.st_mode & stat.S_ISUID)
+-            ks += self._rwx((self.st_mode & 070) >> 3, self.st_mode & stat.S_ISGID)
++            ks += self._rwx((self.st_mode & 0o700) >> 6, self.st_mode & stat.S_ISUID)
++            ks += self._rwx((self.st_mode & 0o70) >> 3, self.st_mode & stat.S_ISGID)
+             ks += self._rwx(self.st_mode & 7, self.st_mode & stat.S_ISVTX, True)
+         else:
+             ks = '?---------'
+         # compute display date
+-        if (self.st_mtime is None) or (self.st_mtime == 0xffffffffL):
++        if (self.st_mtime is None) or (self.st_mtime == 0xffffffff):
+             # shouldn't really happen
+             datestr = '(unknown date)'
+         else:
+--- ssh/sftp_client.py.orig	2012-08-29 17:56:54 UTC
++++ ssh/sftp_client.py
+@@ -85,7 +85,7 @@ class SFTPClient (BaseSFTP):
+             self.ultra_debug = transport.get_hexdump()
+         try:
+             server_version = self._send_version()
+-        except EOFError, x:
++        except EOFError as x:
+             raise SSHException('EOF during negotiation')
+         self._log(INFO, 'Opened sftp connection (server version %d)' % server_version)
+ 
+@@ -178,7 +178,7 @@ class SFTPClient (BaseSFTP):
+         while True:
+             try:
+                 t, msg = self._request(CMD_READDIR, handle)
+-            except EOFError, e:
++            except EOFError as e:
+                 # done with handle
+                 break
+             if t != CMD_NAME:
+@@ -285,7 +285,7 @@ class SFTPClient (BaseSFTP):
+         self._log(DEBUG, 'rename(%r, %r)' % (oldpath, newpath))
+         self._request(CMD_RENAME, oldpath, newpath)
+ 
+-    def mkdir(self, path, mode=0777):
++    def mkdir(self, path, mode=0o777):
+         """
+         Create a folder (directory) named C{path} with numeric mode C{mode}.
+         The default mode is 0777 (octal).  On some systems, mode is ignored.
+@@ -369,7 +369,7 @@ class SFTPClient (BaseSFTP):
+         """
+         dest = self._adjust_cwd(dest)
+         self._log(DEBUG, 'symlink(%r, %r)' % (source, dest))
+-        if type(source) is unicode:
++        if type(source) is str:
+             source = source.encode('utf-8')
+         self._request(CMD_SYMLINK, source, dest)
+ 
+@@ -643,7 +643,7 @@ class SFTPClient (BaseSFTP):
+             for item in arg:
+                 if isinstance(item, int):
+                     msg.add_int(item)
+-                elif isinstance(item, long):
++                elif isinstance(item, int):
+                     msg.add_int64(item)
+                 elif isinstance(item, str):
+                     msg.add_string(item)
+@@ -663,7 +663,7 @@ class SFTPClient (BaseSFTP):
+         while True:
+             try:
+                 t, data = self._read_packet()
+-            except EOFError, e:
++            except EOFError as e:
+                 raise SSHException('Server connection dropped: %s' % (str(e),))
+             msg = Message(data)
+             num = msg.get_int()
+@@ -689,7 +689,7 @@ class SFTPClient (BaseSFTP):
+         return (None, None)
+ 
+     def _finish_responses(self, fileobj):
+-        while fileobj in self._expecting.values():
++        while fileobj in list(self._expecting.values()):
+             self._read_response()
+             fileobj._check_exception()
+ 
+@@ -716,7 +716,7 @@ class SFTPClient (BaseSFTP):
+         Return an adjusted path if we're emulating a "current working
+         directory" for the server.
+         """
+-        if type(path) is unicode:
++        if type(path) is str:
+             path = path.encode('utf-8')
+         if self._cwd is None:
+             return path
+--- ssh/sftp_file.py.orig	2012-08-29 17:56:54 UTC
++++ ssh/sftp_file.py
+@@ -53,12 +53,12 @@ class SFTPFile (BufferedFile):
+         self._saved_exception = None
+ 
+     def __del__(self):
+-        self._close(async=True)
++        self._close(asynchronous=True)
+     
+     def close(self):
+-        self._close(async=False)
++        self._close(asynchronous=False)
+         
+-    def _close(self, async=False):
++    def _close(self, asynchronous=False):
+         # We allow double-close without signaling an error, because real
+         # Python file objects do.  However, we must protect against actually
+         # sending multiple CMD_CLOSE packets, because after we close our
+@@ -73,7 +73,7 @@ class SFTPFile (BufferedFile):
+             self.sftp._finish_responses(self)
+         BufferedFile.close(self)
+         try:
+-            if async:
++            if asynchronous:
+                 # GC'd file handle could be called from an arbitrary thread -- don't wait for a response
+                 self.sftp._async_request(type(None), CMD_CLOSE, self.handle)
+             else:
+@@ -107,7 +107,7 @@ class SFTPFile (BufferedFile):
+         return None.  this guarantees nothing about the number of bytes
+         collected in the prefetch buffer so far.
+         """
+-        k = [i for i in self._prefetch_data.keys() if i <= offset]
++        k = [i for i in list(self._prefetch_data.keys()) if i <= offset]
+         if len(k) == 0:
+             return None
+         index = max(k)
+@@ -152,7 +152,7 @@ class SFTPFile (BufferedFile):
+             data = self._read_prefetch(size)
+             if data is not None:
+                 return data
+-        t, msg = self.sftp._request(CMD_READ, self.handle, long(self._realpos), int(size))
++        t, msg = self.sftp._request(CMD_READ, self.handle, int(self._realpos), int(size))
+         if t != CMD_DATA:
+             raise SFTPError('Expected data')
+         return msg.get_string()
+@@ -160,7 +160,7 @@ class SFTPFile (BufferedFile):
+     def _write(self, data):
+         # may write less than requested if it would exceed max packet size
+         chunk = min(len(data), self.MAX_REQUEST_SIZE)
+-        req = self.sftp._async_request(type(None), CMD_WRITE, self.handle, long(self._realpos), str(data[:chunk]))
++        req = self.sftp._async_request(type(None), CMD_WRITE, self.handle, int(self._realpos), str(data[:chunk]))
+         if not self.pipelined or self.sftp.sock.recv_ready():
+             t, msg = self.sftp._read_response(req)
+             if t != CMD_STATUS:
+@@ -340,7 +340,7 @@ class SFTPFile (BufferedFile):
+         @since: 1.4
+         """
+         t, msg = self.sftp._request(CMD_EXTENDED, 'check-file', self.handle,
+-                                    hash_algorithm, long(offset), long(length), block_size)
++                                    hash_algorithm, int(offset), int(length), block_size)
+         ext = msg.get_string()
+         alg = msg.get_string()
+         data = msg.get_remainder()
+@@ -450,14 +450,14 @@ class SFTPFile (BufferedFile):
+         # do these read requests in a temporary thread because there may be
+         # a lot of them, so it may block.
+         for offset, length in chunks:
+-            self.sftp._async_request(self, CMD_READ, self.handle, long(offset), int(length))
++            self.sftp._async_request(self, CMD_READ, self.handle, int(offset), int(length))
+ 
+     def _async_response(self, t, msg):
+         if t == CMD_STATUS:
+             # save exception and re-raise it on next file operation
+             try:
+                 self.sftp._convert_status(msg)
+-            except Exception, x:
++            except Exception as x:
+                 self._saved_exception = x
+             return
+         if t != CMD_DATA:
+--- ssh/sftp_handle.py.orig	2012-04-19 22:17:28 UTC
++++ ssh/sftp_handle.py
+@@ -100,7 +100,7 @@ class SFTPHandle (object):
+                 readfile.seek(offset)
+                 self.__tell = offset
+             data = readfile.read(length)
+-        except IOError, e:
++        except IOError as e:
+             self.__tell = None
+             return SFTPServer.convert_errno(e.errno)
+         self.__tell += len(data)
+@@ -139,7 +139,7 @@ class SFTPHandle (object):
+                     self.__tell = offset
+             writefile.write(data)
+             writefile.flush()
+-        except IOError, e:
++        except IOError as e:
+             self.__tell = None
+             return SFTPServer.convert_errno(e.errno)
+         if self.__tell is not None:
+--- ssh/sftp_server.py.orig	2012-04-19 22:17:28 UTC
++++ ssh/sftp_server.py
+@@ -92,7 +92,7 @@ class SFTPServer (BaseSFTP, SubsystemHandler):
+             except EOFError:
+                 self._log(DEBUG, 'EOF -- end of session')
+                 return
+-            except Exception, e:
++            except Exception as e:
+                 self._log(DEBUG, 'Exception on channel: ' + str(e))
+                 self._log(DEBUG, util.tb_strings())
+                 return
+@@ -100,7 +100,7 @@ class SFTPServer (BaseSFTP, SubsystemHandler):
+             request_number = msg.get_int()
+             try:
+                 self._process(t, request_number, msg)
+-            except Exception, e:
++            except Exception as e:
+                 self._log(DEBUG, 'Exception in server processing: ' + str(e))
+                 self._log(DEBUG, util.tb_strings())
+                 # send some kind of failure message, at least
+@@ -113,9 +113,9 @@ class SFTPServer (BaseSFTP, SubsystemHandler):
+         self.server.session_ended()
+         super(SFTPServer, self).finish_subsystem()
+         # close any file handles that were left open (so we can return them to the OS quickly)
+-        for f in self.file_table.itervalues():
++        for f in self.file_table.values():
+             f.close()
+-        for f in self.folder_table.itervalues():
++        for f in self.folder_table.values():
+             f.close()
+         self.file_table = {}
+         self.folder_table = {}
+@@ -179,7 +179,7 @@ class SFTPServer (BaseSFTP, SubsystemHandler):
+         for item in arg:
+             if type(item) is int:
+                 msg.add_int(item)
+-            elif type(item) is long:
++            elif type(item) is int:
+                 msg.add_int64(item)
+             elif type(item) is str:
+                 msg.add_string(item)
+--- ssh/transport.py.orig	2012-09-13 23:42:52 UTC
++++ ssh/transport.py
+@@ -110,8 +110,8 @@ class SecurityOptions (object):
+             x = tuple(x)
+         if type(x) is not tuple:
+             raise TypeError('expected tuple or list')
+-        possible = getattr(self._transport, orig).keys()
+-        forbidden = filter(lambda n: n not in possible, x)
++        possible = list(getattr(self._transport, orig).keys())
++        forbidden = [n for n in x if n not in possible]
+         if len(forbidden) > 0:
+             raise ValueError('unknown cipher')
+         setattr(self._transport, name, x)
+@@ -175,7 +175,7 @@ class ChannelMap (object):
+     def values(self):
+         self._lock.acquire()
+         try:
+-            return self._map.values()
++            return list(self._map.values())
+         finally:
+             self._lock.release()
+ 
+@@ -273,7 +273,7 @@ class Transport (threading.Thread):
+         @param sock: a socket or socket-like object to create the session over.
+         @type sock: socket
+         """
+-        if isinstance(sock, (str, unicode)):
++        if isinstance(sock, str):
+             # convert "host:port" into (host, port)
+             hl = sock.split(':', 1)
+             if len(hl) == 1:
+@@ -291,7 +291,7 @@ class Transport (threading.Thread):
+                     sock = socket.socket(af, socket.SOCK_STREAM)
+                     try:
+                         retry_on_signal(lambda: sock.connect((hostname, port)))
+-                    except socket.error, e:
++                    except socket.error as e:
+                         reason = str(e)
+                     else:
+                         break
+@@ -373,7 +373,7 @@ class Transport (threading.Thread):
+ 
+         @rtype: str
+         """
+-        out = '<ssh.Transport at %s' % hex(long(id(self)) & 0xffffffffL)
++        out = '<ssh.Transport at %s' % hex(int(id(self)) & 0xffffffff)
+         if not self.active:
+             out += ' (unconnected)'
+         else:
+@@ -616,7 +616,7 @@ class Transport (threading.Thread):
+         self.active = False
+         self.packetizer.close()
+         self.join()
+-        for chan in self._channels.values():
++        for chan in list(self._channels.values()):
+             chan._unlink()
+ 
+     def get_remote_server_key(self):
+@@ -690,7 +690,7 @@ class Transport (threading.Thread):
+         """
+         return self.open_channel('auth-agent@openssh.com')
+ 
+-    def open_forwarded_tcpip_channel(self, (src_addr, src_port), (dest_addr, dest_port)):
++    def open_forwarded_tcpip_channel(self, xxx_todo_changeme3, xxx_todo_changeme4):
+         """
+         Request a new channel back to the client, of type C{"forwarded-tcpip"}.
+         This is used after a client has requested port forwarding, for sending
+@@ -701,6 +701,8 @@ class Transport (threading.Thread):
+         @param dest_addr: local (server) connected address
+         @param dest_port: local (server) connected port
+         """
++        (src_addr, src_port) = xxx_todo_changeme3
++        (dest_addr, dest_port) = xxx_todo_changeme4
+         return self.open_channel('forwarded-tcpip', (dest_addr, dest_port), (src_addr, src_port))
+ 
+     def open_channel(self, kind, dest_addr=None, src_addr=None):
+@@ -810,7 +812,9 @@ class Transport (threading.Thread):
+         if port == 0:
+             port = response.get_int()
+         if handler is None:
+-            def default_handler(channel, (src_addr, src_port), (dest_addr, dest_port)):
++            def default_handler(channel, xxx_todo_changeme, xxx_todo_changeme1):
++                (src_addr, src_port) = xxx_todo_changeme
++                (dest_addr, dest_port) = xxx_todo_changeme1
+                 self._queue_incoming_channel(channel)
+             handler = default_handler
+         self._tcp_handler = handler
+@@ -1180,7 +1184,7 @@ class Transport (threading.Thread):
+             return []
+         try:
+             return self.auth_handler.wait_for_response(my_event)
+-        except BadAuthenticationType, x:
++        except BadAuthenticationType as x:
+             # if password auth isn't allowed, but keyboard-interactive *is*, try to fudge it
+             if not fallback or ('keyboard-interactive' not in x.allowed_types):
+                 raise
+@@ -1196,7 +1200,7 @@ class Transport (threading.Thread):
+                         return []
+                     return [ password ]
+                 return self.auth_interactive(username, handler)
+-            except SSHException, ignored:
++            except SSHException as ignored:
+                 # attempt failed; just raise the original exception
+                 raise x
+         return None
+@@ -1510,7 +1514,8 @@ class Transport (threading.Thread):
+         # only called if a channel has turned on x11 forwarding
+         if handler is None:
+             # by default, use the same mechanism as accept()
+-            def default_handler(channel, (src_addr, src_port)):
++            def default_handler(channel, xxx_todo_changeme2):
++                (src_addr, src_port) = xxx_todo_changeme2
+                 self._queue_incoming_channel(channel)
+             self._x11_handler = default_handler
+         else:
+@@ -1541,9 +1546,9 @@ class Transport (threading.Thread):
+         # active=True occurs before the thread is launched, to avoid a race
+         _active_threads.append(self)
+         if self.server_mode:
+-            self._log(DEBUG, 'starting thread (server mode): %s' % hex(long(id(self)) & 0xffffffffL))
++            self._log(DEBUG, 'starting thread (server mode): %s' % hex(int(id(self)) & 0xffffffff))
+         else:
+-            self._log(DEBUG, 'starting thread (client mode): %s' % hex(long(id(self)) & 0xffffffffL))
++            self._log(DEBUG, 'starting thread (client mode): %s' % hex(int(id(self)) & 0xffffffff))
+         try:
+             try:
+                 self.packetizer.write_all(self.local_version + '\r\n')
+@@ -1597,27 +1602,27 @@ class Transport (threading.Thread):
+                         msg.add_byte(chr(MSG_UNIMPLEMENTED))
+                         msg.add_int(m.seqno)
+                         self._send_message(msg)
+-            except SSHException, e:
++            except SSHException as e:
+                 self._log(ERROR, 'Exception: ' + str(e))
+                 self._log(ERROR, util.tb_strings())
+                 self.saved_exception = e
+-            except EOFError, e:
++            except EOFError as e:
+                 self._log(DEBUG, 'EOF in transport thread')
+                 #self._log(DEBUG, util.tb_strings())
+                 self.saved_exception = e
+-            except socket.error, e:
++            except socket.error as e:
+                 if type(e.args) is tuple:
+                     emsg = '%s (%d)' % (e.args[1], e.args[0])
+                 else:
+                     emsg = e.args
+                 self._log(ERROR, 'Socket exception: ' + emsg)
+                 self.saved_exception = e
+-            except Exception, e:
++            except Exception as e:
+                 self._log(ERROR, 'Unknown exception: ' + str(e))
+                 self._log(ERROR, util.tb_strings())
+                 self.saved_exception = e
+             _active_threads.remove(self)
+-            for chan in self._channels.values():
++            for chan in list(self._channels.values()):
+                 chan._unlink()
+             if self.active:
+                 self.active = False
+@@ -1626,7 +1631,7 @@ class Transport (threading.Thread):
+                     self.completion_event.set()
+                 if self.auth_handler is not None:
+                     self.auth_handler.abort()
+-                for event in self.channel_events.values():
++                for event in list(self.channel_events.values()):
+                     event.set()
+                 try:
+                     self.lock.acquire()
+@@ -1670,7 +1675,7 @@ class Transport (threading.Thread):
+                 timeout = 2
+             try:
+                 buf = self.packetizer.readline(timeout)
+-            except Exception, x:
++            except Exception as x:
+                 raise SSHException('Error reading SSH protocol banner' + str(x))
+             if buf[:4] == 'SSH-':
+                 break
+@@ -1712,8 +1717,8 @@ class Transport (threading.Thread):
+                 pkex = list(self.get_security_options().kex)
+                 pkex.remove('diffie-hellman-group-exchange-sha1')
+                 self.get_security_options().kex = pkex
+-            available_server_keys = filter(self.server_key_dict.keys().__contains__,
+-                                           self._preferred_keys)
++            available_server_keys = list(filter(list(self.server_key_dict.keys()).__contains__,
++                                           self._preferred_keys))
+         else:
+             available_server_keys = self._preferred_keys
+ 
+@@ -1765,19 +1770,19 @@ class Transport (threading.Thread):
+         # as a server, we pick the first item in the client's list that we support.
+         # as a client, we pick the first item in our list that the server supports.
+         if self.server_mode:
+-            agreed_kex = filter(self._preferred_kex.__contains__, kex_algo_list)
++            agreed_kex = list(filter(self._preferred_kex.__contains__, kex_algo_list))
+         else:
+-            agreed_kex = filter(kex_algo_list.__contains__, self._preferred_kex)
++            agreed_kex = list(filter(kex_algo_list.__contains__, self._preferred_kex))
+         if len(agreed_kex) == 0:
+             raise SSHException('Incompatible ssh peer (no acceptable kex algorithm)')
+         self.kex_engine = self._kex_info[agreed_kex[0]](self)
+ 
+         if self.server_mode:
+-            available_server_keys = filter(self.server_key_dict.keys().__contains__,
+-                                           self._preferred_keys)
+-            agreed_keys = filter(available_server_keys.__contains__, server_key_algo_list)
++            available_server_keys = list(filter(list(self.server_key_dict.keys()).__contains__,
++                                           self._preferred_keys))
++            agreed_keys = list(filter(available_server_keys.__contains__, server_key_algo_list))
+         else:
+-            agreed_keys = filter(server_key_algo_list.__contains__, self._preferred_keys)
++            agreed_keys = list(filter(server_key_algo_list.__contains__, self._preferred_keys))
+         if len(agreed_keys) == 0:
+             raise SSHException('Incompatible ssh peer (no acceptable host key)')
+         self.host_key_type = agreed_keys[0]
+@@ -1785,15 +1790,15 @@ class Transport (threading.Thread):
+             raise SSHException('Incompatible ssh peer (can\'t match requested host key type)')
+ 
+         if self.server_mode:
+-            agreed_local_ciphers = filter(self._preferred_ciphers.__contains__,
+-                                           server_encrypt_algo_list)
+-            agreed_remote_ciphers = filter(self._preferred_ciphers.__contains__,
+-                                          client_encrypt_algo_list)
++            agreed_local_ciphers = list(filter(self._preferred_ciphers.__contains__,
++                                           server_encrypt_algo_list))
++            agreed_remote_ciphers = list(filter(self._preferred_ciphers.__contains__,
++                                          client_encrypt_algo_list))
+         else:
+-            agreed_local_ciphers = filter(client_encrypt_algo_list.__contains__,
+-                                          self._preferred_ciphers)
+-            agreed_remote_ciphers = filter(server_encrypt_algo_list.__contains__,
+-                                           self._preferred_ciphers)
++            agreed_local_ciphers = list(filter(client_encrypt_algo_list.__contains__,
++                                          self._preferred_ciphers))
++            agreed_remote_ciphers = list(filter(server_encrypt_algo_list.__contains__,
++                                           self._preferred_ciphers))
+         if (len(agreed_local_ciphers) == 0) or (len(agreed_remote_ciphers) == 0):
+             raise SSHException('Incompatible ssh server (no acceptable ciphers)')
+         self.local_cipher = agreed_local_ciphers[0]
+@@ -1801,22 +1806,22 @@ class Transport (threading.Thread):
+         self._log(DEBUG, 'Ciphers agreed: local=%s, remote=%s' % (self.local_cipher, self.remote_cipher))
+ 
+         if self.server_mode:
+-            agreed_remote_macs = filter(self._preferred_macs.__contains__, client_mac_algo_list)
+-            agreed_local_macs = filter(self._preferred_macs.__contains__, server_mac_algo_list)
++            agreed_remote_macs = list(filter(self._preferred_macs.__contains__, client_mac_algo_list))
++            agreed_local_macs = list(filter(self._preferred_macs.__contains__, server_mac_algo_list))
+         else:
+-            agreed_local_macs = filter(client_mac_algo_list.__contains__, self._preferred_macs)
+-            agreed_remote_macs = filter(server_mac_algo_list.__contains__, self._preferred_macs)
++            agreed_local_macs = list(filter(client_mac_algo_list.__contains__, self._preferred_macs))
++            agreed_remote_macs = list(filter(server_mac_algo_list.__contains__, self._preferred_macs))
+         if (len(agreed_local_macs) == 0) or (len(agreed_remote_macs) == 0):
+             raise SSHException('Incompatible ssh server (no acceptable macs)')
+         self.local_mac = agreed_local_macs[0]
+         self.remote_mac = agreed_remote_macs[0]
+ 
+         if self.server_mode:
+-            agreed_remote_compression = filter(self._preferred_compression.__contains__, client_compress_algo_list)
+-            agreed_local_compression = filter(self._preferred_compression.__contains__, server_compress_algo_list)
++            agreed_remote_compression = list(filter(self._preferred_compression.__contains__, client_compress_algo_list))
++            agreed_local_compression = list(filter(self._preferred_compression.__contains__, server_compress_algo_list))
+         else:
+-            agreed_local_compression = filter(client_compress_algo_list.__contains__, self._preferred_compression)
+-            agreed_remote_compression = filter(server_compress_algo_list.__contains__, self._preferred_compression)
++            agreed_local_compression = list(filter(client_compress_algo_list.__contains__, self._preferred_compression))
++            agreed_remote_compression = list(filter(server_compress_algo_list.__contains__, self._preferred_compression))
+         if (len(agreed_local_compression) == 0) or (len(agreed_remote_compression) == 0):
+             raise SSHException('Incompatible ssh server (no acceptable compression) %r %r %r' % (agreed_local_compression, agreed_remote_compression, self._preferred_compression))
+         self.local_compression = agreed_local_compression[0]
+--- ssh/util.py.orig	2012-09-10 18:40:40 UTC
++++ ssh/util.py
+@@ -20,8 +20,8 @@
+ Useful functions used by the rest of ssh.
+ """
+ 
+-from __future__ import generators
+ 
++
+ import array
+ from binascii import hexlify, unhexlify
+ import errno
+@@ -48,7 +48,7 @@ if sys.version_info < (2,3):
+ 
+ def inflate_long(s, always_positive=False):
+     "turns a normalized byte string into a long-int (adapted from Crypto.Util.number)"
+-    out = 0L
++    out = 0
+     negative = 0
+     if not always_positive and (len(s) > 0) and (ord(s[0]) >= 0x80):
+         negative = 1
+@@ -60,16 +60,16 @@ def inflate_long(s, always_positive=False):
+     for i in range(0, len(s), 4):
+         out = (out << 32) + struct.unpack('>I', s[i:i+4])[0]
+     if negative:
+-        out -= (1L << (8 * len(s)))
++        out -= (1 << (8 * len(s)))
+     return out
+ 
+ def deflate_long(n, add_sign_padding=True):
+     "turns a long-int into a normalized byte string (adapted from Crypto.Util.number)"
+     # after much testing, this algorithm was deemed to be the fastest
+     s = ''
+-    n = long(n)
++    n = int(n)
+     while (n != 0) and (n != -1):
+-        s = struct.pack('>I', n & 0xffffffffL) + s
++        s = struct.pack('>I', n & 0xffffffff) + s
+         n = n >> 32
+     # strip off leading zeros, FFs
+     for i in enumerate(s):
+@@ -276,13 +276,13 @@ def retry_on_signal(function):
+     while True:
+         try:
+             return function()
+-        except EnvironmentError, e:
++        except EnvironmentError as e:
+             if e.errno != errno.EINTR:
+                 raise
+ 
+ class Counter (object):
+     """Stateful counter for CTR mode crypto"""
+-    def __init__(self, nbits, initial_value=1L, overflow=0L):
++    def __init__(self, nbits, initial_value=1, overflow=0):
+         self.blocksize = nbits / 8
+         self.overflow = overflow
+         # start with value - 1 so we don't have to store intermediate values when counting
+@@ -306,6 +306,6 @@ class Counter (object):
+         self.value = array.array('c', '\x00' * (self.blocksize - len(x)) + x)
+         return self.value.tostring()
+ 
+-    def new(cls, nbits, initial_value=1L, overflow=0L):
++    def new(cls, nbits, initial_value=1, overflow=0):
+         return cls(nbits, initial_value=initial_value, overflow=overflow)
+     new = classmethod(new)

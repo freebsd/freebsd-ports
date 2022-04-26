@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-You must edit %%WWWDIR%%/Code/confConfig.inc for your setup,
-and follow the other directions at http://crp.sourceforge.net/installation.html
-EOM
-}
-]

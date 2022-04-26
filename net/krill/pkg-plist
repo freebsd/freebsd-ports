@@ -1,7 +1,9 @@
 bin/krill
 bin/krillc
+bin/krillup
 @sample %%ETCDIR%%/krill.conf.sample
 man/man1/krill.1.gz
 man/man1/krillc.1.gz
+man/man1/krillup.1.gz
 %%DOCSDIR%%/krill.conf
 @dir(krill,krill,) /var/krill

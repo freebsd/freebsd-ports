@@ -1,0 +1,469 @@
+--- src/RestrictedPython/Eval.py.orig	2010-07-09 04:28:54 UTC
++++ src/RestrictedPython/Eval.py
+@@ -60,10 +60,10 @@ class RestrictionCapableEval:
+                 self.expr, '<string>')
+             if PROFILE:
+                 end = clock()
+-                print 'prepRestrictedCode: %d ms for %s' % (
+-                    (end - start) * 1000, `self.expr`)
++                print('prepRestrictedCode: %d ms for %s' % (
++                    (end - start) * 1000, repr(self.expr)))
+             if err:
+-                raise SyntaxError, err[0]
++                raise SyntaxError(err[0])
+             self.used = tuple(used.keys())
+             self.rcode = co
+ 
+--- src/RestrictedPython/Guards.py.orig	2010-07-09 04:07:16 UTC
++++ src/RestrictedPython/Guards.py
+@@ -98,7 +98,7 @@ def _write_wrapper():
+             try:
+                 f = getattr(self.ob, secattr)
+             except AttributeError:
+-                raise TypeError, error_msg
++                raise TypeError(error_msg)
+             f(*args)
+         return handler
+     class Wrapper:
+--- src/RestrictedPython/Limits.py.orig	2010-07-07 14:42:56 UTC
++++ src/RestrictedPython/Limits.py
+@@ -25,22 +25,22 @@ def limited_range(iFirst, *args):
+     elif len(args) == 2:
+         iStart, iEnd, iStep = iFirst, args[0], args[1]
+     else:
+-        raise AttributeError, 'range() requires 1-3 int arguments'
+-    if iStep == 0: raise ValueError, 'zero step for range()'
++        raise AttributeError('range() requires 1-3 int arguments')
++    if iStep == 0: raise ValueError('zero step for range()')
+     iLen = int((iEnd - iStart) / iStep)
+     if iLen < 0: iLen = 0
+-    if iLen >= RANGELIMIT: raise ValueError, 'range() too large'
+-    return range(iStart, iEnd, iStep)
++    if iLen >= RANGELIMIT: raise ValueError('range() too large')
++    return list(range(iStart, iEnd, iStep))
+ limited_builtins['range'] = limited_range
+ 
+ def limited_list(seq):
+     if isinstance(seq, str):
+-        raise TypeError, 'cannot convert string to list'
++        raise TypeError('cannot convert string to list')
+     return list(seq)
+ limited_builtins['list'] = limited_list
+ 
+ def limited_tuple(seq):
+     if isinstance(seq, str):
+-        raise TypeError, 'cannot convert string to tuple'
++        raise TypeError('cannot convert string to tuple')
+     return tuple(seq)
+ limited_builtins['tuple'] = limited_tuple
+--- src/RestrictedPython/RCompile.py.orig	2010-07-07 14:42:56 UTC
++++ src/RestrictedPython/RCompile.py
+@@ -20,12 +20,12 @@ from compiler import ast, parse, misc, syntax, pycodeg
+ from compiler.pycodegen import AbstractCompileMode, Expression, \
+      Interactive, Module, ModuleCodeGenerator, FunctionCodeGenerator, findOp
+ 
+-import MutatingWalker
+-from RestrictionMutator import RestrictionMutator
++from . import MutatingWalker
++from .RestrictionMutator import RestrictionMutator
+ 
+ 
+ def niceParse(source, filename, mode):
+-    if isinstance(source, unicode):
++    if isinstance(source, str):
+         # Use the utf-8-sig BOM so the compiler
+         # detects this as a UTF-8 encoded string.
+         source = '\xef\xbb\xbf' + source.encode('utf-8')
+@@ -58,7 +58,7 @@ class RestrictedCompileMode(AbstractCompileMode):
+         tree = self.parse()
+         MutatingWalker.walk(tree, self.rm)
+         if self.rm.errors:
+-            raise SyntaxError, self.rm.errors[0]
++            raise SyntaxError(self.rm.errors[0])
+         misc.set_filename(self.filename, tree)
+         syntax.check(tree)
+         return tree
+@@ -72,7 +72,7 @@ class RestrictedCompileMode(AbstractCompileMode):
+ def compileAndTuplize(gen):
+     try:
+         gen.compile()
+-    except SyntaxError, v:
++    except SyntaxError as v:
+         return None, (str(v),), gen.rm.warnings, gen.rm.used_names
+     return gen.getCode(), (), gen.rm.warnings, gen.rm.used_names
+ 
+--- src/RestrictedPython/tests/before_and_after.py.orig	2010-07-09 04:29:10 UTC
++++ src/RestrictedPython/tests/before_and_after.py
+@@ -77,11 +77,11 @@ def nested_list_comprehension_after():
+ # print
+ 
+ def simple_print_before():
+-    print "foo"
++    print("foo")
+ 
+ def simple_print_after():
+     _print = _print_()
+-    print >> _print, "foo"
++    print("foo", file=_print)
+ 
+ # getitem
+ 
+@@ -117,13 +117,13 @@ def simple_delitem_after():
+ 
+ def function_with_print_before():
+     def foo():
+-        print "foo"
++        print("foo")
+         return printed
+ 
+ def function_with_print_after():
+     def foo():
+         _print = _print_()
+-        print >> _print, "foo"
++        print("foo", file=_print)
+         return _print()
+ 
+ def function_with_getattr_before():
+--- src/RestrictedPython/tests/class.py.orig	2010-07-07 14:42:56 UTC
++++ src/RestrictedPython/tests/class.py
+@@ -10,4 +10,4 @@ x = MyClass()
+ x.set(12)
+ x.set(x.get() + 1)
+ if x.get() != 13:
+-    raise AssertionError, "expected 13, got %d" % x.get()
++    raise AssertionError("expected 13, got %d" % x.get())
+--- src/RestrictedPython/tests/restricted_module.py.orig	2010-07-07 14:42:56 UTC
++++ src/RestrictedPython/tests/restricted_module.py
+@@ -1,42 +1,43 @@
+ import sys
++from functools import reduce
+ 
+ def print0():
+-    print 'Hello, world!',
++    print('Hello, world!', end=' ')
+     return printed
+ 
+ def print1():
+-    print 'Hello,',
+-    print 'world!',
++    print('Hello,', end=' ')
++    print('world!', end=' ')
+     return printed
+ 
+ def printStuff():
+-    print 'a', 'b', 'c',
++    print('a', 'b', 'c', end=' ')
+     return printed
+ 
+ def printToNone():
+     x = None
+-    print >>x, 'Hello, world!',
++    print('Hello, world!', end=' ', file=x)
+     return printed
+ 
+ def printLines():
+     # This failed before Zope 2.4.0a2
+-    r = range(3)
++    r = list(range(3))
+     for n in r:
+         for m in r:
+-            print m + n * len(r),
+-        print
++            print(m + n * len(r), end=' ')
++        print()
+     return printed
+ 
+ def try_map():
+     inc = lambda i: i+1
+     x = [1, 2, 3]
+-    print map(inc, x),
++    print(list(map(inc, x)), end=' ')
+     return printed
+ 
+ def try_apply():
+     def f(x, y, z):
+         return x + y + z
+-    print f(*(300, 20), **{'z': 1}),
++    print(f(*(300, 20), **{'z': 1}), end=' ')
+     return printed
+ 
+ def try_inplace():
+@@ -45,17 +46,17 @@ def try_inplace():
+ 
+ def primes():
+     # Somewhat obfuscated code on purpose
+-    print filter(None,map(lambda y:y*reduce(lambda x,y:x*y!=0,
+-    map(lambda x,y=y:y%x,range(2,int(pow(y,0.5)+1))),1),range(2,20))),
++    print([_f for _f in [y*reduce(lambda x,y:x*y!=0,
++    list(map(lambda x,y=y:y%x,list(range(2,int(pow(y,0.5)+1))))),1) for y in range(2,20)] if _f], end=' ')
+     return printed
+ 
+ def allowed_read(ob):
+-    print ob.allowed
+-    print ob.s
+-    print ob[0]
+-    print ob[2]
+-    print ob[3:-1]
+-    print len(ob)
++    print(ob.allowed)
++    print(ob.s)
++    print(ob[0])
++    print(ob[2])
++    print(ob[3:-1])
++    print(len(ob))
+     return printed
+ 
+ def allowed_default_args(ob):
+@@ -83,13 +84,13 @@ def allowed_simple():
+ def allowed_write(ob):
+     ob.writeable = 1
+     #ob.writeable += 1
+-    [1 for ob.writeable in 1,2]
++    [1 for ob.writeable in [1,2]]
+     ob['safe'] = 2
+     #ob['safe'] += 2
+-    [1 for ob['safe'] in 1,2]
++    [1 for ob['safe'] in [1,2]]
+ 
+ def denied_print(ob):
+-    print >> ob, 'Hello, world!',
++    print('Hello, world!', end=' ', file=ob)
+ 
+ def denied_getattr(ob):
+     #ob.disallowed += 1
+@@ -108,7 +109,7 @@ def denied_setattr2(ob):
+     ob.allowed = -1
+ 
+ def denied_setattr3(ob):
+-    [1 for ob.allowed in 1,2]
++    [1 for ob.allowed in [1,2]]
+ 
+ def denied_getitem(ob):
+     ob[1]
+@@ -125,7 +126,7 @@ def denied_setitem2(ob):
+     ob['x'] = 2
+ 
+ def denied_setitem3(ob):
+-    [1 for ob['x'] in 1,2]
++    [1 for ob['x'] in [1,2]]
+ 
+ def denied_setslice(ob):
+     ob[0:1] = 'a'
+@@ -135,7 +136,7 @@ def denied_setslice2(ob):
+     ob[0:1] = 'a'
+ 
+ def denied_setslice3(ob):
+-    [1 for ob[0:1] in 1,2]
++    [1 for ob[0:1] in [1,2]]
+ 
+ ##def strange_attribute():
+ ##    # If a guard has attributes with names that don't start with an
+--- src/RestrictedPython/tests/security_in_syntax.py.orig	2010-07-09 04:07:16 UTC
++++ src/RestrictedPython/tests/security_in_syntax.py
+@@ -29,7 +29,7 @@ def bad_attr():
+     some_ob._some_attr = 15
+ 
+ def no_exec():
+-    exec 'q = 1'
++    exec('q = 1')
+ 
+ def no_yield():
+     yield 42
+@@ -47,7 +47,7 @@ def from_import_as_bad_name():
+ def except_using_bad_name():
+     try:
+         foo
+-    except NameError, _leading_underscore:
++    except NameError as _leading_underscore:
+         # The name of choice (say, _write) is now assigned to an exception
+         # object.  Hard to exploit, but conceivable.
+         pass
+--- src/RestrictedPython/tests/testRestrictions.py.orig	2010-07-09 04:07:16 UTC
++++ src/RestrictedPython/tests/testRestrictions.py
+@@ -52,10 +52,10 @@ def find_source(fn, func):
+ 
+ def get_source(func):
+     """Less silly interface to find_source"""
+-    file = func.func_globals['__file__']
++    file = func.__globals__['__file__']
+     if file.endswith('.pyc'):
+         file = file[:-1]
+-    source = find_source(file, func.func_code)[1]
++    source = find_source(file, func.__code__)[1]
+     assert source.strip(), "Source should not be empty!"
+     return source
+ 
+@@ -76,7 +76,7 @@ def create_rmodule():
+                  'len', 'chr', 'ord',
+                  ):
+         rmodule[name] = builtins[name]
+-    exec code in rmodule
++    exec(code, rmodule)
+ 
+ class AccessDenied (Exception): pass
+ 
+@@ -145,7 +145,7 @@ def guarded_getitem(ob, index):
+ 
+ def minimal_import(name, _globals, _locals, names):
+     if name != "__future__":
+-        raise ValueError, "Only future imports are allowed"
++        raise ValueError("Only future imports are allowed")
+     import __future__
+     return __future__
+ 
+@@ -185,14 +185,14 @@ def inplacevar_wrapper(op, x, y):
+     inplacevar_wrapper_called[op] = x, y
+     # This is really lame.  But it's just a test. :)
+     globs = {'x': x, 'y': y}
+-    exec 'x'+op+'y' in globs
++    exec('x'+op+'y', globs)
+     return globs['x']
+ 
+ class RestrictionTests(unittest.TestCase):
+     def execFunc(self, name, *args, **kw):
+         func = rmodule[name]
+-        verify.verify(func.func_code)
+-        func.func_globals.update({'_getattr_': guarded_getattr,
++        verify.verify(func.__code__)
++        func.__globals__.update({'_getattr_': guarded_getattr,
+                                   '_getitem_': guarded_getitem,
+                                   '_write_': TestGuard,
+                                   '_print_': PrintCollector,
+@@ -263,7 +263,7 @@ class RestrictionTests(unittest.TestCase):
+         self.assertEqual(inplacevar_wrapper_called['+='], (1, 3))
+ 
+     def checkDenied(self):
+-        for k in rmodule.keys():
++        for k in list(rmodule.keys()):
+             if k[:6] == 'denied':
+                 try:
+                     self.execFunc(k, RestrictedObject())
+@@ -290,10 +290,10 @@ class RestrictionTests(unittest.TestCase):
+         # Unrestricted compile.
+         code = compile(source, fn, 'exec')
+         m = {'__builtins__': {'__import__':minimal_import}}
+-        exec code in m
+-        for k, v in m.items():
++        exec(code, m)
++        for k, v in list(m.items()):
+             if hasattr(v, 'func_code'):
+-                filename, source = find_source(fn, v.func_code)
++                filename, source = find_source(fn, v.__code__)
+                 # Now compile it with restrictions
+                 try:
+                     code = compile_restricted(source, filename, 'exec')
+@@ -327,11 +327,11 @@ class RestrictionTests(unittest.TestCase):
+         self.assertEqual(res, expect)
+ 
+     def checkStackSize(self):
+-        for k, rfunc in rmodule.items():
++        for k, rfunc in list(rmodule.items()):
+             if not k.startswith('_') and hasattr(rfunc, 'func_code'):
+-                rss = rfunc.func_code.co_stacksize
+-                ss = getattr(restricted_module, k).func_code.co_stacksize
+-                self.failUnless(
++                rss = rfunc.__code__.co_stacksize
++                ss = getattr(restricted_module, k).__code__.co_stacksize
++                self.assertTrue(
+                     rss >= ss, 'The stack size estimate for %s() '
+                     'should have been at least %d, but was only %d'
+                     % (k, ss, rss))
+@@ -427,7 +427,7 @@ class RestrictionTests(unittest.TestCase):
+             calls.append(seq)
+             return list(seq)
+         globals = {"_getiter_": getiter, '_inplacevar_': inplacevar_wrapper}
+-        exec co in globals, {}
++        exec(co, globals, {})
+         # The comparison here depends on the exact code that is
+         # contained in unpack.py.
+         # The test doing implicit unpacking in an "except:" clause is
+@@ -454,7 +454,7 @@ class RestrictionTests(unittest.TestCase):
+                                               [[[3, 4]]], [[3, 4]], [3, 4],
+                     ]
+         i = expected.index(ineffable)
+-        self.assert_(isinstance(calls[i], TypeError))
++        self.assertTrue(isinstance(calls[i], TypeError))
+         expected[i] = calls[i]
+         self.assertEqual(calls, expected)
+ 
+@@ -466,7 +466,7 @@ class RestrictionTests(unittest.TestCase):
+             calls.append(s)
+             return list(s)
+         globals = {"_getiter_": getiter}
+-        exec co in globals, {}
++        exec(co, globals, {})
+         self.assertEqual(calls, [[(1,2)], (1, 2)])
+ 
+     def checkUnpackSequenceSingle(self):
+@@ -477,7 +477,7 @@ class RestrictionTests(unittest.TestCase):
+             calls.append(s)
+             return list(s)
+         globals = {"_getiter_": getiter}
+-        exec co in globals, {}
++        exec(co, globals, {})
+         self.assertEqual(calls, [(1, 2)])
+ 
+     def checkClass(self):
+@@ -496,7 +496,7 @@ class RestrictionTests(unittest.TestCase):
+         globals = {"_getattr_": test_getattr,
+                    "_write_": test_setattr,
+                    }
+-        exec co in globals, {}
++        exec(co, globals, {})
+         # Note that the getattr calls don't correspond to the method call
+         # order, because the x.set method is fetched before its arguments
+         # are evaluated.
+@@ -506,7 +506,7 @@ class RestrictionTests(unittest.TestCase):
+ 
+     def checkLambda(self):
+         co = self._compile_file("lambda.py")
+-        exec co in {}, {}
++        exec(co, {}, {})
+ 
+     def checkEmpty(self):
+         rf = RFunction("", "", "issue945", "empty.py", {})
+--- src/RestrictedPython/tests/unpack.py.orig	2010-07-07 14:42:56 UTC
++++ src/RestrictedPython/tests/unpack.py
+@@ -20,7 +20,7 @@ try:
+ except ValueError:
+     pass
+ else:
+-    raise AssertionError, "expected 'unpack list of wrong size'"
++    raise AssertionError("expected 'unpack list of wrong size'")
+ 
+ def u2(L):
+     x, (a, b), y = L
+@@ -37,9 +37,10 @@ try:
+ except TypeError:
+     pass
+ else:
+-    raise AssertionError, "expected 'iteration over non-sequence'"
++    raise AssertionError("expected 'iteration over non-sequence'")
+ 
+-def u3((x, y)):
++def u3(xxx_todo_changeme):
++    (x, y) = xxx_todo_changeme
+     assert x == 'a'
+     assert y == 'b'
+     return x, y
+@@ -58,7 +59,8 @@ def u5(x):
+         raise TypeError(x)
+     # This one is tricky to test, because the first level of unpacking
+     # has a TypeError instance.  That's a headache for the test driver.
+-    except TypeError, [(a, b)]:
++    except TypeError as xxx_todo_changeme1:
++        [(a, b)] = xxx_todo_changeme1.args
+         assert a == 42
+         assert b == 666
+ 
+--- src/RestrictedPython/tests/verify.py.orig	2010-07-07 14:42:56 UTC
++++ src/RestrictedPython/tests/verify.py
+@@ -83,7 +83,7 @@ def _verifycode(code):
+                     window[2].arg == "_write_"):
+                 # check that arg is appropriately wrapped
+                 for i, op in enumerate(window):
+-                    print i, op.opname, op.arg
++                    print(i, op.opname, op.arg)
+                 raise ValueError("unguard attribute set/del at %s:%d"
+                                  % (code.co_filename, line))
+         if op.opname.startswith("UNPACK"):

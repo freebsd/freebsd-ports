@@ -17,3 +17,5 @@ From the abstract:
 The document type definition is implemented using XHTML
 modules as defined in "Modularization of XHTML", found in
 ports/textproc/xhtml-modularization.
+
+WWW: https://www.w3.org/TR/xhtml-basic/

@@ -1,17 +1,5 @@
---- make/Makefile.orig	2021-09-29 02:42:24 UTC
+--- make/Makefile.orig	2022-01-13 23:40:10 UTC
 +++ make/Makefile
-@@ -87,9 +87,9 @@ APBS_LIBS = -lapbsmainroutines -lapbs -lmaloc -lapbsbl
- F77 = gfortran
- F77FLAGS = -c
- #OPTFLAGS = -Ofast -march=native -fopenmp
--OPTFLAGS = -Ofast -mssse3 -fopenmp
-+OPTFLAGS = -Ofast $(PORT_SIMD_FLAGS) -fopenmp
- #OPTFLAGS = -Og -fbacktrace -fcheck=bounds -Wunused -Wmaybe-uninitialized
--LIBDIR = -L. -L$(TINKER_LIBDIR)/macos
-+#LIBDIR = -L. -L$(TINKER_LIBDIR)/macos
- LIBS = 
- LIBFLAGS = -crusv
- RANLIB = ranlib -c
 @@ -803,136 +803,136 @@ listing:
  	cat *.f *.c > tinker.txt
  

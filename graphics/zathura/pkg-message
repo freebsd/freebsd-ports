@@ -1,9 +1,10 @@
 [
 { type: install
   message: <<EOM
-    In order to read documents, zathura need at least one plugin. Such
-    plugins are in graphics/zathura-* ports. If you want to read pdf files,
-    install the graphics/zathura-pdf-poppler port.
+    zathura uses a plugin based system for supported document types. Plugins
+    are provided as graphics/zathura-* ports. For instance, to view PDF
+    documents, graphics/zathura-pdf-poppler and graphics/zathura-pdf-mupdf
+    are available.
 EOM
 }
 ]

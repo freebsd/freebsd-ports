@@ -1,10 +1,8 @@
-$OpenBSD: patch-js_ui_endSessionDialog_js,v 1.1 2020/11/08 09:38:19 ajacoutot Exp $
-
 Index: js/ui/endSessionDialog.js
 --- js/ui/endSessionDialog.js.orig
 +++ js/ui/endSessionDialog.js
-@@ -230,11 +230,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
-                       destroyOnClose: false });
+@@ -234,11 +234,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
+         });
  
          this._loginManager = LoginManager.getLoginManager();
 -        this._loginManager.canRebootToBootLoaderMenu(
@@ -15,10 +13,11 @@ Index: js/ui/endSessionDialog.js
          this._userManager = AccountsService.UserManager.get_default();
          this._user = this._userManager.get_user(GLib.get_user_name());
          this._updatesPermission = null;
-@@ -453,23 +448,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
+@@ -452,24 +447,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
+                 },
                  label,
              });
- 
+-
 -            // Add Alt "Boot Options" option to the Reboot button
 -            if (this._canRebootToBootLoaderMenu && signal === 'ConfirmedReboot') {
 -                this._rebootButton = button;
@@ -33,7 +32,7 @@ Index: js/ui/endSessionDialog.js
 -                    label: C_('button', 'Boot Options'),
 -                });
 -                this._rebootButtonAlt.visible = false;
--                this._capturedEventId = global.stage.connect('captured-event',
+-                this._capturedEventId = this.connect('captured-event',
 -                    this._onCapturedEvent.bind(this));
 -            }
          }

@@ -1,7 +1,7 @@
 # Created by: vanilla@
 
 PORTNAME=	grpc
-PORTVERSION=	1.44.0
+PORTVERSION=	1.45.2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -44,7 +44,7 @@ CONFLICTS_INSTALL=	grpc130 grpc134 grpc142
 
 # Remove openssl from grpc.pc because we do not ship openssl.pc in base system
 .if ${SSL_DEFAULT} == base
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-CMakeLists.txt
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openssl
 .endif
 
 post-patch:

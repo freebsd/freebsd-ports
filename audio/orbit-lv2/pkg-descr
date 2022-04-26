@@ -19,6 +19,6 @@ Several LV2 plugin bundled together:
   Quantizes incoming events to whole beats.
 * Subspace
   Subdivide or multiply incoming time signals by whole fractions, e.g. to speed
-  up time x2, x3, ... or slow it down to x1/2, x1/3, ... 
+  up time x2, x3, ... or slow it down to x1/2, x1/3, ...
 
 WWW: https://open-music-kontrollers.ch/lv2/orbit/

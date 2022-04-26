@@ -63,6 +63,7 @@
 %%WWWDIR%%/extras/curves/QuadraticBezierCurve3.js
 %%WWWDIR%%/extras/curves/SplineCurve.js
 %%WWWDIR%%/geometries/BoxGeometry.js
+%%WWWDIR%%/geometries/CapsuleGeometry.js
 %%WWWDIR%%/geometries/CircleGeometry.js
 %%WWWDIR%%/geometries/ConeGeometry.js
 %%WWWDIR%%/geometries/CylinderGeometry.js
@@ -148,6 +149,7 @@
 %%WWWDIR%%/math/Box2.js
 %%WWWDIR%%/math/Box3.js
 %%WWWDIR%%/math/Color.js
+%%WWWDIR%%/math/ColorManagement.js
 %%WWWDIR%%/math/Cylindrical.js
 %%WWWDIR%%/math/Euler.js
 %%WWWDIR%%/math/Frustum.js

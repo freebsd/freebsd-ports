@@ -1,9 +1,9 @@
 PORTNAME=	barrier
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.3
+DISTVERSION=	2.4.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sec.research.2005@gmail.com
 COMMENT=	Mouse and keyboard sharing utility
 
 LICENSE=	GPLv2
@@ -11,11 +11,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++14-lang cpe localbase:ldflags pkgconfig ssl xorg
 USE_GITHUB=	yes
-GH_ACCOUNT=	debauchee
+GH_ACCOUNT=	debauchee gulrak:gulrak
+GH_PROJECT=	filesystem:gulrak
+GH_TAGNAME= v1.5.12:gulrak
 USE_XORG=	ice sm x11 xext xi xinerama xrandr xtst
 CPE_VENDOR=	barrier_project
 
-CMAKE_ARGS=	-DBARRIER_BUILD_DATE=00000000
+CMAKE_ARGS=	-DBARRIER_BUILD_DATE=00000000 \
+						-DBARRIER_BUILD_TESTS=OFF
 
 CONFLICTS_INSTALL=	clusterit # bin/barrier
 
@@ -32,6 +35,9 @@ GUI_LIB_DEPENDS=	libcurl.so:ftp/curl \
 GUI_USES=		qt:5
 GUI_USE=		QT=core,gui,network,widgets,buildtools_build,qmake_build
 GUI_CMAKE_BOOL=		BARRIER_BUILD_GUI
+
+post-extract:
+	@${CP} -a ${WRKSRC_gulrak}/include ${WRKSRC}/ext/gulrak-filesystem/
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/etc/barrier/|"${ETCDIR}/|' \

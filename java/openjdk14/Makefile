@@ -26,6 +26,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 RUN_DEPENDS=	javavm:java/javavmwrapper \
 		xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
 
+DEPRECATED=	EOLed since 30 september 2020
+EXPIRATION_DATE=	2022-05-21
+
 USES=		compiler:features cpe gmake iconv jpeg pkgconfig xorg
 USE_XORG=	x11 xext xi xrandr xrender xt xtst
 
@@ -132,7 +135,12 @@ CONFIGURE_ARGS+=	--with-extra-ldflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFA
 .else
 MAKE_ENV+=	USE_CLANG=true
 .if ${COMPILER_VERSION} >= 130
-CONFIGURE_ARGS+=	--with-extra-cflags="-Wno-unused-but-set-parameter"
+EXTRA_CFLAGS+=		-Wno-unused-but-set-parameter
+.if ${COMPILER_VERSION} >= 140
+EXTRA_CFLAGS+=		-Wno-bitwise-instead-of-logical
+.endif
+CONFIGURE_ARGS+=	--with-extra-cflags="${EXTRA_CFLAGS}"
+CONFIGURE_ARGS+=	--with-extra-cxxflags="${EXTRA_CFLAGS}"
 .endif
 .endif
 

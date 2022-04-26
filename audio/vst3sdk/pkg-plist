@@ -45,9 +45,15 @@ include/vst3sdk/againsidechain.h
 include/vst3sdk/againsimple.cpp
 include/vst3sdk/againsimple.h
 include/vst3sdk/againuimessagecontroller.h
+include/vst3sdk/agsa.h
+include/vst3sdk/agsa_controller.cpp
+include/vst3sdk/agsa_factory.cpp
+include/vst3sdk/agsa_processor.cpp
+include/vst3sdk/app.cpp
 include/vst3sdk/appinit.h
 include/vst3sdk/aucarbonview.h
 include/vst3sdk/aucocoaview.h
+include/vst3sdk/audiobuffers.h
 include/vst3sdk/audioclient.cpp
 include/vst3sdk/audioclient.h
 include/vst3sdk/audiohost.cpp
@@ -78,6 +84,7 @@ include/vst3sdk/classfactoryhelpers.h
 include/vst3sdk/commoniids.cpp
 include/vst3sdk/connectionproxy.cpp
 include/vst3sdk/connectionproxy.h
+include/vst3sdk/connectionproxytest.cpp
 include/vst3sdk/conststringtable.cpp
 include/vst3sdk/conststringtable.h
 include/vst3sdk/coreiids.cpp
@@ -98,12 +105,12 @@ include/vst3sdk/eventlist.cpp
 include/vst3sdk/eventlist.h
 include/vst3sdk/eventlistcheck.cpp
 include/vst3sdk/eventlistcheck.h
+include/vst3sdk/eventlisttest.cpp
 include/vst3sdk/eventlogdatabrowsersource.cpp
 include/vst3sdk/eventlogdatabrowsersource.h
 include/vst3sdk/eventlogger.cpp
 include/vst3sdk/eventlogger.h
 include/vst3sdk/exampletest.cpp
-include/vst3sdk/exampletest.h
 include/vst3sdk/factory.cpp
 include/vst3sdk/falignpop.h
 include/vst3sdk/falignpush.h
@@ -132,6 +139,7 @@ include/vst3sdk/fstring.h
 include/vst3sdk/ftypes.h
 include/vst3sdk/funknown.cpp
 include/vst3sdk/funknown.h
+include/vst3sdk/funknownimpl.h
 include/vst3sdk/futils.h
 include/vst3sdk/fvariant.h
 include/vst3sdk/geoconstants.h
@@ -146,6 +154,7 @@ include/vst3sdk/hostcheckerprocessor.cpp
 include/vst3sdk/hostcheckerprocessor.h
 include/vst3sdk/hostclasses.cpp
 include/vst3sdk/hostclasses.h
+include/vst3sdk/hostclassestest.cpp
 include/vst3sdk/iapplication.h
 include/vst3sdk/ibstream.h
 include/vst3sdk/icloneable.h
@@ -353,6 +362,8 @@ include/vst3sdk/module.cpp
 include/vst3sdk/module.h
 include/vst3sdk/module_linux.cpp
 include/vst3sdk/module_win32.cpp
+include/vst3sdk/moduleinit.cpp
+include/vst3sdk/moduleinit.h
 include/vst3sdk/mpeprocessor.cpp
 include/vst3sdk/mpeprocessor.h
 include/vst3sdk/note_expression_synth_controller.cpp
@@ -374,6 +385,7 @@ include/vst3sdk/parameterchanges.cpp
 include/vst3sdk/parameterchanges.h
 include/vst3sdk/parameterchangescheck.cpp
 include/vst3sdk/parameterchangescheck.h
+include/vst3sdk/parameterchangestest.cpp
 include/vst3sdk/parameterfunctionname.cpp
 include/vst3sdk/parameterfunctionname.h
 include/vst3sdk/pitchnames.cpp
@@ -392,8 +404,10 @@ include/vst3sdk/plugids.h
 include/vst3sdk/pluginbasefwd.h
 include/vst3sdk/pluginfactory.cpp
 include/vst3sdk/pluginfactory.h
+include/vst3sdk/pluginfactory_constexpr.h
 include/vst3sdk/pluginterfacesupport.cpp
 include/vst3sdk/pluginterfacesupport.h
+include/vst3sdk/pluginterfacesupporttest.cpp
 include/vst3sdk/pluginview.cpp
 include/vst3sdk/pluginview.h
 include/vst3sdk/plugparamids.h
@@ -409,6 +423,8 @@ include/vst3sdk/processcontextrequirements.cpp
 include/vst3sdk/processcontextrequirements.h
 include/vst3sdk/processdata.cpp
 include/vst3sdk/processdata.h
+include/vst3sdk/processdataslicer.h
+include/vst3sdk/processdatatest.cpp
 include/vst3sdk/processformat.cpp
 include/vst3sdk/processformat.h
 include/vst3sdk/processinputoverwriting.cpp
@@ -423,9 +439,12 @@ include/vst3sdk/repeatidenticalstatetransition.cpp
 include/vst3sdk/repeatidenticalstatetransition.h
 include/vst3sdk/ringbuffer.h
 include/vst3sdk/ringbuffertest.cpp
-include/vst3sdk/ringbuffertest.h
+include/vst3sdk/rttransfer.h
+include/vst3sdk/rttransfertest.cpp
 include/vst3sdk/runloop.cpp
 include/vst3sdk/runloop.h
+include/vst3sdk/sampleaccurate.h
+include/vst3sdk/sampleaccuratetest.cpp
 include/vst3sdk/scanbusses.cpp
 include/vst3sdk/scanbusses.h
 include/vst3sdk/scanparameters.cpp
@@ -461,12 +480,16 @@ include/vst3sdk/terminit.cpp
 include/vst3sdk/terminit.h
 include/vst3sdk/testbase.cpp
 include/vst3sdk/testbase.h
+include/vst3sdk/testing.cpp
+include/vst3sdk/testing.h
 include/vst3sdk/testsuite.h
 include/vst3sdk/threadchecker.h
 include/vst3sdk/threadchecker_linux.cpp
 include/vst3sdk/threadchecker_win32.cpp
 include/vst3sdk/timer.cpp
 include/vst3sdk/timer.h
+include/vst3sdk/tutorial.cpp
+include/vst3sdk/tutorial.h
 include/vst3sdk/typesizecheck.h
 include/vst3sdk/ucolorspec.h
 include/vst3sdk/uid.h
@@ -484,7 +507,6 @@ include/vst3sdk/variableblocksize.h
 include/vst3sdk/version.h
 include/vst3sdk/versionparser.h
 include/vst3sdk/versionparsertest.cpp
-include/vst3sdk/versionparsertest.h
 include/vst3sdk/voicebase.h
 include/vst3sdk/voiceprocessor.h
 include/vst3sdk/vst2persistence.cpp
@@ -532,8 +554,10 @@ include/vst3sdk/vsttestsuite.h
 include/vst3sdk/vsttypes.h
 include/vst3sdk/window.cpp
 include/vst3sdk/window.h
-lib/vst3/6EE65CD1B83A4AF480AA7929AEA6B8A0_snapshot.png
-lib/vst3/6EE65CD1B83A4AF480AA7929AEA6B8A0_snapshot_2.0x.png
+lib/vst3/41347FD6FED64094AFBB12B7DBA1D441_snapshot.png
+lib/vst3/41347FD6FED64094AFBB12B7DBA1D441_snapshot_2.0x.png
+lib/vst3/41466D9BB0654576B641098F686371B3_snapshot.png
+lib/vst3/41466D9BB0654576B641098F686371B3_snapshot_2.0x.png
 lib/vst3/84E8DE5F92554F5396FAE4133C935A18_snapshot.png
 lib/vst3/84E8DE5F92554F5396FAE4133C935A18_snapshot_2.0x.png
 lib/vst3/A2EAF7DB320640F48EDE380DDF89562C_snapshot.png
@@ -542,6 +566,7 @@ lib/vst3/about.png
 lib/vst3/adelay.so
 lib/vst3/again.so
 lib/vst3/again.uidesc
+lib/vst3/again_sampleaccurate.so
 lib/vst3/againsimple.so
 lib/vst3/animation_knob.png
 lib/vst3/animation_knob_3x.png
@@ -573,3 +598,4 @@ lib/vst3/syncdelay.so
 lib/vst3/vst3_logo_small.png
 lib/vst3/vu_off.png
 lib/vst3/vu_on.png
+lib/vst3/window.uidesc

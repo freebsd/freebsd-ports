@@ -46,6 +46,7 @@
     SUBDIR += alienblaster
     SUBDIR += alienwave
     SUBDIR += allacrost
+    SUBDIR += amnesia-tdd
     SUBDIR += amoebax
     SUBDIR += an
     SUBDIR += angband
@@ -172,14 +173,12 @@
     SUBDIR += crimson
     SUBDIR += crispy-doom
     SUBDIR += criticalmass
-    SUBDIR += critterding
     SUBDIR += crossfire-client
     SUBDIR += crrcsim
     SUBDIR += cryptoslam
     SUBDIR += csmash
     SUBDIR += ctris
     SUBDIR += cube
-    SUBDIR += cultivation
     SUBDIR += cursive
     SUBDIR += cutemaze
     SUBDIR += cuyo
@@ -770,7 +769,6 @@
     SUBDIR += pongix
     SUBDIR += ponscripter-07th-mod
     SUBDIR += popstar
-    SUBDIR += pouetchess
     SUBDIR += powder
     SUBDIR += powder-toy
     SUBDIR += powermanga
@@ -1157,6 +1155,7 @@
     SUBDIR += xzip
     SUBDIR += yadex
     SUBDIR += yahtzee
+    SUBDIR += yquake2
     SUBDIR += zangband
     SUBDIR += zatacka
     SUBDIR += zaz

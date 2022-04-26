@@ -11,30 +11,30 @@
 .if !defined(_INCLUDE_USES_SAMBA_MK)
 _INCLUDE_USES_SAMBA_MK=   yes
 
-.if !${samba_ARGS}
+.  if !${samba_ARGS}
 samba_ARGS=	build run
-.endif
+.  endif
 
-.if ${samba_ARGS:Nbuild:Nenv:Nlib:Nrun}
+.  if ${samba_ARGS:Nbuild:Nenv:Nlib:Nrun}
 IGNORE=		USES=samba has invalid arguments: ${samba_ARGS:Nbuild:Nenv:Nlib:Nrun}
-.endif
+.  endif
 
 SAMBAPORT=	net/samba${SAMBA_DEFAULT:S/.//}
 SAMBAINCLUDES=	${LOCALBASE}/include/samba4
-.if ${SAMBA_DEFAULT} == 4.12 || ${SAMBA_DEFAULT} == 4.13
+.  if ${SAMBA_DEFAULT} == 4.12 || ${SAMBA_DEFAULT} == 4.13
 SAMBALIBS=	${LOCALBASE}/lib/samba4
-.else
+.  else
 IGNORE=		Invalid version of samba: ${SAMBA_DEFAULT}
-.endif
+.  endif
 
-.if ${samba_ARGS:Mbuild}
+.  if ${samba_ARGS:Mbuild}
 BUILD_DEPENDS+=	smbd:${SAMBAPORT}
-.endif
-.if ${samba_ARGS:Mlib}
+.  endif
+.  if ${samba_ARGS:Mlib}
 LIB_DEPENDS+=	libsmbclient.so:${SAMBAPORT}
-.endif
-.if ${samba_ARGS:Mrun}
+.  endif
+.  if ${samba_ARGS:Mrun}
 RUN_DEPENDS+=	smbd:${SAMBAPORT}
-.endif
+.  endif
 
 .endif

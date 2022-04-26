@@ -1,6 +1,7 @@
 PORTNAME=	go-bindata-assetfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel www
 
 MAINTAINER=	egypcio@FreeBSD.org

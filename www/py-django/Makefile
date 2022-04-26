@@ -10,6 +10,9 @@ COMMENT=	High-level Python Web Framework (meta port)
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Was used as a metaport, no longer required
+EXPIRATION_DATE=	2022-06-30
+
 USES=		metaport
 USE_PYTHON=	flavors
 

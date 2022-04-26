@@ -2,7 +2,7 @@
 
 PORTNAME=	grizzled
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,5 +12,8 @@ COMMENT=	The Grizzled Python Utility Library
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
+
+post-patch:
+	@${RM} ${WRKSRC}/ez_setup.py
 
 .include <bsd.port.mk>

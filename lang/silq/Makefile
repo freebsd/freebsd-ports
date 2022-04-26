@@ -1,6 +1,7 @@
 PORTNAME=	silq
-PORTVERSION=	20211117
+PORTVERSION=	20220224
 CATEGORIES=	lang math science
+DIST_SUBDIR=	silq
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Silq from ETH Zuerich
@@ -16,8 +17,8 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 
 USE_GITHUB=	yes
 
-GH_TUPLE=	eth-sri:silq:1bc7ece \
-		tgehr:ast:7c26e76:ast/ast \
+GH_TUPLE=	eth-sri:silq:afaf865 \
+		tgehr:ast:d2f25fb:ast/ast \
 		tgehr:util:7e9f0ce:util/util
 
 OPTIONS_DEFINE=	EXAMPLES
@@ -28,6 +29,10 @@ LLVM_VERSION=	10
 
 do-build:
 		cd ${WRKSRC}; ldmd2 -O -inline -J. -Jlibrary *.d ast/*.d util/*.d -linker=lld${LLVM_VERSION} -of=silq
+
+do-test:
+		cd ${WRKSRC}/test; ldmd2 -O runtests.d -linker=lld${LLVM_VERSION} -of=runtests
+		cd ${WRKSRC}/test; ./runtests
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/silq ${STAGEDIR}${PREFIX}/bin/

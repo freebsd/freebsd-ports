@@ -1,7 +1,6 @@
 PORTNAME=	vst3sdk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.1_build_50-1
-DISTVERSIONSUFFIX=	-g8199057
+DISTVERSION=	3.7.4_build_25
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +15,7 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxcb-util.so:x11/xcb-util \
@@ -28,12 +28,12 @@ USE_XORG=	ice sm x11 xcb xext
 USE_GITHUB=	yes
 GH_ACCOUNT=	steinbergmedia
 GH_TUPLE=	\
-		steinbergmedia:vst3_base:7b977c031f42a6bab08e8b10f4f8df0a1f516c38:steinbergmedia_vst3_base/base \
-		steinbergmedia:vst3_cmake:ed8d829631a8913143f5c0f4d5d36a31c412e42c:steinbergmedia_vst3_cmake/cmake \
-		steinbergmedia:vst3_doc:d8e7317751aaf7ccccbeb4d1e8103c290c2690ca:steinbergmedia_vst3_doc/doc \
-		steinbergmedia:vst3_pluginterfaces:fe202edc93e9a01a1f79a614cc9a292dc9bf3e6e:steinbergmedia_vst3_pluginterfaces/pluginterfaces \
-		steinbergmedia:vst3_public_sdk:a3a3ed1b1620df0b064564f1fd5423ae110234a0:steinbergmedia_vst3_public_sdk/public.sdk \
-		steinbergmedia:vstgui:83c6dc9a548729e121746839da946e2b73781b70:steinbergmedia_vstgui/vstgui4
+		steinbergmedia:vst3_base:f69df71891fbc76f872d43d0f3a357c6fb04ae2a:steinbergmedia_vst3_base/base \
+		steinbergmedia:vst3_cmake:fe588a391d77711b6d0a7ee83c10e17f1659b1dc:steinbergmedia_vst3_cmake/cmake \
+		steinbergmedia:vst3_doc:6f0b515351af4f574e90eb609b38693195d27d67:steinbergmedia_vst3_doc/doc \
+		steinbergmedia:vst3_pluginterfaces:2ad397ade5b51007860bedb3b01b8afd2c5f6fba:steinbergmedia_vst3_pluginterfaces/pluginterfaces \
+		steinbergmedia:vst3_public_sdk:bc459feee68803346737901471441fd4829ec3f9:steinbergmedia_vst3_public_sdk/public.sdk \
+		steinbergmedia:vstgui:6431f630f65f630c52ec1dfbb93d39d40600c41c:steinbergmedia_vstgui/vstgui4 \
 
 SHEBANG_FILES=	vstgui4/vstgui/uidescription/editing/createuidescdata.sh
 

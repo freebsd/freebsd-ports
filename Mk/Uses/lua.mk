@@ -56,9 +56,9 @@ _INCLUDE_USES_LUA_MK=	yes
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
 _LUA_VALID_VERSIONS:=	54 53 52 51
-.if defined(_LUA_EXTRA_VER)
+.  if defined(_LUA_EXTRA_VER)
 _LUA_VALID_VERSIONS+= ${_LUA_EXTRA_VER}
-.endif
+.  endif
 
 _LUA_DEFAULT_VERSION:=	${LUA_DEFAULT:S/.//}
 
@@ -67,107 +67,107 @@ _LUA_ARG_FLAVORS:=
 _LUA_ARG_MODULE:=
 _LUA_ARG_ENV:=
 _LUA_ARG_CORE:=
-.if ${lua_ARGS:Mmodule}
+.  if ${lua_ARGS:Mmodule}
 _LUA_ARG_FLAVORS:=yes
 _LUA_ARG_MODULE:=yes
-.endif
-.if ${lua_ARGS:Mflavors}
+.  endif
+.  if ${lua_ARGS:Mflavors}
 _LUA_ARG_FLAVORS:=yes
-.endif
-.if ${lua_ARGS:Mnoflavors}
+.  endif
+.  if ${lua_ARGS:Mnoflavors}
 _LUA_ARG_FLAVORS:=
-.endif
-.if ${lua_ARGS:Menv}
+.  endif
+.  if ${lua_ARGS:Menv}
 _LUA_ARG_ENV:=yes
-.endif
-.if ${lua_ARGS:Mcore}
+.  endif
+.  if ${lua_ARGS:Mcore}
 _LUA_ARG_CORE:=yes
 _LUA_ARG_ENV:=yes
 _LUA_ARG_FLAVORS:=
 _LUA_ARG_MODULE:=
-.endif
+.  endif
 
 # core is for building Lua itself, so it overrides all version checks
-.if ${_LUA_ARG_CORE}
+.  if ${_LUA_ARG_CORE}
 
 _LUA_WANTED_VERSION:=${lua_ARGS:M[1-9][0-9]:[1]}
 
-.  if ${lua_ARGS:M[1-9][0-9]:[#]} != 1
+.    if ${lua_ARGS:M[1-9][0-9]:[#]} != 1
 IGNORE= USES=lua:core must also specify exactly one version number
 # set to avoid spurious errors below
 _LUA_WANTED_VERSION:=${_LUA_DEFAULT_VERSION}
-.  endif
+.    endif
 
 _LUA_VALID_VERSIONS:=${_LUA_WANTED_VERSION}
 _LUA_WANTED_VERSIONS:=${_LUA_WANTED_VERSION}
 _LUA_DEFAULT_VERSION:=${_LUA_WANTED_VERSION}
 
-.endif # _LUA_ARG_CORE
+.  endif # _LUA_ARG_CORE
 
-.if ! ${_LUA_VALID_VERSIONS:M${_LUA_DEFAULT_VERSION}}
+.  if ! ${_LUA_VALID_VERSIONS:M${_LUA_DEFAULT_VERSION}}
 IGNORE=	Invalid lua version ${LUA_DEFAULT}
-.endif
+.  endif
 
 #
 # Parse a ver+ argument
 #
-.if ${lua_ARGS:M??+}
+.  if ${lua_ARGS:M??+}
 _LUA_MIN_VERSION:=	${lua_ARGS:M??+:S/+//}
 _LUA_MAX_VERSION:=	99
-.endif
+.  endif
 
 #
 # Parse a -ver argument
 #
-.if ${lua_ARGS:M-??}
+.  if ${lua_ARGS:M-??}
 _LUA_MAX_VERSION:=	${lua_ARGS:M-??:S/-//}
 _LUA_MIN_VERSION:=	0
-.endif
+.  endif
 
 #
 # Parse a ver-ver argument
 #
-.if ${lua_ARGS:M??-??}
+.  if ${lua_ARGS:M??-??}
 _LUA_MIN_VERSION:=	${lua_ARGS:M??-??:C/-.*//}
 _LUA_MAX_VERSION:=	${lua_ARGS:M??-??:C/.*-//}
-.endif
+.  endif
 
 #
 # Parse one or more ver arguments
 #
-.if ${lua_ARGS:M[1-9][0-9]}
-.  for _v in ${lua_ARGS:M[1-9][0-9]}
-.    if ${_LUA_VALID_VERSIONS:M${_v}}
+.  if ${lua_ARGS:M[1-9][0-9]}
+.    for _v in ${lua_ARGS:M[1-9][0-9]}
+.      if ${_LUA_VALID_VERSIONS:M${_v}}
 _LUA_WANTED_VERSIONS+=${_v}
-.    endif
-.  endfor
-.  if empty(_LUA_WANTED_VERSIONS)
+.      endif
+.    endfor
+.    if empty(_LUA_WANTED_VERSIONS)
 IGNORE= USES=lua:nn did not find any valid version number
+.    endif
 .  endif
-.endif
 
 #
 # Resolve version ranges. Append anything within the range to the list of
 # wanted versions.
 #
-.if defined(_LUA_MIN_VERSION) && defined(_LUA_MAX_VERSION)
-.  for _v in ${_LUA_VALID_VERSIONS}
-.    if ${_LUA_MIN_VERSION} <= ${_v} && ${_LUA_MAX_VERSION} >= ${_v}
+.  if defined(_LUA_MIN_VERSION) && defined(_LUA_MAX_VERSION)
+.    for _v in ${_LUA_VALID_VERSIONS}
+.      if ${_LUA_MIN_VERSION} <= ${_v} && ${_LUA_MAX_VERSION} >= ${_v}
 _LUA_WANTED_VERSIONS+=${_v}
-.    endif
-.  endfor
-.  if empty(_LUA_WANTED_VERSIONS)
+.      endif
+.    endfor
+.    if empty(_LUA_WANTED_VERSIONS)
 IGNORE= USES=lua:xx-yy did not find any valid version
+.    endif
 .  endif
-.endif
 
 #
 # If no version was specified with any of the ver or ver+ arguments, allow
 # all versions.
 #
-.if empty(_LUA_WANTED_VERSIONS)
+.  if empty(_LUA_WANTED_VERSIONS)
 _LUA_WANTED_VERSIONS:=	${_LUA_VALID_VERSIONS}
-.endif
+.  endif
 
 # The "preferred" version, which must always exist, is defined as the
 # closest value to the default version, preferring higher versions in
@@ -186,17 +186,17 @@ _LUA_NUM_ALL:=	\
 _LUA_WANTED_VERSIONS:= \
 	${_LUA_NUM_ALL:@_v@${_LUA_WANTED_VERSIONS:M${_v}}@}
 
-.if ${_LUA_ARG_FLAVORS}
-.  if empty(FLAVORS)
+.  if ${_LUA_ARG_FLAVORS}
+.    if empty(FLAVORS)
 FLAVORS= ${_LUA_WANTED_VERSIONS:S/^/lua/}
-.  endif
-.  if empty(FLAVOR)
+.    endif
+.    if empty(FLAVOR)
 FLAVOR= ${FLAVORS:[1]}
-.  endif
+.    endif
 _LUA_WANTED_VERSION:= ${FLAVOR:S/^lua//}
-.else
+.  else
 _LUA_WANTED_VERSION:= ${_LUA_WANTED_VERSIONS:[1]}
-.endif
+.  endif
 
 # If we're building Lua itself, everything should be in $PREFIX. If
 # we're building a module or app, then the stuff we're installing goes
@@ -207,11 +207,11 @@ _LUA_WANTED_VERSION:= ${_LUA_WANTED_VERSIONS:[1]}
 # define LUA_REFMOD* relative to LOCALBASE for use when specifying
 # dependencies and so on.
 
-.if ${_LUA_ARG_CORE}
+.  if ${_LUA_ARG_CORE}
 LUA_BASE=${PREFIX}
-.else
+.  else
 LUA_BASE=${LOCALBASE}
-.endif
+.  endif
 
 LUA_PREFIX=${PREFIX}
 
@@ -253,28 +253,28 @@ MAKE_ENV+=	LUA_MODLIBDIR=${LUA_MODLIBDIR} \
 
 # if building a module or Lua itself, or if the port defined LUA_DOCSUBDIR,
 # then define LUA_DOCSDIR and LUA_EXAMPLESDIR too
-.if ${_LUA_ARG_CORE} || ${_LUA_ARG_MODULE}
+.  if ${_LUA_ARG_CORE} || ${_LUA_ARG_MODULE}
 LUA_DOCSUBDIR?=${PORTNAME}
-.endif
-.if !empty(LUA_DOCSUBDIR)
+.  endif
+.  if !empty(LUA_DOCSUBDIR)
 LUA_DOCSDIR=	${LUA_MODDOCSDIR}/${LUA_DOCSUBDIR}
 LUA_EXAMPLESDIR=${LUA_MODEXAMPLESDIR}/${LUA_DOCSUBDIR}
 PLIST_SUB+=	LUA_DOCSDIR=${LUA_DOCSDIR:S,^${LUA_PREFIX}/,,}
 PLIST_SUB+=	LUA_EXAMPLESDIR=${LUA_EXAMPLESDIR:S,^${LUA_PREFIX}/,,}
 MAKE_ENV+=	LUA_DOCSDIR=${LUA_DOCSDIR}
 MAKE_ENV+=	LUA_EXAMPLESDIR=${LUA_EXAMPLESDIR}
-.endif
+.  endif
 
-.if empty(_LUA_ARG_ENV)
-.  if ${lua_ARGS:Mbuild}
+.  if empty(_LUA_ARG_ENV)
+.    if ${lua_ARGS:Mbuild}
 BUILD_DEPENDS+=	${LUA_CMD}:lang/lua${LUA_VER_STR}
-.  endif
-.  if ${lua_ARGS:Mrun}
+.    endif
+.    if ${lua_ARGS:Mrun}
 RUN_DEPENDS+=	${LUA_CMD}:lang/lua${LUA_VER_STR}
-.  endif
-.  if !${lua_ARGS:Mbuild} && !${lua_ARGS:Mrun}
+.    endif
+.    if !${lua_ARGS:Mbuild} && !${lua_ARGS:Mrun}
 LIB_DEPENDS+=	liblua-${LUA_VER}.so:lang/lua${LUA_VER_STR}
+.    endif
 .  endif
-.endif
 
 .endif

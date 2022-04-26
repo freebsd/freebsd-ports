@@ -5,7 +5,7 @@ PORTVERSION=	0.32
 CATEGORIES=	devel
 MASTER_SITES=	https://www.fefe.de/libowfat/
 
-MAINTAINER=	lx@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose library based on code by D. J. Bernstein
 
 LICENSE=	GPLv2

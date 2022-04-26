@@ -1,0 +1,35 @@
+--- example/config.yaml.orig	2022-02-03 11:30:06 UTC
++++ example/config.yaml
+@@ -151,12 +151,12 @@ db-tls-ca-cert: ""
+ # String. Directory from which gotosocial will attempt to load html templates (.tmpl files).
+ # Examples: ["/some/absolute/path/", "./relative/path/", "../../some/weird/path/"]
+ # Default: "./web/template/"
+-web-template-base-dir: "./web/template/"
++web-template-base-dir: "/usr/local/www/gotosocial/template/"
+ 
+ # String. Directory from which gotosocial will attempt to serve static web assets (images, scripts).
+ # Examples: ["/some/absolute/path/", "./relative/path/", "../../some/weird/path/"]
+ # Default: "./web/assets/"
+-web-asset-base-dir: "./web/assets/"
++web-asset-base-dir: "/usr/local/www/gotosocial/assets/"
+ 
+ ###########################
+ ##### ACCOUNTS CONFIG #####
+@@ -222,7 +222,7 @@ storage-backend: "local"
+ # this directory, and create new subdirectories and files within it.
+ # Examples: ["/home/gotosocial/storage", "/opt/gotosocial/datastorage"]
+ # Default: "/gotosocial/storage"
+-storage-local-base-path: "/gotosocial/storage"
++storage-local-base-path: "/var/db/gotosocial/storage"
+ 
+ ###########################
+ ##### STATUSES CONFIG #####
+@@ -288,7 +288,7 @@ letsencrypt-port: 80
+ # In any case, make sure GoToSocial has permissions to write to / read from this directory.
+ # Examples: ["/home/gotosocial/storage/certs", "/acmecerts"]
+ # Default: "/gotosocial/storage/certs"
+-letsencrypt-cert-dir: "/gotosocial/storage/certs"
++letsencrypt-cert-dir: "/var/db/gotosocial/storage/certs"
+ 
+ # String. Email address to use when registering LetsEncrypt certs.
+ # Most likely, this will be the email address of the instance administrator.

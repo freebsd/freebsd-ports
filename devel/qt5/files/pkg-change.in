@@ -79,7 +79,7 @@
 @deinstall                  [ \! -e "$qc" ] && touch "$qc"
 @deinstall                  sed -i "" "/qconfig-$qm\.h/ d" "$qc"
 ##
-## When qtcore is removed, the whole config dir can go away as well.
+## When qtcore is removed, the whole config dir can go away as well ..
 ##
 @deinstall                  [ \! -e "$qi/QtCore/qconfig.h" ] && \
 @deinstall                  [ \! -s "$qc" ] && (
@@ -88,5 +88,8 @@
 @deinstall                     rmdir "$qi"
 @deinstall                  ) > /dev/null 2>&1
 ##
+## .. but if it isn't removed, that's ok: suppress a non-zero exit code.
+##
+@deinstall                  :
 @deinstall                  ;;
                         esac

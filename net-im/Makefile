@@ -13,7 +13,6 @@
     SUBDIR += coyim
     SUBDIR += cutegram
     SUBDIR += dendrite
-    SUBDIR += diligent
     SUBDIR += dino
     SUBDIR += echat
     SUBDIR += ejabberd
@@ -26,6 +25,7 @@
     SUBDIR += gitterdone
     SUBDIR += gloox
     SUBDIR += gomuks
+    SUBDIR += gotosocial
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += jabber.el

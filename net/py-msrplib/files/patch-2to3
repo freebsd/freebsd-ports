@@ -1,0 +1,69 @@
+--- msrplib/digest.py.orig	2017-09-29 19:26:59 UTC
++++ msrplib/digest.py
+@@ -6,7 +6,7 @@ from base64 import b64encode, b64decode
+ import random
+ 
+ def get_random_data(length):
+-    return ''.join(chr(random.randint(0, 255)) for x in xrange(length))
++    return ''.join(chr(random.randint(0, 255)) for x in range(length))
+ 
+ class LoginFailed(Exception):
+     pass
+@@ -28,7 +28,7 @@ def calc_hash(**parameters):
+     return md5(hash_text).hexdigest()
+ 
+ def calc_responses(**parameters):
+-    if parameters.has_key("ha1"):
++    if "ha1" in parameters:
+         ha1 = parameters.pop("ha1")
+     else:
+         ha1 = calc_ha1(**parameters)
+@@ -80,7 +80,7 @@ class AuthChallenger(object):
+             nonce = parameters["nonce"]
+             opaque = parameters["opaque"]
+             response = parameters["response"]
+-        except IndexError, e:
++        except IndexError as e:
+             raise LoginFailed("Parameter not present: %s", e.message)
+         try:
+             expected_response, rspauth = calc_responses(ha1 = ha1, **parameters)
+--- msrplib/session.py.orig	2020-02-07 08:31:31 UTC
++++ msrplib/session.py
+@@ -120,7 +120,7 @@ class MSRPSession(object):
+                 chunk = self.msrp.make_send_request()
+                 chunk.add_header(protocol.MSRPHeader('Keep-Alive', 'yes'))
+                 self.deliver_chunk(chunk)
+-            except MSRPTransactionError, e:
++            except MSRPTransactionError as e:
+                 if e.code == 408:
+                     self.msrp.loseConnection(wait=False)
+                     self.set_state('CLOSING')
+@@ -237,7 +237,7 @@ class MSRPSession(object):
+                 if item is None:
+                     break
+                 self._write_chunk(item.chunk, item.response_callback)
+-        except ConnectionClosedErrors + (proc.LinkedExited, proc.ProcExit), e:
++        except ConnectionClosedErrors + (proc.LinkedExited, proc.ProcExit) as e:
+             self.logger.debug('writer: exiting because of %r' % e)
+         except:
+             self.logger.exception('writer: captured unhandled exception:')
+--- msrplib/transport.py.orig	2020-02-07 08:31:31 UTC
++++ msrplib/transport.py
+@@ -46,7 +46,7 @@ class MSRPNoSuchSessionError(MSRPTransactionError):
+     comment = 'No such session'
+ 
+ 
+-data_start, data_end, data_write, data_final_write = range(4)
++data_start, data_end, data_write, data_final_write = list(range(4))
+ 
+ 
+ def make_report(chunk, code, comment):
+@@ -244,7 +244,7 @@ class MSRPTransport(GreenTransportBase):
+         """Generate and write the response, lose the connection in case of error"""
+         try:
+             response = make_response(chunk, code, comment)
+-        except ChunkParseError, ex:
++        except ChunkParseError as ex:
+             log.error('Failed to generate a response: %s' % ex)
+             self.loseConnection(wait=False)
+             raise

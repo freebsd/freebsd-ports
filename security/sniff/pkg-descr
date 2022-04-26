@@ -1,3 +1,0 @@
-This program filters the tcpump raw packet data looking for logins and
-passwords on the most commonly used TCP ports (FTP, telnet, POP3 ...).
-It dumps sniffed data to a file named sniff.log.

@@ -6,7 +6,6 @@ include/ethash/hash_types.h
 include/ethash/hash_types.hpp
 include/ethash/keccak.h
 include/ethash/keccak.hpp
-include/ethash/progpow.hpp
 include/ethash/version.h
 lib/cmake/ethash/ethashConfig.cmake
 lib/cmake/ethash/ethashConfigVersion.cmake

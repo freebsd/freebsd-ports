@@ -1,6 +1,25 @@
---- CMakeLists.txt.orig	2017-11-12 20:15:25 UTC
+--- CMakeLists.txt.orig	2022-03-26 22:14:15 UTC
 +++ CMakeLists.txt
-@@ -155,7 +155,7 @@ add_subdirectory(include)
+@@ -99,7 +99,7 @@ find_package (TargetLAPACK REQUIRED)
+ 
+ # Python Detection
+ set(Python_ADDITIONAL_VERSIONS 3.10 3.9 3.8 3.7)  # adjust with CMake minimum FindPythonInterp
+-find_package(Python 3.7 COMPONENTS Interpreter Development NumPy REQUIRED)
++find_package(Python 3.7 COMPONENTS Interpreter Development REQUIRED)
+ message(STATUS "Found Python ${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}: ${Python_EXECUTABLE} (found version ${Python_VERSION})")
+ 
+ #if (NOT ENABLE_STATIC AND NOT ENABLE_PSI4)
+@@ -149,7 +149,9 @@ endif()
+ #endif()
+ 
+ # library directory
++if (FREEBSD_BUILD_PYTHON_BINDING)
+ add_subdirectory(lib)
++endif()
+ 
+ # include directory (for installation)
+ add_subdirectory(include)
+@@ -157,7 +159,7 @@ add_subdirectory(include)
  # recursively add source directories
  add_subdirectory(src)
  
@@ -9,7 +28,7 @@
      # test suite
      enable_testing()
      include(CTest)
-@@ -163,7 +163,7 @@ add_subdirectory(src)
+@@ -165,7 +167,7 @@ add_subdirectory(src)
  
      # sample suite
      add_subdirectory(samples)

@@ -1,5 +1,5 @@
 PORTNAME=	nfy
-DISTVERSION=	0.1
+DISTVERSION=	0.2
 CATEGORIES=	x11
 MASTER_SITES=	https://ftp.margiolis.net/${PORTNAME}/
 

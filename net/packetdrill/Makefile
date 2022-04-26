@@ -1,5 +1,5 @@
 PORTNAME=	packetdrill
-PORTVERSION=	0.0.2020082101
+PORTVERSION=	0.0.2022032401
 CATEGORIES=	net
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -10,7 +10,7 @@ LICENSE=	GPLv2
 USES=		bison python:run uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-net
-GH_TAGNAME=	f7cbdaa
+GH_TAGNAME=	9152ae0
 WRKSRC_SUBDIR=	gtests/net/packetdrill
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	packetdrill.el packetdrill.vim

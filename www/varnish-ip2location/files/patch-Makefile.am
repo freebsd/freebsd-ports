@@ -1,4 +1,4 @@
---- Makefile.am.orig	2020-07-31 00:31:08 UTC
+--- Makefile.am.orig	2020-11-29 23:51:52 UTC
 +++ Makefile.am
 @@ -5,18 +5,11 @@ SUBDIRS = src
  DISTCHECK_CONFIGURE_FLAGS = \
@@ -17,9 +17,9 @@
 -if HAVE_RST2MAN
 -	${RST2MAN} README.rst $@
 -else
--	@echo "========================================"
--	@echo "You need rst2man installed to make dist"
 +vmod_ip2location.3:
  	@echo "========================================"
+-	@echo "You need rst2man installed to make dist"
+-	@echo "========================================"
 -	@false
 -endif

@@ -1,6 +1,5 @@
 PORTNAME=	Plack-Middleware-AutoRefresh
-PORTVERSION=	0.08
-PORTREVISION=	1
+PORTVERSION=	0.09
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +18,6 @@ RUN_DEPENDS=	\
 	p5-Readonly>0:devel/p5-Readonly
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	modbuildtiny
 
 .include <bsd.port.mk>

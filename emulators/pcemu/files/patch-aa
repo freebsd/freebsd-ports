@@ -42,7 +42,7 @@
 + install: pcemu bootstrapper
 + 	-mkdir -p ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu \
 + 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/doc \
-+ 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/font \
++ 		${STAGEDIR}${FONTSDIR} \
 + 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/C \
 + 		${STAGEDIR}/${LOCALPREFIX}/bin
 + 	install -c -s pcemu ${STAGEDIR}/${LOCALPREFIX}/bin/
@@ -54,7 +54,7 @@
 + 	rm -f ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/doc/report.ps.gz
 + 	gzip --best < report.ps > ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/doc/report.ps.gz
 + 	rm -f ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/font/vga.pcf.Z
-+ 	bdftopcf vga.bdf | compress > ${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/font/vga.pcf.Z
++ 	bdftopcf vga.bdf | compress > ${STAGEDIR}${FONTSDIR}/vga.pcf.Z
 + 	install -c -m 644 programs/vga50.com programs/config.sys \
 + 		programs/dumpdisk.exe programs/lredir.exe programs/emufs.sys \
 + 		${STAGEDIR}/${LOCALPREFIX}/lib/pcemu/C

@@ -1,10 +1,8 @@
 bin/dsc
+bin/dsc-psl-convert
 %%ETCDIR%%/dsc.conf.sample
-libexec/dsc/upload-prep.pl
-libexec/dsc/upload-rsync.sh
-libexec/dsc/upload-ssh.sh
-libexec/dsc/upload-x509.sh
 man/man1/dsc.1.gz
+man/man1/dsc-psl-convert.1.gz
 man/man5/dsc.conf.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE

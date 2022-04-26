@@ -1,0 +1,22 @@
+[
+{ type: install
+  message: <<EOM
+
+******************************************************************************
+
+You should add the following to your Apache configuration file:
+
+Alias /lam /usr/local/www/lam
+
+<Directory /usr/local/www/lam>
+  Options +FollowSymLinks
+  AllowOverride All
+  Require all granted
+  DirectoryIndex index.html
+</Directory>
+
+******************************************************************************
+
+EOM
+}
+]

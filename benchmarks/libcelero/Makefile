@@ -22,20 +22,10 @@ GH_PROJECT=	Celero
 
 LDFLAGS+=	-lsysinfo
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-USE_GCC=	yes
-.else
-.  if ${ARCH:Mpowerpc64*}
-CFLAGS+=	-mabi=elfv2
-.  endif
-.endif
-
 do-test: # Tests terminate with Signal 11, see https://github.com/DigitalInBlue/Celero/issues/157
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DCELERO_ENABLE_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${BUILD_WRKSRC}/celero-test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

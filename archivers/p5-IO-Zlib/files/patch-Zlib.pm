@@ -1,11 +1,11 @@
---- Zlib.pm.orig	2009-07-14 21:30:41 UTC
+--- Zlib.pm.orig	2020-09-13 11:36:35 UTC
 +++ Zlib.pm
-@@ -289,7 +289,7 @@ use strict;
- use vars qw($VERSION $AUTOLOAD @ISA);
+@@ -287,7 +287,7 @@ use strict;
+ use warnings;
  
  use Carp;
 -use Fcntl qw(SEEK_SET);
 +use constant SEEK_SET => 0;
+ use Symbol;
+ use Tie::Handle;
  
- my $has_Compress_Zlib;
- my $aliased;

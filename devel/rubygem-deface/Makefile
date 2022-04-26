@@ -1,5 +1,5 @@
 PORTNAME=	deface
-PORTVERSION=	1.8.2
+PORTVERSION=	1.9.0
 CATEGORIES=	devel rubygems www
 MASTER_SITES=	RG
 

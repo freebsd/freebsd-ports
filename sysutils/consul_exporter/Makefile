@@ -1,6 +1,7 @@
 PORTNAME=	consul_exporter
 PORTVERSION=	0.3.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	t.tom@succont.de
