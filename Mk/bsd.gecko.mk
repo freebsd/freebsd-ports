@@ -270,11 +270,16 @@ MOZ_OPTIONS+=	--disable-pulseaudio
 
 .if ${PORT_OPTIONS:MSNDIO}
 BUILD_DEPENDS+=	${LOCALBASE}/include/sndio.h:audio/sndio
+MOZ_OPTIONS+=	--enable-sndio
+.      if ${MOZILLA_VER:R:R} < 100
 post-patch-SNDIO-on:
 	@${REINPLACE_CMD} -e 's|OpenBSD|${OPSYS}|g' \
 		-e '/DISABLE_LIBSNDIO_DLOPEN/d' \
 		${MOZSRC}/media/libcubeb/src/moz.build
-.endif
+.      endif
+.    else
+MOZ_OPTIONS+=	--disable-sndio
+.    endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 MOZ_OPTIONS+=	--enable-debug --disable-release
