@@ -1,7 +1,7 @@
 # Created by: Evan Sarmiento <bsdports@wayfair.com>
 
 PORTNAME=	bson
-PORTVERSION=	4.14.1
+PORTVERSION=	4.15.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
