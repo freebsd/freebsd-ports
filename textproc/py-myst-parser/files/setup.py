@@ -10,8 +10,7 @@ package_data = \
 {'': ['*']}
 
 install_requires = \
-['attrs>=19',
- 'docutils>=0.15,<0.18',
+['docutils>=0.15,<0.18',
  'jinja2',
  'markdown-it-py>=1.0.0,<3.0.0',
  'mdit-py-plugins~=0.3.0',
