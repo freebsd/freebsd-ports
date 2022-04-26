@@ -35,7 +35,17 @@ PLIST_FILES=	${COMMANDS:S|^|bin/|}
 
 .include <bsd.port.options.mk>
 
+# CheriBSD: on CHERI architectures, default to the appropriate CHERI
+# LLVM port.  This includes hybrid (and legacy) as we don't currently
+# have a way to know the target supports CHERI.  As such this can't
+# be upstreamed.
+.if ${ARCH:Mriscv64*}
+LLVM_SUFFIX?=	-cheri
+.elif ${ARCH:Maarch64*}
+LLVM_SUFFIX?=	-morello
+.else
 LLVM_SUFFIX?=	${LLVM_DEFAULT}
+.endif
 
 .if ${LLVM_SUFFIX:M[789]0}
 # Pre-LLVM 10 releases have a <Major><Minor> suffix
