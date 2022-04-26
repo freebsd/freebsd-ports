@@ -1,7 +1,6 @@
 PORTNAME=	openrct2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.5.1
-PORTREVISION=	2
+DISTVERSION=	0.4.0
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -29,8 +28,8 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gnome gl iconv \
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenRCT2
 GH_PROJECT=	OpenRCT2
-GH_TUPLE=	OpenRCT2:objects:v1.2.2:objects \
-		OpenRCT2:title-sequences:v0.1.2c:title_sequences
+GH_TUPLE=	OpenRCT2:objects:v1.2.7:objects \
+		OpenRCT2:title-sequences:v0.4.0:title_sequences
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2
