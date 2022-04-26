@@ -1,8 +1,7 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 
 PORTNAME=	tarantool
-PORTVERSION=	2.8.3
-PORTREVISION=	1
+PORTVERSION=	2.8.4
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org

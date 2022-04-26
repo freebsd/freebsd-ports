@@ -1,6 +1,6 @@
-TIMESTAMP = 1642102131
-SHA256 (tarantool-tarantool-2.8.3_GH0.tar.gz) = deba7256cdf4c21d154f298f1c3135b5144df71806665900159eb10bd521a7fa
-SIZE (tarantool-tarantool-2.8.3_GH0.tar.gz) = 7544871
+TIMESTAMP = 1650970033
+SHA256 (tarantool-tarantool-2.8.4_GH0.tar.gz) = aba51a9e173b875898b2ac601e8940444f6fa22ad508d8fe898dc977742a4f11
+SIZE (tarantool-tarantool-2.8.4_GH0.tar.gz) = 7559481
 SHA256 (luafun-luafun-f126f9c_GH0.tar.gz) = 406213098afe81f8621c136e1efedc72f59bd9ffbfbfdb081c1dd722cbf12c4a
 SIZE (luafun-luafun-f126f9c_GH0.tar.gz) = 63029
 SHA256 (tarantool-decNumber-5ddfde1_GH0.tar.gz) = 3518875bff0e0a4d5751d72b52152163c894a1e9c0a6311ae637bece338ede65
