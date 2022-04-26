@@ -1,0 +1,49 @@
+--- maiad.conf.dist.orig	2022-04-25 17:16:14 UTC
++++ maiad.conf.dist
+@@ -55,8 +55,8 @@ $daemon_chroot_dir = undef;
+ # Path overrides for chrooted environments
+ #   * Uncomment and adjust as necessary if using chroot
+ 
+-# $lock_file = "$daemon_chroot_dir/var/lock/maia/maiad.lock";
+-# $pid_file = "$daemon_chroot_dir/var/run/maia/maiad.pid";
++$lock_file = "/var/run/maia/maiad.lock";
++$pid_file = "/var/run/maia/maiad.pid";
+ 
+ 
+ ###########################################################################
+@@ -160,7 +160,7 @@ $log_level = 0;
+ #   * Set to 1 to send logs to syslog, 0 to disable
+ #   * If enabled, configure $SYSLOG_LEVEL as well
+ 
+-$DO_SYSLOG = 0;
++$DO_SYSLOG = 1;
+ 
+ 
+ # Syslog logging facility and level ($SYSLOG_LEVEL)
+@@ -199,7 +199,7 @@ $LOGFILE = "/var/log/maia/maiad.log";
+ #   * If enabled, stores data for optional SNMP agents and nanny utility
+ #   * Required for the optional Message-ID cache feature
+ 
+-$enable_db = 1;
++$enable_db = 0;
+ 
+ 
+ # Message-ID cache ($enable_global_cache)
+@@ -243,7 +243,7 @@ $uncompress  = ['uncompress', 'gzip -d', 'zcat'];
+ $unfreeze    = ['unfreeze', 'freeze -d', 'melt', 'fcat'];
+ $arc         = ['nomarch', 'arc'];
+ $unarj       = ['arj', 'unarj'];
+-#$unrar      = ['rar', 'unrar'];
++$unrar      = ['rar', 'unrar v -c- -p- --'];
+ $zoo         = 'zoo';
+ $lha         = 'lha';
+ $cpio        = ['gcpio','cpio'];
+@@ -390,7 +390,7 @@ $banned_filename_re = new_RE(
+ 
+ # Clam Antivirus Daemon (clamd)
+ ['ClamAV-clamd',
+-   \&ask_daemon, ["CONTSCAN {}\n", "/var/run/clamav/clamd.ctl"],
++   \&ask_daemon, ["CONTSCAN {}\n", "/var/run/clamav/clamd.sock"],
+    qr/\bOK$/m, qr/\bFOUND$/m,
+    qr/^.*?: (?!Infected Archive)(.*) FOUND$/m ],
+ # NOTE: run clamd under the same user as maiad, or run it under its own
