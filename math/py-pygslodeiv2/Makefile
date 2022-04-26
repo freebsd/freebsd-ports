@@ -14,12 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libgsl.so:math/gsl
 RUN_DEPENDS=	${PYNUMPY}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang localbase python:3.6+
+USES=		compiler:c++11-lang localbase python:3.6+ pytest
 USE_PYTHON=	distutils autoplist
 
-do-test:
-	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} -m pytest
+pre-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext --inplace
 
 .include <bsd.port.mk>
