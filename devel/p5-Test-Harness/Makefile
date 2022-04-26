@@ -1,7 +1,7 @@
 # Created by: Shell Hung <shell@shellhung.org>
 
 PORTNAME=	Test-Harness
-PORTVERSION=	3.42
+PORTVERSION=	3.44
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
