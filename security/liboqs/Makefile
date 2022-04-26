@@ -11,7 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BROKEN_i386=	Unknown or unsupported processor: i386
 BROKEN_powerpc=	Unknown or unsupported processor: powerpc
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>0:devel/py-pytest4@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		bash:shells/bash
 
 USES=		cmake python:test shebangfix ssl
