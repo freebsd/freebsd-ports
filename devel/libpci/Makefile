@@ -1,8 +1,7 @@
 # Created by: Samy Al Bahra <samy@kerneled.org>
 
 PORTNAME=	libpci
-PORTVERSION=	3.7.0
-PORTREVISION=	1
+PORTVERSION=	3.8.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
 		LOCAL/sunpoet
