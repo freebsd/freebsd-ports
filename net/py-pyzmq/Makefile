@@ -2,6 +2,7 @@
 
 PORTNAME=	pyzmq
 PORTVERSION=	22.3.0
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libzmq.so:net/libzmq4
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist cython
 
 PYDISTUTILS_CONFIGUREARGS=	--zmq=${LOCALBASE}
 
