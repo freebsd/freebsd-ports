@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Dumbbench
-PORTVERSION=	0.501
+PORTVERSION=	0.503
 CATEGORIES=	benchmarks perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BDFOY
