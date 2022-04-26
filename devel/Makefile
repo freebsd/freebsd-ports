@@ -5367,6 +5367,7 @@
     SUBDIR += py-types-psycopg2
     SUBDIR += py-types-requests
     SUBDIR += py-types-termcolor
+    SUBDIR += py-types-typed-ast
     SUBDIR += py-types-urllib3
     SUBDIR += py-types-xxhash
     SUBDIR += py-typing-extensions
