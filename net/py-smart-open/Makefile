@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	smart-open
-PORTVERSION=	5.2.1
+PORTVERSION=	6.0.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,7 +36,7 @@ AZURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-common>=0:www/py-azure-common@${
 			${PYTHON_PKGNAMEPREFIX}azure-core>=0:devel/py-azure-core@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}azure-storage-blob>=0:devel/py-azure-storage-blob@${PY_FLAVOR}
 HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
-GCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-cloud-storage>=0:www/py-google-cloud-storage@${PY_FLAVOR}
+GCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-cloud-storage>=1.31.0:www/py-google-cloud-storage@${PY_FLAVOR}
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>=0:www/py-boto3@${PY_FLAVOR}
 WEBHDFS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
