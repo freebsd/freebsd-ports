@@ -1,12 +1,11 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
 
 PORTNAME=	firefox
-DISTVERSION=	99.0.1
-PORTREVISION=	2
+DISTVERSION=	100.0
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}${DISTVERSIONSUFFIX}-candidates/build2/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}${DISTVERSIONSUFFIX}-candidates/build1/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -16,7 +15,7 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nss>=3.76:security/nss \
 		icu>=70.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=3.4.0:print/harfbuzz \
+		harfbuzz>=4.1.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
 		png>=1.6.37:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \

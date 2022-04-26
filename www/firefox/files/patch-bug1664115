@@ -3,8 +3,8 @@ using any cubeb backends other than pulse-rust to play media. The loss of
 such change will be that users will not be able to do profiling on threads
 created by libcubeb.
 
---- dom/media/AudioStream.cpp.orig	2022-02-25 16:27:47.676236000 +0100
-+++ dom/media/AudioStream.cpp	2022-02-25 16:54:21.223904000 +0100
+--- dom/media/AudioStream.cpp.orig	2022-04-19 19:43:36.505544000 +0200
++++ dom/media/AudioStream.cpp	2022-04-19 19:47:53.111474000 +0200
 @@ -27,7 +27,6 @@
  #endif
  #include "Tracing.h"
@@ -14,7 +14,7 @@ created by libcubeb.
  
  // Use abort() instead of exception in SoundTouch.
 @@ -144,8 +143,6 @@
-       mAudioClock(aInRate),
+       mOutChannels(aOutputChannels),
        mState(INITIALIZED),
        mDataSource(aSource),
 -      mAudioThreadId(ProfilerThreadId{}),
@@ -22,7 +22,7 @@ created by libcubeb.
        mPlaybackComplete(false),
        mPlaybackRate(1.0f),
        mPreservesPitch(true) {}
-@@ -551,17 +548,6 @@
+@@ -552,17 +549,6 @@
        aWriter.Available());
  }
  
@@ -40,7 +40,7 @@ created by libcubeb.
  void AudioStream::AssertIsOnAudioThread() const {
    // This can be called right after CheckThreadIdChanged, because the audio
    // thread can change when not sandboxed.
-@@ -590,9 +576,6 @@
+@@ -591,9 +577,6 @@
  }
  
  long AudioStream::DataCallback(void* aBuffer, long aFrames) {
@@ -50,7 +50,7 @@ created by libcubeb.
    WebCore::DenormalDisabler disabler;
  
    TRACE_AUDIO_CALLBACK_BUDGET(aFrames, mAudioClock.GetInputRate());
-@@ -647,9 +630,6 @@
+@@ -648,9 +631,6 @@
    mDumpFile.Write(static_cast<const AudioDataValue*>(aBuffer),
                    aFrames * mOutChannels);
  
@@ -60,17 +60,17 @@ created by libcubeb.
    return aFrames - writer.Available();
  }
  
---- dom/media/AudioStream.h.orig	2022-02-25 16:27:53.316210000 +0100
-+++ dom/media/AudioStream.h	2022-02-25 16:55:18.967535000 +0100
-@@ -323,7 +323,6 @@
+--- dom/media/AudioStream.h.orig	2022-04-19 19:43:45.457171000 +0200
++++ dom/media/AudioStream.h	2022-04-19 19:45:30.463633000 +0200
+@@ -329,7 +329,6 @@
  
    template <typename Function, typename... Args>
-   int InvokeCubeb(Function aFunction, Args&&... aArgs);
+   int InvokeCubeb(Function aFunction, Args&&... aArgs) REQUIRES(mMonitor);
 -  bool CheckThreadIdChanged();
    void AssertIsOnAudioThread() const;
  
    soundtouch::SoundTouch* mTimeStretcher;
-@@ -357,9 +356,6 @@
+@@ -368,9 +367,6 @@
    // the default device is used. It is set
    // during the Init() in decoder thread.
    RefPtr<AudioDeviceInfo> mSinkInfo;
@@ -78,5 +78,5 @@ created by libcubeb.
 -  std::atomic<ProfilerThreadId> mAudioThreadId;
 -  const bool mSandboxed = false;
  
-   MozPromiseHolder<MediaSink::EndedPromise> mEndedPromise;
+   MozPromiseHolder<MediaSink::EndedPromise> mEndedPromise GUARDED_BY(mMonitor);
    std::atomic<bool> mPlaybackComplete;
