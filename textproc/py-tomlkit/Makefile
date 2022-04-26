@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	tomlkit
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
