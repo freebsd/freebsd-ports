@@ -24,14 +24,21 @@ PY_DEPENDS=	\
 		${PYNUMPY}
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-flakes>0:devel/py-pytest-flakes@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.7+ pytest
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
+
+# https://github.com/bjodah/chempy/issues/198
+PYTEST_BROKEN_TESTS=	test_get_native__a_substance_no_composition \
+			test_balance_stoichiometry__underdetermined \
+			test_balance_stoichiometry__very_underdetermined \
+			test_balance_stoichiometry__underdetermined__canoncial \
+			test_balance_stoichiometry__substances__underdetermined \
+			test_balance_stoichiometry__duplicates
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pymol # https://github.com/schrodinger/pymol-open-source/issues/100
 
@@ -45,8 +52,5 @@ EXTRAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVO
 			${PYTHON_PKGNAMEPREFIX}pycompilation>=0.4.3:devel/py-pycompilation@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pygslodeiv2>=0.9.1:math/py-pygslodeiv2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyodeint>=0.10.1:math/py-pyodeint@${PY_FLAVOR}
-
-do-test: # 7 tests are known to fail: https://github.com/bjodah/chempy/issues/198
-	@cd ${WRKSRC} && pytest -rs --pyargs chempy
 
 .include <bsd.port.mk>
