@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	gssdp
-PORTVERSION=	1.4.0.1
+PORTVERSION=	1.5.0
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -11,16 +11,18 @@ COMMENT=	Framework for UPnP devices
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	glib>=2.54:devel/glib20 \
+BUILD_DEPENDS=	glib>=2.69:devel/glib20 \
 		gobject-introspection>=1.36:devel/gobject-introspection \
-		libsoup>=2.26.1:devel/libsoup
-LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
+		libsoup3>=2.99.0:devel/libsoup3
+LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3
 
 USES=		gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
 MESON_ARGS=	-Dexamples=false -Dgtk_doc=false -Dintrospection=true
 USE_LDCONFIG=	yes
+
+CONFLICTS_INSTALL=	gssdp14
 
 OPTIONS_DEFINE=	SNIFFER VAPI
 OPTIONS_SUB=	yes
