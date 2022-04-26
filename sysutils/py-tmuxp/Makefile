@@ -1,7 +1,7 @@
 # Created by: Tony Narlock <tony@git-pull.com>
 
 PORTNAME=	tmuxp
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Session manager for tmux
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=7<8.1:devel/py-click@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=7<8.2:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kaptan>=0.5.10:devel/py-kaptan@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libtmux>=0.11.0<0.12.0:devel/py-libtmux@${PY_FLAVOR} \
