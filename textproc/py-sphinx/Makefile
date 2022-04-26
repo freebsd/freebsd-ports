@@ -36,12 +36,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-applehelp>=0:textproc/py-sphin
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4-cov>=0:devel/py-pytest4-cov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest4>=0:devel/py-pytest4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0:www/py-html5lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typed-ast>=0:devel/py-typed-ast@${PY_FLAVOR} \
 		cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.5+ pytest:4
 USE_PYTHON=	autoplist distutils concurrent
 
 NO_ARCH=	yes
@@ -49,7 +48,10 @@ NO_ARCH=	yes
 # Upstream archive contains files with UTF-8 names (#246618)
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts= -k 'not test_ext_imgconverter'
+PYTEST_BROKEN_TESTS=	test_latex_images \
+			test_ext_imgconverter \
+			test_defaults \
+			test_defaults_json \
+			test_anchors_ignored
 
 .include <bsd.port.mk>
