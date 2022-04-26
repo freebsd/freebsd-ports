@@ -5,7 +5,7 @@ PORTVERSION=	0.67
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.superscript.com/ucspi-ipc/
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UCSPI tools for building local-domain client-server applications
 
 USES=		perl5

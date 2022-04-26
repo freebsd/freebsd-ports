@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SUNSITE/utils/file
 DISTNAME=	ncat-${PORTVERSION}
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network aware cat
 
 GNU_CONFIGURE=	yes
