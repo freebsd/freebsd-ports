@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-rds
-PORTVERSION=	1.143.0
+PORTVERSION=	1.144.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
