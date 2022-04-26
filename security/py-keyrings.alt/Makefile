@@ -14,13 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>=10.3.1:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fs>=0.5:devel/py-fs@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.6+ pytest
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
@@ -34,8 +33,5 @@ ENCRYPTED_FILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:security/py-pyc
 GNOME_KEYRING_USES=		gnome
 GNOME_KEYRING_USE=		GNOME=pygobject3
 PYFS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}fs>=0.5:devel/py-fs@${PY_FLAVOR}
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>
