@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	gruff
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-histogram>=0:graphics/rubygem-histogram \
-		rubygem-rmagick>=0:graphics/rubygem-rmagick
+		rubygem-rmagick>=4.2:graphics/rubygem-rmagick
 
 USES=		gem
 USE_RUBY=	yes
