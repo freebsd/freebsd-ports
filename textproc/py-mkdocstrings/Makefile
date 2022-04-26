@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.11.1:devel/py-Jinja2@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}mkdocs-autorefs>=0.1:textproc/py-mkdocs-autorefs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytkdocs>=0.14.0:textproc/py-pytkdocs@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-sphinx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python:3.6+
