@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Text-Table-HTML-DataTables
-PORTVERSION=	0.010
+PORTVERSION=	0.012
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-ShareDir>=0:devel/p5-File-ShareDir \
+		p5-File-Slurper>=0:devel/p5-File-Slurper \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-URI>=0:net/p5-URI
 
