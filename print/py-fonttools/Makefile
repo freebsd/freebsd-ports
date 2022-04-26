@@ -1,7 +1,7 @@
 # Created by: Joseph Koshy <jkoshy@FreeBSD.org>
 
 PORTNAME=	fonttools
-PORTVERSION=	4.32.0
+PORTVERSION=	4.33.1
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,13 +20,13 @@ USE_PYTHON=	autoplist concurrent distutils
 MAKE_ENV=	FONTTOOLS_MANPATH="man"
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	GRAPHITE INTERPOLATABLE LXML PLOT SYMFONT UFO UNICODE WOFF
+OPTIONS_DEFINE=	GRAPHITE INTERPOLATABLE LXML PLOT REPACKER SYMFONT UFO UNICODE WOFF
 OPTIONS_DEFAULT=LXML UFO UNICODE
-
 GRAPHITE_DESC=	Process graphite type tables in ttLib/tables
 INTERPOLATABLE_DESC=	Interpolatability support
 LXML_DESC=	Read/write XML files via lxml (faster/safer than built-in ElementTree)
 PLOT_DESC=	Visualize DesignSpaceDocument and resulting VariationModel
+REPACKER_DESC=	Pack GSUB/GPOS tables with harfbuzz repacker
 SYMFONT_DESC=	Symbolic font statistics analysis
 UFO_DESC=	Read/write UFO fonts
 UNICODE_DESC=	Use latest Unicode Character Database
@@ -36,6 +36,7 @@ GRAPHITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lz4>=1.7.4.2:archivers/py-lz4@${PY_
 INTERPOLATABLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR}
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.0<5:devel/py-lxml@${PY_FLAVOR}
 PLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR}
+REPACKER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0.23.0:print/py-uharfbuzz@${PY_FLAVOR}
 SYMFONT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>=0:math/py-sympy@${PY_FLAVOR}
 UFO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fs2>=2.2.0<3:devel/py-fs2@${PY_FLAVOR}
 WOFF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.1:archivers/py-brotli@${PY_FLAVOR} \
