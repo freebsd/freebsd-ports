@@ -1,0 +1,7 @@
+pathable provides object-oriented paths.
+
+Key features:
+- Traverse resources like paths
+- Access resources on demand with separate accessor layer
+
+WWW: https://github.com/p1c2u/pathable

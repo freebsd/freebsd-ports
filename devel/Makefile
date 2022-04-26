@@ -4900,6 +4900,7 @@
     SUBDIR += py-patch-ng
     SUBDIR += py-path
     SUBDIR += py-path.py
+    SUBDIR += py-pathable
     SUBDIR += py-pathlib2
     SUBDIR += py-pathspec
     SUBDIR += py-pathtools
