@@ -1,5 +1,5 @@
 PORTNAME=	font-awesome
-DISTVERSION=	5.14.0
+DISTVERSION=	6.1.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://use.fontawesome.com/releases/v${DISTVERSION}/
 DISTNAME=	fontawesome-free-${DISTVERSION}-desktop
@@ -19,9 +19,9 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	${FONTSDIR}/Font\ Awesome\ 5\ Brands-Regular-400.otf \
-		${FONTSDIR}/Font\ Awesome\ 5\ Free-Regular-400.otf \
-		${FONTSDIR}/Font\ Awesome\ 5\ Free-Solid-900.otf
+PLIST_FILES=	${FONTSDIR}/Font\ Awesome\ 6\ Brands-Regular-400.otf \
+		${FONTSDIR}/Font\ Awesome\ 6\ Free-Regular-400.otf \
+		${FONTSDIR}/Font\ Awesome\ 6\ Free-Solid-900.otf
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}

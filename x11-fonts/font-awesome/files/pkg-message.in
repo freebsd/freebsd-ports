@@ -1,12 +1,8 @@
 [
 { type: install
   message: <<EOM
-Add the following line to the "Files" section of X Windows configuration file:
-
-        FontPath "%%FONTSDIR%%/"
-
-If you're upgrading from Font Awesome v4, you may need to update your configs
-to the new font families "Font Awesome 5 Free" and "Font Awesome 5 Free Solid".
+If you're upgrading from a previous version, you may need to update your configs
+to the new font families "Font Awesome 6 Free" and "Font Awesome 6 Free Solid".
 EOM
 }
 ]
