@@ -1,8 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	code_saturne
-PORTVERSION=	7.1.0
-PORTREVISION=	4
+PORTVERSION=	7.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science parallel
 
@@ -105,6 +104,7 @@ USE_TEX=	tex:build
 BUILD_DEPENDS+=	fig2dev:print/fig2dev		\
 		doxygen:devel/doxygen		\
 		dot:graphics/graphviz		\
+		dvips:print/tex-dvipsk		\
 		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 BINARY_ALIAS+=	sphinx-build=sphinx-build-${PYTHON_VER}
 ALL_TARGET=	all pdf
