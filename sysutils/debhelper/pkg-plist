@@ -69,6 +69,7 @@ bin/postinst-emacsen
 bin/postinst-icons
 bin/postinst-init
 bin/postinst-init-nostart
+bin/postinst-init-restart
 bin/postinst-init-tmpfiles
 bin/postinst-menu
 bin/postinst-menu-method
@@ -101,6 +102,8 @@ bin/postrm-systemd-user-reload-only
 bin/postrm-ucf
 bin/postrm-xfonts
 bin/preinst-emacsen
+bin/preinst-init-stop
+bin/preinst-systemd-stop
 bin/prerm-alternatives
 bin/prerm-emacsen
 bin/prerm-init
