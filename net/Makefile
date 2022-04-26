@@ -219,6 +219,7 @@
     SUBDIR += gsocket
     SUBDIR += gspoof
     SUBDIR += gssdp
+    SUBDIR += gssdp14
     SUBDIR += gstreamer1-plugins-libmms
     SUBDIR += gstreamer1-plugins-srtp
     SUBDIR += gtk-vnc
