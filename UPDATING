@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220426:
+  AFFECTS: users of deskutils/grantleetheme
+  AUTHOR: kde@FreeBSD.org
+
+  The pkg update of deskutils/grantleetheme to 22.04 can fail due
+  to a filesystem location having changed from being a file to being
+  a directory. This leads to pkg's temporary file creation throwing
+  an error.
+
+  To update to KDE Gear 22.04 please run
+  # pkg delete -f grantleetheme
+  prior to the update.
+
 20220424:
   AFFECTS: users of emulators/qemu
   AUTHOR: bofh@FreeBSD.org
