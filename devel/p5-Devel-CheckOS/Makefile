@@ -1,7 +1,7 @@
 # Created by: Cezary Morga <cm@therek.net>
 
 PORTNAME=	Devel-CheckOS
-PORTVERSION=	1.87
+PORTVERSION=	1.91
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,11 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Find-Rule>=0.28:devel/p5-File-Find-Rule
+TEST_DEPENDS=	p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
