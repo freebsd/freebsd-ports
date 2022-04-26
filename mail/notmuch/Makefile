@@ -1,7 +1,7 @@
 # Created by: DarwinSurvivor <darwinsurvivor@gmail.com>
 
 PORTNAME=	notmuch
-DISTVERSION=	0.35
+DISTVERSION=	0.36
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
