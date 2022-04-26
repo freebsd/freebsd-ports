@@ -1,8 +1,8 @@
-TIMESTAMP = 1649440177
+TIMESTAMP = 1650995477
 SHA256 (mermaid@8.8.0/dist/mermaid.min.js) = d373ecc0e80fed423a6ee72fe30f4307aad5a04d872fa14e98ff3f2e8be4aae0
 SIZE (mermaid@8.8.0/dist/mermaid.min.js) = 832982
-SHA256 (twpayne-chezmoi-v2.15.0_GH0.tar.gz) = d33a5df53bde7b94962c39788e44af41e52a7836bc6d43168c9b324da966996e
-SIZE (twpayne-chezmoi-v2.15.0_GH0.tar.gz) = 2387189
+SHA256 (twpayne-chezmoi-v2.15.1_GH0.tar.gz) = 0100dcf8b70774595f56859e5d1b635319ba584ad7b280946352be328f36d679
+SIZE (twpayne-chezmoi-v2.15.1_GH0.tar.gz) = 2387932
 SHA256 (FiloSottile-age-v1.0.0_GH0.tar.gz) = 8d27684f62f9dc74014035e31619e2e07f8b56257b1075560456cbf05ddbcfce
 SIZE (FiloSottile-age-v1.0.0_GH0.tar.gz) = 59682
 SHA256 (Masterminds-goutils-v1.1.1_GH0.tar.gz) = 6eed023c54f386a71f360e19d34f7a43e640ac44dfc39c22ad4afd7ae04aaa3d
