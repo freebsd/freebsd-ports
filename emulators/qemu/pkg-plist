@@ -1,5 +1,5 @@
 %%CURL%%bin/elf2dmp
-bin/qemu-arm
+%%NO_X86_TARGETS%%bin/qemu-arm
 bin/qemu-edid
 bin/qemu-i386
 bin/qemu-img
