@@ -337,7 +337,7 @@
       </package>
       <package>
 	<name>ruby27</name>
-	<range><ge>2.7.0,1</ge><lt>2.7.10,1</lt></range>
+	<range><ge>2.7.0,1</ge><lt>2.7.6,1</lt></range>
       </package>
       <package>
 	<name>ruby30</name>
