@@ -1086,6 +1086,8 @@ CXX=		${XCXX} --sysroot=${CROSS_SYSROOT}
 CPP=		${XCPP} --sysroot=${CROSS_SYSROOT}
 .  for _tool in AS AR LD NM OBJCOPY RANLIB SIZE STRINGS
 ${_tool}=	${CROSS_BINUTILS_PREFIX}${_tool:tl}
+CONFIGURE_ENV+=	${_tool}="${${_tool}}"
+MAKE_ENV+=	${_tool}="${${_tool}}"
 .  endfor
 LD+=		--sysroot=${CROSS_SYSROOT}
 STRIP_CMD=	${CROSS_BINUTILS_PREFIX}strip
