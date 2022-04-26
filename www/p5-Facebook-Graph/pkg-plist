@@ -12,10 +12,6 @@
 %%SITE_PERL%%/Facebook/Graph/Publish.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Checkin.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Comment.pm
-%%SITE_PERL%%/Facebook/Graph/Publish/Event.pm
-%%SITE_PERL%%/Facebook/Graph/Publish/Like.pm
-%%SITE_PERL%%/Facebook/Graph/Publish/Link.pm
-%%SITE_PERL%%/Facebook/Graph/Publish/Note.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/PageTab.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Photo.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Post.pm
@@ -41,10 +37,6 @@
 %%PERL5_MAN3%%/Facebook::Graph::Publish.3.gz
 %%PERL5_MAN3%%/Facebook::Graph::Publish::Checkin.3.gz
 %%PERL5_MAN3%%/Facebook::Graph::Publish::Comment.3.gz
-%%PERL5_MAN3%%/Facebook::Graph::Publish::Event.3.gz
-%%PERL5_MAN3%%/Facebook::Graph::Publish::Like.3.gz
-%%PERL5_MAN3%%/Facebook::Graph::Publish::Link.3.gz
-%%PERL5_MAN3%%/Facebook::Graph::Publish::Note.3.gz
 %%PERL5_MAN3%%/Facebook::Graph::Publish::PageTab.3.gz
 %%PERL5_MAN3%%/Facebook::Graph::Publish::Photo.3.gz
 %%PERL5_MAN3%%/Facebook::Graph::Publish::Post.3.gz
