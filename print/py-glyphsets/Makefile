@@ -1,9 +1,9 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	glyphsets
-PORTVERSION=	0.3.1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	0.4.0
 CATEGORIES=	print python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,9 +21,6 @@ USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-GH_ACCOUNT=	googlefonts
-USE_GITHUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${WRKSRC}/setup.py
