@@ -1,6 +1,5 @@
 PORTNAME=	rmagick
-PORTVERSION=	2.16.0
-PORTREVISION=	6
+PORTVERSION=	4.2.5
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +15,7 @@ USE_RUBY=	yes
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 
-X11_USES=		magick:6
-X11_USES_OFF=		magick:6,nox11
+X11_USES=		magick:7
+X11_USES_OFF=		magick:7,nox11
 
 .include <bsd.port.mk>
