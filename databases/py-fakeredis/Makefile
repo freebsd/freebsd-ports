@@ -14,12 +14,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}redis>=0<4.2.0:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.12:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=0:devel/py-sortedcontainers@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov<3.0:devel/py-pytest-cov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aioredis>=0:databases/py-aioredis@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioredis>=0:databases/py-aioredis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>=0:devel/py-hypothesis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lupa>=0:lang/py-lupa@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}lupa>=0:lang/py-lupa@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
 
 USES=		python:3.6+ pytest
 USE_PYTHON=	autoplist concurrent distutils
