@@ -1,5 +1,5 @@
 PORTNAME=	strawberry
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/ \
@@ -88,5 +88,7 @@ TIDAL_CMAKE_BOOL=	ENABLE_TIDAL
 
 VLC_CMAKE_BOOL=		ENABLE_VLC
 VLC_LIB_DEPENDS=	libvlc.so:multimedia/vlc
+
+SUB_FILES=		pkg-message
 
 .include <bsd.port.mk>
