@@ -1,8 +1,7 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gnome-online-accounts
-PORTVERSION=	3.40.1
-PORTREVISION=	2
+PORTVERSION=	3.44.0
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
