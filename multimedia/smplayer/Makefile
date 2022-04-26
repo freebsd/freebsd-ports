@@ -1,7 +1,7 @@
 # Created by: Diego Depaoli <trebestie@gmail.com> and Yinghong Liu <relaxbsd@gmail.com>
 
 PORTNAME=	smplayer
-DISTVERSION=	21.10.0
+DISTVERSION=	22.2.0
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
