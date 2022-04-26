@@ -81,7 +81,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/gdb${VER}
 	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls )
-	${MV} ${STAGEDIR}/usr/local/share/gdb ${STAGEDIR}${PREFIX}/share/gdb
 
 do-install-GDB_LINK-on:
 	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdb
