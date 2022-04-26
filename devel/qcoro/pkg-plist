@@ -12,6 +12,7 @@ include/qcoro5/QCoro/QCoroNetworkReply
 include/qcoro5/QCoro/QCoroProcess
 include/qcoro5/QCoro/QCoroSignal
 include/qcoro5/QCoro/QCoroTcpServer
+include/qcoro5/QCoro/QCoroThread
 include/qcoro5/QCoro/QCoroTimer
 include/qcoro5/QCoro/Task
 include/qcoro5/qcoro/concepts_p.h
@@ -32,6 +33,7 @@ include/qcoro5/qcoro/qcoronetworkreply.h
 include/qcoro5/qcoro/qcoroprocess.h
 include/qcoro5/qcoro/qcorosignal.h
 include/qcoro5/qcoro/qcorotcpserver.h
+include/qcoro5/qcoro/qcorothread.h
 include/qcoro5/qcoro/qcorotimer.h
 include/qcoro5/qcoro/task.h
 include/qcoro5/qcoro/waitoperationbase_p.h
@@ -56,3 +58,7 @@ lib/cmake/QCoro5Network/QCoro5NetworkTargets.cmake
 lib/libQCoro5Core.a
 lib/libQCoro5DBus.a
 lib/libQCoro5Network.a
+%%QT_MKSPECDIR%%/modules/qt_QCoroCore.pri
+%%QT_MKSPECDIR%%/modules/qt_QCoroCoro.pri
+%%QT_MKSPECDIR%%/modules/qt_QCoroDBus.pri
+%%QT_MKSPECDIR%%/modules/qt_QCoroNetwork.pri
