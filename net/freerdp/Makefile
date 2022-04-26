@@ -1,12 +1,12 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 
 PORTNAME=	freerdp
-DISTVERSION=	2.6.1
+DISTVERSION=	2.7.0
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 
-PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
+#PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
 
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Free implementation of Remote Desktop Protocol
@@ -144,20 +144,6 @@ X11_USES=		xorg
 X11_USE=		xorg=x11,xcursor,xext,xorgproto,xfixes,xi,xinerama,xkbfile,xrandr,xrender,xv
 
 post-patch:
-	@${REINPLACE_CMD} -e '/CMAKE_INSTALL_RPATH /d' \
-		${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's/Linux/Linux|FreeBSD/' \
-		${WRKSRC}/winpr/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's/NetBSD__)/NetBSD__) || defined(__FreeBSD__)/' \
-		${WRKSRC}/winpr/libwinpr/utils/trio/triodef.h
-	@${RM} ${WRKSRC}/cmake/FindOpenSSL.cmake
-	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/cmake|$${CMAKE_INSTALL_PREFIX}/share/cmake/Modules|' \
-		${WRKSRC}/client/CMakeLists.txt \
-		${WRKSRC}/winpr/CMakeLists.txt \
-		${WRKSRC}/uwac/CMakeLists.txt \
-		${WRKSRC}/server/CMakeLists.txt \
-		${WRKSRC}/server/shadow/CMakeLists.txt \
-		${WRKSRC}/libfreerdp/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|gsm/gsm.h|gsm.h|' \
 		${WRKSRC}/cmake/FindGSM.cmake \
 		${WRKSRC}/libfreerdp/codec/dsp.c
