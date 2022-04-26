@@ -1,0 +1,89 @@
+https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/commit/ea98a0b5964c
+
+error[E0609]: no field `n_frame_threads` on type `dav1d_sys::Dav1dSettings`
+   --> cargo-crates/dav1d-0.7.0/src/lib.rs:111:29
+    |
+111 |         self.dav1d_settings.n_frame_threads = n_frame_threads as i32;
+    |                             ^^^^^^^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `n_threads`, `max_frame_delay`, `apply_grain`, `operating_point`, `all_layers` ... and 7 others
+
+error[E0609]: no field `n_frame_threads` on type `dav1d_sys::Dav1dSettings`
+   --> cargo-crates/dav1d-0.7.0/src/lib.rs:115:29
+    |
+115 |         self.dav1d_settings.n_frame_threads as u32
+    |                             ^^^^^^^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `n_threads`, `max_frame_delay`, `apply_grain`, `operating_point`, `all_layers` ... and 7 others
+
+error[E0609]: no field `n_tile_threads` on type `dav1d_sys::Dav1dSettings`
+   --> cargo-crates/dav1d-0.7.0/src/lib.rs:119:29
+    |
+119 |         self.dav1d_settings.n_tile_threads = n_tile_threads as i32;
+    |                             ^^^^^^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `n_threads`, `max_frame_delay`, `apply_grain`, `operating_point`, `all_layers` ... and 7 others
+
+error[E0609]: no field `n_tile_threads` on type `dav1d_sys::Dav1dSettings`
+   --> cargo-crates/dav1d-0.7.0/src/lib.rs:123:29
+    |
+123 |         self.dav1d_settings.n_tile_threads as u32
+    |                             ^^^^^^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `n_threads`, `max_frame_delay`, `apply_grain`, `operating_point`, `all_layers` ... and 7 others
+
+error[E0609]: no field `n_postfilter_threads` on type `dav1d_sys::Dav1dSettings`
+   --> cargo-crates/dav1d-0.7.0/src/lib.rs:159:29
+    |
+159 |         self.dav1d_settings.n_postfilter_threads = n_postfilter_threads as i32;
+    |                             ^^^^^^^^^^^^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `n_threads`, `max_frame_delay`, `apply_grain`, `operating_point`, `all_layers` ... and 7 others
+
+error[E0609]: no field `n_postfilter_threads` on type `dav1d_sys::Dav1dSettings`
+   --> cargo-crates/dav1d-0.7.0/src/lib.rs:163:29
+    |
+163 |         self.dav1d_settings.n_postfilter_threads as u32
+    |                             ^^^^^^^^^^^^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `n_threads`, `max_frame_delay`, `apply_grain`, `operating_point`, `all_layers` ... and 7 others
+
+For more information about this error, try `rustc --explain E0609`.
+error: could not compile `dav1d` due to 6 previous errors
+
+--- Cargo.lock.orig	2022-04-26 11:20:02 UTC
++++ Cargo.lock
+@@ -746,18 +746,18 @@ name = "dav1d"
+ 
+ [[package]]
+ name = "dav1d"
+-version = "0.7.0"
++version = "0.8.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "9f31455daf4c299ff51191482db319c556b3b0afc3deced5331ab3359c898fe5"
++checksum = "d9669fd63fb7d46c2faadff42a0d168819735a2be83903e7973f09721ed42a8a"
+ dependencies = [
+  "dav1d-sys",
+ ]
+ 
+ [[package]]
+ name = "dav1d-sys"
+-version = "0.4.0"
++version = "0.5.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "b3cc7ff2ad3b5a27f98378e646c3afa851ffce6277664b35b0b10b0d28f617a1"
++checksum = "237e2b43eb9a661b07147ec8dd483e7fe337977791d32c69c82f9a0e6c3be501"
+ dependencies = [
+  "bindgen",
+  "system-deps 6.0.2",
+--- video/dav1d/Cargo.toml.orig	2022-04-26 11:20:02 UTC
++++ video/dav1d/Cargo.toml
+@@ -10,7 +10,7 @@ atomic_refcell = "0.1"
+ 
+ [dependencies]
+ atomic_refcell = "0.1"
+-dav1d = "0.7"
++dav1d = "0.8"
+ gst = { package = "gstreamer", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.18", version = "0.18" }
+ gst-base = { package = "gstreamer-base", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.18", version = "0.18" }
+ gst-video = { package = "gstreamer-video", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.18", version = "0.18", features = ["v1_12"] }
