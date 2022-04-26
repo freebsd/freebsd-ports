@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-bigtable-admin-v2
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-gapic-common>=0.7<2.0:devel/rubygem-gapic-common \
 		rubygem-google-cloud-errors>=1.0<2:net/rubygem-google-cloud-errors \
-		rubygem-grpc-google-iam-v1>=0.6.10<2.0:devel/rubygem-grpc-google-iam-v1
+		rubygem-grpc-google-iam-v1>=1.1<2:devel/rubygem-grpc-google-iam-v1
 
 USES=		gem
 USE_RUBY=	yes
