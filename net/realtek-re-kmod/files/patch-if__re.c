@@ -19,7 +19,7 @@
  #ifdef ENABLE_FIBER_SUPPORT
  #include <dev/re/if_fiber.h>
  #endif //ENABLE_FIBER_SUPPORT
-@@ -258,34 +258,48 @@ static void re_hw_start_unlock(struct re_softc *sc);
+@@ -258,34 +258,48 @@ static void re_hw_start_unlock_8125(struct re_softc *s
  static void re_hw_start_unlock_8125(struct re_softc *sc);
  
  /* Tunables. */
@@ -76,7 +76,27 @@
  
  #define RE_CSUM_FEATURES    (CSUM_IP | CSUM_TCP | CSUM_UDP)
  
-@@ -930,6 +944,7 @@ static int re_alloc_buf(struct re_softc *sc)
+@@ -874,9 +888,7 @@ static void re_release_rx_buf(struct re_softc *sc)
+ 
+ static void re_release_rx_buf(struct re_softc *sc)
+ {
+-        struct ifnet		*ifp;
+         int i;
+-        ifp = RE_GET_IFNET(sc);
+ 
+         if (sc->re_desc.re_rx_mtag) {
+                 for (i = 0; i < RE_RX_BUF_NUM; i++) {
+@@ -899,9 +911,7 @@ static void re_release_tx_buf(struct re_softc *sc)
+ }
+ static void re_release_tx_buf(struct re_softc *sc)
+ {
+-        struct ifnet		*ifp;
+         int i;
+-        ifp = RE_GET_IFNET(sc);
+ 
+         if (sc->re_desc.re_tx_mtag) {
+                 for (i = 0; i < RE_TX_BUF_NUM; i++) {
+@@ -930,6 +940,7 @@ static int re_alloc_buf(struct re_softc *sc)
          int error =0;
          int i,size;
  
@@ -84,7 +104,7 @@
          error = bus_dma_tag_create(sc->re_parent_tag, 1, 0,
                                     BUS_SPACE_MAXADDR, BUS_SPACE_MAXADDR, NULL,
                                     NULL, MCLBYTES* RE_NTXSEGS, RE_NTXSEGS, 4096, 0,
-@@ -938,6 +953,7 @@ static int re_alloc_buf(struct re_softc *sc)
+@@ -938,6 +949,7 @@ static int re_alloc_buf(struct re_softc *sc)
          if (error) {
                  //device_printf(dev,"re_tx_mtag fail\n");
                  //goto fail;
@@ -92,7 +112,7 @@
                  return error;
          }
  
-@@ -955,9 +971,11 @@ static int re_alloc_buf(struct re_softc *sc)
+@@ -955,9 +967,11 @@ static int re_alloc_buf(struct re_softc *sc)
          if (error) {
                  //device_printf(dev,"re_rx_mtag fail\n");
                  //goto fail;
@@ -104,7 +124,7 @@
          if (sc->re_rx_mbuf_sz <= MCLBYTES)
                  size = MCLBYTES;
          else if (sc->re_rx_mbuf_sz <=  MJUMPAGESIZE)
-@@ -3428,16 +3446,6 @@ is_valid_ether_addr(const u_int8_t * addr)
+@@ -3428,16 +3442,6 @@ is_valid_ether_addr(const u_int8_t * addr)
          return !is_multicast_ether_addr(addr) && !is_zero_ether_addr(addr);
  }
  
@@ -121,7 +141,7 @@
  static void re_disable_now_is_oob(struct re_softc *sc)
  {
          if (sc->re_hw_supp_now_is_oob_ver == 1)
-@@ -3889,7 +3897,7 @@ static void re_get_hw_mac_address(struct re_softc *sc,
+@@ -3889,7 +3893,7 @@ static void re_get_hw_mac_address(struct re_softc *sc,
  
          if (!is_valid_ether_addr(eaddr)) {
                  device_printf(dev,"Invalid ether addr: %6D\n", eaddr, ":");
@@ -130,7 +150,7 @@
                  device_printf(dev,"Random ether addr: %6D\n", eaddr, ":");
          }
  
-@@ -4291,9 +4299,9 @@ static void re_init_software_variable(struct re_softc 
+@@ -4291,9 +4295,9 @@ static void re_init_software_variable(struct re_softc 
  
          sc->re_rx_mbuf_sz = sc->max_jumbo_frame_size + ETHER_VLAN_ENCAP_LEN + ETHER_HDR_LEN + ETHER_CRC_LEN + RE_ETHER_ALIGN + 1;
  
@@ -172,7 +192,27 @@
          RE_UNLOCK(sc);
  }
  
-@@ -8438,7 +8452,7 @@ static void re_int_task(void *arg, int npending)
+@@ -8153,7 +8167,9 @@ struct re_softc		*sc;
+ static void re_rxeof(sc)	/* Receive Data OK/ERR handler */
+ struct re_softc		*sc;
+ {
++#if OS_VER < VERSION(4,9)
+         struct ether_header	*eh;
++#endif
+         struct mbuf		*m;
+         struct ifnet		*ifp;
+         union RxDesc *rxptr;
+@@ -8270,7 +8286,9 @@ struct re_softc		*sc;
+                         }
+                 }
+ 
++#if OS_VER < VERSION(4,9)
+                 eh = mtod(m, struct ether_header *);
++#endif
+ #if OS_VER < VERSION(11,0)
+                 ifp->if_ipackets++;
+ #else
+@@ -8438,7 +8456,7 @@ static void re_int_task(void *arg, int npending)
                          if ((status & RE_ISR_FIFO_OFLOW) &&
                              (!(status & (RE_ISR_RX_OK | RE_ISR_TX_OK | RE_ISR_RX_OVERRUN)))) {
                                  re_reset(sc);
@@ -181,7 +221,7 @@
                                  sc->rx_fifo_overflow = 0;
                                  CSR_WRITE_2(sc, RE_ISR, RE_ISR_FIFO_OFLOW);
                          }
-@@ -8449,7 +8463,7 @@ static void re_int_task(void *arg, int npending)
+@@ -8449,7 +8467,7 @@ static void re_int_task(void *arg, int npending)
  
          if (status & RE_ISR_SYSTEM_ERR) {
                  re_reset(sc);
@@ -190,7 +230,7 @@
          }
  
          switch(sc->re_type) {
-@@ -8514,7 +8528,7 @@ static void re_int_task_8125(void *arg, int npending)
+@@ -8514,7 +8532,7 @@ static void re_int_task_8125(void *arg, int npending)
  
          if (status & RE_ISR_SYSTEM_ERR) {
                  re_reset(sc);
@@ -199,7 +239,19 @@
          }
  
          RE_UNLOCK(sc);
-@@ -8614,6 +8628,22 @@ struct re_softc		*sc;
+@@ -8560,11 +8578,8 @@ struct re_softc		*sc;
+ static void re_set_rx_packet_filter_in_sleep_state(sc)
+ struct re_softc		*sc;
+ {
+-        struct ifnet		*ifp;
+         u_int32_t		rxfilt;
+ 
+-        ifp = RE_GET_IFNET(sc);
+-
+         rxfilt = CSR_READ_4(sc, RE_RXCFG);
+ 
+         rxfilt &= ~(RE_RXCFG_RX_ALLPHYS | RE_RXCFG_RX_INDIV | RE_RXCFG_RX_MULTI | RE_RXCFG_RX_BROAD | RE_RXCFG_RX_RUNT | RE_RXCFG_RX_ERRPKT);
+@@ -8614,6 +8629,22 @@ struct re_softc		*sc;
          return;
  }
  
@@ -222,7 +274,7 @@
  /*
   * Program the 64-bit multicast hash filter.
   */
-@@ -8623,7 +8653,9 @@ struct re_softc		*sc;
+@@ -8623,7 +8654,9 @@ struct re_softc		*sc;
          struct ifnet		*ifp;
          int			h = 0;
          u_int32_t		hashes[2] = { 0, 0 };
@@ -232,7 +284,7 @@
          u_int32_t		rxfilt;
          int			mcnt = 0;
  
-@@ -8640,7 +8672,12 @@ struct re_softc		*sc;
+@@ -8640,7 +8673,12 @@ struct re_softc		*sc;
          }
  
          /* now program new ones */
@@ -246,7 +298,7 @@
          IF_ADDR_LOCK(ifp);
  #endif
  #if OS_VER < VERSION(4,9)
-@@ -8662,9 +8699,12 @@ struct re_softc		*sc;
+@@ -8662,9 +8700,12 @@ struct re_softc		*sc;
                          hashes[1] |= (1 << (h - 32));
                  mcnt++;
          }
@@ -260,7 +312,7 @@
  
          if (mcnt) {
                  if ((sc->re_if_flags & RL_FLAG_PCIE) != 0) {
-@@ -8720,7 +8760,7 @@ caddr_t			data;
+@@ -8720,7 +8761,7 @@ caddr_t			data;
                                  error =re_alloc_buf(sc);
  
                                  if (error == 0) {
@@ -269,7 +321,7 @@
                                  }
                                  RE_UNLOCK(sc);
  
-@@ -8743,7 +8783,7 @@ caddr_t			data;
+@@ -8743,7 +8784,7 @@ caddr_t			data;
          case SIOCSIFFLAGS:
                  RE_LOCK(sc);
                  if (ifp->if_flags & IFF_UP) {
@@ -278,3 +330,46 @@
                  } else if (ifp->if_drv_flags & IFF_DRV_RUNNING) {
                          re_stop(sc);
                  }
+@@ -30784,13 +30825,12 @@ static u_int8_t re_calc_efuse_dummy_bit(u_int16_t reg)
+ 
+ static u_int8_t re_calc_efuse_dummy_bit(u_int16_t reg)
+ {
+-        int s,a,b;
++        int s,a;
+         u_int8_t dummyBitPos = 0;
+ 
+ 
+         s=reg% 32;
+         a=s % 16;
+-        b=s/16;
+ 
+         if (s/16) {
+                 dummyBitPos = (u_int8_t)(16-a);
+@@ -31395,19 +31435,16 @@ static void OOB_mutex_unlock(struct re_softc *sc)
+ static void OOB_mutex_unlock(struct re_softc *sc)
+ {
+         u_int16_t ocp_reg_mutex_ib;
+-        u_int16_t ocp_reg_mutex_oob;
+         u_int16_t ocp_reg_mutex_prio;
+ 
+         switch (sc->re_type) {
+         case MACFG_63:
+         case MACFG_64:
+         case MACFG_65:
+-                ocp_reg_mutex_oob = 0x16;
+                 ocp_reg_mutex_ib = 0x17;
+                 ocp_reg_mutex_prio = 0x9C;
+                 break;
+         case MACFG_66:
+-                ocp_reg_mutex_oob = 0x06;
+                 ocp_reg_mutex_ib = 0x07;
+                 ocp_reg_mutex_prio = 0x9C;
+                 break;
+@@ -31418,7 +31455,6 @@ static void OOB_mutex_unlock(struct re_softc *sc)
+         case MACFG_71:
+         case MACFG_72:
+         default:
+-                ocp_reg_mutex_oob = 0x110;
+                 ocp_reg_mutex_ib = 0x114;
+                 ocp_reg_mutex_prio = 0x11C;
+                 break;
