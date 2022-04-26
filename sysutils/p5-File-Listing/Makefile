@@ -1,7 +1,7 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
 
 PORTNAME=	File-Listing
-PORTVERSION=	6.14
+PORTVERSION=	6.15
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
