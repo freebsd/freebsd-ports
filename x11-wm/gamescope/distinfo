@@ -1,6 +1,6 @@
-TIMESTAMP = 1650317303
-SHA256 (Plagman-gamescope-3.11.28_GH0.tar.gz) = 9183621cbf21cdaec84d1ec9caf6d6d5a64d7d65e5ef5f20ce97371c82683ab4
-SIZE (Plagman-gamescope-3.11.28_GH0.tar.gz) = 160713
+TIMESTAMP = 1650946540
+SHA256 (Plagman-gamescope-3.11.30_GH0.tar.gz) = 34d64945cbdb000f59bef9ca185a3ded40f3fcf0633f0f3992a71c2878517bc4
+SIZE (Plagman-gamescope-3.11.30_GH0.tar.gz) = 160710
 SHA256 (nothings-stb-af1a5bc_GH0.tar.gz) = 3facf6e6f8c3e1715e1a088f22bad9c9202973f9369fb3f088f46cced3f64058
 SIZE (nothings-stb-af1a5bc_GH0.tar.gz) = 1387334
 SHA256 (2a84a44f6897.patch) = fd892d4477885926b0ef5793d5222764afa2ba334fd25c4cc671c89812e100b5
