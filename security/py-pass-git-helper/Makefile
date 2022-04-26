@@ -14,15 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
 
-USES=		python
+USES=		python pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	languitar
 USE_PYTHON=	autoplist concurrent distutils
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
 
 .include <bsd.port.mk>
