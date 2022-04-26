@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	14.10.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -121,7 +121,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-gitlab-markup>=1.8.0<1.9.0:textproc/rubygem-gitlab-markup \
 	rubygem-github-markup17>=1.7.0<1.8.0:textproc/rubygem-github-markup17 \
 	rubygem-commonmarker>=0.23.4<0.24:textproc/rubygem-commonmarker \
-	rubygem-kramdown>=2.3.1<2.4:textproc/rubygem-kramdown \
+	rubygem-kramdown23>=2.3.1<2.4:textproc/rubygem-kramdown23 \
 	rubygem-redcloth>=4.3.2<4.4.0:www/rubygem-redcloth \
 	rubygem-rdoc63>=6.3.2<7:devel/rubygem-rdoc63 \
 	rubygem-org-ruby>=0.9.12<0.10.0:textproc/rubygem-org-ruby \
