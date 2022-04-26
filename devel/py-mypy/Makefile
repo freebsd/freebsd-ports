@@ -1,7 +1,7 @@
 # Created by: Florian Limberger <flo@snakeoilproductions.net>
 
 PORTNAME=	mypy
-PORTVERSION=	0.940
+PORTVERSION=	0.942
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
