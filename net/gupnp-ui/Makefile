@@ -2,7 +2,7 @@
 
 PORTNAME=	gupnp-ui
 PORTVERSION=	0.1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -12,8 +12,8 @@ COMMENT=	Framework for UPnP devices
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gupnp>=0.3:net/gupnp
-LIB_DEPENDS=	libgupnp-1.2.so:net/gupnp \
+BUILD_DEPENDS=	gupnp14>=0.3:net/gupnp14
+LIB_DEPENDS=	libgupnp-1.2.so:net/gupnp14 \
 		libsoup-2.4.so:devel/libsoup
 
 USES=		compiler:c++11-lang gnome libtool pathfix pkgconfig python
