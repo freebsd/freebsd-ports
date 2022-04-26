@@ -1,16 +1,18 @@
 PORTNAME=	graphene
-DISTVERSION=	1.10.6
+DISTVERSION=	1.10.8
 CATEGORIES=	graphics devel
-MASTER_SITES=	https://github.com/ebassi/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Optimizations for speeding up vector operations
 
 LICENSE=	MIT
 
-USES=		compiler:c11 gnome meson pkgconfig python:3.6+ shebangfix tar:xz
+USES=		compiler:c11 gnome meson pkgconfig python:3.6+ shebangfix
 USE_GNOME=	glib20 pygobject3
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ebassi
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DOCS #INTROSPECTION
