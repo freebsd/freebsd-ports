@@ -1,0 +1,17 @@
+--- src/s2/base/commandlineflags.h.orig	2022-04-01 11:53:29 UTC
++++ src/s2/base/commandlineflags.h
+@@ -44,10 +44,10 @@
+ 
+ // gflags has its own int32 definitions.
+ namespace absl {
+-inline int32 GetFlag(google::int32 flag) { return flag; }
+-inline int64 GetFlag(google::int64 flag) { return flag; }
+-inline void SetFlag(google::int32* f, google::int32 v) { *f = v; }
+-inline void SetFlag(google::int64* f, google::int64 v) { *f = v; }
++inline int32 GetFlag(gflags::int32 flag) { return flag; }
++inline int64 GetFlag(gflags::int64 flag) { return flag; }
++inline void SetFlag(gflags::int32* f, gflags::int32 v) { *f = v; }
++inline void SetFlag(gflags::int64* f, gflags::int64 v) { *f = v; }
+ }  // namespace absl
+ 
+ #else  // !defined(S2_USE_GFLAGS)

@@ -1,9 +1,8 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	s2
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,12 +14,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	is currently 64-bit only
 
-LIB_DEPENDS=	libgtest.so:devel/googletest
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libgtest.so:devel/googletest
 
 USES=		cmake compiler:c++11-lang localbase ssl
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	WITH_PYTHON
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 GH_ACCOUNT=	google
 GH_PROJECT=	s2geometry
@@ -45,7 +49,6 @@ CXXFLAGS+=	-mcpu=power7
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/examples/point_index ${INSTALL_WRKSRC}/examples/term_index ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/point_index.cc ${WRKSRC}/doc/examples/term_index.cc ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
