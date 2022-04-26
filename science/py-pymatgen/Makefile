@@ -28,9 +28,9 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>0:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uncertainties>=3.1.4:math/py-uncertainties@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybtex>0:textproc/py-pybtex@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.7+
+USES=		compiler:c++11-lang python:3.7+ pytest
 USE_PYTHON=	distutils cython concurrent autoplist
 
 post-install:
@@ -39,7 +39,8 @@ post-install:
 		optimization/neighbors*.so \
 		util/coord_cython*.so
 
-do-test: # tests fail: https://github.com/materialsproject/pymatgen/issues/2275
-	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest
+# tests fail: https://github.com/materialsproject/pymatgen/issues/2275
+pre-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext --inplace
 
 .include <bsd.port.mk>
