@@ -1,8 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	goffice
-PORTVERSION=	0.10.50
-PORTREVISION=	2
+PORTVERSION=	0.10.52
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
