@@ -27,6 +27,12 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	OPENAPI
+OPENAPI_DESC=	OpenAPI support
+
+OPENAPI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openapi-core>=0.14.2:devel/py-openapi-core@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31000
