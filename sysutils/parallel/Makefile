@@ -1,7 +1,7 @@
 # Created by: Chris Howey <howeyc@gmail.com>
 
 PORTNAME=	parallel
-PORTVERSION=	20220322
+PORTVERSION=	20220422
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -20,9 +20,5 @@ NO_ARCH=	yes
 SHEBANG_FILES=	src/env_parallel src/niceload src/parcat src/parsort src/sql
 
 OPTIONS_DEFINE=	DOCS
-
-DOCS_BUILD_DEPENDS=	pod2pdf:textproc/p5-pod2pdf \
-			pod2rst:textproc/p5-Pod-POM-View-Restructured \
-			pod2texi:print/texinfo
 
 .include <bsd.port.mk>
