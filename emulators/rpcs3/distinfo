@@ -23,5 +23,5 @@ SHA256 (wolfSSL-wolfssl-v5.2.0-stable-245-gdcaa218ed_GH0.tar.gz) = d5d9d916797dc
 SIZE (wolfSSL-wolfssl-v5.2.0-stable-245-gdcaa218ed_GH0.tar.gz) = 20570430
 SHA256 (llvm-llvm-project-llvmorg-13.0.1-rc1_GH0.tar.gz) = c9411f1882eaf0c190fd5b412deb0bd7dba61a48df243d3408298cc6f53b6921
 SIZE (llvm-llvm-project-llvmorg-13.0.1-rc1_GH0.tar.gz) = 147284646
-SHA256 (41a05f95a057.patch) = 9c67561682211462f9a73069dae54f0c955dafeba69021b44c724423ce2788ef
-SIZE (41a05f95a057.patch) = 1972
+SHA256 (41a05f95a057.patch) = bb7c99aca39e882ab42656b1af7f6c8d6819ec968583e17119f9d69719a37a12
+SIZE (41a05f95a057.patch) = 1974
