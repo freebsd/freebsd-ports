@@ -1,5 +1,5 @@
-TIMESTAMP = 1619752538
-SHA256 (ffuf-ffuf-v1.3.1_GH0.tar.gz) = 136df36154f17668fb726120f0c93059f696786a34e3c2047d61efc3a065c4ec
-SIZE (ffuf-ffuf-v1.3.1_GH0.tar.gz) = 70052
+TIMESTAMP = 1650838800
+SHA256 (ffuf-ffuf-v1.4.1_GH0.tar.gz) = 89b4bd4b3bbad7402d9c81d0d9f21b679c80d0a19bb9a190e45e395736058889
+SIZE (ffuf-ffuf-v1.4.1_GH0.tar.gz) = 260308
 SHA256 (pelletier-go-toml-v1.8.1_GH0.tar.gz) = 837b8407fb401deff36961ce32498a1145c5ef4bad0b0060a25e632c14621941
 SIZE (pelletier-go-toml-v1.8.1_GH0.tar.gz) = 98819
