@@ -1,5 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	1.6.2
+DISTVERSION=	1.6.3
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -48,9 +48,10 @@ CARGO_CRATES=	ahash-0.7.6 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-3.1.8 \
-		clap_complete-3.1.1 \
+		clap-3.1.12 \
+		clap_complete-3.1.2 \
 		clap_derive-3.1.7 \
+		clap_lex-0.1.1 \
 		combine-4.6.3 \
 		concurrent-queue-1.2.2 \
 		const_format-0.2.22 \
@@ -134,6 +135,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		mockall-0.11.0 \
 		mockall_derive-0.11.0 \
 		nix-0.23.1 \
+		nix-0.24.1 \
 		nom-5.1.2 \
 		nom-7.1.1 \
 		normalize-line-endings-0.3.0 \
@@ -245,7 +247,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		time-0.3.9 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
-		toml-0.5.8 \
+		toml-0.5.9 \
 		toml_edit-0.14.2 \
 		typenum-1.15.0 \
 		ucd-trie-0.1.3 \
@@ -262,8 +264,8 @@ CARGO_CRATES=	ahash-0.7.6 \
 		utf8parse-0.2.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
-		versions-4.0.0 \
-		vtparse-0.6.0 \
+		versions-4.1.0 \
+		vtparse-0.6.1 \
 		waker-fn-1.1.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
@@ -274,6 +276,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.24.0 \
+		windows-0.35.0 \
 		windows-sys-0.35.0 \
 		windows_aarch64_msvc-0.35.0 \
 		windows_i686_gnu-0.24.0 \
