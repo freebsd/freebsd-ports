@@ -2,7 +2,7 @@
 
 PORTNAME=	gupnp-igd
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -13,10 +13,10 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gobject-introspection>=0.10:devel/gobject-introspection \
-		gssdp>=1.2.0:net/gssdp \
-		gupnp>=1.2.0:net/gupnp
-LIB_DEPENDS=	libgssdp-1.2.so:net/gssdp \
-		libgupnp-1.2.so:net/gupnp
+		gssdp14>=1.2.0:net/gssdp14 \
+		gupnp14>=1.2.0:net/gupnp14
+LIB_DEPENDS=	libgssdp-1.2.so:net/gssdp14 \
+		libgupnp-1.2.so:net/gupnp14
 
 USES=		compiler:c11 gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
