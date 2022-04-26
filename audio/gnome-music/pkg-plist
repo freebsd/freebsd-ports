@@ -2,7 +2,6 @@ bin/gnome-music
 %%PYTHON_SITELIBDIR%%/gnomemusic/__init__.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/albumart.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/application.py
-%%PYTHON_SITELIBDIR%%/gnomemusic/artcache.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/artistart.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/asyncqueue.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/corealbum.py
@@ -13,7 +12,6 @@ bin/gnome-music
 %%PYTHON_SITELIBDIR%%/gnomemusic/coreselection.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/coresong.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/coverpaintable.py
-%%PYTHON_SITELIBDIR%%/gnomemusic/defaulticon.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/embeddedart.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/fileexistsasync.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/griloartqueue.py
@@ -23,6 +21,7 @@ bin/gnome-music
 %%PYTHON_SITELIBDIR%%/gnomemusic/grilowrappers/grltrackerwrapper.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/gstplayer.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/inhibitsuspend.py
+%%PYTHON_SITELIBDIR%%/gnomemusic/mediaartloader.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/mpris.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/musiclogger.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/notificationmanager.py
@@ -34,6 +33,7 @@ bin/gnome-music
 %%PYTHON_SITELIBDIR%%/gnomemusic/songart.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/songtoast.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/storeart.py
+%%PYTHON_SITELIBDIR%%/gnomemusic/texturecache.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/trackerwrapper.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/utils.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/views/__init__.py
@@ -51,7 +51,6 @@ bin/gnome-music
 %%PYTHON_SITELIBDIR%%/gnomemusic/widgets/artistalbumswidget.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/widgets/artistsearchtile.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/widgets/artisttile.py
-%%PYTHON_SITELIBDIR%%/gnomemusic/widgets/artstack.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/widgets/discbox.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/widgets/headerbar.py
 %%PYTHON_SITELIBDIR%%/gnomemusic/widgets/lastfmdialog.py
@@ -371,6 +370,19 @@ share/help/uk/gnome-music/playlist-remove-songs.page
 share/help/uk/gnome-music/playlist-repeat.page
 share/help/uk/gnome-music/playlist-shuffle.page
 share/help/uk/gnome-music/search.page
+share/help/zh_CN/gnome-music/figures/org.gnome.Music.svg
+share/help/zh_CN/gnome-music/index.page
+share/help/zh_CN/gnome-music/introduction.page
+share/help/zh_CN/gnome-music/legal.xml
+share/help/zh_CN/gnome-music/play-music.page
+share/help/zh_CN/gnome-music/playlist-create-albums.page
+share/help/zh_CN/gnome-music/playlist-create-artists.page
+share/help/zh_CN/gnome-music/playlist-create-songs.page
+share/help/zh_CN/gnome-music/playlist-delete.page
+share/help/zh_CN/gnome-music/playlist-remove-songs.page
+share/help/zh_CN/gnome-music/playlist-repeat.page
+share/help/zh_CN/gnome-music/playlist-shuffle.page
+share/help/zh_CN/gnome-music/search.page
 share/icons/hicolor/scalable/apps/org.gnome.Music.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Music-symbolic.svg
 share/locale/af/LC_MESSAGES/org.gnome.Music.mo
