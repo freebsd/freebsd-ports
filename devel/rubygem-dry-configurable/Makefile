@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	dry-configurable
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
