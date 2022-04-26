@@ -1,7 +1,7 @@
 # Created by: Joe Horn <joehorn@gmail.com>
 
 PORTNAME=	yourls
-PORTVERSION=	1.8.2
+PORTVERSION=	1.9
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -30,11 +30,11 @@ do-install:
 MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 
 genplist: do-clean extract
-	@${ECHO} "@owner www" > ${MS_PLIST}
-	@${ECHO} "@group www" >> ${MS_PLIST}
+	@${ECHO_CMD} "@owner www" > ${MS_PLIST}
+	@${ECHO_CMD} "@group www" >> ${MS_PLIST}
 	@cd ${WRKSRC}/ && ${FIND} -s . -type f | ${SED} 's|^\.|%%WWWDIR%%|' >> ${MS_PLIST}
-	@${ECHO} "@owner" >> ${MS_PLIST}
-	@${ECHO} "@group" >> ${MS_PLIST}
+	@${ECHO_CMD} "@owner" >> ${MS_PLIST}
+	@${ECHO_CMD} "@group" >> ${MS_PLIST}
 	@${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
 
 .include <bsd.port.mk>
