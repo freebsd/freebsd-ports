@@ -1,5 +1,5 @@
 PORTNAME=		crystal
-DISTVERSION=		1.4.0
+DISTVERSION=		1.4.1
 CATEGORIES=		lang
 MASTER_SITES=		https://dl.unrelenting.technology/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
