@@ -1,5 +1,5 @@
 PORTNAME=	sdl2pp
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.2
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,7 +15,6 @@ GH_PROJECT=	libSDL2pp
 USES=		cmake compiler:c++11-lib sdl
 CMAKE_ARGS=	-DSDL2PP_ENABLE_LIVE_TESTS=OFF
 USE_SDL=	sdl2 image2 mixer2 ttf2
-TEST_TARGET=	test
 
 PORTDOCS=	*
 
@@ -29,6 +28,9 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 
 post-install-DOXYGEN-on:
-	cd ${CONFIGURE_WRKSRC} && ${COPYTREE_SHARE} doxygen ${STAGEDIR}${DOCSDIR}/
+	@cd ${CONFIGURE_WRKSRC} && ${COPYTREE_SHARE} doxygen ${STAGEDIR}${DOCSDIR}/
+
+do-test:
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${LOCALBASE}/bin/ctest -V
 
 .include <bsd.port.mk>
