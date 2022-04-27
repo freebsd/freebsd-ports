@@ -20,6 +20,12 @@ GH_PROJECT=	hh-suite
 
 LDFLAGS+=	-Wl,-rpath,${LOCALBASE}/mpi/openmpi/lib -L${LOCALBASE}/mpi/openmpi/lib -lmpi # force linking to openmpi, and not to mpich
 
+.if !exists(/usr/include/omp.h)
+PLIST_SUB+=	OPENMP="@comment "
+.else
+PLIST_SUB+=	OPENMP=""
+.endif
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == aarch64
@@ -28,12 +34,6 @@ CMAKE_ON=	HAVE_ARM8
 CMAKE_ON=	HAVE_SSE2
 .elif ${ARCH} == powerpc64le
 CMAKE_ON=	HAVE_POWER8
-.endif
-
-.if ${ARCH} == powerpc
-PLIST_SUB+=	OPENMP="@comment "
-.else
-PLIST_SUB+=	OPENMP=""
 .endif
 
 .include <bsd.port.mk>
