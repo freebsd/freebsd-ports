@@ -1,5 +1,5 @@
 PORTNAME=	cdialog
-DISTVERSION=	1.3-20220117
+DISTVERSION=	1.3-20220414
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.invisible-island.net/pub/${PORTNAME:S|^c||}/\
