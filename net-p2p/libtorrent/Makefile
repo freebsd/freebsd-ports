@@ -29,11 +29,11 @@ KQUEUE_CONFIGURE_WITH=	kqueue
 
 .include <bsd.port.pre.mk>
 
-# Disable instrumentation, which requires 64-bit atomic ops, on i386 (when
-# using gcc) and powerpc to avoid linking errors:
+# Disable instrumentation, which requires 64-bit atomic ops, on i386 when using
+# gcc to avoid linking errors:
 # /usr/local/lib/libtorrent.so: undefined reference to `__sync_add_and_fetch_8'
 # /usr/local/lib/libtorrent.so: undefined reference to `__sync_fetch_and_and_8'
-.if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == gcc || ${ARCH} == powerpc
+.if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == gcc
 CONFIGURE_ARGS+=--disable-instrumentation
 .endif
 
