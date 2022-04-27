@@ -3,6 +3,7 @@
 PORTNAME=	cingb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.32
+PORTREVISIO=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -34,7 +35,7 @@ DEBUG_PORTDOCS=	DEBUGGER
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "sparc64" && ${ARCH} != "powerpc"
+.if ${ARCH} != "sparc64" && ${ARCH} != "powerpc" && ${ARCH} != powerpc64
 CPPFLAGS+=	-DUSE_LITTLE_ENDIAN
 .endif
 
