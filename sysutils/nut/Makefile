@@ -1,8 +1,7 @@
 # Created by: Boris Popov <bp@FreeBSD.org>
 
 PORTNAME=	nut
-PORTVERSION=	2.7.4
-PORTREVISION=	21
+PORTVERSION=	2.8.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -13,7 +12,7 @@ COMMENT=	Network UPS Tools
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		autoreconf gmake pkgconfig libtool
+USES=		autoreconf:build compiler:c11 gmake libtool pkgconfig python:build
 
 NUT_USER?=	uucp
 NUT_GROUP?=	uucp
@@ -44,10 +43,12 @@ USE_RC_SUBR=	nut nut_upsmon nut_upslog
 SUB_LIST+=	STATEDIR=${STATEDIR}
 PLIST_SUB+=	STATEDIR=${STATEDIR}
 
+INSTALL_TARGET=	install-strip
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
 
+TMPDIR?=	/tmp
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--program-transform-name="" \
@@ -65,6 +66,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIB_DEPENDS+=	libltdl.so:devel/libltdl
+
+BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 
 .if ${PORT_OPTIONS:MCGI}
 LIB_DEPENDS+=	libgd.so:graphics/gd
@@ -172,9 +175,11 @@ CONFIGURE_ARGS+=	--with-nss
 CONFIGURE_ARGS+=	--without-openssl --without-ssl
 .endif
 
+post-patch:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i '' -e 's|/usr/bin/env python|${PYTHON_CMD}|'
+
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nut
-	@${REINPLACE_CMD} -e 's/device-name\*/cdev/g' ${WRKSRC}/scripts/devd/nut-usb.conf
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${STATEDIR}
@@ -196,5 +201,7 @@ post-install:
 	${INSTALL_DATA} ${PATCHDIR}/nut.syslog ${STAGEDIR}${EXAMPLESDIR}/syslog.sample
 	${INSTALL_DATA} ${PATCHDIR}/nut.newsyslog ${STAGEDIR}${EXAMPLESDIR}/newsyslog.sample
 	${MKDIR} ${STAGEDIR}/var/log/nut
+	@${RM} ${STAGEDIR}${PREFIX}/etc/nut/solaris-init/nut
+	@${RMDIR} ${STAGEDIR}${PREFIX}/etc/nut/solaris-init
 
 .include <bsd.port.mk>
