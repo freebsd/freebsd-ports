@@ -160,10 +160,6 @@ CMAKE_ARGS+=		-DWITH_SSL=${OPENSSLBASE}
 CXXFLAGS+=	-fpermissive
 .endif
 
-.if ${ARCH} == powerpc
-LLD_UNSAFE=	yes
-.endif
-
 post-extract:
 	@${RM} -rv ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
 
