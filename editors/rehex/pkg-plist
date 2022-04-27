@@ -1,4 +1,16 @@
 bin/rehex
+lib/rehex/binary-template/executor.lua
+lib/rehex/binary-template/executor/arrayvalue.lua
+lib/rehex/binary-template/executor/filearrayvalue.lua
+lib/rehex/binary-template/executor/filevalue.lua
+lib/rehex/binary-template/executor/immediatevalue.lua
+lib/rehex/binary-template/executor/plainvalue.lua
+lib/rehex/binary-template/executor/structvalue.lua
+lib/rehex/binary-template/lulpeg/lulpeg.lua
+lib/rehex/binary-template/parser.lua
+lib/rehex/binary-template/plugin.lua
+lib/rehex/binary-template/preprocessor.lua
+lib/rehex/binary-template/templates/riff.bt
 lib/rehex/exe/bitops52.lua
 lib/rehex/exe/class.lua
 lib/rehex/exe/document_stream.lua
@@ -17,3 +29,4 @@ share/icons/hicolor/32x32/apps/rehex.png
 share/icons/hicolor/48x48/apps/rehex.png
 share/icons/hicolor/512x512/apps/rehex.png
 share/icons/hicolor/64x64/apps/rehex.png
+%%DATADIR%%/rehex.htb

@@ -1,27 +1,31 @@
---- Makefile.orig	2021-05-03 12:57:27 UTC
+--- Makefile.orig	2022-04-23 13:09:38 UTC
 +++ Makefile
-@@ -388,18 +388,20 @@ PLUGINS_INSTALL := \
+@@ -503,17 +503,21 @@ PLUGINS := \
  
  .PHONY: install
- install: $(EXE)
+ install: $(EXE) help/rehex.htb
 -	install -D -m 0755 $(EXE) $(DESTDIR)$(bindir)/$(EXE)
-+	$(BSD_INSTALL_PROGRAM) $(EXE) $(DESTDIR)$(bindir)/$(EXE)
++	install -m 0755 $(STRIP) $(EXE) $(DESTDIR)$(bindir)/$(EXE)
  	
  	for s in 16 32 48 64 128 256 512; \
  	do \
 -		install -D -m 0644 res/icon$${s}.png $(DESTDIR)$(datarootdir)/icons/hicolor/$${s}x$${s}/apps/rehex.png; \
 +		mkdir -p $(DESTDIR)$(datarootdir)/icons/hicolor/$${s}x$${s}/apps; \
-+		$(BSD_INSTALL_DATA) res/icon$${s}.png $(DESTDIR)$(datarootdir)/icons/hicolor/$${s}x$${s}/apps/rehex.png; \
++		install -m 0644 res/icon$${s}.png $(DESTDIR)$(datarootdir)/icons/hicolor/$${s}x$${s}/apps/rehex.png; \
  	done
- 	
+-	
 -	install -D -m 0644 res/rehex.desktop $(DESTDIR)$(datarootdir)/applications/rehex.desktop
-+	$(BSD_INSTALL_DATA) res/rehex.desktop $(DESTDIR)$(datarootdir)/applications/rehex.desktop
- 	
+-	
+-	install -D -m 0644 help/rehex.htb $(DESTDIR)$(datadir)/rehex/rehex.htb
+-	
++
++	mkdir -p $(DESTDIR)$(datarootdir)/applications
++	install -m 0644 res/rehex.desktop $(DESTDIR)$(datarootdir)/applications/rehex.desktop
++
++	mkdir -p $(DESTDIR)$(datadir)/rehex
++	install -m 0644 help/rehex.htb $(DESTDIR)$(datadir)/rehex/rehex.htb
++
 +	mkdir -p $(DESTDIR)$(libdir)/rehex/exe
- 	for f in $(PLUGINS_INSTALL); \
+ 	for p in $(PLUGINS); \
  	do \
--		install -D -m 0644 plugins/$${f} $(DESTDIR)$(libdir)/rehex/$${f}; \
-+		$(BSD_INSTALL_DATA) plugins/$${f} $(DESTDIR)$(libdir)/rehex/$${f}; \
- 	done
- 
- .PHONY: uninstall
+ 		$(MAKE) -C plugins/$${p} install || exit $$?; \
