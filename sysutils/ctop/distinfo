@@ -1,5 +1,5 @@
-TIMESTAMP = 1629297172
-SHA256 (go/sysutils_ctop/ctop-v0.7.6/v0.7.6.mod) = 0b3e044c81dbc103992bb93275c929349d93d3ab677f9de5c7eef6ecf7abf9c5
-SIZE (go/sysutils_ctop/ctop-v0.7.6/v0.7.6.mod) = 864
-SHA256 (go/sysutils_ctop/ctop-v0.7.6/v0.7.6.zip) = 9f1265bfecb8d34f644b7fa1f34640a3714dfec5ad39c0f05dca313bbedbcf66
-SIZE (go/sysutils_ctop/ctop-v0.7.6/v0.7.6.zip) = 1462829
+TIMESTAMP = 1651066883
+SHA256 (go/sysutils_ctop/ctop-v0.7.7/v0.7.7.mod) = 39c979d8b0ac0517db0216a02eec736e66f46a3a3b352fdcba7136ef0a4169be
+SIZE (go/sysutils_ctop/ctop-v0.7.7/v0.7.7.mod) = 870
+SHA256 (go/sysutils_ctop/ctop-v0.7.7/v0.7.7.zip) = 0cbd35c9516edc1c267d696b1f0b442ea129aa2846bcb3f744442182c7df74ed
+SIZE (go/sysutils_ctop/ctop-v0.7.7/v0.7.7.zip) = 1460532
