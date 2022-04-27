@@ -8,6 +8,9 @@ MASTER_SITES=	http://rink.nu/downloads/projects/
 MAINTAINER=	rink@FreeBSD.org
 COMMENT=	Daemon for providing multimedia files to KiSS DP-50x players
 
+DEPRECATED=	Obsolete, target hardware was released 19 years ago
+EXPIRATION_DATE=2022-06-30
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/kissd
