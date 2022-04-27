@@ -2,7 +2,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -61,6 +61,7 @@ BUILD_DEPENDS=								\
 		epm:devel/epm						\
 		${LOCALBASE}/bin/gperf:devel/gperf			\
 		imake:devel/imake					\
+		libunwind>=20211201_1:devel/libunwind			\
 		gpatch:devel/patch					\
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends	\
 		${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
@@ -229,6 +230,13 @@ WITH=	SDK
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( \
+    (${OSVERSION} >= 1300525 && ${OSVERSION} < 1301000) || \
+    (${OSVERSION} >= 1301500 && ${OSVERSION} < 1301502) || \
+    (${OSVERSION} >= 1400051 && ${OSVERSION} < 1400057))
+BROKEN=	please update FreeBSD base system first to fix an ABI incompatibility
+.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-symbols
