@@ -1,15 +1,17 @@
 # Created by: KalleDK <plexmaintainer@k-moeller.dk>
 
 PORTNAME=	plexmediaserver
-PORTVERSION?=	1.25.9.5721
-DISTVERSIONSUFFIX?=965587f64
-PORTREVISION?=	0
+PORTVERSION?=	1.26.0.5715
+DISTVERSIONSUFFIX?=8cf78dab3
 CATEGORIES=	multimedia
 MASTER_SITES?=	https://downloads.plex.tv/plex-media-server-new/${DISTVERSION}-${DISTVERSIONSUFFIX}/freebsd/
 DISTNAME?=	PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}-FreeBSD-${ARCH}
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	b.shertenlieb@yahoo.com
 COMMENT=	Plex Media Server component
+
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	binary-only program, source code not available
 
 USES=		cpe tar:bzip2
 NO_BUILD=	yes
@@ -27,9 +29,6 @@ SUB_LIST?=	PORTNAME=${PORTNAME} DATADIR=${DATADIR} USERS=${USERS} GROUPS=${GROUP
 USERS=		plex
 GROUPS=		${USERS}
 BUNDLE_LIBS=	yes
-
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	binary-only program, source code not available
 
 OPTIONS_DEFINE=	RELAY
 OPTIONS_DEFAULT=	RELAY
