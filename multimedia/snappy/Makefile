@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	player
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Open source gstreamer media player
 
+DEPRECATED=	Deprecated upstream, please consider multimedia/mpv or multimedia/vlc
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	libclutter-gst-2.0.so:multimedia/clutter-gst \
 		libclutter-1.0.so:graphics/clutter \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3
