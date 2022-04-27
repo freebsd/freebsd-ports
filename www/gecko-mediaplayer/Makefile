@@ -12,6 +12,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia browser plugin for Gecko based browsers
 
+DEPRECATED=	Uses incompatible plugin interface NPAPI
+EXPIRATION_DATE=2022-06-30
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
