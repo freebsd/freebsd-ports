@@ -2,7 +2,7 @@
 
 PORTNAME=	mpd
 DISTVERSION=	5.9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Mpd5/Mpd-${PORTVERSION}
 PKGNAMESUFFIX=	5
@@ -41,7 +41,13 @@ CONFIGURE_ENV+=	USE_NG_IPACCT=no
 MAKE_ARGS+=	USE_NG_IPACCT=no
 .endif
 
-.if ! ${PORT_OPTIONS:MRADIUS}
+.if ${PORT_OPTIONS:MRADIUS}
+PLIST_FILES=	${DATADIR}/dictionary.mpd
+
+post-install:
+		${MKDIR} ${STAGEDIR}${DATADIR}
+		${INSTALL_DATA} ${WRKSRC}/conf/dictionary.mpd ${STAGEDIR}${DATADIR}
+.else
 CONFIGURE_ENV+=	USE_RADIUS=no
 MAKE_ARGS+=	USE_RADIUS=no
 .endif
@@ -50,7 +56,7 @@ USE_RC_SUBR=	mpd5
 CONFSUF=	conf secret script
 DOCSDIR=	${PREFIX}/share/doc/mpd5
 PORTDOCS=	README mpd*
-PLIST_FILES=	${CONFSUF:C|(.*)|"@sample etc/mpd5/mpd.\1.sample"|} \
+PLIST_FILES+=	${CONFSUF:C|(.*)|"@sample etc/mpd5/mpd.\1.sample"|} \
 		sbin/mpd5
 
 .if !defined(WITHOUT_MAN)

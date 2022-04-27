@@ -1,0 +1,15 @@
+Index: pppoe.c
+===================================================================
+--- src/pppoe.c	(revision 2430)
++++ src/pppoe.c	(working copy)
+@@ -408,6 +408,10 @@ PppoeOpen(Link l)
+ 	    &cn, sizeof(cn)) < 0) {
+ 		Perror("[%s] PPPoE: can't connect \"%s\"->\"%s\" and \"%s\"->\"%s\"",
+     		    l->name, path, cn.ourhook, cn.path, cn.peerhook);
++		if (errno == ENOENT) {
++		    PppoeReleaseNode(l);
++		    goto fail;
++		}
+ 		goto fail2;
+ 	}
+ 	
