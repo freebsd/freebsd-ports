@@ -13,13 +13,16 @@ COMMENT=	Signing utility for UEFI secure boot
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintaned since 2016, very much out of date, does not build with GCC 11 (PR \#263544)
+EXPIRATION_DATE=	2022-07-01
+
 LIB_DEPENDS=	libefivar.so.0:devel/efivar \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
 		libpopt.so:devel/popt \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USE_GCC=	yes
+USE_GCC=	10
 USE_GITHUB=	yes
 GH_ACCOUNT=	rhinstaller
 
