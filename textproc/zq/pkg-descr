@@ -1,0 +1,6 @@
+zq is a command-line tool that uses the Zed language for pipeline-style search
+and analytics. zq can query a variety of data formats in files, over HTTP, or
+in S3 storage. It is particularly fast when operating on data in the Zed-native
+ZNG format.
+
+WWW: https://zed.brimdata.io/

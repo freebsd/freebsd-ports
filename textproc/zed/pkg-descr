@@ -1,0 +1,7 @@
+zed is a command-line tool to manage and query Zed data lakes. You can import
+data from a variety of formats and zed will automatically commit the data in
+the Zed data model's super-structured format, providing full fidelity of the
+original format and the ability to reconstruct the original data without loss
+of information.
+
+WWW: https://zed.brimdata.io/

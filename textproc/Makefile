@@ -2021,7 +2021,9 @@
     SUBDIR += yi-hunspell
     SUBDIR += yodl
     SUBDIR += yq
+    SUBDIR += zed
     SUBDIR += zenxml
+    SUBDIR += zq
     SUBDIR += zorba
     SUBDIR += zu-aspell
     SUBDIR += zu-hunspell
