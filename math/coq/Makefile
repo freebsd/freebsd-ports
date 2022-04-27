@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=	fails to compile: Fatal error: exception Invalid_argument("index out of bounds")
 BROKEN_armv7=	fails to compile: Fatal error: exception Invalid_argument("index out of bounds")
-BROKEN_powerpc=	fails to link
 
 BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
 		ocamlfind:devel/ocaml-findlib \
