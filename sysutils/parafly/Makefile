@@ -21,9 +21,7 @@ LDFLAGS+=	-fopenmp
 
 PLIST_FILES=	bin/ParaFly
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
+.if !exists(/usr/include/omp.h)
 USES+=		compiler:gcc-c++11-lib
 .endif
 
