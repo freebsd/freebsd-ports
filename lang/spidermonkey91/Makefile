@@ -55,6 +55,8 @@ PLIST_SUB=	SP_VER=${SP_VER}
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.elif ${ARCH} == powerpc
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-config_makefiles_rust.mk
 .endif
 
 # Require newer Clang than what's in base system unless user opted out
