@@ -12,12 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		fonts zip
 
-PORTSCOUT=	site:https://github.com/FortAwesome/Font-Awesome/releases
-
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-SUB_FILES=	pkg-message
+PORTSCOUT=	site:https://github.com/FortAwesome/Font-Awesome/releases
 
 PLIST_FILES=	${FONTSDIR}/Font\ Awesome\ 6\ Brands-Regular-400.otf \
 		${FONTSDIR}/Font\ Awesome\ 6\ Free-Regular-400.otf \
