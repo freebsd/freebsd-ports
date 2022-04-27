@@ -13,6 +13,10 @@ COMMENT=	Extract web streams and pipe them into video player of choice
 LICENSE=	BSD2CLAUSE MIT APACHE20
 LICENSE_COMB=	multi
 
+BROKEN=		Doesn't work, multiple reports upstream
+DEPRECATED=	Abandoned upstream, please consider using www/yt-dlp or multimedia/streamlink
+EXPIRATION_DATE=2022-06-30
+
 RUN_DEPENDS=	rtmpdump:multimedia/rtmpdump \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
