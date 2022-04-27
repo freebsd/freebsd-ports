@@ -559,10 +559,10 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/qmldesigner/newprojectdialog/image/style-universal_system@2x.png
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/Details.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/DialogValues.qml
-%%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/NewProjectView.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/PopupDialog.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/PopupDialogButton.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/PopupDialogButtonBox.qml
+%%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/PresetView.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/Styles.qml
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/NewProjectDialog/qmldir
 %%DATADIR%%/qmldesigner/newprojectdialog/imports/ProjectType/DefaultProject.qml
@@ -684,6 +684,7 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/TextInputSpecifics.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/TextSpecifics.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/Window/WindowSpecifics.qml
+%%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/WindowSpecifics.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/emptyPane.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick/project.qmlproject
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/QtQuick3D/Object3DPane.qml
@@ -831,6 +832,7 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/qmldesigner/qt4mcu/qul-18.qml
 %%DATADIR%%/qmldesigner/qt4mcu/qul-19.qml
 %%DATADIR%%/qmldesigner/qt4mcu/qul-20.qml
+%%DATADIR%%/qmldesigner/qt4mcu/qul-21.qml
 %%DATADIR%%/qmldesigner/statesEditorQmlSources/StatesDelegate.qml
 %%DATADIR%%/qmldesigner/statesEditorQmlSources/StatesList.qml
 %%DATADIR%%/qmldesigner/statesEditorQmlSources/images/checkers.png
