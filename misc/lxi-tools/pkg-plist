@@ -1,0 +1,9 @@
+bin/lxi
+%%BASH%%etc/bash_completion.d/lxi
+%%BASH%%etc/bash_completion.d/lxi.snap
+man/man1/lxi.1.gz
+%%GUI%%share/applications/io.github.lxi-tools.lxi-gui.desktop
+%%GUI%%share/glib-2.0/schemas/io.github.lxi-tools.lxi-gui.gschema.xml
+%%GUI%%share/icons/hicolor/scalable/apps/io.github.lxi-tools.lxi-gui.svg
+%%GUI%%share/icons/hicolor/symbolic/apps/io.github.lxi-tools.lxi-gui-symbolic.svg
+%%GUI%%share/metainfo/io.github.lxi-tools.lxi-gui.appdata.xml

@@ -1,7 +1,6 @@
 PORTNAME=	lxi-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21
-PORTREVISION=	1
+DISTVERSION=	2.1
 CATEGORIES=	misc
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -12,33 +11,22 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblxi.so:misc/liblxi
 
-USES=		autoreconf libtool localbase lua:52 pkgconfig readline
+USES=		meson lua:53 pkgconfig readline
 USE_GITHUB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static \
-		--with-bash-completion-dir=${PREFIX}/etc/bash_completion.d
 
-PORTDOCS=	README
+PORTDOCS=	README.md
 
-PLIST_FILES=	bin/lxi \
-		etc/bash_completion.d/lxi \
-		etc/bash_completion.d/lxi.snap \
-		man/man1/lxi.1.gz
+OPTIONS_DEFINE=	BASH DOCS GUI
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	DOCS GUI
+BASH_MESON_ON=	-Dbashcompletiondir=${PREFIX}/etc/bash_completion.d
+BASH_MESON_OFF=	-Dbashcompletiondir=no
 
-GUI_USES=		gl qmake:no_env qt:5
-GUI_USE=		qt=core,gui,charts,widgets,buildtools_build,qmake_build gl=gl
-GUI_CONFIGURE_ENABLE=	lxi-gui
-GUI_CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${QT_LIBDIR}"
+GUI_USES=	gettext-tools gnome python:3.6+,build
+GUI_USE=	gnome=cairo,gdkpixbuf2,glib20,gtk40,gtksourceview5,libadwaita
+GUI_MESON_ON=	-Dgui=true
+GUI_BINARY_ALIAS=	python3=${PYTHON_CMD}
 GUI_PLIST_FILES=	bin/lxi-gui
-
-post-patch:
-	${REINPLACE_CMD} -e '/\$$(QTCHOOSER)/s/-qt=5//' \
-		${WRKSRC}/src/gui/lxi-gui/Makefile.am
-
-post-install-GUI-on:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lxi-gui
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
