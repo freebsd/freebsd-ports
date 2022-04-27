@@ -1,8 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	lcalc
-PORTVERSION=	1.23
-PORTREVISION=	2
+PORTVERSION=	2.0.5
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/misc/sage/spkg/upstream/lcalc/
 
@@ -11,6 +10,7 @@ COMMENT=	L-function c++ class library and the CLI program lcalc
 
 LICENSE=	GPLv2+
 
+BUILD_DEPENDS=	gengetopt:devel/gengetopt
 LIB_DEPENDS=	libgmp.so:math/gmp	\
 		libmpfr.so:math/mpfr	\
 		libpari.so:math/pari
@@ -20,17 +20,20 @@ LIB_DEPENDS=	libgmp.so:math/gmp	\
 #GH_PROJECT=	l-calc
 #GH_TAGNAME=	4c57471
 
-USES=		compiler:c++11-lang gmake localbase tar:bz2
+USES=		compiler:c++11-lang gmake libtool localbase tar:xz
 
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
-WRKSRC_SUBDIR=	src
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-pari
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
-MAKE_ENV=	MAKE=${GMAKE} STAGEDIR=${STAGEDIR}
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-stage:
-	cd ${STAGEDIR}${PREFIX}/lib && ${MV} libLfunction.so libLfunction.so.0
-	${LN} -sf libLfunction.so.0 ${STAGEDIR}${PREFIX}/lib/libLfunction.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+pre-configure:
+.for dir in . data
+	${REINPLACE_CMD} -e 's|@docdir@/examples|${EXAMPLESDIR}|'	\
+		${WRKSRC}/doc/examples/${dir}/Makefile.in
+.endfor
 
 .include <bsd.port.mk>
