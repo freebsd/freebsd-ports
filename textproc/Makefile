@@ -2023,10 +2023,10 @@
     SUBDIR += yq
     SUBDIR += zed
     SUBDIR += zenxml
-    SUBDIR += zq
     SUBDIR += zorba
     SUBDIR += zu-aspell
     SUBDIR += zu-hunspell
     SUBDIR += zxing-cpp
+    SUBDIR += zq
 
 .include <bsd.port.subdir.mk>
