@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	14.0.1
+DISTVERSION=	14.0.2
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -66,6 +66,11 @@ CMAKE_ARGS=	-DLLVM_BUILD_LLVM_DYLIB=ON -DLLVM_LINK_LLVM_DYLIB=ON
 CMAKE_ARGS+=	-DLLVM_ENABLE_RTTI=ON
 CMAKE_ARGS+=	-DLLVM_DEFAULT_TARGET_TRIPLE=${CONFIGURE_TARGET}
 CMAKE_ARGS+=	-DLLVM_HOST_TRIPLE=${CONFIGURE_TARGET}
+.if ${DISTVERSION} == 14.0.2
+CMAKE_ARGS+=	-DLLVM_VERSION_PATCH=2
+.else
+.error update the LLVM_VERSION_PATCH hack.
+.endif
 # Following commit https://github.com/kitware/cmake/commit/956054
 # we need to either change the whole man-shuffle below, or simply
 # redefine CMAKE_INSTALL_MANDIR
