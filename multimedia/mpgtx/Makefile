@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command line MPEG audio/video/system file toolbox
 
+DEPRECATED=	Obsolete, please consider using multimedia/ffmpeg
+EXPIRATION_DATE=2022-06-30
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 ALL_TARGET=	default
