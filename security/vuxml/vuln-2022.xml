@@ -1,3 +1,48 @@
+  <vuln vid="cc42db1c-c65f-11ec-ad96-0800270512f4">
+    <topic>redis -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>6.2.7</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><lt>6.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Aviv Yahav reports:</p>
+	<blockquote cite="https://groups.google.com/g/redis-db/c/7iWUlwtoDqU">
+	  <dl>
+	    <dt>CVE-2022-24735</dt>
+	    <dd>
+	      By exploiting weaknesses in the Lua script execution
+	      environment, an attacker with access to Redis can inject
+	      Lua code that will execute with the (potentially higher)
+	      privileges of another Redis user.
+	    </dd>
+	    <dt>CVE-2022-24736</dt>
+	    <dd>
+	      An attacker attempting to load a specially crafted Lua
+	      script can cause NULL pointer dereference which will
+	      result with a crash of the redis-server process.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24735</cvename>
+      <cvename>CVE-2022-24736</cvename>
+      <url>https://groups.google.com/g/redis-db/c/7iWUlwtoDqU</url>
+    </references>
+    <dates>
+      <discovery>2022-04-27</discovery>
+      <entry>2022-04-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="17a30a24-c579-11ec-bbbd-0800270512f4">
     <topic>eb -- Potential buffer overrun vulnerability</topic>
     <affects>
