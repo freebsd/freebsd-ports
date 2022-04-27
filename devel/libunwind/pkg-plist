@@ -4,7 +4,6 @@ include/libunwind-dynamic.h
 include/libunwind-ptrace.h
 include/libunwind-%%ARCH%%.h
 include/libunwind.h
-include/unwind.h
 %%COREDUMP%%lib/libunwind-coredump.a
 %%COREDUMP%%lib/libunwind-coredump.so
 %%COREDUMP%%lib/libunwind-coredump.so.0
