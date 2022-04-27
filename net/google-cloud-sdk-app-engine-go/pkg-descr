@@ -1,7 +1,0 @@
-Google Cloud SDK contains tools and libraries that enable you to easily create
-and manage resources on Google Cloud Platform, including App Engine, Compute
-Engine, Cloud Storage, BigQuery, Cloud SQL, and Cloud DNS.
-
-This port installs Google Cloud SDK "App Engine Go Extensions" component.
-
-WWW: https://cloud.google.com/sdk/
