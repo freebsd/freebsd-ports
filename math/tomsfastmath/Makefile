@@ -10,8 +10,6 @@ COMMENT=	Portable fixed precision math library for fast exponentiations
 LICENSE=	PD WTFPL
 LICENSE_COMB=	dual
 
-BROKEN_powerpc=	internal compiler error at src/mul/fp_mul_comba_48.c:398
-
 USES=		compiler:features gmake tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	libtom
