@@ -12,8 +12,6 @@ COMMENT=	Binary file viewer and editor
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc=		Does not compile
-BROKEN_sparc64=		Does not compile
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	no targets defined in Makefile
 
