@@ -15,15 +15,12 @@ GH_ACCOUNT=	ssb22
 GH_PROJECT=	PrimerPooler
 
 INSTALL_TARGET=	install-strip
-CFLAGS+=	-fopenmp
 
 WRKSRC_SUBDIR=	pooler
 PLIST_FILES=	bin/pooler man/man1/pooler.1.gz share/applications/pooler.desktop
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
-USES+=		compiler:gcc-c++11-lib
+.if exists(/usr/include/omp.h)
+CFLAGS+=	-fopenmp
 .endif
 
 .include <bsd.port.mk>
