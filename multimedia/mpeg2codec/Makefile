@@ -13,6 +13,9 @@ DISTNAME=	mpeg2vidcodec_v12
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 Encoder and Decoder
 
+DEPRECATED=	Obsolete, please consider using multimedia/ffmpeg
+EXPIRATION_DATE=2022-06-30
+
 OPTIONS_DEFINE=	X11 DOCS
 OPTIONS_DEFAULT=	X11
 
