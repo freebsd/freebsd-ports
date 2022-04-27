@@ -64,8 +64,9 @@ LIB_DEPENDS+=	libqtcurve-utils.so:x11-themes/qtcurve-utils
 .if ${QTCURVE_SLAVE} == "gtk2"
 PKGNAMEPREFIX=	gtk2-
 PKGNAMESUFFIX=	-theme
-USES+=		gettext-runtime gnome kde:5
+USES+=		gettext-runtime gnome kde:5 qt:5
 USE_KDE=	i18n_build
+USE_QT+=	buildtools_build qmake_build
 USE_GNOME=	cairo gdkpixbuf2 gtk20 pango
 USE_LDCONFIG=	yes
 
