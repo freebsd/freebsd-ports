@@ -113,10 +113,6 @@ APU_CONF_ENV+=	${CONFIGURE_ENV:O:u} CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${AP
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc || ${ARCH} == powerpcspe
-CONFIGURE_ENV+=	ap_cv_atomic_builtins=no
-.endif
-
 .if ${PORT_OPTIONS:MSSL} || ${PORT_OPTIONS:MNSS}
 APU_CONF_ARGS+=	--with-crypto
 .else
