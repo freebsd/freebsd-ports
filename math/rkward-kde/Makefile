@@ -1,8 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	rkward
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.3
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION:C/b//}/src
 PKGNAMESUFFIX=	-kde
@@ -13,19 +12,24 @@ COMMENT=	IDE/GUI for the R-project
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libR.so:math/R
+RUN_DEPENDS=	kbibtex:databases/kbibtex	\
+		${LR_MOD_DIR}/R2HTML/INDEX:textproc/R-cran-R2HTML	\
+		${LR_MOD_DIR}/rmarkdown/INDEX:textproc/R-cran-rmarkdown
 TEST_DEPENDS=	${LR_MOD_DIR}/FAdist/INDEX:science/R-cran-FAdist
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext fortran \
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext fortran	\
 		kde:5 php:cli qt:5 shared-mime-info xorg
-USE_QT=		buildtools concurrent core dbus gui network printsupport qmake script webkit	\
+USE_QT=		buildtools concurrent core dbus declarative gui location	\
+		network printsupport qmake script webchannel webengine webkit	\
 		widgets xml
 USE_XORG=	x11
-USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash	\
-		doctools ecm i18n itemviews jobwidgets kate_run kdewebkit kio		\
-		notifications parts service solid sonnet texteditor textwidgets		\
-		widgetsaddons windowsystem xmlgui
+USE_KDE=	archive auth bookmarks codecs completion config configwidgets coreaddons\
+		crash doctools ecm i18n itemviews jobwidgets kate_run kdewebkit kio	\
+		notifications parts service solid sonnet syntaxhighlighting texteditor	\
+		textwidgets widgetsaddons windowsystem xmlgui
 
 CFLAGS+=	-I${LOCALBASE}/include
+TEST_TARGET=	plugintests
 
 LR_MOD_DIR=	${LOCALBASE}/lib/R/library
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
@@ -39,14 +43,14 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRECDEP}
-RUN_DEPENDS+=	${LR_MOD_DIR}/R2HTML/INDEX:textproc/R-cran-R2HTML	\
-		${LR_MOD_DIR}/XML/INDEX:textproc/R-cran-XML		\
+RUN_DEPENDS+=	${LR_MOD_DIR}/XML/INDEX:textproc/R-cran-XML		\
 		${LR_MOD_DIR}/gdata/INDEX:devel/R-cran-gdata		\
 		${LR_MOD_DIR}/mvtnorm/INDEX:math/R-cran-mvtnorm		\
 		${LR_MOD_DIR}/nortest/INDEX:math/R-cran-nortest		\
 		${LR_MOD_DIR}/outliers/INDEX:math/R-cran-outliers	\
 		${LR_MOD_DIR}/qcc/INDEX:graphics/R-cran-qcc		\
 		${LR_MOD_DIR}/tseries/INDEX:finance/R-cran-tseries	\
+		${LR_MOD_DIR}/xtable/INDEX:textproc/R-cran-xtable	\
 		${LR_MOD_DIR}/car/INDEX:math/R-cran-car
 .endif
 
