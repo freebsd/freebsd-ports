@@ -22,9 +22,7 @@ LDFLAGS+=	`pkg-config --libs GraphicsMagick++` ${LDFLAGS_${CHOSEN_COMPILER_TYPE}
 LDFLAGS_clang=	-lomp
 LDFLAGS_gcc=	-fopenmp
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == armv7 || ${ARCH} == powerpc
+.if !exists(/usr/include/omp.h)
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++17-lang
