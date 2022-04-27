@@ -1,3 +1,3 @@
-TIMESTAMP = 1646686224
-SHA256 (crowdsecurity-crowdsec-v1.3.2-v1.3.2-freebsd-wip_GH0.tar.gz) = e805f8e60213fd49fa2e0fa182d6d91591dc26f378733139bd5609b5b914d5b3
-SIZE (crowdsecurity-crowdsec-v1.3.2-v1.3.2-freebsd-wip_GH0.tar.gz) = 20005916
+TIMESTAMP = 1650916780
+SHA256 (crowdsecurity-crowdsec-v1.3.3-v1.3.3-freebsd_GH0.tar.gz) = 93fd3bc472eec8f71cfa1011dd7ecd9afe95cf4f43c209af7d122439593abee2
+SIZE (crowdsecurity-crowdsec-v1.3.3-v1.3.3-freebsd_GH0.tar.gz) = 20698372

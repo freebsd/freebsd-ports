@@ -1,5 +1,5 @@
 PORTNAME=	crowdsec
-PORTVERSION=	1.3.2	# NOTE: change BUILD_VERSION and BUILD_TAG as well
+PORTVERSION=	1.3.3	# NOTE: change BUILD_VERSION and BUILD_TAG as well
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -14,28 +14,27 @@ BUILD_DEPENDS=	git:devel/git@lite \
 		jq:textproc/jq
 
 USES=		gmake
-ALL_TARGET=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crowdsecurity
 GH_PROJECT=	crowdsec
-GH_TAGNAME=	v1.3.2-freebsd-wip
+GH_TAGNAME=	v1.3.3-freebsd
 #GH_TAGNAME is automatically set from DISTVERSION
+USE_RC_SUBR=	crowdsec
+
+MAKE_ENV=	BUILD_VERSION="v1.3.3" \
+		BUILD_TAG="02b0e19eba5ae0c45e480d4f57466e8d47addc14" \
+		DEFAULT_CONFIGDIR="${PREFIX}/etc/crowdsec" \
+		DEFAULT_DATADIR="/var/db/crowdsec/data"
+ALL_TARGET=	build
+
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
 
 OPTIONS_DEFINE=	FIREWALL_BOUNCER
 OPTIONS_DEFAULT=
 
 FIREWALL_BOUNCER_DESC=	Depend on security/crowdsec-firewall-bouncer
 FIREWALL_BOUNCER_RUN_DEPENDS=	crowdsec-firewall-bouncer>=0.0.23.r2:security/crowdsec-firewall-bouncer
-
-USE_RC_SUBR=	crowdsec
-
-SUB_FILES=	pkg-deinstall pkg-install pkg-message
-
-MAKE_ENV=	BUILD_VERSION="v1.3.2" \
-		BUILD_TAG="716251323da59f1ce04fb1fc38af0a72629b5d78" \
-		DEFAULT_CONFIGDIR="${PREFIX}/etc/crowdsec" \
-		DEFAULT_DATADIR="/var/db/crowdsec/data"
 
 PLUGIN_DIR=	${PREFIX}/lib/crowdsec/plugins
 STAGE_PLUGINS=	${STAGEDIR}${PLUGIN_DIR}
