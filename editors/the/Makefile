@@ -12,8 +12,6 @@ COMMENT=	The Hessling Editor, like the VM/CMS xedit editor
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc=	fails to configure
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rexxincdir=${LOCALBASE}/include \
 		--with-rexxlibdir=${LOCALBASE}/lib
