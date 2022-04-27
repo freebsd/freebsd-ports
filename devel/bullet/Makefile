@@ -50,9 +50,7 @@ OPTIONS_DEFINE=	DOCS
 
 PLIST_SUB=	LIB_VERSION=${PORTVERSION}
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
+.if !exists(/usr/include/omp.h)
 CMAKE_OFF+=	BULLET2_USE_OPEN_MP_MULTITHREADING
 .else
 CMAKE_ON+=	BULLET2_USE_OPEN_MP_MULTITHREADING
