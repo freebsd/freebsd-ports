@@ -12,6 +12,7 @@ include/amgcl/amg.hpp
 include/amgcl/backend/blaze.hpp
 include/amgcl/backend/block_crs.hpp
 include/amgcl/backend/builtin.hpp
+include/amgcl/backend/builtin_hybrid.hpp
 include/amgcl/backend/cuda.hpp
 include/amgcl/backend/detail/default_direct_solver.hpp
 include/amgcl/backend/detail/matrix_ops.hpp
@@ -24,6 +25,7 @@ include/amgcl/backend/vexcl.hpp
 include/amgcl/backend/vexcl_static_matrix.hpp
 include/amgcl/backend/viennacl.hpp
 include/amgcl/coarsening/aggregation.hpp
+include/amgcl/coarsening/as_scalar.hpp
 include/amgcl/coarsening/detail/galerkin.hpp
 include/amgcl/coarsening/detail/scaled_galerkin.hpp
 include/amgcl/coarsening/plain_aggregates.hpp
@@ -98,6 +100,7 @@ include/amgcl/preconditioner/dummy.hpp
 include/amgcl/preconditioner/runtime.hpp
 include/amgcl/preconditioner/schur_pressure_correction.hpp
 include/amgcl/profiler.hpp
+include/amgcl/relaxation/as_block.hpp
 include/amgcl/relaxation/as_preconditioner.hpp
 include/amgcl/relaxation/chebyshev.hpp
 include/amgcl/relaxation/cusparse_ilu0.hpp
