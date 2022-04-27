@@ -25,9 +25,7 @@ MAKE_ENV+=	BINDIR=${PREFIX}/bin \
 
 MAKE_ARGS+=	CC="${CC}"
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
+.if !exists(/usr/include/omp.h)
 USES+=		compiler:gcc-c++11-lib
 .endif
 
