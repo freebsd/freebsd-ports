@@ -1,6 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2022-04-18
-PORTREVISION=	1
+DISTVERSION=	2022-05-02
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -72,7 +71,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		itertools-0.10.3 \
 		itoa-1.0.1 \
 		jod-thread-0.1.2 \
-		kqueue-1.0.5 \
+		kqueue-1.0.4 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
 		libc-0.2.123 \
@@ -189,12 +188,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		xshell-0.2.1 \
 		xshell-macros-0.2.1
 
-# weak-dep-features stabilized in Rust 1.60.0
-CARGO_BUILD_ARGS=	-Zweak-dep-features
-CARGO_INSTALL_ARGS=	-Zweak-dep-features
 CARGO_INSTALL_PATH=	crates/rust-analyzer
-CARGO_UPDATE_ARGS=	-Zweak-dep-features
-MAKE_ENV=		RUSTC_BOOTSTRAP=1
 
 # attempts to install rustup toolchains
 NO_TEST=	yes
