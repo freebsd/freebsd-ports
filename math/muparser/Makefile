@@ -11,7 +11,7 @@ COMMENT=	Mathematical expressions parser library written in C++
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -23,12 +23,8 @@ CMAKE_OFF=	ENABLE_SAMPLES
 
 EXAMPLES_PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == armv7 || ${ARCH} == powerpc
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++11-lang
+.if !exists(/usr/include/omp.h)
+CMAKE_ARGS+=	-DENABLE_OPENMP:BOOL=OFF
 .endif
 
 post-install-EXAMPLES-on:
