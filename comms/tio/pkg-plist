@@ -1,4 +1,4 @@
 bin/tio
 man/man1/tio.1.gz
-%%BASH%%share/bash-completion/completions/tio
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%BASH%%etc/bash_completion.d/tio
+%%PORTDOCS%%%%DOCSDIR%%/README.md

@@ -1,6 +1,6 @@
 PORTNAME=	tio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.32
+DISTVERSION=	1.37
 CATEGORIES=	comms
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -9,19 +9,20 @@ COMMENT=	Simple TTY terminal I/O application
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf
-USE_GITHUB=	yes
+USES=		meson pkgconfig
 
-GNU_CONFIGURE=	yes
+USE_GITHUB=	yes
+GH_TUPLE=	benhoyt:inih:r55:inih/subprojects/libinih
 
 OPTIONS_DEFINE=	BASH DOCS
 OPTIONS_DEFAULT=	BASH
 OPTIONS_SUB=	yes
 
-BASH_CONFIGURE_WITH=	bash-completion-dir
+BASH_MESON_ON=	-Dbashcompletiondir=${PREFIX}/etc/bash_completion.d
+BASH_MESON_OFF=	-Dbashcompletiondir=no
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
