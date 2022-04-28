@@ -53,7 +53,6 @@ include/groupsock/IOHandlers.hh
 include/groupsock/NetAddress.hh
 include/groupsock/NetCommon.h
 include/groupsock/NetInterface.hh
-include/groupsock/TunnelEncaps.hh
 include/groupsock/groupsock_version.hh
 include/liveMedia/AC3AudioFileServerMediaSubsession.hh
 include/liveMedia/AC3AudioRTPSink.hh
