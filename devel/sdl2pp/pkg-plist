@@ -24,9 +24,13 @@ include/SDL2pp/Surface.hh
 include/SDL2pp/Texture.hh
 include/SDL2pp/Wav.hh
 include/SDL2pp/Window.hh
-include/SDL2pp/external/libcpp_optional.hh
 lib/libSDL2pp.so
 lib/libSDL2pp.so.8
 lib/libSDL2pp.so.8.3.0
 libdata/pkgconfig/sdl2pp.pc
-share/cmake/Modules/FindSDL2PP.cmake
+lib/cmake/SDL2pp/FindSDL2_image.cmake
+lib/cmake/SDL2pp/FindSDL2_mixer.cmake
+lib/cmake/SDL2pp/FindSDL2_ttf.cmake
+lib/cmake/SDL2pp/SDL2ppConfig.cmake
+lib/cmake/SDL2pp/SDL2ppTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SDL2pp/SDL2ppTargets.cmake
