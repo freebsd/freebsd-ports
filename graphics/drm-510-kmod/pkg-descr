@@ -1,0 +1,5 @@
+amdgpu, i915, and radeon DRM drivers modules.
+Currently corresponding to Linux 5.10 DRM.
+This version is for FreeBSD 13.1 and above.
+
+WWW: https://github.com/freebsd/drm-kmod/
