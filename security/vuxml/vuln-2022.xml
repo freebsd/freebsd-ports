@@ -1,3 +1,80 @@
+  <vuln vid="26f2123b-c6c6-11ec-b66f-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>101.0.4951.41</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/04/stable-channel-update-for-desktop_26.html">
+	  <p>This release contains 30 security fixes, including:</p>
+	  <ul>
+	    <li>[1313905] High CVE-2022-1477: Use after free in Vulkan. Reported by SeongHwan Park (SeHwa) on 2022-04-06</li>
+	    <li>[1299261] High CVE-2022-1478: Use after free in SwiftShader. Reported by SeongHwan Park (SeHwa) on 2022-02-20</li>
+	    <li>[1305190] High CVE-2022-1479: Use after free in ANGLE. Reported by Jeonghoon Shin of Theori on 2022-03-10</li>
+	    <li>[1307223] High CVE-2022-1480: Use after free in Device API. Reported by @uwu7586 on 2022-03-17</li>
+	    <li>[1302949] High CVE-2022-1481: Use after free in Sharing. Reported by Weipeng Jiang (@Krace) and Guang Gong of 360 Vulnerability Research Institute on 2022-03-04</li>
+	    <li>[1304987] High CVE-2022-1482: Inappropriate implementation in WebGL. Reported by Christoph Diehl, Microsoft on 2022-03-10</li>
+	    <li>[1314754] High CVE-2022-1483: Heap buffer overflow in WebGPU. Reported by Mark Brand of Google Project Zero on 2022-04-08</li>
+	    <li>[1297429] Medium CVE-2022-1484: Heap buffer overflow in Web UI Settings. Reported by Chaoyuan Peng (@ret2happy) on 2022-02-15</li>
+	    <li>[1299743] Medium CVE-2022-1485: Use after free in File System API. Reported by Anonymous on 2022-02-22</li>
+	    <li>[1314616] Medium CVE-2022-1486: Type Confusion in V8. Reported by Brendon Tiszka on 2022-04-08</li>
+	    <li>[1304368] Medium CVE-2022-1487: Use after free in Ozone. Reported by Sri on 2022-03-09</li>
+	    <li>[1302959] Medium CVE-2022-1488: Inappropriate implementation in Extensions API. Reported by Thomas Beverley from Wavebox.io on 2022-03-04</li>
+	    <li>[1300561] Medium CVE-2022-1489: Out of bounds memory access in UI Shelf. Reported by Khalil Zhani on 2022-02-25</li>
+	    <li>[1301840] Medium CVE-2022-1490: Use after free in Browser Switcher. Reported by raven at KunLun lab on 2022-03-01</li>
+	    <li>[1305706] Medium CVE-2022-1491: Use after free in Bookmarks. Reported by raven at KunLun lab on 2022-03-12</li>
+	    <li>[1315040] Medium CVE-2022-1492: Insufficient data validation in Blink Editing. Reported by Michal Bentkowski of Securitum on 2022-04-11</li>
+	    <li>[1275414] Medium CVE-2022-1493: Use after free in Dev Tools. Reported by Zhihua Yao of KunLun Lab on 2021-12-01</li>
+	    <li>[1298122] Medium CVE-2022-1494: Insufficient data validation in Trusted Types. Reported by Masato Kinugawa on 2022-02-17</li>
+	    <li>[1301180] Medium CVE-2022-1495: Incorrect security UI in Downloads. Reported by Umar Farooq on 2022-02-28</li>
+	    <li>[1306391] Medium CVE-2022-1496: Use after free in File Manager. Reported by Zhiyi Zhang and Zhunki from Codesafe Team of Legendsec at Qi'anxin Group on 2022-03-15</li>
+	    <li>[1264543] Medium CVE-2022-1497: Inappropriate implementation in Input. Reported by Abdulrahman Alqabandi, Microsoft Browser Vulnerability Research on 2021-10-29</li>
+	    <li>[1297138] Low CVE-2022-1498: Inappropriate implementation in HTML Parser. Reported by SeungJu Oh (@real_as3617) on 2022-02-14</li>
+	    <li>[1000408] Low CVE-2022-1499: Inappropriate implementation in WebAuthentication. Reported by Jun Kokatsu, Microsoft Browser Vulnerability Research on 2019-09-04</li>
+	    <li>[1223475] Low CVE-2022-1500: Insufficient data validation in Dev Tools. Reported by Hoang Nguyen on 2021-06-25</li>
+	    <li>[1293191] Low CVE-2022-1501: Inappropriate implementation in iframe. Reported by Oriol Brufau on 2022-02-02</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1477</cvename>
+      <cvename>CVE-2022-1478</cvename>
+      <cvename>CVE-2022-1479</cvename>
+      <cvename>CVE-2022-1480</cvename>
+      <cvename>CVE-2022-1481</cvename>
+      <cvename>CVE-2022-1482</cvename>
+      <cvename>CVE-2022-1483</cvename>
+      <cvename>CVE-2022-1484</cvename>
+      <cvename>CVE-2022-1485</cvename>
+      <cvename>CVE-2022-1486</cvename>
+      <cvename>CVE-2022-1487</cvename>
+      <cvename>CVE-2022-1488</cvename>
+      <cvename>CVE-2022-1489</cvename>
+      <cvename>CVE-2022-1490</cvename>
+      <cvename>CVE-2022-1491</cvename>
+      <cvename>CVE-2022-1492</cvename>
+      <cvename>CVE-2022-1493</cvename>
+      <cvename>CVE-2022-1494</cvename>
+      <cvename>CVE-2022-1495</cvename>
+      <cvename>CVE-2022-1496</cvename>
+      <cvename>CVE-2022-1497</cvename>
+      <cvename>CVE-2022-1498</cvename>
+      <cvename>CVE-2022-1499</cvename>
+      <cvename>CVE-2022-1500</cvename>
+      <cvename>CVE-2022-1501</cvename>
+      <url>https://chromereleases.googleblog.com/2022/04/stable-channel-update-for-desktop_26.html</url>
+    </references>
+    <dates>
+      <discovery>2022-04-26</discovery>
+      <entry>2022-04-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cc42db1c-c65f-11ec-ad96-0800270512f4">
     <topic>redis -- Multiple vulnerabilities</topic>
     <affects>
