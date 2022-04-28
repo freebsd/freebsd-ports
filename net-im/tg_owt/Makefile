@@ -1,7 +1,7 @@
 # Created by: Henry Hu <henry.hu.sh@gmail.com>
 
 PORTNAME=	tg_owt
-PORTVERSION=	0.0.20220225
+PORTVERSION=	0.0.20220413
 CATEGORIES=	net-im
 
 MAINTAINER=	glebius@FreeBSD.org
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat \
 		yasm:devel/yasm
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
-		libepoxy.so:graphics/libepoxy \
 		libevent.so:devel/libevent \
 		libjpeg.so:graphics/jpeg-turbo \
 		libopus.so:audio/opus \
@@ -25,7 +24,7 @@ USE_XORG=	x11 xcomposite xdamage xrender xrandr xtst
 USE_GL=		gbm
 USE_GITHUB=	yes
 GH_ACCOUNT=	desktop-app
-GH_TAGNAME=	a264028
+GH_TAGNAME=	63a934d
 
 # libyuv cloned from https://chromium.googlesource.com/libyuv/libyuv
 # when updating port check if hash tag in the submodule was updated
