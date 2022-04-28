@@ -1,6 +1,10 @@
 PORTNAME=	kcalutils
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
+
+PATCH_SITES=	https://invent.kde.org/pim/kcalutils/-/commit/
+PATCHFILES=	494331a28bb722b4ab4c38a2520f305b8f7ad8fa.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE utility and user interface functions for accessing calendar

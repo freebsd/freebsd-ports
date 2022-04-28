@@ -1,3 +1,5 @@
-TIMESTAMP = 1650101848
+TIMESTAMP = 1651127363
 SHA256 (KDE/release-service/22.04.0/kcalutils-22.04.0.tar.xz) = 478237de88282aa074ff6d83d7af7b8e0e9f24e6bad2c1709215455f09abc972
 SIZE (KDE/release-service/22.04.0/kcalutils-22.04.0.tar.xz) = 340596
+SHA256 (KDE/release-service/22.04.0/494331a28bb722b4ab4c38a2520f305b8f7ad8fa.diff) = cceb8b58f1a9bf9073ae1076c4a2993449744a51268d3874e0c08117dd9c5325
+SIZE (KDE/release-service/22.04.0/494331a28bb722b4ab4c38a2520f305b8f7ad8fa.diff) = 880

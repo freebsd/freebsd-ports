@@ -16,11 +16,11 @@ include/KF5/KCalUtils/kcalutils/recurrenceactions.h
 include/KF5/KCalUtils/kcalutils/stringify.h
 include/KF5/KCalUtils/kcalutils/vcaldrag.h
 include/KF5/KCalUtils/kcalutils_version.h
-lib/KTextTemplate/kcalendar_grantlee_plugin.so
 lib/cmake/KF5CalendarUtils/KF5CalendarUtilsConfig.cmake
 lib/cmake/KF5CalendarUtils/KF5CalendarUtilsConfigVersion.cmake
 lib/cmake/KF5CalendarUtils/KF5CalendarUtilsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5CalendarUtils/KF5CalendarUtilsTargets.cmake
+lib/grantlee/%%GRANTLEE_VERSION_SHORT%%/kcalendar_grantlee_plugin.so
 lib/libKF5CalendarUtils.so
 lib/libKF5CalendarUtils.so.5
 lib/libKF5CalendarUtils.so.%%KDE_APPLICATIONS_SHLIB_VER%%
