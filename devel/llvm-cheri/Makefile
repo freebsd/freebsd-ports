@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -237,6 +237,9 @@ post-install-DOCS-on:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/mlir-tblgen.1
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/man1/
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/share/man/
+
+post-install-LLD-on:
+	${LN} -s ld.lld ${STAGEDIR}${LLVM_PREFIX}/bin/ld
 
 post-install-LLDB-on:
 .if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
