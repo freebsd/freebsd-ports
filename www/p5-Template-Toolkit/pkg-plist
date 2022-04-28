@@ -29,7 +29,6 @@ bin/ttree
 %%SITE_ARCH%%/Template/Parser.pm
 %%SITE_ARCH%%/Template/Plugin.pm
 %%SITE_ARCH%%/Template/Plugin/Assert.pm
-%%SITE_ARCH%%/Template/Plugin/CGI.pm
 %%SITE_ARCH%%/Template/Plugin/Datafile.pm
 %%SITE_ARCH%%/Template/Plugin/Date.pm
 %%SITE_ARCH%%/Template/Plugin/Directory.pm
@@ -97,7 +96,6 @@ bin/ttree
 %%PERL5_MAN3%%/Template::Parser.3.gz
 %%PERL5_MAN3%%/Template::Plugin.3.gz
 %%PERL5_MAN3%%/Template::Plugin::Assert.3.gz
-%%PERL5_MAN3%%/Template::Plugin::CGI.3.gz
 %%PERL5_MAN3%%/Template::Plugin::Datafile.3.gz
 %%PERL5_MAN3%%/Template::Plugin::Date.3.gz
 %%PERL5_MAN3%%/Template::Plugin::Directory.3.gz
