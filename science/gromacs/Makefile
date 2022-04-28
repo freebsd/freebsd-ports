@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	gromacs
-DISTVERSION=	2021.5
-PORTREVISION=	2
+DISTVERSION=	2022.1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -12,12 +11,12 @@ COMMENT=	Compute molecular dynamics
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchange'
+BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchange' #`
 
 BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2
 
-USES=		cmake compiler:c++14-lang fortran gnome perl5 pkgconfig shebangfix xorg
+USES=		cmake compiler:c++17-lang fortran gnome perl5 pkgconfig shebangfix xorg
 SHEBANG_FILES=	admin/*.sh scripts/*.pl scripts/*.sh src/gromacs/selection/*.sh
 bash_CMD=	${SH}
 USE_GNOME=	libxml2
