@@ -226,6 +226,11 @@ post-patch: .SILENT
 	gsed ${REINPLACE_ARGS} -E "s,/etc/egl/egl_external_platform\.d.{$$padding},${EGL_JSON_PATH}\x00," \
 		${WRKSRC}/obj/libEGL_nvidia.so.0
 .endif
+# Unbreak the build against -Werror,-Wunused-but-set-variable CFLAGS
+.if ${NVVERSION} < 450.51
+	${REINPLACE_CMD} -e '/void nvidia_dev_dtor/,+8s,.*status.*,,' \
+		${WRKSRC}/src/${NVSRC}/nvidia_dev.c
+.endif
 # Finally, process OPTIONS
 .if ${PORT_OPTIONS:MFREEBSD_AGP}
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
