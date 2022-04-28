@@ -2,7 +2,7 @@
 
 PORTNAME=	netsurf
 PORTVERSION=	3.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

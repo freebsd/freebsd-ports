@@ -22,7 +22,7 @@
 +	res = nsgtk_builder_new_from_resname(ui_lang, &preferences_builder);
 +        if (res != NSERROR_OK) {
 +                //LANG not found, so fall back to english i guess
-+                res = nsgtk_builder_new_from_resname("enoption", &preferences_builder);
++                res = nsgtk_builder_new_from_resname("enoptions", &preferences_builder);
 +        }
 +        if (res != NSERROR_OK) {
 +                NSLOG(netsurf, INFO, "Preferences UI builder init failed");
