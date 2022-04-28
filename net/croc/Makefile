@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	9.5.3
+PORTVERSION=	9.5.4
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	net
@@ -16,17 +16,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	schollz
 GH_TUPLE=	OneOfOne:xxhash:v1.2.5:oneofone_xxhash/vendor/github.com/OneOfOne/xxhash \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
-		cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+		cpuguy83:go-md2man:v2.0.2:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:2c7772ba3064:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:de3da57026de:golang_net/vendor/golang.org/x/net \
-		golang:sys:e17cdc41300f:golang_sys/vendor/golang.org/x/sys \
-		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
+		golang:crypto:7b82a4e95df4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:2871e0cb64e4:golang_net/vendor/golang.org/x/net \
+		golang:sys:9388b58f7150:golang_sys/vendor/golang.org/x/sys \
+		golang:term:e5f449aeb171:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-		golang:time:0e9765cccd65:golang_time/vendor/golang.org/x/time \
+		golang:time:583f2d630306:golang_time/vendor/golang.org/x/time \
 		kalafut:imohash:v1.0.2:kalafut_imohash/vendor/github.com/kalafut/imohash \
 		kr:pretty:v0.1.0:kr_pretty/vendor/github.com/kr/pretty \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
