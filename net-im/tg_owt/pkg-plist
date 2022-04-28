@@ -3006,7 +3006,6 @@ lib/libtg_owt.a
 @dir include/tg_owt/third_party/openh264/src/test/processing
 @dir include/tg_owt/third_party/openh264/src/testbin
 @dir include/tg_owt/third_party/pffft/patches
-@dir include/tg_owt/third_party/pipewire
 @dir include/tg_owt/third_party/usrsctp/usrsctplib/fuzzer/CORPUS_CONNECT
 @dir include/tg_owt/third_party/usrsctp/usrsctplib/fuzzer/CORPUS_FRAGMENT
 @dir include/tg_owt/third_party/usrsctp/usrsctplib/fuzzer/CORPUS_LISTEN
