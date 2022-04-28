@@ -1,0 +1,6 @@
+bin/qbe
+%%PORTDOCS%%%%DOCSDIR%%/abi.txt
+%%PORTDOCS%%%%DOCSDIR%%/il.txt
+%%PORTDOCS%%%%DOCSDIR%%/llvm.txt
+%%PORTDOCS%%%%DOCSDIR%%/rv64.txt
+%%PORTDOCS%%%%DOCSDIR%%/win.txt

@@ -5544,6 +5544,7 @@
     SUBDIR += pysvn
     SUBDIR += pythontidy
     SUBDIR += pytype
+    SUBDIR += qbe
     SUBDIR += qbs
     SUBDIR += qca
     SUBDIR += qconf
