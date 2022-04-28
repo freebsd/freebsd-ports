@@ -38,6 +38,9 @@ setup(
         ],
     },
     packages=[
-        'src.platformdirs',
+        'platformdirs',
     ],
+    package_dir={
+	'platformdirs': 'src/platformdirs'
+    },
 )
