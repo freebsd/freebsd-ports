@@ -16,6 +16,7 @@ include/fluent-bit/flb_config.h
 include/fluent-bit/flb_config_format.h
 include/fluent-bit/flb_config_map.h
 include/fluent-bit/flb_coro.h
+include/fluent-bit/flb_csv.h
 include/fluent-bit/flb_custom.h
 include/fluent-bit/flb_custom_plugin.h
 include/fluent-bit/flb_dlfcn_win32.h
