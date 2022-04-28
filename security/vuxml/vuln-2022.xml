@@ -1,3 +1,37 @@
+  <vuln vid="92a4d881-c6cf-11ec-a06f-d4c9ef517024">
+    <topic>cURL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.83.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cURL project reports:</p>
+	<blockquote cite="https://curl.se/docs/vuln-7.82.0.html">
+	  <ul>
+	    <li>OAUTH2 bearer bypass in connection re-use (CVE-2022-22576)</li>
+	    <li>Credential leak on redirect (CVE-2022-27774)</li>
+	    <li>Bad local IPv6 connection reuse (CVE-2022-27775)</li>
+	    <li>Auth/cookie leak on redirect (CVE-2022-27776)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-22576</cvename>
+      <cvename>CVE-2022-27774</cvename>
+      <cvename>CVE-2022-27775</cvename>
+      <cvename>CVE-2022-27776</cvename>
+      <url>https://curl.se/docs/vuln-7.82.0.html</url>
+    </references>
+    <dates>
+      <discovery>2022-04-27</discovery>
+      <entry>2022-04-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="26f2123b-c6c6-11ec-b66f-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
