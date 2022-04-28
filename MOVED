@@ -17144,3 +17144,5 @@ security/pinentry-gnome3|security/pinentry-gnome|2022-04-30|De-versioned due to 
 www/shttpd||2022-04-30|Has expired: Abandonware, last release over 12+ years ago
 mail/p5-Email-Sender-Transport-SMTPS|mail/p5-Email-Sender|2022-04-30|Has expired: Deprecated by upstream. Use Email::Sender::Transport::SMTP in mail/p5-Email-Sender instead
 net/gogoc||2022-04-30|Has expired: Services were discontinued in 2016
+graphics/drm-current-kmod||2022-05-01|Switched to a Linux version based naming scheme. Use graphics/drm-510-kmod
+graphics/drm-devel-kmod||2022-05-01|Switched to a Linux version based naming scheme. Use graphics/drm-510-kmod
