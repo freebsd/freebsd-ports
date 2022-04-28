@@ -50,6 +50,9 @@ MAKE_ARGS=	CC="${CC}" \
 		Q="" \
 		TARGET="gtk3" \
 		WARNFLAGS=""
+.if defined(WITH_DEBUG)
+MAKE_ARGS+=	STRIP="true"
+.endif
 MAKE_ENV+=	COMPONENT_TYPE="lib-shared" \
 		FLEX="${LOCALBASE}/bin/flex"
 
