@@ -1,5 +1,5 @@
 PORTNAME=	unifi7
-PORTVERSION=	7.0.23
+PORTVERSION=	7.1.61
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -11,10 +11,9 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	unifi_sysvinit_all.deb
 
 MAINTAINER=	otis@FreeBSD.org
-COMMENT=	UniFi Controller v6
+COMMENT=	UniFi Controller v7
 
-RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \
-		snappyjava>0:archivers/snappy-java
+RUN_DEPENDS=	snappyjava>0:archivers/snappy-java
 
 USES=		cpe
 
@@ -46,6 +45,13 @@ NO_WRKSUBDIR=	yes
 USERS=		unifi
 GROUPS=		unifi
 
+OPTIONS_DEFINE=	EXTERNALDB
+
+EXTERNALDB_DESC=	Use external MongoDB server
+EXTERNALDB_VARS=	PKGMESSAGE=${WRKSRC}/pkg-message.extdb \
+			SUB_FILES+=pkg-message.extdb
+EXTERNALDB_VARS_OFF=	RUN_DEPENDS+=mongodb36>0:databases/mongodb36
+
 _DIR_LIST=	conf data logs run work
 _JAX_DISTNAME=	javax.activation-api
 _JAX_VERSION=	1.2.0
@@ -63,11 +69,13 @@ do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi
 	(cd ${WRKSRC}/usr/lib/unifi && \
 		${COPYTREE_SHARE} \* ${STAGEDIR}${JAVASHAREDIR}/unifi/)
-	${LN} -sf ${PREFIX}/bin/mongod ${STAGEDIR}${JAVASHAREDIR}/unifi/bin/mongod
 # Create directories that will be writable by unifi
 .for i in data logs run work
 	${MKDIR} ${STAGEDIR}/${JAVASHAREDIR}/unifi/${i}
 .endfor
+
+do-install-EXTERNALDB-off:
+	${LN} -sf ${PREFIX}/bin/mongod ${STAGEDIR}${JAVASHAREDIR}/unifi/bin/mongod
 
 post-install:
 	@${FIND} -s ${STAGEDIR}${JAVASHAREDIR}/unifi -not -type d | \
