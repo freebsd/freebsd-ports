@@ -13,6 +13,9 @@ LICENSE_FILE_MIT=		${WRKSRC}/license.md
 LICENSE_DISTFILES_MIT=		${DISTFILES:M*protonvpn-cli*}
 LICENSE_DISTFILES_GPLv3=	${DISTFILES:M*scripts*}
 
+DEPRECATED=	This version is deprecated and unsupported upstream. The port needs an update, which would require a fair amount of effort. Use OpenVPN or Wireguard with configuration files provided by ProtonVPN instead.
+EXPIRATION_DATE=	2022-06-25
+
 RUN_DEPENDS=	bash:shells/bash \
 		openvpn:security/openvpn \
 		wget:ftp/wget \
