@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	3.7.1
+DISTVERSION=	3.7.2
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -92,8 +92,8 @@ TELEGRAM_API_ID=	601761
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_VERSION} < 120
-LLVM_VER=	12
+.if ${COMPILER_VERSION} < 130
+LLVM_VER=	13
 BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 CC=		${LOCALBASE}/bin/clang${LLVM_VER}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}

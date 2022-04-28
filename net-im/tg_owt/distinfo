@@ -1,5 +1,5 @@
-TIMESTAMP = 1650464302
-SHA256 (desktop-app-tg_owt-0.0.20220413-63a934d_GH0.tar.gz) = 0b999ca1d8a1237343fe673cc17516b5c1262b88d41f03cac3f2311b082ad88e
-SIZE (desktop-app-tg_owt-0.0.20220413-63a934d_GH0.tar.gz) = 16494315
+TIMESTAMP = 1650920381
+SHA256 (desktop-app-tg_owt-0.0.20220425-c1aea3d_GH0.tar.gz) = b3aba858d9948178f393d132121e7d18e454c7301ede4d8d4e1f7b9e4fe86a83
+SIZE (desktop-app-tg_owt-0.0.20220425-c1aea3d_GH0.tar.gz) = 16493191
 SHA256 (HenryHu-libyuv-ad89006_GH0.tar.gz) = 96fc87a2c7051d289a9dcf31c4f8100e341dda3b5499e4bf6d82369f5d18416e
 SIZE (HenryHu-libyuv-ad89006_GH0.tar.gz) = 475161
