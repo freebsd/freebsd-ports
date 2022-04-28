@@ -122,6 +122,7 @@ share/doc/janus-gateway/README.md
 %%DATADIR%%/demos/admin.js
 %%DATADIR%%/demos/audiobridgetest.html
 %%DATADIR%%/demos/audiobridgetest.js
+%%DATADIR%%/demos/background/retro.webp
 %%DATADIR%%/demos/canvas.html
 %%DATADIR%%/demos/canvas.js
 %%DATADIR%%/demos/citeus.html
@@ -166,10 +167,14 @@ share/doc/janus-gateway/README.md
 %%DATADIR%%/demos/videocalltest.js
 %%DATADIR%%/demos/videoroomtest.html
 %%DATADIR%%/demos/videoroomtest.js
+%%DATADIR%%/demos/virtualbg.html
+%%DATADIR%%/demos/virtualbg.js
 %%DATADIR%%/demos/voicemailtest.html
 %%DATADIR%%/demos/voicemailtest.js
 %%DATADIR%%/demos/vp9svctest.html
 %%DATADIR%%/demos/vp9svctest.js
+%%DATADIR%%/demos/webaudio.html
+%%DATADIR%%/demos/webaudio.js
 %%JAVASCRIPT%%%%DATADIR%%/duktape/echotest.js
 %%JAVASCRIPT%%%%DATADIR%%/duktape/janus-sdp.js
 %%DATADIR%%/javascript/janus.js
