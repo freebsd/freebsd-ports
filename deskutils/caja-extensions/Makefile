@@ -2,6 +2,7 @@
 
 PORTNAME=	caja-extensions
 PORTVERSION=	1.26.0
+PORTREVISION=	1
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -12,7 +13,7 @@ COMMENT=	Set of extensions for Caja
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgupnp-1.2.so:net/gupnp \
+LIB_DEPENDS=	libgupnp-1.2.so:net/gupnp14 \
 		libstartup-notification-1.so:x11/startup-notification \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib
