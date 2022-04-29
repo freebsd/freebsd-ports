@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	pywikibot
-DISTVERSION=	6.6.3
+DISTVERSION=	7.2.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
