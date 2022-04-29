@@ -1,11 +1,11 @@
 bin/librsb-config
 bin/rsbench
 include/blas_sparse.h
-include/librsbpp.h
 include/rsb-config.h
 include/rsb.F90
 include/rsb.h
 include/rsb.hpp
+include/rsb.mod
 include/rsb_types.h
 lib/librsb.a
 lib/librsb.so
@@ -14,6 +14,7 @@ lib/librsb.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/examples/Makefile.am
 %%PORTDOCS%%%%DOCSDIR%%/examples/assemble.cpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/autotune.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/autotune.cpp
@@ -31,7 +32,6 @@ lib/librsb.so.0.0.0
 %%PORTDOCS%%%%DOCSDIR%%/examples/hello.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/io-spblas.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/make.sh
-%%PORTDOCS%%%%DOCSDIR%%/examples/makefile.am
 %%PORTDOCS%%%%DOCSDIR%%/examples/misc.cpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/mtx2bin.cpp
 %%PORTDOCS%%%%DOCSDIR%%/examples/pd.mtx
