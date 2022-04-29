@@ -1,3 +1,33 @@
+  <vuln vid="2220827b-c732-11ec-b272-901b0e934d69">
+    <topic>hiredis -- integer/buffer overflow</topic>
+    <affects>
+      <package>
+	<name>hiredis</name>
+	<range><lt>1.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>hiredis maintainers report:</p>
+	<blockquote cite="https://github.com/redis/hiredis/security/advisories/GHSA-hfm9-39pp-55p2">
+	  <p>
+	    Hiredis is vulnurable to integer overflow if provided maliciously crafted or corrupted RESP mult-bulk protocol data.
+
+	    When parsing multi-bulk (array-like) replies, hiredis fails to check if count * sizeof(redisReply*) can be represented in SIZE_MAX. If it can not, and the calloc() call doesn't itself make this check, it would result in a short allocation and subsequent buffer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-32765</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32765</url>
+      <url>https://github.com/redis/hiredis/security/advisories/GHSA-hfm9-39pp-55p2</url>
+    </references>
+    <dates>
+      <discovery>2021-10-04</discovery>
+      <entry>2022-04-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="92a4d881-c6cf-11ec-a06f-d4c9ef517024">
     <topic>cURL -- Multiple vulnerabilities</topic>
     <affects>
