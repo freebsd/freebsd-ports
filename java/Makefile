@@ -5,6 +5,7 @@
     SUBDIR += apache-commons-cli
     SUBDIR += apache-commons-codec
     SUBDIR += apache-commons-collections
+    SUBDIR += apache-commons-collections4
     SUBDIR += apache-commons-dbcp
     SUBDIR += apache-commons-httpclient
     SUBDIR += apache-commons-lang
