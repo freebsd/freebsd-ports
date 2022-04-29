@@ -200,9 +200,9 @@ RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-${RUBY_VER}/" \
 			--docdir="${RUBY_DOCDIR}" \
 			--with-soname=ruby${RUBY_SUFFIX}
 
-CONFIGURE_TARGET?=	${ARCH}-portbld-${OPSYS:tl}${OSREL:C/\..*//}
+CONFIGURE_TARGET?=	${ARCH}-portbld-${OPSYS:tl}${OSREL}
 
-RUBY_ARCH?=		${ARCH}-${OPSYS:tl}${OSREL:C/\..*//}
+RUBY_ARCH?=		${ARCH}-${OPSYS:tl}${OSREL}
 
 _RUBY_SYSLIBDIR?=	${PREFIX}/lib
 _RUBY_SITEDIR?=		${_RUBY_SYSLIBDIR}/ruby/site_ruby
