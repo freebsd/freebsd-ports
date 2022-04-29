@@ -3,8 +3,7 @@
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.02.1+461
-PORTREVISION=	1
+DISTVERSION=	2022.02.2+485
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
