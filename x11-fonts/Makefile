@@ -192,6 +192,7 @@
     SUBDIR += nucleus
     SUBDIR += office-code-pro
     SUBDIR += ohsnap
+    SUBDIR += ohsnap-otb
     SUBDIR += oldschool-pc-fonts
     SUBDIR += open-sans
     SUBDIR += orbitron
