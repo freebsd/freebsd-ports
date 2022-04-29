@@ -5,6 +5,7 @@
     SUBDIR += R-cran-zip
     SUBDIR += advancecomp
     SUBDIR += amigadepacker
+    SUBDIR += apache-commons-compress
     SUBDIR += arc
     SUBDIR += arj
     SUBDIR += ark
