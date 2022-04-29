@@ -1,21 +1,16 @@
---- setup.py.orig	2015-04-03 14:08:45 UTC
+--- setup.py.orig	2021-03-28 15:11:23 UTC
 +++ setup.py
-@@ -45,7 +45,9 @@ lib = ("hiredis_for_hiredis_py", {
+@@ -11,9 +11,10 @@ def version():
+   return module.__version__
  
  ext = Extension("hiredis.hiredis",
-   sources=glob.glob("src/*.c"),
+-  sources=sorted(glob.glob("src/*.c") +
+-                 ["vendor/hiredis/%s.c" % src for src in ("alloc", "read", "sds")]),
 -  include_dirs=["vendor"])
++  sources=sorted(glob.glob("src/*.c")),
 +  include_dirs=["%%LOCALBASE%%/include"],
 +  library_dirs=["%%LOCALBASE%%/lib"],
-+  libraries=["hiredis"],)
++  libraries=["hiredis"])
  
  setup(
    name="hiredis",
-@@ -57,7 +59,6 @@ setup(
-   keywords=["Redis"],
-   license="BSD",
-   packages=["hiredis"],
--  libraries=[lib],
-   ext_modules=[ext],
- 
-   # Override "install_lib" command

@@ -1,7 +1,7 @@
 # Created by: Denis Generalov <gd@rambler-co.ru>
 
 PORTNAME=	hiredis
-PORTVERSION=	0.2.0
+PORTVERSION=	2.0.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
