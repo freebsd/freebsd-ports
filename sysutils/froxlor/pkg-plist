@@ -1,3 +1,5 @@
+@group %%WWWGRP%%
+@owner %%WWWOWN%%
 %%WWWDIR%%/.github/CONTRIBUTING.md
 %%WWWDIR%%/.github/FUNDING.yml
 %%WWWDIR%%/.github/ISSUE_TEMPLATE.md
@@ -1338,3 +1340,5 @@
 %%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/data/transliterator_list.php
 %%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/data/utf8_fix.php
 %%WWWDIR%%/vendor/voku/portable-utf8/src/voku/helper/data/win1252_to_utf8.php
+@group
+@owner
