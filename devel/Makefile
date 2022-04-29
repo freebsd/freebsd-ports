@@ -675,6 +675,7 @@
     SUBDIR += fatal
     SUBDIR += fbthrift
     SUBDIR += fc++
+    SUBDIR += fccf
     SUBDIR += fhist
     SUBDIR += fifechan
     SUBDIR += fire-hpp

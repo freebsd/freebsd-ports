@@ -1,0 +1,6 @@
+bin/fccf
+include/argparse/argparse.hpp
+lib/cmake/argparse/argparseConfig-version.cmake
+lib/cmake/argparse/argparseConfig.cmake
+libdata/pkgconfig/argparse.pc
+%%DATADIR%%/fccfConfigVersion.cmake

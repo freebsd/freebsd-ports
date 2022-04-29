@@ -1,0 +1,13 @@
+fccf is a command-line tool that quickly searches through C/C++ source code in
+a directory based on a search string and prints relevant code snippets that
+match the query.
+
+Highlights:
+ * Quickly identifies source files that contain a search string.
+ * For each candidate source file, builds an abstract syntax tree (AST).
+ * Visits the nodes in the AST, looking for function declarations, classes,
+   enums, variables etc., that match the user's request.
+ * Pretty-prints the identified snippet of source code to the terminal.
+ * MIT License
+
+WWW: https://github.com/p-ranav/fccf
