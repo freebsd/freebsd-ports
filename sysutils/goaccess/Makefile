@@ -1,7 +1,7 @@
 # Created by: Sofian Brabez <sbrabez@gmail.com>
 
 PORTNAME=	goaccess
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tar.goaccess.io/
 
