@@ -78,6 +78,7 @@ radeonsi_DESC=		Southern Islands and newer (implies LLVM)
 VULKAN_DESC=		Vulkan drivers
 anv_DESC=		Haswell and newer
 radv_DESC=		Southern Islands and newer (implies LLVM)
+radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 
 COINST_DESC=		Allow co-installation with another Mesa port
 COINST_MESON_ON=	-Degl-lib-suffix=${PKGNAMESUFFIX}
