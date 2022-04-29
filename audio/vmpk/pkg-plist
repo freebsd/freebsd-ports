@@ -7,7 +7,7 @@ share/icons/hicolor/32x32/apps/vmpk.png
 share/icons/hicolor/48x48/apps/vmpk.png
 share/icons/hicolor/64x64/apps/vmpk.png
 share/icons/hicolor/scalable/apps/vmpk.svgz
-share/metainfo/net.sourceforge.VMPK.appdata.xml
+share/metainfo/net.sourceforge.VMPK.metainfo.xml
 %%DATADIR%%/Serbian-cyr.xml
 %%DATADIR%%/Serbian-lat.xml
 %%DATADIR%%/azerty.xml

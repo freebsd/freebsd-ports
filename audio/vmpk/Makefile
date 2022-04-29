@@ -1,7 +1,7 @@
 PORTNAME=	vmpk
-DISTVERSION=	0.8.6
+DISTVERSION=	0.8.7
 CATEGORIES=	audio
-MASTER_SITES=	https://phoenixnap.dl.sourceforge.net/project/vmpk/vmpk/${PORTVERSION}/
+MASTER_SITES=	SF/vmpk/vmpk/${PORTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Virtual MIDI Piano Keyboard
