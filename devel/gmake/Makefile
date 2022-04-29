@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g \
 		--without-guile
 
-USES=		cpe tar:lz
+USES=		cpe localbase tar:lz
 CPE_VENDOR=	gnu
 CPE_PRODUCT=	make
 
