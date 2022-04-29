@@ -1,5 +1,5 @@
 PORTNAME=	future.apply
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -8,7 +8,7 @@ COMMENT=	Apply Function to Elements in Parallel using Futures
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-future>=1.21.0:devel/R-cran-future \
+CRAN_DEPENDS=	R-cran-future>=1.22.1:devel/R-cran-future \
 		R-cran-globals>=0.14.0:devel/R-cran-globals
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
