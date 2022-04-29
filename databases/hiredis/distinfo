@@ -1,2 +1,3 @@
-SHA256 (redis-hiredis-v0.13.3_GH0.tar.gz) = 717e6fc8dc2819bef522deaca516de9e51b9dfa68fe393b7db5c3b6079196f78
-SIZE (redis-hiredis-v0.13.3_GH0.tar.gz) = 58291
+TIMESTAMP = 1651162224
+SHA256 (redis-hiredis-v1.0.2_GH0.tar.gz) = e0ab696e2f07deb4252dda45b703d09854e53b9703c7d52182ce5a22616c3819
+SIZE (redis-hiredis-v1.0.2_GH0.tar.gz) = 98139
