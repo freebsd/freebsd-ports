@@ -77,8 +77,11 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_quick_compress.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_scale.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_shape.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_shape_updater.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_shape_utils.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_small_box_2d.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_small_box_3d.py
+%%PYTHON_SITELIBDIR%%/hoomd/hpmc/shape_move.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/tune/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/tune/boxmc_move_size.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/tune/mc_move_tune.py
@@ -592,6 +595,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeConvexPolyhedron.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeEllipsoid.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeFacetedEllipsoid.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeMoves.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapePolyhedron.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeSimplePolygon.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeSphere.h
@@ -605,6 +609,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterClustersGPUDepletants.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterMuVT.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterQuickCompress.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterShape.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/XenoCollide2D.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/XenoCollide3D.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/modules.h
@@ -615,12 +620,8 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/ActiveForceConstraintComputeGPU.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/ActiveForceConstraintComputeGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/ActiveRotationalDiffusionUpdater.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AllAnisoPairPotentials.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AllBondPotentials.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AllExternalPotentials.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AllPairPotentials.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AllSpecialPairPotentials.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AllTripletPotentials.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AlchemostatTwoStep.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AlchemyData.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AnisoPotentialPair.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AnisoPotentialPairGPU.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/AnisoPotentialPairGPU.h
@@ -647,8 +648,8 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairALJ.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairBuckingham.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairDLVO.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairDPDLJThermo.h
-%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairDPDThermo.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairDPDThermoDPD.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairDPDThermoLJ.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairDipole.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairEwald.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/EvaluatorPairExpandedLJ.h
@@ -718,6 +719,8 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialExternalGPU.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialExternalGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialPair.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialPairAlchemical.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialPairAlchemicalNormalized.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialPairDPDThermo.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialPairDPDThermoGPU.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/PotentialPairDPDThermoGPU.h
@@ -742,6 +745,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TwoStepNPTMTKGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TwoStepNVE.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TwoStepNVEGPU.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TwoStepNVTAlchemy.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TwoStepNVTMTK.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TwoStepNVTMTKGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/TwoStepRATTLEBD.h
@@ -788,6 +792,9 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/logging.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/_md%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/hoomd/md/alchemy/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/alchemy/methods.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/alchemy/pair.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/angle.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/bond.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/compute.py
@@ -821,6 +828,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/forces_and_energies.json
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_active.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_active_rotational_diffusion.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_alchemostat.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_alj.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_angle.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_aniso_pair.py
