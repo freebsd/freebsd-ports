@@ -24,10 +24,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	dssi>0:audio/dssi
 
-USES=		desktop-file-utils gettext-runtime gettext-tools gmake gnome libtool localbase pkgconfig shared-mime-info xorg
+USES=		desktop-file-utils gettext-runtime gettext-tools gmake gnome gstreamer libtool localbase pkgconfig shared-mime-info xorg
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 pango
 USE_XORG=	x11
-USE_GSTREAMER1=	yes
 USE_GCC=	yes # the project uses gnu99 extensions, clang fails even with USE_CSTD=gnu99. Suggestions how to build with clang are welcome.
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes

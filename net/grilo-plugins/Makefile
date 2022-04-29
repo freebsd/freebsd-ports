@@ -25,10 +25,10 @@ LIB_DEPENDS=	libgrilo-0.3.so:net/grilo \
 		libgmime-2.6.so:mail/gmime26 \
 		libjson-glib-1.0.so:devel/json-glib
 
-USES=		gettext gperf gnome libarchive meson pathfix pkgconfig sqlite tar:xz
+USES=		gettext gperf gnome gstreamer libarchive meson pathfix pkgconfig sqlite tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 intlhack libxml2
-USE_GSTREAMER1=	chromaprint
+USE_GSTREAMER=	chromaprint
 MESON_ARGS=	-Denable-lua-factory=no
 
 OPTIONS_SUB=			yes

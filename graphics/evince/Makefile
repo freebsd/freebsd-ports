@@ -30,10 +30,9 @@ RUN_DEPENDS=	adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
 PORTSCOUT=	limitw:1,even
 SLAVEPORT?=	no
 
-USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome libarchive \
+USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome gstreamer libarchive \
 		localbase:ldflags meson pkgconfig tar:xz xorg
 USE_GNOME=	cairo gtk30
-USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	ice
 CPE_VENDOR=	gnome

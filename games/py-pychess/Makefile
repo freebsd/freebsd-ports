@@ -19,12 +19,11 @@ COMMON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 RUN_DEPENDS=	${COMMON_DEPENDS}
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 
-USES=		desktop-file-utils display:configure gettext gnome python:3.7+
+USES=		desktop-file-utils display:configure gettext gnome gstreamer python:3.7+
 # DISPLAY must be set at all steps:
 .for t in build install stage
 _USES_$t+=	${_USES_configure}
 .endfor
-USE_GSTREAMER1=	yes
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	gtksourceview3:run glib20 gtk30 librsvg2 introspection
 PYDISTUTILS_INSTALLNOSINGLE=	nope

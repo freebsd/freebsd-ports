@@ -30,7 +30,7 @@ LIB_DEPENDS=	libaccounts-glib.so:net-im/libaccounts-glib \
 		libwebp.so:graphics/webp \
 		libxml2.so:textproc/libxml2
 
-USES=			compiler:c11 desktop-file-utils gettext gnome meson \
+USES=			compiler:c11 desktop-file-utils gettext gnome gstreamer meson \
 			ninja pkgconfig sqlite xorg
 USE_GITHUB=		yes
 GH_ACCOUNT=		elementary
@@ -38,7 +38,6 @@ GH_PROJECT=		photos
 USE_GNOME=		cairo gdkpixbuf2 gtk30 intltool
 GLIB_SCHEMAS=		io.elementary.photos-extras.gschema.xml \
 			io.elementary.photos.gschema.xml
-USE_GSTREAMER1=		yes
 USE_LDCONFIG=		yes
 USE_XORG=		x11
 MESON_BUILD_DIR=	build

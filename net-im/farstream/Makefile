@@ -13,11 +13,11 @@ LICENSE=	LGPL21+
 LIB_DEPENDS=	libnice.so:net-im/libnice
 RUN_DEPENDS=	libnice-gst1>=0:net-im/libnice-gst1
 
-USES=		gettext gmake gnome libtool localbase:ldflags pathfix \
+USES=		gettext gmake gnome gstreamer libtool localbase:ldflags pathfix \
 		pkgconfig python
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 introspection:build
-USE_GSTREAMER1=	good bad
+USE_GSTREAMER=	good bad
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -17,10 +17,10 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libhandy-1.so:x11-toolkits/libhandy
 
-USES=		cargo gettext gnome meson pkgconfig python:build shebangfix sqlite ssl
+USES=		cargo gettext gnome gstreamer meson pkgconfig python:build shebangfix sqlite ssl
 USE_GITLAB=	yes
 USE_GNOME=	gdkpixbuf2 gtk30
-USE_GSTREAMER1=	bad good libav
+USE_GSTREAMER=	bad good libav
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_COMMIT=	c86f7bfdef7692bbf20f315a90450321f6ca9ce7

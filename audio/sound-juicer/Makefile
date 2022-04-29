@@ -24,9 +24,9 @@ LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext gnome meson \
+USES=		compiler:c11 desktop-file-utils gettext gnome gstreamer meson \
 		pkgconfig tar:xz
-USE_GSTREAMER1=	cdparanoia flac good vorbis
+USE_GSTREAMER=	cdparanoia flac good vorbis
 USE_GNOME=	gtk30
 INSTALL_TARGET=	install-strip
 

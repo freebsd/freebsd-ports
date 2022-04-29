@@ -122,7 +122,8 @@ WAYLAND_LDFLAGS=		-lepoll-shim
 WAYLAND_MESON_TRUE=		wl
 WAYLAND_BROKEN=			Wayland bits compile but don't yet work at runtime
 
-GSTREAMER_USE=			GSTREAMER1=core
+GSTREAMER_USES=			gstreamer
+GSTREAMER_USE=			GSTREAMER=core
 GSTREAMER_MESON_TRUE=		gstreamer
 
 V4L_BUILD_DEPENDS=		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat

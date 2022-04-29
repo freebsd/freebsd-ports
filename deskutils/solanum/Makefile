@@ -12,10 +12,10 @@ COMMENT=	Pomodoro timer for the GNOME desktop
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cargo gettext gnome meson pkgconfig python:build shebangfix
+USES=		cargo gettext gnome gstreamer meson pkgconfig python:build shebangfix
 USE_GITLAB=	yes
 USE_GNOME=	gtk40 libadwaita
-USE_GSTREAMER1=	bad good vorbis
+USE_GSTREAMER=	bad good vorbis
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_PROJECT=	Solanum

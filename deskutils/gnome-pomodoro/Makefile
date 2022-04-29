@@ -14,7 +14,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libgom-1.0.so:databases/gom \
 		libpeas-1.0.so:devel/libpeas
 
-USES=		desktop-file-utils gettext-tools gmake gnome libtool meson \
+USES=		desktop-file-utils gettext-tools gmake gnome gstreamer libtool meson \
 		pkgconfig sqlite
 
 USE_GITHUB=	yes
@@ -23,7 +23,6 @@ USE_GITHUB=	yes
 # from vala source. USE_GCC=yes is a temporary workaround to this issue.
 USE_GCC=	yes
 USE_GNOME=	cairo glib20 gtk30 introspection
-USE_GSTREAMER1=	yes
 
 GLIB_SCHEMAS=	org.gnome.pomodoro.gschema.xml \
 		org.gnome.pomodoro.plugins.actions.gschema.xml \

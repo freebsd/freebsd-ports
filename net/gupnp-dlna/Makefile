@@ -20,9 +20,8 @@ RUN_DEPENDS=	gupnp14>=0.19.0:net/gupnp14
 CONFIGURE_ARGS=	--enable-introspection \
 		--enable-gstreamer-metadata-backend
 
-USES=		gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		gmake gnome gstreamer libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2
-USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

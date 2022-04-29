@@ -42,14 +42,13 @@ RUN_DEPENDS=	gdm:x11/gdm \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 cpe gettext gl gnome libtool localbase meson \
+USES=		compiler:c11 cpe gettext gl gnome gstreamer libtool localbase meson \
 		pathfix perl5 pkgconfig python:3.4+ shebangfix tar:xz \
 		webplugin:native xorg
 USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 gnomedesktop3 gtk40 \
 		introspection libxml2 libxslt:build
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr xtst
 USE_GL=		egl gbm
-USE_GSTREAMER1=	yes
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	src/gnome-shell-extension-tool.in src/gnome-shell-perf-tool.in

@@ -18,11 +18,11 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 	libsoup-2.4.so:devel/libsoup \
 	libtotem-plparser.so:multimedia/totem-pl-parser
 
-USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
+USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome gstreamer \
 		libtool pkgconfig sqlite tar:bz2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk30 intltool intlhack
-USE_GSTREAMER1=	yes faad flac libav mpg123 ogg speex
+USE_GSTREAMER=	faad flac libav mpg123 ogg speex
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

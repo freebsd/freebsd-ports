@@ -13,9 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsixel.so:graphics/libsixel
 
-USES=		cargo gnome
+USES=		cargo gnome gstreamer
 USE_GNOME=	glib20
-USE_GSTREAMER1=	yes
 
 CARGO_FEATURES=	bin
 CARGO_CRATES=	\

@@ -287,7 +287,7 @@ gst_gsm_LIB_DEPENDS=	libgsm.so:audio/gsm
 
 # gtk3
 gst_gtk3_USES=		gnome
-gst_gtk3_USE_GSTREAMER1=	gl
+gst_gtk3_USE_GSTREAMER=	gl
 gst_gtk3_USE_GNOME=	cairo gdkpixbuf2 gtk30
 gst_gtk3_CONFIGURE_ARGS=--enable-gtk3
 gst_gtk3_GST_PLUGIN_DIR=ext/gtk
@@ -408,7 +408,7 @@ gst_pulse_PLIST_FILES=	${GST_LIB_DIR}/libgstpulseaudio.so
 # qt
 gst_qt_USES=	compiler:c++11-lang qt:5
 gst_qt_USE_QT=	core gui declarative buildtools_build network x11extras
-gst_qt_USE_GSTREAMER1=	gl
+gst_qt_USE_GSTREAMER=	gl
 gst_qt_PLIST_FILES=	${GST_LIB_DIR}/libgstqmlgl.so
 
 # resindvd
@@ -472,7 +472,7 @@ gst_gst_v4l2_PLIST_FILES=	${GST_LIB_DIR}/libgstvideo4linux2.so
 gst_gst_v4l2_GST_PLUGIN_DIR=	sys/v4l2
 
 # vorbis
-gst_vorbis_USE_GSTREAMER1=	ogg
+gst_vorbis_USE_GSTREAMER=	ogg
 gst_vorbis_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 
 # vpx
@@ -485,7 +485,7 @@ gst_vdpau_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 gst_vdpau_GST_PLUGIN_DIR=	sys/vdpau
 
 # vulkan
-gst_vulkan_USE_GSTREAMER1=	gl
+gst_vulkan_USE_GSTREAMER=	gl
 gst_vulkan_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 				${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm \
 				${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
@@ -558,7 +558,7 @@ gst_${GST_PLUGIN}_USE_GL?=
 gst_${GST_PLUGIN}_GLIB_SCHEMAS?=
 gst_${GST_PLUGIN}_CONFIGURE_ARGS?=
 gst_${GST_PLUGIN}_USE_SDL?=
-gst_${GST_PLUGIN}_USE_GSTREAMER1?=
+gst_${GST_PLUGIN}_USE_GSTREAMER?=
 
 BUILD_DEPENDS+=	${gst_${GST_PLUGIN}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${gst_${GST_PLUGIN}_LIB_DEPENDS}
@@ -590,7 +590,7 @@ CONFIGURE_ARGS+=	${gst_${GST_PLUGIN}_CONFIGURE_ARGS}
 USE_SDL=		${gst_${GST_PLUGIN}_USE_SDL}
 .endif
 
-USE_GSTREAMER1+=	${gst_${GST_PLUGIN}_USE_GSTREAMER1} ${DIST:base=yes}
+USE_GSTREAMER+=	${gst_${GST_PLUGIN}_USE_GSTREAMER} ${DIST:base=}
 GST_PREBUILD_DIR=	${gst_${GST_PLUGIN}_GST_PREBUILD_DIR}
 GST_PLUGIN_DIR=		${gst_${GST_PLUGIN}_GST_PLUGIN_DIR}
 GST_POSTBUILD_DIR=	${gst_${GST_PLUGIN}_GST_POSTBUILD_DIR}

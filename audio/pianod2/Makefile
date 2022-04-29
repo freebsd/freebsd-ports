@@ -27,10 +27,10 @@ LIB_DEPENDS=	libao.so:audio/libao \
 	libtag.so:audio/taglib
 RUN_DEPENDS=	mksh>0:shells/mksh
 
-USES=	autoreconf compiler:c11 gettext gmake gnome pkgconfig shebangfix
+USES=	autoreconf compiler:c11 gettext gmake gnome gstreamer pkgconfig shebangfix
 
 USE_GNOME=	glib20
-USE_GSTREAMER1=	ffmpeg
+USE_GSTREAMER=	#ffmpeg
 
 USE_RC_SUBR=	pianod
 

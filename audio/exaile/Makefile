@@ -16,10 +16,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb3>0:databases/py-bsddb3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gstreamer1>0:multimedia/py-gstreamer1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR}
 
-USES=		desktop-file-utils gmake gnome python:3.6+
+USES=		desktop-file-utils gmake gnome gstreamer python:3.6+
 USE_GITHUB=	yes
 USE_GNOME=	gtk30 librsvg2 pygobject3
-USE_GSTREAMER1=	faad good
+USE_GSTREAMER=	faad good
 
 MAKE_ENV=	EPREFIX=${PREFIX} \
 		MANPREFIX=${PREFIX} \

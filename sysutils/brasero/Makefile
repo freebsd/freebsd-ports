@@ -17,14 +17,13 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 RUN_DEPENDS=	growisofs:sysutils/dvd+rw-tools \
 		cdrdao:sysutils/cdrdao
 
-USES=		desktop-file-utils gettext gmake gnome libtool pathfix \
+USES=		desktop-file-utils gettext gmake gnome gstreamer libtool pathfix \
 		pkgconfig shared-mime-info tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 intlhack \
 		introspection:build libxml2
 GNU_CONFIGURE=	yes
 USE_XORG=	sm ice
 USE_LDCONFIG=	yes
-USE_GSTREAMER1=	yes
 CONFIGURE_ARGS=	--disable-inotify --enable-search=no --enable-playlist=no \
 		--enable-introspection=yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_CAM_LIB_H=1 -Wno-error=format-nonliteral

@@ -31,12 +31,11 @@ RUN_DEPENDS=	nautilus:x11-fm/nautilus
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 gettext gl gnome localbase meson \
+USES=		compiler:c11 gettext gl gnome gstreamer localbase meson \
 		pkgconfig tar:xz xorg
 USE_CSTD=	c11
 USE_GNOME=	cairo gtksourceview4 intlhack introspection
 USE_GL=		egl
-USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xcomposite xdamage xext xi xfixes xrandr
 

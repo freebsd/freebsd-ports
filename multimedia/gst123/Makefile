@@ -12,7 +12,7 @@ COMMENT=	Command-line tool to play audio and video files
 LICENSE=	LGPL20
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang localbase gmake gnome ncurses pkgconfig \
+USES=		compiler:c++11-lang localbase gmake gnome gstreamer ncurses pkgconfig \
 		tar:bzip2
 USE_GNOME=	gtk20
 CONFIGURE_ENV=	NCURSES5_CONFIG=/usr/bin/true
@@ -20,7 +20,7 @@ LDFLAGS+=	-ltinfo -lncurses
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-USE_GSTREAMER1=	good
+USE_GSTREAMER=	good
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

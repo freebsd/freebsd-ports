@@ -17,11 +17,9 @@ LIB_DEPENDS=	libtelepathy-farstream.so:net-im/telepathy-farstream \
 		libtelepathy-glib.so:net-im/telepathy-glib
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:devel/py-dbus@${PY_FLAVOR}
 
-USES=		cmake compiler:c++11-lang gettext gnome localbase:ldflags pathfix \
+USES=		cmake compiler:c++11-lang gettext gnome gstreamer localbase:ldflags pathfix \
 		pkgconfig python:3.5+,build qt:5
 USE_GNOME=	glib20 libxslt:build
-USE_GSTREAMER1=	yes
-USE_LDCONFIG=	yes
 USE_QT=		core dbus gui network xml \
 		buildtools_build qmake_build testlib_build widgets_build
 

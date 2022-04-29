@@ -12,11 +12,11 @@ COMMENT=	GStreamer library for building a RTSP server
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		gmake gnome gstreamer libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 introspection:build
-USE_GSTREAMER1=	good bad
+USE_GSTREAMER=	good bad
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION=1.0 SOVERSION=0.1602.0

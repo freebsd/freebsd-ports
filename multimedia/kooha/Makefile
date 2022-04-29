@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libgraphene-1.0.so:graphics/graphene
 
-USES=		cargo gettext gnome meson pkgconfig python:build shebangfix
+USES=		cargo gettext gnome gstreamer meson pkgconfig python:build shebangfix
 USE_GITHUB=	yes
 USE_GNOME=	gtk40 libadwaita
-USE_GSTREAMER1=	good opus pulse vpx
+USE_GSTREAMER=	good opus pulse vpx
 GH_ACCOUNT=	SeaDve
 GH_PROJECT=	Kooha
 SHEBANG_FILES=	build-aux/meson_post_install.py

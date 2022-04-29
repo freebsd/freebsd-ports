@@ -21,10 +21,10 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libgspell-1.so:textproc/gspell \
 		libhandy-0.0.so:x11-toolkits/libhandy0
 
-USES=		cpe gettext gnome meson pkgconfig python:3.5+,build ssl tar:xz
+USES=		cpe gettext gnome gstreamer meson pkgconfig python:3.5+,build ssl tar:xz
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo gtk30 gtksourceview4
-USE_GSTREAMER1=	bad editing-services
+USE_GSTREAMER=	bad editing-services
 
 GL_HASH=	d4168ac40fd681240964705e000dd353
 BINARY_ALIAS=		python3=${PYTHON_CMD}

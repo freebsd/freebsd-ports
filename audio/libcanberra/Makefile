@@ -50,7 +50,7 @@ PLIST_SUB+=	PULSE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
-USE_GSTREAMER1=	yes
+USES+=		gstreamer
 PLIST_SUB+=	GSTREAMER=""
 .else
 CONFIGURE_ARGS+=--disable-gstreamer

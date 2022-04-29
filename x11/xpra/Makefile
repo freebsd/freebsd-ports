@@ -71,10 +71,10 @@ CUPS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pycups>1:print/py-pycups@${PY_FLAVOR}
 CUPS_VARS=			XPRA_OPTIONS+=printing
 FFMPEG_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg
 FFMPEG_VARS=			XPRA_OPTIONS+=enc_ffmpeg
+GSTREAMER_USES=			gstreamer
 GSTREAMER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR}
-GSTREAMER_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR} \
-				gstreamer1-plugins-pulse>1:audio/gstreamer1-plugins-pulse
-GSTREAMER_USE=			GSTREAMER1=flac,lame,mpg123,ogg,opus,vorbis,wavpack
+GSTREAMER_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR}
+GSTREAMER_USE=			GSTREAMER=flac,lame,mpg123,ogg,opus,pulse,vorbis,wavpack
 GSTREAMER_VARS=			XPRA_OPTIONS+=sound
 LIBYUV_LIB_DEPENDS=		libyuv.so:graphics/libyuv
 LIBYUV_VARS=			XPRA_OPTIONS+=csc_libyuv

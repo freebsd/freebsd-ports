@@ -18,10 +18,9 @@ LIB_DEPENDS=	libKTpCommonInternals.so:net-im/ktp-common-internals \
 		libtelepathy-glib.so:net-im/telepathy-glib \
 		libtelepathy-qt5-farstream.so:net-im/telepathy-qt
 
-USES=		cmake compiler:c++11-lang gettext gnome kde:5 pkgconfig \
+USES=		cmake compiler:c++11-lang gettext gnome gstreamer kde:5 pkgconfig \
 		python qt:5 tar:xz
 USE_GNOME=	glib20
-USE_GSTREAMER1=	yes
 USE_KDE=	auth codecs config configwidgets coreaddons iconthemes \
 		i18n kcmutils kdeclarative notifications package service \
 		wallet widgetsaddons xmlgui \

@@ -28,10 +28,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 BUILD_DEPENDS=	copperspice>=1.7:x11-toolkits/copperspice
 RUN_DEPENDS=	copperspice>=1.7:x11-toolkits/copperspice
 
-USES=		compiler:c++17-lang cmake dos2unix gl gnome iconv jpeg pkgconfig ssl tar:bz2 xorg
+USES=		compiler:c++17-lang cmake dos2unix gl gnome gstreamer iconv jpeg pkgconfig ssl tar:bz2 xorg
 USE_GL=		gl
 USE_GNOME=	cairo glib20 libxml2
-USE_GSTREAMER1=	yes
 USE_XORG=	ice sm x11 xau xcb xcursor xext xfixes xi xinerama xrandr xrender
 
 PLIST_FILES=	bin/kitchensink

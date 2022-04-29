@@ -13,10 +13,9 @@ LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE-LGPLv2
 
 BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
 
-USES=		cargo gnome meson pkgconfig ssl
+USES=		cargo gnome gstreamer meson pkgconfig ssl
 USE_GITLAB=	yes
 USE_GNOME=	glib20
-USE_GSTREAMER1=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	gstreamer
 GL_PROJECT=	gst-plugins-rs

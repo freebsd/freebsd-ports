@@ -38,11 +38,11 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler desktop-file-utils gettext gl gnome localbase meson \
+USES=		compiler desktop-file-utils gettext gl gnome gstreamer localbase meson \
 		pkgconfig python:3.6+ tar:xz xorg
 USE_GNOME=	cairo gtk30 intlhack introspection libxml2 pygobject3 gnomedesktop3
 USE_XORG=	x11 xorgproto xtst ice sm
-USE_GSTREAMER1=	core good bad soup ugly
+USE_GSTREAMER=	core good bad soup ugly
 USE_GL=		egl
 USE_LDCONFIG=	yes
 

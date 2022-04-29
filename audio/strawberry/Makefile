@@ -18,11 +18,10 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 TEST_DEPENDS=	googletest>=0:devel/googletest
 
 USES=		compiler:c++11-lang cmake desktop-file-utils gnome \
-		gettext-runtime gettext-tools iconv pkgconfig \
+		gettext-runtime gettext-tools gstreamer iconv pkgconfig \
 		qt:5 sqlite pkgconfig tar:xz xorg
 
 USE_GNOME=	glib20
-USE_GSTREAMER1=	yes
 USE_QT=		buildtools_build concurrent core dbus gui network \
 		linguisttools qmake_build sql sql-sqlite3 testlib_build \
 		widgets x11extras

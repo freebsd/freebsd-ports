@@ -28,7 +28,7 @@ GUPNP_LIB_DEPENDS+=	libgupnp-igd-1.0.so:net/gupnp-igd
 MESON_ARGS+=-Dtests=disabled
 
 .if defined(LIBNICE_SLAVE)
-USE_GSTREAMER1=	yes
+USES+=		gstreamer
 MESON_ARGS+=-Dgstreamer=enabled
 .else
 MESON_ARGS+=-Dgstreamer=disabled -Dgtk_doc=enabled

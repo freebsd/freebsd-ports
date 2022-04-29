@@ -14,10 +14,9 @@ COMMENT=	GStreamer backend for Phonon
 
 LICENSE=	LGPL21
 
-USES=		cmake compiler:c++11-lang gl gnome kde:5 pkgconfig qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang gl gnome gstreamer kde:5 pkgconfig qt:5 tar:xz xorg
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2
-USE_GSTREAMER1=	yes
 USE_KDE=	ecm
 USE_QT=		core gui opengl phonon4 widgets x11extras \
 		buildtools_build qmake_build

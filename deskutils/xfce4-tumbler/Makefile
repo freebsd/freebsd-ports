@@ -55,7 +55,7 @@ FONTS_CONFIGURE_ENABLE=	font-thumbnailer
 FONTS_LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer-thumbnailer
-GSTREAMER_USE=		gstreamer1=yes
+GSTREAMER_USES=		gstreamer
 
 JPEG_CONFIGURE_ENABLE=	jpeg-thumbnailer
 JPEG_LIB_DEPENDS=	libexif.so:graphics/libexif

@@ -20,11 +20,11 @@ RUN_DEPENDS=	gnome-keyring:security/gnome-keyring \
 		${PYTHON_PKGNAMEPREFIX}pylast>0:audio/py-pylast@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:devel/py-xdg@${PY_FLAVOR}
 
-USES=	pkgconfig:run python:3.6+ gnome meson ninja gettext shebangfix
+USES=	pkgconfig:run python:3.6+ gnome gstreamer meson ninja gettext shebangfix
 
 USE_GITHUB=	yes
 USE_GNOME=	glib20
-USE_GSTREAMER1=	core good bad soup
+USE_GSTREAMER=	core good bad soup
 
 GLIB_SCHEMAS=	io.github.Pithos.gschema.xml
 

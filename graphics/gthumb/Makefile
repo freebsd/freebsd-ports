@@ -83,7 +83,7 @@ CLUTTER_LIB_DEPENDS=	libclutter-gtk-1.0.so:graphics/clutter-gtk3
 CLUTTER_MESON_TRUE=	clutter
 EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_MESON_TRUE=	exiv2
-GSTREAMER_USE=		gstreamer1=yes
+GSTREAMER_USES=		gstreamer
 GSTREAMER_MESON_TRUE=	gstreamer
 RAW_DESC=		Raw image support via libraw
 RAW_LIB_DEPENDS=	libraw.so:graphics/libraw

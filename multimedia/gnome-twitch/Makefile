@@ -50,10 +50,10 @@ MPV_OPENGL_DESC=	MPV decoding + OpenGL drawing backend
 GSTREAMER_CLUTTER_LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 				libclutter-gst-3.0.so:multimedia/clutter-gst3 \
 				libclutter-gtk-1.0.so:graphics/clutter-gtk3
-GSTREAMER_CLUTTER_USE=		GSTREAMER1=hls
+GSTREAMER_CLUTTER_USE=		GSTREAMER=hls
 
-GSTREAMER_CAIRO_USE=	GSTREAMER1=cairo,hls
-GSTREAMER_OPENGL_USE=	GSTREAMER1=hls
+GSTREAMER_CAIRO_USE=	GSTREAMER=cairo,hls
+GSTREAMER_OPENGL_USE=	GSTREAMER=hls
 
 MPV_OPENGL_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 			libmpv.so:multimedia/mpv

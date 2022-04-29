@@ -16,10 +16,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libpulse.so:audio/pulseaudio \
 		libv4l2.so:multimedia/libv4l
 
-USES=		compiler:c++11-lang gl gnome pkgconfig qmake qt:5 xorg
+USES=		compiler:c++11-lang gl gnome gstreamer pkgconfig qmake qt:5 xorg
 USE_GITHUB=	yes
 USE_GNOME=	glib20
-USE_GSTREAMER1=	yes
 USE_GL=		gl
 USE_QT=		concurrent core declarative gui multimedia network opengl quickcontrols2 svg widgets xml \
 		buildtools_build quickcontrols_run

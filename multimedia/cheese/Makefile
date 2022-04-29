@@ -27,11 +27,11 @@ RUN_DEPENDS=	gnome-video-effects>=0:graphics/gnome-video-effects
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gl gnome localbase:ldflags pkgconfig meson tar:xz xorg
+USES=		gettext gl gnome gstreamer localbase:ldflags pkgconfig meson tar:xz xorg
 USE_GNOME=	cairo librsvg2 gnomedesktop3 libxml2:build introspection:build
 USE_GL=		egl
 USE_XORG=	xi xext xdamage xfixes xcomposite xrandr xxf86vm x11
-USE_GSTREAMER1=	bad good jpeg ogg theora v4l2 vorbis vpx
+USE_GSTREAMER=	bad good jpeg ogg theora v4l2 vorbis vpx
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-Wno-format-nonliteral
 

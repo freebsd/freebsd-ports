@@ -15,13 +15,12 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 gettext-runtime gmake gnome libtool pathfix \
+USES=		compiler:c11 gettext-runtime gmake gnome gstreamer libtool pathfix \
 		pkgconfig python shebangfix tar:xz
 SHEBANG_FILES=	tools/gst-validate-launcher.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
-USE_GSTREAMER1=	yes
 INSTALL_TARGET=	install-strip
 USE_PYTHON=	noflavors
 

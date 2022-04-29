@@ -23,7 +23,7 @@ LIB_DEPENDS=	libFAudio.so:audio/faudio \
 		libvulkan.so:graphics/vulkan-loader \
 		libxml2.so:textproc/libxml2
 
-USES=		bison desktop-file-utils gettext-runtime gl gmake gnome jpeg localbase openal pkgconfig sdl shebangfix tar:xz xorg
+USES=		bison desktop-file-utils gettext-runtime gl gmake gnome gstreamer jpeg localbase openal pkgconfig sdl shebangfix tar:xz xorg
 USE_GCC=	yes
 
 USE_GITHUB=	yes
@@ -33,7 +33,7 @@ GH_TAGNAME=	97f962cd469ee9b9b68d32e79849bf94cfe15581
 
 USE_GL=		gl
 USE_GNOME=	glib20
-USE_GSTREAMER1=	good
+USE_GSTREAMER=	good
 USE_SDL=	sdl2
 USE_XORG=	x11 xext xcomposite xcursor xi xinerama xrandr xrender
 

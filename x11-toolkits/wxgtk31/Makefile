@@ -65,7 +65,7 @@ OPTIONS_SUB=		yes
 NLS_USES=			gettext
 
 GSTREAMER_CONFIGURE_ENABLE=	mediactrl
-GSTREAMER_USE=			GSTREAMER1=bad
+GSTREAMER_USE=			GSTREAMER=bad
 
 MSPACK_CONFIGURE_WITH=		libmspack
 MSPACK_LIB_DEPENDS=		libmspack.so:archivers/libmspack

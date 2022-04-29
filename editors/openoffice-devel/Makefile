@@ -191,7 +191,7 @@ GNOME_LIB_DEPENDS=		libdbus-1.so:devel/dbus \
 				libdbus-glib-1.so:devel/dbus-glib
 
 MMEDIA_CONFIGURE_ENABLE=	gstreamer
-MMEDIA_USE=			GSTREAMER1=yes
+MMEDIA_USES=			gstreamer
 
 MYSQL_CONFIGURE_ENABLE=		mysql-connector
 MYSQL_CONFIGURE_WITH=		system-mysql

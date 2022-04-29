@@ -40,10 +40,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		zam-plugins-lv2>0:audio/zam-plugins-lv2
 
 USES=		compiler:c++17-lang desktop-file-utils libtool \
-		localbase:ldflags gettext gnome meson ninja pathfix pkgconfig \
+		localbase:ldflags gettext gnome gstreamer meson ninja pathfix pkgconfig \
 		python:3.6+ shebangfix
 USE_GNOME=	cairo gtkmm30 libsigc++20 pygobject3
-USE_GSTREAMER1=	bad bs2b good ladspa lv2 pulse webrtcdsp
+USE_GSTREAMER=	bad bs2b good ladspa lv2 pulse webrtcdsp
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

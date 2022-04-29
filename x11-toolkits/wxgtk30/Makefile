@@ -58,8 +58,8 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 
+GSTREAMER_USES=		gstreamer
 GSTREAMER_CONFIGURE_ENABLE=	mediactrl
-GSTREAMER_USE=	GSTREAMER1=yes
 
 NOTIFY_CONFIGURE_WITH=	libnotify
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify

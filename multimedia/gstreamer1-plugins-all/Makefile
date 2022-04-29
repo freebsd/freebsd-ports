@@ -9,9 +9,6 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Meta-port of all GStreamer 1.x plugins with options
 
 USES=		metaport
-USE_GSTREAMER1=	yes
-
-.include "${.CURDIR}/../../Mk/bsd.gstreamer.mk"
 
 ALL_PLUGINS:=	${_GSTREAMER_PLUGINS}
 # Weed out gst-plugins that can not be packaged. or are broken.
@@ -26,7 +23,7 @@ DEF_PLUGINS:=	${_GSTREAMER_PLUGINS}
 
 .for all in ${ALL_PLUGINS}
 ${all:tu}_DESC=	${all} plugin
-${all:tu}_USE=	GSTREAMER1=${all}
+${all:tu}_USE=	GSTREAMER=${all}
 .endfor
 
 # Pull out i386-only plugins, add back conditionally

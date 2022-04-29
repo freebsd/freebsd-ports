@@ -19,11 +19,9 @@ COMMENT?=	GStreamer written collection of plugins handling several media types
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS+=	gstreamer1>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:multimedia/gstreamer1 \
-		iso-codes>=0:misc/iso-codes \
+BUILD_DEPENDS+=	iso-codes>=0:misc/iso-codes \
 		orc>=0.4.16:devel/orc
-LIB_DEPENDS+=	libgstreamer-1.0.so:multimedia/gstreamer1 \
-		libfreetype.so:print/freetype2 \
+LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		liborc-0.4.so:devel/orc
 RUN_DEPENDS+=	iso-codes>=0:misc/iso-codes
 
@@ -43,7 +41,7 @@ UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		base
 
-USES+=		cpe gettext gmake gnome libtool pathfix pkgconfig python tar:xz
+USES+=		cpe gettext gmake gnome gstreamer libtool pathfix pkgconfig python tar:xz
 USE_GNOME+=	glib20 introspection:build libxml2
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -77,9 +75,6 @@ PLIST_SUB+=	VERSION="${VERSION}" \
 .if ${GST_PLUGIN} == "base"
 DIST=	base
 NO_GSTREAMER_COMMON=	yes
-.else
-BUILD_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:multimedia/gstreamer1-plugins
-RUN_DEPENDS+=	gstreamer1-plugins>=${GST1_VERSION}${GST1_MINIMAL_VERSION}:multimedia/gstreamer1-plugins
 .endif
 
 .if ${DIST} == base || ${DIST} == ugly

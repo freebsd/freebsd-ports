@@ -129,14 +129,15 @@ PLIST_SUB+=		EVO="@comment not installed: "
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
-USE_GSTREAMER1+=core good
+USES+=		gstreamer
+USE_GSTREAMER+=core good
 .else
 CONFIGURE_ARGS+=--disable-gstreamer
 .endif
 
 .if ${PORT_OPTIONS:MVV} && ${PORT_OPTIONS:MGSTREAMER}
 LIB_DEPENDS+=	libfarstream-0.2.so:net-im/farstream
-USE_GSTREAMER1+=v4l2
+USE_GSTREAMER+=v4l2
 PLIST_SUB+=	VV=""
 .else
 CONFIGURE_ARGS+=--disable-vv

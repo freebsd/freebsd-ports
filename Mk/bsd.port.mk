@@ -1421,10 +1421,6 @@ USES+=mysql:${USE_MYSQL}
 .include "${PORTSDIR}/Mk/bsd.wx.mk"
 .    endif
 
-.    if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER) || defined(USE_GSTREAMER1)
-.include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
-.    endif
-
 .    if !defined(UID)
 UID!=	${ID} -u
 .    endif
@@ -1936,10 +1932,6 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 .    for odir in ${OVERLAYS}
 .sinclude "${odir}/Mk/bsd.overlay.mk"
 .    endfor
-
-.    if defined(USE_GSTREAMER1)
-.include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
-.    endif
 
 .    if defined(USE_JAVA)
 .include "${PORTSDIR}/Mk/bsd.java.mk"
@@ -3750,7 +3742,7 @@ deinstall:
 
 .    if !target(deinstall-all)
 deinstall-all:
-.if ${UID} != 0 && !defined(INSTALL_AS_USER)
+.      if ${UID} != 0 && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${.TARGET}"

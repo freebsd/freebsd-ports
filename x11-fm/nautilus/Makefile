@@ -21,10 +21,9 @@ LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 cpe desktop-file-utils gettext gnome localbase meson \
+USES=		compiler:c11 cpe desktop-file-utils gettext gnome gstreamer localbase meson \
 		pkgconfig python:3.6+,build tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3
-USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
 MESON_ARGS=	-Dpackagekit=false \

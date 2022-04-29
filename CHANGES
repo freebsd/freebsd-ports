@@ -10,6 +10,28 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20220430:
+AUTHOR: tcberner@FreeBSD.org
+
+  A new USES has been added to handle dependency on gstreamer.
+
+  Instead of writing
+
+        USE_GSTREAMER1=[list of components]
+
+  you now have to write
+
+        USES=gstreamer
+        USE_GSTREAMER=[list of components]
+
+  If your port previously set just
+
+        USE_GSTREAMER=yes
+
+  this now is simply
+
+        USES=gstreamer
+
 20220415:
 AUTHOR: amdmi3@FreeBSD.org
 

@@ -29,13 +29,13 @@ LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 		libgudev-1.0.so:devel/libgudev \
 		libtdb.so:databases/tdb
 
-USES=		desktop-file-utils gmake gnome libtool localbase \
+USES=		desktop-file-utils gmake gnome gstreamer libtool localbase \
 		pathfix pkgconfig tar:xz xorg
 USE_GNOME=	cairo intlhack glib20 gnomeprefix gtk30 introspection \
 		pygobject3 libxml2
 USE_XORG=	ice x11 xorgproto
 GNU_CONFIGURE=	yes
-USE_GSTREAMER1=	flac lame jpeg cdparanoia vorbis
+USE_GSTREAMER=	flac lame jpeg cdparanoia vorbis
 CONFIGURE_ARGS=	--enable-vala \
 		--enable-visualizer=no \
 		--with-python=yes \

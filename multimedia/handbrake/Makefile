@@ -110,7 +110,7 @@ X11_CONFIGURE_OFF=	--disable-gtk
 X11_LIB_DEPENDS=	libvpx.so:multimedia/libvpx \
 			libnotify.so:devel/libnotify
 X11_USES=	gettext desktop-file-utils gnome
-X11_USE=	gstreamer1=gdkpixbuf,libav \
+X11_USE=	gstreamer=gdkpixbuf,libav \
 		gnome=gtk30,intltool,cairo,gdkpixbuf2
 
 # HandBrake tries to fetch its dependencies during build phase, which is not
