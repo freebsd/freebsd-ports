@@ -33,6 +33,7 @@
     SUBDIR += R-cran-SQUAREM
     SUBDIR += R-cran-SparseM
     SUBDIR += R-cran-VGAM
+    SUBDIR += R-cran-XLConnect
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-acepack
     SUBDIR += R-cran-alabama
