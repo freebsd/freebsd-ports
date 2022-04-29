@@ -55,6 +55,11 @@ READLINE_CONFIGURE_WITH=	history \
 THREAD_ALLOC_CONFIGURE_WITH=	thread-alloc
 
 post-patch:
+.for f in python/setup.py
+	@${REINPLACE_CMD} -e \
+		"s|ROOT = r'/usr/local'|ROOT = r'${LOCALBASE}'|g" \
+		${WRKSRC}/${f}
+.endfor
 .for f in catalog.c xmlcatalog.c xmllint.c doc/xmllint.1
 	@${REINPLACE_CMD} -e \
 		's|/etc/xml/catalog|${LOCALBASE}/share/xml/catalog|g; \
