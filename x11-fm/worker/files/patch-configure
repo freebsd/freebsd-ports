@@ -3,7 +3,7 @@
 @@ -21598,7 +21598,7 @@ if test -n "$PKG_CONFIG" && \
    ($PKG_CONFIG --exists --print-errors "openssl") 2>&5
    ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
 -  test $ac_status = 0; }; then
 +  test $ac_status = 0 -o -n "$OPENSSL_CFLAGS" -o -n "$OPENSSL_LIBS"; }; then
  
