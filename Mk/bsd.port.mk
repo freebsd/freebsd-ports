@@ -2226,11 +2226,11 @@ PKG_SUFX=	.pkg
 .    if defined(PKG_NOCOMPRESS)
 PKG_COMPRESSION_FORMAT?=	tar
 .    else
-#.if ${OSVERSION} > 1400000
-#PKG_COMPRESSION_FORMAT?=	tzst
-#.else
+.if ${OSVERSION} > 1400000
+PKG_COMPRESSION_FORMAT?=	tzst
+.else
 PKG_COMPRESSION_FORMAT?=	txz
-#.endif
+.endif
 .    endif
 
 # where pkg(8) stores its data
