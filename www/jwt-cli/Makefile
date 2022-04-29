@@ -1,8 +1,7 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	jwt-cli
-PORTVERSION=	5.0.2
-PORTREVISION=	2
+PORTVERSION=	5.0.3
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -27,8 +26,9 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		cc-1.0.72 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-3.0.10 \
-		clap_derive-3.0.6 \
+		clap-3.1.12 \
+		clap_derive-3.1.7 \
+		clap_lex-0.1.1 \
 		hashbrown-0.11.2 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
@@ -62,13 +62,13 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ryu-1.0.9 \
 		serde-1.0.133 \
 		serde_derive-1.0.133 \
-		serde_json-1.0.75 \
+		serde_json-1.0.79 \
 		simple_asn1-0.4.1 \
 		spin-0.5.2 \
 		strsim-0.10.0 \
 		syn-1.0.86 \
 		termcolor-1.1.2 \
-		textwrap-0.14.2 \
+		textwrap-0.15.0 \
 		time-0.1.44 \
 		unicode-xid-0.2.2 \
 		untrusted-0.7.1 \
