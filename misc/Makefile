@@ -43,6 +43,7 @@
     SUBDIR += clpbar
     SUBDIR += colortail
     SUBDIR += colwide
+    SUBDIR += compat.el
     SUBDIR += compat10x
     SUBDIR += compat11x
     SUBDIR += compat12x
