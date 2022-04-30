@@ -4482,6 +4482,7 @@
     SUBDIR += py-durus
     SUBDIR += py-dynrules
     SUBDIR += py-easyprocess
+    SUBDIR += py-editables
     SUBDIR += py-editdistance
     SUBDIR += py-eggtestinfo
     SUBDIR += py-ejson
