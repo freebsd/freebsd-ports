@@ -2429,7 +2429,7 @@ lib/wine/fakedlls/winemapi.dll
 lib/wine/fakedlls/winemenubuilder.exe
 lib/wine/fakedlls/winemine.exe
 lib/wine/fakedlls/winemsibuilder.exe
-lib/wine/fakedlls/wineoss.drv
+%%OSS%%lib/wine/fakedlls/wineoss.drv
 lib/wine/fakedlls/winepath.exe
 lib/wine/fakedlls/wineps.drv
 %%WINE32%%lib/wine/fakedlls/wineps16.drv16
@@ -3168,7 +3168,7 @@ lib/wine/winemapi.dll.so
 lib/wine/winemenubuilder.exe.so
 lib/wine/winemine.exe.so
 lib/wine/winemsibuilder.exe.so
-lib/wine/wineoss.drv.so
+%%OSS%%lib/wine/wineoss.drv.so
 lib/wine/winepath.exe.so
 lib/wine/wineps.drv.so
 %%WINE32%%lib/wine/wineps16.drv16.so
