@@ -1,6 +1,6 @@
 bin/lximage-qt
-share/applications/lximage-qt-screenshot.desktop
 share/applications/lximage-qt.desktop
+share/metainfo/lximage-qt.metainfo.xml
 share/icons/hicolor/48x48/apps/lximage-qt.png
 %%DATADIR%%/translations/lximage-qt_ar.qm
 %%DATADIR%%/translations/lximage-qt_arn.qm
@@ -10,6 +10,7 @@ share/icons/hicolor/48x48/apps/lximage-qt.png
 %%DATADIR%%/translations/lximage-qt_cs.qm
 %%DATADIR%%/translations/lximage-qt_cy.qm
 %%DATADIR%%/translations/lximage-qt_da.qm
+%%DATADIR%%/translations/lximage-qt_de_CH.qm
 %%DATADIR%%/translations/lximage-qt_de.qm
 %%DATADIR%%/translations/lximage-qt_el.qm
 %%DATADIR%%/translations/lximage-qt_en_GB.qm
@@ -24,9 +25,11 @@ share/icons/hicolor/48x48/apps/lximage-qt.png
 %%DATADIR%%/translations/lximage-qt_is.qm
 %%DATADIR%%/translations/lximage-qt_it.qm
 %%DATADIR%%/translations/lximage-qt_ja.qm
+%%DATADIR%%/translations/lximage-qt_ko.qm
 %%DATADIR%%/translations/lximage-qt_lt.qm
 %%DATADIR%%/translations/lximage-qt_nb_NO.qm
 %%DATADIR%%/translations/lximage-qt_nl.qm
+%%DATADIR%%/translations/lximage-qt_oc.qm
 %%DATADIR%%/translations/lximage-qt_pa.qm
 %%DATADIR%%/translations/lximage-qt_pl.qm
 %%DATADIR%%/translations/lximage-qt_pt.qm
