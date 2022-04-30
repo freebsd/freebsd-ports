@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	lxqt-panel
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT
 
@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxcb-util.so:x11/xcb-util \
-		libsysstat-qt5.so:sysutils/libsysstat
+		libsysstat-qt5.so:sysutils/libsysstat \
+		libxcb-image.so:x11/xcb-util-image
 RUN_DEPENDS=	lxmenu-data>=0.1.2:x11/lxmenu-data
 
 USES=	cmake compiler:c++14-lang gettext-runtime kde:5 qt:5 gnome \
@@ -23,7 +24,7 @@ USE_QT=	buildtools_build qmake_build core dbus gui svg widgets \
 	x11extras xml concurrent
 USE_KDE=	windowsystem
 USE_LXQT=	buildtools lxqt globalkeys qtxdg
-USE_XORG=	ice sm x11 xcb xcomposite xdamage xext xfixes xrender
+USE_XORG=	ice sm x11 xcb xcomposite xdamage xext xfixes xrender xtst
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
