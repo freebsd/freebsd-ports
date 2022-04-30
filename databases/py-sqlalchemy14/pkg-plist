@@ -169,6 +169,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/build/errors.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/faq/connections.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/faq/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/faq/installation.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/faq/metadata_schema.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/faq/ormconfiguration.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/faq/performance.rst
@@ -336,6 +337,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/errors.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/connections.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/index.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/metadata_schema.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/ormconfiguration.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/performance.html
