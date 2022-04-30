@@ -1,6 +1,5 @@
 PORTNAME=	chrono
-DISTVERSION=	7.0.2
-PORTREVISION=	1
+DISTVERSION=	7.0.3
 CATEGORIES=	science devel
 PKGNAMESUFFIX=	-physics-simulation-engine
 
@@ -112,10 +111,6 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name CMakeLists.txt -o -name "*.cmake*" | ${XARGS} ${REINPLACE_CMD} -i '' 's|lib64|lib|'
-	@${REINPLACE_CMD} -e 's/ -march=native//' \
-		${WRKSRC}/cmake/FindAVX.cmake \
-		${WRKSRC}/cmake/FindFMA.cmake \
-		${WRKSRC}/cmake/FindSSE.cmake
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
