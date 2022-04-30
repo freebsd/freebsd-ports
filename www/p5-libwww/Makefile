@@ -1,7 +1,7 @@
 # Created by: James FitzGibbon <jfitz@FreeBSD.org>
 
 PORTNAME=	libwww
-PORTVERSION=	6.63
+PORTVERSION=	6.64
 DISTVERSIONPREFIX=	perl-
 CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN
