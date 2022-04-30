@@ -1,3 +1,3 @@
-TIMESTAMP = 1650970261
-SHA256 (rubygem/sidekiq-scheduler-3.2.0.gem) = 6313187c95206ef76ad58e47d3a3e7c583c363088899932a439d6d4f1ff09459
-SIZE (rubygem/sidekiq-scheduler-3.2.0.gem) = 21504
+TIMESTAMP = 1651316717
+SHA256 (rubygem/sidekiq-scheduler-4.0.0.gem) = d57900679ea9f94a7dac464bc55f8028bf490f736db09b5421039d43efffc04e
+SIZE (rubygem/sidekiq-scheduler-4.0.0.gem) = 22528
