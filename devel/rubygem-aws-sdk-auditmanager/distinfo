@@ -1,3 +1,3 @@
-TIMESTAMP = 1649423870
-SHA256 (rubygem/aws-sdk-auditmanager-1.23.0.gem) = cf5c866ce9283f656a30dfa4030d5641eb8a2623049792414aa6705f727448a0
-SIZE (rubygem/aws-sdk-auditmanager-1.23.0.gem) = 58880
+TIMESTAMP = 1651316663
+SHA256 (rubygem/aws-sdk-auditmanager-1.24.0.gem) = 3cca64735d826239afd06d567a7e573f28e4f1ad663e72cd5dee67bff0b91b9f
+SIZE (rubygem/aws-sdk-auditmanager-1.24.0.gem) = 60416
