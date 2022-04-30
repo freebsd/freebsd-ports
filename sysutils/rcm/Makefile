@@ -1,5 +1,5 @@
 PORTNAME=	rcm
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	sysutils
 MASTER_SITES=	https://thoughtbot.github.io/rcm/dist/
 
