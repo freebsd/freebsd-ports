@@ -139,8 +139,8 @@
     SUBDIR += dmtx-utils
     SUBDIR += drawing
     SUBDIR += drawpile
-    SUBDIR += drm-54-kmod
     SUBDIR += drm-510-kmod
+    SUBDIR += drm-54-kmod
     SUBDIR += drm-fbsd12.0-kmod
     SUBDIR += drm-fbsd13-kmod
     SUBDIR += drm-kmod
@@ -295,9 +295,9 @@
     SUBDIR += gphoto2
     SUBDIR += gpicview
     SUBDIR += gpsmanshp
-    SUBDIR += gpu-firmware-kmod
-    SUBDIR += gpu-firmware-intel-kmod
     SUBDIR += gpu-firmware-amd-kmod
+    SUBDIR += gpu-firmware-intel-kmod
+    SUBDIR += gpu-firmware-kmod
     SUBDIR += gpu-firmware-radeon-kmod
     SUBDIR += gpxsee
     SUBDIR += gracula
