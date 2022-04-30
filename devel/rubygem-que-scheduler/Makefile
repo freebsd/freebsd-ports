@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	que-scheduler
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
