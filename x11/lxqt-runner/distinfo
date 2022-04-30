@@ -1,3 +1,7 @@
-TIMESTAMP = 1636469436
-SHA256 (lxqt/lxqt-runner-1.0.0.tar.xz) = 24daa86680ef78daf8753b60b3a0c6df391e760b851796a0abeddeed61ae13b9
-SIZE (lxqt/lxqt-runner-1.0.0.tar.xz) = 226548
+TIMESTAMP = 1651086074
+SHA256 (lxqt/lxqt-runner-1.1.0.tar.xz) = bbb1bf3de8adcd9ab1bb035d596b6cbb8438ca90cbdd97573c0957241e7ad6f1
+SIZE (lxqt/lxqt-runner-1.1.0.tar.xz) = 266860
+SHA256 (lxqt/b83c40c5086010eda3ad810e7332aa68799aad65.patch) = bc7491289d335cf1f16a9761ad30152c22399123d603b6de31354029731797d1
+SIZE (lxqt/b83c40c5086010eda3ad810e7332aa68799aad65.patch) = 1517
+SHA256 (lxqt/060dd76c7917e2e074d17ada1ca8bbb68758026a.patch) = 99b5a6c28fecff3c233faa3e827d6bbab297dbac66e033ccf932dcfc44ecc81c
+SIZE (lxqt/060dd76c7917e2e074d17ada1ca8bbb68758026a.patch) = 2953

@@ -1,9 +1,13 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	lxqt-runner
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	x11
 MASTER_SITES=	LXQT
+
+PATCH_SITES=	https://github.com/lxqt/lxqt-runner/commit/
+PATCHFILES=     b83c40c5086010eda3ad810e7332aa68799aad65.patch:-p1 \
+		060dd76c7917e2e074d17ada1ca8bbb68758026a.patch:-p1
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	LXQt tool used to launch programs quickly
