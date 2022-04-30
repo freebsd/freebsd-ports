@@ -949,6 +949,7 @@
     SUBDIR += gwenhywfar-qt5
     SUBDIR += gzstream
     SUBDIR += hapy
+    SUBDIR += hare
     SUBDIR += hcs12mem
     SUBDIR += heaptrack
     SUBDIR += heimdall
