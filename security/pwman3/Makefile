@@ -17,4 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:security/py-pycrypto@${PY_FLAV
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist concurrent optsuffix
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
