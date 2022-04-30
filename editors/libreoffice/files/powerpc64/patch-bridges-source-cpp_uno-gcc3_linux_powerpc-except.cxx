@@ -48,7 +48,7 @@
      ::typelib_typedescription_getByName( &pTD, unoName.pData );
      assert(pTD && "### unknown exception type! leaving out destruction => leaking!!!");
      if (pTD)
-@@ -218,39 +225,68 @@ void raiseException( uno_Any * pUnoExc, uno_Mapping * 
+@@ -218,39 +225,72 @@ void raiseException( uno_Any * pUnoExc, uno_Mapping * 
      if (! pTypeDescr)
          terminate();
  
@@ -86,10 +86,14 @@
 +             __cxxabiv1::__cxa_current_primary_exception());
 +    if (header) {
 +        __cxxabiv1::__cxa_decrement_exception_refcount(header);
-+        if (header[-1].exceptionDestructor != &deleteException) {
++        uint64_t exc_class = header[-1].unwindHeader.exception_class
++                           & 0xffffffffffffff00;
++        if (exc_class != /* "GNUCC++" */ 0x474e5543432b2b00) {
 +            header = reinterpret_cast<__cxxabiv1::__cxa_exception *>(
 +                reinterpret_cast<char *>(header) - 12);
-+            if (header[-1].exceptionDestructor != &deleteException) {
++            exc_class = header[-1].unwindHeader.exception_class
++                      & 0xffffffffffffff00;
++            if (exc_class != /* "GNUCC++" */ 0x474e5543432b2b00) {
 +                header = nullptr;
 +            }
 +        }
