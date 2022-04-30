@@ -1,7 +1,7 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
 
 PORTNAME=	railties
-PORTVERSION=	6.1.4.7
+PORTVERSION=	6.1.5.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-actionpack61>=${PORTVERSION}:www/rubygem-actionpack61 \
 		rubygem-activesupport61>=${PORTVERSION}:devel/rubygem-activesupport61 \
 		rubygem-method_source>=0:devel/rubygem-method_source \
-		rubygem-rake>=0.8.7:devel/rubygem-rake \
+		rubygem-rake>=12.2:devel/rubygem-rake \
 		rubygem-thor>=1.0<2:devel/rubygem-thor
 
 USES=		gem
