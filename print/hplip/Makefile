@@ -1,7 +1,7 @@
 # Created by: amistry@am-productions.biz
 
 PORTNAME=	hplip
-PORTVERSION=	3.22.2
+PORTVERSION=	3.22.4
 CATEGORIES=	print
 MASTER_SITES=	SF
 
