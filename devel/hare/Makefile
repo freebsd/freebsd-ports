@@ -1,8 +1,9 @@
 PORTNAME=	hare
-PORTVERSION=	g20220428
+PORTVERSION=	g20220430
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/
-DISTNAME=	1bfb2e6d
+PKGNAMESUFFIX=	-lang
+DISTNAME=	51884435
 DIST_SUBDIR=	hare
 
 MAINTAINER=	se@FreeBSD.org
@@ -19,8 +20,6 @@ BUILD_DEPENDS=	harec:lang/harec \
 		scdoc:textproc/scdoc
 RUN_DEPENDS=	harec:lang/harec \
 		qbe:devel/qbe
-
-USES=		gmake
 
 MAKE_ARGS=	DESTDIR=${STAGEDIR}
 

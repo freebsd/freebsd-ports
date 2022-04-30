@@ -3,7 +3,7 @@
 #PREFIX = /usr
 BINDIR = $(PREFIX)/bin
 MANDIR = $(PREFIX)/man
-DATADIR= $(PREFIX)/share/hare/
+DATADIR= $(PREFIX)/share/hare
 SRCDIR = $(DATADIR)/src
 
 # Where to install the stdlib tree
