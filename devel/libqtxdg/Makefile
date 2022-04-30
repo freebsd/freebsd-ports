@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	libqtxdg
-PORTVERSION=	3.8.0
+PORTVERSION=	3.9.0
 CATEGORIES=	devel
 MASTER_SITES=	LXQT/${PORTNAME}
 
