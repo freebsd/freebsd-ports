@@ -32,20 +32,18 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libgnutls.so:security/gnutls \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		compiler:c++11-lang pkgconfig makeinfo localbase:ldflags \
+USES=		compiler:c++11-lang pkgconfig perl5 localbase:ldflags \
 		gmake iconv:wchar_t jpeg readline gettext xorg
 USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 HAS_CONFIGURE=	yes
-MAKE_ENV+=	MAKEINFOFLAGS="--no-split" \
-		XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share
+MAKE_ENV+=	XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share
 CFLAGS+=	-fcommon
 CONFIGURE_ARGS+=	--enable-ipv6 \
 			--enable-external-ffmpeg \
 			--enable-x64 \
 			--disable-realdevice \
 			--disable-pdf-docs \
-			--infodir="${PREFIX}/${INFO_PATH}" \
 			--localedir="${LOCALBASE}/share/locale" \
 			--disable-dependency-tracking \
 			DOS2UNIX=true
@@ -89,10 +87,6 @@ __pmlinks1!=	${ECHO_CMD} '${LMLINKS:S/    / /}' | ${AWK} \
 USES+=		gnome gl
 USE_GNOME+=	gtk30 vte3 cairo gdkpixbuf2 pango
 USE_GL+=	glu gl glew
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-INFO+=		vice
 .endif
 
 pre-configure:
