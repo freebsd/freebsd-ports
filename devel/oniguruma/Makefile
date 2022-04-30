@@ -1,9 +1,14 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 
 PORTNAME=	oniguruma
-DISTVERSIONPREFIX=	v
 DISTVERSION=	6.9.8
+PORTREVISION=	1
 CATEGORIES=	devel textproc
+MASTER_SITES=	https://github.com/kkos/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	onig-${DISTVERSION}
+
+PATCH_SITES=	https://github.com/kkos/oniguruma/commit/
+PATCHFILES=	1f322c45aa365d377e1d7db567bb7087c7c1b38c.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Regular expressions library compatible with POSIX/GNU/Perl
@@ -11,33 +16,21 @@ COMMENT=	Regular expressions library compatible with POSIX/GNU/Perl
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=			autoreconf cpe pathfix libtool  # configure provided in the tarball breaks: https://github.com/kkos/oniguruma/issues/73
-USE_GITHUB=		yes
-GH_ACCOUNT=		kkos
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--disable-static --enable-posix-api=yes
-PATHFIX_MAKEFILEIN=	Makefile.am
-USE_LDCONFIG=		yes
-INSTALL_TARGET=		install-strip
-TEST_WRKSRC=		${WRKSRC}/test
-TEST_TARGET=		test
-CPE_VENDOR=		oniguruma_project
+USES=		cmake cpe pathfix
+CPE_VENDOR=	oniguruma_project
+USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=			STATISTICS DOCS EXAMPLES
-STATISTICS_DESC=		Take matching time statistical data (debug feature)
-
-STATISTICS_CONFIGURE_WITH=	statistics
+DOCSDIR=	${PREFIX}/share/doc/onig
+EXAMPLESDIR=	${PREFIX}/share/examples/onig
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} HISTORY README ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}
+CMAKE_ON=	BUILD_SHARED_LIBS ENABLE_POSIX_API
 
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/sample && ${INSTALL_DATA} *.c ${STAGEDIR}${EXAMPLESDIR}
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+DOCS_CMAKE_BOOL=	INSTALL_DOCUMENTATION
+EXAMPLES_CMAKE_BOOL==	INSTALL_EXAMPLES
 
 .include <bsd.port.mk>

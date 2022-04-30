@@ -2,6 +2,10 @@ bin/onig-config
 include/oniggnu.h
 include/onigposix.h
 include/oniguruma.h
+lib/cmake/oniguruma/onigurumaConfig.cmake
+lib/cmake/oniguruma/onigurumaConfigVersion.cmake
+lib/cmake/oniguruma/onigurumaTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/oniguruma/onigurumaTargets.cmake
 lib/libonig.so
 lib/libonig.so.5
 lib/libonig.so.5.3.0
