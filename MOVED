@@ -17141,3 +17141,6 @@ www/py-dj32-django-modelcluster|www/py-django-modelcluster|2022-04-30|Remove obs
 www/rubygem-rack-proxy06|www/rubygem-rack-proxy|2022-04-30|Remove obsoleted port. Use www/rubygem-rack-proxy instead
 security/py-ssh|security/py-paramiko|2022-04-30|Remove obsoleted port. Use security/py-paramiko instead
 security/pinentry-gnome3|security/pinentry-gnome|2022-04-30|De-versioned due to new GNOME versioning scheme
+www/shttpd||2022-04-30|Has expired: Abandonware, last release over 12+ years ago
+mail/p5-Email-Sender-Transport-SMTPS|mail/p5-Email-Sender|2022-04-30|Has expired: Deprecated by upstream. Use Email::Sender::Transport::SMTP in mail/p5-Email-Sender instead
+net/gogoc||2022-04-30|Has expired: Services were discontinued in 2016
