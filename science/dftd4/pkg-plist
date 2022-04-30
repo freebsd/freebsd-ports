@@ -33,5 +33,5 @@ lib/cmake/dftd4/dftd4-targets.cmake
 lib/cmake/dftd4/dftd4-utils.cmake
 lib/libdftd4.so
 lib/libdftd4.so.3
-lib/libdftd4.so.3.3.0
+lib/libdftd4.so.3.4.0
 libdata/pkgconfig/dftd4.pc
