@@ -1,0 +1,20 @@
+--- bin/_setlib.orig	2019-02-25 00:31:32 UTC
++++ bin/_setlib
+@@ -19,14 +19,10 @@ if [ -z "$XMLBEANS_HOME" ]; then
+     XMLBEANS_HOME=`dirname $0`/..
+ fi
+ 
+-XMLBEANS_LIB=
+-if [ -f "$XMLBEANS_HOME"/build/lib/xbean.jar ]; then
+-    XMLBEANS_LIB=$XMLBEANS_HOME/build/lib
++if [ -f %%JAVAJARDIR%%/xmlbeans.jar ]; then
++    XMLBEANS_LIB=%%JAVAJARDIR%%
+ fi
+-if [ -f "$XMLBEANS_HOME"/lib/xbean.jar ]; then
+-    XMLBEANS_LIB=$XMLBEANS_HOME/lib
+-fi
+ 
+ if [ -z "$XMLBEANS_LIB" ]; then
+-    echo "ERROR: Could not find xbean.jar, try set XMLBEANS_LIB to the directory containing xbean.jar"
++    echo "ERROR: Could not find xmlbeans.jar, try set XMLBEANS_LIB to the directory containing xmlbeans.jar"
+ fi
