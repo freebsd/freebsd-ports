@@ -1,7 +1,7 @@
 # Created by: aturetta@commit.it
 
 PORTNAME=	Test-WWW-Mechanize
-PORTVERSION=	1.54
+PORTVERSION=	1.56
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,7 @@ LICENSE=	ART20
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Carp-Assert-More>=1.16:devel/p5-Carp-Assert-More \
 		p5-HTML-Form>=0:www/p5-HTML-Form \
+		p5-HTTP-Message>=6.29:www/p5-HTTP-Message \
 		p5-HTTP-Server-Simple>=0.42:www/p5-HTTP-Server-Simple \
 		p5-Test-LongString>=0.15:devel/p5-Test-LongString \
 		p5-URI>=0:net/p5-URI \
