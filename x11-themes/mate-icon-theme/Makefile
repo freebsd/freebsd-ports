@@ -23,4 +23,6 @@ USES=		gettext-tools gmake gnome pkgconfig tar:xz
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
