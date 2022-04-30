@@ -973,7 +973,6 @@
     SUBDIR += py-signedjson
     SUBDIR += py-social-auth-core
     SUBDIR += py-spake2
-    SUBDIR += py-ssh
     SUBDIR += py-ssh-audit
     SUBDIR += py-sshpubkeys
     SUBDIR += py-stem
