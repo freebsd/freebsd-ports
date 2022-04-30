@@ -4611,6 +4611,7 @@
     SUBDIR += py-gyp
     SUBDIR += py-hash_ring
     SUBDIR += py-hatch
+    SUBDIR += py-hatchling
     SUBDIR += py-heapdict
     SUBDIR += py-helpdev
     SUBDIR += py-hg-evolve
