@@ -1,3 +1,66 @@
+  <vuln vid="9db93f3d-c725-11ec-9618-000d3ac47524">
+    <topic>Rails -- XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-actionpack52</name>
+	<range><lt>5.2.7.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack60</name>
+	<range><lt>6.0.4.8</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack61</name>
+	<range><lt>6.1.5.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack70</name>
+	<range><lt>7.0.2.4</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionview52</name>
+	<range><lt>5.2.7.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionview60</name>
+	<range><lt>6.0.4.8</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionview61</name>
+	<range><lt>6.1.5.1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionview70</name>
+	<range><lt>7.0.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby on Rails blog:</p>
+	<blockquote cite="https://rubyonrails.org/2022/4/26/Rails-7-0-2-4-6-1-5-1-6-0-4-8-and-5-2-7-1-have-been-released">
+	  <p>This is an announcement to let you know that Rails 7.0.2.4, 6.1.5.1,
+	    6.0.4.8, and 5.2.7.1 have been released!</p>
+	  <p>These are security releases so please update as soon as you can. Once
+	    again we've made these releases based on the last release tag, so
+	    hopefully upgrading will go smoothly.</p>
+	  <p>The releases address two vulnerabilities, CVE-2022-22577, and
+	    CVS-2022-27777. They are both XSS vulnerabilities, so please take a look
+	    at the forum posts to see how (or if) they might possibly impact your
+	    application.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-22577</cvename>
+      <cvename>CVE-2022-27777</cvename>
+      <url>https://rubyonrails.org/2022/4/26/Rails-7-0-2-4-6-1-5-1-6-0-4-8-and-5-2-7-1-have-been-released</url>
+    </references>
+    <dates>
+      <discovery>2022-04-26</discovery>
+      <entry>2022-04-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2220827b-c732-11ec-b272-901b0e934d69">
     <topic>hiredis -- integer/buffer overflow</topic>
     <affects>
