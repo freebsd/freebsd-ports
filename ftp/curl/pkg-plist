@@ -3,6 +3,7 @@ bin/curl-config
 include/curl/curl.h
 include/curl/curlver.h
 include/curl/easy.h
+include/curl/header.h
 include/curl/mprintf.h
 include/curl/multi.h
 include/curl/options.h
@@ -13,7 +14,7 @@ include/curl/urlapi.h
 %%STATIC%%lib/libcurl.a
 lib/libcurl.so
 lib/libcurl.so.4
-lib/libcurl.so.4.7.0
+lib/libcurl.so.4.8.0
 libdata/pkgconfig/libcurl.pc
 man/man1/curl-config.1.gz
 man/man1/curl.1.gz
@@ -405,7 +406,9 @@ man/man3/curl_easy_cleanup.3.gz
 man/man3/curl_easy_duphandle.3.gz
 man/man3/curl_easy_escape.3.gz
 man/man3/curl_easy_getinfo.3.gz
+man/man3/curl_easy_header.3.gz
 man/man3/curl_easy_init.3.gz
+man/man3/curl_easy_nextheader.3.gz
 man/man3/curl_easy_option_by_id.3.gz
 man/man3/curl_easy_option_by_name.3.gz
 man/man3/curl_easy_option_next.3.gz
@@ -570,6 +573,7 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/getredirect.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/getreferrer.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ghiper.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/headerapi.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiperfifo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/href_extractor.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htmltidy.c
