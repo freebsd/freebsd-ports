@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	String-Tagged
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
