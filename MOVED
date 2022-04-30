@@ -17140,3 +17140,4 @@ net/google-cloud-sdk-app-engine-go||2022-04-27|Obsolete, not supported by the cu
 www/py-dj32-django-modelcluster|www/py-django-modelcluster|2022-04-30|Remove obsoleted port. Use www/py-django-modelcluster instead
 www/rubygem-rack-proxy06|www/rubygem-rack-proxy|2022-04-30|Remove obsoleted port. Use www/rubygem-rack-proxy instead
 security/py-ssh|security/py-paramiko|2022-04-30|Remove obsoleted port. Use security/py-paramiko instead
+security/pinentry-gnome3|security/pinentry-gnome|2022-04-30|De-versioned due to new GNOME versioning scheme

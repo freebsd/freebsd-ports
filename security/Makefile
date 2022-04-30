@@ -781,7 +781,7 @@
     SUBDIR += pinentry-curses
     SUBDIR += pinentry-efl
     SUBDIR += pinentry-fltk
-    SUBDIR += pinentry-gnome3
+    SUBDIR += pinentry-gnome
     SUBDIR += pinentry-gtk2
     SUBDIR += pinentry-qt5
     SUBDIR += pinentry-tty
