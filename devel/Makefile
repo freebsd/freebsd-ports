@@ -5881,6 +5881,7 @@
     SUBDIR += rubygem-aws-sdk-iottwinmaker
     SUBDIR += rubygem-aws-sdk-iotwireless
     SUBDIR += rubygem-aws-sdk-ivs
+    SUBDIR += rubygem-aws-sdk-ivschat
     SUBDIR += rubygem-aws-sdk-kafka
     SUBDIR += rubygem-aws-sdk-kafkaconnect
     SUBDIR += rubygem-aws-sdk-kendra
