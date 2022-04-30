@@ -1,5 +1,5 @@
 PORTNAME=	ncnn
-DISTVERSION=	20211208
+DISTVERSION=	20220420
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,7 +8,10 @@ COMMENT=	High-performance neural network inference framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf
+
 USES=		cmake compiler:c11
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tencent
 

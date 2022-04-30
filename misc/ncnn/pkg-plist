@@ -1,10 +1,12 @@
+bin/caffe2ncnn
 bin/darknet2ncnn
 bin/mxnet2ncnn
 bin/ncnn2int8
 bin/ncnn2mem
-bin/ncnn2table 
+bin/ncnn2table
 bin/ncnnmerge
 bin/ncnnoptimize
+bin/onnx2ncnn
 include/ncnn/allocator.h
 include/ncnn/benchmark.h
 include/ncnn/blob.h
