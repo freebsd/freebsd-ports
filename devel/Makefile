@@ -4994,6 +4994,7 @@
     SUBDIR += py-ptpython
     SUBDIR += py-ptvsd
     SUBDIR += py-pudb
+    SUBDIR += py-pure-eval
     SUBDIR += py-purl
     SUBDIR += py-py
     SUBDIR += py-py-ubjson
