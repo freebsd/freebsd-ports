@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	lxqt-notificationd
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	deskutils
 MASTER_SITES=	LXQT
 
