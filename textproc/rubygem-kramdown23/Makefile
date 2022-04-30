@@ -20,13 +20,10 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-#PLIST_FILES=	bin/kramdown
-
 CPE_VENDOR=	kramdown_project
 
 PORTSCOUT=	limit:^2\.3\.
 
-# Avoid CONFLICTS_INSTALL with textproc/rubygem-kramdown
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/kramdown
 
