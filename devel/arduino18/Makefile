@@ -81,7 +81,7 @@ INSLIST+=	reference
 INSLIST+=	examples
 .endif
 
-post-extract:
+post-extract-DOCS-on:
 	${MKDIR} ${BUILD_DIR}/reference
 	${MV} ${WRKDIR}/code.jquery.com ${BUILD_DIR}/reference
 	${MV} ${WRKDIR}/www.arduino.cc ${BUILD_DIR}/reference
