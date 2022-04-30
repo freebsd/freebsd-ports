@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	lxqt-sudo
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	security
 MASTER_SITES=	LXQT
 
