@@ -47,4 +47,14 @@ STP_CMAKE_BOOL=		ENABLE_SOLVER_STP
 STP_LIB_DEPENDS=	libstp.so:math/stp \
 			libcryptominisat5.so:math/cryptominisat
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+PLIST_SUB=	32BIT="@comment " \
+		64BIT=""
+.else
+PLIST_SUB=	32BIT="" \
+		64BIT=""
+.endif
+
 .include <bsd.port.mk>
