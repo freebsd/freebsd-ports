@@ -11,7 +11,6 @@ share/applications/lxqt-logout.desktop
 share/applications/lxqt-reboot.desktop
 share/applications/lxqt-shutdown.desktop
 share/applications/lxqt-suspend.desktop
-share/kdm/sessions/lxqt.desktop
 %%LXQT_SHAREDIR%%/lxqt.conf
 %%LXQT_SHAREDIR%%/session.conf
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_ar.qm
