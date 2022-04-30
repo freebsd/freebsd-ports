@@ -5760,6 +5760,7 @@
     SUBDIR += rubygem-aws-sdk-budgets
     SUBDIR += rubygem-aws-sdk-chime
     SUBDIR += rubygem-aws-sdk-chimesdkidentity
+    SUBDIR += rubygem-aws-sdk-chimesdkmediapipelines
     SUBDIR += rubygem-aws-sdk-chimesdkmeetings
     SUBDIR += rubygem-aws-sdk-chimesdkmessaging
     SUBDIR += rubygem-aws-sdk-cloud9
