@@ -1,7 +1,7 @@
 # Created by: Alan Eldridge <alane@geeksrus.net>
 
 PORTNAME=	cups
-PORTVERSION=	2.3.3op2
+PORTVERSION=	2.4.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	print
 
@@ -11,17 +11,16 @@ COMMENT=	Common UNIX Printing System
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS=	LPRng
+USES=		compiler:c++11-lang cpe gmake iconv localbase pkgconfig
+CPE_VENDOR=	apple
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenPrinting
 
-DESTDIRNAME=	DSTROOT
+CONFLICTS=	LPRng
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-dnssd						\
-		--disable-gssapi					\
-		--disable-launchd					\
-		--disable-systemd					\
+CONFIGURE_ARGS=	--enable-relro						\
 		--with-cups-user=${USERS}				\
 		--with-cups-group=${GROUPS}				\
 		--with-system-groups=wheel				\
@@ -32,10 +31,7 @@ CONFIGURE_ARGS=	--disable-dnssd						\
 		--with-rcdir=no						\
 		--with-optim=" "					\
 		--with-pam-module="unix"				\
-		ac_cv_path_JAVA= ac_cv_path_PERL= ac_cv_path_PHPCGI=	\
-		ac_cv_path_PHP= ac_cv_path_PYTHON=
-USES=		compiler:c++11-lang cpe gmake iconv localbase pkgconfig
-CPE_VENDOR=	apple
+		--without-ondemand
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	cupsd
 
@@ -47,7 +43,7 @@ OPTIONS_DEFAULT=	AVAHI DBUS GNUTLS LIBPAPER
 OPTIONS_SUB=		yes
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
-AVAHI_CONFIGURE_ENABLE=	avahi
+AVAHI_CONFIGURE_WITH=	dnssd=avahi
 AVAHI_SUB_LIST=		AVAHI_DAEMON=avahi_daemon
 AVAHI_SUB_LIST_OFF=	AVAHI_DAEMON=
 
@@ -57,8 +53,7 @@ DBUS_SUB_LIST=		DBUS_DAEMON=dbus
 DBUS_SUB_LIST_OFF=	DBUS_DAEMON=
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-GNUTLS_CONFIGURE_ON=	--enable-gnutls
-GNUTLS_CONFIGURE_OFF=	--disable-ssl
+GNUTLS_CONFIGURE_WITH=	tls
 
 IPPTOOL_DESC=		Internet Printing Protocol testing tool
 
@@ -95,10 +90,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' ${WRKSRC}/Makedefs.in
 	@${REINPLACE_CMD} 's/usblp/ulpt/g' ${WRKSRC}/backend/usb-libusb.c
 	@${REINPLACE_CMD} -e 's|/usr/local/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
-		-e 's/-fstack-protector//' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC}/doc ${WRKSRC}/templates -type f -exec ${SED} -i '' \
-		's|http://www.cups.org|https://www.cups.org|g' {} +
-	@${REINPLACE_CMD} '/stripopt=/s/-x//' ${WRKSRC}/install-sh
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} 's|/etc/cups|${LOCALBASE}/etc/cups|g' \
 		${WRKSRC}/man/*.[1-9]
 	@${REINPLACE_CMD} -e 's|\.default|.sample|'\
@@ -108,9 +100,10 @@ post-patch:
 post-patch-DOCS-off:
 # Link to online documentation.
 	@${FIND} ${WRKSRC}/doc ${WRKSRC}/templates -type f -exec ${SED} -i '' \
-		-e 's|[Hh][Rr][Ee][Ff]="/*help/\([{"]\)|href="https://www.cups.org/documentation.html\1|g' \
-		-e '/have_gssapi/s|[Hh][Rr][Ee][Ff]="/*help/|href="https\\://www.cups.org/doc/|g' \
-		-e 's|[Hh][Rr][Ee][Ff]="/*help/|href="https://www.cups.org/doc/|g' {} +
+		-e 's|[Hh][Rr][Ee][Ff]="/*help/{[^"]*"|href="https://openprinting.github.io/cups/#DOCUMENTATION|g' \
+		-e 's|[Hh][Rr][Ee][Ff]="/*help/"|href="https://openprinting.github.io/cups/#DOCUMENTATION|g' \
+		-e '/have_gssapi/s|[Hh][Rr][Ee][Ff]="/*help/|href="https\\://openprinting.github.io/cups/doc/|g' \
+		-e 's|[Hh][Rr][Ee][Ff]="/*help/|href="https://openprinting.github.io/cups/doc/|g' {} +
 
 post-install:
 	${LN} -sf lpr ${STAGEDIR}${PREFIX}/bin/lpr-cups

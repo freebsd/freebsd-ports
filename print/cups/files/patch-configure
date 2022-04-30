@@ -1,6 +1,6 @@
---- configure.orig	2020-04-27 18:04:29 UTC
+--- configure.orig	2022-01-27 11:11:42 UTC
 +++ configure
-@@ -5775,7 +5775,6 @@ fi
+@@ -6793,7 +6793,6 @@ LIBS="$SAVELIBS"
  fi
  LIBS="$SAVELIBS"
  
@@ -8,26 +8,64 @@
  DBUS_NOTIFIER=""
  DBUS_NOTIFIERLIBS=""
  
-@@ -6590,7 +6589,6 @@ if test "$DSO" != ":"; then
- 			if test $exec_prefix != /usr; then
- 				DSOFLAGS="-Wl,-R$libdir $DSOFLAGS"
- 				LDFLAGS="$LDFLAGS -Wl,-R$libdir"
--				EXPORT_LDFLAGS="-Wl,-R$libdir"
- 			fi
- 			;;
-                 linux* | gnu*)
-@@ -8560,13 +8558,7 @@ fi
- 			PAMLIBS="-lpam"
- 		fi
+@@ -7807,7 +7806,6 @@ then :
  
--		# Find the PAM configuration directory, if any...
--		for dir in /private/etc/pam.d /etc/pam.d; do
--			if test -d $dir; then
--				PAMDIR=$dir
--				break;
--			fi
--		done
-+		PAMDIR=/usr/local/etc/pam.d
- 	fi
+ 	    DSOFLAGS="-Wl,-R$libdir $DSOFLAGS"
+ 	    LDFLAGS="$LDFLAGS -Wl,-R$libdir"
+-	    EXPORT_LDFLAGS="-Wl,-R$libdir"
  
- 	LIBS="$SAVELIBS"
+ fi
+      ;; #(
+@@ -8124,7 +8122,6 @@ then :
+ if ac_fn_c_try_link "$LINENO"
+ then :
+ 
+-	OPTIM="$OPTIM -fstack-protector-strong"
+ 	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+ 
+@@ -8149,7 +8146,6 @@ then :
+ if ac_fn_c_try_link "$LINENO"
+ then :
+ 
+-	    OPTIM="$OPTIM -fstack-protector"
+ 	    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ printf "%s\n" "yes" >&6; }
+ 
+@@ -8336,6 +8332,7 @@ case $host_os_name in #(
+     # glibc 2.8 and higher breaks peer credentials unless you
+     # define _GNU_SOURCE...
+     OPTIM="$OPTIM -D_GNU_SOURCE"
++esac
+ 
+     # The -z relro option is provided by the Linux linker command to
+     # make relocatable data read-only.
+@@ -8345,10 +8342,6 @@ fi
+ 	RELROFLAGS="-Wl,-z,relro,-z,now"
+ 
+ fi
+- ;; #(
+-  *) :
+-     ;;
+-esac
+ 
+ 
+ ac_fn_c_check_header_compile "$LINENO" "resolv.h" "ac_cv_header_resolv_h" "
+@@ -10191,16 +10184,7 @@ fi
+ 
+ fi
+ 
+-	# Find the PAM configuration directory, if any...
+-	for dir in /private/etc/pam.d /etc/pam.d; do
+-	    if test -d $dir
+-then :
+-
+-		PAMDIR="$dir"
+-		break;
+-
+-fi
+-	done
++	PAMDIR=/usr/local/etc/pam.d
+ 
+ fi
+ 
