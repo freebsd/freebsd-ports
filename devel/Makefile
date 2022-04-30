@@ -5286,6 +5286,7 @@
     SUBDIR += py-squint
     SUBDIR += py-sre-yield
     SUBDIR += py-srsly
+    SUBDIR += py-stack-data
     SUBDIR += py-stackexchange
     SUBDIR += py-statgrab
     SUBDIR += py-statsd
