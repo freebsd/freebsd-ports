@@ -18,7 +18,7 @@
      ::typelib_typedescription_getByName( &pTD, unoName.pData );
      assert(pTD && "### unknown exception type! leaving out destruction => leaking!!!");
      if (pTD)
-@@ -262,8 +268,19 @@ void fillUnoException(uno_Any * pUnoExc, uno_Mapping *
+@@ -262,8 +268,23 @@ void fillUnoException(uno_Any * pUnoExc, uno_Mapping *
  
  void fillUnoException(uno_Any * pUnoExc, uno_Mapping * pCpp2Uno)
  {
@@ -29,10 +29,14 @@
 +             __cxxabiv1::__cxa_current_primary_exception());
 +    if (header) {
 +        __cxxabiv1::__cxa_decrement_exception_refcount(header);
-+        if (header[-1].exceptionDestructor != &deleteException) {
++        uint64_t exc_class = header[-1].unwindHeader.exception_class
++                           & 0xffffffffffffff00;
++        if (exc_class != /* "GNUCC++" */ 0x474e5543432b2b00) {
 +            header = reinterpret_cast<__cxxabiv1::__cxa_exception *>(
 +                reinterpret_cast<char *>(header) - 12);
-+            if (header[-1].exceptionDestructor != &deleteException) {
++            exc_class = header[-1].unwindHeader.exception_class
++                      & 0xffffffffffffff00;
++            if (exc_class != /* "GNUCC++" */ 0x474e5543432b2b00) {
 +                header = nullptr;
 +            }
 +        }
@@ -40,7 +44,7 @@
      if (! header)
      {
          RuntimeException aRE( "no exception header!" );
-@@ -273,7 +290,7 @@ void fillUnoException(uno_Any * pUnoExc, uno_Mapping *
+@@ -273,7 +294,7 @@ void fillUnoException(uno_Any * pUnoExc, uno_Mapping *
          return;
      }
  
@@ -49,7 +53,7 @@
  
      typelib_TypeDescription * pExcTypeDescr = nullptr;
      OUString unoName( toUNOname( exceptionType->name() ) );
-@@ -292,7 +309,7 @@ void fillUnoException(uno_Any * pUnoExc, uno_Mapping *
+@@ -292,7 +313,7 @@ void fillUnoException(uno_Any * pUnoExc, uno_Mapping *
      else
      {
          // construct uno exception any
