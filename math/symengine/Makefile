@@ -1,6 +1,6 @@
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,6 +8,9 @@ COMMENT=	Fast symbolic manipulation library, written in C++
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
+		libgmp.so:math/gmp
 
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
@@ -35,7 +38,8 @@ ECM_LIB_DEPENDS=	libecm.so:math/gmp-ecm
 
 LLVM_DESC=		Build with LLVM
 LLVM_CMAKE_BOOL=	WITH_LLVM
-LLVM_CMAKE_ON=		-DLLVM_INCLUDE_DIRS:STRING=${LOCALBASE}/llvm${LLVM_VERSION}/include
+LLVM_CMAKE_ON=		-DLLVM_INCLUDE_DIRS:STRING=${LOCALBASE}/llvm${LLVM_VERSION}/include \
+			-DFREEBSD_LLVM_VERSION=${LLVM_VERSION}
 LLVM_BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
 
 MPC_DESC=		Build with MPC
