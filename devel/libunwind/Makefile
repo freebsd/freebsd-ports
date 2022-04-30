@@ -29,18 +29,19 @@ PLIST_SUB=	ARCH=${ARCH:S|amd64|x86_64|:C|armv.|arm|:S|i386|x86|:C|powerpc64.*|pp
 
 CPE_VENDOR=	libunwind_project
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !${ARCH:Mpowerpc64*}
-PLIST_SUB+=	COREDUMP=""
-.else
+.if ${ARCH:Mpowerpc64*}
 PLIST_SUB+=	COREDUMP="@comment "
+.else
+PLIST_SUB+=	COREDUMP=""
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400052
-PLIST_FILES+=	include/unwind.h
+PLIST_FILES=	include/unwind.h
+
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/unwind.h ${STAGEDIR}${PREFIX}/include
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
