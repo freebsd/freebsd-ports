@@ -5360,6 +5360,7 @@
     SUBDIR += py-txaio
     SUBDIR += py-typechecks
     SUBDIR += py-typed-ast
+    SUBDIR += py-typeguard
     SUBDIR += py-typer
     SUBDIR += py-types-Flask
     SUBDIR += py-types-Jinja2
