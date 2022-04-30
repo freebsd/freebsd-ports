@@ -1,0 +1,4 @@
+Locket implements a file-based lock that can be used by multiple processes
+provided they use the same path.
+
+WWW: https://github.com/mwilliamson/locket.py

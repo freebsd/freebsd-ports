@@ -4748,6 +4748,7 @@
     SUBDIR += py-llvmcpy
     SUBDIR += py-llvmlite
     SUBDIR += py-lml
+    SUBDIR += py-locket
     SUBDIR += py-lockfile
     SUBDIR += py-logan
     SUBDIR += py-logbook
