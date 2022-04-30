@@ -210,6 +210,10 @@
 	<range><lt>6.2.7</lt></range>
       </package>
       <package>
+	<name>redis-devel</name>
+	<range><lt>7.0.0.20220428</lt></range>
+      </package>
+      <package>
 	<name>redis62</name>
 	<range><lt>6.2.7</lt></range>
       </package>
