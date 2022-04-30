@@ -2,7 +2,7 @@
 
 PORTNAME=	evince
 DISTVERSION=	42.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -38,6 +38,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	ice
 CPE_VENDOR=	gnome
 MESON_ARGS=	-Dgtk_doc=false \
+		-Dpdf=enabled \
 		-Dps=enabled \
 		-Dsystemduserunitdir=no
 
