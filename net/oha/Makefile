@@ -2,7 +2,7 @@
 
 PORTNAME=	oha
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	net
 
 MAINTAINER=	otis@FreeBSD.org
@@ -142,12 +142,17 @@ CARGO_CRATES=	anyhow-1.0.56 \
 		regex-automata-0.1.10 \
 		remove_dir_all-0.5.3 \
 		resolv-conf-0.7.0 \
+		ring-0.16.20 \
 		rlimit-0.7.0 \
+		rustls-0.20.4 \
+		rustls-native-certs-0.6.2 \
+		rustls-pemfile-1.0.0 \
 		ryu-1.0.9 \
 		safemem-0.3.3 \
 		schannel-0.1.19 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
+		sct-0.7.0 \
 		security-framework-2.6.1 \
 		security-framework-sys-2.6.1 \
 		serde-1.0.136 \
@@ -161,6 +166,7 @@ CARGO_CRATES=	anyhow-1.0.56 \
 		slab-0.4.5 \
 		smallvec-1.8.0 \
 		socket2-0.4.4 \
+		spin-0.5.2 \
 		spin-0.9.2 \
 		strsim-0.10.0 \
 		syn-1.0.90 \
@@ -175,6 +181,7 @@ CARGO_CRATES=	anyhow-1.0.56 \
 		tokio-1.17.0 \
 		tokio-macros-1.7.0 \
 		tokio-native-tls-0.3.0 \
+		tokio-rustls-0.23.3 \
 		tokio-stream-0.1.8 \
 		tokio-tungstenite-0.15.0 \
 		tokio-util-0.6.9 \
@@ -194,6 +201,7 @@ CARGO_CRATES=	anyhow-1.0.56 \
 		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
+		untrusted-0.7.1 \
 		url-2.2.2 \
 		utf-8-0.7.6 \
 		utf8-width-0.1.6 \
@@ -209,6 +217,8 @@ CARGO_CRATES=	anyhow-1.0.56 \
 		wasm-bindgen-macro-0.2.79 \
 		wasm-bindgen-macro-support-0.2.79 \
 		wasm-bindgen-shared-0.2.79 \
+		web-sys-0.3.56 \
+		webpki-0.22.0 \
 		widestring-0.5.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
