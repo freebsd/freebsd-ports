@@ -29,4 +29,4 @@ share/icons/hicolor/32x32/apps/rehex.png
 share/icons/hicolor/48x48/apps/rehex.png
 share/icons/hicolor/512x512/apps/rehex.png
 share/icons/hicolor/64x64/apps/rehex.png
-%%DATADIR%%/rehex.htb
+%%PORTDOCS%%%%DATADIR%%/rehex.htb
