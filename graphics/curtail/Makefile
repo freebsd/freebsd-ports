@@ -1,5 +1,5 @@
 PORTNAME=	curtail
-DISTVERSION=	1.2.2
+DISTVERSION=	1.3.0
 CATEGORIES=	graphics print
 
 MAINTAINER=	yuri@FreeBSD.org
