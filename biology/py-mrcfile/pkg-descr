@@ -1,0 +1,5 @@
+mrcfile is a Python implementation of the MRC2014 file
+format, which is used in structural biology to store
+image and volume data.
+
+WWW: https://github.com/ccpem/mrcfile
