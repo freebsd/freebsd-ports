@@ -2,7 +2,7 @@
 
 PORTNAME=	gnome-keyring
 PORTVERSION=	40.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libp11-kit.so:security/p11-kit \
 		libgcrypt.so:security/libgcrypt
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
-		pinentry-gnome3:security/pinentry-gnome3
+		pinentry-gnome3:security/pinentry-gnome
 
 PORTSCOUT=	limitw:1,even
 
