@@ -1,12 +1,12 @@
 PORTNAME=	lv2lint
-DISTVERSION=	0.14.0
+DISTVERSION=	0.16.2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Check whether a given LV2 plugin is up to the specification
 
 LICENSE=	ART20
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSES/Artistic-2.0.txt
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		curl>0:ftp/curl \
