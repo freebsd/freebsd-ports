@@ -1,4 +1,4 @@
---- dart/common/SharedLibrary.hpp.orig	2021-07-15 08:12:45 UTC
+--- dart/common/SharedLibrary.hpp.orig	2021-11-04 20:43:53 UTC
 +++ dart/common/SharedLibrary.hpp
 @@ -41,7 +41,7 @@
  #include "dart/common/Deprecated.hpp"
@@ -7,7 +7,7 @@
 -#if DART_OS_LINUX
 +#if DART_OS_LINUX || DART_OS_FREEBSD
  
- #  define DYNLIB_HANDLE void*
+   #define DYNLIB_HANDLE void*
  
 @@ -65,6 +65,8 @@ using hInstance = HINSTANCE__*;
  

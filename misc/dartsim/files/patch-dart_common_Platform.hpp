@@ -1,8 +1,8 @@
---- dart/common/Platform.hpp.orig	2021-07-15 08:12:45 UTC
+--- dart/common/Platform.hpp.orig	2021-11-04 20:43:53 UTC
 +++ dart/common/Platform.hpp
 @@ -43,6 +43,15 @@
- #    define DART_ARCH_32BITS 1
- #  endif
+     #define DART_ARCH_32BITS 1
+   #endif
  
 +#elif defined(__FreeBSD__)
 +
@@ -15,4 +15,4 @@
 +
  #elif defined(__APPLE__)
  
- #  define DART_OS_MACOS 1
+   #define DART_OS_MACOS 1
