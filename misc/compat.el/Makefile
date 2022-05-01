@@ -36,6 +36,6 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORT_DOCS:C/^/${WRKSRC}\//} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:C/^/${WRKSRC}\//} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
