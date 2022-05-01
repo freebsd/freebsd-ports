@@ -1431,6 +1431,8 @@ lib/wine/%%WINEARCH%%-unix/qcap.so
 lib/wine/%%WINEARCH%%-unix/secur32.so
 lib/wine/%%WINEARCH%%-unix/win32u.so
 lib/wine/%%WINEARCH%%-unix/winebus.so
+%%ALSA%%lib/wine/%%WINEARCH%%-unix/winealsa.so
+%%ALSA%%lib/wine/%%WINEARCH%%-windows/winealsa.drv
 %%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.so
 %%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.drv.so
 lib/wine/%%WINEARCH%%-unix/winevulkan.so
