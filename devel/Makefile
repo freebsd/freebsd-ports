@@ -7108,6 +7108,7 @@
     SUBDIR += sope
     SUBDIR += sope2
     SUBDIR += sord
+    SUBDIR += sparsebitset
     SUBDIR += sparsehash
     SUBDIR += spatialindex
     SUBDIR += spdlog
