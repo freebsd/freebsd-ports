@@ -1,14 +1,15 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
 
 PORTNAME=	drm-kmod
-PORTVERSION=	g20190710
-PORTREVISION=	1
+PORTVERSION=	20220501
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Metaport of DRM modules for the linuxkpi-based KMS components
 
 USES=		metaport
+
+RUN_DEPENDS=	gpu-firmware-kmod>=g20200914:graphics/gpu-firmware-kmod
 
 .include <bsd.port.options.mk>
 
