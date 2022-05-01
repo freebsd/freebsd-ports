@@ -1,6 +1,6 @@
 PORTNAME=	miniupnpc
 PORTVERSION=	2.2.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 
@@ -17,7 +17,7 @@ USE_LDCONFIG=	yes
 CPE_VENDOR=	miniupnp_project
 
 CONFIGURE_SCRIPT=	updateminiupnpcstrings.sh
-MAKE_ENV+=	INSTALLPREFIX=${PREFIX}
+MAKE_ENV+=	INSTALLPREFIX=${PREFIX} LIBDIR=lib
 
 .include <bsd.port.pre.mk>
 
