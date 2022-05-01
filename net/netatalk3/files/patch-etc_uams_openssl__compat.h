@@ -1,6 +1,6 @@
---- etc/uams/openssl_compat.h.orig	2019-01-03 18:36:43.123024000 +0000
-+++ etc/uams/openssl_compat.h	2019-01-03 18:37:02.918877000 +0000
-@@ -11,7 +11,7 @@ http://www.gnu.org/licenses/old-licenses
+--- etc/uams/openssl_compat.h.orig	2022-02-28 13:32:06 UTC
++++ etc/uams/openssl_compat.h
+@@ -11,7 +11,7 @@ http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
  #ifndef OPENSSL_COMPAT_H
  #define OPENSSL_COMPAT_H
  

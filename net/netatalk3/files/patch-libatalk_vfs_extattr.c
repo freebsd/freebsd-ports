@@ -1,5 +1,5 @@
---- libatalk/vfs/extattr.c	2020-11-17 04:20:13 UTC
-+++ libatalk/vfs/extattr.c	
+--- libatalk/vfs/extattr.c.orig	2022-03-22 04:50:23 UTC
++++ libatalk/vfs/extattr.c
 @@ -353,13 +353,13 @@ static ssize_t bsd_attr_list (int type, extattr_arg ar
      }
  
