@@ -13,6 +13,10 @@ COMMENT=	Rust code completion helper
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
+BROKEN=		fails to build: unknown feature thread_local_const_init
+DEPRECATED=	Racer is not actively developped now. Please consider using newer software such as devel/rust-analyzer.
+EXPIRATION_DATE=2022-06-30
+
 USES=		cargo
 CARGO_CRATES=	aho-corasick-0.7.10 \
 		annotate-snippets-0.8.0 \

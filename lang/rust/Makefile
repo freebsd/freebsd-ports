@@ -1,13 +1,12 @@
 # Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 
 PORTNAME=	rust
-PORTVERSION?=	1.59.0
+PORTVERSION?=	1.60.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
-		LOCAL/tobik/rust:bootstrap \
-		LOCAL/mikael/rust:bootstrap \
+		LOCAL/rust:bootstrap \
 		https://static.rust-lang.org/dist/:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
 DISTFILES?=	${NIGHTLY_DATE:D${NIGHTLY_DATE}/}${DISTNAME}${EXTRACT_SUFX}:src \
@@ -32,7 +31,7 @@ ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 BUILD_DEPENDS=	cmake:devel/cmake
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cpe ninja:build pkgconfig python:3.6+,build ssl tar:xz
+USES=		cpe ninja:build pkgconfig python:3.7+,build shebangfix ssl tar:xz
 
 CPE_VENDOR=	rust-lang
 
@@ -52,7 +51,7 @@ TMPDIR?=	${WRKDIR}
 
 OPTIONS_DEFINE=		DOCS GDB SOURCES WASM
 OPTIONS_DEFAULT=	SOURCES WASM
-OPTIONS_EXCLUDE_armv6=	DOCS
+OPTIONS_EXCLUDE=	DOCS # https://github.com/rust-lang/rust/issues/76526
 
 GDB_DESC=	Install ports gdb (necessary for debugging rust programs)
 SOURCES_DESC=	Install source files
@@ -61,14 +60,16 @@ WASM_DESC=	Build the WebAssembly target (wasm32-unknown-unknown)
 DOCS_VARS=		_RUST_BUILD_DOCS=true
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
-SOURCES_VARS=		_RUST_TOOLS+=src
-WASM_VARS=		_RUST_BUILD_WASM=true \
+SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
+			_RUST_TOOLS+=src
+WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-std-${_PACKAGE_VERS}-wasm32-unknown-unknown" \
+			_RUST_BUILD_WASM=true \
 			_RUST_TARGETS+=wasm32-unknown-unknown
 WASM_VARS_OFF=		_RUST_BUILD_WASM=false
 
 # See WRKSRC/src/stage0.json for the date and version values
-BOOTSTRAPS_DATE?=		2022-01-20
-RUST_BOOTSTRAP_VERSION?=	1.58.1
+BOOTSTRAPS_DATE?=		2022-02-24
+RUST_BOOTSTRAP_VERSION?=	1.59.0
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
@@ -87,6 +88,19 @@ _RUSTC_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BO
 _RUST_STD_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
 _CARGO_BOOTSTRAP=	${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${_RUST_TARGET}
 
+_PACKAGE_VERS=		${NIGHTLY_DATE:?nightly:${PORTVERSION}}
+_COMPONENTS+=		cargo-${_PACKAGE_VERS}-${_RUST_TARGET} \
+			clippy-${_PACKAGE_VERS}-${_RUST_TARGET} \
+			rustc-${_PACKAGE_VERS}-${_RUST_TARGET} \
+			rustfmt-${_PACKAGE_VERS}-${_RUST_TARGET} \
+			rust-analysis-${_PACKAGE_VERS}-${_RUST_TARGET} \
+			rust-std-${_PACKAGE_VERS}-${_RUST_TARGET}
+
+# https://github.com/bjorn3/rustc_codegen_cranelift/commit/83d470d91c15d0cb5890705291e6ee9e5be8a842
+# https://github.com/rust-lang/rustc_codegen_gcc/pull/160
+SHEBANG_FILES=		compiler/rustc_codegen_cranelift/scripts/* \
+			compiler/rustc_codegen_gcc/*.sh compiler/rustc_codegen_gcc/build_sysroot/*.sh
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} != FreeBSD
@@ -98,8 +112,19 @@ IGNORE=		is only for FreeBSD
 BUILD_DEPENDS+=	ld.bfd:devel/binutils
 .else
 MAKE_ENV+=	RUST_BACKTRACE=1
-# rls needs 64-bit atomics
+.endif
+
+# rls doesn't build on rust nightly
+# rls needs 64-bit atomics: it doesn't build on powerpc
+.if !defined(NIGHTLY_DATE) && ${ARCH} != powerpc
 _RUST_TOOLS+=	rls
+_COMPONENTS+=	rls-${_PACKAGE_VERS}-${_RUST_TARGET}
+.endif
+
+# per https://rust-lang.github.io/rustup/concepts/components.html
+# rustc-dev is only usefull on nightly
+.if defined(NIGHTLY_DATE)
+_COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET}
 .endif
 
 .if exists(${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX})
@@ -238,20 +263,30 @@ do-configure:
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} x.py build --jobs=${MAKE_JOBS_NUMBER}
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} x.py dist --jobs=${MAKE_JOBS_NUMBER}
 
 do-install:
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} x.py install --jobs=${MAKE_JOBS_NUMBER}
+	${RM} -r ${WRKDIR}/_extractdist
+.for _c in ${_COMPONENTS}
+	${MKDIR} ${WRKDIR}/_extractdist
+	${TAR} xf ${WRKDIR}/_build/dist/${_c}.tar.xz -C ${WRKDIR}/_extractdist
+	cd ${WRKDIR}/_extractdist/${_c} && \
+		${SH} install.sh \
+		--docdir="${STAGEDIR}${DOCSDIR}" \
+		--mandir="${STAGEDIR}${PREFIX}/share/man" \
+		--prefix="${STAGEDIR}${PREFIX}"
+	${RM} -r ${WRKDIR}/_extractdist
+.endfor
+
 # We autogenerate the plist file.  We do that, instead of the
 # regular pkg-plist, because several libraries have a computed
 # filename based on the absolute path of the source files.  As it
 # is user-specific, we cannot know their filename in advance.
-	@${RM} -r ${STAGEDIR}${DOCSDIR}/*.old \
-		${STAGEDIR}${DOCSDIR}/html/.lock \
-		${STAGEDIR}${DOCSDIR}/html/.stamp \
+	@${RM}	${STAGEDIR}${DOCSDIR}/*.old \
+		${STAGEDIR}${PREFIX}/lib/rustlib/components \
 		${STAGEDIR}${PREFIX}/lib/rustlib/install.log \
 		${STAGEDIR}${PREFIX}/lib/rustlib/manifest-* \
+		${STAGEDIR}${PREFIX}/lib/rustlib/rust-installer-version \
 		${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
 	@${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/lib \
 		${STAGEDIR}${PREFIX}/libexec -exec ${FILE} -i {} + | \
