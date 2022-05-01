@@ -1,0 +1,56 @@
+--- src/CMakeLists.txt.orig	2022-02-23 10:00:23 UTC
++++ src/CMakeLists.txt
+@@ -15,6 +15,7 @@ set(PROJECT_GENERATED_DIR ${CMAKE_CURRENT_BINARY_DIR}/
+ 
+ list(APPEND PROJECT_INCLUDE_DIRS "${PROJECT_GENERATED_DIR}"
+      "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_BINARY_DIR}/include")
++list(APPEND PROJECT_INCLUDE_DIRS "${CMAKE_LOCALBASE}/include")
+ 
+ if(APPLE)
+   option(BUILD_FRAMEWORK "Build an OS X framework" OFF)
+@@ -34,13 +35,10 @@ include(CheckIncludeFiles)
+ include(CheckLibraryExists)
+ include(TestBigEndian)
+ 
+-include(AddIOWOW)
+-
+ if(ENABLE_HTTP)
+   if(WIN32)
+     message(FATAL_ERROR "ENABLE_HTTP option cannot be used in Windows build")
+   endif()
+-  include(AddIWNET)
+   add_definitions(-DJB_HTTP)
+   list(APPEND MODULES jbr)
+ endif()
+@@ -160,7 +158,7 @@ endif()
+ set(CMAKE_C_FLAGS_DEBUG
+     "${CMAKE_C_ASAN} -O0 -g -ggdb -Werror -DDEBUG -D_DEBUG -UNDEBUG -Wno-unused-variable"
+ )
+-set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_ASAN} -O3 -DNDEBUG")
++set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_ASAN} -DNDEBUG")
+ # set(CMAKE_EXE_LINKER_FLAGS_RELEASE "-Wl,-s")
+ set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELEASE} -g")
+ set(CMAKE_C_FLAGS_RELEASEWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO}")
+@@ -174,7 +172,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/tmpl/ejdb2c
+ file(GLOB PROJECT_GENERATED_HDRS ${PROJECT_GENERATED_DIR}/*.h)
+ list(APPEND ALL_HDRS ${PROJECT_GENERATED_HDRS})
+ 
+-set(PCLIBS "-liowow -lm")
++set(PCLIBS "-liwnet -liowow -lm")
+ if(DEFINED IWNET_INCLUDE_DIR)
+   set(PCLIBS "-liwnet ${PCLIBS}")
+ endif()
+@@ -349,13 +347,6 @@ if(DO_INSTALL_CORE)
+       FILES_MATCHING
+       PATTERN "*.h")
+   endif()
+-
+-  install(
+-    DIRECTORY ${IOWOW_INCLUDE_DIR}/iowow
+-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
+-    COMPONENT headers
+-    FILES_MATCHING
+-    PATTERN "*.h")
+ 
+   install(FILES ${CMAKE_SOURCE_DIR}/LICENSE ${CMAKE_SOURCE_DIR}/Changelog
+           DESTINATION ${CMAKE_INSTALL_DOCDIR})

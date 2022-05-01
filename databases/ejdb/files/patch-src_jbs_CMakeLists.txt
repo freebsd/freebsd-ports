@@ -1,0 +1,11 @@
+--- src/jbs/CMakeLists.txt.orig	2022-02-23 10:00:23 UTC
++++ src/jbs/CMakeLists.txt
+@@ -1,6 +1,7 @@
+ # Executables
+ add_executable(jbs jbs.c)
+-target_link_libraries(jbs ejdb2_s)
++target_link_libraries(jbs ejdb2_s iowow iwnet)
++target_link_directories(jbs PRIVATE "${CMAKE_LOCALBASE}/lib")
+ 
+ if(CMAKE_BUILD_TYPE STREQUAL "Release")
+   add_custom_command(
