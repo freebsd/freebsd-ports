@@ -1,5 +1,5 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	7.1.0-31
+DISTVERSION=	7.1.0-32
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://www.imagemagick.org/download/ \
 		https://www.imagemagick.org/download/releases/ \
