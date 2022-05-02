@@ -1,11 +1,11 @@
---- libpinyin.pc.in.orig	2018-05-28 08:15:28 UTC
+--- libpinyin.pc.in.orig	2020-11-16 05:28:45 UTC
 +++ libpinyin.pc.in
-@@ -2,7 +2,7 @@ prefix=@prefix@
+@@ -2,7 +2,7 @@ includedir=@includedir@
  exec_prefix=@exec_prefix@
  libdir=@libdir@
  includedir=@includedir@
 -pkgdatadir=@libdir@/libpinyin
 +pkgdatadir=@datadir@/libpinyin
+ database_format=@DATABASE_FORMAT@
  
  libpinyinincludedir=${includedir}/libpinyin-@VERSION@
- libpinyin_binary_version=@LIBPINYIN_BINARY_VERSION@

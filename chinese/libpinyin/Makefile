@@ -1,7 +1,7 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
 
 PORTNAME=	libpinyin
-PORTVERSION=	2.3.0
+PORTVERSION=	2.6.2
 CATEGORIES=	chinese textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 

@@ -1,6 +1,6 @@
---- data/Makefile.in.orig	2019-08-07 02:01:59 UTC
+--- data/Makefile.in.orig	2022-05-01 05:03:52 UTC
 +++ data/Makefile.in
-@@ -307,7 +307,7 @@ EXTRA_DIST = $(textual_model_data) \
+@@ -309,7 +309,7 @@ libpinyin_db_DATA = $(binary_model_data) \
  libpinyin_db_DATA = $(binary_model_data) \
                            table.conf
  
