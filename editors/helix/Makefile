@@ -1,5 +1,6 @@
 PORTNAME=	helix
 DISTVERSION=	22.03
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -215,7 +216,6 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 post-extract:
 	cd ${WRKSRC}/runtime/grammars/sources && ${CP} -a typescript tsx
 	cd ${WRKSRC}/runtime/grammars/sources && ${CP} -a ocaml ocaml-interface
-
 
 post-patch:
 	${GREP} -F -Rl '%%DATADIR%%' ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},'

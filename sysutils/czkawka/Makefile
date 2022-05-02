@@ -1,5 +1,6 @@
 PORTNAME=	czkawka
 DISTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org

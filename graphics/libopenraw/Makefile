@@ -2,6 +2,7 @@
 
 PORTNAME=	libopenraw
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

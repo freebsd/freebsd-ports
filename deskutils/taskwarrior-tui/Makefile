@@ -1,6 +1,7 @@
 PORTNAME=	taskwarrior-tui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	alexis.praga@free.fr
