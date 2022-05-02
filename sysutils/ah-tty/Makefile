@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic helper for command prompts and shells
 
 USES=		ncurses

@@ -5,7 +5,7 @@ PORTVERSION=	1.3.2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Summarizes and manages differences between local files and Perforce
 
 RUN_DEPENDS=	${LOCALBASE}/bin/p4:devel/p4

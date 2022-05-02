@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 		http://www.bnet.pl/~jajcus/apinger/
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP device monitoring tool
 
 LICENSE=	GPLv2

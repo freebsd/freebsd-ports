@@ -6,7 +6,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 DISTNAME=	rfksay
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates a kitten finding robot with a text bubble
 
 USES=		perl5 shebangfix

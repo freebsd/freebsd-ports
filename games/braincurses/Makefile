@@ -6,7 +6,7 @@ PORTREVISION=	5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of the Mastermind game
 
 LICENSE=	GPLv2

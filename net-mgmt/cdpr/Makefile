@@ -5,7 +5,7 @@ PORTVERSION=	2.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cisco Discovery Protocol Reporter
 
 LICENSE=	GPLv2

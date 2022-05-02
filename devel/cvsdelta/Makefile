@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://belnet.dl.sourceforge.net/sourceforge/cvsdelta/ \
 		SF
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cvsdelta summarizes differences between local and in-cvs files
 
 USE_RUBY=	yes

@@ -5,7 +5,7 @@ PORTVERSION=	1.20
 CATEGORIES=	misc perl5
 MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translates string using Google Translate
 
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww

@@ -5,7 +5,7 @@ PORTVERSION=	2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 
-MAINTAINER=	mich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Copy files in curses interface
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: logw
