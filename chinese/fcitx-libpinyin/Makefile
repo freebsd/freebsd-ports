@@ -1,8 +1,7 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
 
 PORTNAME=	fcitx-libpinyin
-PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTVERSION=	0.5.4
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/:body \
 		http://download.fcitx-im.org/data/:data
