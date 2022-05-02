@@ -128,6 +128,7 @@
     SUBDIR += midpoint
     SUBDIR += mk-livestatus
     SUBDIR += monitoring-plugins
+    SUBDIR += mqtt2prometheus
     SUBDIR += mrtg
     SUBDIR += mrtg-ping-probe
     SUBDIR += mtrace

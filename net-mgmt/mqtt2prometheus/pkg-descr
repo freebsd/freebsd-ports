@@ -1,0 +1,11 @@
+This exporter translates from MQTT topics to prometheus metrics.
+The core design is that clients send arbitrary JSON messages on the topics.
+The translation between the MQTT representation and prometheus metrics is
+configured in the mqtt2prometheus exporter since we often can not change
+the IoT devices sending the messages.
+Clients can push metrics via MQTT to an MQTT Broker.
+This exporter subscribes to the broker and expose the received messages
+as prometheus metrics.
+Currently, the exporter supports only MQTT 3.1.
+
+WWW: https://github.com/hikhvar/mqtt2prometheus/
