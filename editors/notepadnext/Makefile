@@ -1,7 +1,11 @@
 PORTNAME=	notepadnext
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	editors
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	ece83c8d9dc72e987798b5b158770a4b6a502aff.patch:-p1 # https://github.com/dail8859/NotepadNext/pull/124 - fix installed file locations
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Reimplementation of Notepad++
@@ -11,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libuchardet.so:textproc/uchardet
 
-USES=		gl qmake qt:5 xorg
+USES=		desktop-file-utils gl qmake qt:5 xorg
 USE_QT=		core gui network printsupport widgets buildtools_build linguisttools_build
 USE_GL=		gl
 USE_XORG=	xcb
@@ -31,9 +35,8 @@ QMAKE_SOURCE_PATH=	${WRKSRC}/src/NotepadNext.pro
 CXXFLAGS+=	-I${LOCALBASE}/include/uchardet
 LDFLAGS+=	-luchardet
 
-PLIST_FILES=	bin/NotepadNext
-
-do-install: # workaround for https://github.com/dail8859/NotepadNext/issues/123
-	${INSTALL_PROGRAM} ${WRKSRC}/NotepadNext/NotepadNext ${STAGEDIR}${PREFIX}/bin/NotepadNext
+PLIST_FILES=	bin/NotepadNext \
+		share/applications/NotepadNext.desktop \
+		share/icons/hicolor/scalable/mimetypes/NotepadNext.svg
 
 .include <bsd.port.mk>
