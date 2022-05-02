@@ -113,7 +113,6 @@ lib/sbcl/sb-bsd-sockets/win32-sockets.lisp
 lib/sbcl/sb-cltl2/compiler-let.lisp
 lib/sbcl/sb-cltl2/defpackage.lisp
 lib/sbcl/sb-cltl2/env.lisp
-lib/sbcl/sb-cltl2/macroexpand.lisp
 lib/sbcl/sb-cltl2/sb-cltl2.asd
 lib/sbcl/sb-cltl2/tests.lisp
 lib/sbcl/sb-concurrency/frlock.lisp
