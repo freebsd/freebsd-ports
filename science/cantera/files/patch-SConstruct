@@ -1,45 +1,27 @@
---- SConstruct.orig	2021-12-18 00:39:36 UTC
+--- SConstruct.orig	2022-05-01 15:31:54 UTC
 +++ SConstruct
-@@ -312,7 +312,7 @@ elif 'icc' in env.subst('$CC'):
-     defaults.warningFlags = '-Wcheck'
-     env['openmp_flag'] = ['-openmp']
+@@ -805,6 +805,9 @@ elif "icx" in env.subst("$CC"):
+ elif "clang" in env.subst("$CC"):
+     config.select("clang")
  
--elif 'clang' in env.subst('$CC'):
-+elif 'clang' in env.subst('$CC') or 'cc' in env.subst('$CC'):
-     defaults.ccFlags = '-fcolor-diagnostics'
-     defaults.cxxFlags = '-std=c++11'
-     defaults.buildPch = True
-@@ -719,17 +719,18 @@ valid_arguments = (set(opt[0] for opt in windows_compi
- for arg in ARGUMENTS:
-     if arg not in valid_arguments:
-         print('Encountered unexpected command line argument: %r' % arg)
++elif "cc" in env.subst("$CC"):
++    config.select("clang")
++
+ else:
+     print(f"WARNING: Unrecognized C compiler '{env['CC']}'")
+ 
+@@ -869,10 +872,10 @@ if "sdist" in COMMAND_LINE_TARGETS:
+     logger.info("'sdist' target was specified. Setting 'use_pch' to False.")
+     env["use_pch"] = False
+ 
+-for arg in ARGUMENTS:
+-    if arg not in config:
+-        logger.error(f"Encountered unexpected command line option: '{arg}'")
 -        sys.exit(1)
-+        #sys.exit(1)
++#for arg in ARGUMENTS:
++#    if arg not in config:
++#        logger.error(f"Encountered unexpected command line option: '{arg}'")
++#        sys.exit(1)
  
- env["cantera_version"] = "2.6.0a3"
+ env["cantera_version"] = "2.6.0"
  # For use where pre-release tags are not permitted (MSI, sonames)
- env['cantera_pure_version'] = re.match(r'(\d+\.\d+\.\d+)', env['cantera_version']).group(0)
- env['cantera_short_version'] = re.match(r'(\d+\.\d+)', env['cantera_version']).group(0)
- 
--try:
--    env["git_commit"] = get_command_output("git", "rev-parse", "--short", "HEAD")
--except subprocess.CalledProcessError:
--    env["git_commit"] = "unknown"
-+#try:
-+#    env["git_commit"] = get_command_output("git", "rev-parse", "--short", "HEAD")
-+#except subprocess.CalledProcessError:
-+#    env["git_commit"] = "unknown"
-+env["git_commit"] = "unknown"
- 
- # Print values of all build options:
- print("Configuration variables read from 'cantera.conf' and command line:")
-@@ -1440,8 +1441,7 @@ if env['matlab_toolbox'] == 'y':
-               'SUNDIALS libraries and skip building the Matlab toolbox.')
-         sys.exit(1)
- 
--    if not (os.path.isdir(matPath) and
--            os.path.isdir(pjoin(matPath, 'extern'))):
-+    if not (os.path.isdir(matPath)):
-         print("""ERROR: Path set for 'matlab_path' is not correct.""")
-         print("""ERROR: Path was: '%s'""" % matPath)
-         sys.exit(1)

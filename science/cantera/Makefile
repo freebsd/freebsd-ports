@@ -1,13 +1,7 @@
 PORTNAME=	cantera
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.1-611
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-gc4d6ecc15
+DISTVERSION=	2.6.0
 CATEGORIES=	science # chemistry physics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	5720ff659f4bd8dad33d32891fe7d4ae44c72697.patch:-p1 \
-		36e7019cab8e9d9e8388715b5680fea924ce6f52.patch:-p1 # fix "Fix stage directory from appearing in setup_cantera", https://github.com/Cantera/cantera/pull/1102
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chemical kinetics, thermodynamics, and transport tool suite
@@ -43,7 +37,7 @@ ALL_TARGET=	build
 TEST_TARGET=	test # some tests fail, see https://github.com/Cantera/cantera/issues/1095
 
 OPTIONS_DEFINE=		OCTAVE PYTHON
-OPTIONS_DEFAULT=	PYTHON # OCTAVE is off by default because Octave interface is not as frequently requested feature
+OPTIONS_DEFAULT=	# PYTHON is broken; OCTAVE is off by default because Octave interface is not as frequently requested feature
 OPTIONS_SUB=		yes
 
 OCTAVE_DESC=		Octave support
@@ -51,6 +45,7 @@ OCTAVE_MAKE_ARGS=	matlab_toolbox=y matlab_path=${LOCALBASE}
 OCTAVE_CXXFLAGS=	-I${LOCALBASE}/include/octave-6.4.0/octave
 OCTAVE_LIB_DEPENDS=	liboctave.so:math/octave
 OCTAVE_SUB_FILES=	pkg-message-octave
+OCTAVE_BROKEN=		Path set for 'matlab_path' is not correct. (https://github.com/Cantera/cantera/issues/1270)
 
 PYTHON_USES=		python:3.6+
 PYTHON_USE=		PYTHON=cython
@@ -63,6 +58,7 @@ PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ruamel.yaml>0:devel/py-ruamel.yaml@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
+PYTHON_BROKEN=		https://github.com/Cantera/cantera/issues/1269
 
 do-install:
 	cd ${WRKSRC} && \
