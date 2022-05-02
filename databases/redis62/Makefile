@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES+=		compiler:c11 cpe gmake
 CPE_VENDOR=	redislabs
+CPE_PRODUCT=	redis
 
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
