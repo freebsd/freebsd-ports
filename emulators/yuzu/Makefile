@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20220429
+PORTVERSION=	s20220502
 CATEGORIES=	emulators
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -41,7 +41,7 @@ TEST_DEPENDS=	catch>0:devel/catch
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	b50e1596c
+GH_TAGNAME=	8037f2eae
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.202:Vulkan_Headers/externals/Vulkan-Headers \
@@ -88,9 +88,10 @@ QT5_USES=		desktop-file-utils qt:5 shared-mime-info
 QT5_USE=		QT=qmake_build,buildtools_build,concurrent_build,core,gui,widgets
 QT5_CMAKE_BOOL=		ENABLE_QT
 QT5_PLIST_FILES=	bin/${PORTNAME} \
-			share/applications/${PORTNAME}.desktop \
-			share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
-			share/mime/packages/${PORTNAME}.xml
+			share/applications/org.yuzu_emu.yuzu.desktop \
+			share/icons/hicolor/scalable/apps/org.yuzu_emu.yuzu.svg \
+			share/metainfo/org.yuzu_emu.yuzu.metainfo.xml \
+			share/mime/packages/org.yuzu_emu.yuzu.xml
 
 SNDIO_BUILD_DEPENDS=	sndio>0:audio/sndio
 SNDIO_CMAKE_BOOL=	USE_SNDIO
