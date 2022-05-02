@@ -12,7 +12,7 @@ PATCHFILES+=	01a75ed76ea7e57f1b7a5c183e2b1e890e6aa0fd.diff:-p1
 # A local patch against configure has been created in files/patch-configure.
 #PATCHFILES+=	8c50837f0b58ba5b2bcb1b424a2a4bfa01559fb2.diff:-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Foreign Function Interface
 
 LICENSE=	MIT
