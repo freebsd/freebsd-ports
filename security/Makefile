@@ -502,6 +502,7 @@
     SUBDIR += p5-Crypt-GOST_PP
     SUBDIR += p5-Crypt-GPG
     SUBDIR += p5-Crypt-GeneratePassword
+    SUBDIR += p5-Crypt-GpgME
     SUBDIR += p5-Crypt-HCE_MD5
     SUBDIR += p5-Crypt-HCE_SHA
     SUBDIR += p5-Crypt-HSXKPasswd
