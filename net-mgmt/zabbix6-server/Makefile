@@ -79,11 +79,15 @@ UNIXODBC_DESC=		Support for database checks via ODBC
 LIBXML2_DESC=		Support for libxml2 (required by monitoring VMware)
 
 OPTIONS_SINGLE=		DB SSL
-OPTIONS_SINGLE_DB?=	MYSQL PGSQL ORACLE
+OPTIONS_SINGLE_DB?=	MDB MYSQL PGSQL ORACLE
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
 
-MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_CONFIGURE_ON=	--with-mysql
 MYSQL_USES+=		compiler:c11 mysql:80
+
+MDB_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
+MDB_USES+=		compiler:c11 mysql:106m
+MDB_DESC=		Mariadb 10.6 database support
 
 PGSQL_CONFIGURE_WITH=	postgresql
 PGSQL_USES+=		pgsql
