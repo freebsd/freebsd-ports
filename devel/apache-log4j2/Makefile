@@ -19,6 +19,7 @@ USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 CPE_VENDOR=	apache
+CPE_PRODUCT=	log4j
 
 PORTDOCS=	NOTICE.txt RELEASE-NOTES.md
 
