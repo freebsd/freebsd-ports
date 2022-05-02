@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220502:
+  AFFECTS: mail/mutt
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  Default header cache option has been changed to the new option LMDB using
+  databases/lmdb. The BDB option still exists but now uses databases/db18 due
+  to the EOL of databases/db5.
+
 20220501:
   AFFECT: users of drm-current-kmod and drm-devel-kmod
   AUTHOR: manu@FreeBSD.org
