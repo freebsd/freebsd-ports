@@ -92,6 +92,7 @@
     SUBDIR += gcc11
     SUBDIR += gcc11-devel
     SUBDIR += gcc12-devel
+    SUBDIR += gcc13-devel
     SUBDIR += gcc48
     SUBDIR += gcc6-aux
     SUBDIR += gcc8
