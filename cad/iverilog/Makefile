@@ -6,7 +6,7 @@ CATEGORIES=	cad
 MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v11/
 DISTNAME=	verilog-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Verilog simulation and synthesis tool
 
 LICENSE=	GPLv2
