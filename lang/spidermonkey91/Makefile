@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/python${PYTHON3_DEFAULT}:lang/python${PYTHON3_DEFAULT:S/.//g} \
 		${RUST_DEFAULT}>=1.35:lang/${RUST_DEFAULT} \
-		autoconf-2.13:devel/autoconf213 \
+		autoconf2.13:devel/autoconf2.13 \
 		rust-cbindgen>=0.8.7:devel/rust-cbindgen
 LIB_DEPENDS=	libffi.so:devel/libffi \
 		libicudata.so:devel/icu \
@@ -78,7 +78,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 .endif
 
 pre-configure:
-	(cd ${WRKSRC}/js/src/ && ${LOCALBASE}/bin/autoconf-2.13)
+	(cd ${WRKSRC}/js/src/ && ${LOCALBASE}/bin/autoconf2.13)
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/js/moz.configure

@@ -17178,3 +17178,5 @@ java/openjdk16||2022-05-24|Has expired: EOLed since 30 September 2021
 sysutils/uefi-edk2-bhyve|sysutils/edk2@bhyve|2022-05-24|No more need for this port: please use sysutils/edk2 FLAVOR bhyve instead
 archivers/p7zip|archivers/7-zip|2022-05-25|Unmaintained for years and has known vulnerabilities. Use 7-Zip instead
 graphics/blender-lts28|graphics/blender-lts29|2022-05-26|Has expired: EOLed
+devel/autoconf-wrapper|devel/autoconf-switch|2022-05-27|Autoconf restructuring
+devel/autoconf213|devel/autoconf2.13|2022-05-27|Autoconf restructuring

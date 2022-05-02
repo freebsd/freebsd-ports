@@ -27,6 +27,8 @@ PLIST_SUB=	VERSION=${VERSION}
 
 OPTIONS_DEFINE=	EXAMPLES DOCS
 
+DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
+
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -E '/GTK_DOC_CHECK|docs/d' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s, docs,,' ${WRKSRC}/Makefile.am

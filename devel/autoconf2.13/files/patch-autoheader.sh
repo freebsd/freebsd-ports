@@ -1,6 +1,6 @@
---- autoheader.sh.orig	Mon Nov 22 21:50:45 1999
-+++ autoheader.sh	Mon Nov 22 21:52:02 1999
-@@ -194,7 +194,7 @@
+--- autoheader.sh.orig	2000-02-27 16:18:10 UTC
++++ autoheader.sh
+@@ -194,7 +194,7 @@ if test -n "$syms"; then
    # Some fgrep's have limits on the number of lines that can be in the
    # pattern on the command line, so use a temporary file containing the
    # pattern.

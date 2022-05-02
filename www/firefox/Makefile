@@ -23,7 +23,7 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		libvpx>=1.11.0:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
-		autoconf-2.13:devel/autoconf213 \
+		autoconf2.13:devel/autoconf2.13 \
 		nasm:devel/nasm \
 		yasm:devel/yasm \
 		zip:archivers/zip
@@ -65,8 +65,8 @@ post-patch:
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
 
 pre-configure:
-	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf-2.13)
-	(cd ${WRKSRC}/js/src/ && ${LOCALBASE}/bin/autoconf-2.13)
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf2.13)
+	(cd ${WRKSRC}/js/src/ && ${LOCALBASE}/bin/autoconf2.13)
 
 post-install:
 	${INSTALL_DATA} ${FIREFOX_DESKTOP} ${STAGEDIR}${PREFIX}/share/applications/

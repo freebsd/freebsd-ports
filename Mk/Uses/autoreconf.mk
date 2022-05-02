@@ -37,6 +37,22 @@
 #		gettext-tools is not optional.  If the run dependency on
 #		gettext is optional this can be specified with
 #		NLS_USES=gettext-runtime.
+# gtkdocize	Provided by textproc/gtk-doc.  Updates gtk-doc related *.m4
+#		files included with the source code and build scripts such as
+#		gtk-doc.make.  Run by autoreconf if configure.ac contains
+#		GTK_DOC_CHECK.  The build dependency can be made optional with
+#		DOCS option and DOCS_BUILD_DEPENDS+=gtkdocize:textproc/gtk-doc
+#		on condition that you remove GTK_DOC_CHECK from configure.ac,
+#		for instance using a post-patch-DOCS-off target with the
+#		following command:
+#		@${REINPLACE_CMD} /^GTK_DOC_CHECK/d ${WRKSRC}/configure.ac
+#		It is likely that more patching is needed to eliminate or avoid
+#		use of gtk-doc.
+# intltoolize	Provided by textproc/intltool.  Updates intltool related *.m4
+#		files included with the source code and build scripts such as
+#		po/Makefile.in.in.  Run by autoreconf if configure.ac contains
+#		(AC|IT)_PROG_INTLTOOL.  A build dependency on textproc/intltool
+#		can be added with USES+=gnome and USE_GNOME+=intltool.
 # libtoolize	Provided by devel/libtool.  Updates libtool related *.m4 files
 #		included with the source code and build scripts such as
 #		ltmain.sh.  Run by autoreconf if configure.ac  (or one of the
@@ -76,14 +92,20 @@ do-autoreconf:
 # Don't modify time stamps if the files already exist
 	@test -e ${AUTORECONF_WRKSRC}/${f} || ${TOUCH} ${AUTORECONF_WRKSRC}/${f}
 .    endfor
-.    if defined(_USE_GNOME) && ${_USE_GNOME:Mintltool}
 	@(cd ${AUTORECONF_WRKSRC} && \
 		if test -f configure.ac; then configure=configure.ac; \
 		else configure=configure.in; fi && \
+		if ${GREP} -q '^GTK_DOC_CHECK' $${configure}; \
+		then if ! ${LOCALBASE}/bin/gtkdocize --copy; then \
+		${ECHO_MSG} '===>  Mk/Uses/autoreconf.mk: Error running gtkdocize'; \
+		${FALSE}; fi; fi && \
 		if ${EGREP} -q '^(AC|IT)_PROG_INTLTOOL' $${configure}; \
-		then ${LOCALBASE}/bin/intltoolize -f -c; fi)
-.    endif
-	@(cd ${AUTORECONF_WRKSRC} && ${AUTORECONF} -f -i)
+		then if ! ${LOCALBASE}/bin/intltoolize -f -c; then \
+		${ECHO_MSG} '===>  Mk/Uses/autoreconf.mk: Error running intltoolize'; \
+		${FALSE}; fi; fi)
+	@(cd ${AUTORECONF_WRKSRC} && if ! ${AUTORECONF} -f -i; then \
+		${ECHO_MSG} '===>  Mk/Uses/autoreconf.mk: Error running ${AUTORECONF}'; \
+		${FALSE}; fi)
 .  elif ! ${autoreconf_ARGS:Mbuild}
 IGNORE= Incorrect 'USES+=autoreconf:${autoreconf_ARGS}' expecting 'USES+=autoreconf[:build]'
 .  endif

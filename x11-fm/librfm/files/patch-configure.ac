@@ -1,0 +1,10 @@
+--- configure.ac.orig	2018-07-10 16:06:27 UTC
++++ configure.ac
+@@ -417,7 +417,6 @@ AC_CHECK_PROG(cv_pkgconfig, pkg-config, yes, no)
+ fi
+ 
+ AC_CHECK_PROG(cv_pkgconfig, pkg-config, yes, no)
+-GTK_DOC_CHECK([1.15],[--flavour no-tmpl])
+ 
+ 
+ 

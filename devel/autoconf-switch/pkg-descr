@@ -1,0 +1,4 @@
+This port installs a wrapper script for each tool included with autoconf.
+The script will run the version of autoconf specified in the environment
+variable DEFAULT_AUTOCONF.  If DEFAULT_AUTOCONF is empty or unset it will run
+the most recent version of autoconf currently installed.
