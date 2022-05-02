@@ -4,6 +4,8 @@ MODEL=		sopine-spi
 BOARD_CONFIG=	sopine_baseboard_defconfig
 FAMILY=		allwinner64
 
+EXTRA_PATCHES?=	${.CURDIR}/files/
+
 CONFIG_FRAGMENT=	${.CURDIR}/../u-boot-sopine-spi/files/spi_fragment
 FRAGMENT_NAME=		spi_fragment
 NO_METADATA=		yes
