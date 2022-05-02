@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	SPECTRWM_
 DISTVERSION=	3_4_1
 CATEGORIES=	x11-wm
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, dynamic tiling window manager for X11
 
 LICENSE=	ISCL

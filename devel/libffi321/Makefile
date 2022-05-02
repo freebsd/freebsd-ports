@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/${PORTNAME}
 PKGNAMESUFFIX=	321
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foreign Function Interface (stripped down compat version)
 
 LICENSE=	MIT

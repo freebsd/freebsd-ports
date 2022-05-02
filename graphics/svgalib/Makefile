@@ -6,7 +6,7 @@ PORTREVISION=	7
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.svgalib.org/
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low level console graphics library
 
 LICENSE=	PD

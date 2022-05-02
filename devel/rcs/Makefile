@@ -3,7 +3,7 @@ PORTVERSION=	5.10.0
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version control system
 
 LICENSE=	GPLv3

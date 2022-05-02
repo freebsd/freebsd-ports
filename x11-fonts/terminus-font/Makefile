@@ -5,7 +5,7 @@ PORTVERSION=	4.48
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminus Font - a clean fixed width font
 
 LICENSE=	OFL11

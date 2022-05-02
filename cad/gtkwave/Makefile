@@ -5,7 +5,7 @@ DISTVERSION=	3.3.111
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Waveform Viewer
 
 LICENSE=	GPLv2
