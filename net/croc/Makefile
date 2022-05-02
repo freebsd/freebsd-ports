@@ -1,5 +1,5 @@
 PORTNAME=	croc
-PORTVERSION=	9.5.4
+PORTVERSION=	9.5.5
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	net
@@ -21,7 +21,7 @@ GH_TUPLE=	OneOfOne:xxhash:v1.2.5:oneofone_xxhash/vendor/github.com/OneOfOne/xxha
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:7b82a4e95df4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:eb4f295cb31f:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:2871e0cb64e4:golang_net/vendor/golang.org/x/net \
 		golang:sys:9388b58f7150:golang_sys/vendor/golang.org/x/sys \
 		golang:term:e5f449aeb171:golang_term/vendor/golang.org/x/term \
