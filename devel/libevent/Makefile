@@ -6,7 +6,7 @@ DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}${DISTVERSIONSUFFIX}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	API for executing callback functions on events or timeouts
 
 LICENSE=	BSD3CLAUSE
