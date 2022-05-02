@@ -66,6 +66,7 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 GSTREAMER_DESC=		GStreamer multimedia backend
 GSTREAMER_MESON_ENABLED=media-gstreamer
+GSTREAMER_USES=		gstreamer
 GSTREAMER_USE=		GSTREAMER=bad,gl
 
 VULKAN_DESC=		GDK Vulkan renderer backend

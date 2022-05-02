@@ -28,6 +28,7 @@ OPTIONS_DEFINE=			GSTREAMER NLS
 OPTIONS_DEFAULT=		GSTREAMER
 OPTIONS_SUB=			yes
 
+GSTREAMER_USES=			gstreamer
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer
 GSTREAMER_USE=			gstreamer=faac,flac,lame,vorbis,wavpack
 

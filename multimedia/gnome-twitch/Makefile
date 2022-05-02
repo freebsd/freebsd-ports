@@ -47,6 +47,10 @@ GSTREAMER_OPENGL_DESC=	GStreamer decoding + OpenGL drawing backend
 GSTREAMER_CLUTTER_DESC=	GStreamer decoding + Clutter drawing backend
 MPV_OPENGL_DESC=	MPV decoding + OpenGL drawing backend
 
+GSTREAMER_CAIRO_USES=	gstreamer
+GSTREAMER_OPENGL_USES=	gstreamer
+GSTREAMER_CLUTTER_USES=	gstreamer
+
 GSTREAMER_CLUTTER_LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 				libclutter-gst-3.0.so:multimedia/clutter-gst3 \
 				libclutter-gtk-1.0.so:graphics/clutter-gtk3

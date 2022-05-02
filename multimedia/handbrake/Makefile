@@ -109,7 +109,7 @@ X11_CONFIGURE_ON=	--disable-gtk-update-checks
 X11_CONFIGURE_OFF=	--disable-gtk
 X11_LIB_DEPENDS=	libvpx.so:multimedia/libvpx \
 			libnotify.so:devel/libnotify
-X11_USES=	gettext desktop-file-utils gnome
+X11_USES=	gettext desktop-file-utils gnome gstreamer
 X11_USE=	gstreamer=gdkpixbuf,libav \
 		gnome=gtk30,intltool,cairo,gdkpixbuf2
 
