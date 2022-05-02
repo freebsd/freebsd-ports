@@ -34,8 +34,9 @@ lib/racket/system.rktd
 %%DATADIR%%/LICENSE-APACHE.txt
 %%DATADIR%%/LICENSE-GPL.txt
 %%DATADIR%%/LICENSE-LGPL.txt
-%%DATADIR%%/LICENSE-MIT.txt
 %%DATADIR%%/LICENSE-libscheme.txt
+%%DATADIR%%/LICENSE-MIT.txt
+%%DATADIR%%/LICENSE.txt
 %%DATADIR%%/collects/acks/acks.rkt
 %%DATADIR%%/collects/compiler/cm-accomplice.rkt
 %%DATADIR%%/collects/compiler/cm.rkt
