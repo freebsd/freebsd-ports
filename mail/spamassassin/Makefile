@@ -6,7 +6,7 @@ CATEGORIES?=	mail perl5
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/source/ CPAN/Mail
 DISTNAME=	Mail-SpamAssassin-${PORTVERSION}
 
-MAINTAINER?=	zeising@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Highly efficient mail filter for identifying spam
 
 LICENSE=	APACHE20

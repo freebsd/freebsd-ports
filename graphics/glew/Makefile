@@ -11,7 +11,7 @@ PATCH_SITES=	https://github.com/nigels-com/${PORTNAME}/commit/
 PATCHFILES+=	8e2e31e69bb6.patch:-p1 # https://github.com/nigels-com/glew/pull/329
 PATCHFILES+=	062067f2bad8.patch:-p1 # https://github.com/nigels-com/glew/pull/330
 
-MAINTAINER?=	zeising@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	OpenGL Extension Wrangler Library
 
 LICENSE=	MIT BSD3CLAUSE

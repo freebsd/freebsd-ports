@@ -6,7 +6,7 @@ PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	SF/enlightenment/imlib2-src/${PORTVERSION}
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extra image loader plugins for Imlib 2
 
 LICENSE=		imlib2 GPLv2

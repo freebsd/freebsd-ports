@@ -3,7 +3,7 @@ PORTVERSION=	0.20190705
 PORTREVISION=	1
 CATEGORIES=	net
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool to check internet connection speed
 
 LICENSE=	GPLv2

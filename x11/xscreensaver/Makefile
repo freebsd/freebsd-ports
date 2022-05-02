@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat
 
 LICENSE=	MIT

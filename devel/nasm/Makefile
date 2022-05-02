@@ -7,7 +7,7 @@ CATEGORIES=	devel lang
 MASTER_SITES=	https://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/ \
 		https://mirror.sobukus.de/files/src/nasm/
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 and amd64 assembler
 
 LICENSE=	BSD2CLAUSE

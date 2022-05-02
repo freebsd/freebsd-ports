@@ -7,7 +7,7 @@ PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	zeising@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Nagios Remote Plugin Executor
 
 LICENSE=	GPLv2+
