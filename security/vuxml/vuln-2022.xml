@@ -1,3 +1,54 @@
+  <vuln vid="61bce714-ca0c-11ec-9cfc-10c37b4ac2ea">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.17.9,1</lt></range>
+	<range><ge>1.18,1</ge><lt>1.18.1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/51853">
+	  <p>encoding/pem: fix stack overflow in Decode.</p>
+	  <p>A large (more than 5 MB) PEM input can cause a stack
+	    overflow in Decode, leading the program to crash.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/52075">
+	  <p>crypto/elliptic: tolerate all oversized scalars in generic
+	    P-256.</p>
+	  <p>A crafted scalar input longer than 32 bytes can
+	    cause P256().ScalarMult or P256().ScalarBaseMult to panic.
+	    Indirect uses through crypto/ecdsa and crypto/tls are
+	    unaffected. amd64, arm64, ppc64le, and s390x are
+	    unaffected.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/51759">
+	  <p>crypto/x509: non-compliant certificates can cause a panic
+	    in Verify on macOS in Go 1.18.</p>
+	  <p>Verifying certificate chains containing certificates
+	    which are not compliant with RFC 5280 causes
+	    Certificate.Verify to panic on macOS. These chains can be
+	    delivered through TLS and can cause a crypto/tls or
+	    net/http client to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24675</cvename>
+      <url>https://github.com/golang/go/issues/51853</url>
+      <cvename>CVE-2022-28327</cvename>
+      <url>https://github.com/golang/go/issues/52075</url>
+      <cvename>CVE-2022-27536</cvename>
+      <url>https://github.com/golang/go/issues/51759</url>
+    </references>
+    <dates>
+      <discovery>2022-04-12</discovery>
+      <entry>2022-05-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9db93f3d-c725-11ec-9618-000d3ac47524">
     <topic>Rails -- XSS vulnerabilities</topic>
     <affects>
