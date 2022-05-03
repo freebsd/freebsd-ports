@@ -123,6 +123,7 @@
     SUBDIR += wildfly17
     SUBDIR += wildfly18
     SUBDIR += wildfly25
+    SUBDIR += wildfly26
     SUBDIR += wildfly90
 
 .include <bsd.port.subdir.mk>
