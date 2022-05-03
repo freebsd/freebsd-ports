@@ -23,7 +23,7 @@ ATF_TARGET?=	bl31
 ALL_TARGET=	ARCH="aarch64" PLAT=${PLAT} V=1 CFLAGS= HOSTCC=${CC} ${ATF_TARGET}
 
 # Default to the latest release
-ATF_VERSION?=	v2.5
+ATF_VERSION?=	v2.6
 
 PLIST_FILES?=	${PREFIX}/share/${PORTNAME}-${PLAT}/${BL31:T}
 .if defined(FIP)
