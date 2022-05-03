@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 USE_JAVA=	yes
 
-JAVA_VERSION=	1.11+
+JAVA_VERSION=	11+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/mucommander ${DATADIR}/mucommander.jar ${DATADIR}/license.txt
