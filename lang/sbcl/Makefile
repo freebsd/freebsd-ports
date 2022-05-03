@@ -75,8 +75,6 @@ SAFEPOINT_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-safepoint --without-sb-thruption
 SBCL_DISTFILES=	${PORTNAME}-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}-binary${EXTRACT_SUFX}:binaries
 SBCL_VARS=	XC_HOST="${BOOT_WRKSRC}/src/runtime/sbcl --core ${BOOT_WRKSRC}/output/sbcl.core --noinform --disable-debugger --no-sysinit --no-userinit"
 
-XC_HOST="ecl"
-
 THREADS_VARS=		MAKE_SH_ARGS+="--with-sb-thread"
 THREADS_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-thread"
 
