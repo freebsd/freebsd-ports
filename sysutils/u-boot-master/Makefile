@@ -4,6 +4,7 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	${UBOOT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-${MODEL}
 MASTER_SITES=	https://ftp.denx.de/pub/u-boot/ \
