@@ -1,5 +1,7 @@
 include/estd/any.hpp
 include/estd/any/any.hpp
+include/estd/array.hpp
+include/estd/array/initialize.hpp
 include/estd/convert.hpp
 include/estd/convert/conversion.hpp
 include/estd/convert/convert.hpp

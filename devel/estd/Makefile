@@ -1,5 +1,5 @@
 PORTNAME=	estd
-DISTVERSION=	0.4.0
+DISTVERSION=	0.6.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ GH_ACCOUNT=	fizyr
 
 NO_ARCH=	yes
 
-do-test:
+do-test: # tests fail to compile: https://github.com/fizyr/estd/issues/12
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
