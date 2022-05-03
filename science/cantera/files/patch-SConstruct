@@ -25,3 +25,20 @@
  
  env["cantera_version"] = "2.6.0"
  # For use where pre-release tags are not permitted (MSI, sonames)
+@@ -1673,11 +1676,11 @@ if env["matlab_toolbox"] == "y":
+             "SUNDIALS libraries and skip building the Matlab toolbox.")
+         sys.exit(1)
+ 
+-    if not (os.path.isdir(matlab_path) and
+-            os.path.isdir(pjoin(matlab_path, "extern"))):
+-        logger.error(
+-            f"Path set for 'matlab_path' is not correct. Path was '{matlab_path}'")
+-        sys.exit(1)
++    #if not (os.path.isdir(matlab_path) and
++    #        os.path.isdir(pjoin(matlab_path, "extern"))):
++    #    logger.error(
++    #        f"Path set for 'matlab_path' is not correct. Path was '{matlab_path}'")
++    #    sys.exit(1)
+ 
+ 
+ # **********************************************

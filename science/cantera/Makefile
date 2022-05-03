@@ -42,10 +42,10 @@ OPTIONS_SUB=		yes
 
 OCTAVE_DESC=		Octave support
 OCTAVE_MAKE_ARGS=	matlab_toolbox=y matlab_path=${LOCALBASE}
-OCTAVE_CXXFLAGS=	-I${LOCALBASE}/include/octave-6.4.0/octave
+OCTAVE_CXXFLAGS=	-I${LOCALBASE}/include/octave-${OCTAVE_VERSION}/octave
 OCTAVE_LIB_DEPENDS=	liboctave.so:math/octave
 OCTAVE_SUB_FILES=	pkg-message-octave
-OCTAVE_BROKEN=		Path set for 'matlab_path' is not correct. (https://github.com/Cantera/cantera/issues/1270)
+.include "../../math/octave/Makefile.version" # for OCTAVE_VERSION
 
 PYTHON_USES=		python:3.6+
 PYTHON_USE=		PYTHON=cython
@@ -68,6 +68,9 @@ do-install:
 
 do-install-PYTHON-on:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cantera/_cantera.cpython-${PYTHON_VER:S/.//}.so
+
+post-patch-OCTAVE-on: # adjust Octave version in SConscript (python styled os.environ['OCTAVE_VERSION'] somehow doesn't work for this)
+	@${REINPLACE_CMD} -e "s|, 'bin', 'glnx.*')|, 'lib', 'octave', '${OCTAVE_VERSION}')|" ${WRKSRC}/src/matlab/SConscript
 
 post-install-OCTAVE-on: # adjust .mex file name
 	@${MV} \
