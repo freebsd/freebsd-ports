@@ -63,3 +63,6 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
   - https://api.onlyoffice.com/editors/nextcloud
 
 7. Enjoy.
+EOM
+}
+]
