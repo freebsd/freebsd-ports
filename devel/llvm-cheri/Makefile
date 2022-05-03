@@ -101,6 +101,8 @@ PLIST_SUB+=	COMMAND_SUFFIX=${COMMAND_SUFFIX} \
 COMMANDS=	${LLVM_COMMANDS}
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
+MAN1SRCS+=	${LLVM_MAN1SRCS}
+
 STRIP_LIBS=	BugpointPasses.so \
 		LLVMHello.so \
 		${LIBNAME}.0 \
@@ -114,16 +116,12 @@ CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/armv6hf/armv6/}-portbld-${OPSYS:tl}${
 .if ${PORT_OPTIONS:MCLANG}
 LLVM_ENABLE_PROJECTS+=	clang
 COMMANDS+=	${CLANG_COMMANDS}
-MAN1SRCS+=	clang.1 \
-		diagtool.1 \
-		scan-build.1
-MAN1SRCS+=	clang-tblgen.1
-#DOCS_PLIST_FILES+=	man/man1/scan-build${LLVM_SUFFIX}.1.gz
+MAN1SRCS+=	${CLANG_MAN1SRCS}
 USES+=		gnome
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
-MAN1SRCS+=	lit.1 FileCheck.1
+MAN1SRCS+=	${LIT_MAN1SRCS}
 _USES_PYTHON=	python:3.6+
 .endif
 
@@ -135,7 +133,7 @@ COMMANDS+=	${LLD_COMMANDS}
 .if ${PORT_OPTIONS:MLLDB}
 LLVM_ENABLE_PROJECTS+=	lldb
 COMMANDS+=	${LLDB_COMMANDS}
-MAN1SRCS+=	lldb-tblgen.1
+MAN1SRCS+=	${LLDB_MAN1SRCS}
 _USES_PYTHON=	python:3.6+
 .endif
 
@@ -146,53 +144,9 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"
 _USES_PYTHON?=	python:3.6+,build
 USES+=		${_USES_PYTHON}
 
-MAN1SRCS+=	bugpoint.1 \
-		dsymutil.1 \
-		llc.1 \
-		lli.1 \
-		llvm-addr2line.1 \
-		llvm-ar.1 \
-		llvm-as.1 \
-		llvm-bcanalyzer.1 \
-		llvm-config.1 \
-		llvm-cov.1 \
-		llvm-cxxfilt.1 \
-		llvm-cxxmap.1 \
-		llvm-diff.1 \
-		llvm-dis.1 \
-		llvm-dwarfdump.1 \
-		llvm-exegesis.1 \
-		llvm-extract.1 \
-		llvm-install-name-tool.1 \
-		llvm-lib.1 \
-		llvm-libtool-darwin.1 \
-		llvm-link.1 \
-		llvm-lipo.1 \
-		llvm-locstats.1 \
-		llvm-mca.1 \
-		llvm-nm.1 \
-		llvm-objcopy.1 \
-		llvm-objdump.1 \
-		llvm-pdbutil.1 \
-		llvm-profdata.1 \
-		llvm-profgen.1 \
-		llvm-ranlib.1 \
-		llvm-readelf.1 \
-		llvm-readobj.1 \
-		llvm-size.1 \
-		llvm-stress.1 \
-		llvm-strings.1 \
-		llvm-strip.1 \
-		llvm-symbolizer.1 \
-		opt.1
-
-MAN1SRCS+= \
-		llvm-otool.1 \
-		llvm-tblgen.1 \
-		tblgen.1
-
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/Makefile.COMMANDS"
+.include "${.CURDIR}/Makefile.MAN1SRCS"
 
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
