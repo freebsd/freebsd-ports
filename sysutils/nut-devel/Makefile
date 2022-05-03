@@ -40,12 +40,9 @@ OPTIONS_SINGLE_SSL=	SSL_OFF OPENSSL NSS
 
 SERIAL_DESC=	SERIAL support
 USB_DESC=	USB support
-SNMP_DESC=	SNMP support
 NEON_DESC=	NEON XML/HTTP support
 PDU_DESC=	Powerman PDU support
 CGI_DESC=	Web CGI interface
-BASH_DESC=	Bash Completion support
-AVAHI_DESC=	Avahi support
 IPMI_OFF_DESC=	No IPMI support
 FREEIPMI_DESC=	freeipmi support
 IPMIPSU_DESC=	Use nut-ipmipsu support (experimental)
