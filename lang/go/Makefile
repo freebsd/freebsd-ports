@@ -54,7 +54,7 @@ SOFTFLOAT_DESC=	Use soft float on non-SSE2 processors (Pentium 4 and older)
 SOFTFLOAT_VARS=	GO386=softfloat
 
 BINARIES=	go gofmt
-BOOTSTRAP_TAG=	go1.14
+BOOTSTRAP_TAG=	go1.17.9
 
 GOARCH_aarch64=	arm64
 GOARCH_amd64=	amd64
