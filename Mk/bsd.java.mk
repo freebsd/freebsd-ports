@@ -285,7 +285,7 @@ JAVA_RUN=	jre
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .    if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/^1.7+/1.7 1.8+/:S/^1.8+/1.8 11+/:S/^1.7/7/:S/^1.8/8/:S/^7+/7 8+/:S/^8+/8 11+/:S/^1.11+/11 12+/:S/^1.11/11/:S/^11+/11 12+/:S/^12+/12 13+/:S/^13+/13 14+/:S/^14+/14 15+/:S/^15+/15 16+/:S/^16+/16 17+/:S/^17+/17 18+/:S/^18+/18/}
+_JAVA_VERSION=	${JAVA_VERSION:S/^1.7+/1.7 1.8+/:S/^1.8+/1.8 11+/:S/^1.7/7/:S/^1.8/8/:S/^7+/7 8+/:S/^8+/8 11+/:S/^11+/11 12+/:S/^12+/12 13+/:S/^13+/13 14+/:S/^14+/14 15+/:S/^15+/15 16+/:S/^16+/16 17+/:S/^17+/17 18+/:S/^18+/18/}
 .    else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .    endif
