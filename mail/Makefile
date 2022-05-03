@@ -633,6 +633,7 @@
     SUBDIR += smtprc
     SUBDIR += smtprelay
     SUBDIR += smtptrapd
+    SUBDIR += snappymail
     SUBDIR += sortmail
     SUBDIR += spamass-ixhash
     SUBDIR += spamass-milter
