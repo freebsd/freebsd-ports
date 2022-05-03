@@ -144,6 +144,8 @@ PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE} \
 COMMANDS=	${LLVM_COMMANDS}
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
+MAN1SRCS+=	${LLVM_MAN1SRCS}
+
 STRIP_LIBS=	BugpointPasses.so \
 		LLVMHello.so \
 		${LIBNAME}.0 \
@@ -188,9 +190,7 @@ CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-portbld-${OPSYS:tl}${
 
 .if ${PORT_OPTIONS:MCLANG}
 COMMANDS+=	${CLANG_COMMANDS}
-MAN1SRCS+=	clang.1 \
-		diagtool.1 \
-		scan-build.1
+MAN1SRCS+=	${CLANG_MAN1SRCS}
 CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer)
 SHEBANG_FILES+=	tools/clang/tools/scan-view/bin/scan-view \
 		tools/clang/tools/clang-format/clang-format-diff.py \
@@ -205,7 +205,7 @@ COMPILER_RT_PATTERN=	(_blacklist.txt|sanitizer|include.xray)
 
 .if ${PORT_OPTIONS:MEXTRAS}
 COMMANDS+=	${EXTRAS_COMMANDS}
-MAN1SRCS+=	extraclangtools.1
+MAN1SRCS+=	${EXTRAS_MAN1SRCS}
 PORTDOCS+=	clang-tools
 SHEBANG_FILES+=	tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py \
 		tools/clang/tools/extra/clang-tidy/tool/run-clang-tidy.py \
@@ -213,7 +213,7 @@ SHEBANG_FILES+=	tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py \
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
-MAN1SRCS+=	lit.1 FileCheck.1
+MAN1SRCS+=	${LIT_MAN1SRCS}
 .endif
 
 .if ${PORT_OPTIONS:MLLD}
@@ -225,25 +225,13 @@ PORTDOCS+=	lld
 COMMANDS+=	${LLDB_COMMANDS}
 .endif
 
-MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
-		llvm-bcanalyzer.1 llvm-build.1 llvm-config.1 llvm-cov.1 \
-		llvm-cxxmap.1 \
-		llvm-diff.1 llvm-dis.1 llvm-dwarfdump.1 \
-		llvm-exegesis.1 \
-		llvm-extract.1 llvm-lib.1 llvm-link.1 \
-		llvm-mca.1 \
-		llvm-nm.1 \
-		llvm-objdump.1 \
-		llvm-pdbutil.1 \
-		llvm-profdata.1 llvm-readobj.1 llvm-stress.1 llvm-symbolizer.1 \
-		opt.1 tblgen.1
-
 .if ${PORT_OPTIONS:MPYCLANG}
 PYCLANG_PATTERN=	(clang\/(__init__|cindex|enumerations).py)$$
 .endif
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/Makefile.COMMANDS"
+.include "${.CURDIR}/Makefile.MAN1SRCS"
 
 _FREEBSD_BACKENDS=	AArch64 ARM Mips PowerPC Sparc X86
 FREEBSD_BACKENDS=	${_FREEBSD_BACKENDS}

@@ -198,49 +198,7 @@ PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE} \
 COMMANDS=	${LLVM_COMMANDS}
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
 
-MAN1SRCS+=	bugpoint.1 \
-		dsymutil.1 \
-		llc.1 \
-		lli.1 \
-		llvm-addr2line.1 \
-		llvm-ar.1 \
-		llvm-as.1 \
-		llvm-bcanalyzer.1 \
-		llvm-config.1 \
-		llvm-cov.1 \
-		llvm-cxxfilt.1 \
-		llvm-cxxmap.1 \
-		llvm-diff.1 \
-		llvm-dis.1 \
-		llvm-dwarfdump.1 \
-		llvm-exegesis.1 \
-		llvm-extract.1 \
-		llvm-install-name-tool.1 \
-		llvm-lib.1 \
-		llvm-libtool-darwin.1 \
-		llvm-lipo.1 \
-		llvm-link.1 \
-		llvm-locstats.1 \
-		llvm-mca.1 \
-		llvm-nm.1 \
-		llvm-objcopy.1 \
-		llvm-objdump.1 \
-		llvm-otool.1 \
-		llvm-pdbutil.1 \
-		llvm-profdata.1 \
-		llvm-profgen.1 \
-		llvm-ranlib.1 \
-		llvm-readelf.1 \
-		llvm-readobj.1 \
-		llvm-size.1 \
-		llvm-stress.1 \
-		llvm-strings.1 \
-		llvm-strip.1 \
-		llvm-symbolizer.1 \
-		llvm-tblgen.1 \
-		llvm-tli-checker.1 \
-		tblgen.1 \
-		opt.1
+MAN1SRCS+=	${LLVM_MAN1SRCS}
 
 STRIP_LIBS=	BugpointPasses.so \
 		LLVMHello.so \
@@ -296,10 +254,7 @@ CONFIGURE_TARGET:=${ARCH:C/amd64/x86_64/:C/arm64/aarch64/}-portbld-${OPSYS:tl}${
 .if ${PORT_OPTIONS:MCLANG}
 LLVM_ENABLE_PROJECTS+=	clang
 COMMANDS+=	${CLANG_COMMANDS}
-MAN1SRCS+=	clang.1 \
-		clang-tblgen.1 \
-		diagtool.1 \
-		scan-build.1
+MAN1SRCS+=	${CLANG_MAN1SRCS}
 CLANG_PATTERN=	(c-index-test|clang|diagtool|hmaptool|intercept-|libear|libscanbuild|analyze-|scan-|Reporter.py|ScanView.py|scanview.css|sorttable.js|startfile.py|-analyzer|AnalyzerPlugin.so)
 USES+=		gnome
 .endif
@@ -319,7 +274,7 @@ USES+=	localbase
 .if ${PORT_OPTIONS:MEXTRAS}
 LLVM_ENABLE_PROJECTS+=	clang-tools-extra
 COMMANDS+=	${EXTRAS_COMMANDS}
-MAN1SRCS+=	extraclangtools.1
+MAN1SRCS+=	${EXTRAS_MAN1SRCS}
 PORTDOCS+=	clang-tools
 .endif
 
@@ -329,7 +284,7 @@ COMMANDS+=	${FLANG_COMMANDS}
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
-MAN1SRCS+=	lit.1 FileCheck.1
+MAN1SRCS+=	${LIT_MAN1SRCS}
 .endif
 
 .if ${PORT_OPTIONS:MLLD}
@@ -340,19 +295,19 @@ PORTDOCS+=	lld
 
 .if ${PORT_OPTIONS:MLLDB}
 LLVM_ENABLE_PROJECTS+=	lldb
-MAN1SRCS+=	lldb-tblgen.1
+MAN1SRCS+=	${LLDB_MAN1SRCS}
 COMMANDS+=	${LLDB_COMMANDS}
 .endif
 
 .if ${PORT_OPTIONS:MMLIR}
 LLVM_ENABLE_PROJECTS+=	mlir
-MAN1SRCS+=	mlir-tblgen.1
+MAN1SRCS+=	${MLIR_MAN1SRCS}
 COMMANDS+=	${MLIR_COMMANDS}
 .endif
 
 .if ${PORT_OPTIONS:MOPENMP}
 LLVM_ENABLE_PROJECTS+=	openmp
-MAN1SRCS+=	llvmopenmp.1
+MAN1SRCS+=	${OPENMP_MAN1SRCS}
 COMMANDS+=	${OPENMP_COMMANDS}
 .endif
 OPENMP_PATTERN=	${OPENMP_COMMANDS:tW:C/  */|/g}|cmake\/openmp|libarcher|lib[ig]*omp|omp.h|ompt.h|ompt-multiplex.h|omp-tools.h
@@ -367,6 +322,7 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/Makefile.COMMANDS"
+.include "${.CURDIR}/Makefile.MAN1SRCS"
 
 _FREEBSD_BACKENDS=	AArch64 ARM Mips PowerPC RISCV Sparc X86
 FREEBSD_BACKENDS=	${_FREEBSD_BACKENDS}
