@@ -1,6 +1,6 @@
 PORTNAME=	miniserve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.3
+DISTVERSION=	0.19.4
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -16,12 +16,12 @@ GH_ACCOUNT=	svenstaro
 
 CARGO_CRATES=	actix-codec-0.5.0 \
 		actix-files-0.6.0 \
-		actix-http-3.0.2 \
+		actix-http-3.0.4 \
 		actix-macros-0.2.3 \
 		actix-multipart-0.4.0 \
 		actix-router-0.5.0 \
-		actix-rt-2.6.0 \
-		actix-server-2.0.0 \
+		actix-rt-2.7.0 \
+		actix-server-2.1.1 \
 		actix-service-2.0.2 \
 		actix-tls-3.0.3 \
 		actix-utils-3.0.0 \
@@ -48,7 +48,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.2 \
-		brotli-3.3.3 \
+		brotli-3.3.4 \
 		brotli-decompressor-2.3.2 \
 		bstr-0.2.17 \
 		bumpalo-3.9.1 \
@@ -56,26 +56,24 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		bytes-1.1.0 \
 		bytesize-1.1.0 \
 		bytestring-1.0.0 \
-		bzip2-0.4.3 \
-		bzip2-sys-0.1.11+1.0.8 \
 		c_linked_list-1.1.1 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		chrono-humanize-0.2.1 \
 		clap-2.34.0 \
-		clap-3.1.6 \
+		clap-3.1.8 \
 		clap_complete-3.1.1 \
-		clap_derive-3.1.4 \
+		clap_derive-3.1.7 \
 		clap_mangen-0.1.2 \
 		codemap-0.1.3 \
 		convert_case-0.4.0 \
 		cookie-0.16.0 \
-		cpufeatures-0.2.1 \
+		cpufeatures-0.2.2 \
 		crc32fast-1.3.2 \
-		crossbeam-utils-0.8.7 \
+		crossbeam-utils-0.8.8 \
 		crypto-common-0.1.3 \
-		ctor-0.1.21 \
+		ctor-0.1.22 \
 		derive_more-0.99.17 \
 		diff-0.1.12 \
 		difflib-0.4.0 \
@@ -105,26 +103,26 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		get_if_addrs-0.5.3 \
 		get_if_addrs-sys-0.1.1 \
 		getrandom-0.1.16 \
-		getrandom-0.2.5 \
+		getrandom-0.2.6 \
 		globset-0.4.8 \
 		globwalk-0.8.1 \
 		grass-0.10.8 \
-		h2-0.3.11 \
+		h2-0.3.13 \
 		hashbrown-0.11.2 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		hex-0.4.3 \
-		html5ever-0.25.1 \
+		html5ever-0.25.2 \
 		http-0.2.6 \
 		http-body-0.4.4 \
 		http-range-0.1.5 \
 		httparse-1.6.0 \
 		httpdate-1.0.2 \
-		hyper-0.14.17 \
+		hyper-0.14.18 \
 		hyper-rustls-0.23.0 \
 		idna-0.2.3 \
 		ignore-0.4.18 \
-		indexmap-1.8.0 \
+		indexmap-1.8.1 \
 		instant-0.1.12 \
 		ipnet-2.4.0 \
 		itertools-0.10.3 \
@@ -134,13 +132,13 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		language-tags-0.3.2 \
 		lasso-0.5.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.119 \
-		libflate-1.1.2 \
+		libc-0.2.121 \
+		libflate-1.2.0 \
 		libflate_lz77-1.1.0 \
 		local-channel-0.1.2 \
 		local-waker-0.1.2 \
-		lock_api-0.4.6 \
-		log-0.4.14 \
+		lock_api-0.4.7 \
+		log-0.4.16 \
 		mac-0.1.1 \
 		markup5ever-0.10.1 \
 		markup5ever_rcdom-0.1.0 \
@@ -151,7 +149,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		mime-0.3.16 \
 		mime_guess-2.0.4 \
 		miniz_oxide-0.4.4 \
-		mio-0.8.0 \
+		mio-0.8.2 \
 		miow-0.3.7 \
 		nanoid-0.4.0 \
 		new_debug_unreachable-1.0.4 \
@@ -162,41 +160,39 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		num-rational-0.4.0 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.1 \
-		num_threads-0.1.3 \
+		num_threads-0.1.5 \
 		once_cell-1.10.0 \
 		os_str_bytes-6.0.0 \
 		output_vt100-0.1.3 \
-		parking_lot-0.11.2 \
 		parking_lot-0.12.0 \
-		parking_lot_core-0.8.5 \
-		parking_lot_core-0.9.1 \
-		paste-1.0.6 \
+		parking_lot_core-0.9.2 \
+		paste-1.0.7 \
 		percent-encoding-2.1.0 \
 		phf-0.8.0 \
 		phf-0.9.0 \
 		phf_codegen-0.8.0 \
 		phf_generator-0.8.0 \
 		phf_generator-0.9.1 \
+		phf_generator-0.10.0 \
 		phf_macros-0.9.0 \
 		phf_shared-0.8.0 \
 		phf_shared-0.9.0 \
 		phf_shared-0.10.0 \
 		pin-project-lite-0.2.8 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.24 \
 		port_check-0.1.5 \
 		ppv-lite86-0.2.16 \
 		precomputed-hash-0.1.1 \
 		predicates-2.1.1 \
 		predicates-core-1.0.3 \
 		predicates-tree-1.0.5 \
-		pretty_assertions-1.2.0 \
+		pretty_assertions-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.36 \
 		qrcodegen-1.7.0 \
-		quote-1.0.15 \
+		quote-1.0.17 \
 		rand-0.7.3 \
 		rand-0.8.5 \
 		rand_chacha-0.2.2 \
@@ -205,7 +201,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		rand_core-0.6.3 \
 		rand_hc-0.2.0 \
 		rand_pcg-0.2.1 \
-		redox_syscall-0.2.11 \
+		redox_syscall-0.2.13 \
 		regex-1.5.5 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
@@ -224,7 +220,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		scopeguard-1.1.0 \
 		sct-0.7.0 \
 		select-0.5.0 \
-		semver-1.0.6 \
+		semver-1.0.7 \
 		serde-1.0.136 \
 		serde_derive-1.0.136 \
 		serde_json-1.0.79 \
@@ -234,20 +230,20 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		signal-hook-registry-1.4.0 \
 		simplelog-0.11.2 \
 		siphasher-0.3.10 \
-		slab-0.4.5 \
+		slab-0.4.6 \
 		smallvec-1.8.0 \
 		socket2-0.4.4 \
 		spin-0.5.2 \
-		string_cache-0.8.3 \
-		string_cache_codegen-0.5.1 \
+		string_cache-0.8.4 \
+		string_cache_codegen-0.5.2 \
 		strsim-0.8.0 \
 		strsim-0.10.0 \
 		strum-0.24.0 \
 		strum_macros-0.24.0 \
-		syn-1.0.86 \
+		syn-1.0.90 \
 		tar-0.4.38 \
 		tempfile-3.3.0 \
-		tendril-0.4.2 \
+		tendril-0.4.3 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
 		termtree-0.2.4 \
@@ -257,17 +253,17 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		thiserror-impl-1.0.30 \
 		thread_local-1.1.4 \
 		time-0.1.43 \
-		time-0.3.7 \
-		time-macros-0.2.3 \
+		time-0.3.9 \
+		time-macros-0.2.4 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
 		tokio-1.17.0 \
-		tokio-rustls-0.23.2 \
-		tokio-util-0.6.9 \
-		tokio-util-0.7.0 \
+		tokio-rustls-0.23.3 \
+		tokio-util-0.7.1 \
 		tower-service-0.3.1 \
-		tracing-0.1.31 \
-		tracing-core-0.1.22 \
+		tracing-0.1.32 \
+		tracing-attributes-0.1.20 \
+		tracing-core-0.1.24 \
 		try-lock-0.2.3 \
 		twoway-0.2.2 \
 		typenum-1.15.0 \
@@ -287,6 +283,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.79 \
 		wasm-bindgen-backend-0.2.79 \
 		wasm-bindgen-futures-0.4.29 \
@@ -301,17 +298,17 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.32.0 \
-		windows_aarch64_msvc-0.32.0 \
-		windows_i686_gnu-0.32.0 \
-		windows_i686_msvc-0.32.0 \
-		windows_x86_64_gnu-0.32.0 \
-		windows_x86_64_msvc-0.32.0 \
+		windows-sys-0.34.0 \
+		windows_aarch64_msvc-0.34.0 \
+		windows_i686_gnu-0.34.0 \
+		windows_i686_msvc-0.34.0 \
+		windows_x86_64_gnu-0.34.0 \
+		windows_x86_64_msvc-0.34.0 \
 		winreg-0.10.1 \
 		xattr-0.2.2 \
 		xml5ever-0.16.2 \
-		yansi-0.5.0 \
-		zip-0.5.13 \
+		yansi-0.5.1 \
+		zip-0.6.1 \
 		zstd-0.10.0+zstd.1.5.2 \
 		zstd-safe-4.1.4+zstd.1.5.2 \
 		zstd-sys-1.6.3+zstd.1.5.2
