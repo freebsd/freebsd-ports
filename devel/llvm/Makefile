@@ -31,7 +31,8 @@ CONFLICTS_INSTALL=	cling zapcc
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	${COMMANDS:S|^|bin/|}
+PLIST_FILES=	${COMMANDS:S|^|bin/|} \
+		${MAN1SRCS:S|^|man/man1/|:S|$|.gz|}
 
 .include <bsd.port.options.mk>
 
@@ -56,27 +57,38 @@ OPTIONS_EXCLUDE=	LLDB
 .endif
 
 .include "${.CURDIR}/../llvm${LLVM_SUFFIX}/Makefile.COMMANDS"
+.include "${.CURDIR}/../llvm${LLVM_SUFFIX}/Makefile.MAN1SRCS"
 
 COMMANDS=	${LLVM_COMMANDS}
+MAN1SRCS=	${LLVM_MAN1SRCS}
 .if ${PORT_OPTIONS:MCLANG}
 COMMANDS+=	${CLANG_COMMANDS}
+MAN1SRCS+=	${CLANG_MAN1SRCS}
 .endif
 .if ${PORT_OPTIONS:MEXTRAS}
 COMMANDS+=	${EXTRAS_COMMANDS}
+MAN1SRCS+=	${EXTRAS_MAN1SRCS}
 .endif
 .if ${PORT_OPTIONS:MLIT}
 COMMANDS+=	${LIT_COMMANDS}
+MAN1SRCS+=	${LIT_MAN1SRCS}
 .endif
 .if ${PORT_OPTIONS:MLLD}
 COMMANDS+=	${LLD_COMMANDS}
+MAN1SRCS+=	${LLD_MAN1SRCS}
 .endif
 .if ${PORT_OPTIONS:MLLDB}
 COMMANDS+=	${LLDB_COMMANDS}
+MAN1SRCS+=	${LLDB_MAN1SRCS}
 .endif
 
 do-install:
 .for c in ${COMMANDS}
-	    ${LN} -s ${c}${LLVM_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${c}
+	${LN} -s ${c}${LLVM_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${c}
+.endfor
+.for _man in ${MAN1SRCS}
+	${LN} -s ${_man:R}${LLVM_SUFFIX}.1 \
+	    ${STAGEDIR}${MANPREFIX}/man/man1/${_man}
 .endfor
 
 .include <bsd.port.mk>
