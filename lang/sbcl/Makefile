@@ -18,7 +18,7 @@ LICENSE=	BSD2CLAUSE PD
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
@@ -87,10 +87,7 @@ XREF_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-xref-for-internals"
 ZLIB_VARS=	MAKE_SH_ARGS+="--with-sb-core-compression"
 ZLIB_VARS_OFF=	MAKE_SH_ARGS+="--without-sb-core-compression"
 
-BOOTVERSION=		${BOOTVERSION_${ARCH}}
-BOOTVERSION_aarch64=	2.2.0
-BOOTVERSION_i386=	1.2.7
-BOOTVERSION_amd64=	1.2.7
+BOOTVERSION=	1.2.7
 CONMODULES=	asdf sb-aclrepl sb-bsd-sockets sb-cltl2 sb-concurrency sb-cover \
 		sb-executable sb-gmp sb-grovel sb-introspect sb-md5 sb-mpfr \
 		sb-posix sb-queue sb-rotate-byte sb-rt sb-simple-streams \
@@ -101,12 +98,12 @@ MAKE_SH_ARGS?=	--prefix="${PREFIX}" --xc-host="${XC_HOST}"
 .if defined(DYNAMIC_SPACE_SIZE)
 MAKE_SH_ARGS+=	--dynamic-space-size=${DYNAMIC_SPACE_SIZE}
 .endif
-SBCL_BOOT_LIST=	${BOOTVERSION}-arm64-freebsd ${BOOTVERSION}-x86-64-freebsd ${BOOTVERSION}-x86-freebsd \
-		${BOOTVERSION}-x86-64-dragonfly \
+SBCL_BOOT_LIST=	${BOOTVERSION}-x86-64-freebsd ${BOOTVERSION}-x86-freebsd \
+		${BOOTVERSION}-x86-64-dragonfly
 
 .include <bsd.port.options.mk>
 
-ARCHOS_PATTERN=	*-${ARCH:S/aarch64/arm64/:S/amd64/x86-64/:S/i386/x86/}-${OPSYS:tl}*
+ARCHOS_PATTERN=	*-${ARCH:S/amd64/x86-64/:S/i386/x86/}-${OPSYS:tl}*
 BOOT_WRKSRC=	${WRKDIR}/${PORTNAME}-${SBCL_BOOT_LIST:M${ARCHOS_PATTERN}}
 
 .if ${PORT_OPTIONS:MLINKABLE_RUNTIME}
