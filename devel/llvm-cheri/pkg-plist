@@ -113,7 +113,7 @@ llvm%%LLVM_SUFFIX%%/bin/dsymutil
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/git-clang-format
 llvm%%LLVM_SUFFIX%%/bin/hmaptool
 llvm%%LLVM_SUFFIX%%/bin/intercept-build
-llvm%%LLVM_SUFFIX%%/bin/ld
+%%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld.lld
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld64.lld
 %%LLD%%llvm%%LLVM_SUFFIX%%/bin/ld64.lld.darwinnew
