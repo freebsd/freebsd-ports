@@ -1,19 +1,14 @@
 # Created by: erich@FreeBSD.org
 
 PORTNAME=	xephem
-PORTVERSION=	3.7.7
-PORTREVISION=	5
+PORTVERSION=	4.1.0
 CATEGORIES=	astro
-MASTER_SITES=	http://www.clearskyinstitute.com/xephem/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive astronomical ephemeris program
 
-# Converted from RESTRICTED
-LICENSE=	XEPHEM
-LICENSE_NAME=	Xephem
-LICENSE_TEXT=	Personal use only
-LICENSE_PERMS=	auto-accept
+LICENSE=	MIT
+LICENSE_FILE=	${WRKDIR}/XEphem-${PORTVERSION}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig
@@ -21,24 +16,14 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 USES=		gmake groff jpeg motif tar:tgz ssl xorg
 USE_XORG=	xt xext xmu x11 xft
 
+USE_GITHUB=	yes
+GH_PROJECT=	XEphem
+
 LDFLAGS+=	-lfontconfig
 
+WRKSRC_SUBDIR=	GUI/xephem
+
 MAKE_JOBS_UNSAFE=	yes
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
-
-# XXX needs to be the same as DISTFILES
-XEPHEMSRC=	${PORTNAME}-${PORTVERSION}.tgz
-
-.include <bsd.port.pre.mk>
-
-.for file in ${XEPHEMSRC}
-.if !exists(${DISTDIR}/${file})
-IGNORE=	because of licensing restrictions, you must manually fetch ${file}\
-	from http://www.clearskyinstitute.com/xephem/,\
-	place it in ${DISTDIR} and then run make again
-.endif
-.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
@@ -67,4 +52,4 @@ do-install:
 		"auxil catalogs fifos fits gallery help lo" \
 		${STAGEDIR}${PREFIX}/lib/X11/xephem
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
