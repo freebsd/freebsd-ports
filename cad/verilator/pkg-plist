@@ -75,6 +75,7 @@ man/man1/verilator_coverage.1.gz
 %%DATADIR%%/include/verilated_heavy.h
 %%DATADIR%%/include/verilated_imp.h
 %%DATADIR%%/include/verilated_intrinsics.h
+%%DATADIR%%/include/verilated_profiler.cpp
 %%DATADIR%%/include/verilated_profiler.h
 %%DATADIR%%/include/verilated_save.cpp
 %%DATADIR%%/include/verilated_save.h
