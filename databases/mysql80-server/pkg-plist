@@ -31,6 +31,7 @@ lib/mysql/libmysqlharness_tls.so
 lib/mysql/libmysqlharness_tls.so.1
 lib/mysql/libmysqlrouter.so
 lib/mysql/libmysqlrouter.so.1
+lib/mysql/libmysqlrouter_connection_pool.so.1
 lib/mysql/libmysqlrouter_http.so
 lib/mysql/libmysqlrouter_http.so.1
 lib/mysql/libmysqlrouter_http_auth_backend.so
@@ -39,6 +40,10 @@ lib/mysql/libmysqlrouter_http_auth_realm.so
 lib/mysql/libmysqlrouter_http_auth_realm.so.1
 lib/mysql/libmysqlrouter_io_component.so
 lib/mysql/libmysqlrouter_io_component.so.1
+lib/mysql/libmysqlrouter_metadata_cache.so.1
+lib/mysql/libmysqlrouter_mysqlxmessages.so.1
+lib/mysql/libmysqlrouter_routing.so.1
+lib/mysql/mysqlrouter/connection_pool.so
 lib/mysql/mysqlrouter/http_auth_backend.so
 lib/mysql/mysqlrouter/http_auth_realm.so
 lib/mysql/mysqlrouter/http_server.so
@@ -46,6 +51,7 @@ lib/mysql/mysqlrouter/io.so
 lib/mysql/mysqlrouter/keepalive.so
 lib/mysql/mysqlrouter/metadata_cache.so
 lib/mysql/mysqlrouter/rest_api.so
+lib/mysql/mysqlrouter/rest_connection_pool.so
 lib/mysql/mysqlrouter/rest_metadata_cache.so
 lib/mysql/mysqlrouter/rest_router.so
 lib/mysql/mysqlrouter/rest_routing.so
@@ -79,6 +85,7 @@ lib/mysql/plugin/component_test_mysql_runtime_error.so
 lib/mysql/plugin/component_test_mysql_system_variable_set.so
 lib/mysql/plugin/component_test_pfs_notification.so
 lib/mysql/plugin/component_test_pfs_resource_group.so
+lib/mysql/plugin/component_test_sensitive_system_variables.so
 lib/mysql/plugin/component_test_status_var_service.so
 lib/mysql/plugin/component_test_status_var_service_int.so
 lib/mysql/plugin/component_test_status_var_service_reg_only.so
