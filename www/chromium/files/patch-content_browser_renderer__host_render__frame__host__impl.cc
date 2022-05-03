@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_frame_host_impl.cc.orig	2022-04-21 18:48:31 UTC
+--- content/browser/renderer_host/render_frame_host_impl.cc.orig	2022-05-03 04:41:28 UTC
 +++ content/browser/renderer_host/render_frame_host_impl.cc
 @@ -272,7 +272,7 @@
  #include "content/browser/renderer_host/render_view_host_delegate_view.h"
@@ -9,7 +9,7 @@
  #include "content/browser/accessibility/ax_screen_ai_annotator.h"
  #include "ui/accessibility/accessibility_features.h"
  #endif
-@@ -2632,7 +2632,7 @@ void RenderFrameHostImpl::AccessibilityPerformAction(
+@@ -2581,7 +2581,7 @@ void RenderFrameHostImpl::AccessibilityPerformAction(
        view->SetLastPointerType(ui::EventPointerType::kTouch);
    }
  
@@ -18,7 +18,7 @@
    if (action_data.action == ax::mojom::Action::kRunScreenAi) {
      RunScreenAIAnnotator();
      return;
-@@ -2642,7 +2642,7 @@ void RenderFrameHostImpl::AccessibilityPerformAction(
+@@ -2591,7 +2591,7 @@ void RenderFrameHostImpl::AccessibilityPerformAction(
    render_accessibility_->PerformAction(action_data);
  }
  
