@@ -1,0 +1,96 @@
+#!/bin/sh
+
+LOCALBASE="%%LOCALBASE%%"
+
+VERBOSE=${VERBOSE:-0}
+
+err()
+{
+	ret=$1
+	shift
+	echo >&2 "$@"
+	exit "$ret"
+}
+
+debug()
+{
+	if [ "$VERBOSE" -ne 0 ]; then
+		echo >&2 "$@"
+	fi
+}
+
+run()
+{
+	debug "Running:" "$@"
+	"$@"
+}
+
+
+tool=$0
+[ -L "$tool" ] && tool=$(/bin/realpath $tool)
+tool=${tool##*/}
+
+case $tool in
+cc)
+	llvmtool=clang
+	;;
+c++)
+	llvmtool=clang++
+	;;
+cpp)
+	llvmtool=clang-cpp
+	;;
+ld|ld.lld)
+	llvmtool=ld.lld
+	;;
+objdump)
+	llvmtool=llvm-objdump
+	;;
+*)
+	err invalid tool $tool
+	;;
+esac
+# At the expense of running yet another shell script, use the wrapped
+# version in ${LOCALBASE}/bin to ensure LD_LIBRARY_PATH is correct.
+realtool=${LOCALBASE}/bin/${llvmtool}
+
+# CheriBSD: assume that if we're on a CHERI architecture we want either
+# purecap or hybrid binaries.
+arch_cflags=
+arch_objdump_flags=
+ARCH=`uname -p`
+case $ARCH in
+aarch64)
+	arch_cflags="-march=morello"
+	arch_objdump_flags="--mattr=+morello"
+	;;
+aarch64c)
+	arch_cflags="-march=morello -mabi=purecap -femulated-tls"
+	arch_objdump_flags="--mattr=+morello"
+	;;
+riscv64)
+	arch_cflags="-march=rv64gcxcheri -mabi=lp64d -mno-relax"
+	;;
+riscv64c)
+	arch_cflags="-march=rv64gcxcheri -mabi=l64pc128d -mno-relax"
+	;;
+esac
+
+case $tool in
+cc|c++|cpp)
+	toolflags=$arch_cflags
+	;;
+ld|ld.lld)
+	# no flags should be required as ld can see what it's doing from
+	# the binaries
+	toolflags=
+	;;
+objdump)
+	toolflags=$arch_objdump_flags
+	;;
+*)
+	err unhandled tool $tool
+	;;
+esac
+
+run "$realtool" $toolflags "$@"

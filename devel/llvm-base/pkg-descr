@@ -1,0 +1,8 @@
+The LLVM Project is a collection of modular and reusable compiler and
+toolchain technologies.
+
+This port adds links in /usr/bin to allow the devel/llvm port to be
+used in place of a base-system toolchain.
+
+WWW: http://llvm.org/
+
