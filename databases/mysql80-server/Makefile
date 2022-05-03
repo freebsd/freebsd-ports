@@ -13,6 +13,8 @@ COMMENT?=		Multithreaded SQL database (server)
 
 LICENSE=		GPLv2
 
+BROKEN_i386=	--yplg_out: protoc-gen-yplg: Plugin killed by signal 11.
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 SLAVEDIRS=	databases/mysql80-client
