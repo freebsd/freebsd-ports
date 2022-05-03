@@ -14,10 +14,9 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libpcre.so:devel/pcre \
 		libpng.so:graphics/png
 
-USES=		cmake gnome qt:5 tar:bzip2 xorg
+USES=		cmake compiler:c++17-lang gnome qt:5 xorg
 USE_GITLAB=	yes
 GL_SITE=	https://salsa.debian.org/
 GL_ACCOUNT=	debichem-team
