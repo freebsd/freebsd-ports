@@ -1,3 +1,43 @@
+  <vuln vid="a8118db0-cac2-11ec-9288-0800270512f4">
+    <topic>rainloop -- cross-site-scripting (XSS) vulnerability</topic>
+    <affects>
+      <package>
+	<name>rainloop-php74</name>
+	<name>rainloop-php80</name>
+	<name>rainloop-php81</name>
+	<name>rainloop-community-php74</name>
+	<name>rainloop-community-php80</name>
+	<name>rainloop-community-php81</name>
+	<range><lt>1.16.0_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Scannell reports:</p>
+	<blockquote cite="https://blog.sonarsource.com/rainloop-emails-at-risk-due-to-code-flaw">
+	  <p>
+	    The code vulnerability can be easily exploited by an
+	    attacker by sending a malicious email to a victim that
+	    uses RainLoop as a mail client. When the email is viewed
+	    by the victim, the attacker gains full control over the
+	    session of the victim and can steal any of their emails,
+	    including those that contain highly sensitive information
+	    such as passwords, documents, and password reset links.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-29360</cvename>
+      <url>https://blog.sonarsource.com/rainloop-emails-at-risk-due-to-code-flaw</url>
+      <url>https://github.com/RainLoop/rainloop-webmail/issues/2142</url>
+    </references>
+    <dates>
+      <discovery>2022-04-19</discovery>
+      <entry>2022-05-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="61bce714-ca0c-11ec-9cfc-10c37b4ac2ea">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
