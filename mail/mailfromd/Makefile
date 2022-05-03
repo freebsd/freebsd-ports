@@ -1,7 +1,7 @@
 # Created by: Zeus Panchenko <zeus@gnu.org.ua>
 
 PORTNAME=	mailfromd
-PORTVERSION=	8.10
+PORTVERSION=	8.13
 CATEGORIES=	mail
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libmailutils.so:mail/mailutils \
 
 USES=		gmake localbase readline tar:xz
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-syslog-async
 CONFIGURE_ENV=	DEFAULT_STATE_DIR="${DATABASEDIR}" \
 		DEFAULT_SOCKET="unix:${MFD_RUN_DIR}/${PORTNAME}.sock" \
 		DEFAULT_USER=mailnull
