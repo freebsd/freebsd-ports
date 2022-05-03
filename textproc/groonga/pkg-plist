@@ -104,9 +104,12 @@ lib/groonga/plugins/functions/time.so
 lib/groonga/plugins/functions/vector.so
 lib/groonga/plugins/query_expanders/tsv.a
 lib/groonga/plugins/query_expanders/tsv.so
-%%RUBY%%lib/groonga/plugins/sharding/dynamic_columns.rb
-%%RUBY%%lib/groonga/plugins/sharding/keys_parsable.rb
 %%RUBY%%lib/groonga/plugins/ruby/eval.rb
+%%RUBY%%lib/groonga/plugins/sharding/dynamic_columns.rb
+%%RUBY%%lib/groonga/plugins/sharding/stream_execute_context.rb
+%%RUBY%%lib/groonga/plugins/sharding/stream_executor.rb
+%%RUBY%%lib/groonga/plugins/sharding/stream_shard_executor.rb
+%%RUBY%%lib/groonga/plugins/sharding/keys_parsable.rb
 %%RUBY%%lib/groonga/plugins/sharding.rb
 %%RUBY%%lib/groonga/plugins/sharding/logical_count.rb
 %%RUBY%%lib/groonga/plugins/sharding/logical_enumerator.rb
