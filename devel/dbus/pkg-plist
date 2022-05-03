@@ -32,7 +32,7 @@ lib/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
 lib/libdbus-1.a
 lib/libdbus-1.so
 lib/libdbus-1.so.3
-lib/libdbus-1.so.3.19.13
+lib/libdbus-1.so.3.32.0
 libdata/pkgconfig/dbus-1.pc
 @(,%%GROUPS%%,4750) libexec/dbus-daemon-launch-helper
 %%MANPAGES%%man/man1/dbus-cleanup-sockets.1.gz
@@ -49,7 +49,9 @@ share/dbus-1/system.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/GetAllMatchRules.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-session-disable-stats.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-system-enable-stats.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-system-hardening-without-traditional-activation.conf
 share/xml/dbus-1/busconfig.dtd
+share/xml/dbus-1/catalog.xml
 share/xml/dbus-1/introspect.dtd
 @dir share/dbus-1/services
 @dir share/dbus-1/session.d

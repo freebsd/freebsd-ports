@@ -1,0 +1,11 @@
+--- configure.orig	2022-02-28 12:24:19 UTC
++++ configure
+@@ -22663,7 +22663,7 @@ if test "x$dbus_win" = xyes; then
+ 
+     enable_x11_autolaunch=no
+     have_x11=no
+-else if test "x$with_x" = xauto; then
++else if test "x$with_x" != xno; then
+ 
+ pkg_failed=no
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for X" >&5

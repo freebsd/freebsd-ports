@@ -1,3 +1,3 @@
-TIMESTAMP = 1593757580
-SHA256 (dbus-1.12.20.tar.gz) = f77620140ecb4cdc67f37fb444f8a6bea70b5b6461f12f1cbe2cec60fa7de5fe
-SIZE (dbus-1.12.20.tar.gz) = 2095511
+TIMESTAMP = 1648926703
+SHA256 (dbus-1.14.0.tar.xz) = ccd7cce37596e0a19558fd6648d1272ab43f011d80c8635aea8fd0bad58aebd4
+SIZE (dbus-1.14.0.tar.xz) = 1360228
