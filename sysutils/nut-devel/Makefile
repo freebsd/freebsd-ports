@@ -76,6 +76,9 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIB_DEPENDS+=	libltdl.so:devel/libltdl
 
+# XXX Remove this when copying this port to sysutils/nut. The GA version
+# XXX of nut ships with preformatted files and therefore does not need
+# XXX asciidoc.
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 
 CGI_LIB_DEPENDS=	libgd.so:graphics/gd

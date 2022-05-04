@@ -68,8 +68,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIB_DEPENDS+=	libltdl.so:devel/libltdl
 
-BUILD_DEPENDS=	asciidoc:textproc/asciidoc
-
 CGI_LIB_DEPENDS=	libgd.so:graphics/gd
 CGI_CONFIGURE_WITH=	cgi
 CGI_CONFIGURE_ON=	--with-cgipath=${CGIDIR} \
