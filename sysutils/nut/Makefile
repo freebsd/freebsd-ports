@@ -13,6 +13,8 @@ LICENSE=	GPLv2+ GPLv3+ ART10 GPLv1+
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+CONFLICTS=	nut-devel-*
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build compiler:c11 gmake libtool pkgconfig python:build
 USE_LDCONFIG=	yes
