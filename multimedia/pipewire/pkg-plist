@@ -40,7 +40,7 @@ include/pipewire-0.3/pipewire/extensions/protocol-native.h
 include/pipewire-0.3/pipewire/extensions/session-manager.h
 include/pipewire-0.3/pipewire/extensions/session-manager/impl-interfaces.h
 include/pipewire-0.3/pipewire/extensions/session-manager/interfaces.h
-%%VULKAN%%include/pipewire-0.3/pipewire/extensions/session-manager/introspect-funcs.h
+include/pipewire-0.3/pipewire/extensions/session-manager/introspect-funcs.h
 include/pipewire-0.3/pipewire/extensions/session-manager/introspect.h
 include/pipewire-0.3/pipewire/extensions/session-manager/keys.h
 include/pipewire-0.3/pipewire/factory.h
@@ -89,11 +89,13 @@ include/spa-0.2/spa/control/type-info.h
 include/spa-0.2/spa/debug/buffer.h
 include/spa-0.2/spa/debug/dict.h
 include/spa-0.2/spa/debug/format.h
+include/spa-0.2/spa/debug/log.h
 include/spa-0.2/spa/debug/mem.h
 include/spa-0.2/spa/debug/node.h
 include/spa-0.2/spa/debug/pod.h
 include/spa-0.2/spa/debug/types.h
 include/spa-0.2/spa/graph/graph.h
+include/spa-0.2/spa/interfaces/audio/aec.h
 include/spa-0.2/spa/monitor/device.h
 include/spa-0.2/spa/monitor/event.h
 include/spa-0.2/spa/monitor/type-info.h
@@ -132,6 +134,7 @@ include/spa-0.2/spa/param/video/type-info.h
 include/spa-0.2/spa/pod/builder.h
 include/spa-0.2/spa/pod/command.h
 include/spa-0.2/spa/pod/compare.h
+include/spa-0.2/spa/pod/dynamic.h
 include/spa-0.2/spa/pod/event.h
 include/spa-0.2/spa/pod/filter.h
 include/spa-0.2/spa/pod/iter.h
@@ -151,7 +154,9 @@ include/spa-0.2/spa/support/thread.h
 include/spa-0.2/spa/utils/ansi.h
 include/spa-0.2/spa/utils/defs.h
 include/spa-0.2/spa/utils/dict.h
+include/spa-0.2/spa/utils/dll.h
 include/spa-0.2/spa/utils/hook.h
+include/spa-0.2/spa/utils/json-pod.h
 include/spa-0.2/spa/utils/json.h
 include/spa-0.2/spa/utils/keys.h
 include/spa-0.2/spa/utils/list.h
@@ -166,21 +171,22 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.343.0
+lib/libpipewire-0.3.so.0.351.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0.343.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0.351.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.343.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.351.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.343.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.351.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
 lib/pipewire-0.3/libpipewire-module-client-node.so
 lib/pipewire-0.3/libpipewire-module-echo-cancel.so
+lib/pipewire-0.3/libpipewire-module-fallback-sink.so
 lib/pipewire-0.3/libpipewire-module-filter-chain.so
 lib/pipewire-0.3/libpipewire-module-link-factory.so
 lib/pipewire-0.3/libpipewire-module-loopback.so
@@ -193,6 +199,7 @@ lib/pipewire-0.3/libpipewire-module-protocol-simple.so
 %%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-pulse-tunnel.so
 %%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-raop-discover.so
 lib/pipewire-0.3/libpipewire-module-raop-sink.so
+lib/pipewire-0.3/libpipewire-module-rt.so
 lib/pipewire-0.3/libpipewire-module-rtkit.so
 lib/pipewire-0.3/libpipewire-module-session-manager.so
 lib/pipewire-0.3/libpipewire-module-spa-device-factory.so
@@ -200,6 +207,8 @@ lib/pipewire-0.3/libpipewire-module-spa-device.so
 lib/pipewire-0.3/libpipewire-module-spa-node-factory.so
 lib/pipewire-0.3/libpipewire-module-spa-node.so
 %%PULSEAUDIO%%lib/pipewire-0.3/libpipewire-module-zeroconf-discover.so
+lib/spa-0.2/aec/libspa-aec-null.so
+lib/spa-0.2/aec/libspa-aec-webrtc.so
 %%MEDIASESSION%%lib/spa-0.2/alsa/libspa-alsa.so
 lib/spa-0.2/audioconvert/libspa-audioconvert.so
 lib/spa-0.2/audiomixer/libspa-audiomixer.so
@@ -215,16 +224,18 @@ lib/spa-0.2/volume/libspa-volume.so
 @comment lib/udev/rules.d/90-pipewire-alsa.rules
 libdata/pkgconfig/libpipewire-0.3.pc
 libdata/pkgconfig/libspa-0.2.pc
-%%MANPAGES%%%%PULSEAUDIO%%man/man1/pipewire-pulse.1.gz
+%%MANPAGES%%man/man1/pipewire-pulse.1.gz
 %%MANPAGES%%man/man1/pipewire.1.gz
 %%MANPAGES%%man/man1/pw-cat.1.gz
 %%MANPAGES%%man/man1/pw-cli.1.gz
 %%MANPAGES%%man/man1/pw-dot.1.gz
 %%MANPAGES%%%%PIPEWIRE_JACK%%man/man1/pw-jack.1.gz
+%%MANPAGES%%man/man1/pw-link.1.gz
 %%MANPAGES%%man/man1/pw-metadata.1.gz
 %%MANPAGES%%man/man1/pw-mididump.1.gz
 %%MANPAGES%%man/man1/pw-mon.1.gz
 %%MANPAGES%%man/man1/pw-profiler.1.gz
+%%MANPAGES%%man/man1/pw-top.1.gz
 %%MANPAGES%%man/man5/pipewire.conf.5.gz
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/analog-input-aux.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/analog-input-dock-mic.conf
@@ -272,7 +283,6 @@ libdata/pkgconfig/libspa-0.2.pc
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/usb-gaming-headset-output-stereo.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/virtual-surround-7.1.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/audigy.conf
-%%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/behringer-umc22.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/cmedia-high-speed-true-hdaudio.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/default.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/dell-dock-tb16-usb-audio.conf
@@ -376,6 +386,7 @@ share/locale/pl/LC_MESSAGES/pipewire.mo
 share/locale/pt/LC_MESSAGES/pipewire.mo
 %%MEDIASESSION%%share/locale/pt_BR/LC_MESSAGES/media-session.mo
 share/locale/pt_BR/LC_MESSAGES/pipewire.mo
+share/locale/ro/LC_MESSAGES/pipewire.mo
 %%MEDIASESSION%%share/locale/ru/LC_MESSAGES/media-session.mo
 share/locale/ru/LC_MESSAGES/pipewire.mo
 %%MEDIASESSION%%share/locale/si/LC_MESSAGES/media-session.mo
@@ -403,6 +414,7 @@ share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 %%DATADIR%%/client-rt.conf
 %%DATADIR%%/client.conf
 %%DATADIR%%/filter-chain/demonic.conf
+%%DATADIR%%/filter-chain/duplicate-FL.conf
 %%DATADIR%%/filter-chain/sink-dolby-surround.conf
 %%DATADIR%%/filter-chain/sink-eq6.conf
 %%DATADIR%%/filter-chain/sink-matrix-spatialiser.conf
@@ -416,5 +428,6 @@ share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 %%MEDIASESSION%%%%DATADIR%%/media-session.d/v4l2-monitor.conf
 %%MEDIASESSION%%%%DATADIR%%/media-session.d/with-jack
 %%MEDIASESSION%%%%DATADIR%%/media-session.d/with-pulseaudio
+%%DATADIR%%/minimal.conf
 %%DATADIR%%/pipewire-pulse.conf
 %%DATADIR%%/pipewire.conf
