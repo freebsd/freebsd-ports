@@ -100,6 +100,7 @@
     SUBDIR += R-cran-partitions
     SUBDIR += R-cran-pbkrtest
     SUBDIR += R-cran-pls
+    SUBDIR += R-cran-polycor
     SUBDIR += R-cran-polynom
     SUBDIR += R-cran-prodlim
     SUBDIR += R-cran-proxy
