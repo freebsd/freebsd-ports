@@ -1,7 +1,7 @@
 # Created by: Jeremy Norris <ishmael127@home.com>
 
 PORTNAME=	feh
-PORTVERSION=	3.5
+PORTVERSION=	3.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		LOCAL/uqs
