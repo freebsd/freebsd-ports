@@ -34,7 +34,7 @@ CONFIGURE_ENV=	AWK=${AWK} \
 
 DATADIR=	${PREFIX}/share/autoconf${VERSION}
 NO_ARCH=	yes
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 PLIST_SUB=	VERSION=${VERSION}
 

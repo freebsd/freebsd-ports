@@ -28,7 +28,7 @@ CONFIGURE_ENV=	AWK=${AWK} \
 STRIP=
 DATADIR=	${PREFIX}/share/autoconf${VERSION}
 NO_ARCH=	yes
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 WRKSRC=		${WRKDIR}/autoconf
 

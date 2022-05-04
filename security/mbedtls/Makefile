@@ -13,12 +13,14 @@ USES=		gmake python:test shebangfix
 SHEBANG_FILES=	scripts/*.py tests/scripts/*.py
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	ARMmbed
+GH_ACCOUNT=	Mbed-TLS
 
 ALL_TARGET=	no_test
 TEST_TARGET=	test
 MAKE_ENV=	PYTHON=${PYTHON_CMD} SHARED=1
 USE_LDCONFIG=	yes
+
+PORTSCOUT=	limit:^${PORTVERSION:R:S/./\./g}\.
 
 post-patch:
 	@${RM} ${WRKSRC}/include/mbedtls/*.orig
