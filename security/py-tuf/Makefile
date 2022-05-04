@@ -1,7 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	tuf
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,12 +17,11 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.19.1:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}securesystemslib>=0.22.0:security/py-securesystemslib@${PY_FLAVOR}
 
-USES=		python:3.7+ pytest
+USES=		pytest python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-PYTEST_BROKEN_TESTS=	test_cleanup \
-			TestRepoExamples  # uses files missing from pypi distribution
+PYTEST_BROKEN_TESTS=	test_cleanup TestRepoExamples # uses files missing from pypi distribution
 
 .include <bsd.port.mk>
