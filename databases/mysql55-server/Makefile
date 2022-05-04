@@ -12,6 +12,9 @@ COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Upstream support ended on December 2018
+EXPIRATION_DATE=	2022-06-30
+
 SLAVEDIRS=	databases/mysql55-client
 USES=		cmake:insource,noninja compiler:c++11-lang cpe readline shebangfix
 CXXFLAGS+=	${CPPFLAGS}
