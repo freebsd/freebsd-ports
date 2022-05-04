@@ -3,7 +3,7 @@ PORTVERSION=	5.10.0
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Version control system
 
 LICENSE=	GPLv3

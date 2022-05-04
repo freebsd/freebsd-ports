@@ -6,7 +6,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 		http://ahriman.bucharest.roedu.net/unix2tcp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Connection forwarder that converts Unix sockets into TCP sockets
 
 CFLAGS+=	-DHAVE_CONFIG_H -I.
