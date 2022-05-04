@@ -1,8 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	dichromat
-DISTVERSION=	2.0-0
-PORTREVISION=	10
+DISTVERSION=	2.0-0.1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
