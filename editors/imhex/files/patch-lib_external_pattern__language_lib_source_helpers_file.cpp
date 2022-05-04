@@ -1,6 +1,6 @@
---- lib/libimhex/source/helpers/file.cpp.orig	2022-04-17 23:53:01 UTC
-+++ lib/libimhex/source/helpers/file.cpp
-@@ -5,12 +5,12 @@ namespace hex::fs {
+--- lib/external/pattern_language/lib/source/helpers/file.cpp.orig	2022-05-04 11:27:58 UTC
++++ lib/external/pattern_language/lib/source/helpers/file.cpp
+@@ -7,12 +7,12 @@ namespace pl::fs {
  
      File::File(const std::fs::path &path, Mode mode) noexcept : m_path(path) {
          if (mode == File::Mode::Read)
@@ -16,7 +16,7 @@
      }
  
      File::File() noexcept {
-@@ -37,7 +37,7 @@ namespace hex::fs {
+@@ -39,7 +39,7 @@ namespace pl::fs {
  
  
      void File::seek(u64 offset) {
@@ -25,7 +25,7 @@
      }
  
      void File::close() {
-@@ -101,10 +101,10 @@ namespace hex::fs {
+@@ -103,10 +103,10 @@ namespace pl::fs {
      size_t File::getSize() const {
          if (!isValid()) return 0;
  
@@ -40,12 +40,12 @@
  
          if (size < 0)
              return 0;
-@@ -115,7 +115,7 @@ namespace hex::fs {
+@@ -117,7 +117,7 @@ namespace pl::fs {
      void File::setSize(u64 size) {
          if (!isValid()) return;
  
 -        auto result = ftruncate64(fileno(this->m_file), size);
 +        auto result = ftruncate(fileno(this->m_file), size);
-         hex::unused(result);
+         pl::unused(result);
      }
  

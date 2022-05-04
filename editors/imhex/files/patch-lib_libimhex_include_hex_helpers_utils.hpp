@@ -1,6 +1,6 @@
---- lib/libimhex/include/hex/helpers/utils.hpp.orig	2022-01-30 20:55:06 UTC
+--- lib/libimhex/include/hex/helpers/utils.hpp.orig	2022-04-17 23:53:01 UTC
 +++ lib/libimhex/include/hex/helpers/utils.hpp
-@@ -95,6 +95,12 @@ namespace hex {
+@@ -94,6 +94,12 @@ namespace hex {
      template<size_t Size>
      using SizeType = typename SizeTypeImpl<Size>::Type;
  
@@ -13,7 +13,7 @@
      template<typename T>
      constexpr T changeEndianess(const T &value, std::endian endian) {
          if (endian == std::endian::native)
-@@ -107,7 +113,7 @@ namespace hex {
+@@ -106,7 +112,7 @@ namespace hex {
  
          SizeType<Size> swapped;
  

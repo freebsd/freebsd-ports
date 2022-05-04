@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2022-02-15 12:57:57 UTC
+--- CMakeLists.txt.orig	2022-03-03 13:32:30 UTC
 +++ CMakeLists.txt
 @@ -11,7 +11,6 @@ include("${IMHEX_BASE_FOLDER}/cmake/build_helpers.cmak
  
@@ -8,11 +8,3 @@
  
  # List plugin names here. Project name must match folder name
  set(PLUGINS
-@@ -28,7 +27,6 @@ configurePackingResources()
- # Add ImHex sources
- add_subdirectory(lib/libimhex)
- add_subdirectory(main)
--add_custom_target(imhex ALL DEPENDS main)
- 
- # Add unit tests
- add_subdirectory(tests EXCLUDE_FROM_ALL)

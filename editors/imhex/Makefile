@@ -1,5 +1,5 @@
 PORTNAME=	imhex
-PORTVERSION=	1.15.0
+PORTVERSION=	1.17.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg
@@ -18,7 +18,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		btzy-nativefiledialog-extended-${GH_TAG_NATIVEFILEDIALOG}_GH0${EXTRACT_SUFX} \
 		capstone-engine-capstone-${GH_TAG_CAPSTONE}_GH0${EXTRACT_SUFX} \
 		fmtlib-fmt-${GH_TAG_FMT}_GH0${EXTRACT_SUFX} \
-		WerWolv-libromfs-${GH_TAG_LIBROMFS}_GH0${EXTRACT_SUFX}
+		VirusTotal-yara-${GH_TAG_YARA}_GH0${EXTRACT_SUFX} \
+		WerWolv-libromfs-${GH_TAG_LIBROMFS}_GH0${EXTRACT_SUFX} \
+		WerWolv-ImHex-Patterns-${GH_TAG_IMHEX_PATTERNS}_GH0${EXTRACT_SUFX} \
+		WerWolv-PatternLanguage-${GH_TAG_PATTERN_LANGUAGE}_GH0${EXTRACT_SUFX}
 
 BUILD_DEPENDS=	glm>0:math/glm \
 		nlohmann-json>0:devel/nlohmann-json \
@@ -28,8 +31,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libglfw.so:graphics/glfw \
 		libharfbuzz.so:print/harfbuzz \
 		libmbedtls.so:security/mbedtls \
-		libtre.so:textproc/libtre \
-		libyara.so:security/yara
+		libtre.so:textproc/libtre
 
 USES=		cmake gl gnome pkgconfig python:3.8+ xorg
 USE_GL=		gl
@@ -42,13 +44,21 @@ GH_PROJECT=	ImHex
 GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledialog \
 		capstone-engine:capstone:${GH_TAG_CAPSTONE}:capstone \
 		fmtlib:fmt:${GH_TAG_FMT}:fmt \
+		VirusTotal:yara:${GH_TAG_YARA}:yara \
+		WerWolv:ImHex-Patterns:${GH_TAG_IMHEX_PATTERNS}:imhex_patterns \
+		WerWolv:PatternLanguage:${GH_TAG_PATTERN_LANGUAGE}:pattern_language \
 		WerWolv:libromfs:${GH_TAG_LIBROMFS}:libromfs
-GH_TAG_CAPSTONE=	c7c665f
-GH_TAG_FMT=	d141cdb
-GH_TAG_NATIVEFILEDIALOG=	322d1bc
-GH_TAG_LIBROMFS=	5d32734
 
-CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_YARA=ON -DUSE_SYSTEM_NLOHMANN_JSON=ON
+GH_TAG_CAPSTONE=	d5141c0
+GH_TAG_FMT=	bc654fa
+GH_TAG_IMHEX_PATTERNS=	4ec37de
+GH_TAG_LIBROMFS=	f14e88a
+GH_TAG_NATIVEFILEDIALOG=	28ade5a
+GH_TAG_PATTERN_LANGUAGE=	49bafd8
+GH_TAG_YARA=	1367943
+
+CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_NLOHMANN_JSON=ON
+CXXFLAGS+=	-fPIC
 
 PORTDOCS=	README.md
 
@@ -61,6 +71,10 @@ post-extract:
 	${CP} -R ${WRKSRC_fmt}/* ${WRKSRC}/lib/external/fmt
 	${CP} -R ${WRKSRC_libromfs}/* ${WRKSRC}/lib/external/libromfs
 	${CP} -R ${WRKSRC_nativefiledialog}/* ${WRKSRC}/lib/external/nativefiledialog
+	${CP} -R ${WRKSRC_pattern_language}/* ${WRKSRC}/lib/external/pattern_language
+	${CP} -R ${WRKSRC_yara}/* ${WRKSRC}/lib/external/yara/yara
+	${MKDIR} ${WRKDIR}/.build/_deps/imhex_patterns_src
+	${CP} -R ${WRKSRC_imhex_patterns}/* ${WRKDIR}/.build/_deps/imhex_patterns_src
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

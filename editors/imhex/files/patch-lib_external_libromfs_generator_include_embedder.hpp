@@ -1,6 +1,6 @@
---- lib/external/libromfs/generator/include/embedder.hpp.orig	2022-01-31 11:53:19 UTC
+--- lib/external/libromfs/generator/include/embedder.hpp.orig	2022-05-04 11:03:08 UTC
 +++ lib/external/libromfs/generator/include/embedder.hpp
-@@ -5,13 +5,13 @@ R"embedder(
+@@ -19,13 +19,13 @@ R"embedder(
  
      #define RESOURCE(name, path)                        \
      __asm__ (                                           \

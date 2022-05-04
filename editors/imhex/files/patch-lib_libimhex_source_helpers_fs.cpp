@@ -1,6 +1,6 @@
---- lib/libimhex/source/helpers/paths.cpp.orig	2021-12-16 17:57:41 UTC
-+++ lib/libimhex/source/helpers/paths.cpp
-@@ -8,10 +8,15 @@
+--- lib/libimhex/source/helpers/fs.cpp.orig	2022-05-04 11:21:53 UTC
++++ lib/libimhex/source/helpers/fs.cpp
+@@ -12,10 +12,15 @@
      #include <shlobj.h>
  #elif defined(OS_LINUX)
      #include <xdg.hpp>
@@ -14,5 +14,5 @@
  #include <algorithm>
 +#include <array>
  #include <filesystem>
- #include <string>
- #include <vector>
+ 
+ namespace hex::fs {
