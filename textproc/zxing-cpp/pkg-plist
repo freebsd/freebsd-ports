@@ -20,12 +20,11 @@ include/ZXing/Flags.h
 include/ZXing/GTIN.h
 include/ZXing/GenericGF.h
 include/ZXing/GenericGFPoly.h
-include/ZXing/GenericLuminanceSource.h
 include/ZXing/GlobalHistogramBinarizer.h
 include/ZXing/GridSampler.h
 include/ZXing/HybridBinarizer.h
+include/ZXing/ImageView.h
 include/ZXing/LogMatrix.h
-include/ZXing/LuminanceSource.h
 include/ZXing/Matrix.h
 include/ZXing/MultiFormatReader.h
 include/ZXing/MultiFormatWriter.h
@@ -39,7 +38,6 @@ include/ZXing/ReedSolomonDecoder.h
 include/ZXing/ReedSolomonEncoder.h
 include/ZXing/RegressionLine.h
 include/ZXing/Result.h
-include/ZXing/ResultMetadata.h
 include/ZXing/ResultPoint.h
 include/ZXing/Scope.h
 include/ZXing/StructuredAppend.h
@@ -128,7 +126,6 @@ include/ZXing/qrcode/QRCodecMode.h
 include/ZXing/qrcode/QRDataBlock.h
 include/ZXing/qrcode/QRDataMask.h
 include/ZXing/qrcode/QRDecoder.h
-include/ZXing/qrcode/QRDecoderMetadata.h
 include/ZXing/qrcode/QRDetector.h
 include/ZXing/qrcode/QRECB.h
 include/ZXing/qrcode/QREncodeResult.h
@@ -156,5 +153,5 @@ lib/cmake/ZXing/ZXingTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ZXing/ZXingTargets.cmake
 lib/libZXing.so
 lib/libZXing.so.1
-lib/libZXing.so.1.2.0
+lib/libZXing.so.1.3.0
 libdata/pkgconfig/zxing.pc
