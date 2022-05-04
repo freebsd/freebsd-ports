@@ -44,7 +44,6 @@ USE_RC_SUBR=	nut nut_upsmon nut_upslog
 SUB_LIST+=	STATEDIR=${STATEDIR}
 PLIST_SUB+=	STATEDIR=${STATEDIR}
 
-INSTALL_TARGET=	install-strip
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
