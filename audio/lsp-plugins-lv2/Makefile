@@ -1,7 +1,7 @@
 PORTNAME=	lsp-plugins
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/sadko4u/lsp-plugins/releases/download/1.2.0/
+MASTER_SITES=	https://github.com/sadko4u/lsp-plugins/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-lv2
 DISTFILES=	${PORTNAME}-src-${DISTVERSION}.tar.gz
 
@@ -60,7 +60,7 @@ post-install:
 post-install-JACK-on:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/bin/lsp-* \
-		${STAGEDIR}${PREFIX}/lib/lsp-plugins/liblsp-plugins-jack-1.2.0.so
+		${STAGEDIR}${PREFIX}/lib/lsp-plugins/liblsp-plugins-jack-${PORTVERSION}.so
 
 post-install-VST2-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/vst/lsp-plugins/*.so
