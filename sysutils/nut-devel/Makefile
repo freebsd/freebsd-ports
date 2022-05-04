@@ -23,8 +23,8 @@ NUT_COMMIT_DATE=	2022.04.27
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 USES=		autoreconf:build compiler:c11 gmake libtool pkgconfig python:build
+USE_LDCONFIG=	yes
 
 NUT_USER?=	uucp
 NUT_GROUP?=	uucp
