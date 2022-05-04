@@ -1,6 +1,5 @@
 PORTNAME=	django-treebeard
-DISTVERSION=	4.4
-PORTREVISION=	1
+DISTVERSION=	4.5.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +11,12 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-django>=4.0:devel/py-pytest-django@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		pytest python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
+
+TEST_ENV=	DATABASE_ENGINE=sqlite
 
 NO_ARCH=	yes
 PORTDOCS=	*
@@ -31,8 +32,5 @@ post-install-DOCS-on:
 	@(cd ${WRKSRC}/build/sphinx/html && \
 	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 		"! -name .buildinfo -and ! -name objects.inv")
-
-do-test:
-	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
 
 .include <bsd.port.mk>
