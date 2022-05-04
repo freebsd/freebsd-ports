@@ -1,8 +1,6 @@
 PORTNAME=	falkon
-DISTVERSION=	3.2.0
-PORTREVISION=	1
-CATEGORIES=	www
-MASTER_SITES=	KDE/stable/falkon/${DISTVERSION}/
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	www kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Web browser based on Webengine and Qt Framework
