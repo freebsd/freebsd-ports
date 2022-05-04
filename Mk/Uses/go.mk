@@ -120,14 +120,16 @@ GO_ENV+=	GOPATH="${GO_GOPATH}" \
 		GOSUMDB=${GO_GOSUMDB}
 .    if defined(GO_MODULE)
 GO_MODNAME=	${GO_MODULE:C/^([^@]*)(@([^@]*)?)/\1/}
+.      if empty(DISTFILES:Mgo.mod*)
 GO_MODVERSION=	${GO_MODULE:C/^([^@]*)(@([^@]*)?)/\2/:M@*:S/^@//:S/^$/${DISTVERSIONFULL}/}
 GO_MODFILE=	${GO_MODVERSION}.mod
 GO_DISTFILE=	${GO_MODVERSION}.zip
-DIST_SUBDIR=	go/${PKGORIGIN:S,/,_,g}/${DISTNAME}
 MASTER_SITES+=	${GO_GOPROXY}/${GO_MODNAME:C/([A-Z])/!\1/g:tl}/@v/
 DISTFILES+=	${GO_MODFILE} ${GO_DISTFILE}
 EXTRACT_ONLY+=	${GO_DISTFILE}
 WRKSRC=		${WRKDIR}/${GO_MODNAME}@${GO_MODVERSION}
+.      endif
+DIST_SUBDIR=	go/${PKGORIGIN:S,/,_,g}/${DISTNAME}
 FETCH_DEPENDS+=	${GO_CMD}:${GO_PORT} \
 		ca_root_nss>0:security/ca_root_nss
 USES+=		zip
