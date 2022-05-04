@@ -1,3 +1,4 @@
+bin/lt-append
 bin/lt-comp
 bin/lt-expand
 bin/lt-print
@@ -46,6 +47,7 @@ lib/liblttoolbox3.so
 %%DATADIR%%/dix.rnc
 %%DATADIR%%/dix.rng
 %%DATADIR%%/dix.xsd
+man/man1/lt-append.1.gz
 man/man1/lt-comp.1.gz
 man/man1/lt-expand.1.gz
 man/man1/lt-print.1.gz
