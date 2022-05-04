@@ -10,38 +10,7 @@ COMMENT=	Firmware modules for the drm-kmod drivers
 
 USES=		metaport
 
-RUN_DEPENDS=	gpu-firmware-amd-kmod-banks>0:graphics/gpu-firmware-amd-kmod@banks \
-		gpu-firmware-amd-kmod-bonaire>0:graphics/gpu-firmware-amd-kmod@bonaire \
-		gpu-firmware-amd-kmod-carrizo>0:graphics/gpu-firmware-amd-kmod@carrizo \
-		gpu-firmware-amd-kmod-fiji>0:graphics/gpu-firmware-amd-kmod@fiji \
-		gpu-firmware-amd-kmod-hainan>0:graphics/gpu-firmware-amd-kmod@hainan \
-		gpu-firmware-amd-kmod-hawaii>0:graphics/gpu-firmware-amd-kmod@hawaii \
-		gpu-firmware-amd-kmod-kabini>0:graphics/gpu-firmware-amd-kmod@kabini \
-		gpu-firmware-amd-kmod-kaveri>0:graphics/gpu-firmware-amd-kmod@kaveri \
-		gpu-firmware-amd-kmod-mullins>0:graphics/gpu-firmware-amd-kmod@mullins \
-		gpu-firmware-amd-kmod-navi10>0:graphics/gpu-firmware-amd-kmod@navi10 \
-		gpu-firmware-amd-kmod-navi12>0:graphics/gpu-firmware-amd-kmod@navi12 \
-		gpu-firmware-amd-kmod-navi14>0:graphics/gpu-firmware-amd-kmod@navi14 \
-		gpu-firmware-amd-kmod-oland>0:graphics/gpu-firmware-amd-kmod@oland \
-		gpu-firmware-amd-kmod-picasso>0:graphics/gpu-firmware-amd-kmod@picasso \
-		gpu-firmware-amd-kmod-pitcairn>0:graphics/gpu-firmware-amd-kmod@pitcairn \
-		gpu-firmware-amd-kmod-polaris10>0:graphics/gpu-firmware-amd-kmod@polaris10 \
-		gpu-firmware-amd-kmod-polaris11>0:graphics/gpu-firmware-amd-kmod@polaris11 \
-		gpu-firmware-amd-kmod-polaris12>0:graphics/gpu-firmware-amd-kmod@polaris12 \
-		gpu-firmware-amd-kmod-raven>0:graphics/gpu-firmware-amd-kmod@raven \
-		gpu-firmware-amd-kmod-raven2>0:graphics/gpu-firmware-amd-kmod@raven2 \
-		gpu-firmware-amd-kmod-renoir>0:graphics/gpu-firmware-amd-kmod@renoir \
-		gpu-firmware-amd-kmod-si58>0:graphics/gpu-firmware-amd-kmod@si58 \
-		gpu-firmware-amd-kmod-stoney>0:graphics/gpu-firmware-amd-kmod@stoney \
-		gpu-firmware-amd-kmod-tahiti>0:graphics/gpu-firmware-amd-kmod@tahiti \
-		gpu-firmware-amd-kmod-tonga>0:graphics/gpu-firmware-amd-kmod@tonga \
-		gpu-firmware-amd-kmod-topaz>0:graphics/gpu-firmware-amd-kmod@topaz \
-		gpu-firmware-amd-kmod-vega10>0:graphics/gpu-firmware-amd-kmod@vega10 \
-		gpu-firmware-amd-kmod-vega12>0:graphics/gpu-firmware-amd-kmod@vega12 \
-		gpu-firmware-amd-kmod-vega20>0:graphics/gpu-firmware-amd-kmod@vega20 \
-		gpu-firmware-amd-kmod-vegam>0:graphics/gpu-firmware-amd-kmod@vegam \
-		gpu-firmware-amd-kmod-verde>0:graphics/gpu-firmware-amd-kmod@verde \
-		gpu-firmware-radeon-kmod-aruba>0:graphics/gpu-firmware-radeon-kmod@aruba \
+RUN_DEPENDS=	gpu-firmware-radeon-kmod-aruba>0:graphics/gpu-firmware-radeon-kmod@aruba \
 		gpu-firmware-radeon-kmod-barts>0:graphics/gpu-firmware-radeon-kmod@barts \
 		gpu-firmware-radeon-kmod-bonaire>0:graphics/gpu-firmware-radeon-kmod@bonaire \
 		gpu-firmware-radeon-kmod-btc>0:graphics/gpu-firmware-radeon-kmod@btc \
@@ -95,6 +64,40 @@ RUN_DEPENDS+=	gpu-firmware-intel-kmod-skylake>0:graphics/gpu-firmware-intel-kmod
 		gpu-firmware-intel-kmod-icelake>0:graphics/gpu-firmware-intel-kmod@icelake \
 		gpu-firmware-intel-kmod-elkhartlake>0:graphics/gpu-firmware-intel-kmod@elkhartlake \
 		gpu-firmware-intel-kmod-tigerlake>0:graphics/gpu-firmware-intel-kmod@tigerlake
+.endif
+
+.if ${ARCH} != powerpc64
+RUN_DEPENDS+=	gpu-firmware-amd-kmod-banks>0:graphics/gpu-firmware-amd-kmod@banks \
+		gpu-firmware-amd-kmod-bonaire>0:graphics/gpu-firmware-amd-kmod@bonaire \
+		gpu-firmware-amd-kmod-carrizo>0:graphics/gpu-firmware-amd-kmod@carrizo \
+		gpu-firmware-amd-kmod-fiji>0:graphics/gpu-firmware-amd-kmod@fiji \
+		gpu-firmware-amd-kmod-hainan>0:graphics/gpu-firmware-amd-kmod@hainan \
+		gpu-firmware-amd-kmod-hawaii>0:graphics/gpu-firmware-amd-kmod@hawaii \
+		gpu-firmware-amd-kmod-kabini>0:graphics/gpu-firmware-amd-kmod@kabini \
+		gpu-firmware-amd-kmod-kaveri>0:graphics/gpu-firmware-amd-kmod@kaveri \
+		gpu-firmware-amd-kmod-mullins>0:graphics/gpu-firmware-amd-kmod@mullins \
+		gpu-firmware-amd-kmod-navi10>0:graphics/gpu-firmware-amd-kmod@navi10 \
+		gpu-firmware-amd-kmod-navi12>0:graphics/gpu-firmware-amd-kmod@navi12 \
+		gpu-firmware-amd-kmod-navi14>0:graphics/gpu-firmware-amd-kmod@navi14 \
+		gpu-firmware-amd-kmod-oland>0:graphics/gpu-firmware-amd-kmod@oland \
+		gpu-firmware-amd-kmod-picasso>0:graphics/gpu-firmware-amd-kmod@picasso \
+		gpu-firmware-amd-kmod-pitcairn>0:graphics/gpu-firmware-amd-kmod@pitcairn \
+		gpu-firmware-amd-kmod-polaris10>0:graphics/gpu-firmware-amd-kmod@polaris10 \
+		gpu-firmware-amd-kmod-polaris11>0:graphics/gpu-firmware-amd-kmod@polaris11 \
+		gpu-firmware-amd-kmod-polaris12>0:graphics/gpu-firmware-amd-kmod@polaris12 \
+		gpu-firmware-amd-kmod-raven>0:graphics/gpu-firmware-amd-kmod@raven \
+		gpu-firmware-amd-kmod-raven2>0:graphics/gpu-firmware-amd-kmod@raven2 \
+		gpu-firmware-amd-kmod-renoir>0:graphics/gpu-firmware-amd-kmod@renoir \
+		gpu-firmware-amd-kmod-si58>0:graphics/gpu-firmware-amd-kmod@si58 \
+		gpu-firmware-amd-kmod-stoney>0:graphics/gpu-firmware-amd-kmod@stoney \
+		gpu-firmware-amd-kmod-tahiti>0:graphics/gpu-firmware-amd-kmod@tahiti \
+		gpu-firmware-amd-kmod-tonga>0:graphics/gpu-firmware-amd-kmod@tonga \
+		gpu-firmware-amd-kmod-topaz>0:graphics/gpu-firmware-amd-kmod@topaz \
+		gpu-firmware-amd-kmod-vega10>0:graphics/gpu-firmware-amd-kmod@vega10 \
+		gpu-firmware-amd-kmod-vega12>0:graphics/gpu-firmware-amd-kmod@vega12 \
+		gpu-firmware-amd-kmod-vega20>0:graphics/gpu-firmware-amd-kmod@vega20 \
+		gpu-firmware-amd-kmod-vegam>0:graphics/gpu-firmware-amd-kmod@vegam \
+		gpu-firmware-amd-kmod-verde>0:graphics/gpu-firmware-amd-kmod@verde
 .endif
 
 .include <bsd.port.post.mk>
