@@ -1,0 +1,10 @@
+--- Makefile.am.orig	2020-11-26 23:20:59 UTC
++++ Makefile.am
+@@ -20,7 +20,6 @@ if CAIRO_HAS_PNG_FUNCTIONS
+ SUBDIRS = src doc util
+ # libpng is required for our test programs
+ if CAIRO_HAS_PNG_FUNCTIONS
+-SUBDIRS += boilerplate test perf
+ endif
+ 
+ doc:
