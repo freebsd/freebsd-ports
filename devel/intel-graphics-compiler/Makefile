@@ -1,8 +1,11 @@
 PORTNAME=	intel-graphics-compiler
 DISTVERSIONPREFIX=	igc-
-DISTVERSION=	1.0.11104
+DISTVERSION=	1.0.11222
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	991fd3d661ef.patch:-p1 # spirv-llvm-translator
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Compiler for OpenCL
@@ -14,7 +17,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
 BROKEN_i386=	clang crashes during build
 
-BUILD_DEPENDS=	vc-intrinsics-${FLAVOR}>=0.1.0_1:devel/vc-intrinsics@${FLAVOR}
+BUILD_DEPENDS=	vc-intrinsics-${FLAVOR}>=0.4.0:devel/vc-intrinsics@${FLAVOR}
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
 		libopencl-clang.so.${FLAVOR:S/llvm//}:devel/opencl-clang@${FLAVOR} \
 		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}

@@ -1,7 +1,9 @@
-TIMESTAMP = 1650165953
-SHA256 (intel-intel-graphics-compiler-igc-1.0.11104_GH0.tar.gz) = b0b46ffe9f0543e6d1c4182aceb2921fec3b0a63dd1a09e4128b00bcea399aaf
-SIZE (intel-intel-graphics-compiler-igc-1.0.11104_GH0.tar.gz) = 8594329
+TIMESTAMP = 1651649687
+SHA256 (intel-intel-graphics-compiler-igc-1.0.11222_GH0.tar.gz) = d92f0608dcbb52690855685f9447282e5c09c0ba98ae35fabf114fcf8b1e9fcf
+SIZE (intel-intel-graphics-compiler-igc-1.0.11222_GH0.tar.gz) = 8678508
 SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-123-g814e728_GH0.tar.gz) = e4880dccda018f63cdc684afd5e51972d8ad2e3f21e9bab346a865370ea2929e
 SIZE (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-123-g814e728_GH0.tar.gz) = 416402
 SHA256 (KhronosGroup-SPIRV-Tools-v2021.4_GH0.tar.gz) = d68de260708dda785d109ff1ceeecde2d2ab71142fa5bf59061bb9f47dd3bb2c
 SIZE (KhronosGroup-SPIRV-Tools-v2021.4_GH0.tar.gz) = 2887505
+SHA256 (991fd3d661ef.patch) = 25f860c8161c7d39707280fd995463630bd53becbeb27c47d603785aa13ef704
+SIZE (991fd3d661ef.patch) = 18184
