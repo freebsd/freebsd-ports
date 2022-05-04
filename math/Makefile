@@ -81,6 +81,7 @@
     SUBDIR += R-cran-linprog
     SUBDIR += R-cran-lme4
     SUBDIR += R-cran-lpSolve
+    SUBDIR += R-cran-ltm
     SUBDIR += R-cran-magic
     SUBDIR += R-cran-maps
     SUBDIR += R-cran-matrixStats

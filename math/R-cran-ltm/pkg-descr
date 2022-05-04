@@ -1,0 +1,7 @@
+Analysis of multivariate dichotomous and polytomous data using latent trait
+models under the Item Response Theory approach. It includes the Rasch, the
+Two-Parameter Logistic, the Birnbaum's Three-Parameter, the Graded Response,
+and the Generalized Partial Credit Models.
+
+WWW: https://cran.r-project.org/package=ltm
+WWW: https://github.com/drizopoulos/ltm
