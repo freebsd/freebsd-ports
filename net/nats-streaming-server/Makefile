@@ -1,5 +1,5 @@
 PORTNAME=	nats-streaming-server
-PORTVERSION=	0.24.5
+PORTVERSION=	0.24.6
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	net
@@ -25,15 +25,15 @@ GH_TUPLE=	armon:go-metrics:ec5e00d3c878:armon_go_metrics/vendor/github.com/armon
 		hashicorp:go-immutable-radix:v1.0.0:hashicorp_go_immutable_radix/vendor/github.com/hashicorp/go-immutable-radix \
 		hashicorp:go-msgpack:v1.1.5:hashicorp_go_msgpack/vendor/github.com/hashicorp/go-msgpack \
 		hashicorp:golang-lru:v0.5.0:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
-		hashicorp:raft:v1.3.7:hashicorp_raft/vendor/github.com/hashicorp/raft \
+		hashicorp:raft:v1.3.9:hashicorp_raft/vendor/github.com/hashicorp/raft \
 		klauspost:compress:v1.14.4:klauspost_compress/vendor/github.com/klauspost/compress \
 		lib:pq:v1.10.4:lib_pq/vendor/github.com/lib/pq \
 		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.10:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		nats-io:jwt:442af02fd36a:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:v2.8.1:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
-		nats-io:nats.go:v1.14.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nats-server:v2.8.2:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats.go:v1.15.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		nats-io:stan.go:v0.10.2:nats_io_stan_go/vendor/github.com/nats-io/stan.go \
