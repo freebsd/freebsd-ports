@@ -1,5 +1,5 @@
 PORTNAME=	wifibox
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -18,7 +18,7 @@ OPTIONS_DEFAULT=		WPA_PASSTHRU
 OPTIONS_EXCLUDE_FreeBSD_12=	BHYVE_PLUS
 
 BHYVE_PLUS_DESC=		Use bhyve+ (experimental)
-WPA_PASSTHRU_DESC=		Support WPA Supplicant pass-through
+WPA_PASSTHRU_DESC=		WPA Supplicant pass-through
 
 WPA_PASSTHRU_RUN_DEPENDS=	socat>0:net/socat
 
@@ -35,7 +35,7 @@ GH_PROJECT=	freebsd-wifibox freebsd-wifibox-image:image
 GH_TAGNAME=	${PORTVERSION}
 GH_TAGNAME+=	${IMAGE_VERSION}:image
 
-IMAGE_VERSION=	snapshot-20220414
+IMAGE_VERSION=	snapshot-20220428
 IMAGE_FILE=	freebsd-wifibox-appliance.${IMAGE_VERSION}.img.xz
 IMAGE_MAN=	wifibox-alpine.5
 
@@ -43,13 +43,24 @@ MASTER_SITES+=	https://github.com/pgj/freebsd-wifibox-image/releases/download/${
 DISTFILES+=	${IMAGE_FILE}
 
 NO_BUILD=	yes
-MAKE_ENV+=	IMGXZ=${DISTDIR}/${IMAGE_FILE} \
+MAKE_ARGS+=	IMGXZ=${DISTDIR}/${IMAGE_FILE} \
 		IMGMAN=${WRKSRC_image}/man/${IMAGE_MAN} \
 		VERSION=${PORTVERSION}
 .if defined(_BHYVE_PLUS)
-MAKE_ENV+=	BHYVE=${LOCALBASE}/sbin/bhyve \
+MAKE_ARGS+=	BHYVE=${LOCALBASE}/sbin/bhyve \
 		BHYVECTL=${LOCALBASE}/sbin/bhyvectl \
 		VMM_KO=${KMODDIR}/vmm.ko
 .endif
+
+.if ${PORT_OPTIONS:MWPA_PASSTHRU}
+_WPA_PASSTHRU_ENABLED= yes
+.else
+_WPA_PASSTHRU_ENABLED= no
+.endif
+
+post-install:
+	${SED} -I '' -E \
+		's%^enabled=no$$%enabled=${_WPA_PASSTHRU_ENABLED}%' \
+		${STAGEDIR}${PREFIX}/etc/wifibox/wpa_ctrl.conf.sample
 
 .include <bsd.port.mk>
