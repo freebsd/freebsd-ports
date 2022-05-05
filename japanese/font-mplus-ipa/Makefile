@@ -1,6 +1,6 @@
 PORTNAME=	mplus
 PORTVERSION=	1.0.20060520.p1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	LOCAL/hrs
 PKGNAMEPREFIX=	ja-font-
@@ -16,6 +16,7 @@ LICENSE_TEXT=	Free redistribution of the whole package allowed, not partial
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		fonts:fc tar:bzip2
+NO_ARCH=	yes
 FONTNAME=	${PORTNAME}${PKGNAMESUFFIX}
 FONTPATHSPEC=	${FONTNAME}:pri=60
 FONTSDIR=	${PREFIX}/share/fonts/${FONTNAME}/fonts
