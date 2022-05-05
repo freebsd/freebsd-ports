@@ -1,6 +1,6 @@
---- libraries/libldap/tls_o.c.orig	2021-07-27 17:44:47 UTC
+--- libraries/libldap/tls_o.c.orig	2022-05-04 14:55:23 UTC
 +++ libraries/libldap/tls_o.c
-@@ -275,7 +275,7 @@ tlso_ctx_free ( tls_ctx *ctx )
+@@ -281,7 +281,7 @@ tlso_ctx_free ( tls_ctx *ctx )
  	SSL_CTX_free( c );
  }
  
@@ -9,7 +9,7 @@
  static char *
  tlso_stecpy( char *dst, const char *src, const char *end )
  {
-@@ -411,7 +411,7 @@ tlso_ctx_init( struct ldapoptions *lo, struct ldaptls 
+@@ -417,7 +417,7 @@ tlso_ctx_init( struct ldapoptions *lo, struct ldaptls 
  	}
  
  	if ( lo->ldo_tls_ciphersuite ) {
