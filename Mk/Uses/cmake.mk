@@ -127,8 +127,15 @@ TEST_WRKSRC?=		${CONFIGURE_WRKSRC}
 #             as the build.ninja file won't be where ninja expects it.
 .  if empty(cmake_ARGS:Mnoninja) && empty(cmake_ARGS:Mrun) && empty(USES:Mfortran)
 .    if "${CONFIGURE_WRKSRC}" == "${BUILD_WRKSRC}" && "${CONFIGURE_WRKSRC}" == "${INSTALL_WRKSRC}"
+# USES=gmake sets MAKE_CMD and ninja.mk does too (it also messes with MAKEFILE and MAKE_CMD).
 .      if ! empty(USES:Mgmake)
-BROKEN=		USES=gmake is incompatible with cmake's ninja-generator
+BROKEN=		USES=gmake is incompatible with cmake's ninja-generator (try cmake:noninja)
+.      endif
+# USES=emacs appends EMACS=<path> to MAKE_ARGS, which then get passed to ninja.
+# Since ninja doesn't support that kind of variable-setting on the command-line,
+# it errors out.
+.      if ! empty(USES:Memacs)
+BROKEN=		USES=emacs is incompatible with cmake's ninja-generator (try cmake:noninja)
 .      endif
 .      include "${USESDIR}/ninja.mk"
 .    endif
