@@ -1,6 +1,5 @@
 PORTNAME=	fldigi
-DISTVERSION=	4.1.20
-PORTREVISION=	1
+DISTVERSION=	4.1.21
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/files/fldigi/
 

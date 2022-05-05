@@ -1,6 +1,6 @@
---- src/dialogs/confdialog.cxx.orig	2021-06-24 11:46:05 UTC
+--- src/dialogs/confdialog.cxx.orig	2022-03-20 23:28:57 UTC
 +++ src/dialogs/confdialog.cxx
-@@ -7447,7 +7447,7 @@ btn_init_cmedia_PTT->labelcolor(FL_RED);
+@@ -7689,7 +7689,7 @@ progdefaults.cmedia_ptt = false;
  btn_init_cmedia_PTT->redraw();
  } else {
  progdefaults.cmedia_ptt = false;
@@ -9,7 +9,7 @@
  }
  progdefaults.changed = true;
  }
-@@ -7455,7 +7455,7 @@ progdefaults.changed = true;
+@@ -7697,7 +7697,7 @@ static void cb_inp_cmedia_dev(Fl_ComboBox* o, void*) {
  Fl_ComboBox *inp_cmedia_dev=(Fl_ComboBox *)0;
  
  static void cb_inp_cmedia_dev(Fl_ComboBox* o, void*) {
@@ -18,7 +18,7 @@
  progdefaults.cmedia_device = o->value();
  btn_init_cmedia_PTT->labelcolor(FL_RED);
  btn_init_cmedia_PTT->redraw();
-@@ -7479,7 +7479,7 @@ progdefaults.changed = true;
+@@ -7721,7 +7721,7 @@ static void cb_btn_test_cmedia(Fl_Button*, void*) {
  Fl_Button *btn_test_cmedia=(Fl_Button *)0;
  
  static void cb_btn_test_cmedia(Fl_Button*, void*) {
