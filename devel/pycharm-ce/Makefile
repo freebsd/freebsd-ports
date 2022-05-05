@@ -2,6 +2,7 @@
 
 PORTNAME=	pycharm-ce
 PORTVERSION=	2022.1
+PORTREVISION=	1
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -34,6 +35,8 @@ do-install:
 	@${TAR} -czf - -C ${WRKSRC} . | ${TAR} xzf - -C ${STAGEDIR}${DATADIR}
 # Linux/Windows/OS X only so remove them
 	@${RM} ${STAGEDIR}${DATADIR}/bin/*fsnotifier* ${STAGEDIR}${DATADIR}/bin/*.so ${STAGEDIR}${DATADIR}/bin/repair
+	@${FIND} ${STAGEDIR}${DATADIR}/plugins -name '*.so' -delete
+	@${RM} -r ${STAGEDIR}${DATADIR}/plugins/cwm-plugin/quiche-native
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by java/intellij-pty4j
 	@${RM} -r ${STAGEDIR}${DATADIR}/lib/pty4j-native
