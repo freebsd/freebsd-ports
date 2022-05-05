@@ -1,6 +1,5 @@
 PORTNAME=	ghostscript
-PORTVERSION=	9.55.0
-PORTREVISION=	1
+PORTVERSION=	9.56.1
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//g}/
 PKGNAMESUFFIX=	9-agpl-base
@@ -61,7 +60,7 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--without-x
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall
-PLIST_SUB=	GS_VERSION="${PORTVERSION:S/.0$//}" \
+PLIST_SUB=	GS_VERSION="${PORTVERSION:C/.[0-9]$//}" \
 		PORTVERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	DOCS CUPS IJS

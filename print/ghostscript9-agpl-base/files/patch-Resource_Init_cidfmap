@@ -1,9 +1,9 @@
---- Resource/Init/cidfmap.orig	2020-03-12 12:26:37 UTC
+--- Resource/Init/cidfmap.orig	2022-04-04 13:48:49 UTC
 +++ Resource/Init/cidfmap
-@@ -37,6 +37,67 @@
- %   /ShinGo-Bold   /HeiseiKakuGo-W5 ;
- %   /Ryumin-Medium << /FileType /TrueType /Path (H:/AuxFiles/Fonts/BATANG.TTC) /SubfontID 3 /CSI [(Japan1) 2] >> ;
- %   /Ryumin-Medium << /FileType /TrueType /Path (windir) getenv not {(c:/windows)}if (/Fonts/BATANG.TTC)concatstrings /SubfontID 3 /CSI [(Japan1) 2] >> ;
+@@ -46,3 +46,64 @@
+ %
+ %  Note the use of a string to cope with the name containing a space.
+ %
 +/Ryumin-Light << /FileType /TrueType /Path (std.ja_JP/Ryumin-Light) /SubfontID 0 /CSI [(Japan1) 6] >> ;
 +/GothicBBB-Medium << /FileType /TrueType /Path (std.ja_JP/GothicBBB-Medium) /SubfontID 0 /CSI [(Japan1) 6] >> ;
 +
@@ -65,6 +65,3 @@
 +/STSong-Light << /FileType /TrueType /Path (std.zh_CN/STSong-Light) /SubfontID 0 /CSI [(GB1) 5] >> ;
 +/MSung-Light << /FileType /TrueType /Path (std.zh_CN/MSung-Light) /SubfontID 0 /CSI [(CNS1) 5] >> ;
 +/MHei-Medium << /FileType /TrueType /Path (std.zh_CN/MHei-Medium) /SubfontID 0 /CSI [(GB1) 5] >> ;
- %
- %   NOTE: getenv returns a boolean to indicate success of or failure, as well as the value on success. In the example, it uses this
- %         to include a default value should getenv fail.
