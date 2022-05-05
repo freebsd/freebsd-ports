@@ -1,6 +1,5 @@
 PORTNAME=	veroroute
-DISTVERSION=	2.25
-PORTREVISION=	1
+DISTVERSION=	2.26
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/
@@ -20,8 +19,5 @@ WRKSRC_SUBDIR=	Src
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/veroroute
-	# workaround for https://sourceforge.net/p/veroroute/tickets/26/
-	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|' \
-		${STAGEDIR}${PREFIX}/share/applications/veroroute.desktop
 
 .include <bsd.port.mk>
