@@ -2,7 +2,7 @@ PORTNAME=	ipa
 PORTVERSION=	00303
 PORTREVISION=	7
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	https://ipafont.ipa.go.jp/IPAfont/
+MASTER_SITES=	https://moji.or.jp/wp-content/ipafont/IPAfont/
 PKGNAMEPREFIX=	ja-font-
 DISTNAME=	IPAfont${PORTVERSION}
 
