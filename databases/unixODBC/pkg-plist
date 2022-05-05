@@ -14,7 +14,9 @@ include/sqlext.h
 include/sqlspi.h
 include/sqltypes.h
 include/sqlucode.h
-include/unixodbc_conf.h
+include/unixODBC/config.h
+include/unixODBC/unixodbc_conf.h
+include/unixodbc.h
 include/uodbc_extras.h
 include/uodbc_stats.h
 lib/libodbc.a

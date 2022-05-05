@@ -1,7 +1,7 @@
 # Created by: Nick Sayer <nsayer@FreeBSD.org>
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.3.9
+PORTVERSION=	2.3.11
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/ \
 		ftp://ftp.unixodbc.org/pub/unixODBC/
