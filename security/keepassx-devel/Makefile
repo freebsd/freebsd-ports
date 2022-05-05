@@ -18,6 +18,9 @@ LICENSE_FILE_NOKIA-LGPL-EXCEPTION=	${WRKSRC}/LICENSE.NOKIA-LGPL-EXCEPTION
 LICENSE_PERMS_BOOST-1.0=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_NOKIA-LGPL-EXCEPTION=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	KeePassX had been stopped development/maintenance, please consider using security/keepassxc instead
+EXPIRATION_DATE=2022-06-05
+
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 CONFLICTS_INSTALL=	keepassx-0.* keepassx2 keepassxc
