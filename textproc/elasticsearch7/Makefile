@@ -1,7 +1,7 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
 
 PORTNAME=	elasticsearch
-PORTVERSION=	7.16.3
+PORTVERSION=	7.17.3
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/
 PKGNAMESUFFIX=	7
@@ -32,7 +32,7 @@ SHEBANG_FILES=	bin/elasticsearch bin/elasticsearch-certgen \
 		bin/elasticsearch-users bin/x-pack-env bin/x-pack-security-env \
 		bin/x-pack-watcher-env
 
-CONFLICTS=	elasticsearch[56]
+CONFLICTS=	elasticsearch6
 
 NO_ARCH=	yes
 NO_BUILD=	yes
