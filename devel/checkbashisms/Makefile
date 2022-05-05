@@ -1,10 +1,10 @@
 PORTNAME=	checkbashisms
-DISTVERSION=	2.21.4
+DISTVERSION=	2.22.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	DEBIAN/pool/main/d/devscripts/
 DISTNAME=	devscripts_${PORTVERSION}
 
-MAINTAINER=	nukama+maintainer@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check for the presence of bashisms
 
 LICENSE=	GPLv2
