@@ -1,7 +1,7 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	twofactor_totp
-PORTVERSION=	6.2.0
+PORTVERSION=	6.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX}releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
@@ -19,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=21:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=81
 NO_BUILD=	yes
 NO_ARCH=	yes
 
