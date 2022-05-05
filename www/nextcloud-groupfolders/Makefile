@@ -1,26 +1,26 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	groupfolders
-PORTVERSION=	11.1.2
-CATEGORIES=	www
+PORTVERSION=	12.0.0
 DISTVERSIONPREFIX=	v
-MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
+CATEGORIES=	www
+MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	nextcloud/${PORTNAME}-${DISTVERSION}
+DIST_SUBDIR=	nextcloud
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Groupfolders app for Nextcloud
 
 LICENSE=	AGPLv3
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=23:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=24:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=81
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
 
