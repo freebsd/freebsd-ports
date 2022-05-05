@@ -1,3 +1,31 @@
+  <vuln vid="647ac600-cc70-11ec-9cfc-10c37b4ac2ea">
+    <topic>gogs -- XSS in issue attachments</topic>
+    <affects>
+      <package>
+	<name>gogs</name>
+	<range><lt>0.12.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The gogs project reports:</p>
+	<blockquote cite="https://github.com/gogs/gogs/issues/6919">
+	  <p>Repository issues page allows HTML attachments with arbitrary
+	    JS code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1464</cvename>
+      <url>https://github.com/gogs/gogs/issues/6919</url>
+      <url>https://huntr.dev/bounties/34a12146-3a5d-4efc-a0f8-7a3ae04b198d/</url>
+    </references>
+    <dates>
+      <discovery>2022-04-12</discovery>
+      <entry>2022-05-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="95ee401d-cc6a-11ec-9cfc-10c37b4ac2ea">
     <topic>gitea -- Escape git fetch remote</topic>
     <affects>
