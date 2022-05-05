@@ -1,7 +1,7 @@
 # Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
 
 PORTNAME=	flameshot
-PORTVERSION=	0.10.2
+PORTVERSION=	11.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -24,7 +24,7 @@ USE_QT=		core dbus gui linguist network svg widgets \
 
 post-patch:
 	        @${REINPLACE_CMD} -e 's,$${CMAKE_INSTALL_FULL_BINDIR},${LOCALBASE}/bin,1' \
-			-e 's,^\(Exec=\)/usr\(/bin\),\1${LOCALBASE}\2,1' \
+			-e 's,^\(Exec=\)@LAUNCHER_EXECUTABLE@,\1${LOCALBASE}/bin,1' \
 	                ${WRKSRC}/data/dbus/org.flameshot.Flameshot.service.in \
 	                ${WRKSRC}/data/desktopEntry/package/org.flameshot.Flameshot.desktop
 
