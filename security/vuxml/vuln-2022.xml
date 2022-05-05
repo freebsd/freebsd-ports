@@ -9,6 +9,10 @@
 	<name>openssl-devel</name>
 	<range><lt>3.0.3</lt></range>
       </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.3</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -49,6 +53,7 @@
     <dates>
       <discovery>2022-05-03</discovery>
       <entry>2022-05-04</entry>
+      <modified>2022-05-05</modified>
     </dates>
   </vuln>
 
