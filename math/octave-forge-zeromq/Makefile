@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
 
 PORTNAME=	octave-forge-zeromq
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTVERSION=	1.5.4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
