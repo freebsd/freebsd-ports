@@ -76,8 +76,10 @@ UUCP_RNEWS_RUN_DEPENDS=	uucp:net/freebsd-uucp
 
 INNLIB_LONG?=		6.1.0
 LIBVER_LONG?=		3.0.5
+LIBSTORAGEVER_LONG?=	3.0.5
 PLIST_SUB+=		LIBVER=${LIBVER_LONG:R:R} LIBVER_LONG=${LIBVER_LONG} \
-			INNLIB=${INNLIB_LONG:R:R} INNLIB_LONG=${INNLIB_LONG}
+			INNLIB=${INNLIB_LONG:R:R} INNLIB_LONG=${INNLIB_LONG} \
+			LIBSTORAGEVER=${LIBSTORAGEVER_LONG:R:R} LIBSTORAGEVER_LONG=${LIBSTORAGEVER_LONG}
 
 .include <bsd.port.options.mk>
 
@@ -179,7 +181,7 @@ TO_BE_STRIPPED+=	bin/actsync bin/archive bin/auth/passwd/auth_krb5 \
 	bin/rnews.libexec/decode bin/rnews.libexec/encode bin/shlock \
 	bin/shrinkfile bin/sm bin/tdx-util bin/tinyleaf \
 	lib/libinn.so.${INNLIB_LONG} lib/libinnhist.so.${LIBVER_LONG} \
-	lib/libstorage.so.${LIBVER_LONG}
+	lib/libstorage.so.${LIBSTORAGEVER_LONG}
 
 CONFIG_FILES+=	actsync.cfg actsync.ign buffindexed.conf control.ctl \
 	control.ctl.local cycbuff.conf distrib.pats distributions expire.ctl \

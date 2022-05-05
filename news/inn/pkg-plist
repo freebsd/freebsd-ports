@@ -184,8 +184,8 @@ lib/libinnhist.so.%%LIBVER%%
 lib/libinnhist.so.%%LIBVER_LONG%%
 lib/libstorage.a
 lib/libstorage.so
-lib/libstorage.so.%%LIBVER%%
-lib/libstorage.so.%%LIBVER_LONG%%
+lib/libstorage.so.%%LIBSTORAGEVER%%
+lib/libstorage.so.%%LIBSTORAGEVER_LONG%%
 @comment --------------------------------------------------------------
 @cwd
 man/man1/convdate.1.gz
