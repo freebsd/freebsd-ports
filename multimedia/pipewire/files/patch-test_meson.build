@@ -1,0 +1,11 @@
+--- test/meson.build.orig	2022-04-27 17:59:21 UTC
++++ test/meson.build
+@@ -79,7 +79,7 @@ test('test-loop',
+     executable('test-loop',
+                'test-loop.c',
+                include_directories: pwtest_inc,
+-               dependencies: [ spa_dep ],
++               dependencies: [ spa_dep, epoll_shim_dep ],
+                link_with: pwtest_lib)
+ )
+ 
