@@ -134,7 +134,6 @@ MLIR_COMMANDS=	\
 		mlir-cpu-runner \
 		mlir-lsp-server \
 		mlir-opt \
-		mlir-pdll \
 		mlir-pdll-lsp-server \
 		mlir-reduce \
 		mlir-tblgen \
