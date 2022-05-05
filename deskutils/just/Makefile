@@ -1,6 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.1.2
-PORTREVISION=	1
+DISTVERSION=	1.1.3
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,16 +15,14 @@ GH_ACCOUNT=	casey
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.12.1 \
 		atty-0.2.14 \
-		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
 		camino-1.0.7 \
-		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
-		cradle-0.2.1 \
+		cradle-0.2.2 \
 		ctor-0.1.22 \
-		ctrlc-3.2.1 \
+		ctrlc-3.2.2 \
 		derivative-2.2.0 \
 		diff-0.1.12 \
 		doc-comment-0.3.3 \
@@ -43,18 +40,17 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		itoa-1.0.1 \
 		lazy_static-1.4.0 \
 		lexiclean-0.0.1 \
-		libc-0.2.121 \
+		libc-0.2.125 \
 		linked-hash-map-0.5.4 \
-		log-0.4.16 \
-		memchr-2.4.1 \
-		memoffset-0.6.5 \
-		nix-0.23.1 \
+		log-0.4.17 \
+		memchr-2.5.0 \
+		nix-0.24.1 \
 		output_vt100-0.1.3 \
-		pretty_assertions-1.2.0 \
+		pretty_assertions-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.36 \
-		quote-1.0.17 \
+		proc-macro2-1.0.37 \
+		quote-1.0.18 \
 		redox_syscall-0.2.13 \
 		regex-1.5.5 \
 		regex-automata-0.1.10 \
@@ -62,18 +58,18 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		remove_dir_all-0.5.3 \
 		rustversion-1.0.6 \
 		ryu-1.0.9 \
-		serde-1.0.136 \
-		serde_derive-1.0.136 \
-		serde_json-1.0.79 \
+		serde-1.0.137 \
+		serde_derive-1.0.137 \
+		serde_json-1.0.81 \
 		similar-2.1.0 \
-		snafu-0.7.0 \
-		snafu-derive-0.7.0 \
+		snafu-0.7.1 \
+		snafu-derive-0.7.1 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
 		strum-0.24.0 \
 		strum_macros-0.24.0 \
-		syn-1.0.90 \
+		syn-1.0.92 \
 		target-2.0.0 \
 		tempfile-3.3.0 \
 		temptree-0.2.0 \
@@ -83,7 +79,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		typed-arena-2.0.1 \
 		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.9 \
-		unicode-xid-0.2.2 \
+		unicode-xid-0.2.3 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		which-4.2.5 \
