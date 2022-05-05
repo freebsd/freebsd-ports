@@ -663,8 +663,6 @@ include/copperspice/QtGui/QGestureEvent
 include/copperspice/QtGui/QGestureRecognizer
 include/copperspice/QtGui/QGlyphRun
 include/copperspice/QtGui/QGradient
-include/copperspice/QtGui/QGradientStop
-include/copperspice/QtGui/QGradientStops
 include/copperspice/QtGui/QGraphicsAnchor
 include/copperspice/QtGui/QGraphicsAnchorLayout
 include/copperspice/QtGui/QGraphicsBlurEffect
@@ -1138,8 +1136,6 @@ include/copperspice/QtGui/qgestureevent.h
 include/copperspice/QtGui/qgesturerecognizer.h
 include/copperspice/QtGui/qglyphrun.h
 include/copperspice/QtGui/qgradient.h
-include/copperspice/QtGui/qgradientstop.h
-include/copperspice/QtGui/qgradientstops.h
 include/copperspice/QtGui/qgraphicsanchor.h
 include/copperspice/QtGui/qgraphicsanchorlayout.h
 include/copperspice/QtGui/qgraphicsblureffect.h
