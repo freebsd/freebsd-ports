@@ -1,5 +1,5 @@
 PORTNAME=	spot
-DISTVERSION=	2.10.4
+DISTVERSION=	2.10.5
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 
@@ -9,7 +9,7 @@ COMMENT=	Library for omega automata manipulation and model checking
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		charsetfix compiler:c++14-lang gmake libtool
+USES=		charsetfix compiler:c++17-lang gmake libtool
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
