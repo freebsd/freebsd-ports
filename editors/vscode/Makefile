@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.64.2
-PORTREVISION=	2
+DISTVERSION=	1.65.2
 CATEGORIES=	editors
 MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
 		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
@@ -70,7 +69,7 @@ USES=		desktop-file-utils gl gmake gnome jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	f80445acd5a3dadef24aa209168452a3d97cc326
+SOURCE_COMMIT_HASH=	c722ca6c7eed3d7987c0d5c3df5c45f6b15e77d1
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -202,6 +201,7 @@ do-build:
 		${SHA256} -r *-v${ELECTRON_VER}-linux-*.zip | \
 		${SED} -e 's/ / */' > SHASUMS256.txt
 	# build and package vscode
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn run tsc -p build/tsconfig.json
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-linux-x64-min
 	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-linux-x64-min
 	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-web-linux-x64-min
