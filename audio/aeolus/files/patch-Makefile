@@ -1,0 +1,20 @@
+--- Makefile.orig	2022-05-05 04:29:49 UTC
++++ Makefile
+@@ -21,7 +21,7 @@
+ SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
+ PREFIX ?= /usr/local
+ BINDIR ?= $(PREFIX)/bin
+-LIBDIR ?= $(PREFIX)/lib$(SUFFIX)
++LIBDIR ?= $(PREFIX)/lib
+ 
+ VERSION = 0.10.3
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\" -DLIBDIR=\"$(LIBDIR)\"
+@@ -75,7 +75,7 @@ install:	aeolus aeolus_x11.so aeolus_txt.so 
+ 	install -m 755 aeolus $(DESTDIR)$(BINDIR)
+ 	install -m 755 aeolus_x11.so $(DESTDIR)$(LIBDIR)
+ 	install -m 755 aeolus_txt.so $(DESTDIR)$(LIBDIR)
+-	ldconfig $(PREFIX)/$(LIBDIR)
++	#ldconfig $(PREFIX)/$(LIBDIR)
+ 
+ 
+ clean:

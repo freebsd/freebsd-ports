@@ -11,6 +11,7 @@
     SUBDIR += abgate-lv2
     SUBDIR += abx
     SUBDIR += adplay
+    SUBDIR += aeolus
     SUBDIR += afsp
     SUBDIR += aften
     SUBDIR += alac
