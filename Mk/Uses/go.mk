@@ -162,7 +162,8 @@ post-fetch:
 	@${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";
 	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
 		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
-		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x)
+		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x; \
+		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod verify)
 .  endif
 
 .  if !target(post-extract)
@@ -172,7 +173,7 @@ post-extract:
 	@${LN} -sf ${WRKSRC} ${GO_WRKSRC}
 .    elif ${go_ARGS:Mmodules} && defined(GO_MODULE)
 post-extract:
-	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} GOPROXY=off ${GO_CMD} mod vendor)
+	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} GOPROXY=off ${GO_CMD} mod vendor -e)
 .    endif 
 .  endif
 
