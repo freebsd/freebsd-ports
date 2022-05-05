@@ -1,66 +1,25 @@
 PORTNAME=	wifibox
-PORTVERSION=	0.8.3
+PORTVERSION=	1.0.0
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
 COMMENT=	Wireless card driver via virtualized Linux
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
-EXTRACT_ONLY=	${_DISTFILES:N*.img.xz}
 
-RUN_DEPENDS=	grub2-bhyve>0:sysutils/grub2-bhyve
+RUN_DEPENDS=	wifibox-core>0:net/wifibox-core
 
-OPTIONS_DEFINE=			BHYVE_PLUS WPA_PASSTHRU
-OPTIONS_DEFAULT=		WPA_PASSTHRU
-OPTIONS_EXCLUDE_FreeBSD_12=	BHYVE_PLUS
+USES=	metaport
 
-BHYVE_PLUS_DESC=		Use bhyve+ (experimental)
-WPA_PASSTHRU_DESC=		WPA Supplicant pass-through
+.include "${.CURDIR}/../wifibox-alpine/flavors.mk"
 
-WPA_PASSTHRU_RUN_DEPENDS=	socat>0:net/socat
+.for flavor in ${_FLAVORS}
+${flavor}_RUN_DEPENDS=         wifibox-alpine-${flavor}>0:net/wifibox-alpine@${flavor}
+${flavor}_PKGNAMESUFFIX=       -${flavor}
+.endfor
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBHYVE_PLUS} || (${OSVERSION} < 1300000)
-RUN_DEPENDS+=	bhyve+>0:sysutils/bhyve+
-_BHYVE_PLUS=	yes
-.endif
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	pgj
-GH_PROJECT=	freebsd-wifibox freebsd-wifibox-image:image
-GH_TAGNAME=	${PORTVERSION}
-GH_TAGNAME+=	${IMAGE_VERSION}:image
-
-IMAGE_VERSION=	snapshot-20220428
-IMAGE_FILE=	freebsd-wifibox-appliance.${IMAGE_VERSION}.img.xz
-IMAGE_MAN=	wifibox-alpine.5
-
-MASTER_SITES+=	https://github.com/pgj/freebsd-wifibox-image/releases/download/${IMAGE_VERSION}/
-DISTFILES+=	${IMAGE_FILE}
-
-NO_BUILD=	yes
-MAKE_ARGS+=	IMGXZ=${DISTDIR}/${IMAGE_FILE} \
-		IMGMAN=${WRKSRC_image}/man/${IMAGE_MAN} \
-		VERSION=${PORTVERSION}
-.if defined(_BHYVE_PLUS)
-MAKE_ARGS+=	BHYVE=${LOCALBASE}/sbin/bhyve \
-		BHYVECTL=${LOCALBASE}/sbin/bhyvectl \
-		VMM_KO=${KMODDIR}/vmm.ko
-.endif
-
-.if ${PORT_OPTIONS:MWPA_PASSTHRU}
-_WPA_PASSTHRU_ENABLED= yes
-.else
-_WPA_PASSTHRU_ENABLED= no
-.endif
-
-post-install:
-	${SED} -I '' -E \
-		's%^enabled=no$$%enabled=${_WPA_PASSTHRU_ENABLED}%' \
-		${STAGEDIR}${PREFIX}/etc/wifibox/wpa_ctrl.conf.sample
+default_RUN_DEPENDS=           wifibox-alpine>0:net/wifibox-alpine
 
 .include <bsd.port.mk>

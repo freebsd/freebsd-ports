@@ -1,26 +1,18 @@
-@sample etc/wifibox/bhyve.conf.sample
-@sample etc/wifibox/core.conf.sample
 @sample etc/wifibox/interfaces.conf.sample
 @sample etc/wifibox/udhcpd.conf.sample
-@sample etc/wifibox/wpa_ctrl.conf.sample
-@sample etc/wifibox/wpa_supplicant/wpa_supplicant.conf.sample
-@sample etc/devd/wifibox.conf.sample
-etc/rc.d/wifibox
 man/man5/wifibox-alpine.5.gz
-man/man5/wifibox-guest.5.gz
-man/man8/wifibox.8.gz
-sbin/wifibox
-share/wifibox/device.map
-share/wifibox/grub.cfg
+share/wifibox/bhyve.conf
 share/wifibox/disk.img
+share/wifibox/grub.cfg
+share/wifibox/vmlinuz
 /var/run/wifibox/appliance/lock
 /var/run/wifibox/appliance/run
-@preexec /usr/bin/touch /var/log/wifibox.log
-@preunexec /bin/rm -f /var/log/wifibox.log
-@preunexec /usr/bin/find /var/run/wifibox -type f -delete
+/var/run/wifibox/appliance/spool/cron/crontabs
+/var/run/wifibox/appliance/spool/mail
+@dir /var/run/wifibox/appliance/cache/apk
+@dir /var/run/wifibox/appliance/cache/misc
 @dir /var/run/wifibox/appliance/cache
 @dir /var/run/wifibox/appliance/empty
-@dir /var/run/wifibox/appliance/lib/apk
 @dir /var/run/wifibox/appliance/lib/iptables
 @dir /var/run/wifibox/appliance/lib/misc
 @dir /var/run/wifibox/appliance/lib/udhcpd
