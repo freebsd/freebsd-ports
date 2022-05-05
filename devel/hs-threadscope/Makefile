@@ -34,4 +34,6 @@ USE_CABAL=	alex-3.2.6 \
 		utf8-string-1.0.2 \
 		vector-0.12.2.0
 
+BROKEN_aarch64=	 ld.lld: error: relocation R_AARCH64_PREL64 cannot be used against symbol ... recompile with -fPIC
+
 .include <bsd.port.mk>
