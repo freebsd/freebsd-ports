@@ -1,5 +1,5 @@
 PORTNAME=	rset
-DISTVERSION=	2.1
+DISTVERSION=	2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://scriptedconfiguration.org/code/
 
