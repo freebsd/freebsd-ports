@@ -205,6 +205,10 @@ include/snort/pub_sub/smb_events.h
 include/snort/pub_sub/ssh_events.h
 include/snort/search_engines/search_common.h
 include/snort/search_engines/search_tool.h
+include/snort/service_inspectors/http_inspect/http_common.h
+include/snort/service_inspectors/http_inspect/http_field.h
+include/snort/service_inspectors/http_inspect/http_inspect_base.h
+include/snort/service_inspectors/http_inspect/http_stream_splitter_base.h
 include/snort/service_inspectors/ssl/ssl_flow_data.h
 include/snort/sfip/sf_cidr.h
 include/snort/sfip/sf_ip.h
