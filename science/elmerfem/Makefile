@@ -3,7 +3,7 @@
 PORTNAME=	elmerfem
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	henrik@gulbra.net
@@ -12,17 +12,19 @@ COMMENT=	Multiphysical simulation software
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libblas.so:math/blas \
+		libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis \
 		libmpich.so:net/mpich \
+		libnetcdf.so:science/netcdf \
 		libopenblas.so:math/openblas \
 		libparpack.so:math/arpack-ng
 
 USES=		cmake compiler:c++11-lang fortran
-USE_LDCONFIG=	${PREFIX}/lib/elmersolver
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC
 
+USE_LDCONFIG=	${PREFIX}/lib/elmersolver
 CMAKE_ARGS=	-DELMER_FEM_REVISION:STRING=${GH_TAGNAME}
 
 ALL_TARGET=	# empty
