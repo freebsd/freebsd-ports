@@ -1,6 +1,7 @@
 PORTNAME=	qcoro
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	devel kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,6 +20,7 @@ GH_ACCOUNT=	danvratil
 CMAKE_OFF=	QCORO_BUILD_EXAMPLES
 CMAKE_ARGS=	-DUSE_QT_VERSION=5
 
-BROKEN_FreeBSD_12=	requires recent C++ compiler
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	b4abc5874103.patch:-p1
 
 .include <bsd.port.mk>

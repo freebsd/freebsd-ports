@@ -1,3 +1,5 @@
-TIMESTAMP = 1651143793
+TIMESTAMP = 1651673770
 SHA256 (danvratil-qcoro-v0.5.1_GH0.tar.gz) = 49c996797d101d8152dcd5a35005c274770d75ef18eabff78c12cdfba36e6a8f
 SIZE (danvratil-qcoro-v0.5.1_GH0.tar.gz) = 91850
+SHA256 (b4abc5874103.patch) = 48d4f3bdb0267452fc230eff314a83dd683542bae8ac5da974deb8582680c9fc
+SIZE (b4abc5874103.patch) = 2121
