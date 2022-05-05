@@ -1,7 +1,7 @@
 # Created by: rea@FreeBSD.org
 
 PORTNAME=	mu
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.10
 CATEGORIES=	mail
 
 MAINTAINER=	hrs@FreeBSD.org
