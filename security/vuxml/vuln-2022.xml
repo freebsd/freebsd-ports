@@ -1,3 +1,29 @@
+  <vuln vid="95ee401d-cc6a-11ec-9cfc-10c37b4ac2ea">
+    <topic>gitea -- Escape git fetch remote</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.16.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/19487">
+	  <p>Escape git fetch remote in
+	    services/migrations/gitea_uploader.go</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/pull/19487</url>
+    </references>
+    <dates>
+      <discovery>2022-04-25</discovery>
+      <entry>2022-05-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fceb2b08-cb76-11ec-a06f-d4c9ef517024">
     <topic>OpenSSL -- Multiple vulnerabilities</topic>
     <affects>
