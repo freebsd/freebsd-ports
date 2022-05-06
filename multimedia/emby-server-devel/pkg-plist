@@ -765,16 +765,8 @@ lib/emby-server/system/dashboard-ui/modules/themes/black/theme.json
 lib/emby-server/system/dashboard-ui/modules/themes/blueradiance/bg.jpg
 lib/emby-server/system/dashboard-ui/modules/themes/blueradiance/theme.css
 lib/emby-server/system/dashboard-ui/modules/themes/blueradiance/theme.json
-lib/emby-server/system/dashboard-ui/modules/themes/dark-red/theme.css
-lib/emby-server/system/dashboard-ui/modules/themes/dark-red/theme.json
 lib/emby-server/system/dashboard-ui/modules/themes/dark/theme.css
 lib/emby-server/system/dashboard-ui/modules/themes/dark/theme.json
-lib/emby-server/system/dashboard-ui/modules/themes/light-blue/theme.css
-lib/emby-server/system/dashboard-ui/modules/themes/light-blue/theme.json
-lib/emby-server/system/dashboard-ui/modules/themes/light-purple/theme.css
-lib/emby-server/system/dashboard-ui/modules/themes/light-purple/theme.json
-lib/emby-server/system/dashboard-ui/modules/themes/light-red/theme.css
-lib/emby-server/system/dashboard-ui/modules/themes/light-red/theme.json
 lib/emby-server/system/dashboard-ui/modules/themes/light/theme.css
 lib/emby-server/system/dashboard-ui/modules/themes/light/theme.json
 lib/emby-server/system/dashboard-ui/modules/themes/logodark.png
