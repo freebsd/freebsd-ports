@@ -4,5 +4,5 @@ lib/cmake/id3tag/id3tagConfigVersion.cmake
 lib/cmake/id3tag/id3tagTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/id3tag/id3tagTargets.cmake
 lib/libid3tag.so
-lib/libid3tag.so.0.16.1
+lib/libid3tag.so.0.16.2
 libdata/pkgconfig/id3tag.pc
