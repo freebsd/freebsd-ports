@@ -1,4 +1,4 @@
---- src/unit_tests/unit_tests.pro.orig	2021-07-23 08:00:26 UTC
+--- src/unit_tests/unit_tests.pro.orig	2022-04-24 08:12:38 UTC
 +++ src/unit_tests/unit_tests.pro
 @@ -23,10 +23,10 @@ HEADERS += \
  !win32 {
@@ -20,7 +20,7 @@
 -      LIBS += -lklayout_QtXml
 +      LIBS += $$DESTDIR/libklayout_QtXml.so
      }
-     equals(HAVE_QT5, "1") {
+     greaterThan(QT_MAJOR_VERSION, 4) {
 -      LIBS += -lklayout_QtWidgets
 +      LIBS += $$DESTDIR/libklayout_QtWidgets.so
      }

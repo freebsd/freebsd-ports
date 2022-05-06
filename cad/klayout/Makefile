@@ -1,6 +1,5 @@
 PORTNAME=	klayout
-PORTVERSION=	0.27.3
-PORTREVISION=	1
+PORTVERSION=	0.27.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
@@ -11,7 +10,7 @@ LICENSE=	GPLv2
 
 BROKEN_i386=	type 'hash<long long>' does not provide a call operator
 BROKEN_powerpc=	type 'hash<long long>' does not provide a call operator
-BROKEN_sparc64=	Does not compile on sparc64: gcc bug
+BROKEN_sparc64=	does not compile on sparc64: gcc bug
 
 USES=		compiler:c++0x gmake gl python qt:5
 USE_GITHUB=	yes
@@ -26,7 +25,6 @@ CXXFLAGS+=	-fdeclspec -fPIC -I${LOCALBASE}/include/qt5 \
 		${QT5MODULES:S,^,-I${LOCALBASE}/include/qt5/Qt,}
 LDFLAGS+=	${LIBS} ${QT5MODULES:S,^,-lQt5,} \
 		-L${LOCALBASE}/lib/qt5 -lpthread
-LDFLAGS+=	-L${BUILD_WRKSRC} # workaround for the error: unable to find library -lklayout_lib: https://github.com/KLayout/klayout/issues/955
 QT5MODULES=	Core Designer Gui Multimedia MultimediaWidgets \
 		Network PrintSupport Sql Svg Test Widgets Xml XmlPatterns
 MAKE_ENV=	INSTALLROOT=${STAGEDIR} \

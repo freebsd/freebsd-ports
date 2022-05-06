@@ -1,4 +1,4 @@
---- src/klayout_main/klayout_main/klayout_main.pro.orig	2021-08-28 16:11:14 UTC
+--- src/klayout_main/klayout_main/klayout_main.pro.orig	2022-04-24 08:12:38 UTC
 +++ src/klayout_main/klayout_main/klayout_main.pro
 @@ -27,39 +27,39 @@ DEPENDPATH += $$QTBASIC_INC
  
@@ -28,7 +28,7 @@
 +    LIBS += $$DESTDIR/libklayout_QtUiTools.so
    }
  
-   equals(HAVE_QT5, "1") {
+   greaterThan(QT_MAJOR_VERSION, 4) {
  
 -    LIBS += -lklayout_QtWidgets
 +    LIBS += $$DESTDIR/libklayout_QtWidgets.so
