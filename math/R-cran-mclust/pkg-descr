@@ -1,0 +1,10 @@
+An R package implementing Gaussian Mixture Modelling for Model-Based Clustering,
+Classification, and Density Estimation.
+
+Gaussian finite mixture models fitted via EM algorithm for model-based
+clustering, classification, and density estimation, including Bayesian
+regularization, dimension reduction for visualization, and resampling-based
+inference.
+
+WWW: https://cran.r-project.org/package=mclust
+WWW: https://mclust-org.github.io/mclust/

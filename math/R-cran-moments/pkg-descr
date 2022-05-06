@@ -1,0 +1,4 @@
+Functions to calculate: moments, Pearson's kurtosis, Geary's kurtosis and
+skewness; tests related to them (Anscombe-Glynn, D'Agostino, Bonett-Seier).
+
+WWW: https://cran.r-project.org/package=moments

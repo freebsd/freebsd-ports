@@ -1,0 +1,4 @@
+Power analysis functions along the lines of Cohen (1988).
+
+WWW: https://cran.r-project.org/package=pwr
+WWW: https://github.com/heliosdrm/pwr

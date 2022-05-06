@@ -1,0 +1,4 @@
+Local regression, likelihood and density estimation methods as described in the
+1999 book by Loader.
+
+WWW: https://cran.r-project.org/package=locfit

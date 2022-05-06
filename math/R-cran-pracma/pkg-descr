@@ -1,0 +1,6 @@
+Provides a large number of functions from numerical analysis and linear algebra,
+numerical optimization, differential equations, time series, plus some
+well-known special mathematical functions. Uses 'MATLAB' function names where
+appropriate to simplify porting.
+
+WWW: https://cran.r-project.org/package=pracma
