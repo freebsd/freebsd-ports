@@ -1,8 +1,7 @@
 # Created by: Ralf Meister
 
 PORTNAME=	opencryptoki
-PORTVERSION=	3.11.0
-PORTREVISION=	2
+PORTVERSION=	3.18.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -14,19 +13,22 @@ LICENSE_NAME=	Common Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libtspi.so:security/trousers
+LIB_DEPENDS=	libtspi.so:security/trousers \
+		libepoll-shim.so:devel/libepoll-shim
 
 USES=		alias autoreconf gmake libtool localbase ssl tar:tgz
-USE_GCC=	yes
 USE_OPENLDAP=	yes
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
 USE_GITHUB=	yes
-INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-swtok --enable-tpmtok \
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-swtok \
+		--enable-tpmtok \
 		--enable-icsftok \
-		--disable-crtok --disable-aeptok \
-		--disable-ccatok --disable-bcomtok \
+		--disable-crtok \
+		--disable-aeptok \
+		--disable-ccatok \
+		--disable-bcomtok \
 		--disable-pkcscca_migrate \
 		--with-lockdir=/var/run/opencryptoki \
 		--with-logdir=/var/log/opencryptoki \
@@ -35,6 +37,7 @@ CONFIGURE_ARGS=	--enable-swtok --enable-tpmtok \
 		--with-pkcs11user=${USERS} \
 		--with-pkcs11group=${GROUPS} \
 		ac_cv_path_CHGRP=true
+INSTALL_TARGET=	install-strip
 USE_RC_SUBR=	pkcsslotd
 SUB_FILES=	pkg-message
 SUB_LIST=	USERS="${USERS}" GROUPS="${GROUPS}"
@@ -42,9 +45,16 @@ PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USERS=		_pkcs11
 GROUPS=		_pkcs11
 
+post-patch:
+	cd ${WRKSRC} && \
+	    ${REINPLACE_CMD} 's,%%DLLDIR%%,${PREFIX}/lib/opencryptoki/stdll,' \
+	    usr/sbin/pkcsslotd/opencryptoki.conf
+
 post-install:
-	${MV} ${STAGEDIR}${ETCDIR}/opencryptoki.conf \
-	    ${STAGEDIR}${ETCDIR}/opencryptoki.conf.sample
+	${MV} ${STAGEDIR}${DOCSDIR}/strength-example.conf \
+	    ${STAGEDIR}${ETCDIR}/strength.conf.sample
+	${MV} ${STAGEDIR}${DOCSDIR}/policy-example.conf \
+	    ${STAGEDIR}${ETCDIR}/policy.conf.sample
 	${RMDIR} ${STAGEDIR}/var/run/opencryptoki/* \
 	    ${STAGEDIR}/var/run/opencryptoki
 

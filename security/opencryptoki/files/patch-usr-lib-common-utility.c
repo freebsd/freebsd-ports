@@ -1,40 +1,37 @@
---- usr/lib/common/utility.c.orig	2018-11-16 14:53:03 UTC
+--- usr/lib/common/utility.c.orig	2022-04-25 11:04:51 UTC
 +++ usr/lib/common/utility.c
 @@ -21,6 +21,7 @@
  #include <errno.h>
  #include <pwd.h>
  #include <grp.h>
 +#include <fcntl.h>
+ #include <pthread.h>
+ #include <openssl/evp.h>
  
- #include "pkcs11types.h"
- #include "defs.h"
-@@ -35,6 +36,25 @@
+@@ -40,6 +41,22 @@
  #include <sys/file.h>
  #include <syslog.h>
  
-+#ifdef __sun
-+#define	LOCK_EX F_LOCK
-+#define	LOCK_UN F_ULOCK
-+#define	flock(fd, func) lockf(fd, func, 0)
-+#endif
-+
 +#ifndef	LOCK_SH
-+#define	LOCK_SH 1       /* shared lock */
-+#endif
-+#ifndef	LOCK_EX
-+#define	LOCK_EX 2       /* exclusive lock */
-+#endif
-+#ifndef	LOCK_NB
-+#define	LOCK_NB 4       /* don't block when locking */
-+#endif
-+#ifndef	LOCK_UN
-+#define	LOCK_UN 8       /* unlock */
++#define	LOCK_SH 1
 +#endif
 +
- // Function:  dlist_add_as_first()
- //
- // Adds the specified node to the start of the list
-@@ -317,7 +337,7 @@ CK_RV CreateXProcLock(char *tokname, STDLL_TokData_t *
++#ifndef	LOCK_EX
++#define	LOCK_EX 2
++#endif
++
++#ifndef	LOCK_NB
++#define	LOCK_NB 4
++#endif
++
++#ifndef	LOCK_UN
++#define	LOCK_UN 8
++#endif
++
+ CK_RV CreateXProcLock(char *tokname, STDLL_TokData_t *tokdata)
+ {
+     char lockfile[PATH_MAX];
+@@ -82,7 +99,7 @@ CK_RV CreateXProcLock(char *tokname, STDLL_TokData_t *
                             lockdir, strerror(errno));
                  goto err;
              }
@@ -43,7 +40,7 @@
              if (grp == NULL) {
                  fprintf(stderr, "getgrname(pkcs11): %s", strerror(errno));
                  goto err;
-@@ -355,7 +375,7 @@ CK_RV CreateXProcLock(char *tokname, STDLL_TokData_t *
+@@ -122,7 +139,7 @@ CK_RV CreateXProcLock(char *tokname, STDLL_TokData_t *
                      goto err;
                  }
  

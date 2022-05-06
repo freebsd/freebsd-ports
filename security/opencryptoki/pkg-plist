@@ -1,40 +1,53 @@
 @sample etc/opencryptoki/opencryptoki.conf.sample
+@sample(0,%%GROUPS%%,640) etc/opencryptoki/p11sak_defined_attrs.conf.sample
+@sample(0,%%GROUPS%%,640) etc/opencryptoki/policy.conf.sample
+@sample(0,%%GROUPS%%,640) etc/opencryptoki/strength.conf.sample
 include/opencryptoki/apiclient.h
+include/opencryptoki/ec_curves.h
 include/opencryptoki/pkcs11.h
 include/opencryptoki/pkcs11types.h
-lib/opencryptoki/PKCS11_API.so
 lib/opencryptoki/libopencryptoki.so
 lib/opencryptoki/libopencryptoki.so.0
 lib/opencryptoki/libopencryptoki.so.0.0.0
 lib/opencryptoki/methods
-lib/opencryptoki/stdll/PKCS11_ICSF.so
-lib/opencryptoki/stdll/PKCS11_SW.so
-lib/opencryptoki/stdll/PKCS11_TPM.so
+lib/opencryptoki/PKCS11_API.so
+lib/opencryptoki/stdll/libpkcs11_icsf.so
+lib/opencryptoki/stdll/libpkcs11_icsf.so.0
+lib/opencryptoki/stdll/libpkcs11_icsf.so.0.0.0
 lib/opencryptoki/stdll/libpkcs11_sw.so
 lib/opencryptoki/stdll/libpkcs11_sw.so.0
 lib/opencryptoki/stdll/libpkcs11_sw.so.0.0.0
 lib/opencryptoki/stdll/libpkcs11_tpm.so
 lib/opencryptoki/stdll/libpkcs11_tpm.so.0
 lib/opencryptoki/stdll/libpkcs11_tpm.so.0.0.0
-lib/opencryptoki/stdll/libpkcs11_icsf.so.0.0.0
-lib/opencryptoki/stdll/libpkcs11_icsf.so.0
-lib/opencryptoki/stdll/libpkcs11_icsf.so
-lib/pkcs11/PKCS11_API.so
+lib/opencryptoki/stdll/PKCS11_ICSF.so
+lib/opencryptoki/stdll/PKCS11_SW.so
+lib/opencryptoki/stdll/PKCS11_TPM.so
 lib/pkcs11/libopencryptoki.so
 lib/pkcs11/methods
+lib/pkcs11/PKCS11_API.so
 lib/pkcs11/stdll
+man/man1/p11sak.1.gz
 man/man1/pkcsconf.1.gz
 man/man1/pkcsicsf.1.gz
+man/man1/pkcsstats.1.gz
+man/man1/pkcstok_migrate.1.gz
 man/man5/opencryptoki.conf.5.gz
+man/man5/p11sak_defined_attrs.conf.5.gz
+man/man5/policy.conf.5.gz
+man/man5/strength.conf.5.gz
 man/man7/opencryptoki.7.gz
 man/man8/pkcsslotd.8.gz
+sbin/p11sak
 sbin/pkcsconf
 sbin/pkcsicsf
 sbin/pkcsslotd
-@dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki/icsf
-@dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki/swtok/TOK_OBJ
-@dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki/swtok
-@dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki/tpm
-@dir(%%USERS%%,%%GROUPS%%,700) /var/lib/opencryptoki
+sbin/pkcsstats
+sbin/pkcstok_migrate
+@dir(%%USERS%%,%%GROUPS%%,770) /var/lib/opencryptoki
+@dir(%%USERS%%,%%GROUPS%%,770) /var/lib/opencryptoki/icsf
+@dir(%%USERS%%,%%GROUPS%%,770) /var/lib/opencryptoki/swtok
+@dir(%%USERS%%,%%GROUPS%%,770) /var/lib/opencryptoki/swtok/TOK_OBJ
+@dir(%%USERS%%,%%GROUPS%%,770) /var/lib/opencryptoki/tpm
 @dir /var/lib
 @dir /var/log/opencryptoki

@@ -1,11 +1,11 @@
---- usr/lib/api/socket_client.c.orig	2018-11-16 14:53:03 UTC
+--- usr/lib/api/socket_client.c.orig	2022-04-25 11:04:51 UTC
 +++ usr/lib/api/socket_client.c
-@@ -51,7 +51,7 @@ int init_socket_data()
-         return FALSE;
+@@ -49,7 +49,7 @@ int connect_socket(const char *file_path)
+         return -1;
      }
  
 -    grp = getgrnam("pkcs11");
 +    grp = getgrnam(PKCS11GROUP);
      if (!grp) {
          OCK_SYSLOG(LOG_ERR,
-                    "init_socket_data: pkcs11 group does not exist, errno=%d",
+                    "connect_socket: pkcs11 group does not exist, errno=%d",

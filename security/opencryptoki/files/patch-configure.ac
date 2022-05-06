@@ -1,4 +1,4 @@
---- configure.ac.orig	2018-11-16 14:53:03 UTC
+--- configure.ac.orig	2022-04-25 11:04:51 UTC
 +++ configure.ac
 @@ -12,6 +12,9 @@ dnl Checks for header files.
  AC_DISABLE_STATIC
@@ -10,16 +10,25 @@
  AC_HEADER_STDC
  AC_CHECK_HEADER_STDBOOL
  AC_CHECK_HEADERS([arpa/inet.h fcntl.h libintl.h limits.h locale.h malloc.h \
-@@ -77,18 +80,27 @@ fi
+@@ -47,7 +50,7 @@ AC_CHECK_FUNCS([atexit ftruncate gettimeofday localtim
+ 		strdup strerror strncasecmp strrchr strstr strtol strtoul])
+ 
+ dnl Used in various scripts
+-AC_PATH_PROG([ID], [id], [/us/bin/id])
++AC_PATH_PROG([ID], [id], [/usr/bin/id])
+ AC_PATH_PROG([USERMOD], [usermod], [/usr/sbin/usermod])
+ AC_PATH_PROG([GROUPADD], [groupadd], [/usr/sbin/groupadd])
+ AC_PATH_PROG([CAT], [cat], [/bin/cat])
+@@ -71,19 +74,27 @@ fi
  AC_CHECK_LIB([itm], [_ITM_commitTransaction], [itm=yes], [itm=no])
  
  OPENLDAP_LIBS=
 -AC_CHECK_HEADERS([lber.h ldap.h],
 +if test "x$enable_icsftok" = "xyes"; then
 +    AC_CHECK_HEADERS([lber.h ldap.h],
-                 [OPENLDAP_LIBS="-llber -lldap"],
-                 [AC_MSG_ERROR([lber.h and ldap.h are missing. Please install
-                               'openldap-devel'.])])
+ 		[OPENLDAP_LIBS="-llber -lldap"],
+ 		[AC_MSG_ERROR([lber.h and ldap.h are missing. Please install
+ 			      'openldap-devel'.])])
 -LIBS="$LIBS $OPENLDAP_LIBS"
 +    LIBS="$LIBS $OPENLDAP_LIBS"
 +fi
@@ -34,65 +43,59 @@
 +	[lockdir=$localstatedir/lock/opencryptoki])
  AC_SUBST(lockdir)
  
+-logdir=$localstatedir/log/opencryptoki
 +AC_ARG_WITH([logdir],
 +	[AS_HELP_STRING([--with-logdir],[log directory])],
 +	[logdir=$withval],
 +	[logdir=$localstatedir/log/opencryptoki])
- logdir=$localstatedir/log/opencryptoki
  AC_SUBST(logdir)
  
-@@ -225,6 +237,19 @@ AC_ARG_WITH([systemd],
+ dnl ---
+@@ -241,6 +252,19 @@ AC_ARG_WITH([libudev],
  	[],
- 	[with_systemd=no])
+ 	[with_libudev=check])
  
 +dnl --- check for pkcs11 user
 +AC_ARG_WITH([pkcs11user],
 +	AC_HELP_STRING([--with-pkcs11user[[=USER]]], [set pkcs11 user [[pkcs11]]]),
 +	[pkcs11_user=$withval],
-+	[pkcs11_user=pkcs11])
++	[pkcs11_user=_pkcs11])
 +dnl --- check for pkcs11 group
 +AC_ARG_WITH(pkcs11group,
 +	AC_HELP_STRING([--with-pkcs11group[[=GROUP]]], [set pkcs11 group [[pkcs11]]]),
 +	[pkcs11_group=$withval],
-+	[pkcs11_group=pkcs11])
++	[pkcs11_group=_pkcs11])
 +AC_SUBST(PKCS11USER, $pkcs11_user)
 +AC_SUBST(PKCS11GROUP, $pkcs11_group)
 +
  dnl ---
  dnl ---
  dnl --- Now that we have all the options, let's check for a valid build
-@@ -598,12 +623,31 @@ else
+@@ -662,10 +686,14 @@ libitm and gcc>=4.7 is required])
  fi
  AM_CONDITIONAL([ENABLE_LOCKS], [test "x$enable_locks" = "xyes"])
  
 -CFLAGS="$CFLAGS -DPKCS64 -D_XOPEN_SOURCE=600 -Wall -Wextra"
-+CFLAGS="$CFLAGS \
-+ -Wall \
-+ -Wextra \
-+ -Wno-pointer-sign \
-+"
-+CPPFX=' \
-+ -DCONFIG_PATH=\"$(localstatedir)/lib/opencryptoki\" \
-+ -DSBIN_PATH=\"$(sbindir)\" \
-+ -DLIB_PATH=\"$(libdir)\" \
-+ -DLOCKDIR_PATH=\"$(lockdir)\" \
-+ -DOCK_CONFDIR=\"$(sysconfdir)/opencryptoki\" \
-+ -DOCK_LOGDIR=\"$(logdir)\" \
-+'
-+CPPFLAGS="$CPPFLAGS \
-+ -DPKCS64 \
-+ -D_XOPEN_SOURCE=600 \
-+ $CPPFX \
-+ -DPKCS11USER=\\\"${pkcs11_user}\\\" \
-+ -DPKCS11GROUP=\\\"${pkcs11_group}\\\" \
-+"
++CFLAGS="$CFLAGS -Wall -Wextra -Wno-pointer-sign"
  
 -CFLAGS+=' -DCONFIG_PATH=\"$(localstatedir)/lib/opencryptoki\" -DSBIN_PATH=\"$(sbindir)\" -DLIB_PATH=\"$(libdir)\" -DLOCKDIR_PATH=\"$(lockdir)\" -DOCK_CONFDIR=\"$(sysconfdir)/opencryptoki\" -DOCK_LOGDIR=\"$(logdir)\"'
--
++CPPFX='-DCONFIG_PATH=\"$(localstatedir)/lib/opencryptoki\" -DSBIN_PATH=\"$(sbindir)\" -DLIB_PATH=\"$(libdir)\" -DLOCKDIR_PATH=\"$(lockdir)\" -DOCK_CONFDIR=\"$(sysconfdir)/opencryptoki\" -DOCK_LOGDIR=\"$(logdir)\"'
+ 
++CPPFLAGS="$CPPFLAGS -DPKCS64 -D_XOPEN_SOURCE=600 $CPPFX"
++CPPFLAGS="$CPPFLAGS -DPKCS11USER=\\\"${pkcs11_user}\\\""
++CPPFLAGS="$CPPFLAGS -DPKCS11GROUP=\\\"${pkcs11_group}\\\""
++
  # At this point, CFLAGS is set to something sensible
  AC_PROG_CC
+ AC_PROG_CXX
+@@ -678,6 +706,10 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
+     #endif]])],,
+   [AC_MSG_ERROR([C++ compiler is missing on your system. Please install 'gcc-c++'.])])
+ AC_LANG_POP([C++])
 +
 +AC_SUBST(FPIC, $lt_prog_compiler_pic)
++
++AC_SUBST(LOCALBASE, $LOCALBASE)
  
  AC_CONFIG_MACRO_DIRS([m4])
  
