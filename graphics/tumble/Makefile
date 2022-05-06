@@ -2,11 +2,10 @@
 
 PORTNAME=	tumble
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.36
-PORTREVISION=	1
+DISTVERSION=	0.37
 CATEGORIES=	graphics print
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@fuz.su
 COMMENT=	Creates a PDF file from image files
 
 LICENSE=	GPLv2
@@ -26,14 +25,6 @@ PLIST_FILES=	bin/tumble
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^\(CFLAGS\) =.*|\1 := $$(CFLAGS)| ; \
-		 s|^\(LDFLAGS\) =.*|\1 := $$(LDFLAGS)| ; \
-		 s|-O3|| ; \
-		 s|-lpbm|-lnetpbm| ; \
-		 s|strip|true|' ${WRKSRC}/Makefile
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} tumble \
