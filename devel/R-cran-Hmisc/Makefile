@@ -9,6 +9,8 @@ COMMENT=	Harrell Miscellaneous functions useful for data analysis
 
 LICENSE=	GPLv2
 
+BROKEN_i386=	does not build
+
 USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
