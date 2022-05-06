@@ -1,20 +1,20 @@
 Make tests conditional
 
---- CMakeLists.txt.orig	2021-01-21 22:50:19 UTC
+--- CMakeLists.txt.orig	2022-05-05 15:16:34 UTC
 +++ CMakeLists.txt
-@@ -37,7 +37,7 @@ include(FeatureSummary)
- # check for PkgConfig, Qt and MPIR/GMP
- find_package(PkgConfig)
- if(BUILD_QT4)
--    find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtDBus QtTest QtWebKit QtDeclarative)
-+    find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtDBus QtWebKit QtDeclarative)
-     set(QT_USE_LIBSPREFIX Qt4::Qt)
-     set(ALKIMIA_LIB_SUFFIX "")
-     set(ALKIMIA_INCLUDE_SUFFIX "Qt4")
-@@ -107,7 +107,6 @@ else()
+@@ -75,7 +75,7 @@ if(BUILD_QT4)
+         set(QT_NETWORK_COMPONENT)
+     endif()
  
+-    find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtDBus ${QT_NETWORK_COMPONENT} QtTest ${QT_BROWSER_COMPONENT} QtDeclarative)
++    find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtDBus ${QT_NETWORK_COMPONENT} ${QT_BROWSER_COMPONENT} QtDeclarative)
+     set(_kde4_uninstall_rule_created 1)
+     find_package(KDE4 REQUIRED)
+     if(NOT BUILD_WITH_QTNETWORK)
+@@ -150,7 +150,6 @@ else()
      find_package(Qt5 REQUIRED COMPONENTS
          Core
+         ${QT_NETWORK_COMPONENT}
 -        Test
          ${QT_BROWSER_COMPONENT}
          Qml
