@@ -388,6 +388,7 @@ _COMPILER_RT_LIBS= \
 	libclang_rt.asan_cxx-riscv64.a.syms \
 	libclang_rt.asan_static-riscv64.a \
 	libclang_rt.builtins-riscv64.a \
+	libclang_rt.profile-riscv64.a \
 	libclang_rt.stats-riscv64.a \
 	libclang_rt.stats_client-riscv64.a \
 	libclang_rt.ubsan_minimal-riscv64.a \
