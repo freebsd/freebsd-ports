@@ -1,5 +1,5 @@
 PORTNAME=	uncrustify
-PORTVERSION=	0.74.0
+PORTVERSION=	0.75.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GITHUB=	yes
 
 USES=		cmake compiler:c++11-lang python:build
-CMAKE_ARGS=	-DNoGitVersionString:BOOL=TRUE
+CMAKE_ON=	NoGitVersionString
 TEST_TARGET=	test
 
 PORTDOCS=	*
