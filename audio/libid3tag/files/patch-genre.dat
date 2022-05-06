@@ -1,0 +1,219 @@
+--- genre.dat.orig	2022-03-31 19:30:06 UTC
++++ genre.dat
+@@ -23,7 +23,7 @@
+ /*
+  * These are the ID3 genre names, taken as a combination of names from ID3v1
+  * (listed in Appendix A of the ID3 tag version 2.4.0 informal standard) and
+- * the extensions made by Winamp as of version 2.80.
++ * the extensions made by Winamp as of version 5.6.
+  */
+ 
+ /* ID3v1 names (0-79) */
+@@ -201,8 +201,8 @@ static id3_ucs4_t const genre_SWING[] =
+   { 'S', 'w', 'i', 'n', 'g', 0 };
+ static id3_ucs4_t const genre_FAST_FUSION[] =
+   { 'F', 'a', 's', 't', '-', 'F', 'u', 's', 'i', 'o', 'n', 0 };
+-static id3_ucs4_t const genre_BEBOB[] =
+-  { 'B', 'e', 'b', 'o', 'b', 0 };
++static id3_ucs4_t const genre_BEBOP[] =
++  { 'B', 'e', 'b', 'o', 'p', 0 };
+ static id3_ucs4_t const genre_LATIN[] =
+   { 'L', 'a', 't', 'i', 'n', 0 };
+ static id3_ucs4_t const genre_REVIVAL[] =
+@@ -277,8 +277,8 @@ static id3_ucs4_t const genre_PUNK_ROCK[] =
+   { 'P', 'u', 'n', 'k', ' ', 'R', 'o', 'c', 'k', 0 };
+ static id3_ucs4_t const genre_DRUM_SOLO[] =
+   { 'D', 'r', 'u', 'm', ' ', 'S', 'o', 'l', 'o', 0 };
+-static id3_ucs4_t const genre_A_CAPELLA[] =
+-  { 'A', ' ', 'C', 'a', 'p', 'e', 'l', 'l', 'a', 0 };
++static id3_ucs4_t const genre_A_CAPPELLA[] =
++  { 'A', ' ', 'C', 'a', 'p', 'p', 'e', 'l', 'l', 'a', 0 };
+ static id3_ucs4_t const genre_EURO_HOUSE[] =
+   { 'E', 'u', 'r', 'o', '-', 'H', 'o', 'u', 's', 'e', 0 };
+ static id3_ucs4_t const genre_DANCE_HALL[] =
+@@ -289,8 +289,8 @@ static id3_ucs4_t const genre_DRUM___BASS[] =
+   { 'D', 'r', 'u', 'm', ' ', '&', ' ', 'B', 'a', 's', 's', 0 };
+ static id3_ucs4_t const genre_CLUB_HOUSE[] =
+   { 'C', 'l', 'u', 'b', '-', 'H', 'o', 'u', 's', 'e', 0 };
+-static id3_ucs4_t const genre_HARDCORE[] =
+-  { 'H', 'a', 'r', 'd', 'c', 'o', 'r', 'e', 0 };
++static id3_ucs4_t const genre_HARDCORE_TECHNO[] =
++  { 'H', 'a', 'r', 'd', 'c', 'o', 'r', 'e', ' ', 'T', 'e', 'c', 'h', 'n', 'o', 0 };
+ static id3_ucs4_t const genre_TERROR[] =
+   { 'T', 'e', 'r', 'r', 'o', 'r', 0 };
+ static id3_ucs4_t const genre_INDIE[] =
+@@ -324,9 +324,97 @@ static id3_ucs4_t const genre_THRASH_METAL[] =
+ static id3_ucs4_t const genre_ANIME[] =
+   { 'A', 'n', 'i', 'm', 'e', 0 };
+ static id3_ucs4_t const genre_JPOP[] =
+-  { 'J', 'P', 'o', 'p', 0 };
++  { 'J', 'p', 'o', 'p', 0 };
+ static id3_ucs4_t const genre_SYNTHPOP[] =
+   { 'S', 'y', 'n', 't', 'h', 'p', 'o', 'p', 0 };
++static id3_ucs4_t const genre_ABSTRACT[] =
++  { 'A', 'b', 's', 't', 'r', 'a', 'c', 't', 0 };
++static id3_ucs4_t const genre_ART_ROCK[] =
++  { 'A', 'r', 't', ' ', 'R', 'o', 'c', 'k', 0 };
++static id3_ucs4_t const genre_BAROQUE[] =
++  { 'B', 'a', 'r', 'o', 'q', 'u', 'e', 0 };
++static id3_ucs4_t const genre_BHANGRA[] =
++  { 'B', 'h', 'a', 'n', 'g', 'r', 'a', 0 };
++static id3_ucs4_t const genre_BIG_BEAT[] =
++  { 'B', 'i', 'g', ' ', 'B', 'e', 'a', 't', 0 };
++static id3_ucs4_t const genre_BREAKBEAT[] =
++  { 'B', 'r', 'e', 'a', 'k', 'b', 'e', 'a', 't', 0 };
++static id3_ucs4_t const genre_CHILLOUT[] =
++  { 'C', 'h', 'i', 'l', 'l', 'o', 'u', 't', 0 };
++static id3_ucs4_t const genre_DOWNTEMPO[] =
++  { 'D', 'o', 'w', 'n', 't', 'e', 'm', 'p', 'o', 0 };
++static id3_ucs4_t const genre_DUB[] =
++  { 'D', 'u', 'b', 0 };
++static id3_ucs4_t const genre_EBM[] =
++  { 'E', 'B', 'M', 0 };
++static id3_ucs4_t const genre_ECLECTIC[] =
++  { 'E', 'c', 'l', 'e', 'c', 't', 'i', 'c', 0 };
++static id3_ucs4_t const genre_ELECTRO[] =
++  { 'E', 'l', 'e', 'c', 't', 'r', 'o', 0 };
++static id3_ucs4_t const genre_ELECTROCLASH[] =
++  { 'E', 'l', 'e', 'c', 't', 'r', 'o', 'c', 'l', 'a', 's', 'h', 0 };
++static id3_ucs4_t const genre_EMO[] =
++  { 'E', 'm', 'o', 0 };
++static id3_ucs4_t const genre_EXPERIMENTAL[] =
++  { 'E', 'x', 'p', 'e', 'r', 'i', 'm', 'e', 'n', 't', 'a', 'l', 0 };
++static id3_ucs4_t const genre_GARAGE[] =
++  { 'G', 'a', 'r', 'a', 'g', 'e', 0 };
++static id3_ucs4_t const genre_GLOBAL[] =
++  { 'G', 'l', 'o', 'b', 'a', 'l', 0 };
++static id3_ucs4_t const genre_IDM[] =
++  { 'I', 'D', 'M', 0 };
++static id3_ucs4_t const genre_ILLBIENT[] =
++  { 'I', 'l', 'l', 'b', 'i', 'e', 'n', 't', 0 };
++static id3_ucs4_t const genre_INDUSTRO_GOTH[] =
++  { 'I', 'n', 'd', 'u', 's', 't', 'r', 'o', '-', 'G', 'o', 't', 'h', 0 };
++static id3_ucs4_t const genre_JAM_BAND[] =
++  { 'J', 'a', 'm', ' ', 'B', 'a', 'n', 'd', 0 };
++static id3_ucs4_t const genre_KRAUTROCK[] =
++  { 'K', 'r', 'a', 'u', 't', 'r', 'o', 'c', 'k', 0 };
++static id3_ucs4_t const genre_LEFTFIELD[] =
++  { 'L', 'e', 'f', 't', 'f', 'i', 'e', 'l', 'd', 0 };
++static id3_ucs4_t const genre_LOUNGE[] =
++  { 'L', 'o', 'u', 'n', 'g', 'e', 0 };
++static id3_ucs4_t const genre_MATH_ROCK[] =
++  { 'M', 'a', 't', 'h', ' ', 'R', 'o', 'c', 'k', 0 };
++static id3_ucs4_t const genre_NEW_ROMANTIC[] =
++  { 'N', 'e', 'w', ' ', 'R', 'o', 'm', 'a', 'n', 't', 'i', 'c', 0 };
++static id3_ucs4_t const genre_NU_BREAKZ[] =
++  { 'N', 'u', '-', 'B', 'r', 'e', 'a', 'k', 'z', 0 };
++static id3_ucs4_t const genre_POST_PUNK[] =
++  { 'P', 'o', 's', 't', '-', 'P', 'u', 'n', 'k', 0 };
++static id3_ucs4_t const genre_POST_ROCK[] =
++  { 'P', 'o', 's', 't', '-', 'R', 'o', 'c', 'k', 0 };
++static id3_ucs4_t const genre_PSYTRANCE[] =
++  { 'P', 's', 'y', 't', 'r', 'a', 'n', 'c', 'e', 0 };
++static id3_ucs4_t const genre_SHOEGAZE[] =
++  { 'S', 'h', 'o', 'e', 'g', 'a', 'z', 'e', 0 };
++static id3_ucs4_t const genre_SPACE_ROCK[] =
++  { 'S', 'p', 'a', 'c', 'e', ' ', 'R', 'o', 'c', 'k', 0 };
++static id3_ucs4_t const genre_TROP_ROCK[] =
++  { 'T', 'r', 'o', 'p', ' ', 'R', 'o', 'c', 'k', 0 };
++static id3_ucs4_t const genre_WORLD_MUSIC[] =
++  { 'W', 'o', 'r', 'l', 'd', ' ', 'M', 'u', 's', 'i', 'c', 0 };
++static id3_ucs4_t const genre_NEOCLASSICAL[] =
++  { 'N', 'e', 'o', 'c', 'l', 'a', 's', 's', 'i', 'c', 'a', 'l', 0 };
++static id3_ucs4_t const genre_AUDIOBOOK[] =
++  { 'A', 'u', 'd', 'i', 'o', 'b', 'o', 'o', 'k', 0 };
++static id3_ucs4_t const genre_AUDIO_THEATRE[] =
++  { 'A', 'u', 'd', 'i', 'o', ' ', 'T', 'h', 'e', 'a', 't', 'r', 'e', 0 };
++static id3_ucs4_t const genre_NEUE_DEUTSCHE_WELLE[] =
++  { 'N', 'e', 'u', 'e', ' ', 'D', 'e', 'u', 't', 's', 'c', 'h', 'e', ' ', 'W', 'e', 'l', 'l', 'e', 0 };
++static id3_ucs4_t const genre_PODCAST[] =
++  { 'P', 'o', 'd', 'c', 'a', 's', 't', 0 };
++static id3_ucs4_t const genre_INDIE_ROCK[] =
++  { 'I', 'n', 'd', 'i', 'e', '-', 'R', 'o', 'c', 'k', 0 };
++static id3_ucs4_t const genre_G_FUNK[] =
++  { 'G', '-', 'F', 'u', 'n', 'k', 0 };
++static id3_ucs4_t const genre_DUBSTEP[] =
++  { 'D', 'u', 'b', 's', 't', 'e', 'p', 0 };
++static id3_ucs4_t const genre_GARAGE_ROCK[] =
++  { 'G', 'a', 'r', 'a', 'g', 'e', ' ', 'R', 'o', 'c', 'k', 0 };
++static id3_ucs4_t const genre_PSYBIENT[] =
++  { 'P', 's', 'y', 'b', 'i', 'e', 'n', 't', 0 };
+ 
+ static id3_ucs4_t const *const genre_table[] = {
+   genre_BLUES,
+@@ -414,7 +502,7 @@ static id3_ucs4_t const *const genre_table[] = {
+   genre_NATIONAL_FOLK,
+   genre_SWING,
+   genre_FAST_FUSION,
+-  genre_BEBOB,
++  genre_BEBOP,
+   genre_LATIN,
+   genre_REVIVAL,
+   genre_CELTIC,
+@@ -452,13 +540,13 @@ static id3_ucs4_t const *const genre_table[] = {
+   genre_DUET,
+   genre_PUNK_ROCK,
+   genre_DRUM_SOLO,
+-  genre_A_CAPELLA,
++  genre_A_CAPPELLA,
+   genre_EURO_HOUSE,
+   genre_DANCE_HALL,
+   genre_GOA,
+   genre_DRUM___BASS,
+   genre_CLUB_HOUSE,
+-  genre_HARDCORE,
++  genre_HARDCORE_TECHNO,
+   genre_TERROR,
+   genre_INDIE,
+   genre_BRITPOP,
+@@ -476,5 +564,49 @@ static id3_ucs4_t const *const genre_table[] = {
+   genre_THRASH_METAL,
+   genre_ANIME,
+   genre_JPOP,
+-  genre_SYNTHPOP
++  genre_SYNTHPOP,
++  genre_ABSTRACT,
++  genre_ART_ROCK,
++  genre_BAROQUE,
++  genre_BHANGRA,
++  genre_BIG_BEAT,
++  genre_BREAKBEAT,
++  genre_CHILLOUT,
++  genre_DOWNTEMPO,
++  genre_DUB,
++  genre_EBM,
++  genre_ECLECTIC,
++  genre_ELECTRO,
++  genre_ELECTROCLASH,
++  genre_EMO,
++  genre_EXPERIMENTAL,
++  genre_GARAGE,
++  genre_GLOBAL,
++  genre_IDM,
++  genre_ILLBIENT,
++  genre_INDUSTRO_GOTH,
++  genre_JAM_BAND,
++  genre_KRAUTROCK,
++  genre_LEFTFIELD,
++  genre_LOUNGE,
++  genre_MATH_ROCK,
++  genre_NEW_ROMANTIC,
++  genre_NU_BREAKZ,
++  genre_POST_PUNK,
++  genre_POST_ROCK,
++  genre_PSYTRANCE,
++  genre_SHOEGAZE,
++  genre_SPACE_ROCK,
++  genre_TROP_ROCK,
++  genre_WORLD_MUSIC,
++  genre_NEOCLASSICAL,
++  genre_AUDIOBOOK,
++  genre_AUDIO_THEATRE,
++  genre_NEUE_DEUTSCHE_WELLE,
++  genre_PODCAST,
++  genre_INDIE_ROCK,
++  genre_G_FUNK,
++  genre_DUBSTEP,
++  genre_GARAGE_ROCK,
++  genre_PSYBIENT
+ };
