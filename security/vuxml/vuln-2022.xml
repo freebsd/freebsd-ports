@@ -1,3 +1,33 @@
+  <vuln vid="b9837fa1-cd72-11ec-98f1-6805ca0b3d42">
+    <topic>rsyslog8 -- heap buffer overflow on receiving TCP syslog</topic>
+    <affects>
+      <package>
+	<name>rsyslog</name>
+	<range><lt>8.2204.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rainer Gerhards reports:</p>
+	<blockquote cite="https://github.com/rsyslog/rsyslog/security/advisories/GHSA-ggw7-xr6h-mmr8">
+	  <p>Modules for TCP syslog reception have a heap buffer
+	  overflow when octet-counted framing is used. The attacker
+	  can corrupt heap values, leading to data integrity issues
+	  and availability impact. Remote code execution is unlikely
+	  to happen but not impossible..</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24903</cvename>
+      <url>https://github.com/rsyslog/rsyslog/security/advisories/GHSA-ggw7-xr6h-mmr8</url>
+    </references>
+    <dates>
+      <discovery>2022-05-05</discovery>
+      <entry>2022-05-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="647ac600-cc70-11ec-9cfc-10c37b4ac2ea">
     <topic>gogs -- XSS in issue attachments</topic>
     <affects>
