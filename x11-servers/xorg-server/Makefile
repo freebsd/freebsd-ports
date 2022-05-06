@@ -49,7 +49,6 @@ DEFAULT_FONTPATH_LIST= \
 	${FONTPATH_ROOT}/100dpi/ \
 	${FONTPATH_ROOT}/75dpi/ \
 	catalogue:${FONTPATHD}
-DEFAULT_FONTPATH_CMD=${ECHO_CMD} ${DEFAULT_FONTPATH_LIST} | ${TR} ' ' ,
 PLIST_SUB+=	FONTPATHD="${FONTPATHD:S,^${PREFIX}/,,}"
 
 USES=		compiler:c11 cpe gl gmake perl5 ssl tar:xz xorg xorg-cat:xserver
@@ -57,7 +56,7 @@ USE_PERL5=	build
 USE_GL+=	gl
 USE_XORG+=	pixman xau xdmcp xfont2 xkbfile xorgproto xshmfence xtrans
 CONFIGURE_ARGS+=--without-doxygen --without-xmlto --without-fop \
-		--with-default-font-path="$$(${DEFAULT_FONTPATH_CMD})" \
+		--with-default-font-path="${DEFAULT_FONTPATH_LIST:ts,}" \
 		--without-dtrace --disable-config-hal	\
 		--disable-install-setuid --disable-unit-tests \
 		--with-fallback-input-driver=libinput
