@@ -1,7 +1,7 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
 
 PORTNAME=	kibana
-PORTVERSION=	7.16.3
+PORTVERSION=	7.17.3
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
@@ -27,8 +27,6 @@ GH_TUPLE=	nodejs:nan:v${_NODE_NAN_VER}:node_nan \
 
 USE_RC_SUBR=	${PORTNAME}
 
-CONFLICTS=	kibana6
-
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 
 SUB_FILES=	pkg-deinstall
@@ -39,7 +37,7 @@ SUB_LIST+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 # Set node-nan version here
 _NODE_NAN_VER=	2.15.0
 # Set node-re version here
-_NODE_RE2_VER=	1.17.1
+_NODE_RE2_VER=	1.17.4
 #######################################################################
 
 _NODECMD=	${LOCALBASE}/bin/node --version
