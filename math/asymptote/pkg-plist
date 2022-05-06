@@ -45,6 +45,7 @@ man/man1/xasy.1x.gz
 %%DATADIR%%/GUI/res/icons/android-refresh.svg
 %%DATADIR%%/GUI/res/icons/arrow-move.svg
 %%DATADIR%%/GUI/res/icons/arrow-resize.svg
+%%DATADIR%%/GUI/res/icons/brush.svg
 %%DATADIR%%/GUI/res/icons/bucket.svg
 %%DATADIR%%/GUI/res/icons/center.svg
 %%DATADIR%%/GUI/res/icons/centerorigin.svg
@@ -64,11 +65,13 @@ man/man1/xasy.1x.gz
 %%DATADIR%%/GUI/res/icons/opencurve.svg
 %%DATADIR%%/GUI/res/icons/openpolygon.svg
 %%DATADIR%%/GUI/res/icons/plus-round.svg
+%%DATADIR%%/GUI/res/icons/redo.svg
 %%DATADIR%%/GUI/res/icons/save.svg
 %%DATADIR%%/GUI/res/icons/social-python.svg
 %%DATADIR%%/GUI/res/icons/subdirectory-left.svg
 %%DATADIR%%/GUI/res/icons/text.svg
 %%DATADIR%%/GUI/res/icons/triangle-stroked-15.svg
+%%DATADIR%%/GUI/res/icons/undo.svg
 %%DATADIR%%/GUI/setup.py
 %%DATADIR%%/GUI/xasy.py
 %%DATADIR%%/GUI/xasy2asy.py
@@ -147,8 +150,16 @@ man/man1/xasy.1x.gz
 %%DATADIR%%/rationalSimplex.asy
 %%DATADIR%%/reload.js
 %%DATADIR%%/roundedpath.asy
+%%DATADIR%%/shaders/blend.glsl
+%%DATADIR%%/shaders/compress.glsl
+%%DATADIR%%/shaders/count.glsl
 %%DATADIR%%/shaders/fragment.glsl
+%%DATADIR%%/shaders/screen.glsl
+%%DATADIR%%/shaders/sum1.glsl
+%%DATADIR%%/shaders/sum2.glsl
+%%DATADIR%%/shaders/sum3.glsl
 %%DATADIR%%/shaders/vertex.glsl
+%%DATADIR%%/shaders/zero.glsl
 %%DATADIR%%/simplex.asy
 %%DATADIR%%/size10.asy
 %%DATADIR%%/size11.asy
@@ -168,6 +179,9 @@ man/man1/xasy.1x.gz
 %%DATADIR%%/tree.asy
 %%DATADIR%%/trembling.asy
 %%DATADIR%%/tube.asy
+%%DATADIR%%/v3d.asy
+%%DATADIR%%/v3dheadertypes.asy
+%%DATADIR%%/v3dtypes.asy
 %%DATADIR%%/version.asy
 %%DATADIR%%/webgl/asygl.js
 %%DATADIR%%/x11colors.asy
@@ -308,6 +322,7 @@ man/man1/xasy.1x.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/genusthree.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/genustwo.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphmarkers.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphwithderiv.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid3xyz.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hatch.asy
@@ -459,6 +474,7 @@ man/man1/xasy.1x.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/superpath.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tanh.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/teapot.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/teapotIBL.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tensor.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tetra.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/textpath.asy
@@ -480,6 +496,7 @@ man/man1/xasy.1x.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/truncatedIcosahedron.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tvgen.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/twistedtubes.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/twoSpheres.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/unitcircle.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/unitcircle3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/unitoctant.asy
@@ -534,11 +551,13 @@ share/info/asymptote/elliptic.png
 share/info/asymptote/errorbars.png
 share/info/asymptote/exp.png
 share/info/asymptote/filegraph.png
+share/info/asymptote/fillcontour.png
 share/info/asymptote/flow.png
 share/info/asymptote/flowchartdemo.png
 share/info/asymptote/generalaxis.png
 share/info/asymptote/generalaxis3.png
 share/info/asymptote/graphmarkers.png
+share/info/asymptote/graphwithderiv.png
 share/info/asymptote/grid3xyz.png
 share/info/asymptote/hatch.png
 share/info/asymptote/helix.png
@@ -592,4 +611,3 @@ share/info/asymptote/westnile.png
 %%TEXMFLOCALDIR%%/tex/latex/asymptote/asycolors.sty
 %%TEXMFLOCALDIR%%/tex/latex/asymptote/asymptote.sty
 %%TEXMFLOCALDIR%%/tex/latex/asymptote/latexmkrc
-%%TEXMFLOCALDIR%%/tex/latex/asymptote/ocg.sty
