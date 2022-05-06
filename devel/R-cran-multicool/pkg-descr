@@ -1,0 +1,4 @@
+A set of tools to permute multisets without loops or hash tables and to generate
+integer partitions.
+
+WWW: https://cran.r-project.org/package=multicool
