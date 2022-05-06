@@ -4528,7 +4528,6 @@ math/fung-calc||2013-07-26|Has expired: Depends on Qt 3.x
 math/koctave||2013-07-26|Has expired: Depends on Qt 3.x
 math/kseg||2013-07-26|Has expired: Depends on Qt 3.x
 math/pgcalc||2013-07-26|Has expired: Depends on Qt 3.x
-math/rkward||2013-07-26|Has expired: Depends on Qt 3.x
 math/xgfe||2013-07-26|Has expired: Depends on Qt 3.x
 misc/gwenview-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 misc/k3b-i18n||2013-07-26|Has expired: Depends on Qt 3.x
@@ -17146,3 +17145,4 @@ mail/p5-Email-Sender-Transport-SMTPS|mail/p5-Email-Sender|2022-04-30|Has expired
 net/gogoc||2022-04-30|Has expired: Services were discontinued in 2016
 graphics/drm-current-kmod||2022-05-01|Switched to a Linux version based naming scheme. Use graphics/drm-510-kmod
 graphics/drm-devel-kmod||2022-05-01|Switched to a Linux version based naming scheme. Use graphics/drm-510-kmod
+math/rkward-kde|math/rkward|2022-05-06|Switched to the name used by upstream

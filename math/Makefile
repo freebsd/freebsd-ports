@@ -991,7 +991,7 @@
     SUBDIR += reed-solomon
     SUBDIR += rehearse
     SUBDIR += rexx-regmath
-    SUBDIR += rkward-kde
+    SUBDIR += rkward
     SUBDIR += rngstreams
     SUBDIR += rocs
     SUBDIR += rpcalc

@@ -4,7 +4,6 @@ PORTNAME=	rkward
 PORTVERSION=	0.7.3
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION:C/b//}/src
-PKGNAMESUFFIX=	-kde
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	IDE/GUI for the R-project
@@ -51,7 +50,13 @@ RUN_DEPENDS+=	${LR_MOD_DIR}/XML/INDEX:textproc/R-cran-XML		\
 		${LR_MOD_DIR}/qcc/INDEX:graphics/R-cran-qcc		\
 		${LR_MOD_DIR}/tseries/INDEX:finance/R-cran-tseries	\
 		${LR_MOD_DIR}/xtable/INDEX:textproc/R-cran-xtable	\
-		${LR_MOD_DIR}/car/INDEX:math/R-cran-car
+		${LR_MOD_DIR}/car/INDEX:math/R-cran-car			\
+		${LR_MOD_DIR}/XLConnect/INDEX:math/R-cran-XLConnect	\
+		${LR_MOD_DIR}/ltm/INDEX:math/R-cran-ltm			\
+		${LR_MOD_DIR}/moments/INDEX:math/R-cran-moments		\
+		${LR_MOD_DIR}/pwr/INDEX:math/R-cran-pwr			\
+		${LR_MOD_DIR}/hdrcde/INDEX:math/R-cran-hdrcde		\
+		${LR_MOD_DIR}/exactRankTests/INDEX:math/R-cran-exactRankTests
 .endif
 
 .if ${PORT_OPTIONS:MINSTTEST}
@@ -79,12 +84,6 @@ post-install:
 	(cd ${WRKSRC}/rkward/rbackend/rpackages/rkwardtests &&	\
 	${SETENV} ${MAKE_ENV} _R_CHECK_FORCE_SUGGESTS_=FALSE &&	\
 	${R_COMMAND} CMD INSTALL -l ${STAGEDIR}${PREFIX}/${R_LIB_DIR} . )
-.endif
-
-.if defined(MAINTAINER_MODE)
-regression-test:	install
-	(cd ${WRKSRC}/tests &&	\
-	KDE_LANG=en_US ${PREFIX}/bin/${PORTNAME}  --evaluate source\(\"all_tests.R\"\) )
 .endif
 
 .include <bsd.port.mk>
