@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	actdiag
-PORTVERSION=	2.0.0
+PORTVERSION=	3.0.0
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blockdiag>=1.5.0:graphics/py-blockdiag@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
