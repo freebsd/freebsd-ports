@@ -1,0 +1,6 @@
+Kernel smoothers for univariate and multivariate data, including densities,
+density derivatives, cumulative distributions, clustering, classification,
+density ridges, significant modal regions, and two-sample hypothesis tests.
+
+WWW: https://cran.r-project.org/package=ks
+WWW: https://www.mvstat.net/mvksa/
