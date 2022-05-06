@@ -17146,3 +17146,4 @@ net/gogoc||2022-04-30|Has expired: Services were discontinued in 2016
 graphics/drm-current-kmod||2022-05-01|Switched to a Linux version based naming scheme. Use graphics/drm-510-kmod
 graphics/drm-devel-kmod||2022-05-01|Switched to a Linux version based naming scheme. Use graphics/drm-510-kmod
 math/rkward-kde|math/rkward|2022-05-06|Switched to the name used by upstream
+graphics/photoflow||2022-05-06|Unmaintainer upstream, has been broken for months, particularly this issue isn't answered: https://github.com/aferrero2707/PhotoFlow/issues/220
