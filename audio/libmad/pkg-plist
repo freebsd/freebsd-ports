@@ -1,6 +1,8 @@
 include/mad.h
-lib/libmad.a
+lib/cmake/mad/madConfig.cmake
+lib/cmake/mad/madConfigVersion.cmake
+lib/cmake/mad/madTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/mad/madTargets.cmake
 lib/libmad.so
-lib/libmad.so.0
-lib/libmad.so.0.2.1
-libdata/pkgconfig/mad.pc
+lib/libmad.so.0.16.0
+libdata/pkgconfig/libmad.pc

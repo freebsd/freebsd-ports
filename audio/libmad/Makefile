@@ -1,35 +1,25 @@
 # Created by: Sergey Akifyev <asa@gascom.ru>
 
 PORTNAME=	libmad
-PORTVERSION=	0.15.1b
-PORTREVISION=	7
+DISTVERSION=	0.16.0
 CATEGORIES=	audio
-MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION}
+
+PATCH_SITES=	https://github.com/tenacityteam/libmad/commit/
+PATCHFILES=	c2eb5e1a728c973ea3f957d4cb6e04d77f745568.patch:-p1 \
+		a8ca654e3666f442805d93722290bb218b633428.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
 
 LICENSE=	GPLv2
 
-USES=		cpe libtool
-
-CONFIGURE_ARGS=	--disable-debugging --enable-sso
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
-
-SUB_LIST=	VERSION=${PORTVERSION}
-SUB_FILES=	mad.pc
-
+USES=		cmake cpe pathfix
 CPE_VENDOR=	underbit
 
-OPTIONS_DEFINE=	SPEED
-SPEED_DESC=	Optimize for speed over accuracy
+USE_GITHUB=	yes
+GH_ACCOUNT=	tenacityteam
+GH_TAGNAME=	15d1ef05
 
-SPEED_CONFIGURE_ON=	--enable-speed
-SPEED_CONFIGURE_OFF=	--enable-accuracy
-
-post-install:
-	${INSTALL_DATA} ${WRKDIR}/mad.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
