@@ -56,14 +56,14 @@ GH_TUPLE=	\
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jackc:chunkreader:v2.0.1:jackc_chunkreader/vendor/github.com/jackc/chunkreader/v2 \
-		jackc:pgconn:v1.10.0:jackc_pgconn/vendor/github.com/jackc/pgconn \
+		jackc:pgconn:v1.11.0:jackc_pgconn/vendor/github.com/jackc/pgconn \
 		jackc:pgerrcode:a0d42d470451:jackc_pgerrcode/vendor/github.com/jackc/pgerrcode \
 		jackc:pgio:v1.0.0:jackc_pgio/vendor/github.com/jackc/pgio \
 		jackc:pgpassfile:v1.0.0:jackc_pgpassfile/vendor/github.com/jackc/pgpassfile \
-		jackc:pgproto3:v2.1.1:jackc_pgproto3/vendor/github.com/jackc/pgproto3/v2 \
+		jackc:pgproto3:v2.2.0:jackc_pgproto3/vendor/github.com/jackc/pgproto3/v2 \
 		jackc:pgservicefile:2b9c44734f2b:jackc_pgservicefile/vendor/github.com/jackc/pgservicefile \
-		jackc:pgtype:v1.8.1:jackc_pgtype/vendor/github.com/jackc/pgtype \
-		jackc:pgx:v4.13.0:jackc_pgx/vendor/github.com/jackc/pgx/v4 \
+		jackc:pgtype:v1.10.0:jackc_pgtype/vendor/github.com/jackc/pgtype \
+		jackc:pgx:v4.15.0:jackc_pgx/vendor/github.com/jackc/pgx/v4 \
 		jtolds:monkit-hw:141a0da276b3:jtolds_monkit_hw/vendor/github.com/jtolds/monkit-hw/v2 \
 		jtolds:tracetagger:v2.0.0-rc5:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger/v2 \
 		loov:hrtime:v1.0.3:loov_hrtime/vendor/github.com/loov/hrtime \
@@ -75,7 +75,7 @@ GH_TUPLE=	\
 		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mattn:go-sqlite3:v1.14.8:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mattn:go-sqlite3:v1.14.12:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		nsf:jsondiff:f29ed568f4ce:nsf_jsondiff/vendor/github.com/nsf/jsondiff \
 		nsf:termbox-go:38ba6e5628f1:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
@@ -99,10 +99,10 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:ffdc3ab808c6:storj_common/vendor/storj.io/common \
+		storj:common:a5cb7172d6bf:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.30:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:dc4cb5a0d97a:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:f73cd1a48d5f:storj_private/vendor/storj.io/private \
+		storj:private:c00f978a1757:storj_private/vendor/storj.io/private \
 		storj:uplink:7305e5b6da85:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v72.51.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
@@ -115,7 +115,7 @@ GH_TUPLE=	\
 		yuin:gopher-lua:ab39c6098bdb:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua \
 		zeebo:admission:v3.0.3:zeebo_admission/vendor/github.com/zeebo/admission/v3 \
 		zeebo:assert:v1.3.0:zeebo_assert/vendor/github.com/zeebo/assert \
-		zeebo:clingy:1457d47c8d8d:zeebo_clingy/vendor/github.com/zeebo/clingy \
+		zeebo:clingy:389f1ba2553d:zeebo_clingy/vendor/github.com/zeebo/clingy \
 		zeebo:errs:v1.3.0:zeebo_errs/vendor/github.com/zeebo/errs \
 		zeebo:errs:v2.0.3:zeebo_errs_v2/vendor/github.com/zeebo/errs/v2 \
 		zeebo:float16:v0.1.0:zeebo_float16/vendor/github.com/zeebo/float16 \
