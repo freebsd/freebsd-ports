@@ -1,7 +1,6 @@
 PORTNAME=	horizon-eda
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
-PORTREVISION=	2
+DISTVERSION=	2.3.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +23,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libzip.so:archivers/libzip \
 		libzmq.so:net/libzmq4
 
-USES=		gmake gnome localbase pkgconfig python:build sqlite # compiler:c++17-lang
+USES=		compiler:c++17-lang gmake gnome libarchive localbase pkgconfig python:build sqlite
 USE_GNOME=	atkmm gdkpixbuf2 gtkmm30 librsvg2
 
 USE_GITHUB=	yes
@@ -34,13 +33,7 @@ MAKE_ARGS=	DEBUGFLAGS= OPTIMIZE=
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-LLVM_VER=	12 # workaround for bug#253551
-BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
-CPP=		clang-cpp${LLVM_VER}
-CC=		clang${LLVM_VER}
-CXX=		clang++${LLVM_VER}
-
 post-install: # https://github.com/horizon-eda/horizon/issues/558
-	@cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} horizon-imp
+	@cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} horizon-eda horizon-imp
 
 .include <bsd.port.mk>
