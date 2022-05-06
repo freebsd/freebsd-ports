@@ -1,11 +1,10 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 
 PORTNAME=	gcc
-PORTVERSION=	12.0.1.s20220430
+PORTVERSION=	12.1.0
 CATEGORIES=	lang
-MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
-PKGNAMESUFFIX=	${SUFFIX}-devel
-DISTNAME=	gcc-${DIST_VERSION}
+MASTER_SITES=	GCC
+PKGNAMESUFFIX=	${SUFFIX}
 
 MAINTAINER=	toolchain@FreeBSD.org
 COMMENT=	GNU Compiler Collection 12
@@ -28,17 +27,11 @@ USES=		compiler:c++11-lang cpe gmake iconv libtool makeinfo perl5 tar:xz
 USE_BINUTILS=	yes
 USE_PERL5=	build
 
-CONFLICTS=	gcc12
+CONFLICTS=	gcc12-devel
 
 CPE_VENDOR=	gnu
-CPE_VERSION=	${GCC_VERSION}
 
-# DIST_VERSION relates to downloads, GCC_VERSION and SUFFIX to names
-# of executables and directories once installed.  A PORTVERSION of
-# Y.2.1.s20140817 results in values of Y-20140817, Y.2.1, and Y
-# for these three.
-DIST_VERSION=	${PORTVERSION:C/([0-9]+).*\.s([0-9]+)/\1-\2/}
-GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
+GCC_VERSION=	${PORTVERSION}
 SUFFIX=		${PORTVERSION:C/([0-9]+).*/\1/}
 CFLAGS:=	${CFLAGS:N-mretpoline}
 CXXFLAGS:=	${CXXFLAGS:N-mretpoline}
@@ -48,8 +41,8 @@ OPTIONS_DEFAULT_aarch64=LTO_BOOTSTRAP
 OPTIONS_DEFAULT_amd64=	LTO_BOOTSTRAP
 OPTIONS_DEFAULT_i386=	LTO_BOOTSTRAP
 OPTIONS_DEFAULT_powerpc=LTO_BOOTSTRAP
-OPTIONS_DEFAULT_powerpc64=LTO_BOOTSTRAP
-OPTIONS_DEFAULT_powerpc64le=LTO_BOOTSTRAP
+OPTIONS_DEFAULT_powerpc64=	LTO_BOOTSTRAP
+OPTIONS_DEFAULT_powerpc64le=	LTO_BOOTSTRAP
 OPTIONS_RADIO=	BOOTSTRAP
 OPTIONS_RADIO_BOOTSTRAP=	LTO_BOOTSTRAP STANDARD_BOOTSTRAP
 LTO_BOOTSTRAP_DESC=	Build using a full LTO bootstrap
@@ -60,7 +53,7 @@ GRAPHITE_DESC=		Support for Graphite loop optimizations
 OPTIONS_DEFINE_amd64+=		MULTILIB
 OPTIONS_DEFAULT_amd64+=	MULTILIB
 OPTIONS_DEFINE_powerpc64+=	MULTILIB
-OPTIONS_DEFAULT_powerpc64+=	MULTILIB
+#OPTIONS_DEFAULT_powerpc64+=	MULTILIB # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105010
 MULTILIB_DESC=		Build support for 32-bit and 64-bit targets
 MULTILIB_CONFIGURE_ENABLE=	multilib
 .else
@@ -74,7 +67,6 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 
 .elif defined(PPC_ABI) && ${PPC_ABI} == ELFv2
 CONFIGURE_ARGS+=	--with-abi=elfv2
-
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran,jit
@@ -124,10 +116,9 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgccjit \
 		gcc${SUFFIX}/libgomp
-.if ${ARCH} == amd64 || ${ARCH} == i386
+# Release tarballs (as opposed to snapshots) always carry this.
 INFO+=		gcc${SUFFIX}/libquadmath \
 		gcc${SUFFIX}/libitm
-.endif
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}
 
