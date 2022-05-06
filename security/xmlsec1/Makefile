@@ -1,8 +1,7 @@
 # Created by: Jim Geovedi <jim@corebsd.or.id>
 
 PORTNAME=	xmlsec1
-PORTVERSION=	1.2.29
-PORTREVISION=	2
+PORTVERSION=	1.2.34
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -25,6 +24,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl="${OPENSSLBASE}" \
 		--with-gcrypt="${LOCALBASE}" \
+		--enable-werror \
 		--enable-soap \
 		--disable-docs-build
 MAKE_ENV=	ABS_BUILDDIR=${WRKSRC} TMPFOLDER=${WRKSRC}

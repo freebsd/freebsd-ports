@@ -1,11 +1,9 @@
---- src/openssl/openssl_compat.h.orig	2017-09-12 13:21:09 UTC
+--- src/openssl/openssl_compat.h.orig	2022-05-03 14:36:17 UTC
 +++ src/openssl/openssl_compat.h
-@@ -49,4 +49,19 @@
+@@ -51,6 +51,21 @@
  
- #endif /* !defined(XMLSEC_OPENSSL_API_110) */
- 
-+/******************************************************************************
-+ *
+ /******************************************************************************
+  *
 + * LibreSSL 2.7+ compatibility (implements most of OpenSSL 1.1 API)
 + *
 + *****************************************************************************/
@@ -19,4 +17,8 @@
 +#define X509_OBJECT_free(x) { X509_OBJECT_free_contents(x); free(x); }
 +#endif
 +
- #endif /* __XMLSEC_OPENSSL_OPENSSL_COMPAT_H__ */
++/******************************************************************************
++ *
+  * boringssl compatibility
+  *
+  *****************************************************************************/
