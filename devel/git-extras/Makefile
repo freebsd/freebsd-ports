@@ -1,5 +1,5 @@
 PORTNAME=	git-extras
-PORTVERSION=	6.3.0
+PORTVERSION=	6.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	igor.ostapenko@pm.me

@@ -3,6 +3,7 @@ bin/git-alias
 bin/git-archive-file
 bin/git-authors
 bin/git-browse
+bin/git-browse-ci
 bin/git-brv
 bin/git-bulk
 bin/git-changelog
@@ -35,6 +36,7 @@ bin/git-info
 bin/git-local-commits
 bin/git-lock
 bin/git-locked
+bin/git-magic
 bin/git-merge-into
 bin/git-merge-repo
 bin/git-missing
@@ -74,6 +76,7 @@ man/man1/git-abort.1.gz
 man/man1/git-alias.1.gz
 man/man1/git-archive-file.1.gz
 man/man1/git-authors.1.gz
+man/man1/git-browse-ci.1.gz
 man/man1/git-browse.1.gz
 man/man1/git-brv.1.gz
 man/man1/git-bulk.1.gz
@@ -107,6 +110,7 @@ man/man1/git-info.1.gz
 man/man1/git-local-commits.1.gz
 man/man1/git-lock.1.gz
 man/man1/git-locked.1.gz
+man/man1/git-magic.1.gz
 man/man1/git-merge-into.1.gz
 man/man1/git-merge-repo.1.gz
 man/man1/git-missing.1.gz
