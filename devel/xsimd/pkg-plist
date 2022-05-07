@@ -13,9 +13,10 @@ include/xsimd/arch/xsimd_avx512cd.hpp
 include/xsimd/arch/xsimd_avx512dq.hpp
 include/xsimd/arch/xsimd_avx512f.hpp
 include/xsimd/arch/xsimd_constants.hpp
-include/xsimd/arch/xsimd_fma3.hpp
+include/xsimd/arch/xsimd_fma3_avx.hpp
+include/xsimd/arch/xsimd_fma3_avx2.hpp
+include/xsimd/arch/xsimd_fma3_sse.hpp
 include/xsimd/arch/xsimd_fma4.hpp
-include/xsimd/arch/xsimd_fma5.hpp
 include/xsimd/arch/xsimd_generic.hpp
 include/xsimd/arch/xsimd_generic_fwd.hpp
 include/xsimd/arch/xsimd_isa.hpp
@@ -44,8 +45,10 @@ include/xsimd/types/xsimd_avx512f_register.hpp
 include/xsimd/types/xsimd_avx_register.hpp
 include/xsimd/types/xsimd_batch.hpp
 include/xsimd/types/xsimd_batch_constant.hpp
-include/xsimd/types/xsimd_fma3_register.hpp
-include/xsimd/types/xsimd_fma5_register.hpp
+include/xsimd/types/xsimd_fma3_avx2_register.hpp
+include/xsimd/types/xsimd_fma3_avx_register.hpp
+include/xsimd/types/xsimd_fma3_sse_register.hpp
+include/xsimd/types/xsimd_fma4_register.hpp
 include/xsimd/types/xsimd_generic_arch.hpp
 include/xsimd/types/xsimd_neon64_register.hpp
 include/xsimd/types/xsimd_neon_register.hpp
