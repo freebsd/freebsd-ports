@@ -13,6 +13,9 @@ COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 LICENSE=		GPLv3
 
+DEPRECATED=		Security issues for multiple years
+EXPIRATION_DATE=	2022-06-30
+
 ONLY_FOR_ARCHS=		aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=		libgmp.so:math/gmp \

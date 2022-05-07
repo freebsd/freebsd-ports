@@ -10,6 +10,9 @@ PKGNAMEPREFIX=		psptoolchain-
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
+DEPRECATED=		Security issues for multiple years
+EXPIRATION_DATE=	2022-06-30
+
 BUILD_DEPENDS=		${LOCALBASE}/psp/sdk/lib/libpspsdk.a:devel/psptoolchain-pspsdk-stage2
 
 USES=			cpe gmake tar:bzip2

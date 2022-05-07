@@ -8,6 +8,9 @@ CATEGORIES=		devel
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		PlayStation Portable development toolchain meta port
 
+DEPRECATED=		Security issues for multiple years
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=		psp-gdb:devel/psptoolchain-gdb \
 			psp-gcc:devel/psptoolchain-gcc-stage2 \
 			psp-g++:devel/psptoolchain-gcc-stage2 \
