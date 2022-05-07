@@ -122,6 +122,7 @@ include/wolfssl/openssl/err.h
 include/wolfssl/openssl/evp.h
 include/wolfssl/openssl/fips_rand.h
 include/wolfssl/openssl/hmac.h
+include/wolfssl/openssl/kdf.h
 include/wolfssl/openssl/lhash.h
 include/wolfssl/openssl/md4.h
 include/wolfssl/openssl/md5.h
@@ -228,8 +229,8 @@ include/wolfssl/wolfcrypt/wolfmath.h
 include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
-lib/libwolfssl.so.32
-lib/libwolfssl.so.32.0.0
+lib/libwolfssl.so.33
+lib/libwolfssl.so.33.0.0
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/example/client.c
