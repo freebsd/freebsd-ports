@@ -1,7 +1,7 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 
 PORTNAME=	humanize
-PORTVERSION=	0.5.1
+PORTVERSION=	4.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Various common humanization utilities
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python:3.8+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
