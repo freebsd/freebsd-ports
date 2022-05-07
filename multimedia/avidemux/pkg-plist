@@ -84,7 +84,6 @@ include/avidemux/2.7/cmake/FindTar.cmake
 include/avidemux/2.7/cmake/FindThreads.cmake
 include/avidemux/2.7/cmake/Po.cmake
 include/avidemux/2.7/cmake/_CMakeParseArguments.cmake
-include/avidemux/2.7/cmake/_GenerateExportHeader.cmake
 include/avidemux/2.7/cmake/ad_plugin.cmake
 include/avidemux/2.7/cmake/admAsNeeded.cmake
 include/avidemux/2.7/cmake/admCPack.cmake

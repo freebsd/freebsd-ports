@@ -2,7 +2,6 @@
 
 PORTNAME=	avidemux
 PORTVERSION=	${AVIDEMUX_VERSION}
-PORTREVISION=	7
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-plugins
 
@@ -23,14 +22,14 @@ CMAKE_ARGS+=	-DAVIDEMUX_SOURCE_DIR=${WRKSRC} -DAVIDEMUX_INSTALL_PREFIX:PATH="${P
 PLUGIN_UI=	COMMON SETTINGS
 
 .if ${PORT_OPTIONS:MCLI}
-BUILD_DEPENDS+=	${LOCALBASE}/include/avidemux/2.7/cli/config.h:multimedia/avidemux-cli
-RUN_DEPENDS+=	${LOCALBASE}/include/avidemux/2.7/cli/config.h:multimedia/avidemux-cli
+BUILD_DEPENDS+=	avidemux-cli>0:multimedia/avidemux-cli
+RUN_DEPENDS+=	avidemux-cli>0:multimedia/avidemux-cli
 PLUGIN_UI+=	CLI
 .endif
 
 .if ${PORT_OPTIONS:MQT5}
-BUILD_DEPENDS+=	${LOCALBASE}/include/avidemux/2.7/qt5/config.h:multimedia/avidemux-qt5 	 
-RUN_DEPENDS+=	${LOCALBASE}/include/avidemux/2.7/qt5/config.h:multimedia/avidemux-qt5 	 
+BUILD_DEPENDS+=	avidemux-qt5>0:multimedia/avidemux-qt5
+RUN_DEPENDS+=	avidemux-qt5>0:multimedia/avidemux-qt5
 PLUGIN_UI+=	QT4
 .endif
 

@@ -1,7 +1,7 @@
---- avidemux_core/ffmpeg_package/patches/configure.patch.orig
+--- avidemux_core/ffmpeg_package/patches/configure.patch.orig	2021-11-29 16:28:06 UTC
 +++ avidemux_core/ffmpeg_package/patches/configure.patch
-@@ -0,0 +1,11 @@
-+--- configure.orig
+@@ -0,0 +1,24 @@
++--- configure.orig	2020-07-09 11:17:46.000000000 +0200
 ++++ configure
 +@@ -3671,6 +3671,8 @@
 +     arch_default=$(uname -p)
@@ -12,3 +12,16 @@
 + else
 +     arch_default=$(uname -m)
 + fi
++@@ -4861,9 +4863,11 @@
++         fi
++     }
++ 
++-    [ "$cpu" = generic ] && cpu=$(probe_arm_arch)
++ 
++     case $cpu in
+++        generic)
+++            subarch=$(probe_arm_arch | sed 's/[^a-z0-9]//g')
+++        ;;
++         armv*)
++             cpuflags="-march=$cpu"
++             subarch=$(echo $cpu | sed 's/[^a-z0-9]//g')

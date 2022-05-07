@@ -1,6 +1,6 @@
---- avidemux_plugins/CMakeLists.txt.orig	2019-08-15 09:25:40.000000000 +0200
-+++ avidemux_plugins/CMakeLists.txt	2020-01-10 15:07:57.924344000 +0100
-@@ -265,7 +265,9 @@
+--- avidemux_plugins/CMakeLists.txt.orig	2021-03-07 06:18:22 UTC
++++ avidemux_plugins/CMakeLists.txt
+@@ -266,7 +266,9 @@ ENDIF(DO_COMMON)
  ADD_SUBDIRECTORY(ADM_videoEncoder)
  ADD_SUBDIRECTORY(ADM_videoFilters6)
  IF(DO_QT4)
