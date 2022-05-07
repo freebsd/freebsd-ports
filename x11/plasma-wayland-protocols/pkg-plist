@@ -26,3 +26,4 @@ lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfigVersion.cmake
 %%DATADIR%%/text-input-unstable-v2.xml
 %%DATADIR%%/text-input.xml
 %%DATADIR%%/wayland-eglstream-controller.xml
+%%DATADIR%%/zkde-screencast-unstable-v1.xml
