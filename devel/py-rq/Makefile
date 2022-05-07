@@ -1,7 +1,7 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 
 PORTNAME=	rq
-PORTVERSION=	1.3.0
+PORTVERSION=	1.10.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Simple library for creating background jobs, and processing them
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=2.7:databases/py-redis@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=3.5.3:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=5.0:devel/py-click@${PY_FLAVOR}
 
 USES=		python:3.6+
