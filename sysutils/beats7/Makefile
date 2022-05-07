@@ -1,7 +1,6 @@
 PORTNAME=	beats
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.16.3
-PORTREVISION=	1
+DISTVERSION=	7.17.3
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	7
 
@@ -45,7 +44,6 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		andrewkroh:sys:287798fe3e43:andrewkroh_sys/vendor/github.com/andrewkroh/sys \
 		antlr:antlr4:be881fa6b91d:antlr_antlr4/vendor/github.com/antlr/antlr4 \
 		apache:thrift:eac4d0c79a5f:apache_thrift/vendor/github.com/apache/thrift \
-		apoydence:eachers:23942921fe77:apoydence_eachers/vendor/github.com/apoydence/eachers \
 		armon:go-radix:v1.0.0:armon_go_radix/vendor/github.com/armon/go-radix \
 		armon:go-socks5:e75332964ef5:armon_go_socks5/vendor/github.com/armon/go-socks5 \
 		aws:aws-lambda-go:v1.13.3:aws_aws_lambda_go/vendor/github.com/aws/aws-lambda-go \
@@ -84,7 +82,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		digitalocean:go-libvirt:6075ea3c39a1:digitalocean_go_libvirt/vendor/github.com/digitalocean/go-libvirt \
 		dimchansky:utfbom:v1.1.0:dimchansky_utfbom/vendor/github.com/dimchansky/utfbom \
 		dlclark:regexp2:7632a260cbaf:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
-		docker:distribution:v2.7.1:docker_distribution/vendor/github.com/docker/distribution \
+		docker:distribution:v2.8.0:docker_distribution/vendor/github.com/docker/distribution \
 		docker:engine:ea84732a7725:docker_engine/vendor/github.com/docker/docker \
 		docker:go-connections:v0.4.0:docker_go_connections/vendor/github.com/docker/go-connections \
 		docker:go-metrics:v0.0.1:docker_go_metrics/vendor/github.com/docker/go-metrics \
@@ -150,15 +148,15 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
 		golang:net:d418f374d309:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:f6687ab2804c:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:oauth2:6b3c2da341f1:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:d3039528d8ac:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:4dd72447c267:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6a3ed077a48d:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
-		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.1.6:golang_tools/vendor/golang.org/x/tools \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
+		golang:time:1f47c861a9ac:golang_time/vendor/golang.org/x/time \
+		golang:tools:v0.1.7:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		gomodule:redigo:v1.8.3:gomodule_redigo/vendor/github.com/gomodule/redigo \
 		google:flatbuffers:v1.12.1:google_flatbuffers/vendor/github.com/google/flatbuffers \
@@ -168,12 +166,13 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		google:licenseclassifier:879cb1424de0:google_licenseclassifier/vendor/github.com/google/licenseclassifier \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
-		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
+		googleapis:gax-go:v2.1.1:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:gnostic:v0.4.1:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
-		googleapis:google-api-go-client:v0.47.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-api-go-client:v0.58.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:bigquery/v1.8.0:googleapis_google_cloud_go_bigquery \
-		googleapis:google-cloud-go:pubsub/v1.3.1:googleapis_google_cloud_go_pubsub \
-		googleapis:google-cloud-go:v0.83.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		googleapis:google-cloud-go:monitoring/v1.1.0:googleapis_google_cloud_go_monitoring \
+		googleapis:google-cloud-go:pubsub/v1.17.1:googleapis_google_cloud_go_pubsub \
+		googleapis:google-cloud-go:v0.97.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gorhill:cronexpr:88b0669f7d75:gorhill_cronexpr/vendor/github.com/gorhill/cronexpr \
 		gorilla:mux:v1.7.3:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
@@ -205,13 +204,13 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		jcmturner:gokrb5:v8.4.2:jcmturner_gokrb5_v8/vendor/github.com/jcmturner/gokrb5 \
 		jcmturner:rpc:v1.1.0:jcmturner_rpc/vendor/gopkg.in/jcmturner/rpc.v1 \
 		jcmturner:rpc:v2.0.3:jcmturner_rpc_v2/vendor/github.com/jcmturner/rpc \
-		jmespath:go-jmespath:c2b33e8439af:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
+		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		jmoiron:sqlx:d7d95172beb5:jmoiron_sqlx/vendor/github.com/jmoiron/sqlx \
 		joeshaw:multierror:69b34d4ec901:joeshaw_multierror/vendor/github.com/joeshaw/multierror \
 		jonboulle:clockwork:v0.2.2:jonboulle_clockwork/vendor/github.com/jonboulle/clockwork \
 		josephspurrier:goversioninfo:63e6d1acd3dd:josephspurrier_goversioninfo/vendor/github.com/josephspurrier/goversioninfo \
 		jpillora:backoff:v1.0.0:jpillora_backoff/vendor/github.com/jpillora/backoff \
-		json-iterator:go:v1.1.10:json_iterator_go/vendor/github.com/json-iterator/go \
+		json-iterator:go:v1.1.11:json_iterator_go/vendor/github.com/json-iterator/go \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		kardianos:service:a323c3813bc7:kardianos_service/vendor/github.com/kardianos/service \
 		karrick:godirwalk:v1.15.6:karrick_godirwalk/vendor/github.com/karrick/godirwalk \
@@ -253,6 +252,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		pierrre:gotestcover:924dca7d15f0:pierrre_gotestcover/vendor/github.com/pierrre/gotestcover \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		poy:eachers:23942921fe77:poy_eachers/vendor/github.com/apoydence/eachers \
 		prometheus:client_golang:v1.7.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.10.0:prometheus_common/vendor/github.com/prometheus/common \
