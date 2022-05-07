@@ -1,7 +1,7 @@
 # Created by: Lung-Pin Chang <changlp@cs.nctu.edu.tw>
 
 PORTNAME=	django_compressor
-PORTVERSION=	3.1
+PORTVERSION=	4.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
