@@ -1,6 +1,6 @@
---- configure.orig	2018-01-11 12:51:16 UTC
+--- configure.orig	2022-03-09 13:16:43 UTC
 +++ configure
-@@ -21288,7 +21288,7 @@ $as_echo "#define ARCH_X86_X32 /**/" >>confdefs.h
+@@ -21806,7 +21806,7 @@ $as_echo "#define ARCH_X86_X32 /**/" >>confdefs.h
  
          ;;
  
@@ -9,7 +9,7 @@
                          arch_x86=64
  
  
-@@ -21752,7 +21752,7 @@ fi
+@@ -22270,7 +22270,7 @@ fi
  
                  if test "$sarchopt" != "no"; then
                      case "$host_or_hostalias" in
@@ -18,7 +18,7 @@
                          i486-*)         archopt_val="i486" ;;
                          i586-*)         archopt_val="pentium" ;;
                          pentium-mmx-*)  archopt_val="pentium-mmx" ;;
-@@ -28089,7 +28089,7 @@ fi
+@@ -29561,7 +29561,7 @@ fi
  
      if test x"$enable_dvb" != x"no"; then
          case "$host_os" in
@@ -27,3 +27,47 @@
              *) have_dvb=no ;;
          esac
          if test x"$hard_enable_dvb" = x"yes" && test x"$have_dvb" != x"yes"; then
+@@ -32826,12 +32826,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LIBMAD_CFLAGS="$LIBMAD_CFLAGS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mad\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "mad") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libmad\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libmad") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBMAD_CFLAGS=`$PKG_CONFIG --cflags "mad" 2>/dev/null`
++  pkg_cv_LIBMAD_CFLAGS=`$PKG_CONFIG --cflags "libmad" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -32844,12 +32844,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LIBMAD_LIBS="$LIBMAD_LIBS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mad\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "mad") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libmad\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libmad") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBMAD_LIBS=`$PKG_CONFIG --libs "mad" 2>/dev/null`
++  pkg_cv_LIBMAD_LIBS=`$PKG_CONFIG --libs "libmad" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -32868,9 +32868,9 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        LIBMAD_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "mad"`
++	        LIBMAD_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "libmad"`
+         else
+-	        LIBMAD_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "mad"`
++	        LIBMAD_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libmad"`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LIBMAD_PKG_ERRORS" >&5
