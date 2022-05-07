@@ -1,5 +1,5 @@
 PORTNAME=	scalapackfx
-DISTVERSION=	1.0.2
+DISTVERSION=	1.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
