@@ -1,8 +1,7 @@
 # Created by: Javier Martin Rueda <jmrueda@diatel.upm.es>
 
 PORTNAME=	moodle
-PORTVERSION=	4.0
-PORTREVISION=	1
+PORTVERSION=	4.0.1
 CATEGORIES=	www education
 MASTER_SITES=	SF/moodle/Moodle/stable400/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
