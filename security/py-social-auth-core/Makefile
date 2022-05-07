@@ -1,5 +1,5 @@
 PORTNAME=	social-auth-core
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.0
 CATEGORIES=	security www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,8 @@ OPTIONS_DEFAULT=	OPENID SAML
 OPENID_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-jose>=3.0.0:security/py-python-jose@${PY_FLAVOR}
 OPENID_DESC?=	OpenID connect Support
 
-SAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python3-saml>=1.2.1:security/py-python3-saml@${PY_FLAVOR}
+SAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python3-saml>=1.2.1:security/py-python3-saml@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}lxml>=4.7:devel/py-lxml@${PY_FLAVOR}
 SAML_DESC?=	SAML Support
 
 do-test:
