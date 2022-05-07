@@ -1,5 +1,5 @@
 PORTNAME=	securesystemslib
-PORTVERSION=	0.22.0
+PORTVERSION=	0.23.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +17,9 @@ TEST_DEPENDS=	${LOCALBASE}/bin/gpg:security/gnupg
 
 USES=		python:3.7+ pytest
 USE_PYTHON=	autoplist distutils
-PYTEST_ARGS=	tests
 
 NO_ARCH=	yes
+
+PYTEST_ARGS=	tests
 
 .include <bsd.port.mk>
