@@ -1,8 +1,7 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 
 PORTNAME=	RSQLite
-PORTVERSION=	1.0.0
-PORTREVISION=	5
+PORTVERSION=	2.2.14
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,8 +10,15 @@ COMMENT=	Database Interface R driver for SQLite
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	R-cran-DBI>=0.2.5:databases/R-cran-DBI
-RUN_DEPENDS=	R-cran-DBI>=0.2.5:databases/R-cran-DBI
+CRAN_DEPENDS=	R-cran-DBI>=1.1.0:databases/R-cran-DBI \
+		R-cran-bit64>0:devel/R-cran-bit64 \
+		R-cran-blob>0:devel/R-cran-blob \
+		R-cran-memoise>0:devel/R-cran-memoise \
+		R-cran-Rcpp>0:devel/R-cran-Rcpp \
+		R-cran-pkgconfig>0:devel/R-cran-pkgconfig \
+		R-cran-plogr>0:devel/R-cran-plogr
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
 
