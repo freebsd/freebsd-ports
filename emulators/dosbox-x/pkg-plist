@@ -49,6 +49,7 @@ share/bash-completion/completions/dosbox-x
 %%DATADIR%%/translations/es_ES.lng
 %%DATADIR%%/translations/fr_FR.lng
 %%DATADIR%%/translations/ja_JP.lng
+%%DATADIR%%/translations/ko_KR.lng
 %%DATADIR%%/translations/pt_BR.lng
 %%DATADIR%%/translations/tr_TR.lng
 %%DATADIR%%/translations/zh_CN.lng
