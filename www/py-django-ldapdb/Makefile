@@ -1,9 +1,9 @@
 # Created by: Alexander Kriventsov <avk@vl.ru>
 
 PORTNAME=	django-ldapdb
-PORTVERSION=	1.4.0
+DISTVERSION=	1.5.1-7
+DISTVERSIONSUFFIX=	-gd3a0b20
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	avk@vl.ru
@@ -12,10 +12,11 @@ COMMENT=	LDAP database backend for Django
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ldap>=3.0:net/py-ldap@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.6+
+USE_GITHUB=	yes
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes
