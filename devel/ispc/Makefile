@@ -2,16 +2,8 @@
 
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.0
-PORTREVISION=	2
+DISTVERSION=	1.18.0
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	3fce3f7be9a118c47ed1756ffee9301e9a167ca4.patch:-p1 \
-		ef1873aa63b7b81e5e05b5c422919e82668df0a5.patch:-p1 \
-		23df305ed8d786d76b9996461e0a885d274aa031.patch:-p1 \
-		3a349e324ec7e1318efbb1c6bd56917cedf2c3a9.patch:-p1 \
-		e1ffe37ecef2e882aac9ee5676b8816ffd6fb1d9.patch:-p1 # https://github.com/ispc/ispc/pull/2258
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel's compiler for high-performance SIMD programming
@@ -28,17 +20,17 @@ LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_VERSION}
 
 USES=		bison cmake compiler:c++14-lang python:build,test shebangfix
 USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
+GH_TUPLE=	google:googletest:6a7ed31:googletest/ispcrt/tests/vendor/google/googletest
 
 SHEBANG_FILES=	*.py
 
-CONFIGURE_ENV=	PATH=${LOCALBASE}/llvm${LLVM_VERSION}/bin:${PATH}
-CMAKE_OFF=	ISPC_NO_DUMPS ISPC_INCLUDE_EXAMPLES
+CONFIGURE_ENV=	PATH=${LOCALBASE}/llvm${LLVM_VERSION}/bin:${PATH} # see https://github.com/ispc/ispc/issues/2318
+CMAKE_OFF=	ISPC_NO_DUMPS DISPCRT_BUILD_GPU ISPC_INCLUDE_TESTS ISPCRT_BUILD_TESTS ISPC_INCLUDE_EXAMPLES
+CMAKE_ARGS=	-DFREEBSD_LLVM_VERSION=${LLVM_VERSION} # see https://github.com/ispc/ispc/issues/2318
 
 BINARY_ALIAS=	flex=${LOCALBASE}/bin/flex python=${PYTHON_CMD} m4=${LOCALBASE}/bin/gm4
-
-PLIST_FILES=	bin/ispc \
-		bin/check_isa
 
 OPTIONS_DEFINE_amd64=	ARM XE
 OPTIONS_DEFINE_i386=	ARM
