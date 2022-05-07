@@ -90,6 +90,7 @@
     SUBDIR += R-cran-ltm
     SUBDIR += R-cran-magic
     SUBDIR += R-cran-maps
+    SUBDIR += R-cran-mathjaxr
     SUBDIR += R-cran-matrixStats
     SUBDIR += R-cran-maxLik
     SUBDIR += R-cran-mclust
