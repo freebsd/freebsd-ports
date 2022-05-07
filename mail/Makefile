@@ -94,6 +94,7 @@
     SUBDIR += dma
     SUBDIR += dot-forward
     SUBDIR += dovecot
+    SUBDIR += dovecot-coi
     SUBDIR += dovecot-fts-elastic
     SUBDIR += dovecot-fts-flatcurve
     SUBDIR += dovecot-fts-xapian
