@@ -55,6 +55,7 @@ include/trezor-crypto/segwit_addr.h
 include/trezor-crypto/sha2.h
 include/trezor-crypto/sha3.h
 lib/libbtc.a
+lib/libbtc.la
 lib/libbtc.so
 lib/libbtc.so.0
 lib/libbtc.so.0.0.0
