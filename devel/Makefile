@@ -22,6 +22,7 @@
     SUBDIR += R-cran-brio
     SUBDIR += R-cran-broom
     SUBDIR += R-cran-caTools
+    SUBDIR += R-cran-checkmate
     SUBDIR += R-cran-callr
     SUBDIR += R-cran-caret
     SUBDIR += R-cran-chron
