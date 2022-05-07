@@ -1,7 +1,7 @@
 # Created by: Carlos J Puga Medina <cpm@fbsd.es>
 
 PORTNAME=	dnsdist
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.1
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 
@@ -25,9 +25,8 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 
 USES=		bison:alias compiler:c++14-lang cpe gmake libedit libtool \
 		localbase pkgconfig tar:bz2
-USE_RC_SUBR=	dnsdist
-
 CPE_VENDOR=	powerdns
+USE_RC_SUBR=	dnsdist
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
