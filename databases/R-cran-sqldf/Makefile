@@ -1,8 +1,7 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 
 PORTNAME=	sqldf
-DISTVERSION=	0.4-7.1
-PORTREVISION=	5
+DISTVERSION=	0.4-11
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,13 +10,13 @@ COMMENT=	SQL select on R data frames
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	R-cran-proto>=0.3.9.2_6:devel/R-cran-proto \
+CRAN_DEPENDS=	R-cran-proto>=0.3.9.2_6:devel/R-cran-proto \
 		R-cran-chron>=2.3.42:devel/R-cran-chron \
 		R-cran-gsubfn>=0.6.4:devel/R-cran-gsubfn \
-		R-cran-DBI>=0.2.5_6:databases/R-cran-DBI \
-		R-cran-RSQLite>=0.11.1:databases/R-cran-RSQLite \
-		R-cran-RSQLite.extfuns>=0.0.1:databases/R-cran-RSQLite.extfuns
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+		R-cran-DBI>=1.1.0:databases/R-cran-DBI \
+		R-cran-RSQLite>=2.2.14:databases/R-cran-RSQLite
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist
 
