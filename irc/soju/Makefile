@@ -1,7 +1,7 @@
 PORTNAME=	soju
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	https://git.sr.ht/~emersion/go-scfg/archive/:goscfg \
 		https://git.sr.ht/~sircmpwn/go-bare/archive/:gobare
@@ -14,7 +14,7 @@ COMMENT=	IRC bouncer
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:modules sqlite:3
 
 OPTIONS_DEFAULT=	DOCS
 OPTIONS_DEFINE=		DOCS
@@ -45,6 +45,8 @@ GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 
 GO_BARE_REV=	ab86bc2846d9
 GO_SCFG_REV=	c2c7a15d6c99
+GO_BUILDFLAGS+=	-tags=libsqlite3
+CGO_LDFLAGS+=	-lsqlite3
 GO_PKGNAME=	./cmd/soju ./cmd/sojuctl ./contrib/znc-import.go
 PLIST_FILES=	bin/soju \
 		bin/sojuctl \
