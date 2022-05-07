@@ -1,5 +1,5 @@
-TIMESTAMP = 1650680366
-SHA256 (go/editors_o/o-v2.50.0/v2.50.0.mod) = 9eaa0822e044666557381dcea208c8811a5c97896d6b97e8515ff1e20dce2099
-SIZE (go/editors_o/o-v2.50.0/v2.50.0.mod) = 992
-SHA256 (go/editors_o/o-v2.50.0/v2.50.0.zip) = ee441608522f7bf9a970c4b3b41dee1dcd398a246aae345fe39e36d117323ff8
-SIZE (go/editors_o/o-v2.50.0/v2.50.0.zip) = 179917
+TIMESTAMP = 1651895477
+SHA256 (go/editors_o/o-v2.51.0/v2.51.0.mod) = a9a9301d9a9f39b6e15e402f183c834de718b091749dfd9fba79fb6812922279
+SIZE (go/editors_o/o-v2.51.0/v2.51.0.mod) = 1062
+SHA256 (go/editors_o/o-v2.51.0/v2.51.0.zip) = 3e8b50ae34bf142454f926e29e8aa0e75085c1d6ce7d0d080df6f69a5001ecea
+SIZE (go/editors_o/o-v2.51.0/v2.51.0.zip) = 185851
