@@ -1,3 +1,3 @@
-TIMESTAMP = 1639772490
-SHA256 (avrdude-6.4.tar.gz) = a9be7066f70a9dcf4bf0736fcf531db6a3250aed1a24cc643add27641b7110f9
-SIZE (avrdude-6.4.tar.gz) = 986871
+TIMESTAMP = 1651959624
+SHA256 (avrdudes-avrdude-7.0-v7.0_GH0.tar.gz) = 302c6a5fbda1f4a046ef0c5d78b3612821bd9b43b7bf656dc96ec66e6793361e
+SIZE (avrdudes-avrdude-7.0-v7.0_GH0.tar.gz) = 2354106
