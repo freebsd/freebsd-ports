@@ -1,5 +1,5 @@
 PORTNAME=	fastapi-users
-PORTVERSION=	9.3.1
+PORTVERSION=	10.0.2
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.0:security/py-bcrypt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}email-validator>=1.1.0,<1.2:mail/py-email-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}email-validator>=1.1.0,<1.3:mail/py-email-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>=0.65.2,<0.80.0:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}makefun>=1.11.2,<1.14:devel/py-makefun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>=0:security/py-passlib@${PY_FLAVOR} \
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.0:security/py-bcrypt@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.5:www/py-python-multipart@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asynctest>=0:devel/py-asynctest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx-oauth>=0:www/py-httpx-oauth@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ormar>=0.9.5,<0.11.0:databases/py-ormar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ormar>=0.9.5,<0.12.0:databases/py-ormar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymongo>=0:databases/pymongo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
@@ -44,7 +44,7 @@ ORMAR_DESC=		Support for SQL database through Ormar
 SQLALCHEMY_DESC=	Support for SQL database through SQLAlchemy
 
 OAUTH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx-oauth>=0.3,<0.4:www/py-httpx-oauth@${PY_FLAVOR}
-ORMAR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ormar>=0.9.5,<0.11.0:databases/py-ormar@${PY_FLAVOR}
+ORMAR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ormar>=0.9.5,<0.12.0:databases/py-ormar@${PY_FLAVOR}
 SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}databases>=0.3.0,<0.5:databases/py-databases@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4.0:databases/py-sqlalchemy14@${PY_FLAVOR}
 
