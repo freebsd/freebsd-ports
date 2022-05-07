@@ -19,6 +19,7 @@ include/mpifx/modfiles/mpifx_reduce_module.mod
 include/mpifx/modfiles/mpifx_scatter_module.mod
 include/mpifx/modfiles/mpifx_scatterv_module.mod
 include/mpifx/modfiles/mpifx_send_module.mod
+include/mpifx/modfiles/mpifx_win_module.mod
 lib/cmake/mpifx/mpifx-config-version.cmake
 lib/cmake/mpifx/mpifx-config.cmake
 lib/cmake/mpifx/mpifx-targets-%%CMAKE_BUILD_TYPE%%.cmake

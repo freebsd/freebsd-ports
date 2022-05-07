@@ -1,5 +1,5 @@
 PORTNAME=	mpifx
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,5 +29,7 @@ post-test: # run test programs # at least one test crashes, see https://github.c
 # workaround for Type mismatch in argument 'cc' at (1); passed COMPLEX(8) to REAL(8)
 FFLAGS+=	-fallow-argument-mismatch
 .endif
+
+# tests fail to build: https://github.com/dftbplus/mpifx/issues/43
 
 .include <bsd.port.post.mk>
