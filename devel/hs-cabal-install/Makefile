@@ -1,7 +1,5 @@
 PORTNAME=	cabal-install
-DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	3.4.0.0
-PORTREVISION=	4
+PORTVERSION=	3.6.2.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,28 +14,29 @@ USES=		cabal:nodefault compiler:c11 python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	haskell
 GH_PROJECT=	cabal
+GH_TAGNAME=	${PORTNAME}-v${PORTVERSION}
 
-USE_CABAL=	async-2.2.2_1 \
-		base16-bytestring-0.1.1.7 \
-		base64-bytestring-1.1.0.0 \
-		cryptohash-sha256-0.11.101.0_4 \
-		digest-0.0.1.2 \
-		echo-0.1.3_1 \
-		ed25519-0.0.5.0_3 \
+USE_CABAL=	async-2.2.4 \
+		base16-bytestring-1.0.2.0 \
+		base64-bytestring-1.2.1.0 \
+		cryptohash-sha256-0.11.102.1 \
+		echo-0.1.4 \
+		ed25519-0.0.5.0_5 \
 		edit-distance-0.2.2.1_1 \
-		hackage-security-0.6.0.1_2 \
-		hashable-1.3.0.0_1 \
-		HTTP-4000.3.14_1 \
-		lukko-0.1.1.2 \
-		network-3.1.1.1 \
-		network-uri-2.6.3.0 \
-		random-1.2.0 \
-		regex-base-0.94.0.0_1 \
-		regex-posix-0.96.0.0_2 \
-		resolv-0.1.2.0 \
-		splitmix-0.1 \
-		tar-0.5.1.1_2 \
-		zlib-0.6.2.1_1
+		hackage-security-0.6.1.0 \
+		hashable-1.3.3.0 \
+		HTTP-4000.3.16_1 \
+		lukko-0.1.1.3_2 \
+		network-3.1.2.2 \
+		network-uri-2.6.4.1 \
+		random-1.2.1 \
+		regex-base-0.94.0.1_1 \
+		regex-posix-0.96.0.1 \
+		resolv-0.1.2.0_4 \
+		splitmix-0.1.0.4 \
+		tar-0.5.1.1_5 \
+		th-compat-0.1.3 \
+		zlib-0.6.2.3_1
 
 CABAL_BOOTSTRAP=	yes
 
@@ -58,7 +57,7 @@ post-extract:
 
 do-build:
 	cd ${WRKSRC} && \
-		${PYTHON_CMD} bootstrap/bootstrap.py -d bootstrap/linux-8.10.1.json
+		${PYTHON_CMD} bootstrap/bootstrap.py -d bootstrap/linux-8.10.7.json
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/_build/bin/cabal ${STAGEDIR}${PREFIX}/bin/
