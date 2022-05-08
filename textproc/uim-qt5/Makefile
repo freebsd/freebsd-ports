@@ -1,11 +1,6 @@
-PORTREVISION=	1
 PKGNAMESUFFIX=	-qt5
 
 COMMENT=	Qt5 modules of uim input method
-
-LICENSE=	BSD3CLAUSE GPLv2+ GPLv3+ LGPL21+ PD
-LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	cmake:devel/cmake
 LIB_DEPENDS=	libuim.so:textproc/uim
@@ -35,6 +30,6 @@ do-build:
 	(cd ${WRKSRC}/qt5 && ${SETENV} ${MAKE_ENV} ${MAKE_CMD})
 
 do-install:
-	(cd ${WRKSRC}/qt5 && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/qt5 && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip)
 
 .include "${MASTERDIR}/Makefile"

@@ -16,7 +16,8 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30
 LIB_DEPENDS=	libanthy.so:japanese/anthy \
 		libfreetype.so:print/freetype2 \
 		libuim.so:textproc/uim \
-		libfontconfig.so:x11-fonts/fontconfig
+		libfontconfig.so:x11-fonts/fontconfig \
+		libharfbuzz.so:print/harfbuzz
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
@@ -37,10 +38,10 @@ do-build:
 
 do-install:
 	(cd ${WRKSRC}/uim && \
-	${MAKE_CMD} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-anthy.la install-uim_pluginLTLIBRARIES && \
-	${MAKE_CMD} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-anthy-utf8.la install-uim_pluginLTLIBRARIES)
+	${MAKE_CMD} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-anthy.la INSTALL_STRIP_FLAG=-s install-uim_pluginLTLIBRARIES && \
+	${MAKE_CMD} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-anthy-utf8.la INSTALL_STRIP_FLAG=-s install-uim_pluginLTLIBRARIES)
 .if !defined(WITHOUT_X11)
-	(cd ${WRKSRC}/gtk3/dict && ${MAKE_CMD} DESTDIR=${STAGEDIR} bin_PROGRAMS=uim-dict-gtk3 install-binPROGRAMS install-uim_dict_uiDATA)
+	(cd ${WRKSRC}/gtk3/dict && ${MAKE_CMD} DESTDIR=${STAGEDIR} bin_PROGRAMS=uim-dict-gtk3 INSTALL_STRIP_FLAG=-s install-binPROGRAMS install-uim_dict_uiDATA)
 .endif
 
 .include "${MASTERDIR}/Makefile"

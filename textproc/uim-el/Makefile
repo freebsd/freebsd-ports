@@ -1,11 +1,9 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
 
 PORTNAME=	uim-el
-PORTVERSION=	1.8.9.b.20210104
-PORTREVISION=	3
+PORTVERSION=	1.8.9.b.${SNAPDATE}
 CATEGORIES=	textproc
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
-#DISTNAME=	uim-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Emacs lisp for uim input method library
@@ -23,7 +21,9 @@ USE_PERL5=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	uim
 GH_PROJECT=	uim
-GH_TAGNAME=	d1ac9d9
+GH_TAGNAME=	6d8fcc8
+
+SNAPDATE=	20220318
 
 GNU_CONFIGURE=	yes
 

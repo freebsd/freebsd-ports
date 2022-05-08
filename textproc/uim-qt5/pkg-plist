@@ -6,6 +6,7 @@ bin/uim-toolbar-qt5
 %%QT_QMLDIR%%/com/github/uim/qmldir
 %%QT_PLUGINDIR%%/platforminputcontexts/libuimplatforminputcontextplugin.so
 libexec/uim-candwin-qt5
+share/kservices5/plasma-applet-com.github.uim.status.desktop
 share/metainfo/com.github.uim.status.appdata.xml
 share/plasma/plasmoids/com.github.uim.status/contents/ui/main.qml
 share/plasma/plasmoids/com.github.uim.status/contents/ui/messageProcessor.js

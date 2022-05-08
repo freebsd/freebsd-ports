@@ -7,7 +7,8 @@ COMMENT=	GTK+ modules of uim input method
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 LIB_DEPENDS=	libuim.so:textproc/uim \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
@@ -24,6 +25,6 @@ do-build:
 	(cd ${WRKSRC}/gtk2 && ${MAKE_CMD})
 
 do-install:
-	(cd ${WRKSRC}/gtk2 && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk2 && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip)
 
 .include "${MASTERDIR}/Makefile"

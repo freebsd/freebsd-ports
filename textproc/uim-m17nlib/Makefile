@@ -28,7 +28,7 @@ do-build:
 
 do-install:
 	(cd ${WRKSRC}/uim && \
-	${MAKE_CMD} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-m17nlib.la install-uim_pluginLTLIBRARIES && \
+	${MAKE_CMD} DESTDIR=${STAGEDIR} uim_plugin_LTLIBRARIES=libuim-m17nlib.la INSTALL_STRIP_FLAG=-s install-uim_pluginLTLIBRARIES && \
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/uim/pixmaps && \
 	DESTDIR="${STAGEDIR}" ${SH} ../pixmaps/uim-m17nlib-relink-icons)
 

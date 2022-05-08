@@ -5,7 +5,8 @@ PKGNAMESUFFIX=	-gtk3
 COMMENT=	GTK+ 3.x modules of uim input method
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30
-LIB_DEPENDS=	libuim.so:textproc/uim
+LIB_DEPENDS=	libuim.so:textproc/uim \
+		libharfbuzz.so:print/harfbuzz
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
@@ -26,10 +27,10 @@ do-build:
 	(cd ${WRKSRC}/gtk3/toolbar && ${MAKE_CMD})
 
 do-install:
-	(cd ${WRKSRC}/gtk3/immodule && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
-	(cd ${WRKSRC}/gtk3/pad && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
-	(cd ${WRKSRC}/gtk3/pref && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
-	(cd ${WRKSRC}/gtk3/switcher && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
-	(cd ${WRKSRC}/gtk3/toolbar && ${MAKE_CMD} DESTDIR=${STAGEDIR} install)
+	(cd ${WRKSRC}/gtk3/immodule && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip)
+	(cd ${WRKSRC}/gtk3/pad && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip)
+	(cd ${WRKSRC}/gtk3/pref && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip)
+	(cd ${WRKSRC}/gtk3/switcher && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip)
+	(cd ${WRKSRC}/gtk3/toolbar && ${MAKE_CMD} DESTDIR=${STAGEDIR} install-strip)
 
 .include "${MASTERDIR}/Makefile"

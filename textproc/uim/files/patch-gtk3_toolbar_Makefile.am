@@ -1,4 +1,4 @@
---- gtk3/toolbar/Makefile.am.orig	2021-04-30 15:03:44 UTC
+--- gtk3/toolbar/Makefile.am.orig	2022-05-04 18:55:24 UTC
 +++ gtk3/toolbar/Makefile.am
 @@ -11,9 +11,7 @@ xmluidir = $(pkgdatadir)/ui
  xmlui_DATA = uim-applet-menu.xml
@@ -11,7 +11,7 @@
  libuim_toolbar_applet_gnome3_la_CPPFLAGS = \
  			   -DUIM_UIDATADIR="\"${xmluidir}\"" \
  			   $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
-@@ -48,9 +46,7 @@ if GTK3
+@@ -52,9 +50,7 @@ if GTK3
  bin_PROGRAMS = uim-toolbar-gtk3 uim-toolbar-gtk3-systray
  uim_toolbar_gtk3_SOURCES  = ../../gtk2/toolbar/standalone-gtk.c \
  			       ../../gtk2/toolbar/common-gtk.c
@@ -22,7 +22,7 @@
  uim_toolbar_gtk3_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)
  uim_toolbar_gtk3_CFLAGS   = @GTK3_CFLAGS@
  
-@@ -60,9 +56,7 @@ uim_toolbar_gtk3_systray_SOURCES  = ../../gtk2/toolbar
+@@ -64,9 +60,7 @@ uim_toolbar_gtk3_systray_SOURCES  = ../../gtk2/toolbar
  				   ../../gtk2/toolbar/eggtrayicon.h
  uim_toolbar_gtk3_systray_LDADD    = @GTK3_LIBS@ \
  				   @X11_LIBS@ \
