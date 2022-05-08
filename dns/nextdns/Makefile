@@ -1,6 +1,6 @@
 PORTNAME=	nextdns
-PORTVERSION=	1.37.7
-PORTREVISION=	1
+PORTVERSION=	1.37.11
+DISTVERSIONPREFIX=	v
 CATEGORIES=	dns security
 
 MAINTAINER=	rs@nextdns.io
@@ -13,7 +13,6 @@ RUN_DEPENDS=	ca_root_nss>=3.35:security/ca_root_nss
 
 USES=		go:modules
 USE_GITHUB=	yes
-GH_TAGNAME=	v1.37.7
 GH_TUPLE=	\
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
