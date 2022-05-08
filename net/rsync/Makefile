@@ -2,6 +2,7 @@
 
 PORTNAME=	rsync
 DISTVERSION=	3.2.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
 		http://rsync.mirror.garr.it/src/ \
@@ -20,6 +21,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
 
 USES=		cpe python shebangfix ssl
+PYTHON_NO_DEPENDS=	yes
 CPE_VENDOR=	samba
 CPE_PRODUCT=	rsync
 USE_RC_SUBR=	rsyncd
@@ -88,14 +90,16 @@ CONFIGURE_ARGS+=	ac_cv_search_libiconv_open=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:/etc/:${ETCDIR}/:g' \
-		${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
+	@${REINPLACE_CMD} -e 's:/etc/r{1,2}sync:${ETCDIR}/:g' \
+					  -e 's:/etc/letsencrypt:${PREFIX}/etc/letsencrypt:g' \
+					  ${WRKSRC}/rsync.1 ${WRKSRC}/rsyncd.conf.5
 	@${REINPLACE_CMD} -e 's|/usr/bin/rsync|${PREFIX}/bin/rsync|g' ${WRKSRC}/support/rrsync
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${STAGEDIR}${ETCDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/support/rrsync ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/rrsync.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
