@@ -1,8 +1,7 @@
 # Created by: Ilya Bakulin <webmaster@kibab.com>
 
 PORTNAME=	wpa_supplicant_gui
-DISTVERSION=	2.9
-PORTREVISION=	2
+DISTVERSION=	2.10
 CATEGORIES=	net
 MASTER_SITES=	https://w1.fi/releases/ \
 		LOCAL/yuri/net/wpa_supplicant_gui/:icons
