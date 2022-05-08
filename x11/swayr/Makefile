@@ -1,7 +1,7 @@
 PORTNAME=	swayr
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	0.17.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~tsdh/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
@@ -107,6 +107,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share,${DATADIR:H},' \
 		-e 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/src/config.rs \
+		${WRKSRC}/src/shared/cfg.rs \
 		${WRKSRC}/src/util.rs
 
 .include <bsd.port.mk>
