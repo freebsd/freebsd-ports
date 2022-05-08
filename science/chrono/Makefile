@@ -13,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	use of overloaded operator '[]' is ambiguous (with operand types 'chrono::quaternion' and 'int'): https://github.com/projectchrono/chrono/issues/158
+BROKEN_aarch64=	cannot find -lFALSE, see https://github.com/projectchrono/chrono/issues/389
 
 BUILD_DEPENDS=	openmpi>0:net/openmpi
 LIB_DEPENDS=	libblas.so:math/blas \
