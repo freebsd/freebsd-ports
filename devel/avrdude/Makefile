@@ -2,6 +2,7 @@
 
 PORTNAME=	avrdude
 PORTVERSION=	7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	joerg@FreeBSD.org
