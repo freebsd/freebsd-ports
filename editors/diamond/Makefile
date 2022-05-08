@@ -1,6 +1,6 @@
 PORTNAME=	diamond
 DISTVERSION=	1.3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	https://download.copperspice.com/${PORTNAME}/source/
 PKGNAMESUFFIX=	-cs
@@ -32,6 +32,6 @@ USE_XORG=	ice sm x11 xau xcb xcursor xext xfixes xi xinerama xrandr xrender
 # GH_PROJECT=	diamond
 #
 NO_WRKSUBDIR=	yes
-DOS2UNIX_FILES=	CMakeLists.txt src/CMakeLists.txt src/json.cpp src/recent_tabs.cpp
+DOS2UNIX_FILES=	CMakeLists.txt src/CMakeLists.txt src/dialog_macro.cpp src/json.cpp src/recent_tabs.cpp
 
 .include <bsd.port.mk>
