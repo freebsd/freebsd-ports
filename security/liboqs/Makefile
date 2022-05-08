@@ -10,6 +10,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	Unknown or unsupported processor: i386
 BROKEN_powerpc=	Unknown or unsupported processor: powerpc
+BROKEN_aarch64=	fatal error: 'asm/hwcap.h' file not found, see https://github.com/open-quantum-safe/liboqs/issues/1208
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>0:devel/py-pytest4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
