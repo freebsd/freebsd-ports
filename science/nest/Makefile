@@ -1,6 +1,6 @@
 PORTNAME=	nest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2
+DISTVERSION=	3.3
 CATEGORIES=	science biology # NEST is used in neuroscience
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libltdl.so:devel/libltdl
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake:testing ncurses pkgconfig python readline shebangfix
+USES=		cmake:testing compiler:c++11-lang ncurses pkgconfig python readline shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

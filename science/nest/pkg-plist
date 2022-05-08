@@ -55,6 +55,9 @@ include/nest/callbackdatum.h
 include/nest/charcode.h
 include/nest/clopath_archiving_node.h
 include/nest/clopath_synapse.h
+include/nest/cm_compartmentcurrents.h
+include/nest/cm_default.h
+include/nest/cm_tree.h
 include/nest/common_properties_hom_w.h
 include/nest/common_synapse_properties.h
 include/nest/compose.hpp
@@ -532,6 +535,7 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/pytests/mpi/2/test_spatial_positions.py
 %%DATADIR%%/testsuite/pytests/mpi/2/test_synapsecollection_mpi.py
 %%DATADIR%%/testsuite/pytests/mpi/4/test_consistent_local_vps.py
+%%DATADIR%%/testsuite/pytests/mpi/4/test_set_status_resolution_nthreads.py
 %%DATADIR%%/testsuite/pytests/mpi/4/test_spatial_positions.py
 %%DATADIR%%/testsuite/pytests/mpi/README.md
 %%DATADIR%%/testsuite/pytests/test_NodeCollection.py
@@ -539,6 +543,7 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/pytests/test_aeif_lsodar.py
 %%DATADIR%%/testsuite/pytests/test_changing_tic_base.py
 %%DATADIR%%/testsuite/pytests/test_clopath_synapse.py
+%%DATADIR%%/testsuite/pytests/test_compartmental_model.py
 %%DATADIR%%/testsuite/pytests/test_connect_all_to_all.py
 %%DATADIR%%/testsuite/pytests/test_connect_array_fixed_indegree.py
 %%DATADIR%%/testsuite/pytests/test_connect_array_fixed_outdegree.py
@@ -669,11 +674,9 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/regressiontests/ticket-235.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-293.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-310.sli
-%%DATADIR%%/testsuite/regressiontests/ticket-333.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-349.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-382.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-386.sli
-%%DATADIR%%/testsuite/regressiontests/ticket-396.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-414.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-421.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-433.sli
@@ -698,7 +701,6 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/regressiontests/ticket-643.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-673.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-681.sli
-%%DATADIR%%/testsuite/regressiontests/ticket-683.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-686-positive-parameters.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-689.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-692-getconnections-args.sli
