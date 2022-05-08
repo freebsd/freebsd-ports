@@ -9,6 +9,8 @@ COMMENT=	Modular library for visual tracking and visual servoing
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_aarch64=	fatal error: 'asm/hwcap.h' file not found, see https://github.com/lagadic/visp/issues/1059
+
 LIB_DEPENDS=	libblas.so:math/blas \
 		libboost_system.so:devel/boost-libs \
 		libdmtx.so:graphics/libdmtx \
