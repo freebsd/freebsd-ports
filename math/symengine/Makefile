@@ -1,6 +1,7 @@
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -75,7 +76,7 @@ PIRANHA_DESC=		piranha
 PIRANHA_CMAKE_ON=	-DINTEGER_CLASS:STRING=piranha
 PIRANHA_BUILD_DEPENDS=	piranha>0:math/piranha
 
-LLVM_VERSION=	${LLVM_DEFAULT}
+LLVM_VERSION=	13 # ${LLVM_DEFAULT} - llvm-90 fails for some reason
 
 do-test: # one test fails: https://github.com/symengine/symengine/issues/1697
 	@cd ${BUILD_WRKSRC} && \
