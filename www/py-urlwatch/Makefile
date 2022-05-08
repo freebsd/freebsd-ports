@@ -17,8 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}minidb>=2.0.6:databases/py-minidb@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}keyring>0:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cssselect>0:www/py-cssselect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdftotext>0:textproc/py-pdftotext@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycodestyle>0:devel/py-pycodestyle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jq>0:textproc/py-jq@${PY_FLAVOR} \
@@ -26,7 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytesseract>0:graphics/py-pytesseract@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		pytest python:3.6+
 USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist concurrent distutils
 
@@ -51,8 +50,5 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 		${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 		cd ${WRKSRC}/share/urlwatch/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
-
-do-test:
-		cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v
 
 .include <bsd.port.mk>
