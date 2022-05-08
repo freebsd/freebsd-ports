@@ -1,8 +1,7 @@
 # Created by: Yuri Victorovich <yuri@FreeBSD.org>
 
 PORTNAME=	SCIP
-DISTVERSION=	7.0.3
-PORTREVISION=	2
+DISTVERSION=	8.0.0
 CATEGORIES=	math science
 MASTER_SITES=	https://www.scipopt.org/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -17,6 +16,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 EXTRACT_DEPENDS=	gtar:archivers/gtar
 LIB_DEPENDS=	libgmp.so:math/gmp \
+		libmpfr.so:math/mpfr \
 		libsoplex.so:math/SoPlex
 
 USES=		compiler:c11 cmake readline tar:tgz
