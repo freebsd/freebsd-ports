@@ -1,11 +1,12 @@
 PORTNAME=	activejob
 PORTVERSION=	7.0.2.4
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	70
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	
+COMMENT=	Job class declarations for a variety of queueing backends
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
