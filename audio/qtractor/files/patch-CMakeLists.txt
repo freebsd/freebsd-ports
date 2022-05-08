@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-05-08 05:23:35 UTC
++++ CMakeLists.txt
+@@ -378,7 +378,7 @@ endif ()
+ 
+ # Check for MAD libraries.
+ if (CONFIG_LIBMAD)
+-  pkg_check_modules (MAD IMPORTED_TARGET mad)
++  pkg_check_modules (MAD IMPORTED_TARGET libmad)
+   if (NOT MAD_FOUND)
+     message (WARNING "*** MAD library not found.")
+     set (CONFIG_LIBMAD 0)
