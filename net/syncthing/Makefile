@@ -1,7 +1,6 @@
 PORTNAME=	syncthing
-PORTVERSION=	1.19.1
+PORTVERSION=	1.20.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/syncthing/syncthing/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-source-${DISTVERSIONPREFIX}${PORTVERSION}
@@ -13,7 +12,7 @@ COMMENT=	Encrypted file sync tool
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE
 
-USES=		cpe go
+USES=		cpe go:modules
 
 USE_RC_SUBR=	syncthing syncthing-discosrv syncthing-relaysrv syncthing-relaypoolsrv
 
@@ -37,10 +36,10 @@ NO_WRKSUBDIR=	yes
 
 do-build:
 	@( cd ${WRKSRC}/${PORTNAME} ; \
-		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOFLAGS="-mod=vendor" go run build.go -version v${PORTVERSION} -no-upgrade build ; \
-		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOFLAGS="-mod=vendor" go run build.go -version v${PORTVERSION} -no-upgrade build stdiscosrv ; \
-		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOFLAGS="-mod=vendor" go run build.go -version v${PORTVERSION} -no-upgrade build strelaysrv ; \
-		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOFLAGS="-mod=vendor" go run build.go -version v${PORTVERSION} -no-upgrade build strelaypoolsrv ; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${PORTVERSION} -no-upgrade build ; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${PORTVERSION} -no-upgrade build stdiscosrv; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${PORTVERSION} -no-upgrade build strelaysrv; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${PORTVERSION} -no-upgrade build strelaypoolsrv; \
 		)
 
 do-install:
