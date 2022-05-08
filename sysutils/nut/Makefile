@@ -2,7 +2,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 
@@ -116,6 +116,7 @@ NSS_CONFIGURE_WITH=	nss
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i '' -e 's|/usr/bin/env python|${PYTHON_CMD}|'
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i '' -e 's|/usr/local/ups|${PREFIX}|'
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nut

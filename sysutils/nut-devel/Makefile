@@ -2,7 +2,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	${NUT_COMMIT_DATE}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 # MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
@@ -131,6 +131,7 @@ NSS_CONFIGURE_WITH=	nss
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/autogen.sh
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i '' -e 's|/usr/bin/env python|${PYTHON_CMD}|'
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -i '' -e 's|/usr/local/ups|${PREFIX}|'
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
