@@ -12,6 +12,6 @@ LICENSE=	GPLv3+
 
 RUN_DEPENDS=	R-cran-misc3d>0:math/R-cran-misc3d
 
-USES=		cran
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
