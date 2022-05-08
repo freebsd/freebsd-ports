@@ -10,6 +10,8 @@ COMMENT=	Rapid fuzzy string matching in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	An error occurred while building with CMake. https://github.com/maxbachmann/RapidFuzz/issues/215
+
 BUILD_DEPENDS=	cmake:devel/cmake \
 		ninja:devel/ninja \
 		jarowinkler-cpp>0:textproc/jarowinkler-cpp \
