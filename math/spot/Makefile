@@ -15,6 +15,8 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-python --disable-static
 
+CXXFLAGS+=	-Drestrict= # fix build problem on 13.0, 12.3 and earlier systems because clang-11 and earlier don't understand the restrict keyword
+
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
