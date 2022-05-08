@@ -20,4 +20,6 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 
+PORTSCOUT=	ignore:1 # tags are bogus
+
 .include <bsd.port.mk>
