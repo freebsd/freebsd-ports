@@ -10,6 +10,9 @@ COMMENT=	Single Sign On server, multiple factor authentication
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	duplicate symbol: global_handler_close_cond
+BROKEN_FreeBSD_14=	duplicate symbol: global_handler_close_cond
+
 USES=		cmake pgsql
 
 USE_GITHUB=	yes
