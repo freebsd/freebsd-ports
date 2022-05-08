@@ -52,7 +52,7 @@ LDFLAGS+=	-lexecinfo
 
 BINARY_ALIAS=	python=${PYTHON_CMD} # git=false
 
-PORTSCOUT=	limit:^\d+\. # prevent alpha-numeric strings
+PORTSCOUT=	ignore:1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr/share/Surge/"|"${DATADIR}/"|' ${WRKSRC}/src/common/SurgeStorage.cpp
