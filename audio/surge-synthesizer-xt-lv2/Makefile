@@ -58,4 +58,6 @@ GH_TUPLE=	surge-synthesizer:tuning-library:bdb107f58ea22720bfa2a6d7a910fc77e69d7
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
+PORTSCOUT=	ignore:1 # conflicts with old-gen audio/surge-synthesizer-lv2
+
 .include <bsd.port.mk>
