@@ -29,7 +29,6 @@ share/mime/packages/siril.xml
 %%DATADIR%%/pixmaps/astrometry.svg
 %%DATADIR%%/pixmaps/astrometry_dark.svg
 %%DATADIR%%/pixmaps/b.svg
-%%DATADIR%%/pixmaps/chain.svg
 %%DATADIR%%/pixmaps/cm.svg
 %%DATADIR%%/pixmaps/curve.svg
 %%DATADIR%%/pixmaps/export.svg
@@ -47,6 +46,8 @@ share/mime/packages/siril.xml
 %%DATADIR%%/pixmaps/mtf.svg
 %%DATADIR%%/pixmaps/mtf_dark.svg
 %%DATADIR%%/pixmaps/neg.svg
+%%DATADIR%%/pixmaps/photometry.svg
+%%DATADIR%%/pixmaps/photometry_dark.svg
 %%DATADIR%%/pixmaps/r.svg
 %%DATADIR%%/pixmaps/rotate-acw.svg
 %%DATADIR%%/pixmaps/rotate-acw_dark.svg
@@ -57,6 +58,10 @@ share/mime/packages/siril.xml
 %%DATADIR%%/pixmaps/starfinder_dark.svg
 %%DATADIR%%/pixmaps/sum.svg
 %%DATADIR%%/pixmaps/sum_dark.svg
+%%DATADIR%%/pixmaps/tilt.svg
+%%DATADIR%%/pixmaps/tilt_dark.svg
+%%DATADIR%%/pixmaps/wcs-grid.svg
+%%DATADIR%%/pixmaps/wcs-grid_dark.svg
 %%DATADIR%%/scripts/Mono_Preprocessing.ssf
 %%DATADIR%%/scripts/OSC_Extract_Ha.ssf
 %%DATADIR%%/scripts/OSC_Extract_HaOIII.ssf
