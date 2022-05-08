@@ -2,7 +2,6 @@ bin/openmc
 include/faddeeva/Faddeeva.cc
 include/faddeeva/Faddeeva.hh
 include/gsl-lite/gsl-lite.hpp
-include/gsl/gsl
 include/gsl/gsl-lite.hpp
 include/openmc/angle_energy.h
 include/openmc/array.h
@@ -25,6 +24,7 @@ include/openmc/eigenvalue.h
 include/openmc/endf.h
 include/openmc/error.h
 include/openmc/event.h
+include/openmc/external/quartic_solver.h
 include/openmc/file_utils.h
 include/openmc/finalize.h
 include/openmc/geometry.h
@@ -95,6 +95,7 @@ include/openmc/tallies/filter_polar.h
 include/openmc/tallies/filter_sph_harm.h
 include/openmc/tallies/filter_sptl_legendre.h
 include/openmc/tallies/filter_surface.h
+include/openmc/tallies/filter_time.h
 include/openmc/tallies/filter_universe.h
 include/openmc/tallies/filter_zernike.h
 include/openmc/tallies/tally.h
@@ -108,6 +109,7 @@ include/openmc/vector.h
 include/openmc/version.h
 include/openmc/version.h.in
 include/openmc/volume_calc.h
+include/openmc/weight_windows.h
 include/openmc/wmp.h
 include/openmc/xml_interface.h
 include/openmc/xsdata.h
