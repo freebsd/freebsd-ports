@@ -2,5 +2,5 @@ include/yder-cfg.h
 include/yder.h
 lib/libyder.so
 lib/libyder.so.1.4
-lib/libyder.so.1.4.14
+lib/libyder.so.%%PORTVERSION%%
 libdata/pkgconfig/libyder.pc

@@ -1,6 +1,6 @@
 PORTNAME=	yder
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.14
+DISTVERSION=	1.4.15
 CATEGORIES=	devel
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -14,13 +14,16 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
 
-LIB_DEPENDS+=	libjansson.so:devel/jansson
-LIB_DEPENDS+=	liborcania.so:devel/orcania
+LIB_DEPENDS=	libjansson.so:devel/jansson \
+		liborcania.so:devel/orcania
 
-BUILD_DEPENDS+=	orcania>0:devel/orcania
+BUILD_DEPENDS=	orcania>0:devel/orcania
 
-RUN_DEPENDS+=	jansson>0:devel/jansson
+RUN_DEPENDS=	jansson>0:devel/jansson
 
-CMAKE_ARGS=	-DWITH_JOURNALD=off
+CMAKE_ARGS=	-DWITH_JOURNALD=off \
+		-DDOWNLOAD_DEPENDENCIES=off
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
