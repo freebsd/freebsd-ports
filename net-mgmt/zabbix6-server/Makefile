@@ -78,13 +78,17 @@ SSH_DESC=		Support for SSH-based checks
 UNIXODBC_DESC=		Support for database checks via ODBC
 LIBXML2_DESC=		Support for libxml2 (required by monitoring VMware)
 MYSQL_DESC=		MySQL 8.0 database support
+MYSQLDV_DESC=		MYSQL DEFAULT_VERSIONS= (poudriere)
 
 OPTIONS_SINGLE=		DB SSL
-OPTIONS_SINGLE_DB?=	MDB5 MDB6 MYSQL PGSQL ORACLE
+OPTIONS_SINGLE_DB?=	MDB5 MDB6 MYSQL MYSQLDV PGSQL ORACLE
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
 
 MYSQL_CONFIGURE_ON=	--with-mysql
 MYSQL_USES+=		compiler:c11 mysql:80
+
+MYSQLDV_CONFIGURE_ON=	--with-mysql
+MYSQLDV_USES+=		compiler:c11 mysql
 
 MDB5_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
 MDB5_USES+=		compiler:c11 mysql:105m
