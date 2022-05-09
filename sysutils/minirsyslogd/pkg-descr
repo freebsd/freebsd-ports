@@ -7,5 +7,3 @@ of configuration, alerting or scripting options. It will however
 automatically split inbound syslog data according to IP address,
 date and current hour, and do so as rapidly and (I hope) securely as
 possible.
-
-WWW: http://www.clueby4.org/minirsyslogd/

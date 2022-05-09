@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Minimal, fast and secure syslog receiver
 
 USE_RC_SUBR=	minirsyslogd
