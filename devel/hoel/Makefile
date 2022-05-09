@@ -1,6 +1,6 @@
 PORTNAME=	hoel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.18
+DISTVERSION=	1.4.23
 CATEGORIES=	devel
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -14,14 +14,14 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
 
-LIB_DEPENDS+=	libjansson.so:devel/jansson
-LIB_DEPENDS+=	liborcania.so:devel/orcania
+LIB_DEPENDS+=	libjansson.so:devel/jansson \
+		liborcania.so:devel/orcania
 
-BUILD_DEPENDS+=	orcania>0:devel/orcania
-BUILD_DEPENDS+=	yder>0:devel/yder
+BUILD_DEPENDS+=	orcania>0:devel/orcania \
+		yder>0:devel/yder
 
-RUN_DEPENDS+=	jansson>0:devel/jansson
-RUN_DEPENDS+=	yder>0:devel/yder
+RUN_DEPENDS+=	jansson>0:devel/jansson \
+		yder>0:devel/yder
 
 OPTIONS_DEFINE=	MARIADB PGSQL SQLITE3
 OPTIONS_DEFAULT=	PGSQL
@@ -38,9 +38,9 @@ MARIADB_CMAKE_BOOL=	WITH_MARIADB
 PGSQL_CMAKE_BOOL=	WITH_PGSQL
 SQLITE3_CMAKE_BOOL=	WITH_SQLITE3
 
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
 CMAKE_ARGS=	-DWITH_JOURNALD=off
-# -DWITH_PGSQL=on
-# -DWITH_SQLITE3=off
-# -DWITH_MARIADB=off
+CMAKE_ARGS+=	-DDOWNLOAD_DEPENDENCIES=off
 
 .include <bsd.port.mk>
