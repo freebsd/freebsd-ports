@@ -2,16 +2,18 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.46.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Symbolic mathematics program
 
-LICENSE=	GPLv2 MAXIMAEXTRACLAUSE
+LICENSE=	BSD3CLAUSE GPLv2 MAXIMAEXTRACLAUSE
 LICENSE_COMB=	multi
 LICENSE_NAME_MAXIMAEXTRACLAUSE=	Maxima extra clause
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSES/getopt-license.txt
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_MAXIMAEXTRACLAUSE=	${FILESDIR}/license-extra-clause.txt
 LICENSE_PERMS_MAXIMAEXTRACLAUSE=	dist-mirror dist-sell pkg-mirror \
 					pkg-sell auto-accept
@@ -22,11 +24,11 @@ RUN_DEPENDS=	gnuplot:math/gnuplot \
 USES=		autoreconf gmake makeinfo shared-mime-info
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	PYTHON=dummy
 
 TEST_TARGET=	check
 
-INFO=		imaxima maxima xmaxima abs_integrate drawutils kovacicODE logic
+INFO=		imaxima maxima xmaxima abs_integrate drawutils kovacicODE logic \
+		symplectic_ode
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 PORTDATA=	*
@@ -36,12 +38,11 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=		DOCS EXAMPLES MANPAGES NOUSERINIT SAGE TEST XMAXIMA
 OPTIONS_DEFAULT=	ECL MANPAGES NOUSERINIT SAGE TEST XMAXIMA
 OPTIONS_SINGLE=		LISP
-OPTIONS_SINGLE_LISP=	CCL CMUCL ECL SBCL
+OPTIONS_SINGLE_LISP=	CCL ECL SBCL
 
 OPTIONS_SUB=	yes
 
 CCL_DESC=		Build with Clozure Common Lisp
-CMUCL_DESC=		Build with CMU Common Lisp
 ECL_DESC=		Build with Embedabble Common Lisp
 NOUSERINIT_DESC=	Do not load user init file for lisp (only for sbcl)
 SAGE_DESC=		Build with patches from Sage (implies ECL)
@@ -53,12 +54,7 @@ CCL_RUN_DEPENDS=	ccl:lang/ccl
 CCL_CONFIGURE_ON=	--with-ccl=ccl
 CCL_PLIST_SUB=		BINDIR=binary-openmcl \
 			BINNAME=maxima.image
-
-CMUCL_BUILD_DEPENDS=	lisp:lang/cmucl
-CMUCL_RUN_DEPENDS=	lisp:lang/cmucl
-CMUCL_CONFIGURE_ON=	--enable-cmucl
-CMUCL_PLIST_SUB=	BINDIR=binary-cmucl \
-			BINNAME=maxima_core
+CCL_VARS=		NO_ARCH=yes
 
 ECL_BUILD_DEPENDS=	ecl:lang/ecl
 ECL_LIB_DEPENDS=	libffi.so:devel/libffi \
@@ -73,8 +69,7 @@ ECL_CONFIGURE_ON=	--with-ecl=ecl
 ECL_PLIST_SUB=		BINDIR=binary-ecl \
 			BINNAME=maxima
 
-NOUSERINIT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_maxima.in
-NOUSERINIT_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-OFF-src_maxima.in
+NOUSERINIT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nouserinit-src_maxima.in
 
 SAGE_IMPLIES=		ECL
 SAGE_BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
@@ -86,12 +81,13 @@ SAGE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-share_linearalgebra_matrixexp.lisp \
 SBCL_BUILD_DEPENDS=	sbcl:lang/sbcl
 SBCL_RUN_DEPENDS=	sbcl:lang/sbcl
 SBCL_CONFIGURE_ON=	--enable-sbcl
+SBCL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-sbcl-src_maxima.in
 SBCL_PLIST_SUB=		BINDIR=binary-sbcl \
 			BINNAME=maxima_core
+SBCL_VARS=		NO_ARCH=yes
 
 TEST_BUILD_DEPENDS=	gnuplot:math/gnuplot \
 			rlwrap:devel/rlwrap
-TEST_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-OFF-Makefile.am
 
 XMAXIMA_IMPLIES=		DOCS TEST
 XMAXIMA_USES=			tk
@@ -102,6 +98,9 @@ post-patch:
 	${GREP} -Fe '.core' -l -r ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} 's;\.core;_core;g'
 	${REINPLACE_CMD} "s;tclsh;${TCLSH};g" ${WRKSRC}/interfaces/xmaxima/Makefile.in
 	${REINPLACE_CMD} "s;/usr;${LOCALBASE};g" ${WRKSRC}/src/intl.lisp
+
+post-patch-TEST-off:
+	${REINPLACE_CMD} 's;tests;;' ${WRKSRC}/Makefile.am
 
 post-patch-XMAXIMA-on:
 	${REINPLACE_CMD} "s;%%DOCSDIR%%;/${DOCSDIR:S,/, ,g};" \
@@ -125,16 +124,18 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc/info && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} '-name maxima*\.html'
 
+post-install-ECL-on:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ecl
+	${INSTALL_LIB} ${WRKSRC}/src/binary-ecl/maxima.fas \
+		${STAGEDIR}${PREFIX}/lib/ecl
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/maxima/${PORTVERSION}/binary-ecl/maxima
+
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} '-name *\.dem'
 
 post-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/doc/man/maxima.1.gz ${STAGEDIR}${PREFIX}/man/man1
-
-post-install-ECL-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ecl
-	${INSTALL_DATA} ${WRKSRC}/src/binary-ecl/maxima.fas \
-		${STAGEDIR}${PREFIX}/lib/ecl
+	${MKDIR} ${STAGEDIR}${PREFIX}/man/man1 && \
+	${INSTALL_MAN} ${WRKSRC}/doc/man/maxima.1.gz ${STAGEDIR}${PREFIX}/man/man1/maxima.1.gz
 
 .include <bsd.port.mk>

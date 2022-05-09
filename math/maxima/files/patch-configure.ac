@@ -1,6 +1,6 @@
---- configure.ac.orig	2021-06-22 16:59:07.387685000 -0600
-+++ configure.ac	2021-06-22 16:59:40.892936000 -0600
-@@ -165,21 +165,21 @@
+--- configure.ac.orig	2022-04-13 05:02:12 UTC
++++ configure.ac
+@@ -165,21 +165,21 @@ dnl See if git exists.  If it does, update VERSION to 
  
  
  dnl See if git exists.  If it does, update VERSION to include a git tag
