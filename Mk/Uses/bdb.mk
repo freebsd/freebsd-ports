@@ -63,7 +63,7 @@ _DB_DEFAULTS=	5
 #   Since 2020-12-02, this name is not fitting too much but
 #   retained for now for compatibility. The name of this variable
 #   is subject to change especially once db6 were removed.
-.  if defined(WITH_BDB6_PERMITTED)
+.  if defined(WITH_BDB6_PERMITTED) || ${_bdb_ARGS} == 18
 _DB_DEFAULTS+=	18
 .  endif
 
