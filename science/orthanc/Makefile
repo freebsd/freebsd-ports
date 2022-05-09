@@ -1,8 +1,7 @@
 # Created by: maintainer.freebsd@xpoundit.com
 
 PORTNAME=	orthanc
-DISTVERSION=	1.9.7
-PORTREVISION=	5
+DISTVERSION=	1.10.1
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
 DISTNAME=	Orthanc-${PORTVERSION}
