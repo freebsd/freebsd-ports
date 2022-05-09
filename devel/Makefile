@@ -191,6 +191,7 @@
     SUBDIR += arduinoOTA
     SUBDIR += argdata
     SUBDIR += argouml
+    SUBDIR += argparse
     SUBDIR += argp-standalone
     SUBDIR += args
     SUBDIR += argtable
