@@ -1,6 +1,6 @@
 PORTNAME=	orcania
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.1
+DISTVERSION=	2.2.2
 CATEGORIES=	devel
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -14,5 +14,7 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
 GH_PROJECT=	orcania
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
