@@ -10,7 +10,6 @@ include/python%%XYDOT%%%%ABI%%/boolobject.h
 include/python%%XYDOT%%%%ABI%%/bytearrayobject.h
 include/python%%XYDOT%%%%ABI%%/bytesobject.h
 include/python%%XYDOT%%%%ABI%%/ceval.h
-include/python%%XYDOT%%%%ABI%%/code.h
 include/python%%XYDOT%%%%ABI%%/codecs.h
 include/python%%XYDOT%%%%ABI%%/compile.h
 include/python%%XYDOT%%%%ABI%%/complexobject.h
@@ -22,6 +21,7 @@ include/python%%XYDOT%%%%ABI%%/cpython/ceval.h
 include/python%%XYDOT%%%%ABI%%/cpython/classobject.h
 include/python%%XYDOT%%%%ABI%%/cpython/code.h
 include/python%%XYDOT%%%%ABI%%/cpython/compile.h
+include/python%%XYDOT%%%%ABI%%/cpython/complexobject.h
 include/python%%XYDOT%%%%ABI%%/cpython/context.h
 include/python%%XYDOT%%%%ABI%%/cpython/descrobject.h
 include/python%%XYDOT%%%%ABI%%/cpython/dictobject.h
@@ -37,6 +37,7 @@ include/python%%XYDOT%%%%ABI%%/cpython/listobject.h
 include/python%%XYDOT%%%%ABI%%/cpython/longintrepr.h
 include/python%%XYDOT%%%%ABI%%/cpython/longobject.h
 include/python%%XYDOT%%%%ABI%%/cpython/methodobject.h
+include/python%%XYDOT%%%%ABI%%/cpython/modsupport.h
 include/python%%XYDOT%%%%ABI%%/cpython/object.h
 include/python%%XYDOT%%%%ABI%%/cpython/objimpl.h
 include/python%%XYDOT%%%%ABI%%/cpython/odictobject.h
@@ -50,6 +51,8 @@ include/python%%XYDOT%%%%ABI%%/cpython/pymem.h
 include/python%%XYDOT%%%%ABI%%/cpython/pystate.h
 include/python%%XYDOT%%%%ABI%%/cpython/pythonrun.h
 include/python%%XYDOT%%%%ABI%%/cpython/pytime.h
+include/python%%XYDOT%%%%ABI%%/cpython/pythread.h
+include/python%%XYDOT%%%%ABI%%/cpython/setobject.h
 include/python%%XYDOT%%%%ABI%%/cpython/sysmodule.h
 include/python%%XYDOT%%%%ABI%%/cpython/traceback.h
 include/python%%XYDOT%%%%ABI%%/cpython/tupleobject.h
@@ -112,6 +115,7 @@ include/python%%XYDOT%%%%ABI%%/internal/pycore_long.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_moduleobject.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_namespace.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_object.h
+include/python%%XYDOT%%%%ABI%%/internal/pycore_opcode.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_parser.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_pathconfig.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_pyarena.h
@@ -123,6 +127,7 @@ include/python%%XYDOT%%%%ABI%%/internal/pycore_pymem.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_pystate.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_runtime.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_runtime_init.h
+include/python%%XYDOT%%%%ABI%%/internal/pycore_signal.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_sliceobject.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_strhex.h
 include/python%%XYDOT%%%%ABI%%/internal/pycore_structseq.h
@@ -2980,9 +2985,9 @@ lib/python%%XYDOT%%/lib-dynload/xxlimited.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/xxlimited_35.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/zlib.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib2to3/Grammar.txt
-lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.alpha.7.pickle
+lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.beta.1.pickle
 lib/python%%XYDOT%%/lib2to3/PatternGrammar.txt
-lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.alpha.7.pickle
+lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.beta.1.pickle
 lib/python%%XYDOT%%/lib2to3/__init__.py
 lib/python%%XYDOT%%/lib2to3/__main__.py
 lib/python%%XYDOT%%/lib2to3/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
@@ -3489,6 +3494,9 @@ lib/python%%XYDOT%%/re/__init__.py
 lib/python%%XYDOT%%/re/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/re/__pycache__/__init__.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/re/__pycache__/__init__.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/re/__pycache__/_casefix.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/re/__pycache__/_casefix.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/re/__pycache__/_casefix.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/re/__pycache__/_compiler.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/re/__pycache__/_compiler.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/re/__pycache__/_compiler.cpython-%%XY%%.pyc
@@ -3498,6 +3506,7 @@ lib/python%%XYDOT%%/re/__pycache__/_constants.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/re/__pycache__/_parser.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/re/__pycache__/_parser.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/re/__pycache__/_parser.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/re/_casefix.py
 lib/python%%XYDOT%%/re/_compiler.py
 lib/python%%XYDOT%%/re/_constants.py
 lib/python%%XYDOT%%/re/_parser.py
@@ -4015,6 +4024,9 @@ lib/python%%XYDOT%%/test/__pycache__/test_copyreg.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_coroutines.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_coroutines.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_coroutines.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/test_cppext.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/test_cppext.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/test_cppext.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_cprofile.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_cprofile.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/test_cprofile.cpython-%%XY%%.pyc
@@ -5066,6 +5078,7 @@ lib/python%%XYDOT%%/test/__pycache__/xmltests.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/xmltests.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/xmltests.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/_test_atexit.py
+lib/python%%XYDOT%%/test/_testcppext.cpp
 lib/python%%XYDOT%%/test/_test_eintr.py
 lib/python%%XYDOT%%/test/_test_embed_set_config.py
 lib/python%%XYDOT%%/test/_test_embed_structseq.py
@@ -5788,6 +5801,7 @@ lib/python%%XYDOT%%/test/test_contextlib_async.py
 lib/python%%XYDOT%%/test/test_copy.py
 lib/python%%XYDOT%%/test/test_copyreg.py
 lib/python%%XYDOT%%/test/test_coroutines.py
+lib/python%%XYDOT%%/test/test_cppext.py
 lib/python%%XYDOT%%/test/test_cprofile.py
 lib/python%%XYDOT%%/test/test_crashers.py
 lib/python%%XYDOT%%/test/test_crypt.py
@@ -5879,8 +5893,6 @@ lib/python%%XYDOT%%/test/test_email/__pycache__/test_utils.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_email/__pycache__/torture_test.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_email/__pycache__/torture_test.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_email/__pycache__/torture_test.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/test/test_email/data/PyBanner048.gif
-lib/python%%XYDOT%%/test/test_email/data/audiotest.au
 lib/python%%XYDOT%%/test/test_email/data/msg_01.txt
 lib/python%%XYDOT%%/test/test_email/data/msg_02.txt
 lib/python%%XYDOT%%/test/test_email/data/msg_03.txt
@@ -5928,6 +5940,23 @@ lib/python%%XYDOT%%/test/test_email/data/msg_43.txt
 lib/python%%XYDOT%%/test/test_email/data/msg_44.txt
 lib/python%%XYDOT%%/test/test_email/data/msg_45.txt
 lib/python%%XYDOT%%/test/test_email/data/msg_46.txt
+lib/python%%XYDOT%%/test/test_email/data/python.bmp
+lib/python%%XYDOT%%/test/test_email/data/python.exr
+lib/python%%XYDOT%%/test/test_email/data/python.gif
+lib/python%%XYDOT%%/test/test_email/data/python.jpg
+lib/python%%XYDOT%%/test/test_email/data/python.pbm
+lib/python%%XYDOT%%/test/test_email/data/python.pgm
+lib/python%%XYDOT%%/test/test_email/data/python.png
+lib/python%%XYDOT%%/test/test_email/data/python.ppm
+lib/python%%XYDOT%%/test/test_email/data/python.ras
+lib/python%%XYDOT%%/test/test_email/data/python.sgi
+lib/python%%XYDOT%%/test/test_email/data/python.tiff
+lib/python%%XYDOT%%/test/test_email/data/python.webp
+lib/python%%XYDOT%%/test/test_email/data/python.xbm
+lib/python%%XYDOT%%/test/test_email/data/sndhdr.aifc
+lib/python%%XYDOT%%/test/test_email/data/sndhdr.aiff
+lib/python%%XYDOT%%/test/test_email/data/sndhdr.au
+lib/python%%XYDOT%%/test/test_email/data/sndhdr.wav
 lib/python%%XYDOT%%/test/test_email/test__encoded_words.py
 lib/python%%XYDOT%%/test/test_email/test__header_value_parser.py
 lib/python%%XYDOT%%/test/test_email/test_asian_codecs.py
@@ -7476,6 +7505,9 @@ lib/python%%XYDOT%%/wsgiref/__pycache__/headers.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/wsgiref/__pycache__/simple_server.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/wsgiref/__pycache__/simple_server.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/wsgiref/__pycache__/simple_server.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/wsgiref/__pycache__/types.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/wsgiref/__pycache__/types.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/wsgiref/__pycache__/types.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/wsgiref/__pycache__/util.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/wsgiref/__pycache__/util.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/wsgiref/__pycache__/util.cpython-%%XY%%.pyc
@@ -7485,6 +7517,7 @@ lib/python%%XYDOT%%/wsgiref/__pycache__/validate.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/wsgiref/handlers.py
 lib/python%%XYDOT%%/wsgiref/headers.py
 lib/python%%XYDOT%%/wsgiref/simple_server.py
+lib/python%%XYDOT%%/wsgiref/types.py
 lib/python%%XYDOT%%/wsgiref/util.py
 lib/python%%XYDOT%%/wsgiref/validate.py
 lib/python%%XYDOT%%/xdrlib.py
