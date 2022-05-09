@@ -3,5 +3,6 @@ include/ulfius-cfg.h
 include/ulfius.h
 lib/libulfius.so
 lib/libulfius.so.2.7
-lib/libulfius.so.2.7.3
+lib/libulfius.so.%%PORTVERSION%%
 libdata/pkgconfig/libulfius.pc
+man/man1/uwsc.1.gz
