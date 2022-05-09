@@ -21,6 +21,7 @@ BUILD_DEPENDS=	camlp5:devel/ocaml-camlp5 \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
+RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/stublibs/dllnums.so:math/ocaml-num
 
 USES=		emacs gettext-runtime gmake gnome
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 gtksourceview2 pango
