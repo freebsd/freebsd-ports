@@ -13,6 +13,7 @@ include/KF5/KWidgetsAddons/KColumnResizer
 include/KF5/KWidgetsAddons/KCursor
 include/KF5/KWidgetsAddons/KDateComboBox
 include/KF5/KWidgetsAddons/KDatePicker
+include/KF5/KWidgetsAddons/KDatePickerPopup
 include/KF5/KWidgetsAddons/KDateTimeEdit
 include/KF5/KWidgetsAddons/KDragWidgetDecorator
 include/KF5/KWidgetsAddons/KDualAction
@@ -93,6 +94,7 @@ include/KF5/KWidgetsAddons/kcolumnresizer.h
 include/KF5/KWidgetsAddons/kcursor.h
 include/KF5/KWidgetsAddons/kdatecombobox.h
 include/KF5/KWidgetsAddons/kdatepicker.h
+include/KF5/KWidgetsAddons/kdatepickerpopup.h
 include/KF5/KWidgetsAddons/kdatetimeedit.h
 include/KF5/KWidgetsAddons/kdragwidgetdecorator.h
 include/KF5/KWidgetsAddons/kdualaction.h

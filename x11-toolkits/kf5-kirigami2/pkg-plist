@@ -62,6 +62,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/LinkButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ListItemDragHandle.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ListSectionHeader.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/LoadingPlaceholder.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/MenuDialog.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/NavigationTabBar.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/NavigationTabButton.qml

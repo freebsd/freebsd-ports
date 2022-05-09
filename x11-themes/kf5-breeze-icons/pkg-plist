@@ -1615,6 +1615,7 @@ share/icons/breeze-dark/actions/16/view-institution-delete.svg
 share/icons/breeze-dark/actions/16/view-institution-edit.svg
 share/icons/breeze-dark/actions/16/view-institution.svg
 share/icons/breeze-dark/actions/16/view-left-close.svg
+share/icons/breeze-dark/actions/16/view-left-new.svg
 share/icons/breeze-dark/actions/16/view-list-details.svg
 share/icons/breeze-dark/actions/16/view-list-icons.svg
 share/icons/breeze-dark/actions/16/view-list-text.svg
@@ -3545,6 +3546,7 @@ share/icons/breeze-dark/actions/22/view-institution-delete.svg
 share/icons/breeze-dark/actions/22/view-institution-edit.svg
 share/icons/breeze-dark/actions/22/view-institution.svg
 share/icons/breeze-dark/actions/22/view-left-close.svg
+share/icons/breeze-dark/actions/22/view-left-new.svg
 share/icons/breeze-dark/actions/22/view-list-details.svg
 share/icons/breeze-dark/actions/22/view-list-icons.svg
 share/icons/breeze-dark/actions/22/view-list-text.svg
@@ -5427,6 +5429,7 @@ share/icons/breeze-dark/actions/24/view-institution-delete.svg
 share/icons/breeze-dark/actions/24/view-institution-edit.svg
 share/icons/breeze-dark/actions/24/view-institution.svg
 share/icons/breeze-dark/actions/24/view-left-close.svg
+share/icons/breeze-dark/actions/24/view-left-new.svg
 share/icons/breeze-dark/actions/24/view-list-details.svg
 share/icons/breeze-dark/actions/24/view-list-icons.svg
 share/icons/breeze-dark/actions/24/view-list-text.svg
@@ -5834,6 +5837,7 @@ share/icons/breeze-dark/actions/32/view-calendar-holiday.svg
 share/icons/breeze-dark/actions/32/view-filter.svg
 share/icons/breeze-dark/actions/32/view-group.svg
 share/icons/breeze-dark/actions/32/view-left-close.svg
+share/icons/breeze-dark/actions/32/view-left-new.svg
 share/icons/breeze-dark/actions/32/view-list-details.svg
 share/icons/breeze-dark/actions/32/view-list-icons.svg
 share/icons/breeze-dark/actions/32/view-list-text.svg
@@ -12569,6 +12573,7 @@ share/icons/breeze/actions/16/view-institution-delete.svg
 share/icons/breeze/actions/16/view-institution-edit.svg
 share/icons/breeze/actions/16/view-institution.svg
 share/icons/breeze/actions/16/view-left-close.svg
+share/icons/breeze/actions/16/view-left-new.svg
 share/icons/breeze/actions/16/view-list-details.svg
 share/icons/breeze/actions/16/view-list-icons.svg
 share/icons/breeze/actions/16/view-list-text.svg
@@ -14497,6 +14502,7 @@ share/icons/breeze/actions/22/view-institution-delete.svg
 share/icons/breeze/actions/22/view-institution-edit.svg
 share/icons/breeze/actions/22/view-institution.svg
 share/icons/breeze/actions/22/view-left-close.svg
+share/icons/breeze/actions/22/view-left-new.svg
 share/icons/breeze/actions/22/view-list-details.svg
 share/icons/breeze/actions/22/view-list-icons.svg
 share/icons/breeze/actions/22/view-list-text.svg
@@ -16433,6 +16439,7 @@ share/icons/breeze/actions/24/view-institution-delete.svg
 share/icons/breeze/actions/24/view-institution-edit.svg
 share/icons/breeze/actions/24/view-institution.svg
 share/icons/breeze/actions/24/view-left-close.svg
+share/icons/breeze/actions/24/view-left-new.svg
 share/icons/breeze/actions/24/view-list-details.svg
 share/icons/breeze/actions/24/view-list-icons.svg
 share/icons/breeze/actions/24/view-list-text.svg
@@ -16840,6 +16847,7 @@ share/icons/breeze/actions/32/view-calendar-holiday.svg
 share/icons/breeze/actions/32/view-filter.svg
 share/icons/breeze/actions/32/view-group.svg
 share/icons/breeze/actions/32/view-left-close.svg
+share/icons/breeze/actions/32/view-left-new.svg
 share/icons/breeze/actions/32/view-list-details.svg
 share/icons/breeze/actions/32/view-list-icons.svg
 share/icons/breeze/actions/32/view-list-text.svg

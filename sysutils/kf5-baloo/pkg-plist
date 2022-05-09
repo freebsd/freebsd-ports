@@ -378,6 +378,7 @@ share/locale/sv/LC_MESSAGES/balooshow5.mo
 share/locale/sv/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/sv/LC_MESSAGES/kio5_tags.mo
 share/locale/sv/LC_MESSAGES/kio5_timeline.mo
+share/locale/ta/LC_MESSAGES/balooengine5.mo
 share/locale/ta/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/ta/LC_MESSAGES/kio5_tags.mo
 share/locale/ta/LC_MESSAGES/kio5_timeline.mo
@@ -390,6 +391,8 @@ share/locale/tg/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/tg/LC_MESSAGES/kio5_tags.mo
 share/locale/tg/LC_MESSAGES/kio5_timeline.mo
 share/locale/tr/LC_MESSAGES/balooctl5.mo
+share/locale/tr/LC_MESSAGES/baloodb5.mo
+share/locale/tr/LC_MESSAGES/balooengine5.mo
 share/locale/tr/LC_MESSAGES/baloosearch5.mo
 share/locale/tr/LC_MESSAGES/balooshow5.mo
 share/locale/tr/LC_MESSAGES/kio5_baloosearch.mo

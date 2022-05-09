@@ -108,6 +108,7 @@ share/locale/pt/LC_MESSAGES/kwallet-query.mo
 share/locale/pt/LC_MESSAGES/kwalletd5.mo
 share/locale/pt_BR/LC_MESSAGES/kwallet-query.mo
 share/locale/pt_BR/LC_MESSAGES/kwalletd5.mo
+share/locale/ro/LC_MESSAGES/kwallet-query.mo
 share/locale/ro/LC_MESSAGES/kwalletd5.mo
 share/locale/ru/LC_MESSAGES/kwallet-query.mo
 share/locale/ru/LC_MESSAGES/kwalletd5.mo
@@ -136,6 +137,7 @@ share/locale/tr/LC_MESSAGES/kwalletd5.mo
 share/locale/ug/LC_MESSAGES/kwalletd5.mo
 share/locale/uk/LC_MESSAGES/kwallet-query.mo
 share/locale/uk/LC_MESSAGES/kwalletd5.mo
+share/locale/vi/LC_MESSAGES/kwallet-query.mo
 share/locale/vi/LC_MESSAGES/kwalletd5.mo
 share/locale/wa/LC_MESSAGES/kwalletd5.mo
 share/locale/zh_CN/LC_MESSAGES/kwallet-query.mo

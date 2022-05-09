@@ -31,6 +31,7 @@ include/KF5/KFileMetaData/kfilemetadata/writedata.h
 include/KF5/KFileMetaData/kfilemetadata/writer.h
 include/KF5/KFileMetaData/kfilemetadata/writercollection.h
 include/KF5/KFileMetaData/kfilemetadata/writerplugin.h
+include/KF5/KFileMetaData/kfilemetadata_version.h
 lib/cmake/KF5FileMetaData/KF5FileMetaDataConfig.cmake
 lib/cmake/KF5FileMetaData/KF5FileMetaDataConfigVersion.cmake
 lib/cmake/KF5FileMetaData/KF5FileMetaDataTargets-%%CMAKE_BUILD_TYPE%%.cmake
