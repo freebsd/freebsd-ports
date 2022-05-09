@@ -2,8 +2,7 @@
 
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.0
-PORTREVISION=	1
+DISTVERSION=	0.19.1
 CATEGORIES=	games
 
 MAINTAINER=	timp87@gmail.com
@@ -22,7 +21,8 @@ ONLY_FOR_ARCHS_REASON=	requires little endian environment
 
 BUILD_DEPENDS=	string_theory>=3.1:devel/string_theory \
 		rapidjson>=1.1.0:devel/rapidjson \
-		sol2>=3.2.2:devel/sol2
+		sol2>=3.2.2:devel/sol2 \
+		miniaudio>=0.10.36<0.11:audio/miniaudio
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 USES=		cargo cmake compiler:c++17-lang pkgconfig sdl xorg gl lua:53
@@ -32,10 +32,9 @@ GH_PROJECT=	ja2-stracciatella
 USE_SDL=	sdl2
 USE_GL=		gl
 USE_XORG=	ice sm x11 xext
-GH_TUPLE=	mackron:miniaudio:634cdb028f340075ae8e8a1126620695688d2ac3:miniaudio
 
-CMAKE_ARGS=	-DEXTRA_DATA_DIR:PATH="${DATADIR}"
-CMAKE_OFF=	LOCAL_STRING_THEORY_LIB WITH_UNITTESTS LOCAL_RAPIDJSON_LIB LOCAL_LUA_LIB LOCAL_SOL_LIB
+CMAKE_ARGS=	-DEXTRA_DATA_DIR:PATH="${DATADIR}" -DMINIAUDIO_INCLUDE_DIR="${PREFIX}/include/miniaudio"
+CMAKE_OFF=	LOCAL_STRING_THEORY_LIB WITH_UNITTESTS LOCAL_RAPIDJSON_LIB LOCAL_LUA_LIB LOCAL_SOL_LIB LOCAL_MINIAUDIO_LIB
 
 CARGO_CRATES=	ahash-0.7.6 \
 		aho-corasick-0.7.18 \
@@ -137,11 +136,6 @@ CARGO_TEST=		no
 MAKE_ENV=	${CARGO_ENV:NCARGO_TARGET_DIR=*}
 LDFLAGS+=	-Wl,--as-needed
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|https://github.com/mackron/miniaudio/archive/634cdb028f340075ae8e8a1126620695688d2ac3.zip|${DISTDIR}/mackron-miniaudio-634cdb028f340075ae8e8a1126620695688d2ac3_GH0.tar.gz|' \
-		-e 's|b30045e95cec65bfe1d9fe3639f480a2|975a4d15815118a7ded8fbc7d3de68f6|' \
-		${WRKSRC}/dependencies/lib-miniaudio/getter/CMakeLists.txt.in
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/some/place/where/the/data/is|${DATADIR}|' \
 		${WRKSRC}/rust/stracciatella/src/stracciatella.rs
@@ -151,4 +145,19 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/ja2-launcher \
 		${STAGEDIR}${PREFIX}/bin/ja2-resource-pack
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Compilation with clang's broken in 14-CURRENT
+.if ${OSVERSION} >= 1400000
+# See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=236344
+# Copy-pasted gcc-c++11-lib from Mk/Uses/compiler.mk
+USE_GCC=	yes
+CHOSEN_COMPILER_TYPE=	gcc
+CXXFLAGS+=	-nostdinc++ -isystem /usr/include/c++/v1
+LDFLAGS+=	-L${WRKDIR}
+_USES_configure+=	200:gcc-libc++-configure
+gcc-libc++-configure:
+	@${LN} -fs /usr/lib/libc++.so ${WRKDIR}/libstdc++.so
+.endif
+
+.include <bsd.port.post.mk>
