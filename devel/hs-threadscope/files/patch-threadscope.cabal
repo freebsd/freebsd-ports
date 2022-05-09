@@ -1,0 +1,19 @@
+--- threadscope.cabal.orig	2001-09-09 01:46:40 UTC
++++ threadscope.cabal
+@@ -57,14 +57,14 @@ Executable threadscope
+                      array < 0.6,
+                      mtl < 2.3,
+                      filepath < 1.5,
+-                     ghc-events >= 0.13 && < 0.16,
++                     ghc-events >= 0.13,
+                      containers >= 0.2 && < 0.7,
+                      deepseq >= 1.1,
+                      text < 1.3,
+                      time >= 1.1 && < 1.12,
+                      bytestring < 0.12,
+                      file-embed < 0.1,
+-                     template-haskell < 2.17,
++                     template-haskell,
+                      temporary >= 1.1 && < 1.4
+ 
+   include-dirs:      include
