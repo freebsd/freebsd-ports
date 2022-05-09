@@ -2,7 +2,7 @@
 
 PORTNAME=	snobol4
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.regressive.org/snobol/
 

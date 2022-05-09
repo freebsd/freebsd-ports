@@ -2,7 +2,7 @@
 
 PORTNAME=	brainfuck
 PORTVERSION=	0.1.0.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	lang haskell
 
 MAINTAINER=	haskell@FreeBSD.org

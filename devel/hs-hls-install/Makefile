@@ -1,5 +1,6 @@
 PORTNAME=	hls-install
 DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

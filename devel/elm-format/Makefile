@@ -1,6 +1,6 @@
 PORTNAME=	elm-format
 PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel textproc
 
 MAINTAINER=	haskell@FreeBSD.org

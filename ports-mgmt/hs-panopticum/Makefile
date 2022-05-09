@@ -1,5 +1,6 @@
 PORTNAME=	panopticum
 PORTVERSION=	2.0.0.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt haskell
 
 MAINTAINER=	arrowd@FreeBSD.org

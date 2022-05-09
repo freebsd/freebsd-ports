@@ -7,6 +7,7 @@
 PORTNAME=	tauthon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.3
+PORTREVISION=	1
 CATEGORIES=	lang python
 
 MAINTAINER=	olce.freebsd.ports@certner.fr
