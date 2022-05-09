@@ -1,5 +1,5 @@
-TIMESTAMP = 1648960375
-SHA256 (CloudCompare-CloudCompare-v2.12.0_GH0.tar.gz) = 214ef88c454c41dc8d0b758f5b02b021b469b4d4d0ee5de753b0552127249a53
-SIZE (CloudCompare-CloudCompare-v2.12.0_GH0.tar.gz) = 35582467
-SHA256 (CloudCompare-CCCoreLib-b81e0ba_GH0.tar.gz) = 88a3f8c5bfa7a713b1da51aa6806beac7d3086bfd8b4db17efa2720cee077c90
-SIZE (CloudCompare-CCCoreLib-b81e0ba_GH0.tar.gz) = 235020
+TIMESTAMP = 1652122434
+SHA256 (CloudCompare-CloudCompare-v2.12.1_GH0.tar.gz) = 13de6c330767e4dd2ebd064a9b0daa374f9bd3fc85b41e4ba92f8a946c973240
+SIZE (CloudCompare-CloudCompare-v2.12.1_GH0.tar.gz) = 35584296
+SHA256 (CloudCompare-CCCoreLib-f0d5450_GH0.tar.gz) = 564d3cfa2724580c0344266da0af778621a4e93b49a8f745df7e49de8db45a30
+SIZE (CloudCompare-CCCoreLib-f0d5450_GH0.tar.gz) = 235019
