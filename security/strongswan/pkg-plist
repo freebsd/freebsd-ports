@@ -35,6 +35,7 @@
 %%GCM%%@sample %%ETCDIR%%.d/charon/gcm.conf.sample
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/gmp.conf.sample
 @sample %%ETCDIR%%.d/charon/hmac.conf.sample
+%%KDF%%@sample %%ETCDIR%%.d/charon/kdf.conf.sample
 %%IPSECKEY%%@sample %%ETCDIR%%.d/charon/ipseckey.conf.sample
 %%KERNELLIBIPSEC%%@sample %%ETCDIR%%.d/charon/kernel-libipsec.conf.sample
 @sample %%ETCDIR%%.d/charon/kernel-pfkey.conf.sample
@@ -180,6 +181,8 @@ lib/ipsec/plugins/libstrongswan-hmac.la
 lib/ipsec/plugins/libstrongswan-hmac.so
 %%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.la
 %%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.so
+%%KDF%%lib/ipsec/plugins/libstrongswan-kdf.la
+%%KDF%%lib/ipsec/plugins/libstrongswan-kdf.so
 %%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.la
 %%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.so
 lib/ipsec/plugins/libstrongswan-kernel-pfkey.la
@@ -329,6 +332,7 @@ sbin/ipsec
 %%GCM%%%%DATADIR%%/templates/config/plugins/gcm.conf
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/gmp.conf
 %%DATADIR%%/templates/config/plugins/hmac.conf
+%%KDF%%%%DATADIR%%/templates/config/plugins/kdf.conf
 %%IPSECKEY%%%%DATADIR%%/templates/config/plugins/ipseckey.conf
 %%KERNELLIBIPSEC%%%%DATADIR%%/templates/config/plugins/kernel-libipsec.conf
 %%DATADIR%%/templates/config/plugins/kernel-pfkey.conf

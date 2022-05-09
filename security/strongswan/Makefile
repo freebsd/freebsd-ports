@@ -1,5 +1,5 @@
 PORTNAME=	strongswan
-DISTVERSION=	5.9.5
+DISTVERSION=	5.9.6
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/
@@ -39,7 +39,7 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=			CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS \
-				EAPSIMFILE FARP GCM IKEV1 IPSECKEY \
+				EAPSIMFILE FARP GCM IKEV1 IPSECKEY KDF \
 				KERNELLIBIPSEC LDAP LOADTESTER MEDIATION MYSQL \
 				PKCS11 PKI PYTHON SCEP SMP SQLITE SWANCTL \
 				TESTVECTOR TPM TSS2 UNBOUND UNITY VICI XAUTH
@@ -60,6 +60,7 @@ FARP_DESC=		Enable farp plugin
 GCM_DESC=		Enable GCM AEAD wrapper crypto plugin
 IKEV1_DESC=		Enable IKEv1 support
 IPSECKEY_DESC=		Enable authentication with IPSECKEY resource records with DNSSEC
+KDF_DESC=		Enable KDF (prf+) implementation plugin
 KERNELLIBIPSEC_DESC=	Enable IPSec userland backend
 LIBC_DESC=		Use libc printf hooks
 LOADTESTER_DESC=	Enable load testing plugin
@@ -95,6 +96,7 @@ FARP_CONFIGURE_ON=		--enable-farp
 GCM_CONFIGURE_ON=		--enable-gcm
 IKEV1_CONFIGURE_OFF=		--disable-ikev1
 IPSECKEY_CONFIGURE_ON=		--enable-ipseckey
+KDF_CONFIGURE_ON=		--enable-kdf
 KERNELLIBIPSEC_CONFIGURE_ON=	--enable-kernel-libipsec
 LDAP_USE=			OPENLDAP=yes
 LDAP_CONFIGURE_ON=		--enable-ldap
