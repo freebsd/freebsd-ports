@@ -1,6 +1,6 @@
 PORTNAME=	glewlwyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.2
+DISTVERSION=	2.7.0
 CATEGORIES=	www
 MASTER_SITES=	GH
 
@@ -13,65 +13,61 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_FreeBSD_13=	duplicate symbol: global_handler_close_cond
 BROKEN_FreeBSD_14=	duplicate symbol: global_handler_close_cond
 
-USES=		cmake pgsql
+BUILD_DEPENDS=	yder>1.4.14:devel/yder \
+		orcania>2.2.1:devel/orcania \
+		ulfius>2.7.7:www/ulfius \
+		hoel>1.4.18:devel/hoel \
+		oath-toolkit>0:security/oath-toolkit
+
+LIB_DEPENDS=	libjansson.so:devel/jansson \
+		libnettle.so:security/nettle \
+		libhoel.so:devel/hoel \
+		liboath.so:security/oath-toolkit \
+		libjwt.so:www/libjwt \
+		libgnutls.so:security/gnutls \
+		libconfig.so:devel/libconfig \
+		liblber.so:net/openldap24-client
+
+RUN_DEPENDS=	yder>1.4.14:devel/yder \
+		ulfius>2.7.7:www/ulfius \
+		libjwt>0:www/libjwt \
+		libcbor>0:devel/libcbor \
+		libmicrohttpd>0:www/libmicrohttpd \
+		gnutls>0:security/gnutls \
+		libconfig>0:devel/libconfig \
+		orcania>2.2.1:devel/orcania \
+		oath-toolkit>0:security/oath-toolkit
+
+USES=		cmake pgsql sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
 GH_TAGNAME=	e1ea98a
 
-BUILD_DEPENDS+=	yder>0:devel/yder
-BUILD_DEPENDS+=	orcania>0:devel/orcania
-BUILD_DEPENDS+=	ulfius>0:www/ulfius
-BUILD_DEPENDS+=	hoel>0:devel/hoel
-BUILD_DEPENDS+=	oath-toolkit>0:security/oath-toolkit
-
-LIB_DEPENDS+=	libjansson.so:devel/jansson
-LIB_DEPENDS+=	libnettle.so:security/nettle
-LIB_DEPENDS+=	libhoel.so:devel/hoel
-
-LIB_DEPENDS+=	liboath.so:security/oath-toolkit
-LIB_DEPENDS+=	libjwt.so:www/libjwt
-LIB_DEPENDS+=	libgnutls.so:security/gnutls
-LIB_DEPENDS+=	libconfig.so:devel/libconfig
-
-LIB_DEPENDS+=	liblber.so:net/openldap24-client
-
-RUN_DEPENDS+=	yder>0:devel/yder
-RUN_DEPENDS+=	ulfius>0:www/ulfius
-RUN_DEPENDS+=	libjwt>0:www/libjwt
-RUN_DEPENDS+=	libcbor>0:devel/libcbor
-RUN_DEPENDS+=	libmicrohttpd>0:www/libmicrohttpd
-RUN_DEPENDS+=	gnutls>0:security/gnutls
-RUN_DEPENDS+=	libconfig>0:devel/libconfig
-RUN_DEPENDS+=	orcania>0:devel/orcania
-RUN_DEPENDS+=	oath-toolkit>0:security/oath-toolkit
-
-CMAKE_ARGS+=	-DWITH_JOURNALD=off
-CMAKE_ARGS+=	-DWITH_USER_LDAP=off
-CMAKE_ARGS+=	-DWITH_CLIENT_LDAP=off
-CMAKE_ARGS+=	-DLIBOATH_INCLUDE_DIR=${PREFIX}/include/liboath
-CMAKE_ARGS+=	-DLIBCBOR_INCLUDE_DIR=${PREFIX}/include/cbor
-CMAKE_ARGS+=	-DLIBCBOR_LIBRARY=${PREFIX}/lib/libcbor.so
-CMAKE_ARGS+=	-DWITH_SCHEME_WEBAUTHN=off
-
-# -DWITH_PGSQL=off -DWITH_SCHEME_WEBAUTHN=off
+CMAKE_ARGS=	-DWITH_JOURNALD=off \
+		-DWITH_USER_LDAP=off \
+		-DWITH_CLIENT_LDAP=off \
+		-DLIBOATH_INCLUDE_DIR=${PREFIX}/include/liboath \
+		-DLIBCBOR_INCLUDE_DIR=${PREFIX}/include/cbor \
+		-DLIBCBOR_LIBRARY=${PREFIX}/lib/libcbor.so \
+		-DWITH_SCHEME_WEBAUTHN=off \
+		-DDOWNLOAD_DEPENDENCIES=off
 
 SUB_FILES=	glewlwyd glewlwyd.conf.sample
 
 USERS=		glewlwyd
 GROUPS=		glewlwyd
 
-USE_LDCONFIG+=	${PREFIX}/lib/glewlwyd/client
-USE_LDCONFIG+=	${PREFIX}/lib/glewlwyd/plugin
-USE_LDCONFIG+=	${PREFIX}/lib/glewlwyd/scheme
-USE_LDCONFIG+=	${PREFIX}/lib/glewlwyd/user
+USE_LDCONFIG=	${PREFIX}/lib/glewlwyd/client \
+		${PREFIX}/lib/glewlwyd/plugin \
+		${PREFIX}/lib/glewlwyd/scheme \
+		${PREFIX}/lib/glewlwyd/user
 
 do-install:
 	# make all our dirs first
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-#	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/glewlwyd/client
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/glewlwyd/plugin
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/glewlwyd/scheme
