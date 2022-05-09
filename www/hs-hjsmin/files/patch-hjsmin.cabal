@@ -1,0 +1,27 @@
+--- hjsmin.cabal.orig	2001-09-09 01:46:40 UTC
++++ hjsmin.cabal
+@@ -1,5 +1,6 @@ version:         0.2.0.4
+ name:            hjsmin
+ version:         0.2.0.4
++x-revision: 2
+ license:         BSD3
+ license-file:    LICENSE
+ author:          Alan Zimmerman <alan.zimm@gmail.com>
+@@ -30,7 +31,7 @@ library
+   exposed-modules:      Text.Jasmine
+ 
+   build-depends:        base                    >= 4.8          && < 5
+-                      , bytestring              == 0.10.*
++                      , bytestring              >= 0.10         && < 0.12
+                       , language-javascript     >= 0.6          && < 0.8
+                       , text                    == 1.2.*
+ 
+@@ -45,7 +46,7 @@ executable hjsmin
+   other-modules:        Text.Jasmine
+ 
+   build-depends:        base                    >= 4.8          && < 5
+-                      , bytestring              == 0.10.*
++                      , bytestring
+                       , language-javascript
+                       , optparse-applicative    >= 0.7
+                       , text
