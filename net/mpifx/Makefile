@@ -1,5 +1,5 @@
 PORTNAME=	mpifx
-DISTVERSION=	1.3
+DISTVERSION=	1.3.1
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
