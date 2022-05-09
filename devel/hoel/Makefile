@@ -14,13 +14,13 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
 
-LIB_DEPENDS+=	libjansson.so:devel/jansson \
+LIB_DEPENDS=	libjansson.so:devel/jansson \
 		liborcania.so:devel/orcania
 
-BUILD_DEPENDS+=	orcania>0:devel/orcania \
+BUILD_DEPENDS=	orcania>0:devel/orcania \
 		yder>0:devel/yder
 
-RUN_DEPENDS+=	jansson>0:devel/jansson \
+RUN_DEPENDS=	jansson>0:devel/jansson \
 		yder>0:devel/yder
 
 OPTIONS_DEFINE=	MARIADB PGSQL SQLITE3
@@ -40,7 +40,7 @@ SQLITE3_CMAKE_BOOL=	WITH_SQLITE3
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-CMAKE_ARGS=	-DWITH_JOURNALD=off
-CMAKE_ARGS+=	-DDOWNLOAD_DEPENDENCIES=off
+CMAKE_ARGS=	-DWITH_JOURNALD=off \
+		-DDOWNLOAD_DEPENDENCIES=off
 
 .include <bsd.port.mk>
