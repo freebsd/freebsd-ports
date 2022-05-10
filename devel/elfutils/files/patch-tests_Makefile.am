@@ -1,36 +1,15 @@
---- tests/Makefile.am.orig	2020-03-30 12:17:45 UTC
+--- tests/Makefile.am.orig	2022-04-25 20:56:39 UTC
 +++ tests/Makefile.am
-@@ -537,7 +537,7 @@ libasm = -lasm
- libebl = -lebl
- else !STANDALONE
+@@ -624,7 +624,7 @@ installcheck-local:
+ 		LOG_COMPILER="$(installed_LOG_COMPILER)" check-TESTS
+ 
  if BUILD_STATIC
 -libdw = ../libdw/libdw.a -lz $(zip_LIBS) $(libelf) $(libebl) -ldl -lpthread
 +libdw = ../libdw/libdw.a -lz $(zip_LIBS) $(libelf) $(libebl) -lpthread
  libelf = ../libelf/libelf.a -lz
  libasm = ../libasm/libasm.a
  else
-@@ -552,16 +552,16 @@ endif !STANDALONE
- arextract_LDADD = $(libelf)
- arsymtest_LDADD = $(libelf)
- newfile_LDADD = $(libelf)
--saridx_LDADD = $(libelf)
-+saridx_LDADD = $(libeu) $(libelf)
- scnnames_LDADD = $(libelf)
--sectiondump_LDADD = $(libelf)
-+sectiondump_LDADD = $(libeu) $(libelf)
- showptable_LDADD = $(libelf)
- hash_LDADD = $(libelf)
- test_nlist_LDADD = $(libelf)
- msg_tst_LDADD = $(libelf)
- newscn_LDADD = $(libelf)
--early_offscn_LDADD = $(libelf)
--ecp_LDADD = $(libelf)
-+early_offscn_LDADD = $(libeu) $(libelf)
-+ecp_LDADD = $(libeu) $(libelf)
- update1_LDADD = $(libelf)
- update2_LDADD = $(libelf)
- update3_LDADD = $(libdw) $(libelf)
-@@ -575,12 +575,12 @@ get_files_LDADD = $(libdw) $(libelf)
+@@ -662,12 +662,12 @@ get_files_LDADD = $(libdw) $(libelf)
  next_files_LDADD = $(libdw) $(libelf)
  get_aranges_LDADD = $(libdw) $(libelf)
  allfcts_LDADD = $(libdw) $(libelf)
@@ -49,7 +28,7 @@
  #show_ciefde_LDADD = ../libdwarf/libdwarf.so $(libelf)
  asm_tst1_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
  asm_tst2_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
-@@ -592,13 +592,13 @@ asm_tst7_LDADD = $(libasm) $(libebl) $(libelf) $(libdw
+@@ -679,13 +679,13 @@ asm_tst7_LDADD = $(libasm) $(libebl) $(libelf) $(libdw
  asm_tst8_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
  asm_tst9_LDADD = $(libasm) $(libebl) $(libelf) $(libdw)
  dwflmodtest_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD)
@@ -66,7 +45,7 @@
  dwarf_getmacros_LDADD = $(libdw)
  dwarf_ranges_LDADD = $(libdw)
  dwarf_getstring_LDADD = $(libdw)
-@@ -612,10 +612,10 @@ typeiter2_LDADD = $(libdw) $(libelf)
+@@ -699,10 +699,10 @@ typeiter2_LDADD = $(libdw) $(libelf)
  low_high_pc_LDADD = $(libdw) $(libelf) $(argp_LDADD)
  test_elf_cntl_gelf_getshdr_LDADD = $(libelf)
  dwflsyms_LDADD = $(libdw) $(libelf) $(argp_LDADD)
@@ -80,32 +59,3 @@
  backtrace_LDADD = $(libdw) $(libelf) $(argp_LDADD)
  # backtrace-child-biarch also uses those *_CFLAGS and *_LDLAGS variables:
  backtrace_child_CFLAGS = $(fpie_CFLAGS)
-@@ -624,23 +624,23 @@ backtrace_child_biarch_SOURCES = backtrace-child.c
- backtrace_data_LDADD = $(libdw) $(libelf)
- backtrace_dwarf_CFLAGS = -Wno-unused-parameter
- backtrace_dwarf_LDADD = $(libdw) $(libelf)
--debuglink_LDADD = $(libdw) $(libelf)
--debugaltlink_LDADD = $(libdw) $(libelf)
--buildid_LDADD = $(libdw) $(libelf)
-+debuglink_LDADD = $(libeu) $(libdw) $(libelf)
-+debugaltlink_LDADD = $(libeu) $(libdw) $(libelf)
-+buildid_LDADD = $(libeu) $(libdw) $(libelf)
- deleted_LDADD = ./deleted-lib.so
- deleted_lib_so_LDFLAGS = -shared
- deleted_lib_so_CFLAGS = $(fpic_CFLAGS) -fasynchronous-unwind-tables
- aggregate_size_LDADD = $(libdw) $(libelf) $(argp_LDADD)
- peel_type_LDADD = $(libdw) $(libelf) $(argp_LDADD)
- vdsosyms_LDADD = $(libdw) $(libelf)
--getsrc_die_LDADD = $(libdw) $(libelf)
-+getsrc_die_LDADD = $(libeu) $(libdw) $(libelf)
- strptr_LDADD = $(libelf)
- newdata_LDADD = $(libelf)
- elfstrtab_LDADD = $(libelf)
- dwfl_proc_attach_LDADD = $(libdw)
- dwfl_proc_attach_LDFLAGS = -pthread $(AM_LDFLAGS)
- elfshphehdr_LDADD =$(libelf)
--elfstrmerge_LDADD = $(libdw) $(libelf)
-+elfstrmerge_LDADD = $(libeu) $(libdw) $(libelf)
- dwelfgnucompressed_LDADD = $(libelf) $(libdw)
- elfgetchdr_LDADD = $(libelf) $(libdw)
- elfgetzdata_LDADD = $(libelf)

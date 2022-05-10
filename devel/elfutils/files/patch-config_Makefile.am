@@ -1,0 +1,12 @@
+--- config/Makefile.am.orig	2022-04-25 20:56:39 UTC
++++ config/Makefile.am
+@@ -38,9 +38,6 @@ if LIBDEBUGINFOD
+ pkgconfig_DATA += libdebuginfod.pc
+ 
+ install-data-local:
+-	$(INSTALL_DATA) profile.sh -D $(DESTDIR)$(sysconfdir)/profile.d/debuginfod.sh
+-	$(INSTALL_DATA) profile.csh -D $(DESTDIR)$(sysconfdir)/profile.d/debuginfod.csh
+-	mkdir -p $(DESTDIR)$(sysconfdir)/debuginfod
+ 	if [ -n "@DEBUGINFOD_URLS@" ]; then \
+ 		echo "@DEBUGINFOD_URLS@" > $(DESTDIR)$(sysconfdir)/debuginfod/elfutils.urls; \
+ 	fi

@@ -1,7 +1,7 @@
 # Created by: Conrad Meyer <cem@FreeBSD.org>
 
 PORTNAME=	elfutils
-PORTVERSION=	0.179
+DISTVERSION=	0.187
 CATEGORIES=	devel
 MASTER_SITES=	https://sourceware.org/elfutils/ftp/${PORTVERSION}/
 
@@ -17,10 +17,15 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING-LGPLV3
 BROKEN_armv6=		fails to build: fails to compile i386_disasm.c
 BROKEN_sparc64=		sparc patch does not apply cleanly to 0.172
 
-LIB_DEPENDS=	libargp.so:devel/argp-standalone
+LIB_DEPENDS=	libargp.so:devel/argp-standalone \
+		libcurl.so:ftp/curl
 BUILD_DEPENDS=	gnulib>=0:devel/gnulib
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+CFLAGS+=	-I${LOCALBASE}/share/gnulib/lib
+LDFLAGS+=	${LOCALBASE}/lib/libargp.so \
+		${LOCALBASE}/lib/libintl.so
 
 OPTIONS_DEFINE=	MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
@@ -32,17 +37,11 @@ NLS_CONFIGURE_ENABLE=	nls
 
 USES=		autoreconf cpe gmake libtool pkgconfig tar:bzip2
 CPE_VENDOR=	${PORTNAME}_project
-USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+CFLAGS+=	-Wno-error -Wno-format-nonliteral
 CFLAGS+=	-Wno-null-dereference -Wno-unused-value
-# For GCC8:
-CFLAGS+=	-Wno-cast-function-type
-# Give i386 a prayer of building, and we can fix the warnings later:
-CFLAGS_armv7=	-Wno-error
-CFLAGS_i386=	-Wno-error
-CFLAGS_powerpc=	-Wno-error
 
 # Avoid conflict with binutils / elftoolchain programs with the same names:
 CONFIGURE_ARGS+=	--program-prefix=eu-
@@ -61,5 +60,8 @@ pre-configure:
 	    ${LOCALBASE}/share/gnulib/lib/obstack.h \
 	    ${LOCALBASE}/share/gnulib/lib/obstack_printf.c \
 	    ${WRKSRC}/lib
+
+post-configure: # remove -Werror since it causes build failures
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e 's| -Werror| |; s|-Werror ||'
 
 .include <bsd.port.mk>
