@@ -11,6 +11,9 @@ COMMENT=	YouTube video playlist parser for cclive and alike tools
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Last release in 2012 and abandoned upstream, please consider using www/yt-dlp
+EXPIRATION_DATE=2022-06-30
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Getopt-ArgvFile>=1.11:devel/p5-Getopt-ArgvFile \
 		p5-Umph-Prompt>=0:multimedia/p5-Umph-Prompt \
