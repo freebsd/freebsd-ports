@@ -17147,3 +17147,4 @@ graphics/drm-current-kmod||2022-05-01|Switched to a Linux version based naming s
 graphics/drm-devel-kmod||2022-05-01|Switched to a Linux version based naming scheme. Use graphics/drm-510-kmod
 math/rkward-kde|math/rkward|2022-05-06|Switched to the name used by upstream
 graphics/photoflow||2022-05-06|Unmaintainer upstream, has been broken for months, particularly this issue isn't answered: https://github.com/aferrero2707/PhotoFlow/issues/220
+textproc/redisearch16||2022-05-09|Has expired. Use textproc/redisearch or textproc/redisearch20
