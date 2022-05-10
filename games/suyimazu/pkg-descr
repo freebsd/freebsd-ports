@@ -1,6 +1,4 @@
-Suyimazu is a launcher that makes it easy to run Windows games/launcher easily on
-FreeBSD by providing the required fixes and workarounds.
+Suyimazu is a launcher that aims to run Windows games/launcher and more
+easily through Wine on FreeBSD by providing the required fixes and workarounds.
 
-The Windows emulation is provided by Wine.
-
-WWW: https://codeberg.org/Alexander88207/Homura
+WWW: https://codeberg.org/Alexander88207/Suyimazu

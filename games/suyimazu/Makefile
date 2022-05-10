@@ -1,7 +1,7 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
 
 PORTNAME=	suyimazu
-DISTVERSION=	5.7
+DISTVERSION=	5.8
 CATEGORIES=	games
 MASTER_SITES=	https://codeberg.org/Alexander88207/Suyimazu/archive/
 DISTNAME=	${DISTVERSION}
