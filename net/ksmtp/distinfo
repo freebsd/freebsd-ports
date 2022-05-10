@@ -1,3 +1,3 @@
-TIMESTAMP = 1650101857
-SHA256 (KDE/release-service/22.04.0/ksmtp-22.04.0.tar.xz) = 2da40edebd2106265cc8060adcf10eac97dd1ad3ed83b1c3919b096f3a5e6797
-SIZE (KDE/release-service/22.04.0/ksmtp-22.04.0.tar.xz) = 48616
+TIMESTAMP = 1652179743
+SHA256 (KDE/release-service/22.04.1/ksmtp-22.04.1.tar.xz) = f445692c54310c737d6afffeb8a2ce9d6c17164ca6145fc7f983f8adfe79f458
+SIZE (KDE/release-service/22.04.1/ksmtp-22.04.1.tar.xz) = 48576

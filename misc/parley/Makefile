@@ -1,6 +1,5 @@
 PORTNAME=	parley
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	misc education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

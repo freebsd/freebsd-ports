@@ -100,6 +100,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/avfilter_doubleweave.xml
 %%DATADIR%%/effects/avfilter_drawbox.xml
 %%DATADIR%%/effects/avfilter_drawgrid.xml
+%%DATADIR%%/effects/box_blur.xml
 %%DATADIR%%/effects/avfilter_edgedetect.xml
 %%DATADIR%%/effects/avfilter_elbg.xml
 %%DATADIR%%/effects/avfilter_eq.xml

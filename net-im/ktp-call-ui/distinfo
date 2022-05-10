@@ -1,3 +1,3 @@
-TIMESTAMP = 1650101834
-SHA256 (KDE/release-service/22.04.0/ktp-call-ui-22.04.0.tar.xz) = 17649037d0fcd332123fe3228f6691bb7a0ad5b66c431b504c22c80108d7c63f
-SIZE (KDE/release-service/22.04.0/ktp-call-ui-22.04.0.tar.xz) = 99100
+TIMESTAMP = 1652179565
+SHA256 (KDE/release-service/22.04.1/ktp-call-ui-22.04.1.tar.xz) = eb47ff05254ad3f689f22a70b3d68f0408a189815c6118822d6da07f45b1ab4a
+SIZE (KDE/release-service/22.04.1/ktp-call-ui-22.04.1.tar.xz) = 99192

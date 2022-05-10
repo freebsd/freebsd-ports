@@ -1,3 +1,3 @@
-TIMESTAMP = 1650101775
-SHA256 (KDE/release-service/22.04.0/libkipi-22.04.0.tar.xz) = 72fe676753d157b1fc4da8ae2543e5d2ff9d1cdda45db188710bb7384b979c75
-SIZE (KDE/release-service/22.04.0/libkipi-22.04.0.tar.xz) = 88444
+TIMESTAMP = 1652179667
+SHA256 (KDE/release-service/22.04.1/libkipi-22.04.1.tar.xz) = ef15b74fed59d10dd584e452925027d927eeb7b738569089cb8da21b1e9c9afd
+SIZE (KDE/release-service/22.04.1/libkipi-22.04.1.tar.xz) = 88456

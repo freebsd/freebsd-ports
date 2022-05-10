@@ -1,3 +1,3 @@
-TIMESTAMP = 1650101904
-SHA256 (KDE/release-service/22.04.0/kcachegrind-22.04.0.tar.xz) = aed09ea5dc01ace24c76ed69edef5111c47f53992ba45896365b53cd3fc8890d
-SIZE (KDE/release-service/22.04.0/kcachegrind-22.04.0.tar.xz) = 867112
+TIMESTAMP = 1652179573
+SHA256 (KDE/release-service/22.04.1/kcachegrind-22.04.1.tar.xz) = 5af150fc24f36f67f4c86ccb7a5a85067619685c4639fa905195136e84a7785b
+SIZE (KDE/release-service/22.04.1/kcachegrind-22.04.1.tar.xz) = 869696

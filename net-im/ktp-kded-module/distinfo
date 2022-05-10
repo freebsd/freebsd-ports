@@ -1,3 +1,3 @@
-TIMESTAMP = 1650101839
-SHA256 (KDE/release-service/22.04.0/ktp-kded-module-22.04.0.tar.xz) = a02167af2fa9562ae178b08d45de14a7e922d28f8f1137fa9e41a27326d53954
-SIZE (KDE/release-service/22.04.0/ktp-kded-module-22.04.0.tar.xz) = 99928
+TIMESTAMP = 1652179567
+SHA256 (KDE/release-service/22.04.1/ktp-kded-module-22.04.1.tar.xz) = c7469b6b0c76088c1df72f45be80b5e22567feb113226951330a93d57de4c6b5
+SIZE (KDE/release-service/22.04.1/ktp-kded-module-22.04.1.tar.xz) = 99864

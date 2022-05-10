@@ -1,3 +1,3 @@
-TIMESTAMP = 1650101885
-SHA256 (KDE/release-service/22.04.0/konqueror-22.04.0.tar.xz) = db55d614c64294860a7869e6570c10febbc42d4be595cdfdab3c327103710c68
-SIZE (KDE/release-service/22.04.0/konqueror-22.04.0.tar.xz) = 7683308
+TIMESTAMP = 1652179549
+SHA256 (KDE/release-service/22.04.1/konqueror-22.04.1.tar.xz) = 2744e2eaab3ebbd8949699cccfd6f849376b10b8a0f9cef00249207701e947ef
+SIZE (KDE/release-service/22.04.1/konqueror-22.04.1.tar.xz) = 7683172

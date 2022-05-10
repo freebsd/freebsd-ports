@@ -1,3 +1,3 @@
-TIMESTAMP = 1650101790
-SHA256 (KDE/release-service/22.04.0/kig-22.04.0.tar.xz) = 6dd9e280e3f0bca4c900f9fd8ef2e138eb8f1b021adf4ffe4e29804adddc7965
-SIZE (KDE/release-service/22.04.0/kig-22.04.0.tar.xz) = 3185584
+TIMESTAMP = 1652179541
+SHA256 (KDE/release-service/22.04.1/kig-22.04.1.tar.xz) = 850c826c9823e3abaff4504c03874755565e2d6732982b4bdffcccedd841e2e3
+SIZE (KDE/release-service/22.04.1/kig-22.04.1.tar.xz) = 3185508
