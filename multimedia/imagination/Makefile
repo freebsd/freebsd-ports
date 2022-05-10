@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	DVD slideshow maker
 
+DEPRECATED=	Obsolete, majority of DVD players made in the last 15+ years have been able to do image slideshows
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	libsox.so:audio/sox \
 		libavcodec.so:multimedia/ffmpeg
 
