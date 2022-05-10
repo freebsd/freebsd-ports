@@ -1,5 +1,5 @@
 PORTNAME=	matterhorn
-PORTVERSION=	50200.13.0
+PORTVERSION=	50200.16.0
 PORTREVISION=	1
 CATEGORIES=	net-im
 
@@ -10,132 +10,137 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
-USE_CABAL=	HTTP-4000.3.15_2 \
+USE_CABAL=	HTTP-4000.4.0 \
 		Hclip-3.0.0.4 \
-		QuickCheck-2.14.1_2 \
+		OneTuple-0.3.1_2 \
+		QuickCheck-2.14.2 \
 		SHA-1.6.4.4 \
-		StateVar-1.2 \
-		aeson-1.4.7.1_2 \
-		ansi-terminal-0.11 \
+		StateVar-1.2.2 \
+		aeson-2.0.3.0 \
+		ansi-terminal-0.11.3 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
 		aspell-pipe-0.6 \
-		async-2.2.2_1 \
-		attoparsec-0.13.2.4_1 \
-		base-compat-0.11.1 \
-		base-compat-batteries-0.11.1 \
-		base-orphans-0.8.2 \
-		base64-bytestring-1.1.0.0 \
-		basement-0.0.11_3 \
-		bifunctors-5.5.7_2 \
-		blaze-builder-0.4.1.0_1 \
-		blaze-html-0.9.1.2_1 \
-		blaze-markup-0.8.2.7 \
-		brick-0.62 \
+		assoc-1.0.2_2 \
+		async-2.2.4_1 \
+		attoparsec-0.14.4_1 \
+		base-compat-0.12.1 \
+		base-compat-batteries-0.12.1_2 \
+		base-orphans-0.8.6 \
+		base64-bytestring-1.2.1.0 \
+		basement-0.0.14 \
+		bifunctors-5.5.12 \
+		blaze-builder-0.4.2.2_1 \
+		blaze-html-0.9.1.2_2 \
+		blaze-markup-0.8.2.8_2 \
+		brick-0.68.1 \
 		brick-skylighting-0.3 \
 		bytestring-builder-0.10.8.2.0 \
-		cabal-doctest-1.0.8_2 \
+		cabal-doctest-1.0.9 \
 		case-insensitive-1.2.1.0 \
-		cereal-0.5.8.1 \
-		cheapskate-0.1.1.2_1 \
-		clock-0.8 \
-		colour-2.3.5 \
-		commonmark-0.1.1.4 \
-		commonmark-extensions-0.2.0.4 \
-		comonad-5.0.6_1 \
+		cereal-0.5.8.2 \
+		clock-0.8.3 \
+		colour-2.3.6 \
+		commonmark-0.2.2 \
+		commonmark-extensions-0.2.3.1 \
+		comonad-5.0.8_1 \
+		conduit-1.3.4.2 \
+		conduit-extra-1.3.5 \
 		config-ini-0.2.4.0_2 \
 		connection-0.3.1_1 \
-		contravariant-1.5.2 \
-		cryptohash-md5-0.11.100.1_6 \
-		cryptohash-sha1-0.11.100.1_6 \
-		cryptonite-0.27_1 \
-		css-text-0.1.3.0 \
+		contravariant-1.5.5 \
+		cryptohash-md5-0.11.101.0 \
+		cryptohash-sha1-0.11.101.0 \
+		cryptonite-0.30 \
 		data-clist-0.1.2.3_1 \
-		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
-		data-default-instances-containers-0.0.1 \
-		data-default-instances-dlist-0.0.1 \
-		data-default-instances-old-locale-0.0.1 \
-		distributive-0.6.2_2 \
-		dlist-0.8.0.8 \
-		emojis-0.1 \
-		entropy-0.4.1.6_1 \
+		data-fix-0.3.2_2 \
+		distributive-0.6.2.1_1 \
+		dlist-1.0 \
+		emojis-0.1.2 \
+		entropy-0.4.1.7 \
 		extensible-exceptions-0.1.1.4 \
 		gitrev-1.3.1 \
-		happy-1.19.12 \
-		hashable-1.3.0.0_2 \
+		happy-1.20.0_1 \
+		hashable-1.3.5.0_1 \
 		haskell-lexer-1.1 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.7_1 \
-		http-media-0.8.0.0_5 \
-		hxt-9.3.1.18 \
-		hxt-charproperties-9.4.0.0 \
-		hxt-regex-xmlschema-9.2.0.3_1 \
-		hxt-unicode-9.0.2.4 \
-		integer-logarithms-1.0.3_2 \
-		mattermost-api-50200.11.0 \
-		megaparsec-8.0.0 \
-		memory-0.15.0_2 \
-		microlens-0.4.11.2 \
-		microlens-ghc-0.4.12 \
+		hsc2hs-0.68.8 \
+		http-media-0.8.0.0_6 \
+		indexed-traversable-0.1.2_1 \
+		indexed-traversable-instances-0.1.1 \
+		integer-logarithms-1.0.3.1_2 \
+		mattermost-api-50200.12.0 \
+		megaparsec-9.2.1 \
+		memory-0.17.0 \
+		microlens-0.4.12.0 \
+		microlens-ghc-0.4.13.1 \
 		microlens-mtl-0.2.0.1 \
-		microlens-platform-0.4.1 \
-		microlens-th-0.4.3.5 \
-		modern-uri-0.3.2.0_3 \
-		monad-control-1.0.2.3 \
-		network-3.1.2.0_1 \
-		network-info-0.2.0.10_1 \
-		network-uri-2.6.3.0_1 \
-		old-locale-1.0.0.7_2 \
-		parallel-3.2.2.0_3 \
-		parser-combinators-1.2.1 \
+		microlens-platform-0.4.2.1 \
+		microlens-th-0.4.3.10 \
+		modern-uri-0.3.4.4 \
+		monad-control-1.0.3.1 \
+		mono-traversable-1.0.15.3 \
+		network-3.1.2.7 \
+		network-info-0.2.1 \
+		network-uri-2.6.4.1 \
+		parallel-3.2.2.0_4 \
+		parser-combinators-1.3.0 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
-		primitive-0.7.1.0_3 \
-		profunctors-5.5.2_1 \
+		primitive-0.7.3.0 \
+		profunctors-5.6.2_2 \
 		random-1.1_1 \
-		reflection-2.1.6 \
-		regex-base-0.94.0.0_1 \
-		regex-pcre-builtin-0.95.1.2.8.43 \
+		reflection-2.1.6_1 \
 		resource-pool-0.2.3.2 \
+		resourcet-1.2.4.3_1 \
 		safe-0.3.19 \
-		scientific-0.3.6.2 \
-		semigroups-0.19.1_1 \
-		skylighting-core-0.8.5 \
+		scientific-0.3.7.0_2 \
+		semialign-1.2.0.1_1 \
+		semigroupoids-5.3.7 \
+		semigroups-0.19.2_2 \
+		skylighting-core-0.12.3 \
 		socks-0.6.1 \
-		split-0.2.3.4_1 \
-		splitmix-0.1.0.1 \
+		split-0.2.3.4_2 \
+		splitmix-0.1.0.4 \
 		stm-delay-0.1.1.1 \
-		streaming-commons-0.2.2.1 \
-		strict-0.3.2 \
-		syb-0.7.1_1 \
-		tagged-0.8.6_3 \
-		tagsoup-0.14.8 \
+		streaming-commons-0.2.2.4 \
+		strict-0.4.0.1_4 \
+		tagged-0.8.6.1_2 \
 		temporary-1.3 \
-		text-zipper-0.10.1 \
-		th-abstraction-0.3.2.0 \
-		time-compat-1.9.3 \
-		timezone-olson-0.2.0 \
-		timezone-series-0.1.9 \
-		tls-1.5.4 \
-		transformers-base-0.4.5.2_1 \
-		transformers-compat-0.6.5 \
-		uniplate-1.6.12_1 \
-		unordered-containers-0.2.12.0 \
-		utf8-string-1.0.1.1_3 \
-		uuid-1.3.13_6 \
-		uuid-types-1.0.3_4 \
-		vector-0.12.1.2 \
-		vty-5.32 \
-		websockets-0.12.7.1 \
+		text-short-0.1.5 \
+		text-zipper-0.11 \
+		th-abstraction-0.4.3.0 \
+		th-compat-0.1.3_1 \
+		these-1.1.1.1_5 \
+		time-compat-1.9.6.1_3 \
+		timezone-olson-0.2.1 \
+		timezone-series-0.1.13_1 \
+		tls-1.5.7 \
+		transformers-base-0.4.6 \
+		transformers-compat-0.7.1_1 \
+		typed-process-0.2.8.0_1 \
+		unicode-data-0.3.0_1 \
+		unicode-transforms-0.4.0.1 \
+		unliftio-core-0.2.0.1_2 \
+		unordered-containers-0.2.19.1 \
+		utf8-string-1.0.2 \
+		uuid-1.3.15_1 \
+		uuid-types-1.0.5_2 \
+		vector-0.12.3.1_1 \
+		vector-algorithms-0.8.0.4_1 \
+		vty-5.35.1 \
+		websockets-0.12.7.3_1 \
+		witherable-0.4.2_2 \
 		word-wrap-0.4.1_1 \
-		x509-1.7.5_1 \
-		x509-store-1.6.7_1 \
-		x509-system-1.6.6 \
-		x509-validation-1.6.11 \
+		x509-1.7.6 \
+		x509-store-1.6.9 \
+		x509-system-1.6.7 \
+		x509-validation-1.6.12 \
 		xdg-basedir-0.2.2 \
-		xss-sanitize-0.3.6 \
-		zlib-0.6.2.2
+		xml-conduit-1.9.1.1 \
+		xml-types-0.3.8 \
+		zlib-0.6.3.0
 
 .include <bsd.port.mk>
