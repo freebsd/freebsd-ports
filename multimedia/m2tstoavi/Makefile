@@ -10,6 +10,9 @@ DISTNAME=	m2ts
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Utility which eases conversion of AVCHD (m2ts) to AVI
 
+DEPRECATED=	Marked obsolete by upstream in 2010, please consider using multimedia/ffmpeg or multimedia/handbrake
+EXPIRATION_DATE=2022-06-30
+
 RUN_DEPENDS=	xporthdmv:multimedia/xporthdmv \
 		ldecod:multimedia/jmref \
 		ffmpeg:multimedia/ffmpeg
