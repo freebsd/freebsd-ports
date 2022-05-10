@@ -11,6 +11,9 @@ DISTNAME=	Getleft-v${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Web site downloader
 
+DEPRECATED=	Abandonware last updated on 2008
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:x11-toolkits/tktable
 
 USES=		tk
