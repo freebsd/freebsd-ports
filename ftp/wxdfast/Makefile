@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_armv6=		fails to compile: no matching member function for call to 'Read'
 BROKEN_armv7=		fails to compile: no matching member function for call to 'Read'
+DEPRECATED=	Last release in 2009, doesn't support https, depends on deprecated wxgtk28 and dead upstream. Please consider using net/uget
+EXPIRATION_DATE=2022-06-30
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
