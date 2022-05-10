@@ -11,6 +11,9 @@ COMMENT=	HTTP/FTP downloader with a nice GUI
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Last release in 2007, doesn't support https, depends on deprecated wxgtk28 and dead upstream. Please consider using net/uget
+EXPIRATION_DATE=2022-06-30
+
 WRKSRC_SUBDIR=	src
 
 USES=		alias compiler:c++11-lang dos2unix
