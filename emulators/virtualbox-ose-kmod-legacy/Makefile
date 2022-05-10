@@ -19,6 +19,9 @@ BUILD_DEPENDS=	kmk:devel/kBuild
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 
+SUB_FILES=	pkg-message
+SUB_LIST=	OPSYS=${OPSYS} OSREL=${OSREL}
+
 USES=		cpe kmod tar:bzip2
 PATCHDIR=	${.CURDIR}/../${PORTNAME}-legacy/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}

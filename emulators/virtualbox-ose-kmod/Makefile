@@ -2,6 +2,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.34
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX=	-kmod
@@ -17,6 +18,9 @@ BUILD_DEPENDS=	kmk:devel/kBuild
 
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
+
+SUB_FILES=	pkg-message
+SUB_LIST=	OPSYS=${OPSYS} OSREL=${OSREL}
 
 USES=		cpe compiler:c++14-lang kmod tar:bzip2
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
