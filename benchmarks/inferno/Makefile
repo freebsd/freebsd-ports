@@ -1,7 +1,6 @@
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.2
-PORTREVISION=	1
+DISTVERSION=	0.11.3
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,9 +28,9 @@ CARGO_CRATES=	adler32-1.2.0 \
 		cast-0.2.7 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
-		clap-3.1.12 \
+		clap-3.1.17 \
 		clap_derive-3.1.7 \
-		clap_lex-0.1.1 \
+		clap_lex-0.2.0 \
 		crc32fast-1.3.2 \
 		criterion-0.3.5 \
 		criterion-plot-0.4.4 \
@@ -42,7 +41,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
 		ctor-0.1.22 \
-		dashmap-5.2.0 \
+		dashmap-5.3.3 \
 		diff-0.1.12 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
@@ -51,6 +50,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		getrandom-0.2.6 \
 		half-1.8.2 \
 		hashbrown-0.11.2 \
+		hashbrown-0.12.1 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		indexmap-1.8.1 \
@@ -59,24 +59,22 @@ CARGO_CRATES=	adler32-1.2.0 \
 		itoa-1.0.1 \
 		js-sys-0.3.57 \
 		lazy_static-1.4.0 \
-		libc-0.2.124 \
+		libc-0.2.125 \
 		libflate-1.2.0 \
 		libflate_lz77-1.1.0 \
 		lock_api-0.4.7 \
-		log-0.4.16 \
+		log-0.4.17 \
 		maplit-1.0.2 \
-		memchr-2.4.1 \
+		memchr-2.5.0 \
 		memoffset-0.6.5 \
 		nodrop-0.1.14 \
 		num-format-0.4.0 \
-		num-traits-0.2.14 \
+		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
 		once_cell-1.10.0 \
 		oorandom-11.1.3 \
 		os_str_bytes-6.0.0 \
 		output_vt100-0.1.3 \
-		parking_lot-0.12.0 \
-		parking_lot_core-0.9.2 \
 		plotters-0.3.1 \
 		plotters-backend-0.3.2 \
 		plotters-svg-0.3.1 \
@@ -87,7 +85,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		pretty_assertions-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.37 \
+		proc-macro2-1.0.38 \
 		quick-xml-0.22.0 \
 		quote-1.0.18 \
 		rand-0.8.5 \
@@ -95,7 +93,6 @@ CARGO_CRATES=	adler32-1.2.0 \
 		rand_core-0.6.3 \
 		rayon-1.5.2 \
 		rayon-core-1.9.2 \
-		redox_syscall-0.2.13 \
 		regex-1.5.5 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.25 \
@@ -105,15 +102,14 @@ CARGO_CRATES=	adler32-1.2.0 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		semver-1.0.7 \
-		serde-1.0.136 \
+		semver-1.0.9 \
+		serde-1.0.137 \
 		serde_cbor-0.11.2 \
-		serde_derive-1.0.136 \
-		serde_json-1.0.79 \
-		smallvec-1.8.0 \
+		serde_derive-1.0.137 \
+		serde_json-1.0.81 \
 		str_stack-0.1.0 \
 		strsim-0.10.0 \
-		syn-1.0.91 \
+		syn-1.0.92 \
 		termcolor-1.1.3 \
 		termtree-0.2.4 \
 		testing_logger-0.1.1 \
@@ -121,7 +117,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		textwrap-0.15.0 \
 		tinytemplate-1.2.1 \
 		unicode-width-0.1.9 \
-		unicode-xid-0.2.2 \
+		unicode-xid-0.2.3 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \
@@ -135,13 +131,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.34.0 \
-		windows_aarch64_msvc-0.34.0 \
-		windows_i686_gnu-0.34.0 \
-		windows_i686_msvc-0.34.0 \
-		windows_x86_64_gnu-0.34.0 \
-		windows_x86_64_msvc-0.34.0
+		winapi-x86_64-pc-windows-gnu-0.4.0
 EXECUTABLES=	inferno-collapse-dtrace \
 		inferno-collapse-guess \
 		inferno-collapse-perf \
