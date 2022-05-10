@@ -1,33 +1,31 @@
 PORTNAME=	primme
-DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2
+DISTVERSION=	3.2.1
 CATEGORIES=	math python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PRIMME wrapper for Python
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/../COPYING.txt
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 LIB_DEPENDS=	libprimme.so:math/primme
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
+		
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
 USES=		fortran gmake localbase:ldflags python:3.6+ shebangfix
-SHEBANG_FILES=	examples.py tests.py
-USE_GITHUB=	yes
 USE_PYTHON=	distutils cython autoplist
+
 TEST_TARGET=	test
 
-WRKSRC_SUBDIR=	Python
 BINARY_ALIAS=	python2=${PYTHON_CMD}
 
-post-patch:
-	@${REINPLACE_CMD} "s|\['../lib/libprimme.a'\]|['${LOCALBASE}/lib/libprimme.so']|" ${WRKSRC}/setup.py
-
-post-test: # not sure why does the 'test' target run examples and not tests
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${WRKSRC}/tests.py
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/primme.cpython-38.so
 
 .include <bsd.port.mk>
