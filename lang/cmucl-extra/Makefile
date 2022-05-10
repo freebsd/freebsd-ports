@@ -14,6 +14,10 @@ COMMENT=	Optional extras for the CMU implementation of Common Lisp
 
 LICENSE=	PD
 
+BROKEN=		lang/cmucl is broken since 12.1
+DEPRECATED=	lang/cmucl is not supported upstream since 2017 and broken since FreeBSD 12.1
+EXPIRATION_DATE=	2022-06-25
+
 RUN_DEPENDS=	lisp:lang/cmucl
 
 USES=		tar:bzip2

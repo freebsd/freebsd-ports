@@ -14,6 +14,10 @@ COMMENT=	CMU implementation of Common Lisp
 
 LICENSE=	PD
 
+BROKEN=		Broken since FreeBSD 12.1
+DEPRECATED=	Not supported upstream since 2017 and broken since FreeBSD 12.1
+EXPIRATION_DATE=	2022-06-25
+
 USES=		tar:bzip2
 
 # To make available on other archs, has to be cross-compiled (there is a
