@@ -74,4 +74,13 @@ section of the configuration file, is set to true. See the upgrade notes[1] for 
 [1] https://matrix-org.github.io/synapse/v1.56/upgrade#change-in-behaviour-for-postgresql-databases-with-unsafe-locale
 EOM
 }
+{ type: upgrade
+  maximum_version: 1.62.0
+  message: <<EOM
+Starting with synapse 1.62.0, this port will no longer ship with sqlite support
+by default. If you rely on sqlite for your setup, please either migrate to
+postfix, install the sqlite dependency manually or build a custom flavor of the
+port.
+EOM
+}
 ]
