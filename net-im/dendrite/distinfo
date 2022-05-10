@@ -1,6 +1,6 @@
-TIMESTAMP = 1652148010
-SHA256 (matrix-org-dendrite-v0.8.3_GH0.tar.gz) = 2d61dc970bf812e13f7a81c65e811811ef950dad02631380650191214f2b5d5d
-SIZE (matrix-org-dendrite-v0.8.3_GH0.tar.gz) = 1143366
+TIMESTAMP = 1652192502
+SHA256 (matrix-org-dendrite-v0.8.4_GH0.tar.gz) = 5fd9481da79058b6340f210362114b6c9bc243fc44d6a195a8e20e8657d53eb6
+SIZE (matrix-org-dendrite-v0.8.4_GH0.tar.gz) = 1143584
 SHA256 (Arceliar-ironwood-8951369625d0_GH0.tar.gz) = 17385698026bd8afb569859055604835f061f1cef77eda2372b2a0c7c4699939
 SIZE (Arceliar-ironwood-8951369625d0_GH0.tar.gz) = 40531
 SHA256 (Arceliar-phony-dde1a8dca979_GH0.tar.gz) = bcc79621c9da979c1d357a29f1924d73c86c57c0e901652312d742cbc39e5962
