@@ -1,5 +1,5 @@
 PORTNAME=	Pyomo
-DISTVERSION=	6.1.2
+DISTVERSION=	6.4.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils concurrent autoplist
-
-NO_ARCH=	yes
+USE_PYTHON=	distutils cython concurrent autoplist
 
 .include <bsd.port.mk>
