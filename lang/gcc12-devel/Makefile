@@ -1,7 +1,7 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 
 PORTNAME=	gcc
-PORTVERSION=	12.0.1.s20220430
+PORTVERSION=	12.1.1.s20220507
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
