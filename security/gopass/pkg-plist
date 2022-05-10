@@ -6,9 +6,11 @@ etc/bash_completion.d/gopass.sh
 %%PORTDOCS%%%%DOCSDIR%%/backends/gitfs.md
 %%PORTDOCS%%%%DOCSDIR%%/backends/gpg.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/audit.md
+%%PORTDOCS%%%%DOCSDIR%%/commands/cat.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/clone.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/config.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/convert.md
+%%PORTDOCS%%%%DOCSDIR%%/commands/create.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/delete.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/edit.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/env.md
@@ -25,6 +27,7 @@ etc/bash_completion.d/gopass.sh
 %%PORTDOCS%%%%DOCSDIR%%/commands/mount.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/move.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/otp.md
+%%PORTDOCS%%%%DOCSDIR%%/commands/process.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/pwgen.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/recipients.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/show.md
@@ -37,6 +40,7 @@ etc/bash_completion.d/gopass.sh
 %%PORTDOCS%%%%DOCSDIR%%/entropy.md
 %%PORTDOCS%%%%DOCSDIR%%/faq.md
 %%PORTDOCS%%%%DOCSDIR%%/features.md
+%%PORTDOCS%%%%DOCSDIR%%/hacking.md
 %%PORTDOCS%%%%DOCSDIR%%/logo-small.png
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/logo.svg
@@ -44,6 +48,7 @@ etc/bash_completion.d/gopass.sh
 %%PORTDOCS%%%%DOCSDIR%%/security.md
 %%PORTDOCS%%%%DOCSDIR%%/setup.md
 %%PORTDOCS%%%%DOCSDIR%%/showcase.png
+%%PORTDOCS%%%%DOCSDIR%%/usecases/gpaste.md
 %%PORTDOCS%%%%DOCSDIR%%/usecases/multi-store.md
 %%PORTDOCS%%%%DOCSDIR%%/usecases/secure-otp.md
 %%PORTDOCS%%%%DOCSDIR%%/usecases/secure-otp/Sign-In.png
