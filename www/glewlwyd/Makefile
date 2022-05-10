@@ -38,11 +38,13 @@ RUN_DEPENDS=	yder>1.4.14:devel/yder \
 		orcania>2.2.1:devel/orcania \
 		oath-toolkit>0:security/oath-toolkit
 
-USES=		cmake pgsql sqlite
+USES=		cmake cpe pgsql sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
 GH_TAGNAME=	e1ea98a
+
+CPE_VENDOR=	glewlwyd_project
 
 CMAKE_ARGS=	-DWITH_JOURNALD=off \
 		-DWITH_USER_LDAP=off \
