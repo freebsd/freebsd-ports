@@ -9,6 +9,8 @@ COMMENT=	Command-line tool to manage and query Zed data lakes
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	fails to build: cannot use math.MaxUint32 (untyped int constant 4294967295) as int value in assignment (overflows)
+
 USES=	go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	brimdata
