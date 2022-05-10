@@ -1,7 +1,7 @@
 # Created by: antoine@FreeBSD.org
 
 PORTNAME=	python-snappy
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.1
 CATEGORIES=	archivers devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
