@@ -1,0 +1,12 @@
+RediSearch is a source available Full-Text and Secondary Index
+engine over Redis, developed by Redis Labs.
+
+Redisearch implements a search engine on top of Redis, but
+unlike other Redis search libraries, it does not use internal
+data structures like sorted sets.
+
+This also enables more advanced features, like exact phrase
+matching and numeric filtering for text queries, that are not
+possible or efficient with traditional Redis search approaches.
+
+WWW: https://oss.redislabs.com/redisearch/
