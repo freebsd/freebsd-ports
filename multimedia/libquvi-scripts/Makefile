@@ -12,6 +12,9 @@ COMMENT=	Embedded lua scripts for libquvi and utility scripts
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+EXPIRATION_DATE=2022-06-30
+
 USES=		pathfix tar:xz
 
 GNU_CONFIGURE=	yes

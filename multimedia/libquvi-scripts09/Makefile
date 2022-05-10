@@ -14,6 +14,9 @@ COMMENT=	Embedded lua scripts for libquvi and utility scripts
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+EXPIRATION_DATE=2022-06-30
+
 RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}bitop>=1.0.1:devel/lua-bitop@${LUA_FLAVOR} \
 		${LUA_PKGNAMEPREFIX}luaexpat>=1.2.0:textproc/luaexpat@${LUA_FLAVOR} \
 		${LUA_PKGNAMEPREFIX}json>=1.1.1:converters/lua-json@${LUA_FLAVOR} \
