@@ -1,11 +1,10 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	pyphen
-PORTVERSION=	0.10.0
+PORTVERSION=	0.12.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Pyphen-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Module to hyphenate text based on Hunspell dictionaries
@@ -18,6 +17,13 @@ LICENSE_FILE_MPL11=	${WRKSRC}/COPYING.MPL
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
+
+pre-configure:
+	@( \
+		${ECHO} "from setuptools import setup" && \
+		${ECHO} "setup()" \
+	) > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
