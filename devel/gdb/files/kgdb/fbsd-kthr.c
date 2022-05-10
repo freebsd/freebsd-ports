@@ -254,16 +254,16 @@ kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 				error (_("Unable to find struct proc symbol"));
 
 			proc_off_p_pid =
-			    lookup_struct_elt (SYMBOL_TYPE (proc_sym), "p_pid",
+			    lookup_struct_elt (proc_sym->type (), "p_pid",
 				0).offset / 8;
 			proc_off_p_comm =
-			    lookup_struct_elt (SYMBOL_TYPE (proc_sym), "p_comm",
+			    lookup_struct_elt (proc_sym->type (), "p_comm",
 				0).offset / 8;
 			proc_off_p_list =
-			    lookup_struct_elt (SYMBOL_TYPE (proc_sym), "p_list",
+			    lookup_struct_elt (proc_sym->type (), "p_list",
 				0).offset / 8;
 			proc_off_p_threads =
-			    lookup_struct_elt (SYMBOL_TYPE (proc_sym),
+			    lookup_struct_elt (proc_sym->type (),
 				"p_threads", 0).offset / 8;
 
 			struct symbol *thread_sym =
@@ -273,20 +273,20 @@ kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 				error (_("Unable to find struct thread symbol"));
 
 			thread_off_td_tid =
-			    lookup_struct_elt (SYMBOL_TYPE (proc_sym), "td_tid",
+			    lookup_struct_elt (proc_sym->type (), "td_tid",
 				0).offset / 8;
 			thread_off_td_name =
-			    lookup_struct_elt (SYMBOL_TYPE (proc_sym), "td_name",
+			    lookup_struct_elt (proc_sym->type (), "td_name",
 				0).offset / 8;
 			thread_off_td_pcb =
-			    lookup_struct_elt (SYMBOL_TYPE (proc_sym), "td_pcb",
+			    lookup_struct_elt (proc_sym->type (), "td_pcb",
 				0).offset / 8;
 			thread_off_td_plist =
-			    lookup_struct_elt (SYMBOL_TYPE (proc_sym), "td_plist",
+			    lookup_struct_elt (proc_sym->type (), "td_plist",
 				0).offset / 8;
 
 			struct_elt td_oncpu =
-			    lookup_struct_elt (SYMBOL_TYPE (proc_sym), "td_oncpu",
+			    lookup_struct_elt (proc_sym->type (), "td_oncpu",
 				0);
 			thread_off_td_oncpu = td_oncpu.offset / 8;
 			thread_oncpu_size = FIELD_BITSIZE(*td_oncpu.field) / 8;
@@ -319,7 +319,7 @@ kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 				error (_("Unable to find struct proc symbol"));
 
 			proc_off_p_hash =
-			    lookup_struct_elt (SYMBOL_TYPE (proc_sym), "p_hash",
+			    lookup_struct_elt (proc_sym->type (), "p_hash",
 				0).offset / 8;
 		} catch (const gdb_exception_error &e2) {
 			proc_off_p_hash = offsetof(struct proc, p_hash);

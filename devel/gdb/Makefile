@@ -1,7 +1,7 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 
 PORTNAME=	gdb
-DISTVERSION=	11.2
+DISTVERSION=	12.1
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	GNU
@@ -38,6 +38,34 @@ CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
+EXTRA_PATCHES=	${FILESDIR}/commit-711b0b6698f \
+		${FILESDIR}/commit-922c2fc18e4 \
+		${FILESDIR}/commit-b1babce7c31 \
+		${FILESDIR}/commit-a49ce729c80 \
+		${FILESDIR}/commit-c77282d8ba9 \
+		${FILESDIR}/commit-041a4212d37 \
+		${FILESDIR}/commit-4bd817e71ee \
+		${FILESDIR}/commit-1570c37c340 \
+		${FILESDIR}/commit-6719bc690e2 \
+		${FILESDIR}/commit-983b1119bc3 \
+		${FILESDIR}/commit-a3627b54280 \
+		${FILESDIR}/commit-065a00b3a46 \
+		${FILESDIR}/commit-e330d4c033e \
+		${FILESDIR}/commit-a171378aa47 \
+		${FILESDIR}/commit-b5c2367c3ac \
+		${FILESDIR}/commit-f3215e1526d \
+		${FILESDIR}/commit-c13566fdd57 \
+		${FILESDIR}/commit-3181aed81c9 \
+		${FILESDIR}/commit-8e6afe4013f \
+		${FILESDIR}/commit-40c23d88038 \
+		${FILESDIR}/commit-92d48a1e4ea \
+		${FILESDIR}/commit-099fbce0acc \
+		${FILESDIR}/commit-2e686a74dc4 \
+		${FILESDIR}/commit-684943d213b \
+		${FILESDIR}/commit-414d5848bb2 \
+		${FILESDIR}/commit-0a765c1a8e9 \
+		${FILESDIR}/commit-f9fbb7636a5 \
+		${FILESDIR}/commit-b7fe5463cf0
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${DISTVERSION:S/.//g}
@@ -121,10 +149,6 @@ EXCLUDE+=	zlib
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
-
-.if ${CHOSEN_COMPILER_TYPE} == clang
-CFLAGS+=	-Wno-extended-offsetof
 .endif
 
 post-patch:

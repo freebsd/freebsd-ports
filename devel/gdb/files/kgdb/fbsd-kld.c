@@ -377,17 +377,17 @@ kld_solib_create_inferior_hook (int from_tty)
 			    "Unable to find struct linker_file symbol"));
 
 			info->off_address =
-			    lookup_struct_elt (SYMBOL_TYPE (linker_file_sym),
+			    lookup_struct_elt (linker_file_sym->type (),
 				"address", 0).offset / 8;
 			info->off_filename =
-			    lookup_struct_elt (SYMBOL_TYPE (linker_file_sym),
+			    lookup_struct_elt (linker_file_sym->type (),
 				"filename", 0).offset / 8;
 			info->off_pathname =
-			    lookup_struct_elt (SYMBOL_TYPE (linker_file_sym),
+			    lookup_struct_elt (linker_file_sym->type (),
 				"pathname", 0).offset / 8;
 
 			struct type *link_type =
-			    lookup_struct_elt_type (SYMBOL_TYPE (linker_file_sym),
+			    lookup_struct_elt_type (linker_file_sym->type (),
 				"link", 0);
 			if (link_type == NULL)
 				error (_("Unable to find link type"));
