@@ -11,6 +11,10 @@ COMMENT=	Command line video extraction tool for YouTube and others
 
 LICENSE=	GPLv3
 
+BROKEN=		doesn't work with multiple websites
+DEPRECATED=	Last release in 2012, please consider using www/yt-dlp or multimedia/streamlink
+EXPIRATION_DATE=2022-06-30
+
 TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
 BUILD_DEPENDS=	p5-Getopt-ArgvFile>=1.11:devel/p5-Getopt-ArgvFile \
 		p5-JSON-XS>=2.30:converters/p5-JSON-XS
