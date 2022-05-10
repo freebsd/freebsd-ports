@@ -16,11 +16,13 @@ LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		gettext-runtime gnome libtool magick:7 tar:xz
+USES=		cpe gettext-runtime gnome libtool magick:7 tar:xz
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}/html
+
+CPE_VENDOR=	chafa_project
 
 INSTALL_TARGET=	install-strip
 
