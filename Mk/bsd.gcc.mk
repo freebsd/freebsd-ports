@@ -103,7 +103,7 @@ _USE_GCC:=	${GCC_DEFAULT}
 # A concrete version has been selected. Set proper ports dependencies,
 # CC, CXX, CPP, and flags.
 V:=			${_USE_GCC:S/.//}
-.  if ${V} == 12 || ${V} == 13
+.  if ${V} == 13
 _GCC_PORT:=		gcc${V}-devel
 .  else
 _GCC_PORT:=		gcc${V}
