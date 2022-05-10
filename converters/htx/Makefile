@@ -8,6 +8,9 @@ MASTER_SITES=	http://stuff.myrealm.co.uk/htx/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to XHTML converter
 
+DEPRECATED=	XHTML is considered obsolete in favor of HTML5 
+EXPIRATION_DATE=2022-06-30
+
 USES=		perl5 shebangfix
 SHEBANG_FILES=	htx
 NO_BUILD=	yes
