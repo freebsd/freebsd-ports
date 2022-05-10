@@ -15,10 +15,11 @@ COMMENT=	Java classes for XML
 
 LICENSE=	APACHE20
 
-USES=		tar:tgz
+USES=		cpe tar:tgz
 USE_JAVA=	yes
 JAVA_VERSION=	8+
 SCHEMAS_VER=	1.4
+CPE_VENDOR=	apache
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
