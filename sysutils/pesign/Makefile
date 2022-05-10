@@ -26,8 +26,10 @@ USE_GCC=	10
 USE_GITHUB=	yes
 GH_ACCOUNT=	rhinstaller
 
-USES=		gmake localbase pkgconfig
+USES=		cpe gmake localbase pkgconfig
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	pesign_project
 
 ONLY_FOR_ARCHS=		aarch64 armv6 armv7 amd64 i386
 ONLY_FOR_ARCHS_REASON=	UEFI specification only supports little-endian processors
