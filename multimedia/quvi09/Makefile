@@ -14,6 +14,9 @@ COMMENT=	Command line tool for parsing flash media stream URLs
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+EXPIRATION_DATE=2022-06-30
+
 BUILD_DEPENDS=	libquvi09>=0.9:multimedia/libquvi09
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libquvi-0.9.so:multimedia/libquvi09
