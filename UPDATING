@@ -24,7 +24,7 @@ you update your ports collection, before attempting any port upgrades.
   to the EOL of databases/db5.
 
 20220501:
-  AFFECT: users of drm-current-kmod and drm-devel-kmod
+  AFFECTS: users of drm-current-kmod and drm-devel-kmod
   AUTHOR: manu@FreeBSD.org
 
   Both ports where removed.
