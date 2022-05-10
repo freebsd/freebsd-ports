@@ -1,5 +1,5 @@
 PORTNAME=	aeolus
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.4
 CATEGORIES=	audio
 MASTER_SITES=	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
