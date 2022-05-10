@@ -14,7 +14,9 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	${LOCALBASE}/geoserver/start.jar:graphics/geoserver
 
-USES=		zip
+USES=		cpe zip
+
+CPE_VENDOR=	osgeo
 
 NO_ARCH=	yes
 NO_BUILD=	yes
