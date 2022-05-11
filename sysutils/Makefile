@@ -1454,6 +1454,7 @@
     SUBDIR += u-boot-rpi3-32
     SUBDIR += u-boot-rpi4
     SUBDIR += u-boot-sifive-fu540
+    SUBDIR += u-boot-sifive-fu740
     SUBDIR += u-boot-sinovoip-bpi-m3
     SUBDIR += u-boot-sopine
     SUBDIR += u-boot-sopine-spi
