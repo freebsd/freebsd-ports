@@ -1,7 +1,7 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
 
 PORTNAME=	dfwinreg
-PORTVERSION=	20201006
+PORTVERSION=	20211207
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfwinreg/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
