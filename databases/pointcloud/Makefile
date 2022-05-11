@@ -1,13 +1,11 @@
 # Created by: lbartoletti <lbartoletti@FreeBSD.org>
 
 PORTNAME=	pointcloud
-PORTVERSION=	1.2.1
-PORTREVISION=	4
+PORTVERSION=	1.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases geography
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	270f3e112519.patch:-p1
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	LIDAR types for PostgreSQL
