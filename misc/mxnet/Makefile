@@ -1,5 +1,5 @@
 PORTNAME=	mxnet
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
