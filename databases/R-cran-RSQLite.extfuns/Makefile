@@ -2,7 +2,7 @@
 
 PORTNAME=	RSQLite.extfuns
 PORTVERSION=	0.0.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,7 +11,12 @@ COMMENT=	SQLite extension functions for RSQLite
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	R-cran-RSQLite>=0.11.1:databases/R-cran-RSQLite
+DEPRECATED=	RSQLite incorporates RSQLite.extfuns
+EXPIRATION_DATE=	2022-05-31
+
+CONFLICTS=	R-cran-RSQLite
+
+BUILD_DEPENDS=	R-cran-RSQLite>=0.11.1<1.0.0:databases/R-cran-RSQLite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cran:auto-plist,compiles
