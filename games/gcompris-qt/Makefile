@@ -1,5 +1,6 @@
 PORTNAME=	gcompris-qt
 DISTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	games education kde
 MASTER_SITES=	http://gcompris.net/download/qt/src/
 
@@ -17,7 +18,8 @@ USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	doctools_build ecm_build
 USE_QT=		core declarative graphicaleffects gui multimedia network quickcontrols \
 		sensors svg widgets \
-		buildtools_build linguisttools_build qmake_build testlib_build
+		buildtools_build linguisttools_build qmake_build testlib_build \
+		imageformats_run
 
 CMAKE_ARGS=	-DQML_BOX2D_LIBRARY=${QT_QMLDIR}/Box2D.2.0
 
