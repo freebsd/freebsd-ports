@@ -1,7 +1,6 @@
 PORTNAME=	photoflare
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.8
-PORTREVISION=	1
+DISTVERSION=	1.6.10
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,5 +26,8 @@ USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++17-lang
 .endif
+
+post-install: # delete ecp.* files with random extensions
+	@${FIND} ${STAGEDIR}${PREFIX} -name "ecp.*" -delete
 
 .include <bsd.port.mk>
