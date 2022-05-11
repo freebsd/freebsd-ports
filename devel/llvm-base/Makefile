@@ -1,5 +1,5 @@
 PORTNAME=	llvm-base
-PORTVERSION=	1
+PORTVERSION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	# not applicable
 DISTFILES=	# not applicable

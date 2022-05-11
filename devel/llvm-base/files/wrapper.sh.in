@@ -1,6 +1,12 @@
 #!/bin/sh
 
 LOCALBASE="%%LOCALBASE%%"
+if [ -z "$CHERIBSD_VERSION" ]; then
+	CHERIBSD_VERSION=$(awk '/^#define[[:space:]]+__CheriBSD_version/{print $3}' /usr/include/sys/param.h)
+fi
+if [ -z "$CHERIBSD_VERSION" ]; then
+	CHERIBSD_VERSION=0
+fi
 
 VERBOSE=${VERBOSE:-0}
 
@@ -61,11 +67,24 @@ arch_objdump_flags=
 ARCH=`uname -p`
 case $ARCH in
 aarch64)
-	arch_cflags="-march=morello"
+	if [ "$CHERIBSD_VERSION" -le 20220314 ]; then
+		vararg_flags=
+	else
+		vararg_flags="-Xclang -morello-vararg=new"
+	fi
+	arch_cflags="-march=morello $vararg_flags"
 	arch_objdump_flags="--mattr=+morello"
 	;;
 aarch64c)
-	arch_cflags="-march=morello -mabi=purecap -femulated-tls"
+	if [ "$CHERIBSD_VERSION" -le 20220314 ]; then
+		tls_flags="-femulated-tls"
+		vararg_flags=
+	else
+		tls_flags=
+		vararg_flags="-Xclang -morello-vararg=new"
+	fi
+
+	arch_cflags="-march=morello -mabi=purecap $tls_flags $vararg_flags"
 	arch_objdump_flags="--mattr=+morello"
 	;;
 riscv64)
