@@ -1,3 +1,57 @@
+  <vuln vid="157ce083-d145-11ec-ab9b-6cc21735f730">
+    <topic>PostgreSQL Server -- execute arbitrary SQL code as DBA user</topic>
+    <affects>
+      <package>
+	<name>postgresql14-server</name>
+	<range><lt>14.3</lt></range>
+      </package>
+      <package>
+	<name>postgresql13-server</name>
+	<range><lt>13.7</lt></range>
+      </package>
+      <package>
+	<name>postgresql12-server</name>
+	<range><lt>12.11</lt></range>
+      </package>
+      <package>
+	<name>postgresql11-server</name>
+	<range><lt>11.16</lt></range>
+      </package>
+      <package>
+	<name>postgresql10-server</name>
+	<range><lt>10.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL project reports:</p>
+	<blockquote>
+	  <p>
+	    Confine additional operations within "security restricted
+	    operation" sandboxes.
+	  </p>
+	  <p>
+	    Autovacuum, CLUSTER, CREATE INDEX, REINDEX, REFRESH MATERIALIZED VIEW,
+	    and pg_amcheck activated the "security restricted operation" protection
+	    mechanism too late, or even not at all in some code paths.
+	    A user having permission to create non-temporary objects within a
+	    database could define an object that would execute arbitrary SQL
+	    code with superuser permissions the next time that autovacuum
+	    processed the object, or that some superuser ran one of the affected
+	    commands against it.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1552</cvename>
+    </references>
+    <dates>
+      <discovery>2022-05-11</discovery>
+      <entry>2022-05-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ac91cf5e-d098-11ec-bead-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
