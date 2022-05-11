@@ -50,6 +50,6 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/snmp_exporter/
-	${INSTALL_DATA} ${FILESDIR}/generator.yml ${STAGEDIR}${PREFIX}/etc/snmp_exporter/generator.yml
+	${INSTALL_DATA} ${FILESDIR}/generator.yml ${STAGEDIR}${PREFIX}/etc/snmp_exporter/generator.yml.sample
 
 .include <bsd.port.mk>
