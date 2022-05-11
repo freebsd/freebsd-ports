@@ -1,7 +1,7 @@
 # Created by: William Grzybowski <william88@gmail.com>
 
 PORTNAME=	guessit
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.3
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,11 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babelfish>0:devel/py-babelfish@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}rebulk>=3:devel/py-rebulk@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
-
-post-patch:
-		@${REINPLACE_CMD} -e '/setup_requires/d' ${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.mk>
