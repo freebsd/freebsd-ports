@@ -25,7 +25,7 @@ TRYPANDOC_USE_CABAL=	HUnit-1.6.2.0 auto-update-0.1.6 byteorder-1.0.4 \
 			http2-3.0.1 http-types-0.12.3 network-byte-order-0.1.6_1 \
 			network-run-0.2.4 old-time-1.1.0.3_2 psqueues-0.2.7.2_1 \
 			semigroups-0.19.1 time-manager-0.0.0 \
-			unix-time-0.4.7 unliftio-core-0.2.0.1_1 vault-0.3.1.5 \
+			unix-time-0.4.7 unliftio-core-0.2.0.1_2 vault-0.3.1.5 \
 			void-0.7.3 wai-3.2.3 wai-extra-3.1.6 \
 			wai-logger-2.3.6 word8-0.1.3
 TRYPANDOC_EXECUTABLES=	trypandoc
