@@ -65,6 +65,12 @@ stop_postcmd="${name}_poststop"
 
 tailscaled_start()
 {
+	# Check for orphaned tailscale network interface
+	# And if it exists, then destroy it
+	/sbin/ifconfig ${tailscale_tap_dev} >/dev/null 2>&1 && (
+		/sbin/ifconfig ${tailscale_tap_dev} | fgrep -qw PID ||
+		/sbin/ifconfig ${tailscale_tap_dev} destroy
+	)
 	env CACHE_DIRECTORY=/var/db/tailscale /usr/sbin/daemon -f ${tailscaled_syslog_output_flags} -p ${pidfile} ${procname} --port ${tailscaled_port}
 }
 
