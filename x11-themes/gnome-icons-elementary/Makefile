@@ -1,14 +1,14 @@
 # Created by: Nicole Reid <root@cooltrainer.org>
 
 PORTNAME=	elementary
-DISTVERSION=	6.1.0
+DISTVERSION=	7.0.0
 CATEGORIES=	x11-themes gnome
 PKGNAMEPREFIX=	gnome-icons-
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Elementary icon set
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xcursorgen:x11/xcursorgen
