@@ -1,7 +1,7 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 
 PORTNAME=	gtk-youtube-viewer
-PORTVERSION=	3.9.9
+PORTVERSION=	3.10.0
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	nc@FreeBSD.org
