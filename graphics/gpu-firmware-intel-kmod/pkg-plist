@@ -30,5 +30,7 @@
 %%ELKHARTLAKE%%/%%KMODDIR%%/i915_ehl_guc_33_0_4_bin.ko
 %%ELKHARTLAKE%%/%%KMODDIR%%/i915_ehl_huc_9_0_0_bin.ko
 %%TIGERLAKE%%/%%KMODDIR%%/i915_tgl_dmc_ver2_04_bin.ko
+%%TIGERLAKE%%/%%KMODDIR%%/i915_tgl_dmc_ver2_08_bin.ko
 %%TIGERLAKE%%/%%KMODDIR%%/i915_tgl_guc_35_2_0_bin.ko
-%%TIGERLAKE%%/%%KMODDIR%%/i915_tgl_huc_7_0_3_bin.ko
+%%TIGERLAKE%%/%%KMODDIR%%/i915_tgl_huc_7_5_0_bin.ko
+%%ROCKETLAKE%%/%%KMODDIR%%/i915_rkl_dmc_ver2_02_bin.ko

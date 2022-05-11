@@ -1,7 +1,7 @@
 # Created by: Emmanuel Vadot <manu@FreeBSD.org>
 
 PORTNAME=	gpu-firmware-amd-kmod
-PORTVERSION=	20211014
+PORTVERSION=	20220511
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -46,7 +46,9 @@ FLAVORS=	banks \
 		vega12 \
 		vega20 \
 		vegam \
-		verde
+		verde \
+		green_sardine \
+		sienna_cichlid
 FLAVOR?=	banks
 
 USES=		kmod uidfix
@@ -54,7 +56,7 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod-firmware
-GH_TAGNAME=	20211014_1
+GH_TAGNAME=	20220511
 
 MAKE_ENV=	KMODS="amdgpukmsfw"
 MAKE_ENV+=	AMDGPUKMODS="${FLAVOR}"
