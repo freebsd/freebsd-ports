@@ -1,6 +1,6 @@
---- bin/cypher-shell.orig	2021-04-13 07:34:22 UTC
+--- bin/cypher-shell.orig	2022-03-11 08:13:31 UTC
 +++ bin/cypher-shell
-@@ -42,6 +42,8 @@ _find_java_cmd() {
+@@ -47,6 +47,8 @@ _find_java_cmd() {
  detect_os() {
    if uname -s | grep -q Darwin; then
      DIST_OS="macosx"
@@ -9,7 +9,7 @@
    elif [[ -e /etc/gentoo-release ]]; then
      DIST_OS="gentoo"
    else
-@@ -53,6 +55,9 @@ _find_java_home() {
+@@ -58,6 +60,9 @@ _find_java_home() {
    [[ "${JAVA_HOME:-}" ]] && return
  
    case "${DIST_OS}" in
@@ -17,9 +17,9 @@
 +      JAVA_HOME="%%JAVA_HOME%%"
 +      ;;
      "macosx")
-       JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+       JAVA_HOME="$(/usr/libexec/java_home -v 1.8+)"
        ;;
-@@ -73,7 +78,7 @@ build_classpath() {
+@@ -78,7 +83,7 @@ build_classpath() {
  
    # Then try installation directory (prefix/bin and prefix/share/cypher-shell/lib)
    if [[ -z "${JARPATH}" ]]; then

@@ -1,10 +1,10 @@
 PORTNAME=	neo4j
-DISTVERSION=	3.5.31
+DISTVERSION=	4.2.16
 CATEGORIES=	databases java
 MASTER_SITES=	http://dist.neo4j.org/
 DISTNAME=	${PORTNAME}-community-${DISTVERSION}-unix
 
-MAINTAINER=	jonathan@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	High performance graph store and database
 
 LICENSE=	GPLv3
@@ -14,8 +14,9 @@ RUN_DEPENDS=	bash:shells/bash
 WRKSRC=		${WRKDIR}/${DISTNAME:S,-unix,,}
 NO_BUILD=	yes
 USES=		cpe shebangfix
-SHEBANG_FILES=	bin/cypher-shell bin/neo4j-admin bin/neo4j-import
+SHEBANG_FILES=	bin/cypher-shell bin/neo4j-admin
 USE_JAVA=	yes
+JAVA_VERSION=	11
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
@@ -36,7 +37,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/libexec/tools
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tools/* \
 		${STAGEDIR}${PREFIX}/${PORTNAME}/libexec/tools
-.for name in cypher-shell neo4j neo4j-admin neo4j-import
+.for name in cypher-shell neo4j neo4j-admin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${name} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/plugins
