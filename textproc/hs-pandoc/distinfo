@@ -1,4 +1,4 @@
-TIMESTAMP = 1651928178
+TIMESTAMP = 1652254687
 SHA256 (cabal/pandoc-2.14.2.tar.gz) = 2cf7d376125671c8d0d0a8b1216cf466dbe050cc150b395fb7d7f156622b5cae
 SIZE (cabal/pandoc-2.14.2.tar.gz) = 6256270
 SHA256 (cabal/Diff-0.4.0/Diff-0.4.0.tar.gz) = 7290ac098ad8b4748b9c10e494cc85ba54af688226ae69a465aa7b4c73f149c7
@@ -339,10 +339,6 @@ SHA256 (cabal/unix-compat-0.5.3/unix-compat-0.5.3.tar.gz) = 0893b597ea0db406429d
 SIZE (cabal/unix-compat-0.5.3/unix-compat-0.5.3.tar.gz) = 13582
 SHA256 (cabal/unix-time-0.4.7/unix-time-0.4.7.tar.gz) = 19233f8badf921d444c6165689253d877cfed58ce08f28cad312558a9280de09
 SIZE (cabal/unix-time-0.4.7/unix-time-0.4.7.tar.gz) = 52235
-SHA256 (cabal/unliftio-core-0.2.0.1/unliftio-core-0.2.0.1.tar.gz) = 919f0d1297ea2f5373118553c1df2a9405d8b9e31a8307e829da67d4953c299a
-SIZE (cabal/unliftio-core-0.2.0.1/unliftio-core-0.2.0.1.tar.gz) = 3696
-SHA256 (cabal/unliftio-core-0.2.0.1/revision/1.cabal) = 9b3e44ea9aacacbfc35b3b54015af450091916ac3618a41868ebf6546977659a
-SIZE (cabal/unliftio-core-0.2.0.1/revision/1.cabal) = 1082
 SHA256 (cabal/unliftio-core-0.2.0.1/unliftio-core-0.2.0.1.tar.gz) = 919f0d1297ea2f5373118553c1df2a9405d8b9e31a8307e829da67d4953c299a
 SIZE (cabal/unliftio-core-0.2.0.1/unliftio-core-0.2.0.1.tar.gz) = 3696
 SHA256 (cabal/unliftio-core-0.2.0.1/revision/2.cabal) = f9abcdd3f3d28e4840563efb7b8760d2de9b5707bcd6f53a87f6a0d77bb5a9f7
