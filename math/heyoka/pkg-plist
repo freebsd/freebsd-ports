@@ -76,5 +76,5 @@ lib/cmake/heyoka/heyoka-config.cmake
 lib/cmake/heyoka/heyoka_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/heyoka/heyoka_export.cmake
 lib/libheyoka.so
-lib/libheyoka.so.17
-lib/libheyoka.so.17.0
+lib/libheyoka.so.18
+lib/libheyoka.so.18.0
