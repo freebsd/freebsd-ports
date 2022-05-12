@@ -1,7 +1,11 @@
 PORTNAME=	vulkan-tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.213
+PORTREVISION=	1
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	fbb147443834.patch:-p1 # https://github.com/KhronosGroup/Vulkan-Tools/pull/650
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tools and demos for the Vulkan graphics API
@@ -38,10 +42,6 @@ XLIB_DESC=		${X11_DESC} via libX11
 XLIB_USES=		xorg
 XLIB_USE=		XORG=x11,xext,ice,sm
 XLIB_CMAKE_BOOL=	BUILD_WSI_XLIB_SUPPORT
-
-# https://github.com/KhronosGroup/Vulkan-Tools/issues/649
-display-build:		.IGNORE
-display-install:	.IGNORE
 
 # https://github.com/KhronosGroup/Vulkan-Tools/issues/307
 .for _wsi in display wayland xcb xlib
