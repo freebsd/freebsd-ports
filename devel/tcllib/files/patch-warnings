@@ -1,1824 +1,6 @@
---- modules/md5/md5.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/md5/md5.c
-@@ -115,7 +115,7 @@ MD5_CTX *mdContext;
-    in the message whose digest is being computed.
-  */
- void MD5Update (mdContext, inBuf, inLen)
--register MD5_CTX *mdContext; unsigned char *inBuf;
-+register MD5_CTX *mdContext; const unsigned char *inBuf;
- 		 unsigned int inLen;
- {
-   register int i, ii;
---- modules/md5/md5.h.orig	2016-02-04 05:14:14 UTC
-+++ modules/md5/md5.h
-@@ -59,7 +59,7 @@ typedef struct {
- } MD5_CTX;
- 
- void MD5Init   (MD5_CTX *mdContext);
--void MD5Update (MD5_CTX *mdContext, unsigned char *buf, unsigned int len);
-+void MD5Update (MD5_CTX *mdContext, const unsigned char *buf, unsigned int len);
- void MD5Final  (unsigned char digest[16], MD5_CTX *mdContext);
- void Transform (UINT4 *buf, UINT4 *in);
- 
---- modules/md5crypt/md5cryptc.tcl.orig	2016-02-04 05:14:14 UTC
-+++ modules/md5crypt/md5cryptc.tcl
-@@ -57,8 +57,9 @@ namespace eval ::md5crypt {
-                                const char *salt,
-                                const char *magic)
-         {
--            static char     passwd[120], *p;
--            static const unsigned char *sp,*ep;
-+            static char     passwd[120];
-+            char     *p;
-+            const unsigned char *sp,*ep;
-             unsigned char	final[16];
-             int sl,pl,i;
-             MD5_CTX	ctx,ctx1;
-@@ -113,7 +114,7 @@ namespace eval ::md5crypt {
-             }
-             
-             /* Now make the output string */
--            snprintf(passwd, sizeof(passwd), "%s%.*s$", (char *)magic,
-+            p = passwd + snprintf(passwd, sizeof(passwd), "%s%.*s$", (char *)magic,
-                     sl, (const char *)sp);
-             
-             MD5Final(final,&ctx);
-@@ -143,8 +144,6 @@ namespace eval ::md5crypt {
-                 MD5Final(final,&ctx1);
-             }
- 
--            p = passwd + strlen(passwd);
--            
-             l = (final[ 0]<<16) | (final[ 6]<<8) | final[12]; to64(p,l,4); p += 4;
-             l = (final[ 1]<<16) | (final[ 7]<<8) | final[13]; to64(p,l,4); p += 4;
-             l = (final[ 2]<<16) | (final[ 8]<<8) | final[14]; to64(p,l,4); p += 4;
---- modules/pt/pt_cparam_config_critcl.tcl.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/pt_cparam_config_critcl.tcl
-@@ -114,6 +114,8 @@ proc ::pt::cparam::configuration::critcl
- 	    critcl::ccode {
- 		/* -*- c -*- */
- 
-+		#include <stdint.h>
-+		#include <stdlib.h>
- 		#include <string.h>
- 		#define SCOPE static
- 
---- modules/pt/pt_cparam_config_tea.tcl.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/pt_cparam_config_tea.tcl
-@@ -94,6 +94,7 @@ proc ::pt::cparam::configuration::tea::d
- 	* * ** *** ***** ******** ************* *********************/
- 		#include <string.h>
- 		#include <tcl.h>
-+		#include <stdint.h>
- 		#include <stdlib.h>
- 		#include <ctype.h>
- 		#define SCOPE static
---- modules/pt/pt_parse_peg_c.tcl.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/pt_parse_peg_c.tcl
-@@ -45,6 +45,8 @@ namespace eval ::pt::parse {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::pt::parse {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::pt::parse {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void *)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1002,7 +1004,7 @@ namespace eval ::pt::parse {
- 	SCOPE void
- 	rde_param_i_symbol_save (RDE_PARAM p, long int s)
- 	{
--	    long int       at = (long int) rde_stack_top (p->LS);
-+	    intptr_t       at = (intptr_t)rde_stack_top (p->LS);
- 	    NC_STATE*      scs;
- 	    Tcl_HashEntry* hPtr;
- 	    Tcl_HashTable* tablePtr;
-@@ -1011,7 +1013,7 @@ namespace eval ::pt::parse {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*) at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::pt::parse {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void*)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::pt::parse {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
-@@ -4727,7 +4731,7 @@ namespace eval ::pt::parse {
- 	/* -*- c -*- */
- 
- 	typedef struct PARSERg {
--	    long int counter;
-+	    size_t   counter;
- 	    char     buf [50];
- 	} PARSERg;
- 
-@@ -4755,7 +4759,7 @@ namespace eval ::pt::parse {
- 	    }
- 
- 	    parserg->counter ++;
--	    sprintf (parserg->buf, "peg%ld", parserg->counter);
-+	    sprintf (parserg->buf, "peg%td", parserg->counter);
- 	    return parserg->buf;
- #undef  KEY
- 	}
---- modules/pt/pt_rdengine_c.tcl.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/pt_rdengine_c.tcl
-@@ -48,7 +48,7 @@ namespace eval ::pt {
- 	*/
- 
- 	typedef struct PARAMg {
--	    long int counter;
-+	    size_t counter;
- 	    char     buf [50];
- 	} PARAMg;
- 
-@@ -76,7 +76,7 @@ namespace eval ::pt {
- 	    }
- 	    
- 	    paramg->counter ++;
--	    sprintf (paramg->buf, "rde%ld", paramg->counter);
-+	    sprintf (paramg->buf, "rde%td", paramg->counter);
- 	    return paramg->buf;
- 
- #undef  KEY
---- modules/pt/rde_critcl/p.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/rde_critcl/p.c
-@@ -2,9 +2,10 @@
-  * (c) PARAM functions
-  */
- 
--#include <pInt.h> /* Our public and internal APIs */
--#include <util.h> /* Allocation macros */
-+#include <stdint.h>
- #include <string.h>
-+#include "pInt.h" /* Our public and internal APIs */
-+#include "util.h" /* Allocation macros */
- 
- /* .................................................. */
- 
-@@ -132,7 +133,7 @@ param_intern (RDE_STATE p, const char* l
-     hPtr = Tcl_CreateHashEntry(&p->str, literal, &isnew);
-     ASSERT (isnew, "Should have found entry");
- 
--    Tcl_SetHashValue (hPtr, p->numstr);
-+    Tcl_SetHashValue (hPtr, (intptr_t)p->numstr);
- 
-     if (p->numstr >= p->maxnum) {
- 	long int new;
---- modules/pt/rde_critcl/param.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/rde_critcl/param.c
-@@ -3,11 +3,13 @@
-  * == pt::rde (critcl) - Data Structures - PARAM architectural state.
-  */
- 
--#include <param.h> /* Public and private APIs */
--#include <stack.h> /* Stack handling */
--#include <tc.h>    /* Token cache handling */
--#include <util.h>  /* Allocation utilities */
-+#include <stdint.h>
-+#include <stdlib.h>
- #include <string.h>
-+#include "param.h" /* Public and private APIs */
-+#include "stack.h" /* Stack handling */
-+#include "tc.h"    /* Token cache handling */
-+#include "util.h"  /* Allocation utilities */
- 
- /*
-  * = = == === ===== ======== ============= =====================
-@@ -670,7 +672,7 @@ error_set (RDE_PARAM p, long int s)
- 
-     ASSERT_BOUNDS(s,p->numstr);
- 
--    rde_stack_push (p->ER->msg, (void*) s);
-+    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- }
- 
- static void
-@@ -820,7 +822,7 @@ rde_param_i_symbol_restore (RDE_PARAM p,
-     if (!hPtr) { return 0; }
- 
-     tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
-     if (!hPtr) { return 0; }
- 
-     /*
-@@ -861,7 +863,7 @@ rde_param_i_symbol_save (RDE_PARAM p, lo
-      * 2-level hash table keyed by location, and symbol ...
-      */
- 
--    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 
-     if (isnew) {
- 	tablePtr = ALLOC (Tcl_HashTable);
-@@ -871,7 +873,7 @@ rde_param_i_symbol_save (RDE_PARAM p, lo
- 	tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
-     }
- 
--    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 
-     if (isnew) {
- 	/*
-@@ -1071,13 +1073,15 @@ UniCharIsAscii (int character)
- static int
- UniCharIsHexDigit (int character)
- {
--    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+    return UniCharIsDecDigit(character) ||
-+	(character >= 'a' && character <= 'f') ||
-+	(character >= 'A' && character <= 'F');
- }
- 
- static int
- UniCharIsDecDigit (int character)
- {
--    return (character >= 0) && (character < 0x80) && isdigit(character);
-+    return (character >= '0') && (character <= '9');
- }
- 
- /*
---- modules/pt/rde_critcl/param.h.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/rde_critcl/param.h
-@@ -9,6 +9,7 @@
- #include "tcl.h"
- #include <util.h>  /* Scoping */
- #include <stack.h> /* Stack handling */
-+#include <stdint.h> /* intptr_t */
- 
- /*
-  * The state structure is opaque, its internals are known only to the
---- modules/pt/tests/data/ok/peg_cparam-critcl/0_basic_arithmetic.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/0_basic_arithmetic
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-critcl/10_notahead.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/10_notahead
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-critcl/11_epsilon.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/11_epsilon
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-critcl/1_functions.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/1_functions
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-critcl/2_fun_arithmetic.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/2_fun_arithmetic
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-critcl/3_peg_itself.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/3_peg_itself
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-critcl/4_choice.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/4_choice
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-critcl/5_sequence.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/5_sequence
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-critcl/6_optional.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/6_optional
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-critcl/7_kleene.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/7_kleene
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-critcl/8_pkleene.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/8_pkleene
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-critcl/9_ahead.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-critcl/9_ahead
-@@ -45,6 +45,8 @@ namespace eval ::PARSER {
-     critcl::ccode {
- 	/* -*- c -*- */
- 
-+	#include <stdint.h>
-+	#include <stdlib.h>
- 	#include <string.h>
- 	#define SCOPE static
- 
-@@ -896,7 +898,7 @@ namespace eval ::PARSER {
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -986,7 +988,7 @@ namespace eval ::PARSER {
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -1011,7 +1013,7 @@ namespace eval ::PARSER {
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -1019,7 +1021,7 @@ namespace eval ::PARSER {
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1169,12 +1171,14 @@ namespace eval ::PARSER {
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/0_basic_arithmetic.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/0_basic_arithmetic
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/10_notahead.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/10_notahead
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/11_epsilon.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/11_epsilon
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/1_functions.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/1_functions
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/2_fun_arithmetic.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/2_fun_arithmetic
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/3_peg_itself.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/3_peg_itself
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/4_choice.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/4_choice
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/5_sequence.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/5_sequence
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/6_optional.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/6_optional
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/7_kleene.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/7_kleene
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/8_pkleene.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/8_pkleene
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/pt/tests/data/ok/peg_cparam-tea/9_ahead.orig	2016-02-04 05:14:14 UTC
-+++ modules/pt/tests/data/ok/peg_cparam-tea/9_ahead
-@@ -11,6 +11,7 @@
- * * ** *** ***** ******** ************* *********************/
- 	#include <string.h>
- 	#include <tcl.h>
-+	#include <stdint.h>
- 	#include <stdlib.h>
- 	#include <ctype.h>
- 	#define SCOPE static
-@@ -863,7 +864,7 @@
- 	    p->ER->loc      = p->CL;
- 	    p->ER->msg      = rde_stack_new (NULL);
- 	    ASSERT_BOUNDS(s,p->numstr);
--	    rde_stack_push (p->ER->msg, (void*) s);
-+	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
- 	}
- 	static void
- 	error_state_free (void* esx)
-@@ -953,7 +954,7 @@
- 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
- 	    if (!hPtr) { return 0; }
- 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
--	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
-+	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
- 	    if (!hPtr) { return 0; }
- 	    
- 	    scs = Tcl_GetHashValue (hPtr);
-@@ -978,7 +979,7 @@
- 	    TRACE (("RDE_PARAM %p",p));
- 	    TRACE (("INT       %d",s));
- 	    
--	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
- 	    if (isnew) {
- 		tablePtr = ALLOC (Tcl_HashTable);
- 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
-@@ -986,7 +987,7 @@
- 	    } else {
- 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
- 	    }
--	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
-+	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
- 	    if (isnew) {
- 		
- 		scs = ALLOC (NC_STATE);
-@@ -1136,12 +1137,14 @@
- 	static int
- 	UniCharIsHexDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isxdigit(character);
-+	    return UniCharIsDecDigit(character) ||
-+		(character >= 'a' && character <= 'f') ||
-+		(character >= 'A' && character <= 'F');
- 	}
- 	static int
- 	UniCharIsDecDigit (int character)
- 	{
--	    return (character >= 0) && (character < 0x80) && isdigit(character);
-+	    return (character >= '0') && (character <= '9');
- 	}
- 	SCOPE void
- 	rde_param_i_value_clear (RDE_PARAM p)
---- modules/rc4/rc4c.tcl.orig	2016-02-04 05:14:14 UTC
-+++ modules/rc4/rc4c.tcl
-@@ -20,6 +20,8 @@ package provide rc4c 1.1.0
+--- ./modules/rc4/rc4c.tcl.orig	2021-10-28 21:08:34.000000000 +0000
++++ ./modules/rc4/rc4c.tcl	2022-05-12 07:00:35.590698000 +0000
+@@ -20,6 +20,8 @@
  namespace eval ::rc4 {
  
      critcl::ccode {
@@ -1827,54 +9,137 @@
          #include <string.h>
  
          typedef struct RC4_CTX {
---- modules/sha1/sha1c.tcl.orig	2016-02-04 05:14:14 UTC
-+++ modules/sha1/sha1c.tcl
-@@ -32,8 +32,7 @@ namespace eval ::sha1 {
-         static void 
-         sha1_free_rep(Tcl_Obj* obj)
-         {
--            SHA1_CTX* mp = (SHA1_CTX*) obj->internalRep.otherValuePtr;
--            Tcl_Free ((char*)mp);
-+            Tcl_Free(obj->internalRep.otherValuePtr);
-         }
-         
-         static void
---- modules/struct/graph/arc.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/arc.c
-@@ -2,10 +2,11 @@
-  * (b) Arc operations.
+--- ./modules/md5/md5.c.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/md5/md5.c	2022-05-12 07:00:35.560242000 +0000
+@@ -115,7 +115,7 @@
+    in the message whose digest is being computed.
+  */
+ void MD5Update (mdContext, inBuf, inLen)
+-register MD5_CTX *mdContext; unsigned char *inBuf;
++register MD5_CTX *mdContext; const unsigned char *inBuf;
+ 		 unsigned int inLen;
+ {
+   register int i, ii;
+--- ./modules/md5/md5.h.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/md5/md5.h	2022-05-12 07:00:35.560779000 +0000
+@@ -59,7 +59,7 @@
+ } MD5_CTX;
+ 
+ void MD5Init   (MD5_CTX *mdContext);
+-void MD5Update (MD5_CTX *mdContext, unsigned char *buf, unsigned int len);
++void MD5Update (MD5_CTX *mdContext, const unsigned char *buf, unsigned int len);
+ void MD5Final  (unsigned char digest[16], MD5_CTX *mdContext);
+ void Transform (UINT4 *buf, UINT4 *in);
+ 
+--- ./modules/struct/tree/ms.c.orig	2019-08-23 04:55:09.000000000 +0000
++++ ./modules/struct/tree/ms.c	2022-05-12 07:00:40.010342000 +0000
+@@ -312,7 +312,7 @@
+ 	M_NODES,       M_NUMCHILDREN, M_PARENT,	   M_PREVIOUS, M_RENAME,
+ 	M_ROOTNAME,    M_SERIALIZE,   M_SET,	   M_SIZE,     M_SPLICE,
+ 	M_SWAP,	       M_UNSET,	      M_WALK,	   M_WALKPROC
+-    };
++    } method;
+ 
+     if (objc < 2) {
+ 	Tcl_WrongNumArgs (interp, objc, objv, "option ?arg arg ...?");
+@@ -326,7 +326,7 @@
+      * the requested functionality
+      */
+ 
+-    switch (m) {
++    switch (method = m) {
+     case M_TASSIGN:	return tm_TASSIGN     (t, interp, objc, objv);
+     case M_TSET:	return tm_TSET	      (t, interp, objc, objv);
+     case M_ANCESTORS:	return tm_ANCESTORS   (t, interp, objc, objv);
+--- ./modules/struct/tree/util.c.orig	2019-08-23 04:55:09.000000000 +0000
++++ ./modules/struct/tree/util.c	2022-05-12 07:00:40.012345000 +0000
+@@ -77,7 +77,7 @@
+ /* Delete all items in the list.
   */
  
--#include <arc.h>
--#include <attr.h>
--#include <graph.h>
+-void*
++void
+ nlq_clear (NLQ* q)
+ {
+     NL* next;
+--- ./modules/struct/tree/util.h.orig	2019-08-23 04:55:09.000000000 +0000
++++ ./modules/struct/tree/util.h	2022-05-12 07:00:40.012741000 +0000
+@@ -52,7 +52,7 @@
+ void  nlq_append (NLQ* q, void* n);
+ void  nlq_push   (NLQ* q, void* n);
+ void* nlq_pop    (NLQ* q);
+-void* nlq_clear  (NLQ* q);
++void  nlq_clear  (NLQ* q);
+ 
+ #endif /* _UTIL_H */
+ 
+--- ./modules/struct/tree/walk.c.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/struct/tree/walk.c	2022-05-12 07:00:40.013310000 +0000
+@@ -1,8 +1,9 @@
+ 
++#include <stdint.h>
+ #include <string.h>
+-#include "tcl.h"
+-#include <t.h>
 -#include <util.h>
-+#include "arc.h"
-+#include "attr.h"
-+#include "graph.h"
-+#include "nacommon.h"
++#include <tcl.h>
++#include "t.h"
 +#include "util.h"
  
  /* .................................................. */
  
---- modules/struct/graph/attr.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/attr.c
-@@ -2,8 +2,10 @@
-  * (c) Graph functions
-  */
+--- ./modules/struct/sets/m.c.orig	2019-08-23 04:55:09.000000000 +0000
++++ ./modules/struct/sets/m.c	2022-05-12 07:00:40.005832000 +0000
+@@ -80,7 +80,7 @@
+ 		s_get (interp, val, &vs);
+ 	    }
  
--#include <attr.h>
--#include <util.h>
-+#include "attr.h"
-+#include "util.h"
-+#include <string.h>
-+
+-	    (void*) Tcl_CreateHashEntry(&vs->el, key, &new);
++	    Tcl_CreateHashEntry(&vs->el, key, &new);
+ 	    nx = 1;
+ 	}
+ 	if (nx) {
+--- ./modules/struct/sets/s.c.orig	2019-08-23 04:55:09.000000000 +0000
++++ ./modules/struct/sets/s.c	2022-05-12 07:00:40.006303000 +0000
+@@ -293,7 +293,7 @@
+ 	if (Tcl_FindHashEntry (&b->el, key) != NULL) continue;
+ 	/* key is in a, not in b <=> in (a-b) */
  
- /* .................................................. */
+-	(void*) Tcl_CreateHashEntry(&s->el, key, &new);
++	Tcl_CreateHashEntry(&s->el, key, &new);
+     }
  
---- modules/struct/graph/ds.h.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/ds.h
-@@ -160,7 +160,7 @@ typedef struct G {
+     return s;
+@@ -329,7 +329,7 @@
+ 	if (Tcl_FindHashEntry (&b->el, key) == NULL) continue;
+ 	/* key is in a, in b <=> in (a*b) */
+ 
+-	(void*) Tcl_CreateHashEntry(&s->el, key, &new);
++	Tcl_CreateHashEntry(&s->el, key, &new);
+     }
+ 
+     return s;
+@@ -365,7 +365,7 @@
+ 	    he != NULL;
+ 	    he = Tcl_NextHashEntry(&hs)) {
+ 	    key = Tcl_GetHashKey (&b->el, he);
+-	    (void*) Tcl_CreateHashEntry(&a->el, key, &new);
++	    Tcl_CreateHashEntry(&a->el, key, &new);
+ 	    if (new) {nx = 1;}
+ 	}
+     }
+@@ -377,7 +377,7 @@
+ {
+     int new;
+ 
+-    (void*) Tcl_CreateHashEntry(&a->el, item, &new);
++    Tcl_CreateHashEntry(&a->el, item, &new);
+ }
+ 
+ void
+--- ./modules/struct/graph/ds.h.orig	2019-08-23 04:55:09.000000000 +0000
++++ ./modules/struct/graph/ds.h	2022-05-12 07:00:35.592738000 +0000
+@@ -160,7 +160,7 @@
   */
  
  typedef struct GG {
@@ -1883,23 +148,9 @@
      char     buf [50]; /* Buffer for handle construction */
  } GG;
  
---- modules/struct/graph/filter.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/filter.c
-@@ -2,9 +2,10 @@
-  * (c) Graph functions
-  */
- 
--#include <nacommon.h>
--#include <util.h>
--#include <node.h>
-+#include <string.h>
-+#include "nacommon.h"
-+#include "util.h"
-+#include "node.h"
- 
- /* .................................................. */
- 
-@@ -253,13 +254,12 @@ filter_run (NA* na, Tcl_Interp* interp, 
+--- ./modules/struct/graph/filter.c.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/struct/graph/filter.c	2022-05-12 07:00:35.593586000 +0000
+@@ -261,13 +261,12 @@
  	(na->mode == NA_NONE)) {
  	filter_none (interp, gx, &l);
      } else {
@@ -1918,7 +169,7 @@
  	if (na->key && na->value) {
  	    filter_kv (interp, gx, &l, gf, g, na->key, na->value);
  	} else if (na->key) {
-@@ -324,6 +324,7 @@ filter_mode_a (NA_MODE mode, GCC* gx, NA
+@@ -332,6 +331,7 @@
      case NA_IN:        filter_mode_a_in  (gx, l, nc, nv, g); break;
      case NA_INNER:     filter_mode_a_inn (gx, l, nc, nv, g); break;
      case NA_OUT:       filter_mode_a_out (gx, l, nc, nv, g); break;
@@ -1926,7 +177,7 @@
      }
  }
  
-@@ -584,6 +585,7 @@ filter_mode_n (NA_MODE mode, GCC* gx, NA
+@@ -592,6 +592,7 @@
      case NA_IN:        filter_mode_n_in  (gx, l, nc, nv, g); break;
      case NA_INNER:     filter_mode_n_inn (gx, l, nc, nv, g); break;
      case NA_OUT:       filter_mode_n_out (gx, l, nc, nv, g); break;
@@ -1934,19 +185,8 @@
      }
  }
  
---- modules/struct/graph/global.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/global.c
-@@ -24,7 +24,7 @@ gg_new (Tcl_Interp* interp)
-   }
- 	    
-   gg->counter ++;
--  sprintf (gg->buf, "graph%d", gg->counter);
-+  sprintf (gg->buf, "graph%td", gg->counter);
-   return gg->buf;
- }
- 
---- modules/struct/graph/graph.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/graph.c
+--- ./modules/struct/graph/graph.c.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/struct/graph/graph.c	2022-05-12 07:00:35.594881000 +0000
 @@ -2,12 +2,13 @@
   * (c) Graph functions
   */
@@ -1967,112 +207,9 @@
  
  /* .................................................. */
  
-@@ -159,11 +160,11 @@ g_ms_serialize (Tcl_Interp* interp, Tcl_
- 	    if (!n) {
- 		goto abort;
- 	    }
--	    if (Tcl_FindHashEntry (&cn, (char*) n)) continue;
-+	    if (Tcl_FindHashEntry (&cn, (void *) n)) continue;
- 	    ASSERT_BOUNDS(j, lc-1);
--	    he = Tcl_CreateHashEntry (&cn, (char*) n, &new);
-+	    he = Tcl_CreateHashEntry (&cn, (void *) n, &new);
- 	    lv [j] = n->base.name;
--	    Tcl_SetHashValue (he, (ClientData) j);
-+	    Tcl_SetHashValue (he, (ClientData)(intptr_t)j);
- 	    j += 3;
- 	}
- 	lc = j + 1;
-@@ -180,7 +181,7 @@ g_ms_serialize (Tcl_Interp* interp, Tcl_
- 	    ASSERT_BOUNDS(j, lc-1);
- 	    he = Tcl_CreateHashEntry (&cn, (char*) n, &new);
- 	    lv [j] = n->base.name;
--	    Tcl_SetHashValue (he, (ClientData) j);
-+	    Tcl_SetHashValue (he, (ClientData)(intptr_t)j);
- 	    j += 3;
- 	}
- 	lc = j + 1;
---- modules/struct/graph/methods.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/methods.c
-@@ -4,14 +4,16 @@
-  *    Implementations for all tree methods.
-  */
- 
-+#include <ctype.h>
- #include <string.h>
--#include <arc.h>
--#include <graph.h>
--#include <methods.h>
--#include <nacommon.h>
--#include <node.h>
--#include <util.h>
--#include <walk.h>
-+#include "arc.h"
-+#include "attr.h"
-+#include "graph.h"
-+#include "methods.h"
-+#include "nacommon.h"
-+#include "node.h"
-+#include "util.h"
-+#include "walk.h"
- 
- /* ..................................................
-  * Handling of all indices, numeric and 'end-x' forms.  Copied straight out of
---- modules/struct/graph/methods.h.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/methods.h
-@@ -30,6 +30,7 @@ int gm_arc_APPEND     (G* g, Tcl_Interp*
- int gm_arc_ATTR	      (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
- int gm_arc_DELETE     (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
- int gm_arc_EXISTS     (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
-+int gm_arc_FLIP	      (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
- int gm_arc_GET	      (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
- int gm_arc_GETALL     (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
- int gm_arc_GETUNWEIGH (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
-@@ -39,6 +40,10 @@ int gm_arc_INSERT     (G* g, Tcl_Interp*
- int gm_arc_KEYEXISTS  (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
- int gm_arc_KEYS	      (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
- int gm_arc_LAPPEND    (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
-+int gm_arc_MOVE       (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
-+int gm_arc_MOVE_SRC   (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
-+int gm_arc_MOVE_TARG  (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
-+int gm_arc_NODES      (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
- int gm_arc_RENAME     (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
- int gm_arc_SET	      (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
- int gm_arc_SETUNWEIGH (G* g, Tcl_Interp* interp, int objc, Tcl_Obj* const* objv);
---- modules/struct/graph/nacommon.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/nacommon.c
-@@ -2,9 +2,10 @@
-  * (c) Graph functions
-  */
- 
--#include <nacommon.h>
--#include <util.h>
--#include <node.h>
-+#include "attr.h"
-+#include "nacommon.h"
-+#include "util.h"
-+#include "node.h"
- 
- /* .................................................. */
- 
---- modules/struct/graph/node.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/node.c
-@@ -2,9 +2,10 @@
-  * (b) Node operations.
-  */
- 
--#include <arc.h>
--#include <node.h>
--#include <util.h>
-+#include "nacommon.h"
-+#include "arc.h"
-+#include "node.h"
-+#include "util.h"
- 
- /* .................................................. */
- 
---- modules/struct/graph/objcmd.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/objcmd.c
-@@ -40,7 +40,7 @@ g_objcmd (ClientData cd, Tcl_Interp* int
+--- ./modules/struct/graph/objcmd.c.orig	2019-08-23 04:55:09.000000000 +0000
++++ ./modules/struct/graph/objcmd.c	2022-05-12 07:00:40.002398000 +0000
+@@ -40,7 +40,7 @@
  	M_DESTROY, M_GET,     M_GETALL,	   M_KEYEXISTS, M_KEYS, M_LAPPEND,
  	M_NODE,	   M_NODES,   M_SERIALIZE, M_SET,	M_SWAP, M_UNSET,
  	M_WALK
@@ -2081,7 +218,7 @@
  
      static CONST char* a_methods [] = {
  	"append",      "attr",   "delete",        "exists",        "flip",
-@@ -57,7 +57,7 @@ g_objcmd (ClientData cd, Tcl_Interp* int
+@@ -57,7 +57,7 @@
  	MA_MOVE_SOURCE, MA_MOVE_TARGET, MA_NODES,	  MA_RENAME,    MA_SET,       MA_SETUNWEIGHTED,
  	MA_SETWEIGHT,	MA_SOURCE,      MA_TARGET,        MA_UNSET,     MA_UNSETWEIGHT,
  	MA_WEIGHTS
@@ -2090,7 +227,7 @@
  
      static CONST char* n_methods [] = {
  	"append",  "attr",     "degree", "delete",    "exists",
-@@ -69,7 +69,7 @@ g_objcmd (ClientData cd, Tcl_Interp* int
+@@ -69,7 +69,7 @@
  	MN_APPEND,  MN_ATTR,	 MN_DEGREE, MN_DELETE,	  MN_EXISTS,
  	MN_GET,	    MN_GETALL,	 MN_INSERT, MN_KEYEXISTS, MN_KEYS,
  	MN_LAPPEND, MN_OPPOSITE, MN_RENAME, MN_SET,	  MN_UNSET
@@ -2099,7 +236,7 @@
  
      if (objc < 2) {
  	Tcl_WrongNumArgs (interp, objc, objv, "option ?arg arg ...?");
-@@ -83,7 +83,7 @@ g_objcmd (ClientData cd, Tcl_Interp* int
+@@ -83,7 +83,7 @@
       * the requested functionality
       */
  
@@ -2108,7 +245,7 @@
      case M_GSET:	return gm_GSET	      (g, interp, objc, objv);
      case M_GASSIGN:	return gm_GASSIGN     (g, interp, objc, objv);
      case M_APPEND:	return gm_APPEND      (g, interp, objc, objv);
-@@ -95,7 +95,7 @@ g_objcmd (ClientData cd, Tcl_Interp* int
+@@ -95,7 +95,7 @@
  					0, &m) != TCL_OK) {
  	    return TCL_ERROR;
  	}
@@ -2117,7 +254,7 @@
  	case MA_APPEND:	       return gm_arc_APPEND     (g, interp, objc, objv);
  	case MA_ATTR:	       return gm_arc_ATTR	(g, interp, objc, objv);
  	case MA_DELETE:	       return gm_arc_DELETE     (g, interp, objc, objv);
-@@ -141,7 +141,7 @@ g_objcmd (ClientData cd, Tcl_Interp* int
+@@ -141,7 +141,7 @@
  					0, &m) != TCL_OK) {
  	    return TCL_ERROR;
  	}
@@ -2126,9 +263,9 @@
  	case MN_APPEND:	   return gm_node_APPEND    (g, interp, objc, objv);
  	case MN_ATTR:	   return gm_node_ATTR	    (g, interp, objc, objv);
  	case MN_DEGREE:	   return gm_node_DEGREE    (g, interp, objc, objv);
---- modules/struct/graph/util.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/util.c
-@@ -77,7 +77,7 @@ g_nlq_pop (NLQ* q)
+--- ./modules/struct/graph/util.c.orig	2019-08-23 04:55:09.000000000 +0000
++++ ./modules/struct/graph/util.c	2022-05-12 07:00:40.002840000 +0000
+@@ -77,7 +77,7 @@
  /* Delete all items in the list.
   */
  
@@ -2137,9 +274,9 @@
  g_nlq_clear (NLQ* q)
  {
      NL* next;
---- modules/struct/graph/util.h.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/util.h
-@@ -53,7 +53,7 @@ void  g_nlq_init   (NLQ* q);
+--- ./modules/struct/graph/util.h.orig	2019-08-23 04:55:09.000000000 +0000
++++ ./modules/struct/graph/util.h	2022-05-12 07:00:40.003195000 +0000
+@@ -53,7 +53,7 @@
  void  g_nlq_append (NLQ* q, void* n);
  void  g_nlq_push   (NLQ* q, void* n);
  void* g_nlq_pop    (NLQ* q);
@@ -2148,15 +285,15 @@
  
  #endif /* _G_UTIL_H */
  
---- modules/struct/graph/walk.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/graph/walk.c
-@@ -1,8 +1,8 @@
--
+--- ./modules/struct/graph/walk.c.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/struct/graph/walk.c	2022-05-12 07:00:40.003767000 +0000
+@@ -1,9 +1,9 @@
+ 
 -#include "tcl.h"
+ #include <string.h>
 -#include <graph.h>
 -#include <util.h>
 -#include <walk.h>
-+#include <string.h>
 +#include <tcl.h>
 +#include "graph.h"
 +#include "util.h"
@@ -2164,7 +301,7 @@
  
  /* .................................................. */
  
-@@ -22,7 +22,7 @@ static int walkbfspre  (Tcl_Interp* inte
+@@ -23,7 +23,7 @@
  static int walk_invoke (Tcl_Interp* interp, GN* n,
  			int cc, Tcl_Obj** ev, Tcl_Obj* action);
  
@@ -2173,7 +310,7 @@
  			    int* nc, GN*** nv);
  
  /* .................................................. */
-@@ -287,7 +287,7 @@ walk_invoke (Tcl_Interp* interp, GN* n,
+@@ -288,7 +288,7 @@
  
  /* .................................................. */
  
@@ -2182,29 +319,9 @@
  walk_neighbours (GN* n, Tcl_HashTable* vn, int dir,
  		 int* nc, GN*** nv)
  {
---- modules/struct/queue_c.tcl.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/queue_c.tcl
-@@ -35,7 +35,7 @@ namespace eval ::struct {
- 	*/
- 
- 	typedef struct QDg {
--	    long int counter;
-+	    size_t counter;
- 	    char buf [50];
- 	} QDg;
- 
-@@ -63,7 +63,7 @@ namespace eval ::struct {
- 	    }
- 	    
- 	    qdg->counter ++;
--	    sprintf (qdg->buf, "queue%d", qdg->counter);
-+	    sprintf (qdg->buf, "queue%td", qdg->counter);
- 	    return qdg->buf;
- 
- #undef  KEY
---- modules/struct/queue/ms.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/queue/ms.c
-@@ -41,7 +41,7 @@ qums_objcmd (ClientData cd, Tcl_Interp* 
+--- ./modules/struct/queue/ms.c.orig	2019-08-23 04:55:09.000000000 +0000
++++ ./modules/struct/queue/ms.c	2022-05-12 07:00:40.004897000 +0000
+@@ -41,7 +41,7 @@
  	M_CLEAR, M_DESTROY, M_GET,
  	M_PEEK,  M_PUT,     M_SIZE,
  	M_UNGET
@@ -2213,7 +330,7 @@
  
      if (objc < 2) {
  	Tcl_WrongNumArgs (interp, objc, objv, "option ?arg arg ...?");
-@@ -55,7 +55,7 @@ qums_objcmd (ClientData cd, Tcl_Interp* 
+@@ -55,7 +55,7 @@
       * the requested functionality
       */
  
@@ -2222,98 +339,9 @@
      case M_CLEAR:	return qum_CLEAR   (q, interp, objc, objv);
      case M_DESTROY:	return qum_DESTROY (q, interp, objc, objv);
      case M_GET:		return qum_PEEK    (q, interp, objc, objv, 1 /* get  */);
---- modules/struct/sets_c.tcl.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/sets_c.tcl
-@@ -53,7 +53,7 @@ namespace eval ::struct {
-             S_equal,S_exclude,  S_include,      S_intersect,
-             S_intersect3,       S_size, S_subsetof,     S_subtract,
-             S_symdiff,  S_union
--        };
-+        } method;
- 
- 	int m;
- 
-@@ -69,7 +69,7 @@ namespace eval ::struct {
-          * the requested functionality
-          */
- 
--        switch (m) {
-+        switch (method = m) {
-             case S_add:        return sm_ADD        (NULL, interp, objc, objv);
-             case S_contains:   return sm_CONTAINS   (NULL, interp, objc, objv);
-             case S_difference: return sm_DIFFERENCE (NULL, interp, objc, objv);
---- modules/struct/sets/m.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/sets/m.c
-@@ -80,7 +80,7 @@ sm_ADD (ClientData clientData, Tcl_Inter
- 		s_get (interp, val, &vs);
- 	    }
- 
--	    (void*) Tcl_CreateHashEntry(&vs->el, key, &new);
-+	    Tcl_CreateHashEntry(&vs->el, key, &new);
- 	    nx = 1;
- 	}
- 	if (nx) {
---- modules/struct/sets/s.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/sets/s.c
-@@ -293,7 +293,7 @@ s_difference (SPtr a, SPtr b)
- 	if (Tcl_FindHashEntry (&b->el, key) != NULL) continue;
- 	/* key is in a, not in b <=> in (a-b) */
- 
--	(void*) Tcl_CreateHashEntry(&s->el, key, &new);
-+	Tcl_CreateHashEntry(&s->el, key, &new);
-     }
- 
-     return s;
-@@ -329,7 +329,7 @@ s_intersect (SPtr a, SPtr b)
- 	if (Tcl_FindHashEntry (&b->el, key) == NULL) continue;
- 	/* key is in a, in b <=> in (a*b) */
- 
--	(void*) Tcl_CreateHashEntry(&s->el, key, &new);
-+	Tcl_CreateHashEntry(&s->el, key, &new);
-     }
- 
-     return s;
-@@ -365,7 +365,7 @@ s_add (SPtr a, SPtr b, int* newPtr)
- 	    he != NULL;
- 	    he = Tcl_NextHashEntry(&hs)) {
- 	    key = Tcl_GetHashKey (&b->el, he);
--	    (void*) Tcl_CreateHashEntry(&a->el, key, &new);
-+	    Tcl_CreateHashEntry(&a->el, key, &new);
- 	    if (new) {nx = 1;}
- 	}
-     }
-@@ -377,7 +377,7 @@ s_add1 (SPtr a, const char* item)
- {
-     int new;
- 
--    (void*) Tcl_CreateHashEntry(&a->el, item, &new);
-+    Tcl_CreateHashEntry(&a->el, item, &new);
- }
- 
- void
---- modules/struct/stack_c.tcl.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/stack_c.tcl
-@@ -40,7 +40,7 @@ namespace eval ::struct {
- 	*/
- 
- 	typedef struct SDg {
--	    long int counter;
-+	    size_t counter;
- 	    char buf [50];
- 	} SDg;
- 
-@@ -68,7 +68,7 @@ namespace eval ::struct {
- 	    }
- 	    
- 	    sdg->counter ++;
--	    sprintf (sdg->buf, "stack%d", sdg->counter);
-+	    sprintf (sdg->buf, "stack%td", sdg->counter);
- 	    return sdg->buf;
- 
- #undef  KEY
---- modules/struct/stack/ms.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/stack/ms.c
-@@ -39,7 +39,7 @@ stms_objcmd (ClientData cd, Tcl_Interp* 
+--- ./modules/struct/stack/ms.c.orig	2019-08-23 04:55:09.000000000 +0000
++++ ./modules/struct/stack/ms.c	2022-05-12 07:00:40.007279000 +0000
+@@ -39,7 +39,7 @@
      enum methods {
  	M_CLEAR, M_DESTROY, M_GET,    M_GETR, M_PEEK, M_PEEKR,
  	M_POP,   M_PUSH,    M_ROTATE, M_SIZE, M_TRIM, M_TRIMV
@@ -2322,7 +350,7 @@
  
      if (objc < 2) {
  	Tcl_WrongNumArgs (interp, objc, objv, "option ?arg arg ...?");
-@@ -53,7 +53,7 @@ stms_objcmd (ClientData cd, Tcl_Interp* 
+@@ -53,7 +53,7 @@
       * the requested functionality
       */
  
@@ -2331,9 +359,51 @@
      case M_CLEAR:	return stm_CLEAR   (s, interp, objc, objv);
      case M_DESTROY:	return stm_DESTROY (s, interp, objc, objv);
      case M_GET:		return stm_GET     (s, interp, objc, objv, 0   ); /* get   */
---- modules/struct/tree_c.tcl.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/tree_c.tcl
-@@ -41,7 +41,7 @@ namespace eval ::struct {
+--- ./modules/struct/queue_c.tcl.orig	2021-10-28 21:08:34.000000000 +0000
++++ ./modules/struct/queue_c.tcl	2022-05-12 07:00:40.004223000 +0000
+@@ -35,7 +35,7 @@
+ 	*/
+ 
+ 	typedef struct QDg {
+-	    long int counter;
++	    size_t counter;
+ 	    char buf [50];
+ 	} QDg;
+ 
+--- ./modules/struct/sets_c.tcl.orig	2021-10-28 20:35:34.000000000 +0000
++++ ./modules/struct/sets_c.tcl	2022-05-12 07:00:40.005270000 +0000
+@@ -53,7 +53,7 @@
+             S_equal,S_exclude,  S_include,      S_intersect,
+             S_intersect3,       S_size, S_subsetof,     S_subtract,
+             S_symdiff,  S_union
+-        };
++        } method;
+ 
+ 	int m;
+ 
+@@ -69,7 +69,7 @@
+          * the requested functionality
+          */
+ 
+-        switch (m) {
++        switch (method = m) {
+             case S_add:        return sm_ADD        (NULL, interp, objc, objv);
+             case S_contains:   return sm_CONTAINS   (NULL, interp, objc, objv);
+             case S_difference: return sm_DIFFERENCE (NULL, interp, objc, objv);
+--- ./modules/struct/stack_c.tcl.orig	2021-10-28 21:08:34.000000000 +0000
++++ ./modules/struct/stack_c.tcl	2022-05-12 07:00:40.006760000 +0000
+@@ -40,7 +40,7 @@
+ 	*/
+ 
+ 	typedef struct SDg {
+-	    long int counter;
++	    size_t counter;
+ 	    char buf [50];
+ 	} SDg;
+ 
+--- ./modules/struct/tree_c.tcl.orig	2021-10-28 21:08:34.000000000 +0000
++++ ./modules/struct/tree_c.tcl	2022-05-12 07:00:40.007725000 +0000
+@@ -41,7 +41,7 @@
  	*/
  
  	typedef struct TDg {
@@ -2342,137 +412,1793 @@
  	    char buf [50];
  	} TDg;
  
-@@ -69,7 +69,7 @@ namespace eval ::struct {
- 	    }
- 	    
- 	    tdg->counter ++;
--	    sprintf (tdg->buf, "tree%d", tdg->counter);
-+	    sprintf (tdg->buf, "tree%td", tdg->counter);
- 	    return tdg->buf;
+--- ./modules/sha1/sha1c.tcl.orig	2022-05-03 18:53:00.000000000 +0000
++++ ./modules/sha1/sha1c.tcl	2022-05-12 07:00:35.591089000 +0000
+@@ -32,8 +32,7 @@
+         static void 
+         sha1_free_rep(Tcl_Obj* obj)
+         {
+-            SHA1_CTX* mp = (SHA1_CTX*) obj->internalRep.otherValuePtr;
+-            Tcl_Free ((char*)mp);
++            Tcl_Free(obj->internalRep.otherValuePtr);
+         }
+         
+         static void
+--- ./modules/md5crypt/md5cryptc.tcl.orig	2021-10-28 21:08:52.000000000 +0000
++++ ./modules/md5crypt/md5cryptc.tcl	2022-05-12 07:00:35.561245000 +0000
+@@ -57,8 +57,9 @@
+                                const char *salt,
+                                const char *magic)
+         {
+-            static char     passwd[120], *p;
+-            static const unsigned char *sp,*ep;
++            static char     passwd[120];
++            char     *p;
++            const unsigned char *sp,*ep;
+             unsigned char	final[16];
+             int sl,pl,i;
+             MD5_CTX	ctx,ctx1;
+@@ -113,7 +114,7 @@
+             }
+             
+             /* Now make the output string */
+-            snprintf(passwd, sizeof(passwd), "%s%.*s$", (char *)magic,
++            p = passwd + snprintf(passwd, sizeof(passwd), "%s%.*s$", (char *)magic,
+                     sl, (const char *)sp);
+             
+             MD5Final(final,&ctx);
+@@ -143,8 +144,6 @@
+                 MD5Final(final,&ctx1);
+             }
  
- #undef  KEY
---- modules/struct/tree/m.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/tree/m.c
-@@ -4,6 +4,8 @@
-  *    Implementations for all tree methods.
+-            p = passwd + strlen(passwd);
+-            
+             l = (final[ 0]<<16) | (final[ 6]<<8) | final[12]; to64(p,l,4); p += 4;
+             l = (final[ 1]<<16) | (final[ 7]<<8) | final[13]; to64(p,l,4); p += 4;
+             l = (final[ 2]<<16) | (final[ 8]<<8) | final[14]; to64(p,l,4); p += 4;
+--- ./modules/pt/rde_critcl/p.c.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/rde_critcl/p.c	2022-05-12 07:00:35.565397000 +0000
+@@ -2,9 +2,10 @@
+  * (c) PARAM functions
   */
  
-+#include <ctype.h>
+-#include <pInt.h> /* Our public and internal APIs */
+-#include <util.h> /* Allocation macros */
 +#include <stdint.h>
  #include <string.h>
- #include "util.h"
- #include "m.h"
-@@ -18,6 +20,8 @@
- 
- static int TclGetIntForIndex (Tcl_Interp* interp, Tcl_Obj* objPtr,
- 			      int endValue, int* indexPtr);
-+static int TclCheckBadOctal (Tcl_Interp *interp, const char *value);
-+static int TclFormatInt (char *buffer, long n);
++#include "pInt.h" /* Our public and internal APIs */
++#include "util.h" /* Allocation macros */
  
  /* .................................................. */
  
-@@ -2545,7 +2549,7 @@ tm_WALKPROC (T* t, Tcl_Interp* interp, i
+@@ -132,7 +133,7 @@
+     hPtr = Tcl_CreateHashEntry(&p->str, literal, &isnew);
+     ASSERT (isnew, "Should have found entry");
  
-     res = t_walk (interp, tn, type, order,
- 		  t_walk_invokecmd,
--		  (Tcl_Obj*) cc, (Tcl_Obj*) ev, objv [0]);
-+		  (void *)(intptr_t)cc, (Tcl_Obj*) ev, objv [0]);
+-    Tcl_SetHashValue (hPtr, p->numstr);
++    Tcl_SetHashValue (hPtr, (intptr_t)p->numstr);
  
-     ckfree ((char*) ev);
-     return res;
---- modules/struct/tree/ms.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/tree/ms.c
-@@ -312,7 +312,7 @@ tms_objcmd (ClientData cd, Tcl_Interp* i
- 	M_NODES,       M_NUMCHILDREN, M_PARENT,	   M_PREVIOUS, M_RENAME,
- 	M_ROOTNAME,    M_SERIALIZE,   M_SET,	   M_SIZE,     M_SPLICE,
- 	M_SWAP,	       M_UNSET,	      M_WALK,	   M_WALKPROC
--    };
-+    } method;
+     if (p->numstr >= p->maxnum) {
+ 	long int new;
+--- ./modules/pt/rde_critcl/param.c.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/rde_critcl/param.c	2022-05-12 07:00:35.566472000 +0000
+@@ -672,7 +672,7 @@
  
-     if (objc < 2) {
- 	Tcl_WrongNumArgs (interp, objc, objv, "option ?arg arg ...?");
-@@ -326,7 +326,7 @@ tms_objcmd (ClientData cd, Tcl_Interp* i
-      * the requested functionality
+     ASSERT_BOUNDS(s,p->numstr);
+ 
+-    rde_stack_push (p->ER->msg, (void*) s);
++    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ }
+ 
+ static void
+@@ -822,7 +822,7 @@
+     if (!hPtr) { return 0; }
+ 
+     tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+     if (!hPtr) { return 0; }
+ 
+     /*
+@@ -863,7 +863,7 @@
+      * 2-level hash table keyed by location, and symbol ...
       */
  
--    switch (m) {
-+    switch (method = m) {
-     case M_TASSIGN:	return tm_TASSIGN     (t, interp, objc, objv);
-     case M_TSET:	return tm_TSET	      (t, interp, objc, objv);
-     case M_ANCESTORS:	return tm_ANCESTORS   (t, interp, objc, objv);
---- modules/struct/tree/t.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/tree/t.c
-@@ -2,9 +2,10 @@
-  * (c) Tree functions
-  */
+-    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
  
--#include <t.h>
--#include <tn.h>
--#include <util.h>
-+#include <string.h>
-+#include "t.h"
-+#include "tn.h"
-+#include "util.h"
+     if (isnew) {
+ 	tablePtr = ALLOC (Tcl_HashTable);
+@@ -873,7 +873,7 @@
+ 	tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+     }
  
- /* .................................................. */
+-    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
  
---- modules/struct/tree/tn.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/tree/tn.c
-@@ -2,8 +2,9 @@
-  * (b) Node operations.
-  */
- 
--#include <tn.h>
--#include <util.h>
-+#include "t.h"
-+#include "tn.h"
-+#include "util.h"
- 
- /* .................................................. */
- 
---- modules/struct/tree/util.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/tree/util.c
-@@ -77,7 +77,7 @@ nlq_pop (NLQ* q)
- /* Delete all items in the list.
-  */
- 
--void*
-+void
- nlq_clear (NLQ* q)
+     if (isnew) {
+ 	/*
+@@ -1073,13 +1073,15 @@
+ static int
+ UniCharIsHexDigit (int character)
  {
-     NL* next;
---- modules/struct/tree/util.h.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/tree/util.h
-@@ -52,7 +52,7 @@ void  nlq_init   (NLQ* q);
- void  nlq_append (NLQ* q, void* n);
- void  nlq_push   (NLQ* q, void* n);
- void* nlq_pop    (NLQ* q);
--void* nlq_clear  (NLQ* q);
-+void  nlq_clear  (NLQ* q);
+-    return (character >= 0) && (character < 0x80) && isxdigit(character);
++    return UniCharIsDecDigit(character) ||
++	(character >= 'a' && character <= 'f') ||
++	(character >= 'A' && character <= 'F');
+ }
  
- #endif /* _UTIL_H */
- 
---- modules/struct/tree/walk.c.orig	2016-02-04 05:14:14 UTC
-+++ modules/struct/tree/walk.c
-@@ -1,8 +1,9 @@
- 
-+#include <stdint.h>
- #include <string.h>
--#include "tcl.h"
--#include <t.h>
--#include <util.h>
-+#include <tcl.h>
-+#include "t.h"
-+#include "util.h"
- 
- /* .................................................. */
- 
-@@ -237,7 +238,7 @@ t_walk_invokecmd (Tcl_Interp* interp, TN
- 		  Tcl_Obj* action)
+ static int
+ UniCharIsDecDigit (int character)
  {
-     int	      res;
--    int	      cc = (int)       dummy0;
-+    int	      cc = (intptr_t)  dummy0;
-     Tcl_Obj** ev = (Tcl_Obj**) dummy1; /* cc+3 elements */
+-    return (character >= 0) && (character < 0x80) && isdigit(character);
++    return (character >= '0') && (character <= '9');
+ }
  
-     ev [cc]   = dummy2;	   /* Tree */
+ /*
+--- ./modules/pt/rde_critcl/param.h.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/rde_critcl/param.h	2022-05-12 07:00:35.567038000 +0000
+@@ -9,6 +9,7 @@
+ #include "tcl.h"
+ #include <util.h>  /* Scoping */
+ #include <stack.h> /* Stack handling */
++#include <stdint.h> /* intptr_t */
+ 
+ /*
+  * The state structure is opaque, its internals are known only to the
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/0_basic_arithmetic.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/0_basic_arithmetic	2022-05-12 07:00:35.568151000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/10_notahead.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/10_notahead	2022-05-12 07:00:35.569227000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/11_epsilon.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/11_epsilon	2022-05-12 07:00:35.570230000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/1_functions.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/1_functions	2022-05-12 07:00:35.571208000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/2_fun_arithmetic.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/2_fun_arithmetic	2022-05-12 07:00:35.572295000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/3_peg_itself.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/3_peg_itself	2022-05-12 07:00:35.574306000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/4_choice.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/4_choice	2022-05-12 07:00:35.575318000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/5_sequence.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/5_sequence	2022-05-12 07:00:35.576307000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/6_optional.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/6_optional	2022-05-12 07:00:35.577302000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/7_kleene.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/7_kleene	2022-05-12 07:00:35.578304000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/8_pkleene.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/8_pkleene	2022-05-12 07:00:35.579292000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-critcl/9_ahead.orig	2021-04-14 16:57:28.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-critcl/9_ahead	2022-05-12 07:00:35.580250000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/0_basic_arithmetic.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/0_basic_arithmetic	2022-05-12 07:00:35.581083000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/10_notahead.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/10_notahead	2022-05-12 07:00:35.581868000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/11_epsilon.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/11_epsilon	2022-05-12 07:00:35.582616000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/1_functions.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/1_functions	2022-05-12 07:00:35.583374000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/2_fun_arithmetic.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/2_fun_arithmetic	2022-05-12 07:00:35.584180000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/3_peg_itself.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/3_peg_itself	2022-05-12 07:00:35.585500000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/4_choice.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/4_choice	2022-05-12 07:00:35.586272000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/5_sequence.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/5_sequence	2022-05-12 07:00:35.587104000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/6_optional.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/6_optional	2022-05-12 07:00:35.587940000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/7_kleene.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/7_kleene	2022-05-12 07:00:35.588702000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/8_pkleene.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/8_pkleene	2022-05-12 07:00:35.589498000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/tests/data/ok/peg_cparam-tea/9_ahead.orig	2019-08-23 04:55:08.000000000 +0000
++++ ./modules/pt/tests/data/ok/peg_cparam-tea/9_ahead	2022-05-12 07:00:35.590270000 +0000
+@@ -11,6 +11,7 @@
+ * * ** *** ***** ******** ************* *********************/
+ 	#include <string.h>
+ 	#include <tcl.h>
++	#include <stdint.h>
+ 	#include <stdlib.h>
+ 	#include <ctype.h>
+ 	#define SCOPE static
+@@ -863,7 +864,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -953,7 +954,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void*)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -978,7 +979,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*)(intptr_t)at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -986,7 +987,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void *)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1136,12 +1137,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+--- ./modules/pt/pt_cparam_config_critcl.tcl.orig	2021-10-28 21:09:06.000000000 +0000
++++ ./modules/pt/pt_cparam_config_critcl.tcl	2022-05-12 07:00:35.561832000 +0000
+@@ -114,6 +114,8 @@
+ 	    critcl::ccode {
+ 		/* -*- c -*- */
+ 
++		#include <stdint.h>
++		#include <stdlib.h>
+ 		#include <string.h>
+ 		#include <ctype.h>  /* is... */
+ 		#include <stdlib.h> /* qsort */
+--- ./modules/pt/pt_cparam_config_tea.tcl.orig	2021-10-28 21:09:06.000000000 +0000
++++ ./modules/pt/pt_cparam_config_tea.tcl	2022-05-12 07:00:35.562375000 +0000
+@@ -94,6 +94,7 @@
+ 	* * ** *** ***** ******** ************* *********************/
+ 		#include <string.h>
+ 		#include <tcl.h>
++		#include <stdint.h>
+ 		#include <stdlib.h>
+ 		#include <ctype.h>
+ 		#define SCOPE static
+--- ./modules/pt/pt_parse_peg_c.tcl.orig	2021-10-28 21:09:06.000000000 +0000
++++ ./modules/pt/pt_parse_peg_c.tcl	2022-05-12 07:00:35.564420000 +0000
+@@ -45,6 +45,8 @@
+     critcl::ccode {
+ 	/* -*- c -*- */
+ 
++	#include <stdint.h>
++	#include <stdlib.h>
+ 	#include <string.h>
+ 	#include <ctype.h>  /* is... */
+ 	#include <stdlib.h> /* qsort */
+@@ -898,7 +900,7 @@
+ 	    p->ER->loc      = p->CL;
+ 	    p->ER->msg      = rde_stack_new (NULL);
+ 	    ASSERT_BOUNDS(s,p->numstr);
+-	    rde_stack_push (p->ER->msg, (void*) s);
++	    rde_stack_push (p->ER->msg, (void*)(intptr_t)s);
+ 	}
+ 	static void
+ 	error_state_free (void* esx)
+@@ -988,7 +990,7 @@
+ 	    hPtr = Tcl_FindHashEntry (&p->NC, (char*) p->CL);
+ 	    if (!hPtr) { return 0; }
+ 	    tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+-	    hPtr = Tcl_FindHashEntry (tablePtr, (char*) s);
++	    hPtr = Tcl_FindHashEntry (tablePtr, (void *)(intptr_t)s);
+ 	    if (!hPtr) { return 0; }
+ 	    
+ 	    scs = Tcl_GetHashValue (hPtr);
+@@ -1004,7 +1006,7 @@
+ 	SCOPE void
+ 	rde_param_i_symbol_save (RDE_PARAM p, long int s)
+ 	{
+-	    long int       at = (long int) rde_stack_top (p->LS);
++	    intptr_t       at = (intptr_t)rde_stack_top (p->LS);
+ 	    NC_STATE*      scs;
+ 	    Tcl_HashEntry* hPtr;
+ 	    Tcl_HashTable* tablePtr;
+@@ -1013,7 +1015,7 @@
+ 	    TRACE (("RDE_PARAM %p",p));
+ 	    TRACE (("INT       %d",s));
+ 	    
+-	    hPtr = Tcl_CreateHashEntry (&p->NC, (char*) at, &isnew);
++	    hPtr = Tcl_CreateHashEntry (&p->NC, (void*) at, &isnew);
+ 	    if (isnew) {
+ 		tablePtr = ALLOC (Tcl_HashTable);
+ 		Tcl_InitHashTable (tablePtr, TCL_ONE_WORD_KEYS);
+@@ -1021,7 +1023,7 @@
+ 	    } else {
+ 		tablePtr = (Tcl_HashTable*) Tcl_GetHashValue (hPtr);
+ 	    }
+-	    hPtr = Tcl_CreateHashEntry (tablePtr, (char*) s, &isnew);
++	    hPtr = Tcl_CreateHashEntry (tablePtr, (void*)(intptr_t)s, &isnew);
+ 	    if (isnew) {
+ 		
+ 		scs = ALLOC (NC_STATE);
+@@ -1171,12 +1173,14 @@
+ 	static int
+ 	UniCharIsHexDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isxdigit(character);
++	    return UniCharIsDecDigit(character) ||
++		(character >= 'a' && character <= 'f') ||
++		(character >= 'A' && character <= 'F');
+ 	}
+ 	static int
+ 	UniCharIsDecDigit (int character)
+ 	{
+-	    return (character >= 0) && (character < 0x80) && isdigit(character);
++	    return (character >= '0') && (character <= '9');
+ 	}
+ 	SCOPE void
+ 	rde_param_i_value_clear (RDE_PARAM p)
+@@ -4729,7 +4733,7 @@
+ 	/* -*- c -*- */
+ 
+ 	typedef struct PARSERg {
+-	    long int counter;
++	    size_t   counter;
+ 	    char     buf [50];
+ 	} PARSERg;
+ 
+@@ -4757,7 +4761,7 @@
+ 	    }
+ 
+ 	    parserg->counter ++;
+-	    sprintf (parserg->buf, "peg%ld", parserg->counter);
++	    sprintf (parserg->buf, "peg%td", parserg->counter);
+ 	    return parserg->buf;
+ #undef  KEY
+ 	}
+--- ./modules/pt/pt_rdengine_c.tcl.orig	2021-10-28 21:09:06.000000000 +0000
++++ ./modules/pt/pt_rdengine_c.tcl	2022-05-12 07:00:35.564911000 +0000
+@@ -48,7 +48,7 @@
+ 	*/
+ 
+ 	typedef struct PARAMg {
+-	    long int counter;
++	    size_t counter;
+ 	    char     buf [50];
+ 	} PARAMg;
+ 
+@@ -76,7 +76,7 @@
+ 	    }
+ 	    
+ 	    paramg->counter ++;
+-	    sprintf (paramg->buf, "rde%ld", paramg->counter);
++	    sprintf (paramg->buf, "rde%td", paramg->counter);
+ 	    return paramg->buf;
+ 
+ #undef  KEY
