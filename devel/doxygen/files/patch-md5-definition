@@ -8,7 +8,7 @@
  #include "md5.h"
  #include <stdio.h>
  #include <stdlib.h>
-@@ -416,13 +417,11 @@ void DefinitionImpl::writeDocAnchorsToTagFile(TextStre
+@@ -414,13 +415,11 @@ bool DefinitionImpl::_docsAlreadyAdded(const QCString 
  
  bool DefinitionImpl::_docsAlreadyAdded(const QCString &doc,QCString &sigList)
  {
@@ -18,7 +18,7 @@
    // to avoid mismatches due to differences in indenting, we first remove
    // double whitespaces...
    QCString docStr = doc.simplifyWhiteSpace();
--  MD5Buffer((const unsigned char *)docStr.data(),docStr.length(),md5_sig);
+-  MD5Buffer(docStr.data(),docStr.length(),md5_sig);
 -  MD5SigToString(md5_sig,sigStr);
 +  MD5Data((const unsigned char *)docStr.data(),docStr.length(),sigStr.rawData());
    //printf("%s:_docsAlreadyAdded doc='%s' sig='%s' docSigs='%s'\n",
