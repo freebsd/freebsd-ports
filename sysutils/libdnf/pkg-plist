@@ -126,3 +126,4 @@ share/locale/tr/LC_MESSAGES/libdnf.mo
 share/locale/uk/LC_MESSAGES/libdnf.mo
 share/locale/zh_CN/LC_MESSAGES/libdnf.mo
 share/locale/zh_TW/LC_MESSAGES/libdnf.mo
+%%PYTHON%%share/man/man3/hawkey.3.gz
