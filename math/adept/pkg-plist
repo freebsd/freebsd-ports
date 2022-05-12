@@ -47,8 +47,10 @@ include/adept/vector_utilities.h
 include/adept/where.h
 include/adept_arrays.h
 include/adept_optimize.h
+include/adept_source.h
 lib/libadept.so
 lib/libadept.so.0
 lib/libadept.so.0.0.0
+%%DATADIR%%/README.md
 %%PDFTEXDOCS%%%%DOCSDIR%%/adept_documentation.pdf
 %%PDFTEXDOCS%%%%DOCSDIR%%/adept_reference.pdf
