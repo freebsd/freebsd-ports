@@ -13,6 +13,8 @@ COMMENT=	Vulkan benchmark
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING-LGPL2.1
 
+BROKEN=		https://github.com/vkmark/vkmark/issues/40
+
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
 		glm>0:math/glm
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
