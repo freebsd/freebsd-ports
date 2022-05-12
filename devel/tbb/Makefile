@@ -37,14 +37,13 @@ DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
 USE_LDCONFIG=	yes
 ALL_TARGET=	default
 
-CC_BASENAME=	${CC:C,^.*/,,}
-
 .include <bsd.port.pre.mk>
 
 post-extract:
-.if ${CC_BASENAME} != ${COMPILER_TYPE}
-	@${LN} -sf FreeBSD.${COMPILER_TYPE}.inc ${WRKSRC}/build/FreeBSD.${CC_BASENAME}.inc
-.endif
+	@if [ "${COMPILER_TYPE}" != "${CC:T}" ]; then \
+	   ${LN} -sf FreeBSD.${COMPILER_TYPE}.inc \
+	     ${WRKSRC}/build/FreeBSD.${CC:T}.inc; \
+	 fi
 	@${CP} ${FILESDIR}/version_info_FreeBSD.sh ${WRKSRC}/build/
 
 post-patch:
