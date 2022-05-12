@@ -1,21 +1,24 @@
-PORTNAME=	llvm-base
-PORTVERSION=	2
+PORTNAME=	llvm
+PORTVERSION=	3
 CATEGORIES=	devel lang
 MASTER_SITES=	# not applicable
 DISTFILES=	# not applicable
+PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	Install symlinks for llvm toolchain in /usr
+COMMENT=	Install symlinks for llvm toolchain in ${PREFIX}
 
-# To the extent that anything in this port is copyrightable, it is the
-# list of files in the chosen LLVM version which is under the ports
-# collection license.
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${.CURDIR}/../../COPYRIGHT
+LICENSE_FILE=	${FILESDIR}/LICENSE.ETC
+
+FLAVORS=	base localbase
+FLAVOR?=	${FLAVORS:[1]}
 
 RUN_DEPENDS=	clang:devel/llvm
 
+.if ${FLAVOR:Mbase}
 PREFIX=		/usr
+.endif
 
 NO_ARCH=	yes
 
