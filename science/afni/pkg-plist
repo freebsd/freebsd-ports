@@ -72,7 +72,6 @@ bin/3dDFT
 bin/3dDTeig
 bin/3dDTtoDWI
 bin/3dDTtoNoisyDWI
-bin/3dDiff
 bin/3dDWItoDT
 bin/3dDWUncert
 bin/3dDeconvolve
@@ -80,6 +79,7 @@ bin/3dDegreeCentrality
 bin/3dDepthMap
 bin/3dDespike
 bin/3dDetrend
+bin/3dDiff
 bin/3dECM
 bin/3dEdu_01_scale
 bin/3dEigsToDT
@@ -520,6 +520,7 @@ bin/apqc_make_html.py
 bin/apqc_make_tcsh.py
 bin/apsearch
 bin/auto_warp.py
+bin/bayes_view
 bin/byteorder
 bin/cat_matvec
 bin/ccalc
@@ -1928,6 +1929,10 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/shiny/FATCAT_matplot_shiny/server.R
 %%DATADIR%%/shiny/FATCAT_matplot_shiny/stat_methods.csv
 %%DATADIR%%/shiny/FATCAT_matplot_shiny/ui.R
+%%DATADIR%%/shiny/bayes_view/README.R
+%%DATADIR%%/shiny/bayes_view/global.R
+%%DATADIR%%/shiny/bayes_view/server.R
+%%DATADIR%%/shiny/bayes_view/ui.R
 %%DATADIR%%/shiny/misc/OmicCircos_pkg_install.R
 %%PORTDOCS%%%%DOCSDIR%%/CMakeLists.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
