@@ -69,6 +69,7 @@ include/rkcommon/utility/detail/pcg_uint128.hpp
 include/rkcommon/utility/getEnvVar.h
 include/rkcommon/utility/multidim_index_sequence.h
 include/rkcommon/utility/random.h
+include/rkcommon/utility/random.ih
 include/rkcommon/xml/XML.h
 lib/cmake/rkcommon-%%PORTVERSION%%/FindTBB.cmake
 lib/cmake/rkcommon-%%PORTVERSION%%/rkcommonConfig.cmake
