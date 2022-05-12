@@ -751,6 +751,7 @@ lib/emby-server/system/dashboard-ui/modules/tabbedview/folderstab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/folderstab.template.html
 lib/emby-server/system/dashboard-ui/modules/tabbedview/genrestab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/itemstab.js
+lib/emby-server/system/dashboard-ui/modules/tabbedview/listcontroller.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/playliststab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/playliststab.template.html
 lib/emby-server/system/dashboard-ui/modules/tabbedview/seriestab.js
