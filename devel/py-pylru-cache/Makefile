@@ -16,4 +16,6 @@ LICENSE_COMB=	dual
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
