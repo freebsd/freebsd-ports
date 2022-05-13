@@ -1,11 +1,14 @@
---- build/config/rust.gni.orig	2022-01-23 11:59:03 UTC
+--- build/config/rust.gni.orig	2022-04-04 20:12:27 UTC
 +++ build/config/rust.gni
-@@ -66,7 +66,7 @@ toolchain_has_official_rust =
+@@ -84,9 +84,9 @@ android_toolchain_supports_platform =
      (!is_nacl &&
       (is_android && (current_cpu == "arm" || current_cpu == "arm64" ||
                       current_cpu == "x64" || current_cpu == "x86"))) ||
 -    (is_linux && current_cpu == "x64")
 +    (current_os == "linux" && current_cpu == "x64")
+ chromium_toolchain_supports_platform =
+-    !is_nacl && is_linux && current_cpu == "x64"
++    !is_nacl && current_os == "linux" && current_cpu == "x64"
  
  toolchain_has_rust =
-     enable_rust && (toolchain_has_official_rust || rust_sysroot_absolute != "")
+     enable_rust &&
