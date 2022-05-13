@@ -5079,6 +5079,7 @@
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyrsistent
+    SUBDIR += py-pyscaffold
     SUBDIR += py-pysdl2
     SUBDIR += py-pyshp
     SUBDIR += py-pysimdjson
