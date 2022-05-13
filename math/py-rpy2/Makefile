@@ -2,6 +2,7 @@
 
 PORTNAME=	rpy2
 PORTVERSION=	3.5.1
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libR.so:math/R \
 		libicui18n.so:devel/icu \
-		libpcre.so:devel/pcre
+		libpcre2-8.so:devel/pcre2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0,1,1:devel/py-pytz@${PY_FLAVOR} \
