@@ -1,7 +1,7 @@
 # Created by: Jonathan Weiss (<jw@innerewut.de>)
 
 PORTNAME=	actionpack
-PORTVERSION=	6.1.5.1
+PORTVERSION=	6.1.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
