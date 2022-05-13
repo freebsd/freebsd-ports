@@ -25,6 +25,7 @@ USE_PERL5=	run
 SHEBANG_FILES=	amavisd-agent amavisd-nanny amavisd-release p0f-analyzer.pl \
 		amavisd-snmp-subagent amavisd
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 DOCS=		AAAREADME.first AMAVIS-MIB.txt INSTALL LDAP.schema LICENSE \
