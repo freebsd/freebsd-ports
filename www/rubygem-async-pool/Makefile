@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	async-pool
-PORTVERSION=	0.3.9
+PORTVERSION=	0.3.10
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
