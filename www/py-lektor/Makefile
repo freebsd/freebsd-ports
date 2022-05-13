@@ -1,6 +1,6 @@
 PORTNAME=	Lektor
 PORTVERSION=	3.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enum-compat>=0:devel/py-enum-compat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filetype>=1.0.7:devel/py-filetype@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}inifile>=0:devel/py-inifile@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mistune>=0.7.0:textproc/py-mistune@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mistune0>=0.7.0<2:textproc/py-mistune0@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathlib2>=0:devel/py-pathlib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-slugify>=0:textproc/py-python-slugify@${PY_FLAVOR} \
