@@ -14,9 +14,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.1<3.0.0:devel/py-dateutil@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}jmespath>=0.7.1<1.0.0:devel/py-jmespath@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}jmespath>=0.7.1<2.0.0:devel/py-jmespath@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.25.4,1<1.27,1:net/py-urllib3@${PY_FLAVOR}
-
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
