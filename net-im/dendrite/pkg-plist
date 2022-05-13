@@ -12,25 +12,17 @@
 %%PORTNAME%%/bin/resolve-state
 %%DATADIR%%/main.wasm
 @sample %%ETCDIR%%/%%PORTNAME%%.yaml.sample
-%%DOCSDIR%%/CODE_STYLE.md
 %%DOCSDIR%%/CONTRIBUTING.md
-%%DOCSDIR%%/DESIGN.md
 %%DOCSDIR%%/FAQ.md
 %%DOCSDIR%%/INSTALL.md
 %%DOCSDIR%%/PROFILING.md
 %%DOCSDIR%%/README.md
-%%DOCSDIR%%/WIRING-Current.md
-%%DOCSDIR%%/WIRING.md
 %%DOCSDIR%%/hiawatha/monolith-sample.conf
 %%DOCSDIR%%/hiawatha/polylith-sample.conf
 %%DOCSDIR%%/images/details-button-location.jpg
 %%DOCSDIR%%/nginx/monolith-sample.conf
 %%DOCSDIR%%/nginx/polylith-sample.conf
-%%DOCSDIR%%/p2p.md
-%%DOCSDIR%%/peeking.md
-%%DOCSDIR%%/serverkeyformat.md
 %%DOCSDIR%%/systemd/monolith-example.service
 %%DOCSDIR%%/sytest.md
-%%DOCSDIR%%/tracing/jaeger.png
 %%DOCSDIR%%/tracing/opentracing.md
 %%DOCSDIR%%/tracing/setup.md

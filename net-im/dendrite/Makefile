@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.4
+DISTVERSION=	0.8.5
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -86,7 +86,7 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-sqlite3-js:28aa791a1c91:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:be2af5ef2e16:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:8d818048c34c:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:gomatrixserverlib:eee8fd528433:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
 		matrix-org:pinecone:2999ea29ed48:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.10:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
@@ -97,7 +97,7 @@ GH_TUPLE=	Arceliar:ironwood:8951369625d0:arceliar_ironwood/vendor/github.com/Arc
 		nats-io:jwt:442af02fd36a:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
-		neilalexander:nats-server:2278c94774f9:neilalexander_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		neilalexander:nats-server:73a9a246d34f:neilalexander_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
 		neilalexander:nats.go:b262d9f0be1e:neilalexander_nats_go/vendor/github.com/nats-io/nats.go \
 		neilalexander:utp:54ae7b1cd5f9:neilalexander_utp/vendor/github.com/neilalexander/utp \
 		nfnt:resize:83c6a9932646:nfnt_resize/vendor/github.com/nfnt/resize \
@@ -142,7 +142,7 @@ post-build:
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${GO_WRKDIR_BIN}/main.wasm ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/dendrite-config.yaml ${STAGEDIR}${ETCDIR}/${PORTNAME}.yaml.sample
+	${INSTALL_DATA} ${WRKSRC}/dendrite-sample.monolith.yaml ${STAGEDIR}${ETCDIR}/${PORTNAME}.yaml.sample
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
