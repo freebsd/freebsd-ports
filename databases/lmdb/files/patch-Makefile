@@ -1,6 +1,6 @@
---- Makefile.orig	2016-12-28 18:36:01 UTC
+--- Makefile.orig	2021-03-16 16:41:19 UTC
 +++ Makefile
-@@ -23,17 +23,17 @@ AR	= ar
+@@ -23,22 +23,24 @@ OPT = -O2 -g
  W	= -W -Wall -Wno-unused-parameter -Wbad-function-cast -Wuninitialized
  THREADS = -pthread
  OPT = -O2 -g
@@ -22,7 +22,15 @@
  
  ########################################################################
  
-@@ -49,10 +49,10 @@ install: $(ILIBS) $(IPROGS) $(IHDRS)
+ IHDRS	= lmdb.h
+-ILIBS	= liblmdb.a liblmdb$(SOEXT)
++LIBS	= liblmdb.a
++SHLIBS	= liblmdb$(SOEXT)
++ILIBS	= $(LIBS) $(SHLIBS)
+ IPROGS	= mdb_stat mdb_copy mdb_dump mdb_load
+ IDOCS	= mdb_stat.1 mdb_copy.1 mdb_dump.1 mdb_load.1
+ PROGS	= $(IPROGS) mtest mtest2 mtest3 mtest4 mtest5
+@@ -49,10 +51,11 @@ install: $(ILIBS) $(IPROGS) $(IHDRS)
  	mkdir -p $(DESTDIR)$(libdir)
  	mkdir -p $(DESTDIR)$(includedir)
  	mkdir -p $(DESTDIR)$(mandir)/man1
@@ -31,21 +39,18 @@
 -	for f in $(IHDRS); do cp $$f $(DESTDIR)$(includedir); done
 -	for f in $(IDOCS); do cp $$f $(DESTDIR)$(mandir)/man1; done
 +	for f in $(IPROGS); do $(INSTALL_PROGRAM) $$f $(DESTDIR)$(bindir); done
-+	for f in $(ILIBS); do $(INSTALL_LIB) $$f $(DESTDIR)$(libdir); done
++	for f in $(LIBS); do $(INSTALL_DATA) $$f $(DESTDIR)$(libdir); done
++	for f in $(SHLIBS); do $(INSTALL_LIB) $$f $(DESTDIR)$(libdir); done
 +	for f in $(IHDRS); do $(INSTALL_DATA) $$f $(DESTDIR)$(includedir); done
 +	for f in $(IDOCS); do $(INSTALL_MAN) $$f $(DESTDIR)$(mandir)/man1; done
  
  clean:
  	rm -rf $(PROGS) *.[ao] *.[ls]o *~ testdb
-@@ -64,20 +64,30 @@ test:	all
- liblmdb.a:	mdb.o midl.o
- 	$(AR) rs $@ mdb.o midl.o
+@@ -66,18 +69,28 @@ liblmdb$(SOEXT):	mdb.lo midl.lo
  
--liblmdb$(SOEXT):	mdb.lo midl.lo
--#	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
+ liblmdb$(SOEXT):	mdb.lo midl.lo
+ #	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
 -	$(CC) $(LDFLAGS) -pthread -shared -o $@ mdb.lo midl.lo $(SOLIBS)
-+    liblmdb$(SOEXT):	mdb.lo midl.lo
-+    #	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
 +	$(CC) $(LDFLAGS) -pthread -shared -Wl,-soname,$@ -o $@ mdb.lo midl.lo $(SOLIBS)
  
  mdb_stat: mdb_stat.o liblmdb.a
