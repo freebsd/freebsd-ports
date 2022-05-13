@@ -32,6 +32,7 @@ GH_ACCOUNT=	technion
 GH_PROJECT=	maia_mailguard
 GH_TAGNAME=	48df5fb
 USE_PERL5=	run
+NO_ARCH=	yes
 NO_BUILD=	yes
 DOCS=	LICENSE.txt README.md maiad.conf.dist maia-mysql.sql maia-pgsql.sql maia.conf.dist
 USERS=	vscan
