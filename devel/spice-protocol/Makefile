@@ -15,5 +15,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 USES=		meson ninja pathfix pkgconfig python tar:xz
 
 MESON_ARGS=	-Ddatadir=libdata
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
