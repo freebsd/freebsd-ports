@@ -1,7 +1,7 @@
 # Created by: Espen Tagestad <espen@tagestad.no>
 
 PORTNAME=	HTML-Template-Pluggable
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
