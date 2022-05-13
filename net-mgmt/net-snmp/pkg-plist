@@ -182,17 +182,6 @@ include/net-snmp/system/bsdi3.h
 include/net-snmp/system/bsdi4.h
 include/net-snmp/system/cygwin.h
 include/net-snmp/system/darwin.h
-include/net-snmp/system/darwin7.h
-include/net-snmp/system/darwin8.h
-include/net-snmp/system/darwin9.h
-include/net-snmp/system/darwin10.h
-include/net-snmp/system/darwin11.h
-include/net-snmp/system/darwin12.h
-include/net-snmp/system/darwin13.h
-include/net-snmp/system/darwin14.h
-include/net-snmp/system/darwin15.h
-include/net-snmp/system/darwin16.h
-include/net-snmp/system/darwin17.h
 include/net-snmp/system/dragonfly.h
 include/net-snmp/system/dynix.h
 include/net-snmp/system/freebsd.h
@@ -212,6 +201,7 @@ include/net-snmp/system/freebsd14.h
 include/net-snmp/system/generic.h
 include/net-snmp/system/hpux.h
 include/net-snmp/system/irix.h
+include/net-snmp/system/kfreebsd.h
 include/net-snmp/system/linux.h
 include/net-snmp/system/mingw32.h
 include/net-snmp/system/mingw32msvc.h
