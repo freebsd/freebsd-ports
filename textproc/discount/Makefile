@@ -1,9 +1,8 @@
 # Created by: Julien Laffaye <kimelto@gmail.com>
 
 PORTNAME=	discount
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.7b
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	textproc devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
