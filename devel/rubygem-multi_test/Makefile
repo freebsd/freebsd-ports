@@ -1,6 +1,5 @@
 PORTNAME=	multi_test
-PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +14,6 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-SHEBANG_FILES=	test/all test/run
+SHEBANG_FILES=	test-all test-gemfile
 
 .include <bsd.port.mk>
