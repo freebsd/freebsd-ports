@@ -4455,6 +4455,7 @@
     SUBDIR += py-dateutils
     SUBDIR += py-datrie
     SUBDIR += py-dbus
+    SUBDIR += py-ddsketch
     SUBDIR += py-ddt
     SUBDIR += py-ddtrace
     SUBDIR += py-debtcollector
