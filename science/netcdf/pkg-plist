@@ -168,7 +168,6 @@ man/man3/netcdf.3.gz
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/group__variables.js
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/groups.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/index.js
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/indexing_8dox.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/internal_8dox.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/interoperability_hdf5.html
