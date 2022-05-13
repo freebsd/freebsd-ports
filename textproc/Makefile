@@ -1522,6 +1522,7 @@
     SUBDIR += py-textdistance
     SUBDIR += py-textfsm
     SUBDIR += py-texttable
+    SUBDIR += py-textual
     SUBDIR += py-three-merge
     SUBDIR += py-tinycss
     SUBDIR += py-tinycss2
