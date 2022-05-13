@@ -10,7 +10,7 @@ COMMENT=	Application that allows multiple users to watch serial consoles
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf ssl
+USES=		autoreconf:2.69 ssl
 USE_GITHUB=	yes
 USE_RC_SUBR=	conserver
 

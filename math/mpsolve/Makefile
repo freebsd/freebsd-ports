@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libtcmalloc_minimal.so:devel/google-perftools
 
-USES=		autoreconf compiler:c++11-lang gettext-runtime gmake gnome \
-		libtool localbase pkgconfig shared-mime-info tar:bz2
+USES=		autoreconf:2.69 compiler:c++11-lang gettext-runtime gmake \
+		gnome libtool localbase pkgconfig shared-mime-info tar:bz2
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_LDCONFIG=	yes
 

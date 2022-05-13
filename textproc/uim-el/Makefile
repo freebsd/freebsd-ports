@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	uim-el-agent:textproc/uim
 
-USES=		autoreconf:build emacs gettext gmake gnome iconv libtool pathfix perl5 pkgconfig
+USES=		autoreconf:build,2.69 emacs gettext gmake gnome iconv libtool \
+		pathfix perl5 pkgconfig
 USE_GNOME=	intltool
 USE_PERL5=	build
 
@@ -42,7 +43,7 @@ PLIST_SUB+=	DOCSDIR_JA="${DOCSDIR_JA:S,^${PREFIX}/,,}"
 OPTIONS_DEFINE=	DOCS
 
 pre-configure:
-	cd ${WRKSRC} && ./autogen.sh
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

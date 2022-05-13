@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_riscv64=		fails to configure: ./include/private/gcconfig.h:492:5: The collector has not been ported to this machine/OS combination
 
-USES+=		autoreconf:build gettext gmake gnome iconv libedit libtool pathfix pkgconfig sqlite
+USES+=		autoreconf:build,2.69 gettext gmake gnome iconv libedit \
+		libtool pathfix pkgconfig sqlite
 USE_LDCONFIG=	yes
 USE_GNOME+=	glib20 intltool
 
@@ -98,7 +99,7 @@ post-extract:
 	${CP} -R ${WRKSRC_libgcroots}/* ${WRKSRC}/sigscheme/libgcroots
 
 pre-configure:
-	cd ${WRKSRC} && ./autogen.sh
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh
 
 do-build:
 .if !defined(UIM_SLAVE)

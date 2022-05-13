@@ -18,7 +18,7 @@ FLAVOR?=	${FLAVORS:[1]}
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		autoreconf compiler:c11 gettext-tools iconv libtool \
+USES=		autoreconf:2.69 compiler:c11 gettext-tools iconv libtool \
 		localbase ssl
 
 USE_GITHUB=	yes

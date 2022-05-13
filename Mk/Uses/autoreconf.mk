@@ -63,6 +63,7 @@
 # Feature:	autoreconf
 # Usage:	USES=autoreconf or USES=autoreconf:args
 # Valid args:	build	Don't run autoreconf, only add build dependencies
+#		2.69	Use this legacy version
 #
 # MAINTAINER:	ports@FreeBSD.org
 
@@ -70,7 +71,7 @@
 _INCLUDE_USES_AUTORECONF_MK=	yes
 _USES_POST+=	autoreconf
 
-AUTORECONF?=	${LOCALBASE}/bin/autoreconf
+AUTORECONF?=	${LOCALBASE}/bin/autoreconf${_AUTORECONF}
 AUTORECONF_WRKSRC?=	${WRKSRC}
 
 .endif
@@ -78,20 +79,37 @@ AUTORECONF_WRKSRC?=	${WRKSRC}
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_AUTORECONF_POST_MK)
 _INCLUDE_USES_AUTORECONF_POST_MK=	yes
 
-BUILD_DEPENDS+=	autoconf>=2.69:devel/autoconf \
-		automake>=1.16.1:devel/automake
+.  if ${autoreconf_ARGS:M2.69}
+_AUTORECONF=	2.69
+BUILD_DEPENDS+=	autoconf2.69>=2.69:devel/autoconf2.69
+.  else
+_AUTORECONF=	2.71
+BUILD_DEPENDS+=	autoconf>=2.71:devel/autoconf
+.  endif
+
+BUILD_DEPENDS+=	automake>=1.16.5:devel/automake
 
 .  if defined(libtool_ARGS) && empty(libtool_ARGS:Mbuild)
 BUILD_DEPENDS+=	libtoolize:devel/libtool
 .  endif
 
-.  if empty(autoreconf_ARGS)
+# In case autoconf-switch wrapper scripts are used during build.
+CONFIGURE_ENV+=	DEFAULT_AUTOCONF=${_AUTORECONF}
+MAKE_ENV+=	DEFAULT_AUTOCONF=${_AUTORECONF}
+
+.  if ${autoreconf_ARGS:Nbuild:N2.69}
+IGNORE= 	incorrect 'USES+=autoreconf:${autoreconf_ARGS}'\
+		expecting 'USES+=autoreconf[:build,2.69]'
+.  endif
+
+.  if ! ${autoreconf_ARGS:Mbuild}
 _USES_configure+=	470:do-autoreconf
 do-autoreconf:
 .    for f in AUTHORS ChangeLog INSTALL NEWS README
 # Don't modify time stamps if the files already exist
 	@test -e ${AUTORECONF_WRKSRC}/${f} || ${TOUCH} ${AUTORECONF_WRKSRC}/${f}
 .    endfor
+.    if ${_AUTORECONF} == 2.69
 	@(cd ${AUTORECONF_WRKSRC} && \
 		if test -f configure.ac; then configure=configure.ac; \
 		else configure=configure.in; fi && \
@@ -103,11 +121,10 @@ do-autoreconf:
 		then if ! ${LOCALBASE}/bin/intltoolize -f -c; then \
 		${ECHO_MSG} '===>  Mk/Uses/autoreconf.mk: Error running intltoolize'; \
 		${FALSE}; fi; fi)
+.    endif
 	@(cd ${AUTORECONF_WRKSRC} && if ! ${AUTORECONF} -f -i; then \
 		${ECHO_MSG} '===>  Mk/Uses/autoreconf.mk: Error running ${AUTORECONF}'; \
 		${FALSE}; fi)
-.  elif ! ${autoreconf_ARGS:Mbuild}
-IGNORE= Incorrect 'USES+=autoreconf:${autoreconf_ARGS}' expecting 'USES+=autoreconf[:build]'
 .  endif
 
 .endif

@@ -22,7 +22,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3	\
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-path=/var/db/minidlna \
 		--with-os-url="http://www.FreeBSD.org"
-USES=		autoreconf cpe gettext-tools iconv jpeg localbase
+USES=		autoreconf:2.69 cpe gettext-tools iconv jpeg localbase
 
 CPE_VENDOR=	minidlna_project
 

@@ -11,11 +11,12 @@ man/man1/autom4te%%VERSION%%.1.gz
 man/man1/autoreconf%%VERSION%%.1.gz
 man/man1/autoscan%%VERSION%%.1.gz
 man/man1/autoupdate%%VERSION%%.1.gz
+man/man1/config.guess%%VERSION%%.1.gz
+man/man1/config.sub%%VERSION%%.1.gz
 man/man1/ifnames%%VERSION%%.1.gz
 %%DATADIR%%/Autom4te/C4che.pm
 %%DATADIR%%/Autom4te/ChannelDefs.pm
 %%DATADIR%%/Autom4te/Channels.pm
-%%DATADIR%%/Autom4te/Config.pm
 %%DATADIR%%/Autom4te/Configure_ac.pm
 %%DATADIR%%/Autom4te/FileUtils.pm
 %%DATADIR%%/Autom4te/General.pm
@@ -42,7 +43,6 @@ man/man1/ifnames%%VERSION%%.1.gz
 %%DATADIR%%/autoconf/programs.m4
 %%DATADIR%%/autoconf/specific.m4
 %%DATADIR%%/autoconf/status.m4
-%%DATADIR%%/autoconf/trailer.m4
 %%DATADIR%%/autoconf/types.m4
 %%DATADIR%%/autom4te.cfg
 %%DATADIR%%/autoscan/autoscan.list
@@ -50,9 +50,6 @@ man/man1/ifnames%%VERSION%%.1.gz
 %%DATADIR%%/autotest/autotest.m4f
 %%DATADIR%%/autotest/general.m4
 %%DATADIR%%/autotest/specific.m4
-%%DATADIR%%/build-aux/config.guess
-%%DATADIR%%/build-aux/config.sub
-%%DATADIR%%/build-aux/install-sh
 %%DATADIR%%/m4sugar/foreach.m4
 %%DATADIR%%/m4sugar/m4sh.m4
 %%DATADIR%%/m4sugar/m4sh.m4f

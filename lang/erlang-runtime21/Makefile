@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 
 BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
-USES=		compiler autoreconf:build cpe gmake ncurses perl5
+USES=		compiler autoreconf:build,2.69 cpe gmake ncurses perl5
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
@@ -113,7 +113,7 @@ MAKE_ARGS+=	ARCH=arm
 .endif
 
 pre-configure:
-	@cd ${WRKSRC} && ./otp_build autoconf
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./otp_build autoconf
 
 pre-configure-WX-off:
 	echo "disabled by port options" > ${WRKSRC}/lib/debugger/SKIP

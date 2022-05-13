@@ -1,9 +1,10 @@
 # Created by: ade@FreeBSD.org
 
 PORTNAME=	autoconf
-PORTVERSION=	2.71
+PORTVERSION=	2.69
 CATEGORIES=	devel
 MASTER_SITES=	GNU
+PKGNAMESUFFIX=	${VERSION}
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Generate configure scripts and related files
@@ -21,7 +22,7 @@ BUILD_DEPENDS=	gm4:devel/m4
 RUN_DEPENDS=	autoconf-switch>=0:devel/autoconf-switch \
 		gm4:devel/m4
 
-VERSION=	2.71
+VERSION=	2.69
 USES=		perl5 tar:xz
 
 GNU_CONFIGURE=	yes
@@ -33,6 +34,7 @@ CONFIGURE_ENV=	AWK=${AWK} \
 
 DATADIR=	${PREFIX}/share/autoconf${VERSION}
 NO_ARCH=	yes
+PORTSCOUT=	ignore
 
 PLIST_SUB=	VERSION=${VERSION}
 
@@ -43,17 +45,21 @@ INFO_USES=	makeinfo
 INFO_INFO=	autoconf${VERSION}
 
 post-patch:
-	@${REINPLACE_CMD} '/^pkgdatadir =/s/@PACKAGE@/&@VERSION@/' \
-		${WRKSRC}/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} \
+		'/^pkgdatadir =/s/@PACKAGE@/&@VERSION@/' {} +
 	@${REINPLACE_CMD} -E \
-		-e 's/[^-/]auto(conf|header|reconf|scan|update)/&${VERSION}/g' \
-		-e 's/ifnames/&${VERSION}/g' \
-		-e '/config\.(guess|sub)/d' \
+		-e 's,([^-/]auto)(conf|header|reconf|scan|update),\1\2${VERSION},g' \
+		-e 's,(config\.guess|config\.sub|ifnames),\1${VERSION},g' \
 		${WRKSRC}/man/*.1
+# Save timestamps.
+	@${LN} ${WRKSRC}/build-aux/config.guess \
+		${WRKSRC}/build-aux/config.guess.orig
+	@${LN} ${WRKSRC}/build-aux/config.sub \
+		${WRKSRC}/build-aux/config.sub.orig
 
 post-patch-INFO-on:
 	@${REINPLACE_CMD} -E 's/autoconf\.(info|texi)/autoconf${VERSION}.\1/g' \
-		${WRKSRC}/Makefile.in
+		${WRKSRC}/doc/Makefile.in
 	@${CP} ${WRKSRC}/doc/autoconf.texi ${WRKSRC}/doc/autoconf${VERSION}.texi
 	@${REINPLACE_CMD} \
 		-e 's/autoconf\.info/autoconf${VERSION}.info/' \
@@ -63,10 +69,17 @@ post-patch-INFO-on:
 			s/ \{2,9\}/ / ; }' \
 		${WRKSRC}/doc/autoconf${VERSION}.texi
 # Restore timestamp in .info file.
-	@${TOUCH} -r ${WRKSRC}/doc/autoconf${VERSION}.texi.bak \
+	@${TOUCH} -r ${WRKSRC}/doc/autoconf.texi.orig \
 		${WRKSRC}/doc/autoconf${VERSION}.texi
 
 post-patch-INFO-off:
-	@${REINPLACE_CMD} '/^INFO_DEPS =/d' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} '/^INFO_DEPS =/d' ${WRKSRC}/doc/Makefile.in
+
+post-configure:
+# Restore timestamps to prevent regeneration of man pages.
+	@${TOUCH} -r ${WRKSRC}/build-aux/config.guess.orig \
+		${WRKSRC}/build-aux/config.guess
+	@${TOUCH} -r ${WRKSRC}/build-aux/config.sub.orig \
+		${WRKSRC}/build-aux/config.sub
 
 .include <bsd.port.mk>

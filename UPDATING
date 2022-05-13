@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220608:
+  AFFECTS: devel/autoconf-wrapper, devel/autoconf213
+  AUTHOR: tijl@FreeBSD.org
+
+  These ports have been renamed to devel/autoconf-switch and devel/autoconf2.13
+  respectively.  If your favourite port updating tool cannot handle that then
+  just remove the packages with "pkg delete" and then install the new port.
+
 20220607:
   AFFECTS: security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org

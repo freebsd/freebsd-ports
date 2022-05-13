@@ -220,6 +220,7 @@
     SUBDIR += autoconf-archive
     SUBDIR += autoconf-switch
     SUBDIR += autoconf2.13
+    SUBDIR += autoconf2.69
     SUBDIR += autodia
     SUBDIR += autogen
     SUBDIR += automake
