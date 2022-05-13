@@ -1,0 +1,23 @@
+Obtained from:	https://github.com/resque/resque-scheduler/commit/fa3e26b417616153f563ab5f006c3ff9dbfe05b9
+
+--- lib/resque/scheduler.rb.orig	2022-05-03 14:01:58 UTC
++++ lib/resque/scheduler.rb
+@@ -377,7 +377,6 @@ module Resque
+ 
+       def stop_rufus_scheduler
+         rufus_scheduler.shutdown(:wait)
+-        rufus_scheduler.join
+       end
+ 
+       def before_shutdown
+--- resque-scheduler.gemspec.orig	2022-05-03 14:00:56 UTC
++++ resque-scheduler.gemspec
+@@ -41,7 +41,7 @@ Gem::Specification.new do |s|
+     s.add_runtime_dependency(%q<mono_logger>.freeze, ["~> 1.0"])
+     s.add_runtime_dependency(%q<redis>.freeze, [">= 3.3"])
+     s.add_runtime_dependency(%q<resque>.freeze, [">= 1.27"])
+-    s.add_runtime_dependency(%q<rufus-scheduler>.freeze, ["~> 3.2", "< 3.7"])
++    s.add_runtime_dependency(%q<rufus-scheduler>.freeze, ["~> 3.2"])
+   else
+     s.add_dependency(%q<bundler>.freeze, [">= 0"])
+     s.add_dependency(%q<json>.freeze, [">= 0"])
