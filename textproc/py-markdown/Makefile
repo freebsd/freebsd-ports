@@ -1,7 +1,7 @@
 # Created by: Graham Todd <gtodd@bellanet.org>
 
 PORTNAME=	markdown
-PORTVERSION=	3.3.6
+PORTVERSION=	3.3.7
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
