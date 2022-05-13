@@ -1,7 +1,7 @@
 # Created by: T. William Wells <bill@twwells.com>
 
 PORTNAME=	BerkeleyDB
-PORTVERSION=	0.64
+PORTVERSION=	0.65
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
