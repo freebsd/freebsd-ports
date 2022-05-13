@@ -1,0 +1,11 @@
+--- cucumber.gemspec.orig	2022-05-07 09:10:47 UTC
++++ cucumber.gemspec
+@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
+     s.add_runtime_dependency(%q<cucumber-wire>.freeze, ["~> 6.2", ">= 6.2.0"])
+     s.add_runtime_dependency(%q<diff-lcs>.freeze, ["~> 1.4", ">= 1.4.4"])
+     s.add_runtime_dependency(%q<mime-types>.freeze, ["~> 3.3", ">= 3.3.1"])
+-    s.add_runtime_dependency(%q<multi_test>.freeze, ["~> 0.1", ">= 0.1.2"])
++    s.add_runtime_dependency(%q<multi_test>.freeze, [">= 0.1.2"])
+     s.add_runtime_dependency(%q<sys-uname>.freeze, ["~> 1.2", ">= 1.2.2"])
+     s.add_development_dependency(%q<nokogiri>.freeze, ["~> 1.12", ">= 1.12.5"])
+     s.add_development_dependency(%q<pry>.freeze, ["~> 0.14", ">= 0.14.1"])

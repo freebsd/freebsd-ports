@@ -1,6 +1,6 @@
 PORTNAME=	cucumber
 PORTVERSION=	7.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-builder>=3.2.4<4:devel/rubygem-builder \
 		rubygem-cucumber-wire>=6.2.0<7:devel/rubygem-cucumber-wire \
 		rubygem-diff-lcs>=1.4.4<2:textproc/rubygem-diff-lcs \
 		rubygem-mime-types>=3.3.1<4:misc/rubygem-mime-types \
-		rubygem-multi_test>=0.1.2<1:devel/rubygem-multi_test \
+		rubygem-multi_test>=0.1.2:devel/rubygem-multi_test \
 		rubygem-sys-uname>=1.2.2<2:sysutils/rubygem-sys-uname
 
 USES=		gem
