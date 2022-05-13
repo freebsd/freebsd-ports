@@ -1,7 +1,7 @@
 # Created by: Slawomir Wojciech Wojtczak <vermaden@interia.pl>
 
 PORTNAME=	automount
-DISTVERSION=	1.7.2
+DISTVERSION=	1.7.8
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.github.com/vermaden/automount/master/
 

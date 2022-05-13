@@ -2,11 +2,9 @@
 { type: install
   message: <<EOM
 
-You must run
+You must run below command to activate automount(8).
 
-    service devd restart
-
-to activate the new automount.
+    # service devd restart
 EOM
 }
 ]
