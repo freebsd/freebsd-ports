@@ -1,7 +1,7 @@
 # Created by: Leinier Cruz Salfran <salfrancl@yahoo.es>
 
 PORTNAME=	fet
-DISTVERSION=	6.2.0
+DISTVERSION=	6.3.4
 CATEGORIES=	deskutils education
 MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 		https://lalescu.ro/liviu/fet/download/old/ \
