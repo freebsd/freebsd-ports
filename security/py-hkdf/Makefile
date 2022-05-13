@@ -10,4 +10,6 @@ COMMENT=	HMAC-based Extract-and-Expand Key Derivation Function (HKDF)
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
