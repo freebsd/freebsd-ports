@@ -1,7 +1,7 @@
 # Created by: Kimo <kimor79@yahoo.com>
 
 PORTNAME=	mysql2
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
