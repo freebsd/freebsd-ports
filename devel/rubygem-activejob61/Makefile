@@ -1,7 +1,7 @@
 # Created by: Johannes Jost Meixner <xmj@FreeBSD.org>
 
 PORTNAME=	activejob
-PORTVERSION=	6.1.5.1
+PORTVERSION=	6.1.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
