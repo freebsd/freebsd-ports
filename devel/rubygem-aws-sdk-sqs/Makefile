@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	aws-sdk-sqs
-PORTVERSION=	1.51.0
+PORTVERSION=	1.51.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
