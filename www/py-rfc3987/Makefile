@@ -12,8 +12,8 @@ COMMENT=	Parsing and validation of URIs (RFC 3986) and IRIs (RFC 3987)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USES=		python:3.2+
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
