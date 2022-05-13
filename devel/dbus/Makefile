@@ -43,7 +43,8 @@ OPTIONS_DEFAULT=	MANPAGES X11
 OPTIONS_SUB=		yes
 X11_DESC=		Support X11 Desktop Environments
 
-MANPAGES_BUILD_DEPENDS=		xmlto:textproc/xmlto
+MANPAGES_BUILD_DEPENDS=		minixmlto:textproc/minixmlto
+MANPAGES_CONFIGURE_ENV=		XMLTO=${LOCALBASE}/bin/minixmlto
 MANPAGES_CONFIGURE_ENABLE=	xml-docs
 X11_USES=			xorg
 X11_USE=			XORG=ice,sm,x11
