@@ -1,0 +1,8 @@
+Traces captures nested traces during code execution in a vendor agnostic way.
+
+Features:
+- Zero-overhead if tracing is disabled and minimal overhead if enabled.
+- Small opinionated interface with standardised semantics, consistent with the
+  W3C Trace Context Specification.
+
+WWW: https://github.com/socketry/traces
