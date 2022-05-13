@@ -1369,6 +1369,7 @@
     SUBDIR += py-mdurl
     SUBDIR += py-misaka
     SUBDIR += py-mistune
+    SUBDIR += py-mistune0
     SUBDIR += py-mkdocs
     SUBDIR += py-mkdocs-autorefs
     SUBDIR += py-mkdocs-material
