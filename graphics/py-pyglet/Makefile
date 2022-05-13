@@ -1,5 +1,5 @@
 PORTNAME=	pyglet
-PORTVERSION=	1.5.23
+PORTVERSION=	1.5.24
 CATEGORIES=	graphics multimedia x11-toolkits python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,9 +10,8 @@ COMMENT=	Cross-platform windowing and multimedia library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=${PYTHON_PKGNAMEPREFIX}pyglet150
-
-USES=		python:3.6+ zip
+USES=		display:test gl python:3.6+ pytest zip
+USE_GL=		gl glu
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
