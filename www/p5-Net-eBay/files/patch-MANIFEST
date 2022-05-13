@@ -1,6 +1,6 @@
---- MANIFEST.orig	2008-06-08 13:27:22 UTC
+--- MANIFEST.orig	2022-05-07 02:51:55 UTC
 +++ MANIFEST
-@@ -7,22 +7,3 @@ lib/Net/eBay.pm
+@@ -7,23 +7,4 @@ lib/Net/eBay.pm
  t/00-load.t
  t/pod-coverage.t
  t/pod.t
@@ -23,3 +23,4 @@
 -ebay-revise-item.pl
 -ebay-search.pl
 -ebay-validate-test-user.pl
+ META.json                                Module JSON meta-data (added by MakeMaker)
