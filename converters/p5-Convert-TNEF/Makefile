@@ -20,4 +20,6 @@ RUN_DEPENDS=	p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
