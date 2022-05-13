@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	14.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -250,7 +250,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-mail>=2.7.1<2.7.2,2:mail/rubygem-mail \
 	rubygem-lockbox>=0.6.2<0.7:security/rubygem-lockbox \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
-	rubygem-json>=2.5.1<2.6:devel/rubygem-json \
+	rubygem-json25>=2.5.1<2.6:devel/rubygem-json25 \
 	rubygem-json_schemer>=0.2.18<0.3:devel/rubygem-json_schemer \
 	rubygem-oj310>=3.10.6<3.11:devel/rubygem-oj310 \
 	rubygem-multi_json114>=1.14.1<1.15:devel/rubygem-multi_json114 \
