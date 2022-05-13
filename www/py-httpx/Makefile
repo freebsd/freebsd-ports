@@ -20,12 +20,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}rfc3986>=1.3,1:www/py-rfc3986@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sniffio>=0:devel/py-sniffio@${PY_FLAVOR}
 
-USES=		python:3.7+ cpe
+USES=		cpe python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
-CPE_VENDOR=	encode
-
 NO_ARCH=	yes
+
+CPE_VENDOR=	encode
 
 OPTIONS_DEFINE=	BROTLI CLI HTTP2 SOCKS
 OPTIONS_DEFAULT=HTTP2
