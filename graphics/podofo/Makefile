@@ -1,7 +1,7 @@
 # Created by: stas
 
 PORTNAME=	podofo
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
