@@ -1,8 +1,7 @@
 # Created by: maintainer.freebsd@xpoundit.com
 
 PORTNAME=	orthanc-webviewer
-DISTVERSION=	2.7
-PORTREVISION=	3
+DISTVERSION=	2.8
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/plugin-webviewer/:main \
 		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/:framework \
@@ -14,7 +13,7 @@ DISTFILES=	OrthancWebViewer-${PORTVERSION}.tar.gz:main \
 		jquery-ui-1.11.3.zip:thirdpartywebviewer \
 		pako-0.2.5.zip:thirdpartywebviewer \
 		js-url-1.8.6.zip:thirdpartywebviewer \
-		Orthanc-1.8.1.tar.gz:framework \
+		Orthanc-1.11.0.tar.gz:framework \
 		e2fsprogs-1.44.5.tar.gz:thirdparty
 DIST_SUBDIR=	orthanc
 EXTRACT_ONLY=	OrthancWebViewer-${PORTVERSION}.tar.gz
@@ -38,13 +37,14 @@ RUN_DEPENDS=	Orthanc:science/orthanc
 USES=		cmake localbase python:build
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/OrthancWebViewer-${PORTVERSION}
-
-CMAKE_OFF=	USE_SYSTEM_UUID
-CMAKE_ARGS=	-DORTHANC_FRAMEWORK_ROOT=${WRKSRC}/ThirdPartyDownloads/Orthanc-1.8.1/OrthancFramework/Sources \
+CMAKE_ARGS=	-DORTHANC_FRAMEWORK_ROOT=${WRKSRC}/ThirdPartyDownloads/Orthanc-1.11.0/OrthancFramework/Sources \
 		-DORTHANC_FRAMEWORK_SOURCE=path
+CMAKE_OFF=	USE_SYSTEM_UUID
+
 CFLAGS+=	-I${LOCALBASE}/include -DORTHANC_ENABLE_LOGGING_PLUGIN -DNDEBUG
 CXXFLAGS+=	-DNDEBUG
+
+WRKSRC=		${WRKDIR}/OrthancWebViewer-${PORTVERSION}
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
@@ -56,8 +56,8 @@ post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/pako-0.2.5.zip ${WRKSRC}/ThirdPartyDownloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/js-url-1.8.6.zip ${WRKSRC}/ThirdPartyDownloads
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/e2fsprogs-1.44.5.tar.gz ${WRKSRC}/ThirdPartyDownloads
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/Orthanc-1.8.1.tar.gz ${WRKSRC}/ThirdPartyDownloads
-	${TAR} -C ${WRKSRC}/ThirdPartyDownloads -xf ${WRKSRC}/ThirdPartyDownloads/Orthanc-1.8.1.tar.gz
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/Orthanc-1.11.0.tar.gz ${WRKSRC}/ThirdPartyDownloads
+	${TAR} -C ${WRKSRC}/ThirdPartyDownloads -xf ${WRKSRC}/ThirdPartyDownloads/Orthanc-1.11.0.tar.gz
 
 post-build:
 	@cd ${BUILD_WRKSRC} && ./UnitTests
