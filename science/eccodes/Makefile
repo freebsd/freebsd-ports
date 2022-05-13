@@ -1,8 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	eccodes
-PORTVERSION=	2.24.2
-PORTREVISION=	2
+PORTVERSION=	2.25.0
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	science
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/45757960/ \
@@ -17,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libnetcdf.so:science/netcdf \
 		libpng.so:graphics/png
 
-USES=		cmake perl5 shebangfix
+USES=		cmake localbase perl5 shebangfix
 
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS=BOTH
 CMAKE_OFF=	ENABLE_ALIGN_MEMORY \

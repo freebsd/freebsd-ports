@@ -16782,6 +16782,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/local.98.42.def
 %%DATADIR%%/definitions/grib2/local.98.5.def
 %%DATADIR%%/definitions/grib2/local.98.500.def
+%%DATADIR%%/definitions/grib2/local.98.60.def
 %%DATADIR%%/definitions/grib2/local.98.7.def
 %%DATADIR%%/definitions/grib2/local.98.9.def
 %%DATADIR%%/definitions/grib2/local.98.def
@@ -16858,6 +16859,18 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/localConcepts/lfpw1/shortName.def
 %%DATADIR%%/definitions/grib2/localConcepts/lfpw1/units.def
 %%DATADIR%%/definitions/grib2/localConcepts/lssw/modelName.def
+%%DATADIR%%/definitions/grib2/localConcepts/s2s/cfName.def
+%%DATADIR%%/definitions/grib2/localConcepts/s2s/cfVarName.def
+%%DATADIR%%/definitions/grib2/localConcepts/s2s/name.def
+%%DATADIR%%/definitions/grib2/localConcepts/s2s/paramId.def
+%%DATADIR%%/definitions/grib2/localConcepts/s2s/shortName.def
+%%DATADIR%%/definitions/grib2/localConcepts/s2s/units.def
+%%DATADIR%%/definitions/grib2/localConcepts/tigge/cfVarName.def
+%%DATADIR%%/definitions/grib2/localConcepts/tigge/name.def
+%%DATADIR%%/definitions/grib2/localConcepts/tigge/paramId.def
+%%DATADIR%%/definitions/grib2/localConcepts/tigge/shortName.def
+%%DATADIR%%/definitions/grib2/localConcepts/tigge/units.def
+%%DATADIR%%/definitions/grib2/localConcepts/uerra/cfName.def
 %%DATADIR%%/definitions/grib2/localConcepts/uerra/cfVarName.def
 %%DATADIR%%/definitions/grib2/localConcepts/uerra/marsLevtypeConcept.def
 %%DATADIR%%/definitions/grib2/localConcepts/uerra/name.def
@@ -16874,6 +16887,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/name.def
 %%DATADIR%%/definitions/grib2/paramId.def
 %%DATADIR%%/definitions/grib2/parameters.def
+%%DATADIR%%/definitions/grib2/postProcessingConcept.def
 %%DATADIR%%/definitions/grib2/products_0.def
 %%DATADIR%%/definitions/grib2/products_1.def
 %%DATADIR%%/definitions/grib2/products_10.def
@@ -20516,10 +20530,12 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1.1.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.2.0.1.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.2.0.20.table
+%%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.2.10.2.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.2.2.0.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.2.4.8.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.230.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.233.table
+%%DATADIR%%/definitions/grib2/tables/local/ecmf/1/4.5.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/4/1.2.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.1.0.table
 %%DATADIR%%/definitions/grib2/tables/local/ecmf/obstat.10.0.table
@@ -21500,11 +21516,13 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.msmm.fcmin.def
 %%DATADIR%%/definitions/mars/grib.msmm.fcstdev.def
 %%DATADIR%%/definitions/mars/grib.msmm.hcmean.def
+%%DATADIR%%/definitions/mars/grib.ocda.an.def
 %%DATADIR%%/definitions/mars/grib.ocea.an.def
 %%DATADIR%%/definitions/mars/grib.ocea.ff.def
 %%DATADIR%%/definitions/mars/grib.ocea.fx.def
 %%DATADIR%%/definitions/mars/grib.ocea.of.def
 %%DATADIR%%/definitions/mars/grib.ocea.or.def
+%%DATADIR%%/definitions/mars/grib.olda.an.def
 %%DATADIR%%/definitions/mars/grib.oper.3v.def
 %%DATADIR%%/definitions/mars/grib.oper.4i.def
 %%DATADIR%%/definitions/mars/grib.oper.4v.def
@@ -21767,6 +21785,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/ifs_samples/grib1/GRIB1.tmpl
 %%DATADIR%%/ifs_samples/grib1/GRIB2.tmpl
 %%DATADIR%%/ifs_samples/grib1/budg.tmpl
+%%DATADIR%%/ifs_samples/grib1/ccsds_grib2.tmpl
 %%DATADIR%%/ifs_samples/grib1/clusters_grib1.tmpl
 %%DATADIR%%/ifs_samples/grib1/diag.tmpl
 %%DATADIR%%/ifs_samples/grib1/gg_ml.tmpl
@@ -21894,6 +21913,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/GRIB1.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/GRIB2.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/budg.tmpl
+%%DATADIR%%/ifs_samples/grib1_mlgrib2/ccsds_grib2.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/clusters_grib1.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/diag.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2/gg_ml.tmpl
@@ -22021,6 +22041,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/GRIB1.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/GRIB2.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/budg.tmpl
+%%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/ccsds_grib2.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/clusters_grib1.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/diag.tmpl
 %%DATADIR%%/ifs_samples/grib1_mlgrib2_ieee64/gg_ml.tmpl
@@ -22148,6 +22169,7 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/samples/GRIB1.tmpl
 %%DATADIR%%/samples/GRIB2.tmpl
 %%DATADIR%%/samples/budg.tmpl
+%%DATADIR%%/samples/ccsds_grib2.tmpl
 %%DATADIR%%/samples/clusters_grib1.tmpl
 %%DATADIR%%/samples/diag.tmpl
 %%DATADIR%%/samples/gg_sfc_grib1.tmpl
