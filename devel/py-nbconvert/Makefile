@@ -1,5 +1,6 @@
 PORTNAME=	nbconvert
 PORTVERSION=	6.5.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_F
 		${PYTHON_PKGNAMEPREFIX}jupyter-core>=4.7:devel/py-jupyter-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyterlab-pygments>=0:textproc/py-jupyterlab-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markupsafe>=2.0:textproc/py-markupsafe@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mistune>=0.8.1<2:textproc/py-mistune@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mistune0>=0.8.1<2:textproc/py-mistune0@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbclient>=0.5.0:devel/py-nbclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbformat>=5.1:devel/py-nbformat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
