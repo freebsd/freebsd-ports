@@ -10,7 +10,7 @@
 
 _INCLUDE_USES_GEM_MK=        yes
 
-_valid_ARGS=			noautoplist
+_valid_ARGS=	noautoplist
 
 # Sanity check
 .  for arg in ${gem_ARGS}
@@ -19,22 +19,22 @@ IGNORE= Incorrect 'USES+= gem:${gem_ARGS}' usage: argument [${arg}] is not recog
 .    endif
 .  endfor
 
-BUILD_DEPENDS+=	${RUBYGEMBIN}:devel/ruby-gems
-RUN_DEPENDS+=	${RUBYGEMBIN}:devel/ruby-gems
-
 PKGNAMEPREFIX?=	rubygem-
 EXTRACT_SUFX=	.gem
 EXTRACT_ONLY=
 DIST_SUBDIR=	rubygem
 
+BUILD_DEPENDS+=	${RUBYGEMBIN}:devel/ruby-gems
 EXTRACT_DEPENDS+=	${RUBYGEMBIN}:devel/ruby-gems
+RUN_DEPENDS+=	${RUBYGEMBIN}:devel/ruby-gems
+
 GEMS_BASE_DIR=	lib/ruby/gems/${RUBY_VER}
-GEMS_DIR=	${GEMS_BASE_DIR}/gems
-DOC_DIR=	${GEMS_BASE_DIR}/doc
 CACHE_DIR=	${GEMS_BASE_DIR}/cache
-SPEC_DIR=	${GEMS_BASE_DIR}/specifications
+DOC_DIR=	${GEMS_BASE_DIR}/doc
 EXT_DIR=	${GEMS_BASE_DIR}/extensions
+GEMS_DIR=	${GEMS_BASE_DIR}/gems
 PLUGINS_DIR=	${GEMS_BASE_DIR}/plugins
+SPEC_DIR=	${GEMS_BASE_DIR}/specifications
 GEM_NAME?=	${DISTNAME}
 GEM_LIB_DIR?=	${GEMS_DIR}/${GEM_NAME}
 GEM_DOC_DIR?=	${DOC_DIR}/${GEM_NAME}
@@ -48,14 +48,13 @@ GEM_ENV+=	LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 		REV="${RUBY_GEM}" \
-		GEMS_BASE_DIR="lib/ruby/gems/${RUBY_VER}" \
+		GEMS_BASE_DIR="${GEMS_BASE_DIR}" \
 		GEMS_DIR="${GEMS_DIR}" \
 		DOC_DIR="${DOC_DIR}" \
 		CACHE_DIR="${CACHE_DIR}" \
 		SPEC_DIR="${SPEC_DIR}" \
 		EXT_DIR="${EXT_DIR}" \
 		PLUGINS_DIR="${PLUGINS_DIR}" \
-		PORT="${PORTNAME}-${PORTVERSION}" \
 		GEM_NAME="${GEM_NAME}" \
 		GEM_LIB_DIR="${GEM_LIB_DIR}" \
 		GEM_DOC_DIR="${GEM_DOC_DIR}" \
