@@ -10,6 +10,10 @@ DIST_SUBDIR=	python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FiSH/Mircryption-compatible encryption for HexChat
 
+BROKEN=		Requires python 2
+DEPRECATED=	Abandoned, unmaintained, requires Python 2 and depends on deprecated pycrypto
+EXPIRATION_DATE=2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>=0:net/py-pysocks@${PY_FLAVOR}
 
