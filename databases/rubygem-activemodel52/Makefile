@@ -1,7 +1,7 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
 
 PORTNAME=	activemodel
-PORTVERSION=	5.2.7.1
+PORTVERSION=	5.2.8
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	52
