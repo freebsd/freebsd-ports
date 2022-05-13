@@ -1,7 +1,7 @@
 # Created by: alepulver
 
 PORTNAME=	javaservicewrapper
-PORTVERSION=	3.5.45
+PORTVERSION=	3.5.49
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
@@ -53,7 +53,7 @@ post-patch:
 	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-32.gmake \
 		${WRKSRC}/src/c/Makefile-freebsd-arm-32.gmake
 	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake \
-		${WRKSRC}/src/c/Makefile-freebsd-armhf-64.gmake
+		${WRKSRC}/src/c/Makefile-freebsd-arm-64.gmake
 	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake \
 		${WRKSRC}/src/c/Makefile-freebsd-ppcbe-64.gmake
 	@${CP} ${WRKSRC}/src/c/Makefile-freebsd-x86-64.gmake \
@@ -63,7 +63,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${CP} -rp bin conf lib test ${STAGEDIR}${DATADIR}
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/bin/wrapper
-	${LN} -sf ${DATADIR}/bin/wrapper ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/lib/libwrapper.so
+	${RLN} ${STAGEDIR}${DATADIR}/bin/wrapper ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

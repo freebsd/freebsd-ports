@@ -112,6 +112,8 @@ bin/javaservicewrapper
 %%DATADIR%%/test/logstdoutstderrdetached.conf
 %%DATADIR%%/test/longrunningbackgroundthreads
 %%DATADIR%%/test/longrunningbackgroundthreads.conf
+%%DATADIR%%/test/longrunningwithshutdownhook
+%%DATADIR%%/test/longrunningwithshutdownhook.conf
 %%DATADIR%%/test/memory
 %%DATADIR%%/test/memory.conf
 %%DATADIR%%/test/nestedwrapperlistener
