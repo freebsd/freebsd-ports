@@ -25,4 +25,6 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libnacl>0:security/py-libnacl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR}
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
