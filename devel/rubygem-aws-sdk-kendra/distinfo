@@ -1,3 +1,3 @@
-TIMESTAMP = 1650970205
-SHA256 (rubygem/aws-sdk-kendra-1.49.0.gem) = 2536015c0bb8c490e8d3dc7417ad28116de620952b39cdd287fb748c9f4d636f
-SIZE (rubygem/aws-sdk-kendra-1.49.0.gem) = 134144
+TIMESTAMP = 1652122729
+SHA256 (rubygem/aws-sdk-kendra-1.50.0.gem) = 0fa35c4ccf757ae23433cf5d2d04409dcdac33fab16022e2004f54d7d4c55d8a
+SIZE (rubygem/aws-sdk-kendra-1.50.0.gem) = 134656
