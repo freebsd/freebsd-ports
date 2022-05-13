@@ -24,6 +24,8 @@ GNU_CONFIGURE=	yes
 SHEBANG_FILES=	fflas-ffpack-config.in
 TEST_TARGET=	check
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	DOXYGEN
 
 .include <bsd.port.options.mk>
