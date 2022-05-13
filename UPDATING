@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220513:
+  AFFECTS: devel/nexus2-oss
+  AUTHOR: michael.osipov@siemens.com
+
+  Nexus 2.15.x introduces incompatible configuration changes. You
+  must review changes in ETCDIR/wrapper.conf and ETCDIR/jetty*.xml
+  with updated samples as well as NEXUS_WORKDIR/conf/logback-nexus.xml
+  with its origin from
+  DATADIR/nexus/WEB-INF/lib/nexus-core-VERSION.jar!/META-INF/log/logback-nexus.xml,
+  grant write access to files in ETCDIR since Nexus itself might
+  update files in place otherwise your instance will not properly
+  work after the update.
+
 20220510
   AFFECTS: sysutils/zrepl
   AUTHOR: monwarez@gmail.com
