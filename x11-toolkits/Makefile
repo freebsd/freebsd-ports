@@ -23,6 +23,7 @@
     SUBDIR += gnustep-back
     SUBDIR += gnustep-gui
     SUBDIR += granite
+    SUBDIR += granite7
     SUBDIR += gstreamer1-plugins-gtk
     SUBDIR += gstreamer1-plugins-gtk4
     SUBDIR += gstreamer1-plugins-pango
