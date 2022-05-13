@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
 
 PORTNAME=	premailer
-PORTVERSION=	1.15.0
+PORTVERSION=	1.16.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
