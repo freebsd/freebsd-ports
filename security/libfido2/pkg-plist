@@ -107,6 +107,7 @@ man/man3/fido_cbor_info_fwversion.3.gz
 man/man3/fido_cbor_info_maxcredbloblen.3.gz
 man/man3/fido_cbor_info_maxcredcntlst.3.gz
 man/man3/fido_cbor_info_maxcredidlen.3.gz
+man/man3/fido_cbor_info_maxlargeblob.3.gz
 man/man3/fido_cbor_info_maxmsgsiz.3.gz
 man/man3/fido_cbor_info_new.3.gz
 man/man3/fido_cbor_info_options_len.3.gz
@@ -350,6 +351,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_maxcredbloblen.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_maxcredcntlst.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_maxcredidlen.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_maxlargeblob.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_maxmsgsiz.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_new.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cbor_info_options_len.html
