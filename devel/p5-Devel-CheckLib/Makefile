@@ -1,7 +1,7 @@
 # Created by: Frederic Culot <frederic@culot.org>
 
 PORTNAME=	Devel-CheckLib
-PORTVERSION=	1.14
+PORTVERSION=	1.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
