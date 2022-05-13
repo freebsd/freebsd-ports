@@ -1,3 +1,39 @@
+  <vuln vid="11e36890-d28c-11ec-a06f-d4c9ef517024">
+    <topic>curl -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.83.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The curl project reports:</p>
+	<blockquote cite="https://curl.se/docs/security.html">
+	  <p>CVE-2022-27778: curl removes wrong file on error</p>
+	  <p>CVE-2022-27779: cookie for trailing dot TLD</p>
+	  <p>CVE-2022-27780: percent-encoded path separator in URL host</p>
+	  <p>CVE-2022-27781: CERTINFO never-ending busy-loop</p>
+	  <p>CVE-2022-27782: TLS and SSH connection too eager reuse</p>
+	  <p>CVE-2022-30115: HSTS bypass via trailing dot</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-27778</cvename>
+      <cvename>CVE-2022-27779</cvename>
+      <cvename>CVE-2022-27780</cvename>
+      <cvename>CVE-2022-27781</cvename>
+      <cvename>CVE-2022-27782</cvename>
+      <cvename>CVE-2022-30115</cvename>
+      <url>https://curl.se/docs/security.html</url>
+    </references>
+    <dates>
+      <discovery>2022-05-11</discovery>
+      <entry>2022-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="157ce083-d145-11ec-ab9b-6cc21735f730">
     <topic>PostgreSQL Server -- execute arbitrary SQL code as DBA user</topic>
     <affects>
