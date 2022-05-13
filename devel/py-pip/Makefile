@@ -1,7 +1,7 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
 
 PORTNAME=	pip
-PORTVERSION=	22.0.4
+PORTVERSION=	22.1
 CATEGORIES=	devel python
 MASTER_SITES=	https://files.pythonhosted.org/packages/fb/58/9efbfe68482dab9557c49d433a60fff9efd7ed8835f829eba8297c2c124a/:test_setuptools \
 		https://files.pythonhosted.org/packages/27/d6/003e593296a85fd6ed616ed962795b2f87709c3eee2bca4f6d0fe55c6d00/:test_wheel
@@ -67,9 +67,9 @@ post-install-DOCS-on:
 do-test:
 	${MKDIR} ${WRKSRC}/tests/data/common_wheels
 	# the tests check for these wheel files, so fetch them and copy them in
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/setuptools-44.0.0-py2.py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/wheel-0.35.1-py2.py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/setuptools-62.1.0-py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/wheel-0.37.1-py2.py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
 	${LN} -sf ${LOCALBASE}/bin/pip ${LOCALBASE}/bin/pip3
-	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
+	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} ${PYTHON_CMD} -m pytest -rs -v
 
 .include <bsd.port.mk>
