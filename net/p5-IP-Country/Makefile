@@ -16,4 +16,6 @@ RUN_DEPENDS=	p5-Geography-Countries>=0:misc/p5-Geography-Countries
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
