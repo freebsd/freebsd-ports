@@ -128,6 +128,8 @@ GO_ENV+=	GOPATH="${GO_GOPATH}" \
 .    if defined(GO_MODULE)
 GO_MODNAME=	${GO_MODULE:C/^([^@]*)(@([^@]*)?)/\1/}
 .      if empty(DISTFILES:Mgo.mod\:*) && empty(DISTFILES:Mgo.mod)
+# Unless already setup for download by other means,
+# arrange to pull go.mod and distribution archive from GOPROXY.
 GO_MODVERSION=	${GO_MODULE:C/^([^@]*)(@([^@]*)?)/\2/:M@*:S/^@//:S/^$/${DISTVERSIONFULL}/}
 GO_MODFILE=	${GO_MODVERSION}.mod
 GO_DISTFILE=	${GO_MODVERSION}.zip
@@ -162,26 +164,37 @@ _USES_POST+=	go
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_GO_POST_MK)
 _INCLUDE_USES_GO_POST_MK=	yes
 
-.  if !target(post-fetch) && ${go_ARGS:Mmodules} && defined(GO_MODULE)
-post-fetch:
+.  if ${go_ARGS:Mmodules} && defined(GO_MODULE)
+_USES_fetch+=	200:go-pre-fetch 800:go-post-fetch
+# Check that pkg can be installed or is already available,
+# otherwise it will be impossible to install go and fetch dependencies.
+go-pre-fetch:
+.    if defined(CLEAN_FETCH_ENV) && !exists(${PKG_BIN})
+	@${ECHO_MSG} "===> CLEAN_FETCH_ENV is defined, cannot download Go modules (pkg and go are required)"; \
+	exit 1
+.    endif
+# Download all required build dependencies to GOMODCACHE.
+go-post-fetch:
 	@${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";
 	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
 		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
 		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
 .  endif
 
-.  if !target(post-extract)
-.    if empty(go_ARGS)
-post-extract:
+_USES_extract+=	800:go-post-extract
+.  if empty(go_ARGS)
+# Legacy (GOPATH) build mode, setup directory structure expected by Go for the main module.
+go-post-extract:
 	@${MKDIR} ${GO_WRKSRC:H}
 	@${LN} -sf ${WRKSRC} ${GO_WRKSRC}
-.    elif ${go_ARGS:Mmodules} && defined(GO_MODULE)
-post-extract:
+.  elif ${go_ARGS:Mmodules} && defined(GO_MODULE)
+# Module-aware build mode. Although not strictly necessary (all build dependencies should be
+# already in MODCACHE), vendor them so we can patch them if needed.
+go-post-extract:
 	@${ECHO_MSG} "===> Tidying ${GO_MODNAME} dependencies";
 	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod tidy -e)
 	@${ECHO_MSG} "===> Vendoring ${GO_MODNAME} dependencies";
 	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod vendor -e)
-.    endif 
 .  endif
 
 .  if !target(do-build) && empty(go_ARGS:Mno_targets)
