@@ -1,7 +1,7 @@
 # Created by: Rusty Nejdl
 
 PORTNAME=	apsw
-PORTVERSION=	3.37.0
+PORTVERSION=	3.38.1
 DISTVERSIONSUFFIX=	-r1
 CATEGORIES=	databases python
 MASTER_SITES=	https://github.com/rogerbinns/apsw/releases/download/${PORTVERSION}${DISTVERSIONSUFFIX}/
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	sqlite3>=${PORTVERSION:R},1:databases/sqlite3
 
-USES=		localbase python:3.6+ sqlite:3 zip
+USES=		localbase python:3.7+ sqlite:3 zip
 USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONS_DEFINE=	EXTENSION
