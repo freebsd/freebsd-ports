@@ -69,7 +69,7 @@ asterisk_stop()
 	if [ ${asterisk_stopsleep} -gt 0 ]; then
 		sleep ${asterisk_stopsleep}
 	fi
-	$command -nqrx 'core stop now'
+	$command -rx 'core stop now'
 	wait_for_pids $rc_pid
 }
 
@@ -80,7 +80,7 @@ asterisk_reload()
 		return 1
 	fi
 	echo 'Reloading asterisk.'
-	$command -nqrx 'reload'
+	$command -rx 'reload'
 }
 
 run_rc_command "$1"

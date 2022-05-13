@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-PORTVERSION=	16.25.3
+PORTVERSION=	16.26.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -27,7 +27,7 @@ USE_GITHUB=	nodefault
 
 EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
-PJSIP_VERSION=	2.10
+PJSIP_VERSION=	2.12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--with-ilbc=internal \
@@ -246,6 +246,7 @@ post-extract-OPUS-on:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/samples/musiconhold.conf.sample
 	@${REINPLACE_CMD} -e 's/@XMLSTARLET@//' ${WRKSRC}/makeopts.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/main/term.c
 .if exists(${FILESDIR}/.asterisk.makeopts)
 	${CP} ${FILESDIR}/.asterisk.makeopts ${WRKSRC}/menuselect.makeopts
 .endif
