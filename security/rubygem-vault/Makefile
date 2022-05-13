@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	vault
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
