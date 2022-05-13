@@ -1464,6 +1464,7 @@
     SUBDIR += py-reverend
     SUBDIR += py-rich
     SUBDIR += py-rich-cli
+    SUBDIR += py-rich-rst
     SUBDIR += py-rnc2rng
     SUBDIR += py-rss2gen
     SUBDIR += py-rst2ansi
