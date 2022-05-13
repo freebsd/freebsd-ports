@@ -1,3 +1,3 @@
-TIMESTAMP = 1642337783
-SHA256 (django-haystack-3.1.1.tar.gz) = 6d05756b95d7d5ec1dbd4668eb999ced1504b47f588e2e54be53b1404c516a82
-SIZE (django-haystack-3.1.1.tar.gz) = 467122
+TIMESTAMP = 1652122707
+SHA256 (django-haystack-3.2.1.tar.gz) = 97e3197aefc225fe405b6f17600a2534bf827cb4d6743130c20bc1a06f7293a4
+SIZE (django-haystack-3.2.1.tar.gz) = 466580
