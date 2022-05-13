@@ -14,4 +14,6 @@ LICENSE=	MIT
 USES=		python:3.8+
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
