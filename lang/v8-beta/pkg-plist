@@ -1,6 +1,7 @@
 bin/d8
 bin/mkgrokdump
 bin/mksnapshot
+bin/v8_shell
 include/cppgc/allocation.h
 include/cppgc/common.h
 include/cppgc/cross-thread-persistent.h
@@ -110,3 +111,13 @@ lib/libv8_libplatform.so
 libdata/pkgconfig/v8.pc
 libdata/pkgconfig/v8_libbase.pc
 libdata/pkgconfig/v8_libplatform.pc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_inspector_fuzzer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_json_fuzzer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_multi_return_fuzzer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_parser_fuzzer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_regexp_builtins_fuzzer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_regexp_fuzzer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_wasm_async_fuzzer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_wasm_code_fuzzer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_wasm_compile_fuzzer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_wasm_fuzzer

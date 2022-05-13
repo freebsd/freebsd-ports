@@ -1,8 +1,8 @@
 # We follow the beta channel on https://omahaproxy.appspot.com/
-# https://chromium.googlesource.com/v8/v8/+/refs/heads/10.0-lkgr
+# https://chromium.googlesource.com/v8/v8/+/refs/heads/10.2-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	10.1.124.6
+PORTVERSION=	10.2.154.3
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
 PKGNAMESUFFIX=	-beta
@@ -44,13 +44,13 @@ CPE_VENDOR=	google
 
 CONFLICTS_INSTALL=	v8
 
-BUILD_REV=	3d9590754d5d23e62d15472c5baf6777ca59df20
-BUILDTOOLS_REV=	113dd1badbcbffea108a8c95ac7c89c22bfd25f3
-CLANG_REV=	b60d34c100e5a8f4b01d838527f000faab673da3
+BUILD_REV=	b37c340767cf9e7777d4ca5a588c34c5744df9b2
+BUILDTOOLS_REV=	c2e4795660817c2776dbabd778b92ed58c074032
+CLANG_REV=	b5e2f7c16bbf3aefc9354e8fbad3de0a543f2193
 COMMON_REV=	d115b033c4e53666b535cbd1985ffe60badad082
-GOOGLETEST_REV=	ae5e06dd35c6137d335331b0815cf1f60fd7e3c5
-ICU_REV=	8a5b728e4f43b0eabdb9ea450f956d67cfb22719
-ZLIB_REV=	b0676a1f52484bf53a1a49d0e48ff8abc430fafe
+GOOGLETEST_REV=	af29db7ec28d6df1c7f0f745186884091e602e07
+ICU_REV=	1fd0dbea04448c3f73fe5cb7599f9472f0f107f1
+ZLIB_REV=	a6d209ab932df0f1c9d5b7dc67cfa74e8a3272c0
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
@@ -60,11 +60,15 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		extra_cxxflags="${CXXFLAGS}" \
 		extra_ldflags="${LDFLAGS}" \
 		is_clang=true \
+		is_component_build=true \
+		is_debug=false \
 		treat_warnings_as_errors=false \
 		use_aura=true \
 		use_lld=true \
 		use_custom_libcxx=false \
 		v8_use_external_startup_data=false
+
+OPTIONS_DEFINE=	EXAMPLES
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/base/trace_event/common ${WRKSRC}/build ${WRKSRC}/buildtools ${WRKSRC}/third_party/googletest/src ${WRKSRC}/third_party/icu ${WRKSRC}/third_party/zlib ${WRKSRC}/tools/clang
@@ -96,6 +100,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/Release/d8 ${STAGEDIR}${PREFIX}/bin/d8
 	${INSTALL_PROGRAM} ${WRKSRC}/out/Release/mkgrokdump ${STAGEDIR}${PREFIX}/bin/mkgrokdump
 	${INSTALL_PROGRAM} ${WRKSRC}/out/Release/mksnapshot ${STAGEDIR}${PREFIX}/bin/mksnapshot
+	${INSTALL_PROGRAM} ${WRKSRC}/out/Release/v8_shell ${STAGEDIR}${PREFIX}/bin/v8_shell
 	${INSTALL_LIB} ${WRKSRC}/out/Release/libchrome_zlib.so ${STAGEDIR}${PREFIX}/lib/libchrome_zlib.so
 	${INSTALL_LIB} ${WRKSRC}/out/Release/libcppgc.so ${STAGEDIR}${PREFIX}/lib/libcppgc.so
 	${INSTALL_LIB} ${WRKSRC}/out/Release/libv8.so ${STAGEDIR}${PREFIX}/lib/libv8.so
@@ -105,5 +110,9 @@ do-install:
 	cd ${WRKSRC}/include/cppgc && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/cppgc '-name *\.h'
 	${INSTALL_DATA} ${WRKSRC}/include/libplatform/*.h ${STAGEDIR}${PREFIX}/include/libplatform/
 	${INSTALL_DATA} ${WRKDIR}/v8*.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
+
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/Release/v8_simple_* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
