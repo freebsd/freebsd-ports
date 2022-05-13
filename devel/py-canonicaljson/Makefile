@@ -1,7 +1,7 @@
 # Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
 
 PORTNAME=	canonicaljson
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,11 +21,17 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	FROZENDICT
-FROZENDICT_DESC=	Frozendict immutable dictionaries support
+FROZENDICT_DESC=Frozendict immutable dictionaries support
 
 FROZENDICT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frozendict>=1.0:devel/py-frozendict@${PY_FLAVOR}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.0:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
