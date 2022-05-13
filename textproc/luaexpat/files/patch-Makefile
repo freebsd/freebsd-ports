@@ -1,6 +1,6 @@
---- Makefile.orig	2014-04-02 16:30:37.000000000 -0700
-+++ Makefile	2014-06-09 16:02:02.000000000 -0700
-@@ -27,8 +27,10 @@
+--- Makefile.orig	2014-04-02 23:30:37 UTC
++++ Makefile
+@@ -27,8 +27,10 @@ src/$(LIBNAME):
  	$(CC) $(CF) -o $@ src/$(T)lib.c $(LF)
  
  install:
