@@ -21,4 +21,6 @@ USES=		python:3.6+
 WRKSRC_SUBDIR=	sage-brial
 USE_PYTHON=	distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
