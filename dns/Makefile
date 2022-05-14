@@ -244,6 +244,7 @@
     SUBDIR += whoseip
     SUBDIR += wrapsrv
     SUBDIR += yadifa
+    SUBDIR += yandex-ddns
     SUBDIR += zkt
     SUBDIR += zonenotify
 
