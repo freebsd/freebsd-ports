@@ -273,7 +273,7 @@ post-install:
 		${STAGEDIR}${ETCDIR}/logrotate.d \
 		${STAGEDIR}${DOCSDIR}/COPYING
 	${MKDIR} ${STAGEDIR}${MARIADB_LOGDIR}
-	${SED} '/%%/d;/^@comment /d;s/^/@comment /' ../${PORTNAME}${PKGNAMESUFFIX:S/-server/-client/}/pkg-plist \
+	${SED} '/%%/d;/^@comment /d;s/^/@comment /' ${PORTSDIR}/${CATEGORIES:[1]}/${PORTNAME}${PKGNAMESUFFIX:S/-server/-client/}/pkg-plist \
 		>> ${TMPPLIST}
 
 post-install-MROONGA-on:
