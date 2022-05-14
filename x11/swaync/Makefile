@@ -1,6 +1,6 @@
 PORTNAME=	swaync
 DISTVERSIONPREFIX=	v
-PORTVERSION=	0.5
+PORTVERSION=	0.6.3
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,6 +18,7 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
+GLIB_SCHEMAS=	org.erikreider.swaync.gschema.xml
 
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
