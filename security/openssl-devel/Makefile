@@ -2,6 +2,7 @@
 
 PORTNAME=	openssl
 DISTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -116,6 +117,7 @@ TLS1_1_IMPLIES=	TLS1_2
 EC_CONFIGURE_ON=	enable-ec_nistp_64_gcc_128
 FIPS_VARS=		shlibs+=lib/ossl-modules/fips.so
 I386_CONFIGURE_ON=	386
+KTLS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ktls
 LEGACY_VARS=		shlibs+=lib/ossl-modules/legacy.so
 MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-util_find-doc-nits
 SHARED_MAKE_ENV=	SHLIBVER=${OPENSSL_SHLIBVER}
