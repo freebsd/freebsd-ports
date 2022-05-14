@@ -1,4 +1,4 @@
-TIMESTAMP = 1640755767
+TIMESTAMP = 1652535936
 SHA256 (minio/minio-minio-2021.12.27.07.23.18-RELEASE.2021-12-27T07-23-18Z_GH0.tar.gz) = e620e4798d83839ec38d93a8e8787a2ae77158bd398ea725b4030a3f2d18ae62
 SIZE (minio/minio-minio-2021.12.27.07.23.18-RELEASE.2021-12-27T07-23-18Z_GH0.tar.gz) = 9728872
 SHA256 (minio/Azure-azure-pipeline-go-v0.2.2_GH0.tar.gz) = dc0d15949088e17e74da35c3ae2730f52240ad73e25cf795f532b7282de68e2f
@@ -293,8 +293,8 @@ SHA256 (minio/minio-console-v0.13.1_GH0.tar.gz) = b77513af893f48334c851fc13bfc40
 SIZE (minio/minio-console-v0.13.1_GH0.tar.gz) = 20305914
 SHA256 (minio/minio-csvparser-v1.0.0_GH0.tar.gz) = 618df6b7f79a1e988a4837e28158132f2f4346598d3596504f360d4f812f3f54
 SIZE (minio/minio-csvparser-v1.0.0_GH0.tar.gz) = 11183
-SHA256 (minio/minio-direct-csi-f7776f7961bf_GH0.tar.gz) = 83d29d05af0757418fd691c1a97713dc8032e82e8a8dcbdd6dab618c3572b407
-SIZE (minio/minio-direct-csi-f7776f7961bf_GH0.tar.gz) = 262749
+SHA256 (minio/minio-directpv-f7776f7961bf_GH0.tar.gz) = 42f9d19b58e62469d47f9d34b26c1966f0a415654104b7af35439466db7bf69a
+SIZE (minio/minio-directpv-f7776f7961bf_GH0.tar.gz) = 262770
 SHA256 (minio/minio-filepath-v1.0.0_GH0.tar.gz) = aaf9252ffde11accab6dedabe7628dfa605df166e9839c11b9b05cb2740e6d7a
 SIZE (minio/minio-filepath-v1.0.0_GH0.tar.gz) = 1697
 SHA256 (minio/minio-highwayhash-v1.0.2_GH0.tar.gz) = 5a89e6f3e77cb77c818c5ce0316812d544e588456fce2e55e02f48d52fa9c5d2

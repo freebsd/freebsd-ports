@@ -162,7 +162,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:colorjson:v1.0.1:minio_colorjson/vendor/github.com/minio/colorjson \
 		minio:console:v0.13.1:minio_console/vendor/github.com/minio/console \
 		minio:csvparser:v1.0.0:minio_csvparser/vendor/github.com/minio/csvparser \
-		minio:direct-csi:f7776f7961bf:minio_direct_csi/vendor/github.com/minio/direct-csi \
+		minio:directpv:f7776f7961bf:minio_direct_csi/vendor/github.com/minio/direct-csi \
 		minio:filepath:v1.0.0:minio_filepath/vendor/github.com/minio/filepath \
 		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:kes:v0.14.0:minio_kes/vendor/github.com/minio/kes \
