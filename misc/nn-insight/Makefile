@@ -1,6 +1,6 @@
 PORTNAME=	nn-insight
 DISTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	avir>0:graphics/avir \
-		flatbuffers>0:devel/flatbuffers \
+		flatc:devel/flatbuffers205 \
 		half>0:math/half \
 		nlohmann-json>0:devel/nlohmann-json \
 		png++>0:graphics/png++

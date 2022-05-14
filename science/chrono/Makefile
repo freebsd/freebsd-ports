@@ -1,5 +1,6 @@
 PORTNAME=	chrono
 DISTVERSION=	7.0.3
+PORTREVISION=	1
 CATEGORIES=	science devel
 PKGNAMESUFFIX=	-physics-simulation-engine
 
@@ -74,7 +75,7 @@ PARDISO_PROJECT_BROKEN=		Not available for FreeBSD; License is restrictive
 SENSOR_BROKEN=			requires CUDA
 
 SYNCHRONO_USES=			localbase
-SYNCHRONO_BUILD_DEPENDS=	flatbuffers>0:devel/flatbuffers
+SYNCHRONO_BUILD_DEPENDS=	flatc:devel/flatbuffers205 # until https://github.com/projectchrono/chrono/issues/391 is fixed
 SYNCHRONO_LIB_DEPENDS=		libmpi.so:net/mpich
 SYNCHRONO_IMPLIES=		VEHICLE
 

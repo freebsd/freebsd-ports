@@ -2,9 +2,9 @@
 
 PORTNAME=	flatbuffers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.6
-PORTEPOCH=	1
+DISTVERSION=	2.0.5
 CATEGORIES=	devel
+PKGNAMESUFFIX=	205
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Memory efficient serialization library

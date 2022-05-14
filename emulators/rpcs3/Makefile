@@ -1,6 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.22-13597 # git rev-list --count HEAD
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g1e1b111678
 CATEGORIES=	emulators
 
@@ -12,7 +13,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_ISCL=	${WRKSRC_cubeb}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
-BUILD_DEPENDS=	flatbuffers>0:devel/flatbuffers
+BUILD_DEPENDS=	flatc:devel/flatbuffers205 # until https://github.com/RPCS3/rpcs3/issues/12011 is fixed
 LIB_DEPENDS=	libxxhash.so:devel/xxhash \
 		libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
