@@ -1,6 +1,14 @@
---- process.c.orig	2012-01-16 22:43:57.000000000 -0500
-+++ process.c	2012-03-18 16:01:24.966689978 -0400
-@@ -22,6 +22,9 @@
+--- process.c.orig	2016-04-16 01:18:17 UTC
++++ process.c
+@@ -8,6 +8,7 @@
+ 
+  */
+ 
++#include <stddef.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+@@ -22,6 +23,9 @@
  #include <arpa/inet.h>
  #include <sys/time.h>
  #include <sys/stat.h>
@@ -10,7 +18,7 @@
  
  #include "types.h"
  #include "config.h"
-@@ -106,7 +109,7 @@
+@@ -106,7 +110,7 @@ static void find_offset(const u8* data, s32 total_len)
      case DLT_LINUX_SLL:  link_off = 16; return;
  #endif /* DLT_LINUX_SLL */
  
