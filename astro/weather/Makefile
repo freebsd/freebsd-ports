@@ -2,6 +2,7 @@
 
 PORTNAME=	weather
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	astro python
 MASTER_SITES=	http://fungi.yuggoth.org/weather/src/ \
 		LOCAL/sunpoet
@@ -17,6 +18,8 @@ USES=		python shebangfix tar:xz
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+SUB_FILES=	pkg-message
+
 SHEBANG_FILES=	weather
 
 do-install:
@@ -29,11 +32,5 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/weatherrc.5 ${STAGEDIR}${PREFIX}/share/man/man5/weatherrc.5
 	${MKDIR} ${STAGEDIR}${DATADIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} airports places stations zctas zones ${STAGEDIR}${DATADIR}/
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Please add the following to your .weatherrc in order to use installed data files:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "[default]"
-	@${ECHO_MSG} "setpath = ${DATADIR}"
-	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
