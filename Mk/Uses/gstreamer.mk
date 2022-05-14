@@ -175,6 +175,7 @@ gst-sidplay_IMPL=	ugly
 
 gst-sndio_PORT=		audio/gstreamer${_GST_VER}-plugins-sndio
 gst-sndio_IMPL=		#
+gst-sndio_VERSION=	1.8.0
 
 gst-sndfile_PORT=	audio/gstreamer${_GST_VER}-plugins-sndfile
 gst-sndfile_IMPL=	bad
@@ -294,6 +295,7 @@ gst-dv_IMPL=		good
 
 gst-gnonlin_PORT=	multimedia/gstreamer${_GST_VER}-plugins-gnonlin
 gst-gnonlin_IMPL=	good
+gst-gnonlin_VERSION=	1.4.0
 
 gst-hls_PORT=		multimedia/gstreamer${_GST_VER}-plugins-hls
 gst-hls_IMPL=		bad
