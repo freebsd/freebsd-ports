@@ -1,4 +1,5 @@
 bin/appid_detector_builder.sh
+%%FLATBUFFERS%%bin/fbstreamer
 bin/snort
 bin/snort2lua
 bin/u2boat
