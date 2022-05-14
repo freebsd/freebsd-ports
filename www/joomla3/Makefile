@@ -16,6 +16,8 @@ USES=		cpe php:web tar:bz2 shebangfix
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	${PORTNAME}\!
 
+CONFLICTS=	joomla-4.1.[0-9]*
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
