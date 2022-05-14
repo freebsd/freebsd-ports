@@ -4,10 +4,10 @@
 Please note that only the default set of cards was installed.  If you would
 like to install more cardsets, please proceed as follows:
 
-$ fetch https://github.com/shlomif/PySolFC-Cardsets/archive/refs/tags/2.0.tar.gz
-$ tar xf 2.0.tar.gz
+$ fetch https://netcologne.dl.sourceforge.net/project/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-2.1/PySolFC-Cardsets-2.1.tar.bz2
+$ tar xf PySolFC-Cardsets-2.1.tar.bz2
 $ mkdir -p ~/.PySolFC/cardsets
-$ cp -r PySolFC-Cardsets-2.0/cardsets* ~/.PySolFC/cardsets/
+$ cp -r PySolFC-Cardsets-2.1/cardset-* ~/.PySolFC/cardsets/
 EOD
 }
 { type: upgrade
@@ -20,6 +20,32 @@ follows:
 $ fetch https://github.com/shlomif/PySolFC-Cardsets/archive/refs/tags/2.0.tar.gz
 $ tar xf 2.0.tar.gz
 $ cp -r PySolFC-Cardsets-2.0/cardsets* ~/.PySolFC/cardsets/
+EOD
+}
+{ type: upgrade
+  maximum_version: 2.16.0
+  message: <<EOD
+Since PySolFC 2.16 a new high resolution default display was introduced.  It
+uses high resolution cardsets and scaling to offer an improved look on larger
+monitors.
+
+Please note that the new high-resolution options will not override your
+currently selected options for existing users.  If you want to use the new
+settings, you can delete or rename your options.cfg file.
+
+Also note that because of these changes, upgrading your version of PySolFC
+Cardsets is required even if you’re using the minimal package.  If you are
+installing from pkg/ports, this will be handled automatically.
+
+If you're using the larger collection of cardsets, please use the following
+steps to upgrade your cardsets:
+
+$ mv ~/.PySolFC/cardsets ~/.PySolFC/cardsets.bak
+$ fetch https://netcologne.dl.sourceforge.net/project/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-2.1/PySolFC-Cardsets-2.1.tar.bz2
+$ tar xf PySolFC-Cardsets-2.1.tar.bz2
+$ mkdir -p ~/.PySolFC/cardsets
+$ cp -r PySolFC-Cardsets-2.1/cardset-* ~/.PySolFC/cardsets/
+$ rm -r ~/.PySolFC/cardsets.bak
 EOD
 }
 ]
