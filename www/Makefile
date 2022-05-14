@@ -274,6 +274,7 @@
     SUBDIR += jitsi-meet
     SUBDIR += jmeter
     SUBDIR += joomla3
+    SUBDIR += joomla4
     SUBDIR += jwt-cli
     SUBDIR += kanboard
     SUBDIR += kannel
