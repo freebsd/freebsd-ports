@@ -9,6 +9,8 @@ COMMENT=	Datadog Agent: collect metrics and events from your systems and apps
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to build: vendor/github.com/DataDog/gopsutil/process/process_freebsd.go:95:9: cannot use k.Start.Sec * 1000 (value of type int32) as type int64 in return statement
+
 BUILD_DEPENDS=	cmake>=3.12:devel/cmake \
 		go-bindata>0:devel/go-bindata
 
@@ -318,7 +320,7 @@ NO_CCACHE=		yes
 
 USE_RC_SUBR=	${PORTNAME}
 
-CGO_CFLAGS=	-w -I${WRKSRC}/rtloader/include -I${WRKSRC}/rtloader/common
+CGO_CFLAGS=	-w -I. -I${WRKSRC}/rtloader/include -I${WRKSRC}/rtloader/common
 CGO_LDFLAGS=	-L${WRKSRC}/rtloader/rtloader
 GO_BUILDFLAGS=	-tags '${AGENT_BUILD_TAGS}' \
     -ldflags="-s -X 'github.com/DataDog/${GH_PROJECT}/pkg/version.AgentVersion=${DISTVERSION}' -X 'github.com/DataDog/${GH_PROJECT}/pkg/config.DefaultPython=3'"
