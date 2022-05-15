@@ -6,6 +6,7 @@ lib/bats-core/semaphore.bash
 lib/bats-core/test_functions.bash
 lib/bats-core/tracing.bash
 lib/bats-core/validator.bash
+lib/bats-core/warnings.bash
 libexec/bats-core/bats
 libexec/bats-core/bats-exec-file
 libexec/bats-core/bats-exec-suite
