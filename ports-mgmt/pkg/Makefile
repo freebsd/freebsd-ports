@@ -31,6 +31,9 @@ CFLAGS+=	-Wno-error
 PKG_SUFFIX=	64
 .endif
 CFLAGS+=	-DPKG_SUFFIX=\\\"${PKG_SUFFIX}\\\"
+.ifdef PKG_SUFFIX
+CFLAGS+=	-DPKG_ABI_FILE=\\\"/usr/sbin/pkg${PKG_SUFFIX}\\\"
+.endif
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 
 OPTIONS_DEFINE=	DOCS
