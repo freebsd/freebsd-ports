@@ -1,5 +1,5 @@
 PORTNAME=	xpra-html5
-PORTVERSION=	4.5.2
+PORTVERSION=	5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
@@ -30,6 +30,6 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
-	cd ${WRKSRC} && ${PYTHON_CMD} setup.py install ${STAGEDIR}${PREFIX}/share/xpra/www ${MINIFIER}
+	cd ${WRKSRC} && ${PYTHON_CMD} setup.py install ${STAGEDIR} ${PREFIX}/share/xpra/www ${MINIFIER}
 
 .include <bsd.port.mk>
