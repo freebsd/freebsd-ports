@@ -28,8 +28,6 @@ GH_ACCOUNT=	Motion-Project
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-linuxthreads \
-		--without-jpeg-mmx
 
 # Standard bsd.port.mk variables
 SUB_FILES=	pkg-message
@@ -63,8 +61,7 @@ FFMPEG_CONFIGURE_ON=	--with-ffmpeg=${LOCALBASE}
 FFMPEG_CONFIGURE_OFF=	--without-ffmpeg
 
 MYSQL_USES=		mysql
-MYSQL_CONFIGURE_ON=	--with-mysql-lib=${LOCALBASE}/lib/mysql \
-			--with-mysql-include=${LOCALBASE}/include/mysql
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/include/mysql
 MYSQL_CONFIGURE_OFF=	--without-mysql
 
 PGSQL_USES=		pgsql
@@ -84,10 +81,6 @@ WEBCAMD_BUILD_DEPENDS=	v4l_compat>=1.0.20060801:multimedia/v4l_compat
 WEBCAMD_CONFIGURE_WITH=	pwcbsd
 
 .include <bsd.port.pre.mk>
-
-.if ${JPEG_PORT} == "graphics/jpeg-turbo"
-CONFIGURE_ARGS+=	--with-jpeg-turbo=${LOCALBASE}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
