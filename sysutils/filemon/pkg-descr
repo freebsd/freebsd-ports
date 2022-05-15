@@ -1,0 +1,5 @@
+The filemon utility is a simple wrapper around the
+filemon(4) kernel facility. Unlike ktrace(1) the
+trace file can be a named pipe.
+
+This tool requires filemon kernel module.
