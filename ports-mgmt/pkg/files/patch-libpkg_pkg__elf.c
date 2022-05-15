@@ -71,7 +71,7 @@
  	return (true);
  }
  
-@@ -825,16 +882,18 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
+@@ -825,16 +882,20 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
  	int fd, i;
  	int ret = EPKG_OK;
  	const char *arch, *abi, *endian_corres_str, *wordsize_corres_str, *fpu;
@@ -81,7 +81,9 @@
  
  	const char *abi_files[] = {
  		getenv("ABI_FILE"),
-+		"/usr/sbin/pkg" PKG_SUFFIX,
++#ifdef PKG_ABI_FILE
++		PKG_ABI_FILE,
++#endif
  		_PATH_UNAME,
  		_PATH_BSHELL,
  	};
@@ -91,7 +93,7 @@
  
  	if (oi == NULL) {
  		memset(&loi, 0, sizeof(loi));
-@@ -1002,6 +1061,15 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
+@@ -1002,6 +1063,15 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
  		    ":%s:%s:%s:%s:%s", arch, wordsize_corres_str,
  		    endian_corres_str, abi, fpu);
  		break;
@@ -107,7 +109,7 @@
  	case EM_MIPS:
  		/*
  		 * this is taken from binutils sources:
-@@ -1044,8 +1112,14 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
+@@ -1044,8 +1114,14 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct 
  				abi = "unknown";
  				break;
  		}
