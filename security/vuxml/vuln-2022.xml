@@ -1,3 +1,36 @@
+  <vuln vid="a1360138-d446-11ec-8ea1-10c37b4ac2ea">
+    <topic>go -- syscall.Faccessat checks wrong group on Linux</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.18.2,1</lt></range>
+      </package>
+      <package>
+	<name>go117</name>
+	<range><lt>1.17.10,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/52313">
+	  <p>When called with a non-zero flags parameter, the
+	    syscall.Faccessat function could incorrectly report that a
+	    file is accessible. This bug only occurs on Linux systems.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-29526</cvename>
+      <url>https://github.com/golang/go/issues/52313</url>
+      <url>https://groups.google.com/g/golang-dev/c/CPU3TB6d4oY</url>
+    </references>
+    <dates>
+      <discovery>2022-04-12</discovery>
+      <entry>2022-05-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="11e36890-d28c-11ec-a06f-d4c9ef517024">
     <topic>curl -- Multiple vulnerabilities</topic>
     <affects>
@@ -321,8 +354,11 @@
     <affects>
       <package>
 	<name>go</name>
+	<range><lt>1.18.1,1</lt></range>
+      </package>
+      <package>
+	<name>go117</name>
 	<range><lt>1.17.9,1</lt></range>
-	<range><ge>1.18,1</ge><lt>1.18.1,1</lt></range>
       </package>
     </affects>
     <description>
