@@ -32,6 +32,12 @@ GCRYPT_RUN_DEPENDS=	libgcrypt>=1.8.4_1:security/libgcrypt
 MHASH_RUN_DEPENDS=	mhash>=0.9.9.9_5:security/mhash
 RHASH_RUN_DEPENDS=	rhash>=1.3.5:security/rhash
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64 && ${OSVERSION} < 1300000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-12.3
+.endif
+
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's@bash@sh@' ${WRKSRC}/Makefile.in
@@ -41,4 +47,4 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/mbuffer.rc \
 		${STAGEDIR}${PREFIX}/etc/mbuffer.rc.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
