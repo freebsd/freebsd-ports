@@ -967,6 +967,7 @@
     SUBDIR += py-sym
     SUBDIR += py-sympy
     SUBDIR += py-theano
+    SUBDIR += py-timple
     SUBDIR += py-topologic
     SUBDIR += py-triangle
     SUBDIR += py-uncertainties
