@@ -1,5 +1,6 @@
 PORTNAME=	seclists
 DISTVERSION=	2022.2
+PORTREVISION=	1
 CATEGORIES=	security www
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -7,6 +8,8 @@ COMMENT=	Collection of multiple types of lists used during security assessments
 
 LICENSE=	GPLv2 GPLv2+ MIT
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/Discovery/Web-Content/Domino-Hunter/LICENCE
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/Web-Shells/laudanum-0.8/GPL
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
