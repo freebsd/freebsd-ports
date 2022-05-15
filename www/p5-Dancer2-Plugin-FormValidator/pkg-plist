@@ -1,5 +1,8 @@
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Config.pm
+%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Factory/Extensions.pm
+%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Factory/Messages.pm
+%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Input.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Processor.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Registry.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Result.pm
