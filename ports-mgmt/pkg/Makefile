@@ -27,7 +27,10 @@ CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
-CFLAGS_aarch64=	-DPKG_SUFFIX=\\\"64\\\"
+.if ${ARCH} == aarch64 || ${ARCH} == riscv64
+PKG_SUFFIX=	64
+.endif
+CFLAGS+=	-DPKG_SUFFIX=\\\"${PKG_SUFFIX}\\\"
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 
 OPTIONS_DEFINE=	DOCS
