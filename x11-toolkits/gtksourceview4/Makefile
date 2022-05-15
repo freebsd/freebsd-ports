@@ -1,8 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	gtksourceview
-PORTVERSION=	4.8.1
-PORTREVISION=	2
+PORTVERSION=	4.8.3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -21,7 +20,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome meson pkgconfig tar:xz
 USE_CSTD=	c11
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2
+USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2 introspection:build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
