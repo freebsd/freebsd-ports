@@ -1,7 +1,7 @@
 PORTNAME=	frobby
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -11,6 +11,7 @@ MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Software system and project for computations with monomial ideals
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
