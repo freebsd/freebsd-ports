@@ -2,7 +2,7 @@
 
 PORTNAME?=	mame
 PORTVERSION=	0.226
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 
 MAINTAINER=	manu@FreeBSD.org
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
 USES=		compiler:c++14-lang gl gmake jpeg localbase pkgconfig \
-		python:3.7,build qt:5 sdl shebangfix xorg
+		python:3.7,build qt:5 sdl shebangfix sqlite:3 xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
@@ -38,7 +38,8 @@ SHEBANG_FILES=	src/devices/cpu/m6502/m6502make.py \
 		src/devices/cpu/tms57002/tmsmake.py
 
 MAKEFILE=	makefile
-MAKE_ARGS=	TARGETOS=freebsd VERBOSE=1 TOOLS=1 USE_SYSTEM_LIB_PUGIXML=1
+MAKE_ARGS=	TARGETOS=freebsd VERBOSE=1 TOOLS=1 USE_SYSTEM_LIB_PUGIXML=1 \
+		USE_SYSTEM_LIB_SQLITE3=1
 MAKE_ENV=	NOWERROR=1 USE_NETWORK=1 \
 		LD="${CXX}" PYTHON="${PYTHON_CMD}" \
 		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
