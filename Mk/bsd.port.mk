@@ -2800,6 +2800,13 @@ IGNORE+=	(reason: ${NOT_FOR_ARCHS_REASON})
 
 # Check the user interaction and legal issues
 .    if !defined(NO_IGNORE)
+.for v in ${OSREL} ${OSREL:R}
+.for f in ${FLAVOR}
+.if defined($f_IGNORE_${OPSYS}_${v})
+IGNORE+= "${${f}_IGNORE_${OPSYS}_${v}}"
+.endif
+.endfor
+.endfor
 .      if (defined(IS_INTERACTIVE) && defined(BATCH))
 IGNORE=		is an interactive port
 .      elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
