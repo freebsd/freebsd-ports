@@ -11,6 +11,8 @@ COMMENT=	Open Source IDE for C/C++
 LICENSE=	GPLv2+
 
 BROKEN=		outdated, doesn't build with Pango 1.46.2 or newer - PR 249879
+DEPRECATED=	Has been broken for over a year.
+EXPIRATION_DATE=	2022-08-01
 
 RUN_DEPENDS=	xterm:x11/xterm
 LIB_DEPENDS+=	libhunspell-1.7.so:textproc/hunspell
