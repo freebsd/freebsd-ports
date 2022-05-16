@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	yara-python-dex
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
