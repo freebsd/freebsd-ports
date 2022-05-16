@@ -1,7 +1,7 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
 
 PORTNAME=	knot
-DISTVERSION=	3.1.7
+DISTVERSION=	3.1.8
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
