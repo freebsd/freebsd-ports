@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc \
 		--with-configdir=${PREFIX}/lib/sasl2:${PREFIX}/etc/sasl2 \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
-		--with-dbpath=${PREFIX}/etc/sasldb2 \
+		--with-dbpath=${SASLDB_DIR}/sasldb2 \
 		--with-lib-subdir=lib \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--includedir=${PREFIX}/include \
@@ -83,6 +83,12 @@ CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 CPPFLAGS+=	-fPIC
 .endif
 
+.if ${PORT_OPTIONS:MSASLDB_IN_VAR}
+SASLDB_DIR=	/var/db/sasl2
+.else
+SASLDB_DIR=	${PREFIX}/etc
+.endif
+
 .if ${CYRUS_BUILD_TARGET} == "cyrus-sasl"
 
 .if ${PORT_OPTIONS:MBDB1}
@@ -97,7 +103,7 @@ SASLDB=	"@comment "
 
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP} \
-		SASLDB_NAME=${SASLDB_NAME}
+		SASLDB_DIR=${SASLDB_DIR} SASLDB_NAME=${SASLDB_NAME}
 
 PLIST_SUB+=	PREFIX=${PREFIX} \
 		SASLDB=${SASLDB}

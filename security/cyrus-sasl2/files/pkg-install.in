@@ -7,8 +7,9 @@
 
 PKG_BATCH=${BATCH:=NO}
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+SASLDB_DIR=%%SASLDB_DIR%%
 SASLDB_NAME=%%SASLDB_NAME%%
-SASLDB_NAME=${SASLDB_NAME:+${PKG_PREFIX}/etc/%%SASLDB_NAME%%}
+SASLDB_NAME=${SASLDB_NAME:+%%SASLDB_DIR%%/%%SASLDB_NAME%%}
 CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
 CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
 
@@ -69,6 +70,11 @@ create_user() {
 
 create_sasldb() {
 	if [ ! -f ${SASLDB_NAME} ]; then
+		if [ ${SASLDB_DIR} = '/var/db/sasl2' -a ! -d ${SASLDB_DIR} ]; then
+			mkdir ${SASLDB_DIR}
+			chown ${CYRUS_USER}:mail ${SASLDB_DIR}
+			chmod 750 ${SASLDB_DIR}
+		fi
 		echo "test" | ${PKG_PREFIX}/sbin/saslpasswd2 -p -c ${CYRUS_USER}
 		if [ `${PKG_PREFIX}/sbin/sasldblistusers2 | wc -l` -eq 0 ] ; then
                         echo "WARNING: Failed to create ${SASLDB_NAME}"
@@ -78,7 +84,7 @@ create_sasldb() {
 			chmod 640 ${SASLDB_NAME}
 			if [ -f ${SASLDB_NAME}-lock ]; then
 				chown ${CYRUS_USER}:mail ${SASLDB_NAME}-lock
-				chmod 640 ${SASLDB_NAME}-lock
+				chmod 660 ${SASLDB_NAME}-lock
 			fi
 		fi
 	fi
