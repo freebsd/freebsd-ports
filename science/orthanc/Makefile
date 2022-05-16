@@ -2,9 +2,13 @@
 
 PORTNAME=	orthanc
 DISTVERSION=	1.10.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
 DISTNAME=	Orthanc-${PORTVERSION}
+
+PATCH_SITES=	https://hg.orthanc-server.com/orthanc/raw-rev/
+PATCHFILES=	1f93dc290628:-p1 # fix https://bugs.orthanc-server.com/show_bug.cgi?id=204
 
 MAINTAINER=	maintainer.freebsd@xpoundit.com
 COMMENT=	Lightweight DICOM server for healthcare and medical research
