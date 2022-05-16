@@ -890,6 +890,8 @@ include/agrum/tools/variables/labelizedVariable.h
 include/agrum/tools/variables/labelizedVariable_inl.h
 include/agrum/tools/variables/rangeVariable.h
 include/agrum/tools/variables/rangeVariable_inl.h
+include/agrum/tools/variables/allDiscreteVariables.h
+include/agrum/tools/variables/allDiscreteVariables_tpl.h
 include/agrum/tools/variables/variable.h
 include/agrum/tools/variables/variable_inl.h
 lib/cmake/aGrUM/aGrUMConfig.cmake
