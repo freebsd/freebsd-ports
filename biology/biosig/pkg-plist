@@ -218,6 +218,7 @@ man/man1/sigviewer.1.gz
 %%DATADIR%%/matlab/t330_StimFit/Contents.m
 %%DATADIR%%/matlab/t330_StimFit/demo_stimfit.m
 %%DATADIR%%/matlab/t330_StimFit/microstimfit.m
+%%DATADIR%%/matlab/t330_StimFit/minidet.m
 %%DATADIR%%/matlab/t330_StimFit/simul001.m
 %%DATADIR%%/matlab/t330_StimFit/simul002.m
 %%DATADIR%%/matlab/t340_MachineLearningOptimalDetection/README.md
