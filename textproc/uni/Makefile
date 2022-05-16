@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@FreeBSD.org>
 
 PORTNAME=	uni
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	arp242
 
 GH_TUPLE=	arp242:termtext:v1.0.0:arp242_termtext/vendor/zgo.at/termtext \
-		arp242:zli:715dad1d8932:arp242_zli/vendor/zgo.at/zli \
+		arp242:zli:3bb954a2e74c:arp242_zli/vendor/zgo.at/zli \
 		arp242:zstd:6078fed48e39:arp242_zstd/vendor/zgo.at/zstd \
 		golang:sys:665e8c7367d1:golang_sys/vendor/golang.org/x/sys \
 		golang:term:e5f449aeb171:golang_term/vendor/golang.org/x/term \
