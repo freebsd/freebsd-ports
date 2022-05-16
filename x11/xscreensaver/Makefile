@@ -2,6 +2,7 @@
 
 PORTNAME=	xscreensaver
 PORTVERSION=	6.02
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -22,7 +23,7 @@ USES=		autoreconf cpe gettext gl gmake gnome jpeg localbase:ldflags perl5 \
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libglade2 libxml2
 USE_PERL5=	run
-USE_XORG=	ice sm x11 xext xi xinerama xmu xrandr xrender xt xxf86vm
+USE_XORG=	ice sm x11 xext xft xi xinerama xmu xrandr xrender xt xxf86vm
 CPE_VENDOR=	xscreensaver_project
 
 GNU_CONFIGURE=	yes
@@ -41,15 +42,16 @@ CONFIGURE_ARGS=	--enable-locking \
 		--with-xdbe-ext \
 		--with-xf86gamma-ext \
 		--with-xf86vmode-ext \
+		--with-xft \
 		--with-xinerama-ext \
 		--with-xshm-ext \
 		--without-kerberos
 MAKE_ARGS+=	install_prefix=${STAGEDIR}
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		FIREF NLS NSFW PAM SETUID_HACKS XAOS1 XDALI XEARTH XFT \
+OPTIONS_DEFINE=		FIREF NLS NSFW PAM SETUID_HACKS XAOS1 XDALI XEARTH \
 			XMOUN XPLANET XSNOW
-OPTIONS_DEFAULT=	PAM XFT
+OPTIONS_DEFAULT=	PAM
 OPTIONS_SUB=		yes
 
 PAM_CONFIGURE_WITH=	passwd-helper=${PREFIX}/bin/pam_helper
@@ -71,9 +73,6 @@ XAOS1_RUN_DEPENDS=	xaos:graphics/xaos
 
 XDALI_DESC=		Add extra port x11-clocks/xdaliclock
 XDALI_RUN_DEPENDS=	xdaliclock:x11-clocks/xdaliclock
-
-XFT_CONFIGURE_WITH=	xft
-XFT_USE=		XORG=xft
 
 XEARTH_DESC=		Add extra port astro/xearth
 XEARTH_RUN_DEPENDS=	xearth:astro/xearth
