@@ -1,0 +1,11 @@
+--- third_party/usrsctp/BUILD.gn.orig	2022-05-11 07:17:05 UTC
++++ third_party/usrsctp/BUILD.gn
+@@ -13,7 +13,7 @@ config("usrsctp_public_config") {
+ 
+   # This is part of the public config because it's used both by usrsctp and
+   # the client (WebRTC), to determine if the length field needs populating.
+-  if (is_mac || is_ios || target_os == "freebsd") {
++  if (is_mac || is_ios || target_os == "freebsd" || target_os == "openbsd") {
+     defines = [ "HAVE_SCONN_LEN" ]
+   }
+ }

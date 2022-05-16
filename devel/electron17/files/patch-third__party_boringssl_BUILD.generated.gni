@@ -1,0 +1,10 @@
+--- third_party/boringssl/BUILD.generated.gni.orig	2022-05-11 07:17:05 UTC
++++ third_party/boringssl/BUILD.generated.gni
+@@ -183,6 +183,7 @@ crypto_sources = [
+   "src/crypto/rand_extra/deterministic.c",
+   "src/crypto/rand_extra/forkunsafe.c",
+   "src/crypto/rand_extra/fuchsia.c",
++  "src/crypto/rand_extra/arc4random.c",
+   "src/crypto/rand_extra/passive.c",
+   "src/crypto/rand_extra/rand_extra.c",
+   "src/crypto/rand_extra/windows.c",
