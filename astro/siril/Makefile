@@ -1,5 +1,5 @@
 PORTNAME=	siril
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	astro graphics
 MASTER_SITES=	https://free-astro.org/download/
 
@@ -33,8 +33,6 @@ LIB_DEPENDS+=	libopencv_photo.so:graphics/opencv # for some reason, configure fa
 USES=		compiler:c++11-lang desktop-file-utils gettext \
 		gnome meson pkgconfig jpeg shared-mime-info tar:bz2
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 intltool pango
-
-NO_WRKSUBDIR=	yes
 
 BINARY_ALIAS=	git=false
 
