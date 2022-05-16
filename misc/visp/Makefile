@@ -3,13 +3,14 @@ DISTVERSION=	3.5.0
 CATEGORIES=	misc
 MASTER_SITES=	https://visp-doc.inria.fr/download/releases/
 
+PATCH_SITES=	https://github.com/lagadic/${PORTNAME}/commit/
+PATCHFILES=	ff554ca8be5f43a3470e1cb20150d8171a66b463.patch:-p1 # fix https://github.com/lagadic/visp/issues/1059
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modular library for visual tracking and visual servoing
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-BROKEN_aarch64=	fatal error: 'asm/hwcap.h' file not found, see https://github.com/lagadic/visp/issues/1059
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		libboost_system.so:devel/boost-libs \
