@@ -2,6 +2,7 @@ PORTNAME=	joomla
 DISTVERSION=	4-1-3
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.joomla.org/cms/joomla4/${DISTVERSION}/
+PKGNAMESUFFIX=	4
 DISTNAME=	Joomla_${DISTVERSION}-Stable-Full_Package
 
 MAINTAINER=	wen@FreeBSD.org
