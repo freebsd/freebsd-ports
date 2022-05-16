@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORTDOCS=	NEWS.md README.md csprotocol.txt tech_report.tex
+PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 
 # define options
 OPTIONS_DEFINE=		DOCS POPT_PORT ZLIB_BASE SSH ICONV
