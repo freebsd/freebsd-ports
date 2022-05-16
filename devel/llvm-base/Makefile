@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-PORTVERSION=	3
+PORTVERSION=	4
 CATEGORIES=	devel lang
 MASTER_SITES=	# not applicable
 DISTFILES=	# not applicable
@@ -16,6 +16,10 @@ FLAVOR?=	${FLAVORS:[1]}
 
 RUN_DEPENDS=	clang:devel/llvm
 
+.if ${FLAVOR:Mlocalbase}
+CONFLICTS_INSTALL=	binutils
+.endif
+
 .if ${FLAVOR:Mbase}
 PREFIX=		/usr
 .endif
@@ -24,7 +28,11 @@ NO_ARCH=	yes
 
 SUB_FILES=	wrapper.sh
 
-COMMANDS=	cc c++ cpp ld ld.lld objdump
+COMMANDS=	cc c++ cpp ld objdump
+.if ${FLAVOR:Mbase}
+# Conflicts with devel/llvm in localbase flavor
+COMMANDS+=	ld.lld
+.endif
 
 PLIST_FILES=	${COMMANDS:S|^|bin/|}
 
