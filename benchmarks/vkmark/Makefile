@@ -1,7 +1,6 @@
 PORTNAME=	vkmark
-DISTVERSION=	2017.08-24
-DISTVERSIONSUFFIX=	-g53abc4f
-PORTREVISION=	2
+DISTVERSION=	2017.08-29
+DISTVERSIONSUFFIX=	-gd872846
 CATEGORIES=	benchmarks
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -12,8 +11,6 @@ COMMENT=	Vulkan benchmark
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING-LGPL2.1
-
-BROKEN=		https://github.com/vkmark/vkmark/issues/40
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers \
 		glm>0:math/glm
