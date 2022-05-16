@@ -9,7 +9,7 @@ COMMENT=	Metaport of DRM modules for the linuxkpi-based KMS components
 
 USES=		metaport
 
-RUN_DEPENDS=	gpu-firmware-kmod>=g20200914:graphics/gpu-firmware-kmod
+RUN_DEPENDS=	gpu-firmware-kmod>=20220511:graphics/gpu-firmware-kmod
 
 .include <bsd.port.options.mk>
 
