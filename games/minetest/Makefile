@@ -1,5 +1,5 @@
 PORTNAME=	minetest
-PORTVERSION=	5.5.0
+PORTVERSION=	5.5.1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,13 +12,16 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libjsoncpp.so:devel/jsoncpp \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c11 cpe iconv:wchar_t sqlite
+USES=		cmake compiler:c++11-lang cpe iconv:wchar_t sqlite
 USE_GITHUB=	yes
-GH_TUPLE=	minetest:irrlicht:d3132e0:irrlicht/lib/irrlichtmt
+# check https://github.com/minetest/minetest/releases for applicable irrlichmt version
+GH_TUPLE=	minetest:irrlicht:1.9.0mt5:irrlicht/lib/irrlichtmt
 
 CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
 		-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
 		-DENABLE_SYSTEM_JSONCPP=ON
+
+TEST_ENV=	${MAKE_ENV} LC_ALL=C.UTF-8
 
 LDFLAGS_i386=	-Wl,-znotext
 
@@ -27,20 +30,18 @@ PORTSCOUT=	skipv:5.4.2-android
 PORTDATA=	*
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	CURL SOUND NCURSES LUAJIT \
+OPTIONS_DEFINE=	CURL SOUND NCURSES LUAJIT TEST \
 		DOCS EXAMPLES NLS
 OPTIONS_MULTI=	COMP
 OPTIONS_GROUP=	DATABASE
-
-COMP_DESC=		Software components
 OPTIONS_MULTI_COMP=	CLIENT SERVER
-
-DATABASE_DESC=		Database support
 OPTIONS_GROUP_DATABASE=	PGSQL LEVELDB REDIS SPATIAL
-
 OPTIONS_DEFAULT=	CLIENT SERVER \
 			CURL SOUND NCURSES LUAJIT
 OPTIONS_SUB=		yes
+
+COMP_DESC=		Software components
+DATABASE_DESC=		Database support
 
 CLIENT_DESC=		Build client
 CLIENT_CMAKE_BOOL=	BUILD_CLIENT
@@ -80,6 +81,8 @@ NLS_CMAKE_BOOL=		ENABLE_GETTEXT
 NLS_USES=		gettext
 NLS_LDFLAGS=		-L${LOCALBASE}/lib
 
+TEST_CMAKE_BOOL=	BUILD_UNITTESTS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MSOUND}
@@ -102,5 +105,11 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/*.cmake
+
+do-test-CLIENT-on:
+	cd ${WRKDIR} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/minetest --run-unittests
+
+do-test-SERVER-on:
+	cd ${WRKDIR} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/minetestserver --run-unittests
 
 .include <bsd.port.mk>
