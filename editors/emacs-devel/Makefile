@@ -1,7 +1,7 @@
 # Created by: Kenneth Vestergaard Schmidt <kvs@pil.dk>
 
 PORTNAME=	emacs
-DISTVERSION=	29.0.50.20220501
+DISTVERSION=	29.0.50.20220515
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -25,7 +25,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	2fcbc74
+GH_TAGNAME=	4cba465
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
@@ -240,7 +240,8 @@ _GCC_PORT!=	${BSDMAKE} -V_GCC_PORT USE_GCC=11+ _GCC_PORT_CHOSEN=yes
 USES+=		desktop-file-utils gnome
 .if !${PORT_OPTIONS:MPGTK}
 USES+=		xorg
-USE_XORG+=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xrender xt
+USE_XORG+=	ice sm x11 xcb xcomposite xext xfixes xi xinerama xmu xrandr \
+		xrender xt
 .endif
 .endif
 

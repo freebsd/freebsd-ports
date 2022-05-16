@@ -866,6 +866,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.cn
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.cs
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.de
+%%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.el_GR
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.eo
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.es
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.fr
@@ -2719,6 +2720,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/dns.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-bob.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-bob.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-capf.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-capf.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-export.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-export.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/eudc-hotlist.el.gz
