@@ -58,7 +58,6 @@ FLAVORS=	aruba \
 		tahiti \
 		turks \
 		verde
-FLAVOR?=	aruba
 
 USES=		kmod uidfix
 

@@ -25,7 +25,6 @@ FLAVORS=	skylake \
 		elkhartlake \
 		tigerlake \
 		rocketlake
-FLAVOR?=	skylake
 
 USES=		kmod uidfix
 

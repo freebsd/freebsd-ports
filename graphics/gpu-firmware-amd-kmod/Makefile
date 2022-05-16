@@ -49,7 +49,6 @@ FLAVORS=	banks \
 		verde \
 		green_sardine \
 		sienna_cichlid
-FLAVOR?=	banks
 
 green_sardine_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
 green_sardine_IGNORE_FreeBSD_13.0=	"Not supported on < 13.1"
