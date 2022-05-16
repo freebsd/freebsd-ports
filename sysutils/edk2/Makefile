@@ -12,7 +12,6 @@ ONLY_FOR_ARCHS_REASON=	only provides firmware for aarch64 and amd64
 
 PKGNAMESUFFIX=	-${FLAVOR:C/_/-/g}
 FLAVORS=	macchiatobin fvp rpi3 rpi4 xen_x64
-FLAVOR?=	macchiatobin
 
 USES=	cpe gmake python:3.7+,build
 CPE_VENDOR=	tianocore
@@ -42,6 +41,8 @@ BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake \
 		gcc-ar=${LOCALBASE}/bin/gcc-ar${GCC_DEFAULT} \
 		g++=${LOCALBASE}/bin/g++${GCC_DEFAULT} \
 		python3=${PYTHON_CMD} python=${PYTHON_CMD}
+
+.include <bsd.port.pre.mk>
 
 .if ${FLAVOR} == fvp
 PLAT=		fvp
@@ -104,8 +105,6 @@ MAKE_ENV+=	WORKSPACE=${WRKDIR} \
 		PATH=${WRKDIR}/edk2-${GH_TAGNAME}/BaseTools/BinWrappers/PosixLike:${PATH} \
 		PYTHON_COMMAND=python3 \
 		PYTHONHASHSEED=1
-
-.include <bsd.port.pre.mk>
 
 .if ${PLAT_ARCH} == AARCH64 && ${ARCH} != aarch64
 BUILD_DEPENDS+=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc
