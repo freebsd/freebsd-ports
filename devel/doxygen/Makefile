@@ -19,8 +19,6 @@ USES=		bison cmake:noninja compiler:c++17-lang cpe dos2unix \
 
 ALL_TARGET=	all
 CMAKE_ARGS+=	-DDOC_INSTALL_DIR:PATH=${DOCSDIR_REL}
-# Parallel jobs breaks when the DOCS option is on
-MAKE_JOBS_UNSAFE=	yes
 
 EXTRACT_AFTER_ARGS=	--exclude '*/libmd5'
 
@@ -41,6 +39,9 @@ DOCS_PLIST_FILES=	man/man1/doxygen.1.gz \
 			man/man1/doxyindexer.1.gz \
 			man/man1/doxysearch.1.gz \
 			man/man1/doxywizard.1.gz
+# Parallel jobs break when the DOCS option is on
+DOCS_VARS=		MAKE_JOBS_UNSAFE=yes
+
 PORTDOCS=		*
 
 GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz
