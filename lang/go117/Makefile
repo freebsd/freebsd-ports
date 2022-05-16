@@ -1,4 +1,4 @@
-PORTVERSION=	1.17.9
+PORTVERSION=	1.17.10
 # Always set PORTREVISION and PORTEPOCH explicitly as otherwise they are inherited from lang/go
 PORTREVISION=	0
 PORTEPOCH=	0
