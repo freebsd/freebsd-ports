@@ -1,8 +1,8 @@
 # Created by: Sylvio Cesar <sylvio@FreeBSD.org>
 
 PORTNAME=	mpop
-DISTVERSION=	1.4.15
-PORTREVISION=	2
+DISTVERSION=	1.4.16
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/mpop/releases/
 
