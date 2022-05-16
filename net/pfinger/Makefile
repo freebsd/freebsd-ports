@@ -2,14 +2,15 @@
 
 PORTNAME=	pfinger
 PORTVERSION=	0.7.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://www.xelia.ch/unix/pfinger/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly configurable, secure, and portable finger daemon
 
-CONFLICTS=	gnu-finger-1.*
+DEPRECATED=	Unmaintained and dead upstream, consider base fingerd
+EXPIRATION_DATE=	2022-06-17
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-client
