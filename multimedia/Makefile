@@ -62,6 +62,7 @@
     SUBDIR += ffmpeg
     SUBDIR += ffmpegthumbnailer
     SUBDIR += ffms2
+    SUBDIR += ffnvcodec-headers
     SUBDIR += filebot
     SUBDIR += flvmeta
     SUBDIR += flvstreamer
