@@ -1,10 +1,13 @@
 bin/dmidiplayer
-share/man/man1/dmidiplayer.1.gz
+man/man1/dmidiplayer.1.gz
 share/applications/net.sourceforge.dmidiplayer.desktop
+share/metainfo/net.sourceforge.dmidiplayer.metainfo.xml
+%%DATADIR%%/Negra_Sombra.kar
 %%DATADIR%%/dmidiplayer_cs.qm
 %%DATADIR%%/dmidiplayer_de.qm
 %%DATADIR%%/dmidiplayer_es.qm
 %%DATADIR%%/dmidiplayer_fr.qm
+%%DATADIR%%/dmidiplayer_gl.qm
 %%DATADIR%%/dmidiplayer_it.qm
 %%DATADIR%%/dmidiplayer_ru.qm
 %%DATADIR%%/examples.lst
@@ -22,4 +25,3 @@ share/icons/hicolor/32x32/apps/dmidiplayer.png
 share/icons/hicolor/48x48/apps/dmidiplayer.png
 share/icons/hicolor/64x64/apps/dmidiplayer.png
 share/icons/hicolor/scalable/apps/dmidiplayer.svgz
-share/metainfo/net.sourceforge.dmidiplayer.appdata.xml
