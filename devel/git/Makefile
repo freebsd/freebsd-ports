@@ -3,7 +3,7 @@
 PORTNAME=	git
 DISTVERSION=	2.36.0
 CATEGORIES=	devel
-MASTER_SITES=	KERNEL_ORG/software/scm/git/testing
+MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${DISTVERSION}${EXTRACT_SUFX}
 # We manually extract the htmldocs.
