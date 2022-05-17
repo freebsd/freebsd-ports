@@ -299,6 +299,7 @@
     SUBDIR += bugzilla44
     SUBDIR += bugzilla50
     SUBDIR += build
+    SUBDIR += buildkite-agent
     SUBDIR += buildstream
     SUBDIR += bullet
     SUBDIR += busybee
