@@ -1,0 +1,10 @@
+bin/loki
+@sample etc/loki.yaml.sample
+@owner %%LOKI_USER%%
+@group %%LOKI_GROUP%%
+@mode 750
+@dir %%LOKI_DATADIR%%
+@dir %%LOKI_DATADIR%%/rules-temp
+@mode
+@group
+@owner

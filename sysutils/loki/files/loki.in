@@ -1,0 +1,68 @@
+#!/bin/sh
+
+# PROVIDE: loki
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable loki
+# loki_enable="YES"
+#
+# loki_enable (bool):
+#     Set it to YES to enable grafana
+#     Set to NO by default
+# loki_user (string):
+#     Set user that grafana will run under
+#     Default is "%%LOKI_USER%%"
+# loki_group (string):
+#     Set group that own grafana files
+#     Default is "%%LOKI_GROUP%%"
+# loki_config (string)
+#     Set full path to config file
+#     Default is "%%PREFIX%%/etc/loki.yaml"
+# loki_logfile (string)
+#     Set full path to log file
+#     Default is "/var/log/loki/loki.log"
+# loki_args (string)
+#     Set additional command line arguments
+#     Default is ""
+
+. /etc/rc.subr
+
+name=loki
+rcvar=loki_enable
+
+load_rc_config $name
+
+: ${loki_enable:="NO"}
+: ${loki_user:="%%LOKI_USER%%"}
+: ${loki_group:="%%LOKI_GROUP%%"}
+: ${loki_config:="%%PREFIX%%/etc/loki.yaml"}
+: ${loki_logfile:="/var/log/loki/loki.log"}
+
+pidfile="/var/run/${name}/${name}.pid"
+required_files="${loki_config}"
+
+procname="%%PREFIX%%/bin/loki"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -t ${name} -o ${loki_logfile} \
+	${procname} \
+	--config.file=${loki_config} \
+	${loki_args}"
+
+start_precmd="loki_start_precmd"
+
+# required for Go runtime 1.18
+export ASSUME_NO_MOVING_GC_UNSAFE_RISK_IT_WITH=go1.18
+
+loki_start_precmd()
+{
+	if [ ! -d "/var/run/${name}" ]; then
+		install -d -m 0750 -o ${loki_user} -g ${loki_group} "/var/run/${name}"
+	fi
+
+	if [ ! -d "/var/log/loki" ]; then
+		install -d -m 0750 -o ${loki_user} -g ${loki_group} "/var/log/loki"
+	fi
+}
+
+run_rc_command "$1"
