@@ -49,7 +49,6 @@
 %%DATADIR%%/bin/Localization/Core/it.json
 %%DATADIR%%/bin/Localization/Core/ja.json
 %%DATADIR%%/bin/Localization/Core/ko.json
-%%DATADIR%%/bin/Localization/Core/nan.json
 %%DATADIR%%/bin/Localization/Core/nb_NO.json
 %%DATADIR%%/bin/Localization/Core/nl.json
 %%DATADIR%%/bin/Localization/Core/pl.json
@@ -64,7 +63,6 @@
 %%DATADIR%%/bin/Localization/Core/uk.json
 %%DATADIR%%/bin/Localization/Core/vi.json
 %%DATADIR%%/bin/Localization/Core/zh_CN.json
-%%DATADIR%%/bin/Localization/Core/zh_Hans.json
 %%DATADIR%%/bin/Localization/Core/zh_TW.json
 %%DATADIR%%/bin/MailKit.dll
 %%DATADIR%%/bin/Microsoft.AspNetCore.Antiforgery.dll
