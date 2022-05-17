@@ -1,5 +1,5 @@
 PORTNAME=	gnutls
-PORTVERSION=	3.7.4
+PORTVERSION=	3.7.5
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/gnutls/v${PORTVERSION:R}
 
@@ -25,8 +25,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-guile \
 		--with-system-priority-file=${PREFIX}/etc/gnutls/config \
 		--with-default-trust-store-dir=/etc/ssl/certs \
-		--without-libbrotli \
-		--without-libzstd \
+		--without-brotli \
+		--without-zstd \
 		--without-tpm \
 		--without-tpm2
 MAKE_ENV=	MAKEINFOFLAGS=--no-split
