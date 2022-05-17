@@ -59,6 +59,7 @@
     SUBDIR += libdsk
     SUBDIR += libretro-flycast
     SUBDIR += libretro-mame
+    SUBDIR += libretro-pcsx2
     SUBDIR += libretro-ppsspp
     SUBDIR += libretro-reicast
     SUBDIR += libretro-vice

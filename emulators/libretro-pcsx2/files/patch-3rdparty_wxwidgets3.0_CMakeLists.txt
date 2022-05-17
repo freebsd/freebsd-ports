@@ -1,0 +1,14 @@
+--- 3rdparty/wxwidgets3.0/CMakeLists.txt.orig	2020-10-29 23:31:05 UTC
++++ 3rdparty/wxwidgets3.0/CMakeLists.txt
+@@ -1,10 +1,10 @@
+ if(UNIX)
+ set(wxUnixSources
++   src/unix/fswatcher_kqueue.cpp
+    src/unix/appunix.cpp
+    src/unix/dir.cpp
+    src/unix/dlunix.cpp
+    src/unix/evtloopunix.cpp
+-   src/unix/epolldispatcher.cpp
+    src/unix/fdiounix.cpp
+    src/unix/stackwalk.cpp
+    src/unix/stdpaths.cpp
