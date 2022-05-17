@@ -1,0 +1,6 @@
+bin/devilutionx
+share/applications/devilutionx-hellfire.desktop
+share/applications/devilutionx.desktop
+%%DATADIR%%/devilutionx.mpq
+share/icons/hicolor/512x512/apps/devilutionx-hellfire.png
+share/icons/hicolor/512x512/apps/devilutionx.png
