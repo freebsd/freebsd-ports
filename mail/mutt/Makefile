@@ -69,7 +69,7 @@ DEBUG_LOGS_DESC=		Debugging capabilities
 FLOCK_DESC=			flock() usage
 GPGME_DESC=			Gpgme interface
 GREETING_PATCH_DESC=		Greeting support
-HCACHE_BDB_DESC=		Use Berkeley DB (BDB)
+HCACHE_BDB_DESC=		Use Berkeley DB (BDB) (AGPLv3)
 HCACHE_DESC=			Header Cache support
 HCACHE_GDBM_DESC=		Use GDBM
 HCACHE_KYOTOCABINET_DESC=	Use Kyoto Cabinet
@@ -133,7 +133,8 @@ GSSAPI_NONE_CONFIGURE_ON=	--without-gss
 HCACHE_BDB_USES=			bdb:18
 HCACHE_BDB_CONFIGURE_WITH=		bdb=${LOCALBASE}
 HCACHE_BDB_VARS=			CFLAGS+=-I${BDB_INCLUDE_DIR} \
-					LDFLAGS+=-L${BDB_LIB_DIR}
+					LDFLAGS+=-L${BDB_LIB_DIR} \
+					LICENSE=AGPLv3
 HCACHE_GDBM_LIB_DEPENDS=		libgdbm.so:databases/gdbm
 HCACHE_GDBM_CONFIGURE_WITH=		gdbm=${LOCALBASE}
 HCACHE_KYOTOCABINET_LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
