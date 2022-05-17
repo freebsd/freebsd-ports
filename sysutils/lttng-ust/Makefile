@@ -15,6 +15,8 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 LICENSE_FILE_MIT=	${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
+BROKEN=		fails to configure: Cannot find liburcu-bp lib. Use LDFLAGS=-Ldir to specify its location
+
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		xmlto:textproc/xmlto
 LIB_DEPENDS=	liburcu.so:sysutils/liburcu
