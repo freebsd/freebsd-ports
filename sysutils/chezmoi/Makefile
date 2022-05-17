@@ -2,7 +2,7 @@
 
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.15.3
+DISTVERSION=	2.15.4
 CATEGORIES=	sysutils
 EXTRACT_ONLY=	${_DISTFILES:N*.js}
 
@@ -47,18 +47,18 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		godbus:dbus:v5.1.0:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:eb4f295cb31f:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:2cf3adece122:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:2871e0cb64e4:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:9780585627b5:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:b5fbb4746d32:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:988cb79eb6c6:golang_sys/vendor/golang.org/x/sys \
 		golang:term:e5f449aeb171:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:btree:v1.0.1:google_btree/vendor/github.com/google/btree \
 		google:go-github:v44.0.0:google_go_github_v44/vendor/github.com/google/go-github/v44 \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
-		google:gops:v0.3.22:google_gops/vendor/github.com/google/gops \
+		google:gops:v0.3.23:google_gops/vendor/github.com/google/gops \
 		google:renameio:v2.0.0:google_renameio_v2/vendor/github.com/google/renameio/v2 \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
