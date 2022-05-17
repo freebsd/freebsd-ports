@@ -8,6 +8,8 @@ COMMENT=	Java Game Controller API
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		does not build: .../input/example/ReadAllEvents.java:[5,28] cannot find symbol
+
 BUILD_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils \
 		mvn:devel/maven
 RUN_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils
