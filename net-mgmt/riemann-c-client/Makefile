@@ -1,7 +1,7 @@
 # Created by: Dave Cottlehuber <dch@skunkwerks.at>
 
 PORTNAME=	riemann-c-client
-PORTVERSION=	1.10.5
+PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net-mgmt
 
