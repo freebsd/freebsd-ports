@@ -19,7 +19,7 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
 
 USES=		bison compiler:c11 cpe gmake gnome iconv libedit localbase \
-		shebangfix sqlite ssl ncurses
+		pkgconfig shebangfix sqlite ssl ncurses
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	asterisk
@@ -166,7 +166,6 @@ PGSQL_CONFIGURE_WITH=	postgres
 PGSQL_USES=		pgsql
 
 PJSIP_CONFIGURE_WITH=	pjproject pjproject-bundled
-PJSIP_USES=		pkgconfig
 PJSIP_LIB_DEPENDS=	libsrtp2.so:net/libsrtp2 \
 			libspeex.so:audio/speex \
 			libspeexdsp.so:audio/speexdsp
