@@ -11,6 +11,8 @@ COMMENT=	Command line manipulation of BibTeX files
 
 LICENSE=	GPLv2+
 
+BROKEN=		does not build: Failed to load "fontloader" module "basics-gen"
+
 USE_TEX=	latex:build luatex:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kpathsea
