@@ -2,6 +2,9 @@ bin/homebank
 share/appdata/homebank.appdata.xml
 share/application-registry/homebank.applications
 share/applications/homebank.desktop
+%%DATADIR%%/icons/hicolor/16x16/status/flt-exclude.png
+%%DATADIR%%/icons/hicolor/16x16/status/flt-inactive.png
+%%DATADIR%%/icons/hicolor/16x16/status/flt-include.png
 share/icons/hicolor/16x16/apps/homebank.png
 share/icons/hicolor/22x22/apps/homebank.png
 share/icons/hicolor/24x24/apps/homebank.png
