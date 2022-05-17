@@ -29,6 +29,10 @@ TEST_ENV=	${MAKE_ENV} \
 
 PORTSCOUT=	limit:^${PERL_VER}.
 
+# CHERI LLVM for Morello fails to build CheriABI lang/perl5.32 with -O2:
+# https://git.morello-project.org/morello/llvm-project/-/issues/49
+CFLAGS_aarch64c+=	-O1
+
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-Darchlib=${PREFIX}/${_ARCH_LIB} \
