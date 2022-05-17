@@ -57,6 +57,7 @@
     SUBDIR += lib765
     SUBDIR += libc6-shim
     SUBDIR += libdsk
+    SUBDIR += libretro-flycast
     SUBDIR += libretro-mame
     SUBDIR += libretro-ppsspp
     SUBDIR += libretro-reicast

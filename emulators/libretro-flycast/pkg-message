@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+The libretro core of flycast will not run if run ahead support is enabled.
+Please set all lines in ~/.config/retroarch/retroarch.cfg that correspond to
+the setting "run_ahead_enabled" to "false", as shown in the example below:
+
+run_ahead_enabled = "false"
+
+To troubleshoot issues, running retroarch with the -v argument may help to
+acquire more diagnostic information.
+EOM
+}
+]
