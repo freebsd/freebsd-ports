@@ -12,7 +12,7 @@ COMMENT=	Reliable, high performance TCP/HTTP load balancer
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-CONFLICTS_INSTALL=	haproxy haproxy17 haproxy18 haproxy19 haproxy20 haproxy21
+CONFLICTS_INSTALL=	haproxy haproxy17 haproxy18 haproxy20
 
 USES=		compiler:c++11-lang cpe gmake
 USE_RC_SUBR=	haproxy

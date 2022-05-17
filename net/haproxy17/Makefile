@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 BROKEN_mips=		fails to build: undefined reference to '__sync_sub_and_fetch_4'
 BROKEN_mips64=		fails to build: undefined reference to '__sync_sub_and_fetch_4'
 
-CONFLICTS_INSTALL=	haproxy haproxy-devel haproxy18 haproxy19 haproxy20 haproxy21
+CONFLICTS_INSTALL=	haproxy haproxy-devel haproxy18 haproxy20
 
 USES=		cpe gmake
 USE_RC_SUBR=	haproxy

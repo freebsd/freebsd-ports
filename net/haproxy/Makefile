@@ -21,7 +21,7 @@ default_CONFLICTS_INSTALL=	haproxy-lua
 lua_CONFLICTS_INSTALL=		haproxy
 lua_PKGNAMESUFFIX=		-lua
 
-CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy19 haproxy20 haproxy21 haproxy22 haproxy23 haproxy24
+CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy20 haproxy22 haproxy23 haproxy24
 
 ALL_TARGET=	all admin/halog/halog
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \

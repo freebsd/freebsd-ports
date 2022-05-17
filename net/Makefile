@@ -237,9 +237,7 @@
     SUBDIR += haproxy-devel
     SUBDIR += haproxy17
     SUBDIR += haproxy18
-    SUBDIR += haproxy19
     SUBDIR += haproxy20
-    SUBDIR += haproxy21
     SUBDIR += haproxy22
     SUBDIR += haproxy23
     SUBDIR += haproxy24
