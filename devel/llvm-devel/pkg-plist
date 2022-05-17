@@ -76,6 +76,7 @@ bin/split-file-devel
 %%CLANG%%bin/clang-linker-wrapper-devel
 %%CLANG%%bin/clang-nvlink-wrapper-devel
 %%CLANG%%bin/clang-offload-bundler-devel
+%%CLANG%%bin/clang-offload-packager-devel
 %%CLANG%%bin/clang-offload-wrapper-devel
 %%CLANG%%bin/clang-repl-devel
 %%CLANG%%bin/clang-scan-deps-devel
@@ -122,6 +123,7 @@ bin/split-file-devel
 %%MLIR%%bin/mlir-reduce-devel
 %%MLIR%%bin/mlir-tblgen-devel
 %%MLIR%%bin/mlir-translate-devel
+%%MLIR%%bin/tblgen-lsp-server-devel
 %%OPENMP%%bin/llvm-omp-device-info-devel
 %%LIT%%bin/FileCheck-devel
 %%LIT%%llvm-devel/bin/FileCheck
@@ -168,6 +170,7 @@ llvm-devel/bin/bugpoint
 %%EXTRAS%%llvm-devel/bin/clang-move
 %%CLANG%%llvm-devel/bin/clang-nvlink-wrapper
 %%CLANG%%llvm-devel/bin/clang-offload-bundler
+%%CLANG%%llvm-devel/bin/clang-offload-packager
 %%CLANG%%llvm-devel/bin/clang-offload-wrapper
 %%EXTRAS%%llvm-devel/bin/clang-pseudo
 %%EXTRAS%%llvm-devel/bin/clang-query
@@ -284,6 +287,7 @@ llvm-devel/bin/sanstats
 %%CLANG%%llvm-devel/bin/scan-build-py
 %%CLANG%%llvm-devel/bin/scan-view
 llvm-devel/bin/split-file
+%%MLIR%%llvm-devel/bin/tblgen-lsp-server
 %%FLANG%%llvm-devel/bin/tco
 llvm-devel/bin/verify-uselistorder
 %%LLD%%llvm-devel/bin/wasm-ld
@@ -405,6 +409,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/TerminatingContinueCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/ThrowKeywordMissingCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/TooSmallLoopVariableCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/UncheckedOptionalAccessCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/UndefinedMemoryManipulationCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/UndelegatedConstructorCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/UnhandledExceptionAtNewCheck.h
@@ -510,6 +515,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/ConcatNestedNamespacesCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/DeprecatedHeadersCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/DeprecatedIosBaseAliasesCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/modernize/IntegralLiteralExpressionMatcher.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/LoopConvertCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/LoopConvertUtils.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/modernize/MacroToEnumCheck.h
@@ -604,7 +610,6 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/RedundantStringCStrCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/RedundantStringInitCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/SimplifyBooleanExprCheck.h
-%%EXTRAS%%llvm-devel/include/clang-tidy/readability/SimplifyBooleanExprMatchers.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/SimplifySubscriptExprCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/StaticAccessedThroughInstanceCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/readability/StaticDefinitionInAnonymousNamespaceCheck.h
@@ -648,6 +653,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/AST/ASTDumper.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTDumperUtils.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTFwd.h
+%%CLANG%%llvm-devel/include/clang/AST/ASTImportError.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTImporter.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTImporterLookupTable.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTImporterSharedState.h
@@ -3051,6 +3057,8 @@ llvm-devel/include/llvm/IR/IntrinsicsR600.h
 llvm-devel/include/llvm/IR/IntrinsicsRISCV.h
 llvm-devel/include/llvm/IR/IntrinsicsRISCV.td
 llvm-devel/include/llvm/IR/IntrinsicsS390.h
+llvm-devel/include/llvm/IR/IntrinsicsSPIRV.h
+llvm-devel/include/llvm/IR/IntrinsicsSPIRV.td
 llvm-devel/include/llvm/IR/IntrinsicsSystemZ.td
 llvm-devel/include/llvm/IR/IntrinsicsVE.h
 llvm-devel/include/llvm/IR/IntrinsicsVE.td
@@ -3144,6 +3152,7 @@ llvm-devel/include/llvm/MC/MCAssembler.h
 llvm-devel/include/llvm/MC/MCCodeEmitter.h
 llvm-devel/include/llvm/MC/MCCodeView.h
 llvm-devel/include/llvm/MC/MCContext.h
+llvm-devel/include/llvm/MC/MCDecoderOps.h
 llvm-devel/include/llvm/MC/MCDirectives.h
 llvm-devel/include/llvm/MC/MCDisassembler/MCDisassembler.h
 llvm-devel/include/llvm/MC/MCDisassembler/MCExternalSymbolizer.h
@@ -3153,7 +3162,6 @@ llvm-devel/include/llvm/MC/MCDwarf.h
 llvm-devel/include/llvm/MC/MCELFObjectWriter.h
 llvm-devel/include/llvm/MC/MCELFStreamer.h
 llvm-devel/include/llvm/MC/MCExpr.h
-llvm-devel/include/llvm/MC/MCFixedLenDisassembler.h
 llvm-devel/include/llvm/MC/MCFixup.h
 llvm-devel/include/llvm/MC/MCFixupKindInfo.h
 llvm-devel/include/llvm/MC/MCFragment.h
@@ -3901,6 +3909,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Support.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Utils.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Wrap.h
+%%MLIR%%llvm-devel/include/mlir/Conversion/AMDGPUToROCDL/AMDGPUToROCDL.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/AffineToStandard/AffineToStandard.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ArithmeticToLLVM/ArithmeticToLLVM.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ArithmeticToSPIRV/ArithmeticToSPIRV.h
@@ -3962,6 +3971,8 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/SPIRVToLLVM/SPIRVToLLVM.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/SPIRVToLLVM/SPIRVToLLVMPass.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ShapeToStandard/ShapeToStandard.h
+%%MLIR%%llvm-devel/include/mlir/Conversion/TensorToLinalg/TensorToLinalg.h
+%%MLIR%%llvm-devel/include/mlir/Conversion/TensorToLinalg/TensorToLinalgPass.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/TensorToSPIRV/TensorToSPIRV.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/TensorToSPIRV/TensorToSPIRVPass.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/TosaToArith/TosaToArith.h
@@ -3974,6 +3985,14 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/VectorToSCF/VectorToSCF.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/VectorToSPIRV/VectorToSPIRV.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/VectorToSPIRV/VectorToSPIRVPass.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/AMDGPU/AMDGPU.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/AMDGPU/AMDGPU.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/AMDGPU/AMDGPU.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/AMDGPU/AMDGPUDialect.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/AMDGPU/AMDGPUDialect.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/AMDGPU/AMDGPUDialect.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/AMDGPU/AMDGPUTypes.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/AMDGPU/AMDGPUTypes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/AMX/AMX.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/AMX/AMX.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/AMX/AMX.td
@@ -4542,6 +4561,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/Transforms/Passes.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/Transforms/Passes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/Transforms/Passes.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/Vector/Transforms/VectorDistribution.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/Transforms/VectorRewritePatterns.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/Transforms/VectorTransforms.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Vector/Utils/VectorUtils.h
@@ -4811,6 +4831,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Tools/mlir-reduce/MlirReduceMain.h
 %%MLIR%%llvm-devel/include/mlir/Tools/mlir-translate/MlirTranslateMain.h
 %%MLIR%%llvm-devel/include/mlir/Tools/mlir-translate/Translation.h
+%%MLIR%%llvm-devel/include/mlir/Tools/tblgen-lsp-server/TableGenLspServerMain.h
 %%MLIR%%llvm-devel/include/mlir/Transforms/ControlFlowSinkUtils.h
 %%MLIR%%llvm-devel/include/mlir/Transforms/DialectConversion.h
 %%MLIR%%llvm-devel/include/mlir/Transforms/FoldUtils.h
@@ -4823,6 +4844,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Transforms/Passes.td
 %%MLIR%%llvm-devel/include/mlir/Transforms/RegionUtils.h
 %%MLIR%%llvm-devel/include/mlir/Transforms/SideEffectUtils.h
+%%MLIR%%llvm-devel/include/mlir/Transforms/TopologicalSortUtils.h
 %%MLIR%%llvm-devel/include/mlir/Transforms/Transforms.capi.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Transforms/Transforms.capi.h.inc
 %%MLIR%%llvm-devel/include/mlir/Transforms/ViewOpGraph.h
@@ -5087,6 +5109,7 @@ llvm-devel/lib/cmake/llvm/VersionFromVCS.cmake
 %%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libFortranParser.a
 %%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libFortranRuntime.a
 %%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libFortranSemantics.a
+%%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libFortran_main.a
 llvm-devel/lib/libLLVM-%%LLVM_MAJOR%%git.so
 llvm-devel/lib/libLLVM-%%LLVM_RELEASE%%git.so
 llvm-devel/lib/libLLVM.so
@@ -5155,6 +5178,7 @@ llvm-devel/lib/libLLVM.so
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMFrontendOpenACC.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMFrontendOpenMP.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMFuzzMutate.a
+%%STATIC_LIBS%%llvm-devel/lib/libLLVMFuzzerCLI.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMGlobalISel.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMHexagonAsmParser.a
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMHexagonCodeGen.a
@@ -5266,6 +5290,8 @@ llvm-devel/lib/libLTO.so
 llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%MLIR%%llvm-devel/lib/libMLIR.so
 %%MLIR%%llvm-devel/lib/libMLIR.so.%%LLVM_MAJOR%%git
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAMDGPU.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAMDGPUToROCDL.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAMX.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAMXToLLVMIRTranslation.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAMXTransforms.a
@@ -5330,6 +5356,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRDialectUtils.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIREmitC.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRExecutionEngine.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRExecutionEngineUtils.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFunc.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFuncTestPasses.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFuncToLLVM.a
@@ -5444,6 +5471,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTensorInferTypeOpInterfaceImpl.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTensorTestPasses.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTensorTilingInterfaceImpl.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTensorToLinalg.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTensorToSPIRV.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTensorTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTensorUtils.a

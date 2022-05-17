@@ -87,18 +87,16 @@ OPTIONS_DEFAULT=	CLANG LLD
 OPTIONS_DEFINE+=	EXTRAS FLANG LIT LLDB MLIR
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
-OPTIONS_DEFINE_powerpc=	GOLD
-OPTIONS_DEFINE_powerpc64=	GOLD OPENMP
-OPTIONS_DEFINE_powerpc64le=	GOLD OPENMP
+OPTIONS_DEFINE_powerpc=	COMPILER_RT GOLD
+OPTIONS_DEFINE_powerpc64=	COMPILER_RT GOLD OPENMP
+OPTIONS_DEFINE_powerpc64le=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_riscv64=	COMPILER_RT OPENMP
-OPTIONS_DEFAULT+=	EXTRAS FLANG LIT LLDB MLIR STATIC_LIBS
+OPTIONS_DEFAULT+=	EXTRAS FLANG LIT LLDB STATIC_LIBS
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
-OPTIONS_DEFAULT_powerpc=	GOLD
-OPTIONS_DEFAULT_powerpc64=	${OPTIONS_DEFAULT_powerpc64_${OSREL:R}} OPENMP
-OPTIONS_DEFAULT_powerpc64_13=	GOLD
-OPTIONS_DEFAULT_powerpc64_14=	GOLD
-OPTIONS_DEFAULT_powerpc64le=	GOLD OPENMP
+OPTIONS_DEFAULT_powerpc=	COMPILER_RT GOLD
+OPTIONS_DEFAULT_powerpc64=	COMPILER_RT GOLD OPENMP
+OPTIONS_DEFAULT_powerpc64le=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_riscv64=	COMPILER_RT OPENMP
 OPTIONS_EXCLUDE_i386=	FLANG
 OPTIONS_EXCLUDE_powerpc=	FLANG
@@ -377,6 +375,83 @@ _COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
 _COMPILER_RT_IGNORELISTS=	cfi_ignorelist.txt
 _COMPILER_RT_IGNORELISTS+=	asan_ignorelist.txt
 _COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
+.elif ${ARCH} == "powerpc"
+_COMPILER_RT_LIBS= \
+	libclang_rt.builtins-powerpc.a \
+	libclang_rt.profile-powerpc.a
+.elif ${ARCH} == "powerpc64"
+_COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
+_COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
+_COMPILER_RT_LIBS= \
+	libclang_rt.asan-powerpc64.a \
+	libclang_rt.asan-powerpc64.a.syms \
+	libclang_rt.asan-powerpc64.so \
+	libclang_rt.asan-preinit-powerpc64.a \
+	libclang_rt.asan_cxx-powerpc64.a \
+	libclang_rt.asan_cxx-powerpc64.a.syms \
+	libclang_rt.asan_static-powerpc64.a \
+	libclang_rt.builtins-powerpc64.a \
+	libclang_rt.msan-powerpc64.a \
+	libclang_rt.msan-powerpc64.a.syms \
+	libclang_rt.msan_cxx-powerpc64.a \
+	libclang_rt.msan_cxx-powerpc64.a.syms \
+	libclang_rt.profile-powerpc64.a \
+	libclang_rt.stats-powerpc64.a \
+	libclang_rt.stats_client-powerpc64.a \
+	libclang_rt.tsan-powerpc64.a \
+	libclang_rt.tsan-powerpc64.a.syms \
+	libclang_rt.tsan-powerpc64.so \
+	libclang_rt.tsan_cxx-powerpc64.a \
+	libclang_rt.tsan_cxx-powerpc64.a.syms \
+	libclang_rt.ubsan_minimal-powerpc64.a \
+	libclang_rt.ubsan_minimal-powerpc64.a.syms \
+	libclang_rt.ubsan_minimal-powerpc64.so \
+	libclang_rt.ubsan_standalone-powerpc64.a \
+	libclang_rt.ubsan_standalone-powerpc64.a.syms \
+	libclang_rt.ubsan_standalone-powerpc64.so \
+	libclang_rt.ubsan_standalone_cxx-powerpc64.a \
+	libclang_rt.ubsan_standalone_cxx-powerpc64.a.syms
+.if exists(/usr/lib32/libc.so.7)
+_COMPILER_RT_LIBS+= \
+	libclang_rt.builtins-powerpc.a \
+	libclang_rt.profile-powerpc.a
+.endif
+.elif ${ARCH} == "powerpc64le"
+_COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
+_COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
+_COMPILER_RT_LIBS= \
+	libclang_rt.asan-powerpc64le.a \
+	libclang_rt.asan-powerpc64le.a.syms \
+	libclang_rt.asan-powerpc64le.so \
+	libclang_rt.asan-preinit-powerpc64le.a \
+	libclang_rt.asan_cxx-powerpc64le.a \
+	libclang_rt.asan_cxx-powerpc64le.a.syms \
+	libclang_rt.asan_static-powerpc64le.a \
+	libclang_rt.builtins-powerpc64le.a \
+	libclang_rt.msan-powerpc64le.a \
+	libclang_rt.msan-powerpc64le.a.syms \
+	libclang_rt.msan_cxx-powerpc64le.a \
+	libclang_rt.msan_cxx-powerpc64le.a.syms \
+	libclang_rt.profile-powerpc64le.a \
+	libclang_rt.stats-powerpc64le.a \
+	libclang_rt.stats_client-powerpc64le.a \
+	libclang_rt.tsan-powerpc64le.a \
+	libclang_rt.tsan-powerpc64le.a.syms \
+	libclang_rt.tsan-powerpc64le.so \
+	libclang_rt.tsan_cxx-powerpc64le.a \
+	libclang_rt.tsan_cxx-powerpc64le.a.syms \
+	libclang_rt.ubsan_minimal-powerpc64le.a \
+	libclang_rt.ubsan_minimal-powerpc64le.a.syms \
+	libclang_rt.ubsan_minimal-powerpc64le.so \
+	libclang_rt.ubsan_standalone-powerpc64le.a \
+	libclang_rt.ubsan_standalone-powerpc64le.a.syms \
+	libclang_rt.ubsan_standalone-powerpc64le.so \
+	libclang_rt.ubsan_standalone_cxx-powerpc64le.a \
+	libclang_rt.ubsan_standalone_cxx-powerpc64le.a.syms \
+	libclang_rt.xray-basic-powerpc64le.a \
+	libclang_rt.xray-fdr-powerpc64le.a \
+	libclang_rt.xray-powerpc64le.a \
+	libclang_rt.xray-profiling-powerpc64le.a
 .elif ${ARCH} == "riscv64"
 _COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
 _COMPILER_RT_LIBS= \
