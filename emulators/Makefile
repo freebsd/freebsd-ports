@@ -58,6 +58,7 @@
     SUBDIR += libc6-shim
     SUBDIR += libdsk
     SUBDIR += libretro-ppsspp
+    SUBDIR += libretro-reicast
     SUBDIR += libretro-vice
     SUBDIR += libspectrum
     SUBDIR += linux-c7

@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+
+
+On some hardware, The libretro core of reicast may not run if dynarec is
+enabled.
+
+It is recommended to set alpha sorting to per-triangle, as follows:
+
+In ~/.config/retroarch/
+reicast_alpha_sorting = "per-triangle (normal)"
+
+It is recommended to enable DSP support:
+
+reicast_enable_dsp = "enabled"
+
+in ~/.config/reicast/emu.cfg:
+
+Dynarec.DspEnabled = 1
+Dynarec.Enabled = no
+Dynarec.idleskip = yes
+Dynarec.safe-mode = yes
+Dynarec.unstable-opt = no
+#aica.AutoLatency = no
+#aica.DSPEnabled = no
+
+Please set all lines in ~/.config/retroarch/retroarch.cfg that correspond to
+the setting "run_ahead_enabled" to "false", as shown in the example below:
+
+run_ahead_enabled = "false"
+
+To troubleshoot issues, running retroarch with the -v argument may help to
+acquire more diagnostic information.
+EOM
+}
+]
