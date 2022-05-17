@@ -1,7 +1,7 @@
 # Created by: gahr
 
 PORTNAME=	cassandra-cpp-driver
-PORTVERSION=	2.16.0
+PORTVERSION=	2.16.2
 PORTREVISION=	0
 CATEGORIES=	databases
 
