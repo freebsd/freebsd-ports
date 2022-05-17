@@ -1,0 +1,14 @@
+bin/buildkite-agent
+@dir %%ETCDIR%%/hooks
+@dir %%ETCDIR%%/plugins
+@sample %%ETCDIR%%/buildkite-agent.cfg.sample
+%%EXAMPLESDIR%%/hooks/checkout.sample
+%%EXAMPLESDIR%%/hooks/command.sample
+%%EXAMPLESDIR%%/hooks/environment.sample
+%%EXAMPLESDIR%%/hooks/post-artifact.sample
+%%EXAMPLESDIR%%/hooks/post-checkout.sample
+%%EXAMPLESDIR%%/hooks/post-command.sample
+%%EXAMPLESDIR%%/hooks/pre-artifact.sample
+%%EXAMPLESDIR%%/hooks/pre-checkout.sample
+%%EXAMPLESDIR%%/hooks/pre-command.sample
+%%EXAMPLESDIR%%/hooks/pre-exit.sample
