@@ -1,9 +1,9 @@
-bin/gmic
 include/gmic.h
-lib/cmake/gmic/GmicConfig.cmake
-lib/cmake/gmic/GmicTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/gmic/GmicTargets.cmake
+include/gmic_libc.h
 lib/libgmic.so
-lib/libgmic.so.1
+lib/libgmic.so.3
+lib/libgmic.so.312
+libexec/gimp/2.2/plug-ins/gmic_cluts.gmz
+libexec/gimp/2.2/plug-ins/gmic_denoise_cnn.gmz
+share/man/fr/man1/gmic.1.gz
 share/man/man1/gmic.1.gz
-share/bash-completion/completions/gmic
