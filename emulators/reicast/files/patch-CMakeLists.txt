@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2020-08-21 20:26:50 UTC
++++ CMakeLists.txt
+@@ -431,6 +431,8 @@ if(${HOST_OS} EQUAL ${OS_DARWIN})
+ 
+ endif()
+ 
++set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -msse4.1")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -msse4.1")
+ 
+ if(DEBUG_CMAKE)
+   message(" ------------------------------------------------")
