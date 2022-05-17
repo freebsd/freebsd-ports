@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	libtree
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -17,5 +17,8 @@ GH_ACCOUNT=	haampie
 
 PLIST_FILES=	bin/libtree \
 		share/man/man1/libtree.1.gz
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/libtree
 
 .include <bsd.port.mk>
