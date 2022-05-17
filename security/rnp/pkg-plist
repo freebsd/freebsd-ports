@@ -9,7 +9,7 @@ lib/cmake/rnp/rnp-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/rnp/rnp-targets.cmake
 lib/librnp.so
 lib/librnp.so.0
-lib/librnp.so.0.15.2
+lib/librnp.so.0.16.0
 libdata/pkgconfig/librnp.pc
 share/man/man1/rnp.1.gz
 share/man/man1/rnpkeys.1.gz
