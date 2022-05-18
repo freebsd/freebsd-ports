@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	fastf1
 PORTVERSION=	2.2.5
 CATEGORIES=	devel python

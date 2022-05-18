@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	signalr-client-aio
 PORTVERSION=	0.0.1.6.2
 CATEGORIES=	devel python

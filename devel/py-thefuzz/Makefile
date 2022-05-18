@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	thefuzz
 PORTVERSION=	0.19.0
 CATEGORIES=	devel python

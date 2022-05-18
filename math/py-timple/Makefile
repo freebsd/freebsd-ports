@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	timple
 PORTVERSION=	0.1.5
 CATEGORIES=	math python
