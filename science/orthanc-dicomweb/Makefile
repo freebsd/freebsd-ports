@@ -1,15 +1,14 @@
 # Created by: maintainer.freebsd@xpoundit.com
 
 PORTNAME=	orthanc-dicomweb
-DISTVERSION=	1.7
-PORTREVISION=	3
+DISTVERSION=	1.8
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/plugin-dicom-web/:main \
 		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/:framework \
 		https://orthanc.osimis.io/ThirdPartyDownloads/:thirdparty \
 		https://orthanc.osimis.io/ThirdPartyDownloads/dicom-web/:thirdpartydicomweb
 DISTFILES=	OrthancDicomWeb-${PORTVERSION}.tar.gz:main
-EXTRADISTFILES=	Orthanc-1.9.3.tar.gz:framework \
+EXTRADISTFILES=	Orthanc-1.11.0.tar.gz:framework \
 		e2fsprogs-1.44.5.tar.gz:thirdparty \
 		bootstrap-4.3.1.zip:thirdpartydicomweb \
 		vuejs-2.6.10.tar.gz:thirdpartydicomweb \
@@ -40,14 +39,14 @@ RUN_DEPENDS=	Orthanc:science/orthanc
 USES=		cmake localbase python:build
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/OrthancDicomWeb-${PORTVERSION}
-
-CMAKE_ARGS=	-DORTHANC_FRAMEWORK_ROOT=${WRKSRC}/ThirdPartyDownloads/Orthanc-1.9.3/OrthancFramework/Sources \
+CMAKE_ARGS=	-DORTHANC_FRAMEWORK_ROOT=${WRKSRC}/ThirdPartyDownloads/Orthanc-1.11.0/OrthancFramework/Sources \
 		-DORTHANC_FRAMEWORK_SOURCE=path
 CMAKE_OFF=	USE_SYSTEM_UUID
 
 CFLAGS+=	-DORTHANC_ENABLE_LOGGING_PLUGIN -DNDEBUG
 CXXFLAGS+=	-DNDEBUG
+
+WRKSRC=		${WRKDIR}/OrthancDicomWeb-${PORTVERSION}
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
@@ -56,7 +55,7 @@ post-extract:
 .for f in ${EXTRADISTFILES:C/:[^:]*//}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSRC}/ThirdPartyDownloads
 .endfor
-	${TAR} -C ${WRKSRC}/ThirdPartyDownloads -xf ${WRKSRC}/ThirdPartyDownloads/Orthanc-1.9.3.tar.gz
+	${TAR} -C ${WRKSRC}/ThirdPartyDownloads -xf ${WRKSRC}/ThirdPartyDownloads/Orthanc-1.11.0.tar.gz
 
 do-test:
 	@cd ${BUILD_WRKSRC} && ./UnitTests
