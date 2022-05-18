@@ -6,6 +6,10 @@ PORTREVISION=	15
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
+PATCH_SITES=	https://invent.kde.org/education/labplot/-/commit/
+PATCHFILES=	375786ca124a1a6773c609236f8341890f23e1d8.diff:-p1 \
+		9e77b593030fdae0fbbad113415483b3ca51a654.diff:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Data plotting and function analysis tool by KDE
 
