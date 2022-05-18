@@ -1,5 +1,5 @@
 PORTNAME=	kvmclock
-DISTVERSION=	0.0.0-a4
+DISTVERSION=	0.0.0-a5
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-kmod
 
@@ -8,6 +8,7 @@ COMMENT=	Paravirtualized Linux KVM clock support
 
 LICENSE=	BSD2CLAUSE
 
+IGNORE_FreeBSD_14=	included in base system
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet tested for non-x86
 
