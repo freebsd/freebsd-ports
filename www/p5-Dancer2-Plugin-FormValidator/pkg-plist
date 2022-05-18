@@ -24,6 +24,7 @@
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Min.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Numeric.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Required.pm
+%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/RequiredWith.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Same.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator.pm
 %%PERL5_MAN3%%/Dancer2::Plugin::FormValidator.3.gz
