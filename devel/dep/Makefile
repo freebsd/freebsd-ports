@@ -14,6 +14,9 @@ COMMENT=	Prototype dependency management tool for Go
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use Go modules
+EXPIRATION_DATE=	2022-06-30
+
 USES=		go
 
 USE_GITHUB=	yes
