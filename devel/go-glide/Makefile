@@ -2,7 +2,6 @@
 
 PORTNAME=	glide
 PORTVERSION=	0.13.2
-DEPRECATED=	use go mod instead of glide
 DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	devel
@@ -12,6 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package Management for Golang
 
 LICENSE=	MIT
+
+DEPRECATED=	use go mod instead of glide
+EXPIRATION_DATE=	2022-06-30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Masterminds
