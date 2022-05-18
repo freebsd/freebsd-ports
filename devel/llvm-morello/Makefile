@@ -17,6 +17,8 @@ GL_COMMIT=	${LLVM_COMMIT}
 # Regularly tested targets as part of Android development
 LLVM_TARGETS=	AArch64;ARM;BPF;X86
 
+EXTRA_PATCHES=	${.CURDIR}/files
+
 .include "${.CURDIR}/Makefile.snapshot"
 
 MASTERDIR=	${.CURDIR}/../llvm-cheri
