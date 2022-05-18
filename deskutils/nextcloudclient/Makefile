@@ -1,7 +1,7 @@
 # Created by: Mathieu Arnold
 
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.4.3
+PORTVERSION=	3.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
