@@ -33,11 +33,14 @@ SFTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_F
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 DULWICH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=0:devel/dulwich@${PY_FLAVOR}
 
+PLIST_FILES=	bin/bzr
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/brz.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${STRIP_CMD} \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/breezy/*.so \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/breezy/bzr/*.so
+	${RLN} ${STAGEDIR}${PREFIX}/bin/brz ${STAGEDIR}${PREFIX}/bin/bzr
 
 do-test:
 	cd ${WRKSRC} && ./brz selftest
