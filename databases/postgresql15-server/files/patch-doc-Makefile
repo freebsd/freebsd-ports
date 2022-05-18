@@ -1,0 +1,9 @@
+--- doc/Makefile.orig	2015-10-08 21:45:57.360084007 +0200
++++ doc/Makefile	2015-10-08 21:46:04.353084097 +0200
+@@ -12,5 +12,5 @@
+ top_builddir = ..
+ include $(top_builddir)/src/Makefile.global
+ 
+-all distprep html man install installdirs uninstall clean distclean maintainer-clean:
++all distprep man install installdirs uninstall clean distclean maintainer-clean:
+ 	$(MAKE) -C src $@
