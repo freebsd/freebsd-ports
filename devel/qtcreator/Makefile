@@ -30,6 +30,10 @@ USE_QT=		buildtools concurrent core declarative designer gui help \
 		quick3d quickcontrols script serialport sql svg testlib \
 		webchannel widgets xml xmlpatterns
 
+# Workaround, KF5-5.94 moved header files to subfolder. Instead of using the bundled
+# syntax-highligher, just help it find the proper files.
+CFLAGS+=	-I${LOCALBASE}/include/KF5/KSyntaxHighlighting/KSyntaxHighlighting
+
 SHEBANG_FILES=		tests/system/tools/objectsToTable.py \
 			tests/system/tools/findUnusedObjects.py \
 			share/qtcreator/templates/wizards/files/python/file.py \
