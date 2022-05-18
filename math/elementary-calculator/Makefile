@@ -1,8 +1,7 @@
 PORTNAME=	calculator
-PORTVERSION=	1.7.2
+DISTVERSION=	2.0.0
 CATEGORIES=	math
-PKGNAMEPREFIX=	pantheon-
-DIST_SUBDIR=	pantheon
+PKGNAMEPREFIX=	elementary-
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Simple calculator written in Vala
@@ -12,14 +11,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
-		libgranite.so:x11-toolkits/granite \
+		libgranite-7.so:x11-toolkits/granite7 \
 		libhandy-1.so:x11-toolkits/libhandy
 
 USES=		gettext gnome meson pkgconfig python:3.6+,build
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
+
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk40
 
 GLIB_SCHEMAS=	io.elementary.calculator.gschema.xml
 

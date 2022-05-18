@@ -17153,3 +17153,4 @@ graphics/magnum-examples||2022-05-17|Has expired: Depends on broken graphics/mag
 graphics/magnum||2022-05-17|Has expired: Broken for more than a year
 graphics/magnum-plugins||2022-05-17|Has expired: Depends on broken graphics/magnum
 graphics/magnum-extras||2022-05-17|Has expired: Depends on broken graphics/magnum
+math/pantheon-calculator|math/elementary-calculator|2022-05-18|Switch to reverse domain name notation

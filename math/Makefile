@@ -289,6 +289,7 @@
     SUBDIR += eigen3
     SUBDIR += eispack
     SUBDIR += elemental
+    SUBDIR += elementary-calculator
     SUBDIR += elpa
     SUBDIR += emc2
     SUBDIR += ensmallen
@@ -764,7 +765,6 @@
     SUBDIR += p5-Text-AsciiTeX
     SUBDIR += p5-bignum
     SUBDIR += palp
-    SUBDIR += pantheon-calculator
     SUBDIR += pari
     SUBDIR += pari_elldata
     SUBDIR += pari_galdata
