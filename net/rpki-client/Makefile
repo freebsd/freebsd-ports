@@ -1,6 +1,6 @@
 PORTNAME=	rpki-client
 DISTVERSION=	7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	portmaster@bsdforge.com
