@@ -1,9 +1,9 @@
---- product.json.orig	2022-02-02 16:57:24 UTC
+--- product.json.orig	2022-05-16 17:42:35 UTC
 +++ product.json
-@@ -34,6 +34,17 @@
- 		"GitHub.remotehub",
- 		"GitHub.remotehub-insiders"
- 	],
+@@ -28,6 +28,17 @@
+ 	"reportIssueUrl": "https://github.com/microsoft/vscode/issues/new",
+ 	"urlProtocol": "code-oss",
+ 	"webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/181b43c0e2949e36ecb623d8cc6de29d4fa2bae8/out/vs/workbench/contrib/webview/browser/pre/",
 +	"documentationUrl": "https://go.microsoft.com/fwlink/?LinkID=533484",
 +	"extensionsGallery": {
 +		"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",

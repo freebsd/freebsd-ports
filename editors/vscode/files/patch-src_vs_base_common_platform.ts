@@ -1,6 +1,6 @@
---- src/vs/base/common/platform.ts.orig	2022-03-10 14:14:09 UTC
+--- src/vs/base/common/platform.ts.orig	2022-05-16 17:42:35 UTC
 +++ src/vs/base/common/platform.ts
-@@ -80,7 +80,7 @@ if (typeof navigator === 'object' && !isElectronRender
+@@ -78,7 +78,7 @@ if (typeof navigator === 'object' && !isElectronRender
  	_isWindows = _userAgent.indexOf('Windows') >= 0;
  	_isMacintosh = _userAgent.indexOf('Macintosh') >= 0;
  	_isIOS = (_userAgent.indexOf('Macintosh') >= 0 || _userAgent.indexOf('iPad') >= 0 || _userAgent.indexOf('iPhone') >= 0) && !!navigator.maxTouchPoints && navigator.maxTouchPoints > 0;
@@ -9,7 +9,7 @@
  	_isWeb = true;
  	_locale = navigator.language;
  	_language = _locale;
-@@ -90,7 +90,7 @@ if (typeof navigator === 'object' && !isElectronRender
+@@ -88,7 +88,7 @@ if (typeof navigator === 'object' && !isElectronRender
  else if (typeof nodeProcess === 'object') {
  	_isWindows = (nodeProcess.platform === 'win32');
  	_isMacintosh = (nodeProcess.platform === 'darwin');

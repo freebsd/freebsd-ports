@@ -1,6 +1,6 @@
---- build/gulpfile.vscode.js.orig	2022-03-10 14:14:09 UTC
+--- build/gulpfile.vscode.js.orig	2022-05-16 17:42:35 UTC
 +++ build/gulpfile.vscode.js
-@@ -299,7 +299,7 @@ function packageTask(platform, arch, sourceFolderName,
+@@ -298,7 +298,7 @@ function packageTask(platform, arch, sourceFolderName,
  			.pipe(util.skipDirectories())
  			.pipe(util.fixWin32DirectoryPermissions())
  			.pipe(filter(['**', '!**/.github/**'], { dot: true })) // https://github.com/microsoft/vscode/issues/116523
