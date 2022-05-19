@@ -1,23 +1,23 @@
---- ejabberdctl.template.orig	2020-08-02 14:16:55 UTC
+--- ejabberdctl.template.orig	2022-05-19 09:10:34 UTC
 +++ ejabberdctl.template
-@@ -56,8 +56,8 @@ done
+@@ -58,8 +58,8 @@ done
  
  # define ejabberd variables if not already defined from the command line
- : "${ETC_DIR:="{{sysconfdir}}/ejabberd"}"
--: "${LOGS_DIR:="{{localstatedir}}/log/ejabberd"}"
--: "${SPOOL_DIR:="{{localstatedir}}/lib/ejabberd"}"
+ : "${CONFIG_DIR:="{{config_dir}}"}"
+-: "${LOGS_DIR:="{{logs_dir}}"}"
+-: "${SPOOL_DIR:="{{spool_dir}}"}"
 +: ${LOGS_DIR:=/var/log/ejabberd}
 +: ${SPOOL_DIR:=/var/spool/ejabberd}
- : "${EJABBERD_CONFIG_PATH:="$ETC_DIR/ejabberd.yml"}"
- : "${EJABBERDCTL_CONFIG_PATH:="$ETC_DIR/ejabberdctl.cfg"}"
+ : "${EJABBERD_CONFIG_PATH:="$CONFIG_DIR/ejabberd.yml"}"
+ : "${EJABBERDCTL_CONFIG_PATH:="$CONFIG_DIR/ejabberdctl.cfg"}"
  # Allows passing extra Erlang command-line arguments in vm.args file
-@@ -81,7 +81,8 @@ if [ -n "$INET_DIST_INTERFACE" ] ; then
+@@ -83,7 +83,8 @@ if [ -n "$INET_DIST_INTERFACE" ] ; then
  fi
  # if vm.args file exists in config directory, pass it to Erlang VM
  [ -f "$VMARGS" ] && ERLANG_OPTS="$ERLANG_OPTS -args_file $VMARGS"
--ERL_LIBS={{libdir}}
+-ERL_LIBS='{{libdir}}'
 +ERL_LIBS={{libdir}}/ejabberd
 +ERL_LIBS=$ERL_LIBS:{{libdir}}/ejabberd/lib
  ERL_CRASH_DUMP="$LOGS_DIR"/erl_crash_$(date "+%Y%m%d-%H%M%S").dump
- ERL_INETRC="$ETC_DIR"/inetrc
+ ERL_INETRC="$CONFIG_DIR"/inetrc
  

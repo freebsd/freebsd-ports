@@ -1,6 +1,10 @@
 PORTNAME=	ejabberd
-PORTVERSION=	21.12
+PORTVERSION=	22.05
 CATEGORIES=	net-im
+
+# See https://github.com/processone/ejabberd/issues/3819
+PATCHFILES=	75a771bfec3626145d404349fdaec4f0eef83bbc.patch:-p1
+PATCH_SITES+=	https://github.com/processone/ejabberd/commit/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
@@ -31,8 +35,7 @@ CPE_VENDOR=	process-one
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	processone
-GH_TUPLE=	erlang-lager:lager:${LAGER_VER}:lager/deps/lager \
-		processone:p1_utils:${P1_UTILS_VER}:p1_utils/deps/p1_utils \
+GH_TUPLE=	processone:p1_utils:${P1_UTILS_VER}:p1_utils/deps/p1_utils \
 		processone:cache_tab:${CACHE_TAB_VER}:cache_tab/deps/cache_tab \
 		processone:fast_tls:${FAST_TLS_VER}:fast_tls/deps/fast_tls \
 		processone:stringprep:${STRINGPREP_VER}:stringprep/deps/stringprep \
@@ -43,7 +46,6 @@ GH_TUPLE=	erlang-lager:lager:${LAGER_VER}:lager/deps/lager \
 		processone:p1_oauth2:${P1_OAUTH2_VER}:p1_oauth2/deps/p1_oauth2 \
 		potatosalad:erlang-jose:${JOSE_VER}:jose/deps/jose \
 		processone:eimp:${EIMP_VER}:eimp/deps/eimp \
-		DeadZen:goldrush:${GOLDRUSH_VER}:goldrush/deps/goldrush \
 		dvv:base64url:${BASE64URL_VER}:base64url/deps/base64url \
 		processone:ezlib:${EZLIB_VER}:ezlib/deps/ezlib \
 		processone:pkix:${PKIX_VER}:pkix/deps/pkix \
@@ -73,10 +75,9 @@ SUBS=		PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}		\
 		FAST_TLS_VER=${FAST_TLS_VER}				\
 		FAST_XML_VER=${FAST_XML_VER}				\
 		FAST_YAML_VER=${FAST_YAML_VER}				\
-		GOLDRUSH_VER=${GOLDRUSH_VER}				\
 		IDNA_VER=${IDNA_VER}					\
 		JIFFY_VER=${JIFFY_VER} JOSE_VER=${JOSE_VER}		\
-		LAGER_VER=${LAGER_VER} LUERL_VER=${LUERL_VER}		\
+		LUERL_VER=${LUERL_VER}					\
 		MQTREE_VER=${MQTREE_VER}				\
 		P1_ACME_VER=${P1_ACME_VER}				\
 		P1_MYSQL_VER=${P1_MYSQL_VER}				\
@@ -97,35 +98,33 @@ SUB_LIST=	${SUBS} \
 SHEBANG_FILES=	${WRKSRC}/ejabberdctl.template
 
 BASE64URL_VER=	1.0.1
-CACHE_TAB_VER=	1.0.29
-EIMP_VER=	1.0.21
+CACHE_TAB_VER=	1.0.30
+EIMP_VER=	1.0.22
 EJABBERD_PO_VER=	0.0.0
 EPAM_VER=	1.0.12
 EREDIS_VER=	1.2.0
-ESIP_VER=	1.0.45
-EZLIB_VER=	1.0.10
-FAST_TLS_VER=	1.1.13
-FAST_XML_VER=	1.1.48
-FAST_YAML_VER=	1.0.32
-GOLDRUSH_VER=	0.1.9
+ESIP_VER=	1.0.47
+EZLIB_VER=	1.0.12
+FAST_TLS_VER=	1.1.15
+FAST_XML_VER=	1.1.49
+FAST_YAML_VER=	1.0.33
 IDNA_VER=	6.0.0
-JIFFY_VER=	1.0.5
+JIFFY_VER=	1.1.1
 JOSE_VER=	1.11.1
-LAGER_VER=	3.9.1
-LUERL_VER=	0.3
-MQTREE_VER=	1.0.14
-P1_ACME_VER=	1.0.16
+LUERL_VER=	1.0
+MQTREE_VER=	1.0.15
+P1_ACME_VER=	1.0.19
 P1_MYSQL_VER=	1.0.19
-P1_OAUTH2_VER=	0.6.10
-P1_PGSQL_VER=	1.1.16
-P1_UTILS_VER=	1.0.23
-PKIX_VER=	1.0.8
+P1_OAUTH2_VER=	0.6.11
+P1_PGSQL_VER=	1.1.18
+P1_UTILS_VER=	1.0.25
+PKIX_VER=	1.0.9
 SQLITE3_VER=	1.1.13
-STRINGPREP_VER=	1.0.27
-STUN_VER=	1.0.47
+STRINGPREP_VER=	1.0.28
+STUN_VER=	1.2.2
 UNICODE_UTIL_COMPAT_VER=	0.4.1
-XMPP_VER=	1.5.6
-YCONF_VER=	1.0.12
+XMPP_VER=	1.5.8
+YCONF_VER=	1.0.13
 
 OPTIONS_SUB=		yes
 SIP_DESC=	SIP support
