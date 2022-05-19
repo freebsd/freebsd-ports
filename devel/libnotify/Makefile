@@ -1,7 +1,7 @@
 # Created by: Andreas Kohn <andreas@syndrom23.de>
 
 PORTNAME=	libnotify
-DISTVERSION=	0.7.11
+DISTVERSION=	0.7.12
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
