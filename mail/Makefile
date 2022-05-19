@@ -136,8 +136,6 @@
     SUBDIR += geary
     SUBDIR += gensig
     SUBDIR += getmail6
-    SUBDIR += gmime2
-    SUBDIR += gmime2-sharp
     SUBDIR += gmime26
     SUBDIR += gmime26-sharp
     SUBDIR += gmime30
@@ -334,7 +332,6 @@
     SUBDIR += p5-MIME-EcoEncode
     SUBDIR += p5-MIME-EncWords
     SUBDIR += p5-MIME-Explode
-    SUBDIR += p5-MIME-Fast
     SUBDIR += p5-MIME-Lite
     SUBDIR += p5-MIME-Lite-HTML
     SUBDIR += p5-MIME-Lite-TT

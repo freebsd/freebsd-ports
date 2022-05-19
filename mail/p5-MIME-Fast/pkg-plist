@@ -1,5 +1,0 @@
-%%SITE_ARCH%%/MIME/Fast.pm
-%%SITE_ARCH%%/MIME/Fast.pod
-%%SITE_ARCH%%/auto/MIME/Fast/Fast.so
-%%SITE_ARCH%%/auto/MIME/Fast/autosplit.ix
-%%PERL5_MAN3%%/MIME::Fast.3.gz
