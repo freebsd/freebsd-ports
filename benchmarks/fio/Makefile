@@ -2,6 +2,7 @@
 
 PORTNAME=	fio
 PORTVERSION=	3.30
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://brick.kernel.dk/snaps/
 
@@ -13,15 +14,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c11 gmake tar:bzip2
 
-HAS_CONFIGURE=	yes
+HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--disable-native
 
-OPTIONS_DEFINE=	EXAMPLES GNUPLOT
+CONFLICTS_INSTALL=	py*-Fiona
+
+OPTIONS_DEFINE=	EXAMPLES GNUPLOT LIBNFS
 GNUPLOT_DESC=	Support for plotting graphs
+LIBNFS_DESC=	Enable NFS support using libnfs
 
 GNUPLOT_BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:math/gnuplot
+LIBNFS_LIB_DEPENDS=	libnfs.so:net/libnfs
 
-CONFLICTS_INSTALL=	py*-Fiona
+LIBNFS_CONFIGURE_OFF=	--disable-nfs
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fio ${STAGEDIR}${PREFIX}/bin
