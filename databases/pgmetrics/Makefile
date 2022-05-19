@@ -1,9 +1,8 @@
 # Created by: Palle Girgensohn <girgen@FreeBSD.org>
 
 PORTNAME=	pgmetrics
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -13,10 +12,11 @@ LICENSE=	APACHE20
 
 USES=		go:modules
 
-USE_GITHUB=	yes
+GO_MODULE=	github.com/rapidloop/pgmetrics
+#USE_GITHUB=	yes
 
-GH_ACCOUNT=	rapidloop
-GH_TUPLE=	\
+#GH_ACCOUNT=	rapidloop
+#GH_TUPLE=	\
 		aws:aws-sdk-go:v1.29.29:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		dustin:go-humanize:bb3d318650d4:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		golang:crypto:e9b2fee46413:golang_crypto/vendor/golang.org/x/crypto \
