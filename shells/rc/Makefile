@@ -2,9 +2,9 @@
 
 PORTNAME=	rc
 PORTVERSION=	1.7.4
-PORTREVISION=	2
+PORTREVISION=	3
+DISTVERSIONPREFIX=v
 CATEGORIES=	shells plan9
-MASTER_SITES=	http://static.tobold.org/rc/
 
 MAINTAINER=	quanstro@quanstro.net
 COMMENT=	Unix incarnation of the plan9 shell
@@ -12,7 +12,9 @@ COMMENT=	Unix incarnation of the plan9 shell
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe
+USES=		autoreconf cpe
+USE_GITHUB=	yes
+GH_ACCOUNT=	rakitzis
 CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-history
