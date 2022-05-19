@@ -13,6 +13,9 @@ COMMENT?=	Multithreaded SQL database (server)
 
 LICENSE?=	GPLv2+
 
+DEPRECATED=	EOL since February 2021
+EXPIRATION_DATE=	2022-06-30
+
 BROKEN_armv6=		fails to compile: sql/mysqld.cc:198:19: error: cannot combine with previous 'type-name' declaration specifier
 BROKEN_armv7=		fails to compile: sql/mysqld.cc:198:19: error: cannot combine with previous 'type-name' declaration specifier
 
