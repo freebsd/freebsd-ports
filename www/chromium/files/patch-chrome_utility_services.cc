@@ -1,4 +1,4 @@
---- chrome/utility/services.cc.orig	2022-04-21 18:48:31 UTC
+--- chrome/utility/services.cc.orig	2022-05-19 14:06:27 UTC
 +++ chrome/utility/services.cc
 @@ -28,7 +28,7 @@
  #include "printing/buildflags/buildflags.h"
@@ -18,7 +18,7 @@
  #include "chrome/services/file_util/document_analysis_service.h"  // nogncheck
  #endif
  
-@@ -213,7 +213,7 @@ auto RunSpeechRecognitionService(
+@@ -215,7 +215,7 @@ auto RunSpeechRecognitionService(
  }
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -27,7 +27,7 @@
  auto RunScreenAIService(
      mojo::PendingReceiver<screen_ai::mojom::ScreenAIService> receiver) {
    return std::make_unique<screen_ai::ScreenAIService>(std::move(receiver));
-@@ -227,7 +227,7 @@ auto RunCupsIppParser(
+@@ -229,7 +229,7 @@ auto RunCupsIppParser(
  }
  #endif
  
@@ -36,7 +36,7 @@
  auto RunDocumentAnalysis(
      mojo::PendingReceiver<chrome::mojom::DocumentAnalysisService> receiver) {
    return std::make_unique<DocumentAnalysisService>(std::move(receiver));
-@@ -374,7 +374,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -382,7 +382,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunSpeechRecognitionService);
  #endif
  
@@ -45,7 +45,7 @@
    if (features::IsScreenAIEnabled())
      services.Add(RunScreenAIService);
  #endif
-@@ -398,7 +398,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -406,7 +406,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunFileUtil);
  #endif
  

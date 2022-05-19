@@ -1,6 +1,6 @@
---- base/memory/discardable_memory.cc.orig	2022-02-28 16:54:41 UTC
+--- base/memory/discardable_memory.cc.orig	2022-05-19 14:06:27 UTC
 +++ base/memory/discardable_memory.cc
-@@ -24,7 +24,7 @@ const base::Feature kMadvFreeDiscardableMemory{
+@@ -25,7 +25,7 @@ const base::Feature kMadvFreeDiscardableMemory{
      "MadvFreeDiscardableMemory", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // BUILDFLAG(IS_POSIX)
  
@@ -9,7 +9,7 @@
  const base::Feature kDiscardableMemoryBackingTrial{
      "DiscardableMemoryBackingTrial", base::FEATURE_DISABLED_BY_DEFAULT};
  
-@@ -49,7 +49,7 @@ const base::FeatureParam<DiscardableMemoryTrialGroup>
+@@ -50,7 +50,7 @@ const base::FeatureParam<DiscardableMemoryTrialGroup>
  
  namespace {
  
@@ -18,7 +18,7 @@
  
  DiscardableMemoryBacking GetBackingForFieldTrial() {
    DiscardableMemoryTrialGroup trial_group =
-@@ -68,7 +68,7 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
+@@ -69,7 +69,7 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
  
  }  // namespace
  
@@ -27,7 +27,7 @@
  
  // Probe capabilities of this device to determine whether we should participate
  // in the discardable memory backing trial.
-@@ -98,7 +98,7 @@ DiscardableMemory::DiscardableMemory() = default;
+@@ -99,7 +99,7 @@ DiscardableMemory::DiscardableMemory() = default;
  DiscardableMemory::~DiscardableMemory() = default;
  
  DiscardableMemoryBacking GetDiscardableMemoryBacking() {

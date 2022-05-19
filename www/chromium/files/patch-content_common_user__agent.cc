@@ -1,6 +1,6 @@
---- content/common/user_agent.cc.orig	2022-04-21 18:48:31 UTC
+--- content/common/user_agent.cc.orig	2022-05-19 14:06:27 UTC
 +++ content/common/user_agent.cc
-@@ -33,7 +33,7 @@ std::string GetUserAgentPlatform() {
+@@ -34,7 +34,7 @@ std::string GetUserAgentPlatform() {
    return "";
  #elif BUILDFLAG(IS_MAC)
    return "Macintosh; ";
@@ -9,7 +9,7 @@
    return "X11; ";  // strange, but that's what Firefox uses
  #elif BUILDFLAG(IS_ANDROID)
    return "Linux; ";
-@@ -243,6 +243,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -260,6 +260,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"

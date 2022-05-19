@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_web_contents_impl.cc.orig	2022-03-25 21:59:56 UTC
+--- headless/lib/browser/headless_web_contents_impl.cc.orig	2022-05-19 14:06:27 UTC
 +++ headless/lib/browser/headless_web_contents_impl.cc
-@@ -56,7 +56,7 @@ namespace headless {
+@@ -57,7 +57,7 @@ namespace headless {
  namespace {
  
  void UpdatePrefsFromSystemSettings(blink::RendererPreferences* prefs) {

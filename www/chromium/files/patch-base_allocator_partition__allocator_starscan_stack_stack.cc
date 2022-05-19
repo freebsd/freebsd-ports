@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2022-02-28 16:54:41 UTC
+--- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2022-05-19 14:06:27 UTC
 +++ base/allocator/partition_allocator/starscan/stack/stack.cc
 @@ -17,6 +17,10 @@
  #include <pthread.h>
@@ -11,7 +11,7 @@
  #if defined(LIBC_GLIBC)
  extern "C" void* __libc_stack_end;
  #endif
-@@ -48,6 +52,36 @@ void* GetStackTop() {
+@@ -47,6 +51,36 @@ void* GetStackTop() {
  
  void* GetStackTop() {
    return pthread_get_stackaddr_np(pthread_self());

@@ -1,4 +1,4 @@
---- net/proxy_resolution/proxy_config_service_linux.cc.orig	2022-02-07 13:39:41 UTC
+--- net/proxy_resolution/proxy_config_service_linux.cc.orig	2022-05-19 14:06:27 UTC
 +++ net/proxy_resolution/proxy_config_service_linux.cc
 @@ -6,7 +6,9 @@
  
@@ -26,7 +26,7 @@
  
  }  // namespace
  
-@@ -1222,9 +1226,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
+@@ -1223,9 +1227,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
      case base::nix::DESKTOP_ENVIRONMENT_KDE3:
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:

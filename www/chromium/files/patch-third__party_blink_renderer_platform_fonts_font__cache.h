@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2022-03-25 21:59:56 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2022-05-19 14:06:27 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.h
-@@ -59,7 +59,7 @@
+@@ -57,7 +57,7 @@
  #include "third_party/skia/include/core/SkFontMgr.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  
@@ -27,7 +27,7 @@
    static bool GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    gfx::FallbackFontData*);
-@@ -388,7 +388,7 @@ class PLATFORM_EXPORT FontCache final {
+@@ -347,7 +347,7 @@ class PLATFORM_EXPORT FontCache final {
                                     const FontFaceCreationParams&,
                                     std::string& name);
  
@@ -36,7 +36,7 @@
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,
-@@ -430,7 +430,7 @@ class PLATFORM_EXPORT FontCache final {
+@@ -389,7 +389,7 @@ class PLATFORM_EXPORT FontCache final {
    std::unique_ptr<FallbackFamilyStyleCache> fallback_params_cache_;
  #endif  // BUILDFLAG(IS_WIN)
  

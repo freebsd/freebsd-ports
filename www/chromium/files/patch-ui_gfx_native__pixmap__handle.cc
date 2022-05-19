@@ -1,4 +1,4 @@
---- ui/gfx/native_pixmap_handle.cc.orig	2022-02-28 16:54:41 UTC
+--- ui/gfx/native_pixmap_handle.cc.orig	2022-05-19 14:06:27 UTC
 +++ ui/gfx/native_pixmap_handle.cc
 @@ -9,7 +9,7 @@
  #include "base/logging.h"
@@ -49,14 +49,14 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      DCHECK(plane.fd.is_valid());
-     base::ScopedFD fd_dup(HANDLE_EINTR(dup(plane.fd.get())));
-     if (!fd_dup.is_valid()) {
-@@ -99,7 +103,7 @@ NativePixmapHandle CloneHandleForIPC(const NativePixma
+     // Combining the HANDLE_EINTR and ScopedFD's constructor causes the compiler
+     // to emit some very strange assembly that tends to cause FD ownership
+@@ -103,7 +107,7 @@ NativePixmapHandle CloneHandleForIPC(const NativePixma
  #endif
    }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    clone.modifier = handle.modifier;
- #endif
- 
+   clone.supports_zero_copy_webgpu_import =
+       handle.supports_zero_copy_webgpu_import;

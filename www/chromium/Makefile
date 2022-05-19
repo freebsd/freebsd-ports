@@ -1,7 +1,7 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 
 PORTNAME=	chromium
-PORTVERSION=	101.0.4951.67
+PORTVERSION=	102.0.5005.61
 CATEGORIES=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:fonts
@@ -321,12 +321,7 @@ do-install:
 
 	# SwiftShader
 .if ${ARCH} != aarch64
-	@${MKDIR} ${STAGEDIR}${DATADIR}/swiftshader
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/libvk_swiftshader.so ${STAGEDIR}${DATADIR}
-.for g in libEGL.so libGLESv2.so
-	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/swiftshader/${g} \
-		${STAGEDIR}${DATADIR}/swiftshader
-.endfor
 .endif
 
 post-install-DEBUG-on:

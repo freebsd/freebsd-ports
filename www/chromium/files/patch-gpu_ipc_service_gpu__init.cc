@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_init.cc.orig	2022-04-21 18:48:31 UTC
+--- gpu/ipc/service/gpu_init.cc.orig	2022-05-19 14:06:27 UTC
 +++ gpu/ipc/service/gpu_init.cc
 @@ -313,7 +313,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    enable_watchdog = false;
@@ -54,7 +54,7 @@
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -860,7 +860,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -857,7 +857,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
  
    InitializePlatformOverlaySettings(&gpu_info_, gpu_feature_info_);
  

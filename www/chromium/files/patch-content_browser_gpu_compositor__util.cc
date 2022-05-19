@@ -1,6 +1,6 @@
---- content/browser/gpu/compositor_util.cc.orig	2022-04-21 18:48:31 UTC
+--- content/browser/gpu/compositor_util.cc.orig	2022-05-19 14:06:27 UTC
 +++ content/browser/gpu/compositor_util.cc
-@@ -147,7 +147,7 @@ const GpuFeatureData GetGpuFeatureData(
+@@ -148,7 +148,7 @@ const GpuFeatureData GetGpuFeatureData(
      {"video_decode",
       SafeGetFeatureStatus(gpu_feature_info,
                            gpu::GPU_FEATURE_TYPE_ACCELERATED_VIDEO_DECODE),
@@ -9,7 +9,7 @@
       !base::FeatureList::IsEnabled(media::kVaapiVideoDecodeLinux),
  #else
       command_line.HasSwitch(switches::kDisableAcceleratedVideoDecode),
-@@ -159,7 +159,7 @@ const GpuFeatureData GetGpuFeatureData(
+@@ -160,7 +160,7 @@ const GpuFeatureData GetGpuFeatureData(
      {"video_encode",
       SafeGetFeatureStatus(gpu_feature_info,
                            gpu::GPU_FEATURE_TYPE_ACCELERATED_VIDEO_ENCODE),

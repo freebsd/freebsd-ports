@@ -1,11 +1,11 @@
---- chrome/browser/performance_monitor/process_metrics_recorder_util.cc.orig	2022-03-25 21:59:56 UTC
+--- chrome/browser/performance_monitor/process_metrics_recorder_util.cc.orig	2022-05-19 14:06:27 UTC
 +++ chrome/browser/performance_monitor/process_metrics_recorder_util.cc
-@@ -39,7 +39,7 @@ void RecordProcessHistograms(const char* histogram_suf
-       metrics.cpu_usage * kCPUUsageFactor, kCPUUsageHistogramMin,
+@@ -43,7 +43,7 @@ void RecordProcessHistograms(const char* histogram_suf
        kCPUUsageHistogramMax, kCPUUsageHistogramBucketCount);
+ #endif
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
 -    BUILDFLAG(IS_AIX)
 +    BUILDFLAG(IS_AIX) || BUILDFLAG(IS_BSD)
    base::UmaHistogramCounts10000(
-       base::JoinString({"PerformanceMonitor.IdleWakeups.", histogram_suffix},
-                        ""),
+       base::StrCat({"PerformanceMonitor.IdleWakeups.", histogram_suffix}),
+       metrics.idle_wakeups);
