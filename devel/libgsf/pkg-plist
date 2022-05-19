@@ -54,7 +54,7 @@ lib/girepository-1.0/Gsf-1.typelib
 lib/libgsf-1.a
 lib/libgsf-1.so
 lib/libgsf-1.so.114
-lib/libgsf-1.so.114.0.47
+lib/libgsf-1.so.114.0.49
 libdata/pkgconfig/libgsf-1.pc
 man/man1/gsf-office-thumbnailer.1.gz
 man/man1/gsf-vba-dump.1.gz
@@ -124,6 +124,7 @@ share/gtk-doc/html/gsf/up.png
 %%NLS%%share/locale/lv/LC_MESSAGES/libgsf.mo
 %%NLS%%share/locale/ml/LC_MESSAGES/libgsf.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/libgsf.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/libgsf.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/libgsf.mo
 %%NLS%%share/locale/oc/LC_MESSAGES/libgsf.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/libgsf.mo

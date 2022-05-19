@@ -1,8 +1,7 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 
 PORTNAME=	libgsf
-PORTVERSION=	1.14.47
-PORTREVISION=	3
+PORTVERSION=	1.14.49
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
