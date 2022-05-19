@@ -1,3 +1,61 @@
+  <vuln vid="b2407db1-d79f-11ec-a15f-589cfc0f81b0">
+    <topic>clamav -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>0.104.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ClamAV project reports:</p>
+	<blockquote cite="https://blog.clamav.net/2022/05/clamav-01050-01043-01036-released.html">
+	  <p>Fixed a possible double-free vulnerability in the OLE2 file
+	    parser. Issue affects versions 0.104.0 through 0.104.2. Issue
+	    identified by OSS-Fuzz.</p>
+	  <p>Fixed a possible infinite loop vulnerability in the CHM file
+	    parser. Issue affects versions 0.104.0 through 0.104.2 and LTS
+	    version 0.103.5 and prior versions. Thank you to Michał Dardas
+	    for reporting this issue.</p>
+	  <p>Fixed a possible NULL-pointer dereference crash in the scan
+	    verdict cache check. Issue affects versions 0.103.4, 0.103.5,
+	    0.104.1, and 0.104.2. Thank you to Alexander Patrakov and
+	    Antoine Gatineau for reporting this issue.</p>
+	  <p>Fixed a possible infinite loop vulnerability in the TIFF file
+	    parser. Issue affects versions 0.104.0 through 0.104.2 and LTS
+	    version 0.103.5 and prior versions. The issue only occurs if the
+	    "--alert-broken-media" ClamScan option is enabled. For ClamD,
+	    the affected option is "AlertBrokenMedia yes", and for libclamav
+	    it is the "CL_SCAN_HEURISTIC_BROKEN_MEDIA" scan option. Thank
+	    you to Michał Dardas for reporting this issue.</p>
+	  <p>Fixed a possible memory leak in the HTML file parser /
+	    Javascript normalizer. Issue affects versions 0.104.0 through
+	    0.104.2 and LTS version 0.103.5 and prior versions. Thank you to
+	    Michał Dardas for reporting this issue.</p>
+	  <p>Fixed a possible multi-byte heap buffer overflow write
+	    vulnerability in the signature database load module. The fix was
+	    to update the vendored regex library to the latest version.
+	    Issue affects versions 0.104.0 through 0.104.2 and LTS version
+	    0.103.5 and prior versions. Thank you to Michał Dardas for
+	    reporting this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-20803</cvename>
+      <cvename>CVE-2022-20770</cvename>
+      <cvename>CVE-2022-20796</cvename>
+      <cvename>CVE-2022-20771</cvename>
+      <cvename>CVE-2022-20785</cvename>
+      <cvename>CVE-2022-20792</cvename>
+      <url>https://blog.clamav.net/2022/05/clamav-01050-01043-01036-released.html#more</url>
+    </references>
+    <dates>
+      <discovery>2022-05-04</discovery>
+      <entry>2022-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a1360138-d446-11ec-8ea1-10c37b4ac2ea">
     <topic>go -- syscall.Faccessat checks wrong group on Linux</topic>
     <affects>
