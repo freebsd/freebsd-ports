@@ -56,6 +56,7 @@ share/man/man8/clamd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/appendix/Terminology.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ayu-highlight.css
 %%PORTDOCS%%%%DOCSDIR%%/html/book.js
+%%PORTDOCS%%%%DOCSDIR%%/html/community_resources/CommunityResources.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clipboard.min.js
 %%PORTDOCS%%%%DOCSDIR%%/html/css/chrome.css
 %%PORTDOCS%%%%DOCSDIR%%/html/css/general.css
@@ -70,6 +71,7 @@ share/man/man8/clamd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-misc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-ml.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-pua.html
+%%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-rust.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-safebrowsing.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-scan-alerts.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-troubleshoot.html
@@ -142,6 +144,7 @@ share/man/man8/clamd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Signatures/HashSignatures.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Signatures/LogicalSignatures.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Signatures/PhishSigs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/manual/Signatures/SignatureNames.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Signatures/YaraRules.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Usage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual/Usage/Configuration.html
