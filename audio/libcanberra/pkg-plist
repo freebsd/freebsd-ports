@@ -1,5 +1,6 @@
 %%GTK2%%bin/canberra-gtk-play
-%%GTK2%%include/canberra-gtk.h
+%%GTK2%%include/canberra-gtk2/canberra-gtk.h
+%%GTK3%%include/canberra-gtk3/canberra-gtk.h
 %%BASE%%include/canberra.h
 %%GTK2%%lib/gnome-settings-daemon-3.0/gtk-modules/canberra-gtk-module.desktop
 %%GTK2%%lib/gtk-2.0/modules/libcanberra-gtk-module.so

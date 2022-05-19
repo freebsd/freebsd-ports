@@ -3,7 +3,7 @@
 
 PORTNAME=	libcanberra
 PORTVERSION=	0.30
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio devel
 MASTER_SITES=	http://0pointer.de/lennart/projects/libcanberra/ \
 		http://pkgs.fedoraproject.org/repo/pkgs/libcanberra/libcanberra-0.30.tar.xz/34cb7e4430afaf6f447c4ebdb9b42072/
@@ -35,13 +35,17 @@ PKGNAMESUFFIX=	-${SLAVEPORT}
 USE_GNOME+=	gtk30
 LIB_DEPENDS+=	libcanberra.so:audio/libcanberra
 CONFIGURE_ARGS+=	--enable-gtk3 \
-			--disable-gtk
+			--disable-gtk \
+			--disable-gstreamer \
+			--disable-pulse
 PLIST_SUB+=	BASE="@comment " GTK3="" GTK2="@comment "
 .elif ${SLAVEPORT:U} == gtk2
 USE_GNOME+=	gnomeprefix gtk20
 LIB_DEPENDS+=	libcanberra.so:audio/libcanberra
 CONFIGURE_ARGS+=	--enable-gtk \
-			--disable-gtk3
+			--disable-gtk3 \
+			--disable-gstreamer \
+			--disable-pulse
 PLIST_SUB+=	BASE="@comment " GTK3="@comment " GTK2=""
 .else
 CONFIGURE_ARGS+=	--disable-gtk \
@@ -60,5 +64,6 @@ GSTREAMER_CONFIGURE_ENABLE=	gstreamer
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
+
 
 .include <bsd.port.mk>
