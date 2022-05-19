@@ -1,6 +1,6 @@
---- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2022-04-21 18:48:31 UTC
+--- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2022-05-19 14:06:27 UTC
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -395,7 +395,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -400,7 +400,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

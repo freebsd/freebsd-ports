@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_alloc_config.h.orig	2022-04-21 18:48:31 UTC
+--- base/allocator/partition_allocator/partition_alloc_config.h.orig	2022-05-19 14:06:27 UTC
 +++ base/allocator/partition_allocator/partition_alloc_config.h
 @@ -66,7 +66,7 @@ static_assert(sizeof(void*) != 8, "");
  
@@ -18,12 +18,12 @@
  #define PA_HAS_ATFORK_HANDLER
  #endif
  
-@@ -212,7 +212,7 @@ constexpr bool kUseLazyCommit = false;
+@@ -225,7 +225,7 @@ constexpr bool kUseLazyCommit = false;
  //
- // This is intended to roll out more broadly, but only enabled on Linux for now
- // to get performance bot and real-world data pre-A/B experiment.
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Also enabled on ARM64 macOS, as the 16kiB pages on this platform lead to
+ // larger slot spans.
+-#if BUILDFLAG(IS_LINUX) || (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
++#if BUILDFLAG(IS_LINUX) || (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64)) || BUILDFLAG(IS_BSD)
  #define PA_PREFER_SMALLER_SLOT_SPANS
  #endif  // BUILDFLAG(IS_LINUX)
  

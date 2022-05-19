@@ -1,6 +1,6 @@
---- third_party/webrtc/system_wrappers/BUILD.gn.orig	2021-04-14 18:43:12 UTC
+--- third_party/webrtc/system_wrappers/BUILD.gn.orig	2022-05-19 14:06:27 UTC
 +++ third_party/webrtc/system_wrappers/BUILD.gn
-@@ -61,8 +61,6 @@ rtc_library("system_wrappers") {
+@@ -64,8 +64,6 @@ rtc_library("system_wrappers") {
      if (!build_with_chromium) {
        sources += [ "source/cpu_features_linux.cc" ]
      }

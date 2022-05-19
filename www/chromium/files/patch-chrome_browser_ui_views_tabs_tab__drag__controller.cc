@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2022-05-11 06:38:23 UTC
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2022-05-19 14:06:27 UTC
 +++ chrome/browser/ui/views/tabs/tab_drag_controller.cc
 @@ -480,7 +480,7 @@ void TabDragController::Init(TabDragContext* source_co
    //     synchronous on desktop Linux, so use that.
@@ -27,7 +27,7 @@
  
        // Keeping maximized state breaks snap to Grid on Windows when dragging
        // tabs from maximized windows. TODO:(crbug.com/727051) Explore doing this
-@@ -2359,7 +2359,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -2358,7 +2358,7 @@ TabDragController::Liveness TabDragController::GetLoca
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

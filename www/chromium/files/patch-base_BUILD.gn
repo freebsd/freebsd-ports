@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2022-04-21 18:48:31 UTC
+--- base/BUILD.gn.orig	2022-05-19 14:06:27 UTC
 +++ base/BUILD.gn
-@@ -1010,7 +1010,7 @@ mixed_component("base") {
+@@ -998,7 +998,7 @@ mixed_component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -9,7 +9,7 @@
        sources += [
          "cpu_affinity_posix.cc",
          "cpu_affinity_posix.h",
-@@ -1021,6 +1021,12 @@ mixed_component("base") {
+@@ -1009,6 +1009,12 @@ mixed_component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -22,7 +22,7 @@
    }
  
    if (is_win) {
-@@ -1492,11 +1498,23 @@ mixed_component("base") {
+@@ -1486,11 +1492,23 @@ mixed_component("base") {
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
    if (!use_sysroot &&
@@ -47,7 +47,7 @@
    if (use_allocator_shim) {
      sources += [
        "allocator/allocator_shim.cc",
-@@ -1520,7 +1538,7 @@ mixed_component("base") {
+@@ -1518,7 +1536,7 @@ mixed_component("base") {
        ]
        configs += [ "//base/allocator:mac_no_default_new_delete_symbols" ]
      }
@@ -56,7 +56,7 @@
        sources += [
          "allocator/allocator_shim_override_cpp_symbols.h",
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
-@@ -1576,7 +1594,7 @@ mixed_component("base") {
+@@ -1574,7 +1592,7 @@ mixed_component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -65,13 +65,13 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2255,6 +2273,42 @@ mixed_component("base") {
+@@ -2147,6 +2165,42 @@ mixed_component("base") {
      }
    }
  
 +  if (is_bsd) {
 +    sources -= [
-+      "files/file_path_watcher_linux.cc",
++      "files/file_path_watcher_inotify.cc",
 +      "files/file_util_linux.cc",
 +      "files/scoped_file_linux.cc",
 +      "process/memory_linux.cc",
@@ -108,7 +108,7 @@
    # iOS
    if (is_ios) {
      sources -= [
-@@ -3537,7 +3591,7 @@ test("base_unittests") {
+@@ -3436,7 +3490,7 @@ test("base_unittests") {
      }
    }
  
@@ -117,7 +117,7 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3585,7 +3639,7 @@ test("base_unittests") {
+@@ -3484,7 +3538,7 @@ test("base_unittests") {
        "posix/unix_domain_socket_unittest.cc",
        "task/thread_pool/task_tracker_posix_unittest.cc",
      ]
@@ -126,7 +126,7 @@
        sources += [
          "cpu_affinity_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3596,7 +3650,7 @@ test("base_unittests") {
+@@ -3495,7 +3549,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -135,7 +135,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3765,7 +3819,7 @@ test("base_unittests") {
+@@ -3657,7 +3711,7 @@ test("base_unittests") {
      }
    }
  

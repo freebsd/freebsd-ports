@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/address_space_randomization.h.orig	2022-02-28 16:54:41 UTC
+--- base/allocator/partition_allocator/address_space_randomization.h.orig	2022-05-19 14:06:27 UTC
 +++ base/allocator/partition_allocator/address_space_randomization.h
 @@ -38,7 +38,7 @@ AslrMask(uintptr_t bits) {
  
@@ -9,3 +9,12 @@
  
      // We shouldn't allocate system pages at all for sanitizer builds. However,
      // we do, and if random hint addresses interfere with address ranges
+@@ -121,7 +121,7 @@ AslrMask(uintptr_t bits) {
+         return AslrAddress(0x20000000ULL);
+       }
+ 
+-      #elif BUILDFLAG(IS_LINUX)
++      #elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ 
+       // Linux on arm64 can use 39, 42, 48, or 52-bit user space, depending on
+       // page size and number of levels of translation pages used. We use

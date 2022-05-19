@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/external_vk_image_backing.cc.orig	2022-04-21 18:48:31 UTC
+--- gpu/command_buffer/service/external_vk_image_backing.cc.orig	2022-05-19 14:06:27 UTC
 +++ gpu/command_buffer/service/external_vk_image_backing.cc
 @@ -30,7 +30,7 @@
  #include "ui/gl/gl_version_info.h"
@@ -9,7 +9,7 @@
  #include "gpu/command_buffer/service/external_vk_image_dawn_representation.h"
  #endif
  
-@@ -558,7 +558,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
+@@ -570,7 +570,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
                                      MemoryTypeTracker* tracker,
                                      WGPUDevice wgpuDevice,
                                      WGPUBackendType backend_type) {

@@ -1,6 +1,6 @@
---- base/threading/platform_thread_posix.cc.orig	2022-02-28 16:54:41 UTC
+--- base/threading/platform_thread_posix.cc.orig	2022-05-19 14:06:27 UTC
 +++ base/threading/platform_thread_posix.cc
-@@ -75,7 +75,7 @@ void* ThreadFunc(void* params) {
+@@ -76,7 +76,7 @@ void* ThreadFunc(void* params) {
      if (!thread_params->joinable)
        base::DisallowSingleton();
  
@@ -9,7 +9,7 @@
  #if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
      internal::PCScan::NotifyThreadCreated(internal::GetStackPointer());
  #endif
-@@ -362,6 +362,9 @@ bool PlatformThread::CanChangeThreadPriority(ThreadPri
+@@ -365,6 +365,9 @@ bool PlatformThread::CanChangeThreadPriority(ThreadPri
  // static
  void PlatformThread::SetCurrentThreadPriorityImpl(ThreadPriority priority) {
  #if BUILDFLAG(IS_NACL)

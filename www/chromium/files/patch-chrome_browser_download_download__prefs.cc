@@ -1,4 +1,4 @@
---- chrome/browser/download/download_prefs.cc.orig	2022-04-21 18:48:31 UTC
+--- chrome/browser/download/download_prefs.cc.orig	2022-05-19 14:06:27 UTC
 +++ chrome/browser/download/download_prefs.cc
 @@ -13,6 +13,7 @@
  #include "base/callback_helpers.h"
@@ -37,7 +37,7 @@
    should_open_pdf_in_system_reader_ =
        prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
  #endif
-@@ -289,7 +294,7 @@ void DownloadPrefs::RegisterProfilePrefs(
+@@ -291,7 +296,7 @@ void DownloadPrefs::RegisterProfilePrefs(
    registry->RegisterTimePref(prefs::kDownloadLastCompleteTime,
                               /*default_value=*/base::Time());
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -46,7 +46,7 @@
    registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
  #endif
  #if BUILDFLAG(IS_ANDROID)
-@@ -432,7 +437,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
+@@ -434,7 +439,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
  
  bool DownloadPrefs::IsAutoOpenByUserUsed() const {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -55,7 +55,7 @@
    if (ShouldOpenPdfInSystemReader())
      return true;
  #endif
-@@ -447,7 +452,7 @@ bool DownloadPrefs::IsAutoOpenEnabled(const GURL& url,
+@@ -449,7 +454,7 @@ bool DownloadPrefs::IsAutoOpenEnabled(const GURL& url,
    DCHECK(extension[0] == base::FilePath::kExtensionSeparator);
    extension.erase(0, 1);
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -64,7 +64,7 @@
    if (base::FilePath::CompareEqualIgnoreCase(extension,
                                               FILE_PATH_LITERAL("pdf")) &&
        ShouldOpenPdfInSystemReader())
-@@ -502,7 +507,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
+@@ -504,7 +509,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -73,7 +73,7 @@
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
    if (should_open_pdf_in_system_reader_ == should_open)
      return;
-@@ -524,7 +529,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
+@@ -526,7 +531,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
  
  void DownloadPrefs::ResetAutoOpenByUser() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -82,7 +82,7 @@
    SetShouldOpenPdfInSystemReader(false);
  #endif
    auto_open_by_user_.clear();
-@@ -664,7 +669,14 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
+@@ -666,7 +671,14 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
  #else
    // If the stored download directory is an absolute path, we presume it's
    // correct; there's not really much more validation we can do here.

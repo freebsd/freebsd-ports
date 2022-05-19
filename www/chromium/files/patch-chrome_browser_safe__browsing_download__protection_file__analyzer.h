@@ -1,6 +1,6 @@
---- chrome/browser/safe_browsing/download_protection/file_analyzer.h.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/safe_browsing/download_protection/file_analyzer.h.orig	2022-05-19 14:06:27 UTC
 +++ chrome/browser/safe_browsing/download_protection/file_analyzer.h
-@@ -16,7 +16,7 @@
+@@ -17,7 +17,7 @@
  #include "components/safe_browsing/core/common/proto/csd.pb.h"
  #include "third_party/protobuf/src/google/protobuf/repeated_field.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/services/file_util/public/cpp/sandboxed_document_analyzer.h"
  #endif
  
-@@ -111,7 +111,7 @@ class FileAnalyzer {
+@@ -112,7 +112,7 @@ class FileAnalyzer {
        const safe_browsing::ArchiveAnalyzerResults& archive_results);
  #endif
  
@@ -18,7 +18,7 @@
    void StartExtractDocumentFeatures();
    void OnDocumentAnalysisFinished(
        const DocumentAnalyzerResults& document_results);
-@@ -131,7 +131,7 @@ class FileAnalyzer {
+@@ -132,7 +132,7 @@ class FileAnalyzer {
    scoped_refptr<SandboxedDMGAnalyzer> dmg_analyzer_;
  #endif
  

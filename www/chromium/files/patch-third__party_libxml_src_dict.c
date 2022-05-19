@@ -1,6 +1,6 @@
---- third_party/libxml/src/dict.c.orig	2022-03-25 21:59:56 UTC
+--- third_party/libxml/src/dict.c.orig	2022-05-19 14:06:27 UTC
 +++ third_party/libxml/src/dict.c
-@@ -135,7 +135,7 @@ static xmlRMutexPtr xmlDictMutex = NULL;
+@@ -135,7 +135,7 @@ static xmlMutexPtr xmlDictMutex = NULL;
  static int xmlDictInitialized = 0;
  
  #ifdef DICT_RANDOMIZATION
@@ -9,23 +9,23 @@
  /*
   * Internal data for random function, protected by xmlDictMutex
   */
-@@ -176,7 +176,7 @@ int __xmlInitializeDict(void) {
+@@ -178,7 +178,7 @@ int __xmlInitializeDict(void) {
          return(0);
-     xmlRMutexLock(xmlDictMutex);
+     xmlMutexLock(xmlDictMutex);
  
 -#ifdef DICT_RANDOMIZATION
 +#if defined(DICT_RANDOMIZATION) && !defined(HAVE_ARC4RANDOM)
  #ifdef HAVE_RAND_R
      rand_seed = time(NULL);
      rand_r(& rand_seed);
-@@ -196,13 +196,17 @@ int __xmlRandom(void) {
+@@ -198,13 +198,17 @@ int __xmlRandom(void) {
      if (xmlDictInitialized == 0)
          __xmlInitializeDict();
  
 +#ifdef HAVE_ARC4RANDOM
 +    ret = arc4random();
 +#else
-     xmlRMutexLock(xmlDictMutex);
+     xmlMutexLock(xmlDictMutex);
 -#ifdef HAVE_RAND_R
 +#  ifdef HAVE_RAND_R
      ret = rand_r(& rand_seed);
@@ -34,7 +34,7 @@
      ret = rand();
 -#endif
 +#  endif
-     xmlRMutexUnlock(xmlDictMutex);
+     xmlMutexUnlock(xmlDictMutex);
 +#endif
      return(ret);
  }

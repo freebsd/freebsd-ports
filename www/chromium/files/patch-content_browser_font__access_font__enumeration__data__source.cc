@@ -1,4 +1,4 @@
---- content/browser/font_access/font_enumeration_data_source.cc.orig	2022-03-25 21:59:56 UTC
+--- content/browser/font_access/font_enumeration_data_source.cc.orig	2022-05-19 14:06:27 UTC
 +++ content/browser/font_access/font_enumeration_data_source.cc
 @@ -16,7 +16,7 @@
  #include "content/browser/font_access/font_enumeration_data_source_win.h"
@@ -18,7 +18,7 @@
    return std::make_unique<FontEnumerationDataSourceLinux>();
  #else
    return std::make_unique<FontEnumerationDataSourceNull>();
-@@ -76,7 +76,7 @@ bool FontEnumerationDataSource::IsOsSupportedForTestin
+@@ -76,7 +76,7 @@ bool FontEnumerationDataSource::IsOsSupported() {
    return true;
  #elif BUILDFLAG(IS_MAC)
    return true;
