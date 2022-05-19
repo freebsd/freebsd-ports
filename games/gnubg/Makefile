@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	sqlite3:databases/sqlite3
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
-		libcanberra-gtk.so:audio/libcanberra-gtk \
+		libcanberra-gtk.so:audio/libcanberra-gtk2 \
 		libgmp.so:math/gmp \
 		libcurl.so:ftp/curl \
 		libfontconfig.so:x11-fonts/fontconfig \
