@@ -16,6 +16,8 @@ bin/chrome
 %%DATADIR%%/locales/ar.pak.info
 %%DEBUG%%%%DATADIR%%/locales/ar-XB.pak
 %%DEBUG%%%%DATADIR%%/locales/ar-XB.pak.info
+%%DATADIR%%/locales/af.pak
+%%DATADIR%%/locales/af.pak.info
 %%DATADIR%%/locales/bg.pak
 %%DATADIR%%/locales/bg.pak.info
 %%DATADIR%%/locales/bn.pak
@@ -114,6 +116,8 @@ bin/chrome
 %%DATADIR%%/locales/tr.pak.info
 %%DATADIR%%/locales/uk.pak
 %%DATADIR%%/locales/uk.pak.info
+%%DATADIR%%/locales/ur.pak
+%%DATADIR%%/locales/ur.pak.info
 %%DATADIR%%/locales/vi.pak
 %%DATADIR%%/locales/vi.pak.info
 %%DATADIR%%/locales/zh-CN.pak
@@ -128,8 +132,6 @@ bin/chrome
 %%DATADIR%%/resources/inspector_overlay/main.js
 %%DATADIR%%/snapshot_blob.bin
 %%NOT_AARCH64%%%%DATADIR%%/libvk_swiftshader.so
-%%NOT_AARCH64%%%%DATADIR%%/swiftshader/libEGL.so
-%%NOT_AARCH64%%%%DATADIR%%/swiftshader/libGLESv2.so
 %%DATADIR%%/v8_context_snapshot.bin
 %%DEBUG%%%%DATADIR%%/character_data_generator
 %%DEBUG%%%%DATADIR%%/libVkLayer_khronos_validation.so

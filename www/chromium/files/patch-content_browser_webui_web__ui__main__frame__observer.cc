@@ -1,8 +1,8 @@
---- content/browser/webui/web_ui_main_frame_observer.cc.orig	2022-02-28 16:54:41 UTC
+--- content/browser/webui/web_ui_main_frame_observer.cc.orig	2022-05-19 14:06:27 UTC
 +++ content/browser/webui/web_ui_main_frame_observer.cc
-@@ -12,7 +12,7 @@
- #include "content/browser/webui/web_ui_impl.h"
+@@ -13,7 +13,7 @@
  #include "content/public/browser/navigation_handle.h"
+ #include "content/public/browser/web_ui_controller.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

@@ -1,4 +1,4 @@
---- content/gpu/gpu_sandbox_hook_linux.cc.orig	2022-03-25 21:59:56 UTC
+--- content/gpu/gpu_sandbox_hook_linux.cc.orig	2022-05-19 14:06:27 UTC
 +++ content/gpu/gpu_sandbox_hook_linux.cc
 @@ -104,6 +104,7 @@ static const char kLibV4lEncPluginPath[] =
  
@@ -27,7 +27,7 @@
  }
  
  bool LoadAmdGpuLibraries() {
-@@ -526,12 +530,14 @@ void LoadV4L2Libraries(
+@@ -528,12 +532,14 @@ void LoadV4L2Libraries(
  }
  
  void LoadChromecastV4L2Libraries() {
@@ -42,7 +42,7 @@
  }
  
  bool LoadLibrariesForGpu(
-@@ -558,6 +564,7 @@ bool LoadLibrariesForGpu(
+@@ -560,6 +566,7 @@ bool LoadLibrariesForGpu(
    return true;
  }
  
@@ -50,7 +50,7 @@
  sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
      const sandbox::policy::SandboxLinux::Options& options) {
    sandbox::syscall_broker::BrokerCommandSet command_set;
-@@ -580,13 +587,17 @@ bool BrokerProcessPreSandboxHook(
+@@ -582,13 +589,17 @@ bool BrokerProcessPreSandboxHook(
    SetProcessTitleFromCommandLine(nullptr);
    return true;
  }

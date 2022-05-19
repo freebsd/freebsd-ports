@@ -1,6 +1,6 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2022-04-21 18:48:31 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2022-05-19 14:06:27 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
-@@ -50,7 +50,7 @@
+@@ -51,7 +51,7 @@
  #include "net/base/network_change_notifier.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -130,7 +130,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
+@@ -131,7 +131,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
  }
  
  int ShellBrowserMainParts::PreEarlyInitialization() {

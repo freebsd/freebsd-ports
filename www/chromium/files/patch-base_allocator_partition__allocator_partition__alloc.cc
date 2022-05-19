@@ -1,15 +1,17 @@
---- base/allocator/partition_allocator/partition_alloc.cc.orig	2021-12-31 00:57:18 UTC
+--- base/allocator/partition_allocator/partition_alloc.cc.orig	2022-05-19 14:06:27 UTC
 +++ base/allocator/partition_allocator/partition_alloc.cc
-@@ -56,7 +56,12 @@ void PartitionAllocGlobalInit(OomFunction on_out_of_me
+@@ -63,8 +63,14 @@ void PartitionAllocGlobalInit(OomFunction on_out_of_me
        "maximum direct mapped allocation");
  
    // Check that some of our zanier calculations worked out as expected.
 +#if defined(__i386__) && defined(OS_FREEBSD)
 +  // alignof(std::max_align_t) is only 4 on FreeBSD/i386
-+  static_assert(kSmallestBucket >= kAlignment, "generic smallest bucket");
++  static_assert(internal::kSmallestBucket >= internal::kAlignment,
++                "generic smallest bucket");
 +#else
-   static_assert(kSmallestBucket == kAlignment, "generic smallest bucket");
+   static_assert(internal::kSmallestBucket == internal::kAlignment,
+                 "generic smallest bucket");
 +#endif
-   static_assert(kMaxBucketed == 917504, "generic max bucketed");
+   static_assert(internal::kMaxBucketed == 917504, "generic max bucketed");
    STATIC_ASSERT_OR_PA_CHECK(
-       MaxSystemPagesPerRegularSlotSpan() <= 16,
+       internal::MaxSystemPagesPerRegularSlotSpan() <= 16,

@@ -1,6 +1,6 @@
---- ui/base/x/x11_cursor_loader.cc.orig	2022-04-21 18:48:31 UTC
+--- ui/base/x/x11_cursor_loader.cc.orig	2022-05-19 14:06:27 UTC
 +++ ui/base/x/x11_cursor_loader.cc
-@@ -137,7 +137,11 @@ std::string CursorPathFromLibXcursor() {
+@@ -136,7 +136,11 @@ std::string CursorPathFromLibXcursor() {
      void operator()(void* ptr) const { dlclose(ptr); }
    };
  

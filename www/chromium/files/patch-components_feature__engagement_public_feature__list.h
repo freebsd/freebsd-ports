@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.h.orig	2022-04-21 18:48:31 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2022-05-19 14:06:27 UTC
 +++ components/feature_engagement/public/feature_list.h
-@@ -223,7 +223,7 @@ DEFINE_VARIATION_PARAM(kIPHDefaultSiteViewFeature, "IP
+@@ -224,7 +224,7 @@ DEFINE_VARIATION_PARAM(kIPHPasswordSuggestionsFeature,
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  DEFINE_VARIATION_PARAM(kIPHDesktopTabGroupsNewGroupFeature,
                         "IPH_DesktopTabGroupsNewGroup");
  DEFINE_VARIATION_PARAM(kIPHFocusModeFeature, "IPH_FocusMode");
-@@ -253,7 +253,8 @@ DEFINE_VARIATION_PARAM(kIPHDesktopSharedHighlightingFe
+@@ -255,7 +255,8 @@ DEFINE_VARIATION_PARAM(kIPHIntentChipFeature, "IPH_Int
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -19,16 +19,16 @@
  DEFINE_VARIATION_PARAM(kIPHAutofillVirtualCardSuggestionFeature,
                         "IPH_AutofillVirtualCardSuggestion");
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||
-@@ -358,7 +359,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
-         VARIATION_ENTRY(kIPHDiscoverFeedHeaderFeature),
+@@ -360,7 +361,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHDefaultSiteViewFeature),
+         VARIATION_ENTRY(kIPHPasswordSuggestionsFeature),
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
          VARIATION_ENTRY(kIPHDesktopTabGroupsNewGroupFeature),
          VARIATION_ENTRY(kIPHFocusModeFeature),
          VARIATION_ENTRY(kIPHGlobalMediaControls),
-@@ -381,7 +382,8 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -384,7 +385,8 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

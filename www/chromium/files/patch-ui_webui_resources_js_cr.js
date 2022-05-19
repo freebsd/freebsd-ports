@@ -1,6 +1,6 @@
---- ui/webui/resources/js/cr.js.orig	2022-02-07 13:39:41 UTC
+--- ui/webui/resources/js/cr.js.orig	2022-05-19 14:06:27 UTC
 +++ ui/webui/resources/js/cr.js
-@@ -441,6 +441,11 @@ var cr = cr || function(global) {
+@@ -438,6 +438,11 @@ var cr = cr || function(global) {
        return returnValue;
      },
  
