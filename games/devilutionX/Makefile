@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/diasurgical/devilutionx-assets/releases/downloa
 DISTFILES=	devilutionx.mpq?tag=${DATA_VERSION}:data
 EXTRACT_ONLY=	${DISTFILES:N*\:data:C/:.*//}
 
-MAINTAINER=	eduardo@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Diablo I engine for modern operating systems
 
 LICENSE=	UNLICENSE CC-BY-NC-SA-4.0 OFL11
