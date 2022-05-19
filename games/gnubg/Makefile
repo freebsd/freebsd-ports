@@ -2,7 +2,7 @@
 
 PORTNAME=	gnubg
 PORTVERSION=	1.06.002
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	GNU
 DISTFILES=	gnubg-release-${PORTVERSION}-sources.tar.gz
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	sqlite3:databases/sqlite3
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
-		libcanberra-gtk.so:audio/libcanberra \
+		libcanberra-gtk.so:audio/libcanberra-gtk \
 		libgmp.so:math/gmp \
 		libcurl.so:ftp/curl \
 		libfontconfig.so:x11-fonts/fontconfig \
