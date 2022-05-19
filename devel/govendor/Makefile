@@ -10,6 +10,9 @@ COMMENT=	Go vendor tool that works with the standard vendor file
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Use Go modules
+EXPIRATION_DATE=	2022-06-30
+
 BROKEN_aarch64=	fails to compile, needs vendor/golang.org/x/sys 33540a1f6037 or later
 
 USES=		go
