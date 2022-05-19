@@ -1,6 +1,6 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
-DISTVERSION=	390.147
+DISTVERSION=	390.151
 # Explicitly set PORTREVISION as it can be overridden by the master port
 PORTREVISION=	0
 
