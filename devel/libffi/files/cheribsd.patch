@@ -1,0 +1,2727 @@
+From 6703ff27c90e860ad421519c713f01a270f7922b Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Tue, 16 Mar 2021 02:47:30 +0000
+Subject: [PATCH 01/34] Use builtins for FFI_ALIGN/FFI_ALIGN_DOWN
+
+Fixes lots of CHERI compiler errors.
+---
+ include/ffi_common.h | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/include/ffi_common.h b/include/ffi_common.h
+index 2bd31b0..0dcf51f 100644
+--- include/ffi_common.h
+--- include/ffi_common.h
+@@ -95,10 +95,19 @@ void ffi_type_test(ffi_type *a, char *file, int line);
+ #define FFI_ASSERT_VALID_TYPE(x)
+ #endif
+ 
++
+ /* v cast to size_t and aligned up to a multiple of a */
++#if __has_builtin(__builtin_align_up)
++#define FFI_ALIGN(v, a)  __builtin_align_up(v, a)
++#else
+ #define FFI_ALIGN(v, a)  (((((size_t) (v))-1) | ((a)-1))+1)
++#endif
+ /* v cast to size_t and aligned down to a multiple of a */
++#if __has_builtin(__builtin_align_down)
++#define FFI_ALIGN_DOWN(v, a)  __builtin_align_down(v, a)
++#else
+ #define FFI_ALIGN_DOWN(v, a) (((size_t) (v)) & -a)
++#endif
+ 
+ /* Perform machine dependent cif processing */
+ ffi_status ffi_prep_cif_machdep(ffi_cif *cif);
+-- 
+2.34.1
+
+
+From 57277e606759874338b72cea3dd5429644833860 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Tue, 16 Mar 2021 02:47:49 +0000
+Subject: [PATCH 02/34] RISC-V: alloc_base should be a pointer
+
+Fixes CHERI compilation
+---
+ src/riscv/ffi.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/riscv/ffi.c b/src/riscv/ffi.c
+index c910858..c365c29 100644
+--- src/riscv/ffi.c
+--- src/riscv/ffi.c
+@@ -343,12 +343,12 @@ ffi_call_int (ffi_cif *cif, void (*fn) (void), void *rvalue, void **avalue,
+     /* the assembly code will deallocate all stack data at lower addresses
+        than the argument region, so we need to allocate the frame and the
+        return value after the arguments in a single allocation */
+-    size_t alloc_base;
++    char* alloc_base;
+     /* Argument region must be 16-byte aligned */
+     if (_Alignof(max_align_t) >= STKALIGN) {
+         /* since sizeof long double is normally 16, the compiler will
+            guarantee alloca alignment to at least that much */
+-        alloc_base = (size_t)alloca(alloc_size);
++        alloc_base = alloca(alloc_size);
+     } else {
+         alloc_base = FFI_ALIGN(alloca(alloc_size + STKALIGN - 1), STKALIGN);
+     }
+-- 
+2.34.1
+
+
+From 7d296440c5cb8eedcdc25170c1b02fcc4f8088a5 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Tue, 16 Mar 2021 02:48:28 +0000
+Subject: [PATCH 03/34] dlmalloc: Fix compilation as purecap (untested)
+
+Probably needs a few more changes.
+---
+ src/dlmalloc.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/src/dlmalloc.c b/src/dlmalloc.c
+index 1aba657..d49b980 100644
+--- src/dlmalloc.c
+--- src/dlmalloc.c
+@@ -1273,7 +1273,9 @@ extern void*     sbrk(ptrdiff_t);
+ #define CHUNK_ALIGN_MASK    (MALLOC_ALIGNMENT - SIZE_T_ONE)
+ 
+ /* True if address a has acceptable alignment */
++#ifndef is_aligned
+ #define is_aligned(A)       (((size_t)((A)) & (CHUNK_ALIGN_MASK)) == 0)
++#endif
+ 
+ /* the number of bytes to offset an address to align it */
+ #define align_offset(A)\
+@@ -3942,10 +3944,7 @@ static void* internal_memalign(mstate m, size_t alignment, size_t bytes) {
+           We've allocated enough total room so that this is always
+           possible.
+         */
+-        char* br = (char*)mem2chunk((size_t)(((size_t)(mem +
+-                                                       alignment -
+-                                                       SIZE_T_ONE)) &
+-                                             -alignment));
++        char* br = (char*)mem2chunk(roundup2(mem, alignment));
+         char* pos = ((size_t)(br - (char*)(p)) >= MIN_CHUNK_SIZE)?
+           br : br+alignment;
+         mchunkptr newp = (mchunkptr)pos;
+-- 
+2.34.1
+
+
+From 756636cb0fec30f3d2ded1c642c80eba3427e2bb Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Tue, 16 Mar 2021 02:49:04 +0000
+Subject: [PATCH 04/34] RISC-V: Untested purecap port of the sysv.S assembly
+ code
+
+---
+ src/riscv/sysv.S | 230 +++++++++++++++++++++++++++--------------------
+ 1 file changed, 134 insertions(+), 96 deletions(-)
+
+diff --git a/src/riscv/sysv.S b/src/riscv/sysv.S
+index 522d0b0..2478e47 100644
+--- src/riscv/sysv.S
+--- src/riscv/sysv.S
+@@ -32,7 +32,22 @@
+ 
+ /* Define aliases so that we can handle all ABIs uniformly */
+ 
+-#if __SIZEOF_POINTER__ == 8
++#ifdef __CHERI_PURE_CAPABILITY__
++#define PTRREG(reg) c##reg
++/* Could also use .macro to make it look more like an assembly instruction */
++#define PTRADDI(dst, src, inc) cincoffset PTRREG(dst), PTRREG(src), inc
++#define PTRMOVE(dst, src) cmove PTRREG(dst), PTRREG(src)
++#else
++#define PTRREG(reg) reg
++#define PTRADDI(dst, src, inc) addi dst, src, inc
++#define PTRMOVE(dst, src) mv dst, src
++#endif
++
++#ifdef __CHERI_PURE_CAPABILITY__
++#define PTRS __SIZEOF_POINTER__
++#define LARG clc
++#define SARG csc
++#elif __SIZEOF_POINTER__ == 8
+ #define PTRS 8
+ #define LARG ld
+ #define SARG sd
+@@ -42,10 +57,18 @@
+ #define SARG sw
+ #endif
+ 
++#define LOAD_ARG(dst, imm, base) LARG PTRREG(dst), imm(PTRREG(base))
++#define STORE_ARG(value, imm, base) SARG PTRREG(value), imm(PTRREG(base))
++
+ #if __riscv_float_abi_double
+ #define FLTS 8
++#ifdef __CHERI_PURE_CAPABILITY__
++#define FLARG cfld
++#define FSARG cfsd
++#else
+ #define FLARG fld
+ #define FSARG fsd
++#endif
+ #elif __riscv_float_abi_single
+ #define FLTS 4
+ #define FLARG flw
+@@ -54,6 +77,11 @@
+ #define FLTS 0
+ #endif
+ 
++#if FLTS
++#define LOAD_FLOAT(dst, imm, base) FLARG dst, imm(PTRREG(base))
++#define STORE_FLOAT(value, imm, base) FSARG value, imm(PTRREG(base))
++#endif
++
+ #define fp s0
+ 
+     .text
+@@ -87,57 +115,57 @@ ffi_call_asm:
+     */
+ 
+     .cfi_def_cfa 11, FRAME_LEN # interim CFA based on a1
+-    SARG    fp, FRAME_LEN - 2*PTRS(a1)
++    STORE_ARG(fp, FRAME_LEN - 2*PTRS, a1)
+     .cfi_offset 8, -2*PTRS
+-    SARG    ra, FRAME_LEN - 1*PTRS(a1)
++    STORE_ARG(ra, FRAME_LEN - 1*PTRS, a1)
+     .cfi_offset 1, -1*PTRS
+ 
+-    addi    fp, a1, FRAME_LEN
+-    mv      sp, a0
++    PTRADDI(fp, a1, FRAME_LEN)
++    PTRMOVE(sp, a0)
+     .cfi_def_cfa 8, 0 # our frame is fully set up
+ 
+     # Load arguments
+-    mv      t1, a2
+-    mv      t2, a3
++    PTRMOVE(t1, a2)
++    PTRMOVE(t2, a3)
+ 
+ #if FLTS
+-    FLARG   fa0, -FRAME_LEN+0*FLTS(fp)
+-    FLARG   fa1, -FRAME_LEN+1*FLTS(fp)
+-    FLARG   fa2, -FRAME_LEN+2*FLTS(fp)
+-    FLARG   fa3, -FRAME_LEN+3*FLTS(fp)
+-    FLARG   fa4, -FRAME_LEN+4*FLTS(fp)
+-    FLARG   fa5, -FRAME_LEN+5*FLTS(fp)
+-    FLARG   fa6, -FRAME_LEN+6*FLTS(fp)
+-    FLARG   fa7, -FRAME_LEN+7*FLTS(fp)
++    LOAD_FLOAT(fa0, -FRAME_LEN+0*FLTS, fp)
++    LOAD_FLOAT(fa1, -FRAME_LEN+1*FLTS, fp)
++    LOAD_FLOAT(fa2, -FRAME_LEN+2*FLTS, fp)
++    LOAD_FLOAT(fa3, -FRAME_LEN+3*FLTS, fp)
++    LOAD_FLOAT(fa4, -FRAME_LEN+4*FLTS, fp)
++    LOAD_FLOAT(fa5, -FRAME_LEN+5*FLTS, fp)
++    LOAD_FLOAT(fa6, -FRAME_LEN+6*FLTS, fp)
++    LOAD_FLOAT(fa7, -FRAME_LEN+7*FLTS, fp)
+ #endif
+ 
+-    LARG    a0, -FRAME_LEN+8*FLTS+0*PTRS(fp)
+-    LARG    a1, -FRAME_LEN+8*FLTS+1*PTRS(fp)
+-    LARG    a2, -FRAME_LEN+8*FLTS+2*PTRS(fp)
+-    LARG    a3, -FRAME_LEN+8*FLTS+3*PTRS(fp)
+-    LARG    a4, -FRAME_LEN+8*FLTS+4*PTRS(fp)
+-    LARG    a5, -FRAME_LEN+8*FLTS+5*PTRS(fp)
+-    LARG    a6, -FRAME_LEN+8*FLTS+6*PTRS(fp)
+-    LARG    a7, -FRAME_LEN+8*FLTS+7*PTRS(fp)
++    LOAD_ARG(a0, -FRAME_LEN+8*FLTS+0*PTRS, fp)
++    LOAD_ARG(a1, -FRAME_LEN+8*FLTS+1*PTRS, fp)
++    LOAD_ARG(a2, -FRAME_LEN+8*FLTS+2*PTRS, fp)
++    LOAD_ARG(a3, -FRAME_LEN+8*FLTS+3*PTRS, fp)
++    LOAD_ARG(a4, -FRAME_LEN+8*FLTS+4*PTRS, fp)
++    LOAD_ARG(a5, -FRAME_LEN+8*FLTS+5*PTRS, fp)
++    LOAD_ARG(a6, -FRAME_LEN+8*FLTS+6*PTRS, fp)
++    LOAD_ARG(a7, -FRAME_LEN+8*FLTS+7*PTRS, fp)
+ 
+     /* Call */
+     jalr    t1
+ 
+     /* Save return values - only a0/a1 (fa0/fa1) are used */
+ #if FLTS
+-    FSARG   fa0, -FRAME_LEN+0*FLTS(fp)
+-    FSARG   fa1, -FRAME_LEN+1*FLTS(fp)
++    STORE_FLOAT(fa0, -FRAME_LEN+0*FLTS, fp)
++    STORE_FLOAT(fa1, -FRAME_LEN+1*FLTS, fp)
+ #endif
+ 
+-    SARG    a0, -FRAME_LEN+8*FLTS+0*PTRS(fp)
+-    SARG    a1, -FRAME_LEN+8*FLTS+1*PTRS(fp)
++    STORE_ARG(a0, -FRAME_LEN+8*FLTS+0*PTRS, fp)
++    STORE_ARG(a1, -FRAME_LEN+8*FLTS+1*PTRS, fp)
+ 
+     /* Restore and return */
+-    addi    sp, fp, -FRAME_LEN
++    PTRADDI(sp, fp, -FRAME_LEN)
+     .cfi_def_cfa 2, FRAME_LEN
+-    LARG    ra, -1*PTRS(fp)
++    LOAD_ARG(ra, -1*PTRS, fp)
+     .cfi_restore 1
+-    LARG    fp, -2*PTRS(fp)
++    LOAD_ARG(fp, -2*PTRS, fp)
+     .cfi_restore 8
+     ret
+     .cfi_endproc
+@@ -158,61 +186,66 @@ ffi_call_asm:
+ ffi_closure_asm:
+     .cfi_startproc
+ 
+-    addi    sp,  sp, -FRAME_LEN
++    PTRADDI(sp,  sp, -FRAME_LEN)
+     .cfi_def_cfa_offset FRAME_LEN
+ 
+     /* make a frame */
+-    SARG    fp, FRAME_LEN - 2*PTRS(sp)
++    STORE_ARG(fp, FRAME_LEN - 2*PTRS, sp)
+     .cfi_offset 8, -2*PTRS
+-    SARG    ra, FRAME_LEN - 1*PTRS(sp)
++    STORE_ARG(ra, FRAME_LEN - 1*PTRS, sp)
+     .cfi_offset 1, -1*PTRS
+-    addi    fp, sp, FRAME_LEN
++    PTRADDI(fp, sp, FRAME_LEN)
+ 
+     /* save arguments */
+ #if FLTS
+-    FSARG   fa0, 0*FLTS(sp)
+-    FSARG   fa1, 1*FLTS(sp)
+-    FSARG   fa2, 2*FLTS(sp)
+-    FSARG   fa3, 3*FLTS(sp)
+-    FSARG   fa4, 4*FLTS(sp)
+-    FSARG   fa5, 5*FLTS(sp)
+-    FSARG   fa6, 6*FLTS(sp)
+-    FSARG   fa7, 7*FLTS(sp)
++    STORE_FLOAT(fa0, 0*FLTS, sp)
++    STORE_FLOAT(fa1, 1*FLTS, sp)
++    STORE_FLOAT(fa2, 2*FLTS, sp)
++    STORE_FLOAT(fa3, 3*FLTS, sp)
++    STORE_FLOAT(fa4, 4*FLTS, sp)
++    STORE_FLOAT(fa5, 5*FLTS, sp)
++    STORE_FLOAT(fa6, 6*FLTS, sp)
++    STORE_FLOAT(fa7, 7*FLTS, sp)
+ #endif
+ 
+-    SARG    a0, 8*FLTS+0*PTRS(sp)
+-    SARG    a1, 8*FLTS+1*PTRS(sp)
+-    SARG    a2, 8*FLTS+2*PTRS(sp)
+-    SARG    a3, 8*FLTS+3*PTRS(sp)
+-    SARG    a4, 8*FLTS+4*PTRS(sp)
+-    SARG    a5, 8*FLTS+5*PTRS(sp)
+-    SARG    a6, 8*FLTS+6*PTRS(sp)
+-    SARG    a7, 8*FLTS+7*PTRS(sp)
++    STORE_ARG(a0, 8*FLTS+0*PTRS, sp)
++    STORE_ARG(a1, 8*FLTS+1*PTRS, sp)
++    STORE_ARG(a2, 8*FLTS+2*PTRS, sp)
++    STORE_ARG(a3, 8*FLTS+3*PTRS, sp)
++    STORE_ARG(a4, 8*FLTS+4*PTRS, sp)
++    STORE_ARG(a5, 8*FLTS+5*PTRS, sp)
++    STORE_ARG(a6, 8*FLTS+6*PTRS, sp)
++    STORE_ARG(a7, 8*FLTS+7*PTRS, sp)
+ 
+     /* enter C */
+-    LARG    a0, FFI_TRAMPOLINE_SIZE+0*PTRS(t1)
+-    LARG    a1, FFI_TRAMPOLINE_SIZE+1*PTRS(t1)
+-    LARG    a2, FFI_TRAMPOLINE_SIZE+2*PTRS(t1)
+-    addi    a3, sp, FRAME_LEN
+-    mv      a4, sp
+-
++    LOAD_ARG(a0, FFI_TRAMPOLINE_SIZE+0*PTRS, t1)
++    LOAD_ARG(a1, FFI_TRAMPOLINE_SIZE+1*PTRS, t1)
++    LOAD_ARG(a2, FFI_TRAMPOLINE_SIZE+2*PTRS, t1)
++    PTRADDI(a3, sp, FRAME_LEN)
++    PTRMOVE(a4, sp)
++
++#ifdef __CHERI_PURE_CAPABILITY__
++    cllc    cra, ffi_closure_inner
++    cjalr   cra
++#else
+     call    ffi_closure_inner
++#endif
+ 
+     /* return values */
+ #if FLTS
+-    FLARG   fa0, 0*FLTS(sp)
+-    FLARG   fa1, 1*FLTS(sp)
++    LOAD_FLOAT(fa0, 0*FLTS, sp)
++    LOAD_FLOAT(fa1, 1*FLTS, sp)
+ #endif
+ 
+-    LARG    a0, 8*FLTS+0*PTRS(sp)
+-    LARG    a1, 8*FLTS+1*PTRS(sp)
++    LOAD_ARG(a0, 8*FLTS+0*PTRS, sp)
++    LOAD_ARG(a1, 8*FLTS+1*PTRS, sp)
+ 
+     /* restore and return */
+-    LARG    ra, FRAME_LEN-1*PTRS(sp)
++    LOAD_ARG(ra, FRAME_LEN-1*PTRS, sp)
+     .cfi_restore 1
+-    LARG    fp, FRAME_LEN-2*PTRS(sp)
++    LOAD_ARG(fp, FRAME_LEN-2*PTRS, sp)
+     .cfi_restore 8
+-    addi    sp, sp, FRAME_LEN
++    PTRADDI(sp, sp, FRAME_LEN)
+     .cfi_def_cfa_offset 0
+     ret
+     .cfi_endproc
+@@ -232,61 +265,66 @@ ffi_closure_asm:
+ ffi_go_closure_asm:
+     .cfi_startproc
+ 
+-    addi    sp,  sp, -FRAME_LEN
++    PTRADDI(sp,  sp, -FRAME_LEN)
+     .cfi_def_cfa_offset FRAME_LEN
+ 
+     /* make a frame */
+-    SARG    fp, FRAME_LEN - 2*PTRS(sp)
++    STORE_ARG(fp, FRAME_LEN - 2*PTRS, sp)
+     .cfi_offset 8, -2*PTRS
+-    SARG    ra, FRAME_LEN - 1*PTRS(sp)
++    STORE_ARG(ra, FRAME_LEN - 1*PTRS, sp)
+     .cfi_offset 1, -1*PTRS
+-    addi    fp, sp, FRAME_LEN
++    PTRADDI(fp, sp, FRAME_LEN)
+ 
+     /* save arguments */
+ #if FLTS
+-    FSARG   fa0, 0*FLTS(sp)
+-    FSARG   fa1, 1*FLTS(sp)
+-    FSARG   fa2, 2*FLTS(sp)
+-    FSARG   fa3, 3*FLTS(sp)
+-    FSARG   fa4, 4*FLTS(sp)
+-    FSARG   fa5, 5*FLTS(sp)
+-    FSARG   fa6, 6*FLTS(sp)
+-    FSARG   fa7, 7*FLTS(sp)
++    STORE_FLOAT(fa0, 0*FLTS, sp)
++    STORE_FLOAT(fa1, 1*FLTS, sp)
++    STORE_FLOAT(fa2, 2*FLTS, sp)
++    STORE_FLOAT(fa3, 3*FLTS, sp)
++    STORE_FLOAT(fa4, 4*FLTS, sp)
++    STORE_FLOAT(fa5, 5*FLTS, sp)
++    STORE_FLOAT(fa6, 6*FLTS, sp)
++    STORE_FLOAT(fa7, 7*FLTS, sp)
+ #endif
+ 
+-    SARG    a0, 8*FLTS+0*PTRS(sp)
+-    SARG    a1, 8*FLTS+1*PTRS(sp)
+-    SARG    a2, 8*FLTS+2*PTRS(sp)
+-    SARG    a3, 8*FLTS+3*PTRS(sp)
+-    SARG    a4, 8*FLTS+4*PTRS(sp)
+-    SARG    a5, 8*FLTS+5*PTRS(sp)
+-    SARG    a6, 8*FLTS+6*PTRS(sp)
+-    SARG    a7, 8*FLTS+7*PTRS(sp)
++    STORE_ARG(a0, 8*FLTS+0*PTRS, sp)
++    STORE_ARG(a1, 8*FLTS+1*PTRS, sp)
++    STORE_ARG(a2, 8*FLTS+2*PTRS, sp)
++    STORE_ARG(a3, 8*FLTS+3*PTRS, sp)
++    STORE_ARG(a4, 8*FLTS+4*PTRS, sp)
++    STORE_ARG(a5, 8*FLTS+5*PTRS, sp)
++    STORE_ARG(a6, 8*FLTS+6*PTRS, sp)
++    STORE_ARG(a7, 8*FLTS+7*PTRS, sp)
+ 
+     /* enter C */
+-    LARG    a0, 1*PTRS(t2)
+-    LARG    a1, 2*PTRS(t2)
+-    mv      a2, t2
+-    addi    a3, sp, FRAME_LEN
+-    mv      a4, sp
+-
++    LOAD_ARG(a0, 1*PTRS, t2)
++    LOAD_ARG(a1, 2*PTRS, t2)
++    PTRMOVE(a2, t2)
++    PTRADDI(a3, sp, FRAME_LEN)
++    PTRMOVE(a4, sp)
++
++#ifdef __CHERI_PURE_CAPABILITY__
++    cllc    cra, ffi_closure_inner
++    cjalr   cra
++#else
+     call    ffi_closure_inner
++#endif
+ 
+     /* return values */
+ #if FLTS
+-    FLARG   fa0, 0*FLTS(sp)
+-    FLARG   fa1, 1*FLTS(sp)
++    LOAD_FLOAT(fa0, 0*FLTS, sp)
++    LOAD_FLOAT(fa1, 1*FLTS, sp)
+ #endif
+ 
+-    LARG    a0, 8*FLTS+0*PTRS(sp)
+-    LARG    a1, 8*FLTS+1*PTRS(sp)
++    LOAD_ARG(a0, 8*FLTS+0*PTRS, sp)
++    LOAD_ARG(a1, 8*FLTS+1*PTRS, sp)
+ 
+     /* restore and return */
+-    LARG    ra, FRAME_LEN-1*PTRS(sp)
++    LOAD_ARG(ra, FRAME_LEN-1*PTRS, sp)
+     .cfi_restore 1
+-    LARG    fp, FRAME_LEN-2*PTRS(sp)
++    LOAD_ARG(fp, FRAME_LEN-2*PTRS, sp)
+     .cfi_restore 8
+-    addi    sp, sp, FRAME_LEN
++    PTRADDI(sp, sp, FRAME_LEN)
+     .cfi_def_cfa_offset 0
+     ret
+     .cfi_endproc
+-- 
+2.34.1
+
+
+From 507fa15d1f85d690edd00a75ac8d313d1a60a636 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Wed, 6 Oct 2021 16:26:14 +0100
+Subject: [PATCH 05/34] Fix build with newest LLVM
+
+---
+ src/riscv/sysv.S | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/src/riscv/sysv.S b/src/riscv/sysv.S
+index 2478e47..211c701 100644
+--- src/riscv/sysv.S
+--- src/riscv/sysv.S
+@@ -149,7 +149,11 @@ ffi_call_asm:
+     LOAD_ARG(a7, -FRAME_LEN+8*FLTS+7*PTRS, fp)
+ 
+     /* Call */
++#ifdef __CHERI_PURE_CAPABILITY__
++    cjalr   ct1
++#else
+     jalr    t1
++#endif
+ 
+     /* Save return values - only a0/a1 (fa0/fa1) are used */
+ #if FLTS
+@@ -167,7 +171,11 @@ ffi_call_asm:
+     .cfi_restore 1
+     LOAD_ARG(fp, -2*PTRS, fp)
+     .cfi_restore 8
++#ifdef __CHERI_PURE_CAPABILITY__
++    cret
++#else
+     ret
++#endif
+     .cfi_endproc
+     .size   ffi_call_asm, .-ffi_call_asm
+ 
+@@ -247,7 +255,11 @@ ffi_closure_asm:
+     .cfi_restore 8
+     PTRADDI(sp, sp, FRAME_LEN)
+     .cfi_def_cfa_offset 0
++#ifdef __CHERI_PURE_CAPABILITY__
++    cret
++#else
+     ret
++#endif
+     .cfi_endproc
+     .size ffi_closure_asm, .-ffi_closure_asm
+ 
+@@ -326,6 +338,10 @@ ffi_go_closure_asm:
+     .cfi_restore 8
+     PTRADDI(sp, sp, FRAME_LEN)
+     .cfi_def_cfa_offset 0
++#ifdef __CHERI_PURE_CAPABILITY__
++    cret
++#else
+     ret
++#endif
+     .cfi_endproc
+     .size ffi_go_closure_asm, .-ffi_go_closure_asm
+-- 
+2.34.1
+
+
+From b529c6f15d70592f620c0e3c792ba467381a1e82 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Wed, 9 Feb 2022 15:12:48 +0000
+Subject: [PATCH 06/34] [Morello] Allow compilation as purecap
+
+This is completely untested at runtime, I have only attempted to fix
+compilation errors and update the assembly to something that looks
+vaguely correct. This will allow building Wayland for Morello and thus
+avoid patching all KDE libraries that use Wayland.
+---
+ src/aarch64/ffitarget.h |   4 +
+ src/aarch64/sysv.S      | 254 +++++++++++++++++++++-------------------
+ 2 files changed, 139 insertions(+), 119 deletions(-)
+
+diff --git a/src/aarch64/ffitarget.h b/src/aarch64/ffitarget.h
+index d5622e1..800d615 100644
+--- src/aarch64/ffitarget.h
+--- src/aarch64/ffitarget.h
+@@ -69,8 +69,12 @@ typedef enum ffi_abi
+ #error "No trampoline table implementation"
+ #endif
+ 
++#else
++#ifdef __CHERI_PURE_CAPABILITY__
++#define FFI_TRAMPOLINE_SIZE 48
+ #else
+ #define FFI_TRAMPOLINE_SIZE 24
++#endif
+ #define FFI_TRAMPOLINE_CLOSURE_OFFSET FFI_TRAMPOLINE_SIZE
+ #endif
+ 
+diff --git a/src/aarch64/sysv.S b/src/aarch64/sysv.S
+index eeaf3f8..2cf1982 100644
+--- src/aarch64/sysv.S
+--- src/aarch64/sysv.S
+@@ -46,16 +46,32 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ # define BE(X)	0
+ #endif
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++/* XXX: defining sp to csp is a rather ugly hack to avoid more changes. */
++#define sp              csp
++#define PTR_REG(n)      c##n
++#define INT_REG(n)      x##n
++#define GP_REG(n)       c##n
++#else
+ #ifdef __ILP32__
+ #define PTR_REG(n)      w##n
+ #else
+ #define PTR_REG(n)      x##n
+ #endif
++#define GP_REG(n)       x##n
++#define INT_REG(n)      x##n
++#endif
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++#define PTR_SIZE	16
++#define GP_REG_SIZE	16
++#else
+ #ifdef __ILP32__
+ #define PTR_SIZE	4
+ #else
+ #define PTR_SIZE	8
++#endif
++#define GP_REG_SIZE	8
+ #endif
+ 
+ 	.text
+@@ -79,7 +95,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ 	cfi_startproc
+ CNAME(ffi_call_SYSV):
+ 	/* Sign the lr with x1 since that is where it will be stored */
+-	SIGN_LR_WITH_REG(x1)
++	SIGN_LR_WITH_REG(PTR_REG(1))
+ 
+ 	/* Use a stack frame allocated by our caller.  */
+ #if defined(HAVE_PTRAUTH) && defined(__APPLE__)
+@@ -87,25 +103,25 @@ CNAME(ffi_call_SYSV):
+ 	 * used to sign the lr.  In order to allow unwinding through this
+ 	 * function it is necessary to point the cfa at the signing register.
+ 	 */
+-	cfi_def_cfa(x1, 0);
++	cfi_def_cfa(GP_REG(1), 0);
+ #else
+-	cfi_def_cfa(x1, 40);
++	cfi_def_cfa(GP_REG(1), 40);
+ #endif
+-	stp	x29, x30, [x1]
+-	mov	x9, sp
+-	str	x9, [x1, #32]
+-	mov	x29, x1
+-	mov	sp, x0
+-	cfi_def_cfa_register(x29)
+-	cfi_rel_offset (x29, 0)
+-	cfi_rel_offset (x30, 8)
+-
+-	mov	x9, x2			/* save fn */
+-	mov	x8, x3			/* install structure return */
++	stp	GP_REG(29), GP_REG(30), [PTR_REG(1)]
++	mov	GP_REG(9), sp
++	str	GP_REG(9), [PTR_REG(1), #4*GP_REG_SIZE]
++	mov	GP_REG(29), GP_REG(1)
++	mov	sp, GP_REG(0)
++	cfi_def_cfa_register(GP_REG(29))
++	cfi_rel_offset (GP_REG(29), 0)
++	cfi_rel_offset (GP_REG(30), GP_REG_SIZE)
++
++	mov	GP_REG(9), GP_REG(2)			/* save fn */
++	mov	GP_REG(8), GP_REG(3)			/* install structure return */
+ #ifdef FFI_GO_CLOSURES
+-	mov	x18, x5			/* install static chain */
++	mov	GP_REG(18), GP_REG(5)			/* install static chain */
+ #endif
+-	stp	x3, x4, [x29, #16]	/* save rvalue and flags */
++	stp	GP_REG(3), GP_REG(4), [PTR_REG(29), #2*GP_REG_SIZE]	/* save rvalue and flags */
+ 
+ 	/* Load the vector argument passing registers, if necessary.  */
+ 	tbz	w4, #AARCH64_FLAG_ARG_V_BIT, 1f
+@@ -116,30 +132,30 @@ CNAME(ffi_call_SYSV):
+ 1:
+ 	/* Load the core argument passing registers, including
+ 	   the structure return pointer.  */
+-	ldp     x0, x1, [sp, #16*N_V_ARG_REG + 0]
+-	ldp     x2, x3, [sp, #16*N_V_ARG_REG + 16]
+-	ldp     x4, x5, [sp, #16*N_V_ARG_REG + 32]
+-	ldp     x6, x7, [sp, #16*N_V_ARG_REG + 48]
++	ldp     GP_REG(0), GP_REG(1), [sp, #16*N_V_ARG_REG + 0*GP_REG_SIZE]
++	ldp     GP_REG(2), GP_REG(3), [sp, #16*N_V_ARG_REG + 2*GP_REG_SIZE]
++	ldp     GP_REG(4), GP_REG(5), [sp, #16*N_V_ARG_REG + 4*GP_REG_SIZE]
++	ldp     GP_REG(6), GP_REG(7), [sp, #16*N_V_ARG_REG + 6*GP_REG_SIZE]
+ 
+ 	/* Deallocate the context, leaving the stacked arguments.  */
+ 	add	sp, sp, #CALL_CONTEXT_SIZE
+ 
+-	BRANCH_AND_LINK_TO_REG     x9			/* call fn */
++	BRANCH_AND_LINK_TO_REG     PTR_REG(9)			/* call fn */
+ 
+-	ldp	x3, x4, [x29, #16]	/* reload rvalue and flags */
++	ldp	GP_REG(3), GP_REG(4), [PTR_REG(29), #2*GP_REG_SIZE]	/* reload rvalue and flags */
+ 
+ 	/* Partially deconstruct the stack frame.  */
+-	ldr	x9, [x29, #32]
+-	mov	sp, x9
++	ldr	GP_REG(9), [PTR_REG(29), #4*GP_REG_SIZE]
++	mov	sp, GP_REG(9)
+ 	cfi_def_cfa_register (sp)
+-	mov	x2, x29			/* Preserve for auth */
+-	ldp     x29, x30, [x29]
++	mov	GP_REG(2), GP_REG(29)			/* Preserve for auth */
++	ldp     GP_REG(29), GP_REG(30), [PTR_REG(29)]
+ 
+ 	/* Save the return value as directed.  */
+-	adr	x5, 0f
++	adr	GP_REG(5), 0f
+ 	and	w4, w4, #AARCH64_RET_MASK
+-	add	x5, x5, x4, lsl #3
+-	br	x5
++	add	PTR_REG(5), PTR_REG(5), INT_REG(4), lsl #3
++	br	PTR_REG(5)
+ 
+ 	/* Note that each table entry is 2 insns, and thus 8 bytes.
+ 	   For integer data, note that we're storing into ffi_arg
+@@ -148,9 +164,9 @@ CNAME(ffi_call_SYSV):
+ 	.align	4
+ 0:	b 99f				/* VOID */
+ 	nop
+-1:	str	x0, [x3]		/* INT64 */
++1:	str	x0, [PTR_REG(3)]		/* INT64 */
+ 	b 99f
+-2:	stp	x0, x1, [x3]		/* INT128 */
++2:	stp	x0, x1, [PTR_REG(3)]		/* INT128 */
+ 	b 99f
+ 3:	brk	#1000			/* UNUSED */
+ 	b 99f
+@@ -162,58 +178,58 @@ CNAME(ffi_call_SYSV):
+ 	b 99f
+ 7:	brk	#1000			/* UNUSED */
+ 	b 99f
+-8:	st4	{ v0.s, v1.s, v2.s, v3.s }[0], [x3]	/* S4 */
++8:	st4	{ v0.s, v1.s, v2.s, v3.s }[0], [PTR_REG(3)]	/* S4 */
+ 	b 99f
+-9:	st3	{ v0.s, v1.s, v2.s }[0], [x3]	/* S3 */
++9:	st3	{ v0.s, v1.s, v2.s }[0], [PTR_REG(3)]	/* S3 */
+ 	b 99f
+-10:	stp	s0, s1, [x3]		/* S2 */
++10:	stp	s0, s1, [PTR_REG(3)]		/* S2 */
+ 	b 99f
+-11:	str	s0, [x3]		/* S1 */
++11:	str	s0, [PTR_REG(3)]		/* S1 */
+ 	b 99f
+-12:	st4	{ v0.d, v1.d, v2.d, v3.d }[0], [x3]	/* D4 */
++12:	st4	{ v0.d, v1.d, v2.d, v3.d }[0], [PTR_REG(3)]	/* D4 */
+ 	b 99f
+-13:	st3	{ v0.d, v1.d, v2.d }[0], [x3]	/* D3 */
++13:	st3	{ v0.d, v1.d, v2.d }[0], [PTR_REG(3)]	/* D3 */
+ 	b 99f
+-14:	stp	d0, d1, [x3]		/* D2 */
++14:	stp	d0, d1, [PTR_REG(3)]		/* D2 */
+ 	b 99f
+-15:	str	d0, [x3]		/* D1 */
++15:	str	d0, [PTR_REG(3)]		/* D1 */
+ 	b 99f
+-16:	str	q3, [x3, #48]		/* Q4 */
++16:	str	q3, [PTR_REG(3), #48]		/* Q4 */
+ 	nop
+-17:	str	q2, [x3, #32]		/* Q3 */
++17:	str	q2, [PTR_REG(3), #32]		/* Q3 */
+ 	nop
+-18:	stp	q0, q1, [x3]		/* Q2 */
++18:	stp	q0, q1, [PTR_REG(3)]		/* Q2 */
+ 	b 99f
+-19:	str	q0, [x3]		/* Q1 */
++19:	str	q0, [PTR_REG(3)]		/* Q1 */
+ 	b 99f
+ 20:	uxtb	w0, w0			/* UINT8 */
+-	str	x0, [x3]
++	str	x0, [PTR_REG(3)]
+ 21:	b 99f				/* reserved */
+ 	nop
+ 22:	uxth	w0, w0			/* UINT16 */
+-	str	x0, [x3]
++	str	x0, [PTR_REG(3)]
+ 23:	b 99f				/* reserved */
+ 	nop
+ 24:	mov	w0, w0			/* UINT32 */
+-	str	x0, [x3]
++	str	x0, [PTR_REG(3)]
+ 25:	b 99f				/* reserved */
+ 	nop
+ 26:	sxtb	x0, w0			/* SINT8 */
+-	str	x0, [x3]
++	str	x0, [PTR_REG(3)]
+ 27:	b 99f				/* reserved */
+ 	nop
+ 28:	sxth	x0, w0			/* SINT16 */
+-	str	x0, [x3]
++	str	x0, [PTR_REG(3)]
+ 29:	b 99f				/* reserved */
+ 	nop
+ 30:	sxtw	x0, w0			/* SINT32 */
+-	str	x0, [x3]
++	str	x0, [PTR_REG(3)]
+ 31:	b 99f				/* reserved */
+ 	nop
+ 
+ 	/* Return now that result has been populated. */
+ 99:
+-	AUTH_LR_WITH_REG(x2)
++	AUTH_LR_WITH_REG(PTR_REG(2))
+ 	ret
+ 
+ 	cfi_endproc
+@@ -247,10 +263,10 @@ CNAME(ffi_call_SYSV):
+ CNAME(ffi_closure_SYSV_V):
+ 	cfi_startproc
+ 	SIGN_LR
+-	stp     x29, x30, [sp, #-ffi_closure_SYSV_FS]!
++	stp     GP_REG(29), GP_REG(30), [sp, #-ffi_closure_SYSV_FS]!
+ 	cfi_adjust_cfa_offset (ffi_closure_SYSV_FS)
+-	cfi_rel_offset (x29, 0)
+-	cfi_rel_offset (x30, 8)
++	cfi_rel_offset (GP_REG(29), 0)
++	cfi_rel_offset (GP_REG(30), GP_REG_SIZE)
+ 
+ 	/* Save the argument passing vector registers.  */
+ 	stp     q0, q1, [sp, #16 + 0]
+@@ -271,45 +287,45 @@ CNAME(ffi_closure_SYSV_V):
+ 	cfi_startproc
+ CNAME(ffi_closure_SYSV):
+ 	SIGN_LR
+-	stp     x29, x30, [sp, #-ffi_closure_SYSV_FS]!
++	stp     GP_REG(29), GP_REG(30), [sp, #-ffi_closure_SYSV_FS]!
+ 	cfi_adjust_cfa_offset (ffi_closure_SYSV_FS)
+-	cfi_rel_offset (x29, 0)
+-	cfi_rel_offset (x30, 8)
++	cfi_rel_offset (GP_REG(29), 0)
++	cfi_rel_offset (GP_REG(30), GP_REG_SIZE)
+ 0:
+-	mov     x29, sp
++	mov     GP_REG(29), sp
+ 
+ 	/* Save the argument passing core registers.  */
+-	stp     x0, x1, [sp, #16 + 16*N_V_ARG_REG + 0]
+-	stp     x2, x3, [sp, #16 + 16*N_V_ARG_REG + 16]
+-	stp     x4, x5, [sp, #16 + 16*N_V_ARG_REG + 32]
+-	stp     x6, x7, [sp, #16 + 16*N_V_ARG_REG + 48]
++	stp     GP_REG(0), GP_REG(1), [sp, #16 + 16*N_V_ARG_REG + 0*GP_REG_SIZE]
++	stp     GP_REG(2), GP_REG(3), [sp, #16 + 16*N_V_ARG_REG + 2*GP_REG_SIZE]
++	stp     GP_REG(4), GP_REG(5), [sp, #16 + 16*N_V_ARG_REG + 4*GP_REG_SIZE]
++	stp     GP_REG(6), GP_REG(7), [sp, #16 + 16*N_V_ARG_REG + 6*GP_REG_SIZE]
+ 
+ 	/* Load ffi_closure_inner arguments.  */
+-	ldp	PTR_REG(0), PTR_REG(1), [x17, #FFI_TRAMPOLINE_CLOSURE_OFFSET]	/* load cif, fn */
+-	ldr	PTR_REG(2), [x17, #FFI_TRAMPOLINE_CLOSURE_OFFSET+PTR_SIZE*2]	/* load user_data */
++	ldp	PTR_REG(0), PTR_REG(1), [PTR_REG(17), #FFI_TRAMPOLINE_CLOSURE_OFFSET]	/* load cif, fn */
++	ldr	PTR_REG(2), [PTR_REG(17), #FFI_TRAMPOLINE_CLOSURE_OFFSET+PTR_SIZE*2]	/* load user_data */
+ #ifdef FFI_GO_CLOSURES
+ .Ldo_closure:
+ #endif
+-	add	x3, sp, #16				/* load context */
+-	add	x4, sp, #ffi_closure_SYSV_FS		/* load stack */
+-	add	x5, sp, #16+CALL_CONTEXT_SIZE		/* load rvalue */
+-	mov	x6, x8					/* load struct_rval */
++	add	PTR_REG(3), sp, #16				/* load context */
++	add	PTR_REG(4), sp, #ffi_closure_SYSV_FS		/* load stack */
++	add	PTR_REG(5), sp, #16+CALL_CONTEXT_SIZE		/* load rvalue */
++	mov	GP_REG(6), GP_REG(8)					/* load struct_rval */
+ 	bl      CNAME(ffi_closure_SYSV_inner)
+ 
+ 	/* Load the return value as directed.  */
+-	adr	x1, 0f
++	adr	PTR_REG(1), 0f
+ 	and	w0, w0, #AARCH64_RET_MASK
+-	add	x1, x1, x0, lsl #3
+-	add	x3, sp, #16+CALL_CONTEXT_SIZE
+-	br	x1
++	add	PTR_REG(1), PTR_REG(1), INT_REG(0), lsl #3
++	add	PTR_REG(3), sp, #16+CALL_CONTEXT_SIZE
++	br	PTR_REG(1)
+ 
+ 	/* Note that each table entry is 2 insns, and thus 8 bytes.  */
+ 	.align	4
+ 0:	b	99f			/* VOID */
+ 	nop
+-1:	ldr	x0, [x3]		/* INT64 */
++1:	ldr	x0, [PTR_REG(3)]		/* INT64 */
+ 	b	99f
+-2:	ldp	x0, x1, [x3]		/* INT128 */
++2:	ldp	x0, x1, [PTR_REG(3)]		/* INT128 */
+ 	b	99f
+ 3:	brk	#1000			/* UNUSED */
+ 	nop
+@@ -321,57 +337,57 @@ CNAME(ffi_closure_SYSV):
+ 	nop
+ 7:	brk	#1000			/* UNUSED */
+ 	nop
+-8:	ldr	s3, [x3, #12]		/* S4 */
++8:	ldr	s3, [PTR_REG(3), #12]		/* S4 */
+ 	nop
+-9:	ldr	s2, [x3, #8]		/* S3 */
++9:	ldr	s2, [PTR_REG(3), #8]		/* S3 */
+ 	nop
+-10:	ldp	s0, s1, [x3]		/* S2 */
++10:	ldp	s0, s1, [PTR_REG(3)]		/* S2 */
+ 	b	99f
+-11:	ldr	s0, [x3]		/* S1 */
++11:	ldr	s0, [PTR_REG(3)]		/* S1 */
+ 	b	99f
+-12:	ldr	d3, [x3, #24]		/* D4 */
++12:	ldr	d3, [PTR_REG(3), #24]		/* D4 */
+ 	nop
+-13:	ldr	d2, [x3, #16]		/* D3 */
++13:	ldr	d2, [PTR_REG(3), #16]		/* D3 */
+ 	nop
+-14:	ldp	d0, d1, [x3]		/* D2 */
++14:	ldp	d0, d1, [PTR_REG(3)]		/* D2 */
+ 	b	99f
+-15:	ldr	d0, [x3]		/* D1 */
++15:	ldr	d0, [PTR_REG(3)]		/* D1 */
+ 	b	99f
+-16:	ldr	q3, [x3, #48]		/* Q4 */
++16:	ldr	q3, [PTR_REG(3), #48]		/* Q4 */
+ 	nop
+-17:	ldr	q2, [x3, #32]		/* Q3 */
++17:	ldr	q2, [PTR_REG(3), #32]		/* Q3 */
+ 	nop
+-18:	ldp	q0, q1, [x3]		/* Q2 */
++18:	ldp	q0, q1, [PTR_REG(3)]		/* Q2 */
+ 	b	99f
+-19:	ldr	q0, [x3]		/* Q1 */
++19:	ldr	q0, [PTR_REG(3)]		/* Q1 */
+ 	b	99f
+-20:	ldrb	w0, [x3, #BE(7)]	/* UINT8 */
++20:	ldrb	w0, [PTR_REG(3), #BE(7)]	/* UINT8 */
+ 	b	99f
+ 21:	brk	#1000			/* reserved */
+ 	nop
+-22:	ldrh	w0, [x3, #BE(6)]	/* UINT16 */
++22:	ldrh	w0, [PTR_REG(3), #BE(6)]	/* UINT16 */
+ 	b	99f
+ 23:	brk	#1000			/* reserved */
+ 	nop
+-24:	ldr	w0, [x3, #BE(4)]	/* UINT32 */
++24:	ldr	w0, [PTR_REG(3), #BE(4)]	/* UINT32 */
+ 	b	99f
+ 25:	brk	#1000			/* reserved */
+ 	nop
+-26:	ldrsb	x0, [x3, #BE(7)]	/* SINT8 */
++26:	ldrsb	x0, [PTR_REG(3), #BE(7)]	/* SINT8 */
+ 	b	99f
+ 27:	brk	#1000			/* reserved */
+ 	nop
+-28:	ldrsh	x0, [x3, #BE(6)]	/* SINT16 */
++28:	ldrsh	x0, [PTR_REG(3), #BE(6)]	/* SINT16 */
+ 	b	99f
+ 29:	brk	#1000			/* reserved */
+ 	nop
+-30:	ldrsw	x0, [x3, #BE(4)]	/* SINT32 */
++30:	ldrsw	x0, [PTR_REG(3), #BE(4)]	/* SINT32 */
+ 	nop
+ 31:					/* reserved */
+-99:	ldp     x29, x30, [sp], #ffi_closure_SYSV_FS
++99:	ldp     GP_REG(29), GP_REG(30), [sp], #ffi_closure_SYSV_FS
+ 	cfi_adjust_cfa_offset (-ffi_closure_SYSV_FS)
+-	cfi_restore (x29)
+-	cfi_restore (x30)
++	cfi_restore (GP_REG(29))
++	cfi_restore (GP_REG(30))
+ 	AUTH_LR_AND_RET
+ 	cfi_endproc
+ 
+@@ -386,7 +402,7 @@ CNAME(ffi_closure_SYSV):
+ 	.align 4
+ CNAME(ffi_closure_SYSV_V_alt):
+ 	/* See the comments above trampoline_code_table. */
+-	ldr	x17, [sp, #8]			/* Load closure in x17 */
++	ldr	GP_REG(17), [sp, #GP_REG_SIZE]			/* Load closure in x17 */
+ 	add	sp, sp, #16			/* Restore the stack */
+ 	b	CNAME(ffi_closure_SYSV_V)
+ 
+@@ -400,7 +416,7 @@ CNAME(ffi_closure_SYSV_V_alt):
+ 	.align 4
+ CNAME(ffi_closure_SYSV_alt):
+ 	/* See the comments above trampoline_code_table. */
+-	ldr	x17, [sp, #8]			/* Load closure in x17 */
++	ldr	GP_REG(17), [sp, #GP_REG_SIZE]			/* Load closure in x17 */
+ 	add	sp, sp, #16			/* Restore the stack */
+ 	b	CNAME(ffi_closure_SYSV)
+ 
+@@ -434,13 +450,13 @@ CNAME(ffi_closure_SYSV_alt):
+ CNAME(trampoline_code_table):
+ 	.rept	AARCH64_TRAMP_MAP_SIZE / AARCH64_TRAMP_SIZE
+ 	sub	sp, sp, #16		/* Make space on the stack */
+-	str	x17, [sp]		/* Save x17 on stack */
+-	adr	x17, #16376		/* Get data address */
+-	ldr	x17, [x17]		/* Copy data into x17 */
+-	str	x17, [sp, #8]		/* Save data on stack */
+-	adr	x17, #16372		/* Get code address */
+-	ldr	x17, [x17]		/* Load code address into x17 */
+-	br	x17			/* Jump to code */
++	str	GP_REG(17), [sp]		/* Save x17 on stack */
++	adr	GP_REG(17), #16376		/* Get data address */
++	ldr	GP_REG(17), [PTR_REG(17)]		/* Copy data into x17 */
++	str	GP_REG(17), [sp, #GP_REG_SIZE]		/* Save data on stack */
++	adr	GP_REG(17), #16372		/* Get code address */
++	ldr	GP_REG(17), [PTR_REG(17)]		/* Load code address into x17 */
++	br	PTR_REG(17)			/* Jump to code */
+ 	.endr
+ 
+ 	.globl CNAME(trampoline_code_table)
+@@ -459,9 +475,9 @@ CNAME(trampoline_code_table):
+     .align PAGE_MAX_SHIFT
+ CNAME(ffi_closure_trampoline_table_page):
+     .rept PAGE_MAX_SIZE / FFI_TRAMPOLINE_SIZE
+-    adr x16, -PAGE_MAX_SIZE
+-    ldp x17, x16, [x16]
+-    br x16
++    adr PTR_REG(16), -PAGE_MAX_SIZE
++    ldp GP_REG(17), GP_REG(16), [PTR_REG(16)]
++    br PTR_REG(16)
+ 	nop		/* each entry in the trampoline config page is 2*sizeof(void*) so the trampoline itself cannot be smaller than 16 bytes */
+     .endr
+ 
+@@ -479,10 +495,10 @@ CNAME(ffi_closure_trampoline_table_page):
+ 	.align 4
+ CNAME(ffi_go_closure_SYSV_V):
+ 	cfi_startproc
+-	stp     x29, x30, [sp, #-ffi_closure_SYSV_FS]!
++	stp     GP_REG(29), GP_REG(30), [sp, #-ffi_closure_SYSV_FS]!
+ 	cfi_adjust_cfa_offset (ffi_closure_SYSV_FS)
+-	cfi_rel_offset (x29, 0)
+-	cfi_rel_offset (x30, 8)
++	cfi_rel_offset (GP_REG(29), 0)
++	cfi_rel_offset (GP_REG(30), GP_REG_SIZE)
+ 
+ 	/* Save the argument passing vector registers.  */
+ 	stp     q0, q1, [sp, #16 + 0]
+@@ -502,22 +518,22 @@ CNAME(ffi_go_closure_SYSV_V):
+ 	.align	4
+ 	cfi_startproc
+ CNAME(ffi_go_closure_SYSV):
+-	stp     x29, x30, [sp, #-ffi_closure_SYSV_FS]!
++	stp     GP_REG(29), GP_REG(30), [sp, #-ffi_closure_SYSV_FS]!
+ 	cfi_adjust_cfa_offset (ffi_closure_SYSV_FS)
+-	cfi_rel_offset (x29, 0)
+-	cfi_rel_offset (x30, 8)
++	cfi_rel_offset (GP_REG(29), 0)
++	cfi_rel_offset (GP_REG(30), GP_REG_SIZE)
+ 0:
+-	mov     x29, sp
++	mov     GP_REG(29), sp
+ 
+ 	/* Save the argument passing core registers.  */
+-	stp     x0, x1, [sp, #16 + 16*N_V_ARG_REG + 0]
+-	stp     x2, x3, [sp, #16 + 16*N_V_ARG_REG + 16]
+-	stp     x4, x5, [sp, #16 + 16*N_V_ARG_REG + 32]
+-	stp     x6, x7, [sp, #16 + 16*N_V_ARG_REG + 48]
++	stp     GP_REG(0), GP_REG(1), [sp, #16 + 16*N_V_ARG_REG + 0*GP_REG_SIZE]
++	stp     GP_REG(2), GP_REG(3), [sp, #16 + 16*N_V_ARG_REG + 2*GP_REG_SIZE]
++	stp     GP_REG(4), GP_REG(5), [sp, #16 + 16*N_V_ARG_REG + 4*GP_REG_SIZE]
++	stp     GP_REG(6), GP_REG(7), [sp, #16 + 16*N_V_ARG_REG + 6*GP_REG_SIZE]
+ 
+ 	/* Load ffi_closure_inner arguments.  */
+-	ldp	PTR_REG(0), PTR_REG(1), [x18, #PTR_SIZE]/* load cif, fn */
+-	mov	x2, x18					/* load user_data */
++	ldp	PTR_REG(0), PTR_REG(1), [PTR_REG(18), #PTR_SIZE]/* load cif, fn */
++	mov	GP_REG(2), GP_REG(18)					/* load user_data */
+ 	b	.Ldo_closure
+ 	cfi_endproc
+ 
+-- 
+2.34.1
+
+
+From 7e0897e6fd31a5cba181290a056c4d80bafc65f2 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Thu, 10 Feb 2022 23:52:17 +0000
+Subject: [PATCH 07/34] [CHERI-RISC-V] Fix argument array size
+
+When using CHERI capabilities we have to allocate space for a
+uintptr_t array and not a size_t one. Additionally, we set bounds on
+the aregs array here to avoid any OOB access to the rest of the alloca.
+---
+ src/riscv/ffi.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/src/riscv/ffi.c b/src/riscv/ffi.c
+index c365c29..fd4a455 100644
+--- src/riscv/ffi.c
+--- src/riscv/ffi.c
+@@ -50,7 +50,7 @@ typedef struct call_context
+ #if ABI_FLEN
+     ABI_FLOAT fa[8];
+ #endif
+-    size_t a[8];
++    uintptr_t a[8];
+     /* used by the assembly code to in-place construct its own stack frame */
+     char frame[16];
+ } call_context;
+@@ -334,7 +334,7 @@ ffi_call_int (ffi_cif *cif, void (*fn) (void), void *rvalue, void **avalue,
+     /* this is a conservative estimate, assuming a complex return value and
+        that all remaining arguments are long long / __int128 */
+     size_t arg_bytes = cif->nargs <= 3 ? 0 :
+-        FFI_ALIGN(2 * sizeof(size_t) * (cif->nargs - 3), STKALIGN);
++        FFI_ALIGN(2 * sizeof(uintptr_t) * (cif->nargs - 3), STKALIGN);
+     size_t rval_bytes = 0;
+     if (rvalue == NULL && cif->rtype->size > 2*__SIZEOF_POINTER__)
+         rval_bytes = FFI_ALIGN(cif->rtype->size, STKALIGN);
+@@ -359,6 +359,9 @@ ffi_call_int (ffi_cif *cif, void (*fn) (void), void *rvalue, void **avalue,
+     call_builder cb;
+     cb.used_float = cb.used_integer = 0;
+     cb.aregs = (call_context*)(alloc_base + arg_bytes + rval_bytes);
++#ifdef __CHERI_PURE_CAPABILITY__
++    cb.aregs = __builtin_cheri_bounds_set(cb.aregs, sizeof(*cb.aregs));
++#endif
+     cb.used_stack = (void*)alloc_base;
+ 
+     int return_by_ref = passed_by_ref(&cb, cif->rtype, 0);
+-- 
+2.34.1
+
+
+From fcb57dbe6f61a825187cc25baac11b232a8576af Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Thu, 10 Feb 2022 23:53:50 +0000
+Subject: [PATCH 08/34] [CHERI-RISC-V] Provide a valid stack to the called
+ function
+
+Running the unit tests has exposed a few bounds violations due to using
+the wrong stack pointer in the callee. Passing alloc_base results in a
+capability bounded to the size of the alloca, whereas the expected
+behaviour is to pass the remaining stack starting at the alloca (it can
+be clobbered once the assembly code has loaded all the registers).
+---
+ src/riscv/ffi.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/src/riscv/ffi.c b/src/riscv/ffi.c
+index fd4a455..f8c25dc 100644
+--- src/riscv/ffi.c
+--- src/riscv/ffi.c
+@@ -372,6 +372,11 @@ ffi_call_int (ffi_cif *cif, void (*fn) (void), void *rvalue, void **avalue,
+     for (i = 0; i < cif->nargs; i++)
+         marshal(&cb, cif->arg_types[i], i >= cif->riscv_nfixedargs, avalue[i]);
+ 
++    /* Start using the stack from the beginning of the alloca() used for
++     * arguments. We have to restore the original stack bounds so that the
++     * called function has a valid stack instead of an out-of-bounds pointer. */
++    alloc_base = __builtin_cheri_address_set(__builtin_cheri_stack_get(),
++                                             (ptraddr_t)alloc_base);
+     ffi_call_asm ((void *) alloc_base, cb.aregs, fn, closure);
+ 
+     cb.used_float = cb.used_integer = 0;
+-- 
+2.34.1
+
+
+From ad566c5e7bc1fe14aa68426c811025943deb63ef Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Fri, 11 Feb 2022 00:09:46 +0000
+Subject: [PATCH 09/34] [CHERI-RISC-V] Use original csp bounds on saved stack
+ pointer
+
+We were using the bounds of ca1 here which is a tightly bounded pointer,
+instead we want the original csp bounds with the address set to
+a1+FRAME_LEN.
+---
+ src/riscv/sysv.S | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/riscv/sysv.S b/src/riscv/sysv.S
+index 211c701..c1d694b 100644
+--- src/riscv/sysv.S
+--- src/riscv/sysv.S
+@@ -121,6 +121,10 @@ ffi_call_asm:
+     .cfi_offset 1, -1*PTRS
+ 
+     PTRADDI(fp, a1, FRAME_LEN)
++#ifdef __CHERI_PURE_CAPABILITY__
++    /* Restore csp bounds on cfp */
++    csetaddr cfp, csp, fp
++#endif
+     PTRMOVE(sp, a0)
+     .cfi_def_cfa 8, 0 # our frame is fully set up
+ 
+-- 
+2.34.1
+
+
+From ed4083bd4639a18a9eeb6575db48fbc6449ab5e0 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Fri, 11 Feb 2022 11:00:42 +0000
+Subject: [PATCH 10/34] [CHERI-RISC-V] Avoid clobbering last argument with
+ saved fp
+
+The saved frame was hardcoded to 16 bytes, but we actually have to save
+two capabilities there. Fix this by using a more appropriate type than
+a 16-byte char array.
+---
+ src/riscv/ffi.c  | 8 +++++++-
+ src/riscv/sysv.S | 8 +++++++-
+ 2 files changed, 14 insertions(+), 2 deletions(-)
+
+diff --git a/src/riscv/ffi.c b/src/riscv/ffi.c
+index f8c25dc..a1a9c73 100644
+--- src/riscv/ffi.c
+--- src/riscv/ffi.c
+@@ -52,7 +52,13 @@ typedef struct call_context
+ #endif
+     uintptr_t a[8];
+     /* used by the assembly code to in-place construct its own stack frame */
+-    char frame[16];
++    struct {
++#if __SIZEOF_POINTER__ < 8
++        void* pad[2];
++#endif
++        void *saved_fp;
++        void *saved_ra;
++    } frame;
+ } call_context;
+ 
+ typedef struct call_builder
+diff --git a/src/riscv/sysv.S b/src/riscv/sysv.S
+index c1d694b..3f7fee4 100644
+--- src/riscv/sysv.S
+--- src/riscv/sysv.S
+@@ -99,7 +99,13 @@
+                      void (*fn) (void), void *closure);
+ */
+ 
+-#define FRAME_LEN (8 * FLTS + 8 * PTRS + 16)
++#if __SIZEOF_POINTER__ < 8
++#define FRAME_PADDING 8
++#else
++#define FRAME_PADDING 0
++#endif
++
++#define FRAME_LEN (8 * FLTS + 8 * PTRS + FRAME_PADDING + 2 * PTRS)
+ 
+ ffi_call_asm:
+     .cfi_startproc
+-- 
+2.34.1
+
+
+From b2cbf470d8dedc63efc5fe9223ed0cdf97d96e7c Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Fri, 11 Feb 2022 11:21:33 +0000
+Subject: [PATCH 11/34] [CHERI-RISC-V] Fix passing of pointer arguments
+
+We have to use size_t and not uinptr_t. Found most of these by compiling
+with -Werror=shorten-cap-to-int.
+---
+ src/riscv/ffi.c                      | 32 ++++++++++++++--------------
+ testsuite/libffi.bhaible/test-call.c |  8 +++++++
+ testsuite/libffi.bhaible/testcases.c |  6 +++++-
+ 3 files changed, 29 insertions(+), 17 deletions(-)
+
+diff --git a/src/riscv/ffi.c b/src/riscv/ffi.c
+index a1a9c73..e818377 100644
+--- src/riscv/ffi.c
+--- src/riscv/ffi.c
+@@ -66,7 +66,7 @@ typedef struct call_builder
+     call_context *aregs;
+     int used_integer;
+     int used_float;
+-    size_t *used_stack;
++    uintptr_t *used_stack;
+ } call_builder;
+ 
+ /* integer (not pointer) less than ABI XLEN */
+@@ -136,7 +136,7 @@ static float_struct_info struct_passed_as_elements(call_builder *cb, ffi_type *t
+ 
+ /* allocates a single register, float register, or XLEN-sized stack slot to a datum */
+ static void marshal_atom(call_builder *cb, int type, void *data) {
+-    size_t value = 0;
++    uintptr_t value = 0;
+     switch (type) {
+         case FFI_TYPE_UINT8: value = *(uint8_t *)data; break;
+         case FFI_TYPE_SINT8: value = *(int8_t *)data; break;
+@@ -149,7 +149,7 @@ static void marshal_atom(call_builder *cb, int type, void *data) {
+         case FFI_TYPE_UINT64: value = *(uint64_t *)data; break;
+         case FFI_TYPE_SINT64: value = *(int64_t *)data; break;
+ #endif
+-        case FFI_TYPE_POINTER: value = *(size_t *)data; break;
++        case FFI_TYPE_POINTER: value = *(uintptr_t *)data; break;
+ 
+         /* float values may be recoded in an implementation-defined way
+            by hardware conforming to 2.1 or earlier, so use asm to
+@@ -175,7 +175,7 @@ static void marshal_atom(call_builder *cb, int type, void *data) {
+ }
+ 
+ static void unmarshal_atom(call_builder *cb, int type, void *data) {
+-    size_t value;
++    uintptr_t value;
+     switch (type) {
+ #if ABI_FLEN >= 32
+         case FFI_TYPE_FLOAT:
+@@ -196,17 +196,17 @@ static void unmarshal_atom(call_builder *cb, int type, void *data) {
+     }
+ 
+     switch (type) {
+-        case FFI_TYPE_UINT8: *(uint8_t *)data = value; break;
+-        case FFI_TYPE_SINT8: *(uint8_t *)data = value; break;
+-        case FFI_TYPE_UINT16: *(uint16_t *)data = value; break;
+-        case FFI_TYPE_SINT16: *(uint16_t *)data = value; break;
+-        case FFI_TYPE_UINT32: *(uint32_t *)data = value; break;
+-        case FFI_TYPE_SINT32: *(uint32_t *)data = value; break;
++        case FFI_TYPE_UINT8: *(uint8_t *)data = (uint8_t)value; break;
++        case FFI_TYPE_SINT8: *(uint8_t *)data = (uint8_t)value; break;
++        case FFI_TYPE_UINT16: *(uint16_t *)data = (uint16_t)value; break;
++        case FFI_TYPE_SINT16: *(uint16_t *)data = (uint16_t)value; break;
++        case FFI_TYPE_UINT32: *(uint32_t *)data = (uint32_t)value; break;
++        case FFI_TYPE_SINT32: *(uint32_t *)data = (uint32_t)value; break;
+ #if __SIZEOF_POINTER__ == 8
+-        case FFI_TYPE_UINT64: *(uint64_t *)data = value; break;
+-        case FFI_TYPE_SINT64: *(uint64_t *)data = value; break;
++        case FFI_TYPE_UINT64: *(uint64_t *)data = (uint64_t)value; break;
++        case FFI_TYPE_SINT64: *(uint64_t *)data = (uint64_t)value; break;
+ #endif
+-        case FFI_TYPE_POINTER: *(size_t *)data = value; break;
++        case FFI_TYPE_POINTER: *(uintptr_t *)data = value; break;
+         default: FFI_ASSERT(0); break;
+     }
+ }
+@@ -245,7 +245,7 @@ static void marshal(call_builder *cb, ffi_type *type, int var, void *data) {
+         if (type->alignment > __SIZEOF_POINTER__) {
+             if (var)
+                 cb->used_integer = FFI_ALIGN(cb->used_integer, 2);
+-            cb->used_stack = (size_t *)FFI_ALIGN(cb->used_stack, 2*__SIZEOF_POINTER__);
++            cb->used_stack = (uintptr_t *)FFI_ALIGN(cb->used_stack, 2*__SIZEOF_POINTER__);
+         }
+ 
+         memcpy(realign, data, type->size);
+@@ -293,7 +293,7 @@ static void *unmarshal(call_builder *cb, ffi_type *type, int var, void *data) {
+         if (type->alignment > __SIZEOF_POINTER__) {
+             if (var)
+                 cb->used_integer = FFI_ALIGN(cb->used_integer, 2);
+-            cb->used_stack = (size_t *)FFI_ALIGN(cb->used_stack, 2*__SIZEOF_POINTER__);
++            cb->used_stack = (uintptr_t *)FFI_ALIGN(cb->used_stack, 2*__SIZEOF_POINTER__);
+         }
+ 
+         if (type->size > 0)
+@@ -459,7 +459,7 @@ void FFI_HIDDEN
+ ffi_closure_inner (ffi_cif *cif,
+ 		   void (*fun) (ffi_cif *, void *, void **, void *),
+ 		   void *user_data,
+-		   size_t *stack, call_context *aregs)
++		   uintptr_t *stack, call_context *aregs)
+ {
+     void **avalue = alloca(cif->nargs * sizeof(void*));
+     /* storage for arguments which will be copied by unmarshal().  We could
+diff --git a/testsuite/libffi.bhaible/test-call.c b/testsuite/libffi.bhaible/test-call.c
+index cf9219e..04de2a2 100644
+--- testsuite/libffi.bhaible/test-call.c
+--- testsuite/libffi.bhaible/test-call.c
+@@ -455,7 +455,11 @@ void
+ 
+ #if (!defined(DGTEST)) || DGTEST == 19
+   vpr = vp_vpdpcpsp(&uc1,&d2,str3,&I4);
++#ifdef __CHERI_PURE_CAPABILITY__
++  fprintf(out,"->0x%#p\n",vpr);
++#else
+   fprintf(out,"->0x%p\n",vpr);
++#endif
+   fflush(out);
+   vpr = 0; clear_traces();
+   {
+@@ -471,7 +475,11 @@ void
+       FFI_CALL(cif,vp_vpdpcpsp,args,&vpr);
+     }
+   }
++#ifdef __CHERI_PURE_CAPABILITY__
++  fprintf(out,"->0x%#p\n",vpr);
++#else
+   fprintf(out,"->0x%p\n",vpr);
++#endif
+   fflush(out);
+ #endif  
+   return;
+diff --git a/testsuite/libffi.bhaible/testcases.c b/testsuite/libffi.bhaible/testcases.c
+index 23a6f46..48525e5 100644
+--- testsuite/libffi.bhaible/testcases.c
+--- testsuite/libffi.bhaible/testcases.c
+@@ -269,7 +269,11 @@ double ABI_ATTR d_d16 (double a, double b, double c, double d, double e, double
+ void* ABI_ATTR vp_vpdpcpsp (void* a, double* b, char* c, Int* d)
+ {
+   void* ret = (char*)b + 1;
+-  fprintf(out,"void* f(void*,double*,char*,Int*):(0x%p,0x%p,0x%p,0x%p)",a,b,c,d);
++#ifdef __CHERI_PURE_CAPABILITY__
++  fprintf(out,"void* f(void*,double*,char*,Int*):(%#p,%#p,%#p,%#p)",a,b,c,d);
++#else
++  fprintf(out,"void* f(void*,double*,char*,Int*):(%p,%p,%p,%p)",a,b,c,d);
++#endif
+   fflush(out);
+   return ret;
+ }
+-- 
+2.34.1
+
+
+From dbd585bb88f8f401f1e5e9a30be919570ca6164f Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Fri, 11 Feb 2022 12:21:05 +0000
+Subject: [PATCH 12/34] [CHERI-RISC-V] Fix trampoline code to use clc not ld
+
+The offset 16 may still be wrong, but at least the opcode is correct now.
+---
+ src/riscv/ffi.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/src/riscv/ffi.c b/src/riscv/ffi.c
+index e818377..7e93725 100644
+--- src/riscv/ffi.c
+--- src/riscv/ffi.c
+@@ -417,10 +417,18 @@ ffi_status ffi_prep_closure_loc(ffi_closure *closure, ffi_cif *cif, void (*fun)(
+        as the memory is readable it should work */
+ 
+     tramp[0] = 0x00000317; /* auipc t1, 0 (i.e. t0 <- codeloc) */
++#ifdef __CHERI_PURE_CAPABILITY__
++#if __riscv_xlen == 64
++    tramp[1] = 0x0103238f; /* RV64: clc ct2, 16(ct1) */
++#else
++    tramp[1] = 0x01033383; /* RV32: clc ct2, 16(ct1) */
++#endif
++#else
+ #if __SIZEOF_POINTER__ == 8
+     tramp[1] = 0x01033383; /* ld t2, 16(t1) */
+ #else
+     tramp[1] = 0x01032383; /* lw t2, 16(t1) */
++#endif
+ #endif
+     tramp[2] = 0x00038067; /* jr t2 */
+     tramp[3] = 0x00000013; /* nop */
+-- 
+2.34.1
+
+
+From cf2f4f0b2b58b8be145d4d50673b7b41004a68fe Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Fri, 11 Feb 2022 12:25:04 +0000
+Subject: [PATCH 13/34] [CHERI-RISC-V] Allow (u)int64_t arguments for purecap
+ RV64
+
+Use #if __riscv_xlen >= 64 instead of __SIZEOF_POINTER__ == 8, to also
+handle RV32+CHERI.
+---
+ src/riscv/ffi.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/riscv/ffi.c b/src/riscv/ffi.c
+index 7e93725..a719619 100644
+--- src/riscv/ffi.c
+--- src/riscv/ffi.c
+@@ -71,7 +71,7 @@ typedef struct call_builder
+ 
+ /* integer (not pointer) less than ABI XLEN */
+ /* FFI_TYPE_INT does not appear to be used */
+-#if __SIZEOF_POINTER__ == 8
++#if __riscv_xlen >= 64
+ #define IS_INT(type) ((type) >= FFI_TYPE_UINT8 && (type) <= FFI_TYPE_SINT64)
+ #else
+ #define IS_INT(type) ((type) >= FFI_TYPE_UINT8 && (type) <= FFI_TYPE_SINT32)
+@@ -145,7 +145,7 @@ static void marshal_atom(call_builder *cb, int type, void *data) {
+         /* 32-bit quantities are always sign-extended in the ABI */
+         case FFI_TYPE_UINT32: value = *(int32_t *)data; break;
+         case FFI_TYPE_SINT32: value = *(int32_t *)data; break;
+-#if __SIZEOF_POINTER__ == 8
++#if __riscv_xlen >= 64
+         case FFI_TYPE_UINT64: value = *(uint64_t *)data; break;
+         case FFI_TYPE_SINT64: value = *(int64_t *)data; break;
+ #endif
+@@ -202,7 +202,7 @@ static void unmarshal_atom(call_builder *cb, int type, void *data) {
+         case FFI_TYPE_SINT16: *(uint16_t *)data = (uint16_t)value; break;
+         case FFI_TYPE_UINT32: *(uint32_t *)data = (uint32_t)value; break;
+         case FFI_TYPE_SINT32: *(uint32_t *)data = (uint32_t)value; break;
+-#if __SIZEOF_POINTER__ == 8
++#if __riscv_xlen >= 64
+         case FFI_TYPE_UINT64: *(uint64_t *)data = (uint64_t)value; break;
+         case FFI_TYPE_SINT64: *(uint64_t *)data = (uint64_t)value; break;
+ #endif
+-- 
+2.34.1
+
+
+From fb3d96567086cc1fc063ae948a91996e89434886 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sat, 12 Feb 2022 18:58:32 +0000
+Subject: [PATCH 14/34] [Morello] Move .type before the start of the function
+
+It appears that the Morello toolchain does not set the LSB on the function
+symbol unless .type appears before the label.
+
+See https://git.morello-project.org/morello/llvm-project/-/issues/45
+---
+ src/aarch64/sysv.S | 76 +++++++++++++++++++++++++++++-----------------
+ 1 file changed, 48 insertions(+), 28 deletions(-)
+
+diff --git a/src/aarch64/sysv.S b/src/aarch64/sysv.S
+index 2cf1982..73a51b4 100644
+--- src/aarch64/sysv.S
+--- src/aarch64/sysv.S
+@@ -91,7 +91,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+    x4 flags
+    x5 closure
+ */
+-
++	.globl	CNAME(ffi_call_SYSV)
++	FFI_HIDDEN(CNAME(ffi_call_SYSV))
++#ifdef __ELF__
++	.type	CNAME(ffi_call_SYSV), #function
++#endif
+ 	cfi_startproc
+ CNAME(ffi_call_SYSV):
+ 	/* Sign the lr with x1 since that is where it will be stored */
+@@ -234,10 +238,7 @@ CNAME(ffi_call_SYSV):
+ 
+ 	cfi_endproc
+ 
+-	.globl	CNAME(ffi_call_SYSV)
+-	FFI_HIDDEN(CNAME(ffi_call_SYSV))
+ #ifdef __ELF__
+-	.type	CNAME(ffi_call_SYSV), #function
+ 	.size CNAME(ffi_call_SYSV), .-CNAME(ffi_call_SYSV)
+ #endif
+ 
+@@ -260,6 +261,11 @@ CNAME(ffi_call_SYSV):
+ #define ffi_closure_SYSV_FS (8*2 + CALL_CONTEXT_SIZE + 64)
+ 
+ 	.align 4
++	.globl	CNAME(ffi_closure_SYSV_V)
++	FFI_HIDDEN(CNAME(ffi_closure_SYSV_V))
++#ifdef __ELF__
++	.type	CNAME(ffi_closure_SYSV_V), #function
++#endif
+ CNAME(ffi_closure_SYSV_V):
+ 	cfi_startproc
+ 	SIGN_LR
+@@ -276,14 +282,16 @@ CNAME(ffi_closure_SYSV_V):
+ 	b	0f
+ 	cfi_endproc
+ 
+-	.globl	CNAME(ffi_closure_SYSV_V)
+-	FFI_HIDDEN(CNAME(ffi_closure_SYSV_V))
+ #ifdef __ELF__
+-	.type	CNAME(ffi_closure_SYSV_V), #function
+ 	.size	CNAME(ffi_closure_SYSV_V), . - CNAME(ffi_closure_SYSV_V)
+ #endif
+ 
+ 	.align	4
++	.globl	CNAME(ffi_closure_SYSV)
++	FFI_HIDDEN(CNAME(ffi_closure_SYSV))
++#ifdef __ELF__
++	.type	CNAME(ffi_closure_SYSV), #function
++#endif
+ 	cfi_startproc
+ CNAME(ffi_closure_SYSV):
+ 	SIGN_LR
+@@ -310,6 +318,9 @@ CNAME(ffi_closure_SYSV):
+ 	add	PTR_REG(4), sp, #ffi_closure_SYSV_FS		/* load stack */
+ 	add	PTR_REG(5), sp, #16+CALL_CONTEXT_SIZE		/* load rvalue */
+ 	mov	GP_REG(6), GP_REG(8)					/* load struct_rval */
++#ifdef __ELF__
++	.type	CNAME(ffi_closure_SYSV_inner), #function
++#endif
+ 	bl      CNAME(ffi_closure_SYSV_inner)
+ 
+ 	/* Load the return value as directed.  */
+@@ -391,39 +402,40 @@ CNAME(ffi_closure_SYSV):
+ 	AUTH_LR_AND_RET
+ 	cfi_endproc
+ 
+-	.globl	CNAME(ffi_closure_SYSV)
+-	FFI_HIDDEN(CNAME(ffi_closure_SYSV))
+ #ifdef __ELF__
+-	.type	CNAME(ffi_closure_SYSV), #function
+ 	.size	CNAME(ffi_closure_SYSV), . - CNAME(ffi_closure_SYSV)
+ #endif
+ 
+ #if defined(FFI_EXEC_STATIC_TRAMP)
+ 	.align 4
++	.globl	CNAME(ffi_closure_SYSV_V_alt)
++	FFI_HIDDEN(CNAME(ffi_closure_SYSV_V_alt))
++#ifdef __ELF__
++	.type	CNAME(ffi_closure_SYSV_V_alt), #function
++#endif
+ CNAME(ffi_closure_SYSV_V_alt):
+ 	/* See the comments above trampoline_code_table. */
+ 	ldr	GP_REG(17), [sp, #GP_REG_SIZE]			/* Load closure in x17 */
+ 	add	sp, sp, #16			/* Restore the stack */
+ 	b	CNAME(ffi_closure_SYSV_V)
+ 
+-	.globl	CNAME(ffi_closure_SYSV_V_alt)
+-	FFI_HIDDEN(CNAME(ffi_closure_SYSV_V_alt))
+ #ifdef __ELF__
+-	.type	CNAME(ffi_closure_SYSV_V_alt), #function
+ 	.size	CNAME(ffi_closure_SYSV_V_alt), . - CNAME(ffi_closure_SYSV_V_alt)
+ #endif
+ 
+ 	.align 4
++	.globl	CNAME(ffi_closure_SYSV_alt)
++	FFI_HIDDEN(CNAME(ffi_closure_SYSV_alt))
++#ifdef __ELF__
++	.type	CNAME(ffi_closure_SYSV_alt), #function
++#endif
+ CNAME(ffi_closure_SYSV_alt):
+ 	/* See the comments above trampoline_code_table. */
+ 	ldr	GP_REG(17), [sp, #GP_REG_SIZE]			/* Load closure in x17 */
+ 	add	sp, sp, #16			/* Restore the stack */
+ 	b	CNAME(ffi_closure_SYSV)
+ 
+-	.globl	CNAME(ffi_closure_SYSV_alt)
+-	FFI_HIDDEN(CNAME(ffi_closure_SYSV_alt))
+ #ifdef __ELF__
+-	.type	CNAME(ffi_closure_SYSV_alt), #function
+ 	.size	CNAME(ffi_closure_SYSV_alt), . - CNAME(ffi_closure_SYSV_alt)
+ #endif
+ 
+@@ -447,6 +459,11 @@ CNAME(ffi_closure_SYSV_alt):
+  * - restore the stack pointer to what it was when the trampoline was invoked.
+  */
+ 	.align	AARCH64_TRAMP_MAP_SHIFT
++	.globl CNAME(trampoline_code_table)
++	FFI_HIDDEN(CNAME(trampoline_code_table))
++#ifdef __ELF__
++	.type	CNAME(trampoline_code_table), #function
++#endif
+ CNAME(trampoline_code_table):
+ 	.rept	AARCH64_TRAMP_MAP_SIZE / AARCH64_TRAMP_SIZE
+ 	sub	sp, sp, #16		/* Make space on the stack */
+@@ -459,10 +476,7 @@ CNAME(trampoline_code_table):
+ 	br	PTR_REG(17)			/* Jump to code */
+ 	.endr
+ 
+-	.globl CNAME(trampoline_code_table)
+-	FFI_HIDDEN(CNAME(trampoline_code_table))
+ #ifdef __ELF__
+-	.type	CNAME(trampoline_code_table), #function
+ 	.size	CNAME(trampoline_code_table), . - CNAME(trampoline_code_table)
+ #endif
+ 	.align	AARCH64_TRAMP_MAP_SHIFT
+@@ -473,6 +487,11 @@ CNAME(trampoline_code_table):
+ #ifdef __MACH__
+ #include <mach/machine/vm_param.h>
+     .align PAGE_MAX_SHIFT
++.globl CNAME(ffi_closure_trampoline_table_page)
++FFI_HIDDEN(CNAME(ffi_closure_trampoline_table_page))
++#ifdef __ELF__
++	.type	CNAME(ffi_closure_trampoline_table_page), #function
++#endif
+ CNAME(ffi_closure_trampoline_table_page):
+     .rept PAGE_MAX_SIZE / FFI_TRAMPOLINE_SIZE
+     adr PTR_REG(16), -PAGE_MAX_SIZE
+@@ -481,10 +500,7 @@ CNAME(ffi_closure_trampoline_table_page):
+ 	nop		/* each entry in the trampoline config page is 2*sizeof(void*) so the trampoline itself cannot be smaller than 16 bytes */
+     .endr
+ 
+-    .globl CNAME(ffi_closure_trampoline_table_page)
+-    FFI_HIDDEN(CNAME(ffi_closure_trampoline_table_page))
+     #ifdef __ELF__
+-    	.type	CNAME(ffi_closure_trampoline_table_page), #function
+     	.size	CNAME(ffi_closure_trampoline_table_page), . - CNAME(ffi_closure_trampoline_table_page)
+     #endif
+ #endif
+@@ -493,6 +509,11 @@ CNAME(ffi_closure_trampoline_table_page):
+ 
+ #ifdef FFI_GO_CLOSURES
+ 	.align 4
++	.globl	CNAME(ffi_go_closure_SYSV_V)
++	FFI_HIDDEN(CNAME(ffi_go_closure_SYSV_V))
++#ifdef __ELF__
++	.type	CNAME(ffi_go_closure_SYSV_V), #function
++#endif
+ CNAME(ffi_go_closure_SYSV_V):
+ 	cfi_startproc
+ 	stp     GP_REG(29), GP_REG(30), [sp, #-ffi_closure_SYSV_FS]!
+@@ -508,14 +529,16 @@ CNAME(ffi_go_closure_SYSV_V):
+ 	b	0f
+ 	cfi_endproc
+ 
+-	.globl	CNAME(ffi_go_closure_SYSV_V)
+-	FFI_HIDDEN(CNAME(ffi_go_closure_SYSV_V))
+ #ifdef __ELF__
+-	.type	CNAME(ffi_go_closure_SYSV_V), #function
+ 	.size	CNAME(ffi_go_closure_SYSV_V), . - CNAME(ffi_go_closure_SYSV_V)
+ #endif
+ 
+ 	.align	4
++	.globl	CNAME(ffi_go_closure_SYSV)
++	FFI_HIDDEN(CNAME(ffi_go_closure_SYSV))
++#ifdef __ELF__
++	.type	CNAME(ffi_go_closure_SYSV), #function
++#endif
+ 	cfi_startproc
+ CNAME(ffi_go_closure_SYSV):
+ 	stp     GP_REG(29), GP_REG(30), [sp, #-ffi_closure_SYSV_FS]!
+@@ -537,10 +560,7 @@ CNAME(ffi_go_closure_SYSV):
+ 	b	.Ldo_closure
+ 	cfi_endproc
+ 
+-	.globl	CNAME(ffi_go_closure_SYSV)
+-	FFI_HIDDEN(CNAME(ffi_go_closure_SYSV))
+ #ifdef __ELF__
+-	.type	CNAME(ffi_go_closure_SYSV), #function
+ 	.size	CNAME(ffi_go_closure_SYSV), . - CNAME(ffi_go_closure_SYSV)
+ #endif
+ #endif /* FFI_GO_CLOSURES */
+-- 
+2.34.1
+
+
+From ebfc00c414dad5951875bb372af14ab6c96c0c21 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sat, 12 Feb 2022 19:00:05 +0000
+Subject: [PATCH 15/34] [Morello] Reserve space for capability registers in
+ struct call_context
+
+---
+ src/aarch64/ffi.c      | 9 ++++++++-
+ src/aarch64/internal.h | 7 ++++++-
+ 2 files changed, 14 insertions(+), 2 deletions(-)
+
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index 5c85fcd..618350a 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -54,10 +54,16 @@ struct _v
+   union _d d[2] __attribute__((aligned(16)));
+ };
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++typedef uintptr_t XREG;
++#else
++typedef uint64_t XREG;
++#endif
++
+ struct call_context
+ {
+   struct _v v[N_V_ARG_REG];
+-  UINT64 x[N_X_ARG_REG];
++  XREG x[N_X_ARG_REG];
+ };
+ 
+ #if FFI_EXEC_TRAMPOLINE_TABLE
+@@ -620,6 +626,7 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+   /* Allocate consectutive stack for everything we'll need.
+      The frame uses 40 bytes for: lr, fp, rvalue, flags, sp */
+   context = alloca (sizeof(struct call_context) + stack_bytes + 40 + rsize);
++  _Static_assert(sizeof(struct call_context) == CALL_CONTEXT_SIZE, "");
+   stack = context + 1;
+   frame = (void*)((uintptr_t)stack + (uintptr_t)stack_bytes);
+   rvalue = (rsize ? (void*)((uintptr_t)frame + 40) : orig_rvalue);
+diff --git a/src/aarch64/internal.h b/src/aarch64/internal.h
+index b5d102b..aa05f5a 100644
+--- src/aarch64/internal.h
+--- src/aarch64/internal.h
+@@ -64,8 +64,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ #define AARCH64_FLAG_VARARG	(1 << 8)
+ 
+ #define N_X_ARG_REG		8
++#ifdef __CHERI_PURE_CAPABILITY__
++#define X_REG_SIZE 16
++#else
++#define X_REG_SIZE 8
++#endif
+ #define N_V_ARG_REG		8
+-#define CALL_CONTEXT_SIZE	(N_V_ARG_REG * 16 + N_X_ARG_REG * 8)
++#define CALL_CONTEXT_SIZE	(N_V_ARG_REG * 16 + N_X_ARG_REG * X_REG_SIZE)
+ 
+ #if defined(FFI_EXEC_STATIC_TRAMP)
+ /*
+-- 
+2.34.1
+
+
+From c07251f3fa1425ec3c474ea05a9b683df951ac4b Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sat, 12 Feb 2022 19:01:31 +0000
+Subject: [PATCH 16/34] [Morello] Reserve enough space for a purecap call frame
+
+We need space for 5 capability registers (80) bytes, not 40 bytes.
+---
+ src/aarch64/ffi.c      | 19 +++++++++++++++----
+ src/aarch64/internal.h |  1 +
+ src/aarch64/sysv.S     |  2 +-
+ 3 files changed, 17 insertions(+), 5 deletions(-)
+
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index 618350a..e1d296b 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -66,6 +66,15 @@ struct call_context
+   XREG x[N_X_ARG_REG];
+ };
+ 
++struct call_frame
++{
++  XREG lr;
++  XREG fp;
++  XREG rvalue;
++  XREG flags;
++  XREG sp;
++};
++
+ #if FFI_EXEC_TRAMPOLINE_TABLE
+ 
+ #ifdef __MACH__
+@@ -592,7 +601,8 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+ 	      void **avalue, void *closure)
+ {
+   struct call_context *context;
+-  void *stack, *frame, *rvalue;
++  struct call_frame *frame;
++  void *stack, *rvalue;
+   struct arg_state state;
+   size_t stack_bytes, rtype_size, rsize;
+   int i, nargs, flags, isvariadic = 0;
+@@ -624,12 +634,13 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+     rsize = 16;
+ 
+   /* Allocate consectutive stack for everything we'll need.
+-     The frame uses 40 bytes for: lr, fp, rvalue, flags, sp */
+-  context = alloca (sizeof(struct call_context) + stack_bytes + 40 + rsize);
++     The frame uses 40/80 bytes for: lr, fp, rvalue, flags, sp */
++  context = alloca (sizeof(struct call_context) + stack_bytes + sizeof(struct call_frame) + rsize);
+   _Static_assert(sizeof(struct call_context) == CALL_CONTEXT_SIZE, "");
++  _Static_assert(sizeof(struct call_frame) == CALL_FRAME_SIZE, "");
+   stack = context + 1;
+   frame = (void*)((uintptr_t)stack + (uintptr_t)stack_bytes);
+-  rvalue = (rsize ? (void*)((uintptr_t)frame + 40) : orig_rvalue);
++  rvalue = (rsize ? (void*)((uintptr_t)frame + sizeof(struct call_frame)) : orig_rvalue);
+ 
+   arg_init (&state);
+   for (i = 0, nargs = cif->nargs; i < nargs; i++)
+diff --git a/src/aarch64/internal.h b/src/aarch64/internal.h
+index aa05f5a..f0c50ff 100644
+--- src/aarch64/internal.h
+--- src/aarch64/internal.h
+@@ -71,6 +71,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ #endif
+ #define N_V_ARG_REG		8
+ #define CALL_CONTEXT_SIZE	(N_V_ARG_REG * 16 + N_X_ARG_REG * X_REG_SIZE)
++#define CALL_FRAME_SIZE		(5 * X_REG_SIZE)
+ 
+ #if defined(FFI_EXEC_STATIC_TRAMP)
+ /*
+diff --git a/src/aarch64/sysv.S b/src/aarch64/sysv.S
+index 73a51b4..4b23f04 100644
+--- src/aarch64/sysv.S
+--- src/aarch64/sysv.S
+@@ -109,7 +109,7 @@ CNAME(ffi_call_SYSV):
+ 	 */
+ 	cfi_def_cfa(GP_REG(1), 0);
+ #else
+-	cfi_def_cfa(GP_REG(1), 40);
++	cfi_def_cfa(GP_REG(1), CALL_FRAME_SIZE);
+ #endif
+ 	stp	GP_REG(29), GP_REG(30), [PTR_REG(1)]
+ 	mov	GP_REG(9), sp
+-- 
+2.34.1
+
+
+From e4e6eca6217158087070ae6988753dca4615e9c6 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sat, 12 Feb 2022 19:02:19 +0000
+Subject: [PATCH 17/34] [Morello] Use ret c30 for purecap
+
+We have to return via the capability register rather than the integer x30.
+---
+ src/aarch64/internal.h | 7 +++++++
+ src/aarch64/sysv.S     | 4 ++++
+ 2 files changed, 11 insertions(+)
+
+diff --git a/src/aarch64/internal.h b/src/aarch64/internal.h
+index f0c50ff..635883d 100644
+--- src/aarch64/internal.h
+--- src/aarch64/internal.h
+@@ -88,6 +88,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ #ifdef LIBFFI_ASM
+ 
+ #ifdef HAVE_PTRAUTH
++#ifdef __CHERI_PURE_CAPABILITY__
++#error "HAVE_PTRAUTH is not compatible"
++#endif
+ #define SIGN_LR pacibsp
+ #define SIGN_LR_WITH_REG(x) pacib lr, x
+ #define AUTH_LR_AND_RET retab
+@@ -97,7 +100,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ #else
+ #define SIGN_LR
+ #define SIGN_LR_WITH_REG(x)
++#ifdef __CHERI_PURE_CAPABILITY__
++#define AUTH_LR_AND_RET ret c30
++#else
+ #define AUTH_LR_AND_RET ret
++#endif
+ #define AUTH_LR_WITH_REG(x)
+ #define BRANCH_AND_LINK_TO_REG blr
+ #define BRANCH_TO_REG br
+diff --git a/src/aarch64/sysv.S b/src/aarch64/sysv.S
+index 4b23f04..180ce3e 100644
+--- src/aarch64/sysv.S
+--- src/aarch64/sysv.S
+@@ -234,7 +234,11 @@ CNAME(ffi_call_SYSV):
+ 	/* Return now that result has been populated. */
+ 99:
+ 	AUTH_LR_WITH_REG(PTR_REG(2))
++#ifdef __CHERI_PURE_CAPABILITY__
++	ret c30
++#else
+ 	ret
++#endif
+ 
+ 	cfi_endproc
+ 
+-- 
+2.34.1
+
+
+From 5855186552e0fe234cc48c433d11cc24aa8a86c7 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sat, 12 Feb 2022 19:08:35 +0000
+Subject: [PATCH 18/34] [Morello] Fix -Wshorten-cap-to-int warnings
+
+This also shows that the FFI_TRAMPOLINE_SIZE value was incorrect and
+should be 32 rather than 48.
+---
+ src/aarch64/ffi.c       | 3 ++-
+ src/aarch64/ffitarget.h | 8 ++++++--
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index e1d296b..0f78afe 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -859,9 +859,10 @@ ffi_prep_closure_loc (ffi_closure *closure,
+   /* Initialize the dynamic trampoline. */
+   memcpy (tramp, trampoline, sizeof(trampoline));
+   
+-  *(UINT64 *)(tramp + 16) = (uintptr_t)start;
++  *(XREG *)(tramp + 16) = (uintptr_t)start;
+ 
+   ffi_clear_cache(tramp, tramp + FFI_TRAMPOLINE_SIZE);
++  _Static_assert(FFI_TRAMPOLINE_SIZE == 16 + sizeof(XREG), "");
+ 
+   /* Also flush the cache for code mapping.  */
+ #ifdef _WIN32
+diff --git a/src/aarch64/ffitarget.h b/src/aarch64/ffitarget.h
+index 800d615..e26f5a8 100644
+--- src/aarch64/ffitarget.h
+--- src/aarch64/ffitarget.h
+@@ -27,7 +27,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ #endif
+ 
+ #ifndef LIBFFI_ASM
+-#ifdef __ILP32__
++#if defined(__CHERI_PURE_CAPABILITY__)
++#define FFI_SIZEOF_ARG __SIZEOF_POINTER__
++typedef __UINTPTR_TYPE__ ffi_arg;
++typedef __INTPTR_TYPE__ ffi_sarg;
++#elif defined(__ILP32__)
+ #define FFI_SIZEOF_ARG 8
+ #define FFI_SIZEOF_JAVA_RAW  4
+ typedef unsigned long long ffi_arg;
+@@ -71,7 +75,7 @@ typedef enum ffi_abi
+ 
+ #else
+ #ifdef __CHERI_PURE_CAPABILITY__
+-#define FFI_TRAMPOLINE_SIZE 48
++#define FFI_TRAMPOLINE_SIZE 32
+ #else
+ #define FFI_TRAMPOLINE_SIZE 24
+ #endif
+-- 
+2.34.1
+
+
+From 6fdfe674d780dae5e1992350d96589bf599ea805 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sat, 12 Feb 2022 19:10:18 +0000
+Subject: [PATCH 19/34] [Morello] Unbound the alloca() passed to ffi_call_SYSV
+
+See commit 1d6fa08bae6bcaddb0b4ca85b0a3dd9ac9c48b99 for RISC-V.
+---
+ src/aarch64/ffi.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index 0f78afe..b30f400 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -639,6 +639,13 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+   _Static_assert(sizeof(struct call_context) == CALL_CONTEXT_SIZE, "");
+   _Static_assert(sizeof(struct call_frame) == CALL_FRAME_SIZE, "");
+   stack = context + 1;
++#ifdef __CHERI_PURE_CAPABILITY__
++  /*
++   * context is bounded to the alloca size, we want to pass a pointer that
++   * points just after the alloca with the curretn stack bounds.
++   */
++  stack = __builtin_cheri_address_set(__builtin_cheri_stack_get(), (ptraddr_t)stack);
++#endif
+   frame = (void*)((uintptr_t)stack + (uintptr_t)stack_bytes);
+   rvalue = (rsize ? (void*)((uintptr_t)frame + sizeof(struct call_frame)) : orig_rvalue);
+ 
+-- 
+2.34.1
+
+
+From 68501772157bc9998c49101d9434241cdf788bce Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sun, 13 Feb 2022 18:37:16 +0000
+Subject: [PATCH 20/34] [Morello] Restore original stack bounds in
+ ffi_call_SYSV
+
+---
+ src/aarch64/sysv.S | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/src/aarch64/sysv.S b/src/aarch64/sysv.S
+index 180ce3e..237e560 100644
+--- src/aarch64/sysv.S
+--- src/aarch64/sysv.S
+@@ -78,13 +78,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ 	.align 4
+ 
+ /* ffi_call_SYSV
+-   extern void ffi_call_SYSV (void *stack, void *frame,
++   extern void ffi_call_SYSV (struct call_context *context, void *frame,
+ 			      void (*fn)(void), void *rvalue,
+ 			      int flags, void *closure);
+ 
+    Therefore on entry we have:
+ 
+-   x0 stack
++   x0 context
+    x1 frame
+    x2 fn
+    x3 rvalue
+@@ -115,7 +115,11 @@ CNAME(ffi_call_SYSV):
+ 	mov	GP_REG(9), sp
+ 	str	GP_REG(9), [PTR_REG(1), #4*GP_REG_SIZE]
+ 	mov	GP_REG(29), GP_REG(1)
++#ifdef __CHERI_PURE_CAPABILITY__
++	scvalue	csp, csp, x0	/* restore stack bounds on context */
++#else
+ 	mov	sp, GP_REG(0)
++#endif
+ 	cfi_def_cfa_register(GP_REG(29))
+ 	cfi_rel_offset (GP_REG(29), 0)
+ 	cfi_rel_offset (GP_REG(30), GP_REG_SIZE)
+-- 
+2.34.1
+
+
+From 93cac26dd71fc03109db5c622251bd237e898f7d Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sun, 13 Feb 2022 18:55:29 +0000
+Subject: [PATCH 21/34] [Morello] Keep LSB set in the ffi_call_SYSV jump table
+
+Otherwise the stores below will be interpreted as DDC-relative and fault.
+---
+ src/aarch64/sysv.S | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/src/aarch64/sysv.S b/src/aarch64/sysv.S
+index 237e560..6043e5f 100644
+--- src/aarch64/sysv.S
+--- src/aarch64/sysv.S
+@@ -160,7 +160,12 @@ CNAME(ffi_call_SYSV):
+ 	ldp     GP_REG(29), GP_REG(30), [PTR_REG(29)]
+ 
+ 	/* Save the return value as directed.  */
++#ifdef __CHERI_PURE_CAPABILITY__
++	/* We have to ensure that the LSB remains set to stay in C64 mode. */
++	adr	GP_REG(5), 0f+1
++#else
+ 	adr	GP_REG(5), 0f
++#endif
+ 	and	w4, w4, #AARCH64_RET_MASK
+ 	add	PTR_REG(5), PTR_REG(5), INT_REG(4), lsl #3
+ 	br	PTR_REG(5)
+-- 
+2.34.1
+
+
+From f75ef23d87fdcece7a15b39fbbea04aba2580626 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sun, 13 Feb 2022 19:14:45 +0000
+Subject: [PATCH 22/34] [Morello] Fix pointer return values
+
+We have to use a capability store for pointers not an INT64 one. Fix this
+by adding a new AARCH64_RET_POINTER to the jump table.
+I could have made this new case handle ILP mode too, but reusing
+AARCH64_RET_UINT32 for that case seemed simpler.
+---
+ src/aarch64/ffi.c      | 2 +-
+ src/aarch64/internal.h | 2 +-
+ src/aarch64/sysv.S     | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index b30f400..dd1947e 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -523,7 +523,7 @@ ffi_prep_cif_machdep (ffi_cif *cif)
+       flags = AARCH64_RET_INT64;
+       break;
+     case FFI_TYPE_POINTER:
+-      flags = (sizeof(void *) == 4 ? AARCH64_RET_UINT32 : AARCH64_RET_INT64);
++      flags = (sizeof(void *) == 4 ? AARCH64_RET_UINT32 : AARCH64_RET_POINTER);
+       break;
+ 
+     case FFI_TYPE_FLOAT:
+diff --git a/src/aarch64/internal.h b/src/aarch64/internal.h
+index 635883d..a6dab35 100644
+--- src/aarch64/internal.h
+--- src/aarch64/internal.h
+@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ #define AARCH64_RET_INT64	1
+ #define AARCH64_RET_INT128	2
+ 
+-#define AARCH64_RET_UNUSED3	3
++#define AARCH64_RET_POINTER	3
+ #define AARCH64_RET_UNUSED4	4
+ #define AARCH64_RET_UNUSED5	5
+ #define AARCH64_RET_UNUSED6	6
+diff --git a/src/aarch64/sysv.S b/src/aarch64/sysv.S
+index 6043e5f..ad5b666 100644
+--- src/aarch64/sysv.S
+--- src/aarch64/sysv.S
+@@ -181,7 +181,7 @@ CNAME(ffi_call_SYSV):
+ 	b 99f
+ 2:	stp	x0, x1, [PTR_REG(3)]		/* INT128 */
+ 	b 99f
+-3:	brk	#1000			/* UNUSED */
++3:	str	PTR_REG(0), [PTR_REG(3)]	/* POINTER */
+ 	b 99f
+ 4:	brk	#1000			/* UNUSED */
+ 	b 99f
+-- 
+2.34.1
+
+
+From 9015a6747d80e91f99357bf0dce3152f982ece89 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sun, 13 Feb 2022 19:15:40 +0000
+Subject: [PATCH 23/34] [CHERI] Initialize the frames passed to assembly with
+ 0xaa
+
+This makes the test failures more deterministic and allows us to easily
+see cases where the computed offsets are wrong.
+---
+ src/aarch64/ffi.c | 6 ++++++
+ src/riscv/ffi.c   | 2 ++
+ 2 files changed, 8 insertions(+)
+
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index dd1947e..f03c361 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -647,6 +647,12 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+   stack = __builtin_cheri_address_set(__builtin_cheri_stack_get(), (ptraddr_t)stack);
+ #endif
+   frame = (void*)((uintptr_t)stack + (uintptr_t)stack_bytes);
++#ifdef __CHERI_PURE_CAPABILITY__
++  frame = __builtin_cheri_bounds_set(frame, sizeof(*frame));
++#endif
++  /* Initialize the frame with 0xaa to detect errors. */
++  memset(context, 0xaa, sizeof(*context));
++  memset(frame, 0xaa, sizeof(*frame));
+   rvalue = (rsize ? (void*)((uintptr_t)frame + sizeof(struct call_frame)) : orig_rvalue);
+ 
+   arg_init (&state);
+diff --git a/src/riscv/ffi.c b/src/riscv/ffi.c
+index a719619..acac03e 100644
+--- src/riscv/ffi.c
+--- src/riscv/ffi.c
+@@ -368,6 +368,8 @@ ffi_call_int (ffi_cif *cif, void (*fn) (void), void *rvalue, void **avalue,
+ #ifdef __CHERI_PURE_CAPABILITY__
+     cb.aregs = __builtin_cheri_bounds_set(cb.aregs, sizeof(*cb.aregs));
+ #endif
++    /* Initialize the frame with 0xaa to detect errors. */
++    memset(cb.aregs, 0xaa, sizeof(*cb.aregs));
+     cb.used_stack = (void*)alloc_base;
+ 
+     int return_by_ref = passed_by_ref(&cb, cif->rtype, 0);
+-- 
+2.34.1
+
+
+From 0fdd80bfe98982890fa923c2ae420a3a98c8cc4a Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sun, 13 Feb 2022 22:46:28 +0000
+Subject: [PATCH 24/34] Fix the native build
+
+---
+ src/dlmalloc.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/src/dlmalloc.c b/src/dlmalloc.c
+index d49b980..1ee83eb 100644
+--- src/dlmalloc.c
+--- src/dlmalloc.c
+@@ -1277,6 +1277,11 @@ extern void*     sbrk(ptrdiff_t);
+ #define is_aligned(A)       (((size_t)((A)) & (CHUNK_ALIGN_MASK)) == 0)
+ #endif
+ 
++#ifndef roundup2
++#define roundup2(x, align)	\
++	((__typeof__(x))(((uintptr_t)(x)+((align)-1))&(~((align)-1))))
++#endif
++
+ /* the number of bytes to offset an address to align it */
+ #define align_offset(A)\
+  ((((size_t)(A) & CHUNK_ALIGN_MASK) == 0)? 0 :\
+-- 
+2.34.1
+
+
+From 7d3ad0c465df04cf6dff49bf48f755dce357593f Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sun, 13 Feb 2022 23:48:06 +0000
+Subject: [PATCH 25/34] [Morello] Fix inline assembly constraints
+
+We have to use "C" for capability registers. This fixes various compiler
+warnings that were suggesting "%w0".
+---
+ src/aarch64/ffi.c | 22 ++++++++++++++--------
+ 1 file changed, 14 insertions(+), 8 deletions(-)
+
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index f03c361..508839d 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -340,6 +340,12 @@ extend_integer_type (void *source, int type)
+     }
+ }
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++#define PTR_CONSTR "C"
++#else
++#define PTR_CONSTR "r"
++#endif
++
+ #if defined(_MSC_VER)
+ void extend_hfa_type (void *dest, void *src, int h);
+ #else
+@@ -392,8 +398,8 @@ extend_hfa_type (void *dest, void *src, int h)
+ "3:	str	q18, [%2, #32]\n"
+ "2:	str	q17, [%2, #16]\n"
+ "1:	str	q16, [%2]"
+-    : "=&r"(x0)
+-    : "r"(f * 12), "r"(dest), "r"(src)
++    : "=&" PTR_CONSTR (x0)
++    : "r"(f * 12), PTR_CONSTR(dest), PTR_CONSTR(src)
+     : "memory", "v16", "v17", "v18", "v19");
+ }
+ #endif
+@@ -419,19 +425,19 @@ compress_hfa_type (void *dest, void *reg, int h)
+     case AARCH64_RET_S2:
+       asm ("ldp q16, q17, [%1]\n\t"
+ 	   "st2 { v16.s, v17.s }[0], [%0]"
+-	   : : "r"(dest), "r"(reg) : "memory", "v16", "v17");
++	   : : PTR_CONSTR(dest), PTR_CONSTR(reg) : "memory", "v16", "v17");
+       break;
+     case AARCH64_RET_S3:
+       asm ("ldp q16, q17, [%1]\n\t"
+ 	   "ldr q18, [%1, #32]\n\t"
+ 	   "st3 { v16.s, v17.s, v18.s }[0], [%0]"
+-	   : : "r"(dest), "r"(reg) : "memory", "v16", "v17", "v18");
++	   : : PTR_CONSTR(dest), PTR_CONSTR(reg) : "memory", "v16", "v17", "v18");
+       break;
+     case AARCH64_RET_S4:
+       asm ("ldp q16, q17, [%1]\n\t"
+ 	   "ldp q18, q19, [%1, #32]\n\t"
+ 	   "st4 { v16.s, v17.s, v18.s, v19.s }[0], [%0]"
+-	   : : "r"(dest), "r"(reg) : "memory", "v16", "v17", "v18", "v19");
++	   : : PTR_CONSTR(dest), PTR_CONSTR(reg) : "memory", "v16", "v17", "v18", "v19");
+       break;
+ 
+     case AARCH64_RET_D1:
+@@ -447,19 +453,19 @@ compress_hfa_type (void *dest, void *reg, int h)
+     case AARCH64_RET_D2:
+       asm ("ldp q16, q17, [%1]\n\t"
+ 	   "st2 { v16.d, v17.d }[0], [%0]"
+-	   : : "r"(dest), "r"(reg) : "memory", "v16", "v17");
++	   : : PTR_CONSTR(dest), PTR_CONSTR(reg) : "memory", "v16", "v17");
+       break;
+     case AARCH64_RET_D3:
+       asm ("ldp q16, q17, [%1]\n\t"
+ 	   "ldr q18, [%1, #32]\n\t"
+ 	   "st3 { v16.d, v17.d, v18.d }[0], [%0]"
+-	   : : "r"(dest), "r"(reg) : "memory", "v16", "v17", "v18");
++	   : : PTR_CONSTR(dest), PTR_CONSTR(reg) : "memory", "v16", "v17", "v18");
+       break;
+     case AARCH64_RET_D4:
+       asm ("ldp q16, q17, [%1]\n\t"
+ 	   "ldp q18, q19, [%1, #32]\n\t"
+ 	   "st4 { v16.d, v17.d, v18.d, v19.d }[0], [%0]"
+-	   : : "r"(dest), "r"(reg) : "memory", "v16", "v17", "v18", "v19");
++	   : : PTR_CONSTR(dest), PTR_CONSTR(reg) : "memory", "v16", "v17", "v18", "v19");
+       break;
+ 
+     default:
+-- 
+2.34.1
+
+
+From 7e88d253647471270c61517c615e53933d09bca5 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sun, 13 Feb 2022 23:48:58 +0000
+Subject: [PATCH 26/34] [Morello] Stay in C64 mode in extend_hfa_type jump
+ table
+
+We have to keep the LSB set, otherwise the later instructions will fault
+due to using a DDC-relative load instead of the capability one.
+---
+ src/aarch64/ffi.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index 508839d..30b3cdb 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -356,7 +356,11 @@ extend_hfa_type (void *dest, void *src, int h)
+   void *x0;
+ 
+   asm volatile (
++#ifdef __CHERI_PURE_CAPABILITY__
++	"adr	%0, 0f+1\n" /* +1 is needed to stay in C64 mode */
++#else
+ 	"adr	%0, 0f\n"
++#endif
+ "	add	%0, %0, %1\n"
+ "	br	%0\n"
+ "0:	ldp	s16, s17, [%3]\n"	/* S4 */
+-- 
+2.34.1
+
+
+From f85a4c2f762a874e1153dccb979a8ee204a0abbc Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Mon, 14 Feb 2022 19:20:11 +0000
+Subject: [PATCH 27/34] Try to fix GCC build
+
+---
+ include/ffi_common.h | 7 +++++--
+ src/dlmalloc.c       | 7 +------
+ 2 files changed, 6 insertions(+), 8 deletions(-)
+
+diff --git a/include/ffi_common.h b/include/ffi_common.h
+index 0dcf51f..ee6891d 100644
+--- include/ffi_common.h
+--- include/ffi_common.h
+@@ -95,18 +95,21 @@ void ffi_type_test(ffi_type *a, char *file, int line);
+ #define FFI_ASSERT_VALID_TYPE(x)
+ #endif
+ 
++#ifndef __has_builtin
++#define __has_builtin(...) 0
++#endif
+ 
+ /* v cast to size_t and aligned up to a multiple of a */
+ #if __has_builtin(__builtin_align_up)
+ #define FFI_ALIGN(v, a)  __builtin_align_up(v, a)
+ #else
+-#define FFI_ALIGN(v, a)  (((((size_t) (v))-1) | ((a)-1))+1)
++#define FFI_ALIGN(v, a)  (((((uintptr_t) (v))-1) | ((a)-1))+1)
+ #endif
+ /* v cast to size_t and aligned down to a multiple of a */
+ #if __has_builtin(__builtin_align_down)
+ #define FFI_ALIGN_DOWN(v, a)  __builtin_align_down(v, a)
+ #else
+-#define FFI_ALIGN_DOWN(v, a) (((size_t) (v)) & -a)
++#define FFI_ALIGN_DOWN(v, a) (((uintptr_t) (v)) & -a)
+ #endif
+ 
+ /* Perform machine dependent cif processing */
+diff --git a/src/dlmalloc.c b/src/dlmalloc.c
+index 1ee83eb..b7db3a2 100644
+--- src/dlmalloc.c
+--- src/dlmalloc.c
+@@ -1277,11 +1277,6 @@ extern void*     sbrk(ptrdiff_t);
+ #define is_aligned(A)       (((size_t)((A)) & (CHUNK_ALIGN_MASK)) == 0)
+ #endif
+ 
+-#ifndef roundup2
+-#define roundup2(x, align)	\
+-	((__typeof__(x))(((uintptr_t)(x)+((align)-1))&(~((align)-1))))
+-#endif
+-
+ /* the number of bytes to offset an address to align it */
+ #define align_offset(A)\
+  ((((size_t)(A) & CHUNK_ALIGN_MASK) == 0)? 0 :\
+@@ -3949,7 +3944,7 @@ static void* internal_memalign(mstate m, size_t alignment, size_t bytes) {
+           We've allocated enough total room so that this is always
+           possible.
+         */
+-        char* br = (char*)mem2chunk(roundup2(mem, alignment));
++        char* br = (char*)mem2chunk(FFI_ALIGN(mem, alignment));
+         char* pos = ((size_t)(br - (char*)(p)) >= MIN_CHUNK_SIZE)?
+           br : br+alignment;
+         mchunkptr newp = (mchunkptr)pos;
+-- 
+2.34.1
+
+
+From 7676220c2f35b356e29b45eb089f7377a160de48 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Mon, 14 Feb 2022 20:24:53 +0000
+Subject: [PATCH 28/34] [Morello] Fix on-stack integer arguments
+
+On-stack integer arguments are passed extended to 64-bits not to size of
+uintptr_t. This fixes `libffi.bhaible/test-call.c -DDGTEST=7` which
+previously resulted in SIGBUS due to an unaligned capability store.
+---
+ src/aarch64/ffi.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index 30b3cdb..8e1d1d3 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -707,7 +707,14 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+ #ifdef __APPLE__
+ 		memcpy(d, a, s);
+ #else
+-		*(ffi_arg *)d = ext;
++		/* Integers are extended to uint64_t, but for Morello pointers
++		 * are be 16 bytes, so we have to use uintptr_t/ffi_arg. */
++		if (t == FFI_TYPE_POINTER) {
++		  FFI_ASSERT(s == sizeof(void*));
++		  *(uintptr_t *)d = ext;
++		} else {
++		  *(uint64_t *)d = (uint64_t)ext;
++		}
+ #endif
+ 	      }
+ 	  }
+-- 
+2.34.1
+
+
+From 571e6288616cfaeaa2dccecc7cfba6a52a01d2b4 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Mon, 14 Feb 2022 20:26:31 +0000
+Subject: [PATCH 29/34] [Morello] Fix struct return value bounds
+
+This fixes `libffi.bhaible/test-call.c -DDGTEST=44` which previously
+resulted in a bounds violation since the return value buffer pointed to
+the end of the call frame rather than covering the return value.
+---
+ src/aarch64/ffi.c  | 16 ++++++++++++----
+ src/aarch64/sysv.S |  2 ++
+ 2 files changed, 14 insertions(+), 4 deletions(-)
+
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index 8e1d1d3..d84de03 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -657,13 +657,21 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+   stack = __builtin_cheri_address_set(__builtin_cheri_stack_get(), (ptraddr_t)stack);
+ #endif
+   frame = (void*)((uintptr_t)stack + (uintptr_t)stack_bytes);
+-#ifdef __CHERI_PURE_CAPABILITY__
+-  frame = __builtin_cheri_bounds_set(frame, sizeof(*frame));
+-#endif
+   /* Initialize the frame with 0xaa to detect errors. */
+   memset(context, 0xaa, sizeof(*context));
+   memset(frame, 0xaa, sizeof(*frame));
+-  rvalue = (rsize ? (void*)((uintptr_t)frame + sizeof(struct call_frame)) : orig_rvalue);
++  if (rsize) {
++    /* frame currently has full stack bounds, so we can use it for derivation. */
++    rvalue = (void*)((uintptr_t)frame + sizeof(struct call_frame));
++#ifdef __CHERI_PURE_CAPABILITY__
++    rvalue = __builtin_cheri_bounds_set(rvalue, rsize);
++#endif
++  } else {
++    rvalue = orig_rvalue;
++  }
++#ifdef __CHERI_PURE_CAPABILITY__
++  frame = __builtin_cheri_bounds_set(frame, sizeof(*frame));
++#endif
+ 
+   arg_init (&state);
+   for (i = 0, nargs = cif->nargs; i < nargs; i++)
+diff --git a/src/aarch64/sysv.S b/src/aarch64/sysv.S
+index ad5b666..be5fc62 100644
+--- src/aarch64/sysv.S
+--- src/aarch64/sysv.S
+@@ -156,6 +156,8 @@ CNAME(ffi_call_SYSV):
+ 	ldr	GP_REG(9), [PTR_REG(29), #4*GP_REG_SIZE]
+ 	mov	sp, GP_REG(9)
+ 	cfi_def_cfa_register (sp)
++	cfi_rel_offset (GP_REG(29), 0)
++	cfi_rel_offset (GP_REG(30), GP_REG_SIZE)
+ 	mov	GP_REG(2), GP_REG(29)			/* Preserve for auth */
+ 	ldp     GP_REG(29), GP_REG(30), [PTR_REG(29)]
+ 
+-- 
+2.34.1
+
+
+From a68c272e3e1ebd3b81894c71911c73f2a239608a Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Mon, 25 Apr 2022 10:25:55 +0000
+Subject: [PATCH 30/34] Add a clang-format config file
+
+---
+ .clang-format | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 .clang-format
+
+diff --git a/.clang-format b/.clang-format
+new file mode 100644
+index 0000000..3fbf3b4
+--- /dev/null
+--- .clang-format
+@@ -0,0 +1,3 @@
++BasedOnStyle: GNU
++UseTab: ForContinuationAndIndentation
++SortIncludes: Never
+-- 
+2.34.1
+
+
+From 28ce0682cb28711e0b2660b570cd5d0c7828441c Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Tue, 26 Apr 2022 22:28:10 +0000
+Subject: [PATCH 31/34] [Morello] Fix passing small structs in registers
+
+When passing something like struct {long;long;} the existing code was
+copying the raw struct bytes into the xregs array (if there is sufficient
+space to pass the struct in memory). However, the xregs array holds
+capabilities for Morello purecap, so this 16-byte memcpy means the struct
+with two longs was stored in a single capability register.
+
+We have to split up this copy into 8-byte chunks for each register to
+avoid writing to the capability metadata instead of the xreg subset.
+While fixing this problem the commit also adds logic to deal with structs
+that contain capabilities, in which case we can pass up to 32 bytes in
+registers instead of the aarch64 16-byte limit.
+---
+ src/aarch64/ffi.c | 69 ++++++++++++++++++++++++++++++++++++++++++-----
+ 1 file changed, 62 insertions(+), 7 deletions(-)
+
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index d84de03..c6e8d7d 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -340,6 +340,38 @@ extend_integer_type (void *source, int type)
+     }
+ }
+ 
++static inline bool
++can_pass_aggregate_in_xregs (ffi_type *ty, size_t *num_xregs,
++			     size_t *num_cheri_caps)
++{
++  FFI_ASSERT (ty->elements != NULL);
++  if (ty->size > 2 * X_REG_SIZE)
++    return false;
++  *num_xregs = 0;
++  *num_cheri_caps = 0;
++#ifdef __CHERI_PURE_CAPABILITY__
++  /* For CHERI up to 32 bytes can be okay if we have either 2 caps, or one
++   * capability + (multiple) integers < 8 bytes. */
++  for (int i = 0; ty->elements[i]; i++)
++    {
++      if (ty->elements[i]->type == FFI_TYPE_STRUCT)
++	abort (); /* TODO: should recurse into structs to flatten them. */
++      else if (ty->elements[i]->type == FFI_TYPE_POINTER)
++	(*num_cheri_caps)++;
++      else if (ty->elements[i]->size > 8)
++	return false; /* can't pass cap+int128 in registers */
++    }
++  FFI_ASSERT (*num_cheri_caps <= 2);
++  /* If there are no capabilities, we can only return 16 bytes in xregs. */
++  if (*num_cheri_caps == 0 && ty->size > 16)
++    return false;
++#endif
++  *num_xregs
++      = *num_cheri_caps + ((ty->size - *num_cheri_caps * X_REG_SIZE) + 7) / 8;
++  FFI_ASSERT (*num_xregs <= 2);
++  return true;
++}
++
+ #ifdef __CHERI_PURE_CAPABILITY__
+ #define PTR_CONSTR "C"
+ #else
+@@ -735,7 +767,8 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+ 	case FFI_TYPE_COMPLEX:
+ 	  {
+ 	    void *dest;
+-
++	    size_t num_capabilities = 0;
++	    size_t num_xregs = 0;
+ 	    h = is_vfp_type (ty);
+ 	    if (h)
+ 	      {
+@@ -765,7 +798,8 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+                 dest = allocate_to_stack (&state, stack, ty->alignment, s);
+               }
+ 	      }
+-	    else if (s > 16)
++	    else if (!can_pass_aggregate_in_xregs (ty, &num_xregs,
++						   &num_capabilities))
+ 	      {
+ 		/* If the argument is a composite type that is larger than 16
+ 		   bytes, then the argument has been copied to memory, and
+@@ -777,15 +811,36 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *orig_rvalue,
+ 	      }
+ 	    else
+ 	      {
+-		size_t n = (s + 7) / 8;
+-		if (state.ngrn + n <= N_X_ARG_REG)
++		if (state.ngrn + num_xregs <= N_X_ARG_REG)
+ 		  {
++		    /* If the struct type does not contain capabilities, we
++		     * have to pass two separate 8-byte chunks since context->x
++		     * contains 16-byte registers */
++		    if (num_capabilities == 0)
++		      {
++			FFI_ASSERT (num_xregs == (s + 7) / 8);
++			for (int offset = 0; offset < s; offset += 8)
++			  {
++			    uint64_t tmp = 0;
++			    memcpy (&tmp, (uint8_t *)a + offset,
++				    s - offset > 8 ? 8 : s - offset);
++			    context->x[state.ngrn] = tmp;
++			    state.ngrn++;
++			  }
++			break; /* copy already completed */
++		      }
+ 		    /* If the argument is a composite type and the size in
+ 		       double-words is not more than the number of available
+ 		       X registers, then the argument is copied into
+-		       consecutive X registers.  */
+-		    dest = &context->x[state.ngrn];
+-                    state.ngrn += (unsigned int)n;
++		       consecutive X registers.
++		       NB: If the struct contains capabilities, the layout is
++		       padded appropriately, so we can do a simple memcpy().
++		       */
++		    else
++		      {
++			dest = &context->x[state.ngrn];
++			state.ngrn += num_xregs;
++		      }
+ 		  }
+ 		else
+ 		  {
+-- 
+2.34.1
+
+
+From 2405ecd7e78accc6f99e4adb827e51a35b706b52 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Tue, 26 Apr 2022 22:28:36 +0000
+Subject: [PATCH 32/34] [Morello] Fix ffi_closure_SYSV returning a pointer type
+ variable
+
+---
+ src/aarch64/sysv.S | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/aarch64/sysv.S b/src/aarch64/sysv.S
+index be5fc62..e22d040 100644
+--- src/aarch64/sysv.S
+--- src/aarch64/sysv.S
+@@ -353,7 +353,7 @@ CNAME(ffi_closure_SYSV):
+ 	b	99f
+ 2:	ldp	x0, x1, [PTR_REG(3)]		/* INT128 */
+ 	b	99f
+-3:	brk	#1000			/* UNUSED */
++3:	ldr	PTR_REG(0), [PTR_REG(3)]	/* POINTER */
+ 	nop
+ 4:	brk	#1000			/* UNUSED */
+ 	nop
+-- 
+2.34.1
+
+
+From 329c0aca3c5c583e3d1bda0fc1fd92e186a88021 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Tue, 26 Apr 2022 22:29:54 +0000
+Subject: [PATCH 33/34] [Morello] Disable FFI_CLOSURES for now
+
+This code is currently incomplete, disable it until we actually need it.
+---
+ src/aarch64/ffitarget.h | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/src/aarch64/ffitarget.h b/src/aarch64/ffitarget.h
+index e26f5a8..91585c3 100644
+--- src/aarch64/ffitarget.h
+--- src/aarch64/ffitarget.h
+@@ -61,7 +61,12 @@ typedef enum ffi_abi
+ 
+ /* ---- Definitions for closures ----------------------------------------- */
+ 
++#if defined(__CHERI_PURE_CAPABILITY__)
++/* Not implemented yet for purecap. */
++#define FFI_CLOSURES 0
++#else
+ #define FFI_CLOSURES 1
++#endif
+ #define FFI_NATIVE_RAW_API 0
+ 
+ #if defined (FFI_EXEC_TRAMPOLINE_TABLE) && FFI_EXEC_TRAMPOLINE_TABLE
+-- 
+2.34.1
+
+
+From 42e4b49e307e60ef205fd66aa543939a69e9b942 Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Mon, 9 May 2022 11:42:06 +0000
+Subject: [PATCH 34/34] Add missing includes
+
+---
+ include/ffi_common.h | 1 +
+ src/aarch64/ffi.c    | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/include/ffi_common.h b/include/ffi_common.h
+index ee6891d..87f0108 100644
+--- include/ffi_common.h
+--- include/ffi_common.h
+@@ -99,6 +99,7 @@ void ffi_type_test(ffi_type *a, char *file, int line);
+ #define __has_builtin(...) 0
+ #endif
+ 
++#include <stdint.h>
+ /* v cast to size_t and aligned up to a multiple of a */
+ #if __has_builtin(__builtin_align_up)
+ #define FFI_ALIGN(v, a)  __builtin_align_up(v, a)
+diff --git a/src/aarch64/ffi.c b/src/aarch64/ffi.c
+index c6e8d7d..8cd3c95 100644
+--- src/aarch64/ffi.c
+--- src/aarch64/ffi.c
+@@ -20,6 +20,7 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ 
+ #if defined(__aarch64__) || defined(__arm64__)|| defined (_M_ARM64)
++#include <stdbool.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <stdint.h>
+-- 
+2.34.1
+
