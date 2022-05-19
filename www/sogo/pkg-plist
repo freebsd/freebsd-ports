@@ -676,6 +676,7 @@ GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Pacific/Guadalcanal.
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Pacific/Guam.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Pacific/Honolulu.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Pacific/Johnston.ics
+GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Pacific/Kanton.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Pacific/Kiritimati.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Pacific/Kosrae.ics
 GNUstep/Local/Library/Libraries/Resources/NGCards/TimeZones/Pacific/Kwajalein.ics
@@ -737,8 +738,8 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.5
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.5
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.5.0
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.6
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
 GNUstep/Local/Library/OCSTypeModels/contact-oracle.ocs

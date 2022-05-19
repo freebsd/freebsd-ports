@@ -1,5 +1,5 @@
 PORTNAME=		sogo
-PORTVERSION=		5.5.1
+PORTVERSION=		5.6.0
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
@@ -34,7 +34,6 @@ MFA_LIB_DEPENDS=	liboath.so:security/oath-toolkit
 SAML2_LIB_DEPENDS=	liblasso.so:security/lasso
 
 MFA_CONFIGURE_ON=	--enable-mfa
-MFA_CONFIGURE_OFF=	--disable-mfa
 SAML2_CONFIGURE_ON=	--enable-saml2
 
 USERS=			sogod
