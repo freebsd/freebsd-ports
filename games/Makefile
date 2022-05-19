@@ -226,6 +226,7 @@
     SUBDIR += eif
     SUBDIR += eights
     SUBDIR += einstein
+    SUBDIR += eksanos
     SUBDIR += el
     SUBDIR += el-data
     SUBDIR += emptyepsilon
