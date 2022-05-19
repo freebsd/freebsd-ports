@@ -1,10 +1,9 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	logstalgia
-DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.1.2
-PORTREVISION=	11
+DISTVERSION=	1.1.3
 CATEGORIES=	sysutils www
+MASTER_SITES=	https://github.com/acaudwell/${PORTNAME}/releases/download/${DISTNAME}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Website access log visualization tool
@@ -15,23 +14,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
-		libpcre.so:devel/pcre \
-		libpng.so:graphics/png \
-		libftgl.so:graphics/ftgl
+		libftgl.so:graphics/ftgl \
+		libpcre2-8.so:devel/pcre2 \
+		libpng.so:graphics/png
+
+USES=		autoreconf compiler:c++0x gl jpeg localbase:ldflags pkgconfig \
+		sdl xorg
+USE_GL=		gl glew glu
+USE_SDL=	image2 sdl2
+USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++0x gl gmake jpeg localbase:ldflags \
-		pkgconfig sdl
-USE_GL=		gl glu glew
-USE_SDL=	image2 sdl2
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	acaudwell
-GH_PROJECT=	Logstalgia Core:core
-GH_TAGNAME=	1534074:core
-
-post-extract:
-	@${MV} ${WRKDIR}/Core-*/* ${WRKSRC}/src/core/
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -Wno-unused-but-set-variable||' \
