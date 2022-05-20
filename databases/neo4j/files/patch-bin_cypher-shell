@@ -1,4 +1,4 @@
---- bin/cypher-shell.orig	2022-03-11 08:13:31 UTC
+--- bin/cypher-shell.orig	2022-05-11 06:09:41 UTC
 +++ bin/cypher-shell
 @@ -47,6 +47,8 @@ _find_java_cmd() {
  detect_os() {

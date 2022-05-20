@@ -1,5 +1,5 @@
 PORTNAME=	neo4j
-DISTVERSION=	4.2.16
+DISTVERSION=	4.4.7
 CATEGORIES=	databases java
 MASTER_SITES=	http://dist.neo4j.org/
 DISTNAME=	${PORTNAME}-community-${DISTVERSION}-unix
@@ -26,11 +26,16 @@ PLIST_SUB=	DBDIR=${DBDIR} DISTVERSION=${DISTVERSION}
 DBDIR=		${DESTDIR}/var/db/${PORTNAME}
 LOGDIR=		${DESTDIR}/var/log/${PORTNAME}
 RUNDIR=		${DESTDIR}/var/run/
+NEO4JDIR=	${PREFIX}/${PORTNAME}
+NEO4J_CONFDIR=	${PREFIX}/etc
 
 post-patch:
 	${REINPLACE_CMD} 's,%%DBDIR%%,${DBDIR},g;s,%%JAVA_HOME%%,${JAVA_HOME},g;s,%%LOGDIR%%,${LOGDIR},g;s,%%PREFIX%%,${PREFIX},g;s,%%RUNDIR%%,${RUNDIR},g' \
 		${WRKSRC}/bin/cypher-shell ${WRKSRC}/bin/neo4j* \
 		${WRKSRC}/conf/neo4j.conf
+
+	${REINPLACE_CMD} 's,%%NEO4JDIR%%,${NEO4JDIR},g;s,%%NEO4J_CONFDIR%%,${NEO4J_CONFDIR},g' \
+		${WRKSRC}/bin/neo4j
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
@@ -47,4 +52,5 @@ do-install:
 		${STAGEDIR}${PREFIX}/etc/$f.sample
 .endfor
 	${MKDIR} ${STAGEDIR}${DBDIR} ${STAGEDIR}${PREFIX}/etc/neo4j-certificates
+
 .include <bsd.port.mk>

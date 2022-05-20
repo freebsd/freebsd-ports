@@ -1,33 +1,28 @@
---- bin/neo4j.orig	2022-03-11 02:55:54 UTC
+--- bin/neo4j.orig	2022-05-19 10:56:30 UTC
 +++ bin/neo4j
-@@ -56,6 +56,8 @@ build_classpath() {
- detect_os() {
-   if uname -s | grep -q Darwin; then
-     DIST_OS="macosx"
-+  elif uname -s | grep -q FreeBSD; then
-+    DIST_OS="freebsd"
-   else
-     DIST_OS="other"
-   fi
-@@ -171,6 +173,9 @@ _find_java_home() {
-   [[ "${JAVA_HOME:-}" ]] && return
+@@ -33,7 +33,7 @@ while [ -h "$PRG" ]; do
+ done
  
-   case "${DIST_OS}" in
-+    "freebsd")
-+      JAVA_HOME="%%JAVA_HOME%%"
-+      ;;
-     "macosx")
-       JAVA_HOME="$(/usr/libexec/java_home -v 11)"
-       ;;
-@@ -184,9 +189,9 @@ _show_java_help() {
+ PRGDIR=`dirname "$PRG"`
+-BASEDIR=`cd "$PRGDIR/.." >/dev/null; pwd`
++BASEDIR=%%PREFIX%%/neo4j
  
- _setup_calculated_paths() {
-   if [[ -z "${NEO4J_HOME:-}" ]]; then
--    NEO4J_HOME="$(cd "$(dirname "$0")"/.. && pwd)"
-+    NEO4J_HOME="$(cd "$(dirname "$0")"/../neo4j && pwd)"
-   fi
--  : "${NEO4J_CONF:="${NEO4J_HOME}/conf"}"
-+  : "${NEO4J_CONF:="${NEO4J_HOME}/../etc"}"
-   readonly NEO4J_HOME NEO4J_CONF
- }
+ # Reset the REPO variable. If you need to influence this use the environment setup file.
+ REPO=
+@@ -116,6 +116,9 @@ if $cygwin; then
+   [ -n "$BASEDIR" ] && BASEDIR=`cygpath --path --windows "$BASEDIR"`
+   [ -n "$REPO" ] && REPO=`cygpath --path --windows "$REPO"`
+ fi
++
++NEO4J_CONF_ENV='NEO4J_CONF=%%NEO4J_CONFDIR%%'
++export NEO4J_CONF_ENV
  
+ exec "$JAVACMD" -Xmx128m \
+   -classpath "$CLASSPATH" \
+@@ -125,4 +128,4 @@ exec "$JAVACMD" -Xmx128m \
+   -Dapp.home="$BASEDIR" \
+   -Dbasedir="$BASEDIR" \
+   org.neo4j.server.startup.Neo4jCommand \
+-  "$@"
+\ No newline at end of file
++  "$@"
