@@ -12,6 +12,8 @@ COMMENT=	DX7 FM multi plaform/multi format plugin
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	fails to compile due to a seemingly clang issue: https://github.com/llvm/llvm-project/issues/55604
+
 BUILD_DEPENDS=	libX11>0:x11/libX11 \
 		libXcursor>0:x11/libXcursor \
 		libXinerama>0:x11/libXinerama \
