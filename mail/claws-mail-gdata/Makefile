@@ -1,7 +1,6 @@
 # Created by: Pawel Pekala <pawel@FreeBSD.org>
 
 PORTNAME=	gdata
-PORTREVISION=	0
 
 COMMENT=	Plugin providing Google Contacts in the Tab-address completion
 

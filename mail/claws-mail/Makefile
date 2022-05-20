@@ -1,7 +1,6 @@
 # Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 
 PORTNAME=	claws-mail
-PORTREVISION=	1
 CATEGORIES=	mail news
 
 COMMENT=	Lightweight and featureful GTK+ based e-mail and news client
@@ -11,51 +10,53 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libetpan.so:mail/libetpan \
-		libfreetype.so:print/freetype2 \
-		libharfbuzz.so:print/harfbuzz \
-		libsasl2.so:security/cyrus-sasl2 \
-		libgnutls.so:security/gnutls \
-		libgcrypt.so:security/libgcrypt \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libnettle.so:security/nettle
-RUN_DEPENDS=	mime-support>0:misc/mime-support \
-		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+		libfreetype.so:print/freetype2 \
+		libgcrypt.so:security/libgcrypt \
+		libgnutls.so:security/gnutls \
+		libharfbuzz.so:print/harfbuzz \
+		libnettle.so:security/nettle \
+		libsasl2.so:security/cyrus-sasl2
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
+		mime-support>0:misc/mime-support
 
 USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gettext \
-		gettext-tools gnome pathfix pkgconfig python:3.5+ shebangfix ssl xorg
-USE_XORG=	ice sm
+		gettext-tools gnome pathfix pkgconfig python:3.5+ shebangfix \
+		ssl xorg
 USE_GNOME=	cairo gtk20 librsvg2
+USE_XORG=	ice sm
 SHEBANG_FILES=	tools/*.pl tools/*.py tools/tb2claws-mail
 
-OPTIONS_DEFINE=	COMPFACE DEBUG DOCS ENCHANT IPV6 LDAP \
-		NLS STARTUP THEMES
-OPTIONS_DEFAULT=COMPFACE ENCHANT STARTUP THEMES
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		COMPFACE DEBUG DOCS ENCHANT IPV6 LDAP NLS STARTUP \
+			THEMES
+OPTIONS_DEFAULT=	COMPFACE ENCHANT STARTUP THEMES
+OPTIONS_SUB=		yes
 
-COMPFACE_DESC=		X-Face support
+COMPFACE_DESC=	X-Face support
+ENCHANT_DESC=	Spell checking support
+STARTUP_DESC=	Startup notification support
+THEMES_DESC=	Additional themes
+
+COMPFACE_LIB_DEPENDS=		libcompface.so:mail/faces
 COMPFACE_CONFIGURE_ENABLE=	compface
-COMPFACE_LIB_DEPENDS=	libcompface.so:mail/faces
 
 DEBUG_CONFIGURE_ON=	--enable-maintainer-mode
 
-ENCHANT_DESC=		Spell checking support
+ENCHANT_LIB_DEPENDS=		libenchant.so:textproc/enchant
 ENCHANT_CONFIGURE_ENABLE=	enchant
-ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
+LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_ENABLE=	ldap
-LDAP_USE=		openldap=yes
 
-NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext-tools
+NLS_CONFIGURE_OFF=	--disable-nls
 
-STARTUP_DESC=		Startup notification support
+STARTUP_LIB_DEPENDS=		libstartup-notification-1.so:x11/startup-notification
 STARTUP_CONFIGURE_ENABLE=	startup-notification
-STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 
-THEMES_DESC=		Additional themes
 THEMES_RUN_DEPENDS=	claws-mail-themes>0:x11-themes/claws-mail-themes
 
 .include "Makefile.claws"

@@ -1,7 +1,6 @@
 # Created by: Pawel Pekala <c0rn@o2.pl>
 
 PORTNAME=	vcalendar
-PORTREVISION=	0
 
 COMMENT=	vCalendar plugin for Claws Mail
 

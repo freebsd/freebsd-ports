@@ -10,6 +10,7 @@ CLAWS_PLUGINS=	acpi_notifier \
 		fancy \
 		fetchinfo \
 		gdata \
+		keyword_warner \
 		libravatar \
 		litehtml_viewer \
 		mailmbox \

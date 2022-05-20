@@ -1,7 +1,6 @@
 # Created by: Pawel Pekala <c0rn@o2.pl>
 
 PORTNAME=	perl
-PORTREVISION=	0
 
 COMMENT=	Perl filtering plugin for Claws Mail
 

@@ -1,7 +1,6 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	spam_report
-PORTREVISION=	0
 
 COMMENT=	Spam report plugin for Claws Mail
 

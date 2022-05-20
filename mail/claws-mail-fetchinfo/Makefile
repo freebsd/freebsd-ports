@@ -1,7 +1,6 @@
 # Created by: Pawel Pekala <c0rn@o2.pl>
 
 PORTNAME=	fetchinfo
-PORTREVISION=	0
 
 COMMENT=	Header insertion plugin for Claws Mail
 

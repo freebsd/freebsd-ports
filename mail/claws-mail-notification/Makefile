@@ -1,7 +1,6 @@
 # Created by: Pawel Pekala <c0rn@o2.pl>
 
 PORTNAME=	notification
-PORTREVISION=	1
 
 COMMENT=	New mail notification plugin for Claws Mail
 

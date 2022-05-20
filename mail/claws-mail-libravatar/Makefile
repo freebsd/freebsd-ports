@@ -1,7 +1,6 @@
 # Created by: Pawel Pekala <pawel@freebsd.org>
 
 PORTNAME=	libravatar
-PORTREVISION=	0
 
 COMMENT=	Avatar display plugin for Claws Mail
 
