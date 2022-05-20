@@ -1,3 +1,3 @@
-TIMESTAMP = 1650046910
-SHA256 (gnome/gnome-shell-42.0.tar.xz) = 33d404fb3c93b9de42984f0110a2969d6a4a7247c27fe7f5e24c67ecfec75094
-SIZE (gnome/gnome-shell-42.0.tar.xz) = 1918044
+TIMESTAMP = 1653063986
+SHA256 (gnome/gnome-shell-42.1.tar.xz) = f5ee8a6158fa122627412726cb88004e7e2d046adc32215056244e59b74063ea
+SIZE (gnome/gnome-shell-42.1.tar.xz) = 1928924
