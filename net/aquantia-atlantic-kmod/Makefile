@@ -16,9 +16,6 @@ GH_ACCOUNT=	Aquantia
 GH_PROJECT=	aqtion-freebsd
 GH_TAGNAME=	4816644
 
-# Strip -Werror from sys/conf/kmod.mk
-MAKE_ENV=	WERROR=""
-
 PLIST_FILES=	${KMODDIR}/if_atlantic.ko
 
 .include <bsd.port.mk>
