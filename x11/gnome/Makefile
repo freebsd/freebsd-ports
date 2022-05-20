@@ -1,7 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	gnome
-PORTVERSION=	41
+PORTVERSION=	42
 CATEGORIES?=	x11 gnome
 
 MAINTAINER=	gnome@FreeBSD.org
