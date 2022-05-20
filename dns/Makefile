@@ -1,5 +1,6 @@
     COMMENT = Domain Name Service tools
 
+    SUBDIR += acme-dns
     SUBDIR += adns
     SUBDIR += adsuck
     SUBDIR += amass
