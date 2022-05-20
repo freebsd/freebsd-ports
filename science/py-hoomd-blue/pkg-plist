@@ -135,6 +135,9 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/LoadBalancerGPU.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/LoadBalancerGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MPIConfiguration.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MeshDefinition.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MeshGroupData.cuh
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MeshGroupData.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/ManagedArray.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/MemoryTraceback.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/Messenger.h
@@ -814,6 +817,9 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/long_range/pppm.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/manifold.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/many_body.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/mesh/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/mesh/bond.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/mesh/potential.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/methods/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/methods/methods.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/methods/rattle.py
@@ -845,6 +851,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_integrate.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_lj_equation_of_state.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_manifolds.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_meshbond.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_meta_wall_list.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_methods.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_minimize_fire.py
@@ -863,6 +870,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_zero_momentum.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/special_pair.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/update.py
+%%PYTHON_SITELIBDIR%%/hoomd/mesh.py
 %%PYTHON_SITELIBDIR%%/hoomd/metal/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/metal/_metal%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/hoomd/metal/pair.py
@@ -895,6 +903,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_filter_updater.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_local_snapshot.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_logging.py
+%%PYTHON_SITELIBDIR%%/hoomd/pytest/test_mesh.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_operation.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_operations.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_parameter_dict.py
