@@ -2,6 +2,7 @@
 
 PORTNAME=	mate-settings-daemon
 PORTVERSION=	1.26.0
+PORTREVISION=	1
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -20,7 +21,6 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpolkit-gobject-1.so:sysutils/polkit \
 		libstartup-notification-1.so:x11/startup-notification \
-		libcanberra-gtk.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libnspr4.so:devel/nspr \
 		libnotify.so:devel/libnotify

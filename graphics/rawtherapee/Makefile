@@ -2,7 +2,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	5.8
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	https://rawtherapee.com/shared/source/ \
 		LOCAL/mandree/
@@ -14,7 +14,6 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	\
 		liblensfun.so:graphics/lensfun \
-		libcanberra-gtk.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libexpat.so:textproc/expat2 \
 		libfftw3.so:math/fftw3 \

@@ -2,7 +2,7 @@
 
 PORTNAME=	mate-control-center
 PORTVERSION=	1.26.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -15,8 +15,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
-		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libxklavier.so:x11/libxklavier \

@@ -2,7 +2,7 @@
 
 PORTNAME=	mate-media
 PORTVERSION=	1.26.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -14,8 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
-		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libstartup-notification-1.so:x11/startup-notification \

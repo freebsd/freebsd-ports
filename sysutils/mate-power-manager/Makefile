@@ -2,6 +2,7 @@
 
 PORTNAME=	mate-power-manager
 PORTVERSION=	1.26.0
+PORTREVISION=	1
 CATEGORIES=	sysutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -13,8 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
-		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libfontconfig.so:x11-fonts/fontconfig \
