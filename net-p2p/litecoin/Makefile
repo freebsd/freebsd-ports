@@ -1,7 +1,6 @@
 PORTNAME=	litecoin
-PORTVERSION=	0.18.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
+DISTVERSION=	0.21.2
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	hsw@bitmark.com
@@ -10,9 +9,10 @@ COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
 LICENSE=	MIT
 
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
+		libfmt.so:devel/libfmt \
 		libevent.so:devel/libevent
 
-USES=		autoreconf compiler:c++11-lib cpe gmake libtool pkgconfig qt:5 shebangfix ssl
+USES=		autoreconf compiler:c++11-lib cpe gmake libtool localbase pkgconfig qt:5 shebangfix ssl
 
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
@@ -39,7 +39,7 @@ OPTIONS_SUB=		yes
 HARDENING_DESC=	Attempt to harden binaries (PIE for ASLR, NX Stack)
 QRCODES_DESC=	Display QR Codes
 TESTS_DESC=	Build test binary and unit tests
-WALLET_BDBMODERN_DESC=	Wallet using modern BDB 5.x or 6.x
+WALLET_BDBMODERN_DESC=	Wallet using modern BDB 18.x
 ZMQ_DESC=	Block and transaction broadcasting with ZeroMQ
 
 DBUS_CONFIGURE_WITH=	dbus
@@ -58,15 +58,12 @@ TESTS_PLIST_FILES+=	bin/bench_litecoin
 
 UPNP_CONFIGURE_WITH=	miniupnpc
 UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
-UPNP_CPPFLAGS=		-I${LOCALBASE}/include
-UPNP_LIBS=		-L${LOCALBASE}/lib
 
 QRCODES_CONFIGURE_WITH=	qrencode
 QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 
 ZMQ_CONFIGURE_ENABLE=	zmq
-ZMQ_BUILD_DEPENDS=	libzmq4>0:net/libzmq4
-ZMQ_RUN_DEPENDS=	libzmq4>0:net/libzmq4
+ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
 
 GH_ACCOUNT=	litecoin-project
 
@@ -87,7 +84,7 @@ PLIST_FILES?=	bin/litecoin-qt man/man1/litecoin-qt.1.gz \
 
 .if ${PORT_OPTIONS:MWALLET_BDBMODERN}
 CONFIGURE_ARGS+=	--enable-wallet --with-incompatible-bdb
-USES+=			bdb:5+
+USES+=			bdb:18
 .else
 CONFIGURE_ARGS+=	--disable-wallet
 .endif
