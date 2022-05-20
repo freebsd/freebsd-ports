@@ -53,6 +53,10 @@ be checked before the resulting Makefile is committed.
 require "lfs"
 
 -------------------------------------------------------------------
+local file_pattern = "."
+local database = "/var/db/pkg/provides/provides.db"
+
+-------------------------------------------------------------------
 local function table_sorted_keys(t)
    local result = {}
    for k, _ in pairs(t) do
@@ -62,6 +66,7 @@ local function table_sorted_keys(t)
    return result
 end
 
+-------------------------------------------------------------------
 local function table_sort_uniq(t)
    local result = {}
    if t then
@@ -77,6 +82,7 @@ local function table_sort_uniq(t)
    return result
 end
 
+-------------------------------------------------------------------
 local function fnmatch(name, pattern)
    local function fnsubst(s)
       s = string.gsub(s, "%%", "%%%%")
@@ -102,7 +108,7 @@ local function fnmatch(name, pattern)
 end
 
 -------------------------------------------------------------------
-local function fetch_pkgs_origin()
+local function fetch_pkgs_origins()
    local pkgs = {}
    local pipe = io.popen("pkg rquery '%n %o'")
    for line in pipe:lines() do
@@ -123,37 +129,56 @@ local function fetch_pkgs_origin()
 end
 
 -------------------------------------------------------------------
+local BAD_FILE_PATTERN = {
+   "^[^/]+$",
+   "^lib/python[%d%.]+/site%-packages/examples/[^/]+$",
+   "^lib/python[%d%.]+/site%-packages/samples/[^/]+$",
+   "^lib/python[%d%.]+/site%-packages/test/[^/]+$",
+   "^lib/python[%d%.]+/site%-packages/test_app/[^/]+$",
+   "^lib/python[%d%.]+/site%-packages/tests/[^/]+$",
+   "^lib/python[%d%.]+/site%-packages/tests/unit/[^/]+$",
+}
+
+local BAD_FILE_PKGS = {}
+
+local function check_bad_file(pkgbase, file)
+   for _, pattern in ipairs(BAD_FILE_PATTERN) do
+      if string.match(file, pattern) then
+         BAD_FILE_PKGS[pkgbase] = BAD_FILE_PKGS[pkgbase] or {}
+         table.insert(BAD_FILE_PKGS[pkgbase], file)
+         break
+      end
+   end
+end
+
+-------------------------------------------------------------------
 local function read_files(pattern)
    local files_table = {}
-   local pkgbase
-   local pipe = io.popen("pkg provides " .. pattern)
-   for line in pipe:lines() do
-      local label = string.sub(line, 1, 10)
-      if label == "Name    : " then
-	      local name = string.sub(line, 11)
-	      pkgbase = string.match(name, "(.*)-[^-]*")
-      elseif label == "          " or label == "Filename: " then
-	      local file = string.sub(line, 11)
-	      if file:sub(1, 10) == "usr/local/" then
-            file = file:sub(11)
-         else
-            file = "/" .. file
+   local pipe = io.popen("locate -d " .. database .. " " .. pattern)
+   if pipe then
+      for line in pipe:lines() do
+         local pkgbase, file = string.match(line, "([^*]+)%*([^*]+)")
+         if file:sub(1, 11) == "/usr/local/" then
+            file = file:sub(12)
          end
+         check_bad_file(pkgbase, file)
          local t = files_table[file] or {}
          t[#t + 1] = pkgbase
          files_table[file] = t
       end
+      pipe:close()
    end
-   pipe:close()
    return files_table
 end
 
 -------------------------------------------------------------------
+local DUPLICATE_FILE = {}
 
 local function fetch_pkg_pairs(pattern)
    local pkg_pairs = {}
    for file, pkgbases in pairs(read_files(pattern)) do
       if #pkgbases >= 2 then
+         DUPLICATE_FILE[file] = true
          for i = 1, #pkgbases -1 do
             local pkg_i = pkgbases[i]
             for j = i + 1, #pkgbases do
@@ -179,7 +204,7 @@ local function conflicts_delta(old, new)
    for i = 1, #new do
       local matched
       for j = 1, #old do
-         if fnmatch(new[i], old[j]) then
+         if new[i] == old[j] or fnmatch(new[i], old[j]) then
             new[i] = old[j]
             old_seen[j] = true
             matched = true
@@ -208,7 +233,8 @@ local function fetch_port_conflicts(origin)
       flavor = " FLAVOR=" .. flavor
    end
    local seen = {}
-   local pipe = io.popen("make -C /usr/ports/" .. dir .. flavor .. " -V CONFLICTS -V CONFLICTS_INSTALL 2>/dev/null")
+   local portdir = "/usr/ports/" .. dir
+   local pipe = io.popen("make -C "  .. portdir .. flavor .. " -V CONFLICTS -V CONFLICTS_INSTALL 2>/dev/null")
    for line in pipe:lines() do
       for word in line:gmatch("(%S+)%s?") do
          seen[word] = true
@@ -221,7 +247,7 @@ end
 -------------------------------------------------------------------
 local function conflicting_pkgs(conflicting)
    local pkgs = {}
-   for origin, pkgbase in pairs(fetch_pkgs_origin()) do
+   for origin, pkgbase in pairs(fetch_pkgs_origins()) do
       if conflicting[pkgbase] then
          pkgs[origin] = pkgbase
       end
@@ -232,22 +258,15 @@ end
 -------------------------------------------------------------------
 local function collect_conflicts(pkg_pairs)
    local pkgs = {}
-   local files = {}
    for pkg_i, p1 in pairs(pkg_pairs) do
-      for pkg_j, p2 in pairs(p1) do
+      for pkg_j, _ in pairs(p1) do
          pkgs[pkg_i] = pkgs[pkg_i] or {}
-         pkgs[pkg_j] = pkgs[pkg_j] or {}
          table.insert(pkgs[pkg_i], pkg_j)
+         pkgs[pkg_j] = pkgs[pkg_j] or {}
          table.insert(pkgs[pkg_j], pkg_i)
-         files[pkg_i] = files[pkg_i] or {}
-         files[pkg_j] = files[pkg_j] or {}
-         for _, file in ipairs(p2) do
-            table.insert(files[pkg_i], file)
-            table.insert(files[pkg_j], file)
-         end
       end
    end
-   return pkgs, files
+   return pkgs
 end
 
 -------------------------------------------------------------------
@@ -271,13 +290,7 @@ local function split_origins(origin_list)
 end
 
 -------------------------------------------------------------------
--- TODO: Collect FLAVORs and report for port directory
-
-local function merge_table(t1, t2)
-   table.move(t2, 1, #t2, #t1 + 1, t1)
-end
-
-local PKG_PAIR_FILES = fetch_pkg_pairs(".")
+local PKG_PAIR_FILES = fetch_pkg_pairs(file_pattern)
 local CONFLICT_PKGS = collect_conflicts(PKG_PAIR_FILES)
 local PKGBASE = conflicting_pkgs(CONFLICT_PKGS)
 local ORIGIN_LIST = table_sorted_keys(PKGBASE)
@@ -285,6 +298,7 @@ local PORT_LIST, FLAVORS = split_origins(ORIGIN_LIST)
 
 local function conflicting_files(pkg_i, pkgs)
    local files = {}
+   local all_files = {}
    local f
    local p1 = PKG_PAIR_FILES[pkg_i]
    if p1 then
@@ -293,6 +307,7 @@ local function conflicting_files(pkg_i, pkgs)
          if f then
             table.sort(f)
             files[#files + 1] = f[1]
+            table.move(f, 1, #f, #all_files + 1, all_files)
          end
       end
    end
@@ -302,20 +317,114 @@ local function conflicting_files(pkg_i, pkgs)
       if f then
          table.sort(f)
          files[#files + 1] = f[1]
+         table.move(f, 1, #f, #all_files + 1, all_files)
       end
    end
-   return files
+   return table_sort_uniq(files), table_sort_uniq(all_files)
 end
 
+---------------------------------------------------------------------
+local version_pattern = {
+   "^lib/python%d%.%d/",
+   "^share/py3%d%d%?-",
+   "^share/%a+/py3%d%d%?-",
+   "^lib/lua/%d%.%d/",
+   "^share/lua/%d%.%d/",
+   "^lib/perl5/[%d%.]+/",
+   "^lib/perl5/site_perl/mach/[%d%.]+/",
+   "^lib/ruby/gems/%d%.%d/",
+   "^lib/ruby/site_ruby/%d%.%d/",
+}
+
+local function generalize_patterns(pkgs, files)
+   local function match_any(str, pattern_array)
+      for _, pattern in ipairs(pattern_array) do
+         if string.match(str, pattern) then
+            return true
+         end
+      end
+      return false
+   end
+   local function unversioned_files()
+      for i = 1, #files do
+         if not match_any(files[i], version_pattern) then
+            return true
+         end
+      end
+      return false
+   end
+   local function pkg_wildcards(from, ...)
+      local to_list = {...}
+      local result = {}
+      for i = 1, #pkgs do
+         local orig_pkg = pkgs[i]
+         for _, to in ipairs(to_list) do
+            result[string.gsub(orig_pkg, from, to)] = true
+         end
+      end
+      pkgs = table_sorted_keys(result)
+   end
+   local pkg_pfx_php = "php[0-9][0-9]-"
+   local pkg_sfx_php = "-php[0-9][0-9]"
+   local pkg_pfx_python2
+   local pkg_sfx_python2
+   local pkg_pfx_python3
+   local pkg_sfx_python3
+   local pkg_pfx_lua
+   local pkg_pfx_ruby
+   pkgs = table_sort_uniq(pkgs)
+   if unversioned_files() then
+      pkg_pfx_python2 = "py3[0-9]-" -- e.g. py39-
+      pkg_sfx_python2 = "-py3[0-9]"
+      pkg_pfx_python3 = "py3[0-9][0-9]-" -- e.g. py311-
+      pkg_sfx_python3 = "-py3[0-9][0-9]"
+      pkg_pfx_lua = "lua[0-9][0-9]-"
+      pkg_pfx_ruby = "ruby[0-9][0-9]-"
+   else
+      pkg_pfx_python2 = "${PYTHON_PKGNAMEPREFIX}"
+      pkg_sfx_python2 = "${PYTHON_PKGNAMESUFFIX}"
+      pkg_pfx_python3 = nil
+      pkg_sfx_python3 = nil
+      pkg_pfx_lua = "${LUA_PKGNAMEPREFIX}"
+      pkg_pfx_ruby = "${RUBY_PKGNAMEPREFIX}"
+   end
+   pkg_wildcards("^php%d%d%-", pkg_pfx_php)
+   pkg_wildcards("-php%d%d$", pkg_sfx_php)
+   pkg_wildcards("^phpunit%d%-", "phpunit[0-9]-")
+   pkg_wildcards("^py3%d%-", pkg_pfx_python2, pkg_pfx_python3)
+   pkg_wildcards("-py3%d%$", pkg_sfx_python2, pkg_sfx_python3)
+   pkg_wildcards("^py3%d%d%-", pkg_pfx_python2, pkg_pfx_python3)
+   pkg_wildcards("-py3%d%d%$", pkg_sfx_python2, pkg_sfx_python3)
+   pkg_wildcards("^lua%d%d%-", pkg_pfx_lua)
+   pkg_wildcards("-emacs_[%a_]*", "-emacs_*")
+   pkg_wildcards("^ghostscript%d%-", "ghostscript[0-9]-")
+   pkg_wildcards("^bacula%d%-", "bacula[0-9]-")
+   pkg_wildcards("^bacula%d%d%-", "bacula[0-9][0-9]-")
+   pkg_wildcards("^bareos%d%-", "bareos[0-9]-")
+   pkg_wildcards("^bareos%d%d%-", "bareos[0-9][0-9]-")
+   pkg_wildcards("^moosefs%d%-", "moosefs[0-9]-")
+   pkg_wildcards("^ruby%d+-", pkg_pfx_ruby)
+   return table_sort_uniq(pkgs)
+end
+
+-------------------------------------------------------------------
 for _, port in ipairs(PORT_LIST) do
+   local function merge_table(t1, t2)
+      table.move(t2, 1, #t2, #t1 + 1, t1)
+   end
    local port_conflicts = {}
    local files = {}
+   local msg_files = {}
    local conflict_pkgs = {}
    local function merge_data(origin)
       local pkgbase = PKGBASE[origin]
-      merge_table(files, conflicting_files(pkgbase, CONFLICT_PKGS[pkgbase]))
-      merge_table(conflict_pkgs, CONFLICT_PKGS[pkgbase])
-      merge_table(port_conflicts, fetch_port_conflicts(origin))
+      if not BAD_FILE_PKGS[pkgbase] then
+         local pkg_confl_file1, pkg_confl_files = conflicting_files(pkgbase, CONFLICT_PKGS[pkgbase])
+         merge_table(msg_files, pkg_confl_file1) -- 1 file per flavor
+         merge_table(files, pkg_confl_files) -- all conflicting files
+         merge_table(conflict_pkgs, CONFLICT_PKGS[pkgbase])
+         merge_table(port_conflicts, fetch_port_conflicts(origin))
+      end
    end
    local flavors = FLAVORS[port]
    if flavors then
@@ -325,22 +434,59 @@ for _, port in ipairs(PORT_LIST) do
    else
       merge_data(port)
    end
-   local conflicts_new = table_sort_uniq(conflict_pkgs)
+   files = table_sort_uniq(files)
+   msg_files = table_sort_uniq(msg_files)
+   conflict_pkgs = generalize_patterns(conflict_pkgs, files)
    if #port_conflicts then
       port_conflicts = table_sort_uniq(port_conflicts)
-      conflicts_new = conflicts_delta(port_conflicts, conflicts_new)
+      conflict_pkgs = conflicts_delta(port_conflicts, conflict_pkgs)
    end
-   if conflicts_new then
-      local conflicts_string = table.concat(port_conflicts, " ")
-      local conflicts_string_new = table.concat(conflicts_new, " ")
-      local file_list = table.concat(table_sort_uniq(files), " ")
+   if conflict_pkgs then
+      local conflicts_string_cur = table.concat(port_conflicts, " ")
+      local conflicts_string_new = table.concat(conflict_pkgs, " ")
+      local file_list = table.concat(msg_files, " ")
       print("# Port:  " .. port)
       print("# Files: " .. file_list)
-      if conflicts_string ~= "" then
-         print("# <      " .. conflicts_string)
+      if conflicts_string_cur ~= "" then
+         print("# <      " .. conflicts_string_cur)
       end
       print("# >      " .. conflicts_string_new)
-      print("portedit merge -ie 'CONFLICTS_INSTALL=" .. conflicts_string_new .. " # " .. file_list .. "' /usr/ports/" .. port)
+      print("portedit merge -ie 'CONFLICTS_INSTALL=" .. conflicts_string_new ..
+            " # " .. file_list .. "' /usr/ports/" .. port)
+      print()
+   end
+end
+
+-------------------------------------------------------------------
+local BAD_FILES_ORIGINS = {}
+
+for _, origin in ipairs(ORIGIN_LIST) do
+   local pkgbase = PKGBASE[origin]
+   local files = BAD_FILE_PKGS[pkgbase]
+   if files then
+      for _, file in ipairs(files) do
+         if DUPLICATE_FILE[file] then
+            local port = string.match(origin, "([^@]+)@?")
+            BAD_FILES_ORIGINS[port] = BAD_FILES_ORIGINS[origin] or {}
+            table.insert(BAD_FILES_ORIGINS[port], file)
+         end
+      end
+   end
+end
+
+-------------------------------------------------------------------
+local bad_origins = table_sorted_keys(BAD_FILES_ORIGINS)
+
+if #bad_origins > 0 then
+   print ("# Ports with badly named files:")
+   print ()
+   for _, port in ipairs(bad_origins) do
+      print ("# " .. port)
+      local files = BAD_FILES_ORIGINS[port]
+      table.sort(files)
+      for _, file in ipairs(files) do
+         print ("#", file)
+      end
       print()
    end
 end
