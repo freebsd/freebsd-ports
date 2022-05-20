@@ -1,5 +1,5 @@
 PORTNAME=	xtensor-python
-DISTVERSION=	0.26.0
+DISTVERSION=	0.26.1
 CATEGORIES=	math python
 
 MAINTAINER=	yuri@FreeBSD.org
