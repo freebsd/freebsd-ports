@@ -55,6 +55,7 @@
     SUBDIR += apcupsd
     SUBDIR += aptly
     SUBDIR += arcconf
+    SUBDIR += archey4
     SUBDIR += archivemount
     SUBDIR += ascpu
     SUBDIR += asfsm
