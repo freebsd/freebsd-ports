@@ -2,7 +2,7 @@
 
 PORTNAME=	gnome-color-manager
 PORTVERSION=	3.36.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -19,8 +19,6 @@ BUILD_DEPENDS=	docbook2man:textproc/docbook-utils \
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libcolord.so:graphics/colord \
 		libcolord-gtk.so:graphics/colord-gtk \
-		libcanberra.so:audio/libcanberra \
-		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libtiff.so:graphics/tiff \
 		libexif.so:graphics/libexif
 
