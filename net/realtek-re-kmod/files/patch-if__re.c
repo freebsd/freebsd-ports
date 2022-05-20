@@ -76,7 +76,21 @@
  
  #define RE_CSUM_FEATURES    (CSUM_IP | CSUM_TCP | CSUM_UDP)
  
-@@ -874,9 +888,7 @@ static void re_release_rx_buf(struct re_softc *sc)
+@@ -306,9 +320,13 @@ static driver_t re_driver = {
+         sizeof(struct re_softc)
+ };
+ 
++#if __FreeBSD_version >= 1400058
++DRIVER_MODULE(if_re, pci, re_driver, 0, 0);
++#else
+ static devclass_t re_devclass;
+ 
+ DRIVER_MODULE(if_re, pci, re_driver, re_devclass, 0, 0);
++#endif
+ 
+ static void
+ ClearAndSetEthPhyBit(
+@@ -874,9 +892,7 @@ static void re_release_rx_buf(struct re_softc *sc)
  
  static void re_release_rx_buf(struct re_softc *sc)
  {
@@ -86,7 +100,7 @@
  
          if (sc->re_desc.re_rx_mtag) {
                  for (i = 0; i < RE_RX_BUF_NUM; i++) {
-@@ -899,9 +911,7 @@ static void re_release_tx_buf(struct re_softc *sc)
+@@ -899,9 +915,7 @@ static void re_release_tx_buf(struct re_softc *sc)
  }
  static void re_release_tx_buf(struct re_softc *sc)
  {
@@ -96,7 +110,7 @@
  
          if (sc->re_desc.re_tx_mtag) {
                  for (i = 0; i < RE_TX_BUF_NUM; i++) {
-@@ -930,6 +940,7 @@ static int re_alloc_buf(struct re_softc *sc)
+@@ -930,6 +944,7 @@ static int re_alloc_buf(struct re_softc *sc)
          int error =0;
          int i,size;
  
@@ -104,7 +118,7 @@
          error = bus_dma_tag_create(sc->re_parent_tag, 1, 0,
                                     BUS_SPACE_MAXADDR, BUS_SPACE_MAXADDR, NULL,
                                     NULL, MCLBYTES* RE_NTXSEGS, RE_NTXSEGS, 4096, 0,
-@@ -938,6 +949,7 @@ static int re_alloc_buf(struct re_softc *sc)
+@@ -938,6 +953,7 @@ static int re_alloc_buf(struct re_softc *sc)
          if (error) {
                  //device_printf(dev,"re_tx_mtag fail\n");
                  //goto fail;
@@ -112,7 +126,7 @@
                  return error;
          }
  
-@@ -955,9 +967,11 @@ static int re_alloc_buf(struct re_softc *sc)
+@@ -955,9 +971,11 @@ static int re_alloc_buf(struct re_softc *sc)
          if (error) {
                  //device_printf(dev,"re_rx_mtag fail\n");
                  //goto fail;
@@ -124,7 +138,7 @@
          if (sc->re_rx_mbuf_sz <= MCLBYTES)
                  size = MCLBYTES;
          else if (sc->re_rx_mbuf_sz <=  MJUMPAGESIZE)
-@@ -3428,16 +3442,6 @@ is_valid_ether_addr(const u_int8_t * addr)
+@@ -3428,16 +3446,6 @@ is_valid_ether_addr(const u_int8_t * addr)
          return !is_multicast_ether_addr(addr) && !is_zero_ether_addr(addr);
  }
  
@@ -141,7 +155,7 @@
  static void re_disable_now_is_oob(struct re_softc *sc)
  {
          if (sc->re_hw_supp_now_is_oob_ver == 1)
-@@ -3889,7 +3893,7 @@ static void re_get_hw_mac_address(struct re_softc *sc,
+@@ -3889,7 +3897,7 @@ static void re_get_hw_mac_address(struct re_softc *sc,
  
          if (!is_valid_ether_addr(eaddr)) {
                  device_printf(dev,"Invalid ether addr: %6D\n", eaddr, ":");
@@ -150,7 +164,7 @@
                  device_printf(dev,"Random ether addr: %6D\n", eaddr, ":");
          }
  
-@@ -4291,9 +4295,9 @@ static void re_init_software_variable(struct re_softc 
+@@ -4291,9 +4299,9 @@ static void re_init_software_variable(struct re_softc 
  
          sc->re_rx_mbuf_sz = sc->max_jumbo_frame_size + ETHER_VLAN_ENCAP_LEN + ETHER_HDR_LEN + ETHER_CRC_LEN + RE_ETHER_ALIGN + 1;
  
