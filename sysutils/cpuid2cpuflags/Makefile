@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	cpuid2cpuflags
-PORTVERSION=	11
+PORTVERSION=	12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
