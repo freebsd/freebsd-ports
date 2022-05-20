@@ -1,8 +1,7 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
 
 PORTNAME=	firefox
-DISTVERSION=	91.9.0
-PORTREVISION=	3
+DISTVERSION=	91.9.1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
