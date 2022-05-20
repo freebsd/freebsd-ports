@@ -14,16 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		libtool pkgconfig
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-nls
 
 CFLAGS=		-D_WITH_CPU_SET_T
 
 PLIST_FILES=	bin/flock man/man1/flock.1.gz \
 		etc/bash_completion.d/flock
-
-OPTIONS_DEFINE=	NLS
-
-NLS_USES=	autoreconf gettext
-NLS_CONFIGURE_ENABLE=	nls
 
 do-build:
 	# skip building unneeded utils
