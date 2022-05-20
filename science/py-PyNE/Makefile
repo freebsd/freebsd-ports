@@ -1,5 +1,5 @@
 PORTNAME=	PyNE
-DISTVERSION=	0.7.6
+DISTVERSION=	0.7.7
 CATEGORIES=	science
 MASTER_SITES=	http://raw.githubusercontent.com/pyne/data/master/:decay \
 		http://raw.githubusercontent.com/pyne/data/master/:cram \
