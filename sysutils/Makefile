@@ -805,6 +805,7 @@
     SUBDIR += nss_ndb
     SUBDIR += nsysctl
     SUBDIR += ntfy
+    SUBDIR += ntpstat
     SUBDIR += nut
     SUBDIR += nut-devel
     SUBDIR += nvclock
