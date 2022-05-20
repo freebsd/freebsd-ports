@@ -13,8 +13,6 @@ bin/mbsurfplot
 bin/mbtagprop
 bin/mbumr
 bin/spheredecomp
-%%MPI%%include/Coupler.hpp
-%%MPI%%include/ElemUtil.hpp
 include/MBCN.h
 include/MBCN_protos.h
 include/MBEntityType.h
@@ -30,6 +28,8 @@ include/iMesh.h
 include/iMesh_extensions.h
 include/iMesh_f.h
 include/iMesh_protos.h
+%%MPI%%include/mbcoupler/Coupler.hpp
+%%MPI%%include/mbcoupler/ElemUtil.hpp
 include/moab/AdaptiveKDTree.hpp
 include/moab/BSPTree.hpp
 include/moab/BSPTreePoly.hpp
@@ -80,6 +80,7 @@ include/moab/NestedRefine.hpp
 include/moab/NestedRefineTemplates.hpp
 include/moab/OrientedBox.hpp
 include/moab/OrientedBoxTreeTool.hpp
+%%MPI%%include/moab/ParCommGraph.hpp
 %%MPI%%include/moab/ParallelComm.hpp
 %%MPI%%include/moab/ParallelData.hpp
 %%MPI%%include/moab/ParallelMergeMesh.hpp
