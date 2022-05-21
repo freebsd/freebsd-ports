@@ -1,31 +1,28 @@
---- Makefile.orig	2018-06-01 08:57:02 UTC
+--- Makefile.orig	2021-05-25 22:46:17 UTC
 +++ Makefile
-@@ -106,7 +106,7 @@ all-flavors:
- manual: printsvninfo
- 	bin/assemble_manual.sh > documentation/users/manual.html
+@@ -130,7 +130,7 @@ cplx:
+ 	cp flavor_cplx.mk flavor.mk
+ 	$(MAKE) all
  
 -install: all
 +install:
  ifdef INSTDIR
  	mkdir -p $(INSTDIR)/bin
  	install bin/*.x $(INSTDIR)/bin/
-@@ -119,12 +119,16 @@ ifdef INSTDIR
+@@ -143,11 +143,14 @@ ifdef INSTDIR
  	mkdir -p $(INSTDIR)/include
  	install library/*.mod $(INSTDIR)/include/
  
 -	mkdir -p $(INSTDIR)/share
  	mkdir -p $(INSTDIR)/share/BerkeleyGW
-+	mkdir -p $(INSTDIR)/share/doc/BerkeleyGW
  # install cannot work on a whole directory
 -	cp -rf examples  $(INSTDIR)/share/BerkeleyGW/
 +ifdef INSTALL_EXAMPLES
 +	mkdir -p $(INSTDIR)/share/examples/BerkeleyGW
 +	cp -rf examples  $(INSTDIR)/share/examples/BerkeleyGW
 +	find $(INSTDIR)/share/examples/BerkeleyGW -type d -empty -delete
-+endif
  	cp -rf testsuite $(INSTDIR)/share/BerkeleyGW/
--	install manual.html $(INSTDIR)/share/BerkeleyGW/
-+	install documentation/users/manual.html $(INSTDIR)/share/doc/BerkeleyGW/
++endif
  else
  	$(error Error: Please define installation prefix INSTDIR via 'make install INSTDIR='.)
  endif
