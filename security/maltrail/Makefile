@@ -1,5 +1,5 @@
 PORTNAME=	maltrail
-PORTVERSION=	0.44
+DISTVERSION=	0.45
 CATEGORIES=	security python
 
 MAINTAINER=	m.muenz@gmail.com
@@ -16,8 +16,8 @@ USES=		python:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	stamparm
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 do-install:
 		${MKDIR} ${STAGEDIR}${DATADIR} && \
