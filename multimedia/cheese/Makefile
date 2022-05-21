@@ -40,4 +40,7 @@ MESON_ARGS=	-Dgtk_doc=false \
 
 GLIB_SCHEMAS=	org.gnome.Cheese.gschema.xml
 
+post-patch:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|canberra-gtk\.h|canberra-gtk2/canberra-gtk.h|'
+
 .include <bsd.port.mk>
