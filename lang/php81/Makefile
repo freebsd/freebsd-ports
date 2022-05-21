@@ -127,7 +127,6 @@ CONFIGURE_ENV+=	ac_cv_decimal_fp_supported="no" \
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
-	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
 
 post-patch-FPM-on:
 	@${REINPLACE_CMD} -e "s|^;\(pid\)|\1|;s|^;\(pm\.[a-z_]*_servers\)|\1|" \
