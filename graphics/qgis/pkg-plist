@@ -1,6 +1,5 @@
 %%SERVER%%bin/admin.sld
 bin/qgis
-bin/qgis_bench
 %%SERVER%%bin/qgis_mapserv.fcgi
 %%SERVER%%bin/qgis_mapserver
 bin/qgis_process
@@ -1747,7 +1746,6 @@ lib/qgis/untwine
 %%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so
 %%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so.%%DISTVERSION%%
 %%SERVER%%%%QT_PLUGINDIR%%/sqldrivers/libqsqlspatialite.so
-share/man/man1/qgis.1.gz
 share/applications/org.qgis.qgis.desktop
 share/icons/hicolor/128x128/apps/qgis.png
 share/icons/hicolor/128x128/mimetypes/qgis-mime.png
@@ -1851,6 +1849,7 @@ share/icons/hicolor/scalable/mimetypes/qgis_qgs.svg
 share/icons/hicolor/scalable/mimetypes/qgis_qlr.svg
 share/icons/hicolor/scalable/mimetypes/qgis_qml.svg
 share/icons/hicolor/scalable/mimetypes/qgis_qpt.svg
+share/man/man1/qgis.1.gz
 share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/FindQGIS.cmake
 %%DATADIR%%/doc/AUTHORS
