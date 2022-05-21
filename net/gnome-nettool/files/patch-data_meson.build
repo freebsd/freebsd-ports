@@ -1,0 +1,20 @@
+--- data/meson.build.orig	2022-05-20 22:55:41 UTC
++++ data/meson.build
+@@ -20,7 +20,7 @@ desktop_in = configure_file(input: 'gnome-nettool.desk
+                             output: 'gnome-nettool.desktop.in',
+                             configuration: desktop_conf)
+ 
+-i18n.merge_file('desktop',
++i18n.merge_file(
+                 type: 'desktop',
+                 input: desktop_in,
+                 output: 'gnome-nettool.desktop',
+@@ -28,7 +28,7 @@ i18n.merge_file('desktop',
+                 install: true,
+                 install_dir: join_paths(prefix, datadir, 'applications'))
+ 
+-i18n.merge_file('appdata',
++i18n.merge_file(
+                 type: 'xml',
+                 input: 'gnome-nettool.appdata.xml.in',
+                 output: 'gnome-nettool.appdata.xml',
