@@ -1,7 +1,7 @@
 # Created by: Mikhail Teterin
 
 PORTNAME=	je
-PORTVERSION=	6.2.31
+PORTVERSION=	7.5.11
 CATEGORIES=	java databases
 MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 		http://download-east.oracle.com/berkeley-db/	\
@@ -10,20 +10,21 @@ MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Berkeley DB Java Edition
 
-BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv6=		fails to build: build.xml: Java returned: 1
-BROKEN_armv7=		fails to build: build.xml: Java returned: 1
+BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:java/junit
 
 OPTIONS_DEFINE=	DOCS EXAMPLES TEST
 
-USE_JAVA=	yes
+USE_JAVA=	8
 USE_ANT=	yes
 MAKE_ENV+=	JAVALIBDIR="${JAVALIBDIR}"
 MAKE_ARGS+=	-cp ${JAVALIBDIR}/junit.jar
+EXTRACT_AFTER_ARGS+=	--exclude '*.jar'
 
-PLIST_FILES=	%%JAVAJARDIR%%/je.jar
-
+PLIST_FILES=	${JAVAJARDIR:S,^${PREFIX}/,,}/je-${PORTVERSION}.jar \
+		${JAVAJARDIR:S,^${PREFIX}/,,}/je.jar
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -31,7 +32,7 @@ regression-test check test: build
 	#
 	# Running the vendor-provided self-tests. This may take a while
 	#
-	if ! (cd ${BUILD_WRKSRC} ; ${MAKE_ENV} ${ANT} ${MAKE_ARGS} test) ; \
+	@if ! (cd ${BUILD_WRKSRC} ; ${MAKE_ENV} ${ANT} ${MAKE_ARGS} test) ; \
 	then	\
 		${ECHO_MSG} Please, review test failures and consider \
 			reporting them via \
@@ -62,11 +63,18 @@ post-build:
 
 post-patch:
 	@${REINPLACE_CMD} "s,/usr/local,${PREFIX}," ${WRKSRC}/build.xml
+	${FIND} ${WRKSRC} -type f -name \*.java | ${XARGS} \
+	    ${REINPLACE_CMD} -i "" -E 's,[^[:print:]]+, ,g'
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/build/lib/je.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/build/lib/je.jar ${STAGEDIR}${JAVAJARDIR}/je-${PORTVERSION}.jar
+	${LN} -s -f je-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/je.jar
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
