@@ -2,6 +2,7 @@
 
 PORTNAME=	cbang
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -59,6 +60,13 @@ post-install:
 	cd ${STAGEDIR}${PREFIX}/lib &&	\
 		${LN} -sf libcbang0.so.${LIBVER} libcbang0.so	&&	\
 		${LN} -sf libcbang0.so.${LIBVER} libcbang0.so.1
+	# Needed to build CAMotics
+	${INSTALL_DATA} ${WRKSRC}/include/cbang/config.h	\
+		${STAGEDIR}${PREFIX}/include/cbang/
+	${INSTALL_DATA} ${WRKSRC}/lib/libcbang-boost.a	\
+		${STAGEDIR}${PREFIX}/lib
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} config ${STAGEDIR}${DATADIR}
 
 do-test:
 	(cd ${TEST_WRKSRC} && ${DO_MAKE_TEST} && ./testHarness)
