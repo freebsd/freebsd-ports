@@ -112,11 +112,7 @@ JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
 
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk17
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
-BOOTSTRAP_JDKS+=	${LOCALBASE}/bootstrap-openjdk17
-.endif
-BOOTSTRAP_JDKS+=	${LOCALBASE}/openjdk16
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk17 ${LOCALBASE}/bootstrap-openjdk17
 
 # do we have valid native jdk installed?
 .for BJDK in ${BOOTSTRAP_JDKS}
@@ -127,13 +123,8 @@ BOOTSTRAPJDKDIR=	${BJDK}
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
-.  if ${ARCH} == aarch64 || ${ARCH} == amd64 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
 BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk17
 BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk17
-.  else
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/openjdk16
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/openjdk16
-.  endif
 .endif
 
 JDK_BUILD_JVM=	server

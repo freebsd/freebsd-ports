@@ -17171,3 +17171,9 @@ security/greenbone-security-assistant|security/gsa|2022-05-22|It was splitted in
 security/py-ospd|security/py-ospd-openvas|2022-05-22|It was merged into security/py-ospd-openvas
 lang/perl5.30||2022-05-23|Has expired: Support ends three years after .0 release. Please upgrade to a more recent version of Perl
 sysutils/ansible2||2022-05-23|Has expired: Upstream support ceases
+java/jdk12-doc||2022-05-24|Only useful for removed java/openjdk12
+java/openjdk12||2022-05-24|Has expired: EOLed since 30 september 2019
+java/openjdk13||2022-05-24|Has expired: EOLed since 31 march 2020
+java/openjdk14||2022-05-24|Has expired: EOLed since 30 september 2020
+java/openjdk15||2022-05-24|Has expired: EOLed since 31 march 2021
+java/openjdk16||2022-05-24|Has expired: EOLed since 30 September 2021

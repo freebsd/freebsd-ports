@@ -16,7 +16,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		python:3.6+ shebangfix zip
 USE_JAVA=	yes
 
-JAVA_VERSION=	12+
+JAVA_VERSION=	17+
 SHEBANG_FILES=	scripts/* scripts/gsa/*
 
 NO_BUILD=	yes

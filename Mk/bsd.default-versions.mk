@@ -58,7 +58,7 @@ GL_DEFAULT?=		mesa-libs
 GHOSTSCRIPT_DEFAULT?=	agpl
 # Possible values: 6, 6-nox11, 7, 7-nox11
 IMAGEMAGICK_DEFAULT?=	7
-# Possible values: 7, 8, 11, 12, 13, 14, 15, 16, 17, 18
+# Possible values: 7, 8, 11, 17, 18
 JAVA_DEFAULT?=		8
 # Possible values: 2.2.0, 2.3.0
 .  if !defined(WANT_LAZARUS_DEVEL)
