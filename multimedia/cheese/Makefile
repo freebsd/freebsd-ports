@@ -2,6 +2,7 @@
 
 PORTNAME=	cheese
 PORTVERSION=	41.1
+PORTREVISION=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -17,6 +18,7 @@ BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat \
 		vala>=0.14.0:lang/vala \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		libcanberra-gtk2.so:audio/libcanberra-gtk2 \
 		libcanberra.so:audio/libcanberra \
 		libclutter-1.0.so:graphics/clutter \
 		libcogl.so:graphics/cogl \
