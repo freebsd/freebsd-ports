@@ -15,6 +15,7 @@
     SUBDIR += brlcad
     SUBDIR += calculix
     SUBDIR += calculix-ccx
+    SUBDIR += camotics
     SUBDIR += caneda
     SUBDIR += cascade
     SUBDIR += cascade-compiler

@@ -1,0 +1,10 @@
+bin/camotics
+bin/camsim
+bin/gcodetool
+bin/planner
+bin/tplang
+share/applications/CAMotics.desktop
+share/metainfo/CAMotics.appdata.xml
+share/mime/packages/CAMotics.xml
+share/pixmaps/camotics-logo.png
+share/pixmaps/camotics.png
