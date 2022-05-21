@@ -1,6 +1,5 @@
 PORTNAME=	ansible-lint
-PORTVERSION=	6.1.0
-PORTREVISION=	1
+PORTVERSION=	6.2.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +10,7 @@ COMMENT=	Checks playbooks for sub-optimal practices and behaviour
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=2.0.2:sysutils/py-ansible-compat@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=2.0.4:sysutils/py-ansible-compat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ansible-core>=2.12.0:sysutils/py-ansible-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enrich>=1.2.6:textproc/py-enrich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.5.1:devel/py-jsonschema@${PY_FLAVOR} \
