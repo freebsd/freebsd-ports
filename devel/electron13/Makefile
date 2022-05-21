@@ -17,6 +17,9 @@ COMMENT=	Build cross-platform desktop apps with JavaScript, HTML, and CSS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/electron/LICENSE
 
+DEPRECATED=	EOLed upstream, switch to newer version
+EXPIRATION_DATE=	2022-06-30
+
 FETCH_DEPENDS=		yarn-node14>0:www/yarn-node14
 EXTRACT_DEPENDS=	yarn-node14>0:www/yarn-node14
 PATCH_DEPENDS=		git:devel/git
