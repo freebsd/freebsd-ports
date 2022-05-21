@@ -5,6 +5,13 @@ include/KF5/Prison/prison/prison.h
 include/KF5/Prison/prison/prison_export.h
 include/KF5/Prison/prison/prison_version.h
 include/KF5/Prison/prison_version.h
+include/KF5/PrisonScanner/Prison/Format
+include/KF5/PrisonScanner/prison/format.h
+include/KF5/PrisonScanner/prison/prisonscanner_export.h
+include/KF5/PrisonScanner/Prison/ScanResult
+include/KF5/PrisonScanner/prison/scanresult.h
+include/KF5/PrisonScanner/Prison/VideoScanner
+include/KF5/PrisonScanner/prison/videoscanner.h
 lib/cmake/KF5Prison/KF5PrisonConfig.cmake
 lib/cmake/KF5Prison/KF5PrisonConfigVersion.cmake
 lib/cmake/KF5Prison/KF5PrisonTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -12,8 +19,13 @@ lib/cmake/KF5Prison/KF5PrisonTargets.cmake
 lib/libKF5Prison.so
 lib/libKF5Prison.so.5
 lib/libKF5Prison.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKF5PrisonScanner.so
+lib/libKF5PrisonScanner.so.5
+lib/libKF5PrisonScanner.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_Prison.pri
 %%QT_QMLDIR%%/org/kde/prison/libprisonquickplugin.so
 %%QT_QMLDIR%%/org/kde/prison/qmldir
+%%QT_QMLDIR%%/org/kde/prison/scanner/libprisonscannerquickplugin.so
+%%QT_QMLDIR%%/org/kde/prison/scanner/qmldir
 share/qlogging-categories5/prison.categories
 share/qlogging-categories5/prison.renamecategories
