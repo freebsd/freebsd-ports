@@ -1,6 +1,6 @@
 PORTNAME=	libsearpc
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libjansson.so:devel/jansson \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
-GH_TAGNAME=	d1fd751
+GH_TAGNAME=	54145b0
 
 USES=		autoreconf gettext libtool pathfix pkgconfig python:3.6+ shebangfix
 SHEBANG_FILES=	lib/searpc-codegen.py
