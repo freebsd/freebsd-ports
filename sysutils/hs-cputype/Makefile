@@ -1,6 +1,5 @@
 PORTNAME=	cputype
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.2.2
 CATEGORIES=	sysutils haskell
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -13,17 +12,17 @@ USES=		cabal
 USE_GITLAB=	yes
 GL_SITE=	https://foss.heptapod.net
 GL_ACCOUNT=	bsdutils
-GL_COMMIT=	ad3835a3a2d38aab86c03ed615058da0f1fbf244
+GL_COMMIT=	ae3a01cc39547e6e014e40bd7c2cc0f6810ec616
 
-USE_CABAL=	ansi-terminal-0.10.3 \
-		ansi-wl-pprint-0.6.9_1 \
-		attoparsec-0.13.2.4 \
-		colour-2.3.5 \
-		hashable-1.3.0.0_1 \
-		integer-logarithms-1.0.3_2 \
-		optparse-applicative-0.15.1.0_1 \
-		primitive-0.7.0.1 \
-		scientific-0.3.6.2 \
-		transformers-compat-0.6.5
+USE_CABAL=	ansi-terminal-0.11.3 \
+		ansi-wl-pprint-0.6.9_3 \
+		attoparsec-0.14.4_1 \
+		colour-2.3.6 \
+		hashable-1.4.0.2 \
+		integer-logarithms-1.0.3.1_2 \
+		optparse-applicative-0.17.0.0 \
+		primitive-0.7.4.0 \
+		scientific-0.3.7.0_2 \
+		transformers-compat-0.7.1_1
 
 .include <bsd.port.mk>
