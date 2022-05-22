@@ -55,6 +55,7 @@ require "lfs"
 -------------------------------------------------------------------
 local file_pattern = "."
 local database = "/var/db/pkg/provides/provides.db"
+local max_age = 1 * 24 * 3600 -- maximum age of database file in seconds
 
 -------------------------------------------------------------------
 local function table_sorted_keys(t)
@@ -154,6 +155,20 @@ end
 -------------------------------------------------------------------
 local function read_files(pattern)
    local files_table = {}
+   local now = os.time()
+   local modification_time = lfs.attributes(database, "modification")
+   if not modification_time then
+      print("# Aborting: package file database " .. database .. " does not exist.")
+      print("# Install the 'pkg-provides' package and add it as a module to 'pkg.conf'.")
+      print("# Then fetch the database with 'pkg update' or 'pkg provides -u'.")
+      os.exit(1)
+   end
+   if now - modification_time > max_age then
+      print("# Aborting: package file database " .. database)
+      print("# is older than " .. max_age .. " seconds.")
+      print("# Use 'pkg provides -u' to update the database.")
+      os.exit(2)
+   end
    local pipe = io.popen("locate -d " .. database .. " " .. pattern)
    if pipe then
       for line in pipe:lines() do
