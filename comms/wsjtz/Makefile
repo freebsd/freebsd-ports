@@ -1,5 +1,5 @@
 PORTNAME=	wsjtz
-DISTVERSION=	2.5.0-1.10
+DISTVERSION=	2.5.4-1.22
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt-z/Source
 
