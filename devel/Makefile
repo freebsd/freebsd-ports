@@ -6292,6 +6292,7 @@
     SUBDIR += rubygem-cri
     SUBDIR += rubygem-csv
     SUBDIR += rubygem-cucumber
+    SUBDIR += rubygem-cucumber-ci-environment
     SUBDIR += rubygem-cucumber-core
     SUBDIR += rubygem-cucumber-create-meta
     SUBDIR += rubygem-cucumber-cucumber-expressions
