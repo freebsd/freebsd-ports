@@ -17167,3 +17167,4 @@ devel/rubygem-cucumber-messages4|devel/rubygem-cucumber-messages|2022-05-22|Remo
 devel/rubygem-cucumber-messages17|devel/rubygem-cucumber-messages|2022-05-22|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
 textproc/rubygem-cucumber-gherkin22|textproc/rubygem-cucumber-gherkin|2022-05-22|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
 textproc/rubygem-cucumber-html-formatter17|textproc/rubygem-cucumber-html-formatter|2022-05-22|Remove obsoleted port. Use textproc/rubygem-cucumber-html-formatter instead
+security/greenbone-security-assistant|security/gsa|2022-05-22|It was splitted into security/gsad and security/gsa
