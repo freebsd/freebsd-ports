@@ -201,6 +201,7 @@ include/dune/fem/misc/threads/threaditerator.hh
 include/dune/fem/misc/threads/threaditeratorstorage.hh
 include/dune/fem/misc/threads/threadmanager.hh
 include/dune/fem/misc/threads/threadpartitioner.hh
+include/dune/fem/misc/threads/threadpool.hh
 include/dune/fem/misc/threads/threadsafevalue.hh
 include/dune/fem/misc/umfpack.hh
 include/dune/fem/operator/1order/localmassmatrix.hh
@@ -285,6 +286,7 @@ include/dune/fem/quadrature/quadprovider.hh
 include/dune/fem/quadrature/quadrature.hh
 include/dune/fem/quadrature/quadratureimp.hh
 include/dune/fem/quadrature/quadratureimp_inline.hh
+include/dune/fem/schemes/conservationlawmodel.hh
 include/dune/fem/schemes/dgelliptic.hh
 include/dune/fem/schemes/dgfemscheme.hh
 include/dune/fem/schemes/diffusionmodel.hh
