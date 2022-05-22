@@ -8,11 +8,11 @@ lib/cmake/boost_python-%%BOOST_SHARED_LIB_VER%%/libboost_python-variant-shared-p
 lib/cmake/boost_python-%%BOOST_SHARED_LIB_VER%%/libboost_python-variant-static-py%%PYTHON_VER%%.cmake
 lib/libboost_numpy%%PYTHON_SUFFIX%%.a
 lib/libboost_numpy%%PYTHON_SUFFIX%%.so
-lib/libboost_numpy%%PYTHON_SUFFIX%%.so.%%MAJOR_VER%%
-lib/libboost_numpy%%PYTHON_SUFFIX%%.so.%%MAJOR_VER%%.%%MINOR_VER%%
+lib/libboost_numpy%%PYTHON_SUFFIX%%.so.%%BOOST_MAJOR_VER%%
+lib/libboost_numpy%%PYTHON_SUFFIX%%.so.%%BOOST_MAJOR_VER%%.%%BOOST_MINOR_VER%%
 lib/libboost_numpy%%PYTHON_SUFFIX%%.so.%%BOOST_SHARED_LIB_VER%%
 lib/libboost_python%%PYTHON_SUFFIX%%.a
 lib/libboost_python%%PYTHON_SUFFIX%%.so
-lib/libboost_python%%PYTHON_SUFFIX%%.so.%%MAJOR_VER%%
-lib/libboost_python%%PYTHON_SUFFIX%%.so.%%MAJOR_VER%%.%%MINOR_VER%%
+lib/libboost_python%%PYTHON_SUFFIX%%.so.%%BOOST_MAJOR_VER%%
+lib/libboost_python%%PYTHON_SUFFIX%%.so.%%BOOST_MAJOR_VER%%.%%BOOST_MINOR_VER%%
 lib/libboost_python%%PYTHON_SUFFIX%%.so.%%BOOST_SHARED_LIB_VER%%

@@ -1,9 +1,10 @@
 # Created by: Alexander Churanov <churanov.port.maintainer@gmail.com>
 
 PORTNAME=	boost-libs
-PORTREVISION=	7
 
 COMMENT=	Free portable C++ libraries (without Boost.Python)
+
+LICENSE=	BSL
 
 BROKEN_sparc64=	https://github.com/boostorg/context/commit/f2ef6326b6ed
 

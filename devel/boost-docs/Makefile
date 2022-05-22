@@ -5,14 +5,20 @@ COMMENT=	Documentation for libraries from boost.org
 
 USES=	python:env shebangfix
 
+LICENSE=	BSL
+LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE_1_0.txt
+
 DOCSDIR=	${PREFIX}/share/doc/boost
 UNIQ=		/usr/bin/uniq
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS
 
 SHEBANG_GLOB=	*.py
+
+PORTDOCS=	*
 
 .include "${.CURDIR}/..//boost-all/common.mk"
 

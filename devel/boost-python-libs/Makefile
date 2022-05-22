@@ -1,16 +1,18 @@
 # Created by: Alexander Churanov <churanov.port.maintainer@gmail.com>
 
 PORTNAME=	boost-libs
-PORTREVISION=	1
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PATCHDIR=	../boost-libs/files
 
 COMMENT=	Framework for interfacing Python and C++
+
+LICENSE=	BSL
 
 BUILD_DEPENDS=	bjam:devel/boost-jam \
 		${PYNUMPY}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		python:3.6-3.9  # upper bound inherited from math/py-numpy
+USES=		python:3.7-3.9  # upper bound inherited from math/py-numpy
 USE_PYTHON=	flavors
 
 OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS
