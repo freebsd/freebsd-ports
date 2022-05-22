@@ -1531,6 +1531,7 @@
     SUBDIR += lua-luacheck
     SUBDIR += lua-luarocks
     SUBDIR += lua-lunit
+    SUBDIR += lua-mode
     SUBDIR += lua-posix
     SUBDIR += lua-pty
     SUBDIR += lua-rds-parser
