@@ -11,7 +11,7 @@ BUILD_DEPENDS=	lcov>=0:devel/lcov
 
 USES=	cmake localbase:ldflags gnome pkgconfig
 
-LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libgtest.so:devel/googletest \
 		libayatana-indicator3.so:devel/libayatana-indicator \
 		libdbusmenu-glib.so:devel/libdbusmenu \

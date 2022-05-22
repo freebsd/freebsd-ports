@@ -12,7 +12,7 @@ COMMENT=	Virtual note-pad system for your X11 desktop
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme
-LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libdbusmenu-glib.so:devel/libdbusmenu \
 		libayatana-ido3-0.4.so:devel/ayatana-ido \
 		libayatana-appindicator3.so:devel/libayatana-appindicator \

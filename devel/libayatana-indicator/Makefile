@@ -12,7 +12,7 @@ BUILD_DEPENDS=	vala>=0:lang/vala \
 
 USES=	cmake localbase:ldflags gnome pkgconfig
 
-LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		libgtest.so:devel/googletest \
 		libayatana-ido3-0.4.so:devel/ayatana-ido
 
