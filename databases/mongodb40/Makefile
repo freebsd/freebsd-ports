@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	4.0.28
+PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -22,12 +23,11 @@ ONLY_FOR_ARCHS_REASON=	only supported on amd64, aarch64, and powerpc64le; i386 d
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
 		${LOCALBASE}/bin/ar:devel/binutils
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
 		libsnappy.so:archivers/snappy
 
-USES=		compiler:c++14-lang cpe python:3.5+,build scons shebangfix
+USES=		compiler:c++14-lang cpe python:3.7+,build scons shebangfix
 USE_RC_SUBR=	mongod
 
 CONFLICTS_INSTALL=	mongodb36 mongodb4[24] mongodb50
@@ -37,7 +37,7 @@ python_OLD_CMD=	@python_interpreter@
 
 MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--use-system-pcre --use-system-snappy \
-		--use-system-boost --use-system-zlib \
+		--use-system-zlib \
 		--cxx-std=14 --libc++ \
 		--runtime-hardening=on \
 		--disable-warnings-as-errors \
