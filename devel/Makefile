@@ -4699,6 +4699,7 @@
     SUBDIR += py-jellyfish
     SUBDIR += py-jenkins-job-builder
     SUBDIR += py-jep
+    SUBDIR += py-jinja2-ansible-filters
     SUBDIR += py-jinja2-time
     SUBDIR += py-jira
     SUBDIR += py-jitterentropy
