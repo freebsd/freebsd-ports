@@ -1,14 +1,10 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
 
 PORTNAME=	inkscape
-DISTVERSION=	1.1.2
-PORTREVISION=	5
+DISTVERSION=	1.2
 CATEGORIES=	graphics gnome
-MASTER_SITES=	https://inkscape.org/gallery/item/31668/
-
-PATCH_SITES=	https://gitlab.com/inkscape/inkscape/-/commit/
-PATCHFILES=	a18c57ffff313fd08bc8a44f6b6bf0b01d7e9b75.diff:-p1 \
-		d989cdf1059c78bc3bb6414330242073768d640b.diff:-p1
+MASTER_SITES=	https://inkscape.org/gallery/item/33449/
+DISTNAME=	${PORTNAME}-${DISTVERSION}_${DATETAG}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
@@ -50,13 +46,15 @@ RUN_DEPENDS=	${PYNUMPY} \
 		fig2dev:print/fig2dev
 
 USES=		compiler:c++11-lib cmake cpe desktop-file-utils gnome \
-		iconv:wchar_t jpeg pathfix pkgconfig python:3.6+ \
+		iconv:wchar_t jpeg pathfix pkgconfig python:3.7+ \
 		shebangfix tar:xz xorg
 USE_GNOME=	gtkmm30 libxml2 libxslt
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_2022-02-04_0a00cf5339
+DATETAG=	2022-05-15_dc2aedaf03
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_${DATETAG}
 
 SHEBANG_FILES=	share/extensions/*.py share/extensions/genpofiles.sh \
 		share/templates/*.py man/fix-roff-punct
