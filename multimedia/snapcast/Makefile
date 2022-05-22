@@ -18,6 +18,8 @@ LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libvorbis.so:audio/libvorbis \
 		libsoxr.so:audio/libsoxr
 
+BROKEN=		error: non-constant-expression cannot be narrowed from type 'unsigned long' to 'int' in initializer list 
+
 USES=		cmake compiler:c++14-lang pkgconfig
 
 USE_GITHUB=	yes
