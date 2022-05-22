@@ -4285,7 +4285,6 @@
 %%WWWDIR%%/core/modules/ckeditor5/css/code-block.admin.css
 %%WWWDIR%%/core/modules/ckeditor5/css/drupalmedia.admin.css
 %%WWWDIR%%/core/modules/ckeditor5/css/drupalmedia.css
-%%WWWDIR%%/core/modules/ckeditor5/css/filter.admin.css
 %%WWWDIR%%/core/modules/ckeditor5/css/heading.admin.css
 %%WWWDIR%%/core/modules/ckeditor5/css/horizontal-line.admin.css
 %%WWWDIR%%/core/modules/ckeditor5/css/ie-warnings.css
@@ -4354,7 +4353,6 @@
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalHtmlEngine/src/drupalhtmlengine.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalHtmlEngine/src/drupalhtmlwriter.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalHtmlEngine/src/index.js
-%%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalImage/README.md
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalImage/src/drupalimage.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalImage/src/drupalimagealternativetext.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalImage/src/drupalimageediting.js
@@ -4372,6 +4370,7 @@
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupalelementstyle/drupalelementstylecommand.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupalelementstyle/drupalelementstyleediting.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupalelementstyle/drupalelementstyleui.js
+%%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupalelementstyle/utils.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupallinkmedia/drupallinkmedia.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupallinkmedia/drupallinkmediaediting.js
 %%WWWDIR%%/core/modules/ckeditor5/js/ckeditor5_plugins/drupalMedia/src/drupallinkmedia/drupallinkmediaui.js
@@ -4412,14 +4411,17 @@
 %%WWWDIR%%/core/modules/ckeditor5/src/Controller/CKEditor5MediaController.php
 %%WWWDIR%%/core/modules/ckeditor5/src/EventSubscriber/CKEditor5CacheTag.php
 %%WWWDIR%%/core/modules/ckeditor5/src/HTMLRestrictions.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor4To5Upgrade/Contrib.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor4To5Upgrade/Core.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor4To5UpgradePluginInterface.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor4To5UpgradePluginManager.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/DynamicPluginConfigWithCsrfTokenUrlTrait.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/GlobalAttribute.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/Heading.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/ImageResize.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/ImageUpload.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/Language.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/ListPlugin.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/Media.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/MediaLibrary.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/CKEditor5Plugin/SourceEditing.php
@@ -4439,6 +4441,8 @@
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/FundamentalCompatibilityConstraint.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/FundamentalCompatibilityConstraintValidator.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/PluginManagerDependentValidatorTrait.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/SourceEditingPreventSelfXssConstraint.php
+%%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/SourceEditingPreventSelfXssConstraintValidator.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/SourceEditingRedundantTagsConstraint.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/SourceEditingRedundantTagsConstraintValidator.php
 %%WWWDIR%%/core/modules/ckeditor5/src/Plugin/Validation/Constraint/TextEditorObjectDependentValidatorTrait.php
@@ -4456,6 +4460,8 @@
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_definition_supporting_element/ckeditor5_definition_supporting_element.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_drupalelementstyle_test/ckeditor5_drupalelementstyle_test.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_drupalelementstyle_test/ckeditor5_drupalelementstyle_test.module
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_incompatible_filter_test/ckeditor5_incompatible_filter_test.info.yml
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_incompatible_filter_test/src/Plugin/Filter/FilterIsIncompatible.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_manual_decorator_test/ckeditor5_manual_decorator_test.ckeditor5.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_manual_decorator_test/ckeditor5_manual_decorator_test.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_plugin_conditions_test/ckeditor5_plugin_conditions_test.ckeditor5.yml
@@ -4493,6 +4499,7 @@
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/FunctionalJavascript/MediaLibraryTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/FunctionalJavascript/MediaTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/FunctionalJavascript/SourceEditingTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/FunctionalJavascript/TableTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Kernel/CKEditor4to5UpgradeCompletenessTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Kernel/CKEditor5PluginManagerTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Kernel/CKEditor5StylesheetsTest.php
@@ -4509,7 +4516,11 @@
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Traits/SynchronizeCsrfTokenSeedTrait.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/CKEditor5Test.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/HTMLRestrictionsTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/HeadingPluginTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/LanguagePluginTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/ListPluginTest.php
 %%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/SmartDefaultSettingsTest.php
+%%WWWDIR%%/core/modules/ckeditor5/tests/src/Unit/SourceEditingPluginTest.php
 %%WWWDIR%%/core/modules/ckeditor5/webpack.config.js
 %%WWWDIR%%/core/modules/color/color.es6.js
 %%WWWDIR%%/core/modules/color/color.info.yml
@@ -10060,6 +10071,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestBrokenQueue.php
 %%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestDatabaseDelayException.php
 %%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestException.php
+%%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestLeaseTime.php
 %%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestMemoryDelayException.php
 %%WWWDIR%%/core/modules/system/tests/modules/cron_queue_test/src/Plugin/QueueWorker/CronQueueTestRequeueException.php
 %%WWWDIR%%/core/modules/system/tests/modules/csrf_race_test/csrf_race_test.info.yml
@@ -11808,12 +11820,12 @@
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.broken.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.dev.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.0.1_0.2.xml
-%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.0.2-rc2-b.xml
-%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.0.2-rc2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.0.2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.1.2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.1.2_insecure-unsupported.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.1.2_insecure.xml
+%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.2.0-rc2-b.xml
+%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.2.0-rc2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.2.0.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.2.0_3.0-rc1.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/drupal.sec.2.0_9.0.0.xml
@@ -11837,12 +11849,12 @@
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.9.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.dev.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.0.1_0.2.xml
-%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.0.2-rc2-b.xml
-%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.0.2-rc2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.0.2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.1.2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.1.2_insecure-unsupported.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.1.2_insecure.xml
+%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.2.0-rc2-b.xml
+%%WWWDIR%%/core/modules/update/tests/fixtures/release-history/semver_test.sec.2.0-rc2.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/update_test_basetheme.1_1-sec.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/update_test_new_module.1_1.xml
 %%WWWDIR%%/core/modules/update/tests/fixtures/release-history/update_test_subtheme.1_0.xml
