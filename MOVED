@@ -17157,3 +17157,4 @@ math/pantheon-calculator|math/elementary-calculator|2022-05-18|Switch to reverse
 mail/p5-MIME-Fast||2022-05-19|Depends on long deprecated gmime-2.2
 mail/gmime2-sharp|mail/gmime26-sharp|2022-05-19|Depends on long deprecated gmime-2.2
 mail/gmime2|mail/gmime26|2022-05-19|Not used anymore overcome by gnime26
+graphics/p5-Geo-GDAL||2022-05-22|Remove obsoleted port. GDAL removed deprecated SWIG Perl bindings since 3.5.0

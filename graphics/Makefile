@@ -655,7 +655,6 @@
     SUBDIR += p5-GD-TextUtil
     SUBDIR += p5-GD-Thumbnail
     SUBDIR += p5-Geo-EOP
-    SUBDIR += p5-Geo-GDAL
     SUBDIR += p5-Geo-GDAL-FFI
     SUBDIR += p5-Geo-GML
     SUBDIR += p5-Geo-Gpx
