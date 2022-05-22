@@ -12,6 +12,7 @@ COMMENT=	PoS cryptocurrency that can execute smart contract as part of an UTXO
 LICENSE=	GPLv3
 
 BROKEN_i386=	does not compile: invalid operand for instruction ... ASJ(jnz, 0, b) ... "jnz"
+BROKEN=		does not compile: error: expected ';' after expression
 
 BUILD_DEPENDS=	libzmq4>0:net/libzmq4
 RUN_DEPENDS=	libzmq4>0:net/libzmq4
