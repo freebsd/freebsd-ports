@@ -2,7 +2,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	6.8
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU \
@@ -29,7 +29,7 @@ RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-USES=		charsetfix cpe gmake iconv libtool ncurses perl5 tar:xz
+USES=		charsetfix cpe gmake iconv:wchar_t libtool ncurses perl5 tar:xz
 
 CONFIGURE_ARGS=	--with-external-libintl-perl \
 		--with-external-Text-Unidecode \
