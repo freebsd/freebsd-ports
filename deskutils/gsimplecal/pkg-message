@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+In order to use gsimplecal it is required to create a configuration file in
+~/.config/gsimplecal
+
+See man gsimplecal for an example of such a configuration file.
+
+EOM
+}
+]
