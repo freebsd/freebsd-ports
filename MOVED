@@ -17163,3 +17163,4 @@ devel/py-smmap2|devel/py-smmap|2022-05-22|Remove obsoleted port. Use devel/py-sm
 devel/rubygem-cucumber-create-meta|devel/rubygem-cucumber-ci-environment|2022-05-22|Remove obsoleted port. Use devel/rubygem-cucumber-ci-environment instead
 devel/rubygem-cucumber-cucumber-expressions14|devel/rubygem-cucumber-cucumber-expressions|2022-05-22|Remove obsoleted port. Use devel/rubygem-cucumber-cucumber-expressions instead
 devel/rubygem-cucumber-formatter-dots|textproc/rubygem-cucumber-html-formatter|2022-05-22|Remove obsoleted port. Use textproc/rubygem-cucumber-html-formatter instead
+devel/rubygem-cucumber-messages4|devel/rubygem-cucumber-messages|2022-05-22|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
