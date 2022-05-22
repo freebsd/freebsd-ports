@@ -1,0 +1,4 @@
+timeout-decorator provides a timeout decorator to limit the execution time of
+the given function.
+
+WWW: https://github.com/pnpnpn/timeout-decorator
