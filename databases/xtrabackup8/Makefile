@@ -2,12 +2,15 @@
 
 PORTNAME=	xtrabackup
 PORTVERSION=	8.0.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
-MASTER_SITES=	https://www.percona.com/downloads/Percona-XtraBackup-${PORTVERSION:R}/Percona-XtraBackup-${PORTVERSION}/source/tarball/ \
-		https://github.com/percona/percona-xtrabackup/archive/
+MASTER_SITES=	https://www.percona.com/downloads/Percona-XtraBackup-${PORTVERSION:R}/Percona-XtraBackup-${PORTVERSION}/source/tarball/:precona \
+		https://github.com/percona/percona-xtrabackup/archive/:percona \
+		SF/boost/boost/${BOOST_VERSION}:boost
 PKGNAMESUFFIX=	8
 DISTNAME=	percona-${PORTNAME}-${PORTVERSION}
+DISTFILES=	percona-${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:percona \
+		boost_${BOOST_VERSION_UNDER}${EXTRACT_SUFX}:boost
 
 MAINTAINER=	eugene@zhegan.in
 COMMENT=	Open-source backup tool for InnoDB and XtraDB
@@ -16,7 +19,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	xxd:editors/vim \
-		boost-libs>=1.72.0:devel/boost-libs \
 		protobuf>=3.0:devel/protobuf \
 		rapidjson>=1.1.0:devel/rapidjson \
 		libevent>=2.1:devel/libevent
@@ -37,6 +39,12 @@ CMAKE_ARGS=	-DBUILD_CONFIG:STRING=xtrabackup_release
 .for component in EDITLINE ICU LIBEVENT PROTOBUF RAPIDJSON ZSTD
 CMAKE_ARGS+=	-DWITH_${component}:STRING=system
 .endfor
+
+# Bundle last supported Boost release
+BOOST_VERSION=	1.72.0
+BOOST_VERSION_UNDER=	${BOOST_VERSION:C/\./_/g}
+
+CMAKE_ARGS+=	-DWITH_BOOST=${WRKDIR}/boost_${BOOST_VERSION_UNDER}
 
 .include <bsd.port.pre.mk>
 
