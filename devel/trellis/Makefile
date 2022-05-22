@@ -22,6 +22,8 @@ LIB_DEPENDS=	libftdi1.so:devel/libftdi1 \
 		${PY_BOOST} \
 		libboost_thread.so:devel/boost-libs
 
+BROKEN=		cannot find Boost-Python
+
 USES=		compiler:c++14-lang cmake python:3.5+ shebangfix
 
 SHEBANG_FILES=	${WRKSRC}/timing/util/cell_html.py \
