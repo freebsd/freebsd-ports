@@ -74,7 +74,7 @@ LIBRSVG2_DEFAULT?=	legacy
 .  endif
 # Possible values: c7
 LINUX_DEFAULT?=		c7
-# Possible values: 70, 80, 90, 10, 11, 12, 13, -devel (to be used when non-base compiler is required)
+# Possible values: 70, 80, 90, 10, 11, 12, 13, 14, -devel (to be used when non-base compiler is required)
 # Please give notice to the Graphics Team (x11@FreeBSD.org) in advance before
 # bumping the LLVM version.
 .  if ${ARCH} == powerpc
@@ -105,7 +105,7 @@ _PERL5_FROM_BIN!=	${LOCALBASE}/bin/perl -e 'printf "%vd\n", $$^V;'
 _EXPORTED_VARS+=	_PERL5_FROM_BIN
 PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 .  endif
-# Possible values: 10, 11, 12, 13, 14
+# Possible values: 10, 11, 12, 13, 14, 15
 PGSQL_DEFAULT?=		13
 # Possible values: 7.4, 8.0, 8.1
 PHP_DEFAULT?=		8.0
