@@ -105,6 +105,7 @@
     SUBDIR += guake
     SUBDIR += gxkb
     SUBDIR += havoc
+    SUBDIR += hamclock
     SUBDIR += hhpc
     SUBDIR += hs-xmobar
     SUBDIR += hsetroot
