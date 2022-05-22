@@ -1,0 +1,5 @@
+TIMESTAMP = 1650923898
+SHA256 (gsa-cache.tar.gz) = 0d020dddef6d6157fd1565b9b392c8ca5958eb094570e2fb38191c5f358ac0a8
+SIZE (gsa-cache.tar.gz) = 61959406
+SHA256 (greenbone-gsa-v21.4.4_GH0.tar.gz) = 251e2ffed64eba49a4ca196775fbfe9543510fb737431fc103cca009ee4c9490
+SIZE (greenbone-gsa-v21.4.4_GH0.tar.gz) = 2471442
