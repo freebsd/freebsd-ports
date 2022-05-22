@@ -2,6 +2,7 @@
 
 PORTNAME=	dnsdist
 DISTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 

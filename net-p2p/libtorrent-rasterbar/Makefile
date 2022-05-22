@@ -2,6 +2,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 DISTVERSION=	1.2.14
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/

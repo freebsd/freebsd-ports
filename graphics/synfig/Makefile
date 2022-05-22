@@ -2,6 +2,7 @@
 
 PORTNAME=	synfig
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	graphics devel multimedia
 

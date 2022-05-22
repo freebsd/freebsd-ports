@@ -1,5 +1,6 @@
 PORTNAME=	cpp-hocon
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	puppet@FreeBSD.org

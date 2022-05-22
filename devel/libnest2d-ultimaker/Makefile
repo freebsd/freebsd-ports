@@ -2,6 +2,7 @@
 # includes commits since tag 0.4
 PORTNAME=	libnest2d-ultimaker
 DISTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	y@trombik.org

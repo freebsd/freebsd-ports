@@ -2,7 +2,7 @@
 
 PORTNAME=	pulseview
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science cad
 MASTER_SITES=	http://sigrok.org/download/source/pulseview/
 

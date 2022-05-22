@@ -2,7 +2,7 @@
 
 PORTNAME=	nix
 DISTVERSION=	2.3.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 PATCH_SITES=	https://github.com/NixOS/nix/commit/
 PATCHFILES=	7c112351d9e941567e64063638396259546d9a48.patch:-p1  # libutil: EPERM from kill(-1, ...) is fine #4530

@@ -1,6 +1,6 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
 
-PORTREVISION=	19
+PORTREVISION=	20
 PKGNAMESUFFIX=	-video-glide64mk2
 
 COMMENT=	Glide64mk2 video plugin for Mupen64Plus
