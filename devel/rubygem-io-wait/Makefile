@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	io-wait
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
