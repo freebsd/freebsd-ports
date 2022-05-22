@@ -1,3 +1,3 @@
-TIMESTAMP = 1649423952
-SHA256 (rubygem/grpc-1.45.0.gem) = 83e9ccf014d2b78ab372be19fb82617691c79cc4c9fc46fc5da272a6ce69f01e
-SIZE (rubygem/grpc-1.45.0.gem) = 5291008
+TIMESTAMP = 1653151244
+SHA256 (rubygem/grpc-1.46.2.gem) = def12491d88d22dda18fea88addefcb18fad65708a4f8bfa28f0abc88897aefe
+SIZE (rubygem/grpc-1.46.2.gem) = 5562880
