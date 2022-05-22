@@ -25,6 +25,8 @@ RUN_DEPENDS=	${PYNUMPY}
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
+BROKEN=		ld: error: undefined symbol: google::InitVLOG3__(google::SiteFlag*, int*, char const*, int)
+
 USES=		cmake compiler:c++14-lang cpe gl jpeg python:3.9 shebangfix \
 		tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
