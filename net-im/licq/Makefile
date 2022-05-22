@@ -16,6 +16,10 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
 BROKEN_FreeBSD_12_powerpc64=	fails to pass tests
 BROKEN_sparc64=		fails to link
+BROKEN=			ld: error: undefined symbol: boost::scoped_static_mutex_lock::scoped_static_mutex_lock(boost::static_mutex&, bool)
+
+DEPRECATED=		Abandonware, project is dead
+EXPIRATION_DATE=	2022-06-20
 
 USES=		cmake:noninja iconv ssl
 USE_CXXSTD=	c++98
