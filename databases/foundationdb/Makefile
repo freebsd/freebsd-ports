@@ -1,5 +1,6 @@
 PORTNAME=	foundationdb
 DISTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
@@ -50,6 +51,8 @@ PLIST_SUB+=	${SUB_FDB}
 post-patch:
 		${REINPLACE_CMD} 's/OPENSSL_USE_STATIC_LIBS TRUE/OPENSSL_USE_STATIC_LIBS FALSE/' \
 		${WRKSRC}/cmake/FDBComponents.cmake
+		${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/bindings/c/test/unit/third_party/CMakeLists.txt
 
 do-install:
 # commands on first line, dev tools on next two
