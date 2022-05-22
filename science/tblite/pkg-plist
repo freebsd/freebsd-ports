@@ -142,5 +142,5 @@ lib/cmake/tblite/tblite-targets.cmake
 lib/cmake/tblite/tblite-utils.cmake
 lib/libtblite.so
 lib/libtblite.so.0
-lib/libtblite.so.0.2.0
+lib/libtblite.so.0.2.1
 libdata/pkgconfig/tblite.pc
