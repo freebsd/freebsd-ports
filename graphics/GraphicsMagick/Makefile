@@ -12,7 +12,7 @@ COMMENT=	Fast image processing tools based on ImageMagick
 
 LICENSE=	MIT
 
-USES=		cpe libtool localbase pathfix pkgconfig tar:bzip2
+USES=		cpe libtool localbase pathfix pkgconfig tar:zst
 
 CONFIGURE_ARGS=	--enable-shared --enable-static \
 		--with-windows-font-dir=${WINDOWS_FONT_DIR} \
