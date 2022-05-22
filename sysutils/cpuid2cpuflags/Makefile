@@ -10,8 +10,6 @@ COMMENT=	Tool to generate CPU_FLAGS_* for your CPU
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_powerpc64=	fails to build: error "Platform not supported (only Linux supported at the moment)"
-BROKEN_powerpc64le=	fails to build: error "Platform not supported (only Linux supported at the moment)"
 BROKEN_riscv64=		fails to build: src/platforms.h:15:4: error: "Unsupported platform, please report"
 
 USES=		autoreconf
