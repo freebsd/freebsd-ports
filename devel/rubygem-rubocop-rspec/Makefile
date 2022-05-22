@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rubocop-rspec
-PORTVERSION=	2.10.0
+PORTVERSION=	2.11.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
