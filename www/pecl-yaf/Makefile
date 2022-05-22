@@ -1,7 +1,7 @@
 # Created by: johnpupu <johnpupu@gmail.com>
 
 PORTNAME=	yaf
-PORTVERSION=	3.3.4
+PORTVERSION=	3.3.5
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@freeBSD.org
