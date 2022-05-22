@@ -8,6 +8,9 @@ COMMENT=	Minimal C++ interval tree implementation
 
 LICENSE=	MIT
 
+DEPRECATED=		Dependent ports now use GH_TUPLE
+EXPIRATION_DATE=	2022-07-22
+
 USES=		compiler:c++0x
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
