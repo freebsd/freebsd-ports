@@ -1165,6 +1165,7 @@
     SUBDIR += libatomic_ops
     SUBDIR += libaura
     SUBDIR += libavl
+    SUBDIR += libayatana-appindicator
     SUBDIR += libayatana-indicator
     SUBDIR += libb2
     SUBDIR += libbacktrace
