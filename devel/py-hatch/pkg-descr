@@ -8,4 +8,4 @@ Features:
 - Configurable project generation with sane defaults
 - Responsive CLI, ~2-3x faster than equivalent tools
 
-WWW: https://github.com/ofek/hatch
+WWW: https://github.com/pypa/hatch
