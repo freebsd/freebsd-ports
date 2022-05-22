@@ -27,6 +27,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libwangle.so:net/wangle \
 		libzstd.so:archivers/zstd
 
+BROKEN=		error: implicit instantiation of undefined template 'std::basic_ofstream<char>'
+
 USES=		bison cmake compiler:c++17-lang ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
