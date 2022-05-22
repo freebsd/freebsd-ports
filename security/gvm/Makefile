@@ -1,5 +1,5 @@
 PORTNAME=	gvm
-PORTVERSION=	21.4.3
+PORTVERSION=	21.4.4
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
@@ -20,7 +20,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/ospd-openvas:security/py-ospd-openvas@${PY_FLAVOR
 RUN_DEPENDS+=   ${LOCALBASE}/sbin/openvas:security/openvas
 
 # Install GVM Web Interface
-RUN_DEPENDS+=	${LOCALBASE}/sbin/gsad:security/greenbone-security-assistant
+RUN_DEPENDS+=	${LOCALBASE}/sbin/gsad:security/gsad
+RUN_DEPENDS+=	${LOCALBASE}/share/gvm/gsad/web/index.html:security/gsa
 
 SUB_FILES=	pkg-message
 
