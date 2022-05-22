@@ -1,4 +1,4 @@
---- requirements.txt.orig	2022-03-29 15:22:20 UTC
+--- requirements.txt.orig	2022-05-22 15:17:57 UTC
 +++ requirements.txt
 @@ -1,11 +1,10 @@ beautifulsoup4>=4.5  # Beautifulsoup 4.5+ is required 
  apscheduler>=3.2.0
@@ -27,7 +27,8 @@
 -flask-restx==0.5.1
 +flask-restx>=0.5.1
  flask>=0.7
- pyparsing>=2.4.7
+-pyparsing==2.4.7
 -werkzeug<2.1.0  # Flask-login incompatibility https://github.com/maxcountryman/flask-login/issues/636
 -zxcvbn-python
++pyparsing>=2.4.7
 +zxcvbn
