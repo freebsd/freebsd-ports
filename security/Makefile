@@ -195,6 +195,8 @@
     SUBDIR += gpgme-cpp
     SUBDIR += gpgme-qt5
     SUBDIR += greenbone-security-assistant
+    SUBDIR += gsa
+    SUBDIR += gsad
     SUBDIR += gsasl
     SUBDIR += gss
     SUBDIR += gstreamer1-plugins-dtls
