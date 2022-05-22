@@ -1,5 +1,5 @@
 PORTNAME=	amatch
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,8 @@ RUN_DEPENDS=	rubygem-mize>=0:devel/rubygem-mize \
 USES=		gem
 USE_RUBY=	yes
 
-CONFLICTS_INSTALL=	agrep # bin/agrep
-
 PLIST_FILES=	bin/agrep bin/dupfind
+
+CONFLICTS_INSTALL=	agrep # bin/agrep
 
 .include <bsd.port.mk>
