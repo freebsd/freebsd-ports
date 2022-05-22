@@ -14,8 +14,7 @@ USES=		metaport
 PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	LUA PERL PHP PYTHON RUBY
-# While switching php DEFAULT OPTION PHP is creating circular
-# dependency. For now remove default OPTION PHP
+# Remove PHP from OPTIONS_DEFAULT to avoid circular dependency
 OPTIONS_DEFAULT=LUA PERL PYTHON RUBY
 
 LUA_RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}xapian>=${PORTVERSION}:databases/lua-xapian@${LUA_FLAVOR}
