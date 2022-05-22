@@ -1,7 +1,7 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
 PORTNAME=	inspec-core
-PORTVERSION=	4.52.9
+PORTVERSION=	4.56.20
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-parallel>=1.9<2:sysutils/rubygem-parallel \
 		rubygem-parslet1>=1.5<2:textproc/rubygem-parslet1 \
 		rubygem-pry>=0.13<1:devel/rubygem-pry \
-		rubygem-rspec>=3.9<3.12:devel/rubygem-rspec \
+		rubygem-rspec>=3.9<3.11.1:devel/rubygem-rspec \
 		rubygem-rspec-its>=1.2<2:devel/rubygem-rspec-its \
 		rubygem-rubyzip>=1.2.2<3:archivers/rubygem-rubyzip \
 		rubygem-semverse>=3.0<4:devel/rubygem-semverse \
