@@ -2,6 +2,7 @@
 
 PORTNAME=	xpad
 PORTVERSION=	5.7.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 
@@ -11,7 +12,11 @@ COMMENT=	Virtual note-pad system for your X11 desktop
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme
-LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
+LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
+		libdbusmenu-glib.so:devel/libdbusmenu \
+		libayatana-ido3-0.4.so:devel/ayatana-ido \
+		libayatana-appindicator3.so:devel/libayatana-appindicator \
+		libayatana-indicator3.so:devel/libayatana-indicator
 
 USES=		autoreconf compiler:c++11-lang gmake pkgconfig tar:bzip2 gnome xorg
 
