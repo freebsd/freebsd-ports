@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	mclust
-PORTVERSION=	5.4.9
+PORTVERSION=	5.4.10
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
