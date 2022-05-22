@@ -1,0 +1,24 @@
+The Ayatana Indicators project is the continuation of Application Indicators
+and System Indicators, two technologies developed by Canonical Ltd. for the
+Unity7 desktop.
+
+Application Indicators are a GTK implementation of the StatusNotifierItem
+Specification (SNI) that was originally submitted to freedesktop.org by KDE.
+
+System Indicators are an extensions to the Application Indicators idea.
+System Indicators allow for far more widgets to be displayed in the
+indicator's menu.
+
+The Ayatana Indicators project is the new upstream for application
+indicators, system indicators and associated projects with a focus on making
+Ayatana Indicators a desktop agnostic technology.
+
+On GNU/Linux, Ayatana Indicators are currently available for desktop
+envinronments like MATE (used by default in Ubuntu MATE), XFCE
+(used by default in Xubuntu, LXDE, and the Budgie Desktop).
+
+The Lomiri Operating Environment (UI of the Ubuntu Touch OS, formerly known as
+Unity8) uses Ayatana Indicators for rendering its notification area and the
+UBports project is a core contributor to the Ayatana Indicators project.
+
+WWW: https://github.com/AyatanaIndicators/libayatana-indicator
