@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	4.2.19
+PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -27,8 +28,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${LOCALBASE}/bin/ar:devel/binutils
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
 		libsnappy.so:archivers/snappy
 
@@ -49,7 +49,6 @@ MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 		--use-system-zlib \
 		--use-system-pcre \
 		--use-system-snappy \
-		--use-system-boost \
 		--libc++ \
 		--cxx-std=17 \
 		--runtime-hardening=on \
