@@ -136,7 +136,6 @@ RUBY?=			${LOCALBASE}/bin/ruby${RUBY_SUFFIX}
 RUBY_DISTVERSION=	2.7.6
 RUBY_PORTREVISION=	2
 RUBY_PORTEPOCH=		1
-RUBY27=			""	# PLIST_SUB helpers
 
 .      elif ${RUBY_VER} == 3.0
 #
@@ -145,7 +144,6 @@ RUBY27=			""	# PLIST_SUB helpers
 RUBY_DISTVERSION=	3.0.4
 RUBY_PORTREVISION=	2
 RUBY_PORTEPOCH=		1
-RUBY30=			""	# PLIST_SUB helpers
 .      elif ${RUBY_VER} == 3.1
 #
 # Ruby 3.1
@@ -153,7 +151,6 @@ RUBY30=			""	# PLIST_SUB helpers
 RUBY_DISTVERSION=	3.1.2
 RUBY_PORTREVISION=	1
 RUBY_PORTEPOCH=		1
-RUBY31=			""	# PLIST_SUB helpers
 
 .      elif ${RUBY_VER} == 3.2
 #
@@ -162,7 +159,6 @@ RUBY31=			""	# PLIST_SUB helpers
 RUBY_DISTVERSION=	3.2.0-preview1
 RUBY_PORTREVISION=	2
 RUBY_PORTEPOCH=		1
-RUBY32=			""	# PLIST_SUB helpers
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
@@ -281,11 +277,7 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_SHLIBVER="${RUBY_SHLIBVER}" \
 			RUBY_ARCH="${RUBY_ARCH}" \
 			RUBY_SUFFIX="${RUBY_SUFFIX}" \
-			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
-			RUBY27=${RUBY27} \
-			RUBY30=${RUBY30} \
-			RUBY31=${RUBY31} \
-			RUBY32=${RUBY32}
+			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}"
 
 .    if ${PORT_OPTIONS:MDEBUG}
 RUBY_FLAGS+=	-d
