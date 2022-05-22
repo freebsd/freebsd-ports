@@ -1,5 +1,5 @@
---- CMakeLists.txt	2021-11-03 23:09:27.602060000 -0500
-+++ CMakeLists.txt	2021-11-03 23:17:41.187707000 -0500
+--- CMakeLists.txt.orig	2022-02-22 05:52:13.000000000 -0500
++++ CMakeLists.txt	2022-05-02 18:07:40.263764000 -0500
 @@ -110,7 +110,7 @@
  endif (SYSCONF_INSTALL_DIR)
  
@@ -12,13 +12,13 @@
 @@ -181,7 +181,7 @@
  set (GVM_CA_CERTIFICATE      "${GVM_STATE_DIR}/CA/cacert.pem")
  
- if (NOT GVM_RUN_DIR)
--  set (GVM_RUN_DIR      "/run/gvm")
-+  set (GVM_RUN_DIR      "${LOCALSTATEDIR}/run/gvm")
- endif (NOT GVM_RUN_DIR)
+ if (NOT GVMD_RUN_DIR)
+-  set (GVMD_RUN_DIR      "/run/gvmd")
++  set (GVMD_RUN_DIR      "${LOCALSTATEDIR}/run/gvmd")
+ endif (NOT GVMD_RUN_DIR)
  
- if (NOT GVM_FEED_LOCK_PATH)
-@@ -190,7 +190,7 @@
+ if (NOT GVMD_PID_PATH)
+@@ -194,7 +194,7 @@
  add_definitions (-DGVM_FEED_LOCK_PATH="${GVM_FEED_LOCK_PATH}")
  
  if (NOT OPENVAS_DEFAULT_SOCKET)
@@ -27,7 +27,7 @@
  endif (NOT OPENVAS_DEFAULT_SOCKET)
  add_definitions (-DOPENVAS_DEFAULT_SOCKET="${OPENVAS_DEFAULT_SOCKET}")
  
-@@ -238,7 +238,7 @@
+@@ -242,7 +242,7 @@
  configure_file (doc/Doxyfile_xml.in doc/Doxyfile_xml)
  configure_file (doc/example-gvm-manage-certs.conf.in doc/example-gvm-manage-certs.conf @ONLY)
  configure_file (VERSION.in VERSION)
@@ -36,18 +36,18 @@
  configure_file (src/schema_formats/XML/GMP.xml.in src/schema_formats/XML/GMP.xml @ONLY)
  configure_file (tools/greenbone-feed-sync.in tools/greenbone-feed-sync @ONLY)
  configure_file (tools/greenbone-scapdata-sync.in tools/greenbone-scapdata-sync @ONLY)
-@@ -280,7 +280,7 @@
+@@ -284,7 +284,7 @@
  
  ## Configs (e.g. systemd service file)
  
 -add_subdirectory (config)
-+#add_subdirectory (config)
++# add_subdirectory (config)
  
  ## Documentation
  
-@@ -290,10 +290,10 @@
+@@ -296,10 +296,10 @@
  
- install (DIRECTORY DESTINATION ${GVMD_STATE_DIR})
+ install (DIRECTORY DESTINATION ${GVMD_RUN_DIR})
  
 -install (FILES ${CMAKE_BINARY_DIR}/src/gvmd_log.conf
 +install (FILES ${CMAKE_BINARY_DIR}/src/gvmd_log.conf.sample

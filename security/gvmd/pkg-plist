@@ -52,6 +52,6 @@ share/man/man8/gvmd.8.gz
 @dir(gvm,gvm,750) /var/lib/gvm/gvmd/gnupg
 @dir(gvm,gvm,750) /var/lib/gvm/gvmd
 @dir(gvm,gvm,750) /var/lib/gvm
-@dir(gvm,gvm,750) /var/run/gvm
+@dir(gvm,gvm,750) /var/run/gvmd
 @dir(gvm,gvm,750) /var/log/gvm
 @dir /var/lib
