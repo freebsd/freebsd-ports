@@ -1,5 +1,5 @@
 PORTNAME=	openvas
-DISTVERSION=	21.4.3
+DISTVERSION=	21.4.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libgvm_base.so:security/gvm-libs \
 RUN_DEPENDS=	redis-server:databases/redis \
 		snmpget:net-mgmt/net-snmp \
 		rsync:net/rsync \
+		nmap:security/nmap \
 		${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket@${PY_FLAVOR}
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone
@@ -30,6 +31,9 @@ USE_GNOME=	glib20
 
 USERS=		gvm
 GROUPS=		${USERS}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|g_pattern_match_string|g_pattern_spec_match_string|g' ${WRKSRC}/misc/strutils.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/ospd
