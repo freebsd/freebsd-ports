@@ -1,0 +1,1414 @@
+Obtained from:	https://github.com/encode/httpx/commit/14a1704be507cf435fa84da75c249c2ecd1c3981
+
+--- httpx/_api.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_api.py
+@@ -24,19 +24,19 @@ def request(
+     method: str,
+     url: URLTypes,
+     *,
+-    params: QueryParamTypes = None,
+-    content: RequestContent = None,
+-    data: RequestData = None,
+-    files: RequestFiles = None,
+-    json: typing.Any = None,
+-    headers: HeaderTypes = None,
+-    cookies: CookieTypes = None,
+-    auth: AuthTypes = None,
+-    proxies: ProxiesTypes = None,
++    params: typing.Optional[QueryParamTypes] = None,
++    content: typing.Optional[RequestContent] = None,
++    data: typing.Optional[RequestData] = None,
++    files: typing.Optional[RequestFiles] = None,
++    json: typing.Optional[typing.Any] = None,
++    headers: typing.Optional[HeaderTypes] = None,
++    cookies: typing.Optional[CookieTypes] = None,
++    auth: typing.Optional[AuthTypes] = None,
++    proxies: typing.Optional[ProxiesTypes] = None,
+     timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+     follow_redirects: bool = False,
+     verify: VerifyTypes = True,
+-    cert: CertTypes = None,
++    cert: typing.Optional[CertTypes] = None,
+     trust_env: bool = True,
+ ) -> Response:
+     """
+@@ -116,19 +116,19 @@ def stream(
+     method: str,
+     url: URLTypes,
+     *,
+-    params: QueryParamTypes = None,
+-    content: RequestContent = None,
+-    data: RequestData = None,
+-    files: RequestFiles = None,
+-    json: typing.Any = None,
+-    headers: HeaderTypes = None,
+-    cookies: CookieTypes = None,
+-    auth: AuthTypes = None,
+-    proxies: ProxiesTypes = None,
++    params: typing.Optional[QueryParamTypes] = None,
++    content: typing.Optional[RequestContent] = None,
++    data: typing.Optional[RequestData] = None,
++    files: typing.Optional[RequestFiles] = None,
++    json: typing.Optional[typing.Any] = None,
++    headers: typing.Optional[HeaderTypes] = None,
++    cookies: typing.Optional[CookieTypes] = None,
++    auth: typing.Optional[AuthTypes] = None,
++    proxies: typing.Optional[ProxiesTypes] = None,
+     timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+     follow_redirects: bool = False,
+     verify: VerifyTypes = True,
+-    cert: CertTypes = None,
++    cert: typing.Optional[CertTypes] = None,
+     trust_env: bool = True,
+ ) -> typing.Iterator[Response]:
+     """
+@@ -167,13 +167,13 @@ def stream(
+ def get(
+     url: URLTypes,
+     *,
+-    params: QueryParamTypes = None,
+-    headers: HeaderTypes = None,
+-    cookies: CookieTypes = None,
+-    auth: AuthTypes = None,
+-    proxies: ProxiesTypes = None,
++    params: typing.Optional[QueryParamTypes] = None,
++    headers: typing.Optional[HeaderTypes] = None,
++    cookies: typing.Optional[CookieTypes] = None,
++    auth: typing.Optional[AuthTypes] = None,
++    proxies: typing.Optional[ProxiesTypes] = None,
+     follow_redirects: bool = False,
+-    cert: CertTypes = None,
++    cert: typing.Optional[CertTypes] = None,
+     verify: VerifyTypes = True,
+     timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+     trust_env: bool = True,
+@@ -205,13 +205,13 @@ def get(
+ def options(
+     url: URLTypes,
+     *,
+-    params: QueryParamTypes = None,
+-    headers: HeaderTypes = None,
+-    cookies: CookieTypes = None,
+-    auth: AuthTypes = None,
+-    proxies: ProxiesTypes = None,
++    params: typing.Optional[QueryParamTypes] = None,
++    headers: typing.Optional[HeaderTypes] = None,
++    cookies: typing.Optional[CookieTypes] = None,
++    auth: typing.Optional[AuthTypes] = None,
++    proxies: typing.Optional[ProxiesTypes] = None,
+     follow_redirects: bool = False,
+-    cert: CertTypes = None,
++    cert: typing.Optional[CertTypes] = None,
+     verify: VerifyTypes = True,
+     timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+     trust_env: bool = True,
+@@ -243,13 +243,13 @@ def options(
+ def head(
+     url: URLTypes,
+     *,
+-    params: QueryParamTypes = None,
+-    headers: HeaderTypes = None,
+-    cookies: CookieTypes = None,
+-    auth: AuthTypes = None,
+-    proxies: ProxiesTypes = None,
++    params: typing.Optional[QueryParamTypes] = None,
++    headers: typing.Optional[HeaderTypes] = None,
++    cookies: typing.Optional[CookieTypes] = None,
++    auth: typing.Optional[AuthTypes] = None,
++    proxies: typing.Optional[ProxiesTypes] = None,
+     follow_redirects: bool = False,
+-    cert: CertTypes = None,
++    cert: typing.Optional[CertTypes] = None,
+     verify: VerifyTypes = True,
+     timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+     trust_env: bool = True,
+@@ -281,17 +281,17 @@ def head(
+ def post(
+     url: URLTypes,
+     *,
+-    content: RequestContent = None,
+-    data: RequestData = None,
+-    files: RequestFiles = None,
+-    json: typing.Any = None,
+-    params: QueryParamTypes = None,
+-    headers: HeaderTypes = None,
+-    cookies: CookieTypes = None,
+-    auth: AuthTypes = None,
+-    proxies: ProxiesTypes = None,
++    content: typing.Optional[RequestContent] = None,
++    data: typing.Optional[RequestData] = None,
++    files: typing.Optional[RequestFiles] = None,
++    json: typing.Optional[typing.Any] = None,
++    params: typing.Optional[QueryParamTypes] = None,
++    headers: typing.Optional[HeaderTypes] = None,
++    cookies: typing.Optional[CookieTypes] = None,
++    auth: typing.Optional[AuthTypes] = None,
++    proxies: typing.Optional[ProxiesTypes] = None,
+     follow_redirects: bool = False,
+-    cert: CertTypes = None,
++    cert: typing.Optional[CertTypes] = None,
+     verify: VerifyTypes = True,
+     timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+     trust_env: bool = True,
+@@ -324,17 +324,17 @@ def post(
+ def put(
+     url: URLTypes,
+     *,
+-    content: RequestContent = None,
+-    data: RequestData = None,
+-    files: RequestFiles = None,
+-    json: typing.Any = None,
+-    params: QueryParamTypes = None,
+-    headers: HeaderTypes = None,
+-    cookies: CookieTypes = None,
+-    auth: AuthTypes = None,
+-    proxies: ProxiesTypes = None,
++    content: typing.Optional[RequestContent] = None,
++    data: typing.Optional[RequestData] = None,
++    files: typing.Optional[RequestFiles] = None,
++    json: typing.Optional[typing.Any] = None,
++    params: typing.Optional[QueryParamTypes] = None,
++    headers: typing.Optional[HeaderTypes] = None,
++    cookies: typing.Optional[CookieTypes] = None,
++    auth: typing.Optional[AuthTypes] = None,
++    proxies: typing.Optional[ProxiesTypes] = None,
+     follow_redirects: bool = False,
+-    cert: CertTypes = None,
++    cert: typing.Optional[CertTypes] = None,
+     verify: VerifyTypes = True,
+     timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+     trust_env: bool = True,
+@@ -367,17 +367,17 @@ def put(
+ def patch(
+     url: URLTypes,
+     *,
+-    content: RequestContent = None,
+-    data: RequestData = None,
+-    files: RequestFiles = None,
+-    json: typing.Any = None,
+-    params: QueryParamTypes = None,
+-    headers: HeaderTypes = None,
+-    cookies: CookieTypes = None,
+-    auth: AuthTypes = None,
+-    proxies: ProxiesTypes = None,
++    content: typing.Optional[RequestContent] = None,
++    data: typing.Optional[RequestData] = None,
++    files: typing.Optional[RequestFiles] = None,
++    json: typing.Optional[typing.Any] = None,
++    params: typing.Optional[QueryParamTypes] = None,
++    headers: typing.Optional[HeaderTypes] = None,
++    cookies: typing.Optional[CookieTypes] = None,
++    auth: typing.Optional[AuthTypes] = None,
++    proxies: typing.Optional[ProxiesTypes] = None,
+     follow_redirects: bool = False,
+-    cert: CertTypes = None,
++    cert: typing.Optional[CertTypes] = None,
+     verify: VerifyTypes = True,
+     timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+     trust_env: bool = True,
+@@ -410,13 +410,13 @@ def patch(
+ def delete(
+     url: URLTypes,
+     *,
+-    params: QueryParamTypes = None,
+-    headers: HeaderTypes = None,
+-    cookies: CookieTypes = None,
+-    auth: AuthTypes = None,
+-    proxies: ProxiesTypes = None,
++    params: typing.Optional[QueryParamTypes] = None,
++    headers: typing.Optional[HeaderTypes] = None,
++    cookies: typing.Optional[CookieTypes] = None,
++    auth: typing.Optional[AuthTypes] = None,
++    proxies: typing.Optional[ProxiesTypes] = None,
+     follow_redirects: bool = False,
+-    cert: CertTypes = None,
++    cert: typing.Optional[CertTypes] = None,
+     verify: VerifyTypes = True,
+     timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+     trust_env: bool = True,
+--- httpx/_client.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_client.py
+@@ -155,14 +155,16 @@ class BaseClient:
+     def __init__(
+         self,
+         *,
+-        auth: AuthTypes = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        auth: typing.Optional[AuthTypes] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+         follow_redirects: bool = False,
+         max_redirects: int = DEFAULT_MAX_REDIRECTS,
+-        event_hooks: typing.Mapping[str, typing.List[typing.Callable]] = None,
++        event_hooks: typing.Optional[
++            typing.Mapping[str, typing.List[typing.Callable]]
++        ] = None,
+         base_url: URLTypes = "",
+         trust_env: bool = True,
+     ):
+@@ -315,15 +317,15 @@ class BaseClient:
+         method: str,
+         url: URLTypes,
+         *,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Request:
+         """
+         Build and return a request instance.
+@@ -384,7 +386,7 @@ class BaseClient:
+         return merge_url
+ 
+     def _merge_cookies(
+-        self, cookies: CookieTypes = None
++        self, cookies: typing.Optional[CookieTypes] = None
+     ) -> typing.Optional[CookieTypes]:
+         """
+         Merge a cookies argument together with any cookies on the client,
+@@ -397,7 +399,7 @@ class BaseClient:
+         return cookies
+ 
+     def _merge_headers(
+-        self, headers: HeaderTypes = None
++        self, headers: typing.Optional[HeaderTypes] = None
+     ) -> typing.Optional[HeaderTypes]:
+         """
+         Merge a headers argument together with any headers on the client,
+@@ -408,7 +410,7 @@ class BaseClient:
+         return merged_headers
+ 
+     def _merge_queryparams(
+-        self, params: QueryParamTypes = None
++        self, params: typing.Optional[QueryParamTypes] = None
+     ) -> typing.Optional[QueryParamTypes]:
+         """
+         Merge a queryparams argument together with any queryparams on the client,
+@@ -419,7 +421,7 @@ class BaseClient:
+             return merged_queryparams.merge(params)
+         return params
+ 
+-    def _build_auth(self, auth: AuthTypes) -> typing.Optional[Auth]:
++    def _build_auth(self, auth: typing.Optional[AuthTypes]) -> typing.Optional[Auth]:
+         if auth is None:
+             return None
+         elif isinstance(auth, tuple):
+@@ -434,7 +436,7 @@ class BaseClient:
+     def _build_request_auth(
+         self,
+         request: Request,
+-        auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
++        auth: typing.Union[AuthTypes, UseClientDefault, None] = USE_CLIENT_DEFAULT,
+     ) -> Auth:
+         auth = (
+             self._auth if isinstance(auth, UseClientDefault) else self._build_auth(auth)
+@@ -612,24 +614,26 @@ class Client(BaseClient):
+     def __init__(
+         self,
+         *,
+-        auth: AuthTypes = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        auth: typing.Optional[AuthTypes] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         verify: VerifyTypes = True,
+-        cert: CertTypes = None,
++        cert: typing.Optional[CertTypes] = None,
+         http1: bool = True,
+         http2: bool = False,
+-        proxies: ProxiesTypes = None,
+-        mounts: typing.Mapping[str, BaseTransport] = None,
++        proxies: typing.Optional[ProxiesTypes] = None,
++        mounts: typing.Optional[typing.Mapping[str, BaseTransport]] = None,
+         timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+         follow_redirects: bool = False,
+         limits: Limits = DEFAULT_LIMITS,
+         max_redirects: int = DEFAULT_MAX_REDIRECTS,
+-        event_hooks: typing.Mapping[str, typing.List[typing.Callable]] = None,
++        event_hooks: typing.Optional[
++            typing.Mapping[str, typing.List[typing.Callable]]
++        ] = None,
+         base_url: URLTypes = "",
+-        transport: BaseTransport = None,
+-        app: typing.Callable = None,
++        transport: typing.Optional[BaseTransport] = None,
++        app: typing.Optional[typing.Callable] = None,
+         trust_env: bool = True,
+     ):
+         super().__init__(
+@@ -691,12 +695,12 @@ class Client(BaseClient):
+     def _init_transport(
+         self,
+         verify: VerifyTypes = True,
+-        cert: CertTypes = None,
++        cert: typing.Optional[CertTypes] = None,
+         http1: bool = True,
+         http2: bool = False,
+         limits: Limits = DEFAULT_LIMITS,
+-        transport: BaseTransport = None,
+-        app: typing.Callable = None,
++        transport: typing.Optional[BaseTransport] = None,
++        app: typing.Optional[typing.Callable] = None,
+         trust_env: bool = True,
+     ) -> BaseTransport:
+         if transport is not None:
+@@ -718,7 +722,7 @@ class Client(BaseClient):
+         self,
+         proxy: Proxy,
+         verify: VerifyTypes = True,
+-        cert: CertTypes = None,
++        cert: typing.Optional[CertTypes] = None,
+         http1: bool = True,
+         http2: bool = False,
+         limits: Limits = DEFAULT_LIMITS,
+@@ -750,17 +754,17 @@ class Client(BaseClient):
+         method: str,
+         url: URLTypes,
+         *,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
+-        auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
++        auth: typing.Union[AuthTypes, UseClientDefault, None] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Build and send a request.
+@@ -807,17 +811,17 @@ class Client(BaseClient):
+         method: str,
+         url: URLTypes,
+         *,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
+-        auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
++        auth: typing.Union[AuthTypes, UseClientDefault, None] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> typing.Iterator[Response]:
+         """
+         Alternative to `httpx.request()` that streams the response body
+@@ -858,7 +862,7 @@ class Client(BaseClient):
+         request: Request,
+         *,
+         stream: bool = False,
+-        auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
++        auth: typing.Union[AuthTypes, UseClientDefault, None] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+     ) -> Response:
+         """
+@@ -1009,13 +1013,13 @@ class Client(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `GET` request.
+@@ -1038,13 +1042,13 @@ class Client(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send an `OPTIONS` request.
+@@ -1067,13 +1071,13 @@ class Client(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `HEAD` request.
+@@ -1096,17 +1100,17 @@ class Client(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `POST` request.
+@@ -1133,17 +1137,17 @@ class Client(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `PUT` request.
+@@ -1170,17 +1174,17 @@ class Client(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `PATCH` request.
+@@ -1207,13 +1211,13 @@ class Client(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `DELETE` request.
+@@ -1262,9 +1266,9 @@ class Client(BaseClient):
+ 
+     def __exit__(
+         self,
+-        exc_type: typing.Type[BaseException] = None,
+-        exc_value: BaseException = None,
+-        traceback: TracebackType = None,
++        exc_type: typing.Optional[typing.Type[BaseException]] = None,
++        exc_value: typing.Optional[BaseException] = None,
++        traceback: typing.Optional[TracebackType] = None,
+     ) -> None:
+         self._state = ClientState.CLOSED
+ 
+@@ -1325,24 +1329,26 @@ class AsyncClient(BaseClient):
+     def __init__(
+         self,
+         *,
+-        auth: AuthTypes = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        auth: typing.Optional[AuthTypes] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         verify: VerifyTypes = True,
+-        cert: CertTypes = None,
++        cert: typing.Optional[CertTypes] = None,
+         http1: bool = True,
+         http2: bool = False,
+-        proxies: ProxiesTypes = None,
+-        mounts: typing.Mapping[str, AsyncBaseTransport] = None,
++        proxies: typing.Optional[ProxiesTypes] = None,
++        mounts: typing.Optional[typing.Mapping[str, AsyncBaseTransport]] = None,
+         timeout: TimeoutTypes = DEFAULT_TIMEOUT_CONFIG,
+         follow_redirects: bool = False,
+         limits: Limits = DEFAULT_LIMITS,
+         max_redirects: int = DEFAULT_MAX_REDIRECTS,
+-        event_hooks: typing.Mapping[str, typing.List[typing.Callable]] = None,
++        event_hooks: typing.Optional[
++            typing.Mapping[str, typing.List[typing.Callable]]
++        ] = None,
+         base_url: URLTypes = "",
+-        transport: AsyncBaseTransport = None,
+-        app: typing.Callable = None,
++        transport: typing.Optional[AsyncBaseTransport] = None,
++        app: typing.Optional[typing.Callable] = None,
+         trust_env: bool = True,
+     ):
+         super().__init__(
+@@ -1404,12 +1410,12 @@ class AsyncClient(BaseClient):
+     def _init_transport(
+         self,
+         verify: VerifyTypes = True,
+-        cert: CertTypes = None,
++        cert: typing.Optional[CertTypes] = None,
+         http1: bool = True,
+         http2: bool = False,
+         limits: Limits = DEFAULT_LIMITS,
+-        transport: AsyncBaseTransport = None,
+-        app: typing.Callable = None,
++        transport: typing.Optional[AsyncBaseTransport] = None,
++        app: typing.Optional[typing.Callable] = None,
+         trust_env: bool = True,
+     ) -> AsyncBaseTransport:
+         if transport is not None:
+@@ -1431,7 +1437,7 @@ class AsyncClient(BaseClient):
+         self,
+         proxy: Proxy,
+         verify: VerifyTypes = True,
+-        cert: CertTypes = None,
++        cert: typing.Optional[CertTypes] = None,
+         http1: bool = True,
+         http2: bool = False,
+         limits: Limits = DEFAULT_LIMITS,
+@@ -1462,17 +1468,17 @@ class AsyncClient(BaseClient):
+         method: str,
+         url: URLTypes,
+         *,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
+-        auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
++        auth: typing.Union[AuthTypes, UseClientDefault, None] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Build and send a request.
+@@ -1511,17 +1517,17 @@ class AsyncClient(BaseClient):
+         method: str,
+         url: URLTypes,
+         *,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> typing.AsyncIterator[Response]:
+         """
+         Alternative to `httpx.request()` that streams the response body
+@@ -1562,7 +1568,7 @@ class AsyncClient(BaseClient):
+         request: Request,
+         *,
+         stream: bool = False,
+-        auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
++        auth: typing.Union[AuthTypes, UseClientDefault, None] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+     ) -> Response:
+         """
+@@ -1713,13 +1719,13 @@ class AsyncClient(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
+-        auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
++        auth: typing.Union[AuthTypes, UseClientDefault, None] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `GET` request.
+@@ -1742,13 +1748,13 @@ class AsyncClient(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send an `OPTIONS` request.
+@@ -1771,13 +1777,13 @@ class AsyncClient(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `HEAD` request.
+@@ -1800,17 +1806,17 @@ class AsyncClient(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `POST` request.
+@@ -1837,17 +1843,17 @@ class AsyncClient(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `PUT` request.
+@@ -1874,17 +1880,17 @@ class AsyncClient(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `PATCH` request.
+@@ -1911,13 +1917,13 @@ class AsyncClient(BaseClient):
+         self,
+         url: URLTypes,
+         *,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
+         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
+         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
+-        extensions: dict = None,
++        extensions: typing.Optional[dict] = None,
+     ) -> Response:
+         """
+         Send a `DELETE` request.
+@@ -1966,9 +1972,9 @@ class AsyncClient(BaseClient):
+ 
+     async def __aexit__(
+         self,
+-        exc_type: typing.Type[BaseException] = None,
+-        exc_value: BaseException = None,
+-        traceback: TracebackType = None,
++        exc_type: typing.Optional[typing.Type[BaseException]] = None,
++        exc_value: typing.Optional[BaseException] = None,
++        traceback: typing.Optional[TracebackType] = None,
+     ) -> None:
+         self._state = ClientState.CLOSED
+ 
+--- httpx/_config.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_config.py
+@@ -41,7 +41,7 @@ UNSET = UnsetType()
+ 
+ 
+ def create_ssl_context(
+-    cert: CertTypes = None,
++    cert: typing.Optional[CertTypes] = None,
+     verify: VerifyTypes = True,
+     trust_env: bool = True,
+     http2: bool = False,
+@@ -61,7 +61,7 @@ class SSLConfig:
+     def __init__(
+         self,
+         *,
+-        cert: CertTypes = None,
++        cert: typing.Optional[CertTypes] = None,
+         verify: VerifyTypes = True,
+         trust_env: bool = True,
+         http2: bool = False,
+@@ -289,8 +289,8 @@ class Limits:
+     def __init__(
+         self,
+         *,
+-        max_connections: int = None,
+-        max_keepalive_connections: int = None,
++        max_connections: typing.Optional[int] = None,
++        max_keepalive_connections: typing.Optional[int] = None,
+         keepalive_expiry: typing.Optional[float] = 5.0,
+     ):
+         self.max_connections = max_connections
+@@ -319,8 +319,8 @@ class Proxy:
+         self,
+         url: URLTypes,
+         *,
+-        auth: typing.Tuple[str, str] = None,
+-        headers: HeaderTypes = None,
++        auth: typing.Optional[typing.Tuple[str, str]] = None,
++        headers: typing.Optional[HeaderTypes] = None,
+     ):
+         url = URL(url)
+         headers = Headers(headers)
+--- httpx/_content.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_content.py
+@@ -8,6 +8,7 @@ from typing import (
+     Dict,
+     Iterable,
+     Iterator,
++    Optional,
+     Tuple,
+     Union,
+ )
+@@ -149,7 +150,7 @@ def encode_urlencoded_data(
+ 
+ 
+ def encode_multipart_data(
+-    data: dict, files: RequestFiles, boundary: bytes = None
++    data: dict, files: RequestFiles, boundary: Optional[bytes] = None
+ ) -> Tuple[Dict[str, str], MultipartStream]:
+     multipart = MultipartStream(data=data, files=files, boundary=boundary)
+     headers = multipart.get_headers()
+@@ -181,11 +182,11 @@ def encode_json(json: Any) -> Tuple[Dict[str, str], By
+ 
+ 
+ def encode_request(
+-    content: RequestContent = None,
+-    data: RequestData = None,
+-    files: RequestFiles = None,
+-    json: Any = None,
+-    boundary: bytes = None,
++    content: Optional[RequestContent] = None,
++    data: Optional[RequestData] = None,
++    files: Optional[RequestFiles] = None,
++    json: Optional[Any] = None,
++    boundary: Optional[bytes] = None,
+ ) -> Tuple[Dict[str, str], Union[SyncByteStream, AsyncByteStream]]:
+     """
+     Handles encoding the given `content`, `data`, `files`, and `json`,
+@@ -216,10 +217,10 @@ def encode_request(
+ 
+ 
+ def encode_response(
+-    content: ResponseContent = None,
+-    text: str = None,
+-    html: str = None,
+-    json: Any = None,
++    content: Optional[ResponseContent] = None,
++    text: Optional[str] = None,
++    html: Optional[str] = None,
++    json: Optional[Any] = None,
+ ) -> Tuple[Dict[str, str], Union[SyncByteStream, AsyncByteStream]]:
+     """
+     Handles encoding the given `content`, returning a two-tuple of
+--- httpx/_decoders.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_decoders.py
+@@ -166,7 +166,7 @@ class ByteChunker:
+     Handles returning byte content in fixed-size chunks.
+     """
+ 
+-    def __init__(self, chunk_size: int = None) -> None:
++    def __init__(self, chunk_size: typing.Optional[int] = None) -> None:
+         self._buffer = io.BytesIO()
+         self._chunk_size = chunk_size
+ 
+@@ -205,7 +205,7 @@ class TextChunker:
+     Handles returning text content in fixed-size chunks.
+     """
+ 
+-    def __init__(self, chunk_size: int = None) -> None:
++    def __init__(self, chunk_size: typing.Optional[int] = None) -> None:
+         self._buffer = io.StringIO()
+         self._chunk_size = chunk_size
+ 
+--- httpx/_exceptions.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_exceptions.py
+@@ -65,7 +65,9 @@ class RequestError(HTTPError):
+     Base class for all exceptions that may occur when issuing a `.request()`.
+     """
+ 
+-    def __init__(self, message: str, *, request: "Request" = None) -> None:
++    def __init__(
++        self, message: str, *, request: typing.Optional["Request"] = None
++    ) -> None:
+         super().__init__(message)
+         # At the point an exception is raised we won't typically have a request
+         # instance to associate it with.
+@@ -326,7 +328,9 @@ class RequestNotRead(StreamError):
+ 
+ 
+ @contextlib.contextmanager
+-def request_context(request: "Request" = None) -> typing.Iterator[None]:
++def request_context(
++    request: typing.Optional["Request"] = None,
++) -> typing.Iterator[None]:
+     """
+     A context manager that can be used to attach the given request context
+     to any `RequestError` exceptions that are raised within the block.
+--- httpx/_models.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_models.py
+@@ -761,7 +761,7 @@ class QueryParams(typing.Mapping[str, str]):
+         q._dict.pop(str(key), None)
+         return q
+ 
+-    def merge(self, params: QueryParamTypes = None) -> "QueryParams":
++    def merge(self, params: typing.Optional[QueryParamTypes] = None) -> "QueryParams":
+         """
+         Return a new QueryParams instance, updated with.
+ 
+@@ -810,7 +810,7 @@ class QueryParams(typing.Mapping[str, str]):
+         query_string = str(self)
+         return f"{class_name}({query_string!r})"
+ 
+-    def update(self, params: QueryParamTypes = None) -> None:
++    def update(self, params: typing.Optional[QueryParamTypes] = None) -> None:
+         raise RuntimeError(
+             "QueryParams are immutable since 0.18.0. "
+             "Use `q = q.merge(...)` to create an updated copy."
+@@ -828,7 +828,11 @@ class Headers(typing.MutableMapping[str, str]):
+     HTTP headers, as a case-insensitive multi-dict.
+     """
+ 
+-    def __init__(self, headers: HeaderTypes = None, encoding: str = None) -> None:
++    def __init__(
++        self,
++        headers: typing.Optional[HeaderTypes] = None,
++        encoding: typing.Optional[str] = None,
++    ) -> None:
+         if headers is None:
+             self._list = []  # type: typing.List[typing.Tuple[bytes, bytes, bytes]]
+         elif isinstance(headers, Headers):
+@@ -962,7 +966,7 @@ class Headers(typing.MutableMapping[str, str]):
+             split_values.extend([item.strip() for item in value.split(",")])
+         return split_values
+ 
+-    def update(self, headers: HeaderTypes = None) -> None:  # type: ignore
++    def update(self, headers: typing.Optional[HeaderTypes] = None) -> None:  # type: ignore
+         headers = Headers(headers)
+         for key in headers.keys():
+             if key in self:
+@@ -1076,15 +1080,15 @@ class Request:
+         method: typing.Union[str, bytes],
+         url: typing.Union["URL", str, RawURL],
+         *,
+-        params: QueryParamTypes = None,
+-        headers: HeaderTypes = None,
+-        cookies: CookieTypes = None,
+-        content: RequestContent = None,
+-        data: RequestData = None,
+-        files: RequestFiles = None,
+-        json: typing.Any = None,
+-        stream: typing.Union[SyncByteStream, AsyncByteStream] = None,
+-        extensions: dict = None,
++        params: typing.Optional[QueryParamTypes] = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        cookies: typing.Optional[CookieTypes] = None,
++        content: typing.Optional[RequestContent] = None,
++        data: typing.Optional[RequestData] = None,
++        files: typing.Optional[RequestFiles] = None,
++        json: typing.Optional[typing.Any] = None,
++        stream: typing.Union[SyncByteStream, AsyncByteStream, None] = None,
++        extensions: typing.Optional[dict] = None,
+     ):
+         self.method = (
+             method.decode("ascii").upper()
+@@ -1202,15 +1206,15 @@ class Response:
+         self,
+         status_code: int,
+         *,
+-        headers: HeaderTypes = None,
+-        content: ResponseContent = None,
+-        text: str = None,
+-        html: str = None,
++        headers: typing.Optional[HeaderTypes] = None,
++        content: typing.Optional[ResponseContent] = None,
++        text: typing.Optional[str] = None,
++        html: typing.Optional[str] = None,
+         json: typing.Any = None,
+-        stream: typing.Union[SyncByteStream, AsyncByteStream] = None,
+-        request: Request = None,
+-        extensions: dict = None,
+-        history: typing.List["Response"] = None,
++        stream: typing.Union[SyncByteStream, AsyncByteStream, None] = None,
++        request: typing.Optional[Request] = None,
++        extensions: typing.Optional[dict] = None,
++        history: typing.Optional[typing.List["Response"]] = None,
+     ):
+         self.status_code = status_code
+         self.headers = Headers(headers)
+@@ -1566,7 +1570,9 @@ class Response:
+             self._content = b"".join(self.iter_bytes())
+         return self._content
+ 
+-    def iter_bytes(self, chunk_size: int = None) -> typing.Iterator[bytes]:
++    def iter_bytes(
++        self, chunk_size: typing.Optional[int] = None
++    ) -> typing.Iterator[bytes]:
+         """
+         A byte-iterator over the decoded response content.
+         This allows us to handle gzip, deflate, and brotli encoded responses.
+@@ -1589,7 +1595,9 @@ class Response:
+                 for chunk in chunker.flush():
+                     yield chunk
+ 
+-    def iter_text(self, chunk_size: int = None) -> typing.Iterator[str]:
++    def iter_text(
++        self, chunk_size: typing.Optional[int] = None
++    ) -> typing.Iterator[str]:
+         """
+         A str-iterator over the decoded response content
+         that handles both gzip, deflate, etc but also detects the content's
+@@ -1617,7 +1625,9 @@ class Response:
+             for line in decoder.flush():
+                 yield line
+ 
+-    def iter_raw(self, chunk_size: int = None) -> typing.Iterator[bytes]:
++    def iter_raw(
++        self, chunk_size: typing.Optional[int] = None
++    ) -> typing.Iterator[bytes]:
+         """
+         A byte-iterator over the raw response content.
+         """
+@@ -1664,7 +1674,9 @@ class Response:
+             self._content = b"".join([part async for part in self.aiter_bytes()])
+         return self._content
+ 
+-    async def aiter_bytes(self, chunk_size: int = None) -> typing.AsyncIterator[bytes]:
++    async def aiter_bytes(
++        self, chunk_size: typing.Optional[int] = None
++    ) -> typing.AsyncIterator[bytes]:
+         """
+         A byte-iterator over the decoded response content.
+         This allows us to handle gzip, deflate, and brotli encoded responses.
+@@ -1687,7 +1699,9 @@ class Response:
+                 for chunk in chunker.flush():
+                     yield chunk
+ 
+-    async def aiter_text(self, chunk_size: int = None) -> typing.AsyncIterator[str]:
++    async def aiter_text(
++        self, chunk_size: typing.Optional[int] = None
++    ) -> typing.AsyncIterator[str]:
+         """
+         A str-iterator over the decoded response content
+         that handles both gzip, deflate, etc but also detects the content's
+@@ -1715,7 +1729,9 @@ class Response:
+             for line in decoder.flush():
+                 yield line
+ 
+-    async def aiter_raw(self, chunk_size: int = None) -> typing.AsyncIterator[bytes]:
++    async def aiter_raw(
++        self, chunk_size: typing.Optional[int] = None
++    ) -> typing.AsyncIterator[bytes]:
+         """
+         A byte-iterator over the raw response content.
+         """
+@@ -1760,7 +1776,7 @@ class Cookies(MutableMapping):
+     HTTP Cookies, as a mutable mapping.
+     """
+ 
+-    def __init__(self, cookies: CookieTypes = None) -> None:
++    def __init__(self, cookies: typing.Optional[CookieTypes] = None) -> None:
+         if cookies is None or isinstance(cookies, dict):
+             self.jar = CookieJar()
+             if isinstance(cookies, dict):
+@@ -1820,7 +1836,11 @@ class Cookies(MutableMapping):
+         self.jar.set_cookie(cookie)
+ 
+     def get(  # type: ignore
+-        self, name: str, default: str = None, domain: str = None, path: str = None
++        self,
++        name: str,
++        default: typing.Optional[str] = None,
++        domain: typing.Optional[str] = None,
++        path: typing.Optional[str] = None,
+     ) -> typing.Optional[str]:
+         """
+         Get a cookie by name. May optionally include domain and path
+@@ -1840,7 +1860,12 @@ class Cookies(MutableMapping):
+             return default
+         return value
+ 
+-    def delete(self, name: str, domain: str = None, path: str = None) -> None:
++    def delete(
++        self,
++        name: str,
++        domain: typing.Optional[str] = None,
++        path: typing.Optional[str] = None,
++    ) -> None:
+         """
+         Delete a cookie by name. May optionally include domain and path
+         in order to specify exactly which cookie to delete.
+@@ -1859,7 +1884,9 @@ class Cookies(MutableMapping):
+         for cookie in remove:
+             self.jar.clear(cookie.domain, cookie.path, cookie.name)
+ 
+-    def clear(self, domain: str = None, path: str = None) -> None:
++    def clear(
++        self, domain: typing.Optional[str] = None, path: typing.Optional[str] = None
++    ) -> None:
+         """
+         Delete all cookies. Optionally include a domain and path in
+         order to only delete a subset of all the cookies.
+@@ -1872,7 +1899,7 @@ class Cookies(MutableMapping):
+             args.append(path)
+         self.jar.clear(*args)
+ 
+-    def update(self, cookies: CookieTypes = None) -> None:  # type: ignore
++    def update(self, cookies: typing.Optional[CookieTypes] = None) -> None:  # type: ignore
+         cookies = Cookies(cookies)
+         for cookie in cookies.jar:
+             self.jar.set_cookie(cookie)
+--- httpx/_multipart.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_multipart.py
+@@ -177,7 +177,9 @@ class MultipartStream(SyncByteStream, AsyncByteStream)
+     Request content as streaming multipart encoded form data.
+     """
+ 
+-    def __init__(self, data: dict, files: RequestFiles, boundary: bytes = None) -> None:
++    def __init__(
++        self, data: dict, files: RequestFiles, boundary: typing.Optional[bytes] = None
++    ) -> None:
+         if boundary is None:
+             boundary = binascii.hexlify(os.urandom(16))
+ 
+--- httpx/_transports/base.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_transports/base.py
+@@ -13,9 +13,9 @@ class BaseTransport:
+ 
+     def __exit__(
+         self,
+-        exc_type: typing.Type[BaseException] = None,
+-        exc_value: BaseException = None,
+-        traceback: TracebackType = None,
++        exc_type: typing.Optional[typing.Type[BaseException]] = None,
++        exc_value: typing.Optional[BaseException] = None,
++        traceback: typing.Optional[TracebackType] = None,
+     ) -> None:
+         self.close()
+ 
+@@ -95,9 +95,9 @@ class AsyncBaseTransport:
+ 
+     async def __aexit__(
+         self,
+-        exc_type: typing.Type[BaseException] = None,
+-        exc_value: BaseException = None,
+-        traceback: TracebackType = None,
++        exc_type: typing.Optional[typing.Type[BaseException]] = None,
++        exc_value: typing.Optional[BaseException] = None,
++        traceback: typing.Optional[TracebackType] = None,
+     ) -> None:
+         await self.aclose()
+ 
+--- httpx/_transports/default.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_transports/default.py
+@@ -113,14 +113,14 @@ class HTTPTransport(BaseTransport):
+     def __init__(
+         self,
+         verify: VerifyTypes = True,
+-        cert: CertTypes = None,
++        cert: typing.Optional[CertTypes] = None,
+         http1: bool = True,
+         http2: bool = False,
+         limits: Limits = DEFAULT_LIMITS,
+         trust_env: bool = True,
+-        proxy: Proxy = None,
+-        uds: str = None,
+-        local_address: str = None,
++        proxy: typing.Optional[Proxy] = None,
++        uds: typing.Optional[str] = None,
++        local_address: typing.Optional[str] = None,
+         retries: int = 0,
+     ) -> None:
+         ssl_context = create_ssl_context(verify=verify, cert=cert, trust_env=trust_env)
+@@ -189,9 +189,9 @@ class HTTPTransport(BaseTransport):
+ 
+     def __exit__(
+         self,
+-        exc_type: typing.Type[BaseException] = None,
+-        exc_value: BaseException = None,
+-        traceback: TracebackType = None,
++        exc_type: typing.Optional[typing.Type[BaseException]] = None,
++        exc_value: typing.Optional[BaseException] = None,
++        traceback: typing.Optional[TracebackType] = None,
+     ) -> None:
+         with map_httpcore_exceptions():
+             self._pool.__exit__(exc_type, exc_value, traceback)
+@@ -248,14 +248,14 @@ class AsyncHTTPTransport(AsyncBaseTransport):
+     def __init__(
+         self,
+         verify: VerifyTypes = True,
+-        cert: CertTypes = None,
++        cert: typing.Optional[CertTypes] = None,
+         http1: bool = True,
+         http2: bool = False,
+         limits: Limits = DEFAULT_LIMITS,
+         trust_env: bool = True,
+-        proxy: Proxy = None,
+-        uds: str = None,
+-        local_address: str = None,
++        proxy: typing.Optional[Proxy] = None,
++        uds: typing.Optional[str] = None,
++        local_address: typing.Optional[str] = None,
+         retries: int = 0,
+     ) -> None:
+         ssl_context = create_ssl_context(verify=verify, cert=cert, trust_env=trust_env)
+@@ -324,9 +324,9 @@ class AsyncHTTPTransport(AsyncBaseTransport):
+ 
+     async def __aexit__(
+         self,
+-        exc_type: typing.Type[BaseException] = None,
+-        exc_value: BaseException = None,
+-        traceback: TracebackType = None,
++        exc_type: typing.Optional[typing.Type[BaseException]] = None,
++        exc_value: typing.Optional[BaseException] = None,
++        traceback: typing.Optional[TracebackType] = None,
+     ) -> None:
+         with map_httpcore_exceptions():
+             await self._pool.__aexit__(exc_type, exc_value, traceback)
+--- httpx/_types.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_types.py
+@@ -40,7 +40,6 @@ QueryParamTypes = Union[
+     Tuple[Tuple[str, PrimitiveData], ...],
+     str,
+     bytes,
+-    None,
+ ]
+ 
+ HeaderTypes = Union[
+@@ -73,7 +72,6 @@ AuthTypes = Union[
+     Tuple[Union[str, bytes], Union[str, bytes]],
+     Callable[["Request"], "Request"],
+     "Auth",
+-    None,
+ ]
+ 
+ RequestContent = Union[str, bytes, Iterable[bytes], AsyncIterable[bytes]]
+--- httpx/_utils.py.orig	2022-01-26 14:49:48 UTC
++++ httpx/_utils.py
+@@ -30,7 +30,7 @@ _HTML5_FORM_ENCODING_RE = re.compile(
+ def normalize_header_key(
+     value: typing.Union[str, bytes],
+     lower: bool,
+-    encoding: str = None,
++    encoding: typing.Optional[str] = None,
+ ) -> bytes:
+     """
+     Coerce str/bytes into a strictly byte-wise HTTP header key.
+@@ -44,7 +44,7 @@ def normalize_header_key(
+ 
+ 
+ def normalize_header_value(
+-    value: typing.Union[str, bytes], encoding: str = None
++    value: typing.Union[str, bytes], encoding: typing.Optional[str] = None
+ ) -> bytes:
+     """
+     Coerce str/bytes into a strictly byte-wise HTTP header value.
+--- setup.cfg.orig	2022-01-26 14:50:19 UTC
++++ setup.cfg
+@@ -5,6 +5,8 @@ max-line-length = 120
+ [mypy]
+ disallow_untyped_defs = True
+ ignore_missing_imports = True
++no_implicit_optional = True
++show_error_codes = True
+ 
+ [mypy-tests.*]
+ disallow_untyped_defs = False
+--- setup.py.orig	2022-01-26 14:49:48 UTC
++++ setup.py
+@@ -60,7 +60,7 @@ setup(
+         "charset_normalizer",
+         "sniffio",
+         "rfc3986[idna2008]>=1.3,<2",
+-        "httpcore>=0.14.5,<0.15.0",
++        "httpcore>=0.15.0,<0.16.0",
+         "async_generator; python_version < '3.7'"
+     ],
+     extras_require={

@@ -2,6 +2,7 @@
 
 PORTNAME=	httpx
 PORTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 # idna is from rfc3986[idna2008]
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}charset-normalizer>=0:textproc/py-charset-normalizer@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httpcore>=0.14.5<0.15.0:www/py-httpcore@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpcore>=0.15.0<0.16.0:www/py-httpcore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=0:dns/py-idna@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rfc3986>=1.3,1:www/py-rfc3986@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rfc3986>=1.3,1<2,1:www/py-rfc3986@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sniffio>=0:devel/py-sniffio@${PY_FLAVOR}
 
 USES=		cpe python:3.7+
