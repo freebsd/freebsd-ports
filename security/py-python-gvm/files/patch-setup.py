@@ -1,7 +1,7 @@
---- setup.py	2021-06-01 04:03:35.971744800 -0500
-+++ setup.py	2021-06-14 23:12:32.397135000 -0500
-@@ -9,64 +9,7 @@
-  'gvm.protocols.gmpv208.system',
+--- setup.py	2021-11-30 04:41:11.846129000 -0500
++++ setup.py	2022-05-02 18:30:17.004120000 -0500
+@@ -12,74 +12,7 @@
+  'gvm.protocols.gmpv2110.system',
   'gvm.protocols.gmpv214',
   'gvm.protocols.gmpv214.entities',
 - 'gvm.protocols.gmpv214.system',
@@ -48,6 +48,16 @@
 - 'tests.protocols.gmpv208.system.trashcan',
 - 'tests.protocols.gmpv208.system.user_settings',
 - 'tests.protocols.gmpv208.system.versions',
+- 'tests.protocols.gmpv2110',
+- 'tests.protocols.gmpv2110.entities',
+- 'tests.protocols.gmpv2110.entities.notes',
+- 'tests.protocols.gmpv2110.entities.overrides',
+- 'tests.protocols.gmpv2110.entities.scanners',
+- 'tests.protocols.gmpv2110.entities.targets',
+- 'tests.protocols.gmpv2110.entities.users',
+- 'tests.protocols.gmpv2110.enums',
+- 'tests.protocols.gmpv2110.system',
+- 'tests.protocols.gmpv2110.system.versions',
 - 'tests.protocols.gmpv214',
 - 'tests.protocols.gmpv214.entities',
 - 'tests.protocols.gmpv214.entities.notes',
