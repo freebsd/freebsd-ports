@@ -1,0 +1,15 @@
+--- src/plugins/General/CMakeLists.txt.orig	2022-05-16 19:29:52 UTC
++++ src/plugins/General/CMakeLists.txt
+@@ -50,9 +50,9 @@ ENDIF(USE_HAL AND Qt5DBus_FOUND)
+ add_subdirectory(hal)
+ ENDIF(USE_HAL AND Qt5DBus_FOUND)
+ 
+-IF(USE_UDISKS2 AND Qt5DBus_FOUND)
+-add_subdirectory(udisks2)
+-ENDIF(USE_UDISKS2 AND Qt5DBus_FOUND)
++IF(USE_UDISKS AND Qt5DBus_FOUND)
++add_subdirectory(udisks)
++ENDIF(USE_UDISKS AND Qt5DBus_FOUND)
+ 
+ IF(USE_HOTKEY AND Qt5X11Extras_FOUND)
+ add_subdirectory(hotkey)
