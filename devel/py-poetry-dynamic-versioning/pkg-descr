@@ -1,0 +1,6 @@
+This is a plugin for Poetry to enable dynamic versioning based on tags in your
+version control system, powered by Dunamai. Many different version control
+systems are supported, including Git and Mercurial; please refer to the Dunamai
+page for the full list (and minimum supported version where applicable).
+
+WWW: https://github.com/mtkennerly/poetry-dynamic-versioning
