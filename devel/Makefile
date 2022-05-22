@@ -6294,7 +6294,6 @@
     SUBDIR += rubygem-cucumber-core
     SUBDIR += rubygem-cucumber-cucumber-expressions
     SUBDIR += rubygem-cucumber-messages
-    SUBDIR += rubygem-cucumber-messages17
     SUBDIR += rubygem-cucumber-rails
     SUBDIR += rubygem-cucumber-tag-expressions
     SUBDIR += rubygem-cucumber-wire
