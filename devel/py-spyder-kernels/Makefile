@@ -1,7 +1,7 @@
 # Created by: Rainer Hurling <rhurlin@gwdg.de>
 
 PORTNAME=	spyder-kernels
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,16 +12,23 @@ COMMENT=	Jupyter kernels for the Spyder console
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-# Change to devel/py-ipykernel v6.x, when devel/py-ipyparallel
-# and devel/py-jupyter-client have switched from 5.x to 6.x
+# 2022-05-20:
+# Due to the increase of the minimum required version of jupyter_client to 7.3.1,
+# which is not yet included in the ports collection, and an actually required
+# version of ipykernel >= 6.9.2, which conflicts with ipykernel v5 (required for
+# other dependencies in the spyder universe), this port may misbehave in some
+# situations.
+# devel/py-ipykernel      should be >=6.9.2,<7, but is 5.5.6 (conflicts ...)
+# devel/py-jupyter-client should be >=7.3.1,<8, but is 6.1.12
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipykernel5>0:devel/py-ipykernel5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipyparallel>0:devel/py-ipyparallel@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipython>=7.31.1,<8:devel/ipython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-client>0:devel/py-jupyter-client@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyzmq>0:net/py-pyzmq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyzmq>=22.1.0:net/py-pyzmq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>0:devel/py-traitlets@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wurlitzer>0:misc/py-wurlitzer@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wurlitzer>=1.0.3:misc/py-wurlitzer@${PY_FLAVOR}
+# test target currently not functional :(
 TEST_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}codecov>0:devel/py-codecov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cython>0:lang/cython@${PY_FLAVOR} \
@@ -42,13 +49,9 @@ TEST_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xarray>0:devel/py-xarray@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python:3.8+ pytest
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-# test target currently not functional :(
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=
 
 .include <bsd.port.mk>
