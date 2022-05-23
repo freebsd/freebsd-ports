@@ -3,7 +3,11 @@
     <affects>
       <package>
 	<name>clamav</name>
-	<range><lt>0.104.3</lt></range>
+	<range><lt>0.104.3,1</lt></range>
+      </package>
+      <package>
+	<name>clamav-lts</name>
+	<range><lt>0.103.6,1</lt></range>
       </package>
     </affects>
     <description>
