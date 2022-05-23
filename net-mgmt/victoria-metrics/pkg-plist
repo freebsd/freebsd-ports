@@ -7,6 +7,7 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/Cluster-VictoriaMetrics.md
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md
 %%PORTDOCS%%%%DOCSDIR%%/Gemfile
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/MetricsQL.md
 %%PORTDOCS%%%%DOCSDIR%%/PerTenantStatistic-stats.jpg
 %%PORTDOCS%%%%DOCSDIR%%/PerTenantStatistic.md
@@ -18,6 +19,7 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/_includes/extra/head.html
 %%PORTDOCS%%%%DOCSDIR%%/_includes/extra/script.js
 %%PORTDOCS%%%%DOCSDIR%%/_includes/extra/styles.scss
+%%PORTDOCS%%%%DOCSDIR%%/_includes/img.html
 %%PORTDOCS%%%%DOCSDIR%%/assets/css/clipboard.css
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/favicon.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/vm_logo.svg
@@ -48,8 +50,27 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-ha-monitoring-via-vm-cluster.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-monitoring-via-vm-cluster.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-monitoring-via-vm-single.md
+%%PORTDOCS%%%%DOCSDIR%%/guides/migrate-from-influx-data-sample-in-influx.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/migrate-from-influx-data-sample-in-vm.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/migrate-from-influx-vmui.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/migrate-from-influx.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/multi-regional-setup-dedicated-regions.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/multi-regional-setup-dedicated-regions.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts.excalidraw
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts.md
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_counter.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_data_collection.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_data_samples.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_gauge.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_histogram.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_instant_query.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_pull_model.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_push_model.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_range_query.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_summary.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_two_dcs.png
+%%PORTDOCS%%%%DOCSDIR%%/keyConcepts_vmui.png
+%%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/README.md
 %%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/quickstart-instance-create.png
 %%PORTDOCS%%%%DOCSDIR%%/managed_victoriametrics/quickstart-instance-provisioning.png
@@ -72,6 +93,5 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/operator/resources-validation.MD
 %%PORTDOCS%%%%DOCSDIR%%/operator/security.MD
 %%PORTDOCS%%%%DOCSDIR%%/operator/vars.MD
-%%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/url-examples.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
