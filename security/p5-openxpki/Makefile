@@ -123,11 +123,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|..vergen --format version.|"${PORTVERSION}"|g' ${WRKSRC}/Makefile.PL
 	@( \
 	cd ${WRKSRC}/../..; \
-	${FIND} config core/server doc qatest tools -type f -print0 >filelist; \
-	${CAT} filelist | ${XARGS} -0 -I % ${REINPLACE_CMD} -e 's|/etc/openxpki|${PREFIX}/etc/openxpki|g' "%"; \
-	${CAT} filelist | ${XARGS} -0 -I % ${REINPLACE_CMD} -e 's|/var/run/openxpkid.pid|/var/openxpki/openxpkid.pid|g' "%"; \
-	${CAT} filelist | ${XARGS} -0 -I % ${REINPLACE_CMD} -e 's|/var/openxpki/\([^\.]*\)\.log|/var/log/openxpki/\1\.log|g' "%"; \
-	${CAT} filelist | ${XARGS} -0 -I % ${RM} "%.bak"; \
+	${ECHO} "Patching dir names..."; \
+	${GREP} -RIFl -e "/etc/openxpki" config core/server doc qatest tools >filelist; \
+	${CAT} filelist | ${XARGS} -I % ${REINPLACE_CMD} -e 's|/etc/openxpki|${PREFIX}/etc/openxpki|g' "%"; \
+	${CAT} filelist | ${XARGS} -I % ${RM} "%.bak"; \
+	${GREP} -RIFl -e "/var/run/openxpkid.pid" config core/server doc qatest tools >filelist; \
+	${CAT} filelist | ${XARGS} -I % ${REINPLACE_CMD} -e 's|/var/run/openxpkid.pid|/var/openxpki/openxpkid.pid|g' "%"; \
+	${CAT} filelist | ${XARGS} -I % ${RM} "%.bak"; \
 	${RM} filelist; \
 	)
 	@${MKDIR} ${WRKSRC}/t/var/log/openxpki
