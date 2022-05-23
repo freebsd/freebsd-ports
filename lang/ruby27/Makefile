@@ -17,6 +17,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
+DEPRECATED=	Please migrate to newer versions. Ruby 2.7 will reach its EoL on April 12, 2023
+EXPIRATION_DATE=	2023-04-12
+
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
 BUILD_DEPENDS=	libffi>=0:devel/libffi
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
