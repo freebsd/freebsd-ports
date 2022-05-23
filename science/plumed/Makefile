@@ -1,7 +1,7 @@
 PORTNAME=	plumed
-DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.0
 CATEGORIES=	science graphics
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}2/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PLUgin for MolEcular Dynamics
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 RUN_DEPENDS=	bash:shells/bash
 TEST_DEPENDS=	gawk:lang/gawk
 
-USES=		autoreconf compiler:c++11-lang gmake localbase pkgconfig shebangfix
+USES=		autoreconf compiler:c++11-lang gmake localbase pkgconfig shebangfix tar:tgz
 USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.sh
@@ -28,9 +28,6 @@ SHEBANG_FILES=	src/maketools/makecmd \
 		regtest/scripts/check \
 		regtest/scripts/run \
 		regtest/scripts/what
-
-USE_GITHUB=	yes
-GH_PROJECT=	plumed2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-python
