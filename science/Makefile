@@ -234,6 +234,7 @@
     SUBDIR += packmol
     SUBDIR += pagmo2
     SUBDIR += paje
+    SUBDIR += paraview
     SUBDIR += pastix
     SUBDIR += pcmsolver
     SUBDIR += phonopy
