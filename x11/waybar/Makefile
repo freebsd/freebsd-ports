@@ -1,10 +1,9 @@
 PORTNAME=	waybar
-DISTVERSION=	0.9.12
-PORTREVISION=	2
+DISTVERSION=	0.9.13
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	8b6bc215ccdd.patch:-p1 # https://github.com/Alexays/Waybar/pull/1476
+PATCHFILES+=	d25278f710a4.patch:-p1 # https://github.com/Alexays/Waybar/pull/1567
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Highly customizable Wayland bar for Sway and wlroots-based compositors
@@ -36,8 +35,8 @@ CONFIGURE_ENV+=	PKG_CONFIG_PATH="${WRKDIR}"
 SUB_FILES+=	date.pc
 .endif
 
-OPTIONS_DEFINE=	DBUS EVDEV GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV
-OPTIONS_DEFAULT=DBUS EVDEV GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV
+OPTIONS_DEFINE=	DBUS EVDEV GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV UPOWER
+OPTIONS_DEFAULT=DBUS EVDEV GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV UPOWER
 
 DBUS_LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
 DBUS_MESON_ENABLED=	dbusmenu-gtk
@@ -71,6 +70,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-network.5.gz \
 			man/man5/${PORTNAME}-pulseaudio.5.gz \
 			man/man5/${PORTNAME}-river-tags.5.gz \
+			man/man5/${PORTNAME}-river-window.5.gz \
 			man/man5/${PORTNAME}-sndio.5.gz \
 			man/man5/${PORTNAME}-states.5.gz \
 			man/man5/${PORTNAME}-sway-language.5.gz \
@@ -79,6 +79,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-sway-workspaces.5.gz \
 			man/man5/${PORTNAME}-temperature.5.gz \
 			man/man5/${PORTNAME}-tray.5.gz \
+			man/man5/${PORTNAME}-upower.5.gz \
 			man/man5/${PORTNAME}-wlr-taskbar.5.gz \
 			man/man5/${PORTNAME}-wlr-workspaces.5.gz \
 			man/man5/${PORTNAME}.5.gz \
@@ -100,11 +101,21 @@ UDEV_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 			libudev.so:devel/libudev-devd
 UDEV_MESON_ENABLED=	libudev
 
+UPOWER_DESC=		Monitor battery capacity via UPower
+UPOWER_LIB_DEPENDS=	libupower-glib.so:sysutils/upower
+UPOWER_MESON_ENABLED=	upower_glib
+
 post-patch:
 # Extract (snapshot) version from the port instead of meson.build
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
+# Temporarily use ConsoleKit2 like sysutils/gnome-settings-daemon
+	@${REINPLACE_CMD} -e 's,/login1,/ConsoleKit/Manager,' \
+		-e 's,login1\([".]\),ConsoleKit\1,g' \
+		${WRKSRC}/src/modules/gamemode.cpp \
+		${WRKSRC}/src/modules/inhibitor.cpp \
+		${WRKSRC}/src/modules/upower/upower.cpp
 
 pre-test:
 	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
