@@ -1,7 +1,6 @@
 PORTNAME=	miniserve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.4
-PORTREVISION=	1
+DISTVERSION=	0.19.5
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -37,10 +36,20 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		alloc-stdlib-0.2.1 \
 		alphanumeric-sort-1.4.4 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.56 \
+		anyhow-1.0.57 \
 		askama_escape-0.10.3 \
 		assert_cmd-2.0.4 \
 		assert_fs-1.0.7 \
+		async-attributes-1.1.2 \
+		async-channel-1.6.1 \
+		async-executor-1.4.1 \
+		async-global-executor-2.0.4 \
+		async-io-1.6.0 \
+		async-lock-2.5.0 \
+		async-mutex-1.4.0 \
+		async-std-1.11.0 \
+		async-task-4.2.0 \
+		atomic-waker-1.0.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		base64-0.13.0 \
@@ -49,6 +58,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.2 \
+		blocking-1.2.0 \
 		brotli-3.3.4 \
 		brotli-decompressor-2.3.2 \
 		bstr-0.2.17 \
@@ -58,16 +68,19 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		bytesize-1.1.0 \
 		bytestring-1.0.0 \
 		c_linked_list-1.1.1 \
+		cache-padded-1.2.0 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		chrono-humanize-0.2.1 \
 		clap-2.34.0 \
-		clap-3.1.8 \
-		clap_complete-3.1.1 \
-		clap_derive-3.1.7 \
-		clap_mangen-0.1.2 \
+		clap-3.1.18 \
+		clap_complete-3.1.4 \
+		clap_derive-3.1.18 \
+		clap_lex-0.2.0 \
+		clap_mangen-0.1.6 \
 		codemap-0.1.3 \
+		concurrent-queue-1.2.2 \
 		convert_case-0.4.0 \
 		cookie-0.16.0 \
 		cpufeatures-0.2.2 \
@@ -81,11 +94,12 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		digest-0.10.3 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
-		encoding_rs-0.8.30 \
+		encoding_rs-0.8.31 \
+		event-listener-2.5.2 \
 		fastrand-1.7.0 \
-		filetime-0.2.15 \
+		filetime-0.2.16 \
 		firestorm-0.5.0 \
-		flate2-1.0.22 \
+		flate2-1.0.23 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
@@ -95,9 +109,11 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		futures-core-0.3.21 \
 		futures-executor-0.3.21 \
 		futures-io-0.3.21 \
+		futures-lite-1.12.0 \
 		futures-macro-0.3.21 \
 		futures-sink-0.3.21 \
 		futures-task-0.3.21 \
+		futures-timer-3.0.2 \
 		futures-util-0.3.21 \
 		gcc-0.3.55 \
 		generic-array-0.14.5 \
@@ -107,17 +123,18 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		getrandom-0.2.6 \
 		globset-0.4.8 \
 		globwalk-0.8.1 \
-		grass-0.10.8 \
+		gloo-timers-0.2.4 \
+		grass-0.11.0 \
 		h2-0.3.13 \
 		hashbrown-0.11.2 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		hex-0.4.3 \
 		html5ever-0.25.2 \
-		http-0.2.6 \
+		http-0.2.7 \
 		http-body-0.4.4 \
 		http-range-0.1.5 \
-		httparse-1.6.0 \
+		httparse-1.7.1 \
 		httpdate-1.0.2 \
 		hyper-0.14.18 \
 		hyper-rustls-0.23.0 \
@@ -125,48 +142,48 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		ignore-0.4.18 \
 		indexmap-1.8.1 \
 		instant-0.1.12 \
-		ipnet-2.4.0 \
+		ipnet-2.5.0 \
 		itertools-0.10.3 \
-		itoa-1.0.1 \
+		itoa-1.0.2 \
 		jobserver-0.1.24 \
-		js-sys-0.3.56 \
+		js-sys-0.3.57 \
+		kv-log-macro-1.0.7 \
 		language-tags-0.3.2 \
 		lasso-0.5.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.121 \
+		libc-0.2.126 \
 		libflate-1.2.0 \
 		libflate_lz77-1.1.0 \
-		local-channel-0.1.2 \
-		local-waker-0.1.2 \
+		local-channel-0.1.3 \
+		local-waker-0.1.3 \
 		lock_api-0.4.7 \
-		log-0.4.16 \
+		log-0.4.17 \
 		mac-0.1.1 \
 		markup5ever-0.10.1 \
 		markup5ever_rcdom-0.1.0 \
 		matches-0.1.9 \
 		maud-0.23.0 \
 		maud_macros-0.23.0 \
-		memchr-2.4.1 \
+		memchr-2.5.0 \
 		mime-0.3.16 \
 		mime_guess-2.0.4 \
-		miniz_oxide-0.4.4 \
-		mio-0.8.2 \
-		miow-0.3.7 \
+		miniz_oxide-0.5.1 \
+		mio-0.8.3 \
 		nanoid-0.4.0 \
 		new_debug_unreachable-1.0.4 \
 		normalize-line-endings-0.3.0 \
-		ntapi-0.3.7 \
 		num-bigint-0.4.3 \
-		num-integer-0.1.44 \
+		num-integer-0.1.45 \
 		num-rational-0.4.0 \
-		num-traits-0.2.14 \
+		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
-		num_threads-0.1.5 \
+		num_threads-0.1.6 \
 		once_cell-1.10.0 \
-		os_str_bytes-6.0.0 \
+		os_str_bytes-6.0.1 \
 		output_vt100-0.1.3 \
+		parking-2.0.0 \
 		parking_lot-0.12.0 \
-		parking_lot_core-0.9.2 \
+		parking_lot_core-0.9.3 \
 		paste-1.0.7 \
 		percent-encoding-2.1.0 \
 		phf-0.8.0 \
@@ -179,8 +196,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		phf_shared-0.8.0 \
 		phf_shared-0.9.0 \
 		phf_shared-0.10.0 \
-		pin-project-lite-0.2.8 \
+		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
+		polling-2.2.0 \
 		port_check-0.1.5 \
 		ppv-lite86-0.2.16 \
 		precomputed-hash-0.1.1 \
@@ -191,9 +209,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.36 \
-		qrcodegen-1.7.0 \
-		quote-1.0.17 \
+		proc-macro2-1.0.39 \
+		qrcodegen-1.8.0 \
+		quote-1.0.18 \
 		rand-0.7.3 \
 		rand-0.8.5 \
 		rand_chacha-0.2.2 \
@@ -211,25 +229,27 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		ring-0.16.20 \
 		rle-decode-fast-1.0.3 \
 		roff-0.2.1 \
-		rstest-0.12.0 \
+		rstest-0.13.0 \
+		rstest_macros-0.13.0 \
 		rustc_version-0.4.0 \
-		rustls-0.20.4 \
+		rustls-0.20.5 \
 		rustls-pemfile-0.3.0 \
+		rustls-pemfile-1.0.0 \
 		rustversion-1.0.6 \
-		ryu-1.0.9 \
+		ryu-1.0.10 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		sct-0.7.0 \
 		select-0.5.0 \
-		semver-1.0.7 \
-		serde-1.0.136 \
-		serde_derive-1.0.136 \
-		serde_json-1.0.79 \
+		semver-1.0.9 \
+		serde-1.0.137 \
+		serde_derive-1.0.137 \
+		serde_json-1.0.81 \
 		serde_urlencoded-0.7.1 \
 		sha-1-0.10.0 \
 		sha2-0.10.2 \
 		signal-hook-registry-1.4.0 \
-		simplelog-0.11.2 \
+		simplelog-0.12.0 \
 		siphasher-0.3.10 \
 		slab-0.4.6 \
 		smallvec-1.8.0 \
@@ -241,7 +261,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		strsim-0.10.0 \
 		strum-0.24.0 \
 		strum_macros-0.24.0 \
-		syn-1.0.90 \
+		syn-1.0.95 \
 		tar-0.4.38 \
 		tempfile-3.3.0 \
 		tendril-0.4.3 \
@@ -250,68 +270,71 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		termtree-0.2.4 \
 		textwrap-0.11.0 \
 		textwrap-0.15.0 \
-		thiserror-1.0.30 \
-		thiserror-impl-1.0.30 \
+		thiserror-1.0.31 \
+		thiserror-impl-1.0.31 \
 		thread_local-1.1.4 \
 		time-0.1.43 \
 		time-0.3.9 \
 		time-macros-0.2.4 \
-		tinyvec-1.5.1 \
+		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.17.0 \
-		tokio-rustls-0.23.3 \
-		tokio-util-0.7.1 \
+		tokio-1.18.2 \
+		tokio-rustls-0.23.4 \
+		tokio-util-0.7.2 \
 		tower-service-0.3.1 \
-		tracing-0.1.32 \
-		tracing-attributes-0.1.20 \
-		tracing-core-0.1.24 \
+		tracing-0.1.34 \
+		tracing-attributes-0.1.21 \
+		tracing-core-0.1.26 \
 		try-lock-0.2.3 \
 		twoway-0.2.2 \
 		typenum-1.15.0 \
 		unchecked-index-0.2.2 \
 		unicase-2.6.0 \
-		unicode-bidi-0.3.7 \
+		unicode-bidi-0.3.8 \
+		unicode-ident-1.0.0 \
 		unicode-normalization-0.1.19 \
 		unicode-width-0.1.9 \
-		unicode-xid-0.2.2 \
 		untrusted-0.7.1 \
 		url-2.2.2 \
 		utf-8-0.7.6 \
+		value-bag-1.0.0-alpha.9 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
+		waker-fn-1.1.0 \
 		walkdir-2.3.2 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.79 \
-		wasm-bindgen-backend-0.2.79 \
-		wasm-bindgen-futures-0.4.29 \
-		wasm-bindgen-macro-0.2.79 \
-		wasm-bindgen-macro-support-0.2.79 \
-		wasm-bindgen-shared-0.2.79 \
-		web-sys-0.3.56 \
+		wasm-bindgen-0.2.80 \
+		wasm-bindgen-backend-0.2.80 \
+		wasm-bindgen-futures-0.4.30 \
+		wasm-bindgen-macro-0.2.80 \
+		wasm-bindgen-macro-support-0.2.80 \
+		wasm-bindgen-shared-0.2.80 \
+		web-sys-0.3.57 \
 		webpki-0.22.0 \
-		webpki-roots-0.22.2 \
+		webpki-roots-0.22.3 \
+		wepoll-ffi-0.1.2 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.34.0 \
-		windows_aarch64_msvc-0.34.0 \
-		windows_i686_gnu-0.34.0 \
-		windows_i686_msvc-0.34.0 \
-		windows_x86_64_gnu-0.34.0 \
-		windows_x86_64_msvc-0.34.0 \
+		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.36.1 \
 		winreg-0.10.1 \
-		xattr-0.2.2 \
+		xattr-0.2.3 \
 		xml5ever-0.16.2 \
 		yansi-0.5.1 \
-		zip-0.6.1 \
-		zstd-0.10.0+zstd.1.5.2 \
-		zstd-safe-4.1.4+zstd.1.5.2 \
+		zip-0.6.2 \
+		zstd-0.10.2+zstd.1.5.2 \
+		zstd-safe-4.1.6+zstd.1.5.2 \
 		zstd-sys-1.6.3+zstd.1.5.2
 
 PLIST_FILES=	bin/miniserve
