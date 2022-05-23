@@ -1,6 +1,6 @@
 PORTNAME=	kraft
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.97
+DISTVERSION=	0.98
 CATEGORIES=	finance kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +9,8 @@ COMMENT=	Manage invoices and documents for small companies
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+		po4a:textproc/po4a
 LIB_DEPENDS=	libctemplate.so:textproc/google-ctemplate
 
 USES=		cmake compiler:c++11-lang grantlee:5 kde:5 qt:5 shebangfix
