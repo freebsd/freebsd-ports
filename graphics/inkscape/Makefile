@@ -3,8 +3,7 @@
 PORTNAME=	inkscape
 DISTVERSION=	1.2
 CATEGORIES=	graphics gnome
-MASTER_SITES=	https://inkscape.org/gallery/item/33449/
-DISTNAME=	${PORTNAME}-${DISTVERSION}_${DATETAG}
+MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
