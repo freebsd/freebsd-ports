@@ -1,11 +1,11 @@
 # Created by: Sergey Matveychuk <sem@ciam.ru>
 
 PORTNAME=	argp-standalone
-PORTVERSION=	1.3
-PORTREVISION=	4
+DISTVERSION=	1.5.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.lysator.liu.se/~nisse/misc/ \
-		LOCAL/sem
+
+PATCH_SITES=	https://github.com/argp-standalone/argp-standalone/commit/
+PATCHFILES=	e4b42480f6fd63a117e1d8a3d90fb69434133c28.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone version of arguments parsing functions from GLIBC
@@ -13,17 +13,15 @@ COMMENT=	Standalone version of arguments parsing functions from GLIBC
 LICENSE=	LGPL20+ PD
 LICENSE_COMB=	multi
 
-USES=		autoreconf libtool
+USES=		gettext-runtime localbase:ldflags meson
 USE_CSTD=	gnu89
-GNU_CONFIGURE=	yes
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
+
+MESON_ARGS=	-Ddefault_library=both
 
 PLIST_FILES=	lib/libargp.a \
 		lib/libargp.so lib/libargp.so.0 lib/libargp.so.0.0.0 \
 		include/argp.h
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/argp.h ${STAGEDIR}${PREFIX}/include
 
 .include <bsd.port.mk>
