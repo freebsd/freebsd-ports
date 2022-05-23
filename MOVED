@@ -17169,3 +17169,4 @@ textproc/rubygem-cucumber-gherkin22|textproc/rubygem-cucumber-gherkin|2022-05-22
 textproc/rubygem-cucumber-html-formatter17|textproc/rubygem-cucumber-html-formatter|2022-05-22|Remove obsoleted port. Use textproc/rubygem-cucumber-html-formatter instead
 security/greenbone-security-assistant|security/gsa|2022-05-22|It was splitted into security/gsad and security/gsa
 security/py-ospd|security/py-ospd-openvas|2022-05-22|It was merged into security/py-ospd-openvas
+lang/perl5.30||2022-05-23|Has expired: Support ends three years after .0 release. Please upgrade to a more recent version of Perl
