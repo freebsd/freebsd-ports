@@ -4,7 +4,7 @@ PORTNAME?=	postgresql
 DISTVERSION?=	15beta1
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -176,7 +176,8 @@ PLIST_SUB+=		PG_VERSION=${PORTVERSION:R} \
 			PG_USER_regex=[[:<:]]${PG_USER}[[:>:]] \
 			PG_GROUP=${PG_GROUP} \
 			PG_GROUP_regex=[[:<:]]${PG_GROUP}[[:>:]]
-SUB_LIST+=		PG_GROUP=${PG_GROUP} \
+SUB_LIST+=		PG_VERSION=${PORTVERSION:R} \
+			PG_GROUP=${PG_GROUP} \
 			PG_USER=${PG_USER} \
 			PG_UID=${PG_UID}
 
