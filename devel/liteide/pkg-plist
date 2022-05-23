@@ -47,10 +47,12 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteapp/qss/black.qss
 %%DATADIR%%/liteapp/qss/carbon.qss
 %%DATADIR%%/liteapp/qss/coffee.qss
-%%DATADIR%%/liteapp/qss/default_macos.qss
 %%DATADIR%%/liteapp/qss/default.qss
+%%DATADIR%%/liteapp/qss/default_macos.qss
+%%DATADIR%%/liteapp/qss/detroit-future.qss
 %%DATADIR%%/liteapp/qss/evilworks.qss
 %%DATADIR%%/liteapp/qss/gray.qss
+%%DATADIR%%/liteapp/qss/one-dark.qss
 %%DATADIR%%/liteapp/qss/sublime.qss
 %%DATADIR%%/liteapp/qss/vs-dark-hdpi.qss
 %%DATADIR%%/liteapp/qss/vs-dark.qss
@@ -95,15 +97,18 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/color/cobalt black.xml
 %%DATADIR%%/liteeditor/color/cobalt blue.xml
 %%DATADIR%%/liteeditor/color/colorhelp.md
-%%DATADIR%%/liteeditor/color/dark.xml
+%%DATADIR%%/liteeditor/color/dark-blue.xml
 %%DATADIR%%/liteeditor/color/dark-gray.xml
+%%DATADIR%%/liteeditor/color/dark.xml
 %%DATADIR%%/liteeditor/color/darktango.xml
 %%DATADIR%%/liteeditor/color/darkvim.xml
 %%DATADIR%%/liteeditor/color/default-func.xml
 %%DATADIR%%/liteeditor/color/default.xml
+%%DATADIR%%/liteeditor/color/detroit-future.xml
 %%DATADIR%%/liteeditor/color/evilworks.xml
 %%DATADIR%%/liteeditor/color/gist-github.xml
 %%DATADIR%%/liteeditor/color/highcontrastdark.xml
+%%DATADIR%%/liteeditor/color/one-dark.xml
 %%DATADIR%%/liteeditor/color/railscast.xml
 %%DATADIR%%/liteeditor/color/solarized-dark.xml
 %%DATADIR%%/liteeditor/color/solarized-light.xml
@@ -124,6 +129,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/kate/gomod.xml
 %%DATADIR%%/liteeditor/kate/goplus.xml
 %%DATADIR%%/liteeditor/kate/gopresent.xml
+%%DATADIR%%/liteeditor/kate/gowork.xml
 %%DATADIR%%/liteeditor/kate/html.xml
 %%DATADIR%%/liteeditor/kate/java.xml
 %%DATADIR%%/liteeditor/kate/javadoc.xml
