@@ -1,7 +1,7 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 
 PORTNAME=	sqlite3
-DISTVERSION=	3.38.2
+DISTVERSION=	3.38.5
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${YEAR}/ https://www2.sqlite.org/${YEAR}/ https://www3.sqlite.org/${YEAR}/
@@ -39,6 +39,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=	yes
+ALL_TARGET+=	sqldiff
 .if defined(TEA)
 INSTALL_TARGET=	tcl_install
 .endif
@@ -259,6 +260,7 @@ post-install:
 	${INSTALL_MAN} "${WRKSRC}/${PORTNAME}.1" "${STAGEDIR}${PREFIX}/man/man1"
 	${RM} "${STAGEDIR}${PREFIX}/include/msvc.h"
 	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
+	${INSTALL_PROGRAM} "${WRKSRC}/sqldiff" "${STAGEDIR}${PREFIX}/bin"
 .else
 	${RM} "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0.8.6" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.a"
 .endif
