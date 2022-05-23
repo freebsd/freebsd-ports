@@ -13,6 +13,9 @@ COMMENT=	Interactive prompt module for umph and similar programs
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Last release in 2011 and abandoned upstream
+EXPIRATION_DATE=2022-06-30
+
 USES=		perl5
 USE_PERL5=	configure
 
