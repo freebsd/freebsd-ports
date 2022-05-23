@@ -1,8 +1,7 @@
 # Created by: Jason Helfman <jgh@FreeBSD.org>
 
 PORTNAME=	xpad
-PORTVERSION=	5.7.0
-PORTREVISION=	1
+PORTVERSION=	5.8.0
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 
