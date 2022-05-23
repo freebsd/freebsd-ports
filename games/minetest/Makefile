@@ -106,10 +106,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/*.cmake
 
-do-test-CLIENT-on:
+do-test-TEST-on:
+.if ${PORT_OPTIONS:MCLIENT}
 	cd ${WRKDIR} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/minetest --run-unittests
-
-do-test-SERVER-on:
+.endif
+.if ${PORT_OPTIONS:MSERVER}
 	cd ${WRKDIR} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/minetestserver --run-unittests
+.endif
 
 .include <bsd.port.mk>
