@@ -1,5 +1,5 @@
 PORTNAME=	clamav
-DISTVERSION=	0.104.3
+DISTVERSION=	0.105.0
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
@@ -10,6 +10,8 @@ COMMENT=	Open-source (GPL) anti-virus engine (Regular Feature Release)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BUILD_DEPENDS=	${RUST_DEFAULT}>=1.56.0:lang/${RUST_DEFAULT} \
+		tomsfastmath>0:math/tomsfastmath
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjson-c.so:devel/json-c \
 		libmspack.so:archivers/libmspack \
@@ -21,7 +23,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
 CMAKE_ARGS=	-DDATABASE_DIRECTORY:STRING=${_DBDIR}
-CMAKE_ON=	ENABLE_EXTERNAL_MSPACK
+CMAKE_ON=	ENABLE_EXTERNAL_MSPACK ENABLE_EXTERNAL_TOMSFASTMATH
 
 TEST_TARGET=	check
 
