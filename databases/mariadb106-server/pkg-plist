@@ -54,6 +54,7 @@ bin/test-connect-t
 %%WSREP%%bin/wsrep_sst_mysqldump
 %%WSREP%%bin/wsrep_sst_rsync
 %%WSREP%%bin/wsrep_sst_rsync_wan
+%%WSREP%%bin/wsrep_sst_backup
 @comment %%ETCDIR%%/conf.d/client.cnf
 %%ETCDIR%%/conf.d/enable_encryption.preset
 %%ETCDIR%%/conf.d/mysql-clients.cnf
@@ -439,6 +440,7 @@ share/aclocal/mysql.m4
 %%MROONGA%%share/groonga-normalizer-mysql/README.md
 %%MROONGA%%share/groonga-normalizer-mysql/lgpl-2.0.txt
 %%DATADIR%%/binary-configure
+%%DATADIR%%/bulgarian/errmsg.sys
 %%DATADIR%%/charsets/Index.xml
 %%DATADIR%%/charsets/README
 %%DATADIR%%/charsets/armscii8.xml
@@ -465,6 +467,7 @@ share/aclocal/mysql.m4
 %%DATADIR%%/charsets/macce.xml
 %%DATADIR%%/charsets/macroman.xml
 %%DATADIR%%/charsets/swe7.xml
+%%DATADIR%%/chinese/errmsg.sys
 %%DATADIR%%/czech/errmsg.sys
 %%DATADIR%%/danish/errmsg.sys
 %%DATADIR%%/dutch/errmsg.sys
