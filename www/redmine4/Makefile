@@ -7,6 +7,9 @@ PKGNAMESUFFIX=	4
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Flexible project management web application
 
+DEPRECATED=	Deprecated by upstream. Please consider using www/redmine42
+EXPIRATION_DATE=2022-06-30
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
