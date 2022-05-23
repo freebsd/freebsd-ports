@@ -45,7 +45,6 @@
     SUBDIR += ansible-kld
     SUBDIR += ansible-sshjail
     SUBDIR += ansible-sysrc
-    SUBDIR += ansible2
     SUBDIR += ansible4
     SUBDIR += anvil
     SUBDIR += apache-mesos
