@@ -1,6 +1,5 @@
 PORTNAME=	powerdns
-DISTVERSION=	4.6.1
-PORTREVISION=	1
+DISTVERSION=	4.6.2
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
@@ -10,7 +9,7 @@ COMMENT=	Advanced DNS server with multiple backends including SQL
 
 LICENSE=	GPLv2
 
-BROKEN_sparc64=	Does not compile: error: to_string is not a member of std
+BROKEN_sparc64=	does not compile: error: to_string is not a member of std
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	archs with 32-bits time_t are no longer supported by upstream
 
@@ -29,8 +28,8 @@ CONFIGURE_ARGS=	--disable-static \
 		--sysconfdir="${PREFIX}/etc/pdns" \
 		--with-boost="${LOCALBASE}" \
 		--with-dynmodules="pipe bind ${MODULES}" \
-		--with-modules="" \
-		--with-libsodium=no
+		--with-libsodium=no \
+		--with-modules=""
 
 SCRIPTS_ENV=	CURDIR2="${.CURDIR}" \
 		DISTNAME="${DISTNAME}" \
