@@ -7,6 +7,9 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free implementation of the Kerberos 5 network security system
 
+DEPRECATED=	Abandonware, last release in 2013 and no development since
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	libidn.so:dns/libidn \
 		libtasn1.so:security/libtasn1 \
 		libgcrypt.so:security/libgcrypt \
