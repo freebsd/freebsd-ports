@@ -1,7 +1,7 @@
 # Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
 
 PORTNAME=	jing
-PORTVERSION=	20181222
+PORTVERSION=	20220510
 CATEGORIES=	textproc java
 MASTER_SITES=	https://github.com/relaxng/jing-trang/releases/download/V${PORTVERSION}/
 
