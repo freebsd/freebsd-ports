@@ -3,7 +3,7 @@
 
 PORTNAME=	libcanberra
 PORTVERSION=	0.30
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio devel
 MASTER_SITES=	http://0pointer.de/lennart/projects/libcanberra/ \
 		http://pkgs.fedoraproject.org/repo/pkgs/libcanberra/libcanberra-0.30.tar.xz/34cb7e4430afaf6f447c4ebdb9b42072/
@@ -18,10 +18,9 @@ LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libltdl.so:devel/libltdl
 
 USES=		gmake gnome localbase libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-lynx --disable-tdb --disable-alsa
+CONFIGURE_ARGS=	--disable-lynx --disable-tdb --disable-alsa --disable-udev
 INSTALL_TARGET=	install-strip
 
 SLAVEPORT?=
@@ -64,6 +63,8 @@ GSTREAMER_CONFIGURE_ENABLE=	gstreamer
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| gtkdoc | |g' \
+		${WRKSRC}/Makefile.in
 
 
 .include <bsd.port.mk>
