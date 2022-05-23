@@ -1,5 +1,5 @@
 PORTNAME=	semantik
-DISTVERSION=	1.2.7
+DISTVERSION=	1.2.8
 CATEGORIES=	deskutils kde
 MASTER_SITES=	https://waf.io/
 
