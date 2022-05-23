@@ -11,6 +11,9 @@ COMMENT=	GNU Generic Security Service Library
 
 LIB_DEPENDS=	libshishi.so:security/shishi
 
+DEPRECATED=	Abandonware, last release in 2014 and no development since
+EXPIRATION_DATE=2022-06-30
+
 CONFLICTS=	heimdal
 
 USES=		libtool localbase:ldflags pathfix pkgconfig perl5
