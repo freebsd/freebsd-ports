@@ -1,6 +1,6 @@
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-MAKE_CMD=	bjam
+MAKE_CMD?=	bjam
 MAKEFILE=	#
 MAKE_FLAGS=	#
 ALL_TARGET=	stage
