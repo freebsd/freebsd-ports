@@ -190,6 +190,7 @@
     SUBDIR += lmtp2nntp
     SUBDIR += lookout
     SUBDIR += lurker
+    SUBDIR += mail-expire
     SUBDIR += mail2sms
     SUBDIR += mailagent
     SUBDIR += maildrop
