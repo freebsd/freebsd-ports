@@ -1,11 +1,11 @@
 # Created by: Glenn Trewitt <glenn@trewitt.org>
 
 PORTNAME=	htmldoc
-PORTVERSION=	1.9.13
+PORTVERSION=	1.9.16
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
-MAINTAINER=	jose@diasfernandes.pt
+MAINTAINER=	fuz@fuz.su
 COMMENT=	Converts HTML to PDF and/or PostScript
 
 LICENSE=	GPLv2
