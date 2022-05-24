@@ -1184,6 +1184,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Serialization/ModuleManager.h
 %%CLANG%%llvm-devel/include/clang/Serialization/PCHContainerOperations.h
 %%CLANG%%llvm-devel/include/clang/Serialization/SerializationDiagnostic.h
+%%CLANG%%llvm-devel/include/clang/Serialization/SourceLocationEncoding.h
 %%CLANG%%llvm-devel/include/clang/Serialization/TypeBitCodes.def
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Checkers/BuiltinCheckerRegistration.h
 %%CLANG%%llvm-devel/include/clang/StaticAnalyzer/Checkers/Checkers.inc
@@ -1857,6 +1858,7 @@ llvm-devel/bin/verify-uselistorder
 %%LLDB%%llvm-devel/include/lldb/Interpreter/OptionGroupBoolean.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/OptionGroupFile.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/OptionGroupFormat.h
+%%LLDB%%llvm-devel/include/lldb/Interpreter/OptionGroupMemoryTag.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/OptionGroupOutputFile.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/OptionGroupPlatform.h
 %%LLDB%%llvm-devel/include/lldb/Interpreter/OptionGroupPythonClassWithDict.h
@@ -2383,6 +2385,7 @@ llvm-devel/include/llvm/BinaryFormat/ELFRelocs/SystemZ.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/VE.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/i386.def
 llvm-devel/include/llvm/BinaryFormat/ELFRelocs/x86_64.def
+llvm-devel/include/llvm/BinaryFormat/GOFF.h
 llvm-devel/include/llvm/BinaryFormat/MachO.def
 llvm-devel/include/llvm/BinaryFormat/MachO.h
 llvm-devel/include/llvm/BinaryFormat/Magic.h
@@ -3917,6 +3920,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/AsyncToLLVM/AsyncToLLVM.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/BufferizationToMemRef/BufferizationToMemRef.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ComplexToLLVM/ComplexToLLVM.h
+%%MLIR%%llvm-devel/include/mlir/Conversion/ComplexToLibm/ComplexToLibm.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ComplexToStandard/ComplexToStandard.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ControlFlowToLLVM/ControlFlowToLLVM.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ControlFlowToSPIRV/ControlFlowToSPIRV.h
@@ -4096,6 +4100,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizationOpsDialect.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizationOpsTypes.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/IR/BufferizationOpsTypes.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/Transforms/AllocTensorElimination.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/Transforms/BufferUtils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/Transforms/Bufferize.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Bufferization/Transforms/FuncBufferizableOpInterfaceImpl.h
@@ -4279,6 +4284,10 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/Transforms/Transforms.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Linalg/Utils/Utils.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/MLProgram/IR/MLProgram.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/MLProgram/IR/MLProgramAttributes.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/MLProgram/IR/MLProgramAttributes.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/MLProgram/IR/MLProgramAttributes.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/MLProgram/IR/MLProgramAttributes.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/MLProgram/IR/MLProgramBase.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/MLProgram/IR/MLProgramOps.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/MLProgram/IR/MLProgramOps.h.inc
@@ -5342,6 +5351,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCastInterfaces.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRComplex.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRComplexToLLVM.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRComplexToLibm.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRComplexToStandard.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRControlFlow.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRControlFlowInterfaces.a
