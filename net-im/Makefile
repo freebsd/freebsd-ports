@@ -33,6 +33,7 @@
     SUBDIR += jarl
     SUBDIR += jggtrans
     SUBDIR += jicofo
+    SUBDIR += jitsi-meet-full
     SUBDIR += jitsi-prosody-plugins
     SUBDIR += jitsi-videobridge
     SUBDIR += kaccounts-integration
