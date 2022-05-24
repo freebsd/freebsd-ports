@@ -1,5 +1,5 @@
 PORTNAME=	dune-foamgrid
-DISTVERSION=	g20210703
+DISTVERSION=	2.8.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GITLAB=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	extensions
-GL_COMMIT=	43bfdb6181fae187fd803eca935a030d8d5ab0bc
+GL_COMMIT=	c33bcf407a7061e7f5997b895d89207fb9a8097f
 
 NO_ARCH=	yes
 
