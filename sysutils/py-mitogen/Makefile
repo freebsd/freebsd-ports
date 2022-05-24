@@ -1,8 +1,11 @@
 PORTNAME=	mitogen
-DISTVERSION=	0.2.9
+DISTVERSION=	0.3.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+# PATCH_SITES=	https://github.com/mitogen-hq/${PORTNAME}/pull/
+# PATCHFILES+=	913.patch:-p1 # https://github.com/mitogen-hq/mitogen/pull/913.patch
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Ansible accelerator & python library for writing distributed programs
