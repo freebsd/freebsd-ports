@@ -1,57 +1,78 @@
 PORTNAME=	cp2k
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.1.0-20200518
+DISTVERSION=	9.1.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum chemistry and solid state physics software package
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	fypp:devel/py-fypp@${PY_FLAVOR}
 LIB_DEPENDS=	libblas.so:math/blas \
 		libfftw3.so:math/fftw3 \
 		liblapack.so:math/lapack
 RUN_DEPENDS=	cp2k-data>0:science/cp2k-data
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		fortran gmake localbase:ldflags python:build tar:bz2
+USES=		fortran gmake localbase:ldflags python:build shebangfix tar:bz2
+
 USE_GITHUB=	yes
-GH_TAGNAME=	2e995eec7fd208c8a72d9544807bd8b8ba8cd1cc
-GH_TUPLE=	cp2k:dbcsr:f385868eec7c89f40ac9d6d9783fc34a05d2f68e:cp2k_dbcsr/exts/dbcsr \
-		pseewald:fprettify:2b2801bf91dd651c417c232bb891d407bf81085c:pseewald_fprettify/tools/prettify/fprettify \
-		aradi:fypp:7895a7efb7d2f07dc284cece6cc9474297b8dc55:aradi_fypp/exts/dbcsr/tools/build_utils/fypp
+GH_TUPLE=	cp2k:dbcsr:f4df17b:cp2k_dbcsr/exts/dbcsr \
+		pseewald:fprettify:71781aa:pseewald_fprettify/tools/prettify/fprettify
 
-MAKE_ARGS=	XARCH=FreeBSD-gfortran VERSION=${VERSION} FC=gfortran${GCC_DEFAULT} CC=${CC} LD=gfortran${GCC_DEFAULT} \
+SHEBANG_FILES=	tools/regtesting/do_regtest
+
+GCC_VERSION=	${GCC_DEFAULT} # ${_USE_GCC}
+
+MAKE_ARGS=	XARCH=FreeBSD-gfortran VERSION=${VERSION} FC=gfortran${GCC_VERSION} CC=${CC} LD=gfortran${GCC_VERSION} \
 		DATA_DIR=${DATADIR}
 
-BINARY_ALIAS=	python=${PYTHON_CMD}
+BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD} make=${GMAKE} # make - only for tests
 
 OPTIONS_DEFINE=		LIBINT
 OPTIONS_SINGLE=		MULTIPROCESSING
-OPTIONS_SINGLE_MULTIPROCESSING=		SERIAL OPENMP MPI OPENMP_MPI # for the complete list see "3a. ARCH files" in https://www.cp2k.org/howto:compile
-OPTIONS_DEFAULT=	LIBINT SERIAL
+OPTIONS_SINGLE_MULTIPROCESSING=		SERIAL OPENMP MPI OPENMP_MPI # for the complete list see https://github.com/cp2k/cp2k/blob/master/INSTALL.md
+OPTIONS_DEFAULT=	LIBINT OPENMP
 MULTIPROCESSING_DESC=	Multiprocessing
 
 LIBINT_DESC=		Use libint to evaluate integrals
 LIBINT_LIB_DEPENDS=	libint.so:science/libint
 
 SERIAL_DESC=		Single core (no multiprocessing)
-SERIAL_VARS=		VERSION=sopt
+SERIAL_VARS=		VERSION=sopt EFFECTIVE_VERSION=ssmp # now is a flavor of ssmp with NUM_THEADS=1
+SERIAL_CFLAGS=		${OPENMP_CFLAGS}
+SERIAL_CXXFLAGS=	${OPENMP_CXXFLAGS}
+SERIAL_LDFLAGS=		${OPENMP_LDFLAGS}
+SERIAL_PLIST_FILES=	${EXECUTABLES_CORE:C/(.*)/bin\/\1.${VERSION}/} # symlinks
 
-OPENMP_VARS=		VERSION=ssmp
+OPENMP_VARS=		VERSION=ssmp EFFECTIVE_VERSION=ssmp
+OPENMP_CFLAGS=		-fopenmp
+OPENMP_CXXFLAGS=	-fopenmp
+OPENMP_LDFLAGS=		/usr/lib/libgomp.so
 
-MPI_VARS=		VERSION=popt
+MPI_VARS=		VERSION=popt EFFECTIVE_VERSION=psmp # now is a flavor of psmp with NUM_THEADS=1
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich \
 			libscalapack.so:math/scalapack
 MPI_LDFLAGS=		-lmpifort
+MPI_PLIST_FILES=	${EXECUTABLES_CORE:C/(.*)/bin\/\1.${VERSION}/} # symlinks
+MPI_BROKEN=		https://github.com/cp2k/cp2k/issues/2128
 
 OPENMP_MPI_DESC=	Enable both OpenMP and MPI
-OPENMP_MPI_VARS=	VERSION=psmp
+OPENMP_MPI_VARS=	VERSION=psmp EFFECTIVE_VERSION=psmp
+OPENMP_MPI_CFLAGS=	${OPENMP_CFLAGS}
+OPENMP_MPI_CXXFLAGS=	${OPENMP_CXXFLAGS}
+OPENMP_MPI_LDFLAGS=	${OPENMP_LDFLAGS}
 OPENMP_MPI_LIB_DEPENDS=	${MPI_LIB_DEPENDS}
 OPENMP_MPI_LDFLAGS=	${MPI_LDFLAGS}
+OPENMP_MPI_BROKEN=	https://github.com/cp2k/cp2k/issues/2128
 
-EXECUTABLES=		cp2k graph cp2k_shell
+EXECUTABLES_CORE=	cp2k cp2k_shell
+EXECUTABLES_EXTRA=	dumpdcd graph grid_miniapp xyz2dcd
+EXECUTABLES=		${EXECUTABLES_CORE} ${EXECUTABLES_EXTRA}
 
-PLIST_FILES=		${EXECUTABLES:C/(.*)/bin\/\1.${VERSION}/}
+PLIST_FILES=		${EXECUTABLES:C/(.*)/bin\/\1.${EFFECTIVE_VERSION}/}
 
 .include <bsd.port.options.mk>
 
@@ -64,10 +85,6 @@ pre-configure:
 	fi
 .endif
 
-.if ${GCC_DEFAULT} >= 10
-BROKEN=		fails to build with GCC 10: Element of assumed-shape or pointer array as actual argument at (1) cannot correspond to actual argument at (2)
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -i '' 's|LIBS.*=.*|& ${LDFLAGS}|; s|^FCFLAGS.*=.*|& -I${LOCALBASE}/include|; s| -march=native||' ${WRKSRC}/arch/FreeBSD-*
 
@@ -76,7 +93,22 @@ pre-build:
 
 do-install:
 .for e in ${EXECUTABLES}
-	${INSTALL_PROGRAM} ${WRKSRC}/exe/*/${e}.${VERSION} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/exe/*/${e}.${EFFECTIVE_VERSION} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
-.include <bsd.port.mk>
+do-install-SERIAL-on:
+.for e in ${EXECUTABLES_CORE}
+	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s ${e}.${EFFECTIVE_VERSION} ${e}.${VERSION}
+.endfor
+
+do-test: # fails to run: some Linux-only commands are present
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ./tools/regtesting/do_regtest -maxtasks 8
+
+.include <bsd.port.pre.mk>
+
+.  if ${GCC_DEFAULT} >= 10 # only needed when MPI is on, but flags aren't passed into DBCSR sub-project, see https://github.com/cp2k/cp2k/issues/2128
+FCFLAGS+=	-fallow-argument-mismatch
+.  endif
+
+.include <bsd.port.post.mk>
