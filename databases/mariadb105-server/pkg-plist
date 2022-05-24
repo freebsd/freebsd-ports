@@ -49,6 +49,7 @@ bin/resolve_stack_dump
 bin/resolveip
 %%ROCKSDB%%bin/sst_dump
 @comment bin/test-connect-t
+%%WSREP%%bin/wsrep_sst_backup
 %%WSREP%%bin/wsrep_sst_common
 %%WSREP%%bin/wsrep_sst_mariabackup
 %%WSREP%%bin/wsrep_sst_mysqldump
@@ -270,6 +271,7 @@ share/man/man8/mariadbd.8.gz
 share/man/man8/mysqld.8.gz
 @comment share/aclocal/mysql.m4
 %%DATADIR%%/binary-configure
+%%DATADIR%%/bulgarian/errmsg.sys
 %%DATADIR%%/charsets/Index.xml
 %%DATADIR%%/charsets/README
 %%DATADIR%%/charsets/armscii8.xml
@@ -296,6 +298,7 @@ share/man/man8/mysqld.8.gz
 %%DATADIR%%/charsets/macce.xml
 %%DATADIR%%/charsets/macroman.xml
 %%DATADIR%%/charsets/swe7.xml
+%%DATADIR%%/chinese/errmsg.sys
 %%DATADIR%%/czech/errmsg.sys
 %%DATADIR%%/danish/errmsg.sys
 %%DATADIR%%/dutch/errmsg.sys
