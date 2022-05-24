@@ -1,5 +1,6 @@
 PORTNAME=	gatk
 DISTVERSION=	4.2.6.1
+PORTREVISION=	1
 CATEGORIES=	biology java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	gradle:devel/gradle
 USES=		gettext-runtime
 USE_JAVA=	yes
 
-JAVA_VERSION=	12 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=76025, tid=0x000000000006e359 guarantee(val < (1U << nbits)) failed: Field too big for insn
+JAVA_VERSION=	17 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=76025, tid=0x000000000006e359 guarantee(val < (1U << nbits)) failed: Field too big for insn
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	broadinstitute
