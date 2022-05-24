@@ -1,6 +1,6 @@
---- electron/shell/browser/electron_browser_main_parts.cc.orig	2022-05-11 15:32:29 UTC
+--- electron/shell/browser/electron_browser_main_parts.cc.orig	2022-05-18 15:35:00 UTC
 +++ electron/shell/browser/electron_browser_main_parts.cc
-@@ -61,7 +61,7 @@
+@@ -64,7 +64,7 @@
  #include "ui/wm/core/wm_state.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/threading/thread_task_runner_handle.h"
  #include "device/bluetooth/bluetooth_adapter_factory.h"
-@@ -140,7 +140,7 @@ std::u16string MediaStringProvider(media::MessageId id
+@@ -143,7 +143,7 @@ std::u16string MediaStringProvider(media::MessageId id
    }
  }
  
@@ -18,7 +18,7 @@
  // GTK does not provide a way to check if current theme is dark, so we compare
  // the text and background luminosity to get a result.
  // This trick comes from FireFox.
-@@ -158,7 +158,7 @@ void UpdateDarkThemeSetting() {
+@@ -161,7 +161,7 @@ void UpdateDarkThemeSetting() {
  
  }  // namespace
  
@@ -27,7 +27,7 @@
  class DarkThemeObserver : public ui::NativeThemeObserver {
   public:
    DarkThemeObserver() = default;
-@@ -211,7 +211,7 @@ int ElectronBrowserMainParts::PreEarlyInitialization()
+@@ -214,7 +214,7 @@ int ElectronBrowserMainParts::PreEarlyInitialization()
  #if defined(OS_POSIX)
    HandleSIGCHLD();
  #endif
@@ -36,7 +36,7 @@
    ui::OzonePlatform::PreEarlyInitialization();
  #endif
  
-@@ -272,7 +272,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
+@@ -275,7 +275,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
  #if defined(USE_AURA)
    screen_ = views::CreateDesktopScreen();
    display::Screen::SetScreenInstance(screen_.get());
@@ -45,7 +45,7 @@
    views::LinuxUI::instance()->UpdateDeviceScaleFactor();
  #endif
  #endif
-@@ -289,7 +289,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
+@@ -292,7 +292,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
    // happen before the ResourceBundle is loaded
    if (locale.empty())
      l10n_util::OverrideLocaleWithCocoaLocale();
@@ -54,7 +54,7 @@
    // l10n_util::GetApplicationLocaleInternal uses g_get_language_names(),
    // which keys off of getenv("LC_ALL").
    // We must set this env first to make ui::ResourceBundle accept the custom
-@@ -312,7 +312,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
+@@ -315,7 +315,7 @@ int ElectronBrowserMainParts::PreCreateThreads() {
    ElectronBrowserClient::SetApplicationLocale(app_locale);
    fake_browser_process_->SetApplicationLocale(app_locale);
  
@@ -63,7 +63,7 @@
    // Reset to the original LC_ALL since we should not be changing it.
    if (!locale.empty()) {
      if (lc_all)
-@@ -359,7 +359,7 @@ void ElectronBrowserMainParts::PostDestroyThreads() {
+@@ -362,7 +362,7 @@ void ElectronBrowserMainParts::PostDestroyThreads() {
  }
  
  void ElectronBrowserMainParts::ToolkitInitialized() {
@@ -72,7 +72,7 @@
    auto linux_ui = BuildGtkUi();
    linux_ui->Initialize();
    DCHECK(ui::LinuxInputMethodContextFactory::instance());
-@@ -505,7 +505,7 @@ void ElectronBrowserMainParts::PostMainMessageLoopRun(
+@@ -528,7 +528,7 @@ void ElectronBrowserMainParts::PostMainMessageLoopRun(
    fake_browser_process_->PostMainMessageLoopRun();
    content::DevToolsAgentHost::StopRemoteDebuggingPipeHandler();
  

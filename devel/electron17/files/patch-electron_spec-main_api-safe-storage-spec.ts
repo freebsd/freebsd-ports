@@ -1,8 +1,8 @@
---- electron/spec-main/api-safe-storage-spec.ts.orig	2021-11-15 23:45:07 UTC
+--- electron/spec-main/api-safe-storage-spec.ts.orig	2022-05-18 15:35:00 UTC
 +++ electron/spec-main/api-safe-storage-spec.ts
-@@ -14,7 +14,7 @@ import * as fs from 'fs';
- * when run on CI and linux.
- */
+@@ -33,7 +33,7 @@ describe('safeStorage module', () => {
+   });
+ });
  
 -ifdescribe(process.platform !== 'linux')('safeStorage module', () => {
 +ifdescribe(process.platform !== 'linux' && process.platform !== 'freebsd')('safeStorage module', () => {
