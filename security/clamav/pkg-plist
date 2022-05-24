@@ -56,7 +56,6 @@ share/man/man8/clamd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/appendix/Terminology.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ayu-highlight.css
 %%PORTDOCS%%%%DOCSDIR%%/html/book.js
-%%PORTDOCS%%%%DOCSDIR%%/html/community_resources/CommunityResources.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clipboard.min.js
 %%PORTDOCS%%%%DOCSDIR%%/html/community_resources/CommunityResources.html
 %%PORTDOCS%%%%DOCSDIR%%/html/css/chrome.css
