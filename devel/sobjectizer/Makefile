@@ -1,12 +1,15 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	sobjectizer
-PORTVERSION=	5.7.3
+PORTVERSION=	5.7.4.1
 DISTVERSIONPREFIX=	v.
 CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cross-platform C++ actor framework
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes

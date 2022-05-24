@@ -78,6 +78,7 @@ include/so_5/impl/internal_agent_iface.hpp
 include/so_5/impl/internal_env_iface.hpp
 include/so_5/impl/layer_core.hpp
 include/so_5/impl/local_mbox.hpp
+include/so_5/impl/local_mbox_basic_subscription_info.hpp
 include/so_5/impl/make_mchain.hpp
 include/so_5/impl/mbox_core.hpp
 include/so_5/impl/mbox_iface_for_timers.hpp
@@ -142,5 +143,5 @@ lib/cmake/sobjectizer/sobjectizer-config-version.cmake
 lib/cmake/sobjectizer/sobjectizer-config.cmake
 lib/cmake/sobjectizer/sobjectizer-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/sobjectizer/sobjectizer-targets.cmake
-lib/libso.5.7.3.so
-lib/libso_s.5.7.3.a
+lib/libso.5.7.4.1.so
+lib/libso_s.5.7.4.1.a
