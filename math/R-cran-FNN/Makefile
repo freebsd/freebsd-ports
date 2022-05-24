@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	FNN
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.3.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
