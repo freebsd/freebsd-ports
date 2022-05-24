@@ -345,6 +345,7 @@
     SUBDIR += py-veusz
     SUBDIR += pybrain
     SUBDIR += pynn
+    SUBDIR += q
     SUBDIR += qbox
     SUBDIR += qcl
     SUBDIR += qiskit-aer
