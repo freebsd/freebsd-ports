@@ -1,3 +1,78 @@
+  <vuln vid="40e2c35e-db99-11ec-b0cf-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>102.0.5005.61</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/05/stable-channel-update-for-desktop_24.html">
+	  <p>This release contains 32 security fixes, including:</p>
+	  <ul>
+	    <li>[1324864] Critical CVE-2022-1853: Use after free in Indexed DB. Reported by Anonymous on 2022-05-12</li>
+	    <li>[1320024] High CVE-2022-1854: Use after free in ANGLE. Reported by SeongHwan Park (SeHwa) on 2022-04-27</li>
+	    <li>[1228661] High CVE-2022-1855: Use after free in Messaging. Reported by Anonymous on 2021-07-13</li>
+	    <li>[1323239] High CVE-2022-1856: Use after free in User Education. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-05-06</li>
+	    <li>[1227995] High CVE-2022-1857: Insufficient policy enforcement in File System API. Reported by Daniel Rhea on 2021-07-11</li>
+	    <li>[1314310] High CVE-2022-1858: Out of bounds read in DevTools. Reported by EllisVlad on 2022-04-07</li>
+	    <li>[1322744] High CVE-2022-1859: Use after free in Performance Manager. Reported by Guannan Wang (@Keenan7310) of Tencent Security Xuanwu Lab on 2022-05-05</li>
+	    <li>[1297209] High CVE-2022-1860: Use after free in UI Foundations. Reported by @ginggilBesel on 2022-02-15</li>
+	    <li>[1316846] High CVE-2022-1861: Use after free in Sharing. Reported by Khalil Zhani on 2022-04-16</li>
+	    <li>[1236325] Medium CVE-2022-1862: Inappropriate implementation in Extensions. Reported by Alesandro Ortiz on 2021-08-04</li>
+	    <li>[1292870] Medium CVE-2022-1863: Use after free in Tab Groups. Reported by David Erceg on 2022-02-01</li>
+	    <li>[1320624] Medium CVE-2022-1864: Use after free in WebApp Installs. Reported by Yuntao You (@GraVity0) of Bytedance Wuheng Lab on 2022-04-28</li>
+	    <li>[1289192] Medium CVE-2022-1865: Use after free in Bookmarks. Reported by Rong Jian of VRI on 2022-01-20</li>
+	    <li>[1292264] Medium CVE-2022-1866: Use after free in Tablet Mode. Reported by @ginggilBesel on 2022-01-29</li>
+	    <li>[1315563] Medium CVE-2022-1867: Insufficient validation of untrusted input in Data Transfer. Reported by Michal Bentkowski of Securitum on 2022-04-12</li>
+	    <li>[1301203] Medium CVE-2022-1868: Inappropriate implementation in Extensions API. Reported by Alesandro Ortiz on 2022-02-28</li>
+	    <li>[1309467] Medium CVE-2022-1869: Type Confusion in V8. Reported by Man Yue Mo of GitHub Security Lab on 2022-03-23</li>
+	    <li>[1323236] Medium CVE-2022-1870: Use after free in App Service. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-05-06</li>
+	    <li>[1308199] Low CVE-2022-1871: Insufficient policy enforcement in File System API. Reported by Thomas Orlita on 2022-03-21</li>
+	    <li>[1310461] Low CVE-2022-1872: Insufficient policy enforcement in Extensions API. Reported by ChaobinZhang on 2022-03-26</li>
+	    <li>[1305394] Low CVE-2022-1873: Insufficient policy enforcement in COOP. Reported by NDevTK on 2022-03-11</li>
+	    <li>[1251588] Low CVE-2022-1874: Insufficient policy enforcement in Safe Browsing. Reported by hjy79425575 on 2021-09-21</li>
+	    <li>[1306443] Low CVE-2022-1875: Inappropriate implementation in PDF. Reported by NDevTK on 2022-03-15</li>
+	    <li>[1313600] Low CVE-2022-1876: Heap buffer overflow in DevTools. Reported by @ginggilBesel on 2022-04-06</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1853</cvename>
+      <cvename>CVE-2022-1854</cvename>
+      <cvename>CVE-2022-1855</cvename>
+      <cvename>CVE-2022-1856</cvename>
+      <cvename>CVE-2022-1857</cvename>
+      <cvename>CVE-2022-1858</cvename>
+      <cvename>CVE-2022-1859</cvename>
+      <cvename>CVE-2022-1860</cvename>
+      <cvename>CVE-2022-1861</cvename>
+      <cvename>CVE-2022-1862</cvename>
+      <cvename>CVE-2022-1863</cvename>
+      <cvename>CVE-2022-1864</cvename>
+      <cvename>CVE-2022-1865</cvename>
+      <cvename>CVE-2022-1866</cvename>
+      <cvename>CVE-2022-1867</cvename>
+      <cvename>CVE-2022-1868</cvename>
+      <cvename>CVE-2022-1869</cvename>
+      <cvename>CVE-2022-1870</cvename>
+      <cvename>CVE-2022-1871</cvename>
+      <cvename>CVE-2022-1872</cvename>
+      <cvename>CVE-2022-1873</cvename>
+      <cvename>CVE-2022-1874</cvename>
+      <cvename>CVE-2022-1875</cvename>
+      <cvename>CVE-2022-1876</cvename>
+      <url>https://chromereleases.googleblog.com/2022/05/stable-channel-update-for-desktop_24.html</url>
+    </references>
+    <dates>
+      <discovery>2022-05-24</discovery>
+      <entry>2022-05-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="04fecc47-dad2-11ec-8fbd-d4c9ef517024">
     <topic>MariaDB -- Multiple vulnerabilities</topic>
     <affects>
