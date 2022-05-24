@@ -1,8 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	R2HTML
-PORTVERSION=	2.3.2
-PORTREVISION=	6
+PORTVERSION=	2.3.3
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
