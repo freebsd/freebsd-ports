@@ -27,7 +27,7 @@ USE_GITHUB=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64le
+.if ${ARCH:Mpowerpc64*}
 USES+=		compiler:gcc-c++11-lib
 USE_CSTD=	c11
 .endif
