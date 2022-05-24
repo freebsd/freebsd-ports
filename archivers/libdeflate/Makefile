@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	libdeflate
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
