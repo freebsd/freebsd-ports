@@ -1,3 +1,8 @@
+@owner jicofo
+@group jitsi
 @sample %%ETCDIR%%/jicofo.conf.sample
 %%JAVAJARDIR%%/jicofo.jar
 %%DATADIR%%/lib/logging.properties
+@dir(jicofo,jitsi,750) %%ETCDIR%%
+@owner
+@group

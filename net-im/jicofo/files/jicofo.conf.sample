@@ -1,0 +1,21 @@
+jicofo {
+  bridge {
+    brewery-jid = "JvbBrewery@internal.auth.jitsi.example.com"
+  }
+
+  sctp {
+    enabled = false
+  }
+
+  xmpp {
+    client {
+      enabled = true
+      hostname = "localhost"
+      port = 5222
+      domain = "auth.jitsi.example.com"
+      username = "focus"
+      password = "supersecret"
+      conference-muc-jid = "conference.jitsi.example.com"
+    }
+  }
+}
