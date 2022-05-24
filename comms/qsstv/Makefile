@@ -24,6 +24,18 @@ USE_GL=		gl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PLIST_FILES=	bin/qsstv \
+		share/applications/qsstv.desktop \
+		share/pixmaps/qsstv.png
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_DEBUG)
+BUILD_DEPENDS+=	doxygen:devel/doxygen
+LIB_DEPENDS+=	libqwt6.so:x11-toolkits/qwt6
+PLIST_FILES+=	bin/qsstv.debug
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 			-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
