@@ -1,6 +1,6 @@
-TIMESTAMP = 1653429028
-SHA256 (rust/crates/starship-1.7.0.crate) = 2c27828294f6609ac78d5ad4f1d6773fb09f09a2b77bae6a145a69e5553f0f9a
-SIZE (rust/crates/starship-1.7.0.crate) = 216152
+TIMESTAMP = 1653432783
+SHA256 (rust/crates/starship-1.7.1.crate) = 37d75f895d606a5888f0145c0c9b83a6c3518c5bb9c8c94f1b29f158d96ce496
+SIZE (rust/crates/starship-1.7.1.crate) = 216150
 SHA256 (rust/crates/ahash-0.7.6.crate) = fcb51a0695d8f838b1ee009b3fbf66bda078cd64590202a864a8f3e8c4315c47
 SIZE (rust/crates/ahash-0.7.6.crate) = 38030
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
