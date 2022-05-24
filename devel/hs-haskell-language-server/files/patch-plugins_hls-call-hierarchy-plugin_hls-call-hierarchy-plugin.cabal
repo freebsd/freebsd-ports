@@ -1,8 +1,0 @@
---- plugins/hls-call-hierarchy-plugin/hls-call-hierarchy-plugin.cabal.orig	2021-09-15 07:36:17 UTC
-+++ plugins/hls-call-hierarchy-plugin/hls-call-hierarchy-plugin.cabal
-@@ -74,5 +74,4 @@ test-suite tests
-     , hls-test-utils             >=1.0 && <1.2
-     , lens
-     , lsp
--    , lsp-test
-     , text

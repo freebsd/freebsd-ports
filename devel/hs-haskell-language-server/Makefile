@@ -1,6 +1,5 @@
 PORTNAME=	haskell-language-server
-DISTVERSION=	1.4.0
-PORTREVISION=	1
+DISTVERSION=	1.7.0.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -8,242 +7,288 @@ COMMENT=	LSP provider implementation for Haskell language
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	hls-install:devel/hs-hls-install
-
 USES=		cabal
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	haskell
 
-USE_CABAL=	Diff-0.4.0 \
-		Glob-0.10.1_1 \
-		HsYAML-0.2.1.0_2 \
-		HsYAML-aeson-0.2.0.0_3 \
-		MonadRandom-0.5.2_1 \
+USE_CABAL=	Boolean-0.2.4 \
+		Chart-1.9.4 \
+		Chart-diagrams-1.9.4 \
+		Diff-0.4.1 \
+		Glob-0.10.2_3 \
+		HsYAML-0.2.1.0_4 \
+		HsYAML-aeson-0.2.0.1_2 \
+		JuicyPixels-3.3.7 \
+		ListLike-4.7.6 \
+		MemoTrie-0.6.10 \
+		MonadRandom-0.5.3_2 \
+		NumInstances-1.4 \
+		OneTuple-0.3.1_2 \
 		Only-0.1_1 \
 		QuickCheck-2.14.2 \
-		StateVar-1.2.1 \
+		StateVar-1.2.2 \
+		SVGFonts-1.8.0.1 \
+		active-0.2.0.15_1 \
 		adjunctions-4.4_2 \
-		aeson-1.5.6.0_2 \
-		aeson-pretty-0.8.8 \
-		alex-3.2.6 \
-		algebraic-graphs-0.5 \
-		ansi-terminal-0.10.3 \
-		ansi-wl-pprint-0.6.9_2 \
-		apply-refact-0.9.3.0 \
-		assoc-1.0.2_1 \
-		async-2.2.3 \
+		aeson-2.0.3.0 \
+		aeson-pretty-0.8.9_1 \
+		alex-3.2.7.1 \
+		algebraic-graphs-0.6_1 \
+		ansi-terminal-0.11.1 \
+		ansi-wl-pprint-0.6.9_3 \
+		apply-refact-0.10.0.0 \
+		assoc-1.0.2_2 \
+		async-2.2.4_1 \
 		atomic-primops-0.8.4 \
-		attoparsec-0.13.2.5_1 \
-		base-compat-0.11.2 \
-		base-compat-batteries-0.11.2 \
-		base-orphans-0.8.4 \
-		base16-bytestring-0.1.1.7_3 \
-		bifunctors-5.5.10 \
-		blaze-builder-0.4.2.1 \
-		blaze-textual-0.2.1.0 \
-		brittany-0.13.1.1 \
-		butcher-1.3.3.2 \
-		bytestring-encoding-0.1.0.0 \
-		cabal-doctest-1.0.8_2 \
-		call-stack-0.3.0 \
+		attoparsec-0.14.4_1 \
+		base-compat-0.12.1 \
+		base-compat-batteries-0.12.1_2 \
+		base-orphans-0.8.6 \
+		base16-bytestring-1.0.2.0 \
+		base64-bytestring-1.2.1.0 \
+		bifunctors-5.5.11_1 \
+		binary-orphans-1.0.2_1 \
+		blaze-builder-0.4.2.2_1 \
+		blaze-markup-0.8.2.8_2 \
+		blaze-svg-0.3.6.1_1 \
+		blaze-textual-0.2.2.1 \
+		brittany-0.14.0.2 \
+		butcher-1.3.3.2_1 \
+		bytes-0.17.2 \
+		cabal-doctest-1.0.9 \
+		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		clock-0.8.2 \
+		cereal-0.5.8.2 \
+		cereal-vector-0.2.0.1 \
+		charset-0.3.9 \
+		circle-packing-0.1.0.6_4 \
+		clock-0.8.3 \
 		cmdargs-0.10.21 \
 		colour-2.3.6 \
 		comonad-5.0.8_1 \
-		conduit-1.3.4.1 \
-		conduit-extra-1.3.5 \
-		constraints-0.12 \
-		constraints-extras-0.3.1.0_1 \
-		contravariant-1.5.3 \
-		cpphs-1.20.9.1 \
-		cryptohash-md5-0.11.100.1_6 \
-		cryptohash-sha1-0.11.100.1_6 \
-		czipwith-1.0.1.3 \
+		conduit-1.3.4.2 \
+		conduit-extra-1.3.5_1 \
+		conduit-parse-0.2.1.1_1 \
+		constraints-0.13.3 \
+		constraints-extras-0.3.2.1 \
+		contravariant-1.5.5 \
+		cpphs-1.20.9.1_1 \
+		cryptohash-md5-0.11.101.0 \
+		cryptohash-sha1-0.11.101.0 \
+		cubicbezier-0.6.0.6_1 \
+		czipwith-1.0.1.4_1 \
 		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
 		data-default-instances-containers-0.0.1 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
-		data-fix-0.3.1 \
-		data-tree-print-0.1.0.2_2 \
+		data-fix-0.3.2_2 \
+		data-tree-print-0.1.0.2_3 \
+		deferred-folds-0.9.18.1 \
 		dependent-map-0.4.0.0 \
-		dependent-sum-0.7.1.0_1 \
-		dependent-sum-template-0.1.0.3 \
-		deque-0.4.3 \
+		dependent-sum-0.7.1.0_2 \
+		deque-0.4.4 \
+		diagrams-core-1.5.0_3 \
+		diagrams-contrib-1.4.4_5 \
+		diagrams-lib-1.4.5.1_2 \
+		diagrams-postscript-1.5.1_1 \
+		diagrams-solve-0.1.3_1 \
+		diagrams-svg-1.4.3.1_3 \
 		direct-sqlite-2.3.26 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
-		entropy-0.4.1.6_1 \
-		extra-1.7.9 \
-		file-embed-0.0.13.0 \
+		dual-tree-0.2.3.0_2 \
+		entropy-0.4.1.7 \
+		enummapset-0.6.0.3 \
+		extra-1.7.10 \
+		fail-4.9.0.0 \
+		fast-math-1.0.2 \
+		file-embed-0.0.15.0 \
 		filemanip-0.3.6.3 \
 		filepattern-0.1.2 \
-		fingertree-0.1.4.2 \
-		floskell-0.10.5 \
-		foldl-1.4.11 \
-		fourmolu-0.3.0.0_2 \
-		free-5.1.6 \
-		fuzzy-0.1.0.0 \
-		generic-lens-2.1.0.0 \
-		generic-lens-core-2.1.0.0 \
-		ghc-api-compat-8.10.7 \
-		ghc-check-0.5.0.5 \
-		ghc-exactprint-0.6.4 \
-		ghc-lib-parser-8.10.7.20210828 \
-		ghc-lib-parser-ex-8.10.0.19 \
-		ghc-paths-0.1.0.12_2 \
-		ghc-source-gen-0.4.1.0 \
-		ghc-trace-events-0.1.2.2 \
-		githash-0.1.5.0 \
+		fingertree-0.1.5.0 \
+		floskell-0.10.6 \
+		fmlist-0.9.4 \
+		focus-1.0.3 \
+		foldl-1.4.12_3 \
+		force-layout-0.4.0.6_8 \
+		fourmolu-0.5.0.1_1 \
+		free-5.1.7_1 \
+		fsnotify-0.3.0.1_2 \
+		fuzzy-0.1.0.1 \
+		generic-deriving-1.14.1 \
+		generic-lens-2.2.1.0_1 \
+		generic-lens-core-2.2.1.0_1 \
+		ghc-check-0.5.0.6 \
+		ghc-exactprint-1.5.0_1 \
+		ghc-lib-9.2.2.20220307 \
+		ghc-lib-parser-9.2.2.20220307 \
+		ghc-lib-parser-ex-9.2.0.3 \
+		ghc-paths-0.1.0.12_3 \
+		ghc-source-gen-0.4.3.0 \
+		ghc-trace-events-0.1.2.5 \
+		githash-0.1.6.2 \
 		gitrev-1.3.1 \
-		haddock-library-1.10.0 \
-		happy-1.20.0 \
-		hashable-1.3.1.0 \
-		hashtables-1.2.4.1 \
+		groups-0.5.3 \
+		haddock-library-1.10.0_3 \
+		happy-1.20.0_1 \
+		hashable-1.4.0.2 \
+		hashtables-1.3 \
 		haskell-src-exts-1.23.1 \
 		heaps-0.4 \
 		heapsize-0.3.0.1 \
-		hie-bios-0.7.5 \
-		hiedb-0.4.0.0 \
-		hlint-3.2.7_1 \
-		hsc2hs-0.68.7_1 \
+		hie-bios-0.9.1 \
+		hiedb-0.4.1.0_1 \
+		hlint-3.3.6 \
+		hsc2hs-0.68.8 \
 		hscolour-1.24.4 \
-		hslogger-1.3.1.0_3 \
-		hyphenation-0.8.2 \
+		hslogger-1.3.1.0_5 \
+		hyphenation-0.8.2_1 \
 		implicit-hie-0.1.2.6 \
-		implicit-hie-cradle-0.3.0.5 \
-		indexed-profunctors-0.1 \
-		indexed-traversable-0.1.1_1 \
-		indexed-traversable-instances-0.1 \
-		integer-logarithms-1.0.3.1 \
-		invariant-0.5.4 \
+		implicit-hie-cradle-0.5.0.0_1 \
+		indexed-profunctors-0.1.1 \
+		indexed-traversable-0.1.2_1 \
+		indexed-traversable-instances-0.1.1 \
+		integer-logarithms-1.0.3.1_2 \
+		integration-0.2.1 \
+		intervals-0.9.2 \
+		invariant-0.5.5 \
 		js-dgtable-0.5.2 \
 		js-flot-0.8.3 \
 		js-jquery-3.3.1 \
-		kan-extensions-5.2.2_1 \
-		lens-5.0.1_2 \
+		kan-extensions-5.2.3 \
+		lens-5.1_1 \
+		lens-aeson-1.2 \
 		libyaml-0.1.2 \
+		linear-1.21.9 \
+		list-t-1.0.5.1 \
 		logict-0.7.0.3_1 \
-		lsp-1.2.0.1 \
-		lsp-types-1.3.0.1 \
-		lucid-2.9.12.1 \
-		math-functions-0.3.4.2 \
-		megaparsec-9.0.1_1 \
-		microlens-0.4.12.0 \
-		microlens-th-0.4.3.9 \
-		mmorph-1.1.5_1 \
-		monad-control-1.0.2.3 \
+		lsp-1.4.0.0_1 \
+		lsp-test-0.14.0.2_1 \
+		lsp-types-1.4.0.1 \
+		lucid-2.11.0_2 \
+		matrices-0.5.0 \
+		megaparsec-9.2.0_2 \
+		mfsolve-0.3.2.1_1 \
+		microlens-0.4.13.0 \
+		microlens-mtl-0.2.0.2 \
+		microlens-th-0.4.3.10 \
+		mmorph-1.2.0_2 \
+		mod-0.1.2.2 \
+		monad-control-1.0.3.1 \
 		monad-dijkstra-0.1.1.3 \
-		monad-memo-0.5.3 \
-		mono-traversable-1.0.15.1_1 \
-		monoid-subclasses-1.1 \
-		multistate-0.8.0.3 \
-		mwc-random-0.15.0.1_2 \
-		network-3.1.0.1 \
+		monad-memo-0.5.4 \
+		mono-traversable-1.0.15.3 \
+		monoid-extras-0.6.1_1 \
+		monoid-subclasses-1.1.3 \
+		mtl-compat-0.2.2 \
+		multistate-0.8.0.4 \
+		network-3.1.2.7 \
 		network-bsd-2.8.1.0_4 \
-		network-info-0.2.0.10_1 \
+		network-info-0.2.1 \
 		network-uri-2.6.4.1 \
+		newtype-generics-0.6.2 \
 		old-locale-1.0.0.7_2 \
-		opentelemetry-0.6.1 \
-		optparse-applicative-0.15.1.0_1 \
-		optparse-simple-0.1.1.3 \
-		ormolu-0.1.4.1_1 \
-		parallel-3.2.2.0_3 \
+		opentelemetry-0.8.0 \
+		operational-0.2.4.1 \
+		optparse-applicative-0.16.1.0_2 \
+		optparse-simple-0.1.1.4 \
+		ordered-containers-0.2.2 \
+		ormolu-0.4.0.0_2 \
+		parallel-3.2.2.0_4 \
 		parser-combinators-1.3.0 \
-		polyparse-1.13_2 \
-		pretty-simple-4.0.0.0 \
-		prettyprinter-1.7.0 \
-		prettyprinter-ansi-terminal-1.1.2 \
+		parsers-0.12.11 \
+		polyparse-1.13_4 \
+		pretty-simple-4.1.0.0 \
+		prettyprinter-1.7.1 \
+		prettyprinter-ansi-terminal-1.1.3 \
 		primes-0.2.1.0 \
-		primitive-0.7.1.0_3 \
-		profunctors-5.6.2_1 \
-		psqueues-0.2.7.2_1 \
-		random-1.2.0_6 \
+		primitive-0.7.3.0_2 \
+		primitive-extras-0.10.1.4 \
+		primitive-unlifted-0.1.3.1 \
+		process-extras-0.7.4 \
+		profunctors-5.6.2_2 \
+		psqueues-0.2.7.3 \
+		random-1.2.1 \
 		random-shuffle-0.0.4 \
 		refact-0.3.0.2 \
 		refinery-0.4.0.0 \
-		reflection-2.1.6 \
-		regex-base-0.94.0.1_1 \
-		regex-tdfa-1.3.1.0_2 \
-		resourcet-1.2.4.2 \
-		retrie-0.1.1.1 \
+		reflection-2.1.6_1 \
+		regex-base-0.94.0.2 \
+		regex-tdfa-1.3.1.2 \
+		resourcet-1.2.4.3_1 \
+		retrie-1.2.0.1_2 \
 		rope-utf16-splay-0.3.2.0 \
 		safe-0.3.19 \
-		safe-exceptions-0.1.7.1 \
-		scientific-0.3.6.2 \
-		semigroupoids-5.3.5_1 \
-		semigroups-0.19.1_1 \
-		shake-0.19.4 \
-		some-1.0.2 \
+		safe-exceptions-0.1.7.2 \
+		scientific-0.3.7.0_2 \
+		semialign-1.2.0.1_1 \
+		semigroupoids-5.3.7 \
+		semigroups-0.19.2_2 \
+		semirings-0.6_1 \
+		shake-0.19.6 \
+		some-1.0.3_2 \
 		sorted-list-0.2.1.0 \
-		split-0.2.3.4_1 \
-		splitmix-0.1.0.3 \
+		split-0.2.3.4_2 \
+		splitmix-0.1.0.4 \
 		sqlite-simple-0.4.18.0 \
-		streaming-commons-0.2.2.1 \
-		strict-0.4.0.1_1 \
-		strict-list-0.1.5 \
-		stylish-haskell-0.12.2.0 \
+		statestack-0.3.1 \
+		stm-containers-1.2 \
+		stm-hamt-1.2.0.7 \
+		streaming-commons-0.2.2.4 \
+		strict-0.4.0.1_4 \
+		strict-list-0.1.7 \
+		stylish-haskell-0.14.1.0 \
+		svg-builder-0.1.1_5 \
 		syb-0.7.2.1 \
 		tagged-0.8.6.1_2 \
-		tasty-1.4.2 \
+		tasty-1.4.2.3 \
 		tasty-expected-failure-0.12.3 \
-		tasty-golden-2.3.4 \
+		tasty-golden-2.3.5 \
 		tasty-hunit-0.10.0.3 \
-		tasty-rerun-1.1.18_2 \
+		tasty-rerun-1.1.18_3 \
 		temporary-1.3 \
-		terminal-size-0.3.2.1 \
-		th-abstraction-0.4.2.0_1 \
-		th-compat-0.1.2 \
-		th-extras-0.0.0.4 \
-		these-1.1.1.1_2 \
-		time-compat-1.9.5_1 \
-		transformers-base-0.4.5.2_1 \
-		transformers-compat-0.6.6 \
-		type-equality-1_2 \
-		typed-process-0.2.6.0 \
-		unagi-chan-0.4.1.3 \
+		terminal-size-0.3.3 \
+		text-short-0.1.5 \
+		th-abstraction-0.4.3.0 \
+		th-compat-0.1.3_1 \
+		these-1.1.1.1_5 \
+		time-compat-1.9.6.1_3 \
+		transformers-base-0.4.6 \
+		transformers-compat-0.7.1_1 \
+		type-equality-1_3 \
+		typed-process-0.2.8.0_1 \
+		unagi-chan-0.4.1.4 \
 		unbounded-delays-0.1.1.1 \
 		uniplate-1.6.13_1 \
-		unix-compat-0.5.3 \
-		unliftio-0.2.14 \
+		unix-compat-0.5.4_1 \
+		unliftio-0.2.21.0 \
 		unliftio-core-0.2.0.1_2 \
-		unordered-containers-0.2.13.0 \
+		unordered-containers-0.2.18.0 \
 		unsafe-0.0 \
 		utf8-string-1.0.2 \
-		uuid-1.3.14 \
-		uuid-types-1.0.4 \
-		vector-0.12.2.0 \
+		uuid-1.3.15_1 \
+		uuid-types-1.0.5_2 \
+		vector-0.12.3.1_2 \
 		vector-algorithms-0.8.0.4_1 \
+		vector-space-0.16 \
 		void-0.7.3 \
 		wcwidth-0.0.2 \
-		yaml-0.11.5.0 \
+		witherable-0.4.2_2 \
+		xml-1.3.14_2 \
+		yaml-0.11.8.0 \
 		zlib-0.6.2.3_1
 
-SKIP_CABAL_PLIST=	yes
 CABAL_PROJECT=		append
+CABAL_FLAGS=		-dynamic
 
 EXECUTABLES=		${PORTNAME} \
 			${PORTNAME}-wrapper
 
 NOT_FOR_ARCHS=		i386
-PLIST_FILES=		bin/${PORTNAME} \
-			bin/${PORTNAME}-8.10.7 \
-			bin/${PORTNAME}-wrapper
 
-do-build:
-	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} hls-install hls
-
-do-install:
-.for exe in ${EXECUTABLES}
-	${INSTALL_PROGRAM} ${CABAL_HOME}/.cabal/bin/${exe} ${STAGEDIR}${PREFIX}/bin
-.endfor
-	${LN} -s ${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-8.10.7
-
-cabal-extract-deps:
-	cd ${WRKSRC} && \
-		${SETENV} HOME=${CABAL_HOME} hls-install hls
+post-patch:
+	${MV} ${WRKSRC}/cabal-ghc92.project ${WRKSRC}/cabal.project.${PORTNAME}
 
 .include <bsd.port.mk>
