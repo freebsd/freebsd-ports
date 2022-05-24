@@ -1,11 +1,10 @@
 # Created by: Bernard Spil <brnrd@FreeBSD.org>
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.3.34
-PORTREVISION?=	3
+PORTVERSION=	10.3.35
+PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	https://downloads.mariadb.org/rest-api/mariadb/${PORTVERSION}/ \
-		https://mirror.nodesdirect.com/${SITESDIR}/ \
+MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror.one.com/${SITESDIR}/ \
 		https://ftp.nluug.nl/db/${SITESDIR}/ \
 		https://ftp.icm.edu.pl/pub/unix/database/${SITESDIR}/ \
@@ -15,7 +14,8 @@ MASTER_SITES=	https://downloads.mariadb.org/rest-api/mariadb/${PORTVERSION}/ \
 		https://mirror.kku.ac.th/${SITESDIR}/ \
 		https://espejito.fder.edu.uy/${SITESDIR}/ \
 		https://mirror1.cl.netactuate.com/${SITESDIR}/ \
-		https://ftp.osuosl.org/pub/${SITESDIR}/
+		https://ftp.osuosl.org/pub/${SITESDIR}/ \
+		https://downloads.mariadb.org/rest-api/mariadb/${PORTVERSION}/
 PKGNAMESUFFIX?=	103-server
 
 MAINTAINER=	brnrd@FreeBSD.org

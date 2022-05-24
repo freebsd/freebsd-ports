@@ -44,6 +44,7 @@ bin/resolveip
 @comment bin/test-connect-t
 %%TOKUDB%%bin/tokuft_logprint
 %%TOKUDB%%bin/tokuftdump
+%%WSREP%%bin/wsrep_sst_backup
 %%WSREP%%bin/wsrep_sst_common
 %%WSREP%%bin/wsrep_sst_mariabackup
 %%WSREP%%bin/wsrep_sst_mysqldump
