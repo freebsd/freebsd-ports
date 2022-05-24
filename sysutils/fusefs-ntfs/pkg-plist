@@ -54,8 +54,6 @@ libdata/pkgconfig/libntfs-3g.pc
 man/man8/mkntfs.8.gz
 man/man8/ntfs-3g.8.gz
 man/man8/ntfs-3g.probe.8.gz
-man/man8/ntfssecaudit.8.gz
-man/man8/ntfsusermap.8.gz
 man/man8/ntfscat.8.gz
 man/man8/ntfsclone.8.gz
 man/man8/ntfscluster.8.gz
@@ -70,8 +68,10 @@ man/man8/ntfsls.8.gz
 man/man8/ntfsprogs.8.gz
 man/man8/ntfsrecover.8.gz
 man/man8/ntfsresize.8.gz
+man/man8/ntfssecaudit.8.gz
 man/man8/ntfstruncate.8.gz
 man/man8/ntfsundelete.8.gz
+man/man8/ntfsusermap.8.gz
 man/man8/ntfswipe.8.gz
 sbin/mkntfs
 sbin/ntfsclone
@@ -80,6 +80,7 @@ sbin/ntfslabel
 sbin/ntfsrecover
 sbin/ntfsresize
 sbin/ntfsundelete
+sbin/ntfsusermap
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 @dir lib/ntfs-3g
