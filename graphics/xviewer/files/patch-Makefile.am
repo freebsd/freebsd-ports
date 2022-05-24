@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2021-12-31 13:12:10 UTC
++++ Makefile.am
+@@ -2,7 +2,7 @@ endif
+ jpeg_DIRS = jpegutils
+ endif
+ 
+-SUBDIRS = $(jpeg_DIRS) cut-n-paste src po help data doc
++SUBDIRS = $(jpeg_DIRS) cut-n-paste src po help data
+ 
+ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+ 

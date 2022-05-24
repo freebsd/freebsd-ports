@@ -12,9 +12,7 @@ LICENSE=	GPLv2+
 
 PORTSCOUT=	limit:^[0-9.]+$$	# ignore non-numeric tags
 
-BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/gtk-doc.m4:textproc/gtk-doc \
-		intltool-update:textproc/intltool \
-		itstool:textproc/itstool \
+BUILD_DEPENDS=	itstool:textproc/itstool \
 		${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools
 LIB_DEPENDS=	libcinnamon-desktop.so:x11/cinnamon-desktop \
 		libxapp.so:x11/xapp \
@@ -26,7 +24,7 @@ USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext-tools \
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-USE_GNOME=	atk cairo gdkpixbuf2 gtk30 introspection pango
+USE_GNOME=	atk cairo gdkpixbuf2 gtk30 intltool introspection pango
 USE_XORG=	x11
 GLIB_SCHEMAS=	org.x.viewer.enums.xml org.x.viewer.gschema.xml
 
