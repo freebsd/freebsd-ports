@@ -1,7 +1,7 @@
 # Created by: Johannes Dieterich <dieterich@ogolem.org>
 
 PORTNAME=	libxc
-DISTVERSION=	5.1.7
+DISTVERSION=	5.2.3
 CATEGORIES=	science
 MASTER_SITES=	https://www.tddft.org/programs/${PORTNAME}/down/${DISTVERSION}/
 
@@ -12,9 +12,10 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fortran gmake libtool perl5
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
-USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 

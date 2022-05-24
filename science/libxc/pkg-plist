@@ -10,13 +10,13 @@ include/xc_funcs_worker.h
 include/xc_version.h
 lib/libxc.so
 lib/libxc.so.9
-lib/libxc.so.9.1.7
+lib/libxc.so.9.2.3
 lib/libxcf03.so
 lib/libxcf03.so.9
-lib/libxcf03.so.9.1.7
+lib/libxcf03.so.9.2.3
 lib/libxcf90.so
 lib/libxcf90.so.9
-lib/libxcf90.so.9.1.7
+lib/libxcf90.so.9.2.3
 libdata/pkgconfig/libxc.pc
 libdata/pkgconfig/libxcf03.pc
 libdata/pkgconfig/libxcf90.pc
