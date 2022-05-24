@@ -1,20 +1,17 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.1.50
-PORTREVISION=	5
+DISTVERSION=	7.1.0.215
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
 		https://nodejs.org/dist/v${NODE_VERSION_PKGFETCH}/:source3 \
 		https://nodejs.org/dist/v${NODE_VERSION_PORTS}/:source3 \
 		SF/optipng/OptiPNG/optipng-0.7.7/:source4
-DISTFILES+=	v8-6.8.275.32_all.tar.gz:source1 \
-		v8-6.8.275.32_122aarch64.tar.gz:source1 \
-		v8-6.8.275.32_122amd64.tar.gz:source1 \
+DISTFILES+=	v8-8.9.255.25_all.tar.gz:source1 \
 		node-v${NODE_VERSION_PKGFETCH}.tar.gz:source3 \
 		node-v${NODE_VERSION_PORTS}.tar.gz:source3 \
 		optipng-0.7.7.tar.gz:source4 \
-		onlyoffice-${DISTVERSION}-npm-cache.tar.gz:source2 \
+		onlyoffice-${DISTVERSION}-npm-cache.tar.gz:source2
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Secure office and productivity apps
@@ -22,12 +19,12 @@ COMMENT=	Secure office and productivity apps
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	uses aarch64 or amd64 binaries
-
-BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
+		boost-libs>0:devel/boost-libs \
 		glib>=2.54:devel/glib20 \
+		gn:devel/gn \
 		java:java/openjdk11 \
+		ninja:devel/ninja \
 		npm:www/npm-node16
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
@@ -45,7 +42,7 @@ USE_QT=		qmake_build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ONLYOFFICE
 GH_PROJECT=	DocumentServer
-GH_TAGNAME=	v7.0.1
+GH_TAGNAME=	v7.1.0
 GH_TUPLE=	ONLYOFFICE:core:v${DISTVERSION}:core/core \
 		ONLYOFFICE:core-fonts:v${DISTVERSION}:corefonts/core-fonts \
 		ONLYOFFICE:dictionaries:v${DISTVERSION}:dictionaries/dictionaries \
@@ -118,8 +115,6 @@ CONFLICTS_BUILD=devel/googletest
 
 post-extract:
 	@${MV} ${WRKDIR}/v8 ${WRKSRC}/core/Common/3dParty/v8
-	@${MKDIR} ${WRKSRC}/core/Common/3dParty/v8/v8/out.gn/freebsd_64
-	@${MV} ${WRKDIR}/v8_obj_122${ARCH}/obj ${WRKSRC}/core/Common/3dParty/v8/v8/out.gn/freebsd_64
 
 	@${MKDIR} ${WRKDIR}/.pkg-cache/node
 	@${CP} ${DISTDIR}/node-v${NODE_VERSION_PKGFETCH}.tar.gz ${DISTDIR}/node-v${NODE_VERSION_PORTS}.tar.gz \
@@ -139,8 +134,11 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/core/Common/3dParty/icu/icu.pri \
+		${WRKSRC}/core/Common/3dParty/v8/v8/build/toolchain/gcc_toolchain.gni \
+		${WRKSRC}/core/Common/3dParty/v8/v8/buildtools/third_party/libc++/BUILD.gn \
 		${WRKSRC}/core/DesktopEditor/fontengine/ApplicationFonts.cpp
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|' -e 's|%%CXX%%|${CXX}|' \
+		${WRKSRC}/core/Common/3dParty/v8/v8/build/toolchain/gcc_toolchain.gni \
 		${WRKSRC}/core/Common/base.pri
 	@${REINPLACE_CMD} 's|%%WRKDIR%%|${WRKDIR}|' \
 		${WRKSRC}/document-server-package/Makefile
@@ -174,6 +172,9 @@ post-patch:
 	@${RM} ${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch.orig
 
 	@${FIND} ${WRKSRC}/server -type f -name npm-shrinkwrap.json -delete
+
+	@${ECHO} "# Generated from 'DEPS'" > ${WRKSRC}/core/Common/3dParty/v8/v8/build/config/gclient_args.gni
+	@${ECHO} "checkout_google_benchmark = false" >> ${WRKSRC}/core/Common/3dParty/v8/v8/build/config/gclient_args.gni
 
 do-build:
 	@${CP} ${FILESDIR}/packagejsons/server/package-lock.json ${WRKSRC}/server
@@ -216,7 +217,7 @@ do-install:
 	cd ${WRKSRC}/document-server-package/common/documentserver/supervisor && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/supervisor "-name *\.conf"
 	cd ${WRKSRC}/document-server-package/common/documentserver/logrotate && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/logrotate "-name *\.conf"
 	@${CP} ${WRKSRC}/document-server-package/common/documentserver/nginx/ds-ssl.conf.tmpl ${WRKSRC}/document-server-package/common/documentserver/nginx/ds-ssl.conf
-.for f in ds.conf ds-ssl.conf includes/http-common.conf includes/ds-common.conf includes/ds-docservice.conf includes/ds-letsencrypt.conf
+.for f in ds.conf ds-ssl.conf includes/http-common.conf includes/ds-common.conf includes/ds-docservice.conf includes/ds-letsencrypt.conf includes/ds-mime.types.conf
 	${INSTALL_DATA} ${WRKSRC}/document-server-package/common/documentserver/nginx/${f} ${STAGEDIR}${ETCDIR}/documentserver/nginx/${f}.sample
 .endfor
 	cd ${WRKSRC}/document-server-package/common/documentserver/nginx/includes && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/documentserver/nginx/includes "-name *\.conf"

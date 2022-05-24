@@ -1,4 +1,5 @@
 bin/documentserver-generate-allfonts.sh
+bin/documentserver-jwt.sh
 bin/documentserver-prepare4shutdown.sh
 bin/documentserver-static-gzip.sh
 bin/documentserver-update-securelink.sh
@@ -14,6 +15,7 @@ bin/documentserver-update-securelink.sh
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-common.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-docservice.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/ds-letsencrypt.conf.sample
+@sample %%ETCDIR%%/documentserver/nginx/includes/ds-mime.types.conf.sample
 @sample %%ETCDIR%%/documentserver/nginx/includes/http-common.conf.sample
 %%ETCDIR%%/documentserver/production-freebsd.json
 %%ETCDIR%%/documentserver/supervisor/ds-converter.conf
@@ -21,6 +23,7 @@ bin/documentserver-update-securelink.sh
 %%ETCDIR%%/documentserver/supervisor/ds-metrics.conf
 %%ETCDIR%%/documentserver/supervisor/ds.conf
 lib/libDjVuFile.so
+lib/libDocxRenderer.so
 lib/libEpubFile.so
 lib/libFb2File.so
 lib/libHtmlFile2.so
@@ -985,6 +988,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs-plugins/mendeley/scripts/thirdparty/promise-polyfill.min.js
 %%WWWDIR%%/documentserver/sdkjs-plugins/mendeley/scripts/thirdparty/url-polyfill.min.js
 %%WWWDIR%%/documentserver/sdkjs-plugins/mendeley/translations/cs-CS.json
+%%WWWDIR%%/documentserver/sdkjs-plugins/mendeley/translations/cs-Cs.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/mendeley/translations/de-DE.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/mendeley/translations/es-ES.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/mendeley/translations/fr-FR.json
@@ -1081,8 +1085,8 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/README.md
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/config.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/index.html
-%%WWWDIR%%/documentserver/sdkjs-plugins/speech/index_about.html
-%%WWWDIR%%/documentserver/sdkjs-plugins/speech/licenses/ResponsiveVoice.license
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/licenses/Select2.license
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/licenses/jQuery.license
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/resources/dark/icon.png
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/resources/dark/icon@1.25x.png
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/resources/dark/icon@1.5x.png
@@ -1093,10 +1097,27 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/resources/light/icon@1.5x.png
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/resources/light/icon@1.75x.png
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/resources/light/icon@2x.png
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/scripts/settings.js
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/scripts/speech.js
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/settings.html
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/guessLanguage/README.md
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/guessLanguage/_languageData.js
 %%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/guessLanguage/guessLanguage.js
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/LICENSE.md
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/README.md
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/dist/css/select2.css
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/dist/css/select2.min.css
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/dist/js/select2.full.js
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/dist/js/select2.full.min.js
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/dist/js/select2.js
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/dist/js/select2.min.js
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/docs/README.md
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/docs/announcements-4.0.html
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/docs/community.html
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/docs/examples.html
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/docs/index.html
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/docs/options-old.html
+%%WWWDIR%%/documentserver/sdkjs-plugins/speech/vendor/select2-4.0.6-rc.1/docs/options.html
 %%WWWDIR%%/documentserver/sdkjs-plugins/thesaurus/3rd-Party.txt
 %%WWWDIR%%/documentserver/sdkjs-plugins/thesaurus/LICENSE
 %%WWWDIR%%/documentserver/sdkjs-plugins/thesaurus/README.md
@@ -1135,12 +1156,13 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs-plugins/translator/resources/img/icon@1.75x.png
 %%WWWDIR%%/documentserver/sdkjs-plugins/translator/resources/img/icon@2x.png
 %%WWWDIR%%/documentserver/sdkjs-plugins/translator/scripts/translate.js
-%%WWWDIR%%/documentserver/sdkjs-plugins/translator/translations/cs-CZ.json
+%%WWWDIR%%/documentserver/sdkjs-plugins/translator/translations/cs-CS.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/translator/translations/de-DE.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/translator/translations/es-ES.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/translator/translations/fr-FR.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/translator/translations/ru-RU.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/translator/vendor/google/google.js
+%%WWWDIR%%/documentserver/sdkjs-plugins/translator/vendor/google/widjet.js
 %%WWWDIR%%/documentserver/sdkjs-plugins/translator/vendor/select2-4.0.6-rc.1/LICENSE.md
 %%WWWDIR%%/documentserver/sdkjs-plugins/translator/vendor/select2-4.0.6-rc.1/README.md
 %%WWWDIR%%/documentserver/sdkjs-plugins/translator/vendor/select2-4.0.6-rc.1/dist/css/select2.css
@@ -1169,7 +1191,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs-plugins/youtube/resources/img/icon@1.75x.png
 %%WWWDIR%%/documentserver/sdkjs-plugins/youtube/resources/img/icon@2x.png
 %%WWWDIR%%/documentserver/sdkjs-plugins/youtube/scripts/youtube.js
-%%WWWDIR%%/documentserver/sdkjs-plugins/youtube/translations/cs-CZ.json
+%%WWWDIR%%/documentserver/sdkjs-plugins/youtube/translations/cs-CS.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/youtube/translations/de-DE.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/youtube/translations/es-ES.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/youtube/translations/fr-FR.json
@@ -1242,6 +1264,16 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/eraser.svg
 %%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/eraser_2x.cur
 %%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/eraser_2x.png
+%%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/grab.cur
+%%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/grab.png
+%%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/grab.svg
+%%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/grab_2x.cur
+%%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/grab_2x.png
+%%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/grabbing.cur
+%%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/grabbing.png
+%%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/grabbing.svg
+%%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/grabbing_2x.cur
+%%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/grabbing_2x.png
 %%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/marker_format.cur
 %%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/marker_format.png
 %%WWWDIR%%/documentserver/sdkjs/common/Images/cursors/marker_format.svg
@@ -1380,6 +1412,10 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/sdkjs/common/spell/spell/spell.js.mem
 %%WWWDIR%%/documentserver/sdkjs/common/spell/spell/spell.wasm
 %%WWWDIR%%/documentserver/sdkjs/common/spell/spell/spell_ie.js
+%%WWWDIR%%/documentserver/sdkjs/pdf/src/engine/drawingfile.js
+%%WWWDIR%%/documentserver/sdkjs/pdf/src/engine/drawingfile.js.mem
+%%WWWDIR%%/documentserver/sdkjs/pdf/src/engine/drawingfile.wasm
+%%WWWDIR%%/documentserver/sdkjs/pdf/src/engine/drawingfile_ie.js
 %%WWWDIR%%/documentserver/sdkjs/slide/sdk-all-min.js
 %%WWWDIR%%/documentserver/sdkjs/slide/sdk-all.js
 %%WWWDIR%%/documentserver/sdkjs/slide/themes/src/01_blank.pptx
@@ -1401,7 +1437,9 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/server/FileConverter/bin/empty/docx.bin
 %%WWWDIR%%/documentserver/server/FileConverter/bin/empty/pptx.bin
 %%WWWDIR%%/documentserver/server/FileConverter/bin/empty/xlsx.bin
+%%WWWDIR%%/documentserver/server/FileConverter/bin/icudtl.dat
 %%WWWDIR%%/documentserver/server/FileConverter/bin/libDjVuFile.so
+%%WWWDIR%%/documentserver/server/FileConverter/bin/libDocxRenderer.so
 %%WWWDIR%%/documentserver/server/FileConverter/bin/libEpubFile.so
 %%WWWDIR%%/documentserver/server/FileConverter/bin/libFb2File.so
 %%WWWDIR%%/documentserver/server/FileConverter/bin/libHtmlFile2.so
@@ -1423,14 +1461,17 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/server/info/img/icon-cross.png
 %%WWWDIR%%/documentserver/server/info/img/logo.png
 %%WWWDIR%%/documentserver/server/info/index.html
+%%WWWDIR%%/documentserver/server/schema/json-api/opening-file.json
 %%WWWDIR%%/documentserver/server/schema/mysql/createdb.sql
 %%WWWDIR%%/documentserver/server/schema/mysql/removedb.sql
 %%WWWDIR%%/documentserver/server/schema/mysql/removetbl.sql
 %%WWWDIR%%/documentserver/server/schema/mysql/upgrade/upgradev630.sql
+%%WWWDIR%%/documentserver/server/schema/mysql/upgrade/upgradev710.sql
 %%WWWDIR%%/documentserver/server/schema/postgresql/createdb.sql
 %%WWWDIR%%/documentserver/server/schema/postgresql/removedb.sql
 %%WWWDIR%%/documentserver/server/schema/postgresql/removetbl.sql
 %%WWWDIR%%/documentserver/server/schema/postgresql/upgrade/upgradev630.sql
+%%WWWDIR%%/documentserver/server/schema/postgresql/upgrade/upgradev710.sql
 %%WWWDIR%%/documentserver/server/tools/allfontsgen
 %%WWWDIR%%/documentserver/server/tools/allthemesgen
 %%WWWDIR%%/documentserver/server/welcome/img/favicon.ico
@@ -1515,6 +1556,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/app-all.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/index.html
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/index_loader.html
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/locale/az.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/locale/be.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/locale/bg.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/locale/ca.json
@@ -1525,6 +1567,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/locale/en.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/locale/es.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/locale/fr.json
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/locale/gl.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/locale/hu.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/locale/it.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/locale/ja.json
@@ -1547,6 +1590,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/embed/resources/css/app-all.css
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/app.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/index.html
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/az.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/be.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/bg.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/ca.json
@@ -1557,6 +1601,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/en.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/es.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/fr.json
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/gl.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/hu.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/it.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/forms/locale/ja.json
@@ -1580,6 +1625,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/app.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/index.html
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/index_loader.html
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/locale/az.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/locale/be.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/locale/bg.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/locale/ca.json
@@ -1591,6 +1637,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/locale/es.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/locale/fi.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/locale/fr.json
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/locale/gl.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/locale/hu.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/locale/id.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/locale/it.json
@@ -7019,6 +7066,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/dist/js/app.js.LICENSE.txt
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/index.html
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/index_loader.html
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/locale/az.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/locale/be.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/locale/bg.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/locale/ca.json
@@ -7030,6 +7078,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/locale/es.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/locale/fi.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/locale/fr.json
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/locale/gl.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/locale/hu.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/locale/it.json
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/mobile/locale/ja.json
@@ -7126,6 +7175,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/app-all.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/index.html
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/index_loader.html
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/locale/az.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/locale/be.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/locale/bg.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/locale/ca.json
@@ -7136,6 +7186,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/locale/en.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/locale/es.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/locale/fr.json
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/locale/gl.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/locale/hu.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/locale/id.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/embed/locale/it.json
@@ -7161,6 +7212,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/index.html
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/index.reporter.html
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/index_loader.html
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/locale/az.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/locale/be.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/locale/bg.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/locale/ca.json
@@ -7172,6 +7224,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/locale/es.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/locale/fi.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/locale/fr.json
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/locale/gl.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/locale/hu.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/locale/id.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/locale/it.json
@@ -8187,6 +8240,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/connectors_secondshape.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/constantproportions.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/constantproportionsactivated.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/convertequation.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/copy.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/copypastewindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/copystyle.png
@@ -9377,6 +9431,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/connectors_secondshape.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/constantproportions.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/constantproportionsactivated.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/convertequation.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/copy.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/copypastewindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/copystyle.png
@@ -11392,6 +11447,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/dist/js/app.js.LICENSE.txt
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/index.html
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/index_loader.html
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/locale/az.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/locale/be.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/locale/bg.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/locale/ca.json
@@ -11401,6 +11457,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/locale/en.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/locale/es.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/locale/fr.json
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/locale/gl.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/locale/hu.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/locale/it.json
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/mobile/locale/ja.json
@@ -11494,6 +11551,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/app-all.js
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/index.html
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/index_loader.html
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/locale/az.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/locale/be.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/locale/bg.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/locale/ca.json
@@ -11504,6 +11562,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/locale/en.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/locale/es.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/locale/fr.json
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/locale/gl.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/locale/hu.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/locale/id.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/embed/locale/it.json
@@ -11528,6 +11587,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/index.html
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/index_internal.html
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/index_loader.html
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/locale/az.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/locale/be.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/locale/bg.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/locale/ca.json
@@ -11539,6 +11599,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/locale/es.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/locale/fi.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/locale/fr.json
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/locale/gl.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/locale/hu.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/locale/id.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/locale/it.json
@@ -14426,6 +14487,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/constantproportions.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/constantproportionsactivated.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/convert.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/convertequation.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/converttorange.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/copy.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/copypastewindow.png
@@ -17840,6 +17902,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/constantproportions.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/constantproportionsactivated.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/convert.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/convertequation.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/converttorange.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/copy.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/copypastewindow.png
@@ -22681,15 +22744,18 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/dist/js/app.js.LICENSE.txt
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/index.html
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/index_loader.html
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/az.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/be.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/bg.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/ca.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/cs.json
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/da.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/de.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/el.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/en.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/es.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/fr.json
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/gl.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/hu.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/it.json
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/mobile/locale/ja.json

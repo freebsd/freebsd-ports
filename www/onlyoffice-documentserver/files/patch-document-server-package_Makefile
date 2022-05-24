@@ -1,6 +1,14 @@
---- document-server-package/Makefile.orig	2021-09-28 10:03:34 UTC
+--- document-server-package/Makefile.orig	2022-04-26 21:43:13 UTC
 +++ document-server-package/Makefile
-@@ -134,6 +134,21 @@ else
+@@ -23,6 +23,7 @@ PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
+ PACKAGE_NAME := $(COMPANY_NAME_LOW)-$(PRODUCT_NAME_LOW)
+ PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
+ 
++UNAME_P ?= $(shell uname -p)
+ UNAME_M ?= $(shell uname -m)
+ ifeq ($(UNAME_M),x86_64)
+ 	RPM_ARCH := x86_64
+@@ -143,6 +144,21 @@ else
  		DS_EXAMLE := /var/www/$(DS_PREFIX)-example
  		DEV_NULL := /dev/null
  	endif
@@ -12,18 +20,18 @@
 +		AR := 7z a -y
 +		PACKAGES = tar
 +		DS_PREFIX := $(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)
-+		NGINX_CONF := %%ETCDIR%%/documentserver/nginx/includes
++		NGINX_CONF := /usr/local/etc/onlyoffice/documentserver/nginx/includes
 +		NGINX_LOG := /var/log/$(DS_PREFIX)
-+		DS_ROOT := %%LOCALBASE%%/www/$(DS_PREFIX)
++		DS_ROOT := /usr/local/www/$(DS_PREFIX)
 +		DS_FILES := /var/db/$(DS_PREFIX)
-+		DS_EXAMLE := %%LOCALBASE%%/www/$(DS_PREFIX)-example
++		DS_EXAMLE := /usr/local/www/$(DS_PREFIX)-example
 +		DEV_NULL := /dev/null
 +	endif
  	ifeq ($(UNAME_S),Darwin)
  		PLATFORM := mac
  		SHARED_EXT := .dylib
-@@ -152,6 +167,12 @@ else
- 	ifeq ($(UNAME_P),x86_64)
+@@ -160,6 +176,12 @@ else
+ 	ifeq ($(UNAME_M),x86_64)
  		ARCHITECTURE := 64
  	endif
 +	ifeq ($(UNAME_P),amd64)
@@ -32,10 +40,10 @@
 +	ifeq ($(UNAME_P),aarch64)
 +		ARCHITECTURE := 64
 +	endif
- 	ifneq ($(filter %86,$(UNAME_P)),)
+ 	ifneq ($(filter %86,$(UNAME_M)),)
  		ARCHITECTURE := 32
  	endif
-@@ -293,7 +314,7 @@ clean:
+@@ -318,7 +340,7 @@ documentserver:
  		
  documentserver:
  	mkdir -p $(DOCUMENTSERVER_FILES)
@@ -44,7 +52,7 @@
  
  	mkdir -p $(DOCUMENTSERVER_CONFIG)
  	mkdir -p $(DOCUMENTSERVER_CONFIG)/log4js
-@@ -302,25 +323,25 @@ documentserver:
+@@ -327,25 +349,25 @@ documentserver:
  	mv -f $(DOCUMENTSERVER)/server/Common/config/log4js/*.json $(DOCUMENTSERVER_CONFIG)/log4js/
  
  	# rename product specific folders
@@ -77,12 +85,12 @@
  	rm -fr $(3RD_PARTY_LICENSE_FILES)
  
  ifeq ($(PLATFORM),win)
-@@ -329,33 +350,33 @@ ifeq ($(PLATFORM),win)
+@@ -354,33 +376,33 @@ endif
  	cat exe/license/3rd-Party.txt ; >> $(DOCUMENTSERVER)/3rd-Party.txt
  endif
  
 -	[ -f $(LICENSE_FILE) ] && cp -fr -t $(DOCUMENTSERVER) $(LICENSE_FILE) || true
-+	[ -f $(LICENSE_FILE) ] && cp -fr $(LICENSE_FILE) $(DOCUMENTSERVER) || true
++	[ -f $(LICENSE_FILE) ] && cp -fr $(DOCUMENTSERVER) $(LICENSE_FILE) || true
  
  	chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/x2t$(EXEC_EXT)
  	#chmod u+x $(DOCUMENTSERVER)/server/FileConverter/bin/docbuilder$(EXEC_EXT)
@@ -115,12 +123,12 @@
  
  	cd $(DOCUMENTSERVER)/npm && \
  		npm install && \
--		pkg ./node_modules/json -o json
-+		env PKG_CACHE_PATH=%%WRKDIR%%/.pkg-cache "%%WRKSRC%%/server/node_modules/.bin/pkg" ./node_modules/json -o json
+-		pkg ./node_modules/json $(PKG_TARGET:%=-t %) -o json
++		env PKG_CACHE_PATH=%%WRKDIR%%/.pkg-cache "%%WRKSRC%%/server/node_modules/.bin/pkg" ./node_modules/json $(PKG_TARGET:%=-t %) -o json
  
  ifeq ($(PLATFORM),win)		
  	cd $(DOCUMENTSERVER)/npm && \
-@@ -369,7 +390,7 @@ endif		
+@@ -394,7 +416,7 @@ documentserver-example:
  
  documentserver-example:
  	mkdir -p $(DOCUMENTSERVER_EXAMPLE)
@@ -129,7 +137,7 @@
  	
  	mkdir -p $(DOCUMENTSERVER_EXAMPLE_CONFIG)
  
-@@ -378,7 +399,7 @@ documentserver-example:
+@@ -403,7 +425,7 @@ documentserver-example:
  	# Prevent for modification original config
  	chmod ug=r $(DOCUMENTSERVER_EXAMPLE_CONFIG)/*.json
  
@@ -138,33 +146,13 @@
  
  	echo "Done" > $@
  
-@@ -394,27 +415,27 @@ rpm/$(PACKAGE_NAME).spec : rpm/package.spec
+@@ -419,28 +441,6 @@ exe/$(PACKAGE_NAME).iss : exe/package.iss
  exe/$(PACKAGE_NAME).iss : exe/package.iss
  	mv -f $< $@
  
 -%.rpm: 
 -	mkdir -p $(@D)
-+#%.rpm: 
-+#	mkdir -p $(@D)
-+#
-+#	cd $(@D)/../../.. && rpmbuild \
-+#		-bb \
-+#		--define '_topdir $(@D)/../../../builddir' \
-+#		--define '_package_name $(PACKAGE_NAME)' \
-+#		--define '_product_version $(PRODUCT_VERSION)' \
-+#		--define '_build_number $(BUILD_NUMBER)' \
-+#		--define '_company_name $(COMPANY_NAME)' \
-+#		--define '_product_name $(PRODUCT_NAME)' \
-+#		--define '_publisher_name $(PUBLISHER_NAME)' \
-+#		--define '_publisher_url $(PUBLISHER_URL)' \
-+#		--define '_support_url $(SUPPORT_URL)' \
-+#		--define '_support_mail $(SUPPORT_MAIL)' \
-+#		--define '_company_name_low $(COMPANY_NAME_LOW)' \
-+#		--define '_product_name_low $(PRODUCT_NAME_LOW)' \
-+#		--define '_ds_prefix $(DS_PREFIX)' \
-+#		--define '_binary_payload w7.xzdio' \
-+#		$(PACKAGE_NAME).spec
- 
+-
 -	cd $(@D)/../../.. && rpmbuild \
 -		-bb \
 -		--define '_topdir $(@D)/../../../builddir' \
@@ -181,17 +169,18 @@
 -		--define '_product_name_low $(PRODUCT_NAME_LOW)' \
 -		--define '_ds_prefix $(DS_PREFIX)' \
 -		--define '_binary_payload w7.xzdio' \
+-		--target $(RPM_ARCH) \
 -		$(PACKAGE_NAME).spec
 -
  ifeq ($(COMPANY_NAME_LOW),onlyoffice)
  M4_PARAMS += -D M4_DS_EXAMPLE_ENABLE=1
  endif
-@@ -439,6 +460,8 @@ deb/debian/$(PACKAGE_NAME).links : deb/debian/package.
+@@ -471,6 +471,8 @@ $(DEB): $(DEB_DEPS) $(COMMON_DEPS) $(LINUX_DEPS) docum
  
  %.exe:
  	cd $(@D) && $(ISCC) $(ISCC_PARAMS) $(PACKAGE_NAME).iss
 +
 +freebsd: $(COMMON_DEPS) $(LINUX_DEPS) documentserver
  
- $(DEB): $(DEB_DEPS) $(COMMON_DEPS) $(LINUX_DEPS) documentserver documentserver-example
- 	cd deb && dpkg-buildpackage -b -uc -us --changes-option=-u.
+ $(EXE): $(WIN_DEPS) $(COMMON_DEPS) documentserver documentserver-example $(ISXDL) $(NGINX) $(PSQL) $(NSSM)
+ 

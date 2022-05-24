@@ -34,8 +34,8 @@ upgrade Document Server to a new version and all your changes will be lost.
     # service mysql-server start
     # mysql -u root -p -e "CREATE DATABASE onlyoffice DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;"
     # mysql -u root -p -e "CREATE USER 'onlyoffice'@'localhost' IDENTIFIED BY 'onlyoffice';"
-    # mysql -u root -p -e mysql -u root -p -e "GRANT ALL privileges ON  onlyoffice.* TO 'onlyoffice'@'localhost';"
-    # mysql -u onlyoffice -p < %%WWWDIR%%/documentserver/server/schema/mysql/createdb.sql
+    # mysql -u root -p -e "GRANT ALL privileges ON  onlyoffice.* TO 'onlyoffice'@'localhost';"
+    # mysql -u onlyoffice -D onlyoffice -p < %%WWWDIR%%/documentserver/server/schema/mysql/createdb.sql
 
 3. Create a new rabbitmq user for the ONLYOFFICE Document Server configuration (don't forget to change the password):
   # service rabbitmq start
@@ -63,6 +63,17 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
   - https://api.onlyoffice.com/editors/nextcloud
 
 7. Enjoy.
+EOM
+}
+{ type: upgrade
+  maximum_version: 7.1.0.215
+  message: <<EOM
+If you are upgrading onlyoffice-documentserver from a version prior to 7.1.0.215,
+you need to update the database schema:
+  For PostgreSQL:
+    psql -U postgres -d onlyoffice -f %%WWWDIR%%/documentserver/server/schema/postgresql/upgrade/upgradev710.sql
+  For MySQL:
+    mysql -u onlyoffice -D onlyoffice -p < %%WWWDIR%%/documentserver/server/schema/mysql/upgrade/upgradev710.sql
 EOM
 }
 ]

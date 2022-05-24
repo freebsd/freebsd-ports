@@ -5,10 +5,10 @@
  }
  
 +core_freebsd {
-+    #CONFIG += c++14
-+    #CONFIG += use_v8_monolith
-+    #DEFINES += V8_VERSION_87_PLUS
-+    #DEFINES += V8_COMPRESS_POINTERS
++    CONFIG += c++14
++    CONFIG += use_v8_monolith
++    DEFINES += V8_VERSION_89_PLUS
++    DEFINES += V8_COMPRESS_POINTERS
 +    use_v8_monolith {
 +        LIBS += -L$$CORE_V8_PATH_LIBS -lv8_monolith
 +    } else {
