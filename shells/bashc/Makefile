@@ -4,7 +4,7 @@ PORTNAME=	bashc
 PORTVERSION=	5.1.8
 CATEGORIES=	shells
 
-MAINTAINER=	ip@unixway.org
+MAINTAINER=	obscenum999@gmail.com
 COMMENT=	GNU Bourne Again shell extended with two-panel file manager
 
 LICENSE=	GPLv3
