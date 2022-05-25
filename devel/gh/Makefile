@@ -1,6 +1,6 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.0
+DISTVERSION=	2.11.1
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -27,12 +27,13 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.4:alecaivazis_survey_v2/vendor/github.com/Alec
 		cli:oauth:v0.9.0:cli_oauth/vendor/github.com/cli/oauth \
 		cli:safeexec:v1.0.0:cli_safeexec/vendor/github.com/cli/safeexec \
 		cli:shurcooL-graphql:v0.0.1:cli_shurcool_graphql/vendor/github.com/cli/shurcooL-graphql \
-		cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+		cpuguy83:go-md2man:v2.0.2:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		creack:pty:v1.1.18:creack_pty/vendor/github.com/creack/pty \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		gabriel-vasile:mimetype:v1.4.0:gabriel_vasile_mimetype/vendor/github.com/gabriel-vasile/mimetype \
+		go-check:check:788fd7840127:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:net:cd36cc0744dd:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:6242fa91716a:golang_oauth2/vendor/golang.org/x/oauth2 \
@@ -40,7 +41,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.4:alecaivazis_survey_v2/vendor/github.com/Alec
 		golang:sys:4e6760a101f9:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-		google:go-cmp:v0.5.7:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-cmp:v0.5.8:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
