@@ -17177,4 +17177,5 @@ java/openjdk13||2022-05-24|Has expired: EOLed since 31 march 2020
 java/openjdk14||2022-05-24|Has expired: EOLed since 30 september 2020
 java/openjdk15||2022-05-24|Has expired: EOLed since 31 march 2021
 java/openjdk16||2022-05-24|Has expired: EOLed since 30 September 2021
+sysutils/uefi-edk2-bhyve||2022-05-24|No more need for this port: please use sysutils/edk2 FLAVOR bhyve instead
 archivers/p7zip|archivers/7-zip|2022-05-25|Unmaintained for years and has known vulnerabilities. Use 7-Zip instead
