@@ -32,8 +32,6 @@ LIB_DEPENDS=	libR.so:math/R \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libyaml-cpp.so:devel/yaml-cpp
 
-BROKEN=		Fails to compile: Cannot find module 'fuse-box/sparky'
-
 FLAVORS=	desktop server
 FLAVOR?=	${FLAVORS:[1]}
 server_PKGNAMESUFFIX=	-server
