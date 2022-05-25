@@ -50,10 +50,10 @@ lib/cmake/flann/flann-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/flann/flann-targets.cmake
 lib/libflann.so
 lib/libflann.so.1.9
-lib/libflann.so.1.9.1
+lib/libflann.so.1.9.2
 lib/libflann_cpp.so
 lib/libflann_cpp.so.1.9
-lib/libflann_cpp.so.1.9.1
+lib/libflann_cpp.so.1.9.2
 lib/libflann_cpp_s.a
 lib/libflann_s.a
 libdata/pkgconfig/flann.pc
