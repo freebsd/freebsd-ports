@@ -1,7 +1,7 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 
 PORTNAME=	nspr
-DISTVERSION=	4.33
+DISTVERSION=	4.34
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/v${PORTVERSION}/src
 
