@@ -1,7 +1,7 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	njs
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.4
 CATEGORIES=	lang www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		cpe
 CPE_VENDOR=	f5
 
 USE_GITHUB=	yes
-GH_TUPLE=	nginx:njs:0.7.3
+GH_TUPLE=	nginx:njs:${DISTVERSION}
 HAS_CONFIGURE=	yes
 
 OPTIONS_DEFINE=		SSL
