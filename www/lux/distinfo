@@ -1,5 +1,5 @@
-TIMESTAMP = 1649190037
-SHA256 (go/www_lux/lux-v0.14.0/v0.14.0.mod) = 789987b6ce7508ffd8fa4b953a70a9ad6585e8b8c411ba4c181fd08cfc503649
-SIZE (go/www_lux/lux-v0.14.0/v0.14.0.mod) = 534
-SHA256 (go/www_lux/lux-v0.14.0/v0.14.0.zip) = 659654d1e8b89eee68277b3c6f0d6bf170bb71470202bcd9eac65b6fe762156a
-SIZE (go/www_lux/lux-v0.14.0/v0.14.0.zip) = 178845
+TIMESTAMP = 1653517384
+SHA256 (go/www_lux/lux-v0.15.0/v0.15.0.mod) = 8a0b00b4f75c8b7dcb53a55261be96b46ee968a42ae1736f1b2ae57eb9a49fee
+SIZE (go/www_lux/lux-v0.15.0/v0.15.0.mod) = 1663
+SHA256 (go/www_lux/lux-v0.15.0/v0.15.0.zip) = d526c10124866201b1474bd7cf7edefdb2df14f9987a3d458feb488bd100a316
+SIZE (go/www_lux/lux-v0.15.0/v0.15.0.zip) = 154814
