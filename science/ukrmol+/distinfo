@@ -1,3 +1,5 @@
-TIMESTAMP = 1653437446
+TIMESTAMP = 1653460437
 SHA256 (ukrmol-out-3.2.tar.gz) = 9d3acc132c4128957d0a34ac8700924d3efdb7b84e37107fad6f80ac840aee59
 SIZE (ukrmol-out-3.2.tar.gz) = 3722605
+SHA256 (ukrmol-in-3.2.tar.gz) = b93017d8d82a359a72f0f2326cef67c5499f3f97b518ec2a9befbfb214b5ecb4
+SIZE (ukrmol-in-3.2.tar.gz) = 8934306
