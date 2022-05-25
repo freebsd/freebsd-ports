@@ -1,7 +1,7 @@
 # Created by: DaJoob
 
 PORTNAME=	xfce4-taskmanager
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -12,9 +12,12 @@ COMMENT=	Task manager for the Xfce desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+
 USES=		gettext-tools gmake gnome localbase pkgconfig tar:bzip2 \
-		xorg
+		xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libwnck3
+USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11 xmu xt
 
 GNU_CONFIGURE=	yes

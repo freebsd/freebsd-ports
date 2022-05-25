@@ -9,6 +9,7 @@ share/icons/hicolor/scalable/actions/xc_crosshair.svg
 share/icons/hicolor/scalable/apps/org.xfce.taskmanager.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-taskmanager.mo
+%%NLS%%share/locale/az/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-taskmanager.mo
@@ -21,6 +22,7 @@ share/icons/hicolor/scalable/apps/org.xfce.taskmanager.svg
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/et/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfce4-taskmanager.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfce4-taskmanager.mo
