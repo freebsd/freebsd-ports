@@ -43,10 +43,4 @@ ZIP_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_LibZip
 # Override shared library version
 KDE_APPLICATIONS_SHLIB_VER=	${KDE_APPLICATIONS_VERSION}
 
-post-patch:
-	${REINPLACE_CMD} '/Program/s,"7z","7zz",' \
-		${WRKSRC}/plugins/cli7zplugin/cliplugin.cpp
-	${REINPLACE_CMD} 's,"7z","7zz",' \
-		${WRKSRC}/plugins/cli7zplugin/kerfuffle_cli7z.json.cmake
-
 .include <bsd.port.mk>
