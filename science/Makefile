@@ -91,6 +91,7 @@
     SUBDIR += fvcom-mpi
     SUBDIR += gabedit
     SUBDIR += gamess-us
+    SUBDIR += gbtolib
     SUBDIR += gchemutils
     SUBDIR += gdma
     SUBDIR += getdp
