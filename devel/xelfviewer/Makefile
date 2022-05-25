@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	${GH_PROJECT:[1]:tl}
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -13,21 +13,23 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		pkgconfig qt:5
 GNU_CONFIGURE=	yes
 USE_QT=		buildtools_build linguisttools_build qmake_build \
-		concurrent core gui opengl printsupport widgets
+		concurrent core gui opengl printsupport sql widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	horsicq
 GH_PROJECT=	XELFViewer ${GH_SUBDIR}
-GH_TAGNAME=	5ff8c2c:c 0fad74c:fd 80329f2:fw 2bda2e8:f 2188ddd:sa \
-		d78cf3a:ss df102be:xa aeb101e:xc 10936bc:xcf 34be4c1:xdex \
-		8375c3c:xd bfca683:xdw b8ed8c8:xdv 06d570a:xew 69bcc36:xfi \
-		b4d997b:xhw cb63607:xhv 00c267a:xmmw f271427:xo 2076a94:xq \
-		277f96b:xs 0d79ace:xst 8c45c23:s
+GH_TAGNAME=	8448386:c f4cd98d:fd a065f9a:fw a448cac:f fc10bcd:sa \
+		809fb94:ss 127005b:xa 0585048:xc 8e98be9:xcf 15a40bf:xdex \
+		2df3dd7:xd 1e0a59b:xdw cd38fa1:xdv a68562e:xew fa65f99:xfi \
+		e540a4f:xhw 52261be:xhe c32b205:xhv e8ddc3f:xidb \
+		fad1473:xmmw 8bfcd52:xo 2dc4373:xp 2290f6a:xq b09d881:xs \
+		1c55034:xst e13c104:xsw d6312c6:s
 GH_SUBDIR=	Controls:c FormatDialogs:fd FormatWidgets:fw Formats:f \
 		SpecAbstract:sa StaticScan:ss XArchive:xa XCapstone:xc \
 		XCppfilt:xcf XDEX:xdex XDemangle:xd XDemangleWidget:xdw \
 		XDisasmView:xdv XEntropyWidget:xew XFileInfo:xfi \
-		XHashWidget:xhw XHexView:xhv XMemoryMapWidget:xmmw \
-		XOptions:xo XQwt:xq XShortcuts:xs XStyles:xst signatures:s
+		XHashWidget:xhw XHexEdit:xhe XHexView:xhv XInfoDB:xidb \
+		XMemoryMapWidget:xmmw XOptions:xo XPDF:xp XQwt:xq \
+		XShortcuts:xs XStyles:xst XSymbolsWidget:xsw signatures:s
 
 post-extract:
 	@${CHMOD} +x ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
