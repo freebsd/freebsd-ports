@@ -134,7 +134,6 @@
     SUBDIR += p5-POE-Filter-Zlib
     SUBDIR += p5-PerlIO-gzip
     SUBDIR += p5-PerlIO-via-Bzip2
-    SUBDIR += p7zip
     SUBDIR += packddir
     SUBDIR += paq
     SUBDIR += par
