@@ -1,8 +1,11 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.22-13627 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gcd74fb6a6d
+DISTVERSION=	0.0.22-13648 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-ga9a1204ab9
 CATEGORIES=	emulators
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9c9194498e35.patch:-p1 # https://github.com/RPCS3/rpcs3/pull/12089
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
@@ -12,7 +15,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_ISCL=	${WRKSRC_cubeb}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
-BUILD_DEPENDS=	flatbuffers>=2.0.6,1:devel/flatbuffers
+BUILD_DEPENDS=	flatc:devel/flatbuffers
 LIB_DEPENDS=	libxxhash.so:devel/xxhash \
 		libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
