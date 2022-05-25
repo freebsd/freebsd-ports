@@ -394,6 +394,7 @@
     SUBDIR += thermofun
     SUBDIR += tinker
     SUBDIR += udunits
+    SUBDIR += ukrmol+
     SUBDIR += v_sim
     SUBDIR += vipster
     SUBDIR += vmd

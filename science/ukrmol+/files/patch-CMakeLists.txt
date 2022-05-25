@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-05-25 00:18:51 UTC
++++ CMakeLists.txt
+@@ -146,7 +146,7 @@ if(BUILD_TESTING)
+     add_subdirectory(tests/suite)
+ endif()
+ 
+-install(DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/doc" DESTINATION "${CMAKE_INSTALL_PREFIX}")
++install(DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/doc" DESTINATION "${FREEBSD_DOCSDIR}")
+ 
+ # -------------------------------------------------------------------------------------------------------#
+ # Define distribution release target (make dist)
