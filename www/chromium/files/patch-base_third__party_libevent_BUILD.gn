@@ -1,81 +1,24 @@
---- base/third_party/libevent/BUILD.gn.orig	2022-05-19 14:06:27 UTC
+--- base/third_party/libevent/BUILD.gn.orig	2022-05-25 19:07:37 UTC
 +++ base/third_party/libevent/BUILD.gn
-@@ -1,69 +1,15 @@
--# Copyright (c) 2013 The Chromium Authors. All rights reserved.
-+# Copyright 2016 The Chromium Authors. All rights reserved.
- # Use of this source code is governed by a BSD-style license that can be
- # found in the LICENSE file.
- 
--import("//build/config/nacl/config.gni")
-+import("//build/shim_headers.gni")
- 
--static_library("libevent") {
--  sources = [
--    "buffer.c",
--    "evbuffer.c",
--    "evdns.c",
--    "evdns.h",
--    "event-config.h",
--    "event-internal.h",
--    "event.c",
--    "event.h",
--    "event_tagging.c",
--    "evhttp.h",
--    "evrpc-internal.h",
--    "evrpc.c",
--    "evrpc.h",
--    "evsignal.h",
--    "evutil.c",
--    "evutil.h",
--    "http-internal.h",
--    "http.c",
--    "log.c",
--    "log.h",
--    "min_heap.h",
--    "poll.c",
--    "select.c",
--    "signal.c",
--    "strlcpy-internal.h",
--    "strlcpy.c",
--  ]
-+shim_headers("libevent_shim") {
-+  root_path = "."
-+  headers = [ "event.h" ]
-+}
- 
--  defines = [ "HAVE_CONFIG_H" ]
--
--  if (is_apple) {
--    sources += [
--      "kqueue.c",
--      "mac/config.h",
--      "mac/event-config.h",
--    ]
--    include_dirs = [ "mac" ]
+@@ -43,13 +43,20 @@ static_library("libevent") {
+       "mac/event-config.h",
+     ]
+     include_dirs = [ "mac" ]
 -  } else if (is_linux || is_chromeos) {
--    sources += [
--      "epoll.c",
--      "linux/config.h",
--      "linux/event-config.h",
--    ]
--    include_dirs = [ "linux" ]
--  } else if (is_android) {
--    sources += [
--      "android/config.h",
--      "android/event-config.h",
--      "epoll.c",
--    ]
--    include_dirs = [ "android" ]
--  }
--
--  if (!is_debug) {
--    configs -= [ "//build/config/compiler:default_optimization" ]
--    configs += [ "//build/config/compiler:optimize_max" ]
--  }
--
--  configs -= [ "//build/config/compiler:chromium_code" ]
--  configs += [ "//build/config/compiler:no_chromium_code" ]
-+source_set("libevent") {
-+  deps = [ ":libevent_shim" ]
-+  libs = [ "event" ]
- }
++  } else if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "epoll.c",
+       "linux/config.h",
+       "linux/event-config.h",
+     ]
+     include_dirs = [ "linux" ]
++  } else if (is_bsd) {
++    sources += [
++      "kqueue.c",
++      "freebsd/config.h",
++      "freebsd/event-config.h",
++    ]
++    include_dirs = [ "freebsd" ]
+   } else if (is_android) {
+     sources += [
+       "android/config.h",
