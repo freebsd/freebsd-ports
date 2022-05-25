@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@michael-fausten.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows to run callbacks after transaction is committed
 
 LICENSE=	MIT

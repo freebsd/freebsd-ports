@@ -3,7 +3,7 @@ PORTVERSION=	0.5.9
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@michael-fausten.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to parse plain text email content
 
 LICENSE=	MIT

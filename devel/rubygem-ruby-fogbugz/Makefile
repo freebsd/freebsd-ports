@@ -3,7 +3,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@michael-fausten.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Ruby wrapper for the Fogbugz XML API
 
 LICENSE=	MIT

@@ -6,7 +6,7 @@ DISTVERSION=	3.1.34
 CATEGORIES=	www
 PKGNAMESUFFIX=	3${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	ports@michael-fausten.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP compiling template engine
 
 LICENSE=	LGPL21+
