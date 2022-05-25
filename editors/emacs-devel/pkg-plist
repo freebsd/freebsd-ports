@@ -2342,6 +2342,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/ind-util.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/indian.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/indian.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/language/indonesian.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/language/indonesian.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/japan-util.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/japan-util.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/japanese.el.gz
@@ -2358,6 +2360,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/lao.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/misc-lang.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/misc-lang.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/language/philippine.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/language/philippine.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/pinyin.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/pinyin.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/language/romanian.el.gz
@@ -2458,6 +2462,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/hebrew.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/indian.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/indian.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/indonesian.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/indonesian.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/ipa-praat.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/ipa-praat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/ipa.el.gz
@@ -2478,6 +2484,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/lrt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/persian.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/persian.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/philippine.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/philippine.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/programmer-dvorak.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/programmer-dvorak.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/py-punct.el.gz
