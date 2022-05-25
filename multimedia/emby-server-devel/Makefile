@@ -1,5 +1,5 @@
 PORTNAME=	emby-server
-DISTVERSION=	4.7.0.40
+DISTVERSION=	4.8.0.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -119,7 +119,7 @@ X11_USES=		xorg magick:6
 X11_USES_OFF=		magick:6,nox11
 X11_USE=		xorg=x11
 
-FFVERSION=	2021_02_27
+FFVERSION=	2022_05_07
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/system

@@ -990,7 +990,6 @@ lib/emby-server/system/plugins/MusicBrainz.dll
 lib/emby-server/system/plugins/NfoMetadata.dll
 lib/emby-server/system/plugins/OMDb.dll
 lib/emby-server/system/plugins/OpenSubtitles.dll
-lib/emby-server/system/plugins/SchedulesDirect.dll
 lib/emby-server/system/plugins/StudioImages.dll
 lib/emby-server/system/plugins/Tvdb.dll
 lib/emby-server/system/x64/libSkiaSharp.dll
