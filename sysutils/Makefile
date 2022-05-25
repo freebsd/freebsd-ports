@@ -1583,6 +1583,7 @@
     SUBDIR += xstow
     SUBDIR += xsysstats
     SUBDIR += xvidcap
+    SUBDIR += yadf
     SUBDIR += yadm
     SUBDIR += yank
     SUBDIR += z
