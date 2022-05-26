@@ -1,5 +1,5 @@
 PORTNAME=	osc
-PORTVERSION=	0.177.0
+PORTVERSION=	0.178.0
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,10 +13,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>0:security/py-m2crypto@${PY_FLAVOR}
 USE_GITHUB=	yes
 GH_ACCOUNT=	openSUSE
 
-USES=		cpe python
+USES=		cpe python pytest
 USE_PYTHON=	autoplist distutils noflavors
 PLIST_FILES=	bin/osc
 NO_ARCH=	yes
+PYTEST_BROKEN_TESTS=	testPrdiffDiffstat
 
 CPE_VENDOR=	suse
 CPE_PRODUCT=	opensuse_osc
