@@ -1,6 +1,5 @@
 PORTNAME=	emby-server
-DISTVERSION=	4.6.7.0
-PORTREVISION=	2
+DISTVERSION=	4.7.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -27,6 +26,7 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	nasm:devel/nasm
 LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libass.so:multimedia/libass \
+		libchromaprint.so:audio/chromaprint \
 		libdav1d.so:multimedia/dav1d \
 		libdrm.so:graphics/libdrm \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -38,6 +38,7 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libopus.so:audio/opus \
 		libpng.so:graphics/png \
 		libraw.so:graphics/libraw \
+		libtesseract.so:graphics/tesseract \
 		libtheora.so:multimedia/libtheora \
 		libva.so:multimedia/libva \
 		libvorbis.so:audio/libvorbis \
@@ -64,6 +65,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--disable-v4l2-m2m \
 		--disable-vdpau \
 		--disable-xlib \
+		--enable-chromaprint \
 		--enable-fontconfig \
 		--enable-gnutls \
 		--enable-gpl \
@@ -76,6 +78,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--enable-libfribidi \
 		--enable-libmfx \
 		--enable-libopus \
+		--enable-libtesseract \
 		--enable-libtheora \
 		--enable-libvorbis \
 		--enable-libvpx \
@@ -115,7 +118,7 @@ X11_USES=		xorg magick:6
 X11_USES_OFF=		magick:6,nox11
 X11_USE=		xorg=x11
 
-FFVERSION=	2021_02_27
+FFVERSION=	2022_05_07
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/system
