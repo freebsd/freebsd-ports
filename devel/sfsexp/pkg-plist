@@ -1,10 +1,10 @@
-include/cstring.h
-include/faststack.h
-include/sexp.h
-include/sexp_errors.h
-include/sexp_memory.h
-include/sexp_ops.h
-include/sexp_vis.h
+include/sfsexp/cstring.h
+include/sfsexp/faststack.h
+include/sfsexp/sexp.h
+include/sfsexp/sexp_errors.h
+include/sfsexp/sexp_memory.h
+include/sfsexp/sexp_ops.h
+include/sfsexp/sexp_vis.h
 lib/libsexp.a
 lib/libsexp.so
 lib/libsexp.so.1
