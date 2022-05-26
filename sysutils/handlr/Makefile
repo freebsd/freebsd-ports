@@ -1,7 +1,7 @@
 PORTNAME=	handlr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	sec.research.2005@gmail.com
@@ -176,7 +176,24 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 
 PLIST_FILES=	bin/handlr
 
+OPTIONS_DEFINE=		COMPLETIONS
+OPTIONS_DEFAULT=	COMPLETIONS
+
+COMPLETIONS_DESC=	Install bash, zsh, and fish shell completions
+
+COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
+				share/fish/vendor_completions.d/${PORTNAME}.fish \
+				share/zsh/site-functions/_${PORTNAME}
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/handlr
+
+post-install-COMPLETIONS-on:
+	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/completions/${PORTNAME}.fish \
+		${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/${PORTNAME}.fish
+	${INSTALL_DATA} ${WRKSRC}/completions/_${PORTNAME} \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 .include <bsd.port.mk>
