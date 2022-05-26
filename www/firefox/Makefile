@@ -11,9 +11,10 @@ DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
+# Attention: 2022Q2 is still on icu 70 and uses the embedded ICU
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nss>=3.78:security/nss \
-		icu>=70.1:devel/icu \
+		icu>=71.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=4.1.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
