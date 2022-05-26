@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 		--disable-mtab --with-fuse=external --disable-ldconfig
-CPPFLAGS+=	-I${WRKSRC}/include/ntfs-3g/
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	LOCK UBLIO DOCS
 OPTIONS_DEFAULT=LOCK UBLIO
@@ -41,9 +41,6 @@ post-patch:
 		${WRKSRC}/libntfs-3g/security.c
 	@${REINPLACE_CMD} -e 's|\($$(AM_CFLAGS)\) \(-I$$(top_srcdir)/include/ntfs-3g\)|\2 \1|; \
 		/install-exec-hook:/,/^$$/ s|^@.*||' ${WRKSRC}/libntfs-3g/Makefile.in
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libntfs-3g.so
 
 post-install-DOCS-on:
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}/

@@ -1,24 +1,25 @@
---- configure.orig	2015-03-14 14:10:24 UTC
+--- configure.orig	2017-03-23 09:42:56 UTC
 +++ configure
-@@ -3256,7 +3256,7 @@ if test "${enable_mount_helper+set}" = s
- else
+@@ -12871,7 +12871,7 @@ $as_echo_n "checking fuse compatibility... " >&6; }
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking fuse compatibility" >&5
+ $as_echo_n "checking fuse compatibility... " >&6; }
+ 	case "${target_os}" in
+-	linux*|solaris*)
++	freebsd*|linux*|solaris*)
  
- 		case "${target_os}" in
--			linux*) enable_mount_helper="yes" ;;
-+			linux*|freebsd*) enable_mount_helper="yes" ;;
- 			*) enable_mount_helper="no" ;;
- 		esac
- 
-@@ -12871,7 +12871,7 @@ fi
+ # Check whether --with-fuse was given.
+ if test "${with_fuse+set}" = set; then :
+@@ -12885,9 +12885,6 @@ fi
+ 	darwin*|netbsd*|kfreebsd*-gnu)
  		with_fuse="external"
  		;;
- 	freebsd*)
+-	freebsd*)
 -		as_fn_error $? "Please see FreeBSD support at http://www.freshports.org/sysutils/fusefs-ntfs" "$LINENO" 5
-+		with_fuse="external"
- 		;;
+-		;;
  	*)
  		as_fn_error $? "ntfs-3g can be built for Linux, FreeBSD, Mac OS X, NetBSD, and Solaris only." "$LINENO" 5
-@@ -15014,7 +15014,7 @@ if test "x${DISTCHECK_HACK}" != "x"; the
+ 		;;
+@@ -15177,7 +15174,7 @@ fi
  fi
  
  # Settings
