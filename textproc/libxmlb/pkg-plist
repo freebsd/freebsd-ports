@@ -1,3 +1,4 @@
+bin/xb-tool
 include/libxmlb-2/libxmlb/xb-builder-fixup.h
 include/libxmlb-2/libxmlb/xb-builder-node.h
 include/libxmlb-2/libxmlb/xb-builder-source-ctx.h
@@ -25,7 +26,7 @@ lib/libxmlb.so.2.0.0
 libdata/pkgconfig/xmlb.pc
 libexec/installed-tests/libxmlb/test.xml.gz.gz.gz
 libexec/installed-tests/libxmlb/xb-self-test
-libexec/xb-tool
+man/man1/xb-tool.1.gz
 share/gir-1.0/Xmlb-2.0.gir
 share/gtk-doc/html/libxmlb/annotation-glossary.html
 share/gtk-doc/html/libxmlb/api-index-full.html
