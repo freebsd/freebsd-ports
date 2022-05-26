@@ -15,6 +15,9 @@ COMMENT=	Compatibility plugin for Mozilla NPAPI plugins
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, last release in 2011 and upstream is dead. NPAPI plugins are now obsolete and depends on deprecated library GTK 2
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 CONFLICTS=	nspluginwrapper-1.3.*
