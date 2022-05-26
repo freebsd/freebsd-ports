@@ -17191,3 +17191,4 @@ www/rubygem-faraday110|www/rubygem-faraday|2022-06-03|Obsolete, please use www/r
 www/npm-node17|www/npm-node18|2022-06-03|Renamed for www/node update to v18
 www/yarn-node17|www/yarn-node18|2022-06-03|Renamed for www/node update to v18
 security/keepassx-devel||2022-06-05|Has expired: KeePassX had been stopped development/maintenance, please consider using security/keepassxc instead
+sysutils/uefi-edk2-qemu|sysutils/edk2@qemu|2022-06-05|No more need for this port: please use sysutils/edk2 FLAVOR qemu instead
