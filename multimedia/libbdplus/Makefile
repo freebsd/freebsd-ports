@@ -1,8 +1,7 @@
 # Created by: kamikaze@bsdforen.de
 
 PORTNAME=	libbdplus
-DISTVERSION=	0.1.2
-PORTREVISION=	1
+DISTVERSION=	0.2.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
