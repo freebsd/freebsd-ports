@@ -788,6 +788,7 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ComboBox.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ComboBoxInput.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ContextMenu.qml
+%%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/FilterComboBox.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/InfinityLoopIndicator.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ItemDelegate.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/LinkIndicator2D.qml
@@ -810,6 +811,7 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SectionLayout.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Slider.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SliderPopup.qml
+%%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SortFilterModel.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBox.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBoxIndicator.qml
 %%DATADIR%%/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBoxInput.qml

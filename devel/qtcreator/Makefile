@@ -1,7 +1,7 @@
 # Created by: Kris Moore <kris@pcbsd.org>
 
 PORTNAME=	qtcreator
-DISTVERSION=	7.0.1
+DISTVERSION=	7.0.2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
