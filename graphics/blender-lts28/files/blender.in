@@ -1,6 +1,0 @@
-#!/bin/sh
-
-export BLENDER_SYSTEM_SCRIPTS=%%DATADIR%%/2.83/scripts
-export BLENDER_SYSTEM_DATAFILES=%%DATADIR%%/2.83/datafiles
-
-exec %%PREFIX%%/bin/blender-bin-lts28 "$@"

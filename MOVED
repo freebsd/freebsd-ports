@@ -15990,7 +15990,6 @@ www/p5-RT-Extension-MandatoryOnTransition@rt42||2021-02-02|Removed, currently on
 www/p5-RT-Extension-RepeatTicket@rt42||2021-02-02|Removed, currently only supported with www/rt44
 www/p5-RT-Extension-RepeatTicket@rt44|www/p5-RT-Extension-RepeatTicket|2021-02-02|Unflavor, currently only supported with www/rt44
 www/p5-RTx-Calendar@rt42||2021-02-02|Removed, currently only supported with www/rt44
-www/p5-RTx-Calendar@rt44|www/p5-RTx-Calendar|2021-02-02|Unflavor, currently only supported with www/rt44
 www/rt42|www/rt44|2021-02-02|Has expired: Upstream support is ending; please migrate to RT-5.0 (www/rt50)
 www/opera||2021-02-04|Abandonware since 2013
 www/opera-linuxplugins||2021-02-04|Depends on opera browser
@@ -16961,7 +16960,7 @@ textproc/rarian||2022-03-15|Abandonware
 devel/ORBit2||2022-03-15|Gnome2 library unused anymore
 games/pushover|games/domino-chain|2022-03-17|Chase upstream rename
 graphics/darktable38|graphics/darktable|2022-03-19|Darktable was upgraded to 3.8, separate port no longer needed
-security/1password-client-devel|security/1password-client2|2022-03-19|cli version 2 is now released.
+security/1password-client-devel|security/1password-client2|2022-03-19|cli version 2 is now released
 x11-toolkits/pangoxsl||2022-03-20|Has expired: Abandonware and not used by any port
 print/lgrind||2022-03-22|Has expired: Abandonware as last release was in 2001
 devel/py-decorator4||2022-03-22|Has expired: Legacy version, use devel/py-decorator instead
@@ -17008,7 +17007,7 @@ security/vinetto||2022-03-31|Has expired: Obsolete, targets deprecated Windows o
 security/pbnj||2022-03-31|Has expired: Abandonware, last release in 2006 and reported broken upstream in 2017 upstream
 databases/jasperreports||2022-03-31|Has expired: Unsupported by upstream, released in 2013
 security/retranslator||2022-03-31|Has expired: Deprecated upstream (EOL)
-security/cp2fwb||2022-03-31|Has expired: Abandonware, used with deprecated software Firewall Builder.
+security/cp2fwb||2022-03-31|Has expired: Abandonware, used with deprecated software Firewall Builder
 security/webscarab||2022-03-31|Has expired: Deprecated by upstream in 2014
 security/pscan||2022-03-31|Has expired: Abandonware, last release in 2000
 security/vnccrack||2022-03-31|Has expired: Outdated and abandoned, last release in 2008. Upstream is at 2.1 while version in ports is 1.0.0
@@ -17179,3 +17178,4 @@ java/openjdk15||2022-05-24|Has expired: EOLed since 31 march 2021
 java/openjdk16||2022-05-24|Has expired: EOLed since 30 September 2021
 sysutils/uefi-edk2-bhyve||2022-05-24|No more need for this port: please use sysutils/edk2 FLAVOR bhyve instead
 archivers/p7zip|archivers/7-zip|2022-05-25|Unmaintained for years and has known vulnerabilities. Use 7-Zip instead
+graphics/blender-lts28|graphics/blender-lts29|2022-05-26|Has expired: EOLed
