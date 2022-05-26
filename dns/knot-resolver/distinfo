@@ -1,3 +1,3 @@
-TIMESTAMP = 1641819527
-SHA256 (knot-resolver-5.4.4.tar.xz) = 588964319e943679d391cc9c886d40ef858ecd9b33ae160023b4e2b5182b2cea
-SIZE (knot-resolver-5.4.4.tar.xz) = 1900108
+TIMESTAMP = 1653400079
+SHA256 (knot-resolver-5.5.0.tar.xz) = 4e6f48c74d955f143d603f6072670cb41ab9acdd95d4455d6e74b6908562c55a
+SIZE (knot-resolver-5.5.0.tar.xz) = 1919360
