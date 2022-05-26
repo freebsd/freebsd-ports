@@ -3,7 +3,7 @@
 PORTNAME=	ntfs
 PORTVERSION=	2017.3.23
 CATEGORIES=	sysutils
-MASTER_SITES=	http://tuxera.com/opensource/
+MASTER_SITES=	https://download.tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	${PORTNAME}-3g_ntfsprogs-${PORTVERSION}
 
@@ -51,8 +51,8 @@ post-patch:
 		${WRKSRC}/libntfs-3g/object_id.c \
 		${WRKSRC}/libntfs-3g/reparse.c \
 		${WRKSRC}/libntfs-3g/security.c
-	@${REINPLACE_CMD} -e 's|\($$(AM_CFLAGS)\) \(-I$$(top_srcdir)/include/ntfs-3g\)|\2 \1|; \
-		/install-exec-hook:/,/^$$/ s|^@.*||' ${WRKSRC}/libntfs-3g/Makefile.in
+	@${REINPLACE_CMD} -e '/$$(MAKE).*install-exec-hook/d' \
+		${WRKSRC}/libntfs-3g/Makefile.in
 
 post-install-DOCS-on:
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}/
