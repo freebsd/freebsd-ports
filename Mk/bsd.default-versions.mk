@@ -90,7 +90,7 @@ MONO_DEFAULT=		5.10
 MYSQL_DEFAULT?=		5.7
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
-# Possible values: 5.32, 5.34, devel
+# Possible values: 5.32, 5.34, 5.36, devel
 .  if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
 PERL5_DEFAULT?=		5.32

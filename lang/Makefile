@@ -251,6 +251,7 @@
     SUBDIR += perl5-devel
     SUBDIR += perl5.32
     SUBDIR += perl5.34
+    SUBDIR += perl5.36
     SUBDIR += petite-chez
     SUBDIR += pfe
     SUBDIR += pharo
