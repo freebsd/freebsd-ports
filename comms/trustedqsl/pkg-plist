@@ -10,6 +10,7 @@ include/tqslerrno.h
 include/tqsllib.h
 lib/libtqsllib.so
 man/man5/tqsl.5.gz
+share/TrustedQSL/cab_modes.dat
 share/TrustedQSL/config.xml
 share/TrustedQSL/help/tqslapp/BrokenCert.bmp
 share/TrustedQSL/help/tqslapp/CertProp.bmp
@@ -33,6 +34,7 @@ share/TrustedQSL/help/tqslapp/addcertreq.htm
 share/TrustedQSL/help/tqslapp/additional-info.htm
 share/TrustedQSL/help/tqslapp/addstnl0.bmp
 share/TrustedQSL/help/tqslapp/backuprestore.htm
+share/TrustedQSL/help/tqslapp/cab-modes.htm
 share/TrustedQSL/help/tqslapp/cabrillo.htm
 share/TrustedQSL/help/tqslapp/certaccept.htm
 share/TrustedQSL/help/tqslapp/certaccept1.bmp
@@ -86,6 +88,7 @@ share/TrustedQSL/help/tqslapp/pref-cab.htm
 share/TrustedQSL/help/tqslapp/pref-cab1.bmp
 share/TrustedQSL/help/tqslapp/pref-cab2.bmp
 share/TrustedQSL/help/tqslapp/pref-cab3.bmp
+share/TrustedQSL/help/tqslapp/pref-log.htm
 share/TrustedQSL/help/tqslapp/pref-opt.bmp
 share/TrustedQSL/help/tqslapp/pref-opt.htm
 share/TrustedQSL/help/tqslapp/primary.htm
@@ -127,6 +130,7 @@ share/TrustedQSL/help/tqslapp/unlock.htm
 share/TrustedQSL/help/tqslapp/update.htm
 share/TrustedQSL/help/tqslapp/update1.bmp
 share/TrustedQSL/help/tqslapp/update2.bmp
+share/TrustedQSL/languages.dat
 share/locale/de/LC_MESSAGES/tqslapp.mo
 share/locale/es/LC_MESSAGES/tqslapp.mo
 share/locale/fi/LC_MESSAGES/tqslapp.mo
@@ -136,5 +140,6 @@ share/locale/it/LC_MESSAGES/tqslapp.mo
 share/locale/ja/LC_MESSAGES/tqslapp.mo
 share/locale/pt/LC_MESSAGES/tqslapp.mo
 share/locale/ru/LC_MESSAGES/tqslapp.mo
-share/locale/zh/LC_MESSAGES/tqslapp.mo
+share/locale/zh_CN/LC_MESSAGES/tqslapp.mo
+share/locale/zh_TW/LC_MESSAGES/tqslapp.mo
 share/pixmaps/TrustedQSL.png
