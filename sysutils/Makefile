@@ -1474,7 +1474,6 @@
     SUBDIR += ucspi-tcp
     SUBDIR += ucspi-unix
     SUBDIR += udfclient
-    SUBDIR += uefi-edk2-bhyve
     SUBDIR += uefi-edk2-bhyve-csm
     SUBDIR += uefi-edk2-qemu
     SUBDIR += ufetch
