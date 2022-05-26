@@ -1,7 +1,7 @@
 # Created by: Brian Somers <brian@FreeBSD.org>
 
 PORTNAME=	leafnode
-DISTVERSION=	1.11.12
+DISTVERSION=	1.12.0
 CATEGORIES=	news
 MASTER_SITES=	SF \
 		LOCAL/mandree/
@@ -11,7 +11,7 @@ COMMENT=	NNTP package for offline news caching and reading
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		cpe tar:xz
 GNU_CONFIGURE=	yes
@@ -49,10 +49,10 @@ MAN8DIR_DE=	${MAN8PREFIX}/man/de.ISO8859-1/man8
 
 DOCS=		ADD-ONS ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
 		INSTALL NEWS README ChangeLog.old README-FQDN README-FQDN.html \
-		README-daemontools leafnode.cron.daily leafnode-SA-2002-01.txt \
+		leafnode.cron.daily leafnode-SA-2002-01.txt \
 		leafnode-SA-2003-01.txt leafnode-SA-2004-01.txt \
 		leafnode-SA-2005-01.txt leafnode-SA-2005-02.txt KNOWNBUGS
-DOCS_DE=	INSTALL_de LIESMICH-daemontools README README_de
+DOCS_DE=	INSTALL_de README README_de
 
 .if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
@@ -67,7 +67,7 @@ pre-configure:
 	@${ECHO_MSG}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/UNINSTALL-daemontools ${STAGEDIR}${PREFIX}/etc/leafnode/
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
