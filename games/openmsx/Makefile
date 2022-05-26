@@ -1,12 +1,9 @@
 # Created by: Ilya A. Arhipov <admin@gorodkirov.ru>
 
 PORTNAME=	openmsx
-PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTVERSION=	0.4.2
 CATEGORIES=	games
-MASTER_SITES=	http://hu.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
-		http://us.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
-		http://cz.binaries.openttd.org/openttd/binaries/extra/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=   https://cdn.openttd.org/${PORTNAME}-releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 PKGNAMEPREFIX=	openttd-
 
@@ -22,8 +19,12 @@ NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/openmsx-${PORTVERSION}
 
+post-extract:
+	@cd ${WRKDIR} && tar -xf ${PORTNAME}-${PORTVERSION}.tar
+
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/openttd/baseset/openmsx
-	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${PREFIX}/share/openttd/baseset/openmsx
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/openttd/baseset/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/*.mid \
+		${STAGEDIR}${PREFIX}/share/openttd/baseset/${PORTNAME}
 
 .include <bsd.port.mk>
