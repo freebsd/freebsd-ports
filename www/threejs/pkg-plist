@@ -237,6 +237,8 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/fog_pars_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/fog_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/gradientmap_pars_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/iridescence_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/iridescence_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/lightmap_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/lightmap_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/lights_fragment_begin.glsl.js
