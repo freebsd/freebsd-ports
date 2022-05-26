@@ -65,6 +65,14 @@ SDL_USE=		SDL=sdl
 SNDIO_CMAKE_BOOL=	WANT_SNDIO
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_SUB=	LINUXSAMPLER=""
+.else
+PLIST_SUB=	LINUXSAMPLER="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|/usr|${LOCALBASE}|g' ${WRKSRC}/src/core/ConfigManager.cpp
 	@${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
