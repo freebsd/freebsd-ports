@@ -9,6 +9,9 @@ MASTER_SITES=	SF/urlget/Urlgfe%20%28legacy%29/${PORTVERSION}
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Download manager
 
+DEPRECATE=	Outdated and deprecated upstream, last release was in 2008 (1.0.3) and it depends on deprecated library GTK 2
+EXPIRATION_DATE=2022-06-30
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
