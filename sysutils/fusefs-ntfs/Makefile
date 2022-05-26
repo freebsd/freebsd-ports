@@ -22,10 +22,22 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 		--disable-mtab --with-fuse=external --disable-ldconfig
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	LOCK UBLIO DOCS
-OPTIONS_DEFAULT=LOCK UBLIO
+OPTIONS_DEFINE=	CRYPTO DOCS EXTRAS LOCK UBLIO
+OPTIONS_DEFAULT=EXTRAS LOCK UBLIO
+OPTIONS_SUB=	yes
+
+CRYPTO_DESC=	Enable crypto-related code and utilities
+CRYPTO_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+			libgnutls.so:security/gnutls \
+			libgpg-error.so:security/libgpg-error
+CRYPTO_CONFIGURE_ON=	--enable-crypto
+
+EXTRAS_DESC=	Build and install extra NTFS utilities
+EXTRAS_CONFIGURE_ON=	--enable-extras
+
 LOCK_DESC=	Lock the device when mounting (avoids access)
 LOCK_CFLAGS=	-DUSE_LOCK
+
 UBLIO_DESC=	Enable user space cache for improved speed
 UBLIO_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ublio
 UBLIO_LIB_DEPENDS=	libublio.so:devel/libublio

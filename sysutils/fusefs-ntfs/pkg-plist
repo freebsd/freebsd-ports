@@ -4,9 +4,15 @@ bin/ntfs-3g.probe
 bin/ntfscat
 bin/ntfscluster
 bin/ntfscmp
+%%CRYPTO%%bin/ntfsdecrypt
 bin/ntfsfix
 bin/ntfsinfo
 bin/ntfsls
+%%EXTRAS%%bin/ntfsrecover
+%%EXTRAS%%bin/ntfssecaudit
+%%EXTRAS%%bin/ntfstruncate
+%%EXTRAS%%bin/ntfsusermap
+%%EXTRAS%%bin/ntfswipe
 include/ntfs-3g/acls.h
 include/ntfs-3g/attrib.h
 include/ntfs-3g/attrlist.h
@@ -77,10 +83,8 @@ sbin/mkntfs
 sbin/ntfsclone
 sbin/ntfscp
 sbin/ntfslabel
-sbin/ntfsrecover
 sbin/ntfsresize
 sbin/ntfsundelete
-sbin/ntfsusermap
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 @dir lib/ntfs-3g
