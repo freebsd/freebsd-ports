@@ -1,13 +1,13 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
 
 PORTNAME=	zint
-PORTVERSION=	2.10.0
+PORTVERSION=	2.11.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Zint Barcode Generator
+COMMENT=	Barcode generator (library and utilities)
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -18,6 +18,7 @@ USES=		cmake compiler:c++11-lang cpe qt:5
 USE_LDCONFIG=	yes
 USE_QT=		buildtools_build qmake_build uitools_build core gui \
 		widgets xml
+NO_WRKSUBDIR=	yes
 
 DESKTOP_ENTRIES="Zint" "Barcode generator" "" "zint-qt" "" false
 
