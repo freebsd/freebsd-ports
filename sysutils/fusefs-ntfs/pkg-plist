@@ -4,7 +4,7 @@ bin/ntfs-3g.probe
 bin/ntfscat
 bin/ntfscluster
 bin/ntfscmp
-%%CRYPTO%%bin/ntfsdecrypt
+%%CRYPTO%%%%EXTRAS%%bin/ntfsdecrypt
 bin/ntfsfix
 bin/ntfsinfo
 bin/ntfsls
@@ -54,8 +54,8 @@ include/ntfs-3g/volume.h
 include/ntfs-3g/xattrs.h
 lib/libntfs-3g.a
 lib/libntfs-3g.so
-lib/libntfs-3g.so.88
-lib/libntfs-3g.so.88.0.0
+lib/libntfs-3g.so.89
+lib/libntfs-3g.so.89.0.0
 libdata/pkgconfig/libntfs-3g.pc
 man/man8/mkntfs.8.gz
 man/man8/ntfs-3g.8.gz

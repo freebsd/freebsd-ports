@@ -1,7 +1,7 @@
 # Created by: Max Khon
 
 PORTNAME=	ntfs
-PORTVERSION=	2017.3.23
+PORTVERSION=	2022.5.17
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
