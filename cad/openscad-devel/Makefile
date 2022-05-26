@@ -1,13 +1,13 @@
 # Created by: Michael Reifenberger <mr@FreeBSD.org>
 
 PORTNAME=	openscad
-PORTVERSION=	2021.02.09
-PORTREVISION=	12
+PORTVERSION=	2022.05.20
+#PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	cc49ad8dac24.patch:-p1
+#PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+#PATCHFILES+=	cc49ad8dac24.patch:-p1
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller #'
@@ -30,21 +30,24 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 
 CONFLICTS=	openscad
 
-USES=		bison compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
-		gl gnome pkgconfig qmake qt:5 shared-mime-info xorg
+USES=		bison cmake compiler:c++14-lang cpe desktop-file-utils eigen:3 gettext \
+		gl gnome pkgconfig qt:5 shared-mime-info xorg
 USE_GITHUB=	yes
 USE_GL=		gl glu glew
-USE_GNOME=	glib20 libxml2
+USE_GNOME=	cairo glib20 libxml2
 USE_QT=		buildtools_build core concurrent_build dbus gui multimedia widgets
 USE_XORG=	x11
-GH_TAGNAME=	63a7c77740030c63d646eb0684ba6947eecb0db7
-QMAKE_ARGS=	CONFIG+="experimental" VERSION=${PORTVERSION}
+GH_ACCOUNT=	microsoft:mimalloc
+GH_PROJECT=	MCAD:mcad mimalloc:mimalloc
+GH_TAGNAME=	6aae7963498675dfb5bedaaef2cb8e56bdcddcab bd0a7ba3f042bfbced5ca1894b236cea08904e26:mcad v2.0.3:mimalloc
+GH_SUBDIR=	libraries/MCAD:mcad submodules/mimalloc:mimalloc
+#QMAKE_ARGS=	CONFIG+="experimental" VERSION=${PORTVERSION}
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
-LDFLAGS+=	-Wl,--as-needed
+LDFLAGS+=	-Wl,--as-needed -L${LOCALBASE}/lib
 
-post-patch:
-	@${REINPLACE_CMD} 's/-libusb//' ${WRKSRC}/features/hidapi.prf
-	@${REINPLACE_CMD} -e 's,share/man,man,' \
-		${WRKSRC}/openscad.pro
+#post-patch:
+#	@${REINPLACE_CMD} 's/-libusb//' ${WRKSRC}/features/hidapi.prf
+#	@${REINPLACE_CMD} -e 's,share/man,man,' \
+#		${WRKSRC}/openscad.pro
 
 .include <bsd.port.mk>
