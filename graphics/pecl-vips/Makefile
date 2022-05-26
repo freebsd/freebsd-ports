@@ -1,8 +1,7 @@
 # Created by: punkt.de Hosting Team <mops@punkt.de>
 
 PORTNAME=	vips
-PORTVERSION=	1.0.10
-PORTREVISION=	1
+PORTVERSION=	1.0.13
 CATEGORIES=	graphics
 
 MAINTAINER=	mops@punkt.de
