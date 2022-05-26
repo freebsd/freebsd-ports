@@ -13,6 +13,9 @@ COMMENT=	Full featured GTK2 client for musicpd
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, last release in 2011 and upstream is dead
+EXPIRATION_DATE=2022-06-30
+
 BUILD_DEPENDS=	gob2:devel/gob2 \
 		valac:lang/vala
 LIB_DEPENDS=	libmpd.so:audio/libmpd \

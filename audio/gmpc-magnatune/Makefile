@@ -9,6 +9,9 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Magnatune plugin lets you preview music from Magnatune
 
+DEPRECATED=	Abandonware, last release in 2011 and upstream is dead
+EXPIRATION_DATE=2022-06-30
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
