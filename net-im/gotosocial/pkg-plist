@@ -17,6 +17,14 @@
 %%WWWDIR%%/assets/logo.png
 %%WWWDIR%%/assets/status.css
 %%WWWDIR%%/assets/tusky.svg
+%%WWWDIR%%/assets/default_avatars/GoToSocial_icon1.svg
+%%WWWDIR%%/assets/default_avatars/GoToSocial_icon2.svg
+%%WWWDIR%%/assets/default_avatars/GoToSocial_icon3.svg
+%%WWWDIR%%/assets/default_avatars/GoToSocial_icon4.svg
+%%WWWDIR%%/assets/default_avatars/GoToSocial_icon5.svg
+%%WWWDIR%%/assets/default_avatars/GoToSocial_icon6.svg
+%%WWWDIR%%/assets/profile.css
+%%WWWDIR%%/template/profile.tmpl
 %%WWWDIR%%/template/404.tmpl
 %%WWWDIR%%/template/authorize.tmpl
 %%WWWDIR%%/template/confirmed.tmpl

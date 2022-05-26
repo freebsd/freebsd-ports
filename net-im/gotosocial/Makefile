@@ -1,6 +1,6 @@
 PORTNAME=	gotosocial
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
+DISTVERSION=	0.3.4
 CATEGORIES=	net-im
 
 MAINTAINER=	me+freebsd@igalic.co
@@ -17,7 +17,7 @@ USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	superseriousbusiness
 # When rebuilding yourself, please set this:
-#GH_TAGNAME=	40be88ec609c9b5352cbb7d38fd70ff7c6a233a5
+#GH_TAGNAME=	f848aaa81f04666dae29e0bb85ccf31d30574de7
 
 USERS=		gotosocial
 GROUPS=		gotosocial
