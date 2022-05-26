@@ -36,6 +36,7 @@ share/applications/cloudcompare.desktop
 %%PLUGINS%%%%DATADIR%%/shaders/EDL/edl_shade.vert
 %%PLUGINS%%%%DATADIR%%/shaders/SSAO/ssao.frag
 %%PLUGINS%%%%DATADIR%%/shaders/SSAO/ssao.vert
+%%DATADIR%%/translations/CloudCompare_chs.qm
 %%DATADIR%%/translations/CloudCompare_de.qm
 %%DATADIR%%/translations/CloudCompare_es_AR.qm
 %%DATADIR%%/translations/CloudCompare_fr.qm
