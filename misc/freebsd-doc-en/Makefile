@@ -1,7 +1,7 @@
 # Created by: Marc Fonvieille <blackend@FreeBSD.org>
 
 PORTNAME=	freebsd-doc
-PORTVERSION=	20220326
+PORTVERSION=	20220527
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -54,6 +54,10 @@ DOCFORMAT+=	${O:tl}
 PLIST_FORMATS+=	${O:tl}
 .endif
 .endfor
+
+.if ${PORT_OPTIONS:MPDF}
+BUILD_DEPENDS+=	asciidoctor-pdf:textproc/rubygem-asciidoctor-pdf
+.endif
 
 # when html is defined as the format, add HTML_COMMON.
 .if ${PORT_OPTIONS:MHTML}
