@@ -2,6 +2,7 @@
 
 PORTNAME=	evolution
 DISTVERSION=	3.44.1
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -18,8 +19,7 @@ LICENSE_PERMS_OPENLDAP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	highlight:textproc/highlight \
 		iso-codes>=0:misc/iso-codes \
 		itstool:textproc/itstool
-LIB_DEPENDS=	libcmark.so:textproc/cmark \
-		libcryptui.so:security/libcryptui \
+LIB_DEPENDS=	libcryptui.so:security/libcryptui \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libenchant-2.so:textproc/enchant2 \
@@ -81,8 +81,8 @@ PLIST_SUB=	PORTVERSION=2.12 \
 		VERSION=${EVO_VERSION}
 
 OPTIONS_SUB=		yes
-OPTIONS_DEFINE=		CANBERRA LDAP MAPS PST WEATHER YTNEF
-OPTIONS_DEFAULT=	BOGOFILTER CANBERRA LDAP WEATHER
+OPTIONS_DEFINE=		CANBERRA LDAP MAPS MARKDOWN PST WEATHER YTNEF
+OPTIONS_DEFAULT=	BOGOFILTER CANBERRA LDAP MARKDOWN WEATHER
 
 SPAM_DESC=		Spam filter support
 OPTIONS_GROUP=		SPAM
@@ -134,5 +134,9 @@ MAPS_LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
 MAPS_USES=		gl xorg
 MAPS_USE=		GL=egl \
 			XORG=xcomposite,xdamage,xext,xfixes,xi,xrandr
+
+MARKDOWN_CMAKE_ON=	-DENABLE_MARKDOWN=ON
+MARKDOWN_CMAKE_OFF=	-DENABLE_MARKDOWN=OFF
+MARKDOWN_LIB_DEPENDS=	libcmark.so:textproc/cmark
 
 .include <bsd.port.mk>
