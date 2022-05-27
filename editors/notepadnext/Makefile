@@ -1,11 +1,7 @@
 PORTNAME=	notepadnext
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
-PORTREVISION=	1
+DISTVERSION=	0.5.2
 CATEGORIES=	editors
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	ece83c8d9dc72e987798b5b158770a4b6a502aff.patch:-p1 # https://github.com/dail8859/NotepadNext/pull/124 - fix installed file locations
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Reimplementation of Notepad++
