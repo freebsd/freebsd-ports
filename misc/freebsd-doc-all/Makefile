@@ -1,7 +1,7 @@
 # Created by: Marc Fonvieille <blackend@FreeBSD.org>
 
 PORTNAME=	freebsd-doc-all
-PORTVERSION=	20220326
+PORTVERSION=	20220527
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 
@@ -16,6 +16,7 @@ RUN_DEPENDS+=	bn-freebsd-doc>=${PORTVERSION}:misc/freebsd-doc-bn		\
 		es-freebsd-doc>=${PORTVERSION}:misc/freebsd-doc-es		\
 		fr-freebsd-doc>=${PORTVERSION}:misc/freebsd-doc-fr		\
 		hu-freebsd-doc>=${PORTVERSION}:misc/freebsd-doc-hu		\
+		id-freebsd-doc>=${PORTVERSION}:misc/freebsd-doc-id		\
 		it-freebsd-doc>=${PORTVERSION}:misc/freebsd-doc-it		\
 		ja-freebsd-doc>=${PORTVERSION}:misc/freebsd-doc-ja		\
 		ko-freebsd-doc>=${PORTVERSION}:misc/freebsd-doc-ko		\
