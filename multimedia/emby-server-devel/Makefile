@@ -1,16 +1,17 @@
 PORTNAME=	emby-server
 DISTVERSION=	4.8.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
+MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	embyserver-netframework_${PORTVERSION}
-DISTFILES=	${DISTNAME}.zip \
+DISTNAME=	emby-server-freebsd13_${DISTVERSION}_amd64
+DISTFILES=	${DISTNAME}.tar.xz \
 		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz \
 		license.docx
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
-EXTRACT_ONLY=	${DISTNAME}.zip \
+EXTRACT_ONLY=	${DISTNAME}.tar.xz \
 		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz
 
@@ -50,9 +51,11 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libx264.so:multimedia/libx264 \
 		libx265.so:multimedia/x265 \
 		libzvbi.so:devel/libzvbi
-RUN_DEPENDS=	mono6.8>0:lang/mono6.8
+RUN_DEPENDS=	icu>0:devel/icu \
+		libinotify>0:devel/libinotify \
+		libunwind>0:devel/libunwind
 
-USES=		compiler:c11 gmake iconv localbase:ldflags pkgconfig sqlite
+USES=		compiler:c11 gmake iconv localbase:ldflags pkgconfig sqlite ssl:run
 USE_RC_SUBR=	${PORTNAME}
 
 HAS_CONFIGURE=	yes
@@ -100,8 +103,7 @@ MAKE_ENV=	V=1
 CONFLICTS_INSTALL=	emby-server
 
 NOPRECIOUSMAKEVARS=	yes
-SUB_FILES=	ImageMagickSharp.dll.config \
-		SQLitePCLRaw.provider.sqlite3.dll.config
+SUB_FILES=	SQLitePCLRaw.provider.sqlite3.dll.config
 SUB_LIST=	GROUP=${GROUPS} \
 		PORTNAME=${PORTNAME} \
 		RC_NAME=emby_server \
@@ -112,26 +114,24 @@ WRKSRC=		${WRKDIR}/ffmpeg-${FFVERSION}_public
 USERS=		emby
 GROUPS=		emby
 
-OPTIONS_DEFINE=		LAME X11
-OPTIONS_DEFAULT=	LAME X11
+OPTIONS_DEFINE=		LAME
+OPTIONS_DEFAULT=	LAME
 
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=	libmp3lame
 
-X11_USES=		xorg magick:6
-X11_USES_OFF=		magick:6,nox11
-X11_USE=		xorg=x11
-
 FFVERSION=	2022_05_07
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/system
-	(${INSTALL_DATA} ${WRKDIR}/ImageMagickSharp.dll.config ${STAGEDIR}${PREFIX}/lib/emby-server/system)
-	(${INSTALL_DATA} ${WRKDIR}/SQLitePCLRaw.provider.sqlite3.dll.config ${STAGEDIR}${PREFIX}/lib/emby-server/system)
-	(cd ${WRKDIR}/system && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/emby-server/system)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/bin
 	(${INSTALL_PROGRAM} ${WRKDIR}/bin/ffdetect ${STAGEDIR}${PREFIX}/lib/emby-server/bin)
 	(${INSTALL_PROGRAM} ${WRKSRC}/ffmpeg ${STAGEDIR}${PREFIX}/lib/emby-server/bin)
 	(${INSTALL_PROGRAM} ${WRKSRC}/ffprobe ${STAGEDIR}${PREFIX}/lib/emby-server/bin)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/lib
+	(cd ${WRKDIR}/lib && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/lib/emby-server/lib)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/system
+	(${INSTALL_DATA} ${WRKDIR}/SQLitePCLRaw.provider.sqlite3.dll.config ${STAGEDIR}${PREFIX}/lib/emby-server/system)
+	(cd ${WRKDIR}/system && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/emby-server/system "! -name EmbyServer")
+	(${INSTALL_PROGRAM} ${WRKDIR}/system/EmbyServer ${STAGEDIR}${PREFIX}/lib/emby-server/system)
 
 .include <bsd.port.mk>
