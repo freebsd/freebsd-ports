@@ -40,6 +40,7 @@ include/oskar/binary/oskar_binary_read.h
 include/oskar/binary/oskar_binary_write.h
 include/oskar/binary/oskar_crc.h
 include/oskar/binary/oskar_endian.h
+include/oskar/convert/oskar_convert_any_to_enu_directions.h
 include/oskar/convert/oskar_convert_apparent_ra_dec_to_enu_directions.h
 include/oskar/convert/oskar_convert_az_el_to_enu_directions.h
 include/oskar/convert/oskar_convert_brightness_to_jy.h
@@ -85,6 +86,8 @@ include/oskar/correlate/oskar_cross_correlate_scalar_omp.h
 include/oskar/correlate/oskar_evaluate_auto_power.h
 include/oskar/correlate/oskar_evaluate_cross_power.h
 include/oskar/gains/oskar_gains.h
+include/oskar/harp/CMakeLists.txt
+include/oskar/harp/oskar_harp.h
 include/oskar/imager/oskar_grid_correction.h
 include/oskar/imager/oskar_grid_functions_pillbox.h
 include/oskar/imager/oskar_grid_functions_spheroidal.h
@@ -161,6 +164,7 @@ include/oskar/mem/oskar_mem_add.h
 include/oskar/mem/oskar_mem_add_real.h
 include/oskar/mem/oskar_mem_append_raw.h
 include/oskar/mem/oskar_mem_clear_contents.h
+include/oskar/mem/oskar_mem_conjugate.h
 include/oskar/mem/oskar_mem_convert_precision.h
 include/oskar/mem/oskar_mem_copy.h
 include/oskar/mem/oskar_mem_copy_contents.h
@@ -446,10 +450,10 @@ include/oskar/vis/oskar_vis_header_read.h
 include/oskar/vis/oskar_vis_header_write.h
 include/oskar/vis/oskar_vis_header_write_ms.h
 lib/liboskar.so
-lib/liboskar.so.2.8.2
+lib/liboskar.so.2.8.3
 lib/liboskar_apps.so
-lib/liboskar_apps.so.2.8.2
+lib/liboskar_apps.so.2.8.3
 lib/liboskar_binary.so
 lib/liboskar_binary.so.2.1
 lib/liboskar_settings.so
-lib/liboskar_settings.so.2.8.2
+lib/liboskar_settings.so.2.8.3
