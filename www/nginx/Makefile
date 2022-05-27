@@ -2,7 +2,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.22.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -59,7 +59,8 @@ CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
 		--error-log-path=${NGINX_ERRORLOG} \
 		--user=${WWWOWN} --group=${WWWGRP} \
-		--with-compat
+		--with-compat \
+		--with-pcre
 ALL_TARGET=
 
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} NGINX_LOGDIR=${NGINX_LOGDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
@@ -74,7 +75,7 @@ OPTIONS_GROUP=	MAILGRP HTTPGRP
 OPTIONS_GROUP_HTTPGRP=	GOOGLE_PERFTOOLS HTTP HTTP_ADDITION HTTP_AUTH_REQ \
 	HTTP_CACHE HTTP_DAV HTTP_FLV HTTP_GUNZIP_FILTER HTTP_GZIP_STATIC \
 	HTTP_IMAGE_FILTER HTTP_MP4 HTTP_PERL HTTP_RANDOM_INDEX HTTP_REALIP \
-	HTTP_REWRITE HTTP_SECURE_LINK HTTP_SLICE HTTP_SLICE_AHEAD \
+	HTTP_SECURE_LINK HTTP_SLICE HTTP_SLICE_AHEAD \
 	HTTP_SSL HTTP_STATUS HTTP_SUB HTTP_XSLT HTTPV2 HTTPV2_AUTOTUNE \
 	STREAM STREAM_SSL STREAM_SSL_PREREAD
 # External modules (arrayvar MUST appear after devel_kit for build-dep)
@@ -99,6 +100,12 @@ OPTIONS_DEFAULT?=	DSO FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
 		HTTP_SLICE HTTP_REWRITE HTTP_SSL HTTP_STATUS HTTP_SUB \
 		HTTPV2 MAIL MAIL_SSL STREAM STREAM_SSL STREAM_SSL_PREREAD \
 		THREADS WWW
+
+OPTIONS_RADIO+=		PCRE
+OPTIONS_RADIO_PCRE=	PCRE_ONE PCRE_TWO
+PCRE_ONE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_ONE_CONFIGURE_ON=	--without-pcre2
+PCRE_TWO_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 OPTIONS_RADIO+=		GSSAPI
 OPTIONS_RADIO_GSSAPI=	GSSAPI_HEIMDAL GSSAPI_MIT
@@ -160,9 +167,6 @@ HTTP_PERL_USES=			perl5
 HTTP_PERL_VARS=			DSO_BASEMODS+=http_perl_module
 HTTP_RANDOM_INDEX_CONFIGURE_ON=	--with-http_random_index_module
 HTTP_REALIP_CONFIGURE_ON=	--with-http_realip_module
-HTTP_REWRITE_LIB_DEPENDS=	libpcre.so:devel/pcre
-HTTP_REWRITE_CONFIGURE_ON=	--with-pcre
-HTTP_REWRITE_CONFIGURE_OFF=	--without-http_rewrite_module
 HTTP_SECURE_LINK_CONFIGURE_ON=	--with-http_secure_link_module
 HTTP_SLICE_CONFIGURE_ON=	--with-http_slice_module
 HTTP_SSL_CONFIGURE_ON=		--with-http_ssl_module
@@ -220,13 +224,18 @@ IGNORE=		requires at least HTTP or MAIL to \
 		be defined.  Please do 'make config' again
 .endif
 
-.if !${PORT_OPTIONS:MHTTP_REWRITE} && !defined(USE_HTTP_REWRITE)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nopcre
-.endif
-
 .if ${PORT_OPTIONS:MPASSENGER} && empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
+.endif
+
+.if empty(PORT_OPTIONS:MPCRE_ONE) && empty(PORT_OPTIONS:MPCRE_TWO)
+IGNORE=		required at least PCRE_ONE or PCRE_TWO \
+		to be defined. Please do 'make config' again
+.endif
+
+.if ${PORT_OPTIONS:MPCRE_ONE}
+NJS_CONFIGURE_ARGS=	--no-pcre2
 .endif
 
 pre-everything::
@@ -311,7 +320,9 @@ pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
 
 do-configure-NJS-on:
-	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} )
+	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NJS_CONFIGURE_ARGS} \
+		&& ${SETENV} ${MAKE_ENV} ${MAKE_CMD} njs \
+		&& ${MV} build/njs ${WRKSRC_njs} )
 
 .if !target(do-install)
 do-install:
