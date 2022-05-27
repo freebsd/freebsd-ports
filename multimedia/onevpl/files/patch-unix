@@ -39,6 +39,17 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
         #define MFX_DEPRECATED __attribute__((deprecated))
         #if defined(__cplusplus)
           #define MFX_DEPRECATED_ENUM_FIELD_INSIDE(arg) arg __attribute__((deprecated))
+--- dispatcher/test/unit/src/dispatcher_enum_impls.cpp.orig	2022-05-27 22:25:48 UTC
++++ dispatcher/test/unit/src/dispatcher_enum_impls.cpp
+@@ -28,7 +28,7 @@ typedef enum {
+             #define STUB_RT "libvplstubrt64.dll"
+         #endif
+     #endif
+-#elif defined(__linux__)
++#elif defined(__unix__)
+     #define STUB_RT "libvplstubrt1x64.so"
+ #endif
+ 
 --- dispatcher/vpl/mfx_dispatcher_vpl.h.orig	2022-01-21 23:15:32 UTC
 +++ dispatcher/vpl/mfx_dispatcher_vpl.h
 @@ -48,7 +48,7 @@ typedef char CHAR_TYPE;
@@ -351,58 +362,14 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #ifdef LIBVA_SUPPORT
      vaTerminate((VADisplay)accelHandle);
      close(fd);
---- tools/legacy/sample_common/CMakeLists.txt.orig	2022-02-05 00:35:54 UTC
+--- tools/legacy/sample_common/CMakeLists.txt.orig	2022-05-27 22:25:48 UTC
 +++ tools/legacy/sample_common/CMakeLists.txt
-@@ -63,7 +63,7 @@ find_package(VPL REQUIRED)
- target_link_libraries(sample_common PUBLIC VPL::dispatcher
-                                            media_sdk_compatibility_headers)
- 
--if(CMAKE_SYSTEM_NAME MATCHES Linux)
-+if(UNIX AND NOT APPLE)
- 
-   if(BUILD_TOOLS_ONEVPL_EXPERIMENTAL)
-     add_definitions(-DONEVPL_EXPERIMENTAL)
---- tools/legacy/sample_decode/CMakeLists.txt.orig	2021-12-07 00:05:44 UTC
-+++ tools/legacy/sample_decode/CMakeLists.txt
-@@ -11,7 +11,7 @@ if(POLICY CMP0074)
-   cmake_policy(SET CMP0074 OLD)
+@@ -61,7 +61,7 @@ endif()
+   target_compile_definitions(sample_common PUBLIC -DONEVPL_EXPERIMENTAL)
  endif()
  
 -if(CMAKE_SYSTEM_NAME MATCHES Linux)
 +if(UNIX AND NOT APPLE)
-   if(NOT
-      (PKG_LIBVA_FOUND
-       AND PKG_LIBVA_DRM_FOUND
---- tools/legacy/sample_encode/CMakeLists.txt.orig	2022-02-05 00:35:54 UTC
-+++ tools/legacy/sample_encode/CMakeLists.txt
-@@ -11,7 +11,7 @@ if(POLICY CMP0074)
-   cmake_policy(SET CMP0074 OLD)
- endif()
+   target_compile_definitions(sample_common PUBLIC LINUX64)
  
--if(CMAKE_SYSTEM_NAME MATCHES Linux)
-+if(UNIX AND NOT APPLE)
-   if(NOT
-      (PKG_LIBDRM_FOUND
-       AND PKG_LIBVA_FOUND
---- tools/legacy/sample_vpp/CMakeLists.txt.orig	2022-02-05 00:35:54 UTC
-+++ tools/legacy/sample_vpp/CMakeLists.txt
-@@ -25,7 +25,7 @@ if(POLICY CMP0074)
-   cmake_policy(SET CMP0074 OLD)
- endif()
- 
--if(CMAKE_SYSTEM_NAME MATCHES Linux)
-+if(UNIX AND NOT APPLE)
-   if(NOT
-      (PKG_LIBDRM_FOUND
-       AND PKG_LIBVA_FOUND
---- tools/legacy/sample_multi_transcode/CMakeLists.txt.orig	2021-12-07 00:05:44 UTC
-+++ tools/legacy/sample_multi_transcode/CMakeLists.txt
-@@ -11,7 +11,7 @@ endif()
- 
- find_package(VPL REQUIRED)
- 
--if(CMAKE_SYSTEM_NAME MATCHES Linux)
-+if(UNIX AND NOT APPLE)
-   if(NOT
-      (PKG_LIBVA_FOUND
-       AND PKG_LIBVA_DRM_FOUND
+   find_package(PkgConfig REQUIRED)

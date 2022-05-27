@@ -1,6 +1,6 @@
 PORTNAME=	oneVPL
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.1.3
+DISTVERSION=	2022.1.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
 
+BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libva.so:multimedia/libva
