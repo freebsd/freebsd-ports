@@ -832,7 +832,6 @@
     SUBDIR += py-bitvector
     SUBDIR += py-bottleneck
     SUBDIR += py-brial
-    SUBDIR += py-cdecimal
     SUBDIR += py-chaospy
     SUBDIR += py-claripy
     SUBDIR += py-cma

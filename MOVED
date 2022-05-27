@@ -17180,3 +17180,5 @@ archivers/p7zip|archivers/7-zip|2022-05-25|Unmaintained for years and has known 
 graphics/blender-lts28|graphics/blender-lts29|2022-05-26|Has expired: EOLed
 devel/autoconf-wrapper|devel/autoconf-switch|2022-05-27|Autoconf restructuring
 devel/autoconf213|devel/autoconf2.13|2022-05-27|Autoconf restructuring
+math/py-cdecimal||2022-05-27|Has expired: upstream does not support it after Python-3.2
+devel/py-meliae||2022-05-27|Has expired: does not build against Python-3.9
