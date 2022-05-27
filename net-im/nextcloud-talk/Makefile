@@ -1,7 +1,7 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	talk
-PORTVERSION=	14.0.0
+PORTVERSION=	14.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im www
 MASTER_SITES=	https://github.com/nextcloud-releases/spreed/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
