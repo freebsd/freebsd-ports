@@ -5,8 +5,6 @@ bin/davix-mkdir
 bin/davix-mv
 bin/davix-put
 bin/davix-rm
-bin/davix-tester
-bin/davix-unit-tests
 include/davix/auth/davixauth.hpp
 include/davix/auth/davixx509cred.hpp
 include/davix/compat/davix_ignored.hpp
@@ -33,6 +31,7 @@ include/davix/utils/davix_logger.hpp
 include/davix/utils/davix_misc_utils.hpp
 include/davix/utils/davix_nocopy.hpp
 include/davix/utils/davix_s3_utils.hpp
+include/davix/utils/davix_swift_utils.hpp
 include/davix/utils/davix_types.hpp
 include/davix/utils/davix_uri.hpp
 lib/libdavix.so
