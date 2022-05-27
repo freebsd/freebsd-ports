@@ -194,8 +194,8 @@
 %%CACTIDIR%%/docs/Version-Specific-Release-Notes.html
 %%CACTIDIR%%/docs/Viewing-Graphs.html
 %%CACTIDIR%%/docs/audit_schema.sql
-%%CACTIDIR%%/docs/images/%%CACTIUSER%%-https.PNG
-%%CACTIDIR%%/docs/images/%%CACTIUSER%%-log.png
+%%CACTIDIR%%/docs/images/cacti-https.PNG
+%%CACTIDIR%%/docs/images/cacti-log.png
 %%CACTIDIR%%/docs/images/add-device-button.png
 %%CACTIDIR%%/docs/images/add-device-screen.png
 %%CACTIDIR%%/docs/images/add-device-site.png
