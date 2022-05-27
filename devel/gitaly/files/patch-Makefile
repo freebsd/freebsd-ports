@@ -1,6 +1,6 @@
---- Makefile.orig	2022-04-21 05:54:57 UTC
+--- Makefile.orig	2022-05-20 13:52:23 UTC
 +++ Makefile
-@@ -271,7 +271,7 @@ build: ${SOURCE_DIR}/.ruby-bundle ${GITALY_EXECUTABLES
+@@ -279,7 +279,7 @@ build: ${SOURCE_DIR}/.ruby-bundle ${GITALY_EXECUTABLES
  gitaly:            GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
  praefect:          GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
  gitaly-git2go-v14: GO_BUILD_TAGS = ${GIT2GO_BUILD_TAGS}
@@ -9,7 +9,7 @@
  
  .PHONY: ${GITALY_EXECUTABLES}
  ${GITALY_EXECUTABLES}:
-@@ -283,7 +283,7 @@ ${GITALY_EXECUTABLES}:
+@@ -291,7 +291,7 @@ ${GITALY_EXECUTABLES}:
  	@ # This fallback is unique but non-deterministic, making it sufficient to avoid generating the
  	@ # GNU build-id from the empty string and causing guaranteed collisions.
  	${Q}GO_BUILD_ID=$$( go tool buildid $(addprefix ${BUILD_DIR}/bin/, $@) || openssl rand -hex 32 ) && \
@@ -18,7 +18,7 @@
  	go install -ldflags '${GO_LDFLAGS}'" -B 0x$$GNU_BUILD_ID" -tags "${GO_BUILD_TAGS}" $(addprefix ${GITALY_PACKAGE}/cmd/, $@)
  
  .PHONY: install
-@@ -482,7 +482,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+@@ -493,7 +493,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
