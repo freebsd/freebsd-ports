@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	drush
 EXTRACT_SUFX=	.phar
 
-MAINTAINER=	mfechner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drupal command line and scripting interface
 
 LICENSE=	GPLv2+
