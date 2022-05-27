@@ -1,10 +1,13 @@
---- Gemfile.orig	2022-04-21 11:10:02 UTC
+--- Gemfile.orig	2022-05-20 13:56:26 UTC
 +++ Gemfile
-@@ -4,7 +4,7 @@ source 'https://rubygems.org'
+@@ -2,9 +2,9 @@
  
- gem 'rails', '~> 6.1.4.7'
+ source 'https://rubygems.org'
  
--gem 'bootsnap', '~> 1.9.1', require: false
+-gem 'rails', '~> 6.1.4.7'
++gem 'rails', '~> 6.1.4'
+ 
+-gem 'bootsnap', '~> 1.9.4', require: false
 +gem 'bootsnap', '~> 1.9', require: false
  
  # Responders respond_to and respond_with
@@ -18,15 +21,7 @@
  
  # API
  gem 'grape', '~> 1.5.2'
-@@ -103,7 +103,6 @@ gem 'rack-cors', '~> 1.0.6', require: 'rack/cors'
- gem 'graphql', '~> 1.11.10'
- gem 'graphiql-rails', '~> 1.8'
- gem 'apollo_upload_server', '~> 2.1.0'
--gem 'graphql-docs', '~> 1.6.0', group: [:development, :test]
- gem 'graphlient', '~> 0.4.0' # Used by BulkImport feature (group::import)
- 
- gem 'hashie'
-@@ -207,7 +206,7 @@ gem 'gitlab-sidekiq-fetcher', '0.8.0', require: 'sidek
+@@ -207,7 +207,7 @@ gem 'gitlab-sidekiq-fetcher', '0.8.0', require: 'sidek
  gem 'fugit', '~> 1.2.1'
  
  # HTTP requests
@@ -35,7 +30,7 @@
  
  # Colored output to console
  gem 'rainbow', '~> 3.0'
-@@ -334,118 +333,18 @@ gem 'batch-loader', '~> 2.0.1'
+@@ -334,87 +334,15 @@ gem 'batch-loader', '~> 2.0.1'
  gem 'peek', '~> 1.1'
  
  # Snowplow events tracking
@@ -45,12 +40,14 @@
  # Metrics
  gem 'method_source', '~> 1.0', require: false
 -gem 'webrick', '~> 1.6.1', require: false
++gem 'webrick', '~> 1.6', require: false
  gem 'prometheus-client-mmap', '~> 0.15.0', require: 'prometheus/client'
  
  gem 'warning', '~> 1.2.0'
  
 -group :development do
 -  gem 'lefthook', '~> 0.7.0', require: false
+-  gem 'rubocop'
 -  gem 'solargraph', '~> 0.44.3', require: false
 -
 -  gem 'letter_opener_web', '~> 2.0.0'
@@ -109,10 +106,6 @@
 -  gem 'sigdump', '~> 0.2.4', require: 'sigdump/setup'
 -end
 -
- group :development, :test, :danger do
-   gem 'gitlab-dangerfiles', '~> 3.0', require: false
- end
- 
 -group :development, :test, :coverage do
 -  gem 'simplecov', '~> 0.21', require: false
 -  gem 'simplecov-lcov', '~> 0.8.0', require: false
@@ -120,14 +113,13 @@
 -  gem 'undercover', '~> 0.4.4', require: false
 -end
 -
--# Gems required in omnibus-gitlab pipeline
--group :development, :test, :omnibus do
--  # Using a fork until https://github.com/pivotal/LicenseFinder/pull/816 is
--  # resolved. For details, check discussion in
--  # https://gitlab.com/gitlab-org/gitlab/-/merge_requests/74881
--  gem 'gitlab-license_finder', '~> 6.0', require: false
--end
--
+ # Gems required in omnibus-gitlab pipeline
+ group :development, :test, :omnibus do
+   # Using a fork until https://github.com/pivotal/LicenseFinder/pull/816 is
+@@ -423,30 +351,6 @@ group :development, :test, :omnibus do
+   gem 'gitlab-license_finder', '~> 6.0', require: false
+ end
+ 
 -group :test do
 -  gem 'fuubar', '~> 2.2.0'
 -  gem 'rspec-retry', '~> 0.6.1'
@@ -155,9 +147,11 @@
  gem 'octokit', '~> 4.15'
  
  # Updating this gem version here is deprecated. See:
-@@ -544,3 +443,5 @@ gem 'ipaddress', '~> 0.8.3'
+@@ -545,3 +449,7 @@ gem 'ipaddress', '~> 0.8.3'
  gem 'parslet', '~> 1.8'
  
- gem 'ipynbdiff', '0.4.5'
+ gem 'ipynbdiff', '0.4.7'
 +
 +gem 'parser'
++gem 'gitlab-dangerfiles'
++

@@ -1,8 +1,8 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	14.10.0
-PORTREVISION=	2
+PORTVERSION=	15.0.0
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -17,17 +17,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # see https://gitlab.com/gitlab-org/gitlab/-/issues/350866
 MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
-	gitlab-elasticsearch-indexer>=2.17.0:textproc/gitlab-elasticsearch-indexer \
-	gitlab-agent>=14.10.0:net/gitlab-agent \
-	gitlab-pages>=1.56.1:www/gitlab-pages \
-	gitlab-shell>=13.25.1:devel/gitlab-shell \
+	gitlab-elasticsearch-indexer>=3.0.0:textproc/gitlab-elasticsearch-indexer \
+	gitlab-agent>=15.0.0:net/gitlab-agent \
+	gitlab-metrics-exporter>0:devel/gitlab-metrics-exporter \
+	gitlab-pages>=1.58.0:www/gitlab-pages \
+	gitlab-shell>=14.3.0:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.0.14:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
-	rubygem-rails61>=6.1.4.7<6.1.5:www/rubygem-rails61 \
-	rubygem-bootsnap>=1.9.1<1.12:devel/rubygem-bootsnap \
+	rubygem-rails61>=6.1.6.0<6.1.7:www/rubygem-rails61 \
+	rubygem-bootsnap>=1.9.4<1.12:devel/rubygem-bootsnap \
 	rubygem-responders-rails61>=3.0<4.0:www/rubygem-responders-rails61 \
 	rubygem-sprockets3>=3.7<3.8:devel/rubygem-sprockets3 \
 	rubygem-view_component-rails61>=2.50.0<2.51:devel/rubygem-view_component-rails61 \
@@ -35,7 +36,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-pg>=1.2.3<2:databases/rubygem-pg \
 	rubygem-rugged>=1.2<2:devel/rubygem-rugged \
 	rubygem-grape-path-helpers>=1.7.0<1.8:devel/rubygem-grape-path-helpers \
-	rubygem-faraday>=1.0<2:www/rubygem-faraday \
+	rubygem-faraday110>=1.10.0<2:www/rubygem-faraday110 \
 	rubygem-marginalia>=1.10.0<1.11:databases/rubygem-marginalia \
 	rubygem-declarative_policy>=1.1.0<1.2:security/rubygem-declarative_policy \
 	rubygem-devise47-rails61>=4.7.2<4.8:devel/rubygem-devise47-rails61 \
@@ -68,6 +69,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-rack-oauth2>=1.16.0<1.17.0:security/rubygem-rack-oauth2 \
 	rubygem-jwt21>=2.1.0<2.2.0:www/rubygem-jwt21 \
 	rubygem-gssapi>0:security/rubygem-gssapi \
+	rubygem-timfel-krb5-auth>=0.8<1:security/rubygem-timfel-krb5 \
 	rubygem-recaptcha>=4.11<5.0:devel/rubygem-recaptcha \
 	rubygem-akismet>=3.0<4.0:devel/rubygem-akismet \
 	rubygem-invisible_captcha>=1.1.0<1.2.0:graphics/rubygem-invisible_captcha \
@@ -90,7 +92,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-graphiql-rails>=1.8<2:devel/rubygem-graphiql-rails \
 	rubygem-apollo_upload_server>=2.1.0<2.2:net/rubygem-apollo_upload_server \
 	rubygem-graphql-docs>=1.6.0<1.7.0:devel/rubygem-graphql-docs \
-	rubygem-graphlient>=0.4.0<0.5:devel/rubygem-graphlient \
+	rubygem-graphlient>=0.5.0<0.6:devel/rubygem-graphlient \
 	rubygem-hashie>=4.1.0:devel/rubygem-hashie \
 	rubygem-hashie-forbidden_attributes>0:devel/rubygem-hashie-forbidden_attributes \
 	rubygem-kaminari-rails61>=1.2.1<2.0:www/rubygem-kaminari-rails61 \
@@ -108,9 +110,9 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-google-api-client>=0.33<1:devel/rubygem-google-api-client \
 	rubygem-unf>=0.1.4<0.2.0:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.7<2.4.0:databases/rubygem-seed-fu \
-	rubygem-elasticsearch-model6>=6.1.1<7:textproc/rubygem-elasticsearch-model6 \
-	rubygem-elasticsearch-rails6>=6.1.1<7:textproc/rubygem-elasticsearch-rails6 \
-	rubygem-elasticsearch-api6>=6.8.2<6.9:textproc/rubygem-elasticsearch-api6 \
+	rubygem-elasticsearch-model713>=7.2<8:textproc/rubygem-elasticsearch-model713 \
+	rubygem-elasticsearch-rails>=7.2<8:textproc/rubygem-elasticsearch-rails \
+	rubygem-elasticsearch-api713>=7.13.3<7.13.4:textproc/rubygem-elasticsearch-api713 \
 	rubygem-aws-sdk-core>=3<4:devel/rubygem-aws-sdk-core \
 	rubygem-aws-sdk-cloudformation>=1<2:devel/rubygem-aws-sdk-cloudformation \
 	rubygem-aws-sdk-s3>=1<2:devel/rubygem-aws-sdk-s3 \
@@ -258,7 +260,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-webauthn>=2.3<3:security/rubygem-webauthn \
 	rubygem-ipaddress>=0.8.3<0.9:net/rubygem-ipaddress \
 	rubygem-parslet1>=1.8<2:textproc/rubygem-parslet1 \
-	rubygem-ipynbdiff>=0.4.5<0.4.6:devel/rubygem-ipynbdiff \
+	rubygem-ipynbdiff>=0.4.7<0.4.8:devel/rubygem-ipynbdiff \
 	rubygem-parser>=0:devel/rubygem-parser
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
@@ -280,7 +282,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	88da5554d9626377fe7868e956a47a0498e04eb5
+GL_COMMIT=	8a186dedfc1da12270ea77f2673b59fa08f770c1
 
 USERS=	git
 GROUPS=	git
@@ -288,13 +290,6 @@ GROUPS=	git
 NO_BUILD=	yes
 
 NO_ARCH=	yes
-
-OPTIONS_DEFINE=			KERBEROS
-OPTIONS_DEFAULT=		KERBEROS
-
-KERBEROS_BUILD_DEPENDS=		rubygem-omniauth-kerberos>=0.3.0<0.4.0:net/rubygem-omniauth-kerberos
-KERBEROS_RUN_DEPENDS=		rubygem-omniauth-kerberos>=0.3.0<0.4.0:net/rubygem-omniauth-kerberos
-KERBEROS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Gemfile-kerberos-off
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config/gitlab.yml.example \
@@ -408,6 +403,7 @@ post-install:
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/tmp/prometheus_multiproc_dir/puma" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/tmp/prometheus_multiproc_dir/sidekiq" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/tmp/prometheus_multiproc_dir/unicorn" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/tmp/run" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/tmp/sessions" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/tmp/sockets" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(,,770) ${WWWDIR_REL}/tmp/sockets/private" >> ${TMPPLIST}

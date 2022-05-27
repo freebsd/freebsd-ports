@@ -1,6 +1,6 @@
---- config/gitlab.yml.example.orig	2022-04-20 10:00:54 UTC
+--- config/gitlab.yml.example.orig	2022-05-20 13:56:26 UTC
 +++ config/gitlab.yml.example
-@@ -1175,14 +1175,14 @@ production: &base
+@@ -1160,14 +1160,14 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
        default:
@@ -18,7 +18,7 @@
      # archive_permissions: 0640 # Permissions for the resulting backup.tar file (default: 0600)
      # keep_time: 604800   # default: 0 (forever) (in seconds)
      # pg_schema: public     # default: nil, it means that all schemas will be backed up
-@@ -1231,12 +1231,12 @@ production: &base
+@@ -1202,12 +1202,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -34,7 +34,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -1251,13 +1251,13 @@ production: &base
+@@ -1222,13 +1222,13 @@ production: &base
    workhorse:
      # File that contains the secret key for verifying access for gitlab-workhorse.
      # Default is '.gitlab_workhorse_secret' relative to Rails.root (i.e. root of the GitLab app).
@@ -50,7 +50,7 @@
  
      # The URL to the external KAS API (used by the Kubernetes agents)
      # external_url: wss://kas.example.com
-@@ -1270,13 +1270,13 @@ production: &base
+@@ -1241,13 +1241,13 @@ production: &base
  
    ## GitLab Elasticsearch settings
    elasticsearch:
@@ -66,7 +66,7 @@
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running
-@@ -1297,16 +1297,16 @@ production: &base
+@@ -1268,15 +1268,15 @@ production: &base
  
      # Sidekiq exporter is webserver built in to Sidekiq to expose Prometheus metrics
      sidekiq_exporter:
@@ -81,17 +81,15 @@
  
      sidekiq_health_checks:
 -    #  enabled: true
--    #  log_enabled: false
 -    #  address: localhost
--    #  port: 8082
+-    #  port: 8092
 +      enabled: true
-+      log_enabled: false
 +      address: localhost
-+      port: 8082
++      port: 8092
  
      # Web exporter is a dedicated Rack server running alongside Puma to expose Prometheus metrics
      # It runs alongside the `/metrics` endpoints to ease the publish of metrics
-@@ -1527,13 +1527,13 @@ test:
+@@ -1496,13 +1496,13 @@ test:
          gitaly_address: unix:tmp/tests/gitaly/praefect.socket
  
    gitaly:
@@ -104,6 +102,6 @@
      path: tmp/tests/backups
 -    gitaly_backup_path: tmp/tests/gitaly/_build/bin/gitaly-backup
 +    gitaly_backup_path: %%PREFIX%%/share/gitaly/bin/gitaly-backup
-   pseudonymizer:
-     manifest: config/pseudonymizer.yml
-     upload:
+   gitlab_shell:
+     path: tmp/tests/gitlab-shell/
+     authorized_keys_file: tmp/tests/authorized_keys
