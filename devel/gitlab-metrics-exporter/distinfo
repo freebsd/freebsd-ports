@@ -1,0 +1,5 @@
+TIMESTAMP = 1653588963
+SHA256 (go/devel_gitlab-metrics-exporter/gitlab-metrics-exporter-v0.1.1/v0.1.1.mod) = ee62313c8ed84cf0c300c3f171e6e35737e78db619f0977af90f7e14cad2a1f1
+SIZE (go/devel_gitlab-metrics-exporter/gitlab-metrics-exporter-v0.1.1/v0.1.1.mod) = 975
+SHA256 (go/devel_gitlab-metrics-exporter/gitlab-metrics-exporter-v0.1.1/v0.1.1.zip) = aa5a3967ab7cedecc15da5be656d9bc4fd9928c462e59840d0162adb7fb5aa31
+SIZE (go/devel_gitlab-metrics-exporter/gitlab-metrics-exporter-v0.1.1/v0.1.1.zip) = 1391380
