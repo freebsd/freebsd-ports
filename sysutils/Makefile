@@ -368,6 +368,7 @@
     SUBDIR += filevercmp
     SUBDIR += filewatcherd
     SUBDIR += finfo
+    SUBDIR += firstboot-cloudsetup
     SUBDIR += firstboot-freebsd-update
     SUBDIR += firstboot-growfs
     SUBDIR += firstboot-pkgs

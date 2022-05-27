@@ -1,0 +1,10 @@
+etc/rc.d/firstboot_cloudsetup
+sbin/cloudsetup
+%%DATADIR%%/cloudsetup-network
+%%DATADIR%%/cloudsetup-user
+%%DATADIR%%/functions.sh
+%%DATADIR%%/netconf-network.sh
+%%DATADIR%%/netconf-resolv.sh
+%%DATADIR%%/netconf-routing.sh
+%%DATADIR%%/show-context.sh
+%%DATADIR%%/userconf-sshkey.sh
