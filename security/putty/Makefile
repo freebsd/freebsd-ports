@@ -1,70 +1,61 @@
 PORTNAME=	putty
-PORTVERSION=	0.76
+PORTVERSION=	0.77
 CATEGORIES=	security
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/${PORTVERSION}/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	Secure shell and telnet client
-# test plan: test ALL 4 GSSAPI_* options, ALL 3 GTK options, WITH_DEBUG=yes build.
+COMMENT=	Secure shell and telnet client including xterm emulator
+# test plan: test ALL 4 GSSAPI_* options, GTK3 yes/no, WITH_DEBUG=yes build.
 
 LICENSE=	MIT
 LICENSE_FILE=	${PATCH_WRKSRC}/LICENCE
 
-USES=		cpe gmake pkgconfig
+USES=		cmake cpe perl5 pkgconfig
+USE_PERL5=	build
 
-MAKEFILE=	Makefile.gtk
-MAKE_ARGS+=	"prefix=${PREFIX}"
-
-CONFLICTS_INSTALL?=	pssh putty-gtk2 putty-nogtk
-
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
-WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+CONFLICTS_INSTALL?=	pssh putty-nogtk
 
 PLIST_FILES=	bin/plink \
 		bin/pscp \
 		bin/psftp \
+		bin/psusan \
 		bin/puttygen \
-		man/man1/plink.1.gz \
-		man/man1/pscp.1.gz \
-		man/man1/psftp.1.gz \
-		man/man1/puttygen.1.gz
+		share/man/man1/plink.1.gz \
+		share/man/man1/pscp.1.gz \
+		share/man/man1/psftp.1.gz \
+		share/man/man1/psusan.1.gz \
+		share/man/man1/puttygen.1.gz
 
-OPTIONS_DEFAULT=		GSSAPI_BASE GTK3
-OPTIONS_RADIO=			TOOLKIT
-OPTIONS_RADIO_TOOLKIT=		GTK2 GTK3
+OPTIONS_DEFINE=			GTK3
+OPTIONS_DEFAULT=		GSSAPI_NONE GTK3
 OPTIONS_SINGLE=			GSSAPI_SELECT
-OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT \
+OPTIONS_SINGLE_GSSAPI_SELECT=	GSSAPI_MIT \
+				GSSAPI_DYNAMIC \
 				GSSAPI_NONE
+GSSAPI_DYNAMIC_DESC=	EXPERIMENTAL dynamic runtime load of GSS libs
 
 .include <bsd.port.options.mk>
 
-CFLAGS+=	-DBSD_PTYS -DHAVE_FUTIMES -DIPV6 -DOMIT_UTMP
-LDFLAGS+=	-lm -Wl,--as-needed
+LDFLAGS+=	-Wl,--as-needed
 
-.if (${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}) && !defined(WITHOUT_X11)
+# XXX FIXME this is simplified on these assumptions:
+# - we only support GTK3 in FreeBSD
+#   (Putty would support EOL GTK2 and GTK1 as well)
+# - Putty 0.77 cannot have X11 without the gdk/gdkx.h header i. e. GTK.
+.if ${PORT_OPTIONS:MGTK3} && !defined(WITHOUT_X11)
 USES+=		xorg
 USE_XORG=	x11
-. if ${PORT_OPTIONS:MGTK3}
 USES+=		gnome
 USE_GNOME=	cairo gdkpixbuf2 gtk30
-MAKE_ARGS+=	GTK_CONFIG="pkg-config gtk+-3.0 x11 --cflags" \
-		PUTTY_WITH_GTK=yes
-. elif ${PORT_OPTIONS:MGTK2}
- USES+=		gnome
-USE_GNOME=	cairo gdkpixbuf2 gtk20
-MAKE_ARGS+=	GTK_CONFIG="pkg-config gtk+-2.0 x11 --cflags" \
-		PUTTY_WITH_GTK=yes
-. endif
+CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=3
 
 PLIST_FILES+=	bin/pageant \
 		bin/pterm \
 		bin/putty \
-		bin/puttytel \
-		man/man1/pageant.1.gz \
-		man/man1/pterm.1.gz \
-		man/man1/putty.1.gz \
-		man/man1/puttytel.1.gz \
+		share/man/man1/pageant.1.gz \
+		share/man/man1/pterm.1.gz \
+		share/man/man1/putty.1.gz \
 		share/pixmaps/putty.ico
 DESKTOP_ENTRIES=	"PuTTY" \
 			"${COMMENT}" \
@@ -73,40 +64,43 @@ DESKTOP_ENTRIES=	"PuTTY" \
 			"" \
 			false
 .else
-MAKE_ARGS+=	GTK_CONFIG=:
+# XXX FIXME HACK ALERT
+# PUTTY_GTK_VERSION=OFF is not a valid choice, but manages to
+# skip all version comparisons for GTK in cmake/gtk.cmake:
+CMAKE_ARGS+=	-DPUTTY_GTK_VERSION:STRING=OFF
+# this is standard stuff:
+CMAKE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_X11:BOOL=TRUE 
 .endif
 
-.if ${PORT_OPTIONS:MGSSAPI_BASE}
-USES+=		gssapi:base,flags
-MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
-.elif ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
+.if ${PORT_OPTIONS:MGSSAPI_HEIMDAL}
+# does not compile currently
+BROKEN=		GSSAPI_HEIMDAL does not compile as of putty 0.77
 USES+=		gssapi:heimdal,flags
-MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
+CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC
 .elif ${PORT_OPTIONS:MGSSAPI_MIT}
 USES+=		gssapi:mit,flags
-MAKE_ARGS+=	KRB5CONFIG=${KRB5CONFIG}
+CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=STATIC
+.elif ${PORT_OPTIONS:MGSSAPI_DYNAMIC}
+CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=DYNAMIC
 .else
-_COMPAT=	-DNO_GSSAPI
+# XXX FIXME buglet in putty 0.77: PUTTY_GSSAPI=OFF 
+# does not appear to get NO_GSSAPI into .build/CMakeFiles/cmake.h,
+# so we shove it down explicitly:
+CMAKE_ARGS+=	-DPUTTY_GSSAPI:STRING=OFF -DNO_GSSAPI=ON
 .endif
 
-_COMPAT+=	-DOMIT_UTMP
-
-.if defined(WITH_DEBUG)
-CFLAGS+=	-DDEBUG
-XFLAGS=		-DDEBUG
-_COMPAT+=	-DDEBUG
-.endif
-
-MAKE_ARGS+=	CC="${CC}" \
-		COMPAT="${_COMPAT}" \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		XFLAGS="${XFLAGS}"
+post-patch:
+	# we don't want to inherit FreeBSD commits
+	# as PUTTY Git commit revisions,
+	# so pretend we do not have Git:
+	${REINPLACE_CMD} '/FindGit/d' \
+		${WRKSRC}/cmake/setup.cmake \
+		${WRKSRC}/doc/CMakeLists.txt
 
 post-install:
-.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3}
+.if ${PORT_OPTIONS:MGTK3}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/../windows/putty.ico \
+	${INSTALL_DATA} ${WRKSRC}/windows/putty.ico \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 .endif
 
