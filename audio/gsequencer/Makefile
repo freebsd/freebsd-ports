@@ -1,6 +1,5 @@
 PORTNAME=	gsequencer
-DISTVERSION=	3.10.4
-PORTREVISION=	2
+DISTVERSION=	4.0.8
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
@@ -16,16 +15,19 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfftw3.so:math/fftw3 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libgraphene-1.0.so:graphics/graphene \
+		libharfbuzz.so:print/harfbuzz \
 		libinstpatch-1.0.so:audio/libinstpatch \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libuuid.so:misc/e2fsprogs-libuuid \
+		libvulkan.so:graphics/vulkan-loader \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	dssi>0:audio/dssi
 
 USES=		desktop-file-utils gettext-runtime gettext-tools gmake gnome gstreamer libtool localbase pkgconfig shared-mime-info xorg
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 pango
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk40 libxml2 pango
 USE_XORG=	x11
 USE_GCC=	yes # the project uses gnu99 extensions, clang fails even with USE_CSTD=gnu99. Suggestions how to build with clang are welcome.
 USE_CSTD=	gnu99
