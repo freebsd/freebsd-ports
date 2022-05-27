@@ -1,12 +1,11 @@
 PORTNAME=	openhantek
-DISTVERSION=	3.2.5
+DISTVERSION=	3.3.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Digital Software Oscilloscope (DSO) software for Hantek oscilloscopes
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
