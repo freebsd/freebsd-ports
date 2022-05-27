@@ -1,11 +1,8 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.22-13648 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-ga9a1204ab9
+DISTVERSION=	0.0.22-13655 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g5ad4b6249e
 CATEGORIES=	emulators
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	9c9194498e35.patch:-p1 # https://github.com/RPCS3/rpcs3/pull/12089
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
@@ -28,7 +25,7 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.11.2-4-g6cf1336:hidapi/3rdparty/hidapi/hidapi \
-		RPCS3:llvm-mirror:509d31ad8967:llvm/llvm \
+		RPCS3:llvm-mirror:c725f494c91:llvm/llvm \
 		RPCS3:soundtouch:2.3.1-16-g83cfba6:soundtouch/3rdparty/SoundTouch/soundtouch \
 		asmjit:asmjit:fc2a5d8:asmjit/3rdparty/asmjit/asmjit \
 		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
