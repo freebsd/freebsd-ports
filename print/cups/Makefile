@@ -1,7 +1,7 @@
 # Created by: Alan Eldridge <alane@geeksrus.net>
 
 PORTNAME=	cups
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 DISTVERSIONPREFIX=v
 CATEGORIES=	print
 
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++11-lang cpe gmake iconv localbase pkgconfig
-CPE_VENDOR=	apple
+CPE_VENDOR=	linuxfoundation
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenPrinting
@@ -53,7 +53,7 @@ DBUS_SUB_LIST=		DBUS_DAEMON=dbus
 DBUS_SUB_LIST_OFF=	DBUS_DAEMON=
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-GNUTLS_CONFIGURE_WITH=	tls
+GNUTLS_CONFIGURE_WITH=	tls=gnutls
 
 IPPTOOL_DESC=		Internet Printing Protocol testing tool
 
