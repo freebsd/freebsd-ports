@@ -1,4 +1,4 @@
---- Gemfile.orig	2022-05-20 13:56:26 UTC
+--- Gemfile.orig	2022-05-27 19:14:13 UTC
 +++ Gemfile
 @@ -2,9 +2,9 @@
  
@@ -30,7 +30,7 @@
  
  # Colored output to console
  gem 'rainbow', '~> 3.0'
-@@ -334,87 +334,15 @@ gem 'batch-loader', '~> 2.0.1'
+@@ -334,87 +334,19 @@ gem 'batch-loader', '~> 2.0.1'
  gem 'peek', '~> 1.1'
  
  # Snowplow events tracking
@@ -106,6 +106,10 @@
 -  gem 'sigdump', '~> 0.2.4', require: 'sigdump/setup'
 -end
 -
+ group :development, :test, :danger do
+   gem 'gitlab-dangerfiles', '~> 3.0', require: false
+ end
+ 
 -group :development, :test, :coverage do
 -  gem 'simplecov', '~> 0.21', require: false
 -  gem 'simplecov-lcov', '~> 0.8.0', require: false
@@ -116,7 +120,7 @@
  # Gems required in omnibus-gitlab pipeline
  group :development, :test, :omnibus do
    # Using a fork until https://github.com/pivotal/LicenseFinder/pull/816 is
-@@ -423,30 +351,6 @@ group :development, :test, :omnibus do
+@@ -423,30 +355,6 @@ group :development, :test, :omnibus do
    gem 'gitlab-license_finder', '~> 6.0', require: false
  end
  
@@ -147,11 +151,10 @@
  gem 'octokit', '~> 4.15'
  
  # Updating this gem version here is deprecated. See:
-@@ -545,3 +449,7 @@ gem 'ipaddress', '~> 0.8.3'
+@@ -545,3 +453,6 @@ gem 'ipaddress', '~> 0.8.3'
  gem 'parslet', '~> 1.8'
  
  gem 'ipynbdiff', '0.4.7'
 +
 +gem 'parser'
-+gem 'gitlab-dangerfiles'
 +
