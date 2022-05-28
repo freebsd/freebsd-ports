@@ -13,7 +13,9 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libgpac.so:multimedia/gpac-libgpac
 
-USES=		localbase:ldflags
+USES=		cpe localbase:ldflags
+
+CPE_VENDOR=	gpac
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gpac
