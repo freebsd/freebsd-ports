@@ -7,6 +7,9 @@ CATEGORIES=	security www
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Intrusion detection and prevention engine / Apache Wrapper
 
+DEPRECATED=	The project was not developed further
+EXPIRATION_DATE=	2022-06-27
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
