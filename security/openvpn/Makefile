@@ -1,7 +1,7 @@
 # Created by: Matthias Andree <mandree@FreeBSD.org>
 
 PORTNAME=		openvpn
-DISTVERSION=		2.5.6
+DISTVERSION=		2.5.7
 PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
@@ -44,7 +44,7 @@ OPTIONS_SINGLE_SSL=	OPENSSL MBEDTLS
 ASYNC_PUSH_DESC=	Enable async-push support
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 LZO_DESC=		LZO compression (incompatible with LibreSSL)
-MBEDTLS_DESC=		SSL/TLS via mbedTLS (lacks TLS v1.3)
+MBEDTLS_DESC=		SSL/TLS via mbedTLS (DEPRECATED)
 PKCS11_DESC=		Use security/pkcs11-helper (OpenSSL only)
 SMALL_DESC=		Build a smaller executable with fewer features
 TUNNELBLICK_DESC=	XOR scrambling patch - DEPRECATED!
