@@ -190,6 +190,12 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/non_ascii_equivalents.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/padded.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/papercdcase.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/persistent_variables/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/persistent_variables/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/persistent_variables/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/persistent_variables/__pycache__/ui_variables_dialog%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/persistent_variables/__pycache__/ui_variables_dialog%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/persistent_variables/ui_variables_dialog.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/playlist.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/release_type.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/releasetag_aggregations.py
