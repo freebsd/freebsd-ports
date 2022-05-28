@@ -18,7 +18,6 @@ USES=		cmake compiler:c++11-lang cpe qt:5
 USE_LDCONFIG=	yes
 USE_QT=		buildtools_build qmake_build uitools_build core gui \
 		widgets xml
-NO_WRKSUBDIR=	yes
 
 DESKTOP_ENTRIES="Zint" "Barcode generator" "" "zint-qt" "" false
 
