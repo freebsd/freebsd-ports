@@ -30,7 +30,6 @@ BASU_DESC=		ConsoleKit2 support via basu (experimental)
 BASU_PATCH_SITES=	https://github.com/DankBSD/${PORTNAME}/commit/:ck2
 BASU_PATCHFILES=	5f31d8eebea1.patch:-p1:ck2
 BASU_LIB_DEPENDS=	libbasu.so:devel/basu
-BASU_USES=		localbase # https://github.com/emersion/basu/issues/36
 BASU_MESON_ON=		-Dlibseat-consolekit2=enabled
 .if make(makesum)
 .MAKEFLAGS:		WITH+=BASU
