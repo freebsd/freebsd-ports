@@ -36,6 +36,7 @@ OPTIONS_DEFINE=		\
 	OPENEXR 	\
 	OPENIMAGEIO	\
 	OPENIMAGEDN	\
+	OPENJPEG	\
 	OPENMP 		\
 	OPENSUBDIV	\
 	OPENVDB		\
@@ -83,6 +84,7 @@ OPTIONS_DEFAULT=	\
 	OPENCOLORIO	\
 	OPENEXR		\
 	OPENIMAGEIO	\
+	OPENJPEG	\
 	OPENSUBDIV	\
 	OPENVDB		\
 	PUGIXML		\
@@ -132,6 +134,7 @@ MOD_SMOKE_DESC=		Smoke simulation support
 OPENCOLORIO_DESC=	OpenColorIO-based color management support
 OPENIMAGEIO_DESC=	OpenImageIO image processing support
 OPENIMAGEDN_DESC=	OpenImageDenoise support
+OPENJPEG_DESC=		Enhanced JPEG (jpeg2000) graphics support
 OPENSUBDIV_DESC=	Use the OpenSubDiv library for surface subdivision
 OPENVDB_DESC=		Use openVDB library for volumetric data
 PUGIXML_DESC=		Enable pugixml support
