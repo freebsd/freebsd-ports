@@ -17,7 +17,9 @@ BUILD_DEPENDS=	a2x:textproc/asciidoc \
 		${LOCALBASE}/libdata/pkgconfig/jose.pc:net/jose \
 		socat:net/socat
 
-USES=		compiler:c11 meson pkgconfig tar:xz
+USES=		compiler:c11 cpe meson pkgconfig tar:xz
+
+CPE_VENDOR=	tang_project
 
 post-install:
 	${MKDIR} -m 0700 ${STAGEDIR}/var/db/tang
