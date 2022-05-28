@@ -11,6 +11,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	prosodyctl:net-im/prosody
 
+USES=		cpe
+
+CPE_VENDOR=	jitsi
+CPE_PRODUCT=	meet
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
