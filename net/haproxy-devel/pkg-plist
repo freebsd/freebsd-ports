@@ -37,6 +37,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/htx-api.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/initcalls.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/ist.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/api/layers.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/list.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/pools.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/scheduler.txt
