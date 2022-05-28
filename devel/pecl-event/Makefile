@@ -1,7 +1,7 @@
 # Created by: John Chen <johnpupu@gmail.com>
 
 PORTNAME=	event
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	devel
 
 MAINTAINER=	fluffy@FreeBSD.org
