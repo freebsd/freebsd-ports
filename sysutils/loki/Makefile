@@ -11,8 +11,10 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
-USES=		go:modules
+USES=		go:modules cpe
 USE_GITHUB=	yes
+
+CPE_VENDOR=	grafana
 
 GH_ACCOUNT=	grafana
 GH_PROJECT=	loki
