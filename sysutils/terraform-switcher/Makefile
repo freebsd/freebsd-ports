@@ -1,8 +1,7 @@
 # Created by: Gabriel M. Dutra <0xdutra@gmail.com>
 
 PORTNAME=	terraform-switcher
-DISTVERSION=	0.13.1218
-PORTREVISION=	1
+DISTVERSION=	0.13.1250
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
@@ -19,7 +18,9 @@ GH_TUPLE=	\
 		agext:levenshtein:v1.2.2:agext_levenshtein/vendor/github.com/agext/levenshtein \
 		apparentlymart:go-textseg:v1.0.0:apparentlymart_go_textseg/vendor/github.com/apparentlymart/go-textseg \
 		apparentlymart:go-textseg:v13.0.0:apparentlymart_go_textseg_v13/vendor/github.com/apparentlymart/go-textseg/v13 \
+		chzyer:logex:v1.1.10:chzyer_logex/vendor/github.com/chzyer/logex \
 		chzyer:readline:f6d7a1f6fbf3:chzyer_readline/vendor/github.com/chzyer/readline \
+		chzyer:test:a1ea475d72b1:chzyer_test/vendor/github.com/chzyer/test \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:sys:0f9fa26af87c:golang_sys/vendor/golang.org/x/sys \
