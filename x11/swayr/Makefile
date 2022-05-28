@@ -1,7 +1,6 @@
 PORTNAME=	swayr
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.18.0
-PORTREVISION=	1
+DISTVERSION=	0.19.0
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~tsdh/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
@@ -26,8 +25,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-3.1.16 \
-		clap_derive-3.1.7 \
+		clap-3.1.18 \
+		clap_derive-3.1.18 \
 		clap_lex-0.2.0 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
@@ -45,11 +44,11 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
-		indexmap-1.8.1 \
-		itoa-1.0.1 \
+		indexmap-1.8.2 \
+		itoa-1.0.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.125 \
+		libc-0.2.126 \
 		log-0.4.17 \
 		mach-0.3.2 \
 		memchr-2.5.0 \
@@ -59,24 +58,24 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
-		once_cell-1.10.0 \
-		os_str_bytes-6.0.0 \
+		once_cell-1.12.0 \
+		os_str_bytes-6.1.0 \
 		ppv-lite86-0.2.16 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.38 \
+		proc-macro2-1.0.39 \
 		quote-1.0.18 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
-		rayon-1.5.2 \
-		rayon-core-1.9.2 \
+		rayon-1.5.3 \
+		rayon-core-1.9.3 \
 		redox_syscall-0.2.13 \
 		redox_users-0.4.3 \
-		regex-1.5.5 \
-		regex-syntax-0.6.25 \
-		rt-format-0.3.0 \
-		ryu-1.0.9 \
+		regex-1.5.6 \
+		regex-syntax-0.6.26 \
+		rt-format-0.3.1 \
+		ryu-1.0.10 \
 		scopeguard-1.1.0 \
 		serde-1.0.137 \
 		serde_derive-1.0.137 \
@@ -85,8 +84,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		swaybar-types-3.0.0 \
 		swayipc-3.0.0 \
 		swayipc-types-1.1.0 \
-		syn-1.0.92 \
-		sysinfo-0.23.11 \
+		syn-1.0.95 \
+		sysinfo-0.23.13 \
 		termcolor-1.1.3 \
 		textwrap-0.15.0 \
 		thiserror-1.0.31 \
@@ -94,7 +93,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		time-0.1.43 \
 		toml-0.5.9 \
 		typenum-1.15.0 \
-		unicode-xid-0.2.3 \
+		unicode-ident-1.0.0 \
 		uom-0.30.0 \
 		version_check-0.9.4 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
