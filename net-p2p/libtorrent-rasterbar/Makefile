@@ -1,11 +1,12 @@
 # Created by: Doug Barton <dougb@FreeBSD.org>
 
 PORTNAME=	libtorrent-rasterbar
-DISTVERSION=	1.2.14
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.6-27
+DISTVERSIONSUFFIX=	-g34c75eb5f
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
-MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
+#MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library implementing a BitTorrent client
@@ -17,18 +18,28 @@ LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lib iconv:wchar_t libtool localbase:ldflags pathfix pkgconfig python:test shebangfix ssl
-SHEBANG_FILES=	test/socks.py test/web_server.py
+USES=		cmake:testing compiler:c++11-lib iconv:wchar_t libtool \
+		localbase:ldflags pathfix pkgconfig python:test shebangfix ssl
 USE_LDCONFIG=	yes
 
-LDFLAGS+=	${ICONV_LIB}
+SHEBANG_GLOB=	*.py
 
-SHLIB_VER=	10
-PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}" SO_VER="${DISTVERSION}"
+USE_GITHUB=	yes
+GH_ACCOUNT=	arvidn
+GH_PROJECT=	libtorrent
+GH_TUPLE=	arvidn:try_signal:751a7e5:try_signal/deps/try_signal \
+		arvidn:libsimulator:64fb5b4:libsimulator/simulation/libsimulator \
+		paullouisageneau:boost-asio-gnutls:a57d4d3:asio/deps/asio-gnutls
+
+USE_CXXSTD=	c++17 # prevent boost-related SEGV, see bug#264278
+
+LDFLAGS+=	${ICONV_LIB}
 
 DOCFILES=	AUTHORS ChangeLog
 PORTDOCS=	${DOCFILES} docs/*
 PORTEXAMPLES=	*.cpp
+
+CMAKE_TESTING_ON=	build_tests
 
 OPTIONS_DEFINE=		DOCS EXAMPLES LOGGING
 OPTIONS_DEFAULT=	LOGGING
@@ -38,10 +49,8 @@ LOGGING_DESC=		Enable logging to disk
 EXAMPLES_CMAKE_BOOL=	build_examples
 LOGGING_CMAKE_BOOL=	logging
 
-PORTSCOUT=	limit:^1.* # 2.x is WIP and we don't accept it before qBittorrent does
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|return "python3";|return "${PYTHON_CMD}";|' \
+	@${REINPLACE_CMD} -e 's|"python3"|"${PYTHON_CMD:T}"|' \
 		${WRKSRC}/test/setup_transfer.cpp
 
 post-install:
@@ -52,6 +61,7 @@ post-install:
 	#               https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=206169
 	@${REINPLACE_CMD} 's/-l-pthread/-lpthread/' \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/libtorrent-rasterbar.pc
+	@${RM} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/libtorrent-rasterbar.pc.bak
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -63,11 +73,5 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/${PORTEXAMPLES} \
 		${STAGEDIR}${EXAMPLESDIR}
-
-do-test:
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -Dbuild_tests:BOOL=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
 .include <bsd.port.mk>

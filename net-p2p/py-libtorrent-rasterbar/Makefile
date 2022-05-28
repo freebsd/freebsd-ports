@@ -2,7 +2,8 @@
 
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.13
+DISTVERSION=	2.0.6-27
+DISTVERSIONSUFFIX=	-g34c75eb5f
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,18 +14,25 @@ COMMENT=	Python bindings for libtorrent-rasterbar
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../COPYING
 
+BROKEN=		fails to build, see https://github.com/arvidn/libtorrent/issues/6890
+
 BUILD_DEPENDS=	b2:devel/boost_build
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		${PY_BOOST}
 
 USES=		compiler:c11 iconv localbase:ldflags python:3.6+
+USE_PYTHON=	distutils autoplist
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	arvidn
 GH_PROJECT=	libtorrent
-USE_PYTHON=	distutils autoplist
+GH_TUPLE=	arvidn:try_signal:751a7e5:try_signal/../../deps/try_signal \
+		arvidn:libsimulator:64fb5b4:libsimulator/../../simulation/libsimulator \
+		paullouisageneau:boost-asio-gnutls:a57d4d3:asio/../../deps/asio-gnutls
 
 BINARY_ALIAS=	b2=${FILESDIR}/b2
 
+USE_CXXSTD=	c++17 # prevent boost-related SEGV, see bug#264278
 CFLAGS+=	-DTORRENT_DISABLE_LOGGING # undefined symbol: https://github.com/arvidn/libtorrent/issues/3331
 LDFLAGS+=	${LOCALBASE}/lib/libboost_python${PYTHON_SUFFIX}.so ${LOCALBASE}/lib/libiconv.so # fails to link libs: https://github.com/arvidn/libtorrent/issues/3330
 
