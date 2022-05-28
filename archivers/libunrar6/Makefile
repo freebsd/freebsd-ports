@@ -1,5 +1,5 @@
 PORTNAME=	libunrar6
-PORTVERSION=	6.1.6
+PORTVERSION=	6.1.7
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}
