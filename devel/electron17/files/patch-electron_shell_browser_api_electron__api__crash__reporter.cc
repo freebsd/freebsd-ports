@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_crash_reporter.cc.orig	2021-11-15 23:45:07 UTC
+--- electron/shell/browser/api/electron_api_crash_reporter.cc.orig	2022-05-25 15:32:53 UTC
 +++ electron/shell/browser/api/electron_api_crash_reporter.cc
-@@ -29,7 +29,7 @@
+@@ -30,7 +30,7 @@
  #include "shell/common/gin_helper/dictionary.h"
  #include "shell/common/node_includes.h"
  
@@ -9,7 +9,7 @@
  #include "components/crash/core/app/crashpad.h"  // nogncheck
  #include "components/crash/core/browser/crash_upload_list_crashpad.h"  // nogncheck
  #include "components/crash/core/common/crash_key.h"
-@@ -69,7 +69,7 @@ namespace api {
+@@ -70,7 +70,7 @@ namespace api {
  
  namespace crash_reporter {
  
@@ -18,16 +18,16 @@
  namespace {
  
  void NoOp() {}
-@@ -135,7 +135,7 @@ void Start(const std::string& submit_url,
-            const std::map<std::string, std::string>& global_extra,
+@@ -137,7 +137,7 @@ void Start(const std::string& submit_url,
             const std::map<std::string, std::string>& extra,
             bool is_node_process) {
+   TRACE_EVENT0("electron", "crash_reporter::Start");
 -#if !defined(MAS_BUILD)
 +#if !defined(MAS_BUILD) && !defined(OS_BSD)
    if (g_crash_reporter_initialized)
      return;
    g_crash_reporter_initialized = true;
-@@ -202,7 +202,7 @@ void Start(const std::string& submit_url,
+@@ -204,7 +204,7 @@ void Start(const std::string& submit_url,
  
  namespace {
  
@@ -36,7 +36,7 @@
  void GetUploadedReports(
      v8::Isolate* isolate,
      base::OnceCallback<void(v8::Local<v8::Value>)> callback) {
-@@ -259,13 +259,13 @@ v8::Local<v8::Value> GetUploadedReports(v8::Isolate* i
+@@ -261,13 +261,13 @@ v8::Local<v8::Value> GetUploadedReports(v8::Isolate* i
  #endif
  
  void SetUploadToServer(bool upload) {
@@ -52,7 +52,7 @@
    return false;
  #else
    return ElectronCrashReporterClient::Get()->GetCollectStatsConsent();
-@@ -274,7 +274,7 @@ bool GetUploadToServer() {
+@@ -276,7 +276,7 @@ bool GetUploadToServer() {
  
  v8::Local<v8::Value> GetParameters(v8::Isolate* isolate) {
    std::map<std::string, std::string> keys;
@@ -61,7 +61,7 @@
    electron::crash_keys::GetCrashKeys(&keys);
  #endif
    return gin::ConvertToV8(isolate, keys);
-@@ -286,7 +286,7 @@ void Initialize(v8::Local<v8::Object> exports,
+@@ -288,7 +288,7 @@ void Initialize(v8::Local<v8::Object> exports,
                  void* priv) {
    gin_helper::Dictionary dict(context->GetIsolate(), exports);
    dict.SetMethod("start", &electron::api::crash_reporter::Start);
