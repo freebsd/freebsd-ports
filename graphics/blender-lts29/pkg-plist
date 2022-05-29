@@ -23,8 +23,8 @@ share/applications/blender%%SUFFIX%%.desktop
 %%OPENCOLORIO%%%%DATADIR%%/%%VER%%/datafiles/colormanagement/luts/vd16.spi1d
 %%OPENCOLORIO%%%%DATADIR%%/%%VER%%/datafiles/colormanagement/luts/xyz_D65_to_E.spimtx
 %%OPENCOLORIO%%%%DATADIR%%/%%VER%%/datafiles/colormanagement/luts/xyz_to_aces.spimtx
-%%NLS%%%%DATADIR%%/%%VER%%/datafiles/fonts/bmonofont-i18n.ttf
-%%NLS%%%%DATADIR%%/%%VER%%/datafiles/fonts/droidsans.ttf
+%%DATADIR%%/%%VER%%/datafiles/fonts/bmonofont-i18n.ttf
+%%DATADIR%%/%%VER%%/datafiles/fonts/droidsans.ttf
 %%DATADIR%%/%%VER%%/datafiles/icons/brush.gpencil_draw.draw.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/brush.gpencil_draw.erase.dat
 %%DATADIR%%/%%VER%%/datafiles/icons/brush.gpencil_draw.fill.dat
@@ -1229,9 +1229,7 @@ share/applications/blender%%SUFFIX%%.desktop
 %%DATADIR%%/%%VER%%/scripts/addons/magic_uv/ui/view3d_copy_paste_uv_objectmode.py
 %%DATADIR%%/%%VER%%/scripts/addons/magic_uv/ui/view3d_uv_manipulation.py
 %%DATADIR%%/%%VER%%/scripts/addons/magic_uv/ui/view3d_uv_mapping.py
-%%DATADIR%%/%%VER%%/scripts/addons/magic_uv/updater.py
 %%DATADIR%%/%%VER%%/scripts/addons/magic_uv/utils/__init__.py
-%%DATADIR%%/%%VER%%/scripts/addons/magic_uv/utils/addon_updater.py
 %%DATADIR%%/%%VER%%/scripts/addons/magic_uv/utils/bl_class_registry.py
 %%DATADIR%%/%%VER%%/scripts/addons/magic_uv/utils/compatibility.py
 %%DATADIR%%/%%VER%%/scripts/addons/magic_uv/utils/property_class_registry.py
@@ -1993,7 +1991,7 @@ share/applications/blender%%SUFFIX%%.desktop
 %%DATADIR%%/%%VER%%/scripts/presets/fluid/Oil.py
 %%DATADIR%%/%%VER%%/scripts/presets/fluid/Water.py
 %%DATADIR%%/%%VER%%/scripts/presets/framerate/120.py
-%%DATADIR%%/%%VER%%/scripts/presets/framerate/2%%PYTHON_VER%%8.py
+%%DATADIR%%/%%VER%%/scripts/presets/framerate/23.98.py
 %%DATADIR%%/%%VER%%/scripts/presets/framerate/24.py
 %%DATADIR%%/%%VER%%/scripts/presets/framerate/240.py
 %%DATADIR%%/%%VER%%/scripts/presets/framerate/25.py
