@@ -2,11 +2,10 @@
 
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.5
-PORTREVISION=	2
+DISTVERSION=	0.5.0
 CATEGORIES=	audio
-MASTER_SITES=	LOCAL/ehaupt:extras
-DISTFILES=	${PORTNAME}-extras-${EXTRASVERSION}${EXTRACT_SUFX}:extras
+MASTER_SITES=	https://github.com/BambooTracker/BambooTracker/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+DISTNAME=	BambooTracker-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music tracker for the Yamaha YM2608 (OPNA) sound chip
@@ -14,29 +13,28 @@ COMMENT=	Music tracker for the Yamaha YM2608 (OPNA) sound chip
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++14-lang qmake qt:5 gl xorg
+LIB_DEPENDS=	librtaudio.so:audio/rtaudio \
+		librtmidi.so:audio/rtmidi
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	rerrahkr
-GH_PROJECT=	BambooTracker
+USES=		compiler:c++14-lang desktop-file-utils gl qmake qt:5 \
+		shared-mime-info xorg
+
 USE_GL=		gl
-USE_QT=		buildtools core gui linguisttools_build multimedia network \
-		widgets
+USE_QT=		buildtools core gui multimedia network widgets \
+		linguisttools_build
 
-BUILD_WRKSRC=		${WRKSRC}/BambooTracker
-CONFIGURE_WRKSRC=	${WRKSRC}/BambooTracker
+DATADIR=	${PREFIX}/share/BambooTracker
+DOCSDIR=	${PREFIX}/share/doc/BambooTracker
+EXAMPLESDIR=	${PREFIX}/share/examples/BambooTracker
 
-PORTEXAMPLES=	*
+WRKSRC=		${WRKDIR}/BambooTracker-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
-EXTRASVERSION=	2
-
-OPTIONS_DEFINE=	ALSA EXAMPLES JACK NLS PULSEAUDIO
-OPTIONS_DEFAULT=PULSEAUDIO
+OPTIONS_DEFINE=		ALSA EXAMPLES JACK NLS PULSEAUDIO
+OPTIONS_DEFAULT=	PULSEAUDIO
+OPTIONS_SUB=		yes
 
 ALSA_DESC=	ALSA audio architecture support (EXPERIMENTAL)
 JACK_DESC=	JACK audio server support (EXPERIMENTAL)
-
-OPTIONS_SUB=	yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
@@ -49,31 +47,24 @@ QMAKE_ARGS+=	CONFIG+="use_alsa"
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-QMAKE_ARGS+=	CONFIG+="use_jack" \
-		CONFIG+="jack_has_rename"
+QMAKE_ARGS+=	CONFIG+="jack_has_rename" CONFIG+="use_jack"
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 QMAKE_ARGS+=	CONFIG+="use_pulse"
 .endif
 
-do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons \
-		${STAGEDIR}${MANPREFIX}/man/fr.UTF-8/man1
-	${INSTALL_PROGRAM} ${WRKSRC}/BambooTracker/BambooTracker \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/data/man/en/man1/BambooTracker.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/data/man/fr/man1/BambooTracker.1 \
-		${STAGEDIR}${MANPREFIX}/man/fr.UTF-8/man1
-	${INSTALL_DATA} ${WRKSRC}/data/applications/BambooTracker.desktop ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/img/icon.png \
-		${STAGEDIR}${PREFIX}/share/icons/BambooTracker.png
+post-install:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${MV} ${STAGEDIR}${PREFIX}/share/BambooTracker/demos/* ${STAGEDIR}${EXAMPLESDIR}/
+	${MV} ${STAGEDIR}${MANPREFIX}/share/man/en/man1/BambooTracker.1 ${STAGEDIR}${MANPREFIX}/share/man/man1/
+	${RMDIR} ${STAGEDIR}${PREFIX}/share/BambooTracker/demos
+	${RMDIR} ${STAGEDIR}${MANPREFIX}/share/man/en/man1
+	${RMDIR} ${STAGEDIR}${MANPREFIX}/share/man/en
 
-do-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/data/demos/modules/*.btm \
-		${WRKDIR}/${PORTNAME}-extras-${EXTRASVERSION}/*.btm \
-		${STAGEDIR}${EXAMPLESDIR}
+# maintainer targets
+try-latest: clean extract
+	@${RM} -rf ${WRKSRC}
+	@git clone --recurse-submodules https://github.com/BambooTracker/BambooTracker.git ${WRKSRC}
 
 .include <bsd.port.mk>
