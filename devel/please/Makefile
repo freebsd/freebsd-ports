@@ -11,8 +11,7 @@ COMMENT=	High-performance extensible build system for reproducible builds
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go \
-		bash:shells/bash \
+BUILD_DEPENDS=	bash:shells/bash \
 		ca_root_nss>0:security/ca_root_nss \
 		git:devel/git \
 		protoc:devel/protobuf

@@ -38,7 +38,7 @@ post-patch:
 .endif
 
 do-build:
-	@(cd ${WRKSRC} && ${SETENV} \
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		VERSION=${DISTVERSION} COMMIT=${GH_TAGNAME} scripts/build.sh )
 
 do-install:

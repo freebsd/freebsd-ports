@@ -359,20 +359,20 @@ pre-build:
 		${MAKE_CMD} -C .)
 
 # Generate go source from templates
-	${SETENV} ${GO_ENV} GOCACHE=${TMPDIR} GO111MODULE=off GOFLAGS="-mod=vendor" ${GO_CMD} generate ${WRKSRC}/pkg/status/render.go
-	${SETENV} ${GO_ENV} GOCACHE=${TMPDIR} GO111MODULE=off GOFLAGS="-mod=vendor" ${GO_CMD} generate ${WRKSRC}/cmd/agent/gui/gui.go
+	${SETENV} ${MAKE_ENV} ${GO_ENV} GOCACHE=${TMPDIR} GO111MODULE=off GOFLAGS="-mod=vendor" ${GO_CMD} generate ${WRKSRC}/pkg/status/render.go
+	${SETENV} ${MAKE_ENV} ${GO_ENV} GOCACHE=${TMPDIR} GO111MODULE=off GOFLAGS="-mod=vendor" ${GO_CMD} generate ${WRKSRC}/cmd/agent/gui/gui.go
 
 post-build:
 # Generate config files
-	${SETENV} ${GO_ENV} GOCACHE=${TMPDIR} ${GO_CMD} run ${WRKSRC}/pkg/config/render_config.go agent-py3 \
+	${SETENV} ${MAKE_ENV} ${GO_ENV} GOCACHE=${TMPDIR} ${GO_CMD} run ${WRKSRC}/pkg/config/render_config.go agent-py3 \
 		${WRKSRC}/pkg/config/config_template.yaml \
 		${WRKSRC}/cmd/agent/dist/datadog.yaml
 
-	${SETENV} ${GO_ENV} GOCACHE=${TMPDIR} ${GO_CMD} run ${WRKSRC}/pkg/config/render_config.go system-probe \
+	${SETENV} ${MAKE_ENV} ${GO_ENV} GOCACHE=${TMPDIR} ${GO_CMD} run ${WRKSRC}/pkg/config/render_config.go system-probe \
 		${WRKSRC}/pkg/config/config_template.yaml \
 		${WRKSRC}/cmd/agent/dist/system-probe.yaml
 
-	${SETENV} ${GO_ENV} GOCACHE=${TMPDIR} ${GO_CMD} run ${WRKSRC}/pkg/config/render_config.go dogstatsd \
+	${SETENV} ${MAKE_ENV} ${GO_ENV} GOCACHE=${TMPDIR} ${GO_CMD} run ${WRKSRC}/pkg/config/render_config.go dogstatsd \
 		${WRKSRC}/pkg/config/config_template.yaml \
 		${WRKSRC}/cmd/agent/dist/dogstatsd.yaml
 

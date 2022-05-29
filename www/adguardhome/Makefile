@@ -10,10 +10,9 @@ COMMENT=	Network-wide ads & trackers blocking DNS server
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cpe go:modules
+USES=		cpe go:1.17,modules
 
 GO_MODULE=	github.com/AdguardTeam/AdGuardHome
-GO_PORT=	lang/go117 # quic-go does not build on Go 1.18 yet
 
 # to rebuild the deps archives:
 #   1. set DEV_UPDATE_MODE=yes

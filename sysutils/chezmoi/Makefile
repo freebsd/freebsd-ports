@@ -148,7 +148,7 @@ SOURCE_DATE_EPOCH_CMD=	date -ur $$(grep TIMESTAMP ${DISTINFO_FILE} | ${SED} -e '
 
 do-build-DOCS-on:
 	@${CP} ${_DISTDIR}/mermaid@8.8.0/dist/mermaid.min.js ${WRKSRC}/assets/chezmoi.io
-	(cd ${WRKSRC}/assets/chezmoi.io && mkdocs build)
+	(cd ${WRKSRC}/assets/chezmoi.io && ${SETENV} ${MAKE_ENV} mkdocs build)
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/vendor/github.com/chris-ramon

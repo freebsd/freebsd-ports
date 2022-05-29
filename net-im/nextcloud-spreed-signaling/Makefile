@@ -8,9 +8,7 @@ COMMENT=	Signaling server used for Nextcloud Talk
 
 LICENSE=	AGPLv3
 
-BUILD_DEPENDS=	go:lang/go
-
-USES=		gmake
+USES=		gmake go:no_targets
 USERS=		signaling
 GROUPS=		signaling
 
@@ -48,6 +46,6 @@ GH_TUPLE=	coreos:go-semver:v0.2.0:coreos_go_semver/vendor/src/github.com/coreos/
 		uber-go:multierr:v1.1.0:uber_go_multierr/vendor/src/go.uber.org/multierr \
 		uber-go:zap:v1.10.0:uber_go_zap/vendor/src/go.uber.org/zap 
 
-MAKE_ENV=	GO111MODULE="off"
+MAKE_ENV=	${GO_ENV}
 
 .include <bsd.port.mk>

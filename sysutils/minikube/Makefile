@@ -243,6 +243,6 @@ pre-build:
 		-o pkg/minikube/assets/assets.go -pkg assets deploy/addons/... && \
 		${LOCALBASE}/bin/go-bindata -nomemcopy \
 		-o pkg/minikube/translate/translations.go -pkg translate translations/... && \
-		${LOCALBASE}/bin/gofmt -s -w pkg/minikube/translate/translations.go
+		${LOCALBASE}/bin/gofmt${GO_SUFFIX} -s -w pkg/minikube/translate/translations.go
 
 .include <bsd.port.mk>
