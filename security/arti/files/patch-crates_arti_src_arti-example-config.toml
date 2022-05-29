@@ -1,0 +1,11 @@
+--- crates/arti/src/arti-example-config.toml.orig	2022-05-29 12:30:55 UTC
++++ crates/arti/src/arti-example-config.toml
+@@ -62,7 +62,7 @@
+ #
+ # The state directory is not yet used.
+ [storage]
+-#cache_dir = "${ARTI_CACHE}"
++cache_dir = "/var/db/arti"
+ #state_dir = "${ARTI_LOCAL_DATA}"
+ 
+ # Describe how to enforce permissions on the filesystem when accessing the cache
