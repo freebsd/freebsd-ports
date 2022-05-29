@@ -1,5 +1,5 @@
 PORTNAME=	arcan
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.1.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
