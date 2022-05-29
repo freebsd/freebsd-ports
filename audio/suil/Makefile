@@ -1,7 +1,7 @@
 # Created by: Michael Beer <beerml@sigma6audio.de>
 
 PORTNAME=	suil
-PORTVERSION=	0.10.10
+PORTVERSION=	0.10.12
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
