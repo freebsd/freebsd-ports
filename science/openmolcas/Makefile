@@ -8,6 +8,8 @@ COMMENT=	Quantum chemistry software package
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	build breaks: Symbol 'maxfilesize' at (1) has no IMPLICIT type; did you mean 'mxfile'?
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/szip \
