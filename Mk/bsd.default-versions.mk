@@ -56,6 +56,8 @@ GCC_DEFAULT?=		10
 GL_DEFAULT?=		mesa-libs
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
+# Possible values: 1.17, 1.18, 1.19-devel
+GO_DEFAULT?=		1.18
 # Possible values: 6, 6-nox11, 7, 7-nox11
 IMAGEMAGICK_DEFAULT?=	7
 # Possible values: 7, 8, 11, 17, 18

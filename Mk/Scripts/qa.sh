@@ -978,6 +978,9 @@ depends_blacklist()
 			lang/gcc)
 				instead="USE_GCC"
 				;;
+			lang/go)
+				instead="USES=go"
+				;;
 			lang/julia)
 				instead="a dependency on lang/julia\${JULIA_DEFAULT:S/.//}"
 				;;

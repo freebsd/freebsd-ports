@@ -1,6 +1,6 @@
 # Created by: Devon H. O'Dell <devon.odell@gmail.com>
 
-DISTVERSION=	1.17.10
+DISTVERSION=	1.18.2
 # Always set PORTREVISION explicitly as otherwise they are inherited from lang/go-devel
 PORTREVISION=	0
 MASTER_SITES=	https://golang.org/dl/ \

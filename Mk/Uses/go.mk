@@ -3,9 +3,10 @@
 #
 # Feature:	go
 # Usage:	USES=go
-# Valid ARGS:	(none), modules, no_targets, run
+# Valid ARGS:	(none), N.NN, N.NN-devel, modules, no_targets, run
 #
-# (none)	Setup GOPATH and build in GOPATH mode.
+# (none)	Setup GOPATH and build in GOPATH mode using default Go version.
+# N.NN[-devel]	Specify Go version
 # modules	If the upstream uses Go modules, this can be set to build
 #		in modules-aware mode.
 # no_targets	Indicates that Go is needed at build time as a part of
@@ -52,24 +53,29 @@
 # GO_TESTFLAGS
 #	Additional build arguments to be passed to the `go test` command
 #
-# GO_PORT
-#	The Go port to use.  By default this is lang/go but can be set
-#	to lang/go-devel in make.conf for testing with future Go versions.
-#
-#	This variable must not be set by individual ports!
-#
 # MAINTAINER: ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GO_MK)
 _INCLUDE_USES_GO_MK=	yes
 
-.  if !empty(go_ARGS:Nmodules:Nno_targets:Nrun)
-IGNORE=	USES=go has invalid arguments: ${go_ARGS:Nmodules:Nno_targets:Nrun}
+# When adding a version, please keep the comment in
+# Mk/bsd.default-versions.mk in sync.
+GO_VALID_VERSIONS=	1.17 1.18 1.19-devel
+
+# Check arguments sanity
+.  if !empty(go_ARGS:N[1-9].[0-9][0-9]:N*-devel:Nmodules:Nno_targets:Nrun)
+IGNORE=	USES=go has invalid arguments: ${go_ARGS:N[1-9].[0-9][0-9]:N*-devel:Nmodules:Nno_targets:Nrun}
 .  endif
 
-# Settable variables
+# Parse Go version
+GO_VERSION=	${go_ARGS:Nmodules:Nno_targets:Nrun:C/^$/${GO_DEFAULT}/}
+.  if empty(GO_VALID_VERSIONS:M${GO_VERSION})
+IGNORE?= USES=go has invalid version number: ${GO_VERSION}
+.  endif
+GO_SUFFIX=	${GO_VERSION:S/.//:C/.*-devel/-devel/}
+GO_PORT=	lang/go${GO_SUFFIX}
 
-GO_PORT?=	lang/go
+# Settable variables
 
 .  if empty(GO_PKGNAME)
 .    if !empty(GH_SUBDIR)
@@ -89,7 +95,7 @@ GO_BUILDFLAGS+=	-v -buildmode=exe -trimpath
 GO_BUILDFLAGS+=	-ldflags=-s
 .  endif
 GO_TESTFLAGS+=	-v
-.  if ${GO_PORT} != lang/go117
+.  if ${GO_VERSION} != 1.17
 GO_BUILDFLAGS+=	-buildvcs=false
 GO_TESTFLAGS+=	-buildvcs=false
 .  endif
@@ -107,7 +113,7 @@ GO_GOSUMDB?=	sum.golang.org
 
 # Read-only variables
 
-GO_CMD=		${LOCALBASE}/bin/go
+GO_CMD=		${LOCALBASE}/bin/go${GO_SUFFIX}
 GO_WRKDIR_BIN=	${WRKDIR}/bin
 GO_ENV+=	CGO_ENABLED=${CGO_ENABLED} \
 		CGO_CFLAGS="${CGO_CFLAGS}" \
@@ -154,6 +160,7 @@ GO_ENV+=	GOPATH="${GO_GOPATH}" \
 .  endif
 
 BUILD_DEPENDS+=	${GO_CMD}:${GO_PORT}
+BINARY_ALIAS+=	go=go${GO_SUFFIX} gofmt=gofmt${GO_SUFFIX}
 .  if ${go_ARGS:Mrun}
 RUN_DEPENDS+=	${GO_CMD}:${GO_PORT}
 .  endif
