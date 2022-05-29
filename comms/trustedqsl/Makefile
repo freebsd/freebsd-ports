@@ -1,5 +1,5 @@
 PORTNAME=	trustedqsl
-DISTVERSION=	2.5.9
+DISTVERSION=	2.6.3
 #PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.arrl.org/files/file/LoTW%20Instructions/ \
@@ -22,6 +22,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USES=		bdb:5+ cmake compiler:c++11-lib pkgconfig ssl
 CMAKE_ARGS=	-DBDB_PREFIX=${LOCALBASE}
+CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
 USE_WX=		2.8+
 USE_LDCONFIG=	yes
 
