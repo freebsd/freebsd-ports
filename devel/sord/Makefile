@@ -1,7 +1,7 @@
 # Created by: Michael Beer <beerml@sigma6audio.de>
 
 PORTNAME=	sord
-PORTVERSION=	0.16.8
+PORTVERSION=	0.16.10
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
 
