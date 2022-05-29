@@ -1,7 +1,7 @@
 # Created by: Fumihiko Kimura <jfkimura@yahoo.co.jp>
 
 PORTNAME=	tdiary
-DISTVERSION=	5.2.1
+DISTVERSION=	5.2.2
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
