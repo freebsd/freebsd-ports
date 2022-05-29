@@ -1,7 +1,7 @@
 # Created by: Michael Beer <beerml@sigma6audio.de>
 
 PORTNAME=	sratom
-PORTVERSION=	0.6.8
+PORTVERSION=	0.6.10
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
