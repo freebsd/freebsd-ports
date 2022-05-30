@@ -1,0 +1,10 @@
+lib/compat/libffi.so
+lib/compat/libffi.so.7
+lib/compat/libffi.so.7.1.0
+@comment include/ffi.h
+@comment include/ffitarget.h
+@comment libdata/pkgconfig/libffi.pc
+@comment man/man3/ffi.3.gz
+@comment man/man3/ffi_call.3.gz
+@comment man/man3/ffi_prep_cif.3.gz
+@comment man/man3/ffi_prep_cif_var.3.gz
