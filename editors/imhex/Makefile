@@ -1,5 +1,5 @@
 PORTNAME=	imhex
-PORTVERSION=	1.17.0
+PORTVERSION=	1.18.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg
@@ -24,8 +24,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		WerWolv-PatternLanguage-${GH_TAG_PATTERN_LANGUAGE}_GH0${EXTRACT_SUFX}
 
 BUILD_DEPENDS=	glm>0:math/glm \
-		nlohmann-json>0:devel/nlohmann-json \
-		${LOCALBASE}/include/range/v3/range.hpp:devel/range-v3
+		nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libglfw.so:graphics/glfw \
@@ -54,7 +53,7 @@ GH_TAG_FMT=	bc654fa
 GH_TAG_IMHEX_PATTERNS=	4ec37de
 GH_TAG_LIBROMFS=	f14e88a
 GH_TAG_NATIVEFILEDIALOG=	28ade5a
-GH_TAG_PATTERN_LANGUAGE=	49bafd8
+GH_TAG_PATTERN_LANGUAGE=	23ec4e4
 GH_TAG_YARA=	1367943
 
 CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_NLOHMANN_JSON=ON
