@@ -1,14 +1,10 @@
 # Created by: maintainer.freebsd@xpoundit.com
 
 PORTNAME=	orthanc
-DISTVERSION=	1.10.1
-PORTREVISION=	2
+DISTVERSION=	1.11.0
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
 DISTNAME=	Orthanc-${PORTVERSION}
-
-PATCH_SITES=	https://hg.orthanc-server.com/orthanc/raw-rev/
-PATCHFILES=	1f93dc290628:-p1 # fix https://bugs.orthanc-server.com/show_bug.cgi?id=204
 
 MAINTAINER=	maintainer.freebsd@xpoundit.com
 COMMENT=	Lightweight DICOM server for healthcare and medical research
@@ -32,9 +28,8 @@ USES=		cmake gnome iconv jpeg lua python:build sqlite ssl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/Orthanc-${PORTVERSION}
+USE_RC_SUBR=	orthanc
 
-CMAKE_OFF=	BUILD_CONNECTIVITY_CHECKS UNIT_TESTS_WITH_HTTP_CONNEXIONS
 CMAKE_ON=	USE_SYSTEM_BOOST USE_SYSTEM_CIVETWEB USE_SYSTEM_DCMTK \
 		USE_SYSTEM_GOOGLE_TEST USE_SYSTEM_JSONCPP USE_SYSTEM_LIBICONV \
 		USE_SYSTEM_LIBJPEG USE_SYSTEM_LIBPNG USE_SYSTEM_LUA \
@@ -46,7 +41,7 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/OrthancServer
 CFLAGS+=	-DNDEBUG
 CXXFLAGS+=	-DNDEBUG
 
-USE_RC_SUBR=	orthanc
+WRKSRC=		${WRKDIR}/Orthanc-${PORTVERSION}
 
 USERS=		orthanc
 GROUPS=		orthanc

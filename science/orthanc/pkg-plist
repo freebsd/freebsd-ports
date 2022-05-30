@@ -12,6 +12,8 @@ bin/OrthancRecoverCompressedFile
 include/orthanc/OrthancCDatabasePlugin.h
 include/orthanc/OrthancCPlugin.h
 sbin/Orthanc
+%%DATADIR%%/plugins/libHousekeeper.so
+%%DATADIR%%/plugins/libHousekeeper.so.%%DISTVERSION%%
 %%DATADIR%%/plugins/libModalityWorklists.so
 %%DATADIR%%/plugins/libModalityWorklists.so.%%DISTVERSION%%
 %%DATADIR%%/plugins/libServeFolders.so
