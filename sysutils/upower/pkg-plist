@@ -7,8 +7,6 @@ include/libupower-glib/up-history-item.h
 include/libupower-glib/up-stats-item.h
 include/libupower-glib/up-types.h
 include/libupower-glib/up-version.h
-include/libupower-glib/up-wakeup-item.h
-include/libupower-glib/up-wakeups.h
 include/libupower-glib/upower.h
 lib/girepository-1.0/UPowerGlib-1.0.typelib
 lib/libupower-glib.so
@@ -21,7 +19,6 @@ libexec/upowerd
 %%MANPAGES%%man/man8/upowerd.8.gz
 share/dbus-1/interfaces/org.freedesktop.UPower.Device.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.KbdBacklight.xml
-share/dbus-1/interfaces/org.freedesktop.UPower.Wakeups.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.xml
 share/dbus-1/system.d/org.freedesktop.UPower.conf
 share/dbus-1/system-services/org.freedesktop.UPower.service
