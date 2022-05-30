@@ -892,20 +892,20 @@ lib/webmin/adsl-client/start.cgi
 lib/webmin/adsl-client/stop.cgi
 lib/webmin/ajaxterm/CHANGELOG
 lib/webmin/ajaxterm/ajaxterm/README.txt
+lib/webmin/ajaxterm/ajaxterm/__pycache__/ajaxterm%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+lib/webmin/ajaxterm/ajaxterm/__pycache__/ajaxterm%%PYTHON_EXT_SUFFIX%%.pyc
+lib/webmin/ajaxterm/ajaxterm/__pycache__/qweb%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+lib/webmin/ajaxterm/ajaxterm/__pycache__/qweb%%PYTHON_EXT_SUFFIX%%.pyc
 lib/webmin/ajaxterm/ajaxterm/ajaxterm.1
 lib/webmin/ajaxterm/ajaxterm/ajaxterm.css
 lib/webmin/ajaxterm/ajaxterm/ajaxterm.html
 lib/webmin/ajaxterm/ajaxterm/ajaxterm.js
 lib/webmin/ajaxterm/ajaxterm/ajaxterm.py
-lib/webmin/ajaxterm/ajaxterm/ajaxterm.pyc
-lib/webmin/ajaxterm/ajaxterm/ajaxterm.pyo
 lib/webmin/ajaxterm/ajaxterm/configure
 lib/webmin/ajaxterm/ajaxterm/configure.initd.gentoo
 lib/webmin/ajaxterm/ajaxterm/configure.initd.redhat
 lib/webmin/ajaxterm/ajaxterm/configure.makefile
 lib/webmin/ajaxterm/ajaxterm/qweb.py
-lib/webmin/ajaxterm/ajaxterm/qweb.pyc
-lib/webmin/ajaxterm/ajaxterm/qweb.pyo
 lib/webmin/ajaxterm/ajaxterm/sarissa.js
 lib/webmin/ajaxterm/ajaxterm/sarissa_dhtml.js
 lib/webmin/ajaxterm/config
@@ -1694,7 +1694,6 @@ lib/webmin/authentic-theme/authentic.pl
 lib/webmin/authentic-theme/config
 lib/webmin/authentic-theme/config.cgi
 lib/webmin/authentic-theme/config_save.cgi
-lib/webmin/authentic-theme/extensions/csf.min.js
 lib/webmin/authentic-theme/extensions/csf/csf-lib.pl
 lib/webmin/authentic-theme/extensions/csf/csf.min.css
 lib/webmin/authentic-theme/extensions/csf/csf.min.css.gz
@@ -1725,6 +1724,7 @@ lib/webmin/authentic-theme/extensions/file-manager/http_download.cgi
 lib/webmin/authentic-theme/extensions/file-manager/list-images.cgi
 lib/webmin/authentic-theme/extensions/file-manager/list.cgi
 lib/webmin/authentic-theme/extensions/file-manager/paste.cgi
+lib/webmin/authentic-theme/extensions/file-manager/purge_trash.cgi
 lib/webmin/authentic-theme/extensions/file-manager/rename.cgi
 lib/webmin/authentic-theme/extensions/file-manager/search.cgi
 lib/webmin/authentic-theme/extensions/file-manager/tree.cgi
@@ -2839,6 +2839,7 @@ lib/webmin/authentic-theme/settings-editor_favorites_write.cgi
 lib/webmin/authentic-theme/settings-editor_read.cgi
 lib/webmin/authentic-theme/settings-editor_write.cgi
 lib/webmin/authentic-theme/settings-favorites_save.cgi
+lib/webmin/authentic-theme/settings-lib.pl
 lib/webmin/authentic-theme/settings-logos.cgi
 lib/webmin/authentic-theme/settings-logos_save.cgi
 lib/webmin/authentic-theme/stats.cgi
@@ -4783,9 +4784,11 @@ lib/webmin/bandwidth/lang/ar.auto
 lib/webmin/bandwidth/lang/be.auto
 lib/webmin/bandwidth/lang/bg.auto
 lib/webmin/bandwidth/lang/ca
+lib/webmin/bandwidth/lang/ca.auto
 lib/webmin/bandwidth/lang/cs.auto
 lib/webmin/bandwidth/lang/da.auto
 lib/webmin/bandwidth/lang/de
+lib/webmin/bandwidth/lang/de.auto
 lib/webmin/bandwidth/lang/el.auto
 lib/webmin/bandwidth/lang/en
 lib/webmin/bandwidth/lang/es
@@ -4794,6 +4797,7 @@ lib/webmin/bandwidth/lang/eu.auto
 lib/webmin/bandwidth/lang/fa.auto
 lib/webmin/bandwidth/lang/fi.auto
 lib/webmin/bandwidth/lang/fr
+lib/webmin/bandwidth/lang/fr.auto
 lib/webmin/bandwidth/lang/he.auto
 lib/webmin/bandwidth/lang/hr
 lib/webmin/bandwidth/lang/hr.auto
@@ -4805,10 +4809,14 @@ lib/webmin/bandwidth/lang/ko.auto
 lib/webmin/bandwidth/lang/lt.auto
 lib/webmin/bandwidth/lang/lv.auto
 lib/webmin/bandwidth/lang/ms
+lib/webmin/bandwidth/lang/ms.auto
 lib/webmin/bandwidth/lang/mt.auto
 lib/webmin/bandwidth/lang/nl
+lib/webmin/bandwidth/lang/nl.auto
 lib/webmin/bandwidth/lang/no
+lib/webmin/bandwidth/lang/no.auto
 lib/webmin/bandwidth/lang/pl
+lib/webmin/bandwidth/lang/pl.auto
 lib/webmin/bandwidth/lang/pt.auto
 lib/webmin/bandwidth/lang/pt_BR.auto
 lib/webmin/bandwidth/lang/ro.auto
@@ -8771,10 +8779,12 @@ lib/webmin/cron/lang/be.auto
 lib/webmin/cron/lang/bg
 lib/webmin/cron/lang/bg.auto
 lib/webmin/cron/lang/ca
+lib/webmin/cron/lang/ca.auto
 lib/webmin/cron/lang/cs
 lib/webmin/cron/lang/cs.auto
 lib/webmin/cron/lang/da.auto
 lib/webmin/cron/lang/de
+lib/webmin/cron/lang/de.auto
 lib/webmin/cron/lang/el.auto
 lib/webmin/cron/lang/en
 lib/webmin/cron/lang/es
@@ -8791,6 +8801,7 @@ lib/webmin/cron/lang/hr
 lib/webmin/cron/lang/hr.auto
 lib/webmin/cron/lang/hu
 lib/webmin/cron/lang/hu.UTF-8
+lib/webmin/cron/lang/hu.auto
 lib/webmin/cron/lang/it
 lib/webmin/cron/lang/it.auto
 lib/webmin/cron/lang/ja
@@ -8805,6 +8816,7 @@ lib/webmin/cron/lang/mt.auto
 lib/webmin/cron/lang/nl
 lib/webmin/cron/lang/nl.auto
 lib/webmin/cron/lang/no
+lib/webmin/cron/lang/no.auto
 lib/webmin/cron/lang/pl
 lib/webmin/cron/lang/pl.auto
 lib/webmin/cron/lang/pt
@@ -13146,6 +13158,7 @@ lib/webmin/fail2ban/images/filters.gif
 lib/webmin/fail2ban/images/icon.gif
 lib/webmin/fail2ban/images/jails.gif
 lib/webmin/fail2ban/images/manual.gif
+lib/webmin/fail2ban/images/status.gif
 lib/webmin/fail2ban/index.cgi
 lib/webmin/fail2ban/install_check.pl
 lib/webmin/fail2ban/lang/af.auto
@@ -13157,6 +13170,7 @@ lib/webmin/fail2ban/lang/ca.auto
 lib/webmin/fail2ban/lang/cs.auto
 lib/webmin/fail2ban/lang/da.auto
 lib/webmin/fail2ban/lang/de
+lib/webmin/fail2ban/lang/de.auto
 lib/webmin/fail2ban/lang/el.auto
 lib/webmin/fail2ban/lang/en
 lib/webmin/fail2ban/lang/es.auto
@@ -13177,6 +13191,7 @@ lib/webmin/fail2ban/lang/ms.auto
 lib/webmin/fail2ban/lang/mt.auto
 lib/webmin/fail2ban/lang/nl.auto
 lib/webmin/fail2ban/lang/no
+lib/webmin/fail2ban/lang/no.auto
 lib/webmin/fail2ban/lang/pl
 lib/webmin/fail2ban/lang/pl.auto
 lib/webmin/fail2ban/lang/pt.auto
@@ -13197,6 +13212,7 @@ lib/webmin/fail2ban/lang/zh_TW.auto
 lib/webmin/fail2ban/list_actions.cgi
 lib/webmin/fail2ban/list_filters.cgi
 lib/webmin/fail2ban/list_jails.cgi
+lib/webmin/fail2ban/list_status.cgi
 lib/webmin/fail2ban/log_parser.pl
 lib/webmin/fail2ban/module.info
 lib/webmin/fail2ban/module.info.af
@@ -13287,6 +13303,7 @@ lib/webmin/fail2ban/save_manual.cgi
 lib/webmin/fail2ban/start.cgi
 lib/webmin/fail2ban/stop.cgi
 lib/webmin/fail2ban/syslog_logs.pl
+lib/webmin/fail2ban/unblock_jail.cgi
 lib/webmin/fastrpc.cgi
 lib/webmin/favicon.ico
 lib/webmin/fdisk/CHANGELOG
@@ -15495,6 +15512,7 @@ lib/webmin/firewalld/lang/ar.auto
 lib/webmin/firewalld/lang/be.auto
 lib/webmin/firewalld/lang/bg.auto
 lib/webmin/firewalld/lang/ca
+lib/webmin/firewalld/lang/ca.auto
 lib/webmin/firewalld/lang/cs.auto
 lib/webmin/firewalld/lang/da.auto
 lib/webmin/firewalld/lang/de
@@ -15518,6 +15536,7 @@ lib/webmin/firewalld/lang/ms.auto
 lib/webmin/firewalld/lang/mt.auto
 lib/webmin/firewalld/lang/nl.auto
 lib/webmin/firewalld/lang/no
+lib/webmin/firewalld/lang/no.auto
 lib/webmin/firewalld/lang/pl
 lib/webmin/firewalld/lang/pl.auto
 lib/webmin/firewalld/lang/pt.auto
@@ -15534,6 +15553,7 @@ lib/webmin/firewalld/lang/ur.auto
 lib/webmin/firewalld/lang/vi.auto
 lib/webmin/firewalld/lang/zh.auto
 lib/webmin/firewalld/lang/zh_TW.auto
+lib/webmin/firewalld/list_rules.cgi
 lib/webmin/firewalld/log_parser.pl
 lib/webmin/firewalld/module.info
 lib/webmin/firewalld/module.info.af
@@ -15620,6 +15640,7 @@ lib/webmin/firewalld/restart.cgi
 lib/webmin/firewalld/save_forward.cgi
 lib/webmin/firewalld/save_ifaces.cgi
 lib/webmin/firewalld/save_port.cgi
+lib/webmin/firewalld/save_rules.cgi
 lib/webmin/firewalld/save_serv.cgi
 lib/webmin/firewalld/start.cgi
 lib/webmin/firewalld/stop.cgi
@@ -21546,6 +21567,7 @@ lib/webmin/init/shutdown.cgi
 lib/webmin/init/start_stop.cgi
 lib/webmin/init/syslog_logs.pl
 lib/webmin/init/uninstall.pl
+lib/webmin/init/updateboot.pl
 lib/webmin/init/win32.pl
 lib/webmin/inittab/CHANGELOG
 lib/webmin/inittab/apply.cgi
@@ -42385,6 +42407,7 @@ lib/webmin/procmail/lang/cs
 lib/webmin/procmail/lang/cs.auto
 lib/webmin/procmail/lang/da.auto
 lib/webmin/procmail/lang/de
+lib/webmin/procmail/lang/de.auto
 lib/webmin/procmail/lang/el.auto
 lib/webmin/procmail/lang/en
 lib/webmin/procmail/lang/es
@@ -42397,6 +42420,7 @@ lib/webmin/procmail/lang/fr.auto
 lib/webmin/procmail/lang/he.auto
 lib/webmin/procmail/lang/hr.auto
 lib/webmin/procmail/lang/hu
+lib/webmin/procmail/lang/hu.auto
 lib/webmin/procmail/lang/it
 lib/webmin/procmail/lang/it.auto
 lib/webmin/procmail/lang/ja.auto
@@ -42407,7 +42431,9 @@ lib/webmin/procmail/lang/lv.auto
 lib/webmin/procmail/lang/ms.auto
 lib/webmin/procmail/lang/mt.auto
 lib/webmin/procmail/lang/nl
+lib/webmin/procmail/lang/nl.auto
 lib/webmin/procmail/lang/no
+lib/webmin/procmail/lang/no.auto
 lib/webmin/procmail/lang/pl
 lib/webmin/procmail/lang/pl.auto
 lib/webmin/procmail/lang/pt.auto
@@ -46484,6 +46510,7 @@ lib/webmin/sendmail/lang/cs
 lib/webmin/sendmail/lang/cs.auto
 lib/webmin/sendmail/lang/da.auto
 lib/webmin/sendmail/lang/de
+lib/webmin/sendmail/lang/de.auto
 lib/webmin/sendmail/lang/el.auto
 lib/webmin/sendmail/lang/en
 lib/webmin/sendmail/lang/es
@@ -46496,6 +46523,7 @@ lib/webmin/sendmail/lang/fr.auto
 lib/webmin/sendmail/lang/he.auto
 lib/webmin/sendmail/lang/hr.auto
 lib/webmin/sendmail/lang/hu
+lib/webmin/sendmail/lang/hu.auto
 lib/webmin/sendmail/lang/it.auto
 lib/webmin/sendmail/lang/ja
 lib/webmin/sendmail/lang/ja.auto
@@ -46506,7 +46534,9 @@ lib/webmin/sendmail/lang/lv.auto
 lib/webmin/sendmail/lang/ms.auto
 lib/webmin/sendmail/lang/mt.auto
 lib/webmin/sendmail/lang/nl
+lib/webmin/sendmail/lang/nl.auto
 lib/webmin/sendmail/lang/no
+lib/webmin/sendmail/lang/no.auto
 lib/webmin/sendmail/lang/pl
 lib/webmin/sendmail/lang/pl.auto
 lib/webmin/sendmail/lang/pt
@@ -56894,6 +56924,7 @@ lib/webmin/webmin-debian-pam
 lib/webmin/webmin-init
 lib/webmin/webmin-pam
 lib/webmin/webmin-search-lib.pl
+lib/webmin/webmin-systemd
 lib/webmin/webmin/CHANGELOG
 lib/webmin/webmin/acme_tiny.py
 lib/webmin/webmin/adminupgrade
