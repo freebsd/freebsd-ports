@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	ballerburg
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/baller/ \
 		LOCAL/ehaupt:icons
@@ -13,20 +13,24 @@ COMMENT=	Two players, two castles, and a hill in between
 
 LICENSE=	GPLv3+
 
-GNU_CONFIGURE=	yes
-NLS_USES=	gettext
-USES=		cmake:insource sdl
+USES=		cmake:noninja localbase:ldflags sdl
 USE_SDL=	sdl
+GNU_CONFIGURE=	yes
+
+LDFLAGS+=	-lintl
+
+DESKTOP_ENTRIES=	"Ballerburg" \
+			"${COMMENT}" \
+			"${PREFIX}/share/pixmaps/ballerburg.png" \
+			"${PORTNAME}" \
+			"" \
+			false
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-DESKTOP_ENTRIES="Ballerburg" \
-		"${COMMENT}" \
-		"${PREFIX}/share/pixmaps/ballerburg.png" \
-		"${PORTNAME}" \
-		"" \
-		false
+NLS_USES=	gettext
+NLS_USES_OFF=	gettext-runtime
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-icons-1/${PORTNAME}.png \
