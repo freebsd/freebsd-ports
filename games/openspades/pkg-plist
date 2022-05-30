@@ -1,5 +1,4 @@
 bin/openspades
-man/man6/openspades.6.gz
 share/applications/openspades.desktop
 share/icons/hicolor/128x128/apps/openspades.png
 share/icons/hicolor/16x16/apps/openspades.png
@@ -9,5 +8,6 @@ share/icons/hicolor/32x32/apps/openspades.png
 share/icons/hicolor/48x48/apps/openspades.png
 share/icons/hicolor/64x64/apps/openspades.png
 share/icons/hicolor/96x96/apps/openspades.png
+share/man/man6/openspades.6.gz
 share/menu/openspades
 share/pixmaps/openspades.xpm
