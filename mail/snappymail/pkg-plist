@@ -623,6 +623,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/gpg.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/gpgkeysettings.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/keyservers.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/php.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/qrcode.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/repository.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl.php
@@ -631,6 +632,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/oauth.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/plain.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/scram.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/stream/zip.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/totp.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/upgrade.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/uuid.php
