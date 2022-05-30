@@ -1,7 +1,6 @@
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.6.0
-PORTREVISION=	1
+DISTVERSION=	4.7.0
 CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
@@ -53,15 +52,18 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v32.4.0:azure_azure_sdk_for_go/vendor/github.co
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:5ff15b29337e:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:4163338589ed:golang_net/vendor/golang.org/x/net \
+		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
+		golang:net:69e39bad7dc2:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:665e8c7367d1:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		golang:sys:3681064d5158:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:38a9dc6acbc6:golang_time/vendor/golang.org/x/time \
+		golang:tools:07bc1bf47fb2:golang_tools/vendor/golang.org/x/tools \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-genproto:506484158171:google_go_genproto/vendor/google.golang.org/genproto \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
-		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.20.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.54.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
@@ -69,15 +71,14 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v32.4.0:azure_azure_sdk_for_go/vendor/github.co
 		gophercloud:utils:f6de111f2eae:gophercloud_utils/vendor/github.com/gophercloud/utils \
 		grpc:grpc-go:v1.27.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
-		hashicorp:go-retryablehttp:v0.7.0:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
+		hashicorp:go-retryablehttp:v0.7.1:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		iij:doapi:0bbf12d6d7df:iij_doapi/vendor/github.com/iij/doapi \
 		infobloxopen:infoblox-go-client:v1.1.1:infobloxopen_infoblox_go_client/vendor/github.com/infobloxopen/infoblox-go-client \
-		jarcoal:httpmock:v1.0.6:jarcoal_httpmock/vendor/github.com/jarcoal/httpmock \
+		jarcoal:httpmock:v1.0.8:jarcoal_httpmock/vendor/github.com/jarcoal/httpmock \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
-		json-iterator:go:v1.1.7:json_iterator_go/vendor/github.com/json-iterator/go \
+		json-iterator:go:v1.1.12:json_iterator_go/vendor/github.com/json-iterator/go \
 		k0kubun:go-ansi:3bf9e2903213:k0kubun_go_ansi/vendor/github.com/k0kubun/go-ansi \
 		kolo:xmlrpc:e0350524596b:kolo_xmlrpc/vendor/github.com/kolo/xmlrpc \
-		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		labbsr0x:bindman-dns-webhook:v1.0.2:labbsr0x_bindman_dns_webhook/vendor/github.com/labbsr0x/bindman-dns-webhook \
 		labbsr0x:goh:v1.0.1:labbsr0x_goh/vendor/github.com/labbsr0x/goh \
 		linode:linodego:v0.31.1:linode_linodego/vendor/github.com/linode/linodego \
@@ -85,11 +86,12 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v32.4.0:azure_azure_sdk_for_go/vendor/github.co
 		liquidweb:liquidweb-cli:v0.6.9:liquidweb_liquidweb_cli/vendor/github.com/liquidweb/liquidweb-cli \
 		liquidweb:liquidweb-go:v1.6.3:liquidweb_liquidweb_go/vendor/github.com/liquidweb/liquidweb-go \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		miekg:dns:v1.1.43:miekg_dns/vendor/github.com/miekg/dns \
+		miekg:dns:v1.1.47:miekg_dns/vendor/github.com/miekg/dns \
+		mimuret:golang-iij-dpf:v0.7.1:mimuret_golang_iij_dpf/vendor/github.com/mimuret/golang-iij-dpf \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
-		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
+		modern-go:reflect2:v1.0.2:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		namedotcom:go:08470befbe04:namedotcom_go/vendor/github.com/namedotcom/go \
 		nrdcg:auroradns:v1.0.1:nrdcg_auroradns/vendor/github.com/nrdcg/auroradns \
 		nrdcg:desec:v0.6.0:nrdcg_desec/vendor/github.com/nrdcg/desec \
@@ -99,33 +101,33 @@ GH_TUPLE=	Azure:azure-sdk-for-go:v32.4.0:azure_azure_sdk_for_go/vendor/github.co
 		nrdcg:namesilo:v0.2.1:nrdcg_namesilo/vendor/github.com/nrdcg/namesilo \
 		nrdcg:porkbun:v0.1.1:nrdcg_porkbun/vendor/github.com/nrdcg/porkbun \
 		ns1:ns1-go:v2.6.2:ns1_ns1_go/vendor/gopkg.in/ns1/ns1-go.v2 \
-		onsi:gomega:v1.14.0:onsi_gomega/vendor/github.com/onsi/gomega \
 		oracle:oci-go-sdk:v24.3.0:oracle_oci_go_sdk/vendor/github.com/oracle/oci-go-sdk \
 		ovh:go-ovh:v1.1.0:ovh_go_ovh/vendor/github.com/ovh/go-ovh \
 		patrickmn:go-cache:v2.1.0:patrickmn_go_cache/vendor/github.com/patrickmn/go-cache \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.3.0:pquerna_otp/vendor/github.com/pquerna/otp \
-		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rainycape:memcache:1031fa0ce2f2:rainycape_memcache/vendor/github.com/rainycape/memcache \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		sacloud:libsacloud:v1.36.2:sacloud_libsacloud/vendor/github.com/sacloud/libsacloud \
 		scaleway:scaleway-sdk-go:bd30bebeac4f:scaleway_scaleway_sdk_go/vendor/github.com/scaleway/scaleway-sdk-go \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
-		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		smartystreets:assertions:v1.0.1:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
 		smartystreets:go-aws-auth:0c1422d1fdb9:smartystreets_go_aws_auth/vendor/github.com/smartystreets/go-aws-auth \
 		softlayer:softlayer-go:v1.0.3:softlayer_softlayer_go/vendor/github.com/softlayer/softlayer-go \
 		softlayer:xmlrpc:5f089df7cb7e:softlayer_xmlrpc/vendor/github.com/softlayer/xmlrpc \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
 		square:go-jose:v2.6.0:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:objx:v0.3.0:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.7.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tencentcloud:tencentcloud-sdk-go:v1.0.287:tencentcloud_tencentcloud_sdk_go_common/vendor/github.com/tencentcloud/tencentcloud-sdk-go \
 		transip:gotransip:v6.6.1:transip_gotransip_v6/vendor/github.com/transip/gotransip/v6 \
 		uber-go:ratelimit:c15da0234277:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
-		urfave:cli:v1.22.5:urfave_cli/vendor/github.com/urfave/cli \
+		urfave:cli:v2.3.0:urfave_cli_v2/vendor/github.com/urfave/cli/v2 \
 		vinyldns:go-vinyldns:v0.9.16:vinyldns_go_vinyldns/vendor/github.com/vinyldns/go-vinyldns \
-		vultr:govultr:v2.7.1:vultr_govultr_v2/vendor/github.com/vultr/govultr/v2
+		vultr:govultr:v2.16.0:vultr_govultr_v2/vendor/github.com/vultr/govultr/v2
 
 GO_TARGET=	./cmd/lego
 GO_BUILDFLAGS=	-ldflags '-X "main.version=${DISTVERSION}"'
