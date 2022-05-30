@@ -4,7 +4,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Implementation of per object permissions for Django
 
 LICENSE=	BSD2CLAUSE
