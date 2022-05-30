@@ -1,13 +1,12 @@
 PORTNAME=	wesnoth
-PORTVERSION=	1.16.2
-PORTREVISION=	2
+PORTVERSION=	1.16.3
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/ \
 		http://ports.toco-domains.de/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Fantasy turn-based strategy game
 
 LICENSE=	GPLv2 GPLv3
@@ -26,8 +25,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cmake compiler:c++11-lang cpe gnome pkgconfig \
-		python:3.6+,run readline shebangfix ssl sdl tar:bzip2 xorg
+USES=		cmake compiler:c++17-lang cpe gnome pkgconfig \
+		python:3.7+,run readline shebangfix ssl sdl tar:bzip2 xorg
 USE_SDL=	image2 mixer2 ttf2
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo pango
