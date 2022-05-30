@@ -1,0 +1,20 @@
+--- _cabal_deps/bloomfilter-2.0.1.0/bloomfilter.cabal.orig	2022-05-30 16:45:56 UTC
++++ _cabal_deps/bloomfilter-2.0.1.0/bloomfilter.cabal
+@@ -19,7 +19,7 @@ library
+ library
+   build-depends:
+     array,
+-    base       >= 4.4 && < 4.16,
++    base       >= 4.4 && < 4.17,
+     bytestring >= 0.9,
+     deepseq
+   exposed-modules:  Data.BloomFilter
+@@ -42,7 +42,7 @@ test-suite tests
+   other-modules:  QCSupport
+   build-depends:
+     QuickCheck >= 2.5,
+-    base >= 4.4 && < 4.16,
++    base >= 4.4 && < 4.17,
+     bloomfilter,
+     bytestring,
+     random,

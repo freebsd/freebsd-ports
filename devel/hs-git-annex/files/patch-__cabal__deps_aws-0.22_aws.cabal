@@ -1,0 +1,11 @@
+--- _cabal_deps/aws-0.22/aws.cabal.orig	2022-05-30 16:45:56 UTC
++++ _cabal_deps/aws-0.22/aws.cabal
+@@ -35,7 +35,7 @@ Library
+   Default: True
+ 
+ Library
+-  build-depends: aeson <1.6
++  build-depends: aeson
+ 
+   Exposed-modules:
+                        Aws
