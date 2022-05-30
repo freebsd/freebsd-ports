@@ -17,8 +17,7 @@ USE_GITHUB=	yes
 # check https://github.com/minetest/minetest/releases for applicable irrlichmt version
 GH_TUPLE=	minetest:irrlicht:1.9.0mt5:irrlicht/lib/irrlichtmt
 
-CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
-		-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
+CMAKE_ARGS=	-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
 		-DENABLE_SYSTEM_JSONCPP=ON
 
 TEST_ENV=	${MAKE_ENV} LC_ALL=C.UTF-8

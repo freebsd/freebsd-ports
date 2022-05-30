@@ -1,8 +1,6 @@
 %%CLIENT%%bin/minetest
 %%SERVER%%bin/minetestserver
 @sample etc/minetest.conf.example etc/minetest.conf
-man/man6/minetest.6.gz
-man/man6/minetestserver.6.gz
 share/applications/net.minetest.minetest.desktop
 share/icons/hicolor/128x128/apps/minetest.png
 share/icons/hicolor/scalable/apps/minetest.svg
@@ -56,4 +54,6 @@ share/icons/hicolor/scalable/apps/minetest.svg
 %%CLIENT%%%%NLS%%share/locale/yue/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/zh_CN/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/zh_TW/LC_MESSAGES/minetest.mo
+share/man/man6/minetest.6.gz
+share/man/man6/minetestserver.6.gz
 share/metainfo/net.minetest.minetest.appdata.xml
