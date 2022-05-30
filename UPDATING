@@ -827,7 +827,7 @@ reinstall the new ones without using the pkg upgrade facility.
   /!\ WARNING /!\
 
   1. Please ensure that your local installation of net-mgmt/netbox is at
-     the 2.11 release before attemping to upgrade to NetBox 3.0 or later.
+     the 2.11 release before attempting to upgrade to NetBox 3.0 or later.
 
   2. Please also note that the previously deprecated secrets functionality
      has been removed with NetBox 3.0.  This means, all of the secrets still
