@@ -65,7 +65,8 @@ EXTRA_PATCHES=	${FILESDIR}/commit-711b0b6698f \
 		${FILESDIR}/commit-414d5848bb2 \
 		${FILESDIR}/commit-0a765c1a8e9 \
 		${FILESDIR}/commit-f9fbb7636a5 \
-		${FILESDIR}/commit-b7fe5463cf0
+		${FILESDIR}/commit-b7fe5463cf0 \
+		${FILESDIR}/commit-b2fdd31b03e
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${DISTVERSION:S/.//g}
