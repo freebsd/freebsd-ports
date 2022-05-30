@@ -904,6 +904,7 @@
     SUBDIR += py-pytesseract
     SUBDIR += py-python-poppler-qt5
     SUBDIR += py-pyvips
+    SUBDIR += py-pyvista
     SUBDIR += py-pyx
     SUBDIR += py-qrencode
     SUBDIR += py-railroad-diagrams
