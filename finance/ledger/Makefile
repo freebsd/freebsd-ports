@@ -2,7 +2,7 @@
 
 PORTNAME=	ledger
 PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	finance
 
@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: ibledger.so.3: undefined reference to boost::match_results
-BROKEN=		error: no template named 'scoped_ptr'
 
 BUILD_DEPENDS=	${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp
 LIB_DEPENDS=	libgmp.so:math/gmp \
