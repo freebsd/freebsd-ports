@@ -1,7 +1,5 @@
 bin/neverball
 bin/neverputt
-man/man6/neverball.6.gz
-man/man6/neverputt.6.gz
 share/applications/neverball.desktop
 share/applications/neverputt.desktop
 %%NLS%%share/locale/ca/LC_MESSAGES/neverball.mo
@@ -24,5 +22,7 @@ share/applications/neverputt.desktop
 %%NLS%%share/locale/sv/LC_MESSAGES/neverball.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/neverball.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/neverball.mo
+share/man/man6/neverball.6.gz
+share/man/man6/neverputt.6.gz
 share/pixmaps/neverball.png
 share/pixmaps/neverputt.png
