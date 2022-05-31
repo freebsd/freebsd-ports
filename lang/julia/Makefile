@@ -1,7 +1,7 @@
 # Created by: Iblis Lin <iblis@hs.ntnu.edu.tw>
 
 PORTNAME=	julia
-DISTVERSION=	1.7.2
+DISTVERSION=	1.7.3
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/julia/releases/download/v${DISTVERSION}/
@@ -74,6 +74,7 @@ MAKE_ARGS+=	NO_GIT=1 \
 		USE_SYSTEM_BLAS=1 \
 		USE_SYSTEM_NGHTTP2=1 \
 		USE_SYSTEM_CSL=1 \
+		USE_SYSTEM_ZLIB=1 \
 		USE_SYSTEM_LIBUNWIND=1
 
 OPTIONS_DEFINE=		DEBUG DOCS NATIVE GPL_LIBS
@@ -94,12 +95,6 @@ GPL_LIBS_MAKE_ARGS=	USE_SYSTEM_LIBSUITESPARSE=1 \
 
 NATIVE_DESC=		Build with native CPU JIT tuning
 NATIVE_MAKE_ARGS=	MARCH=native
-
-post-extract:
-	${MKDIR} ${WRKSRC}/stdlib/Downloads-26d79afcde9cf837a331fce023b31f1d3699700c/
-	${TAR} -C ${WRKSRC}/stdlib/Downloads-26d79afcde9cf837a331fce023b31f1d3699700c/ --strip-components 1 \
-		-xf ${WRKSRC}/stdlib/srccache/Downloads-26d79afcde9cf837a331fce023b31f1d3699700c.tar.gz
-	echo "1" > ${WRKSRC}/stdlib/Downloads-26d79afcde9cf837a331fce023b31f1d3699700c/source-extracted
 
 post-patch:
 	echo "override TAGGED_RELEASE_BANNER=\"FreeBSD port lang/${PORTNAME} build\"" >> ${WRKSRC}/Make.user
@@ -135,7 +130,7 @@ post-install-DOCS-off:
 post-install-DEBUG-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/julia*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjulia.so*
-.for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libdSFMT.so libuv.so* libz.so* libLLVM* sys.so
+.for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libdSFMT.so libuv.so* libLLVM* sys.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/julia/${bin}
 .endfor
 
