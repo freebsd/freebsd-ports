@@ -1,7 +1,7 @@
 # Created by: Tomoyuki Sakurai <cherry@trombik.org>
 
 PORTNAME=	facter
-PORTVERSION=	4.2.9
+PORTVERSION=	4.2.10
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
