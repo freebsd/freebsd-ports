@@ -2,7 +2,7 @@
 
 PORTNAME=	njs
 DISTVERSION=	0.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	NGINX JavaScript command line utility
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe
+USES=		cpe ssl
 
 CPE_VENDOR=	f5
 
@@ -27,8 +27,6 @@ pcre2_PKGNAMESUFFIX=	-pcre2
 
 pcre_CONFLICTS_INSTALL=		${PORTNAME}-pcre2
 pcre2_CONFLICTS_INSTALL=	${PORTNAME}
-
-USES=		ssl
 
 .if ${FLAVOR} == pcre
 LIB_DEPENDS=		libpcre.so:devel/pcre
