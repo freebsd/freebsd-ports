@@ -39,6 +39,7 @@
     SUBDIR += c-sig
     SUBDIR += cclient
     SUBDIR += claws-mail
+    SUBDIR += claws-mail-acpi_notifier
     SUBDIR += claws-mail-address_keeper
     SUBDIR += claws-mail-archive
     SUBDIR += claws-mail-att_remover
