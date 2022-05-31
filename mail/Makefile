@@ -50,6 +50,7 @@
     SUBDIR += claws-mail-dillo
     SUBDIR += claws-mail-fetchinfo
     SUBDIR += claws-mail-gdata
+    SUBDIR += claws-mail-keyword_warner
     SUBDIR += claws-mail-libravatar
     SUBDIR += claws-mail-litehtml_viewer
     SUBDIR += claws-mail-mailmbox
