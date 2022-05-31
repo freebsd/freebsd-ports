@@ -13,4 +13,8 @@ USES=		cmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
+.if !exists(/usr/include/omp.h)
+CMAKE_ARGS+=	-DUSE_OMP:BOOL=OFF
+.endif
+
 .include <bsd.port.mk>
