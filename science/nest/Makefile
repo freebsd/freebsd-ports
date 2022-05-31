@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libltdl.so:devel/libltdl
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake:testing compiler:c++11-lang ncurses pkgconfig python readline shebangfix
+USES=		cmake:testing ncurses pkgconfig python readline shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
