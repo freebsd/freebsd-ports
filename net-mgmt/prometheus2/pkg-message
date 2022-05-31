@@ -1,6 +1,15 @@
 [
 {
   message: <<EOF
+TLS 1.0 and 1.1 disabled by default client-side.
+Prometheus users can override this with the min_version parameter of tls_config.
+Certificates signed with the SHA-1 hash function are rejected. This doesn't apply to self-signed root certificates.
+EOF
+  maximum_version: "2.36.0"
+  type: upgrade
+}
+{
+  message: <<EOF
 promtool: Changed rule numbering from 0-based to 1-based when reporting rule errors.
 Added `prometheus_remote_storage_read_queries_total` counter and
 `prometheus_remote_storage_read_request_duration_seconds` histogram, removed
