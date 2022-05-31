@@ -4,7 +4,6 @@
     SUBDIR += R-cran-RMySQL
     SUBDIR += R-cran-RPostgreSQL
     SUBDIR += R-cran-RSQLite
-    SUBDIR += R-cran-RSQLite.extfuns
     SUBDIR += R-cran-cachem
     SUBDIR += R-cran-fastmap
     SUBDIR += R-cran-sqldf
