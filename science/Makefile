@@ -355,6 +355,7 @@
     SUBDIR += qmcpack
     SUBDIR += quantum-espresso
     SUBDIR += quantum-espresso-pseudopotentials
+    SUBDIR += quantum-jet
     SUBDIR += qwalk
     SUBDIR += rdkit
     SUBDIR += rmf
