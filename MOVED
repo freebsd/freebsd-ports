@@ -17183,3 +17183,4 @@ devel/autoconf213|devel/autoconf2.13|2022-05-27|Autoconf restructuring
 math/py-cdecimal||2022-05-27|Has expired: upstream does not support it after Python-3.2
 devel/py-meliae||2022-05-27|Has expired: does not build against Python-3.9
 databases/R-cran-RSQLite.extfuns|databases/R-cran-RSQLite|2022-05-31|Has expired: RSQLite incorporates RSQLite.extfuns
+net/mpich2|net/mpich|2022-05-31|Has been deprecrated for a long time and build fails with GCC 11

@@ -466,7 +466,6 @@
     SUBDIR += mpd-l2tp-ipv6pd-client
     SUBDIR += mpd5
     SUBDIR += mpich
-    SUBDIR += mpich2
     SUBDIR += mpifx
     SUBDIR += mping
     SUBDIR += mptsd
