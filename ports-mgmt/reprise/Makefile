@@ -1,5 +1,5 @@
 PORTNAME=	reprise
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	ports-mgmt python
 
 MAINTAINER=	amdmi3@FreeBSD.org
