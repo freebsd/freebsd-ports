@@ -206,6 +206,10 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400059
+BROKEN=		Fails to compile with libc++ 14.0.3
+.endif
+
 .if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} > 1400022
 # clang > 11 included in FreeBSD 14 fails to compile this legacy version
 # of virtualbox-ose, force clang 11 on FreeBSD 14 where a newer clang is
