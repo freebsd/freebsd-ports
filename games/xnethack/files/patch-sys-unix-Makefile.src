@@ -1,4 +1,4 @@
---- sys/unix/Makefile.src.orig	2022-03-07 23:57:15 UTC
+--- sys/unix/Makefile.src.orig	2022-05-26 12:31:08 UTC
 +++ sys/unix/Makefile.src
 @@ -169,14 +169,22 @@ SYSOBJ = $(TARGETPFX)ioctl.o $(TARGETPFX)unixmain.o $(
  
@@ -131,25 +131,25 @@
  
  # ----------------------------------------
  #
-@@ -473,7 +520,7 @@ PACKAGE=@true
- MAKEDEFS = ../util/makedefs
- 
- # -lm required by lua
--LUALIB = ../lib/lua/liblua.a -lm $(DLLIB)
-+LUALIB = -llua-${LUA_VER} -lm $(DLLIB)
+@@ -476,7 +523,7 @@ MAKEDEFS = ../util/makedefs
+ LUA_VERSION ?=5.4.4
+ LUABASE = liblua-$(LUA_VERSION).a
+ LUALIB = ../lib/lua/$(LUABASE)
+-LUALIBS = $(LUALIB) -lm $(DLLIB)
++LUALIBS = -llua-${LUA_VER} -lm $(DLLIB)
  
  # timestamp files to reduce `make' overhead and shorten .o dependency lists
  CONFIG_H = ../src/config.h-t
-@@ -668,7 +715,7 @@ DUMB.Setup:	../include/extern.h
- 	cp ../include/extern.DUMB ../include/extern.h
- 	@touch DUMB.Setup
+@@ -610,7 +657,7 @@ all:	$(GAME)
+ pregame:
+ 	$(PREGAME)
  
--../lib/lua/liblua.a ../include/nhlua.h:
-+../include/nhlua.h:
- 	@( cd .. ; $(MAKE) lua_support )
+-$(GAME):	pregame $(MAKEDEFS) $(LUALIB) $(SYSTEM)
++$(GAME):	pregame $(MAKEDEFS) $(SYSTEM)
+ 	@echo "$(GAME) is up to date."
  
- #	dependencies for makedefs and its outputs, which the util
-@@ -687,11 +734,11 @@ objects.o:
+ Sysunix:	$(HOSTOBJ) $(HOBJ) $(DATE_O) $(BUILDMORE) Makefile
+@@ -690,11 +737,11 @@ objects.o:
  
  # outdated Qt 3 windowport meta-object-compiler output
  qt3_kde0.moc: ../win/Qt3/qt3_kde0.h

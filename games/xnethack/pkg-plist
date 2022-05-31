@@ -147,6 +147,7 @@ bin/%%HACKNAME%%
 @mode 02755
 %%DATADIR%%/recover
 @mode
+%%DATADIR%%/repair-Val-loca.lua
 %%DATADIR%%/rip.xpm
 %%DATADIR%%/rumors
 %%DATADIR%%/sanctum.lua
