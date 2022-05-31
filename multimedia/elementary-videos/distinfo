@@ -1,5 +1,3 @@
-TIMESTAMP = 1628899382
-SHA256 (elementary-videos-2.7.3_GH0.tar.gz) = dc1877489c43a3aa9ba927d409afbc0ae62246c01019a6cfe07572b7c44c8f80
-SIZE (elementary-videos-2.7.3_GH0.tar.gz) = 2842420
-SHA256 (f6b94db27035.patch) = 7f647ec405c83e3cc69ae7caa1af162d73c024f25636b74b82f3685d13c2b4c4
-SIZE (f6b94db27035.patch) = 772
+TIMESTAMP = 1653641942
+SHA256 (elementary-videos-2.8.3_GH0.tar.gz) = 09c5db6433e4f6d570950609ff1d95a86df2179e7a65677a1e14c0549bbceba6
+SIZE (elementary-videos-2.8.3_GH0.tar.gz) = 2851654
