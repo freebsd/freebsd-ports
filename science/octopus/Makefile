@@ -1,6 +1,5 @@
 PORTNAME=	octopus
-DISTVERSION=	11.3
-PORTREVISION=	1
+DISTVERSION=	11.4
 CATEGORIES=	science
 MASTER_SITES=	https://octopus-code.org/download/${DISTVERSION}/
 
@@ -31,8 +30,8 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libxc.so:science/libxc \
 		libyaml.so:textproc/libyaml
 
-USES=		compiler:c++11-lang fortran gmake jpeg libtool localbase:ldflags perl5 python shebangfix
-USE_CXXSTD=	c++11
+USES=		compiler:c++14-lang fortran gmake jpeg libtool localbase:ldflags perl5 python shebangfix
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/fdep/fortran_dependencies.pl testsuite/performance/create_combinations.py
@@ -45,7 +44,7 @@ LDFLAGS+=	-lsymspg
 FCFLAGS+=	-I${LOCALBASE}/include -ffree-line-length-none
 
 INSTALL_TARGET=	install-strip
-TEST_TARGET=	check-short # some tests fail
+TEST_TARGET=	check-short # some tests fail, see https://gitlab.com/octopus-code/octopus/-/issues/558
 
 OPTIONS_DEFINE=			OPENMP
 OPTIONS_DEFAULT=		OPENMP
