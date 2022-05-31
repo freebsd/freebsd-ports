@@ -19,6 +19,8 @@ COMMENT=	Secure office and productivity apps
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	fails to build
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		boost-libs>0:devel/boost-libs \
 		glib>=2.54:devel/glib20 \
