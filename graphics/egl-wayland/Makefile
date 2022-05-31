@@ -1,5 +1,5 @@
 PORTNAME=	egl-wayland
-DISTVERSION=	1.1.9
+DISTVERSION=	1.1.10
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,6 +9,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	eglexternalplatform>=1.1:graphics/eglexternalplatform \
+		${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm \
 		wayland-protocols>=1.8:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland
 
