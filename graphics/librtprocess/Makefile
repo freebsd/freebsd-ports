@@ -18,4 +18,8 @@ USE_LDCONFIG=	yes
 CXXFLAGS+=	-DNDEBUG
 .endif
 
+.if !exists(/usr/include/omp.h)
+CMAKE_ARGS+=	-DOPTION_OMP:BOOL=OFF
+.endif
+
 .include <bsd.port.mk>
