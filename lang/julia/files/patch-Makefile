@@ -1,4 +1,4 @@
---- Makefile.orig	2021-11-30 12:13:06 UTC
+--- Makefile.orig	2022-05-18 05:08:54 UTC
 +++ Makefile
 @@ -226,7 +226,7 @@ define stringreplace
  endef
@@ -31,7 +31,7 @@
  
  	# Update RPATH entries and JL_SYSTEM_IMAGE_PATH if $(private_libdir_rel) != $(build_private_libdir_rel)
  ifneq ($(private_libdir_rel),$(build_private_libdir_rel))
-@@ -384,26 +376,15 @@ ifeq ($(BUNDLE_DEBUG_LIBS),1)
+@@ -386,26 +378,15 @@ ifeq ($(BUNDLE_DEBUG_LIBS),1)
  endif
  endif
  

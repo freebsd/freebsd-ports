@@ -79,9 +79,6 @@ lib/julia/libstdc++.so.6
 lib/julia/libuv.so
 lib/julia/libuv.so.2
 lib/julia/libuv.so.2.0.0
-lib/julia/libz.so
-lib/julia/libz.so.1
-lib/julia/libz.so.1.2.11
 %%DEBUG%%lib/julia/sys-debug.so
 lib/julia/sys.so
 %%DEBUG%%lib/libjulia-debug.so
@@ -370,7 +367,7 @@ libexec/7z
 %%DATADIR%%/stdlib/v%%VERSION%%/Distributed/test/runtests.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Distributed/test/splitrange.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Distributed/test/topology.jl
-%%DATADIR%%/stdlib/v%%VERSION%%/Downloads/.ci/change-uuid.jl
+%%DATADIR%%/stdlib/v%%VERSION%%/Downloads/.ci/test_and_change_uuid.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Downloads/LICENSE
 %%DATADIR%%/stdlib/v%%VERSION%%/Downloads/Project.toml
 %%DATADIR%%/stdlib/v%%VERSION%%/Downloads/README.md
