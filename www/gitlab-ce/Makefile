@@ -69,7 +69,6 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-rack-oauth2>=1.16.0<1.17.0:security/rubygem-rack-oauth2 \
 	rubygem-jwt21>=2.1.0<2.2.0:www/rubygem-jwt21 \
 	rubygem-gssapi>0:security/rubygem-gssapi \
-	rubygem-timfel-krb5-auth>=0.8<1:security/rubygem-timfel-krb5 \
 	rubygem-recaptcha>=4.11<5.0:devel/rubygem-recaptcha \
 	rubygem-akismet>=3.0<4.0:devel/rubygem-akismet \
 	rubygem-invisible_captcha>=1.1.0<1.2.0:graphics/rubygem-invisible_captcha \
@@ -290,6 +289,13 @@ GROUPS=	git
 NO_BUILD=	yes
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=			KERBEROS
+OPTIONS_DEFAULT=		KERBEROS
+
+KERBEROS_BUILD_DEPENDS=		rubygem-timfel-krb5-auth>=0.8<1:security/rubygem-timfel-krb5
+KERBEROS_RUN_DEPENDS=		rubygem-timfel-krb5-auth>=0.8<1:security/rubygem-timfel-krb5
+KERBEROS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Gemfile-kerberos-off
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config/gitlab.yml.example \

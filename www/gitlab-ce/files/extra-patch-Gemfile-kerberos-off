@@ -1,0 +1,11 @@
+--- Gemfile.orig
++++ Gemfile
+@@ -60,7 +60,7 @@
+ 
+ # Kerberos authentication. EE-only
+ gem 'gssapi', group: :kerberos
+-gem 'timfel-krb5-auth', '~> 0.8', group: :kerberos
++#gem 'timfel-krb5-auth', '~> 0.8', group: :kerberos
+ 
+ # Spam and anti-bot protection
+ gem 'recaptcha', '~> 4.11', require: 'recaptcha/rails'
