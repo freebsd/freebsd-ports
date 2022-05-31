@@ -1,4 +1,4 @@
---- octomap/src/CMakeLists.txt.orig	2019-11-23 20:56:23 UTC
+--- octomap/src/CMakeLists.txt.orig	2022-05-12 20:49:09 UTC
 +++ octomap/src/CMakeLists.txt
 @@ -16,9 +16,9 @@ set_target_properties( octomap PROPERTIES
    VERSION ${OCTOMAP_VERSION}
@@ -29,5 +29,5 @@
 -install(TARGETS octomap octomap-static
 +install(TARGETS octomap
    EXPORT octomap-targets
-   INCLUDES DESTINATION include
+   INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
    ${INSTALL_TARGETS_DEFAULT_ARGS}

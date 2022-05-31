@@ -1,7 +1,6 @@
 PORTNAME=	octomap
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.7
-PORTREVISION=	1
+DISTVERSION=	1.9.8
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,12 +13,13 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/octovis/LICENSE.txt
 
 LIB_DEPENDS=	libQGLViewer-qt5.so:graphics/libQGLViewer
 
-USES=		cmake compiler:c++11-lang localbase:ldflags gl qt:5
-USE_GITHUB=	yes
-GH_ACCOUNT=	OctoMap
+USES=		cmake:testing compiler:c++11-lang localbase:ldflags gl qt:5
 USE_QT=		core gui opengl xml widgets buildtools_build qmake_build
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	OctoMap
 
 # Viewer is broken: https://github.com/OctoMap/octomap/issues/224, and libQGLViewer detection is broken: https://github.com/OctoMap/octomap/issues/225
 #CMAKE_ON=	OCTOVIS_QT5
