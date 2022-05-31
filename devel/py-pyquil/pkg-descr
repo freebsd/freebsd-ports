@@ -1,0 +1,11 @@
+PyQuil is a Python library for quantum programming using Quil, the quantum
+instruction language developed at Rigetti Computing. PyQuil serves three main
+functions:
+
+* Easily generating Quil programs from quantum gates and classical operations
+* Compiling and simulating Quil programs using the Quil Compiler (quilc) and the
+  Quantum Virtual Machine (QVM)
+* Executing Quil programs on real quantum processors (QPUs) using Quantum Cloud
+  Services (QCS)
+
+WWW: https://github.com/rigetti/pyquil

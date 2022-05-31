@@ -5087,6 +5087,7 @@
     SUBDIR += py-pypugjs
     SUBDIR += py-pyqtree
     SUBDIR += py-pyquery
+    SUBDIR += py-pyquil
     SUBDIR += py-pyral
     SUBDIR += py-pyrepl
     SUBDIR += py-pyrfc3339
