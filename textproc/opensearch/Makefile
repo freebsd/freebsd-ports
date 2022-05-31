@@ -1,7 +1,7 @@
 # Created by: Sven R <freebsd@hackacad.net>
 
 PORTNAME=	opensearch
-DISTVERSION=	1.3.1
+DISTVERSION=	2.0.0
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${PORTVERSION}/
@@ -24,7 +24,6 @@ SHEBANG_FILES=	bin/opensearch bin/opensearch-cli \
 		bin/opensearch-env bin/opensearch-env-from-file \
 		bin/opensearch-keystore bin/opensearch-node \
 		bin/opensearch-plugin bin/opensearch-shard \
-		bin/performance-analyzer-agent-cli \
 		plugins/opensearch-security/tools/audit_config_migrater.sh \
 		plugins/opensearch-security/tools/hash.sh \
 		plugins/opensearch-security/tools/install_demo_configuration.sh \
@@ -43,7 +42,7 @@ CONFIG_FILES=	opensearch.yml jvm.options log4j2.properties
 BINS=		opensearch opensearch-cli opensearch-env \
 		opensearch-env-from-file opensearch-keystore \
 		opensearch-node opensearch-plugin \
-		opensearch-shard performance-analyzer-agent-cli
+		opensearch-shard
 
 SEARCHUSER?=	opensearch
 SEARCHGROUP?=	${SEARCHUSER}
