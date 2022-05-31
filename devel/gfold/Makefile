@@ -1,5 +1,6 @@
 PORTNAME=	gfold
 DISTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sec.research.2005@gmail.com
