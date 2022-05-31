@@ -2,7 +2,7 @@
 
 PORTNAME=	polygraph
 DISTVERSION=	4.13.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
 EXTRACT_SUFX=	-src.tgz
@@ -27,6 +27,7 @@ CONFLICTS=	ltrace-0*
 
 OPTIONS_DEFINE=		DOCS GNUPLOT GSSAPI LDNS PERL SSL ZLIB
 OPTIONS_DEFAULT=	SSL ZLIB
+OPTIONS_EXCLUDE_i386=	SSL
 
 GNUPLOT_DESC=		GNUPlot for full reporting functionality
 GNUPLOT_RUN_DEPENDS=	gnuplot:math/gnuplot
