@@ -1,6 +1,6 @@
---- Makefile.in.orig	2021-02-09 13:32:54 UTC
+--- Makefile.in.orig	2022-05-27 01:32:50 UTC
 +++ Makefile.in
-@@ -95,11 +95,10 @@ PRE_UNINSTALL = :
+@@ -95,11 +95,10 @@ host_triplet = @host@
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
@@ -16,7 +16,16 @@
  subdir = .
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  am__aclocal_m4_deps = $(top_srcdir)/configure.ac
-@@ -220,6 +219,13 @@ libcourierauth_la_DEPENDENCIES = libs/libhmac/libhmac.
+@@ -154,7 +153,7 @@ am__v_lt_0 = --silent
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+-am__v_lt_1 = 
++am__v_lt_1 =
+ libauthcustom_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+ 	$(AM_CFLAGS) $(CFLAGS) $(libauthcustom_la_LDFLAGS) $(LDFLAGS) \
+@@ -219,6 +218,13 @@ libcourierauth_la_DEPENDENCIES = libs/libhmac/libhmac.
  	libs/md5/libmd5.la libs/sha1/libsha1.la \
  	libs/numlib/libnumlib.la libs/random128/librandom128.la \
  	libs/rfc822/libencode.la
@@ -30,7 +39,21 @@
  am_libcourierauth_la_OBJECTS = authdaemon.lo authdaemonlib.lo \
  	preauthdaemon.lo authmoduser2.lo authmoduser3.lo debug.lo \
  	authoption.lo
-@@ -336,7 +342,9 @@ am__depfiles_remade = ./$(DEPDIR)/authconfigfile.Plo \
+@@ -299,11 +305,11 @@ am__v_GEN_0 = @echo "  GEN     " $@;
+ AM_V_GEN = $(am__v_GEN_@AM_V@)
+ am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
+ am__v_GEN_0 = @echo "  GEN     " $@;
+-am__v_GEN_1 = 
++am__v_GEN_1 =
+ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+ am__v_at_0 = @
+-am__v_at_1 = 
++am__v_at_1 =
+ DEFAULT_INCLUDES = -I.@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__maybe_remake_depfiles = depfiles
+@@ -335,7 +341,9 @@ am__depfiles_remade = ./$(DEPDIR)/authconfigfile.Plo \
  	./$(DEPDIR)/authsqlite.Plo ./$(DEPDIR)/authsqlitelib.Plo \
  	./$(DEPDIR)/authsyschangepwd.Plo ./$(DEPDIR)/authsyscommon.Plo \
  	./$(DEPDIR)/authtest.Po ./$(DEPDIR)/authuserdb.Plo \
@@ -41,7 +64,7 @@
  	./$(DEPDIR)/checkpasswordmd5.Plo \
  	./$(DEPDIR)/checkpasswordsha1.Plo ./$(DEPDIR)/cramlib.Plo \
  	./$(DEPDIR)/cryptpassword.Plo ./$(DEPDIR)/debug.Plo \
-@@ -344,7 +352,7 @@ am__depfiles_remade = ./$(DEPDIR)/authconfigfile.Plo \
+@@ -343,7 +351,7 @@ am__depfiles_remade = ./$(DEPDIR)/authconfigfile.Plo \
  	./$(DEPDIR)/preauthldap.Plo ./$(DEPDIR)/preauthmysql.Plo \
  	./$(DEPDIR)/preauthpam.Plo ./$(DEPDIR)/preauthpwd.Plo \
  	./$(DEPDIR)/preauthshadow.Plo ./$(DEPDIR)/preauthuserdb.Plo \
@@ -50,7 +73,41 @@
  am__mv = mv -f
  COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-@@ -387,6 +395,7 @@ SOURCES = $(libauthcustom_la_SOURCES) $(libauthldap_la
+@@ -354,7 +362,7 @@ am__v_CC_0 = @echo "  CC      " $@;
+ AM_V_CC = $(am__v_CC_@AM_V@)
+ am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+ am__v_CC_0 = @echo "  CC      " $@;
+-am__v_CC_1 = 
++am__v_CC_1 =
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+@@ -362,7 +370,7 @@ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+-am__v_CCLD_1 = 
++am__v_CCLD_1 =
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+@@ -372,7 +380,7 @@ am__v_CXX_0 = @echo "  CXX     " $@;
+ AM_V_CXX = $(am__v_CXX_@AM_V@)
+ am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
+ am__v_CXX_0 = @echo "  CXX     " $@;
+-am__v_CXX_1 = 
++am__v_CXX_1 =
+ CXXLD = $(CXX)
+ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+@@ -380,12 +388,13 @@ am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
+ am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
+ am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+-am__v_CXXLD_1 = 
++am__v_CXXLD_1 =
+ SOURCES = $(libauthcustom_la_SOURCES) $(libauthldap_la_SOURCES) \
+ 	$(libauthmysql_la_SOURCES) $(libauthpam_la_SOURCES) \
  	$(libauthpgsql_la_SOURCES) $(libauthpipe_la_SOURCES) \
  	$(libauthpwd_la_SOURCES) $(libauthshadow_la_SOURCES) \
  	$(libauthsqlite_la_SOURCES) $(libauthuserdb_la_SOURCES) \
@@ -58,7 +115,7 @@
  	$(libcourierauth_la_SOURCES) \
  	$(libcourierauthcommon_la_SOURCES) \
  	$(libcourierauthsasl_la_SOURCES) \
-@@ -400,6 +409,7 @@ DIST_SOURCES = $(libauthcustom_la_SOURCES) $(libauthld
+@@ -399,6 +408,7 @@ DIST_SOURCES = $(libauthcustom_la_SOURCES) $(libauthld
  	$(libauthpgsql_la_SOURCES) $(libauthpipe_la_SOURCES) \
  	$(libauthpwd_la_SOURCES) $(libauthshadow_la_SOURCES) \
  	$(libauthsqlite_la_SOURCES) $(libauthuserdb_la_SOURCES) \
@@ -66,7 +123,7 @@
  	$(libcourierauth_la_SOURCES) \
  	$(libcourierauthcommon_la_SOURCES) \
  	$(libcourierauthsasl_la_SOURCES) \
-@@ -568,6 +578,7 @@ LIBAUTHPWD = @LIBAUTHPWD@
+@@ -568,6 +578,7 @@ LIBAUTHUSERDB = @LIBAUTHUSERDB@
  LIBAUTHSHADOW = @LIBAUTHSHADOW@
  LIBAUTHSQLITE = @LIBAUTHSQLITE@
  LIBAUTHUSERDB = @LIBAUTHUSERDB@
@@ -74,9 +131,9 @@
  LIBDB = @LIBDB@
  LIBDL = @LIBDL@
  LIBGDBM = @LIBGDBM@
-@@ -695,7 +706,10 @@ top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
+@@ -701,7 +712,10 @@ AUTOMAKE_OPTIONS = dist-bzip2
  userdb = @userdb@
+ using_systemd = @using_systemd@
  AUTOMAKE_OPTIONS = dist-bzip2
 -SUBDIRS = libs/gdbmobj libs/bdbobj libs/md5 libs/sha1 libs/libhmac libs/numlib libs/makedat userdb libs/rfc822 libs/random128 libs/liblock liblog
 +SUBDIRS = libs/gdbmobj libs/bdbobj libs/md5 libs/sha1 libs/libhmac libs/numlib
@@ -86,7 +143,7 @@
  AM_CPPFLAGS = -I liblock $(LTDLINCL)
  BUILT_SOURCES = authdaemonrc.h $(BUILT1) $(GITFILES) \
  	$(man3:%.3=%.html) $(man1:%.1=%.html) authsqliterc.h \
-@@ -703,16 +717,18 @@ BUILT_SOURCES = authdaemonrc.h $(BUILT1) $(GITFILES) \
+@@ -709,16 +723,18 @@ modules = @LIBAUTHUSERDB@ \
  modules = @LIBAUTHUSERDB@ \
  	@LIBAUTHPAM@ @LIBAUTHPWD@ @LIBAUTHSHADOW@ \
  	@LIBAUTHPGSQL@ @LIBAUTHLDAP@ @LIBAUTHMYSQL@ @LIBAUTHSQLITE@ \
@@ -109,7 +166,7 @@
  	libauthpgsql.la \
  	libauthldap.la \
  	libauthmysql.la \
-@@ -785,6 +801,13 @@ libauthshadow_la_DEPENDENCIES = $(commonlibdep)
+@@ -791,6 +807,13 @@ libauthshadow_la_LDFLAGS = $(commonldflags)
  libauthshadow_la_LIBADD = $(commonlibadd) $(libauthshadow_t)
  libauthshadow_la_LDFLAGS = $(commonldflags)
  
@@ -123,10 +180,10 @@
  # The authpgsql module
  libauthpgsql_t = @PGSQL_LIBS@ @LIBM@ @NETLIBS@
  libauthpgsql_la_SOURCES = authpgsql.c authpgsqllib.cpp authpgsql.h
-@@ -867,8 +890,8 @@ libcourierauthsaslclient_la_SOURCES = courierauthsaslc
+@@ -878,8 +901,8 @@ libcourierauthsaslclient_la_LDFLAGS = -export-symbols-
  
  libcourierauthsaslclient_la_LIBADD = libcourierauth.la
- libcourierauthsaslclient_la_LDFLAGS = -export-symbols-regex '^auth_sasl_client$$' -version-info @VERSION_INFO@
+ libcourierauthsaslclient_la_LDFLAGS = -export-symbols-regex '^auth_sasl_client$$' -version-info @LIBVERSION_INFO@
 -include_HEADERS = courierauth.h courierauthsasl.h \
 -	courierauthsaslclient.h courierauthdebug.h courierauthstaticlist.h
 +@HAVE_BASE_TRUE@include_HEADERS = courierauth.h courierauthsasl.h \
@@ -134,7 +191,16 @@
  
  courierauthconfig_SOURCES = authinfo.c
  authpasswd_SOURCES = authpasswd.c
-@@ -914,7 +937,7 @@ man3 = authlib.3 auth_generic.3 auth_login.3 auth_getu
+@@ -896,7 +919,7 @@ authenumerate_LDADD = libcourierauth.la \
+ authenumerate_LDADD = libcourierauth.la \
+ 	libs/numlib/libnumlib.la
+ 
+-authenumerate_LDFLAGS = 
++authenumerate_LDFLAGS =
+ 
+ #
+ # The main daemon.
+@@ -927,7 +950,7 @@ extraman3 = auth_generic_meta.3 auth_login_meta.3 auth
  extraman3 = auth_generic_meta.3 auth_login_meta.3 auth_getuserinfo_meta.3 \
  	auth_sasl_ex.3
  
@@ -143,17 +209,114 @@
  man_MANS = $(man1) $(man3) $(extraman3)
  BUILT1 = authlib.html authldaprc.h authmysqlrc.h authpgsqlrc.h authpiperc.h \
  	authdaemonrc.h packageversion.h \
-@@ -1174,6 +1197,9 @@ libauthsqlite.la: $(libauthsqlite_la_OBJECTS) $(libaut
- libauthuserdb.la: $(libauthuserdb_la_OBJECTS) $(libauthuserdb_la_DEPENDENCIES) $(EXTRA_libauthuserdb_la_DEPENDENCIES) 
+@@ -986,7 +1009,7 @@ stamp-h1: $(srcdir)/courier_auth_config.h.in $(top_bui
+ stamp-h1: $(srcdir)/courier_auth_config.h.in $(top_builddir)/config.status
+ 	@rm -f stamp-h1
+ 	cd $(top_builddir) && $(SHELL) ./config.status courier_auth_config.h
+-$(srcdir)/courier_auth_config.h.in:  $(am__configure_deps) 
++$(srcdir)/courier_auth_config.h.in:  $(am__configure_deps)
+ 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
+ 	rm -f stamp-h1
+ 	touch $@
+@@ -1158,73 +1181,76 @@ clean-pkglibLTLIBRARIES:
+ 	  rm -f $${locs}; \
+ 	}
+ 
+-libauthcustom.la: $(libauthcustom_la_OBJECTS) $(libauthcustom_la_DEPENDENCIES) $(EXTRA_libauthcustom_la_DEPENDENCIES) 
++libauthcustom.la: $(libauthcustom_la_OBJECTS) $(libauthcustom_la_DEPENDENCIES) $(EXTRA_libauthcustom_la_DEPENDENCIES)
+ 	$(AM_V_CCLD)$(libauthcustom_la_LINK)  $(libauthcustom_la_OBJECTS) $(libauthcustom_la_LIBADD) $(LIBS)
+ 
+-libauthldap.la: $(libauthldap_la_OBJECTS) $(libauthldap_la_DEPENDENCIES) $(EXTRA_libauthldap_la_DEPENDENCIES) 
++libauthldap.la: $(libauthldap_la_OBJECTS) $(libauthldap_la_DEPENDENCIES) $(EXTRA_libauthldap_la_DEPENDENCIES)
+ 	$(AM_V_CXXLD)$(libauthldap_la_LINK)  $(libauthldap_la_OBJECTS) $(libauthldap_la_LIBADD) $(LIBS)
+ 
+-libauthmysql.la: $(libauthmysql_la_OBJECTS) $(libauthmysql_la_DEPENDENCIES) $(EXTRA_libauthmysql_la_DEPENDENCIES) 
++libauthmysql.la: $(libauthmysql_la_OBJECTS) $(libauthmysql_la_DEPENDENCIES) $(EXTRA_libauthmysql_la_DEPENDENCIES)
+ 	$(AM_V_CXXLD)$(libauthmysql_la_LINK)  $(libauthmysql_la_OBJECTS) $(libauthmysql_la_LIBADD) $(LIBS)
+ 
+-libauthpam.la: $(libauthpam_la_OBJECTS) $(libauthpam_la_DEPENDENCIES) $(EXTRA_libauthpam_la_DEPENDENCIES) 
++libauthpam.la: $(libauthpam_la_OBJECTS) $(libauthpam_la_DEPENDENCIES) $(EXTRA_libauthpam_la_DEPENDENCIES)
+ 	$(AM_V_CCLD)$(libauthpam_la_LINK)  $(libauthpam_la_OBJECTS) $(libauthpam_la_LIBADD) $(LIBS)
+ 
+-libauthpgsql.la: $(libauthpgsql_la_OBJECTS) $(libauthpgsql_la_DEPENDENCIES) $(EXTRA_libauthpgsql_la_DEPENDENCIES) 
++libauthpgsql.la: $(libauthpgsql_la_OBJECTS) $(libauthpgsql_la_DEPENDENCIES) $(EXTRA_libauthpgsql_la_DEPENDENCIES)
+ 	$(AM_V_CXXLD)$(libauthpgsql_la_LINK)  $(libauthpgsql_la_OBJECTS) $(libauthpgsql_la_LIBADD) $(LIBS)
+ 
+-libauthpipe.la: $(libauthpipe_la_OBJECTS) $(libauthpipe_la_DEPENDENCIES) $(EXTRA_libauthpipe_la_DEPENDENCIES) 
++libauthpipe.la: $(libauthpipe_la_OBJECTS) $(libauthpipe_la_DEPENDENCIES) $(EXTRA_libauthpipe_la_DEPENDENCIES)
+ 	$(AM_V_CCLD)$(libauthpipe_la_LINK)  $(libauthpipe_la_OBJECTS) $(libauthpipe_la_LIBADD) $(LIBS)
+ 
+-libauthpwd.la: $(libauthpwd_la_OBJECTS) $(libauthpwd_la_DEPENDENCIES) $(EXTRA_libauthpwd_la_DEPENDENCIES) 
++libauthpwd.la: $(libauthpwd_la_OBJECTS) $(libauthpwd_la_DEPENDENCIES) $(EXTRA_libauthpwd_la_DEPENDENCIES)
+ 	$(AM_V_CCLD)$(libauthpwd_la_LINK)  $(libauthpwd_la_OBJECTS) $(libauthpwd_la_LIBADD) $(LIBS)
+ 
+-libauthshadow.la: $(libauthshadow_la_OBJECTS) $(libauthshadow_la_DEPENDENCIES) $(EXTRA_libauthshadow_la_DEPENDENCIES) 
++libauthshadow.la: $(libauthshadow_la_OBJECTS) $(libauthshadow_la_DEPENDENCIES) $(EXTRA_libauthshadow_la_DEPENDENCIES)
+ 	$(AM_V_CCLD)$(libauthshadow_la_LINK)  $(libauthshadow_la_OBJECTS) $(libauthshadow_la_LIBADD) $(LIBS)
+ 
+-libauthsqlite.la: $(libauthsqlite_la_OBJECTS) $(libauthsqlite_la_DEPENDENCIES) $(EXTRA_libauthsqlite_la_DEPENDENCIES) 
++libauthsqlite.la: $(libauthsqlite_la_OBJECTS) $(libauthsqlite_la_DEPENDENCIES) $(EXTRA_libauthsqlite_la_DEPENDENCIES)
+ 	$(AM_V_CXXLD)$(libauthsqlite_la_LINK)  $(libauthsqlite_la_OBJECTS) $(libauthsqlite_la_LIBADD) $(LIBS)
+ 
+-libauthuserdb.la: $(libauthuserdb_la_OBJECTS) $(libauthuserdb_la_DEPENDENCIES) $(EXTRA_libauthuserdb_la_DEPENDENCIES) 
++libauthuserdb.la: $(libauthuserdb_la_OBJECTS) $(libauthuserdb_la_DEPENDENCIES) $(EXTRA_libauthuserdb_la_DEPENDENCIES)
  	$(AM_V_CCLD)$(libauthuserdb_la_LINK)  $(libauthuserdb_la_OBJECTS) $(libauthuserdb_la_LIBADD) $(LIBS)
  
+-libcourierauth.la: $(libcourierauth_la_OBJECTS) $(libcourierauth_la_DEPENDENCIES) $(EXTRA_libcourierauth_la_DEPENDENCIES) 
 +libauthvchkpw.la: $(libauthvchkpw_la_OBJECTS) $(libauthvchkpw_la_DEPENDENCIES)
 +	$(AM_V_CCLD)$(libauthvchkpw_la_LINK)  $(libauthvchkpw_la_OBJECTS) $(libauthvchkpw_la_LIBADD) $(LIBS)
 +
- libcourierauth.la: $(libcourierauth_la_OBJECTS) $(libcourierauth_la_DEPENDENCIES) $(EXTRA_libcourierauth_la_DEPENDENCIES) 
++libcourierauth.la: $(libcourierauth_la_OBJECTS) $(libcourierauth_la_DEPENDENCIES) $(EXTRA_libcourierauth_la_DEPENDENCIES)
  	$(AM_V_CCLD)$(libcourierauth_la_LINK) -rpath $(pkglibdir) $(libcourierauth_la_OBJECTS) $(libcourierauth_la_LIBADD) $(LIBS)
  
-@@ -1337,6 +1363,8 @@ distclean-compile:
+-libcourierauthcommon.la: $(libcourierauthcommon_la_OBJECTS) $(libcourierauthcommon_la_DEPENDENCIES) $(EXTRA_libcourierauthcommon_la_DEPENDENCIES) 
++libcourierauthcommon.la: $(libcourierauthcommon_la_OBJECTS) $(libcourierauthcommon_la_DEPENDENCIES) $(EXTRA_libcourierauthcommon_la_DEPENDENCIES)
+ 	$(AM_V_CXXLD)$(libcourierauthcommon_la_LINK) -rpath $(pkglibdir) $(libcourierauthcommon_la_OBJECTS) $(libcourierauthcommon_la_LIBADD) $(LIBS)
+ 
+-libcourierauthsasl.la: $(libcourierauthsasl_la_OBJECTS) $(libcourierauthsasl_la_DEPENDENCIES) $(EXTRA_libcourierauthsasl_la_DEPENDENCIES) 
++libcourierauthsasl.la: $(libcourierauthsasl_la_OBJECTS) $(libcourierauthsasl_la_DEPENDENCIES) $(EXTRA_libcourierauthsasl_la_DEPENDENCIES)
+ 	$(AM_V_CCLD)$(libcourierauthsasl_la_LINK) -rpath $(pkglibdir) $(libcourierauthsasl_la_OBJECTS) $(libcourierauthsasl_la_LIBADD) $(LIBS)
+ 
+-libcourierauthsaslclient.la: $(libcourierauthsaslclient_la_OBJECTS) $(libcourierauthsaslclient_la_DEPENDENCIES) $(EXTRA_libcourierauthsaslclient_la_DEPENDENCIES) 
++libcourierauthsaslclient.la: $(libcourierauthsaslclient_la_OBJECTS) $(libcourierauthsaslclient_la_DEPENDENCIES) $(EXTRA_libcourierauthsaslclient_la_DEPENDENCIES)
+ 	$(AM_V_CCLD)$(libcourierauthsaslclient_la_LINK) -rpath $(pkglibdir) $(libcourierauthsaslclient_la_OBJECTS) $(libcourierauthsaslclient_la_LIBADD) $(LIBS)
+ 
+-authdaemondprog$(EXEEXT): $(authdaemondprog_OBJECTS) $(authdaemondprog_DEPENDENCIES) $(EXTRA_authdaemondprog_DEPENDENCIES) 
++authdaemondprog$(EXEEXT): $(authdaemondprog_OBJECTS) $(authdaemondprog_DEPENDENCIES) $(EXTRA_authdaemondprog_DEPENDENCIES)
+ 	@rm -f authdaemondprog$(EXEEXT)
+ 	$(AM_V_CXXLD)$(authdaemondprog_LINK) $(authdaemondprog_OBJECTS) $(authdaemondprog_LDADD) $(LIBS)
+ 
+-authdaemontest$(EXEEXT): $(authdaemontest_OBJECTS) $(authdaemontest_DEPENDENCIES) $(EXTRA_authdaemontest_DEPENDENCIES) 
++authdaemontest$(EXEEXT): $(authdaemontest_OBJECTS) $(authdaemontest_DEPENDENCIES) $(EXTRA_authdaemontest_DEPENDENCIES)
+ 	@rm -f authdaemontest$(EXEEXT)
+ 	$(AM_V_CCLD)$(authdaemontest_LINK) $(authdaemontest_OBJECTS) $(authdaemontest_LDADD) $(LIBS)
+ 
+-authenumerate$(EXEEXT): $(authenumerate_OBJECTS) $(authenumerate_DEPENDENCIES) $(EXTRA_authenumerate_DEPENDENCIES) 
++authenumerate$(EXEEXT): $(authenumerate_OBJECTS) $(authenumerate_DEPENDENCIES) $(EXTRA_authenumerate_DEPENDENCIES)
+ 	@rm -f authenumerate$(EXEEXT)
+ 	$(AM_V_CCLD)$(authenumerate_LINK) $(authenumerate_OBJECTS) $(authenumerate_LDADD) $(LIBS)
+ 
+-authmksock$(EXEEXT): $(authmksock_OBJECTS) $(authmksock_DEPENDENCIES) $(EXTRA_authmksock_DEPENDENCIES) 
++authmksock$(EXEEXT): $(authmksock_OBJECTS) $(authmksock_DEPENDENCIES) $(EXTRA_authmksock_DEPENDENCIES)
+ 	@rm -f authmksock$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(authmksock_OBJECTS) $(authmksock_LDADD) $(LIBS)
+ 
+-authpasswd$(EXEEXT): $(authpasswd_OBJECTS) $(authpasswd_DEPENDENCIES) $(EXTRA_authpasswd_DEPENDENCIES) 
++authpasswd$(EXEEXT): $(authpasswd_OBJECTS) $(authpasswd_DEPENDENCIES) $(EXTRA_authpasswd_DEPENDENCIES)
+ 	@rm -f authpasswd$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(authpasswd_OBJECTS) $(authpasswd_LDADD) $(LIBS)
+ 
+-authtest$(EXEEXT): $(authtest_OBJECTS) $(authtest_DEPENDENCIES) $(EXTRA_authtest_DEPENDENCIES) 
++authtest$(EXEEXT): $(authtest_OBJECTS) $(authtest_DEPENDENCIES) $(EXTRA_authtest_DEPENDENCIES)
+ 	@rm -f authtest$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(authtest_OBJECTS) $(authtest_LDADD) $(LIBS)
+ 
+-courierauthconfig$(EXEEXT): $(courierauthconfig_OBJECTS) $(courierauthconfig_DEPENDENCIES) $(EXTRA_courierauthconfig_DEPENDENCIES) 
++courierauthconfig$(EXEEXT): $(courierauthconfig_OBJECTS) $(courierauthconfig_DEPENDENCIES) $(EXTRA_courierauthconfig_DEPENDENCIES)
+ 	@rm -f courierauthconfig$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(courierauthconfig_OBJECTS) $(courierauthconfig_LDADD) $(LIBS)
+ install-pkglibexecSCRIPTS: $(pkglibexec_SCRIPTS)
+@@ -1351,6 +1377,8 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/authtest.Po@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/authuserdb.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/authuserdbpwd.Plo@am__quote@ # am--include-marker
@@ -162,7 +325,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpassword.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpasswordmd5.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/checkpasswordsha1.Plo@am__quote@ # am--include-marker
-@@ -1352,6 +1380,7 @@ distclean-compile:
+@@ -1366,6 +1394,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/preauthshadow.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/preauthuserdb.Plo@am__quote@ # am--include-marker
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/preauthuserdbcommon.Plo@am__quote@ # am--include-marker
@@ -170,7 +333,7 @@
  
  $(am__depfiles_remade):
  	@$(MKDIR_P) $(@D)
-@@ -1921,6 +1950,8 @@ distclean: distclean-recursive
+@@ -1935,6 +1964,8 @@ distclean: distclean-recursive
  	-rm -f ./$(DEPDIR)/authtest.Po
  	-rm -f ./$(DEPDIR)/authuserdb.Plo
  	-rm -f ./$(DEPDIR)/authuserdbpwd.Plo
@@ -179,7 +342,7 @@
  	-rm -f ./$(DEPDIR)/checkpassword.Plo
  	-rm -f ./$(DEPDIR)/checkpasswordmd5.Plo
  	-rm -f ./$(DEPDIR)/checkpasswordsha1.Plo
-@@ -1936,6 +1967,7 @@ distclean: distclean-recursive
+@@ -1950,6 +1981,7 @@ distclean: distclean-recursive
  	-rm -f ./$(DEPDIR)/preauthshadow.Plo
  	-rm -f ./$(DEPDIR)/preauthuserdb.Plo
  	-rm -f ./$(DEPDIR)/preauthuserdbcommon.Plo
@@ -187,7 +350,7 @@
  	-rm -f Makefile
  distclean-am: clean-am distclean-compile distclean-generic \
  	distclean-hdr distclean-libtool distclean-tags
-@@ -1952,18 +1984,26 @@ info: info-recursive
+@@ -1966,18 +1998,26 @@ info-am:
  
  info-am:
  
@@ -222,16 +385,16 @@
  install-html: install-html-recursive
  
  install-html-am:
-@@ -2105,13 +2145,16 @@ uninstall-man: uninstall-man1 uninstall-man3
+@@ -2120,13 +2160,16 @@ uninstall-man: uninstall-man1 uninstall-man3
  
  .PRECIOUS: Makefile
  
 +authvchkpw.lo: authvchkpw.c vpopmail_config.h
 +preauthvchkpw.lo: preauthvchkpw.c vpopmail_config.h
-+ 
+ 
 +vpopmail_config.h:
 +	echo '#include "@vpopmail_home@/include/config.h"' >vpopmail_config.h
- 
++
  @HAVE_AUTHPGSQL_TRUE@install-authpgsqlrc:
  @HAVE_AUTHPGSQL_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authpgsqlrc@` || :
  @HAVE_AUTHPGSQL_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authpgsqlrc \
@@ -241,7 +404,7 @@
  
  @HAVE_AUTHPGSQL_TRUE@uninstall-authpgsqlrc:
  @HAVE_AUTHPGSQL_TRUE@	rm -f $(DESTDIR)@authpgsqlrc@.dist
-@@ -2129,8 +2172,6 @@ authpgsqlrc.h:
+@@ -2144,8 +2187,6 @@ authpgsqlrc.h:
  @HAVE_LDAP_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authldaprc@` || :
  @HAVE_LDAP_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authldaprc \
  @HAVE_LDAP_TRUE@		$(DESTDIR)@authldaprc@.dist
@@ -250,7 +413,7 @@
  
  @HAVE_LDAP_TRUE@uninstall-authldaprc:
  @HAVE_LDAP_TRUE@	rm -f $(DESTDIR)@authldaprc@.dist
-@@ -2141,6 +2182,18 @@ authpgsqlrc.h:
+@@ -2156,6 +2197,18 @@ authpgsqlrc.h:
  @HAVE_LDAP_FALSE@uninstall-authldaprc:
  @HAVE_LDAP_FALSE@	@:
  
@@ -269,7 +432,7 @@
  authldaprc.h:
  	echo "#define AUTHLDAPRC \"@authldaprc@\"" >authldaprc.h
  
-@@ -2148,8 +2201,6 @@ authldaprc.h:
+@@ -2163,8 +2216,6 @@ authldaprc.h:
  @HAVE_AUTHMYSQL_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authmysqlrc@` || :
  @HAVE_AUTHMYSQL_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authmysqlrc \
  @HAVE_AUTHMYSQL_TRUE@		$(DESTDIR)@authmysqlrc@.dist
@@ -278,7 +441,7 @@
  
  @HAVE_AUTHMYSQL_TRUE@uninstall-authmysqlrc:
  @HAVE_AUTHMYSQL_TRUE@	rm -f $(DESTDIR)@authmysqlrc@.dist
-@@ -2167,8 +2218,6 @@ authmysqlrc.h:
+@@ -2182,8 +2233,6 @@ authmysqlrc.h:
  @HAVE_AUTHSQLITE_TRUE@	$(mkinstalldirs) $(DESTDIR)`dirname @authsqliterc@` || :
  @HAVE_AUTHSQLITE_TRUE@	$(INSTALL_DATA) -m 660 $(srcdir)/authsqliterc \
  @HAVE_AUTHSQLITE_TRUE@		$(DESTDIR)@authsqliterc@.dist
@@ -287,7 +450,7 @@
  
  @HAVE_AUTHSQLITE_TRUE@uninstall-authsqliterc:
  @HAVE_AUTHSQLITE_TRUE@	rm -f $(DESTDIR)@authsqliterc@.dist
-@@ -2187,17 +2236,21 @@ authpipelib.lo: authpipelib.c authpipelib.h authpiperc
+@@ -2202,17 +2251,21 @@ authpiperc.h:
  authpiperc.h:
  	echo "#define PIPE_PROGRAM \"@authProg@\"" >authpiperc.h
  
@@ -308,17 +471,17 @@
 -	rm -f $(DESTDIR)@authdaemonrc@.dist
 +@HAVE_BASE_FALSE@install-authdaemonrc:
 +@HAVE_BASE_FALSE@	@:
-+ 
+ 
 +@HAVE_BASE_TRUE@uninstall-authdaemonrc:
 +@HAVE_BASE_TRUE@	rm -f $(DESTDIR)@authdaemonrc@.dist
- 
++
 +@HAVE_BASE_FALSE@uninstall-authdaemonrc:
 +@HAVE_BASE_FALSE@	@:
 +
  authdaemonrc.h:
  	echo "#define AUTHDAEMONRC \"@authdaemonrc@\"" >authdaemonrc.h
  	echo "#define AUTHDAEMONVAR \"@authdaemonvar@\"" >>authdaemonrc.h
-@@ -2248,24 +2301,24 @@ dist-hook:
+@@ -2268,24 +2321,24 @@ install-data-hook: install-authdaemonrc install-authpg
  # automake still a bit stupid...
  
  install-data-hook: install-authdaemonrc install-authpgsqlrc \
@@ -355,8 +518,8 @@
  		$(INSTALL_SCRIPT) userdb/pw2userdb \
  				$(DESTDIR)$(sbindir)/pw2userdb ; \
  		$(INSTALL_SCRIPT) userdb/makeuserdb \
-@@ -2278,9 +2331,10 @@ install-exec-hook:
- 				$(DESTDIR)$(sbindir)/userdb-test-cram-md5
+@@ -2296,9 +2349,10 @@ uninstall-hook: uninstall-authldaprc uninstall-authdae
+ 				$(DESTDIR)$(sbindir)/userdbpw
  
  uninstall-hook: uninstall-authldaprc uninstall-authdaemonrc uninstall-authmysqlrc uninstall-authpgsqlrc uninstall-authsqliterc
 -	rm -f $(DESTDIR)$(pkglibexecdir)/authdaemond
@@ -367,7 +530,7 @@
  				$(DESTDIR)$(sbindir)/pw2userdb \
  				$(DESTDIR)$(sbindir)/makeuserdb \
  				$(DESTDIR)$(sbindir)/userdb \
-@@ -2291,7 +2345,7 @@ authlib.html: authlib.html.in
+@@ -2308,7 +2362,7 @@ authlib.3: authlib.3.in
  	$(SHELL) ./config.status --file=authlib.html
  
  authlib.3: authlib.3.in
