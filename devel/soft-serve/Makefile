@@ -1,6 +1,6 @@
 PORTNAME=	soft-serve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -38,7 +38,7 @@ GH_TUPLE=	Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microso
 		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:b4368b2a2ca4:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
-		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gogs:git-module:v1.6.0:gogs_git_module/vendor/github.com/gogs/git-module \
 		golang:crypto:efcb8507fb70:golang_crypto/vendor/golang.org/x/crypto \
