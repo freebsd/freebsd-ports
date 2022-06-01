@@ -1,5 +1,5 @@
 Arqiver is a simple Qt archive manager as a front-end for libarchive
-(bsdtar), gzip and 7z.
+(bsdtar), gzip, and 7z.
 
 Arqiver can extract, create and edit archives that are supported by its
 back-ends. It can open archives by drag-and-drop. Its listed items can be

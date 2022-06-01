@@ -1,21 +1,19 @@
-PORTNAME=	Arqiver
-DISTVERSIONPREFIX=	V
+PORTNAME=	arqiver
 DISTVERSION=	0.9.0
 CATEGORIES=	x11-fm
+MASTER_SITES=	https://github.com/tsujan/${PORTNAME}/releases/download/V${DISTVERSION}/
+DISTNAME=	Arqiver-${PORTVERSION}
 
 MAINTAINER=	rigoletto@FreeBSD.org
-COMMENT=	Arqiver is a simple Qt archive manager
+COMMENT=	Simple Qt archive manager
 
 LICENSE=	GPLv3
 
-USES=		cmake qt:5 xorg
+USES=		cmake qt:5 tar:xz xorg
 USE_XORG=	xcb
 USE_QT=		buildtools_build qmake_build \
 		core gui linguist svg widgets \
 		x11extras
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	tsujan
 
 OPTIONS_DEFINE=	7ZIP ARJ LZO RAR ZIP
 OPTIONS_DEFAULT=	7ZIP ARJ LZO RAR ZIP

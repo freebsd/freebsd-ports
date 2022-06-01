@@ -1,6 +1,6 @@
     COMMENT = X11 file managers
 
-    SUBDIR += Arqiver
+    SUBDIR += arqiver
     SUBDIR += caja
     SUBDIR += catseye-fm
     SUBDIR += deforaos-browser
