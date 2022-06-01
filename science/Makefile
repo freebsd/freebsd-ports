@@ -343,6 +343,7 @@
     SUBDIR += py-spaghetti
     SUBDIR += py-spglib
     SUBDIR += py-tensorflow
+    SUBDIR += py-thewalrus
     SUBDIR += py-tobler
     SUBDIR += py-trainstation
     SUBDIR += py-veusz
