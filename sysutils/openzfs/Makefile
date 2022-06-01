@@ -1,5 +1,5 @@
 PORTNAME=	openzfs
-PORTVERSION=	2022040400
+PORTVERSION=	2022060100
 PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
@@ -18,12 +18,12 @@ RUN_DEPENDS=	openzfs-kmod>=0:sysutils/openzfs-kmod
 USES+=		autoreconf:build cpe libtool gmake gettext-runtime python:3.3+,build shebangfix
 SHEBANG_GLOB=	*.ksh *.ksh.in *.kshlib *.py.in
 SHEBANG_FILES=	tests/zfs-tests/tests/functional/trim/trim.cfg \
-		cmd/arcstat/arcstat.in \
-		cmd/dbufstat/dbufstat.in \
-		cmd/arc_summary/arc_summary*
+		cmd/arcstat.in \
+		cmd/dbufstat.in \
+		cmd/arc_summary
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-config="user"
+CONFIGURE_ARGS=	MAKE=gmake --prefix=${PREFIX} --with-config="user"
 
 OPTIONS_DEFINE=	DEBUG PYTHON TESTS
 PYTHON_DESC=	Build the pyzfs library, arc_summary, arcstat, and dbufstat utilities
@@ -32,7 +32,7 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_PROJECT=	zfs
-GH_TAGNAME=	b61507ec1
+GH_TAGNAME=	bc8192cd5
 
 .include <bsd.port.pre.mk>
 
@@ -60,8 +60,8 @@ post-extract:
 	cd ${WRKSRC} && sed -i '' '1s:@PYTHON_SHEBANG@:python3:' \
 		tests/test-runner/bin/zts-report.py.in \
 		tests/test-runner/bin/test-runner.py.in \
-		cmd/arcstat/arcstat.in \
-		cmd/dbufstat/dbufstat.in
+		cmd/arcstat.in \
+		cmd/dbufstat.in
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
