@@ -1,0 +1,15 @@
+HPTT is a high-performance C++ library for out-of-place tensor
+transpositions.
+
+Key Features:
+* Multi-threading support
+* Explicit vectorization
+* Auto-tuning (akin to FFTW)
+  * Loop order
+  * Parallelization
+* Multi architecture support
+  * Explicitly vectorized kernels for (AVX and ARM)
+* Supports float, double, complex and double complex data types
+* Supports both column-major and row-major data layouts
+
+WWW: https://github.com/springer13/hptt

@@ -1,0 +1,8 @@
+include/compute_node.h
+include/hptt.h
+include/hptt_types.h
+include/macros.h
+include/plan.h
+include/transpose.h
+include/utils.h
+lib/libhptt.so

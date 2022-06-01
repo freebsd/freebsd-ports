@@ -376,6 +376,7 @@
     SUBDIR += hmat-oss
     SUBDIR += hpcombi
     SUBDIR += hpipm
+    SUBDIR += hptt
     SUBDIR += hs-Agda
     SUBDIR += hs-penrose
     SUBDIR += hsl
