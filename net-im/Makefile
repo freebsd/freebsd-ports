@@ -28,7 +28,6 @@
     SUBDIR += gotosocial
     SUBDIR += icmpchat
     SUBDIR += icqlib
-    SUBDIR += jabber.el
     SUBDIR += jabberd
     SUBDIR += jarl
     SUBDIR += jggtrans
