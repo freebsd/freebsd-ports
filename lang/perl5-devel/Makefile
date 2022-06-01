@@ -1,6 +1,6 @@
 PORTNAME=	perl
 # XXX Remove second line, uncomment first
-#DISTVERSION=	${PERL_VERSION}	# TODO: set EXPIRATION_DATE when .0 is released
+#DISTVERSION=	${PERL_VERSION}	# TODO: set EXPIRATION_DATE when .0 is released and remove .r from version.mk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${GH_TAGNAME:C/^v//:C/-g[0-9a-f]*$//}
 DISTVERSIONSUFFIX=	${GH_TAGNAME:C/.*-g/-g/}
