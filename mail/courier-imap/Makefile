@@ -1,7 +1,7 @@
 # Created by: Neil Blakey-Milner
 
 PORTNAME=	courier-imap
-PORTVERSION=	5.1.7
+PORTVERSION=	5.1.8
 PORTEPOCH=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -98,7 +98,6 @@ CONFIGURE_ARGS+=--with-db=db  --with-userdb=${USERDB}
 
 EXTRA_DOCS=	AUTHORS INSTALL NEWS \
 		libs/imap/ChangeLog \
-		libs/imap/README \
 		libs/imap/README.proxy \
 		libs/maildir/README.imapkeywords.html \
 		libs/maildir/README.maildirfilter.html \

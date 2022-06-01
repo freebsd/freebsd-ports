@@ -54,7 +54,6 @@ share/courier-imap/mkpop3dcert
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.proxy
 %%PORTDOCS%%%%DOCSDIR%%/README.imapkeywords.html
 %%PORTDOCS%%%%DOCSDIR%%/README.maildirfilter.html
