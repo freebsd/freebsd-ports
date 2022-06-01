@@ -13,6 +13,7 @@
 @sample %%ETCDIR%%.d/charon/cmac.conf.sample
 @sample %%ETCDIR%%.d/charon/constraints.conf.sample
 @sample %%ETCDIR%%.d/charon/counters.conf.sample
+%%CTR%%@sample %%ETCDIR%%.d/charon/ctr.conf.sample
 %%CURL%%@sample %%ETCDIR%%.d/charon/curl.conf.sample
 @sample %%ETCDIR%%.d/charon/curve25519.conf.sample
 @sample %%ETCDIR%%.d/charon/des.conf.sample
@@ -135,6 +136,8 @@ lib/ipsec/plugins/libstrongswan-constraints.la
 lib/ipsec/plugins/libstrongswan-constraints.so
 lib/ipsec/plugins/libstrongswan-counters.la
 lib/ipsec/plugins/libstrongswan-counters.so
+%%CTR%%lib/ipsec/plugins/libstrongswan-ctr.la
+%%CTR%%lib/ipsec/plugins/libstrongswan-ctr.so
 %%CURL%%lib/ipsec/plugins/libstrongswan-curl.la
 %%CURL%%lib/ipsec/plugins/libstrongswan-curl.so
 lib/ipsec/plugins/libstrongswan-curve25519.la
@@ -349,6 +352,7 @@ sbin/ipsec
 %%DATADIR%%/templates/config/plugins/pgp.conf
 %%DATADIR%%/templates/config/plugins/pkcs1.conf
 %%PKCS11%%%%DATADIR%%/templates/config/plugins/pkcs11.conf
+%%CTR%%%%DATADIR%%/templates/config/plugins/ctr.conf
 %%DATADIR%%/templates/config/plugins/pkcs12.conf
 %%DATADIR%%/templates/config/plugins/pkcs7.conf
 %%DATADIR%%/templates/config/plugins/pkcs8.conf

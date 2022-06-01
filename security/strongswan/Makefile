@@ -1,5 +1,6 @@
 PORTNAME=	strongswan
 DISTVERSION=	5.9.6
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/
@@ -38,7 +39,7 @@ CONFIGURE_ARGS=	--disable-gmp \
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=			CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS \
+OPTIONS_DEFINE=			CTR CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS \
 				EAPSIMFILE FARP GCM IKEV1 IPSECKEY KDF \
 				KERNELLIBIPSEC LDAP LOADTESTER MEDIATION MYSQL \
 				PKCS11 PKI PYTHON SCEP SMP SQLITE SWANCTL \
@@ -51,6 +52,7 @@ OPTIONS_SUB=			yes
 
 # Description of options
 BUILTIN_DESC=		Use builtin printf hooks
+CTR_DESC=		Enable CTR cipher mode wrapper plugin
 CURL_DESC=		Enable CURL to fetch CRL/OCSP
 EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
 EAPDYNAMIC_DESC=	Enable EAP dynamic proxy module
@@ -83,6 +85,7 @@ XAUTH_DESC=		Enable XAuth password verification
 
 # Extra options
 BUILTIN_CONFIGURE_ON=		--with-printf-hooks=builtin
+CTR_CONFIGURE_ON=		--enable-ctr
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
 CURL_CONFIGURE_ON=		--enable-curl
 EAPAKA3GPP2_LIB_DEPENDS=	libgmp.so:math/gmp
