@@ -1,10 +1,10 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
 
-PKGNAMESUFFIX=	-node17
+PKGNAMESUFFIX=	-node18
 
 CONFLICTS_INSTALL=	npm npm-node14 npm-node16
 
-USES=		nodejs:17,run
+USES=		nodejs:18,run
 
 MASTERDIR=	${.CURDIR}/../npm
 

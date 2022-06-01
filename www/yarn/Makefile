@@ -15,7 +15,7 @@ USES?=		nodejs:run
 USES+=		cpe
 CPE_VENDOR=	${PORTNAME}pkg
 
-CONFLICTS_INSTALL?=	yarn-node17 yarn-node16 yarn-node14
+CONFLICTS_INSTALL?=	yarn-node18 yarn-node16 yarn-node14
 
 OPTIONS_DEFINE=	HADOOPCOMPAT
 HADOOPCOMPAT_DESC=	hadoop2 compatibility, the yarn script is excluded

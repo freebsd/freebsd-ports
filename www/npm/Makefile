@@ -20,7 +20,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
 
-CONFLICTS_INSTALL?=	npm-node14 npm-node16 npm-node17
+CONFLICTS_INSTALL?=	npm-node14 npm-node16 npm-node18
 
 CPE_VENDOR=	npmjs
 
