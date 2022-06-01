@@ -1,7 +1,7 @@
 # Created by: DaJoob
 
 PORTNAME=	xfce4-taskmanager
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
