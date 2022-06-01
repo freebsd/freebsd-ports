@@ -38,16 +38,16 @@ frame #5: 0x000000080104b4e5 libigdrcl.so`NEO::DrmMemoryManager::DrmMemoryManage
    60       }
    61   }
 
---- shared/source/os_interface/linux/drm_memory_manager.cpp.orig	2022-04-25 08:39:54 UTC
+--- shared/source/os_interface/linux/drm_memory_manager.cpp.orig	2022-06-01 18:10:32 UTC
 +++ shared/source/os_interface/linux/drm_memory_manager.cpp
-@@ -246,7 +246,17 @@ NEO::BufferObject *DrmMemoryManager::allocUserptr(uint
+@@ -248,7 +248,17 @@ NEO::BufferObject *DrmMemoryManager::allocUserptr(uint
      auto &drm = this->getDrm(rootDeviceIndex);
  
-     if (drm.ioctl(DRM_IOCTL_I915_GEM_USERPTR, &userptr) != 0) {
+     if (drm.ioctl(DrmIoctl::GemUserptr, &userptr) != 0) {
 -        return nullptr;
 +        if (errno == ENODEV && userptr.flags == 0) {
 +            userptr.flags = I915_USERPTR_UNSYNCHRONIZED;
-+            if (drm.ioctl(DRM_IOCTL_I915_GEM_USERPTR, &userptr) != 0) {
++            if (drm.ioctl(DrmIoctl::GemUserptr, &userptr) != 0) {
 +                if (geteuid() != 0) {
 +                    printDebugString(true, stderr, "%s", "ioctl(I915_GEM_USERPTR) failed. Try running as root but expect poor stability.\n");
 +                }
