@@ -1,7 +1,6 @@
 PORTNAME=	openvsp
 DISTVERSIONPREFIX=	${GH_PROJECT}_
-DISTVERSION=	3.27.1
-PORTREVISION=	2
+DISTVERSION=	3.28.0
 CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -36,7 +35,6 @@ USE_GNOME=	libxml2
 USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft \
 		xinerama xrender xxf86vm
 
-CXXFLAGS_powerpc64=	-mvsx
 CMAKE_ARGS=	-DVSP_USE_SYSTEM_CMINPACK:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_CPPTEST:BOOLEAN=yes \
 		-DVSP_USE_SYSTEM_CODEELI:BOOLEAN=no \
@@ -50,6 +48,8 @@ CMAKE_INSTALL_PREFIX=	${STAGEDIR}${PREFIX}
 CMAKE_SOURCE_PATH=	${WRKSRC}/SuperProject
 
 BUILD_PREFIX=	OpenVSP-prefix/src/OpenVSP-build/_CPack_Packages/FreeBSD/ZIP/OpenVSP-${DISTVERSION}-FreeBSD
+
+CXXFLAGS_powerpc64=	-mvsx
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
