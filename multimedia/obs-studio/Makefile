@@ -1,5 +1,6 @@
 PORTNAME=	obs-studio
 DISTVERSION=	27.2.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

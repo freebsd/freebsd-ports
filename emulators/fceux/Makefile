@@ -1,5 +1,6 @@
 PORTNAME=	fceux
 DISTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	SF/fceultra/Source%20Code/${DISTVERSION}%20src/
 
