@@ -1,15 +1,15 @@
---- cargo-crates/v8-0.42.1/v8/src/base/platform/platform-posix.cc.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/v8-0.42.1/v8/src/base/platform/platform-posix.cc
-@@ -433,7 +433,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
+--- cargo-crates/v8-0.43.1/v8/src/base/platform/platform-posix.cc.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/v8-0.43.1/v8/src/base/platform/platform-posix.cc
+@@ -634,7 +634,7 @@ bool OS::HasLazyCommits() {
  
  // static
  bool OS::HasLazyCommits() {
--#if V8_OS_AIX || V8_OS_LINUX || V8_OS_MACOSX
-+#if V8_OS_AIX || V8_OS_LINUX || V8_OS_MACOSX || V8_OS_FREEBSD
+-#if V8_OS_AIX || V8_OS_LINUX || V8_OS_DARWIN
++#if V8_OS_AIX || V8_OS_LINUX || V8_OS_DARWIN || V8_OS_FREEBSD
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -564,6 +564,12 @@ int OS::GetCurrentThreadId() {
+@@ -773,6 +773,12 @@ int OS::GetCurrentThreadId() {
    return static_cast<int>(syscall(__NR_gettid));
  #elif V8_OS_ANDROID
    return static_cast<int>(gettid());

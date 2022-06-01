@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.22.0
-PORTREVISION=	1
+DISTVERSION=	1.22.1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -22,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
 USE_GNOME=	glib20
 
-V8_VERS=	0.42.1
+V8_VERS=	0.43.1
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -114,11 +113,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		data-encoding-2.3.2 \
 		data-url-0.1.1 \
 		debug_unreachable-0.1.1 \
-		deno_ast-0.14.1 \
-		deno_doc-0.34.0 \
-		deno_graph-0.26.0 \
-		deno_lint-0.29.0 \
-		deno_task_shell-0.3.0 \
+		deno_ast-0.15.0 \
+		deno_doc-0.35.0 \
+		deno_graph-0.27.0 \
+		deno_lint-0.30.0 \
+		deno_task_shell-0.3.1 \
 		der-0.4.5 \
 		derive_more-0.99.17 \
 		diff-0.1.12 \
@@ -127,11 +126,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dissimilar-1.0.3 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
-		dprint-core-0.56.0 \
-		dprint-plugin-json-0.15.2 \
-		dprint-plugin-markdown-0.13.2 \
-		dprint-plugin-typescript-0.68.2 \
-		dprint-swc-ecma-ast-view-0.55.0 \
+		dprint-core-0.58.1 \
+		dprint-plugin-json-0.15.3 \
+		dprint-plugin-markdown-0.13.3 \
+		dprint-plugin-typescript-0.68.4 \
+		dprint-swc-ext-0.1.1 \
 		dyn-clone-1.0.5 \
 		ecdsa-0.12.4 \
 		either-1.6.1 \
@@ -145,7 +144,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		error-code-2.3.1 \
-		eszip-0.19.0 \
+		eszip-0.20.0 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.9.0 \
@@ -231,7 +230,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lexical-util-0.8.3 \
 		lexical-write-float-0.8.4 \
 		lexical-write-integer-0.8.3 \
-		libc-0.2.124 \
+		libc-0.2.126 \
 		libffi-3.0.0 \
 		libffi-sys-2.0.0 \
 		libloading-0.7.3 \
@@ -253,7 +252,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		mime-0.3.16 \
 		miniz_oxide-0.5.1 \
 		mio-0.8.3 \
-		mitata-0.0.6 \
+		mitata-0.0.7 \
 		naga-0.8.5 \
 		netif-0.1.3 \
 		new_debug_unreachable-1.0.4 \
@@ -390,28 +389,30 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strsim-0.10.0 \
 		subtle-2.4.1 \
 		swc_atoms-0.2.11 \
-		swc_bundler-0.133.0 \
-		swc_common-0.17.25 \
-		swc_ecma_ast-0.75.0 \
-		swc_ecma_codegen-0.103.0 \
+		swc_bundler-0.147.0 \
+		swc_common-0.18.5 \
+		swc_config-0.1.1 \
+		swc_config_macro-0.1.0 \
+		swc_ecma_ast-0.78.1 \
+		swc_ecma_codegen-0.108.2 \
 		swc_ecma_codegen_macros-0.7.0 \
-		swc_ecma_dep_graph-0.72.0 \
-		swc_ecma_loader-0.29.1 \
-		swc_ecma_parser-0.100.2 \
-		swc_ecma_transforms-0.142.0 \
-		swc_ecma_transforms_base-0.75.0 \
-		swc_ecma_transforms_classes-0.63.0 \
+		swc_ecma_dep_graph-0.76.0 \
+		swc_ecma_loader-0.30.1 \
+		swc_ecma_parser-0.104.0 \
+		swc_ecma_transforms-0.154.0 \
+		swc_ecma_transforms_base-0.85.0 \
+		swc_ecma_transforms_classes-0.73.0 \
 		swc_ecma_transforms_macros-0.3.0 \
-		swc_ecma_transforms_optimization-0.112.1 \
-		swc_ecma_transforms_proposal-0.97.0 \
-		swc_ecma_transforms_react-0.104.0 \
-		swc_ecma_transforms_typescript-0.107.0 \
-		swc_ecma_utils-0.79.1 \
-		swc_ecma_visit-0.61.0 \
-		swc_ecmascript-0.143.0 \
+		swc_ecma_transforms_optimization-0.124.1 \
+		swc_ecma_transforms_proposal-0.107.0 \
+		swc_ecma_transforms_react-0.114.1 \
+		swc_ecma_transforms_typescript-0.117.0 \
+		swc_ecma_utils-0.85.0 \
+		swc_ecma_visit-0.64.0 \
+		swc_ecmascript-0.157.0 \
 		swc_eq_ignore_macros-0.1.0 \
-		swc_fast_graph-0.5.0 \
-		swc_graph_analyzer-0.6.0 \
+		swc_fast_graph-0.6.0 \
+		swc_graph_analyzer-0.7.0 \
 		swc_macros_common-0.3.5 \
 		swc_visit-0.3.0 \
 		swc_visit_macros-0.3.1 \
@@ -477,7 +478,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.0 \
 		uuid-1.0.0 \
-		v8-0.42.1 \
+		v8-0.43.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		void-1.0.2 \

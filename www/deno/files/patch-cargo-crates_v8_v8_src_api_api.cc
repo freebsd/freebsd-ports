@@ -1,11 +1,11 @@
---- cargo-crates/v8-0.42.1/v8/src/api/api.cc.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/v8-0.42.1/v8/src/api/api.cc
-@@ -5674,7 +5674,7 @@ bool v8::V8::Initialize(const int build_config) {
+--- cargo-crates/v8-0.43.1/v8/src/api/api.cc.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/v8-0.43.1/v8/src/api/api.cc
+@@ -6096,7 +6096,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  
--#if V8_OS_LINUX || V8_OS_MACOSX
-+#if V8_OS_LINUX || V8_OS_MACOSX || V8_OS_OPENBSD || V8_OS_FREEBSD
+-#if V8_OS_LINUX || V8_OS_DARWIN
++#if V8_OS_LINUX || V8_OS_DARWIN || V8_OS_FREEBSD
  bool TryHandleWebAssemblyTrapPosix(int sig_code, siginfo_t* info,
                                     void* context) {
- #if V8_TARGET_ARCH_X64 && !V8_OS_ANDROID
+ #if V8_ENABLE_WEBASSEMBLY && V8_TRAP_HANDLER_SUPPORTED
