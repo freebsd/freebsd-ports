@@ -1,6 +1,7 @@
 PORTNAME=	fplll
 DISTVERSION=	5.4.2
 CATEGORIES=	math
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Lattice algorithms using floating-point arithmetic
@@ -15,7 +16,6 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 USES=		autoreconf compiler:c++11-lang gmake libtool localbase:ldflags pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
-USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
