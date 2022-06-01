@@ -1,5 +1,5 @@
---- cargo-crates/jemalloc-sys-0.3.2/jemalloc/include/jemalloc/internal/jemalloc_internal_decls.h.orig	2018-12-12 14:11:23 UTC
-+++ cargo-crates/jemalloc-sys-0.3.2/jemalloc/include/jemalloc/internal/jemalloc_internal_decls.h
+--- cargo-crates/jemalloc-sys-0.5.0+5.3.0/jemalloc/include/jemalloc/internal/jemalloc_internal_decls.h.orig	2018-12-12 14:11:23 UTC
++++ cargo-crates/jemalloc-sys-0.5.0+5.3.0/jemalloc/include/jemalloc/internal/jemalloc_internal_decls.h
 @@ -1,5 +1,10 @@
  #ifndef JEMALLOC_INTERNAL_DECLS_H
  #define JEMALLOC_INTERNAL_DECLS_H

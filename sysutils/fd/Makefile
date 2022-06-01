@@ -2,8 +2,7 @@
 
 PORTNAME=	fd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.3.2
-PORTREVISION=	4
+DISTVERSION=	8.4.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-find
 
@@ -21,69 +20,77 @@ GH_ACCOUNT=	sharkdp
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.52 \
+		anyhow-1.0.57 \
+		argmax-0.3.0 \
 		atty-0.2.14 \
-		autocfg-1.0.1 \
+		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
-		cc-1.0.72 \
+		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-3.0.5 \
-		clap_complete-3.0.2 \
-		crossbeam-utils-0.8.5 \
-		ctrlc-3.2.1 \
+		clap-3.1.18 \
+		clap_complete-3.1.4 \
+		clap_lex-0.2.0 \
+		crossbeam-utils-0.8.8 \
+		ctrlc-3.2.2 \
 		diff-0.1.12 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
-		filetime-0.2.15 \
+		filetime-0.2.16 \
 		fnv-1.0.7 \
 		fs_extra-1.2.0 \
 		fuchsia-cprng-0.1.1 \
-		getrandom-0.2.3 \
+		getrandom-0.2.6 \
 		globset-0.4.8 \
 		hashbrown-0.11.2 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
 		ignore-0.4.18 \
-		indexmap-1.8.0 \
-		jemalloc-sys-0.3.2 \
-		jemallocator-0.3.2 \
+		indexmap-1.8.2 \
+		jemalloc-sys-0.5.0+5.3.0 \
+		jemallocator-0.5.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.112 \
-		log-0.4.14 \
-		lscolors-0.8.1 \
-		memchr-2.4.1 \
+		libc-0.2.126 \
+		log-0.4.17 \
+		lscolors-0.10.0 \
+		memchr-2.5.0 \
 		memoffset-0.6.5 \
 		nix-0.23.1 \
+		nix-0.24.1 \
 		normpath-0.3.2 \
-		num-integer-0.1.44 \
-		num-traits-0.2.14 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
-		once_cell-1.9.0 \
-		os_str_bytes-6.0.0 \
-		proc-macro2-1.0.36 \
-		quote-1.0.14 \
+		once_cell-1.12.0 \
+		os_str_bytes-6.1.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.39 \
+		quote-1.0.18 \
 		rand-0.4.6 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
 		rdrand-0.4.0 \
-		redox_syscall-0.2.10 \
-		redox_users-0.4.0 \
-		regex-1.5.4 \
-		regex-syntax-0.6.25 \
+		redox_syscall-0.2.13 \
+		redox_users-0.4.3 \
+		regex-1.5.6 \
+		regex-syntax-0.6.26 \
 		remove_dir_all-0.5.3 \
 		same-file-1.0.6 \
 		strsim-0.10.0 \
-		syn-1.0.85 \
+		syn-1.0.95 \
 		tempdir-0.3.7 \
-		termcolor-1.1.2 \
+		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
-		test-case-1.2.1 \
-		textwrap-0.14.2 \
-		thread_local-1.1.3 \
+		test-case-2.1.0 \
+		test-case-macros-2.1.0 \
+		textwrap-0.15.0 \
+		thiserror-1.0.31 \
+		thiserror-impl-1.0.31 \
+		thread_local-1.1.4 \
 		time-0.1.43 \
-		unicode-xid-0.2.2 \
+		unicode-ident-1.0.0 \
 		users-0.11.0 \
 		version_check-0.9.4 \
 		walkdir-2.3.2 \
