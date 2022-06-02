@@ -1,4 +1,4 @@
---- setup.py.orig	2021-04-19 05:24:42 UTC
+--- setup.py.orig	2022-05-22 18:11:01 UTC
 +++ setup.py
 @@ -39,10 +39,6 @@ else:
          cf.add_section('install')
@@ -11,7 +11,7 @@
  
  with open('setup.cfg', 'w') as f:
      cf.write(f)
-@@ -58,17 +54,17 @@ else:
+@@ -58,17 +54,17 @@ storage_dirs = []
  
  storage_dirs = []
  
@@ -29,19 +29,18 @@
          webapp_content[root].append(filepath)
  
 -conf_files = [ ('conf', glob('conf/*.example')) ]
-+conf_files = [ ('%%PREFIX%%/etc/graphite', glob('conf/*.example')) ]
++conf_files = [ ('/usr/local/etc/graphite', glob('conf/*.example')) ]
  examples = [ ('examples', glob('examples/example-*')) ]
  
  
-@@ -116,8 +112,9 @@ try:
+@@ -116,8 +112,8 @@ try:
        package_data={'graphite' :
          ['templates/*', 'local_settings.py.example']},
        scripts=glob('bin/*'),
 -      data_files=list(webapp_content.items()) + storage_dirs + conf_files + examples,
 -      install_requires=['Django>=1.8,<3.1', 'django-tagging==0.4.3', 'pytz',
 +      data_files=list(conf_files),
-+ 
 +      install_requires=['Django>=1.8,<3.1', 'django-tagging>=0.4.3', 'pytz',
-                         'pyparsing', 'cairocffi', 'urllib3', 'scandir', 'six'],
+                         'pyparsing', 'cairocffi', 'urllib3',
+                         'scandir;python_version<"3.5"', 'six'],
        classifiers=[
-           'Intended Audience :: Developers',

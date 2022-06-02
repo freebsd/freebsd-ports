@@ -1,12 +1,12 @@
---- webapp/graphite/local_settings.py.example.orig	2018-02-13 06:01:34.000000000 -0500
-+++ webapp/graphite/local_settings.py.example	2018-03-22 09:10:17.659675000 -0400
-@@ -108,15 +108,27 @@
+--- webapp/graphite/local_settings.py.example.orig	2022-05-22 18:11:01 UTC
++++ webapp/graphite/local_settings.py.example
+@@ -112,15 +112,27 @@ DEFAULT_XFILES_FACTOR = 0
  #CONF_DIR = '/opt/graphite/conf'
  #STORAGE_DIR = '/opt/graphite/storage'
  #STATIC_ROOT = '/opt/graphite/static'
-+CONF_DIR = '%%PREFIX%%/etc/graphite'
++CONF_DIR = '/usr/local/etc/graphite'
 +STORAGE_DIR = '/var/db/carbon'
-+STATIC_ROOT = '%%PREFIX%%/share/graphite-web/content'
++STATIC_ROOT = '/usr/local/share/graphite-web/content'
 +
  #LOG_DIR = '/opt/graphite/storage/log/webapp'
  #INDEX_FILE = '/opt/graphite/storage/index'     # Search index file
@@ -23,12 +23,12 @@
  ## Webapp config files
  #DASHBOARD_CONF = '/opt/graphite/conf/dashboard.conf'
  #GRAPHTEMPLATES_CONF = '/opt/graphite/conf/graphTemplates.conf'
-+DASHBOARD_CONF = '%%PREFIX%%/etc/graphite/dashboard.conf'
-+GRAPHTEMPLATES_CONF = '%%PREFIX%%/etc/graphite/graphTemplates.conf'
++DASHBOARD_CONF = '/usr/local/etc/graphite/dashboard.conf'
++GRAPHTEMPLATES_CONF = '/usr/local/etc/graphite/graphTemplates.conf'
  
  ## Data directories
  #
-@@ -253,7 +265,12 @@
+@@ -257,7 +269,12 @@ DEFAULT_XFILES_FACTOR = 0
  #    }
  #}
  #
