@@ -1,5 +1,5 @@
 PORTNAME=	citra
-PORTVERSION=	s20220520
+PORTVERSION=	s20220604
 PORTREVISION?=	0
 CATEGORIES=	emulators
 .if make(makesum)
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	a6e7a81de
+GH_TAGNAME=	b7c1c2101
 GH_TUPLE=	citra-emu:ext-boost:36603a1:boost/externals/boost \
 		citra-emu:ext-libressl-portable:8929f81:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
