@@ -1,8 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	e-antic
-DISTVERSION=	1.0.0-rc.13
-PORTREVISION=	3
+DISTVERSION=	1.2.1
 #MASTER_SITES=	https://www.labri.fr/perso/vdelecro/e-antic/
 CATEGORIES=	math
 
@@ -27,33 +26,27 @@ USES=		autoreconf compiler:c++11-lang gmake libtool localbase	\
 USE_GITHUB=	yes
 ANTIC_TAG=	f4e8a60
 CATCH_TAG=	ff349a5
-CEREAL_TAG=	51cbda5
+CEREAL_TAG=	ebef1e9
 FLINT_TAG=	ae7ec89
-UF_TAG=		0000f42
-GH_ACCOUNT=	flatsurf catchorg:c1 USCiLab:c2 wbhart:f flatsurf:u
-GH_PROJECT=	${PORTNAME} antic:a Catch2:c1 cereal:c2 flint2:f	\
-		unique-factory:u
-GH_TAGNAME=	${ANTIC_TAG}:a ${CATCH_TAG}:c1 ${CEREAL_TAG}:c2 ${FLINT_TAG}:f	\
-		${UF_TAG}:u
-
-CONFIGURE_ARGS=	--without-pytest # pytest requires cppyy
+GH_ACCOUNT=	flatsurf catchorg:c1 USCiLab:c2 wbhart:f
+GH_PROJECT=	${PORTNAME} antic:a Catch2:c1 cereal:c2 flint2:f
+GH_TAGNAME=	${ANTIC_TAG}:a ${CATCH_TAG}:c1 ${CEREAL_TAG}:c2 ${FLINT_TAG}:f
+GH_SUBDIR=	libeantic/upstream/antic:a	\
+		libeantic/upstream/flint:f	\
+		libeantic/test/external/catch2:c1	\
+		libeantic/test/external/cereal:c2
 
 LIBS+=		"-lm"
 GNU_CONFIGURE=	yes
+# pytest requires cppyy, doc requires standardese
+CONFIGURE_ARGS=	--without-byexample	\
+		--without-pytest	\
+		--without-doc
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-PLIST_SUB=	VER=1.0.0rc13
-
-post-extract:
-	${CP} -R ${WRKDIR}/antic-${ANTIC_TAG}/* ${WRKSRC}/libeantic/upstream/antic/
-	${CP} -R ${WRKDIR}/Catch2-${CATCH_TAG}/*	\
-		${WRKSRC}/libeantic/test/external/catch2/
-	${CP} -R ${WRKDIR}/cereal-${CEREAL_TAG}/*	\
-		${WRKSRC}/libeantic/test/external/cereal/
-	${CP} -R ${WRKDIR}/flint2-${FLINT_TAG}/* ${WRKSRC}/libeantic/upstream/antic/
-	${CP} -R ${WRKDIR}/unique-factory-${UF_TAG}/*	\
-		${WRKSRC}/libeantic/srcxx/external/unique-factory
+PLIST_SUB=	VER=${DISTVERSION}
 
 post-install:
 	${REINPLACE_CMD} -e 's|${STAGEDIR}||'	\
