@@ -2,7 +2,7 @@
 
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.16.0
+DISTVERSION=	2.17.1
 CATEGORIES=	sysutils
 EXTRACT_ONLY=	${_DISTFILES:N*.js}
 
@@ -43,20 +43,20 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		go-git:go-git:v5.4.2:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-ini:ini:v1.66.4:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
-		go-yaml:yaml:539c8e751b99:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v3.0.0:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		godbus:dbus:v5.1.0:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:6f7dac969898:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:183a9ca12b87:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:9780585627b5:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:crypto:793ad666bf5e:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:5463443f8c37:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:622c5d57e401:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:0976fa681c29:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:5e4e11fc645e:golang_sys/vendor/golang.org/x/sys \
-		golang:term:e5f449aeb171:golang_term/vendor/golang.org/x/term \
+		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
+		golang:term:065cf7ba2467:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:btree:v1.0.1:google_btree/vendor/github.com/google/btree \
-		google:go-github:v44.1.0:google_go_github_v44/vendor/github.com/google/go-github/v44 \
+		google:go-github:v45.0.0:google_go_github_v45/vendor/github.com/google/go-github/v45 \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:gops:v0.3.23:google_gops/vendor/github.com/google/gops \
 		google:renameio:v2.0.0:google_renameio_v2/vendor/github.com/google/renameio/v2 \
@@ -65,7 +65,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		gregjones:httpcache:901d90724c79:gregjones_httpcache/vendor/github.com/gregjones/httpcache \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		huandu:xstrings:v1.3.2:huandu_xstrings/vendor/github.com/huandu/xstrings \
-		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
+		imdario:mergo:v0.3.13:imdario_mergo/vendor/github.com/imdario/mergo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		kevinburke:ssh_config:v1.2.0:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
@@ -81,6 +81,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		muesli:combinator:v0.3.0:muesli_combinator/vendor/github.com/muesli/combinator \
 		muesli:reflow:v0.3.0:muesli_reflow/vendor/github.com/muesli/reflow \
 		muesli:termenv:v0.11.0:muesli_termenv/vendor/github.com/muesli/termenv \
+		mvdan:sh:v3.5.1:mvdan_sh/vendor/mvdan.cc/sh/v3 \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:v1.9.5:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pelletier:go-toml:v2.0.1:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
@@ -99,10 +100,10 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		spf13:cobra:v1.4.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		spf13:viper:v1.11.0:spf13_viper/vendor/github.com/spf13/viper \
+		spf13:viper:v1.12.0:spf13_viper/vendor/github.com/spf13/viper \
 		stretchr:objx:v0.3.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.1:stretchr_testify/vendor/github.com/stretchr/testify \
-		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
+		subosito:gotenv:v1.3.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		twpayne:go-pinentry:v0.2.0:twpayne_go_pinentry/vendor/github.com/twpayne/go-pinentry \
 		twpayne:go-shell:v0.3.1:twpayne_go_shell/vendor/github.com/twpayne/go-shell \
 		twpayne:go-vfs:v4.1.0:twpayne_go_vfs_v4/vendor/github.com/twpayne/go-vfs/v4 \
@@ -126,6 +127,7 @@ PLIST_FILES=	bin/chezmoi
 OPTIONS_DEFINE=		BASH DOCS FISH ZSH
 OPTIONS_DEFAULT=	BASH DOCS FISH ZSH
 
+BASH_PLIST_FILES=	etc/bash_completion.d/chezmoi
 DOCS_MASTER_SITES=	https://unpkg.com/:mermaid_js
 DOCS_DISTFILES=		mermaid@8.8.0/dist/mermaid.min.js:mermaid_js
 
@@ -135,7 +137,6 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocs>0:textproc/py-mkdocs@${PY_FLAV
 			${PYTHON_PKGNAMEPREFIX}mkdocs-simple-hooks>0:textproc/py-mkdocs-simple-hooks@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}mkdocs-redirects>0:textproc/py-mkdocs-redirects@${PY_FLAVOR}
 
-BASH_PLIST_FILES=	etc/bash_completion.d/chezmoi
 DOCS_PORTDOCS=		*
 FISH_PLIST_FILES=	share/fish/vendor_functions.d/chezmoi.fish
 ZSH_PLIST_FILES=	share/zsh/site-functions/_chezmoi
