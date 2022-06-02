@@ -1,3 +1,8 @@
+" defaults.vim will override this file. Sourcing it here and
+" setting the skip flag prevents clobbering settings
+source $VIMRUNTIME/defaults.vim
+let skip_defaults_vim = 1
+
 set nocompatible      " Enable Vim mode (instead of vi emulation)
 
 let g:is_posix = 1    " Our /bin/sh is POSIX, not bash
