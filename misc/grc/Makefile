@@ -1,7 +1,7 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 
 PORTNAME=	grc
-PORTVERSION=	1.11.1
+PORTVERSION=	1.13
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -11,14 +11,14 @@ COMMENT=	Generic Colouriser
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		python:run shebangfix
+SHEBANG_FILES=	grc grcat
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	garabik
 
-NO_BUILD=	yes
-
 NO_ARCH=	yes
-USES=		python:run shebangfix
-SHEBANG_FILES=	grc grcat
+NO_BUILD=	yes
 
 post-patch:
 .for i in grc grcat
@@ -32,6 +32,7 @@ post-patch:
 		 s|/usr/local/share/grc|${DATADIR}|g ; \
 		 s|, /usr/share/grc/||g' ${WRKSRC}/${i}.1
 .endfor
+	(cd ${FILESDIR} && ${CP} colourfiles/conf.* ${WRKSRC}/colourfiles)
 
 do-install:
 .for i in grc grcat

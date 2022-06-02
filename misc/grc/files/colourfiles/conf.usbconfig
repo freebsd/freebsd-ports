@@ -1,0 +1,22 @@
+regexp=^(ugen)(\d+)\.(\d+):\s+<([^>]+)>\s+at\s+usbus(\d+).*
+colors="\033[38;5;241m","\033[38;5;241m",bright_yellow,bright_cyan,"\033[38;5;213m",bright_yellow
+#regexp=^(ugen)(\d+)\.(\d+):\s+<([^>]+)>\s+at\s+usbus(\d+).*spd=(\w+)\s+\(([^\)]+)\)\s+pwr=(\w+)\s+\(([^\)]+)\)
+#colors="\033[38;5;241m","\033[38;5;241m",bright_yellow,bright_cyan,bright_green,bright_yellow,bright_blue,bright_magenta,bright_green,bright_cyan
+======
+regexp=spd=(FULL) \((12Mbps)\)
+colors="\033[38;5;241m","\033[38;5;160m","\033[38;5;160m"
+======
+regexp=spd=(HIGH) \((480Mbps)\)
+colors="\033[38;5;241m","\033[38;5;222m","\033[38;5;222m"
+======
+regexp=spd=(SUPER) \((5.0Gbps)\)
+colors="\033[38;5;241m","\033[38;5;112m","\033[38;5;112m"
+======
+regexp=pwr=(SAVE)\s+\((\d+mA)\)
+colors="\033[38;5;241m",white,white
+======
+regexp=pwr=(ON)\s+\((\d+mA)\)
+colors="\033[38;5;241m",bright_red,bright_red
+======
+regexp=<([^>]+H(?:UB|ub))>
+colors="\033[38;5;241m","\033[38;5;247m",
