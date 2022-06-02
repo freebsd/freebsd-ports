@@ -1,13 +1,14 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-initial-setup
-PORTVERSION=	42.1.1
+PORTVERSION=	42.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	First boot setup tool for GNOME
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gdm>=3.0.0:x11/gdm \
 		gnome-autogen.sh:devel/gnome-common \
