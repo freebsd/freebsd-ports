@@ -1,7 +1,6 @@
 # Created by: Sergey Osokin <osa@FreeBSD.org>
 
 PKGNAMESUFFIX=	-${UNIT_MODNAME}
-PORTREVISION=	1
 
 UNIT_MODNAME=	ruby${RUBY_VER}
 

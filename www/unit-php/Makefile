@@ -1,7 +1,6 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-PORTREVISION=	1
 
 UNIT_MODNAME=	php${PHP_VER}
 
