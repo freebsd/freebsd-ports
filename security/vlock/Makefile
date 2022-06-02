@@ -2,7 +2,7 @@
 
 PORTNAME=	vlock
 PORTVERSION=	2.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://cthulhu.c3d2.de/~toidinamai/vlock/archive/ \
 		LOCAL/martymac
@@ -31,7 +31,7 @@ ROOTPWD_DESC=	Enable unlock using root password
 ROOTPWD_CONFIGURE_ENABLE=	root-password
 VLOCKSCRIPTS_DESC=	Install sample hook scripts
 CACASAVER_DESC=	Enable libcaca screensaver
-CACASAVER_BUILD_DEPENDS=	${LOCALBASE}/lib/libcaca.a:graphics/libcaca
+CACASAVER_LIB_DEPENDS=	libcaca.so:graphics/libcaca
 
 # Default scripts/modules
 VLOCKSCRIPTS=
