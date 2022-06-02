@@ -1,8 +1,6 @@
-# Created by: Horance Chou <horance@freedom.ie.cycu.edu.tw>
-
 PORTNAME=	libffi
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/${PORTNAME}
 PKGNAMESUFFIX=	33
@@ -26,7 +24,7 @@ USE_LDCONFIG=	${PREFIX}/lib/compat
 GNU_CONFIGURE=	yes
 CPE_VENDOR=	libffi_project
 
-CONFIGURE_ARGS=	--disable-multi-os-directory --disable-static \
+CONFIGURE_ARGS=	--disable-multi-os-directory --disable-static --disable-docs \
 		--libdir=${PREFIX}/lib/compat
 INSTALL_TARGET=	install-strip
 INFO=		libffi
