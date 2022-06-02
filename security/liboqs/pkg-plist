@@ -22,8 +22,10 @@ include/oqs/sig_falcon.h
 include/oqs/sig_picnic.h
 include/oqs/sig_rainbow.h
 include/oqs/sig_sphincs.h
-lib/cmake/liboqs/liboqsConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/liboqs/liboqsConfig.cmake
+lib/cmake/liboqs/liboqsConfigVersion.cmake
+lib/cmake/liboqs/liboqsTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/liboqs/liboqsTargets.cmake
 lib/liboqs.so
 lib/liboqs.so.0
-lib/liboqs.so.0.7.1
+lib/liboqs.so.0.7.2-dev

@@ -1,5 +1,5 @@
 PORTNAME=	liboqs
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.2 # on dev branch
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	Unknown or unsupported processor: i386
 BROKEN_powerpc=	Unknown or unsupported processor: powerpc
-BROKEN_aarch64=	fatal error: 'asm/hwcap.h' file not found, see https://github.com/open-quantum-safe/liboqs/issues/1208
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>0:devel/py-pytest4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
@@ -21,6 +20,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-quantum-safe
+GH_TAGNAME=	fd9f2fa # branch jg-freebsd-cpu-features that fixes arm64 build
 
 SHEBANG_GLOB=	*.sh
 
