@@ -11,6 +11,8 @@ PATCHFILES+=	0b70567432ab.patch:-p1 # https://github.com/libjxl/libjxl/pull/797
 PATCHFILES+=	e0107a6ca637.patch:-p1 # https://github.com/libjxl/libjxl/pull/847
 PATCHFILES+=	e903d53a58b4.patch:-p1 # https://github.com/libjxl/libjxl/pull/1071
 PATCHFILES+=	600b59153882.patch:-p1 # https://github.com/libjxl/libjxl/pull/1156
+PATCHFILES+=	98d25826edc1.patch:-p1 # https://github.com/libjxl/libjxl/pull/1343
+PATCHFILES+=	1f849bd28145.patch:-p1 # https://github.com/libjxl/libjxl/pull/1369
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	JPEG XL reference encoder/decoder
