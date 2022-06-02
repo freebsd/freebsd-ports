@@ -2,7 +2,7 @@
 
 PORTNAME=	mle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.3
+DISTVERSION=	1.5.0
 CATEGORIES=	editors
 
 MAINTAINER=	as@php.net
@@ -12,32 +12,42 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
-LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libtermbox.so:devel/termbox
+LIB_DEPENDS=	libpcre.so:devel/pcre
 TEST_DEPENDS=	${LOCALBASE}/bin/gpaste:sysutils/coreutils \
 		${LOCALBASE}/bin/grep:textproc/gnugrep \
 		bash:shells/bash \
 		gfind:misc/findutils
 
-USES=		compiler:c11 gmake localbase:ldflags shebangfix lua:53
+USES=		compiler:c11 gmake localbase:ldflags shebangfix lua:54
 SHEBANG_FILES=	tests/func/*.sh tests/run.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	adsr
 
-PLIST_FILES=	bin/mle
 TEST_TARGET=	test
+PLIST_FILES=	bin/mle
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|lua5.3|lua53|g' ${WRKSRC}/mle.h
-	@${REINPLACE_CMD} -e 's|lua5.3|lua-5.3|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|lua5.4|lua54|g' ${WRKSRC}/mle.h
+	@${REINPLACE_CMD} -e 's|lua5.4|lua-5.4|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-O0|-O2|g' ${WRKSRC}/Makefile
 
-	# Tests.
+	# Fix shell commands in tests
 	@${REINPLACE_CMD} -e 's|find|gfind|g' \
 		-e 's|grep|${LOCALBASE}/bin/grep|g' \
 		${WRKSRC}/tests/run.sh \
 		${WRKSRC}/tests/func/*.sh
 	@${REINPLACE_CMD} -e 's|p a s t e|g p a s t e|g' \
 		${WRKSRC}/tests/func/test_lua.sh
+
+	# Remove assertion that relies on UTF-8 codeset (fixed upstream)
+	@${REINPLACE_CMD} -e '/0wv/d' \
+		${WRKSRC}/tests/unit/test_bline_insert.c
+
+	# Remove assertions that rely on GNU tooling output
+	@${REINPLACE_CMD} -e '/shell_line/d' \
+		${WRKSRC}/tests/func/test_multi_cursor.sh
+	@${REINPLACE_CMD} -e '/byte_count/d' \
+		${WRKSRC}/tests/func/test_coarse_undo.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mle ${STAGEDIR}${PREFIX}/bin
