@@ -36,6 +36,8 @@ status_cmd="tincd_status"
 extra_commands="reload"
 procname=${command:-tincd}
 ldconfig_command="/sbin/ldconfig"
+cfg=$(shift 1; echo "$@")
+tincd_cfg=${cfg:=${tincd_cfg}}
 
 tincd_start()
 {
