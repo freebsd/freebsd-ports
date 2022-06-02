@@ -1,6 +1,6 @@
 PORTNAME=	unifi6
 PORTVERSION=	6.5.55
-PORTREVISION=   1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -13,6 +13,9 @@ EXTRACT_ONLY=	unifi_sysvinit_all.deb
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	UniFi Controller v6
+
+DEPRECATED=	No longer maintained by upstream
+EXPIRATION_DATE=	2022-06-30
 
 RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \
 		snappyjava>0:archivers/snappy-java
