@@ -1,8 +1,7 @@
 # Created by: Domas Mituzas <midom@dammit.lt>
 
 PORTNAME=	freetds
-PORTVERSION=	1.3.10
-PORTREVISION=	1
+PORTVERSION=	1.3.11
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/stable/ \
