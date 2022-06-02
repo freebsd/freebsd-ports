@@ -14,3 +14,26 @@
          socket_set_src_addr_ipv6(socket6, &src_addr6, (socktype6 == SOCK_DGRAM) ? &ident6 : NULL);
      }
  #endif
+@@ -2299,6 +2299,22 @@ int wait_for_reply(int64_t wait_time)
+ #endif
+     else {
+         return 1;
++    }
++
++    /* Check that src address is one of the hosts we pinged before */
++    int found = 0;
++    for (int i = 0; i < num_hosts; i++) {
++        HOST_ENTRY *h = table[i];
++        if (!addr_cmp((struct sockaddr*)&response_addr, (struct sockaddr*)&h->saddr)) {
++            found = 1;
++            break;
++        }
++    }
++    if (!found) {
++        // char buf[INET6_ADDRSTRLEN];
++        // getnameinfo((struct sockaddr*)&response_addr, sizeof(response_addr), buf, INET6_ADDRSTRLEN, NULL, 0, NI_NUMERICHOST);
++        // fprintf(stderr, "ignoring response from %s\n", buf);
++        return 1; /* packet received, but not from a host we pinged */        
+     }
+ 
+     seqmap_value = seqmap_fetch(seq, current_time_ns);
