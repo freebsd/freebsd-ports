@@ -1,7 +1,7 @@
 # Created by: Wen heping<wenheping@gmail.com>
 
 PORTNAME=	geoserver
-PORTVERSION=	2.20.3
+PORTVERSION=	2.21.0
 CATEGORIES=	graphics geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
@@ -31,16 +31,16 @@ GEODIRS=	data_dir etc lib logs modules resources webapps
 PLIST_SUB=	BATIK=1.14 \
 		ECLIPSE=2.15.0 \
 		G="${GEOSERVERDIR:S,^${PREFIX}/,,}" \
-		GWC=1.20.1 \
-		IMAGEIO=1.3.10 \
-		JETTY=9.4.36.v20210114 \
+		GWC=1.21.0 \
+		IMAGEIO=1.4.4 \
+		JETTY=9.4.44.v20210927 \
 		JT1=1.6.0 \
-		JT=1.1.21 \
+		JT=1.1.23 \
 		MVER=${PORTVERSION} \
 		SI=2.0.1 \
-		SPRING=5.1.20 \
+		SPRING=5.2.20 \
 		SPRINGS=5.1.13 \
-		VER1=26.3 \
+		VER1=27.0 \
 		VER3=1.1.3 \
 		WICKET=7.18.0
 
