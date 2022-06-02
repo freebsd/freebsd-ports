@@ -1,13 +1,13 @@
 # Created by: Anish Mistry
 
 PORTNAME=	sshfs
-PORTVERSION=	3.7.2
+PORTVERSION=	3.7.3
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	952a9c3fda977bce61303ae3311a3adca3d338bf.patch:-p1 # https://github.com/libfuse/sshfs/pull/212
+#PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+#PATCHFILES+=	952a9c3fda977bce61303ae3311a3adca3d338bf.patch:-p1 # https://github.com/libfuse/sshfs/pull/212
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Mount remote directories over ssh
