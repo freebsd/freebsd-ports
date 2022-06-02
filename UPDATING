@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220602:
+  AFFECTS: sysutils/graylog
+  AUTHOR: dch@FreeBSD.org
+
+  Graylog 4.3.0+ fails to start if graylog's internal collector for
+  system statistics is enabled. This will eventually be addressed
+  upstream.
+
+  Add disable_native_system_stats_collector=true to your graylog.conf.
+
 20220513:
   AFFECTS: devel/nexus2-oss
   AUTHOR: michael.osipov@siemens.com
