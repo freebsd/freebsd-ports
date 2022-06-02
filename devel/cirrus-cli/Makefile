@@ -1,5 +1,5 @@
 PORTNAME=	cirrus-cli
-PORTVERSION=	0.77.0
+PORTVERSION=	0.78.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	cirruslabs
-GH_TUPLE=	Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+GH_TUPLE=	\
+		Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		PaesslerAG:gval:v1.1.0:paesslerag_gval/vendor/github.com/PaesslerAG/gval \
 		ProtonMail:go-crypto:a4f6767435ab:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
 		acomagu:bufpipe:v1.0.3:acomagu_bufpipe/vendor/github.com/acomagu/bufpipe \

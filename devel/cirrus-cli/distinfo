@@ -1,6 +1,6 @@
-TIMESTAMP = 1652008839
-SHA256 (cirruslabs-cirrus-cli-v0.77.0_GH0.tar.gz) = 9c60a0f9d001c581ea0bc0767396a1993ebe85c5f512fdce4c80c5548c76e19c
-SIZE (cirruslabs-cirrus-cli-v0.77.0_GH0.tar.gz) = 736247
+TIMESTAMP = 1654111716
+SHA256 (cirruslabs-cirrus-cli-v0.78.0_GH0.tar.gz) = 58a8562871d4435c4f61acb521207dae1e06e9c4ed4b7cca829487a7b6e0de4d
+SIZE (cirruslabs-cirrus-cli-v0.78.0_GH0.tar.gz) = 737376
 SHA256 (Microsoft-go-winio-v0.5.1_GH0.tar.gz) = 7d68437cf732590f4c3002d8a1b446f3f584387c3538bdd4862ebff5b0b8dda9
 SIZE (Microsoft-go-winio-v0.5.1_GH0.tar.gz) = 91153
 SHA256 (PaesslerAG-gval-v1.1.0_GH0.tar.gz) = d4b08fbf5a1a05394608ac4ca4e9eb3122766cd1119afa36602a16f14f62545e
