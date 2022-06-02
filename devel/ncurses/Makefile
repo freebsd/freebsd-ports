@@ -95,7 +95,9 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/libncurses.so
 	${ECHO} "INPUT(libncurses.so.${PORTVERSION:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
 
+.if ! ${PORT_OPTIONS:MDEBUG}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.${DISTVERSION}
+.endif
 
 	# backwards compatibility, remove 2021-07-02
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libncurses.so ${STAGEDIR}${PREFIX}/lib/libncursesw.so
