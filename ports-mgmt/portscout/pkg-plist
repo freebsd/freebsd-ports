@@ -3,6 +3,7 @@ bin/portscout
 man/man1/portscout.1.gz
 %%DATADIR%%/templates/index.html
 %%DATADIR%%/templates/maintainer.html
+%%DATADIR%%/templates/reminder-no-maintainer.mail
 %%DATADIR%%/templates/reminder.mail
 %%DATADIR%%/templates/restricted-ports.html
 %%DATADIR%%/sql/pgsql_init.sql

@@ -1,7 +1,7 @@
 # Created by: Shaun Amott <shaun@inerd.com>
 
 PORTNAME=	portscout
-PORTVERSION=	0.8.1.5
+PORTVERSION=	0.8.1.6
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
