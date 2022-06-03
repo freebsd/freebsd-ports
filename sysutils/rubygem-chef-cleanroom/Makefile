@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	chef-cleanroom
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,11 @@ COMMENT=	Safely evaluate Ruby DSLs with cleanroom
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gem
+USES=		gem shebangfix
 USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+SHEBANG_FILES=	.expeditor/buildkite/verify.sh
 
 .include <bsd.port.mk>
