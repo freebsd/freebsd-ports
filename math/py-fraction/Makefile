@@ -1,9 +1,10 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	fraction
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	CHEESESHOP \
+		https://github.com/bradley101/fraction/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Fraction-${PORTVERSION}
 
