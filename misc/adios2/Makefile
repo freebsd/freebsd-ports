@@ -1,7 +1,6 @@
 PORTNAME=	adios2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
-PORTREVISION=	1
+DISTVERSION=	2.8.1
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +32,7 @@ LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 RUN_DEPENDS=	bash:shells/bash \
 		${PY_DEPENDS}
 
-USES=		bison cmake compiler:c++11-lang fortran localbase:ldflags pkgconfig \
+USES=		bison cmake:testing compiler:c++11-lang fortran localbase:ldflags pkgconfig \
 		perl5 python shebangfix
 USE_LDCONFIG=	yes
 
