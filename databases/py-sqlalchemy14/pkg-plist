@@ -431,7 +431,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/metadata.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/orm_data_manipulation.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/orm_related_objects.html
-%%PORTDOCS%%%%DOCSDIR%%/tutorial/tutorial_nav_include.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adjacency_list/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adjacency_list/adjacency_list.py
