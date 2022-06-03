@@ -1,3 +1,3 @@
-TIMESTAMP = 1650228900
-SHA256 (rubygem/aws-sdk-proton-1.15.0.gem) = d8fb8e9993c9933e457b433d9d0ccc261411116932f0c7ad485b3ea0cab3c7b7
-SIZE (rubygem/aws-sdk-proton-1.15.0.gem) = 59904
+TIMESTAMP = 1654275923
+SHA256 (rubygem/aws-sdk-proton-1.16.0.gem) = d57d1459594b92d8e503b9d88b724faa74c1ceb42cfd89f4a8326715ec9451c3
+SIZE (rubygem/aws-sdk-proton-1.16.0.gem) = 68096
