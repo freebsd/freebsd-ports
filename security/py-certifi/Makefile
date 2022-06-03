@@ -1,7 +1,7 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 
 PORTNAME=	certifi
-PORTVERSION=	2021.10.8
+PORTVERSION=	2022.5.18.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
