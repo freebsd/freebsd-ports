@@ -21,12 +21,12 @@ RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Text-Unidecode>=0:converters/p5-Text-Unidecode \
 		p5-IO-String>=0:devel/p5-IO-String \
 		p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent \
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		p5-Image-Size>=0:graphics/p5-Image-Size \
 		p5-URI>=0:net/p5-URI \
 		p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-XML-LibXML>=1.62:textproc/p5-XML-LibXML \
 		p5-XML-LibXSLT>=1.58:textproc/p5-XML-LibXSLT \
-		${P5_POD_PARSER} \
 		p5-libwww>=0:www/p5-libwww
 
 USES=		perl5

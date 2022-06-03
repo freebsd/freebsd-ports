@@ -30,7 +30,7 @@ RUN_DEPENDS=	p5-B-Keywords>=1.05:devel/p5-B-Keywords \
 		p5-Readonly>=2:devel/p5-Readonly \
 		p5-String-Format>=1.13:textproc/p5-String-Format \
 		p5-Task-Weaken>=0:devel/p5-Task-Weaken \
-		${P5_POD_PARSER}
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
 USES=		perl5

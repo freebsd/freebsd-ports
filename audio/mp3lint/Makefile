@@ -13,8 +13,8 @@ COMMENT=	Configurable tool to check collections of audio files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${P5_POD_PARSER}
+BUILD_DEPENDS=	p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	libmp3-archive-perl>=0:audio/libmp3-archive-perl
 
 USES=		perl5

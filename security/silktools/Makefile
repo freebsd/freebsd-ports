@@ -17,7 +17,7 @@ LICENSE_PERMS_GPLR=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libfixbuf.so:net/libfixbuf
 BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
-		${P5_POD_PARSER}
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 
 GNU_CONFIGURE=	yes

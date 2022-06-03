@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Devel-Symdump>=2.01:devel/p5-Devel-Symdump \
-		${P5_POD_PARSER}
+		p5-Pod-Parser>=1.13:textproc/p5-Pod-Parser
 TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
 
 USES=		perl5
