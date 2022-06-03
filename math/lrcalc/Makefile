@@ -1,7 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	lrcalc
-PORTVERSION=	1.3
+PORTVERSION=	2.1
 CATEGORIES=	math
 MASTER_SITES=	https://sites.math.rutgers.edu/~asbuch/lrcalc/
 
@@ -14,6 +14,7 @@ USES=		autoreconf libtool
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 TEST_TARGET=	check
 
