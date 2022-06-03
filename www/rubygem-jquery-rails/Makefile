@@ -1,7 +1,7 @@
 # Created by: Jason Helfman <jgh@FreeBSD.org>
 
 PORTNAME=	jquery-rails
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
