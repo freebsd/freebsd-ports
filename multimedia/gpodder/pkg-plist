@@ -70,7 +70,10 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/vimeo.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/youtube.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/__pycache__/youtube.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/gpodder-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/gpodder-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/gpodder-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/gpodder-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/gpodder-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/gpodder/build_info.py
 %%PYTHON_SITELIBDIR%%/gpodder/deviceplaylist.py
 %%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
