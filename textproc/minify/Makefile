@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	minify
-PORTVERSION=	2.11.5
+PORTVERSION=	2.11.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc www
 
@@ -24,7 +24,7 @@ GH_TUPLE=	djherbis:atime:v1.1.0:djherbis_atime/vendor/github.com/djherbis/atime 
 		golang:sys:33da011:golang_sys/vendor/golang.org/x/sys \
 		matryer:try:9ac251b:matryer_try/vendor/github.com/matryer/try \
 		spf13:pflag:d5e0c06:spf13_pflag/vendor/github.com/spf13/pflag \
-		tdewolff:parse:v2.5.31:tdewolff_parse/vendor/github.com/tdewolff/parse/v2
+		tdewolff:parse:v2.5.33:tdewolff_parse/vendor/github.com/tdewolff/parse/v2
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>
