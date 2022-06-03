@@ -1,3 +1,5 @@
+Reference:	https://github.com/google/s2geometry/commit/7a40135059545396237a0199c558d749fe3be0b1
+
 --- src/s2/util/math/exactfloat/exactfloat.cc.orig	2022-05-24 22:12:24 UTC
 +++ src/s2/util/math/exactfloat/exactfloat.cc
 @@ -141,7 +141,7 @@ inline static uint64 BN_ext_get_uint64(const BIGNUM* b
