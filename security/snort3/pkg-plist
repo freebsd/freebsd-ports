@@ -80,6 +80,7 @@ include/snort/hash/hash_key_operations.h
 include/snort/hash/hashes.h
 %%HYPERSCAN%%include/snort/helpers/hyper_scratch_allocator.h
 %%HYPERSCAN%%include/snort/helpers/hyper_search.h
+include/snort/hash/lru_cache_local.h
 include/snort/hash/lru_cache_shared.h
 include/snort/hash/xhash.h
 include/snort/helpers/base64_encoder.h
@@ -90,8 +91,8 @@ include/snort/helpers/json_stream.h
 include/snort/helpers/literal_search.h
 include/snort/helpers/scratch_allocator.h
 include/snort/host_tracker/host_cache.h
-include/snort/host_tracker/host_cache_allocator.h
-include/snort/host_tracker/host_cache_interface.h
+include/snort/host_tracker/cache_allocator.h
+include/snort/host_tracker/cache_interface.h
 include/snort/host_tracker/host_tracker.h
 include/snort/log/log.h
 include/snort/log/log_text.h
