@@ -1,16 +1,14 @@
 # Created by: anholt@FreeBSD.org
 
 PORTNAME=	asciidoc
-PORTVERSION=	10.1.4
-PORTREVISION=	2
+PORTVERSION=	10.2.0
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Text document format for writing short documents and man pages
 
-LICENSE=	GPLv2 MIT
-LICENSE_COMB=	multi
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
