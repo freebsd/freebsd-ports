@@ -1,6 +1,6 @@
 PORTNAME=	suricata
 DISTVERSION=	6.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://www.openinfosecfoundation.org/download/
 
@@ -98,7 +98,6 @@ PRELUDE_CONFIGURE_ENABLE=	prelude
 PYTHON_BUILD_DEPENDS=		${PYTHON_RUN_DEPENDS}
 PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 PYTHON_USES=			python
-PYTHON_USE=			PYTHON=py3kplist
 PYTHON_CONFIGURE_ENABLE=	python
 
 REDIS_LIB_DEPENDS=	libevent_pthreads.so:devel/libevent \
