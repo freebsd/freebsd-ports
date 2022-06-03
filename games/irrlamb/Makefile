@@ -1,5 +1,5 @@
 PORTNAME=	irrlamb
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -36,7 +36,8 @@ PORTDATA=	*
 
 PLIST_FILES=	bin/irrlamb \
 		share/applications/irrlamb.desktop \
-		share/icons/hicolor/256x256/apps/irrlamb.png
+		share/icons/hicolor/256x256/apps/irrlamb.png \
+		share/metainfo/irrlamb.xml
 
 OPTIONS_DEFINE=	DOCS
 

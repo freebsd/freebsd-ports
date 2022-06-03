@@ -1,9 +1,10 @@
---- CMakeLists.txt.orig	2022-05-23 17:54:07 UTC
+--- CMakeLists.txt.orig	2022-06-03 00:15:34 UTC
 +++ CMakeLists.txt
-@@ -8,19 +8,14 @@ endif()
+@@ -7,14 +7,14 @@ if(EXISTS "${PROJECT_SOURCE_DIR}/tools")
+ endif()
  
  # define constants
- add_definitions(-DGAME_VERSION="1.0.2")
+ add_definitions(-DGAME_VERSION="1.0.3")
 -add_definitions(-D_IRR_STATIC_LIB_)
 -add_definitions(-DdIDEDOUBLE)
 -add_definitions(-DCCD_IDEDOUBLE)
@@ -19,24 +20,9 @@
 +#add_definitions(-DdLIBCCD_ENABLED)
 +#add_definitions(-DdLIBCCD_CYL_CYL)
  
--# set default build type
--if(NOT CMAKE_BUILD_TYPE)
--	set(CMAKE_BUILD_TYPE Release)
--endif()
--
  # add extra find modules
  set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH}")
- 
-@@ -39,7 +34,7 @@ elseif(UNIX)
- endif()
- 
- # compiler flags
--set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-deprecated-declarations -pedantic -std=gnu++11 -msse -mfpmath=sse")
-+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-deprecated-declarations -pedantic -std=gnu++11")
- set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -DdNODEBUG -s")
- set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DdNODEBUG -s")
- 
-@@ -50,6 +45,14 @@ include_directories(${X11_Xrandr_INCLUDE_PATH})
+@@ -53,6 +53,14 @@ include_directories(${X11_Xrandr_INCLUDE_PATH})
  include_directories(${X11_X11_INCLUDE_PATH})
  include_directories(${X11_xf86vmode_INCLUDE_PATH})
  
@@ -51,7 +37,7 @@
  # pandora devices
  if(PANDORA)
  	add_definitions("-DPANDORA")
-@@ -124,15 +127,15 @@ if(WIN32)
+@@ -127,15 +135,15 @@ if(WIN32)
  else()
  
  	# linux installation
@@ -75,4 +61,4 @@
 +	install(DIRECTORY ${PROJECT_SOURCE_DIR}/working/ui DESTINATION share/${CMAKE_PROJECT_NAME})
  	install(FILES ${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME}.png DESTINATION share/icons/hicolor/256x256/apps)
  	install(FILES ${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME}.desktop DESTINATION share/applications)
- 	install(FILES ${PROJECT_SOURCE_DIR}/CHANGELOG DESTINATION share/doc/${CMAKE_PROJECT_NAME})
+ 	install(FILES ${PROJECT_SOURCE_DIR}/deployment/${CMAKE_PROJECT_NAME}.xml DESTINATION share/metainfo)
