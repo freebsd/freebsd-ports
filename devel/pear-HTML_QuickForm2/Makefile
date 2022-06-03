@@ -1,7 +1,7 @@
 # Created by: Gerrit Beine (<gerrit.beine@gmx.de>)
 
 PORTNAME=	HTML_QuickForm2
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
