@@ -1,5 +1,6 @@
---- eclipse.platform.resources/bundles/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile.orig	2020-05-14 17:23:06.000000000 +0200
-+++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile	2021-03-08 20:18:47.266872000 +0100
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile eclipse.platform.resources/bundles/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile	0000-00-00 00:00:00.000000000 +0000
 @@ -20,7 +20,7 @@
  LIB_NAME_FULL = libunixfile_1_0_0.so
  
@@ -28,8 +29,55 @@
 -install: core
 -	rm -f ../../../../org.eclipse.core.filesystem.linux.x86/os/linux/x86/libunixfile_1_0_0.so
 -	mv libunixfile_1_0_0.so ../../../../org.eclipse.core.filesystem.linux.x86/os/linux/x86/
---- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/.project.orig	2020-05-14 17:23:06.000000000 +0200
-+++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/.project	2021-03-08 20:18:47.267280000 +0100
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/META-INF/MANIFEST.MF eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/META-INF/MANIFEST.MF
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
+@@ -1,9 +1,9 @@
+ Manifest-Version: 1.0
+ Bundle-ManifestVersion: 2
+ Bundle-Name: %fragmentName
+-Bundle-SymbolicName: org.eclipse.core.filesystem.linux.aarch64;singleton:=true
++Bundle-SymbolicName: org.eclipse.core.filesystem.freebsd.aarch64;singleton:=true
+ Bundle-Version: 1.4.100.qualifier
+ Bundle-Vendor: %providerName
+ Fragment-Host: org.eclipse.core.filesystem;bundle-version="[1.1.0,2.0.0)"
+ Bundle-Localization: fragment
+-Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=aarch64))
++Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=aarch64))
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/fragment.properties eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/fragment.properties
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/fragment.properties	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/fragment.properties	0000-00-00 00:00:00.000000000 +0000
+@@ -11,5 +11,5 @@
+ # Contributors:
+ #     IBM Corporation - initial API and implementation
+ ###############################################################################
+-fragmentName = Core File System for Linux Aarch64 bit
++fragmentName = Core File System for FreeBSD Aarch64 bit
+ providerName = Eclipse.org
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/pom.xml eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/pom.xml
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/pom.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -18,7 +18,7 @@
+     <relativePath>../../</relativePath>
+   </parent>
+   <groupId>org.eclipse.core</groupId>
+-  <artifactId>org.eclipse.core.filesystem.linux.aarch64</artifactId>
++  <artifactId>org.eclipse.core.filesystem.freebsd.aarch64</artifactId>
+   <version>1.4.100-SNAPSHOT</version>
+   <packaging>eclipse-plugin</packaging>
+ 
+@@ -37,7 +37,7 @@
+           <resolver>p2</resolver>
+           <environments>
+             <environment>
+-              <os>linux</os>
++              <os>freebsd</os>
+               <ws>gtk</ws>
+               <arch>aarch64</arch>
+             </environment>
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/.project eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/.project
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
 @@ -1,6 +1,6 @@
  <?xml version="1.0" encoding="UTF-8"?>
  <projectDescription>
@@ -38,8 +86,9 @@
  	<comment></comment>
  	<projects>
  	</projects>
---- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/META-INF/MANIFEST.MF.orig	2020-05-14 17:23:06.000000000 +0200
-+++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/META-INF/MANIFEST.MF	2021-03-08 20:18:47.267678000 +0100
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/META-INF/MANIFEST.MF eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/META-INF/MANIFEST.MF
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
 @@ -1,9 +1,9 @@
  Manifest-Version: 1.0
  Bundle-ManifestVersion: 2
@@ -52,8 +101,19 @@
  Bundle-Localization: fragment
 -Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86_64))
 +Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=amd64))
---- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/pom.xml.orig	2020-05-14 17:23:06.000000000 +0200
-+++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/pom.xml	2021-03-08 20:18:47.268150000 +0100
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/fragment.properties eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/fragment.properties
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/fragment.properties	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/fragment.properties	0000-00-00 00:00:00.000000000 +0000
+@@ -11,5 +11,5 @@
+ # Contributors:
+ #     IBM Corporation - initial API and implementation
+ ###############################################################################
+-fragmentName = Core File System for Linux
++fragmentName = Core File System for FreeBSD
+ providerName = Eclipse.org
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/pom.xml eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/pom.xml
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
 @@ -18,7 +18,7 @@
      <relativePath>../../</relativePath>
    </parent>
@@ -99,8 +159,20 @@
                 <include name="libunixfile_*.so"/>
             </fileset>
             </copy>
---- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/META-INF/MANIFEST.MF.orig	2020-05-14 17:23:06.000000000 +0200
-+++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/META-INF/MANIFEST.MF	2021-03-08 20:18:47.268509000 +0100
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/.project eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/.project
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/.project	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/.project	0000-00-00 00:00:00.000000000 +0000
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-	<name>org.eclipse.core.filesystem.linux.ppc64le</name>
++	<name>org.eclipse.core.filesystem.freebsd.powerpc64</name>
+ 	<comment></comment>
+ 	<projects>
+ 	</projects>
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/META-INF/MANIFEST.MF eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/META-INF/MANIFEST.MF
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
 @@ -1,9 +1,9 @@
  Manifest-Version: 1.0
  Bundle-ManifestVersion: 2
@@ -113,8 +185,19 @@
  Bundle-Localization: fragment
 -Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=ppc64le))
 +Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=powerpc64))
---- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/pom.xml.orig	2020-05-14 17:23:06.000000000 +0200
-+++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/pom.xml	2021-03-08 20:18:47.268870000 +0100
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/fragment.properties eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/fragment.properties
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/fragment.properties	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/fragment.properties	0000-00-00 00:00:00.000000000 +0000
+@@ -11,5 +11,5 @@
+ # Contributors:
+ #     IBM Corporation - initial API and implementation
+ ###############################################################################
+-fragmentName = Core File System for Linux PPC 64 LE bit
++fragmentName = Core File System for FreeBSD PPC 64 LE bit
+ providerName = Eclipse.org
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/pom.xml eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/pom.xml
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/pom.xml	0000-00-00 00:00:00.000000000 +0000
 @@ -18,7 +18,7 @@
      <relativePath>../../</relativePath>
    </parent>
@@ -136,8 +219,20 @@
              </environment>
            </environments>
          </configuration>
---- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/META-INF/MANIFEST.MF.orig	2021-03-08 20:20:31.138482000 +0100
-+++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/META-INF/MANIFEST.MF	2021-03-08 20:20:57.684056000 +0100
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/.project eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/.project
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/.project	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/.project	0000-00-00 00:00:00.000000000 +0000
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-	<name>org.eclipse.core.filesystem.linux.ppc64le</name>
++	<name>org.eclipse.core.filesystem.freebsd.powerpc64le</name>
+ 	<comment></comment>
+ 	<projects>
+ 	</projects>
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/META-INF/MANIFEST.MF eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/META-INF/MANIFEST.MF
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
 @@ -1,9 +1,9 @@
  Manifest-Version: 1.0
  Bundle-ManifestVersion: 2
@@ -150,8 +245,19 @@
  Bundle-Localization: fragment
 -Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=ppc64le))
 +Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=powerpc64le))
---- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/pom.xml.orig	2021-03-08 20:27:07.595490000 +0100
-+++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/pom.xml	2021-03-08 20:27:29.452487000 +0100
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/fragment.properties eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/fragment.properties
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/fragment.properties	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/fragment.properties	0000-00-00 00:00:00.000000000 +0000
+@@ -11,5 +11,5 @@
+ # Contributors:
+ #     IBM Corporation - initial API and implementation
+ ###############################################################################
+-fragmentName = Core File System for Linux PPC 64 LE bit
++fragmentName = Core File System for FreeBSD PPC 64 LE bit
+ providerName = Eclipse.org
+diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/pom.xml eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/pom.xml
+--- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/pom.xml	0000-00-00 00:00:00.000000000 +0000
 @@ -18,7 +18,7 @@
      <relativePath>../../</relativePath>
    </parent>
@@ -173,22 +279,26 @@
              </environment>
            </environments>
          </configuration>
---- eclipse.platform.resources/pom.xml.orig	2020-05-14 17:23:06.000000000 +0200
-+++ eclipse.platform.resources/pom.xml	2021-03-08 20:22:22.387766000 +0100
-@@ -52,8 +52,9 @@
+diff -ru eclipse.platform.resources/pom.xml eclipse.platform.resources/pom.xml
+--- eclipse.platform.resources/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/pom.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -52,9 +52,10 @@
  
    <modules>
      <module>bundles/org.eclipse.core.filesystem</module>
+-    <module>bundles/org.eclipse.core.filesystem.linux.aarch64</module>
 -    <module>bundles/org.eclipse.core.filesystem.linux.ppc64le</module>
 -    <module>bundles/org.eclipse.core.filesystem.linux.x86_64</module>
++    <module>bundles/org.eclipse.core.filesystem.freebsd.aarch64</module>
 +    <module>bundles/org.eclipse.core.filesystem.freebsd.powerpc64</module>
 +    <module>bundles/org.eclipse.core.filesystem.freebsd.powerpc64le</module>
 +    <module>bundles/org.eclipse.core.filesystem.freebsd.amd64</module>
      <module>bundles/org.eclipse.core.filesystem.macosx</module>
      <module>bundles/org.eclipse.core.filesystem.win32.x86_64</module>
  
---- eclipse.platform.resources/tests/org.eclipse.core.tests.filesystem.feature/feature.xml.orig	2020-05-14 17:23:06.000000000 +0200
-+++ eclipse.platform.resources/tests/org.eclipse.core.tests.filesystem.feature/feature.xml	2021-03-08 20:18:47.269488000 +0100
+diff -ru eclipse.platform.resources/tests/org.eclipse.core.tests.filesystem.feature/feature.xml eclipse.platform.resources/tests/org.eclipse.core.tests.filesystem.feature/feature.xml
+--- eclipse.platform.resources/tests/org.eclipse.core.tests.filesystem.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.resources/tests/org.eclipse.core.tests.filesystem.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
 @@ -28,9 +28,9 @@
           unpack="false"/-->
  

@@ -1,18 +1,19 @@
---- eclipse-platform-parent/pom.xml.orig	2020-06-04 12:00:14.000000000 +0200
-+++ eclipse-platform-parent/pom.xml	2021-03-08 19:09:17.636105000 +0100
-@@ -80,9 +80,9 @@
+diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
+--- eclipse-platform-parent/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse-platform-parent/pom.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -81,9 +81,9 @@
        'eclipiserun-repo' repository, such as for computing .api-descriptions and
        generating API Tools reports.
      -->
--    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.16-I-builds/</eclipserun-repo>
-+    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.16/</eclipserun-repo>
+-    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.21-I-builds/</eclipserun-repo>
++    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.21/</eclipserun-repo>
      
--    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.16-I-builds</comparator.repo>
-+    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.16</comparator.repo>
+-    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.21-I-builds</comparator.repo>
++    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.21</comparator.repo>
  
-     <!--
-       NOTE: this EMF and ECF URL must match exactly what is in the eclipse-sdk-prereqs.target file.
-@@ -254,16 +254,21 @@
+     <!-- only used when Tycho snapshot repo is enabled in <pluginRepositories> further down -->
+     <tycho-snapshot-repo.url>https://repo.eclipse.org/content/repositories/tycho-snapshots/</tycho-snapshot-repo.url>
+@@ -257,17 +257,22 @@
            </target>
            <environments>
              <environment>
@@ -29,21 +30,23 @@
 -              <arch>ppc64le</arch>
 +              <arch>powerpc64</arch>
              </environment>
-             <environment>
++            <environment>
 +              <os>freebsd</os>
 +              <ws>gtk</ws>
 +              <arch>powerpc64le</arch>
 +            </environment>
-+            <environment>
-               <os>win32</os>
-               <ws>win32</ws>
-               <arch>x86_64</arch>
-@@ -626,7 +631,7 @@
+              <environment>
+-              <os>linux</os>
++              <os>freebsd</os>
+               <ws>gtk</ws>
+               <arch>aarch64</arch>
+             </environment>
+@@ -624,7 +629,7 @@
            For maintenance streams should always be "M-builds".
            Ideally, this value would be provided by the environment, see bug 489789.
          -->
--        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.16-I-builds</eclipse-p2-repo.url>
-+        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.16</eclipse-p2-repo.url>
+-        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.21-I-builds</eclipse-p2-repo.url>
++        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.21</eclipse-p2-repo.url>
        </properties>
        <repositories>
          <repository>

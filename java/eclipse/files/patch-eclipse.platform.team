@@ -1,33 +1,101 @@
-diff -ru eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/freebsd/makefile eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/freebsd/makefile
---- eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/freebsd/makefile	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.team/bundles/org.eclipse.core.net/natives/unix/freebsd/makefile	0000-00-00 00:00:00.000000000 +0000
-@@ -22,7 +22,7 @@
- LIB_NAME = gnomeproxy.so
- LIB_NAME_FULL = libgnomeproxy-1.0.0.so
+diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/.project eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/.project
+--- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/.project	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/.project	0000-00-00 00:00:00.000000000 +0000
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <projectDescription>
+-	<name>org.eclipse.core.net.linux</name>
++	<name>org.eclipse.core.net.freebsd</name>
+ 	<comment></comment>
+ 	<projects>
+ 	</projects>
+diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/META-INF/MANIFEST.MF eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/META-INF/MANIFEST.MF
+--- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
+@@ -3,10 +3,10 @@
+ Bundle-Name: %fragmentName
+ Bundle-Vendor: %providerName
+ Bundle-Localization: fragment
+-Bundle-SymbolicName: org.eclipse.core.net.linux;singleton:=true
++Bundle-SymbolicName: org.eclipse.core.net.freebsd;singleton:=true
+ Bundle-Version: 1.0.0.qualifier
+ Fragment-Host: org.eclipse.core.net;bundle-version="1.1.0"
+-Eclipse-PlatformFilter: (osgi.os=linux)
++Eclipse-PlatformFilter: (osgi.os=freebsd)
+ Bundle-RequiredExecutionEnvironment: JavaSE-11
+-Automatic-Module-Name: org.eclipse.core.net.linux
++Automatic-Module-Name: org.eclipse.core.net.freebsd
+ Require-Bundle: com.sun.jna
+diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/fragment.properties eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/fragment.properties
+--- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/fragment.properties	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/fragment.properties	0000-00-00 00:00:00.000000000 +0000
+@@ -11,5 +11,5 @@
+ # Contributors:
+ #     Red Hat Inc. - initial API and implementation
+ ###############################################################################
+-fragmentName = Proxy for Linux
++fragmentName = Proxy for FreeBSD
+ providerName = Eclipse.org
+diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/pom.xml eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/pom.xml
+--- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/pom.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -8,7 +8,7 @@
+  
+   Contributors:
+      Igor Fedorenko - initial implementation
+-     Red Hat Inc. - modified for use in org.eclipse.core.net.linux
++     Red Hat Inc. - modified for use in org.eclipse.core.net.freebsd
+ -->
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+@@ -19,7 +19,7 @@
+     <relativePath>../../</relativePath>
+   </parent>
+   <groupId>org.eclipse.core</groupId>
+-  <artifactId>org.eclipse.core.net.linux</artifactId>
++  <artifactId>org.eclipse.core.net.freebsd</artifactId>
+   <version>1.0.0-SNAPSHOT</version>
+   <packaging>eclipse-plugin</packaging>
  
--OS_TYPE = linux
-+OS_TYPE = freebsd
- JDK_INCLUDE = -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OS_TYPE}
- INCLUDE = `pkg-config --cflags gio-2.0`
- COMPILER_FLAGS = -O0 -fPIC -g3 -Wall -c -fmessage-length=0 ${TARGET_ENVIRONMENT}
-@@ -34,15 +34,13 @@
- 
- compile:
- 	@echo "Building file: $(GNOMEPROXY.O)"
--	@echo "Invoking: GCC C Compiler"
--	gcc $(INCLUDE) $(JDK_INCLUDE) $(COMPILER_FLAGS) -o $(GNOMEPROXY.O) $(GNOMEPROXY.C)
-+	$(CC) $(INCLUDE) $(JDK_INCLUDE) $(COMPILER_FLAGS) -o $(GNOMEPROXY.O) $(GNOMEPROXY.C)
- 	@echo "Finished building: $(GNOMEPROXY.O)"
- 	@echo " "
- 
- link: compile
- 	@echo "Building target: $(LIB_NAME_FULL)"
--	@echo "Invoking: GCC C Linker"
--	gcc $(LINKER_FLAGS) -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(LIBS) $(GNOMEPROXY.O) -lc
-+	$(CC) $(LINKER_FLAGS) -shared -Wl,-soname,$(LIB_NAME) -o $(LIB_NAME_FULL) $(LIBS) $(GNOMEPROXY.O)
- 	@echo "Finished building target: $(LIB_NAME_FULL)"
- 	@echo " "
- 
+@@ -35,7 +35,7 @@
+         <configuration>
+           <environments>
+             <environment>
+-              <os>linux</os>
++              <os>freebsd</os>
+               <ws>gtk</ws>
+             </environment>
+           </environments>
+diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/src/org/eclipse/core/net/ProxyProvider.java eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/src/org/eclipse/core/net/ProxyProvider.java
+--- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/src/org/eclipse/core/net/ProxyProvider.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/src/org/eclipse/core/net/ProxyProvider.java	0000-00-00 00:00:00.000000000 +0000
+@@ -85,7 +85,7 @@
+ 			proxies = getProxyData();
+ 		}
+ 		if (Policy.DEBUG) {
+-			Policy.debug("LinuxProxyProvider#select result for [" + uri + "]"); //$NON-NLS-1$ //$NON-NLS-2$
++			Policy.debug("FreeBSDProxyProvider#select result for [" + uri + "]"); //$NON-NLS-1$ //$NON-NLS-2$
+ 			for (IProxyData proxy : proxies) {
+ 				System.out.println("	" + proxy); //$NON-NLS-1$
+ 			}
+@@ -196,7 +196,7 @@
+ 					pd.setUserid(user);
+ 					pd.setPassword(password);
+ 				}
+-				pd.setSource("LINUX_ENV"); //$NON-NLS-1$
++				pd.setSource("FREEBSD_ENV"); //$NON-NLS-1$
+ 				if (Policy.DEBUG_SYSTEM_PROVIDERS)
+ 					Policy.debug("Got Env proxy: " + pd); //$NON-NLS-1$
+ 				return pd;
+@@ -213,7 +213,7 @@
+ 				if (pd != null) {
+ 					if (Policy.DEBUG_SYSTEM_PROVIDERS)
+ 						Policy.debug("Got Gnome proxy: " + pd); //$NON-NLS-1$
+-					pd.setSource("LINUX_GNOME"); //$NON-NLS-1$
++					pd.setSource("FREEBSD_GNOME"); //$NON-NLS-1$
+ 					return pd;
+ 				}
+ 			} catch (UnsatisfiedLinkError e) {
 diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/.project eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/.project
 --- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
@@ -68,13 +136,30 @@ diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-I
  Bundle-Localization: fragment
 -Bundle-SymbolicName: org.eclipse.core.net.linux.x86_64;singleton:=true
 +Bundle-SymbolicName: org.eclipse.core.net.freebsd.amd64;singleton:=true
- Bundle-Version: 1.2.400.qualifier
+ Bundle-Version: 1.2.500.qualifier
  Fragment-Host: org.eclipse.core.net;bundle-version="1.1.0"
 -Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86_64))
 +Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=amd64))
  Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 -Automatic-Module-Name: org.eclipse.core.net.linux.x86_64
 +Automatic-Module-Name: org.eclipse.core.net.freebsd.amd64
+diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/p2.inf eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/p2.inf
+--- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
+@@ -1,2 +1,2 @@
+ requires.0.namespace=org.eclipse.equinox.p2.iu
+-requires.0.name=org.eclipse.core.net.linux
++requires.0.name=org.eclipse.core.net.freebsd
+diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/fragment.properties eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/fragment.properties
+--- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/fragment.properties	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/fragment.properties	0000-00-00 00:00:00.000000000 +0000
+@@ -11,5 +11,5 @@
+ # Contributors:
+ #     IBM Corporation - initial API and implementation
+ ###############################################################################
+-fragmentName = Proxy for Linux x86_64
++fragmentName = Proxy for FreeBSD amd64
+ providerName = Eclipse.org
 diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xml eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xml
 --- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
@@ -84,50 +169,19 @@ diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xm
    <groupId>org.eclipse.core</groupId>
 -  <artifactId>org.eclipse.core.net.linux.x86_64</artifactId>
 +  <artifactId>org.eclipse.core.net.freebsd.amd64</artifactId>
-   <version>1.2.400-SNAPSHOT</version>
+   <version>1.2.500-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
-@@ -34,9 +34,9 @@
-         <configuration>
-           <environments>
-             <environment>
--              <os>linux</os>
-+              <os>freebsd</os>
-               <ws>gtk</ws>
--              <arch>x86_64</arch>
-+              <arch>amd64</arch>
-             </environment>
-           </environments>
-         </configuration>
-@@ -51,7 +51,7 @@
-         <property>
-           <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
-           <name>native</name>
--          <value>gtk.linux.x86_64</value>
-+          <value>gtk.freebsd.amd64</value>
-         </property>
-       </activation>
-       <build>
-@@ -64,9 +64,9 @@
-                 <phase>process-resources</phase>
-                 <configuration>
-                   <target>
--                    <exec executable="make" newenvironment="false" dir="../org.eclipse.core.net/natives/unix/linux/"/>
-+                    <exec executable="gmake" newenvironment="false" dir="../org.eclipse.core.net/natives/unix/freebsd/"/>
-                     <copy todir=".">
--                      <fileset dir="../org.eclipse.core.net/natives/unix/linux/">
-+                      <fileset dir="../org.eclipse.core.net/natives/unix/freebsd/">
-                         <include name="libgnomeproxy-*.so"/>
-                       </fileset>
-                     </copy>
 diff -ru eclipse.platform.team/pom.xml eclipse.platform.team/pom.xml
 --- eclipse.platform.team/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.team/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -74,7 +74,7 @@
+@@ -73,8 +73,8 @@
      <module>features/org.eclipse.cvs-feature</module>
  
      <!-- fragments -->
+-    <module>bundles/org.eclipse.core.net.linux</module>
 -    <module>bundles/org.eclipse.core.net.linux.x86_64</module>
++    <module>bundles/org.eclipse.core.net.freebsd</module>
 +    <module>bundles/org.eclipse.core.net.freebsd.amd64</module>
      <module>bundles/org.eclipse.core.net.win32.x86_64</module>
      <module>tests</module>

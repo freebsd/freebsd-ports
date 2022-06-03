@@ -1,7 +1,8 @@
---- eclipse.platform.swt/bundles/org.eclipse.swt/.classpath_gtk.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/bundles/org.eclipse.swt/.classpath_gtk	2021-03-08 20:18:47.290005000 +0100
-@@ -10,7 +10,7 @@
- 	<classpathentry kind="src" path="Eclipse SWT/common_j2se"/>
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/.classpath_gtk eclipse.platform.swt/bundles/org.eclipse.swt/.classpath_gtk
+--- eclipse.platform.swt/bundles/org.eclipse.swt/.classpath_gtk	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/.classpath_gtk	0000-00-00 00:00:00.000000000 +0000
+@@ -9,7 +9,7 @@
+ 	<classpathentry kind="src" path="Eclipse SWT/common"/>
  	<classpathentry kind="src" path="Eclipse SWT PI/gtk">
  		<attributes>
 -			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="org.eclipse.swt.gtk.linux.x86_64"/>
@@ -9,8 +10,20 @@
  		</attributes>
  	</classpathentry>
  	<classpathentry kind="src" path="Eclipse SWT PI/cairo"/>
---- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT/win32/org/eclipse/swt/widgets/Widget.java.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT/win32/org/eclipse/swt/widgets/Widget.java	2021-03-08 20:18:47.291226000 +0100
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT/common/org/eclipse/swt/layout/FillLayout.java eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT/common/org/eclipse/swt/layout/FillLayout.java
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT/common/org/eclipse/swt/layout/FillLayout.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT/common/org/eclipse/swt/layout/FillLayout.java	0000-00-00 00:00:00.000000000 +0000
+@@ -10,7 +10,6 @@
+  *
+  * Contributors:
+  *     IBM Corporation - initial API and implementation
+- *     Christoph Läubrich - Bug 513185
+  *******************************************************************************/
+ package org.eclipse.swt.layout;
+ 
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT/win32/org/eclipse/swt/widgets/Widget.java eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT/win32/org/eclipse/swt/widgets/Widget.java
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT/win32/org/eclipse/swt/widgets/Widget.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT/win32/org/eclipse/swt/widgets/Widget.java	0000-00-00 00:00:00.000000000 +0000
 @@ -10,7 +10,7 @@
   *
   * Contributors:
@@ -20,12 +33,13 @@
   *******************************************************************************/
  package org.eclipse.swt.widgets;
  
---- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java	2021-03-08 20:18:47.291879000 +0100
-@@ -69,12 +69,12 @@
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/eclipse/swt/internal/Library.java	0000-00-00 00:00:00.000000000 +0000
+@@ -65,12 +65,12 @@
+ 
  static String arch() {
  	String osArch = System.getProperty("os.arch"); //$NON-NLS-1$
- 	if (osArch.equals ("i386") || osArch.equals ("i686")) return "x86"; //$NON-NLS-1$ $NON-NLS-2$ $NON-NLS-3$
 -	if (osArch.equals ("amd64")) return "x86_64"; //$NON-NLS-1$ $NON-NLS-2$
  	return osArch;
  }
@@ -36,8 +50,9 @@
  	if (osName.equals ("Linux")) return "linux"; //$NON-NLS-1$ $NON-NLS-2$
  	if (osName.equals ("Mac OS X")) return "macosx"; //$NON-NLS-1$ $NON-NLS-2$
  	if (osName.startsWith ("Win")) return "win32"; //$NON-NLS-1$ $NON-NLS-2$
---- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	2021-03-08 20:31:19.761093000 +0100
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	0000-00-00 00:00:00.000000000 +0000
 @@ -72,7 +72,7 @@
  
  cd `dirname $0`
@@ -47,7 +62,7 @@
  
  export CFLAGS='-O -Wall -fPIC'
  
-@@ -86,21 +86,14 @@
+@@ -86,27 +86,30 @@
  		MAKEFILE=make_win32.mak
  		;;
  	*)
@@ -70,9 +85,8 @@
  fi
  case $MODEL in
  	"x86_64")
-@@ -111,6 +104,16 @@
- 		SWT_ARCH=x86
- 		AWT_ARCH=i386
+ 		SWT_ARCH=x86_64
+ 		AWT_ARCH=amd64
  		;;
 +	"powerpc" | "powerpc64")
 +		SWT_ARCH=ppc64
@@ -87,7 +101,7 @@
  	*)
  		SWT_ARCH=$MODEL
  		AWT_ARCH=$MODEL
-@@ -118,6 +121,20 @@
+@@ -114,6 +117,13 @@
  esac
  
  case $SWT_OS.$SWT_ARCH in
@@ -98,41 +112,56 @@
 +			export JAVA_HOME
 +		fi
 +		;;
-+	"freebsd.ppc64le")
-+		if [ "${JAVA_HOME}" = "" ]; then
-+			DYNAMIC_JAVA_HOME=`readlink -f /usr/local/bin/java | sed "s:jre/::" | sed "s:bin/java::"`
-+			JAVA_HOME = $DYNAMIC_JAVA_HOME
-+			export JAVA_HOME
-+		fi
-+		;;
- 	"linux.x86")
+ 	"linux.x86_64")
  		if [ "${CC}" = "" ]; then
  			export CC=gcc
-@@ -194,7 +211,7 @@
+@@ -148,7 +158,7 @@
  
  
  # For 64-bit CPUs, we have a switch
--if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ia64' -o ${MODEL} = 's390x' -o ${MODEL} = 'ppc64le' -o ${MODEL} = 'aarch64' ]; then
-+if [ ${MODEL} = 'amd64' -o ${MODEL} = 'ia64' -o ${MODEL} = 's390x' -o ${MODEL} = 'ppc64le' -o ${MODEL} = 'aarch64' -o ${MODEL} = 'powerpc64' -o ${MODEL} = 'powerpc64le' ]; then
+-if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64le' -o ${MODEL} = 'aarch64' ]; then
++if [ ${MODEL} = 'amd64' -o ${MODEL} = 'powerpc64' -o ${MODEL} = 'powerpc64le' -o ${MODEL} = 'aarch64' ]; then
  	SWT_PTR_CFLAGS=-DJNI64
  	if [ -d /lib64 ]; then
  		XLIB64=-L/usr/X11R6/lib64
-@@ -205,6 +222,11 @@
- 		XLIB64="${XLIB64} -L/usr/lib64"
+@@ -160,6 +170,11 @@
  		SWT_LFLAGS=-m64
  		export SWT_LFLAGS
-+	fi
+ 	fi
 +	if [ ${SWT_OS} = "freebsd" ]
 +	then
 +		SWT_PTR_CFLAGS="${SWT_PTR_CFLAGS} -m64"
 +		export SWT_LFLAGS=-m64
- 	fi
++	fi
  	export SWT_PTR_CFLAGS
  fi
---- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak	2021-03-08 20:18:47.292979000 +0100
-@@ -103,16 +103,18 @@
- WEBKIT_OBJECTS = swt.o webkitgtk.o webkitgtk_structs.o webkitgtk_stats.o webkitgtk_custom.o
+ 
+@@ -275,10 +290,10 @@
+ 
+ func_build_chromium () {
+ 	func_echo_plus "Building Chromium bindings:"
+-	if [ -d "chromium_subp/cef_linux" ]; then
+-		export CHROMIUM_HEADERS=./chromium_subp/cef_linux
++	if [ -d "chromium_subp/cef_freebsd" ]; then
++		export CHROMIUM_HEADERS=./chromium_subp/cef_freebsd
+ 	else
+-		export CHROMIUM_HEADERS=$CHROMIUM_OUTPUT_DIR/../../../../eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/cef_linux
++		export CHROMIUM_HEADERS=$CHROMIUM_OUTPUT_DIR/../../../../eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/cef_freebsd
+ 	fi
+ 	${MAKE_TYPE} -f $MAKEFILE "${@}"
+ 	RETURN_VALUE=$?   #make can return 1 or 2 if it fails. Thus need to cache it in case it's used programmatically somewhere.
+@@ -332,4 +347,4 @@
+ elif [ "${GTK_VERSION}" = "3.0" -o "${GTK_VERSION}" = "" ]; then
+ 	export GTK_VERSION="3.0"
+ 	func_build_gtk3 "$@"
+-fi
+\ No newline at end of file
++fi
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak	0000-00-00 00:00:00.000000000 +0000
+@@ -113,16 +113,18 @@
+ CHROMIUM_OBJECTS = chromiumlib.o chromiumlib_structs.o chromiumlib_custom.o chromiumlib_stats.o
  GLX_OBJECTS = swt.o glx.o glx_structs.o glx_stats.o
  
 +port_prefix=`pkg-config --variable=prefix gtk+-3.0`
@@ -149,11 +178,11 @@
 +		-I$(JAVA_HOME)/include/freebsd \
  		${SWT_PTR_CFLAGS}
 -LFLAGS = -shared -fPIC ${SWT_LFLAGS}
-+LFLAGS = -shared -fPIC -m64 ${SWT_LFLAGS} -L$(port_prefix)/lib
++LFLAGS = -shared -fPIC ${SWT_LFLAGS} -L$(port_prefix)/lib
  
- ifndef NO_STRIP
- 	# -s = Remove all symbol table and relocation information from the executable.
-@@ -255,10 +257,6 @@
+ # Treat all warnings as errors. If your new code produces a warning, please
+ # take time to properly understand and fix/silence it as necessary.
+@@ -303,10 +305,6 @@
  	cp $(ALL_SWT_LIBS) $(OUTPUT_DIR)
  ifeq ($(BUILD_WEBKIT2EXTENSION),yes)
  	@# Copy webextension into it's own folder, but create folder first.
@@ -164,9 +193,10 @@
  	@# Copying webextension is not critical for build to succeed, thus we use '-'. SWT can still function without a webextension.
  	@-[ -d $(OUTPUT_DIR)/$(WEBEXTENSION_DIR) ] || mkdir -v $(OUTPUT_DIR)/$(WEBEXTENSION_DIR)  # If folder does not exist, make it.
  	-cp $(WEBKIT_EXTENSION_LIB) $(OUTPUT_DIR)/$(WEBEXTENSION_DIR)/
---- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java	2021-03-08 20:18:47.294228000 +0100
-@@ -60,8 +60,8 @@
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java	0000-00-00 00:00:00.000000000 +0000
+@@ -65,8 +65,8 @@
  
  		/* Initialize the OS flags and locale constants */
  		String osName = System.getProperty ("os.name");
@@ -177,9 +207,10 @@
  		if (osName.startsWith("Windows")) isWin32 = true;
  		IsLinux = isLinux;  IsWin32 = isWin32;
  
---- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java	2021-03-08 20:18:47.295739000 +0100
-@@ -120,7 +120,7 @@
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java
+--- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT WebKit/gtk/org/eclipse/swt/browser/WebKit.java	0000-00-00 00:00:00.000000000 +0000
+@@ -121,7 +121,7 @@
  	 * https://www.nczonline.net/blog/2009/01/05/what-determines-that-a-script-is-long-running/
  	 * https://stackoverflow.com/questions/3030024/maximum-execution-time-for-javascript
  	 */
@@ -188,9 +219,10 @@
  
  	/** Workaround for bug 522733 */
  	static boolean bug522733FirstInstanceCreated = false;
---- eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf	2021-03-08 20:32:15.547465000 +0100
-@@ -16,11 +16,16 @@
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf
+--- eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
+@@ -16,19 +16,19 @@
  requires.3.filter = (&(osgi.os=macosx)(osgi.ws=cocoa)(osgi.arch=x86_64)(!(org.eclipse.swt.buildtime=true)))
  
  requires.4.namespace = org.eclipse.equinox.p2.iu
@@ -206,14 +238,25 @@
  requires.5.range = [$version$,$version$]
 -requires.5.filter = (&(osgi.os=linux)(osgi.ws=gtk)(osgi.arch=ppc64le)(!(org.eclipse.swt.buildtime=true)))
 +requires.5.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=powerpc64)(!(org.eclipse.swt.buildtime=true)))
-+
-+requires.6.namespace = org.eclipse.equinox.p2.iu
+ 
+ requires.6.namespace = org.eclipse.equinox.p2.iu
+-requires.6.name = org.eclipse.swt.gtk.linux.aarch64
 +requires.6.name = org.eclipse.swt.gtk.freebsd.powerpc64le
-+requires.6.range = [$version$,$version$]
+ requires.6.range = [$version$,$version$]
+-requires.6.filter = (&(osgi.os=linux)(osgi.ws=gtk)(osgi.arch=aarch64)(!(org.eclipse.swt.buildtime=true)))
 +requires.6.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=powerpc64le)(!(org.eclipse.swt.buildtime=true)))
---- eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml	2021-03-08 20:36:54.906169000 +0100
-@@ -63,13 +63,17 @@
+ 
+ requires.7.namespace = org.eclipse.equinox.p2.iu
+ requires.7.name = org.eclipse.swt.cocoa.macosx.aarch64
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml
+--- eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt/buildSWT.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -68,17 +68,21 @@
+ 		</antcall>
+ 		<antcall target="check_fragment_libraries">
+ 			<param name="library_count" value="8"/>
+-			<param name="fragment" value="org.eclipse.swt.gtk.linux.aarch64"/>
++			<param name="fragment" value="org.eclipse.swt.gtk.freebsd.aarch64"/>
  		</antcall>
  		<antcall target="check_fragment_libraries">
  			<param name="library_count" value="8"/>
@@ -233,80 +276,331 @@
  			<param name="library_count" value="4"/>
  			<param name="fragment" value="org.eclipse.swt.win32.win32.x86_64"/>
  		</antcall>
-@@ -80,12 +84,12 @@
+@@ -89,13 +93,13 @@
  		<property name="checkdir" value="~/build/check_libraries"/>
- 		<property name="library_count" value="23"/>
+ 		<property name="library_count" value="34"/>
  		<property name="fragment" value=""/>
--		<fileset id="match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.linux.ppc64le/**, **/org.eclipse.swt.gtk.linux.x86_64/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.*/**">
-+		<fileset id="match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.freebsd.powerpc64/**, **/org.eclipse.swt.gtk.freebsd.amd64/**, **/org.eclipse.swt.gtk.freebsd.powerpc64le/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.*/**">
- 			<filename regex="[0-9][0-9][0-9][0-9]."/>
- 			<filename regex="${swt_version}."/>
+-		<fileset id="match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.linux.aarch64/**, **/org.eclipse.swt.gtk.linux.ppc64le/**, **/org.eclipse.swt.gtk.linux.x86_64/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.aarch64/**, **/org.eclipse.swt.cocoa.macosx.x86_64/**">
++		<fileset id="match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.freebsd.aarch64/**, **/org.eclipse.swt.gtk.freebsd.powerpc64/**, **/org.eclipse.swt.gtk.freebsd.powerpc64le/**, **/org.eclipse.swt.gtk.freebsd.amd64/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.aarch64/**, **/org.eclipse.swt.cocoa.macosx.x86_64/**">
+ 			<filename regex="[0-9][0-9][0-9][0-9]"/>
+ 			<filename regex="${swt_version}"/>
  			<exclude name="**/.git/**"/>
  		</fileset>
--		<fileset id="not_match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.linux.ppc64le/**, **/org.eclipse.swt.gtk.linux.x86_64/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.*/**">
-+		<fileset id="not_match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.freebsd.powerpc64/**, **/org.eclipse.swt.gtk.freebsd.powerpc64le**, **/org.eclipse.swt.gtk.freebsd.amd64/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.*/**">
- 			<filename regex="[0-9][0-9][0-9][0-9]."/>
- 			<filename regex="${swt_version}." negate="true"/>
+ 		<echo>Matched files ${toString:match}</echo>
+-		<fileset id="not_match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.linux.aarch64/**, **/org.eclipse.swt.gtk.linux.ppc64le/**, **/org.eclipse.swt.gtk.linux.x86_64/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.aarch64/**, **/org.eclipse.swt.cocoa.macosx.x86_64/**">
++		<fileset id="not_match" dir="${repo.bin}/bundles/${fragment}" includes="**/org.eclipse.swt.gtk.freebsd.aarch64/**, **/org.eclipse.swt.gtk.freebsd.powerpc64/**, **/org.eclipse.swt.gtk.freebsd.powerpc64le/**, **/org.eclipse.swt.gtk.freebsd.amd64/**, **/org.eclipse.swt.win32.win32.x86_64/**, **/org.eclipse.swt.cocoa.macosx.aarch64/**, **/org.eclipse.swt.cocoa.macosx.x86_64/**">
+ 			<filename regex="[0-9][0-9][0-9][0-9]"/>
+ 			<filename regex="${swt_version}" negate="true"/>
  			<exclude name="**/.git/**"/>
-@@ -115,14 +119,22 @@
- 			trust="true"
- 			outputproperty="m_linux_x86_64_output"
- 			command="hostname"/>
--		<sshexec host="${m_linux_ppc64le}"
-+		<sshexec host="${m_linux_powerpc64}"
- 			port="2256"
- 			username="swtbuild"
- 			keyfile="${keyfile}"
- 			failonerror="false"
- 			trust="true"
--			outputproperty="m_linux_ppc64le_output"
-+			outputproperty="m_linux_powerpc64_output"
- 			command="hostname"/>
-+		<sshexec host="${m_linux_powerpc64le}"
-+			port="2256"
-+			username="swtbuild"
-+			keyfile="${keyfile}"
-+			failonerror="false"
-+			trust="true"
-+			outputproperty="m_linux_powerpc64le_output"
-+			command="hostname"/>
- 		<sshexec host="${m_mac}"
- 			username="swtbuild"
- 			keyfile="${keyfile}"
-@@ -139,10 +151,16 @@
- 				<matches pattern="x${m_linux_x86_64_output}*" string="x${m_linux_x86_64}"/>
- 			</and>
+@@ -372,7 +376,7 @@
+ 		<replace file="${repo.src}/${file_make_common}" token="rev=${rev}" value="rev=${new_rev}"/>
+ 		<replace file="${repo.src}/${file_make_common}" token="comma_ver=${comma_ver}" value="comma_ver=${new_comma_ver}"/>
+ 		<replace file="${repo.src}/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/Cargo.toml" token="${swt_version}" value="${new_version}"/>
+-		<replace file="${repo.bin}/bundles/org.eclipse.swt.browser.chromium.gtk.linux.x86_64/chromium-${cef_ver}/chromium.properties" token="${swt_version}" value="${new_version}"/>
++		<replace file="${repo.bin}/bundles/org.eclipse.swt.browser.chromium.gtk.freebsd.amd64/chromium-${cef_ver}/chromium.properties" token="${swt_version}" value="${new_version}"/>
+ 		<replace file="${repo.bin}/bundles/org.eclipse.swt.browser.chromium.cocoa.macosx.x86_64/chromium-${cef_ver}/chromium.properties" token="${swt_version}" value="${new_version}"/>
+ 		<replace file="${repo.bin}/bundles/org.eclipse.swt.browser.chromium.win32.win32.x86_64/chromium-${cef_ver}/chromium.properties" token="${swt_version}" value="${new_version}"/>
+ 	</target>
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/META-INF/MANIFEST.MF eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/META-INF/MANIFEST.MF
+--- eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
+@@ -5,6 +5,6 @@
+ Bundle-SymbolicName: org.eclipse.swt.browser.chromium;singleton:=true
+ Bundle-Version: 3.116.0.qualifier
+ Bundle-ManifestVersion: 2
+-Eclipse-PlatformFilter: (osgi.arch=x86_64)
+-SWT-Arch: x86_64
++Eclipse-PlatformFilter: (osgi.arch=amd64)
++SWT-Arch: amd64
+ Automatic-Module-Name: org.eclipse.swt.browser.chromium
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/META-INF/p2.inf eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/META-INF/p2.inf
+--- eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
+@@ -10,6 +10,6 @@
+ requires.2.filter = (&(osgi.os=macosx)(osgi.ws=cocoa)(osgi.arch=x86_64)(!(org.eclipse.swt.buildtime=true)))
+ 
+ requires.3.namespace = org.eclipse.equinox.p2.iu
+-requires.3.name = org.eclipse.swt.browser.chromium.gtk.linux.x86_64
++requires.3.name = org.eclipse.swt.browser.chromium.gtk.freebsd.amd64
+ requires.3.range = [$version$,$version$]
+-requires.3.filter = (&(osgi.os=linux)(osgi.ws=gtk)(osgi.arch=x86_64)(!(org.eclipse.swt.buildtime=true)))
++requires.3.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=amd64)(!(org.eclipse.swt.buildtime=true)))
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/buildChromium.xml eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/buildChromium.xml
+--- eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/buildChromium.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/buildChromium.xml	0000-00-00 00:00:00.000000000 +0000
+@@ -36,12 +36,10 @@
+ 		<condition property="cefos" value="windows" else="${swt.os}">
+ 			<equals arg1="${swt.os}" arg2="win32"/>
  		</condition>
--		<condition property="m_linux_ppc64le_test" value="${success_msg}" else="${fail_msg}">
-+		<condition property="m_linux_powerpc64_test" value="${success_msg}" else="${fail_msg}">
- 			<and>
--				<length string="${m_linux_ppc64le_output}" when="greater" length="0"/>
--				<matches pattern="x${m_linux_ppc64le_output}*" string="x${m_linux_ppc64le}"/>
-+				<length string="${m_linux_powerpc64_output}" when="greater" length="0"/>
-+				<matches pattern="x${m_linux_powerpc64_output}*" string="x${m_linux_powerpc64}"/>
-+			</and>
-+		</condition>
-+		<condition property="m_linux_powerpc64le_test" value="${success_msg}" else="${fail_msg}">
-+			<and>
-+				<length string="${m_linux_powerpc64le_output}" when="greater" length="0"/>
-+				<matches pattern="x${m_linux_powerpc64le_output}*" string="x${m_linux_powerpc64le}"/>
- 			</and>
- 		</condition>
- 		<condition property="m_mac_test" value="${success_msg}" else="${fail_msg}">
---- eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup	2021-03-08 20:37:08.379254000 +0100
-@@ -103,7 +103,7 @@
+-		<property name="ceffile" value="cef_binary_3.3071.1649.g98725e6_${cefos}64_minimal.tar.bz2"/>
+-		<mkdir dir="${tmphome}"/>
+-		<get src="https://cef-builds.spotifycdn.com/${ceffile}" dest="${tmphome}/${ceffile}" usetimestamp="true"/>
+-		<untar dest="${repo.src}/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/cef_${swt.os}" overwrite="false" compression="bzip2" src="${tmphome}/${ceffile}">
+-			<cutdirsmapper dirs="1"/>
+-		</untar>
++		<copy todir="${repo.src}/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/cef_${swt.os}" overwrite="true">
++			<fileset dir="${local.cefsource}"/>
++		</copy>
++		<patch patchfile="${local.patchfiles}/cef-patch" dir="${repo.src}/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/cef_${swt.os}"/>
+ 	</target>
+ 	
+ 	<target name="build_chromium" depends="init_fragment,get_version,get_cef">
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/build.rs eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/build.rs
+--- eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/build.rs	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/build.rs	0000-00-00 00:00:00.000000000 +0000
+@@ -38,8 +38,8 @@
+   if cfg!(target_os = "macos") {
+     cef_path.push("cef_macosx");
+   } 
+-  else if cfg!(target_os = "linux") {
+-    cef_path.push("cef_linux");
++  else if cfg!(target_os = "freebsd") {
++    cef_path.push("cef_freebsd");
+   } 
+   else if cfg!(target_os = "windows") {
+     if std::env::var("CARGO_CFG_TARGET_ARCH").unwrap() == "x86" {
+@@ -58,11 +58,12 @@
+     panic!("cargo:warning=Extract and rename cef binary (minimal) distro to {:?}", cef_path);
+   }
+ 
+-  if cfg!(target_os = "linux") {
++  if cfg!(target_os = "freebsd") {
+     // println!("cargo:rustc-link-lib=gtk-x11-2.0");
+     // println!("cargo:rustc-link-lib=gdk-x11-2.0");
+     // println!("cargo:rustc-link-lib=gtk-3.so.0");
+     println!("cargo:rustc-link-lib=X11");
++    println!("cargo:rustc-link-search=/usr/local/lib");
+   }
+ 
+   // Tell cargo to tell rustc to link the system shared library.
+@@ -97,14 +98,14 @@
+ }
+ 
+ #[cfg(feature = "gen")]
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ fn gen_os(cef_path: std::path::Display) {
+   let _ = generator(cef_path)
+     .header("cef_linux.h")
+     .whitelist_type("_cef_main_args_t")
+     .whitelist_type("_cef_window_info_t")
+     .whitelist_function("cef_get_xdisplay")
+-    .generate().expect("Failed to gencef linux")
++    .generate().expect("Failed to gencef freebsd")
+     .write_to_file(std::path::Path::new("src").join("cef").join("linux.rs"));
+ }
+ 
+@@ -126,7 +127,7 @@
+ fn gen_cef(cef_path: std::path::Display) {
+   use std::io::Write;
+   #[cfg(target_os = "windows")] let gen = generator(cef_path).header("include/internal/cef_types_win.h");
+-  #[cfg(target_os = "linux")] let gen = generator(cef_path).header("include/internal/cef_types_linux.h");
++  #[cfg(target_os = "freebsd")] let gen = generator(cef_path).header("include/internal/cef_types_linux.h");
+   #[cfg(target_os = "macos")] let gen = generator(cef_path).header("include/internal/cef_types_mac.h");
+   let generated = gen
+     .header("cef.h")
+@@ -166,14 +167,14 @@
+     .blacklist_type(".*XDisplay")
+     .blacklist_type("VisualID")
+     .blacklist_type(".*XEvent")
+-    .raw_line("#[cfg(target_os = \"linux\")] pub mod linux;")
+-    .raw_line("#[cfg(target_os = \"linux\")] pub use self::linux::_cef_window_info_t;")
+-    .raw_line("#[cfg(target_os = \"linux\")] pub use self::linux::_cef_main_args_t;")
+-    .raw_line("#[cfg(target_os = \"linux\")] pub type wchar_t = i32;")
+-    .raw_line("#[cfg(target_os = \"linux\")] pub type char16 = i32;")
+-    .raw_line("#[cfg(target_os = \"linux\")] pub type time_t = isize;")
+-    .raw_line("#[cfg(target_os = \"linux\")] pub type int64 = ::std::os::raw::c_longlong;")
+-    .raw_line("#[cfg(target_os = \"linux\")] pub type uint64 = ::std::os::raw::c_ulonglong;")
++    .raw_line("#[cfg(target_os = \"freebsd\")] pub mod linux;")
++    .raw_line("#[cfg(target_os = \"freebsd\")] pub use self::linux::_cef_window_info_t;")
++    .raw_line("#[cfg(target_os = \"freebsd\")] pub use self::linux::_cef_main_args_t;")
++    .raw_line("#[cfg(target_os = \"freebsd\")] pub type wchar_t = i32;")
++    .raw_line("#[cfg(target_os = \"freebsd\")] pub type char16 = i32;")
++    .raw_line("#[cfg(target_os = \"freebsd\")] pub type time_t = isize;")
++    .raw_line("#[cfg(target_os = \"freebsd\")] pub type int64 = ::std::os::raw::c_longlong;")
++    .raw_line("#[cfg(target_os = \"freebsd\")] pub type uint64 = ::std::os::raw::c_ulonglong;")
+     .raw_line("#[cfg(target_os = \"macos\")] pub mod mac;")
+     .raw_line("#[cfg(target_os = \"macos\")] pub use self::mac::_cef_window_info_t;")
+     .raw_line("#[cfg(target_os = \"macos\")] pub use self::mac::_cef_main_args_t;")
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/src/cef/mod.rs eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/src/cef/mod.rs
+--- eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/src/cef/mod.rs	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_subp/src/cef/mod.rs	0000-00-00 00:00:00.000000000 +0000
+@@ -16,14 +16,14 @@
+ #![allow(non_snake_case)]
+ #![allow(non_camel_case_types)]
+ #![allow(non_upper_case_globals)]
+-#[cfg(target_os = "linux")] pub mod linux;
+-#[cfg(target_os = "linux")] pub use self::linux::_cef_window_info_t;
+-#[cfg(target_os = "linux")] pub use self::linux::_cef_main_args_t;
+-#[cfg(target_os = "linux")] pub type wchar_t = i32;
+-#[cfg(target_os = "linux")] pub type char16 = i32;
+-#[cfg(target_os = "linux")] pub type time_t = isize;
+-#[cfg(target_os = "linux")] pub type int64 = ::std::os::raw::c_longlong;
+-#[cfg(target_os = "linux")] pub type uint64 = ::std::os::raw::c_ulonglong;
++#[cfg(target_os = "freebsd")] pub mod linux;
++#[cfg(target_os = "freebsd")] pub use self::linux::_cef_window_info_t;
++#[cfg(target_os = "freebsd")] pub use self::linux::_cef_main_args_t;
++#[cfg(target_os = "freebsd")] pub type wchar_t = i32;
++#[cfg(target_os = "freebsd")] pub type char16 = i32;
++#[cfg(target_os = "freebsd")] pub type time_t = isize;
++#[cfg(target_os = "freebsd")] pub type int64 = ::std::os::raw::c_longlong;
++#[cfg(target_os = "freebsd")] pub type uint64 = ::std::os::raw::c_ulonglong;
+ #[cfg(target_os = "macos")] pub mod mac;
+ #[cfg(target_os = "macos")] pub use self::mac::_cef_window_info_t;
+ #[cfg(target_os = "macos")] pub use self::mac::_cef_main_args_t;
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/Cargo.toml eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/Cargo.toml
+--- eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/Cargo.toml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/Cargo.toml	0000-00-00 00:00:00.000000000 +0000
+@@ -15,7 +15,7 @@
+ [dependencies]
+ chromium = { path = "../chromium_subp/" }
+ 
+-[target.'cfg(target_os = "linux")'.dependencies]
++[target.'cfg(target_os = "freebsd")'.dependencies]
+ x11 = "2.17.0"
+ 
+ [target.'cfg(unix)'.dependencies]
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/src/app.rs eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/src/app.rs
+--- eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/src/app.rs	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/src/app.rs	0000-00-00 00:00:00.000000000 +0000
+@@ -12,7 +12,7 @@
+  ********************************************************************************/
+ use cef;
+ use utils;
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ use gtk;
+ 
+ use std::os::raw::{c_int, c_void};
+@@ -76,7 +76,7 @@
+     browser
+ }
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ fn override_system_visual(visual: *mut c_void) {
+     unsafe {
+         let xvisual = gtk::gdk_x11_visual_get_xvisual(visual);
+@@ -85,12 +85,12 @@
+     }
+ }
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ extern "C" {
+     pub fn cef_override_system_visual(visual_id: std::os::raw::c_ulong);
+ }
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ fn cef_window_info(hwnd: *mut c_void, w: c_int, h: c_int) -> cef::_cef_window_info_t {
+     use std::os::raw::c_uint;
+     let window_info = unsafe {
+@@ -112,7 +112,7 @@
+     window_info
+ }
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ pub fn set_window_parent(window_info: *mut cef::_cef_window_info_t, hwnd: *mut c_void, x: c_int, y: c_int, w: c_int, h: c_int) {
+     use std::os::raw::c_uint;
+     //unsafe {println!("orig window_info {} {:?}", hwnd, (*window_info)); };
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/src/lib.rs eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/src/lib.rs
+--- eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/src/lib.rs	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt.browser.chromium/common/rust-library/chromium_swt/src/lib.rs	0000-00-00 00:00:00.000000000 +0000
+@@ -12,7 +12,7 @@
+  ********************************************************************************/
+ extern crate chromium;
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ extern crate x11;
+ #[cfg(unix)]
+ extern crate nix;
+@@ -25,21 +25,21 @@
+ use chromium::socket;
+ 
+ mod app;
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ mod gtk;
+ 
+ use std::os::raw::{c_char, c_int, c_void};
+ #[cfg(unix)]
+ use std::collections::HashMap;
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ unsafe extern fn xerror_handler_impl(_: *mut x11::xlib::Display, _event: *mut x11::xlib::XErrorEvent) -> c_int {
+     //print!("X error received: ");
+     //println!("type {}, serial {}, error_code {}, request_code {}, minor_code {}",
+     //    (*event).type_, (*event).serial, (*event).error_code, (*event).request_code, (*event).minor_code);
+     0
+ }
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ unsafe extern fn xioerror_handler_impl(_: *mut x11::xlib::Display) -> c_int {
+     //println!("XUI error received");
+     0
+@@ -67,7 +67,7 @@
+         if cfg!(target_family = "windows") {
+             set_env_var(cef_path, "PATH", ";");
+         }
+-        if cfg!(target_os = "linux") {
++        if cfg!(target_os = "freebsd") {
+             set_env_var(cef_path, "LD_LIBRARY_PATH", ":");
+         }
+         if cfg!(target_os = "macos") {
+@@ -146,7 +146,7 @@
+     };
+ }
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ fn do_initialize(main_args: cef::_cef_main_args_t, settings: cef::_cef_settings_t, app_raw: *mut cef::_cef_app_t) {
+     unsafe { x11::xlib::XSetErrorHandler(Option::Some(xerror_handler_impl)) };
+     unsafe { x11::xlib::XSetIOErrorHandler(Option::Some(xioerror_handler_impl)) };
+@@ -366,7 +366,7 @@
+     do_resize(win_handle, width, height);
+ }
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ fn do_resize(win_handle: *mut c_void, width: i32, height: i32) {
+     use x11::xlib;
+ 
+@@ -642,7 +642,7 @@
+     }
+ }
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "freebsd")]
+ fn do_set_focus(parent: *mut c_void, _focus: i32) {
+     let root = unsafe { gtk::gtk_widget_get_toplevel(parent) };
+     //println!("<<<<<<<< set_focus {} {:?} {:?}", focus, parent, root);
+@@ -768,4 +768,4 @@
+ #[no_mangle]
+ pub extern fn cefswt_go_back(browser: *mut cef::_cef_browser_t) {
+     unsafe { (*browser).go_back.expect("null go_back")(browser) };
+-}
+\ No newline at end of file
++}
+diff -ru eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup
+--- eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/bundles/org.eclipse.swt.tools/Oomph/platformSwt.setup	0000-00-00 00:00:00.000000000 +0000
+@@ -108,7 +108,7 @@
                xsi:type="predicates:NotPredicate">
              <operand
                  xsi:type="predicates:NamePredicate"
 -                pattern=".*(cocoa|gtk|win32)(\.(macosx|aix|hpux|linux|solaris|win32)(\.(x86_64|ppc64|ia64|aarch64|arm|ppc64|ppc64le|s390|s390x|x86|sparcv9))?)?"/>
-+                pattern=".*(cocoa|gtk|win32)(\.(freebsd|macosx|aix|hpux|linux|solaris|win32)(\.(amd64|x86_64|powerpc64|powerpc64le|ia64|aarch64|arm|ppc64|ppc64le|s390|s390x|x86|sparcv9))?)?"/>
++                pattern=".*(cocoa|gtk|win32)(\.(freebsd|macosx|aix|hpux|linux|solaris|win32)(\.(amd64|x86_64|powerpc64|ia64|aarch64|arm|ppc64|powerpc64le|s390|s390x|x86|sparcv9))?)?"/>
            </operand>
            <operand
                xsi:type="predicates:NamePredicate"
---- eclipse.platform.swt/local-build/org.eclipse.swt.fragments.localbuild/META-INF/p2.inf.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/local-build/org.eclipse.swt.fragments.localbuild/META-INF/p2.inf	2021-03-08 20:37:33.844415000 +0100
-@@ -10,11 +10,16 @@
+diff -ru eclipse.platform.swt/local-build/org.eclipse.swt.fragments.localbuild/META-INF/p2.inf eclipse.platform.swt/local-build/org.eclipse.swt.fragments.localbuild/META-INF/p2.inf
+--- eclipse.platform.swt/local-build/org.eclipse.swt.fragments.localbuild/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/local-build/org.eclipse.swt.fragments.localbuild/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
+@@ -10,19 +10,19 @@
  requires.2.filter = (&(osgi.os=macosx)(osgi.ws=cocoa)(osgi.arch=x86_64))
  
  requires.3.namespace = org.eclipse.equinox.p2.iu
@@ -322,13 +616,19 @@
  requires.4.range = 0.0.0
 -requires.4.filter = (&(osgi.os=linux)(osgi.ws=gtk)(osgi.arch=ppc64le))
 +requires.4.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=powerpc64))
-+
-+requires.5.namespace = org.eclipse.equinox.p2.iu
+ 
+ requires.5.namespace = org.eclipse.equinox.p2.iu
+-requires.5.name = org.eclipse.swt.gtk.linux.aarch64
 +requires.5.name = org.eclipse.swt.gtk.freebsd.powerpc64le
-+requires.5.range = 0.0.0
+ requires.5.range = 0.0.0
+-requires.5.filter = (&(osgi.os=linux)(osgi.ws=gtk)(osgi.arch=aarch64))
 +requires.5.filter = (&(osgi.os=freebsd)(osgi.ws=gtk)(osgi.arch=powerpc64le))
---- eclipse.platform.swt/pom.xml.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/pom.xml	2021-03-08 20:18:47.297968000 +0100
+ 
+ requires.6.namespace = org.eclipse.equinox.p2.iu
+ requires.6.name = org.eclipse.swt.cocoa.macosx.aarch64
+diff -ru eclipse.platform.swt/pom.xml eclipse.platform.swt/pom.xml
+--- eclipse.platform.swt/pom.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/pom.xml	0000-00-00 00:00:00.000000000 +0000
 @@ -85,11 +85,12 @@
        <activation>
          <os>
@@ -353,8 +653,9 @@
      <module>features/org.eclipse.swt.tools.feature</module>
    </modules>
  </project>
---- eclipse.platform.swt/tests/org.eclipse.swt.tests.fragments.feature/feature.xml.orig	2020-06-04 11:51:28.000000000 +0200
-+++ eclipse.platform.swt/tests/org.eclipse.swt.tests.fragments.feature/feature.xml	2021-03-08 20:38:27.083939000 +0100
+diff -ru eclipse.platform.swt/tests/org.eclipse.swt.tests.fragments.feature/feature.xml eclipse.platform.swt/tests/org.eclipse.swt.tests.fragments.feature/feature.xml
+--- eclipse.platform.swt/tests/org.eclipse.swt.tests.fragments.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
++++ eclipse.platform.swt/tests/org.eclipse.swt.tests.fragments.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
 @@ -20,10 +20,10 @@
     </license>
  
@@ -369,7 +670,7 @@
           download-size="0"
           install-size="0"
           version="0.0.0"
-@@ -31,10 +31,21 @@
+@@ -31,10 +31,10 @@
           unpack="false"/>
  
     <plugin
@@ -380,17 +681,6 @@
           ws="gtk"
 -         arch="ppc64le"
 +         arch="powerpc64"
-+         download-size="0"
-+         install-size="0"
-+         version="0.0.0"
-+         fragment="true"
-+         unpack="false"/>
-+
-+   <plugin
-+         id="org.eclipse.swt.gtk.freebsd.powerpc64le"
-+         os="freebsd"
-+         ws="gtk"
-+         arch="powerpc64le"
           download-size="0"
           install-size="0"
           version="0.0.0"

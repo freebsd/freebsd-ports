@@ -1,13 +1,13 @@
 # Created by: Jonathan Chen <jonc@chen.org.nz>
+# $FreeBSD$
 
 PORTNAME=	eclipse
-PORTVERSION=	4.16
-PORTREVISION=	1
+PORTVERSION=	4.21
 CATEGORIES=	java devel
 
 # Update to eclipse.platform.releng.aggregator.git git-tag on git.eclipse.org
-ECLIPSE_TAG=	R4_16
-ECLIPSE_TSTAMP=	20200617-1404
+ECLIPSE_TAG=	R4_21
+ECLIPSE_TSTAMP=	20210915-1206
 
 ECLIPSE_SUFX=	${ECLIPSE_TAG}.tar.xz
 ECLIPSE_MODULES=jdt/eclipse.jdt \
@@ -42,14 +42,19 @@ MASTER_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/
 DISTFILES+=	${M:C/.*\///}-${ECLIPSE_SUFX}:${M:C/[\.\/]//g}
 .endfor
 
+CEF_FILE=	cef_binary_3.3071.1649.g98725e6_linux64_minimal
+MASTER_SITES+=	https://cef-builds.spotifycdn.com/:spotify \
+		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${PORTVERSION}/:github
+DISTFILES+=	${CEF_FILE}.tar.bz2:spotify
+
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jonc@chen.org.nz
-COMMENT=	Eclipse IDE 2020-06
+COMMENT=	Eclipse IDE 2020-09
 
 LICENSE=	EPL
 
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	git:devel/git@lite \
 		${LOCALBASE}/share/java/maven/bin/mvn:devel/maven \
@@ -74,17 +79,20 @@ DESKTOP_ENTRIES="Eclipse" \
 
 SUB_FILES=	${PORTNAME}
 
-MAVEN_ENV=	MAVEN_OPTS=-Xmx1024m CC=${CC} JAVA_HOME=${JAVA_HOME}
-MAVEN_REPO=	-Dmaven.repo.local=${WRKDIR}/${GH_PROJECT}-${PORTVERSION}
-MAVEN_ECLIPSE=	-Dnative=gtk.freebsd.${ARCH} -DforceContextQualifier=v${ECLIPSE_TSTAMP}
+MAVEN_ENV=	MAVEN_OPTS=-Xmx1024m CC=${CC} JAVA_HOME=${JAVA_HOME} HOME=${WRKDIR}/githome
+MAVEN_ECLIPSE=	-Dmaven.repo.local=${WRKDIR}/${GH_PROJECT}-${PORTVERSION} \
+		-Dlocal.cefsource=${WRKDIR}/${CEF_FILE} \
+		-Dlocal.patchfiles=${FILESDIR} \
+		-Dnative=gtk.freebsd.${ARCH} \
+		-DforceContextQualifier=v${ECLIPSE_TSTAMP}
 
-ECLIPSE_RESULT=	eclipse.platform.releng.tychoeclipsebuilder/sdk/target/products/org.eclipse.sdk.ide-freebsd.gtk.${ARCH}.tar.gz
+ECLIPSE_RESULT=	eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/target/products/org.eclipse.sdk.ide-freebsd.gtk.${ARCH}.tar.gz
 
 # Let's abuse this to get to the right place.
 WRKSRC_SUBDIR=	../eclipse.platform.releng.aggregator-${ECLIPSE_TAG}
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAVEN_ENV} mvn --offline ${MAVEN_REPO} ${MAVEN_ECLIPSE} -DskipTests clean verify
+	cd ${WRKSRC} && ${SETENV} ${MAVEN_ENV} mvn --offline ${MAVEN_ECLIPSE} -DskipTests clean verify
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

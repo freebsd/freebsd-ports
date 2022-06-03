@@ -18,7 +18,7 @@ diff -ru eclipse.pde.build/org.eclipse.pde.build/scripts/productBuild/allElement
 diff -ru eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/Utils.java eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/Utils.java
 --- eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/Utils.java	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/Utils.java	0000-00-00 00:00:00.000000000 +0000
-@@ -704,7 +704,7 @@
+@@ -694,7 +694,7 @@
  			arguments.add("-sf"); //$NON-NLS-1$
  			arguments.add(links[i]);
  			arguments.add(links[i + 1]);
@@ -30,7 +30,7 @@ diff -ru eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/bu
 diff -ru eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/builder/ModelBuildScriptGenerator.java eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/builder/ModelBuildScriptGenerator.java
 --- eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/builder/ModelBuildScriptGenerator.java	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.pde.build/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/builder/ModelBuildScriptGenerator.java	0000-00-00 00:00:00.000000000 +0000
-@@ -922,7 +922,7 @@
+@@ -912,7 +912,7 @@
  		for (int i = 0; i < links.length; i += 2) {
  			arguments.add(links[i]);
  			arguments.add(links[i + 1]);
