@@ -17185,3 +17185,4 @@ databases/R-cran-RSQLite.extfuns|databases/R-cran-RSQLite|2022-05-31|Has expired
 net/mpich2|net/mpich|2022-05-31|Has been deprecrated for a long time and build fails with GCC 11
 net-im/jabber.el||2022-06-01|Has expired: is marked as broken: fails to build: jabber-chat.el:25:1: Error: Wrong number of arguments: (3 . 3), 2
 x11-fm/Arqiver|x11-fm/arqiver|2022-06-01|Convert PORTNATE to lowercase
+net/py-suds-community|net/py-suds|2022-06-03|Remove obsoleted port. Use net/py-suds instead
