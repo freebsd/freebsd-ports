@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	faraday-httpclient
-PORTVERSION=	1.0.1
+PORTVERSION=	2.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,8 @@ COMMENT=	Faraday adapter for HTTPClient
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+RUN_DEPENDS=	rubygem-httpclient>=2.2:www/rubygem-httpclient
 
 USES=		gem
 USE_RUBY=	yes
