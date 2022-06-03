@@ -29,7 +29,7 @@
 +      cxx = "c++"
 +      ld = cxx
 +      readelf = "readelf"
-+      ar = "${prefix}/ar"
++      ar = "llvm-ar"
 +      nm = "${prefix}nm"
 +    } else {
 +      prefix = rebase_path("$clang_base_path/bin", root_build_dir)

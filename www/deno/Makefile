@@ -1,6 +1,7 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.22.1
+PORTREVIONS=	1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -11,11 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BROKEN_i386=	cargo:warning=c/freebsd.c:31:10: error: conflicting types for 'get_cpu_speed'
 
-BUILD_DEPENDS=	binutils>0:devel/binutils \
-		gn:devel/gn \
+BUILD_DEPENDS=	gn:devel/gn \
 		libunwind>0:devel/libunwind
 
-USES=		cargo cpe gmake gnome ninja:build pkgconfig:build python:3.6+,build
+USES=		cargo cpe gmake gnome ninja:build pkgconfig:build python:3.7+,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
@@ -531,7 +531,6 @@ CARGO_ENV+=	RUSTC_BOOTSTRAP=1
 
 post-patch:
 	${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
-		${WRKSRC}/cargo-crates/v8-${V8_VERS}/build/toolchain/gcc_toolchain.gni \
 		${WRKSRC}/cargo-crates/v8-${V8_VERS}/buildtools/third_party/libc++/BUILD.gn
 
 do-install:
