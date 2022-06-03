@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	tomlrb
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
