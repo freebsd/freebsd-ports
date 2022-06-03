@@ -1,6 +1,5 @@
 PORTNAME=	lammps
 PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/}
-PORTREVISION=	3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +25,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	cython
 
 USE_GITHUB=	yes
-GH_TAGNAME=	patch_24Mar2022
+GH_TAGNAME=	patch_2Jun2022
 
 SHEBANG_GLOB=	*.sh *.bash
 SHEBANG_FILES=	lib/kokkos/bin/nvcc_wrapper
@@ -34,7 +33,7 @@ SHEBANG_FILES=	lib/kokkos/bin/nvcc_wrapper
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 CMAKE_ARGS=	-DBLA_VENDOR:STRING="OpenBLAS" ${CMAKE_ARGS_${CHOSEN_COMPILER_TYPE}} \
-		-DFREEBSD_PYTHON_VER=${PYTHON_VER}
+		-DPython_EXECUTABLE=${PYTHON_CMD}
 CMAKE_ARGS_gcc=	-DBUILD_OMP:BOOL=false
 
 # enable packages (for a complete list see STANDARD_PACKAGES in cmake/CMakeLists.txt)
