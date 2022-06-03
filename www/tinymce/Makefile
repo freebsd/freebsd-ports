@@ -1,7 +1,7 @@
 # Created by: Nick Hilliard <nick@foobar.org>
 
 PORTNAME=	tinymce
-PORTVERSION=	5.10.5
+PORTVERSION=	6.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://download.tiny.cloud/tinymce/community/ \
 		LOCAL/sunpoet
@@ -10,7 +10,7 @@ DISTNAME=	tinymce_${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open source JavaScript HTML WYSIWYG editor for web sites
 
-LICENSE=	LGPL21
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/js/tinymce/license.txt
 
 USES=		cpe zip
