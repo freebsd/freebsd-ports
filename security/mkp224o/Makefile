@@ -1,7 +1,8 @@
 PORTNAME=	mkp224o
-DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0
 CATEGORIES=	security
+MASTER_SITES=	https://github.com/cathugger/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Vanity address generator for tor onion v3 (ed25519) hidden services
@@ -11,12 +12,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
-USES=		autoreconf compiler:c11 gmake localbase:ldflags
-USE_GITHUB=	yes
-GH_ACCOUNT=	cathugger
+USES=		compiler:c11 gmake localbase:ldflags
 GNU_CONFIGURE=	yes
 
 MAKEFILE=	GNUmakefile
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
 
