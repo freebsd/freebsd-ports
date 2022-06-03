@@ -38,7 +38,6 @@ include/libdrm/vc4_drm.h
 include/libdrm/via_drm.h
 include/libdrm/virtgpu_drm.h
 %%VMWGFX_DRIVERS%%include/libdrm/vmwgfx_drm.h
-include/libkms/libkms.h
 include/libsync.h
 include/xf86drm.h
 include/xf86drmMode.h
@@ -54,14 +53,10 @@ lib/libdrm.so.2.4.0
 %%RADEON_DRIVERS%%lib/libdrm_radeon.so
 %%RADEON_DRIVERS%%lib/libdrm_radeon.so.1
 %%RADEON_DRIVERS%%lib/libdrm_radeon.so.1.0.1
-lib/libkms.so
-lib/libkms.so.1
-lib/libkms.so.1.0.0
 libdata/pkgconfig/libdrm.pc
 %%RADEON_DRIVERS%%libdata/pkgconfig/libdrm_amdgpu.pc
 %%INTEL_DRIVER%%libdata/pkgconfig/libdrm_intel.pc
 %%RADEON_DRIVERS%%libdata/pkgconfig/libdrm_radeon.pc
-libdata/pkgconfig/libkms.pc
 %%MANPAGES%%man/man3/drmAvailable.3.gz
 %%MANPAGES%%man/man3/drmHandleEvent.3.gz
 %%MANPAGES%%man/man3/drmModeGetResources.3.gz
