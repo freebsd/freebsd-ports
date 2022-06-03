@@ -39,6 +39,7 @@ include/ctre/pcre.hpp
 include/ctre/pcre_actions.hpp
 include/ctre/range.hpp
 include/ctre/return_type.hpp
+include/ctre/rotate.hpp
 include/ctre/starts_with_anchor.hpp
 include/ctre/utf8.hpp
 include/ctre/utility.hpp
