@@ -1,3 +1,31 @@
+  <vuln vid="204f1a7a-43df-412f-ad25-7dbe88f54fa4">
+    <topic>zeek -- potential DoS vulnerabilty</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>4.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v4.0.7">
+	  <p> Fix potential hang in the DNS analyzer when receiving
+	  a specially-crafted packet. Due to the possibility of
+	  this happening with packets received from the network,
+	  this is a potential DoS vulnerability. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v4.0.7</url>
+    </references>
+    <dates>
+      <discovery>2022-06-01</discovery>
+      <entry>2022-06-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="40e2c35e-db99-11ec-b0cf-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
