@@ -1,4 +1,4 @@
-TIMESTAMP = 1653409921
+TIMESTAMP = 1654297146
 SHA256 (nginx-1.22.0.tar.gz) = b33d569a6f11a01433a57ce17e83935e953ad4dc77cdd4d40f896c88ac26eb53
 SIZE (nginx-1.22.0.tar.gz) = 1073322
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -107,8 +107,8 @@ SHA256 (openresty-lua-nginx-module-v0.10.21_GH0.tar.gz) = 9db756000578efaecb43be
 SIZE (openresty-lua-nginx-module-v0.10.21_GH0.tar.gz) = 690938
 SHA256 (openresty-memc-nginx-module-v0.19_GH0.tar.gz) = 8c2bdbe875e4f5225d0778bfb09a2668f9281d7de6218c7b462a7ba2cee06fe8
 SIZE (openresty-memc-nginx-module-v0.19_GH0.tar.gz) = 34654
-SHA256 (SpiderLabs-ModSecurity-nginx-v1.0.2_GH0.tar.gz) = f8d3ff15520df736c5e20e91d5852ec27e0874566c2afce7dcb979e2298d6980
-SIZE (SpiderLabs-ModSecurity-nginx-v1.0.2_GH0.tar.gz) = 33767
+SHA256 (SpiderLabs-ModSecurity-nginx-v1.0.3_GH0.tar.gz) = 32a42256616cc674dca24c8654397390adff15b888b77eb74e0687f023c8751b
+SIZE (SpiderLabs-ModSecurity-nginx-v1.0.3_GH0.tar.gz) = 34063
 SHA256 (nbs-system-naxsi-1.3_GH0.tar.gz) = 439c8677372d2597b4360bbcc10bc86490de1fc75695b193ad5df154a214d628
 SIZE (nbs-system-naxsi-1.3_GH0.tar.gz) = 235626
 SHA256 (nginx-njs-0.7.4_GH0.tar.gz) = c474b5adf6b1e8757100bbef35e1dc403183f8d9c0f50bfab01727b7777d7225
