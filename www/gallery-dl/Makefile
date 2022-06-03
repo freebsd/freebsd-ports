@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 NO_ARCH=	yes
 USES=		python:3.4+
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils unittest
 GH_ACCOUNT=	mikf
 
 post-patch:
@@ -27,8 +27,5 @@ post-patch:
 post-build:
 # USE_GITHUB archive doesn't have generated files
 	@${DO_MAKE_BUILD} -C ${BUILD_WRKSRC} PYTHON="${PYTHON_CMD}" man completion
-
-do-test:
-	@${PYTHON_CMD} -m unittest discover -vs ${TEST_WRKSRC}
 
 .include <bsd.port.mk>
