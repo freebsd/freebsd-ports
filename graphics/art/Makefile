@@ -32,6 +32,8 @@ USE_XORG=	x11
 
 EXTRACT_CMD=	gtar
 
+LDFLAGS+=	-lpthread # otherwise build breaks on some systems: error: undefined symbol: pthread_create
+
 OPTIONS_DEFINE=		OPENMP
 #OPTIONS_DEFAULT=	OPENMP
 
