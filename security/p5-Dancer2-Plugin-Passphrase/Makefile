@@ -1,7 +1,7 @@
 # Created by: Henk van Oers <hvo.pm@xs4all.nl>
 
 PORTNAME=	Dancer2-Plugin-Passphrase
-PORTVERSION=	3.3.4
+PORTVERSION=	3.4.0
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
