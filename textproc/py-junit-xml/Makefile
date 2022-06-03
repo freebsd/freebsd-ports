@@ -16,4 +16,6 @@ GH_ACCOUNT=	kyrus
 GH_PROJECT=	python-${PORTNAME}
 GH_TAGNAME=	4bd08a2
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
