@@ -250,8 +250,7 @@ lib/node_modules/npm/lib/commands/whoami.js
 lib/node_modules/npm/lib/exec/get-workspace-location-msg.js
 lib/node_modules/npm/lib/lifecycle-cmd.js
 lib/node_modules/npm/lib/npm.js
-lib/node_modules/npm/lib/search/format-package-stream.js
-lib/node_modules/npm/lib/search/package-filter.js
+lib/node_modules/npm/lib/package-url-cmd.js
 lib/node_modules/npm/lib/utils/ansi-trim.js
 lib/node_modules/npm/lib/utils/audit-error.js
 lib/node_modules/npm/lib/utils/cmd-list.js
@@ -269,10 +268,9 @@ lib/node_modules/npm/lib/utils/error-message.js
 lib/node_modules/npm/lib/utils/exit-handler.js
 lib/node_modules/npm/lib/utils/explain-dep.js
 lib/node_modules/npm/lib/utils/explain-eresolve.js
-lib/node_modules/npm/lib/utils/file-exists.js
 lib/node_modules/npm/lib/utils/format-bytes.js
+lib/node_modules/npm/lib/utils/format-search-stream.js
 lib/node_modules/npm/lib/utils/get-identity.js
-lib/node_modules/npm/lib/utils/hosted-git-info-from-manifest.js
 lib/node_modules/npm/lib/utils/is-windows.js
 lib/node_modules/npm/lib/utils/log-file.js
 lib/node_modules/npm/lib/utils/log-shim.js
@@ -282,7 +280,6 @@ lib/node_modules/npm/lib/utils/otplease.js
 lib/node_modules/npm/lib/utils/ping.js
 lib/node_modules/npm/lib/utils/pulse-till-done.js
 lib/node_modules/npm/lib/utils/queryable.js
-lib/node_modules/npm/lib/utils/read-package-name.js
 lib/node_modules/npm/lib/utils/read-user-info.js
 lib/node_modules/npm/lib/utils/reify-finish.js
 lib/node_modules/npm/lib/utils/reify-output.js
@@ -456,6 +453,7 @@ lib/node_modules/npm/node_modules/@npmcli/arborist/lib/inventory.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/link.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/node.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/optional-set.js
+lib/node_modules/npm/node_modules/@npmcli/arborist/lib/override-resolves.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/override-set.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/peer-entry-sets.js
 lib/node_modules/npm/node_modules/@npmcli/arborist/lib/place-dep.js
@@ -689,7 +687,6 @@ lib/node_modules/npm/node_modules/cacache/lib/index.js
 lib/node_modules/npm/node_modules/cacache/lib/memoization.js
 lib/node_modules/npm/node_modules/cacache/lib/put.js
 lib/node_modules/npm/node_modules/cacache/lib/rm.js
-lib/node_modules/npm/node_modules/cacache/lib/util/disposer.js
 lib/node_modules/npm/node_modules/cacache/lib/util/fix-owner.js
 lib/node_modules/npm/node_modules/cacache/lib/util/hash-to-segments.js
 lib/node_modules/npm/node_modules/cacache/lib/util/move-file.js
@@ -994,7 +991,6 @@ lib/node_modules/npm/node_modules/init-package-json/lib/init-package-json.js
 lib/node_modules/npm/node_modules/init-package-json/package.json
 lib/node_modules/npm/node_modules/ip/lib/ip.js
 lib/node_modules/npm/node_modules/ip/package.json
-lib/node_modules/npm/node_modules/ip/test/api-test.js
 lib/node_modules/npm/node_modules/ip-regex/index.d.ts
 lib/node_modules/npm/node_modules/ip-regex/index.js
 lib/node_modules/npm/node_modules/ip-regex/license
@@ -1737,9 +1733,6 @@ lib/node_modules/npm/node_modules/socks/typings/common/helpers.d.ts
 lib/node_modules/npm/node_modules/socks/typings/common/receivebuffer.d.ts
 lib/node_modules/npm/node_modules/socks/typings/common/util.d.ts
 lib/node_modules/npm/node_modules/socks/typings/index.d.ts
-lib/node_modules/npm/node_modules/socks-proxy-agent/dist/agent.d.ts
-lib/node_modules/npm/node_modules/socks-proxy-agent/dist/agent.js
-lib/node_modules/npm/node_modules/socks-proxy-agent/dist/agent.js.map
 lib/node_modules/npm/node_modules/socks-proxy-agent/dist/index.d.ts
 lib/node_modules/npm/node_modules/socks-proxy-agent/dist/index.js
 lib/node_modules/npm/node_modules/socks-proxy-agent/dist/index.js.map
