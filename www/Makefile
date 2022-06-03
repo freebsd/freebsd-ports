@@ -1909,6 +1909,7 @@
     SUBDIR += rubygem-faraday-httpclient1
     SUBDIR += rubygem-faraday-multipart
     SUBDIR += rubygem-faraday-net_http
+    SUBDIR += rubygem-faraday-net_http1
     SUBDIR += rubygem-faraday-net_http_persistent
     SUBDIR += rubygem-faraday-patron
     SUBDIR += rubygem-faraday-rack
