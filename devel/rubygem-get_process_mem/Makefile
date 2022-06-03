@@ -1,5 +1,5 @@
 PORTNAME=	get_process_mem
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
