@@ -13,6 +13,8 @@ COMMENT=	Code to compute electron and positron scattering from molecules
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	fails to build: Cannot open module file 'ieee_arithmetic.mod' for reading
+
 LIB_DEPENDS=	libGBTO.so:science/gbtolib \
 		libgsl.so:math/gsl \
 		libopenblas.so:math/openblas
