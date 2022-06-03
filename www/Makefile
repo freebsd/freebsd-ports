@@ -1906,6 +1906,7 @@
     SUBDIR += rubygem-faraday-em_synchrony
     SUBDIR += rubygem-faraday-http-cache
     SUBDIR += rubygem-faraday-httpclient
+    SUBDIR += rubygem-faraday-httpclient1
     SUBDIR += rubygem-faraday-multipart
     SUBDIR += rubygem-faraday-net_http
     SUBDIR += rubygem-faraday-net_http_persistent
