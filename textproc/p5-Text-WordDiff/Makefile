@@ -19,4 +19,6 @@ RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
 USES=		perl5
 USE_PERL5=	modbuild
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
