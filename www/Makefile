@@ -1913,7 +1913,6 @@
     SUBDIR += rubygem-faraday-rack
     SUBDIR += rubygem-faraday-retry
     SUBDIR += rubygem-faraday0
-    SUBDIR += rubygem-faraday110
     SUBDIR += rubygem-faraday14
     SUBDIR += rubygem-faraday_middleware
     SUBDIR += rubygem-faraday_middleware0

@@ -17187,3 +17187,4 @@ net-im/jabber.el||2022-06-01|Has expired: is marked as broken: fails to build: j
 x11-fm/Arqiver|x11-fm/arqiver|2022-06-01|Convert PORTNATE to lowercase
 net/py-suds-community|net/py-suds|2022-06-03|Remove obsoleted port. Use net/py-suds instead
 net/py-suds-jurko|net/py-suds|2022-06-03|Remove obsoleted port. Use net/py-suds instead
+www/rubygem-faraday110|www/rubygem-faraday|2022-06-03|Obsolete, please use www/rubygem-faraday instead
