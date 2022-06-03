@@ -33,6 +33,7 @@ USE_GNOME=	intlhack pygobject3
 
 CONFIGURE_ARGS=	--without-udev-rules \
 		--without-systemdsystemunitdir
+NO_ARCH=	yes
 
 PLIST_SUB=	PYTHON_VER=${PYTHON_VERSION:S/python//}
 
