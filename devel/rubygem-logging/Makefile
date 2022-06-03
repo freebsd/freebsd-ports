@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
 
 PORTNAME=	logging
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
