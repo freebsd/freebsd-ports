@@ -19,11 +19,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typed-ast>=1.4.0<2:devel/py-typed-ast@${PY_FLAVOR}
 
-USES=		python:3.5+ pytest
-USE_PYTHON=	autoplist concurrent distutils
-PYTEST_BROKEN_TESTS=test_c_unit_test  # https://github.com/python/mypy/issues/12634
+USES=		python:3.5+
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
+PYTEST_BROKEN_TESTS=test_c_unit_test  # https://github.com/python/mypy/issues/12634
 
 OPTIONS_DEFINE=	DMYPY REPORTS
 OPTIONS_DEFAULT=DMYPY REPORTS
