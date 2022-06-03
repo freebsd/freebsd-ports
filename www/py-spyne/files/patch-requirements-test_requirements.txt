@@ -1,0 +1,10 @@
+--- requirements/test_requirements.txt.orig	2022-01-31 10:57:30 UTC
++++ requirements/test_requirements.txt
+@@ -18,6 +18,6 @@ python-subunit
+ pyramid
+ tox
+ pyparsing>=2.0.2
+-suds-community
++suds
+ zeep
+ pandas
