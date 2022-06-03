@@ -2,6 +2,7 @@
 
 PORTNAME=	gapic-common
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ COMMENT=	Common code for GAPIC-generated API clients
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-faraday>=1.3<2:www/rubygem-faraday \
+RUN_DEPENDS=	rubygem-faraday1>=1.3<2:www/rubygem-faraday1 \
 		rubygem-google-protobuf>=3.14<4:devel/rubygem-google-protobuf \
 		rubygem-googleapis-common-protos>=1.3.11<2.0:devel/rubygem-googleapis-common-protos \
 		rubygem-googleapis-common-protos-types>=1.0.6<2.0:devel/rubygem-googleapis-common-protos-types \
