@@ -104,8 +104,8 @@
     SUBDIR += gtkterm2
     SUBDIR += guake
     SUBDIR += gxkb
-    SUBDIR += havoc
     SUBDIR += hamclock
+    SUBDIR += havoc
     SUBDIR += hhpc
     SUBDIR += hs-xmobar
     SUBDIR += hsetroot
