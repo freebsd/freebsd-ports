@@ -21,13 +21,7 @@ TEST_DEPENDS=	p5-Test2-Suite>=0.000130:devel/p5-Test2-Suite
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503200
-RUN_DEPENDS+=	p5-Test-Simple>=1.302166:devel/p5-Test-Simple
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Test2/Plugin/Cover/Cover.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
