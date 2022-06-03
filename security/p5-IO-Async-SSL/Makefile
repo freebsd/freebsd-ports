@@ -1,7 +1,7 @@
 # Created by: <ports@c0decafe.net>
 
 PORTNAME=	IO-Async-SSL
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
