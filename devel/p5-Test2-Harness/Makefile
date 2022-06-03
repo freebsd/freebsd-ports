@@ -51,11 +51,4 @@ RECOMMENDED_RUN_DEPENDS=p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS \
 			p5-Test2-Plugin-DBIProfile>=0.002002:devel/p5-Test2-Plugin-DBIProfile \
 			p5-Test2-Plugin-IOEvents>=0.001001:devel/p5-Test2-Plugin-IOEvents
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503200
-BUILD_DEPENDS+=	p5-Test-Simple>=1.302170:devel/p5-Test-Simple
-RUN_DEPENDS+=	p5-Test-Simple>=1.302170:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
