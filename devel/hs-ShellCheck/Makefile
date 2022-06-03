@@ -1,6 +1,6 @@
 PORTNAME=	ShellCheck
 DISTVERSION=	0.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -31,10 +31,10 @@ USE_CABAL=	Diff-0.4.1 \
 		indexed-traversable-0.1.2_1 \
 		indexed-traversable-instances-0.1.1 \
 		integer-logarithms-1.0.3.1_2 \
-		primitive-0.7.3.0 \
+		primitive-0.7.4.0 \
 		random-1.2.1.1 \
-		regex-base-0.94.0.2 \
-		regex-tdfa-1.3.1.2 \
+		regex-base-0.94.0.2_1 \
+		regex-tdfa-1.3.1.2_1 \
 		scientific-0.3.7.0_2 \
 		semialign-1.2.0.1_1 \
 		semigroupoids-5.3.7 \
@@ -48,7 +48,7 @@ USE_CABAL=	Diff-0.4.1 \
 		transformers-compat-0.7.1_1 \
 		unordered-containers-0.2.19.1 \
 		uuid-types-1.0.5_2 \
-		vector-0.12.3.1_1 \
+		vector-0.12.3.1_2 \
 		witherable-0.4.2_2
 
 EXECUTABLES=	shellcheck
