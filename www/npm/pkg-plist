@@ -289,6 +289,7 @@ lib/node_modules/npm/lib/utils/timers.js
 lib/node_modules/npm/lib/utils/update-notifier.js
 lib/node_modules/npm/lib/utils/validate-lockfile.js
 lib/node_modules/npm/lib/workspaces/get-workspaces.js
+lib/node_modules/npm/lib/workspaces/update-workspaces.js
 lib/node_modules/npm/man/man1/npm-access.1.gz
 lib/node_modules/npm/man/man1/npm-adduser.1.gz
 lib/node_modules/npm/man/man1/npm-audit.1.gz
@@ -1131,6 +1132,7 @@ lib/node_modules/npm/node_modules/make-fetch-happen/lib/dns.js
 lib/node_modules/npm/node_modules/make-fetch-happen/lib/fetch.js
 lib/node_modules/npm/node_modules/make-fetch-happen/lib/index.js
 lib/node_modules/npm/node_modules/make-fetch-happen/lib/options.js
+lib/node_modules/npm/node_modules/make-fetch-happen/lib/pipeline.js
 lib/node_modules/npm/node_modules/make-fetch-happen/lib/remote.js
 lib/node_modules/npm/node_modules/make-fetch-happen/package.json
 lib/node_modules/npm/node_modules/minimatch/LICENSE
