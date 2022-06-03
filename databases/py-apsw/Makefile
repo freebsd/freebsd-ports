@@ -16,7 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	sqlite3>=${PORTVERSION:R},1:databases/sqlite3
 
 USES=		localbase python:3.7+ sqlite:3 zip
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils unittest
+
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 OPTIONS_DEFINE=	EXTENSION
 OPTIONS_DEFAULT=EXTENSION
@@ -27,8 +29,5 @@ EXTENSION_VARS_OFF=	PYDISTUTILS_BUILDARGS+=--omit=load_extension
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
-do-test:
-	cd ${WRKSRC}/ && ${PYTHON_CMD} setup.py test
 
 .include <bsd.port.mk>
