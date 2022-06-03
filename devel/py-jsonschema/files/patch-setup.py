@@ -1,9 +1,12 @@
---- setup.py.orig	2021-10-29 19:19:35 UTC
+--- setup.py.orig	2022-06-03 09:53:13 UTC
 +++ setup.py
-@@ -0,0 +1,6 @@
+@@ -0,0 +1,9 @@
 +#!/usr/bin/env python
 +
 +import setuptools
 +
 +if __name__ == "__main__":
-+    setuptools.setup()
++    setuptools.setup(
++        packages=['jsonschema'],
++        use_scm_version=True,
++    )
