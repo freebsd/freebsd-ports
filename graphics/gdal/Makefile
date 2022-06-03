@@ -48,7 +48,7 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
 		--without-libtool \
 		${ICONV_CONFIGURE_ARG}
 GNU_CONFIGURE=	yes
-LDFLAGS+=	${ICONV_LIB}
+LDFLAGS+=	-L${WRKSRC} ${ICONV_LIB}
 MAKEFILE=	GNUmakefile
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
