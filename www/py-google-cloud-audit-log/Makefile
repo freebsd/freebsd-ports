@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-audit-log
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,8 @@ COMMENT=	Google Cloud Audit Protos
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}googleapis-common-protos>=1.52.0:devel/py-googleapis-common-protos@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=3.6.0,1:devel/py-protobuf@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}googleapis-common-protos>=1.56.2<2.0:devel/py-googleapis-common-protos@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=3.6.0,1<4.0.0,1:devel/py-protobuf@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
