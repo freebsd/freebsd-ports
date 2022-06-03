@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	rssguard
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.3
 CATEGORIES=	net www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -24,6 +24,10 @@ OPTIONS_DEFAULT_i386=	WEBENGINE
 WEBENGINE_DESC=	Use QtWebEngine module for internal web browser
 WEBENGINE_USE=	QT=location,printsupport,webchannel,webengine
 WEBENGINE_CMAKE_OFF=	-DUSE_WEBENGINE:BOOL=OFF
+
+post-patch:
+	@${REINPLACE_CMD} -e '60s,m_volume,static_cast<qreal>(&) / 100,' \
+		${WRKSRC}/src/librssguard/miscellaneous/notification.cpp
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librssguard.so
