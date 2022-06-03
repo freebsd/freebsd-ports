@@ -22,6 +22,8 @@ RUN_DEPENDS=	p5-Alien-Build>0:devel/p5-Alien-Build
 USES=		perl5
 USE_PERL5=	modbuild
 
+NO_ARCH=	yes
+
 post-extract:
 	${RM} ${WRKSRC}/gumbo-0.10.1.tar.gz
 
