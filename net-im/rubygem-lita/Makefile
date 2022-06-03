@@ -2,6 +2,7 @@
 
 PORTNAME=	lita
 PORTVERSION=	4.8.0
+PORTREVISION=	1
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	redis>=0:databases/redis \
 		rubygem-bundler>=2.0:sysutils/rubygem-bundler \
-		rubygem-faraday>=1.0:www/rubygem-faraday \
+		rubygem-faraday1>=1.0:www/rubygem-faraday1 \
 		rubygem-http_router>=0.11:www/rubygem-http_router \
 		rubygem-i18n>=1.8,2:devel/rubygem-i18n \
 		rubygem-ice_nine>=0.11:devel/rubygem-ice_nine \
