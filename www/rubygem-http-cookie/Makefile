@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	http-cookie
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
