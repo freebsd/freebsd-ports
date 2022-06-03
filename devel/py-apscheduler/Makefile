@@ -24,14 +24,6 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 TEST_ENV=	${MAKE_ENV} TZ=UTC
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/ --cov//' ${WRKSRC}/${PYSETUP:R}.cfg
-	@${REINPLACE_CMD} -e 's/set_level/setLevel/' \
-		-e 's/\.records/&()/' \
-		-e '/records/s/== 1/== 2/' \
-		-e '/message/s/\[0]./[1]./' \
-		${WRKSRC}/tests/test_schedulers.py
-
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
