@@ -481,8 +481,6 @@
 %%WWWDIR%%/includes/vendor/rmccue/requests/README.md
 %%WWWDIR%%/includes/vendor/rmccue/requests/certificates/cacert.pem
 %%WWWDIR%%/includes/vendor/rmccue/requests/certificates/cacert.pem.sha256
-%%WWWDIR%%/includes/vendor/rmccue/requests/certificates/etag-cert.txt
-%%WWWDIR%%/includes/vendor/rmccue/requests/certificates/etag-sha.txt
 %%WWWDIR%%/includes/vendor/rmccue/requests/library/Deprecated.php
 %%WWWDIR%%/includes/vendor/rmccue/requests/library/README.md
 %%WWWDIR%%/includes/vendor/rmccue/requests/library/Requests.php
