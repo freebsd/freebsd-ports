@@ -1,11 +1,11 @@
 PORTNAME=	wayfire-plugins-extra
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	a8eca14c44b9.patch:-p1 # https://github.com/WayfireWM/wayfire-plugins-extra/pull/106
+PATCHFILES+=	cf95ac721fb1.patch:-p1 # https://github.com/WayfireWM/wayfire-plugins-extra/pull/127
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Additional plugins for Wayfire

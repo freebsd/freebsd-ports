@@ -5,5 +5,5 @@ SHA256 (damianatorrpm-wayfire-plugin_dbus_interface-c705bf1_GH0.tar.gz) = 1eef14
 SIZE (damianatorrpm-wayfire-plugin_dbus_interface-c705bf1_GH0.tar.gz) = 30095
 SHA256 (wayfireplugins-windecor-6ad31bfc10c5d39c0da7c68fa435064effad6381_GL0.tar.gz) = d3c739481faad2abc4391f165ebcd52a8fde1b062038bdbefcc1540a2dbbeed2
 SIZE (wayfireplugins-windecor-6ad31bfc10c5d39c0da7c68fa435064effad6381_GL0.tar.gz) = 16547
-SHA256 (a8eca14c44b9.patch) = 99dd5f51ff2a27bbff2165ee80707ea3954c25c438bef5969f85bedcda410c7f
-SIZE (a8eca14c44b9.patch) = 1059
+SHA256 (cf95ac721fb1.patch) = 8f059e60e438c3ff9f0b62071b69f567895f399ab8b44f386189a1571e4e1616
+SIZE (cf95ac721fb1.patch) = 6562
