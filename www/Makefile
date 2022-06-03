@@ -1915,6 +1915,7 @@
     SUBDIR += rubygem-faraday-patron
     SUBDIR += rubygem-faraday-patron1
     SUBDIR += rubygem-faraday-rack
+    SUBDIR += rubygem-faraday-rack1
     SUBDIR += rubygem-faraday-retry
     SUBDIR += rubygem-faraday0
     SUBDIR += rubygem-faraday1
