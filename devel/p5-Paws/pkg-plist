@@ -6730,6 +6730,7 @@ bin/paws_make_testcase
 %%SITE_PERL%%/Paws/Credential/Explicit.pm
 %%SITE_PERL%%/Paws/Credential/File.pm
 %%SITE_PERL%%/Paws/Credential/InstanceProfile.pm
+%%SITE_PERL%%/Paws/Credential/InstanceProfileV2.pm
 %%SITE_PERL%%/Paws/Credential/None.pm
 %%SITE_PERL%%/Paws/Credential/ProviderChain.pm
 %%SITE_PERL%%/Paws/Credential/STS.pm
@@ -36021,6 +36022,7 @@ bin/paws_make_testcase
 %%PERL5_MAN3%%/Paws::Credential::Explicit.3.gz
 %%PERL5_MAN3%%/Paws::Credential::File.3.gz
 %%PERL5_MAN3%%/Paws::Credential::InstanceProfile.3.gz
+%%PERL5_MAN3%%/Paws::Credential::InstanceProfileV2.3.gz
 %%PERL5_MAN3%%/Paws::Credential::None.3.gz
 %%PERL5_MAN3%%/Paws::Credential::ProviderChain.3.gz
 %%PERL5_MAN3%%/Paws::Credential::STS.3.gz
