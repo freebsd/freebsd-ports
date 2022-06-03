@@ -119,6 +119,18 @@
 #
 #	noegginfo	- Skip an egg-info entry from plist, if defined.
 #
+#	nose		- Run tests with nose (devel/py-nose)
+#
+#	nose2		- Run tests with nose2 (devel/py-nose2)
+#
+#	pytest		- Run tests with latest pytest (devel/py-pytest)
+#
+#	pytest4		- Run tests with pytest 4.x (devel/py-pytest4)
+#
+#	unittest	- Run tests with unittest
+#
+#	unittest2	- Run tests with unittest2 (devel/py-unittest2)
+#
 # PYTHON_CMD		- Python's command line file name, including the
 #			  version number (used for dependencies).
 #			  default: ${PYTHONBASE}/bin/${PYTHON_VERSION}
@@ -162,6 +174,14 @@
 # PYDISTUTILS_EGGINFO
 #			- Canonical name for egg-info.
 #			  default: ${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-py${PYTHON_VER}.egg-info
+#
+# PYTEST_BROKEN_TESTS	- Lists of 'pytest -k' patterns to skip tests which
+#			  require fixing.
+#			  default: <empty>
+#
+# PYTEST_IGNORED_TESTS	- Lists of 'pytest -k' patterns to skip tests which are
+#			  not expected to pass, e.g. requiring a database access.
+#			  default: <empty>
 #
 # The following variables can be read by ports and must not be modified:
 #
@@ -240,6 +260,13 @@
 # PYDISTUTILS_INSTALLNOSINGLE
 #			- Deprecated without replacement
 #
+# The following variables may be set by the user:
+#
+# PYTEST_ENABLE_ALL_TESTS	- Enable tests skipped by PYTEST_BROKEN_TESTS
+#				  and PYTEST_IGNORED_TESTS.
+# PYTEST_ENABLE_BROKEN_TESTS	- Enable tests skipped by PYTEST_BROKEN_TESTS.
+# PYTEST_ENABLE_IGNORED_TESTS	- Enable tests skipped by PYTEST_IGNORED_TESTS.
+#
 # MAINTAINER: python@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_PYTHON_MK)
@@ -255,8 +282,9 @@ _PYTHON_RELPORTDIR=		lang/python
 
 # List all valid USE_PYTHON features here
 _VALID_PYTHON_FEATURES=	allflavors autoplist concurrent cython cython_run \
-			distutils flavors noegginfo noflavors optsuffix \
-			py3kplist pythonprefix
+			distutils flavors noegginfo noflavors nose nose2 \
+			optsuffix py3kplist pytest pytest4 pythonprefix \
+			unittest unittest2
 _INVALID_PYTHON_FEATURES=
 .  for var in ${USE_PYTHON}
 .    if empty(_VALID_PYTHON_FEATURES:M${var})
@@ -271,6 +299,9 @@ IGNORE=	uses unknown USE_PYTHON features: ${_INVALID_PYTHON_FEATURES}
 .  for var in ${USE_PYTHON}
 _PYTHON_FEATURE_${var:C/=.*$//:tu}=	${var:C/.*=//:S/,/ /g}
 .  endfor
+.  if defined(_PYTHON_FEATURE_PYTEST) && defined(_PYTHON_FEATURE_PYTEST4)
+IGNORE=		uses either USE_PYTHON=pytest or USE_PYTHON=pytest4, not both of them
+.  endif
 
 # distutils automatically generates flavors depending on the supported
 # versions.
@@ -587,6 +618,42 @@ PYDISTUTILS_PKGVERSION?=${PORTVERSION}
 PYDISTUTILS_EGGINFO?=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-py${PYTHON_VER}.egg-info
 PYDISTUTILS_EGGINFODIR?=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
+# nose support
+.  if defined(_PYTHON_FEATURE_NOSE)
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
+.  endif
+
+# nose2 support
+.  if defined(_PYTHON_FEATURE_NOSE2)
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose2>=0:devel/py-nose2@${PY_FLAVOR}
+.  endif
+
+# pytest support
+.  if defined(_PYTHON_FEATURE_PYTEST)
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytest>=7,1:devel/py-pytest@${PY_FLAVOR}
+.  elif defined(_PYTHON_FEATURE_PYTEST4)
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pytest4>=4.6,1:devel/py-pytest4@${PY_FLAVOR}
+.  endif
+.  if defined(_PYTHON_FEATURE_PYTEST) || defined(_PYTHON_FEATURE_PYTEST4)
+PYTEST_BROKEN_TESTS?=	# empty
+PYTEST_IGNORED_TESTS?=	# empty
+_PYTEST_SKIPPED_TESTS?=	# empty
+.    if !defined(PYTEST_ENABLE_ALL_TESTS)
+.      if !defined(PYTEST_ENABLE_BROKEN_TESTS)
+_PYTEST_SKIPPED_TESTS+=	${PYTEST_BROKEN_TESTS}
+.      endif
+.      if !defined(PYTEST_ENABLE_IGNORED_TESTS)
+_PYTEST_SKIPPED_TESTS+=	${PYTEST_IGNORED_TESTS}
+.      endif
+.    endif # !defined(PYTEST_ENABLE_ALL_TESTS)
+_PYTEST_FILTER_EXPRESSION=	${_PYTEST_SKIPPED_TESTS:C/^(.)/and not \1/:tW:C/^and //}
+.  endif # defined(_PYTHON_FEATURE_PYTEST) || defined(_PYTHON_FEATURE_PYTEST4)
+
+# unittest2 support
+.  if defined(_PYTHON_FEATURE_UNITTEST2)
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unittest2>=0:devel/py-unittest2@${PY_FLAVOR}
+.  endif
+
 .  if !defined(_PYTHON_FEATURE_NOEGGINFO) && \
 	!defined(_PYTHON_FEATURE_AUTOPLIST) && \
 	defined(_PYTHON_FEATURE_DISTUTILS) && \
@@ -722,4 +789,40 @@ do-install:
 	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS})
 .    endif
 .  endif # defined(_PYTHON_FEATURE_DISTUTILS)
+
+.  if defined(_PYTHON_FEATURE_NOSE)
+.    if !target(do-test)
+do-test:
+	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m nose ${TEST_ARGS:NDESTDIR=*} -v
+.    endif
+.  endif # defined(_PYTHON_FEATURE_NOSE)
+
+.  if defined(_PYTHON_FEATURE_NOSE2)
+.    if !target(do-test)
+do-test:
+	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m nose2 ${TEST_ARGS:NDESTDIR=*} -v
+.    endif
+.  endif # defined(_PYTHON_FEATURE_NOSE2)
+
+.  if defined(_PYTHON_FEATURE_PYTEST) || defined(_PYTHON_FEATURE_PYTEST4)
+.    if !target(do-test)
+do-test:
+	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -k '${_PYTEST_FILTER_EXPRESSION}' -rs -v -o addopts= ${TEST_ARGS:NDESTDIR=*}
+.    endif
+.  endif # defined(_PYTHON_FEATURE_PYTEST) || defined(_PYTHON_FEATURE_PYTEST4)
+
+.  if defined(_PYTHON_FEATURE_UNITTEST)
+.    if !target(do-test)
+do-test:
+	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m unittest ${TEST_ARGS:NDESTDIR=*} -v
+.    endif
+.  endif # defined(_PYTHON_FEATURE_UNITTEST)
+
+.  if defined(_PYTHON_FEATURE_UNITTEST2)
+.    if !target(do-test)
+do-test:
+	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m unittest2 ${TEST_ARGS:NDESTDIR=*} -v
+.    endif
+.  endif # defined(_PYTHON_FEATURE_UNITTEST2)
+
 .endif # defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_PYTHON_POST_MK)
