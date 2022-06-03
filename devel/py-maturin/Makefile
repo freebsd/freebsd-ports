@@ -261,6 +261,9 @@ CARGO_BUILD_ARGS=	--no-default-features \
 			--features=upload,log,human-panic
 .endif
 
+post-patch:
+	@${RM} ${WRKSRC}/pyproject.toml
+
 # The binary is usually built via setup.py which uses different compiler flags.
 # That line is patched out there to use the compiler flags from the Ports
 # framework instead.  The setup.py is processed in the "do-build" target to
