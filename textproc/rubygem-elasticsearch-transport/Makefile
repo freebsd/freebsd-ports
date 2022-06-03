@@ -2,6 +2,7 @@
 
 PORTNAME=	elasticsearch-transport
 PORTVERSION=	7.17.1
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ COMMENT=	Ruby client for Elasticsearch
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-faraday>=1<2:www/rubygem-faraday \
+RUN_DEPENDS=	rubygem-faraday1>=1<2:www/rubygem-faraday1 \
 		rubygem-multi_json>=0:devel/rubygem-multi_json
 
 USES=		gem
