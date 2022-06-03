@@ -1,7 +1,7 @@
 # Created by: TAOKA Fumiyoshi
 
 PORTNAME=	h5py
-PORTVERSION=	3.6.0
+PORTVERSION=	3.7.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,18 +17,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.15:lang/cython@${PY_FLAVOR} \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.14.5,1:math/py-numpy@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0,1:devel/py-pytest@${PY_FLAVOR}
 
 USES=		localbase pkgconfig python:3.7+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cached-property>=0:devel/py-cached-property@${PY_FLAVOR}
-.endif
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
@@ -43,6 +37,6 @@ post-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py ${STAGEDIR}${EXAMPLESDIR}
 
 do-test:
-	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+	cd ${WRKSRC} && ${PYTHON_CMD} setup.py test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
