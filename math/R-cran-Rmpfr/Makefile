@@ -1,7 +1,7 @@
 # Created by: Jukka A. Ukkonen <jau@iki.fi>
 
 PORTNAME=	Rmpfr
-DISTVERSION=	0.8-7
+DISTVERSION=	0.8-8
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
