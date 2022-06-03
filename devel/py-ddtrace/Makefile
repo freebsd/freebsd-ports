@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	ddtrace
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.BSD3
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=4:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ddsketch>=2.0.1:devel/py-ddsketch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}protobuf>=3,1:devel/py-protobuf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}protobuf>=3,1<4,1:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>=5:devel/py-tenacity@${PY_FLAVOR}
 
 USES=		compiler:c11 python:3.6+
