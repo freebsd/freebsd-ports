@@ -43,3 +43,14 @@ share/metainfo/rpcs3.metainfo.xml
 %%DATADIR%%/Icons/ui/triangle.png
 %%DATADIR%%/git/README.md
 %%DATADIR%%/git/commits.lst
+%%DATADIR%%/test/dump_stack.elf
+%%DATADIR%%/test/gs_gcm_basic_triangle.elf
+%%DATADIR%%/test/gs_gcm_cube.elf
+%%DATADIR%%/test/gs_gcm_handle_system_cmd.elf
+%%DATADIR%%/test/gs_gcm_hello_world.elf
+%%DATADIR%%/test/gs_gcm_tetris.elf
+%%DATADIR%%/test/pad_test.elf
+%%DATADIR%%/test/ppu_thread.elf
+%%DATADIR%%/test/pspgame.elf
+%%DATADIR%%/test/rpcsp.elf
+%%DATADIR%%/test/spurs_test.self
