@@ -1643,6 +1643,7 @@
     SUBDIR += rubygem-css_parser
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-cucumber-gherkin
+    SUBDIR += rubygem-cucumber-gherkin23
     SUBDIR += rubygem-cucumber-html-formatter
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diff_match_patch
