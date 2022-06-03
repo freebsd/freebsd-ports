@@ -1,5 +1,6 @@
 PORTNAME=	edk2
 PORTVERSION=	g202202
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	uboot@FreeBSD.org
@@ -165,6 +166,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/Build/${PLAT_RESULT_VARS} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/${PLAT_FILENAME_VARS}
 .endif
 .if ${FLAVOR} == bhyve
+	${INSTALL_DATA} ${WRKDIR}/Build/${PLAT_RESULT_CODE} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/${PLAT_FILENAME}
 	# For backwards compatibility
 	${MKDIR} ${STAGEDIR}/${PREFIX}/share/uefi-firmware/
 	${RLN} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/${PLAT_FILENAME} ${STAGEDIR}/${PREFIX}/share/uefi-firmware/${PLAT_FILENAME}
