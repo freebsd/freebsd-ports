@@ -1,7 +1,7 @@
 # Created by: Anton Berezin <tobez@tobez.org>
 
 PORTNAME=	Email-Valid
-PORTVERSION=	1.202
+PORTVERSION=	1.203
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Mail-Tools>=0:mail/p5-Mail-Tools \
-		p5-Net-DNS>0:dns/p5-Net-DNS \
+		p5-Net-DNS>=0:dns/p5-Net-DNS \
 		p5-Net-Domain-TLD>=1.65:dns/p5-Net-Domain-TLD
 
 USES=		perl5
