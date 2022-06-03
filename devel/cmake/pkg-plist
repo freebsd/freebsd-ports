@@ -2557,6 +2557,7 @@ share/vim/vimfiles/syntax/cmake.vim
 %%DATADIR%%/Modules/Internal/CheckSourceCompiles.cmake
 %%DATADIR%%/Modules/Internal/CheckSourceRuns.cmake
 %%DATADIR%%/Modules/Internal/FeatureTesting.cmake
+%%DATADIR%%/Modules/Internal/HeaderpadWorkaround.cmake
 %%DATADIR%%/Modules/Internal/OSRelease/010-TryOldCentOS.cmake
 %%DATADIR%%/Modules/Internal/OSRelease/020-TryDebianVersion.cmake
 %%DATADIR%%/Modules/KDE3Macros.cmake
