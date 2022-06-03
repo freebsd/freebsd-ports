@@ -18,14 +18,4 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503100
-PLIST_SUB+=	EXE_FILES="@comment "
-post-patch:
-	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
-.else
-PLIST_SUB+=	EXE_FILES=""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
