@@ -1,7 +1,7 @@
 # Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
 
 PORTNAME=	Net-ARP
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 TEST_DEPENDS=	p5-Net-Pcap>=0:net/p5-Net-Pcap
 
-USES=		perl5 tar:tgz
+USES=		perl5
 USE_PERL5=	configure
 
 post-install:
