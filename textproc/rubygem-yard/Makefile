@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	yard
-PORTVERSION=	0.9.27
+PORTVERSION=	0.9.28
 CATEGORIES=	textproc devel rubygems
 MASTER_SITES=	RG
 
