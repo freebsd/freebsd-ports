@@ -1,7 +1,7 @@
 # Created by: Kurt Lidl <kurt.lidl@cello.com>
 
 PORTNAME=	Number-Tolerant
-PORTVERSION=	1.708
+PORTVERSION=	1.709
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Sub-Exporter>=0.950:devel/p5-Sub-Exporter
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
