@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Text-Table-Any
-PORTVERSION=	0.111
+PORTVERSION=	0.112
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,7 +36,7 @@ RECOMMENDED_BUILD_DEPENDS=	p5-Term-Table>=0:devel/p5-Term-Table \
 				p5-Text-Table-ASV>=0:textproc/p5-Text-Table-ASV \
 				p5-Text-Table-CSV>=0.022:textproc/p5-Text-Table-CSV \
 				p5-Text-Table-HTML>=0:textproc/p5-Text-Table-HTML \
-				p5-Text-Table-HTML-DataTables>=0.009:textproc/p5-Text-Table-HTML-DataTables \
+				p5-Text-Table-HTML-DataTables>=0.011:textproc/p5-Text-Table-HTML-DataTables \
 				p5-Text-Table-LTSV>=0:textproc/p5-Text-Table-LTSV \
 				p5-Text-Table-Manifold>=0:textproc/p5-Text-Table-Manifold \
 				p5-Text-Table-More>=0:textproc/p5-Text-Table-More \
@@ -62,7 +62,7 @@ RECOMMENDED_RUN_DEPENDS=	p5-Term-Table>=0:devel/p5-Term-Table \
 				p5-Text-Table-ASV>=0:textproc/p5-Text-Table-ASV \
 				p5-Text-Table-CSV>=0.022:textproc/p5-Text-Table-CSV \
 				p5-Text-Table-HTML>=0:textproc/p5-Text-Table-HTML \
-				p5-Text-Table-HTML-DataTables>=0.009:textproc/p5-Text-Table-HTML-DataTables \
+				p5-Text-Table-HTML-DataTables>=0.011:textproc/p5-Text-Table-HTML-DataTables \
 				p5-Text-Table-LTSV>=0:textproc/p5-Text-Table-LTSV \
 				p5-Text-Table-Manifold>=0:textproc/p5-Text-Table-Manifold \
 				p5-Text-Table-More>=0:textproc/p5-Text-Table-More \
