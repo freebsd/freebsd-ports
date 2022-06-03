@@ -14,14 +14,9 @@ LICENSE_NAME=	CNRI LICENSE AGREEMENT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
-
 USES=		python:3.3+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
-
-do-test:
-	cd ${WRKSRC}/ && ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>
