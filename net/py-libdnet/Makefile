@@ -1,5 +1,6 @@
 # Created by: thierry@pompo.net
 
+PORTREVISION=	4
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +15,10 @@ INSTALL_WRKSRC=	${WRKSRC}/python
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${NONEXISTENT}
 PLIST_FILES=	${PYTHON_SITELIBDIR}/dnet%%PYTHON_EXT_SUFFIX%%.so \
-		${PYTHON_SITELIBDIR}/dnet-${PORTVERSION}-py${PYTHON_VER}.egg-info
+		${PYTHON_SITELIBDIR}/dnet-${PORTVERSION}-py${PYTHON_VER}.egg-info/PKG-INFO \
+		${PYTHON_SITELIBDIR}/dnet-${PORTVERSION}-py${PYTHON_VER}.egg-info/SOURCES.txt \
+		${PYTHON_SITELIBDIR}/dnet-${PORTVERSION}-py${PYTHON_VER}.egg-info/dependency_links.txt \
+		${PYTHON_SITELIBDIR}/dnet-${PORTVERSION}-py${PYTHON_VER}.egg-info/top_level.txt
 
 LIBDNET_SLAVE=	yes
 
