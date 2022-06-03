@@ -23,10 +23,4 @@ TEST_DEPENDS=	p5-DBD-SQLite>=1.44:databases/p5-DBD-SQLite
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 503200
-RUN_DEPENDS+=	p5-Test-Simple>=1.302165:devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
