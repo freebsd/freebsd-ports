@@ -1,12 +1,10 @@
---- license_scout.gemspec.orig	2021-11-01 13:35:57 UTC
+--- license_scout.gemspec.orig	2022-06-03 21:47:42 UTC
 +++ license_scout.gemspec
-@@ -24,10 +24,10 @@ Gem::Specification.new do |s|
- 
+@@ -25,9 +25,9 @@ Gem::Specification.new do |s|
    if s.respond_to? :add_runtime_dependency then
      s.add_runtime_dependency(%q<ffi-yajl>.freeze, ["~> 2.2"])
--    s.add_runtime_dependency(%q<mixlib-shellout>.freeze, ["~> 2.2"])
+     s.add_runtime_dependency(%q<mixlib-shellout>.freeze, [">= 2.2", "< 4.0"])
 -    s.add_runtime_dependency(%q<toml-rb>.freeze, ["~> 1.0"])
-+    s.add_runtime_dependency(%q<mixlib-shellout>.freeze, [">= 2.2"])
 +    s.add_runtime_dependency(%q<toml-rb>.freeze, [">= 1.0"])
      s.add_runtime_dependency(%q<licensee>.freeze, ["~> 9.8"])
 -    s.add_runtime_dependency(%q<mixlib-config>.freeze, ["~> 2.2"])

@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	license_scout
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-ffi-yajl>=2.2<3:devel/rubygem-ffi-yajl \
 		rubygem-mixlib-cli>=0:devel/rubygem-mixlib-cli \
 		rubygem-mixlib-config>=2.2:devel/rubygem-mixlib-config \
 		rubygem-mixlib-log>=0:devel/rubygem-mixlib-log \
-		rubygem-mixlib-shellout>=2.2:devel/rubygem-mixlib-shellout \
+		rubygem-mixlib-shellout>=2.2<4.0:devel/rubygem-mixlib-shellout \
 		rubygem-terminal-table>=0:textproc/rubygem-terminal-table \
 		rubygem-toml-rb>=1.0:www/rubygem-toml-rb
 
