@@ -1,8 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	eclib
-PORTVERSION=	20210318
-PORTREVISION=	3
+PORTVERSION=	20210625
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -25,6 +24,7 @@ OPTIONS_DEFINE=	DOCS
 LIBS+=		"-lm"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-flint=${LOCALBASE} --with-boost=${LOCALBASE}
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
