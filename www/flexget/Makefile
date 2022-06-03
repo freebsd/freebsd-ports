@@ -38,21 +38,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy13>=1.3.10:databases/py-sqlalchemy
 		${PYTHON_PKGNAMEPREFIX}flask-restx>=0.5.1:www/py-flask-restx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.11:www/py-html5lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.20.0:www/py-requests@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.3:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}vcrpy>0:devel/py-vcrpy@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vcrpy>0:devel/py-vcrpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils pytest
 GH_PROJECT=	Flexget
 NO_ARCH=	yes
 
 post-extract:
 # Unlock dependencies' versions
 	@${MV} ${WRKSRC}/requirements.in ${WRKSRC}/requirements.txt
-
-do-test:
-	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.mk>
