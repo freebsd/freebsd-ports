@@ -1,8 +1,7 @@
 # Created by: sten@blinkenlights.nl
 
 PORTNAME=	recursor
-DISTVERSION=	4.6.2
-PORTREVISION=	1
+DISTVERSION=	4.7.0
 CATEGORIES=	dns
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -31,9 +30,9 @@ USE_RC_SUBR=	pdns-recursor
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/pdns \
+		--with-libsodium=no \
 		--without-net-snmp \
-		--without-systemd \
-		--with-libsodium=no
+		--without-systemd
 
 SUB_FILES=	pkg-message
 
