@@ -42,6 +42,7 @@ etc/bash_completion.d/gopass.sh
 %%PORTDOCS%%%%DOCSDIR%%/features.md
 %%PORTDOCS%%%%DOCSDIR%%/hacking.md
 %%PORTDOCS%%%%DOCSDIR%%/logo-small.png
+%%PORTDOCS%%%%DOCSDIR%%/logo.ico
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/logo.svg
 %%PORTDOCS%%%%DOCSDIR%%/releases.md
