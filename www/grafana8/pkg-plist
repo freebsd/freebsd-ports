@@ -182,6 +182,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/core/components/RolePicker/UserRolePicker.tsx
 %%DATADIR%%/public/app/core/components/RolePicker/ValueContainer.tsx
 %%DATADIR%%/public/app/core/components/RolePicker/api.ts
+%%DATADIR%%/public/app/core/components/RolePicker/constants.ts
 %%DATADIR%%/public/app/core/components/Select/DashboardPicker.tsx
 %%DATADIR%%/public/app/core/components/Select/FolderPicker.test.tsx
 %%DATADIR%%/public/app/core/components/Select/FolderPicker.tsx
@@ -476,6 +477,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/unified/components/EmptyArea.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/EmptyAreaWithCTA.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/Expression.tsx
+%%DATADIR%%/public/app/features/alerting/unified/components/NoAlertManagerWarning.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/PanelPluginsButtonGroup.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/RuleLocation.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/StateColoredText.tsx
@@ -618,7 +620,9 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/unified/components/silences/SilencesEditor.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/silences/SilencesFilter.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/silences/SilencesTable.tsx
+%%DATADIR%%/public/app/features/alerting/unified/hooks/useAlertManagerSourceName.test.tsx
 %%DATADIR%%/public/app/features/alerting/unified/hooks/useAlertManagerSourceName.ts
+%%DATADIR%%/public/app/features/alerting/unified/hooks/useAlertManagerSources.ts
 %%DATADIR%%/public/app/features/alerting/unified/hooks/useAlertQueriesStatus.ts
 %%DATADIR%%/public/app/features/alerting/unified/hooks/useCombinedRule.ts
 %%DATADIR%%/public/app/features/alerting/unified/hooks/useCombinedRuleNamespaces.test.ts
@@ -2099,11 +2103,13 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/__mocks__/datasource.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/__mocks__/errors.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/__mocks__/instanceSettings.ts
+%%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/__mocks__/panelData.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/__mocks__/query.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/__mocks__/query_ctrl.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/__mocks__/resourcePickerData.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/__mocks__/resourcePickerRows.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/__mocks__/sdk.ts
+%%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/__mocks__/utils.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/__mocks__/variables.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/azureMetadata/index.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/azureMetadata/locations.ts
@@ -2136,6 +2142,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/LogsQueryEditor/setQueryValue.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/LogsQueryEditor/useMigrations.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/AggregationField.tsx
+%%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/DimensionFields.test.tsx
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/DimensionFields.tsx
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/LegendFormatField.tsx
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/MetricNameField.tsx
@@ -2148,6 +2155,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/ResourceTypeField.tsx
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/TimeGrainField.tsx
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/TopField.tsx
+%%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/asyncDataHooks.test.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/dataHooks.test.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/dataHooks.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/MetricsQueryEditor/index.tsx
@@ -3252,8 +3260,6 @@ bin/grafana-server
 %%DATADIR%%/public/build/1523.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/1549.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/1549.%%GRAFANA_BUILDHASH%%.js.map
-%%DATADIR%%/public/build/1602.%%GRAFANA_BUILDHASH%%.js
-%%DATADIR%%/public/build/1602.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/1657.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/1657.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
 %%DATADIR%%/public/build/1657.%%GRAFANA_BUILDHASH%%.js.map
@@ -3464,6 +3470,8 @@ bin/grafana-server
 %%DATADIR%%/public/build/6791.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6847.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/6847.%%GRAFANA_BUILDHASH%%.js.map
+%%DATADIR%%/public/build/685.%%GRAFANA_BUILDHASH%%.js
+%%DATADIR%%/public/build/685.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/6892.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/6892.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
 %%DATADIR%%/public/build/6892.%%GRAFANA_BUILDHASH%%.js.map
@@ -3502,9 +3510,9 @@ bin/grafana-server
 %%DATADIR%%/public/build/7594.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/7594.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
 %%DATADIR%%/public/build/7594.%%GRAFANA_BUILDHASH%%.js.map
-%%DATADIR%%/public/build/7809.%%GRAFANA_BUILDHASH%%.js
-%%DATADIR%%/public/build/7809.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
-%%DATADIR%%/public/build/7809.%%GRAFANA_BUILDHASH%%.js.map
+%%DATADIR%%/public/build/7889.%%GRAFANA_BUILDHASH%%.js
+%%DATADIR%%/public/build/7889.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
+%%DATADIR%%/public/build/7889.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/7893.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/7893.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
 %%DATADIR%%/public/build/7893.%%GRAFANA_BUILDHASH%%.js.map
@@ -5508,6 +5516,7 @@ bin/grafana-server
 %%DATADIR%%/public/img/plugin-default-logo_dark.svg
 %%DATADIR%%/public/img/plugin-default-logo_light.svg
 %%DATADIR%%/public/img/plugins/appdynamics.svg
+%%DATADIR%%/public/img/plugins/azure-devops.png
 %%DATADIR%%/public/img/plugins/datadog.png
 %%DATADIR%%/public/img/plugins/dynatrace.png
 %%DATADIR%%/public/img/plugins/gitlab.svg
