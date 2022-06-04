@@ -36,6 +36,10 @@ EXAMPLES_USES=		ssl
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "aarch64"
+CONFIGURE_ARGS+=--disable-assembler
+.endif
+
 .if ${ARCH} == "sparc64"
 CONFIGURE_ENV+=	CCPIC=-fPIC
 .endif
