@@ -1,7 +1,7 @@
 # Created by: Andrea Cervesato <andrea@cervesato.it>
 
 PORTNAME=	mod_qos
-DISTVERSION=	11.70
+DISTVERSION=	11.72
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-qos
 DIST_SUBDIR=	apache2
@@ -11,10 +11,12 @@ COMMENT=	QoS for Apache
 
 LICENSE=	APACHE20
 
+LIB_DEPENDS=	libpcre.so:devel/pcre
+
 USES=		apache:2.2+
 
-AP_GENPLIST=	yes
 AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/apache2
 
