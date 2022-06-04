@@ -1,3 +1,45 @@
+  <vuln vid="f414d69f-e43d-11ec-9ea4-001b217b3468">
+    <topic>Gitlab -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.0.0</ge><lt>15.0.1</lt></range>
+	<range><ge>14.10.0</ge><lt>14.10.4</lt></range>
+	<range><ge>11.10.0</ge><lt>14.9.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/06/01/critical-security-release-gitlab-15-0-1-released/">
+	  <p>Account take over via SCIM email change</p>
+	  <p>Stored XSS in Jira integration</p>
+	  <p>Quick action commands susceptible to XSS</p>
+	  <p>IP allowlist bypass when using Trigger tokens</p>
+	  <p>IP allowlist bypass when using Project Deploy Tokens</p>
+	  <p>Improper authorization in the Interactive Web Terminal</p>
+	  <p>Subgroup member can list members of parent group</p>
+	  <p>Group member lock bypass</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1680</cvename>
+      <cvename>CVE-2022-1940</cvename>
+      <cvename>CVE-2022-1948</cvename>
+      <cvename>CVE-2022-1935</cvename>
+      <cvename>CVE-2022-1936</cvename>
+      <cvename>CVE-2022-1944</cvename>
+      <cvename>CVE-2022-1821</cvename>
+      <cvename>CVE-2022-1783</cvename>
+      <url>https://about.gitlab.com/releases/2022/06/01/critical-security-release-gitlab-15-0-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-06-01</discovery>
+      <entry>2022-06-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="204f1a7a-43df-412f-ad25-7dbe88f54fa4">
     <topic>zeek -- potential DoS vulnerabilty</topic>
     <affects>
