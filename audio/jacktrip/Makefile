@@ -1,6 +1,6 @@
 PORTNAME=	jacktrip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.3
+DISTVERSION=	1.6.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libjack.so:audio/jack
 
 USES=		compiler:c++11-lang gl pkgconfig qmake qt:5
-USE_QT=		core gui network widgets buildtools_build
+USE_QT=		core gui network networkauth qml quick svg widgets buildtools_build
 USE_GL=		gl
 
 USE_GITHUB=	yes
