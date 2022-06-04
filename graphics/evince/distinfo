@@ -1,5 +1,3 @@
-TIMESTAMP = 1650644917
-SHA256 (gnome/evince-42.2.tar.xz) = ff7f81f308cf8d4956ed97fb724a7e49448c214beeab998812ef9efbb38df8ae
-SIZE (gnome/evince-42.2.tar.xz) = 2854836
-SHA256 (gnome/1060b24d0516.patch) = 25e5df47c3e0f190244b55018d31f1adadc86c0c241b21e06199d656e36e778a
-SIZE (gnome/1060b24d0516.patch) = 1336
+TIMESTAMP = 1654311063
+SHA256 (gnome/evince-42.3.tar.xz) = 49aecf845c946c96db17ba89d75c8002c5ae8963f504a9b0626d12675914645e
+SIZE (gnome/evince-42.3.tar.xz) = 2856080
