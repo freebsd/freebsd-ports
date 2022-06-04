@@ -1,7 +1,6 @@
 PORTNAME=	fbthrift
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.03.28.00
-PORTREVISION=	2
+DISTVERSION=	2022.05.30.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,8 +25,6 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libunwind.so:devel/libunwind \
 		libwangle.so:net/wangle \
 		libzstd.so:archivers/zstd
-
-BROKEN=		error: implicit instantiation of undefined template 'std::basic_ofstream<char>'
 
 USES=		bison cmake compiler:c++17-lang ssl
 USE_GITHUB=	yes
