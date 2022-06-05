@@ -1,3 +1,43 @@
+  <vuln vid="a58f3fde-e4e0-11ec-8340-2d623369b8b5">
+    <topic>e2fsprogs -- out-of-bounds read/write vulnerability</topic>
+    <affects>
+      <package>
+	<name>e2fsprogs</name>
+	<range><lt>1.46.5_1</lt></range>
+      </package>
+      <package>
+	<name>e2fsprogs-nobootfsck</name>
+	<range><lt>1.46.5_1</lt></range>
+      </package>
+      <package>
+	<name>e2fsprogs-roothardlinks</name>
+	<range><lt>1.46.5_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nils Bars reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=2068113">
+	  <p>
+	    During the processing of [a specially fuzzed disk image], an
+	    out-of-bounds write is triggered and causes a segmentation fault
+	    (SIGSEGV).
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1304</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=2068113</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=2069726</url>
+      <url>https://lore.kernel.org/linux-ext4/20220421173148.20193-1-lczerner@redhat.com/T/#u</url>
+    </references>
+    <dates>
+      <discovery>2022-03-24</discovery>
+      <entry>2022-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f414d69f-e43d-11ec-9ea4-001b217b3468">
     <topic>Gitlab -- multiple vulnerabilities</topic>
     <affects>
