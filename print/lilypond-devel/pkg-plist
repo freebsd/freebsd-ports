@@ -268,7 +268,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/autochange.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/backend-library.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/bar-line.scm
-%%DATADIR%%/%%DISTVERSION%%/scm/lily/bezier-tools.scm
+%%DATADIR%%/%%DISTVERSION%%/scm/lily/breath.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/c++.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/chord-entry.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/chord-ignatzek-names.scm
@@ -351,7 +351,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/titling.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/to-xml.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/translation-functions.scm
-%%DATADIR%%/%%DISTVERSION%%/tex/texinfo-ja.tex
 %%DATADIR%%/%%DISTVERSION%%/vim/compiler/lilypond.vim
 %%DATADIR%%/%%DISTVERSION%%/vim/ftdetect/lilypond.vim
 %%DATADIR%%/%%DISTVERSION%%/vim/ftplugin/lilypond.vim

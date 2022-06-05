@@ -1,12 +1,12 @@
---- configure.orig	2021-11-28 13:46:28 UTC
+--- configure.orig	2022-05-20 13:40:50 UTC
 +++ configure
-@@ -8623,71 +8623,10 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
+@@ -8770,71 +8770,10 @@ test -n "$PKG_CONFIG" || PKG_CONFIG="no"
      if test $? -eq 0; then
          if test -n "0.9.0" -o -n ""; then
  
 -    r="`eval echo '$'"PKG_CONFIG"`"
--    { $as_echo "$as_me:${as_lineno-$LINENO}: checking $r version" >&5
--$as_echo_n "checking $r version... " >&6; }
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking $r version" >&5
+-printf %s "checking $r version... " >&6; }
 -    exe=`
 -    ## which doesn't work in ash, if /usr/bin/which isn't installed
 -    ## type -p doesn't work in ash
@@ -66,8 +66,8 @@
 -    }
 -    {printf "%.0f\n", $1*1000000 + $2*1000 + three}'
 -`
--    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ver" >&5
--$as_echo "$ver" >&6; }
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ver" >&5
+-printf "%s\n" "$ver" >&6; }
 -    if test "$num" -lt "$min"; then
 -
 +    if test ! $?; then

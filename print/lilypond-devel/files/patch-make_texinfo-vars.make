@@ -1,5 +1,5 @@
---- stepmake/stepmake/texinfo-vars.make.orig	2021-11-28 13:46:28 UTC
-+++ stepmake/stepmake/texinfo-vars.make
+--- make/texinfo-vars.make.orig	2022-05-20 13:40:50 UTC
++++ make/texinfo-vars.make
 @@ -3,7 +3,7 @@ TEXINFO_SOURCES = $(TEXI_FILES)
  
  TEXINFO_PAPERSIZE_OPTION= $(if $(findstring $(PAPERSIZE),a4),,-t @afourpaper)
