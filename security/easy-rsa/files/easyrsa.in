@@ -1,4 +1,0 @@
-#! /bin/sh
-: ${EASYRSA:="%%PREFIX%%/share/easy-rsa"}
-export EASYRSA
-exec "%%PREFIX%%/share/easy-rsa/easyrsa.real" "$@"

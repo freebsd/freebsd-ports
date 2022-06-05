@@ -1,5 +1,4 @@
 bin/easyrsa
 bin/easy-rsa
-%%DATADIR%%/easyrsa.real
 @sample %%DATADIR%%/openssl-easyrsa.cnf.example %%DATADIR%%/openssl-easyrsa.cnf
 %%DATADIR%%/vars.example

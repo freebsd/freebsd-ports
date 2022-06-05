@@ -1,0 +1,14 @@
+Isolate date -j -f ... + ... from locale.
+Filed upstream as Issue #591 <https://github.com/OpenVPN/easy-rsa/issues/591>
+
+--- easyrsa.orig	2022-05-19 01:53:50 UTC
++++ easyrsa
+@@ -3829,6 +3829,8 @@ VERSION_TEXT
+ NL='
+ '
+ 
++LC_TIME=C ; export LC_TIME ; unset LC_ALL
++
+ # Be secure with a restrictive umask
+ [ -z "$EASYRSA_NO_UMASK" ] && umask "${EASYRSA_UMASK:-077}"
+ 
