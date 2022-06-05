@@ -55,6 +55,11 @@ CFLAGS+=	-Wno-error=suggest-destructor-override
 CFLAGS+=	-Wno-error=suggest-override
 .endif
 
+# Fixes build failure for Clang 14.0.3
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400059 && ${CHOSEN_COMPILER_TYPE} == clang
+CFLAGS+=       -Wno-error=bitwise-instead-of-logical
+.endif
+
 # Prepare for Qt5-5.15
 CFLAGS+=	-Wno-deprecated
 
