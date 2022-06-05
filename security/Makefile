@@ -239,7 +239,6 @@
     SUBDIR += kdbxviewer
     SUBDIR += keepass
     SUBDIR += keepass-plugin-keepassrpc
-    SUBDIR += keepassx-devel
     SUBDIR += keepassxc
     SUBDIR += keybase
     SUBDIR += keychain
