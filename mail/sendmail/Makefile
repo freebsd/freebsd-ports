@@ -63,7 +63,7 @@ CYRUSLOOKUP_DESC=	Enable cyruslookup feature
 PICKY_HELO_CHECK_DESC=	Enable picky HELO check
 MILTER_DESC=		Enable milter support
 SMTPUTF8_DESC=		Enable unicode address support
-MTA_STS_DESC=		Emable MTA-STS support (option SOCKETMAP and TLS needed)
+MTA_STS_DESC=		Enable MTA-STS support (option SOCKETMAP and TLS needed)
 TLS_CERT_CHAIN_DESC=	Enable certificate chain file support (incompatibility)
 
 TLS_USES=	ssl
