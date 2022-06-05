@@ -11,6 +11,7 @@
     SUBDIR += cpipe
     SUBDIR += dbench
     SUBDIR += dbs
+    SUBDIR += ddosify
     SUBDIR += dhrystone
     SUBDIR += dkftpbench
     SUBDIR += fhourstones
