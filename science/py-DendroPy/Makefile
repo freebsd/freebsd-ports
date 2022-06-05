@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	DendroPy
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.2
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Phylogenetic computing library
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
-USE_PYTHON=	distutils py3kplist
+USES=		python:3.7+
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
