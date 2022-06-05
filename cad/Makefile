@@ -99,6 +99,7 @@
     SUBDIR += p5-Verilog-Perl
     SUBDIR += padring
     SUBDIR += pcb
+    SUBDIR += pcb-rnd
     SUBDIR += pdnmesh
     SUBDIR += py-cadquery
     SUBDIR += py-cq-editor
