@@ -15,4 +15,7 @@ MAKE_ARGS=	MAN= LOCALBASE=${LOCALBASE}
 
 PLIST_FILES=	bin/${PORTNAME}
 
+do-install:
+	${INSTALL_PROGRAM}  ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
 .include <bsd.port.mk>
