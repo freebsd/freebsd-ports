@@ -58,7 +58,7 @@ share/icons/hicolor/scalable/apps/org.remmina.Remmina-symbolic.svg
 share/icons/hicolor/scalable/apps/org.remmina.Remmina.svg
 share/icons/hicolor/scalable/emblems/org.remmina.Remmina-sftp-symbolic.svg
 share/icons/hicolor/scalable/emblems/org.remmina.Remmina-ssh-symbolic.svg
-share/icons/hicolor/scalable/emblems/org.remmina.Remmina-tool-symbolic.svg
+%%EXEC%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-tool-symbolic.svg
 %%RDP%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-rdp-symbolic.svg
 %%RDP%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-rdp-ssh-symbolic.svg
 %%SPICE%%share/icons/hicolor/scalable/emblems/org.remmina.Remmina-spice-ssh-symbolic.svg
