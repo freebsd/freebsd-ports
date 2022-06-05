@@ -1,0 +1,22 @@
+Fungw is a tiny, portable library written in C (C89) that manages
+dynamic function calls across different programming languages.  For
+this, fungw provides:
+
+ - a simplistic scalar data type abstraction, supporting the most common types
+ - semi-automatic conversion between data types
+ - contexts that can host objects; objects can host named functions
+ - a set of optional language bindings to the most popular scripting languages
+
+The main use of fungw is to provide the host application a framework
+where dynamic parts of the code (e.g. plugins) can register their calls,
+allowing app-plugin, plugin-app, and plugin-plugin calls.
+
+The second main use is doing all this in a language-agnostic way: any
+part of the code can be implemented in any of the numerous supported
+scripting languages (such as awk or lua).  The caller of a function
+doesn't need to know what language the function is implemented in.
+
+The main property of fungw is simplicity.  The only API between objects
+is the plain old function call mechanism.
+
+WWW: http://repo.hu/projects/fungw/
