@@ -75,6 +75,7 @@
     SUBDIR += librecad
     SUBDIR += libredwg
     SUBDIR += librepcb
+    SUBDIR += librnd
     SUBDIR += linux-eagle5
     SUBDIR += logisim
     SUBDIR += magic
