@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	flacon
-PORTVERSION=	8.2.0
+PORTVERSION=	9.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
@@ -12,7 +12,8 @@ LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libuchardet.so:textproc/uchardet
-TEST_DEPENDS=	mac:audio/mac ttaenc:audio/tta
+TEST_DEPENDS=	flac:audio/flac mac:audio/mac mediainfo:multimedia/mediainfo \
+		ttaenc:audio/tta wavpack:audio/wavpack
 
 USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:5
 USE_GITHUB=	yes
