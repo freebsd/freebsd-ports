@@ -1,8 +1,7 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	67.0.0
-PORTREVISION=	1
+PORTVERSION=	68.0.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -28,7 +27,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libgmp.so:math/gmp
 
 USES=		compiler:c++17-lang iconv localbase pkgconfig qmake:no_env qt:5 tar:xz
-USE_QT=		buildtools_build concurrent core linguisttools_build multimedia
+USE_QT=		buildtools_build concurrent core linguisttools_build multimedia svg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_PO4A=no
