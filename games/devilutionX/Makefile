@@ -1,5 +1,5 @@
 PORTNAME=	devilutionX
-DISTVERSION=	1.4
+DISTVERSION=	1.4.0
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/diasurgical/devilutionx-assets/releases/download/${DATA_VERSION}/:data
 DISTFILES=	devilutionx.mpq?tag=${DATA_VERSION}:data
@@ -18,6 +18,7 @@ USES=		cmake compiler:c++11-lang dos2unix gettext-tools pkgconfig sdl
 DOS2UNIX_GLOB=	*.cpp *.h CMakeLists.txt
 USE_GITHUB=	yes
 GH_ACCOUNT=	diasurgical
+GH_TAGNAME=	3779a811f176173a4e6450449355449cc3b5d484
 GH_TUPLE=	diasurgical:libsmackerdec:2997ee0e41e91bb723003bc09234be553b190e38:libsmackerdec/_deps/libsmackerdec-src \
 		brofield:simpleini:9b3ed7ec815997bc8c5b9edf140d6bde653e1458:simpleini/_deps/simpleini-src \
 		diasurgical:libmpq:0f10bd1600f406b13932bf5351ba713361262184:libmpq/_deps/libmpq-src
