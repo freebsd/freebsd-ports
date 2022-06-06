@@ -9,7 +9,7 @@ COMMENT=	Configure network and user when the system first boots
 
 LICENSE=	BSD3CLAUSE
 
-WRKSRC=		work/${PORTNAME}-${DISTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 
