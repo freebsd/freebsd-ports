@@ -109,6 +109,7 @@
     SUBDIR += confget
     SUBDIR += consul-template
     SUBDIR += cpp-peglib
+    SUBDIR += cpptoml
     SUBDIR += crex
     SUBDIR += crunch
     SUBDIR += cs-aspell
