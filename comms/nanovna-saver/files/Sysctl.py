@@ -1,4 +1,5 @@
 import re
+import os
 from ctypes import *
 from ctypes.util import find_library
 
@@ -15,9 +16,16 @@ def posix_sysctlbyname(name):
     return _mem.value
 
 def usb_vid_pid(name):
-    digit = (re.search(r'\d',name)).group()
-    result = (posix_sysctlbyname(b'dev.umodem.'+bytes(digit,'ascii')+b'.%pnpinfo')).decode('ascii')
-    items=result.split(' ')
-    vendor=int(items[0].split('=')[1],0)
-    product=int(items[1].split('=')[1],0)
-    return([vendor,product])
+    dev = bytes(name[8:],'ascii')
+    for i in range(len(os.listdir('/dev/usb'))):
+        try:
+            found_dev = posix_sysctlbyname(b'dev.umodem.'+bytes(str(i),'ascii')+b'.ttyname')
+            if dev == found_dev:
+                result = (posix_sysctlbyname(b'dev.umodem.'+bytes(str(i),'ascii')+b'.%pnpinfo')).decode('ascii')
+                items=result.split(' ')
+                vendor=int(items[0].split('=')[1],0)
+                product=int(items[1].split('=')[1],0)
+                return([vendor,product])
+        except:
+            pass
+    return [-1,-1]
