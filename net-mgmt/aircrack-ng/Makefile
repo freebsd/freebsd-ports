@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 BROKEN_aarch64=		fails to configure: _AX_COMPILER_VERSION_GNU unknown gcc major
 BROKEN_armv6=		fails to configure: _AX_COMPILER_VERSION_GNU unknown gcc major
 BROKEN_armv7=		fails to configure: _AX_COMPILER_VERSION_GNU unknown gcc major
+BROKEN_i386=		fails to configure: _AX_COMPILER_VERSION_GNU unknown gcc major
 
 USES=		autoreconf cpe dos2unix gmake libtool pkgconfig
 USE_GCC=	yes
