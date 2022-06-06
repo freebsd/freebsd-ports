@@ -75,6 +75,8 @@ share/ktexteditor_snippets/data/RKWardRMd.xml
 %%NLS%%share/locale/tr/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/rkward.mo
 share/metainfo/org.kde.rkward.appdata.xml
+share/mime/packages/vnd.kde.rkward-output.xml
+share/mime/packages/vnd.kde.rmarkdown.xml
 share/mime/packages/vnd.rkward.r.xml
 share/org.kde.syntax-highlighting/syntax/rkward.xml
 %%DATADIR%%/00saveload/import/convert_encoding.js
@@ -82,6 +84,9 @@ share/org.kde.syntax-highlighting/syntax/rkward.xml
 %%DATADIR%%/00saveload/import/import_csv.js
 %%DATADIR%%/00saveload/import/import_csv.rkh
 %%DATADIR%%/00saveload/import/import_csv.xml
+%%DATADIR%%/00saveload/import/import_generic_rio.js
+%%DATADIR%%/00saveload/import/import_generic_rio.rkh
+%%DATADIR%%/00saveload/import/import_generic_rio.xml
 %%DATADIR%%/00saveload/import/import_spss.js
 %%DATADIR%%/00saveload/import/import_spss.rkh
 %%DATADIR%%/00saveload/import/import_spss.xml
@@ -462,6 +467,7 @@ share/org.kde.syntax-highlighting/syntax/rkward.xml
 %%DATADIR%%/distributions/wilcoxon.rkh
 %%DATADIR%%/distributions/wilcoxon.xml
 %%DATADIR%%/embedded.pluginmap
+%%DATADIR%%/icons/64-apps-rkward.png
 %%DATADIR%%/icons/data-factor.png
 %%DATADIR%%/icons/data-logical.png
 %%DATADIR%%/icons/data-numeric.png
@@ -479,6 +485,9 @@ share/org.kde.syntax-highlighting/syntax/rkward.xml
 %%DATADIR%%/icons/window_back.png
 %%DATADIR%%/icons/window_forward.png
 %%DATADIR%%/import_export.pluginmap
+%%DATADIR%%/internal/Installfromgit.js
+%%DATADIR%%/internal/Installfromgit.rkh
+%%DATADIR%%/internal/Installfromgit.xml
 %%DATADIR%%/irt.pluginmap
 %%DATADIR%%/menu.pluginmap
 %%DATADIR%%/pages/rkward_addons.rkh
@@ -681,11 +690,14 @@ share/org.kde.syntax-highlighting/syntax/rkward.xml
 %%DATADIR%%/po/pt_BR/LC_MESSAGES/rkward__item_response_theory.mo
 %%DATADIR%%/po/pt_BR/LC_MESSAGES/rkward__pages.mo
 %%DATADIR%%/po/pt_BR/LC_MESSAGES/rkward__plots.mo
+%%DATADIR%%/po/sl/LC_MESSAGES/rkward__analysis.mo
 %%DATADIR%%/po/sl/LC_MESSAGES/rkward__data.mo
 %%DATADIR%%/po/sl/LC_MESSAGES/rkward__distributions.mo
 %%DATADIR%%/po/sl/LC_MESSAGES/rkward__embedded.mo
 %%DATADIR%%/po/sl/LC_MESSAGES/rkward__graphics_device.mo
 %%DATADIR%%/po/sl/LC_MESSAGES/rkward__import_export.mo
+%%DATADIR%%/po/sl/LC_MESSAGES/rkward__item_response_theory.mo
+%%DATADIR%%/po/sl/LC_MESSAGES/rkward__pages.mo
 %%DATADIR%%/po/sl/LC_MESSAGES/rkward__plots.mo
 %%DATADIR%%/po/sv/LC_MESSAGES/rkward__analysis.mo
 %%DATADIR%%/po/sv/LC_MESSAGES/rkward__data.mo

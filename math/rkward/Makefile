@@ -1,9 +1,9 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	rkward
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	math
-MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION:C/b//}/src
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	IDE/GUI for the R-project
@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libR.so:math/R
 RUN_DEPENDS=	kbibtex:databases/kbibtex	\
+		pandoc:textproc/hs-pandoc	\
 		${LR_MOD_DIR}/R2HTML/INDEX:textproc/R-cran-R2HTML	\
 		${LR_MOD_DIR}/rmarkdown/INDEX:textproc/R-cran-rmarkdown
 TEST_DEPENDS=	${LR_MOD_DIR}/FAdist/INDEX:science/R-cran-FAdist
@@ -21,7 +22,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext fortran	\
 USE_QT=		buildtools concurrent core dbus declarative gui location	\
 		network printsupport qmake script webchannel webengine webkit	\
 		widgets xml
-USE_XORG=	x11
+USE_XORG=	ice x11 xext
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets coreaddons\
 		crash doctools ecm i18n itemviews jobwidgets kate_run kdewebkit kio	\
 		notifications parts service solid sonnet syntaxhighlighting texteditor	\
