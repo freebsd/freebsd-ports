@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-6.el7
 PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	System call tracer (CentOS ${LINUX_DIST_VER})
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libdw.so.1:devel/linux-c7-elfutils-libs
