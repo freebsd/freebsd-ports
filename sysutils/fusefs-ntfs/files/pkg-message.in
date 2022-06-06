@@ -1,12 +1,13 @@
 [
 { type: install
   message: <<EOM
-NTFS-3G has been installed, for information, known issues and how to report
-bugs see the FreeBSD README:
+NTFS-3G has been installed.  It requires fusefs(5) support to operate,
+so issue the ``kldload fusefs'' command or ``sysrc kld_list+=fusefs''
+to make it load automatically when the system starts.
 
-%%DOCSDIR%%/README.FreeBSD
-
-Also see the official README (but has some Linux specific parts).
+For further information, implementation details, and known issues see
+the FreeBSD README (%%DOCSDIR%%/README.FreeBSD) in
+addition to the official README (contains some Linux-specific parts).
 EOM
 }
 ]

@@ -7,20 +7,18 @@ NTFS-3G README for the FreeBSD port
 3. Mounting at startup with /etc/fstab
 4. Ublio configuration
 5. Known issues
-6. Reporting bugs
 
 ==============================================================================
 1. Introduction
 ==============================================================================
 
 The NTFS-3G project provides a read/write filesystem driver for NTFS. It uses
-the FUSE library (a OS independent library to create filesystem drivers), more
-precisely FUSE's library with fuse4bsd's kernel module (port of the kernel
-dependent part of FUSE). For more information see:
+the FUSE library (an OS-independent library to create filesystem drivers) and
+FreeBSD fusefs(5) kernel module (port of the kernel-dependent part of FUSE).
+For more information see:
 
-NTFS-3G site:	http://www.tuxera.com/community/ntfs-3g-download/
-FUSE site:	http://fuse.sourceforge.net/
-fuse4bsd site:	http://fuse4bsd.creo.hu/
+NTFS-3G site:	https://github.com/tuxera/ntfs-3g
+FUSE site:	https://github.com/libfuse/libfuse
 
 ==============================================================================
 2. Port specific notes
@@ -45,7 +43,9 @@ and reduces disk load.
 
 To mount at startup you need to have the following line in /boot/loader.conf:
 
-fuse_load="YES"
+  fusefs_load="YES"
+
+or have "fusefs" added to the "kld_list" in the /etc/rc.conf.
 
 Then create the following symlink:
 
@@ -120,30 +120,7 @@ operations on different files sometimes the former one fails: read(2) returns
 kernel implementation in Linux and FreeBSD, and is being worked on. An example
 scenario would be playing a song in XMMS, while building many ports, which
 could cause XMMS skip the song. Another observed problem is the current
-directory not being found, but entering again would work. The details are
-described in fuse4bsd (sysutils/fusefs-kmod) documentation (Linux access is
-path based while FreeBSD is vnode based, which may be reused).
-
-==============================================================================
-6. Reporting bugs
-==============================================================================
-
-About the port itself, you can ask the maintainer (preferable) and/or in the
-ports@FreeBSD.org mailing list.
-
-About general NTFS problems (corruptions, etc) ask in the NTFS-3G forum (see
-below).
-
-But often (even on Linux, 50% of the issues are related to these) the problems
-reside on the FUSE implementation (the library itself, or fuse4bsd portion).
-
-For reporting kernel panics, see:
-
-http://fuse.sourceforge.net/wiki/index.php/DebugFreeBSDPanicsHowto
-
-And you can report them to the fuse4bsd author (preferable), or here:
-
-NTFS-3G forum:	http://forum.ntfs-3g.org/
-FreeBSD PRs:	http://www.freebsd.org/send-pr.html
+directory not being found, but entering again would work (Linux access is
+path-based while FreeBSD is vnode-based, which may be reused).
 
 ==============================================================================
