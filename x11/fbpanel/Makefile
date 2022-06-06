@@ -6,7 +6,7 @@ PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, NETWM compliant X11 desktop panel
 
 LICENSE=	MIT

@@ -6,7 +6,7 @@ PORTREVISION=	2
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prometheus exporter for endpoints over HTTP(S), DNS, TCP and ICMP
 
 LICENSE=	APACHE20

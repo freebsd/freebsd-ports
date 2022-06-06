@@ -5,7 +5,7 @@ PORTVERSION=	20150123
 CATEGORIES=	science
 PKGNAMEPREFIX=	sigrok-
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sigrok firmware
 
 RUN_DEPENDS=	parseelf.py:science/sigrok-firmware-utils \

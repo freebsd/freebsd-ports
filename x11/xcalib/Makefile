@@ -5,7 +5,7 @@ PORTVERSION=	0.10
 PORTREVISION=	0
 CATEGORIES=	x11 graphics
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for X11 display calibration with ICC profiles
 
 LICENSE=	GPLv2+

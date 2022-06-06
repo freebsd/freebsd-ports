@@ -6,7 +6,7 @@ CATEGORIES=	mail
 MASTER_SITES=	LOCAL/bsam
 DISTNAME=	imap_tools_V${PORTVERSION}
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools and scripts to use with IMAP servers
 
 LICENSE=	ISCL

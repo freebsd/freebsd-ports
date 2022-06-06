@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}-printing2009-${PORTVERSION}
 
 COMMENT=	CMYK ICC profiles for ISO Printing conditions (ISO 12647-2)
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes

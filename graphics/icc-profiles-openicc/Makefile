@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openicc/OpenICC-Profiles
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color data for color managed applications
 
 LICENSE=	ZLIB

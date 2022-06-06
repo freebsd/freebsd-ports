@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	sigrok-
 PKGNAMESUFFIX=	-fx2lafw
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-bin-${PORTVERSION}
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cypress FX2 firmware for hardware logic analyzers
 
 LICENSE=	GPLv2

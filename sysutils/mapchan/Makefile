@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils converters
 MASTER_SITES=	SF
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transform the input and output of a terminal (SCO Unix alike)
 
 LICENSE=	GPLv2

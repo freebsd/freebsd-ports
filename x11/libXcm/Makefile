@@ -2,7 +2,7 @@ PORTNAME=	libXcm
 PORTVERSION=	0.5.4
 CATEGORIES=	x11
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Colour Management Library
 
 LICENSE=	MIT

@@ -3,7 +3,7 @@ PORTVERSION=	0.9.6
 PORTREVISION=	14
 CATEGORIES=	graphics
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colour Management System (CMS)
 
 LICENSE=	BSD3CLAUSE

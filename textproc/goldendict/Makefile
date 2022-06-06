@@ -4,7 +4,7 @@ PORTNAME=	goldendict
 DISTVERSION=	1.5.0-g20210115
 CATEGORIES=	textproc
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Feature-rich dictionary lookup program
 
 LICENSE=	GPLv3+

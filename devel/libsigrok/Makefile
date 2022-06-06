@@ -5,7 +5,7 @@ PORTVERSION=	0.5.2
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libsigrok/
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for hardware logic analyzers, core library
 
 LICENSE=	GPLv3+
