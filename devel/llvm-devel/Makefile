@@ -41,7 +41,6 @@ SHEBANG_FILES=	\
 		clang/tools/scan-build-py/libexec/analyze-c++ \
 		clang/tools/scan-build-py/libexec/intercept-cc \
 		clang/tools/scan-build-py/libexec/intercept-c++ \
-		flang/tools/f18/flang \
 		llvm/tools/opt-viewer/optrecord.py \
 		llvm/tools/opt-viewer/opt-diff.py \
 		llvm/tools/opt-viewer/opt-stats.py \

@@ -110,6 +110,7 @@ FLANG_COMMANDS=	\
 		fir-opt \
 		flang \
 		flang-new \
+		flang-to-external-fc \
 		tco
 
 LIT_COMMANDS=	\
