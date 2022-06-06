@@ -4,7 +4,7 @@ PORTNAME=	doctrine
 PORTVERSION=	20130618
 CATEGORIES=	devel www pear
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
 
 PEAR_CHANNEL_HOST=	pear.doctrine-project.org

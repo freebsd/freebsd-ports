@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://download.freenas.org/distfiles/
 DISTNAME=	CLI-FreeBSD-3.6-1-120913
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HighPoint storage controllers management CLI
 
 # Converted from RESTRICTED

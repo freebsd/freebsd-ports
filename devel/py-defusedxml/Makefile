@@ -6,7 +6,7 @@ CATEGORIES=	devel python textproc
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML bomb protection for Python stdlib modules
 
 LICENSE=	PSFL
