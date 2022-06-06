@@ -1,10 +1,10 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
 
 PORTNAME=	goldendict
-DISTVERSION=	1.5.0-g20210115
+DISTVERSION=	1.5.0-g20220602
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Feature-rich dictionary lookup program
 
 LICENSE=	GPLv3+
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 USES=		compiler:c++11-lang gnome iconv:wchar_t pkgconfig \
 		qmake qt:5 xorg
 USE_GITHUB=	yes
-GH_TAGNAME=	73ec1b5
+GH_TAGNAME=	99982a1
 USE_XORG=	x11 xtst
 USE_QT=		buildtools_build linguisttools_build core gui help \
 		network printsupport sql svg webkit widgets \
@@ -49,6 +49,8 @@ OPENCC_QMAKE_ON=	CONFIG+="chinese_conversion_support"
 post-patch:
 	@${REINPLACE_CMD} -e '/^VERSION = /s,git,&${GH_TAGNAME},' \
 		${WRKSRC}/goldendict.pro
+	@${REINPLACE_CMD} -e '/^#include <stdio\.h>/ { x; \
+		s/^/#include <locale.h>/; G; }' ${WRKSRC}/main.cc
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/locale
