@@ -1,6 +1,5 @@
 %%RUBY%%bin/grndb
 bin/groonga
-bin/groonga-benchmark
 %%SUGGEST%%bin/groonga-suggest-create-dataset
 %%SUGGEST%%bin/groonga-suggest-httpd
 %%SUGGEST%%bin/groonga-suggest-learner
@@ -63,6 +62,7 @@ include/groonga/groonga/plugin.h
 include/groonga/groonga/portability.h
 include/groonga/groonga/posting.h
 include/groonga/groonga/proc.h
+include/groonga/groonga/progress.h
 include/groonga/groonga/raw_string.h
 include/groonga/groonga/request_canceler.h
 include/groonga/groonga/request_timer.h
