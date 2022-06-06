@@ -9,6 +9,8 @@ COMMENT=	Telegram Bot API Wrapper written in Elixir
 
 LICENSE=	MIT
 
+BROKEN=		does not build: Unchecked dependencies for environment prod: poison, httpoison
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	zhyu
