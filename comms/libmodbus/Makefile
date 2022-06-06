@@ -1,6 +1,5 @@
 PORTNAME=	libmodbus
-PORTVERSION=	3.1.6
-PORTREVISION=	1
+PORTVERSION=	3.1.7
 CATEGORIES=	comms
 MASTER_SITES=	https://libmodbus.org/releases/
 
@@ -14,8 +13,10 @@ BUILD_DEPENDS=	a2x:textproc/asciidoc \
 		xmlto:textproc/xmlto
 
 USES=		cpe gmake libtool pathfix
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
