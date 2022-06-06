@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Graphical tool to change TuxPaint settings
 
 LICENSE=	GPLv2+
