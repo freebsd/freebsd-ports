@@ -3,7 +3,7 @@ PORTVERSION=	1.0.20170329
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python wrappers for various BSD libc and system calls
 
 LICENSE=	BSD3CLAUSE

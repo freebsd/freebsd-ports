@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.7
 CATEGORIES=	ftp
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Yet another FTP client, similar to ftp(1)
 
 LICENSE=	GPLv2+

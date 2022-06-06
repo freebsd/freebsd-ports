@@ -5,7 +5,7 @@ PORTVERSION=	1.0.20181212
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python network configuration library for FreeBSD
 
 LICENSE=	BSD2CLAUSE
