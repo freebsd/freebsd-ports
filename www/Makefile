@@ -1441,6 +1441,7 @@
     SUBDIR += py-bleach
     SUBDIR += py-bokeh
     SUBDIR += py-boto3
+    SUBDIR += py-botocore-stubs
     SUBDIR += py-bottle
     SUBDIR += py-bottle-cork
     SUBDIR += py-branca

@@ -1,0 +1,4 @@
+Type annotations for botocore 1.27.3 compatible with VSCode, PyCharm,
+Emacs, Sublime Text, mypy, pyright and other tools.
+
+WWW: https://github.com/youtype/mypy_boto3_builder
