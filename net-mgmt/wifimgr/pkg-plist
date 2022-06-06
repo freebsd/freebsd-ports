@@ -1,6 +1,7 @@
 bin/wifimgr
 @(,,4511) libexec/wifimgrsu
 man/man8/wifimgr.8.gz
+%%DATADIR%%/icons/disabled.png
 %%DATADIR%%/icons/eye.png
 %%DATADIR%%/icons/freebsd-surf.png
 %%DATADIR%%/icons/icon.png
@@ -16,8 +17,8 @@ man/man8/wifimgr.8.gz
 %%DATADIR%%/icons/signal_bars_3.png
 %%DATADIR%%/icons/signal_bars_4.png
 %%DATADIR%%/icons/signal_bars_5.png
-%%DATADIR%%/icons/wifimgr.png
 %%DATADIR%%/icons/wifimgr-grey.png
+%%DATADIR%%/icons/wifimgr.png
 %%DATADIR%%/icons/wifimgr24green.png
 share/applications/wifimgr.desktop
 %%NLS%%share/locale/bg/LC_MESSAGES/wifimgr.mo

@@ -1,7 +1,7 @@
 # Created by: J.R. Oldroyd <fbsd@opal.com>
 
 PORTNAME=	wifimgr
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	https://opal.com/src/wifimgr/
 
