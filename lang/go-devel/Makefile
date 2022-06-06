@@ -9,7 +9,7 @@ MASTER_SITES?=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRA
 PKGNAMESUFFIX=	${DISTVERSION:C/^g[0-9]+/-devel/:C/^([0-9]+)\.([0-9]+).*/\1\2/}
 DISTFILES?=	go-${OPSYS:tl}-${GOARCH_${ARCH}}${GOARM_${ARCH}}-${BOOTSTRAP_TAG}.tar.xz:bootstrap
 
-MAINTAINER=	ygy@FreeBSD.org
+MAINTAINER=	go@FreeBSD.org
 COMMENT?=	Go programming language (development version)
 
 LICENSE=	BSD3CLAUSE

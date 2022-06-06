@@ -53,7 +53,7 @@
 # GO_TESTFLAGS
 #	Additional build arguments to be passed to the `go test` command
 #
-# MAINTAINER: ports@FreeBSD.org
+# MAINTAINER: go@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GO_MK)
 _INCLUDE_USES_GO_MK=	yes

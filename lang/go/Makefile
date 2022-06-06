@@ -5,7 +5,7 @@ CATEGORIES=	lang
 MASTER_SITES=	# not applicable
 DISTFILES=	# not applicable
 
-MAINTAINER=	dmgk@FreeBSD.org
+MAINTAINER=	go@FreeBSD.org
 COMMENT=	Meta-port for the default version of the Go programming language
 
 RUN_DEPENDS=	go${GO_SUFFIX}:lang/go${GO_SUFFIX}
