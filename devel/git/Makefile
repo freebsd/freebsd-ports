@@ -2,6 +2,7 @@
 
 PORTNAME=	git
 DISTVERSION=	2.36.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -9,6 +10,17 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 # We manually extract the htmldocs.
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${DISTVERSION}${EXTRACT_SUFX}
+
+# these patches are required for gitlab (gitaly)
+# without the patches repositories got broken
+PATCH_SITES=	https://gitlab.com/gitlab-org/gitaly/-/raw/master/_support/git-patches/v2.36.0.gl1/
+PATCHFILES=	0001-refs-extract-packed_refs_delete_refs-to-allow-contro.patch \
+		0002-refs-allow-passing-flags-when-beginning-transactions.patch \
+		0003-refs-allow-skipping-the-reference-transaction-hook.patch \
+		0004-refs-demonstrate-excessive-execution-of-the-referenc.patch \
+		0005-refs-do-not-execute-reference-transaction-hook-on-pa.patch \
+		0006-refs-skip-hooks-when-deleting-uncovered-packed-refs.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT?=	Distributed source code management tool ${COMMENT_${FLAVOR}}
