@@ -4,7 +4,7 @@ CATEGORIES=	security
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPG keys for Ubuntu package signature verification
 
 LICENSE=	PD

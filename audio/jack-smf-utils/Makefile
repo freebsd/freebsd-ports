@@ -6,7 +6,7 @@ PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard MIDI File file player and recorder for JACK MIDI
 
 LICENSE=	BSD2CLAUSE

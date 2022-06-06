@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard MIDI File format library
 
 LICENSE=	BSD2CLAUSE

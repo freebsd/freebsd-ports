@@ -4,7 +4,7 @@ PORTNAME=	confctl
 PORTVERSION=	1.2
 CATEGORIES=	sysutils
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to parse and modify C-like configuration files
 
 LICENSE=	BSD2CLAUSE

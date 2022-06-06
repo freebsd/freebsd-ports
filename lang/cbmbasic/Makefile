@@ -2,7 +2,7 @@ PORTNAME=	cbmbasic
 PORTVERSION=	20180708
 CATEGORIES=	lang
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable version of Commodore 64 BASIC
 
 LICENSE=	BSD NONE
