@@ -689,7 +689,7 @@ lib/emby-server/system/dashboard-ui/modules/polyfills/intersection-observer.js
 lib/emby-server/system/dashboard-ui/modules/polyfills/map.js
 lib/emby-server/system/dashboard-ui/modules/polyfills/native-promise-only.js
 lib/emby-server/system/dashboard-ui/modules/polyfills/numberformat.js
-lib/emby-server/system/dashboard-ui/modules/polyfills/objectassign.js
+lib/emby-server/system/dashboard-ui/modules/polyfills/object.js
 lib/emby-server/system/dashboard-ui/modules/polyfills/promise.js
 lib/emby-server/system/dashboard-ui/modules/polyfills/resizeobserver.js
 lib/emby-server/system/dashboard-ui/modules/polyfills/set.js
