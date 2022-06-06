@@ -8,7 +8,7 @@ MASTER_SITES=	#
 PKGNAMESUFFIX=	-fonts
 DISTFILES=	#
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	TuxPaint Localized Fonts
 
 RUN_DEPENDS=	tuxpaint>=0.9.21:games/tuxpaint
