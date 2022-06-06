@@ -147,6 +147,7 @@ include/evolution/e-util/e-client-selector.h
 include/evolution/e-util/e-collection-account-wizard.h
 include/evolution/e-util/e-color-chooser-widget.h
 include/evolution/e-util/e-color-combo.h
+include/evolution/e-util/e-color-scheme-watcher.h
 include/evolution/e-util/e-config-lookup-result-simple.h
 include/evolution/e-util/e-config-lookup-result.h
 include/evolution/e-util/e-config-lookup-worker.h
