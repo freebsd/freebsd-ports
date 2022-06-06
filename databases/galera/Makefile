@@ -1,8 +1,7 @@
 # Created by: Horia Racoviceanu <horia@racoviceanu.com>
 
 PORTNAME=	galera
-PORTVERSION?=	25.3.36
-PORTREVISION=	1
+PORTVERSION?=	25.3.37
 DISTVERSIONPREFIX?=	release_
 CATEGORIES=	databases
 
