@@ -1,5 +1,5 @@
 PORTNAME=	resdk
-DISTVERSION=	14.1.0
+DISTVERSION=	15.0.0
 CATEGORIES=	biology python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +11,8 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}botocore-stubs>0:www/py-botocore-stubs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet<=4.0.0,1:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>0:textproc/py-openpyxl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.0.0:math/py-pandas@${PY_FLAVOR} \
