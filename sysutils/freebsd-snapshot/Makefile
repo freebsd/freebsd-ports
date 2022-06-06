@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://people.freebsd.org/~rse/dist/
 
 MAINTAINER=	gtodd@bellanet.org
-COMMENT=	Convenience frontend tools for the management of UFS2 snapshots
+COMMENT=	Convenience frontend tools for the management of UFS2/ZFS snapshots
 
 LICENSE=	BSD2CLAUSE
 
