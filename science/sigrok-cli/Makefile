@@ -5,7 +5,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	science cad
 MASTER_SITES=	http://sigrok.org/download/source/sigrok-cli/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for hardware logic analyzers, CLI client
 
 LICENSE=	GPLv3

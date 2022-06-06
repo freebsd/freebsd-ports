@@ -5,7 +5,7 @@ PORTVERSION=	0.5.3
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libsigrokdecode/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Framework for hardware logic analyzers, protocol decoders library
 
 LICENSE=	GPLv3+

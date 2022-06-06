@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	https://libmodbus.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Modbus library
 
 LICENSE=	LGPL21+

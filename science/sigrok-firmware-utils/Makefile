@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	sigrok-
 PKGNAMESUFFIX=	-utils
 DISTFILES=	#none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sigrok firmware extraction utilities
 
 LICENSE=	GPLv3+
