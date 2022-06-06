@@ -13,6 +13,8 @@ COMMENT=	PL/v8js procedural language for PostgreSQL database
 
 LICENSE=	PostgreSQL
 
+BROKEN=		does not build: plv8.cc:1397:20: error: no matching constructor for initialization of 'v8::ScriptOrigin'
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libv8.so:lang/v8
 
