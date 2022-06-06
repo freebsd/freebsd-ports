@@ -1,7 +1,7 @@
 # Created by: Uffe Jakobsen <uffe@uffe.org>
 
 PORTNAME=	sigrok-cli
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	science cad
 MASTER_SITES=	http://sigrok.org/download/source/sigrok-cli/
 
@@ -14,13 +14,15 @@ LIB_DEPENDS=	libserialport.so:devel/libserialport \
 		libsigrok.so:devel/libsigrok \
 		libsigrokdecode.so:devel/libsigrokdecode
 
-USES=		desktop-file-utils gettext-runtime gmake gnome pathfix \
-		libtool pkgconfig
+USES=		desktop-file-utils gettext-runtime gmake gnome libtool pathfix \
+		pkgconfig
 
 GNU_CONFIGURE=	yes
+
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	bin/sigrok-cli man/man1/sigrok-cli.1.gz \
+PLIST_FILES=	bin/sigrok-cli \
+		man/man1/sigrok-cli.1.gz \
 		share/applications/org.sigrok.sigrok-cli.desktop \
 		share/icons/hicolor/scalable/apps/sigrok-cli.svg
 
