@@ -1,3 +1,3 @@
-TIMESTAMP = 1650051106
-SHA256 (gnome/mutter-42.0.tar.xz) = d1e240446b7f8cd8a3ff9daae336c1c9016193ba7e0769c79a5e6c03849022e5
-SIZE (gnome/mutter-42.0.tar.xz) = 2742212
+TIMESTAMP = 1654535181
+SHA256 (gnome/mutter-42.2.tar.xz) = bd30d78be7d170013a0a8bcc837cec5ee6c44d770ff00674dcdfc28b3426b34c
+SIZE (gnome/mutter-42.2.tar.xz) = 2747612
