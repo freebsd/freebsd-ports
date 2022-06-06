@@ -4,7 +4,7 @@ PORTREVISION=	9
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.blackfiveimaging.co.uk/photoprint/
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to print multiple images per sheet
 
 LICENSE=	GPLv2
