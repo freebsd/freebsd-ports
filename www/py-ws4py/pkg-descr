@@ -3,4 +3,4 @@ in RFC 6455.  It provides client and server implementations alike that
 can be using different techniques like threads, micro-threads,
 or event loops.
 
-WWW: http://www.defuze.org/oss/ws4py/docs/
+WWW: https://github.com/Lawouach/WebSocket-for-Python

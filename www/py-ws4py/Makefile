@@ -1,7 +1,7 @@
 # Created by: rene@FreeBSD.org
 
 PORTNAME=	ws4py
-PORTVERSION=	0.3.4
+PORTVERSION=	0.5.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,16 +11,19 @@ COMMENT=	WebSocket package for Python
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+DEPRECATED=	Upstream abandoned
+EXPIRATION_DATE=	2022-09-30
+
+USES=		python:3.6-3.9
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	CHERRYPY GEVENT TORNADO
-OPTIONS_DEFAULT=CHERRYPY GEVENT
-CHERRYPY_DESC=	CherryPy server support
-GEVENT_DESC=	gevent-based client/server support
-TORNADO_DESC=	Tornado client support
+OPTIONS_DEFINE=		CHERRYPY GEVENT TORNADO
+OPTIONS_DEFAULT=	CHERRYPY GEVENT
+CHERRYPY_DESC=		CherryPy server support
+GEVENT_DESC=		gevent-based client/server support
+TORNADO_DESC=		Tornado client support
 
 CHERRYPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.2.2:www/py-cherrypy@${PY_FLAVOR}
 GEVENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=0.13.8:devel/py-gevent@${PY_FLAVOR}
