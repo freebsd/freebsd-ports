@@ -1,9 +1,9 @@
 # Created by: Paul Traina <pst@FreeBSD.org>
 
 PORTNAME=	kermit
-DISTVERSION=	10.0-beta02
+DISTVERSION=	10.0-beta04
 CATEGORIES=	comms ftp net
-MASTER_SITES=	http://www.kermitproject.org/ftp/kermit/test/tar/ \
+MASTER_SITES=	https://www.kermitproject.org/ftp/kermit/test/tar/ \
 		ftp://ftp.kermitproject.org/kermit/test/tar/
 DISTNAME=	cku${DISTVERSION}
 
