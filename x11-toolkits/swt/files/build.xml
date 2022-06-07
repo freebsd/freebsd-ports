@@ -39,12 +39,11 @@
 				<exclude name="**/*.java"/>
 				<exclude name="**/*.o"/>
 				<exclude name="**/*.so"/>
-				<!-- exclude CVS archive -->
-				<exclude name="**/CVS/**"/>
 			</fileset>
 			<fileset dir="${basedir}">
 				<include name="**/version.txt"/>
 				<include name="**/*.properties"/>
+				<include name="**/*.css"/>
 			</fileset>
 		</jar>
 	</target>

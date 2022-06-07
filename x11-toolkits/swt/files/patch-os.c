@@ -1,6 +1,6 @@
---- os.c.orig	2021-06-11 17:24:22 UTC
+--- os.c.orig	2021-09-06 01:22:24 UTC
 +++ os.c
-@@ -16083,11 +16083,16 @@ JNIEXPORT jlong JNICALL OS_NATIVE(realpath)
+@@ -15180,11 +15180,16 @@ JNIEXPORT jlong JNICALL OS_NATIVE(realpath)
  	jlong rc = 0;
  	OS_NATIVE_ENTER(env, that, realpath_FUNC);
  	if (arg0) if ((lparg0 = (*env)->GetByteArrayElements(env, arg0, NULL)) == NULL) goto fail;

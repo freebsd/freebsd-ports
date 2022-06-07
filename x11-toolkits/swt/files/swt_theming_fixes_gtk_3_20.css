@@ -1,0 +1,25 @@
+toolbar {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+toolbar button {
+	padding: 2px;
+}
+
+toolbar button.popup {
+	padding: 0px;
+}
+
+toolbar toolbutton button {
+	padding: 0px 0px 0px 0px;
+}
+
+entry {
+	min-height: 26px;
+}
+
+tab {
+	padding-left: 6px;
+	padding-right: 6px;
+}
