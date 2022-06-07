@@ -8,7 +8,7 @@ PKGNAMEPREFIX=		linux-
 DISTNAME=		seatools_cli
 EXTRACT_SUFX=		.tar
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		cy@FreeBSD.org
 COMMENT=		Seagate's SeaTools for Linux
 
 # Converted from RESTRICTED
