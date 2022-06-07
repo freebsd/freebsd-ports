@@ -9,6 +9,8 @@ COMMENT=	Caching library for Elixir
 
 LICENSE=	MIT
 
+BROKEN=		does not build: Unchecked dependencies for environment prod: unsafe, eternal
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	whitfin
