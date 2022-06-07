@@ -1,5 +1,5 @@
 PORTNAME=	unqlite
-PORTVERSION=	0.5.3
+PORTVERSION=	0.9.3
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,5 +11,8 @@ LICENSE=	MIT
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist cython
+
+post-stage:
+	@${STRIP_CMD} ${STAGEDIR}/${PYTHONPREFIX_SITELIBDIR}/unqlite*.so
 
 .include <bsd.port.mk>
