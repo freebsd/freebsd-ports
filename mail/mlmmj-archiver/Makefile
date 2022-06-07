@@ -1,5 +1,5 @@
 PORTNAME=	mlmmj-archiver
-DISTVERSION=	0.1
+DISTVERSION=	0.2
 CATEGORIES=	mail www
 MASTER_SITES=	https://fossil.nours.eu/${PORTNAME}/tarball/?r=${DISTVERSION}&name=./
 
