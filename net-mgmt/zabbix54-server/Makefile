@@ -17,6 +17,9 @@ CONFLICTS_INSTALL=	zabbix[0-46-9][0-9]${PKGNAMESUFFIX} \
 		zabbix5[0-35-9]${PKGNAMESUFFIX} \
 		zabbix[0-9]${PKGNAMESUFFIX}
 
+DEPRECATED=     Unsupported by upstream
+EXPIRATION_DATE=2022-06-29
+
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//:S/-$//}
 
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
