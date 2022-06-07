@@ -117,7 +117,6 @@ include/fluent-bit/flb_worker.h
 include/fluent-bit/tls/flb_tls.h
 include/libco.h
 include/monkey/mk_core.h
-include/monkey/mk_core/mk_core_info.h
 include/monkey/mk_core/mk_dep_unistd.h
 include/monkey/mk_core/mk_dirent.h
 include/monkey/mk_core/mk_event.h
