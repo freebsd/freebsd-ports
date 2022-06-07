@@ -1,5 +1,5 @@
 PORTNAME=	flask-smorest
-PORTVERSION=	0.37.0
+PORTVERSION=	0.38.0
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,13 +19,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apispec>=3.0.0:devel/py-apispec@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.0.0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 
 NO_ARCH=	yes
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs -o addopts=
 
 .include <bsd.port.mk>
