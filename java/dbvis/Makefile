@@ -9,6 +9,8 @@ DISTNAME=	dbvis_unix_${PORTVERSION:S/./_/g}
 MAINTAINER=	jim@ohlste.in
 COMMENT=	DbVisualizer database tool
 
+BROKEN=		does not fetch (404)
+
 LICENSE=	DbVisualizer_EULA
 LICENSE_NAME=	End-User License Agreement for DbVisualizer
 LICENSE_TEXT=	Full license can be found at http://www.dbvis.com/eula/
