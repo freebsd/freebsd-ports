@@ -1,8 +1,7 @@
 # Created by: Max Laier <max@love2party.net>
 
 PORTNAME=	pftop
-PORTVERSION=	0.7
-PORTREVISION=	10
+PORTVERSION=	0.8
 CATEGORIES=	sysutils net
 
 MAINTAINER=	grembo@FreeBSD.org
