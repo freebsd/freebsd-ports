@@ -12,6 +12,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller #'
 
+BROKEN=		fails to configure: The imported target "Qt5::Core" references the file "/usr/local/lib/qt5/bin/qmake" but this file does not exist.
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
