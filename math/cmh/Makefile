@@ -10,6 +10,8 @@ COMMENT=	Compute Igusa class polynomials
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not build: lll.cpp:40:18: error: expected ';' after expression
+
 LIB_DEPENDS=	libfplll.so:math/fplll \
 		libgmp.so:math/gmp \
 		libmpc.so:math/mpc \
