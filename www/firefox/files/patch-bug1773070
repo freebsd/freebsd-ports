@@ -1,0 +1,26 @@
+In file included from Unified_cpp_accessible_html0.cpp:29:
+In file included from accessible/html/HTMLImageMapAccessible.cpp:14:
+In file included from layout/generic/nsImageFrame.h:17:
+In file included from ../.build/dist/include/nsDisplayList.h:48:
+In file included from ../.build/dist/include/nsCSSRenderingBorders.h:20:
+In file included from ../.build/dist/include/gfxUtils.h:23:
+In file included from ../.build/dist/include/mozilla/webrender/WebRenderTypes.h:11:
+In file included from ../.build/dist/include/mozilla/webrender/webrender_ffi.h:103:
+../.build/dist/include/mozilla/webrender/webrender_ffi_generated.h:24:33: error: redefinition of 'ROOT_CLIP_CHAIN'
+constexpr static const uint64_t ROOT_CLIP_CHAIN = ~0;
+                                ^
+../.build/dist/include/mozilla/webrender/webrender_ffi.h:75:16: note: previous definition is here
+const uint64_t ROOT_CLIP_CHAIN = ~0;
+               ^
+
+--- gfx/webrender_bindings/webrender_ffi.h.orig	2022-06-08 21:06:36 UTC
++++ gfx/webrender_bindings/webrender_ffi.h
+@@ -72,8 +72,6 @@ using WrPipelineIdEpochs = nsTArray<WrPipelineIdAndEpo
+ struct WrPipelineIdAndEpoch;
+ using WrPipelineIdEpochs = nsTArray<WrPipelineIdAndEpoch>;
+ 
+-const uint64_t ROOT_CLIP_CHAIN = ~0;
+-
+ }  // namespace wr
+ }  // namespace mozilla
+ 
