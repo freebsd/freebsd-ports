@@ -2,7 +2,7 @@
 
 PORTNAME=	httpfs
 PORTVERSION=	2.${VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2/
@@ -20,12 +20,10 @@ USES=		fuse pkgconfig gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${VERSION}
 VERSION=	0.1.5
 CFLAGS+=	-D__BSD_VISIBLE
-ALL_TARGET=	httpfs2
 PLIST_FILES=	bin/httpfs2
 
 CERT_STORE=	${LOCALBASE}/share/certs/ca-root-nss.crt
 MAKE_ENV+=	CERT_STORE=${CERT_STORE}
-ALL_TARGET=	full
 
 OPTIONS_DEFINE=		GNUTLS
 OPTIONS_DEFAULT=	GNUTLS
@@ -39,7 +37,10 @@ do-install:
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
+ALL_TARGET=	full
 PLIST_FILES+=	bin/httpfs2-mt bin/httpfs2-ssl bin/httpfs2-ssl-mt
+.else
+ALL_TARGET=	httpfs2
 .endif
 
 do-install-GNUTLS-on:
