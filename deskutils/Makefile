@@ -232,6 +232,7 @@
     SUBDIR += rubygem-taskjuggler
     SUBDIR += semantik
     SUBDIR += showdown
+    SUBDIR += sigi
     SUBDIR += simpleagenda
     SUBDIR += sliderule
     SUBDIR += solanum
