@@ -168,7 +168,7 @@ BUILD_DEPENDS+=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc
 MAKE_ENV+=	GCC5_AARCH64_PREFIX=aarch64-none-elf-
 .endif
 
-.if ${PLAT_ARCH} == X64
+.if ${PLAT_ARCH} == X64 || ${PLAT_ARCH} == IA32
 BUILD_DEPENDS+=	nasm:devel/nasm
 .endif
 
