@@ -1,7 +1,7 @@
 # Created by: Kirill Ponomarew <ponomarew@oberon.net>
 
 PORTNAME=	libidn
-DISTVERSION=	1.35
+DISTVERSION=	1.38
 CATEGORIES=	dns
 MASTER_SITES=	GNU
 
@@ -27,12 +27,8 @@ OPTIONS_DEFINE=	DOCS NLS
 
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^Libs.private:/s/$$/ @LTLIBINTL@/' \
-		${WRKSRC}/libidn.pc.in
+NLS_CONFIGURE_ENABLE=	nls
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
