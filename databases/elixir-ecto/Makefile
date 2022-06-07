@@ -9,6 +9,8 @@ COMMENT=	Database wrapper and language integrated query for Elixir
 
 LICENSE=	APACHE20
 
+BROKEN=		does not build: Unchecked dependencies for environment prod: decimal
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-ecto
