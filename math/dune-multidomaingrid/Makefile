@@ -1,5 +1,5 @@
 PORTNAME=	dune-multidomaingrid
-DISTVERSION=	2.7.1
+DISTVERSION=	2.8.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ USE_GITLAB=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	extensions
-GL_COMMIT=	cd5679974fe1c91b56e74022e95f01b1d2018c3b
+GL_COMMIT=	d31fd53d5a3d90348f8b33364011f3afb047c394
 
 NO_ARCH=	yes
 
