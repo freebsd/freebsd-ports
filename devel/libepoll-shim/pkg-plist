@@ -9,6 +9,9 @@ include/libepoll-shim/sys/timerfd.h
 lib/cmake/epoll-shim/epoll-shim-config.cmake
 lib/cmake/epoll-shim/epoll-shim-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/epoll-shim/epoll-shim-targets.cmake
+lib/libepoll-shim-interpose.so
+lib/libepoll-shim-interpose.so.0
 lib/libepoll-shim.so
 lib/libepoll-shim.so.0
+libdata/pkgconfig/epoll-shim-interpose.pc
 libdata/pkgconfig/epoll-shim.pc

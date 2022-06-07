@@ -1,6 +1,7 @@
 # Created by: Juergen Lock <nox@FreeBSD.org>
 
 PORTNAME?=	v4l-utils
+PORTREVISION=	1
 
 COMMENT=	Video4Linux utilities
 

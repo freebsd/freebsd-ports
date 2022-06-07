@@ -3,6 +3,7 @@
 
 PORTNAME?=	libv4l
 PORTVERSION=	1.23.0
+PORTREVISION?=	0
 DISTVERSIONPREFIX=	v4l-utils-
 CATEGORIES=	multimedia
 
@@ -50,10 +51,10 @@ RUN_DEPENDS+=	evdev-proto>=5.3:devel/evdev-proto
 .if ${PORTNAME} == v4l-utils
 USES+=		perl5
 BUILD_DEPENDS+=	libv4l>=${PORTVERSION}:multimedia/libv4l
-LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim \
+LIB_DEPENDS+=	libepoll-shim-interpose.so:devel/libepoll-shim \
 		libv4l2.so:multimedia/libv4l
-CPPFLAGS+=	-I${LOCALBASE}/include/libepoll-shim
-LDFLAGS+=	-lepoll-shim
+CPPFLAGS+=	`pkg-config --cflags epoll-shim-interpose`
+LDFLAGS+=	`pkg-config --libs epoll-shim-interpose`
 CONFIGURE_ARGS+= \
 	--enable-v4l-utils \
 	--without-v4l2-compliance

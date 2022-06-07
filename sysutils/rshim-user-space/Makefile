@@ -3,6 +3,7 @@
 PORTNAME=	rshim-user-space
 DISTVERSIONPREFIX=	rshim-
 DISTVERSION=		2.0.6-11
+PORTREVISION=		1
 PORTEPOCH=		1
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 CATEGORIES=	sysutils
 
-LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
+LIB_DEPENDS=	libepoll-shim-interpose.so:devel/libepoll-shim \
 		libpci.so:devel/libpci \
 		libpciaccess.so:devel/libpciaccess
 
