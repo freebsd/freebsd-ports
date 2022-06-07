@@ -1,5 +1,6 @@
 PORTNAME=	syncthing
 PORTVERSION=	1.20.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/syncthing/syncthing/releases/download/v${PORTVERSION}/

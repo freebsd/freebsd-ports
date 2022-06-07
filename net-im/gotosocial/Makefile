@@ -1,6 +1,7 @@
 PORTNAME=	gotosocial
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	me+freebsd@igalic.co

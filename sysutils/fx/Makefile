@@ -2,6 +2,7 @@
 
 PORTNAME=	fx
 DISTVERSION=	24.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com

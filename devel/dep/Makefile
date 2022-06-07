@@ -1,7 +1,7 @@
 PORTNAME=	dep
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 # https://github.com/golang/dep/pull/2228
