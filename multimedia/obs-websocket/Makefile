@@ -8,6 +8,8 @@ COMMENT=	OBS Studio Plugin: WebSockets API
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not build: src/rpc/../obs-websocket.h:36:7: error: type alias redefinition with different types
+
 BUILD_DEPENDS=	websocketpp>0:devel/websocketpp
 LIB_DEPENDS=	libobs.so:multimedia/obs-studio
 
