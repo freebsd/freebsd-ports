@@ -1,7 +1,7 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
 
 PORTNAME=	tseries
-DISTVERSION=	0.10-50
+DISTVERSION=	0.10-51
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
