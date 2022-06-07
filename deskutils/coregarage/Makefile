@@ -1,5 +1,6 @@
 PORTNAME=	coregarage
 DISTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -16,7 +17,7 @@ USE_QT=		buildtools_build core gui qmake_build widgets
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	CuboCore
-GL_COMMIT=	684e579b4a03914b77ceccd6efcfc490c53ad730
+GL_COMMIT=	917d31fcd1a6f63d759897fa4d5481de2d6f6bdc
 
 PLIST_FILES=	bin/coregarage \
 		share/applications/org.cubocore.CoreGarage.desktop \
