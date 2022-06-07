@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220607:
+  AFFECTS: security/openssh-portable
+  AUTHOR: bdrewery@FreeBSD.org
+
+  OpenSSH has been updated to 9.0p1 with incompatible changes.
+  See https://www.openssh.com/txt/release-9.0 for details.
+
 20220602:
   AFFECTS: sysutils/graylog
   AUTHOR: dch@FreeBSD.org
