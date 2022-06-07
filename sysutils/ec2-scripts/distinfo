@@ -1,4 +1,3 @@
-SHA256 (ec2-scripts-1.5.tgz) = b1c95ecf56d3bcd1e903714cd453666b3fba842ee9ad9a82da519f2b01f00934
-SIZE (ec2-scripts-1.5.tgz) = 4383
-SHA256 (ec2-scripts-1.10.tgz) = 4f8e2386b0eb5eac25e869da82d2c71af42894b0de37cf2f79684b7204c64069
-SIZE (ec2-scripts-1.10.tgz) = 4779
+TIMESTAMP = 1654664226
+SHA256 (cperciva-ec2-scripts-1.11_GH0.tar.gz) = cb4fae570ab9841fd5ace57ec38de677a8a8521f2237e76e8296ae632b9d5df2
+SIZE (cperciva-ec2-scripts-1.11_GH0.tar.gz) = 5952
