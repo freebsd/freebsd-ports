@@ -195,12 +195,6 @@ PLIST_SUB+=	SQUATTER=""
 PLIST_SUB+=	SQUATTER="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 503600
-IGNORE=		Cannot build with Perl 3.36
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
 			  -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
@@ -255,4 +249,4 @@ post-install-DOCS-on:
 		"! ( -path */html/_sources* -o -name .buildinfo )"
 	${RM} -r ${STAGEDIR}${DOCSDIR}/rst ${STAGEDIR}${DOCSDIR}/source
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
