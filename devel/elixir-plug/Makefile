@@ -9,6 +9,8 @@ COMMENT=	Composable modules for Elixir web applications
 
 LICENSE=	APACHE20
 
+BROKEN=		does not build: Unchecked dependencies for environment prod: mime
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
