@@ -9,6 +9,8 @@ COMMENT=	Date-time and time zone handling in Elixir
 
 LICENSE=	MIT
 
+BROKEN=		does not build: Unchecked dependencies for environment prod: tzdata
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	lau
