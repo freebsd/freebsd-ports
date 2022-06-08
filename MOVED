@@ -17195,3 +17195,4 @@ sysutils/uefi-edk2-qemu|sysutils/edk2@qemu|2022-06-05|No more need for this port
 graphics/gltt||2022-06-08|Abdonware, depends on freetype1
 print/ttftot42||2022-06-08|Abdonware, depends on freetype1
 print/freetype|print/freetype2|2022-06-08|Has been replaced long ago by freetype2
+net/libgnetwork||2022-06-98|Gnome2 library unused anymore
