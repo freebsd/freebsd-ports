@@ -1,7 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	aiohttp
-DISTVERSION=	3.7.4.post0
+DISTVERSION=	3.8.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=17.3.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>=2.0<5.0,1:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multidict>=4.5<7.0:www/py-multidict@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}async_timeout>=3.0<4.0:devel/py-async_timeout@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}async_timeout>=4.0<5.0:devel/py-async_timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yarl>=1.0<2.0:www/py-yarl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.5:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.8.2:devel/py-pytest@${PY_FLAVOR} \
@@ -35,7 +35,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils cython
 
 pre-configure:
-.for file in _frozenlist _helpers _http_parser _http_writer _websocket
+.for file in _helpers _http_parser _http_writer _websocket
 	@${RM} ${WRKSRC}/aiohttp/${file}.c
 	@cd ${WRKSRC} && cython-${PYTHON_VER} -3 -o aiohttp/${file}.c aiohttp/${file}.pyx -I aiohttp
 .endfor
