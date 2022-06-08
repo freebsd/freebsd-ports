@@ -1,0 +1,32 @@
+PORTNAME=	qutip-qip
+DISTVERSION=	0.2.1
+CATEGORIES=	devel
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	QuTiP quantum information processing package
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+PY_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}qutip>=4.5:devel/py-qutip@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_DEPENDS}
+RUN_DEPENDS=	${PY_DEPENDS}
+
+USES=		python:3.7+
+USE_PYTHON=	distutils autoplist
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
+
+NO_ARCH=	yes
+
+post-patch:
+	@cd ${WRKSRC} && ${ECHO} ${DISTVERSION} > VERSION
+
+do-test:
+	@cd ${WRKDIR} && ${SETENV} ${TEST_ENV} pytest
+
+.include <bsd.port.mk>
