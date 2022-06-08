@@ -3,7 +3,7 @@
 
 PORTNAME=	gtksourceview2
 PORTVERSION=	2.10.5
-PORTREVISION?=	7
+PORTREVISION?=	8
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
@@ -18,7 +18,7 @@ PORTSCOUT=	ignore:1
 
 USES+=		gettext gmake gnome libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomeprefix gtk20 gconf2 libxml2 intlhack
+USE_GNOME=	gnomeprefix gtk20 libxml2 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=no --enable-glade-catalog=no
 INSTALL_TARGET=	install-strip
