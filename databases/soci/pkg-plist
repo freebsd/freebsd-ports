@@ -19,7 +19,7 @@ include/soci/into.h
 include/soci/logger.h
 include/soci/mysql/soci-mysql.h
 include/soci/noreturn.h
-include/soci/odbc/soci-odbc.h
+%%ODBC%%include/soci/odbc/soci-odbc.h
 include/soci/once-temp-type.h
 include/soci/postgresql/soci-postgresql.h
 include/soci/prepare-temp-type.h
@@ -72,10 +72,10 @@ lib/libsoci_mysql.a
 lib/libsoci_mysql.so
 lib/libsoci_mysql.so.4.0
 lib/libsoci_mysql.so.4.0.3
-lib/libsoci_odbc.a
-lib/libsoci_odbc.so
-lib/libsoci_odbc.so.4.0
-lib/libsoci_odbc.so.4.0.3
+%%ODBC%%lib/libsoci_odbc.a
+%%ODBC%%lib/libsoci_odbc.so
+%%ODBC%%lib/libsoci_odbc.so.4.0
+%%ODBC%%lib/libsoci_odbc.so.4.0.3
 lib/libsoci_postgresql.a
 lib/libsoci_postgresql.so
 lib/libsoci_postgresql.so.4.0
