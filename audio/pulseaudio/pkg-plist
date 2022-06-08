@@ -95,7 +95,6 @@ lib/pulse-%%PULSE_VERSION%%/modules/module-echo-cancel.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-equalizer-sink.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-filter-apply.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-filter-heuristics.so
-%%GCONF%%lib/pulse-%%PULSE_VERSION%%/modules/module-gconf.so
 %%GSETTINGS%%lib/pulse-%%PULSE_VERSION%%/modules/module-gsettings.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-http-protocol-tcp.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-http-protocol-unix.so
@@ -153,7 +152,6 @@ lib/pulseaudio/libpulsedsp.so
 libdata/pkgconfig/libpulse-mainloop-glib.pc
 libdata/pkgconfig/libpulse-simple.pc
 libdata/pkgconfig/libpulse.pc
-%%GCONF%%libexec/pulse/gconf-helper
 %%GSETTINGS%%libexec/pulse/gsettings-helper
 man/man1/pacat.1.gz
 man/man1/pacmd.1.gz
