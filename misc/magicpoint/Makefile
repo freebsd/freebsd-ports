@@ -21,7 +21,7 @@ USES=		imake:env perl5 pkgconfig xorg
 USE_PERL5=	run
 USE_XORG=	x11 xext xmu xt sm ice xi xtst
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-vflib --enable-locale
+CONFIGURE_ARGS=	--disable-vflib --enable-locale --disable-freetype
 CONFIGURE_ENV=	mgp_cv_path_perl=${PERL}
 CPPFLAGS+=	-I..
 LATE_INSTALL_ARGS=	install.man
@@ -41,14 +41,10 @@ EMACS_LISPS=	mgp-mode.el
 EMACS_LISPS_MGP=COPYING README mgp.el mgp.sty sample.tex
 SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 
-OPTIONS_DEFINE=	FREETYPE XFT GIF DOCS
+OPTIONS_DEFINE=	XFT GIF DOCS
 OPTIONS_DEFAULT=XFT GIF
 NO_OPTIONS_SORT=yes
 
-FREETYPE_PREVENTS=	XFT
-FREETYPE_CONFIGURE_ENABLE=	freetype
-FREETYPE_LIB_DEPENDS=	libttf.so:print/freetype
-XFT_PREVENTS=	FREETYPE
 XFT_USES=	iconv
 XFT_USE=	XORG=xft
 XFT_CONFIGURE_ENABLE=	xft2
@@ -67,8 +63,6 @@ post-configure:
 		${SETENV} ${MAKE_ENV} ${XMKMF} ${XMKMF_ARGS}
 	cd ${WRKSRC}/contrib/xmindpath && \
 		${SH} ${CONFIGURE_SCRIPT} --prefix=${PREFIX}
-	${REINPLACE_CMD} -e 's|freetype1/freetype|freetype1|g' \
-		${WRKSRC}/Makefile ${WRKSRC}/image/Makefile
 
 post-build:
 	cd ${WRKSRC}/contrib/xmindpath && \
