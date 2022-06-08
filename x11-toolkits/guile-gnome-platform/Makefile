@@ -1,6 +1,6 @@
 PORTNAME=	guile-gnome-platform
 DISTVERSION=	2.16.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNU/guile-gnome/${PORTNAME}
 
@@ -15,10 +15,6 @@ LIB_DEPENDS=	libguile-2.2.so:lang/guile2				\
 		libgwrap-guile-runtime.so:devel/g-wrap			\
 		libffi.so:devel/libffi
 
-# A note on flavors: GCONF pull in very long
-# dependency lists including things like spidermonkey and samba, which
-# is rather overkill if you just want to do GUI tools. So make "lite"
-# the default.
 FLAVORS=	lite full
 FLAVOR?=	${FLAVORS:[1]}
 full_PKGNAMESUFFIX=-full
@@ -42,11 +38,11 @@ DATADIR=	${PREFIX}/share/guile-gnome-2
 
 INFO=		guile-gnome-glib guile-gnome-gobject
 
-OPTIONS_DEFINE=	ATK CAIRO CANVAS GCONF GLADE GTK2 PANGO
+OPTIONS_DEFINE=	ATK CAIRO CANVAS GLADE GTK2 PANGO
 OPTIONS_DEFAULT=ATK CAIRO CANVAS GLADE GTK2 PANGO
 
 .if ${FLAVOR} == full
-OPTIONS_SLAVE=	ATK CAIRO CANVAS GCONF GLADE GTK2 PANGO
+OPTIONS_SLAVE=	ATK CAIRO CANVAS GLADE GTK2 PANGO
 .endif
 
 OPTIONS_SUB=	yes
@@ -68,11 +64,6 @@ CANVAS_IMPLIES=		GLADE GTK2 CAIRO
 CANVAS_USE=		gnome=libgnomecanvas
 CANVAS_CONFIGURE_WITH=	canvas
 CANVAS_INFO=		guile-gnome-libgnomecanvas
-
-GCONF_IMPLIES=		GTK2 CAIRO
-GCONF_USE=		gnome=gconf2
-GCONF_CONFIGURE_WITH=	gconf
-GCONF_INFO=		guile-gnome-gconf
 
 GLADE_IMPLIES=		GTK2 CAIRO
 GLADE_USE=		gnome=libglade2
