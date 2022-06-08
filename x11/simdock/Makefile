@@ -13,6 +13,9 @@ COMMENT=	Fast and customizable dockbar
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware using deprecated gnome2 libs
+EXPIRATION_DATE=	2022-07-08
+
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lang desktop-file-utils gnome pathfix pkgconfig \
 		xorg
