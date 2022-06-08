@@ -274,7 +274,6 @@
     SUBDIR += glosm
     SUBDIR += glpng
     SUBDIR += glslang
-    SUBDIR += gltt
     SUBDIR += glx-utils
     SUBDIR += gmic
     SUBDIR += gmic-qt
