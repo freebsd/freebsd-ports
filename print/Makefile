@@ -255,7 +255,6 @@
     SUBDIR += trueprint
     SUBDIR += ttf2pt1
     SUBDIR += ttfautohint
-    SUBDIR += ttftot42
     SUBDIR += txtbdf2ps
     SUBDIR += typetools
     SUBDIR += utopia
