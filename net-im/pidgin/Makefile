@@ -25,7 +25,7 @@ USE_XORG=	xscrnsaver sm
 CONFIGURE_ARGS=	--disable-consoleui \
 		--disable-nm \
 		--enable-screensaver \
-		--disable-schemas-install
+		--disable-schemas-install \
 		--with-dynamic_prpls=${PRPL_MODULES:S/,$//}
 
 post-install-PERL-on:
