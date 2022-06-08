@@ -1,6 +1,6 @@
-TIMESTAMP = 1654090134
-SHA256 (storj-storj-v1.56.3_GH0.tar.gz) = 7e42b8a018063e1653dfe83940b650f26bbe11d6d5290575aac855538f164087
-SIZE (storj-storj-v1.56.3_GH0.tar.gz) = 6773543
+TIMESTAMP = 1654160567
+SHA256 (storj-storj-v1.56.4_GH0.tar.gz) = 40159284a95547989681476da093814d45c1aa21001f12f99a6c2dbb1bf738b7
+SIZE (storj-storj-v1.56.4_GH0.tar.gz) = 6773581
 SHA256 (VividCortex-ewma-v1.1.1_GH0.tar.gz) = 3b2d62412b7ba2726a379cc0ae557595c027dc8206d0ef98f13831281b8f2b85
 SIZE (VividCortex-ewma-v1.1.1_GH0.tar.gz) = 6042
 SHA256 (alessio-shellescape-v1.2.2_GH0.tar.gz) = f3cc6a97a0f91a5be58bbf0ab3fa9bcd049a61789944f9e3f0c353cb9e851103
