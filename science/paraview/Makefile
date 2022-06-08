@@ -14,6 +14,8 @@ LICENSE_NAME=	ParaView_License
 LICENSE_FILE=	${WRKSRC}/License_v1.2.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_aarch64=	fails to link: undefined reference to `sbrk'
+
 BUILD_DEPENDS=	${PYNUMPY}	\
 		cli11>0:devel/cli11	\
 		utf8cpp>0:devel/utf8cpp	\
