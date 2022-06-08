@@ -18,10 +18,11 @@ BUILD_DEPENDS=	xneur:deskutils/xneur \
 RUN_DEPENDS=	xneur:deskutils/xneur
 
 USES=		compiler:c++11-lang pkgconfig gmake gnome
-USE_GNOME=	gconf2 gtk20 libglade2
+USE_GNOME=	gtk20 libglade2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-gconf
 
 OPTIONS_DEFINE=	NLS
 
