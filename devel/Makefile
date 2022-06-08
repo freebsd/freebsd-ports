@@ -933,6 +933,7 @@
     SUBDIR += goswagger
     SUBDIR += got
     SUBDIR += govendor
+    SUBDIR += gpds
     SUBDIR += gperf
     SUBDIR += gpm
     SUBDIR += gputils
