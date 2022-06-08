@@ -1,6 +1,10 @@
 PORTNAME=	gitup
 DISTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	net
+
+PATCH_SITES=	https://github.com/johnmehr/gitup/commit/
+PATCHFILES=	dfbe3f0f847cb09225b5d09c4a09d654356bab68.patch:-p1
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Minimalist, dependency-free program to clone/pull git repositories
