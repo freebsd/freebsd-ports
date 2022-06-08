@@ -7,4 +7,5 @@ sbin/cloudsetup
 %%DATADIR%%/netconf-resolv.sh
 %%DATADIR%%/netconf-routing.sh
 %%DATADIR%%/show-context.sh
+%%DATADIR%%/userconf-getent.sh
 %%DATADIR%%/userconf-sshkey.sh
