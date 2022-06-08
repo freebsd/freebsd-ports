@@ -415,11 +415,7 @@ gnome-post-gconf-schemas:
 .  endif
 
 .  if defined(GLIB_SCHEMAS)
-_USES_install+=	690:gnome-post-glib-schemas
-gnome-post-glib-schemas:
-	@for i in ${GLIB_SCHEMAS}; do \
-		${ECHO_CMD} "share/glib-2.0/schemas/$${i}" >> ${TMPPLIST}; \
-	done
+PLIST_FILES+=	${GLIB_SCHEMAS:C,^,share/glib-2.0/schemas/,}
 .  endif
 
 .endif
