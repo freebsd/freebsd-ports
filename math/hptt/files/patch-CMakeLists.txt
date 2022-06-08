@@ -1,6 +1,29 @@
---- CMakeLists.txt.orig	2022-05-31 20:45:22 UTC
+--- CMakeLists.txt.orig	2022-02-15 08:26:18 UTC
 +++ CMakeLists.txt
-@@ -37,7 +37,7 @@ endif()
+@@ -7,20 +7,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+ set(ENABLE_IBM OFF)
+ 
+-if(CMAKE_SYSTEM_PROCESSOR STREQUAL "ppc64le")
++if(CMAKE_SYSTEM_PROCESSOR MATCHES "(powerpc64le|ppc64le)")
+   set(ENABLE_IBM ON)
+ endif()
+ 
+ if(CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
+   set(HPTT_CXX_FLAGS ${HPTT_CXX_FLAGS} -qopenmp -xhost)
+ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+-  if(ENABLE_IBM)
+     set(HPTT_CXX_FLAGS ${HPTT_CXX_FLAGS} -fopenmp)
+-  else()
+-    set(HPTT_CXX_FLAGS ${HPTT_CXX_FLAGS} -fopenmp -march=native -mtune=native)
+-  endif()
+ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+-  set(HPTT_CXX_FLAGS ${HPTT_CXX_FLAGS} -fopenmp -march=native)
++  set(HPTT_CXX_FLAGS ${HPTT_CXX_FLAGS} -fopenmp)
+ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "PGI")
+   set(HPTT_CXX_FLAGS ${HPTT_CXX_FLAGS} -silent -w -Mnovect)
+ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "XL")
+@@ -37,7 +33,7 @@ endif()
  
  set(HPTT_SRCS src/hptt.cpp src/plan.cpp src/transpose.cpp src/utils.cpp)
  
