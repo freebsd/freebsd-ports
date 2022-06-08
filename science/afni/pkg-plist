@@ -121,6 +121,7 @@ bin/3dLocalBistat
 bin/3dLocalHistog
 bin/3dLocalPV
 bin/3dLocalSVD
+bin/3dLocalUnifize
 bin/3dLocalstat
 bin/3dLombScargle
 bin/3dMEMA
