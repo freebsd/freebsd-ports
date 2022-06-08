@@ -257,7 +257,6 @@
 %%WWWDIR%%/lib/Froxlor/Settings/index.html
 %%WWWDIR%%/lib/Froxlor/System/Cronjob.php
 %%WWWDIR%%/lib/Froxlor/System/Crypt.php
-%%WWWDIR%%/lib/Froxlor/System/IgnorantRecursiveDirectoryIterator.php
 %%WWWDIR%%/lib/Froxlor/System/Mailer.php
 %%WWWDIR%%/lib/Froxlor/System/MysqlHandler.php
 %%WWWDIR%%/lib/Froxlor/System/index.html

@@ -1,7 +1,7 @@
 # Created by: Marco Steinbach <coco@executive-computing.de>
 
 PORTNAME=	froxlor
-DISTVERSION=	0.10.34.1
+DISTVERSION=	0.10.35.1
 CATEGORIES=	sysutils www
 MASTER_SITES=	https://files.froxlor.org/releases/
 
