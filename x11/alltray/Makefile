@@ -2,7 +2,7 @@
 
 PORTNAME=	alltray
 PORTVERSION=	0.70
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -11,6 +11,9 @@ COMMENT=	Dock any application with no native tray icon
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	abandonware
+EXPIRATION_DATE=	2022-07-08
 
 USES=		gnome libtool pkgconfig
 USE_GNOME=	gtk20
@@ -21,16 +24,7 @@ CFLAGS+=	-fcommon
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-
-OPTIONS_DEFINE=	KDE
-KDE_DESC=	Support only KDE desktop
-KDE_CONFIGURE_ON=	--disable-gconf
-
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MKDE}
-USE_GNOME+=	gconf2
-.endif
+CONFIGURE_ARGS=	--disable-gconf
 
 post-patch:
 	@${CHMOD} +x ${WRKSRC}/install-sh
