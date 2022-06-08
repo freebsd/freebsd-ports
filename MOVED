@@ -17196,3 +17196,4 @@ graphics/gltt||2022-06-08|Abdonware, depends on freetype1
 print/ttftot42||2022-06-08|Abdonware, depends on freetype1
 print/freetype|print/freetype2|2022-06-08|Has been replaced long ago by freetype2
 net/libgnetwork||2022-06-98|Gnome2 library unused anymore
+x11-wm/compizconfig-backend-gconf||2022-06-08|gconf support has been removed from compiz

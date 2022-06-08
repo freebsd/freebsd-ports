@@ -1,6 +1,6 @@
 PORTNAME=	compiz
 PORTVERSION=	0.8.8
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://BSDforge.com/projects/source/x11-wm/compiz/
 
@@ -26,7 +26,7 @@ RUN_DEPENDS_i386=	nvidia-settings:x11/nvidia-settings
 USES=		gettext-runtime gettext-tools gl gmake gnome libtool \
 		localbase pathfix tar:bzip2 xorg xorg-cat:app
 USE_GL=		gl glu
-USE_GNOME=	cairo gconf2 intltool libxslt
+USE_GNOME=	cairo intltool libxslt
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama \
 		xorgproto xrandr xrender
@@ -34,9 +34,11 @@ USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-kde4 \
 		--disable-kde \
+		--disable-gconf \
 		--disable-gnome \
 		--disable-gnome-keybindings \
-		--disable-metacity
+		--disable-metacity \
+		--disable-inotify
 INSTALL_TARGET=	install-strip
 
 SUB_FILES=		compiz-manager
@@ -46,39 +48,6 @@ DESKTOP_ENTRIES=	"Compiz Manager" \
 			"compiz-manager" \
 			"System;Core;" \
 			false
-GCONF_SCHEMAS=	gwd.schemas \
-		compiz-annotate.schemas \
-		compiz-blur.schemas \
-		compiz-clone.schemas \
-		compiz-commands.schemas \
-		compiz-core.schemas \
-		compiz-cube.schemas \
-		compiz-dbus.schemas \
-		compiz-decoration.schemas \
-		compiz-fade.schemas \
-		compiz-fs.schemas \
-		compiz-gconf.schemas \
-		compiz-glib.schemas \
-		compiz-gnomecompat.schemas \
-		compiz-ini.schemas \
-		compiz-inotify.schemas \
-		compiz-kconfig.schemas \
-		compiz-minimize.schemas \
-		compiz-move.schemas \
-		compiz-obs.schemas \
-		compiz-place.schemas \
-		compiz-png.schemas \
-		compiz-regex.schemas \
-		compiz-resize.schemas \
-		compiz-rotate.schemas \
-		compiz-scale.schemas \
-		compiz-screenshot.schemas \
-		compiz-svg.schemas \
-		compiz-switcher.schemas \
-		compiz-video.schemas \
-		compiz-water.schemas \
-		compiz-wobbly.schemas \
-		compiz-zoom.schemas
 
 OPTIONS_DEFINE=	DBUS FUSE GTK2 SVG
 OPTIONS_DEFAULT=DBUS GTK2 SVG

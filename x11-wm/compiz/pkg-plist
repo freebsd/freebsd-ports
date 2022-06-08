@@ -26,8 +26,6 @@ lib/compiz/libfade.a
 lib/compiz/libfade.so
 %%FUSE%%lib/compiz/libfs.a
 %%FUSE%%lib/compiz/libfs.so
-lib/compiz/libgconf.a
-lib/compiz/libgconf.so
 lib/compiz/libglib.a
 lib/compiz/libglib.so
 lib/compiz/libgnomecompat.a
@@ -71,7 +69,6 @@ lib/libdecoration.so
 lib/libdecoration.so.0
 lib/libdecoration.so.0.0.0
 libdata/pkgconfig/compiz-cube.pc
-libdata/pkgconfig/compiz-gconf.pc
 libdata/pkgconfig/compiz-scale.pc
 libdata/pkgconfig/compiz.pc
 libdata/pkgconfig/libdecoration.pc
@@ -102,7 +99,6 @@ libdata/pkgconfig/libdecoration.pc
 %%DATADIR%%/resize.xml
 %%DATADIR%%/rotate.xml
 %%DATADIR%%/scale.xml
-%%DATADIR%%/schemas.xslt
 %%DATADIR%%/screenshot.xml
 %%DATADIR%%/svg.xml
 %%DATADIR%%/switcher.xml
