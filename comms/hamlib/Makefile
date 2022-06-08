@@ -2,7 +2,7 @@
 
 PORTNAME=	hamlib
 PORTVERSION=	4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
@@ -40,9 +40,10 @@ post-patch:
 		${WRKSRC}/macros/ax_python_devel.m4
 post-build:
 	${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' \
-		${STAGEDIR}${WRKSRC}/bindings/Hamlib-pl.mk
-
+		${WRKSRC}/bindings/Hamlib-pl.mk
+ 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Hamlib/Hamlib.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for d in ${WRKSRC}/AUTHORS ${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB \
 		${WRKSRC}/ChangeLog ${WRKSRC}/INSTALL ${WRKSRC}/LICENSE \
