@@ -1,0 +1,5 @@
+Dhall is a programmable configuration language that can be thought of as: JSON +
+functions + types + imports.  dhall-to-bash allows for converting a subset of
+dhall configuration into a bash variable.
+
+WWW: https://dhall-lang.org/
