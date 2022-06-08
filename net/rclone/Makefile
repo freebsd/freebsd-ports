@@ -1,7 +1,7 @@
 PORTNAME=	rclone
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.58.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	tremere@cainites.net
@@ -9,6 +9,8 @@ COMMENT=	Sync files to and from various cloud services
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 USES=		cpe go:modules
 USE_GITHUB=	yes
