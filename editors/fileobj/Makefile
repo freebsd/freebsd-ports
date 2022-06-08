@@ -1,9 +1,8 @@
 # Created by: Rimvydas Jasinskas <zrj@ef.irc>
 
 PORTNAME=	fileobj
-PORTVERSION=	0.7.55
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.7.108
 CATEGORIES=	editors
 
 MAINTAINER=	zrj@dragonflybsd.org
@@ -12,11 +11,10 @@ COMMENT=	Portable hex editor with vi like interface
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GH_ACCOUNT=	kusumi
-USE_GITHUB=	yes
-
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils concurrent optsuffix
+USE_GITHUB=	yes
+GH_ACCOUNT=	kusumi
+USE_PYTHON=	autoplist concurrent distutils optsuffix
 
 PLIST_FILES=	man/man1/fileobj.1.gz
 
