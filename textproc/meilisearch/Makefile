@@ -1,7 +1,6 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27.1
-PORTREVISION=	1
+DISTVERSION=	0.27.2
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v${DASHBOARD_VERSION}/build.zip?dummy=/:mini_dashboard_assets \
 		SF/mecab/mecab-ipadic/2.7.0-20070801/:mecab_ipadic
@@ -404,7 +403,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		actix-web-static-files@git+https://github.com/kilork/actix-web-static-files.git?rev=2d3b6160\#2d3b6160f0de4ba061c5d76b5704f34fb677f6df \
 		nelson@git+https://github.com/MarinPostma/nelson.git?rev=675f13885548fb415ead8fbb447e9e6d9314000a\#675f13885548fb415ead8fbb447e9e6d9314000a \
 		meilisearch-tokenizer@git+https://github.com/meilisearch/tokenizer?tag=v0.2.9\#1dfc8ad9f5b338c39c3bc5fd5b2d0c1328314ddc \
-		filter-parser,flatten-serde-json,json-depth-checker,milli@git+https://github.com/meilisearch/milli.git?tag=v0.26.5\#1f6dc31e2f8ee02cdda255a856d15f253daf17ec \
+		filter-parser,flatten-serde-json,json-depth-checker,milli@git+https://github.com/meilisearch/milli.git?tag=v0.26.6\#955aff48853c6032c75970dc710929f08b4f711a \
 		lmdb-rkv-sys@git+https://github.com/meilisearch/lmdb-rs\#d0b50d02938ee84e4e4372697ea991fe2a4cae3b
 PLIST_FILES=	bin/${PORTNAME}
 
