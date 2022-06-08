@@ -1,0 +1,19 @@
+--- dhall.cabal.orig	2001-09-09 01:46:40 UTC
++++ dhall.cabal
+@@ -1,6 +1,7 @@ Version: 1.41.1
+ Cabal-Version: 2.4
+ Name: dhall
+ Version: 1.41.1
++x-revision: 1
+ Build-Type: Simple
+ License: BSD-3-Clause
+ License-File: LICENSE
+@@ -232,7 +233,7 @@ Common common
+         parser-combinators                               ,
+         prettyprinter               >= 1.7.0    && < 1.8 ,
+         prettyprinter-ansi-terminal >= 1.1.1    && < 1.2 ,
+-        pretty-simple                              < 4.1 ,
++        pretty-simple                              < 4.2 ,
+         profunctors                 >= 3.1.2    && < 5.7 ,
+         repline                     >= 0.4.0.0  && < 0.5 ,
+         serialise                   >= 0.2.0.0  && < 0.3 ,
