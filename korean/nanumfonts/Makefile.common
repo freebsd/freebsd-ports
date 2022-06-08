@@ -13,8 +13,7 @@ COMMENT=	${NANUM_FONTDESC} Hangul fonts (${FLAVOR:tu})
 LICENSE=	OFL11
 LICENSE_FILE=	${FILESDIR}/LICENSE
 
-FLAVORS=	otf ttf
-FLAVOR?=	${FLAVORS:[2]}
+FLAVORS=	ttf otf
 otf_PKGNAMESUFFIX=	-${NANUM_FONTNAME}-${FLAVOR}
 
 DESCR=		${.CURDIR}/../../korean/nanumfonts/pkg-descr
