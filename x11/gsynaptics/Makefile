@@ -9,6 +9,9 @@ MASTER_SITES=	OSDN/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME Synaptics Touchpad setting tool
 
+DEPRECATED=	Abandonware using old gnome2 libs
+EXPIRATION_DATE=	2022-07-08
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	xf86-input-synaptics>0:x11-drivers/xf86-input-synaptics
