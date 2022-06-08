@@ -53,6 +53,7 @@
     SUBDIR += apcpwr
     SUBDIR += apcupsd
     SUBDIR += aptly
+    SUBDIR += arc_summary
     SUBDIR += arcconf
     SUBDIR += archey4
     SUBDIR += archivemount
