@@ -1,22 +1,19 @@
 PORTNAME=	ayatana-ido
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/AyatanaIndicators/ayatana-ido/commit/
-PATCHFILES=	62f510e2e846b182d5565c354a72319849ab5a21.diff:-p1
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Ayatana Indicator Display Objects
 
 LICENSE=	LGPL3
 
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+		libgtest.so:devel/googletest
 BUILD_DEPENDS=	vala>=0:lang/vala \
 		lcov>=0:devel/lcov
 
 USES=	cmake localbase:ldflags gnome pkgconfig
 
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
-		libgtest.so:devel/googletest
 USE_GNOME=	introspection glib20 gtk30 pango atk cairo gdkpixbuf2
 
 USE_LDCONFIG=	yes
