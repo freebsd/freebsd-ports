@@ -1,6 +1,6 @@
---- collectors/python.d.plugin/Makefile.am.orig	2020-08-12 20:04:44 UTC
+--- collectors/python.d.plugin/Makefile.am.orig	2022-06-08 15:49:44 UTC
 +++ collectors/python.d.plugin/Makefile.am
-@@ -144,108 +144,3 @@ dist_third_party_DATA = \
+@@ -125,108 +125,3 @@ dist_third_party_DATA = \
      python_modules/third_party/filelock.py \
      $(NULL)
  
