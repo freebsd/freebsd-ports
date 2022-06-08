@@ -47,6 +47,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-esound \
 		--disable-udev \
 		--disable-gtk3 \
+		--disable-gconf \
 		--disable-systemd-daemon \
 		--disable-systemd-journal \
 		--disable-systemd-login \
@@ -57,12 +58,10 @@ USERS=		pulse
 GROUPS=		pulse pulse-access pulse-rt
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	AVAHI GCONF GSETTINGS SIMD TEST X11
+OPTIONS_DEFINE=	AVAHI GSETTINGS SIMD TEST X11
 OPTIONS_DEFAULT=AVAHI SIMD SIMPLE SOXR SPEEX WEBRTC_AEC X11
 AVAHI_CONFIGURE_ENABLE=	avahi
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
-GCONF_CONFIGURE_ENABLE=	gconf
-GCONF_USE=	GNOME=gconf2
 GSETTINGS_DESC=	GSettings configuration backend support
 GSETTINGS_CONFIGURE_ENABLE=	gsettings
 GSETTINGS_VARS=	GLIB_SCHEMAS=org.freedesktop.pulseaudio.gschema.xml
