@@ -2,7 +2,7 @@
 
 PORTNAME=	ogmrip
 PORTVERSION=	1.0.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}
 
@@ -27,23 +27,18 @@ RUN_DEPENDS=	lame:audio/lame \
 USES=		desktop-file-utils gmake gnome libtool localbase:ldflags \
 		pathfix pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-gtk-support --disable-dbus-support \
+		--disable-libnotify-support
 USE_GNOME=	glib20 intlhack libxml2
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	GTK2 ENCHANT MATROSKA NLS THEORA FAAC SRT DEBUG
-OPTIONS_DEFAULT=GTK2
+OPTIONS_DEFINE=	ENCHANT MATROSKA NLS THEORA FAAC SRT DEBUG
 OPTIONS_SUB=	yes
 ENCHANT_DESC=	Enable spell checking for text subtitles
 MATROSKA_DESC=	Enable Matroska container support
 THEORA_DESC=	Enable Ogg Theora video codec support
 SRT_DESC=	Enable SRT text subtitles support
-
-GTK2_CONFIGURE_ENABLE=	gtk-support dbus-support libnotify-support
-GTK2_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-			libnotify.so:devel/libnotify
-GTK2_USE=		GNOME=gconf2,libglade2
-GTK2_VARS=		GCONF_SCHEMAS=ogmrip.schemas
 
 ENCHANT_CONFIGURE_ENABLE=enchant-support
 ENCHANT_LIB_DEPENDS=	libenchant.so:textproc/enchant
