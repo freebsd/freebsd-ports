@@ -1,0 +1,5 @@
+Dhall is a programmable configuration language that can be thought of as: JSON +
+functions + types + imports.  dhall-to-json allows for converting a dhall
+configuration into a JSON file.
+
+WWW: https://dhall-lang.org/
