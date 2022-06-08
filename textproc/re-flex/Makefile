@@ -1,7 +1,6 @@
 PORTNAME=	re-flex
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -20,8 +19,6 @@ CONFLICTS_INSTALL=	reflex
 USE_GITHUB=	yes
 GH_ACCOUNT=	Genivia
 GH_PROJECT=	RE-flex
-
-TEST_TARGET=	test
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/reflex
