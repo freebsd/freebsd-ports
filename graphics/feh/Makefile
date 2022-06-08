@@ -2,6 +2,7 @@
 
 PORTNAME=	feh
 PORTVERSION=	3.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		LOCAL/uqs

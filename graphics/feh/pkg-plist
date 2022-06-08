@@ -1,5 +1,5 @@
 bin/feh
-man/man1/feh.1.gz
+share/man/man1/feh.1.gz
 share/applications/feh.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
