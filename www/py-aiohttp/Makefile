@@ -1,7 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	aiohttp
-DISTVERSION=	3.8.1
+PORTVERSION=	3.8.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,38 +12,37 @@ COMMENT=	Async http client/server framework (asyncio)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=17.3.0:devel/py-attrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}chardet>=2.0<5.0,1:textproc/py-chardet@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosignal>=1.1.2:devel/py-aiosignal@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}async_timeout>=4.0.0<5.0:devel/py-async_timeout@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}attrs>=17.3.0:devel/py-attrs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}charset-normalizer>=2.0<3.0:textproc/py-charset-normalizer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}frozenlist>=1.1.1:devel/py-frozenlist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multidict>=4.5<7.0:www/py-multidict@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}async_timeout>=4.0<5.0:devel/py-async_timeout@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yarl>=1.0<2.0:www/py-yarl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.5:devel/py-typing-extensions@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.8.2:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}async_generator>0:devel/py-async_generator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gunicorn>0:www/py-gunicorn@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiodns>0:dns/py-aiodns@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR}
-# cryptography is only needed here until trustme is ported (which depends on it)
-# to be ported	${PYTHON_PKGNAMEPREFIX}brotlypy>0:archivers/py-brotlipy@${PY_FLAVOR}
-# to be ported	${PYTHON_PKGNAMEPREFIX}trustme>0:security/py-trustme@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}yarl>=1.0<2.0:www/py-yarl@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0,1:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR}
 
 USES=		cpe python:3.6+
-CPE_VENDOR=	${PORTNAME}_project
-USE_PYTHON=	autoplist distutils cython
+USE_PYTHON=	autoplist concurrent cython distutils
+
+CPE_VENDOR=	aiohttp_project
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}asynctest>=0.13.0:devel/py-asynctest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
 
 pre-configure:
 .for file in _helpers _http_parser _http_writer _websocket
-	@${RM} ${WRKSRC}/aiohttp/${file}.c
-	@cd ${WRKSRC} && cython-${PYTHON_VER} -3 -o aiohttp/${file}.c aiohttp/${file}.pyx -I aiohttp
+	@cd ${WRKSRC} && ${RM} aiohttp/${file}.c && cython-${PYTHON_VER} -3 -I aiohttp -o aiohttp/${file}.c aiohttp/${file}.pyx
 .endfor
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/aiohttp/*.so
+	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	cd ${WRKSRC} && ${PYTHON_CMD} setup.py test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
