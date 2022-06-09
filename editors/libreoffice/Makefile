@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -273,6 +273,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-libs \
 		--with-system-libxml \
 		--with-system-mdds \
+		--with-system-nss \
 		--with-system-openjpeg \
 		--with-system-orcus \
 		--with-system-ucpp \
@@ -328,6 +329,7 @@ CONFIGURE_ARGS+=	--enable-gtk3-kde5
 .endif
 
 .if ${PORT_OPTIONS:MLTO} && ${CHOSEN_COMPILER_TYPE} == clang
+LLVM_DEFAULT=	13
 CPP=	${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
 CC=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}
 CXX=	${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
