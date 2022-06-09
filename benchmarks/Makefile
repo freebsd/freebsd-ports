@@ -43,6 +43,7 @@
     SUBDIR += linux-gputest
     SUBDIR += linux-unigine-heaven
     SUBDIR += linux-unigine-sanctuary
+    SUBDIR += linux-unigine-superposition
     SUBDIR += linux-unigine-tropics
     SUBDIR += linux-unigine-valley
     SUBDIR += linux-vdbench
