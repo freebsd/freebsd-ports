@@ -5094,6 +5094,7 @@
     SUBDIR += py-pyral
     SUBDIR += py-pyrepl
     SUBDIR += py-pyrfc3339
+    SUBDIR += py-pyright
     SUBDIR += py-pyro
     SUBDIR += py-pyrsistent
     SUBDIR += py-pyscaffold
