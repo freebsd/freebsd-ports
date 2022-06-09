@@ -1,3 +1,3 @@
-TIMESTAMP = 1654708374
-SHA256 (pyroute2.ethtool-0.6.10.tar.gz) = e62d736cab38d115c2401d5c9f78eb0ce5fe1609749e49d314bb2f23af6e771c
-SIZE (pyroute2.ethtool-0.6.10.tar.gz) = 29270
+TIMESTAMP = 1654774096
+SHA256 (pyroute2.ethtool-0.6.11.tar.gz) = df116c2b9d16b67452f08984594e0791ef4d769d40b26e303c405f413d6b6175
+SIZE (pyroute2.ethtool-0.6.11.tar.gz) = 29309
