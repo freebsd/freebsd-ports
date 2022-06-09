@@ -1,5 +1,5 @@
 PORTNAME=	fakeredis
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.5
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,11 +7,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fake version of databases/py-redis for unit testing
 
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	BSD3CLAUSE MIT
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}redis>=0<4.2.0:databases/py-redis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}redis>=0<4.3.1:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.12:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=0:devel/py-sortedcontainers@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioredis>=0:databases/py-aioredis@${PY_FLAVOR} \
@@ -21,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioredis>=0:databases/py-aioredis@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
