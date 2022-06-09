@@ -1,7 +1,7 @@
 # Created by: Rusty Nejdl
 
 PORTNAME=	apsw
-PORTVERSION=	3.38.1
+PORTVERSION=	3.38.5
 DISTVERSIONSUFFIX=	-r1
 CATEGORIES=	databases python
 MASTER_SITES=	https://github.com/rogerbinns/apsw/releases/download/${PORTVERSION}${DISTVERSIONSUFFIX}/
