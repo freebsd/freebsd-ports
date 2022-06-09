@@ -1,3 +1,38 @@
+  <vuln vid="c80ce2dd-e831-11ec-bcd2-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>102.0.5005.115</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/06/stable-channel-update-for-desktop.html">
+	  <p>This release contains 7 security fixes, including:</p>
+	  <ul>
+	    <li>[1326210] High CVE-2022-2007: Use after free in WebGPU. Reported by David Manouchehri on 2022-05-17</li>
+	    <li>[1317673] High CVE-2022-2008: Out of bounds memory access in WebGL. Reported by khangkito - Tran Van Khang (VinCSS) on 2022-04-19</li>
+	    <li>[1325298] High CVE-2022-2010: Out of bounds read in compositing. Reported by Mark Brand of Google Project Zero on 2022-05-13</li>
+	    <li>[1330379] High CVE-2022-2011: Use after free in ANGLE. Reported by SeongHwan Park (SeHwa) on 2022-05-31</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2007</cvename>
+      <cvename>CVE-2022-2008</cvename>
+      <cvename>CVE-2022-2010</cvename>
+      <cvename>CVE-2022-2011</cvename>
+      <url>https://chromereleases.googleblog.com/2022/06/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-06-09</discovery>
+      <entry>2022-06-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="49adfbe5-e7d1-11ec-8fbd-d4c9ef517024">
     <topic>Apache httpd -- Multiple vulnerabilities</topic>
     <affects>
