@@ -3,7 +3,7 @@ PORTVERSION=	0.2.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get memory usage of a process in Ruby
 
 LICENSE=	MIT
