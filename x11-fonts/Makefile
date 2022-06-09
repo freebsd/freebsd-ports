@@ -225,6 +225,7 @@
     SUBDIR += py-defcon
     SUBDIR += py-fontMath
     SUBDIR += py-fontmake
+    SUBDIR += py-gflanguages
     SUBDIR += py-glyphsLib
     SUBDIR += py-opentype-sanitizer
     SUBDIR += py-opentypespec
