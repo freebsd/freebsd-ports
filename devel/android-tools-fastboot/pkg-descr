@@ -1,3 +1,0 @@
-Fastboot protocol is a mechanism for communicating with bootloaders
-over USB or Ethernet. The provided command line tool can be used
-to flash filesystems on Android-powered devices.

@@ -151,8 +151,7 @@
     SUBDIR += aml
     SUBDIR += ammonite
     SUBDIR += amqp-cpp
-    SUBDIR += android-tools-adb
-    SUBDIR += android-tools-fastboot
+    SUBDIR += android-tools
     SUBDIR += android-tools-simpleperf
     SUBDIR += anjuta
     SUBDIR += antlr

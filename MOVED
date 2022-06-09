@@ -17197,3 +17197,5 @@ print/ttftot42||2022-06-08|Abdonware, depends on freetype1
 print/freetype|print/freetype2|2022-06-08|Has been replaced long ago by freetype2
 net/libgnetwork||2022-06-08|Gnome2 library unused anymore
 x11-wm/compizconfig-backend-gconf||2022-06-08|gconf support has been removed from compiz
+devel/android-tools-adb|devel/android-tools|2022-06-09|Port has been updated, unbroken and consolidated into devel/android-tools
+devel/android-tools-fastboot|devel/android-tools|2022-06-09|Port has been updated and consolidated into devel/android-tools
