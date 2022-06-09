@@ -1,7 +1,7 @@
 # Created by: Michael Reifenberger <mr@freebsd.org>
 
 PORTNAME=	cospend
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.8
 CATEGORIES=	finance www editors
 MASTER_SITES=	https://github.com/eneiluj/${PORTNAME}-nc/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
