@@ -25,4 +25,16 @@ USE_PYTHON=	autoplist concurrent distutils pytest
 NO_ARCH=	yes
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
+OPTIONS_DEFINE=	DATAFRAME IMAGE NUM
+DATAFRAME_DESC=	Pandas dataframe regression
+IMAGE_DESC=	Image objects regression
+NUM_DESC=	Numeric data regression
+
+DATAFRAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
+IMAGE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pandas>=0,1:math/py-pandas@${PY_FLAVOR}
+NUM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pandas>=0,1:math/py-pandas@${PY_FLAVOR}
+
 .include <bsd.port.mk>
