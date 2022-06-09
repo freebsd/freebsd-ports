@@ -4750,7 +4750,6 @@
     SUBDIR += py-knack
     SUBDIR += py-l18n
     SUBDIR += py-lark
-    SUBDIR += py-lark-parser
     SUBDIR += py-launchpadlib
     SUBDIR += py-lazr.config
     SUBDIR += py-lazr.delegates
