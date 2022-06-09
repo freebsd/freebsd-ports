@@ -46,6 +46,7 @@ lib/libsoup-3.0.so.0
 lib/libsoup-3.0.so.0.0.5
 libdata/pkgconfig/libsoup-3.0.pc
 share/gir-1.0/Soup-3.0.gir
+share/locale/ab/LC_MESSAGES/libsoup-3.0.mo
 share/locale/an/LC_MESSAGES/libsoup-3.0.mo
 share/locale/as/LC_MESSAGES/libsoup-3.0.mo
 share/locale/be/LC_MESSAGES/libsoup-3.0.mo
