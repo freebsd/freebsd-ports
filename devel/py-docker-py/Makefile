@@ -10,6 +10,9 @@ COMMENT=	API client for docker written in Python
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Use devel/py-docker
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}websocket-client>0:www/py-websocket-client@${PY_FLAVOR}
 
 USES=		python:3.6+
