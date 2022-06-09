@@ -25,6 +25,7 @@
     SUBDIR += gitterdone
     SUBDIR += gloox
     SUBDIR += gomuks
+    SUBDIR += gotktrix
     SUBDIR += gotosocial
     SUBDIR += icmpchat
     SUBDIR += icqlib
