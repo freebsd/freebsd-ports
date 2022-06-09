@@ -26,4 +26,11 @@ NO_ARCH=	yes
 TEST_ARGS=	discover -s src
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
+OPTIONS_DEFINE=	I2P TOR
+I2P_DESC=	I2P (Invisible Internet Project) support
+TOR_DESC=	Tor support
+
+I2P_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}txi2p-tahoe>=0.3.5:devel/py-txi2p-tahoe@${PY_FLAVOR}
+TOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}txtorcon>=19.0.0:security/py-txtorcon@${PY_FLAVOR}
+
 .include <bsd.port.mk>
