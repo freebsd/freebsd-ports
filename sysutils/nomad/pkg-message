@@ -1,0 +1,15 @@
+[
+{ type: upgrade,
+  message: <<EOM
+The nomad rc script requires the nomad data directory (as configured
+in the rc variable `nomad_dir`) to use strict directory permissions.
+
+If your nomad data directory was created automatically using a
+previous version of the package, it is likely that its permissions
+are too lax. If that is the case, nomad will refuse to start with
+an error message and the situation can be resolved by adjusting
+directory permissions manually by issuing the chmod command,
+e.g. `chmod 700 /var/tmp/nomad`.
+EOM
+}
+]
