@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	cssutils
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
