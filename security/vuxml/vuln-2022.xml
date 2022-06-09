@@ -1,3 +1,74 @@
+  <vuln vid="49adfbe5-e7d1-11ec-8fbd-d4c9ef517024">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.5.54</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="http://downloads.apache.org/httpd/CHANGES_2.4.54">
+	  <ul>
+	    <li>CVE-2022-31813: mod_proxy X-Forwarded-For dropped by hop-by-hop
+	      mechanism. Apache HTTP Server 2.4.53 and earlier may not send the
+	      X-Forwarded-* headers to the origin server based on client side
+	      Connection header hop-by-hop mechanism. This may be used to bypass
+	      IP based authentication on the origin server/application.</li>
+	    <li>CVE-2022-30556: Information Disclosure in mod_lua with websockets.
+	      Apache HTTP Server 2.4.53 and earlier may return lengths to
+	      applications calling r:wsread() that point past the end of the
+	      storage allocated for the buffer.</li>
+	    <li>CVE-2022-30522: mod_sed denial of service. If Apache HTTP Server
+	      2.4.53 is configured to do transformations with mod_sed in contexts
+	      where the input to mod_sed may be very large, mod_sed may make
+	      excessively large memory allocations and trigger an abort.</li>
+	    <li>CVE-2022-29404: Denial of service in mod_lua r:parsebody. In Apache
+	      HTTP Server 2.4.53 and earlier, a malicious request to a lua script
+	      that calls r:parsebody(0) may cause a denial of service due to no
+	      default limit on possible input size.</li>
+	    <li>CVE-2022-28615: Read beyond bounds in ap_strcmp_match(). Apache
+	      HTTP Server 2.4.53 and earlier may crash or disclose information due
+	      to a read beyond bounds in ap_strcmp_match() when provided with an
+	      extremely large input buffer.  While no code distributed with the
+	      server can be coerced into such a call, third-party modules or lua
+	      scripts that use ap_strcmp_match() may hypothetically be affected.
+	    </li>
+	    <li>CVE-2022-28614: read beyond bounds via ap_rwrite(). The ap_rwrite()
+	      function in Apache HTTP Server 2.4.53 and earlier may read unintended
+	      memory if an attacker can cause the server to reflect very large
+	      input using ap_rwrite() or ap_rputs(), such as with mod_luas r:puts()
+	      function.</li>
+	    <li>CVE-2022-28330: read beyond bounds in mod_isapi. Apache HTTP Server
+	      2.4.53 and earlier on Windows may read beyond bounds when configured
+	      to process requests with the mod_isapi module.</li>
+	    <li>CVE-2022-26377: mod_proxy_ajp: Possible request smuggling.
+	      Inconsistent Interpretation of HTTP Requests ('HTTP Request
+	      Smuggling') vulnerability in mod_proxy_ajp of Apache HTTP Server
+	      allows an attacker to smuggle requests to the AJP server it forwards
+	      requests to.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31813</cvename>
+      <cvename>CVE-2022-30556</cvename>
+      <cvename>CVE-2022-30522</cvename>
+      <cvename>CVE-2022-29404</cvename>
+      <cvename>CVE-2022-28615</cvename>
+      <cvename>CVE-2022-28614</cvename>
+      <cvename>CVE-2022-28330</cvename>
+      <cvename>CVE-2022-26377</cvename>
+      <url>http://downloads.apache.org/httpd/CHANGES_2.4.54</url>
+    </references>
+    <dates>
+      <discovery>2022-06-08</discovery>
+      <entry>2022-06-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="15888c7e-e659-11ec-b7fe-10c37b4ac2ea">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
