@@ -1,9 +1,12 @@
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
+%%WWWDIR%%/Dockerfile
+%%WWWDIR%%/Nmakefile
 %%WWWDIR%%/README.md
 %%WWWDIR%%/bin/preprocessor
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/config.php
+%%WWWDIR%%/docker-compose.yml
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/img/asc.gif
 %%WWWDIR%%/img/bg.gif
@@ -38,15 +41,16 @@
 %%WWWDIR%%/library/Preprocessor.php
 %%WWWDIR%%/library/Reader.php
 %%WWWDIR%%/library/gprof2dot.py
+%%WWWDIR%%/library/gzstream.h
 %%WWWDIR%%/styles/custom.css
 %%WWWDIR%%/styles/style.css
 %%WWWDIR%%/templates/fileviewer.phtml
 %%WWWDIR%%/templates/index.phtml
-@dir %%WWWDIR%%/templates
-@dir %%WWWDIR%%/styles
-@dir %%WWWDIR%%/library
-@dir %%WWWDIR%%/js
 @dir %%WWWDIR%%/img
+@dir %%WWWDIR%%/js
+@dir %%WWWDIR%%/library
+@dir %%WWWDIR%%/styles
+@dir %%WWWDIR%%/templates
 @dir %%WWWDIR%%
 @owner
 @group
