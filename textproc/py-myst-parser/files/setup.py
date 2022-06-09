@@ -4,18 +4,22 @@
 from distutils.core import setup
 
 packages = \
-['myst_parser']
+['myst_parser',
+ 'myst_parser.config',
+ 'myst_parser.mdit_to_docutils',
+ 'myst_parser.parsers',
+ 'myst_parser.sphinx_ext']
 
 package_data = \
 {'': ['*']}
 
 install_requires = \
-['docutils>=0.15,<0.18',
+['docutils>=0.15,<0.19',
  'jinja2',
  'markdown-it-py>=1.0.0,<3.0.0',
  'mdit-py-plugins~=0.3.0',
  'pyyaml',
- 'sphinx>=3.1,<5',
+ 'sphinx>=4,<6',
  'typing-extensions']
 
 extras_require = \
@@ -23,27 +27,30 @@ extras_require = \
  'linkify': ['linkify-it-py~=1.0'],
  'rtd': ['ipython',
          'sphinx-book-theme',
-         'sphinx-panels',
-         'sphinxcontrib-bibtex~=2.4',
+         'sphinx-design',
          'sphinxext-rediraffe~=0.2.7',
          'sphinxcontrib.mermaid~=0.7.1',
          'sphinxext-opengraph~=0.6.3'],
  'testing': ['beautifulsoup4',
-             'coverage',
-             'docutils~=0.17.0',
+             'coverage[toml]',
              'pytest>=6,<7',
              'pytest-cov',
              'pytest-regressions',
-             'pytest-param-files~=0.3.4']}
+             'pytest-param-files~=0.3.4',
+             'sphinx-pytest']}
 
 entry_points = \
 {'console_scripts': ['myst-anchors = myst_parser.cli:print_anchors',
-                     'myst-docutils-html = myst_parser.docutils_:cli_html',
-                     'myst-docutils-html5 = myst_parser.docutils_:cli_html5',
-                     'myst-docutils-latex = myst_parser.docutils_:cli_latex',
+                     'myst-docutils-html = '
+                     'myst_parser.parsers.docutils_:cli_html',
+                     'myst-docutils-html5 = '
+                     'myst_parser.parsers.docutils_:cli_html5',
+                     'myst-docutils-latex = '
+                     'myst_parser.parsers.docutils_:cli_latex',
                      'myst-docutils-pseudoxml = '
-                     'myst_parser.docutils_:cli_pseudoxml',
-                     'myst-docutils-xml = myst_parser.docutils_:cli_xml']}
+                     'myst_parser.parsers.docutils_:cli_pseudoxml',
+                     'myst-docutils-xml = '
+                     'myst_parser.parsers.docutils_:cli_xml']}
 
 setup(name='myst-parser',
       version='%%PORTVERSION%%',
