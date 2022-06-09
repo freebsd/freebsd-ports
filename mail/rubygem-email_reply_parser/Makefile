@@ -1,5 +1,5 @@
 PORTNAME=	email_reply_parser
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.10
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
