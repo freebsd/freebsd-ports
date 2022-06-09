@@ -3,7 +3,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	5
 CATEGORIES=	databases
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	balaev@tarantool.org
 COMMENT=	C client for Tarantool 1.6+
 
 LICENSE=	BSD2CLAUSE
