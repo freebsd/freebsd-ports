@@ -9,7 +9,7 @@
      AC_MSG_CHECKING(for supported MIT krb5 version)
      KRB5_VERSION="`$KRB5_CONFIG --version`"
      case $KRB5_VERSION in
-@@ -19,7 +19,9 @@ then
+@@ -19,7 +19,10 @@ then
          Kerberos\ 5\ release\ 1.14* | \
          Kerberos\ 5\ release\ 1.15* | \
          Kerberos\ 5\ release\ 1.16* | \
