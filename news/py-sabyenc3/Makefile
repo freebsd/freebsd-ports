@@ -1,7 +1,7 @@
 # Created by: Ralf van der Enden <tremere@cainites.net>
 
 PORTNAME=	sabyenc3
-PORTVERSION=	4.0.2
+PORTVERSION=	5.4.2
 CATEGORIES=	news python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,6 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python yEnc package optimized for use within SABnzbd
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
