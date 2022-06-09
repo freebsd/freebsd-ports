@@ -1,6 +1,7 @@
 PORTNAME=	scrcpy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	comms net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONFULL}/:server
 DISTFILES=	${SERVER_FILE}:server
@@ -13,7 +14,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
-RUN_DEPENDS=	adb:devel/android-tools-adb
+RUN_DEPENDS=	adb:devel/android-tools
 
 USES=		compiler:c++11-lang meson pkgconfig sdl
 
