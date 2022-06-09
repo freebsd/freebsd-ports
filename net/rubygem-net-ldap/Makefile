@@ -1,7 +1,7 @@
 # Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 
 PORTNAME=	net-ldap
-PORTVERSION=	0.17.0
+PORTVERSION=	0.17.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
