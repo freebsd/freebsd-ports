@@ -1,4 +1,4 @@
 This contrib extension, sphinxcontrib.httpdomain provides a Sphinx domain for
 describing RESTful HTTP APIs.
 
-WWW: http://bitbucket.org/birkenfeld/sphinx-contrib/
+WWW: https://github.com/sphinx-contrib/httpdomain
