@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parsley>=1.2:devel/py-parsley@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=15.4:devel/py-twisted@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils unittest
 
 NO_ARCH=	yes
 
