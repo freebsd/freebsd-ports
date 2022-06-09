@@ -5274,6 +5274,7 @@
     SUBDIR += py-rx1
     SUBDIR += py-saneyaml
     SUBDIR += py-sarge
+    SUBDIR += py-sarif-om
     SUBDIR += py-schedule
     SUBDIR += py-schema
     SUBDIR += py-schematics-patched
