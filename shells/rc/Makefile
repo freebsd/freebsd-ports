@@ -1,12 +1,12 @@
 # Created by: erich@rrnet.com
 
 PORTNAME=	rc
-PORTVERSION=	1.7.4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.7.4
 PORTREVISION=	4
-DISTVERSIONPREFIX=v
 CATEGORIES=	shells plan9
 
-MAINTAINER=	quanstro@quanstro.net
+MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Unix incarnation of the plan9 shell
 
 LICENSE=	ZLIB
