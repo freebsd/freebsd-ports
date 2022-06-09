@@ -18,7 +18,13 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.5:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
