@@ -1,6 +1,6 @@
 PORTNAME=	padthv1
 DISTVERSIONPREFIX=	${PORTNAME}_
-DISTVERSION=	0_9_25
+DISTVERSION=	0_9_26
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:5 \
 		shared-mime-info
 USE_GL=		gl
-USE_QT=		core gui widgets xml buildtools_build linguisttools_build qmake_build
+USE_QT=		core gui svg widgets xml buildtools_build linguisttools_build qmake_build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
