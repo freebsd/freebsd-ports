@@ -1,7 +1,6 @@
 PORTNAME=	xdg-desktop-portal-wlr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,11 +13,13 @@ BUILD_DEPENDS=	wayland-protocols>=1.14:graphics/wayland-protocols
 LIB_DEPENDS=	libbasu.so:devel/basu \
 		libinih.so:devel/inih \
 		libepoll-shim.so:devel/libepoll-shim \
+		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libpipewire-0.3.so:multimedia/pipewire
 
-USES=		compiler:c11 meson pkgconfig
+USES=		compiler:c11 gl meson pkgconfig
 USE_GITHUB=	yes
+USE_GL=		gbm
 GH_ACCOUNT=	emersion
 MESON_ARGS=	-Dsd-bus-provider=basu
 PLIST_FILES=	libexec/${PORTNAME} \
