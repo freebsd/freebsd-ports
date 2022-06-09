@@ -20,6 +20,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 USES=		python:3.6+
 USE_PYTHON=	distutils concurrent autoplist
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}-pyjwt
+
 OPTIONS_DEFINE=	RSASSA
 
 RSASSA_DESC=		RSASSA-PKCS1 v1.5 signature support

@@ -18,6 +18,8 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}-pyjwt1
+
 CPE_VENDOR=	pyjwt_project
 
 OPTIONS_DEFINE=	CRYPTO
