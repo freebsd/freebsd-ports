@@ -1,8 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	furo
-PORTVERSION=	2022.1.2
-PORTREVISION=	1
+PORTVERSION=	2022.4.7
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP \
 		LOCAL/sunpoet:static

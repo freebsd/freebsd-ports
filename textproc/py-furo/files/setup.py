@@ -18,6 +18,7 @@ package_data = \
           'assets/styles/variables/*',
           'theme/*',
           'theme/furo/*',
+          'theme/furo/components/*',
           'theme/furo/partials/*',
           'theme/furo/sidebar/*',
           'theme/furo/static/*']}
@@ -27,13 +28,6 @@ package_dir = \
 
 install_requires = \
 ['beautifulsoup4', 'sphinx ~= 4.0', 'pygments ~= 2.7']
-
-extras_require = \
-{'doc': ['myst-parser',
-         'sphinx-copybutton',
-         'sphinx-design',
-         'sphinx-inline-tabs'],
- 'test': ['pytest', 'pytest-cov', 'pytest-xdist']}
 
 entry_points = \
 {'sphinx.html_themes': ['furo = furo']}
@@ -48,7 +42,6 @@ setup(name='furo',
       package_data=package_data,
       package_dir=package_dir,
       install_requires=install_requires,
-      extras_require=extras_require,
       entry_points=entry_points,
       python_requires='>=3.6',
      )
