@@ -2,7 +2,7 @@
 
 PORTNAME=	hostapd
 PORTVERSION=	2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://w1.fi/releases/
 
