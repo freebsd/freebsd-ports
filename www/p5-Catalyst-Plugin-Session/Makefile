@@ -1,7 +1,7 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
 
 PORTNAME=	Catalyst-Plugin-Session
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
