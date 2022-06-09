@@ -38,6 +38,5 @@ setup(
     },
     packages=[
         'jupyter_packaging',
-        'tests',
     ],
 )
