@@ -51,8 +51,5 @@ setup(
     },
     packages=[
         'jupyterlab_server',
-        'tests',
-        'tests.translations.jupyterlab-language-pack-es_CO.jupyterlab_language_pack_es_CO',
-        'tests.translations.jupyterlab-some-package.jupyterlab_some_package',
     ],
 )
