@@ -1481,6 +1481,7 @@
     SUBDIR += py-sphinx-autoapi
     SUBDIR += py-sphinx-autobuild
     SUBDIR += py-sphinx-autodoc-typehints
+    SUBDIR += py-sphinx-basic-ng
     SUBDIR += py-sphinx-book-theme
     SUBDIR += py-sphinx-copybutton
     SUBDIR += py-sphinx-design
