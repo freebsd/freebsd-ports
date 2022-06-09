@@ -1,9 +1,9 @@
---- test/Makefile.orig	2021-12-12 00:26:22 UTC
+--- test/Makefile.orig	2022-06-07 13:52:08 UTC
 +++ test/Makefile
 @@ -1,5 +1,5 @@
  CXX = clang++
--CXXFLAGS = -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion # -fno-exceptions -DCPPHTTPLIB_NO_EXCEPTIONS -fsanitize=address
-+CXXFLAGS += -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion # -fno-exceptions -DCPPHTTPLIB_NO_EXCEPTIONS -fsanitize=address
+-CXXFLAGS = -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion -Wshadow # -fno-exceptions -DCPPHTTPLIB_NO_EXCEPTIONS -fsanitize=address
++CXXFLAGS += -g -std=c++11 -I. -Wall -Wextra -Wtype-limits -Wconversion -Wshadow # -fno-exceptions -DCPPHTTPLIB_NO_EXCEPTIONS -fsanitize=address
  
  PREFIX = /usr/local
  #PREFIX = $(shell brew --prefix)
