@@ -9,6 +9,8 @@ COMMENT=	EDA package for printed circuit board design
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_14=		fails to compile (error: no matching function for call to '__search') due to this clang regression: https://github.com/llvm/llvm-project/issues/55683
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs \
 		cppzmq>0:net/cppzmq \
 		glm>0:math/glm
