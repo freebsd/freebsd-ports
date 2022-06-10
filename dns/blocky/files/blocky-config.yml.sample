@@ -1,7 +1,6 @@
 upstream:
-  externalResolvers:
-    - 46.182.19.48
-    - 80.241.218.68
+  default:
+    - 1.1.1.1
     - tcp-tls:fdns1.dismail.de:853
     - https://dns.digitale-gesellschaft.ch/dns-query
 blocking:
