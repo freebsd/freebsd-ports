@@ -1,7 +1,4 @@
 bin/decvpp_tool
-bin/hello-decode
-bin/hello-encode
-bin/hello-vpp
 bin/sample_decode
 bin/sample_encode
 bin/sample_multi_transcode

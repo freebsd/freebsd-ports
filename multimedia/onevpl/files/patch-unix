@@ -19,6 +19,17 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
             if (libInfo->libNameFull.find(MSDK_LIB_NAME) != std::string::npos) {
                                           ^
 
+--- CMakeLists.txt.orig	2022-06-10 23:31:59 UTC
++++ CMakeLists.txt
+@@ -219,7 +219,7 @@ message(STATUS "  BUILD_TOOLS                         
+ message(STATUS "  BUILD_DEV                            : ${BUILD_DEV}")
+ message(STATUS "  BUILD_DISPATCHER                     : ${BUILD_DISPATCHER}")
+ message(STATUS "  BUILD_TOOLS                          : ${BUILD_TOOLS}")
+-if(CMAKE_SYSTEM_NAME MATCHES Linux)
++if(UNIX AND NOT APPLE)
+   message(STATUS "  ENABLE_VA                            : ${ENABLE_VA}")
+   message(STATUS "  ENABLE_DRM                           : ${ENABLE_DRM}")
+   message(STATUS "  ENABLE_WAYLAND                       : ${ENABLE_WAYLAND}")
 --- api/vpl/mfxdefs.h.orig	2021-12-07 00:05:44 UTC
 +++ api/vpl/mfxdefs.h
 @@ -64,7 +64,7 @@ extern "C"
@@ -362,14 +373,23 @@ dispatcher/vpl/mfx_dispatcher_vpl_loader.cpp:583:43: error: use of undeclared id
      #ifdef LIBVA_SUPPORT
      vaTerminate((VADisplay)accelHandle);
      close(fd);
---- tools/legacy/sample_common/CMakeLists.txt.orig	2022-05-27 22:25:48 UTC
+--- tools/legacy/sample_common/CMakeLists.txt.orig	2022-06-10 23:31:59 UTC
 +++ tools/legacy/sample_common/CMakeLists.txt
-@@ -61,7 +61,7 @@ endif()
-   target_compile_definitions(sample_common PUBLIC -DONEVPL_EXPERIMENTAL)
+@@ -4,7 +4,7 @@ set(TOOLS_DEFAULT ON)
+ # SPDX-License-Identifier: MIT
+ # ##############################################################################
+ set(TOOLS_DEFAULT ON)
+-if(CMAKE_SYSTEM_NAME MATCHES Linux)
++if(UNIX AND NOT APPLE)
+   # Check dependencies up-front so we can set option defaults
+   find_package(PkgConfig REQUIRED)
+   # note: pkg-config version for libva is *API* version
+@@ -161,7 +161,7 @@ endif()
+   target_compile_definitions(${TARGET} PUBLIC -DONEVPL_EXPERIMENTAL)
  endif()
  
 -if(CMAKE_SYSTEM_NAME MATCHES Linux)
 +if(UNIX AND NOT APPLE)
-   target_compile_definitions(sample_common PUBLIC LINUX64)
+   target_compile_definitions(${TARGET} PUBLIC LINUX64)
  
-   find_package(PkgConfig REQUIRED)
+   if(NOT ENABLE_VA)
