@@ -1,5 +1,5 @@
 PORTNAME=	android-tools
-PORTVERSION=	31.0.3p1
+PORTVERSION=	31.0.3p1r1
 CATEGORIES=	devel
 MASTER_SITES=	GH
 
@@ -21,7 +21,7 @@ USES=		cmake go:no_targets perl5 python:3.7+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	neelchauhan
 GH_PROJECT=	freebsd-${PORTNAME}
-GH_TAGNAME=	7fa3613259c9c1e4bc4f82af46dfca975e28a930
+GH_TAGNAME=	271d7a26c8daf4b9fe412d360a2edfaca327efdd
 
 SHEBANG_FILES=	vendor/mkbootimg/repack_bootimg.py \
 		vendor/mkbootimg/mkbootimg.py \
