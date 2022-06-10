@@ -11,10 +11,10 @@
  const base::FilePath::CharType kFilepathSinglePrefExtensions[] =
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
 -    FILE_PATH_LITERAL("/usr/share/google-chrome/extensions");
-+    FILE_PATH_LITERAL("/usr/local/share/chromium/extensions");
++    FILE_PATH_LITERAL("%%LOCALBASE%%/share/chromium/extensions");
  #else
 -    FILE_PATH_LITERAL("/usr/share/chromium/extensions");
-+    FILE_PATH_LITERAL("/usr/local/share/chromium/extensions");
++    FILE_PATH_LITERAL("%%LOCALBASE%%/share/chromium/extensions");
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -37,7 +37,7 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(FILE_PATH_LITERAL("/etc/opt/chrome/policies"));
 +#elif BUILDFLAG(IS_FREEBSD)
-+      cur = base::FilePath(FILE_PATH_LITERAL("/usr/local/etc/chromium/policies"));
++      cur = base::FilePath(FILE_PATH_LITERAL("%%LOCALBASE%%/etc/chromium/policies"));
  #else
        cur = base::FilePath(FILE_PATH_LITERAL("/etc/chromium/policies"));
  #endif
@@ -74,7 +74,7 @@
            "/etc/opt/chrome/native-messaging-hosts"));
 +#elif BUILDFLAG(IS_FREEBSD)
 +      cur = base::FilePath(FILE_PATH_LITERAL(
-+          "/usr/local/etc/chromium/native-messaging-hosts"));
++          "%%LOCALBASE%%/etc/chromium/native-messaging-hosts"));
  #else
        cur = base::FilePath(FILE_PATH_LITERAL(
            "/etc/chromium/native-messaging-hosts"));

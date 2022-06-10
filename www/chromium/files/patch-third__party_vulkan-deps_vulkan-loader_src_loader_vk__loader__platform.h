@@ -30,7 +30,7 @@
 +    if ((buffer = getenv("CHROME_EXE_PATH")) != NULL)
 +        return buffer;
 +    else
-+        buffer = "/usr/local/chrome/chrome";
++        buffer = "%%LOCALBASE%%/chrome/chrome";
  
      return buffer;
  }
