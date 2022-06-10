@@ -1,0 +1,29 @@
+diff --git a/tmux.h b/tmux.h
+index 735f4e68..11df80e8 100644
+--- tmux.h
+--- tmux.h
+@@ -23,6 +23,7 @@
+ #include <sys/uio.h>
+ 
+ #include <limits.h>
++#include <stdalign.h>
+ #include <stdarg.h>
+ #include <stdio.h>
+ #include <termios.h>
+@@ -722,13 +723,13 @@ struct grid_cell_entry {
+ struct grid_line {
+ 	u_int			 cellused;
+ 	u_int			 cellsize;
+-	struct grid_cell_entry	*celldata;
++	struct grid_cell_entry	*celldata __aligned(alignof(void *));
+ 
+ 	u_int			 extdsize;
+-	struct grid_extd_entry	*extddata;
++	struct grid_extd_entry	*extddata __aligned(alignof(void *));
+ 
+ 	int			 flags;
+-} __packed;
++} __packed __aligned(alignof(void *));
+ 
+ /* Entire grid of cells. */
+ struct grid {
