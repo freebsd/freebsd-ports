@@ -1,7 +1,7 @@
 #  Created by: Oleg Sidorkin <osidorkin@gmail.com>
 
 PORTNAME=	rss-bridge
-DISTVERSION=	2022-01-20
+DISTVERSION=	2022-06-10
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -32,6 +32,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "." ${STAGEDIR}${WWWDIR} "-not ( \
 	    -name LICENSE -or -name .gitkeep -or -name docker-bake.hcl -or \
-	    -name docker-entrypoint.sh -or -regex ./contrib.* )" )
+	    -name docker-entrypoint.sh \
+	    -or -path ./config -or -path ./config/nginx.conf \
+	    -or -regex ./contrib.* -or -regex ./doc.*  \
+	    -or -regex ./static/screenshot_.* ) \
+	    -or -name config.default.ini.php" )
 
 .include <bsd.port.mk>
