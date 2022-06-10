@@ -1,7 +1,6 @@
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.7
-PORTREVISION=	3
+DISTVERSION=	0.8.9
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +31,7 @@ CARGO_CRATES=	\
 		bstr-0.2.16 \
 		byte-tools-0.3.1 \
 		byteorder-1.4.3 \
-		cargo-binutils-0.3.4 \
+		cargo-binutils-0.3.5 \
 		cargo_metadata-0.11.4 \
 		cc-1.0.68 \
 		cfg-if-1.0.0 \
@@ -41,20 +40,20 @@ CARGO_CRATES=	\
 		chrono-tz-build-0.0.2 \
 		clap-2.33.3 \
 		cpp_demangle-0.3.2 \
-		crc32fast-1.2.1 \
+		crc32fast-1.3.2 \
 		crossbeam-0.8.1 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.0 \
 		crossbeam-epoch-0.9.5 \
 		crossbeam-queue-0.3.2 \
 		crossbeam-utils-0.8.5 \
-		crypto-common-0.1.1 \
+		crypto-common-0.1.3 \
 		ctor-0.1.20 \
 		debugid-0.7.2 \
 		deunicode-0.4.3 \
 		diff-0.1.12 \
 		digest-0.8.1 \
-		digest-0.10.1 \
+		digest-0.10.3 \
 		either-1.6.1 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
@@ -80,9 +79,9 @@ CARGO_CRATES=	\
 		lazy_static-1.4.0 \
 		libc-0.2.97 \
 		libz-sys-1.1.3 \
-		log-0.4.14 \
+		log-0.4.16 \
 		maplit-1.0.2 \
-		md-5-0.10.0 \
+		md-5-0.10.1 \
 		memchr-2.4.0 \
 		memmap2-0.5.2 \
 		memoffset-0.6.4 \
@@ -107,7 +106,7 @@ CARGO_CRATES=	\
 		phf_shared-0.10.0 \
 		pkg-config-0.3.19 \
 		ppv-lite86-0.2.10 \
-		pretty_assertions-1.1.0 \
+		pretty_assertions-1.2.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.27 \
@@ -120,7 +119,7 @@ CARGO_CRATES=	\
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
 		redox_syscall-0.2.9 \
-		regex-1.5.4 \
+		regex-1.5.5 \
 		regex-syntax-0.6.25 \
 		remove_dir_all-0.5.3 \
 		rustc-cfg-0.4.0 \
@@ -132,11 +131,11 @@ CARGO_CRATES=	\
 		scopeguard-1.1.0 \
 		semver-0.9.0 \
 		semver-0.10.0 \
-		semver-1.0.5 \
+		semver-1.0.7 \
 		semver-parser-0.7.0 \
 		serde-1.0.136 \
 		serde_derive-1.0.136 \
-		serde_json-1.0.78 \
+		serde_json-1.0.79 \
 		sha-1-0.8.2 \
 		simplelog-0.11.2 \
 		siphasher-0.3.7 \
@@ -146,8 +145,8 @@ CARGO_CRATES=	\
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
-		symbolic-common-8.6.0 \
-		symbolic-demangle-8.5.0 \
+		symbolic-common-8.6.1 \
+		symbolic-demangle-8.6.1 \
 		syn-1.0.73 \
 		synstructure-0.12.4 \
 		tcmalloc-0.3.0 \
@@ -155,12 +154,10 @@ CARGO_CRATES=	\
 		tera-1.15.0 \
 		termcolor-1.1.2 \
 		textwrap-0.11.0 \
-		thiserror-1.0.25 \
-		thiserror-impl-1.0.25 \
 		thread_local-1.1.3 \
 		time-0.1.43 \
 		toml-0.5.8 \
-		typenum-1.13.0 \
+		typenum-1.15.0 \
 		ucd-trie-0.1.3 \
 		uncased-0.9.6 \
 		unic-char-property-0.9.0 \
@@ -182,7 +179,7 @@ CARGO_CRATES=	\
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		zip-0.5.13
+		zip-0.6.0
 
 PLIST_FILES=	bin/grcov
 
