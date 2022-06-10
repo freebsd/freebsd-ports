@@ -32,7 +32,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/par2file.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/postproc.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/powersup.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/rating.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/rss.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/sabtray.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/sabtraylinux.py
