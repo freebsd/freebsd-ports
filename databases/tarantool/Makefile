@@ -2,6 +2,7 @@
 
 PORTNAME=	tarantool
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://download.tarantool.org/tarantool/src/
 
@@ -16,12 +17,13 @@ BROKEN_riscv64=		fails to compile: mmintrin.h:50:12: invalid conversion between 
 NOT_FOR_ARCHS=		armv6 powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	fails to build: Unsupported architecture
 
-BUILD_DEPENDS=	gsed:textproc/gsed
+BUILD_DEPENDS=	gsed:textproc/gsed \
+		${RUN_DEPENDS}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libicui18n.so:devel/icu \
-		libmsgpuck.so:devel/msgpuck \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
+RUN_DEPENDS=	msgpuck>=2.0_4:devel/msgpuck
 
 USES=		cmake:noninja compiler:c++11-lang cpe gettext-runtime gmake iconv perl5 readline ssl
 USE_PERL5=	build
