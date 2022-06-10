@@ -1,8 +1,7 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 
 PORTNAME=	chromium
-PORTVERSION=	102.0.5005.61
-PORTREVISION=	2
+PORTVERSION=	102.0.5005.115
 CATEGORIES=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:fonts
