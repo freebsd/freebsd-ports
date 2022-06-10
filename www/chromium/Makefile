@@ -208,8 +208,6 @@ TEST_ALL_TARGET=	${TEST_TARGETS}
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif
 
-.if ${COMPILER_VERSION} < 130
-LLVM_DEFAULT=		13
 BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
 			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
@@ -217,10 +215,6 @@ BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
 			ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT} \
 			nm=${LOCALBASE}/bin/llvm-nm${LLVM_DEFAULT} \
 			ld=${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
-.else
-BINARY_ALIAS+=		ar=/usr/bin/llvm-ar \
-			nm=/usr/bin/llvm-nm
-.endif
 
 # swiftshader/lib/{libEGL.so,libGLESv2.so} is x86 only
 .if ${ARCH} == aarch64
