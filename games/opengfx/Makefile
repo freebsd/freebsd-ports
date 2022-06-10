@@ -16,14 +16,14 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+DATADIR=	${PREFIX}/share/openttd/baseset/${PORTNAME}
+
 post-extract:
 	@cd ${WRKDIR} && tar -xf ${PORTNAME}-${PORTVERSION}.tar
 
 do-install:
-	@${MKDIR} \
-		${STAGEDIR}${PREFIX}/share/openttd/baseset/${PORTNAME}
-	${INSTALL_DATA} \
-		${WRKSRC}/* \
-		${STAGEDIR}${PREFIX}/share/openttd/baseset/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${DATADIR}
+
 
 .include <bsd.port.mk>
