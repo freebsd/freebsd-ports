@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.192.1
 CATEGORIES=	graphics
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	db794a2fcc82.patch:-p1 # https://code.videolan.org/videolan/libplacebo/-/issues/201
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Reusable library for GPU-accelerated video/image rendering
 
@@ -14,7 +17,6 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	haasn
 MESON_ARGS=	-Ddemos=false
-CFLAGS+=	-DVK_USE_PLATFORM_METAL_EXT # https://code.videolan.org/videolan/libplacebo/-/issues/201
 
 OPTIONS_DEFINE=	LCMS2 LIBUNWIND OPENGL TEST VULKAN
 OPTIONS_DEFAULT=LCMS2 LIBUNWIND OPENGL SHADERC
