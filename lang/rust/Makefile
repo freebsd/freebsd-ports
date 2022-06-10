@@ -107,7 +107,11 @@ IGNORE=		is only for FreeBSD
 # bfd to link rustc_driver; lld currently can't
 BUILD_DEPENDS+=	ld.bfd:devel/binutils
 .else
+.  if ${ARCH} != aarch64
+# XXX: RUST_BACKTRACE=1 results in a segmentation fault when constructing
+# a stack backtrace with _Unwind_Backtrace() in a CheriBSD/aarch64 jail.
 MAKE_ENV+=	RUST_BACKTRACE=1
+.  endif
 # rls needs 64-bit atomics
 _RUST_TOOLS+=	rls
 .endif
