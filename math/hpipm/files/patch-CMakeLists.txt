@@ -1,11 +1,47 @@
---- CMakeLists.txt.orig	2019-08-24 23:47:04 UTC
+--- CMakeLists.txt.orig	2022-06-01 15:00:13 UTC
 +++ CMakeLists.txt
-@@ -228,7 +228,7 @@ install(TARGETS hpipm EXPORT hpipmConfig
+@@ -36,7 +36,7 @@
+ cmake_minimum_required(VERSION 2.8.11)
+ 
+ # installation directory ( has to be before `project()` )
+-set(CMAKE_INSTALL_PREFIX "/opt/hpipm" CACHE STRING "Installation path")
++#set(CMAKE_INSTALL_PREFIX "/opt/hpipm" CACHE STRING "Installation path")
+ 
+ project(hpipm C)
+ 
+@@ -92,7 +92,7 @@ endif()
+ 
+ # BLASFEO Option
+ if(NOT TARGET blasfeo)
+-	set(BLASFEO_PATH "/opt/blasfeo" CACHE STRING "BLASFEO installation path")
++	set(BLASFEO_PATH ${CMAKE_INSTALL_PREFIX} CACHE STRING "BLASFEO installation path")
+ 	if(BUILD_SHARED_LIBS MATCHES OFF)
+ 		set(HPIPM_BLASFEO_LIB "Static" CACHE STRING "BLASFEO library link type")
+ 	else()
+@@ -151,7 +151,7 @@ if(${REF_BLAS} MATCHES 0)
+ 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ")
+ endif(${REF_BLAS} MATCHES 0)
+ if(${REF_BLAS} MATCHES OPENBLAS)
+-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DREF_BLAS_OPENBLAS -I/opt/openblas/include")
++	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DREF_BLAS_OPENBLAS")
+ endif(${REF_BLAS} MATCHES OPENBLAS)
+ if(${REF_BLAS} MATCHES BLIS)
+ 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DREF_BLAS_BLIS -std=c99")
+@@ -160,7 +160,7 @@ if(${REF_BLAS} MATCHES NETLIB)
+ 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DREF_BLAS_NETLIB")
+ endif(${REF_BLAS} MATCHES NETLIB)
+ if(${REF_BLAS} MATCHES MKL)
+-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DREF_BLAS_MKL -m64 -I/opt/intel/mkl/include")
++	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DREF_BLAS_MKL -m64")
+ endif(${REF_BLAS} MATCHES MKL)
+ if(${REF_BLAS} MATCHES ATLAS)
+ 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DREF_BLAS_ATLAS")
+@@ -343,7 +343,7 @@ install(TARGETS hpipm EXPORT hpipmConfig
  	ARCHIVE DESTINATION lib
  	RUNTIME DESTINATION bin)
  
 -install(EXPORT hpipmConfig DESTINATION cmake)
-+install(EXPORT hpipmConfig DESTINATION lib/cmake/hpipm)
++install(EXPORT hpipmConfig DESTINATION lib/cmake)
  
  file(GLOB_RECURSE HPIPM_HEADERS "include/*.h")
  install(FILES ${HPIPM_HEADERS} DESTINATION ${HPIPM_HEADERS_INSTALLATION_DIRECTORY})
