@@ -1,6 +1,6 @@
 PORTNAME=	gmtp
 PORTVERSION=	1.3.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/gMTP-${PORTVERSION}/
 
@@ -13,13 +13,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
 		libid3tag.so:audio/libid3tag \
 		libFLAC.so:audio/flac \
-		libvorbis.so:audio/libvorbis
+		libvorbis.so:audio/libvorbis \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		dos2unix gmake gnome localbase pkgconfig
 DOS2UNIX_FILES=	COPYING
-USE_GNOME=	cairo gdkpixbuf2 glib20
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+GLIB_SCHEMAS=	org.gnome.gmtp.gschema.xml
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gtk3
 
 # PR: 244712
 # Workaround to fix linking with Clang >= 11 and GCC >= 10 which both set
@@ -30,19 +34,8 @@ CFLAGS+=	-fcommon
 PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_RADIO=	GTK
-OPTIONS_RADIO_GTK=	GTK2 GTK3
-OPTIONS_DEFAULT=	GTK2
 OPTIONS_SUB=		yes
 
-GTK3_USE=		GNOME=gtk30
-GTK3_CONFIGURE_WITH=	gtk3
-GTK3_VARS=		GLIB_SCHEMAS=org.gnome.gmtp.gschema.xml
-GTK2_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-			libfontconfig.so:x11-fonts/fontconfig
-GTK2_USE=		GNOME=gtk20,gconf2
-GTK2_CONFIGURE_WITH=	gtk2
-GTK2_VARS=		GCONF_SCHEMAS=gmtp.schemas
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
