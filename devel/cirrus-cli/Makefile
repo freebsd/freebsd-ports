@@ -1,6 +1,5 @@
 PORTNAME=	cirrus-cli
-PORTVERSION=	0.78.0
-PORTREVISION=	1
+PORTVERSION=	0.79.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -22,7 +21,7 @@ GH_TUPLE=	\
 		antihax:optional:v1.0.0:antihax_optional/vendor/github.com/antihax/optional \
 		avast:retry-go:v3.0.0:avast_retry_go/vendor/github.com/avast/retry-go \
 		certifi:gocertifi:431795d63e8d:certifi_gocertifi/vendor/github.com/certifi/gocertifi \
-		cirruslabs:cirrus-ci-agent:v1.77.3:cirruslabs_cirrus_ci_agent/vendor/github.com/cirruslabs/cirrus-ci-agent \
+		cirruslabs:cirrus-ci-agent:v1.78.0:cirruslabs_cirrus_ci_agent/vendor/github.com/cirruslabs/cirrus-ci-agent \
 		cirruslabs:echelon:v1.7.0:cirruslabs_echelon/vendor/github.com/cirruslabs/echelon \
 		cirruslabs:go-java-glob:v0.1.0:cirruslabs_go_java_glob/vendor/github.com/cirruslabs/go-java-glob \
 		cirruslabs:podmanapi:v0.2.0:cirruslabs_podmanapi/vendor/github.com/cirruslabs/podmanapi \
