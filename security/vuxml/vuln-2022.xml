@@ -38,7 +38,7 @@
     <affects>
       <package>
 	<name>apache24</name>
-	<range><lt>2.5.54</lt></range>
+	<range><lt>2.4.54</lt></range>
       </package>
     </affects>
     <description>
@@ -101,6 +101,7 @@
     <dates>
       <discovery>2022-06-08</discovery>
       <entry>2022-06-09</entry>
+      <modified>2022-06-10</modified>
     </dates>
   </vuln>
 
