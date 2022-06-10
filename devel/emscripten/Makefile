@@ -1,6 +1,5 @@
 PORTNAME=	emscripten
-DISTVERSION=	2.0.3
-PORTREVISION=	1
+DISTVERSION=	3.1.13
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +17,7 @@ RUN_DEPENDS=	llvm-devel>0:devel/llvm-devel \
 USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	emscripten-core
-SHEBANG_FILES=	${PYSCRIPTS} emcmake tools/emdump system/bin/sdl-config system/bin/sdl2-config third_party/websockify/run
+SHEBANG_FILES=	${PYSCRIPTS} emcmake system/bin/sdl-config system/bin/sdl2-config
 SHEBANG_GLOB=	*.py *.sh
 
 PYSCRIPTS=	em++ em-config emar embuilder emcc emcmake emconfigure emmake emranlib emrun emscons emsize
@@ -36,12 +35,9 @@ post-patch:
 			s|CLANG_ADD_VERSION = None|CLANG_ADD_VERSION = 'devel'| ; \
 			s|^__rootpath__ = .*|__rootpath__ = '${PREFIX}/lib/${PORTNAME}'| ; \
 			s|find_executable\('llvm-dis'\) or '/usr/bin/llvm-dis'|'${LOCALBASE}/bin/llvm-dis'|" \
-			${WRKSRC}/tools/shared.py
-	@${REINPLACE_CMD} -i '' -E " \
-			s|os.getenv\('BINARYEN', ''\)|os.getenv('BINARYEN', '${LOCALBASE}')|" \
-			${WRKSRC}/tools/settings_template.py
+			${WRKSRC}/tools/config.py
 
-do-install:
+do-install: # the native install target installs files into root, see https://github.com/emscripten-core/emscripten/issues/17193
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	cd ${WRKSRC} && ${CP} -r em* cmake site src system third_party tools ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/
 	${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME} \( -name "*.bat" -o -name "*.orig" \) -delete
@@ -53,7 +49,5 @@ do-install:
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${s}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${s} ${STAGEDIR}${PREFIX}/bin/${s}
 .endfor
-	${RM} -rf ${STAGEDIR}${PREFIX}/lib/emscripten/system/lib/pkgconfig
-	${RM} -rf ${STAGEDIR}${PREFIX}/lib/emscripten/tools/websocket_to_posix_proxy
 
 .include <bsd.port.mk>
