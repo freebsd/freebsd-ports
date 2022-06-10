@@ -91,6 +91,7 @@ include/kj/timer.h
 include/kj/tuple.h
 include/kj/units.h
 include/kj/vector.h
+include/kj/win32-api-version.h
 include/kj/windows-sanity.h
 lib/cmake/CapnProto/CapnProtoConfig.cmake
 lib/cmake/CapnProto/CapnProtoConfigVersion.cmake
