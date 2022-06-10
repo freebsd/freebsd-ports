@@ -1,8 +1,7 @@
 # Created by: Hye-Shik Chang
 
 PORTNAME=	irc
-PORTVERSION=	13.1
-PORTREVISION=	2
+PORTVERSION=	20.0.0
 CATEGORIES=	irc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,21 +11,25 @@ COMMENT=	IRC protocol client library for Python
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hgtools>0:devel/py-hgtools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jaraco.util>0:devel/py-jaraco.util@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco.functools>=1.20:devel/py-jaraco.functools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jaraco.logging>0:devel/py-jaraco.logging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jaraco.util>0:devel/py-jaraco.util@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}more-itertools>0:devel/py-more-itertools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tempora>=1.6:devel/py-tempora@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
-USE_PYTHON=	distutils autoplist
-NO_ARCH=	yes
+USES=		python:3.7+ shebangfix
+USE_PYTHON=	autoplist distutils pytest
+
 SHEBANG_FILES=	irc/*.py scripts/*.py
 
-PORTEXAMPLES=	irccat.py irccat2.py servermap.py testbot.py \
-		dccreceive.py dccsend.py ssl-cat.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+NO_ARCH=	yes
+
+PORTEXAMPLES=	dccreceive.py dccsend.py irccat.py irccat2.py servermap.py \
+		ssl-cat.py testbot.py
 
 OPTIONS_DEFINE=	EXAMPLES
 
