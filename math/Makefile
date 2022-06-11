@@ -179,6 +179,7 @@
     SUBDIR += asymptote
     SUBDIR += atlas
     SUBDIR += barvinok
+    SUBDIR += basic-stats
     SUBDIR += bcal
     SUBDIR += bcps
     SUBDIR += bitwise
