@@ -1,3 +1,32 @@
+  <vuln vid="b51cfaea-e919-11ec-9fba-080027240888">
+    <topic>py-numpy -- Missing return-value validation of the function PyArray_DescrNew</topic>
+    <affects>
+      <package>
+	<name>py38-numpy</name>
+	<name>py39-numpy</name>
+	<name>py310-numpy</name>
+	<range><lt>1.22.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Numpy reports:</p>
+	<blockquote cite="https://github.com/numpy/numpy/pull/20960">
+	  <p>At most call-sites for PyArray_DescrNew, there are no validations of its return,
+	    but an invalid address may be returned.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41495</cvename>
+      <url>https://github.com/numpy/numpy/pull/20960</url>
+    </references>
+    <dates>
+      <discovery>2021-05-19</discovery>
+      <entry>2022-06-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c80ce2dd-e831-11ec-bcd2-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
