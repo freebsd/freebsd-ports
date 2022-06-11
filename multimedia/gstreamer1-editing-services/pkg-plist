@@ -60,15 +60,15 @@ include/gstreamer-%%VERSION%%/ges/ges-video-uri-source.h
 include/gstreamer-%%VERSION%%/ges/ges-xml-formatter.h
 include/gstreamer-%%VERSION%%/ges/ges.h
 lib/girepository-1.0/GES-%%VERSION%%.typelib
+lib/gst-validate-launcher/python/launcher/apps/geslaunch.py
 lib/gstreamer-%%VERSION%%/libgstges.so
 lib/gstreamer-%%VERSION%%/libgstnle.so
 lib/libges-%%VERSION%%.so
 lib/libges-%%VERSION%%.so.0
 lib/libges-%%VERSION%%.so.%%SOVERSION%%
 %%PYTHON_SITELIBDIR%%/gstreamer-editing-services/GES.py
-%%PYTHON_SITELIBDIR%%/gstreamer-editing-services/__pycache__/GES.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/gstreamer-editing-services/__pycache__/GES.cpython-%%PYTHON_SUFFIX%%.pyc
 libdata/pkgconfig/gst-editing-services-%%VERSION%%.pc
 man/man1/ges-launch-%%VERSION%%.1.gz
 share/bash-completion/completions/ges-launch-%%VERSION%%
 share/gir-1.0/GES-%%VERSION%%.gir
+share/gstreamer-%%VERSION%%/validate/scenarios/ges-edit-clip-while-paused.scenario
