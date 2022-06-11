@@ -16,6 +16,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/BZZ.pm
 %%SITE_PERL%%/Image/ExifTool/BigTIFF.pm
 %%SITE_PERL%%/Image/ExifTool/BuildTagLookup.pm
+%%SITE_PERL%%/Image/ExifTool/CBOR.pm
 %%SITE_PERL%%/Image/ExifTool/Canon.pm
 %%SITE_PERL%%/Image/ExifTool/CanonCustom.pm
 %%SITE_PERL%%/Image/ExifTool/CanonRaw.pm
@@ -237,6 +238,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::BZZ.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BigTIFF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::BuildTagLookup.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::CBOR.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Canon.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::CanonCustom.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::CanonRaw.3.gz
