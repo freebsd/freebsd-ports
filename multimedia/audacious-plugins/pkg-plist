@@ -31,6 +31,7 @@ lib/audacious/General/delete-files.so
 %%NOTIFY%%lib/audacious/General/notify.so
 %%GTK2%%lib/audacious/General/playlist-manager.so
 %%QT5%%lib/audacious/General/playlist-manager-qt.so
+%%QT5%%lib/audacious/General/qthotkey.so
 %%QT5%%lib/audacious/General/qtui.so
 %%SCROBBLER%%lib/audacious/General/scrobbler.so
 %%GTK2%%lib/audacious/General/search-tool.so
@@ -64,6 +65,7 @@ lib/audacious/Input/xsf.so
 %%JACK%%lib/audacious/Output/jack-ng.so
 %%OSS%%lib/audacious/Output/oss4.so
 %%PULSEAUDIO%%lib/audacious/Output/pulse_audio.so
+%%QT5%%lib/audacious/Output/qtaudio.so
 %%SDL%%lib/audacious/Output/sdlout.so
 %%SNDIO%%lib/audacious/Output/sndio-ng.so
 lib/audacious/Transport/gio.so
@@ -74,6 +76,7 @@ lib/audacious/Transport/gio.so
 %%GTK2%%lib/audacious/Visualization/cairo-spectrum.so
 %%QT5%%lib/audacious/Visualization/qt-spectrum.so
 %%GTK2%%%%OPENGL%%lib/audacious/Visualization/gl-spectrum.so
+%%QT5%%%%OPENGL%%lib/audacious/Visualization/gl-spectrum-qt.so
 %%QT5%%lib/audacious/Visualization/vumeter-qt.so
 share/audacious/Skins/Classic/balance.png
 share/audacious/Skins/Classic/cbuttons.png
