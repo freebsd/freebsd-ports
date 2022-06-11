@@ -1,27 +1,37 @@
-PORTNAME=	bc
-PORTVERSION=	5.2.5
-CATEGORIES=	math lang
-PKGNAMEPREFIX=	gh-
+PORTNAME=		bc
+PORTVERSION=		5.3.1
+CATEGORIES=		math lang
+PKGNAMEPREFIX=		gh-
 
-MAINTAINER=	se@FreeBSD.org
-COMMENT=	GNU compatible bc/dc calculator
+MAINTAINER=		se@FreeBSD.org
+COMMENT=		GNU compatible bc/dc calculator
 
-LICENSE=	BSD2CLAUSE MIT
-LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE=		BSD2CLAUSE MIT
+LICENSE_COMB=		multi
+LICENSE_FILE=		${WRKSRC}/LICENSE.md
 
-USES=		compiler:c11
-USE_GITHUB=	yes
-GH_ACCOUNT=	gavinhoward
+USES=			compiler:c11
+USE_GITHUB=		yes
+GH_ACCOUNT=		gavinhoward
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure.sh
-CONFIGURE_ARGS=		-G
-CFLAGS+=		-Dstatic_assert=_Static_assert
+CONFIGURE_ARGS+=	--disable-generated-tests
 
-.include <bsd.port.pre.mk>
+TEST_TARGET=		test
 
 CONFLICTS_INSTALL=	gnubc
+
+OPTIONS_DEFAULT=	LIBEDIT
+OPTIONS_RADIO=		HISTORY
+OPTIONS_RADIO_HISTORY=	LIBEDIT READLINE INTERNAL
+INTERNAL_DESC=		Command line editing via private functions
+
+LIBEDIT_USES=		libedit
+LIBEDIT_CONFIGURE_ON=	--enable-editline
+
+READLINE_USES=		readline
+READLINE_CONFIGURE_ON=	--enable-readline
 
 pre-build:
 		${INSTALL_SCRIPT} ${WRKSRC}/gen/strgen.sh ${WRKSRC}/gen/strgen
@@ -36,7 +46,4 @@ do-install:
 		${MV} ${STAGEDIR}${PREFIX}/share/nls/en_US/bc.cat ${STAGEDIR}${PREFIX}/share/nls/C/
 		${RMDIR} ${STAGEDIR}${PREFIX}/share/nls/en_US
 
-do-test:
-		${MAKE} -C ${WRKSRC} test
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
