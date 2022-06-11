@@ -2,6 +2,7 @@
 
 PORTNAME=	audacious
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://distfiles.audacious-media-player.org/
 
@@ -19,12 +20,14 @@ FLAVORS=	qt5 gtk2
 FLAVOR?=	${FLAVORS:[1]}
 
 USES=		compiler:c++11-lib desktop-file-utils gettext-tools gmake \
-		iconv localbase pkgconfig tar:bzip2 xorg
+		gnome iconv localbase pkgconfig tar:bzip2 xorg
+USE_GNOME=	glib20
 USE_XORG=	x11 sm
 USE_LDCONFIG=	yes
 
 qt5_CONFLICTS_INSTALL=	audacious-gtk2
 
+gtk2_LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
 gtk2_PKGNAMESUFFIX=	-gtk2
 gtk2_CONFLICTS_INSTALL=	audacious
 
@@ -41,8 +44,7 @@ USE_QT=			buildtools_build core gui widgets
 PLIST_SUB=		QT5="" GTK2="@comment "
 .elif ${FLAVOR} == gtk2
 CONFIGURE_ARGS+=	--disable-qt --enable-gtk
-USES+=			gnome
-USE_GNOME=		gtk20 glib20 cairo
+USE_GNOME+=		cairo gdkpixbuf2 gtk20
 PLIST_SUB=		QT5="@comment " GTK2=""
 .endif
 
