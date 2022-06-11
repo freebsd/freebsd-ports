@@ -1,5 +1,5 @@
 PORTNAME=	elementary-videos
-DISTVERSION=	2.8.3
+DISTVERSION=	2.8.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	miguel@gocobachi.dev
@@ -22,8 +22,7 @@ GH_ACCOUNT=	elementary
 GH_PROJECT=	videos
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GLIB_SCHEMAS=	io.elementary.videos.gschema.xml
-USE_GSTREAMER=	core faad libav ogg opus plugins theora vorbis x264 x \
-		ximagesrc
+USE_GSTREAMER=	core faad libav ogg opus plugins theora vorbis x x264 ximagesrc
 USE_XORG=	x11
 
 .include <bsd.port.mk>
