@@ -17200,3 +17200,4 @@ x11-wm/compizconfig-backend-gconf||2022-06-08|gconf support has been removed fro
 devel/android-tools-adb|devel/android-tools|2022-06-09|Port has been updated, unbroken and consolidated into devel/android-tools
 devel/android-tools-fastboot|devel/android-tools|2022-06-09|Port has been updated and consolidated into devel/android-tools
 devel/py-lark-parser|devel/py-lark|2022-06-09|Remove obsoleted port. Use devel/py-lark instead
+deskutils/egroupware|deskutils/egroupware@php74|2022-06-12|Merge into flavorized version
