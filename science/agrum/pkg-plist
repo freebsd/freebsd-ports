@@ -906,7 +906,7 @@ lib/libagrum.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-%%VERSION%%.dist-info/METADATA
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-%%VERSION%%.dist-info/WHEEL
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/_pyAgrum.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/_pyAgrum%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/causal/_CausalFormula.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/causal/_CausalModel.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/causal/__init__.py
