@@ -1,16 +1,11 @@
---- openvdb/openvdb/python/CMakeLists.txt.orig	2021-10-30 02:55:40 UTC
+--- openvdb/openvdb/python/CMakeLists.txt.orig	2022-06-09 14:50:40 UTC
 +++ openvdb/openvdb/python/CMakeLists.txt
-@@ -88,11 +88,11 @@ if(NOT DEFINED PYOPENVDB_INSTALL_DIRECTORY)
-     list(APPEND OPENVDB_PYTHON_REQUIRED_COMPONENTS Interpreter)
+@@ -115,7 +115,7 @@ if(USE_NUMPY)
  endif()
  
--find_package(Python QUIET COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
-+find_package(Python ${FREEBSD_PYTHON_VER} EXACT QUIET COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
- OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_INCLUDE_DIRS})
+ # Make sure find_package(Python) is only ever invoked once with all required components
+-find_package(Python COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
++find_package(Python ${FREEBSD_PYTHON_VER} EXACT COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
  
- if(USE_NUMPY)
--  find_package(Python QUIET COMPONENTS NumPy)
-+  find_package(Python ${FREEBSD_PYTHON_VER} EXACT QUIET COMPONENTS NumPy)
-   if(NOT TARGET Python::NumPy)
-       message(FATAL_ERROR "Could NOT find NumPy (Required is at least version "
-         "\"${MINIMUM_NUMPY_VERSION}\")"
+ openvdb_check_python_version(Python::Module
+   "${Python_VERSION}"

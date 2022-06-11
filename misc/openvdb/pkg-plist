@@ -60,9 +60,17 @@ include/openvdb/points/PointDelete.h
 include/openvdb/points/PointGroup.h
 include/openvdb/points/PointMask.h
 include/openvdb/points/PointMove.h
+include/openvdb/points/PointRasterizeFrustum.h
+include/openvdb/points/PointRasterizeSDF.h
+include/openvdb/points/PointRasterizeTrilinear.h
 include/openvdb/points/PointSample.h
 include/openvdb/points/PointScatter.h
+include/openvdb/points/PointStatistics.h
+include/openvdb/points/PointTransfer.h
 include/openvdb/points/StreamCompression.h
+include/openvdb/points/impl/PointRasterizeFrustumImpl.h
+include/openvdb/points/impl/PointRasterizeSDFImpl.h
+include/openvdb/points/impl/PointRasterizeTrilinearImpl.h
 %%PYTHON%%include/openvdb/python/pyopenvdb.h
 include/openvdb/thread/Threading.h
 include/openvdb/tools/Activate.h
@@ -152,6 +160,6 @@ lib/cmake/OpenVDB/OpenVDBHoudiniSetup.cmake
 lib/cmake/OpenVDB/OpenVDBMayaSetup.cmake
 lib/cmake/OpenVDB/OpenVDBUtils.cmake
 lib/libopenvdb.so
-lib/libopenvdb.so.9.0
-lib/libopenvdb.so.9.0.0
+lib/libopenvdb.so.9.1
+lib/libopenvdb.so.9.1.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyopenvdb.so
