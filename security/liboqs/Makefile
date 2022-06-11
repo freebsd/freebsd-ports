@@ -1,5 +1,5 @@
 PORTNAME=	liboqs
-DISTVERSION=	0.7.2 # on dev branch
+DISTVERSION=	0.7.2.20220607
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-quantum-safe
-GH_TAGNAME=	fd9f2fa # branch jg-freebsd-cpu-features that fixes arm64 build
+GH_TAGNAME=	38d3014dc2f74ec0f0c1a9e7e61aa4d2251adcc9
 
 SHEBANG_GLOB=	*.sh
 
