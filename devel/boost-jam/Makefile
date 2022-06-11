@@ -10,7 +10,7 @@ LICENSE=	BSL
 EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions ${DISTNAME}/${WRKSRC_SUBDIR}
 MAKE_CMD=	./build.sh
 ALL_TARGET=	${CHOSEN_COMPILER_TYPE} ${WITH_DEBUG:D--debug}
-MAKE_FLAGS=	--cxxflags="${CXXFLAGS}"
+MAKE_FLAGS=	--cxx="${CXX}" --cxxflags="${CXXFLAGS}"
 _MAKE_JOBS=	#
 MAKEFILE=	#
 
