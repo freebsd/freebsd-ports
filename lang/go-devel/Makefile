@@ -1,7 +1,7 @@
 # Created by: Devon H. O'Dell <devon.odell@gmail.com>
 
 PORTNAME=	go
-DISTVERSION?=	g20220319
+DISTVERSION?=	g20220609
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES?=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
@@ -36,7 +36,8 @@ CPE_VENDOR=	golang
 .ifndef MASTERDIR
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-GH_TAGNAME=	4aa1efed4853ea067d665a952eee77c52faac774
+# go1.19beta1
+GH_TAGNAME=	2cfbef438049fd4c3f73d1562773ad1f93900897
 .endif
 
 SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
@@ -45,9 +46,6 @@ SHEBANG_GLOB=	*.bash *.pl *.sh
 
 # Upstream archive contains files with UTF-8 names
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 ${TAR}
-
-.ifndef GH_TAGNAME
-.endif
 
 OPTIONS_DEFINE_i386=	SOFTFLOAT
 SOFTFLOAT_DESC=	Use soft float on non-SSE2 processors (Pentium 4 and older)
