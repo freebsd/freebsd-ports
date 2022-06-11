@@ -16,6 +16,11 @@ COMMENT=	U2F multi-factor auth app for Nextcloud
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream deprecated this port in favor of twofactor_webauthn. Check\
+		https://github.com/nextcloud/twofactor_webauthn\#migration-from-two-factor-u2f\
+		for migration instructions
+EXPIRATION_DATE=2022-08-01
+
 RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=20:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
