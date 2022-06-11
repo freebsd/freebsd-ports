@@ -31,6 +31,7 @@ man/man3/digits.3.gz
 man/man3/double_cmp.3.gz
 man/man3/dsv_line_copy.3.gz
 man/man3/dsv_line_free.3.gz
+man/man3/dsv_line_init.3.gz
 man/man3/dsv_line_read.3.gz
 man/man3/dsv_line_set_array_size.3.gz
 man/man3/dsv_line_set_delims.3.gz
@@ -79,6 +80,7 @@ man/man3/strlbasecpy.3.gz
 man/man3/strllower.3.gz
 man/man3/strlower.3.gz
 man/man3/strlupper.3.gz
+man/man3/strptrcasecmp.3.gz
 man/man3/strptrcmp.3.gz
 man/man3/strshellcpy.3.gz
 man/man3/strsplit.3.gz
@@ -101,6 +103,7 @@ man/man3/xt_ffopen.3.gz
 man/man3/xt_fgetline.3.gz
 man/man3/xt_file_mod_cmp.3.gz
 man/man3/xt_fopen.3.gz
+man/man3/xt_free_strings.3.gz
 man/man3/xt_get_home_dir.3.gz
 man/man3/xt_inhale_strings.3.gz
 man/man3/xt_malloc.3.gz
