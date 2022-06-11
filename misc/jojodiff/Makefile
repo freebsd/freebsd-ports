@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	jojodiff
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.5
 CATEGORIES=	misc devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}08
 DISTNAME=	jdiff${PORTVERSION:S/.//g}
@@ -13,32 +13,27 @@ LICENSE=	GPLv3+
 
 USES=		gmake tar:tgz
 MAKE_ARGS=	CC="${CC}" CPP="${CXX}" CFLAGS="${CFLAGS}"
+ALL_TARGET=	jdiff
 WRKSRC_SUBDIR=	src
 
 CONFLICTS_INSTALL=	py*-jsondiff # bin/jdiff
 
-PLIST_FILES=	bin/jdiff bin/jptch
+PLIST_FILES=	bin/jdedup bin/jdiff bin/jpatch bin/jtst
 PORTDOCS=	readme.txt readme.htm
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -E 's,P(RI|8)(zd|hkey), & ,g' \
-		${WRKSRC}/JFileAhead.cpp ${WRKSRC}/JFileIStreamAhead.cpp \
-		${WRKSRC}/JHashPos.cpp ${WRKSRC}/JOutAsc.cpp \
-		${WRKSRC}/JOutRgn.cpp ${WRKSRC}/jpatch.cpp \
-		${WRKSRC}/main.cpp
-	@${REINPLACE_CMD} -e 's,is %d bit,is %zu bit,' \
-		${WRKSRC}/jpatch.cpp ${WRKSRC}/main.cpp
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/j???? ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/jdiff ${STAGEDIR}${PREFIX}/bin
+.for l in jdedup jpatch jtst
+	${LN} -sf jdiff ${STAGEDIR}${PREFIX}/bin/${l}
+.endfor
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${TR} -d \\r < ${WRKSRC}/../${f} | iconv -f latin1 -t utf8 \
-		> ${STAGEDIR}${DOCSDIR}/${f}
-.endfor
+	${TR} -d \\r < ${WRKSRC}/../readme.htm | ${SED} 's,iso-8859-1,utf-8,' \
+		| iconv -f latin1 -t utf8 > ${STAGEDIR}${DOCSDIR}/readme.htm
+	${TR} -d \\r < ${WRKSRC}/../readme.txt \
+		> ${STAGEDIR}${DOCSDIR}/readme.txt
 
 .include <bsd.port.mk>
