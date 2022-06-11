@@ -2,8 +2,7 @@
 
 PORTNAME=	tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.10
-PORTREVISION=	2
+DISTVERSION=	0.1.11
 PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
@@ -43,7 +42,8 @@ GO_TARGET=	./cmd/auth/cookieauth \
 		./cmd/signature-fuzzer/fuzz-runner \
 		./cmd/ssadump \
 		./cmd/stress \
-		./cmd/stringer
+		./cmd/stringer \
+		./cmd/toolstash
 
 CONFLICTS_INSTALL=	easygit p5-Devel-Cover rubygem-bundler
 
@@ -56,7 +56,6 @@ RARE_VARS=	GO_TARGET+=" \
 		./cmd/benchcmp \
 		./cmd/getgo \
 		./cmd/getgo/server \
-		./cmd/splitdwarf \
-		./cmd/toolstash"
+		./cmd/splitdwarf"
 
 .include <bsd.port.mk>
