@@ -1,7 +1,7 @@
 # Created by: Tod McQuillin <devin@spamcop.net>
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	12.30
+PORTVERSION=	12.42
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://exiftool.org/ \
 		CPAN
