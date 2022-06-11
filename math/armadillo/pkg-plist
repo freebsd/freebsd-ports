@@ -11,7 +11,6 @@ include/armadillo_bits/Cube_bones.hpp
 include/armadillo_bits/Cube_meat.hpp
 include/armadillo_bits/GenCube_bones.hpp
 include/armadillo_bits/GenCube_meat.hpp
-include/armadillo_bits/GenSpecialiser.hpp
 include/armadillo_bits/Gen_bones.hpp
 include/armadillo_bits/Gen_meat.hpp
 include/armadillo_bits/GlueCube_bones.hpp
@@ -600,7 +599,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.11
-lib/libarmadillo.so.11.1.1
+lib/libarmadillo.so.11.2.0
 libdata/pkgconfig/armadillo.pc
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
