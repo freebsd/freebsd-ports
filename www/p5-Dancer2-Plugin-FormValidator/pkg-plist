@@ -14,6 +14,7 @@
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Accepted.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Alpha.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/AlphaNum.pm
+%%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Boolean.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Email.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/EmailDns.pm
 %%SITE_PERL%%/Dancer2/Plugin/FormValidator/Validator/Enum.pm
