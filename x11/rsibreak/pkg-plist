@@ -23,6 +23,8 @@ share/doc/HTML/pt/rsibreak/index.cache.bz2
 share/doc/HTML/pt/rsibreak/index.docbook
 share/doc/HTML/pt_BR/rsibreak/index.cache.bz2
 share/doc/HTML/pt_BR/rsibreak/index.docbook
+share/doc/HTML/ru/rsibreak/index.cache.bz2
+share/doc/HTML/ru/rsibreak/index.docbook
 share/doc/HTML/sv/rsibreak/index.cache.bz2
 share/doc/HTML/sv/rsibreak/index.docbook
 share/doc/HTML/uk/rsibreak/index.cache.bz2
@@ -65,6 +67,7 @@ share/icons/hicolor/48x48/actions/rsibreakx.png
 share/knotifications5/rsibreak.notifyrc
 share/locale/ar/LC_MESSAGES/rsibreak.mo
 share/locale/be/LC_MESSAGES/rsibreak.mo
+share/locale/bs/LC_MESSAGES/rsibreak.mo
 share/locale/ca/LC_MESSAGES/rsibreak.mo
 share/locale/ca@valencia/LC_MESSAGES/rsibreak.mo
 share/locale/cs/LC_MESSAGES/rsibreak.mo
@@ -84,6 +87,8 @@ share/locale/hne/LC_MESSAGES/rsibreak.mo
 share/locale/hr/LC_MESSAGES/rsibreak.mo
 share/locale/hu/LC_MESSAGES/rsibreak.mo
 share/locale/ia/LC_MESSAGES/rsibreak.mo
+share/locale/id/LC_MESSAGES/rsibreak.mo
+share/locale/is/LC_MESSAGES/rsibreak.mo
 share/locale/it/LC_MESSAGES/rsibreak.mo
 share/locale/ja/LC_MESSAGES/rsibreak.mo
 share/locale/km/LC_MESSAGES/rsibreak.mo
@@ -100,13 +105,16 @@ share/locale/pt/LC_MESSAGES/rsibreak.mo
 share/locale/pt_BR/LC_MESSAGES/rsibreak.mo
 share/locale/ro/LC_MESSAGES/rsibreak.mo
 share/locale/ru/LC_MESSAGES/rsibreak.mo
+share/locale/se/LC_MESSAGES/rsibreak.mo
 share/locale/sk/LC_MESSAGES/rsibreak.mo
 share/locale/sl/LC_MESSAGES/rsibreak.mo
 share/locale/sv/LC_MESSAGES/rsibreak.mo
+share/locale/ta/LC_MESSAGES/rsibreak.mo
 share/locale/tg/LC_MESSAGES/rsibreak.mo
 share/locale/tr/LC_MESSAGES/rsibreak.mo
 share/locale/ug/LC_MESSAGES/rsibreak.mo
 share/locale/uk/LC_MESSAGES/rsibreak.mo
+share/locale/x-test/LC_MESSAGES/rsibreak.mo
 share/locale/zh_CN/LC_MESSAGES/rsibreak.mo
 share/locale/zh_TW/LC_MESSAGES/rsibreak.mo
 share/metainfo/org.kde.rsibreak.appdata.xml
