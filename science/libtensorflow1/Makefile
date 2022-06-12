@@ -2,6 +2,7 @@ PORTNAME=	libtensorflow1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.15.5
 DISTVERSIONSUFFIX=
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	freebsd-ports@otoh.org
@@ -20,6 +21,13 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	bash:shells/bash \
 		bazel:devel/bazel029 \
 		git:devel/git
+
+FLAVORS=	default noavx
+FLAVOR?=	${FLAVORS:[1]}
+noavx_PKGNAMESUFFIX=	-noavx
+noavx_CONFLICTS_INSTALL=	libtensorflow1
+default_CONFLICTS_INSTALL=	libtensorflow1-noavx
+CONFLICTS_INSTALL=	science/libtensorflow2
 
 USES=		gmake python:3.7-3.9,build
 
@@ -69,8 +77,6 @@ GH_TUPLE=	bazelbuild:rules_closure:308b05b2:bazelbuild_rules_closure \
 
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	science/libtensorflow2
-
 CC?=		clang
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} python=${PYTHON_CMD}
@@ -83,6 +89,11 @@ OPTIONS_DEFAULT=	AVX
 
 OPTIONS_SINGLE=			CPUFEATURE
 OPTIONS_SINGLE_CPUFEATURE=	AVX AVX2 NOAVX
+.if ${FLAVOR:U} == noavx
+OPTIONS_EXCLUDE:=	${OPTIONS_SINGLE_CPUFEATURE}
+.endif
+
+CPUFEATURE_DESC=  Vector Processing Extensions
 
 NOAVX_DESC=	Disable Advanced Vector Extensions
 AVX_DESC=	Enable Advanced Vector Extensions (AVX)
@@ -128,7 +139,7 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} \
-	  CC_OPT_FLAGS="-I${LOCALBASE}/include -march=native -Wno-sign-compare" \
+	  CC_OPT_FLAGS="-I${LOCALBASE}/include" \
 	  PREFIX="${LOCALBASE}" \
 	  PYTHON_BIN_PATH=${PYTHON_CMD} \
 	  PYTHON_LIB_PATH="${PYTHON_SITELIBDIR}" \
