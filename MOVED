@@ -6962,7 +6962,6 @@ net/libnet10||2014-09-30|Has expired: Superseded by net/libnet
 net/despoof||2014-09-30|Has expired: Depends on expired net/libnet10
 sysutils/gpkgdep||2014-09-30|Has expired: Requires old pkg_info
 security/vida||2014-09-30|Has expired: Depends on expired net/libnet10
-net/nemesis||2014-09-30|Has expired: Depends on expired net/libnet10
 net-mgmt/sing||2014-09-30|Has expired: Depends on expired net/libnet10
 net-mgmt/gps||2014-09-30|Has expired: Depends on expired net/libnet10
 net/ttlscan||2014-09-30|Has expired: Depends on expired net/libnet10
