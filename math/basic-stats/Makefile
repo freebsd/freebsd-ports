@@ -1,5 +1,5 @@
 PORTNAME=	basic-stats
-DISTVERSION=	0.1.1
+DISTVERSION=	0.1.2
 CATEGORIES=	math
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,10 +13,9 @@ LIB_DEPENDS=	libxtend.so:devel/libxtend
 USE_GITHUB=	yes
 GH_ACCOUNT=	auerlab
 
+INSTALL_TARGET=	install-strip
+
 pre-build:
 	cd ${WRKSRC} && ${MAKE} LOCALBASE=${LOCALBASE} depend
-
-post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/basic-stats
 
 .include <bsd.port.mk>
