@@ -10,7 +10,7 @@ COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
 
 LICENSE=	GPLv2
 
-USES=		libtool pkgconfig localbase autoreconf
+USES=		gmake libtool pkgconfig localbase autoreconf
 USE_RC_SUBR=	pmacctd nfacctd sfacctd
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
