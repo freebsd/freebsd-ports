@@ -3,7 +3,13 @@
   message: <<EOM
 ===>  Basic Instructions:
 
-After kldload fusefs.ko and setting
+Load fusefs:
+	# kldload fusefs
+
+To load fusefs at boot time, add it to rc.conf:
+	# sysrc kld_list+=fusefs
+
+After fusefs is loaded, and setting
 	# sysctl vfs.usermount=1
 
 you should make .smb directory in your homedir:
