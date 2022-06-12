@@ -1,7 +1,7 @@
 # Created by: Pedro Giffuni <pfg@FreeBSD.org>
 
 PORTNAME=	webstorm
-PORTVERSION=	2022.1.1
+PORTVERSION=	2022.1.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
@@ -35,7 +35,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 
-WRKSRC=		${WRKDIR}/WebStorm-221.5591.52
+WRKSRC=		${WRKDIR}/WebStorm-221.5787.30
 
 do-install:
 # Linux/Windows/OS X only so remove them
