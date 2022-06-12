@@ -78,6 +78,7 @@ do-install:
 	cd ${STAGEDIR}${PREFIX}/lib/parmetis &&	\
 		${LN} -sf libmetis.so.2 ${STAGEDIR}${PREFIX}/lib/parmetis/libmetis.so && \
 		${LN} -sf libparmetis.so.2 ${STAGEDIR}${PREFIX}/lib/parmetis/libparmetis.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/parmetis/libmetis.so.2
 .endif
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/manual/manual.pdf ${STAGEDIR}${DOCSDIR}
