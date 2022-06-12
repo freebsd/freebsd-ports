@@ -12,6 +12,9 @@ COMMENT=	Unreal - the next generation ircd
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Very outdated, listed as end of life in 2016 and has known security issues
+EXPIRATION_DATE=2022-06-30
+
 BROKEN_aarch64=	Fails to link: missing sbrk
 BROKEN_riscv64=	Fails to link: missing sbrk
 
