@@ -3,9 +3,6 @@ DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
-PATCH_SITES=	https://invent.kde.org/frameworks/knewstuff/-/commit/
-PATCHFILES=	b634b65dd081746ccb8bdfa9bf2d878d13e2c0fb.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library for downloading application assets from the network
 

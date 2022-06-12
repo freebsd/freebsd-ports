@@ -304,10 +304,7 @@ lib/libexec/kf5/kpac_dhcp_helper
 %%QT_MKSPECDIR%%/modules/qt_KIOWidgets.pri
 %%QT_MKSPECDIR%%/modules/qt_KNTLM.pri
 %%QT_PLUGINDIR%%/designer/kio5widgets.so
-%%QT_PLUGINDIR%%/kcm_cookies.so
-%%QT_PLUGINDIR%%/kcm_netpref.so
 %%QT_PLUGINDIR%%/kcm_proxy.so
-%%QT_PLUGINDIR%%/kcm_smb.so
 %%QT_PLUGINDIR%%/kcm_trash.so
 %%QT_PLUGINDIR%%/kcm_webshortcuts.so
 %%QT_PLUGINDIR%%/kf5/kded/kcookiejar.so
@@ -328,6 +325,11 @@ lib/libexec/kf5/kpac_dhcp_helper
 %%QT_PLUGINDIR%%/kf5/urifilters/kuriikwsfilter.so
 %%QT_PLUGINDIR%%/kf5/urifilters/kurisearchfilter.so
 %%QT_PLUGINDIR%%/kf5/urifilters/localdomainurifilter.so
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_smb.so
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_cookies.so
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_netpref.so
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_proxy.so
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_webshortcuts.so
 man/ca/man8/kcookiejar5.8.gz
 man/de/man8/kcookiejar5.8.gz
 man/es/man8/kcookiejar5.8.gz
