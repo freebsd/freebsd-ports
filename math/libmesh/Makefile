@@ -1,9 +1,10 @@
 # Created by: Yuri Victorovich <yuri@FreeBSD.org>
 
 PORTNAME=	libmesh
-DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	math
+MASTER_SITES=	https://github.com/libMesh/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Numerical simulation of partial differential equations
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
 
-USES=		compiler:c++11-lang eigen:3 gmake libtool localbase perl5 pkgconfig
+USES=		compiler:c++17-lang eigen:3 gmake libtool localbase perl5 pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--with-methods=opt \
@@ -37,13 +38,6 @@ CXXFLAGS+=	-I${WRKSRC}/contrib/parmetis/include # because parmetis.h isn't found
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	libMesh
-GH_TUPLE=	\
-		libMesh:autoconf-submodule:a993d79:autoconf_submodule/m4/autoconf-submodule \
-		libMesh:TIMPI:5b3b387:TIMPI/contrib/timpi \
-		roystgnr:MetaPhysicL:30d13f2:MetaPhysicL/contrib/metaphysicl
 
 OPTIONS_DEFINE=			GLPK HDF5 MPI EXAMPLES
 OPTIONS_DEFAULT=		MPI

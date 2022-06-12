@@ -505,6 +505,7 @@ include/timpi/request.h
 include/timpi/restore_warnings.h
 include/timpi/serial_implementation.h
 include/timpi/standard_type.h
+include/timpi/standard_type_forward.h
 include/timpi/status.h
 include/timpi/timpi.h
 include/timpi/timpi_assert.h
@@ -516,8 +517,8 @@ lib/libmesh_opt.so
 lib/libmesh_opt.so.0
 lib/libmesh_opt.so.0.0.0
 lib/libtimpi_opt.so
-lib/libtimpi_opt.so.2
-lib/libtimpi_opt.so.2.0.0
+lib/libtimpi_opt.so.5
+lib/libtimpi_opt.so.5.0.0
 libdata/pkgconfig/libmesh-opt.pc
 libdata/pkgconfig/libmesh.pc
 libdata/pkgconfig/timpi.pc
