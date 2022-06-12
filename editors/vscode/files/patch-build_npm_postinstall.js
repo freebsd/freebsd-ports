@@ -1,4 +1,4 @@
---- build/npm/postinstall.js.orig	2022-04-11 07:30:00 UTC
+--- build/npm/postinstall.js.orig	2022-06-08 11:20:55 UTC
 +++ build/npm/postinstall.js
 @@ -20,7 +20,8 @@ function yarnInstall(location, opts) {
  	const raw = process.env['npm_config_argv'] || '{}';
@@ -10,8 +10,8 @@
  	if (opts.ignoreEngines) {
  		args.push('--ignore-engines');
  		delete opts.ignoreEngines;
-@@ -91,5 +92,5 @@ runtime "${runtime}"`;
- 	yarnInstall(watchPath);
+@@ -73,5 +74,5 @@ for (let dir of dirs) {
+ 	yarnInstall(dir, opts);
  }
  
 -cp.execSync('git config pull.rebase merges');

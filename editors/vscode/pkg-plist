@@ -491,6 +491,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/resources/readme/top-level-await.png
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/resources/readme/web-worker.png
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/resources/readme/webview2.png
+%%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/25b0f220a897d7433728f6f34169bdbf.node
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/adapter/breakpoints/userDefinedBreakpoint.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/adapter/console/queryObjectsMessage.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/adapter/console/textualMessage.nls.metadata.json
@@ -502,6 +503,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/adapter/sources.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/adapter/stackTrace.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/adapter/threads.nls.metadata.json
+%%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/adapter/variableStore.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/binder.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/bootloader.bundle.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/bootloader.bundle.js.LICENSE.txt
@@ -540,14 +542,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/ui/terminalLinkHandler.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/watchdog.bundle.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/watchdog.bundle.js.LICENSE.txt
-%%DATADIR%%/resources/app/extensions/ms-vscode.references-view/LICENSE.txt
-%%DATADIR%%/resources/app/extensions/ms-vscode.references-view/README.md
-%%DATADIR%%/resources/app/extensions/ms-vscode.references-view/SECURITY.md
-%%DATADIR%%/resources/app/extensions/ms-vscode.references-view/ThirdPartyNotices.txt
-%%DATADIR%%/resources/app/extensions/ms-vscode.references-view/dist/extension.js
-%%DATADIR%%/resources/app/extensions/ms-vscode.references-view/dist/extension.js.map
-%%DATADIR%%/resources/app/extensions/ms-vscode.references-view/media/icon.png
-%%DATADIR%%/resources/app/extensions/ms-vscode.references-view/package.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/README.md
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/ThirdPartyNotices.txt
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/ci.yml
@@ -608,8 +602,10 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2019.symbol.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2020.bigint.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2020.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2020.date.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2020.full.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2020.intl.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2020.number.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2020.promise.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2020.sharedmemory.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2020.string.d.ts
@@ -624,6 +620,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2022.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2022.error.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2022.full.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2022.intl.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2022.object.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2022.string.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es5.d.ts
@@ -710,6 +707,14 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/razor/package.json
 %%DATADIR%%/resources/app/extensions/razor/package.nls.json
 %%DATADIR%%/resources/app/extensions/razor/syntaxes/cshtml.tmLanguage.json
+%%DATADIR%%/resources/app/extensions/references-view/README.md
+%%DATADIR%%/resources/app/extensions/references-view/dist/extension.js
+%%DATADIR%%/resources/app/extensions/references-view/dist/nls.metadata.header.json
+%%DATADIR%%/resources/app/extensions/references-view/dist/nls.metadata.json
+%%DATADIR%%/resources/app/extensions/references-view/media/demo.png
+%%DATADIR%%/resources/app/extensions/references-view/media/icon.png
+%%DATADIR%%/resources/app/extensions/references-view/package.json
+%%DATADIR%%/resources/app/extensions/references-view/package.nls.json
 %%DATADIR%%/resources/app/extensions/restructuredtext/language-configuration.json
 %%DATADIR%%/resources/app/extensions/restructuredtext/package.json
 %%DATADIR%%/resources/app/extensions/restructuredtext/package.nls.json
@@ -867,6 +872,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/node-pty/lib/worker/conoutSocketWorker.js
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/spdlog/build/Release/spdlog.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/vscode-oniguruma/release/onig.wasm
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/vscode-policy-watcher/build/Release/vscode-policy-watcher.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/windows-foreground-love/build/Release/foreground_love.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/windows-foreground-love/build/Release/obj.target/foreground_love.node
 %%DATADIR%%/resources/app/out/bootstrap-amd.js
@@ -914,8 +920,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/code/node/cliProcessMain.nls.js
 %%DATADIR%%/resources/app/out/vs/loader.js
 %%DATADIR%%/resources/app/out/vs/platform/environment/node/userDataPath.js
-%%DATADIR%%/resources/app/out/vs/platform/extensions/node/extensionHostStarterWorker.js
-%%DATADIR%%/resources/app/out/vs/platform/extensions/node/extensionHostStarterWorkerMain.js
 %%DATADIR%%/resources/app/out/vs/platform/files/node/watcher/watcherMain.js
 %%DATADIR%%/resources/app/out/vs/platform/files/node/watcher/watcherMain.nls.js
 %%DATADIR%%/resources/app/out/vs/platform/sharedProcess/electron-browser/sharedProcessWorkerMain.js
@@ -959,13 +963,13 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/output/common/outputLinkComputer.js
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-env.zsh
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-login.zsh
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-profile.zsh
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-rc.zsh
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration.ps1
-%%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration.zsh
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/webview/browser/pre/fake.html
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/webview/browser/pre/index-no-csp.html
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/webview/browser/pre/index.html
-%%DATADIR%%/resources/app/out/vs/workbench/contrib/webview/browser/pre/main.js
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/webview/browser/pre/service-worker.js
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/colorTheme.png
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/commandPalette.svg

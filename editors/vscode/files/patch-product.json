@@ -1,9 +1,9 @@
---- product.json.orig	2022-05-16 17:42:35 UTC
+--- product.json.orig	2022-06-08 11:20:55 UTC
 +++ product.json
 @@ -28,6 +28,17 @@
  	"reportIssueUrl": "https://github.com/microsoft/vscode/issues/new",
  	"urlProtocol": "code-oss",
- 	"webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/181b43c0e2949e36ecb623d8cc6de29d4fa2bae8/out/vs/workbench/contrib/webview/browser/pre/",
+ 	"webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/3c8520fab514b9f56070214496b26ff68d1b1cb5/out/vs/workbench/contrib/webview/browser/pre/",
 +	"documentationUrl": "https://go.microsoft.com/fwlink/?LinkID=533484",
 +	"extensionsGallery": {
 +		"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
@@ -17,4 +17,4 @@
 +	"tipsAndTricksUrl": "https://go.microsoft.com/fwlink/?linkid=852118",
  	"builtInExtensions": [
  		{
- 			"name": "ms-vscode.references-view",
+ 			"name": "ms-vscode.js-debug-companion",
