@@ -19,7 +19,7 @@ LICENSE_PERMS_THIRD_PARTY_TF_C_LICENSES=	dist-mirror dist-sell \
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	bash:shells/bash \
-		bazel:devel/bazel029 \
+		bazel029<1:devel/bazel029 \
 		git:devel/git
 
 FLAVORS=	default noavx
