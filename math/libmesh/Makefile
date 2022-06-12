@@ -2,8 +2,7 @@
 
 PORTNAME=	libmesh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.2
-PORTREVISION=	1
+DISTVERSION=	1.7.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,28 +11,32 @@ COMMENT=	Numerical simulation of partial differential equations
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs	\
-		libmetis.so:math/metis
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libnlopt.so:math/nlopt
 
-USES=		compiler:c++11-lang eigen:3 gmake libtool perl5
+USES=		compiler:c++11-lang eigen:3 gmake libtool localbase perl5 pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--with-methods=opt \
 		--with-thread-model=pthread \
 		--datarootdir=${DATADIR} \
 		--enable-amr \
+		--enable-nlopt \
 		--disable-strict-lgpl \
 		--enable-tetgen \
 		--enable-triagle \
 		--with-boost=${LOCALBASE} \
-		--with-metis=${LOCALBASE} \
 		--with-eigen-include=${LOCALBASE}/include/eigen3 \
 		--disable-netcdf --disable-netcdf-4 # https://github.com/libMesh/libmesh/issues/1542
 CONFIGURE_ARGS+=	--disable-metaphysicl # enabling this causes libmesh to install a bundled metaphysicl that would conflict with the metaphysicl package
+CONFIGURE_ARGS+=	--with-nlopt-include=${LOCALBASE}/include --with-nlopt-lib=${LOCALBASE}/lib # workaround for https://github.com/libMesh/libmesh/issues/3314
 MAKE_ARGS=	LDFLAGS="-pthread -lexecinfo -L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
+CXXFLAGS+=	-I${WRKSRC}/contrib/parmetis/include # because parmetis.h isn't found for ./include/libmesh/parmetis_helper.h
+
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libMesh
@@ -48,11 +51,17 @@ GLPK_DESC=			Glpk linear programming solver library
 
 GLPK_CONFIGURE_ENABLE=		glpk
 GLPK_LIB_DEPENDS=		libglpk.so:math/glpk
+
 HDF5_CONFIGURE_ENABLE=		hdf5
 HDF5_LIB_DEPENDS=		libhdf5.so:science/hdf5
+
 MPI_CONFIGURE_ENABLE=		mpi
+MPI_CONFIGURE_ON=		--with-mpi=${LOCALBASE} --with-mpi-include=${LOCALBASE}/include --with-mpi-lib=${LOCALBASE}/lib
+MPI_LIB_DEPENDS=		libmpi.so:net/mpich
+
 EXAMPLES_CONFIGURE_ENABLE=	examples
 EXAMPLES_VARS=			PKGMESSAGE=pkg-message-examples
+
 SUB_FILES=			pkg-message-examples
 
 PORTEXAMPLES=	*
@@ -68,6 +77,8 @@ post-install:
 		Make.common \
 		contrib \
 		libdata/pkgconfig/Make.common # https://github.com/libMesh/libmesh/issues/1539
+	# delete metis.h, see https://github.com/libMesh/libmesh/issues/3317
+	${RM} ${STAGEDIR}${PREFIX}/include/metis.h
 
 post-install-EXAMPLES-on:
 	# https://github.com/libMesh/libmesh/issues/1541
