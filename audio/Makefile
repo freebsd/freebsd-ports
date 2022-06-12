@@ -117,6 +117,7 @@
     SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += dexed
+    SUBDIR += dgedit
     SUBDIR += din
     SUBDIR += discid
     SUBDIR += dmidiplayer
