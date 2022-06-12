@@ -4,6 +4,7 @@ PORTNAME=	allegro
 DISTVERSION=	5.2.7.0
 PORTREVISION=	2
 CATEGORIES=	devel games
+MASTER_SITES=	https://github.com/liballeg/${PORTNAME}${PKGNAMESUFFIX}/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	5
 
 MAINTAINER=	kpedersen@disroot.org
@@ -25,9 +26,6 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 
 USES=		cmake:insource compiler:c++11-lang gl gnome jpeg \
 		openal:soft pkgconfig xorg uniquefiles:dirs
-USE_GITHUB=	yes
-GH_ACCOUNT=	liballeg
-GH_PROJECT=	allegro5
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga sm ice xi xinerama xrandr \
 		xscrnsaver
 USE_GL=		gl glu
@@ -36,7 +34,7 @@ USE_LDCONFIG=	yes
 
 CFLAGS+=	-isystem${LOCALBASE}/include -L${LOCALBASE}/lib -Wno-unused-command-line-argument
 
-PLIST_SUB=	SHLIB_VER="${PORTVERSION}" SHLIB_VER1="${PORTVERSION:R}"
+PLIST_SUB=	SHLIB_VER="${DISTVERSION}" SHLIB_VER1="${DISTVERSION:R}"
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
