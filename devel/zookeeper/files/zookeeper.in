@@ -19,8 +19,7 @@ load_rc_config "${name}"
 : ${zookeeper_user:="%%ZOOKEEPER_USER%%"}
 : ${zookeeper_group:="%%ZOOKEEPER_GROUP%%"}
 : ${zookeeper_config:="%%ETCDIR%%/zoo.cfg"}
-%%NO_LOG4J2%%: ${zookeeper_log4j_config:="%%ETCDIR%%/log4j.properties"}
-%%NO_LOG4J2%%: ${zookeeper_rootlogger:="INFO,ROLLINGFILE"}
+%%NO_LOG4J2%%: ${zookeeper_logback_config:="%%ETCDIR%%/logback.xml"}
 %%LOG4J2%%: ${zookeeper_log4j_config:="%%ETCDIR%%/log4j2.properties"}
 : ${zookeeper_logdir:="%%ZOOKEEPER_LOGDIR%%"}
 : ${zookeeper_syslog_output_enable:="YES"}
@@ -30,9 +29,6 @@ start_precmd="zookeeper_start_precmd"
 # backwards compatibility
 if [ -n "${zookeeper_jvmopts}" ]; then
 	zookeeper_java_opts=${zookeeper_jvmopts}
-fi
-if [ -n "${zookeeper_log4jpropfile}" ]; then
-	zookeeper_log4j_config="${zookeeper_log4jpropfile#file:}"
 fi
 
 if checkyesno zookeeper_syslog_output_enable; then
@@ -53,12 +49,13 @@ JAVA="%%JAVA%%"
 
 CLASSPATH=":%%DATADIR%%/*"
 
-%%NO_LOG4J2%%log4j_params="-Dzookeeper.root.logger=${zookeeper_rootlogger} -Dzookeeper.log.dir=${zookeeper_logdir} -Dlog4j.configuration=file:${zookeeper_log4j_config}"
-%%LOG4J2%%log4j_params="-Dzookeeper.log.dir=${zookeeper_logdir} -Dlog4j2.configurationFile=file:${zookeeper_log4j_config}"
-zookeeper_main="${zookeeper_java_opts} ${log4j_params} -cp ${CLASSPATH} org.apache.zookeeper.server.quorum.QuorumPeerMain ${zookeeper_config}"
+%%NO_LOG4J2%%zookeeper_log_opts="-Dzookeeper.log.dir=${zookeeper_logdir} -Dlogback.configurationFile=file:${zookeeper_logback_config}"
+%%LOG4J2%%zookeeper_log_opts="-Dzookeeper.log.dir=${zookeeper_logdir} -Dlog4j2.configurationFile=file:${zookeeper_log4j_config}"
+zookeeper_main="${zookeeper_java_opts} ${zookeeper_log_opts} -cp ${CLASSPATH} org.apache.zookeeper.server.quorum.QuorumPeerMain ${zookeeper_config}"
 pidfile="/var/run/${name}.pid"
 required_dirs="${zookeeper_logdir}"
-required_files="${zookeeper_config} ${zookeeper_log4j_config}"
+%%NO_LOG4J2%%required_files="${zookeeper_config} ${zookeeper_logback_config}"
+%%LOG4J2%%required_files="${zookeeper_config} ${zookeeper_log4j_config}"
 
 command="/usr/sbin/daemon"
 command_args="-f ${zookeeper_syslog_output_flags} -P ${pidfile} -t ${name} ${JAVA} ${zookeeper_main}"

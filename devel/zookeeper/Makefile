@@ -1,6 +1,5 @@
 PORTNAME=	zookeeper
-PORTVERSION=	3.7.0
-PORTREVISION=	2
+PORTVERSION=	3.8.0
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		APACHE/logging/log4j/${ZOOKEEPER_LOG4J2_VERSION}/:log4j2
@@ -13,13 +12,6 @@ COMMENT=	Coordination Service for Distributed Applications
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	libzookeeper>=${PORTVERSION}:devel/libzookeeper
-
-ZOOKEEPER_CONFS=		configuration.xsl zoo.cfg
-ZOOKEEPER_USER?=		zookeeper
-ZOOKEEPER_GROUP?=		zookeeper
-ZOOKEEPER_DBDIR?=		/var/db/zookeeper
-ZOOKEEPER_LOGDIR?=		/var/log/zookeeper
-ZOOKEEPER_LOG4J2_VERSION?=	2.17.0
 
 USES=		cpe
 CPE_VENDOR=	apache
@@ -37,6 +29,13 @@ SUB_LIST=	JAVA=${JAVA} \
 		ZOOKEEPER_LOGDIR=${ZOOKEEPER_LOGDIR} \
 		ZOOKEEPER_USER=${ZOOKEEPER_USER}
 
+ZOOKEEPER_CONFS=		configuration.xsl zoo.cfg
+ZOOKEEPER_USER?=		zookeeper
+ZOOKEEPER_GROUP?=		zookeeper
+ZOOKEEPER_DBDIR?=		/var/db/zookeeper
+ZOOKEEPER_LOGDIR?=		/var/log/zookeeper
+ZOOKEEPER_LOG4J2_VERSION?=	2.17.2
+
 USERS=		${ZOOKEEPER_USER}
 GROUPS=		${ZOOKEEPER_GROUP}
 
@@ -50,7 +49,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS LOG4J2
 OPTIONS_SUB=	yes
 
-LOG4J2_DESC=		Use log4j-2 instead log4j-1.2
+LOG4J2_DESC=		Use log4j-2 instead Logback
 LOG4J2_DISTFILES=	apache-log4j-${ZOOKEEPER_LOG4J2_VERSION}-bin${EXTRACT_SUFX}:log4j2
 LOG4J2_PLIST_SUB=	ZOOKEEPER_LOG4J2_VERSION=${ZOOKEEPER_LOG4J2_VERSION}
 LOG4J2_JARS=		log4j-api-${ZOOKEEPER_LOG4J2_VERSION}.jar \
@@ -78,13 +77,13 @@ do-install-DOCS-on:
 	${TAR} -cf - . | ${TAR} -xf - -C ${STAGEDIR}${DOCSDIR})
 
 do-install-LOG4J2-on:
-	${RM} ${STAGEDIR}${DATADIR}/log4j-1.2* ${STAGEDIR}${DATADIR}/slf4j-log4j12*
+	${RM} ${STAGEDIR}${DATADIR}/logback-*
 .for f in ${LOG4J2_JARS}
 	${INSTALL_DATA} ${WRKDIR}/apache-log4j-${ZOOKEEPER_LOG4J2_VERSION}-bin/${f} ${STAGEDIR}${DATADIR}/
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/log4j2.properties ${STAGEDIR}${ETCDIR}/log4j2.properties.sample
 
 do-install-LOG4J2-off:
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/conf/log4j.properties ${STAGEDIR}${ETCDIR}/log4j.properties.sample
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/conf/logback.xml ${STAGEDIR}${ETCDIR}/logback.xml.sample
 
 .include <bsd.port.mk>
