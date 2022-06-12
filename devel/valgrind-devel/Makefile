@@ -1,7 +1,7 @@
 # Created by: Simon Barner <barner@gmx.de>
 
 PORTNAME=	valgrind
-PORTVERSION=	3.19.0.g20211113
+PORTVERSION=	3.20.0.g20220612
 DISTVERSIONPREFIX=	freebsd-
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -23,12 +23,12 @@ SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
 SSP_UNSAFE=	yes
 LIB32_PATH?=	/usr/lib32/libc.so
 
-CONFLICTS=	valgrind
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	paulfloyd
 GH_PROJECT=	freebsd_valgrind
-GH_TAGNAME=	6983bfb
+GH_TAGNAME=	d785030d3
+
+CONFLICTS=	valgrind
 
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
