@@ -1,6 +1,5 @@
 PORTNAME=	ormar
-DISTVERSION=	0.11.0
-PORTREVISION=	1
+DISTVERSION=	0.11.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,8 +43,9 @@ PGSQL_USES=		pgsql
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asyncpg>0:databases/py-asyncpg@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR}
 
-# Tests require newer pytest
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} TEST_DATABASE_URLS="sqlite:///testsuite" ${PYTHON_CMD} -m pytest -v -rs -o addopts=
+# Tests are not shipped with the package.
+# Upstream issue: https://github.com/collerek/ormar/issues/698
+# do-test:
+# 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} TEST_DATABASE_URLS="sqlite:///testsuite" ${PYTHON_CMD} -m pytest -v -rs -o addopts=
 
 .include <bsd.port.mk>
