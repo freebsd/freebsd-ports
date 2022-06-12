@@ -36,8 +36,8 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libfribidi.so:converters/fribidi \
 		libgnutls.so:security/gnutls \
 		libmfx.so:multimedia/intel-media-sdk \
-		libogg.so:audio/libogg \
 		libOpenCL.so:devel/ocl-icd \
+		libogg.so:audio/libogg \
 		libopus.so:audio/opus \
 		libpng.so:graphics/png \
 		libraw.so:graphics/libraw \
