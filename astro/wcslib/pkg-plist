@@ -51,13 +51,13 @@ include/wcslib-%%VERSION%%/wtbarr.h
 %%PGPLOT%%lib/libpgsbox-%%VERSION%%.a
 %%PGPLOT%%lib/libpgsbox.a
 %%PGPLOT%%lib/libpgsbox.so
-%%PGPLOT%%lib/libpgsbox.so.7
+%%PGPLOT%%lib/libpgsbox.so.11
 %%PGPLOT%%lib/libpgsbox.so.%%VERSION%%
 lib/libwcs-%%VERSION%%.a
 lib/libwcs.a
 lib/libwcs.so
 lib/libwcs.so.7
-lib/libwcs.so.7.7
+lib/libwcs.so.7.11
 libdata/pkgconfig/wcslib.pc
 %%CFITSIO%%man/man1/HPXcvt.1.gz
 man/man1/fitshdr.1.gz
