@@ -1,5 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.29.0
+DISTVERSION=	0.29.1
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -45,11 +45,11 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		itertools-0.10.3 \
 		lazy_static-1.4.0 \
 		libc-0.2.126 \
-		libmimalloc-sys-0.1.25 \
+		libmimalloc-sys-0.1.24 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		memoffset-0.6.5 \
-		mimalloc-0.1.29 \
+		mimalloc-0.1.28 \
 		minimal-lexical-0.2.1 \
 		nom-7.1.1 \
 		num_cpus-1.13.1 \
