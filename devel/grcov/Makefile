@@ -1,6 +1,6 @@
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.9
+DISTVERSION=	0.8.10
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,41 +15,40 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
 
 CARGO_CRATES=	\
-		addr2line-0.15.2 \
+		addr2line-0.17.0 \
 		adler-1.0.2 \
 		aho-corasick-0.7.18 \
-		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.41 \
+		anyhow-1.0.57 \
 		atty-0.2.14 \
-		autocfg-1.0.1 \
-		backtrace-0.3.60 \
-		bitflags-1.2.1 \
+		autocfg-1.1.0 \
+		backtrace-0.3.65 \
+		bitflags-1.3.2 \
 		block-buffer-0.7.3 \
-		block-buffer-0.10.0 \
+		block-buffer-0.10.2 \
 		block-padding-0.1.5 \
-		bstr-0.2.16 \
+		bstr-0.2.17 \
 		byte-tools-0.3.1 \
 		byteorder-1.4.3 \
 		cargo-binutils-0.3.5 \
 		cargo_metadata-0.11.4 \
-		cc-1.0.68 \
+		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		chrono-tz-0.6.0 \
+		chrono-tz-0.6.1 \
 		chrono-tz-build-0.0.2 \
-		clap-2.33.3 \
-		cpp_demangle-0.3.2 \
+		clap-2.34.0 \
+		cpp_demangle-0.3.5 \
 		crc32fast-1.3.2 \
 		crossbeam-0.8.1 \
-		crossbeam-channel-0.5.1 \
-		crossbeam-deque-0.8.0 \
-		crossbeam-epoch-0.9.5 \
-		crossbeam-queue-0.3.2 \
-		crossbeam-utils-0.8.5 \
+		crossbeam-channel-0.5.4 \
+		crossbeam-deque-0.8.1 \
+		crossbeam-epoch-0.9.8 \
+		crossbeam-queue-0.3.5 \
+		crossbeam-utils-0.8.8 \
 		crypto-common-0.1.3 \
-		ctor-0.1.20 \
-		debugid-0.7.2 \
+		ctor-0.1.22 \
+		debugid-0.7.3 \
 		deunicode-0.4.3 \
 		diff-0.1.12 \
 		digest-0.8.1 \
@@ -59,15 +58,14 @@ CARGO_CRATES=	\
 		failure_derive-0.1.8 \
 		fake-simd-0.1.2 \
 		fastrand-1.7.0 \
-		flate2-1.0.22 \
+		flate2-1.0.24 \
 		fnv-1.0.7 \
 		fomat-macros-0.3.1 \
 		generic-array-0.12.4 \
-		generic-array-0.14.4 \
-		getrandom-0.2.3 \
-		gimli-0.24.0 \
-		glob-0.3.0 \
-		globset-0.4.8 \
+		generic-array-0.14.5 \
+		getrandom-0.2.6 \
+		gimli-0.26.1 \
+		globset-0.4.9 \
 		globwalk-0.8.1 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
@@ -75,111 +73,115 @@ CARGO_CRATES=	\
 		ignore-0.4.18 \
 		instant-0.1.12 \
 		is_executable-1.0.1 \
-		itoa-1.0.1 \
+		itoa-1.0.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.97 \
-		libz-sys-1.1.3 \
-		log-0.4.16 \
+		libc-0.2.126 \
+		libz-sys-1.1.8 \
+		log-0.4.17 \
 		maplit-1.0.2 \
 		md-5-0.10.1 \
-		memchr-2.4.0 \
-		memmap2-0.5.2 \
-		memoffset-0.6.4 \
-		miniz_oxide-0.4.4 \
+		memchr-2.5.0 \
+		memmap2-0.5.4 \
+		memoffset-0.6.5 \
+		miniz_oxide-0.5.3 \
 		msvc-demangler-0.9.0 \
-		num-integer-0.1.44 \
-		num-traits-0.2.14 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
-		object-0.25.3 \
-		once_cell-1.8.0 \
+		num_threads-0.1.6 \
+		object-0.28.4 \
+		once_cell-1.12.0 \
 		opaque-debug-0.2.3 \
-		output_vt100-0.1.2 \
+		output_vt100-0.1.3 \
 		parse-zoneinfo-0.3.0 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
 		pest_derive-2.1.0 \
 		pest_generator-2.1.3 \
 		pest_meta-2.1.3 \
-		phf-0.10.0 \
+		phf-0.10.1 \
 		phf_codegen-0.10.0 \
 		phf_generator-0.10.0 \
 		phf_shared-0.10.0 \
-		pkg-config-0.3.19 \
-		ppv-lite86-0.2.10 \
-		pretty_assertions-1.2.0 \
+		pkg-config-0.3.25 \
+		ppv-lite86-0.2.16 \
+		pretty_assertions-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.27 \
-		quick-xml-0.22.0 \
-		quote-1.0.9 \
-		rand-0.8.4 \
+		proc-macro2-1.0.39 \
+		quick-xml-0.23.0 \
+		quote-1.0.18 \
+		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
-		rand_hc-0.3.1 \
-		rayon-1.5.1 \
-		rayon-core-1.9.1 \
-		redox_syscall-0.2.9 \
-		regex-1.5.5 \
-		regex-syntax-0.6.25 \
+		rayon-1.5.3 \
+		rayon-core-1.9.3 \
+		redox_syscall-0.2.13 \
+		regex-1.5.6 \
+		regex-syntax-0.6.26 \
 		remove_dir_all-0.5.3 \
 		rustc-cfg-0.4.0 \
-		rustc-demangle-0.1.20 \
+		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.2.3 \
-		ryu-1.0.5 \
+		ryu-1.0.10 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		semver-0.9.0 \
 		semver-0.10.0 \
-		semver-1.0.7 \
+		semver-1.0.10 \
 		semver-parser-0.7.0 \
-		serde-1.0.136 \
-		serde_derive-1.0.136 \
-		serde_json-1.0.79 \
+		serde-1.0.137 \
+		serde_derive-1.0.137 \
+		serde_json-1.0.81 \
 		sha-1-0.8.2 \
-		simplelog-0.11.2 \
-		siphasher-0.3.7 \
+		simplelog-0.12.0 \
+		siphasher-0.3.10 \
 		slug-0.1.4 \
 		smallvec-1.8.0 \
 		stable_deref_trait-1.2.0 \
 		strsim-0.8.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
-		symbolic-common-8.6.1 \
-		symbolic-demangle-8.6.1 \
-		syn-1.0.73 \
-		synstructure-0.12.4 \
+		symbolic-common-8.7.3 \
+		symbolic-demangle-8.7.3 \
+		syn-1.0.96 \
+		synstructure-0.12.6 \
 		tcmalloc-0.3.0 \
 		tempfile-3.3.0 \
-		tera-1.15.0 \
-		termcolor-1.1.2 \
+		tera-1.16.0 \
+		termcolor-1.1.3 \
 		textwrap-0.11.0 \
-		thread_local-1.1.3 \
+		thread_local-1.1.4 \
 		time-0.1.43 \
-		toml-0.5.8 \
+		time-0.3.9 \
+		time-macros-0.2.4 \
+		toml-0.5.9 \
 		typenum-1.15.0 \
 		ucd-trie-0.1.3 \
-		uncased-0.9.6 \
+		uncased-0.9.7 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
 		unic-common-0.9.0 \
 		unic-segment-0.9.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-segmentation-1.8.0 \
-		unicode-width-0.1.8 \
-		unicode-xid-0.2.2 \
+		unicode-ident-1.0.0 \
+		unicode-segmentation-1.9.0 \
+		unicode-width-0.1.9 \
+		unicode-xid-0.2.3 \
 		uuid-0.8.2 \
+		uuid-1.1.2 \
 		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
-		version_check-0.9.3 \
+		version_check-0.9.4 \
 		walkdir-2.3.2 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		zip-0.6.0
+		zip-0.6.2
 
 PLIST_FILES=	bin/grcov
 
