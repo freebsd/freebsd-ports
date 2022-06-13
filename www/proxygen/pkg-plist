@@ -62,6 +62,7 @@ include/proxygen/lib/http/codec/HTTP1xCodec.h
 include/proxygen/lib/http/codec/HTTP2Codec.h
 include/proxygen/lib/http/codec/HTTP2Constants.h
 include/proxygen/lib/http/codec/HTTP2Framer.h
+include/proxygen/lib/http/codec/HTTPBinaryCodec.h
 include/proxygen/lib/http/codec/HTTPChecks.h
 include/proxygen/lib/http/codec/HTTPCodec.h
 include/proxygen/lib/http/codec/HTTPCodecFactory.h
