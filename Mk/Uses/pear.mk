@@ -22,6 +22,7 @@ IGNORE=	Incorrect 'USES+= pear:${pear_ARGS}' usage: argument [${arg}] is not rec
 .    endif
 .  endfor
 
+IGNORE_WITH_PHP?=	82
 php_ARGS+=	flavors
 .include "${USESDIR}/php.mk"
 

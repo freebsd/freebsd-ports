@@ -10,6 +10,7 @@ COMMENT=	Edit SpamAssassin settings stored in an SQL DB
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:databases/pear-DB@${PHP_FLAVOR}
 
+IGNORE_WITH_PHP=	82
 USE_SM_COMPAT=	yes
 USE_GENERIC_PKGMESSAGE=	yes
 
