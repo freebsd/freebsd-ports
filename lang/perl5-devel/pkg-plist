@@ -1942,6 +1942,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/Name.pm
 %%PRIV_LIB%%/unicore/NamedSequences.txt
 %%PRIV_LIB%%/unicore/SpecialCasing.txt
+%%PRIV_LIB%%/unicore/TestNorm.pl
 %%PRIV_LIB%%/unicore/To/Age.pl
 %%PRIV_LIB%%/unicore/To/Bc.pl
 %%PRIV_LIB%%/unicore/To/Bmg.pl
