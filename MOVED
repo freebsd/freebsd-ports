@@ -17200,4 +17200,4 @@ devel/android-tools-adb|devel/android-tools|2022-06-09|Port has been updated, un
 devel/android-tools-fastboot|devel/android-tools|2022-06-09|Port has been updated and consolidated into devel/android-tools
 devel/py-lark-parser|devel/py-lark|2022-06-09|Remove obsoleted port. Use devel/py-lark instead
 deskutils/egroupware|deskutils/egroupware@php74|2022-06-12|Merge into flavorized version
-databases/py-apache-arrow|databases/py-apache-arrow|2022-06-12|Rename to avoid conflict with devel/py-arrow and to match the project name
+databases/py-arrow|databases/py-apache-arrow|2022-06-12|Rename to avoid conflict with devel/py-arrow and to match the project name
