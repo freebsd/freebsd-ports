@@ -14,7 +14,7 @@ GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 CONFIGURE_ENV=	PERL=${PERL}
 CONFIGURE_ARGS=	--disable-multiplatform
-USES=		gmake perl5 shebangfix tar:bzip2
+USES=		gmake localbase perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	*.pl
 
 OPTIONS_DEFINE=	NLS DOCS
