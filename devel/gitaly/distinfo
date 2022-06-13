@@ -1,5 +1,5 @@
-TIMESTAMP = 1654367460
-SHA256 (go/devel_gitaly/gitlab-org-gitaly-02416dd715141a2b71070a80149cf0a683526a9f_GL0/go.mod) = 0f81920b355ef928d3d62a8f34c87240b9cc045e2a124cd617d25c1097a5c787
-SIZE (go/devel_gitaly/gitlab-org-gitaly-02416dd715141a2b71070a80149cf0a683526a9f_GL0/go.mod) = 1827
-SHA256 (go/devel_gitaly/gitlab-org-gitaly-02416dd715141a2b71070a80149cf0a683526a9f_GL0/gitlab-org-gitaly-02416dd715141a2b71070a80149cf0a683526a9f_GL0.tar.gz) = c20d42cb88be76163555a42a1789f64a65aa3055e9a34af61fc2e7793d0f3648
-SIZE (go/devel_gitaly/gitlab-org-gitaly-02416dd715141a2b71070a80149cf0a683526a9f_GL0/gitlab-org-gitaly-02416dd715141a2b71070a80149cf0a683526a9f_GL0.tar.gz) = 3914902
+TIMESTAMP = 1654844774
+SHA256 (go/devel_gitaly/gitlab-org-gitaly-7daa134a9c206ec381c271c5004a48d2ae4849ff_GL0/go.mod) = 0f81920b355ef928d3d62a8f34c87240b9cc045e2a124cd617d25c1097a5c787
+SIZE (go/devel_gitaly/gitlab-org-gitaly-7daa134a9c206ec381c271c5004a48d2ae4849ff_GL0/go.mod) = 1827
+SHA256 (go/devel_gitaly/gitlab-org-gitaly-7daa134a9c206ec381c271c5004a48d2ae4849ff_GL0/gitlab-org-gitaly-7daa134a9c206ec381c271c5004a48d2ae4849ff_GL0.tar.gz) = e57ddf631192b4c5167b683a13cd8d7c118f6d334a2449027d45887e0f21caa9
+SIZE (go/devel_gitaly/gitlab-org-gitaly-7daa134a9c206ec381c271c5004a48d2ae4849ff_GL0/gitlab-org-gitaly-7daa134a9c206ec381c271c5004a48d2ae4849ff_GL0.tar.gz) = 3915169
