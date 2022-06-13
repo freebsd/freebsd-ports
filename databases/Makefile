@@ -761,6 +761,7 @@
     SUBDIR += py-alembic14
     SUBDIR += py-alembic16
     SUBDIR += py-apsw
+    SUBDIR += py-arrow
     SUBDIR += py-asyncmy
     SUBDIR += py-asyncpg
     SUBDIR += py-berkeleydb
