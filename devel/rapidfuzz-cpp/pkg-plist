@@ -1,3 +1,6 @@
+include/rapidfuzz/details/CharSet.hpp
+include/rapidfuzz/details/Matrix.hpp
+include/rapidfuzz/details/PatternMatchVector.hpp
 include/rapidfuzz/details/SplittedSentenceView.hpp
 include/rapidfuzz/details/common.hpp
 include/rapidfuzz/details/common_impl.hpp
@@ -17,18 +20,6 @@ include/rapidfuzz/distance/Levenshtein.impl
 include/rapidfuzz/fuzz.hpp
 include/rapidfuzz/fuzz.impl
 include/rapidfuzz/rapidfuzz_all.hpp
-lib/Hamming.hpp
-lib/Hamming.impl
-lib/Indel.hpp
-lib/Indel.impl
-lib/LCSseq.hpp
-lib/LCSseq.impl
-lib/Levenshtein.hpp
-lib/Levenshtein.impl
 lib/cmake/rapidfuzz/rapidfuzzConfig.cmake
 lib/cmake/rapidfuzz/rapidfuzzConfigVersion.cmake
 lib/cmake/rapidfuzz/rapidfuzzTargets.cmake
-lib/distance.hpp
-lib/fuzz.hpp
-lib/fuzz.impl
-lib/rapidfuzz_all.hpp
