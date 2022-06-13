@@ -12,6 +12,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 
 USES=		cpe gettext php:web tar:
+IGNORE_WITH_PHP=	82
 
 USE_GITHUB=	yes
 GH_TAGNAME=	f8c651d

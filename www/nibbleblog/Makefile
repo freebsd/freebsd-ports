@@ -16,6 +16,7 @@ USES=		cpe php zip
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	session filter xml simplexml gd
+IGNORE_WITH_PHP=	82
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message

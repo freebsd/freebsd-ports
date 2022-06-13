@@ -13,7 +13,7 @@ COMMENT=	Roundcube CardDAV plugin
 
 LICENSE=	GPLv2
 
-IGNORE_WITH_PHP=81
+IGNORE_WITH_PHP=81 82
 
 BUILD_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}

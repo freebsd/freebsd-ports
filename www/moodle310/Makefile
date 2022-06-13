@@ -17,7 +17,7 @@ USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom fileinfo filter gd hash iconv intl json mbstring \
 		opcache openssl pcre session simplexml soap spl tokenizer \
 		xml xmlreader xmlrpc zip zlib
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 WRKSRC=		${WRKDIR}/moodle
 

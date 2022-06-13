@@ -21,7 +21,7 @@ USES=		php:ext
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsky
 GH_PROJECT=	php-${PORTNAME}
-IGNORE_WITH_PHP=	80 81
+IGNORE_WITH_PHP=	80 81 82
 
 WRKSRC_SUBDIR=	mecab
 CONFIGURE_ARGS=	--with-mecab=${LOCALBASE}/bin/mecab-config

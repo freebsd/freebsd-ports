@@ -26,6 +26,7 @@ USE_GITHUB=	yes
 USE_PHP=	ctype curl dom fileinfo filter gd hash json ldap mbstring \
 		mysqli openssl pdo pdo_mysql phar posix session simplexml \
 		snmp sockets tokenizer xml xmlwriter zip
+IGNORE_WITH_PHP=	82
 USE_RC_SUBR=	librenms
 
 SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \

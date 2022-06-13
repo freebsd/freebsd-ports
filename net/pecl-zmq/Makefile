@@ -14,6 +14,6 @@ EXPIRATION_DATE=2022-11-28
 LIB_DEPENDS=	libzmq.so:net/libzmq4
 
 USES=		php:pecl pkgconfig
-IGNORE_WITH_PHP=	80 81
+IGNORE_WITH_PHP=	80 81 82
 
 .include <bsd.port.mk>

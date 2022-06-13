@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 USES=		cpe gettext shebangfix zip php
 USE_PHP=	curl dom filter gd hash intl json mbstring pdo_mysql \
 		session simplexml soap sqlite3 xml xmlrpc
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 SHEBANG_FILES=	vendor/elgg/elgg/.scripts/validate_commit_msg.php
 

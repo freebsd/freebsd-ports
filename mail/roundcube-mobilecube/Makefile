@@ -17,7 +17,7 @@ THEME_VERSION?=	3.1.0
 THEME_BUILD?=	030110A
 
 USES=		php:flavors zip
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 WWWDIR?=	${PREFIX}/www/roundcube/skins/MobileCube
 NO_ARCH=	yes

@@ -15,7 +15,7 @@ LICENSE=	GPLv3+ # same as roundcube's
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.2:mail/roundcube@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 WWWDIR?=	${PREFIX}/www/roundcube/skins/umich
 NO_ARCH=	yes

@@ -19,7 +19,7 @@ USES=		php:flavors
 USE_GITHUB=	yes
 GH_ACCOUNT=	mike-kfed
 GH_PROJECT=	roundcube-thunderbird_labels
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 NO_ARCH=	yes
 NO_BUILD=	yes

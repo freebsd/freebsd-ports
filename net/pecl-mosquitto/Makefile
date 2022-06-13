@@ -16,6 +16,6 @@ EXPIRATION_DATE=2022-11-28
 BUILD_DEPENDS=	mosquitto>=0:net/mosquitto
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	80 81
+IGNORE_WITH_PHP=	80 81 82
 
 .include <bsd.port.mk>

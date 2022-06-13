@@ -14,6 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libuv.so:devel/libuv
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 .include <bsd.port.mk>

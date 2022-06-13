@@ -20,6 +20,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 USES=		php zip
 USE_PHP=	gd
+IGNORE_WITH_PHP=	82
 
 WM_FILES=	HTML_ImageMap.class.php WeatherMap.functions.php \
 		WeatherMapLink.class.php WeatherMapNode.class.php \

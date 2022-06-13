@@ -21,7 +21,7 @@ GH_TAGNAME=	2a8974b
 LIBS+=		-lopencv_core
 
 USES=		compiler:c11 localbase php:ext pkgconfig
-IGNORE_WITH_PHP=	81
+IGNORE_WITH_PHP=	81 82
 
 CONFIGURE_ARGS+=	--with-facedetect
 

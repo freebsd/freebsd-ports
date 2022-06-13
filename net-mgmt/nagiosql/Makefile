@@ -15,6 +15,7 @@ RUN_DEPENDS=	nagios:net-mgmt/nagios \
 
 USES=		cpe gettext mysql php:web tar:bzip2
 USE_PHP=	filter gettext mysqli session simplexml
+IGNORE_WITH_PHP=	82
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	wizonet

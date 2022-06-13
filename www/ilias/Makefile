@@ -28,7 +28,7 @@ USE_PHP=	curl dom gd ldap fileinfo pcre pdf \
 		pdo_mysql session simplexml soap \
 		tokenizer xmlrpc xmlwriter xsl zlib
 
-IGNORE_WITH_PHP=	80 81
+IGNORE_WITH_PHP=	80 81 82
 
 CONFLICTS=	ilias6
 

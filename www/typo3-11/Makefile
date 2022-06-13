@@ -13,7 +13,6 @@ COMMENT=	Typo3 content management system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-IGNORE_WITH_PHP=       73
 IGNORE_WITH_MYSQL=     55 56 101m
 
 USES=		cpe php:web,flavors shebangfix

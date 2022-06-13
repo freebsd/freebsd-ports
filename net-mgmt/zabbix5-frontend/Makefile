@@ -8,7 +8,7 @@ USES+=		php:web
 USE_PHP=	bcmath ctype dom fileinfo filter gd gettext hash json ldap \
 		mbstring pcre session simplexml snmp sockets xml xmlreader \
 		xmlwriter
-IGNORE_WITH_PHP=        80 81
+IGNORE_WITH_PHP=        80 81 82
 
 MASTERDIR=	${.CURDIR}/../zabbix5-server
 PATCHDIR=
