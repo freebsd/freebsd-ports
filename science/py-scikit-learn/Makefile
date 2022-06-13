@@ -1,7 +1,7 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 
 PORTNAME=	scikit-learn
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
