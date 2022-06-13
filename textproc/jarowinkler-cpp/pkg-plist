@@ -5,4 +5,3 @@ include/jaro_winkler/jaro_winkler.hpp
 lib/cmake/jaro_winkler/jaro_winklerConfig.cmake
 lib/cmake/jaro_winkler/jaro_winklerConfigVersion.cmake
 lib/cmake/jaro_winkler/jaro_winklerTargets.cmake
-lib/jaro_winkler.hpp
