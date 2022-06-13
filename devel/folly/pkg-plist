@@ -292,6 +292,8 @@ include/folly/experimental/channels/MultiplexChannel.h
 include/folly/experimental/channels/OnClosedException.h
 include/folly/experimental/channels/Producer-inl.h
 include/folly/experimental/channels/Producer.h
+include/folly/experimental/channels/ProxyChannel-inl.h
+include/folly/experimental/channels/ProxyChannel.h
 include/folly/experimental/channels/RateLimiter.h
 include/folly/experimental/channels/Transform-inl.h
 include/folly/experimental/channels/Transform.h
@@ -704,6 +706,7 @@ include/folly/python/coro.h
 include/folly/python/error.h
 include/folly/python/executor.h
 include/folly/python/futures.h
+include/folly/python/import.h
 include/folly/python/iobuf.h
 include/folly/small_vector.h
 include/folly/sorted_vector_types.h
