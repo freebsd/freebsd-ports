@@ -1,5 +1,5 @@
 PORTNAME=	dhewm3
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -8,14 +8,12 @@ COMMENT=	Doom 3 GPL source port
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../COPYING.txt
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libogg.so:audio/libogg \
-		libvorbis.so:audio/libvorbis
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dhewm
 
-USES=		cmake compiler:c++11-lang jpeg openal:al sdl
+USES=		cmake compiler:c++11-lang openal:al sdl
 USE_SDL=	sdl2
 CMAKE_ON=	REPRODUCIBLE_BUILD
 
