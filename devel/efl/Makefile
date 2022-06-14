@@ -53,11 +53,12 @@ OPTIONS_GROUP_WAYLAND=	WAYLAND
 OPTIONS_SINGLE=		CRYPTO ENGINE LUAL
 OPTIONS_SINGLE_CRYPTO=	OPENSSL GNUTLS
 OPTIONS_SINGLE_ENGINE=	OPENGL OPENGLES NONE
-OPTIONS_SINGLE_LUAL=	LUAJIT LUALANG
+OPTIONS_SINGLE_LUAL=	LUAJIT LUAJIT_OR LUALANG
 OPTIONS_DEFAULT=	FRIBIDI HARFBUZZ PULSEAUDIO EXAMPLES GSTREAMER V4L SCIM XIM \
 			OPENSSL OPENJPEG PDF PS RAW SVG WEBP XCF OPENGLES LUAJIT CXX
 OPTIONS_DEFAULT_aarch64=	LUALANG
-OPTIONS_EXCLUDE_aarch64=	LUAJIT
+OPTIONS_EXCLUDE_aarch64=	LUAJIT LUAJIT_OR
+OPTIONS_EXCLUDE_powerpc64=	LUAJIT
 OPTIONS_SUB=		yes
 
 HARFBUZZ_DESC=		OpenType text shaping engine
@@ -74,6 +75,7 @@ HEIF_DESC=		HEIF image format support
 LUAL_DESC=		LUA
 LUALANG_DESC=		Use Lua
 LUAJIT_DESC=		Use Luajit
+LUAJIT_OR_DESC=		Use Luajit from OpenResty fork (experimental)
 OPENGLES_DESC=		2D/3D rendering support via OpenGL ES
 NONE_DESC=		No acceleration, software only
 LUA_DESC=		Lua Bindings
@@ -167,11 +169,16 @@ WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
 LUAJIT_BUILD_DEPENDS=		luajit:lang/luajit
 LUAJIT_RUN_DEPENDS=		luajit:lang/luajit
 LUAJIT_MESON_ON=		-Dlua-interpreter=luajit
-LUAJIT_PREVENTS=		LUALANG
+LUAJIT_PREVENTS=		LUALANG LUAJIT_OR
+
+LUAJIT_OR_BUILD_DEPENDS=		luajit:lang/luajit-openresty
+LUAJIT_OR_RUN_DEPENDS=		luajit:lang/luajit-openresty
+LUAJIT_OR_MESON_ON=		-Dlua-interpreter=luajit
+LUAJIT_OR_PREVENTS=		LUALANG LUAJIT
 
 LUALANG_USES=			lua:51,build,run
 LUALANG_MESON_ON=		-Dlua-interpreter=lua
-LUALANG_PREVENTS=		LUAJIT
+LUALANG_PREVENTS=		LUAJIT LUAJIT_OR
 
 OPENGL_USES=			gl
 OPENGL_USE=			GL=gl
@@ -317,11 +324,6 @@ USE_GL=			egl
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
-.endif
-
-.if ${ARCH:Mpowerpc64*}
-LUAJIT_BUILD_DEPENDS=		luajit:lang/luajit-openresty
-LUAJIT_RUN_DEPENDS=		luajit:lang/luajit-openresty
 .endif
 
 post-install:
