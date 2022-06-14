@@ -1,7 +1,7 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
 
 PORTNAME=	yt
-DISTVERSION=	4.0.3
+DISTVERSION=	4.0.4
 CATEGORIES=	math astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +27,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}toml>=0.10.2:textproc/py-toml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomli-w>=0.4.0:textproc/py-tomli-w@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=3.4.0:misc/py-tqdm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}unyt>=2.8.0:math/py-unyt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=4.2b1:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}unyt>=2.8.0:math/py-unyt@${PY_FLAVOR}
 
 USES=		dos2unix localbase python:3.7+
 USE_PYTHON=	distutils cython autoplist concurrent
