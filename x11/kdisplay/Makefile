@@ -1,7 +1,11 @@
 PORTNAME=	kdisplay
 DISTVERSIONPREFIX=	${PORTNAME}@
 DISTVERSION=	5.24.0
+PORTREVISION=	1
 CATEGORIES=	x11
+
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	74cab01dbddf.patch:-p1 # https://gitlab.com/kwinft/kdisplay/-/merge_requests/26
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	App and daemon for display managing
@@ -12,7 +16,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LGPL
 
-LIB_DEPENDS=	libDisman.so:x11/disman
+LIB_DEPENDS=	libdisman.so:x11/disman
 TEST_DEPENDS=	${qt-testlib_PORT:T}>0:${qt-testlib_PORT}
 
 USES=		cmake:testing kde:5 qt:5
