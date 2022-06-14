@@ -14,4 +14,6 @@ USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	aristocratos
 
+MAKE_ARGS=	STRIP=true ADDFLAGS="${CXXFLAGS} ${LDFLAGS}"
+
 .include <bsd.port.mk>
