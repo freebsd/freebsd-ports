@@ -334,6 +334,7 @@ libexec/gimp/2.2/plug-ins/file-html-table/file-html-table
 libexec/gimp/2.2/plug-ins/file-ico/file-ico
 %%OPENJPEG%%libexec/gimp/2.2/plug-ins/file-jp2-load/file-jp2-load
 libexec/gimp/2.2/plug-ins/file-jpeg/file-jpeg
+%%JXL%%libexec/gimp/2.2/plug-ins/file-jpegxl/file-jpegxl
 %%LIBMNG%%libexec/gimp/2.2/plug-ins/file-mng/file-mng
 libexec/gimp/2.2/plug-ins/file-pat/file-pat
 libexec/gimp/2.2/plug-ins/file-pcx/file-pcx
@@ -4718,8 +4719,11 @@ share/applications/gimp.desktop
 %%DATADIR%%/themes/Dark/ui/notebook.png
 %%DATADIR%%/themes/Dark/ui/null.png
 %%DATADIR%%/themes/Dark/ui/option1.png
+%%DATADIR%%/themes/Dark/ui/option1-prelight.png
 %%DATADIR%%/themes/Dark/ui/option2.png
+%%DATADIR%%/themes/Dark/ui/option2-prelight.png
 %%DATADIR%%/themes/Dark/ui/option3.png
+%%DATADIR%%/themes/Dark/ui/option3-prelight.png
 %%DATADIR%%/themes/Dark/ui/plus.png
 %%DATADIR%%/themes/Dark/ui/progressbar-trough.png
 %%DATADIR%%/themes/Dark/ui/progressbar.png
@@ -4739,6 +4743,7 @@ share/applications/gimp.desktop
 %%DATADIR%%/themes/Dark/ui/spin.png
 %%DATADIR%%/themes/Dark/ui/toolbar.png
 %%DATADIR%%/themes/Dark/ui/transparent.png
+%%DATADIR%%/themes/Dark/ui/treeview-item-prelight.png
 %%DATADIR%%/themes/Gray/gtkrc
 %%DATADIR%%/themes/Gray/ui/arrow-down-insens.png
 %%DATADIR%%/themes/Gray/ui/arrow-down-prelight.png
@@ -4862,6 +4867,7 @@ share/applications/gimp.desktop
 %%DATADIR%%/themes/Gray/ui/spin.png
 %%DATADIR%%/themes/Gray/ui/toolbar.png
 %%DATADIR%%/themes/Gray/ui/transparent.png
+%%DATADIR%%/themes/Gray/ui/treeview-item-prelight.png
 %%DATADIR%%/themes/Light/gtkrc
 %%DATADIR%%/themes/Light/ui/arrow-down-insens.png
 %%DATADIR%%/themes/Light/ui/arrow-down-prelight.png
@@ -4987,6 +4993,7 @@ share/applications/gimp.desktop
 %%DATADIR%%/themes/Light/ui/spin.png
 %%DATADIR%%/themes/Light/ui/toolbar.png
 %%DATADIR%%/themes/Light/ui/transparent.png
+%%DATADIR%%/themes/Light/ui/treeview-item-prelight.png
 %%DATADIR%%/themes/System/gtkrc
 %%DATADIR%%/tips/gimp-tips.xml
 %%DATADIR%%/tool-presets/Crop/16_10.gtp
@@ -5205,6 +5212,7 @@ share/locale/ja/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ja/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ja/LC_MESSAGES/gimp20.mo
 share/locale/ka/LC_MESSAGES/gimp20.mo
+share/locale/ka/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/kab/LC_MESSAGES/gimp20-python.mo
 share/locale/kab/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/kk/LC_MESSAGES/gimp20-libgimp.mo
