@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	Astro-satpass
-PORTVERSION=	0.124
+PORTVERSION=	0.125
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
