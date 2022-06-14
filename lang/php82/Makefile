@@ -6,7 +6,7 @@ MASTER_SITES=	https://downloads.php.net/~sergey/
 DISTNAME=	php-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	PHP Scripting Language (8.1.X branch)
+COMMENT=	PHP Scripting Language (8.2.X branch)
 
 LICENSE=	PHP301
 
