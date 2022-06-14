@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf bison:alias cpe gmake localbase ssl
+USES=		autoreconf bison:alias cpe gmake pkgconfig ssl
 CONFIGURE_ARGS=	--without-zlib
 
 USE_GITHUB=	yes
@@ -41,13 +41,11 @@ FASTMEM_DESC=		Fast memory allocation functions
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
-GUILE_LIB_DEPENDS=	libguile.so:lang/guile
+GUILE_LIB_DEPENDS=	libguile-3.0.so:lang/guile
 GUILE_CONFIGURE_WITH=	guile
 
-LUA_USES=		lua:51
-LUA_CONFIGURE_WITH=	lua
-LUA_CPPFLAGS=		-I${LUA_INCDIR}
-LUA_LDFLAGS=		-L${LUA_LIBDIR}
+LUA_USES=		lua
+LUA_CONFIGURE_ON=	--with-luapkg=lua-${LUA_VER}
 
 PERL_USES=		perl5
 PERL_CONFIGURE_WITH=	perl
@@ -55,6 +53,7 @@ PERL_CONFIGURE_WITH=	perl
 FASTMEM_CONFIGURE_ON=	--enable-fastmem
 
 IDN_LIB_DEPENDS=	libidn.so:dns/libidn
+IDN_USES=		localbase
 IDN_CONFIGURE_WITH=	idn
 
 NOROOT_CONFIGURE_ON=	--enable-no-root
@@ -85,7 +84,6 @@ FINGER_CONFIGURE_ENABLE=	finger
 LOCAL_CGI_CONFIGURE_ENABLE=	cgi
 
 XBELMARKS_LIB_DEPENDS=	libexpat.so:textproc/expat2
-XBELMARKS_CONFIGURE_ON=	--enable-xbel --with-expat
 XBELMARKS_CONFIGURE_OFF=--disable-xbel
 
 256COLORS_CONFIGURE_ON=	--enable-256-colors
@@ -97,7 +95,7 @@ SPIDERMONKEY_RUN_DEPENDS=	js:lang/spidermonkey17
 SPIDERMONKEY_LIB_DEPENDS=	libnspr4.so:devel/nspr
 SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/nspr \
 				-I${LOCALBASE}/include/js-1.7
-SPIDERMONKEY_LDFLAGS=		-lnspr4 -pthread -lpthread -lm
+SPIDERMONKEY_LDFLAGS=		-L${LOCALBASE}/lib -lnspr4 -lpthread -lm
 SPIDERMONKEY_CONFIGURE_ON=	--enable-sm-scripting --with-spidermonkey
 SPIDERMONKEY_CONFIGURE_OFF=	--disable-sm-scripting --without-spidermonkey
 
