@@ -4,6 +4,7 @@ bin/createuser
 bin/dropdb
 bin/dropuser
 bin/ecpg
+bin/pg_amcheck
 bin/pg_config
 bin/pg_dump
 bin/pg_dumpall
@@ -1186,6 +1187,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/de/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/de/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/de/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/de/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/de/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/de/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
@@ -1193,6 +1195,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/el/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/el/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/el/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
+%%NLS%%share/locale/el/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/el/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/el/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/el/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
@@ -1200,6 +1203,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/es/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
+%%NLS%%share/locale/es/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
@@ -1207,6 +1211,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
@@ -1219,6 +1224,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/ja/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
@@ -1239,6 +1245,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
@@ -1246,6 +1253,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/sv/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
@@ -1259,6 +1267,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
@@ -1269,6 +1278,7 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ecpg-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ecpglib6-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libpq5-%%PG_VERSION%%.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_amcheck-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_config-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pg_dump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pgscripts-%%PG_VERSION%%.mo
