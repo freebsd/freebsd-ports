@@ -1,0 +1,17 @@
+PORTNAME=	btop
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.7
+CATEGORIES=	sysutils
+
+MAINTAINER=	pkubaj@FreeBSD.org
+COMMENT=	Monitor of resources
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gmake
+USE_GCC=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	aristocratos
+
+.include <bsd.port.mk>

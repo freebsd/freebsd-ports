@@ -140,6 +140,7 @@
     SUBDIR += bsdisks
     SUBDIR += bsdstats
     SUBDIR += bstack
+    SUBDIR += btop
     SUBDIR += btsixad
     SUBDIR += bulk_extractor
     SUBDIR += bupstash
