@@ -1,7 +1,7 @@
 # Created by: Dan Langille <dvl@FreeBSD.org>
 
 PORTNAME=	virustotal-api
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.11
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
