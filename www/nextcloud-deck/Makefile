@@ -1,7 +1,7 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	deck
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
