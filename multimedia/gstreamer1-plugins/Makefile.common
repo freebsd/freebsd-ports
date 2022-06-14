@@ -306,6 +306,7 @@ gst_jpeg_USES=		jpeg
 gst_kate_LIB_DEPENDS=	libkate.so:multimedia/libkate
 
 # kms
+gst_kms_LIB_DEPENDS=	libdrm.so:graphics/libdrm
 gst_kms_GST_PLUGIN_DIR=	sys/kms
 
 # ladspa
