@@ -1,8 +1,7 @@
 # Created by: Manuel Rabade Garica <mig@mig-29.net>
 
 PORTNAME=	xfce4-wavelan-plugin
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -11,6 +10,8 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Displays various information about a WaveLAN device
 
 LICENSE=	BSD3CLAUSE
+
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
