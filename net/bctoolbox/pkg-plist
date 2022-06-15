@@ -11,6 +11,7 @@ include/bctoolbox/param_string.h
 include/bctoolbox/parser.h
 include/bctoolbox/port.h
 include/bctoolbox/regex.h
+include/bctoolbox/tester.h
 include/bctoolbox/utils.hh
 include/bctoolbox/vconnect.h
 include/bctoolbox/vfs.h
@@ -18,7 +19,10 @@ include/bctoolbox/vfs_encrypted.hh
 include/bctoolbox/vfs_standard.h
 lib/libbctoolbox.so
 lib/libbctoolbox.so.1
+lib/libbctoolbox-tester.so
+lib/libbctoolbox-tester.so.1
 libdata/pkgconfig/bctoolbox.pc
+libdata/pkgconfig/bctoolbox-tester.pc
 %%DATADIR%%/cmake/ConfigureSpecfile.cmake
 %%DATADIR%%/cmake/MakeArchive.cmake
 %%DATADIR%%/cmake/bctoolboxCMakeUtils.cmake
