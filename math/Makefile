@@ -771,6 +771,7 @@
     SUBDIR += pari_elldata
     SUBDIR += pari_galdata
     SUBDIR += pari_galpol
+    SUBDIR += pari_nflistdata
     SUBDIR += pari_nftables
     SUBDIR += pari_seadata
     SUBDIR += paritwine
