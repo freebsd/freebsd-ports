@@ -1,8 +1,7 @@
 # Created by: thierry@pompo.net
 
 PORTNAME=	elldata
-DISTVERSION=	2019-09-12
-PORTREVISION=	1
+DISTVERSION=	2021-03-21
 CATEGORIES=	math
 MASTER_SITES=	https://pari.math.u-bordeaux.fr/pub/pari/packages/
 PKGNAMEPREFIX=	pari-
