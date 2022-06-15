@@ -1916,16 +1916,6 @@ PKGPOSTINSTALL?=	${PKGDIR}/pkg-post-install
 PKGPREDEINSTALL?=	${PKGDIR}/pkg-pre-deinstall
 PKGPOSTDEINSTALL?=	${PKGDIR}/pkg-post-deinstall
 
-_FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
-						fonts.dir fonts.scale gtk-update-icon-cache \
-						gtk-query-immodules \
-						ldconfig \
-						load-octave-pkg \
-						ocamlfind \
-						update-desktop-database update-mime-database \
-						catalog.ports \
-						ccache-update-links
-
 .    if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .    endif
@@ -3418,7 +3408,7 @@ ${PKGOLDSIGFILE}: ${PKGLATESTREPOSITORY}
 
 # from here this will become a loop for subpackages
 ${WRKDIR_PKGFILE}: ${TMPPLIST} create-manifest ${WRKDIR}/pkg
-	@if ! ${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -m ${METADIR} -p ${TMPPLIST} -o ${WRKDIR}/pkg ${PKGNAME}; then \
+	@if ! ${SETENV} ${PKG_ENV} ${PKG_CREATE} ${PKG_CREATE_ARGS} -m ${METADIR} -p ${TMPPLIST} -o ${WRKDIR}/pkg ${PKGNAME}; then \
 		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
 		exit 1; \
 	fi
