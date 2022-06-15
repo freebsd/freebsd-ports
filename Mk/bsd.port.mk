@@ -1050,7 +1050,8 @@ PORTS_FEATURES+=	FLAVORS
 MINIMAL_PKG_VERSION=	1.17.2
 
 _PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
-						${STAGEDIR}${PREFIX} ${WRKDIR}/pkg ${BINARY_LINKDIR}
+						${STAGEDIR}${PREFIX} ${WRKDIR}/pkg ${BINARY_LINKDIR} \
+						${PKGCONFIG_LINKDIR}
 
 # Ensure .CURDIR contains an absolute path without a trailing slash.  Failed
 # builds can occur when PORTSDIR is a symbolic link, or with something like
@@ -1679,6 +1680,13 @@ PATH:=			${BINARY_LINKDIR}:${PATH}
 .    if !${MAKE_ENV:MPATH=*} && !${CONFIGURE_ENV:MPATH=*}
 MAKE_ENV+=			PATH=${PATH}
 CONFIGURE_ENV+=		PATH=${PATH}
+.    endif
+
+PKGCONFIG_LINKDIR=	${WRKDIR}/.pkgconfig
+PKGCONFIG_BASEDIR=	/usr/libdata/pkgconfig
+.    if !${MAKE_ENV:MPKG_CONFIG_LIBDIR=*} && !${CONFIGURE_ENV:MPKG_CONFIG_LIBDIR=*}
+MAKE_ENV+=			PKG_CONFIG_LIBDIR=${PKGCONFIG_LINKDIR}:${LOCALBASE}/libdata/pkgconfig:${PKGCONFIG_BASEDIR}
+CONFIGURE_ENV+=		PKG_CONFIG_LIBDIR=${PKGCONFIG_LINKDIR}:${LOCALBASE}/libdata/pkgconfig:${PKGCONFIG_BASEDIR}
 .    endif
 
 .    if !defined(IGNORE_MASTER_SITE_GITHUB) && defined(USE_GITHUB) && empty(USE_GITHUB:Mnodefault)
@@ -5147,6 +5155,20 @@ create-binary-alias: ${BINARY_LINKDIR}
 .      endif
 .    endif
 
+.    if !empty(PKGCONFIG_BASE)
+.      if !target(create-base-pkgconfig)
+create-base-pkgconfig: ${PKGCONFIG_LINKDIR}
+.        for pcfile in ${PKGCONFIG_BASE:S/$/.pc/}
+			@if `test -f ${PKGCONFIG_BASEDIR}/${pcfile}`; then \
+				${RLN} ${PKGCONFIG_BASEDIR}/${pcfile} ${PKGCONFIG_LINKDIR}/${pcfile}; \
+			else \
+				${ECHO_MSG} "===>  Missing \"${pcfile}\" to create a link at \"${PKGCONFIG_LINKDIR}/${pcfile}\"     "; \
+				${FALSE}; \
+			fi
+.        endfor
+.      endif
+.    endif
+
 .    if !empty(BINARY_WRAPPERS)
 .      if !target(create-binary-wrappers)
 create-binary-wrappers: ${BINARY_LINKDIR}
@@ -5256,7 +5278,7 @@ _PATCH_SEQ=		050:ask-license 100:patch-message 150:patch-depends \
 				${_OPTIONS_patch} ${_USES_patch}
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	150:build-depends 151:lib-depends 160:create-binary-alias \
-				161:create-binary-wrappers \
+				161:create-binary-wrappers 170:create-base-pkgconfig \
 				200:configure-message 210:apply-slist \
 				300:pre-configure 450:pre-configure-script \
 				490:run-autotools-fixup 500:do-configure 700:post-configure \
