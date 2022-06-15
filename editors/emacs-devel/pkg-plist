@@ -253,13 +253,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/down.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/exit.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/exit.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/left.svg
-%%DATADIR%%/%%EMACS_VER%%/etc/images/radio-checked.svg
-%%DATADIR%%/%%EMACS_VER%%/etc/images/radio-mixed.svg
-%%DATADIR%%/%%EMACS_VER%%/etc/images/radio.svg
-%%DATADIR%%/%%EMACS_VER%%/etc/images/right.svg
-%%DATADIR%%/%%EMACS_VER%%/etc/images/unchecked.svg
-%%DATADIR%%/%%EMACS_VER%%/etc/images/up.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/bits.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/bits.xpm
@@ -472,6 +465,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/jump-to.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/left-arrow.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/left-arrow.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/left.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/letter.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/letter.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/lock-broken.pbm
@@ -588,12 +582,16 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/prev-node.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/print.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/print.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/radio-checked.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/radio-mixed.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/radio.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/redo.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/redo.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/refresh.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/refresh.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/right-arrow.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/right-arrow.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/right.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/save.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/save.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/saveas.pbm
@@ -698,6 +696,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/no-guide.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/no-handle.png
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/no-handle.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/nohandle-guide.png
+%%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/nohandle-guide.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/open.png
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/default/open.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/folder/README
@@ -717,9 +717,12 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/folder/no-guide.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/folder/no-handle.png
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/folder/no-handle.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/folder/nohandle-guide.png
+%%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/folder/nohandle-guide.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/folder/open.png
 %%DATADIR%%/%%EMACS_VER%%/etc/images/tree-widget/folder/open.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/unchecked.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/unchecked.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/unchecked.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/undo.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/undo.xpm
@@ -727,6 +730,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/up-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/up-node.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/up-node.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/up.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/zoom-in.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/zoom-in.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/zoom-out.pbm
@@ -1056,7 +1060,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-lib.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-lib.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-loaddefs.el
-%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/hol-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holiday-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holidays.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holidays.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar.el.gz
@@ -1576,6 +1580,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/find-func.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/float-sup.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/float-sup.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/generate-lisp-file.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/generate-lisp-file.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/generator.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/generator.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/generic.el.gz
@@ -1596,6 +1602,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/lisp-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/lisp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/lisp.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/loaddefs-gen.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/loaddefs-gen.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/macroexp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/macroexp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/memory-report.el.gz
@@ -2153,7 +2161,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/hippie-exp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/hl-line.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/hl-line.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/htmlfontify-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/htmlfontify.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/htmlfontify.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuf-ext.el.gz
@@ -2482,6 +2489,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/latin-pre.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/lrt.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/lrt.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/misc-lang.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/misc-lang.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/persian.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/persian.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/philippine.el.gz
@@ -3034,6 +3043,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/url-ns.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mtn.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-mtn.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vi.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vi.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vip.el.gz
@@ -3964,8 +3975,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-hg.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-hooks.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-hooks.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-mtn.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-mtn.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-rcs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-rcs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/vc/vc-sccs.el.gz
