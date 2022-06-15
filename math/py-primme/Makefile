@@ -15,7 +15,6 @@ LIB_DEPENDS=	libprimme.so:math/primme
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
-		
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
 USES=		fortran gmake localbase:ldflags python:3.6+ shebangfix
@@ -26,6 +25,6 @@ TEST_TARGET=	test
 BINARY_ALIAS=	python2=${PYTHON_CMD}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/primme.cpython-38.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/primme${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>
