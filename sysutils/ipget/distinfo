@@ -1,6 +1,6 @@
-TIMESTAMP = 1640710538
-SHA256 (ipfs-ipget-v0.8.0_GH0.tar.gz) = 4cdcd73a9eb8e30d3e930af1602a1016359c6a391a6c0eea22e45660b3ee6844
-SIZE (ipfs-ipget-v0.8.0_GH0.tar.gz) = 158726
+TIMESTAMP = 1655333214
+SHA256 (ipfs-ipget-v0.8.1_GH0.tar.gz) = c9d9bb143e343a7bc834cc5df6b48912b021356b59671035345ffc0d2856f18e
+SIZE (ipfs-ipget-v0.8.1_GH0.tar.gz) = 158761
 SHA256 (AndreasBriese-bbloom-46b345b51c96_GH0.tar.gz) = 49b41b2b20e73f31091222e4a6abf12762231cbad9de642d2227c16dae29b4ff
 SIZE (AndreasBriese-bbloom-46b345b51c96_GH0.tar.gz) = 8005
 SHA256 (Stebalien-go-bitfield-v0.0.1_GH0.tar.gz) = 101618e079a7ac9aa329f2c4712f36ecfcc2184a22f7be8cda330b300616f58f
