@@ -2204,11 +2204,11 @@ PKG_SUFX=	.pkg
 .    if defined(PKG_NOCOMPRESS)
 PKG_COMPRESSION_FORMAT?=	tar
 .    else
-.if ${OSVERSION} > 1400000
+.      if ${OSVERSION} > 1400000
 PKG_COMPRESSION_FORMAT?=	tzst
-.else
+.      else
 PKG_COMPRESSION_FORMAT?=	txz
-.endif
+.      endif
 .    endif
 
 # where pkg(8) stores its data
@@ -2609,12 +2609,12 @@ WRKDIR_PKGFILE=	${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
 PKGBASE?=			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
-.if ${PKG_COMPRESSION_FORMAT} == txz
+.    if ${PKG_COMPRESSION_FORMAT} == txz
 PKGOLDLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}.${PKG_COMPRESSION_FORMAT}
 # Temporary workaround to be deleted once every supported version of FreeBSD
 # have a bootstrap which handles the pkg extension.
 PKGOLDSIGFILE=			${PKGLATESTREPOSITORY}/${PKGBASE}.${PKG_COMPRESSION_FORMAT}.sig
-.endif
+.    endif
 
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_CMD?=		./${CONFIGURE_SCRIPT}
@@ -2790,13 +2790,13 @@ IGNORE+=	(reason: ${NOT_FOR_ARCHS_REASON})
 
 # Check the user interaction and legal issues
 .    if !defined(NO_IGNORE)
-.for v in ${OSREL} ${OSREL:R}
-.for f in ${FLAVOR}
-.if defined($f_IGNORE_${OPSYS}_${v})
+.      for v in ${OSREL} ${OSREL:R}
+.        for f in ${FLAVOR}
+.          if defined($f_IGNORE_${OPSYS}_${v})
 IGNORE+= "${${f}_IGNORE_${OPSYS}_${v}}"
-.endif
-.endfor
-.endfor
+.          endif
+.        endfor
+.      endfor
 .      if (defined(IS_INTERACTIVE) && defined(BATCH))
 IGNORE=		is an interactive port
 .      elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
