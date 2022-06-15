@@ -79,7 +79,6 @@ lib/qmmp%%LIB_SUFFX%%/Effect/libmonotostereo.so
 %%COVER%%lib/qmmp%%LIB_SUFFX%%/General/libcovermanager.so
 %%FILEOPS%%lib/qmmp%%LIB_SUFFX%%/General/libfileops.so
 %%GNOMEHOTKEY%%lib/qmmp%%LIB_SUFFX%%/General/libgnomehotkey.so
-%%HAL%%lib/qmmp%%LIB_SUFFX%%/General/libhal.so
 %%HISTORY%%lib/qmmp%%LIB_SUFFX%%/General/libhistory.so
 %%HOTKEY%%lib/qmmp%%LIB_SUFFX%%/General/libhotkey.so
 %%KDENOTIFY%%lib/qmmp%%LIB_SUFFX%%/General/libkdenotify.so
