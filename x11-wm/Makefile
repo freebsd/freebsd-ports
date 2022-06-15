@@ -23,6 +23,7 @@
     SUBDIR += ctwm
     SUBDIR += cwm
     SUBDIR += devilspie
+    SUBDIR += devilspie2
     SUBDIR += durden
     SUBDIR += dwl
     SUBDIR += dwm
