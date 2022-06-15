@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	paullouisageneau
 GH_TUPLE=	SergiusTheBest:plog:d8461e9d473e59fbcc1f79eee021550dcf81e618:SergiusTheBest_plog/deps/plog \
 		sctplab:usrsctp:7c31bd35c79ba67084ce029511193a19ceb97447:sctplab_usrsctp/deps/usrsctp \
-		paullouisageneau:libjuice:e3b33f0f190262cf5c700f1c6d2af6f407a4cf60:paullouisageneau_libjuice/deps/libjuice \
+		paullouisageneau:libjuice:4c3c85f536fb480e328e5de5e8f27fccc1a9690d:paullouisageneau_libjuice/deps/libjuice \
 		nlohmann:json:4f8fba14066156b73f1189a2b8bd568bde5284c5:nlohmann_json/deps/json \
 		cisco:libsrtp:90d05bf8980d16e4ac3f16c19b77e296c4bc207b:cisco_libsrtp/deps/libsrtp
 
