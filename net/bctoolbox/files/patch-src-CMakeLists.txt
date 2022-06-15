@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2017-07-17 12:16:03 UTC
+--- src/CMakeLists.txt.orig	2022-05-27 19:35:26 UTC
 +++ src/CMakeLists.txt
-@@ -119,6 +119,7 @@ if(ENABLE_SHARED)
+@@ -177,6 +177,7 @@ if(ENABLE_SHARED)
  			)
  		endif()
  	endif()
