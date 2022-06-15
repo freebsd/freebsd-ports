@@ -2,6 +2,7 @@
 
 PORTNAME=	include-what-you-use
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
