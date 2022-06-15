@@ -1,5 +1,5 @@
 PORTNAME=	pytest-factoryboy
-PORTVERSION=	2.1.0
+PORTVERSION=	2.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,15 +18,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}text-unidecode>=0:converters/py-text-unidecode@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_GITHUB=	yes # tests not shiped with sdist
-GH_ACCOUNT=	pytest-dev
 USE_PYTHON=	autoplist concurrent distutils
-
-TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 
 NO_ARCH=	yes
 
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs -o addopts=
+# Tests not shipped with the distribution
+# Issue: https://github.com/pytest-dev/pytest-factoryboy/issues/170
 
 .include <bsd.port.mk>

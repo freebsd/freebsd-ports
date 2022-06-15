@@ -1,3 +1,3 @@
-TIMESTAMP = 1610105312
-SHA256 (pytest-dev-pytest-factoryboy-2.1.0_GH0.tar.gz) = 67457e7b39f9c55f26b8b450092d7c7fa980ea1314add09b5d9d4fe96f7ffa44
-SIZE (pytest-dev-pytest-factoryboy-2.1.0_GH0.tar.gz) = 17104
+TIMESTAMP = 1655338512
+SHA256 (pytest-factoryboy-2.5.0.tar.gz) = 8abcfe5396a2cadf0b2d6fc1ba607d05f191db915eac95733ab741cb30968a46
+SIZE (pytest-factoryboy-2.5.0.tar.gz) = 17870
