@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20220613
+PORTVERSION=	s20220615
 CATEGORIES=	emulators
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -41,7 +41,7 @@ TEST_DEPENDS=	catch>0:devel/catch
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	bd3bfe411
+GH_TAGNAME=	0ae4eae9a
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.3.213:Vulkan_Headers/externals/Vulkan-Headers \
@@ -52,7 +52,7 @@ GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		fmtlib:fmt:8.0.0:fmt/externals/fmt \
 		herumi:xbyak:v5.96:xbyak/externals/xbyak \
 		kinetiknz:cubeb:cubeb-0.2-1350-gf79e0cf:cubeb/externals/cubeb \
-		yhirose:cpp-httplib:v0.9.0-5-g9648f95:cpp_httplib/externals/cpp-httplib
+		yhirose:cpp-httplib:v0.10.8-1-g305a7ab:cpp_httplib/externals/cpp-httplib
 
 USES=		cmake:testing compiler:c++17-lang elfctl localbase:ldflags pkgconfig sdl ssl
 USE_GCC=	11+:build # libc++ lacks std::atomic_ref, std::ranges
