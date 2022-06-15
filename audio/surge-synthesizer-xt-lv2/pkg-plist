@@ -3471,7 +3471,7 @@ bin/Surge XT Effects
 %%DATADIR%%/tuning_library/KBM Concert Pitch/KBM Notes.txt
 %%DATADIR%%/tuning_library/SCL/12 Tone Equal Temperament.scl
 %%DATADIR%%/tuning_library/SCL/35.1 CET - Wendy Carlos - Gamma.scl
-%%DATADIR%%/tuning_library/SCL/6%%PYTHON_VER%% CET - Wendy Carlos - Beta.scl
+%%DATADIR%%/tuning_library/SCL/63.8 CET - Wendy Carlos - Beta.scl
 %%DATADIR%%/tuning_library/SCL/78.0 CET - Wendy Carlos - Alpha.scl
 %%DATADIR%%/tuning_library/SCL/88.0 CET - Gary Morrison.scl
 %%DATADIR%%/tuning_library/SCL/Bohlen-Pierce.scl
