@@ -1,6 +1,6 @@
---- src/belle_sip_internal.h.orig	2015-10-19 11:43:47 UTC
+--- src/belle_sip_internal.h.orig	2022-05-18 04:20:06 UTC
 +++ src/belle_sip_internal.h
-@@ -23,6 +23,7 @@
+@@ -25,6 +25,7 @@
  #include <stdio.h>
  #include <sys/types.h>
  #include <errno.h>
