@@ -1,7 +1,7 @@
 PORTNAME=	belle-sip
-PORTVERSION=	5.1.32
+DISTVERSION=	5.1.32
+PORTREVISION=	1
 CATEGORIES=	net java
-MASTER_SITES=	https://gitlab.linphone.org/BC/public/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SIP (RFC 3261) implementation written in C
@@ -15,6 +15,10 @@ LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 
 USES=		cmake cpe tar:bz2
 CPE_VENDOR=	linphone
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.linphone.org/BC
+GL_ACCOUNT=	public
+GL_COMMIT=	6cfa9cf048905756bb9e729ccc029ad19b36ca76
 USE_JAVA=	yes
 JAVA_BUILD=	jre
 USE_LDCONFIG=	yes
