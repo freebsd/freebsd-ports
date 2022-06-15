@@ -1,6 +1,5 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.19.4
-PORTREVISION=	1
+DISTVERSION=	0.20
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -39,8 +38,9 @@ USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran jpeg \
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
-USE_QT=		buildtools concurrent core gui network opengl printsupport \
-		qmake_build svg webkit widgets xml xmlpatterns
+USE_QT=		buildtools concurrent core declarative gui location network \
+		opengl printsupport qmake_build svg webchannel webengine \
+		widgets xml xmlpatterns
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freecad_project
