@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	net-http
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,7 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-net-protocol>=0:net/rubygem-net-protocol \
-		rubygem-uri>=0:net/rubygem-uri
+RUN_DEPENDS=	rubygem-uri>=0:net/rubygem-uri
 
 USES=		gem
 USE_RUBY=	yes
