@@ -1,7 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	multipart-post
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
