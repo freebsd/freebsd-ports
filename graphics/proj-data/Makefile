@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	proj-data
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/proj/
 
