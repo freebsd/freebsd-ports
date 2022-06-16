@@ -1,6 +1,6 @@
 bin/gif2h5
-%%CXX%%bin/h5c++
 bin/h52gif
+%%CXX%%bin/h5c++
 %%CXX%%bin/h5cc
 bin/h5clear
 bin/h5copy
