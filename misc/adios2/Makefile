@@ -1,6 +1,7 @@
 PORTNAME=	adios2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +27,7 @@ LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libmpi.so:net/mpich \
 		libpng.so:graphics/png \
 		libsodium.so:security/libsodium \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libzmq.so:net/libzmq4 \
 		libzfp.so:devel/zfp
 RUN_DEPENDS=	bash:shells/bash \

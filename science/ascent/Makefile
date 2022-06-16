@@ -1,6 +1,7 @@
 PORTNAME=	ascent
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	science
 PKGNAMESUFFIX=	-visualizer
 
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libconduit.so:science/conduit \
 		libhdf5.so:science/hdf5 \
 		libsiloh5.so:science/silo \
 		libsysinfo.so:devel/libsysinfo \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		cmake:testing compiler:c++11-lang fortran localbase:ldflags
 

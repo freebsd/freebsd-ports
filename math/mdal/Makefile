@@ -2,6 +2,7 @@
 
 PORTNAME=	mdal
 DISTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	math geography
 
 MAINTAINER=	wen@FreeBSD.org
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libpdal_base.so:math/pdal \
 		libsqlite3.so:databases/sqlite3 \
 		libgdal.so:graphics/gdal \
 		libhdf5.so:science/hdf5 \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		cmake gnome localbase
 USE_GNOME=	libxml2

@@ -1,6 +1,7 @@
 PORTNAME=	appcsxcad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2-7
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-gde8c271
 CATEGORIES=	cad
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	\
 		libhdf5.so:science/hdf5 \
 		libpng16.so:graphics/png \
 		libQCSXCAD.so:cad/qcsxcad \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff \
 		libvtkCommonCore-8.2.so:math/vtk8 # some related packages don't support vtk9 yet, see https://github.com/thliebig/QCSXCAD/issues/6#issuecomment-901633240
 

@@ -1,5 +1,6 @@
 PORTNAME=	armadillo
 PORTVERSION=	11.2.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/arma
 
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libhdf5.so:science/hdf5 \
 		liblapack.so:math/lapack \
 		libsuperlu.so:math/superlu \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		blaslapack:openblas cmake compiler:c++11-lang pkgconfig tar:xz
 

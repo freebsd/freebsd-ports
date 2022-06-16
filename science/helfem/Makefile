@@ -1,6 +1,6 @@
 PORTNAME=	helfem
 DISTVERSION=	g20210912
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libarmadillo.so:math/armadillo \
 		libgsl.so:math/gsl \
 		libhdf5_cpp.so:science/hdf5 \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libxc.so:science/libxc
 
 USES=		cmake fortran

@@ -2,7 +2,7 @@ PORTNAME=	csxcad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.2-103
 DISTVERSIONSUFFIX=	-g3c4fb66
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
 		libmpfr.so:math/mpfr \
 		libpng16.so:graphics/png \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff \
 		libtinyxml.so:textproc/tinyxml \
 		libvtkCommonCore-8.2.so:math/vtk8 # some related packages don't support vtk9 yet, see https://github.com/thliebig/QCSXCAD/issues/6#issuecomment-901633240

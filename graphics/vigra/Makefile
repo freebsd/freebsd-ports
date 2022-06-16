@@ -3,7 +3,7 @@
 PORTNAME=	vigra
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.11.1
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libImath.so:math/Imath \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		cmake compiler:c++14-lang python:run shebangfix
 USE_GITHUB=	yes

@@ -1,5 +1,6 @@
 PORTNAME=	OSKAR
 DISTVERSION=	2.8.3
+PORTREVISION=	1
 CATEGORIES=	astro
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +15,7 @@ BROKEN_FreeBSD_12_powerpc64=	fails to compile: oskar_convert_cirs_relative_direc
 
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libhdf5.so:science/hdf5 \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		cmake compiler:c++11-lang localbase:ldflags python qt:5 \
 		shebangfix

@@ -2,7 +2,7 @@ PORTNAME=	vv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.0-383
 DISTVERSIONSUFFIX=	-g7a783a8b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libhdf5_cpp.so:science/hdf5 \
 		libITKLabelMap-5.0.so:science/InsightToolkit \
 		libpng.so:graphics/png \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff \
 		libvtkIOSQL-8.2.so:math/vtk8
 

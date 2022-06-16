@@ -2,6 +2,7 @@
 
 PORTNAME=	cdo
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/26823/ \
 		LOCAL/sunpoet
@@ -54,7 +55,7 @@ NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
 PROJ_CONFIGURE_WITH=	proj
 PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
 SZIP_CONFIGURE_WITH=	szlib
-SZIP_LIB_DEPENDS=	libsz.so:science/szip
+SZIP_LIB_DEPENDS=	libsz.so:science/libaec
 UDUNITS_CONFIGURE_WITH=	udunits2
 UDUNITS_LIB_DEPENDS=	libudunits2.so:science/udunits
 UUID_CONFIGURE_OFF=	ac_cv_func_uuid_create=no ac_cv_have_decl_uuid_create=no ac_cv_have_decl_uuid_generate=no ac_cv_lib_uuid_uuid_generate=no

@@ -1,6 +1,7 @@
 PORTNAME=	ambit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMESUFFIX=	-tensor # avoid clash with shells/ambit
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libopenblas.so:math/openblas \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		cmake:testing compiler:c++11-lang python:build
 USE_LDCONFIG=	yes

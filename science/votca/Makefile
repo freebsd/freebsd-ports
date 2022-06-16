@@ -1,7 +1,7 @@
 PORTNAME=	votca
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2022
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libgromacs_d.so:science/gromacs \
 		libhdf5.so:science/hdf5 \
 		libint2.so:science/libint2 \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libxc.so:science/libxc
 RUN_DEPENDS=	bash:shells/bash \
 		${PYNUMPY} \

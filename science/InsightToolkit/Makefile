@@ -3,7 +3,7 @@
 PORTNAME=	InsightToolkit
 PORTVERSION=	5.0.1
 DISTVERSIONPREFIX=v
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science biology
 MASTER_SITES=	https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.0.1/:data
 DISTFILES=	InsightData-5.0.1.tar.gz:data
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgdcmCommon.so:devel/gdcm \
 		libfftw.so:math/fftw \
 		libhdf5.so:science/hdf5 \
 		libpng.so:graphics/png \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff
 
 USES=		cmake compiler:c++11-lang eigen:3 jpeg pkgconfig

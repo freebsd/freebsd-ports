@@ -1,5 +1,6 @@
 PORTNAME=	flann
 DISTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		liblz4.so:archivers/liblz4 \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig
 USE_LDCONFIG=	yes

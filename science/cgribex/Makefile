@@ -2,7 +2,7 @@
 
 PORTNAME=	cgribex
 PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/21178/ \
 		LOCAL/sunpoet
@@ -28,7 +28,7 @@ GRIB_API_LIB_DEPENDS=	libgrib_api.so:science/grib_api
 JASPER_CONFIGURE_WITH=	jasper=${LOCALBASE}
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 SZIP_CONFIGURE_WITH=	szlib=${LOCALBASE}
-SZIP_LIB_DEPENDS=	libsz.so:science/szip
+SZIP_LIB_DEPENDS=	libsz.so:science/libaec
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-Ino/include||g; s|-Lno/lib||g' ${WRKSRC}/Makefile ${WRKSRC}/*/Makefile

@@ -1,7 +1,7 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -48,7 +48,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libprimesieve.so:math/primesieve \
 		libspqr.so:math/suitesparse-spqr \
 		libsuitesparseconfig.so:math/suitesparse-config \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libtbb.so:devel/onetbb \
 		libunwind.so:devel/libunwind
 

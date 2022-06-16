@@ -1,6 +1,6 @@
 PORTNAME=	chrono
 DISTVERSION=	7.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science devel
 PKGNAMESUFFIX=	-physics-simulation-engine
 
@@ -84,7 +84,7 @@ OPENGL_USE=			GL=gl,glu,glew
 OPENGL_BUILD_DEPENDS=		${LOCALBASE}/include/glm/glm.hpp:math/glm
 OPENGL_LIB_DEPENDS=		libglfw.so:graphics/glfw
 
-VEHICLE_LIB_DEPENDS=		libsz.so:science/szip \
+VEHICLE_LIB_DEPENDS=		libsz.so:science/libaec \
 				libmpi.so:net/openmpi
 
 .for module in ${ALL_MODULES}

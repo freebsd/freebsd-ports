@@ -2,7 +2,7 @@
 
 PORTNAME=	hdf5
 PORTVERSION=	1.8.21 # When PORTVERSION changes, please update french/med/files/patch-configure
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/${PORTNAME}-${PORTVERSION}/src/	\
 		http://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/${PORTNAME}-${PORTVERSION}/src/	\
@@ -52,7 +52,7 @@ PLIST_SUB+=	FORTRAN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSZIP}
-LIB_DEPENDS+=	libsz.so:science/szip
+LIB_DEPENDS+=	libsz.so:science/libaec
 CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
 .endif
 

@@ -1,5 +1,6 @@
 PORTNAME=	avogadrolibs
 DISTVERSION=	1.95.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +28,7 @@ OPTIONS_SUB=		yes
 
 HDF5_CMAKE_BOOL=	USE_HDF5
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
-			libsz.so:science/szip
+			libsz.so:science/libaec
 
 LIBARCHIVE_DESC=	Enable optional Libarchive features
 LIBARCHIVE_CMAKE_BOOL=	USE_LIBARCHIVE

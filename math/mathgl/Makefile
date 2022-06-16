@@ -1,6 +1,6 @@
 PORTNAME=	mathgl
 DISTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libhpdf.so:print/libharu \
 		libltdl.so:devel/libltdl \
 		libpng.so:graphics/png \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		cmake compiler:c++11-lang gettext-runtime gl jpeg xorg
 USE_GL=		gl glu glut

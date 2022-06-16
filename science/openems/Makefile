@@ -2,7 +2,7 @@ PORTNAME=	openems
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.35-71
 DISTVERSIONSUFFIX=	-g4c24b6e
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfparser-4.5.so:math/fparser \
 		libhdf5.so:science/hdf5 \
 		libpng16.so:graphics/png \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff \
 		libtinyxml.so:textproc/tinyxml \
 		libvtkCommonCore-8.2.so:math/vtk8 # some related packages don't support vtk9 yet, see https://github.com/thliebig/QCSXCAD/issues/6#issuecomment-901633240

@@ -2,6 +2,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	4.8.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	c-
 CATEGORIES=	science
 MASTER_SITES=	https://downloads.unidata.ucar.edu/netcdf-c/${PORTVERSION}/ \
@@ -37,7 +38,7 @@ SZIP_DESC=	SZIP support (required if HDF5 was built with SZIP)
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENABLE=	doxygen
-SZIP_LIB_DEPENDS=	libsz.so:science/szip
+SZIP_LIB_DEPENDS=	libsz.so:science/libaec
 SZIP_LIBS=		-lsz
 
 post-patch:

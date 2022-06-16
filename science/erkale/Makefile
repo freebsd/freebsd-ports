@@ -1,5 +1,6 @@
 PORTNAME=	erkale
 DISTVERSION=	g20220405
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libderiv.so:science/libint \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
 		libint.so:science/libint \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libxc.so:science/libxc
 RUN_DEPENDS=	${LOCALBASE}/share/erkale/basis/6-21G.gbs:science/erkale-pseudopotentials
 

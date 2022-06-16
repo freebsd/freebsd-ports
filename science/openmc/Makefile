@@ -1,6 +1,7 @@
 PORTNAME=	openmc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libhdf5.so:science/hdf5 \
 		libpng16.so:graphics/png \
 		libpugixml.so:textproc/pugixml \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		cmake:noninja eigen:3 pkgconfig
 

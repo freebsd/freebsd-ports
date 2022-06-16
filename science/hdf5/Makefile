@@ -2,6 +2,7 @@
 
 PORTNAME=	hdf5
 PORTVERSION=	1.10.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-${PORTVERSION:R}/${DISTNAME}/src/ \
@@ -45,7 +46,7 @@ PARALLEL_CONFIGURE_ENABLE=	parallel
 PARALLEL_LDFLAGS=	-L${LOCALBASE}/lib -lmpi
 PARALLEL_LIB_DEPENDS=	libmpi.so:net/mpich
 SZIP_CONFIGURE_ON=	--with-szlib=${LOCALBASE}
-SZIP_LIB_DEPENDS=	libsz.so:science/szip
+SZIP_LIB_DEPENDS=	libsz.so:science/libaec
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/config/gnu-flags

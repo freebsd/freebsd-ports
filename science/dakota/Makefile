@@ -1,6 +1,6 @@
 PORTNAME=	dakota
 DISTVERSION=	6.15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://dakota.sandia.gov/sites/default/files/distributions/public/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-public-src-cli
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libhdf5.so:science/hdf5 \
 		liblapack.so:math/lapack \
 		libnlopt.so:math/nlopt \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cmake compiler:c++11-lang fortran motif perl5 pkgconfig python shebangfix xorg

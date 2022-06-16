@@ -1,5 +1,6 @@
 PORTNAME=	slurm
 DISTVERSION=	20.02.7
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -58,7 +59,7 @@ GUI_CONFIGURE_ENABLE=	glibtest gtktest x11
 #GTK2_CONFIGURE_OFF=	--disable-gtktest
 
 HDF5_LIB_DEPENDS=	libhdf5_cpp.so:science/hdf5 \
-			libsz.so:science/szip
+			libsz.so:science/libaec
 HDF5_CONFIGURE_WITH=	hdf5
 HDF5_CONFIGURE_ENV=	H5CC=${LOCALBASE}/bin/h5cc
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	abinit
 DISTVERSION=	9.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gm4:devel/m4	\
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphviz>0:graphics/py-graphviz@${PY_FLAVOR}
 LIB_DEPENDS=	libelpa.so:math/elpa		\
-		libsz.so:science/szip		\
+		libsz.so:science/libaec		\
 		libelpa.so:math/elpa		\
 		libxc.so:science/libxc		\
 		libfftw3.so:math/fftw3		\

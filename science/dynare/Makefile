@@ -1,5 +1,6 @@
 PORTNAME=	dynare
 DISTVERSION=	5.1
+PORTREVISION=	1
 CATEGORIES=	science # economics
 MASTER_SITES=	https://www.dynare.org/release/source/
 
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/tokenizer.hpp:devel/boost-libs
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libmatio.so:math/matio \
 		libopenblas.so:math/openblas \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 RUN_DEPENDS=	epstool:graphics/epstool \
 		gnuplot:math/gnuplot \
 		pstoedit:graphics/pstoedit \

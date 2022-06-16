@@ -1,6 +1,6 @@
 PORTNAME=	PyNE
 DISTVERSION=	0.7.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://raw.githubusercontent.com/pyne/data/master/:decay \
 		http://raw.githubusercontent.com/pyne/data/master/:cram \
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	cmake:devel/cmake \
 		${PY_DEPENDS}
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libMOAB.so:math/moab \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		compiler:c++17-lang fortran python:3.7+
