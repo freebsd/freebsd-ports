@@ -2,6 +2,7 @@
 
 PORTNAME=	faraday
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	1
@@ -21,7 +22,7 @@ RUN_DEPENDS=	rubygem-faraday-em_http>=1.0<2:www/rubygem-faraday-em_http \
 		rubygem-faraday-net_http_persistent1>=1.0<2:www/rubygem-faraday-net_http_persistent1 \
 		rubygem-faraday-patron1>=1.0<2:www/rubygem-faraday-patron1 \
 		rubygem-faraday-rack1>=1.0<2:www/rubygem-faraday-rack1 \
-		rubygem-faraday-retry>=1.0<2:www/rubygem-faraday-retry \
+		rubygem-faraday-retry1>=1.0<2:www/rubygem-faraday-retry1 \
 		rubygem-ruby2_keywords>=0.0.4:devel/rubygem-ruby2_keywords
 
 USES=		cpe gem
