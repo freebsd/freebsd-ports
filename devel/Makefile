@@ -5150,6 +5150,7 @@
     SUBDIR += py-pytest-mock
     SUBDIR += py-pytest-mutagen
     SUBDIR += py-pytest-mypy
+    SUBDIR += py-pytest-nunit
     SUBDIR += py-pytest-pep8
     SUBDIR += py-pytest-plus
     SUBDIR += py-pytest-pycodestyle
