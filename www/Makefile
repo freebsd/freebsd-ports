@@ -1939,6 +1939,7 @@
     SUBDIR += rubygem-faraday-rack
     SUBDIR += rubygem-faraday-rack1
     SUBDIR += rubygem-faraday-retry
+    SUBDIR += rubygem-faraday-retry1
     SUBDIR += rubygem-faraday0
     SUBDIR += rubygem-faraday1
     SUBDIR += rubygem-faraday14
