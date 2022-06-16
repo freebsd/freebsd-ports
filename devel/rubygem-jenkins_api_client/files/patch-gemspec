@@ -6,6 +6,6 @@
    s.homepage = "https://github.com/arangamani/jenkins_api_client".freeze
 -  s.required_ruby_version = Gem::Requirement.new("~> 2.1".freeze)
 +  s.required_ruby_version = Gem::Requirement.new(">= 2.1".freeze)
-   s.rubygems_version = "3.3.15".freeze
+   s.rubygems_version = "3.3.16".freeze
    s.summary = "Jenkins JSON API Client".freeze
  
