@@ -60,6 +60,7 @@ include/OpenImageIO/texture.h
 include/OpenImageIO/thread.h
 include/OpenImageIO/tiffutils.h
 include/OpenImageIO/timer.h
+include/OpenImageIO/type_traits.h
 include/OpenImageIO/typedesc.h
 include/OpenImageIO/unittest.h
 include/OpenImageIO/unordered_map_concurrent.h
