@@ -1548,6 +1548,7 @@
     SUBDIR += py-django-object-actions
     SUBDIR += py-django-otp
     SUBDIR += py-django-otp-yubikey
+    SUBDIR += py-django-permissionedforms
     SUBDIR += py-django-pglocks
     SUBDIR += py-django-photologue
     SUBDIR += py-django-picklefield
