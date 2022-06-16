@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.22.1
-PORTREVIONS=	1
+DISTVERSION=	1.23.0
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -21,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
 USE_GNOME=	glib20
 
-V8_VERS=	0.43.1
+V8_VERS=	0.44.1
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -115,9 +114,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		debug_unreachable-0.1.1 \
 		deno_ast-0.15.0 \
 		deno_doc-0.35.0 \
+		deno_emit-0.2.0 \
 		deno_graph-0.27.0 \
 		deno_lint-0.30.0 \
-		deno_task_shell-0.3.1 \
+		deno_task_shell-0.4.0 \
 		der-0.4.5 \
 		derive_more-0.99.17 \
 		diff-0.1.12 \
@@ -126,10 +126,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dissimilar-1.0.3 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
-		dprint-core-0.58.1 \
+		dprint-core-0.58.2 \
 		dprint-plugin-json-0.15.3 \
 		dprint-plugin-markdown-0.13.3 \
-		dprint-plugin-typescript-0.68.4 \
+		dprint-plugin-typescript-0.69.1 \
 		dprint-swc-ext-0.1.1 \
 		dyn-clone-1.0.5 \
 		ecdsa-0.12.4 \
@@ -203,8 +203,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ident_case-1.0.1 \
 		idna-0.2.3 \
 		if_chain-1.0.2 \
-		import_map-0.9.0 \
-		indexmap-1.8.1 \
+		import_map-0.11.0 \
+		indexmap-1.8.2 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		inplace_it-0.3.3 \
@@ -239,10 +239,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		linked-hash-map-0.5.4 \
 		linux-raw-sys-0.0.46 \
 		lock_api-0.4.7 \
-		log-0.4.16 \
+		log-0.4.17 \
 		lru-cache-0.1.2 \
 		lsp-types-0.93.0 \
-		lzzzz-0.8.0 \
+		lzzzz-1.0.3 \
 		malloc_buf-0.0.6 \
 		match_cfg-0.1.0 \
 		matches-0.1.9 \
@@ -259,7 +259,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		nibble_vec-0.1.0 \
 		nix-0.23.0 \
 		node_resolver-0.1.1 \
-		notify-5.0.0-pre.14 \
+		notify-5.0.0-pre.15 \
 		num-bigint-0.4.3 \
 		num-bigint-dig-0.7.0 \
 		num-integer-0.1.45 \
@@ -269,7 +269,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		num_threads-0.1.6 \
 		objc-0.2.7 \
 		objc_exception-0.1.2 \
-		once_cell-1.10.0 \
+		once_cell-1.12.0 \
 		opaque-debug-0.3.0 \
 		openssl-probe-0.1.5 \
 		os_pipe-1.0.1 \
@@ -324,12 +324,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		range-alloc-0.1.2 \
 		raw-window-handle-0.4.3 \
 		redox_syscall-0.2.13 \
-		regex-1.5.5 \
-		regex-syntax-0.6.25 \
+		regex-1.5.6 \
+		regex-syntax-0.6.26 \
 		relative-path-1.7.0 \
 		remove_dir_all-0.5.3 \
 		renderdoc-sys-0.7.1 \
-		reqwest-0.11.10 \
+		reqwest-0.11.11 \
 		resolv-conf-0.7.0 \
 		retain_mut-0.1.7 \
 		ring-0.16.20 \
@@ -342,7 +342,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustix-0.34.6 \
 		rustls-0.20.5 \
 		rustls-native-certs-0.6.2 \
-		rustls-pemfile-0.3.0 \
 		rustls-pemfile-1.0.0 \
 		rustyline-9.1.2 \
 		rustyline-derive-0.6.0 \
@@ -431,13 +430,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		time-0.3.9 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.17.0 \
+		tokio-1.19.2 \
 		tokio-macros-1.7.0 \
 		tokio-rustls-0.23.4 \
 		tokio-stream-0.1.8 \
 		tokio-tungstenite-0.16.1 \
-		tokio-util-0.6.9 \
-		tokio-util-0.7.1 \
+		tokio-util-0.7.2 \
 		toml-0.5.9 \
 		tower-0.4.12 \
 		tower-layer-0.3.1 \
@@ -474,11 +472,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unreachable-0.1.1 \
 		untrusted-0.7.1 \
 		url-2.2.2 \
-		urlpattern-0.1.6 \
+		urlpattern-0.2.0 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.0 \
 		uuid-1.0.0 \
-		v8-0.43.1 \
+		v8-0.44.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		void-1.0.2 \

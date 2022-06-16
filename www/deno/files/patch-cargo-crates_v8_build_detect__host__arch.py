@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.43.1/build/detect_host_arch.py.orig	2020-06-26 16:27:54 UTC
-+++ cargo-crates/v8-0.43.1/build/detect_host_arch.py
+--- cargo-crates/v8-0.44.1/build/detect_host_arch.py.orig	2020-06-26 16:27:54 UTC
++++ cargo-crates/v8-0.44.1/build/detect_host_arch.py
 @@ -21,6 +21,8 @@ def HostArch():
      host_arch = 'ia32'
    elif host_arch in ['x86_64', 'amd64']:
