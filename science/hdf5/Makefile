@@ -1,8 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	hdf5
-PORTVERSION=	1.10.6
-PORTREVISION=	1
+PORTVERSION=	1.10.9
 PORTEPOCH=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-${PORTVERSION:R}/${DISTNAME}/src/ \
@@ -14,7 +13,20 @@ COMMENT=	Hierarchical Data Format library (from NCSA)
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	hdf-4.[0-9]* hdf5-1.6.[0-9]*
+USES=		compiler:c11 cpe libtool localbase tar:bzip2
+CONFIGURE_ARGS=	--enable-hl \
+		--enable-instrument \
+		--enable-strict-format-checks \
+		--with-default-api-version=v110
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	check
+USE_LDCONFIG=	yes
+
+CONFLICTS_INSTALL=	hdf
+
+CPE_VENDOR=	hdfgroup
 
 OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
 OPTIONS_RADIO=	SUPPORT
@@ -22,19 +34,6 @@ OPTIONS_RADIO_SUPPORT=	CXX PARALLEL
 OPTIONS_DEFAULT=CXX SZIP
 OPTIONS_SUB=	yes
 PARALLEL_DESC=	Parallel support
-
-USES=		compiler:c11 cpe libtool localbase tar:bzip2
-CPE_VENDOR=	hdfgroup
-CONFIGURE_ARGS=	--enable-hl \
-		--enable-instrument \
-		--enable-strict-format-checks
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-MAKE_JOBS_UNSAFE=	yes
-TEST_TARGET=	check
-USE_LDCONFIG=	yes
-
-PORTEXAMPLES=	*
 
 CXX_CONFIGURE_ENABLE=	cxx
 DEBUG_CONFIGURE_OFF=	--enable-build-mode=production
@@ -49,10 +48,10 @@ SZIP_CONFIGURE_ON=	--with-szlib=${LOCALBASE}
 SZIP_LIB_DEPENDS=	libsz.so:science/libaec
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|hdf5_examples|examples/hdf5|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/config/gnu-flags
 	@${REINPLACE_CMD} \
 		-e '/LD_LIBRARY_PATH/ s|^|#|' \
-		-e 's|/share/hdf5_examples|/${EXAMPLESDIR_REL}|' \
 		-e 's|(INSTALL)|(INSTALL_DATA)|' \
 			`${FIND} ${WRKSRC} -regex '.*/examples/Makefile.in'`
 	@${REINPLACE_CMD} -e 's|\[ -a|\[ -f|g' `${FIND} ${WRKSRC} -name \*.sh\*`
