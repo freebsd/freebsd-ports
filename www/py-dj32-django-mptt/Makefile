@@ -10,6 +10,9 @@ COMMENT=	Utilities for implementing Modified Preorder Tree Traversal in Django
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-django-mptt instead
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}dj32-django-js-asset>0:www/py-dj32-django-js-asset@${PY_FLAVOR}
 

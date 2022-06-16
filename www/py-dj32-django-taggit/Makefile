@@ -10,6 +10,9 @@ COMMENT=	Reusable Django application for simple tagging
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-django-taggit instead
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dj32-djangorestframework>0:www/py-dj32-djangorestframework@${PY_FLAVOR}
 

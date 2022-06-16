@@ -10,6 +10,9 @@ COMMENT=	Handles server headers required for Cross-Origin Resource Sharing
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use www/py-django-cors-headers instead
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FLAVOR}
 
 USES=		python:3.7+

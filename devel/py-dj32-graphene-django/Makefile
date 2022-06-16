@@ -13,6 +13,9 @@ COMMENT=	Graphene Django integration
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsolete, please use devel/py-graphene-django instead
+EXPIRATION_DATE=	2022-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=1.11:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphene2>=2.1.7<3:devel/py-graphene2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphql-core2>=2.1.0<3:devel/py-graphql-core2@${PY_FLAVOR} \
