@@ -1,0 +1,19 @@
+This is a backport of the BaseExceptionGroup and ExceptionGroup classes from
+Python 3.11.
+
+It contains the following:
+- The exceptiongroup.BaseExceptionGroup and exceptiongroup.ExceptionGroup
+  classes
+- A utility function (exceptiongroup.catch()) for catching exceptions possibly
+  nested in an exception group
+- Patches to the TracebackException class that properly formats exception groups
+  (installed on import)
+- An exception hook that handles formatting of exception groups through
+  TracebackException (installed on import)
+
+If this package is imported on Python 3.11 or later, the built-in
+implementations of the exception group classes are used instead,
+TracebackException is not monkey patched and the exception hook won't be
+installed.
+
+WWW: https://github.com/agronholm/exceptiongroup
