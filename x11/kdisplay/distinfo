@@ -1,5 +1,3 @@
-TIMESTAMP = 1644336089
-SHA256 (kwinft-kdisplay-a4dcebd297fded753579c7aef5a874617d274b7f_GL0.tar.gz) = a73936b3bdf161a99e60463e1c52590a885214a49dbc64ba0697681500cbc93f
-SIZE (kwinft-kdisplay-a4dcebd297fded753579c7aef5a874617d274b7f_GL0.tar.gz) = 185938
-SHA256 (74cab01dbddf.patch) = 95fd6993c031586773ca2c8ec58788fb2a347ea0efb4b5e17dfd567f6192750f
-SIZE (74cab01dbddf.patch) = 3845
+TIMESTAMP = 1655402259
+SHA256 (kwinft-kdisplay-125fc0b53f444a14e30b7e9c882db218e1fd8609_GL0.tar.gz) = 9e0dd77e1a95806156ba72d1d1cd0cb47859b5cbed3be6fdb08f8fc70f3f9200
+SIZE (kwinft-kdisplay-125fc0b53f444a14e30b7e9c882db218e1fd8609_GL0.tar.gz) = 184610

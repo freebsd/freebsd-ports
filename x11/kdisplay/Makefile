@@ -1,11 +1,7 @@
 PORTNAME=	kdisplay
 DISTVERSIONPREFIX=	${PORTNAME}@
-DISTVERSION=	5.24.0
-PORTREVISION=	1
+DISTVERSION=	5.25.0
 CATEGORIES=	x11
-
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	74cab01dbddf.patch:-p1 # https://gitlab.com/kwinft/kdisplay/-/merge_requests/26
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	App and daemon for display managing
@@ -27,7 +23,7 @@ USE_LDCONFIG=	yes
 USE_QT=		qmake:build buildtools:build core dbus declarative gui \
 		sensors widgets
 GL_ACCOUNT=	kwinft
-GL_COMMIT=	a4dcebd297fded753579c7aef5a874617d274b7f
+GL_COMMIT=	125fc0b53f444a14e30b7e9c882db218e1fd8609
 PLIST_SUB=	VERSION=${PORTVERSION}
 LDFLAGS+=	-Wl,--as-needed # Qt5*, KF5*
 
