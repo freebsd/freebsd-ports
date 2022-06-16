@@ -1,0 +1,17 @@
+--- mkdocs.yml.orig	2022-04-28 19:00:11 UTC
++++ mkdocs.yml
+@@ -1,5 +1,5 @@ site_name: NetBox Documentation
+ site_name: NetBox Documentation
+-site_dir: netbox/project-static/docs
++site_dir: project-static/docs
+ site_url: https://docs.netbox.dev/
+ repo_name: netbox-community/netbox
+ repo_url: https://github.com/netbox-community/netbox
+@@ -26,7 +26,6 @@ plugins:
+           setup_commands:
+             - import os
+             - import django
+-            - os.chdir('netbox/')
+             - os.environ.setdefault("DJANGO_SETTINGS_MODULE", "netbox.settings")
+             - django.setup()
+           rendering:

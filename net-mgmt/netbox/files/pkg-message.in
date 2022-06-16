@@ -17,125 +17,19 @@ database migrations will be executed.
 
 The following steps are required to finish the upgrade: 
 
-1. Run database migrations, trace any missing cable paths, collect static
-   files, remove stale content files and delete any expired user sessions
+1. Run database migrations, trace any missing cable paths, build the embedded
+   documentation, collect static files, remove stale content files and delete
+   any expired user sessions
 
 # cd %%DATADIR%%
 # python%%PYTHON_VER%% manage.py migrate
 # python%%PYTHON_VER%% manage.py trace_paths --no-input
+# mkdocs build
 # python%%PYTHON_VER%% manage.py collectstatic --no-input
 # python%%PYTHON_VER%% manage.py remove_stale_contenttypes --no-input
 # python%%PYTHON_VER%% manage.py clearsessions
 
 2. Restart WSGI/httpd environment (supervisord/apache/nginx/etc.)
-EOD
-}
-{ type: upgrade
-  maximum_version: 2.7.7
-  message: <<EOD
-1. Removal of the Topology Maps feature
-
-The deprecated topology maps feature has been removed.  Please replicate any
-required data to another source before upgrading NetBox to v2.7.7, as any
-existing topology maps will be deleted.
-
-
-2. Changed REDIS database configuration settings
-
-The REDIS database configuration parameters were splitted up in two discrete
-subsections named "webhooks" and "caching".  This requires modification of the
-REDIS parameter in configuration.py as follows: 
-
-Old Redis sample configuration:
-
-REDIS = {
-    'HOST': 'localhost',
-    'PORT': 6379,
-    'PASSWORD': '',
-    'DATABASE': 0,
-    'CACHE_DATABASE': 1,
-    'DEFAULT_TIMEOUT': 300,
-    'SSL': False,
-}
-
-New Redis sample configuration:
-
-REDIS = {
-    'webhooks': {
-        'HOST': 'redis.example.com',
-        'PORT': 1234,
-        'PASSWORD': 'foobar',
-        'DATABASE': 0,
-        'DEFAULT_TIMEOUT': 300,
-        'SSL': False,
-    },
-    'caching': {
-        'HOST': 'localhost',
-        'PORT': 6379,
-        'PASSWORD': '',
-        'DATABASE': 1,
-        'DEFAULT_TIMEOUT': 300,
-        'SSL': False,
-    }
-}
-
-Note that the CACHE_DATABASE parameter has been removed and the connection
-settings have been duplicated for both "webhooks" and "caching".  This allows
-one to make use of separate Redis instances if desired.  It is fine to use the
-same Redis service for both functions, although the database identifiers should
-be different.
-
-
-3. Removal of the WEBHOOKS_ENABLED configuration parameter
-
-As django-rq is now a required library, NetBox assumes that the RQ worker
-process is running and the WEBHOOKS_ENABLED configuration parameter is no
-longer used.  Please ensure that both the NetBox WSGI service and the RQ worker
-process are running on all production installations.
-
-
-4. Fixed natural orderding of interfaces
-
-The 2.7.7 release contains a bug fix regarding the natural ordering of
-interfaces.  If any interfaces appear unordered, run the following management
-command to recalculate their naturalized values after the usual upgrading steps
-(database migrations, collect static files, etc.) were issued:
-
-# cd %%DATADIR%%
-# python%%PYTHON_VER%% manage.py renaturalize dcim.Interface
-
-EOD
-}
-{ type: upgrade
-  maximum_version: 2.7.9
-  message: <<EOD
-Please note that two additional steps (remove stale content & clear cached
-files) are now required after each update of NetBox.
-
-These were added to the existing update instructions which are displayed with
-each update.
-EOD
-}
-{ type: upgrade
-  maximum_version: 2.7.10
-  message: <<EOD
-Please note that another additional step (delete expired user sessions) is now
-required after each update of NetBox.
-
-That step was added to the existing update instructions which are displayed
-with each update.
-EOD
-}
-{ type: upgrade
-  maximum_version: 2.7.11
-  message: <<EOD
-The "webhooks" REDIS configuration section has been renamed to "tasks".  Please
-update your configuration as support for the old name will be removed in a
-future release.
-
-Also the sample rc script got some new default values and improvements, e.g.
-the possibility to add extra arguments or to use a configuration file instead
-of using rc variables.
 EOD
 }
 { type: upgrade
@@ -348,6 +242,80 @@ EOD
 
     * The 128GFC interface type has been corrected from 128gfc-sfp28 to
       128gfc-qsfp28.
+
+    * Several changes to the REST API were made as well.  Please check the
+      changelogs for further details.
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.2.4
+  message: <<EOD
+/!\ WARNING /!\
+
+The NetBox 3.2 release contains major changes, so at least items 1.), 2.) and
+3.) must be checked before proceeding with the upgrade!
+
+/!\ WARNING /!\
+
+1. This release includes a database migration that will remove the "asn",
+   "contact_name", "contact_phone", and "contact_email" fields from the site
+   model.  (These fields have been superseded by the ASN and contact models
+   introduced in NetBox v3.1.)
+
+   To protect against the accidental destruction of data, the upgrade process
+   will fail if any sites still have data in any of these fields.  To bypass
+   this safeguard, set the NETBOX_DELETE_LEGACY_DATA environment variable when
+   running the upgrade script, which will permit the destruction of legacy
+   data.
+
+   A set of migration scripts is available to assist with the migration of
+   legacy site data:
+
+   https://github.com/netbox-community/migration-scripts
+
+
+2. NetBox v3.2 requires Python 3.8 or later.
+
+
+3. If the NetBox Plugin "net-mgmt/py-netbox-plugin-extension" is used, please
+   disable it before the migrations are applied.  This can be done by removing
+   the entry "netbox_plugin_extensions" from the "PLUGINS" section in the
+   NetBox configuration.
+
+   Once the upgrade is done, this port/package can be safely removed as it's no
+   longer required.
+
+
+4. Following items should be checked as well:
+
+    * The embedded documentation now needs to be built locally as the procedure
+      requires a running instance of NetBox:
+
+      # cd %%DATADIR%%
+      # mkdocs build
+
+      Please also refer to the general updating instructions as this needs to
+      be done with every future update of NetBox.
+
+    * Automatic redirection of legacy slug-based URL paths has been removed.
+      URL-based slugs were changed to use numeric IDs in v2.11.0.
+
+    * The "asn" query filter for sites now matches against the AS number of
+      assigned ASN objects.
+
+    * The "created" field of all change-logged models now conveys a full
+      datetime object, rather than only a date.  (Previous date-only values
+      will receive a timestamp of 00:00.)  While this change is largely
+      unconcerning, strictly-typed API consumers may need to be updated.
+
+    * A "pre_run()" method has been added to the base Report class.  Although
+      unlikely to affect most installations, you may need to alter any reports
+      which already use this name for a method.
+
+    * Webhook URLs now support Jinja2 templating.  Although this is unlikely to
+      introduce any issues, it's possible that an unusual URL might trigger a
+      Jinja2 rendering error, in which case the URL would need to be properly
+      escaped.
 
     * Several changes to the REST API were made as well.  Please check the
       changelogs for further details.
