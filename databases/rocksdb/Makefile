@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rocksdb
-PORTVERSION=	7.2.2
+PORTVERSION=	7.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -42,6 +42,8 @@ PORTDATA=	make_config.mk
 GH_ACCOUNT=	facebook
 USE_GITHUB=	yes
 
+CONFLICTS_INSTALL=	rocksdb-lite
+
 BENCHMARKS=	cache_bench db_bench memtablerep_bench persistent_cache_bench range_del_aggregator_bench table_reader_bench
 TOOLS=		blob_dump db_repl_stress db_sanity_test db_stress ldb rocksdb_dump rocksdb_undump sst_dump trace_analyzer write_stress
 
@@ -54,17 +56,6 @@ LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 LZ4_MAKE_ENV_OFF=	ROCKSDB_DISABLE_LZ4=yes
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_MAKE_ENV_OFF=	ROCKSDB_DISABLE_ZSTD=yes
-
-.if !defined(LITE)
-CONFLICTS_INSTALL=	rocksdb-lite
-PLIST_SUB+=	LITE="@comment " NO_LITE=""
-.else
-PKGNAMESUFFIX=	-lite
-CONFLICTS_INSTALL=	rocksdb
-CFLAGS+=	-DROCKSDB_LITE=1
-MAKE_ENV+=	LIBNAME=librocksdb${PKGNAMESUFFIX} DISABLE_JEMALLOC=1
-PLIST_SUB+=	LITE="" NO_LITE="@comment "
-.endif
 
 .include <bsd.port.pre.mk>
 
