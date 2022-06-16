@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Sub/HandlesVia.pm
+%%SITE_PERL%%/Sub/HandlesVia/CodeGenerator.pm
 %%SITE_PERL%%/Sub/HandlesVia/Handler.pm
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary.pm
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/Array.pm
@@ -23,6 +24,8 @@
 %%SITE_PERL%%/Sub/HandlesVia/Toolkit/Mouse.pm
 %%SITE_PERL%%/Sub/HandlesVia/Toolkit/Plain.pm
 %%PERL5_MAN3%%/Sub::HandlesVia.3.gz
+%%PERL5_MAN3%%/Sub::HandlesVia::CodeGenerator.3.gz
+%%PERL5_MAN3%%/Sub::HandlesVia::Handler.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Array.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Bool.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Code.3.gz
