@@ -1,7 +1,0 @@
-include/ricehdf.h
-include/szip_adpt.h
-include/szlib.h
-lib/libsz.a
-lib/libsz.so
-lib/libsz.so.2
-lib/libsz.so.2.0.0

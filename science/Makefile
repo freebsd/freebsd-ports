@@ -391,7 +391,6 @@
     SUBDIR += spglib
     SUBDIR += step
     SUBDIR += svmlight
-    SUBDIR += szip
     SUBDIR += tblite
     SUBDIR += teem
     SUBDIR += tfel
