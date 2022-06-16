@@ -1,7 +1,7 @@
 --- omnibus.gemspec.orig	2021-11-01 22:11:44 UTC
 +++ omnibus.gemspec
 @@ -33,7 +33,7 @@ Gem::Specification.new do |s|
-     s.add_runtime_dependency(%q<ohai>.freeze, [">= 15", "< 17"])
+     s.add_runtime_dependency(%q<ohai>.freeze, [">= 15", "< 18"])
      s.add_runtime_dependency(%q<ruby-progressbar>.freeze, ["~> 1.7"])
      s.add_runtime_dependency(%q<thor>.freeze, [">= 0.18", "< 2.0"])
 -    s.add_runtime_dependency(%q<license_scout>.freeze, ["~> 1.0"])
