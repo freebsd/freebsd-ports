@@ -1,7 +1,7 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
 
 PORTNAME=	HTTP-Message
-PORTVERSION=	6.36
+PORTVERSION=	6.37
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,8 @@ RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
 		p5-IO-HTML>=0:devel/p5-IO-HTML \
 		p5-LWP-MediaTypes>=6:www/p5-LWP-MediaTypes \
 		p5-URI>=1.10:net/p5-URI
-TEST_DEPENDS=	p5-Try-Tiny>=0:lang/p5-Try-Tiny
+TEST_DEPENDS=	p5-Test-Needs>=0:devel/p5-Test-Needs \
+		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
 USES=		perl5
 USE_PERL5=	configure
