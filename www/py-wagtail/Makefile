@@ -1,8 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	wagtail
-PORTVERSION=	2.16.2
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +16,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup449>=4.8<4.10:www/py-beautifulsoup449@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django32>=3.2<4.1:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-filter>=2.2<22:www/py-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=5.2<6.1:www/py-django-modelcluster@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=6.0<7.0:www/py-django-modelcluster@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-permissionedforms>=0.1<1.0:www/py-django-permissionedforms@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-taggit>=2.0<3.0:www/py-django-taggit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.4.0<5.0:www/py-django-treebeard@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.5.1<5.0:www/py-django-treebeard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.11.1,1<4.0,1:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=2.1.5:www/py-draftjs-exporter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.999<2:www/py-html5lib@${PY_FLAVOR} \
