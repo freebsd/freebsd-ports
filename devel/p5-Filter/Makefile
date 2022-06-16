@@ -1,7 +1,7 @@
 # Created by: James FitzGibbon <jfitz@FreeBSD.org>
 
 PORTNAME=	Filter
-PORTVERSION=	1.60
+PORTVERSION=	1.61
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RURBAN
