@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--without-tcl
 CONFIGURE_ENV=	PHP_CONFIG=${LOCALBASE}/bin/php-config
 GNU_CONFIGURE=	yes
-IGNORE_WITH_PHP=80 81 82
+IGNORE_WITH_PHP=80 81 82	# https://trac.xapian.org/ticket/817
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
 
