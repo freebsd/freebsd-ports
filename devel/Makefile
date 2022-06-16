@@ -5967,6 +5967,7 @@
     SUBDIR += rubygem-aws-sdk-machinelearning
     SUBDIR += rubygem-aws-sdk-macie
     SUBDIR += rubygem-aws-sdk-macie2
+    SUBDIR += rubygem-aws-sdk-mainframemodernization
     SUBDIR += rubygem-aws-sdk-managedblockchain
     SUBDIR += rubygem-aws-sdk-managedgrafana
     SUBDIR += rubygem-aws-sdk-marketplacecatalog
