@@ -1377,6 +1377,7 @@
     SUBDIR += py-mathics-pygments
     SUBDIR += py-mdit-py-plugins
     SUBDIR += py-mdurl
+    SUBDIR += py-mike
     SUBDIR += py-misaka
     SUBDIR += py-mistune
     SUBDIR += py-mistune0
