@@ -9,7 +9,6 @@ COMMENT=	Modelisation et Echanges de Donnees
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	gsed:textproc/gsed
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 
 USES=		fortran gmake libtool tk
