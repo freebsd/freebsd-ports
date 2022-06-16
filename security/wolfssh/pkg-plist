@@ -15,5 +15,5 @@ include/wolfssh/wolfscp.h
 include/wolfssh/wolfsftp.h
 lib/libwolfssh.a
 lib/libwolfssh.so
-lib/libwolfssh.so.9
-lib/libwolfssh.so.9.3.3
+lib/libwolfssh.so.8
+lib/libwolfssh.so.8.4.4
