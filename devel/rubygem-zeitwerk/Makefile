@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	zeitwerk
-PORTVERSION=	2.5.4
+PORTVERSION=	2.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
