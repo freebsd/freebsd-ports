@@ -1,6 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	1.7.1
-PORTREVISION=	1
+DISTVERSION=	1.8.0
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -41,18 +40,18 @@ CARGO_CRATES=	ahash-0.7.6 \
 		block-buffer-0.10.2 \
 		block-padding-0.1.5 \
 		byte-tools-0.3.1 \
-		byte-unit-4.0.14 \
 		byteorder-1.4.3 \
 		bytes-1.1.0 \
+		bytesize-1.1.0 \
 		cache-padded-1.2.0 \
 		cc-1.0.73 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-3.1.18 \
-		clap_complete-3.1.4 \
-		clap_derive-3.1.18 \
-		clap_lex-0.2.0 \
+		clap-3.2.5 \
+		clap_complete-3.2.1 \
+		clap_derive-3.2.5 \
+		clap_lex-0.2.2 \
 		combine-4.6.4 \
 		concurrent-queue-1.2.2 \
 		const_format-0.2.23 \
@@ -115,7 +114,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		hex-0.4.3 \
 		home-0.5.3 \
 		idna-0.2.3 \
-		indexmap-1.8.1 \
+		indexmap-1.8.2 \
 		instant-0.1.12 \
 		is_debug-1.0.1 \
 		itertools-0.10.3 \
@@ -158,7 +157,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		once_cell-1.12.0 \
 		opaque-debug-0.2.3 \
 		opaque-debug-0.3.0 \
-		open-2.1.2 \
+		open-3.0.1 \
 		ordered-float-2.10.0 \
 		ordered-multimap-0.4.3 \
 		ordered-stream-0.0.1 \
@@ -191,8 +190,8 @@ CARGO_CRATES=	ahash-0.7.6 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.37 \
-		process_control-3.4.0 \
-		quick-xml-0.22.0 \
+		process_control-3.5.1 \
+		quick-xml-0.23.0 \
 		quote-1.0.18 \
 		rand-0.4.6 \
 		rand-0.7.3 \
@@ -210,8 +209,8 @@ CARGO_CRATES=	ahash-0.7.6 \
 		rdrand-0.4.0 \
 		redox_syscall-0.2.13 \
 		redox_users-0.4.3 \
-		regex-1.5.5 \
-		regex-syntax-0.6.25 \
+		regex-1.5.6 \
+		regex-syntax-0.6.26 \
 		remove_dir_all-0.5.3 \
 		rust-ini-0.18.0 \
 		ryu-1.0.9 \
@@ -219,7 +218,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		schemars_derive-0.8.10 \
 		scopeguard-1.1.0 \
 		semver-0.11.0 \
-		semver-1.0.9 \
+		semver-1.0.10 \
 		semver-parser-0.10.2 \
 		serde-1.0.137 \
 		serde_derive-1.0.137 \
@@ -235,6 +234,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		shared_library-0.1.9 \
 		shell-words-1.1.0 \
 		signal-hook-0.1.17 \
+		signal-hook-0.3.14 \
 		signal-hook-registry-1.4.0 \
 		siphasher-0.3.10 \
 		slab-0.4.6 \
@@ -246,7 +246,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		strum-0.22.0 \
 		strum_macros-0.22.0 \
 		syn-1.0.92 \
-		sys-info-0.9.1 \
+		systemstat-0.1.11 \
 		tempdir-0.3.7 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
@@ -276,7 +276,6 @@ CARGO_CRATES=	ahash-0.7.6 \
 		uom-0.30.0 \
 		url-2.2.2 \
 		urlencoding-2.1.0 \
-		utf8-width-0.1.6 \
 		utf8parse-0.2.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
@@ -292,22 +291,22 @@ CARGO_CRATES=	ahash-0.7.6 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.24.0 \
-		windows-0.36.1 \
-		windows-sys-0.35.0 \
-		windows_aarch64_msvc-0.35.0 \
+		windows-0.37.0 \
+		windows-sys-0.36.1 \
 		windows_aarch64_msvc-0.36.1 \
+		windows_aarch64_msvc-0.37.0 \
 		windows_i686_gnu-0.24.0 \
-		windows_i686_gnu-0.35.0 \
 		windows_i686_gnu-0.36.1 \
+		windows_i686_gnu-0.37.0 \
 		windows_i686_msvc-0.24.0 \
-		windows_i686_msvc-0.35.0 \
 		windows_i686_msvc-0.36.1 \
+		windows_i686_msvc-0.37.0 \
 		windows_x86_64_gnu-0.24.0 \
-		windows_x86_64_gnu-0.35.0 \
 		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_gnu-0.37.0 \
 		windows_x86_64_msvc-0.24.0 \
-		windows_x86_64_msvc-0.35.0 \
 		windows_x86_64_msvc-0.36.1 \
+		windows_x86_64_msvc-0.37.0 \
 		winres-0.1.12 \
 		winrt-notification-0.5.1 \
 		xml-rs-0.8.4 \
