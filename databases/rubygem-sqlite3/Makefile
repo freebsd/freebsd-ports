@@ -1,7 +1,7 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
 
 PORTNAME=	sqlite3
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
