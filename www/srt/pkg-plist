@@ -10,7 +10,7 @@ include/srt/udt.h
 include/srt/version.h
 lib/libsrt.a
 lib/libsrt.so
-lib/libsrt.so.1.4
-lib/libsrt.so.1.4.4
+lib/libsrt.so.1.5
+lib/libsrt.so.1.5.0
 libdata/pkgconfig/haisrt.pc
 libdata/pkgconfig/srt.pc

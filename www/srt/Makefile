@@ -1,6 +1,6 @@
 PORTNAME=	srt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.4
+DISTVERSION=	1.5.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +18,6 @@ GH_ACCOUNT=	Haivision
 
 SHEBANG_FILES=	scripts/srt-ffplay
 
-CMAKE_TESTING_ON=	ENABLE_TESTING ENABLE_UNITTESTS
+CMAKE_TESTING_ON=	ENABLE_TESTING ENABLE_UNITTESTS # 2 tests are known to fail: https://github.com/Haivision/srt/issues/2389, https://github.com/Haivision/srt/issues/2390
 
 .include <bsd.port.mk>
