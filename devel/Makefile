@@ -6611,6 +6611,7 @@
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-lazy_priority_queue
     SUBDIR += rubygem-libddprof
+    SUBDIR += rubygem-libddwaf
     SUBDIR += rubygem-librarian
     SUBDIR += rubygem-librarianp
     SUBDIR += rubygem-libyajl2
