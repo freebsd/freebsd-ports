@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-apis-iamcredentials_v1
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Simple REST client for version V1 of the IAM Service Account Credential
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-google-apis-core>=0.4<2.0:devel/rubygem-google-apis-core
+RUN_DEPENDS=	rubygem-google-apis-core>=0.5<2.0:devel/rubygem-google-apis-core
 
 USES=		gem
 USE_RUBY=	yes
