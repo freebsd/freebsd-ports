@@ -12,19 +12,19 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf bison:alias cpe gmake pkgconfig ssl
-CONFIGURE_ARGS=	--without-zlib
+USES=		autoreconf bison:alias cpe gmake iconv pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rkd77
 
 LIBS+=		-lexecinfo
 
-OPTIONS_DEFINE=		88COLORS 256COLORS SPIDERMONKEY XBELMARKS LOCAL_CGI \
-			FINGER GOPHER BITTORRENT NNTP FTP FSP SMB EXMODE \
-			HIGHLIGHT IDN NOROOT FASTMEM PERL \
-			LUA GUILE ICONV MOUSE NLS
-OPTIONS_DEFAULT=	88COLORS 256COLORS FTP EXMODE HIGHLIGHT FASTMEM MOUSE
+OPTIONS_DEFINE=		256COLORS 88COLORS BITTORRENT BROTLI EXMODE \
+			FASTMEM FINGER FSP FTP GOPHER GUILE HIGHLIGHT \
+			IDN LOCAL_CGI LUA LZMA MOUSE NLS NNTP NOROOT \
+			PERL SMB SPIDERMONKEY XBELMARKS ZSTD
+OPTIONS_DEFAULT=	256COLORS 88COLORS BROTLI EXMODE FASTMEM FTP \
+			HIGHLIGHT LZMA MOUSE
 OPTIONS_SUB=		yes
 
 88COLORS_DESC=		88 color support
@@ -38,6 +38,9 @@ HIGHLIGHT_DESC=		HTML highlighting using DOM engine
 NOROOT_DESC=		Prevention of usage by root
 FASTMEM_DESC=		Fast memory allocation functions
 
+BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
+BROTLI_CONFIGURE_ON=	--with-brotli
+
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
@@ -46,6 +49,8 @@ GUILE_CONFIGURE_WITH=	guile
 
 LUA_USES=		lua
 LUA_CONFIGURE_ON=	--with-luapkg=lua-${LUA_VER}
+
+LZMA_CONFIGURE_ON=	--with-lzma
 
 PERL_USES=		perl5
 PERL_CONFIGURE_WITH=	perl
@@ -99,7 +104,8 @@ SPIDERMONKEY_LDFLAGS=		-L${LOCALBASE}/lib -lnspr4 -lpthread -lm
 SPIDERMONKEY_CONFIGURE_ON=	--enable-sm-scripting --with-spidermonkey
 SPIDERMONKEY_CONFIGURE_OFF=	--disable-sm-scripting --without-spidermonkey
 
-ICONV_USES=		iconv
-ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+ZSTD_USES=		localbase
+ZSTD_CONFIGURE_ON=	--with-zstd
 
 .include <bsd.port.mk>
