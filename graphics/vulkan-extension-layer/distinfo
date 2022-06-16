@@ -1,3 +1,5 @@
 TIMESTAMP = 1654207798
 SHA256 (KhronosGroup-Vulkan-ExtensionLayer-v1.3.216_GH0.tar.gz) = dc939113b421646ccab2b528bbbed6defd7ba8ec00a04d75a260c30d81e9cf90
 SIZE (KhronosGroup-Vulkan-ExtensionLayer-v1.3.216_GH0.tar.gz) = 472215
+SHA256 (KhronosGroup-Vulkan-Headers-v1.3.217_GH0.tar.gz) = 004b4f7841bd912d1cc3f5ac5694d5dea2f944f10053451233b533874368df87
+SIZE (KhronosGroup-Vulkan-Headers-v1.3.217_GH0.tar.gz) = 1501007
