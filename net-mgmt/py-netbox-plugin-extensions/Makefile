@@ -10,6 +10,9 @@ COMMENT=	Wrappers for NetBox generic objects
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer required for net-mgmt/netbox 3.2+
+EXPIRATION_DATE=	2022-07-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR}
 
 USES=		python:3.7+
