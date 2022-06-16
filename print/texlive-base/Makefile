@@ -147,6 +147,8 @@ post-patch:
 		${WRKSRC}/texk/texlive/linked_scripts/texlive/updmap-sys.sh
 	${REINPLACE_CMD} -e '/tlmgr/d' \
 		${WRKSRC}/texk/texlive/linked_scripts/Makefile.in
+	${REINPLACE_CMD} -e 's,/usr/local/,${PREFIX}/,' \
+		${WRKSRC}/configure
 
 post-install-fmtutil:
 	for D in ${TEXHASHDIRS}; do \
