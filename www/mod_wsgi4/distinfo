@@ -1,3 +1,3 @@
-TIMESTAMP = 1578438061
-SHA256 (mod_wsgi-4.7.0.tar.gz) = 64a6a177946b78bb1eb8ecb31fb3aea5f6d306c4eccd247433563ed6afceafe5
-SIZE (mod_wsgi-4.7.0.tar.gz) = 497335
+TIMESTAMP = 1655028321
+SHA256 (mod_wsgi-4.9.2.tar.gz) = aa067e8bdc74887179a3819014e8203a6f9b691687cdc3bf78d2a93477d33eed
+SIZE (mod_wsgi-4.9.2.tar.gz) = 497200
