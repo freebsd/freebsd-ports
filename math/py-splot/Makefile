@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	splot
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5.post1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,7 @@ COMMENT=	Visual analytics for spatial analysis with PySAL
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}descartes>=0:graphics/py-descartes@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}esda>=0:science/py-esda@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}esda>=0:science/py-esda@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}geopandas>=0.4.0:graphics/py-geopandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}giddy>=0:graphics/py-giddy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libpysal>=0:science/py-libpysal@${PY_FLAVOR} \
@@ -23,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}descartes>=0:graphics/py-descartes@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}seaborn>=0:math/py-seaborn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spreg>=0:math/py-spreg@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
