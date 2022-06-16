@@ -4627,6 +4627,7 @@
     SUBDIR += py-graphene
     SUBDIR += py-graphene-django
     SUBDIR += py-graphene-sqlalchemy
+    SUBDIR += py-graphene2
     SUBDIR += py-graphql-core
     SUBDIR += py-graphql-core2
     SUBDIR += py-graphql-relay
