@@ -1,6 +1,5 @@
 PORTNAME=	dakota
-DISTVERSION=	6.15.0
-PORTREVISION=	2
+DISTVERSION=	6.16.0
 CATEGORIES=	science
 MASTER_SITES=	https://dakota.sandia.gov/sites/default/files/distributions/public/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-public-src-cli
@@ -15,15 +14,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	nanoflann>0:math/nanoflann
 LIB_DEPENDS=	libblas.so:math/blas \
 		libboost_system.so:devel/boost-libs \
+		libexpat.so:textproc/expat2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
+		libicui18n.so:devel/icu \
 		liblapack.so:math/lapack \
 		libnlopt.so:math/nlopt \
-		libsz.so:science/libaec
+		libpng16.so:graphics/png \
+		libsz.so:science/szip
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake compiler:c++11-lang fortran motif perl5 pkgconfig python shebangfix xorg
-USE_XORG=	ice sm x11 xau xdmcp xext xft xmu xrender xt
+USES=		cmake compiler:c++11-lang fortran gettext-runtime jpeg motif perl5 pkgconfig python shebangfix xorg
+USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xmu xrender xt
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	nodefault
@@ -50,13 +54,13 @@ CMAKE_ON+=	DAKOTA_HAVE_GSL DAKOTA_HAVE_HDF5
 CMAKE_OFF=	DAKOTA_ENABLE_TESTS
 CMAKE_ARGS=	-DDakota_VERSION_SRC:STRING=${DISTVERSION} -DDakota_GIT_REVL:STRING=unknown -DDakota_RELEASE_DATE:${STRING}=20211115 \
 		-DPython_EXECUTABLE=${PYTHON_CMD} \
-		-DMUQ_STANMATH_DIR=${WRKSRC}/stanmath
+		-DMUQ_STANMATH_DIR=${WRKSRC}/stanmath \
+		-DPython_EXECUTABLE=${PYTHON_CMD}
 
 FFLAGS+=	-fallow-argument-mismatch
 LDFLAGS+=	-lexecinfo
 
 CONFLICTS_BUILD=	dakota # self: picks up some bundled packages from the pre-installed dakota package and then fails to install them
-CONFLICTS_INSTALL=	openblas
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
