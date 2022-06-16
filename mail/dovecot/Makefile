@@ -9,7 +9,7 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.3.19
+PORTVERSION=	2.3.19.1
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 
