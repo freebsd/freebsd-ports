@@ -1,7 +1,7 @@
 # Created by: Michael Gmelin <freebsd@grem.de>
 
 PORTNAME=	bhyve-rc
-PORTVERSION=	3
+PORTVERSION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none
