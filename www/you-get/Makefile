@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	you-get
-PORTVERSION=	0.4.1555
+PORTVERSION=	0.4.1612
 CATEGORIES=	www
 MASTER_SITES=	CHEESESHOP
 
