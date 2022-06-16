@@ -29,8 +29,8 @@
 +pycountry>=22.3.5          # Languages
 +pyenchant>=3.2.2     # spellcheck
  # Windows Resources (rc2po and po2rc)
--pyparsing==3.0.8     # RC
-+pyparsing>=3.0.8     # RC
+-pyparsing==3.0.9     # RC
++pyparsing>=3.0.9     # RC
  # Faster matching in e.g. pot2po
  python-Levenshtein>=0.12    # Levenshtein
  # Format support
