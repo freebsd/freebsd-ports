@@ -1,3 +1,3 @@
-TIMESTAMP = 1632773602
-SHA256 (backports.cached-property-1.0.1.tar.gz) = 1a5ef1e750f8bc7d0204c807aae8e0f450c655be0cf4b30407a35fd4bb27186c
-SIZE (backports.cached-property-1.0.1.tar.gz) = 7430
+TIMESTAMP = 1655398668
+SHA256 (backports.cached-property-1.0.2.tar.gz) = 9306f9eed6ec55fd156ace6bc1094e2c86fae5fb2bf07b6a9c00745c656e75dd
+SIZE (backports.cached-property-1.0.2.tar.gz) = 8031
