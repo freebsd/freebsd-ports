@@ -2,7 +2,7 @@
 
 PORTNAME=	raspberrypi-userland
 PORTVERSION=	20161026
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,18 +12,16 @@ LICENSE=	BSD3CLAUSE
 
 ONLY_FOR_ARCHS=	armv6 armv7
 
-CONFLICTS_INSTALL=	libglvnd
+USES=		cmake:noninja pkgconfig shebangfix
 
-USES=		cmake pkgconfig shebangfix
-
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/share/vc/lib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gonzoua
 GH_PROJECT=	userland
 GH_TAGNAME=	e143b48
 
-CMAKE_ARGS+=	-DVMCS_INSTALL_PREFIX=${PREFIX} \
+CMAKE_ARGS+=	-DVMCS_INSTALL_PREFIX=${PREFIX}/share/vc \
 		-DCMAKE_TOOLCHAIN_FILE=${WRKSRC}/makefiles/cmake/toolchains/arm-freebsd.cmake
 SHEBANG_FILES=	host_applications/linux/apps/dtoverlay/dtoverlay-post \
 		host_applications/linux/apps/dtoverlay/dtoverlay-pre
@@ -37,7 +35,7 @@ DEBUG_CFLAGS_OFF=	-DNDEBUG
 LLD_UNSAFE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/opt/vc|${PREFIX}|g" \
+	@${REINPLACE_CMD} -e "s|/opt/vc|${PREFIX}/share/vc|g" \
 		${WRKSRC}/makefiles/cmake/vmcs.cmake \
 		${WRKSRC}/host_applications/linux/apps/hello_pi/Makefile.include
 	@${REINPLACE_CMD} -e "s|CMAKE_C_COMPILER cc|CMAKE_C_COMPILER ${CC}|g" \
@@ -60,6 +58,7 @@ post-patch:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/host_applications/linux/apps/hello_pi && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/hello_pi)
+	(cd ${WRKSRC}/host_applications/linux/apps/hello_pi && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/hello_pi)
+	${FIND} ${STAGEDIR}${EXAMPLESDIR}/hello_pi \( -name \*.bak -o -name \*.orig \) -delete
 
 .include <bsd.port.mk>
