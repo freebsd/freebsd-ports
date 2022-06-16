@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		localbase php:pecl
-IGNORE_WITH_PHP=	82
+
+IGNORE_WITH_PHP=82
 
 .include <bsd.port.mk>
