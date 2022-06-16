@@ -56,7 +56,8 @@ BAZEL_JAVAC_OPTS+=	"-J-Xmx1g -J-Xms128m"
 
 pre-patch:
 	@${CP} ${FILESDIR}/extra-patch-absl_base_internal_unscaledcycleclock.cc \
-		${FILESDIR}/extra-patch-bazel_grpc__deps.bzl \
+		${WRKSRC}/third_party/py/abseil/
+	@${CP} ${FILESDIR}/extra-patch-bazel_grpc__deps.bzl \
 		${FILESDIR}/extra-patch-bazel_build_defs.bzl \
 		${WRKSRC}/third_party/grpc/
 
