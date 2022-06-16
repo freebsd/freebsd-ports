@@ -1,3 +1,3 @@
-TIMESTAMP = 1621183216
-SHA256 (opencensus-0.7.13.tar.gz) = b58b86e5ac7c7760cf9716702dc09d1faf0c9606a8659d836a9bd30ba74ad169
-SIZE (opencensus-0.7.13.tar.gz) = 64288
+TIMESTAMP = 1655208270
+SHA256 (opencensus-0.9.0.tar.gz) = 6af715a27d38775b4710c53eb611614b9761cc118c3906b0074ea85ce6a673f9
+SIZE (opencensus-0.9.0.tar.gz) = 64806
