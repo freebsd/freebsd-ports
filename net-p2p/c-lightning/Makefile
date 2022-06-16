@@ -2,7 +2,7 @@
 
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.1
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
@@ -54,9 +54,9 @@ GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
 GIT_COMMIT=	${DISTVERSIONPREFIX}${PORTVERSION}
 .endif
 GH_TUPLE=	ElementsProject:lightning:${GIT_COMMIT} \
-		ElementsProject:libwally-core:46a3db9b7bce9:ext1/external/libwally-core \
-		ElementsProject:secp256k1-zkp:6da00ec6245e1:ext2/external/libwally-core/src/secp256k1 \
-		ianlancetaylor:libbacktrace:5a99ff7fed66b8e:ext3/external/libbacktrace \
+		ElementsProject:libwally-core:f7c0824e56a06:ext1/external/libwally-core \
+		ElementsProject:secp256k1-zkp:6c0aecf72b1f4:ext2/external/libwally-core/src/secp256k1 \
+		ianlancetaylor:libbacktrace:2446c66076480ce:ext3/external/libbacktrace \
 		zserge:jsmn:18e9fe42cbfe21d65076f5c77ae2be3:ext4/external/jsmn \
 		valyala:gheap:67fc83bc953324f4759e52951921d:ext5/external/gheap
 

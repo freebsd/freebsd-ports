@@ -89,6 +89,7 @@ man/man7/lightning-sendonion.7.gz
 man/man7/lightning-sendonionmessage.7.gz
 man/man7/lightning-sendpay.7.gz
 man/man7/lightning-sendpsbt.7.gz
+man/man7/lightning-setchannel.7.gz
 man/man7/lightning-setchannelfee.7.gz
 man/man7/lightning-signmessage.7.gz
 man/man7/lightning-signpsbt.7.gz
