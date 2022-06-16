@@ -5,6 +5,46 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220616:
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  /!\ WARNING /!\
+
+  The NetBox 3.2 release contains major changes, so at least items 1.), 2.)
+  and 3.) must be checked before proceeding with the upgrade!
+
+  /!\ WARNING /!\
+
+  1. This release includes a database migration that will remove the "asn",
+     "contact_name", "contact_phone", and "contact_email" fields from the
+     site model.  (These fields have been superseded by the ASN and contact
+     models introduced in NetBox v3.1.)
+
+     To protect against the accidental destruction of data, the upgrade
+     process will fail if any sites still have data in any of these fields.
+
+     To bypass this safeguard, set the NETBOX_DELETE_LEGACY_DATA environment
+     variable when running the upgrade script, which will permit the
+     destruction of legacy data.
+
+     A set of migration scripts is available to assist with the migration of
+     legacy site data:
+
+     https://github.com/netbox-community/migration-scripts
+
+  2. NetBox v3.2 requires Python 3.8 or later.
+
+  3. If the NetBox Plugin "net-mgmt/py-netbox-plugin-extension" is used,
+     please disable it before the migrations are applied.  This can be done
+     by removing the entry "netbox_plugin_extensions" from the "PLUGINS"
+     section in the NetBox configuration.
+
+     Once the upgrade is done, this port/package can be safely removed as
+     it's no longer required.
+
+  4. Please also check the pkg-message and the changelogs for further info.
+
 20220608:
   AFFECTS: devel/autoconf-wrapper, devel/autoconf213
   AUTHOR: tijl@FreeBSD.org
