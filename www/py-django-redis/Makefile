@@ -20,8 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>=0:databases/py-hiredis@${PY_FLAVOR
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj31-django-redis \
-			${PYTHON_PKGNAMEPREFIX}dj32-django-redis
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=	yes
 

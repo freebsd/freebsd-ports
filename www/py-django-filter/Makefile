@@ -17,7 +17,6 @@ USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=		yes
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj31-django-filter \
-			${PYTHON_PKGNAMEPREFIX}dj32-django-filter
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 .include <bsd.port.mk>

@@ -20,8 +20,6 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=		yes
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django-happenings \
-			${PYTHON_PKGNAMEPREFIX}dj31-django-mptt \
-			${PYTHON_PKGNAMEPREFIX}dj32-django-mptt
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 .include <bsd.port.mk>

@@ -27,8 +27,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj31-django-rq \
-			${PYTHON_PKGNAMEPREFIX}dj32-django-rq
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 # https://github.com/rq/django-rq/blob/master/Makefile
 do-test:
