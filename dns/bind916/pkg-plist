@@ -157,7 +157,6 @@ include/isc/hash.h
 include/isc/heap.h
 include/isc/hex.h
 include/isc/hmac.h
-include/isc/hp.h
 include/isc/ht.h
 include/isc/httpd.h
 include/isc/interfaceiter.h
@@ -190,7 +189,6 @@ include/isc/platform.h
 include/isc/pool.h
 include/isc/portset.h
 include/isc/print.h
-include/isc/queue.h
 include/isc/quota.h
 include/isc/radix.h
 include/isc/random.h
