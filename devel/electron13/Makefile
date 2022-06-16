@@ -227,7 +227,8 @@ post-extract:
 		${SETENV} HOME=${WRKDIR} XDG_CACHE_HOME=${WRKDIR}/.cache yarn --frozen-lockfile --offline
 
 pre-patch:
-	${SH} ${FILESDIR}/apply-electron-patches.sh ${WRKSRC}
+	${SETENV} LOCALBASE="${LOCALBASE}" \
+		${SH} ${FILESDIR}/apply-electron-patches.sh ${WRKSRC}
 	# ${FIND} ${WRKSRC} -type f -name '*.orig' -print -delete
 	# ${FIND} ${WRKSRC} -type f -name '*~' -print -delete
 
