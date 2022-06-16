@@ -2,6 +2,7 @@
 
 PORTNAME=	acme-client
 PORTVERSION=	2.0.11
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-faraday>=1.0<3.0.0:www/rubygem-faraday \
-		rubygem-faraday-retry>=1.0:www/rubygem-faraday-retry
+		rubygem-faraday-retry1>=1.0<2:www/rubygem-faraday-retry1
 
 USES=		gem shebangfix
 USE_RUBY=	yes
