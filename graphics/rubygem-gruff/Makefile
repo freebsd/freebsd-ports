@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	gruff
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
