@@ -1,0 +1,4 @@
+verspec is a Python library for handling software versions and specifiers,
+adapted from the packaging package.
+
+WWW: https://github.com/jimporter/verspec
