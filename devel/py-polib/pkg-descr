@@ -10,4 +10,4 @@ convenience functions 'pofile', 'mofile' and 'detect_encoding',
 and the 4 core classes: POFile, MOFile, POEntry and MOEntry for
 creating new files/entries.
 
-WWW: https://bitbucket.org/izi/polib/
+WWW: https://github.com/izimobil/polib/
