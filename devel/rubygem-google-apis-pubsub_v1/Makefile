@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-apis-pubsub_v1
-PORTVERSION=	0.20.0
+PORTVERSION=	0.21.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Simple REST client for Cloud Pub/Sub API V1
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-google-apis-core>=0.4<2.0:devel/rubygem-google-apis-core
+RUN_DEPENDS=	rubygem-google-apis-core>=0.5<2.0:devel/rubygem-google-apis-core
 
 USES=		gem
 USE_RUBY=	yes
