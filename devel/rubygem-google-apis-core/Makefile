@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-apis-core
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
