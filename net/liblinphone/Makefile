@@ -1,44 +1,57 @@
-PORTNAME=	linphone
-PORTVERSION=	3.12.0
-PORTREVISION=	5
+PORTNAME=	liblinphone
+DISTVERSION=	5.0.49
 CATEGORIES=	net
-MASTER_SITES=	https://www.linphone.org/releases/sources/linphone/
-PKGNAMEPREFIX=	lib
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SIP library supporting voice/video calls and text messaging
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	doxygen:devel/doxygen \
-		${PYTHON_PKGNAMEPREFIX}pystache>=0:textproc/py-pystache@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pystache>=0:textproc/py-pystache@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
+		doxygen:devel/doxygen \
+		xsd>0:devel/xsd
 LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		libbelcard.so:deskutils/belcard \
 		libbellesip.so:net/belle-sip \
+		libbelr.so:textproc/belr \
 		libbzrtp.so:security/bzrtp \
-		libmediastreamer_base.so:net/mediastreamer \
+		libjsoncpp.so:devel/jsoncpp \
+		liblime.so:security/lime \
+		libmediastreamer.so:net/mediastreamer \
 		libortp.so:net/ortp \
-		libsqlite3.so:databases/sqlite3
+		libsoci_core.so:databases/soci \
+		libxerces-c.so:textproc/xerces-c3
 
-USES=		cmake compiler:c++11-lib gnome iconv pkgconfig \
-		python:build
+USES=		cmake gnome iconv pkgconfig python:build sqlite
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.linphone.org/BC
+GL_ACCOUNT=	public
+GL_COMMIT=	b1c3ab19e6d4200293593d29afe8d4f3c121d5db
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DENABLE_NLS=NO -DENABLE_STATIC=NO -DENABLE_STRICT=NO \
+CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
+		-DCMAKE_SKIP_INSTALL_RPATH=ON \
+		-DENABLE_FLEXIAPI=NO \
+		-DENABLE_NLS=NO \
+		-DENABLE_STATIC=NO \
+		-DENABLE_STRICT=NO \
 		-DENABLE_UNIT_TESTS=NO
 
-OPTIONS_DEFINE=	LDAP VIDEO
-OPTIONS_DEFAULT=LDAP VIDEO
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		LDAP VIDEO
+OPTIONS_DEFAULT=	LDAP VIDEO
+OPTIONS_SUB=		yes
 
-LDAP_CMAKE_BOOL=	ENABLE_LDAP
 LDAP_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 LDAP_USE=		OPENLDAP=yes
-
+LDAP_CMAKE_BOOL=	ENABLE_LDAP
 VIDEO_CMAKE_BOOL=	ENABLE_VIDEO
+
+#post-patch:
+#	@${REINPLACE_CMD} 's|jsoncpp_object|jsoncpp|g' \
+#		${WRKSRC}/src/CMakeLists.txt
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/${DISTNAME}
