@@ -1,6 +1,7 @@
 PORTNAME=	yder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.17
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -17,9 +18,9 @@ GH_ACCOUNT=	babelouest
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		liborcania.so:devel/orcania
 
-BUILD_DEPENDS=	orcania>0:devel/orcania
+BUILD_DEPENDS=	orcania>=2.3.0:devel/orcania
 
-RUN_DEPENDS=	jansson>0:devel/jansson
+RUN_DEPENDS=	jansson>=2.4:devel/jansson
 
 CMAKE_ARGS=	-DWITH_JOURNALD=off \
 		-DDOWNLOAD_DEPENDENCIES=off
