@@ -1,7 +1,7 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
 
 PORTNAME=	mixlib-install
-PORTVERSION=	3.12.16
+PORTVERSION=	3.12.19
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
