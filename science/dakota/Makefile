@@ -23,7 +23,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libnlopt.so:math/nlopt \
 		libpng16.so:graphics/png \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cmake compiler:c++11-lang fortran gettext-runtime jpeg motif perl5 pkgconfig python shebangfix xorg
