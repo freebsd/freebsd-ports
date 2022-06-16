@@ -1,0 +1,11 @@
+--- colorize.orig	2004-01-10 15:40:50 UTC
++++ colorize
+@@ -68,7 +68,7 @@ $default_output = "STDOUT";
+ $default_color = "white";
+ 
+ # Config file places (order is important, we will override the previous values of config)
+-@config_files = ("/etc/colorizerc");
++@config_files = ("%%PREFIX%%/etc/colorizerc");
+ if (defined($ENV{HOME})) {
+ 	push(@config_files, "$ENV{HOME}/.colorizerc");
+ }
