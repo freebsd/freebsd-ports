@@ -21,6 +21,7 @@ SHEBANG_FILES=	preludedb-admin
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-swig
+CONFIGURE_ENV=	PYTHON3=${PYTHON_CMD}
 
 INSTALL_TARGET=	install-strip
 
