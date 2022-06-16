@@ -1,8 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	opentype-sanitizer
-PORTVERSION=	8.1.4
-DISTVERSIONSUFFIX=	.post3
+PORTVERSION=	8.2.1
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
