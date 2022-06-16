@@ -1391,10 +1391,10 @@
     SUBDIR += php80-session
     SUBDIR += php80-tidy
     SUBDIR += php81-opcache
-    SUBDIR += php82-opcache
     SUBDIR += php81-session
-    SUBDIR += php82-session
     SUBDIR += php81-tidy
+    SUBDIR += php82-opcache
+    SUBDIR += php82-session
     SUBDIR += php82-tidy
     SUBDIR += phpbb
     SUBDIR += phpbb3

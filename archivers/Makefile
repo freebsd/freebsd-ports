@@ -162,12 +162,12 @@
     SUBDIR += php80-zip
     SUBDIR += php80-zlib
     SUBDIR += php81-bz2
-    SUBDIR += php82-bz2
     SUBDIR += php81-phar
-    SUBDIR += php82-phar
     SUBDIR += php81-zip
-    SUBDIR += php82-zip
     SUBDIR += php81-zlib
+    SUBDIR += php82-bz2
+    SUBDIR += php82-phar
+    SUBDIR += php82-zip
     SUBDIR += php82-zlib
     SUBDIR += pigz
     SUBDIR += pixz

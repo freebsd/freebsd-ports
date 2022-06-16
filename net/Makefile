@@ -984,10 +984,10 @@
     SUBDIR += php80-soap
     SUBDIR += php80-sockets
     SUBDIR += php81-ldap
-    SUBDIR += php82-ldap
     SUBDIR += php81-soap
-    SUBDIR += php82-soap
     SUBDIR += php81-sockets
+    SUBDIR += php82-ldap
+    SUBDIR += php82-soap
     SUBDIR += php82-sockets
     SUBDIR += phpldapadmin
     SUBDIR += pichi

@@ -60,8 +60,8 @@
     SUBDIR += php80-curl
     SUBDIR += php80-ftp
     SUBDIR += php81-curl
-    SUBDIR += php82-curl
     SUBDIR += php81-ftp
+    SUBDIR += php82-curl
     SUBDIR += php82-ftp
     SUBDIR += phpwebftp
     SUBDIR += proftpd
