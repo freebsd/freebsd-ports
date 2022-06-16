@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.0.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -130,7 +130,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-wikicloth081>=0.8.1<0.8.2:textproc/rubygem-wikicloth081 \
 	rubygem-asciidoctor>=2.0.15<2.1.0:textproc/rubygem-asciidoctor \
 	rubygem-asciidoctor-include-ext>=0.4.0<0.5.0:textproc/rubygem-asciidoctor-include-ext \
-	rubygem-asciidoctor-plantuml>=0.0.12<0.1:textproc/rubygem-asciidoctor-plantuml \
+	rubygem-asciidoctor-plantuml00>=0.0.12<0.1:textproc/rubygem-asciidoctor-plantuml00 \
 	rubygem-asciidoctor-kroki>=0.5.0<0.6:textproc/rubygem-asciidoctor-kroki \
 	rubygem-rouge327>=3.27.0<3.28:textproc/rubygem-rouge327 \
 	rubygem-truncato>=0.7.11<0.8.0:textproc/rubygem-truncato \
@@ -164,7 +164,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-connection_pool>=2.2.5<3.0:net/rubygem-connection_pool \
 	rubygem-redis-actionpack52-rails61>=5.2.0<5.3:databases/rubygem-redis-actionpack52-rails61 \
 	rubygem-discordrb-webhooks>=3.4<4.0:net-im/rubygem-discordrb-webhooks \
-	rubygem-jira-ruby>=2.1.4<2.2:devel/rubygem-jira-ruby \
+	rubygem-jira-ruby21>=2.1.4<2.2:devel/rubygem-jira-ruby21 \
 	rubygem-atlassian-jwt>=0.2.0<0.3.0:www/rubygem-atlassian-jwt \
 	rubygem-flowdock>=0.7<1.0:www/rubygem-flowdock \
 	rubygem-slack-messenger>=2.3.4<2.4.0:devel/rubygem-slack-messenger \
