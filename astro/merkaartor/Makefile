@@ -2,7 +2,7 @@
 
 PORTNAME=	merkaartor
 PORTVERSION=	0.19.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro
 
 MAINTAINER=	dev2@heesakkers.info
