@@ -17,8 +17,10 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
 		libmtdev.so:devel/libmtdev
 
-USES=		localbase meson pkgconfig python:run shebangfix tar:xz
+USES=		cpe localbase meson pkgconfig python:run shebangfix tar:xz
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	freedesktop
 
 MESON_ARGS=	-Ddocumentation=false -Dtests=false
 
