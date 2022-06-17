@@ -115,6 +115,7 @@ include/snort/main/swapper.h
 include/snort/main/thread.h
 include/snort/main/thread_config.h
 include/snort/managers/codec_manager.h
+include/snort/managers/event_manager.h
 include/snort/managers/inspector_manager.h
 include/snort/memory/memory_cap.h
 include/snort/mime/decode_b64.h
