@@ -1,6 +1,6 @@
 PORTNAME=	ab-av1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
+DISTVERSION=	0.3.3
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,10 +27,10 @@ CARGO_CRATES=	anyhow-1.0.57 \
 		bytes-1.1.0 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		clap-3.1.18 \
-		clap_complete-3.1.4 \
-		clap_derive-3.1.18 \
-		clap_lex-0.2.0 \
+		clap-3.2.5 \
+		clap_complete-3.2.1 \
+		clap_derive-3.2.5 \
+		clap_lex-0.2.2 \
 		console-0.15.0 \
 		encode_unicode-0.3.6 \
 		errno-0.2.8 \
@@ -45,12 +45,12 @@ CARGO_CRATES=	anyhow-1.0.57 \
 		futures-sink-0.3.21 \
 		futures-task-0.3.21 \
 		futures-util-0.3.21 \
-		getrandom-0.2.6 \
-		hashbrown-0.11.2 \
+		getrandom-0.2.7 \
+		hashbrown-0.12.1 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
-		indexmap-1.8.2 \
+		indexmap-1.9.0 \
 		indicatif-0.16.2 \
 		itoa-1.0.2 \
 		lazy_static-1.4.0 \
@@ -93,11 +93,10 @@ CARGO_CRATES=	anyhow-1.0.57 \
 		tokio-process-stream-0.3.0 \
 		tokio-stream-0.1.9 \
 		tokio-util-0.7.3 \
-		unicode-ident-1.0.0 \
+		unicode-ident-1.0.1 \
 		unicode-width-0.1.9 \
 		unix-named-pipe-0.2.0 \
 		version_check-0.9.4 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
