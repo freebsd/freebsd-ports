@@ -1,3 +1,3 @@
-TIMESTAMP = 1544685354
-SHA256 (freenas-py-netif-1.0.20181212-be23674_GH0.tar.gz) = a40f7da990ca9d5330f175dd876611fa60dc8fc1c306d1b559f50e54897f50fe
-SIZE (freenas-py-netif-1.0.20181212-be23674_GH0.tar.gz) = 59971
+TIMESTAMP = 1655505501
+SHA256 (freenas-py-netif-1.0.20220211-f8922e1_GH0.tar.gz) = eebb7943e4952c3890cd2a413f9e27164dc4debe61c46334ea50bc264b9a7e64
+SIZE (freenas-py-netif-1.0.20220211-f8922e1_GH0.tar.gz) = 60671
