@@ -13,7 +13,7 @@ COMMENT=	Cross-platform file change monitor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang libtool makeinfo
+USES=		compiler:c++11-lang libtool localbase makeinfo
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	fswatch
