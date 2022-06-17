@@ -14,7 +14,7 @@ COMMENT?=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
 LICENSE=	GPLv2+
 
 .if empty(MASTERDIR)
-USES=		cpe gmake tar:xz
+USES=		cpe gmake localbase tar:xz
 IGNORE_SSL=	libressl libressl-devel
 IGNORE_SSL_REASON=	incompatible license/no GPLv2 clause 2b exception for LibreSSL
 # The Free Software Foundation asserts that a GPL v2 clause 2b exception is
