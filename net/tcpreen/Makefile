@@ -11,7 +11,7 @@ COMMENT=	Simple TCP session re-engineering tool
 
 LICENSE=	GPLv2+
 
-USES=		cpe tar:bzip2
+USES=		cpe localbase tar:bzip2
 GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
