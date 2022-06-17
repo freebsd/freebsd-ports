@@ -8,12 +8,12 @@ ossec_conf_files="${ossec_conf_dir}/*.conf"
 
 select_elements_content() {
     local element="$1"
-    sed -n "/<${element}>/,/<\/${element}>/{ /<${element}>/d; /<\/${element}>/d; p; }"
+    sed -En "/<${element}>/,/<\/${element}>/{ /<${element}>/d; /<\/${element}>/d; p; }"
 }
 
 remove_elements() {
     local element="$1"
-    sed -e "/<${element}>/,/<\/${element}>/d"
+    sed -E "/<${element}>/,/<\/${element}>/d"
 }
 
 remove_comments() {
@@ -22,7 +22,7 @@ remove_comments() {
 }
 
 remove_empty_lines() {
-    sed '/^\s*$/d'
+    sed -E '/^[[:space:]]*$/d'
 }
 
 ossec_conf() {

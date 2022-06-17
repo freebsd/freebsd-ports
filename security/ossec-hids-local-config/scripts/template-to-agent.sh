@@ -19,7 +19,8 @@ ossec_syscheck_bin_dirs="${ossec_prefix}/bin,${ossec_prefix}/active-response"
 ossec_syscheck_etc_dirs="${ossec_prefix}/etc"
 
 replace() {
-    sed -e 's|<template_config \(.*\)>|<agent_config \1>|' \
+    sed -E \
+        -e 's|<template_config (.*)>|<agent_config \1>|' \
         -e 's|</template_config>|</agent_config>|' \
         -e "s|%%OSSEC_SYSCHECK_BIN_DIRS%%|${ossec_syscheck_bin_dirs}|" \
         -e "s|%%OSSEC_SYSCHECK_ETC_DIRS%%|${ossec_syscheck_etc_dirs}|" \
@@ -27,7 +28,7 @@ replace() {
 }
 
 extract() {
-    sed -n '/^<agent_config .*>$/,/^<\/agent_config>$/p'
+    sed -En '/^<agent_config .*>$/,/^<\/agent_config>$/p'
 }
 
 replace | extract

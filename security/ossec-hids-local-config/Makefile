@@ -1,3 +1,4 @@
+PORTREVISION?=	2
 PKGNAMESUFFIX?=	-${OSSEC_TYPE}-config
 COMMENT?=	Configuration manager for ossec-hids-${OSSEC_TYPE}
 OSSEC_TYPE?=	local

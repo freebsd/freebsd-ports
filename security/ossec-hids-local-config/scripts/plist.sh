@@ -61,10 +61,10 @@ while read line; do
         path=""
         case ${line} in
             "@dir %%OSSEC_HOME%%"*)
-                path=`echo "${line}" | sed -e "s|@dir %%OSSEC_HOME%%||g"`
+                path=`echo "${line}" | sed -E 's|@dir %%OSSEC_HOME%%||g'`
                 ;;
             "%%OSSEC_HOME%%"*)
-                path=`echo "${line}" | sed -e "s|%%OSSEC_HOME%%||g"`
+                path=`echo "${line}" | sed -E 's|%%OSSEC_HOME%%||g'`
                 ;;
             "%%"*)
                 unchanged_lines="${unchanged_lines}${NL}${line}"
