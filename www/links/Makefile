@@ -1,7 +1,7 @@
 # Created by: Michael Vasilenko <acid@stu.cn.ua>
 
 PORTNAME=	links
-PORTVERSION=	2.26
+PORTVERSION=	2.27
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://links.twibright.com/download/
