@@ -335,7 +335,10 @@ include/virtualbox/xpcom/xptcall.h
 include/virtualbox/xpcom/xptcstubsdecl.inc
 include/virtualbox/xpcom/xptcstubsdef.inc
 include/virtualbox/xpcom/xptinfo.h
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/vboxapi-1.0-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vboxapi-1.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vboxapi-1.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vboxapi-1.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vboxapi-1.0-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vboxapi/VirtualBox_constants.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vboxapi%%PYTHON_PYCDIR%%VirtualBox_constants%%PYTHON_PYCEXT%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vboxapi/__init__.py
