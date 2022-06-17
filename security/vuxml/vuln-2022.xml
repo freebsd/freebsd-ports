@@ -1,3 +1,29 @@
+  <vuln vid="5d1e4f6a-ee4f-11ec-86c2-485b3931c969">
+    <topic>Tor - Unspecified high severity vulnerability</topic>
+    <affects>
+      <package>
+	<name>tor</name>
+	<range><lt>0.4.7.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tor organization reports:</p>
+	<blockquote cite="https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/TROVE">
+	  <p>TBD</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>TROVE-2022-001[0]</cvename>
+      <url>https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/TROVE</url>
+    </references>
+    <dates>
+      <discovery>TBD</discovery>
+      <entry>2022-06-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="55cff5d2-e95c-11ec-ae20-001999f8d30b">
     <topic>XFCE -- Allows executing malicious .desktop files pointing to remote code</topic>
     <affects>
