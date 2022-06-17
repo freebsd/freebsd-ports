@@ -11,7 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake gnome pkgconfig
+USES=		gettext gmake gnome localbase pkgconfig
 USE_GNOME=	gtk20 intltool
 
 OPTIONS_DEFINE=	NLS XDOTOOL
