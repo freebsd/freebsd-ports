@@ -1,7 +1,7 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
 
 PORTNAME=	bcunit
-DISTVERSION=	3.0.2p20220210
+PORTVERSION=	3.0.2p20220210
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
