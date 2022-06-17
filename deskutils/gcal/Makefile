@@ -13,7 +13,7 @@ LICENSE=	GPLv3+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
-USES=		charsetfix shebangfix makeinfo tar:xz
+USES=		charsetfix localbase shebangfix makeinfo tar:xz
 SHEBANG_FILES=	misc/gcalltx/gcalltxp.in misc/gcalltx/gcalltx.pl
 
 INFO=		gcal
