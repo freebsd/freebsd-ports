@@ -11,6 +11,8 @@ LICENSE=	GPLv3
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	curl gd xml
 
+CPE_VENDOR=	tecnick
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	tecnickcom
 
