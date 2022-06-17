@@ -20,7 +20,7 @@ DICTFILE=	${DICTPATH}/cracklib-words
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-default-dict=${DICTFILE}
 INSTALL_TARGET=	install-strip
-USES=		cpe libtool tar:bz2
+USES=		cpe libtool localbase tar:bz2
 
 CPE_VENDOR=	cracklib_project
 
