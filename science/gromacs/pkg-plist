@@ -43,6 +43,7 @@ include/gmxapi/version.h
 %%LEGACY%%include/gromacs/fileio/pdbio.h
 %%LEGACY%%include/gromacs/fileio/tpxio.h
 %%LEGACY%%include/gromacs/fileio/trxio.h
+include/gromacs/libgromacs_export.h
 include/gromacs/math/do_fit.h
 include/gromacs/math/functions.h
 include/gromacs/math/units.h

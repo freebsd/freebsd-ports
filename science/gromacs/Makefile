@@ -1,7 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	gromacs
-DISTVERSION=	2022.1
+DISTVERSION=	2022.2
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -16,13 +16,16 @@ BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchan
 BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2
 
-USES=		cmake compiler:c++17-lang fortran gnome perl5 pkgconfig shebangfix xorg
+USES=		cmake compiler:c++17-lang fortran gnome perl5 pkgconfig python:build shebangfix xorg
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
+
 SHEBANG_FILES=	admin/*.sh scripts/*.pl scripts/*.sh src/gromacs/selection/*.sh
 bash_CMD=	${SH}
-USE_GNOME=	libxml2
+
 CMAKE_OFF=	GMX_USE_RDTSCP \
 		USE_PYTHON_SCRIPTS
-USE_LDCONFIG=	yes
+CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
 
 OPTIONS_DEFINE=		ATLAS FLOAT LEGACY OPENCL OPENMP SIMD X11
 OPTIONS_SINGLE=		MP
