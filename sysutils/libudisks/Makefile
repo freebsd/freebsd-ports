@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 # For some reason, configure wants autopoint from gettext-tools even when
 # NLS is disabled.
 USES=		autoreconf:build gettext-tools:build gmake gnome \
-		libtool:build pkgconfig
+		libtool:build localbase pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	storaged-project
