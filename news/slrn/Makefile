@@ -15,7 +15,7 @@ LIB_DEPENDS=	libslang.so:devel/libslang2
 
 CONFLICTS_INSTALL=	ja-slrn
 
-USES=		gmake iconv tar:bz2
+USES=		gmake iconv localbase tar:bz2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-inews --with-slrnpull \
