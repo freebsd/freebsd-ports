@@ -12,7 +12,7 @@ COMMENT=	General-purpose console screen reader
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake
+USES=		gmake localbase
 GNU_CONFIGURE=	yes
 PORTDOCS=	AUTHORS BUGS CREDITS ChangeLog NEWS README TODO \
 		README-br README-de README-es README-fr README-ru
