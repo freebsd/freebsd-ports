@@ -13,7 +13,7 @@ COMMENT=	Compatible and efficient Python compiler
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		python:3.6+ cpe
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
