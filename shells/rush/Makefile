@@ -9,7 +9,7 @@ COMMENT=	Restricted User SHell, providing limited remote access to resources
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe gettext-runtime gmake tar:xz
+USES=		cpe gettext-runtime gmake localbase tar:xz
 
 CPE_VENDOR=	gnu
 
