@@ -186,6 +186,7 @@ libexec/netdata/plugins.d/cgroup-network-helper.sh
 libexec/netdata/plugins.d/charts.d.dryrun-helper.sh
 libexec/netdata/plugins.d/charts.d.plugin
 libexec/netdata/plugins.d/fping.plugin
+%%FREEIPMI%%libexec/netdata/plugins.d/freeipmi.plugin
 libexec/netdata/plugins.d/get-kubernetes-labels.sh
 libexec/netdata/plugins.d/health-cmdapi-test.sh
 libexec/netdata/plugins.d/ioping.plugin
