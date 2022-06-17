@@ -19,7 +19,7 @@ RUN_DEPENDS=	ibus-daemon:textproc/ibus
 
 PORTSCOUT=	limit:^[0-9]+\.[0-9].*$$
 
-USES=		autoreconf gmake gnome libtool pkgconfig
+USES=		autoreconf gmake gnome libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ibus
