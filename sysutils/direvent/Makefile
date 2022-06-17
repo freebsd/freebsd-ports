@@ -10,7 +10,7 @@ COMMENT=	Per-directory file system event monitor
 
 LICENSE=	GPLv3+
 
-USES=		gmake
+USES=		gmake localbase
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 TEST_WRKSRC=	${WRKSRC}/tests
