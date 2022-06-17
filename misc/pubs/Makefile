@@ -23,6 +23,6 @@ USE_GITHUB=	yes
 USE_PYTHON=	distutils autoplist noflavors
 NO_ARCH=	yes
 
-POSTSCOUT=	skipv:show_and_search
+PORTSCOUT=	skipv:show_and_search
 
 .include <bsd.port.mk>
