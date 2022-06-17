@@ -1,7 +1,6 @@
 PORTNAME=	symphony
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	5.6.18
-PORTREVISION=	2
+DISTVERSION=	5.6.19
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libCbc.so:math/cbc \
 		libCgl.so:math/cgl \
 		libcoinasl.so:math/asl \
-		libcoinmumps.so:math/ipopt \
+		libcoinmumps.so:math/coin-or-mumps \
 		libCoinUtils.so:math/coinutils \
 		libopenblas.so:math/openblas \
 		libOsi.so:math/osi \
