@@ -12,7 +12,7 @@ COMMENT=	Test your typing speed and get your fingers' CPS
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		ncurses
+USES=		localbase ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-highscoredir="${SCOREDIR}"
 
