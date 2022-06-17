@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/check.pc:devel/check
 
-USES=		autoreconf iconv libtool pathfix pkgconfig
+USES=		autoreconf iconv libtool localbase pathfix pkgconfig
 
 GH_ACCOUNT=	choehwanjin
 GH_TAGNAME=	9fe2d4e
