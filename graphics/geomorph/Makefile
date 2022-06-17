@@ -10,7 +10,7 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libpng.so:graphics/png
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils \
-		gl gmake gnome libtool pkgconfig shebangfix
+		gl gmake gnome libtool localbase pkgconfig shebangfix
 SHEBANG_FILES=	update-rc
 USE_GNOME=	gtk20
 USE_GL=		gl glu
