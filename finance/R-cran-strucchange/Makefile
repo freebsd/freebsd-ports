@@ -1,8 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	strucchange
-DISTVERSION=	1.5-2
-PORTREVISION=	1
+DISTVERSION=	1.5-3
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
