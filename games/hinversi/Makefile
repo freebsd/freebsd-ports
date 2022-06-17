@@ -12,7 +12,7 @@ COMMENT=	Reversi/Othello clone
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pathfix
+USES=		libtool localbase pathfix
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
