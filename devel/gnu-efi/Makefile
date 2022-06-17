@@ -7,7 +7,7 @@ MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	SDK for EFI applications
 WWW=		https://gnu-efi.sourceforge.net/
 
-LICENSE=	GPLv2
+LICENSE=	BSD3CLAUSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
