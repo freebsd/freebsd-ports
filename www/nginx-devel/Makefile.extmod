@@ -77,9 +77,11 @@ FORMINPUT_IMPLIES=	DEVEL_KIT
 FORMINPUT_GH_TUPLE=	calio:form-input-nginx-module:v0.12:forminput
 FORMINPUT_VARS=		DSO_EXTMODS+=forminput
 
-GRIDFS_GH_TUPLE=	technowledgy:nginx_http_gridfs_module:7970bab:gridfs \
-			10gen-archive:mongo-c-driver-legacy:f06669b:mongo_c
-GRIDFS_VARS=		DSO_EXTMODS+=gridfs
+GRIDFS_GH_TUPLE=	nieoding:nginx-gridfs:059bdc3:gridfs
+GRIDFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-gridfs-config
+GRIDFS_LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
+			libmongoc-1.0.so:devel/mongo-c-driver
+GRIDFS_VARS=		DSO_EXTMODS+=gridfs GRIDFS_SUBDIR=/nginx-gridfs
 
 HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:55fbdab:headers_more
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more

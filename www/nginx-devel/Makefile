@@ -2,7 +2,7 @@
 
 PORTNAME?=	nginx
 PORTVERSION=	1.22.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -250,10 +250,6 @@ pre-everything::
 .endif
 	@${ECHO_MSG}
 
-post-extract-GRIDFS-on:
-	@${RMDIR} ${WRKSRC_gridfs}/mongo-c-driver/
-	@${MV} ${WRKSRC_mongo_c} ${WRKSRC_gridfs}/mongo-c-driver
-
 pre-patch-HTTPV3-on:
 	@${MV} ${WRKSRC}/README ${WRKSRC}/README.1st
 
@@ -274,9 +270,9 @@ post-patch-FASTDFS-on:
 		's!%%PREFIX%%!${PREFIX}!g;s!%%LOCALBASE%%!${LOCALBASE}!g' \
 		${WRKSRC_fastdfs}/src/config
 
-# Respect CFLAGS by remove needless --std=c99 flag
 post-patch-GRIDFS-on:
-	@${REINPLACE_CMD} 's!--std=c99!-DMONGO_HAVE_STDINT!' ${WRKSRC_gridfs}/config
+	@${REINPLACE_CMD} 's!%%LOCALBASE%%!${LOCALBASE}!g' \
+		${WRKSRC_gridfs}/nginx-gridfs/config
 
 post-patch-HTTP_AUTH_KRB5-on:
 	@${REINPLACE_CMD} 's!%%GSSAPILIBS%%!${GSSAPILIBS}!g; \
