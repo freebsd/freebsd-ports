@@ -20,8 +20,8 @@ LIB_DEPENDS=	libstfl.so:devel/stfl
 RUN_DEPENDS=	mono-addins>0:devel/mono-addins
 
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils gettext-tools:build gmake gnome mono \
-		pkgconfig
+USES=		desktop-file-utils gettext-tools:build gmake gnome localbase \
+		mono pkgconfig
 USE_GNOME=	gtksharp20
 
 OPTIONS_DEFINE=		DBUS NLS SPELLCHECK
