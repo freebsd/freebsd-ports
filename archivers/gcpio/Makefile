@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 TEST_DEPENDS=	autom4te:devel/autoconf
 
-USES=		cpe tar:bzip2
+USES=		cpe localbase tar:bzip2
 
 CPE_VENDOR=	gnu
 
