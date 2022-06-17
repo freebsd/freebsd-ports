@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	bsdcflow cflow
 
-USES=		cpe gmake tar:bzip2
+USES=		cpe gmake localbase tar:bzip2
 CPE_VENDOR=	gnu
 CPE_PRODUCT=	cflow
 GNU_CONFIGURE=	yes
