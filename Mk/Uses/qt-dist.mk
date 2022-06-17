@@ -293,6 +293,11 @@ gcc-post-patch:
 		${WRKSRC}/mkspecs/common/g++-base.conf \
 		${WRKSRC}/mkspecs/common/bsd/bsd.conf \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+# Use the same compilers as the ports tree.
+	${REINPLACE_CMD} -E \
+		-e 's,^(QMAKE_CC[[:space:]]+=).*,\1 ${CC},' \
+		-e 's,^(QMAKE_CXX[[:space:]]+=).*,\1 ${CXX},' \
+		${WRKSRC}/mkspecs/common/clang.conf
 .      endif
 
 pre-configure: qtbase-pre-configure
