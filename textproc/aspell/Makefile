@@ -12,7 +12,7 @@ COMMENT=	Spelling checker with better suggestion logic than ispell
 
 LICENSE=	LGPL21
 
-USES=		cpe gmake iconv libtool ncurses perl5 shebangfix
+USES=		cpe gmake iconv libtool localbase ncurses perl5 shebangfix
 
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
