@@ -17,7 +17,7 @@
 +base.set_env('QT_SELECT', 'qt5')
 +if not base.is_dir("./qt"):
 +    base.cmd("mkdir", ["qt",])
-+    base.cmd("ln", ["-s", "/usr/local/lib/qt5", "qt/clang_64"])
++    base.cmd("ln", ["-s", "%%LOCALBASE%%/lib/qt5", "qt/clang_64"])
 +
 +config = {}
 +for arg in array_args:

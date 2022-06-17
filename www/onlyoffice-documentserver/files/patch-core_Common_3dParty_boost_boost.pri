@@ -8,8 +8,8 @@
 +    CORE_BOOST_LIBS = $$PWD/build/$$CORE_BUILDS_PLATFORM_PREFIX/lib
 +}
 +core_freebsd {
-+    INCLUDEPATH += /usr/local/include
-+    CORE_BOOST_LIBS = /usr/local/lib
++    INCLUDEPATH += %%LOCALBASE%%/include
++    CORE_BOOST_LIBS = %%LOCALBASE%%/lib
 +}
  
  core_android {

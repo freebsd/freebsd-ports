@@ -20,11 +20,11 @@
 +		AR := 7z a -y
 +		PACKAGES = tar
 +		DS_PREFIX := $(COMPANY_NAME_LOW)/$(PRODUCT_SHORT_NAME_LOW)
-+		NGINX_CONF := /usr/local/etc/onlyoffice/documentserver/nginx/includes
++		NGINX_CONF := %%ETCDIR%%/onlyoffice/documentserver/nginx/includes
 +		NGINX_LOG := /var/log/$(DS_PREFIX)
-+		DS_ROOT := /usr/local/www/$(DS_PREFIX)
++		DS_ROOT := %%LOCALBASE%%/www/$(DS_PREFIX)
 +		DS_FILES := /var/db/$(DS_PREFIX)
-+		DS_EXAMLE := /usr/local/www/$(DS_PREFIX)-example
++		DS_EXAMLE := %%LOCALBASE%%/www/$(DS_PREFIX)-example
 +		DEV_NULL := /dev/null
 +	endif
  	ifeq ($(UNAME_S),Darwin)
