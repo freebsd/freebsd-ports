@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome pathfix tar:xz
+USES=		gettext gmake gnome localbase pathfix tar:xz
 USE_GNOME=	glib20 intlhack
 GNU_CONFIGURE=	yes
 
