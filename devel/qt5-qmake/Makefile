@@ -36,6 +36,12 @@ QT_BINARIES=	yes
 post-patch:
 # Clean up files created by patching
 	@${RM} ${WRKSRC}/mkspecs/*/*.orig
+# Use the same compilers as the ports tree.
+	${REINPLACE_CMD} -E \
+		-e 's,^(QMAKE_CC[[:space:]]+=).*,\1 ${CC},' \
+		-e 's,^(QMAKE_CXX[[:space:]]+=).*,\1 ${CXX},' \
+		${WRKSRC}/mkspecs/common/clang.conf
+
 
 post-build:
 # Complete configure stage to generate *.pri files.
