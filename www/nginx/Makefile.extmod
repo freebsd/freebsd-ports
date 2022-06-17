@@ -80,6 +80,7 @@ HTTP_AUTH_KRB5_GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:c626163:auth_krb
 HTTP_AUTH_KRB5_VARS=		DSO_EXTMODS+=auth_krb5
 HTTP_AUTH_KRB5_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config \
 				${PATCHDIR}/extra-patch-ngx_http_auth_spnego_module.c
+HTTP_AUTH_KRB5_USES=		gssapi:mit
 
 HTTP_AUTH_LDAP_GH_TUPLE=	kvspb:nginx-auth-ldap:42d195d:http_auth_ldap
 HTTP_AUTH_LDAP_VARS=		DSO_EXTMODS+=http_auth_ldap
@@ -139,7 +140,7 @@ HTTP_NOTICE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c \
 				${PATCHDIR}/extra-patch-nginx-notice-config
 HTTP_NOTICE_VARS=		DSO_EXTMODS+=notice
 
-HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.2.15:push
+HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.3.0:push
 HTTP_PUSH_VARS=			DSO_EXTMODS+=push
 
 HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:0.5.4:pushstream
@@ -161,10 +162,9 @@ HTTP_SUBS_FILTER_VARS=	DSO_EXTMODS+=subs_filter
 
 HTTP_TARANTOOL_LIB_DEPENDS=	libmsgpuck.so:devel/msgpuck \
 				libyajl.so:devel/yajl
-HTTP_TARANTOOL_GH_TUPLE=	tarantool:nginx_upstream_module:1278ee5:nginx_tarantool
+HTTP_TARANTOOL_GH_TUPLE=	tarantool:nginx_upstream_module:aeb8696:nginx_tarantool
 HTTP_TARANTOOL_VARS=		DSO_EXTMODS+=nginx_tarantool
-HTTP_TARANTOOL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config \
-				${PATCHDIR}/extra-patch-ngx_http_tarantool-src-tp_transcode.c
+HTTP_TARANTOOL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
 
 HTTP_UPLOAD_GH_TUPLE=		fdintino:nginx-upload-module:aa42509:upload
 HTTP_UPLOAD_VARS=		DSO_EXTMODS+=upload
