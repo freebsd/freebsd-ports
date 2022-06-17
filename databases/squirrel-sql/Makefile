@@ -1,7 +1,7 @@
 # Created by: Roy Boerner
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.0
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
 DISTNAME=	squirrelsql-${PORTVERSION}-optional
@@ -12,13 +12,7 @@ COMMENT=	Universal SQL Client
 LICENSE=	GPLv2
 
 USES=		zip
-
 USE_JAVA=	11+
-NO_BUILD=	yes
-NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-SUB_FILES=	squirrel-sql
 
 DATADIR=	${PREFIX}/share/java/${PKGBASE}
 
@@ -28,6 +22,12 @@ DESKTOP_ENTRIES="Squirrel-SQL Client" \
 		"squirrel-sql" \
 		"Development;Database;Java;" \
 		false
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+SUB_FILES=	squirrel-sql
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 post-extract:
 	cd "${WRKSRC}" && ${RM} -r *.bat *.sh icons/acorn.png.bak.png mac squirrelcli
