@@ -1,7 +1,6 @@
 PORTNAME=	soft-serve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
-PORTREVISION=	1
+DISTVERSION=	0.3.2
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -23,18 +22,18 @@ GH_TUPLE=	Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microso
 		atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		caarlos0:env:v6.9.1:caarlos0_env_v6/vendor/github.com/caarlos0/env/v6 \
-		caarlos0:sshmarshal:9ddb9f83c6b3:caarlos0_sshmarshal/vendor/github.com/caarlos0/sshmarshal \
+		caarlos0:sshmarshal:v0.1.0:caarlos0_sshmarshal/vendor/github.com/caarlos0/sshmarshal \
 		charmbracelet:bubbles:88562515cf7b:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
 		charmbracelet:bubbletea:v0.20.0:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
 		charmbracelet:glamour:v0.4.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		charmbracelet:keygen:v0.3.0:charmbracelet_keygen/vendor/github.com/charmbracelet/keygen \
 		charmbracelet:lipgloss:v0.4.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
-		charmbracelet:wish:v0.3.1:charmbracelet_wish/vendor/github.com/charmbracelet/wish \
+		charmbracelet:wish:v0.5.0:charmbracelet_wish/vendor/github.com/charmbracelet/wish \
 		containerd:console:v1.0.3:containerd_console/vendor/github.com/containerd/console \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
-		gliderlabs:ssh:v0.3.3:gliderlabs_ssh/vendor/github.com/gliderlabs/ssh \
+		gliderlabs:ssh:v0.3.4:gliderlabs_ssh/vendor/github.com/gliderlabs/ssh \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
 		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:b4368b2a2ca4:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
