@@ -15,7 +15,7 @@ LICENSE=	GPLv3+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 INFO=		gnuchess
-USES=		cpe shebangfix
+USES=		cpe localbase shebangfix
 SHEBANG_FILES=	doc/quotes.rb
 CPE_PRODUCT=	chess
 CPE_VENDOR=	gnu
