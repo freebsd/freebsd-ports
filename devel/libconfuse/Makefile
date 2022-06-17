@@ -12,7 +12,7 @@ COMMENT=	Configuration file parsing library
 
 LICENSE=	ISCL
 
-USES=		cpe iconv libtool pathfix pkgconfig tar:xz
+USES=		cpe iconv libtool localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 
