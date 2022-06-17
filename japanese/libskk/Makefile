@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libjson-glib-1.0.so:devel/json-glib \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		autoreconf gmake gnome libtool pathfix pkgconfig
+USES=		autoreconf gmake gnome libtool localbase pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ueno
 GNU_CONFIGURE=	yes
