@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Falling blocks game
 
-USES=		gnome pkgconfig
+USES=		gnome localbase pkgconfig
 USE_GNOME=	cairo gtk20
 GNU_CONFIGURE=	yes
 
