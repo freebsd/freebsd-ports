@@ -11,6 +11,8 @@ COMMENT=	Disk Information Utility
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		localbase
+
 MAKE_ARGS=	-e
 MAKE_ENV=	prefix="${PREFIX}"
 
