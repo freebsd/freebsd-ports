@@ -11,7 +11,7 @@ COMMENT=	Program Invocation and Execution Supervisor
 
 LICENSE=	GPLv3+
 
-USES=		charsetfix gmake iconv tar:bz2
+USES=		charsetfix gmake iconv localbase tar:bz2
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 TEST_TARGET=	check
