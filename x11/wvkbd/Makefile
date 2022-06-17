@@ -1,6 +1,6 @@
 PORTNAME=	wvkbd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7
+DISTVERSION=	0.8.2
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +18,8 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo pango
 GH_ACCOUNT=	jjsullivan5196
 MAKE_ARGS=	VERSION="${DISTVERSIONFULL}"
-PLIST_FILES=	bin/${PORTNAME}-mobintl
+PLIST_FILES=	bin/${PORTNAME}-mobintl \
+		share/man/man1/${PORTNAME}.1.gz
 LDFLAGS+=	-Wl,--as-needed # pango deps
 
 pre-everything::
@@ -36,9 +37,10 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e '/^PKGS/s/$$/ epoll-shim/' \
 		-e 's/ xkbcommon//' \
-		-e '/^LDFLAGS/s/=/+=/' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} '/^CFLAGS/s/=/+=/' ${WRKSRC}/config.mk
+	@${REINPLACE_CMD} -e '/^PREFIX/s/=/?=/' \
+		-e '/^CFLAGS/s/=/+=/' \
+		${WRKSRC}/config.mk
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}*
