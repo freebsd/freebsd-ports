@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake libtool pkgconfig shebangfix
+USES=		autoreconf gmake libtool localbase pkgconfig shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenSC
