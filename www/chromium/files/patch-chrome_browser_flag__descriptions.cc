@@ -1,16 +1,7 @@
---- chrome/browser/flag_descriptions.cc.orig	2022-05-19 14:06:27 UTC
+--- chrome/browser/flag_descriptions.cc.orig	2022-06-17 14:20:10 UTC
 +++ chrome/browser/flag_descriptions.cc
-@@ -5639,7 +5639,7 @@ const char kDownloadShelfWebUIDescription[] =
+@@ -5709,7 +5709,7 @@ const char kSideSearchDSESupportDescription[] =
  // Random platform combinations -----------------------------------------------
- 
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
- 
- const char kWebuiFeedbackName[] = "WebUI Feedback";
- const char kWebuiFeedbackDescription[] =
-@@ -5650,7 +5650,7 @@ const char kWebuiFeedbackDescription[] =
-         // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_FUCHSIA)
@@ -18,7 +9,7 @@
  
  const char kDesktopRestructuredLanguageSettingsName[] =
      "Restructured Language Settings (Desktop)";
-@@ -5676,7 +5676,7 @@ const char kWebShareDescription[] =
+@@ -5735,7 +5735,7 @@ const char kWebShareDescription[] =
      "platforms.";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
  
@@ -27,7 +18,7 @@
  const char kOzonePlatformHintChoiceDefault[] = "Default";
  const char kOzonePlatformHintChoiceAuto[] = "Auto";
  const char kOzonePlatformHintChoiceX11[] = "X11";
-@@ -5688,7 +5688,7 @@ const char kOzonePlatformHintDescription[] =
+@@ -5747,7 +5747,7 @@ const char kOzonePlatformHintDescription[] =
      "\"X11\". \"Auto\" selects Wayland if possible, X11 otherwise. ";
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  
@@ -36,7 +27,7 @@
  const char kCleanUndecryptablePasswordsLinuxName[] =
      "Cleanup local undecryptable passwords during initial sync flow";
  const char kCleanUndecryptablePasswordsLinuxDescription[] =
-@@ -5701,7 +5701,7 @@ const char kForcePasswordInitialSyncWhenDecryptionFail
+@@ -5760,7 +5760,7 @@ const char kForcePasswordInitialSyncWhenDecryptionFail
      "storage and requests initial sync.";
  #endif  // BUILDFLAG(IS_LINUX)
  
@@ -45,7 +36,7 @@
  const char kSkipUndecryptablePasswordsName[] =
      "Skip undecryptable passwords to use the available decryptable "
      "passwords.";
-@@ -5832,7 +5832,7 @@ const char kElasticOverscrollDescription[] =
+@@ -5875,7 +5875,7 @@ const char kElasticOverscrollDescription[] =
  
  #if BUILDFLAG(IS_WIN) ||                                      \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

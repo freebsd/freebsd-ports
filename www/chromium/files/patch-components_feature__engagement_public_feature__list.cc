@@ -1,7 +1,7 @@
---- components/feature_engagement/public/feature_list.cc.orig	2022-05-19 14:06:27 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2022-06-17 14:20:10 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -120,7 +120,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHPasswordSuggestionsFeature,
+@@ -121,7 +121,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHFollowWhileBrowsingFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)

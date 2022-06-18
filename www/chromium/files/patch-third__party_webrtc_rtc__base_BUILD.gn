@@ -1,6 +1,6 @@
---- third_party/webrtc/rtc_base/BUILD.gn.orig	2022-05-19 14:06:27 UTC
+--- third_party/webrtc/rtc_base/BUILD.gn.orig	2022-06-17 14:20:10 UTC
 +++ third_party/webrtc/rtc_base/BUILD.gn
-@@ -1106,7 +1106,7 @@ rtc_library("rtc_base") {
+@@ -1231,7 +1231,7 @@ rtc_library("rtc_base") {
      sources += [ "mac_ifaddrs_converter.cc" ]
    }
  

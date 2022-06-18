@@ -1,4 +1,4 @@
---- v8/src/base/atomicops.h.orig	2022-05-19 14:06:27 UTC
+--- v8/src/base/atomicops.h.orig	2022-06-17 14:20:10 UTC
 +++ v8/src/base/atomicops.h
 @@ -57,10 +57,10 @@ using Atomic64 = SbAtomic64;
  using Atomic8 = char;
@@ -13,7 +13,7 @@
  using Atomic64 = int64_t;
  #else
  using Atomic64 = intptr_t;
-@@ -257,7 +257,7 @@ inline Atomic32 SeqCst_Load(volatile const Atomic32* p
+@@ -258,7 +258,7 @@ inline Atomic32 SeqCst_Load(volatile const Atomic32* p
                                     std::memory_order_seq_cst);
  }
  
@@ -22,12 +22,3 @@
  
  inline Atomic64 Relaxed_CompareAndSwap(volatile Atomic64* ptr,
                                         Atomic64 old_value, Atomic64 new_value) {
-@@ -468,7 +468,7 @@ inline int Relaxed_Memcmp(volatile const Atomic8* s1,
- 
- // On some platforms we need additional declarations to make
- // AtomicWord compatible with our other Atomic* types.
--#if defined(V8_OS_DARWIN) || defined(V8_OS_OPENBSD) || defined(V8_OS_AIX)
-+#if defined(V8_OS_DARWIN) || defined(V8_OS_AIX)
- #include "src/base/atomicops_internals_atomicword_compat.h"
- #endif
- 

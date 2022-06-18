@@ -1,6 +1,6 @@
---- components/policy/resources/policy_templates.json.orig	2022-05-19 14:06:27 UTC
+--- components/policy/resources/policy_templates.json.orig	2022-06-17 14:20:10 UTC
 +++ components/policy/resources/policy_templates.json
-@@ -1434,7 +1434,7 @@
+@@ -1437,7 +1437,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pastarmovj@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -9,7 +9,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -2560,7 +2560,7 @@
+@@ -2565,7 +2565,7 @@
        'owners': ['file://remoting/OWNERS', 'jamiewalch@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -18,7 +18,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -4326,7 +4326,7 @@
+@@ -4331,7 +4331,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pastarmovj@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -27,7 +27,7 @@
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -4355,7 +4355,7 @@
+@@ -4360,7 +4360,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pastarmovj@chromium.org'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -36,7 +36,7 @@
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -5319,7 +5319,7 @@
+@@ -5324,7 +5324,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -45,7 +45,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -5380,7 +5380,7 @@
+@@ -5385,7 +5385,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -54,7 +54,7 @@
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -5446,7 +5446,7 @@
+@@ -5451,7 +5451,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'rsorokin@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -63,7 +63,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -10588,7 +10588,7 @@
+@@ -10677,7 +10677,7 @@
        'owners': ['file://net/cert/OWNERS', 'rsleevi@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -72,7 +72,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -10682,7 +10682,7 @@
+@@ -10771,7 +10771,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pmarko@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -81,7 +81,7 @@
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -12679,7 +12679,7 @@
+@@ -12774,7 +12774,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'pmarko@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -90,7 +90,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -13537,7 +13537,7 @@
+@@ -13632,7 +13632,7 @@
        'owners': ['file://components/policy/resources/OWNERS', 'bartfab@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -99,7 +99,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -20502,7 +20502,7 @@
+@@ -20597,7 +20597,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -108,7 +108,7 @@
        'features': {
          'can_be_recommended': False,
          'dynamic_refresh': True,
-@@ -20533,7 +20533,7 @@
+@@ -20628,7 +20628,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -117,7 +117,7 @@
        'deprecated': True,
        'features': {
          'can_be_recommended': False,
-@@ -20567,7 +20567,7 @@
+@@ -20662,7 +20662,7 @@
          'items': { 'type': 'string' }
        },
        # Spell checking is provided by macOS, so can't be controlled on Mac.
@@ -126,7 +126,7 @@
        'features': {
          'can_be_recommended': False,
          'dynamic_refresh': True,
-@@ -21337,7 +21337,7 @@
+@@ -21432,7 +21432,7 @@
        'owners': ['fbeaufort@chromium.org', 'beccahughes@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -135,7 +135,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -25611,7 +25611,7 @@
+@@ -25706,7 +25706,7 @@
        'owners': ['file://services/audio/OWNERS', 'dalecurtis@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -144,7 +144,7 @@
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -26955,7 +26955,7 @@ If this policy is left unset, privacy screen is disabl
+@@ -27050,7 +27050,7 @@ If this policy is left unset, privacy screen is disabl
        'owners': ['file://chrome/browser/notifications/OWNERS', 'knollr@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -153,7 +153,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -26979,7 +26979,7 @@ If set to False, <ph name="PRODUCT_NAME">$1<ex>Google 
+@@ -27074,7 +27074,7 @@ If set to False, <ph name="PRODUCT_NAME">$1<ex>Google 
        'owners': ['file://chrome/browser/notifications/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -162,7 +162,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -28077,7 +28077,7 @@ If you disable this policy, web page scrolling to spec
+@@ -28172,7 +28172,7 @@ If you disable this policy, web page scrolling to spec
        'owners': ['asumaneev@google.com'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -171,7 +171,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -29320,7 +29320,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2
+@@ -29418,7 +29418,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2
          },
        ],
        'default': True,
@@ -180,7 +180,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': True,
-@@ -29453,7 +29453,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2
+@@ -29551,7 +29551,7 @@ When this policy is set, <ph name="PRODUCT_OS_NAME">$2
        'owners': ['mattm@chromium.org'],
        'type': 'main',
        'schema': { 'type': 'boolean' },

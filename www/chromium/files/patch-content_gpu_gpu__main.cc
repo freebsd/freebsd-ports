@@ -1,6 +1,6 @@
---- content/gpu/gpu_main.cc.orig	2022-05-19 14:06:27 UTC
+--- content/gpu/gpu_main.cc.orig	2022-06-17 14:20:10 UTC
 +++ content/gpu/gpu_main.cc
-@@ -87,7 +87,7 @@
+@@ -88,7 +88,7 @@
  #include "sandbox/win/src/sandbox.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "sandbox/policy/linux/sandbox_linux.h"
  #include "sandbox/policy/sandbox_type.h"
-@@ -109,7 +109,7 @@ namespace content {
+@@ -110,7 +110,7 @@ namespace content {
  
  namespace {
  
@@ -18,7 +18,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -171,7 +171,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -172,7 +172,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -27,7 +27,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif BUILDFLAG(IS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -267,7 +267,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -268,7 +268,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type);
      }
@@ -36,7 +36,7 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -410,17 +410,19 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -411,17 +411,19 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  
@@ -57,7 +57,7 @@
  
    // SandboxLinux::InitializeSandbox() must always be called
    // with only one thread.
-@@ -455,11 +457,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -456,11 +458,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
            *base::CommandLine::ForCurrentProcess()),
        base::BindOnce(GpuProcessPreSandboxHook), sandbox_options);
  

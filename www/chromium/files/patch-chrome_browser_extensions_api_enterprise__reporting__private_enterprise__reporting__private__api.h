@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h.orig	2022-06-17 14:20:10 UTC
 +++ chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h
-@@ -45,7 +45,7 @@ class EnterpriseReportingPrivateGetDeviceIdFunction : 
+@@ -52,7 +52,7 @@ class EnterpriseReportingPrivateGetDeviceIdFunction : 
    ~EnterpriseReportingPrivateGetDeviceIdFunction() override;
  };
  

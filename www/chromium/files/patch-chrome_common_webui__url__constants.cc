@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.cc.orig	2022-05-19 14:06:27 UTC
+--- chrome/common/webui_url_constants.cc.orig	2022-06-17 14:20:10 UTC
 +++ chrome/common/webui_url_constants.cc
-@@ -453,18 +453,18 @@ const char kOsUIHelpAppURL[] = "os://help-app";
+@@ -451,18 +451,18 @@ const char kOsUIHelpAppURL[] = "os://help-app";
  const char kOsUIVersionURL[] = "os://version";
  #endif
  
@@ -22,7 +22,7 @@
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  #endif
-@@ -479,14 +479,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
+@@ -477,14 +477,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -39,7 +39,7 @@
  const char kChromeUIBrowserSwitchHost[] = "browser-switch";
  const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
  const char kChromeUIEnterpriseProfileWelcomeHost[] =
-@@ -501,7 +501,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
+@@ -499,7 +499,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
  const char kChromeUIProfilePickerStartupQuery[] = "startup";
  #endif
  
@@ -57,7 +57,7 @@
  const char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
  const char kChromeUIWebAppSettingsHost[] = "app-settings";
  #endif
-@@ -779,7 +779,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -778,7 +778,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif

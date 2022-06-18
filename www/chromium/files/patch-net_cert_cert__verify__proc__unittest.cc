@@ -1,6 +1,6 @@
---- net/cert/cert_verify_proc_unittest.cc.orig	2022-05-19 14:06:27 UTC
+--- net/cert/cert_verify_proc_unittest.cc.orig	2022-06-17 14:20:10 UTC
 +++ net/cert/cert_verify_proc_unittest.cc
-@@ -232,7 +232,7 @@ const std::vector<CertVerifyProcType> kAllCertVerifier
+@@ -240,7 +240,7 @@ const std::vector<CertVerifyProcType> kAllCertVerifier
      CERT_VERIFY_PROC_MAC, CERT_VERIFY_PROC_BUILTIN
  #elif BUILDFLAG(IS_WIN)
      CERT_VERIFY_PROC_WIN, CERT_VERIFY_PROC_BUILTIN_CHROME_ROOTS

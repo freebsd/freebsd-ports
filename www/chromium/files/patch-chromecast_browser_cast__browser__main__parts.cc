@@ -1,6 +1,6 @@
---- chromecast/browser/cast_browser_main_parts.cc.orig	2022-05-19 14:06:27 UTC
+--- chromecast/browser/cast_browser_main_parts.cc.orig	2022-06-17 14:20:10 UTC
 +++ chromecast/browser/cast_browser_main_parts.cc
-@@ -92,7 +92,7 @@
+@@ -91,7 +91,7 @@
  #include "ui/base/ui_base_switches.h"
  #include "ui/gl/gl_switches.h"
  
@@ -9,7 +9,7 @@
  #include <fontconfig/fontconfig.h>
  #include <signal.h>
  #include <sys/prctl.h>
-@@ -147,7 +147,7 @@
+@@ -146,7 +146,7 @@
  #include "extensions/browser/extension_prefs.h"  // nogncheck
  #endif
  
@@ -18,7 +18,7 @@
  #include "chromecast/browser/exo/wayland_server_controller.h"
  #endif
  
-@@ -283,7 +283,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
+@@ -282,7 +282,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
  
  #endif  // defined(USE_AURA)
  
@@ -27,7 +27,7 @@
  
  base::FilePath GetApplicationFontsDir() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
-@@ -329,7 +329,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
+@@ -328,7 +328,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
      {cc::switches::kDisableThreadedAnimation, ""},
  #endif  // BUILDFLAG(IS_ANDROID)
  #endif  // BUILDFLAG(IS_CAST_AUDIO_ONLY)
@@ -36,7 +36,7 @@
  #if defined(ARCH_CPU_X86_FAMILY)
      // This is needed for now to enable the x11 Ozone platform to work with
      // current Linux/NVidia OpenGL drivers.
-@@ -519,7 +519,7 @@ void CastBrowserMainParts::ToolkitInitialized() {
+@@ -516,7 +516,7 @@ void CastBrowserMainParts::ToolkitInitialized() {
      views_delegate_ = std::make_unique<CastViewsDelegate>();
  #endif  // defined(USE_AURA)
  
@@ -45,7 +45,7 @@
    base::FilePath dir_font = GetApplicationFontsDir();
    const FcChar8 *dir_font_char8 = reinterpret_cast<const FcChar8*>(dir_font.value().data());
    if (!FcConfigAppFontAddDir(gfx::GetGlobalFontConfig(), dir_font_char8)) {
-@@ -750,7 +750,7 @@ int CastBrowserMainParts::PreMainMessageLoopRun() {
+@@ -747,7 +747,7 @@ int CastBrowserMainParts::PreMainMessageLoopRun() {
        cast_browser_process_->browser_context());
  #endif
  
@@ -54,7 +54,7 @@
    wayland_server_controller_ =
        std::make_unique<WaylandServerController>(window_manager_.get());
  #endif
-@@ -825,7 +825,7 @@ void CastBrowserMainParts::PostMainMessageLoopRun() {
+@@ -822,7 +822,7 @@ void CastBrowserMainParts::PostMainMessageLoopRun() {
  
    cast_browser_process_->cast_service()->Stop();
  

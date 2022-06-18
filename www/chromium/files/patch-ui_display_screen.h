@@ -1,6 +1,6 @@
---- ui/display/screen.h.orig	2022-05-19 14:06:27 UTC
+--- ui/display/screen.h.orig	2022-06-17 14:20:10 UTC
 +++ ui/display/screen.h
-@@ -119,7 +119,7 @@ class DISPLAY_EXPORT Screen {
+@@ -120,7 +120,7 @@ class DISPLAY_EXPORT Screen {
    // (both of which may or may not be `nearest_id`).
    display::ScreenInfos GetScreenInfosNearestDisplay(int64_t nearest_id) const;
  
@@ -9,7 +9,7 @@
    // Object which suspends the platform-specific screensaver for the duration of
    // its existence.
    class ScreenSaverSuspender {
-@@ -191,7 +191,7 @@ class DISPLAY_EXPORT Screen {
+@@ -192,7 +192,7 @@ class DISPLAY_EXPORT Screen {
        const gfx::GpuExtraInfo& gpu_extra_info);
  
   protected:
@@ -18,7 +18,7 @@
    // Suspends or un-suspends the platform-specific screensaver, and returns
    // whether the operation was successful.
    virtual bool SetScreenSaverSuspended(bool suspend);
-@@ -210,7 +210,7 @@ class DISPLAY_EXPORT Screen {
+@@ -211,7 +211,7 @@ class DISPLAY_EXPORT Screen {
    int64_t display_id_for_new_windows_;
    int64_t scoped_display_id_for_new_windows_ = display::kInvalidDisplayId;
  

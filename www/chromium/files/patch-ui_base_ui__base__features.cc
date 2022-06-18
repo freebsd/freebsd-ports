@@ -1,6 +1,6 @@
---- ui/base/ui_base_features.cc.orig	2022-04-21 18:48:31 UTC
+--- ui/base/ui_base_features.cc.orig	2022-06-17 14:20:10 UTC
 +++ ui/base/ui_base_features.cc
-@@ -179,7 +179,7 @@ const base::Feature kExperimentalFlingAnimation {
+@@ -169,7 +169,7 @@ const base::Feature kExperimentalFlingAnimation {
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) ||                                   \
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
@@ -9,7 +9,7 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -275,7 +275,7 @@ bool IsForcedColorsEnabled() {
+@@ -265,7 +265,7 @@ bool IsForcedColorsEnabled() {
  // milestones.
  const base::Feature kEyeDropper {
    "EyeDropper",

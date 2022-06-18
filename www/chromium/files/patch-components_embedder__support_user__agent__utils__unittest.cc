@@ -1,6 +1,6 @@
---- components/embedder_support/user_agent_utils_unittest.cc.orig	2022-02-28 16:54:41 UTC
+--- components/embedder_support/user_agent_utils_unittest.cc.orig	2022-06-17 14:20:10 UTC
 +++ components/embedder_support/user_agent_utils_unittest.cc
-@@ -54,7 +54,7 @@ namespace {
+@@ -55,7 +55,7 @@ namespace {
  static constexpr char kChromeProductVersionRegex[] =
      "Chrome/([0-9]+).([0-9]+).([0-9]+).([0-9]+)";
  
@@ -9,7 +9,7 @@
  std::string GetMachine() {
    struct utsname unixinfo;
    uname(&unixinfo);
-@@ -162,7 +162,7 @@ void CheckUserAgentStringOrdering(bool mobile_device) 
+@@ -163,7 +163,7 @@ void CheckUserAgentStringOrdering(bool mobile_device) 
      int value;
      ASSERT_TRUE(base::StringToInt(pieces[i], &value));
    }
