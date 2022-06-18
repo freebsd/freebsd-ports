@@ -1,6 +1,7 @@
 %%VTK%%bin/gdcm2pnm
 %%VTK%%bin/gdcm2vtk
 bin/gdcmanon
+bin/gdcmclean
 bin/gdcmconv
 bin/gdcmdiff
 bin/gdcmdump
@@ -57,6 +58,7 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCSAHeader.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCSAHeaderDict.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCSAHeaderDictEntry.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCStoreMessages.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCleaner.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCodeString.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCodec.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCoder.h
@@ -72,6 +74,7 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmCurve.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmDICOMDIR.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmDICOMDIRGenerator.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmDIMSE.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmDPath.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmDataElement.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmDataEvent.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmDataSet.h
@@ -237,6 +240,7 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmSHA1.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmSOPClassExtendedNegociationSub.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmSOPClassUIDToIOD.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmScanner.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmScanner2.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmSegment.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmSegmentHelper.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmSegmentReader.h
@@ -260,6 +264,7 @@ include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmStaticAssert.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmStreamImageReader.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmStreamImageWriter.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmStrictScanner.h
+include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmStrictScanner2.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmString.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmStringFilter.h
 include/gdcm-%%GDCM_MAJOR%%.%%GDCM_MINOR%%/gdcmStudy.h
