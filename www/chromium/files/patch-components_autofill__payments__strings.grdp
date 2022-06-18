@@ -1,6 +1,6 @@
---- components/autofill_payments_strings.grdp.orig	2022-05-19 14:06:27 UTC
+--- components/autofill_payments_strings.grdp.orig	2022-06-17 14:20:10 UTC
 +++ components/autofill_payments_strings.grdp
-@@ -124,7 +124,7 @@
+@@ -127,7 +127,7 @@
    <message name="IDS_AUTOFILL_FIX_FLOW_PROMPT_SAVE_CARD_LABEL" desc="Text to show on the button to save the card to Google when the fix flow dialog is shown after the Autofill save card prompt." formatter_data="android_java">
      Save card
    </message>

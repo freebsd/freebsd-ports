@@ -1,6 +1,6 @@
---- ui/views/linux_ui/linux_ui.h.orig	2022-03-25 21:59:56 UTC
+--- ui/views/linux_ui/linux_ui.h.orig	2022-06-17 14:20:10 UTC
 +++ ui/views/linux_ui/linux_ui.h
-@@ -21,7 +21,7 @@
+@@ -23,7 +23,7 @@
  #include "ui/views/controls/button/button.h"
  #include "ui/views/views_export.h"
  
@@ -9,7 +9,7 @@
  #include "ui/shell_dialogs/shell_dialog_linux.h"
  #endif
  
-@@ -57,7 +57,7 @@ class WindowFrameProvider;
+@@ -59,7 +59,7 @@ class WindowFrameProvider;
  // project that wants to do linux desktop native rendering.
  class VIEWS_EXPORT LinuxUI : public ui::LinuxInputMethodContextFactory,
                               public gfx::SkiaFontDelegate,

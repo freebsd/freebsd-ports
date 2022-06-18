@@ -1,4 +1,4 @@
---- gpu/command_buffer/tests/gl_gpu_memory_buffer_unittest.cc.orig	2022-03-25 21:59:56 UTC
+--- gpu/command_buffer/tests/gl_gpu_memory_buffer_unittest.cc.orig	2022-06-17 14:20:10 UTC
 +++ gpu/command_buffer/tests/gl_gpu_memory_buffer_unittest.cc
 @@ -29,7 +29,7 @@
  #include "ui/gl/gl_image.h"
@@ -18,12 +18,3 @@
  class GpuMemoryBufferTestEGL : public testing::Test,
                                 public gpu::GpuCommandBufferTestEGL {
   public:
-@@ -364,7 +364,7 @@ TEST_P(GpuMemoryBufferTest, Lifecycle) {
-   glDeleteTextures(1, &texture_id);
- }
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- // Test glCreateImageCHROMIUM with gfx::NATIVE_PIXMAP. Basically the test
- // reproduces the situation where some dmabuf fds are available outside the
- // gpu process and the user wants to import them using glCreateImageCHROMIUM.

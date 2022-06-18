@@ -1,6 +1,6 @@
---- media/audio/audio_features.cc.orig	2022-02-28 16:54:41 UTC
+--- media/audio/audio_features.cc.orig	2022-06-17 14:20:10 UTC
 +++ media/audio/audio_features.cc
-@@ -19,7 +19,7 @@ const base::Feature kPlatformAudioEncoder{"PlatformAud
+@@ -14,7 +14,7 @@ namespace features {
  const base::Feature kAudioServiceOutOfProcessKillAtHang{
    "AudioServiceOutOfProcessKillAtHang",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

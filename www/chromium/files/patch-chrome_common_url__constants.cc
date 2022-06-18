@@ -1,6 +1,6 @@
---- chrome/common/url_constants.cc.orig	2022-05-19 14:06:27 UTC
+--- chrome/common/url_constants.cc.orig	2022-06-17 14:20:10 UTC
 +++ chrome/common/url_constants.cc
-@@ -476,7 +476,7 @@ const char kPhoneHubPermissionLearnMoreURL[] =
+@@ -479,7 +479,7 @@ const char kPhoneHubPermissionLearnMoreURL[] =
      "https://support.google.com/chromebook/?p=multidevice";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

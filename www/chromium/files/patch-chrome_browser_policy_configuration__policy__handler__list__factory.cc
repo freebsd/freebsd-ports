@@ -1,7 +1,7 @@
---- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2022-05-19 14:06:27 UTC
+--- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2022-06-17 14:20:10 UTC
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -187,7 +187,7 @@
- #endif  // BUILDFLAG(ENABLE_SIDE_SEARCH)
+@@ -186,7 +186,7 @@
+ #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_FUCHSIA)
@@ -9,7 +9,7 @@
  #include "chrome/browser/web_applications/policy/web_app_settings_policy_handler.h"
  #endif
  
-@@ -1557,7 +1557,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1562,7 +1562,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif // !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_CHROMEOS)
  
@@ -18,7 +18,7 @@
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -1624,7 +1624,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1626,7 +1626,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -27,7 +27,7 @@
    { key::kChromeAppsEnabled,
      extensions::pref_names::kChromeAppsEnabled,
      base::Value::Type::BOOLEAN },
-@@ -1940,7 +1940,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -1945,7 +1945,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        key::kBrowsingDataLifetime, browsing_data::prefs::kBrowsingDataLifetime,
        chrome_schema));
  
@@ -36,7 +36,7 @@
    handlers->AddHandler(std::make_unique<LocalSyncPolicyHandler>());
    handlers->AddHandler(std::make_unique<ThemeColorPolicyHandler>());
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-@@ -2294,7 +2294,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2299,7 +2299,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        static_cast<int>(variations::RestrictionPolicy::ALL), false));
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -45,7 +45,7 @@
    handlers->AddHandler(
        std::make_unique<web_app::WebAppSettingsPolicyHandler>(chrome_schema));
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
-@@ -2313,7 +2313,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2318,7 +2318,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
            policy::key::kSpellcheckLanguageBlocklist));
  #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  

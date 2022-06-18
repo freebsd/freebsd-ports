@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2022-05-19 14:06:27 UTC
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2022-06-17 14:20:10 UTC
 +++ chrome/browser/ui/views/tabs/tab_drag_controller.cc
 @@ -480,7 +480,7 @@ void TabDragController::Init(TabDragContext* source_co
    //     synchronous on desktop Linux, so use that.
@@ -22,12 +22,12 @@
        }
  
        // If source window was maximized - maximize the new window as well.
--#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_MAC)
-+#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_BSD)
- 
+-#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && \
++#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD) && \
+     !BUILDFLAG(IS_CHROMEOS_LACROS) && !BUILDFLAG(IS_MAC)
        // Keeping maximized state breaks snap to Grid on Windows when dragging
        // tabs from maximized windows. TODO:(crbug.com/727051) Explore doing this
-@@ -2358,7 +2358,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -2362,7 +2362,7 @@ TabDragController::Liveness TabDragController::GetLoca
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

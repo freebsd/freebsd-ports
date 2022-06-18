@@ -1,6 +1,6 @@
---- build/config/rust.gni.orig	2022-03-25 21:59:56 UTC
+--- build/config/rust.gni.orig	2022-06-17 14:20:10 UTC
 +++ build/config/rust.gni
-@@ -116,7 +116,7 @@ if (enable_rust) {
+@@ -124,7 +124,7 @@ if (enable_rust) {
      rust_sysroot = "//third_party/rust-toolchain"
      use_unverified_rust_toolchain = false
    } else {

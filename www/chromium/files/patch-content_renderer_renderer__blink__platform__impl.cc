@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2022-05-19 14:06:27 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2022-06-17 14:20:10 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
-@@ -109,7 +109,7 @@
+@@ -110,7 +110,7 @@
  
  #if BUILDFLAG(IS_MAC)
  #include "content/child/child_process_sandbox_support_impl_mac.h"
@@ -9,7 +9,7 @@
  #include "content/child/child_process_sandbox_support_impl_linux.h"
  #endif
  
-@@ -178,7 +178,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -179,7 +179,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
        main_thread_scheduler_(main_thread_scheduler) {
    // RenderThread may not exist in some tests.
    if (RenderThreadImpl::current()) {
@@ -18,7 +18,7 @@
      mojo::PendingRemote<font_service::mojom::FontService> font_service;
      RenderThreadImpl::current()->BindHostReceiver(
          font_service.InitWithNewPipeAndPassReceiver());
-@@ -188,7 +188,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -189,7 +189,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
  #endif
    }
  
@@ -27,7 +27,7 @@
    if (sandboxEnabled()) {
  #if BUILDFLAG(IS_MAC)
      sandbox_support_ = std::make_unique<WebSandboxSupportMac>();
-@@ -283,7 +283,8 @@ RendererBlinkPlatformImpl::WrapSharedURLLoaderFactory(
+@@ -284,7 +284,8 @@ RendererBlinkPlatformImpl::WrapSharedURLLoaderFactory(
        /*terminate_sync_load_event=*/nullptr);
  }
  
@@ -37,7 +37,7 @@
  void RendererBlinkPlatformImpl::SetDisplayThreadPriority(
      base::PlatformThreadId thread_id) {
    if (RenderThreadImpl* render_thread = RenderThreadImpl::current()) {
-@@ -298,7 +299,7 @@ blink::BlameContext* RendererBlinkPlatformImpl::GetTop
+@@ -299,7 +300,7 @@ blink::BlameContext* RendererBlinkPlatformImpl::GetTop
  }
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {

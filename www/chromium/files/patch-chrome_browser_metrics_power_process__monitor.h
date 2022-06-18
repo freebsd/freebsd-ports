@@ -1,6 +1,6 @@
---- chrome/browser/performance_monitor/process_monitor.h.orig	2022-05-19 14:06:27 UTC
-+++ chrome/browser/performance_monitor/process_monitor.h
-@@ -78,7 +78,7 @@ class ProcessMonitor : public content::BrowserChildPro
+--- chrome/browser/metrics/power/process_monitor.h.orig	2022-06-17 14:20:10 UTC
++++ chrome/browser/metrics/power/process_monitor.h
+@@ -76,7 +76,7 @@ class ProcessMonitor : public content::BrowserChildPro
  #endif
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

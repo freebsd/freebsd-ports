@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc_constants.h.orig	2022-05-19 14:06:27 UTC
+--- base/allocator/partition_allocator/partition_alloc_constants.h.orig	2022-06-17 14:20:10 UTC
 +++ base/allocator/partition_allocator/partition_alloc_constants.h
-@@ -80,7 +80,7 @@ PartitionPageShift() {
+@@ -84,7 +84,7 @@ PartitionPageShift() {
    return 18;  // 256 KiB
  }
  #elif (BUILDFLAG(IS_APPLE) && defined(ARCH_CPU_64_BITS)) || \

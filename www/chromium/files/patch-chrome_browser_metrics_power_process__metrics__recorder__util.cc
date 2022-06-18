@@ -1,6 +1,6 @@
---- chrome/browser/performance_monitor/process_metrics_recorder_util.cc.orig	2022-05-19 14:06:27 UTC
-+++ chrome/browser/performance_monitor/process_metrics_recorder_util.cc
-@@ -43,7 +43,7 @@ void RecordProcessHistograms(const char* histogram_suf
+--- chrome/browser/metrics/power/process_metrics_recorder_util.cc.orig	2022-06-17 14:20:10 UTC
++++ chrome/browser/metrics/power/process_metrics_recorder_util.cc
+@@ -41,7 +41,7 @@ void RecordProcessHistograms(const char* histogram_suf
        kCPUUsageHistogramMax, kCPUUsageHistogramBucketCount);
  #endif
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

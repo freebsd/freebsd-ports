@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2022-05-19 14:06:27 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2022-06-17 14:20:10 UTC
 +++ components/feature_engagement/public/feature_constants.cc
-@@ -22,7 +22,7 @@ const base::Feature kIPHDummyFeature{"IPH_Dummy",
+@@ -23,7 +23,7 @@ const base::Feature kIPHDummyFeature{"IPH_Dummy",
                                       base::FEATURE_DISABLED_BY_DEFAULT};
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,8 +9,8 @@
  const base::Feature kIPHDesktopSharedHighlightingFeature{
      "IPH_DesktopSharedHighlighting", base::FEATURE_DISABLED_BY_DEFAULT};
  const base::Feature kIPHDesktopTabGroupsNewGroupFeature{
-@@ -288,7 +288,7 @@ const base::Feature kIPHPasswordSuggestionsFeature{
-     "IPH_PasswordSuggestions", base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -293,7 +293,7 @@ const base::Feature kIPHFollowWhileBrowsingFeature{
+     "IPH_FollowWhileBrowsing", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // BUILDFLAG(IS_IOS)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
