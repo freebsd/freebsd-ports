@@ -1,5 +1,5 @@
 PORTNAME=	ocrmypdf
-DISTVERSION=	13.4.2
+DISTVERSION=	13.4.7
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coloredlogs>=14.0:devel/py-coloredlogs@${PY_
 		${PYTHON_PKGNAMEPREFIX}pillow>=8.2.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=3.5.66:print/py-reportlab@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pdfminer.six>=20191110<20220320:textproc/py-pdfminer.six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pdfminer.six>=20191110:textproc/py-pdfminer.six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pikepdf>=4.0.0:textproc/py-pikepdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=0.13.0<2.0:devel/py-pluggy@${PY_FLAVOR} \
 		tesseract:graphics/tesseract
