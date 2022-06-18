@@ -1,7 +1,7 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 
 PORTNAME=	bacula
-PORTVERSION=	11.0.5
+PORTVERSION=	11.0.6
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
