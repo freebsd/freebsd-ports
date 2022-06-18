@@ -1,16 +1,10 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	rhash
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-
-PATCH_SITES=	https://gitweb.gentoo.org/repo/gentoo.git/plain/app-crypt/rhash/files/:gentoo \
-		https://raw.githubusercontent.com/gentoo/gentoo/master/app-crypt/rhash/files/:gentoo \
-		https://sourceforge.net/p/rhash/patches/_discuss/thread/271b85e9/0ac7/attachment/:sf
-PATCHFILES=	\
-		rhash-1.3.2.patch:-p1:sf
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Utility and library for computing and checking of file hashes
