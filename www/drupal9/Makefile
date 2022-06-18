@@ -1,5 +1,5 @@
 PORTNAME=	drupal9
-PORTVERSION=	9.3.13
+PORTVERSION=	9.3.16
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
