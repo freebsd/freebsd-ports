@@ -361,8 +361,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/HTML style.lcf
 %%DATADIR%%/data/lexlib/HTML.cuda-lexmap
 %%DATADIR%%/data/lexlib/HTML.lcf
-%%DATADIR%%/data/lexlib/Ini files.cuda-lexmap
-%%DATADIR%%/data/lexlib/Ini files.lcf
 %%DATADIR%%/data/lexlib/JSDoc.cuda-lexmap
 %%DATADIR%%/data/lexlib/JSDoc.lcf
 %%DATADIR%%/data/lexlib/JSON.cuda-lexmap
@@ -390,6 +388,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/aliases.ini
 %%DATADIR%%/data/lexlib/reStructuredText.cuda-lexmap
 %%DATADIR%%/data/lexlib/reStructuredText.lcf
+%%DATADIR%%/data/lexliblite/Ini files.cuda-litelexer
 %%DATADIR%%/data/lexliblite/JSON.cuda-litelexer
 %%DATADIR%%/data/lexliblite/Log files.cuda-litelexer
 %%DATADIR%%/data/lexliblite/SQL.cuda-litelexer
