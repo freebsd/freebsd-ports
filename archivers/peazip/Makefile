@@ -1,5 +1,5 @@
 PORTNAME=	peazip
-PORTVERSION=	8.4.0
+PORTVERSION=	8.6.0
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
