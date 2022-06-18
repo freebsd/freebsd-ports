@@ -2,7 +2,7 @@
 
 PORTNAME=	smpeg
 PORTVERSION=	0.4.4
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \
 		GENTOO
