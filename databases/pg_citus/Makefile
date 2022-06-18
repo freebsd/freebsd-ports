@@ -1,7 +1,7 @@
 # Created by: Matthew Seaman
 
 PORTNAME=	citus
-PORTVERSION=	10.2.5
+PORTVERSION=	11.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	pg_

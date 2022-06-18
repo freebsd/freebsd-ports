@@ -1,3 +1,4 @@
+bin/pg_send_cancellation
 include/postgresql/server/citus_version.h
 include/postgresql/server/distributed/adaptive_executor.h
 include/postgresql/server/distributed/argutils.h
@@ -35,6 +36,7 @@ include/postgresql/server/distributed/insert_select_executor.h
 include/postgresql/server/distributed/insert_select_planner.h
 include/postgresql/server/distributed/intermediate_result_pruning.h
 include/postgresql/server/distributed/intermediate_results.h
+include/postgresql/server/distributed/jsonbutils.h
 include/postgresql/server/distributed/listutils.h
 include/postgresql/server/distributed/local_distributed_join_planner.h
 include/postgresql/server/distributed/local_executor.h
@@ -54,6 +56,7 @@ include/postgresql/server/distributed/multi_explain.h
 include/postgresql/server/distributed/multi_join_order.h
 include/postgresql/server/distributed/multi_logical_optimizer.h
 include/postgresql/server/distributed/multi_logical_planner.h
+include/postgresql/server/distributed/multi_logical_replication.h
 include/postgresql/server/distributed/multi_partitioning_utils.h
 include/postgresql/server/distributed/multi_physical_planner.h
 include/postgresql/server/distributed/multi_progress.h
@@ -123,6 +126,8 @@ share/postgresql/extension/citus--10.1-1--10.2-1.sql
 share/postgresql/extension/citus--10.2-1--10.2-2.sql
 share/postgresql/extension/citus--10.2-2--10.2-3.sql
 share/postgresql/extension/citus--10.2-3--10.2-4.sql
+share/postgresql/extension/citus--10.2-4--11.0-1.sql
+share/postgresql/extension/citus--11.0-1--11.0-2.sql
 share/postgresql/extension/citus--8.0-1--8.0-2.sql
 share/postgresql/extension/citus--8.0-1.sql
 share/postgresql/extension/citus--8.0-10--8.0-11.sql
