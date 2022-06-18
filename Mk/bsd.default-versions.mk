@@ -62,9 +62,9 @@ GO_DEFAULT?=		1.18
 IMAGEMAGICK_DEFAULT?=	7
 # Possible values: 7, 8, 11, 17, 18
 JAVA_DEFAULT?=		8
-# Possible values: 2.2.0, 2.3.0
+# Possible values: 2.2.2, 2.3.0
 .  if !defined(WANT_LAZARUS_DEVEL)
-LAZARUS_DEFAULT?=       2.2.0
+LAZARUS_DEFAULT?=       2.2.2
 .  else
 LAZARUS_DEFAULT?=       2.3.0
 .  endif
