@@ -1,7 +1,7 @@
 # Created by: nork@FreeBSD.org
 
 PORTNAME=	liveMedia
-DISTVERSION=	2022.04.26
+DISTVERSION=	2022.06.16
 PORTEPOCH=	2
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.live555.com/liveMedia/public/ \
