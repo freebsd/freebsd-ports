@@ -1,6 +1,6 @@
 PORTNAME=	keyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +21,8 @@ MAKE_ARGS=	DESTDIR="${DESTDIR}" PREFIX="${PREFIX}" \
 		GIT_HASH="${DISTVERSIONFULL}"
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-application-mapper \
-		${ETCDIR}/${PORTNAME}.compose
+		${DATADIR}/keyd.compose \
+		"@dir ${ETCDIR}"
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -40,6 +41,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,$$(PREFIX)&,' \
 		-e 's,/usr/local,${LOCALBASE},' \
 		-e 's,${DOCSDIR_REL}/examples,${EXAMPLESDIR_REL},' \
+		-e '/_XOPEN_SOURCE/d' \
 		-e 's/ -O3//' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX}&,' \
