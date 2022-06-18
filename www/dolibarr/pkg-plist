@@ -14291,7 +14291,6 @@
 %%WWWDIR%%/htdocs/zapier/lib/zapier.lib.php
 %%WWWDIR%%/htdocs/zapier/lib/zapier_hook.lib.php
 %%WWWDIR%%/nightwatch.conf.js
-%%WWWDIR%%/package.json
 %%WWWDIR%%/phpstan.neon
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/scripts/accountancy/export-thirdpartyaccount.php
