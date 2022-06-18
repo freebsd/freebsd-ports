@@ -1,5 +1,5 @@
---- rtl/bsd/ossysc.inc	2020-10-03 18:58:28.503033000 -0500
-+++ rtl/bsd/ossysc.inc	2020-10-03 19:01:01.207504000 -0500
+--- rtl/bsd/ossysc	2019-11-05 11:17:53.000000000 -0500
++++ rtl/bsd/ossysc.inc	2022-05-28 16:58:54.884379000 -0500
 @@ -76,9 +76,9 @@
  
  begin
@@ -36,3 +36,50 @@
           {$ifdef FPC_BIG_ENDIAN}    hi(offst),lo(offst){$endif}
           {$ifdef FPC_LITTLE_ENDIAN} lo(offst),hi(offst){$endif}
           )));
+@@ -138,10 +138,20 @@
+   Fprename:=do_syscall(syscall_nr_rename,TSysParam(old),TSysParam(newpath));
+ end;
+ 
+-function Fpstat(const path: pchar; var buf : stat):cint; [public, alias : 'FPC_SYSC_STAT'];
++Function fpFstatat(fd: cint; path: pchar; var sb: stat; flag: cint):cint;
++begin
++ fpFStatat:=do_syscall(syscall_nr_fstatat,fd,TSysParam(path),TSysParam(@sb),flag);
++end;
+ 
++function Fpstat(const path: pchar; var buf : stat):cint; [public, alias : 'FPC_SYSC_STAT'];
++const
++ AT_FDCWD=-100;
+ begin
++{$ifdef freebsd}
++ Fpstat:=FpFstatat(AT_FDCWD, path, buf, 0);
++{$else}
+  Fpstat:=do_syscall(syscall_nr_stat,TSysParam(path),TSysParam(@buf));
++{$endif}
+ end;
+ 
+ 
+@@ -171,6 +181,12 @@
+ 
+ const DIRBLKSIZ=1024;
+ 
++{$ifdef freebsd}
++function FpGetdirentries(fd : cint; buf : pchar; nbytes : clong) : cint;
++begin
++  FpGetdirentries:=do_syscall(syscall_nr_getdirentries,fd,TSysParam(buf), nbytes);
++end;
++{$endif}
+ 
+ function Fpfstat(fd : cint; var sb : stat): cint; forward;
+ 
+@@ -247,7 +263,11 @@
+ 
+ var retval :longint;
+ begin
++{$ifdef freebsd}
++ Retval:=FpGetdirentries(dirp^.dd_fd, @dirp^.dd_buf^, DIRBLKSIZ {sizeof(getdentsbuffer)});
++{$else}
+  Retval:=do_syscall(syscall_nr_getdents,TSysParam(dirp^.dd_fd),TSysParam(@dirp^.dd_buf^),DIRBLKSIZ {sizeof(getdentsbuffer)});
++{$endif}
+    dirp^.dd_rewind:=TSysParam(dirp^.dd_buf);
+    if retval=0 then
+     begin

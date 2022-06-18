@@ -2,7 +2,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	3.2.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME:S/$/.source/}${EXTRACT_SUFX}:source
 DIST_SUBDIR=	freepascal
 
 MAINTAINER?=	acm@FreeBSD.org
-COMMENT?=	Free Pascal compiler with Turbo and Delphi
+COMMENT?=	Free Pascal compiler with Turbo and Delphi compatibility
 
 RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils
 
@@ -26,14 +26,11 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 USES+=		gmake iconv
 USE_BINUTILS=	yes
-BOOTVER=	3.0.4
+BOOTVER=	${PORTVERSION}
 MANVER=		${PORTVERSION}
 
 FPC_LDPATH?=	"${LOCALBASE}/bin/ld.bfd"
 
-#USE_GITHUB=	yes
-#GH_ACCOUNT=	fpc-svn
-#GH_PROJECT=	fpc
 FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
@@ -41,6 +38,7 @@ FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 .if ${ARCH} == "i386"
 PPNAME=		ppc386
 FPC_ARCH=	i386
+OPT=		"-dFPC_USE_LIBC"
 PLIST_SUB+=	FPC_I386="" \
 		FPC_AMD64="@comment "
 .elif ${ARCH} == "amd64"
@@ -108,7 +106,8 @@ do-extract:
 post-patch:
 .if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -i "" -e 's|900044|${OSVERSION}|g' \
-		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.as
+		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.as \
+		${WRKSRC}/rtl/freebsd/${FPC_ARCH}/*.inc
 .else
 	@${REINPLACE_CMD} -i "" -e 's|400000|${DFLYVERSION}|g' \
 		${WRKSRC}/rtl/dragonfly/${FPC_ARCH}/*.as

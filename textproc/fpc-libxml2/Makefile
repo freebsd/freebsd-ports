@@ -1,6 +1,6 @@
 # Created by: Christoper Key <cjk32@cam.ac.uk>
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc lang
 PKGNAMESUFFIX=	-libxml2
 
