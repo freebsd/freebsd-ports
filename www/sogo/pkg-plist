@@ -738,7 +738,7 @@ GNUstep/Local/Library/Libraries/sogo/libSOGo.so
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.5
 GNUstep/Local/Library/Libraries/sogo/libSOGo.so.%%VERSION%%
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so
-GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.6
+GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.5.7
 GNUstep/Local/Library/Libraries/sogo/libSOGoUI.so.%%VERSION%%
 GNUstep/Local/Library/OCSTypeModels/appointment-oracle.ocs
 GNUstep/Local/Library/OCSTypeModels/appointment.ocs
@@ -1485,6 +1485,7 @@ GNUstep/Local/Library/SOGo/SchedulerUI.SOGo/stamp.make
 GNUstep/Local/Library/SOGo/Templates/AdministrationUI/UIxAdministration.wox
 GNUstep/Local/Library/SOGo/Templates/AdministrationUI/UIxAdministrationAclEditor.wox
 GNUstep/Local/Library/SOGo/Templates/AdministrationUI/UIxAdministrationFilterPanel.wox
+GNUstep/Local/Library/SOGo/Templates/AdministrationUI/UIxThemePreview.wox
 GNUstep/Local/Library/SOGo/Templates/Appointments/SOGoAptMailDeletion.wox
 GNUstep/Local/Library/SOGo/Templates/Appointments/SOGoAptMailICalReply.wox
 GNUstep/Local/Library/SOGo/Templates/Appointments/SOGoAptMailInvitation.wox
@@ -1511,7 +1512,6 @@ GNUstep/Local/Library/SOGo/Templates/MailPartViewers/UIxMailPartSignedViewer.wox
 GNUstep/Local/Library/SOGo/Templates/MailPartViewers/UIxMailPartTextViewer.wox
 GNUstep/Local/Library/SOGo/Templates/MailPartViewers/UIxMailPartTnefViewer.wox
 GNUstep/Local/Library/SOGo/Templates/MailerUI/UIxMailEditor.wox
-GNUstep/Local/Library/SOGo/Templates/MailerUI/UIxMailFolderMenu.wox
 GNUstep/Local/Library/SOGo/Templates/MailerUI/UIxMailFolderSubscriptions.wox
 GNUstep/Local/Library/SOGo/Templates/MailerUI/UIxMailFolderTemplate.wox
 GNUstep/Local/Library/SOGo/Templates/MailerUI/UIxMailMainFrame.wox
@@ -1748,7 +1748,6 @@ GNUstep/Local/Library/SOGo/Templates/SchedulerUI/UIxReminderEditor.wox
 GNUstep/Local/Library/SOGo/Templates/SchedulerUI/UIxTaskEditorTemplate.wox
 GNUstep/Local/Library/SOGo/Templates/SchedulerUI/UIxTaskViewTemplate.wox
 GNUstep/Local/Library/SOGo/Templates/UIxAclEditor.wox
-GNUstep/Local/Library/SOGo/Templates/UIxModuleAccessDenied.wox
 GNUstep/Local/Library/SOGo/Templates/UIxPageFrame.wox
 GNUstep/Local/Library/SOGo/Templates/UIxSidenavToolbarTemplate.wox
 GNUstep/Local/Library/SOGo/Templates/UIxSortableTableHeader.wox
@@ -1892,6 +1891,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/Administration/Administration.a
 GNUstep/Local/Library/SOGo/WebServerResources/js/Administration/Administration.service.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Administration/AdministrationAclController.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Administration/AdministrationController.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/Administration/ThemePreviewController.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common.js.map
 GNUstep/Local/Library/SOGo/WebServerResources/js/Common/Acl.service.js
