@@ -34,8 +34,6 @@ MAKE_ENV=	MAN_PREFIX=${PREFIX}/man
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes
 
-SRC_DESC=	Install source code
-
 .include <bsd.port.options.mk>
 
 post-extract:
