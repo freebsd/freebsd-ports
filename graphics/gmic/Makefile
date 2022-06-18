@@ -1,5 +1,5 @@
 PORTNAME=	gmic
-DISTVERSION=	3.1.2
+DISTVERSION=	3.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	https://gmic.eu/files/source/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -36,6 +36,6 @@ ALL_TARGET=	lib
 PORTSCOUT=	limit:[0-9]\..* # not v.220 and similar
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgmic.so.312
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgmic.so.*
 
 .include <bsd.port.mk>
