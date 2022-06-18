@@ -378,6 +378,7 @@ lib/emby-server/system/dashboard-ui/components/medialibrarycreator/medialibraryc
 lib/emby-server/system/dashboard-ui/components/medialibrarycreator/medialibrarycreator.template.html
 lib/emby-server/system/dashboard-ui/components/medialibraryeditor/medialibraryeditor.js
 lib/emby-server/system/dashboard-ui/components/medialibraryeditor/medialibraryeditor.template.html
+lib/emby-server/system/dashboard-ui/components/taskbutton.js
 lib/emby-server/system/dashboard-ui/components/tunerpicker.js
 lib/emby-server/system/dashboard-ui/css/detailtable.css
 lib/emby-server/system/dashboard-ui/css/images/supporter/supporterbadge.png
@@ -880,19 +881,16 @@ lib/emby-server/system/dashboard-ui/modules/sync/syncjobeditor.js
 lib/emby-server/system/dashboard-ui/modules/sync/syncjoblist.js
 lib/emby-server/system/dashboard-ui/modules/sync/transfermanager.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/artiststab.js
-lib/emby-server/system/dashboard-ui/modules/tabbedview/artiststab.template.html
 lib/emby-server/system/dashboard-ui/modules/tabbedview/basetab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/collectionstab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/collectionstab.template.html
 lib/emby-server/system/dashboard-ui/modules/tabbedview/folderstab.js
-lib/emby-server/system/dashboard-ui/modules/tabbedview/folderstab.template.html
 lib/emby-server/system/dashboard-ui/modules/tabbedview/genrestab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/itemstab.js
+lib/emby-server/system/dashboard-ui/modules/tabbedview/itemstab.template.html
 lib/emby-server/system/dashboard-ui/modules/tabbedview/listcontroller.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/playliststab.js
-lib/emby-server/system/dashboard-ui/modules/tabbedview/playliststab.template.html
 lib/emby-server/system/dashboard-ui/modules/tabbedview/seriestab.js
-lib/emby-server/system/dashboard-ui/modules/tabbedview/seriestab.template.html
 lib/emby-server/system/dashboard-ui/modules/tabbedview/tabbedview.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/tagstab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/videostab.js
@@ -942,7 +940,6 @@ lib/emby-server/system/dashboard-ui/scheduledtasks/scheduledtask.html
 lib/emby-server/system/dashboard-ui/scheduledtasks/scheduledtask.js
 lib/emby-server/system/dashboard-ui/scheduledtasks/scheduledtasks.html
 lib/emby-server/system/dashboard-ui/scheduledtasks/scheduledtasks.js
-lib/emby-server/system/dashboard-ui/scripts/taskbutton.js
 lib/emby-server/system/dashboard-ui/search/search.html
 lib/emby-server/system/dashboard-ui/search/search.js
 lib/emby-server/system/dashboard-ui/search/searchfields.css
