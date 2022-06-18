@@ -1,6 +1,6 @@
---- htdocs/application/config/stikked.php.dist.orig	2017-12-13 15:26:05 UTC
+--- htdocs/application/config/stikked.php.dist.orig	2019-11-24 16:10:45 UTC
 +++ htdocs/application/config/stikked.php.dist
-@@ -17,6 +17,19 @@ $config['site_name'] = 'Stikked';
+@@ -19,6 +19,19 @@ $config['site_name'] = 'Stikked';
  $config['base_url'] = 'https://yourpastebin.com/';
  
  /**

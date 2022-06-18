@@ -1,8 +1,7 @@
 # Created by: Dan Langille <dvl@FreeBSD.org>
 
 PORTNAME=	Stikked
-DISTVERSION=	0.13.0
-PORTREVISION=	2
+DISTVERSION=	0.14.0
 CATEGORIES=	www
 
 MAINTAINER=	dvl@FreeBSD.org
