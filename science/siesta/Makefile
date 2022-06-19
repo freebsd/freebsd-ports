@@ -1,6 +1,6 @@
 PORTNAME=	siesta
 DISTVERSION=	4.1.5
-CATEGORIES=	science
+CATEGORIES=	science # chemistry
 MASTER_SITES=	https://gitlab.com/siesta-project/${PORTNAME}/-/releases/v${DISTVERSION}/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
