@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.1
 CATEGORIES=	sysutils
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	bb49007fb074.patch:-p1 # https://github.com/rvaiya/keyd/pull/239
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Key remapping daemon for evdev
 
@@ -41,7 +44,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,$$(PREFIX)&,' \
 		-e 's,/usr/local,${LOCALBASE},' \
 		-e 's,${DOCSDIR_REL}/examples,${EXAMPLESDIR_REL},' \
-		-e '/_XOPEN_SOURCE/d' \
 		-e 's/ -O3//' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX}&,' \
