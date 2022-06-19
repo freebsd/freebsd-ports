@@ -1,6 +1,6 @@
 PORTNAME=	snapcast
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.0
+DISTVERSION=	0.26.0
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,8 +17,6 @@ LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libopus.so:audio/opus \
 		libvorbis.so:audio/libvorbis \
 		libsoxr.so:audio/libsoxr
-
-BROKEN=		error: non-constant-expression cannot be narrowed from type 'unsigned long' to 'int' in initializer list 
 
 USES=		cmake compiler:c++14-lang pkgconfig
 
