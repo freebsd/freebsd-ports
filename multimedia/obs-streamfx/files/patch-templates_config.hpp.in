@@ -1,0 +1,10 @@
+--- templates/config.hpp.in.orig	2022-06-19 17:02:21 UTC
++++ templates/config.hpp.in
+@@ -23,6 +23,7 @@
+ #define D_PLATFORM_OS "@D_PLATFORM_OS@"
+ #cmakedefine D_PLATFORM_WINDOWS
+ #cmakedefine D_PLATFORM_LINUX
++#cmakedefine D_PLATFORM_FREEBSD
+ #cmakedefine D_PLATFORM_MAC
+ #cmakedefine D_PLATFORM_UNKNOWN
+ 

@@ -1,15 +1,79 @@
---- CMakeLists.txt.orig	2020-09-25 19:33:09 UTC
+--- CMakeLists.txt.orig	2022-02-26 20:04:54 UTC
 +++ CMakeLists.txt
-@@ -184,7 +184,7 @@ else()
- 	set(CMAKE_PACKAGE_SUFFIX_OVERRIDE "" CACHE STRING "Override for the suffix.")
- 
- 	if(UNIX)
--		set(UNIX_LOCAL_STRUCTURE TRUE CACHE BOOL "Package for a local linux install.")
-+		#set(UNIX_LOCAL_STRUCTURE TRUE CACHE BOOL "Package for a local linux install.")
+@@ -191,6 +191,9 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+ elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ 	set(D_PLATFORM_OS "linux")
+ 	set(D_PLATFORM_LINUX 1)
++elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++	set(D_PLATFORM_OS "freebsd")
++	set(D_PLATFORM_FREEBSD 1)
+ elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+ 	set(D_PLATFORM_OS "macos")
+ 	set(D_PLATFORM_MAC 1)
+@@ -331,7 +334,7 @@ set(${PREFIX}ENABLE_PROFILING OFF CACHE BOOL "Enable C
+ # Installation / Packaging
+ if(STANDALONE)
+ 	set(STRUCTURE_UNIFIED CACHE BOOL "Install for use in a Plugin Manager")
+-	if(D_PLATFORM_LINUX)
++	if(D_PLATFORM_LINUX OR D_PLATFORM_FREEBSD)
+ 		set(STRUCTURE_PACKAGEMANAGER CACHE BOOL "Install for use in a Package Manager (system-wide installation)")
  	endif()
  
- 	if(NOT ${PropertyPrefix}OBS_DOWNLOAD)
-@@ -636,9 +636,9 @@ if((CMAKE_C_COMPILER_ID STREQUAL "GNU")
+@@ -382,7 +385,7 @@ endif()
+ # Standalone Build: OBS Studio
+ ################################################################################
+ 
+-if(NOT ${PREFIX}OBS_NATIVE)
++if(FALSE AND NOT ${PREFIX}OBS_NATIVE)
+ 	# Options
+ 	set(${PREFIX}DOWNLOAD_OBS_URL "" CACHE STRING "(Optional) URL of prebuilt libOBS archive to download.")
+ 	set(${PREFIX}DOWNLOAD_OBS_HASH "" CACHE STRING "(Optional) The hash for the libOBS archive.")
+@@ -410,7 +413,7 @@ if(NOT ${PREFIX}OBS_NATIVE)
+ 				message(FATAL_ERROR "${LOGPREFIX} Platform '${D_PLATFORM_OS}' with architecture '${D_PLATFORM_ARCH}' and bitness '${D_PLATFORM_BITS}' is not supported.")
+ 				return()
+ 			endif()
+-		elseif(D_PLATFORM_LINUX)
++		elseif(D_PLATFORM_LINUX OR D_PLATFORM_FREEBSD)
+ 			if (D_PLATFORM_ARCH_X86)
+ 				set(_DOWNLOAD_OBS_URL "https://github.com/Xaymar/obs-studio/releases/download/${_DOWNLOAD_OBS_VERSION}/obs-studio-x64-0.0.0.0-ubuntu-${D_PLATFORM_ARCH}-${D_PLATFORM_BITS}.7z")
+ 				if (D_PLATFORM_BITS EQUAL 64)
+@@ -458,7 +461,7 @@ endif()
+ # Standalone Build: OBS Studio Dependencies
+ ################################################################################
+ 
+-if(STANDALONE AND NOT D_PLATFORM_LINUX)
++if(STANDALONE AND NOT D_PLATFORM_LINUX AND NOT D_PLATFORM_FREEBSD)
+ 	# Options
+ 	set(${PREFIX}DOWNLOAD_OBSDEPS_URL "" CACHE STRING "(Optional) URL of prebuilt libOBS archive to download.")
+ 	set(${PREFIX}DOWNLOAD_OBSDEPS_HASH "" CACHE STRING "(Optional) The hash for the libOBS archive.")
+@@ -534,7 +537,7 @@ endif()
+ # Standalone Build: Qt v5.x
+ ################################################################################
+ 
+-if(STANDALONE AND NOT D_PLATFORM_LINUX)
++if(STANDALONE AND NOT D_PLATFORM_LINUX AND NOT D_PLATFORM_FREEBSD)
+ 	set(${PREFIX}DOWNLOAD_QT OFF CACHE BOOL "Download Qt?")
+ 
+ 	if(${PREFIX}DOWNLOAD_QT)
+@@ -1075,7 +1078,7 @@ if(D_PLATFORM_WINDOWS) # Windows Support
+ endif()
+ 
+ # Minimum Dependencies
+-list(APPEND PROJECT_LIBRARIES libobs)
++list(APPEND PROJECT_LIBRARIES obs)
+ 
+ # Components
+ if(HAVE_CURL)
+@@ -1118,7 +1121,7 @@ if(TRUE) # OpenGL
+ 				PRIVATE
+ 				"${PROJECT_SOURCE_DIR}/third-party/khronos/glad/src/wgl.c"
+ 			)
+-		elseif(D_PLATFORM_LINUX)
++		elseif(D_PLATFORM_LINUX OR D_PLATFORM_FREEBSD)
+ 			target_sources(khronos_glad
+ 				PRIVATE
+ 				"${PROJECT_SOURCE_DIR}/third-party/khronos/glad/src/glx.c"
+@@ -1782,9 +1785,9 @@ if((CMAKE_C_COMPILER_ID STREQUAL "GNU")
  	OR (CMAKE_C_COMPILER_ID STREQUAL "Clang")
  	OR (CMAKE_CXX_COMPILER_ID STREQUAL "Clang"))
  	if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9.0)
@@ -22,23 +86,21 @@
  	endif()
  endif()
  
-@@ -1226,8 +1226,8 @@ else()
- 	else()
- 		install(
- 			TARGETS ${PROJECT_NAME}
--			RUNTIME DESTINATION "./obs-plugins/${BITS}bit/" COMPONENT Runtime
--			LIBRARY DESTINATION "./obs-plugins/${BITS}bit/" COMPONENT Runtime
-+			RUNTIME DESTINATION "lib/obs-plugins" COMPONENT Runtime
-+			LIBRARY DESTINATION "lib/obs-plugins" COMPONENT Runtime
- 		)
- 		if(MSVC)
+@@ -2011,7 +2014,7 @@ else()
+ 					DESTINATION "data/" COMPONENT StreamFX
+ 				)
+ 			endif()
+-		elseif(D_PLATFORM_LINUX)
++		elseif(D_PLATFORM_LINUX OR D_PLATFORM_FREEBSD)
  			install(
-@@ -1239,7 +1239,7 @@ else()
- 	
- 		install(
- 			DIRECTORY "data/"
--			DESTINATION "./data/obs-plugins/${PROJECT_NAME}/"
-+			DESTINATION "share/obs/obs-plugins/${PROJECT_NAME}/"
- 		)
- 		
- 		add_custom_target(
+ 				TARGETS ${PROJECT_NAME}
+ 				RUNTIME DESTINATION "bin/linux-${D_PLATFORM_INSTR}-${D_PLATFORM_BITS}/" COMPONENT StreamFX
+@@ -2062,7 +2065,7 @@ else()
+ 				DESTINATION "data/obs-plugins/${PROJECT_NAME}/" COMPONENT StreamFX
+ 			)
+ 		endif()
+-	elseif(D_PLATFORM_LINUX)
++	elseif(D_PLATFORM_LINUX OR D_PLATFORM_FREEBSD)
+ 		if(STRUCTURE_PACKAGEMANAGER)
+ 			install(
+ 				TARGETS ${PROJECT_NAME}
