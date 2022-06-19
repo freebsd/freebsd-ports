@@ -1,8 +1,7 @@
 # Created by: Laurent Courty
 
 PORTNAME=	qgis
-DISTVERSION=	3.24.3
-PORTREVISION=	1
+DISTVERSION=	3.26.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -39,7 +38,6 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libgeos.so:graphics/geos \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
-		liblazperf.so:archivers/lazperf \
 		libmdal.so:math/mdal \
 		libnetcdf.so:science/netcdf \
 		libOpenCL.so:devel/ocl-icd \
@@ -117,8 +115,6 @@ SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW \
-		-DLazPerf_INCLUDE_DIR:PATH=${LOCALBASE}/include/lazperf \
-		-DWITH_INTERNAL_MDAL:BOOL=false \
 		-DPYRCC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER} \
 		-DPYUIC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
 		-DQSCI_SIP_DIR:PATH=${PYQT_SIPDIR}/Qsci \
@@ -126,9 +122,9 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt6.so \
 		-DQGIS_MANUAL_SUBDIR:PATH=share/man
 CMAKE_ON=	USE_OPENCL WITH_3D WITH_ASTYLE \
-		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_EPT WITH_POSTGRESQL \
-		WITH_PDAL
-CMAKE_OFF=	ENABLE_TESTS WITH_QWTPOLAR
+		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_EPT  WITH_INTERNAL_LAZPERF \
+		WITH_POSTGRESQL WITH_PDAL
+CMAKE_OFF=	ENABLE_TESTS WITH_INTERNAL_MDAL WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis-ltr
 
