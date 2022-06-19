@@ -172,6 +172,7 @@
     SUBDIR += molgif
     SUBDIR += molscript
     SUBDIR += molsketch
+    SUBDIR += mopac
     SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += msms

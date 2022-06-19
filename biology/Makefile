@@ -92,7 +92,6 @@
     SUBDIR += minimap2
     SUBDIR += mmseqs2
     SUBDIR += molden
-    SUBDIR += mopac
     SUBDIR += mothur
     SUBDIR += mrbayes
     SUBDIR += mummer

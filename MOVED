@@ -17203,3 +17203,4 @@ deskutils/egroupware|deskutils/egroupware@php74|2022-06-12|Merge into flavorized
 databases/py-arrow|databases/py-apache-arrow|2022-06-12|Rename to avoid conflict with devel/py-arrow and to match the project name
 science/szip|science/libaec|2022-06-16|Remove obsoleted port. Use science/libaec instead
 net/pfinger||2022-06-17|Has expired: Unmaintained and dead upstream, consider base fingerd
+biology/mopac|science/mopac|2022-06-19|Move to a proper category

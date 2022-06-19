@@ -4,12 +4,12 @@ PORTNAME=	mopac
 PORTVERSION=	7.${MOPAC_SUBVERSION}
 PORTREVISION=	8
 PORTEPOCH=	1
-CATEGORIES=	biology
+CATEGORIES=	science # chemistry
 MASTER_SITES=	http://bioinformatics.org/ghemical/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	release20111012 current
 DISTNAME=	mopac7-${MOPAC_SUBVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Semi-empirical (MNDO, etc.) molecular orbital calculation
 
 LICENSE=	GPLv2+
