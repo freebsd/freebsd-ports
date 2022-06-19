@@ -1,5 +1,6 @@
 PORTNAME=	fb303
-DISTVERSION=	g20220607
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2022.06.13.00
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,12 +26,11 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libwangle.so:net/wangle \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang ssl
+USES=		cmake compiler:c++17-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
-GH_TAGNAME=	162377053191bd04a146fbcbbd299e9319dfb81f
 
 CXXFLAGS+=	-fPIC
 
