@@ -204,7 +204,12 @@ LIB_DEPENDS+=	libffi.so:devel/libffi
 MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false USE_CLANG=true
 CONFIGURE_ENV+=	LIBCXX="-lc++"
 .if ${COMPILER_VERSION} >= 130
-CONFIGURE_ARGS+=	--with-extra-cflags="-Wno-unused-but-set-parameter"
+# PR258954: OpenJDK <= 13 crash due to undefined behavior with clang >= 13
+# See also https://bugs.openjdk.java.net/browse/JDK-8229258
+LLVM_VER=	12
+BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
+CC=		${LOCALBASE}/bin/clang${LLVM_VER}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
 .endif
 .endif
 
