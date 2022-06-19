@@ -5,6 +5,8 @@ etc/snapserver.conf
 share/man/man1/snapserver.1.gz
 %%CLIENT%%share/pixmaps/snapcast.svg
 share/snapserver/index.html
+share/snapserver/plug-ins/meta_mpd.py
+share/snapserver/snapweb/10-seconds-of-silence.mp3
 share/snapserver/snapweb/3rd-party/libflac.js
 share/snapserver/snapweb/config.js
 share/snapserver/snapweb/favicon.ico
@@ -13,6 +15,7 @@ share/snapserver/snapweb/launcher-icon.png
 share/snapserver/snapweb/manifest.json
 share/snapserver/snapweb/mute_icon.png
 share/snapserver/snapweb/play.png
+share/snapserver/snapweb/snapcast-512.png
 share/snapserver/snapweb/snapcontrol.js
 share/snapserver/snapweb/snapstream.js
 share/snapserver/snapweb/speaker_icon.png

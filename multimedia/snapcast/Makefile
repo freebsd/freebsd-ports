@@ -1,6 +1,6 @@
 PORTNAME=	snapcast
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.0
+DISTVERSION=	0.26.0
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,12 +18,12 @@ LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libvorbis.so:audio/libvorbis \
 		libsoxr.so:audio/libsoxr
 
-BROKEN=		error: non-constant-expression cannot be narrowed from type 'unsigned long' to 'int' in initializer list 
-
-USES=		cmake compiler:c++14-lang pkgconfig
+USES=		cmake compiler:c++17-lang pkgconfig python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	badaix
+
+SHEBANG_FILES=	server/etc/plug-ins/meta_mpd.py
 
 OPTIONS_DEFINE=		CLIENT
 OPTIONS_DEFAULT=	CLIENT
@@ -32,5 +32,8 @@ OPTIONS_SUB=		yes
 CLIENT_DESC=		Build and install client in addition to server
 CLIENT_CMAKE_BOOL=	BUILD_CLIENT
 CLIENT_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+
+post-install: # workaround for https://github.com/badaix/snapcast/issues/1021
+	@${CHMOD} +r ${STAGEDIR}${PREFIX}/share/snapserver/plug-ins/meta_mpd.py
 
 .include <bsd.port.mk>
