@@ -1760,6 +1760,8 @@
 %%DATADIR%%/3dmodels/Connector_FFC-FPC.3dshapes/TE_84953-8_1x08-1MP_P1.0mm_Horizontal.wrl
 %%DATADIR%%/3dmodels/Connector_FFC-FPC.3dshapes/TE_84953-9_1x09-1MP_P1.0mm_Horizontal.step
 %%DATADIR%%/3dmodels/Connector_FFC-FPC.3dshapes/TE_84953-9_1x09-1MP_P1.0mm_Horizontal.wrl
+%%DATADIR%%/3dmodels/Connector_HDMI.3dshapes/HDMI_A_Molex_208658-1001_Horizontal.step
+%%DATADIR%%/3dmodels/Connector_HDMI.3dshapes/HDMI_A_Molex_208658-1001_Horizontal.wrl
 %%DATADIR%%/3dmodels/Connector_IDC.3dshapes/IDC-Header_2x03_P2.54mm_Horizontal.step
 %%DATADIR%%/3dmodels/Connector_IDC.3dshapes/IDC-Header_2x03_P2.54mm_Horizontal.wrl
 %%DATADIR%%/3dmodels/Connector_IDC.3dshapes/IDC-Header_2x03_P2.54mm_Vertical.step
@@ -9852,6 +9854,8 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-48-1EP_7x7mm_P0.5mm_EP5.6x5.6mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-52-1EP_7x8mm_P0.5mm_EP5.41x6.45mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-52-1EP_7x8mm_P0.5mm_EP5.41x6.45mm.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm.step
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-56-1EP_7x7mm_P0.4mm_EP5.6x5.6mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-56-1EP_7x7mm_P0.4mm_EP5.6x5.6mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/QFN-56-1EP_7x7mm_P0.4mm_EP5.7x5.7mm.step
@@ -9902,6 +9906,8 @@
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TDFN-6-1EP_2.5x2.5mm_P0.65mm_EP1.3x2mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TDFN-8-1EP_3x2mm_P0.5mm_EP1.80x1.65mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TDFN-8-1EP_3x2mm_P0.5mm_EP1.80x1.65mm.wrl
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TDFN-8_1.4x1.6mm_P0.4mm.step
+%%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TDFN-8_1.4x1.6mm_P0.4mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm.step
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm.wrl
 %%DATADIR%%/3dmodels/Package_DFN_QFN.3dshapes/TQFN-20-1EP_5x5mm_P0.65mm_EP3.1x3.1mm.step
@@ -12216,6 +12222,10 @@
 %%DATADIR%%/3dmodels/Transformer_THT.3dshapes/Transformer_NF_ETAL_1-1_P1200.wrl
 %%DATADIR%%/3dmodels/Transformer_THT.3dshapes/Transformer_NF_ETAL_P1165.step
 %%DATADIR%%/3dmodels/Transformer_THT.3dshapes/Transformer_NF_ETAL_P1165.wrl
+%%DATADIR%%/3dmodels/Transistor_Power_Module.3dshapes/Infineon_EasyPIM-2B.step
+%%DATADIR%%/3dmodels/Transistor_Power_Module.3dshapes/Infineon_EasyPIM-2B.wrl
+%%DATADIR%%/3dmodels/Transistor_Power_Module.3dshapes/ST_SDIP-25L.step
+%%DATADIR%%/3dmodels/Transistor_Power_Module.3dshapes/ST_SDIP-25L.wrl
 %%DATADIR%%/3dmodels/Valve.3dshapes/Valve_Mini_Pentode_Linear.step
 %%DATADIR%%/3dmodels/Valve.3dshapes/Valve_Mini_Pentode_Linear.wrl
 %%DATADIR%%/3dmodels/Varistor.3dshapes/RV_Disc_D12mm_W3.9mm_P7.5mm.step

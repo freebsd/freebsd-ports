@@ -952,8 +952,6 @@
 %%DOCSDIR%%/help/en/images/eeschema_libedit_unit2.png
 %%DOCSDIR%%/help/en/images/eeschema_libedit_unit3.png
 %%DOCSDIR%%/help/en/images/eeschema_netlist_dialog_add_plugin.png
-%%DOCSDIR%%/help/en/images/eeschema_netlist_dialog_padspcb.png
-%%DOCSDIR%%/help/en/images/eeschema_netlist_dialog_pcbnew.png
 %%DOCSDIR%%/help/en/images/eeschema_netlist_dialog_spice.png
 %%DOCSDIR%%/help/en/images/eeschema_netlist_schematic.png
 %%DOCSDIR%%/help/en/images/eeschema_plot_dxf.png
@@ -1676,8 +1674,6 @@
 %%DOCSDIR%%/help/es/images/eeschema_libedit_unit2.png
 %%DOCSDIR%%/help/es/images/eeschema_libedit_unit3.png
 %%DOCSDIR%%/help/es/images/eeschema_netlist_dialog_add_plugin.png
-%%DOCSDIR%%/help/es/images/eeschema_netlist_dialog_padspcb.png
-%%DOCSDIR%%/help/es/images/eeschema_netlist_dialog_pcbnew.png
 %%DOCSDIR%%/help/es/images/eeschema_netlist_dialog_spice.png
 %%DOCSDIR%%/help/es/images/eeschema_netlist_schematic.png
 %%DOCSDIR%%/help/es/images/eeschema_plot_dxf.png
@@ -2291,8 +2287,6 @@
 %%DOCSDIR%%/help/fr/images/eeschema_libedit_unit2.png
 %%DOCSDIR%%/help/fr/images/eeschema_libedit_unit3.png
 %%DOCSDIR%%/help/fr/images/eeschema_netlist_dialog_add_plugin.png
-%%DOCSDIR%%/help/fr/images/eeschema_netlist_dialog_padspcb.png
-%%DOCSDIR%%/help/fr/images/eeschema_netlist_dialog_pcbnew.png
 %%DOCSDIR%%/help/fr/images/eeschema_netlist_dialog_spice.png
 %%DOCSDIR%%/help/fr/images/eeschema_netlist_schematic.png
 %%DOCSDIR%%/help/fr/images/eeschema_plot_postscript.png
@@ -2748,8 +2742,6 @@
 %%DOCSDIR%%/help/id/images/eeschema_libedit_unit2.png
 %%DOCSDIR%%/help/id/images/eeschema_libedit_unit3.png
 %%DOCSDIR%%/help/id/images/eeschema_netlist_dialog_add_plugin.png
-%%DOCSDIR%%/help/id/images/eeschema_netlist_dialog_padspcb.png
-%%DOCSDIR%%/help/id/images/eeschema_netlist_dialog_pcbnew.png
 %%DOCSDIR%%/help/id/images/eeschema_netlist_dialog_spice.png
 %%DOCSDIR%%/help/id/images/eeschema_netlist_schematic.png
 %%DOCSDIR%%/help/id/images/eeschema_plot_dxf.png
@@ -5942,8 +5934,6 @@
 %%DOCSDIR%%/help/zh/images/eeschema_libedit_unit2.png
 %%DOCSDIR%%/help/zh/images/eeschema_libedit_unit3.png
 %%DOCSDIR%%/help/zh/images/eeschema_netlist_dialog_add_plugin.png
-%%DOCSDIR%%/help/zh/images/eeschema_netlist_dialog_padspcb.png
-%%DOCSDIR%%/help/zh/images/eeschema_netlist_dialog_pcbnew.png
 %%DOCSDIR%%/help/zh/images/eeschema_netlist_dialog_spice.png
 %%DOCSDIR%%/help/zh/images/eeschema_netlist_schematic.png
 %%DOCSDIR%%/help/zh/images/eeschema_plot_dxf.png
