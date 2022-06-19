@@ -1,6 +1,6 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.100.2
+DISTVERSION=	0.101.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -27,7 +27,7 @@ GH_TUPLE=	\
 		BurntSushi:locker:a6e239ea1c69:burntsushi_locker/vendor/github.com/BurntSushi/locker \
 		PuerkitoBio:purell:v1.1.1:puerkitobio_purell/vendor/github.com/PuerkitoBio/purell \
 		PuerkitoBio:urlesc:de5bf2ad4578:puerkitobio_urlesc/vendor/github.com/PuerkitoBio/urlesc \
-		alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		alecthomas:chroma:v2.2.0:alecthomas_chroma_v2/vendor/github.com/alecthomas/chroma/v2 \
 		armon:go-radix:v1.0.0:armon_go_radix/vendor/github.com/armon/go-radix \
 		aws:aws-sdk-go-v2:994cb2c7c1c8:aws_aws_sdk_go_v2_imds \
 		aws:aws-sdk-go-v2:config/v1.7.0:aws_aws_sdk_go_v2_config \
@@ -45,21 +45,22 @@ GH_TUPLE=	\
 		bep:overlayfs:v0.6.0:bep_overlayfs/vendor/github.com/bep/overlayfs \
 		bep:tmc:v0.5.1:bep_tmc/vendor/github.com/bep/tmc \
 		census-instrumentation:opencensus-go:v0.23.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
-		clbanning:mxj:v2.5.5:clbanning_mxj_v2/vendor/github.com/clbanning/mxj/v2 \
+		clbanning:mxj:v2.5.6:clbanning_mxj_v2/vendor/github.com/clbanning/mxj/v2 \
 		cli:safeexec:v1.0.0:cli_safeexec/vendor/github.com/cli/safeexec \
 		cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		disintegration:gift:v1.2.1:disintegration_gift/vendor/github.com/disintegration/gift \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		evanw:esbuild:v0.14.42:evanw_esbuild/vendor/github.com/evanw/esbuild \
+		evanw:esbuild:v0.14.43:evanw_esbuild/vendor/github.com/evanw/esbuild \
 		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
 		frankban:quicktest:v1.14.3:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		fsnotify:fsnotify:v1.5.4:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		getkin:kin-openapi:v0.94.0:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
+		getkin:kin-openapi:v0.97.0:getkin_kin_openapi/vendor/github.com/getkin/kin-openapi \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-openapi:jsonpointer:v0.19.5:go_openapi_jsonpointer/vendor/github.com/go-openapi/jsonpointer \
 		go-openapi:swag:v0.19.5:go_openapi_swag/vendor/github.com/go-openapi/swag \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		gobuffalo:flect:v0.2.5:gobuffalo_flect/vendor/github.com/gobuffalo/flect \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gohugoio:go-i18n:4c28c89f8013:gohugoio_go_i18n_v2/vendor/github.com/gohugoio/go-i18n \
@@ -71,13 +72,13 @@ GH_TUPLE=	\
 		golang:crypto:ceb1ce70b4fa:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:6944b10bf410:golang_image/vendor/golang.org/x/image \
-		golang:net:2871e0cb64e4:golang_net/vendor/golang.org/x/net \
+		golang:net:c690dde0001d:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:9780585627b5:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:9388b58f7150:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.1.10:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.1.11:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:2f41105eb62f:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cloud:v0.24.0:google_go_cloud/vendor/gocloud.dev \
 		google:go-cmp:v0.5.8:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -95,6 +96,7 @@ GH_TUPLE=	\
 		grpc:grpc-go:v1.46.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hairyhenderson:go-codeowners:cdc7c0759690:hairyhenderson_go_codeowners/vendor/github.com/hairyhenderson/go-codeowners \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
+		invopop:yaml:v0.1.0:invopop_yaml/vendor/github.com/invopop/yaml \
 		jdkato:prose:v1.2.1:jdkato_prose/vendor/github.com/jdkato/prose \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
@@ -110,9 +112,9 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.5.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		muesli:smartcrop:v0.3.0:muesli_smartcrop/vendor/github.com/muesli/smartcrop \
 		nfnt:resize:83c6a9932646:nfnt_resize/vendor/github.com/nfnt/resize \
-		niklasfasching:go-org:v1.6.2:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
+		niklasfasching:go-org:v1.6.5:niklasfasching_go_org/vendor/github.com/niklasfasching/go-org \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
-		pelletier:go-toml:v2.0.1:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
+		pelletier:go-toml:v2.0.2:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		protocolbuffers:protobuf-go:v1.28.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rogpeppe:go-internal:v1.8.1:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
@@ -124,8 +126,8 @@ GH_TUPLE=	\
 		spf13:fsync:v0.9.0:spf13_fsync/vendor/github.com/spf13/fsync \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		tdewolff:minify:v2.11.5:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
-		tdewolff:parse:v2.5.31:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
+		tdewolff:minify:v2.11.10:tdewolff_minify_v2/vendor/github.com/tdewolff/minify/v2 \
+		tdewolff:parse:v2.6.0:tdewolff_parse_v2/vendor/github.com/tdewolff/parse/v2 \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		yuin:goldmark:v1.4.12:yuin_goldmark/vendor/github.com/yuin/goldmark
 
