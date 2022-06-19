@@ -271,7 +271,7 @@ post-patch-FASTDFS-on:
 		${WRKSRC_fastdfs}/src/config
 
 post-patch-GRIDFS-on:
-	@${REINPLACE_CMD} 's!%%LOCALBASE%%!${LOCALBASE}!g' \
+	@${REINPLACE_CMD} 's!\/usr!${LOCALBASE}!g' \
 		${WRKSRC_gridfs}/nginx-gridfs/config
 
 post-patch-HTTP_AUTH_KRB5-on:
