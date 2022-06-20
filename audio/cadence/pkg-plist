@@ -12,7 +12,7 @@ bin/catarina
 bin/catia
 bin/claudia
 bin/claudia-launcher
-etc/X11/xinit/xinitrc.d/61cadence-session-inject
+etc/X11/xinit/xinitrc.d/61-cadence-session-inject.sh
 etc/xdg/autostart/cadence-session-start.desktop
 share/applications/cadence.desktop
 share/applications/catarina.desktop
