@@ -1,7 +1,7 @@
 # Created by: Alexander Botero-Lowry <alexbl@FreeBSD.org>
 
 PORTNAME=	magic
-PORTVERSION=	5.41
+PORTVERSION=	5.42
 CATEGORIES=	devel python
 MASTER_SITES=	https://astron.com/pub/file/ \
 		ftp://ftp.astron.com/pub/file/ \
