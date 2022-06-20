@@ -559,6 +559,7 @@
     SUBDIR += dyncall
     SUBDIR += e00compr
     SUBDIR += eastl
+    SUBDIR += easy-profiler
     SUBDIR += easyexif
     SUBDIR += easygit
     SUBDIR += easyloggingpp

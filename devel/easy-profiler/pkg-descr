@@ -1,0 +1,8 @@
+Lightweight cross-platform profiler library for C++.
+
+You can profile any function in you code. Furthermore this library
+provide measuring time of any block of code. For example, information
+for 12 millions of blocks is using less than 300Mb of memory. Working
+profiler slows your application execution for only 1-2%.
+
+WWW: https://github.com/yse/easy_profiler
