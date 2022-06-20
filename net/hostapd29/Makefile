@@ -5,6 +5,7 @@ PORTVERSION=	2.9
 PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	https://w1.fi/releases/
+PKGNAMESUFFIX=	29
 
 PATCH_SITES=	https://w1.fi/security/2020-1/
 PATCHFILES=	0001-WPS-UPnP-Do-not-allow-event-subscriptions-with-URLs-.patch:-p1 \
