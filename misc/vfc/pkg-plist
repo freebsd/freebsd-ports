@@ -1,0 +1,13 @@
+bin/vfc
+include/VFC/Config.h
+include/VFC/Converter.h
+include/VFC/Export.h
+include/VFC/IndexData.h
+include/VFC/VertexFormat.h
+include/VFC/VertexValue.h
+lib/cmake/VFC/VFCConfig.cmake
+lib/cmake/VFC/VFCConfigVersion.cmake
+lib/cmake/VFC/VFCTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/VFC/VFCTargets.cmake
+lib/libvfc.so
+lib/libvfc.so.2.0.3
