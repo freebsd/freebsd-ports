@@ -1,3 +1,42 @@
+  <vuln vid="ad37a349-ebb7-11ec-b9f7-21427354249d">
+    <topic>mitmproxy -- Insufficient Protection against HTTP Request Smuggling</topic>
+    <affects>
+      <package>
+	<name>mitmproxy</name>
+	<range><lt>8.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Zeyu Zhang reports:</p>
+	<blockquote cite="https://github.com/mitmproxy/mitmproxy/commit/b06fb6d157087d526bd02e7aadbe37c56865c71b">
+	  <p>
+	    In mitmproxy 7.0.4 and below, a malicious client or server is able to
+	    perform HTTP request smuggling attacks through mitmproxy. This means
+	    that a malicious client/server could smuggle a request/response through
+	    mitmproxy as part of another request/response's HTTP message body. While
+	    mitmproxy would only see one request, the target server would see
+	    multiple requests. A smuggled request is still captured as part of
+	    another request's body, but it does not appear in the request list and
+	    does not go through the usual mitmproxy event hooks, where users may
+	    have implemented custom access control checks or input sanitization.
+	  </p>
+	  <p>
+	    Unless you use mitmproxy to protect an HTTP/1 service, no action is required.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24766</cvename>
+      <url>https://github.com/mitmproxy/mitmproxy/commit/b06fb6d157087d526bd02e7aadbe37c56865c71b</url>
+    </references>
+    <dates>
+      <discovery>2022-03-21</discovery>
+      <entry>2022-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d1e4f6a-ee4f-11ec-86c2-485b3931c969">
     <topic>Tor - Unspecified high severity vulnerability</topic>
     <affects>
