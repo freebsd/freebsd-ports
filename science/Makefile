@@ -242,6 +242,7 @@
     SUBDIR += phonopy
     SUBDIR += plumed
     SUBDIR += pnetcdf
+    SUBDIR += precice
     SUBDIR += pulseview
     SUBDIR += py-DendroPy
     SUBDIR += py-GPy

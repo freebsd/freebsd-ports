@@ -1,0 +1,16 @@
+bin/binprecice
+bin/precice-tools
+include/precice/SolverInterface.hpp
+include/precice/SolverInterfaceC.h
+include/precice/Tooling.hpp
+include/precice/types.hpp
+lib/cmake/precice/preciceConfig.cmake
+lib/cmake/precice/preciceConfigVersion.cmake
+lib/cmake/precice/preciceTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/precice/preciceTargets.cmake
+lib/libprecice.so
+lib/libprecice.so.2
+lib/libprecice.so.2.4.0
+libdata/pkgconfig/libprecice.pc
+share/lintian/overrides/libprecice2
+share/man/man1/precice-tools.1.gz
