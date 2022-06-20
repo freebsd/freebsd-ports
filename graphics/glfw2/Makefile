@@ -13,6 +13,8 @@ COMMENT=	Portable framework for OpenGL development
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+CONFLICTS_INSTALL=	glfw
+
 USES=		gl tar:bzip2 xorg
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	compile.sh

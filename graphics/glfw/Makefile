@@ -11,6 +11,8 @@ COMMENT=	Portable framework for OpenGL development
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+CONFLICTS_INSTALL=	glfw2
+
 USES=		cmake:insource gl localbase zip
 USE_GL=		glu
 USE_LDCONFIG=	yes
