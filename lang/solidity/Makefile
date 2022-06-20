@@ -1,13 +1,10 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
 
 PORTNAME=	solidity
-PORTVERSION=	0.8.14
+PORTVERSION=	0.8.15
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-
-PATCH_SITES=	https://github.com/ethereum/solidity/commit/
-PATCHFILES=	026e26af998c10ca4e39ab6b1b8e64dbc2fdd910.patch:-p1 # https://github.com/ethereum/solidity/pull/13090
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Solidity Contract-Oriented Programming Language
