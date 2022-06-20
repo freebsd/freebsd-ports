@@ -1,7 +1,7 @@
 #  Created by: Oleg Sidorkin <osidorkin@gmail.com>
 
 PORTNAME=	rss-bridge
-DISTVERSION=	2022-06-10
+DISTVERSION=	2022-06-14
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -13,7 +13,7 @@ LICENSE=	PD
 USES=		php:web
 USE_GITHUB=	yes
 GH_ACCOUNT=	RSS-Bridge
-USE_PHP=	curl json mbstring openssl simplexml
+USE_PHP=	curl json mbstring openssl simplexml zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes
