@@ -1,0 +1,5 @@
+TIMESTAMP = 1655696515
+SHA256 (ARM-software-astc-encoder-3.7_GH0.tar.gz) = f66c38de17e4f212d9f263016a3b68184d6860f724b849d61be904bbfd77be31
+SIZE (ARM-software-astc-encoder-3.7_GH0.tar.gz) = 36638557
+SHA256 (google-googletest-703bd9c_GH0.tar.gz) = 54bef85b53a02b21ed1e784848ea05cbfd78134f8976a7831a956cfebcef7204
+SIZE (google-googletest-703bd9c_GH0.tar.gz) = 904257

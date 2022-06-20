@@ -1,0 +1,13 @@
+- workaround for https://github.com/ARM-software/astc-encoder/issues/345
+
+--- CMakeLists.txt.orig	2022-06-20 03:49:47 UTC
++++ CMakeLists.txt
+@@ -30,7 +30,7 @@ set(CMAKE_CXX_STANDARD 14)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_CXX_EXTENSIONS OFF)
+ set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+-set(PACKAGE_ROOT astcenc)
++set(PACKAGE_ROOT bin)
+ 
+ include(CTest)
+ 
