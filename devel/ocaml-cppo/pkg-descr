@@ -1,13 +1,11 @@
-Cppo is an equivalent of the C preprocessor targeted at the OCaml language
+Cppo is an equivalent of the C preprocessor for OCaml programs. It
+allows the definition of simple macros and file inclusion.
 
-The main purpose of cppo is to provide a lightweight tool for simple
-macro substitution (#define) and file inclusion (#include) for the
-occasional case when this is useful in OCaml. Processing specific
-sections of files by calling external programs is also possible via
-#ext directives.
+Cppo is:
 
-The implementation of cppo relies on the standard library of OCaml and
-on the standard parsing tools Ocamllex and Ocamlyacc, which contribute
-to the robustness of cppo across OCaml versions.
+- more OCaml-friendly than cpp
+- easy to learn without consulting a manual
+- reasonably fast
+- simple to install and to maintain
 
-WWW: http://martin.jambon.free.fr/cppo.html
+WWW: https://github.com/ocaml-community/cppo
