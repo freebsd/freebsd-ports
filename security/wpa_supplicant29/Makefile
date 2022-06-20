@@ -3,6 +3,7 @@ PORTVERSION=	2.9
 PORTREVISION=	11
 CATEGORIES=	security net
 MASTER_SITES=	https://w1.fi/releases/
+PKGNAMESUFFIX=	29
 
 PATCH_SITES=	https://w1.fi/security/2020-1/ \
 		https://w1.fi/security/2021-1/
