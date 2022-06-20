@@ -324,6 +324,7 @@
     SUBDIR += py-pymatgen
     SUBDIR += py-pymol
     SUBDIR += py-pyosf
+    SUBDIR += py-pyprecice
     SUBDIR += py-pysal
     SUBDIR += py-pyscf
     SUBDIR += py-pyteomics
