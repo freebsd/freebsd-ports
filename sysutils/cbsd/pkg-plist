@@ -238,6 +238,7 @@ cbsd/etc/defaults/vm-linux-cloud-Debian-x86-9.conf
 cbsd/etc/defaults/vm-linux-cloud-Fedora-36-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-FreePBX-16-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-HomeAssistant-8.conf
+cbsd/etc/defaults/vm-linux-cloud-Kali-2022-amd64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-8-x86_64.conf
@@ -1157,6 +1158,7 @@ cbsd/upgrade/pre-patch-12.0.5.0
 cbsd/upgrade/pre-patch-12.0.5.1
 cbsd/upgrade/pre-patch-12.0.6.0
 cbsd/upgrade/pre-patch-12.0.6.1
+cbsd/upgrade/pre-patch-13.1.1.0
 cbsd/upgrade/pre-patch-12.1.10.0
 cbsd/upgrade/pre-patch-12.1.10.1
 cbsd/upgrade/pre-patch-12.1.10.2
