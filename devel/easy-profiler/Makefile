@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-g3104dd4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Library and tool for converting vertex formats
+COMMENT=	Lightweight profiler library for C++
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
