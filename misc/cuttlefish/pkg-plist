@@ -1,0 +1,12 @@
+bin/cuttlefish
+include/cuttlefish/Color.h
+include/cuttlefish/Config.h
+include/cuttlefish/Export.h
+include/cuttlefish/Image.h
+include/cuttlefish/Texture.h
+lib/cmake/Cuttlefish/CuttlefishConfig.cmake
+lib/cmake/Cuttlefish/CuttlefishConfigVersion.cmake
+lib/cmake/Cuttlefish/CuttlefishTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Cuttlefish/CuttlefishTargets.cmake
+lib/libcuttlefish.so
+lib/libcuttlefish.so.2.5.5
