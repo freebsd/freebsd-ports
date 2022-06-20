@@ -1,7 +1,7 @@
 # Created by: Guerkan Karaman <gk.freebsd@googlemail.com>
 
 PORTNAME=	ipxe
-DISTVERSION=	g20220406
+DISTVERSION=	g20220610
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -20,7 +20,7 @@ USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
 USE_GCC=	yes:build
 USE_GITHUB=	yes
-GH_TAGNAME=	70995397e5bdfd34
+GH_TAGNAME=	d3c8944d5c3ab262
 USE_PERL5=	build
 MAKE_ARGS=	AR=${AR} \
 		ARCH=${ARCH:S/amd64/i386/} \
