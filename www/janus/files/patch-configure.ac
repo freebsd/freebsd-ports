@@ -1,4 +1,4 @@
---- configure.ac.orig	2022-05-23 09:14:54 UTC
+--- configure.ac.orig	2022-06-20 10:25:02 UTC
 +++ configure.ac
 @@ -359,8 +359,6 @@ freebsd*)
                      libconfig
@@ -9,24 +9,6 @@
                      zlib"
  esac
  PKG_CHECK_MODULES([JANUS],"$PKGCHECKMODULES")
-@@ -559,7 +557,7 @@ AC_CHECK_LIB([websockets],
- 			   AS_IF([test "x$enable_websockets" != "xno"],
- 			   [
- 				  AC_DEFINE(HAVE_WEBSOCKETS)
--				  WS_MANUAL_LIBS="-lwebsockets -lresolv"
-+				  WS_MANUAL_LIBS="-lwebsockets"
- 				  enable_websockets=yes
- 				  AC_CHECK_LIB([websockets],
- 							   [lws_get_peer_simple],
-@@ -569,7 +567,7 @@ AC_CHECK_LIB([websockets],
-                AS_IF([test "x$enable_websockets_event_handler" != "xno"],
-                [
-                  AC_DEFINE(HAVE_WSEVH)
--                 WS_MANUAL_LIBS="-lwebsockets -lresolv"
-+                 WS_MANUAL_LIBS="-lwebsockets"
-                  enable_websockets_event_handler=yes
-                ])
- 			 ],
 @@ -956,8 +954,6 @@ AS_IF([test "x$enable_post_processing" = "xyes"],
                           [
                             glib-2.0 >= $glib_version

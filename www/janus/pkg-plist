@@ -153,6 +153,7 @@ share/doc/janus-gateway/README.md
 %%DATADIR%%/demos/recordplaytest.js
 %%DATADIR%%/demos/screensharingtest.html
 %%DATADIR%%/demos/screensharingtest.js
+%%DATADIR%%/demos/settings.js
 %%DATADIR%%/demos/siptest.html
 %%DATADIR%%/demos/siptest.js
 %%DATADIR%%/demos/streamingtest.html
