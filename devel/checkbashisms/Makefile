@@ -1,5 +1,5 @@
 PORTNAME=	checkbashisms
-DISTVERSION=	2.22.1
+DISTVERSION=	2.22.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	DEBIAN/pool/main/d/devscripts/
 DISTNAME=	devscripts_${PORTVERSION}
