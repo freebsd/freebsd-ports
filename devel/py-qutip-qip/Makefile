@@ -1,5 +1,5 @@
 PORTNAME=	qutip-qip
-DISTVERSION=	0.2.1
+DISTVERSION=	0.2.2
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,11 +10,11 @@ COMMENT=	QuTiP quantum information processing package
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}qutip>=4.5:devel/py-qutip@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qutip>=4.6:devel/py-qutip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS}
-RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.7+
 USE_PYTHON=	distutils autoplist
