@@ -1,7 +1,7 @@
 # Created by: Jason Helfman <jgh@FreeBSD.org>
 
 PORTNAME=	libvirt-java
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	devel java
 MASTER_SITES=	http://libvirt.org/sources/java/ \
 		ftp://libvirt.org/libvirt/java/
