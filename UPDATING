@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220620:
+AFFECTS: users of www/selenium
+  AUTHOR: fernape@FreeBSD.org
+
+  The port has changed startup args so if you are using selenium_args= in
+  rc.conf you need to add the parameter "standalone" manually.
+
 20220616:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org
