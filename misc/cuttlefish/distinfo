@@ -1,6 +1,6 @@
-TIMESTAMP = 1655759044
-SHA256 (akb825-Cuttlefish-v2.5.5-2-g7e3c57c_GH0.tar.gz) = 775bd8a4c8f1a739980c89e67631972133b22e36a62d5a588470492dd3d4d50e
-SIZE (akb825-Cuttlefish-v2.5.5-2-g7e3c57c_GH0.tar.gz) = 110842
+TIMESTAMP = 1655766592
+SHA256 (akb825-Cuttlefish-v2.5.6_GH0.tar.gz) = cd63c6be4c289db3b66500ce2f9693850af2c432e969f9ed2ca2a5000d2e8725
+SIZE (akb825-Cuttlefish-v2.5.6_GH0.tar.gz) = 110791
 SHA256 (akb825-freeimage-dae76e95cd4a9fbb58b0a6d635fd3c3f4b222076_GH0.tar.gz) = d0648ffca8a71ff988344285f2c7f29c709b6e62c6fcb8edaaad4a189d9de8dc
 SIZE (akb825-freeimage-dae76e95cd4a9fbb58b0a6d635fd3c3f4b222076_GH0.tar.gz) = 7248018
 SHA256 (akb825-etc2comp-10ec1fc4987c5a81c48c6bf6319bb77389a5f23a_GH0.tar.gz) = 8aae8f87e0f1e79c2bde57254e0b85273d0d036f381f549ce148bc3fbd785b02
