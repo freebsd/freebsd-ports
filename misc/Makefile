@@ -82,6 +82,7 @@
     SUBDIR += dynomite
     SUBDIR += e2fsprogs-libblkid
     SUBDIR += e2fsprogs-libuuid
+    SUBDIR += edfbrowser
     SUBDIR += edflib
     SUBDIR += elixir-mime
     SUBDIR += elixir-uuid
