@@ -86,7 +86,7 @@ man/man1/verilator_coverage.1.gz
 %%DATADIR%%/include/verilated_threads.h
 %%DATADIR%%/include/verilated_trace.h
 %%DATADIR%%/include/verilated_trace_defs.h
-%%DATADIR%%/include/verilated_trace_imp.cpp
+%%DATADIR%%/include/verilated_trace_imp.h
 %%DATADIR%%/include/verilated_types.h
 %%DATADIR%%/include/verilated_vcd_c.cpp
 %%DATADIR%%/include/verilated_vcd_c.h
