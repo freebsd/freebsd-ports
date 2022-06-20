@@ -1,6 +1,5 @@
 PORTNAME=	sundials
-DISTVERSION=	5.7.0
-PORTREVISION=	1
+DISTVERSION=	6.2.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/LLNL/sundials/releases/download/v${DISTVERSION}/
 
@@ -10,17 +9,18 @@ COMMENT=	SUite of Nonlinear and DIfferential/ALgebraic Equation Solvers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:noninja fortran localbase:ldflags python:build # ninja doesn't support fortran
+USES=		cmake:testing fortran localbase:ldflags python:build
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DENABLE_PTHREAD:BOOL=ON \
-		-DBUILD_STATIC_LIBS:BOOL=OFF
+CMAKE_ARGS=		-DENABLE_PTHREAD:BOOL=ON \
+			-DBUILD_STATIC_LIBS:BOOL=OFF
+CMAKE_OFF=		EXAMPLES_ENABLE_C EXAMPLES_ENABLE_CXX EXAMPLES_ENABLE_F77 EXAMPLES_ENABLE_F90
+CMAKE_TESTING_ON=	SUNDIALS_TEST_UNITTESTS \
+			EXAMPLES_ENABLE_C EXAMPLES_ENABLE_CXX EXAMPLES_ENABLE_F77 EXAMPLES_ENABLE_F90
 
 FCFLAGS:=	${FFLAGS} # project checks that these flags are equal
 
-TEST_TARGET=	test
-
-OPTIONS_DEFINE=		BLAS EXAMPLES LAPACK MPI # OPENMP detection is broken in cmake: https://gitlab.kitware.com/cmake/cmake/issues/17474
+OPTIONS_DEFINE=		BLAS LAPACK MPI # OPENMP detection is broken in cmake: https://gitlab.kitware.com/cmake/cmake/issues/17474; EXAMPLES are broken on some systems due to CLOCK_MONOTONIC
 #OPTIONS_DEFAULT=	LAPACK # LAPACK is broken
 OPTIONS_GROUP=		VECTORS
 OPTIONS_GROUP_VECTORS=	HYPRE PETSC
@@ -32,8 +32,9 @@ BLAS_CMAKE_BOOL=	BLAS_ENABLE
 BLAS_USES=		blaslapack:openblas
 BLAS_CMAKE_ON=		-DFREEBSD_GCC_DIR:STRING=${LOCALBASE}/lib/gcc${GCC_DEFAULT:S/.//} # assumes that fortran:gcc is used
 
-EXAMPLES_CMAKE_BOOL=	EXAMPLES_ENABLE_C EXAMPLES_ENABLE_CXX EXAMPLES_ENABLE_F77 EXAMPLES_ENABLE_F90
-EXAMPLES_CMAKE_ON=	-DEXAMPLES_INSTALL_PATH=${EXAMPLESDIR}
+#EXAMPLES_CMAKE_BOOL=	EXAMPLES_ENABLE_C EXAMPLES_ENABLE_CXX EXAMPLES_ENABLE_F77 EXAMPLES_ENABLE_F90
+#EXAMPLES_CMAKE_ON=	-DEXAMPLES_INSTALL_PATH=${EXAMPLESDIR}
+#PORTEXAMPLES=		*
 
 HYPRE_DESC=		HYPRE vectors support (also enables MPI)
 HYPRE_CMAKE_BOOL=	ENABLE_HYPRE
@@ -62,8 +63,6 @@ PETSC_LIB_DEPENDS=	libpetsc.so:science/PETSc
 PETSC_IMPLIES=		MPI
 PETSC_PREVENTS=		LAPACK  # error: Incompatible sunindextype for LAPACK; disable LAPACK and rebuild
 PETSC_BROKEN=		ERROR: PETSc not functional due to index size mismatch: SUNDIALS_INDEX_SIZE=64, but PETSc was built with 32-bit indices
-
-PORTEXAMPLES=	*
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/include/sundials/LICENSE
