@@ -560,6 +560,7 @@
     SUBDIR += movit
     SUBDIR += mozjpeg
     SUBDIR += mscgen
+    SUBDIR += msl
     SUBDIR += mtpaint
     SUBDIR += multican
     SUBDIR += mupdf
