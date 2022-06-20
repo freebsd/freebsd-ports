@@ -7326,6 +7326,7 @@
     SUBDIR += vexcl
     SUBDIR += viewvc-devel
     SUBDIR += violet
+    SUBDIR += vipack
     SUBDIR += vitables
     SUBDIR += volk
     SUBDIR += vstr
