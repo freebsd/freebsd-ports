@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	admisc
-DISTVERSION=	0.28
+DISTVERSION=	0.29
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
