@@ -1,7 +1,7 @@
 # Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
 
 PORTNAME=	py
-PORTVERSION=	1.9.0
+PORTVERSION=	1.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
