@@ -52,6 +52,7 @@
     SUBDIR += dbow
     SUBDIR += dbtool
     SUBDIR += dbview
+    SUBDIR += duckdb
     SUBDIR += ejdb
     SUBDIR += elixir-calecto
     SUBDIR += elixir-db_connection
