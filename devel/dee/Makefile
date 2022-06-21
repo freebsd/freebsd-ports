@@ -2,7 +2,7 @@
 
 PORTNAME=	dee
 PORTVERSION=	1.2.7
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/151383425/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
@@ -20,16 +20,16 @@ LIB_DEPENDS=	libicutu.so:devel/icu
 
 USES=		compiler:c11 gmake gnome libtool localbase pathfix pkgconfig \
 		python:3.5+
-GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 introspection:build pygobject3
-USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--disable-gtk-doc-html \
-	--disable-tests \
-	--disable-gcov \
-	--enable-introspection=yes \
-	--without-html-dir
-
+CONFIGURE_ARGS=	--disable-gcov \
+		--disable-gtk-doc-html \
+		--disable-tests \
+		--enable-introspection=yes \
+		--without-html-dir
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 MAKE_ARGS=	PYTHON="${PYTHON_CMD}"
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
