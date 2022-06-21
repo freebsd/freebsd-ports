@@ -20,7 +20,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # Tests also need bzr, git, otherwise they fail
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>=0:devel/py-freezegun@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>=0,1:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-rerunfailures>=0:devel/py-pytest-rerunfailures@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=0:devel/py-pytest-xdist@${PY_FLAVOR} \
@@ -36,10 +35,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${
 
 USES=		cpe python:3.7+ shebangfix
 CPE_VENDOR=	pypa
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 MAKE_ENV=	PYTHONPATH=${WRKSRC}/src/
 NO_ARCH=	yes
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pypa
@@ -64,12 +64,11 @@ post-install-DOCS-on:
 	(cd ${WRKSRC}/build/sphinx/html && \
 	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -name objects.inv")
 
-do-test:
+pre-test:
 	${MKDIR} ${WRKSRC}/tests/data/common_wheels
 	# the tests check for these wheel files, so fetch them and copy them in
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/setuptools-62.1.0-py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/wheel-0.37.1-py2.py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
 	${LN} -sf ${LOCALBASE}/bin/pip ${LOCALBASE}/bin/pip3
-	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} ${PYTHON_CMD} -m pytest -rs -v
 
 .include <bsd.port.mk>
