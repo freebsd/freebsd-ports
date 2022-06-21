@@ -32,6 +32,10 @@ USES+=		compiler:gcc-c++11-lib
 USE_CSTD=	c11
 .endif
 
+post-patch:
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/internal-complibs/
+
 do-test:
 	cd ${TEST_WRKSRC} && ctest
 
