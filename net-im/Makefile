@@ -65,11 +65,6 @@
     SUBDIR += libsignal-client
     SUBDIR += libsignon-glib
     SUBDIR += libstrophe
-    SUBDIR += licq
-    SUBDIR += licq-icq
-    SUBDIR += licq-jabber
-    SUBDIR += licq-osd
-    SUBDIR += licq-qt-gui
     SUBDIR += loudmouth
     SUBDIR += matterbridge
     SUBDIR += matterhorn

@@ -17205,3 +17205,8 @@ science/szip|science/libaec|2022-06-16|Remove obsoleted port. Use science/libaec
 net/pfinger||2022-06-17|Has expired: Unmaintained and dead upstream, consider base fingerd
 biology/mopac|science/mopac|2022-06-19|Move to a proper category
 devel/liblas12||2022-06-21|Has expired: Previously only required by math/saga (now superseeded by math/pdal)
+net-im/licq||2022-06-21|Has expired: Abandonware, project is dead
+net-im/licq-icq||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-jabber||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-osd||2022-06-21|Removed, part of expired net-im/licq
+net-im/licq-qt-gui||2022-06-21|Removed, part of expired net-im/licq

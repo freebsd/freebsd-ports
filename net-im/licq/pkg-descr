@@ -1,7 +1,0 @@
-This is an unofficial ICQ clone, written in C++.
-It is in no way endorsed by Mirabilis, and now is the most full-featured
-ICQ-compatible program with the exception of Java ICQ.
-
-LICENSE: GPL2 or later with execption to link with OpenSSL
-
-WWW: http://www.licq.org/
