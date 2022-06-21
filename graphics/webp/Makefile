@@ -35,7 +35,7 @@ IMGCONV_CONFIGURE_ON=	build_cwebp=yes build_dwebp=yes build_gif2webp=yes build_i
 IMGCONV_LIB_DEPENDS=	libgif.so:graphics/giflib \
 			libpng.so:graphics/png \
 			libtiff.so:graphics/tiff
-INGCONV_USES=		jpeg
+IMGCONV_USES=		jpeg
 X11_CONFIGURE_OFF=	build_vwebp=no
 X11_CONFIGURE_ON=	build_vwebp=yes
 X11_USE=		GL=glut
