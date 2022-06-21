@@ -1,8 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
 
 PORTNAME=	netcdf
-PORTVERSION=	4.8.1
-PORTREVISION=	1
+PORTVERSION=	4.9.0
 DISTVERSIONPREFIX=	c-
 CATEGORIES=	science
 MASTER_SITES=	https://downloads.unidata.ucar.edu/netcdf-c/${PORTVERSION}/ \
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		gmake libtool localbase ncurses pathfix pkgconfig:run
 
-CONFIGURE_ARGS=	--disable-filter-testing \
+CONFIGURE_ARGS=	--disable-filter-testing --disable-libxml2 \
 		--enable-byterange --enable-dap --enable-netcdf-4
 CPPFLAGS+=	-fPIC -DPIC
 GNU_CONFIGURE=	yes
