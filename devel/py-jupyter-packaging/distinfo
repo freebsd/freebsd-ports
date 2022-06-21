@@ -1,3 +1,3 @@
-TIMESTAMP = 1654275869
-SHA256 (jupyter_packaging-0.12.1.tar.gz) = 8ca939a805dbe0c073968e8d5603aba0e7e4130d2e956207a37d98f8bc940d34
-SIZE (jupyter_packaging-0.12.1.tar.gz) = 27813
+TIMESTAMP = 1655829830
+SHA256 (jupyter_packaging-0.12.2.tar.gz) = 0b99eaecf56b9d1d99e7bcb6632d914a8ea5698da40b238ba89227a34157de32
+SIZE (jupyter_packaging-0.12.2.tar.gz) = 27990
