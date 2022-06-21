@@ -1,8 +1,7 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME=	njs
-DISTVERSION=	0.7.4
-PORTREVISION=	2
+DISTVERSION=	0.7.5
 CATEGORIES=	lang www
 
 MAINTAINER=	osa@FreeBSD.org
