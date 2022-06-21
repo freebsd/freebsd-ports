@@ -34,22 +34,13 @@ GL_SITE=	https://gitlab.freedesktop.org
 GL_COMMIT=	1712a7d27444d62f8da8eeedf0840b386a810e96
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 
-OPTIONS_DEFINE=	DRM NVIDIA OPENGL VULKAN X11
+OPTIONS_DEFINE=	DRM OPENGL VULKAN X11
 OPTIONS_DEFAULT=DRM OPENGL VULKAN X11
 OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support
 DRM_LIB_DEPENDS=	libinput.so:x11/libinput
 DRM_VARS=		BACKENDS+="drm libinput"
-
-NVIDIA_DESC=		EGLStreams support for DRM backend (experimental)
-NVIDIA_PATCH_SITES=	https://github.com/danvd/${GL_PROJECT}-eglstreams/commit/:nvidia
-NVIDIA_PATCHFILES=	5bde12a6dbf4.patch:-p1:nvidia # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2769
-NVIDIA_IMPLIES=		DRM OPENGL X11
-NVIDIA_BROKEN=		fails to patch
-.if make(makesum)
-.MAKEFLAGS:		WITH+=NVIDIA
-.endif
 
 OPENGL_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 OPENGL_USE=		GL=egl,glesv2
