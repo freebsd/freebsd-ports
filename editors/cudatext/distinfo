@@ -1,6 +1,6 @@
-TIMESTAMP = 1655529167
-SHA256 (Alexey-T-CudaText-1.166.0_GH0.tar.gz) = a1d93ce10d613a2ed0e98cfa49e5fafca5b21179106e22d18cb183c4b3e15b50
-SIZE (Alexey-T-CudaText-1.166.0_GH0.tar.gz) = 6768414
+TIMESTAMP = 1655768687
+SHA256 (Alexey-T-CudaText-1.166.2_GH0.tar.gz) = 73b346e0e1a62e7faa9e54592a64a2b401cb4594e3f0c213b2444d7649441802
+SIZE (Alexey-T-CudaText-1.166.2_GH0.tar.gz) = 6768259
 SHA256 (bgrabitmap-bgrabitmap-ace7e0e_GH0.tar.gz) = ae3f28596c2a5f44bc468f6c3380fc1ceb27e95afea579f09b1d340c781bbef2
 SIZE (bgrabitmap-bgrabitmap-ace7e0e_GH0.tar.gz) = 6983967
 SHA256 (Alexey-T-Python-for-Lazarus-24d15bb_GH0.tar.gz) = 5ee4a511e6c4cbd8d5105203acbcb04fbeb180160b9cdff7dac2ce0e3cce04f4
@@ -21,5 +21,5 @@ SHA256 (Alexey-T-ATBinHex-Lazarus-c63346b_GH0.tar.gz) = e37ccd44148a7a1e9af8d658
 SIZE (Alexey-T-ATBinHex-Lazarus-c63346b_GH0.tar.gz) = 149520
 SHA256 (Alexey-T-UniqueInstance-753f823_GH0.tar.gz) = 2af99af3ac2696d5e143b67bb5af82dd86649377bf81ac084bd205e77646b3d9
 SIZE (Alexey-T-UniqueInstance-753f823_GH0.tar.gz) = 8328
-SHA256 (Alexey-T-EncConv-7197f21_GH0.tar.gz) = 898018b7e38ca6d1af76446ee8120fe0b51bb1a9273296d6dd0c3a2412ecfafc
-SIZE (Alexey-T-EncConv-7197f21_GH0.tar.gz) = 643232
+SHA256 (Alexey-T-EncConv-061e871_GH0.tar.gz) = e3aacd9479bf3afd970a614b8fc0ac9cd9c2cd2ea501dc23682c78bb1840c1e2
+SIZE (Alexey-T-EncConv-061e871_GH0.tar.gz) = 646528
