@@ -155,11 +155,11 @@
     SUBDIR += py-easygui
     SUBDIR += py-fltk
     SUBDIR += py-guietta
+    SUBDIR += py-python-xlib
     SUBDIR += py-qt5-chart
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
     SUBDIR += py-wxPython4
-    SUBDIR += py-xlib
     SUBDIR += qml-box2d
     SUBDIR += qt5-charts
     SUBDIR += qt5-datavis3d

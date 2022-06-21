@@ -16,7 +16,7 @@ LIB_DEPENDS=	libbamf3.so:sysutils/bamf
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=0:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xlib>=0:x11-toolkits/py-xlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xlib>=0:x11-toolkits/py-python-xlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg@${PY_FLAVOR}
 
 USES=		python:3.7+ autoreconf gettext gmake gnome libtool localbase \
