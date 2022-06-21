@@ -1,8 +1,7 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
 
 PORTNAME=	redis
-PORTVERSION=	3.5.3
-PORTREVISION=	1
+PORTVERSION=	4.3.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +16,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		redis-server:databases/redis
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist concurrent pytest
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 
