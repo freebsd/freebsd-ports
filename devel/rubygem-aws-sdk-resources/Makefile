@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.133.1
+PORTVERSION=	3.135.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -82,6 +82,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-computeoptimizer>=1<2:devel/rubygem-aws-sdk-computeoptimizer \
 		rubygem-aws-sdk-configservice>=1<2:devel/rubygem-aws-sdk-configservice \
 		rubygem-aws-sdk-connect>=1<2:devel/rubygem-aws-sdk-connect \
+		rubygem-aws-sdk-connectcampaignservice>=1<2:devel/rubygem-aws-sdk-connectcampaignservice \
 		rubygem-aws-sdk-connectcontactlens>=1<2:devel/rubygem-aws-sdk-connectcontactlens \
 		rubygem-aws-sdk-connectparticipant>=1<2:devel/rubygem-aws-sdk-connectparticipant \
 		rubygem-aws-sdk-connectwisdomservice>=1<2:devel/rubygem-aws-sdk-connectwisdomservice \
@@ -251,6 +252,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-recyclebin>=1<2:devel/rubygem-aws-sdk-recyclebin \
 		rubygem-aws-sdk-redshift>=1<2:devel/rubygem-aws-sdk-redshift \
 		rubygem-aws-sdk-redshiftdataapiservice>=1<2:devel/rubygem-aws-sdk-redshiftdataapiservice \
+		rubygem-aws-sdk-redshiftserverless>=1<2:devel/rubygem-aws-sdk-redshiftserverless \
 		rubygem-aws-sdk-rekognition>=1<2:devel/rubygem-aws-sdk-rekognition \
 		rubygem-aws-sdk-resiliencehub>=1<2:devel/rubygem-aws-sdk-resiliencehub \
 		rubygem-aws-sdk-resourcegroups>=1<2:devel/rubygem-aws-sdk-resourcegroups \
