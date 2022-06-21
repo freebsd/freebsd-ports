@@ -17204,3 +17204,4 @@ databases/py-arrow|databases/py-apache-arrow|2022-06-12|Rename to avoid conflict
 science/szip|science/libaec|2022-06-16|Remove obsoleted port. Use science/libaec instead
 net/pfinger||2022-06-17|Has expired: Unmaintained and dead upstream, consider base fingerd
 biology/mopac|science/mopac|2022-06-19|Move to a proper category
+devel/liblas12||2022-06-21|Has expired: Previously only required by math/saga (now superseeded by math/pdal)

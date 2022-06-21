@@ -1301,7 +1301,6 @@
     SUBDIR += libklel
     SUBDIR += liblangtag
     SUBDIR += liblas
-    SUBDIR += liblas12
     SUBDIR += liblnk
     SUBDIR += liblockfile
     SUBDIR += liblogging
