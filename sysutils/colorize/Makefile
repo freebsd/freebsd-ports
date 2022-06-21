@@ -13,6 +13,7 @@ LICENSE=	GPLv2+
 
 USES=		shebangfix perl5
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
