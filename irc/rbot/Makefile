@@ -2,7 +2,7 @@
 
 PORTNAME=	rbot
 PORTVERSION=	20160325
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	irc ruby
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tokyocabinet.so:databases/ruby-tokyocabinet 
 		rubygem-mechanize>=0:www/rubygem-mechanize \
 		rubygem-tzinfo>=0:devel/rubygem-tzinfo \
 		rubygem-oauth>=0:net/rubygem-oauth \
-		rubygem-oauth2>=0:net/rubygem-oauth2
+		rubygem-oauth21>=0:net/rubygem-oauth21
 LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
 USES=		cpe
