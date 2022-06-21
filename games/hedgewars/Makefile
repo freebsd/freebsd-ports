@@ -1,6 +1,6 @@
 PORTNAME=	hedgewars
 PORTVERSION=	1.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://www.hedgewars.org/download/releases/ \
 		http://mirror.amdmi3.ru/distfiles/

@@ -2,7 +2,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	3.2.2
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -38,12 +38,13 @@ FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 .if ${ARCH} == "i386"
 PPNAME=		ppc386
 FPC_ARCH=	i386
-OPT=		"-dFPC_USE_LIBC"
+#OPT=		"-dFPC_USE_LIBC"
 PLIST_SUB+=	FPC_I386="" \
 		FPC_AMD64="@comment "
 .elif ${ARCH} == "amd64"
 PPNAME=		ppcx64
 FPC_ARCH=	x86_64
+#OPT=		"-dFPC_USE_LIBC"
 PLIST_SUB+=	FPC_I386="@comment " \
 		FPC_AMD64=""
 .endif
