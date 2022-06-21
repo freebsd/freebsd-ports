@@ -4,5 +4,5 @@ lib/cmake/mad/madConfigVersion.cmake
 lib/cmake/mad/madTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mad/madTargets.cmake
 lib/libmad.so
-lib/libmad.so.0.16.0
+lib/libmad.so.%%PORTVERSION%%
 libdata/pkgconfig/libmad.pc
