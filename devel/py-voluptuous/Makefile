@@ -10,14 +10,9 @@ COMMENT=	Python data validation library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
-
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils nose
 
 NO_ARCH=	yes
-
-do-test:
-	@cd ${WRKSRC} && nosetests-${PYTHON_VER}
 
 .include <bsd.port.mk>
