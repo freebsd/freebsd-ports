@@ -3,8 +3,8 @@ PORTVERSION=	3.15.1.1
 PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://dr-download.ti.com/software-development/driver-or-library/MD-4vnqcP1Wk4/${PORTVERSION}/ \
-		http://www.ti.com/lit/ug/slau320aj/:doc1 \
-		http://www.ti.com/lit/ug/slau656d/:doc2
+		LOCAL/lev:doc1 \
+		LOCAL/lev:doc2
 DISTFILES=	MSPDebugStack_OS_Package_${PORTVERSION:S/./_/g}.zip \
 		slau320aj.pdf:doc1 \
 		slau656d.pdf:doc2
@@ -22,9 +22,6 @@ USES=		compiler:c++11-lib dos2unix gmake zip:infozip
 USE_LDCONFIG=	yes
 
 DOS2UNIX_REGEX=	.*/Makefile|.*\.(cpp|h)
-
-# TI bans FreeBSD fetch and wget for unknown reason
-FETCH_ARGS+=	--user-agent=Mozilla
 
 MAKE_ARGS=	BOOST_DIR=${LOCALBASE} \
 		HIDAPI_DIR=${LOCALBASE}
