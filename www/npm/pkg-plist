@@ -331,6 +331,7 @@ lib/node_modules/npm/man/man1/npm-prefix.1.gz
 lib/node_modules/npm/man/man1/npm-profile.1.gz
 lib/node_modules/npm/man/man1/npm-prune.1.gz
 lib/node_modules/npm/man/man1/npm-publish.1.gz
+lib/node_modules/npm/man/man1/npm-query.1.gz
 lib/node_modules/npm/man/man1/npm-rebuild.1.gz
 lib/node_modules/npm/man/man1/npm-repo.1.gz
 lib/node_modules/npm/man/man1/npm-restart.1.gz
@@ -362,6 +363,7 @@ lib/node_modules/npm/man/man5/npmrc.5.gz
 lib/node_modules/npm/man/man5/package-json.5.gz
 lib/node_modules/npm/man/man5/package-lock-json.5.gz
 lib/node_modules/npm/man/man7/config.7.gz
+lib/node_modules/npm/man/man7/dependency-selectors.7.gz
 lib/node_modules/npm/man/man7/developers.7.gz
 lib/node_modules/npm/man/man7/logging.7.gz
 lib/node_modules/npm/man/man7/orgs.7.gz
