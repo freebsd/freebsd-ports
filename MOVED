@@ -17211,3 +17211,4 @@ net-im/licq-jabber||2022-06-21|Removed, part of expired net-im/licq
 net-im/licq-osd||2022-06-21|Removed, part of expired net-im/licq
 net-im/licq-qt-gui||2022-06-21|Removed, part of expired net-im/licq
 x11-toolkits/py-xlib|x11-toolkits/py-python-xlib|2022-06-21|Python ports compliance
+www/openarc|mail/openarc|2022-06-21|Move to a proper category

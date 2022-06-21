@@ -480,7 +480,6 @@
     SUBDIR += onionbalance
     SUBDIR += onionshare
     SUBDIR += onlyoffice-documentserver
-    SUBDIR += openarc
     SUBDIR += opencart
     SUBDIR += openresty
     SUBDIR += orangehrm

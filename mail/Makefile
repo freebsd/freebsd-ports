@@ -263,6 +263,7 @@
     SUBDIR += notmuch-emacs
     SUBDIR += notmuch-mutt
     SUBDIR += nullmailer
+    SUBDIR += openarc
     SUBDIR += opendkim
     SUBDIR += opendmarc
     SUBDIR += opensmtpd
