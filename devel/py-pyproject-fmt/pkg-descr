@@ -1,0 +1,4 @@
+pyproject-fmt applies a consistent format to your pyproject.toml file with
+comment support. It can be used as a CLI tool or a pre-commit hook.
+
+WWW: https://github.com/tox-dev/pyproject-fmt
