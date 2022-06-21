@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	gsasl
-PORTVERSION=	1.10.0
+PORTVERSION=	2.0.0
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
@@ -23,11 +23,15 @@ INFO=		gsasl
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
+DOCS_USES=		makeinfo
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
+post-build-DOCS-on:
+	cd ${WRKSRC}/doc && ${MAKE_CMD} gsasl.html
+
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/gsasl.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

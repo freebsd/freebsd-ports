@@ -1,11 +1,11 @@
---- Makefile.in.orig	2021-01-01 16:32:52 UTC
+--- Makefile.in.orig	2022-06-20 15:57:22 UTC
 +++ Makefile.in
-@@ -1580,7 +1580,7 @@ target_alias = @target_alias@
- top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
+@@ -1855,7 +1855,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --with-gssapi-impl=no
+ ACLOCAL_AMFLAGS = -I m4 -I lib/m4
 -SUBDIRS = lib po gl src examples tests doc gltests
 +SUBDIRS = po gl src examples tests doc gltests # lib
- EXTRA_DIST = cfg.mk maint.mk .clcopying
- ACLOCAL_AMFLAGS = -I m4
- DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --disable-obsolete --with-gssapi-impl=no
+ 
+ # git-version-gen
+ EXTRA_DIST = cfg.mk maint.mk build-aux/git2cl m4/gnulib-cache.m4 \
