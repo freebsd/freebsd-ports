@@ -25,10 +25,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${ACME_VERSION},1:security/py-acme@${P
 		${PYTHON_PKGNAMEPREFIX}pytz>2019.3,1:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.component>0:devel/py-zope.component@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 SUB_FILES=	500.certbot pkg-message
@@ -66,9 +65,6 @@ post-install-MANPAGES-on:
 		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/certbot.7 \
 		${STAGEDIR}${PREFIX}/share/man/man7
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
 .include "${.CURDIR}/../py-acme/version.mk"
 .include <bsd.port.mk>
