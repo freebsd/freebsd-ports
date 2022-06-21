@@ -1,0 +1,6 @@
+The pyina package provides several basic tools to make MPI-based parallel
+computing more accessable to the end user. The goal of pyina is to allow the
+user to extend their own code to MPI-based parallel computing with minimal
+refactoring.
+
+WWW: https://github.com/uqfoundation/pyina
