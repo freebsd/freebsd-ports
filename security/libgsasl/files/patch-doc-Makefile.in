@@ -1,34 +1,25 @@
---- doc/Makefile.in.orig	2021-01-01 16:35:59 UTC
+--- doc/Makefile.in.orig	2022-06-20 15:56:39 UTC
 +++ doc/Makefile.in
-@@ -289,13 +289,13 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+@@ -293,13 +293,13 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
  am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
  am__v_texidevnull_0 = > /dev/null
  am__v_texidevnull_1 = 
 -INFO_DEPS = $(srcdir)/gsasl.info
-+INFO_DEPS = 
- TEXINFO_TEX = $(top_srcdir)/lib/build-aux/texinfo.tex
- am__TEXINFO_TEX_DIR = $(top_srcdir)/lib/build-aux
++INFO_DEPS =
+ TEXINFO_TEX = $(top_srcdir)/build-aux/texinfo.tex
+ am__TEXINFO_TEX_DIR = $(top_srcdir)/build-aux
  DVIS = gsasl.dvi
  PDFS = gsasl.pdf
  PSS = gsasl.ps
 -HTMLS = gsasl.html
-+HTMLS = 
++HTMLS =
  TEXINFOS = gsasl.texi
  TEXI2PDF = $(TEXI2DVI) --pdf --batch
  MAKEINFOHTML = $(MAKEINFO) --html
-@@ -1656,7 +1656,7 @@ top_srcdir = @top_srcdir@
- SUBDIRS = cyclo $(am__append_1)
- EXTRA_DIST = gdoc \
- 	gsasl-controlflow.dia gsasl-controlflow2.dia gsasl-abstraction.dia \
--	gsasl.html gsasl.ps gsasl.pdf texinfo.css \
-+	texinfo.css \
- 	doxygen/Doxyfile.in doxygen/gdoc2doxygen
+@@ -1947,7 +1947,7 @@ AM_MAKEINFOFLAGS = -I $(top_srcdir)/examples \
  
- info_TEXINFOS = gsasl.texi
-@@ -1681,7 +1681,7 @@ TEXI2DVI = texi2dvi $(AM_MAKEINFOFLAGS)
- AM_MAKEINFOHTMLFLAGS = $(AM_MAKEINFOFLAGS) \
- 	--no-split --number-sections --css-include=texinfo.css
- 
+ TEXI2DVI = texi2dvi $(AM_MAKEINFOFLAGS)
+ AM_MAKEINFOHTMLFLAGS = --no-split $(AM_MAKEINFOFLAGS)
 -dist_man_MANS = gsasl.1 $(gdoc_MANS)
 +dist_man_MANS = $(gdoc_MANS)
  MAINTAINERCLEANFILES = $(dist_man_MANS)
