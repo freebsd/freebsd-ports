@@ -19,7 +19,7 @@ CMAKE_TESTING_ON=	BUILD_TESTS
 
 CMAKE_TESTING_TARGET=	gtest
 
-post-test: # run tests, many tests fail: https://github.com/pyomeca/ezc3d/issues/257
-	@cd ${WRKSRC} && ${TEST_WRKSRC}/test/ezc3d_test
+post-test:
+	@cd ${TEST_WRKSRC}/test && ./ezc3d_test
 
 .include <bsd.port.mk>
