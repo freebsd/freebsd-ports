@@ -23,6 +23,9 @@ USE_LDCONFIG=	yes
 
 DOS2UNIX_REGEX=	.*/Makefile|.*\.(cpp|h)
 
+# TI bans FreeBSD fetch and wget for unknown reason
+FETCH_ARGS+=	--user-agent=Mozilla
+
 MAKE_ARGS=	BOOST_DIR=${LOCALBASE} \
 		HIDAPI_DIR=${LOCALBASE}
 
