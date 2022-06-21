@@ -1,7 +1,7 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
 
 PORTNAME=	swell-foop
-PORTVERSION=	41.0.1
+PORTVERSION=	41.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome

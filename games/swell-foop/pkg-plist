@@ -249,6 +249,7 @@ share/icons/hicolor/32x32/apps/org.gnome.SwellFoop.png
 share/icons/hicolor/48x48/apps/org.gnome.SwellFoop.png
 share/icons/hicolor/512x512/apps/org.gnome.SwellFoop.png
 share/icons/hicolor/symbolic/apps/org.gnome.SwellFoop-symbolic.svg
+share/locale/ab/LC_MESSAGES/swell-foop.mo
 share/locale/af/LC_MESSAGES/swell-foop.mo
 share/locale/am/LC_MESSAGES/swell-foop.mo
 share/locale/an/LC_MESSAGES/swell-foop.mo
