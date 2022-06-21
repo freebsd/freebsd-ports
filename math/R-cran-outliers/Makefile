@@ -1,13 +1,15 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	outliers
-PORTVERSION=	0.14
-PORTREVISION=	9
+DISTVERSION=	0.15
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Collection of some tests commonly used for identifying outliers
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	multi
 
 USES=	cran:auto-plist
 
