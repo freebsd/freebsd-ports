@@ -1,0 +1,7 @@
+Rash is an extension to Hashie. Rash subclasses Hashie::Mash to convert all keys
+in the hash to underscore. The purpose of this is when working w/ Java (or any
+other apis) that return hashes (including nested) that have camelCased keys. You
+will now be able to access those keys through underscored key names (camelCase
+still available).
+
+WWW: https://github.com/shishi/rash_alt
