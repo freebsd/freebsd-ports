@@ -27,6 +27,7 @@ setup(
         'matplotlib-inline>=0.1',
         'nest-asyncio',
         'packaging',
+        'pyzmq>=17',
         'psutil',
         'tornado>=6.1',
         'traitlets>=5.1.0',
