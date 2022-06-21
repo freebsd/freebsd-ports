@@ -7,13 +7,14 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Shader language based off GLSL
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	flatc:devel/flatbuffers
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		cmake:testing compiler:c++11-lang python:3.6+,build
 
-CMAKE_ON=	BUILD_SHARED_LIBS MSL_SHARED # shared libraries are broken, see https://github.com/akb825/ModularShaderLanguage/issues/6
+CMAKE_ON=	BUILD_SHARED_LIBS MSL_SHARED
 CMAKE_OFF=	SPIRV_TOOLS_BUILD_STATIC
 CMAKE_OFF=	MSL_BUILD_TESTS MSL_BUILD_DOCS
 CMAKE_TESTING_ON=	MSL_BUILD_TESTS
