@@ -1,3 +1,28 @@
+  <vuln vid="482456fb-e9af-11ec-93b6-318d1419ea39">
+    <topic> Security Vulnerability found in ExifTool leading to RCE </topic>
+    <affects>
+      <package>
+	<name>p5-Image-ExifTool</name>
+	<range><lt>12.38</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian Security tracker reports:</p>
+	<blockquote cite="https://security-tracker.debian.org/tracker/CVE-2022-23935">
+	  <p>ExifTool.pm in ExifTool before 12.38 mishandles a file special characters check, leading to command injection</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23935</cvename>
+      <url>https://www.cvedetails.com/cve/CVE-2022-23935</url>
+    </references>
+    <dates>
+      <discovery>2022-01-25</discovery>
+      <entry>2022-06-11</entry>
+    </dates>
+  </vuln>
   <vuln vid="ad37a349-ebb7-11ec-b9f7-21427354249d">
     <topic>mitmproxy -- Insufficient Protection against HTTP Request Smuggling</topic>
     <affects>
