@@ -1,7 +1,7 @@
 # Created by: Johannes Jost Meixner <johannes@perceivon.net>
 
 PORTNAME=	msrest
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
