@@ -1,4 +1,4 @@
-TIMESTAMP = 1649846429
+TIMESTAMP = 1654893674
 SHA256 (rust/crates/addr2line-0.17.0.crate) = b9ecd88a8c8378ca913a680cd98f0f13ac67383d35993f86c90a70e3f137816b
 SIZE (rust/crates/addr2line-0.17.0.crate) = 32260
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -471,5 +471,5 @@ SHA256 (rust/crates/winreg-0.7.0.crate) = 0120db82e8a1e0b9fb3345a539c478767c0048
 SIZE (rust/crates/winreg-0.7.0.crate) = 21225
 SHA256 (rust/crates/xml-rs-0.8.4.crate) = d2d7d3948613f75c98fd9328cfdcc45acc4d360655289d0a7d4ec931392200a3
 SIZE (rust/crates/xml-rs-0.8.4.crate) = 52690
-SHA256 (NLnetLabs-krill-v0.9.5_GH0.tar.gz) = ae092c2e6d5d3f3392e6fbdb9bcefcc39f54dc16efc6b887973630698cc1d30e
-SIZE (NLnetLabs-krill-v0.9.5_GH0.tar.gz) = 13652675
+SHA256 (NLnetLabs-krill-v0.9.6_GH0.tar.gz) = e5d7c28ba359fce374091381aa9d26a9b02dc56b91056c78f776c49a3e1c881c
+SIZE (NLnetLabs-krill-v0.9.6_GH0.tar.gz) = 13654564
