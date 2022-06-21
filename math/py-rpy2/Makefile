@@ -32,7 +32,7 @@ PLIST_FILES=	${PYTHON_SITELIBDIR}/__pycache__/_rinterface_cffi_abi.cpython-${PYT
 
 OPTIONS_DEFINE=	NUMPY PANDAS
 OPTIONS_DEFAULT=NUMPY PANDAS
-NUMPY_DESC=	Numpy support
+NUMPY_DESC=	NumPy support
 PANDAS_DESC=	Pandas support
 
 NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=0,1:math/py-pandas@${PY_FLAVOR}
