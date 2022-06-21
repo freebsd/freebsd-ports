@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.0.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -224,7 +224,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-memory_profiler>=0.9<1.0:devel/rubygem-memory_profiler \
 	rubygem-benchmark-memory>=0.1<1.0:benchmarks/rubygem-benchmark-memory \
 	rubygem-activerecord-explain-analyze>=0.1<1.0:databases/rubygem-activerecord-explain-analyze \
-	rubygem-oauth2>=1.4.7<2.0:net/rubygem-oauth2 \
+	rubygem-oauth21>=1.4.7<2.0:net/rubygem-oauth21 \
 	rubygem-health_check>=3.0<4:devel/rubygem-health_check \
 	rubygem-vmstat>=2.3.0<2.4.0:sysutils/rubygem-vmstat \
 	rubygem-sys-filesystem>=1.4.3<1.5:sysutils/rubygem-sys-filesystem \
