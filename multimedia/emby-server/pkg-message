@@ -9,6 +9,9 @@ To then manually start Emby Server without rebooting:
 
 Once started, visit the following webpage to configure:
 http://localhost:8096/
+
+If you are running emby-server in a jail, set "allow.mlock"
+for this jail otherwise the program will fail to start.
 EOM
 }
 ]
