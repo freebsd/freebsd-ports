@@ -21,13 +21,10 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libguile-2.2.so:lang/guile2
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		cmake:testing compiler:features pathfix pkgconfig python
+USES=		cmake:testing compiler:features localbase pathfix pkgconfig python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stevengj
 USE_LDCONFIG=	yes
-
-# Needed to find gmp.h
-CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
