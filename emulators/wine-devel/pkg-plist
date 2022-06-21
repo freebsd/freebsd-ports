@@ -233,6 +233,8 @@ include/wine/windows/d2d1_2.h
 include/wine/windows/d2d1_2.idl
 include/wine/windows/d2d1_3.h
 include/wine/windows/d2d1_3.idl
+include/wine/windows/d2d1effectauthor.h
+include/wine/windows/d2d1effectauthor.idl
 include/wine/windows/d2d1effects.h
 include/wine/windows/d2d1effects.idl
 include/wine/windows/d2d1effects_1.h
@@ -866,6 +868,7 @@ include/wine/windows/sipbase.h
 include/wine/windows/slerror.h
 include/wine/windows/slpublic.h
 include/wine/windows/snmp.h
+include/wine/windows/socketapi.h
 include/wine/windows/softpub.h
 include/wine/windows/spatialaudioclient.h
 include/wine/windows/spatialaudioclient.idl
@@ -1008,6 +1011,8 @@ include/wine/windows/windows.foundation.h
 include/wine/windows/windows.foundation.idl
 include/wine/windows/windows.foundation.metadata.h
 include/wine/windows/windows.foundation.metadata.idl
+include/wine/windows/windows.foundation.numerics.h
+include/wine/windows/windows.foundation.numerics.idl
 include/wine/windows/windows.gaming.input.custom.h
 include/wine/windows/windows.gaming.input.custom.idl
 include/wine/windows/windows.gaming.input.forcefeedback.h
@@ -1017,6 +1022,8 @@ include/wine/windows/windows.gaming.input.idl
 include/wine/windows/windows.globalization.h
 include/wine/windows/windows.globalization.idl
 include/wine/windows/windows.h
+include/wine/windows/windows.media.closedcaptioning.h
+include/wine/windows/windows.media.closedcaptioning.idl
 include/wine/windows/windows.media.devices.h
 include/wine/windows/windows.media.devices.idl
 include/wine/windows/windows.media.h
@@ -1037,6 +1044,8 @@ include/wine/windows/windows.system.power.h
 include/wine/windows/windows.system.power.idl
 include/wine/windows/windows.system.userprofile.h
 include/wine/windows/windows.system.userprofile.idl
+include/wine/windows/windows.ui.h
+include/wine/windows/windows.ui.idl
 include/wine/windows/windowscontracts.h
 include/wine/windows/windowscontracts.idl
 include/wine/windows/windowsx.h
@@ -1433,10 +1442,9 @@ lib/wine/%%WINEARCH%%-unix/win32u.so
 %%ALSA%%lib/wine/%%WINEARCH%%-unix/winealsa.so
 lib/wine/%%WINEARCH%%-unix/winebus.so
 %%ALSA%%lib/wine/%%WINEARCH%%-windows/winealsa.drv
-%%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.drv.so
 %%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.so
 lib/wine/%%WINEARCH%%-unix/winevulkan.so
-%%X11%%lib/wine/%%WINEARCH%%-unix/winex11.drv.so
+%%X11%%lib/wine/%%WINEARCH%%-unix/winex11.so
 lib/wine/%%WINEARCH%%-unix/winspool.so
 lib/wine/%%WINEARCH%%-unix/wldap32.so
 lib/wine/%%WINEARCH%%-unix/wpcap.so
@@ -1638,8 +1646,6 @@ lib/wine/%%WINEARCH%%-windows/evr.dll
 lib/wine/%%WINEARCH%%-windows/expand.exe
 lib/wine/%%WINEARCH%%-windows/explorer.exe
 lib/wine/%%WINEARCH%%-windows/explorerframe.dll
-%%STAGING%%lib/wine/%%WINEARCH%%-windows/ext-ms-win-appmodel-usercontext-l1-1-0.dll
-%%STAGING%%lib/wine/%%WINEARCH%%-windows/ext-ms-win-xaml-pal-l1-1-0.dll
 lib/wine/%%WINEARCH%%-windows/extrac32.exe
 lib/wine/%%WINEARCH%%-windows/faultrep.dll
 lib/wine/%%WINEARCH%%-windows/fc.exe
@@ -1677,7 +1683,6 @@ lib/wine/%%WINEARCH%%-windows/icinfo.exe
 lib/wine/%%WINEARCH%%-windows/icmp.dll
 lib/wine/%%WINEARCH%%-windows/ieframe.dll
 lib/wine/%%WINEARCH%%-windows/ieproxy.dll
-%%STAGING%%lib/wine/%%WINEARCH%%-windows/iertutil.dll
 lib/wine/%%WINEARCH%%-windows/iexplore.exe
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/ifsmgr.vxd
 lib/wine/%%WINEARCH%%-windows/imaadp32.acm
@@ -2299,6 +2304,7 @@ lib/wine/%%WINEARCH%%-windows/windows.globalization.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
 %%STAGING%%lib/wine/%%WINEARCH%%-windows/windows.networking.connectivity
+lib/wine/%%WINEARCH%%-windows/windows.networking.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecs.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecsext.dll
 lib/wine/%%WINEARCH%%-windows/wineboot.exe
