@@ -5539,12 +5539,10 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/resources/data/contributors.qml
 %%DATADIR%%/resources/data/qgis-hackfests.json
 %%DATADIR%%/resources/data/qgis-hackfests.qml
-@mode 0666
 %%DATADIR%%/resources/data/user_groups.qml
 %%DATADIR%%/resources/data/user_groups_data.json
 %%DATADIR%%/resources/data/world_map.gpkg
 %%DATADIR%%/resources/data/world_map_generalize.model3
-@mode
 %%DATADIR%%/resources/metadata-ISO/LinkPropertyLookupTable.csv
 %%DATADIR%%/resources/metadata-ISO/country_code_ISO_3166.csv
 %%DATADIR%%/resources/metadata-ISO/language_codes_ISO_639.csv
