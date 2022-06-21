@@ -5014,6 +5014,7 @@
     SUBDIR += py-portalocker
     SUBDIR += py-positional
     SUBDIR += py-posix_ipc
+    SUBDIR += py-pox
     SUBDIR += py-poyo
     SUBDIR += py-prance
     SUBDIR += py-pre-commit
