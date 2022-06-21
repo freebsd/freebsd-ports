@@ -4437,6 +4437,7 @@
     SUBDIR += py-coreschema
     SUBDIR += py-country
     SUBDIR += py-cov-core
+    SUBDIR += py-covdefaults
     SUBDIR += py-coverage
     SUBDIR += py-coverage_enable_subprocess
     SUBDIR += py-cppheaderparser
