@@ -774,6 +774,7 @@
     SUBDIR += py-databases
     SUBDIR += py-dbf
     SUBDIR += py-dbutils
+    SUBDIR += py-duckdb
     SUBDIR += py-fakeredis
     SUBDIR += py-fastapi-users-db-ormar
     SUBDIR += py-fdb
