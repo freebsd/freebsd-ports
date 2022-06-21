@@ -4952,6 +4952,7 @@
     SUBDIR += py-path.py
     SUBDIR += py-pathable
     SUBDIR += py-pathlib2
+    SUBDIR += py-pathos
     SUBDIR += py-pathspec
     SUBDIR += py-pathtools
     SUBDIR += py-paver
