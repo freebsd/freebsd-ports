@@ -16,6 +16,8 @@ LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 USES=		gem
 USE_RUBY=	yes
 
+NO_ARCH=	yes
+
 PORTSCOUT=	limit:^0\.1\.
 
 .include <bsd.port.mk>
