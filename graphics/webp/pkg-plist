@@ -1,7 +1,7 @@
-bin/cwebp
-bin/dwebp
-bin/gif2webp
-bin/img2webp
+%%IMGCONV%%bin/cwebp
+%%IMGCONV%%bin/dwebp
+%%IMGCONV%%bin/gif2webp
+%%IMGCONV%%bin/img2webp
 %%X11%%bin/vwebp
 bin/webpinfo
 bin/webpmux
@@ -31,10 +31,10 @@ libdata/pkgconfig/libwebp.pc
 libdata/pkgconfig/libwebpdecoder.pc
 libdata/pkgconfig/libwebpdemux.pc
 libdata/pkgconfig/libwebpmux.pc
-man/man1/cwebp.1.gz
-man/man1/dwebp.1.gz
-man/man1/gif2webp.1.gz
-man/man1/img2webp.1.gz
+%%IMGCONV%%man/man1/cwebp.1.gz
+%%IMGCONV%%man/man1/dwebp.1.gz
+%%IMGCONV%%man/man1/gif2webp.1.gz
+%%IMGCONV%%man/man1/img2webp.1.gz
 %%X11%%man/man1/vwebp.1.gz
 man/man1/webpinfo.1.gz
 man/man1/webpmux.1.gz
