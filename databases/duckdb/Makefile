@@ -27,10 +27,10 @@ EXTENSIONS_DESC=		Extensions:
 .for opt in ${OPTIONS_GROUP_EXTENSIONS}
 .  if "${${opt}_BROKEN}" == ""
 OPTIONS_DEFAULT+=	${opt}
-${opt}_DESC=	Build the ${opt} extension
+.  endif
+${opt}_DESC=		Build the ${opt} extension
 ${opt}_CMAKE_BOOL=	BUILD_${opt}_EXTENSION
 ${opt}_PLIST_FILES=	lib/lib${opt:tl}_extension.a
-.  endif
 .endfor
 
 post-test: # run tests
