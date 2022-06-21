@@ -1,7 +1,7 @@
 # Created by: Ju Pengfei <jupengfei@gmail.com>
 
 PORTNAME=	python-distutils-extra
-PORTVERSION=	2.46
+PORTVERSION=	2.47
 CATEGORIES=	devel python
 MASTER_SITES=	DEBIAN
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,6 @@ USES=		python:3.6+ tar:xz
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
