@@ -35,6 +35,6 @@ DIAGNOSTICS_DESC=	Profile and inspect parallel codes
 ARRAY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.18,1:math/py-numpy@${PY_FLAVOR} \
 DATAFRAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.18,1:math/py-numpy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pandas>=1.0,1:math/py-pandas@${PY_FLAVOR}
-DIAGNOSTICS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}bokeh>=2.3.3:www/py-bokeh@${PY_FLAVOR}
+DIAGNOSTICS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}bokeh>=2.4.2:www/py-bokeh@${PY_FLAVOR}
 
 .include <bsd.port.mk>
