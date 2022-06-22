@@ -1,8 +1,7 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	siren
-PORTVERSION=	0.9
-PORTREVISION=	4
+PORTVERSION=	0.10
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kariliq.nl/${PORTNAME}/dist/
 
