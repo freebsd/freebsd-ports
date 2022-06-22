@@ -1,11 +1,11 @@
 # Created by: ijliao
 
 PORTNAME=	epix
-DISTVERSION=	1.2.21
+DISTVERSION=	1.2.22
 CATEGORIES=	graphics
-MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/epix/
+MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Creates math plots and line figures using easy-to-learn syntax
 
 LICENSE=	GPLv2+
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake makeinfo tar:bzip2
-USE_TEX=	latex dvipsk:build texmf:build
+USE_TEX=	dvipsk:build latex texmf:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \
 		--with-runtime=${CXX}
