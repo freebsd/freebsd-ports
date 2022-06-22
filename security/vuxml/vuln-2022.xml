@@ -1,3 +1,44 @@
+  <vuln vid="25be46f0-f25d-11ec-b62a-00e081b7aa2d">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.356</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.346.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2022-06-22/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-2781 / CVE-2022-34170 (SECURITY-2779), CVE-2022-34171 (SECURITY-2761), CVE-2022-34172 (SECURITY-2776), CVE-2022-34173 (SECURITY-2780)</h5>
+	  <p>Multiple XSS vulnerabilities</p>
+	  <h5>(Medium) SECURITY-2566 / CVE-2022-34174</h5>
+	  <p>Observable timing discrepancy allows determining username validity</p>
+	  <h5>(Medium) Unauthorized view fragment access</h5>
+	  <p>SECURITY-2777 / CVE-2022-34175</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-34170</cvename>
+      <cvename>CVE-2022-34171</cvename>
+      <cvename>CVE-2022-34172</cvename>
+      <cvename>CVE-2022-34173</cvename>
+      <cvename>CVE-2022-34174</cvename>
+      <cvename>CVE-2022-34175</cvename>
+      <url>https://www.jenkins.io/security/advisory/2022-06-22/</url>
+    </references>
+    <dates>
+      <discovery>2022-06-22</discovery>
+      <entry>2022-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4eeb93bf-f204-11ec-8fbd-d4c9ef517024">
     <topic>OpenSSL -- Command injection vulnerability</topic>
     <affects>
