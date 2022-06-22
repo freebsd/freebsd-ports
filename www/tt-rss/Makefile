@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	tt-rss
-PORTVERSION=	g20220619
+PORTVERSION=	g20220620
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	https://git-gitea.tt-rss.org/fox/tt-rss/archive/
@@ -22,7 +22,7 @@ USE_RC_SUBR=	ttrssd
 
 SHEBANG_FILES=	update.php update_daemon2.php
 
-_GIT_TAGNAME=	0bb72fbb2
+_GIT_TAGNAME=	b148d2f51
 
 REINPLACE_ARGS=	-i ""
 
