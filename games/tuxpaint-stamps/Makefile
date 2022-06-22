@@ -1,7 +1,7 @@
 # Created by: Alejandro Pulver <alejandro@varnet.biz>
 
 PORTNAME=	tuxpaint-stamps
-PORTVERSION=	2014.08.23
+PORTVERSION=	2022.06.04
 CATEGORIES=	games
 MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION:S|.|-|g}
 
