@@ -21,8 +21,6 @@ BUILD_DEPENDS=	go-bindata:devel/go-bindata \
 
 USES=		gmake go:modules python:build
 
-EXTRACT_ONLY:=	${DISTFILES:C/:[^:]+$//}
-
 GO_MODULE=	github.com/influxdata/${PORTNAME}
 GO_TARGET=	./cmd/chronograf/main.go:chronograf \
 		./cmd/chronoctl:chronoctl

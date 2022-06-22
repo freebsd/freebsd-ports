@@ -41,8 +41,6 @@ do-build:
 MASTER_SITES=	LOCAL/yuri/:deps
 DISTFILES=	${PORTNAME}-html-build-${DISTVERSION}${EXTRACT_SUFX}:deps \
 		${PORTNAME}-html-build2-${DISTVERSION}${EXTRACT_SUFX}:deps
-EXTRACT_ONLY=	${PORTNAME}-html-build-${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-html-build2-${DISTVERSION}${EXTRACT_SUFX}
 
 pre-build:
 	@${CP} -r ${WRKDIR}/build ${WRKDIR}/build2 ${WRKSRC}/
