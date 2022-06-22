@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20220617
+PORTVERSION=	s20220622
 CATEGORIES=	emulators
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -12,8 +12,8 @@ EXTRACT_ONLY=	${DISTFILES:N*\:gamedb:C/\:.*//}
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	4a8a248b47a2.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/6598 mainline-merge
 PATCHFILES+=	e919bea9c84e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/7346 mainline-merge
-PATCHFILES+=	ec62889e2264.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/8240 mainline-merge
-PATCHFILES+=	bd6f73fd012e.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/8240 mainline-merge
+PATCHFILES+=	30e8876ea48a.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/8240 mainline-merge
+PATCHFILES+=	d657ea69c94c.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/8240 mainline-merge
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
@@ -41,15 +41,15 @@ TEST_DEPENDS=	catch>0:devel/catch
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	5b2b15091
+GH_TAGNAME=	95b844dba
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.3.213:Vulkan_Headers/externals/Vulkan-Headers \
-		MerryMage:dynarmic:r5-204-g57af72a5:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:r5-223-g5ad1d023:dynarmic/externals/dynarmic \
 		ReinUsesLisp:sirit:aa292d5:sirit/externals/sirit \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		benhoyt:inih:r52:inih/externals/inih/inih \
-		fmtlib:fmt:8.0.0:fmt/externals/fmt \
+		fmtlib:fmt:8.1.1:fmt/externals/fmt \
 		herumi:xbyak:v5.96:xbyak/externals/xbyak \
 		kinetiknz:cubeb:cubeb-0.2-1350-gf79e0cf:cubeb/externals/cubeb \
 		yhirose:cpp-httplib:v0.10.8-1-g305a7ab:cpp_httplib/externals/cpp-httplib
