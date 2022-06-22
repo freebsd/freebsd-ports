@@ -1,7 +1,7 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
 
 PORTNAME=	car
-DISTVERSION=	3.0-13
+DISTVERSION=	3.1-0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
