@@ -1,8 +1,7 @@
 # Created by: Stephen Hurd <shurd@FreeBSD.org>
 
 PORTNAME=	concordance
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
