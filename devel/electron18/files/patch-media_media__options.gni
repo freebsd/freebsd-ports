@@ -1,0 +1,27 @@
+--- media/media_options.gni.orig	2022-05-19 05:17:44 UTC
++++ media/media_options.gni
+@@ -125,9 +125,12 @@ declare_args() {
+   # Enables runtime selection of ALSA library for audio.
+   use_alsa = false
+ 
++  # Enable runtime selection of sndio(7)
++  use_sndio = false
++
+   # Alsa should be used on non-Android, non-Mac POSIX systems.
+   # Alsa should be used on desktop Chromecast and audio-only Chromecast builds.
+-  if (is_posix && !is_android && !is_mac &&
++  if (is_posix && !is_android && !is_mac && !is_bsd &&
+       (!is_chromecast || is_cast_desktop_build || is_cast_audio_only)) {
+     use_alsa = true
+ 
+@@ -142,6 +145,10 @@ declare_args() {
+     if (!use_cras && !is_chromecast && !is_asan && !is_tsan) {
+       use_pulseaudio = true
+     }
++  }
++  if (is_openbsd) {
++    use_sndio = true
++    use_pulseaudio = false
+   }
+ }
+ 

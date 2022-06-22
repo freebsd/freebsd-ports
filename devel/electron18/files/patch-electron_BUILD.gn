@@ -1,0 +1,71 @@
+--- electron/BUILD.gn.orig	2022-05-18 15:31:32 UTC
++++ electron/BUILD.gn
+@@ -444,7 +444,7 @@ source_set("electron_lib") {
+     defines += [ "GDK_DISABLE_DEPRECATION_WARNINGS" ]
+   }
+ 
+-  if (!is_mas_build) {
++  if (!is_mas_build && !is_bsd) {
+     deps += [
+       "//components/crash/core/app",
+       "//components/crash/core/browser",
+@@ -486,6 +486,10 @@ source_set("electron_lib") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    deps -= [ "//components/crash/content/browser" ]
++  }
++
+   if (is_mac) {
+     deps += [
+       "//components/remote_cocoa/app_shim",
+@@ -540,6 +544,12 @@ source_set("electron_lib") {
+       cflags_objcc = [ "-fobjc-weak" ]
+     }
+   }
++  if (is_bsd) {
++    sources -= [
++      "shell/common/crash_keys.cc",
++      "shell/common/crash_keys.h",
++    ]
++  }
+   if (is_linux) {
+     libs = [ "xshmfence" ]
+     deps += [
+@@ -1182,7 +1192,7 @@ if (is_mac) {
+       ":electron_app_manifest",
+       ":electron_lib",
+       ":packed_resources",
+-      "//components/crash/core/app",
++      # "//components/crash/core/app",
+       "//content:sandbox_helper_win",
+       "//electron/buildflags",
+       "//ui/strings",
+@@ -1208,7 +1218,7 @@ if (is_mac) {
+       public_deps = [ "//tools/v8_context_snapshot:v8_context_snapshot" ]
+     }
+ 
+-    if (is_linux) {
++    if (is_linux && !is_bsd) {
+       data_deps += [ "//components/crash/core/app:chrome_crashpad_handler" ]
+     }
+ 
+@@ -1276,7 +1286,7 @@ if (is_mac) {
+         configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
+       }
+ 
+-      if (is_linux) {
++      if (is_linux && !is_bsd) {
+         deps += [ "//sandbox/linux:chrome_sandbox" ]
+       }
+     }
+@@ -1412,7 +1422,7 @@ dist_zip("electron_dist_zip") {
+     ":electron_version",
+     ":licenses",
+   ]
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     data_deps += [ "//sandbox/linux:chrome_sandbox" ]
+   }
+   deps = data_deps

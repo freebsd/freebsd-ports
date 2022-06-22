@@ -1,0 +1,16 @@
+--- services/device/serial/BUILD.gn.orig	2022-05-11 07:00:53 UTC
++++ services/device/serial/BUILD.gn
+@@ -83,6 +83,13 @@ if (is_win || ((is_linux || is_chromeos) && use_udev) 
+       ]
+     }
+ 
++    if (is_bsd) {
++      sources -= [
++        "serial_device_enumerator_linux.cc",
++        "serial_device_enumerator_linux.h"
++      ]
++    }
++
+     if (use_udev) {
+       deps += [ "//device/udev_linux" ]
+     }

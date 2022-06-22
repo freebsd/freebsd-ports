@@ -1,0 +1,46 @@
+--- third_party/libusb/BUILD.gn.orig	2022-05-11 07:01:53 UTC
++++ third_party/libusb/BUILD.gn
+@@ -3,7 +3,7 @@
+ # found in the LICENSE file.
+ 
+ # libusb is only used by //services/device/usb on macOS.
+-assert(is_mac)
++assert(is_mac || is_bsd)
+ 
+ import("//build/config/chromeos/ui_mode.gni")
+ import("//build/config/features.gni")
+@@ -116,7 +116,7 @@ static_library("libusb") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "src/libusb/os/linux_usbfs.c",
+       "src/libusb/os/linux_usbfs.h",
+@@ -127,6 +127,16 @@ static_library("libusb") {
+     ]
+   }
+ 
++  if (is_openbsd) {
++    sources += [
++      "src/libusb/os/openbsd_usb.c",
++    ]
++    defines += [
++      "OS_OPENBSD=1",
++      "_GNU_SOURCE=1",
++    ]
++  }
++
+   if (is_chromeos_ash) {
+     defines += [ "USBI_TIMERFD_AVAILABLE" ]
+   }
+@@ -140,7 +150,7 @@ static_library("libusb") {
+     deps += [ "//build/linux/libudev" ]
+   }
+ 
+-  if ((is_linux || is_chromeos) && !use_udev) {
++  if ((is_linux || is_chromeos) && !use_udev && !is_bsd) {
+     sources += [ "src/libusb/os/linux_netlink.c" ]
+     defines += [ "HAVE_LINUX_NETLINK_H" ]
+   }

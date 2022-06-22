@@ -1,0 +1,10 @@
+--- third_party/opus/BUILD.gn.orig	2022-05-11 07:01:55 UTC
++++ third_party/opus/BUILD.gn
+@@ -41,7 +41,6 @@ config("opus_private_config") {
+     # Prefer alloca() over variable length arrays which are often inefficient;
+     # the opus code will automatically handle this correctly per-platform.
+     "USE_ALLOCA",
+-    "HAVE_ALLOCA_H",
+   ]
+ 
+   include_dirs = [

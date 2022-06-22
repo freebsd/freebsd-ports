@@ -1,0 +1,11 @@
+--- third_party/vulkan-deps/vulkan-loader/src/BUILD.gn.orig	2022-05-19 05:18:36 UTC
++++ third_party/vulkan-deps/vulkan-loader/src/BUILD.gn
+@@ -61,7 +61,7 @@ config("vulkan_internal_config") {
+     defines += [
+       "SYSCONFDIR=\"/etc\"",
+       "FALLBACK_CONFIG_DIRS=\"/etc/xdg\"",
+-      "FALLBACK_DATA_DIRS=\"/usr/local/share:/usr/share\"",
++      "FALLBACK_DATA_DIRS=\"/usr/X11R6/share:/usr/local/share:/usr/share\"",
+     ]
+   }
+ }
