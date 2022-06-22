@@ -1,5 +1,5 @@
 PORTNAME=	yt-dlp
-DISTVERSION=	2022.05.18
+DISTVERSION=	2022.06.22.1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,9 +18,9 @@ BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		gmake python:3.7+ shebangfix
-SHEBANG_GLOB=	devscripts/*.py
-
 USE_GITHUB=	yes
+
+SHEBANG_GLOB=	devscripts/*.py
 
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}
 
