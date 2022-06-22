@@ -4,7 +4,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	DEBIAN/pool/main/d/devscripts/
 DISTNAME=	devscripts_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Check for the presence of bashisms
 
 LICENSE=	GPLv2
@@ -20,8 +20,8 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/devscripts-${PORTVERSION}
 
 PLIST_FILES=	bin/checkbashisms \
-		man/man1/checkbashisms.1.gz \
-		etc/bash_completion.d/_checkbashisms.bash
+		etc/bash_completion.d/_checkbashisms.bash \
+		man/man1/checkbashisms.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|###VERSION###|${PORTVERSION}|' \
