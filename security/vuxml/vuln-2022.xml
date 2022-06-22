@@ -1,3 +1,48 @@
+  <vuln vid="b2a4c5f1-f1fe-11ec-bcd2-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>103.0.5060.53</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/06/stable-channel-update-for-desktop_21.html">
+	  <p>This release contains 14 security fixes, including:</p>
+	  <ul>
+	    <li>[1335458] Critical CVE-2022-2156: Use after free in Base. Reported by Mark Brand of Google Project Zero on 2022-06-11</li>
+	    <li>[1327312] High CVE-2022-2157: Use after free in Interest groups. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-05-19</li>
+	    <li>[1321078] High CVE-2022-2158: Type Confusion in V8. Reported by Bohan Liu (@P4nda20371774) of Tencent Security Xuanwu Lab on 2022-04-29</li>
+	    <li>[1116450] Medium CVE-2022-2160: Insufficient policy enforcement in DevTools. Reported by David Erceg on 2020-08-14</li>
+	    <li>[1330289] Medium CVE-2022-2161: Use after free in WebApp Provider. Reported by Zhihua Yao of KunLun Lab on 2022-05-30</li>
+	    <li>[1307930] Medium CVE-2022-2162: Insufficient policy enforcement in File System API. Reported by Abdelhamid Naceri (halov) on 2022-03-19</li>
+	    <li>[1308341] Low CVE-2022-2163: Use after free in Cast UI and Toolbar. Reported by Chaoyuan Peng (@ret2happy) on 2022-03-21</li>
+	    <li>[1268445] Low CVE-2022-2164: Inappropriate implementation in Extensions API. Reported by José Miguel Moreno Computer Security Lab (COSEC) at UC3M on 2021-11-10</li>
+	    <li>[1250993] Low CVE-2022-2165: Insufficient data validation in URL formatting. Reported by Rayyan Bijoora on 2021-09-19</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2156</cvename>
+      <cvename>CVE-2022-2157</cvename>
+      <cvename>CVE-2022-2158</cvename>
+      <cvename>CVE-2022-2160</cvename>
+      <cvename>CVE-2022-2161</cvename>
+      <cvename>CVE-2022-2162</cvename>
+      <cvename>CVE-2022-2163</cvename>
+      <cvename>CVE-2022-2164</cvename>
+      <cvename>CVE-2022-2165</cvename>
+      <url>https://chromereleases.googleblog.com/2022/06/stable-channel-update-for-desktop_21.html</url>
+    </references>
+    <dates>
+      <discovery>2022-06-21</discovery>
+      <entry>2022-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="482456fb-e9af-11ec-93b6-318d1419ea39">
     <topic> Security Vulnerability found in ExifTool leading to RCE </topic>
     <affects>
@@ -23,6 +68,7 @@
       <entry>2022-06-11</entry>
     </dates>
   </vuln>
+
   <vuln vid="ad37a349-ebb7-11ec-b9f7-21427354249d">
     <topic>mitmproxy -- Insufficient Protection against HTTP Request Smuggling</topic>
     <affects>
