@@ -2,6 +2,7 @@
 
 PORTNAME=	ots
 PORTVERSION=	8.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/khaledhosny/ots/releases/download/v${PORTVERSION}/
 

@@ -14,6 +14,7 @@ include/gmock/internal/custom/gmock-port.h
 include/gmock/internal/gmock-internal-utils.h
 include/gmock/internal/gmock-port.h
 include/gmock/internal/gmock-pp.h
+include/gtest/gtest-assertion-result.h
 include/gtest/gtest-death-test.h
 include/gtest/gtest-matchers.h
 include/gtest/gtest-message.h
