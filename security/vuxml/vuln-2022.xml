@@ -1,3 +1,39 @@
+  <vuln vid="4eeb93bf-f204-11ec-8fbd-d4c9ef517024">
+    <topic>OpenSSL -- Command injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1p,1</lt></range>
+      </package>
+      <package>
+	<name>openssl-devel</name>
+	<range><lt>3.0.4</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20220621.txt">
+	  <p>Circumstances where the c_rehash script does not properly
+	    sanitise shell metacharacters to prevent command injection were
+	    found by code review.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2068</cvename>
+      <url>https://www.openssl.org/news/secadv/20220621.txt</url>
+    </references>
+    <dates>
+      <discovery>2022-06-21</discovery>
+      <entry>2022-06-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2a4c5f1-f1fe-11ec-bcd2-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
@@ -44,7 +80,7 @@
   </vuln>
 
   <vuln vid="482456fb-e9af-11ec-93b6-318d1419ea39">
-    <topic> Security Vulnerability found in ExifTool leading to RCE </topic>
+    <topic>Security Vulnerability found in ExifTool leading to RCE</topic>
     <affects>
       <package>
 	<name>p5-Image-ExifTool</name>
@@ -129,7 +165,7 @@
       <url>https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/TROVE</url>
     </references>
     <dates>
-      <discovery>TBD</discovery>
+      <discovery>2022-06-14</discovery>
       <entry>2022-06-17</entry>
     </dates>
   </vuln>
