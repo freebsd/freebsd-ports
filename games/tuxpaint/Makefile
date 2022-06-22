@@ -1,9 +1,10 @@
 # Created by: Alejandro Pulver <alejandro@varnet.biz>
 
 PORTNAME=	tuxpaint
-PORTVERSION=	0.9.27
+PORTVERSION=	0.9.28
 CATEGORIES=	games
 MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${PORTVERSION}-sdl2
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Drawing program designed for young children
@@ -20,10 +21,13 @@ LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 RUN_DEPENDS=	anytopnm:graphics/netpbm \
 		bash:shells/bash
 
-USES=		gettext gmake gnome gperf magick:7,build pkgconfig sdl shebangfix
-SHEBANG_FILES=	src/tuxpaint-import.sh
-USE_GNOME=	librsvg2
-USE_SDL=	gfx image mixer sdl ttf pango
+USES=		gettext gmake gnome gperf magick:7,build pkgconfig \
+		python:3.7+ sdl shebangfix
+SHEBANG_FILES=	src/tuxpaint-import.sh \
+		fonts/locale/zh_tw_docs/maketuxfont.py
+
+USE_GNOME=	librsvg2 cairo
+USE_SDL=	gfx2 image2 mixer2 sdl2 ttf2
 MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PREFIX="${PREFIX}" \
@@ -51,12 +55,6 @@ OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${RM} -r ${WRKSRC}/fonts/locale/vi_docs
-
-post-patch:
-.for file in src/tuxpaint-import.sh src/tp_magic_api.h.in src/tuxpaint.conf \
-	hildon/tuxpaint.conf
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/${file}
-.endfor
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tuxpaint
