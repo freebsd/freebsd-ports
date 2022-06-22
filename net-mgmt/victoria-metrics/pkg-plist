@@ -21,6 +21,7 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/_includes/extra/styles.scss
 %%PORTDOCS%%%%DOCSDIR%%/_includes/img.html
 %%PORTDOCS%%%%DOCSDIR%%/assets/css/clipboard.css
+%%PORTDOCS%%%%DOCSDIR%%/assets/images/Naive_cluster_scheme.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/favicon.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/vm_logo.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/js/clipboard.min.js
@@ -84,6 +85,7 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/operator/api.MD
 %%PORTDOCS%%%%DOCSDIR%%/operator/auth.MD
 %%PORTDOCS%%%%DOCSDIR%%/operator/backups.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/configuration_syncronization.MD
 %%PORTDOCS%%%%DOCSDIR%%/operator/design.MD
 %%PORTDOCS%%%%DOCSDIR%%/operator/high-availability.MD
 %%PORTDOCS%%%%DOCSDIR%%/operator/logo.png
@@ -93,5 +95,6 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/operator/resources-validation.MD
 %%PORTDOCS%%%%DOCSDIR%%/operator/security.MD
 %%PORTDOCS%%%%DOCSDIR%%/operator/vars.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/vmalertmanager-configuration.MD
 %%PORTDOCS%%%%DOCSDIR%%/url-examples.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
