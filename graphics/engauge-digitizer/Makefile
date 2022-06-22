@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libopenjp2.so:graphics/openjpeg \
 		libpoppler-qt5.so:graphics/poppler-qt5
 
-USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5
+USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig qmake qt:5 # pkgconfig is for https://github.com/markummitchell/engauge-digitizer/issues/423
 USE_GITHUB=	yes
 GH_ACCOUNT=	markummitchell
 USE_QT=		core gui printsupport sql xml widgets buildtools_build
@@ -23,6 +23,8 @@ USE_GL=		gl
 CONFIGURE_ENV=	OPENJPEG_INCLUDE=${PREFIX}/include/openjpeg-2.4 OPENJPEG_LIB=${PREFIX}/lib \
 		POPPLER_INCLUDE=${PREFIX}/include/poppler/qt5 POPPLER_LIB=${PREFIX}/lib
 QMAKE_ARGS=	"CONFIG+=jpeg2000 pdf"
+
+CXXFLAGS+=	`pkg-config --cflags libopenjp2` # workaround for https://github.com/markummitchell/engauge-digitizer/issues/423
 
 OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
