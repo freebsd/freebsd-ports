@@ -1,6 +1,15 @@
 @sample etc/gotosocial/config.yaml.sample
-%%WWWDIR%%/assets/base.css
-%%WWWDIR%%/assets/colors.css
+%%WWWDIR%%/assets/dist/_colors.css
+%%WWWDIR%%/assets/dist/admin-panel.js
+%%WWWDIR%%/assets/dist/base.css
+%%WWWDIR%%/assets/dist/bundle.js
+%%WWWDIR%%/assets/dist/frontend.js
+%%WWWDIR%%/assets/dist/panels-admin-style.css
+%%WWWDIR%%/assets/dist/profile.css
+%%WWWDIR%%/assets/dist/status.css
+%%WWWDIR%%/assets/dist/user-panel.js
+%%WWWDIR%%/assets/swagger.yaml
+%%WWWDIR%%/template/frontend.tmpl
 %%WWWDIR%%/assets/Fork-Awesome/CONTRIBUTORS.md
 %%WWWDIR%%/assets/Fork-Awesome/css/fork-awesome.css
 %%WWWDIR%%/assets/Fork-Awesome/css/fork-awesome.min.css
@@ -15,7 +24,6 @@
 %%WWWDIR%%/assets/Fork-Awesome/fonts/forkawesome-webfont.woff2
 %%WWWDIR%%/assets/Fork-Awesome/LICENSES
 %%WWWDIR%%/assets/logo.png
-%%WWWDIR%%/assets/status.css
 %%WWWDIR%%/assets/tusky.svg
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon1.svg
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon2.svg
@@ -23,7 +31,6 @@
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon4.svg
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon5.svg
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon6.svg
-%%WWWDIR%%/assets/profile.css
 %%WWWDIR%%/template/profile.tmpl
 %%WWWDIR%%/template/404.tmpl
 %%WWWDIR%%/template/authorize.tmpl
