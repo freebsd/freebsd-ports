@@ -5,6 +5,9 @@ if [ x"$2" != x"DEINSTALL" ]; then
 fi
 
 ${PKG_PREFIX}/nextdns uninstall >/dev/null 2>/dev/null
-rm -f ${PKG_PREFIX}/etc/nextdns.conf
+
+echo "==> If you are uninstalling nextdns permanently,"
+echo "    and you do *NOT* want to retain the configuration file,"
+echo "    you should manually delete ${PKG_PREFIX}/etc/nextdns.conf"
 
 exit 0
