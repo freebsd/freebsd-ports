@@ -103,7 +103,7 @@ GH_TUPLE=	\
 		storj:common:ec9c16f58d50:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.30:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:dc4cb5a0d97a:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:f0ade82ff3db:storj_private/vendor/storj.io/private \
+		storj:private:e5ea0fc18d84:storj_private/vendor/storj.io/private \
 		storj:uplink:7305e5b6da85:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v72.51.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
