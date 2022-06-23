@@ -1,5 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2022-05-30
+DISTVERSION=	2022-06-20
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -19,14 +19,14 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		always-assert-0.1.2 \
 		ansi_term-0.12.1 \
 		anyhow-1.0.57 \
-		anymap-0.12.1 \
+		anymap-1.0.0-beta.2 \
 		arbitrary-1.1.0 \
 		arrayvec-0.7.2 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		backtrace-0.3.65 \
 		bitflags-1.3.2 \
-		camino-1.0.8 \
+		camino-1.0.9 \
 		cargo-platform-0.1.2 \
 		cargo_metadata-0.14.2 \
 		cc-1.0.73 \
@@ -42,17 +42,17 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.8 \
 		crossbeam-utils-0.8.8 \
-		dashmap-5.2.0 \
+		dashmap-5.3.4 \
 		derive_arbitrary-1.1.0 \
 		dissimilar-1.0.4 \
 		dot-0.1.4 \
 		drop_bomb-0.1.5 \
 		either-1.6.1 \
 		ena-0.14.0 \
-		expect-test-1.2.2 \
+		expect-test-1.3.0 \
 		filetime-0.2.16 \
 		fixedbitset-0.2.0 \
-		flate2-1.0.23 \
+		flate2-1.0.24 \
 		form_urlencoded-1.0.1 \
 		fs_extra-1.2.0 \
 		fsevent-sys-4.1.0 \
@@ -64,7 +64,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		hermit-abi-0.1.19 \
 		home-0.5.3 \
 		idna-0.2.3 \
-		indexmap-1.8.1 \
+		indexmap-1.8.2 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
@@ -83,19 +83,19 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		matchers-0.1.0 \
 		matches-0.1.9 \
 		memchr-2.5.0 \
-		memmap2-0.5.3 \
+		memmap2-0.5.4 \
 		memoffset-0.6.5 \
 		mimalloc-0.1.29 \
-		miniz_oxide-0.5.1 \
+		miniz_oxide-0.5.3 \
 		mio-0.8.3 \
 		miow-0.4.0 \
 		notify-5.0.0-pre.15 \
 		num_cpus-1.13.1 \
 		object-0.28.4 \
-		once_cell-1.11.0 \
+		once_cell-1.12.0 \
 		oorandom-11.1.3 \
 		parking_lot-0.11.2 \
-		parking_lot-0.12.0 \
+		parking_lot-0.12.1 \
 		parking_lot_core-0.8.5 \
 		parking_lot_core-0.9.3 \
 		paste-1.0.7 \
@@ -111,10 +111,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
 		redox_syscall-0.2.13 \
-		regex-1.5.5 \
+		regex-1.5.6 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.25 \
-		rowan-0.15.4 \
+		regex-syntax-0.6.26 \
+		rowan-0.15.5 \
 		rustc-ap-rustc_lexer-725.0.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
@@ -124,7 +124,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
-		semver-1.0.9 \
+		semver-1.0.10 \
 		serde-1.0.137 \
 		serde_derive-1.0.137 \
 		serde_json-1.0.81 \
@@ -133,22 +133,22 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		smallvec-1.8.0 \
 		smol_str-0.1.23 \
 		snap-1.0.5 \
-		syn-1.0.95 \
+		syn-1.0.96 \
 		synstructure-0.12.6 \
 		text-size-1.1.0 \
 		thread_local-1.1.4 \
 		threadpool-1.8.1 \
-		tikv-jemalloc-ctl-0.4.2 \
-		tikv-jemalloc-sys-0.4.3+5.2.1-patched.2 \
-		tikv-jemallocator-0.4.3 \
+		tikv-jemalloc-ctl-0.5.0 \
+		tikv-jemalloc-sys-0.5.0+5.3.0 \
+		tikv-jemallocator-0.5.0 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tracing-0.1.34 \
+		tracing-0.1.35 \
 		tracing-attributes-0.1.21 \
-		tracing-core-0.1.26 \
+		tracing-core-0.1.27 \
 		tracing-log-0.1.3 \
 		tracing-subscriber-0.3.11 \
-		tracing-tree-0.2.0 \
+		tracing-tree-0.2.1 \
 		typed-arena-2.0.1 \
 		ungrammar-1.16.1 \
 		unicase-2.6.0 \
@@ -181,8 +181,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		write-json-0.1.2 \
 		xflags-0.2.4 \
 		xflags-macros-0.2.4 \
-		xshell-0.2.1 \
-		xshell-macros-0.2.1
+		xshell-0.2.2 \
+		xshell-macros-0.2.2
 
 CARGO_INSTALL_PATH=	crates/rust-analyzer
 
