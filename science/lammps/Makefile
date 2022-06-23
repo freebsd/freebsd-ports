@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 USE_PYTHON=	cython
 
 USE_GITHUB=	yes
-GH_TAGNAME=	patch_2Jun2022
+GH_TAGNAME=	stable_23Jun2022
 
 SHEBANG_GLOB=	*.sh *.bash
 SHEBANG_FILES=	lib/kokkos/bin/nvcc_wrapper
