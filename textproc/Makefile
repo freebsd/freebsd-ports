@@ -1219,6 +1219,7 @@
     SUBDIR += pecl-xdiff2
     SUBDIR += pecl-yaml
     SUBDIR += peco
+    SUBDIR += peg
     SUBDIR += perl2html
     SUBDIR += php-mecab
     SUBDIR += php74-ctype

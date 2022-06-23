@@ -1,0 +1,19 @@
+--- Makefile.orig	2016-07-22 00:55:15 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-CFLAGS = -g -Wall $(OFLAGS) $(XFLAGS) -Isrc
++CFLAGS = -Wall $(OFLAGS) $(XFLAGS) -Isrc
+ OFLAGS = -O3 -DNDEBUG
+ #OFLAGS = -pg
+ 
+@@ -14,8 +14,8 @@ leg : leg.o $(OBJS)
+ 	$(CC) $(CFLAGS) -o $@-new leg.o $(OBJS)
+ 	mv $@-new $@
+ 
+-ROOT	=
+-PREFIX	= /usr/local
++ROOT	= %%STAGEDIR%%
++PREFIX	= %%PREFIX%%
+ BINDIR	= $(ROOT)$(PREFIX)/bin
+ MANDIR	= $(ROOT)$(PREFIX)/man/man1
+ 

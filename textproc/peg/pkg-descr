@@ -1,0 +1,17 @@
+peg and leg are tools for generating recursive-descent parsers: programs
+that perform pattern matching on text.  They processes a Parsing
+Expression Grammar (PEG) [Ford 2004] to produce a program that
+recognises legal sentences of that grammar.  peg processes PEGs written
+using the original syntax described by Ford; leg processes PEGs written
+using slightly different syntax and conventions that are intended to
+make it an attractive replacement for parsers built with lex and
+yacc.  Unlike lex and yacc, peg and leg support unlimited backtracking,
+provide ordered choice as a means for disambiguation, and can combine
+scanning (lexical analysis) and parsing (syntactic analysis) into a
+single activity.
+
+[Ford 2004] Bryan Ford, Parsing Expression Grammars: A Recognition-Based
+Syntactic Foundation. ACM SIGPLAN Symposium on Principles of Programming
+Languages (POPL), 2004.
+
+WWW: https://www.piumarta.com/software/peg/
