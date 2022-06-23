@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220623:
+AFFECTS: users of science/gramps
+  AUTHOR: fernape@FreeBSD.org
+
+  databases/py-bsddb3 is deprecated and will be removed in the future. With that
+  gramps will lose the ability to load family trees using Berkeley DB.
+  It is suggested to migrate all family trees using Berkeley DB by exporting
+  them to gramps xml and import that gramps xml into a family tree using sqlite
+  as database.
+
 20220620:
 AFFECTS: users of www/selenium
   AUTHOR: fernape@FreeBSD.org
