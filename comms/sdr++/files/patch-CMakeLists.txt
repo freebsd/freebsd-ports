@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2022-06-23 16:25:30 UTC
++++ CMakeLists.txt
+@@ -3,8 +3,8 @@ project(sdrpp)
+ 
+ if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+     set(CMAKE_INSTALL_PREFIX "/usr/local")
+-else()
+-    set(CMAKE_INSTALL_PREFIX "/usr")
++#else()
++#    set(CMAKE_INSTALL_PREFIX "/usr")
+ endif()
+ 
+ # Compatibility Options
+@@ -206,8 +206,8 @@ install(DIRECTORY ${CMAKE_SOURCE_DIR}/root/res/icons D
+ install(DIRECTORY ${CMAKE_SOURCE_DIR}/root/res/themes DESTINATION share/sdrpp)
+ configure_file(${CMAKE_SOURCE_DIR}/sdrpp.desktop ${CMAKE_CURRENT_BINARY_DIR}/sdrpp.desktop @ONLY)
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/sdrpp.desktop DESTINATION /usr/share/applications)
++if (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/sdrpp.desktop DESTINATION share/applications)
+ endif ()
+ 
+ # Create uninstall target
