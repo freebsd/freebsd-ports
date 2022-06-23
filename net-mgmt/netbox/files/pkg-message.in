@@ -18,8 +18,8 @@ database migrations will be executed.
 The following steps are required to finish the upgrade: 
 
 1. Run database migrations, trace any missing cable paths, build the embedded
-   documentation, collect static files, remove stale content files and delete
-   any expired user sessions
+   documentation, collect static files, remove stale content files, delete any
+   expired user sessions and clear the cache.
 
 # cd %%DATADIR%%
 # python%%PYTHON_VER%% manage.py migrate
@@ -28,6 +28,7 @@ The following steps are required to finish the upgrade:
 # python%%PYTHON_VER%% manage.py collectstatic --no-input
 # python%%PYTHON_VER%% manage.py remove_stale_contenttypes --no-input
 # python%%PYTHON_VER%% manage.py clearsessions
+# python%%PYTHON_VER%% manage.py clearcache
 
 2. Restart WSGI/httpd environment (supervisord/apache/nginx/etc.)
 EOD
@@ -320,5 +321,13 @@ The NetBox 3.2 release contains major changes, so at least items 1.), 2.) and
     * Several changes to the REST API were made as well.  Please check the
       changelogs for further details.
 EOD
+}
+{ type: upgrade
+  maximum_version: 3.2.5
+  message: <<EOD
+Please note that the general update instructions got another command that needs
+to be issued after each update:
+
+# python%%PYTHON_VER%% manage.py clearcache
 }
 ]

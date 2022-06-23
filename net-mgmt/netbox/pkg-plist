@@ -312,6 +312,7 @@
 %%DATADIR%%/docs/plugins/development/views.md
 %%DATADIR%%/docs/plugins/index.md
 %%DATADIR%%/docs/reference/conditions.md
+%%DATADIR%%/docs/reference/markdown.md
 %%DATADIR%%/docs/release-notes/index.md
 %%DATADIR%%/docs/release-notes/version-2.0.md
 %%DATADIR%%/docs/release-notes/version-2.1.md
@@ -621,6 +622,7 @@
 %%DATADIR%%/project-static/src/buttons/moveOptions.ts
 %%DATADIR%%/project-static/src/buttons/reslug.ts
 %%DATADIR%%/project-static/src/buttons/selectAll.ts
+%%DATADIR%%/project-static/src/buttons/selectMultiple.ts
 %%DATADIR%%/project-static/src/clipboard.ts
 %%DATADIR%%/project-static/src/colorMode.ts
 %%DATADIR%%/project-static/src/dateSelector.ts
@@ -652,6 +654,7 @@
 %%DATADIR%%/project-static/src/state/index.ts
 %%DATADIR%%/project-static/src/stores/index.ts
 %%DATADIR%%/project-static/src/stores/objectDepth.ts
+%%DATADIR%%/project-static/src/stores/previousPkCheck.ts
 %%DATADIR%%/project-static/src/stores/rackImages.ts
 %%DATADIR%%/project-static/src/tableConfig.ts
 %%DATADIR%%/project-static/src/tables/index.ts
