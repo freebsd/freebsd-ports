@@ -1,42 +1,47 @@
 PORTNAME=	tacacs
-PORTVERSION=	202004081858
+PORTVERSION=	202206071936
 CATEGORIES=	net
-MASTER_SITES=	http://www.pro-bono-publico.de/projects/src/
+MASTER_SITES=	https://www.pro-bono-publico.de/projects/src/
 
 MAINTAINER=	akuz84@gmail.com
 COMMENT=	TACACS+ daemon from pro-bono
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gmake perl5 ssl shebangfix
+USES=		gmake perl5 shebangfix ssl tar:bzip2
 
-CONFLICTS=	tac_plus4
+USE_LDCONFIG=	yes
+
+USE_RC_SUBR?=	tac_plus
+
+SHEBANG_FILES=	tac_plus/sample/tac_plus.cfg
 
 HAS_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--with-ssl \
-		--with-zlib \
+CONFIGURE_ARGS=	--installroot=${STAGEDIR} \
 		--libdir=${LOCALBASE}/lib \
-		--installroot=${STAGEDIR} mavis spawnd mavisd tac_plus
+		--with-ssl \
+		--with-zlib \
+		mavis \
+		mavisd \
+		spawnd \
+		tac_plus
 
-USE_LDCONFIG=			yes
+MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=			CURL FREERADIUS SCTP PCRE
-OPTIONS_DEFAULT=		SCTP
+CONFLICTS=	tac_plus4
 
-MAKE_JOBS_UNSAFE=yes
+WRKSRC=		${WRKDIR}/PROJECTS
 
-SCTP_DESC=			SCTP support
-SCTP_CONFIGURE_WITH=		sctp
+USERS=		tacacs
+GROUPS=		tacacs
 
-PCRE_DESC=			PCRE support
-PCRE_LIB_DEPENDS=		libpcre.so:devel/pcre
-PCRE_CONFIGURE_ON=		--with-pcre-lib=${LOCALBASE}/lib
-PCRE_CONFIGURE_OFF=
+OPTIONS_DEFINE=		CURL FREERADIUS PCRE SCTP
+OPTIONS_DEFAULT=	SCTP
 
-CURL_DESC=			Curl support
-CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
-CURL_CONFIGURE_ON=		--with-curl-lib=${LOCALBASE}/lib
+CURL_DESC=		Curl support
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+CURL_CONFIGURE_ON=	--with-curl-lib=${LOCALBASE}/lib
 CURL_CONFIGURE_OFF=
 
 FREERADIUS_DESC=		Freeradius support
@@ -44,14 +49,13 @@ FREERADIUS_LIB_DEPENDS=		libfreeradius-radius.so:net/freeradius3
 FREERADIUS_CONFIGURE_ON=	--with-pcre-lib=${LOCALBASE}/lib
 FREERADIUS_CONFIGURE_OFF=
 
-USERS=		tacacs
-GROUPS=		tacacs
+PCRE_DESC=		PCRE support
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_CONFIGURE_ON=	--with-pcre-lib=${LOCALBASE}/lib
+PCRE_CONFIGURE_OFF=
 
-WRKSRC=		${WRKDIR}/PROJECTS
-
-SHEBANG_FILES=	tac_plus/sample/tac_plus.cfg
-
-USE_RC_SUBR?=	tac_plus
+SCTP_DESC=		SCTP support
+SCTP_CONFIGURE_WITH=	sctp
 
 post-build:
 	@${REINPLACE_CMD} -e '1d' ${WRKSRC}/tac_plus/sample/tac_plus.cfg
