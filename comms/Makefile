@@ -2,6 +2,7 @@
 
     SUBDIR += acfax
     SUBDIR += airspy
+    SUBDIR += airspyhf
     SUBDIR += aldo
     SUBDIR += amtterm
     SUBDIR += anyremote
