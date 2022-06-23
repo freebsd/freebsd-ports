@@ -1,17 +1,22 @@
---- CMakeLists.txt.orig	2022-06-23 16:25:30 UTC
+--- CMakeLists.txt.orig	2021-10-17 22:38:02 UTC
 +++ CMakeLists.txt
-@@ -3,8 +3,8 @@ project(sdrpp)
+@@ -1,11 +1,11 @@ project(sdrpp)
+ cmake_minimum_required(VERSION 3.13)
+ project(sdrpp)
  
- if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
++#if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
      set(CMAKE_INSTALL_PREFIX "/usr/local")
 -else()
 -    set(CMAKE_INSTALL_PREFIX "/usr")
+-endif()
 +#else()
 +#    set(CMAKE_INSTALL_PREFIX "/usr")
- endif()
++#endif()
  
  # Compatibility Options
-@@ -206,8 +206,8 @@ install(DIRECTORY ${CMAKE_SOURCE_DIR}/root/res/icons D
+ option(OPT_OVERRIDE_STD_FILESYSTEM "Use a local version of std::filesystem on systems that don't have it yet" OFF)
+@@ -206,8 +206,8 @@ configure_file(${CMAKE_SOURCE_DIR}/sdrpp.desktop ${CMA
  install(DIRECTORY ${CMAKE_SOURCE_DIR}/root/res/themes DESTINATION share/sdrpp)
  configure_file(${CMAKE_SOURCE_DIR}/sdrpp.desktop ${CMAKE_CURRENT_BINARY_DIR}/sdrpp.desktop @ONLY)
  
