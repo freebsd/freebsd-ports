@@ -1,7 +1,7 @@
 PORTNAME=	bagel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
-PORTREVISION=	6
+DISTVERSION=	1.2.2-132
+DISTVERSIONSUFFIX=	-g2955e4d1a
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,17 +11,21 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_i386=	error: static_assert failed "size_t is assumed to be the same size as unsigned long long"
-BROKEN=		error: no type named 'library_version_type' in namespace 'boost::archive'
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
+TEST_DEPENDS=	cblas>0:math/cblas
 
 USES=		autoreconf blaslapack:openblas compiler:c++11-lang fortran gmake libtool localbase python:build
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datarootdir=${DATADIR}
-USE_GITHUB=	yes
-GH_ACCOUNT=	nubakery
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	qsimulate-open
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--datarootdir=${DATADIR}
+
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=			MPI LIBXC SCALAPACK SMITH # SLATER (needs a separate lib)
 OPTIONS_DEFAULT=		MPI LIBXC SCALAPACK SMITH
@@ -45,8 +49,10 @@ SMITH_DESC=			Compile SMITH generated code
 SMITH_CONFIGURE_ENABLE=		smith
 SMITH_IMPLIES=			MPI
 
-TEST_TARGET=			check # tests fail to build: https://github.com/nubakery/bagel/issues/145
-#TEST_ENV=			${MAKE_ARGS}
-#TEST_ARGS=			${MAKE_ARGS}
+TEST_TARGET=			check
+TEST_ARGS=			LDFLAGS+="-lcblas -lblas" ${TEST_TARGET}
+
+post-test: # tests fail, see https://github.com/qsimulate-open/bagel/issues/248
+	@cd ${WRKSRC}/src && ./TestSuite --log_level=all
 
 .include <bsd.port.mk>
