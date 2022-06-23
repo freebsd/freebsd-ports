@@ -1,0 +1,4 @@
+RingRTC is a middleware library providing Signal Messenger applications
+with video and voice calling services built on top of WebRTC.
+
+WWW: https://github.com/signalapp/ringrtc

@@ -1,0 +1,16 @@
+--- ../../src/webrtc/src/base/third_party/libevent/BUILD.gn.orig	2021-03-15 17:07:00 UTC
++++ ../../src/webrtc/src/base/third_party/libevent/BUILD.gn
+@@ -43,6 +43,13 @@ static_library("libevent") {
+       "mac/event-config.h",
+     ]
+     include_dirs = [ "mac" ]
++  } else if (is_bsd) {
++    sources += [
++      "kqueue.c",
++      "freebsd/config.h",
++      "freebsd/event-config.h",
++    ]
++    include_dirs = [ "freebsd" ]
+   } else if (is_linux || is_chromeos) {
+     sources += [
+       "epoll.c",

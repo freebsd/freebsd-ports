@@ -363,6 +363,7 @@
     SUBDIR += recmpeg
     SUBDIR += recordmydesktop
     SUBDIR += replex
+    SUBDIR += ringrtc
     SUBDIR += rtmpdump
     SUBDIR += rubygem-av
     SUBDIR += rubygem-clutter-gstreamer

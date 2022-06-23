@@ -1,0 +1,30 @@
+--- ../../src/webrtc/src/build/config/BUILD.gn.orig	2021-05-26 12:26:11 UTC
++++ ../../src/webrtc/src/build/config/BUILD.gn
+@@ -128,7 +128,7 @@ config("debug") {
+       # builds, and we have to tell it to turn it off.
+       defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]
+     }
+-  } else if ((is_linux || is_chromeos) && current_cpu == "x64" &&
++  } else if ((is_linux || is_chromeos || is_bsd) && current_cpu == "x64" &&
+              enable_iterator_debugging) {
+     # Enable libstdc++ debugging facilities to help catch problems early, see
+     # http://crbug.com/65151 .
+@@ -227,9 +227,7 @@ config("default_libs") {
+     ]
+   } else if (is_linux || is_chromeos) {
+     libs = [
+-      "dl",
+       "pthread",
+-      "rt",
+     ]
+   }
+ }
+@@ -308,7 +306,7 @@ config("executable_config") {
+       "//build/config/ios:ios_dynamic_flags",
+       "//build/config/ios:ios_executable_flags",
+     ]
+-  } else if (is_linux || is_chromeos || is_android || current_os == "aix") {
++  } else if (is_linux || is_bsd || is_chromeos || is_android || current_os == "aix") {
+     configs += [ "//build/config/gcc:executable_config" ]
+     if (is_chromecast) {
+       configs += [ "//build/config/chromecast:executable_config" ]

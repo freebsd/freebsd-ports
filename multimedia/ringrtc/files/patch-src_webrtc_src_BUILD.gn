@@ -1,0 +1,23 @@
+--- ../../src/webrtc/src/BUILD.gn.orig	2021-03-15 15:09:17 UTC
++++ ../../src/webrtc/src/BUILD.gn
+@@ -188,6 +188,9 @@ config("common_inherited_config") {
+   if (is_linux || is_chromeos) {
+     defines += [ "WEBRTC_LINUX" ]
+   }
++  if (is_bsd) {
++    defines += [ "WEBRTC_BSD" ]
++  }
+   if (is_mac) {
+     defines += [ "WEBRTC_MAC" ]
+   }
+@@ -431,10 +434,6 @@ config("common_config") {
+       "/U_UNICODE",
+     ]
+   }
+-}
+-
+-config("common_objc") {
+-  frameworks = [ "Foundation.framework" ]
+ }
+ 
+ if (!build_with_chromium) {
