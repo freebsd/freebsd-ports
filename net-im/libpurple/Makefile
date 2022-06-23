@@ -1,8 +1,7 @@
 # Created by: Jim Mock <jim@FreeBSD.org>
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.14.9
-PORTREVISION?=	1
+PORTVERSION=	2.14.10
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -67,6 +66,7 @@ QQ_DESC=	The Tencent QQ chat protocol
 SIMPLE_DESC=	The SIMPLE chat protocol
 ZEPHYR_DESC=	The Zephyr chat protocol
 
+PLIST_SUB+=	SHLIB_VERSION=${PORTVERSION:R:E}.${PORTVERSION:E}
 .if defined(WITH_GTKUI)
 OPTIONS_DEFINE+=	GTKSPELL CAP
 OPTIONS_DEFAULT+=	GTKSPELL CAP
