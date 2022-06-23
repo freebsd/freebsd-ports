@@ -1,7 +1,7 @@
 PORTNAME=	nextdns
 PORTVERSION=	1.37.11
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	dns security
 
 MAINTAINER=	rs@nextdns.io
@@ -23,10 +23,14 @@ GH_TUPLE=	\
 		vishvananda:netlink:v1.1.0:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
 		vishvananda:netns:2eb08e3e575f:vishvananda_netns/vendor/github.com/vishvananda/netns
 
-GO_TARGET=	.:${PREFIX}/sbin/nextdns
+GO_TARGET=	.:${PREFIX}/sbin/${PORTNAME}
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	sbin/nextdns
+PLIST_FILES=	sbin/${PORTNAME} \
+		"@sample etc/${PORTNAME}.conf.sample"
+
+post-install:
+	@${STAGEDIR}${PREFIX}/sbin/${PORTNAME} config > ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>
