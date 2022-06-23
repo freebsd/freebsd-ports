@@ -91,7 +91,7 @@ post-patch:
 		${WRKSRC}/ts/scripts/get-expire-time.ts
 
 do-build:
-	${ECHO} 'yarn-offline-mirror "../yarn-cache"' > ${WRKSRC}/.yarnrc
+	${ECHO_CMD} 'yarn-offline-mirror "../yarn-cache"' > ${WRKSRC}/.yarnrc
 
 # electron-builder is stupid and tries to open ${LOCALBASE}/share/electron18/electron with WRITE priv
 # copy ${LOCALBASE}/share/electron18 in WRKDIR
@@ -133,7 +133,7 @@ do-build:
 #		${SETENV} ${MAKE_ENV} yarn build:webpack
 
  	# For offline build
-	${ECHO} offline=true > ${WRKDIR}/.npmrc
+	${ECHO_CMD} offline=true > ${WRKDIR}/.npmrc
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} yarn install --frozen-lockfile --ignore-optional --offline
 	cd ${WRKSRC} && \

@@ -275,9 +275,9 @@ post-patch:
 		${WEBRTCDIR}/build/toolchain/gcc_toolchain.gni \
 		${WEBRTCDIR}/buildtools/third_party/libc++/BUILD.gn
 
-	${ECHO} "# Generated from 'DEPS'" > ${WEBRTCDIR}/build/config/gclient_args.gni
-	${ECHO} 1591703586 > ${WEBRTCDIR}/build/util/LASTCHANGE.committime
-	${ECHO} "qqchose " > ${WEBRTCDIR}/build/util/LASTCHANGE
+	${ECHO_CMD} "# Generated from 'DEPS'" > ${WEBRTCDIR}/build/config/gclient_args.gni
+	${ECHO_CMD} 1591703586 > ${WEBRTCDIR}/build/util/LASTCHANGE.committime
+	${ECHO_CMD} "qqchose " > ${WEBRTCDIR}/build/util/LASTCHANGE
 
 pre-build:
 	cd ${WEBRTCDIR} && \

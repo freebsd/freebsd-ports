@@ -247,7 +247,7 @@ post-patch:
 		${WRKSRC}/node/binding.gyp
 
 do-build:
-	${ECHO} 'yarn-offline-mirror "../yarn-cache"' > ${WRKSRC}/.yarnrc
+	${ECHO_CMD} 'yarn-offline-mirror "../yarn-cache"' > ${WRKSRC}/.yarnrc
 	cd ${WRKSRC}/node && \
 		${SETENV} ${MAKE_ENV} yarn install --frozen-lockfile --ignore-optional --offline
 	cd ${WRKSRC}/node && \
