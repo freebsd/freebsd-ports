@@ -2,7 +2,7 @@
 
 PORTNAME=	fluent-bit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.4
+DISTVERSION=	1.9.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -21,8 +21,10 @@ USES=		cmake:noninja gmake bison
 OPTIONS_DEFINE=		SSL PGSQL
 OPTIONS_DEFAULT=	SSL
 
+LIB_DEPENDS=		libyaml.so:textproc/libyaml
 LDFLAGS=		-lexecinfo
 CMAKE_ARGS=		-DFLB_DEBUG=Off -DFLB_TRACE=Off
+CFLAGS+=		-I${LOCALBASE}/include
 
 SSL_USES=		ssl
 SSL_CMAKE_ON=		-DFLB_TLS=On
