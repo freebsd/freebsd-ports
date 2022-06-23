@@ -21,6 +21,7 @@ MANPAGELINKS=	ix if_ix if_ixgbe
 MAX_NETMAP_OSVERSION=	9999999
 
 MASTERDIR=	${.CURDIR}/../intel-ixl-kmod
+PATCHDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
