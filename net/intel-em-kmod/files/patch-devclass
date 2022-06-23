@@ -1,0 +1,30 @@
+--- if_em.c.orig	2022-05-13 15:26:41.055245000 -0700
++++ if_em.c	2022-05-13 15:27:11.443359000 -0700
+@@ -379,8 +379,12 @@ static driver_t em_driver = {
+ 	"em", em_methods, sizeof(struct adapter),
+ };
+ 
++#if __FreeBSD_version >= 1400058
++DRIVER_MODULE(em, pci, em_driver, 0, 0);
++#else
+ devclass_t em_devclass;
+ DRIVER_MODULE(em, pci, em_driver, em_devclass, 0, 0);
++#endif
+ MODULE_DEPEND(em, pci, 1, 1, 1);
+ MODULE_DEPEND(em, ether, 1, 1, 1);
+ 
+--- if_lem.c.orig	2022-05-13 15:26:44.154782000 -0700
++++ if_lem.c	2022-05-13 15:27:38.402591000 -0700
+@@ -289,8 +289,12 @@ static driver_t lem_driver = {
+ 	"em", lem_methods, sizeof(struct adapter),
+ };
+ 
++#if __FreeBSD_version >= 1400058
++DRIVER_MODULE(lem, pci, lem_driver, 0, 0);
++#else
+ extern devclass_t em_devclass;
+ DRIVER_MODULE(lem, pci, lem_driver, em_devclass, 0, 0);
++#endif
+ MODULE_DEPEND(lem, pci, 1, 1, 1);
+ MODULE_DEPEND(lem, ether, 1, 1, 1);
+ 
