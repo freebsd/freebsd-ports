@@ -1,8 +1,7 @@
 # Created by: Carlos J Puga Medina <cpm@fbsd.es>
 
 PORTNAME=	dnsdist
-DISTVERSION=	1.7.1
-PORTREVISION=	1
+DISTVERSION=	1.7.2
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 
