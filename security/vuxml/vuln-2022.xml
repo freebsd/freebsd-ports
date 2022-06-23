@@ -197,12 +197,11 @@
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Tor organization reports:</p>
 	<blockquote cite="https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/TROVE">
-	  <p>TBD</p>
+	  <p>TROVE-2022-001</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <cvename>TROVE-2022-001[0]</cvename>
       <url>https://gitlab.torproject.org/tpo/core/team/-/wikis/NetworkTeam/TROVE</url>
     </references>
     <dates>
