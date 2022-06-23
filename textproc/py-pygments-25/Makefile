@@ -15,7 +15,7 @@ COMMENT=	Syntax highlighter written in Python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe python:2.7+
+USES=		cpe python
 USE_PYTHON=	distutils concurrent autoplist
 
 CONFLICTS_INSTALL=	py??-pygments
