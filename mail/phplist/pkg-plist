@@ -1727,6 +1727,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/Common/Main.php
 %%WWWDIR%%/lists/admin/plugins/Common/Model.php
 %%WWWDIR%%/lists/admin/plugins/Common/PageLink.php
+%%WWWDIR%%/lists/admin/plugins/Common/pager.css
 %%WWWDIR%%/lists/admin/plugins/Common/Pager.php
 %%WWWDIR%%/lists/admin/plugins/Common/pager.tpl.php
 %%WWWDIR%%/lists/admin/plugins/Common/PageURL.php
@@ -1831,7 +1832,6 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/installed.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/InstalledVersions.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/LICENSE
-%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/platform_check.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/container-interop/container-interop/LICENSE
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/container-interop/container-interop/src/Interop/Container/ContainerInterface.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/container-interop/container-interop/src/Interop/Container/Exception/ContainerException.php
@@ -3991,7 +3991,6 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/jms/metadata/tests/Metadata/Tests/MethodMetadataTest.php
 %%WWWDIR%%/lists/base/vendor/jms/metadata/tests/Metadata/Tests/PropertyMetadataTest.php
 %%WWWDIR%%/lists/base/vendor/jms/parser-lib/.gitignore
-%%WWWDIR%%/lists/base/vendor/jms/parser-lib/.jms.yml
 %%WWWDIR%%/lists/base/vendor/jms/parser-lib/.travis.yml
 %%WWWDIR%%/lists/base/vendor/jms/parser-lib/composer.json
 %%WWWDIR%%/lists/base/vendor/jms/parser-lib/composer.lock
