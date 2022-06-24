@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X.509 Certification Authority management tool
 
 DEPRECATED=	Abandonware, depending on gconf2
-EXPIRATION_DATE=	2020-07-24
+EXPIRATION_DATE=	2022-07-24
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

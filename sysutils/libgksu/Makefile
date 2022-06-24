@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library providing su and sudo functionality
 
 DEPRECATED=	Abandonware, depending on gconf2
-EXPIRATION_DATE=	2020-07-24
+EXPIRATION_DATE=	2022-07-24
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
