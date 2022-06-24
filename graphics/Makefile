@@ -284,7 +284,6 @@
     SUBDIR += gnome-color-manager
     SUBDIR += gnome-video-effects
     SUBDIR += gocr
-    SUBDIR += goocanvas
     SUBDIR += goocanvas2
     SUBDIR += goocanvas3
     SUBDIR += goocanvasmm2
