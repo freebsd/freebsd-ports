@@ -1,9 +1,9 @@
 # Created by: Hugo Saro <hugo@barafranca.com>
 
 PORTNAME=	haproxy
-DISTVERSION=	2.6-dev12
+DISTVERSION=	2.7-dev1
 CATEGORIES=	net www
-MASTER_SITES=	http://www.haproxy.org/download/2.6/src/devel/
+MASTER_SITES=	http://www.haproxy.org/download/2.7/src/devel/
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
@@ -23,7 +23,7 @@ default_CONFLICTS_INSTALL=	haproxy-devel-lua
 lua_CONFLICTS_INSTALL=		haproxy-devel
 lua_PKGNAMESUFFIX=		devel-lua
 
-CONFLICTS_INSTALL=	haproxy haproxy17 haproxy18 haproxy20 haproxy22 haproxy23 haproxy24
+CONFLICTS_INSTALL=	haproxy haproxy17 haproxy18 haproxy20 haproxy22 haproxy23 haproxy24 haproxy25
 
 ALL_TARGET=	all admin/halog/halog
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS USE_GETADDRINFO=1 \

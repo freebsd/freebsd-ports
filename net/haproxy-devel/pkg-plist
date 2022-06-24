@@ -46,9 +46,6 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/connection-header.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/connection-scale.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/entities-v2.txt
-%%PORTDOCS%%%%DOCSDIR%%/internals/entities.fig
-%%PORTDOCS%%%%DOCSDIR%%/internals/entities.pdf
-%%PORTDOCS%%%%DOCSDIR%%/internals/entities.svg
 %%PORTDOCS%%%%DOCSDIR%%/internals/entities.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/fd-migration.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/hashing.txt
@@ -73,7 +70,6 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/pattern.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/polling-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/repartition-be-fe-fi.txt
-%%PORTDOCS%%%%DOCSDIR%%/internals/sequence.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/sched.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/sched.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/sched.png
@@ -99,7 +95,6 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/queuing.fig
 %%PORTDOCS%%%%DOCSDIR%%/regression-testing.txt
 %%PORTDOCS%%%%DOCSDIR%%/seamless_reload.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl-content-sw.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic-config-edge.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/content-sw-sample.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/400.http
