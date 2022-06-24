@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=PULSEAUDIO
 OPTIONS_SUB=	yes
 
 PULSEAUDIO_DESC=	use PulseAudio for audio playback
-PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
+PULSEAUDIO_MESON_ENABLED=	pulseaudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
 
