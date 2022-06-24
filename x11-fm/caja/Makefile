@@ -2,7 +2,7 @@
 
 PORTNAME=	caja
 PORTVERSION=	1.26.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -17,6 +17,7 @@ LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libexempi.so:textproc/exempi \
+		libffmpegthumbnailer.so:multimedia/ffmpegthumbnailer \
 		libstartup-notification-1.so:x11/startup-notification \
 		libnotify.so:devel/libnotify
 
