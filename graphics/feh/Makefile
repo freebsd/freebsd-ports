@@ -1,11 +1,9 @@
 # Created by: Jeremy Norris <ishmael127@home.com>
 
 PORTNAME=	feh
-PORTVERSION=	3.8
-PORTREVISION=	1
+PORTVERSION=	3.9
 CATEGORIES=	graphics
-MASTER_SITES=	http://feh.finalrewind.org/ \
-		LOCAL/uqs
+MASTER_SITES=	https://feh.finalrewind.org/
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Image viewer that utilizes Imlib2
