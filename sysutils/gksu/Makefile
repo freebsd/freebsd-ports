@@ -9,6 +9,9 @@ MASTER_SITES=	http://people.debian.org/~kov/gksu/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical frontend to su
 
+DEPRECATED=	Abandonware, depending on gconf2
+EXPIRATION_DATE=	2020-07-24
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

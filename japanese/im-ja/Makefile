@@ -9,6 +9,9 @@ MASTER_SITES=	http://im-ja.sourceforge.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese input module for GTK2
 
+DEPRECATED=	Abandonware, depending on gconf2
+EXPIRATION_DATE=	2020-07-24
+
 OPTIONS_DEFINE=	ANTHY CANNA WNN
 OPTIONS_DEFAULT=ANTHY CANNA WNN
 ANTHY_DESC=	Use Anthy
