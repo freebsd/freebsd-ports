@@ -12,20 +12,7 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.x
           download-size="0"
           install-size="0"
           version="0.0.0"
-@@ -105,9 +105,9 @@
-          unpack="false"/>
-    
-    <plugin
--         id="org.eclipse.core.net.linux.x86_64"
--         os="linux"
--         arch="x86_64"
-+         id="org.eclipse.core.net.freebsd.amd64"
-+         os="freebsd"
-+         arch="amd64"
-          download-size="0"
-          install-size="0"
-          version="0.0.0"
-@@ -371,9 +371,9 @@
+@@ -363,9 +363,9 @@
           unpack="false"/>
  
     <plugin
@@ -38,7 +25,7 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.x
           download-size="0"
           install-size="0"
           version="0.0.0"
-@@ -410,18 +410,28 @@
+@@ -402,18 +402,27 @@
           unpack="false"/>
  
     <plugin
@@ -53,7 +40,6 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.x
           version="0.0.0"
           fragment="true"
           unpack="false"/>
-+
 +   <plugin
 +         id="org.eclipse.core.filesystem.freebsd.powerpc64le"
 +         os="freebsd"
@@ -63,7 +49,7 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.x
 +         version="0.0.0"
 +         fragment="true"
 +         unpack="false"/>
-          
+ 
     <plugin
 -         id="org.eclipse.core.filesystem.linux.aarch64"
 -         os="linux"
@@ -72,7 +58,7 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.x
           arch="aarch64"
           download-size="0"
           install-size="0"
-@@ -484,8 +494,8 @@
+@@ -476,8 +485,8 @@
           unpack="false"/>
  
     <plugin
@@ -80,19 +66,6 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.x
 -         os="linux"
 +         id="org.eclipse.equinox.security.freebsd"
 +         os="freebsd"
-          download-size="0"
-          install-size="0"
-          version="0.0.0"
-@@ -493,9 +503,9 @@
-          unpack="false"/>
-    
-    <plugin
--         id="org.eclipse.equinox.security.linux.x86_64"
--         os="linux"
--         arch="x86_64"
-+         id="org.eclipse.equinox.security.freebsd.amd64"
-+         os="freebsd"
-+         arch="amd64"
           download-size="0"
           install-size="0"
           version="0.0.0"

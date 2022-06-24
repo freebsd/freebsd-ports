@@ -17,8 +17,8 @@ diff -ru rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/r
        <plugin id="org.eclipse.core.expressions"/>
        <plugin id="org.eclipse.core.jobs"/>
        <plugin id="org.eclipse.core.net"/>
--      <plugin id="org.eclipse.core.net.linux.x86_64" fragment="true"/>
-+      <plugin id="org.eclipse.core.net.freebsd.amd64" fragment="true"/>
+-      <plugin id="org.eclipse.core.net.linux" fragment="true"/>
++      <plugin id="org.eclipse.core.net.freebsd" fragment="true"/>
        <plugin id="org.eclipse.core.runtime"/>
        <plugin id="org.eclipse.e4.core.commands"/>
        <plugin id="org.eclipse.e4.core.contexts"/>
@@ -26,13 +26,13 @@ diff -ru rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/r
        <plugin id="org.eclipse.equinox.preferences"/>
        <plugin id="org.eclipse.equinox.registry"/>
        <plugin id="org.eclipse.equinox.security"/>
--      <plugin id="org.eclipse.equinox.security.linux.x86_64" fragment="true"/>
-+      <plugin id="org.eclipse.equinox.security.freebsd.amd64" fragment="true"/>
+-      <plugin id="org.eclipse.equinox.security.linux" fragment="true"/>
++      <plugin id="org.eclipse.equinox.security.freebsd" fragment="true"/>
        <plugin id="org.eclipse.equinox.security.ui"/>
        <plugin id="org.eclipse.equinox.simpleconfigurator"/>
        <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator"/>
-@@ -134,7 +134,7 @@
-       <plugin id="org.eclipse.osgi.util"/>
+@@ -133,7 +133,7 @@
+       <plugin id="org.eclipse.osgi.services"/>
        <plugin id="org.eclipse.swt"/>
        <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true"/>
 -      <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true"/>
@@ -43,14 +43,14 @@ diff -ru rt.equinox.p2/bundles/org.eclipse.equinox.p2.tests.reconciler.product/r
 diff -ru rt.equinox.p2/features/org.eclipse.equinox.p2.core.feature/feature.xml rt.equinox.p2/features/org.eclipse.equinox.p2.core.feature/feature.xml
 --- rt.equinox.p2/features/org.eclipse.equinox.p2.core.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.p2/features/org.eclipse.equinox.p2.core.feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -184,9 +184,9 @@
+@@ -177,9 +177,9 @@
           unpack="false"/>
  
     <plugin
--         id="org.eclipse.equinox.security.linux.x86_64"
+-         id="org.eclipse.equinox.security.linux"
 -         os="linux"
 -         arch="x86_64"
-+         id="org.eclipse.equinox.security.freebsd.amd64"
++         id="org.eclipse.equinox.security.freebsd"
 +         os="freebsd"
 +         arch="amd64"
           download-size="0"

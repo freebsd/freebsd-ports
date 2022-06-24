@@ -18,7 +18,7 @@ diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/META-INF/MAN
  Bundle-Localization: fragment
 -Bundle-SymbolicName: org.eclipse.core.net.linux;singleton:=true
 +Bundle-SymbolicName: org.eclipse.core.net.freebsd;singleton:=true
- Bundle-Version: 1.0.0.qualifier
+ Bundle-Version: 1.0.100.qualifier
  Fragment-Host: org.eclipse.core.net;bundle-version="1.1.0"
 -Eclipse-PlatformFilter: (osgi.os=linux)
 +Eclipse-PlatformFilter: (osgi.os=freebsd)
@@ -54,7 +54,7 @@ diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/pom.xml ecli
    <groupId>org.eclipse.core</groupId>
 -  <artifactId>org.eclipse.core.net.linux</artifactId>
 +  <artifactId>org.eclipse.core.net.freebsd</artifactId>
-   <version>1.0.0-SNAPSHOT</version>
+   <version>1.0.100-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
 @@ -35,7 +35,7 @@
@@ -96,93 +96,15 @@ diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd/src/org/ecli
  					return pd;
  				}
  			} catch (UnsatisfiedLinkError e) {
-diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/.project eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/.project
---- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
-@@ -1,6 +1,6 @@
- <?xml version="1.0" encoding="UTF-8"?>
- <projectDescription>
--	<name>org.eclipse.core.net.linux.x86_64</name>
-+	<name>org.eclipse.core.net.freebsd.amd64</name>
- 	<comment></comment>
- 	<projects>
- 	</projects>
-diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/BUILD_INFO.txt eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/BUILD_INFO.txt
---- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/BUILD_INFO.txt	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/BUILD_INFO.txt	0000-00-00 00:00:00.000000000 +0000
-@@ -1,10 +1,10 @@
- Native Build Info:
- ------------------
- 
--platform:         linux.gtk.x86_64
-+platform:         freebsd.gtk.amd64
- built by:         Eric Williams, ericwill@redhat.com
- build date:       24-May-2018
--OS Name:          RHEL Workstation 7.5
--OS Version:       Linux 3.10.0
--Compiler version: gcc (GCC) 4.8.5
--Java version:     Java(TM) 8 Runtime Environment, Standard Edition (1.8.0.171)
-\ No newline at end of file
-+OS Name:          FreeBSD
-+OS Version:       12
-+Compiler version: FreeBSD clang version 6.0.1
-+Java version:     Java(TM) 8 Runtime Environment, Standard Edition (1.8.0.171)
-diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/MANIFEST.MF eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/MANIFEST.MF
---- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-@@ -3,9 +3,9 @@
- Bundle-Name: %fragmentName
- Bundle-Vendor: %providerName
- Bundle-Localization: fragment
--Bundle-SymbolicName: org.eclipse.core.net.linux.x86_64;singleton:=true
-+Bundle-SymbolicName: org.eclipse.core.net.freebsd.amd64;singleton:=true
- Bundle-Version: 1.2.500.qualifier
- Fragment-Host: org.eclipse.core.net;bundle-version="1.1.0"
--Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86_64))
-+Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=amd64))
- Bundle-RequiredExecutionEnvironment: JavaSE-1.8
--Automatic-Module-Name: org.eclipse.core.net.linux.x86_64
-+Automatic-Module-Name: org.eclipse.core.net.freebsd.amd64
-diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/p2.inf eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/p2.inf
---- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
-@@ -1,2 +1,2 @@
- requires.0.namespace=org.eclipse.equinox.p2.iu
--requires.0.name=org.eclipse.core.net.linux
-+requires.0.name=org.eclipse.core.net.freebsd
-diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/fragment.properties eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/fragment.properties
---- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/fragment.properties	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/fragment.properties	0000-00-00 00:00:00.000000000 +0000
-@@ -11,5 +11,5 @@
- # Contributors:
- #     IBM Corporation - initial API and implementation
- ###############################################################################
--fragmentName = Proxy for Linux x86_64
-+fragmentName = Proxy for FreeBSD amd64
- providerName = Eclipse.org
-diff -ru eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xml eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xml
---- eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.team/bundles/org.eclipse.core.net.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -18,7 +18,7 @@
-     <relativePath>../../</relativePath>
-   </parent>
-   <groupId>org.eclipse.core</groupId>
--  <artifactId>org.eclipse.core.net.linux.x86_64</artifactId>
-+  <artifactId>org.eclipse.core.net.freebsd.amd64</artifactId>
-   <version>1.2.500-SNAPSHOT</version>
-   <packaging>eclipse-plugin</packaging>
- 
 diff -ru eclipse.platform.team/pom.xml eclipse.platform.team/pom.xml
 --- eclipse.platform.team/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.team/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -73,8 +73,8 @@
-     <module>features/org.eclipse.cvs-feature</module>
+@@ -67,7 +67,7 @@
+     <module>examples/org.eclipse.team.examples.filesystem</module>
  
      <!-- fragments -->
 -    <module>bundles/org.eclipse.core.net.linux</module>
--    <module>bundles/org.eclipse.core.net.linux.x86_64</module>
 +    <module>bundles/org.eclipse.core.net.freebsd</module>
-+    <module>bundles/org.eclipse.core.net.freebsd.amd64</module>
+     <module>bundles/org.eclipse.core.net.win32</module>
      <module>bundles/org.eclipse.core.net.win32.x86_64</module>
      <module>tests</module>
-    

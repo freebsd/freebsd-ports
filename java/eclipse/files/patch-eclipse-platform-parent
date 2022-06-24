@@ -1,19 +1,19 @@
 diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
 --- eclipse-platform-parent/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse-platform-parent/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -81,9 +81,9 @@
+@@ -77,9 +77,9 @@
        'eclipiserun-repo' repository, such as for computing .api-descriptions and
        generating API Tools reports.
      -->
--    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.21-I-builds/</eclipserun-repo>
-+    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.21/</eclipserun-repo>
+-    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.24-I-builds/</eclipserun-repo>
++    <eclipserun-repo>https://download.eclipse.org/eclipse/updates/4.24/</eclipserun-repo>
      
--    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.21-I-builds</comparator.repo>
-+    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.21</comparator.repo>
+-    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.24-I-builds</comparator.repo>
++    <comparator.repo>https://download.eclipse.org/eclipse/updates/4.24</comparator.repo>
  
      <!-- only used when Tycho snapshot repo is enabled in <pluginRepositories> further down -->
      <tycho-snapshot-repo.url>https://repo.eclipse.org/content/repositories/tycho-snapshots/</tycho-snapshot-repo.url>
-@@ -257,17 +257,22 @@
+@@ -253,17 +253,22 @@
            </target>
            <environments>
              <environment>
@@ -41,12 +41,12 @@ diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
                <ws>gtk</ws>
                <arch>aarch64</arch>
              </environment>
-@@ -624,7 +629,7 @@
+@@ -625,7 +630,7 @@
            For maintenance streams should always be "M-builds".
            Ideally, this value would be provided by the environment, see bug 489789.
          -->
--        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.21-I-builds</eclipse-p2-repo.url>
-+        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.21</eclipse-p2-repo.url>
+-        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.24-I-builds</eclipse-p2-repo.url>
++        <eclipse-p2-repo.url>https://download.eclipse.org/eclipse/updates/4.24</eclipse-p2-repo.url>
        </properties>
        <repositories>
          <repository>

@@ -4,7 +4,6 @@
 #
 LINUX_DIRS="
 	eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.linux.*
-	eclipse.platform.swt.binaries/bundles/org.eclipse.swt.browser.chromium.gtk.linux.*
 	eclipse.platform.resources/bundles/org.eclipse.core.filesystem.linux.*
 	eclipse.platform.resources/bundles/org.eclipse.core.filesystem/natives/unix/linux
 	eclipse.platform.team/bundles/org.eclipse.core.net.linux*

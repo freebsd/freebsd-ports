@@ -1,3 +1,15 @@
+diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.bidi/src/org/eclipse/equinox/bidi/advanced/StructuredTextEnvironment.java rt.equinox.bundles/bundles/org.eclipse.equinox.bidi/src/org/eclipse/equinox/bidi/advanced/StructuredTextEnvironment.java
+--- rt.equinox.bundles/bundles/org.eclipse.equinox.bidi/src/org/eclipse/equinox/bidi/advanced/StructuredTextEnvironment.java	0000-00-00 00:00:00.000000000 +0000
++++ rt.equinox.bundles/bundles/org.eclipse.equinox.bidi/src/org/eclipse/equinox/bidi/advanced/StructuredTextEnvironment.java	0000-00-00 00:00:00.000000000 +0000
+@@ -187,7 +187,7 @@
+ 			String osName = StructuredTextActivator.getProperty("os.name"); //$NON-NLS-1$/
+ 			if (osName != null)
+ 				osName = osName.toLowerCase();
+-			boolean supportedOS = osName.startsWith("windows") || osName.startsWith("linux") || osName.startsWith("mac"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
++			boolean supportedOS = osName.startsWith("windows") || osName.startsWith("freebsd") || osName.startsWith("linux") || osName.startsWith("mac"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+ 			if (supportedOS) {
+ 				// Check whether the current language uses a bidi script (Arabic, Hebrew, Farsi or Urdu)
+ 				boolean isBidi = "iw".equals(language) || //$NON-NLS-1$
 diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security/META-INF/MANIFEST.MF rt.equinox.bundles/bundles/org.eclipse.equinox.security/META-INF/MANIFEST.MF
 --- rt.equinox.bundles/bundles/org.eclipse.equinox.security/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.bundles/bundles/org.eclipse.equinox.security/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
@@ -53,60 +65,10 @@ diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd/pom.xml
                <ws>gtk</ws>
              </environment>
            </environments>
-diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/.project rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/.project
---- rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
-@@ -1,6 +1,6 @@
- <?xml version="1.0" encoding="UTF-8"?>
- <projectDescription>
--	<name>org.eclipse.equinox.security.linux.x86_64</name>
-+	<name>org.eclipse.equinox.security.freebsd.amd64</name>
- 	<comment></comment>
- 	<projects>
- 	</projects>
-diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/MANIFEST.MF rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/MANIFEST.MF
---- rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-@@ -1,12 +1,12 @@
- Manifest-Version: 1.0
- Bundle-ManifestVersion: 2
- Bundle-Name: %fragmentName
--Bundle-SymbolicName: org.eclipse.equinox.security.linux.x86_64;singleton:=true
-+Bundle-SymbolicName: org.eclipse.equinox.security.freebsd.amd64;singleton:=true
- Bundle-Version: 1.1.500.qualifier
- Bundle-Vendor: %providerName
- Fragment-Host: org.eclipse.equinox.security;bundle-version="[1.0.0,2.0.0)"
- Bundle-RequiredExecutionEnvironment: JavaSE-1.8
- Bundle-Localization: fragment
--Eclipse-PlatformFilter: (& (osgi.os=linux) (osgi.arch=x86_64))
--Automatic-Module-Name: org.eclipse.equinox.security.linux.x86_64
-+Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=amd64))
-+Automatic-Module-Name: org.eclipse.equinox.security.freebsd.amd64
- Eclipse-BundleShape: dir
-diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/p2.inf rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/p2.inf
---- rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/META-INF/p2.inf	0000-00-00 00:00:00.000000000 +0000
-@@ -1,2 +1,2 @@
- requires.0.namespace=org.eclipse.equinox.p2.iu
--requires.0.name=org.eclipse.equinox.security.linux
-\ No newline at end of file
-+requires.0.name=org.eclipse.equinox.security.freebsd
-diff -ru rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml
---- rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ rt.equinox.bundles/bundles/org.eclipse.equinox.security.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -19,7 +19,7 @@
-     <relativePath>../../</relativePath>
-   </parent>
-   <groupId>org.eclipse.equinox</groupId>
--  <artifactId>org.eclipse.equinox.security.linux.x86_64</artifactId>
-+  <artifactId>org.eclipse.equinox.security.freebsd.amd64</artifactId>
-   <version>1.1.500-SNAPSHOT</version>
-   <packaging>eclipse-plugin</packaging>
- 
 diff -ru rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml
 --- rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -217,9 +217,9 @@
+@@ -126,9 +126,9 @@
           unpack="false"/>
  
     <plugin
@@ -119,7 +81,7 @@ diff -ru rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml rt
           download-size="0"
           install-size="0"
           version="0.0.0"
-@@ -227,9 +227,9 @@
+@@ -136,9 +136,9 @@
           unpack="false"/>
  
     <plugin
@@ -135,14 +97,12 @@ diff -ru rt.equinox.bundles/features/org.eclipse.equinox.core.sdk/feature.xml rt
 diff -ru rt.equinox.bundles/pom.xml rt.equinox.bundles/pom.xml
 --- rt.equinox.bundles/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ rt.equinox.bundles/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -84,8 +84,8 @@
+@@ -78,7 +78,7 @@
      <module>bundles/org.eclipse.equinox.security</module>
      <module>bundles/org.eclipse.equinox.security.macosx</module>
      <module>bundles/org.eclipse.equinox.security.win32.x86_64</module>
 -    <module>bundles/org.eclipse.equinox.security.linux</module>
--    <module>bundles/org.eclipse.equinox.security.linux.x86_64</module>
 +    <module>bundles/org.eclipse.equinox.security.freebsd</module>
-+    <module>bundles/org.eclipse.equinox.security.freebsd.amd64</module>
      <module>bundles/org.eclipse.equinox.bidi</module>
      <module>bundles/org.eclipse.equinox.cm</module>
      <module>bundles/org.eclipse.equinox.console</module>

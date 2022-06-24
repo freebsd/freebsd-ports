@@ -1,56 +1,17 @@
 # Created by: Jonathan Chen <jonc@chen.org.nz>
-# $FreeBSD$
 
 PORTNAME=	eclipse
-PORTVERSION=	4.21
+PORTVERSION=	4.24
 CATEGORIES=	java devel
 
-# Update to eclipse.platform.releng.aggregator.git git-tag on git.eclipse.org
-ECLIPSE_TAG=	R4_21
-ECLIPSE_TSTAMP=	20210915-1206
-
-ECLIPSE_SUFX=	${ECLIPSE_TAG}.tar.xz
-ECLIPSE_MODULES=jdt/eclipse.jdt \
-		jdt/eclipse.jdt.core \
-		jdt/eclipse.jdt.core.binaries \
-		jdt/eclipse.jdt.debug \
-		jdt/eclipse.jdt.ui \
-		pde/eclipse.pde.build \
-		pde/eclipse.pde.ui \
-		platform/eclipse.platform \
-		platform/eclipse.platform.common \
-		platform/eclipse.platform.debug \
-		platform/eclipse.platform.releng \
-		platform/eclipse.platform.releng.aggregator \
-		platform/eclipse.platform.resources \
-		platform/eclipse.platform.runtime \
-		platform/eclipse.platform.swt \
-		platform/eclipse.platform.swt.binaries \
-		platform/eclipse.platform.team \
-		platform/eclipse.platform.text \
-		platform/eclipse.platform.ua \
-		platform/eclipse.platform.ui \
-		platform/eclipse.platform.ui.tools \
-		equinox/rt.equinox.binaries \
-		equinox/rt.equinox.bundles \
-		equinox/rt.equinox.framework \
-		equinox/rt.equinox.p2
-# Each Eclipse module has its own MASTER_SITE
-.for M in ${ECLIPSE_MODULES}
-MASTER_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${PORTVERSION}/:${M:C/[\.\/]//g} \
-		https://git.eclipse.org/c/${M}.git/snapshot/:${M:C/[\.\/]//g}
-DISTFILES+=	${M:C/.*\///}-${ECLIPSE_SUFX}:${M:C/[\.\/]//g}
-.endfor
-
-CEF_FILE=	cef_binary_3.3071.1649.g98725e6_linux64_minimal
-MASTER_SITES+=	https://cef-builds.spotifycdn.com/:spotify \
-		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${PORTVERSION}/:github
-DISTFILES+=	${CEF_FILE}.tar.bz2:spotify
+# Tag's Timestamp on eclipse-platform/eclipse.platform.releng.aggregator github.com
+ECLIPSE_TAG=	R4_24
+ECLIPSE_TSTAMP=	20220616-0004
 
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jonc@chen.org.nz
-COMMENT=	Eclipse IDE 2020-09
+COMMENT=	Eclipse IDE 2022-06
 
 LICENSE=	EPL
 
@@ -65,8 +26,31 @@ USES=		compiler:c++11-lang gmake pkgconfig gnome
 USE_GNOME=	gtk30
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	daemonblade
-GH_PROJECT=	eclipse-maven-repo
+GH_TUPLE=	eclipse-platform:eclipse.platform.releng.aggregator:${ECLIPSE_TAG} \
+		eclipse-jdt:eclipse.jdt:${ECLIPSE_TAG}:a/eclipse.jdt \
+		eclipse-jdt:eclipse.jdt.core:${ECLIPSE_TAG}:b/eclipse.jdt.core \
+		eclipse-jdt:eclipse.jdt.core.binaries:${ECLIPSE_TAG}:c/eclipse.jdt.core.binaries \
+		eclipse-jdt:eclipse.jdt.debug:${ECLIPSE_TAG}:d/eclipse.jdt.debug \
+		eclipse-jdt:eclipse.jdt.ui:${ECLIPSE_TAG}:e/eclipse.jdt.ui \
+		eclipse-pde:eclipse.pde:${ECLIPSE_TAG}:f/eclipse.pde \
+		eclipse-platform:eclipse.platform:${ECLIPSE_TAG}:g/eclipse.platform \
+		eclipse-platform:eclipse.platform.common:${ECLIPSE_TAG}:h/eclipse.platform.common \
+		eclipse-platform:eclipse.platform.debug:${ECLIPSE_TAG}:i/eclipse.platform.debug \
+		eclipse-platform:eclipse.platform.releng:${ECLIPSE_TAG}:j/eclipse.platform.releng \
+		eclipse-platform:eclipse.platform.resources:${ECLIPSE_TAG}:k/eclipse.platform.resources \
+		eclipse-platform:eclipse.platform.runtime:fd42b6e331:l/eclipse.platform.runtime \
+		eclipse-platform:eclipse.platform.swt:${ECLIPSE_TAG}:m/eclipse.platform.swt \
+		eclipse-platform:eclipse.platform.swt.binaries:${ECLIPSE_TAG}:n/eclipse.platform.swt.binaries \
+		eclipse-platform:eclipse.platform.team:${ECLIPSE_TAG}:o/eclipse.platform.team \
+		eclipse-platform:eclipse.platform.text:${ECLIPSE_TAG}:p/eclipse.platform.text \
+		eclipse-platform:eclipse.platform.ua:${ECLIPSE_TAG}:q/eclipse.platform.ua \
+		eclipse-platform:eclipse.platform.ui:${ECLIPSE_TAG}:r/eclipse.platform.ui \
+		eclipse-platform:eclipse.platform.ui.tools:${ECLIPSE_TAG}:s/eclipse.platform.ui.tools \
+		eclipse-equinox:equinox.binaries:${ECLIPSE_TAG}:t/rt.equinox.binaries \
+		eclipse-equinox:equinox.bundles:${ECLIPSE_TAG}:u/rt.equinox.bundles \
+		eclipse-equinox:equinox.framework:${ECLIPSE_TAG}:v/rt.equinox.framework \
+		eclipse-equinox:p2:${ECLIPSE_TAG}:w/rt.equinox.p2 \
+		daemonblade:eclipse-maven-repo:${PORTVERSION}:x
 
 USE_JAVA=	11+
 
@@ -80,9 +64,7 @@ DESKTOP_ENTRIES="Eclipse" \
 SUB_FILES=	${PORTNAME}
 
 MAVEN_ENV=	MAVEN_OPTS=-Xmx1024m CC=${CC} JAVA_HOME=${JAVA_HOME} HOME=${WRKDIR}/githome
-MAVEN_ECLIPSE=	-Dmaven.repo.local=${WRKDIR}/${GH_PROJECT}-${PORTVERSION} \
-		-Dlocal.cefsource=${WRKDIR}/${CEF_FILE} \
-		-Dlocal.patchfiles=${FILESDIR} \
+MAVEN_ECLIPSE=	-Dmaven.repo.local=${WRKDIR}/eclipse-maven-repo-${PORTVERSION} \
 		-Dnative=gtk.freebsd.${ARCH} \
 		-DforceContextQualifier=v${ECLIPSE_TSTAMP}
 

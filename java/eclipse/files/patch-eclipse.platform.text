@@ -1,7 +1,7 @@
 diff -ru eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml
 --- eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.text/org.eclipse.ui.workbench.texteditor/plugin.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -1312,7 +1312,7 @@
+@@ -1354,7 +1354,7 @@
              %blockSelectionModeFont.description
           </description>
           <fontValue

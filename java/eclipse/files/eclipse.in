@@ -7,6 +7,8 @@
 
 # Create required Webkit communication directories removed by:
 # https://git.eclipse.org/r/c/platform/eclipse.platform.swt/+/163641/
+# The changeset makes use of dbus "abstract" socket feature which is
+# only available on Linux.
 for D in SWT-GDBusServer SWT-WebExtensionGDBusServer
 do
 	mkdir -p /tmp/${D}

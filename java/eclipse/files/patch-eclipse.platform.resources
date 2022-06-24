@@ -57,16 +57,16 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
 diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/pom.xml eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/pom.xml
 --- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.aarch64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -18,7 +18,7 @@
+@@ -17,7 +17,7 @@
+     <version>4.24.0-SNAPSHOT</version>
      <relativePath>../../</relativePath>
    </parent>
-   <groupId>org.eclipse.core</groupId>
 -  <artifactId>org.eclipse.core.filesystem.linux.aarch64</artifactId>
 +  <artifactId>org.eclipse.core.filesystem.freebsd.aarch64</artifactId>
    <version>1.4.100-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
-@@ -37,7 +37,7 @@
+@@ -36,7 +36,7 @@
            <resolver>p2</resolver>
            <environments>
              <environment>
@@ -114,16 +114,16 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
 diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/pom.xml eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/pom.xml
 --- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -18,7 +18,7 @@
+@@ -17,7 +17,7 @@
+     <version>4.24.0-SNAPSHOT</version>
      <relativePath>../../</relativePath>
    </parent>
-   <groupId>org.eclipse.core</groupId>
 -  <artifactId>org.eclipse.core.filesystem.linux.x86_64</artifactId>
 +  <artifactId>org.eclipse.core.filesystem.freebsd.amd64</artifactId>
    <version>1.2.300-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
-@@ -33,9 +33,9 @@
+@@ -32,9 +32,9 @@
            <resolver>p2</resolver>
            <environments>
              <environment>
@@ -135,7 +135,7 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
              </environment>
            </environments>
          </configuration>
-@@ -50,7 +50,7 @@
+@@ -49,7 +49,7 @@
          <property>
            <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
            <name>native</name>
@@ -144,7 +144,7 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
          </property>
        </activation>
        <build>
-@@ -63,10 +63,10 @@
+@@ -62,10 +62,10 @@
                  <phase>process-resources</phase>
                  <configuration>
                    <target>
@@ -198,16 +198,16 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
 diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/pom.xml eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/pom.xml
 --- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -18,7 +18,7 @@
+@@ -17,7 +17,7 @@
+     <version>4.24.0-SNAPSHOT</version>
      <relativePath>../../</relativePath>
    </parent>
-   <groupId>org.eclipse.core</groupId>
 -  <artifactId>org.eclipse.core.filesystem.linux.ppc64le</artifactId>
 +  <artifactId>org.eclipse.core.filesystem.freebsd.powerpc64</artifactId>
    <version>1.4.100-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
-@@ -37,9 +37,9 @@
+@@ -36,9 +36,9 @@
            <resolver>p2</resolver>
            <environments>
              <environment>
@@ -258,16 +258,16 @@ diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.
 diff -ru eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/pom.xml eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/pom.xml
 --- eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/pom.xml	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.resources/bundles/org.eclipse.core.filesystem.freebsd.powerpc64le/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -18,7 +18,7 @@
+@@ -17,7 +17,7 @@
+     <version>4.24.0-SNAPSHOT</version>
      <relativePath>../../</relativePath>
    </parent>
-   <groupId>org.eclipse.core</groupId>
 -  <artifactId>org.eclipse.core.filesystem.linux.ppc64le</artifactId>
 +  <artifactId>org.eclipse.core.filesystem.freebsd.powerpc64le</artifactId>
    <version>1.4.100-SNAPSHOT</version>
    <packaging>eclipse-plugin</packaging>
  
-@@ -37,9 +37,9 @@
+@@ -36,9 +36,9 @@
            <resolver>p2</resolver>
            <environments>
              <environment>
