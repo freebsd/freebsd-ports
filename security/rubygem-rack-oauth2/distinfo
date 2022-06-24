@@ -1,3 +1,3 @@
-TIMESTAMP = 1605908585
-SHA256 (rubygem/rack-oauth2-1.16.0.gem) = b308fe29804ff784be18f41620c664c65c77d00b87395e7d6ee002ea680610ac
-SIZE (rubygem/rack-oauth2-1.16.0.gem) = 34304
+TIMESTAMP = 1655733302
+SHA256 (rubygem/rack-oauth2-1.19.0.gem) = dc7e3b6b07a36c71ccbb021b06d38e5c7bb3e10ce3c0c460b703a29c80c8bd3f
+SIZE (rubygem/rack-oauth2-1.19.0.gem) = 34816
