@@ -17219,3 +17219,4 @@ textproc/rubygem-elasticsearch-api6|textproc/rubygem-elasticsearch-api|2022-06-2
 textproc/rubygem-elasticsearch-rails6|textproc/rubygem-elasticsearch-rails|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-rails instead
 devel/p5-Goo-Canvas|devel/p5-Goo-Canvas2|2022-06-24|Obsolete use devel/p5-Goo-Canvas2 instead
 graphics/goocanvas|graphics/goocanvas3|2022-06-24|Obsolete use graphics/goocanvas3
+x11-toolkits/tepl|x11-toolkits/tepl6|2022-06-25|Obsolete use x11-toolkits/tepl6
