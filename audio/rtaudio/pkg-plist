@@ -4,3 +4,7 @@ lib/librtaudio.so
 lib/librtaudio.so.6
 lib/librtaudio.so.6.0.2
 libdata/pkgconfig/rtaudio.pc
+%%DATADIR%%/RtAudioConfig-version.cmake
+%%DATADIR%%/RtAudioConfig.cmake
+%%DATADIR%%/RtAudioTargets-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/RtAudioTargets.cmake
