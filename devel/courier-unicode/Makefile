@@ -8,8 +8,6 @@ COMMENT=	Courier implementation of Unicode Standard related algorithms
 
 LICENSE=	GPLv3
 
-CONFLICTS=	libunicode
-
 USES=		compiler:c++11-lang iconv libtool localbase:ldflags \
 		perl5 tar:bzip2
 USE_PERL5=	build
