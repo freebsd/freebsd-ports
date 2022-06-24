@@ -1,0 +1,6 @@
+As dovecot can have many different authentication backends and
+exposes itself as authentication source trough dovecot-auth
+client socket. This module enables you to authenticate users
+against it using basic authentication.
+
+WWW: https://github.com/bmanojlovic/mod_authn_dovecot
