@@ -1,6 +1,6 @@
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	50
+PORTREVISION=	51
 CATEGORIES=	graphics
 MASTER_SITES=	http://git.savannah.gnu.org/cgit/gnash.git/snapshot/
 DISTNAME=	gnash-2b3bdede0305c4fc3ad21a0a4197330606c9b880
@@ -33,7 +33,7 @@ USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gmake libtool \
 		pkgconfig jpeg gnome gl sdl desktop-file-utils xorg
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
-USE_GNOME=	atk gconf2 gtk20 libxml2 pango
+USE_GNOME=	atk gtk20 libxml2 pango
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
 USE_GL=		egl
 USE_SDL=	sdl
@@ -53,7 +53,8 @@ CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-ffmpeg-lib=${LOCALBASE}/lib \
 		--disable-testsuite \
 		--disable-kparts3 \
-		--disable-jemalloc
+		--disable-jemalloc \
+		--without-gconf
 #MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/ffmpeg"
 
 GNASHVER=	0.8.11dev
