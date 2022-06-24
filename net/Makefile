@@ -189,6 +189,7 @@
     SUBDIR += gmid
     SUBDIR += gnet2
     SUBDIR += gnetcat
+    SUBDIR += gnome-connections
     SUBDIR += gnome-nettool
     SUBDIR += gnome-online-accounts
     SUBDIR += gnome-online-miners
