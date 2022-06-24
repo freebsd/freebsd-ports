@@ -1,9 +1,9 @@
 bin/gvnccapture
 include/gtk-vnc-2.0/gtk-vnc.h
+include/gtk-vnc-2.0/vnccairoframebuffer.h
 include/gtk-vnc-2.0/vncdisplay.h
 include/gtk-vnc-2.0/vncdisplayenums.h
 include/gtk-vnc-2.0/vncgrabsequence.h
-include/gtk-vnc-2.0/vncimageframebuffer.h
 include/gvnc-1.0/gvnc.h
 include/gvnc-1.0/vncaudio.h
 include/gvnc-1.0/vncaudioformat.h
@@ -17,6 +17,7 @@ include/gvnc-1.0/vnccursor.h
 include/gvnc-1.0/vncframebuffer.h
 include/gvnc-1.0/vncpixelformat.h
 include/gvnc-1.0/vncutil.h
+include/gvnc-1.0/vncversion.h
 %%PULSEAUDIO%%include/gvncpulse-1.0/gvncpulse.h
 %%PULSEAUDIO%%include/gvncpulse-1.0/vncaudiopulse.h
 lib/girepository-1.0/GVnc-1.0.typelib
@@ -49,6 +50,7 @@ share/locale/en_GB/LC_MESSAGES/gtk-vnc.mo
 share/locale/eo/LC_MESSAGES/gtk-vnc.mo
 share/locale/es/LC_MESSAGES/gtk-vnc.mo
 share/locale/eu/LC_MESSAGES/gtk-vnc.mo
+share/locale/fa/LC_MESSAGES/gtk-vnc.mo
 share/locale/fr/LC_MESSAGES/gtk-vnc.mo
 share/locale/fur/LC_MESSAGES/gtk-vnc.mo
 share/locale/gd/LC_MESSAGES/gtk-vnc.mo
