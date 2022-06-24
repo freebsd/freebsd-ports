@@ -1,29 +1,42 @@
---- Makefile.orig	2022-05-20 13:52:23 UTC
+--- Makefile.orig	2022-06-21 10:12:22 UTC
 +++ Makefile
-@@ -279,7 +279,7 @@ build: ${SOURCE_DIR}/.ruby-bundle ${GITALY_EXECUTABLES
- gitaly:            GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
- praefect:          GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
- gitaly-git2go-v14: GO_BUILD_TAGS = ${GIT2GO_BUILD_TAGS}
--gitaly-git2go-v14: libgit2
-+#gitaly-git2go-v14: libgit2
+@@ -235,7 +235,7 @@ TEST_REPO_GIT     := ${TEST_REPO_DIR}/gitlab-git-test.
+ BENCHMARK_REPO    := ${TEST_REPO_DIR}/benchmark.git
  
- .PHONY: ${GITALY_EXECUTABLES}
- ${GITALY_EXECUTABLES}:
-@@ -291,7 +291,7 @@ ${GITALY_EXECUTABLES}:
- 	@ # This fallback is unique but non-deterministic, making it sufficient to avoid generating the
- 	@ # GNU build-id from the empty string and causing guaranteed collisions.
- 	${Q}GO_BUILD_ID=$$( go tool buildid $(addprefix ${BUILD_DIR}/bin/, $@) || openssl rand -hex 32 ) && \
--	GNU_BUILD_ID=$$( echo $$GO_BUILD_ID | sha1sum | cut -d' ' -f1 ) && \
-+	GNU_BUILD_ID=$$( echo $$GO_BUILD_ID | sha1 | cut -d' ' -f1 ) && \
- 	go install -ldflags '${GO_LDFLAGS}'" -B 0x$$GNU_BUILD_ID" -tags "${GO_BUILD_TAGS}" $(addprefix ${GITALY_PACKAGE}/cmd/, $@)
+ # All executables provided by Gitaly
+-GITALY_EXECUTABLES    = $(addprefix ${BUILD_DIR}/bin/,$(notdir $(shell find ${SOURCE_DIR}/cmd -mindepth 1 -maxdepth 1 -type d -print)) gitaly-git2go-v14)
++GITALY_EXECUTABLES    = $(addprefix ${BUILD_DIR}/bin/,$(notdir $(shell find ${SOURCE_DIR}/cmd -mindepth 1 -maxdepth 1 -type d -print)) )
+ # Find all Go source files.
+ find_go_sources       = $(shell find ${SOURCE_DIR} -type d \( -name ruby -o -name vendor -o -name testdata -o -name '_*' -o -path '*/proto/go/gitalypb' \) -prune -o -type f -name '*.go' -not -name '*.pb.go' -print | sort -u)
  
- .PHONY: install
-@@ -493,7 +493,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+@@ -497,7 +497,6 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
 -	${Q}cd ${GITALY_RUBY_DIR} && bundle install
-+	${Q}cd ${GITALY_RUBY_DIR} && rm -f Gemfile.lock && bundle install --local
  	${Q}touch $@
  
  ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
+@@ -560,22 +559,11 @@ ${BUILD_DIR}/bin/%: ${BUILD_DIR}/intermediate/% | ${BU
+ ${BUILD_DIR}/intermediate/gitaly:            GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
+ ${BUILD_DIR}/intermediate/praefect:          GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
+ ${BUILD_DIR}/intermediate/gitaly-git2go-v15: GO_BUILD_TAGS = ${GIT2GO_BUILD_TAGS}
+-${BUILD_DIR}/intermediate/gitaly-git2go-v15: libgit2
+ ${BUILD_DIR}/intermediate/%: .FORCE
+ 	@ # We're building intermediate binaries first which contain a fixed build ID
+ 	@ # of "TEMP_GITALY_BUILD_ID". In the final binary we replace this build ID with
+ 	@ # the computed build ID for this binary.
+ 	${Q}go build -o "$@" -ldflags '-B 0x${TEMPORARY_BUILD_ID} ${GO_LDFLAGS}' -tags "${GO_BUILD_TAGS}" $(addprefix ${SOURCE_DIR}/cmd/,$(@F))
+-
+-# This target is required for backwards compatibility during zero-downtime
+-# upgrades and can be removed when v15.0 has been released.
+-${BUILD_DIR}/intermediate/gitaly-git2go-v14: GO_BUILD_TAGS = ${GIT2GO_BUILD_TAGS}
+-${BUILD_DIR}/intermediate/gitaly-git2go-v14: libgit2
+-${BUILD_DIR}/intermediate/gitaly-git2go-v14: .FORCE
+-	@ # gitaly-git2go-v14  pulls directly from a commit sha so that the gitaly-git2go-v14
+-	@ # binary can continue to be installed for the sake of zero downtime
+-	@ # upgrades.
+-	${Q}GOBIN="$(dir $@)" go install -ldflags '-B 0x${TEMPORARY_BUILD_ID} ${GO_LDFLAGS}' -tags "${GO_BUILD_TAGS}" "gitlab.com/gitlab-org/gitaly/v14/cmd/gitaly-git2go-v14@c7c7c936c302ab435a0a56fbc19cfbd9bea0c835"
+ 
+ # This is a build hack to avoid excessive rebuilding of targets. Instead of
+ # depending on the Makefile, we start to depend on tool versions as defined in

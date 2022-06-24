@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	15.0.3
+DISTVERSION=	15.1.0
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	devel
@@ -28,7 +28,7 @@ MY_DEPENDS=	git>=2.36.1:devel/git \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
 		rubygem-faraday1>=1.0.1<2:www/rubygem-faraday1 \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.22.0<0.23:devel/rubygem-gitlab-labkit \
+		rubygem-gitlab-labkit>=0.22.0<0.24:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
 		rubygem-google-protobuf319>=3.19.0<3.20:devel/rubygem-google-protobuf319 \
 		rubygem-gitlab-license_finder>=6.14.2.1<7:devel/rubygem-gitlab-license_finder
@@ -51,7 +51,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	fc0906498828d30d2a6fb0cb9bfb593d4e5e2586
+GL_COMMIT=	9f4ac0e03ac72467cba99bf22348e9ad9bb50c27
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
@@ -75,6 +75,9 @@ go-post-fetch:
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
 	${MV} ${WRKSRC}/config.toml.example ${WRKSRC}/config.toml.sample
+
+pre-build:
+	(cd ${WRKSRC}/ruby && ${RM} Gemfile.lock && bundle install --local)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}

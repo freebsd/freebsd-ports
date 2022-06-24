@@ -1,4 +1,4 @@
---- config.toml.example.orig	2022-05-20 13:52:23 UTC
+--- config.toml.example.orig	2022-06-21 10:12:22 UTC
 +++ config.toml.example
 @@ -2,10 +2,10 @@
  # Documentation lives at https://docs.gitlab.com/ee/administration/gitaly/ and
@@ -33,9 +33,9 @@
 +[git]
 +bin_path = "%%PREFIX%%/bin/git"
  # catfile_cache_size = 100
- # [[git.config]]
- # key = fetch.fsckObjects
-@@ -43,7 +43,7 @@ bin_dir = "/home/git/gitaly/_build/bin"
+ #
+ # # Set this setting to `true` to start ignoring gitconfig files installed in
+@@ -51,7 +51,7 @@ bin_dir = "/home/git/gitaly/_build/bin"
  
  [[storage]]
  name = "default"
@@ -44,7 +44,7 @@
  
  # # You can optionally configure more storages for this Gitaly instance to serve up
  #
-@@ -55,7 +55,7 @@ path = "/home/git/repositories"
+@@ -63,7 +63,7 @@ path = "/home/git/repositories"
  # # You can optionally configure Gitaly to output JSON-formatted log messages to stdout
  # [logging]
  # # The directory where Gitaly stores extra log files
@@ -53,7 +53,7 @@
  # format = "json"
  # # Optional: Set log level to only log entries with that severity or above
  # # One of, in order: debug, info, warn, errror, fatal, panic
-@@ -73,7 +73,7 @@ dir = "/home/git/gitlab/log"
+@@ -81,7 +81,7 @@ dir = "/home/git/gitlab/log"
  
  [gitaly-ruby]
  # The directory where gitaly-ruby is installed
@@ -62,7 +62,7 @@
  
  # # Gitaly-ruby resident set size (RSS) that triggers a memory restart (bytes)
  # max_rss = 200000000
-@@ -93,14 +93,14 @@ dir = "/home/git/gitaly/ruby"
+@@ -101,14 +101,14 @@ dir = "/home/git/gitaly/ruby"
  
  [gitlab-shell]
  # The directory where gitlab-shell is installed

@@ -1,4 +1,4 @@
---- ruby/Gemfile.orig	2022-05-20 13:52:23 UTC
+--- ruby/Gemfile.orig	2022-06-21 10:12:22 UTC
 +++ ruby/Gemfile
 @@ -2,8 +2,8 @@ source 'https://rubygems.org'
  
@@ -16,7 +16,7 @@
  
  # Labkit provides observability functionality
 -gem 'gitlab-labkit', '~> 0.21.1'
-+gem 'gitlab-labkit', '~> 0.22.0'
++gem 'gitlab-labkit', '~> 0.23.0'
  
  # Detects the open source license the repository includes
  # This version needs to be in sync with GitLab CE/EE
