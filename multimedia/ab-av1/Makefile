@@ -1,6 +1,6 @@
 PORTNAME=	ab-av1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.3
+DISTVERSION=	0.3.4
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,17 +20,17 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
 
-CARGO_CRATES=	anyhow-1.0.57 \
+CARGO_CRATES=	anyhow-1.0.58 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bytes-1.1.0 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		clap-3.2.5 \
-		clap_complete-3.2.1 \
-		clap_derive-3.2.5 \
-		clap_lex-0.2.2 \
+		clap-3.2.6 \
+		clap_complete-3.2.2 \
+		clap_derive-3.2.6 \
+		clap_lex-0.2.3 \
 		console-0.15.0 \
 		encode_unicode-0.3.6 \
 		errno-0.2.8 \
@@ -50,14 +50,14 @@ CARGO_CRATES=	anyhow-1.0.57 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
-		indexmap-1.9.0 \
+		indexmap-1.9.1 \
 		indicatif-0.16.2 \
 		itoa-1.0.2 \
 		lazy_static-1.4.0 \
 		libc-0.2.126 \
 		log-0.4.17 \
 		memchr-2.5.0 \
-		mio-0.8.3 \
+		mio-0.8.4 \
 		num_cpus-1.13.1 \
 		num_threads-0.1.6 \
 		number_prefix-0.4.0 \
@@ -68,8 +68,8 @@ CARGO_CRATES=	anyhow-1.0.57 \
 		ppv-lite86-0.2.16 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.39 \
-		quote-1.0.18 \
+		proc-macro2-1.0.40 \
+		quote-1.0.20 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
@@ -79,14 +79,15 @@ CARGO_CRATES=	anyhow-1.0.57 \
 		serde-1.0.137 \
 		serde_derive-1.0.137 \
 		serde_json-1.0.81 \
+		shell-escape-0.1.5 \
 		signal-hook-registry-1.4.0 \
 		slab-0.4.6 \
 		strsim-0.10.0 \
-		syn-1.0.96 \
+		syn-1.0.98 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
 		textwrap-0.15.0 \
-		time-0.3.9 \
+		time-0.3.11 \
 		time-macros-0.2.4 \
 		tokio-1.19.2 \
 		tokio-macros-1.8.0 \
