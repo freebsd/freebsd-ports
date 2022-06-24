@@ -17214,3 +17214,4 @@ x11-toolkits/py-xlib|x11-toolkits/py-python-xlib|2022-06-21|Use registered upstr
 www/openarc|mail/openarc|2022-06-21|Move to a proper category
 textproc/rubygem-elasticsearch-model6|textproc/rubygem-elasticsearch-model|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-model instead
 textproc/rubygem-elasticsearch6|textproc/rubygem-elasticsearch|2022-06-24|Obsolete use textproc/rubygem-elasticsearch instead
+textproc/rubygem-elasticsearch-transport6|textproc/rubygem-elasticsearch-transport|2022-06-24|Obsolete use textproc/rubygem-elasticsearch-transport instead
