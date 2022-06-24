@@ -24,8 +24,6 @@ LIB_DEPENDS=	libtbb.so:devel/onetbb \
 BUILD_DEPENDS=	cereal>=1.3.0.10:devel/cereal \
 		cgal>=5.0.2:math/cgal
 
-BROKEN=		Fails to compile: implicit instantiation of undefined template 'std::basic_ifstream<char>'
-
 USES=		cmake cpe desktop-file-utils eigen:3 gettext gl iconv pkgconfig
 CPE_VENDOR=	prusa3d
 CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
