@@ -1,7 +1,0 @@
-The Elasticsearch::Model library builds on top of the elasticsearch library.
-
-It aims to simplify integration of Ruby classes ("models"), commonly found e.g.
-in Ruby on Rails applications, with the Elasticsearch search and analytics
-engine.
-
-WWW: https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-model
