@@ -2,6 +2,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	42
+PORTREVISION=	1
 CATEGORIES?=	x11 gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -62,7 +63,7 @@ RUN_DEPENDS+=	epiphany>=3.0.0:www/epiphany \
 		file-roller>=3.0.0:archivers/file-roller \
 		evince>=3.0.0:graphics/evince \
 		vino>=3.0.0:net/vino \
-		vinagre>=3.0.0:net/vinagre \
+		gnome-connections>=42:net/gnome-connections \
 		gnome-games>=3.0.0:games/gnome-games \
 		totem>=3.0.0:multimedia/totem \
 		gconf-editor>=3.0.0:sysutils/gconf-editor \
