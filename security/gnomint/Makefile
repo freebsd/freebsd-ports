@@ -6,8 +6,11 @@ PORTREVISION=	13
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	kevinz5000@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X.509 Certification Authority management tool
+
+DEPRECATED=	Abandonware, depending on gconf2
+EXPIRATION_DATE=	2020-07-24
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
