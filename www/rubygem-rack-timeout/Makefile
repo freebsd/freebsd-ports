@@ -1,5 +1,5 @@
 PORTNAME=	rack-timeout
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
