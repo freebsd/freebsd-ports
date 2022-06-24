@@ -2,7 +2,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	42
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11 gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -66,7 +66,6 @@ RUN_DEPENDS+=	epiphany>=3.0.0:www/epiphany \
 		gnome-connections>=42:net/gnome-connections \
 		gnome-games>=3.0.0:games/gnome-games \
 		totem>=3.0.0:multimedia/totem \
-		gconf-editor>=3.0.0:sysutils/gconf-editor \
 		evolution>=3.0.0:mail/evolution \
 		cheese>=3.0.0:multimedia/cheese
 
