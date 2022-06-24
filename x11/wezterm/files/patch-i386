@@ -1,0 +1,65 @@
+https://github.com/metrics-rs/quanta/issues/69
+
+--- cargo-crates/raw-cpuid-10.3.0/src/lib.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/raw-cpuid-10.3.0/src/lib.rs
+@@ -68,7 +68,7 @@ extern crate bitflags;
+ #[cfg(all(
+     feature = "serialize",
+     not(any(
+-        all(target_arch = "x86", not(target_env = "sgx"), target_feature = "sse"),
++        all(target_arch = "x86", not(target_env = "sgx")),
+         all(target_arch = "x86_64", not(target_env = "sgx"))
+     ))
+ ))]
+@@ -76,13 +76,13 @@ core::compile_error!("Feature `serialize` is not suppo
+ 
+ /// Uses Rust's `cpuid` function from the `arch` module.
+ #[cfg(any(
+-    all(target_arch = "x86", not(target_env = "sgx"), target_feature = "sse"),
++    all(target_arch = "x86", not(target_env = "sgx")),
+     all(target_arch = "x86_64", not(target_env = "sgx"))
+ ))]
+ pub mod native_cpuid {
+     use crate::CpuIdResult;
+ 
+-    #[cfg(all(target_arch = "x86", not(target_env = "sgx"), target_feature = "sse"))]
++    #[cfg(all(target_arch = "x86", not(target_env = "sgx")))]
+     use core::arch::x86 as arch;
+     #[cfg(all(target_arch = "x86_64", not(target_env = "sgx")))]
+     use core::arch::x86_64 as arch;
+@@ -119,7 +119,7 @@ mod std {
+ /// First parameter is cpuid leaf (EAX register value),
+ /// second optional parameter is the subleaf (ECX register value).
+ #[cfg(any(
+-    all(target_arch = "x86", not(target_env = "sgx"), target_feature = "sse"),
++    all(target_arch = "x86", not(target_env = "sgx")),
+     all(target_arch = "x86_64", not(target_env = "sgx"))
+ ))]
+ #[macro_export]
+@@ -193,7 +193,7 @@ impl CpuIdReader {
+ }
+ 
+ #[cfg(any(
+-    all(target_arch = "x86", not(target_env = "sgx"), target_feature = "sse"),
++    all(target_arch = "x86", not(target_env = "sgx")),
+     all(target_arch = "x86_64", not(target_env = "sgx"))
+ ))]
+ impl Default for CpuIdReader {
+@@ -245,7 +245,7 @@ pub struct CpuId {
+ }
+ 
+ #[cfg(any(
+-    all(target_arch = "x86", not(target_env = "sgx"), target_feature = "sse"),
++    all(target_arch = "x86", not(target_env = "sgx")),
+     all(target_arch = "x86_64", not(target_env = "sgx"))
+ ))]
+ impl Default for CpuId {
+@@ -330,7 +330,7 @@ impl CpuId {
+ impl CpuId {
+     /// Return new CpuId struct.
+     #[cfg(any(
+-        all(target_arch = "x86", not(target_env = "sgx"), target_feature = "sse"),
++        all(target_arch = "x86", not(target_env = "sgx")),
+         all(target_arch = "x86_64", not(target_env = "sgx"))
+     ))]
+     pub fn new() -> Self {
