@@ -33,11 +33,11 @@ PLIST_SUB+=	BABL_SHLIB=${BABL_SHLIB} BABL_VER=${BABL_VER}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-PLIST_SUB+=	AMD64="" AARCH64="@comment "
-.elif ${ARCH} == "aarch64"
-PLIST_SUB+=	AMD64="@comment " AARCH64=""
+PLIST_SUB+=	AMD64="" ARM="@comment "
+.elif ${ARCH} == "armv6" || ${ARCH} == "armv7"
+PLIST_SUB+=	AMD64="@comment " ARM=""
 .else
-PLIST_SUB+=	AMD64="@comment " AARCH64="@comment "
+PLIST_SUB+=	AMD64="@comment " ARM="@comment "
 .endif
 
 .include <bsd.port.post.mk>
