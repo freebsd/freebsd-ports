@@ -1,5 +1,5 @@
 PORTNAME=	link-grammar
-DISTVERSION=	5.8.0
+DISTVERSION=	5.10.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
@@ -14,7 +14,8 @@ USES=		compiler:c++11-lib dos2unix gmake libtool localbase ncurses \
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-mode \
-		--with-regexlib=pcre2
+		--with-regexlib=pcre2 \
+		--disable-python-bindings
 
 INSTALL_TARGET=	install-strip
 
@@ -23,7 +24,7 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_SUB=		yes
-OPTIONS_DEFINE=		EDITLINE JAVA PERL SAT_SOLVER
+OPTIONS_DEFINE=		EDITLINE JAVA PERL SAT_SOLVER PYTHON
 OPTIONS_DEFAULT=	EDITLINE HUNSPELL SAT_SOLVER
 
 OPTIONS_MULTI=			SPELL
