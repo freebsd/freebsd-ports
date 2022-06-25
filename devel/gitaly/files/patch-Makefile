@@ -17,6 +17,15 @@
  	${Q}touch $@
  
  ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
+@@ -548,7 +547,7 @@ ${BUILD_DIR}/bin/%: ${BUILD_DIR}/intermediate/% | ${BU
+ 	@ # This fallback is unique but non-deterministic, making it sufficient to avoid generating the
+ 	@ # GNU build-id from the empty string and causing guaranteed collisions.
+ 	${Q}GO_BUILD_ID=$$(go tool buildid "$<" || openssl rand -hex 32) && \
+-	GNU_BUILD_ID=$$(echo $$GO_BUILD_ID | sha1sum | cut -d' ' -f1) && \
++	GNU_BUILD_ID=$$(echo $$GO_BUILD_ID | sha1 | cut -d' ' -f1) && \
+ 	if test "${OS}" = "Linux"; then \
+ 		go run "${SOURCE_DIR}"/tools/replace-buildid \
+ 			-input "$<" -input-build-id "${TEMPORARY_BUILD_ID}" \
 @@ -560,22 +559,11 @@ ${BUILD_DIR}/bin/%: ${BUILD_DIR}/intermediate/% | ${BU
  ${BUILD_DIR}/intermediate/gitaly:            GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
  ${BUILD_DIR}/intermediate/praefect:          GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
