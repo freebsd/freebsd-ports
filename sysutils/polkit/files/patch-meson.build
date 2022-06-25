@@ -1,7 +1,11 @@
 --- meson.build.orig	2021-09-29 19:16:29 UTC
 +++ meson.build
-@@ -136,7 +136,7 @@ assert(cc.has_function('XML_ParserCreate', dependencie
- mozjs_dep = dependency('mozjs-78')
+@@ -133,10 +133,10 @@ assert(cc.has_function('XML_ParserCreate', dependencie
+ assert(cc.has_header('expat.h', dependencies: expat_dep), 'Can\'t find expat.h. Please install expat.')
+ assert(cc.has_function('XML_ParserCreate', dependencies: expat_dep), 'Can\'t find expat library. Please install expat.')
+ 
+-mozjs_dep = dependency('mozjs-78')
++mozjs_dep = dependency('mozjs-91')
  
  dbus_dep = dependency('dbus-1', required: false)
 -dbus_policydir = pk_prefix / pk_datadir / 'dbus-1/system.d'
@@ -9,7 +13,7 @@
  if dbus_dep.found()
    dbus_system_bus_services_dir = dbus_dep.get_pkgconfig_variable('system_bus_services_dir', define_variable: ['datadir', pk_prefix / pk_datadir])
  else
-@@ -329,15 +329,6 @@ endif
+@@ -329,15 +329,6 @@ configure_file(
  configure_file(
    output: 'config.h',
    configuration: config_h,

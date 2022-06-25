@@ -2,7 +2,7 @@
 
 PORTNAME=	polkit
 PORTVERSION=	0.120
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	https://www.freedesktop.org/software/polkit/releases/
 
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libdbus-1.so:devel/dbus \
-		libmozjs-78.so:lang/spidermonkey78
+		libmozjs-91.so:lang/spidermonkey91
 
 USERS=		polkitd
 GROUPS=		polkitd
