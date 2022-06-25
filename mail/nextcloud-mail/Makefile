@@ -1,7 +1,7 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
 
 PORTNAME=	mail
-PORTVERSION=	1.13.4
+PORTVERSION=	1.13.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
@@ -15,7 +15,7 @@ COMMENT=	Mail app for Nextcloud
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=21:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=22:www/nextcloud@${PHP_FLAVOR}
 
 USES=		cpe gettext php:flavors
 USE_PHP=	imap
