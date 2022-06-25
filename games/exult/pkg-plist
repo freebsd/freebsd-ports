@@ -63,7 +63,6 @@ share/applications/exult.desktop
 %%DATADIR%%/exult_bg.flx
 %%DATADIR%%/exult_si.flx
 %%STUDIO%%%%DATADIR%%/exult_studio.glade
-%%DATADIR%%/exultmsg.txt
 %%DATADIR%%/midisfx.flx
 %%DATADIR%%/u7bgintrinsics.data
 %%DATADIR%%/u7misc.data
