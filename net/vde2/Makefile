@@ -29,7 +29,7 @@ OPTIONS_DEFAULT=	PYTHON
 
 OPTIONS_SUB=	yes
 PYTHON_CONFIGURE_OFF=	--disable-python
-PYTHON_USES=	python gettext-runtime
+PYTHON_USES=	python:3.7-3.9 gettext-runtime
 PYTHON_CPPFLAGS=	-I${LOCALBASE}/include
 PYTHON_LDFLAGS=	-L${LOCALBASE}/lib
 
