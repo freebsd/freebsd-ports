@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220625:
+AFFECTS: users of sysutils/fusefs-bindfs
+  AUTHOR: doralitze@chaotikum.org
+
+  Bindfs defaults to use direct I/O since version 1.16. While this results
+  in major performance improvements as well as several bug fixes, this also
+  breaks direct legacy calls to mmap. If your application still uses them
+  consider these two options:
+
+  1. Mount using `--no-direct-io`
+  2. Upgrade your application in order to query mapping guards
+
 20220623:
 AFFECTS: users of science/gramps
   AUTHOR: fernape@FreeBSD.org
