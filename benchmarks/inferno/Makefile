@@ -1,6 +1,6 @@
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.5
+DISTVERSION=	0.11.6
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,16 +28,16 @@ CARGO_CRATES=	adler32-1.2.0 \
 		cast-0.2.7 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
-		clap-3.2.5 \
-		clap_derive-3.2.5 \
-		clap_lex-0.2.2 \
+		clap-3.2.6 \
+		clap_derive-3.2.6 \
+		clap_lex-0.2.3 \
 		crc32fast-1.3.2 \
 		criterion-0.3.5 \
 		criterion-plot-0.4.4 \
 		crossbeam-channel-0.5.5 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.9 \
-		crossbeam-utils-0.8.9 \
+		crossbeam-utils-0.8.10 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
 		ctor-0.1.22 \
@@ -52,7 +52,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		hashbrown-0.12.1 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		indexmap-1.9.0 \
+		indexmap-1.9.1 \
 		itertools-0.10.3 \
 		itoa-0.4.8 \
 		itoa-1.0.2 \
@@ -85,9 +85,9 @@ CARGO_CRATES=	adler32-1.2.0 \
 		pretty_assertions-1.2.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.39 \
+		proc-macro2-1.0.40 \
 		quick-xml-0.23.0 \
-		quote-1.0.19 \
+		quote-1.0.20 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
@@ -108,7 +108,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		serde_cbor-0.11.2 \
 		serde_derive-1.0.137 \
 		serde_json-1.0.81 \
-		smallvec-1.8.0 \
+		smallvec-1.8.1 \
 		str_stack-0.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.98 \
