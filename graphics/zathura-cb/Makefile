@@ -1,21 +1,23 @@
 PORTNAME=	zathura-cb
-DISTVERSION=	0.1.8
-PORTREVISION=	4
+DISTVERSION=	0.1.10
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Comic book plugin for Zathura PDF viewer
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	zathura:graphics/zathura
+LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara
 RUN_DEPENDS=	zathura:graphics/zathura
 
+# testing without USES=ssl
 USES=		compiler:c11 desktop-file-utils gnome libarchive meson ninja \
-		pkgconfig ssl
-USE_GNOME=	glib20 gtk30
+		pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/zathura/libcb.so \
 		share/appdata/org.pwmt.zathura-cb.metainfo.xml \
