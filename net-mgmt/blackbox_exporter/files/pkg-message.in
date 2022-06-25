@@ -6,7 +6,7 @@ To start blackbox_exporter, create a configuration file at
 "sysrc blackbox_exporter_enable=yes".
 
 For details about the configuration file format, visit
-https://github.com/prometheus/blackbox_exporter/blob/%%GH_TAGNAME%%/CONFIGURATION.md
+https://github.com/prometheus/blackbox_exporter/blob/%%DISTVERSIONFULL%%/CONFIGURATION.md
 
 Since blackbox_exporter allows setting arbitrary probe
 targets via HTTP parameters, it is set to listen on localhost
