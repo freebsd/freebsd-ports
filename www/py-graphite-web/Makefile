@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.10:graphics/py-cairo@${PY_FLAVOR}
 		bash:shells/bash \
 		xorg-fonts-truetype>=0:x11-fonts/xorg-fonts-truetype
 
-USES=		cpe python:3.4-3.8 shebangfix
+USES=		cpe python shebangfix
 CPE_VENDOR=	graphite_project
 CPE_PRODUCT=	graphite
 USE_GITHUB=	yes
@@ -48,6 +48,12 @@ SUB_LIST=	DATADIR=${DATADIR} \
 		WWWOWN=${WWWOWN}
 PLIST_SUB=	WWWGRP=${WWWGRP} \
 		WWWOWN=${WWWOWN}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} > 30900
+BROKEN=		Python-3.9 is not supported
+.endif
 
 post-patch:
 	@${RM} ${WRKSRC}/bin/build-index.sh.orig
