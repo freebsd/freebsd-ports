@@ -13,6 +13,9 @@ LICENSE_NAME=	LLVM Release License
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Very outdated and unsupported upstream, current version in tree is several years old and upstream is still active
+EXPIRATION_DATE=2022-09-30
+
 ONLY_FOR_ARCHS=	amd64
 
 LLVM_VER=	70
