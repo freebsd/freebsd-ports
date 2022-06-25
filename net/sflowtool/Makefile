@@ -1,26 +1,27 @@
 # Created by: Gregory Edigarov <greg@bestnet.kharkov.ua>
 
 PORTNAME=	sflowtool
-PORTVERSION=	5.06
 DISTVERSIONPREFIX=	v
+DISTVERSION=	5.07
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	sFlow capture and sFlow-to-NetFlow conversion tool
 
 LICENSE=	InMon
 LICENSE_NAME=	InMon Corp
 LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror dist-sell pkg-sell pkg-mirror auto-accept
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		autoreconf
-GNU_CONFIGURE=	yes
-USE_RC_SUBR=	${PORTNAME}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	sflow
+USE_RC_SUBR=	${PORTNAME}
+
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/sflowtool
+
 PORTDOCS=	README
 PORTEXAMPLES=	sflowenable
 
