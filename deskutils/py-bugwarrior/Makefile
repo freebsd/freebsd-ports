@@ -54,6 +54,10 @@ TRAC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}offtrac>0:devel/py-offtrac@${PY_FLAVOR
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
 
+.if ${PYTHON_REL} > 30900
+BROKEN=		python-3.9 is not supported
+.endif
+
 do-test:
 	${RM} ${WRKSRC}/tests/test_activecollab.py # Needs pandoc
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
