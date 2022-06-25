@@ -3,6 +3,7 @@
 PORTNAME=	haproxy
 DISTVERSION=	2.5.7
 CATEGORIES=	net www
+PKGNAMESUFFIX=	25
 MASTER_SITES=	http://www.haproxy.org/download/2.5/src/
 
 MAINTAINER=	demon@FreeBSD.org
@@ -19,7 +20,7 @@ USE_RC_SUBR=	haproxy
 
 default_CONFLICTS_INSTALL=	haproxy-lua
 lua_CONFLICTS_INSTALL=		haproxy
-lua_PKGNAMESUFFIX=		-lua
+lua_PKGNAMESUFFIX=		25-lua
 
 CONFLICTS_INSTALL=	haproxy-devel haproxy17 haproxy18 haproxy20 haproxy22 haproxy23 haproxy24
 
