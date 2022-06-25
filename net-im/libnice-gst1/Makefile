@@ -1,6 +1,5 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
-PORTREVISION=	1
 PKGNAMESUFFIX=	-gst1
 
 COMMENT=	GStreamer 1 plugin from libnice
