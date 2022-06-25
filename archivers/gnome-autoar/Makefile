@@ -1,10 +1,10 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gnome-autoar
-DISTVERSION=	0.4.1
+DISTVERSION=	0.4.3
 CATEGORIES=	archivers
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Glib wrapper around libarchives
