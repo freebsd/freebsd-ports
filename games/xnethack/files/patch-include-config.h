@@ -34,3 +34,12 @@
  /* DUMPLOG_FILE allows following placeholders:
     %% literal '%'
     %v version (eg. "3.6.3-0")
+@@ -697,7 +697,7 @@ typedef unsigned char uchar;
+ 
+ /* TEMPORARY - MAKE UNCONDITIONAL BEFORE RELEASE */
+ /* undef this to check if sandbox breaks something */
+-#define NHL_SANDBOX
++/* #define NHL_SANDBOX */
+ 
+ /* End of Section 4 */
+ 

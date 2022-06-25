@@ -1,6 +1,7 @@
 PORTNAME=	xNetHack
 DISTVERSIONPREFIX=	xnh
 DISTVERSION=	7.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	fuz@fuz.su
@@ -49,7 +50,13 @@ GRAPHICS=	QT_GRAPHICS
 
 CFLAGS+=	-DNOMAIL -DCURSES_GRAPHICS
 
-OPTIONS_DEFINE=	DOCS
+# nhlua.c has a (patched out) version check for lua when the sandbox
+# is used.  As I cannot ascertain whether using the system's different
+# lua version could cause problems, I'll leave the sandbox disabled by
+# default.
+OPTIONS_DEFINE=	DOCS SANDBOX
+SANDBOX_DESC=	Run lua in a sandbox (untested)
+SANDBOX_CFLAGS=	-DNHL_SANDBOX
 
 .include <bsd.port.pre.mk>
 
