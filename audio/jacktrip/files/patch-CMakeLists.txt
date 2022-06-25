@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-06-24 05:38:45 UTC
++++ CMakeLists.txt
+@@ -46,7 +46,7 @@ elseif (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+   endif ()
+ endif ()
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
++if (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+   find_package(PkgConfig REQUIRED)
+   pkg_check_modules(JACK REQUIRED IMPORTED_TARGET jack)
+   if (weakjack)
