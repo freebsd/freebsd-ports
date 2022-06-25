@@ -1,0 +1,5 @@
+TIMESTAMP = 1656123971
+SHA256 (go/net_slackcat/bcicen-slackcat-1.7.3-5c4e4410002c_GH0/go.mod) = 98640a46a3b3a14c84f7df4e83548785e563c11de563893623766350452ce8e0
+SIZE (go/net_slackcat/bcicen-slackcat-1.7.3-5c4e4410002c_GH0/go.mod) = 355
+SHA256 (go/net_slackcat/bcicen-slackcat-1.7.3-5c4e4410002c_GH0/bcicen-slackcat-1.7.3-5c4e4410002c_GH0.tar.gz) = 680a799ad877d4165a84fc176bb4dc922e0f24ab4ff457715fe1bbefa3785ea2
+SIZE (go/net_slackcat/bcicen-slackcat-1.7.3-5c4e4410002c_GH0/bcicen-slackcat-1.7.3-5c4e4410002c_GH0.tar.gz) = 28255
