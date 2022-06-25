@@ -1,5 +1,5 @@
 PORTNAME=		bc
-PORTVERSION=		5.3.2
+PORTVERSION=		5.3.3
 CATEGORIES=		math lang
 PKGNAMEPREFIX=		gh-
 
@@ -13,6 +13,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE.md
 USES=			compiler:c11
 USE_GITHUB=		yes
 GH_ACCOUNT=		gavinhoward
+GH_TAGNAME=		eb0cd870b9
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure.sh
