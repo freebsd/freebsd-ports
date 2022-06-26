@@ -359,10 +359,6 @@ lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/
 lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus-worker.wasm
 lib/emby-server/system/dashboard-ui/bower_components/javascriptsubtitlesoctopus/dist/subtitles-octopus.js
 lib/emby-server/system/dashboard-ui/bower_components/jquery/jquery-slim.js
-lib/emby-server/system/dashboard-ui/bower_components/jstree/jstree.js
-lib/emby-server/system/dashboard-ui/bower_components/jstree/themes/default/32px.png
-lib/emby-server/system/dashboard-ui/bower_components/jstree/themes/default/style.css
-lib/emby-server/system/dashboard-ui/bower_components/jstree/themes/default/throbber.gif
 lib/emby-server/system/dashboard-ui/bower_components/libjass/libjass.css
 lib/emby-server/system/dashboard-ui/bower_components/libjass/libjass.js
 lib/emby-server/system/dashboard-ui/components/accessschedule/accessschedule.js
@@ -469,10 +465,10 @@ lib/emby-server/system/dashboard-ui/logs/log.css
 lib/emby-server/system/dashboard-ui/logs/log.js
 lib/emby-server/system/dashboard-ui/logs/logs.js
 lib/emby-server/system/dashboard-ui/manifest.json
+lib/emby-server/system/dashboard-ui/metadatamanager/librarytree.js
 lib/emby-server/system/dashboard-ui/metadatamanager/metadatamanager.css
 lib/emby-server/system/dashboard-ui/metadatamanager/metadatamanager.html
 lib/emby-server/system/dashboard-ui/metadatamanager/metadatamanager.js
-lib/emby-server/system/dashboard-ui/metadatamanager/metadatamanagersidebar.js
 lib/emby-server/system/dashboard-ui/modules/actionsheet/actionsheet.css
 lib/emby-server/system/dashboard-ui/modules/actionsheet/actionsheet.js
 lib/emby-server/system/dashboard-ui/modules/addtolist/addtolist.js
@@ -904,7 +900,6 @@ lib/emby-server/system/dashboard-ui/modules/themes/dark/theme.json
 lib/emby-server/system/dashboard-ui/modules/themes/darkgradient/blueradiance.jpg
 lib/emby-server/system/dashboard-ui/modules/themes/darkgradient/theme.css
 lib/emby-server/system/dashboard-ui/modules/themes/darkgradient/theme.json
-lib/emby-server/system/dashboard-ui/modules/themes/darkgradient/wmc.png
 lib/emby-server/system/dashboard-ui/modules/themes/light/theme.css
 lib/emby-server/system/dashboard-ui/modules/themes/light/theme.json
 lib/emby-server/system/dashboard-ui/modules/themes/logodark.png
@@ -917,6 +912,7 @@ lib/emby-server/system/dashboard-ui/modules/viewmanager/baseview.js
 lib/emby-server/system/dashboard-ui/modules/viewmanager/viewmanager.js
 lib/emby-server/system/dashboard-ui/modules/viewsettings/viewsettings.js
 lib/emby-server/system/dashboard-ui/modules/viewsettings/viewsettings.template.html
+lib/emby-server/system/dashboard-ui/modules/webvtt/vtt.css
 lib/emby-server/system/dashboard-ui/modules/webvtt/vtt.js
 lib/emby-server/system/dashboard-ui/modules/windowdrag.css
 lib/emby-server/system/dashboard-ui/modules/youtubeplayer/plugin.js
