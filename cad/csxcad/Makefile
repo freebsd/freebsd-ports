@@ -1,8 +1,7 @@
 PORTNAME=	csxcad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2-103
-DISTVERSIONSUFFIX=	-g3c4fb66
-PORTREVISION=	4
+DISTVERSION=	0.6.2-109
+DISTVERSIONSUFFIX=	-gcd9decb
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	cgal>0:math/cgal
-# many dependencies below are induced by vtk8, but not vtk9
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfparser-4.5.so:math/fparser \
 		libgmp.so:math/gmp \
@@ -22,7 +20,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff \
 		libtinyxml.so:textproc/tinyxml \
-		libvtkCommonCore-8.2.so:math/vtk8 # some related packages don't support vtk9 yet, see https://github.com/thliebig/QCSXCAD/issues/6#issuecomment-901633240
+		libvtkCommonCore-9.1.so:math/vtk9
 
 USES=		cmake jpeg pkgconfig
 USE_LDCONFIG=	yes
@@ -32,6 +30,6 @@ GH_ACCOUNT=	thliebig
 GH_PROJECT=	${PORTNAME:tu}
 
 CMAKE_ARGS=	-DFPARSER_ROOT_DIR=${LOCALBASE} \
-		-DVTK_DIR=${LOCALBASE}/lib/vtk-8.2/cmake/vtk-8.2
+		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.1
 
 .include <bsd.port.mk>
