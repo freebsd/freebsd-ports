@@ -1,5 +1,6 @@
 bin/background
 bin/backtick
+bin/case
 bin/cd
 bin/define
 bin/dollarat
@@ -52,12 +53,13 @@ include/execline/config.h
 include/execline/execline.h
 lib/execline/libexecline.a
 lib/libexecline.so
-lib/libexecline.so.2.8
-lib/libexecline.so.2.8.0.1
+lib/libexecline.so.2.9
+lib/libexecline.so.2.9.0.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/background.html
 %%PORTDOCS%%%%DOCSDIR%%/backtick.html
+%%PORTDOCS%%%%DOCSDIR%%/case.html
 %%PORTDOCS%%%%DOCSDIR%%/define.html
 %%PORTDOCS%%%%DOCSDIR%%/dieshdiedie.html
 %%PORTDOCS%%%%DOCSDIR%%/dollarat.html

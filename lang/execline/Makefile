@@ -1,7 +1,7 @@
 # Created by: Sergei Kolobov <sergei@kolobov.com>
 
 PORTNAME=	execline
-PORTVERSION=	2.8.0.1
+PORTVERSION=	2.9.0.0
 CATEGORIES=	lang shells
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
@@ -11,7 +11,7 @@ COMMENT=	Lightweight non-interactive sh(1)-like scripting language
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	skalibs>=2.10.0.0:devel/skalibs
+BUILD_DEPENDS=	skalibs>=2.12.0.0:devel/skalibs
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 
 USES=		gmake

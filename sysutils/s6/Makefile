@@ -1,7 +1,7 @@
 # Created by: Colin Booth <colin@heliocat.net>
 
 PORTNAME=	s6
-PORTVERSION=	2.10.0.3
+PORTVERSION=	2.11.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
@@ -11,7 +11,7 @@ COMMENT=	Skarnet.org supervision suite
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	execline>=2.7.0.0:lang/execline
+BUILD_DEPENDS=	execline>=2.9.0.0:lang/execline
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 RUN_DEPENDS=	execlineb:lang/execline
 
