@@ -1,5 +1,5 @@
 PORTNAME=	mpv-mpris
-DISTVERSION=	0.7.1
+DISTVERSION=	0.8.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	tcberner@FreeBSD.org
