@@ -1,6 +1,6 @@
 PORTNAME=	sendmail
 PORTVERSION=	8.17.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/snapshots/
 PKGNAMESUFFIX?=	-devel${PKGNAMESUFFIX2}
@@ -47,7 +47,7 @@ MILTER_SOVER?=	6
 
 OPTIONS_DEFINE?=	SHMEM SEM LA NIS IPV6 TLS DANE SASL SASLAUTHD LDAP \
 			BDB GDBM SOCKETMAP CYRUSLOOKUP BLACKLISTD SMTPUTF8 \
-			PICKY_HELO_CHECK MILTER DOCS
+			PICKY_HELO_CHECK MILTER MTA_STS TLS_CERT_CHAIN DOCS
 OPTIONS_DEFAULT?=	SHMEM SEM LA NIS TLS DANE SASL SASLAUTHD BDB1 \
 			BLACKLISTD PICKY_HELO_CHECK MILTER
 NO_OPTIONS_SORT=yes
@@ -64,6 +64,8 @@ CYRUSLOOKUP_DESC=	Enable cyruslookup feature
 PICKY_HELO_CHECK_DESC=	Enable picky HELO check
 MILTER_DESC=		Enable milter support
 SMTPUTF8_DESC=		Enable unicode address support
+MTA_STS_DESC=		Enable MTA-STS support (option SOCKETMAP and TLS needed)
+TLS_CERT_CHAIN_DESC=	Enable certificate chain file support (incompatibility)
 
 TLS_USES=	ssl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
@@ -74,7 +76,10 @@ LDAP_IMPLIES=	DANE
 BDB_USES=	bdb
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	compat
+CYRUSLOOKUP_IMPLIES=	SOCKETMAP
 SMTPUTF8_LIB_DEPENDS=	libidn2.so:dns/libidn2 libicui18n.so:devel/icu
+MTA_STS_IMPLIES=	SOCKETMAP TLS
+TLS_CERT_CHAIN_IMPLIES=	TLS
 
 .include <bsd.port.options.mk>
 
@@ -98,11 +103,7 @@ SASL_SUFFIX?=	+sasl2
 CONFLICTS+=	sendmail-ldap-8.* sendmail-tls-8.*
 .endif
 .if ${PORT_OPTIONS:MCYRUSLOOKUP}
-.if ! ${PORT_OPTIONS:MSOCKETMAP}
-IGNORE=		option CYRUSLOOKUP requires option SOCKETMAP
-.else
 EXTRA_PATCHES+=	${FILESDIR}/cyruslookup.patch
-.endif
 .endif
 .if ${PORT_OPTIONS:MTLS}
 TLS_SUFFIX?=	+tls
@@ -146,6 +147,9 @@ SITE+=	${FILESDIR}/site.config.m4.milter
 .if ${PORT_OPTIONS:MGDBM}
 LICENSE_PERMS=	dist-mirror dist-sell no-pkg-mirror no-pkg-sell auto-accept
 SITE+=	${FILESDIR}/site.config.m4.gdbm
+.endif
+.if ${PORT_OPTIONS:MMTA_STS}
+SITE+=	${FILESDIR}/site.config.m4.mta-sts
 .endif
 
 SED_SCRIPT=	-e "s|\`-O'|\`${CFLAGS}'|" \
@@ -345,6 +349,9 @@ help:
 SITE+=	${FILESDIR}/site.config.m4.ssl
 .endif
 SITE+=	${FILESDIR}/site.config.m4.tls
+.if ${PORT_OPTIONS:MTLS_CERT_CHAIN}
+SITE+=	${FILESDIR}/site.config.m4.tls-cert-chain
+.endif
 .endif
 
 .if exists(${FILESDIR}/site.config.m4.local)

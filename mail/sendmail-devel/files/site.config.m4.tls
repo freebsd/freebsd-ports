@@ -1,2 +1,4 @@
-APPENDDEF(`conf_sendmail_ENVDEF', `-DSTARTTLS -DTLS_EC')
+APPENDDEF(`conf_sendmail_ENVDEF', `-DSTARTTLS -DTLS_EC=1')
+APPENDDEF(`conf_sendmail_ENVDEF', `-D_FFR_TLS_ALTNAMES')
+APPENDDEF(`conf_sendmail_ENVDEF', `-D_FFR_VRFY_TRUSTED_FIRST')
 APPENDDEF(`conf_sendmail_LIBS', `-lssl -lcrypto')
