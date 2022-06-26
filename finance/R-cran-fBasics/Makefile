@@ -1,7 +1,7 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
 
 PORTNAME=	fBasics
-DISTVERSION=	3042.89.1
+DISTVERSION=	3042.89.2
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 

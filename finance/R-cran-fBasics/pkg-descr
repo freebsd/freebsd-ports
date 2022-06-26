@@ -1,9 +1,8 @@
-The Rmetrics "fBasics" package is a collection of functions to
-explore and to investigate basic properties of financial returns
-and related quantities.  The covered fields include techniques of
-explorative data analysis and the investigation of distributional
-properties, including parameter estimation and hypothesis testing.
-Even more there are several utility functions for data handling and
+Provides a collection of functions to explore and to investigate basic
+properties of financial returns and related quantities. The covered fields
+include techniques of explorative data analysis and the investigation of
+distributional properties, including parameter estimation and hypothesis
+testing. Even more there are several utility functions for data handling and
 management.
 
-WWW: https://cran.r-project.org/web/packages/fBasics/
+WWW: https://www.rmetrics.org
