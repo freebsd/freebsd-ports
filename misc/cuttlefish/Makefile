@@ -32,4 +32,10 @@ CMAKE_OFF=	CUTTLEFISH_BUILD_DOCS CUTTLEFISH_BUILD_TESTS
 CMAKE_ON=	CUTTLEFISH_SHARED
 CMAKE_TESTING_ON=	CUTTLEFISH_BUILD_TESTS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+CXXFLAGS+=	-DSQUISH_USE_ALTIVEC -DSQUISH_USE_SSE=0
+.endif
+
 .include <bsd.port.mk>
