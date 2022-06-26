@@ -1,5 +1,5 @@
 PORTNAME=	speexdsp
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
 
