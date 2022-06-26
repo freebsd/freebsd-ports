@@ -2,7 +2,7 @@
 
 PORTNAME=	mysql_fdw
 DISTVERSIONPREFIX=	REL-
-DISTVERSION=	2_6_0
+DISTVERSION=	2_8_0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
@@ -12,7 +12,7 @@ COMMENT=	PostgreSQL foreign data wrapper for MySQL
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake pgsql:9.6-13 mysql
+USES=		gmake mysql pgsql:10+
 WANT_PGSQL=	server
 USE_GITHUB=	yes
 GH_ACCOUNT=	EnterpriseDB
