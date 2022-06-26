@@ -1,7 +1,7 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	libopenmpt
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 DISTVERSIONSUFFIX=	+release.autotools
 CATEGORIES=	audio
 MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
