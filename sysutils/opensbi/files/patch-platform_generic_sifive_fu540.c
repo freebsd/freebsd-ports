@@ -1,5 +1,5 @@
---- platform/generic/sifive_fu540.c.orig	2021-12-24 11:57:44 UTC
-+++ platform/generic/sifive_fu540.c
+--- platform/generic/sifive/fu540.c.orig	2022-06-26 14:27:30 UTC
++++ platform/generic/sifive/fu540.c
 @@ -11,6 +11,15 @@
  #include <sbi_utils/fdt/fdt_helper.h>
  #include <sbi_utils/fdt/fdt_fixup.h>
@@ -16,7 +16,7 @@
  static u64 sifive_fu540_tlbr_flush_limit(const struct fdt_match *match)
  {
  	/*
-@@ -41,6 +50,7 @@ static const struct fdt_match sifive_fu540_match[] = {
+@@ -41,6 +50,7 @@ const struct platform_override sifive_fu540 = {
  };
  
  const struct platform_override sifive_fu540 = {
