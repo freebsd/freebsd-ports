@@ -107,6 +107,10 @@ post-patch:
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
+BROKEN_aarch64=		clang-14 crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264834
+.endif
+
 .for g in ${VTK_GROUPS}
 .  if ${PORT_OPTIONS:M${g}}
 CMAKE_ARGS+=	-DVTK_Group_${g}:BOOL=ON
