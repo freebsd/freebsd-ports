@@ -27,7 +27,7 @@ VTK_CMAKE_ON=		-DGDCM_USE_VTK:BOOL=ON \
 			-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-${VTK_VERSION}
 VTK_USES=		gl
 VTK_USE=		GL=glu
-#VTK_BROKEN=		Fails to compile with VTK-9.1, see https://sourceforge.net/p/gdcm/bugs/537/
+VTK_BROKEN=		Fails to compile with VTK-9.1, see https://sourceforge.net/p/gdcm/bugs/537/
 
 # Change this when updating the port
 GDCM_MAJOR=	3
