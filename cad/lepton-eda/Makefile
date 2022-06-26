@@ -1,39 +1,38 @@
 PORTNAME=	lepton-eda
-PORTVERSION=	1.9.17
-PORTREVISION=	1
+PORTVERSION=	1.9.18
 CATEGORIES=	cad
-MASTER_SITES=	https://github.com/lepton-eda/lepton-eda/releases/download/${PORTVERSION}-20211219/
+MASTER_SITES=	https://github.com/lepton-eda/lepton-eda/releases/download/${PORTVERSION}-20220529/
 
 MAINTAINER=	graahnul.grom@gmail.com
 COMMENT=	Lepton Electronic Design Automation
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libffi.so:devel/libffi \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libfribidi.so:converters/fribidi \
 		libgc-threaded.so:devel/boehm-gc-threaded \
+		libGLdispatch.so:graphics/libglvnd \
+		libgmp.so:math/gmp \
+		libgraphite2.so:graphics/graphite2 \
+		libgtkextra-x11-3.0.so:x11-toolkits/gtkextra \
 		libguile-2.2.so:lang/guile2 \
+		libharfbuzz.so:print/harfbuzz \
+		libltdl.so:devel/libltdl \
+		libpcre.so:devel/pcre \
 		libpng.so:graphics/png \
 		libstroke.so:devel/libstroke \
-		libgtkextra-x11-3.0.so:x11-toolkits/gtkextra \
-		libharfbuzz.so:print/harfbuzz \
-		libffi.so:devel/libffi \
-		libunistring.so:devel/libunistring \
-		libgmp.so:math/gmp \
-		libltdl.so:devel/libltdl \
-		libfribidi.so:converters/fribidi \
-		libpcre.so:devel/pcre \
-		libgraphite2.so:graphics/graphite2 \
-		libexpat.so:textproc/expat2 \
-		libGLdispatch.so:graphics/libglvnd
+		libunistring.so:devel/libunistring
 
-USES=		desktop-file-utils gettext-tools gnome \
-		groff:build libtool localbase makeinfo pathfix perl5 \
-		pkgconfig shared-mime-info shebangfix iconv:wchar_t xorg
-USE_XORG=	xrender xinerama xi xrandr xcursor xext x11 \
-		xcomposite xdamage xfixes pixman xcb xau xdmcp
-USE_GNOME=	cairo gtk20 gdkpixbuf2
-USE_GL=	egl gl
+USES=		desktop-file-utils gettext-tools gnome groff:build \
+		iconv:wchar_t libtool localbase makeinfo pathfix perl5 \
+		pkgconfig shared-mime-info shebangfix xorg
+USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
+		xi xinerama xrandr xrender
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GL=		egl gl
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	utils/pcb_backannotate/lepton-pcb_backannotate \
@@ -41,9 +40,10 @@ SHEBANG_FILES=	utils/pcb_backannotate/lepton-pcb_backannotate \
 		utils/symfix/lepton-symfix
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-guild
 INSTALL_TARGET=	install-strip
 
-INFO=	lepton-scheme lepton-manual
+INFO=		lepton-scheme lepton-manual
 PORTEXAMPLES=	examples/*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES NLS
