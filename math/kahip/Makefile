@@ -7,7 +7,7 @@ CATEGORIES=	math
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Karlsruhe high quality graph partitioning
 
-LICENSE=	GPLv3
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmetis.so:math/metis \
