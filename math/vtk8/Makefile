@@ -11,6 +11,8 @@ COMMENT=	Visualization toolkit
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_FreeBSD_14_aarch64=	clang-14 crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264834
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
@@ -106,10 +108,6 @@ post-patch:
 		-E 's/[[:<:]]netcdf\.h[[:>:]]/xxxnetcdf.h/'
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
-BROKEN_aarch64=		clang-14 crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264834
-.endif
 
 .for g in ${VTK_GROUPS}
 .  if ${PORT_OPTIONS:M${g}}
