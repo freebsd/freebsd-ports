@@ -1,10 +1,10 @@
 # Created by: Fabian Keil <fk@fabiankeil.de>
 
 PORTNAME=	zogftw
-PORTVERSION=	0.0.2022.02.17
+PORTVERSION=	0.0.2022.06.25
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.fabiankeil.de/sourcecode/zogftw/
-DISTNAME=	${PORTNAME}-2022-02-17-47c83cb
+DISTNAME=	${PORTNAME}-2022-06-25-03982c7
 
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Creates redundant backups on encrypted ZFS pools
@@ -12,20 +12,20 @@ COMMENT=	Creates redundant backups on encrypted ZFS pools
 RUN_DEPENDS=	mbuffer:misc/mbuffer \
 		sudo:security/sudo
 
-OPTIONS_DEFINE=		EXECUTE_TESTS GNUPG
-OPTIONS_DEFAULT=	GNUPG
-EXECUTE_TESTS_DESC=	Execute tests before staging. Adds build dependencies.
+NO_BUILD=	yes
+PORTSCOUT=	ignore:1
 
 PLIST_FILES=	sbin/zogftw \
 		man/man8/zogftw.8.gz
 
-NO_BUILD=	yes
-PORTSCOUT=	ignore:1
-
-GNUPG_RUN_DEPENDS=	gpg:security/gnupg
+OPTIONS_DEFINE=		EXECUTE_TESTS GNUPG
+OPTIONS_DEFAULT=	GNUPG
+EXECUTE_TESTS_DESC=	Execute tests before staging. Adds build dependencies.
 
 EXECUTE_TESTS_BUILD_DEPENDS=	atf-sh:devel/atf \
 				kyua:devel/kyua
+
+GNUPG_RUN_DEPENDS=	gpg:security/gnupg
 
 .include <bsd.port.options.mk>
 
