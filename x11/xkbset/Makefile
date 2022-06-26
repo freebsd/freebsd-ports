@@ -1,7 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	xkbset
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
