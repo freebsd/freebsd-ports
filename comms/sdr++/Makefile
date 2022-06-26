@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Cross-Platform SDR Software
+COMMENT=	Cross-platform SDR software
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license
