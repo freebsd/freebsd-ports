@@ -398,6 +398,7 @@
     SUBDIR += jsmath-fonts
     SUBDIR += jtransforms
     SUBDIR += jts
+    SUBDIR += kahip
     SUBDIR += kalgebra
     SUBDIR += kalker
     SUBDIR += kbruch
