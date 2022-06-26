@@ -1,9 +1,9 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	iec16022
-PORTVERSION=	0.3.0
-DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.1
 CATEGORIES=	graphics
+MASTER_SITES=	https://github.com/rdoeffinger/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create 2D barcodes, also known as DataMatrix
@@ -12,20 +12,12 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	rdoeffinger
-
-GNU_CONFIGURE=	yes
+USES=		gmake libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USES=		autoreconf gmake libtool pathfix pkgconfig
-
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -fPIC
+GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/iec16022.c \
-		${WRKSRC}/iec16022ecc200.c ${WRKSRC}/reedsol.c ${WRKSRC}/image.c
-	@${REINPLACE_CMD} -e '/-Wno-unused-result/d' ${WRKSRC}/Makefile.am
+CFLAGS+=	-fPIC
 
 .include <bsd.port.mk>
