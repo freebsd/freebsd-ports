@@ -1,7 +1,9 @@
 PORTNAME=	metadata-cleaner
-DISTVERSION=	2.2.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.2.3
 CATEGORIES=	multimedia audio graphics python textproc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+MASTER_SITES=	https://gitlab.com/rmnvgr/metadata-cleaner/-/archive/v${DISTVERSION}/
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Python GTK application to view and clean metadata in files, using mat2
@@ -16,10 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mat2>0:multimedia/py-mat2@${PY_FLAVOR} \
 LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mat2>0:multimedia/py-mat2@${PY_FLAVOR}
 
-USES=		gettext-tools gnome meson pkgconfig python shebangfix
-USE_GITLAB=	yes
-GL_ACCOUNT=	rmnvgr
-GL_COMMIT=	a2882d01d8003a58119531e844ae698136fa2210
+USES=		gettext-tools gnome meson pkgconfig python shebangfix tar:bz2
 USE_GNOME=	gtk40 pygobject3 libadwaita
 GLIB_SCHEMAS=	fr.romainvigier.MetadataCleaner.gschema.xml
 USE_PYTHON=	concurrent flavors
