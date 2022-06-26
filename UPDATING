@@ -5,6 +5,39 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220626:
+  AFFECTS: users of python
+  AUTHOR: thierry@FreeBSD.org
+
+  The default version of python3 and python was switched to 3.9.
+
+  For ports users wanting to keep version 3.8 as default,
+  add DEFAULT_VERSIONS+= python=3.8 python3=3.8 to make.conf
+
+  Following procedures may ease the upgrade:
+
+  For users of pre-build packages:
+  # sh
+  # for i in $(pkg query -g %n 'py38-*'); do pkg set -yn ${i}:py39-${i#py38-}; done
+  # pkg upgrade
+
+  For portmaster users:
+  # sh
+  # portmaster -o lang/python39 python38
+  # REINSTALL="$(pkg info -o "*py38*" | awk '{printf "%s ", $2}')"
+  # pkg delete -f "*py38*"
+  # portmaster $REINSTALL
+  # REBUILD=$(pkg query -g "%n:%dn" '*' | grep py3 | grep -v py39 | cut -d : -f 1 | sort -u)
+  # portmaster $REBUILD
+  # REBUILD2=$(pkg list | grep python-38 | xargs pkg which | awk '{print $6}' | sort -u)
+  # portmaster $REBUILD2
+
+  Final steps (for pre-built packages & portmaster):
+
+  If no longer required, Python 3.8 can be removed via
+  "pkg remove python38" and the directory /usr/local/lib/python3.8 can
+  then be deleted afterwards, if not empty.
+
 20220625:
 AFFECTS: users of sysutils/fusefs-bindfs
   AUTHOR: doralitze@chaotikum.org
