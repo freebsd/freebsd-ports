@@ -1,5 +1,5 @@
 PORTNAME=	fastapi-users
-DISTVERSION=	10.0.7
+DISTVERSION=	10.1.1
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}email-validator>=1.1.0,<1.3:mail/py-email-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>=0.65.2:www/py-fastapi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}makefun>=1.11.2,<1.14:devel/py-makefun@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}makefun>=1.11.2,<1.15:devel/py-makefun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>=0:security/py-passlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.1.0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.5:www/py-python-multipart@${PY_FLAVOR}
@@ -44,10 +44,6 @@ SQLALCHEMY_DESC=	Support for SQL database through SQLAlchemy
 OAUTH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx-oauth>=0.3,<0.4:www/py-httpx-oauth@${PY_FLAVOR}
 SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}databases>=0.3.0:databases/py-databases@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4.0:databases/py-sqlalchemy14@${PY_FLAVOR}
-
-# Tests require tortoise and newer motor
-# do-test:
-	# cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs -o addopts=
 
 .include <bsd.port.pre.mk>
 

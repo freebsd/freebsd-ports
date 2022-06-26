@@ -10,7 +10,6 @@ Features:
     * SQLAlchemy async backend included thanks to encode/databases
     * MongoDB async backend included thanks to mongodb/motor
     * Tortoise ORM backend included
-    * ormar backend included
   * Multiple customizable authentication backends
     * JWT authentication backend included
     * Cookie authentication backend included
