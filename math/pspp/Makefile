@@ -1,8 +1,7 @@
 # Created by: Andrew L. Neporada <andrew@chg.ru>
 
 PORTNAME=	pspp
-PORTVERSION=	1.4.1
-PORTREVISION=	3
+PORTVERSION=	1.6.1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -12,7 +11,8 @@ COMMENT=	Program for statistical analysis of sampled data
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	texinfo>0:print/texinfo
+BUILD_DEPENDS=	p5-Text-Diff>=0:textproc/p5-Text-Diff \
+		texinfo>0:print/texinfo
 LIB_DEPENDS=	libgslcblas.so:math/gsl
 
 USES=		cpe charsetfix gettext-tools gmake gnome iconv localbase	\
@@ -22,17 +22,18 @@ CPE_VENDOR=	gnu
 USE_GNOME=	libxml2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib -lxml2
+CONFIGURE_ENV=	PYTHON3=${PYTHON_CMD}
 MAKE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 		XMLLINT="${LOCALBASE}/bin/xmllint"
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-PLIST_SUB=	VERSION="${PORTVERSION}"
+LDFLAGS+=	-L${LOCALBASE}/lib -lxml2
 
+INFO=		pspp pspp-dev
+PLIST_SUB=	VERSION="${PORTVERSION}"
 PORTDOCS=	AUTHORS ChangeLog NEWS ONEWS README THANKS
 PORTEXAMPLES=	*
-INFO=		pspp pspp-dev
 
 OPTIONS_DEFINE=		DOCS EXAMPLES GUI NLS PGSQL
 OPTIONS_DEFAULT=	GUI
