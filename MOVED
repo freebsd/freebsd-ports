@@ -17229,3 +17229,6 @@ sysutils/firstboot-growfs||2022-06-27|Has expired: A better version is available
 security/modsecurity3-apache||2022-06-27|Has expired: The project was not developed further
 net-mgmt/zabbix54-frontend||2022-06-27|Has expired: Unsupported by upstream
 net-mgmt/zabbix54-server||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-agent||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-java||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-proxy||2022-06-27|Has expired: Unsupported by upstream
