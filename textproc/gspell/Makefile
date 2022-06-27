@@ -1,11 +1,10 @@
 # Created by: Olivier Duchateau
 
 PORTNAME=	gspell
-PORTVERSION=	1.9.1
-PORTREVISION=	5
+PORTVERSION=	1.10.0
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Spell checking for GTK+
