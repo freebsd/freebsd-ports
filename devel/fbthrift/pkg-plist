@@ -3,7 +3,7 @@ include/thrift/ThriftLibrary.cmake
 include/thrift/lib/cpp/ContextStack.h
 include/thrift/lib/cpp/DistinctTable.h
 include/thrift/lib/cpp/EventHandlerBase.h
-include/thrift/lib/cpp/FieldId.h
+include/thrift/lib/cpp/Field.h
 include/thrift/lib/cpp/Frozen.h
 include/thrift/lib/cpp/Reflection.h
 include/thrift/lib/cpp/RelativePtr.h
@@ -100,6 +100,7 @@ include/thrift/lib/cpp2/Adapt.h
 include/thrift/lib/cpp2/BadFieldAccess.h
 include/thrift/lib/cpp2/BoxedValuePtr.h
 include/thrift/lib/cpp2/CloneableIOBuf.h
+include/thrift/lib/cpp2/FieldPath.h
 include/thrift/lib/cpp2/FieldRef.h
 include/thrift/lib/cpp2/FieldRefHash.h
 include/thrift/lib/cpp2/FieldRefTraits.h
@@ -215,12 +216,13 @@ include/thrift/lib/cpp2/op/Sha256Hasher.h
 include/thrift/lib/cpp2/op/StdHasher.h
 include/thrift/lib/cpp2/op/StdSerializer.h
 include/thrift/lib/cpp2/op/Testing.h
+include/thrift/lib/cpp2/op/detail/AnyOp.h
+include/thrift/lib/cpp2/op/detail/BaseOp.h
 include/thrift/lib/cpp2/op/detail/BasePatch.h
 include/thrift/lib/cpp2/op/detail/Clear.h
 include/thrift/lib/cpp2/op/detail/Compare.h
 include/thrift/lib/cpp2/op/detail/ContainerPatch.h
 include/thrift/lib/cpp2/op/detail/Create.h
-include/thrift/lib/cpp2/op/detail/Get.h
 include/thrift/lib/cpp2/op/detail/Hash.h
 include/thrift/lib/cpp2/op/detail/HashProtocol.h
 include/thrift/lib/cpp2/op/detail/Patch.h
@@ -294,6 +296,7 @@ include/thrift/lib/cpp2/security/extensions/ThriftParametersServerExtension.h
 include/thrift/lib/cpp2/security/extensions/Types.h
 include/thrift/lib/cpp2/server/AdaptiveConcurrency.h
 include/thrift/lib/cpp2/server/BaseThriftServer.h
+include/thrift/lib/cpp2/server/CPUConcurrencyController.h
 include/thrift/lib/cpp2/server/ConcurrencyControllerBase.h
 include/thrift/lib/cpp2/server/ConcurrencyControllerInterface.h
 include/thrift/lib/cpp2/server/ControlServerInterface.h
@@ -390,6 +393,7 @@ include/thrift/lib/cpp2/transport/rocket/framing/Util.h
 include/thrift/lib/cpp2/transport/rocket/framing/test/Util.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketRoutingHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketServerConnection.h
+include/thrift/lib/cpp2/transport/rocket/server/RocketServerConnectionObserver.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketServerFrameContext.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketServerHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketSinkClientCallback.h
@@ -399,6 +403,7 @@ include/thrift/lib/cpp2/transport/rocket/server/SetupFrameHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/ThriftRocketServerHandler.h
 include/thrift/lib/cpp2/transport/rocket/test/fuzz/FuzzUtil.h
 include/thrift/lib/cpp2/transport/rocket/test/network/ClientServerTestUtil.h
+include/thrift/lib/cpp2/transport/rocket/test/network/Mocks.h
 include/thrift/lib/cpp2/transport/rocket/test/network/Util.h
 include/thrift/lib/cpp2/transport/rocket/test/util/TestServiceMock.h
 include/thrift/lib/cpp2/transport/rocket/test/util/TestUtil.h
@@ -426,8 +431,9 @@ include/thrift/lib/cpp2/type/detail/AnyType.h
 include/thrift/lib/cpp2/type/detail/Field.h
 include/thrift/lib/cpp2/type/detail/Name.h
 include/thrift/lib/cpp2/type/detail/NativeType.h
-include/thrift/lib/cpp2/type/detail/ThriftTypeInfo.h
+include/thrift/lib/cpp2/type/detail/Ptr.h
 include/thrift/lib/cpp2/type/detail/Traits.h
+include/thrift/lib/cpp2/type/detail/TypeInfo.h
 include/thrift/lib/cpp2/type/detail/TypeRegistry.h
 include/thrift/lib/cpp2/type/detail/Wrap.h
 include/thrift/lib/cpp2/util/BucketedRate.h
@@ -465,6 +471,7 @@ include/thrift/lib/py3/test/is_overload/func.h
 include/thrift/lib/py3/types.h
 include/thrift/lib/thrift/RpcMetadata_extra.h
 include/thrift/lib/thrift/SerializableDynamic.h
+include/thrift/lib/thrift/detail/protocol.h
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade.h
 include/thrift/lib/thrift/gen-cpp2/RocketUpgrade.tcc
 include/thrift/lib/thrift/gen-cpp2/RocketUpgradeAsyncClient.h
