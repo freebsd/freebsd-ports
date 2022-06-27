@@ -7,6 +7,7 @@ lib/libsdrpp_core.so
 lib/sdrpp/plugins/airspy_source.so
 lib/sdrpp/plugins/airspyhf_source.so
 %%RTAUDIO%%lib/sdrpp/plugins/audio_sink.so
+lib/sdrpp/plugins/discord_integration.so
 lib/sdrpp/plugins/file_source.so
 lib/sdrpp/plugins/frequency_manager.so
 lib/sdrpp/plugins/hackrf_source.so
