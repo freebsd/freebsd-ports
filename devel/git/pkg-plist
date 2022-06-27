@@ -712,6 +712,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.35.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.36.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.36.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.37.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1210,6 +1211,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/coccinelle/README
 %%CONTRIB%%share/git-core/contrib/coccinelle/array.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/commit.cocci
+%%CONTRIB%%share/git-core/contrib/coccinelle/equals-null.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/flex_alloc.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/free.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/hashmap.cocci
