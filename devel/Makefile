@@ -880,6 +880,7 @@
     SUBDIR += gitlist
     SUBDIR += gitolite
     SUBDIR += gitolite2
+    SUBDIR += gitqlient
     SUBDIR += gittrac
     SUBDIR += gitty
     SUBDIR += gitui
