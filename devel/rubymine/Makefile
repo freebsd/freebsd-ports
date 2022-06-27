@@ -1,7 +1,7 @@
 # Created by: Stefan Wendler <stefan.wendler@tngtech.com>
 
 PORTNAME=	rubymine
-PORTVERSION=	2022.1.2
+PORTVERSION=	2022.1.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://download.jetbrains.com/ruby/ \
 		http://download.jetbrains.com/ruby/

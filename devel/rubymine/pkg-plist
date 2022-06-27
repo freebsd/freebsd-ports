@@ -475,7 +475,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/lib/asm-tree-7.1.jar
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-RM-221.5787.34
+%%DATADIR%%/lib/build-marker-RM-221.5921.22
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/dbus-java-3.2.1.jar
@@ -597,8 +597,8 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-6fad43be1057.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-6fad43be1057.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-b2f682bc4951.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-b2f682bc4951.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -1188,8 +1188,8 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rb/consoles/rails_config.rb
 %%DATADIR%%/plugins/ruby/rb/cov_starter.rb
 %%DATADIR%%/plugins/ruby/rb/gems/debase-0.2.5.beta2.gem
-%%DATADIR%%/plugins/ruby/rb/gems/debase-2.3.7.gem
-%%DATADIR%%/plugins/ruby/rb/gems/debase-3.0.0.beta.3.gem
+%%DATADIR%%/plugins/ruby/rb/gems/debase-2.3.8.gem
+%%DATADIR%%/plugins/ruby/rb/gems/debase-3.0.0.beta.4.gem
 %%DATADIR%%/plugins/ruby/rb/gems/debug_preloader.rb
 %%DATADIR%%/plugins/ruby/rb/gems/rcov-0.9.9.jb-java.gem
 %%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-base-0.10.5.jb2-x86-mswin32.gem
@@ -1198,8 +1198,8 @@ share/applications/rubymine.desktop
 %%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-base-0.11.0-java.gem
 %%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-base19x-0.11.32.gem
 %%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-ide-0.7.3.gem
-%%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-ide-2.3.7.gem
-%%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-ide-3.0.0.beta.3.gem
+%%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-ide-2.3.8.gem
+%%DATADIR%%/plugins/ruby/rb/gems/ruby-debug-ide-3.0.0.beta.4.gem
 %%DATADIR%%/plugins/ruby/rb/gems/rubymine_debug_anything.rb
 %%DATADIR%%/plugins/ruby/rb/gems/rubymine_jruby_debug.rb
 %%DATADIR%%/plugins/ruby/rb/gems/rubymine_passenger_debug.rb
