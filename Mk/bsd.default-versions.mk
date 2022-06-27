@@ -50,7 +50,7 @@ FPC_DEFAULT?=		3.2.2
 .  if ${ARCH} == "powerpcspe"
 GCC_DEFAULT?=		8
 .  else
-GCC_DEFAULT?=		10
+GCC_DEFAULT?=		11
 .  endif
 # Possible values: mesa-libs, mesa-devel
 GL_DEFAULT?=		mesa-libs
