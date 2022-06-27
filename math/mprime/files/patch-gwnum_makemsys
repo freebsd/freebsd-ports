@@ -1,23 +1,17 @@
 --- gwnum/makemsys.orig	2019-04-23 03:05:20 UTC
 +++ gwnum/makemsys
-@@ -1,13 +1,13 @@
- # Makefile for Mingw/msys gwnum library
+@@ -2,10 +2,10 @@
  #
  
--CC = gcc
--CFLAGS = -I.. -I../sqlite-amalgamation-3180000 -O2 -march=i486 -malign-double
-+CC ?= cc
+ CC ?= cc
+-CFLAGS = -I.. -I../sqlite-amalgamation-3180000 -O2 -march=i486
 +CFLAGS += -I.. -I../sqlite-amalgamation-3180000 -O2 -march=i486
  
--CPP = g++
--CPPFLAGS = -I.. -I../qd -O2 -march=i486 -malign-double
-+CXX ?= cc
+ CXX ?= cc
+-CXXFLAGS = -I.. -I../qd -O2 -march=i486
 +CXXFLAGS += -I.. -I../qd -O2 -march=i486
  
--AR = ar
-+AR ?= ar
- 
- LINUXOBJS = cpuid.o gwnum.o gwtables.o gwthread.o gwini.o gwbench.o gwutil.o gwdbldbl.o giants.o ecmstag1.o
+ AR ?= ar
  
 @@ -29,4 +29,4 @@ distclean: clean
  	$(CC) $(CFLAGS) -c $<

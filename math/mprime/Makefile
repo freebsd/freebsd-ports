@@ -1,8 +1,7 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 
 PORTNAME=	mprime
-PORTVERSION=	29.8b3
-PORTREVISION=	2
+PORTVERSION=	30.7b9
 CATEGORIES=	math benchmarks net
 MASTER_SITES=	http://www.mersenne.org/ftp_root/gimps/ \
 		ftp://mersenne.org/gimps/
@@ -18,6 +17,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/circular_buffer.hpp:devel/boost-libs
 LIB_DEPENDS=	libcurl.so:ftp/curl					\
 		libhwloc.so.15:devel/hwloc2				\
 		libgmp.so:math/gmp
