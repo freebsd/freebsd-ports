@@ -1094,6 +1094,13 @@ STRIP_CMD=	${CROSS_BINUTILS_PREFIX}strip
 # only bmake support the below
 STRIPBIN=	${STRIP_CMD}
 .export-env STRIPBIN
+.elif !defined(USE_BINUTILS)
+.  for _tool in ADDR2LINE AR AS CPPFILT LD NM OBJCOPY OBJDUMP RANLIB READELF SIZE STRINGS
+.    if defined(${_tool})
+CONFIGURE_ENV+=	${_tool}="${${_tool}}"
+MAKE_ENV+=		${_tool}="${${_tool}}"
+.    endif
+.  endfor
 .endif
 
 #
