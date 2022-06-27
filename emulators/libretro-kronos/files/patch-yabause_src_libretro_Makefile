@@ -1,0 +1,11 @@
+--- yabause/src/libretro/Makefile.orig	2021-06-01 21:12:00 UTC
++++ yabause/src/libretro/Makefile
+@@ -291,7 +291,7 @@ endif
+ 
+ OBJECTS += $(OBJECTS_C) $(OBJECTS_CXX) $(OBJECTS_S)
+ 
+-LDFLAGS += $(fpic) $(SHARED) -latomic
++LDFLAGS += $(fpic) $(SHARED)
+ FLAGS += $(fpic)
+ 
+ INCFLAGS := $(foreach dir,$(INCLUDE_DIRS),-I$(dir))

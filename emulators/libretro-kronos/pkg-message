@@ -1,0 +1,34 @@
+[
+{ type: install
+  message: <<EOM
+For Sega Saturn, it is mandatory to install a supported Sega Saturn bios files
+(such as saturn_bios.bin) in ~/.config/retroarch/system or
+~/.config/retroarch/system/kronos.
+
+Kronos is broadly compatible with all major Saturn BIOSes regardless of region,
+although unlike Yabause, a BIOS dump is required.  Due to the aforementioned
+BIOS compatibility, the BIOS guide for the beetle-saturn libretro core may be
+helpful:
+
+https://docs.libretro.com/library/beetle_saturn/
+
+For ST-V, it is necessary to add a compatible stvbios.zip either in
+~/.config/retroarch/system/kronos or in ~/.config/retroarch/system/.  In
+contrast to MAME, Kronos will never search for this bios file in the local path
+of the game.
+
+If the emulator gets stuck on the BIOS screen, the screen remains blank, or
+shows audio track navigation controls, then the BIOS is likely incompatible.
+
+At present, Kronos is only compatible with a subset of the stvbios.zip files
+used by modern MAME versions.  If the stvbios.zip is not present in the proper
+place, but one of the proper Sega Saturn BIOSes is instead available, it will
+try to default to one of those, and in the most optimistic case, merely reach
+the audio CD track navigation controls, but it will not work, since it is not
+the same hardware.
+
+If in doubt, running retroarch with the -v argument may help to acquire more
+diagnostic information.
+EOM
+}
+]
