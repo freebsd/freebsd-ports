@@ -1,14 +1,14 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-211
-DISTVERSIONSUFFIX=	-gb9b33d88e
+DISTVERSION=	21.0.99.1-240
+DISTVERSIONSUFFIX=	-g727507eb3
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	42e34498f87a.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
-PATCHFILES+=	0d56c27582a2.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
-PATCHFILES+=	1f7b28547011.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
+PATCHFILES+=	a0a3ccbdacff.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
+PATCHFILES+=	d0e66b17c809.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
+PATCHFILES+=	811f3f35c969.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X11 server as Wayland client (development snapshot)
@@ -45,7 +45,8 @@ PLIST_FILES=	bin/Xwayland \
 		"@comment lib/xorg/protocol.txt" \
 		libdata/pkgconfig/xwayland.pc \
 		"@comment man/man1/Xserver.1.gz" \
-		man/man1/Xwayland.1.gz
+		man/man1/Xwayland.1.gz \
+		share/applications/org.freedesktop.Xwayland.desktop
 
 # Keep in sync with xorg-server
 FONTPATH_ROOT?=	${LOCALBASE}/share/fonts
@@ -59,7 +60,12 @@ DEFAULT_FONTPATH_LIST= \
 	${FONTPATH_ROOT}/75dpi/ \
 	catalogue:${FONTPATHD}
 
-OPTIONS_DEFINE=	NVIDIA
+OPTIONS_DEFINE=	CSD NVIDIA
+OPTIONS_DEFAULT=CSD
+
+CSD_DESC=		Client-side decorations via libdecor
+CSD_LIB_DEPENDS=	libdecor-0.so:x11-toolkits/libdecor
+CSD_MESON_TRUE=		libdecor
 
 NVIDIA_DESC=		EGLStream support for glamor on Xwayland
 NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
