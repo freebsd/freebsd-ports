@@ -18,7 +18,7 @@ include/folly/ConcurrentLazy.h
 include/folly/ConcurrentSkipList-inl.h
 include/folly/ConcurrentSkipList.h
 include/folly/ConstexprMath.h
-include/folly/ConstructorCallback.h
+include/folly/ConstructorCallbackList.h
 include/folly/Conv.h
 include/folly/CppAttributes.h
 include/folly/CpuId.h
