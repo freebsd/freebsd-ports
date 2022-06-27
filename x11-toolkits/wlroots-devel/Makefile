@@ -1,6 +1,7 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.15.0-291
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-devel
 
@@ -35,6 +36,7 @@ MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:
 .ifdef PKGNAMESUFFIX
 PORTSCOUT=	ignore:1
 PREFIX=		${LOCALBASE}/${PKGBASE} # avoid conflict with the default
+MESON_ARGS+=	-Ddatadir="${LOCALBASE}/share"
 .endif
 
 OPTIONS_DEFINE=	DRM OPENGL VULKAN X11
