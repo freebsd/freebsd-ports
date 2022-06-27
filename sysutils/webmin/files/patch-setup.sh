@@ -1,6 +1,6 @@
---- setup.sh.orig	2022-05-23 20:33:54 UTC
+--- setup.sh.orig	2022-07-04 19:10:33 UTC
 +++ setup.sh
-@@ -103,19 +103,7 @@ echo ""
+@@ -105,19 +105,7 @@ echo "Webmin uses separate directories for configurati
  echo "Unless you want to run multiple versions of Webmin at the same time"
  echo "you can just accept the defaults."
  echo ""
@@ -21,7 +21,7 @@
  if [ ! -d $config_dir ]; then
  	mkdir $config_dir;
  	if [ $? != 0 ]; then
-@@ -210,12 +198,12 @@ else
+@@ -212,12 +200,12 @@ else
  	fi
  
  	# Ask for log directory
@@ -36,7 +36,7 @@
  	fi
  	abspath=`echo $var_dir | grep "^/"`
  	if [ "$abspath" = "" ]; then
-@@ -243,7 +231,9 @@ else
+@@ -245,7 +233,9 @@ else
  	echo "Webmin is written entirely in Perl. Please enter the full path to the"
  	echo "Perl 5 interpreter on your system."
  	echo ""
@@ -47,7 +47,7 @@
  		perldef=/usr/bin/perl
  	elif [ -x /usr/local/bin/perl ]; then
  		perldef=/usr/local/bin/perl
-@@ -444,6 +434,7 @@ else
+@@ -446,6 +436,7 @@ else
  		fi
  	fi
  
@@ -55,7 +55,7 @@
  	# Ask whether to run at boot time
  	if [ "$atboot" = "" ]; then
  		if echo "$os_type" | grep  -q "\-linux$"; then
-@@ -595,6 +586,7 @@ fi
+@@ -607,6 +598,7 @@ EOF
  	fi
  fi
  
@@ -63,15 +63,15 @@
  if [ "$noperlpath" = "" ]; then
  	echo "Inserting path to perl into scripts.."
  	(find "$wadir" -name '*.cgi' -print ; find "$wadir" -name '*.pl' -print) | $perl "$wadir/perlpath.pl" $perl -
-@@ -607,7 +599,6 @@ echo "#!/bin/sh" >>$config_dir/.start-init
+@@ -618,7 +610,6 @@ fi
  echo "Creating start and stop init scripts.."
  # Start main
- echo "#!/bin/sh" >>$config_dir/.start-init
+ echo "#!/bin/sh" >$config_dir/.start-init
 -echo "echo Starting Webmin server in $wadir" >>$config_dir/.start-init
  echo "trap '' 1" >>$config_dir/.start-init
  echo "LANG=" >>$config_dir/.start-init
  echo "export LANG" >>$config_dir/.start-init
-@@ -827,6 +818,7 @@ fi
+@@ -849,6 +840,7 @@ if [ "$?" != "0" ]; then
  	echo passdelay=1 >> $config_dir/miniserv.conf
  fi
  
@@ -79,7 +79,7 @@
  if [ "$nouninstall" = "" ]; then
  	echo "Creating uninstall script $config_dir/uninstall.sh .."
  	cat >$config_dir/uninstall.sh <<EOF
-@@ -864,6 +856,7 @@ chmod +r $config_dir/version
+@@ -886,6 +878,7 @@ for f in miniserv.conf miniserv.pem miniserv.users; do
  	chmod -R og-rw $config_dir/$f
  done
  chmod +r $config_dir/version
@@ -87,11 +87,11 @@
  if [ "$nochown" = "" ]; then
  	# Make program directory non-world-writable, but executable
  	chown -R root "$wadir"
-@@ -916,6 +909,7 @@ fi
+@@ -938,6 +931,7 @@ if [ -r "$srcdir/setup-post.sh" ]; then
  	. "$srcdir/setup-post.sh"
  fi
  
 +nostart="yes"
  if [ "$nostart" = "" ]; then
  	if [ "$inetd" != "1" ]; then
- 		echo "Attempting to start Webmin mini web server.."
+ 		echo "Attempting to start Webmin web server.."

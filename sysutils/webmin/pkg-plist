@@ -1060,7 +1060,7 @@ lib/webmin/apache/cache.pl
 lib/webmin/apache/cgi_args.pl
 lib/webmin/apache/change_dir.cgi
 lib/webmin/apache/change_files.cgi
-lib/webmin/apache/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/apache/config-AlmaLinux-7.0-ALL
 lib/webmin/apache/config-Amazon-Linux-2-ALL
 lib/webmin/apache/config-CentOS-Linux-7.0-ALL
 lib/webmin/apache/config-Fedora-Linux-20-ALL
@@ -3326,7 +3326,7 @@ lib/webmin/backup-config/lang/tr.auto
 lib/webmin/backup-config/lang/uk.auto
 lib/webmin/backup-config/lang/ur.auto
 lib/webmin/backup-config/lang/vi.auto
-lib/webmin/backup-config/lang/zh.auto
+lib/webmin/backup-config/lang/zh
 lib/webmin/backup-config/lang/zh_TW.auto
 lib/webmin/backup-config/log_parser.pl
 lib/webmin/backup-config/module.info
@@ -3404,7 +3404,6 @@ lib/webmin/backup-config/module.info.ur.auto
 lib/webmin/backup-config/module.info.vi
 lib/webmin/backup-config/module.info.vi.auto
 lib/webmin/backup-config/module.info.zh
-lib/webmin/backup-config/module.info.zh.auto
 lib/webmin/backup-config/module.info.zh_TW
 lib/webmin/backup-config/module.info.zh_TW.auto
 lib/webmin/backup-config/restore.cgi
@@ -4923,6 +4922,7 @@ lib/webmin/bin/enable-proxy
 lib/webmin/bin/language-manager
 lib/webmin/bin/list-config
 lib/webmin/bin/passwd
+lib/webmin/bin/server
 lib/webmin/bin/set-config
 lib/webmin/bin/update-devel
 lib/webmin/bin/webmin
@@ -4949,7 +4949,7 @@ lib/webmin/bind8/conf_rndc.cgi
 lib/webmin/bind8/conf_servers.cgi
 lib/webmin/bind8/conf_trusted.cgi
 lib/webmin/bind8/conf_zonedef.cgi
-lib/webmin/bind8/config-AlmaLinux-Linux-6.0-ALL
+lib/webmin/bind8/config-AlmaLinux-6.0-ALL
 lib/webmin/bind8/config-CentOS-Linux-6.0-ALL
 lib/webmin/bind8/config-Redhat-Enterprise-Linux-6.0-ALL
 lib/webmin/bind8/config-Rocky-Linux-6.0-ALL
@@ -4962,10 +4962,11 @@ lib/webmin/bind8/config-debian-linux
 lib/webmin/bind8/config-debian-linux-2.2
 lib/webmin/bind8/config-debian-linux-3.0
 lib/webmin/bind8/config-debian-linux-3.1-ALL
+lib/webmin/bind8/config-freebsd-12.0-ALL
 lib/webmin/bind8/config-freebsd-2.1-2.2
 lib/webmin/bind8/config-freebsd-3.0
 lib/webmin/bind8/config-freebsd-3.1-3.5
-lib/webmin/bind8/config-freebsd-4.0-ALL
+lib/webmin/bind8/config-freebsd-4.0-11.0
 lib/webmin/bind8/config-generic-linux
 lib/webmin/bind8/config-gentoo-linux
 lib/webmin/bind8/config-hpux
@@ -11276,7 +11277,7 @@ lib/webmin/dhcpd/CHANGELOG
 lib/webmin/dhcpd/acl_security.pl
 lib/webmin/dhcpd/backup_config.pl
 lib/webmin/dhcpd/cgi_args.pl
-lib/webmin/dhcpd/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/dhcpd/config-AlmaLinux-7.0-ALL
 lib/webmin/dhcpd/config-Amazon-Linux-2-ALL
 lib/webmin/dhcpd/config-CentOS-Linux-5
 lib/webmin/dhcpd/config-CentOS-Linux-6.0-6.9
@@ -11638,7 +11639,9 @@ lib/webmin/dovecot/backup_config.pl
 lib/webmin/dovecot/bootup.cgi
 lib/webmin/dovecot/cgi_args.pl
 lib/webmin/dovecot/config
+lib/webmin/dovecot/config-AlmaLinux-7.0-ALL
 lib/webmin/dovecot/config-Amazon-Linux
+lib/webmin/dovecot/config-Rocky-Linux-7.0-ALL
 lib/webmin/dovecot/config-debian-linux
 lib/webmin/dovecot/config-freebsd-8.0-8.9
 lib/webmin/dovecot/config-freebsd-9-ALL
@@ -11920,7 +11923,7 @@ lib/webmin/exim/module.info.zh_TW.auto
 lib/webmin/exports/CHANGELOG
 lib/webmin/exports/backup_config.pl
 lib/webmin/exports/cgi_args.pl
-lib/webmin/exports/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/exports/config-AlmaLinux-7.0-ALL
 lib/webmin/exports/config-Amazon-Linux-2-ALL
 lib/webmin/exports/config-CentOS-Linux-7.0-ALL
 lib/webmin/exports/config-Redhat-Enterprise-Linux-7.0-ALL
@@ -14801,10 +14804,12 @@ lib/webmin/filter/lang/ar.auto
 lib/webmin/filter/lang/be.auto
 lib/webmin/filter/lang/bg.auto
 lib/webmin/filter/lang/ca
+lib/webmin/filter/lang/ca.auto
 lib/webmin/filter/lang/cs
 lib/webmin/filter/lang/cs.auto
 lib/webmin/filter/lang/da.auto
 lib/webmin/filter/lang/de
+lib/webmin/filter/lang/de.auto
 lib/webmin/filter/lang/el
 lib/webmin/filter/lang/el.auto
 lib/webmin/filter/lang/en
@@ -14828,6 +14833,7 @@ lib/webmin/filter/lang/mt.auto
 lib/webmin/filter/lang/nl
 lib/webmin/filter/lang/nl.auto
 lib/webmin/filter/lang/no
+lib/webmin/filter/lang/no.auto
 lib/webmin/filter/lang/pl
 lib/webmin/filter/lang/pl.auto
 lib/webmin/filter/lang/pt.auto
@@ -22307,7 +22313,7 @@ lib/webmin/ipsec/CHANGELOG
 lib/webmin/ipsec/backup_config.pl
 lib/webmin/ipsec/bootup.cgi
 lib/webmin/ipsec/config
-lib/webmin/ipsec/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/ipsec/config-AlmaLinux-7.0-ALL
 lib/webmin/ipsec/config-Amazon-Linux-2-ALL
 lib/webmin/ipsec/config-CentOS-Linux-7.0-ALL
 lib/webmin/ipsec/config-Redhat-Enterprise-Linux-7.0-ALL
@@ -23184,7 +23190,7 @@ lib/webmin/iscsi-target/up_allow.cgi
 lib/webmin/iscsi-tgtd/CHANGELOG
 lib/webmin/iscsi-tgtd/atboot.cgi
 lib/webmin/iscsi-tgtd/config
-lib/webmin/iscsi-tgtd/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/iscsi-tgtd/config-AlmaLinux-7.0-ALL
 lib/webmin/iscsi-tgtd/config-Amazon-Linux-2-ALL
 lib/webmin/iscsi-tgtd/config-CentOS-Linux-7.0-ALL
 lib/webmin/iscsi-tgtd/config-Redhat-Enterprise-Linux-7.0-ALL
@@ -24498,7 +24504,7 @@ lib/webmin/ldap-client/atboot.cgi
 lib/webmin/ldap-client/browser.cgi
 lib/webmin/ldap-client/check.cgi
 lib/webmin/ldap-client/config-ALL-linux
-lib/webmin/ldap-client/config-AlmaLinux-Linux-6.0-ALL
+lib/webmin/ldap-client/config-AlmaLinux-6.0-ALL
 lib/webmin/ldap-client/config-CentOS-Linux-6.0-ALL
 lib/webmin/ldap-client/config-Redhat-Enterprise-Linux-6.0-ALL
 lib/webmin/ldap-client/config-Rocky-Linux-6.0-ALL
@@ -24932,7 +24938,7 @@ lib/webmin/ldap-server/bootup.cgi
 lib/webmin/ldap-server/cgi_args.pl
 lib/webmin/ldap-server/config
 lib/webmin/ldap-server/config-ALL-linux
-lib/webmin/ldap-server/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/ldap-server/config-AlmaLinux-7.0-ALL
 lib/webmin/ldap-server/config-Amazon-Linux-2-ALL
 lib/webmin/ldap-server/config-CentOS-Linux-7.0-ALL
 lib/webmin/ldap-server/config-Redhat-Enterprise-Linux-6.0-6.9
@@ -26145,6 +26151,21 @@ lib/webmin/logrotate/module.info.zh_TW.auto
 lib/webmin/logrotate/prefs.info
 lib/webmin/logrotate/save_log.cgi
 lib/webmin/logrotate/save_sched.cgi
+lib/webmin/logviewer/CHANGELOG
+lib/webmin/logviewer/acl_security.pl
+lib/webmin/logviewer/backup_config.pl
+lib/webmin/logviewer/config
+lib/webmin/logviewer/config.info
+lib/webmin/logviewer/defaultacl
+lib/webmin/logviewer/images/icon.gif
+lib/webmin/logviewer/index.cgi
+lib/webmin/logviewer/install_check.pl
+lib/webmin/logviewer/lang/en
+lib/webmin/logviewer/logviewer-lib.pl
+lib/webmin/logviewer/module.info
+lib/webmin/logviewer/prefs.info
+lib/webmin/logviewer/safeacl
+lib/webmin/logviewer/view_log.cgi
 lib/webmin/lpadmin/CHANGELOG
 lib/webmin/lpadmin/acl_security.pl
 lib/webmin/lpadmin/aix-lib.pl
@@ -26161,7 +26182,7 @@ lib/webmin/lpadmin/cluster_add.cgi
 lib/webmin/lpadmin/cluster_delete.cgi
 lib/webmin/lpadmin/colour.fig
 lib/webmin/lpadmin/colour.ps
-lib/webmin/lpadmin/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/lpadmin/config-AlmaLinux-7.0-ALL
 lib/webmin/lpadmin/config-Amazon-Linux-2-ALL
 lib/webmin/lpadmin/config-CentOS-Linux-7.0-ALL
 lib/webmin/lpadmin/config-Redhat-Enterprise-Linux-7.0-ALL
@@ -26564,6 +26585,8 @@ lib/webmin/lvm/module.info.zh_TW
 lib/webmin/lvm/module.info.zh_TW.auto
 lib/webmin/lvm/prefs.info
 lib/webmin/lvm/pvmove.cgi
+lib/webmin/lvm/raid_create.cgi
+lib/webmin/lvm/raid_form.cgi
 lib/webmin/lvm/save_lv.cgi
 lib/webmin/lvm/save_pv.cgi
 lib/webmin/lvm/save_vg.cgi
@@ -29059,7 +29082,7 @@ lib/webmin/mysql/backup_db.cgi
 lib/webmin/mysql/backup_form.cgi
 lib/webmin/mysql/cgi_args.pl
 lib/webmin/mysql/config
-lib/webmin/mysql/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/mysql/config-AlmaLinux-7.0-ALL
 lib/webmin/mysql/config-Amazon-Linux-2-ALL
 lib/webmin/mysql/config-CentOS-Linux-7.0-ALL
 lib/webmin/mysql/config-Redhat-Enterprise-Linux-7.0-ALL
@@ -39325,7 +39348,7 @@ lib/webmin/postgresql/backup_config.pl
 lib/webmin/postgresql/backup_form.cgi
 lib/webmin/postgresql/cgi_args.pl
 lib/webmin/postgresql/config
-lib/webmin/postgresql/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/postgresql/config-AlmaLinux-7.0-ALL
 lib/webmin/postgresql/config-Amazon-Linux-2-ALL
 lib/webmin/postgresql/config-CentOS-Linux-7.0-ALL
 lib/webmin/postgresql/config-Redhat-Enterprise-Linux-7.0-ALL
@@ -42551,7 +42574,7 @@ lib/webmin/proftpd/anon_index.cgi
 lib/webmin/proftpd/apply.cgi
 lib/webmin/proftpd/backup_config.pl
 lib/webmin/proftpd/config
-lib/webmin/proftpd/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/proftpd/config-AlmaLinux-7.0-ALL
 lib/webmin/proftpd/config-Amazon-Linux-2-ALL
 lib/webmin/proftpd/config-CentOS-Linux-7.0-ALL
 lib/webmin/proftpd/config-Redhat-Enterprise-Linux-7.0-ALL
@@ -44454,7 +44477,7 @@ lib/webmin/samba/conf_net.cgi
 lib/webmin/samba/conf_pass.cgi
 lib/webmin/samba/conf_print.cgi
 lib/webmin/samba/conf_smb.cgi
-lib/webmin/samba/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/samba/config-AlmaLinux-7.0-ALL
 lib/webmin/samba/config-Amazon-Linux-2-ALL
 lib/webmin/samba/config-CentOS-Linux-7.0-ALL
 lib/webmin/samba/config-Redhat-Enterprise-Linux-7.0-ALL
@@ -44974,7 +44997,7 @@ lib/webmin/sendmail/backup_config.pl
 lib/webmin/sendmail/boxes-lib.pl
 lib/webmin/sendmail/build.cgi
 lib/webmin/sendmail/cgi_args.pl
-lib/webmin/sendmail/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/sendmail/config-AlmaLinux-7.0-ALL
 lib/webmin/sendmail/config-Amazon-Linux-2-ALL
 lib/webmin/sendmail/config-CentOS-Linux-7.0-ALL
 lib/webmin/sendmail/config-Redhat-Enterprise-Linux-7.0-ALL
@@ -50052,7 +50075,7 @@ lib/webmin/squid/calamaris.cgi
 lib/webmin/squid/cgi_args.pl
 lib/webmin/squid/chown.cgi
 lib/webmin/squid/clear.cgi
-lib/webmin/squid/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/squid/config-AlmaLinux-7.0-ALL
 lib/webmin/squid/config-Amazon-Linux-2-ALL
 lib/webmin/squid/config-CentOS-Linux-7.0-ALL
 lib/webmin/squid/config-Redhat-Enterprise-Linux-7.0-ALL
@@ -52136,7 +52159,7 @@ lib/webmin/syslog-ng/CHANGELOG
 lib/webmin/syslog-ng/apply.cgi
 lib/webmin/syslog-ng/backup_config.pl
 lib/webmin/syslog-ng/config
-lib/webmin/syslog-ng/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/syslog-ng/config-AlmaLinux-7.0-ALL
 lib/webmin/syslog-ng/config-Amazon-Linux-2-ALL
 lib/webmin/syslog-ng/config-CentOS-Linux-7.0-ALL
 lib/webmin/syslog-ng/config-Redhat-Enterprise-Linux-7.0-ALL
@@ -52570,7 +52593,7 @@ lib/webmin/syslog/CHANGELOG
 lib/webmin/syslog/acl_security.pl
 lib/webmin/syslog/backup_config.pl
 lib/webmin/syslog/cgi_args.pl
-lib/webmin/syslog/config-AlmaLinux-Linux-6.0-ALL
+lib/webmin/syslog/config-AlmaLinux-6.0-ALL
 lib/webmin/syslog/config-CentOS-Linux-6.0-ALL
 lib/webmin/syslog/config-Redhat-Enterprise-Linux-6.0-ALL
 lib/webmin/syslog/config-Rocky-Linux-6.0-ALL
@@ -58227,7 +58250,7 @@ lib/webmin/xinetd/CHANGELOG
 lib/webmin/xinetd/backup_config.pl
 lib/webmin/xinetd/cgi_args.pl
 lib/webmin/xinetd/config
-lib/webmin/xinetd/config-AlmaLinux-Linux-7.0-ALL
+lib/webmin/xinetd/config-AlmaLinux-7.0-ALL
 lib/webmin/xinetd/config-Amazon-Linux-2-ALL
 lib/webmin/xinetd/config-CentOS-Linux-7.0-ALL
 lib/webmin/xinetd/config-Redhat-Enterprise-Linux-7.0-ALL
