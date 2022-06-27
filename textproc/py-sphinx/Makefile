@@ -1,7 +1,7 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 
 PORTNAME=	sphinx
-PORTVERSION=	4.3.1
+PORTVERSION=	4.5.0
 PORTEPOCH=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
@@ -32,7 +32,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-applehelp>=0:textproc/py-sphin
 		${PYTHON_PKGNAMEPREFIX}alabaster>=0.7<0.8:textproc/py-alabaster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}imagesize>=0:graphics/py-imagesize@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.5.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4-cov>=0:devel/py-pytest4-cov@${PY_FLAVOR} \
@@ -40,7 +39,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4-cov>=0:devel/py-pytest4-cov@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}typed-ast>=0:devel/py-typed-ast@${PY_FLAVOR} \
 		cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
 
-USES=		python:3.5+ pytest:4
+USES=		python:3.7+ pytest:4
 USE_PYTHON=	autoplist distutils concurrent
 
 NO_ARCH=	yes
@@ -48,10 +47,16 @@ NO_ARCH=	yes
 # Upstream archive contains files with UTF-8 names (#246618)
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
 PYTEST_BROKEN_TESTS=	test_latex_images \
 			test_ext_imgconverter \
 			test_defaults \
 			test_defaults_json \
 			test_anchors_ignored
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
