@@ -1,4 +1,0 @@
-When the system first boots, resize the (GPT) partition holding the root
-filesystem, then resize the (UFS) root filesystem.  This is intended to be
-used in virtual machines where a VM image is built with one size but may
-be launched onto a larger disk.

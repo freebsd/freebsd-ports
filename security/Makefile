@@ -350,7 +350,6 @@
     SUBDIR += minisign
     SUBDIR += mkp224o
     SUBDIR += modsecurity3
-    SUBDIR += modsecurity3-apache
     SUBDIR += modsecurity3-nginx
     SUBDIR += monkeysphere
     SUBDIR += munge
@@ -805,7 +804,6 @@
     SUBDIR += poly1305aes
     SUBDIR += portsentry
     SUBDIR += proftpd-mod_clamav
-    SUBDIR += protonvpn-cli
     SUBDIR += proxycheck
     SUBDIR += proxytunnel
     SUBDIR += pssh

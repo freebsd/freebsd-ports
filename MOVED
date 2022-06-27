@@ -17221,3 +17221,11 @@ textproc/rubygem-elasticsearch-rails6|textproc/rubygem-elasticsearch-rails|2022-
 devel/p5-Goo-Canvas|devel/p5-Goo-Canvas2|2022-06-24|Obsolete use devel/p5-Goo-Canvas2 instead
 graphics/goocanvas|graphics/goocanvas3|2022-06-24|Obsolete use graphics/goocanvas3
 x11-toolkits/tepl|x11-toolkits/tepl6|2022-06-25|Obsolete use x11-toolkits/tepl6
+lang/cmucl||2022-06-27|Has expired: Not supported upstream since 2017 and broken since FreeBSD 12.1
+devel/qbs||2022-06-27|Has expired: Abandoned and not working with modern clang
+lang/cmucl-extra||2022-06-27|Has expired: lang/cmucl is not supported upstream since 2017 and broken since FreeBSD 12.1
+security/protonvpn-cli||2022-06-27|Has expired: This version is deprecated and unsupported upstream. The port needs an update, which would require a fair amount of effort. Use OpenVPN or Wireguard with configuration files provided by ProtonVPN instead.
+sysutils/firstboot-growfs||2022-06-27|Has expired: A better version is available on all FreeBSD version
+security/modsecurity3-apache||2022-06-27|Has expired: The project was not developed further
+net-mgmt/zabbix54-frontend||2022-06-27|Has expired: Unsupported by upstream
+net-mgmt/zabbix54-server||2022-06-27|Has expired: Unsupported by upstream

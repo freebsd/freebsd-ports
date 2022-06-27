@@ -30,8 +30,6 @@
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
     SUBDIR += clover
-    SUBDIR += cmucl
-    SUBDIR += cmucl-extra
     SUBDIR += cocor
     SUBDIR += coffeescript
     SUBDIR += cparser
