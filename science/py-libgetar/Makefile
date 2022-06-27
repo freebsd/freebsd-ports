@@ -16,14 +16,17 @@ BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils cython autoplist pytest # tests fail, see https://github.com/glotzerlab/libgetar/issues/29
+USE_PYTHON=	distutils cython autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	glotzerlab
 
-TEST_ENV=      ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gtar/_gtar${PYTHON_EXT_SUFFIX}.so
+
+do-test:
+	@cd ${WRKSRC}/test && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m unittest discover
 
 .include <bsd.port.mk>
