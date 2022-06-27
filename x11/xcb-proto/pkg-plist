@@ -2,6 +2,7 @@ libdata/pkgconfig/xcb-proto.pc
 %%DATADIR%%/bigreq.xml
 %%DATADIR%%/composite.xml
 %%DATADIR%%/damage.xml
+%%DATADIR%%/dbe.xml
 %%DATADIR%%/dpms.xml
 %%DATADIR%%/dri2.xml
 %%DATADIR%%/dri3.xml
@@ -22,9 +23,9 @@ libdata/pkgconfig/xcb-proto.pc
 %%DATADIR%%/xf86dri.xml
 %%DATADIR%%/xf86vidmode.xml
 %%DATADIR%%/xfixes.xml
-%%DATADIR%%/xkb.xml
 %%DATADIR%%/xinerama.xml
 %%DATADIR%%/xinput.xml
+%%DATADIR%%/xkb.xml
 %%DATADIR%%/xprint.xml
 %%DATADIR%%/xproto.xml
 %%DATADIR%%/xselinux.xml
@@ -52,3 +53,10 @@ libdata/pkgconfig/xcb-proto.pc
 %%PYTHON_SITELIBDIR%%/xcbgen/xtypes.py
 %%PYTHON_SITELIBDIR%%/xcbgen/xtypes.pyc
 %%PYTHON_SITELIBDIR%%/xcbgen/xtypes.pyo
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/align%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/error%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/expr%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/matcher%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/state%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/xtypes%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
