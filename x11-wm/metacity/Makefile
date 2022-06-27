@@ -1,7 +1,7 @@
 # Created by: Garrett Rooney <rooneg@electricjellyfish.net>
 
 PORTNAME=	metacity
-PORTVERSION=	3.42.0
+PORTVERSION=	3.44.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
