@@ -1,0 +1,16 @@
+bin/pgagroal
+bin/pgagroal-admin
+bin/pgagroal-cli
+@sample %%ETCDIR%%/pgagroal.conf.sample
+@sample %%ETCDIR%%/pgagroal_hba.conf.sample
+lib/libpgagroal.so
+lib/libpgagroal.so.1
+lib/libpgagroal.so.1.4.2
+share/man/man1/pgagroal-admin.1.gz
+share/man/man1/pgagroal-cli.1.gz
+share/man/man1/pgagroal.1.gz
+share/man/man5/pgagroal.conf.5.gz
+share/man/man5/pgagroal_databases.conf.5.gz
+share/man/man5/pgagroal_hba.conf.5.gz
+@dir(%%PGAGROAL_USER%%,%%PGAGROAL_GROUP%%,) %%PGAGROAL_LOGDIR%%
+@dir(%%PGAGROAL_USER%%,%%PGAGROAL_GROUP%%,) %%PGAGROAL_RUNDIR%%

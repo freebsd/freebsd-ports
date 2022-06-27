@@ -581,6 +581,7 @@
     SUBDIR += pg_tileserv
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
+    SUBDIR += pgagroal
     SUBDIR += pgbackrest
     SUBDIR += pgbadger
     SUBDIR += pgbarman

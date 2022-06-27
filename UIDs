@@ -892,6 +892,7 @@ teamspeak:*:942:942::0:0:TeamSpeak user:/nonexistent:/usr/sbin/nologin
 dnetfold:*:943:943::0:0:& user:/nonexistent:/usr/sbin/nologin
 bbs:*:944:944::0:0:& user:/nonexistent:/usr/sbin/nologin
 dbxml:*:945:945::0:0:& user:/nonexistent:/usr/sbin/nologin
+pgagroal:*:946:946::0:0:Pgagroal user:/nonexistent:/usr/sbin/nologin
 mapred:*:947:955::0:0:Hadoop MapReduce user:/nonexistent:/usr/sbin/nologin
 dnrd:*:948:948::0:0:& user:/nonexistent:/usr/sbin/nologin
 _lldpd:*:949:949::0:0:lldpd user:/nonexistent:/usr/sbin/nologin
