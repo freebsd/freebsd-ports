@@ -1,6 +1,6 @@
 PORTNAME=	virtualmin
-PORTVERSION=	6.17
-PORTREVISION=	2
+PORTVERSION=	7.0
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/download/virtualmin/
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/virtual-server
 
 post-extract:
-	@${RM} -r ${WRKSRC}/images/.xvpics
+	@${RM} -r ${WRKSRC}/images/.xvpics ${WRKSRC}/.gitignore
 	@${FIND} ${WRKSRC} -name "*.swp" -delete
 	@${FIND} ${WRKSRC} -name "*.cgi" | ${XARGS} ${REINPLACE_CMD} -e "s@/usr/local/bin/perl@${PERL}@"
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
