@@ -6,6 +6,7 @@ include/harfbuzz/hb-aat.h
 include/harfbuzz/hb-blob.h
 include/harfbuzz/hb-buffer.h
 include/harfbuzz/hb-common.h
+include/harfbuzz/hb-cplusplus.hh
 include/harfbuzz/hb-deprecated.h
 include/harfbuzz/hb-draw.h
 include/harfbuzz/hb-face.h
@@ -112,8 +113,8 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-3-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-3-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-3-3-0.html
-%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-4-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-3-4-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-4-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-4-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-4-2-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-4-3-0.html
@@ -122,7 +123,6 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/buffers-language-script-and-direction.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/building.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/clusters.html
-%%DOCS%%share/gtk-doc/html/harfbuzz/complex-scripts.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/core-api.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/customizing-unicode-functions.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/deprecated-api-index.html
@@ -190,6 +190,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/reordering-in-levels-0-and-1.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/right-insensitive.png
 %%DOCS%%share/gtk-doc/html/harfbuzz/right.png
+%%DOCS%%share/gtk-doc/html/harfbuzz/script-specific-shaping.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/setting-buffer-properties.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/shaping-and-shape-plans.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/shaping-concepts.html
