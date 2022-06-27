@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.44.1/build/config/compiler/BUILD.gn.orig	1973-11-29 22:33:09.000000000 +0100
-+++ cargo-crates/v8-0.44.1/build/config/compiler/BUILD.gn	2022-05-31 15:40:38.996239000 +0200
+--- cargo-crates/v8-0.44.2/build/config/compiler/BUILD.gn.orig	1973-11-29 22:33:09.000000000 +0100
++++ cargo-crates/v8-0.44.2/build/config/compiler/BUILD.gn	2022-05-31 15:40:38.996239000 +0200
 @@ -137,7 +137,7 @@ declare_args() {
    #
    # TODO(crbug.com/1131993): Enabling this when 'is_android' is true breaks
@@ -57,22 +57,22 @@
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1543,12 +1543,12 @@ config("default_warnings") {
-         "-Wno-ignored-pragma-optimize",
-       ]
+@@ -1559,12 +1559,12 @@ config("default_warnings") {
+         cflags += [ "-Wno-builtin-assume-aligned-alignment" ]
+       }
  
--      if (!is_nacl) {
-+      if (!is_nacl && !is_bsd) {
+-      if (!is_nacl && clang_major_version >= 15) {
++      if (!is_nacl && !is_bsd && clang_major_version >= 15) {
          # TODO(https://crbug.com/1300731) Clean up and enable.
          cflags += [ "-Wno-unqualified-std-cast-call" ]
        }
  
 -      if (!is_nacl && !(is_chromeos ||
 +      if (!is_bsd && !is_nacl && !(is_chromeos ||
-                         default_toolchain == "//build/toolchain/cros:target")) {
+                         default_toolchain == "//build/toolchain/cros:target") &&
+           clang_major_version >= 15) {
          # TODO(https://crbug.com/1316298): Re-enable once test failure is figured out
-         cflags += [
-@@ -1848,7 +1848,7 @@ config("thin_archive") {
+@@ -1865,7 +1865,7 @@ config("thin_archive") {
    # archives.
    # TODO(crbug.com/1221615): Enable on is_apple if use_lld once that no longer
    # confuses lldb.
@@ -81,7 +81,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2349,7 +2349,7 @@ config("symbols") {
+@@ -2366,7 +2366,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if ((!is_nacl || is_clang) && current_os != "zos") {
@@ -90,7 +90,7 @@
      }
  
      if (!is_nacl && is_clang && !is_tsan && !is_asan &&
-@@ -2388,7 +2388,7 @@ config("symbols") {
+@@ -2405,7 +2405,7 @@ config("symbols") {
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      _enable_gdb_index =
