@@ -1,5 +1,10 @@
-@sample etc/wifibox/interfaces.conf.sample
-@sample etc/wifibox/udhcpd.conf.sample
+@sample(,,640) etc/wifibox/appliance/interfaces.conf.sample
+@sample(,,640) etc/wifibox/appliance/iptables.sample
+@sample(,,640) etc/wifibox/appliance/udhcpd.conf.sample
+%%UDS_PASSTHRU%%@sample(,,640) etc/wifibox/appliance/uds_passthru.conf.sample
+%%APP_WPA_SUPPLICANT%%@sample(,,640) etc/wifibox/wpa_supplicant/wpa_supplicant.conf.sample
+%%APP_HOSTAPD%%@sample(,,640) etc/wifibox/hostapd/hostapd.conf.sample
+etc/wifibox/app_config
 man/man5/wifibox-alpine.5.gz
 share/wifibox/bhyve.conf
 share/wifibox/disk.img
@@ -9,6 +14,7 @@ share/wifibox/vmlinuz
 /var/run/wifibox/appliance/run
 /var/run/wifibox/appliance/spool/cron/crontabs
 /var/run/wifibox/appliance/spool/mail
+%%APP_HOSTAPD%%%%UDS_PASSTHRU%%@dir /var/run/hostapd
 @dir /var/run/wifibox/appliance/cache/apk
 @dir /var/run/wifibox/appliance/cache/misc
 @dir /var/run/wifibox/appliance/cache

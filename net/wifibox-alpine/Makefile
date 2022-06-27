@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-alpine
-PORTVERSION=	20220430
+PORTVERSION=	20220625
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -20,18 +20,26 @@ BUILD_DEPENDS=	patchelf>0:sysutils/patchelf \
 ${flavor}_PKGNAMESUFFIX=	-${flavor}
 .endfor
 
+OPTIONS_DEFINE=			UDS_PASSTHRU
 OPTIONS_SUB=			yes
 
-OPTIONS_SINGLE=			COMPRESSION
+OPTIONS_SINGLE=			COMPRESSION APPLICATION
 OPTIONS_SINGLE_COMPRESSION=	COMP_GZIP COMP_LZO COMP_LZ4 COMP_XZ COMP_ZSTD
+OPTIONS_SINGLE_APPLICATION=	APP_HOSTAPD APP_WPA_SUPPLICANT
 
-OPTIONS_DEFAULT=		COMP_XZ
+OPTIONS_DEFAULT=		COMP_XZ APP_WPA_SUPPLICANT UDS_PASSTHRU
 
 COMP_GZIP_DESC=		gzip
 COMP_LZO_DESC=		lzo
 COMP_LZ4_DESC=		lz4
 COMP_XZ_DESC=		xz
 COMP_ZSTD_DESC=		zstd
+
+UDS_PASSTHRU_DESC=		Control socket pass-through
+APP_HOSTAPD_DESC=		Access Point (hostapd)
+APP_WPA_SUPPLICANT_DESC=	WPA Supplicant (wpa_supplicant)
+
+UDS_PASSTHRU_RUN_DEPENDS=	socat>0:net/socat
 
 .if ${FLAVOR:U} == default
 OPTIONS_GROUP=		FIRMWARE EXTRAS
@@ -70,9 +78,10 @@ _GITHUB_SITE=	https://github.com/pgj/freebsd-wifibox-alpine/releases/download
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	pgj
 GH_PROJECT=	freebsd-wifibox-alpine:scripts
-GH_TAGNAME=	dac84c054786b6eb6f329662748d9a199b05f2df:scripts
+GH_TAGNAME=	51b3ad35e4ac0505f4bbb3a5e07eabce14ff48d7:scripts
 
-ALPINE_VERSION=	3.15.4
+ALPINE_VERSION=	3.16.0
+ALPINE_DATE=	2022.06.25
 _ALPINE_VER=	${ALPINE_VERSION:C@([0-9]+)\.([0-9]+).*@\1.\2@}
 
 .if defined(ALPINE_DATE)
@@ -83,7 +92,7 @@ _ALPINE_SITE=	https://mirror.fit.cvut.cz/alpine/v${_ALPINE_VER}
 .endif
 
 _LINUXFW_SITE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/
-_LINUXFW_TAG=	20220411
+_LINUXFW_TAG=	20220610
 _LINUXFW=	linux-firmware-${_LINUXFW_TAG}
 
 MASTER_SITES+=	${_ALPINE_SITE}/releases/x86_64/:rootfs \
@@ -97,25 +106,25 @@ MASTER_SITES+=	${_ALPINE_SITE}/releases/x86_64/:rootfs \
 		https://github.com/openwrt/mt76/archive/:mt76
 
 _MINIROOTFS=	alpine-minirootfs-${ALPINE_VERSION}-x86_64.tar.gz
-_PACKAGES=	baselayout-3.2.0-r18:wifibox \
-		busybox-1.34.1-r5:wifibox \
-		ifupdown-ng-0.11.3-r0:wifibox \
-		iptables-1.8.7-r1:wifibox \
+_PACKAGES=	baselayout-3.2.0-r19:wifibox \
+		busybox-1.35.0-r0:wifibox \
+		ifupdown-ng-0.12.1-r0:wifibox \
+		iptables-1.8.8-r0:wifibox \
 		iw-5.16-r0:community \
-		libcrypto1.1-1.1.1n-r0 \
-		libmnl-1.0.4-r2 \
+		libcrypto1.1-1.1.1o-r0 \
+		libmnl-1.0.5-r0 \
 		libnftnl-1.2.1-r0 \
 		libnl3-3.5.0-r0 \
-		libssl1.1-1.1.1n-r0 \
-		linux-lts-5.15.36-r0:wifibox \
-		musl-1.2.2-r7 \
-		openrc-0.44.7-r5:wifibox \
-		pcsc-lite-libs-1.9.4-r0 \
-		socat-1.7.4.2-r0:wifibox \
-		wpa_passthru-0.1.1-r0:wifibox \
-		wpa_supplicant-2.9-r17:wifibox
+		libssl1.1-1.1.1o-r0 \
+		linux-lts-5.15.49-r0:wifibox \
+		musl-1.2.3-r0 \
+		openrc-0.44.10-r0:wifibox
 
 _GUEST_MEM=	45M
+
+_BOOT_SERVICES=		networking urandom bootmisc modules hostname hwclock sysctl syslog
+_DEFAULT_SERVICES=	acpid crond iptables udhcpd
+_SYSINIT_SERVICES=	devfs dmesg hwdrivers mdev
 
 _ATMEL_FIRMWARE=	atmel-firmware-1.3
 _B43LEGACY_FIRMWARE=	wl_apsta-3.130.20.0
@@ -124,20 +133,55 @@ _IPW2100_FIRMWARE=	ipw/ipw2100-1.3 \
 			ipw/ipw2100-1.3-i
 _IPW2200_FIRMWARE=	iwi/ipw2200-bss \
 			iwi/ipw2200-ibss
-_MT76_FIRMWARE=		eecbb49920732b9b364f15c1ef0066342544b22b
+_MT76_FIRMWARE=		b6e865e2cc7080c91ec34a9dd3648d25f7ce04c6
+
+_LINUX64_KMOD!=		(kldstat -qn linux64 && echo "found") || echo ""
+
+.if empty(_LINUX64_KMOD)
+IGNORE=	needs the linux64 kernel module to build
+.endif
 
 pre-everything::
 .if !defined(FIRMWARE_FILES)
 	@${ECHO_MSG} "===> NOTICE:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "Use the FIRMWARE_FILES make(1) variable to keep only the firmware"
-	@${ECHO_MSG} "files that are used by the driver to reduce the size of the disk"
-	@${ECHO_MSG} "image."
+	@${ECHO_MSG} "Use the FIRMWARE_FILES make(1) variable to keep only the firmware files that"
+	@${ECHO_MSG} "are used by the driver to reduce the size of the disk image."
 	@${ECHO_MSG}
 	@sleep 1
 .endif
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MUDS_PASSTHRU}
+_BOOT_SERVICES+=	uds_passthru
+.endif
+
+.if ${PORT_OPTIONS:MUDS_PASSTHRU} || make(makesum)
+_PACKAGES+=		socat-1.7.4.3-r0:wifibox \
+			uds_passthru-0.1.0-r0:wifibox
+.endif
+
+.if ${PORT_OPTIONS:MAPP_WPA_SUPPLICANT}
+_VIRTFS_MOUNTS=		app_config:/etc/wpa_supplicant
+_BOOT_SERVICES+=	wpa_supplicant
+_ETC_SRCS=		etc/wpa_supplicant
+.endif
+
+.if ${PORT_OPTIONS:MAPP_WPA_SUPPLICANT} || make(makesum)
+_PACKAGES+=		pcsc-lite-libs-1.9.6-r0 \
+			wpa_supplicant-2.10-r0:wifibox
+.endif
+
+.if ${PORT_OPTIONS:MAPP_HOSTAPD}
+_VIRTFS_MOUNTS=		app_config:/etc/hostapd
+_BOOT_SERVICES+=	hostapd
+_ETC_SRCS=		etc/hostapd
+.endif
+
+.if ${PORT_OPTIONS:MAPP_HOSTAPD} || make(makesum)
+_PACKAGES+=		hostapd-2.10-r1:wifibox
+.endif
 
 .for flavor in ${_FLAVORS}
 .if ${FLAVOR:U} == ${flavor}
@@ -168,12 +212,15 @@ LINUX_FIRMWARE+=	${L${fw_opt}_FILES}
 .endfor
 
 .if ${PORT_OPTIONS:MXX_DRIVER_WL}
-_PACKAGES+=	broadcom-wl-6.30.223.271-r0:wifibox
 _GUEST_MEM=	50M
 .endif
 
-.if ${PORT_OPTIONS:MXX_DRIVER_RTW89}
-_PACKAGES+=	rtw89-20220421-r0:wifibox
+.if ${PORT_OPTIONS:MXX_DRIVER_WL} || make(makesum)
+_PACKAGES+=	broadcom-wl-6.30.223.271-r3:wifibox
+.endif
+
+.if ${PORT_OPTIONS:MXX_DRIVER_RTW89} || make(makesum)
+_PACKAGES+=	rtw89-20220421-r3:wifibox
 .endif
 
 .if !empty(LINUX_FIRMWARE)
@@ -193,7 +240,9 @@ DISTFILES+=	${package:C@^([^:]*):wifibox$@\1@}.apk:main_packages
 _APK_FILES+=	${_DISTDIR}/${package:C@^([^:]*):.*$@\1@}.apk
 .endfor
 
-_FIRMWAREDIR=	${WRKSRC}/guest/lib/firmware
+_GUESTDIR=	${WRKSRC}/guest
+_ETCDIR=	${_GUESTDIR}/etc
+_FIRMWAREDIR=	${_GUESTDIR}/lib/firmware
 
 .if ${PORT_OPTIONS:MFW_ATMEL}
 DISTFILES+=	${_ATMEL_FIRMWARE}.tar.gz:atmel
@@ -225,6 +274,12 @@ DISTFILES+=	${_MT76_FIRMWARE}.zip:mt76
 .endif
 
 pre-build:
+.if ${PORT_OPTIONS:MAPP_WPA_SUPPLICANT}
+	${MKDIR} ${_ETCDIR}/wpa_supplicant
+.endif
+.if ${PORT_OPTIONS:MAPP_HOSTAPD}
+	${MKDIR} ${_ETCDIR}/hostapd
+.endif
 	${MKDIR} ${_FIRMWAREDIR}
 .for fw in ${PORT_OPTIONS:MFW_B43*}
 .if ${fw}
@@ -258,6 +313,12 @@ pre-build:
 .endif
 
 post-install:
+.if empty(PORT_OPTIONS:MUDS_PASSTHRU)
+	${RM} ${STAGEDIR}${PREFIX}/etc/wifibox/appliance/uds_passthru.conf.sample
+.endif
+.if ${PORT_OPTIONS:MAPP_HOSTAPD} && ${PORT_OPTIONS:MUDS_PASSTHRU}
+	${MKDIR} ${STAGEDIR}/var/run/hostapd
+.endif
 	${PRINTF} "cpus=1\nmemory=${_GUEST_MEM}\n" \
 		> ${STAGEDIR}${PREFIX}/share/wifibox/bhyve.conf
 
@@ -265,6 +326,11 @@ WRKSRC=		${WRKSRC_scripts}
 MAKE_ARGS+=	VERSION=${PORTVERSION} \
 		MINIROOTFS=${_DISTDIR}/${_MINIROOTFS} \
 		PACKAGES="${_APK_FILES}" \
+		BOOT_SERVICES="${_BOOT_SERVICES}" \
+		DEFAULT_SERVICES="${_DEFAULT_SERVICES}" \
+		SYSINIT_SERVICES="${_SYSINIT_SERVICES}" \
+		ETC_SRCS="${_ETC_SRCS}" \
+		EXTRA_VIRTFS_MOUNTS="${_VIRTFS_MOUNTS}" \
 		SQUASHFS_COMP=${PORT_OPTIONS:MCOMP_*:S/COMP_//:tl}
 
 .if defined(FIRMWARE_FILES)

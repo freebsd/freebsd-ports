@@ -1,7 +1,5 @@
 @sample etc/wifibox/bhyve.conf.sample
 @sample etc/wifibox/core.conf.sample
-@sample etc/wifibox/wpa_ctrl.conf.sample
-@sample etc/wifibox/wpa_supplicant/wpa_supplicant.conf.sample
 @sample etc/devd/wifibox.conf.sample
 etc/rc.d/wifibox
 man/man5/wifibox-guest.5.gz
