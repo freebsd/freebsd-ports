@@ -1,3 +1,37 @@
+  <vuln vid="ae5722a6-f5f0-11ec-856e-d4c9ef517024">
+    <topic>cURL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>7.16.4</ge><lt>7.84.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cURL project reports:</p>
+	<blockquote cite="https://curl.se/docs/security.html">
+	  <ul>
+	    <li>CVE-2022-32205: Set-Cookie denial of service</li>
+	    <li>CVE-2022-32206: HTTP compression denial of service</li>
+	    <li>CVE-2022-32207: Unpreserved file permissions</li>
+	    <li>CVE-2022-32208: FTP-KRB bad message verification</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-32205</cvename>
+      <cvename>CVE-2022-32206</cvename>
+      <cvename>CVE-2022-32207</cvename>
+      <cvename>CVE-2022-32208</cvename>
+      <url>https://curl.se/docs/security.html</url>
+    </references>
+    <dates>
+      <discovery>2022-06-27</discovery>
+      <entry>2022-06-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="25be46f0-f25d-11ec-b62a-00e081b7aa2d">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
