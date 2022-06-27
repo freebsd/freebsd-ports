@@ -1,6 +1,6 @@
 PORTNAME=	fatal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.06.20.00
+DISTVERSION=	2022.06.27.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,5 +19,6 @@ do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${PREFIX}/include
 	${FIND} ${STAGEDIR}${PREFIX}/include -name "*.cpp" -delete
 	${FIND} ${STAGEDIR}${PREFIX}/include -type d -empty -delete
+	${RM} ${STAGEDIR}${PREFIX}/include/fatal/.clang-tidy
 
 .include <bsd.port.mk>
