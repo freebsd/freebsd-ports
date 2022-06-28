@@ -25,6 +25,6 @@ lib/cmake/MSLCompile/MSLCompileConfigVersion.cmake
 lib/cmake/MSLCompile/MSLCompileTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/MSLCompile/MSLCompileTargets.cmake
 lib/libmsl_client.so
-lib/libmsl_client.so.1.5.2
+lib/libmsl_client.so.1.5.3
 lib/libmsl_compile.so
-lib/libmsl_compile.so.1.5.2
+lib/libmsl_compile.so.1.5.3
