@@ -1,3 +1,3 @@
-TIMESTAMP = 1655316825
-SHA256 (matrix-org-synapse-v1.61.0_GH0.tar.gz) = 3602b4a01688edae8365973877220a0511cb3970ff4e32eec759ca070066a684
-SIZE (matrix-org-synapse-v1.61.0_GH0.tar.gz) = 7879924
+TIMESTAMP = 1656433422
+SHA256 (matrix-synapse-1.61.1.tar.gz) = 201ed822a996209331655156205e878205608e4092a24dd860cca457bda9e2eb
+SIZE (matrix-synapse-1.61.1.tar.gz) = 2868292
