@@ -1,8 +1,7 @@
 # Created by: Eugene Grosbein <ports@grosbein.net>
 
 PORTNAME=	bouncycastle
-PORTVERSION=	1.69
-PORTREVISION=	2
+PORTVERSION=	1.71
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/ \
 		http://polydistortion.net/bc/download/
@@ -47,6 +46,7 @@ ARTIFACTSDIR=	${WRKSRC}/build/artifacts/jdk${JDKMVERSION}
 DVERSION=	${PORTVERSION:S/.//}
 JDKMVERSION=	1.5
 JDKNVERSION=	15
+JARSUFFIX=	-jdk${JDKNVERSION}to18-${DVERSION}.jar
 
 .include <bsd.port.options.mk>
 
@@ -56,14 +56,14 @@ EXTRA_PATCHES+=	${FILESDIR}/armv6-patch-bc+-build.xml
 .endif
 
 do-install:
-	for src in $$(${FIND} ${ARTIFACTSDIR}/jars -name "*-jdk${JDKNVERSION}on-${DVERSION}.jar"); do \
+	for src in $$(${FIND} ${ARTIFACTSDIR}/jars -name "*${JARSUFFIX}"); do \
 		dst="$${src##*/}"; \
 		dst="$${dst%%-jdk*}.jar"; \
 		${INSTALL_DATA} "$$src" "${STAGEDIR}/${JAVAJARDIR}/$${dst}"; \
 	done
 # Install the bundlded version of bcprov.jar because we need a signed JAR.
 # See bfca5d2c6e01d757f1f37c141c22645c2835104b for details.
-	${INSTALL_DATA} ${WRKSRC}/jars/bcprov-jdk${JDKNVERSION}on-${DVERSION}.jar \
+	${INSTALL_DATA} ${WRKSRC}/jars/bcprov${JARSUFFIX} \
 		${STAGEDIR}${JAVAJARDIR}/bcprov.jar
 
 do-install-DOCS-on:
