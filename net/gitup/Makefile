@@ -1,6 +1,6 @@
 PORTNAME=	gitup
 DISTVERSION=	0.97
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/johnmehr/gitup/commit/
@@ -22,6 +22,11 @@ MAKE_ENV+=	CONFIG_FILE_PATH=${LOCALBASE}/etc/gitup.conf
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	${REINPLACE_CMD} -e 's|stable\/12|stable\/${OSREL:R}| ; \
+		s|releng\/11.4|releng\/${OSREL}|' \
+		${WRKSRC}/gitup.conf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
