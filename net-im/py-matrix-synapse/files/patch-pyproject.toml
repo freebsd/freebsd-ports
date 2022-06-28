@@ -1,7 +1,7 @@
---- pyproject.toml.orig	2022-05-07 18:29:37 UTC
+--- pyproject.toml.orig	2022-06-28 16:27:14 UTC
 +++ pyproject.toml
-@@ -146,7 +146,7 @@ bleach = ">=1.4.3"
- typing-extensions = ">=3.10.0"
+@@ -147,7 +147,7 @@ bleach = ">=1.4.3"
+ typing-extensions = ">=3.10.0.1"
  # We enforce that we have a `cryptography` version that bundles an `openssl`
  # with the latest security patches.
 -cryptography = ">=3.4.7"
