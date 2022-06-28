@@ -7,7 +7,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://mpir.org/
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	Multiprecision integer library
+COMMENT=	Multiprecision integer, rational, floating point numbers library
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
