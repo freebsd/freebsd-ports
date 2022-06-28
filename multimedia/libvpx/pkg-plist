@@ -13,6 +13,6 @@ include/vpx/vpx_integer.h
 lib/libvpx.a
 lib/libvpx.so
 lib/libvpx.so.7
-lib/libvpx.so.7.0
-lib/libvpx.so.7.0.0
+lib/libvpx.so.7.1
+lib/libvpx.so.7.1.0
 libdata/pkgconfig/vpx.pc
