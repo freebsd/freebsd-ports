@@ -20,6 +20,7 @@ USES=		autoreconf:2.69 cpe gmake libedit libtool ncurses pathfix \
 		pkgconfig python:build readline shebangfix
 SHEBANG_FILES=	lib/libvcc/vmodtool.py
 CPE_VENDOR=	varnish-cache
+CPE_PRODUCT=	varnish_cache
 CFLAGS+=	-I${LOCALBASE}/include -Wno-error
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX} --enable-tests

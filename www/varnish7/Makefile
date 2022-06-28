@@ -21,6 +21,7 @@ CONFLICTS=	varnish4 varnish6
 
 SHEBANG_FILES=	lib/libvcc/*.py lib/libvsc/*.py
 CPE_VENDOR=	varnish-cache
+CPE_PRODUCT=	varnish_cache
 CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX} --without-dot
