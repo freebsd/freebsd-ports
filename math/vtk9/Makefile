@@ -1,6 +1,6 @@
 PORTNAME=	vtk
 DISTVERSION=	9.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -41,24 +41,18 @@ DOCSDIR=	${PREFIX}/share/doc/vtk-${VTK_SHORT_VER}
 DATADIR=	${PREFIX}/share/vtk-${VTK_SHORT_VER}
 
 # Options
-OPTIONS_DEFINE=	DESIGNER DOCS OSMESA PYTHON QT5 EXAMPLES
+OPTIONS_DEFINE=	DESIGNER DOCS MPI OSMESA PYTHON QT5 EXAMPLES
 OPTIONS_DEFAULT=	MPI PYTHON QT5 # vtk python binding is needed by other packages, and is unfortunately is unseparable. It is a candidate to be a subpackage.
 OSMESA_DESC=	Use Mesa for off-screen rendering
 DESIGNER_DESC=	Build the Qt Designer plugin
 OPTIONS_SUB=	yes
 
 # Options groups
-#VTK_GROUPS=	Imaging MPI Qt Rendering StandAlone Views
-VTK_GROUPS=	MPI
 VTK_WRAPS=	JAVA TCLTK
-OPTIONS_GROUP=	GROUPS WRAPPING
-OPTIONS_GROUP_GROUPS=${VTK_GROUPS}
+OPTIONS_GROUP=	WRAPPING
 OPTIONS_GROUP_WRAPPING=${VTK_WRAPS}
 GROUPS_DESC=	Groups
 WRAPPING_DESC=	Wrapping
-.for g in ${VTK_GROUPS}
-$g_DESC=	Build the $g group
-.endfor
 .for w in ${VTK_WRAPS}
 $w_DESC=	$w wrapping
 .endfor
@@ -78,7 +72,8 @@ DESIGNER_CMAKE_BOOL=	QT_DESIGNER_PLUGIN
 DESIGNER_USE=		QT=designer
 DESIGNER_IMPLIES=	QT5
 
-MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+MPI_CMAKE_BOOL=		VTK_USE_MPI
+MPI_LIB_DEPENDS=	libmpi.so:net/mpich
 MPI_CMAKE_ON=		-DMPIEXEC=${LOCALBASE}/mpi/openmpi/bin/mpiexec
 
 OSMESA_CMAKE_ON=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
@@ -108,14 +103,6 @@ DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES
 
 .include <bsd.port.options.mk>
-
-.for g in ${VTK_GROUPS}
-.  if ${PORT_OPTIONS:M${g}}
-CMAKE_ARGS+=	-DVTK_Group_${g}:BOOL=ON
-.  else
-CMAKE_ARGS+=	-DVTK_Group_${g}:BOOL=OFF
-.  endif
-.endfor
 
 .if !${PORT_OPTIONS:MOSMESA}
 USES+=		gl
