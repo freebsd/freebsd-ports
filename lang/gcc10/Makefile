@@ -1,7 +1,7 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
 
 PORTNAME=	gcc
-PORTVERSION=	10.3.0
+PORTVERSION=	10.4.0
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
