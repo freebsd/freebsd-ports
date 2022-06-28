@@ -7,14 +7,15 @@
 DIST="$1"
 PROJECT=qt"${DIST}"
 BASE_DIRECTORY="$2"
+# Version of Qt we want
+VERSION="$3"
+ORIGIN_TAG="$4"
 
 # Remote KDE git repository
 REPO="https://invent.kde.org/qt/qt/${PROJECT}.git"
 # Local checkout
 CHECKOUT="${BASE_DIRECTORY}/${PROJECT}"
 
-# Version of Qt we want
-VERSION=5.15.2
 # KDE-Qt branch
 BRANCH=kde/5.15
 
@@ -37,7 +38,7 @@ if [ $? -ne 0 ] ; then
 fi
 
 # Count number of patches added by KDE
-PATCH_COUNT=$(git -C ${CHECKOUT} rev-list --count origin/${VERSION}..origin/${BRANCH})
+PATCH_COUNT=$(git -C ${CHECKOUT} rev-list --count ${ORIGIN_TAG}..origin/${BRANCH})
 
 # Setup information for the distfile
 DISTNAME="kde-${PROJECT}-${VERSION}p${PATCH_COUNT}"

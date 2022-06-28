@@ -27,6 +27,7 @@
 %%QT_INCDIR%%/QtQuickControls2/qtquickcontrols2-config.h
 %%QT_INCDIR%%/QtQuickControls2/qtquickcontrols2global.h
 %%QT_INCDIR%%/QtQuickControls2/qtquickcontrols2version.h
+%%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qaccessiblequickpage_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickabstractbutton_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickabstractbutton_p_p.h
 %%QT_INCDIR%%/QtQuickTemplates2/%%FULLVER%%/QtQuickTemplates2/private/qquickaction_p.h
@@ -351,8 +352,8 @@
 %%QT_QMLDIR%%/QtQuick/Controls.2/Material/ToolSeparator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Material/ToolTip.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Material/Tumbler.qml
-%%QT_QMLDIR%%/QtQuick/Controls.2/Material/libqtquickcontrols2materialstyleplugin.so
-%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Controls.2/Material/libqtquickcontrols2materialstyleplugin.so.debug
+%%QT_QMLDIR%%/QtQuick/Controls.2/Material/libqqc2materialstyleplugin.so
+%%DEBUG%%%%QT_QMLDIR%%/QtQuick/Controls.2/Material/libqqc2materialstyleplugin.so.debug
 %%QT_QMLDIR%%/QtQuick/Controls.2/Material/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick/Controls.2/Material/qmldir
 %%QT_QMLDIR%%/QtQuick/Controls.2/Menu.qml

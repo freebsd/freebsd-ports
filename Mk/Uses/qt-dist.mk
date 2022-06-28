@@ -69,44 +69,48 @@ DESTDIRNAME=		INSTALL_ROOT
 .  if ${_QT_VER:M5}
 
 # KDE maintains a repository with a patched Qt5 distribution.
-_KDE_3d=		39
-_KDE_base=		263
-_KDE_charts=		2
-_KDE_connectivity=	1
-_KDE_datavis3d=		2
-_KDE_declarative=	41
-_KDE_gamepad=		2
-_KDE_graphicaleffects=	2
+_KDE_3d=		15
+_KDE_base=		165
+_KDE_charts=		1
+_KDE_connectivity=	5
+_KDE_datavis3d=		0
+_KDE_declarative=	19
+_KDE_gamepad=		0
+_KDE_graphicaleffects=	0
 _KDE_imageformats=	3
-_KDE_location=		6
-_KDE_multimedia=	3
-_KDE_networkauth=	2
-_KDE_quick3d=		19
-_KDE_quickcontrols=	3
-_KDE_quickcontrols2=	8
-_KDE_quicktimeline=	3
-_KDE_remoteobjects=	3
-_KDE_script=		4
-_KDE_scxml=		1
-_KDE_sensors=		2
-_KDE_serialbus=		2
-_KDE_serialport=	2
-_KDE_speech=		2
-_KDE_svg=		13
-_KDE_tools=		17
-_KDE_translations=	22
-_KDE_virtualkeyboard=	4
-_KDE_wayland=		37
-_KDE_webchannel=	2
-_KDE_webglplugin=	2
-_KDE_websockets=	4
-_KDE_webview=		2
-_KDE_x11extras=		1
-_KDE_xmlpatterns=	2
+_KDE_location=		3
+_KDE_multimedia=	1
+_KDE_networkauth=	0
+_KDE_quick3d=		1
+_KDE_quickcontrols=	0
+_KDE_quickcontrols2=	5
+_KDE_quicktimeline=	0
+_KDE_remoteobjects=	0
+_KDE_script=		0
+_KDE_script_ORIGIN_TAG=	v5.15.10-lts
+_KDE_script_VERSION=	5.15.10
+_KDE_scxml=		0
+_KDE_sensors=		0
+_KDE_serialbus=		0
+_KDE_serialport=	0
+_KDE_speech=		1
+_KDE_svg=		10
+_KDE_tools=		1
+_KDE_translations=	2
+_KDE_virtualkeyboard=	3
+_KDE_wayland=		39
+_KDE_webchannel=	3
+_KDE_webglplugin=	0
+_KDE_websockets=	3
+_KDE_webview=		0
+_KDE_x11extras=		0
+_KDE_xmlpatterns=	0
 
 .    if defined(_KDE_${_QT_DIST})
 # KDE patched Qt parts
 QT5_KDE_PATCH=		p${_KDE_${_QT_DIST}}
+_KDE_${_QT_DIST}_VERSION?=	${_QT_VERSION}
+_KDE_${_QT_DIST}_ORIGIN_TAG?=	v${_KDE_${_QT_DIST}_VERSION}-lts-lgpl
 MASTER_SITES=		LOCAL/tcberner/KDE/Qt/${_QT_VERSION}
 DISTNAME=		${_QT_DIST:S,^,kde-qt,:S,$,-${DISTVERSION},}
 COMMENT+=		(KDE patched)
@@ -460,6 +464,8 @@ qt-post-install:
 qt-create-kde-distfile:
 	${SH} ${PORTSDIR}/devel/${_QT_RELNAME}/files/create_kde-qt_release.sh \
 		${_QT_DIST} \
-		${DISTDIR}/${DIST_SUBDIR}
+		${DISTDIR}/${DIST_SUBDIR} \
+		${_KDE_${_QT_DIST}_VERSION} \
+		${_KDE_${_QT_DIST}_ORIGIN_TAG}
 
 .endif # defined(_QT_DIST_MK_INCLUDED)

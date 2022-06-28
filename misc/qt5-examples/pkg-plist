@@ -5276,6 +5276,7 @@
 %%QT_EXAMPLEDIR%%/remoteobjects/ssl/sslserver/cert/cert.qrc
 %%QT_EXAMPLEDIR%%/remoteobjects/ssl/sslserver/cert/client.crt
 %%QT_EXAMPLEDIR%%/remoteobjects/ssl/sslserver/cert/client.key
+%%QT_EXAMPLEDIR%%/remoteobjects/ssl/sslserver/cert/readme
 %%QT_EXAMPLEDIR%%/remoteobjects/ssl/sslserver/cert/rootCA.key
 %%QT_EXAMPLEDIR%%/remoteobjects/ssl/sslserver/cert/rootCA.pem
 %%QT_EXAMPLEDIR%%/remoteobjects/ssl/sslserver/cert/rootCA.srl
@@ -5291,6 +5292,7 @@
 %%QT_EXAMPLEDIR%%/remoteobjects/websockets/common/cert/cert.qrc
 %%QT_EXAMPLEDIR%%/remoteobjects/websockets/common/cert/client.crt
 %%QT_EXAMPLEDIR%%/remoteobjects/websockets/common/cert/client.key
+%%QT_EXAMPLEDIR%%/remoteobjects/websockets/common/cert/readme
 %%QT_EXAMPLEDIR%%/remoteobjects/websockets/common/cert/rootCA.key
 %%QT_EXAMPLEDIR%%/remoteobjects/websockets/common/cert/rootCA.pem
 %%QT_EXAMPLEDIR%%/remoteobjects/websockets/common/cert/rootCA.srl

@@ -13,6 +13,8 @@ USE_QT=		core buildtools_build
 # doesn't work).
 MAKE_ENV=	MAKEOBJDIR=.
 
+QT5_VERSION=	5.15.10
+
 post-patch:
 	@${REINPLACE_CMD} -e '/scripttools/ d' \
 		${WRKSRC}/src/src.pro
