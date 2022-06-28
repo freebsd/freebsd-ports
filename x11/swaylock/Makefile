@@ -1,6 +1,6 @@
 PORTNAME=	swaylock
 DISTVERSION?=	1.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	wayland-protocols>=1.25:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
+RUN_DEPENDS=	unix-selfauth-helper>0:security/unix-selfauth-helper
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
 
@@ -25,11 +26,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/bash-completion/completions/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
-
-# https://reviews.freebsd.org/D34321
-.if !exists(/usr/libexec/pam_unix-helper)
-PLIST_FILES:=	"@(,,4755) "${PLIST_FILES}
-.endif
 
 OPTIONS_DEFINE=	MANPAGES PIXBUF
 OPTIONS_DEFAULT=MANPAGES PIXBUF
@@ -46,5 +42,8 @@ post-patch:
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
+# Respect LOCALBASE for unix-selfauth-helper
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
+		${WRKSRC}/pam/${PORTNAME}
 
 .include <bsd.port.mk>

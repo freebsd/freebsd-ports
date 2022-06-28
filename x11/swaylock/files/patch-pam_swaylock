@@ -1,9 +1,12 @@
 "login" has "auth sufficient pam_self.so" but a screen locker is
 supposed to ask for password regardless.
 
+pam_unix(8) requires root priveleges to access master.passwd(5),
+so try authenticating via setuid helper first.
+
 --- pam/swaylock.orig	2019-01-29 19:48:00 UTC
 +++ pam/swaylock
-@@ -1,6 +1,6 @@
+@@ -1,6 +1,7 @@
  #
 -# PAM configuration file for the swaylock screen locker. By default, it includes
 -# the 'login' configuration file (see /etc/pam.d/login)
@@ -12,4 +15,5 @@ supposed to ask for password regardless.
  #
  
 -auth include login
++auth sufficient pam_exec.so return_prog_exit_status expose_authtok /usr/local/libexec/unix-selfauth-helper
 +auth include system
