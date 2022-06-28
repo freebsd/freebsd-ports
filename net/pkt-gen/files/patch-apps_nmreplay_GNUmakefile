@@ -1,0 +1,12 @@
+--- apps/nmreplay/GNUmakefile.orig	2022-02-11 07:45:02 UTC
++++ apps/nmreplay/GNUmakefile
+@@ -10,7 +10,8 @@ VPATH = $(SRCDIR)/apps/nmreplay
+ 
+ NO_MAN=
+ CFLAGS = -O2 # -pipe -g
+-CFLAGS += -Werror -Wall -Wunused-function
++CFLAGS += -Wall -Wunused-function
++CFLAGS += -Wall -Wunused-function
+ CFLAGS += -I $(SRCDIR)/sys -I $(SRCDIR)/apps/include -I $(SRCDIR)/libnetmap
+ CFLAGS += -Wextra
+ 
