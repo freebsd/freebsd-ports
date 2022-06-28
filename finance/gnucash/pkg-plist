@@ -1340,7 +1340,9 @@ share/icons/hicolor/scalable/apps/gnucash-icon.svg
 %%NLS%%share/locale/de/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/doi/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/el/LC_MESSAGES/gnucash.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/gnucash.mo
+%%NLS%%share/locale/en_NZ/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/es_NI/LC_MESSAGES/gnucash.mo
 %%NLS%%share/locale/et/LC_MESSAGES/gnucash.mo
