@@ -225,8 +225,12 @@ include/liggghts/fix_setforce.h
 include/liggghts/fix_sph.h
 include/liggghts/fix_sph_density_continuity.h
 include/liggghts/fix_sph_density_corr.h
+include/liggghts/fix_sph_density_drift_corr.h
 include/liggghts/fix_sph_density_summation.h
+include/liggghts/fix_sph_integrity.h
+include/liggghts/fix_sph_mixidx.h
 include/liggghts/fix_sph_pressure.h
+include/liggghts/fix_sph_velgrad.h
 include/liggghts/fix_spring.h
 include/liggghts/fix_spring_rg.h
 include/liggghts/fix_spring_self.h
@@ -244,6 +248,9 @@ include/liggghts/fix_wall_gran_base.h
 include/liggghts/fix_wall_region.h
 include/liggghts/fix_wall_region_sph.h
 include/liggghts/fix_wall_sph.h
+include/liggghts/fix_wall_sph_general.h
+include/liggghts/fix_wall_sph_general_base.h
+include/liggghts/fix_wall_sph_general_gap.h
 include/liggghts/force.h
 include/liggghts/general_container.h
 include/liggghts/general_container_I.h
@@ -344,6 +351,7 @@ include/liggghts/pair_line_lj.h
 include/liggghts/pair_soft.h
 include/liggghts/pair_sph.h
 include/liggghts/pair_sph_artvisc_tenscorr.h
+include/liggghts/pair_sph_morris_tenscorr.h
 include/liggghts/particleToInsert.h
 include/liggghts/particleToInsertSuperquadric.h
 include/liggghts/particleToInsert_multisphere.h
