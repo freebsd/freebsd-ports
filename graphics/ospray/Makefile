@@ -9,6 +9,8 @@ COMMENT=	Ray tracing based rendering engine for high-fidelity visualization
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_amd64=	build fails, see https://github.com/ospray/ospray/issues/529
+
 BUILD_DEPENDS=	ispc:devel/ispc
 LIB_DEPENDS=	libbenchmark.so:devel/benchmark \
 		libembree3.so:graphics/embree \
