@@ -7,9 +7,12 @@ PKGNAMESUFFIX=	-pointclouds
 DISTNAME=	source
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}/${DISTVERSION}
 
-# backport of patches fixing tests
 PATCH_SITES=	https://github.com/PointCloudLibrary/pcl/commit/
-PATCHFILES=	ba388061b0f9ed9584e57d6019c30b044a657c3e.patch:-p1 \
+# backport of patches fixing build
+PATCHFILES=	d253f645f0bfbcd2c818fa5d0a6970c61f39c6b5.patch:-p1 \
+		b220d4b3e259dba0686d0b7cdbff10c668176ded.patch:-p1
+# backport of patches fixing tests
+PATCHFILES+=	ba388061b0f9ed9584e57d6019c30b044a657c3e.patch:-p1 \
 		614e19d96bd8415dbfb52d86df0f3774a9f462fe.patch:-p1 \
 		09c76582b5ff0f2b942609f5c85744f1ce96e332.patch:-p1 \
 		5be6766fbb8f5e9b2fe97a077dd5be53e5fc6983.patch:-p1 \
