@@ -1,0 +1,10 @@
+bin/showmethekey-cli
+bin/showmethekey-gtk
+share/applications/one.alynx.showmethekey.desktop
+share/icons/hicolor/128x128/apps/one.alynx.showmethekey.png
+share/icons/hicolor/64x64/apps/one.alynx.showmethekey.png
+share/icons/hicolor/scalable/apps/one.alynx.showmethekey.svg
+share/locale/zh_CN/LC_MESSAGES/showmethekey.mo
+share/metainfo/one.alynx.showmethekey.metainfo.xml
+share/polkit-1/actions/one.alynx.showmethekey.policy
+share/polkit-1/rules.d/one.alynx.showmethekey.rules

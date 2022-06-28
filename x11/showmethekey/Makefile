@@ -1,6 +1,6 @@
 PORTNAME=	showmethekey
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.6.1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,18 +14,14 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libudev.so:devel/libudev-devd \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	pkexec:sysutils/polkit
+RUN_DEPENDS=	${PKEXEC}
 
 USES=		compiler:c11 gettext-tools gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	cairo gtk30
 GH_ACCOUNT=	AlynxZhou
-PLIST_FILES=	bin/${PORTNAME}-cli \
-		bin/${PORTNAME}-gtk \
-		share/applications/${PORTNAME}.desktop \
-		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
-		share/locale/zh_CN/LC_MESSAGES/${PORTNAME}.mo \
-		share/pixmaps/${PORTNAME}.png
+PKEXEC?=	pkexec:sysutils/polkit
+MESON_ARGS=	-Dpkexec_path="${PKEXEC:C/\:.*//}"
 GLIB_SCHEMAS=	one.alynx.showmethekey.gschema.xml
 
 .include <bsd.port.mk>
