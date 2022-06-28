@@ -1,6 +1,6 @@
 PORTNAME=	singular
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	4-3-0
+DISTVERSION=	4-3-1
 CATEGORIES=	math
 #MASTER_SITES=	ftp://jim.mathematik.uni-kl.de/pub/Math/Singular/SOURCES/${PORTVERSION:C/\./-/g}/
 
