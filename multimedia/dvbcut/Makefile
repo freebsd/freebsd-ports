@@ -1,9 +1,8 @@
 # Created by: se@FreeBSD.org
 
 PORTNAME=	dvbcut
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
 CATEGORIES=	multimedia
 
 MAINTAINER=	se@FreeBSD.org
