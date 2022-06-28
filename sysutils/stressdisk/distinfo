@@ -1,5 +1,5 @@
-TIMESTAMP = 1606042976
-SHA256 (ncw-stressdisk-v1.0.12_GH0.tar.gz) = 2ddb89810f88c27edbcbd31eb3ec28d8393570f88421c6cdd95728986e820142
-SIZE (ncw-stressdisk-v1.0.12_GH0.tar.gz) = 11408
-SHA256 (ncw-directio-v1.0.4_GH0.tar.gz) = 65ae83dfce6da3673440b21bdac9951957283917aef4a63a9c234cbc2e8efb8a
-SIZE (ncw-directio-v1.0.4_GH0.tar.gz) = 3873
+TIMESTAMP = 1656349446
+SHA256 (go/sysutils_stressdisk/stressdisk-v1.0.12/v1.0.12.mod) = 045266fd0fd2d5ea2721acbb8157aac6f59fb08a82beec96eac5d6bc254f2b30
+SIZE (go/sysutils_stressdisk/stressdisk-v1.0.12/v1.0.12.mod) = 82
+SHA256 (go/sysutils_stressdisk/stressdisk-v1.0.12/v1.0.12.zip) = 8642a39d1f9d1f213ac638edd7c13a1549c8e46c030610ce407510861d4d103a
+SIZE (go/sysutils_stressdisk/stressdisk-v1.0.12/v1.0.12.zip) = 13495
