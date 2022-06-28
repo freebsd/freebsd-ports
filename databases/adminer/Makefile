@@ -1,7 +1,7 @@
 # Created by: Wen Heping <wenheping@gmail.com>
 
 PORTNAME=	adminer
-PORTVERSION=	4.7.7
+PORTVERSION=	4.8.1
 CATEGORIES=	databases www
 MASTER_SITES=	https://github.com/vrana/adminer/releases/download/v${PORTVERSION}/
 EXTRACT_SUFX=	.php
@@ -15,12 +15,12 @@ LICENSE=	APACHE20
 USES=		cpe php
 USE_PHP=	session
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
-PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 SUB_LIST=	PHPVER="${PHP_VER}"
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
