@@ -174,9 +174,6 @@
     SUBDIR += elasticsearch-plugin-head
     SUBDIR += elasticsearch6
     SUBDIR += elasticsearch7
-    SUBDIR += elixir-earmark
-    SUBDIR += elixir-funnel
-    SUBDIR += elixir-sweet_xml
     SUBDIR += en-aspell
     SUBDIR += en-hunspell
     SUBDIR += en-mythes
@@ -184,10 +181,6 @@
     SUBDIR += enchant2
     SUBDIR += eo-aspell
     SUBDIR += eqe
-    SUBDIR += erlang-edown
-    SUBDIR += erlang-fast_xml
-    SUBDIR += erlang-p1_utils
-    SUBDIR += erlang-yamerl
     SUBDIR += es-aspell
     SUBDIR += es-hunspell
     SUBDIR += es-hyphen

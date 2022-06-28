@@ -1,7 +1,0 @@
-lib/erlang/lib/cf-%%VERSION%%/ebin/cf.app
-lib/erlang/lib/cf-%%VERSION%%/ebin/cf.beam
-lib/erlang/lib/cf-%%VERSION%%/ebin/cf_term.beam
-lib/erlang/lib/cf-%%VERSION%%/src/cf.app.src
-lib/erlang/lib/cf-%%VERSION%%/src/cf.erl
-lib/erlang/lib/cf-%%VERSION%%/src/cf_term.erl
-%%PORTDOCS%%%%DOCSDIR%%/README.md

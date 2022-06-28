@@ -1,4 +1,0 @@
-A collection of GIS functions for Elixir. Handles conversions to and from
-WKT, WKB, and GeoJSON.
-
-WWW: https://github.com/bryanjos/geo

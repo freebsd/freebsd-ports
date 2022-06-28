@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220628:
+  AFFECTS: users of Erlang and Elixir
+  AUTHOR: dch@FreeBSD.org
+
+  For more than a decade, the Elixir Mix tool and the Erlang rebar
+  or erlang.mk build tools have been the defacto way of installing
+  and managing packages for specific applications.
+
+  All main-stream applications, from Riak, CouchDB, RabbitMQ, Phoenix,
+  and Elixir, expect that packages are fetched and compiled into an OTP
+  Release, with in-built version locking, external package management.
+
+  There is no point in maintaining a large number of libraries, that
+  are used neither for development, nor operations.
+
+  Users are directed to https://rebar3.org/ https://erlang.mk/ or
+  https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
+  to fetch custom packages.
+
+  https://www.freebsd.org/status/report-2021-07-2021-09/#_freebsd_erlang_ecosystem_ports_update
+
 20220626:
   AFFECTS: users of python
   AUTHOR: thierry@FreeBSD.org

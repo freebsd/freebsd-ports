@@ -1,4 +1,0 @@
-Cuttlefish is a library for Erlang applications that wish to walk
-the fine line between Erlang app.configs and a sysctl-like syntax.
-
-WWW: https://github.com/basho/cuttlefish

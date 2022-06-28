@@ -1,7 +1,0 @@
-lib/elixir/lib/mime/ebin/Elixir.MIME.Application.beam
-lib/elixir/lib/mime/ebin/Elixir.MIME.beam
-lib/elixir/lib/mime/ebin/mime.app
-lib/elixir/lib/mime/lib/mime.ex
-lib/elixir/lib/mime/lib/mime/application.ex
-lib/elixir/lib/mime/priv/mime.types
-%%PORTDOCS%%%%DOCSDIR%%/README.md

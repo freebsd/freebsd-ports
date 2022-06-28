@@ -1,4 +1,0 @@
-lib/elixir/lib/dialyze/ebin/Elixir.Mix.Tasks.Dialyze.beam
-lib/elixir/lib/dialyze/ebin/dialyze.app
-lib/elixir/lib/dialyze/lib/mix/tasks/dialyze.ex
-%%PORTDOCS%%%%DOCSDIR%%/README.md

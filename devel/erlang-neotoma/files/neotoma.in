@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec %%LOCALBASE%%/lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/neotoma "$@"

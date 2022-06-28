@@ -1,4 +1,0 @@
-GenStage is a specification for exchanging events between producers
-and consumers.
-
-WWW: https://github.com/elixir-lang/gen_stage

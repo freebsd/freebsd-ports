@@ -1,6 +1,0 @@
-Glue between Calendar and Ecto. For saving dates, times and datetimes
-in Ecto. Instead of using the Ecto types for Date, Time and DateTime,
-you can access the features of the Calendar library. With timezone
-awareness, parsing, and formatting functionality.
-
-WWW: https://github.com/lau/calecto

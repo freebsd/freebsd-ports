@@ -1,5 +1,0 @@
-html_sanitize_ex provides a fast and straightforward HTML Sanitizer
-written in Elixir which lets you include HTML authored by third-parties
-in your web application while protecting against XSS.
-
-WWW: https://github.com/rrrene/html_sanitize_ex

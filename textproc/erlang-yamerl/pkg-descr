@@ -1,9 +1,0 @@
-YAML is a human-friendly data serialization format. The specification
-for this language and many examples are available from the Official
-YAML web site. You may also want to check the YAML Wikipedia article.
-
-yamerl is a pure Erlang application which is able to parse YAML 1.1
-and YAML 1.2 documents, as well as JSON documents. It only depends
-on standard Erlang/OTP applications.
-
-WWW: https://github.com/yakaz/yamerl

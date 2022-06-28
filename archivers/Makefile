@@ -26,7 +26,6 @@
     SUBDIR += draco
     SUBDIR += dzip
     SUBDIR += engrampa
-    SUBDIR += erlang-snappy
     SUBDIR += fastjar
     SUBDIR += file-roller
     SUBDIR += fpc-bzip2

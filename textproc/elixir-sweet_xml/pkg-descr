@@ -1,5 +1,0 @@
-SweetXml is a thin wrapper around :xmerl. It allows you to converts
-a string or xmlElement record as defined in :xmerl to an elixir
-value such as map, list, char_list, or any combination of these.
-
-WWW: https://github.com/gniquil/sweet_xml

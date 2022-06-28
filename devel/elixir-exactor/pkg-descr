@@ -1,6 +1,0 @@
-Simplifies implementation of GenServer based processes in Elixir.
-
-ExActor helps removing the boilerplate that typically occurs when
-using GenServer behaviour.
-
-WWW: https://github.com/sasa1977/exactor

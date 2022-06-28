@@ -1,6 +1,0 @@
-lib/elixir/lib/deppie/ebin/Elixir.Deppie.Application.beam
-lib/elixir/lib/deppie/ebin/Elixir.Deppie.beam
-lib/elixir/lib/deppie/ebin/deppie.app
-lib/elixir/lib/deppie/lib/deppie.ex
-lib/elixir/lib/deppie/lib/deppie/application.ex
-%%PORTDOCS%%%%DOCSDIR%%/README.md

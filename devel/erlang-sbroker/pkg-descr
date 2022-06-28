@@ -1,5 +1,0 @@
-Sojourn Broker - process broker for matchmaking between two groups
-of processes using sojourn time based active queue management to
-prevent congestion.
-
-WWW: https://github.com/fishcakez/sbroker

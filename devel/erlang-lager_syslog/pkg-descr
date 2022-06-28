@@ -1,4 +1,0 @@
-This is a syslog backend for Lager. It allows you to send messages out of
-lager and into the local syslog daemon.
-
-WWW: https://github.com/basho/lager_syslog

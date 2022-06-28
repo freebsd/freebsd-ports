@@ -1,4 +1,0 @@
-This library provides an API for serializing and de-serializing Elixir
-terms using the MessagePack format.
-
-WWW: https://github.com/lexmag/msgpax

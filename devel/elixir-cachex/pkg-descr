@@ -1,4 +1,0 @@
-A powerful caching library for Elixir with support for transactions,
-fallbacks, and expirations.
-
-WWW: https://github.com/whitfin/cachex

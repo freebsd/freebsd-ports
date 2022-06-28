@@ -1,5 +1,0 @@
-This application implements a leader election behavior modeled after
-gen_server. This behavior intends to make it reasonably straightforward to
-implement a fully distributed server with master-slave semantics.
-
-WWW: https://github.com/garret-smith/gen_leader_revival

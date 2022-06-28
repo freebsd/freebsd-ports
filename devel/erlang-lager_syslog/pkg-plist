@@ -1,5 +1,0 @@
-lib/erlang/lib/lager_syslog-%%VERSION%%/ebin/lager_syslog.app
-lib/erlang/lib/lager_syslog-%%VERSION%%/ebin/lager_syslog_backend.beam
-lib/erlang/lib/lager_syslog-%%VERSION%%/src/lager_syslog.app.src
-lib/erlang/lib/lager_syslog-%%VERSION%%/src/lager_syslog_backend.erl
-%%PORTDOCS%%%%DOCSDIR%%/README.org

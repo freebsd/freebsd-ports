@@ -1,4 +1,0 @@
-A generic Erlang SMTP server and client that can be extended via
-callback modules.
-
-WWW: https://github.com/Vagabond/gen_smtp

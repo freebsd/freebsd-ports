@@ -1,4 +1,0 @@
-Poolboy is a lightweight, generic pooling library for Erlang with
-a focus on simplicity, performance, and rock-solid disaster recovery.
-
-WWW: https://github.com/devinus/poolboy
