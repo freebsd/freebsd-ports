@@ -1,6 +1,6 @@
---- makefiles/cmake/vmcs.cmake.orig	2015-01-05 16:36:28 UTC
+--- makefiles/cmake/vmcs.cmake.orig	2016-10-24 19:59:54 UTC
 +++ makefiles/cmake/vmcs.cmake
-@@ -55,10 +55,6 @@
+@@ -57,10 +57,6 @@ configure_file (
  #        DESTINATION ${VMCS_INSTALL_PREFIX}/sbin
  #        PERMISSIONS OWNER_WRITE WORLD_READ)
  

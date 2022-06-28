@@ -1,0 +1,11 @@
+--- host_applications/linux/libs/sm/CMakeLists.txt.orig	2016-10-24 19:59:54 UTC
++++ host_applications/linux/libs/sm/CMakeLists.txt
+@@ -3,7 +3,7 @@ if (WIN32)
+    set(VCOS_PLATFORM win32)
+ else ()
+    set(VCOS_PLATFORM pthreads)
+-   add_definitions(-Wall -Werror -Wno-error=parentheses-equality -Wno-error=enum-conversion)
++   add_definitions(-Wall -Wno-error=parentheses-equality -Wno-error=enum-conversion)
+ endif ()
+ 
+ include_directories( ../../../..

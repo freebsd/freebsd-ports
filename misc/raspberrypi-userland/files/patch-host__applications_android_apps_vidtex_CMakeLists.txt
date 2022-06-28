@@ -1,0 +1,10 @@
+--- host_applications/android/apps/vidtex/CMakeLists.txt.orig	2016-10-24 19:59:54 UTC
++++ host_applications/android/apps/vidtex/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ cmake_minimum_required(VERSION 2.8)
+ 
+-SET(COMPILE_DEFINITIONS -Werror -Wall)
++SET(COMPILE_DEFINITIONS -Wall)
+ include_directories(${PROJECT_SOURCE_DIR}/host_applications/linux/libs/bcm_host/include)
+ 
+ set (VIDTEX_SOURCES

@@ -1,0 +1,11 @@
+--- interface/vcos/CMakeLists.txt.orig	2016-10-24 19:59:54 UTC
++++ interface/vcos/CMakeLists.txt
+@@ -43,7 +43,7 @@ foreach (header ${HEADERS})
+ endforeach ()
+ 
+ if (CMAKE_COMPILER_IS_GNUCC)
+-   add_definitions (-ggdb -Werror -Wall)
++   add_definitions (-ggdb -Wall)
+ endif ()
+ 
+ if (CMAKE_COMPILER_2005)

@@ -1,0 +1,11 @@
+--- host_applications/linux/apps/dtmerge/CMakeLists.txt.orig	2016-10-24 19:59:54 UTC
++++ host_applications/linux/apps/dtmerge/CMakeLists.txt
+@@ -4,7 +4,7 @@ get_filename_component (VIDEOCORE_ROOT ../../../.. ABS
+ include (${VIDEOCORE_ROOT}/makefiles/cmake/global_settings.cmake)
+ 
+ if (NOT WIN32)
+-   add_definitions(-Wall -Werror)
++   add_definitions(-Wall)
+ endif ()
+ 
+ include_directories (
