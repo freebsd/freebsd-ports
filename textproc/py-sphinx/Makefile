@@ -39,8 +39,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4-cov>=0:devel/py-pytest4-cov@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}typed-ast>=0:devel/py-typed-ast@${PY_FLAVOR} \
 		cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
 
-USES=		python:3.7+ pytest:4
-USE_PYTHON=	autoplist distutils concurrent
+USES=		python:3.7+
+USE_PYTHON=	autoplist distutils concurrent pytest4
 
 NO_ARCH=	yes
 
