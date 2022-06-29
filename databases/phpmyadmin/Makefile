@@ -13,7 +13,7 @@ COMMENT=	Set of PHP-scripts to manage MySQL over the web
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	phpmyadmin5
+CONFLICTS_INSTALL=	phpMyAdmin-php[0-9][0-9] phpMyAdmin[0-9]-php[0-9][0-9] # www/phpMyAdmin/CONTRIBUTING.md
 
 USES=		cpe php:web,flavors tar:xz
 CPE_PRODUCT=	${PORTNAME:tl}

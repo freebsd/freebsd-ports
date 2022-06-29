@@ -24,7 +24,7 @@ LDB_DEPENDS=		talloc>=2.2.0:devel/talloc \
 
 USES=			compiler pkgconfig waf
 
-CONFLICTS_INSTALL=	ldb-1.1.* ldb1[2-9]-1.* ldb2[02-9]-2.*
+CONFLICTS_INSTALL=	ldb[0-9][0-9] # include/ldb.h
 
 USE_LDCONFIG=		yes
 WAF_CMD=		${BUILD_WRKSRC}/buildtools/bin/waf

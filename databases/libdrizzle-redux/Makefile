@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake libtool ssl
 USE_LDCONFIG=	yes
 
-CONFLICTS=	libdrizzle
+CONFLICTS_INSTALL=	libdrizzle # lib/libdrizzle.so
 
 OPTIONS_DEFINE=	DOCS
 

@@ -18,6 +18,8 @@ USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacscollective
 
+CONFLICTS_INSTALL=	closql closql-emacs_* # share/doc/closql/README.md
+
 NO_ARCH=	yes
 
 PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/closql.el \

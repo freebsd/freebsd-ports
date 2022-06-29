@@ -19,4 +19,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tarantool
 GH_TAGNAME=	2aa7937
 
+CONFLICTS_INSTALL=	nosqlbench # include/tarantool/tarantool.h
+
 .include <bsd.port.mk>

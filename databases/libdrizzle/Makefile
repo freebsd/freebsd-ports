@@ -23,6 +23,8 @@ CONFIGURE_ARGS+=--enable-libsqlite3
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
+CONFLICTS_INSTALL=	libdrizzle-redux # lib/libdrizzle.so
+
 SAMPLE_PROGS=	client pipe_query proxy server simple \
 		simple_multi sqlite_server
 

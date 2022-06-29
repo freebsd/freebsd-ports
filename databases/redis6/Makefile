@@ -30,6 +30,8 @@ TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
 
 MAKE_ENV=	V=yo OPTIMIZATION=
 
+CONFLICTS_INSTALL=	redis redis-devel # etc/rc.d/redis
+
 JEMALLOC_MAKE_ENV=	USE_JEMALLOC=yes
 
 LUA_USES=		lua:51

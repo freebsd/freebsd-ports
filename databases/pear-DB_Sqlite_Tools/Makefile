@@ -16,4 +16,7 @@ RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB@${PHP_FLAVOR} \
 
 USES=		pear
 
+CONFLICTS_INSTALL=	php[0-9][0-9]-pear-Crypt_HMAC2 \
+			php[0-9][0-9]-pear-DB_Sqlite_Tools # share/pear/DB/Sqlite/Tools.php share/pear/generate_package_xml.php
+
 .include <bsd.port.mk>

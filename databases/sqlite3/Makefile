@@ -28,9 +28,7 @@ LICENSE=	PD
 FLAVORS=	default icu tcl
 FLAVOR?=	${FLAVORS:[1]}
 icu_PKGNAMESUFFIX=	-${FLAVOR}	# databases/p5-DBD-SQLite with ICU support
-icu_CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-tcl
 tcl_PKGNAMESUFFIX=	-${FLAVOR}	# lang/tcl* support
-tcl_CONFLICTS_INSTALL=	${PORTNAME} ${PORTNAME}-icu
 .endif
 
 USES=	libtool pathfix zip
@@ -44,6 +42,8 @@ ALL_TARGET+=	sqldiff
 INSTALL_TARGET=	tcl_install
 .endif
 TEST_TARGET=	test
+
+CONFLICTS_INSTALL=	sqlite3 sqlite3-icu sqlite3-tcl tcl-sqlite3 # include/sqlite3.h share/examples/sqlite3/example.tcl
 
 # The default numeric file permissions for newly created database files under unix.
 # If not specified, the default is 0644 which means that the files is globally

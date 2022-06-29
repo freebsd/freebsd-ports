@@ -24,7 +24,7 @@ CPE_PRODUCT=	mysql_connector_j
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-CONFLICTS_INSTALL=	mysql-connector-java51
+CONFLICTS_INSTALL=	mysql-connector-java51 # share/java/classes/mysql-connector-java.jar
 
 JAVA_VERSION=	1.8+
 EXTRADOCS=	CHANGES

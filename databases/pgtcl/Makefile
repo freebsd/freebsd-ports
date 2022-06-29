@@ -27,6 +27,8 @@ USE_LDCONFIG=	${LIBDIR}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 MANUALREL=	20171113
 
+CONFLICTS_INSTALL?=	pgtcl pgtcl-postgresql[0-9][0-9] # lib/pgtcl/libpgtcl2.1.1.so
+
 PLIST_FILES=	lib/pgtcl/libpgtcl${PORTVERSION}.so \
 		lib/pgtcl/pkgIndex.tcl
 PORTDOCS=	*

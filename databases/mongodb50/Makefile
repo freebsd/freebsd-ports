@@ -44,7 +44,7 @@ MAKE_ARGS=	--cxx-std=17 \
 		AR=${PREFIX}/bin/ar \
 		VERBOSE=on
 
-CONFLICTS_INSTALL=	mongodb36 mongodb4[024]
+CONFLICTS_INSTALL=	mongodb[0-9][0-9] # etc/mongodb.conf.sample
 
 USERS=		mongodb
 GROUPS=		mongodb

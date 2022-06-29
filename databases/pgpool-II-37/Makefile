@@ -19,7 +19,7 @@ USE_RC_SUBR=	pgpool
 
 GNU_CONFIGURE=	yes
 
-CONFLICTS=	pgpool-II
+CONFLICTS_INSTALL=	pgpool-II-[0-9][0-9] pgpool-II[0-9][0-9] # etc/pcp.conf.sample
 
 PORTSCOUT=	limit:^3.7.[0-9]*
 

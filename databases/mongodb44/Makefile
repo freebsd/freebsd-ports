@@ -32,7 +32,7 @@ USE_RC_SUBR=	mongod
 
 PORTSCOUT=	limit:^4\.4\.
 
-CONFLICTS_INSTALL=	mongodb[0-9][0-9]
+CONFLICTS_INSTALL=	mongodb[0-9][0-9] # etc/mongodb.conf.sample
 
 OPTIONS_DEFINE=	LTO SASL SSL
 OPTIONS_DEFAULT=LTO SASL SSL

@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-CONFLICTS_INSTALL=	xapian-core xapian-core10
+CONFLICTS_INSTALL=	xapian-core # include/xapian.h
 
 PORTSCOUT=	limitw:1,even
 

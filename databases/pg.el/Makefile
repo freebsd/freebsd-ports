@@ -15,6 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cbbrowne
 GH_TAGNAME=	4f6516e
 
+CONFLICTS_INSTALL=	pg.el pg.el-emacs_* # share/doc/pg.el/README
+
 NO_ARCH=	yes
 
 PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/pg.el \

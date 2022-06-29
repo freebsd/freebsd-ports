@@ -30,6 +30,8 @@ INSTALL_TARGET=	install-strip
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+CONFLICTS_INSTALL=	freetds # etc/freetds/freetds.conf.sample
+
 PORTSCOUT=	limit:^\d+\.\d+\.\d{3}$
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-dev.${PORTVERSION}

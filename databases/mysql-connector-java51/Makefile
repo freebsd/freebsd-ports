@@ -20,7 +20,7 @@ USES=		cpe
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	mysql_connector_j
 
-CONFLICTS_INSTALL=	mysql-connector-java-8*
+CONFLICTS_INSTALL=	mysql-connector-java # share/java/classes/mysql-connector-java.jar
 
 NO_ARCH=	yes
 USE_JAVA=	yes

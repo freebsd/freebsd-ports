@@ -19,7 +19,7 @@ USE_PHP=	pcre
 USE_GITHUB=	yes
 GH_PROJECT=	ADOdb
 
-CONFLICTS=	adodb-4.*
+CONFLICTS_INSTALL=	adodb5-php[0-9][0-9] # share/adodb/adodb-active-record.inc.php
 
 NO_BUILD=	yes
 NO_ARCH=	yes

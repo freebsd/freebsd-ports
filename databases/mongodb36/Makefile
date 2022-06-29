@@ -29,7 +29,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 USES=		compiler:c++14-lang cpe python:3.7+,build scons shebangfix
 USE_RC_SUBR=	mongod
 
-CONFLICTS_INSTALL=	mongodb4[024]
+CONFLICTS_INSTALL=	mongodb[0-9][0-9] # etc/mongodb.conf.sample
 
 SHEBANG_FILES=	src/mongo/installer/compass/install_compass.in
 python_OLD_CMD=	@python_interpreter@

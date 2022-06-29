@@ -21,7 +21,7 @@ INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	xapian-core10 xapian-core12
+CONFLICTS_INSTALL=	xapian-core12 # include/xapian.h
 
 PORTSCOUT=	limitw:1,even
 
