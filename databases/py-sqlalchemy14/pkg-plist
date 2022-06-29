@@ -58,6 +58,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/vertical/dictlike-polymorphic.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/examples/vertical/dictlike.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/index.html
+%%PORTDOCS%%%%DOCSDIR%%/_static/_sphinx_javascript_frameworks_compat.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/changelog.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/clipboard.min.js
@@ -73,7 +74,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/dragons_original.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/init.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/jquery-3.5.1.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/jquery-3.6.0.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
@@ -187,6 +188,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/composites.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/constructors.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/contextual.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/orm/dataclasses.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/declarative_config.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/declarative_mapping.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/declarative_mixins.rst
@@ -357,6 +359,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/orm/composites.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/constructors.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/contextual.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/dataclasses.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/declarative_config.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/declarative_mapping.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/declarative_mixins.html
