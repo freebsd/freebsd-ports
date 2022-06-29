@@ -4,4 +4,4 @@ to Apache HttpClient intended for special cases where ability to handle a
 great number of concurrent connections is more important than performance
 in terms of a raw data throughput.
 
-WWW: http://hc.apache.org/httpcomponents-asyncclient-4.0.x/
+WWW: https://hc.apache.org/httpcomponents-asyncclient-4.1.x/
