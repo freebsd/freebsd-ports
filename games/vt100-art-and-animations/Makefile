@@ -1,6 +1,6 @@
 PORTNAME=	vt100-art-and-animations
 DISTVERSION=	2020.04.09
-MASTER_SITES=	https://freebsd.lxxl.us/distfiles/${PORTNAME}-${DISTVERSION}/
+MASTER_SITES=	https://freebsd.lxxl.us/distfiles/${PORTNAME}-${DISTVERSION}/ \
 		http://www.grosbein.net/freebsd/distfiles/ \
 		LOCAL/eugen
 #		http://artscene.textfiles.com/archives/
