@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	axisregistry
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.2
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
