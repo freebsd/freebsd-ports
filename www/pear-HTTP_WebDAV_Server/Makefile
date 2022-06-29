@@ -13,4 +13,6 @@ USES=		pear
 
 NO_ARCH=	yes
 
+PORTSCOUT=	skipv:1.0.0RC8
+
 .include <bsd.port.mk>
