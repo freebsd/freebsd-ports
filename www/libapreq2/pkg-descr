@@ -7,5 +7,5 @@ the Apache API with Perl and C.  Functionality includes:
  - parsing of multipart/form-data
  - parsing of HTTP Cookies
 
-WWW: http://httpd.apache.org/apreq/
-WWW: https://metacpan.org/release/libapreq2
+WWW: https://httpd.apache.org/apreq/
+WWW: https://metacpan.org/dist/libapreq2
