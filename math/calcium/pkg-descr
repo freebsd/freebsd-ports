@@ -1,0 +1,6 @@
+Calcium is a C library for exact computation with real and complex
+numbers. It is capable of rigorously deciding the truth of any
+constant relation involving algebraic numbers and many relations
+involving transcendental number.
+
+WWW: https://fredrikj.net/calcium/

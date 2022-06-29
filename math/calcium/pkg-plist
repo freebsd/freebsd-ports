@@ -1,0 +1,16 @@
+include/calcium/ca.h
+include/calcium/ca_ext.h
+include/calcium/ca_field.h
+include/calcium/ca_mat.h
+include/calcium/ca_poly.h
+include/calcium/ca_vec.h
+include/calcium/calcium.h
+include/calcium/fexpr.h
+include/calcium/fexpr_builtin.h
+include/calcium/fmpz_mpoly_q.h
+include/calcium/qqbar.h
+include/calcium/utils_flint.h
+lib/libcalcium.a
+lib/libcalcium.so
+lib/libcalcium.so.0
+lib/libcalcium.so.0.4.1

@@ -201,6 +201,7 @@
     SUBDIR += cadical
     SUBDIR += cado-nfs
     SUBDIR += calc
+    SUBDIR += calcium
     SUBDIR += calcoo
     SUBDIR += cantor
     SUBDIR += casadi
