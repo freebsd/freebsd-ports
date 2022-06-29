@@ -1,3 +1,42 @@
+  <vuln vid="07c0d782-f758-11ec-acaa-901b0e9408dc">
+    <topic>py-matrix-synapse -- unbounded recursion in urlpreview</topic>
+    <affects>
+      <package>
+	<name>py37-matrix-synapse</name>
+	<name>py38-matrix-synapse</name>
+	<name>py39-matrix-synapse</name>
+	<name>py310-matrix-synapse</name>
+	<name>py311-matrix-synapse</name>
+	<range><lt>1.61.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix developers report:</p>
+	<blockquote cite="https://matrix.org/blog/2022/06/28/security-release-synapse-1-61-1">
+	  <p>This release fixes a vulnerability with Synapse's URL preview feature. URL previews
+	  of some web pages can lead to unbounded recursion, causing the request to either fail,
+	  or in some cases crash the running Synapse process.</p>
+	  <p>Note that:</p>
+	  <ul>
+	    <li>Homeservers with the url_preview_enabled configuration option set to false
+	    (the default value) are unaffected.</li>
+	    <li>Instances with the enable_media_repo configuration option set to false are
+	    also unaffected, as this also disables the URL preview functionality.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31052</cvename>
+      <url>https://matrix.org/blog/2022/06/28/security-release-synapse-1-61-1</url>
+    </references>
+    <dates>
+      <discovery>2022-06-28</discovery>
+      <entry>2022-06-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ae5722a6-f5f0-11ec-856e-d4c9ef517024">
     <topic>cURL -- Multiple vulnerabilities</topic>
     <affects>
