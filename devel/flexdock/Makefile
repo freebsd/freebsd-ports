@@ -15,6 +15,7 @@ USE_ANT=	yes
 USE_JAVA=	yes
 
 ALL_TARGET=	dist
+NO_ARCH=	yes
 
 PLIST_FILES=	${JAVAJARDIR}/flexdock.jar
 PORTDOCS=	*
