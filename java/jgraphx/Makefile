@@ -14,6 +14,8 @@ GH_ACCOUNT=	jgraph
 USE_JAVA=	yes
 USE_ANT=	yes
 
+NO_ARCH=	yes
+
 PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar
 PORTDOCS=	*
 
