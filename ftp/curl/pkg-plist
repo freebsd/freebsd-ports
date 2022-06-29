@@ -21,6 +21,8 @@ man/man1/curl.1.gz
 man/man3/CURLINFO_ACTIVESOCKET.3.gz
 man/man3/CURLINFO_APPCONNECT_TIME.3.gz
 man/man3/CURLINFO_APPCONNECT_TIME_T.3.gz
+man/man3/CURLINFO_CAINFO.3.gz
+man/man3/CURLINFO_CAPATH.3.gz
 man/man3/CURLINFO_CERTINFO.3.gz
 man/man3/CURLINFO_CONDITION_UNMET.3.gz
 man/man3/CURLINFO_CONNECT_TIME.3.gz
@@ -559,7 +561,6 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evhiperfifo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/externalsocket.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fileupload.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fopen.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftp-wildcard.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpget.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpgetinfo.c
@@ -635,7 +636,6 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/postit2.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/progressfunc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resolve.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rtsp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendrecv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sepheaders.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessioninfo.c
