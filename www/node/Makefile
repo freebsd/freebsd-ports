@@ -83,10 +83,6 @@ LIB_DEPENDS+=	libbrotlidec.so:archivers/brotli \
 EXTRA_PATCHES=		${PATCHDIR}/extra-patch-common.gypi
 .endif
 
-.if ${ARCH} == armv6 || ${ARCH} == armv7
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tools_v8__gypfiles_v8.gyp
-.endif
-
 .if ${PORT_OPTIONS:MBUNDLED_SSL} && ${ARCH} != amd64
 CONFIGURE_ARGS+=--openssl-no-asm
 .endif
