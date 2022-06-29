@@ -42,6 +42,7 @@ include/kinsol/kinsol_spils.h
 include/nvector/nvector_manyvector.h
 %%MPI%%include/nvector/nvector_mpimanyvector.h
 %%MPI%%include/nvector/nvector_mpiplusx.h
+%%OPENMP%%include/nvector/nvector_openmp.h
 %%MPI%%include/nvector/nvector_parallel.h
 %%HYPRE%%include/nvector/nvector_parhyp.h
 %%PETSC%%include/nvector/nvector_petsc.h
@@ -116,6 +117,9 @@ lib/libsundials_nvecmanyvector.so.6.2.0
 %%MPI%%lib/libsundials_nvecmpiplusx.so
 %%MPI%%lib/libsundials_nvecmpiplusx.so.6
 %%MPI%%lib/libsundials_nvecmpiplusx.so.6.2.0
+%%OPENMP%%lib/libsundials_nvecopenmp.so
+%%OPENMP%%lib/libsundials_nvecopenmp.so.6
+%%OPENMP%%lib/libsundials_nvecopenmp.so.6.2.0
 %%MPI%%lib/libsundials_nvecparallel.so
 %%MPI%%lib/libsundials_nvecparallel.so.6
 %%MPI%%lib/libsundials_nvecparallel.so.6.2.0
@@ -136,11 +140,9 @@ lib/libsundials_sunlinsolband.so.4.2.0
 lib/libsundials_sunlinsoldense.so
 lib/libsundials_sunlinsoldense.so.4.2.0
 %%LAPACK%%lib/libsundials_sunlinsollapackband.so
-%%LAPACK%%lib/libsundials_sunlinsollapackband.so.%%SHLX1%%
-%%LAPACK%%lib/libsundials_sunlinsollapackband.so.%%SHLX3%%
+%%LAPACK%%lib/libsundials_sunlinsollapackband.so.4.2.0
 %%LAPACK%%lib/libsundials_sunlinsollapackdense.so
-%%LAPACK%%lib/libsundials_sunlinsollapackdense.so.%%SHLX1%%
-%%LAPACK%%lib/libsundials_sunlinsollapackdense.so.%%SHLX3%%
+%%LAPACK%%lib/libsundials_sunlinsollapackdense.so.4.2.0
 lib/libsundials_sunlinsolpcg.so
 lib/libsundials_sunlinsolpcg.so.4.2.0
 lib/libsundials_sunlinsolspbcgs.so
