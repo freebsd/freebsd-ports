@@ -1,0 +1,5 @@
+Module::Build::Pluggable::CPANfile is plugin for Module::Build::Pluggable to
+include dependencies from cpanfile into meta files. This modules is
+Module::Install::CPANfile for Module::Build.
+
+WWW: https://metacpan.org/dist/Module-Build-Pluggable-CPANfile
