@@ -104,6 +104,7 @@ include/flint/mpfr_vec.h
 include/flint/mpn_extras.h
 include/flint/mpoly.h
 include/flint/n_poly.h
+include/flint/nmod.h
 include/flint/nmod_mat.h
 include/flint/nmod_matxx.h
 include/flint/nmod_mpoly.h
@@ -130,6 +131,7 @@ include/flint/qsieve.h
 include/flint/rules.h
 include/flint/stdmath.h
 include/flint/templates.h
+include/flint/test_helpers.h
 include/flint/thread_pool.h
 include/flint/thread_support.h
 include/flint/traits.h
@@ -138,5 +140,5 @@ include/flint/tuple.h
 include/flint/ulong_extras.h
 include/flint/vector.h
 lib/libflint.so
-lib/libflint.so.16
-lib/libflint.so.16.1.5
+lib/libflint.so.17
+lib/libflint.so.17.0.0
