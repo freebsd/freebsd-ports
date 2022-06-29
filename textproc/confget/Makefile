@@ -20,6 +20,8 @@ PLIST_FILES=	bin/confget \
 		share/man/man1/confget.1.gz
 PORTEXAMPLES=	t1.ini t2.ini
 
+PORTSCOUT=	skipv:5.0.0
+
 OPTIONS_DEFINE=	EXAMPLES PCRE
 OPTIONS_DEFAULT=PCRE
 
