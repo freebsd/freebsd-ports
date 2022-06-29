@@ -16,7 +16,7 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 USES+=		ghostscript:run
 
-CONFLICTS_INSTALL=	enscript-a4 enscript-letter enscript-letterdj py*-us # bin/einfo bin/xml2json
+CONFLICTS_INSTALL=	enscript-a4 enscript-letter enscript-letterdj # bin/einfo bin/xml2json
 
 post-patch:
 	@${ECHO_CMD} "share/enscript/README.BIG5" > ${WRKDIR}/pkg-plist

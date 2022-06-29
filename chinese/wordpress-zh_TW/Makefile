@@ -22,6 +22,8 @@ CPE_VERSION=	${DISTVERSION}.0
 USE_PHP=	curl exif fileinfo ftp gd hash json mysqli pcre tokenizer xml zip zlib
 
 CONFLICTS_INSTALL=	ja-wordpress wordpress # share/doc/wordpress/readme.html
+CONFLICTS_INSTALL=	de-wordpress fr-wordpress ru-wordpress wordpress \
+			zh-wordpress-zh_CN # share/doc/wordpress/readme.html
 
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 NO_ARCH=	yes
