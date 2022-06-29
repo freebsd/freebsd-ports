@@ -10,4 +10,4 @@ Before running these rules please do the following:
 4. Test the new rulesets. Keep an eye on hits from the new rules to
    determine if the scoring is right for you.
 
-WWW: http://wiki.apache.org/spamassassin/CustomRulesets
+WWW: https://cwiki.apache.org/confluence/display/spamassassin/CustomRulesets
