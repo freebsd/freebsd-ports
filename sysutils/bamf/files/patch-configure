@@ -1,24 +1,11 @@
---- configure.orig	2018-11-07 22:39:51 UTC
+--- configure.orig	2022-02-17 18:25:55 UTC
 +++ configure
-@@ -14653,10 +14653,10 @@ fi
- 
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtester2xunit dependencies" >&5
- $as_echo_n "checking for gtester2xunit dependencies... " >&6; }
--if !($PYTHON -c "import libxslt, libxml2" 2> /dev/null); then
-+if !($PYTHON -c "import lxml" 2> /dev/null); then
-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
- $as_echo "no" >&6; }
--  as_fn_error $? "You need to install python-libxslt1 and python-libxml2" "$LINENO" 5;
-+  as_fn_error $? "You need to install python-lxml" "$LINENO" 5;
+@@ -15473,7 +15473,7 @@ yes)
+ warning_flags="-wall -Wno-error=deprecated-declarations"
+ ;;
+ maximum|error)
+-warning_flags="-Wall -Wno-error=deprecated-declarations -Wempty-body -Wformat-security -Winit-self -Warray-bounds -Wimplicit-function-declaration"
++warning_flags="-Wall -Wno-error=deprecated-declarations -Warray-bounds -Wimplicit-function-declaration"
+ if test "$enable_compile_warnings" = "error" ; then
+     warning_flags="$warning_flags -Werror"
  fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
- $as_echo "yes" >&6; }
-@@ -15374,7 +15374,7 @@ rm -f core conftest.err conftest.$ac_objext \
-   rm -f conf.gtktest
- 
- 
--CFLAGS="$CFLAGS -Wall -Werror -Wno-error=deprecated-declarations -Wempty-body -Wformat-security -Winit-self -Warray-bounds -Wimplicit-function-declaration -lm"
-+CFLAGS="$CFLAGS -Wall -Winit-self -Warray-bounds -Wimplicit-function-declaration"
- 
- 
- 
