@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/notices/LICENSE.txt
 USES=		zip
 USE_JAVA=	yes
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 JARFILES=	saxon9-unpack.jar \
