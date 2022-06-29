@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		valac:lang/vala \
 		itstool:textproc/itstool
-LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
-		libtotem-plparser.so:multimedia/totem-pl-parser \
+LIB_DEPENDS=	libtotem-plparser.so:multimedia/totem-pl-parser \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libsoup-2.4.so:devel/libsoup \
@@ -27,9 +26,8 @@ LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 		libtdb.so:databases/tdb
 
 USES=		desktop-file-utils gettext gnome gstreamer localbase:ldflags meson \
-		pathfix pkgconfig tar:xz xorg
-USE_GNOME=	cairo glib20 gtk30 introspection \
-		pygobject3 libxml2
+		pkgconfig tar:xz xorg
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 introspection libxml2
 USE_XORG=	ice x11 xorgproto
 USE_GSTREAMER=	flac lame jpeg cdparanoia vorbis
 MESON_ARGS=	-Dplugins_vala=enabled \
@@ -66,7 +64,9 @@ MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 NOTIFY_MESON_ENABLED=	libnotify
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 PYTHON_MESON_ENABLED=	plugins_python
-PYTHON_USES=		python:3.3+
+PYTHON_USES=		python
+PYTHON_USE=		gnome=pygobject3
 PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR}
+PYTHON_BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 .include <bsd.port.mk>
