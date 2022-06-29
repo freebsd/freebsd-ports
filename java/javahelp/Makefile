@@ -30,6 +30,7 @@ MAKE_ARGS=	-Djsp-jar=${TOMCAT_jsp} \
 		-Dservlet-jar=${TOMCAT_servlet} \
 		-Dfile.reference.servlet-api.jar=${TOMCAT_servlet} \
 		-Dtomcat-zip-present=true
+NO_ARCH=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/javahelp_nbproject
 SUB_FILES=	jhindexer \
