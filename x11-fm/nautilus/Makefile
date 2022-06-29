@@ -1,7 +1,7 @@
 # Created by: ade, archie
 
 PORTNAME=	nautilus
-PORTVERSION=	41.2
+PORTVERSION=	42.1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
