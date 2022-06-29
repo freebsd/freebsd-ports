@@ -24,6 +24,7 @@ DOS2UNIX_FILES=	build.xml
 ALL_TARGET=	dist
 MAKE_ARGS+=	-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
 		-Dcommons-logging.jar=${JAVALIBDIR}/commons-logging.jar
+NO_ARCH=	yes
 
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	${JAVAJARDIR}/${JARFILE}
