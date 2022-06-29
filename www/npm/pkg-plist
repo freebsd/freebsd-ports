@@ -87,6 +87,7 @@ lib/node_modules/npm/docs/content/using-npm/config.md
 lib/node_modules/npm/docs/content/using-npm/developers.md
 lib/node_modules/npm/docs/content/using-npm/logging.md
 lib/node_modules/npm/docs/content/using-npm/orgs.md
+lib/node_modules/npm/docs/content/using-npm/package-spec.md
 lib/node_modules/npm/docs/content/using-npm/registry.md
 lib/node_modules/npm/docs/content/using-npm/removal.md
 lib/node_modules/npm/docs/content/using-npm/scope.md
@@ -167,6 +168,7 @@ lib/node_modules/npm/docs/output/using-npm/config.html
 lib/node_modules/npm/docs/output/using-npm/developers.html
 lib/node_modules/npm/docs/output/using-npm/logging.html
 lib/node_modules/npm/docs/output/using-npm/orgs.html
+lib/node_modules/npm/docs/output/using-npm/package-spec.html
 lib/node_modules/npm/docs/output/using-npm/registry.html
 lib/node_modules/npm/docs/output/using-npm/removal.html
 lib/node_modules/npm/docs/output/using-npm/scope.html
@@ -275,6 +277,7 @@ lib/node_modules/npm/lib/utils/is-windows.js
 lib/node_modules/npm/lib/utils/log-file.js
 lib/node_modules/npm/lib/utils/log-shim.js
 lib/node_modules/npm/lib/utils/npm-usage.js
+lib/node_modules/npm/lib/utils/open-url-prompt.js
 lib/node_modules/npm/lib/utils/open-url.js
 lib/node_modules/npm/lib/utils/otplease.js
 lib/node_modules/npm/lib/utils/ping.js
@@ -331,7 +334,6 @@ lib/node_modules/npm/man/man1/npm-prefix.1.gz
 lib/node_modules/npm/man/man1/npm-profile.1.gz
 lib/node_modules/npm/man/man1/npm-prune.1.gz
 lib/node_modules/npm/man/man1/npm-publish.1.gz
-lib/node_modules/npm/man/man1/npm-query.1.gz
 lib/node_modules/npm/man/man1/npm-rebuild.1.gz
 lib/node_modules/npm/man/man1/npm-repo.1.gz
 lib/node_modules/npm/man/man1/npm-restart.1.gz
@@ -363,10 +365,10 @@ lib/node_modules/npm/man/man5/npmrc.5.gz
 lib/node_modules/npm/man/man5/package-json.5.gz
 lib/node_modules/npm/man/man5/package-lock-json.5.gz
 lib/node_modules/npm/man/man7/config.7.gz
-lib/node_modules/npm/man/man7/dependency-selectors.7.gz
 lib/node_modules/npm/man/man7/developers.7.gz
 lib/node_modules/npm/man/man7/logging.7.gz
 lib/node_modules/npm/man/man7/orgs.7.gz
+lib/node_modules/npm/man/man7/package-spec.7.gz
 lib/node_modules/npm/man/man7/registry.7.gz
 lib/node_modules/npm/man/man7/removal.7.gz
 lib/node_modules/npm/man/man7/scope.7.gz
@@ -561,6 +563,7 @@ lib/node_modules/npm/node_modules/@npmcli/promise-spawn/LICENSE
 lib/node_modules/npm/node_modules/@npmcli/promise-spawn/lib/index.js
 lib/node_modules/npm/node_modules/@npmcli/promise-spawn/package.json
 lib/node_modules/npm/node_modules/@npmcli/run-script/LICENSE
+lib/node_modules/npm/node_modules/@npmcli/run-script/lib/escape.js
 lib/node_modules/npm/node_modules/@npmcli/run-script/lib/is-server-package.js
 lib/node_modules/npm/node_modules/@npmcli/run-script/lib/is-windows.js
 lib/node_modules/npm/node_modules/@npmcli/run-script/lib/make-spawn-args.js
