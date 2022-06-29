@@ -15,6 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nemtrif
 GH_PROJECT=	utfcpp
 
+NO_ARCH=	yes
+
 PLIST_FILES=	include/utf8cpp/utf8.h \
 		include/utf8cpp/utf8/checked.h \
 		include/utf8cpp/utf8/core.h \
