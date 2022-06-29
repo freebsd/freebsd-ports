@@ -8,6 +8,10 @@ DIST_SUBDIR=	${PKGNAME}
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	VT100 art and animations
 
+BROKEN=		fails to fetch
+DEPRECATED=	Upstream disappeared
+EXPIRATION_DATE=2022-08-01
+
 LICENSE=	UNKNOWN
 LICENSE_NAME=	Unknown
 LICENSE_TEXT=	The license is unknown.
