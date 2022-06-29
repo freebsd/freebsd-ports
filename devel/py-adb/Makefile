@@ -17,8 +17,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	python-${PORTNAME}
 
-USES=		python:3.6+ pytest
+USES=		python:3.6+
+USE_PYTHON=	autoplist distutils pytest
+
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
