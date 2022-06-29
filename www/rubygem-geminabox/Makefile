@@ -1,7 +1,7 @@
 # Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
 
 PORTNAME=	geminabox
-PORTVERSION=	1.5.0
+PORTVERSION=	2.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
