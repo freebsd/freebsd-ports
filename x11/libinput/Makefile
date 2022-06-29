@@ -1,6 +1,5 @@
 PORTNAME=	libinput
-DISTVERSION=	1.19.1
-PORTREVISION=	1
+DISTVERSION=	1.19.4
 CATEGORIES=	x11
 MASTER_SITES=	https://freedesktop.org/software/${PORTNAME}/
 
