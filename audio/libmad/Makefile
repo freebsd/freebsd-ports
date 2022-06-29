@@ -1,13 +1,14 @@
 # Created by: Sergey Akifyev <asa@gascom.ru>
 
 PORTNAME=	libmad
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.2
 CATEGORIES=	audio
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake cpe pathfix
 
