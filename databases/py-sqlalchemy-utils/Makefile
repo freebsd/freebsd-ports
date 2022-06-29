@@ -2,6 +2,7 @@
 
 PORTNAME=	sqlalchemy-utils
 PORTVERSION=	0.38.2
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy13>=1.0:databases/py-sqlalchemy13@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.0:databases/py-sqlalchemy14@${PY_FLAVOR}
 
 USES=		python:3.4+
 USE_PYTHON=	autoplist concurrent distutils
