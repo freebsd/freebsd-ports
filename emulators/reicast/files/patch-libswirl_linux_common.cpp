@@ -1,6 +1,23 @@
---- libswirl/linux/common.cpp.orig	2020-08-21 20:26:50 UTC
+--- libswirl/linux/common.cpp.orig	2020-10-18 11:22:48 UTC
 +++ libswirl/linux/common.cpp
-@@ -22,6 +22,12 @@
+@@ -9,7 +9,7 @@
+ 
+ #include <pthread.h>
+ 
+-#if HOST_OS==OS_LINUX || HOST_OS == OS_DARWIN
++#if HOST_OS==OS_LINUX || HOST_OS == OS_DARWIN || HOST_OS == OS_FREEBSD
+ 
+ #if HOST_OS == OS_DARWIN
+ 	#define _XOPEN_SOURCE 1
+@@ -17,11 +17,20 @@
+ 	#include <TargetConditionals.h>
+     #include <dlfcn.h>
+     #include <util.h>
++#elif HOST_OS == OS_FREEBSD
++    #include <dlfcn.h>
++    #include <libutil.h>
+ #endif
+ #if FEAT_HAS_SERIAL_TTY
      #include <sys/stat.h>
      #if HOST_OS == OS_DARWIN
          #import <util.h>
@@ -13,7 +30,7 @@
      #else
          #include <pty.h>
      #endif
-@@ -33,7 +39,7 @@
+@@ -33,7 +42,7 @@
  #include <sys/param.h>
  #include <sys/mman.h>
  #include <sys/time.h>
@@ -22,7 +39,7 @@
    #include <sys/personality.h>
    #include <dlfcn.h>
  #endif
-@@ -294,7 +300,7 @@ void enable_runfast()
+@@ -294,7 +303,7 @@ void enable_runfast()
  }
  
  void linux_fix_personality() {
@@ -31,7 +48,7 @@
          printf("Personality: %08X\n", personality(0xFFFFFFFF));
          personality(~READ_IMPLIES_EXEC & personality(0xFFFFFFFF));
          printf("Updated personality: %08X\n", personality(0xFFFFFFFF));
-@@ -302,7 +308,7 @@ void linux_fix_personality() {
+@@ -302,7 +311,7 @@ void linux_fix_personality() {
  }
  
  void linux_rpi2_init() {

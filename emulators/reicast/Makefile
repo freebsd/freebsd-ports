@@ -2,6 +2,7 @@
 
 PORTNAME=	reicast
 PORTVERSION=	0.20201231
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	beyert@cs.ucr.edu
@@ -18,7 +19,10 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libpulse.so:audio/pulseaudio \
 		libudev.so:devel/libudev-devd
 
-USES=		cmake compiler gl xorg
+USES=	cmake compiler gl xorg
+
+.include <bsd.port.options.mk>
+
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DOPENGL_EGL_INCLUDE_DIR:PATH=${LOCALBASE}/include/EGL \
@@ -26,13 +30,17 @@ CMAKE_ARGS=	-DOPENGL_EGL_INCLUDE_DIR:PATH=${LOCALBASE}/include/EGL \
 		-DOPENGL_INCLUDE_DIR:PATH=${LOCALBASE}/include/GL \
 		-DOPENGL_opengl_LIBRARY:PATH=${LOCALBASE}/lib/libGL.so
 
+.if ${ARCH} == i386
+USE_BINUTILS=	yes
+CXXFLAGS+=	-DSIMPLELINK
+.endif
+
 USE_GITHUB=	yes
-GH_ACCOUNT=	reicast
-GH_PROJECT=	reicast-emulator
-GH_TAGNAME=	0bd6ea3
+GH_TUPLE=	reicast:reicast-emulator:0bd6ea3 \
+		yuikns:intrin:ae63327:intrin/libswirl/deps/intrin
 
 USE_XORG=	ice sm x11 xext
-USE_GL=		egl gbm gl
+USE_GL=	egl gbm gl
 
 PLIST_FILES=	bin/reicast
 

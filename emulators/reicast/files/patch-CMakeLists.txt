@@ -1,6 +1,90 @@
---- CMakeLists.txt.orig	2020-08-21 20:26:50 UTC
+--- CMakeLists.txt.orig	2020-10-18 11:22:48 UTC
 +++ CMakeLists.txt
-@@ -431,6 +431,8 @@ if(${HOST_OS} EQUAL ${OS_DARWIN})
+@@ -100,20 +100,29 @@ set(core_SRCS
+   ${d_core}/serialize.cpp
+ )
+ 
+-if(${BUILD_COMPILER} EQUAL ${COMPILER_GCC} OR (${BUILD_COMPILER} EQUAL ${COMPILER_CLANG} AND ${HOST_OS} EQUAL ${OS_DARWIN})) # TODO: Test with Clang on other platforms
++if(${BUILD_COMPILER} EQUAL ${COMPILER_GCC} OR (${BUILD_COMPILER} EQUAL ${COMPILER_CLANG} AND (${HOST_OS} EQUAL ${OS_DARWIN} OR ${HOST_OS} EQUAL ${OS_FREEBSD})))
+   list(APPEND core_SRCS ${archive_SRCS})
+ endif()
+ 
+ if(${FEAT_SHREC} EQUAL ${DYNAREC_JIT}) 
+ 
+   if(${HOST_CPU} EQUAL ${CPU_X86})
+-    list(APPEND core_SRCS 
+-      ${d_core}/jit/backend/x86/rec_x86_driver.cpp
+-      ${d_core}/jit/backend/x86/rec_x86_asm.cpp	# change for linux , rec_lin86_asm.S
+-	  ${d_core}/jit/backend/x86/rec_x86_ngen.h
+-
+-      ${d_core}/jit/emitter/x86/x86_emitter.cpp
+-     )
++    if (${HOST_OS} EQUAL ${OS_LINUX} OR (${HOST_OS} EQUAL ${OS_FREEBSD}))
++      list(APPEND core_SRCS 
++        ${d_core}/jit/backend/x86/rec_x86_driver.cpp
++        ${d_core}/jit/backend/x86/rec_lin86_asm.S
++        ${d_core}/jit/backend/x86/rec_x86_asm.cpp
++        ${d_core}/jit/backend/x86/rec_x86_ngen.h
++        ${d_core}/jit/emitter/x86/x86_emitter.cpp
++      )
++    else()
++      list(APPEND core_SRCS 
++        ${d_core}/jit/backend/x86/rec_x86_driver.cpp
++        ${d_core}/jit/backend/x86/rec_x86_asm.cpp
++        ${d_core}/jit/backend/x86/rec_x86_ngen.h
++        ${d_core}/jit/emitter/x86/x86_emitter.cpp
++      )
++    endif()
+   elseif(${HOST_CPU} EQUAL ${CPU_ARM})
+     list(APPEND core_SRCS 
+       ${d_core}/rec-ARM/ngen_arm.S
+@@ -139,6 +148,8 @@ add_definitions(/DFEAT_HAS_SOFTREND=1)
+ 
+ if(${HOST_OS} EQUAL ${OS_LINUX})
+   add_definitions(-DLUA_USE_LINUX)
++elseif(${HOST_OS} EQUAL ${OS_FREEBSD})
++  add_definitions(-DLUA_USE_FREEBSD)
+ endif()
+ 
+ ### deps.cmake #################################################################################
+@@ -149,6 +160,7 @@ set(gpl_deps ${reicast_core_path}/gpl/deps)
+ include_directories ("${d_deps}")
+ include_directories ("${gpl_deps}/picotcp/include")
+ include_directories ("${gpl_deps}/picotcp/modules")
++include_directories ("${d_deps}/intrin")
+ 
+ file(GLOB xbyak_H	${d_deps}/xbyak/*.h)		# include headers into cmake target/project view 
+ 
+@@ -185,8 +197,8 @@ set(deps_SRCS
+   ${d_deps}/coreio/coreio.cpp
+   ${xbyak_H}
+ )
+-  
+-if(${BUILD_COMPILER} EQUAL ${COMPILER_GCC} OR (${BUILD_COMPILER} EQUAL ${COMPILER_CLANG} AND ${HOST_OS} EQUAL ${OS_DARWIN})) # TODO: Test with Clang on other platforms
++
++if(${BUILD_COMPILER} EQUAL ${COMPILER_GCC} OR (${BUILD_COMPILER} EQUAL ${COMPILER_CLANG} AND (${HOST_OS} EQUAL ${OS_DARWIN} OR ${HOST_OS} EQUAL ${OS_FREEBSD})))
+   list(APPEND deps_SRCS
+     ${lzip_SRCS}
+     ${lzma_SRCS}
+@@ -228,7 +240,7 @@ if (${HOST_OS} EQUAL ${OS_WINDOWS})
+   list(APPEND osd_SRCS ${d_core}/oslib/windows/threading.cpp)
+   list(APPEND osd_SRCS ${d_aout}/audiobackend_directsound.cpp)
+   link_libraries(dsound.lib winmm.lib xinput.lib wsock32.lib opengl32.lib)
+-elseif (${HOST_OS} EQUAL ${OS_LINUX} OR ${HOST_OS} EQUAL ${OS_ANDROID})
++elseif (${HOST_OS} EQUAL ${OS_LINUX} OR ${HOST_OS} EQUAL ${OS_ANDROID} OR ${OS_FREEBSD})
+ 
+     list(APPEND osd_SRCS
+       ${d_core}/linux-dist/main.cpp
+@@ -294,7 +306,7 @@ endif()
+ 
+ target_compile_features(${TNAME}${binSuffix} PRIVATE cxx_std_14)
+ 
+-if(${HOST_OS} EQUAL ${OS_LINUX})
++if(${HOST_OS} EQUAL ${OS_LINUX} OR ${HOST_OS} EQUAL ${OS_FREEBSD})
+   # needed for opentty
+   target_link_libraries(${TNAME} -lutil)
+ 
+@@ -431,6 +443,8 @@ if(${HOST_OS} EQUAL ${OS_DARWIN})
  
  endif()
  
