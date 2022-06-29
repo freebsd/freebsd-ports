@@ -9,6 +9,6 @@ Once identified, the mail can then be optionally tagged as spam for later
 filtering using the user's own mail user-agent application.
 
 Additional drop-in rule sets are available at
-http://wiki.apache.org/spamassassin/CustomRulesets
+https://cwiki.apache.org/confluence/display/spamassassin/CustomRulesets
 
-WWW: http://spamassassin.apache.org/
+WWW: https://spamassassin.apache.org/
