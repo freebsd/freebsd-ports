@@ -1,5 +1,5 @@
 PORTNAME=	osc
-PORTVERSION=	0.179.0
+PORTVERSION=	0.180.0
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -42,7 +42,7 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS README NEWS TODO \
+	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS README.md NEWS TODO \
 		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
