@@ -67,7 +67,7 @@ do-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcantera_shared.so.2.6.0
 
 do-install-PYTHON-on:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cantera/_cantera.cpython-${PYTHON_VER:S/.//}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cantera/_cantera.cpython-${PYTHON_SUFFIX}.so
 
 post-patch-OCTAVE-on: # adjust Octave version in SConscript (python styled os.environ['OCTAVE_VERSION'] somehow doesn't work for this)
 	@${REINPLACE_CMD} -e "s|, 'bin', 'glnx.*')|, 'lib', 'octave', '${OCTAVE_VERSION}')|" ${WRKSRC}/src/matlab/SConscript
