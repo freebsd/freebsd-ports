@@ -1,37 +1,39 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 
 PORTNAME=	yelp
-DISTVERSION=	40.3
-PORTREVISION=	2
+DISTVERSION=	42.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Help browser for the GNOME 3 desktop
+COMMENT=	Help browser for the GNOME desktop
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	yelp-xsl>=0:textproc/yelp-xsl \
-		itstool:textproc/itstool
-LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
-		libgcrypt.so:security/libgcrypt \
+BUILD_DEPENDS=	itstool:textproc/itstool \
+		yelp-xsl>=0:textproc/yelp-xsl
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
+		libhandy-1.so:x11-toolkits/libhandy \
 		libharfbuzz.so:print/harfbuzz \
-		libsoup-2.4.so:devel/libsoup
+		libsoup-2.4.so:devel/libsoup \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk4
 RUN_DEPENDS=	yelp-xsl>=0:textproc/yelp-xsl
 
-PORTSCOUT=	limitw:1,even
-
-USES=		compiler:c11 desktop-file-utils gettext gmake gnome \
-		libtool pathfix pkgconfig sqlite tar:xz xorg
-USE_XORG=	x11 ice
+USES=		compiler:c11 desktop-file-utils gettext gmake gnome libtool \
+		pathfix pkgconfig sqlite tar:xz xorg
 USE_GNOME=	cairo gtk30 libxml2 libxslt
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 GLIB_SCHEMAS=	org.gnome.yelp.gschema.xml
+USE_LDCONFIG=	yes
+USE_XORG=	ice x11
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-webkit2gtk-4-0
 INSTALL_TARGET=	install-strip
+
+PORTSCOUT=	limitw:1,even
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LIBEXECDIR%%|${PREFIX}/libexec|g' \
