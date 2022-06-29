@@ -21,4 +21,6 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^3\.2\.
+
 .include <bsd.port.mk>
