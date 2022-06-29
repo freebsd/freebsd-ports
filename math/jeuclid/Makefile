@@ -12,6 +12,7 @@ COMMENT=	Java based MathML rendering solution
 USES=		zip
 USE_JAVA=	yes
 JAVA_RUN=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
