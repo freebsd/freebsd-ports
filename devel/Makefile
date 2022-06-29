@@ -573,6 +573,7 @@
     SUBDIR += electron13
     SUBDIR += electron17
     SUBDIR += electron18
+    SUBDIR += electron19
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat

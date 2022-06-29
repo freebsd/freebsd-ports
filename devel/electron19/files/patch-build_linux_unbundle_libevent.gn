@@ -1,0 +1,15 @@
+--- build/linux/unbundle/libevent.gn.orig	2022-05-25 04:00:43 UTC
++++ build/linux/unbundle/libevent.gn
+@@ -9,7 +9,12 @@ shim_headers("libevent_shim") {
+   headers = [ "event.h" ]
+ }
+ 
++config("system_libevent") {
++  defines = [ "USE_SYSTEM_LIBEVENT=1" ]
++}
++
+ source_set("libevent") {
+   deps = [ ":libevent_shim" ]
+   libs = [ "event" ]
++  public_configs = [ ":system_libevent" ]
+ }

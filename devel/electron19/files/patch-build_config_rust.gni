@@ -1,0 +1,11 @@
+--- build/config/rust.gni.orig	2022-05-19 05:17:34 UTC
++++ build/config/rust.gni
+@@ -116,7 +116,7 @@ if (enable_rust) {
+     rust_sysroot = "//third_party/rust-toolchain"
+     use_unverified_rust_toolchain = false
+   } else {
+-    if (host_os != "linux") {
++    if (host_os != "linux" && host_os != "openbsd" && host_os != "freebsd") {
+       assert(false,
+              "Attempt to use Android Rust toolchain on an unsupported platform")
+     }

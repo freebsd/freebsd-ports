@@ -1,0 +1,11 @@
+--- ui/strings/translations/app_locale_settings_th.xtb.orig	2022-05-25 04:01:58 UTC
++++ ui/strings/translations/app_locale_settings_th.xtb
+@@ -6,7 +6,7 @@
+   <translation id="IDS_WEB_FONT_FAMILY">Tahoma,sans-serif</translation>
+   <translation id="IDS_WEB_FONT_FAMILY_XP">Tahoma,sans-serif</translation>
+ </if>
+-<if expr="is_linux and not chromeos_ash or chromeos_lacros">
++<if expr="is_posix and not chromeos_ash or chromeos_lacros">
+   <translation id="IDS_WEB_FONT_FAMILY">Norasi,Waree,Garuda,Loma,sans-serif</translation>
+ </if>
+ <if expr="chromeos_ash">

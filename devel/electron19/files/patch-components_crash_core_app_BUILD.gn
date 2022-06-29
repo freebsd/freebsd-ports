@@ -1,0 +1,52 @@
+--- components/crash/core/app/BUILD.gn.orig	2022-05-19 03:45:23 UTC
++++ components/crash/core/app/BUILD.gn
+@@ -52,7 +52,7 @@ static_library("app") {
+     "crashpad.h",
+   ]
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "breakpad_linux.cc",
+       "breakpad_linux.h",
+@@ -61,6 +61,10 @@ static_library("app") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [ "crashpad.cc" ]
++  }
++
+   defines = [ "CRASH_IMPLEMENTATION" ]
+ 
+   public_deps = [ ":lib" ]
+@@ -88,7 +92,7 @@ static_library("app") {
+     libs = [ "log" ]
+   }
+ 
+-  if (is_android || is_linux || is_chromeos) {
++  if ((is_android || is_linux || is_chromeos) && !is_bsd) {
+     deps += [
+       "//base:base_static",
+       "//components/crash/core/common",
+@@ -96,7 +100,7 @@ static_library("app") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     deps += [ "//third_party/breakpad:client" ]
+   }
+ 
+@@ -216,11 +220,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
+   # define custom UserStreamDataSources.
+   executable("chrome_crashpad_handler") {
+     sources = [ "chrome_crashpad_handler.cc" ]
+-
+-    deps = [
+-      ":crashpad_handler_main",
+-      "//third_party/crashpad/crashpad/handler",
+-    ]
+ 
+     if (is_mac && (is_component_build || is_asan)) {
+       ldflags = [

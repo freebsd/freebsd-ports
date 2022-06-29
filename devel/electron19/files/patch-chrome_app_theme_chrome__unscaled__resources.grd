@@ -1,0 +1,32 @@
+--- chrome/app/theme/chrome_unscaled_resources.grd.orig	2022-05-25 04:00:46 UTC
++++ chrome/app/theme/chrome_unscaled_resources.grd
+@@ -15,12 +15,12 @@
+   <release seq="1">
+     <includes>
+       <if expr="_google_chrome">
+-        <if expr="not is_linux">
++        <if expr="not is_posix">
+           <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/product_logo_64.png" type="BINDATA" />
+           <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/product_logo_128.png" type="BINDATA" />
+           <include name="IDR_PRODUCT_LOGO_256" file="google_chrome/product_logo_256.png" type="BINDATA" />
+         </if>
+-        <if expr="is_linux">
++        <if expr="is_posix">
+           <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/linux/product_logo_64.png" type="BINDATA" />
+           <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/linux/product_logo_128.png" type="BINDATA" />
+           <include name="IDR_PRODUCT_LOGO_128_BETA" file="google_chrome/linux/product_logo_128_beta.png" type="BINDATA" />
+@@ -53,12 +53,12 @@
+         </if>
+       </if>
+       <if expr="not _google_chrome">
+-        <if expr="not is_linux">
++        <if expr="not is_posix">
+           <include name="IDR_PRODUCT_LOGO_64" file="chromium/product_logo_64.png" type="BINDATA" />
+           <include name="IDR_PRODUCT_LOGO_128" file="chromium/product_logo_128.png" type="BINDATA" />
+           <include name="IDR_PRODUCT_LOGO_256" file="chromium/product_logo_256.png" type="BINDATA" />
+         </if>
+-        <if expr="is_linux">
++        <if expr="is_posix">
+           <include name="IDR_PRODUCT_LOGO_64" file="chromium/linux/product_logo_64.png" type="BINDATA" />
+           <include name="IDR_PRODUCT_LOGO_128" file="chromium/linux/product_logo_128.png" type="BINDATA" />
+           <include name="IDR_PRODUCT_LOGO_256" file="chromium/linux/product_logo_256.png" type="BINDATA" />
