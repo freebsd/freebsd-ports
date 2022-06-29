@@ -121,3 +121,4 @@ libdata/pkgconfig/v8_libplatform.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_wasm_code_fuzzer
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_wasm_compile_fuzzer
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_wasm_fuzzer
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v8_simple_wasm_streaming_fuzzer
