@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	IO-Compress
-PORTVERSION=	2.106
+PORTVERSION=	2.201
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Compress-Raw-Bzip2>=${PORTVERSION:R}.103:archivers/p5-Compress-Raw-Bzip2 \
-		p5-Compress-Raw-Zlib>=${PORTVERSION:R}.103:archivers/p5-Compress-Raw-Zlib
+RUN_DEPENDS=	p5-Compress-Raw-Bzip2>=${PORTVERSION}:archivers/p5-Compress-Raw-Bzip2 \
+		p5-Compress-Raw-Zlib>=${PORTVERSION}:archivers/p5-Compress-Raw-Zlib
 TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
 
 USES=		perl5
