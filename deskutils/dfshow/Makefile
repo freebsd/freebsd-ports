@@ -18,6 +18,8 @@ GH_ACCOUNT=	roberthawdon
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	ja-mh mmh nmh nmh-devel # man/man1/show.1.gz
+
 post-patch:
 	@${REINPLACE_CMD} 's/-lncursesw/${NCURSESLIBS}/g' ${WRKSRC}/Makefile.am
 

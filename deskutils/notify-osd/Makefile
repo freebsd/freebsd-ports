@@ -28,7 +28,7 @@ USE_XORG=	pixman x11
 GNU_CONFIGURE=	yes
 GLIB_SCHEMAS=	com.canonical.NotifyOSD.gschema.xml
 
-CONFLICTS=	xfce4-notification-daemon
+CONFLICTS_INSTALL=	notification-daemon # share/dbus-1/services/org.freedesktop.Notifications.service
 
 post-patch:
 	@${REINPLACE_CMD} '/SUBDIRS =/s/tests//' ${WRKSRC}/Makefile.in

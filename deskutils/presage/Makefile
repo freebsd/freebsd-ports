@@ -34,4 +34,6 @@ CONFIGURE_ARGS=	--disable-documentation \
 		--disable-static
 INSTALL_TARGET=	install-strip
 
+CONFLICTS_INSTALL=	soothsayer # man/man1/text2ngram.1.gz
+
 .include <bsd.port.mk>

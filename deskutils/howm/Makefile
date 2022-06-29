@@ -19,6 +19,8 @@ USES=		emacs
 
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	howm howm-emacs_* # share/doc/howm/README-j.html
+
 PORTDOCS=	*.html *.png
 PORTEXAMPLES=	en/0000-00-00-000000.txt ja/0000-00-00-000000.txt
 

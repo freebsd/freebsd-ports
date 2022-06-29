@@ -20,6 +20,8 @@ USE_GNOME=	cairo gnomeprefix gtk30
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
+CONFLICTS_INSTALL=	notify-osd # share/dbus-1/services/org.freedesktop.Notifications.service
+
 PORTSCOUT=	limitw:1,even
 
 SUB_FILES=	org.freedesktop.Notifications.service
