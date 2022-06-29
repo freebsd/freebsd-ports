@@ -1,6 +1,6 @@
---- setup.py.orig	2022-03-31 21:51:37 UTC
+--- setup.py.orig	2022-06-24 21:27:10 UTC
 +++ setup.py
-@@ -518,12 +518,6 @@ def setup_requires():
+@@ -534,12 +534,6 @@ def setup_requires():
          req = parse_requirements("requirements_dev.txt")
          req = list(filter(lambda r: not r.startswith("-r"), req))
  
