@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	afdko
-PORTVERSION=	3.8.3
+PORTVERSION=	3.9.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/adobe-type-tools/afdko/releases/download/${PORTVERSION}/
 
@@ -10,7 +10,8 @@ COMMENT=	Adobe Font Development Kit for OpenType (AFDKO)
 
 LICENSE=	APACHE20
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang gnome
+USE_GNOME=	libxml2
 
 CMAKE_OFF=	SKBUILD
 
