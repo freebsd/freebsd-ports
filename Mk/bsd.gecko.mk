@@ -79,7 +79,7 @@ BUNDLE_LIBS=	yes
 
 BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 				rust-cbindgen>=0.23.0:devel/rust-cbindgen \
-				${RUST_DEFAULT}>=1.61.0:lang/${RUST_DEFAULT} \
+				${RUST_DEFAULT}>=1.62.0:lang/${RUST_DEFAULT} \
 				node:www/node
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 RUN_DEPENDS+=	${LOCALBASE}/lib/libpci.so:devel/libpci

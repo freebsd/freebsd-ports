@@ -1,7 +1,7 @@
 # Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
 
 PORTNAME=	rust
-PORTVERSION?=	1.61.0
+PORTVERSION?=	1.62.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -75,6 +75,7 @@ RUST_BOOTSTRAP_VERSION?=	1.60.0
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
+RUST_BOOTSTRAP_VERSION=		1.61.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
