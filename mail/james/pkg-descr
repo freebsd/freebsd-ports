@@ -14,4 +14,4 @@ hosts the Mailet API, and James provides an implementation of this mail appli
 James is based upon the Apache Avalon application framework, formerly a
 product of the Apache Avalon project.
 
-WWW: http://james.apache.org/
+WWW: https://james.apache.org/
