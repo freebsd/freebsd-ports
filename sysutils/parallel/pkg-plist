@@ -29,6 +29,7 @@ man/man7/parallel_alternatives.7.gz
 man/man7/parallel_book.7.gz
 man/man7/parallel_design.7.gz
 man/man7/parallel_tutorial.7.gz
+share/bash-completion/completions/parallel
 %%PORTDOCS%%%%DOCSDIR%%/env_parallel.html
 %%PORTDOCS%%%%DOCSDIR%%/env_parallel.pdf
 %%PORTDOCS%%%%DOCSDIR%%/env_parallel.rst
@@ -79,3 +80,4 @@ man/man7/parallel_tutorial.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/sql.pdf
 %%PORTDOCS%%%%DOCSDIR%%/sql.rst
 %%PORTDOCS%%%%DOCSDIR%%/sql.texi
+share/zsh/site-functions/_parallel

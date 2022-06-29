@@ -1,7 +1,7 @@
 # Created by: Chris Howey <howeyc@gmail.com>
 
 PORTNAME=	parallel
-PORTVERSION=	20220522
+PORTVERSION=	20220622
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
