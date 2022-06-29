@@ -28,6 +28,9 @@ RUN_DEPENDS=	rubygem-bundler>=1.15:sysutils/rubygem-bundler \
 		rubygem-tty-spinner>=0.5:devel/rubygem-tty-spinner \
 		rubygem-tty-which>=0.3:devel/rubygem-tty-which
 
+BROKEN_RUBY30=	yes
+BROKEN_RUBY31=	yes
+
 USES=		gem
 USE_RUBY=	yes
 

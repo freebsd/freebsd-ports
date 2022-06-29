@@ -1,4 +1,4 @@
---- lib/pdk/cli/exec/command.rb.orig	2022-02-13 01:06:51 UTC
+--- lib/pdk/cli/exec/command.rb.orig	2022-06-29 04:55:12 UTC
 +++ lib/pdk/cli/exec/command.rb
 @@ -187,7 +187,7 @@ module PDK
  
