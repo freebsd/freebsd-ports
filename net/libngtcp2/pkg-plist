@@ -2,6 +2,6 @@ include/ngtcp2/ngtcp2.h
 include/ngtcp2/version.h
 lib/libngtcp2.a
 lib/libngtcp2.so
-lib/libngtcp2.so.3
-lib/libngtcp2.so.3.1.0
+lib/libngtcp2.so.5
+lib/libngtcp2.so.5.0.0
 libdata/pkgconfig/libngtcp2.pc
