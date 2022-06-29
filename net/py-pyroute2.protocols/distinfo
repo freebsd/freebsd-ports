@@ -1,3 +1,3 @@
-TIMESTAMP = 1655208316
-SHA256 (pyroute2.protocols-0.6.12.tar.gz) = 8fcdd43654158f12322a13aa0ecc7aca1bcc6447c0879e204639e269c0a94b16
-SIZE (pyroute2.protocols-0.6.12.tar.gz) = 27751
+TIMESTAMP = 1656092964
+SHA256 (pyroute2.protocols-0.6.13.tar.gz) = 6dbef2d03ec87f63001da6ee6bd1338042f621cfbd04755f61a328c430b002d6
+SIZE (pyroute2.protocols-0.6.13.tar.gz) = 29371
