@@ -1,7 +1,7 @@
 # Created by: Dave Grochowski
 
 PORTNAME=	xorg-cf-files
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
