@@ -13,6 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
-CONFLICTS=	avenger schilyutils # bin/match man/man1/match.1.gz
+CONFLICTS_INSTALL=	avenger # man/man1/match.1.gz
 
 .include <bsd.port.mk>

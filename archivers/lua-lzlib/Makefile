@@ -17,7 +17,7 @@ CMAKE_ARGS=	-DINSTALL_LMOD="${LUA_MODSHAREDIR}" \
 		-DINSTALL_DOC="${DOCSDIR}" \
 		-DINSTALL_TEST="${EXAMPLESDIR}"
 
-CONFLICTS_INSTALL=	${LUA_PKGNAMEPREFIX}zlib lua[0-9][0-9]-lzlib # lib/lua/5.1/zlib.so share/doc/lzlib/README
+CONFLICTS_INSTALL=	lua[0-9][0-9]-lzlib lua[0-9][0-9]-zlib # lib/lua/5.1/zlib.so share/doc/lzlib/README
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

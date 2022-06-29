@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 USES=		iconv perl5 shebangfix
 SHEBANG_FILES=	jclient-perl/jclient.pl
 
-CONFLICTS_INSTALL=	generate julius-caesariii php*-pear-Text_Highlighter # bin/generate bin/julius
+CONFLICTS_INSTALL=	generate # bin/generate bin/julius
 
 CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
 CPPFLAGS+=	-I${LOCALBASE}/include
