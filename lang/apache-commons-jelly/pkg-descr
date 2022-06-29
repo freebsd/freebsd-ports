@@ -12,4 +12,4 @@ dynamic web site generation. A single Jelly tag can produce, consume, filter or
 transform XML events. This leads to a powerful XML pipeline engine similar in
 some ways to Cocoon.
 
-WWW: http://commons.apache.org/proper/commons-jelly/index.html
+WWW: https://commons.apache.org/proper/commons-jelly/index.html
