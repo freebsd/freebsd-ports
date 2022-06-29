@@ -1,6 +1,6 @@
 PORTNAME=	bitwarden
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18.1
+DISTVERSION=	1.22.1
 CATEGORIES=	security linux
 MASTER_SITES=	https://github.com/bitwarden/cli/releases/download/${DISTVERSIONFULL}/
 PKGNAMEPREFIX=	linux-
