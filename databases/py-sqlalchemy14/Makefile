@@ -1,5 +1,5 @@
 PORTNAME=	sqlalchemy
-PORTVERSION=	1.4.38
+PORTVERSION=	1.4.39
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 USES=		cpe python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlalchemy[0-9][0-9] # lib/python3.8/site-packages/sqlalchemy/__init__.py
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}sqlalchemy[0-9][0-9] # lib/python3.9/site-packages/sqlalchemy/__init__.py
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_MULTI=	BACKEND
