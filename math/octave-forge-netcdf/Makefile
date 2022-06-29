@@ -17,6 +17,7 @@ OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 
 LIB_DEPENDS+=	libnetcdf.so:science/netcdf
 
