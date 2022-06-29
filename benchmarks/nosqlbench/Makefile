@@ -17,7 +17,7 @@ LIB_DEPENDS=	libleveldb.so:databases/leveldb
 DATE=		20151214
 USES=		cmake:insource tar:bzip2
 
-CONFLICTS_INSTALL=	nanoblogger tarantool-c # bin/nb include/tarantool/tarantool.h
+CONFLICTS_INSTALL=	tarantool-c # bin/nb include/tarantool/tarantool.h
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 -march=native||' ${WRKSRC}/CMakeLists.txt \
