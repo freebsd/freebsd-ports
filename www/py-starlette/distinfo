@@ -1,3 +1,3 @@
-TIMESTAMP = 1655208336
-SHA256 (starlette-0.20.3.tar.gz) = 38ef09c1c9a8ea7b7927d2c42d515efbbdbb6ea60dbe88b29abb320824fe16c1
-SIZE (starlette-0.20.3.tar.gz) = 51675
+TIMESTAMP = 1656522324
+SHA256 (starlette-0.20.4.tar.gz) = 42fcf3122f998fefce3e2c5ad7e5edbf0f02cf685d646a83a08d404726af5084
+SIZE (starlette-0.20.4.tar.gz) = 51897
