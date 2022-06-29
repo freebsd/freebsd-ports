@@ -1,7 +1,7 @@
 # Created by: Alex Kapranoff <kappa@FreeBSD.org.ua>
 
 PORTNAME=	Net-Whois-Raw
-PORTVERSION=	2.99034
+PORTVERSION=	2.99036
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
