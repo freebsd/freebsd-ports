@@ -1,7 +1,7 @@
 PORTNAME=	autoscan
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 
 MAINTAINER=	michiel@vanbaak.eu
@@ -9,6 +9,11 @@ COMMENT=	Scan Plex library on webhook triggers
 
 LICENSE=	MIT
 LICENSE_FILE=   ${WRKSRC}/LICENSE
+
+# See https://gitlab.com/cznic/libc/-/issues/15
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	Some dependencies only build on amd64 and i386
+
 
 USES=		go:modules
 USE_RC_SUBR=	autoscan
