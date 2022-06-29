@@ -1,7 +1,6 @@
-%%SITE_ARCH%%/auto/XML/Parser/Expat/Expat.so
+%%SITE_ARCH%%/XML/Parser.pm
 %%SITE_ARCH%%/XML/Parser/Encodings/Japanese_Encodings.msg
 %%SITE_ARCH%%/XML/Parser/Encodings/README
-%%SJIS%%%%SITE_ARCH%%/XML/Parser/Encodings/shift_jis.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/big5.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/euc-kr.enc
 %%EUCJP%%%%SITE_ARCH%%/XML/Parser/Encodings/euc-jp.enc
@@ -21,6 +20,7 @@
 %%SITE_ARCH%%/XML/Parser/Encodings/iso-8859-8.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/iso-8859-9.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/koi8-r.enc
+%%SJIS%%%%SITE_ARCH%%/XML/Parser/Encodings/shift_jis.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/windows-1250.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/windows-1251.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/windows-1252.enc
@@ -31,14 +31,14 @@
 %%SITE_ARCH%%/XML/Parser/Encodings/x-sjis-jdk117.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/x-sjis-jisx0221.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/x-sjis-unicode.enc
+%%SITE_ARCH%%/XML/Parser/Expat.pm
+%%SITE_ARCH%%/XML/Parser/LWPExternEnt.pl
 %%SITE_ARCH%%/XML/Parser/Style/Debug.pm
 %%SITE_ARCH%%/XML/Parser/Style/Objects.pm
 %%SITE_ARCH%%/XML/Parser/Style/Stream.pm
 %%SITE_ARCH%%/XML/Parser/Style/Subs.pm
 %%SITE_ARCH%%/XML/Parser/Style/Tree.pm
-%%SITE_ARCH%%/XML/Parser.pm
-%%SITE_ARCH%%/XML/Parser/Expat.pm
-%%SITE_ARCH%%/XML/Parser/LWPExternEnt.pl
+%%SITE_ARCH%%/auto/XML/Parser/Expat/Expat.so
 %%PERL5_MAN3%%/XML::Parser.3.gz
 %%PERL5_MAN3%%/XML::Parser::Expat.3.gz
 %%PERL5_MAN3%%/XML::Parser::Style::Debug.3.gz
