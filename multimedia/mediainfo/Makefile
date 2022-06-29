@@ -1,7 +1,7 @@
 # Created by: freebsd-ports@evilcode.net
 
 PORTNAME=	mediainfo
-PORTVERSION=	22.03
+PORTVERSION=	22.06
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
