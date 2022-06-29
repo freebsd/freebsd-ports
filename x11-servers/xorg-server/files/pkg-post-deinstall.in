@@ -1,0 +1,1 @@
+rm -f ${PKG_ROOTDIR}${PKG_PREFIX}/lib/xorg/modules/extensions/libglx.so

@@ -1,5 +1,5 @@
---- hw/xfree86/os-support/bsd/ppc_video.c.orig	2016-07-15 16:18:11 UTC
-+++ hw/xfree86/os-support/bsd/ppc_video.c
+--- hw/xfree86/os-support/bsd/ppc_video.c.orig	2022-01-02 23:41:56.000000000 +0100
++++ hw/xfree86/os-support/bsd/ppc_video.c	2022-06-29 11:57:25.691481000 +0200
 @@ -79,7 +79,11 @@ xf86DisableIO()
  {
  

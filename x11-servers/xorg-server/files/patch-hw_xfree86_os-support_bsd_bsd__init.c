@@ -1,6 +1,6 @@
---- hw/xfree86/os-support/bsd/bsd_init.c.orig	2017-03-15 18:05:25 UTC
-+++ hw/xfree86/os-support/bsd/bsd_init.c
-@@ -48,6 +48,8 @@ static int devConsoleFd = -1;
+--- hw/xfree86/os-support/bsd/bsd_init.c.orig	2022-01-02 23:41:56.000000000 +0100
++++ hw/xfree86/os-support/bsd/bsd_init.c	2022-06-29 11:57:25.596851000 +0200
+@@ -48,6 +48,8 @@ static int initialVT = -1;
  #if defined (SYSCONS_SUPPORT) || defined (PCVT_SUPPORT)
  static int VTnum = -1;
  static int initialVT = -1;

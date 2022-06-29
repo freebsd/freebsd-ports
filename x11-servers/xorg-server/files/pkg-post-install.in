@@ -1,0 +1,6 @@
+#!/bin/sh
+
+PREFIX=${PKG_PREFIX-/usr/local}
+
+install -l rs ${PKG_ROOTDIR}${PREFIX}/lib/xorg/modules/extensions/.xorg/libglx.so \
+	${PKG_ROOTDIR}${PREFIX}/lib/xorg/modules/extensions/libglx.so

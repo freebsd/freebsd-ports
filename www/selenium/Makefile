@@ -1,5 +1,6 @@
 PORTNAME=	selenium
 PORTVERSION=	4.1.3	
+PORTREVISION=	1
 CATEGORIES=	www devel java
 MASTER_SITES=	https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.1.0/
 DISTNAME=	selenium-server-${PORTVERSION}

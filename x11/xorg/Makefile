@@ -25,9 +25,8 @@ RUN_DEPENDS+=	xorg-apps>0:x11/xorg-apps \
 		xorg-drivers>0:x11-drivers/xorg-drivers
 
 .if defined(XORG_COMPLETE)
-RUN_DEPENDS+=	Xnest:x11-servers/xorg-nestserver \
-		Xdmx:x11-servers/xorg-dmx \
-		Xvfb:x11-servers/xorg-vfbserver
+RUN_DEPENDS+=	Xnest:x11-servers/xorg-server@xnest \
+		Xvfb:x11-servers/xorg-server@xvfb
 .endif
 
 .include <bsd.port.mk>

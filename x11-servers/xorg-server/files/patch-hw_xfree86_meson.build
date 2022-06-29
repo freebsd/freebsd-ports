@@ -1,0 +1,11 @@
+--- hw/xfree86/meson.build.orig	2022-06-29 14:37:28.042085000 +0000
++++ hw/xfree86/meson.build	2022-06-29 14:37:36.259147000 +0000
+@@ -152,7 +152,7 @@ if get_option('suid_wrapper')
+         c_args: xorg_c_args,
+         install: true,
+         install_dir: get_option('libexecdir'),
+-        install_mode: ['r-sr-xr-x', 0, 0],
++        #    install_mode: ['r-sr-xr-x', 0, 0],
+     )
+ 
+     # meson gets confused when there are two targets of the same name
