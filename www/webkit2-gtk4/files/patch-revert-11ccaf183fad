@@ -1,0 +1,193 @@
+Regressed by: https://github.com/WebKit/WebKit/commit/11ccaf183fad
+
+GStreamer.cpp.o -c /wrkdirs/usr/ports/www/webkit2-gtk3/work/webkitgtk-2.34.0/Source/WebCore/p
+latform/graphics/gstreamer/MediaSampleGStreamer.cpp
+/wrkdirs/usr/ports/www/webkit2-gtk3/work/webkitgtk-2.34.0/Source/WebCore/platform/graphics/gs
+treamer/MediaSampleGStreamer.cpp:220:12: error: call to implicitly-deleted copy constructor o
+f 'WebCore::PlatformSample'
+    return sample;
+           ^~~~~~
+/wrkdirs/usr/ports/www/webkit2-gtk3/work/webkitgtk-2.34.0/Source/WebCore/platform/MediaSample
+.h:57:7: note: copy constructor of 'PlatformSample' is implicitly deleted because field 'samp
+le' has a deleted copy constructor
+    } sample;
+      ^
+/wrkdirs/usr/ports/www/webkit2-gtk3/work/webkitgtk-2.34.0/Source/WebCore/platform/MediaSample
+.h:56:66: note: copy constructor of '' is implicitly deleted because variant field 'byteRange
+Sample' has a non-trivial copy constructor
+        std::pair<MTPluginByteSourceRef, CMFormatDescriptionRef> byteRangeSample;
+                                                                 ^
+1 error generated.
+
+--- Source/WTF/wtf/PlatformHave.h.orig	2021-10-21 08:52:08 UTC
++++ Source/WTF/wtf/PlatformHave.h
+@@ -909,6 +909,12 @@
+ #endif
+ #endif
+ 
++#if PLATFORM(MAC) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 110300
++#if !defined(HAVE_MT_PLUGIN_SAMPLE_CURSOR_PLAYABLE_HORIZON)
++#define HAVE_MT_PLUGIN_SAMPLE_CURSOR_PLAYABLE_HORIZON 1
++#endif
++#endif
++
+ #if (PLATFORM(MAC) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 110200) \
+     || (PLATFORM(IOS) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 140400)
+ #define HAVE_AVCONTENTKEYREQUEST_PENDING_PROTECTION_STATUS 1
+--- Source/WebCore/page/RuntimeEnabledFeatures.h.orig	2021-10-21 08:52:09 UTC
++++ Source/WebCore/page/RuntimeEnabledFeatures.h
+@@ -243,6 +243,11 @@ class RuntimeEnabledFeatures { (public)
+     void setDisableMediaExperiencePIDInheritance(bool isDisabled) { m_disableMediaExperiencePIDInheritance = isDisabled; }
+     bool disableMediaExperiencePIDInheritance() const { return m_disableMediaExperiencePIDInheritance; }
+ #endif
++    
++#if HAVE(MT_PLUGIN_FORMAT_READER)
++    void setWebMFormatReaderEnabled(bool isEnabled) { m_webMFormatReaderEnabled = isEnabled; }
++    bool webMFormatReaderEnabled() const { return m_webMFormatReaderEnabled; }
++#endif
+ 
+ #if ENABLE(VORBIS)
+     WEBCORE_EXPORT void setVorbisDecoderEnabled(bool isEnabled);
+@@ -372,6 +377,10 @@ class RuntimeEnabledFeatures { (public)
+ #endif
+ 
+ #if ENABLE(WEBM_FORMAT_READER)
++    bool m_webMFormatReaderEnabled { false };
++#endif
++
++#if HAVE(MT_PLUGIN_FORMAT_READER)
+     bool m_webMFormatReaderEnabled { false };
+ #endif
+ 
+--- Source/WebCore/platform/MediaSample.h.orig	2021-10-21 08:52:09 UTC
++++ Source/WebCore/platform/MediaSample.h
+@@ -34,8 +34,6 @@ typedef struct _GstSample GstSample;
+ 
+ typedef struct opaqueCMSampleBuffer *CMSampleBufferRef;
+ typedef struct _GstSample GstSample;
+-typedef struct OpaqueMTPluginByteSource *MTPluginByteSourceRef;
+-typedef const struct opaqueCMFormatDescription *CMFormatDescriptionRef;
+ 
+ namespace WebCore {
+ 
+@@ -47,13 +45,11 @@ struct PlatformSample {
+         MockSampleBoxType,
+         CMSampleBufferType,
+         GStreamerSampleType,
+-        ByteRangeSampleType,
+     } type;
+     union {
+         MockSampleBox* mockSampleBox;
+         CMSampleBufferRef cmSampleBuffer;
+         GstSample* gstSample;
+-        std::pair<MTPluginByteSourceRef, CMFormatDescriptionRef> byteRangeSample;
+     } sample;
+ };
+ 
+@@ -90,12 +86,6 @@ class MediaSample : public ThreadSafeRefCounted<MediaS
+     };
+     virtual SampleFlags flags() const = 0;
+     virtual PlatformSample platformSample() = 0;
+-
+-    struct ByteRange {
+-        size_t byteOffset { 0 };
+-        size_t byteLength { 0 };
+-    };
+-    virtual std::optional<ByteRange> byteRange() const = 0;
+ 
+     enum class VideoRotation {
+         None = 0,
+--- Source/WebCore/platform/graphics/gstreamer/MediaSampleGStreamer.h.orig	2022-01-20 15:30:53 UTC
++++ Source/WebCore/platform/graphics/gstreamer/MediaSampleGStreamer.h
+@@ -57,7 +57,6 @@ class MediaSampleGStreamer : public MediaSample { (pub
+     Ref<MediaSample> createNonDisplayingCopy() const override;
+     SampleFlags flags() const override { return m_flags; }
+     PlatformSample platformSample() override;
+-    std::optional<ByteRange> byteRange() const override { return std::nullopt; }
+     void dump(PrintStream&) const override;
+     RefPtr<JSC::Uint8ClampedArray> getRGBAImageData() const final;
+ 
+--- Source/WebCore/platform/mock/mediasource/MockSourceBufferPrivate.cpp.orig	2021-10-21 08:52:09 UTC
++++ Source/WebCore/platform/mock/mediasource/MockSourceBufferPrivate.cpp
+@@ -62,7 +62,6 @@ class MockMediaSample final : public MediaSample { (pr
+     size_t sizeInBytes() const override { return sizeof(m_box); }
+     SampleFlags flags() const override;
+     PlatformSample platformSample() override;
+-    std::optional<ByteRange> byteRange() const override { return std::nullopt; }
+     FloatSize presentationSize() const override { return FloatSize(); }
+     void dump(PrintStream&) const override;
+     void offsetTimestampsBy(const MediaTime& offset) override { m_box.offsetTimestampsBy(offset); }
+--- Source/WebKit/MediaFormatReaderPlugIn/MediaFormatReaderPlugIn.cpp.orig	2021-05-17 13:22:42 UTC
++++ Source/WebKit/MediaFormatReaderPlugIn/MediaFormatReaderPlugIn.cpp
+@@ -23,14 +23,15 @@
+  * THE POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
+-#include <WebKit/WKMediaFormatReader.h>
++#include "config.h"
+ 
+-extern "C" WK_EXPORT OSStatus CreateMediaFormatReaderInstance(MTPluginByteSourceRef, CFAllocatorRef, CFDictionaryRef, MTPluginFormatReaderRef*);
++#if HAVE(MT_PLUGIN_FORMAT_READER)
+ 
+-OSStatus CreateMediaFormatReaderInstance(MTPluginByteSourceRef byteSource, CFAllocatorRef allocator, CFDictionaryRef, MTPluginFormatReaderRef* formatReader)
++OSStatus CreateMediaFormatReaderInstance(MTPluginByteSourceRef, CFAllocatorRef, CFDictionary
++Ref, MTPluginFormatReaderRef* formatReader)
+ {
+-    OSStatus status = WKMediaFormatReaderCreate(allocator, formatReader);
+-    if (status != noErr)
+-        return status;
+-    return WKMediaFormatReaderStartOnMainThread(*formatReader, byteSource);
++	*formatReader = nullptr;
++	return kMTPluginFormatReaderError_InternalFailure;
+ }
++
++#endif // HAVE(MT_PLUGIN_FORMAT_READER)
+--- Source/WebKit/Shared/WebPreferencesDefaultValues.cpp.orig	2021-10-21 08:52:09 UTC
++++ Source/WebKit/Shared/WebPreferencesDefaultValues.cpp
+@@ -289,6 +289,19 @@ bool defaultWebMFormatReaderEnabled()
+ 
+ #endif // ENABLE(WEBM_FORMAT_READER)
+ 
++#if ENABLE(MEDIA_SOURCE) && HAVE(MT_PLUGIN_FORMAT_READER)
++
++bool defaultWebMFormatReaderEnabled()
++{
++#if HAVE(SYSTEM_FEATURE_FLAGS)
++    return isFeatureFlagEnabled("webm_format_reader");
++#endif
++
++    return false;
++}
++
++#endif
++
+ #if ENABLE(VP9)
+ 
+ bool defaultVP8DecoderEnabled()
+--- Source/WebKit/Shared/WebPreferencesDefaultValues.h.orig	2021-10-21 08:52:09 UTC
++++ Source/WebKit/Shared/WebPreferencesDefaultValues.h
+@@ -95,6 +95,10 @@ bool defaultWebMFormatReaderEnabled();
+ bool defaultWebMFormatReaderEnabled();
+ #endif
+ 
++#if ENABLE(MEDIA_SOURCE) && HAVE(MT_PLUGIN_FORMAT_READER)
++bool defaultWebMFormatReaderEnabled();
++#endif
++
+ #if ENABLE(VP9)
+ bool defaultVP8DecoderEnabled();
+ bool defaultVP9DecoderEnabled();
+--- Source/WebKit/SourcesCocoa.txt.orig	2021-10-21 08:52:09 UTC
++++ Source/WebKit/SourcesCocoa.txt
+@@ -229,6 +229,11 @@ Shared/mac/MediaFormatReader/MediaTrackReader.cpp
+ Shared/mac/MediaFormatReader/MediaSampleCursor.cpp
+ Shared/mac/MediaFormatReader/MediaTrackReader.cpp
+ 
++Shared/mac/MediaFormatReader/CoreMediaWrapped.cpp
++Shared/mac/MediaFormatReader/FormatReader.cpp
++Shared/mac/MediaFormatReader/SampleCursor.cpp
++Shared/mac/MediaFormatReader/TrackReader.cpp
++
+ Shared/Plugins/mac/PluginSandboxProfile.mm
+ 
+ Shared/Plugins/Netscape/mac/NetscapePluginModuleMac.mm

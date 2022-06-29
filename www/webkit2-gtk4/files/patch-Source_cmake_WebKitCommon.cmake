@@ -1,0 +1,17 @@
+--- Source/cmake/WebKitCommon.cmake.orig	2021-09-17 09:07:45 UTC
++++ Source/cmake/WebKitCommon.cmake
+@@ -106,11 +106,11 @@ if (NOT HAS_RUN_WEBKIT_COMMON)
+         endif ()
+     elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "(i[3-6]86|x86)")
+         set(WTF_CPU_X86 1)
+-    elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "ppc")
++    elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "(ppc|powerpc)")
+         set(WTF_CPU_PPC 1)
+-    elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "ppc64")
++    elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "(ppc64|powerpc64)")
+         set(WTF_CPU_PPC64 1)
+-    elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "ppc64le")
++    elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "(ppc64le|powerpc64le)")
+         set(WTF_CPU_PPC64LE 1)
+     elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "^riscv64")
+         set(WTF_CPU_RISCV64 1)
