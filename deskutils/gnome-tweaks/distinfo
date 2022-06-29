@@ -1,5 +1,3 @@
-TIMESTAMP = 1629147494
-SHA256 (gnome-tweaks-40.0.tar.xz) = f95f3fe031b0b01c02f79a1659f889152d3772ae3e44df8403d1460ba5eec36a
-SIZE (gnome-tweaks-40.0.tar.xz) = 251908
-SHA256 (56f39dc7d04a.patch) = 2a1811ddd7320b29ac6e84c0585b523267266abbe9e3908616afa99ac0acba1c
-SIZE (56f39dc7d04a.patch) = 1007
+TIMESTAMP = 1656531135
+SHA256 (gnome-tweaks-40.10.tar.xz) = cffd3b33a399577fbb4491ce8fbd02f54c5924f1056f30114e8d420290ef23fc
+SIZE (gnome-tweaks-40.10.tar.xz) = 251712
