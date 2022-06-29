@@ -1,7 +1,10 @@
 PORTNAME=	showmethekey
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.2
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	c90b44c2bc20.patch:-p1 # https://github.com/AlynxZhou/showmethekey/pull/8
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Show keys you typed on screen

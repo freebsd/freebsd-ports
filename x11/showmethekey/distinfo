@@ -1,3 +1,5 @@
-TIMESTAMP = 1656409678
-SHA256 (AlynxZhou-showmethekey-v1.6.1_GH0.tar.gz) = af4ac87b6b9b126a009a9a1a195c3d804c8a550286155189e563384a46909039
-SIZE (AlynxZhou-showmethekey-v1.6.1_GH0.tar.gz) = 3086770
+TIMESTAMP = 1656488222
+SHA256 (AlynxZhou-showmethekey-v1.6.2_GH0.tar.gz) = 99c91837422bc226315440ddedf5524567b244ddc5043cae83846d148af754cd
+SIZE (AlynxZhou-showmethekey-v1.6.2_GH0.tar.gz) = 3087635
+SHA256 (c90b44c2bc20.patch) = 060578c18a6f4f7db8f87788f768a5efa189cecae64b0f6483170713d1359401
+SIZE (c90b44c2bc20.patch) = 771
