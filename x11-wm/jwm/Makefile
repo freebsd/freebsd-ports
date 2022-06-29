@@ -1,12 +1,12 @@
 # Created by: Babak Farrokhi <babak@farrokhi.net>
 
 PORTNAME=	jwm
-PORTVERSION=	2.3.7
+PORTVERSION=	2.4.2
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://joewing.net/projects/jwm/releases/
+MASTER_SITES= https://github.com/joewing/jwm/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	john.grafton@gmail.com
 COMMENT=	Joe's Window Manager
 
 LICENSE=	MIT
@@ -30,6 +30,11 @@ FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=fribidi
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_ENABLE=	jpeg
+LIB_DEPENDS+=libfontconfig.so:x11-fonts/fontconfig
+LIB_DEPENDS+=libharfbuzz.so:print/harfbuzz
+LIB_DEPENDS+=libglib-2.0.so.0:devel/glib20
+LIB_DEPENDS+=libgobject-2.0.so.0:devel/glib20
+LIB_DEPENDS+=libpango-1.0.so.0:x11-toolkits/pango
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
