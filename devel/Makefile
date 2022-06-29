@@ -4282,6 +4282,7 @@
     SUBDIR += py-buildbot-worker
     SUBDIR += py-buildbot-www
     SUBDIR += py-bullet3
+    SUBDIR += py-bytecode
     SUBDIR += py-cabby
     SUBDIR += py-cachecontrol
     SUBDIR += py-cached-property
