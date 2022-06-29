@@ -1,0 +1,480 @@
+--- nassl/_nassl/nassl_SSL.c.orig	2022-01-01 11:07:11 UTC
++++ nassl/_nassl/nassl_SSL.c
+@@ -1034,6 +1034,7 @@ static PyObject *nassl_SSL_get_dh_info(nassl_SSL_Objec
+         return return_dict;
+     }
+ #ifndef LEGACY_OPENSSL
++#if defined(EVP_PKEY_X25519) && defined(EVP_PKEY_X448)
+     else if(key_id == EVP_PKEY_X25519 || key_id == EVP_PKEY_X448){
+         
+         // If the connection uses X25519 or X448
+@@ -1074,6 +1075,7 @@ static PyObject *nassl_SSL_get_dh_info(nassl_SSL_Objec
+         EVP_PKEY_free(key);
+         return return_dict;        
+     }
++#endif
+ #endif
+     else
+     {
+--- nassl/_nassl/nassl_SSL_CTX.c.orig	2022-01-01 11:07:11 UTC
++++ nassl/_nassl/nassl_SSL_CTX.c
+@@ -88,8 +88,10 @@ static PyObject* nassl_SSL_CTX_new(PyTypeObject *type,
+ 		    // Replicate the pre-1.1.0 OpenSSL API to avoid breaking _nassl's API
+ 		    // TODO(AD): Break modern _nassl's API to make it nicer by exposing min/max_proto_version
+ 		    sslCtx = SSL_CTX_new(TLS_client_method());
++#if defined(TLS1_3_VERSION)
+ 		    // Force TLS 1.3
+ 		    SSL_CTX_set_min_proto_version(sslCtx, TLS1_3_VERSION);
++#endif
+ 		    SSL_CTX_set_max_proto_version(sslCtx, 0);
+ 			break;
+ 		#endif
+--- nassl/ssl_client.py.orig	2022-01-01 11:07:11 UTC
++++ nassl/ssl_client.py
+@@ -417,6 +417,25 @@ class SslClient(BaseSslClient):
+     # The default client uses the modern OpenSSL
+     _NASSL_MODULE = _nassl
+ 
++    def do_renegotiate(self) -> None:
++        """Initiate an SSL renegotiation."""
++        if not self._is_handshake_completed:
++            raise IOError("SSL Handshake was not completed; cannot renegotiate.")
++
++        self._ssl.renegotiate()
++        self.do_handshake()
++
++    @staticmethod
++    def get_available_compression_methods() -> List[str]:
++        """Returns the list of SSL compression methods supported by SslClient."""
++        return _nassl.SSL.get_available_compression_methods()
++
++    def get_current_compression_method(self) -> Optional[str]:
++        return self._ssl.get_current_compression_method()
++
++    def get_secure_renegotiation_support(self) -> bool:
++        return self._ssl.get_secure_renegotiation_support()
++
+     def write_early_data(self, data: bytes) -> int:
+         """Returns the number of (encrypted) bytes sent."""
+         if self._is_handshake_completed:
+--- setup.py.orig	2022-01-01 11:07:11 UTC
++++ setup.py
+@@ -2,29 +2,25 @@ import copy
+ import sys
+ from pathlib import Path
+ 
+-from build_tasks import (
+-    ModernOpenSslBuildConfig,
+-    ZlibBuildConfig,
+-    LegacyOpenSslBuildConfig,
+-    SupportedPlatformEnum,
+-    CURRENT_PLATFORM,
+-)
+ from nassl import __author__, __version__
+ from setuptools import setup, Extension, find_packages
+ 
++from platform import architecture, machine
++from sys import platform
++
++CURRENT_PLATFORM = 'linux'
++SupportedPlatformEnum = platform
+ SHOULD_BUILD_FOR_DEBUG = False
+ 
+-
+ NASSL_SETUP = {
+     "name": "nassl",
+     "version": __version__,
+-    "packages": find_packages(exclude=["docs", "tests"]),
++    "packages": find_packages(exclude=["docs*", "tests*"]),
+     "package_data": {"nassl": ["py.typed"]},
+     "py_modules": [
+         "nassl.__init__",
+         "nassl.ssl_client",
+         "nassl.ephemeral_key_info",
+-        "nassl.legacy_ssl_client",
+         "nassl.ocsp_response",
+         "nassl.cert_chain_verifier",
+     ],
+@@ -70,58 +66,21 @@ BASE_NASSL_EXT_SETUP = {
+     ],
+ }
+ 
+-if CURRENT_PLATFORM in [SupportedPlatformEnum.WINDOWS_32, SupportedPlatformEnum.WINDOWS_64]:
+-    # Build using the Python that was used to run this script; will not work for cross-compiling
+-    PYTHON_LIBS_PATH = Path(sys.executable).parent / "libs"
++BASE_NASSL_EXT_SETUP["extra_compile_args"].append("-Wall")
++BASE_NASSL_EXT_SETUP["extra_link_args"].append("-Wl,-z,noexecstack")
++BASE_NASSL_EXT_SETUP["extra_link_args"].append("-Wl,-z,notext")
+ 
+-    BASE_NASSL_EXT_SETUP.update(
+-        {
+-            "library_dirs": [str(PYTHON_LIBS_PATH)],
+-            "libraries": ["user32", "kernel32", "Gdi32", "Advapi32", "Ws2_32", "crypt32"],
+-        }
+-    )
+-else:
+-    BASE_NASSL_EXT_SETUP["extra_compile_args"].append("-Wall")
+-
+-    if CURRENT_PLATFORM == SupportedPlatformEnum.LINUX_64:
+-        # Explicitly disable executable stack on Linux 64 to address issues with Ubuntu on Windows
+-        # https://github.com/nabla-c0d3/nassl/issues/28
+-        BASE_NASSL_EXT_SETUP["extra_link_args"].append("-Wl,-z,noexecstack")
+-
+-zlib_config = ZlibBuildConfig(CURRENT_PLATFORM)
+-
+-
+-# The configure the setup for legacy nassl
+-legacy_openssl_config = LegacyOpenSslBuildConfig(CURRENT_PLATFORM)
+-
+-LEGACY_NASSL_EXT_SETUP = copy.deepcopy(BASE_NASSL_EXT_SETUP)
+-LEGACY_NASSL_EXT_SETUP["name"] = "nassl._nassl_legacy"
+-LEGACY_NASSL_EXT_SETUP["define_macros"] = [("LEGACY_OPENSSL", "1")]
+-LEGACY_NASSL_EXT_SETUP.update(
+-    {
+-        "include_dirs": [str(legacy_openssl_config.include_path)],
+-        "extra_objects": [
+-            # The order matters on some flavors of Linux
+-            str(legacy_openssl_config.libssl_path),
+-            str(legacy_openssl_config.libcrypto_path),
+-            str(zlib_config.libz_path),
+-        ],
+-    }
+-)
+-
+ # The configure the setup for modern nassl
+-modern_openssl_config = ModernOpenSslBuildConfig(CURRENT_PLATFORM)
+-
+ MODERN_NASSL_EXT_SETUP = copy.deepcopy(BASE_NASSL_EXT_SETUP)
+ MODERN_NASSL_EXT_SETUP["name"] = "nassl._nassl"
+ MODERN_NASSL_EXT_SETUP.update(
+     {
+-        "include_dirs": [str(modern_openssl_config.include_path)],
++        "include_dirs": [str('%%OPENSSLINC%%'), str('/usr/include')],
+         "extra_objects": [
+             # The order matters on some flavors of Linux
+-            str(modern_openssl_config.libssl_path),
+-            str(modern_openssl_config.libcrypto_path),
+-            str(zlib_config.libz_path),
++            str('%%OPENSSLLIB%%/libssl.so'),
++            str('%%OPENSSLLIB%%/libcrypt.so'),
++            str('/usr/lib/libz.so'),
+         ],
+     }
+ )
+@@ -130,18 +89,11 @@ MODERN_NASSL_EXT_SETUP["sources"].append(
+ )  # API only available in modern nassl
+ 
+ 
+-if CURRENT_PLATFORM in [SupportedPlatformEnum.WINDOWS_32, SupportedPlatformEnum.WINDOWS_64]:
+-    if SHOULD_BUILD_FOR_DEBUG:
+-        LEGACY_NASSL_EXT_SETUP.update({"extra_compile_args": ["/Zi"], "extra_link_args": ["/DEBUG"]})
+-        MODERN_NASSL_EXT_SETUP.update({"extra_compile_args": ["/Zi"], "extra_link_args": ["/DEBUG"]})
+-else:
+-    # Add arguments specific to Unix builds
+-    LEGACY_NASSL_EXT_SETUP["include_dirs"].append(str(Path("nassl") / "_nassl"))
+-    MODERN_NASSL_EXT_SETUP["include_dirs"].append(str(Path("nassl") / "_nassl"))
++MODERN_NASSL_EXT_SETUP["include_dirs"].append(str(Path("nassl") / "_nassl"))
+ 
+ 
+ NASSL_SETUP.update(
+-    {"ext_modules": [Extension(**LEGACY_NASSL_EXT_SETUP), Extension(**MODERN_NASSL_EXT_SETUP)]}
++    {"ext_modules": [Extension(**MODERN_NASSL_EXT_SETUP)]}
+ )
+ 
+ 
+--- tests/SSL_CTX_test.py.orig	2022-01-01 11:07:11 UTC
++++ tests/SSL_CTX_test.py
+@@ -2,11 +2,11 @@ import tempfile
+ 
+ import pytest
+ 
+-from nassl import _nassl, _nassl_legacy
++from nassl import _nassl
+ from nassl.ssl_client import OpenSslVersionEnum, OpenSslVerifyEnum, OpenSslFileTypeEnum
+ 
+ 
+-@pytest.mark.parametrize("nassl_module", [_nassl, _nassl_legacy])
++@pytest.mark.parametrize("nassl_module", [_nassl])
+ class TestCommonSSL_CTX:
+     def test_new(self, nassl_module):
+         assert nassl_module.SSL_CTX(OpenSslVersionEnum.SSLV23.value)
+--- tests/SSL_test.py.orig	2022-01-01 11:07:11 UTC
++++ tests/SSL_test.py
+@@ -1,11 +1,10 @@
+ import pytest
+ 
+ from nassl import _nassl
+-from nassl import _nassl_legacy
+ from nassl.ssl_client import SslClient, OpenSslVersionEnum, OpenSslVerifyEnum
+ 
+ 
+-@pytest.mark.parametrize("nassl_module", [_nassl, _nassl_legacy])
++@pytest.mark.parametrize("nassl_module", [_nassl])
+ class TestCommonSSL:
+     def test_new(self, nassl_module):
+         nassl_module.SSL(nassl_module.SSL_CTX(OpenSslVersionEnum.SSLV23.value))
+@@ -134,34 +133,3 @@ class TestModernSSL:
+         test_ssl = _nassl.SSL(_nassl.SSL_CTX(OpenSslVersionEnum.TLSV1_2.value))
+         with pytest.raises(_nassl.OpenSSLError, match="no cipher match"):
+             test_ssl.set_ciphersuites("lol")
+-
+-
+-class TestLegacySSL:
+-
+-    # The following tests don't pass with modern OpenSSL - the API might have changed
+-    def test_set_cipher_list_bad(self):
+-        # Invalid cipher string
+-        test_ssl = _nassl_legacy.SSL(_nassl_legacy.SSL_CTX(OpenSslVersionEnum.SSLV23.value))
+-        with pytest.raises(_nassl.OpenSSLError):
+-            test_ssl.set_cipher_list("badcipherstring")
+-
+-    def test_do_handshake_bad_eof(self):
+-        # No BIO attached to the SSL object
+-        test_ssl = _nassl_legacy.SSL(_nassl_legacy.SSL_CTX(OpenSslVersionEnum.SSLV23.value))
+-        test_ssl.set_connect_state()
+-        with pytest.raises(_nassl.SslError, match="An EOF was observed that violates the protocol"):
+-            test_ssl.do_handshake()
+-
+-    def test_read_bad(self):
+-        # No BIO attached to the SSL object
+-        test_ssl = _nassl_legacy.SSL(_nassl_legacy.SSL_CTX(OpenSslVersionEnum.SSLV23.value))
+-        test_ssl.set_connect_state()
+-        with pytest.raises(_nassl.OpenSSLError, match="ssl handshake failure"):
+-            test_ssl.read(128)
+-
+-    def test_write_bad(self):
+-        # No BIO attached to the SSL object
+-        test_ssl = _nassl_legacy.SSL(_nassl_legacy.SSL_CTX(OpenSslVersionEnum.SSLV23.value))
+-        test_ssl.set_connect_state()
+-        with pytest.raises(_nassl.OpenSSLError, match="ssl handshake failure"):
+-            test_ssl.write("tests")
+--- tests/X509_test.py.orig	2022-01-01 11:07:11 UTC
++++ tests/X509_test.py
+@@ -1,10 +1,9 @@
+ import pytest
+ 
+ from nassl import _nassl
+-from nassl import _nassl_legacy
+ 
+ 
+-@pytest.mark.parametrize("nassl_module", [_nassl, _nassl_legacy])
++@pytest.mark.parametrize("nassl_module", [_nassl])
+ class TestX509:
+     def test_from_pem(self, nassl_module):
+         # Given a PEM-formatted certificate
+--- tests/ocsp_response_test.py.orig	2022-01-01 11:07:11 UTC
++++ tests/ocsp_response_test.py
+@@ -5,7 +5,6 @@ import pytest
+ import socket
+ import tempfile
+ 
+-from nassl.legacy_ssl_client import LegacySslClient
+ from nassl.ocsp_response import OcspResponseNotTrustedError, verify_ocsp_response
+ from nassl.ssl_client import SslClient, OpenSslVerifyEnum
+ 
+@@ -31,7 +30,7 @@ Pd2eQ9+DkopOz3UGU7c=
+ -----END CERTIFICATE-----"""
+ 
+ 
+-@pytest.mark.parametrize("ssl_client_cls", [SslClient, LegacySslClient])
++@pytest.mark.parametrize("ssl_client_cls", [SslClient])
+ class TestCommonOcspResponseOnline:
+     def test(self, ssl_client_cls):
+         # Given a website that support OCSP stapling
+--- tests/ssl_client_test.py.orig	2022-01-01 11:07:11 UTC
++++ tests/ssl_client_test.py
+@@ -4,7 +4,6 @@ from pathlib import Path
+ import pytest
+ 
+ from nassl import _nassl
+-from nassl.legacy_ssl_client import LegacySslClient
+ from nassl.ssl_client import (
+     ClientCertificateRequested,
+     OpenSslVersionEnum,
+@@ -21,75 +20,10 @@ from nassl.ephemeral_key_info import (
+     EcDhEphemeralKeyInfo,
+ )
+ from nassl.cert_chain_verifier import CertificateChainVerificationFailed
+-from tests.openssl_server import ModernOpenSslServer, ClientAuthConfigEnum, LegacyOpenSslServer
++from tests.openssl_server import ModernOpenSslServer, ClientAuthConfigEnum
+ 
+ 
+-# TODO(AD): Switch to legacy server and add a TODO; skip tests for TLS 1.3
+-@pytest.mark.parametrize("ssl_client_cls", [SslClient, LegacySslClient])
+-class TestSslClientClientAuthentication:
+-    def test_client_authentication_no_certificate_supplied(self, ssl_client_cls):
+-        # Given a server that requires client authentication
+-        with LegacyOpenSslServer(client_auth_config=ClientAuthConfigEnum.REQUIRED) as server:
+-            # And the client does NOT provide a client certificate
+-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+-            sock.settimeout(5)
+-            sock.connect((server.hostname, server.port))
+-
+-            ssl_client = ssl_client_cls(
+-                ssl_version=OpenSslVersionEnum.TLSV1_2,
+-                underlying_socket=sock,
+-                ssl_verify=OpenSslVerifyEnum.NONE,
+-            )
+-            # When doing the handshake the right error is returned
+-            with pytest.raises(ClientCertificateRequested):
+-                ssl_client.do_handshake()
+-
+-            ssl_client.shutdown()
+-
+-    def test_client_authentication_no_certificate_supplied_but_ignore(self, ssl_client_cls):
+-        # Given a server that accepts optional client authentication
+-        with LegacyOpenSslServer(client_auth_config=ClientAuthConfigEnum.OPTIONAL) as server:
+-            # And the client does NOT provide a client cert but is configured to ignore the client auth request
+-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+-            sock.settimeout(5)
+-            sock.connect((server.hostname, server.port))
+-
+-            ssl_client = ssl_client_cls(
+-                ssl_version=OpenSslVersionEnum.TLSV1_2,
+-                underlying_socket=sock,
+-                ssl_verify=OpenSslVerifyEnum.NONE,
+-                ignore_client_authentication_requests=True,
+-            )
+-            # When doing the handshake, it succeeds
+-            try:
+-                ssl_client.do_handshake()
+-            finally:
+-                ssl_client.shutdown()
+-
+-    def test_client_authentication_succeeds(self, ssl_client_cls):
+-        # Given a server that requires client authentication
+-        with LegacyOpenSslServer(client_auth_config=ClientAuthConfigEnum.REQUIRED) as server:
+-            # And the client provides a client certificate
+-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+-            sock.settimeout(5)
+-            sock.connect((server.hostname, server.port))
+-
+-            ssl_client = ssl_client_cls(
+-                ssl_version=OpenSslVersionEnum.TLSV1_2,
+-                underlying_socket=sock,
+-                ssl_verify=OpenSslVerifyEnum.NONE,
+-                client_certificate_chain=server.get_client_certificate_path(),
+-                client_key=server.get_client_key_path(),
+-            )
+-
+-            # When doing the handshake, it succeeds
+-            try:
+-                ssl_client.do_handshake()
+-            finally:
+-                ssl_client.shutdown()
+-
+-
+-@pytest.mark.parametrize("ssl_client_cls", [SslClient, LegacySslClient])
++@pytest.mark.parametrize("ssl_client_cls", [SslClient])
+ class TestSslClientOnline:
+     def test(self, ssl_client_cls):
+         # Given an SslClient connecting to Google
+@@ -118,80 +52,7 @@ class TestSslClientOnline:
+         finally:
+             ssl_client.shutdown()
+ 
+-    def test_get_dh_info_ecdh(self, ssl_client_cls):
+-        with LegacyOpenSslServer(cipher="ECDHE-RSA-AES256-SHA") as server:
+-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+-            sock.settimeout(5)
+-            sock.connect((server.hostname, server.port))
+ 
+-            ssl_client = ssl_client_cls(
+-                ssl_version=OpenSslVersionEnum.TLSV1_2,
+-                underlying_socket=sock,
+-                ssl_verify=OpenSslVerifyEnum.NONE,
+-            )
+-
+-            try:
+-                ssl_client.do_handshake()
+-            finally:
+-                ssl_client.shutdown()
+-
+-            dh_info = ssl_client.get_ephemeral_key()
+-
+-            assert isinstance(dh_info, NistEcDhKeyExchangeInfo)
+-            assert dh_info.type == OpenSslEvpPkeyEnum.EC
+-            assert dh_info.size > 0
+-            assert len(dh_info.public_bytes) > 0
+-            assert len(dh_info.x) > 0
+-            assert len(dh_info.y) > 0
+-
+-    def test_get_dh_info_dh(self, ssl_client_cls):
+-        with LegacyOpenSslServer(cipher="DHE-RSA-AES256-SHA") as server:
+-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+-            sock.settimeout(5)
+-            sock.connect((server.hostname, server.port))
+-
+-            ssl_client = ssl_client_cls(
+-                ssl_version=OpenSslVersionEnum.TLSV1_2,
+-                underlying_socket=sock,
+-                ssl_verify=OpenSslVerifyEnum.NONE,
+-            )
+-
+-            try:
+-                ssl_client.do_handshake()
+-            finally:
+-                ssl_client.shutdown()
+-
+-            dh_info = ssl_client.get_ephemeral_key()
+-
+-            assert isinstance(dh_info, DhEphemeralKeyInfo)
+-            assert dh_info.type == OpenSslEvpPkeyEnum.DH
+-            assert dh_info.size > 0
+-            assert len(dh_info.public_bytes) > 0
+-            assert len(dh_info.prime) > 0
+-            assert len(dh_info.generator) > 0
+-
+-    def test_get_dh_info_no_dh(self, ssl_client_cls):
+-        with LegacyOpenSslServer(cipher="AES256-SHA") as server:
+-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+-            sock.settimeout(5)
+-            sock.connect((server.hostname, server.port))
+-
+-            ssl_client = ssl_client_cls(
+-                ssl_version=OpenSslVersionEnum.TLSV1_2,
+-                underlying_socket=sock,
+-                ssl_verify=OpenSslVerifyEnum.NONE,
+-            )
+-
+-            try:
+-                ssl_client.do_handshake()
+-            finally:
+-                ssl_client.shutdown()
+-
+-            dh_info = ssl_client.get_ephemeral_key()
+-
+-            assert dh_info is None
+-
+-
+ class TestModernSslClientOnline:
+     def test_get_verified_chain(self):
+         # Given an SslClient connecting to Google
+@@ -352,27 +213,6 @@ class TestModernSslClientOnline:
+             assert dh_info.type == OpenSslEvpPkeyEnum.X448
+             assert dh_info.size == 448
+             assert len(dh_info.public_bytes) == 56
+-
+-
+-class TestLegacySslClientOnline:
+-    def test_ssl_2(self):
+-        # Given a server that supports SSL 2.0
+-        with LegacyOpenSslServer() as server:
+-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+-            sock.settimeout(5)
+-            sock.connect((server.hostname, server.port))
+-
+-            ssl_client = LegacySslClient(
+-                ssl_version=OpenSslVersionEnum.SSLV2,
+-                underlying_socket=sock,
+-                ssl_verify=OpenSslVerifyEnum.NONE,
+-                ignore_client_authentication_requests=True,
+-            )
+-            # When doing the special SSL 2.0 handshake, it succeeds
+-            try:
+-                ssl_client.do_handshake()
+-            finally:
+-                ssl_client.shutdown()
+ 
+ 
+ class TestModernSslClientOnlineTls13:
