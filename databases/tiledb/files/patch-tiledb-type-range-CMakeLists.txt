@@ -1,0 +1,10 @@
+--- tiledb/type/range/CMakeLists.txt.orig	2022-06-24 19:24:23 UTC
++++ tiledb/type/range/CMakeLists.txt
+@@ -29,6 +29,7 @@ include(common NO_POLICY_SCOPE)
+ 
+ # Range library
+ add_library(range OBJECT range.h)
++set_target_properties(range PROPERTIES LINKER_LANGUAGE CXX)
+ target_link_libraries(range PUBLIC baseline $<TARGET_OBJECTS:baseline>)
+ 
+ # Test-compile of object library ensures link-completeness

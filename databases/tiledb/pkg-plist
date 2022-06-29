@@ -37,6 +37,7 @@ include/tiledb/utils.h
 include/tiledb/version.h
 include/tiledb/vfs.h
 lib/cmake/TileDB/TileDBConfig.cmake
+lib/cmake/TileDB/TileDBConfigVersion.cmake
 lib/cmake/TileDB/TileDBTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/TileDB/TileDBTargets.cmake
 lib/libtiledb.a
