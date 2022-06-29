@@ -1,0 +1,11 @@
+--- omniauth-alicloud.gemspec.orig	2022-06-24 14:19:41 UTC
++++ omniauth-alicloud.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+   end
+ 
+   if s.respond_to? :add_runtime_dependency then
+-    s.add_runtime_dependency(%q<omniauth-oauth2>.freeze, ["~> 1.7.1"])
++    s.add_runtime_dependency(%q<omniauth-oauth2>.freeze, [">= 1.7.1", "< 1.8.1"])
+   else
+     s.add_dependency(%q<omniauth-oauth2>.freeze, ["~> 1.7.1"])
+   end
