@@ -16,6 +16,7 @@ COMMENT=	API for building a graphical console in Swing
 USES=		zip
 USE_JAVA=	yes
 JAVA_RUN=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/jrosetta-api.jar \
