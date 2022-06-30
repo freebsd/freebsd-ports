@@ -2,17 +2,17 @@
 { type: install
   message: <<EOM
 In order to mount locally a remote archive or an entire repository as a FUSE
-filesystem, it is required to load fuse module:
+filesystem, it is required to load fusefs module:
 
-# kldload fuse
+# kldload fusefs
 
 To load the module at boot time, add
 
-fuse_load="YES"
+fusefs_load="YES"
 
 to /boot/loader.conf by running:
 
-sysrc fuse_load="YES"
+sysrc fusefs_load="YES"
 
 Also, if you plan to mount borg repositories as non root user, you need to run
 
