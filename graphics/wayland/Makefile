@@ -1,10 +1,9 @@
 # Created by: kwm@FreeBSD.org
 
 PORTNAME=	wayland
-DISTVERSION=	1.20.0
-PORTREVISION=	3
+DISTVERSION=	1.21.0
 CATEGORIES=	graphics wayland
-MASTER_SITES=	https://wayland.freedesktop.org/releases/
+MASTER_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/-/releases/${DISTVERSION}/downloads/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Core Wayland window system code and protocol
