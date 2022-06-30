@@ -1,7 +1,7 @@
 # Created by: Ivan Lago <ivan.lago@ifom-ieo-campus.it>
 
 PORTNAME=	syslog-ng
-DISTVERSION=	3.36.1
+DISTVERSION=	3.37.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 
@@ -149,7 +149,10 @@ PYTHON_USES=			python:3.5+
 PYTHON_CONFIGURE_ON=		--enable-python 
 PYTHON_CONFIGURE_OFF=		--disable-python
 PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
-		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info \
+		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/PKG-INFO \
+		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt \
+		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt \
+		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/top_level.txt \
 		lib/syslog-ng/python/syslogng/__init__.py \
 		lib/syslog-ng/python/syslogng/__pycache__/__init__.cpython-${PYTHON_SUFFIX}.pyc \
 		lib/syslog-ng/python/syslogng/debuggercli/__init__.py \
@@ -199,7 +202,7 @@ CURL_PLIST_FILES=		lib/syslog-ng/libhttp.so \
 
 RIEMANN_CONFIGURE_ON=		--enable-riemann
 RIEMANN_CONFIGURE_OFF=		--disable-riemann
-RIEMANN_LIB_DEPENDS=		libriemann-client.so:net-mgmt/riemann-c-client
+RIEMANN_LIB_DEPENDS=		libriemann-client-gnutls.so:net-mgmt/riemann-c-client
 RIEMANN_PLIST_FILES=		lib/syslog-ng/libriemann.so
 
 KAFKA_CONFIGURE_ON=		--enable-kafka
