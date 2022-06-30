@@ -1,5 +1,0 @@
-ffmpeg2theora is a simple command line tool to convert media files to
-.ogg with Theora video and Vorbis audio streams. It supports reading any
-file format that ffmpeg can decode.
-
-WWW: http://v2v.cc/~j/ffmpeg2theora/

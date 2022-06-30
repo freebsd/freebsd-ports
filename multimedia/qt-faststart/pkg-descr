@@ -1,5 +1,0 @@
-This utility rearranges a Quicktime file such that the moov atom
-is in front of the data, thus facilitating network streaming.
-
-This is needed to prepare .mp4 and .3gp files for playing on an
-Android device.

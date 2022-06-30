@@ -169,7 +169,6 @@
     SUBDIR += garage
     SUBDIR += gatling
     SUBDIR += gauche-makiki
-    SUBDIR += gecko-mediaplayer
     SUBDIR += geckodriver
     SUBDIR += geneweb
     SUBDIR += geolizer

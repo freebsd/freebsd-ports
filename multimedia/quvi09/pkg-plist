@@ -1,7 +1,0 @@
-bin/quvi%%PKGNAMESUFFIX%%
-man/man1/quvi-dump%%PKGNAMESUFFIX%%.1.gz
-man/man1/quvi-get%%PKGNAMESUFFIX%%.1.gz
-man/man1/quvi-info%%PKGNAMESUFFIX%%.1.gz
-man/man1/quvi-scan%%PKGNAMESUFFIX%%.1.gz
-man/man1/quvi%%PKGNAMESUFFIX%%.1.gz
-man/man5/quvirc%%PKGNAMESUFFIX%%.5.gz

@@ -1,8 +1,0 @@
-This plugin lets you stream music files to your mpd that are not in your
-database.
-Mserver is compiled using the libmicrohttp library, which enables applications
-to function as a minimal webserver. As MPD is perfectly capable of playing
-Streams out of the box, you get a list of streams in your playback queue after
-adding the files.
-
-WWW: http://gmpc.wikia.com/wiki/GMPC_PLUGIN_MSERVER

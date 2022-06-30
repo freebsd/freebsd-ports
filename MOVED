@@ -17404,3 +17404,53 @@ irc/py-fishcrypt||2022-06-30|Has expired: Abandoned, unmaintained, requires Pyth
 devel/py-stsci.distutils||2022-06-30|Has expired: Upstream abandoned in 2013
 devel/py-docker-py|devel/py-docker|2022-06-30|Has expired: Use devel/py-docker
 net-im/py-slackclient|net-im/py-slack-sdk|2022-06-30|Has expired: Use net-im/py-slack-sdk
+multimedia/mpeg2codec||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
+multimedia/livestreamer||2022-06-30|Has expired: Abandoned upstream, please consider using www/yt-dlp or multimedia/streamlink
+net/kissd||2022-06-30|Has expired: Obsolete, target hardware was released 19 years ago
+www/gecko-mediaplayer||2022-06-30|Has expired: Uses incompatible plugin interface NPAPI
+multimedia/snappy||2022-06-30|Has expired: Deprecated upstream, please consider multimedia/mpv or multimedia/vlc
+audio/exaile||2022-06-30|Has expired: Requires py-bsddb3 which requires upstream EOLd db5
+multimedia/gnome-twitch||2022-06-30|Has expired: Unmaintained, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/clive||2022-06-30|Has expired: Last release in 2012, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/imagination||2022-06-30|Has expired: Obsolete, majority of DVD players made in the last 15+ years have been able to do image slideshows
+multimedia/m2tstoavi||2022-06-30|Has expired: Marked obsolete by upstream in 2010, please consider using multimedia/ffmpeg or multimedia/handbrake
+multimedia/mps-youtube||2022-06-30|Has expired: Abandoned upstream
+multimedia/umph||2022-06-30|Has expired: Last release in 2012 and abandoned upstream, please consider using www/yt-dlp
+multimedia/quvi09||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/quvi||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/libquvi09||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/libquvi||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/libquvi-scripts09||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/libquvi-scripts||2022-06-30|Has expired: Deprecated upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/cclive||2022-06-30|Has expired: Last release in 2013, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/p5-Umph-Prompt||2022-06-30|Has expired: Last release in 2011 and abandoned upstream
+sysutils/xvidcap||2022-06-30|Has expired: Abandoned upstream, depends on deprecated GTK2 and only supports legacy video codecs. Please consider using multimedia/obs-studio
+audio/gmpc-lastfm||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-magnatune||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-shout||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-alarm||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-lyricsplugin||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-mdcover||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-albumview||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-extraplaylist||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-libnotify||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-lyrics||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-discogs||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+audio/gmpc-mserver||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead
+multimedia/ffmpeg2theora||2022-06-30|Has expired: Legacy video format, superseded by AV1/H.264/H.265/VP8/VP9
+multimedia/grake||2022-06-30|Has expired: Dead upstream, please consider using www/yt-dlp or multimedia/streamlink
+multimedia/iriverter||2022-06-30|Has expired: Obsolete and unmaintained for 15+ years, please consider using multimedia/handbrake
+multimedia/libmpeg3||2022-06-30|Has expired: Deprecated upstream
+multimedia/mmsrip||2022-06-30|Has expired: Obsolete, Microsoft deprecated MMS in 2003
+multimedia/mpeg2play||2022-06-30|Has expired: Obsolete, please consider using multimedia/mpv or multimedia/vlc
+multimedia/mpeg_play||2022-06-30|Has expired: Obsolete, please consider using multimedia/mpv or multimedia/vlc
+multimedia/mpeg_stat||2022-06-30|Has expired: Obsolete, please consider using multimedia/mediainfo or multimedia/ffmpeg
+multimedia/qt-faststart||2022-06-30|Has expired: Obsolete, please consider using multimedia/Bento4, multimedia/gpac-mp4box or multimedia/ffmpeg
+multimedia/spigot||2022-06-30|Has expired: Deprecated hardware, released in the early 90s
+audio/forked-daapd||2022-06-30|Has expired: Deprecated upstream, project is now called OwnTone
+multimedia/tstools||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
+multimedia/sabbu||2022-06-30|Has expired: please consider using multimedia/aegisub
+multimedia/avinfo||2022-06-30|Has expired: Last release in 2008, please consider using multimedia/mediainfo or multimedia/ffmpeg instead
+audio/asterisk-espeak||2022-06-30|Has expired: Depends on deprecated audio/espeaak
+multimedia/mpgtx||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
