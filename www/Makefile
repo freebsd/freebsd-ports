@@ -1575,7 +1575,6 @@
     SUBDIR += py-django-voting
     SUBDIR += py-django-webpack-loader
     SUBDIR += py-django-widget-tweaks
-    SUBDIR += py-django22
     SUBDIR += py-django32
     SUBDIR += py-django40
     SUBDIR += py-django_compressor
@@ -1687,7 +1686,6 @@
     SUBDIR += py-internetarchive
     SUBDIR += py-jonpy
     SUBDIR += py-jsonfield
-    SUBDIR += py-jsonfield2
     SUBDIR += py-lektor
     SUBDIR += py-lesscpy
     SUBDIR += py-libsass

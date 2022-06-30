@@ -17377,3 +17377,5 @@ www/py-django-bulk-update||2022-06-30|Has expired: No longer maintained, not com
 www/py-django-happenings-update||2022-06-30|Has expired: Upstream no longer maintained, not compatible with newer versions of Django
 www/py-django-compat||2022-06-30|Has expired: No longer maintained, doesn't work with newer versions of Django
 www/py-django-modern-rpc||2022-06-30|Has expired: Not compatible with newer versions of Django
+www/py-django22||2022-06-30|Has expired: Django 2.2 is now in Extended Support, receives security fixes only and will reach End-Of-Life on 2022-04-01. Upgrade to a later Django version. See https://www.djangoproject.com/download/
+www/py-jsonfield2|www/py-jsonfield|2022-06-30|Has expired: Obsolete, please use www/py-jsonfield instead
