@@ -273,7 +273,6 @@
     SUBDIR += libgcrypt
     SUBDIR += libgnome-keyring
     SUBDIR += libgpg-error
-    SUBDIR += libgringotts
     SUBDIR += libgsasl
     SUBDIR += libhijack
     SUBDIR += libident

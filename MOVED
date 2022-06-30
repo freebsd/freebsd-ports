@@ -17361,3 +17361,5 @@ databases/mysql55-client||2022-06-30|Has expired: Upstream support ended on Dece
 multimedia/schroedinger||2022-06-30|Has expired: Abandoned legacy video codec, upstream is dead and last release was back in 2012.
 emulators/kcemu||2022-06-30|Has expired: Depends on expired multimedia/schroedinger
 multimedia/ccextractor||2022-06-30|Has expired: Depends on expired multimedia/schroedinger
+security/libgringotts||2022-06-30|Has expired: Abandonware, upstream dead and last release in 2008
+deskutils/osmo||2022-06-30|Has expired: Depends on expired security/libgringotts
