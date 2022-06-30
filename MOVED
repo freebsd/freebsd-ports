@@ -17454,3 +17454,11 @@ multimedia/sabbu||2022-06-30|Has expired: please consider using multimedia/aegis
 multimedia/avinfo||2022-06-30|Has expired: Last release in 2008, please consider using multimedia/mediainfo or multimedia/ffmpeg instead
 audio/asterisk-espeak||2022-06-30|Has expired: Depends on deprecated audio/espeaak
 multimedia/mpgtx||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
+devel/psptoolchain||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-binutils||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-newlib||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-gdb||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-gcc-stage1||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-pspsdk-stage1||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-pspsdk-stage2||2022-06-30|Has expired: Security issues for multiple years
+devel/psptoolchain-gcc-stage2||2022-06-30|Has expired: Security issues for multiple years

@@ -4051,14 +4051,6 @@
     SUBDIR += protozero
     SUBDIR += pructl
     SUBDIR += psimd
-    SUBDIR += psptoolchain
-    SUBDIR += psptoolchain-binutils
-    SUBDIR += psptoolchain-gcc-stage1
-    SUBDIR += psptoolchain-gcc-stage2
-    SUBDIR += psptoolchain-gdb
-    SUBDIR += psptoolchain-newlib
-    SUBDIR += psptoolchain-pspsdk-stage1
-    SUBDIR += psptoolchain-pspsdk-stage2
     SUBDIR += pstreams
     SUBDIR += psvn
     SUBDIR += pth
