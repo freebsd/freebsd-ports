@@ -4433,8 +4433,6 @@
     SUBDIR += py-dirspec
     SUBDIR += py-distlib
     SUBDIR += py-distributed
-    SUBDIR += py-dj32-django-rq
-    SUBDIR += py-dj32-graphene-django
     SUBDIR += py-dj40-django-rq
     SUBDIR += py-dj40-graphene-django
     SUBDIR += py-django-rq

@@ -17379,3 +17379,21 @@ www/py-django-compat||2022-06-30|Has expired: No longer maintained, doesn't work
 www/py-django-modern-rpc||2022-06-30|Has expired: Not compatible with newer versions of Django
 www/py-django22||2022-06-30|Has expired: Django 2.2 is now in Extended Support, receives security fixes only and will reach End-Of-Life on 2022-04-01. Upgrade to a later Django version. See https://www.djangoproject.com/download/
 www/py-jsonfield2|www/py-jsonfield|2022-06-30|Has expired: Obsolete, please use www/py-jsonfield instead
+www/py-dj32-django-filter|www/py-django-filter|2022-06-30|Has expired: Obsolete, please use www/py-django-filter instead
+www/py-dj32-djangorestframework|www/py-djangorestframework|2022-06-30|Has expired: Obsolete, please use www/py-djangorestframework instead
+www/py-dj32-drf-yasg|www/py-drf-yasg|2022-06-30|Has expired: Obsolete, please use www/py-drf-yasg instead
+www/py-dj32-django-cacheops|www/py-django-cacheops|2022-06-30|Has expired: Obsolete, please use www/py-django-cacheops instead
+www/py-dj32-django-graphiql-debug-toolbar|www/py-django-graphiql-debug-toolbar|2022-06-30|Has expired: Obsolete, please use www/py-django-graphiql-debug-toolbar instead
+devel/py-dj32-django-rq|devel/py-django-rq|2022-06-30|Has expired: Obsolete, please use devel/py-django-rq instead
+www/py-dj32-django-tables2|www/py-django-tables2|2022-06-30|Has expired: Obsolete, please use www/py-django-tables2 instead
+www/py-dj32-django-prometheus|www/py-django-prometheus|2022-06-30|Has expired: Obsolete, please use www/py-django-prometheus instead
+www/py-dj32-django-treebeard|www/py-django-treebeard |2022-06-30|Has expired: Obsolete, please use www/py-django-treebeard instead
+www/py-dj32-django-mptt|www/py-django-mptt|2022-06-30|Has expired: Obslete, please use www/py-django-mptt instead
+devel/py-dj32-graphene-django|devel/py-graphene-django|2022-06-30|Has expired: Obsolete, please use devel/py-graphene-django instead
+www/py-dj32-django-taggit|www/py-django-taggit|2022-06-30|Has expired: Obsolete, please use www/py-django-taggit instead
+www/py-dj32-django-auth-ldap|www/py-django-auth-ldap|2022-06-30|Has expired: Obsolete, please use www/py-django-auth-ldap instead
+www/py-dj32-django-cors-headers|www/py-django-cors-headers|2022-06-30|Has expired: Obsolete, please use www/py-django-cors-headers instead
+www/py-dj32-django-debug-toolbar|www/py-django-debug-toolbar|2022-06-30|Has expired: Obsolete, please use www/py-django-debug-toolbar instead
+www/py-dj32-django-redis|www/py-django-redis|2022-06-30|Has expired: Obsolete, please use www/py-django-redis instead
+www/py-dj32-django-timezone-field|www/py-django-timezone-field|2022-06-30|Has expired: Obsolete, please use www/py-django-timezone-field instead
+www/py-dj32-django-js-asset|www/py-django-js-asset|2022-06-30|Has expired: Obsolete, please use www/py-django-js-asset instead

@@ -1,4 +1,0 @@
-A Django App that adds CORS (Cross-Origin Resource Sharing) headers to
-responses.
-
-WWW: https://github.com/adamchainz/django-cors-headers

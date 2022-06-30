@@ -1,4 +1,0 @@
-This package is an extension for Django Debug Toolbar which enables support
-for debugging GraphiQL queries in Django Projects.
-
-WWW: https://github.com/flavors/django-graphiql-debug-toolbar
