@@ -109,17 +109,22 @@
      it('returns true on Windows 7', () => {
 --- ts/test-node/util/getUserAgent_test.ts	2022-02-12 02:48:01.000000000 +0100
 +++ ts/test-node/util/getUserAgent_test.ts	2022-02-18 20:42:25.165838000 +0100
-@@ -30,8 +30,8 @@ describe('getUserAgent', () => {
-     assert.strictEqual(getUserAgent('1.2.3'), 'Signal-Desktop/1.2.3 Linux');
+@@ -39,6 +39,14 @@ describe('getUserAgent', () => {
+     );
    });
  
--  it('omits the platform on unsupported platforms', function test() {
-+  it('returns the right User-Agent on Linux', function test() {
++  it('returns the right User-Agent on FreeBSD', function test() {
++    this.sandbox.stub(process, 'platform').get(() => 'freebsd');
++    assert.strictEqual(
++      getUserAgent('1.2.3', '13.1'),
++      'Signal-Desktop/1.2.3 FreeBSD 13.1'
++    );
++  });
++
+   it('omits the platform on unsupported platforms', function test() {
      this.sandbox.stub(process, 'platform').get(() => 'freebsd');
--    assert.strictEqual(getUserAgent('1.2.3'), 'Signal-Desktop/1.2.3');
-+    assert.strictEqual(getUserAgent('1.2.3'), 'Signal-Desktop/1.2.3 Linux');
-   });
- });
+     assert.strictEqual(getUserAgent('1.2.3', '13.1'), 'Signal-Desktop/1.2.3');
+
 --- ts/util/getUserAgent.ts	2022-02-12 02:48:01.000000000 +0100
 +++ ts/util/getUserAgent.ts	2022-02-18 20:43:07.232944000 +0100
 @@ -7,6 +7,7 @@ const PLATFORM_STRINGS: { [platform: string]: string }

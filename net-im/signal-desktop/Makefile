@@ -1,6 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.46.0
+DISTVERSION=	5.47.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:yarn \
 		LOCAL/mikael/signal-desktop/:electron_gyp \
@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		${LOCALBASE}/lib/libsignal_node.so:net-im/libsignal-node \
 		app-builder>0:devel/app-builder \
-		electron18:devel/electron18 \
+		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		npm:www/npm-node16 \
 		openssl>0:security/openssl \
 		vips>0:graphics/vips \
@@ -63,7 +63,7 @@ USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xi xrandr xrender xtst
 
 PACKAGE_ENV=	SIGNAL_ENV=production
-MAKE_ENV+=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron18 \
+MAKE_ENV+=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR} \
 		HOME=${WRKDIR} \
 		PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/.cache \
 		PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=true \
@@ -79,8 +79,10 @@ MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
 _BUILD_DATE=	$$(date +'%s')
 
-NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.16.0-7acba54b7ba05f513cdcf7f555efa1ccc6ce0145-integrity
-NPM_RINGRTC_DIR=	npm-ringrtc-2.20.8-ebd88d19b7a520f5887e5bed529db9fa5631d07e
+ELECTRON_VER_MAJOR=	19
+
+NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.17.0-ffe6763d80f56148b45192bca29deb16f9a0aea8-integrity
+NPM_RINGRTC_DIR=	npm-ringrtc-2.20.10-4450aa43e0f95e09e61cf49e970d864b19fa9d50
 NPM_SQLITE3_DIR=	npm-better-sqlite3-7.5.0-3c4a7eebba3d5f5d8cb88fe83be1c01b8c0dea7d
 NPM_PLAYWRITE_DIR=	npm-playwright-core-1.17.1-a16e0f89284a0ed8ae6d77e1c905c84b8a2ba022-integrity
 NPM_ESBUILD_VERS=	0.14.28
@@ -93,12 +95,12 @@ post-patch:
 do-build:
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-cache"' > ${WRKSRC}/.yarnrc
 
-# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron18/electron with WRITE priv
-# copy ${LOCALBASE}/share/electron18 in WRKDIR
+# electron-builder is stupid and tries to open ${LOCALBASE}/share/electron19/electron with WRITE priv
+# copy ${LOCALBASE}/share/electron19 in WRKDIR
 # it's needed for the do-install phase, it's here because of this issue
 # https://github.com/MikaelUrankar/signal-desktop/issues/6 (I don't know why it fails though)
-	@${CP} -pR ${LOCALBASE}/share/electron18 ${WRKDIR}/electron18
-	${CHMOD} -R a+w ${WRKDIR}/electron18
+	@${CP} -pR ${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR} ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
+	${CHMOD} -R a+w ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 
 	# Install libsignal_node.so and libringrtc.so binaries in the yarn cache
 	${MKDIR} ${WRKDIR}/.cache/yarn/v6/${NPM_SIGNAL_DIR}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-x64 \
@@ -147,8 +149,8 @@ do-install:
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${PACKAGE_ENV} yarn run electron-builder \
 			--linux --dir --config.npmRebuild=false \
-			--config.electronVersion=18 \
-			--config.electronDist=${WRKDIR}/electron18
+			--config.electronVersion=${ELECTRON_VER_MAJOR} \
+			--config.electronDist=${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${BUILD_WRKSRC}/dist/linux-unpacked && \

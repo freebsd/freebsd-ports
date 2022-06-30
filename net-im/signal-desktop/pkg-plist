@@ -90,7 +90,5 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/sharp/build/Release/sharp-freebsd-x64.node
 @(,,755) %%DATADIR%%/signal-desktop
 %%DATADIR%%/snapshot_blob.bin
-%%DATADIR%%/swiftshader/libEGL.so
-%%DATADIR%%/swiftshader/libGLESv2.so
 %%DATADIR%%/v8_context_snapshot.bin
 %%DATADIR%%/vk_swiftshader_icd.json
