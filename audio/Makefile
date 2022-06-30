@@ -823,7 +823,6 @@
     SUBDIR += tse3
     SUBDIR += tta
     SUBDIR += tuneradio
-    SUBDIR += tuxguitar
     SUBDIR += twolame
     SUBDIR += uade
     SUBDIR += umix

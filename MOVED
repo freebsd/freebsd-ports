@@ -17363,3 +17363,5 @@ emulators/kcemu||2022-06-30|Has expired: Depends on expired multimedia/schroedin
 multimedia/ccextractor||2022-06-30|Has expired: Depends on expired multimedia/schroedinger
 security/libgringotts||2022-06-30|Has expired: Abandonware, upstream dead and last release in 2008
 deskutils/osmo||2022-06-30|Has expired: Depends on expired security/libgringotts
+devel/itext||2022-06-30|Has expired: Outdated version and deprecated by upstream
+audio/tuxguitar||2022-06-30|Has expired: Depends on expired devel/itext

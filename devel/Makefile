@@ -982,7 +982,6 @@
     SUBDIR += isfreedesktop
     SUBDIR += isl
     SUBDIR += ispc
-    SUBDIR += itext
     SUBDIR += ivykis
     SUBDIR += jam
     SUBDIR += jansson
