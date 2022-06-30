@@ -329,7 +329,7 @@ libexec/gimp/2.2/plug-ins/file-gif-save/file-gif-save
 libexec/gimp/2.2/plug-ins/file-gih/file-gih
 libexec/gimp/2.2/plug-ins/file-glob/file-glob
 libexec/gimp/2.2/plug-ins/file-header/file-header
-%%LIBHEIF%%libexec/gimp/2.2/plug-ins/file-heif/file-heif
+%%HEIF%%libexec/gimp/2.2/plug-ins/file-heif/file-heif
 libexec/gimp/2.2/plug-ins/file-html-table/file-html-table
 libexec/gimp/2.2/plug-ins/file-ico/file-ico
 %%OPENJPEG%%libexec/gimp/2.2/plug-ins/file-jp2-load/file-jp2-load
