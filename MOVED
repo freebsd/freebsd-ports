@@ -17353,3 +17353,4 @@ devel/erlang-poolboy||2022-06-08|Remove expired ports. Use mix or rebar3 build t
 devel/erlang-pooler||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 devel/erlang-sbroker||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 devel/erlang-syslog||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
+www/py-graphite-web||2022-06-30|Has expired: No support for newer versions of Django
