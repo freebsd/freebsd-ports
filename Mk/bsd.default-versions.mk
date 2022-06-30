@@ -88,7 +88,7 @@ LLVM_DEFAULT?=		90
 LUA_DEFAULT?=		5.2
 # Possible values: 5.10, 5.20, 6.8
 MONO_DEFAULT=		5.10
-# Possible values: 5.5, 5.6, 5.7, 8.0, 10.3m, 10.4m, 10.5m, 5.5p, 5.6p, 5.7p, 5.6w, 5.7w
+# Possible values: 5.6, 5.7, 8.0, 10.3m, 10.4m, 10.5m, 5.7p, 5.7w
 MYSQL_DEFAULT?=		5.7
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
