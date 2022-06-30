@@ -155,6 +155,7 @@ GVFS_DESC?=		Virtual filesystems support via GVFS
 H323_DESC?=		H.323 codec support
 HAL_DESC?=		HAL (Hardware Abstraction Layer) support
 HDF5_DESC?=		HDF-5 data format support
+HEIF_DESC?=		ISO/IEC 23008-12:2017 HEIF file format support
 HPACK_DESC?=		Header Compression for HTTP/2.0 support
 HTTP2_DESC?=		HTTP protocol version 2.0 support
 HTTPD_DESC?=		httpd output streaming support

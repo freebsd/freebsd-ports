@@ -41,7 +41,6 @@ WEBP_CPPFLAGS=		-I${LOCALBASE}/include
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_OFF=	--without-tiff
 TIFF_CPPFLAGS=		-I${LOCALBASE}/include
-HEIF_DESC=	HEIF image format support
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
 HEIF_CONFIGURE_OFF=	--without-heif
 HEIF_CPPFLAGS=		-I${LOCALBASE}/include

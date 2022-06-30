@@ -52,7 +52,6 @@ PLIST_FILES=	${GO_TARGET:S,./cmd,bin,}
 OPTIONS_DEFINE=		HEIF
 OPTIONS_DEFAULT=	HEIF
 
-HEIF_DESC=		Extract timing metadata from macOS dynamic wallpaper
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
 HEIF_USES=		pkgconfig
 HEIF_MESON_ENABLED=	libheif

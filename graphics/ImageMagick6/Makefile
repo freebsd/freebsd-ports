@@ -107,7 +107,6 @@ GRAPHVIZ_LIB_DEPENDS=	libgvc.so:graphics/graphviz
 GRAPHVIZ_CFLAGS=	-I${LOCALBASE}/include/graphviz
 GRAPHVIZ_LDFLAGS=	-L${LOCALBASE}/lib/graphviz
 
-HEIF_DESC=		ISO/IEC 23008-12:2017 HEIF file format support
 HEIF_CONFIGURE_WITH=	heic
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
 
