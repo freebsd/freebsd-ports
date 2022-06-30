@@ -17354,3 +17354,7 @@ devel/erlang-pooler||2022-06-08|Remove expired ports. Use mix or rebar3 build to
 devel/erlang-sbroker||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 devel/erlang-syslog||2022-06-08|Remove expired ports. Use mix or rebar3 build tools instead
 www/py-graphite-web||2022-06-30|Has expired: No support for newer versions of Django
+databases/percona56-server||2022-06-30|Has expired: EOL since February 2021
+databases/percona56-client||2022-06-30|Has expired: EOL since February 2021
+databases/mysql55-server||2022-06-30|Has expired: Upstream support ended on December 2018
+databases/mysql55-client||2022-06-30|Has expired: Upstream support ended on December 2018

@@ -204,8 +204,6 @@
     SUBDIR += mysql-q4m
     SUBDIR += mysql-udf
     SUBDIR += mysql2pgsql
-    SUBDIR += mysql55-client
-    SUBDIR += mysql55-server
     SUBDIR += mysql56-client
     SUBDIR += mysql56-server
     SUBDIR += mysql57-client
@@ -550,8 +548,6 @@
     SUBDIR += pecl-rrd
     SUBDIR += percona-pam-for-mysql
     SUBDIR += percona-toolkit
-    SUBDIR += percona56-client
-    SUBDIR += percona56-server
     SUBDIR += percona57-client
     SUBDIR += percona57-pam-for-mysql
     SUBDIR += percona57-server
