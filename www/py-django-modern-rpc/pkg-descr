@@ -1,5 +1,0 @@
-Django-modern-rpc provides a simple solution to implement a remote procedure
-call (RPC) server as part of your Django project. It supports all major Django
-and Python versions.
-
-WWW: https://github.com/alorence/django-modern-rpc

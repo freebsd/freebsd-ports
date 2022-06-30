@@ -1475,7 +1475,6 @@
     SUBDIR += py-dj40-django-timezone-field
     SUBDIR += py-dj40-djangorestframework
     SUBDIR += py-dj40-drf-yasg
-    SUBDIR += py-django
     SUBDIR += py-django-admin-rangefilter
     SUBDIR += py-django-advanced-filters
     SUBDIR += py-django-allauth
@@ -1484,22 +1483,17 @@
     SUBDIR += py-django-assets
     SUBDIR += py-django-auth-ldap
     SUBDIR += py-django-autocomplete-light
-    SUBDIR += py-django-babel
     SUBDIR += py-django-bakery
     SUBDIR += py-django-bitfield
     SUBDIR += py-django-bleach
-    SUBDIR += py-django-bootstrap-form
     SUBDIR += py-django-bootstrap-pagination
     SUBDIR += py-django-bootstrap3
     SUBDIR += py-django-bootstrap4
     SUBDIR += py-django-braces
-    SUBDIR += py-django-bulk-update
     SUBDIR += py-django-cacheops
     SUBDIR += py-django-ckeditor-5
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
-    SUBDIR += py-django-common-helpers
-    SUBDIR += py-django-compat
     SUBDIR += py-django-configurations
     SUBDIR += py-django-constance
     SUBDIR += py-django-contact-form
@@ -1521,7 +1515,6 @@
     SUBDIR += py-django-graphiql-debug-toolbar
     SUBDIR += py-django-gravatar2
     SUBDIR += py-django-guardian
-    SUBDIR += py-django-happenings-update
     SUBDIR += py-django-hashid-field
     SUBDIR += py-django-haystack
     SUBDIR += py-django-hierarkey
@@ -1539,7 +1532,6 @@
     SUBDIR += py-django-mezzanine-grappelli
     SUBDIR += py-django-model-utils
     SUBDIR += py-django-modelcluster
-    SUBDIR += py-django-modern-rpc
     SUBDIR += py-django-mptt
     SUBDIR += py-django-netfields
     SUBDIR += py-django-object-actions
@@ -1572,7 +1564,6 @@
     SUBDIR += py-django-statici18n
     SUBDIR += py-django-staticinline
     SUBDIR += py-django-storages
-    SUBDIR += py-django-sudo
     SUBDIR += py-django-tables2
     SUBDIR += py-django-tagging
     SUBDIR += py-django-taggit

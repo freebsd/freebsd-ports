@@ -17368,3 +17368,12 @@ audio/tuxguitar||2022-06-30|Has expired: Depends on expired devel/itext
 security/ruby-bitwarden||2022-06-30|Has expired: Broken with all supported versions of Ruby
 mail/rubygem-tmail||2022-06-30|Has expired: Broken with all supported versions of Ruby
 www/redmine4|www/redmine42|2022-06-30|Has expired: Deprecated by upstream. Please consider using www/redmine42
+www/py-django-common-helpers||2022-06-30|Has expired: No longer maintained, doesn't work with newer versions of Django
+www/py-django||2022-06-30|Has expired: Was used as a metaport, no longer required
+www/py-django-sudo||2022-06-30|Has expired: Abandoned upstream, not compatible with newer versions of Django
+www/py-django-bootstrap-form||2022-06-30|Has expired: No longer maintained, not compatible with newer versions of Django
+www/py-django-babel||2022-06-30|Has expired: Upstream no longer maintained, please use www/py-enmerkar instead
+www/py-django-bulk-update||2022-06-30|Has expired: No longer maintained, not compatible with newer versions of Django
+www/py-django-happenings-update||2022-06-30|Has expired: Upstream no longer maintained, not compatible with newer versions of Django
+www/py-django-compat||2022-06-30|Has expired: No longer maintained, doesn't work with newer versions of Django
+www/py-django-modern-rpc||2022-06-30|Has expired: Not compatible with newer versions of Django
