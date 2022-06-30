@@ -52,7 +52,6 @@
     SUBDIR += javatari
     SUBDIR += joytran
     SUBDIR += jzintv
-    SUBDIR += kcemu
     SUBDIR += klh10
     SUBDIR += lib765
     SUBDIR += libc6-shim

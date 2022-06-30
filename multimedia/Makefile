@@ -28,7 +28,6 @@
     SUBDIR += bsdbktr_tvtune
     SUBDIR += butt
     SUBDIR += camserv
-    SUBDIR += ccextractor
     SUBDIR += cclive
     SUBDIR += celluloid
     SUBDIR += cheese
@@ -373,7 +372,6 @@
     SUBDIR += rubygem-paperclip-av-transcoder-rails50
     SUBDIR += rubygem-streamio-ffmpeg
     SUBDIR += sabbu
-    SUBDIR += schroedinger
     SUBDIR += scte35dump
     SUBDIR += shotcut
     SUBDIR += simplescreenrecorder
