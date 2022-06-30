@@ -4116,7 +4116,6 @@
     SUBDIR += py-apache_conf_parser
     SUBDIR += py-apipkg
     SUBDIR += py-apispec
-    SUBDIR += py-apns2
     SUBDIR += py-appdirs
     SUBDIR += py-applicationinsights
     SUBDIR += py-apptools
@@ -4436,7 +4435,6 @@
     SUBDIR += py-dj40-django-rq
     SUBDIR += py-dj40-graphene-django
     SUBDIR += py-django-rq
-    SUBDIR += py-docker-py
     SUBDIR += py-dockerpty
     SUBDIR += py-docopt
     SUBDIR += py-doctest-ignore-unicode
@@ -5292,7 +5290,6 @@
     SUBDIR += py-stringbrewer
     SUBDIR += py-stringcase
     SUBDIR += py-structlog
-    SUBDIR += py-stsci.distutils
     SUBDIR += py-subprocess-tee
     SUBDIR += py-subversion
     SUBDIR += py-sure

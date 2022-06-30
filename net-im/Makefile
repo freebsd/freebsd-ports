@@ -126,7 +126,6 @@
     SUBDIR += py-punjab
     SUBDIR += py-python-telegram-bot
     SUBDIR += py-slack-sdk
-    SUBDIR += py-slackclient
     SUBDIR += py-slixmpp
     SUBDIR += py-telepot
     SUBDIR += py-toxcore-c

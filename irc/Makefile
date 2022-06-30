@@ -83,7 +83,6 @@
     SUBDIR += pisg
     SUBDIR += polari
     SUBDIR += pounce
-    SUBDIR += py-fishcrypt
     SUBDIR += py-irc
     SUBDIR += py-limnoria
     SUBDIR += quassel

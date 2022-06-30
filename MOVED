@@ -17397,3 +17397,10 @@ www/py-dj32-django-debug-toolbar|www/py-django-debug-toolbar|2022-06-30|Has expi
 www/py-dj32-django-redis|www/py-django-redis|2022-06-30|Has expired: Obsolete, please use www/py-django-redis instead
 www/py-dj32-django-timezone-field|www/py-django-timezone-field|2022-06-30|Has expired: Obsolete, please use www/py-django-timezone-field instead
 www/py-dj32-django-js-asset|www/py-django-js-asset|2022-06-30|Has expired: Obsolete, please use www/py-django-js-asset instead
+www/py-rackspace-monitoring||2022-06-30|Has expired: Python compatibility upto 3.2 and last release was 3 years ago
+devel/py-apns2|devel/py-aioapns|2022-06-30|Has expired: Use devel/py-aioapns
+www/py-hyper|www/py-httpx|2022-06-30|Has expired: Project abandoned use www/py-httpx
+irc/py-fishcrypt||2022-06-30|Has expired: Abandoned, unmaintained, requires Python 2 and depends on deprecated pycrypto
+devel/py-stsci.distutils||2022-06-30|Has expired: Upstream abandoned in 2013
+devel/py-docker-py|devel/py-docker|2022-06-30|Has expired: Use devel/py-docker
+net-im/py-slackclient|net-im/py-slack-sdk|2022-06-30|Has expired: Use net-im/py-slack-sdk

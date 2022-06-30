@@ -1660,7 +1660,6 @@
     SUBDIR += py-httpx-oauth
     SUBDIR += py-httpx-socks
     SUBDIR += py-httpx013
-    SUBDIR += py-hyper
     SUBDIR += py-hypercorn
     SUBDIR += py-hyperframe
     SUBDIR += py-hyperlink
@@ -1712,7 +1711,6 @@
     SUBDIR += py-pywikibot
     SUBDIR += py-qt5-webengine
     SUBDIR += py-quilt3
-    SUBDIR += py-rackspace-monitoring
     SUBDIR += py-recaptcha
     SUBDIR += py-requests
     SUBDIR += py-requests-aws4auth
