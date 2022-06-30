@@ -173,7 +173,6 @@
     SUBDIR += geneweb
     SUBDIR += geolizer
     SUBDIR += get_flash_videos
-    SUBDIR += getleft
     SUBDIR += gist
     SUBDIR += gitea
     SUBDIR += gitlab-ce
@@ -456,7 +455,6 @@
     SUBDIR += npm-node14
     SUBDIR += npm-node16
     SUBDIR += npm-node18
-    SUBDIR += nspluginwrapper
     SUBDIR += oauth2-proxy
     SUBDIR += obhttpd
     SUBDIR += oneshot

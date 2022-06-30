@@ -1,6 +1,0 @@
-The nspluginwrapper is an Open Source compatibility plugin for Netscape 4
-(NPAPI) plugins. That is, it enables you to use plugins on platforms they were
-not built for. For example, you can use the Adobe Flash plugin on Linux/x86_64,
-NetBSD and FreeBSD platforms.
-
-WWW: http://nspluginwrapper.org

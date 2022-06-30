@@ -192,7 +192,6 @@
     SUBDIR += gsa
     SUBDIR += gsad
     SUBDIR += gsasl
-    SUBDIR += gss
     SUBDIR += gstreamer1-plugins-dtls
     SUBDIR += gtkpasman
     SUBDIR += gvm
@@ -1161,7 +1160,6 @@
     SUBDIR += sha1collisiondetection
     SUBDIR += sha2wordlist
     SUBDIR += shibboleth-sp
-    SUBDIR += shishi
     SUBDIR += sig2dot
     SUBDIR += signify
     SUBDIR += signing-party

@@ -511,7 +511,6 @@
     SUBDIR += deheader
     SUBDIR += delta
     SUBDIR += delve
-    SUBDIR += dep
     SUBDIR += deployer
     SUBDIR += derelict-sdl2
     SUBDIR += derelict-util
@@ -570,7 +569,6 @@
     SUBDIR += efl
     SUBDIR += egypt
     SUBDIR += eiffelstudio
-    SUBDIR += electron13
     SUBDIR += electron17
     SUBDIR += electron18
     SUBDIR += electron19
@@ -865,7 +863,6 @@
     SUBDIR += gorm
     SUBDIR += goswagger
     SUBDIR += got
-    SUBDIR += govendor
     SUBDIR += gpds
     SUBDIR += gperf
     SUBDIR += gpm
@@ -5578,7 +5575,6 @@
     SUBDIR += quickcheck++
     SUBDIR += quilt
     SUBDIR += rabs
-    SUBDIR += racer
     SUBDIR += radare2
     SUBDIR += radian
     SUBDIR += ragel

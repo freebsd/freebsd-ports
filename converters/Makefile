@@ -32,7 +32,6 @@
     SUBDIR += gbase
     SUBDIR += gbsdconv
     SUBDIR += hs-aeson-pretty
-    SUBDIR += htx
     SUBDIR += i18ntools
     SUBDIR += ical2html
     SUBDIR += iconv

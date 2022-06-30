@@ -115,7 +115,6 @@
     SUBDIR += qemu-powernv
     SUBDIR += qemu-user-static
     SUBDIR += qemu-user-static-devel
-    SUBDIR += qemu5
     SUBDIR += qemu6
     SUBDIR += qmc2
     SUBDIR += quasi88

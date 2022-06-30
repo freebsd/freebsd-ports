@@ -129,7 +129,6 @@
     SUBDIR += libdrizzle
     SUBDIR += libdrizzle-redux
     SUBDIR += libgda5
-    SUBDIR += libgda5-bdb
     SUBDIR += libgda5-jdbc
     SUBDIR += libgda5-ldap
     SUBDIR += libgda5-mdb
@@ -578,7 +577,6 @@
     SUBDIR += pglogical
     SUBDIR += pgmetrics
     SUBDIR += pgmodeler
-    SUBDIR += pgpool-II-36
     SUBDIR += pgpool-II-37
     SUBDIR += pgpool-II-40
     SUBDIR += pgpool-II-41

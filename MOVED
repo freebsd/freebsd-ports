@@ -17462,3 +17462,21 @@ devel/psptoolchain-gcc-stage1||2022-06-30|Has expired: Security issues for multi
 devel/psptoolchain-pspsdk-stage1||2022-06-30|Has expired: Security issues for multiple years
 devel/psptoolchain-pspsdk-stage2||2022-06-30|Has expired: Security issues for multiple years
 devel/psptoolchain-gcc-stage2||2022-06-30|Has expired: Security issues for multiple years
+databases/pgpool-II-36||2022-06-30|Has expired: Upstream support ended use databases/pgpool-II-43
+ftp/multiget||2022-06-30|Has expired: Last release in 2007, doesn't support https, depends on deprecated wxgtk28 and dead upstream. Please consider using net/uget
+devel/electron13||2022-06-30|Has expired: EOLed upstream, switch to newer version
+ftp/puf||2022-06-30|Has expired: Last release in 2006, doesn't support https and upstream is dead. Please consider using www/aria2
+security/gss||2022-06-30|Has expired: Abandonware, last release in 2014 and no development since
+security/shishi||2022-06-30|Has expired: Abandonware, last release in 2013 and no development since
+ftp/urlgfe||2022-06-30|Has expired
+www/nspluginwrapper||2022-06-30|Has expired: Abandonware, last release in 2011 and upstream is dead. NPAPI plugins are now obsolete and depends on deprecated library GTK 2
+devel/govendor||2022-06-30|Has expired: Use Go modules
+devel/racer||2022-06-30|Has expired: Racer is not actively developped now. Please consider using newer software such as devel/rust-analyzer.
+net-mgmt/unifi6||2022-06-30|Has expired: No longer maintained by upstream
+devel/dep||2022-06-30|Has expired: Use Go modules
+databases/libgda5-bdb||2022-06-30|Has expired: Depends on deprecated databases/db5
+emulators/qemu5||2022-06-30|Has expired: Use emulators/qemu6 or emulators/qemu
+deskutils/bitcollider||2022-06-30|Has expired: bitzi.com is no longer available, closed down in 2013
+converters/htx||2022-06-30|Has expired: XHTML is considered obsolete in favor of HTML5
+www/getleft||2022-06-30|Has expired: Abandonware last updated on 2008
+ftp/wxdfast||2022-06-30|Has expired: Last release in 2009, doesn't support https, depends on deprecated wxgtk28 and dead upstream. Please consider using net/uget

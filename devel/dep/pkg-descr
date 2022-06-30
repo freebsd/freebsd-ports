@@ -1,9 +1,0 @@
-Dep is a Go tool for managing vendor dependencies (not to be confused
-with godep, a different, deprecated tool). dep updates the vendor/
-directory contents based on a manifest, prunes unnecessary dependencies,
-and adds missing dependencies to vendor/ as necessary.
-
-dep is the heir-apparent for vendor management and is being actively
-driven by the Go core team with an eye toward inclusion in the Go tool.
-
-WWW: https://github.com/golang/dep
