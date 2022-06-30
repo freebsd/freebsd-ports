@@ -1,0 +1,7 @@
+Wire is a code generation tool that automates connecting components using
+dependency injection. Dependencies between components are represented in Wire
+as function parameters, encouraging explicit initialization instead of global
+variables. Because Wire operates without runtime state or reflection, code
+written to be used with Wire is useful even for hand-written initialization.
+
+WWW: https://github.com/google/wire

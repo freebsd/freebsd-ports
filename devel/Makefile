@@ -840,6 +840,7 @@
     SUBDIR += go-perf
     SUBDIR += go-protobuf
     SUBDIR += go-tools
+    SUBDIR += go-wire
     SUBDIR += gob2
     SUBDIR += gobject-introspection
     SUBDIR += gocheese
