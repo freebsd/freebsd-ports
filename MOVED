@@ -17365,3 +17365,6 @@ security/libgringotts||2022-06-30|Has expired: Abandonware, upstream dead and la
 deskutils/osmo||2022-06-30|Has expired: Depends on expired security/libgringotts
 devel/itext||2022-06-30|Has expired: Outdated version and deprecated by upstream
 audio/tuxguitar||2022-06-30|Has expired: Depends on expired devel/itext
+security/ruby-bitwarden||2022-06-30|Has expired: Broken with all supported versions of Ruby
+mail/rubygem-tmail||2022-06-30|Has expired: Broken with all supported versions of Ruby
+www/redmine4|www/redmine42|2022-06-30|Has expired: Deprecated by upstream. Please consider using www/redmine42

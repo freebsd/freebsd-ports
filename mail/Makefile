@@ -611,7 +611,6 @@
     SUBDIR += rubygem-roadie-rails-rails52
     SUBDIR += rubygem-roadie3
     SUBDIR += rubygem-ruby-qmail
-    SUBDIR += rubygem-tmail
     SUBDIR += rubygem-valid_email
     SUBDIR += rubygem-vmail
     SUBDIR += s-nail
