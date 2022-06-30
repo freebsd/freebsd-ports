@@ -1,9 +1,9 @@
 - Sync -std= with devel/abseil to match ABI
 - Avoid leaking abseil dependency to shared library consumers
 
---- CMakeLists.txt.orig	2021-10-29 22:11:57 UTC
+--- CMakeLists.txt.orig	2022-06-30 20:41:58 UTC
 +++ CMakeLists.txt
-@@ -16,8 +16,8 @@
+@@ -16,8 +16,8 @@ cmake_minimum_required(VERSION 3.7.1 FATAL_ERROR)
  cmake_minimum_required(VERSION 3.7.1 FATAL_ERROR)
  
  # libgav1 requires C++11.
@@ -14,19 +14,19 @@
  # libgav1 requires C99.
  set(CMAKE_C_STANDARD 99)
  
-@@ -123,6 +123,8 @@ endif()
+@@ -131,6 +131,8 @@ libgav1_set_test_flags()
  # Set test-only flags based on LIBGAV1_CXX_FLAGS.
  libgav1_set_test_flags()
  
 +find_package(absl)
 +if(NOT TARGET absl::base)
  set(libgav1_abseil "${libgav1_root}/third_party/abseil-cpp")
- if(NOT EXISTS "${libgav1_abseil}")
-   message(
-@@ -136,6 +138,7 @@ if(NOT EXISTS "${libgav1_abseil}")
+ if(EXISTS "${libgav1_abseil}")
+   set(ABSL_PROPAGATE_CXX_STD ON)
+@@ -148,6 +150,7 @@ endif()
+         "    https://github.com/abseil/abseil-cpp.git third_party/abseil-cpp")
+   endif()
  endif()
- set(ABSL_PROPAGATE_CXX_STD ON)
- add_subdirectory("${libgav1_abseil}" "${libgav1_abseil_build}" EXCLUDE_FROM_ALL)
 +endif() # NOT TARGET absl::base
  
  libgav1_reset_target_lists()
