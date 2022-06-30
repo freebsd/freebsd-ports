@@ -36,4 +36,4 @@ BROKEN=		python-3.9 is not supported
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
