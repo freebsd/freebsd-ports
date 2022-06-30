@@ -4,7 +4,7 @@ DISTVERSION=	0.2.74
 PORTREVISION=	7
 CATEGORIES=	www
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easily and securely share files from the command line via Firefox Send
 
 LICENSE=	APACHE20 BSD2CLAUSE BSD3CLAUSE CC0-1.0 FUCHSIACPRNG GPLv3 ISCL \
