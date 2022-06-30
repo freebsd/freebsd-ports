@@ -10,7 +10,7 @@ COMMENT=	Authentication broker supporting different identity providers
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-omniauth-oauth2>=1.1:net/rubygem-omniauth-oauth2
+RUN_DEPENDS=	rubygem-omniauth-oauth2-v1>=1.4<2:net/rubygem-omniauth-oauth2-v1
 
 NO_ARCH=	yes
 USE_RUBY=	yes
