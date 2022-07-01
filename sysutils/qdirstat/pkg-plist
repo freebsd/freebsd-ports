@@ -9,7 +9,7 @@ share/icons/hicolor/scalable/apps/qdirstat.svg
 %%PORTDOCS%%%%DOCSDIR%%/Contributing.md
 %%PORTDOCS%%%%DOCSDIR%%/Debugging-Tips.md
 %%PORTDOCS%%%%DOCSDIR%%/DevHistory.md
-%%PORTDOCS%%%%DOCSDIR%%/File-Age-Statistics.md
+%%PORTDOCS%%%%DOCSDIR%%/File-Age-Stats.md
 %%PORTDOCS%%%%DOCSDIR%%/GitHub-Workflow.md
 %%PORTDOCS%%%%DOCSDIR%%/Installing.md
 %%PORTDOCS%%%%DOCSDIR%%/Pkg-View.md
