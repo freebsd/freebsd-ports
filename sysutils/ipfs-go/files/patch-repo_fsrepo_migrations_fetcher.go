@@ -1,11 +1,11 @@
---- repo/fsrepo/migrations/fetcher.go.orig	2022-01-10 17:25:02 UTC
+--- repo/fsrepo/migrations/fetcher.go.orig	2022-06-17 18:33:52 UTC
 +++ repo/fsrepo/migrations/fetcher.go
-@@ -10,7 +10,7 @@ import (
+@@ -11,7 +11,7 @@ const (
  
  const (
  	// Current distribution to fetch migrations from
--	CurrentIpfsDist = "/ipfs/QmP7tLxzhLU1KauTRX3jkVkF93pCv4skcceyUYMhf4AKJR" // fs-repo-migrations v2.0.2
-+	CurrentIpfsDist = "" // fs-repo-migrations v2.0.2
+-	CurrentIpfsDist = "/ipfs/QmdaCHYBDHEhXCMoynH5UcohEay6m1XayZCcxWZzKAHNVN" // fs-repo-11-to-12 v1.0.2
++	CurrentIpfsDist = "" // fs-repo-11-to-12 v1.0.2
  	// Latest distribution path.  Default for fetchers.
  	LatestIpfsDist = "/ipns/dist.ipfs.io"
  
