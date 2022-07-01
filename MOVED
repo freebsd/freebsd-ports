@@ -17485,3 +17485,4 @@ x11/i3lock|deskutils/i3lock|2022-07-01|move desktop utility to its right categor
 x11/i3status|deskutils/i3status|2022-07-01|move desktop utility to its right category
 x11/xcbautolock|deskutils/xcbautolock|2022-07-01|move desktop utility to its right category
 x11/havoc|deskutils/havoc|2022-07-01|move desktop utility to its right category
+devel/go-glide||2022-07-01|Has expired: use go mod instead of glide
