@@ -8,6 +8,7 @@ MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System configuration setup/management utility
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	sbin/${PORTNAME} man/man1/${PORTNAME}.1.gz
