@@ -259,6 +259,12 @@ USE_LDCONFIG=		yes
 
 PLIST_FILES=	lib/libsignal_node.so
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+EXTRA_PATCHES=	${FILESDIR}/${ARCH}-patch-node_binding.gyp
+.endif
+
 post-patch:
 	${REINPLACE_CMD} "s#python3#${PYTHON_CMD}#" \
 		${WRKSRC}/node/binding.gyp
@@ -271,7 +277,7 @@ do-build:
 		${SETENV} ${MAKE_ENV} yarn tsc
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/node/build/Release/obj.target/libsignal_client_freebsd_x64.node/geni/rust/x86_64-unknown-freebsd/release/libsignal_node.so \
+	${INSTALL_DATA} ${WRKSRC}/node/build/Release/obj.target/libsignal_client_freebsd_${ARCH:S/amd64/x64/:C/powerpc64.*/ppc64/}.node/geni/rust/${ARCH:S/amd64/x86_64/}-unknown-freebsd/release/libsignal_node.so \
 		${STAGEDIR}${PREFIX}/lib/
 
 create-caches-tarball:
