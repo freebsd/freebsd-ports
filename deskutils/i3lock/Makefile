@@ -2,7 +2,7 @@
 
 PORTNAME=	i3lock
 PORTVERSION=	2.13
-CATEGORIES=	x11
+CATEGORIES=	deskutils x11
 MASTER_SITES=	http://i3wm.org/${PORTNAME}/
 
 MAINTAINER=	bapt@FreeBSD.org

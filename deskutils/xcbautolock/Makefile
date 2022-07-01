@@ -1,6 +1,6 @@
 PORTNAME=	xcbautolock
 PORTVERSION=	0.2.2
-CATEGORIES=	x11
+CATEGORIES=	deskutils x11
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	XCB base autolocker

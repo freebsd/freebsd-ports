@@ -42,6 +42,7 @@
     SUBDIR += dailystrips
     SUBDIR += deforaos-todo
     SUBDIR += dfshow
+    SUBDIR += dmenu-wayland
     SUBDIR += docear
     SUBDIR += dosage
     SUBDIR += dstask
@@ -121,6 +122,8 @@
     SUBDIR += hot-babe
     SUBDIR += howm
     SUBDIR += hs-arbtt
+    SUBDIR += i3lock
+    SUBDIR += i3status
     SUBDIR += ical
     SUBDIR += itinerary
     SUBDIR += jjclient

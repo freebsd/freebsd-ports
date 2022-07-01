@@ -17480,3 +17480,7 @@ deskutils/bitcollider||2022-06-30|Has expired: bitzi.com is no longer available,
 converters/htx||2022-06-30|Has expired: XHTML is considered obsolete in favor of HTML5
 www/getleft||2022-06-30|Has expired: Abandonware last updated on 2008
 ftp/wxdfast||2022-06-30|Has expired: Last release in 2009, doesn't support https, depends on deprecated wxgtk28 and dead upstream. Please consider using net/uget
+x11/dmenu-wayland||2022-07-01|move desktop utility to its right category
+x11/i3lock||2022-07-01|move desktop utility to its right category
+x11/i3status||2022-07-01|move desktop utility to its right category
+x11/xcbautolock||2022-07-01|move desktop utility to its right category
