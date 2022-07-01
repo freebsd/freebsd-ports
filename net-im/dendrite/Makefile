@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.8
+DISTVERSION=	0.8.9
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -85,7 +85,7 @@ GH_TUPLE=	Arceliar:ironwood:319147a02d98:arceliar_ironwood/vendor/github.com/Arc
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-sqlite3-js:28aa791a1c91:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:be2af5ef2e16:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:e55d796fd0b3:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:gomatrixserverlib:da53994b0c7f:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
 		matrix-org:pinecone:2999ea29ed48:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.13:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
@@ -99,7 +99,7 @@ GH_TUPLE=	Arceliar:ironwood:319147a02d98:arceliar_ironwood/vendor/github.com/Arc
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		neilalexander:nats-server:73a9a246d34f:neilalexander_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
-		neilalexander:nats.go:b262d9f0be1e:neilalexander_nats_go/vendor/github.com/nats-io/nats.go \
+		neilalexander:nats.go:ac518c356673:neilalexander_nats_go/vendor/github.com/nats-io/nats.go \
 		neilalexander:utp:54ae7b1cd5f9:neilalexander_utp/vendor/github.com/neilalexander/utp \
 		nfnt:resize:83c6a9932646:nfnt_resize/vendor/github.com/nfnt/resize \
 		ngrok:sqlmw:97c9c04efc79:ngrok_sqlmw/vendor/github.com/ngrok/sqlmw \
