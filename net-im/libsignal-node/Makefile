@@ -255,11 +255,13 @@ MAKE_ENV=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron18 \
 		PYTHON=${PYTHON_CMD} \
 		XDG_CACHE_HOME=${WRKDIR}/.cache
 
-USE_LDCONFIG=	yes
+MAKE_ENV+=	RUSTC_BOOTSTRAP=aes,polyval
+
+USE_LDCONFIG=		yes
 
 PLIST_FILES=	lib/libsignal_node.so
 
-NODE_ARCH=	${ARCH:S/amd64/x64/:S/i386/ia32/:C/powerpc64.*/ppc64/}
+NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/:C/powerpc64.*/ppc64/}
 RUST_ARCH=	${ARCH:S/amd64/x86_64/:S/i386/i686/}
 
 .include <bsd.port.options.mk>
