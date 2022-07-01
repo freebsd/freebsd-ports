@@ -1,7 +1,7 @@
 PORTNAME=	slurp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.2
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Select a region in a Wayland compositor

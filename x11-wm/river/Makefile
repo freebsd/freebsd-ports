@@ -2,7 +2,7 @@ PORTNAME=	river
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.3
 PORTREVISION=	1
-CATEGORIES=	x11-wm
+CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor

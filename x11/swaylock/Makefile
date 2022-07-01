@@ -1,7 +1,7 @@
 PORTNAME=	swaylock
 DISTVERSION?=	1.6
 PORTREVISION?=	1
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	Screen locker for Wayland

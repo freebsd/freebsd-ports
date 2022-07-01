@@ -1,6 +1,6 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.11.32
-CATEGORIES=	x11-wm
+CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	2a84a44f6897.patch:-p1 # https://github.com/Plagman/gamescope/pull/119

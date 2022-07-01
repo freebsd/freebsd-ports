@@ -2,7 +2,7 @@ PORTNAME=	alacritty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.1
 PORTREVISION=	3
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	GPU-accelerated terminal emulator

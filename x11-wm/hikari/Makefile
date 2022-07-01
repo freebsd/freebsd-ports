@@ -1,6 +1,6 @@
 PORTNAME=	hikari
 DISTVERSION=	2.3.3
-CATEGORIES=	x11-wm
+CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://hikari.acmelabs.space/releases/
 
 MAINTAINER=	ashish@FreeBSD.org

@@ -1,7 +1,7 @@
 PORTNAME=	wvkbd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	On-screen keyboard for wlroots

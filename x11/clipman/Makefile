@@ -2,7 +2,7 @@ PORTNAME=	clipman
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.1
 PORTREVISION=	2
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple clipboard manager for Wayland

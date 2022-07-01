@@ -1,7 +1,7 @@
 PORTNAME=	grim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.0
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 PATCH_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/commit/

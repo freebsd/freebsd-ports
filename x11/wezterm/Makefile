@@ -1,6 +1,6 @@
 PORTNAME=	wezterm
 DISTVERSION=	20220624-141144-bd1b7c5d
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GPU-accelerated terminal emulator and multiplexer

@@ -1,7 +1,7 @@
 PORTNAME=	wlogout
 PORTVERSION=	1.1.1
 PORTREVISION=	1
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland-based logout menu

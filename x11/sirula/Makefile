@@ -2,7 +2,7 @@ PORTNAME=	sirula
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
 PORTREVISION=	5
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple app launcher for Wayland written in Rust

@@ -1,6 +1,6 @@
 PORTNAME=	kitty
 DISTVERSION=	0.25.0
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	alexis.praga@free.fr

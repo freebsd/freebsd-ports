@@ -1,7 +1,7 @@
 PORTNAME=	wl-mirror
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.2
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple Wayland output mirror client

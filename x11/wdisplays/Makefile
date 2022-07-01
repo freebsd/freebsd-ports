@@ -1,6 +1,6 @@
 PORTNAME=	wdisplays
 DISTVERSION=	1.1
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GUI display configurator for wlroots compositors

@@ -2,7 +2,7 @@ PORTNAME=	mako
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6
 PORTREVISION=	1
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight Wayland notification daemon

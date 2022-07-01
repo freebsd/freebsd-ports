@@ -1,7 +1,7 @@
 PORTNAME=	swaync
 DISTVERSIONPREFIX=	v
 PORTVERSION=	0.5
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple Wayland notification daemon with GTK panel

@@ -1,7 +1,7 @@
 PORTNAME=	dmenu-wayland
 PORTVERSION=	0.1
 DISTVERSIONPREFIX=	v
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/nyyManni/dmenu-wayland/commit/
 PATCHFILES=	b646f4d14c627d9a4300d9d015fb8e9b5cb2abef.patch:-p1

@@ -1,6 +1,6 @@
 PORTNAME=	sway
 DISTVERSION=	1.7
-CATEGORIES=	x11-wm
+CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	cd9d1038a822.patch:-p1 # https://github.com/swaywm/sway/pull/5090

@@ -1,7 +1,7 @@
 PORTNAME=	kanshi
 DISTVERSIONPREFIX=	v
 PORTVERSION=	1.2.0
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	jbeich@FreeBSD.org

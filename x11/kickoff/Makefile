@@ -1,7 +1,7 @@
 PORTNAME=	kickoff
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.1
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Minimalistic program launcher for Wayland

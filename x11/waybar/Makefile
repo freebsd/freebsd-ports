@@ -1,6 +1,6 @@
 PORTNAME=	waybar
 DISTVERSION=	0.9.13
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	d25278f710a4.patch:-p1 # https://github.com/Alexays/Waybar/pull/1567

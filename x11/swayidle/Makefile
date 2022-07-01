@@ -1,6 +1,6 @@
 PORTNAME=	swayidle
 DISTVERSION=	1.7.1
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	28950f787813.patch:-p1 # https://github.com/swaywm/swayidle/pull/89

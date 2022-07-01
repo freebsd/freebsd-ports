@@ -1,6 +1,6 @@
 PORTNAME=	way-displays
 DISTVERSION=	1.5.3
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Auto Manage Your Wayland Displays
