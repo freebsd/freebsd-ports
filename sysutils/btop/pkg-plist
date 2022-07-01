@@ -6,6 +6,7 @@ share/applications/btop.desktop
 %%DATADIR%%/themes/ayu.theme
 %%DATADIR%%/themes/dracula.theme
 %%DATADIR%%/themes/dusklight.theme
+%%DATADIR%%/themes/everforest-dark-hard.theme
 %%DATADIR%%/themes/flat-remix-light.theme
 %%DATADIR%%/themes/flat-remix.theme
 %%DATADIR%%/themes/greyscale.theme
@@ -19,6 +20,7 @@ share/applications/btop.desktop
 %%DATADIR%%/themes/nord.theme
 %%DATADIR%%/themes/onedark.theme
 %%DATADIR%%/themes/solarized_dark.theme
+%%DATADIR%%/themes/tomorrow-night.theme
 %%DATADIR%%/themes/tokyo-night.theme
 %%DATADIR%%/themes/tokyo-storm.theme
 %%DATADIR%%/themes/whiteout.theme
