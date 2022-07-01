@@ -8,6 +8,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	Easy to use BASIC language and IDE for education
 
+DEPRECATED=	Depends on expired audio/espeak
+EXPIRATION_DATE=2022-09-30
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	espeak:audio/espeak \
