@@ -402,6 +402,7 @@
     SUBDIR += kahip
     SUBDIR += kalgebra
     SUBDIR += kalker
+    SUBDIR += kamis
     SUBDIR += kbruch
     SUBDIR += kcalc
     SUBDIR += kfr
