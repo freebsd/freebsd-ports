@@ -1,7 +1,6 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 
 PORTNAME=	percona
-PORTREVISION=	1
 PKGNAMESUFFIX=	-pam-for-mysql
 
 COMMENT=	PAM plugin for MySQL
@@ -11,7 +10,7 @@ BROKEN_armv7=		fails to compile: cannot combine with previous 'type-name' declar
 BROKEN_mips=		fails to configure: CMake Error: Generator: execution of make failed
 BROKEN_mips64=		fails to configure: CMake Error: Generator: execution of make failed
 
-MASTERDIR=	${.CURDIR}/../percona56-server
+MASTERDIR=	${.CURDIR}/../percona57-server
 
 PKGMESSAGE=	${.CURDIR}/pkg-message
 PATCHDIR=	${MASTERDIR}/files
