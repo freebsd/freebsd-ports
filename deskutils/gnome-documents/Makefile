@@ -10,6 +10,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Document manager application designed to work with GNOME 3
 
+DEPRECATED=	Archived upstream
+EXPIRATION_DATE=	2022-08-01
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

@@ -11,6 +11,9 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 file search utilities
 
+DEPRECATED=	Did not survive gnome3
+EXPIRATION_DATE=	2022-08-01
+
 BUILD_DEPENDS=	itstool:textproc/itstool
 
 CONFLICTS=	gnome-utils-2.[0-9]*
