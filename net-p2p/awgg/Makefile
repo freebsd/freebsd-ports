@@ -7,6 +7,9 @@ PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Advanced wget GUI
 
+DEPRECATED=	Depends on expired ftp/axel
+EXPIRATION_DATE=2022-09-30
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	aria2c:www/aria2 \
