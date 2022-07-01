@@ -255,9 +255,12 @@ MAKE_ENV=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron18 \
 		PYTHON=${PYTHON_CMD} \
 		XDG_CACHE_HOME=${WRKDIR}/.cache
 
-USE_LDCONFIG=		yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libsignal_node.so
+
+NODE_ARCH=	${ARCH:S/amd64/x64/:S/i386/ia32/:C/powerpc64.*/ppc64/}
+RUST_ARCH=	${ARCH:S/amd64/x86_64/:S/i386/i686/}
 
 .include <bsd.port.options.mk>
 
@@ -277,7 +280,7 @@ do-build:
 		${SETENV} ${MAKE_ENV} yarn tsc
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/node/build/Release/obj.target/libsignal_client_freebsd_${ARCH:S/amd64/x64/:C/powerpc64.*/ppc64/}.node/geni/rust/${ARCH:S/amd64/x86_64/}-unknown-freebsd/release/libsignal_node.so \
+	${INSTALL_DATA} ${WRKSRC}/node/build/Release/obj.target/libsignal_client_freebsd_${NODE_ARCH}.node/geni/rust/${RUST_ARCH}-unknown-freebsd/release/libsignal_node.so \
 		${STAGEDIR}${PREFIX}/lib/
 
 create-caches-tarball:
