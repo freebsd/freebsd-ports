@@ -1,6 +1,6 @@
 PORTNAME=	cirq-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.1
+DISTVERSION=	0.15.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cirq-google>0:science/py-cirq-google@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}duet>=0.2.0:net/py-duet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}duet>=0.2.6:net/py-duet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
