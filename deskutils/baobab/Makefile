@@ -7,7 +7,7 @@ MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME 3 graphical directory tree analyzer
+COMMENT=	GNOME graphical directory tree analyzer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
