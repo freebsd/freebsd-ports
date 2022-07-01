@@ -1,6 +1,7 @@
 include/rapidfuzz/details/CharSet.hpp
 include/rapidfuzz/details/Matrix.hpp
 include/rapidfuzz/details/PatternMatchVector.hpp
+include/rapidfuzz/details/Range.hpp
 include/rapidfuzz/details/SplittedSentenceView.hpp
 include/rapidfuzz/details/common.hpp
 include/rapidfuzz/details/common_impl.hpp

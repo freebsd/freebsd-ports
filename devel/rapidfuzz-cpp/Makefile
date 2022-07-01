@@ -1,6 +1,6 @@
 PORTNAME=	rapidfuzz-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ TEST_DEPENDS=	catch>0:devel/catch
 
 USES=		cmake:testing compiler:c++11-lib
 
-CMAKE_TESTING_ON=	RAPIDFUZZ_BUILD_TESTING # tests are broken because they expect yet unreleased catch-3.0.0 which is currently a preview version.
+CMAKE_TESTING_ON=	RAPIDFUZZ_BUILD_TESTING # tests use downloaded catch3 instead of catch2 from ports
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxbachmann
