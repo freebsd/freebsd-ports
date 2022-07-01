@@ -1058,6 +1058,7 @@
 %%WWWDIR%%/local/.htaccess
 %%WWWDIR%%/local/README
 %%WWWDIR%%/locale/README
+%%WWWDIR%%/locale/README.md
 %%WWWDIR%%/locale/add_new_language.sh
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.po
@@ -1069,6 +1070,7 @@
 %%WWWDIR%%/locale/de/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/el/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/el/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/en/LC_MESSAGES/frontend.pot
 %%WWWDIR%%/locale/en_US/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/en_US/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/es/LC_MESSAGES/frontend.mo
@@ -1098,8 +1100,8 @@
 %%WWWDIR%%/locale/lv/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/lv/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/make_mo.sh
-%%WWWDIR%%/locale/nb/LC_MESSAGES/frontend.mo
-%%WWWDIR%%/locale/nb/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/nb_NO/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/nb_NO/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/nl/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/nl/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/pl/LC_MESSAGES/frontend.mo
@@ -1114,8 +1116,8 @@
 %%WWWDIR%%/locale/ru/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/sk/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/sk/LC_MESSAGES/frontend.po
-%%WWWDIR%%/locale/sv/LC_MESSAGES/frontend.mo
-%%WWWDIR%%/locale/sv/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/sv_SE/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/tr/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/uk/LC_MESSAGES/frontend.mo
