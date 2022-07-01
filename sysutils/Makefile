@@ -963,7 +963,6 @@
     SUBDIR += pefs-kmod
     SUBDIR += perp
     SUBDIR += personality
-    SUBDIR += pesign
     SUBDIR += pfetch
     SUBDIR += pflogx
     SUBDIR += pfstat

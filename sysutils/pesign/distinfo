@@ -1,5 +1,0 @@
-TIMESTAMP = 1414180266
-SHA256 (rhinstaller-pesign-0.110_GH0.tar.gz) = 836abeb4404b4b3a616deb478f8bf4fed2fce4f12be1a00b6fab238d150ed2ed
-SIZE (rhinstaller-pesign-0.110_GH0.tar.gz) = 103805
-SHA256 (b535d1ac5cbc.patch) = 787fe6bb67b0cbc8716a84d063d0995c1f23567d87f2c6bec33c3daa0145f367
-SIZE (b535d1ac5cbc.patch) = 1971
