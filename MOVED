@@ -17487,3 +17487,4 @@ x11/xcbautolock|deskutils/xcbautolock|2022-07-01|move desktop utility to its rig
 x11/havoc|deskutils/havoc|2022-07-01|move desktop utility to its right category
 devel/go-glide||2022-07-01|Has expired: use go mod instead of glide
 irc/unreal||2022-07-01|Has expired: Very outdated, listed as end of life in 2016 and has known security issues
+sysutils/go-btfs||2022-07-01|Has expired: Requires go 1.15
