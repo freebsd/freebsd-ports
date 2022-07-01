@@ -1,5 +1,5 @@
 PORTNAME=	jarowinkler
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,9 @@ BUILD_DEPENDS=	cmake:devel/cmake \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	distutils cython autoplist pytest # tests fail to run, see https://github.com/maxbachmann/JaroWinkler/issues/7
+
+TEST_ENV=      ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jarowinkler/_initialize.*.so
