@@ -100,7 +100,6 @@ include/tao/pegtl/internal/crlf_eol.hpp
 include/tao/pegtl/internal/cstream_reader.hpp
 include/tao/pegtl/internal/cstring_reader.hpp
 include/tao/pegtl/internal/dependent_false.hpp
-include/tao/pegtl/internal/dependent_true.hpp
 include/tao/pegtl/internal/disable.hpp
 include/tao/pegtl/internal/discard.hpp
 include/tao/pegtl/internal/enable.hpp
@@ -167,6 +166,7 @@ include/tao/pegtl/internal/string.hpp
 include/tao/pegtl/internal/success.hpp
 include/tao/pegtl/internal/try_catch_type.hpp
 include/tao/pegtl/internal/until.hpp
+include/tao/pegtl/internal/unwind_guard.hpp
 include/tao/pegtl/istream_input.hpp
 include/tao/pegtl/match.hpp
 include/tao/pegtl/memory_input.hpp
