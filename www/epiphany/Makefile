@@ -7,7 +7,7 @@ MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Extremely lightweight and simple web browser for GNOME 3
+COMMENT=	Extremely lightweight and simple web browser for GNOME
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

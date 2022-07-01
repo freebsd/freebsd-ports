@@ -8,7 +8,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Image viewer and browser for the GNOME 3 environment
+COMMENT=	Image viewer and browser for the GNOME environment
 
 LICENSE=	GPLv2+
 
