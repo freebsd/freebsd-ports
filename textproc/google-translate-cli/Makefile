@@ -31,15 +31,11 @@ NO_ARCH=	yes
 PLIST_FILES=	bin/trans \
 		man/man1/trans.1.gz
 
-OPTIONS_DEFINE=	FRIBIDI READLINE TEXT2SPEECH
-
-TEXT2SPEECH_DESC=	Enable Text-to-Speech functionality via espeak
+OPTIONS_DEFINE=	FRIBIDI READLINE
 
 FRIBIDI_RUN_DEPENDS=	fribidi:converters/fribidi
 
 READLINE_RUN_DEPENDS=	rlwrap:devel/rlwrap
-
-TEXT2SPEECH_RUN_DEPENDS=	espeak:audio/espeak
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/build/trans ${STAGEDIR}${PREFIX}/bin/trans
