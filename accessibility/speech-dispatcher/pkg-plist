@@ -28,7 +28,6 @@ lib/libspeechd.so.2
 lib/libspeechd.so.2.6.0
 lib/speech-dispatcher-modules/sd_cicero
 lib/speech-dispatcher-modules/sd_dummy
-%%ESPEAK%%lib/speech-dispatcher-modules/sd_espeak
 lib/speech-dispatcher-modules/sd_festival
 %%FLITE%%lib/speech-dispatcher-modules/sd_flite
 lib/speech-dispatcher-modules/sd_generic

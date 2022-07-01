@@ -1,5 +1,6 @@
 PORTNAME=	speech-dispatcher
 DISTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES?=	accessibility audio
 MASTER_SITES=	https://github.com/brailcom/speechd/releases/download/${PORTVERSION}/
 
@@ -42,8 +43,8 @@ PORTDOCS=	ANNOUNCE AUTHORS FAQ NEWS README TODO
 
 INFO=		spd-say speech-dispatcher speech-dispatcher-cs ssip
 
-OPTIONS_DEFINE=		ALSA AO DOCS ESPEAK FESTIVAL FLITE NAS PULSEAUDIO
-OPTIONS_DEFAULT=	ESPEAK PULSEAUDIO
+OPTIONS_DEFINE=		ALSA AO DOCS FESTIVAL FLITE NAS PULSEAUDIO
+OPTIONS_DEFAULT=	PULSEAUDIO
 OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -51,10 +52,6 @@ ALSA_CONFIGURE_WITH=	alsa
 
 AO_LIB_DEPENDS=		libao.so:audio/libao
 AO_CONFIGURE_WITH=	libao
-
-ESPEAK_DESC=		eSpeak speech synthesizer support
-ESPEAK_LIB_DEPENDS=	libespeak.so:audio/espeak
-ESPEAK_CONFIGURE_WITH=	espeak
 
 FESTIVAL_DESC=		Festival Speech Synthesis System support
 FESTIVAL_RUN_DEPENDS=	${LOCALBASE}/share/festival/lib/${PORTNAME}.scm:audio/festival-freebsoft-utils \
