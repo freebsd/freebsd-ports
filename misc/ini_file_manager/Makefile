@@ -12,6 +12,8 @@ COMMENT=	Ini configuration file reader and manipulator package for Ada
 
 LICENSE=	MIT
 
+EXPIRATION_DATE=2022-09-30
+
 USES=		ada zip dos2unix
 
 NO_WRKSUBDIR=	yes
