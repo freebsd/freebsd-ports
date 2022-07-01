@@ -20,6 +20,11 @@ LIB_DEPENDS=	libdate-tz.so:devel/date \
 		libxkbregistry.so:x11/libxkbcommon
 TEST_DEPENDS=	catch>0:devel/catch
 
+FLAVORS=	default nopulse
+default_CONFLICTS_INSTALL=	${PORTNAME}-nopulse
+nopulse_CONFLICTS_INSTALL=	${PORTNAME}
+nopulse_PKGNAMESUFFIX=		-nopulse
+
 USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtkmm30
@@ -37,6 +42,9 @@ SUB_FILES+=	date.pc
 
 OPTIONS_DEFINE=	DBUS EVDEV GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV UPOWER
 OPTIONS_DEFAULT=DBUS EVDEV GLS ICONSFONT MANPAGES MPD PULSEAUDIO SNDIO UDEV UPOWER
+.if ${FLAVOR:U} == nopulse
+OPTIONS_EXCLUDE=PULSEAUDIO
+.endif
 
 DBUS_LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
 DBUS_MESON_ENABLED=	dbusmenu-gtk
