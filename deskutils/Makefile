@@ -113,6 +113,7 @@
     SUBDIR += gworkspace-gwmetadata
     SUBDIR += gxmessage
     SUBDIR += gxneur
+    SUBDIR += havoc
     SUBDIR += hebcal
     SUBDIR += helpviewer
     SUBDIR += horde-groupware

@@ -2,7 +2,7 @@
 
 PORTNAME=	havoc
 PORTVERSION=	0.3.1
-CATEGORIES=	x11 wayland
+CATEGORIES=	deskutils wayland
 
 PATCH_SITES=		https://github.com/ii8/havoc/commit/
 PATCH_DIST_STRIP=	-p1
