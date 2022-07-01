@@ -11,7 +11,7 @@
 _INCLUDE_USES_ADA_MK=    yes
 
 DEPRECATED=	Depends on expired lang/gcc6-aux
-EXPIRATION_DATE=2022-06-30
+EXPIRATION_DATE=2022-09-30
 
 CC=	ada
 
