@@ -17,6 +17,8 @@ COMMENT=	Cross-platform centralized encrypted messaging service
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		${LOCALBASE}/lib/libsignal_node.so:net-im/libsignal-node \
 		app-builder>0:devel/app-builder \
