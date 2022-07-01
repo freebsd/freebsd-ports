@@ -1,0 +1,420 @@
+--- include/ntfs-3g/device.h.orig	2021-05-20 18:42:51 UTC
++++ include/ntfs-3g/device.h
+@@ -90,6 +90,8 @@ struct ntfs_device {
+ 						   heads or -1. */
+ 	int d_sectors_per_track;		/* Disk geometry: number of
+ 						   sectors per track or -1. */
++	s64 dev_offset;				/* Offset from the start of the device
++						   where the ntfs filesystem begins.*/
+ };
+ 
+ struct stat;
+@@ -116,6 +118,9 @@ struct ntfs_device_operations {
+ 
+ extern struct ntfs_device *ntfs_device_alloc(const char *name, const long state,
+ 		struct ntfs_device_operations *dops, void *priv_data);
++extern struct ntfs_device *ntfs_device_alloc_ext(const char *name, const long state,
++		struct ntfs_device_operations *dops, void *priv_data, s64 dev_offset);
++
+ extern int ntfs_device_free(struct ntfs_device *dev);
+ extern int ntfs_device_sync(struct ntfs_device *dev);
+ 
+--- include/ntfs-3g/volume.h.orig	2021-05-20 18:42:51 UTC
++++ include/ntfs-3g/volume.h
+@@ -288,6 +288,7 @@ extern ntfs_volume *ntfs_device_mount(struct ntfs_devi
+ 		ntfs_mount_flags flags);
+ 
+ extern ntfs_volume *ntfs_mount(const char *name, ntfs_mount_flags flags);
++extern ntfs_volume *ntfs_mount_ext(const char *name, ntfs_mount_flags flags, const s64 dev_offset);
+ extern int ntfs_umount(ntfs_volume *vol, const BOOL force);
+ 
+ extern int ntfs_version_is_supported(ntfs_volume *vol);
+--- libntfs-3g/unix_io.c.orig	2021-05-20 18:42:51 UTC
++++ libntfs-3g/unix_io.c
+@@ -134,7 +134,7 @@ raw_io_get_size(struct ntfs_device *dev)
+ 	}
+ 
+ 	if (S_ISREG(sb.st_mode)) {
+-		DEV_HANDLE(dev)->media_size = sb.st_size;
++		DEV_HANDLE(dev)->media_size = sb.st_size - dev->dev_offset;
+ 		ntfs_log_trace("%s: regular file (media_size %lld)\n",
+ 		    dev->d_name, DEV_HANDLE(dev)->media_size);
+ 		if (getenv("FORCE_ALIGNED_IO"))
+@@ -155,7 +155,7 @@ raw_io_get_size(struct ntfs_device *dev)
+ 		    dev->d_name);
+ 		return -1;
+ 	}
+-	DEV_HANDLE(dev)->media_size = ms;
++	DEV_HANDLE(dev)->media_size = ms - dev->dev_offset;
+ 	ntfs_log_trace("%s: media size %lld\n", dev->d_name, ms);
+ 	return 0;
+ }
+@@ -428,9 +428,9 @@ static s64 ntfs_device_unix_io_seek(struct ntfs_device
+ 		return -1;
+ 	}
+ 	DEV_HANDLE(dev)->pos = abs_pos;
+-	return abs_pos;
++	return abs_pos + dev->dev_offset;
+ #else
+-	return lseek(DEV_FD(dev), offset, whence);
++	return lseek(DEV_FD(dev), offset + dev->dev_offset, whence);
+ #endif
+ }
+ 
+@@ -464,7 +464,7 @@ static s64 aligned_pread(struct ntfs_device *dev, void
+ 	ssize_t nr;
+ 
+ 	/* short-circuit for regular files */
+-	start = offset;
++	start = offset + dev->dev_offset;
+ 	if (count > RAW_IO_MAX_SIZE)
+ 		count = RAW_IO_MAX_SIZE;
+ 	if (RAW_IO_ALIGNED(dev, start, count))
+@@ -535,7 +535,7 @@ static s64 aligned_pwrite(struct ntfs_device *dev, voi
+ 	NDevSetDirty(dev);
+ 
+ 	/* short-circuit for regular files */
+-	start = offset;
++	start = offset + dev->dev_offset;
+ 	if (count > RAW_IO_MAX_SIZE)
+ 		count = RAW_IO_MAX_SIZE;
+ 	if (RAW_IO_ALIGNED(dev, start, count))
+@@ -652,7 +652,7 @@ static s64 ntfs_device_unix_io_read(struct ntfs_device
+ 			return -1;
+ 
+ 		res = ublio_pread(DEV_HANDLE(dev)->ublio_fh, buf, count,
+-		    offset);
++		    offset  + dev->dev_offset);
+ 		if (res == -1)
+ 			return -1;
+ 
+@@ -696,7 +696,7 @@ static s64 ntfs_device_unix_io_write(struct ntfs_devic
+ 			return -1;
+ 
+ 		res = ublio_pwrite(DEV_HANDLE(dev)->ublio_fh, (void *)buf,
+-		    count, offset);
++		    count, offset + dev->dev_offset);
+ 		if (res == -1)
+ 			return -1;
+ 
+@@ -728,9 +728,9 @@ static s64 ntfs_device_unix_io_pread(struct ntfs_devic
+ #elif USE_UBLIO
+ 	if (DEV_HANDLE(dev)->ublio_fh)
+ 		return ublio_pread(DEV_HANDLE(dev)->ublio_fh, buf, count,
+-		    offset);
++		    offset + dev->dev_offset);
+ #endif
+-	return pread(DEV_FD(dev), buf, count, offset);
++	return pread(DEV_FD(dev), buf, count, offset + dev->dev_offset);
+ }
+ 
+ /**
+@@ -757,9 +757,9 @@ static s64 ntfs_device_unix_io_pwrite(struct ntfs_devi
+ #elif USE_UBLIO
+ 	if (DEV_HANDLE(dev)->ublio_fh)
+ 		return ublio_pwrite(DEV_HANDLE(dev)->ublio_fh, (void *)buf,
+-		    count, offset);
++		    count, offset + dev->dev_offset);
+ #endif
+-	return pwrite(DEV_FD(dev), buf, count, offset);
++	return pwrite(DEV_FD(dev), buf, count, offset + dev->dev_offset);
+ }
+ 
+ /**
+--- libntfs-3g/volume.c.orig	2021-05-20 18:42:51 UTC
++++ libntfs-3g/volume.c
+@@ -1375,12 +1374,18 @@ int ntfs_set_ignore_case(ntfs_volume *vol)
+ ntfs_volume *ntfs_mount(const char *name __attribute__((unused)),
+ 		ntfs_mount_flags flags __attribute__((unused)))
+ {
++	return ntfs_mount_ext(name, flags, 0);
++}
++
++ntfs_volume *ntfs_mount_ext(const char *name __attribute__((unused)),
++		ntfs_mount_flags flags __attribute__((unused)), const s64 dev_offset)
++{
+ #ifndef NO_NTFS_DEVICE_DEFAULT_IO_OPS
+ 	struct ntfs_device *dev;
+ 	ntfs_volume *vol;
+ 
+ 	/* Allocate an ntfs_device structure. */
+-	dev = ntfs_device_alloc(name, 0, &ntfs_device_default_io_ops, NULL);
++	dev = ntfs_device_alloc_ext(name, 0, &ntfs_device_default_io_ops, NULL, dev_offset);
+ 	if (!dev)
+ 		return NULL;
+ 	/* Call ntfs_device_mount() to do the actual mount. */
+--- src/lowntfs-3g.c.orig	2021-05-20 18:42:51 UTC
++++ src/lowntfs-3g.c
+@@ -3974,7 +3974,7 @@ static int ntfs_fuse_init(void)
+ 	return 0;
+ }
+ 
+-static int ntfs_open(const char *device)
++static int ntfs_open(const char *device, const s64 dev_offset)
+ {
+ 	unsigned long flags = 0;
+ 	ntfs_volume *vol;
+@@ -3991,7 +3991,7 @@ static int ntfs_open(const char *device)
+ 	if (ctx->hiberfile)
+ 		flags |= NTFS_MNT_IGNORE_HIBERFILE;
+ 
+-	ctx->vol = vol = ntfs_mount(device, flags);
++	ctx->vol = vol = ntfs_mount_ext(device, flags, dev_offset);
+ 	if (!vol) {
+ 		ntfs_log_perror("Failed to mount '%s'", device);
+ 		goto err_out;
+@@ -4385,7 +4385,7 @@ int main(int argc, char *argv[])
+ 		goto err2;
+ 	}
+ #endif
+-	err = ntfs_open(opts.device);
++	err = ntfs_open(opts.device, ctx->dev_offset);
+ 	if (err)
+ 		goto err_out;
+         
+--- src/ntfs-3g.c.orig	2021-05-20 18:42:51 UTC
++++ src/ntfs-3g.c
+@@ -3774,7 +3774,7 @@ static int ntfs_fuse_init(void)
+ 	return 0;
+ }
+ 
+-static int ntfs_open(const char *device)
++static int ntfs_open(const char *device, const s64 dev_offset)
+ {
+ 	unsigned long flags = 0;
+ 	
+@@ -3790,7 +3790,7 @@ static int ntfs_open(const char *device)
+ 	if (ctx->hiberfile)
+ 		flags |= NTFS_MNT_IGNORE_HIBERFILE;
+ 
+-	ctx->vol = ntfs_mount(device, flags);
++	ctx->vol = ntfs_mount_ext(device, flags, dev_offset);
+ 	if (!ctx->vol) {
+ 		ntfs_log_perror("Failed to mount '%s'", device);
+ 		goto err_out;
+@@ -4185,7 +4185,7 @@ int main(int argc, char *argv[])
+ 		goto err2;
+ 	}
+ #endif
+-	err = ntfs_open(opts.device);
++	err = ntfs_open(opts.device, ctx->dev_offset);
+ 	if (err)
+ 		goto err_out;
+ 	
+--- src/ntfs-3g.probe.c.orig	2021-05-20 18:42:51 UTC
++++ src/ntfs-3g.probe.c
+@@ -45,6 +45,7 @@ typedef enum {
+ static struct options {
+ 	probe_t  probetype;
+ 	char	 *device;
++	s64 dev_offset;
+ } opts;
+ 
+ static const char *EXEC_NAME = "ntfs-3g.probe";
+@@ -55,13 +56,13 @@ static const char *usage_msg =
+ "\n"
+ "Copyright (C) 2007 Szabolcs Szakacsits\n"
+ "\n"
+-"Usage:    %s <--readonly|--readwrite> <device|image_file>\n"
++"Usage:    %s <--readonly|--readwrite> <--dev_offset n> <device|image_file>\n"
+ "\n"
+ "Example:  ntfs-3g.probe --readwrite /dev/sda1\n"
+ "\n"
+ "%s";
+ 
+-static int ntfs_open(const char *device)
++static int ntfs_open(const char *device, const s64 dev_offset)
+ {
+ 	ntfs_volume *vol;
+ 	unsigned long flags = 0;
+@@ -70,7 +71,7 @@ static int ntfs_open(const char *device)
+ 	if (opts.probetype == PROBE_READONLY)
+ 		flags |= NTFS_MNT_RDONLY;
+ 
+-	vol = ntfs_mount(device, flags);
++	vol = ntfs_mount_ext(device, flags, dev_offset);
+ 	if (!vol)
+ 		ret = ntfs_volume_error(errno);
+ 
+@@ -89,10 +90,11 @@ static int parse_options(int argc, char *argv[])
+ {
+ 	int c;
+ 
+-	static const char *sopt = "-hrw";
++	static const char *sopt = "-hrwo:";
+ 	static const struct option lopt[] = {
+ 		{ "readonly",	no_argument,	NULL, 'r' },
+ 		{ "readwrite",	no_argument,	NULL, 'w' },
++		{ "dev_offset",	required_argument,	NULL, 'o' },
+ 		{ "help",	no_argument,	NULL, 'h' },
+ 		{ NULL,		0,		NULL,  0  }
+ 	};
+@@ -125,6 +127,9 @@ static int parse_options(int argc, char *argv[])
+ 		case 'w':
+ 			opts.probetype = PROBE_READWRITE;
+ 			break;
++		case 'o':
++			opts.dev_offset = optarg ? atoll(optarg) : 0;
++			break;
+ 		default:
+ 			ntfs_log_error("%s: Unknown option '%s'.\n", EXEC_NAME,
+ 				       argv[optind - 1]);
+@@ -156,7 +161,7 @@ int main(int argc, char *argv[])
+ 		exit(NTFS_VOLUME_SYNTAX_ERROR);
+ 	}
+ 
+-	err = ntfs_open(opts.device);
++	err = ntfs_open(opts.device, opts.dev_offset);
+ 
+ 	free(opts.device);
+ 	if (err)
+--- src/ntfs-3g_common.c.orig	2021-05-20 18:42:51 UTC
++++ src/ntfs-3g_common.c
+@@ -126,6 +126,7 @@ const struct DEFOPTION optionlist[] = {
+ 	{ "usermapping", OPT_USERMAPPING, FLGOPT_STRING },
+ 	{ "xattrmapping", OPT_XATTRMAPPING, FLGOPT_STRING },
+ 	{ "efs_raw", OPT_EFS_RAW, FLGOPT_BOGUS },
++	{ "dev_offset", OPT_DEV_OFFSET, FLGOPT_DECIMAL },
+ 	{ "posix_nlink", OPT_POSIX_NLINK, FLGOPT_BOGUS },
+ 	{ "special_files", OPT_SPECIAL_FILES, FLGOPT_STRING },
+ 	{ "--help", OPT_HELP, FLGOPT_BOGUS },
+@@ -321,6 +322,9 @@ char *parse_mount_options(ntfs_fuse_context_t *ctx,
+ 				break;
+ 			case OPT_DEFAULT_PERMISSIONS :
+ 				default_permissions = 1;
++				break;
++			case OPT_DEV_OFFSET :
++				ctx->dev_offset = strtoll(val, NULL, 0);
+ 				break;
+ 			case OPT_PERMISSIONS :
+ 				permissions = 1;
+--- src/ntfs-3g_common.h.orig	2021-05-20 18:42:51 UTC
++++ src/ntfs-3g_common.h
+@@ -92,6 +92,7 @@ enum {
+ 	OPT_USERMAPPING,
+ 	OPT_XATTRMAPPING,
+ 	OPT_EFS_RAW,
++	OPT_DEV_OFFSET,
+ 	OPT_POSIX_NLINK,
+ 	OPT_SPECIAL_FILES,
+ 	OPT_HELP,
+@@ -178,6 +179,7 @@ typedef struct {
+ 	struct SECURITY_CONTEXT security;
+ 	struct open_file *open_files; /* only defined in lowntfs-3g */
+ 	u64 latest_ghost;
++	s64 dev_offset;
+ } ntfs_fuse_context_t;
+ 
+ extern const char *EXEC_NAME;
+--- libntfs-3g/device.c.orig	2022-07-01 16:44:31 UTC
++++ libntfs-3g/device.c
+@@ -71,6 +71,9 @@
+ #ifdef ENABLE_HD
+ #include <hd.h>
+ #endif
++#ifdef __FreeBSD__
++#include <sys/disk.h>
++#endif
+ 
+ #include "types.h"
+ #include "mst.h"
+@@ -101,6 +104,7 @@
+  * @state:	initial device state (usually zero)
+  * @dops:	ntfs device operations to use with the device (must be present)
+  * @priv_data:	pointer to private data (optional)
++ * @dev_offset: offset from beginning of device where the ntfs filesystem begins.--rpetri
+  *
+  * Allocate an ntfs device structure and pre-initialize it with the user-
+  * specified device operations @dops, device state @state, device name @name,
+@@ -111,9 +115,16 @@
+  * On success return a pointer to the allocated ntfs device structure and on
+  * error return NULL with errno set to the error code returned by ntfs_malloc().
+  */
++
+ struct ntfs_device *ntfs_device_alloc(const char *name, const long state,
+ 		struct ntfs_device_operations *dops, void *priv_data)
+ {
++	return ntfs_device_alloc_ext(name, state, dops, priv_data, 0);
++}
++
++struct ntfs_device *ntfs_device_alloc_ext(const char *name, const long state,
++		struct ntfs_device_operations *dops, void *priv_data, const s64 dev_offset)
++{
+ 	struct ntfs_device *dev;
+ 
+ 	if (!name) {
+@@ -134,6 +145,7 @@ struct ntfs_device *ntfs_device_alloc(const char *name
+ 		dev->d_private = priv_data;
+ 		dev->d_heads = -1;
+ 		dev->d_sectors_per_track = -1;
++		dev->dev_offset = dev_offset;
+ 	}
+ 	return dev;
+ }
+@@ -541,7 +553,7 @@ s64 ntfs_device_size_get(struct ntfs_device *dev, int 
+ 			ntfs_log_debug("BLKGETSIZE64 nr bytes = %llu (0x%llx)\n",
+ 					(unsigned long long)size,
+ 					(unsigned long long)size);
+-			return (s64)size / block_size;
++			return (s64)(size - dev->dev_offset) / block_size;
+ 		}
+ 	}
+ #endif
+@@ -551,7 +563,7 @@ s64 ntfs_device_size_get(struct ntfs_device *dev, int 
+ 		if (dev->d_ops->ioctl(dev, BLKGETSIZE, &size) >= 0) {
+ 			ntfs_log_debug("BLKGETSIZE nr 512 byte blocks = %lu (0x%lx)\n",
+ 					size, size);
+-			return (s64)size * 512 / block_size;
++			return (s64)(size * 512 - dev->dev_offset) / block_size;
+ 		}
+ 	}
+ #endif
+@@ -562,7 +574,7 @@ s64 ntfs_device_size_get(struct ntfs_device *dev, int 
+ 			ntfs_log_debug("FDGETPRM nr 512 byte blocks = %lu (0x%lx)\n",
+ 					(unsigned long)this_floppy.size,
+ 					(unsigned long)this_floppy.size);
+-			return (s64)this_floppy.size * 512 / block_size;
++			return (s64)(this_floppy.size * 512 - dev->dev_offset) / block_size;
+ 		}
+ 	}
+ #endif
+@@ -575,7 +587,7 @@ s64 ntfs_device_size_get(struct ntfs_device *dev, int 
+ 			ntfs_log_debug("DIOCGMEDIASIZE nr bytes = %llu (0x%llx)\n",
+ 					(unsigned long long)size,
+ 					(unsigned long long)size);
+-			return (s64)size / block_size;
++			return (s64)(size - dev->dev_offset) / block_size;
+ 		}
+ 	}
+ #endif
+@@ -592,7 +604,7 @@ s64 ntfs_device_size_get(struct ntfs_device *dev, int 
+ 			ntfs_log_debug("DKIOCGETBLOCKCOUNT nr blocks = %llu (0x%llx)\n",
+ 				(unsigned long long) blocks,
+ 				(unsigned long long) blocks);
+-			return blocks * sector_size / block_size;
++			return (blocks * sector_size - dev->dev_offset) / block_size;
+ 		}
+ 	}
+ #endif
+--- src/ntfs-3g.c.orig	2022-07-01 16:59:51 UTC
++++ src/ntfs-3g.c
+@@ -202,7 +202,7 @@ static const char *usage_msg = 
+ "\n"
+ "Usage:    %s [-o option[,...]] <device|image_file> <mount_point>\n"
+ "\n"
+-"Options:  ro (read-only mount), windows_names, uid=, gid=,\n" 
++"Options:  ro (read-only mount), windows_names, dev_offset=, uid=, gid=,\n"
+ "          umask=, fmask=, dmask=, streams_interface=.\n"
+ "          Please see the details in the manual (type: man ntfs-3g).\n"
+ "\n"
+--- src/lowntfs-3g.c.orig	2022-07-01 16:59:43 UTC
++++ src/lowntfs-3g.c
+@@ -267,7 +267,7 @@ static const char *usage_msg = 
+ "\n"
+ "Usage:    %s [-o option[,...]] <device|image_file> <mount_point>\n"
+ "\n"
+-"Options:  ro (read-only mount), windows_names, uid=, gid=,\n" 
++"Options:  ro (read-only mount), windows_names, dev_offset=, uid=, gid=,\n"
+ "          umask=, fmask=, dmask=, streams_interface=.\n"
+ "          Please see the details in the manual (type: man ntfs-3g).\n"
+ "\n"
