@@ -1,6 +1,6 @@
 PORTNAME=	helix
 DISTVERSION=	22.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~ecmma/tree-sitter-hare/archive/:treesitterhare
 DISTFILES=	${TREE_SITTER_HARE_REV}.tar.gz:treesitterhare

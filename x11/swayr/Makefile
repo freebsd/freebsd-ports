@@ -1,6 +1,7 @@
 PORTNAME=	swayr
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	0.19.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~tsdh/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES

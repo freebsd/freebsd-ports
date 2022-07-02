@@ -1,6 +1,6 @@
 PORTNAME=	encrypted-dns-server
 DISTVERSION=	0.9.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	dns
 
 MAINTAINER=	felix@userspace.com.au
