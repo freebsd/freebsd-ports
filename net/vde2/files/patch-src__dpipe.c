@@ -4,8 +4,8 @@
  
  	if (daemonize != 0)
  		daemon(0,0);
--	else if (setpgrp() != 0) {
-+	else if (setpgrp(0,getpid()) != 0) {
+-	else if (setpgrp() == -1) {
++	else if (setpgrp(0,getpid()) == -1) {
  		fprintf(stderr,"Err: cannot create pgrp\n");
+ 		perror("setpgrp");
  		exit(1);
- 	}

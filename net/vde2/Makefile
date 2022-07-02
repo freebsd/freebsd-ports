@@ -1,10 +1,11 @@
 # Created by: Philip M. Gollucci <ports@FreeBSD.org>
 
-PORTNAME=	vde2
-PORTVERSION=	2.3.2
-PORTREVISION=	5
+PORTNAME=	vde
+PORTVERSION=	2.3.3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
-MASTER_SITES=	SF/vde/${PORTNAME}/${PORTVERSION}
+#MASTER_SITES=	https://github.com/virtualsquare/vde-2/archive/refs/tags/
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
@@ -14,32 +15,32 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libpcap.so.1:net/libpcap
 
-USES=		gmake libtool pathfix shebangfix ssl
+USES=		autoreconf gmake libtool pathfix shebangfix ssl
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	virtualsquare
+GH_PROJECT=	${PORTNAME}-${PKGNAMESUFFIX}
 
 CONFLICTS=	vde
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-SHEBANG_FILES=	src/lib/python/VdePlug.py
 MAKE_ENV=	V=1
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	PYTHON
-OPTIONS_DEFAULT=	PYTHON
-
+OPTIONS_DEFINE=	CRYPTCAB
 OPTIONS_SUB=	yes
-PYTHON_CONFIGURE_OFF=	--disable-python
-PYTHON_USES=	python:3.7-3.9 gettext-runtime
-PYTHON_CPPFLAGS=	-I${LOCALBASE}/include
-PYTHON_LDFLAGS=	-L${LOCALBASE}/lib
+
+CRYPTCAB_DESC=			Enable vde_cryptcab (require security/wolfssl)
+CRYPTCAB_LIB_DEPENDS=		libwolfssl.so:security/wolfssl
+CRYPTCAB_USES=			localbase:ldflags
+CRYPTCAB_CONFIGURE_ENABLE=	cryptcab
 
 post-patch:
 	@${REINPLACE_CMD} -e '/-Wall/s|-O2||g' \
-		${WRKSRC}/configure
+		${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e 's|$$(MAKE).*install-data-hook||g' \
-		${WRKSRC}/man/Makefile.in
-	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|#AM_CFLAGS|g' \
-		${WRKSRC}/src/slirpvde/Makefile.in
+		${WRKSRC}/man/Makefile.am
 
 post-install:
 	${LN} -sf unixcmd.1 ${STAGEDIR}${PREFIX}/man/man1/vdecmd.1
