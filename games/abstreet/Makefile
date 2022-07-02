@@ -12,6 +12,8 @@ COMMENT=	Game exploring how changes to city affect drivers/cyclists/pedestrians
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with rust 1.61.0+
+
 BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib
 
 USES=		cargo gnome localbase:ldflags pkgconfig python:build xorg
