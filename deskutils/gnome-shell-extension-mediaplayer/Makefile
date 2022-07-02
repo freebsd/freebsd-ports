@@ -3,7 +3,7 @@
 PORTNAME=	gnome-shell-extension-mediaplayer
 PORTVERSION=	4.0
 CATEGORIES=	deskutils gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	MPRIS2 extension for the GNOME3 shell
