@@ -1,0 +1,10 @@
+CFEngine 3 is a popular open source configuration management system.
+Its primary function is to provide automated configuration and
+maintenance of large-scale computer systems.
+
+The repository is intended to provide a stable base policy for
+installations and upgrades, and is used by CFEngine 3.6 and newer.
+The port installs the repository as examples which should be copied by
+the user to the masterfiles directory (usually /var/cfengine/masterfiles).
+
+WWW: https://cfengine.com/
