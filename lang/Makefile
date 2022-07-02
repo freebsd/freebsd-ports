@@ -100,6 +100,7 @@
     SUBDIR += gcc9
     SUBDIR += gforth
     SUBDIR += ghc
+    SUBDIR += ghc810
     SUBDIR += gjs
     SUBDIR += gleam
     SUBDIR += gnatcross-binutils-aarch64
