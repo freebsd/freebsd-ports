@@ -10,6 +10,7 @@ COMMENT=	Web-scale blockchain for decentralized apps and marketplaces
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with rust 1.61.0+
 BROKEN_i386=	Fails on 32-bit systems: https://github.com/solana-labs/solana/issues/16811
 
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION} \
