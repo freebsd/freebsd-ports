@@ -25,17 +25,11 @@ WRKGRP_DESC=		Enable workgroup stripping
 WRKGRP_CONFIGURE_ON=	--with-workgroup
 
 OPTIONS_SINGLE=		BDB
-OPTIONS_SINGLE_BDB=	DB0 DB5 DB18
+OPTIONS_SINGLE_BDB=	DB0 DB18
 OPTIONS_DEFAULT=	DB0
 
 DB0_DESC=		Use the libc version of Berkeley DB (old)
 DB0_CONFIGURE_ON=	--without-db
-
-DB5_DESC=		Build with Berkeley DB v5 library
-DB5_USES+=		localbase
-DB5_USE_LDCONFIG+=	yes
-DB5_LIB_DEPENDS=	libdb-5.so:databases/db5
-DB5_CONFIGURE_ON=	--with-db=5
 
 DB18_DESC=		Build with Berkeley DB v18 library
 DB18_USES+=		localbase
