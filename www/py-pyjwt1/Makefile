@@ -11,6 +11,9 @@ COMMENT=	JSON Web Token implementation in Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on expired security/py-pycrypto
+EXPIRATION_DATE=2022-09-30
+
 # Some tests are skipped without pycrypto, but its not
 # referenced as a requirement anymore.
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \

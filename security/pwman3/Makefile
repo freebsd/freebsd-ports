@@ -11,6 +11,9 @@ DISTNAME=	Pwman3-${PORTVERSION}
 MAINTAINER=	yarodin@gmail.com
 COMMENT=	Console password management application with sql storage
 
+DEPRECATED=	Depends on expired security/py-pycrypto
+EXPIRATION_DATE=2022-09-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.0:security/py-pycrypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
