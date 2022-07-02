@@ -4,7 +4,7 @@ PORTNAME=	at-spi2-atk
 PORTVERSION=	2.34.2
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Assisted Technology Provider module for GTK+
