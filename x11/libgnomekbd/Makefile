@@ -4,7 +4,7 @@ PORTNAME=	libgnomekbd
 PORTVERSION=	3.26.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME keyboard shared library
