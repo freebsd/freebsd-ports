@@ -5,7 +5,7 @@ PORTVERSION=	0.4.21
 PORTREVISION=	5
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome On-Screen keyboard
