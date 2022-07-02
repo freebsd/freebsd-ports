@@ -3,7 +3,7 @@
 PORTNAME=	gramps
 PORTVERSION=	5.1.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science gnome python
 
 MAINTAINER=	ports@FreeBSD.org
@@ -29,16 +29,14 @@ CONFIGURE_ARGS=	--disable-mime-install
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=		BDB GEXIV GTKSPELL PIL RCS TTFFREEFONT
-OPTIONS_DEFAULT=	BDB GEXIV GTKSPELL
-BDB_DESC=		Install py-bsddb3 to support family trees using Berkeley DB (DEPRECATED)
+OPTIONS_DEFINE=		GEXIV GTKSPELL PIL RCS TTFFREEFONT
+OPTIONS_DEFAULT=	GEXIV GTKSPELL
 GEXIV_DESC=		Manage Exif metadata embedded in media
 GTKSPELL_DESC=		Spell checking support via gtkspell
 PIL_DESC=		Crop/convert images with Python Imaging Library (Pillow)
 RCS_DESC=		Manage revisions of family trees with with GNU RCS
 TTFFREEFONT_DESC=	More font support in reports
 
-BDB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb3>0:databases/py-bsddb3@${PY_FLAVOR}
 GEXIV_LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2
 GTKSPELL_LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3
 PIL_RUN_DEPENDS=	${PY_PILLOW}
