@@ -2,7 +2,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	3.8.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -24,7 +24,6 @@ LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
 		libcurl.so:ftp/curl \
 		libexiv2.so:graphics/exiv2 \
 		libharfbuzz.so:print/harfbuzz \
-		libheif.so:graphics/libheif \
 		libicui18n.so:devel/icu \
 		libjasper.so:graphics/jasper \
 		libjson-glib-1.0.so:devel/json-glib \
@@ -83,6 +82,9 @@ GRAPHMAGICK_CMAKE_BOOL=	USE_GRAPHICSMAGICK
 
 AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
 AVIF_CMAKE_BOOL=	USE_AVIF
+
+HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
+HEIF_CMAKE_BOOL=	USE_HEIF
 
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CMAKE_BOOL=	USE_LIBSECRET
