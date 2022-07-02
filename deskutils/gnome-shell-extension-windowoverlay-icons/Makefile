@@ -4,7 +4,7 @@ PORTNAME=	gnome-shell-extension-windowoverlay-icons
 PORTVERSION=	36
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Show application icons on the windows overview
