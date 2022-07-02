@@ -4,7 +4,7 @@ PORTNAME=	gnome-shell-extension-openweather
 PORTVERSION=	0.0.0.20171126
 PORTREVISION=	1
 CATEGORIES=	deskutils gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenWeather extension for the GNOME3 shell
