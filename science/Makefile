@@ -273,6 +273,7 @@
     SUBDIR += py-cirq-google
     SUBDIR += py-cirq-ionq
     SUBDIR += py-cirq-pasqal
+    SUBDIR += py-cirq-rigetti
     SUBDIR += py-coards
     SUBDIR += py-dipy
     SUBDIR += py-dlib
