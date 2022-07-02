@@ -9,6 +9,9 @@ MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
 
+DEPRECATED=		Expire one year after cfengine 3.19.0 released
+EXPIRATION_DATE=	2023-07-02
+
 LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu

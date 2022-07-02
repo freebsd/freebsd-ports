@@ -8,6 +8,9 @@ MASTER_SITES=	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	cfengine sample policies for installations and upgrades
 
+DEPRECATED=		Expire one year after cfengine-masterfiles 3.19.0 released
+EXPIRATION_DATE=	2023-07-02
+
 LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
