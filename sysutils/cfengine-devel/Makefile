@@ -9,8 +9,6 @@ LIBNTECH_HASH=		5882865
 CFENGINE_COMMIT_DATE=	2022.05.09
 
 MAINTAINER=	cy@FreeBSD.org
-#		gjb@FreeBSD.org is also committer for this port
-#		skreuzer@FreeBSD.org is also committer for this port
 COMMENT=	Systems administration tool for networks
 
 LICENSE=	GPLv3

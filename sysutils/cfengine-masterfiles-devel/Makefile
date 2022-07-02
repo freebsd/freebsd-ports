@@ -8,8 +8,6 @@ HASH=		b7b86f52
 CFENGINE_COMMIT_DATE=	2022.05.20
 
 MAINTAINER=	cy@FreeBSD.org
-#		gjb@FreeBSD.org is also committer for this port
-#		skreuzer@FreeBSD.org is also committer for this port
 COMMENT=	cfengine sample policies for installations and upgrades
 
 LICENSE=	GPLv3
