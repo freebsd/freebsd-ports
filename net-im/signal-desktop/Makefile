@@ -90,6 +90,12 @@ NPM_PLAYWRITE_DIR=	npm-playwright-core-1.17.1-a16e0f89284a0ed8ae6d77e1c905c84b8a
 NPM_ESBUILD_VERS=	0.14.28
 NPM_ESBUILD_DIR=	npm-esbuild-${NPM_ESBUILD_VERS}-7738635d2ea19e446bd319d83a1802545e6aebb8-integrity
 
+NODE_ARCH=		${ARCH:S/aarch64/arm64/:S/amd64/x64/}
+APP_OUT_DIR=		linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
+
+PLIST_SUB=		NODE_ARCH=${NODE_ARCH} \
+			SHARP_ARCH=${ARCH:S/aarch64/arm64v8/:S/amd64/x64/}
+
 post-patch:
 	${REINPLACE_CMD} "s#%%EPOCH%%#${_BUILD_DATE}#" \
 		${WRKSRC}/ts/scripts/get-expire-time.ts
@@ -101,16 +107,17 @@ do-build:
 # copy ${LOCALBASE}/share/electron19 in WRKDIR
 # it's needed for the do-install phase, it's here because of this issue
 # https://github.com/MikaelUrankar/signal-desktop/issues/6 (I don't know why it fails though)
+	@${RM} -r ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 	@${CP} -pR ${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR} ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 	${CHMOD} -R a+w ${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 
 	# Install libsignal_node.so and libringrtc.so binaries in the yarn cache
-	${MKDIR} ${WRKDIR}/.cache/yarn/v6/${NPM_SIGNAL_DIR}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-x64 \
+	${MKDIR} ${WRKDIR}/.cache/yarn/v6/${NPM_SIGNAL_DIR}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-${NODE_ARCH} \
 		 ${WRKDIR}/.cache/yarn/v6/${NPM_RINGRTC_DIR}/node_modules/ringrtc/build/freebsd
 	${CP} ${LOCALBASE}/lib/libsignal_node.so \
-		${WRKDIR}/.cache/yarn/v6/${NPM_SIGNAL_DIR}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-x64/node.napi.node
+		${WRKDIR}/.cache/yarn/v6/${NPM_SIGNAL_DIR}/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-${NODE_ARCH}/node.napi.node
 	${CP} ${LOCALBASE}/lib/libringrtc.so \
-		${WRKDIR}/.cache/yarn/v6/${NPM_RINGRTC_DIR}/node_modules/ringrtc/build/freebsd/libringrtc-x64.node
+		${WRKDIR}/.cache/yarn/v6/${NPM_RINGRTC_DIR}/node_modules/ringrtc/build/freebsd/libringrtc-${NODE_ARCH}.node
 
 	# sqlcipher.tar.gz requires git-lfs to fetch, just copy a previously downloaded one (I've had to use ubuntu for that,
 	# as I didn't manage to do it with FreeBSD, see https://github.com/signalapp/Signal-Desktop/blob/development/CONTRIBUTING.md for instructions)
@@ -121,6 +128,9 @@ do-build:
 	# patch-package can't patch playwright-core, patch the yarn cache instead
 	${CP} ${FILESDIR}/playwrigth-registry.js \
 	 	${WRKDIR}/.cache/yarn/v6/${NPM_PLAYWRITE_DIR}/node_modules/playwright-core/lib/utils/registry.js
+
+	# patch-package can't patch sqlite3 on aarch64, patch the yarn cache instead
+	cd ${WRKDIR}/.cache/yarn/v6 && ${PATCH} -s -N -i ${FILESDIR}/sqlite3.gyp.diff
 
 	${MKDIR} ${WRKDIR}/esbuild-freebsd-64-${NPM_ESBUILD_VERS}
 	${TAR} -xf ${WRKDIR}/yarn-cache/esbuild-freebsd-64-${NPM_ESBUILD_VERS}.tgz -C ${WRKDIR}/esbuild-freebsd-64-${NPM_ESBUILD_VERS}
@@ -155,7 +165,7 @@ do-install:
 			--config.electronDist=${WRKDIR}/electron${ELECTRON_VER_MAJOR}
 
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${BUILD_WRKSRC}/dist/linux-unpacked && \
+	cd ${BUILD_WRKSRC}/dist/${APP_OUT_DIR} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps

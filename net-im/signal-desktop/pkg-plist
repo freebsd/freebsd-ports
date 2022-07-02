@@ -84,10 +84,10 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/zh-TW.pak
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/app.asar
-%%DATADIR%%/resources/app.asar.unpacked/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-x64/node.napi.node
+%%DATADIR%%/resources/app.asar.unpacked/node_modules/@signalapp/libsignal-client/prebuilds/freebsd-%%NODE_ARCH%%/node.napi.node
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/better-sqlite3/build/Release/better_sqlite3.node
-%%DATADIR%%/resources/app.asar.unpacked/node_modules/ringrtc/build/freebsd/libringrtc-x64.node
-%%DATADIR%%/resources/app.asar.unpacked/node_modules/sharp/build/Release/sharp-freebsd-x64.node
+%%DATADIR%%/resources/app.asar.unpacked/node_modules/ringrtc/build/freebsd/libringrtc-%%NODE_ARCH%%.node
+%%DATADIR%%/resources/app.asar.unpacked/node_modules/sharp/build/Release/sharp-freebsd-%%SHARP_ARCH%%.node
 @(,,755) %%DATADIR%%/signal-desktop
 %%DATADIR%%/snapshot_blob.bin
 %%DATADIR%%/v8_context_snapshot.bin
