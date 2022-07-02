@@ -11,6 +11,7 @@ bin/faust2atomsnippets
 bin/faust2au
 bin/faust2audiokit
 bin/faust2bela
+bin/faust2bench
 bin/faust2cagtk
 bin/faust2caqt
 bin/faust2caqtios
@@ -79,6 +80,7 @@ bin/faust2supercollider
 bin/faust2svg
 bin/faust2svgviewer
 bin/faust2teensy
+bin/faust2tidalcycles
 bin/faust2unity
 bin/faust2vcvrack
 bin/faust2vst
@@ -139,6 +141,7 @@ include/faust/dsp/faust-dynamic-engine.cpp.orig
 include/faust/dsp/faust-dynamic-engine.h
 include/faust/dsp/faust-engine.h
 include/faust/dsp/faust-poly-engine.h
+include/faust/dsp/interpreter-dsp-c.h
 include/faust/dsp/interpreter-dsp.h
 include/faust/dsp/interpreter-machine-dsp.h
 include/faust/dsp/libfaust-box-c.h
@@ -165,6 +168,7 @@ include/faust/dsp/timed-dsp.h
 include/faust/dsp/timed-dsp.h.orig
 include/faust/dsp/wasm-dsp-imp.h
 include/faust/dsp/wasm-dsp.h
+include/faust/export.h
 include/faust/gui/APIUI.h
 include/faust/gui/BelaOSCUI.h
 include/faust/gui/CGlue.h
@@ -258,7 +262,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.40.0
+lib/libfaust.so.2.41.1
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
