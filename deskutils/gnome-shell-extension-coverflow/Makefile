@@ -4,7 +4,7 @@ PORTNAME=	gnome-shell-extension-coverflow
 PORTVERSION=	0.0.0.20180110
 PORTREVISION=	1
 CATEGORIES=	deskutils gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lets you Alt-Tab windows in a cover-flow manner
