@@ -3,7 +3,7 @@
 PORTNAME=	gnome-shell-extension-trash
 PORTVERSION=	0.2.0
 CATEGORIES=	deskutils gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome-shell trash indicator
