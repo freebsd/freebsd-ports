@@ -5,7 +5,7 @@ PORTVERSION=	3.34.0
 PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Document manager application designed to work with GNOME 3
