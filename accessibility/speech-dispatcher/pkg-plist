@@ -7,15 +7,15 @@ bin/speech-dispatcher
 @sample %%ETCDIR%%/modules/epos-generic.conf.sample
 @sample %%ETCDIR%%/modules/espeak-mbrola-generic.conf.sample
 @sample %%ETCDIR%%/modules/espeak-ng-mbrola-generic.conf.sample
+@sample %%ETCDIR%%/modules/espeak-ng-mbrola.conf.sample
 @sample %%ETCDIR%%/modules/espeak-ng.conf.sample
 @sample %%ETCDIR%%/modules/espeak.conf.sample
 @sample %%ETCDIR%%/modules/festival.conf.sample
 @sample %%ETCDIR%%/modules/flite.conf.sample
-@sample %%ETCDIR%%/modules/ivona.conf.sample
 @sample %%ETCDIR%%/modules/llia_phon-generic.conf.sample
-@sample %%ETCDIR%%/modules/mary-generic-disabled.conf.sample
+@sample %%ETCDIR%%/modules/mary-generic.conf.sample
 @sample %%ETCDIR%%/modules/swift-generic.conf.sample
-@sample %%ETCDIR%%/modules/voxin.conf.sample
+%%VOXIN%%@sample %%ETCDIR%%/modules/voxin.conf.sample
 @sample %%ETCDIR%%/speechd.conf.sample
 include/speech-dispatcher/libspeechd.h
 include/speech-dispatcher/libspeechd_version.h
@@ -26,12 +26,6 @@ lib/libspeechd.a
 lib/libspeechd.so
 lib/libspeechd.so.2
 lib/libspeechd.so.2.6.0
-lib/speech-dispatcher-modules/sd_cicero
-lib/speech-dispatcher-modules/sd_dummy
-lib/speech-dispatcher-modules/sd_festival
-%%FLITE%%lib/speech-dispatcher-modules/sd_flite
-lib/speech-dispatcher-modules/sd_generic
-lib/speech-dispatcher-modules/sd_voxin
 %%ALSA%%lib/speech-dispatcher/spd_alsa.a
 %%ALSA%%lib/speech-dispatcher/spd_alsa.so
 %%AO%%lib/speech-dispatcher/spd_libao.a
@@ -42,11 +36,18 @@ lib/speech-dispatcher/spd_oss.a
 lib/speech-dispatcher/spd_oss.so
 %%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.a
 %%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.so
+libexec/speech-dispatcher-modules/sd_cicero
+libexec/speech-dispatcher-modules/sd_dummy
+libexec/speech-dispatcher-modules/sd_festival
+%%FLITE%%libexec/speech-dispatcher-modules/sd_flite
+libexec/speech-dispatcher-modules/sd_generic
+%%VOXIN%%libexec/speech-dispatcher-modules/sd_voxin
 libdata/pkgconfig/speech-dispatcher.pc
 man/man1/spd-say.1.gz
 man/man1/speech-dispatcher.1.gz
 share/locale/cs/LC_MESSAGES/speech-dispatcher.mo
 share/locale/de/LC_MESSAGES/speech-dispatcher.mo
+share/locale/eo/LC_MESSAGES/speech-dispatcher.mo
 share/locale/fr/LC_MESSAGES/speech-dispatcher.mo
 share/locale/hu/LC_MESSAGES/speech-dispatcher.mo
 share/locale/nb_NO/LC_MESSAGES/speech-dispatcher.mo
@@ -98,6 +99,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/ccp/emojis.dic
 %%DATADIR%%/locale/ceb/emojis.dic
 %%DATADIR%%/locale/chr/emojis.dic
+%%DATADIR%%/locale/ckb/emojis.dic
 %%DATADIR%%/locale/ckb/symbols.dic
 %%DATADIR%%/locale/cs/emojis.dic
 %%DATADIR%%/locale/cs/orca-chars.dic
@@ -115,6 +117,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/de/symbols.dic
 %%DATADIR%%/locale/de_CH/emojis.dic
 %%DATADIR%%/locale/de_CH/symbols.dic
+%%DATADIR%%/locale/doi/emojis.dic
 %%DATADIR%%/locale/el/emojis.dic
 %%DATADIR%%/locale/el/orca-chars.dic
 %%DATADIR%%/locale/el/orca.dic
@@ -124,10 +127,8 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/en_AU/emojis.dic
 %%DATADIR%%/locale/en_CA/emojis.dic
 %%DATADIR%%/locale/en_GB/emojis.dic
-%%DATADIR%%/locale/en_GB/orca.dic
 %%DATADIR%%/locale/en_IN/emojis.dic
 %%DATADIR%%/locale/eo/orca-chars.dic
-%%DATADIR%%/locale/eo/orca.dic
 %%DATADIR%%/locale/es/emojis.dic
 %%DATADIR%%/locale/es/gender-neutral.dic
 %%DATADIR%%/locale/es/orca-chars.dic
@@ -156,7 +157,6 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/es_UY/emojis.dic
 %%DATADIR%%/locale/es_VE/emojis.dic
 %%DATADIR%%/locale/et/emojis.dic
-%%DATADIR%%/locale/et/orca.dic
 %%DATADIR%%/locale/eu/emojis.dic
 %%DATADIR%%/locale/eu/orca-chars.dic
 %%DATADIR%%/locale/eu/orca.dic
@@ -164,7 +164,6 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/fa/symbols.dic
 %%DATADIR%%/locale/fi/emojis.dic
 %%DATADIR%%/locale/fi/orca-chars.dic
-%%DATADIR%%/locale/fi/orca.dic
 %%DATADIR%%/locale/fi/symbols.dic
 %%DATADIR%%/locale/fil/emojis.dic
 %%DATADIR%%/locale/fo/emojis.dic
@@ -183,6 +182,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/gl/orca.dic
 %%DATADIR%%/locale/gl/symbols.dic
 %%DATADIR%%/locale/gu/emojis.dic
+%%DATADIR%%/locale/ha/emojis.dic
 %%DATADIR%%/locale/he/emojis.dic
 %%DATADIR%%/locale/he/symbols.dic
 %%DATADIR%%/locale/hi/emojis.dic
@@ -202,8 +202,8 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/id/emojis.dic
 %%DATADIR%%/locale/id/orca-chars.dic
 %%DATADIR%%/locale/id/orca.dic
+%%DATADIR%%/locale/ig/emojis.dic
 %%DATADIR%%/locale/is/emojis.dic
-%%DATADIR%%/locale/is/orca.dic
 %%DATADIR%%/locale/is/symbols.dic
 %%DATADIR%%/locale/it/emojis.dic
 %%DATADIR%%/locale/it/orca-chars.dic
@@ -216,6 +216,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/ka/symbols.dic
 %%DATADIR%%/locale/kab/emojis.dic
 %%DATADIR%%/locale/kk/emojis.dic
+%%DATADIR%%/locale/kl/emojis.dic
 %%DATADIR%%/locale/km/emojis.dic
 %%DATADIR%%/locale/kmr/symbols.dic
 %%DATADIR%%/locale/kn/emojis.dic
@@ -226,6 +227,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/ku/emojis.dic
 %%DATADIR%%/locale/ky/emojis.dic
 %%DATADIR%%/locale/ky/symbols.dic
+%%DATADIR%%/locale/lb/emojis.dic
 %%DATADIR%%/locale/lo/emojis.dic
 %%DATADIR%%/locale/lt/emojis.dic
 %%DATADIR%%/locale/lt/orca-chars.dic
@@ -234,19 +236,20 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/lv/emojis.dic
 %%DATADIR%%/locale/lv/orca-chars.dic
 %%DATADIR%%/locale/lv/orca.dic
+%%DATADIR%%/locale/mi/emojis.dic
 %%DATADIR%%/locale/mk/emojis.dic
 %%DATADIR%%/locale/mk/orca-chars.dic
-%%DATADIR%%/locale/mk/orca.dic
 %%DATADIR%%/locale/mk/symbols.dic
 %%DATADIR%%/locale/ml/emojis.dic
 %%DATADIR%%/locale/ml/orca-chars.dic
 %%DATADIR%%/locale/ml/orca.dic
 %%DATADIR%%/locale/mn/emojis.dic
 %%DATADIR%%/locale/mn/symbols.dic
+%%DATADIR%%/locale/mni/emojis.dic
 %%DATADIR%%/locale/mr/emojis.dic
 %%DATADIR%%/locale/ms/emojis.dic
 %%DATADIR%%/locale/ms/orca-chars.dic
-%%DATADIR%%/locale/ms/orca.dic
+%%DATADIR%%/locale/mt/emojis.dic
 %%DATADIR%%/locale/my/emojis.dic
 %%DATADIR%%/locale/my/symbols.dic
 %%DATADIR%%/locale/nb/emojis.dic
@@ -262,8 +265,8 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/nl/symbols.dic
 %%DATADIR%%/locale/nn/emojis.dic
 %%DATADIR%%/locale/nn/orca-chars.dic
-%%DATADIR%%/locale/nn/orca.dic
 %%DATADIR%%/locale/nn_NO/symbols.dic
+%%DATADIR%%/locale/no/emojis.dic
 %%DATADIR%%/locale/oc/orca-chars.dic
 %%DATADIR%%/locale/oc/orca.dic
 %%DATADIR%%/locale/or/emojis.dic
@@ -271,6 +274,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/pa/orca-chars.dic
 %%DATADIR%%/locale/pa/orca.dic
 %%DATADIR%%/locale/pa/symbols.dic
+%%DATADIR%%/locale/pa_Arab/emojis.dic
 %%DATADIR%%/locale/pcm/emojis.dic
 %%DATADIR%%/locale/pl/emojis.dic
 %%DATADIR%%/locale/pl/orca-chars.dic
@@ -286,6 +290,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/pt_PT/emojis.dic
 %%DATADIR%%/locale/pt_PT/symbols.dic
 %%DATADIR%%/locale/qu/emojis.dic
+%%DATADIR%%/locale/rm/emojis.dic
 %%DATADIR%%/locale/ro/emojis.dic
 %%DATADIR%%/locale/ro/orca-chars.dic
 %%DATADIR%%/locale/ro/orca.dic
@@ -294,22 +299,21 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/ru/orca-chars.dic
 %%DATADIR%%/locale/ru/orca.dic
 %%DATADIR%%/locale/ru/symbols.dic
+%%DATADIR%%/locale/rw/emojis.dic
+%%DATADIR%%/locale/sa/emojis.dic
 %%DATADIR%%/locale/sd/emojis.dic
 %%DATADIR%%/locale/si/emojis.dic
-%%DATADIR%%/locale/si/orca.dic
 %%DATADIR%%/locale/sk/emojis.dic
 %%DATADIR%%/locale/sk/orca-chars.dic
 %%DATADIR%%/locale/sk/orca.dic
 %%DATADIR%%/locale/sk/symbols.dic
 %%DATADIR%%/locale/sl/emojis.dic
 %%DATADIR%%/locale/sl/orca-chars.dic
-%%DATADIR%%/locale/sl/orca.dic
 %%DATADIR%%/locale/sl/symbols.dic
 %%DATADIR%%/locale/so/emojis.dic
 %%DATADIR%%/locale/so/symbols.dic
 %%DATADIR%%/locale/sq/emojis.dic
 %%DATADIR%%/locale/sq/orca-chars.dic
-%%DATADIR%%/locale/sq/orca.dic
 %%DATADIR%%/locale/sq/symbols.dic
 %%DATADIR%%/locale/sr/emojis.dic
 %%DATADIR%%/locale/sr/orca-chars.dic
@@ -326,13 +330,14 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/sw_KE/emojis.dic
 %%DATADIR%%/locale/ta/emojis.dic
 %%DATADIR%%/locale/ta/orca-chars.dic
-%%DATADIR%%/locale/ta/orca.dic
 %%DATADIR%%/locale/ta/symbols.dic
 %%DATADIR%%/locale/te/emojis.dic
 %%DATADIR%%/locale/te/orca-chars.dic
 %%DATADIR%%/locale/te/orca.dic
+%%DATADIR%%/locale/tg/emojis.dic
 %%DATADIR%%/locale/tg/orca-chars.dic
 %%DATADIR%%/locale/tg/orca.dic
+%%DATADIR%%/locale/ti/emojis.dic
 %%DATADIR%%/locale/th/emojis.dic
 %%DATADIR%%/locale/th/orca-chars.dic
 %%DATADIR%%/locale/th/orca.dic
@@ -342,6 +347,7 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/tr/orca-chars.dic
 %%DATADIR%%/locale/tr/orca.dic
 %%DATADIR%%/locale/tr/symbols.dic
+%%DATADIR%%/locale/ug/emojis.dic
 %%DATADIR%%/locale/ug/orca-chars.dic
 %%DATADIR%%/locale/ug/orca.dic
 %%DATADIR%%/locale/uk/emojis.dic
@@ -354,18 +360,19 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/vi/orca-chars.dic
 %%DATADIR%%/locale/vi/orca.dic
 %%DATADIR%%/locale/vi/symbols.dic
+%%DATADIR%%/locale/wo/emojis.dic
+%%DATADIR%%/locale/xh/emojis.dic
+%%DATADIR%%/locale/yo/emojis.dic
+%%DATADIR%%/locale/yo_BJ/emojis.dic
 %%DATADIR%%/locale/yue/emojis.dic
 %%DATADIR%%/locale/zh/emojis.dic
 %%DATADIR%%/locale/zh/symbols.dic
 %%DATADIR%%/locale/zh_CN/orca-chars.dic
-%%DATADIR%%/locale/zh_CN/orca.dic
 %%DATADIR%%/locale/zh_CN/symbols.dic
 %%DATADIR%%/locale/zh_HK/emojis.dic
 %%DATADIR%%/locale/zh_HK/orca-chars.dic
-%%DATADIR%%/locale/zh_HK/orca.dic
 %%DATADIR%%/locale/zh_HK/symbols.dic
 %%DATADIR%%/locale/zh_TW/emojis.dic
 %%DATADIR%%/locale/zh_TW/orca-chars.dic
-%%DATADIR%%/locale/zh_TW/orca.dic
 %%DATADIR%%/locale/zh_TW/symbols.dic
 %%DATADIR%%/locale/zu/emojis.dic
