@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	5
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	Provides uniform access to different kinds of data sources
