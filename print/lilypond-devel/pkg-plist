@@ -302,7 +302,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/document-type-predicates.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/documentation-generate.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/documentation-lib.scm
-%%DATADIR%%/%%DISTVERSION%%/scm/lily/editor.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/file-cache.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/flag-styles.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/font.scm
