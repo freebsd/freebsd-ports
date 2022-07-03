@@ -1,6 +1,5 @@
 bin/siril
 bin/siril-cli
-lib/librtprocess.a
 man/man1/siril-cli.1.gz
 man/man1/siril.1.gz
 share/applications/org.free_astro.siril.desktop

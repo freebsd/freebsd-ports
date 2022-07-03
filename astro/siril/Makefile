@@ -1,5 +1,5 @@
 PORTNAME=	siril
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	astro graphics
 MASTER_SITES=	https://free-astro.org/download/
 
@@ -27,7 +27,9 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libopencv_core.so:graphics/opencv \
 		libpng.so:graphics/png \
 		libraw.so:graphics/libraw \
-		libtiff.so:graphics/tiff
+		librtprocess.so:graphics/librtprocess \
+		libtiff.so:graphics/tiff \
+		libwcs.so:astro/wcslib
 LIB_DEPENDS+=	libopencv_photo.so:graphics/opencv # for some reason, configure fails without opencv, but executable only links to opencv-core
 
 USES=		compiler:c++11-lang desktop-file-utils gettext \
