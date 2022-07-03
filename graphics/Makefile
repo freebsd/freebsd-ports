@@ -909,6 +909,7 @@
     SUBDIR += py-pyvips
     SUBDIR += py-pyvista
     SUBDIR += py-pyx
+    SUBDIR += py-qpageview
     SUBDIR += py-qrencode
     SUBDIR += py-railroad-diagrams
     SUBDIR += py-rasterio
