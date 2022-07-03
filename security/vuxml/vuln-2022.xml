@@ -1,3 +1,35 @@
+  <vuln vid="f0e45968-faff-11ec-856e-d4c9ef517024">
+    <topic>OpenSSL -- Bug in RSA implementation for AVX512IFMA</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1q,1</lt></range>
+      </package>
+      <package>
+	<name>openssl-devel</name>
+	<range><lt>3.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://mta.openssl.org/pipermail/openssl-announce/2022-July/000229.html">
+	  <p>One of the issues fixed in the 3.0.5 release is the
+	    CVE-2022-2274 (Bug in RSA implementation for AVX512IFMA
+	    capable CPUs) which is already public</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2274</cvename>
+      <url>https://mta.openssl.org/pipermail/openssl-announce/2022-July/000229.html</url>
+    </references>
+    <dates>
+      <discovery>2022-07-01</discovery>
+      <entry>2022-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5ab54ea0-fa94-11ec-996c-080027b24e86">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
