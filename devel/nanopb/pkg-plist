@@ -1,0 +1,16 @@
+bin/nanopb_generator.py
+bin/protoc-gen-nanopb
+include/pb.h
+include/pb_common.h
+include/pb_decode.h
+include/pb_encode.h
+lib/cmake/nanopb/nanopb-config-version.cmake
+lib/cmake/nanopb/nanopb-config.cmake
+lib/cmake/nanopb/nanopb-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/nanopb/nanopb-targets.cmake
+lib/libprotobuf-nanopb.a
+lib/libprotobuf-nanopb.so
+lib/libprotobuf-nanopb.so.0
+%%PYTHON_SITELIBDIR%%/proto/_utils.py
+%%PYTHON_SITELIBDIR%%/proto/nanopb.proto
+%%PYTHON_SITELIBDIR%%/proto/nanopb_pb2.py
