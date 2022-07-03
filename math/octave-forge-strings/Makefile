@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-strings
-PORTVERSION=	1.2.0
-PORTREVISION=	15
+PORTVERSION=	1.3.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -13,10 +12,9 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
+GNU_CONFIGURE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-ALL_TARGET=	# Intentionally left empty
 
 post-build:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
