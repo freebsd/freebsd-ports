@@ -67,6 +67,7 @@ include/stan/math/fwd/fun/inv.hpp
 include/stan/math/fwd/fun/inv_Phi.hpp
 include/stan/math/fwd/fun/inv_cloglog.hpp
 include/stan/math/fwd/fun/inv_erfc.hpp
+include/stan/math/fwd/fun/inv_inc_beta.hpp
 include/stan/math/fwd/fun/inv_logit.hpp
 include/stan/math/fwd/fun/inv_sqrt.hpp
 include/stan/math/fwd/fun/inv_square.hpp
@@ -148,6 +149,8 @@ include/stan/math/fwd/functor/reduce_sum.hpp
 include/stan/math/fwd/meta.hpp
 include/stan/math/fwd/meta/is_fvar.hpp
 include/stan/math/fwd/meta/partials_type.hpp
+include/stan/math/fwd/prob.hpp
+include/stan/math/fwd/prob/std_normal_log_qf.hpp
 include/stan/math/memory/stack_alloc.hpp
 include/stan/math/mix.hpp
 include/stan/math/mix/fun.hpp
@@ -775,6 +778,7 @@ include/stan/math/prim/fun/factor_U.hpp
 include/stan/math/prim/fun/factor_cov_matrix.hpp
 include/stan/math/prim/fun/falling_factorial.hpp
 include/stan/math/prim/fun/fdim.hpp
+include/stan/math/prim/fun/fft.hpp
 include/stan/math/prim/fun/fill.hpp
 include/stan/math/prim/fun/finite_diff_stepsize.hpp
 include/stan/math/prim/fun/floor.hpp
@@ -822,6 +826,7 @@ include/stan/math/prim/fun/inv.hpp
 include/stan/math/prim/fun/inv_Phi.hpp
 include/stan/math/prim/fun/inv_cloglog.hpp
 include/stan/math/prim/fun/inv_erfc.hpp
+include/stan/math/prim/fun/inv_inc_beta.hpp
 include/stan/math/prim/fun/inv_logit.hpp
 include/stan/math/prim/fun/inv_sqrt.hpp
 include/stan/math/prim/fun/inv_square.hpp
@@ -1302,6 +1307,8 @@ include/stan/math/prim/prob/inv_gamma_lcdf.hpp
 include/stan/math/prim/prob/inv_gamma_log.hpp
 include/stan/math/prim/prob/inv_gamma_lpdf.hpp
 include/stan/math/prim/prob/inv_gamma_rng.hpp
+include/stan/math/prim/prob/inv_wishart_cholesky_lpdf.hpp
+include/stan/math/prim/prob/inv_wishart_cholesky_rng.hpp
 include/stan/math/prim/prob/inv_wishart_log.hpp
 include/stan/math/prim/prob/inv_wishart_lpdf.hpp
 include/stan/math/prim/prob/inv_wishart_rng.hpp
@@ -1349,6 +1356,8 @@ include/stan/math/prim/prob/multi_normal_prec_log.hpp
 include/stan/math/prim/prob/multi_normal_prec_lpdf.hpp
 include/stan/math/prim/prob/multi_normal_prec_rng.hpp
 include/stan/math/prim/prob/multi_normal_rng.hpp
+include/stan/math/prim/prob/multi_student_t_cholesky_lpdf.hpp
+include/stan/math/prim/prob/multi_student_t_cholesky_rng.hpp
 include/stan/math/prim/prob/multi_student_t_log.hpp
 include/stan/math/prim/prob/multi_student_t_lpdf.hpp
 include/stan/math/prim/prob/multi_student_t_rng.hpp
@@ -1473,6 +1482,7 @@ include/stan/math/prim/prob/std_normal_cdf_log.hpp
 include/stan/math/prim/prob/std_normal_lccdf.hpp
 include/stan/math/prim/prob/std_normal_lcdf.hpp
 include/stan/math/prim/prob/std_normal_log.hpp
+include/stan/math/prim/prob/std_normal_log_qf.hpp
 include/stan/math/prim/prob/std_normal_lpdf.hpp
 include/stan/math/prim/prob/std_normal_rng.hpp
 include/stan/math/prim/prob/student_t_ccdf_log.hpp
@@ -1509,6 +1519,8 @@ include/stan/math/prim/prob/weibull_lpdf.hpp
 include/stan/math/prim/prob/weibull_rng.hpp
 include/stan/math/prim/prob/wiener_log.hpp
 include/stan/math/prim/prob/wiener_lpdf.hpp
+include/stan/math/prim/prob/wishart_cholesky_lpdf.hpp
+include/stan/math/prim/prob/wishart_cholesky_rng.hpp
 include/stan/math/prim/prob/wishart_log.hpp
 include/stan/math/prim/prob/wishart_lpdf.hpp
 include/stan/math/prim/prob/wishart_rng.hpp
@@ -1651,6 +1663,7 @@ include/stan/math/rev/fun/expm1.hpp
 include/stan/math/rev/fun/fabs.hpp
 include/stan/math/rev/fun/falling_factorial.hpp
 include/stan/math/rev/fun/fdim.hpp
+include/stan/math/rev/fun/fft.hpp
 include/stan/math/rev/fun/fill.hpp
 include/stan/math/rev/fun/floor.hpp
 include/stan/math/rev/fun/fma.hpp
@@ -1676,6 +1689,7 @@ include/stan/math/rev/fun/inv.hpp
 include/stan/math/rev/fun/inv_Phi.hpp
 include/stan/math/rev/fun/inv_cloglog.hpp
 include/stan/math/rev/fun/inv_erfc.hpp
+include/stan/math/rev/fun/inv_inc_beta.hpp
 include/stan/math/rev/fun/inv_logit.hpp
 include/stan/math/rev/fun/inv_sqrt.hpp
 include/stan/math/rev/fun/inv_square.hpp
@@ -1823,4 +1837,6 @@ include/stan/math/rev/meta/plain_type.hpp
 include/stan/math/rev/meta/promote_var_matrix.hpp
 include/stan/math/rev/meta/return_var_matrix.hpp
 include/stan/math/rev/meta/rev_matrix_type.hpp
+include/stan/math/rev/prob.hpp
+include/stan/math/rev/prob/std_normal_log_qf.hpp
 include/stan/math/version.hpp
