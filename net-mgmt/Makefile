@@ -322,6 +322,7 @@
     SUBDIR += py-pyeapi
     SUBDIR += py-pynetbox
     SUBDIR += py-pynxos
+    SUBDIR += py-pypowerwall
     SUBDIR += py-pysmi
     SUBDIR += py-pysnmp
     SUBDIR += py-pysnmp-mibs
