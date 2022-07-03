@@ -1,0 +1,7 @@
+include/csptr/array.h
+include/csptr/common.h
+include/csptr/config.h
+include/csptr/smalloc.h
+include/csptr/smart_ptr.h
+lib/libcsptr.so
+share/man/man3/csptr.3.gz
