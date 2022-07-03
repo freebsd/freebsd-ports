@@ -21,6 +21,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yse
 GH_PROJECT=	easy_profiler
 
+CXXFLAGS+=	-Dint64=int64_t
+
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/LICENSE.*
 
