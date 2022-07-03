@@ -1,0 +1,22 @@
+- use the shared library for nanopb
+
+--- meson.build.orig	2022-07-03 16:28:55 UTC
++++ meson.build
+@@ -171,7 +171,7 @@ else
+ 	config.set('NN_REQREP_H', '<nanomsg/reqrep.h>')
+ endif
+ 
+-nanopb = dependency('nanopb', required: false, method: 'cmake', modules: ['nanopb::protobuf-nanopb-static'])
++nanopb = dependency('nanopb', required: false, method: 'cmake', modules: ['nanopb::protobuf-nanopb'])
+ must_regenerate_pb = nanopb.found()
+ if not nanopb.found()
+ 	nanopb_proj = cmake.subproject('nanopb',
+@@ -181,7 +181,7 @@ if not nanopb.found()
+ 			'-DCMAKE_C_FLAGS=-DPB_ENABLE_MALLOC=1 -DPB_NO_PACKED_STRUCTS=1',
+ 			'-DCMAKE_POSITION_INDEPENDENT_CODE=ON',
+ 		])
+-	nanopb = nanopb_proj.dependency('protobuf-nanopb-static')
++	nanopb = nanopb_proj.dependency('protobuf-nanopb')
+ endif
+ 
+ libgit2 = dependency('libgit2', required: false)

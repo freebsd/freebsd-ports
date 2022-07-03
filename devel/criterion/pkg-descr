@@ -1,0 +1,15 @@
+Criterion is a cross-platform C and C++ unit testing framework for the
+21st century.
+
+Most test frameworks for C require a lot of boilerplate code to set up
+tests and test suites -- you need to create a main, then register new
+test suites, then register the tests within these suites, and finally
+call the right functions.
+
+This gives the user great control, at the unfortunate cost of
+simplicity.
+
+Criterion follows the KISS principle, while keeping the control the
+user would have with other frameworks.
+
+WWW: https://github.com/Snaipe/Criterion
