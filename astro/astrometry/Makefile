@@ -2,7 +2,7 @@
 
 PORTNAME=	astrometry
 PORTVERSION=	0.89
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
@@ -28,37 +28,46 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astropy>0:astro/py-astropy@${PY_FLAVOR} \
 USES=		gmake jpeg localbase pkgconfig python shebangfix
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	afni p5-Text-RecordParser # bin/imstat bin/tabmerge
-
 SHEBANG_FILES=	bin/* sdss/*.py solver/*.py util/[!c]*.py
 
 MAKE_ARGS=	NETPBM_INC="-I${LOCALBASE}/include/netpbm" \
 		NETPBM_LIB="-L${LOCALBASE}/lib -lnetpbm" \
 		SYSTEM_GSL=yes
 MAKE_ENV=	INSTALL_DIR=${STAGEDIR}${PREFIX} \
+		DATA_INSTALL_DIR=${STAGEDIR}${DATADIR} \
 		DOC_INSTALL_DIR=${STAGEDIR}${DOCSDIR} \
 		EXAMPLE_INSTALL_DIR=${STAGEDIR}${EXAMPLESDIR} \
 		MAN1_INSTALL_DIR=${STAGEDIR}${PREFIX}/man/man1 \
+		PY_BASE_INSTALL_DIR=${STAGEDIR}${PYTHON_LIBDIR}/astrometry \
 		PYTHON=${PYTHON_CMD} PYTHON_SCRIPT=${PYTHON_CMD}
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	all extra
 LDFLAGS+=	-lz
 
-# Need this to get gzipped man pages
+CONFLICTS_INSTALL=	afni p5-Text-RecordParser # bin/imstat bin/tabmerge
+
 MANDIRS=	${MANPREFIX}/man/man1
 SUB_FILES=	pkg-message
-
-PORTDOCS=	*
-PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_DEFAULT=	EXAMPLES
 
-# Changes search path in astrometry-engine
-DATA_INSTALL_DIR=	${STAGEDIR}${DATADIR}
+FILES=	an-fitstopnm an-pnmtofits astrometry-engine \
+	build-astrometry-index downsample-fits fit-wcs \
+	fits-column-merge fits-flip-endian fits-guess-scale \
+	fitscopy fitsgetext fitsverify get-healpix get-wcs \
+	hpsplit image2xy imarith imcopy imstat listhead liststruc \
+	modhead new-wcs pad-file plot-constellations \
+	plotquad plotxy query-starkd solve-field startree \
+	subtable tablist tabmerge tabsort wcs-grab wcs-match \
+	wcs-pv2sip wcs-rd2xy wcs-resample wcs-to-tan wcs-xy2rd \
+	wcsinfo
 
-# DATA_INSTALL_DIR does not work globally :(
 post-install:
+.for file in ${FILES}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
+.endfor
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libastrometry.so
 	@${REINPLACE_CMD} -i '' \
 		-e 's|${STAGEDIR}/usr/local/data|${DATADIR}|' \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg
