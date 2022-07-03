@@ -412,6 +412,7 @@
     SUBDIR += kontrast
     SUBDIR += kooka
     SUBDIR += kphotoalbum
+    SUBDIR += kplot
     SUBDIR += kqtquickcharts
     SUBDIR += kquickimageeditor
     SUBDIR += krita
