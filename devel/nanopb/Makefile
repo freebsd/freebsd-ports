@@ -1,5 +1,6 @@
 PORTNAME=	nanopb
-DISTVERSION=	0.4.6.4
+DISTVERSION=	0.4.6.4-3
+DISTVERSIONSUFFIX=	-gf84ad7f
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +22,9 @@ SHEBANG_FILES=	generator/nanopb_generator.py
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
 
-do-test: # tests fail to build, see https://github.com/nanopb/nanopb/issues/792
-	@cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} scons
+BINARY_ALIAS=	python3=${PYTHON_CMD} # only for tests
+
+do-test:
+	@cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} scons LINKLIBS=-lm
 
 .include <bsd.port.mk>
