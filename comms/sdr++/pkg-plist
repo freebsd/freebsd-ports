@@ -1,5 +1,5 @@
 bin/sdrpp
-include/correct-sse.h
+%%SSE%%include/correct-sse.h
 include/correct.h
 lib/libcorrect.a
 lib/libcorrect.so

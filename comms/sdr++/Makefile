@@ -42,4 +42,12 @@ RTAUDIO_DESC=			RtAudio support
 RTAUDIO_CMAKE_BOOL=		OPT_BUILD_AUDIO_SINK
 RTAUDIO_LIB_DEPENDS=		librtaudio.so:audio/rtaudio
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+PLIST_SUB+=     SSE=""
+.else
+PLIST_SUB+=     SSE="@comment "
+.endif
+
+.include <bsd.port.post.mk>
