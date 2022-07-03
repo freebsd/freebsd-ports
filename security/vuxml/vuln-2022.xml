@@ -1,3 +1,41 @@
+  <vuln vid="5ab54ea0-fa94-11ec-996c-080027b24e86">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki135</name>
+	<range><lt>1.35.7</lt></range>
+      </package>
+      <package>
+	<name>mediawiki137</name>
+	<range><lt>1.37.3</lt></range>
+      </package>
+      <package>
+	<name>mediawiki138</name>
+	<range><lt>1.38.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/PIPYDRSHXOYW5DB7X755QDNUV5EZWPWB/">
+	  <p>(T308471) Username is not escaped in the "welcomeuser" message.</p>
+	  <p>(T308473) Username not escaped in the contributions-title message.</p>
+	  <p>(T309377, CVE-2022-29248) Update "guzzlehttp/guzzle" to version 6.5.6.</p>
+	  <p>(T311384, CVE-2022-27776) Update "guzzlehttp/guzzle" to 6.5.8/7.4.5.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-29248</cvename>
+      <cvename>CVE-2022-27776</cvename>
+      <url>https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/PIPYDRSHXOYW5DB7X755QDNUV5EZWPWB/</url>
+    </references>
+    <dates>
+      <discovery>2022-05-16</discovery>
+      <entry>2022-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07c0d782-f758-11ec-acaa-901b0e9408dc">
     <topic>py-matrix-synapse -- unbounded recursion in urlpreview</topic>
     <affects>
