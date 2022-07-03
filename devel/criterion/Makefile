@@ -31,7 +31,6 @@ GH_TUPLE=	attractivechaos:klib:cdb7e92:klib/dependencies/klib \
 
 SHEBANG_FILES=	src/protocol/gen-pb.py
 
-MESON_ARGS=	-Db_lundef=false # remove -Wl,--no-undefined to work around bug#265008
 MESON_ARGS=	-Dtests=false -Dsamples=false
 
 CFLAGS+=	-fPIC
@@ -39,9 +38,9 @@ CXXFLAGS+=	-fPIC
 
 quick-test:
 	@cd ${TEST_WRKSRC} && \
-		${CC} ${CFLAGS} -I${STAGEDIR}${PREFIX}/include \
+		${CC} ${CFLAGS} ${LDFLAGS} -I${STAGEDIR}${PREFIX}/include \
 			${STAGEDIR}${PREFIX}/lib/libcriterion.a \
-			-L${LOCALBASE}/lib -lboxfort -lprotobuf-nanopb -lgit2 -lnanomsg \
+			-L${LOCALBASE}/lib -lboxfort -lprotobuf-nanopb -lgit2 -lnanomsg -lintl \
 			${FILESDIR}/example.c && \
 		./a.out # test succeeds when simple::Test fails with assertion
 
