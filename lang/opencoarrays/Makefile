@@ -10,9 +10,12 @@ COMMENT=	Transport layer for coarray Fortran compilers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-.for arch in aarch64 powerpc powerpc64 powerpc64le
-BROKEN_${arch}=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
-.endfor
+BROKEN_aarch64=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
+BROKEN_FreeBSD_12_powerpc=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
+BROKEN_FreeBSD_12_powerpc64=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
+BROKEN_FreeBSD_13_powerpc=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
+BROKEN_FreeBSD_13_powerpc64=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
+BROKEN_FreeBSD_13_powerpc64le=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
@@ -29,6 +32,18 @@ PLIST_SUB=	GCC_VER=${_GCC_VER} PORTVERSION=${PORTVERSION} SOVERSION=3
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI
 OPTIONS_DEFAULT=	MPICH
+OPTIONS_EXCLUDE_armv6=	MPICH
+OPTIONS_EXCLUDE_armv7=	MPICH
+OPTIONS_EXCLUDE_i386=	MPICH
+OPTIONS_EXCLUDE_mips=	MPICH
+OPTIONS_EXCLUDE_powerpc=	MPICH
+OPTIONS_EXCLUDE_powerpcspe=	MPICH
+OPTIONS_DEFAULT_armv6=	OPENMPI
+OPTIONS_DEFAULT_armv7=	OPENMPI
+OPTIONS_DEFAULT_i386=	OPENMPI
+OPTIONS_DEFAULT_mips=	OPENMPI
+OPTIONS_DEFAULT_powerpc=	OPENMPI
+OPTIONS_DEFAULT_powerpcspe=	OPENMPI
 
 MPICH_BUILD_DEPENDS=	mpif90:net/mpich
 MPICH_RUN_DEPENDS=	mpif90:net/mpich
