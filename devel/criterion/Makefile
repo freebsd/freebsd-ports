@@ -33,9 +33,6 @@ SHEBANG_FILES=	src/protocol/gen-pb.py
 
 MESON_ARGS=	-Dtests=false -Dsamples=false
 
-CFLAGS+=	-fPIC
-CXXFLAGS+=	-fPIC
-
 quick-test:
 	@cd ${TEST_WRKSRC} && \
 		${CC} ${CFLAGS} ${LDFLAGS} -I${STAGEDIR}${PREFIX}/include \
@@ -43,5 +40,12 @@ quick-test:
 			-L${LOCALBASE}/lib -lboxfort -lprotobuf-nanopb -lgit2 -lnanomsg -lintl \
 			${FILESDIR}/example.c && \
 		./a.out # test succeeds when simple::Test fails with assertion
+
+do-test:
+	@cd ${WRKSRC} && \
+		${RM} -rf _build && \
+		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS} -Dtests=true -Dsamples=false && \
+	cd ${BUILD_WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} test
 
 .include <bsd.port.mk>
