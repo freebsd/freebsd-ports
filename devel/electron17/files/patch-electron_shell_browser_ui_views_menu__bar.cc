@@ -1,4 +1,4 @@
---- electron/shell/browser/ui/views/menu_bar.cc.orig	2021-12-03 01:46:05 UTC
+--- electron/shell/browser/ui/views/menu_bar.cc.orig	2022-06-30 19:37:49 UTC
 +++ electron/shell/browser/ui/views/menu_bar.cc
 @@ -12,7 +12,7 @@
  #include "ui/views/background.h"
@@ -6,7 +6,7 @@
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
- #include "ui/gtk/gtk_util.h"
+ #include "ui/gtk/gtk_util.h"  // nogncheck
  #endif
  
 @@ -209,7 +209,7 @@ void MenuBar::ButtonPressed(int id, const ui::Event& e
