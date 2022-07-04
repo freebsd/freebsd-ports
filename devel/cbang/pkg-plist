@@ -172,12 +172,6 @@ include/cbang/js/Sink.h
 include/cbang/js/StackTrace.h
 include/cbang/js/StdModule.h
 include/cbang/js/Value.h
-include/cbang/js/v8/Context.h
-include/cbang/js/v8/Factory.h
-include/cbang/js/v8/JSImpl.h
-include/cbang/js/v8/V8.h
-include/cbang/js/v8/Value.h
-include/cbang/js/v8/ValueRef.h
 include/cbang/json/BufferWriter.h
 include/cbang/json/Builder.h
 include/cbang/json/Dict.h
