@@ -45,7 +45,6 @@ include/guile/%%GUILE_VER%%/libguile/fports.h
 include/guile/%%GUILE_VER%%/libguile/frames.h
 include/guile/%%GUILE_VER%%/libguile/gc-inline.h
 include/guile/%%GUILE_VER%%/libguile/gc.h
-include/guile/%%GUILE_VER%%/libguile/generalized-arrays.h
 include/guile/%%GUILE_VER%%/libguile/generalized-vectors.h
 include/guile/%%GUILE_VER%%/libguile/gettext.h
 include/guile/%%GUILE_VER%%/libguile/goops.h
@@ -223,6 +222,7 @@ lib/guile/%%GUILE_VER%%/ccache/language/cps/contification.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/cse.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/dce.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/devirtualize-integers.go
+lib/guile/%%GUILE_VER%%/ccache/language/cps/dump.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/effects-analysis.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/elide-arity-checks.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/graphs.go
@@ -235,6 +235,7 @@ lib/guile/%%GUILE_VER%%/ccache/language/cps/peel-loops.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/prune-top-level-scopes.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/reify-primitives.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/renumber.go
+lib/guile/%%GUILE_VER%%/ccache/language/cps/return-types.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/rotate-loops.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/self-references.go
 lib/guile/%%GUILE_VER%%/ccache/language/cps/simplify.go
@@ -280,10 +281,12 @@ lib/guile/%%GUILE_VER%%/ccache/language/tree-il/debug.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/effects.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/eta-expand.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/fix-letrec.go
+lib/guile/%%GUILE_VER%%/ccache/language/tree-il/inlinable-exports.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/letrectify.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/optimize.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/peval.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/primitives.go
+lib/guile/%%GUILE_VER%%/ccache/language/tree-il/resolve-free-vars.go
 lib/guile/%%GUILE_VER%%/ccache/language/tree-il/spec.go
 lib/guile/%%GUILE_VER%%/ccache/language/value/spec.go
 lib/guile/%%GUILE_VER%%/ccache/oop/goops.go
@@ -466,8 +469,8 @@ lib/guile/%%GUILE_VER%%/extensions/guile-readline.so.0.0.0
 lib/libguile-%%GUILE_VER%%.a
 lib/libguile-%%GUILE_VER%%.so
 lib/libguile-%%GUILE_VER%%.so.1
-lib/libguile-%%GUILE_VER%%.so.1.4.0
-lib/libguile-%%GUILE_VER%%.so.1.4.0-gdb.scm
+lib/libguile-%%GUILE_VER%%.so.1.5.0
+lib/libguile-%%GUILE_VER%%.so.1.5.0-gdb.scm
 libdata/pkgconfig/guile-%%GUILE_VER%%.pc
 man/man1/guile.1.gz
 share/aclocal/guile.m4
@@ -569,6 +572,7 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/language/cps/cse.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/dce.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/devirtualize-integers.scm
+%%DATADIR%%/%%GUILE_VER%%/language/cps/dump.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/effects-analysis.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/elide-arity-checks.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/graphs.scm
@@ -581,6 +585,7 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/language/cps/prune-top-level-scopes.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/reify-primitives.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/renumber.scm
+%%DATADIR%%/%%GUILE_VER%%/language/cps/return-types.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/rotate-loops.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/self-references.scm
 %%DATADIR%%/%%GUILE_VER%%/language/cps/simplify.scm
@@ -626,10 +631,12 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/effects.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/eta-expand.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/fix-letrec.scm
+%%DATADIR%%/%%GUILE_VER%%/language/tree-il/inlinable-exports.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/letrectify.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/optimize.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/peval.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/primitives.scm
+%%DATADIR%%/%%GUILE_VER%%/language/tree-il/resolve-free-vars.scm
 %%DATADIR%%/%%GUILE_VER%%/language/tree-il/spec.scm
 %%DATADIR%%/%%GUILE_VER%%/language/value/spec.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops.scm
