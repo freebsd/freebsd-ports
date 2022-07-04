@@ -416,6 +416,7 @@
     SUBDIR += lapack++
     SUBDIR += lapack95
     SUBDIR += lapacke
+    SUBDIR += lapackpp
     SUBDIR += laspack
     SUBDIR += latte-integrale
     SUBDIR += lcalc
