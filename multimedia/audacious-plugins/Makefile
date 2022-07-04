@@ -2,7 +2,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -37,7 +37,7 @@ gtk2_RUN_DEPENDS=	audacious:multimedia/audacious@gtk2
 gtk2_BUILD_DEPENDS=	audacious:multimedia/audacious@gtk2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-console --disable-soxr \
+CONFIGURE_ARGS=	--disable-console --disable-mms --disable-soxr \
 		--enable-gnomeshortcuts
 
 .if ${FLAVOR} == qt5
@@ -52,7 +52,7 @@ PLIST_SUB=		QT5="@comment " GTK2=""
 .endif
 
 OPTIONS_DEFINE=	AAC ADPLUG AMIDI BS2B CDDA CUE FFMPEG FLAC LAME LIRC \
-		MMS MODPLUG MPRIS NEON NLS NOTIFY OPENGL OPENMPT SAMPLERATE \
+		MODPLUG MPRIS NEON NLS NOTIFY OPENGL OPENMPT SAMPLERATE \
 		SCROBBLER SID SNDFILE SPEEDPITCH VORBIS WAVPACK
 OPTIONS_MULTI=		OUTPUT
 OPTIONS_MULTI_OUTPUT=	ALSA FILEWRITER JACK OSS PULSEAUDIO SDL SNDIO
@@ -112,8 +112,6 @@ LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=	filewriter_mp3
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_CONFIGURE_ENABLE=	lirc
-MMS_LIB_DEPENDS=	libmms.so:net/libmms
-MMS_CONFIGURE_ENABLE=	mms
 MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 MODPLUG_CONFIGURE_ENABLE=	modplug
 MPRIS_CONFIGURE_ENABLE=	mpris2

@@ -69,7 +69,6 @@ lib/audacious/Input/xsf.so
 %%SDL%%lib/audacious/Output/sdlout.so
 %%SNDIO%%lib/audacious/Output/sndio-ng.so
 lib/audacious/Transport/gio.so
-%%MMS%%lib/audacious/Transport/mms.so
 %%NEON%%lib/audacious/Transport/neon.so
 %%GTK2%%lib/audacious/Visualization/blur_scope.so
 %%QT5%%lib/audacious/Visualization/blur_scope-qt.so
