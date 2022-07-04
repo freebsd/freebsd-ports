@@ -3,7 +3,7 @@ DISTVERSION=	0.5.2
 CATEGORIES=	devel games
 MASTER_SITES=	https://github.com/gbdev/rgbds/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Free assembler/linker for the Game Boy and Game Boy Color
 
 LICENSE=	MIT
