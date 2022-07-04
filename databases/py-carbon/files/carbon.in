@@ -1,9 +1,10 @@
 #!/bin/sh
 
 # PROVIDE: carbon
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
-# 
+#
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
@@ -28,7 +29,7 @@
 #			in debug by default.
 # carbon_logdir:	Directory where carbon logs are stored.
 #			Default: /var/db/carbon/log
-# 
+#
 
 . /etc/rc.subr
 
@@ -114,4 +115,3 @@ carbon_stop()
 }
 
 run_rc_command "$1"
-
