@@ -68,9 +68,15 @@ CABAL_ARCH=	${ARCH:S/amd64/x86_64/:C/armv.*/arm/:S/powerpc64/ppc64/}
 CABAL_DEPSDIR=	${WRKSRC}/${CABAL_DEPS_SUBDIR}
 CABAL_DEPS_SUBDIR=	_cabal_deps
 
+.  if defined(BUILD_DEPENDS) && ${BUILD_DEPENDS:Mghc?*\:lang/ghc?*}
+CABAL_WITH_ARGS=	--with-compiler=${BUILD_DEPENDS:Mghc?*\:lang/ghc?*:C/\:.*//} \
+			--with-hsc2hs=${LOCALBASE}/bin/hsc2hs-${BUILD_DEPENDS:Mghc?*\:lang/ghc?*:C/\:.*//}
+.  else
+BUILD_DEPENDS+=	ghc:lang/ghc
+.  endif
+
 .  if !defined(CABAL_BOOTSTRAP)
-BUILD_DEPENDS+=	cabal:devel/hs-cabal-install \
-		ghc:lang/ghc
+BUILD_DEPENDS+=	cabal:devel/hs-cabal-install
 .  endif
 
 .  if ${cabal_ARGS:Mhpack}
@@ -162,9 +168,9 @@ cabal-extract-deps:
 	cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} hpack
 .    endif
 	cd ${WRKSRC} && \
-		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-configure --disable-benchmarks --disable-tests --flags="${CABAL_FLAGS}" ${CONFIGURE_ARGS}
+		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-configure --disable-benchmarks --disable-tests --flags="${CABAL_FLAGS}" ${CABAL_WITH_ARGS} ${CONFIGURE_ARGS}
 	cd ${WRKSRC} && \
-		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-build --disable-benchmarks --disable-tests --dependencies-only ${BUILD_ARGS} ${BUILD_TARGET}
+		${SETENV} ${LOCALE_ENV} HOME=${CABAL_HOME} cabal new-build --disable-benchmarks --disable-tests --dependencies-only ${CABAL_WITH_ARGS} ${BUILD_ARGS} ${BUILD_TARGET}
 .  endif
 
 # Generates USE_CABAL= ... line ready to be pasted into the port based on artifacts of cabal-extract-deps.
@@ -234,7 +240,7 @@ cabal-pre-configure:
 .    if !target(do-build)
 do-build:
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} cabal new-build --offline --disable-benchmarks --disable-tests --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
+		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} cabal new-build --offline --disable-benchmarks --disable-tests ${CABAL_WITH_ARGS} --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
 .    endif
 
 .    if !target(do-install)
