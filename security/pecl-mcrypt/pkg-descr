@@ -1,5 +1,5 @@
 Bindings for the libmcrypt library
 
-Pecl package available only for PHP 7.2
+Pecl package available only for PHP 7.2 and above
 
 WWW: https://pecl.php.net/package/mcrypt
