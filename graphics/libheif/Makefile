@@ -22,7 +22,6 @@ GH_ACCOUNT=	strukturag
 
 OPTIONS_DEFINE=		AOM DAV1D EXAMPLES LIBDE265 RAV1E X265
 OPTIONS_DEFAULT=	AOM DAV1D LIBDE265 X265
-OPTIONS_SUB=		yes
 
 AOM_DESC=		AV1 encoding/decoding via libaom
 DAV1D_DESC=		Build dav1e decoder
@@ -38,16 +37,7 @@ DAV1D_CMAKE_BOOL=	WITH_DAV1D
 
 EXAMPLES_LIB_DEPENDS=	libpng16.so:graphics/png
 EXAMPLES_USES=		jpeg
-EXAMPLES_CMAKE_ON=	-DWITH_EXAMPLES:bool=ON
-EXAMPLES_CMAKE_OFF=	-DWITH_EXAMPLES:bool=OFF
-EXAMPLES_PLIST_FILES=	bin/heif-convert \
-			bin/heif-enc \
-			bin/heif-info \
-			bin/heif-thumbnailer \
-			share/man/man1/heif-convert.1.gz \
-			share/man/man1/heif-enc.1.gz \
-			share/man/man1/heif-info.1.gz \
-			share/man/man1/heif-thumbnailer.1.gz
+EXAMPLES_CMAKE_BOOL=	WITH_EXAMPLES
 
 LIBDE265_LIB_DEPENDS=	libde265.so:multimedia/libde265
 LIBDE265_CMAKE_BOOL=	WITH_LIBDE265
