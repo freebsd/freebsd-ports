@@ -100,6 +100,7 @@ include/thrift/lib/cpp2/Adapt.h
 include/thrift/lib/cpp2/BadFieldAccess.h
 include/thrift/lib/cpp2/BoxedValuePtr.h
 include/thrift/lib/cpp2/CloneableIOBuf.h
+include/thrift/lib/cpp2/FieldMask.h
 include/thrift/lib/cpp2/FieldPath.h
 include/thrift/lib/cpp2/FieldRef.h
 include/thrift/lib/cpp2/FieldRefHash.h
@@ -242,6 +243,7 @@ include/thrift/lib/cpp2/protocol/JSONProtocol.h
 include/thrift/lib/cpp2/protocol/JSONProtocolCommon-inl.h
 include/thrift/lib/cpp2/protocol/JSONProtocolCommon.h
 include/thrift/lib/cpp2/protocol/LazyDeserializationFlags.h
+include/thrift/lib/cpp2/protocol/Patch.h
 include/thrift/lib/cpp2/protocol/Protocol.h
 include/thrift/lib/cpp2/protocol/ProtocolReaderStructReadState.h
 include/thrift/lib/cpp2/protocol/ProtocolReaderWireTypeInfo.h
