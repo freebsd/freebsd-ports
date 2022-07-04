@@ -187,6 +187,7 @@
     SUBDIR += blahtexml
     SUBDIR += blas
     SUBDIR += blasfeo
+    SUBDIR += blaspp
     SUBDIR += blaze
     SUBDIR += blazeiterative
     SUBDIR += blis
