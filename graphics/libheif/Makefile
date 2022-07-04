@@ -2,7 +2,7 @@ PORTNAME=	libheif
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12.0-62
 DISTVERSIONSUFFIX=	-g0082fea
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	makc@FreeBSD.org
@@ -17,12 +17,10 @@ CPE_VENDOR=	struktur
 USE_GNOME=	gdkpixbuf2 glib20
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	WITH_EXAMPLES
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	strukturag
 
-OPTIONS_DEFINE=		AOM DAV1D LIBDE265 RAV1E X265
+OPTIONS_DEFINE=		AOM DAV1D EXAMPLES LIBDE265 RAV1E X265
 OPTIONS_DEFAULT=	AOM DAV1D LIBDE265 X265
 OPTIONS_SUB=		yes
 
@@ -37,6 +35,19 @@ AOM_CMAKE_BOOL=		WITH_AOM
 
 DAV1D_LIB_DEPENDS=	libdav1d.so:multimedia/dav1d
 DAV1D_CMAKE_BOOL=	WITH_DAV1D
+
+EXAMPLES_LIB_DEPENDS=	libpng16.so:graphics/png
+EXAMPLES_USES=		jpeg
+EXAMPLES_CMAKE_ON=	-DWITH_EXAMPLES:bool=ON
+EXAMPLES_CMAKE_OFF=	-DWITH_EXAMPLES:bool=OFF
+EXAMPLES_PLIST_FILES=	bin/heif-convert \
+			bin/heif-enc \
+			bin/heif-info \
+			bin/heif-thumbnailer \
+			share/man/man1/heif-convert.1.gz \
+			share/man/man1/heif-enc.1.gz \
+			share/man/man1/heif-info.1.gz \
+			share/man/man1/heif-thumbnailer.1.gz
 
 LIBDE265_LIB_DEPENDS=	libde265.so:multimedia/libde265
 LIBDE265_CMAKE_BOOL=	WITH_LIBDE265
