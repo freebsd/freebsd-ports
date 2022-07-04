@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	pgbouncer
-PORTVERSION=	1.16.1
+PORTVERSION=	1.17.0
 CATEGORIES=	databases
 MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
 		http://pgbouncer.github.io/downloads/files/${PORTVERSION}/
@@ -13,35 +13,36 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		cpe gmake ssl pkgconfig
+USES=		cpe gmake pkgconfig ssl
+USE_RC_SUBR=	pgbouncer
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-evdns \
+		--with-libevent=${LOCALBASE}
+CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread"
 
 PORTSCOUT=	site:https://pgbouncer.github.io/downloads/
+SUB_FILES=	pkg-message
+SUB_LIST+=	PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
 
 USERS=		pgbouncer
 GROUPS=		pgbouncer
 
-USE_RC_SUBR=	pgbouncer
-GNU_CONFIGURE=	yes
+PLIST_SUB+=	PGBOUNCER_GROUP="${GROUPS}" \
+		PGBOUNCER_LOGDIR="${PGBOUNCER_LOGDIR}" \
+		PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}" \
+		PGBOUNCER_USER="${USERS}"
 
 OPTIONS_DEFINE=	CARES
+
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 CARES_CONFIGURE_WITH=	cares
 
-CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --enable-evdns
-CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread"
-
-PGBOUNCER_USER?=	pgbouncer
 PGBOUNCER_GROUP?=	pgbouncer
+PGBOUNCER_USER?=	pgbouncer
 
 PGBOUNCER_RUNDIR?=	/var/run/pgbouncer
 PGBOUNCER_LOGDIR?=	/var/log/pgbouncer
-
-PLIST_SUB+=	PGBOUNCER_USER="${USERS}" \
-		PGBOUNCER_GROUP="${GROUPS}" \
-		PGBOUNCER_LOGDIR="${PGBOUNCER_LOGDIR}" \
-		PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
-SUB_LIST+=	PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
-SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|= /etc/pgbouncer/userlist.txt|= ${PREFIX}/etc/pgbouncer.users|g" \
