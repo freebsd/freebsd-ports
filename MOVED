@@ -17492,3 +17492,4 @@ sysutils/pesign||2022-07-01|Has expired: Unmaintaned since 2016, very much out o
 sysutils/cfengine316||2022-07-06|Has expired: Expire one year after cfengine 3.18.0 released
 sysutils/cfengine-masterfiles316||2022-07-06|Has expired: Expire one year after cfengine 3.18.0 released
 devel/hs-hls-install||2022-07-06|Removed: was a build dependency and not needed anymore
+devel/hs-haddock||2022-07-06|Removed: Haddock is shipped as part of lang/ghc
