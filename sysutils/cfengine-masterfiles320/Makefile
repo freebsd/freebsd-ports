@@ -15,7 +15,7 @@ CPE_PRODUCT=	cfengine
 
 CONFLICTS=	cfengine-masterfiles3[0-9] cfengine-masterfiles31[0-79]
 .if !defined(MASTERDIR)
-PKGNAMESUFFIX=	319
+PKGNAMESUFFIX=	320
 CONFLICTS+=	cfengine-masterfiles-3.*
 .endif
 
