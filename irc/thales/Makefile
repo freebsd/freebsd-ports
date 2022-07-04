@@ -12,6 +12,8 @@ COMMENT=	IRC to MySQL gateway
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		endless loop during configure
+
 USES=		gmake mysql shebangfix
 SHEBANG_FILES=	examples/MRTG/thalesinfo.pl
 USE_RC_SUBR=	thales
