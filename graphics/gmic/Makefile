@@ -1,5 +1,5 @@
 PORTNAME=	gmic
-DISTVERSION=	3.1.3
+DISTVERSION=	3.1.5
 CATEGORIES=	graphics
 MASTER_SITES=	https://gmic.eu/files/source/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -24,8 +24,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		compiler:c++11-lang gmake jpeg localbase:ldflags pkgconfig
+USES=		compiler:c++11-lang gettext-runtime gmake jpeg localbase:ldflags pkgconfig xorg
 USE_LDCONFIG=	yes
+USE_XORG=	x11 xau xcb xdmcp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
