@@ -1,4 +1,4 @@
---- freeplane.sh.orig	2022-01-05 06:17:27 UTC
+--- freeplane.sh.orig	2022-07-04 06:07:42 UTC
 +++ freeplane.sh
 @@ -57,7 +57,7 @@ findjava() {
  		fi
@@ -6,8 +6,8 @@
  
 -	JAVA_VERSION=$(${JAVACMD} -version |& grep -E "[[:alnum:]]+ version" | awk '{print $3}' | tr -d '"')
 +	JAVA_VERSION=$(${JAVACMD} -version | grep -E "[[:alnum:]]+ version" | awk '{print $3}' | tr -d '"')
- 	JAVA_MAJOR_VERSION=$(echo $JAVA_VERSION | awk -F. '{print $1}')
- 	if [ $JAVA_MAJOR_VERSION -ge 16 ]; then
+ 	JAVA_MAJOR_VERSION=$(echo $JAVA_VERSION | sed -e 's/^1\.//' | awk -F. '{print $1}')
+ 	if [ $JAVA_MAJOR_VERSION -lt 8 ] || [ $JAVA_MAJOR_VERSION -gt 17 ] || [ $JAVA_MAJOR_VERSION -eq 10 ]; then
  		if [ -z "${FREEPLANE_USE_UNSUPPORTED_JAVA_VERSION}" ]; then
 @@ -142,15 +142,7 @@ fi
  

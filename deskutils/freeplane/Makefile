@@ -1,10 +1,9 @@
 # Created by: Loïc Bartoletti <lbartoletti@FreeBSD.org>
 
 PORTNAME=	freeplane
-DISTVERSION=	1.9.12
-PORTREVISION=	1
+DISTVERSION=	1.10.3
 CATEGORIES=	deskutils editors java
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/archive/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable
 DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
