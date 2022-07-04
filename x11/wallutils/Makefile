@@ -1,6 +1,5 @@
 PORTNAME=	wallutils
-DISTVERSION=	5.11.0
-PORTREVISION=	1
+DISTVERSION=	5.11.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,9 +20,9 @@ GH_TUPLE=	antchfx:xmlquery:v1.3.8:antchfx_xmlquery/vendor/github.com/antchfx/xml
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		fatih:color:v1.13.0:fatih_color/vendor/github.com/fatih/color \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:image:64ec528b34cd:golang_image/vendor/golang.org/x/image \
+		golang:image:41969df76e82:golang_image/vendor/golang.org/x/image \
 		golang:net:58aab5ef257a:golang_net/vendor/golang.org/x/net \
-		golang:sys:9f5ed59c137d:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:05e143d24a9e:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		mattn:go-colorable:v0.1.12:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
