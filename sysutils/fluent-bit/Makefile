@@ -22,7 +22,7 @@ OPTIONS_DEFINE=		SSL PGSQL
 OPTIONS_DEFAULT=	SSL
 
 LIB_DEPENDS=		libyaml.so:textproc/libyaml
-LDFLAGS=		-lexecinfo
+LDFLAGS+=		-lexecinfo
 CMAKE_ARGS=		-DFLB_DEBUG=Off -DFLB_TRACE=Off
 CFLAGS+=		-I${LOCALBASE}/include
 
