@@ -58,7 +58,7 @@ include/freetype2/ft2build.h
 lib/cmake/freetype/freetype-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/freetype/freetype-config-version.cmake
 lib/cmake/freetype/freetype-config.cmake
-lib/libfreetype.so
-lib/libfreetype.so.6
-lib/libfreetype.so.6.18.3
+lib/libfreetype%%DEBUG_SUFFIX%%.so
+lib/libfreetype%%DEBUG_SUFFIX%%.so.6
+lib/libfreetype%%DEBUG_SUFFIX%%.so.6.18.3
 libdata/pkgconfig/freetype2.pc
