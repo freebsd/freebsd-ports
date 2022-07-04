@@ -2,8 +2,7 @@
 
 PORTNAME=	frescobaldi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.3
-PORTREVISION=	5
+DISTVERSION=	3.2
 CATEGORIES=	print kde python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +13,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-ly>=0:print/py-python-ly@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-poppler-qt5>=0:graphics/py-python-poppler-qt5 #@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}python-poppler-qt5>=0:graphics/py-python-poppler-qt5@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qpageview>=0:graphics/py-qpageview@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext gmake pyqt:5 python:3.5+ qmake qt:5
 USE_GITHUB=	yes
