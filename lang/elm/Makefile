@@ -1,6 +1,6 @@
 PORTNAME=	elm
 PORTVERSION=	0.19.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/arrowd/:package_list
 DISTFILES=	elm-compiler-bootstrap-${PORTVERSION}${EXTRACT_SUFX}:package_list
@@ -11,6 +11,8 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Delightful language for reliable webapps
 
 LICENSE=	BSD3CLAUSE
+
+BUILD_DEPENDS=	ghc-8.10.7:lang/ghc810
 
 USES=		cabal
 
