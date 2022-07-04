@@ -1,6 +1,12 @@
-xed is a small and lightweight text editor, which supports most standard
-editing features, plus several not typically found in one's average text
-editor (plugins being the most notable of these).
+xed is a GTK-based text editor. Its features include:
+
+	* Complete integration with any GTK environment
+	* Global Search and Replace
+	* Dynamically loaded fonts
+	* Splitscreen Mode
+	* Printing support
+	* Configurable Plugins system
+	* Unlimited Undo/Redo
 
 Although new features are always under development, currently xed has:
 
