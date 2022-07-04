@@ -12,26 +12,23 @@ COMMENT=	IRC to MySQL gateway
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+RUN_DEPENDS=	${LOCALBASE}/bin/ircd:irc/ircd-hybrid
+
 USES=		gmake mysql shebangfix
 SHEBANG_FILES=	examples/MRTG/thalesinfo.pl
 USE_RC_SUBR=	thales
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ircd=${_IRCD} \
+CONFIGURE_ARGS=	--with-ircd=hybrid \
 		--prefix=${PREFIX}/sbin/thales \
 		--with-mysql=${LOCALBASE} \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
 
 OPTIONS_DEFINE=	MODES DOCS EXAMPLES
-OPTIONS_RADIO=	IRCD
-OPTIONS_RADIO_IRCD=	HYBRID
 OPTIONS_DEFAULT=MODES
 MODES_DESC=		Support modes in the database
-HYBRID_DESC=	Build for ircd-hybrid
 
 MODES_CONFIGURE_OFF=	--enable-no-modes
-HYBRID_RUN_DEPENDS=	${LOCALBASE}/bin/ircd:irc/ircd-hybrid
-HYBRID_VARS=		_IRCD=hybrid IS_INTERACTIVE=yes
 
 post-patch: .SILENT
 	${FIND} -d ${WRKSRC} -type d -name CVS -exec ${RM} -r {} \;
