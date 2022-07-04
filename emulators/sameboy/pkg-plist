@@ -38,8 +38,10 @@ share/mime/packages/sameboy.xml
 %%DATADIR%%/Shaders/SmoothBilinear.fsh
 %%DATADIR%%/agb_boot.bin
 %%DATADIR%%/background.bmp
+%%DATADIR%%/cgb0_boot.bin
 %%DATADIR%%/cgb_boot.bin
 %%DATADIR%%/dmg_boot.bin
+%%DATADIR%%/mgb_boot.bin
 %%DATADIR%%/registers.sym
 %%DATADIR%%/sgb2_boot.bin
 %%DATADIR%%/sgb_boot.bin
