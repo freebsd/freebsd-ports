@@ -1,6 +1,6 @@
 PORTNAME=	hedgewars
 PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.hedgewars.org/download/releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -13,6 +13,8 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Server part of free Worms-like turn based strategy game
 
 LICENSE=	GPLv2
+
+BUILD_DEPENDS=	ghc-8.10.7:lang/ghc810
 
 USES=		cabal:nodefault tar:bzip2
 
