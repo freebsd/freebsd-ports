@@ -1,0 +1,13 @@
+%%DATADIR%%/HELP.md
+%%DATADIR%%/README.md
+@comment %%DATADIR%%/localhost.pem
+@mode 555
+%%DATADIR%%/server.py
+@mode
+%%DATADIR%%/transform.py
+%%DATADIR%%/web/black.js
+%%DATADIR%%/web/clear.js
+%%DATADIR%%/web/dakboard.js
+%%DATADIR%%/web/example.html
+%%DATADIR%%/web/grafana.js
+%%DATADIR%%/web/white.js
