@@ -2,6 +2,7 @@
 share/config.kcfg/pocreatorsettings.kcfg
 share/kservices5/pothumbnail.desktop
 share/locale/ar/LC_MESSAGES/pothumbnail.mo
+share/locale/bg/LC_MESSAGES/pothumbnail.mo
 share/locale/bs/LC_MESSAGES/pothumbnail.mo
 share/locale/ca/LC_MESSAGES/pothumbnail.mo
 share/locale/ca@valencia/LC_MESSAGES/pothumbnail.mo

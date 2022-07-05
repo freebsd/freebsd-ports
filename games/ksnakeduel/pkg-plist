@@ -16,6 +16,7 @@ share/knsrcfiles/ksnakeduel.knsrc
 %%DATADIR%%/themes/neon.png
 %%DATADIR%%/themes/neon.svg
 share/locale/ar/LC_MESSAGES/ksnakeduel.mo
+share/locale/bg/LC_MESSAGES/ksnakeduel.mo
 share/locale/bs/LC_MESSAGES/ksnakeduel.mo
 share/locale/ca/LC_MESSAGES/ksnakeduel.mo
 share/locale/ca@valencia/LC_MESSAGES/ksnakeduel.mo

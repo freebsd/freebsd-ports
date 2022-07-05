@@ -13,6 +13,7 @@ share/knsrcfiles/yakuake.knsrc
 share/locale/ar/LC_MESSAGES/yakuake.mo
 share/locale/ast/LC_MESSAGES/yakuake.mo
 share/locale/be/LC_MESSAGES/yakuake.mo
+share/locale/bg/LC_MESSAGES/yakuake.mo
 share/locale/bs/LC_MESSAGES/yakuake.mo
 share/locale/ca/LC_MESSAGES/yakuake.mo
 share/locale/ca@valencia/LC_MESSAGES/yakuake.mo

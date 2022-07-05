@@ -117,6 +117,7 @@ lib/libKF5MailCommon.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_MailCommon.pri
 %%QT_PLUGINDIR%%/designer/mailcommonwidgets.so
 share/locale/ar/LC_MESSAGES/libmailcommon.mo
+share/locale/bg/LC_MESSAGES/libmailcommon.mo
 share/locale/bs/LC_MESSAGES/libmailcommon.mo
 share/locale/ca/LC_MESSAGES/libmailcommon.mo
 share/locale/ca@valencia/LC_MESSAGES/libmailcommon.mo

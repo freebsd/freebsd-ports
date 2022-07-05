@@ -47,6 +47,9 @@ share/locale/ar/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/ar/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/az/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/az/LC_MESSAGES/libakonadi-calendar5.mo
+share/locale/bg/LC_MESSAGES/kalendarac.mo
+share/locale/bg/LC_MESSAGES/libakonadi-calendar5-serializer.mo
+share/locale/bg/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/bs/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/bs/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/ca/LC_MESSAGES/kalendarac.mo
@@ -55,6 +58,8 @@ share/locale/ca/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/ca@valencia/LC_MESSAGES/kalendarac.mo
 share/locale/ca@valencia/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/ca@valencia/LC_MESSAGES/libakonadi-calendar5.mo
+share/locale/id/LC_MESSAGES/libakonadi-calendar5-serializer.mo
+share/locale/id/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/cs/LC_MESSAGES/kalendarac.mo
 share/locale/cs/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/cs/LC_MESSAGES/libakonadi-calendar5.mo

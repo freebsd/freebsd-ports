@@ -29,7 +29,9 @@ share/locale/be/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/be/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/be/LC_MESSAGES/kcmaudiocd.mo
 share/locale/be/LC_MESSAGES/kio_audiocd.mo
+share/locale/bg/LC_MESSAGES/audiocd_encoder_flac.mo
 share/locale/bg/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/bg/LC_MESSAGES/audiocd_encoder_opus.mo
 share/locale/bg/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/bg/LC_MESSAGES/kcmaudiocd.mo
 share/locale/bg/LC_MESSAGES/kio_audiocd.mo

@@ -59,6 +59,8 @@ share/kxmlgui5/ksirk/ksirkui.rc
 share/kxmlgui5/ksirkskineditor/ksirkskineditorui.rc
 share/locale/ar/LC_MESSAGES/ksirk.mo
 share/locale/be/LC_MESSAGES/ksirk.mo
+share/locale/bg/LC_MESSAGES/ksirk.mo
+share/locale/bg/LC_MESSAGES/ksirkskineditor.mo
 share/locale/bs/LC_MESSAGES/ksirk.mo
 share/locale/bs/LC_MESSAGES/ksirkskineditor.mo
 share/locale/ca/LC_MESSAGES/ksirk.mo

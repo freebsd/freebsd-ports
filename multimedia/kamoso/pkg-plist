@@ -11,6 +11,7 @@ share/icons/hicolor/scalable/actions/burst.svgz
 share/icons/hicolor/scalable/apps/kamoso.svgz
 share/knotifications5/kamoso.notifyrc
 share/locale/ar/LC_MESSAGES/kamoso.mo
+share/locale/bg/LC_MESSAGES/kamoso.mo
 share/locale/bs/LC_MESSAGES/kamoso.mo
 share/locale/ca/LC_MESSAGES/kamoso.mo
 share/locale/ca@valencia/LC_MESSAGES/kamoso.mo

@@ -1,5 +1,3 @@
-TIMESTAMP = 1656901803
-SHA256 (KDE/release-service/22.04.2/konsole-22.04.2.tar.xz) = 97d1e98cd715b03fba9a0c2b0f33d9d19a8737531d34c7120af74cf7c5337111
-SIZE (KDE/release-service/22.04.2/konsole-22.04.2.tar.xz) = 1467412
-SHA256 (KDE/release-service/22.04.2/dd52d722643e5e40914622fb9588c2317c101e1e.diff) = ab99c87eaaa562e80b53abfdc60dce1e63921104256b20c2d88da9208657af74
-SIZE (KDE/release-service/22.04.2/dd52d722643e5e40914622fb9588c2317c101e1e.diff) = 550
+TIMESTAMP = 1657094882
+SHA256 (KDE/release-service/22.04.3/konsole-22.04.3.tar.xz) = 148f65891318e6a6f31793c9535e2bf32068b1cae8c5026e54f360bea484d9a7
+SIZE (KDE/release-service/22.04.3/konsole-22.04.3.tar.xz) = 1476120

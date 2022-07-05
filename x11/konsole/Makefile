@@ -3,9 +3,6 @@ DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 PORTREVISION=	2
 CATEGORIES=	x11 kde kde-applications
 
-PATCH_SITES=	https://invent.kde.org/utilities/konsole/-/commit/
-PATCHFILES=	dd52d722643e5e40914622fb9588c2317c101e1e.diff:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE terminal emulator
 

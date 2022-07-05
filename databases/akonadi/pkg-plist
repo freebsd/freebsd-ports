@@ -373,6 +373,8 @@ share/locale/ar/LC_MESSAGES/libakonadi5.mo
 share/locale/az/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/az/LC_MESSAGES/libakonadi5.mo
 share/locale/be/LC_MESSAGES/libakonadi5.mo
+share/locale/bg/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/bg/LC_MESSAGES/libakonadi5.mo
 share/locale/bs/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/bs/LC_MESSAGES/libakonadi5.mo
 share/locale/ca/LC_MESSAGES/akonadi_knut_resource.mo
@@ -409,6 +411,8 @@ share/locale/hu/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/hu/LC_MESSAGES/libakonadi5.mo
 share/locale/ia/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ia/LC_MESSAGES/libakonadi5.mo
+share/locale/id/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/id/LC_MESSAGES/libakonadi5.mo
 share/locale/it/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/it/LC_MESSAGES/libakonadi5.mo
 share/locale/ja/LC_MESSAGES/akonadi_knut_resource.mo
