@@ -22,6 +22,9 @@ BUILD_DEPENDS=	git:devel/git@lite \
 		zip:archivers/zip
 LIB_DEPENDS=	libsecret-1.so:security/libsecret \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+
+PORTSCOUT=	ignore:1
+
 USES=		compiler:c++11-lang gmake pkgconfig gnome
 USE_GNOME=	gtk30
 
@@ -69,9 +72,6 @@ MAVEN_ECLIPSE=	-Dmaven.repo.local=${WRKDIR}/eclipse-maven-repo-${PORTVERSION} \
 		-DforceContextQualifier=v${ECLIPSE_TSTAMP}
 
 ECLIPSE_RESULT=	eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/target/products/org.eclipse.sdk.ide-freebsd.gtk.${ARCH}.tar.gz
-
-# Let's abuse this to get to the right place.
-WRKSRC_SUBDIR=	../eclipse.platform.releng.aggregator-${ECLIPSE_TAG}
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAVEN_ENV} mvn --offline ${MAVEN_ECLIPSE} -DskipTests clean verify
