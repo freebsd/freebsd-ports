@@ -110,6 +110,11 @@ libdata/pkgconfig/libnutclientstub.pc
 %%SERIAL%%libexec/nut/tripplitesu
 %%SERIAL%%libexec/nut/upscode2
 %%USB%%libexec/nut/usbhid-ups
+%%MODBUS%%libexec/nut/adelsystem_cbi
+%%MODBUS%%libexec/nut/generic_modbus
+%%MODBUS%%libexec/nut/huawei-ups2000
+%%MODBUS%%libexec/nut/phoenixcontact_modbus
+%%MODBUS%%libexec/nut/socomec_jbus
 %%SERIAL%%libexec/nut/victronups
 %%MANPAGES%%man/man3/libnutclient.3.gz
 %%MANPAGES%%man/man3/libnutclient_commands.3.gz
@@ -201,6 +206,11 @@ libdata/pkgconfig/libnutclientstub.pc
 %%MANPAGES%%man/man8/nutupsdrv.8.gz
 %%MANPAGES%%%%SERIAL%%man/man8/riello_ser.8.gz
 %%MANPAGES%%%%USB%%man/man8/riello_usb.8.gz
+%%MANPAGES%%%%MODBUS%%man/man8/adelsystem_cbi.8.gz
+%%MANPAGES%%%%MODBUS%%man/man8/generic_modbus.8.gz
+%%MANPAGES%%%%MODBUS%%man/man8/huawei-ups2000.8.gz
+%%MANPAGES%%%%MODBUS%%man/man8/phoenixcontact_modbus.8.gz
+%%MANPAGES%%%%MODBUS%%man/man8/socomec_jbus.8.gz
 %%MANPAGES%%man/man8/upsc.8.gz
 %%MANPAGES%%man/man8/upscmd.8.gz
 %%MANPAGES%%man/man8/upsd.8.gz
