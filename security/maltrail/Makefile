@@ -1,5 +1,5 @@
 PORTNAME=	maltrail
-DISTVERSION=	0.45
+DISTVERSION=	0.47
 CATEGORIES=	security python
 
 MAINTAINER=	m.muenz@gmail.com
