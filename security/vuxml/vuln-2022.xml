@@ -1,3 +1,37 @@
+  <vuln vid="a28e8b7e-fc70-11ec-856e-d4c9ef517024">
+    <topic>OpenSSL -- AES OCB fails to encrypt some bytes</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1q,1</lt></range>
+      </package>
+      <package>
+	<name>openssl-devel</name>
+	<range><lt>3.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20220705.txt">
+	  <p>AES OCB mode for 32-bit x86 platforms using the AES-NI assembly optimised
+	    implementation will not encrypt the entirety of the data under some
+	    circumstances.  This could reveal sixteen bytes of data that was
+	    preexisting in the memory that wasn't written.  In the special case of
+	    "in place" encryption, sixteen bytes of the plaintext would be revealed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2097</cvename>
+      <url>https://www.openssl.org/news/secadv/20220705.txt</url>
+    </references>
+    <dates>
+      <discovery>2022-07-05</discovery>
+      <entry>2022-07-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5be19b0d-fb85-11ec-95cd-080027b24e86">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
@@ -35,34 +69,38 @@
   </vuln>
 
   <vuln vid="f0e45968-faff-11ec-856e-d4c9ef517024">
-    <topic>OpenSSL -- Bug in RSA implementation for AVX512IFMA</topic>
+    <topic>OpenSSL -- Heap memory corruption with RSA private key operation</topic>
     <affects>
       <package>
-	<name>openssl</name>
-	<range><lt>1.1.1q,1</lt></range>
-      </package>
-      <package>
 	<name>openssl-devel</name>
-	<range><lt>3.0.5</lt></range>
+	<range><ge>3.0.4</ge><lt>3.0.5</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The OpenSSL project reports:</p>
 	<blockquote cite="https://mta.openssl.org/pipermail/openssl-announce/2022-July/000229.html">
-	  <p>One of the issues fixed in the 3.0.5 release is the
-	    CVE-2022-2274 (Bug in RSA implementation for AVX512IFMA
-	    capable CPUs) which is already public</p>
+	  <p>The OpenSSL 3.0.4 release introduced a serious bug in the RSA
+	    implementation for X86_64 CPUs supporting the AVX512IFMA instructions.
+	    This issue makes the RSA implementation with 2048 bit private keys
+	    incorrect on such machines and memory corruption will happen during
+	    the computation. As a consequence of the memory corruption an attacker
+	    may be able to trigger a remote code execution on the machine performing
+	    the computation.</p>
+	  <p>SSL/TLS servers or other servers using 2048 bit RSA private keys running
+	    on machines supporting AVX512IFMA instructions of the X86_64 architecture
+	    are affected by this issue.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <cvename>CVE-2022-2274</cvename>
-      <url>https://mta.openssl.org/pipermail/openssl-announce/2022-July/000229.html</url>
+      <url>https://www.openssl.org/news/secadv/20220705.txt</url>
     </references>
     <dates>
       <discovery>2022-07-01</discovery>
       <entry>2022-07-03</entry>
+      <modified>2022-07-05</modified>
     </dates>
   </vuln>
 
