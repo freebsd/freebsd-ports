@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.29.1
-PORTREVISION=	1
+DISTVERSION=	0.30.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -84,6 +83,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		tree_magic_mini-3.0.3 \
 		typed-arena-2.0.1 \
 		unicode-ident-1.0.0 \
+		unicode-width-0.1.9 \
 		unicode-xid-0.2.3 \
 		walkdir-2.3.2 \
 		winapi-0.3.9 \
