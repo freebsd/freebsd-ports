@@ -1,6 +1,6 @@
 PORTNAME=	msl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.3
+DISTVERSION=	1.5.4
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ GH_PROJECT=	ModularShaderLanguage
 
 GH_TUPLE=	akb825:glslang:04a12be6bb031aff18b456bfe108f4bffdbf413d:akb825_glslang/Compile/glslang \
 		KhronosGroup:SPIRV-Cross:99b59b35288c95fa7352158930cc068705d3c2e3:KhronosGroup_SPIRV_Cross/Compile/SPIRV-Cross \
-		akb825:SPIRV-Tools:c80f8b752f50de446cc2408ffbb8572f6008e52b:akb825_SPIRV_Tools/Compile/SPIRV-Tools \
+		akb825:SPIRV-Tools:056da37af83cbb0b0aeaf459ef2e43fc599bb79a:akb825_SPIRV_Tools/Compile/SPIRV-Tools \
 		KhronosGroup:SPIRV-Headers:4995a2f2723c401eb0ea3e10c81298906bf1422b:KhronosGroup_SPIRV_Headers/Compile/SPIRV-Tools/external/SPIRV-Headers \
 
 .include <bsd.port.mk>
