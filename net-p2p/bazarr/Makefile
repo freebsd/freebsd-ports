@@ -1,6 +1,6 @@
 PORTNAME=	bazarr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.4
+DISTVERSION=	1.1.0
 CATEGORIES=	net-p2p python
 MASTER_SITES=	https://github.com/morpheus65535/bazarr/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	bazarr
@@ -23,9 +23,9 @@ USES=		python:3.7+ zip
 USE_RC_SUBR=	bazarr
 
 SUB_FILES=	${PORTNAME} package_info
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
-		MAINTAINER=${MAINTAINER} \
+SUB_LIST=	MAINTAINER=${MAINTAINER} \
 		PKGVERSION=${PKGVERSION} \
+		PYTHON_CMD=${PYTHON_CMD} \
 		USERS=${USERS}
 
 NO_WRKSUBDIR=	yes
@@ -43,7 +43,5 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/package_info ${STAGEDIR}/${DATADIR}/
-	@${FIND} -s ${STAGEDIR} -not -type d | ${SORT} | \
-		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
