@@ -1,5 +1,5 @@
 PORTNAME=	matrix-common
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,10 +20,17 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
+.include <bsd.port.pre.mk>
+
+# Dependency required by Python < 3.8
+.if (${PYTHON_REL} < 30800)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.4:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
 do-test:
 	cd ${WRKSRC} && PYTHONPATH="." trial-${PYTHON_VER} tests
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
