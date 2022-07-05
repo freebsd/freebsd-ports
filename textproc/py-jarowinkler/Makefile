@@ -1,5 +1,5 @@
 PORTNAME=	jarowinkler
-PORTVERSION=	1.0.5
+PORTVERSION=	1.1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ USE_PYTHON=	distutils cython autoplist pytest # tests fail to run, see https://g
 
 TEST_ENV=      ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jarowinkler/_initialize.*.so
+xpost-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jarowinkler/_initialize_cpp.cpython-${PYTHON_SUFFIX}.so
 
 .include <bsd.port.mk>
