@@ -1,7 +1,7 @@
 # Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
 
 PORTNAME=	matrix-synapse
-DISTVERSION=	1.61.1
+DISTVERSION=	1.62.0
 CATEGORIES=	net-im python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,7 +43,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.0:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ijson>=3.1.4:devel/py-ijson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=16.1:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matrix-common>=1.1.0:devel/py-matrix-common@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matrix-common>=1.2.1:devel/py-matrix-common@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=15.0:devel/py-virtualenv@${PY_FLAVOR} \
@@ -80,7 +80,7 @@ OIDC_DESC=		Add dependencies for OpenID Connect based logins
 REDIS_DESC=		Add support replication over Redis for synapse workers
 URLPREVIEW_DESC=	Add dependencies necessary for URL previews
 
-JWT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyjwt>=1.6.4:www/py-pyjwt@${PY_FLAVOR}
+JWT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authlib>=0.14.0:security/py-authlib@${PY_FLAVOR}
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matrix-synapse-ldap3>=0.1:net/py-matrix-synapse-ldap3@${PY_FLAVOR}
 OIDC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authlib>=0.14.0:security/py-authlib@${PY_FLAVOR}
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>2.8:databases/py-psycopg2@${PY_FLAVOR}
