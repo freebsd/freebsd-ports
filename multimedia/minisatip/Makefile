@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@FreeBSD.org>
-
 PORTNAME=	minisatip
 PORTVERSION=	1.2.4
 DISTVERSIONPREFIX=	v

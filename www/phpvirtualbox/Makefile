@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@bluelife.at>
-
 PORTNAME=	phpvirtualbox
 DISTVERSION=	6.1
 CATEGORIES=	www

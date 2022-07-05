@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@FreeBSD.org>
-
 PORTNAME=	libdvbcsa
 PORTVERSION=	1.1.0
 PORTREVISION=	1

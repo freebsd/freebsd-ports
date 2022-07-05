@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@bluelife.at>
-
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.44
 PORTREVISION=	6

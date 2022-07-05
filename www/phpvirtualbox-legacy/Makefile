@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@bluelife.at>
-
 PORTNAME=	phpvirtualbox
 DISTVERSION=	5.2-1
 PORTREVISION=	1

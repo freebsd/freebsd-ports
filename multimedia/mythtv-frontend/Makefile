@@ -1,5 +1,3 @@
-# Created by: Bernhard Froehlich <decke@bluelife.at>
-
 PORTREVISION=	3
 PKGNAMESUFFIX=	-${SLAVEPORT}
 
