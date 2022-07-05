@@ -1090,6 +1090,7 @@
     SUBDIR += teyjus
     SUBDIR += timbl
     SUBDIR += tiny-bignum-c
+    SUBDIR += tlapack
     SUBDIR += tmv
     SUBDIR += tomsfastmath
     SUBDIR += topaz
