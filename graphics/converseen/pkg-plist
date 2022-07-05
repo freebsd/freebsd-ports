@@ -1,7 +1,7 @@
 bin/converseen
-share/applications/converseen.desktop
-share/metainfo/converseen.appdata.xml
+share/applications/net.fasterland.converseen.desktop
 share/kservices5/ServiceMenus/converseen_import.desktop
+share/metainfo/converseen.appdata.xml
 share/pixmaps/converseen.png
 %%DATADIR%%/loc/converseen_cs_CZ.qm
 %%DATADIR%%/loc/converseen_da_DK.qm
