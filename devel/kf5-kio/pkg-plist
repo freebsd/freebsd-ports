@@ -54,6 +54,7 @@ include/KF5/KIOCore/KIO/StoredTransferJob
 include/KF5/KIOCore/KIO/TCPSlaveBase
 include/KF5/KIOCore/KIO/TransferJob
 include/KF5/KIOCore/KIO/UDSEntry
+include/KF5/KIOCore/KIO/WorkerBase
 include/KF5/KIOCore/KMountPoint
 include/KF5/KIOCore/KNFSShare
 include/KF5/KIOCore/KPasswdServerClient
@@ -94,6 +95,7 @@ include/KF5/KIOCore/kio/hostinfo.h
 include/KF5/KIOCore/kio/http_slave_defaults.h
 include/KF5/KIOCore/kio/idleslave.h
 include/KF5/KIOCore/kio/ioslave_defaults.h
+include/KF5/KIOCore/kio/ioworker_defaults.h
 include/KF5/KIOCore/kio/job.h
 include/KF5/KIOCore/kio/job_base.h
 include/KF5/KIOCore/kio/jobclasses.h
@@ -121,6 +123,7 @@ include/KF5/KIOCore/kio/storedtransferjob.h
 include/KF5/KIOCore/kio/tcpslavebase.h
 include/KF5/KIOCore/kio/transferjob.h
 include/KF5/KIOCore/kio/udsentry.h
+include/KF5/KIOCore/kio/workerbase.h
 include/KF5/KIOCore/kiocore_export.h
 include/KF5/KIOCore/kmountpoint.h
 include/KF5/KIOCore/knfsshare.h

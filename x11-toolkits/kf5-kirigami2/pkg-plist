@@ -154,6 +154,7 @@ share/kdevappwizard/templates/kirigami.tar.bz2
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ast/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/az/LC_MESSAGES/libkirigami2plugin_qt.qm
+share/locale/bg/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/cs/LC_MESSAGES/libkirigami2plugin_qt.qm

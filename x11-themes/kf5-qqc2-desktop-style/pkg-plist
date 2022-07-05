@@ -37,6 +37,7 @@ lib/cmake/KF5QQC2DesktopStyle/KF5QQC2DesktopStyleConfigVersion.cmake
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/ScrollView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/Slider.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/SpinBox.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/StackView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/Switch.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/SwitchDelegate.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/SwitchIndicator.qml
