@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2022-07-05 03:16:16 UTC
++++ CMakeLists.txt
+@@ -97,7 +97,9 @@ add_dependencies(musikcubed musikcore)
+ add_plugin("src/plugins/taglib_plugin" "taglibreader")
+ # outputs
+ add_plugin("src/plugins/nullout" "nullout")
+-add_plugin("src/plugins/alsaout" "alsaout")
++if(NOT CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  add_plugin("src/plugins/alsaout" "alsaout")
++endif()
+ add_plugin("src/plugins/pulseout" "pulseout")
+ add_plugin("src/plugins/pipewireout" "pipewireout")
+ add_plugin("src/plugins/sndioout" "sndioout")
