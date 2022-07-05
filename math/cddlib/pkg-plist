@@ -38,11 +38,11 @@ include/cddlib/splitmix64.h
 lib/libcdd.a
 lib/libcdd.so
 lib/libcdd.so.0
-lib/libcdd.so.0.1.1
+lib/libcdd.so.0.1.2
 lib/libcddgmp.a
 lib/libcddgmp.so
 lib/libcddgmp.so.0
-lib/libcddgmp.so.0.0.0
+lib/libcddgmp.so.0.1.2
 libdata/pkgconfig/cddlib.pc
 %%PORTDOCS%%%%DOCSDIR%%/cddlibman.dvi
 %%PORTDOCS%%%%DOCSDIR%%/cddlibman.pdf
@@ -102,6 +102,8 @@ libdata/pkgconfig/cddlib.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples-ine3d/icododeca.ine
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples-ine3d/rcubocta.ine
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples-ine3d/rhomtria.ine
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/bug45.ine
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/bug45res.ine
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/project1.ine
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/project1res.ine
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples/project2.ine
