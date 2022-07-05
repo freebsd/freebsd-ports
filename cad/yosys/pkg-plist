@@ -51,7 +51,10 @@ bin/yosys-smtbmc
 %%DATADIR%%/gatemate/brams_map.v
 %%DATADIR%%/gatemate/cells_bb.v
 %%DATADIR%%/gatemate/cells_sim.v
+%%DATADIR%%/gatemate/inv_map.v
 %%DATADIR%%/gatemate/lut_map.v
+%%DATADIR%%/gatemate/lut_tree_cells.genlib
+%%DATADIR%%/gatemate/lut_tree_map.v
 %%DATADIR%%/gatemate/mul_map.v
 %%DATADIR%%/gatemate/mux_map.v
 %%DATADIR%%/gatemate/reg_map.v
