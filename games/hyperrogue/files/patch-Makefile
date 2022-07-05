@@ -1,4 +1,4 @@
---- Makefile.orig	2022-03-27 20:47:51 UTC
+--- Makefile.orig	2022-07-05 12:02:51 UTC
 +++ Makefile
 @@ -42,7 +42,6 @@ endif
  ## Begin customization points for each OS and TOOLCHAIN we support.
@@ -16,41 +16,7 @@
  
  ifeq (${OS},mingw)
    CXXFLAGS_EARLY += -DWINDOWS -mwindows -D_A_VOLID=8
-@@ -79,31 +77,13 @@ ifeq (${OS},osx)
-   hyper_RES :=
- endif
- 
--ifeq (${TOOLCHAIN},clang)
-   CXXFLAGS_STD = -std=c++11
--  CXXFLAGS_EARLY += -march=native -fPIC
--  CXXFLAGS_EARLY += -W -Wall -Wextra -Wsuggest-override -Werror -pedantic
-+  CXXFLAGS_EARLY += -fPIC
-+  CXXFLAGS_EARLY += -W -Wall -Wextra -Wsuggest-override -pedantic
-   CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized -Wno-unknown-warning-option
-   CXXFLAGS_EARLY += -Wno-invalid-offsetof
--endif
- 
--ifeq (${TOOLCHAIN},gcc)
--  CXXFLAGS_STD = -std=c++11
--  CXXFLAGS_EARLY += -march=native -fPIC
--  CXXFLAGS_EARLY += -W -Wall -Wextra -Werror -pedantic
--  CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized
--  CXXFLAGS_EARLY += -Wno-invalid-offsetof
--endif
- 
--ifeq (${TOOLCHAIN},mingw)
--  CXXFLAGS_STD = -std=c++11
--  CXXFLAGS_EARLY += -march=native
--  CXXFLAGS_EARLY += -W -Wall -Wextra -Werror
--  CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized
--  CXXFLAGS_EARLY += -Wno-invalid-offsetof
--endif
--
--
- ## We have now finished OS-specific and TOOLCHAIN-specific computations.
- ## Begin customization points for user-specifiable HYPERROGUE_USE_XXX macros.
- 
-@@ -141,19 +121,19 @@ override CXXFLAGS := $(CXXFLAGS_STD) $(CXXFLAGS_EARLY)
+@@ -140,19 +138,19 @@ override CXXFLAGS := $(CXXFLAGS_STD) $(CXXFLAGS_EARLY)
  override LDFLAGS := $(LDFLAGS_EARLY) $(LDFLAGS) ${EXTRA_LDFLAGS}
  
  hyperrogue$(EXE_EXTENSION): $(hyper_OBJS) $(hyper_RES)
@@ -74,7 +40,7 @@
  
  autohdr.h: makeh$(EXE_EXTENSION) language-data.cpp *.cpp
  	./makeh classes.cpp locations.cpp colors.cpp hyperpoint.cpp geometry.cpp goldberg.cpp init.cpp floorshapes.cpp cell.cpp multi.cpp shmup.cpp pattern2.cpp mapeditor.cpp graph.cpp textures.cpp hprint.cpp language.cpp util.cpp complex.cpp multigame.cpp *.cpp > autohdr.h
-@@ -162,10 +142,10 @@ language-data.cpp: langen$(EXE_EXTENSION)
+@@ -161,10 +159,10 @@ language-data.cpp: langen$(EXE_EXTENSION)
  	./langen > language-data.cpp
  
  savepng$(OBJ_EXTENSION): savepng.cpp
