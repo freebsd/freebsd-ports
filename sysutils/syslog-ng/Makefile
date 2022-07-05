@@ -149,10 +149,7 @@ PYTHON_USES=			python:3.5+
 PYTHON_CONFIGURE_ON=		--enable-python 
 PYTHON_CONFIGURE_OFF=		--disable-python
 PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
-		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/PKG-INFO \
-		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt \
-		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt \
-		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/top_level.txt \
+		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info \
 		lib/syslog-ng/python/syslogng/__init__.py \
 		lib/syslog-ng/python/syslogng/__pycache__/__init__.cpython-${PYTHON_SUFFIX}.pyc \
 		lib/syslog-ng/python/syslogng/debuggercli/__init__.py \
