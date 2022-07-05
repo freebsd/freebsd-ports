@@ -1,7 +1,7 @@
 # Created by: David Taylor <davidt@yadt.co.uk>
 
 PORTNAME=	ircd-hybrid
-PORTVERSION=	8.2.39
+PORTVERSION=	8.2.40
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
