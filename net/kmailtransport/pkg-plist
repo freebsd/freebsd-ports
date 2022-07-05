@@ -61,6 +61,7 @@ share/config.kcfg/mailtransport.kcfg
 share/kservices5/kcm_mailtransport.desktop
 share/locale/ar/LC_MESSAGES/libmailtransport5.mo
 share/locale/be/LC_MESSAGES/libmailtransport5.mo
+share/locale/bg/LC_MESSAGES/libmailtransport5.mo
 share/locale/bs/LC_MESSAGES/libmailtransport5.mo
 share/locale/ca/LC_MESSAGES/libmailtransport5.mo
 share/locale/ca@valencia/LC_MESSAGES/libmailtransport5.mo

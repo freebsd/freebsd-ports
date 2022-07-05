@@ -27,6 +27,7 @@ lib/libKF5CalendarUtils.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KCalUtils.pri
 share/locale/ar/LC_MESSAGES/libkcalutils5.mo
 share/locale/az/LC_MESSAGES/libkcalutils5.mo
+share/locale/bg/LC_MESSAGES/libkcalutils5.mo
 share/locale/bs/LC_MESSAGES/libkcalutils5.mo
 share/locale/ca/LC_MESSAGES/libkcalutils5.mo
 share/locale/ca@valencia/LC_MESSAGES/libkcalutils5.mo

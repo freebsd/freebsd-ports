@@ -4,6 +4,7 @@ lib/libsieveeditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/applications/org.kde.sieveeditor.desktop
 share/config.kcfg/sieveeditorglobalconfig.kcfg
 share/locale/ar/LC_MESSAGES/sieveeditor.mo
+share/locale/bg/LC_MESSAGES/sieveeditor.mo
 share/locale/bs/LC_MESSAGES/sieveeditor.mo
 share/locale/ca/LC_MESSAGES/sieveeditor.mo
 share/locale/ca@valencia/LC_MESSAGES/sieveeditor.mo

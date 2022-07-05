@@ -131,6 +131,7 @@ share/kxmlgui5/cantor/cantor_scripteditor.rc
 share/kxmlgui5/cantor/cantor_shell.rc
 share/kxmlgui5/cantor/cantor_solve_assistant.rc
 share/locale/ar/LC_MESSAGES/cantor.mo
+share/locale/bg/LC_MESSAGES/cantor.mo
 share/locale/bs/LC_MESSAGES/cantor.mo
 share/locale/ca/LC_MESSAGES/cantor.mo
 share/locale/ca@valencia/LC_MESSAGES/cantor.mo

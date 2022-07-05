@@ -45,7 +45,9 @@ share/locale/ar/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/ar/LC_MESSAGES/knotes.mo
 share/locale/ar/LC_MESSAGES/libnoteshared.mo
 share/locale/be/LC_MESSAGES/knotes.mo
+share/locale/bg/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/bg/LC_MESSAGES/knotes.mo
+share/locale/bg/LC_MESSAGES/libnoteshared.mo
 share/locale/bs/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/bs/LC_MESSAGES/knotes.mo
 share/locale/bs/LC_MESSAGES/libnoteshared.mo
