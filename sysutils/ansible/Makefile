@@ -1,5 +1,6 @@
 PORTNAME=	ansible
 DISTVERSION=	5.10.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +23,7 @@ SHEBANG_FILES=	ansible_collections/community/zabbix/roles/zabbix_proxy/files/ins
 		ansible_collections/cyberark/conjur/ci/publish_to_galaxy \
 		ansible_collections/ovirt/ovirt/roles/disaster_recovery/files/ovirt-dr
 SHEBANG_GLOB=	*.py *.sh build.py.generic
+python_OLD_CMD=	/Users/kbreit/Documents/Programming/ansible_collections/cisco/meraki/venv/bin/python
 
 CONFLICTS_INSTALL=	${_ANSIBLE_PACKAGES:N${PKGBASE}}
 
