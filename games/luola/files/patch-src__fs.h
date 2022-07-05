@@ -4,7 +4,7 @@
  #define FILESYSTEM_H
  
  #include <stdio.h>
-+#include <sys/syslimits.h>
++#include <limits.h>
  #include "SDL.h"
  
  #include "ldat.h"

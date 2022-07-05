@@ -14,13 +14,9 @@ COMMENT=	2D multiplayer cave-flying game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: Pilot
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: Pilot
-
-GNU_CONFIGURE=	yes
 USES=		gmake sdl
+GNU_CONFIGURE=	yes
 USE_SDL=	sdl image ttf
-CONFIGURE_ARGS=	--program-prefix=''
 LIBS+=		-lm
 
 PLIST_FILES=	bin/${PORTNAME} \
@@ -38,7 +34,7 @@ DESKTOP_ENTRIES="Luola" \
 OPTIONS_DEFINE=	SDL_GFX SOUND DOCS
 OPTIONS_DEFAULT=SDL_GFX SOUND
 
-SDL_GFX_DESC=	Nicer graphics
+SDL_GFX_DESC=		Nicer graphics with SDL_gfx
 SDL_GFX_USE=		SDL=gfx
 SDL_GFX_CONFIGURE_ENABLE=sdl-gfx
 SOUND_USE=		SDL=mixer
