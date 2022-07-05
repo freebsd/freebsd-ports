@@ -542,12 +542,20 @@ post-install-CLANG-on:
 	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
 	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
 
+post-install-EXTRAS-on:
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang-tidy/misc/ConfusableTable
+
 post-install-FLANG-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CodeGen/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Dialect/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Transforms/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/CMakeFiles
+.if ${SNAPDATE} == 20220701
+	# expected to be temporary
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/flang-new \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/flang
+.endif
 
 post-install-STATIC_LIBS-off:
 	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/lib*.a
