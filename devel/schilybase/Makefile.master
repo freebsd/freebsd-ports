@@ -1,6 +1,7 @@
 DISTVERSION=	2021-09-18
-PORTREVISION=	1
-MASTER_SITES=	SF/schilytools
+PORTREVISION=	2
+MASTER_SITES=	SF/schilytools \
+		http://fuz.su/~fuz/distfiles/schilytools/
 DISTNAME=	schily-${DISTVERSION}
 
 MAINTAINER=	fuz@fuz.su
@@ -26,8 +27,7 @@ LICENSE_PERMS_BSD1CLAUSE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 # schilybase has all the libraries
 .if ${PORTNAME} != "schilybase"
-BUILD_DEPENDS+=	schilybase=${PORTVERSION}_${PORTREVISION}:devel/schilybase
-RUN_DEPENDS+=	schilybase=${PORTVERSION}_${PORTREVISION}:devel/schilybase
+LIB_DEPENDS+=	libschily.so:devel/schilybase
 .endif
 
 .if "${BOOTSTRAP_SMAKE}" != "yes"

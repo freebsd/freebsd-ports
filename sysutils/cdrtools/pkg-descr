@@ -18,4 +18,4 @@ This package contains the following programs:
   May be used to write to DVD-RAM and to copy Solaris boot CD's.
 - scgcheck (checks and validates the ABI of libscg)
 
-WWW: http://cdrecord.org/
+WWW: https://codeberg.org/schilytools/schilytools
