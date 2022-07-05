@@ -1,7 +1,7 @@
 # Created by: Ben Woods <woodsb02@FreeBSD.org>
 
 PORTNAME=	keepass
-PORTVERSION=	2.50
+PORTVERSION=	2.51.1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/KeePass%202.x/${PORTVERSION}
 DISTNAME=	KeePass-${PORTVERSION}-Source
@@ -18,15 +18,17 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 USES=		cpe dos2unix gnome mono zip
 
 DOS2UNIX_GLOB=		*.csproj *.sln
-EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
-NO_ARCH=		yes
-SUB_FILES=		${PORTNAME}.sh
+MAKE_ENV=	MONO_REGISTRY_PATH=${WRKDIR}
+
 DESKTOP_ENTRIES=	"KeePass" \
 			"${COMMENT}" \
 			"${PORTNAME}" \
 			"keepass.sh" \
 			"Utility;" \
 			true
+EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
+NO_ARCH=		yes
+SUB_FILES=		${PORTNAME}.sh
 
 OPTIONS_DEFINE=		DEBUG XDOTOOL XSEL
 OPTIONS_DEFAULT=	XDOTOOL XSEL
@@ -39,7 +41,6 @@ DEBUG_VARS_OFF=		config=Release
 XDOTOOL_RUN_DEPENDS=	xdotool:x11/xdotool
 XSEL_RUN_DEPENDS=	xsel:x11/xsel-conrad
 
-MAKE_ENV=	MONO_REGISTRY_PATH=${WRKDIR}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|sed\ -i|sed\ -i\ \"\"|g' ${WRKSRC}/Build/PrepMonoDev.sh
