@@ -23,6 +23,9 @@
 %%WWWDIR%%/assets/Fork-Awesome/fonts/forkawesome-webfont.woff
 %%WWWDIR%%/assets/Fork-Awesome/fonts/forkawesome-webfont.woff2
 %%WWWDIR%%/assets/Fork-Awesome/LICENSES
+%%WWWDIR%%/assets/NotoSans-Bold.ttf
+%%WWWDIR%%/assets/NotoSans-Regular.ttf
+%%WWWDIR%%/assets/OFL.txt
 %%WWWDIR%%/assets/logo.png
 %%WWWDIR%%/assets/tusky.svg
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon1.svg
