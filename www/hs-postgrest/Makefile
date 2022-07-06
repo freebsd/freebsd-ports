@@ -1,6 +1,5 @@
 PORTNAME=	postgrest
-DISTVERSION=	8.0.0
-PORTREVISION=	1
+DISTVERSION=	9.0.0
 CATEGORIES=	www databases haskell
 
 MAINTAINER=	dmitry.wagin@ya.ru
@@ -11,7 +10,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-BUILD_DEPENDS=	pg_config:databases/postgresql${PGSQL_DEFAULT}-client
+BUILD_DEPENDS=	pg_config:databases/postgresql${PGSQL_DEFAULT}-client \
+		ghc-8.10.7:lang/ghc810
 
 USES=		cabal pgsql
 
