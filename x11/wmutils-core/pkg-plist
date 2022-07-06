@@ -5,6 +5,7 @@ bin/ignw
 bin/killw
 bin/lsw
 bin/mapw
+bin/pdw
 bin/pfw
 bin/slw
 bin/wattr
