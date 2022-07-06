@@ -8,7 +8,7 @@ MASTER_SITES=	SF/mnemosyne-proj/${PORTNAME}/${PORTNAME}-${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Mnemosyne-${DISTVERSION}
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash-card tool which optimises your learning process
 
 LICENSE=	LGPL3
