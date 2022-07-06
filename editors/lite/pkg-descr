@@ -1,0 +1,6 @@
+lite is a lightweight text editor written mostly in Lua.  It aims to
+provide something practical, pretty, small, and fast, implemented as
+simply as possible; easy to modify and extend via plugins, or to use
+without doing either.
+
+WWW: https://github.com/rxi/lite

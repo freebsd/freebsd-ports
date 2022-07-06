@@ -193,6 +193,7 @@
     SUBDIR += linux-sublime-text4
     SUBDIR += linux-sublime3
     SUBDIR += linux-wps-office
+    SUBDIR += lite
     SUBDIR += madedit
     SUBDIR += marker
     SUBDIR += mg
