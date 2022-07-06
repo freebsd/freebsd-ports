@@ -1,10 +1,7 @@
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18.0
+DISTVERSION=	1.19.0
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	c0f57e735528.patch:-p1 # https://gitlab.gnome.org/World/Phosh/squeekboard/-/merge_requests/551
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	On-screen keyboard input method for Wayland
@@ -28,7 +25,7 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_COMMIT=	cb338129ca19c8c054ee1b1d75bcca49e3234de9
+GL_COMMIT=	0c99067b4bcfd12055965507b9fc797305c955f2
 SHEBANG_FILES=	tools/entry.py
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
@@ -47,6 +44,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/locale/es/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/fa/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/fi/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/fr/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/fur/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/gl/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/he/LC_MESSAGES/${PORTNAME}.mo \
@@ -60,11 +58,13 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/locale/pt/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/pt_BR/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/ro/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/ru/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/sl/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/sr/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/sv/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/tr/LC_MESSAGES/${PORTNAME}.mo \
 		share/locale/uk/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/zh_CN/LC_MESSAGES/${PORTNAME}.mo \
 		${NULL}
 
 post-patch:
