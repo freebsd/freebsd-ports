@@ -291,7 +291,6 @@ lib/maliit/keyboard2/qml/keys/CharKey.qml
 lib/maliit/keyboard2/qml/keys/DropShadow.qml
 lib/maliit/keyboard2/qml/keys/ExtendedKeysSelector.qml
 lib/maliit/keyboard2/qml/keys/FloatingActionKey.qml
-lib/maliit/keyboard2/qml/keys/KeyIcon.qml
 lib/maliit/keyboard2/qml/keys/KeyPad.qml
 lib/maliit/keyboard2/qml/keys/KeyPopover.qml
 lib/maliit/keyboard2/qml/keys/LanguageKey.qml
@@ -401,15 +400,4 @@ share/locale/zh_HK/LC_MESSAGES/maliit-keyboard.mo
 share/locale/zh_TW/LC_MESSAGES/maliit-keyboard.mo
 share/maliit/keyboard2/devices/default.json
 share/maliit/keyboard2/devices/tablet.json
-share/maliit/keyboard2/themes/Ambiance.json
-share/maliit/keyboard2/themes/BorderedBlack.json
-share/maliit/keyboard2/themes/BorderedGrey.json
-share/maliit/keyboard2/themes/BorderedWhite.json
-share/maliit/keyboard2/themes/Breeze.json
-share/maliit/keyboard2/themes/BreezeDark.json
-share/maliit/keyboard2/themes/JustBlack.json
-share/maliit/keyboard2/themes/JustGrey.json
-share/maliit/keyboard2/themes/JustWhite.json
-share/maliit/keyboard2/themes/SuruBlack.json
-share/maliit/keyboard2/themes/SuruDark.json
 share/metainfo/com.github.maliit.keyboard.metainfo.xml

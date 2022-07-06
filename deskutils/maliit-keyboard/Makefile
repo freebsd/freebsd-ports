@@ -1,5 +1,5 @@
 PORTNAME=	keyboard
-DISTVERSION=	2.2.1.1
+DISTVERSION=	2.3.0
 CATEGORIES=	deskutils kde
 PKGNAMEPREFIX=	maliit-
 
@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	maliit
 USE_GNOME=	glib20
 GLIB_SCHEMAS=	org.maliit.keyboard.maliit.gschema.xml
-USE_QT=		core dbus declarative gui multimedia network \
+USE_QT=		core dbus declarative gui multimedia network quickcontrols2 \
 		buildtools_build qmake_build
 CMAKE_OFF=	enable-tests
 CMAKE_ARGS=	-DHUNSPELL_DICT_PATH=${PREFIX}/share/hunspell
