@@ -1,11 +1,12 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 
 PORTNAME=	chromium
-PORTVERSION=	103.0.5060.53
+PORTVERSION=	103.0.5060.114
+TESTVERSION=	103.0.5060.53
 CATEGORIES=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
-		https://nerd.hu/distfiles/:fonts
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+		https://nerd.hu/distfiles/:external
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:external
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
@@ -196,8 +197,8 @@ SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 .include "Makefile.tests"
-TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX} \
-			test_fonts-336e775eec536b2d785cc80eff6ac39051931286.tar.gz:fonts
+TEST_DISTFILES=		${PORTNAME}-${TESTVERSION}-testdata${EXTRACT_SUFX} \
+			test_fonts-336e775eec536b2d785cc80eff6ac39051931286.tar.gz:external
 TEST_ALL_TARGET=	${TEST_TARGETS}
 
 .include <bsd.port.options.mk>
