@@ -5,7 +5,7 @@ PORTVERSION=	0.40.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME/sources/vte/${PORTVERSION:R}
 DISTNAME=	vte-${PORTVERSION}
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	utmp/wtmp/lastlog helper program for the vte Terminal widget
