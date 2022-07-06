@@ -215,6 +215,7 @@
 %%DATADIR%%/bin/NLog.dll
 %%DATADIR%%/bin/Newtonsoft.Json.dll
 %%DATADIR%%/bin/Npgsql.dll
+%%DATADIR%%/bin/Polly.Contrib.WaitAndRetry.dll
 %%DATADIR%%/bin/Prowlarr
 %%DATADIR%%/bin/Prowlarr.Api.V1.deps.json
 %%DATADIR%%/bin/Prowlarr.Api.V1.dll
