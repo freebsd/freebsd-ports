@@ -1,11 +1,8 @@
-# Created by: gnome@freebsd.org
-#   $MCom: ports/trunk/x11-themes/gnome-icon-theme-symbolic/Makefile 19571 2014-04-25 18:12:46Z kwm $
-
 PORTNAME=	gnome-icon-theme-symbolic
 PORTVERSION=	3.12.0
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Symbolic Icons
