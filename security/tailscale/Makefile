@@ -1,7 +1,7 @@
 PORTNAME=	tailscale
 PORTVERSION=	1.26.2
 DISTVERSIONPREFIX=	v
-CATEGORIES=	security
+CATEGORIES=	security net-vpn
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Mesh VPN that makes it easy to connect your devices
