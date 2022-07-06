@@ -18,10 +18,11 @@ LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libfreetype.so:print/freetype2 \
 		libnss3.so:security/nss \
 		libfontconfig.so:x11-fonts/fontconfig
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/container/small_vector.hpp:devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/container/small_vector.hpp:devel/boost-libs \
+		gsed:textproc/gsed
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
-USES=		cmake:insource compiler:c++17-lang cpe gnome jpeg libtool \
+USES=		cmake:insource compiler:c++17-lang cpe gnome gperf jpeg libtool \
 		localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
 USE_GNOME=	cairo libxml2
@@ -43,6 +44,9 @@ CMAKE_ARGS+=	-DCMAKE_IGNORE_PATH:PATH=${PREFIX}/lib/openjpeg-1.5
 # Slave ports.
 _POPPLER_SLAVES=	library glib qt5 utils
 _SLAVE_PORT?=		library
+
+BINARY_ALIAS=		gperf=${GPERF} \
+			sed=${LOCALBASE}/bin/gsed
 
 # Activate the wanted module, and deactivate the others.
 CMAKE_ON+=	ENABLE_${_SLAVE_PORT:tu}
