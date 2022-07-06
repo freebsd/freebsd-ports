@@ -2792,6 +2792,7 @@ include/node/v8-weak-callback-info.h
 include/node/v8.h
 include/node/v8config.h
 %%DTRACE%%lib/dtrace/node.d
+lib/node_modules/corepack/CHANGELOG.md
 lib/node_modules/corepack/LICENSE.md
 lib/node_modules/corepack/README.md
 lib/node_modules/corepack/dist/corepack.js
@@ -2800,6 +2801,7 @@ lib/node_modules/corepack/dist/npx.js
 lib/node_modules/corepack/dist/pnpm.js
 lib/node_modules/corepack/dist/pnpx.js
 lib/node_modules/corepack/dist/vcc.js
+lib/node_modules/corepack/dist/vendors-_yarn_berry_cache_proxy-agent-npm-5_0_0-41772f4b01-9_zip_node_modules_proxy-agent_index_js.js
 lib/node_modules/corepack/dist/yarn.js
 lib/node_modules/corepack/dist/yarnpkg.js
 lib/node_modules/corepack/package.json
@@ -2821,9 +2823,6 @@ lib/node_modules/corepack/shims/nodewin/pnpm.ps1
 lib/node_modules/corepack/shims/nodewin/pnpx
 lib/node_modules/corepack/shims/nodewin/pnpx.cmd
 lib/node_modules/corepack/shims/nodewin/pnpx.ps1
-lib/node_modules/corepack/shims/nodewin/vcc
-lib/node_modules/corepack/shims/nodewin/vcc.cmd
-lib/node_modules/corepack/shims/nodewin/vcc.ps1
 lib/node_modules/corepack/shims/nodewin/yarn
 lib/node_modules/corepack/shims/nodewin/yarn.cmd
 lib/node_modules/corepack/shims/nodewin/yarn.ps1
