@@ -1,4 +1,4 @@
---- main/source/window/window.cpp.orig	2022-05-28 18:14:30 UTC
+--- main/source/window/window.cpp.orig	2022-07-04 19:53:18 UTC
 +++ main/source/window/window.cpp
 @@ -148,7 +148,6 @@ namespace hex {
          std::signal(SIGSEGV, signalHandler);
@@ -8,7 +8,7 @@
          std::signal(SIGFPE, signalHandler);
  
          auto imhexLogo      = romfs::get("logo.png");
-@@ -607,7 +606,7 @@ namespace hex {
+@@ -606,7 +605,7 @@ namespace hex {
                  return;
  
              for (int i = 0; i < count; i++) {

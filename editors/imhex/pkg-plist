@@ -1,6 +1,7 @@
 bin/imhex
 lib/libimhex.so
 share/applications/imhex.desktop
+%%DATADIR%%/constants/_schema.json
 %%DATADIR%%/constants/crc16.json
 %%DATADIR%%/constants/crc32.json
 %%DATADIR%%/constants/http_status.json
