@@ -17489,3 +17489,5 @@ devel/go-glide||2022-07-01|Has expired: use go mod instead of glide
 irc/unreal||2022-07-01|Has expired: Very outdated, listed as end of life in 2016 and has known security issues
 sysutils/go-btfs||2022-07-01|Has expired: Requires go 1.15
 sysutils/pesign||2022-07-01|Has expired: Unmaintaned since 2016, very much out of date, does not build with GCC 11 (PR #263544)
+sysutils/cfengine316||2022-07-06|Has expired: Expire one year after cfengine 3.18.0 released
+sysutils/cfengine-masterfiles316||2022-07-06|Has expired: Expire one year after cfengine 3.18.0 released
