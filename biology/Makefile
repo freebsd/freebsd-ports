@@ -101,7 +101,6 @@
     SUBDIR += ncbi-entrez-direct
     SUBDIR += ncbi-toolkit
     SUBDIR += ncbi-vdb
-    SUBDIR += ngs-sdk
     SUBDIR += p5-AcePerl
     SUBDIR += p5-Bio-ASN1-EntrezGene
     SUBDIR += p5-Bio-Cluster
