@@ -76,7 +76,7 @@ CMAKE_ARGS+=		-DENABLE_LIBOPENJPEG:STRING="none" \
 .  if ${_SLAVE_PORT} == glib
 USES+=			python:build
 USE_GNOME+=		glib20 introspection:Build
-BINARY_ALIAS=		python3=${PYTHON_CMD}
+BINARY_ALIAS+=		python3=${PYTHON_CMD}
 .  elif ${_SLAVE_PORT} == qt5
 USES+=			qt:5
 USE_QT=			core gui widgets xml \
