@@ -10,6 +10,7 @@ include/remmina/types.h
 %%SPICE%%lib/remmina/plugins/remmina-plugin-spice.so
 %%VNC%%lib/remmina/plugins/remmina-plugin-vnc.so
 %%WWW%%lib/remmina/plugins/remmina-plugin-www.so
+lib/remmina/plugins/remmina-plugin-python_wrapper.so
 libdata/pkgconfig/remmina.pc
 share/man/man1/remmina-file-wrapper.1.gz
 share/man/man1/remmina.1.gz
@@ -149,9 +150,11 @@ share/mime/packages/remmina-mime.xml
 %%WWW%%%%DATADIR%%/res/www-js.js
 %%DATADIR%%/theme/3024 Day.colors
 %%DATADIR%%/theme/3024 Night.colors
+%%DATADIR%%/theme/Abernathy.colors
 %%DATADIR%%/theme/Adventure.colors
 %%DATADIR%%/theme/AdventureTime.colors
 %%DATADIR%%/theme/Afterglow.colors
+%%DATADIR%%/theme/Alabaster.colors
 %%DATADIR%%/theme/AlienBlood.colors
 %%DATADIR%%/theme/Andromeda.colors
 %%DATADIR%%/theme/Argonaut.colors
@@ -160,6 +163,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Atom.colors
 %%DATADIR%%/theme/AtomOneLight.colors
 %%DATADIR%%/theme/Aurora.colors
+%%DATADIR%%/theme/Ayu Mirage.colors
 %%DATADIR%%/theme/Banana Blueberry.colors
 %%DATADIR%%/theme/Batman.colors
 %%DATADIR%%/theme/Belafonte Day.colors
@@ -168,6 +172,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Blazer.colors
 %%DATADIR%%/theme/Blue Matrix.colors
 %%DATADIR%%/theme/BlueBerryPie.colors
+%%DATADIR%%/theme/BlueDolphin.colors
 %%DATADIR%%/theme/BlulocoDark.colors
 %%DATADIR%%/theme/BlulocoLight.colors
 %%DATADIR%%/theme/Borland.colors
@@ -183,6 +188,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Builtin Tango Dark.colors
 %%DATADIR%%/theme/Builtin Tango Light.colors
 %%DATADIR%%/theme/C64.colors
+%%DATADIR%%/theme/CGA.colors
 %%DATADIR%%/theme/CLRS.colors
 %%DATADIR%%/theme/Calamity.colors
 %%DATADIR%%/theme/Chalk.colors
@@ -215,6 +221,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Espresso Libre.colors
 %%DATADIR%%/theme/Espresso.colors
 %%DATADIR%%/theme/Fahrenheit.colors
+%%DATADIR%%/theme/Fairyfloss.colors
 %%DATADIR%%/theme/Fideloper.colors
 %%DATADIR%%/theme/FirefoxDev.colors
 %%DATADIR%%/theme/Firewatch.colors
@@ -227,13 +234,19 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/FrontEndDelight.colors
 %%DATADIR%%/theme/FunForrest.colors
 %%DATADIR%%/theme/Galaxy.colors
+%%DATADIR%%/theme/Galizur.colors
+%%DATADIR%%/theme/GitHub Dark.colors
 %%DATADIR%%/theme/Github.colors
 %%DATADIR%%/theme/Glacier.colors
 %%DATADIR%%/theme/Grape.colors
 %%DATADIR%%/theme/Grass.colors
+%%DATADIR%%/theme/Grey-green.colors
 %%DATADIR%%/theme/Gruvbox Dark.colors
 %%DATADIR%%/theme/Gruvbox Light.colors
 %%DATADIR%%/theme/Guezwhoz.colors
+%%DATADIR%%/theme/HaX0R_BLUE.colors
+%%DATADIR%%/theme/HaX0R_GR33N.colors
+%%DATADIR%%/theme/HaX0R_R3D.colors
 %%DATADIR%%/theme/Hacktober.colors
 %%DATADIR%%/theme/Hardcore.colors
 %%DATADIR%%/theme/Harper.colors
@@ -263,9 +276,11 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/LiquidCarbonTransparent.colors
 %%DATADIR%%/theme/LiquidCarbonTransparentInverse.colors
 %%DATADIR%%/theme/Man Page.colors
+%%DATADIR%%/theme/Mariana.colors
 %%DATADIR%%/theme/Material.colors
 %%DATADIR%%/theme/MaterialDark.colors
 %%DATADIR%%/theme/MaterialDarker.colors
+%%DATADIR%%/theme/MaterialDesignColors.colors
 %%DATADIR%%/theme/MaterialOcean.colors
 %%DATADIR%%/theme/Mathias.colors
 %%DATADIR%%/theme/Medallion.colors
@@ -277,6 +292,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Monokai Soda.colors
 %%DATADIR%%/theme/Monokai Vivid.colors
 %%DATADIR%%/theme/N0tch2k.colors
+%%DATADIR%%/theme/Neon.colors
 %%DATADIR%%/theme/Neopolitan.colors
 %%DATADIR%%/theme/Neutron.colors
 %%DATADIR%%/theme/Night Owlish Light.colors
@@ -286,6 +302,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Novel.colors
 %%DATADIR%%/theme/Obsidian.colors
 %%DATADIR%%/theme/Ocean.colors
+%%DATADIR%%/theme/Oceanic-Next.colors
 %%DATADIR%%/theme/OceanicMaterial.colors
 %%DATADIR%%/theme/Ollie.colors
 %%DATADIR%%/theme/OneHalfDark.colors
@@ -295,10 +312,10 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/PaleNightHC.colors
 %%DATADIR%%/theme/Pandora.colors
 %%DATADIR%%/theme/Paraiso Dark.colors
-%%DATADIR%%/theme/Parasio Dark.colors
 %%DATADIR%%/theme/PaulMillr.colors
 %%DATADIR%%/theme/PencilDark.colors
 %%DATADIR%%/theme/PencilLight.colors
+%%DATADIR%%/theme/Peppermint.colors
 %%DATADIR%%/theme/Piatto Light.colors
 %%DATADIR%%/theme/Pnevma.colors
 %%DATADIR%%/theme/Popping and Locking.colors
@@ -306,10 +323,13 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Pro.colors
 %%DATADIR%%/theme/Purple Rain.colors
 %%DATADIR%%/theme/Rapture.colors
+%%DATADIR%%/theme/Raycast_Dark.colors
+%%DATADIR%%/theme/Raycast_Light.colors
 %%DATADIR%%/theme/Red Alert.colors
 %%DATADIR%%/theme/Red Planet.colors
 %%DATADIR%%/theme/Red Sands.colors
 %%DATADIR%%/theme/Relaxed.colors
+%%DATADIR%%/theme/Retro.colors
 %%DATADIR%%/theme/Rippedcasts.colors
 %%DATADIR%%/theme/Rouge 2.colors
 %%DATADIR%%/theme/Royal.colors
@@ -328,8 +348,6 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Solarized Darcula.colors
 %%DATADIR%%/theme/Solarized Dark - Patched.colors
 %%DATADIR%%/theme/Solarized Dark Higher Contrast.colors
-%%DATADIR%%/theme/Solarized Dark.colors
-%%DATADIR%%/theme/Solarized Light.colors
 %%DATADIR%%/theme/SpaceGray Eighties Dull.colors
 %%DATADIR%%/theme/SpaceGray Eighties.colors
 %%DATADIR%%/theme/SpaceGray.colors
@@ -337,6 +355,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Spiderman.colors
 %%DATADIR%%/theme/Spring.colors
 %%DATADIR%%/theme/Square.colors
+%%DATADIR%%/theme/Sublette.colors
 %%DATADIR%%/theme/Subliminal.colors
 %%DATADIR%%/theme/Sundried.colors
 %%DATADIR%%/theme/Symfonic.colors
@@ -358,6 +377,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Treehouse.colors
 %%DATADIR%%/theme/Twilight.colors
 %%DATADIR%%/theme/Ubuntu.colors
+%%DATADIR%%/theme/UltraDark.colors
 %%DATADIR%%/theme/UltraViolent.colors
 %%DATADIR%%/theme/UnderTheSea.colors
 %%DATADIR%%/theme/Unikitty.colors
@@ -373,20 +393,43 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Wombat.colors
 %%DATADIR%%/theme/Wryan.colors
 %%DATADIR%%/theme/Zenburn.colors
+%%DATADIR%%/theme/arcoiris.colors
 %%DATADIR%%/theme/ayu.colors
 %%DATADIR%%/theme/ayu_light.colors
 %%DATADIR%%/theme/coffee_theme.colors
 %%DATADIR%%/theme/cyberpunk.colors
+%%DATADIR%%/theme/darkermatrix.colors
+%%DATADIR%%/theme/darkmatrix.colors
 %%DATADIR%%/theme/deep.colors
+%%DATADIR%%/theme/duckbones.colors
+%%DATADIR%%/theme/iceberg-dark.colors
+%%DATADIR%%/theme/iceberg-light.colors
 %%DATADIR%%/theme/idea.colors
 %%DATADIR%%/theme/idleToes.colors
 %%DATADIR%%/theme/jubi.colors
+%%DATADIR%%/theme/kanagawabones.colors
 %%DATADIR%%/theme/lovelace.colors
+%%DATADIR%%/theme/matrix.colors
 %%DATADIR%%/theme/midnight-in-mojave.colors
+%%DATADIR%%/theme/neobones_dark.colors
+%%DATADIR%%/theme/neobones_light.colors
+%%DATADIR%%/theme/nord-light.colors
 %%DATADIR%%/theme/nord.colors
 %%DATADIR%%/theme/primary.colors
 %%DATADIR%%/theme/purplepeter.colors
 %%DATADIR%%/theme/rebecca.colors
+%%DATADIR%%/theme/seoulbones_dark.colors
+%%DATADIR%%/theme/seoulbones_light.colors
 %%DATADIR%%/theme/shades-of-purple.colors
 %%DATADIR%%/theme/synthwave-everything.colors
 %%DATADIR%%/theme/synthwave.colors
+%%DATADIR%%/theme/tokyonight-day.colors
+%%DATADIR%%/theme/tokyonight-storm.colors
+%%DATADIR%%/theme/tokyonight.colors
+%%DATADIR%%/theme/vimbones.colors
+%%DATADIR%%/theme/zenbones.colors
+%%DATADIR%%/theme/zenbones_dark.colors
+%%DATADIR%%/theme/zenbones_light.colors
+%%DATADIR%%/theme/zenburned.colors
+%%DATADIR%%/theme/zenwritten_dark.colors
+%%DATADIR%%/theme/zenwritten_light.colors

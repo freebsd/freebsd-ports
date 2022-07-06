@@ -1,7 +1,7 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
 
 PORTNAME=	remmina
-DISTVERSION=	1.4.25
+DISTVERSION=	1.4.27
 CATEGORIES=	net gnome
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
 		libjson-glib-1.0.so:devel/json-glib \
 		libpcre2-8.so:devel/pcre2 \
+		libpython3.9.so:lang/python39 \
 		libsodium.so:security/libsodium \
 		libsoup-2.4.so:devel/libsoup \
 		libwayland-client.so:graphics/wayland
@@ -27,7 +28,7 @@ USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pat
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
-GL_COMMIT=	f7bb20c1b8b0efdcada70f942b9db0b8d14207e7
+GL_COMMIT=	9d409a3556c8c2759a376b4f4ac5149db7aacf4f
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 
