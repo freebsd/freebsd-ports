@@ -220,7 +220,6 @@ lib/libqfits.a
 %%PYTHON_LIBDIR%%/astrometry/solver/__init__.py
 %%PYTHON_LIBDIR%%/astrometry/util/EXIF.py
 %%PYTHON_LIBDIR%%/astrometry/util/__init__.py
-%%PYTHON_LIBDIR%%/astrometry/util/_util%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_LIBDIR%%/astrometry/util/addpath.py
 %%PYTHON_LIBDIR%%/astrometry/util/file.py
 %%PYTHON_LIBDIR%%/astrometry/util/filetype.py

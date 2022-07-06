@@ -712,7 +712,7 @@ CMAKE_ARGS+=	-DPython_ADDITIONAL_VERSIONS=${PYTHON_VER}
 
 # Python 3rd-party modules
 PYGAME=		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR}
-PYNUMPY=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16,1<1.23,1:math/py-numpy@${PY_FLAVOR}
+PYNUMPY=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16,1<1.24,1:math/py-numpy@${PY_FLAVOR}
 
 # Common Python modules that can be needed but only for some versions of Python.
 .  if ${PYTHON_REL} < 30500
