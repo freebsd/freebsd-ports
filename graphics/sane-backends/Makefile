@@ -2,7 +2,7 @@
 
 PORTNAME=	sane-backends
 DISTVERSION=	1.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/7d30fab4e115029d91027b6a58d64b43/
 

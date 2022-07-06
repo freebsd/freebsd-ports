@@ -2,7 +2,7 @@
 
 PORTNAME=	tellico
 DISTVERSION=	3.4.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
