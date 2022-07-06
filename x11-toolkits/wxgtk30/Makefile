@@ -7,7 +7,7 @@ MASTER_SITES=	https://github.com/wxWidgets/wxWidgets/releases/download/v${DISTVE
 PKGNAMESUFFIX=	${_SHORT_WX_VER}-${FLAVOR}
 DISTNAME=	wxWidgets-${DISTVERSION}
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit with GTK+ bindings
 
 LICENSE=	GPLv2+

@@ -5,7 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	${_SHORT_WX_VER}-${FLAVOR}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GUI toolkit (wxWidgets) with ${FLAVOR:S/k/&+/:tu} bindings
 
 LICENSE=	GPLv2+
