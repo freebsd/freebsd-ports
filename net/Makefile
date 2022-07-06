@@ -415,6 +415,7 @@
     SUBDIR += libvncserver
     SUBDIR += libwebsockets
     SUBDIR += libyang
+    SUBDIR += libyang2
     SUBDIR += libzapojit
     SUBDIR += libzmq2
     SUBDIR += libzmq3
