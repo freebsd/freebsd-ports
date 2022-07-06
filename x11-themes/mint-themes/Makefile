@@ -4,7 +4,7 @@
 PORTNAME=	mint-themes
 PORTVERSION=	0.0.41cf70d
 CATEGORIES=	x11-themes gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Themes for the cinnamon desktop
