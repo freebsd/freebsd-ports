@@ -34,13 +34,12 @@ lib/cmake/MaliitPlugins/MaliitPluginsConfig.cmake
 lib/cmake/MaliitPlugins/MaliitPluginsConfigVersion.cmake
 lib/cmake/MaliitPlugins/MaliitPluginsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/MaliitPlugins/MaliitPluginsTargets.cmake
-lib/gtk-3.0/3.0.0/immodules/libim-wayland.so
 lib/libmaliit-glib.so
 lib/libmaliit-glib.so.2
-lib/libmaliit-glib.so.2.2.1
+lib/libmaliit-glib.so.2.3.0
 lib/libmaliit-plugins.so
 lib/libmaliit-plugins.so.2
-lib/libmaliit-plugins.so.2.2.1
+lib/libmaliit-plugins.so.2.3.0
 lib/qt5/mkspecs/features/maliit-defines.prf
 lib/qt5/mkspecs/features/maliit-framework.prf
 lib/qt5/mkspecs/features/maliit-plugins.prf
