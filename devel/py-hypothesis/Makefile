@@ -1,7 +1,7 @@
 # Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
 
 PORTNAME=	hypothesis
-PORTVERSION=	6.48.2
+PORTVERSION=	6.49.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
