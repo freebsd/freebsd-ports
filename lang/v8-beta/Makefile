@@ -2,7 +2,7 @@
 # https://chromium.googlesource.com/v8/v8/+/refs/heads/10.4-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	10.4.132.10
+PORTVERSION=	10.4.132.15
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}:local
 PKGNAMESUFFIX=	-beta
