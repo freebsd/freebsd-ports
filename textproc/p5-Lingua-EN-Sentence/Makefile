@@ -1,7 +1,7 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
 
 PORTNAME=	Lingua-EN-Sentence
-PORTVERSION=	0.31
+PORTVERSION=	0.33
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,8 +13,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-NO_ARCH=	yes
-USES=		perl5
+USES=		dos2unix perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
