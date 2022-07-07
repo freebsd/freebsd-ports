@@ -1,7 +1,7 @@
 PORTNAME=	fastjet
 DISTVERSION=	3.4.0
 CATEGORIES=	science
-MASTER_SITES=	http://fastjet.fr/repo/
+MASTER_SITES=	https://fastjet.fr/repo/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Package for jet finding in pp and e+e- collisions
