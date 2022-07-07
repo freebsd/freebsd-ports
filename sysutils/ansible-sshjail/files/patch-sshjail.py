@@ -5,7 +5,15 @@ Subject: [PATCH] fix: ansible 2.12 and + compat + become fix
 
 --- sshjail.py.orig	2021-08-15 18:02:16 UTC
 +++ sshjail.py
-@@ -289,6 +289,17 @@ DOCUMENTATION = '''
+@@ -24,6 +24,7 @@ DOCUMENTATION = '''
+           description: Hostname/ip to connect to.
+           default: inventory_hostname
+           vars:
++               - name: inventory_hostname
+                - name: ansible_host
+                - name: ansible_ssh_host
+       host_key_checking:
+@@ -289,6 +290,17 @@ DOCUMENTATION = '''
          vars:
            - name: ansible_ssh_use_tty
              version_added: '2.7'
@@ -23,7 +31,7 @@ Subject: [PATCH] fix: ansible 2.12 and + compat + become fix
        timeout:
          default: 10
          description:
-@@ -420,6 +431,7 @@ class Connection(ConnectionBase):
+@@ -420,6 +432,7 @@ class Connection(ConnectionBase):
          if 'sudo' in cmd:
              cmd = self._strip_sudo(executable, cmd)
  
@@ -31,7 +39,7 @@ Subject: [PATCH] fix: ansible 2.12 and + compat + become fix
          cmd = ' '.join([executable, '-c', pipes.quote(cmd)])
          if slpcmd:
              cmd = '%s %s %s %s' % (self.get_jail_connector(), self.get_jail_id(), cmd, '&& sleep 0')
-@@ -442,9 +454,11 @@ class Connection(ConnectionBase):
+@@ -442,9 +455,11 @@ class Connection(ConnectionBase):
          return os.path.join(prefix, normpath[1:])
  
      def _copy_file(self, from_file, to_file, executable='/bin/sh'):
