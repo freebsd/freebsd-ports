@@ -17,6 +17,8 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+PORTSCOUT=	skipv:2.1.0
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 30800
