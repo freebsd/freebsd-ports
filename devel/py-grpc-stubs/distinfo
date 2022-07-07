@@ -1,3 +1,3 @@
-TIMESTAMP = 1650228766
-SHA256 (grpc-stubs-1.24.10.tar.gz) = 92460dbabea0e77e34241afe7594b86f5cef2f9ae6ca0230f1ae2430427c20f9
-SIZE (grpc-stubs-1.24.10.tar.gz) = 10656
+TIMESTAMP = 1657198999
+SHA256 (grpc-stubs-1.24.11.tar.gz) = b02b0445b264eb3d310a2c14816c440f98f76d4ba2a5746adf148d57cca8b3a5
+SIZE (grpc-stubs-1.24.11.tar.gz) = 11621
