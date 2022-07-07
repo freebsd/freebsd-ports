@@ -13,7 +13,9 @@ install_requires = \
 ['click >= 7.1.1, <9.0.0']
 
 extras_require = \
-{'all': ['colorama >=0.4.3,<0.5.0', 'shellingham >=1.3.0,<2.0.0'],
+{'all': ['colorama >=0.4.3,<0.5.0',
+         'shellingham >=1.3.0,<2.0.0',
+         'rich >=10.11.0,<13.0.0'],
  'dev': ['autoflake >=1.3.1,<2.0.0',
          'flake8 >=3.8.3,<4.0.0',
          'pre-commit >=2.17.0,<3.0.0'],
@@ -28,7 +30,8 @@ extras_require = \
           'pytest-sugar >=0.9.4,<0.10.0',
           'mypy ==0.910',
           'black >=22.3.0,<23.0.0',
-          'isort >=5.0.6,<6.0.0']}
+          'isort >=5.0.6,<6.0.0',
+          'rich >=10.11.0,<13.0.0']}
 
 setup(name='typer',
       version='%%PORTVERSION%%',
