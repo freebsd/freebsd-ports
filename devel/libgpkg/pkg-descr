@@ -3,4 +3,4 @@ implementation. GeoPackage is an open, standards-based, application and
 platform independent, and self-describing file format for geodata based on
 SQLite.
 
-WWW: https://bitbucket.org/luciad/libgpkg
+WWW: https://github.com/luciad/libgpkg
