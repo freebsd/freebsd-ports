@@ -3,7 +3,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.2.19
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -29,7 +29,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-log4r>=1.1.9<1.1.11:sysutils/rubygem-log4r \
 		rubygem-net-scp>=3.0.0:security/rubygem-net-scp \
 		rubygem-net-sftp>=3.0:security/rubygem-net-sftp \
-		rubygem-net-ssh>=6.1.0,2<6.2,2:security/rubygem-net-ssh \
+		rubygem-net-ssh6>=6.1.0<6.2:security/rubygem-net-ssh6 \
 		rubygem-rb-kqueue>=0.2.0<0.3:devel/rubygem-rb-kqueue \
 		rubygem-rest-client>=1.6.0<3.0:www/rubygem-rest-client \
 		rubygem-rexml>=3.2:textproc/rubygem-rexml \
