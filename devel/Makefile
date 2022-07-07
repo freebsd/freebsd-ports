@@ -5963,6 +5963,7 @@
     SUBDIR += rubygem-aws-sdk-resources
     SUBDIR += rubygem-aws-sdk-resources2
     SUBDIR += rubygem-aws-sdk-robomaker
+    SUBDIR += rubygem-aws-sdk-rolesanywhere
     SUBDIR += rubygem-aws-sdk-route53
     SUBDIR += rubygem-aws-sdk-route53domains
     SUBDIR += rubygem-aws-sdk-route53recoverycluster
