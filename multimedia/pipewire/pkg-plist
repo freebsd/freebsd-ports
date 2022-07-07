@@ -171,16 +171,16 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.351.0
+lib/libpipewire-0.3.so.0.354.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0.351.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjack.so.0.354.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.351.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjacknet.so.0.354.0
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so
 %%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0
-%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.351.0
+%%PIPEWIRE_JACK%%lib/pipewire-0.3/jack/libjackserver.so.0.354.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -191,6 +191,7 @@ lib/pipewire-0.3/libpipewire-module-filter-chain.so
 lib/pipewire-0.3/libpipewire-module-link-factory.so
 lib/pipewire-0.3/libpipewire-module-loopback.so
 lib/pipewire-0.3/libpipewire-module-metadata.so
+lib/pipewire-0.3/libpipewire-module-pipe-tunnel.so
 lib/pipewire-0.3/libpipewire-module-portal.so
 lib/pipewire-0.3/libpipewire-module-profiler.so
 lib/pipewire-0.3/libpipewire-module-protocol-native.so
@@ -282,6 +283,7 @@ libdata/pkgconfig/libspa-0.2.pc
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/usb-gaming-headset-output-mono.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/usb-gaming-headset-output-stereo.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/paths/virtual-surround-7.1.conf
+%%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/analog-only.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/audigy.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/cmedia-high-speed-true-hdaudio.conf
 %%MEDIASESSION%%share/alsa-card-profile/mixer/profile-sets/default.conf
