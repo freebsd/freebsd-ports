@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.135.0
+PORTVERSION=	3.136.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -258,6 +258,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-resourcegroups>=1<2:devel/rubygem-aws-sdk-resourcegroups \
 		rubygem-aws-sdk-resourcegroupstaggingapi>=1<2:devel/rubygem-aws-sdk-resourcegroupstaggingapi \
 		rubygem-aws-sdk-robomaker>=1<2:devel/rubygem-aws-sdk-robomaker \
+		rubygem-aws-sdk-rolesanywhere>=1<2:devel/rubygem-aws-sdk-rolesanywhere \
 		rubygem-aws-sdk-route53>=1<2:devel/rubygem-aws-sdk-route53 \
 		rubygem-aws-sdk-route53domains>=1<2:devel/rubygem-aws-sdk-route53domains \
 		rubygem-aws-sdk-route53recoverycluster>=1<2:devel/rubygem-aws-sdk-route53recoverycluster \
