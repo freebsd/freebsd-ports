@@ -4,7 +4,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Jackett/Jackett/releases/download/
 DISTNAME=	v${PORTVERSION}/Jackett.Binaries.Mono
 
-MAINTAINER=	michiel@vanbaak.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Torznab proxy implementation of the Newznab API
 
 LICENSE=	GPLv2
