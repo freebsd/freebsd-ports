@@ -70,6 +70,7 @@ include/fastjet/internal/Voronoi.hh
 include/fastjet/internal/base.hh
 include/fastjet/internal/deprecated.hh
 include/fastjet/internal/numconsts.hh
+include/fastjet/internal/thread_safety_helpers.hh
 include/fastjet/tools/BackgroundEstimatorBase.hh
 include/fastjet/tools/Boost.hh
 include/fastjet/tools/CASubJetTagger.hh
@@ -127,3 +128,13 @@ lib/libsiscone_spherical.a
 lib/libsiscone_spherical.so
 lib/libsiscone_spherical.so.0
 lib/libsiscone_spherical.so.0.0.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/__pycache__/fastjet%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/__pycache__/fastjet%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet.so.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_fastjet.so.0.0.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/fastjet.py
+%%PYTHON%%%%DATADIR%%/pyinterface/FastJetPythonExtensions.hh
+%%PYTHON%%%%DATADIR%%/pyinterface/fastjet-doc.i
+%%PYTHON%%%%DATADIR%%/pyinterface/fastjet.i
