@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	oauth2
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	rubygem-faraday>=0.17.3<3.0:www/rubygem-faraday \
 		rubygem-multi_xml>=0.5<1:textproc/rubygem-multi_xml \
 		rubygem-rack>=1.2,3<3,3:www/rubygem-rack \
 		rubygem-rash_alt>=0.4<1:devel/rubygem-rash_alt \
-		rubygem-version_gem>=1.0<2:devel/rubygem-version_gem
+		rubygem-version_gem>=1.1<2:devel/rubygem-version_gem
 
 USES=		gem
 USE_RUBY=	yes
