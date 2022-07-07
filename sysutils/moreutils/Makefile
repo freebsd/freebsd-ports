@@ -2,7 +2,7 @@
 
 PORTNAME=	moreutils
 PORTVERSION=	0.67
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.joeyh.name/index.cgi/moreutils.git/snapshot/ \
 		LOCAL/sunpoet
@@ -13,7 +13,7 @@ COMMENT=	Additional Unix utilities
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-#RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run
+RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run
 
 USES=		gmake perl5 shebangfix
 
