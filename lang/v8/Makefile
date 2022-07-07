@@ -2,7 +2,7 @@
 # https://chromium.googlesource.com/v8/v8/+/refs/heads/10.3-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	10.3.174.14
+PORTVERSION=	10.3.174.18
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}:local
 DISTFILES=	build-${BUILD_REV}.tar.gz:local \
