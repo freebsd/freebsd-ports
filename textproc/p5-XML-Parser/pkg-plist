@@ -3,7 +3,8 @@
 %%SITE_ARCH%%/XML/Parser/Encodings/README
 %%SITE_ARCH%%/XML/Parser/Encodings/big5.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/euc-kr.enc
-%%EUCJP%%%%SITE_ARCH%%/XML/Parser/Encodings/euc-jp.enc
+%%EUCJP_JISX0221%%%%SITE_ARCH%%/XML/Parser/Encodings/euc-jp.enc
+%%EUCJP_UNICODE%%%%SITE_ARCH%%/XML/Parser/Encodings/euc-jp.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/ibm866.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/iso-8859-1.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/iso-8859-10.enc
@@ -20,7 +21,10 @@
 %%SITE_ARCH%%/XML/Parser/Encodings/iso-8859-8.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/iso-8859-9.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/koi8-r.enc
-%%SJIS%%%%SITE_ARCH%%/XML/Parser/Encodings/shift_jis.enc
+%%SJIS_CP932%%%%SITE_ARCH%%/XML/Parser/Encodings/shift_jis.enc
+%%SJIS_JDK117%%%%SITE_ARCH%%/XML/Parser/Encodings/shift_jis.enc
+%%SJIS_JISX0221%%%%SITE_ARCH%%/XML/Parser/Encodings/shift_jis.enc
+%%SJIS_UNICODE%%%%SITE_ARCH%%/XML/Parser/Encodings/shift_jis.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/windows-1250.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/windows-1251.enc
 %%SITE_ARCH%%/XML/Parser/Encodings/windows-1252.enc
