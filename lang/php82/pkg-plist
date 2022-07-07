@@ -76,6 +76,7 @@ include/php/Zend/zend_list.h
 include/php/Zend/zend_llist.h
 include/php/Zend/zend_long.h
 include/php/Zend/zend_map_ptr.h
+include/php/Zend/zend_mmap.h
 include/php/Zend/zend_modules.h
 include/php/Zend/zend_multibyte.h
 include/php/Zend/zend_multiply.h
