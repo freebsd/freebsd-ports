@@ -1,3 +1,3 @@
-TIMESTAMP = 1653151028
-SHA256 (jinja2-ansible-filters-1.3.1.tar.gz) = baa04873c2d31a82df67f5a313988630fb713c625d858226314d283f0b12879a
-SIZE (jinja2-ansible-filters-1.3.1.tar.gz) = 16772
+TIMESTAMP = 1656702500
+SHA256 (jinja2-ansible-filters-1.3.2.tar.gz) = 07c10cf44d7073f4f01102ca12d9a2dc31b41d47e4c61ed92ef6a6d2669b356b
+SIZE (jinja2-ansible-filters-1.3.2.tar.gz) = 16945
