@@ -1,5 +1,6 @@
 PORTNAME=	fastjet
 DISTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://fastjet.fr/repo/
 
@@ -22,14 +23,18 @@ CONFIGURE_ARGS=	--enable-allplugins
 
 LDFLAGS+=	-lexecinfo
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib
+
 OPTIONS_DEFINE=			CGAL PYTHON
-OPTIONS_DEFAULT=		PYTHON
+OPTIONS_DEFAULT=		CGAL PYTHON
 OPTIONS_SUB=			yes
 
 CGAL_DESC=			Build with CGAL computational geometry library
-CGAL_CONFIGURE_ENABLE=		cgal-header-only
-CGAL_BUILD_DEPENDS=		cgal>0:math/cgal
-CGAL_BROKEN=			cgal-header-only doesn't seem to do anything, upstream was notified via bug reporting e-mail address on 2022-07-08
+CGAL_USES=			localbase
+CGAL_CONFIGURE_ENABLE=		cgal-header-only cgal # cgal is still needed with cgal-header-only contrary to what configure says
+CGAL_BUILD_DEPENDS=		cgal>0:math/cgal \
+				${LOCALBASE}/include/mpfr.h:math/mpfr
+CGAL_LIB_DEPENDS=		libgmp.so:math/gmp
 
 PYTHON_USES=			python
 PYTHON_CONFIGURE_ENABLE=	pyext swig
@@ -41,5 +46,11 @@ post-install:
 
 post-install-PYTHON-on:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_fastjet.so.0.0.0
+
+do-test:
+	# python tests
+.for e in 01-basic 02-area 03-tools 04-multi-event 05-user-info 06-selector 07-recombiner
+	@cd ${WRKSRC}/example/python && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ./${e}.py
+.endfor
 
 .include <bsd.port.mk>
