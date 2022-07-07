@@ -1,0 +1,4 @@
+Role::Hooks allows a role to run a callback when it is applied to a class or to
+another role.
+
+WWW: https://metacpan.org/dist/Role-Hooks

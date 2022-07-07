@@ -3159,6 +3159,7 @@
     SUBDIR += p5-Rinci
     SUBDIR += p5-Role-Basic
     SUBDIR += p5-Role-HasMessage
+    SUBDIR += p5-Role-Hooks
     SUBDIR += p5-Role-Identifiable
     SUBDIR += p5-Role-Tiny
     SUBDIR += p5-Rose-DateTime
