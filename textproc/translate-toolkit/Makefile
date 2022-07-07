@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.1
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -48,7 +48,7 @@ TMSERVER_DESC=	Tmserver backend support
 TRADOS_DESC=	Trados format support
 YAML_DESC=	YAML format support
 
-ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=2.0.12:textproc/py-charset-normalizer@${PY_FLAVOR}
+ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=2.1.0:textproc/py-charset-normalizer@${PY_FLAVOR}
 FLUENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fluent.syntax>=0.18.1:textproc/py-fluent.syntax@${PY_FLAVOR}
 ICAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1:deskutils/py-vobject@${PY_FLAVOR}
 ICAL_VARS=		MANPAGES+="ical2po po2ical"

@@ -9,8 +9,8 @@
  # Format support
  BeautifulSoup4>=4.3  # Trados
  # Encoding detection
--charset-normalizer==2.0.12   # chardet
-+charset-normalizer>=2.0.12   # chardet
+-charset-normalizer==2.1.0   # chardet
++charset-normalizer>=2.1.0   # chardet
  # Tmserver backend
 -cheroot==8.6.0       # tmserver
 +cheroot>=8.6.0       # tmserver
