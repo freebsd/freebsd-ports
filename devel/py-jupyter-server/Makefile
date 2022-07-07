@@ -3,7 +3,8 @@
 PORTNAME=	jupyter-server
 PORTVERSION=	1.18.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	CHEESESHOP \
+		https://github.com/jupyter-server/jupyter_server/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	jupyter_server-${PORTVERSION}
 
