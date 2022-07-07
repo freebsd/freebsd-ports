@@ -1,7 +1,7 @@
 # Created by: scheidell@secnap.net
 
 PORTNAME=	PDF-Table
-DISTVERSION=	1.002
+PORTVERSION=	1.003
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
