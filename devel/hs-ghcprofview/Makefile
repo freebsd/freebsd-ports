@@ -7,6 +7,9 @@ COMMENT=	Graphical viewer for GHC profile files
 
 LICENSE=	BSD3CLAUSE
 
+# Upstream issue: https://github.com/haskell-gi/haskell-gi/issues/385
+BROKEN=		bindings fail to compile with recent freetype2/harfbuzz
+
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		cabal gnome pkgconfig
