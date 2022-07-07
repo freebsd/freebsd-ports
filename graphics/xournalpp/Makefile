@@ -1,7 +1,7 @@
 PORTNAME=	xournalpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ USES=		cmake compiler:c++11-lang gettext-tools gnome lua:53 pkgconfig xorg
 USE_GITHUB=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 librsvg2 libxml2 pango
 USE_XORG=	x11 xi
-USE_TEX=	latex
+USE_TEX=	latex:build
 
 LDFLAGS+=	-lexecinfo
 
