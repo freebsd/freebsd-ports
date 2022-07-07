@@ -1,7 +1,6 @@
 PORTNAME=	mackerel-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.72.11
-PORTREVISION=	1
+DISTVERSION=	0.72.14
 CATEGORIES=	sysutils
 
 MAINTAINER=	meta@FreeBSD.org
@@ -18,8 +17,8 @@ GH_ACCOUNT=	mackerelio
 GH_TUPLE=	\
 		BurntSushi:toml:v1.1.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		Songmu:gocredits:v0.2.0:songmu_gocredits/vendor/github.com/Songmu/gocredits \
-		Songmu:goxz:v0.8.1:songmu_goxz/vendor/github.com/Songmu/goxz \
-		Songmu:prompter:v0.5.0:songmu_prompter/vendor/github.com/Songmu/prompter \
+		Songmu:goxz:v0.8.2:songmu_goxz/vendor/github.com/Songmu/goxz \
+		Songmu:prompter:v0.5.1:songmu_prompter/vendor/github.com/Songmu/prompter \
 		Songmu:retry:v0.1.0:songmu_retry/vendor/github.com/Songmu/retry \
 		Songmu:timeout:v0.4.0:songmu_timeout/vendor/github.com/Songmu/timeout \
 		Songmu:wrapcommander:v0.1.0:songmu_wrapcommander/vendor/github.com/Songmu/wrapcommander \
@@ -33,8 +32,8 @@ GH_TUPLE=	\
 		golang:mod:v0.5.1:golang_mod/vendor/golang.org/x/mod \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:a9b59b0215f8:golang_sys/vendor/golang.org/x/sys \
-		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
+		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
+		golang:term:065cf7ba2467:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.1.9:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
