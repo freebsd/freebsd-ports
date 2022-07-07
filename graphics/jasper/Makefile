@@ -1,7 +1,7 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 
 PORTNAME=	jasper
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/jasper-software/jasper/releases/download/version-${PORTVERSION}/
 
@@ -27,10 +27,10 @@ CPE_VENDOR=	jasper_project
 OPTIONS_DEFINE=	DOCS HEIF OPENGL TEST
 OPTIONS_DEFAULT=OPENGL
 OPTIONS_SUB=	yes
+HEIF_DESC=	ISO/IEC 23008-12:2017 HEIF file format support (experimental)
 
 HEIF_CMAKE_BOOL=	JAS_ENABLE_HEIC_CODEC JAS_ENABLE_LIBHEIF JAS_INCLUDE_HEIC_CODEC
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
-HEIF_DESC=		ISO/IEC 23008-12:2017 HEIF file format support (experimental)
 OPENGL_CMAKE_BOOL=	JAS_ENABLE_OPENGL
 OPENGL_USE=		GL=gl,glu,glut XORG=x11,xext,xi,xmu
 OPENGL_USES=		gl xorg
