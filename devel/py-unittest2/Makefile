@@ -15,12 +15,18 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${PY_FLAVOR} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traceback2>=0:devel/py-traceback2@${PY_FLAVOR}
 
-USES=		python:3.7-3.9
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 31000
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-python310
+.endif
+
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m unittest2 -v
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
