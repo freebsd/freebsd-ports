@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	Sub-HandlesVia
-PORTVERSION=	0.027
+PORTVERSION=	0.028
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Method-Modifiers>=0:devel/p5-Class-Method-Modifiers \
 		p5-Class-Tiny>=0:devel/p5-Class-Tiny \
 		p5-Exporter-Tiny>=0:devel/p5-Exporter-Tiny \
+		p5-Role-Hooks>=0:devel/p5-Role-Hooks \
 		p5-Role-Tiny>=0:devel/p5-Role-Tiny \
 		p5-Scope-Guard>=0:devel/p5-Scope-Guard \
 		p5-Type-Tiny>=0:devel/p5-Type-Tiny
@@ -29,4 +30,3 @@ USE_PERL5=	configure
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
-
