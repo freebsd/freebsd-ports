@@ -4450,6 +4450,7 @@
     SUBDIR += py-epc
     SUBDIR += py-epdb
     SUBDIR += py-epsilon
+    SUBDIR += py-etils
     SUBDIR += py-evdev
     SUBDIR += py-eventlib
     SUBDIR += py-ewmh
