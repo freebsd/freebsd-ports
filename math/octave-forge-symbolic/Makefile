@@ -1,8 +1,7 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
 
 PORTNAME=	octave-forge-symbolic
-PORTVERSION=	2.9.0
-PORTREVISION=	3
+PORTVERSION=	3.0.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
