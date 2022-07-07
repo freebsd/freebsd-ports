@@ -1,0 +1,31 @@
+--- configure.orig	2022-07-01 21:03:16 UTC
++++ configure
+@@ -30287,28 +30287,6 @@ fi
+ 
+ 
+ 
+-if test -f /etc/redhat-release && grep -q '8\.' /etc/redhat-release; then :
+-
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: Found a RHEL 8 or equivalent system..." >&5
+-$as_echo "$as_me: Found a RHEL 8 or equivalent system..." >&6;}
+-        if grep -q -v tirpc <<< $CPPFLAGS || grep -q -v tirpc <<< $LDFLAGS; then :
+-
+-            as_fn_error $? "Libdap4 on Redhat Linux 8 requires the tirpc library be included on CPPFLAGS and LDFLAGS" "$LINENO" 5
+-
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: and CPPFLAGS and LDFLAGS are set" >&5
+-$as_echo "$as_me: and CPPFLAGS and LDFLAGS are set" >&6;}
+-
+-fi
+-
+-else
+-
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: Not a RHEL 8 or equivalent system" >&5
+-$as_echo "$as_me: Not a RHEL 8 or equivalent system" >&6;}
+-
+-fi
+-
+-
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lpthread" >&5
+ $as_echo_n "checking for pthread_kill in -lpthread... " >&6; }
+ if ${ac_cv_lib_pthread_pthread_kill+:} false; then :
