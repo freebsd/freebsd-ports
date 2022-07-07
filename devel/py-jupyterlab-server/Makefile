@@ -3,7 +3,8 @@
 PORTNAME=	jupyterlab-server
 PORTVERSION=	2.15.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	CHEESESHOP \
+		https://github.com/jupyterlab/jupyterlab_server/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	jupyterlab_server-${PORTVERSION}
 
