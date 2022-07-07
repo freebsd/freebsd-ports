@@ -6,20 +6,16 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://Lua.SQLite.org/index.cgi/zip/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}_fsl_9y
+DISTNAME=	${PORTNAME}_fsl09y
 
 MAINTAINER=	yds@Necessitu.de
-COMMENT=	Lua 5.1 to 5.3 wrapper for SQLite3 library
+COMMENT=	Lua wrapper for SQLite3 library
 
 LICENSE=	MIT
 
-BROKEN=		does not build: cp: /wrkdirs/usr/ports/databases/sqlite3/work/sqlite-src-3350500/sqlite3.[ch]: No such file or directory
-
-BUILD_DEPENDS=	${NONEXISTENT}:databases/sqlite3:patch
+BUILD_DEPENDS=	${NONEXISTENT}:databases/sqlite3:build
 
 USES=		localbase:ldflags sqlite:3 zip lua:module
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 CFLAGS+=	-pedantic -Wall -Qunused-arguments -fPIC -DPIC\
 		-std=c99 -fno-strict-aliasing -I${LUA_INCDIR}\
@@ -28,6 +24,8 @@ LDFLAGS+=	-shared -pthread -lm -L${LOCALBASE}/lib
 
 DOCSDIR=	${LUA_DOCSDIR}
 EXAMPLESDIR=	${LUA_EXAMPLESDIR}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 pre-configure:
 	@${CP} -p `${SETENV} -u FLAVOR ${MAKE} -V WRKSRC -C ${PORTSDIR}/databases/sqlite3`/sqlite3.[ch] ${WRKSRC}
