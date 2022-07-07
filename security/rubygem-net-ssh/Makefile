@@ -1,7 +1,7 @@
 # Created by: Roderick van Domburg <r.s.a.vandomburg@student.utwente.nl>
 
 PORTNAME=	net-ssh
-PORTVERSION=	6.1.0
+PORTVERSION=	7.0.1
 PORTEPOCH=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
