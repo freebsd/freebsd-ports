@@ -14,15 +14,12 @@ COMMENT=	Java JDBC driver for SQLite
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}
-USE_JAVA=	yes
+USE_JAVA=	8
 USES=		gmake tar:tgz
 MAKE_ENV=	JAVA_HOME="${JAVA_HOME}"
 ALL_TARGET=	native
 
-PLIST_FILES=	%%JAVAJARDIR%%/sqlitejdbc-native.jar lib/libsqlitejdbc.so
-
-post-patch:
-	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
+PLIST_FILES=	${JAVAJARDIR}/sqlitejdbc-native.jar lib/libsqlitejdbc.so
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/build/sqlitejdbc-v${PORTVERSION}-native.jar \
