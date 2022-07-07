@@ -1,7 +1,7 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
 
 PORTNAME=	imagesize
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
