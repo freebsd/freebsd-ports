@@ -1,4 +1,4 @@
 Notebook Shim provides a way for JupyterLab and other frontends to switch to
 Jupyter Server for their Python Web application backend.
 
-WWW: https://github.com/jupyterlab/notebook_shim
+WWW: https://github.com/jupyter/notebook_shim
