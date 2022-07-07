@@ -1,7 +1,7 @@
 # Created by: Eivind Eklund <eivind@FreeBSD.org>
 
 PORTNAME=	MIME-Tools
-PORTVERSION=	5.509
+PORTVERSION=	5.510
 PORTEPOCH=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
@@ -20,8 +20,9 @@ RUN_DEPENDS=	p5-Convert-BinHex>=0:converters/p5-Convert-BinHex \
 		p5-Mail-Tools>=1.05:mail/p5-Mail-Tools
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
