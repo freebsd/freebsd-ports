@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	pip-run
-PORTVERSION=	8.8.0
+PORTVERSION=	8.8.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,5 +27,8 @@ NO_ARCH=	yes
 .if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
+
+post-patch:
+	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
 .include <bsd.port.post.mk>
