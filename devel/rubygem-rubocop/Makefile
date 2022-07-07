@@ -1,5 +1,5 @@
 PORTNAME=	rubocop
-PORTVERSION=	1.31.0
+PORTVERSION=	1.31.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -9,7 +9,8 @@ COMMENT=	Ruby code style checking tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
+RUN_DEPENDS=	rubygem-json>=2.3<3:devel/rubygem-json \
+		rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
 		rubygem-parser>=3.1.0.0:devel/rubygem-parser \
 		rubygem-rainbow>=2.2.2<4.0:devel/rubygem-rainbow \
 		rubygem-regexp_parser>=1.8<3.0:textproc/rubygem-regexp_parser \
