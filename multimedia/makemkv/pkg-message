@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 This port doesn't include the MakeMKV GUI as it doesn't work on FreeBSD.
 
 To enable makemkvcon to find a drive on FreeBSD, a part of Linux' sysfs must
@@ -10,3 +13,6 @@ If makemkvcon refuses to work as root, check the permissions of
 permissions, use the command
 
   chmod 1777 /compat/linux/tmp
+EOM
+}
+]

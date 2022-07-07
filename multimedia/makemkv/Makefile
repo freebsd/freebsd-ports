@@ -1,7 +1,7 @@
 # Created by: Felix Palmen <felix@palmen-it.de>
 
 PORTNAME=	makemkv
-PORTVERSION=	1.16.4
+PORTVERSION=	1.17.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.makemkv.com/download/:makemkv \
 		http://www.makemkv.com/download/old/:makemkv \
@@ -54,7 +54,7 @@ SUB_LIST=	LINUXBASE=${LINUXBASE}
 PLIST_SUB=	LINUXBASE=${LINUXBASE}
 
 FDKAACVERSION=	2.0.2
-FFMPEGVERSION=	4.4
+FFMPEGVERSION=	5.0.1
 OPENSSLVERSION=	1.0.2
 OPENSSLPATCHLEVEL=	k
 OPENSSLFULLVER=	${OPENSSLVERSION}${OPENSSLPATCHLEVEL}
@@ -68,10 +68,12 @@ OPTIONS_DEFINE=	EXAMPLES
 
 PATCHELF_CMD?=	${LOCALBASE}/bin/patchelf
 
-CFLAGS+=	-std=c++11 -std=c11 -DFORCE_OPENSSL_NO_EC \
-		-I${WRKDIR}/gnuroot/include \
-		-I${WRKDIR}/openssl-${OPENSSLFULLVER}/include
-SSP_CFLAGS=
+CPPFLAGS+=	-I${WRKDIR}/gnuroot/include \
+		-I${WRKDIR}/openssl-${OPENSSLFULLVER}/include \
+		-D_linux_ -DFORCE_OPENSSL_NO_EC \
+		${${OSVERSION}<1300000:?-Dcaddr_t=void\* -D__daddr_t_defined:}
+CFLAGS+=	-std=c11
+CXXFLAGS+=	-std=c++11
 LDFLAGS+=	-L${WRKDIR}/gnuroot/lib
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-gui --host=${LINUXTRIPLET} \
@@ -80,6 +82,7 @@ CONFIGURE_ENV=	CC=${LINUXTRIPLET}-gcc CXX=${LINUXTRIPLET}-g++ \
 		PATH=${WRKDIR}/gnuroot/bin:${PATH} \
 		PKG_CONFIG_PATH=${WRKDIR}/gnuroot/lib/pkgconfig
 MAKE_ENV=	PATH=${WRKDIR}/gnuroot/bin:${PATH}
+MAKE_ARGS=	CFLAGS="${CXXFLAGS} ${CPPFLAGS} -std=c11"
 STRIP_CMD=	${WRKDIR}/gnuroot/bin/${LINUXTRIPLET}-strip
 
 post-extract:
@@ -117,7 +120,7 @@ pre-configure:
 		# FDK AAC
 		cd ${WRKDIR}/fdk-aac-${FDKAACVERSION}; \
 		export PATH=${WRKDIR}/gnuroot/bin:$$PATH; \
-		export CXXFLAGS="${CFLAGS}"; \
+		export CXXFLAGS="${CXXFLAGS}"; \
 		LDFLAGS=-L${WRKDIR}/gnuroot/lib \
 		./configure --prefix=${WRKDIR}/gnuroot \
 			--disable-shared --enable-static --with-pic \
@@ -127,15 +130,15 @@ pre-configure:
 		cd ${WRKDIR}/ffmpeg-${FFMPEGVERSION}; \
 		export PATH=${WRKDIR}/gnuroot/bin:$$PATH; \
 		export CFLAGS="${CFLAGS}"; \
+		export CPPFLAGS="${CPPFLAGS}"; \
 		PKG_CONFIG_PATH=${WRKDIR}/gnuroot/lib/pkgconfig \
-		CPPFLAGS="-Dcaddr_t=void\* -D__daddr_t_defined" \
 		LDFLAGS=-L${WRKDIR}/gnuroot/lib \
 		./configure --prefix=${WRKDIR}/gnuroot \
 			--disable-shared --enable-static --enable-pic \
 			--enable-libfdk-aac --pkg-config=pkg-config \
 			--cross-prefix=${LINUXTRIPLET}- --arch=${LINUXARCH} \
 			--target-os=linux --host-cc=${CC}; \
-		CFLAGS="${CFLAGS}" \
+		CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \
 		${MAKE_CMD} ${_MAKE_JOBS} V=1 ARCH=x86 all install
 		# OpenSSL headers
 		cd ${WRKDIR}/openssl-${OPENSSLFULLVER}; \
@@ -164,10 +167,4 @@ post-install-EXAMPLES-on:
 		${INSTALL_DATA} ${FILESDIR}/update-makemkv-key.sh \
 			${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-MAKE_JOBS_UNSAFE=	yes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

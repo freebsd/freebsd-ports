@@ -1,5 +1,6 @@
 bin/makemkvcon
 bin/mmccextr
+bin/mmgplsrv
 bin/sdftool
 lib/makemkv/libdriveio.so.0
 lib/makemkv/libmakemkv.so.1
