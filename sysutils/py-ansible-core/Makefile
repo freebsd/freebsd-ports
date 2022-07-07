@@ -1,5 +1,5 @@
 PORTNAME=	ansible-core
-DISTVERSION=	2.12.7
+DISTVERSION=	2.13.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,10 @@ DEPRECATED=	Depends on expired security/py-pycrypto
 EXPIRATION_DATE=2022-09-30
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>3.0.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}resolvelib05>=0.5.3<0.6:devel/py-resolvelib05@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}resolvelib>=0.5.3<0.9:devel/py-resolvelib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>5.1:devel/py-yaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
@@ -27,7 +27,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		git:devel/git
 
 USES=		ansible:env cpe gmake python:3.8+ shebangfix
 CPE_VENDOR=	redhat
@@ -39,11 +40,14 @@ SHEBANG_REGEX=	[.]/test/.*[.]py
 TEST_ARGS=	VERSION=${DISTVERSION} \
 		PYTHON=${PYTHON_CMD} \
 		DATE=
-TEST_ENV=	PYTHON_VERSION=${PYTHON_VER}
+# Pass MAKE_ENV to TEST_ENV so that binary aliases via an updated PATH.
+TEST_ENV=	${MAKE_ENV} PYTHON_VERSION=${PYTHON_VER}
 TEST_TARGET=	tests
 
 CONFLICTS=	py*-ansible-base py*-ansible2 py-ansible-core211
 
+# The "python" binary alias is needed for the tests.
+BINARY_ALIAS=	python=${PYTHON_CMD}
 NO_ARCH=	yes
 
 PLIST_FILES=	share/man/man1/ansible-config.1.gz \
