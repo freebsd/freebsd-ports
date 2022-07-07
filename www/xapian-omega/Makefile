@@ -1,8 +1,7 @@
 # Created by: Henrik Brix Andersen <brix@FreeBSD.org>
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.4.19
-PORTREVISION=	1
+PORTVERSION=	1.4.20
 CATEGORIES=	www
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
