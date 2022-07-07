@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	llhttp
-PORTVERSION=	6.0.6
+PORTVERSION=	6.0.7
 DISTVERSIONPREFIX=	 release/v
 CATEGORIES=	www
 
@@ -13,9 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
 USES=		cmake cpe
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS BUILD_STATIC_LIBS
 
 GH_ACCOUNT=	nodejs
 USE_GITHUB=	yes
+
+post-patch:
+	@${CP} ${FILESDIR}/libllhttp.pc.in ${WRKSRC}/libllhttp.pc.in
 
 .include <bsd.port.mk>
