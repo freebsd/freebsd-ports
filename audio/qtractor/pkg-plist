@@ -1,7 +1,5 @@
 bin/qtractor
 lib/qtractor/qtractor_plugin_scan
-share/man/fr/man1/qtractor.1.gz
-share/man/man1/qtractor.1.gz
 share/applications/org.rncbc.qtractor.desktop
 share/icons/hicolor/32x32/apps/org.rncbc.qtractor.png
 share/icons/hicolor/32x32/mimetypes/org.rncbc.qtractor.application-x-qtractor-archive.png
@@ -11,6 +9,8 @@ share/icons/hicolor/scalable/apps/org.rncbc.qtractor.svg
 share/icons/hicolor/scalable/mimetypes/org.rncbc.qtractor.application-x-qtractor-archive.svg
 share/icons/hicolor/scalable/mimetypes/org.rncbc.qtractor.application-x-qtractor-session.svg
 share/icons/hicolor/scalable/mimetypes/org.rncbc.qtractor.application-x-qtractor-template.svg
+share/man/fr/man1/qtractor.1.gz
+share/man/man1/qtractor.1.gz
 share/metainfo/org.rncbc.qtractor.metainfo.xml
 share/mime/packages/org.rncbc.qtractor.xml
 %%DATADIR%%/translations/qtractor_cs.qm
@@ -21,3 +21,4 @@ share/mime/packages/org.rncbc.qtractor.xml
 %%DATADIR%%/translations/qtractor_ja.qm
 %%DATADIR%%/translations/qtractor_pt.qm
 %%DATADIR%%/translations/qtractor_ru.qm
+%%DATADIR%%/translations/qtractor_uk.qm

@@ -1,7 +1,6 @@
 PORTNAME=	qtractor
 DISTVERSIONPREFIX=	qtractor_
-DISTVERSION=	0_9_26
-PORTREVISION=	1
+DISTVERSION=	0_9_27
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/rncbc/qtractor/archive/refs/tags/ \
 		https://download.steinberg.net/sdk_downloads/:vst3sdk
@@ -37,11 +36,13 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libvorbisenc.so:audio/libvorbis \
 		libvorbisfile.so:audio/libvorbis
 
-USES=		cmake desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig qt:5 shared-mime-info
+USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig qt:5 shared-mime-info
 USE_GNOME=	atk cairo gdkpixbuf2 gtk20 gtkmm24 pango
-USE_QT=		core gui widgets xml buildtools_build linguisttools_build qmake_build
+USE_QT=		core gui svg widgets x11extras xml buildtools_build linguisttools_build qmake_build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}_${DISTVERSION}
+
+CMAKE_OFF=	CONFIG_CLAP # for audio/clap, but it doesn't install anything
 
 OPTIONS_DEFINE=		VST3
 OPTIONS_DEFAULT=	VST3
