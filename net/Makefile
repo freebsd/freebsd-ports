@@ -167,6 +167,7 @@
     SUBDIR += frp
     SUBDIR += frr7
     SUBDIR += frr7-pythontools
+    SUBDIR += frr8
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib
