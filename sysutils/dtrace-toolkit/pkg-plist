@@ -1024,3 +1024,4 @@ man/man1/shellsnoop.1.gz
 %%DATADIR%%/statsnoop
 %%DATADIR%%/CDDL
 %%DATADIR%%/README.md
+etc/man.d/dtrace-toolkit.conf

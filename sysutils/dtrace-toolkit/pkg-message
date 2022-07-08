@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Many of the DTraceToolkit scripts will not work as they are either too
-Solaris-specific or use probes which are unsupported at this time on FreeBSD.
-EOM
-}
-]
