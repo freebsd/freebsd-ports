@@ -13,6 +13,8 @@ COMMENT=	Puppet Server running in the JVM
 
 LICENSE=	APACHE20
 
+ONLY_FOR_ARCHS=	amd64
+
 RUN_DEPENDS=	bash>=0:shells/bash \
 		puppet7>=0:sysutils/puppet7 \
 		rubygem-puppetserver-ca>=1:sysutils/rubygem-puppetserver-ca \
