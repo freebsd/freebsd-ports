@@ -865,6 +865,7 @@
     SUBDIR += xmradio
     SUBDIR += xoscope
     SUBDIR += xsynth-dssi
+    SUBDIR += xuidesigner
     SUBDIR += xwave
     SUBDIR += yell
     SUBDIR += ympd
