@@ -1,6 +1,5 @@
 PORTNAME=	sabredav
-PORTVERSION=	3.2.2
-PORTREVISION=	1
+DISTVERSION=	4.4.0
 CATEGORIES=	www
 
 MAINTAINER=	meyser@xenet.de
@@ -10,22 +9,22 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe php
-USE_PHP=	dom simplexml mbstring pcre spl ctype iconv xmlwriter
+CPE_VENDOR=	sabre-io
 USE_GITHUB=	yes
-CPE_VENDOR=	fruux
-GH_ACCOUNT=	fruux
-GH_PROJECT=	sabre-dav
+GH_ACCOUNT=	sabre-io
+GH_PROJECT=	dav
+USE_PHP=	ctype dom iconv mbstring pcre simplexml spl xmlwriter
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
+OPTIONS_DEFAULT=	MYSQL
 OPTIONS_MULTI=		DATABASE
 OPTIONS_MULTI_DATABASE=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	MYSQL
 
-MYSQL_USE=		PHP=pdo_mysql
-PGSQL_USE=		PHP=pdo_pgsql
-SQLITE_USE=		PHP=pdo_sqlite
+MYSQL_USE=	PHP=pdo_mysql
+PGSQL_USE=	PHP=pdo_pgsql
+SQLITE_USE=	PHP=pdo_sqlite
 
 post-extract:
 	@${FIND} ${WRKSRC}/ -type f -name '.*' -delete
