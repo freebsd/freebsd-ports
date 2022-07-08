@@ -1,0 +1,14 @@
+Handles the OAuth2 and OpenID Connect authentication process flow from the
+client side.
+
+* Generates requests based on input parameters
+* Parses response
+* Validates response values
+
+Supported response_types: code, token, id_token, password, client_credentials,
+refresh_token, device_code
+
+Supported client authentication methods: client_secret_basic,
+client_secret_post, client_secret_jwt, private_key_jwt
+
+WWW: https://github.com/babelouest/iddawc
