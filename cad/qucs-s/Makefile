@@ -1,5 +1,6 @@
 PORTNAME=	qucs-s
 DISTVERSION=	0.0.24
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,7 +9,8 @@ COMMENT=	Quite Universal Circuit Simulator: GUI for circuit simulation kernels
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	ngspice:cad/ngspice_rework
+RUN_DEPENDS=	ngspice:cad/ngspice_rework \
+		octave:math/octave
 
 USES=		cmake qt:5
 USE_QT=		core gui printsupport svg widgets buildtools_build linguisttools_build qmake_build
