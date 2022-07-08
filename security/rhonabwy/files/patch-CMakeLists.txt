@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-07-08 18:38:40 UTC
++++ CMakeLists.txt
+@@ -171,7 +171,7 @@ set_target_properties(rhonabwy PROPERTIES
+         PUBLIC_HEADER "${INC_DIR}/rhonabwy.h;${PROJECT_BINARY_DIR}/rhonabwy-cfg.h"
+         VERSION "${LIBRARY_VERSION}"
+         SOVERSION "${LIBRARY_SOVERSION}")
+-target_link_libraries(rhonabwy ${LIBS})
++target_link_libraries(rhonabwy ${LIBS} -L${CMAKE_INSTALL_PREFIX}/lib -lgmp)
+ 
+ set(SEARCH_ORCANIA OFF CACHE BOOL "Force to false") # Avoid to search and download orcania during yder search and download
+ set(SEARCH_ORCANIA_U OFF CACHE BOOL "Force to false") # Avoid to search and download orcania during ulfius search and download
