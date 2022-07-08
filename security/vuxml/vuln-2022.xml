@@ -65,10 +65,12 @@
       </body>
     </description>
     <references>
-      <cvename>CVE-2021-44531</cvename>
-      <cvename>CVE-2021-44532</cvename>
-      <cvename>CVE-2021-44533</cvename>
-      <cvename>CVE-2022-21824</cvename>
+      <cvename>CVE-2022-32212-</cvename>
+      <cvename>CVE-2022-32213</cvename>
+      <cvename>CVE-2022-32214</cvename>
+      <cvename>CVE-2022-32215</cvename>
+      <cvename>CVE-2022-32222</cvename>
+      <cvename>CVE-2022-2097</cvename>
       <url>https://nodejs.org/en/blog/vulnerability/july-2022-security-releases/</url>
     </references>
     <dates>
