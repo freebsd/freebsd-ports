@@ -404,6 +404,7 @@
     SUBDIR += tfel-edf
     SUBDIR += thermofun
     SUBDIR += tinker
+    SUBDIR += trilinos
     SUBDIR += udunits
     SUBDIR += ukrmol+
     SUBDIR += v_sim
