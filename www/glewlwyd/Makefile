@@ -1,17 +1,13 @@
 PORTNAME=	glewlwyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.1
+DISTVERSION=	2.7.2
 CATEGORIES=	www
-MASTER_SITES=	GH
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Single Sign On server, multiple factor authentication
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_FreeBSD_13=	duplicate symbol: global_handler_close_cond
-BROKEN_FreeBSD_14=	duplicate symbol: global_handler_close_cond
 
 BUILD_DEPENDS=	yder>1.4.14:devel/yder \
 		orcania>2.2.1:devel/orcania \
@@ -26,7 +22,9 @@ LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libjwt.so:www/libjwt \
 		libgnutls.so:security/gnutls \
 		libconfig.so:devel/libconfig \
-		liblber.so:net/openldap24-client
+		liblber.so:net/openldap24-client \
+		librhonabwy.so:security/rhonabwy \
+		libiddawc.so:security/iddawc
 
 RUN_DEPENDS=	yder>1.4.14:devel/yder \
 		ulfius>2.7.7:www/ulfius \
@@ -42,7 +40,6 @@ USES=		cmake cpe pgsql sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
-GH_TAGNAME=	e1ea98a
 
 CPE_VENDOR=	glewlwyd_project
 
@@ -60,12 +57,7 @@ SUB_FILES=	glewlwyd glewlwyd.conf.sample
 USERS=		glewlwyd
 GROUPS=		glewlwyd
 
-USE_LDCONFIG=	${PREFIX}/lib/glewlwyd/client \
-		${PREFIX}/lib/glewlwyd/plugin \
-		${PREFIX}/lib/glewlwyd/scheme \
-		${PREFIX}/lib/glewlwyd/user
-
-do-install:
+post-install:
 	# make all our dirs first
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -90,21 +82,6 @@ do-install:
 
 	# create a symlink
 	${LN} -sf ${ETCDIR}/config.json ${STAGEDIR}${WWWDIR}/config.json
-
-	${INSTALL_LIB} ${WRKDIR}/.build/libclientmoddatabase.so    ${STAGEDIR}${PREFIX}/lib/glewlwyd/client
-
-	${INSTALL_LIB} ${WRKDIR}/.build/libprotocol_oauth2.so      ${STAGEDIR}${PREFIX}/lib/glewlwyd/plugin
-	${INSTALL_LIB} ${WRKDIR}/.build/libprotocol_oidc.so        ${STAGEDIR}${PREFIX}/lib/glewlwyd/plugin
-	${INSTALL_LIB} ${WRKDIR}/.build/libprotocol_register.so    ${STAGEDIR}${PREFIX}/lib/glewlwyd/plugin
-
-	${INSTALL_LIB} ${WRKDIR}/.build/libschememodcertificate.so ${STAGEDIR}${PREFIX}/lib/glewlwyd/scheme
-	${INSTALL_LIB} ${WRKDIR}/.build/libschememodemail.so       ${STAGEDIR}${PREFIX}/lib/glewlwyd/scheme
-	${INSTALL_LIB} ${WRKDIR}/.build/libschememodhttp.so        ${STAGEDIR}${PREFIX}/lib/glewlwyd/scheme
-	${INSTALL_LIB} ${WRKDIR}/.build/libschememodotp.so         ${STAGEDIR}${PREFIX}/lib/glewlwyd/scheme
-	${INSTALL_LIB} ${WRKDIR}/.build/libschememodpassword.so    ${STAGEDIR}${PREFIX}/lib/glewlwyd/scheme
-
-	${INSTALL_LIB} ${WRKDIR}/.build/libusermoddatabase.so      ${STAGEDIR}${PREFIX}/lib/glewlwyd/user
-	${INSTALL_LIB} ${WRKDIR}/.build/libusermodhttp.so          ${STAGEDIR}${PREFIX}/lib/glewlwyd/user
 
 	${INSTALL_MAN} ${WRKSRC}/CHANGELOG.md                      ${STAGEDIR}${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/README.md                         ${STAGEDIR}${DATADIR}
