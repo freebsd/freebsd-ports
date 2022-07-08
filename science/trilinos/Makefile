@@ -1,7 +1,7 @@
 PORTNAME=	trilinos
 DISTVERSIONPREFIX=	trilinos-release-
 DISTVERSION=	13-4-0
-CATEGORIES=	science # science
+CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solver for multi-physics engineering and scientific problems
@@ -29,7 +29,7 @@ SHEBANG_FILES=	packages/kokkos/bin/kokkos_launch_compiler \
 
 CXXFLAGS+=	-DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED # fails otherwise with backtrace-related symbol error explicitly printed by Boost
 
-CONFLICTS_INSTALL=	kokkos # installs bundled kokkos, need to figure out how to prevent this
+CONFLICTS_INSTALL=	mpich kokkos # installs bundled kokkos, need to figure out how to prevent this
 
 ## configure Trilinos
 
