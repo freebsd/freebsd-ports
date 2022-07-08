@@ -1,0 +1,8 @@
+The Portable C Audio Library (pcaudiolib) provides a C API to different
+audio devices. Supported backends are ALSA, OSS, and PulseAudio.
+
+This Port can be built with any combination of the supported backends,
+but official packages are distributed with OSS support only, in order
+to not depend on the other backends being installed.
+
+WWW: https://github.com/espeak-ng/pcaudiolib

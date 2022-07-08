@@ -1,0 +1,27 @@
+PORTNAME=	pcaudiolib
+DISTVERSION=	1.2
+CATEGORIES=	audio
+
+MAINTAINER=	se@FreeBSD.org
+COMMENT=	Portable C audio library
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		autoreconf libtool pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	espeak-ng
+GNU_CONFIGURE=	yes
+
+OPTIONS_DEFAULT=	OSS
+OPTIONS_MULTI=		Backend
+OPTIONS_MULTI_Backend=	ALSA OSS PULSEAUDIO
+
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+
+ALSA_CONFIGURE_WITH=		alsa
+OSS_CONFIGURE_WITH=		oss
+PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
+
+.include <bsd.port.mk>
