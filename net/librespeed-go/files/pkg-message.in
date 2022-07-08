@@ -3,8 +3,9 @@
   message: <<EOM
 Copy your preferred example from %%EXAMPLESDIR%% to
 %%WWWDIR%%/index.html.
+To use the backend feature, be sure to copy a -full example.
 	cd %%EXAMPLESDIR%%
-	cp -a index.html %%WWWDIR%%/index.html
+	cp -a example-singleServer-full.html %%WWWDIR%%/index.html
 
 To automatically start librespeed-go at boot time:
         sysrc librespeed_go_enable="YES"
