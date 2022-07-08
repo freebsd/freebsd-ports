@@ -1,9 +1,9 @@
 bin/itw-modularjdk.args
-bin/itweb-javaws
+%%RUST%%bin/itweb-javaws
 bin/itweb-javaws.sh
-bin/itweb-policyeditor
+%%RUST%%bin/itweb-policyeditor
 bin/itweb-policyeditor.sh
-bin/itweb-settings
+%%RUST%%bin/itweb-settings
 bin/itweb-settings.sh
 %%PLUGIN%%%%WEBPLUGIN_DIR%%/IcedTeaPlugin.so
 etc/bash_completion.d/itweb-settings.bash

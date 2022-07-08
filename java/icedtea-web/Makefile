@@ -11,7 +11,6 @@ COMMENT=	Free Java plug-in and Java Web Start for OpenJDK
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	zip:archivers/zip \
-		rustc:lang/${RUST_DEFAULT} \
 		bash:shells/bash \
 		gsed:textproc/gsed \
 		${HAMCREST_JAR}:java/hamcrest \
@@ -53,12 +52,13 @@ TEST_TARGET=	check
 # Upstream archive contains files with UTF-8 names
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
-OPTIONS_DEFINE=	DOCS PLUGIN RHINO TAGSOUP
-OPTIONS_DEFAULT=PLUGIN
+OPTIONS_DEFINE=	DOCS PLUGIN RHINO RUST TAGSOUP
+OPTIONS_DEFAULT=PLUGIN RUST
 OPTIONS_SUB=	yes
 
 PLUGIN_DESC=	Enable the browser plug-in
 RHINO_DESC=	Add support for Proxy Auto Config files
+RUST_DESC=	Build modern launchers written in Rust
 TAGSOUP_DESC=	Enable cleaning up of malformed JNLP files
 
 DOCS_CONFIGURE_ENABLE=	docs
@@ -68,6 +68,8 @@ RHINO_BUILD_DEPENDS=	${JAVASHAREDIR}/rhino/rhino.jar:lang/rhino
 RHINO_RUN_DEPENDS=	${RHINO_BUILD_DEPENDS}
 RHINO_VARS=		RHINO_JAR="${JAVASHAREDIR}/rhino/rhino.jar"
 RHINO_VARS_OFF=		RHINO_JAR=no
+
+RUST_BUILD_DEPENDS=	rustc:lang/${RUST_DEFAULT}
 
 TAGSOUP_BUILD_DEPENDS=	${JAVALIBDIR}/tagsoup.jar:textproc/tagsoup
 TAGSOUP_RUN_DEPENDS=	${TAGSOUP_BUILD_DEPENDS}
