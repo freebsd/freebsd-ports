@@ -1,5 +1,5 @@
 PORTNAME=	cxxmatrix
-DISTVERSION=	g20210628
+DISTVERSION=	g20220324
 CATEGORIES=	misc
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -13,7 +13,7 @@ BUILD_DEPENDS=	gawk:lang/gawk
 USES=		compiler:c++17-lang gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	akinomyoga
-GH_TAGNAME=	e70ecca
+GH_TAGNAME=	f338ed4
 
 MAKEFILE=	GNUmakefile
 
