@@ -8,4 +8,4 @@ articulation clearer and easier to listen to for long periods.
 It can run as a command line program to speak text from a file or
 from stdin.
 
-WWW: http://espeak.sourceforge.net/
+WWW: https://github.com/espeak-ng/espeak-ng/
