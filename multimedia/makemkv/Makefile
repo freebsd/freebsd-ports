@@ -37,13 +37,14 @@ LICENSE_DISTFILES_OpenSSL=	openssl-${OPENSSLFULLVER}.tar.gz
 LICENSE_DISTFILES_MAKEMKV=	makemkv-bin-${PORTVERSION}.tar.gz \
 				makemkv-oss-${PORTVERSION}.tar.gz
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 USES=	gmake linux pkgconfig perl5
 USE_LINUX=	base expat expat:build openssl openssl:build devtools:build
 USE_PERL5=	build
-BUILD_DEPENDS=	nasm>0:devel/nasm \
-		${LOCALBASE}/include/expat.h:textproc/expat2 \
-		patchelf>0:sysutils/patchelf
+BUILD_DEPENDS=	${LOCALBASE}/include/expat.h:textproc/expat2 \
+		patchelf>0:sysutils/patchelf \
+		${BUILD_DEPENDS_${FFMPEGARCH}}
+BUILD_DEPENDS_x86=	nasm>0:devel/nasm
 
 WRKSRC=		${WRKDIR}/makemkv-oss-${PORTVERSION}
 
@@ -61,8 +62,9 @@ OPENSSLFULLVER=	${OPENSSLVERSION}${OPENSSLPATCHLEVEL}
 
 LINUXARCH=	${ARCH:S/amd64/x86_64/}
 LINUXTRIPLET=	${LINUXARCH}-redhat-linux
-LINUXLIBDIR=	${LINUXBASE}/${"${LINUXARCH:Mx86_64}" != "":?lib64:lib}
-OPENSSLTARGET=	${"${LINUXARCH:Mx86_64}" != "":?linux-x86_64:linux-elf}
+LINUXLIBDIR=	${LINUXBASE}/${"${LINUXARCH:Mi386}" != "":?lib:lib64}
+OPENSSLTARGET=	linux-${LINUXARCH:S/i386/elf/}
+FFMPEGARCH=	${"${LINUXARCH:Maarch64}" != "":?aarch64:x86}
 
 OPTIONS_DEFINE=	EXAMPLES
 
@@ -114,6 +116,8 @@ post-patch:
 			-e 's:x86_64:amd64:' \
 			-e 's:i686:i386:' \
 			-e 's:-t \([^ ]*\) \([^ ]*\):\2 \1:' \
+			-e 's:ARCH=:BINARCH=:' \
+			-e 's:bin/$$(ARCH:bin/$$(BINARCH:' \
 			${WRKDIR}/makemkv-bin-${PORTVERSION}/Makefile
 
 pre-configure:
@@ -139,7 +143,7 @@ pre-configure:
 			--cross-prefix=${LINUXTRIPLET}- --arch=${LINUXARCH} \
 			--target-os=linux --host-cc=${CC}; \
 		CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \
-		${MAKE_CMD} ${_MAKE_JOBS} V=1 ARCH=x86 all install
+		${MAKE_CMD} ${_MAKE_JOBS} V=1 ARCH=${FFMPEGARCH} all install
 		# OpenSSL headers
 		cd ${WRKDIR}/openssl-${OPENSSLFULLVER}; \
 		./Configure --openssldir= --prefix=/usr ${OPENSSLTARGET}
