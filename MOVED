@@ -17493,3 +17493,6 @@ sysutils/cfengine316||2022-07-06|Has expired: Expire one year after cfengine 3.1
 sysutils/cfengine-masterfiles316||2022-07-06|Has expired: Expire one year after cfengine 3.18.0 released
 devel/hs-hls-install||2022-07-06|Removed: was a build dependency and not needed anymore
 devel/hs-haddock||2022-07-06|Removed: Haddock is shipped as part of lang/ghc
+x11/gsynaptics||2022-07-08|Has expired: Abandonware using old gnome2 libs
+x11/alltray||2022-07-08|Has expired: abandonware
+x11/simdock||2022-07-08|Has expired: Abandonware using deprecated gnome2 libs

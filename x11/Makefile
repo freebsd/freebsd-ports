@@ -7,7 +7,6 @@
     SUBDIR += admiral
     SUBDIR += alacritty
     SUBDIR += albert
-    SUBDIR += alltray
     SUBDIR += alttab
     SUBDIR += aminal
     SUBDIR += antimicro
@@ -96,7 +95,6 @@
     SUBDIR += gskrab
     SUBDIR += gstreamer1-plugins-x
     SUBDIR += gstreamer1-plugins-ximagesrc
-    SUBDIR += gsynaptics
     SUBDIR += gtk-app-menu
     SUBDIR += gtk-theme-switch2
     SUBDIR += gtkchtheme
@@ -329,7 +327,6 @@
     SUBDIR += setxkbmap
     SUBDIR += showkeys
     SUBDIR += showmethekey
-    SUBDIR += simdock
     SUBDIR += simplestroke
     SUBDIR += sirula
     SUBDIR += slick-greeter
