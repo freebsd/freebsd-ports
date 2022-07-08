@@ -2,15 +2,17 @@
 
 PORTNAME=	espeak-ng
 PORTVERSION=	1.51.1
+PORTREVISION=	1
 CATEGORIES=	audio
 #MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 #DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	Software speech synthesizer
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	ronn:textproc/rubygem-ronn
 LIB_DEPENDS=	libpcaudio.so:audio/pcaudiolib
 
 USES=		autoreconf gmake libtool localbase
@@ -31,6 +33,8 @@ pre-build:
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	${RLN} ${STAGEDIR}${PREFIX}/man/man1/espeak-ng.1 \
+			${STAGEDIR}${PREFIX}/man/man1/espeak.1
 	${LN} -sf libespeak-ng.so ${STAGEDIR}${PREFIX}/lib/libespeak.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libespeak-ng.so*
