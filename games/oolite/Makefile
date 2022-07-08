@@ -9,9 +9,6 @@ DIST_SUBDIR=		oolite
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Trade and combat space simulator, clone of Elite
 
-DEPRECATED=		Depends on expired audio/espeak
-EXPIRATION_DATE=	2022-09-30
-
 LICENSE=		CC-BY-NC-SA-3.0 GPLv2 ZLIB
 LICENSE_COMB=		multi
 LICENSE_FILE_CC-BY-NC-SA-3.0=	${WRKSRC}/Doc/LICENSE.TXT
