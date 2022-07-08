@@ -1,6 +1,6 @@
-TIMESTAMP = 1655737838
-SHA256 (VictoriaMetrics-VictoriaMetrics-v1.78.0_GH0.tar.gz) = 256e1081e6dc9831af8a586cb33e46c3c7b9b9987ec6c1a0b5182b235520b285
-SIZE (VictoriaMetrics-VictoriaMetrics-v1.78.0_GH0.tar.gz) = 18802162
+TIMESTAMP = 1657231253
+SHA256 (VictoriaMetrics-VictoriaMetrics-v1.78.1_GH0.tar.gz) = b94a669ab23ab1ba9cf8004de188692ed709a3357110f6254356bb4c90a66279
+SIZE (VictoriaMetrics-VictoriaMetrics-v1.78.1_GH0.tar.gz) = 18802449
 SHA256 (VictoriaMetrics-fastcache-v1.10.0_GH0.tar.gz) = ff960827ae68ade13af271b64ba5ac4e1a0d72f10990a3f80bc857aaa4837496
 SIZE (VictoriaMetrics-fastcache-v1.10.0_GH0.tar.gz) = 896072
 SHA256 (VictoriaMetrics-fasthttp-v1.1.0_GH0.tar.gz) = 87accfed9443475db2c7556108c3caa941143f523164841ca70cf5e1ef2fe122
