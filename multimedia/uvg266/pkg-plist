@@ -1,0 +1,5 @@
+bin/uvg266
+include/uvg266.h
+lib/libuvg266.so
+libdata/pkgconfig/uvg266.pc
+share/man/man1/uvg266.1.gz
