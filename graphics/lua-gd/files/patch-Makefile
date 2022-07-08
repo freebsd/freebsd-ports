@@ -1,0 +1,18 @@
+--- Makefile.orig	2020-02-23 02:33:20 UTC
++++ Makefile
+@@ -44,12 +44,12 @@ OUTFILE=gd.so
+ LUAPKG=lua5.1
+ OUTFILE=gd.so
+ 
+-CFLAGS=-O3 -Wall -fPIC $(OMITFP)
+-CFLAGS+=`pkg-config $(LUAPKG) --cflags`
++CFLAGS+=-Wall -fPIC # $(OMITFP)
++CFLAGS+=`pkg-config $(LUAPKG) gdlib --cflags`
+ CFLAGS+=-DVERSION=\"$(VERSION)\"
+ 
+ GDFEATURES=-DGD_XPM -DGD_JPEG -DGD_FONTCONFIG -DGD_FREETYPE -DGD_PNG -DGD_GIF
+-LFLAGS=-shared `pkg-config $(LUAPKG) --libs` -lgd
++LFLAGS=-shared `pkg-config $(LUAPKG) gdlib --libs`
+ 
+ INSTALL_PATH := `pkg-config $(LUAPKG) --variable=INSTALL_CMOD`
+ 
