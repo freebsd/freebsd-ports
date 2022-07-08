@@ -1,3 +1,82 @@
+  <vuln vid="b9210706-feb0-11ec-81fa-1c697a616631">
+    <topic>Node.js -- July 7th 2022 Security Releases</topic>
+    <affects>
+      <package>
+	<name>node</name>
+	<range><ge>14.0.0</ge><lt>14.20.0</lt></range>
+	<range><ge>16.0.0</ge><lt>16.16.0</lt></range>
+	<range><ge>18.0.0</ge><lt>18.5.0</lt></range>
+      </package>
+      <package>
+	<name>node16</name>
+	<range><lt>16.16.0</lt></range>
+      </package>
+      <package>
+	<name>node14</name>
+	<range><lt>14.20.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Node.js reports:</p>
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/july-2022-security-releases/">
+	  <h1>HTTP Request Smuggling - Flawed Parsing of Transfer-Encoding
+	  (Medium)(CVE-2022-32213)</h1>
+	  <p>The llhttp parser in the http module does not correctly parse and
+	  validate Transfer-Encoding headers. This can lead to HTTP Request
+	  Smuggling (HRS).</p>
+	  <h1>HTTP Request Smuggling - Improper Delimiting of Header Fields
+	  (Medium)(CVE-2022-32214)</h1>
+	  <p>The llhttp parser in the http module does not strictly use the CRLF
+	  sequence to delimit HTTP requests. This can lead to HTTP Request
+	  Smuggling (HRS).</p>
+	  <h1>HTTP Request Smuggling - Incorrect Parsing of Multi-line
+	  Transfer-Encoding (Medium)(CVE-2022-32215)</h1>
+	  <p>The llhttp parser in the http module does not correctly handle
+	  multi-line Transfer-Encoding headers. This can lead to HTTP Request
+	  Smuggling (HRS).</p>
+	  <h1>DNS rebinding in --inspect via invalid IP addresses
+	  (High)(CVE-2022-32212)</h1>
+	  <p>The IsAllowedHost check can easily be bypassed because IsIPAddress
+	  does not properly check if an IP address is invalid or not. When an
+	  invalid IPv4 address is provided (for instance 10.0.2.555 is
+	  provided), browsers (such as Firefox) will make DNS requests to the
+	  DNS server, providing a vector for an attacker-controlled DNS server
+	  or a MITM who can spoof DNS responses to perform a rebinding attack
+	  and hence connect to the WebSocket debugger, allowing for arbitrary
+	  code execution. This is a bypass of CVE-2021-22884.</p>
+	  <h1>Attempt to read openssl.cnf from /home/iojs/build/ upon startup
+	  (Medium)(CVE-2022-32222)</h1>
+	  <p>When Node.js starts on linux based systems, it attempts to read
+	  /home/iojs/build/ws/out/Release/obj.target/deps/openssl/openssl.cnf,
+	  which ordinarily doesn't exist. On some shared systems an attacker may
+	  be able create this file and therefore affect the default OpenSSL
+	  configuration for other users.</p>
+	  <h1>OpenSSL - AES OCB fails to encrypt some bytes
+	  (Medium)(CVE-2022-2097)</h1>
+	  <p>AES OCB mode for 32-bit x86 platforms using the AES-NI assembly
+	  optimised implementation will not encrypt the entirety of the data
+	  under some circumstances. This could reveal sixteen bytes of data that
+	  was preexisting in the memory that wasn't written. In the special case
+	  of "in place" encryption, sixteen bytes of the plaintext would be
+	  revealed.  Since OpenSSL does not support OCB based cipher suites for
+	  TLS and DTLS, they are both unaffected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44531</cvename>
+      <cvename>CVE-2021-44532</cvename>
+      <cvename>CVE-2021-44533</cvename>
+      <cvename>CVE-2022-21824</cvename>
+      <url>https://nodejs.org/en/blog/vulnerability/july-2022-security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2022-07-05</discovery>
+      <entry>2022-07-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="744ec9d7-fe0f-11ec-bcd2-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
