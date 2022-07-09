@@ -78,6 +78,8 @@ lib/ircd-hybrid/modules/autoload/m_restart.la
 lib/ircd-hybrid/modules/autoload/m_restart.so
 lib/ircd-hybrid/modules/autoload/m_resv.la
 lib/ircd-hybrid/modules/autoload/m_resv.so
+lib/ircd-hybrid/modules/autoload/m_resync.la
+lib/ircd-hybrid/modules/autoload/m_resync.so
 lib/ircd-hybrid/modules/autoload/m_set.la
 lib/ircd-hybrid/modules/autoload/m_set.so
 lib/ircd-hybrid/modules/autoload/m_stats.la
@@ -150,6 +152,8 @@ lib/ircd-hybrid/modules/m_kill.la
 lib/ircd-hybrid/modules/m_kill.so
 lib/ircd-hybrid/modules/m_message.la
 lib/ircd-hybrid/modules/m_message.so
+lib/ircd-hybrid/modules/m_mlock.la
+lib/ircd-hybrid/modules/m_mlock.so
 lib/ircd-hybrid/modules/m_mode.la
 lib/ircd-hybrid/modules/m_mode.so
 lib/ircd-hybrid/modules/m_nick.la
@@ -194,6 +198,7 @@ man/man8/ircd.8.gz
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/lusers
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/map
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/module
+%%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/monitor
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/motd
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/names
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/nick
