@@ -10,6 +10,8 @@ COMMENT=	Irssi plugin to connect to Jabber network
 
 LICENSE=	GPLv2
 
+BROKEN=		Doesn't build with Irssi 1.4.1
+
 BUILD_DEPENDS=	irssi:irc/irssi
 LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
 RUN_DEPENDS:=	${BUILD_DEPENDS}
