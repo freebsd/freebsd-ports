@@ -9,9 +9,18 @@ bin/bro-config
 bin/bro-cut
 bin/broctl
 bin/broker-benchmark
-bin/broker-cluster-benchmark
 %%ZEEKCTL%%bin/capstats
+bin/gen-zam
+bin/hilti-config
+bin/hiltic
 bin/paraglob-test
+bin/spicy-build
+bin/spicy-config
+bin/spicy-driver
+bin/spicy-dump
+bin/spicy-precompile-headers
+bin/spicyc
+bin/spicyz
 %%ZEEKCTL%%bin/trace-summary
 bin/zeek
 bin/zeek-config
@@ -28,64 +37,54 @@ include/binpac/binpac_bytestring.h
 include/binpac/binpac_exception.h
 include/binpac/binpac_regex.h
 %%BROKER%%include/broker/address.hh
-%%BROKER%%include/broker/alm/stream_transport.hh
+%%BROKER%%include/broker/alm/multipath.hh
+%%BROKER%%include/broker/alm/routing_table.hh
 %%BROKER%%include/broker/api_flags.hh
-%%BROKER%%include/broker/atoms.hh
 %%BROKER%%include/broker/backend.hh
 %%BROKER%%include/broker/backend_options.hh
 %%BROKER%%include/broker/bad_variant_access.hh
-%%BROKER%%include/broker/bro.hh
 %%BROKER%%include/broker/broker.hh
 %%BROKER%%include/broker/config.hh
 %%BROKER%%include/broker/configuration.hh
 %%BROKER%%include/broker/convert.hh
-%%BROKER%%include/broker/core_actor.hh
+%%BROKER%%include/broker/cow_tuple.hh
 %%BROKER%%include/broker/data.hh
 %%BROKER%%include/broker/defaults.hh
 %%BROKER%%include/broker/detail/abstract_backend.hh
+%%BROKER%%include/broker/detail/algorithms.hh
 %%BROKER%%include/broker/detail/appliers.hh
 %%BROKER%%include/broker/detail/assert.hh
 %%BROKER%%include/broker/detail/blob.hh
-%%BROKER%%include/broker/detail/central_dispatcher.hh
-%%BROKER%%include/broker/detail/clone_actor.hh
-%%BROKER%%include/broker/detail/core_recorder.hh
-%%BROKER%%include/broker/detail/core_scatterer.hh
-%%BROKER%%include/broker/detail/data_generator.hh
+%%BROKER%%include/broker/detail/comparable.hh
 %%BROKER%%include/broker/detail/die.hh
 %%BROKER%%include/broker/detail/filesystem.hh
 %%BROKER%%include/broker/detail/flare.hh
-%%BROKER%%include/broker/detail/flare_actor.hh
-%%BROKER%%include/broker/detail/generator_file_reader.hh
-%%BROKER%%include/broker/detail/generator_file_writer.hh
 %%BROKER%%include/broker/detail/has_network_info.hh
 %%BROKER%%include/broker/detail/hash.hh
-%%BROKER%%include/broker/detail/item_scope.hh
-%%BROKER%%include/broker/detail/lift.hh
+%%BROKER%%include/broker/detail/inspect_enum.hh
 %%BROKER%%include/broker/detail/make_backend.hh
-%%BROKER%%include/broker/detail/master_actor.hh
-%%BROKER%%include/broker/detail/master_resolver.hh
 %%BROKER%%include/broker/detail/memory_backend.hh
-%%BROKER%%include/broker/detail/meta_command_writer.hh
-%%BROKER%%include/broker/detail/meta_data_writer.hh
-%%BROKER%%include/broker/detail/network_cache.hh
+%%BROKER%%include/broker/detail/monotonic_buffer_resource.hh
+%%BROKER%%include/broker/detail/native_socket.hh
+%%BROKER%%include/broker/detail/next_tick.hh
+%%BROKER%%include/broker/detail/opaque_type.hh
 %%BROKER%%include/broker/detail/operators.hh
+%%BROKER%%include/broker/detail/overload.hh
+%%BROKER%%include/broker/detail/peer_status_map.hh
+%%BROKER%%include/broker/detail/pp.hh
 %%BROKER%%include/broker/detail/prefix_matcher.hh
 %%BROKER%%include/broker/detail/radix_tree.hh
-%%BROKER%%include/broker/detail/read_value.hh
-%%BROKER%%include/broker/detail/retry_state.hh
-%%BROKER%%include/broker/detail/rocksdb_backend.hh
-%%BROKER%%include/broker/detail/scoped_flare_actor.hh
-%%BROKER%%include/broker/detail/shared_publisher_queue.hh
-%%BROKER%%include/broker/detail/shared_queue.hh
-%%BROKER%%include/broker/detail/shared_subscriber_queue.hh
+%%BROKER%%include/broker/detail/sink_driver.hh
+%%BROKER%%include/broker/detail/source_driver.hh
 %%BROKER%%include/broker/detail/sqlite_backend.hh
-%%BROKER%%include/broker/detail/store_actor.hh
+%%BROKER%%include/broker/detail/store_state.hh
 %%BROKER%%include/broker/detail/subscription.hh
 %%BROKER%%include/broker/detail/type_traits.hh
-%%BROKER%%include/broker/detail/unipath_manager.hh
-%%BROKER%%include/broker/detail/write_value.hh
+%%BROKER%%include/broker/domain_options.hh
 %%BROKER%%include/broker/endpoint.hh
+%%BROKER%%include/broker/endpoint_id.hh
 %%BROKER%%include/broker/endpoint_info.hh
+%%BROKER%%include/broker/entity_id.hh
 %%BROKER%%include/broker/enum_value.hh
 %%BROKER%%include/broker/error.hh
 %%BROKER%%include/broker/expected.hh
@@ -93,526 +92,446 @@ include/binpac/binpac_regex.h
 %%BROKER%%include/broker/frontend.hh
 %%BROKER%%include/broker/fwd.hh
 %%BROKER%%include/broker/internal_command.hh
-%%BROKER%%include/broker/logger.hh
+%%BROKER%%include/broker/lamport_timestamp.hh
 %%BROKER%%include/broker/mailbox.hh
 %%BROKER%%include/broker/message.hh
-%%BROKER%%include/broker/mixin/connector.hh
-%%BROKER%%include/broker/mixin/data_store_manager.hh
-%%BROKER%%include/broker/mixin/notifier.hh
-%%BROKER%%include/broker/mixin/recorder.hh
 %%BROKER%%include/broker/network_info.hh
 %%BROKER%%include/broker/none.hh
-%%BROKER%%include/broker/optional.hh
-%%BROKER%%include/broker/peer_filter.hh
 %%BROKER%%include/broker/peer_flags.hh
 %%BROKER%%include/broker/peer_info.hh
 %%BROKER%%include/broker/peer_status.hh
 %%BROKER%%include/broker/port.hh
 %%BROKER%%include/broker/publisher.hh
 %%BROKER%%include/broker/publisher_id.hh
+%%BROKER%%include/broker/shutdown_options.hh
 %%BROKER%%include/broker/snapshot.hh
+%%BROKER%%include/broker/span.hh
 %%BROKER%%include/broker/status.hh
 %%BROKER%%include/broker/status_subscriber.hh
 %%BROKER%%include/broker/store.hh
 %%BROKER%%include/broker/store_event.hh
 %%BROKER%%include/broker/subnet.hh
 %%BROKER%%include/broker/subscriber.hh
-%%BROKER%%include/broker/subscriber_base.hh
+%%BROKER%%include/broker/telemetry/counter.hh
+%%BROKER%%include/broker/telemetry/fwd.hh
+%%BROKER%%include/broker/telemetry/gauge.hh
+%%BROKER%%include/broker/telemetry/histogram.hh
+%%BROKER%%include/broker/telemetry/metric_family.hh
+%%BROKER%%include/broker/telemetry/metric_registry.hh
+%%BROKER%%include/broker/telemetry/metric_registry_impl.hh
 %%BROKER%%include/broker/time.hh
 %%BROKER%%include/broker/timeout.hh
 %%BROKER%%include/broker/topic.hh
 %%BROKER%%include/broker/version.hh
+%%BROKER%%include/broker/worker.hh
 %%BROKER%%include/broker/zeek.hh
-%%BROKER%%include/caf/abstract_actor.hpp
-%%BROKER%%include/caf/abstract_channel.hpp
-%%BROKER%%include/caf/abstract_group.hpp
-%%BROKER%%include/caf/actor.hpp
-%%BROKER%%include/caf/actor_addr.hpp
-%%BROKER%%include/caf/actor_cast.hpp
-%%BROKER%%include/caf/actor_clock.hpp
-%%BROKER%%include/caf/actor_companion.hpp
-%%BROKER%%include/caf/actor_config.hpp
-%%BROKER%%include/caf/actor_control_block.hpp
-%%BROKER%%include/caf/actor_factory.hpp
-%%BROKER%%include/caf/actor_ostream.hpp
-%%BROKER%%include/caf/actor_pool.hpp
-%%BROKER%%include/caf/actor_profiler.hpp
-%%BROKER%%include/caf/actor_proxy.hpp
-%%BROKER%%include/caf/actor_registry.hpp
-%%BROKER%%include/caf/actor_storage.hpp
-%%BROKER%%include/caf/actor_system.hpp
-%%BROKER%%include/caf/actor_system_config.hpp
-%%BROKER%%include/caf/actor_traits.hpp
-%%BROKER%%include/caf/after.hpp
-%%BROKER%%include/caf/all.hpp
-%%BROKER%%include/caf/allowed_unsafe_message_type.hpp
-%%BROKER%%include/caf/atom.hpp
-%%BROKER%%include/caf/attach_continuous_stream_source.hpp
-%%BROKER%%include/caf/attach_continuous_stream_stage.hpp
-%%BROKER%%include/caf/attach_stream_sink.hpp
-%%BROKER%%include/caf/attach_stream_source.hpp
-%%BROKER%%include/caf/attach_stream_stage.hpp
-%%BROKER%%include/caf/attachable.hpp
-%%BROKER%%include/caf/behavior.hpp
-%%BROKER%%include/caf/behavior_policy.hpp
-%%BROKER%%include/caf/binary_deserializer.hpp
-%%BROKER%%include/caf/binary_serializer.hpp
-%%BROKER%%include/caf/blocking_actor.hpp
-%%BROKER%%include/caf/broadcast_downstream_manager.hpp
-%%BROKER%%include/caf/buffered_downstream_manager.hpp
-%%BROKER%%include/caf/byte.hpp
-%%BROKER%%include/caf/byte_address.hpp
-%%BROKER%%include/caf/byte_buffer.hpp
-%%BROKER%%include/caf/byte_span.hpp
-%%BROKER%%include/caf/caf_main.hpp
-%%BROKER%%include/caf/callback.hpp
-%%BROKER%%include/caf/catch_all.hpp
-%%BROKER%%include/caf/check_typed_input.hpp
-%%BROKER%%include/caf/composed_type.hpp
-%%BROKER%%include/caf/config.hpp
-%%BROKER%%include/caf/config_option.hpp
-%%BROKER%%include/caf/config_option_adder.hpp
-%%BROKER%%include/caf/config_option_set.hpp
-%%BROKER%%include/caf/config_value.hpp
-%%BROKER%%include/caf/config_value_reader.hpp
-%%BROKER%%include/caf/config_value_writer.hpp
-%%BROKER%%include/caf/const_typed_message_view.hpp
-%%BROKER%%include/caf/cow_tuple.hpp
-%%BROKER%%include/caf/credit_controller.hpp
-%%BROKER%%include/caf/decorator/sequencer.hpp
-%%BROKER%%include/caf/decorator/splitter.hpp
-%%BROKER%%include/caf/deduce_mpi.hpp
-%%BROKER%%include/caf/deep_to_string.hpp
-%%BROKER%%include/caf/default_attachable.hpp
-%%BROKER%%include/caf/default_downstream_manager.hpp
-%%BROKER%%include/caf/default_enum_inspect.hpp
-%%BROKER%%include/caf/default_sum_type_access.hpp
-%%BROKER%%include/caf/defaults.hpp
-%%BROKER%%include/caf/delegated.hpp
-%%BROKER%%include/caf/deserializer.hpp
-%%BROKER%%include/caf/detail/abstract_worker.hpp
-%%BROKER%%include/caf/detail/abstract_worker_hub.hpp
-%%BROKER%%include/caf/detail/algorithms.hpp
-%%BROKER%%include/caf/detail/append_hex.hpp
-%%BROKER%%include/caf/detail/append_percent_encoded.hpp
-%%BROKER%%include/caf/detail/apply_args.hpp
-%%BROKER%%include/caf/detail/arg_wrapper.hpp
-%%BROKER%%include/caf/detail/as_mutable_ref.hpp
-%%BROKER%%include/caf/detail/assign_inspector_try_result.hpp
-%%BROKER%%include/caf/detail/behavior_impl.hpp
-%%BROKER%%include/caf/detail/behavior_stack.hpp
-%%BROKER%%include/caf/detail/blocking_behavior.hpp
-%%BROKER%%include/caf/detail/bounds_checker.hpp
-%%BROKER%%include/caf/detail/build_config.hpp
-%%BROKER%%include/caf/detail/call_cfun.hpp
-%%BROKER%%include/caf/detail/cas_weak.hpp
-%%BROKER%%include/caf/detail/comparable.hpp
-%%BROKER%%include/caf/detail/config_consumer.hpp
-%%BROKER%%include/caf/detail/consumer.hpp
-%%BROKER%%include/caf/detail/core_export.hpp
-%%BROKER%%include/caf/detail/default_invoke_result_visitor.hpp
-%%BROKER%%include/caf/detail/delegate_serialize.hpp
-%%BROKER%%include/caf/detail/double_ended_queue.hpp
-%%BROKER%%include/caf/detail/encode_base64.hpp
-%%BROKER%%include/caf/detail/enqueue_result.hpp
-%%BROKER%%include/caf/detail/functor_attachable.hpp
-%%BROKER%%include/caf/detail/gcd.hpp
-%%BROKER%%include/caf/detail/get_mac_addresses.hpp
-%%BROKER%%include/caf/detail/get_process_id.hpp
-%%BROKER%%include/caf/detail/get_root_uuid.hpp
-%%BROKER%%include/caf/detail/glob_match.hpp
-%%BROKER%%include/caf/detail/group_tunnel.hpp
-%%BROKER%%include/caf/detail/ieee_754.hpp
-%%BROKER%%include/caf/detail/implicit_conversions.hpp
-%%BROKER%%include/caf/detail/init_fun_factory.hpp
-%%BROKER%%include/caf/detail/int_list.hpp
-%%BROKER%%include/caf/detail/invoke_result_visitor.hpp
-%%BROKER%%include/caf/detail/io_export.hpp
-%%BROKER%%include/caf/detail/is_complete.hpp
-%%BROKER%%include/caf/detail/is_one_of.hpp
-%%BROKER%%include/caf/detail/limited_vector.hpp
-%%BROKER%%include/caf/detail/local_group_module.hpp
-%%BROKER%%include/caf/detail/log_level.hpp
-%%BROKER%%include/caf/detail/make_meta_object.hpp
-%%BROKER%%include/caf/detail/make_unique.hpp
-%%BROKER%%include/caf/detail/mask_bits.hpp
-%%BROKER%%include/caf/detail/message_builder_element.hpp
-%%BROKER%%include/caf/detail/message_data.hpp
-%%BROKER%%include/caf/detail/meta_object.hpp
-%%BROKER%%include/caf/detail/move_if_not_ptr.hpp
-%%BROKER%%include/caf/detail/network_order.hpp
-%%BROKER%%include/caf/detail/offset_at.hpp
-%%BROKER%%include/caf/detail/openssl_export.hpp
-%%BROKER%%include/caf/detail/optional_message_visitor.hpp
-%%BROKER%%include/caf/detail/overload.hpp
-%%BROKER%%include/caf/detail/padded_size.hpp
-%%BROKER%%include/caf/detail/parse.hpp
-%%BROKER%%include/caf/detail/parser/add_ascii.hpp
-%%BROKER%%include/caf/detail/parser/ascii_to_int.hpp
-%%BROKER%%include/caf/detail/parser/chars.hpp
-%%BROKER%%include/caf/detail/parser/fsm.hpp
-%%BROKER%%include/caf/detail/parser/fsm_undef.hpp
-%%BROKER%%include/caf/detail/parser/is_char.hpp
-%%BROKER%%include/caf/detail/parser/is_digit.hpp
-%%BROKER%%include/caf/detail/parser/read_bool.hpp
-%%BROKER%%include/caf/detail/parser/read_config.hpp
-%%BROKER%%include/caf/detail/parser/read_floating_point.hpp
-%%BROKER%%include/caf/detail/parser/read_ipv4_address.hpp
-%%BROKER%%include/caf/detail/parser/read_ipv6_address.hpp
-%%BROKER%%include/caf/detail/parser/read_number.hpp
-%%BROKER%%include/caf/detail/parser/read_number_or_timespan.hpp
-%%BROKER%%include/caf/detail/parser/read_signed_integer.hpp
-%%BROKER%%include/caf/detail/parser/read_string.hpp
-%%BROKER%%include/caf/detail/parser/read_timespan.hpp
-%%BROKER%%include/caf/detail/parser/read_unsigned_integer.hpp
-%%BROKER%%include/caf/detail/parser/read_uri.hpp
-%%BROKER%%include/caf/detail/parser/sub_ascii.hpp
-%%BROKER%%include/caf/detail/path_state.hpp
-%%BROKER%%include/caf/detail/pp.hpp
-%%BROKER%%include/caf/detail/pretty_type_name.hpp
-%%BROKER%%include/caf/detail/print.hpp
-%%BROKER%%include/caf/detail/private_thread.hpp
-%%BROKER%%include/caf/detail/private_thread_pool.hpp
-%%BROKER%%include/caf/detail/profiled_send.hpp
-%%BROKER%%include/caf/detail/prometheus_broker.hpp
-%%BROKER%%include/caf/detail/pseudo_tuple.hpp
-%%BROKER%%include/caf/detail/raw_access.hpp
-%%BROKER%%include/caf/detail/remote_group_module.hpp
-%%BROKER%%include/caf/detail/ringbuffer.hpp
-%%BROKER%%include/caf/detail/ripemd_160.hpp
-%%BROKER%%include/caf/detail/safe_equal.hpp
-%%BROKER%%include/caf/detail/scope_guard.hpp
-%%BROKER%%include/caf/detail/select_all.hpp
-%%BROKER%%include/caf/detail/select_integer_type.hpp
-%%BROKER%%include/caf/detail/serialized_size.hpp
-%%BROKER%%include/caf/detail/set_thread_name.hpp
-%%BROKER%%include/caf/detail/shared_spinlock.hpp
-%%BROKER%%include/caf/detail/simple_actor_clock.hpp
-%%BROKER%%include/caf/detail/size_based_credit_controller.hpp
-%%BROKER%%include/caf/detail/socket_guard.hpp
-%%BROKER%%include/caf/detail/spawn_fwd.hpp
-%%BROKER%%include/caf/detail/spawnable.hpp
-%%BROKER%%include/caf/detail/split_join.hpp
-%%BROKER%%include/caf/detail/squashed_int.hpp
-%%BROKER%%include/caf/detail/stream_distribution_tree.hpp
-%%BROKER%%include/caf/detail/stream_sink_driver_impl.hpp
-%%BROKER%%include/caf/detail/stream_sink_impl.hpp
-%%BROKER%%include/caf/detail/stream_source_driver_impl.hpp
-%%BROKER%%include/caf/detail/stream_source_impl.hpp
-%%BROKER%%include/caf/detail/stream_stage_driver_impl.hpp
-%%BROKER%%include/caf/detail/stream_stage_impl.hpp
-%%BROKER%%include/caf/detail/stringification_inspector.hpp
-%%BROKER%%include/caf/detail/sync_request_bouncer.hpp
-%%BROKER%%include/caf/detail/tail_argument_token.hpp
-%%BROKER%%include/caf/detail/tbind.hpp
-%%BROKER%%include/caf/detail/test_actor_clock.hpp
-%%BROKER%%include/caf/detail/thread_safe_actor_clock.hpp
-%%BROKER%%include/caf/detail/tick_emitter.hpp
-%%BROKER%%include/caf/detail/token_based_credit_controller.hpp
-%%BROKER%%include/caf/detail/try_serialize.hpp
-%%BROKER%%include/caf/detail/type_id_list_builder.hpp
-%%BROKER%%include/caf/detail/type_list.hpp
-%%BROKER%%include/caf/detail/type_pair.hpp
-%%BROKER%%include/caf/detail/type_traits.hpp
-%%BROKER%%include/caf/detail/typed_actor_util.hpp
-%%BROKER%%include/caf/detail/unique_function.hpp
-%%BROKER%%include/caf/detail/unordered_flat_map.hpp
-%%BROKER%%include/caf/detail/variant_data.hpp
-%%BROKER%%include/caf/detail/worker_hub.hpp
-%%BROKER%%include/caf/dictionary.hpp
-%%BROKER%%include/caf/downstream.hpp
-%%BROKER%%include/caf/downstream_manager.hpp
-%%BROKER%%include/caf/downstream_manager_base.hpp
-%%BROKER%%include/caf/downstream_msg.hpp
-%%BROKER%%include/caf/error.hpp
-%%BROKER%%include/caf/error_code.hpp
-%%BROKER%%include/caf/event_based_actor.hpp
-%%BROKER%%include/caf/exec_main.hpp
-%%BROKER%%include/caf/execution_unit.hpp
-%%BROKER%%include/caf/exit_reason.hpp
-%%BROKER%%include/caf/expected.hpp
-%%BROKER%%include/caf/extend.hpp
-%%BROKER%%include/caf/forwarding_actor_proxy.hpp
-%%BROKER%%include/caf/function_view.hpp
-%%BROKER%%include/caf/fused_downstream_manager.hpp
-%%BROKER%%include/caf/fwd.hpp
-%%BROKER%%include/caf/group.hpp
-%%BROKER%%include/caf/group_manager.hpp
-%%BROKER%%include/caf/group_module.hpp
-%%BROKER%%include/caf/hash/fnv.hpp
-%%BROKER%%include/caf/hash/sha1.hpp
-%%BROKER%%include/caf/illegal_message_element.hpp
-%%BROKER%%include/caf/inbound_path.hpp
-%%BROKER%%include/caf/infer_handle.hpp
-%%BROKER%%include/caf/init_global_meta_objects.hpp
-%%BROKER%%include/caf/input_range.hpp
-%%BROKER%%include/caf/inspector_access.hpp
-%%BROKER%%include/caf/inspector_access_base.hpp
-%%BROKER%%include/caf/inspector_access_type.hpp
-%%BROKER%%include/caf/interface_mismatch.hpp
-%%BROKER%%include/caf/intrusive/drr_cached_queue.hpp
-%%BROKER%%include/caf/intrusive/drr_queue.hpp
-%%BROKER%%include/caf/intrusive/fifo_inbox.hpp
-%%BROKER%%include/caf/intrusive/forward_iterator.hpp
-%%BROKER%%include/caf/intrusive/inbox_result.hpp
-%%BROKER%%include/caf/intrusive/lifo_inbox.hpp
-%%BROKER%%include/caf/intrusive/new_round_result.hpp
-%%BROKER%%include/caf/intrusive/singly_linked.hpp
-%%BROKER%%include/caf/intrusive/task_queue.hpp
-%%BROKER%%include/caf/intrusive/task_result.hpp
-%%BROKER%%include/caf/intrusive/wdrr_dynamic_multiplexed_queue.hpp
-%%BROKER%%include/caf/intrusive/wdrr_fixed_multiplexed_queue.hpp
-%%BROKER%%include/caf/intrusive_cow_ptr.hpp
-%%BROKER%%include/caf/intrusive_ptr.hpp
-%%BROKER%%include/caf/invalid_stream.hpp
-%%BROKER%%include/caf/invoke_message_result.hpp
-%%BROKER%%include/caf/io/abstract_broker.hpp
-%%BROKER%%include/caf/io/accept_handle.hpp
-%%BROKER%%include/caf/io/all.hpp
-%%BROKER%%include/caf/io/basp/all.hpp
-%%BROKER%%include/caf/io/basp/connection_state.hpp
-%%BROKER%%include/caf/io/basp/endpoint_context.hpp
-%%BROKER%%include/caf/io/basp/fwd.hpp
-%%BROKER%%include/caf/io/basp/header.hpp
-%%BROKER%%include/caf/io/basp/instance.hpp
-%%BROKER%%include/caf/io/basp/message_queue.hpp
-%%BROKER%%include/caf/io/basp/message_type.hpp
-%%BROKER%%include/caf/io/basp/remote_message_handler.hpp
-%%BROKER%%include/caf/io/basp/routing_table.hpp
-%%BROKER%%include/caf/io/basp/version.hpp
-%%BROKER%%include/caf/io/basp/worker.hpp
-%%BROKER%%include/caf/io/basp_broker.hpp
-%%BROKER%%include/caf/io/broker.hpp
-%%BROKER%%include/caf/io/broker_servant.hpp
-%%BROKER%%include/caf/io/close.hpp
-%%BROKER%%include/caf/io/connect.hpp
-%%BROKER%%include/caf/io/connection_handle.hpp
-%%BROKER%%include/caf/io/connection_helper.hpp
-%%BROKER%%include/caf/io/datagram_handle.hpp
-%%BROKER%%include/caf/io/datagram_servant.hpp
-%%BROKER%%include/caf/io/doorman.hpp
-%%BROKER%%include/caf/io/fwd.hpp
-%%BROKER%%include/caf/io/handle.hpp
-%%BROKER%%include/caf/io/middleman.hpp
-%%BROKER%%include/caf/io/middleman_actor.hpp
-%%BROKER%%include/caf/io/middleman_actor_impl.hpp
-%%BROKER%%include/caf/io/network/acceptor.hpp
-%%BROKER%%include/caf/io/network/acceptor_impl.hpp
-%%BROKER%%include/caf/io/network/acceptor_manager.hpp
-%%BROKER%%include/caf/io/network/datagram_handler.hpp
-%%BROKER%%include/caf/io/network/datagram_handler_impl.hpp
-%%BROKER%%include/caf/io/network/datagram_manager.hpp
-%%BROKER%%include/caf/io/network/datagram_servant_impl.hpp
-%%BROKER%%include/caf/io/network/default_multiplexer.hpp
-%%BROKER%%include/caf/io/network/doorman_impl.hpp
-%%BROKER%%include/caf/io/network/event_handler.hpp
-%%BROKER%%include/caf/io/network/interfaces.hpp
-%%BROKER%%include/caf/io/network/ip_endpoint.hpp
-%%BROKER%%include/caf/io/network/manager.hpp
-%%BROKER%%include/caf/io/network/multiplexer.hpp
-%%BROKER%%include/caf/io/network/native_socket.hpp
-%%BROKER%%include/caf/io/network/operation.hpp
-%%BROKER%%include/caf/io/network/pipe_reader.hpp
-%%BROKER%%include/caf/io/network/protocol.hpp
-%%BROKER%%include/caf/io/network/receive_buffer.hpp
-%%BROKER%%include/caf/io/network/rw_state.hpp
-%%BROKER%%include/caf/io/network/scribe_impl.hpp
-%%BROKER%%include/caf/io/network/stream.hpp
-%%BROKER%%include/caf/io/network/stream_impl.hpp
-%%BROKER%%include/caf/io/network/stream_manager.hpp
-%%BROKER%%include/caf/io/network/test_multiplexer.hpp
-%%BROKER%%include/caf/io/open.hpp
-%%BROKER%%include/caf/io/publish.hpp
-%%BROKER%%include/caf/io/publish_local_groups.hpp
-%%BROKER%%include/caf/io/receive_policy.hpp
-%%BROKER%%include/caf/io/remote_actor.hpp
-%%BROKER%%include/caf/io/remote_group.hpp
-%%BROKER%%include/caf/io/scribe.hpp
-%%BROKER%%include/caf/io/system_messages.hpp
-%%BROKER%%include/caf/io/typed_broker.hpp
-%%BROKER%%include/caf/io/unpublish.hpp
-%%BROKER%%include/caf/ip_address.hpp
-%%BROKER%%include/caf/ip_endpoint.hpp
-%%BROKER%%include/caf/ip_subnet.hpp
-%%BROKER%%include/caf/ipv4_address.hpp
-%%BROKER%%include/caf/ipv4_endpoint.hpp
-%%BROKER%%include/caf/ipv4_subnet.hpp
-%%BROKER%%include/caf/ipv6_address.hpp
-%%BROKER%%include/caf/ipv6_endpoint.hpp
-%%BROKER%%include/caf/ipv6_subnet.hpp
-%%BROKER%%include/caf/is_actor_handle.hpp
-%%BROKER%%include/caf/is_error_code_enum.hpp
-%%BROKER%%include/caf/is_message_sink.hpp
-%%BROKER%%include/caf/is_timeout_or_catch_all.hpp
-%%BROKER%%include/caf/is_typed_actor.hpp
-%%BROKER%%include/caf/load_inspector.hpp
-%%BROKER%%include/caf/load_inspector_base.hpp
-%%BROKER%%include/caf/local_actor.hpp
-%%BROKER%%include/caf/locks.hpp
-%%BROKER%%include/caf/logger.hpp
-%%BROKER%%include/caf/mailbox_element.hpp
-%%BROKER%%include/caf/make_actor.hpp
-%%BROKER%%include/caf/make_config_option.hpp
-%%BROKER%%include/caf/make_copy_on_write.hpp
-%%BROKER%%include/caf/make_counted.hpp
-%%BROKER%%include/caf/make_message.hpp
-%%BROKER%%include/caf/make_sink_result.hpp
-%%BROKER%%include/caf/make_source_result.hpp
-%%BROKER%%include/caf/make_stage_result.hpp
-%%BROKER%%include/caf/may_have_timeout.hpp
-%%BROKER%%include/caf/memory_managed.hpp
-%%BROKER%%include/caf/message.hpp
-%%BROKER%%include/caf/message_builder.hpp
-%%BROKER%%include/caf/message_handler.hpp
-%%BROKER%%include/caf/message_id.hpp
-%%BROKER%%include/caf/message_priority.hpp
-%%BROKER%%include/caf/meta/annotation.hpp
-%%BROKER%%include/caf/meta/hex_formatted.hpp
-%%BROKER%%include/caf/meta/load_callback.hpp
-%%BROKER%%include/caf/meta/omittable.hpp
-%%BROKER%%include/caf/meta/omittable_if_empty.hpp
-%%BROKER%%include/caf/meta/omittable_if_none.hpp
-%%BROKER%%include/caf/meta/save_callback.hpp
-%%BROKER%%include/caf/meta/type_name.hpp
-%%BROKER%%include/caf/mixin/actor_widget.hpp
-%%BROKER%%include/caf/mixin/behavior_changer.hpp
-%%BROKER%%include/caf/mixin/requester.hpp
-%%BROKER%%include/caf/mixin/sender.hpp
-%%BROKER%%include/caf/mixin/subscriber.hpp
-%%BROKER%%include/caf/monitorable_actor.hpp
-%%BROKER%%include/caf/no_stages.hpp
-%%BROKER%%include/caf/node_id.hpp
-%%BROKER%%include/caf/none.hpp
-%%BROKER%%include/caf/openssl/all.hpp
-%%BROKER%%include/caf/openssl/manager.hpp
-%%BROKER%%include/caf/openssl/middleman_actor.hpp
-%%BROKER%%include/caf/openssl/publish.hpp
-%%BROKER%%include/caf/openssl/remote_actor.hpp
-%%BROKER%%include/caf/openssl/session.hpp
-%%BROKER%%include/caf/openssl/unpublish.hpp
-%%BROKER%%include/caf/optional.hpp
-%%BROKER%%include/caf/others.hpp
-%%BROKER%%include/caf/outbound_path.hpp
-%%BROKER%%include/caf/parser_state.hpp
-%%BROKER%%include/caf/pec.hpp
-%%BROKER%%include/caf/policy/arg.hpp
-%%BROKER%%include/caf/policy/categorized.hpp
-%%BROKER%%include/caf/policy/downstream_messages.hpp
-%%BROKER%%include/caf/policy/normal_messages.hpp
-%%BROKER%%include/caf/policy/scheduler_policy.hpp
-%%BROKER%%include/caf/policy/select_all.hpp
-%%BROKER%%include/caf/policy/select_any.hpp
-%%BROKER%%include/caf/policy/single_response.hpp
-%%BROKER%%include/caf/policy/tcp.hpp
-%%BROKER%%include/caf/policy/udp.hpp
-%%BROKER%%include/caf/policy/unprofiled.hpp
-%%BROKER%%include/caf/policy/upstream_messages.hpp
-%%BROKER%%include/caf/policy/urgent_messages.hpp
-%%BROKER%%include/caf/policy/work_sharing.hpp
-%%BROKER%%include/caf/policy/work_stealing.hpp
-%%BROKER%%include/caf/prohibit_top_level_spawn_marker.hpp
-%%BROKER%%include/caf/proxy_registry.hpp
-%%BROKER%%include/caf/raise_error.hpp
-%%BROKER%%include/caf/ref_counted.hpp
-%%BROKER%%include/caf/replies_to.hpp
-%%BROKER%%include/caf/response_handle.hpp
-%%BROKER%%include/caf/response_promise.hpp
-%%BROKER%%include/caf/response_type.hpp
-%%BROKER%%include/caf/result.hpp
-%%BROKER%%include/caf/resumable.hpp
-%%BROKER%%include/caf/save_inspector.hpp
-%%BROKER%%include/caf/save_inspector_base.hpp
-%%BROKER%%include/caf/scheduled_actor.hpp
-%%BROKER%%include/caf/scheduler.hpp
-%%BROKER%%include/caf/scheduler/abstract_coordinator.hpp
-%%BROKER%%include/caf/scheduler/coordinator.hpp
-%%BROKER%%include/caf/scheduler/profiled_coordinator.hpp
-%%BROKER%%include/caf/scheduler/test_coordinator.hpp
-%%BROKER%%include/caf/scheduler/worker.hpp
-%%BROKER%%include/caf/scoped_actor.hpp
-%%BROKER%%include/caf/scoped_execution_unit.hpp
-%%BROKER%%include/caf/sec.hpp
-%%BROKER%%include/caf/send.hpp
-%%BROKER%%include/caf/serializer.hpp
-%%BROKER%%include/caf/settings.hpp
-%%BROKER%%include/caf/skip.hpp
-%%BROKER%%include/caf/span.hpp
-%%BROKER%%include/caf/spawn_options.hpp
-%%BROKER%%include/caf/stateful_actor.hpp
-%%BROKER%%include/caf/static_visitor.hpp
-%%BROKER%%include/caf/stream.hpp
-%%BROKER%%include/caf/stream_aborter.hpp
-%%BROKER%%include/caf/stream_finalize_trait.hpp
-%%BROKER%%include/caf/stream_manager.hpp
-%%BROKER%%include/caf/stream_priority.hpp
-%%BROKER%%include/caf/stream_sink.hpp
-%%BROKER%%include/caf/stream_sink_driver.hpp
-%%BROKER%%include/caf/stream_sink_trait.hpp
-%%BROKER%%include/caf/stream_slot.hpp
-%%BROKER%%include/caf/stream_source.hpp
-%%BROKER%%include/caf/stream_source_driver.hpp
-%%BROKER%%include/caf/stream_source_trait.hpp
-%%BROKER%%include/caf/stream_stage.hpp
-%%BROKER%%include/caf/stream_stage_driver.hpp
-%%BROKER%%include/caf/stream_stage_trait.hpp
-%%BROKER%%include/caf/string_algorithms.hpp
-%%BROKER%%include/caf/string_view.hpp
-%%BROKER%%include/caf/sum_type.hpp
-%%BROKER%%include/caf/sum_type_access.hpp
-%%BROKER%%include/caf/sum_type_token.hpp
-%%BROKER%%include/caf/system_messages.hpp
-%%BROKER%%include/caf/tag/boxing_type.hpp
-%%BROKER%%include/caf/telemetry/collector/prometheus.hpp
-%%BROKER%%include/caf/telemetry/counter.hpp
-%%BROKER%%include/caf/telemetry/dbl_gauge.hpp
-%%BROKER%%include/caf/telemetry/gauge.hpp
-%%BROKER%%include/caf/telemetry/histogram.hpp
-%%BROKER%%include/caf/telemetry/int_gauge.hpp
-%%BROKER%%include/caf/telemetry/label.hpp
-%%BROKER%%include/caf/telemetry/label_view.hpp
-%%BROKER%%include/caf/telemetry/metric.hpp
-%%BROKER%%include/caf/telemetry/metric_family.hpp
-%%BROKER%%include/caf/telemetry/metric_family_impl.hpp
-%%BROKER%%include/caf/telemetry/metric_impl.hpp
-%%BROKER%%include/caf/telemetry/metric_registry.hpp
-%%BROKER%%include/caf/telemetry/metric_type.hpp
-%%BROKER%%include/caf/telemetry/timer.hpp
-%%BROKER%%include/caf/term.hpp
-%%BROKER%%include/caf/test/bdd_dsl.hpp
-%%BROKER%%include/caf/test/dsl.hpp
-%%BROKER%%include/caf/test/io_dsl.hpp
-%%BROKER%%include/caf/test/unit_test.hpp
-%%BROKER%%include/caf/test/unit_test_impl.hpp
-%%BROKER%%include/caf/thread_hook.hpp
-%%BROKER%%include/caf/timeout_definition.hpp
-%%BROKER%%include/caf/timespan.hpp
-%%BROKER%%include/caf/timestamp.hpp
-%%BROKER%%include/caf/tracing_data.hpp
-%%BROKER%%include/caf/tracing_data_factory.hpp
-%%BROKER%%include/caf/type_erased_value.hpp
-%%BROKER%%include/caf/type_id.hpp
-%%BROKER%%include/caf/type_id_list.hpp
-%%BROKER%%include/caf/typed_actor.hpp
-%%BROKER%%include/caf/typed_actor_pointer.hpp
-%%BROKER%%include/caf/typed_actor_view.hpp
-%%BROKER%%include/caf/typed_actor_view_base.hpp
-%%BROKER%%include/caf/typed_behavior.hpp
-%%BROKER%%include/caf/typed_event_based_actor.hpp
-%%BROKER%%include/caf/typed_message_view.hpp
-%%BROKER%%include/caf/typed_response_promise.hpp
-%%BROKER%%include/caf/unifyn.hpp
-%%BROKER%%include/caf/unit.hpp
-%%BROKER%%include/caf/unsafe_behavior_init.hpp
-%%BROKER%%include/caf/upstream_msg.hpp
-%%BROKER%%include/caf/uri.hpp
-%%BROKER%%include/caf/uri_builder.hpp
-%%BROKER%%include/caf/uuid.hpp
-%%BROKER%%include/caf/variant.hpp
-%%BROKER%%include/caf/weak_intrusive_ptr.hpp
+include/hilti/ast/all.h
+include/hilti/ast/ast.h
+include/hilti/ast/attribute.h
+include/hilti/ast/builder/all.h
+include/hilti/ast/builder/builder.h
+include/hilti/ast/builder/declaration.h
+include/hilti/ast/builder/expression.h
+include/hilti/ast/builder/type.h
+include/hilti/ast/ctor.h
+include/hilti/ast/ctors/address.h
+include/hilti/ast/ctors/all.h
+include/hilti/ast/ctors/bool.h
+include/hilti/ast/ctors/bytes.h
+include/hilti/ast/ctors/coerced.h
+include/hilti/ast/ctors/default.h
+include/hilti/ast/ctors/enum.h
+include/hilti/ast/ctors/error.h
+include/hilti/ast/ctors/exception.h
+include/hilti/ast/ctors/integer.h
+include/hilti/ast/ctors/interval.h
+include/hilti/ast/ctors/library.h
+include/hilti/ast/ctors/list.h
+include/hilti/ast/ctors/map.h
+include/hilti/ast/ctors/network.h
+include/hilti/ast/ctors/null.h
+include/hilti/ast/ctors/optional.h
+include/hilti/ast/ctors/port.h
+include/hilti/ast/ctors/real.h
+include/hilti/ast/ctors/reference.h
+include/hilti/ast/ctors/regexp.h
+include/hilti/ast/ctors/result.h
+include/hilti/ast/ctors/set.h
+include/hilti/ast/ctors/stream.h
+include/hilti/ast/ctors/string.h
+include/hilti/ast/ctors/struct.h
+include/hilti/ast/ctors/time.h
+include/hilti/ast/ctors/tuple.h
+include/hilti/ast/ctors/union.h
+include/hilti/ast/ctors/vector.h
+include/hilti/ast/declaration.h
+include/hilti/ast/declarations/all.h
+include/hilti/ast/declarations/constant.h
+include/hilti/ast/declarations/expression.h
+include/hilti/ast/declarations/field.h
+include/hilti/ast/declarations/function.h
+include/hilti/ast/declarations/global-variable.h
+include/hilti/ast/declarations/imported-module.h
+include/hilti/ast/declarations/local-variable.h
+include/hilti/ast/declarations/module.h
+include/hilti/ast/declarations/parameter.h
+include/hilti/ast/declarations/property.h
+include/hilti/ast/declarations/type.h
+include/hilti/ast/detail/operator-registry.h
+include/hilti/ast/detail/visitor.h
+include/hilti/ast/expression.h
+include/hilti/ast/expressions/all.h
+include/hilti/ast/expressions/assign.h
+include/hilti/ast/expressions/builtin-function.h
+include/hilti/ast/expressions/coerced.h
+include/hilti/ast/expressions/ctor.h
+include/hilti/ast/expressions/deferred.h
+include/hilti/ast/expressions/grouping.h
+include/hilti/ast/expressions/id.h
+include/hilti/ast/expressions/keyword.h
+include/hilti/ast/expressions/list-comprehension.h
+include/hilti/ast/expressions/logical-and.h
+include/hilti/ast/expressions/logical-not.h
+include/hilti/ast/expressions/logical-or.h
+include/hilti/ast/expressions/member.h
+include/hilti/ast/expressions/move.h
+include/hilti/ast/expressions/pending-coerced.h
+include/hilti/ast/expressions/resolved-operator.h
+include/hilti/ast/expressions/ternary.h
+include/hilti/ast/expressions/type-wrapped.h
+include/hilti/ast/expressions/type.h
+include/hilti/ast/expressions/typeinfo.h
+include/hilti/ast/expressions/unresolved-operator.h
+include/hilti/ast/expressions/void.h
+include/hilti/ast/function.h
+include/hilti/ast/id.h
+include/hilti/ast/location.h
+include/hilti/ast/meta.h
+include/hilti/ast/module.h
+include/hilti/ast/node-ref.h
+include/hilti/ast/node.h
+include/hilti/ast/operator.h
+include/hilti/ast/operators/address.h
+include/hilti/ast/operators/all.h
+include/hilti/ast/operators/bool.h
+include/hilti/ast/operators/bytes.h
+include/hilti/ast/operators/common.h
+include/hilti/ast/operators/enum.h
+include/hilti/ast/operators/error.h
+include/hilti/ast/operators/exception.h
+include/hilti/ast/operators/function.h
+include/hilti/ast/operators/generic.h
+include/hilti/ast/operators/interval.h
+include/hilti/ast/operators/list.h
+include/hilti/ast/operators/map.h
+include/hilti/ast/operators/network.h
+include/hilti/ast/operators/optional.h
+include/hilti/ast/operators/port.h
+include/hilti/ast/operators/real.h
+include/hilti/ast/operators/reference.h
+include/hilti/ast/operators/regexp.h
+include/hilti/ast/operators/result.h
+include/hilti/ast/operators/set.h
+include/hilti/ast/operators/signed-integer.h
+include/hilti/ast/operators/stream.h
+include/hilti/ast/operators/string.h
+include/hilti/ast/operators/struct.h
+include/hilti/ast/operators/time.h
+include/hilti/ast/operators/tuple.h
+include/hilti/ast/operators/union.h
+include/hilti/ast/operators/unsigned-integer.h
+include/hilti/ast/operators/vector.h
+include/hilti/ast/scope-lookup.h
+include/hilti/ast/scope.h
+include/hilti/ast/statement.h
+include/hilti/ast/statements/all.h
+include/hilti/ast/statements/assert.h
+include/hilti/ast/statements/block.h
+include/hilti/ast/statements/break.h
+include/hilti/ast/statements/comment.h
+include/hilti/ast/statements/continue.h
+include/hilti/ast/statements/declaration.h
+include/hilti/ast/statements/expression.h
+include/hilti/ast/statements/for.h
+include/hilti/ast/statements/if.h
+include/hilti/ast/statements/return.h
+include/hilti/ast/statements/set_location.h
+include/hilti/ast/statements/switch.h
+include/hilti/ast/statements/throw.h
+include/hilti/ast/statements/try.h
+include/hilti/ast/statements/while.h
+include/hilti/ast/statements/yield.h
+include/hilti/ast/type.h
+include/hilti/ast/types/address.h
+include/hilti/ast/types/all.h
+include/hilti/ast/types/any.h
+include/hilti/ast/types/auto.h
+include/hilti/ast/types/bool.h
+include/hilti/ast/types/bytes.h
+include/hilti/ast/types/doc-only.h
+include/hilti/ast/types/enum.h
+include/hilti/ast/types/error.h
+include/hilti/ast/types/exception.h
+include/hilti/ast/types/function.h
+include/hilti/ast/types/integer.h
+include/hilti/ast/types/interval.h
+include/hilti/ast/types/library.h
+include/hilti/ast/types/list.h
+include/hilti/ast/types/map.h
+include/hilti/ast/types/member.h
+include/hilti/ast/types/network.h
+include/hilti/ast/types/null.h
+include/hilti/ast/types/operand-list.h
+include/hilti/ast/types/optional.h
+include/hilti/ast/types/port.h
+include/hilti/ast/types/real.h
+include/hilti/ast/types/reference.h
+include/hilti/ast/types/regexp.h
+include/hilti/ast/types/result.h
+include/hilti/ast/types/set.h
+include/hilti/ast/types/stream.h
+include/hilti/ast/types/string.h
+include/hilti/ast/types/struct.h
+include/hilti/ast/types/time.h
+include/hilti/ast/types/tuple.h
+include/hilti/ast/types/type.h
+include/hilti/ast/types/union.h
+include/hilti/ast/types/unknown.h
+include/hilti/ast/types/unresolved-id.h
+include/hilti/ast/types/vector.h
+include/hilti/ast/types/void.h
+include/hilti/autogen/__ctor.h
+include/hilti/autogen/__declaration.h
+include/hilti/autogen/__dispatchers.h
+include/hilti/autogen/__expression.h
+include/hilti/autogen/__node.h
+include/hilti/autogen/__operator.h
+include/hilti/autogen/__resolved-operator.h
+include/hilti/autogen/__statement.h
+include/hilti/autogen/__type.h
+include/hilti/autogen/config.h
+include/hilti/base/cache.h
+include/hilti/base/code-formatter.h
+include/hilti/base/id-base.h
+include/hilti/base/intrusive-ptr.h
+include/hilti/base/logger.h
+include/hilti/base/optional-ref.h
+include/hilti/base/preprocessor.h
+include/hilti/base/result.h
+include/hilti/base/timing.h
+include/hilti/base/type_erase.h
+include/hilti/base/uniquer.h
+include/hilti/base/util.h
+include/hilti/base/visitor-types.h
+include/hilti/base/visitor-util.h
+include/hilti/base/visitor.h
+include/hilti/compiler/coercion.h
+include/hilti/compiler/context.h
+include/hilti/compiler/detail/codegen/codegen.h
+include/hilti/compiler/detail/cxx/all.h
+include/hilti/compiler/detail/cxx/elements.h
+include/hilti/compiler/detail/cxx/formatter.h
+include/hilti/compiler/detail/cxx/linker.h
+include/hilti/compiler/detail/cxx/unit.h
+include/hilti/compiler/detail/parser/driver.h
+include/hilti/compiler/detail/parser/scanner.h
+include/hilti/compiler/detail/visitors.h
+include/hilti/compiler/driver.h
+include/hilti/compiler/init.h
+include/hilti/compiler/jit.h
+include/hilti/compiler/optimizer.h
+include/hilti/compiler/plugin.h
+include/hilti/compiler/printer.h
+include/hilti/compiler/unit.h
+include/hilti/global.h
+include/hilti/hilti.h
+include/hilti/rt/3rdparty/ArticleEnumClass-v2/EnumClass.h
+include/hilti/rt/3rdparty/SafeInt/Archive/releases/0/SafeInt_3017p.hpp
+include/hilti/rt/3rdparty/SafeInt/Archive/releases/1/SafeInt_3016p.hpp
+include/hilti/rt/3rdparty/SafeInt/Archive/releases/2/TestMain.h
+include/hilti/rt/3rdparty/SafeInt/Archive/releases/3/SafeInt_3015p.hpp
+include/hilti/rt/3rdparty/SafeInt/Archive/releases/4/SafeInt_3014p.hpp
+include/hilti/rt/3rdparty/SafeInt/Archive/releases/4/SafeInt_gcc.hpp
+include/hilti/rt/3rdparty/SafeInt/Archive/releases/5/SafeInt_gcc.hpp
+include/hilti/rt/3rdparty/SafeInt/Archive/releases/6/SafeInt_3012p.hpp
+include/hilti/rt/3rdparty/SafeInt/Archive/releases/6/SafeInt_gcc.h
+include/hilti/rt/3rdparty/SafeInt/Archive/releases/7/SafeInt_3011p.hpp
+include/hilti/rt/3rdparty/SafeInt/SafeInt.hpp
+include/hilti/rt/3rdparty/SafeInt/Test/TestMain.h
+include/hilti/rt/3rdparty/any/any.hpp
+include/hilti/rt/3rdparty/any/test_shared_lib.hpp
+include/hilti/rt/3rdparty/ghc/filesystem.hpp
+include/hilti/rt/3rdparty/ghc/fs_fwd.hpp
+include/hilti/rt/3rdparty/ghc/fs_impl.hpp
+include/hilti/rt/3rdparty/ghc/fs_std.hpp
+include/hilti/rt/3rdparty/ghc/fs_std_fwd.hpp
+include/hilti/rt/3rdparty/ghc/fs_std_impl.hpp
+include/hilti/rt/3rdparty/nlohmann/json_fwd.hpp
+include/hilti/rt/3rdparty/tinyformat/tinyformat.h
+include/hilti/rt/any.h
+include/hilti/rt/autogen/config.h
+include/hilti/rt/autogen/tests/config.h
+include/hilti/rt/autogen/version.h
+include/hilti/rt/backtrace.h
+include/hilti/rt/compiler-setup.h
+include/hilti/rt/configuration.h
+include/hilti/rt/context.h
+include/hilti/rt/debug-logger.h
+include/hilti/rt/deferred-expression.h
+include/hilti/rt/doctest.h
+include/hilti/rt/exception.h
+include/hilti/rt/extension-points.h
+include/hilti/rt/fiber.h
+include/hilti/rt/filesystem.h
+include/hilti/rt/fmt.h
+include/hilti/rt/global-state.h
+include/hilti/rt/hilti.h
+include/hilti/rt/hilti/rt
+include/hilti/rt/init.h
+include/hilti/rt/intrusive-ptr.h
+include/hilti/rt/iterator.h
+include/hilti/rt/json-fwd.h
+include/hilti/rt/json.h
+include/hilti/rt/lambda.h
+include/hilti/rt/libhilti.h
+include/hilti/rt/library.h
+include/hilti/rt/linker.h
+include/hilti/rt/logging.h
+include/hilti/rt/result.h
+include/hilti/rt/safe-int.h
+include/hilti/rt/test/utils.h
+include/hilti/rt/threading.h
+include/hilti/rt/type-info.h
+include/hilti/rt/types/address.h
+include/hilti/rt/types/all.h
+include/hilti/rt/types/any.h
+include/hilti/rt/types/bool.h
+include/hilti/rt/types/bytes.h
+include/hilti/rt/types/enum.h
+include/hilti/rt/types/error.h
+include/hilti/rt/types/function.h
+include/hilti/rt/types/integer.h
+include/hilti/rt/types/interval.h
+include/hilti/rt/types/map.h
+include/hilti/rt/types/network.h
+include/hilti/rt/types/null.h
+include/hilti/rt/types/optional.h
+include/hilti/rt/types/port.h
+include/hilti/rt/types/real.h
+include/hilti/rt/types/reference.h
+include/hilti/rt/types/regexp.h
+include/hilti/rt/types/result.h
+include/hilti/rt/types/set.h
+include/hilti/rt/types/set_fwd.h
+include/hilti/rt/types/stream.h
+include/hilti/rt/types/string.h
+include/hilti/rt/types/struct.h
+include/hilti/rt/types/time.h
+include/hilti/rt/types/tuple.h
+include/hilti/rt/types/union.h
+include/hilti/rt/types/vector.h
+include/hilti/rt/types/vector_fwd.h
+include/hilti/rt/unpack.h
+include/hilti/rt/util.h
 include/paraglob/exceptions.h
 include/paraglob/node.h
 include/paraglob/paraglob.h
 include/paraglob/serializer.h
+%%SPICY%%include/spicy/ast/aliases.h
+%%SPICY%%include/spicy/ast/all.h
+%%SPICY%%include/spicy/ast/ctors/all.h
+%%SPICY%%include/spicy/ast/ctors/unit.h
+%%SPICY%%include/spicy/ast/declarations/all.h
+%%SPICY%%include/spicy/ast/declarations/unit-hook.h
+%%SPICY%%include/spicy/ast/detail/visitor.h
+%%SPICY%%include/spicy/ast/engine.h
+%%SPICY%%include/spicy/ast/expressions/all.h
+%%SPICY%%include/spicy/ast/hook.h
+%%SPICY%%include/spicy/ast/operators/all.h
+%%SPICY%%include/spicy/ast/operators/bitfield.h
+%%SPICY%%include/spicy/ast/operators/sink.h
+%%SPICY%%include/spicy/ast/operators/unit.h
+%%SPICY%%include/spicy/ast/statements/all.h
+%%SPICY%%include/spicy/ast/statements/confirm.h
+%%SPICY%%include/spicy/ast/statements/print.h
+%%SPICY%%include/spicy/ast/statements/reject.h
+%%SPICY%%include/spicy/ast/statements/stop.h
+%%SPICY%%include/spicy/ast/types.h
+%%SPICY%%include/spicy/ast/types/all.h
+%%SPICY%%include/spicy/ast/types/bitfield.h
+%%SPICY%%include/spicy/ast/types/sink.h
+%%SPICY%%include/spicy/ast/types/unit-item.h
+%%SPICY%%include/spicy/ast/types/unit-items/all.h
+%%SPICY%%include/spicy/ast/types/unit-items/field.h
+%%SPICY%%include/spicy/ast/types/unit-items/property.h
+%%SPICY%%include/spicy/ast/types/unit-items/sink.h
+%%SPICY%%include/spicy/ast/types/unit-items/switch.h
+%%SPICY%%include/spicy/ast/types/unit-items/unit-hook.h
+%%SPICY%%include/spicy/ast/types/unit-items/unresolved-field.h
+%%SPICY%%include/spicy/ast/types/unit-items/variable.h
+%%SPICY%%include/spicy/ast/types/unit.h
+%%SPICY%%include/spicy/autogen/__dispatchers-productions.h
+%%SPICY%%include/spicy/autogen/__dispatchers.h
+%%SPICY%%include/spicy/autogen/__production.h
+%%SPICY%%include/spicy/autogen/__unit-item.h
+%%SPICY%%include/spicy/autogen/config.h
+%%SPICY%%include/spicy/compiler/detail/codegen/codegen.h
+%%SPICY%%include/spicy/compiler/detail/codegen/grammar-builder.h
+%%SPICY%%include/spicy/compiler/detail/codegen/grammar.h
+%%SPICY%%include/spicy/compiler/detail/codegen/parser-builder.h
+%%SPICY%%include/spicy/compiler/detail/codegen/production.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/all.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/boolean.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/byte-block.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/counter.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/ctor.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/enclosure.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/epsilon.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/for-each.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/look-ahead.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/resolved.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/sequence.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/switch.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/type-literal.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/unit.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/variable.h
+%%SPICY%%include/spicy/compiler/detail/codegen/productions/while.h
+%%SPICY%%include/spicy/compiler/detail/coercion.h
+%%SPICY%%include/spicy/compiler/detail/parser/driver.h
+%%SPICY%%include/spicy/compiler/detail/parser/scanner.h
+%%SPICY%%include/spicy/compiler/detail/visitors.h
+%%SPICY%%include/spicy/compiler/driver.h
+%%SPICY%%include/spicy/compiler/init.h
+%%SPICY%%include/spicy/compiler/plugin.h
+%%SPICY%%include/spicy/global.h
+%%SPICY%%include/spicy/rt/autogen/config.h
+%%SPICY%%include/spicy/rt/base64.h
+%%SPICY%%include/spicy/rt/debug.h
+%%SPICY%%include/spicy/rt/driver.h
+%%SPICY%%include/spicy/rt/filter.h
+%%SPICY%%include/spicy/rt/global-state.h
+%%SPICY%%include/spicy/rt/hilti-fwd.h
+%%SPICY%%include/spicy/rt/init.h
+%%SPICY%%include/spicy/rt/libspicy.h
+%%SPICY%%include/spicy/rt/mime.h
+%%SPICY%%include/spicy/rt/parsed-unit.h
+%%SPICY%%include/spicy/rt/parser-fwd.h
+%%SPICY%%include/spicy/rt/parser.h
+%%SPICY%%include/spicy/rt/sink.h
+%%SPICY%%include/spicy/rt/spicy.h
+%%SPICY%%include/spicy/rt/spicy/rt
+%%SPICY%%include/spicy/rt/typedefs.h
+%%SPICY%%include/spicy/rt/unit-context.h
+%%SPICY%%include/spicy/rt/util.h
+%%SPICY%%include/spicy/rt/zlib_.h
+%%SPICY%%include/spicy/spicy.h
+include/zeek/3rdparty/ConvertUTF.h
+include/zeek/3rdparty/bro_inet_ntop.h
+include/zeek/3rdparty/bsd-getopt-long.h
+include/zeek/3rdparty/doctest.h
+include/zeek/3rdparty/modp_numtoa.h
+include/zeek/3rdparty/nb_dns.h
+include/zeek/3rdparty/patricia.h
 include/zeek/3rdparty/rapidjson/include/rapidjson/allocators.h
 include/zeek/3rdparty/rapidjson/include/rapidjson/cursorstreamwrapper.h
 include/zeek/3rdparty/rapidjson/include/rapidjson/document.h
@@ -649,26 +568,26 @@ include/zeek/3rdparty/rapidjson/include/rapidjson/reader.h
 include/zeek/3rdparty/rapidjson/include/rapidjson/schema.h
 include/zeek/3rdparty/rapidjson/include/rapidjson/stream.h
 include/zeek/3rdparty/rapidjson/include/rapidjson/stringbuffer.h
+include/zeek/3rdparty/rapidjson/include/rapidjson/uri.h
 include/zeek/3rdparty/rapidjson/include/rapidjson/writer.h
+include/zeek/3rdparty/setsignal.h
 include/zeek/3rdparty/sqlite3.h
 include/zeek/Anon.h
 include/zeek/Attr.h
 include/zeek/Base64.h
 include/zeek/BifReturnVal.h
-include/zeek/BroList.h
-include/zeek/BroString.h
 include/zeek/CCL.h
+include/zeek/CPP-load.bif.func_h
+include/zeek/CPP-load.bif.netvar_h
 include/zeek/CompHash.h
 include/zeek/Conn.h
-include/zeek/Continuation.h
-include/zeek/ConvertUTF.h
 include/zeek/DFA.h
+include/zeek/DNS_Mapping.h
 include/zeek/DNS_Mgr.h
 include/zeek/DbgBreakpoint.h
 include/zeek/DbgDisplay.h
 include/zeek/DbgWatch.h
 include/zeek/Debug.h
-include/zeek/DebugCmdInfoConstants.h
 include/zeek/DebugCmds.h
 include/zeek/DebugLogger.h
 include/zeek/Desc.h
@@ -679,6 +598,7 @@ include/zeek/Event.h
 include/zeek/EventHandler.h
 include/zeek/EventLauncher.h
 include/zeek/EventRegistry.h
+include/zeek/EventTrace.h
 include/zeek/Expr.h
 include/zeek/File.h
 include/zeek/Flare.h
@@ -693,13 +613,12 @@ include/zeek/IntSet.h
 include/zeek/IntrusivePtr.h
 include/zeek/List.h
 include/zeek/NFA.h
-include/zeek/Net.h
 include/zeek/NetVar.h
 include/zeek/Notifier.h
 include/zeek/Obj.h
 include/zeek/OpaqueVal.h
 include/zeek/Options.h
-include/zeek/PacketDumper.h
+include/zeek/Overflow.h
 include/zeek/PacketFilter.h
 include/zeek/Pipe.h
 include/zeek/PolicyFile.h
@@ -718,11 +637,14 @@ include/zeek/RunState.h
 include/zeek/ScannedFile.h
 include/zeek/Scope.h
 include/zeek/ScriptCoverageManager.h
+include/zeek/ScriptProfile.h
 include/zeek/SerializationFormat.h
 include/zeek/Sessions.h
 include/zeek/SmithWaterman.h
+include/zeek/Span.h
 include/zeek/Stats.h
 include/zeek/Stmt.h
+include/zeek/StmtBase.h
 include/zeek/StmtEnums.h
 include/zeek/Tag.h
 include/zeek/Timer.h
@@ -735,19 +657,15 @@ include/zeek/UID.h
 include/zeek/Val.h
 include/zeek/Var.h
 include/zeek/WeirdState.h
+include/zeek/ZVal.h
 include/zeek/ZeekArgs.h
 include/zeek/ZeekList.h
 include/zeek/ZeekString.h
 include/zeek/analyzer/Analyzer.h
 include/zeek/analyzer/Component.h
 include/zeek/analyzer/Manager.h
-include/zeek/analyzer/Tag.h
 include/zeek/analyzer/analyzer.bif.h
 include/zeek/analyzer/protocol/asn1/asn1.pac
-include/zeek/analyzer/protocol/ayiya/AYIYA.h
-include/zeek/analyzer/protocol/ayiya/ayiya-analyzer.pac
-include/zeek/analyzer/protocol/ayiya/ayiya-protocol.pac
-include/zeek/analyzer/protocol/ayiya/ayiya.pac
 include/zeek/analyzer/protocol/bittorrent/BitTorrent.h
 include/zeek/analyzer/protocol/bittorrent/BitTorrentTracker.h
 include/zeek/analyzer/protocol/bittorrent/bittorrent-analyzer.pac
@@ -796,16 +714,10 @@ include/zeek/analyzer/protocol/gssapi/events.bif.h
 include/zeek/analyzer/protocol/gssapi/gssapi-analyzer.pac
 include/zeek/analyzer/protocol/gssapi/gssapi-protocol.pac
 include/zeek/analyzer/protocol/gssapi/gssapi.pac
-include/zeek/analyzer/protocol/gtpv1/GTPv1.h
-include/zeek/analyzer/protocol/gtpv1/events.bif.h
-include/zeek/analyzer/protocol/gtpv1/gtpv1-analyzer.pac
-include/zeek/analyzer/protocol/gtpv1/gtpv1-protocol.pac
-include/zeek/analyzer/protocol/gtpv1/gtpv1.pac
 include/zeek/analyzer/protocol/http/HTTP.h
 include/zeek/analyzer/protocol/http/events.bif.h
 include/zeek/analyzer/protocol/http/functions.bif.h
 include/zeek/analyzer/protocol/icmp/ICMP.h
-include/zeek/analyzer/protocol/icmp/events.bif.h
 include/zeek/analyzer/protocol/ident/Ident.h
 include/zeek/analyzer/protocol/ident/events.bif.h
 include/zeek/analyzer/protocol/imap/IMAP.h
@@ -1026,8 +938,6 @@ include/zeek/analyzer/protocol/ssl/dtls.pac
 include/zeek/analyzer/protocol/ssl/events.bif.h
 include/zeek/analyzer/protocol/ssl/functions.bif.h
 include/zeek/analyzer/protocol/ssl/proc-certificate.pac
-include/zeek/analyzer/protocol/ssl/proc-client-hello.pac
-include/zeek/analyzer/protocol/ssl/proc-server-hello.pac
 include/zeek/analyzer/protocol/ssl/ssl-analyzer.pac
 include/zeek/analyzer/protocol/ssl/ssl-defs.pac
 include/zeek/analyzer/protocol/ssl/ssl-dtls-analyzer.pac
@@ -1039,15 +949,12 @@ include/zeek/analyzer/protocol/ssl/tls-handshake-protocol.pac
 include/zeek/analyzer/protocol/ssl/tls-handshake-signed_certificate_timestamp.pac
 include/zeek/analyzer/protocol/ssl/tls-handshake.pac
 include/zeek/analyzer/protocol/ssl/types.bif.h
-include/zeek/analyzer/protocol/stepping-stone/SteppingStone.h
-include/zeek/analyzer/protocol/stepping-stone/events.bif.h
 include/zeek/analyzer/protocol/syslog/Syslog.h
 include/zeek/analyzer/protocol/syslog/events.bif.h
 include/zeek/analyzer/protocol/syslog/syslog-analyzer.pac
 include/zeek/analyzer/protocol/syslog/syslog-protocol.pac
 include/zeek/analyzer/protocol/syslog/syslog.pac
 include/zeek/analyzer/protocol/tcp/ContentLine.h
-include/zeek/analyzer/protocol/tcp/Stats.h
 include/zeek/analyzer/protocol/tcp/TCP.h
 include/zeek/analyzer/protocol/tcp/TCP_Endpoint.h
 include/zeek/analyzer/protocol/tcp/TCP_Flags.h
@@ -1055,12 +962,7 @@ include/zeek/analyzer/protocol/tcp/TCP_Reassembler.h
 include/zeek/analyzer/protocol/tcp/events.bif.h
 include/zeek/analyzer/protocol/tcp/functions.bif.h
 include/zeek/analyzer/protocol/tcp/types.bif.h
-include/zeek/analyzer/protocol/teredo/Teredo.h
-include/zeek/analyzer/protocol/teredo/events.bif.h
 include/zeek/analyzer/protocol/udp/UDP.h
-include/zeek/analyzer/protocol/udp/events.bif.h
-include/zeek/analyzer/protocol/vxlan/VXLAN.h
-include/zeek/analyzer/protocol/vxlan/events.bif.h
 include/zeek/analyzer/protocol/xmpp/XMPP.h
 include/zeek/analyzer/protocol/xmpp/events.bif.h
 include/zeek/analyzer/protocol/xmpp/xmpp-analyzer.pac
@@ -1069,11 +971,8 @@ include/zeek/analyzer/protocol/xmpp/xmpp.pac
 include/zeek/analyzer/protocol/zip/ZIP.h
 include/zeek/binpac-lib.pac
 include/zeek/binpac.pac
-include/zeek/binpac_bro.h
 include/zeek/binpac_zeek-lib.pac
 include/zeek/binpac_zeek.h
-include/zeek/bro.pac
-include/zeek/bro_inet_ntop.h
 include/zeek/broker/Data.h
 include/zeek/broker/Manager.h
 include/zeek/broker/Store.h
@@ -1081,7 +980,10 @@ include/zeek/broker/comm.bif.h
 include/zeek/broker/data.bif.h
 include/zeek/broker/messaging.bif.h
 include/zeek/broker/store.bif.h
-include/zeek/bsd-getopt-long.h
+include/zeek/builtin-plugins/spicy-plugin/consts.bif.h
+include/zeek/builtin-plugins/spicy-plugin/events.bif.h
+include/zeek/builtin-plugins/spicy-plugin/functions.bif.h
+include/zeek/builtin-plugins/spicy-plugin/lib/zeek-spicy
 include/zeek/const.bif.func_h
 include/zeek/const.bif.netvar_h
 include/zeek/digest.h
@@ -1094,7 +996,6 @@ include/zeek/file_analysis/File.h
 include/zeek/file_analysis/FileReassembler.h
 include/zeek/file_analysis/FileTimer.h
 include/zeek/file_analysis/Manager.h
-include/zeek/file_analysis/Tag.h
 include/zeek/file_analysis/analyzer/data_event/DataEvent.h
 include/zeek/file_analysis/analyzer/entropy/Entropy.h
 include/zeek/file_analysis/analyzer/entropy/events.bif.h
@@ -1129,12 +1030,12 @@ include/zeek/file_analysis/analyzer/x509/x509-signed_certificate_timestamp.pac
 include/zeek/file_analysis/file_analysis.bif.h
 include/zeek/fuzzers/FuzzBuffer.h
 include/zeek/fuzzers/fuzzer-setup.h
+include/zeek/include/zeek
 include/zeek/input.h
 include/zeek/input/Component.h
 include/zeek/input/Manager.h
 include/zeek/input/ReaderBackend.h
 include/zeek/input/ReaderFrontend.h
-include/zeek/input/Tag.h
 include/zeek/input/input.bif.h
 include/zeek/input/readers/ascii/Ascii.h
 include/zeek/input/readers/ascii/ascii.bif.h
@@ -1161,7 +1062,6 @@ include/zeek/iosource/pcap/Source.h
 include/zeek/iosource/pcap/pcap.bif.h
 include/zeek/logging/Component.h
 include/zeek/logging/Manager.h
-include/zeek/logging/Tag.h
 include/zeek/logging/WriterBackend.h
 include/zeek/logging/WriterFrontend.h
 include/zeek/logging/logging.bif.h
@@ -1171,9 +1071,7 @@ include/zeek/logging/writers/none/None.h
 include/zeek/logging/writers/none/none.bif.h
 include/zeek/logging/writers/sqlite/SQLite.h
 include/zeek/logging/writers/sqlite/sqlite.bif.h
-include/zeek/modp_numtoa.h
 include/zeek/module_util.h
-include/zeek/nb_dns.h
 include/zeek/net_util.h
 include/zeek/option.bif.func_h
 include/zeek/option.bif.netvar_h
@@ -1183,15 +1081,28 @@ include/zeek/packet_analysis/Analyzer.h
 include/zeek/packet_analysis/Component.h
 include/zeek/packet_analysis/Dispatcher.h
 include/zeek/packet_analysis/Manager.h
-include/zeek/packet_analysis/Tag.h
 include/zeek/packet_analysis/protocol/arp/ARP.h
 include/zeek/packet_analysis/protocol/arp/events.bif.h
+include/zeek/packet_analysis/protocol/ayiya/AYIYA.h
 include/zeek/packet_analysis/protocol/ethernet/Ethernet.h
 include/zeek/packet_analysis/protocol/fddi/FDDI.h
+include/zeek/packet_analysis/protocol/geneve/Geneve.h
+include/zeek/packet_analysis/protocol/geneve/events.bif.h
 include/zeek/packet_analysis/protocol/gre/GRE.h
+include/zeek/packet_analysis/protocol/gtpv1/GTPv1.h
+include/zeek/packet_analysis/protocol/gtpv1/events.bif.h
+include/zeek/packet_analysis/protocol/gtpv1/functions.bif.h
+include/zeek/packet_analysis/protocol/gtpv1/gtpv1-analyzer.pac
+include/zeek/packet_analysis/protocol/gtpv1/gtpv1-protocol.pac
+include/zeek/packet_analysis/protocol/gtpv1/gtpv1.pac
+include/zeek/packet_analysis/protocol/icmp/ICMP.h
+include/zeek/packet_analysis/protocol/icmp/ICMPSessionAdapter.h
+include/zeek/packet_analysis/protocol/icmp/events.bif.h
 include/zeek/packet_analysis/protocol/ieee802_11/IEEE802_11.h
 include/zeek/packet_analysis/protocol/ieee802_11_radio/IEEE802_11_Radio.h
 include/zeek/packet_analysis/protocol/ip/IP.h
+include/zeek/packet_analysis/protocol/ip/IPBasedAnalyzer.h
+include/zeek/packet_analysis/protocol/ip/SessionAdapter.h
 include/zeek/packet_analysis/protocol/iptunnel/IPTunnel.h
 include/zeek/packet_analysis/protocol/linux_sll/LinuxSLL.h
 include/zeek/packet_analysis/protocol/mpls/MPLS.h
@@ -1201,14 +1112,24 @@ include/zeek/packet_analysis/protocol/ppp_serial/PPPSerial.h
 include/zeek/packet_analysis/protocol/pppoe/PPPoE.h
 include/zeek/packet_analysis/protocol/root/Root.h
 include/zeek/packet_analysis/protocol/skip/Skip.h
+include/zeek/packet_analysis/protocol/tcp/Stats.h
+include/zeek/packet_analysis/protocol/tcp/TCP.h
+include/zeek/packet_analysis/protocol/tcp/TCPSessionAdapter.h
+include/zeek/packet_analysis/protocol/teredo/Teredo.h
+include/zeek/packet_analysis/protocol/teredo/events.bif.h
+include/zeek/packet_analysis/protocol/teredo/functions.bif.h
+include/zeek/packet_analysis/protocol/udp/UDP.h
+include/zeek/packet_analysis/protocol/udp/UDPSessionAdapter.h
+include/zeek/packet_analysis/protocol/udp/events.bif.h
 include/zeek/packet_analysis/protocol/vlan/VLAN.h
+include/zeek/packet_analysis/protocol/vntag/VNTag.h
+include/zeek/packet_analysis/protocol/vxlan/VXLAN.h
+include/zeek/packet_analysis/protocol/vxlan/events.bif.h
 include/zeek/packet_analysis/protocol/wrapper/Wrapper.h
-include/zeek/patricia.h
 include/zeek/plugin/Component.h
 include/zeek/plugin/ComponentManager.h
 include/zeek/plugin/Manager.h
 include/zeek/plugin/Plugin.h
-include/zeek/plugin/TaggedComponent.h
 include/zeek/probabilistic/BitVector.h
 include/zeek/probabilistic/BloomFilter.h
 include/zeek/probabilistic/CardinalityCounter.h
@@ -1220,7 +1141,39 @@ include/zeek/probabilistic/cardinality-counter.bif.h
 include/zeek/probabilistic/top-k.bif.h
 include/zeek/reporter.bif.func_h
 include/zeek/reporter.bif.netvar_h
-include/zeek/setsignal.h
+include/zeek/script_opt/CPP/Attrs.h
+include/zeek/script_opt/CPP/Compile.h
+include/zeek/script_opt/CPP/Func.h
+include/zeek/script_opt/CPP/InitsInfo.h
+include/zeek/script_opt/CPP/Runtime.h
+include/zeek/script_opt/CPP/RuntimeInitSupport.h
+include/zeek/script_opt/CPP/RuntimeInits.h
+include/zeek/script_opt/CPP/RuntimeOps.h
+include/zeek/script_opt/CPP/RuntimeVec.h
+include/zeek/script_opt/CPP/Tracker.h
+include/zeek/script_opt/CPP/Util.h
+include/zeek/script_opt/ExprOptInfo.h
+include/zeek/script_opt/GenIDDefs.h
+include/zeek/script_opt/IDOptInfo.h
+include/zeek/script_opt/Inline.h
+include/zeek/script_opt/ProfileFunc.h
+include/zeek/script_opt/Reduce.h
+include/zeek/script_opt/ScriptOpt.h
+include/zeek/script_opt/StmtOptInfo.h
+include/zeek/script_opt/TempVar.h
+include/zeek/script_opt/UsageAnalyzer.h
+include/zeek/script_opt/UseDefs.h
+include/zeek/script_opt/ZAM/BuiltIn.h
+include/zeek/script_opt/ZAM/Compile.h
+include/zeek/script_opt/ZAM/Inst-Gen.h
+include/zeek/script_opt/ZAM/IterInfo.h
+include/zeek/script_opt/ZAM/Support.h
+include/zeek/script_opt/ZAM/ZBody.h
+include/zeek/script_opt/ZAM/ZInst.h
+include/zeek/script_opt/ZAM/ZOp.h
+include/zeek/session/Key.h
+include/zeek/session/Manager.h
+include/zeek/session/Session.h
 include/zeek/stats.bif.func_h
 include/zeek/stats.bif.netvar_h
 include/zeek/strings.bif.func_h
@@ -1228,6 +1181,13 @@ include/zeek/strings.bif.netvar_h
 include/zeek/supervisor.bif.func_h
 include/zeek/supervisor.bif.netvar_h
 include/zeek/supervisor/Supervisor.h
+include/zeek/telemetry/Counter.h
+include/zeek/telemetry/Gauge.h
+include/zeek/telemetry/Histogram.h
+include/zeek/telemetry/Manager.h
+include/zeek/telemetry/MetricFamily.h
+include/zeek/telemetry/Timer.h
+include/zeek/telemetry/telemetry.bif.h
 include/zeek/threading/BasicThread.h
 include/zeek/threading/Formatter.h
 include/zeek/threading/Manager.h
@@ -1257,18 +1217,46 @@ include/zeek/zeekygen/Target.h
 include/zeek/zeekygen/utils.h
 include/zeek/zeekygen/zeekygen.bif.h
 %%ZEEKCTL%%lib/broctl
-lib/cmake/CAF/CAFConfig.cmake
-lib/cmake/CAF/CAFConfigVersion.cmake
-lib/cmake/CAF/CAFTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/CAF/CAFTargets.cmake
+lib/cmake/Broker/BrokerConfig.cmake
+lib/cmake/Broker/BrokerConfigVersion.cmake
+lib/cmake/Broker/BrokerTargets-release.cmake
+lib/cmake/Broker/BrokerTargets.cmake
 lib/libbinpac.so
 lib/libbinpac.so.0
-lib/libbinpac.so.0.57
+lib/libbinpac.so.0.59
 %%BROKER%%lib/libbroker.a
-%%BROKER%%lib/libcaf_core.a
-%%BROKER%%lib/libcaf_io.a
-%%BROKER%%lib/libcaf_openssl.a
+lib/libhilti-rt-debug.a
+lib/libhilti-rt.a
+lib/libhilti.a
 lib/libparaglob.a
+%%SPICY%%lib/libspicy-rt-debug.a
+%%SPICY%%lib/libspicy-rt.a
+%%SPICY%%lib/libspicy.a
+%%SPICY%%lib/zeek-spicy/cmake/FindSpicy.cmake
+%%SPICY%%lib/zeek-spicy/cmake/FindZeek.cmake
+%%SPICY%%lib/zeek-spicy/cmake/ZeekSpicyAnalyzerSupport.cmake
+%%SPICY%%lib/zeek-spicy/include/zeek-spicy/autogen/config.h
+%%SPICY%%lib/zeek-spicy/include/zeek-spicy/cookie.h
+%%SPICY%%lib/zeek-spicy/include/zeek-spicy/debug.h
+%%SPICY%%lib/zeek-spicy/include/zeek-spicy/driver.h
+%%SPICY%%lib/zeek-spicy/include/zeek-spicy/file-analyzer.h
+%%SPICY%%lib/zeek-spicy/include/zeek-spicy/packet-analyzer.h
+%%SPICY%%lib/zeek-spicy/include/zeek-spicy/plugin.h
+%%SPICY%%lib/zeek-spicy/include/zeek-spicy/protocol-analyzer.h
+%%SPICY%%lib/zeek-spicy/include/zeek-spicy/runtime-support.h
+%%SPICY%%lib/zeek-spicy/include/zeek-spicy/zeek-compat.h
+%%SPICY%%lib/zeek-spicy/include/zeek-spicy/zeek-reporter.h
+%%SPICY%%lib/zeek-spicy/spicy/zeek.spicy
+%%SPICY%%lib/zeek-spicy/spicy/zeek_file.spicy
+%%SPICY%%lib/zeek-spicy/spicy/zeek_rt.hlt
+%%SPICY%%lib/zeek-spicy/tests/Scripts/canonify-zeek-log
+%%SPICY%%lib/zeek-spicy/tests/Scripts/canonify-zeek-log-sorted
+%%SPICY%%lib/zeek-spicy/tests/Scripts/diff-remove-abspath
+%%SPICY%%lib/zeek-spicy/tests/Scripts/diff-remove-timestamps
+%%SPICY%%lib/zeek-spicy/tests/Scripts/diff-sort
+%%SPICY%%lib/zeek-spicy/tests/Scripts/spicy-version
+%%SPICY%%lib/zeek-spicy/tests/Scripts/zeek-version
+%%SPICY%%lib/zeek-spicy/tests/random.seed
 %%NETMAP%%lib/zeek/plugins/Zeek_Netmap/COPYING
 %%NETMAP%%lib/zeek/plugins/Zeek_Netmap/__bro_plugin__
 %%NETMAP%%lib/zeek/plugins/Zeek_Netmap/lib/Zeek-Netmap.%%LCASE_OPSYS%%-%%ARCH%%.so
@@ -1279,7 +1267,6 @@ lib/zeek/python/SubnetTree.py
 lib/zeek/python/_SubnetTree.so
 %%BROKER%%lib/zeek/python/broker/__init__.py
 %%BROKER%%lib/zeek/python/broker/_broker.so
-%%BROKER%%lib/zeek/python/broker/bro.py
 %%BROKER%%lib/zeek/python/broker/zeek.py
 %%ZEEKCTL%%lib/zeek/python/zeekctl/BroControl/__init__.py
 %%ZEEKCTL%%lib/zeek/python/zeekctl/BroControl/cmdresult.py
@@ -1317,6 +1304,30 @@ lib/zeek/python/_SubnetTree.so
 man/man1/zeek-cut.1.gz
 man/man8/zeek.8.gz
 %%ZEEKCTL%%man/man8/zeekctl.8.gz
+share/btest/data/random.seed
+share/btest/scripts/diff-canonifier
+share/btest/scripts/diff-canonifier-external
+share/btest/scripts/diff-clean-doctest
+share/btest/scripts/diff-remove-abspath
+share/btest/scripts/diff-remove-fields
+share/btest/scripts/diff-remove-file-ids
+share/btest/scripts/diff-remove-fractions
+share/btest/scripts/diff-remove-openclose-timestamps
+share/btest/scripts/diff-remove-timestamps
+share/btest/scripts/diff-remove-timestamps-and-sort
+share/btest/scripts/diff-remove-uids
+share/btest/scripts/diff-remove-x509-key-info
+share/btest/scripts/diff-remove-x509-names
+share/btest/scripts/diff-sort
+share/btest/scripts/diff-sort-and-remove-abspath
+share/btest/scripts/diff-sort-conn-service
+share/btest/scripts/diff-sort-set-elements
+share/hilti/hilti.hlt
+%%SPICY%%share/spicy/filter.spicy
+%%SPICY%%share/spicy/spicy-driver-host.cc
+%%SPICY%%share/spicy/spicy.spicy
+%%SPICY%%share/spicy/spicy_rt.hlt
+%%DATADIR%%/base/bif/CPP-load.bif.zeek
 %%DATADIR%%/base/bif/__load__.zeek
 %%DATADIR%%/base/bif/analyzer.bif.zeek
 %%DATADIR%%/base/bif/bloom-filter.bif.zeek
@@ -1358,6 +1369,8 @@ man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/plugins/Zeek_Finger.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_GSSAPI.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_GTPv1.events.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_GTPv1.functions.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_Geneve.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Gnutella.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_HTTP.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_HTTP.functions.bif.zeek
@@ -1438,12 +1451,15 @@ man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/plugins/Zeek_SSL.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_SSL.functions.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_SSL.types.bif.zeek
-%%DATADIR%%/base/bif/plugins/Zeek_SteppingStone.events.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_Spicy.consts.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_Spicy.events.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_Spicy.functions.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Syslog.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_TCP.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_TCP.functions.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_TCP.types.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Teredo.events.bif.zeek
+%%DATADIR%%/base/bif/plugins/Zeek_Teredo.functions.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_UDP.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Unified2.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_Unified2.types.bif.zeek
@@ -1459,6 +1475,7 @@ man/man8/zeek.8.gz
 %%DATADIR%%/base/bif/store.bif.zeek
 %%DATADIR%%/base/bif/strings.bif.zeek
 %%DATADIR%%/base/bif/supervisor.bif.zeek
+%%DATADIR%%/base/bif/telemetry.bif.zeek
 %%DATADIR%%/base/bif/top-k.bif.zeek
 %%DATADIR%%/base/bif/types.bif.zeek
 %%DATADIR%%/base/bif/zeek.bif.zeek
@@ -1471,6 +1488,8 @@ man/man8/zeek.8.gz
 %%DATADIR%%/base/files/pe/consts.zeek
 %%DATADIR%%/base/files/pe/main.zeek
 %%DATADIR%%/base/files/x509/__load__.zeek
+%%DATADIR%%/base/files/x509/certificate-event-cache.zeek
+%%DATADIR%%/base/files/x509/log-ocsp.zeek
 %%DATADIR%%/base/files/x509/main.zeek
 %%DATADIR%%/base/frameworks/analyzer/__load__.zeek
 %%DATADIR%%/base/frameworks/analyzer/main.zeek
@@ -1597,16 +1616,26 @@ man/man8/zeek.8.gz
 %%DATADIR%%/base/init-bare.zeek
 %%DATADIR%%/base/init-default.zeek
 %%DATADIR%%/base/init-frameworks-and-bifs.zeek
+%%DATADIR%%/base/init-supervisor.zeek
 %%DATADIR%%/base/misc/find-checksum-offloading.zeek
 %%DATADIR%%/base/misc/find-filtered-trace.zeek
+%%DATADIR%%/base/misc/installation.zeek
 %%DATADIR%%/base/misc/version.zeek
 %%DATADIR%%/base/packet-protocols/__load__.zeek
+%%DATADIR%%/base/packet-protocols/ayiya/__load__.zeek
+%%DATADIR%%/base/packet-protocols/ayiya/main.zeek
 %%DATADIR%%/base/packet-protocols/ethernet/__load__.zeek
 %%DATADIR%%/base/packet-protocols/ethernet/main.zeek
 %%DATADIR%%/base/packet-protocols/fddi/__load__.zeek
 %%DATADIR%%/base/packet-protocols/fddi/main.zeek
+%%DATADIR%%/base/packet-protocols/geneve/__load__.zeek
+%%DATADIR%%/base/packet-protocols/geneve/main.zeek
 %%DATADIR%%/base/packet-protocols/gre/__load__.zeek
 %%DATADIR%%/base/packet-protocols/gre/main.zeek
+%%DATADIR%%/base/packet-protocols/gtpv1/__load__.zeek
+%%DATADIR%%/base/packet-protocols/gtpv1/main.zeek
+%%DATADIR%%/base/packet-protocols/icmp/__load__.zeek
+%%DATADIR%%/base/packet-protocols/icmp/main.zeek
 %%DATADIR%%/base/packet-protocols/ieee802_11/__load__.zeek
 %%DATADIR%%/base/packet-protocols/ieee802_11/main.zeek
 %%DATADIR%%/base/packet-protocols/ieee802_11_radio/__load__.zeek
@@ -1617,6 +1646,7 @@ man/man8/zeek.8.gz
 %%DATADIR%%/base/packet-protocols/iptunnel/main.zeek
 %%DATADIR%%/base/packet-protocols/linux_sll/__load__.zeek
 %%DATADIR%%/base/packet-protocols/linux_sll/main.zeek
+%%DATADIR%%/base/packet-protocols/main.zeek
 %%DATADIR%%/base/packet-protocols/mpls/__load__.zeek
 %%DATADIR%%/base/packet-protocols/mpls/main.zeek
 %%DATADIR%%/base/packet-protocols/nflog/__load__.zeek
@@ -1631,8 +1661,18 @@ man/man8/zeek.8.gz
 %%DATADIR%%/base/packet-protocols/root/main.zeek
 %%DATADIR%%/base/packet-protocols/skip/__load__.zeek
 %%DATADIR%%/base/packet-protocols/skip/main.zeek
+%%DATADIR%%/base/packet-protocols/tcp/__load__.zeek
+%%DATADIR%%/base/packet-protocols/tcp/main.zeek
+%%DATADIR%%/base/packet-protocols/teredo/__load__.zeek
+%%DATADIR%%/base/packet-protocols/teredo/main.zeek
+%%DATADIR%%/base/packet-protocols/udp/__load__.zeek
+%%DATADIR%%/base/packet-protocols/udp/main.zeek
 %%DATADIR%%/base/packet-protocols/vlan/__load__.zeek
 %%DATADIR%%/base/packet-protocols/vlan/main.zeek
+%%DATADIR%%/base/packet-protocols/vntag/__load__.zeek
+%%DATADIR%%/base/packet-protocols/vntag/main.zeek
+%%DATADIR%%/base/packet-protocols/vxlan/__load__.zeek
+%%DATADIR%%/base/packet-protocols/vxlan/main.zeek
 %%DATADIR%%/base/protocols/conn/__load__.zeek
 %%DATADIR%%/base/protocols/conn/contents.zeek
 %%DATADIR%%/base/protocols/conn/inactivity.zeek
@@ -1767,6 +1807,15 @@ man/man8/zeek.8.gz
 %%DATADIR%%/base/utils/thresholds.zeek
 %%DATADIR%%/base/utils/time.zeek
 %%DATADIR%%/base/utils/urls.zeek
+%%ZEEKCTL%%%%SPICY%%%%DATADIR%%/builtin-plugins/Zeek_Spicy/Zeek/Spicy/__load__.zeek
+%%ZEEKCTL%%%%SPICY%%%%DATADIR%%/builtin-plugins/Zeek_Spicy/Zeek/Spicy/bare.zeek
+%%ZEEKCTL%%%%SPICY%%%%DATADIR%%/builtin-plugins/Zeek_Spicy/Zeek/Spicy/default.zeek
+%%ZEEKCTL%%%%SPICY%%%%DATADIR%%/builtin-plugins/Zeek_Spicy/Zeek/Spicy/misc/record-spicy-batch.zeek
+%%ZEEKCTL%%%%SPICY%%%%DATADIR%%/builtin-plugins/Zeek_Spicy/_Zeek
+%%ZEEKCTL%%%%SPICY%%%%DATADIR%%/builtin-plugins/Zeek_Spicy/__load__.zeek
+%%ZEEKCTL%%%%SPICY%%%%DATADIR%%/builtin-plugins/Zeek_Spicy/__preload__.zeek
+%%ZEEKCTL%%%%DATADIR%%/builtin-plugins/__load__.zeek
+%%ZEEKCTL%%%%DATADIR%%/builtin-plugins/__preload__.zeek
 %%DATADIR%%/cmake/AddUninstallTarget.cmake
 %%DATADIR%%/cmake/BifCl.cmake
 %%DATADIR%%/cmake/BinPAC.cmake
@@ -1786,7 +1835,7 @@ man/man8/zeek.8.gz
 %%DATADIR%%/cmake/FindBISON.cmake
 %%DATADIR%%/cmake/FindBinPAC.cmake
 %%DATADIR%%/cmake/FindBroker.cmake
-%%DATADIR%%/cmake/FindCAF.cmake
+%%DATADIR%%/cmake/FindCAres.cmake
 %%DATADIR%%/cmake/FindCapstats.cmake
 %%DATADIR%%/cmake/FindClangTidy.cmake
 %%DATADIR%%/cmake/FindFTS.cmake
@@ -1795,13 +1844,17 @@ man/man8/zeek.8.gz
 %%DATADIR%%/cmake/FindKqueue.cmake
 %%DATADIR%%/cmake/FindLibKrb5.cmake
 %%DATADIR%%/cmake/FindLibMMDB.cmake
+%%DATADIR%%/cmake/FindOpenSSL.cmake
 %%DATADIR%%/cmake/FindPCAP.cmake
+%%DATADIR%%/cmake/FindPackageHandleStandardArgs.cmake
+%%DATADIR%%/cmake/FindPackageMessage.cmake
 %%DATADIR%%/cmake/FindPythonDev.cmake
 %%DATADIR%%/cmake/FindRequiredPackage.cmake
-%%DATADIR%%/cmake/FindRocksDB.cmake
+%%DATADIR%%/cmake/FindSpicy.cmake
 %%DATADIR%%/cmake/FindSubnetTree.cmake
 %%DATADIR%%/cmake/FindTraceSummary.cmake
 %%DATADIR%%/cmake/FindZeek.cmake
+%%DATADIR%%/cmake/Gen-ZAM.cmake
 %%DATADIR%%/cmake/GetArchitecture.cmake
 %%DATADIR%%/cmake/InstallClobberImmune.cmake
 %%DATADIR%%/cmake/InstallPackageConfigFile.cmake
@@ -1816,6 +1869,7 @@ man/man8/zeek.8.gz
 %%DATADIR%%/cmake/ProhibitInSourceBuild.cmake
 %%DATADIR%%/cmake/README
 %%DATADIR%%/cmake/RequireCXX17.cmake
+%%DATADIR%%/cmake/SelectLibraryConfigurations.cmake
 %%DATADIR%%/cmake/SetDefaultCompileFlags.cmake
 %%DATADIR%%/cmake/SetupRPATH.cmake
 %%DATADIR%%/cmake/UserChangedWarning.cmake
@@ -1823,6 +1877,7 @@ man/man8/zeek.8.gz
 %%DATADIR%%/cmake/ZeekPluginCommon.cmake
 %%DATADIR%%/cmake/ZeekPluginDynamic.cmake
 %%DATADIR%%/cmake/ZeekPluginStatic.cmake
+%%DATADIR%%/cmake/ZeekSpicyAnalyzerSupport.cmake
 %%DATADIR%%/cmake/ZeekSubdir.cmake
 %%DATADIR%%/cmake/cmake_uninstall.cmake.in
 %%DATADIR%%/cmake/package_postupgrade.sh.in
@@ -1831,6 +1886,7 @@ man/man8/zeek.8.gz
 %%DATADIR%%/cmake/zeek-plugin-install-package.sh
 %%DATADIR%%/policy/files/unified2/__load__.zeek
 %%DATADIR%%/policy/files/unified2/main.zeek
+%%DATADIR%%/policy/files/x509/disable-certificate-events-known-certs.zeek
 %%DATADIR%%/policy/files/x509/log-ocsp.zeek
 %%DATADIR%%/policy/frameworks/control/controllee.zeek
 %%DATADIR%%/policy/frameworks/control/controller.zeek
@@ -1858,6 +1914,31 @@ man/man8/zeek.8.gz
 %%DATADIR%%/policy/frameworks/intel/seen/where-locations.zeek
 %%DATADIR%%/policy/frameworks/intel/seen/x509.zeek
 %%DATADIR%%/policy/frameworks/intel/whitelist.zeek
+%%DATADIR%%/policy/frameworks/management/__load__.zeek
+%%DATADIR%%/policy/frameworks/management/agent/__load__.zeek
+%%DATADIR%%/policy/frameworks/management/agent/api.zeek
+%%DATADIR%%/policy/frameworks/management/agent/boot.zeek
+%%DATADIR%%/policy/frameworks/management/agent/config.zeek
+%%DATADIR%%/policy/frameworks/management/agent/main.zeek
+%%DATADIR%%/policy/frameworks/management/config.zeek
+%%DATADIR%%/policy/frameworks/management/controller/__load__.zeek
+%%DATADIR%%/policy/frameworks/management/controller/api.zeek
+%%DATADIR%%/policy/frameworks/management/controller/boot.zeek
+%%DATADIR%%/policy/frameworks/management/controller/config.zeek
+%%DATADIR%%/policy/frameworks/management/controller/main.zeek
+%%DATADIR%%/policy/frameworks/management/log.zeek
+%%DATADIR%%/policy/frameworks/management/node/__load__.zeek
+%%DATADIR%%/policy/frameworks/management/node/api.zeek
+%%DATADIR%%/policy/frameworks/management/node/config.zeek
+%%DATADIR%%/policy/frameworks/management/node/main.zeek
+%%DATADIR%%/policy/frameworks/management/persistence.zeek
+%%DATADIR%%/policy/frameworks/management/request.zeek
+%%DATADIR%%/policy/frameworks/management/supervisor/__load__.zeek
+%%DATADIR%%/policy/frameworks/management/supervisor/api.zeek
+%%DATADIR%%/policy/frameworks/management/supervisor/config.zeek
+%%DATADIR%%/policy/frameworks/management/supervisor/main.zeek
+%%DATADIR%%/policy/frameworks/management/types.zeek
+%%DATADIR%%/policy/frameworks/management/util.zeek
 %%DATADIR%%/policy/frameworks/netcontrol/catch-and-release.zeek
 %%DATADIR%%/policy/frameworks/notice/__load__.zeek
 %%DATADIR%%/policy/frameworks/notice/actions/drop.zeek
@@ -1925,12 +2006,16 @@ man/man8/zeek.8.gz
 %%DATADIR%%/policy/protocols/ssh/geo-data.zeek
 %%DATADIR%%/policy/protocols/ssh/interesting-hostnames.zeek
 %%DATADIR%%/policy/protocols/ssh/software.zeek
+%%DATADIR%%/policy/protocols/ssl/decryption.zeek
+%%DATADIR%%/policy/protocols/ssl/dpd-v2.sig
 %%DATADIR%%/policy/protocols/ssl/expiring-certs.zeek
 %%DATADIR%%/policy/protocols/ssl/extract-certs-pem.zeek
 %%DATADIR%%/policy/protocols/ssl/heartbleed.zeek
 %%DATADIR%%/policy/protocols/ssl/known-certs.zeek
+%%DATADIR%%/policy/protocols/ssl/log-certs-base64.zeek
 %%DATADIR%%/policy/protocols/ssl/log-hostcerts-only.zeek
 %%DATADIR%%/policy/protocols/ssl/notary.zeek
+%%DATADIR%%/policy/protocols/ssl/ssl-log-ext.zeek
 %%DATADIR%%/policy/protocols/ssl/validate-certs.zeek
 %%DATADIR%%/policy/protocols/ssl/validate-ocsp.zeek
 %%DATADIR%%/policy/protocols/ssl/validate-sct.zeek
@@ -1944,12 +2029,12 @@ man/man8/zeek.8.gz
 %%DATADIR%%/policy/tuning/track-all-assets.zeek
 @sample %%DATADIR%%/site/local.zeek.sample
 %%ZEEKCTL%%%%DATADIR%%/test-all-policy.zeek
-%%ZEEKCTL%%%%DATADIR%%/zeekctl/__load__.zeek
-%%ZEEKCTL%%%%DATADIR%%/zeekctl/auto.zeek
-%%ZEEKCTL%%%%DATADIR%%/zeekctl/check.zeek
-%%ZEEKCTL%%%%DATADIR%%/zeekctl/main.zeek
-%%ZEEKCTL%%%%DATADIR%%/zeekctl/process-trace.zeek
-%%ZEEKCTL%%%%DATADIR%%/zeekctl/standalone.zeek
+%%ZEEKCTL%%share/zeek/zeekctl/__load__.zeek
+%%ZEEKCTL%%share/zeek/zeekctl/auto.zeek
+%%ZEEKCTL%%share/zeek/zeekctl/check.zeek
+%%ZEEKCTL%%share/zeek/zeekctl/main.zeek
+%%ZEEKCTL%%share/zeek/zeekctl/process-trace.zeek
+%%ZEEKCTL%%share/zeek/zeekctl/standalone.zeek
 %%DATADIR%%/zeekygen/__load__.zeek
 %%DATADIR%%/zeekygen/example.zeek
 %%ZEEKCTL%%share/zeekctl/scripts/archive-log
@@ -1993,153 +2078,5 @@ man/man8/zeek.8.gz
 %%ZEEKCTL%%@dir spool/installed-scripts-do-not-touch
 %%ZEEKCTL%%@dir spool/brokerstore
 %%ZEEKCTL%%@dir spool
-%%ZEEKCTL%%@dir share/zeekctl/scripts/postprocessors
-%%ZEEKCTL%%@dir share/zeekctl/scripts/helpers
-%%ZEEKCTL%%@dir share/zeekctl/scripts
-%%ZEEKCTL%%@dir share/zeekctl
-%%ZEEKCTL%%@dir %%DATADIR%%/zeekygen
-%%ZEEKCTL%%@dir %%DATADIR%%/zeekctl
-%%ZEEKCTL%%@dir %%DATADIR%%/site
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/tuning/defaults
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/tuning
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/ssl
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/ssh
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/smtp
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/smb
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/rdp
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/mysql
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/mqtt
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/modbus
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/krb
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/http
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/ftp
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/dns
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/dhcp
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols/conn
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/protocols
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/misc/detect-traceroute
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/misc
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/integration/collective-intel
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/integration/barnyard2
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/integration
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/software
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/signatures
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/packet-filter
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/notice/extend-email
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/notice/actions
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/notice
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/netcontrol
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/intel/seen
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/intel
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/files
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/dpd
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks/control
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/frameworks
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/files/x509
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/files/unified2
-%%ZEEKCTL%%@dir %%DATADIR%%/policy/files
-%%ZEEKCTL%%@dir %%DATADIR%%/policy
-%%ZEEKCTL%%@dir %%DATADIR%%/cmake
-%%ZEEKCTL%%@dir %%DATADIR%%/base/utils
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/xmpp
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/tunnels
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/syslog
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/ssl
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/ssh
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/socks
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/snmp
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/smtp
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/smb
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/sip
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/rfb
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/rdp
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/radius
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/pop3
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/ntp
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/ntlm
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/mysql
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/mqtt
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/modbus
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/krb
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/irc
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/imap
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/http
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/ftp
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/dns
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/dnp3
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/dhcp
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/dce-rpc
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols/conn
-%%ZEEKCTL%%@dir %%DATADIR%%/base/protocols
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/vlan
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/skip
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/root
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/pppoe
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/ppp_serial
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/null
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/nflog
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/mpls
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/linux_sll
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/iptunnel
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/ip
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/ieee802_11_radio
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/ieee802_11
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/gre
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/fddi
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols/ethernet
-%%ZEEKCTL%%@dir %%DATADIR%%/base/packet-protocols
-%%ZEEKCTL%%@dir %%DATADIR%%/base/misc
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/tunnels
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/supervisor
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/sumstats/plugins
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/sumstats
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/software
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/signatures
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/reporter
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/packet-filter
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/openflow/plugins
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/openflow
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/notice/actions
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/notice
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/netcontrol/plugins
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/netcontrol
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/logging/writers
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/logging/postprocessors
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/logging
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/intel
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/input/readers
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/input
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/files/magic
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/files
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/dpd
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/control
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/config
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/cluster/nodes
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/cluster
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/broker
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks/analyzer
-%%ZEEKCTL%%@dir %%DATADIR%%/base/frameworks
-%%ZEEKCTL%%@dir %%DATADIR%%/base/files/x509
-%%ZEEKCTL%%@dir %%DATADIR%%/base/files/pe
-%%ZEEKCTL%%@dir %%DATADIR%%/base/files/hash
-%%ZEEKCTL%%@dir %%DATADIR%%/base/files/extract
-%%ZEEKCTL%%@dir %%DATADIR%%/base/files
-%%ZEEKCTL%%@dir %%DATADIR%%/base/bif/plugins
-%%ZEEKCTL%%@dir %%DATADIR%%/base/bif
-%%ZEEKCTL%%@dir %%DATADIR%%/base
-%%ZEEKCTL%%@dir share/zeek
 %%ZEEKCTL%%@dir logs
-%%ZEEKCTL%%@dir lib/zeek/python/zeekctl/plugins
-%%ZEEKCTL%%@dir lib/zeek/python/zeekctl/ZeekControl
-%%ZEEKCTL%%@dir lib/zeek/python/zeekctl/BroControl
-%%ZEEKCTL%%@dir lib/zeek/python/zeekctl
-%%BROKER%%@dir lib/zeek/python/broker
-@dir lib/zeek/python
-%%NETMAP%%@dir lib/zeek/plugins/Zeek_Netmap/zeekctl
-%%NETMAP%%@dir lib/zeek/plugins/Zeek_Netmap/scripts
-%%NETMAP%%@dir lib/zeek/plugins/Zeek_Netmap/lib
-%%NETMAP%%@dir lib/zeek/plugins/Zeek_Netmap
-@dir lib/zeek/plugins
-@dir lib/cmake/CAF
-@dir lib/cmake
 %%ZEEKCTL%%@postexec su -fm %%ZEEKUSER%% -c '%D/bin/zeekctl install; rm -f %D/spool/debug.log'

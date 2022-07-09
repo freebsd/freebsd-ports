@@ -1,17 +1,17 @@
---- src/input/readers/raw/Raw.cc.orig	2022-07-01 19:51:26 UTC
+--- src/input/readers/raw/Raw.cc.orig	2022-07-05 21:26:56 UTC
 +++ src/input/readers/raw/Raw.cc
-@@ -34,6 +34,7 @@ Raw::Raw(ReaderFrontend *frontend) : ReaderBackend(fro
+@@ -36,6 +36,7 @@ Raw::Raw(ReaderFrontend* frontend)
  	firstrun = true;
  	mtime = 0;
  	ino = 0;
 +	dev = 0;
  	forcekill = false;
  	offset = 0;
- 	separator.assign( (const char*) BifConst::InputRaw::record_separator->Bytes(),
-@@ -278,12 +279,32 @@ bool Raw::OpenInput()
+ 	separator.assign((const char*)BifConst::InputRaw::record_separator->Bytes(),
+@@ -280,12 +281,31 @@ bool Raw::OpenInput()
  	else
  		{
- 		file = std::unique_ptr<FILE, int(*)(FILE*)>(fopen(fname.c_str(), "r"), fclose);
+ 		file = std::unique_ptr<FILE, int (*)(FILE*)>(fopen(fname.c_str(), "r"), fclose);
 +		if ( ! file && Info().mode == MODE_STREAM )
 +			{
 +			// Watch /dev/null until the file appears
@@ -37,11 +37,10 @@
 +			dev = sb.st_dev;
 +			}
 +
-+
  		if ( ! SetFDFlags(fileno(file.get()), F_SETFD, FD_CLOEXEC) )
  			Warning(Fmt("Init: cannot set close-on-exec for %s", fname.c_str()));
  		}
-@@ -345,6 +366,7 @@ bool Raw::DoInit(const ReaderInfo& info, int num_field
+@@ -346,6 +366,7 @@ bool Raw::DoInit(const ReaderInfo& info, int num_field
  	fname = info.source;
  	mtime = 0;
  	ino = 0;
@@ -49,29 +48,29 @@
  	execute = false;
  	firstrun = true;
  	int want_fields = 1;
-@@ -565,24 +587,58 @@ bool Raw::DoUpdate()
+@@ -574,23 +595,57 @@ bool Raw::DoUpdate()
  
- 			mtime = sb.st_mtime;
- 			ino = sb.st_ino;
-+			dev = sb.st_dev;
- 			// file changed. reread.
- 			//
- 			// fallthrough
- 			}
+ 				mtime = sb.st_mtime;
+ 				ino = sb.st_ino;
++				dev = sb.st_dev;
+ 				// file changed. reread.
+ 				//
+ 				// fallthrough
+ 				}
  
- 		case MODE_MANUAL:
--		case MODE_STREAM:
--			if ( Info().mode == MODE_STREAM && file )
--				{
--				clearerr(file.get());  // remove end of file evil bits
--				break;
--				}
+ 			case MODE_MANUAL:
+-			case MODE_STREAM:
+-				if ( Info().mode == MODE_STREAM && file )
+-					{
+-					clearerr(file.get()); // remove end of file evil bits
+-					break;
+-					}
 -
- 			CloseInput();
- 			if ( ! OpenInput() )
- 				return false;
+ 				CloseInput();
+ 				if ( ! OpenInput() )
+ 					return false;
  
- 			break;
++				break;
 +
 +			case MODE_STREAM:
 +				// Clear possible EOF condition
@@ -111,7 +110,6 @@
 +				dev = sb.st_dev;
 +				offset = 0;
 +				bufpos = 0;
-+ 				break;
+ 				break;
  
- 		default:
- 			assert(false);
+ 			default:
