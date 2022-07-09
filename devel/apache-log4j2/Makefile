@@ -1,7 +1,7 @@
 # Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
 
 PORTNAME=	log4j2
-PORTVERSION=	2.17.2
+PORTVERSION=	2.18.0
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/logging/log4j/${PORTVERSION}
 PKGNAMEPREFIX=	apache-
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		cpe
 
 USE_JAVA=	yes
+JAVA_VERSION=	8+
 NO_BUILD=	yes
 NO_ARCH=	yes
 CPE_VENDOR=	apache
