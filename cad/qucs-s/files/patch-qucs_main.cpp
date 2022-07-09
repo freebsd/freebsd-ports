@@ -2,6 +2,19 @@
 
 --- qucs/main.cpp.orig	2022-06-30 18:34:40 UTC
 +++ qucs/main.cpp
+@@ -114,10 +114,10 @@ bool loadSettings()
+         if (QucsSettings.Qucsconv.isEmpty())
+             QucsSettings.Qucsconv = QucsSettings.QucsatorDir + QDir::separator() + "qucsconv" + executableSuffix;
+     } else {
+-        QucsSettings.Qucsator = QucsSettings.BinDir + "qucsator" + executableSuffix;
++        QucsSettings.Qucsator = "%%PREFIX%%/bin/qucsator";
+         QucsSettings.QucsatorDir = QucsSettings.BinDir;
+         if (QucsSettings.Qucsconv.isEmpty())
+-            QucsSettings.Qucsconv = QucsSettings.BinDir + "qucsconv" + executableSuffix;
++            QucsSettings.Qucsconv = "%%PREFIX%%/bin/qucsconv";
+     }
+     //if(settings.contains("BinDir"))QucsSettings.BinDir = settings.value("BinDir").toString();
+     //if(settings.contains("LangDir"))QucsSettings.LangDir = settings.value("LangDir").toString();
 @@ -139,13 +139,13 @@ bool loadSettings()
  #ifdef Q_OS_WIN
          QucsSettings.XyceExecutable = "Xyce.exe";
