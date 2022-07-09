@@ -1,3 +1,61 @@
+  <vuln vid="d1b35142-ff4a-11ec-8be3-001b217b3468">
+    <topic>Gitlab -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.1.0</ge><lt>15.1.1</lt></range>
+	<range><ge>15.0.0</ge><lt>15.0.4</lt></range>
+	<range><ge>0</ge><lt>14.10.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2022/06/30/critical-security-release-gitlab-15-1-1-released/">
+	  <p>Remote Command Execution via Project Imports</p>
+	  <p>XSS in ZenTao integration affecting self hosted instances without strict CSP</p>
+	  <p>XSS in project settings page</p>
+	  <p>Unallowed users can read unprotected CI variables</p>
+	  <p>IP allow-list bypass to access Container Registries</p>
+	  <p>2FA status is disclosed to unauthenticated users</p>
+	  <p>CI variables provided to runners outside of a group's restricted IP range</p>
+	  <p>IDOR in sentry issues</p>
+	  <p>Reporters can manage issues in error tracking</p>
+	  <p>Regular Expression Denial of Service via malicious web server responses</p>
+	  <p>Unauthorized read for conan repository</p>
+	  <p>Open redirect vulnerability</p>
+	  <p>Group labels are editable through subproject</p>
+	  <p>Release titles visible for any users if group milestones are associated with any project releases</p>
+	  <p>Restrict membership by email domain bypass</p>
+	  <p>Job information is leaked to users who previously were maintainers via the Runner Jobs API endpoint</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2185</cvename>
+      <cvename>CVE-2022-2235</cvename>
+      <cvename>CVE-2022-2230</cvename>
+      <cvename>CVE-2022-2229</cvename>
+      <cvename>CVE-2022-1983</cvename>
+      <cvename>CVE-2022-1963</cvename>
+      <cvename>CVE-2022-2228</cvename>
+      <cvename>CVE-2022-2243</cvename>
+      <cvename>CVE-2022-2244</cvename>
+      <cvename>CVE-2022-1954</cvename>
+      <cvename>CVE-2022-2270</cvename>
+      <cvename>CVE-2022-2250</cvename>
+      <cvename>CVE-2022-1999</cvename>
+      <cvename>CVE-2022-2281</cvename>
+      <cvename>CVE-2022-1981</cvename>
+      <cvename>CVE-2022-2227</cvename>
+      <url>https://about.gitlab.com/releases/2022/06/30/critical-security-release-gitlab-15-1-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-06-30</discovery>
+      <entry>2022-07-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b9210706-feb0-11ec-81fa-1c697a616631">
     <topic>Node.js -- July 7th 2022 Security Releases</topic>
     <affects>
