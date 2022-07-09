@@ -1,20 +1,14 @@
-Single-Sign-On (SSO) server with multiple factor authentication.
+Javascript Object Signing and Encryption (JOSE) library - JWK, JWKS, JWS, JWE
+and JWT
 
-Authentication processes supported:
+* Create, modify, parse, import or export JSON Web Keys (JWK) and
+  JSON Web Keys Set (JWKS)
+* Create, modify, parse, validate or serialize JSON Web Signatures (JWS)
+* Create, modify, parse, validate or serialize JSON Web Encryption (JWE)
+* Create, modify, parse, validate or serialize JSON Web Token (JWT)
 
-* OAuth2
-* OpenID Connect
-* Allows users to authenticate via multiple factors:
+JWT Relies on JWS and JWE functions, so it supports the same functionalities as
+the other 2. JWT functionalities also support nesting serialization (JWE nested
+in a JWS or the opposite).
 
-Password
-* One-time password (TOTP/HOTP)
-* Webauthn (Yubikey, Android devices)
-* One-time password sent via e-mail
-* TLS Certificate
-* Users and clients can be stored and managed from various backends:
-
-Database
-* LDAP service
-* HTTP Backend service providing Basic Authentication
-
-WWW: https://github.com/babelouest/glewlwyd
+WWW: https://github.com/babelouest/rhonabwy
