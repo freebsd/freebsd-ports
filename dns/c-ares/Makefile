@@ -2,6 +2,7 @@
 
 PORTNAME=	c-ares
 PORTVERSION=	1.18.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://c-ares.org/download/ \
 		https://c-ares.haxx.se/download/ \
@@ -16,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-werror
 INSTALL_TARGET=	install-strip
-SSP_UNSAFE=	Refuses -l in LDFLAGS
 USES=		libtool pathfix compiler:c++11-lang gmake
 USE_LDCONFIG=	yes
 
@@ -30,8 +30,6 @@ HIDE_SYMBOLS_DESC=	Hide internal library symbols
 OPTIMIZED_CFLAGS_DESC=	Build with compiler optimizations
 
 CONFLICTS=		py*-ripe.atlas.tools
-
-MAKE_JOBS_UNSAFE=	yes
 
 CONFIG_INFO_EXTRA_PATCHES=	${FILESDIR}/ares-config-info.patch
 DEBUG_CONFIGURE_ENABLE=	debug
