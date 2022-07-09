@@ -118,6 +118,7 @@
     SUBDIR += qmls
     SUBDIR += qrouter
     SUBDIR += qucs-s
+    SUBDIR += qucsator
     SUBDIR += repsnapper
     SUBDIR += rubygem-gdsii
     SUBDIR += scotch

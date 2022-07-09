@@ -1,0 +1,13 @@
+- pass compilation flags
+
+--- CMakeLists.txt.orig	2022-07-09 18:30:09 UTC
++++ CMakeLists.txt
+@@ -248,7 +248,7 @@ endif()
+ if(WIN32)
+   set(CMAKE_CXX_FLAGS "-Wall -std=c++0x -fpermissive -U__STRICT_ANSI__")
+ else()
+-  set(CMAKE_CXX_FLAGS "-Wall -std=c++11")
++  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11")
+ endif()
+ 
+ # indiscriminate copy/paste from:
