@@ -36,6 +36,7 @@ LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 # :keepla because port uses lt_dlopen
 USES=			cpe gmake libtool:keepla localbase ssl tar:tgz
+BUILD_DEPENDS+=		autoconf>0:devel/autoconf
 
 .if defined(CLIENT_ONLY)
 CONFLICTS_INSTALL=	${PORTNAME}2[0-57-9]-client ${PORTNAME}-client
@@ -56,7 +57,6 @@ OPTIONS_DEFAULT+=	DEBUG
 .if defined(CLIENT_ONLY)
 OPTIONS_DEFINE+=	DOCS FETCH
 
-FETCH_BUILD_DEPENDS=	autoconf>0:devel/autoconf
 FETCH_CONFIGURE_WITH=	fetch
 .else
 OPTIONS_GROUP=		BKNDS OVLYS
@@ -385,7 +385,7 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
-pre-configure-FETCH-on:
+pre-configure:
 	@(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf)
 
 .if !defined(CLIENT_ONLY)
