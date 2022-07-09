@@ -1,9 +1,11 @@
-PORTNAME=	vm-bhyve
-PORTVERSION=	1.4.2
-PORTREVISION=	1
-CATEGORIES=	sysutils
+PORTNAME=		vm-bhyve
+DISTVERSIONPREFIX=	v
+DISTVERSION=		1.4.0-73
+DISTVERSIONSUFFIX=	-gec0e12e
+CATEGORIES=		sysutils
+PKGNAMESUFFIX=		-devel
 
-MAINTAINER=	churchers@gmail.com
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Management system for bhyve virtual machines
 
 LICENSE=	BSD2CLAUSE
@@ -14,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 USE_GITHUB=	yes
 GH_ACCOUNT=	churchers
 
-CONFLICTS_INSTALL=	vm-bhyve-devel
+CONFLICTS_INSTALL=	vm-bhyve
 
 NO_ARCH=	yes
 NO_BUILD=	yes

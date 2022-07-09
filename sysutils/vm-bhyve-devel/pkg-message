@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+To enable vm-bhyve, please add the following lines to rc.conf,
+depending on whether you are using ZFS storage or not. Please note
+that the directory or dataset specified should already exist.
+
+    vm_enable="YES"
+    vm_dir="zfs:pool/dataset"
+
+OR
+
+    vm_enable="YES"
+    vm_dir="/directory/path"
+
+Then run 'vm init'.
+EOM
+}
+]
