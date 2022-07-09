@@ -137,6 +137,7 @@
     SUBDIR += verilog-mode.el
     SUBDIR += veroroute
     SUBDIR += xcircuit
+    SUBDIR += xyce
     SUBDIR += yosys
     SUBDIR += z88
     SUBDIR += zcad
