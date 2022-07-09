@@ -1,5 +1,5 @@
 PORTNAME=	ocrmypdf
-DISTVERSION=	13.4.7
+DISTVERSION=	13.6.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,14 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=0:devel/py-setuptools_scm_git_archive@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coloredlogs>=14.0:devel/py-coloredlogs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}img2pdf>=0.3.0<0.5:graphics/py-img2pdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}img2pdf>=0.3.0:graphics/py-img2pdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=8.2.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=3.5.66:print/py-reportlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pdfminer.six>=20191110:textproc/py-pdfminer.six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pikepdf>=4.0.0:textproc/py-pikepdf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pluggy>=0.13.0<2.0:devel/py-pluggy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pluggy>=0.13.0:devel/py-pluggy@${PY_FLAVOR} \
 		tesseract:graphics/tesseract
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.4.1:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=2.2.0:devel/py-pytest-xdist@${PY_FLAVOR} \
