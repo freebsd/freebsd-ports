@@ -17,7 +17,8 @@ ONLY_FOR_ARCHS_REASON=	only supported on aarch64 and amd64
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake cpe localbase python shebangfix
+USES=		cmake cpe localbase perl5 python shebangfix
+USE_PERL5=	build
 
 CPE_VENDOR=	yandex
 
