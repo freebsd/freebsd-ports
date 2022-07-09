@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+If Perl support was enabled during compilation you need to make sure the module
+is listed in /set autoload_modules
+EOM
+}
+]
