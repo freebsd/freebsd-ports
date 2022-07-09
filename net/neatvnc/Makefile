@@ -1,12 +1,7 @@
 PORTNAME=	neatvnc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.5.1
 CATEGORIES=	net
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	4baeaa43fd67.patch:-p1 # https://github.com/any1/neatvnc/pull/65
-PATCHFILES+=	f4f8f0bdb366.patch:-p1 # https://github.com/any1/neatvnc/issues/66
-PATCHFILES+=	86dd97ed0aee.patch:-p1 # https://github.com/any1/neatvnc/issues/66
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Liberally licensed VNC server library
