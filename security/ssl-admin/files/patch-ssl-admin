@@ -1,0 +1,14 @@
+--- ssl-admin.orig	2022-06-25 13:06:12 UTC
++++ ssl-admin
+@@ -141,9 +141,9 @@ sub create_csr {
+ 		chomp($yn = <>);
+ 	} until $yn =~ m/^[yn]$/;
+ 	if ($yn eq "y") {
+-		system("cd $working_dir && openssl req_v3 -new -keyout $cn.key -out $cn.csr -config $key_config -batch");
++		system("cd $working_dir && openssl req -new -keyout $cn.key -out $cn.csr -config $key_config -batch -extensions v3_req");
+ 	} elsif ($yn eq "n") {
+-		system("cd $working_dir && openssl req_v3 -nodes -new -keyout $cn.key -out $cn.csr -config $key_config -batch");
++		system("cd $working_dir && openssl req -nodes -new -keyout $cn.key -out $cn.csr -config $key_config -batch -extensions v3_req");
+ 	}
+ }
+ 
