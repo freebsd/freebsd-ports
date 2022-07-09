@@ -7,4 +7,4 @@ format, ranging from standard Unix maildrops, through maildir and up to
 remote mailboxes, which are transparently accessed using IMAP4, POP3,
 and SMTP.
 
-WWW: http://mailutils.org/
+WWW: https://mailutils.org/
