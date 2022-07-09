@@ -22,4 +22,4 @@ lite: $(lite_OBJS)
 
 all: lite
 
-.PHONY: all install
+.PHONY: all

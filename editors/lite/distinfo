@@ -1,3 +1,9 @@
 TIMESTAMP = 1610208177
 SHA256 (rxi-lite-1.11-38bd9b3_GH0.tar.gz) = 63b0f22eb90f38564736f56d4d0f51f7219fcb7fe6398018e3435a62badd10d9
 SIZE (rxi-lite-1.11-38bd9b3_GH0.tar.gz) = 10707650
+SHA256 (rxi-lite-colors-5b77292_GH0.tar.gz) = 0ad9074b0d9128924f6210808852b1412eae6310e43600978502b512059c2dc4
+SIZE (rxi-lite-colors-5b77292_GH0.tar.gz) = 5337
+SHA256 (rxi-lite-plugins-4a9e1f3_GH0.tar.gz) = cada6be45b11e1d5f70d2bbeac6e9a103e4285ef23f00236a9116718941b92db
+SIZE (rxi-lite-plugins-4a9e1f3_GH0.tar.gz) = 41736
+SHA256 (a38b89ca26dde1353cf1.patch) = d0403b01d38daaa71228c83c39c50dcf541a46c207334c10d90b1646120f71a6
+SIZE (a38b89ca26dde1353cf1.patch) = 1895

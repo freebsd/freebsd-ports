@@ -8,6 +8,9 @@ PKGNAMESUFFIX=	-editor		# PORTNAME alone is too vague
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Lightweight text editor written mostly in Lua
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	a38b89ca26dde1353cf1.patch:-p1
+
 LICENSE=	MIT
 
 USES=		gmake lua pkgconfig sdl
@@ -15,7 +18,8 @@ USE_SDL=	sdl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rxi
-GH_TAGNAME=	38bd9b3
+GH_PROJECT=	${PORTNAME}-colors:colors ${PORTNAME}-plugins:plugins
+GH_TAGNAME=	38bd9b3 5b77292:colors 4a9e1f3:plugins
 
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	${FILESDIR}/makefile
@@ -38,6 +42,9 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 	${CP} -a ${WRKSRC}/data ${STAGEDIR}${DATADIR}
+	${CP} -a ${WRKSRC_colors}/colors ${STAGEDIR}${DATADIR}/user
+	${MV} ${WRKSRC_plugins}/plugins/language_*.lua \
+		${STAGEDIR}${DATADIR}/plugins
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
