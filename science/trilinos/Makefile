@@ -1,6 +1,7 @@
 PORTNAME=	trilinos
 DISTVERSIONPREFIX=	trilinos-release-
 DISTVERSION=	13-4-0
+PORTREVISION=	1
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,8 +14,10 @@ BUILD_DEPENDS=	bash:shells/bash \
 		boost-libs>0:devel/boost-libs \
 		swig:devel/swig \
 		${PYNUMPY}
-LIB_DEPENDS=	libblas.so:math/blas \
-		liblapack.so:math/lapack
+LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
+		libblas.so:math/blas \
+		liblapack.so:math/lapack \
+		libumfpack.so:math/suitesparse-umfpack
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cmake compiler:c++14-lang fortran perl5 python shebangfix
@@ -28,8 +31,9 @@ SHEBANG_FILES=	packages/kokkos/bin/kokkos_launch_compiler \
 		packages/phalanx/scripts/phalanx_create_evaluator.py
 
 CXXFLAGS+=	-DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED # fails otherwise with backtrace-related symbol error explicitly printed by Boost
+LDFLAGS+=	-lexecinfo # only for kokkos (?), to prevent missing symbols
 
-CONFLICTS_INSTALL=	mpich kokkos # installs bundled kokkos, need to figure out how to prevent this
+CONFLICTS_INSTALL=	kokkos # installs bundled kokkos, need to figure out how to prevent this
 
 ## configure Trilinos
 
@@ -50,5 +54,25 @@ CMAKE_ARGS+=	-DTrilinos_ENABLE_OpenMP:BOOL=OFF
 #CMAKE_ARGS+=	-DTPL_ENABLE_MPI:BOOL=ON
 #CMAKE_ARGS+=	-DMPI_BASE_DIR:PATH="${LOCALBASE}/mpi/openmpi"
 #CMAKE_ARGS+=	-DMPI_BIN_DIR:PATH="${LOCALBASE}/mpi/openmpi/bin"
+
+## additional features/packages required by Xyce
+
+CMAKE_ON+=	EpetraExt_BUILD_BTF
+CMAKE_ON+=	EpetraExt_BUILD_EXPERIMENTAL
+CMAKE_ON+=	EpetraExt_BUILD_GRAPH_REORDERINGS
+#CMAKE_ON+=	Teuchos_ENABLE_COMPLEX # this feature is broken in Trilinos
+CMAKE_ON+=	Trilinos_ENABLE_COMPLEX_DOUBLE
+# Enabling the UMFPACK feature required by the above features.
+CMAKE_ON+=	TPL_ENABLE_UMFPACK
+CMAKE_ON+=	TPL_ENABLE_AMD
+CMAKE_ARGS+=	-DUMFPACK_INCLUDE_DIRS=${LOCALBASE}/include/suitesparse
+CMAKE_ARGS+=	-DTPL_AMD_INCLUDE_DIRS=${LOCALBASE}/include/suitesparse
+CMAKE_ARGS+=	-DAMD_LIBRARY_DIRS=${LOCALBASE}/lib
+
+# users: https://duongdo27.github.io/Trilinos/users.html
+
+post-install:
+	# remove MPI headers that it installs
+	@${RM} ${STAGEDIR}${PREFIX}/include/mpi*.h
 
 .include <bsd.port.mk>
