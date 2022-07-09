@@ -673,7 +673,7 @@ proxydeps() {
 					# When grep -q finds a match it will close the pipe immediately.
 					# This may cause the test to fail when pipefail is turned on.
 					set +o pipefail
-					if ! readelf -d "${dep_file}" | grep -q SONAME; then
+					if ! readelf -d "${dep_file}" | grep SONAME > /dev/null; then
 						err "${file} is linked to ${dep_file} which does not have a SONAME.  ${dep_file_pkg} needs to be fixed."
 					fi
 					set -o pipefail
@@ -724,7 +724,7 @@ sonames() {
 		[ -z "${f}" ] && continue
 		# Ignore symlinks
 		[ -f "${f}" -a ! -L "${f}" ] || continue
-		if ! readelf -d ${f} | grep -q SONAME; then
+		if ! readelf -d ${f} | grep SONAME > /dev/null; then
 			warn "${f} doesn't have a SONAME."
 			warn "pkg(8) will not register it as being provided by the port."
 			warn "If another port depend on it, pkg will not be able to know where it comes from."
