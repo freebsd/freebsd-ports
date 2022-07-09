@@ -1,5 +1,5 @@
 PORTNAME=	php81
-DISTVERSION=	8.1.7
+DISTVERSION=	8.1.8
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -148,7 +148,12 @@ test: build
 	@(cd ${WRKSRC} && ${MAKE} test)
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/php.ini-development ${WRKSRC}/php.ini-production \
+	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php-cgi
+	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/phpdbg
+	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php
+	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libphp.so
+	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/sbin/php-fpm
+	@${INSTALL_DATA} ${WRKSRC}/php.ini-development ${WRKSRC}/php.ini-production \
 		${WRKDIR}/php.conf ${STAGEDIR}/${PREFIX}/etc
 .else
 do-install:
