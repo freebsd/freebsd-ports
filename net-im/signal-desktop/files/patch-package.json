@@ -1,6 +1,6 @@
 --- package.json.orig	2022-06-23 21:39:35 UTC
 +++ package.json
-@@ -189,7 +189,6 @@
+@@ -190,7 +190,6 @@
      "@babel/preset-typescript": "7.17.12",
      "@electron/fuses": "1.5.0",
      "@mixer/parallel-prettier": "2.0.1",
@@ -8,16 +8,16 @@
      "@storybook/addon-a11y": "6.5.6",
      "@storybook/addon-actions": "6.5.6",
      "@storybook/addon-controls": "6.5.6",
-@@ -266,7 +265,7 @@
+@@ -270,7 +269,7 @@
      "cross-env": "5.2.0",
      "css-loader": "3.2.0",
      "debug": "4.3.3",
--    "electron": "19.0.5",
-+    "electron": "19.0.6",
+-    "electron": "19.0.7",
++    "electron": "19.0.8",
      "electron-builder": "23.0.8",
      "electron-mocha": "11.0.2",
      "electron-notarize": "1.2.1",
-@@ -313,7 +312,7 @@
+@@ -317,7 +316,7 @@
      "sharp/color/color-string": "1.7.4"
    },
    "engines": {

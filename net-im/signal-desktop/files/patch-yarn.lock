@@ -1,17 +1,17 @@
 --- yarn.lock.orig	2022-06-23 21:39:35 UTC
 +++ yarn.lock
-@@ -6870,10 +6870,10 @@ electron-window@^0.8.0:
+@@ -7254,10 +7254,10 @@ electron-window@^0.8.0:
    dependencies:
      is-electron-renderer "^2.0.0"
  
--electron@19.0.5:
--  version "19.0.5"
--  resolved "https://registry.yarnpkg.com/electron/-/electron-19.0.5.tgz#852042c3f598cf2b3874cbcccc0308002c2b3fe9"
--  integrity sha512-gC4kPr/Mf7QbeE5NAo1AC4Zg/SXLnW0ttlyzhVdyB2aErBspWh231UhHLJUlOdaVNqitdbnppdaXjoZHsR5QzQ==
-+electron@19.0.6:
-+  version "19.0.6"
-+  resolved "https://registry.npmjs.org/electron/-/electron-19.0.6.tgz#7aacfa4e968f134eecc36a1b03e3f9954ed8f6a5"
-+  integrity sha512-S9Yud32nKhB0iWC0lGl2JXz4FQnCiLCnP5Vehm1/CqyeICcQGmgQaZl2HYpCJ2pesKIsYL9nsgmku/10cxm/gg==
+-electron@19.0.7:
+-  version "19.0.7"
+-  resolved "https://registry.yarnpkg.com/electron/-/electron-19.0.7.tgz#c7a7841646adc6457de70b93661cc400bfdf9d38"
+-  integrity sha512-Wyg+oGkY8cWYmm8tVka6CZmhJxnyUx+Us2ALyWiY4w73+dO9XUNB/c7vQNIm1Uk/DLMn9vFzgvcS9YtOOMqpbg==
++electron@19.0.8:
++  version "19.0.8"
++  resolved "https://registry.yarnpkg.com/electron/-/electron-19.0.8.tgz#c4d4ba915de554f2926261eb37d3527d2b092d4c"
++  integrity sha512-OWK3P/NbDFfBUv+wbYv1/OV4jehY5DQPT7n1maQJfN9hsnrWTMktXS/bmS05eSUAjNAzHmKPKfiKH2c1Yr7nGw==
    dependencies:
      "@electron/get" "^1.14.1"
      "@types/node" "^16.11.26"

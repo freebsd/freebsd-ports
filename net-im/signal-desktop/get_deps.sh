@@ -1,5 +1,5 @@
 #!/bin/sh
-SIGNAL_VERS=v5.46.0
+SIGNAL_VERS=v5.49.0
 
 ringrtc_hash=$(fetch -qo - https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json | grep '"ringrtc": "https' | awk -F "#" '{print $2}' | sed 's#",##')
 # echo "RINGRTC_HASH= ${ringrtc_hash}"

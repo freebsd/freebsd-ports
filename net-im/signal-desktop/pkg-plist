@@ -17,6 +17,7 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/az.pak
 %%DATADIR%%/locales/bg.pak
 %%DATADIR%%/locales/bn.pak
+%%DATADIR%%/locales/bs.pak
 %%DATADIR%%/locales/ca.pak
 %%DATADIR%%/locales/cs.pak
 %%DATADIR%%/locales/cy.pak
@@ -35,6 +36,7 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/fil.pak
 %%DATADIR%%/locales/fr.pak
 %%DATADIR%%/locales/gd.pak
+%%DATADIR%%/locales/gl.pak
 %%DATADIR%%/locales/gu.pak
 %%DATADIR%%/locales/he.pak
 %%DATADIR%%/locales/hi.pak
