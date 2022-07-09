@@ -1,7 +1,7 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	15.1.0
+PORTVERSION=	15.1.2
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	www
@@ -26,7 +26,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	6bea43795252f980eeee7ce67413ef440da88a31
+GL_COMMIT=	ea7455c82929d4b8e8a81999b0282c3c650ccb9a
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
