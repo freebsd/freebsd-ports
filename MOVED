@@ -17496,3 +17496,4 @@ devel/hs-haddock||2022-07-06|Removed: Haddock is shipped as part of lang/ghc
 x11/gsynaptics||2022-07-08|Has expired: Abandonware using old gnome2 libs
 x11/alltray||2022-07-08|Has expired: abandonware
 x11/simdock||2022-07-08|Has expired: Abandonware using deprecated gnome2 libs
+misc/cxxmatrix|games/cxxmatrix|2022-07-10|Move to a more appropriate category

@@ -1,6 +1,6 @@
 PORTNAME=	cxxmatrix
 DISTVERSION=	g20220324
-CATEGORIES=	misc
+CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C++ Matrix: The Matrix Reloaded in Terminals

@@ -182,6 +182,7 @@
     SUBDIR += cursive
     SUBDIR += cutemaze
     SUBDIR += cuyo
+    SUBDIR += cxxmatrix
     SUBDIR += d2x
     SUBDIR += dMagnetic
     SUBDIR += dangen

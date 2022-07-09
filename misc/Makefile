@@ -64,7 +64,6 @@
     SUBDIR += cstream
     SUBDIR += ctm
     SUBDIR += cuttlefish
-    SUBDIR += cxxmatrix
     SUBDIR += dahdi
     SUBDIR += dahdi-kmod
     SUBDIR += dahdi-kmod26
