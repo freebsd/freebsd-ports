@@ -83,3 +83,15 @@ include/N_UTL_Xyce.h
 include/N_UTL_fwd.h
 include/Xyce_config.h
 lib/libxyce.so
+lib/libxyce.so.0
+lib/libxyce.so.0.0.0
+share/xml/adms.implicit.xml
+share/xml/html_params.xml
+share/xml/xyceAnalogFunction_nosac.xml
+share/xml/xyceBasicTemplates_nosac.xml
+share/xml/xyceBootstrapFile.xml
+share/xml/xyceHeaderFile_nosac.xml
+share/xml/xyceImplementationFile_nosac.xml
+share/xml/xyceMakefile.am.xml
+share/xml/xyceOutVarsDoc.xml
+share/xml/xyceVersion_nosac.xml
