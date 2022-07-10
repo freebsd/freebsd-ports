@@ -199,7 +199,7 @@ HTTP_UPSTREAM_FAIR_GH_TUPLE=		jaygooby:nginx-upstream-fair:10ecdcf:upstreamfair
 HTTP_UPSTREAM_FAIR_VARS=		DSO_EXTMODS+=upstreamfair
 
 HTTP_UPSTREAM_STICKY_IMPLIES=		HTTP_SSL
-HTTP_UPSTREAM_STICKY_GH_TUPLE=		ayty-adrianomartins:nginx-sticky-module-ng:c407e0d:upstreamsticky
+HTTP_UPSTREAM_STICKY_GH_TUPLE=		dvershinin:nginx-sticky-module-ng:2753211:upstreamsticky
 HTTP_UPSTREAM_STICKY_VARS=		DSO_EXTMODS+=upstreamsticky
 
 HTTP_VIDEO_THUMBEXTRACTOR_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
