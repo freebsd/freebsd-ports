@@ -261,6 +261,7 @@
     SUBDIR += ultralist
     SUBDIR += virt-manager
     SUBDIR += vit
+    SUBDIR += walld
     SUBDIR += when
     SUBDIR += wmpinboard
     SUBDIR += x026
