@@ -2,11 +2,11 @@
 
 PORTNAME=	chromium
 PORTVERSION=	103.0.5060.114
-TESTVERSION=	103.0.5060.53
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:external
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
@@ -65,8 +65,9 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
-USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gnome jpeg localbase:ldflags \
-		ninja perl5 pkgconfig python:3.7+,build shebangfix tar:xz xorg
+USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gnome iconv jpeg \
+		localbase:ldflags ninja perl5 pkgconfig python:3.7+,build shebangfix \
+		tar:xz xorg
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
@@ -197,7 +198,7 @@ SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 .include "Makefile.tests"
-TEST_DISTFILES=		${PORTNAME}-${TESTVERSION}-testdata${EXTRACT_SUFX} \
+TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX} \
 			test_fonts-336e775eec536b2d785cc80eff6ac39051931286.tar.gz:external
 TEST_ALL_TARGET=	${TEST_TARGETS}
 
