@@ -1,0 +1,80 @@
+--- src/rrd_open.c.orig	2019-05-28 01:48:09.000000000 +0700
++++ src/rrd_open.c	2022-07-11 00:05:29.242533000 +0700
+@@ -32,6 +32,16 @@
+ #include "rrd_rados.h"
+ #endif
+ 
++#include <signal.h>
++/*
++ * Signal handler for SIGALRM.
++ */
++static void
++timeout(int sig)
++{
++    (void)sig;
++}
++
+ #define MEMBLK 8192
+ 
+ #ifdef _WIN32
+@@ -776,8 +786,9 @@ int rrd_rwlock(
+             return 0;
+     }
+ #endif
+-    int       rcstat;
++    int       rcstat, waitsec;
+     rrd_simple_file_t *rrd_simple_file;
++    char     *endptr, *pwaitsec;
+ 
+     rrd_simple_file = (rrd_simple_file_t *) rrd_file->pvt;
+ #ifdef USE_WINDOWS_LOCK
+@@ -786,6 +797,25 @@ int rrd_rwlock(
+     /* Silence unused parameter compiler warning */
+     (void) writelock;
+ #else
++    if ((pwaitsec = getenv("RRDTOOL_LOCK_TIMEOUT")) != NULL) {
++	waitsec = strtol(pwaitsec, &endptr, 0);
++	if (*endptr == '\0' && waitsec >= 0) {
++	    if (waitsec > 0) {			/* Set up a timeout. */
++	        struct sigaction act;
++
++	        act.sa_handler = timeout;
++	        sigemptyset(&act.sa_mask);
++	        act.sa_flags = SA_RESETHAND;	/* Note that we do not set SA_RESTART. */
++	        sigaction(SIGALRM, &act, NULL);
++	        alarm(waitsec);
++	    }
++	    rcstat = flock(rrd_simple_file->fd, writelock ? LOCK_EX : LOCK_SH);
++	    if (waitsec > 0)
++		alarm(0);
++
++	    return (rcstat);
++	}
++    }
+     {
+         struct flock lock;
+ 
+--- doc/rrdtool.pod.orig	2019-02-04 20:54:28.000000000 +0700
++++ doc/rrdtool.pod	2022-07-11 00:37:16.486373000 +0700
+@@ -321,6 +321,21 @@
+ L<rrdcached>, a caching daemon for RRDtool which may help you lessen the
+ stress on your disks.
+ 
++=head1 ENVIRONMENT
++
++=over 8
++
++=item RRDTOOL_LOCK_TIMEOUT
++
++By default, B<RRDtool> tries to lock RRD file and fails
++if it cannot obtain the lock immediately.
++This variable allows to change this behavior and specify
++a time interval in seconds to wait for lock if the file is busy.
++It will fail if the lock cannot be obtained in time.
++Zero value makes it wait for the lock indefinitely.
++
++=back
++
+ =head1 SEE ALSO
+ 
+ rrdcreate, rrdupdate, rrdgraph, rrddump, rrdfetch, rrdtune, rrdlast, rrdxport,

@@ -26,12 +26,13 @@ CPE_VENDOR=	rrdtool_project
 
 PORTEXAMPLES=	cgi-demo.cgi
 
-OPTIONS_DEFINE=	DEJAVU GRAPH MMAP NLS PERL PYTHON \
+OPTIONS_DEFINE=	DEJAVU GRAPH MMAP LOCKTIMEOUT NLS PERL PYTHON \
 		RUBY EXAMPLES DOCS
 OPTIONS_DEFAULT=DEJAVU GRAPH MMAP PERL
 OPTIONS_SUB=	yes
 GRAPH_DESC=	Enable the rrdtool graph command (needs cairo)
 DEJAVU_DESC=	Use DejaVu fonts (requires X11)
+LOCKTIMEOUT_DESC=Enable the patch for lock timeout
 MMAP_DESC=	Use mmap in rrd_update
 PERL_DESC=	Build PERL module
 PYTHON_DESC=	Build PYTHON bindings
@@ -46,6 +47,7 @@ GRAPH_CONFIGURE_OFF=	--disable-rrdcgi --disable-rrd_graph
 GRAPH_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libpng.so:graphics/png
 GRAPH_USE=		GNOME=cairo,pango
+LOCKTIMEOUT_EXTRA_PATCHES=${PATCHDIR}/extra-patch-locktimeout
 MMAP_CONFIGURE_ENABLE=	mmap
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USE=		GNOME=intltool
