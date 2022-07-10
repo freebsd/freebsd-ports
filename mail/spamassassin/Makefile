@@ -1,7 +1,7 @@
 # Created by: Anthony Kim
 
 PORTNAME=	spamassassin
-PORTVERSION=	3.4.5
+PORTVERSION=	3.4.6
 CATEGORIES?=	mail perl5
 MASTER_SITES=	https://archive.apache.org/dist/${PORTNAME}/source/ CPAN/Mail
 DISTNAME=	Mail-SpamAssassin-${PORTVERSION}
