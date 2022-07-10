@@ -13,7 +13,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/libGLESv2.so
 %%DATADIR%%/libffmpeg.so
 %%DATADIR%%/libvk_swiftshader.so
-%%DATADIR%%/libvulkan.so.1
+%%DATADIR%%/libvulkan.so
 %%DATADIR%%/locales/am.pak
 %%DATADIR%%/locales/ar.pak
 %%DATADIR%%/locales/bg.pak
@@ -181,6 +181,9 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/git/dist/askpass-empty.sh
 %%DATADIR%%/resources/app/extensions/git/dist/askpass-main.js
 %%DATADIR%%/resources/app/extensions/git/dist/askpass.sh
+%%DATADIR%%/resources/app/extensions/git/dist/git-editor-empty.sh
+%%DATADIR%%/resources/app/extensions/git/dist/git-editor-main.js
+%%DATADIR%%/resources/app/extensions/git/dist/git-editor.sh
 %%DATADIR%%/resources/app/extensions/git/dist/main.js
 %%DATADIR%%/resources/app/extensions/git/dist/main.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/git/dist/nls.metadata.header.json
@@ -207,6 +210,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/git/resources/icons/light/status-untracked.svg
 %%DATADIR%%/resources/app/extensions/github-authentication/README.md
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/extension.js
+%%DATADIR%%/resources/app/extensions/github-authentication/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/nls.metadata.json
 %%DATADIR%%/resources/app/extensions/github-authentication/images/icon.png
@@ -325,6 +329,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/javascript/tags-language-configuration.json
 %%DATADIR%%/resources/app/extensions/json-language-features/README.md
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/jsonClientMain.js
+%%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/jsonClientMain.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/nls.metadata.json
 %%DATADIR%%/resources/app/extensions/json-language-features/icons/json.png
@@ -375,6 +380,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/README.md
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/extension.js
+%%DATADIR%%/resources/app/extensions/markdown-language-features/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/nls.metadata.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/esbuild-notebook.js
@@ -428,6 +434,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/merge-conflict/package.nls.json
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/README.md
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/extension.js
+%%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/nls.metadata.json
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/media/auth.css
@@ -532,7 +539,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/ui/edgeDevToolOpener.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/ui/linkedBreakpointLocationUI.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/ui/longPredictionUI.nls.metadata.json
-%%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/ui/prettyPrint.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/ui/processPicker.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/ui/profiling/breakpointTerminationCondition.nls.metadata.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/ui/profiling/durationTerminationCondition.nls.metadata.json
@@ -835,6 +841,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/typescript-language-features/README.md
 %%DATADIR%%/resources/app/extensions/typescript-language-features/dist/extension.js
+%%DATADIR%%/resources/app/extensions/typescript-language-features/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/typescript-language-features/dist/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/typescript-language-features/dist/nls.metadata.json
 %%DATADIR%%/resources/app/extensions/typescript-language-features/media/icon.png
@@ -889,6 +896,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/base/common/performance.js
 %%DATADIR%%/resources/app/out/vs/base/common/stripComments.js
 %%DATADIR%%/resources/app/out/vs/base/common/worker/simpleWorker.js
+%%DATADIR%%/resources/app/out/vs/base/common/worker/simpleWorker.nls.js
 %%DATADIR%%/resources/app/out/vs/base/node/cpuUsage.sh
 %%DATADIR%%/resources/app/out/vs/base/node/languagePacks.js
 %%DATADIR%%/resources/app/out/vs/base/node/ps.sh
@@ -918,6 +926,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/code/node/cli.nls.js
 %%DATADIR%%/resources/app/out/vs/code/node/cliProcessMain.js
 %%DATADIR%%/resources/app/out/vs/code/node/cliProcessMain.nls.js
+%%DATADIR%%/resources/app/out/vs/editor/common/services/editorSimpleWorker.nls.js
 %%DATADIR%%/resources/app/out/vs/loader.js
 %%DATADIR%%/resources/app/out/vs/platform/environment/node/userDataPath.js
 %%DATADIR%%/resources/app/out/vs/platform/files/node/watcher/watcherMain.js

@@ -1,6 +1,6 @@
---- src/vs/workbench/api/browser/mainThreadTask.ts.orig	2022-06-08 11:20:55 UTC
+--- src/vs/workbench/api/browser/mainThreadTask.ts.orig	2022-07-05 18:15:23 UTC
 +++ src/vs/workbench/api/browser/mainThreadTask.ts
-@@ -662,7 +662,7 @@ export class MainThreadTask implements MainThreadTaskS
+@@ -663,7 +663,7 @@ export class MainThreadTask implements MainThreadTaskS
  			case 'darwin':
  				platform = Platform.Platform.Mac;
  				break;

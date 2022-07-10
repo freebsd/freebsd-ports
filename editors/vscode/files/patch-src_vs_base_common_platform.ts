@@ -1,4 +1,4 @@
---- src/vs/base/common/platform.ts.orig	2022-05-16 17:42:35 UTC
+--- src/vs/base/common/platform.ts.orig	2022-07-05 18:15:23 UTC
 +++ src/vs/base/common/platform.ts
 @@ -78,7 +78,7 @@ if (typeof navigator === 'object' && !isElectronRender
  	_isWindows = _userAgent.indexOf('Windows') >= 0;
@@ -7,9 +7,9 @@
 -	_isLinux = _userAgent.indexOf('Linux') >= 0;
 +	_isLinux = (_userAgent.indexOf('Linux') >= 0 || _userAgent.indexOf('FreeBSD') >= 0);
  	_isWeb = true;
- 	_locale = navigator.language;
- 	_language = _locale;
-@@ -88,7 +88,7 @@ if (typeof navigator === 'object' && !isElectronRender
+ 
+ 	const configuredLocale = nls.getConfiguredDefaultLocale(
+@@ -98,7 +98,7 @@ if (typeof navigator === 'object' && !isElectronRender
  else if (typeof nodeProcess === 'object') {
  	_isWindows = (nodeProcess.platform === 'win32');
  	_isMacintosh = (nodeProcess.platform === 'darwin');
