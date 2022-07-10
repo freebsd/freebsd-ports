@@ -148,13 +148,23 @@ test: build
 	@(cd ${WRKSRC} && ${MAKE} test)
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php-cgi
-	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/phpdbg
-	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php
-	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libphp.so
-	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/sbin/php-fpm
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-development ${WRKSRC}/php.ini-production \
 		${WRKDIR}/php.conf ${STAGEDIR}/${PREFIX}/etc
+
+post-install-CGI-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/php-cgi
+
+post-install-PHPDBG-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/phpdbg
+
+post-install-CLI-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/php
+
+post-install-FPM-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/php-fpm
+
+post-install-EMBED-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libphp.so
 .else
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
