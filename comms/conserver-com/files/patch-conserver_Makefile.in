@@ -1,7 +1,7 @@
---- conserver/Makefile.in.orig	Fri Dec  2 07:32:43 2005
-+++ conserver/Makefile.in	Fri Dec  2 07:33:08 2005
-@@ -65,7 +65,6 @@
- 	$(INSTALL) conserver.man $(DESTDIR)$(mandir)/man8/conserver.8
+--- conserver/Makefile.in.orig	2022-07-08 01:20:02 UTC
++++ conserver/Makefile.in
+@@ -66,7 +66,6 @@ install: conserver
+ 	$(INSTALL) -m 0644 conserver.man $(DESTDIR)$(mandir)/man8/conserver.8
  	$(MKDIR) $(DESTDIR)$(exampledir)
  	$(INSTALL) conserver.rc $(DESTDIR)$(exampledir)
 -	$(MKDIR) $(DESTDIR)$(pkglibdir)
