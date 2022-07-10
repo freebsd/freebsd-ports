@@ -1,7 +1,7 @@
 # Created by: Takefu
 
 PORTNAME=	wordpress
-DISTVERSION=	5.9.3
+DISTVERSION=	6.0
 DISTVERSIONSUFFIX=	-ja
 CATEGORIES=	japanese www
 MASTER_SITES=	https://ja.wordpress.org/

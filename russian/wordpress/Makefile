@@ -1,7 +1,7 @@
 # Created by: Mihail Timofeev <9267096@gmail.com>
 
 PORTNAME=	wordpress
-DISTVERSION=	5.9.3
+DISTVERSION=	6.0
 DISTVERSIONSUFFIX=	-ru_RU
 CATEGORIES=	russian www
 MASTER_SITES=	https://ru.wordpress.org/
