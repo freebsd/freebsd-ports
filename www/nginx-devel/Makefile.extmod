@@ -158,7 +158,7 @@ HTTP_NOTICE_VARS=		DSO_EXTMODS+=notice
 HTTP_PUSH_GH_TUPLE=		slact:nchan:v1.3.0:push
 HTTP_PUSH_VARS=			DSO_EXTMODS+=push
 
-HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:0.5.4:pushstream
+HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:8c02220:pushstream
 HTTP_PUSH_STREAM_VARS=		DSO_EXTMODS+=pushstream
 
 HTTP_REDIS_MASTER_SITES=	LOCAL/osa:redis

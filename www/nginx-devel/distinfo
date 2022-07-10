@@ -1,4 +1,4 @@
-TIMESTAMP = 1657492176
+TIMESTAMP = 1657492436
 SHA256 (nginx-1.23.0.tar.gz) = 820acaa35b9272be9e9e72f6defa4a5f2921824709f8aa4772c78ab31ed94cd1
 SIZE (nginx-1.23.0.tar.gz) = 1102940
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -75,8 +75,8 @@ SHA256 (kr-nginx-notice-3c95966_GH0.tar.gz) = e829fc94178cc8c91fef15a1fc44ee7ac1
 SIZE (kr-nginx-notice-3c95966_GH0.tar.gz) = 3343
 SHA256 (slact-nchan-v1.3.0_GH0.tar.gz) = 70ffed635d24aab0ff1ebb595d8b41fde105127dfd50cecac6df86b558778537
 SIZE (slact-nchan-v1.3.0_GH0.tar.gz) = 745161
-SHA256 (wandenberg-nginx-push-stream-module-0.5.4_GH0.tar.gz) = 5253bb8a804ea679e514137a234637298f044c3ef63c053670bf3802ff3535b1
-SIZE (wandenberg-nginx-push-stream-module-0.5.4_GH0.tar.gz) = 183493
+SHA256 (wandenberg-nginx-push-stream-module-8c02220_GH0.tar.gz) = ab4fbe236e8bc500f0c5e13403d6a0e2e4e4ec17b81e0fcedaf669b4339626a6
+SIZE (wandenberg-nginx-push-stream-module-8c02220_GH0.tar.gz) = 196720
 SHA256 (yaoweibin-ngx_http_substitutions_filter_module-c6f825f_GH0.tar.gz) = 4ab034f2e056148469b440394e1664c46405712ef27bc4f3197e42bf7df8460e
 SIZE (yaoweibin-ngx_http_substitutions_filter_module-c6f825f_GH0.tar.gz) = 94062
 SHA256 (tarantool-nginx_upstream_module-aeb8696_GH0.tar.gz) = 514aa57155c73c2e3f7bdfe00c580183df343f2fa4b34e77f040cf6557caffae
