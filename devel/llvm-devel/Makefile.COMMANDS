@@ -14,6 +14,7 @@ LLVM_COMMANDS=	\
 		llvm-cov \
 		llvm-cvtres \
 		llvm-cxxmap \
+		llvm-debuginfod \
 		llvm-debuginfod-find \
 		llvm-diff \
 		llvm-dis \

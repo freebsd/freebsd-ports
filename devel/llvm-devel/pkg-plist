@@ -15,6 +15,7 @@ bin/llvm-config-devel
 bin/llvm-cov-devel
 bin/llvm-cvtres-devel
 bin/llvm-cxxmap-devel
+bin/llvm-debuginfod-devel
 bin/llvm-debuginfod-find-devel
 bin/llvm-diff-devel
 bin/llvm-dis-devel
@@ -219,6 +220,7 @@ llvm-devel/bin/llvm-cvtres
 llvm-devel/bin/llvm-cxxdump
 llvm-devel/bin/llvm-cxxfilt
 llvm-devel/bin/llvm-cxxmap
+llvm-devel/bin/llvm-debuginfod
 llvm-devel/bin/llvm-debuginfod-find
 llvm-devel/bin/llvm-diff
 llvm-devel/bin/llvm-dis
@@ -359,6 +361,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/boost/UseToStringCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/ArgumentCommentCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/AssertSideEffectCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/AssignmentInIfConditionCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/BadSignalToKillThreadCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/BoolPointerImplicitConversionCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/BranchCloneCheck.h
@@ -1147,6 +1150,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Sema/DelayedDiagnostic.h
 %%CLANG%%llvm-devel/include/clang/Sema/Designator.h
 %%CLANG%%llvm-devel/include/clang/Sema/ExternalSemaSource.h
+%%CLANG%%llvm-devel/include/clang/Sema/HLSLExternalSemaSource.h
 %%CLANG%%llvm-devel/include/clang/Sema/IdentifierResolver.h
 %%CLANG%%llvm-devel/include/clang/Sema/Initialization.h
 %%CLANG%%llvm-devel/include/clang/Sema/Lookup.h
@@ -1365,6 +1369,7 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Evaluate/rounding-bits.h
 %%FLANG%%llvm-devel/include/flang/Evaluate/shape.h
 %%FLANG%%llvm-devel/include/flang/Evaluate/static-data.h
+%%FLANG%%llvm-devel/include/flang/Evaluate/target.h
 %%FLANG%%llvm-devel/include/flang/Evaluate/tools.h
 %%FLANG%%llvm-devel/include/flang/Evaluate/traverse.h
 %%FLANG%%llvm-devel/include/flang/Evaluate/type.h
@@ -2858,6 +2863,7 @@ llvm-devel/include/llvm/DebugInfo/Symbolize/Symbolize.h
 llvm-devel/include/llvm/Debuginfod/DIFetcher.h
 llvm-devel/include/llvm/Debuginfod/Debuginfod.h
 llvm-devel/include/llvm/Debuginfod/HTTPClient.h
+llvm-devel/include/llvm/Debuginfod/HTTPServer.h
 llvm-devel/include/llvm/Demangle/Demangle.h
 llvm-devel/include/llvm/Demangle/DemangleConfig.h
 llvm-devel/include/llvm/Demangle/ItaniumDemangle.h
@@ -3036,6 +3042,8 @@ llvm-devel/include/llvm/IR/IntrinsicsARM.h
 llvm-devel/include/llvm/IR/IntrinsicsARM.td
 llvm-devel/include/llvm/IR/IntrinsicsBPF.h
 llvm-devel/include/llvm/IR/IntrinsicsBPF.td
+llvm-devel/include/llvm/IR/IntrinsicsDirectX.h
+llvm-devel/include/llvm/IR/IntrinsicsDirectX.td
 llvm-devel/include/llvm/IR/IntrinsicsHexagon.h
 llvm-devel/include/llvm/IR/IntrinsicsHexagon.td
 llvm-devel/include/llvm/IR/IntrinsicsHexagonDep.td
@@ -3305,6 +3313,7 @@ llvm-devel/include/llvm/ObjectYAML/ELFYAML.h
 llvm-devel/include/llvm/ObjectYAML/MachOYAML.h
 llvm-devel/include/llvm/ObjectYAML/MinidumpYAML.h
 llvm-devel/include/llvm/ObjectYAML/ObjectYAML.h
+llvm-devel/include/llvm/ObjectYAML/OffloadYAML.h
 llvm-devel/include/llvm/ObjectYAML/WasmYAML.h
 llvm-devel/include/llvm/ObjectYAML/XCOFFYAML.h
 llvm-devel/include/llvm/ObjectYAML/YAML.h
@@ -3881,11 +3890,12 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/CallGraph.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/DataFlow/ConstantPropagationAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/DataFlow/DeadCodeAnalysis.h
+%%MLIR%%llvm-devel/include/mlir/Analysis/DataFlow/DenseAnalysis.h
+%%MLIR%%llvm-devel/include/mlir/Analysis/DataFlow/IntegerRangeAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/DataFlow/SparseAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/DataFlowAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/DataFlowFramework.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/DataLayoutAnalysis.h
-%%MLIR%%llvm-devel/include/mlir/Analysis/IntRangeAnalysis.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Liveness.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/Fraction.h
 %%MLIR%%llvm-devel/include/mlir/Analysis/Presburger/IntegerRelation.h
@@ -3913,6 +3923,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Utils.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Wrap.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/AMDGPUToROCDL/AMDGPUToROCDL.h
+%%MLIR%%llvm-devel/include/mlir/Conversion/AMDGPUToROCDL/Chipset.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/AffineToStandard/AffineToStandard.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ArithmeticToLLVM/ArithmeticToLLVM.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ArithmeticToSPIRV/ArithmeticToSPIRV.h
@@ -4371,6 +4382,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPOpsInterfaces.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPTypeInterfaces.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPTypeInterfaces.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/OpenMP/OpenMPTypeInterfaces.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/PDL/IR/PDL.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/PDL/IR/PDLDialect.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/PDL/IR/PDLOps.cpp.inc
@@ -4761,6 +4773,10 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Interfaces/LoopLikeInterface.h
 %%MLIR%%llvm-devel/include/mlir/Interfaces/LoopLikeInterface.h.inc
 %%MLIR%%llvm-devel/include/mlir/Interfaces/LoopLikeInterface.td
+%%MLIR%%llvm-devel/include/mlir/Interfaces/ParallelCombiningOpInterface.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Interfaces/ParallelCombiningOpInterface.h
+%%MLIR%%llvm-devel/include/mlir/Interfaces/ParallelCombiningOpInterface.h.inc
+%%MLIR%%llvm-devel/include/mlir/Interfaces/ParallelCombiningOpInterface.td
 %%MLIR%%llvm-devel/include/mlir/Interfaces/SideEffectInterfaceBase.td
 %%MLIR%%llvm-devel/include/mlir/Interfaces/SideEffectInterfaces.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Interfaces/SideEffectInterfaces.h
@@ -4779,6 +4795,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Interfaces/ViewLikeInterface.h.inc
 %%MLIR%%llvm-devel/include/mlir/Interfaces/ViewLikeInterface.td
 %%MLIR%%llvm-devel/include/mlir/Parser/AsmParserState.h
+%%MLIR%%llvm-devel/include/mlir/Parser/CodeComplete.h
 %%MLIR%%llvm-devel/include/mlir/Parser/Parser.h
 %%MLIR%%llvm-devel/include/mlir/Pass/AnalysisManager.h
 %%MLIR%%llvm-devel/include/mlir/Pass/Pass.h
@@ -5013,7 +5030,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/openmp_wrappers/complex_cmath.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/openmp_wrappers/math.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/openmp_wrappers/new
-%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/orc/c_api.h
+%%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/orc/c_api.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/pconfigintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/pkuintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/pmmintrin.h
@@ -5033,6 +5050,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/prfchwintrin.h
 %%COMPILER_RT%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/profile/InstrProfData.inc
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/ptwriteintrin.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/rdpruintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/rdseedintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/riscv_vector.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_RELEASE%%/include/rtmintrin.h
@@ -5469,6 +5487,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRPDLLCodeGen.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRPDLLODS.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRPDLToPDLInterp.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRParallelCombiningOpInterface.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRParser.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRPass.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRPresburger.a
