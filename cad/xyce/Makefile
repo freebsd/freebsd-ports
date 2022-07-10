@@ -24,7 +24,6 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libumfpack.so:math/suitesparse-umfpack
 TEST_DEPENDS=	git:devel/git \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		# also needs pycompadre
 
@@ -70,6 +69,7 @@ do-test:
 
 # Trilinos build instructions for Xyce: https://xyce.sandia.gov/documentation-tutorials/building-guide/#instTrilinos
 # Xyce build instructions: https://xyce.sandia.gov/documentation-tutorials/building-guide/
+# Xyce regression suite instructions: https://xyce.sandia.gov/documentation-tutorials/running-the-xyce-regression-suite/
 # docs are in https://xyce.sandia.gov/files/xyce/Xyce_Docs-7.5.tar.gz
 
 .include <bsd.port.mk>
