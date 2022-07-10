@@ -1,7 +1,7 @@
 PORTNAME=	croc
-PORTVERSION=	9.5.6
+PORTVERSION=	9.6.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	net
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -21,12 +21,12 @@ GH_TUPLE=	OneOfOne:xxhash:v1.2.5:oneofone_xxhash/vendor/github.com/OneOfOne/xxha
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:6f7dac969898:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:183a9ca12b87:golang_net/vendor/golang.org/x/net \
-		golang:sys:5e4e11fc645e:golang_sys/vendor/golang.org/x/sys \
-		golang:term:e5f449aeb171:golang_term/vendor/golang.org/x/term \
+		golang:crypto:05595931fe9d:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:c90051bbdb60:golang_net/vendor/golang.org/x/net \
+		golang:sys:05e143d24a9e:golang_sys/vendor/golang.org/x/sys \
+		golang:term:065cf7ba2467:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-		golang:time:583f2d630306:golang_time/vendor/golang.org/x/time \
+		golang:time:579cf78fd858:golang_time/vendor/golang.org/x/time \
 		kalafut:imohash:v1.0.2:kalafut_imohash/vendor/github.com/kalafut/imohash \
 		kr:pretty:v0.1.0:kr_pretty/vendor/github.com/kr/pretty \
 		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
@@ -38,7 +38,7 @@ GH_TUPLE=	OneOfOne:xxhash:v1.2.5:oneofone_xxhash/vendor/github.com/OneOfOne/xxha
 		schollz:logger:v1.2.0:schollz_logger/vendor/github.com/schollz/logger \
 		schollz:mnemonicode:v1.0.1:schollz_mnemonicode/vendor/github.com/schollz/mnemonicode \
 		schollz:pake:v3.0.4:schollz_pake_v3/vendor/github.com/schollz/pake/v3 \
-		schollz:peerdiscovery:v1.6.11:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
+		schollz:peerdiscovery:v1.6.12:schollz_peerdiscovery/vendor/github.com/schollz/peerdiscovery \
 		schollz:progressbar:v3.8.6:schollz_progressbar_v3/vendor/github.com/schollz/progressbar/v3 \
 		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
