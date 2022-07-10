@@ -1,8 +1,7 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 
 PORTNAME?=	nginx
-PORTVERSION=	1.22.0
-PORTREVISION=	7
+PORTVERSION=	1.23.0
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -225,6 +224,11 @@ CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
 .endif
 
+# Fix build failure on clang >= 12
+.if ${PORT_OPTIONS:MHTTP_PERL} && ${OSVERSION} >= 1301000
+CFLAGS+=	-Wno-compound-token-split-by-macro
+.endif
+
 .if empty(PORT_OPTIONS:MPCRE_ONE) && empty(PORT_OPTIONS:MPCRE_TWO)
 IGNORE=		required at least PCRE_ONE or PCRE_TWO \
 		to be defined. Please do 'make config' again
@@ -238,6 +242,21 @@ IGNORE=		required HTTPV3_BORING or HTTPV3_QTLS \
 
 .if ${PORT_OPTIONS:MPCRE_ONE}
 NJS_CONFIGURE_ARGS=	--no-pcre2
+.endif
+
+.if ${PORT_OPTIONS:MCLOJURE} || \
+    ${PORT_OPTIONS:MHEADERS_MORE} || \
+    ${PORT_OPTIONS:MHTTP_PUSH_STREAM} || \
+    ${PORT_OPTIONS:MHTTP_REDIS} || \
+    ${PORT_OPTIONS:MHTTP_RESPONSE} || \
+    ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS} || \
+    ${PORT_OPTIONS:MHTTP_UPSTREAM_STICKY} || \
+    ${PORT_OPTIONS:MHTTP_ZIP} || \
+    ${PORT_OPTIONS:MLUA} || \
+    ${PORT_OPTIONS:MNAXSI} || \
+    ${PORT_OPTIONS:MSRCACHE} || \
+    ${PORT_OPTIONS:MVOD}
+IGNORE=		a patch requires
 .endif
 
 pre-everything::
