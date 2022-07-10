@@ -50,7 +50,7 @@ lib/libaudcore.so.5.3.0
 %%GTK2%%lib/libaudgui.so.5.1.0
 %%QT5%%lib/libaudqt.so
 %%QT5%%lib/libaudqt.so.2
-%%QT5%%lib/libaudqt.so.2.3.0
+%%QT5%%lib/libaudqt.so.2.4.0
 lib/libaudtag.so
 lib/libaudtag.so.3
 lib/libaudtag.so.3.0.0
@@ -63,6 +63,7 @@ share/applications/audacious.desktop
 %%DATADIR%%/COPYING
 share/icons/hicolor/48x48/apps/audacious.png
 share/icons/hicolor/scalable/apps/audacious.svg
+%%NLS%%share/locale/af/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/be/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/audacious.mo
@@ -77,6 +78,8 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/es_AR/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/es_MX/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/et/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/audacious.mo
@@ -104,5 +107,6 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%share/locale/ta/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/uz/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo

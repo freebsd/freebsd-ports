@@ -1,8 +1,7 @@
 # Created by: Zastupov Stepan [RedChrom] <redchrom@mail.ru>
 
 PORTNAME=	audacious
-PORTVERSION=	4.1
-PORTREVISION=	1
+PORTVERSION=	4.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://distfiles.audacious-media-player.org/
 

@@ -5,6 +5,7 @@ lib/audacious/Container/audpl.so
 lib/audacious/Container/m3u.so
 lib/audacious/Container/pls.so
 lib/audacious/Container/xspf.so
+lib/audacious/Effect/bitcrusher.so
 %%BS2B%%lib/audacious/Effect/bs2b.so
 lib/audacious/Effect/compressor.so
 lib/audacious/Effect/crossfade.so
@@ -196,6 +197,7 @@ share/audacious/Skins/TinyPlayer/text.png
 share/audacious/Skins/TinyPlayer/titlebar.png
 share/audacious/Skins/TinyPlayer/viscolor.txt
 share/audacious/Skins/TinyPlayer/volume.png
+%%NLS%%share/locale/af/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/be/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/audacious-plugins.mo
@@ -210,6 +212,8 @@ share/audacious/Skins/TinyPlayer/volume.png
 %%NLS%%share/locale/es_AR/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/es_MX/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/et/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/audacious-plugins.mo
@@ -237,5 +241,6 @@ share/audacious/Skins/TinyPlayer/volume.png
 %%NLS%%share/locale/ta/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/uz/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious-plugins.mo
