@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-alpine
-PORTVERSION=	20220625
+PORTVERSION=	20220712
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -78,10 +78,10 @@ _GITHUB_SITE=	https://github.com/pgj/freebsd-wifibox-alpine/releases/download
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	pgj
 GH_PROJECT=	freebsd-wifibox-alpine:scripts
-GH_TAGNAME=	51b3ad35e4ac0505f4bbb3a5e07eabce14ff48d7:scripts
+GH_TAGNAME=	f8fd8cdb1a0e545272917fe1dc1f9544cf74e383:scripts
 
 ALPINE_VERSION=	3.16.0
-ALPINE_DATE=	2022.06.25
+ALPINE_DATE=	2022.07.09
 _ALPINE_VER=	${ALPINE_VERSION:C@([0-9]+)\.([0-9]+).*@\1.\2@}
 
 .if defined(ALPINE_DATE)
@@ -92,7 +92,7 @@ _ALPINE_SITE=	https://mirror.fit.cvut.cz/alpine/v${_ALPINE_VER}
 .endif
 
 _LINUXFW_SITE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/
-_LINUXFW_TAG=	20220610
+_LINUXFW_TAG=	20220708
 _LINUXFW=	linux-firmware-${_LINUXFW_TAG}
 
 MASTER_SITES+=	${_ALPINE_SITE}/releases/x86_64/:rootfs \
@@ -116,11 +116,13 @@ _PACKAGES=	baselayout-3.2.0-r19:wifibox \
 		libnftnl-1.2.1-r0 \
 		libnl3-3.5.0-r0 \
 		libssl1.1-1.1.1o-r0 \
-		linux-lts-5.15.49-r0:wifibox \
+		linux-lts-5.15.53-r0:wifibox \
 		musl-1.2.3-r0 \
 		openrc-0.44.10-r0:wifibox
 
-_GUEST_MEM=	45M
+.if !defined(_GUEST_MEM)
+_GUEST_MEM=	64M
+.endif
 
 _BOOT_SERVICES=		networking urandom bootmisc modules hostname hwclock sysctl syslog
 _DEFAULT_SERVICES=	acpid crond iptables udhcpd
@@ -211,16 +213,20 @@ LINUX_FIRMWARE+=	${L${fw_opt}_FILES}
 .endif
 .endfor
 
-.if ${PORT_OPTIONS:MXX_DRIVER_WL}
-_GUEST_MEM=	50M
+.if ${FLAVOR:U} == iwlwifi
+_GUEST_MEM=	45M
+.endif
+
+.if ${PORT_OPTIONS:MFW_RTW88} || make(makesum)
+_PACKAGES+=	rtl8821ce-20220601-r0:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MXX_DRIVER_WL} || make(makesum)
-_PACKAGES+=	broadcom-wl-6.30.223.271-r3:wifibox
+_PACKAGES+=	broadcom-wl-6.30.223.271-r4:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MXX_DRIVER_RTW89} || make(makesum)
-_PACKAGES+=	rtw89-20220421-r3:wifibox
+_PACKAGES+=	rtw89-20220630-r0:wifibox
 .endif
 
 .if !empty(LINUX_FIRMWARE)
