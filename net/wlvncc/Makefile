@@ -5,8 +5,10 @@ CATEGORIES=	net
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland Native VNC Client
 
-LICENSE=	ISCL
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2+ ISCL
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.GPL
+LICENSE_FILE_ISCL=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm
