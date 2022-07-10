@@ -7,10 +7,8 @@ COMMENT=	Graphical viewer for GHC profile files
 
 LICENSE=	BSD3CLAUSE
 
-# Upstream issue: https://github.com/haskell-gi/haskell-gi/issues/385
-BROKEN=		bindings fail to compile with recent freetype2/harfbuzz
-
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		cabal gnome pkgconfig
 
@@ -44,6 +42,7 @@ USE_CABAL=	OneTuple-0.3.1_2 \
 		ghc-prof-1.4.1.11 \
 		gi-atk-2.0.24 \
 		gi-cairo-1.0.26 \
+		gi-freetype2-2.0.1 \
 		gi-gdk-3.0.25 \
 		gi-gdkpixbuf-2.0.28 \
 		gi-gio-2.0.29 \
@@ -51,7 +50,7 @@ USE_CABAL=	OneTuple-0.3.1_2 \
 		gi-gmodule-2.0.2 \
 		gi-gobject-2.0.27 \
 		gi-gtk-3.0.38 \
-		gi-harfbuzz-0.0.5 \
+		gi-harfbuzz-0.0.6 \
 		gi-pango-1.0.25 \
 		happy-1.20.0_1 \
 		hashable-1.4.0.2 \
