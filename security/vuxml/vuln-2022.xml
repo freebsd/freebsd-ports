@@ -1,3 +1,33 @@
+  <vuln vid="830855f3-ffcc-11ec-9d41-d05099c8b5a7">
+    <topic>mat2 -- directory traversal/arbitrary file read during ZIP file processing</topic>
+    <affects>
+      <package>
+	<name>mat2</name>
+	<range><lt>0.13.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35410">
+	  <p>
+	    mat2 (aka metadata anonymisation toolkit) before 0.13.0 allows ../
+	    directory traversal during the ZIP archive cleaning process. This
+	    primarily affects mat2 web instances, in which clients could obtain
+	    sensitive information via a crafted archive.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-35410</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-35410</url>
+    </references>
+    <dates>
+      <discovery>2022-07-08</discovery>
+      <entry>2022-07-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d1b35142-ff4a-11ec-8be3-001b217b3468">
     <topic>Gitlab -- multiple vulnerabilities</topic>
     <affects>
