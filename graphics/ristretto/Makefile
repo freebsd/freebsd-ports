@@ -1,7 +1,7 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
 
 PORTNAME=	ristretto
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.3
 CATEGORIES=	graphics xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
 		pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gtk30 glib20 intltool
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
 USE_XFCE=	libmenu xfconf
 USE_XORG=	ice sm x11
 
