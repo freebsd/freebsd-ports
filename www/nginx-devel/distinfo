@@ -1,4 +1,4 @@
-TIMESTAMP = 1657485370
+TIMESTAMP = 1657490949
 SHA256 (nginx-1.23.0.tar.gz) = 820acaa35b9272be9e9e72f6defa4a5f2921824709f8aa4772c78ab31ed94cd1
 SIZE (nginx-1.23.0.tar.gz) = 1102940
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -107,8 +107,8 @@ SHA256 (openresty-memc-nginx-module-v0.19_GH0.tar.gz) = 8c2bdbe875e4f5225d0778bf
 SIZE (openresty-memc-nginx-module-v0.19_GH0.tar.gz) = 34654
 SHA256 (SpiderLabs-ModSecurity-nginx-v1.0.3_GH0.tar.gz) = 32a42256616cc674dca24c8654397390adff15b888b77eb74e0687f023c8751b
 SIZE (SpiderLabs-ModSecurity-nginx-v1.0.3_GH0.tar.gz) = 34063
-SHA256 (nbs-system-naxsi-1.3_GH0.tar.gz) = 439c8677372d2597b4360bbcc10bc86490de1fc75695b193ad5df154a214d628
-SIZE (nbs-system-naxsi-1.3_GH0.tar.gz) = 235626
+SHA256 (nbs-system-naxsi-29793dc_GH0.tar.gz) = 579df0e50ff32464f7bb152df9d93ea18c05c4aa3966ec4d8c603b5dd629be08
+SIZE (nbs-system-naxsi-29793dc_GH0.tar.gz) = 236932
 SHA256 (nginx-njs-0.7.5_GH0.tar.gz) = 75eb6581cc50383115fc836158fc69b3fc5b79d51aa9038b6095da7679b72842
 SIZE (nginx-njs-0.7.5_GH0.tar.gz) = 592998
 SHA256 (opentracing-contrib-nginx-opentracing-v0.24.0_GH0.tar.gz) = 5328c5f37e0615b5252aed51b9cd40f3d14989d995ad54134076aeda4ab9b280
