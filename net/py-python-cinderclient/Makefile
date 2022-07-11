@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keystoneauth1>=4.3.1:devel/py-keystoneauth1@
 		${PYTHON_PKGNAMEPREFIX}simplejson>=3.5.1:devel/py-simplejson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=3.3.0:devel/py-stevedore@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		python:3.8+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
