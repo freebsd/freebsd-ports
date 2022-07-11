@@ -3,7 +3,8 @@
 PORTNAME=	pygeodesy
 PORTVERSION=	22.7.7
 CATEGORIES=	science python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	CHEESESHOP \
+		https://github.com/mrJean1/PyGeodesy/raw/master/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyGeodesy-${PORTVERSION}
 
