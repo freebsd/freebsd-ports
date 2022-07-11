@@ -2,7 +2,7 @@
 
 PORTNAME?=	nginx
 PORTVERSION=	1.23.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -246,7 +246,6 @@ NJS_CONFIGURE_ARGS=	--no-pcre2
 .endif
 
 .if ${PORT_OPTIONS:MCLOJURE} || \
-    ${PORT_OPTIONS:MHTTP_REDIS} || \
     ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
 IGNORE=		a patch requires
 .endif

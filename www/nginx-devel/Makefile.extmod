@@ -163,6 +163,7 @@ HTTP_PUSH_STREAM_VARS=		DSO_EXTMODS+=pushstream
 HTTP_REDIS_MASTER_SITES=	LOCAL/osa:redis
 HTTP_REDIS_DISTFILES=		ngx_http_redis-0.3.9.tar.gz:redis
 HTTP_REDIS_VARS=		DSO_EXTDIRS+=ngx_http_redis-0.3.9
+HTTP_REDIS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_redis_module.c
 
 HTTP_SLICE_AHEAD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_http_modules_ngx_http_slice_read_ahead.c
 
