@@ -1,7 +1,7 @@
 # Created by: Ju Pengfei <ju.pengfei@gmail.com>
 
 PORTNAME=	numexpr
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.3
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
