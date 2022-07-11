@@ -28,6 +28,8 @@ bin/wmc
 bin/wrc
 include/wine/debug.h
 include/wine/exception.h
+include/wine/iaccessible2.h
+include/wine/iaccessible2.idl
 include/wine/itss.h
 include/wine/itss.idl
 include/wine/svcctl.h
@@ -1680,6 +1682,7 @@ lib/wine/%%WINEARCH%%-windows/hnetcfg.dll
 lib/wine/%%WINEARCH%%-windows/hostname.exe
 lib/wine/%%WINEARCH%%-windows/http.sys
 lib/wine/%%WINEARCH%%-windows/httpapi.dll
+lib/wine/%%WINEARCH%%-windows/ia2comproxy.dll
 lib/wine/%%WINEARCH%%-windows/icacls.exe
 lib/wine/%%WINEARCH%%-windows/iccvid.dll
 lib/wine/%%WINEARCH%%-windows/icinfo.exe
