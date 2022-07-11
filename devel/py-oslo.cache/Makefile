@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dogpile.cache>=1.1.5:devel/py-dogpile.cache@
 		${PYTHON_PKGNAMEPREFIX}oslo.log>=4.2.1:devel/py-oslo.log@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=4.2.0:devel/py-oslo.utils@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
