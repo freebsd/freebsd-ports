@@ -2,7 +2,7 @@
 
 PORTNAME?=	nginx
 PORTVERSION=	1.23.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -243,11 +243,6 @@ IGNORE=		required HTTPV3_BORING or HTTPV3_QTLS \
 
 .if ${PORT_OPTIONS:MPCRE_ONE}
 NJS_CONFIGURE_ARGS=	--no-pcre2
-.endif
-
-.if ${PORT_OPTIONS:MCLOJURE} || \
-    ${PORT_OPTIONS:MHTTP_UPLOAD_PROGRESS}
-IGNORE=		a patch requires
 .endif
 
 pre-everything::
