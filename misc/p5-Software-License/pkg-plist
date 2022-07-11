@@ -15,6 +15,7 @@
 %%SITE_PERL%%/Software/License/GPL_1.pm
 %%SITE_PERL%%/Software/License/GPL_2.pm
 %%SITE_PERL%%/Software/License/GPL_3.pm
+%%SITE_PERL%%/Software/License/ISC.pm
 %%SITE_PERL%%/Software/License/LGPL_2_1.pm
 %%SITE_PERL%%/Software/License/LGPL_3_0.pm
 %%SITE_PERL%%/Software/License/MIT.pm
@@ -47,6 +48,7 @@
 %%PERL5_MAN3%%/Software::License::GPL_1.3.gz
 %%PERL5_MAN3%%/Software::License::GPL_2.3.gz
 %%PERL5_MAN3%%/Software::License::GPL_3.3.gz
+%%PERL5_MAN3%%/Software::License::ISC.3.gz
 %%PERL5_MAN3%%/Software::License::LGPL_2_1.3.gz
 %%PERL5_MAN3%%/Software::License::LGPL_3_0.3.gz
 %%PERL5_MAN3%%/Software::License::MIT.3.gz
