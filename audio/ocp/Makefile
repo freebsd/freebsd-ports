@@ -2,6 +2,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.2.99
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/mywave82/opencubicplayer/releases/download/v${PORTVERSION}/

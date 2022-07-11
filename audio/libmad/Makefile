@@ -2,6 +2,7 @@
 
 PORTNAME=	libmad
 PORTVERSION=	0.16.2
+PORTREVISION=	1
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/tenacityteam/libmad/commit/

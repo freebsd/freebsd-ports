@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-06-22 22:48:45 UTC
++++ CMakeLists.txt
+@@ -35,7 +35,7 @@ endif()
+ 
+ set_target_properties(mad PROPERTIES
+   VERSION ${CMAKE_PROJECT_VERSION}
+-  SOVERSION ${CMAKE_PROJECT_VERSION}
++  SOVERSION 0
+ )
+ 
+ #

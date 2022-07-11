@@ -1,5 +1,6 @@
 # Created by: Christopher Key <cjk32@cam.ac.uk>
 
+PORTREVISION=	4
 CATEGORIES=	audio lang
 PKGNAMESUFFIX=	-mad
 
