@@ -210,7 +210,7 @@ HTTP_VIDEO_THUMBEXTRACTOR_USES=		jpeg
 HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	Novetta:nginx-video-thumbextractor-module:f5b5bae:vte
 HTTP_VIDEO_THUMBEXTRACTOR_VARS=		DSO_EXTMODS+=vte
 
-HTTP_ZIP_GH_TUPLE=	rtm-ctrlz:mod_zip:cfd0be4:mod_zip
+HTTP_ZIP_GH_TUPLE=	vince2678:mod_zip:5b2604b:mod_zip
 HTTP_ZIP_VARS=		DSO_EXTMODS+=mod_zip
 
 ICONV_IMPLIES=		DEVEL_KIT
