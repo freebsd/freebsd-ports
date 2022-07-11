@@ -122,7 +122,6 @@ lib/qmmp%%LIB_SUFFX%%/PlayListFormats/libm3uplaylistformat.so
 lib/qmmp%%LIB_SUFFX%%/PlayListFormats/libplsplaylistformat.so
 lib/qmmp%%LIB_SUFFX%%/PlayListFormats/libxspfplaylistformat.so
 %%CURL%%lib/qmmp%%LIB_SUFFX%%/Transports/libhttp.so
-%%MMS%%lib/qmmp%%LIB_SUFFX%%/Transports/libmms.so
 %%SKINNEDUI%%lib/qmmp%%LIB_SUFFX%%/Ui/libskinned.so
 %%QSUI%%lib/qmmp%%LIB_SUFFX%%/Ui/libqsui.so
 %%ANALYZER%%lib/qmmp%%LIB_SUFFX%%/Visual/libanalyzer.so
