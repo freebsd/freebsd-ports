@@ -10,6 +10,10 @@ COMMENT=	Utility to split MP3 and Ogg files (via CUE sheets)
 
 LICENSE=	GPLv2
 
+BROKEN=		Doesn't run (segmentation fault)
+DEPRECATED=	Abandonware, last release in 2014
+EXPIRATION_DATE=2022-09-30
+
 LIB_DEPENDS=	libmp3splt.so:audio/libmp3splt \
 		libltdl.so:devel/libltdl
 
