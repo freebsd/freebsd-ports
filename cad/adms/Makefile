@@ -5,7 +5,7 @@ PORTVERSION=	2.3.7
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	cad
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Model generator for SPICE simulators
 
 LICENSE=	GPLv3+
