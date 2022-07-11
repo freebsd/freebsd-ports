@@ -1,7 +1,7 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	2.12.7
+PORTVERSION=	2.12.8
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
