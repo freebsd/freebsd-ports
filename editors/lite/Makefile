@@ -45,6 +45,8 @@ do-install:
 	${CP} -a ${WRKSRC_colors}/colors ${STAGEDIR}${DATADIR}/user
 	${MV} ${WRKSRC_plugins}/plugins/language_*.lua \
 		${STAGEDIR}${DATADIR}/plugins
+	${CP} -a ${WRKSRC_plugins}/plugins \
+		${STAGEDIR}${DATADIR}/plugins/extra
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

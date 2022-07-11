@@ -20,13 +20,14 @@
  #else
    strcpy(buf, "./lite");
  #endif
-@@ -123,8 +129,9 @@ int main(int argc, char **argv) {
+@@ -123,8 +129,10 @@ int main(int argc, char **argv) {
      "  SCALE = tonumber(os.getenv(\"LITE_SCALE\")) or SCALE\n"
      "  PATHSEP = package.config:sub(1, 1)\n"
      "  EXEDIR = EXEFILE:match(\"^(.+)[/\\\\].*$\")\n"
 -    "  package.path = EXEDIR .. '/data/?.lua;' .. package.path\n"
 -    "  package.path = EXEDIR .. '/data/?/init.lua;' .. package.path\n"
 +    "  DATADIR = '%%DATADIR%%'\n"
++    "  HOMEDIR = os.getenv('HOME') or '/'\n"
 +    "  package.path = DATADIR .. '/?.lua;' .. package.path\n"
 +    "  package.path = DATADIR .. '/?/init.lua;' .. package.path\n"
      "  core = require('core')\n"

@@ -5,7 +5,7 @@
    Doc = require "core.doc"
  
 -  local project_dir = EXEDIR
-+  local project_dir = os.getenv("HOME") or EXEDIR
++  local project_dir = HOMEDIR
    local files = {}
    for i = 2, #ARGS do
      local info = system.get_file_info(ARGS[i]) or {}
@@ -29,21 +29,35 @@
        .. string.format("%06x", temp_file_counter) .. (ext or "")
  end
  
-@@ -174,7 +174,7 @@ function core.load_plugins()
+@@ -174,16 +174,18 @@ function core.load_plugins()
  
  function core.load_plugins()
    local no_errors = true
 -  local files = system.list_dir(EXEDIR .. "/data/plugins")
+-  for _, filename in ipairs(files) do
+-    local modname = "plugins." .. filename:gsub(".lua$", "")
 +  local files = system.list_dir(DATADIR .. "/plugins")
-   for _, filename in ipairs(files) do
-     local modname = "plugins." .. filename:gsub(".lua$", "")
++  for _, filename in ipairs(files) do repeat
++    local luafile = filename:match("(.*)%.lua$")
++    if not luafile then break end
++    local modname = "plugins." .. luafile
      local ok = core.try(require, modname)
-@@ -464,7 +464,7 @@ function core.on_error(err)
+     if ok then
+       core.log_quiet("Loaded plugin %q", modname)
+     else
+       no_errors = false
+     end
+-  end
++  until true end
+   return no_errors
+ end
+ 
+@@ -464,7 +466,7 @@ function core.on_error(err)
  
  function core.on_error(err)
    -- write error to file
 -  local fp = io.open(EXEDIR .. "/error.txt", "wb")
-+  local fp = io.open("/tmp/lite-error.txt", "wb")
++  local fp = io.open(HOMEDIR .. "/lite-error.txt", "wb")
    fp:write("Error: " .. tostring(err) .. "\n")
    fp:write(debug.traceback(nil, 4))
    fp:close()
