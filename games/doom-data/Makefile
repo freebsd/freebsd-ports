@@ -11,6 +11,7 @@ DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 MAINTAINER=	jakub_lach@mailplus.pl
 COMMENT=	Shareware data files for Doom, Doom II, Hexen, Heretic, and Strife
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
