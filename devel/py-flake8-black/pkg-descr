@@ -1,0 +1,12 @@
+flake8-black is an MIT licensed flake8 plugin for validating Python code style
+with the command line code formatting tool black.
+
+Black, "The Uncompromising Code Formatter", is normally run to edit your Python
+code in place to match their coding style, a strict subset of the PEP 8 style
+guide.
+
+The point of this plugin is to be able to run black --check ... from within the
+flake8 plugin ecosystem. You might use this via a git pre-commit hook, or as
+part of your continuous integration testing.
+
+WWW: https://github.com/peterjc/flake8-black
