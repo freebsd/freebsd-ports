@@ -1,9 +1,10 @@
 PORTNAME=	wsjtz
 DISTVERSION=	2.5.4-1.22
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt-z/Source
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Clone of WSJT-X software with additional features
 
 CONFLICTS=	wsjtx
