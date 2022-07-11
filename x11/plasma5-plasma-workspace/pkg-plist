@@ -631,6 +631,8 @@ share/doc/HTML/ru/kcontrol/screenlocker/index.cache.bz2
 share/doc/HTML/ru/kcontrol/screenlocker/index.docbook
 share/doc/HTML/ru/kcontrol/translations/index.cache.bz2
 share/doc/HTML/ru/kcontrol/translations/index.docbook
+share/doc/HTML/ru/klipper/index.cache.bz2
+share/doc/HTML/ru/klipper/index.docbook
 share/doc/HTML/sr/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/sr/kcontrol/autostart/index.docbook
 share/doc/HTML/sr/kcontrol/icons/index.cache.bz2
@@ -6167,7 +6169,6 @@ share/plasma/wallpapers/org.kde.image/contents/ui/WallpaperDelegate.qml
 share/plasma/wallpapers/org.kde.image/contents/ui/config.qml
 share/plasma/wallpapers/org.kde.image/contents/ui/main.qml
 share/plasma/wallpapers/org.kde.image/metadata.json
-share/plasma/wallpapers/org.kde.image/setaswallpaper.desktop.in
 share/plasma/wallpapers/org.kde.slideshow/contents/config/main.xml
 share/plasma/wallpapers/org.kde.slideshow/contents/ui/WallpaperDelegate.qml
 share/plasma/wallpapers/org.kde.slideshow/contents/ui/config.qml

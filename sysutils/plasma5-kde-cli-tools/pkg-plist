@@ -734,12 +734,15 @@ share/locale/uz/LC_MESSAGES/kstart5.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kdesu5.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kstart5.mo
+share/locale/vi/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/vi/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/vi/LC_MESSAGES/kcmshell5.mo
 share/locale/vi/LC_MESSAGES/kdesu5.mo
+share/locale/vi/LC_MESSAGES/kioclient.mo
 share/locale/vi/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/vi/LC_MESSAGES/kstart5.mo
 share/locale/vi/LC_MESSAGES/ktraderclient5.mo
+share/locale/vi/LC_MESSAGES/plasma-open-settings.mo
 share/locale/wa/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/wa/LC_MESSAGES/kcmshell5.mo
 share/locale/wa/LC_MESSAGES/kdesu5.mo
