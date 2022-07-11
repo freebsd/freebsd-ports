@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220711:
+  AFFECTS: users of security/stunnel
+  AUTHOR: zi@FreeBSD.org
+
+  The stunnel port has been updated to drop privileges to the stunnel
+  user by default.
+
+  As a result of this change, the pid file location has changed.  If
+  you have a running copy of stunnel, you should stop the process
+  before performing the upgrade.  Alternatively, you will need to
+  # pkill stunnel;service stunnel start
+  after the upgrade has been completed.
+
 20220628:
   AFFECTS: users of Erlang and Elixir
   AUTHOR: dch@FreeBSD.org

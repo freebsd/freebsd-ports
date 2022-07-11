@@ -1,7 +1,7 @@
 bin/stunnel
 bin/stunnel3
 %%ETCDIR%%/stunnel.conf-sample
-%%ETCDIR%%/conf.d/00-pid.conf
+%%ETCDIR%%/conf.d/00-daemon.conf
 lib/stunnel/libstunnel.a
 lib/stunnel/libstunnel.so
 man/man8/stunnel.8.gz
