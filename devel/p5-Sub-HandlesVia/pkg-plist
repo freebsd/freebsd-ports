@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Sub/HandlesVia.pm
 %%SITE_PERL%%/Sub/HandlesVia/CodeGenerator.pm
+%%SITE_PERL%%/Sub/HandlesVia/CodeGenerator.pm.mite.pm
 %%SITE_PERL%%/Sub/HandlesVia/Handler.pm
+%%SITE_PERL%%/Sub/HandlesVia/Handler.pm.mite.pm
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary.pm
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/Array.pm
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/Array.pod
@@ -18,12 +20,19 @@
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/Scalar.pod
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/String.pm
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/String.pod
+%%SITE_PERL%%/Sub/HandlesVia/Mite.pm
 %%SITE_PERL%%/Sub/HandlesVia/Toolkit.pm
+%%SITE_PERL%%/Sub/HandlesVia/Toolkit.pm.mite.pm
 %%SITE_PERL%%/Sub/HandlesVia/Toolkit/Mite.pm
+%%SITE_PERL%%/Sub/HandlesVia/Toolkit/Mite.pm.mite.pm
 %%SITE_PERL%%/Sub/HandlesVia/Toolkit/Moo.pm
+%%SITE_PERL%%/Sub/HandlesVia/Toolkit/Moo.pm.mite.pm
 %%SITE_PERL%%/Sub/HandlesVia/Toolkit/Moose.pm
+%%SITE_PERL%%/Sub/HandlesVia/Toolkit/Moose.pm.mite.pm
 %%SITE_PERL%%/Sub/HandlesVia/Toolkit/Mouse.pm
+%%SITE_PERL%%/Sub/HandlesVia/Toolkit/Mouse.pm.mite.pm
 %%SITE_PERL%%/Sub/HandlesVia/Toolkit/Plain.pm
+%%SITE_PERL%%/Sub/HandlesVia/Toolkit/Plain.pm.mite.pm
 %%PERL5_MAN3%%/Sub::HandlesVia.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::CodeGenerator.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::Handler.3.gz
@@ -35,4 +44,5 @@
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Number.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Scalar.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::String.3.gz
+%%PERL5_MAN3%%/Sub::HandlesVia::Mite.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::Toolkit.3.gz
