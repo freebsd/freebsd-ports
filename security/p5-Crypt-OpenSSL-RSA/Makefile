@@ -1,8 +1,7 @@
 # Created by: nork@cityfujisawa.ne.jp
 
 PORTNAME=	Crypt-OpenSSL-RSA
-PORTVERSION=	0.32
-PORTREVISION=	1
+PORTVERSION=	0.33
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
