@@ -616,6 +616,7 @@ include/wine/windows/mimeole.h
 include/wine/windows/mimeole.idl
 include/wine/windows/minidumpapiset.h
 include/wine/windows/minmax.h
+include/wine/windows/minschannel.h
 include/wine/windows/mlang.h
 include/wine/windows/mlang.idl
 include/wine/windows/mmc.h
