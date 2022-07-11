@@ -1,7 +1,7 @@
 # Created by: Thomas Sandford <freebsduser@paradisegreen.co.uk>
 
 PORTNAME=	drush
-DISTVERSION=	8.3.3
+DISTVERSION=	8.4.11
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/drush-ops/drush/releases/download/${DISTVERSION}/
@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	drush
 EXTRACT_SUFX=	.phar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	me@skylord.ru
 COMMENT=	Drupal command line and scripting interface
 
 LICENSE=	GPLv2+
