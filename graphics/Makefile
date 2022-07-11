@@ -883,6 +883,7 @@
     SUBDIR += py-plotly
     SUBDIR += py-png
     SUBDIR += py-pointpats
+    SUBDIR += py-projpicker
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
