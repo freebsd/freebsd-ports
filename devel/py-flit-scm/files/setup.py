@@ -10,7 +10,10 @@ package_data = \
 {'': ['*']}
 
 install_requires = \
-['flit-core~=3.5', 'setuptools_scm~=6.4', 'tomli']
+['flit-core~=3.5', 'setuptools_scm>=6.4']
+
+extras_require = \
+{":python_version < '3.11'": ['tomli']}
 
 setup(name='flit_scm',
       version='%%PORTVERSION%%',
@@ -21,5 +24,6 @@ setup(name='flit_scm',
       packages=packages,
       package_data=package_data,
       install_requires=install_requires,
+      extras_require=extras_require,
       python_requires='>=3.6',
      )
