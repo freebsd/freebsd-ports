@@ -2,7 +2,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.1.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -140,7 +140,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy>=3.3<4:textproc/rubygem-diffy \
 	rubygem-diff_match_patch>=0.1.0<0.2.0:textproc/rubygem-diff_match_patch \
-	rubygem-rack>=2.2.3.0<2.2.4,3:www/rubygem-rack \
+	rubygem-rack223>=2.2.3.0<2.2.4:www/rubygem-rack223 \
 	rubygem-rack-timeout>=0.6.0<0.7:www/rubygem-rack-timeout \
 	rubygem-puma>=5.6.2<5.7:www/rubygem-puma \
 	rubygem-puma_worker_killer>=0.3.1:www/rubygem-puma_worker_killer \
