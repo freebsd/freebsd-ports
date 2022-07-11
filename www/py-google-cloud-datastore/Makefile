@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	google-cloud-datastore
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.31.5<3.0.0:www/py-google-
 		${PYTHON_PKGNAMEPREFIX}proto-plus>=1.15.0<2.0.0:devel/py-proto-plus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.19.0,1<4.0.0,1:devel/py-protobuf@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
