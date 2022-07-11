@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	rubocop-ast
-PORTVERSION=	1.18.0
+PORTVERSION=	1.19.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
