@@ -1,5 +1,6 @@
 PORTNAME=	airborne
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport4>=0:devel/rubygem-activesupport4 \
 		rubygem-rack>=0:www/rubygem-rack \
-		rubygem-rack-test>=1.1.0<2.0:www/rubygem-rack-test \
+		rubygem-rack-test>=1.1.0<3.0:www/rubygem-rack-test \
 		rubygem-rest-client>=2.0.2<3.0:www/rubygem-rest-client \
 		rubygem-rspec>=3.8<4:devel/rubygem-rspec
 
