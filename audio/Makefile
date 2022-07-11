@@ -593,8 +593,8 @@
     SUBDIR += pavucontrol
     SUBDIR += pavucontrol-qt
     SUBDIR += pavumeter
-    SUBDIR += pcaudiolib
     SUBDIR += pc-mixer
+    SUBDIR += pcaudiolib
     SUBDIR += pd
     SUBDIR += pear-Text_Spell_Audio
     SUBDIR += penguinsap
