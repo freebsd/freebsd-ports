@@ -185,6 +185,8 @@
 %%DATADIR%%/xTB_parameters
 %%DATADIR%%/xc_section/HF-3c.sec
 %%DATADIR%%/xc_section/PBE.sec
+%%DATADIR%%/xc_section/WB97X_2LP.sec
+%%DATADIR%%/xc_section/WB97X_2TQZ.sec
 %%DATADIR%%/xc_section/vdW-DF-cx.sec
 %%DATADIR%%/xc_section/vdW-DF-cx0p.sec
 %%DATADIR%%/xc_section/vdW-DF-optB88.sec
