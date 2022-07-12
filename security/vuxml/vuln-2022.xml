@@ -1,3 +1,33 @@
+  <vuln vid="b99f99f6-021e-11ed-8c6f-000c29ffbb6c">
+    <topic>git -- privilege escalation</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>2.37.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The git project reports:</p>
+	<blockquote cite="https://lkml.org/lkml/2022/7/12/1137">
+	  <p>Git is vulnerable to privilege escalation in all platforms.
+	    An unsuspecting user could still be affected by the issue
+	    reported in CVE-2022-24765, for example when navigating as
+	    root into a shared tmp directory that is owned by them, but
+	    where an attacker could create a git repository.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-29187</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29187</url>
+    </references>
+    <dates>
+      <discovery>2022-07-12</discovery>
+      <entry>2022-07-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="830855f3-ffcc-11ec-9d41-d05099c8b5a7">
     <topic>mat2 -- directory traversal/arbitrary file read during ZIP file processing</topic>
     <affects>
