@@ -605,6 +605,7 @@
     SUBDIR += openjpeg15
     SUBDIR += openjph
     SUBDIR += openjump
+    SUBDIR += openmvs
     SUBDIR += opennurbs
     SUBDIR += openorienteering-mapper
     SUBDIR += openrm
