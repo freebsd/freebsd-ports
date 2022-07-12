@@ -46,6 +46,7 @@ include/python%%XYDOT%%%%ABI%%/cpython/pyctype.h
 include/python%%XYDOT%%%%ABI%%/cpython/pydebug.h
 include/python%%XYDOT%%%%ABI%%/cpython/pyerrors.h
 include/python%%XYDOT%%%%ABI%%/cpython/pyfpe.h
+include/python%%XYDOT%%%%ABI%%/cpython/pyframe.h
 include/python%%XYDOT%%%%ABI%%/cpython/pylifecycle.h
 include/python%%XYDOT%%%%ABI%%/cpython/pymem.h
 include/python%%XYDOT%%%%ABI%%/cpython/pystate.h
@@ -2985,9 +2986,9 @@ lib/python%%XYDOT%%/lib-dynload/xxlimited.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/xxlimited_35.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/zlib.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib2to3/Grammar.txt
-lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.beta.3.pickle
+lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.beta.4.pickle
 lib/python%%XYDOT%%/lib2to3/PatternGrammar.txt
-lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.beta.3.pickle
+lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.beta.4.pickle
 lib/python%%XYDOT%%/lib2to3/__init__.py
 lib/python%%XYDOT%%/lib2to3/__main__.py
 lib/python%%XYDOT%%/lib2to3/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
@@ -3775,6 +3776,9 @@ lib/python%%XYDOT%%/test/__pycache__/sample_doctest_no_doctests.cpython-%%XY%%.p
 lib/python%%XYDOT%%/test/__pycache__/seq_tests.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/seq_tests.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/seq_tests.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/__pycache__/setup_testcppext.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/__pycache__/setup_testcppext.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/__pycache__/setup_testcppext.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/__pycache__/signalinterproctester.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/__pycache__/signalinterproctester.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/__pycache__/signalinterproctester.cpython-%%XY%%.pyc
@@ -5495,6 +5499,7 @@ lib/python%%XYDOT%%/test/sample_doctest_no_doctests.py
 lib/python%%XYDOT%%/test/secp384r1.pem
 lib/python%%XYDOT%%/test/selfsigned_pythontestdotnet.pem
 lib/python%%XYDOT%%/test/seq_tests.py
+lib/python%%XYDOT%%/test/setup_testcppext.py
 lib/python%%XYDOT%%/test/sgml_input.html
 lib/python%%XYDOT%%/test/signalinterproctester.py
 lib/python%%XYDOT%%/test/sndhdrdata/README
