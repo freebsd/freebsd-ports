@@ -1,4 +1,4 @@
---- Makefile.orig	2021-12-31 09:29:59 UTC
+--- Makefile.orig	2022-07-08 20:23:24 UTC
 +++ Makefile
 @@ -11,7 +11,7 @@ CP2KHOME     := $(abspath $(shell pwd))
  export CP2KHOME
@@ -35,10 +35,10 @@
  OBJEXTSINCL := $(foreach dir,$(EXTSPACKAGES),-I'$(OBJEXTSDIR)/$(dir)')
 -TSTDIR     := $(MAINTSTDIR)/$(ARCH)/$(ONEVERSION)
 +TSTDIR     := $(MAINTSTDIR)/$(XARCH)/$(ONEVERSION)
- ifeq ($(OFFLOAD_CC),)
- EXE_NAMES := $(basename $(notdir $(filter-out %.cu, $(ALL_EXE_FILES))))
- endif
-@@ -159,7 +159,7 @@ all: makedep | dirs exts
+ ifneq ($(LD_SHARED),)
+ 	ARCHIVE_EXT := .so
+ else
+@@ -144,7 +144,7 @@ all: makedep | dirs exts
  
  # compilation for testing happens here
  test: dirs makedep all
@@ -47,7 +47,7 @@
  	@+$(MAKE) --no-print-directory -C $(TSTDIR) -f $(MAKEFILE) test INCLUDE_DEPS=true
  
  testbg: dirs makedep all
-@@ -263,11 +263,11 @@ $(EXEDIR)/cp2k_shell.$(ONEVERSION): $(EXEDIR)/cp2k.$(O
+@@ -250,11 +250,11 @@ $(EXEDIR)/cp2k_shell.$(ONEVERSION): $(EXEDIR)/cp2k.$(O
  	cd $(EXEDIR); ln -sf cp2k.$(ONEVERSION) cp2k_shell.$(ONEVERSION)
  
  test:
@@ -61,7 +61,7 @@
  	@grep -e "Summary:" -e "Status:" $(TSTDIR)/regtest.log
  
  endif
-@@ -320,9 +320,9 @@ define get_extensions
+@@ -307,9 +307,9 @@ define get_extensions
  	$(shell test -d $(1) && find $(1) -type f -name "*.*" ! -name "*.gcda" | sed 's|.*\.||' | sort -u)
  endef
  clean:
@@ -74,7 +74,7 @@
  OTHER_HELP += "clean : Remove intermediate object and mod files, but not the libraries and executables, for given ARCH and VERSION"
  
  # The Intel compiler creates a corresponding .dbg file for each executable when static linking of the Intel MPI library is requested (flag -static_mpi)
-@@ -336,16 +336,16 @@ OTHER_HELP += "execlean : Remove the executables, for 
+@@ -323,16 +323,16 @@ OTHER_HELP += "execlean : Remove the executables, for 
  # Use this if you want to fully rebuild an executable (for a given compiler and or VERSION)
  #
  realclean: extclean clean execlean
@@ -95,12 +95,12 @@
  OTHER_HELP += "testrealclean : Remove all LAST-* and TEST-* files for given ARCH and VERSION"
  
  #
-@@ -515,7 +515,7 @@ FORCE: ;
+@@ -499,7 +499,7 @@ FORCE: ;
  cp2k_info.o: $(GIT_REF)
  
  # Add some practical metadata about the build.
 -FCFLAGS += -D__COMPILE_ARCH="\"$(ARCH)\""\
 +FCFLAGS += -D__COMPILE_ARCH="\"$(XARCH)\""\
- 					 -D__COMPILE_DATE="\"$(shell date)\""\
- 					 -D__COMPILE_HOST="\"$(shell hostname 2>/dev/null || hostnamectl --transient)\""\
- 					 -D__COMPILE_REVISION="\"$(strip $(REVISION))\""\
+         -D__COMPILE_DATE="\"$(shell date)\""\
+         -D__COMPILE_HOST="\"$(shell hostname 2>/dev/null || hostnamectl --transient)\""\
+         -D__COMPILE_REVISION="\"$(strip $(REVISION))\""\
