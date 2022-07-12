@@ -18,6 +18,9 @@ LICENSE_NAME=	aacplusenc
 LICENSE_TEXT=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 LICENSE_PERMS=	auto-accept
 
+DEPRECATED=	Legacy audio format, superseded by HE-AAC(v1), HE-AACv2 and xHE-AAC/USAC. Please consider using audio/fdk-aac via FFmpeg or audio/exhale
+EXPIRATION_DATE=2022-09-30
+
 CPE_VENDOR=	aacplusenc_project
 
 OPTIONS_DEFINE=	FFTW3
