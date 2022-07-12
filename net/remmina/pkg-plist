@@ -10,7 +10,7 @@ include/remmina/types.h
 %%SPICE%%lib/remmina/plugins/remmina-plugin-spice.so
 %%VNC%%lib/remmina/plugins/remmina-plugin-vnc.so
 %%WWW%%lib/remmina/plugins/remmina-plugin-www.so
-lib/remmina/plugins/remmina-plugin-python_wrapper.so
+%%PYTHON%%lib/remmina/plugins/remmina-plugin-python_wrapper.so
 libdata/pkgconfig/remmina.pc
 share/man/man1/remmina-file-wrapper.1.gz
 share/man/man1/remmina.1.gz

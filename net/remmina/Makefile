@@ -2,6 +2,7 @@
 
 PORTNAME=	remmina
 DISTVERSION=	1.4.27
+PORTREVISION=	1
 CATEGORIES=	net gnome
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -13,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
 		libjson-glib-1.0.so:devel/json-glib \
 		libpcre2-8.so:devel/pcre2 \
-		libpython3.9.so:lang/python39 \
 		libsodium.so:security/libsodium \
 		libsoup-2.4.so:devel/libsoup \
 		libwayland-client.so:graphics/wayland
@@ -41,7 +41,7 @@ CMAKE_ARGS=	-DWITH_APPINDICATOR:BOOL=false
 
 CONFLICTS_INSTALL=	remmina-plugin*
 
-OPTIONS_DEFINE=		AVAHI CUPS GCRYPT NLS SSH TERM
+OPTIONS_DEFINE=		AVAHI CUPS GCRYPT NLS PYTHON SSH TERM
 OPTIONS_DEFAULT=	AVAHI CUPS GCRYPT NLS SSH TERM \
 			EXEC RDP SECRET SPICE VNC WWW BASH
 OPTIONS_GROUP=		PLUGINS
@@ -51,7 +51,7 @@ OPTIONS_SINGLE_SHELL=	BASH ZSH
 OPTIONS_SUB=		yes
 
 .if ${FLAVOR:U} == lite
-OPTIONS_EXCLUDE=	AVAHI CUPS KWALLET SECRET SPICE SSH TERM WWW
+OPTIONS_EXCLUDE=	AVAHI CUPS KWALLET PYTHON SECRET SPICE SSH TERM WWW
 COMMENT+=		(lite flavor)
 .endif
 
@@ -59,6 +59,7 @@ AVAHI_DESC=		Build with Avahi support
 BASH_DESC=		Use BASH for shell wrapper scripts
 EXEC_DESC=		Plugin to execute a command
 GCRYPT_DESC=		Build with libgcrypt support for password encryption
+PYTHON_DESC=		Build with support for Python plugins
 RDP_DESC=		Remote Desktop Protocol plugin
 SECRET_DESC=		GNOME Keyring plugin
 SHELL_DESC=		Shell Scripts
@@ -87,6 +88,9 @@ KWALLET_USE=		kde=wallet qt=buildtools_build,core,gui,qmake_build
 KWALLET_CMAKE_BOOL=	WITH_KF5WALLET
 
 NLS_CMAKE_BOOL=		WITH_TRANSLATIONS
+
+PYTHON_USES=		python
+PYTHON_CMAKE_BOOL=	WITH_PYTHONLIBS
 
 RDP_LIB_DEPENDS=	libfreerdp2.so:net/freerdp libxkbfile.so:x11/libxkbfile
 
