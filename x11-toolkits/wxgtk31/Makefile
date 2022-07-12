@@ -3,7 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.5
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
+MASTER_SITES=	https://github.com/wxWidgets/wxWidgets/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	${_SHORT_WX_VER}-${FLAVOR}
+DISTNAME=	wxWidgets-${DISTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GUI toolkit (wxWidgets) with ${FLAVOR:S/k/&+/:tu} bindings
@@ -25,11 +27,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libwayland-egl.so:graphics/wayland
 
 USES=		compiler:c++11-lib gl gmake gnome iconv jpeg localbase \
-		pkgconfig xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	wxWidgets
-GH_PROJECT=	wxWidgets
-GH_TUPLE=	wxWidgets:Catch:ee4acb6:wxWidgets_Catch/3rdparty/catch
+		pkgconfig tar:bz2 xorg
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 sm xxf86vm xtst
