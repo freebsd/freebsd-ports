@@ -21,7 +21,7 @@ BROKEN_mips64=	error ngx_spinlock() or ngx_atomic_cmp_set() are not defined
 
 CONFLICTS_INSTALL=	nginx-devel
 
-PORTSCOUT=	limit:^1\.22\.[0-9]*
+PORTSCOUT=	limit:^1\.23\.[0-9]*
 
 USES=		compiler:c11 cpe
 
