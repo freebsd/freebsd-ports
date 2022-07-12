@@ -208,6 +208,7 @@ cbsd/etc/defaults/vm-freebsd-cloud-FreeBSD-zfs-x64-14.conf
 cbsd/etc/defaults/vm-freebsd-cloud-OPNSense-22-RELEASE-amd64-22.conf
 cbsd/etc/defaults/vm-freebsd-helloSystem-x64.conf
 cbsd/etc/defaults/vm-freebsd-pfSense-2-RELEASE-amd64.conf
+cbsd/etc/defaults/vm-linux-AlmaLinux-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-Alpine-extended-3.conf
 cbsd/etc/defaults/vm-linux-Alpine-standart-3.conf
 cbsd/etc/defaults/vm-linux-Android-x86.conf
@@ -218,17 +219,18 @@ cbsd/etc/defaults/vm-linux-CentOS-stream-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-ClearLinux-Server-x86_64.conf
 cbsd/etc/defaults/vm-linux-Debian-x86-10.conf
 cbsd/etc/defaults/vm-linux-Debian-x86-11.conf
-cbsd/etc/defaults/vm-linux-Debian-x86-9-minimal.conf
-cbsd/etc/defaults/vm-linux-Debian-x86-9.conf
 cbsd/etc/defaults/vm-linux-FreePBX-64bit-16.conf
 cbsd/etc/defaults/vm-linux-Kali-2022-amd64.conf
 cbsd/etc/defaults/vm-linux-Mint-20.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-7.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-8.conf
+cbsd/etc/defaults/vm-linux-OracleLinux-9.conf
 cbsd/etc/defaults/vm-linux-Parrot-security-5-x64.conf
+cbsd/etc/defaults/vm-linux-Starface-7.conf
 cbsd/etc/defaults/vm-linux-Rocky-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-TinyCore-x86-13.conf
 cbsd/etc/defaults/vm-linux-TrueNAS-Scale-22.conf
+cbsd/etc/defaults/vm-linux-cloud-Alma-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-9-x86_64.conf
@@ -241,6 +243,7 @@ cbsd/etc/defaults/vm-linux-cloud-HomeAssistant-8.conf
 cbsd/etc/defaults/vm-linux-cloud-Kali-2022-amd64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-8-x86_64.conf
+cbsd/etc/defaults/vm-linux-cloud-Oracle-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-kubernetes-24.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntudesktop-amd64-22.04.conf
@@ -345,7 +348,7 @@ cbsd/misc/fmagic
 cbsd/misc/ipv6range
 cbsd/misc/mtree
 cbsd/misc/next-ng-port
-cbsd/misc/next-vale-port
+%%FBSD%%cbsd/misc/next-vale-port
 cbsd/misc/nics-list
 cbsd/misc/pwcrypt
 cbsd/misc/resolv
@@ -938,7 +941,7 @@ cbsd/tools/bhyve-p9shares
 cbsd/tools/bhyve-ppt
 cbsd/tools/bootmgmt
 cbsd/tools/bootmgmt-pxe
-cbsd/tools/bridge
+%%FBSD%%cbsd/tools/bridge
 cbsd/tools/carpcfg
 cbsd/tools/carpcontrol
 cbsd/tools/cbsdchown
@@ -1015,9 +1018,9 @@ cbsd/tools/path2jail
 cbsd/tools/pkgbrowsecat
 cbsd/tools/pkgbrowser
 cbsd/tools/pull
-cbsd/tools/racct-bhyve-statsd
-cbsd/tools/racct-hoster-statsd
-cbsd/tools/racct-jail-statsd
+%%FBSD%%cbsd/tools/racct-bhyve-statsd
+%%FBSD%%cbsd/tools/racct-hoster-statsd
+%%FBSD%%cbsd/tools/racct-jail-statsd
 cbsd/tools/rctlcounters
 cbsd/tools/replacewdir
 cbsd/tools/repo
@@ -1042,7 +1045,7 @@ cbsd/tools/trafstat
 cbsd/tools/unmountfstab
 cbsd/tools/unmountmd
 cbsd/tools/up
-cbsd/tools/vale-ctl
+%%FBSD%%cbsd/tools/vale-ctl
 cbsd/tools/valecfg
 cbsd/tools/valecfg-tui
 cbsd/tools/vhidcfg
