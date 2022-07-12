@@ -1,8 +1,7 @@
 # Created by: Rainer Hurling <rhurlin@gwdg.de>
 
 PORTNAME=	saga
-PORTVERSION=	8.2.2
-PORTREVISION=	1
+PORTVERSION=	8.2.3
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
