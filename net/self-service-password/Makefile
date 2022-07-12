@@ -1,8 +1,7 @@
 # Created by: Krzysztof Stryjek <ports@bsdserwis.com>
 
 PORTNAME=	self-service-password
-DISTVERSION=	1.4
-PORTREVISION=	1
+DISTVERSION=	1.4.5
 CATEGORIES=	net www
 MASTER_SITES=	http://ltb-project.org/archives/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -25,8 +24,8 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST+=	PKGNAME=${PKGNAME}
 
-PLIST_SUB+=	SSP_OWN=${WWWOWN}
-PLIST_SUB+=	SSP_GRP=${WWWGRP}
+PLIST_SUB+=	SSP_GRP=${WWWGRP} \
+		SSP_OWN=${WWWOWN}
 
 CFGDIR=		conf
 CFGFILE=	config.inc.php
