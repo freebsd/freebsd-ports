@@ -2,6 +2,7 @@
 
 PORTNAME=	Imath
 PORTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	math devel graphics
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -45,7 +46,7 @@ _MINVER=	4
 _PLVER=		0
 
 post-patch:
-	${REINPLACE_CMD} -E 's/find_package\(Python(3?) COMPONENTS/find_package(Python\1 ${PYTHON_VER} EXACT COMPONENTS/' \
+	${REINPLACE_CMD} -E 's}find_package\(Python(3?) COMPONENTS}set(Python\1_EXECUTABLE ${PYTHON_CMD})\nfind_package(Python\1 ${PYTHON_VER} EXACT COMPONENTS}' \
 		${WRKSRC}/src/python/CMakeLists.txt
 
 post-install:
