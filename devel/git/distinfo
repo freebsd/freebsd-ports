@@ -1,10 +1,10 @@
-TIMESTAMP = 1656354285
-SHA256 (git-2.37.0.tar.xz) = 9f7fa1711bd00c4ec3dde2fe44407dc13f12e4772b5e3c72a58db4c07495411f
-SIZE (git-2.37.0.tar.xz) = 6978796
-SHA256 (git-manpages-2.37.0.tar.xz) = 80119359072c8dd01fd4bed09e5d11de54f469e952fb2b7def57d97f97adc8e0
-SIZE (git-manpages-2.37.0.tar.xz) = 509992
-SHA256 (git-htmldocs-2.37.0.tar.xz) = 4611d17d75ceb1f164dfc8e725705dece43b1011c6b4b78a7c7a609753c196c1
-SIZE (git-htmldocs-2.37.0.tar.xz) = 1444540
+TIMESTAMP = 1657657988
+SHA256 (git-2.37.1.tar.xz) = c8162c6b8b8f1c5db706ab01b4ee29e31061182135dc27c4860224aaec1b3500
+SIZE (git-2.37.1.tar.xz) = 6980388
+SHA256 (git-manpages-2.37.1.tar.xz) = 4dcece78fcb9c585f362d2607b05189afb6c8b4e47a21dfdccb5fefd27fa1e25
+SIZE (git-manpages-2.37.1.tar.xz) = 510044
+SHA256 (git-htmldocs-2.37.1.tar.xz) = 57c81d42d66880d3b3859e22d0f95c054389a97610f7d08d1e9e39e35771ad10
+SIZE (git-htmldocs-2.37.1.tar.xz) = 1445040
 SHA256 (0001-refs-extract-packed_refs_delete_refs-to-allow-contro.patch) = c9c6b619d43ee49ac9beff22ec722a2a8a6a704a8039dc3de4dbfa1f89f77d34
 SIZE (0001-refs-extract-packed_refs_delete_refs-to-allow-contro.patch) = 5453
 SHA256 (0002-refs-allow-passing-flags-when-beginning-transactions.patch) = 95df2fc83975b5fb0f1ba871163cb9e28319639eea34d1eb5d74dd15ed64f78e
