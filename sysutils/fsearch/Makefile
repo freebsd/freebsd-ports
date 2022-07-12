@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	fsearch
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -14,7 +14,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_check_compile_flag.m4:devel/autoconf-archive
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libicuuc.so:devel/icu \
+		libpcre.so:devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cboxdoerfer
