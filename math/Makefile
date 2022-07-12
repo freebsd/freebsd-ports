@@ -246,6 +246,7 @@
     SUBDIR += concorde
     SUBDIR += convertall
     SUBDIR += coq
+    SUBDIR += cosma
     SUBDIR += couenne
     SUBDIR += coxeter3
     SUBDIR += cppad
