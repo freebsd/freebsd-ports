@@ -1,10 +1,8 @@
-# Created by: rene
-
 PORTNAME=	biosfont-demos
 PORTVERSION=	1.3
 CATEGORIES=	misc
 
-MAINTAINER=	rene0@freedom.nl
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Demos for the biosfont kernel module
 
 LICENSE=	BSD2CLAUSE

@@ -1,5 +1,3 @@
-# Created by: rene
-
 PORTNAME=	bas2tap
 PORTVERSION=	2.6
 CATEGORIES=	lang
