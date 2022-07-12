@@ -11,6 +11,9 @@ COMMENT=	Course management system based on social constructionism
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Upstream no longer maintained
+EXPIRATION_DATE=	2022-09-12
+
 CONFLICTS=	moodle39-3.9.[0-9]* moodle311-3.11.[0-9]* moodle40-4.0.[0-9]*
 
 USES=		cpe php:flavors tar:tgz
