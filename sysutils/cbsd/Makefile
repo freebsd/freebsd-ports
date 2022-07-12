@@ -1,5 +1,5 @@
 PORTNAME=	cbsd
-DISTVERSION=	13.1.1
+DISTVERSION=	13.1.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -30,10 +30,18 @@ CBSD_HOME?=	${PREFIX}/cbsd
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == x86_64
 PLIST_SUB=	X86=""
 .else
 PLIST_SUB=	X86="@comment "
+.endif
+
+.if ${OPSYS} != FreeBSD
+PLIST_SUB+=	FBSD="@comment "
+LIB_DEPENDS+=	libelf.so:devel/libelf
+RUN_DEPENDS+=	sysrc:sysutils/sysrc
+.else
+PLIST_SUB+=	FBSD=""
 .endif
 
 do-install:
