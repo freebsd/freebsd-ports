@@ -158,6 +158,7 @@
 %%WWWDIR%%/lib/vendor/phpmailer/phpmailer/language/phpmailer.lang-sk.php
 %%WWWDIR%%/lib/vendor/phpmailer/phpmailer/language/phpmailer.lang-sl.php
 %%WWWDIR%%/lib/vendor/phpmailer/phpmailer/language/phpmailer.lang-sr.php
+%%WWWDIR%%/lib/vendor/phpmailer/phpmailer/language/phpmailer.lang-sr_latn.php
 %%WWWDIR%%/lib/vendor/phpmailer/phpmailer/language/phpmailer.lang-sv.php
 %%WWWDIR%%/lib/vendor/phpmailer/phpmailer/language/phpmailer.lang-tl.php
 %%WWWDIR%%/lib/vendor/phpmailer/phpmailer/language/phpmailer.lang-tr.php
@@ -211,6 +212,11 @@
 %%WWWDIR%%/lib/vendor/symfony/finder/SplFileInfo.php
 %%WWWDIR%%/LICENCE
 %%WWWDIR%%/README.md
+%%WWWDIR%%/rest/v1/adminchangepassword.php
+%%WWWDIR%%/rest/v1/changepassword.php
+%%WWWDIR%%/rest/v1/checkpassword.php
+%%WWWDIR%%/rest/v1/doc/openapi-spec.yaml
+%%WWWDIR%%/rest/v1/include.php
 %%WWWDIR%%/scripts/encrypt_answers.php
 %%WWWDIR%%/scripts/multi_ldap_change.php
 %%WWWDIR%%/scripts/update_samba_password.sh
@@ -227,3 +233,4 @@
 %%WWWDIR%%/templates/sendsms.tpl
 %%WWWDIR%%/templates/sendtoken.tpl
 %%WWWDIR%%/templates/setquestions.tpl
+@dir %%WWWDIR%%/lib/vendor/bin
