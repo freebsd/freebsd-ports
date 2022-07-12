@@ -151,6 +151,9 @@ include/proxygen/lib/http/session/ServerPushLifecycle.h
 include/proxygen/lib/http/session/SimpleController.h
 include/proxygen/lib/http/session/TTLBAStats.h
 include/proxygen/lib/http/session/TransactionByteEvents.h
+include/proxygen/lib/http/sink/HTTPSink.h
+include/proxygen/lib/http/sink/HTTPTransactionSink.h
+include/proxygen/lib/http/sink/NullHTTPSink.h
 include/proxygen/lib/http/stats/ConnectionStats.h
 include/proxygen/lib/http/stats/HeaderCodecStats.h
 include/proxygen/lib/http/stats/HTTPCodecStats.h
