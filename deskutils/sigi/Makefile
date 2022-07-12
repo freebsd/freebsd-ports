@@ -1,7 +1,6 @@
 PORTNAME=	sigi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.0
-PORTREVISION=	1
+DISTVERSION=	3.4.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	hiljusti@so.dang.cool
@@ -13,6 +12,8 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	hiljusti
 
+CARGO_BUILD_ARGS=	--all
+
 CARGO_CRATES=	atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.3.2 \
@@ -20,8 +21,9 @@ CARGO_CRATES=	atty-0.2.14 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-3.1.6 \
-		clap_derive-3.1.4 \
+		clap-3.2.6 \
+		clap_derive-3.2.6 \
+		clap_lex-0.2.3 \
 		clearscreen-1.0.9 \
 		clipboard-win-4.4.1 \
 		dirs-2.0.2 \
@@ -33,7 +35,7 @@ CARGO_CRATES=	atty-0.2.14 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		error-code-2.3.1 \
-		fd-lock-3.0.5 \
+		fd-lock-3.0.6 \
 		fnv-1.0.7 \
 		getrandom-0.1.16 \
 		getrandom-0.2.6 \
@@ -41,12 +43,12 @@ CARGO_CRATES=	atty-0.2.14 \
 		heck-0.4.0 \
 		hermit-abi-0.1.18 \
 		indexmap-1.8.0 \
-		io-lifetimes-0.6.1 \
+		io-lifetimes-0.7.2 \
 		itoa-0.4.7 \
 		json-0.12.4 \
 		lazy_static-1.4.0 \
-		libc-0.2.124 \
-		linux-raw-sys-0.0.42 \
+		libc-0.2.126 \
+		linux-raw-sys-0.0.46 \
 		log-0.4.16 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \
@@ -56,6 +58,7 @@ CARGO_CRATES=	atty-0.2.14 \
 		nom-5.1.2 \
 		num-integer-0.1.44 \
 		num-traits-0.2.14 \
+		once_cell-1.12.0 \
 		os_str_bytes-6.0.0 \
 		phf-0.8.0 \
 		phf_codegen-0.8.0 \
@@ -75,7 +78,7 @@ CARGO_CRATES=	atty-0.2.14 \
 		rand_pcg-0.2.1 \
 		redox_syscall-0.2.13 \
 		redox_users-0.4.3 \
-		rustix-0.34.4 \
+		rustix-0.35.6 \
 		rustyline-9.1.2 \
 		ryu-1.0.5 \
 		scopeguard-1.1.0 \
@@ -105,13 +108,12 @@ CARGO_CRATES=	atty-0.2.14 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.30.0 \
-		windows_aarch64_msvc-0.30.0 \
-		windows_i686_gnu-0.30.0 \
-		windows_i686_msvc-0.30.0 \
-		windows_x86_64_gnu-0.30.0 \
-		windows_x86_64_msvc-0.30.0
-CARGO_BUILD_ARGS=	--all
+		windows-sys-0.36.1 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_msvc-0.36.1 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_msvc-0.36.1
 
 PLIST_FILES=	bin/sigi \
 		man/man1/sigi.1.gz
