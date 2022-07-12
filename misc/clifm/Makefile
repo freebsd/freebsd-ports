@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	clifm
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -10,10 +10,14 @@ COMMENT=	Non-curses, KISS file manager for the terminal
 
 LICENSE=	GPLv2+
 
-USES=		desktop-file-utils gettext-runtime readline
+RUN_DEPENDS=	gfind:misc/findutils guniq:sysutils/coreutils
+
+USES=		desktop-file-utils gettext-runtime python:run \
+		readline shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-arch
 ALL_TARGET=	build
+SHEBANG_FILES=	misc/tools/manpages_comp_gen.py
 
 OPTIONS_DEFINE=	COLORS
 OPTIONS_DEFAULT=	COLORS
@@ -27,5 +31,8 @@ post-install-COLORS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/colors
 	${INSTALL_DATA} ${WRKSRC_cfmc}/colors/*.cfm \
 		${STAGEDIR}${DATADIR}/colors
+
+post-stage:
+	@${RM} ${STAGEDIR}${DATADIR}/plugins/*.orig
 
 .include <bsd.port.mk>
