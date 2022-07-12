@@ -12,6 +12,9 @@ COMMENT=	MORE flexible neural network package
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+DEPRECATED=	Upstream no longer maintained
+EXPIRATION_DATE=	2022-09-12
+
 USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
