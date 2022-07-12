@@ -1,0 +1,13 @@
+Features:
+- Parsing of almost all diff formats (except forwarded ed)
+  - normal (default, --normal)
+  - copied context (-c, --context)
+  - unified context (-u, --unified)
+  - ed script (-e, --ed)
+  - rcs ed script (-n, --rcs)
+- Parsing of several SCM patches
+  - CVS
+  - SVN
+  - Git
+
+WWW: https://github.com/cscorley/whatthepatch
