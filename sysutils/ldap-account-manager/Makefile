@@ -1,5 +1,5 @@
 PORTNAME=	ldap-account-manager
-PORTVERSION=	7.9
+DISTVERSION=	8.0.1
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
@@ -9,23 +9,25 @@ COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	p5-Quota>=0:sysutils/p5-Quota p5-perl-ldap>=0:net/p5-perl-ldap
+RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
+		p5-Quota>=0:sysutils/p5-Quota
 
 USES=		perl5 php:web tar:bzip2
-USE_PHP=	curl gd filter gettext gmp hash iconv json ldap mbstring openssl \
-		pcre session simplexml xml xmlreader xmlwriter zip
+USE_PHP=	curl filter gd gettext gmp hash iconv json ldap mbstring \
+		openssl pcre session simplexml xml xmlreader xmlwriter zip
 
 WWWDIR=		${PREFIX}/www/${SHORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 SHORTNAME=	lam
-PORTDOCS=	docs COPYING HISTORY README copyright
-LAMDATA=	config graphics help lib locale sess style templates tmp VERSION index.html pwa_worker.js .htaccess
+PORTDOCS=	COPYING HISTORY README copyright docs
+LAMDATA=	config graphics help lib locale sess style templates tmp \
+		VERSION index.html pwa_worker.js .htaccess
 WRITEABLES=	config sess tmp
 
-OPTIONS_DEFINE+=DOCS
-OPTIONS_DEFAULT=DOCS
+OPTIONS_DEFINE+=	DOCS
+OPTIONS_DEFAULT=	DOCS
 
 DOCS_DESC=	Install documentation and dhcp.schema
 
