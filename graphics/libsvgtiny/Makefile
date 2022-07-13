@@ -7,7 +7,6 @@ CATEGORIES=	graphics
 MASTER_SITES=	https://download.netsurf-browser.org/libs/releases/
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	SVG tiny library
 COMMENT=	Tiny SVG fremebuffer abstraction library, written in C
 
 LICENSE=	MIT
