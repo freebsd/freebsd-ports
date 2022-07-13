@@ -286,6 +286,7 @@
     SUBDIR += libotr
     SUBDIR += libotr3
     SUBDIR += libp11
+    SUBDIR += libpki
     SUBDIR += libprelude
     SUBDIR += libpreludedb
     SUBDIR += libpwquality
