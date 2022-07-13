@@ -974,7 +974,6 @@ lib/emby-server/system/dashboard-ui/settings/playback.js
 lib/emby-server/system/dashboard-ui/settings/profile.css
 lib/emby-server/system/dashboard-ui/settings/profile.html
 lib/emby-server/system/dashboard-ui/settings/profile.js
-lib/emby-server/system/dashboard-ui/settings/settings.css
 lib/emby-server/system/dashboard-ui/settings/settings.html
 lib/emby-server/system/dashboard-ui/settings/settings.js
 lib/emby-server/system/dashboard-ui/settings/subtitles.html
