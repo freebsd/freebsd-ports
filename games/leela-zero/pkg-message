@@ -14,6 +14,10 @@ for example:
 * pocl: for a simple CPU provider
 * beignet: for the Intel GPU provider
 * etc.
+
+You also need to download neural network weights using this command:
+$ fetch https://zero.sjeng.org/best-network -o /home/yuri/.local/share/leela-zero/
+
 EOM
 }
 ]

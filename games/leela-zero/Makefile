@@ -30,4 +30,7 @@ PLIST_FILES=	bin/autogtp \
 do-test:
 	@cd ${WRKSRC} && ${MKDIR} .build && ${CP} ../.build/tests .build && cd .build && ./tests
 
+download-weights:
+	@${FETCH_CMD} https://zero.sjeng.org/best-network -o ~/.local/share/leela-zero/
+
 .include <bsd.port.mk>
