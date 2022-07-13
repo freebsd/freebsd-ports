@@ -2,6 +2,7 @@ PORTNAME=	Bento4
 PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=v
 DISTVERSIONSUFFIX=-639
+PORTREVISION=	1
 CATEGORIES=	multimedia devel
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -25,7 +26,7 @@ CMAKE_BUILD_TYPE=	Release
 INSTALL_TARGET=		do-install
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|g' ${WRKSRC}/Source/Python/wrappers/*
+	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|g' ${WRKSRC}/Source/Python/wrappers/*
 	@${REINPLACE_CMD} -e 's|$$BASEDIR/..|${DATADIR}|g' ${WRKSRC}/Source/Python/wrappers/*
 
 do-install:
