@@ -11,7 +11,7 @@ INSTALL_REQUIRE = [
     'importlib-metadata; python_version < "3.8"',
     'installer>=0.5.1,<0.6',
     'packaging',
-    'pdm-pep517>=0.9,<1',
+    'pdm-pep517>=0.9',
     'pep517>=0.11.0',
     'platformdirs',
     'python-dotenv>=0.15',
