@@ -1,3 +1,6 @@
+bin/step-awskms-init
+bin/step-yubikey-init
+bin/step-pkcs11-init
 bin/step-cloudkms-init
 sbin/step-ca
 @dir etc/step
