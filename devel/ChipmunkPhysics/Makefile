@@ -14,6 +14,8 @@ COMMENT=	2D physics engine written in C
 
 LICENSE=	MIT
 
+BROKEN_armv7=	src/cpHastySpace.c:31:4: error: Cannot use CP_USE_DOUBLES on 32 bit ARM
+
 USES=		cmake tar:tgz
 USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}
