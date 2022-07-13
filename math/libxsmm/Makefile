@@ -1,5 +1,5 @@
 PORTNAME=	libxsmm
-DISTVERSION=	1.16.3
+DISTVERSION=	1.17
 CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,7 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 MAKE_ARGS+=	PLATFORM=1
 .endif
 
-post-install: # https://github.com/hfp/libxsmm/issues/413
-	${RMDIR} ${STAGEDIR}${PREFIX}/share/modules
+post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/include/libxsmm/libxsmm_timer.c.orig
 
 .include <bsd.port.mk>

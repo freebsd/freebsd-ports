@@ -1,20 +1,11 @@
---- Makefile.orig	2020-06-26 14:58:46 UTC
+--- Makefile.orig	2021-12-02 20:45:19 UTC
 +++ Makefile
-@@ -27,6 +27,8 @@ CFLAGS = $(RPM_OPT_FLAGS)
- CXXFLAGS = $(RPM_OPT_FLAGS)
- FCFLAGS = $(RPM_OPT_FLAGS)
+@@ -27,6 +27,8 @@ CFLAGS := $(RPM_OPT_FLAGS)
+ CXXFLAGS := $(RPM_OPT_FLAGS)
+ FCFLAGS := $(RPM_OPT_FLAGS)
  
 +CFLAGS += -fcommon # multiple definition of `libxsmm_scratch_pools' (and other symbols) https://github.com/hfp/libxsmm/issues/412
 +
  # THRESHOLD problem size (M x N x K) determining when to use BLAS
  # A value of zero (0) populates a default threshold
  THRESHOLD ?= 0
-@@ -1611,7 +1613,7 @@ endif
- endif
- 
- .PHONY: install-all
--install-all: install samples
-+install-all: install
- ifneq ($(PREFIX),$(ABSDIR))
- 	@echo
- 	@echo "LIBXSMM installing samples..."
