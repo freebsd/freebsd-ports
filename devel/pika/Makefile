@@ -19,11 +19,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pika-org
 
 CMAKE_ON=	PIKA_WITH_MALLOC
-CMAKE_TESTING_ON=	PIKA_WITH_TESTS # unclear how to run tests
+CMAKE_TESTING_ON=	PIKA_WITH_TESTS PIKA_WITH_TESTS_UNIT # unclear how to run tests
+CMAKE_TESTING_TARGET=	tests test
 
 BINARY_ALIAS=	git=false
 
 post-install:
 	@${RM} -r ${STAGEDIR}${DATADIR} # remove copy of license
+
+pre-test: # unlike most other cmake projects tests fail to build when reconfigured, and require full rebuild
+	@${RM} -r ${BUILD_WRKSRC}/*
 
 .include <bsd.port.mk>
