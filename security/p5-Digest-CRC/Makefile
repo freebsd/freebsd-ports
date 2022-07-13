@@ -1,7 +1,7 @@
 # Created by: Gabor Kovesdan
 
 PORTNAME=	Digest-CRC
-PORTVERSION=	0.21
+PORTVERSION=	0.24
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
