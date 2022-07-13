@@ -503,6 +503,7 @@
     SUBDIR += libspng
     SUBDIR += libsvg
     SUBDIR += libsvg-cairo
+    SUBDIR += libsvgtiny
     SUBDIR += libvisual
     SUBDIR += libvisual04
     SUBDIR += libvisual04-plugins
