@@ -1,7 +1,7 @@
 # Created by: Scott Mace <smace@FreeBSD.org>
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.69
+PORTVERSION=	5.70
 CATEGORIES=	x11
 MASTER_SITES=	http://www.sillycycle.com/xlock/ \
 		SF/bsdsrc/${.CURDIR:T}
