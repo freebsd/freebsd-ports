@@ -1,3 +1,3 @@
-TIMESTAMP = 1642335624
-SHA256 (django-bitfield-2.1.0.tar.gz) = a55859fd16ce4269d5ceed3e20cf8fc3c2df866f0a78b90c60a19a0e76aa5fd8
-SIZE (django-bitfield-2.1.0.tar.gz) = 15458
+TIMESTAMP = 1657719124
+SHA256 (django-bitfield-2.2.0.tar.gz) = 1b21262acc4ec0af3f82ed04498a056cd9d5452532ac02771e004835a34e0b1b
+SIZE (django-bitfield-2.2.0.tar.gz) = 17365
