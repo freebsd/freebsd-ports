@@ -1,7 +1,6 @@
     COMMENT = Development utilities
 
     SUBDIR += 9base
-    SUBDIR += ChipmunkPhysics
     SUBDIR += ElectricFence
     SUBDIR += R-cran-BH
     SUBDIR += R-cran-Defaults

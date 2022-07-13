@@ -17497,3 +17497,4 @@ x11/gsynaptics||2022-07-08|Has expired: Abandonware using old gnome2 libs
 x11/alltray||2022-07-08|Has expired: abandonware
 x11/simdock||2022-07-08|Has expired: Abandonware using deprecated gnome2 libs
 misc/cxxmatrix|games/cxxmatrix|2022-07-10|Move to a more appropriate category
+devel/ChipmunkPhysics|science/ChipmunkPhysics|2022-07-13|Move to a more appropriate category

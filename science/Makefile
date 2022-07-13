@@ -2,6 +2,7 @@
 
     SUBDIR += 2d-rewriter
     SUBDIR += ALPSCore
+    SUBDIR += ChipmunkPhysics
     SUBDIR += InsightToolkit
     SUBDIR += PETSc
     SUBDIR += R-cran-AMORE
