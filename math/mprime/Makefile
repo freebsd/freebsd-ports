@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl					\
 		libhwloc.so.15:devel/hwloc2				\
 		libgmp.so:math/gmp
 
-USES=		zip
+USES=		localbase zip
 
 NO_WRKSUBDIR=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
