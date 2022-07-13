@@ -30,7 +30,10 @@ setup(
         ],
     },
     packages=[
-        'src.pipx',
-        'src.pipx.commands',
+        'pipx',
+        'pipx.commands',
     ],
+    package_dir={
+        '': 'src',
+    },
 )
