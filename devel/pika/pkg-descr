@@ -1,0 +1,5 @@
+pika is a C++ library for concurrency and parallelism. It implements
+senders/receivers (as proposed in P2300) for CPU thread pools, MPI,
+and CUDA.
+
+WWW: https://github.com/pika-org/pika

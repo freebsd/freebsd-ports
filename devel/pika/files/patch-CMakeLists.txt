@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-07-05 13:27:56 UTC
++++ CMakeLists.txt
+@@ -154,7 +154,7 @@ endif()
+ 
+ # Generic build options
+ set(DEFAULT_MALLOC "system")
+-if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
++if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux" OR ${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+   set(DEFAULT_MALLOC "tcmalloc")
+ endif()
+ 
