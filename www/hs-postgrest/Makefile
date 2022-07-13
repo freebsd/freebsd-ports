@@ -1,5 +1,5 @@
 PORTNAME=	postgrest
-DISTVERSION=	9.0.0
+DISTVERSION=	9.0.1
 CATEGORIES=	www databases haskell
 
 MAINTAINER=	dmitry.wagin@ya.ru
