@@ -73,8 +73,10 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
 	cd ${WRKSRC}/ && ${INSTALL_PROGRAM} ${BENCHMARKS} ${TOOLS} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/librocksdb${PKGNAMESUFFIX}_tools.so ${STAGEDIR}${PREFIX}/lib/
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librocksdb${PKGNAMESUFFIX}.so ${STAGEDIR}${PREFIX}/lib/librocksdb${PKGNAMESUFFIX}_tools.so
+	# Locate all shared libraries. The STRIP_CMD below failed on our package building clusters.
+	${FIND} ${WRKSRC} ${STAGEDIR}${PREFIX} -name '*.so*'
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librocksdb.so
+	${INSTALL_LIB} ${WRKSRC}/librocksdb_tools.so ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/make_config.mk ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.post.mk>
