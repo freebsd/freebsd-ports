@@ -792,6 +792,8 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-line-states_.png
 %%DATADIR%%/readme/wiki/cudatext-lsp-hover_.png
 %%DATADIR%%/readme/wiki/cudatext-lsp-refs.png
+%%DATADIR%%/readme/wiki/cudatext-macro-border.png
+%%DATADIR%%/readme/wiki/cudatext-macro-menu.png
 %%DATADIR%%/readme/wiki/cudatext-markers-html.png
 %%DATADIR%%/readme/wiki/cudatext-menu-colorsetup.png
 %%DATADIR%%/readme/wiki/cudatext-micromap-on-scrollbar.png
