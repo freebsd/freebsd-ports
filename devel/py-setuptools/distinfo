@@ -1,3 +1,3 @@
-TIMESTAMP = 1649684842
-SHA256 (python/setuptools-62.1.0.tar.gz) = 47c7b0c0f8fc10eec4cf1e71c6fdadf8decaa74ffa087e68cd1c20db7ad6a592
-SIZE (python/setuptools-62.1.0.tar.gz) = 2512885
+TIMESTAMP = 1657634036
+SHA256 (python/setuptools-63.1.0.tar.gz) = 16923d366ced322712c71ccb97164d07472abeecd13f3a6c283f6d5d26722793
+SIZE (python/setuptools-63.1.0.tar.gz) = 2599380

@@ -590,8 +590,8 @@ _CURRENTPORT:=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools44>0:devel/py-setuptools44@${PY_FLAVOR}
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools44>0:devel/py-setuptools44@${PY_FLAVOR}
 .    else
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>=62.1.0:devel/py-setuptools@${PY_FLAVOR}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>=62.1.0:devel/py-setuptools@${PY_FLAVOR}
+BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR}
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR}
 .    endif
 .  endif
 
