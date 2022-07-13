@@ -17501,3 +17501,4 @@ devel/ChipmunkPhysics|science/ChipmunkPhysics|2022-07-13|Move to a more appropri
 textproc/rubygem-escape_utils12|textproc/rubygem-escape_utils|2022-07-13|Remove obsoleted port. Use textproc/rubygem-escape_utils instead
 net/rubygem-omniauth-oauth2-v1|net/rubygem-omniauth-oauth2|2022-07-13|Remove obsoleted port. Use net/rubygem-omniauth-oauth2 instead
 devel/rubygem-execjs-node16|devel/rubygem-execjs|2022-07-13|Remove obsoleted port. Use devel/rubygem-execjs instead
+devel/rubygem-webpacker-rails61-node16|devel/rubygem-webpacker-rails61|2022-07-13|Remove obsoleted port. Use devel/rubygem-webpacker-rails61 instead
