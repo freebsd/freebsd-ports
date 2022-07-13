@@ -4483,6 +4483,10 @@
 %%WWWDIR%%/core/modules/ckeditor5/tests/fixtures/update/filter.format.test_format.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor4to5upgrade_plugin_test/ckeditor4to5upgrade_plugin_test.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor4to5upgrade_plugin_test/ckeditor4to5upgrade_plugin_test.module
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_automatic_link_decorator_test/ckeditor5_automatic_link_decorator_test.ckeditor5.yml
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_automatic_link_decorator_test/ckeditor5_automatic_link_decorator_test.info.yml
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_automatic_link_decorator_test_2/ckeditor5_automatic_link_decorator_test_2.ckeditor5.yml
+%%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_automatic_link_decorator_test_2/ckeditor5_automatic_link_decorator_test_2.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_definition_supporting_element/ckeditor5_definition_supporting_element.ckeditor5.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_definition_supporting_element/ckeditor5_definition_supporting_element.info.yml
 %%WWWDIR%%/core/modules/ckeditor5/tests/modules/ckeditor5_drupalelementstyle_test/ckeditor5_drupalelementstyle_test.info.yml
@@ -18385,6 +18389,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/StreamWrapper.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UploadedFile.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Uri.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriComparator.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriNormalizer.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriResolver.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Utils.php
