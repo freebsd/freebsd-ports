@@ -1,5 +1,25 @@
---- src/input/readers/raw/Raw.cc.orig	2022-07-05 21:26:56 UTC
+--- src/input/readers/raw/Raw.cc.orig	2022-07-05 19:35:27 UTC
 +++ src/input/readers/raw/Raw.cc
+@@ -2,15 +2,15 @@
+ 
+ #include "zeek/input/readers/raw/Raw.h"
+ 
+-#include <errno.h>
+ #include <fcntl.h>
+-#include <signal.h>
+-#include <stdio.h>
+-#include <stdlib.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
+ #include <unistd.h>
++#include <cerrno>
++#include <csignal>
++#include <cstdio>
++#include <cstdlib>
+ 
+ #include "zeek/input/readers/raw/Plugin.h"
+ #include "zeek/input/readers/raw/raw.bif.h"
 @@ -36,6 +36,7 @@ Raw::Raw(ReaderFrontend* frontend)
  	firstrun = true;
  	mtime = 0;
@@ -8,18 +28,14 @@
  	forcekill = false;
  	offset = 0;
  	separator.assign((const char*)BifConst::InputRaw::record_separator->Bytes(),
-@@ -280,12 +281,31 @@ bool Raw::OpenInput()
- 	else
- 		{
+@@ -282,10 +283,27 @@ bool Raw::OpenInput()
  		file = std::unique_ptr<FILE, int (*)(FILE*)>(fopen(fname.c_str(), "r"), fclose);
-+		if ( ! file && Info().mode == MODE_STREAM )
-+			{
-+			// Watch /dev/null until the file appears
-+			file = std::unique_ptr<FILE, int (*)(FILE*)>(fopen("/dev/null", "r"), fclose);
-+			}
-+
  		if ( ! file )
  			{
++			if ( Info().mode == MODE_STREAM )
++				// Wait for file to appear
++				return true;
++
  			Error(Fmt("Init: cannot open %s", fname.c_str()));
  			return false;
  			}
@@ -40,7 +56,7 @@
  		if ( ! SetFDFlags(fileno(file.get()), F_SETFD, FD_CLOEXEC) )
  			Warning(Fmt("Init: cannot set close-on-exec for %s", fname.c_str()));
  		}
-@@ -346,6 +366,7 @@ bool Raw::DoInit(const ReaderInfo& info, int num_field
+@@ -346,6 +364,7 @@ bool Raw::DoInit(const ReaderInfo& info, int num_field
  	fname = info.source;
  	mtime = 0;
  	ino = 0;
@@ -48,7 +64,7 @@
  	execute = false;
  	firstrun = true;
  	int want_fields = 1;
-@@ -574,23 +595,57 @@ bool Raw::DoUpdate()
+@@ -574,25 +593,61 @@ bool Raw::DoUpdate()
  
  				mtime = sb.st_mtime;
  				ino = sb.st_ino;
@@ -70,8 +86,8 @@
  				if ( ! OpenInput() )
  					return false;
  
-+				break;
-+
+ 				break;
+ 
 +			case MODE_STREAM:
 +				// Clear possible EOF condition
 +				if ( file )
@@ -88,7 +104,7 @@
 +					break;
 +
 +				// Is it the same file?
-+				if ( sb.st_ino == ino && sb.st_dev == dev )
++				if ( file && sb.st_ino == ino && sb.st_dev == dev )
 +					break;
 +
 +				// File was replaced
@@ -102,14 +118,29 @@
 +					{
 +					// This is unlikely to fail
 +					Error(Fmt("Could not fstat %s", fname.c_str()));
++					fclose(tfile);
 +					return false;
 +					}
-+				file.reset(nullptr);
++				if ( file )
++					file.reset(nullptr);
 +				file = std::unique_ptr<FILE, int (*)(FILE*)>(tfile, fclose);
 +				ino = sb.st_ino;
 +				dev = sb.st_dev;
 +				offset = 0;
 +				bufpos = 0;
- 				break;
- 
++				break;
++
  			default:
+ 				assert(false);
+ 			}
+@@ -604,6 +659,10 @@ bool Raw::DoUpdate()
+ 		{
+ 		if ( stdin_towrite > 0 )
+ 			WriteToStdin();
++
++		if ( ! file && Info().mode == MODE_STREAM )
++			// Wait for file to appear
++			break;
+ 
+ 		int64_t length = GetLine(file.get());
+ 		// printf("Read %lld bytes\n", length);
