@@ -1,7 +1,7 @@
 # Created by: che@bein.link
 
 PORTNAME=	khal
-DISTVERSION=	0.10.4
+DISTVERSION=	0.10.5
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,14 +35,9 @@ OPTIONS_DEFINE=		SETPROCTITLE
 SETPROCTITLE_DESC=		Set the process title
 SETPROCTITLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setproctitle>=0:devel/py-setproctitle@${PY_FLAVOR}
 
-PLIST_FILES=	share/zsh/site-functions/__khal
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC} && \
 	${INSTALL_DATA} khal.conf.sample ${STAGEDIR}${EXAMPLESDIR})
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/misc/__khal \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions
 
 .include <bsd.port.mk>
