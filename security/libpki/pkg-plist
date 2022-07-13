@@ -8,27 +8,27 @@ bin/pki-siginfo
 bin/pki-tool
 bin/pki-xpair
 bin/url-tool
-%%ETCDIR%%/hsm.d/eracom-sdk.xml.sample
-%%ETCDIR%%/hsm.d/etoken-engine.xml.sample
-%%ETCDIR%%/hsm.d/etoken-pkcs11.xml.sample
-%%ETCDIR%%/hsm.d/etoken.xml.sample
-%%ETCDIR%%/hsm.d/opencryptoki.xml.sample
-%%ETCDIR%%/hsm.d/tpm.xml.sample
-%%ETCDIR%%/objectIdentifiers.xml.sample
-%%ETCDIR%%/profile.d/crl.xml.sample
-%%ETCDIR%%/profile.d/server.xml.sample
-%%ETCDIR%%/profile.d/test.xml.sample
-%%ETCDIR%%/profile.d/user.xml.sample
-%%ETCDIR%%/store.d/empty.xml.sample
-%%ETCDIR%%/token.d/default.xml.sample
-%%ETCDIR%%/token.d/eracom.xml.sample
-%%ETCDIR%%/token.d/etoken-engine.xml.sample
-%%ETCDIR%%/token.d/etoken.xml.sample
-%%ETCDIR%%/token.d/opencryptoki.xml.sample
-%%ETCDIR%%/token.d/software.xml.sample
-%%ETCDIR%%/token.d/test.xml.sample
-%%ETCDIR%%/token.d/tpm.xml.sample
-etc/pki.conf.sample
+@sample %%ETCDIR%%/hsm.d/eracom-sdk.xml.sample
+@sample %%ETCDIR%%/hsm.d/etoken-engine.xml.sample
+@sample %%ETCDIR%%/hsm.d/etoken-pkcs11.xml.sample
+@sample %%ETCDIR%%/hsm.d/etoken.xml.sample
+@sample %%ETCDIR%%/hsm.d/opencryptoki.xml.sample
+@sample %%ETCDIR%%/hsm.d/tpm.xml.sample
+@sample %%ETCDIR%%/objectIdentifiers.xml.sample
+@sample %%ETCDIR%%/profile.d/crl.xml.sample
+@sample %%ETCDIR%%/profile.d/server.xml.sample
+@sample %%ETCDIR%%/profile.d/test.xml.sample
+@sample %%ETCDIR%%/profile.d/user.xml.sample
+@sample %%ETCDIR%%/store.d/empty.xml.sample
+@sample %%ETCDIR%%/token.d/default.xml.sample
+@sample %%ETCDIR%%/token.d/eracom.xml.sample
+@sample %%ETCDIR%%/token.d/etoken-engine.xml.sample
+@sample %%ETCDIR%%/token.d/etoken.xml.sample
+@sample %%ETCDIR%%/token.d/opencryptoki.xml.sample
+@sample %%ETCDIR%%/token.d/software.xml.sample
+@sample %%ETCDIR%%/token.d/test.xml.sample
+@sample %%ETCDIR%%/token.d/tpm.xml.sample
+@sample etc/pki.conf.sample
 include/libpki/banners.h
 include/libpki/cmc.h
 include/libpki/cmc/cmc_cert_req.h
