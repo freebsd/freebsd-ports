@@ -78,7 +78,10 @@ include/YODA/WriterMethods.icc
 include/YODA/WriterYODA.h
 include/YODA/YODA.h
 lib/libYODA.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda-%%VERSION%%-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda-%%VERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda-%%VERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda-%%VERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda-%%VERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/yoda/__pycache__/plotting%%PYTHON_EXT_SUFFIX%%.pyc
