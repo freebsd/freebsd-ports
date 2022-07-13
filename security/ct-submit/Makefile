@@ -2,7 +2,7 @@
 
 PORTNAME=	ct-submit
 PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security www
 
 MAINTAINER=	jim@ohlste.in

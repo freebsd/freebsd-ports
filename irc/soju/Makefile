@@ -1,7 +1,7 @@
 PORTNAME=	soju
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	https://git.sr.ht/~emersion/go-scfg/archive/:goscfg \
 		https://git.sr.ht/~sircmpwn/go-bare/archive/:gobare

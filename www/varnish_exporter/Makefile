@@ -1,6 +1,6 @@
 PORTNAME=		varnish_exporter
 PORTVERSION=		1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		www
 
 MAINTAINER=		ports@zx23.net

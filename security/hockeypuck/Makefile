@@ -2,7 +2,7 @@
 
 PORTNAME=	hockeypuck
 DISTVERSION=	g20180725
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	michiel@vanbaak.eu

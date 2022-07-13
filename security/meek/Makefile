@@ -1,6 +1,6 @@
 PORTNAME=	meek
 DISTVERSION=	0.35.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://gitweb.torproject.org/pluggable-transports/meek.git/snapshot/ \
 		https://gitweb.torproject.org/pluggable-transports/goptlib.git/snapshot/:goptlib

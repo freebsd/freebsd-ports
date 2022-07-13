@@ -1,7 +1,7 @@
 PORTNAME=	rospo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net net-vpn sysutils
 MASTER_SITES=	https://github.com/ferama/rospo/releases/download/v${DISTVERSION}/ui-artifacts.tar.gz?dummy=/:artifacts
 DISTFILES=	${PORTNAME}-ui-artifacts-${DISTVERSION}.tar.gz:artifacts

@@ -1,7 +1,7 @@
 PORTNAME=	chronograf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES+=	https://nodejs.org/download/release/v${NODEJS_VERSION}/:node
 DISTFILES=	yarn-cache-${PKGNAME}.tar.xz:prefetch \

@@ -2,6 +2,7 @@
 
 PORTNAME=	git-credential-gopass
 PORTVERSION=	1.14.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 

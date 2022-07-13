@@ -3,7 +3,7 @@
 PORTNAME=		adguard-exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		christer.edwards@gmail.com
