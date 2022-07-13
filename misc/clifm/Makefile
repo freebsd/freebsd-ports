@@ -16,19 +16,12 @@ USES=		desktop-file-utils gettext-runtime python:run \
 		readline shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-arch
+GH_PROJECT=	${PORTNAME}-colors:cfmc
+GH_TAGNAME=	e9ee1c4:cfmc
 ALL_TARGET=	build
 SHEBANG_FILES=	misc/tools/manpages_comp_gen.py
 
-OPTIONS_DEFINE=	COLORS
-OPTIONS_DEFAULT=	COLORS
-OPTIONS_SUB=	yes
-
-COLORS_DESC=	Install extra color themes
-COLORS_GH_PROJECT=	clifm-colors:cfmc
-COLORS_GH_TAGNAME=	v0.1.0:cfmc
-
-post-install-COLORS-on:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/colors
+post-install:
 	${INSTALL_DATA} ${WRKSRC_cfmc}/colors/*.cfm \
 		${STAGEDIR}${DATADIR}/colors
 
