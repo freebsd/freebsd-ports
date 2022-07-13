@@ -1,7 +1,7 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	libidn2
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	dns
 MASTER_SITES=	GNU/libidn
 
