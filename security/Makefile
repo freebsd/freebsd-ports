@@ -1029,6 +1029,7 @@
     SUBDIR += rubygem-devise-two-factor
     SUBDIR += rubygem-devise-two-factor-rails5
     SUBDIR += rubygem-devise-two-factor-rails61
+    SUBDIR += rubygem-devise-two-factor-rails70
     SUBDIR += rubygem-devise_pam_authenticatable2
     SUBDIR += rubygem-digest
     SUBDIR += rubygem-digest-crc
