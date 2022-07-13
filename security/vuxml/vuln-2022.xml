@@ -1,3 +1,99 @@
+  <vuln vid="a4f2416c-02a0-11ed-b817-10c37b4ac2ea">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go118</name>
+	<range><lt>1.18.4</lt></range>
+      </package>
+      <package>
+	<name>go117</name>
+	<range><lt>1.17.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/53188">
+	  <p>net/http: improper sanitization of Transfer-Encoding
+	    header</p>
+	  <p>The HTTP/1 client accepted some invalid
+	    Transfer-Encoding headers as indicating a "chunked"
+	    encoding. This could potentially allow for request
+	    smuggling, but only if combined with an intermediate
+	    server that also improperly failed to reject the header
+	    as invalid.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53423">
+	  <p>When httputil.ReverseProxy.ServeHTTP was called with a
+	    Request.Header map containing a nil value for the
+	    X-Forwarded-For header, ReverseProxy would set the client
+	    IP as the value of the X-Forwarded-For header, contrary to
+	    its documentation. In the more usual case where a Director
+	    function set the X-Forwarded-For header value to nil,
+	    ReverseProxy would leave the header unmodified as
+	    expected.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53168">
+	  <p>compress/gzip: stack exhaustion in Reader.Read</p>
+	  <p>Calling Reader.Read on an archive containing a large
+	    number of concatenated 0-length compressed files can
+	    cause a panic due to stack exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53611">
+	  <p>encoding/xml: stack exhaustion in Unmarshal</p>
+	  <p>Calling Unmarshal on a XML document into a Go struct
+	    which has a nested field that uses the any field tag can
+	    cause a panic due to stack exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53614">
+	  <p>encoding/xml: stack exhaustion in Decoder.Skip</p>
+	  <p>Calling Decoder.Skip when parsing a deeply nested XML
+	    document can cause a panic due to stack exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53615">
+	  <p>encoding/gob: stack exhaustion in Decoder.Decode</p>
+	  <p>Calling Decoder.Decode on a message which contains
+	    deeply nested structures can cause a panic due to stack
+	    exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53416">
+	  <p>path/filepath: stack exhaustion in Glob</p>
+	  <p>Calling Glob on a path which contains a large number of
+	    path separators can cause a panic due to stack
+	    exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53415">
+	  <p>io/fs: stack exhaustion in Glob</p>
+	  <p>Calling Glob on a path which contains a large number of
+	    path separators can cause a panic due to stack
+	    exhaustion.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/53616">
+	  <p>go/parser: stack exhaustion in all Parse* functions</p>
+	  <p>Calling any of the Parse functions on Go source code
+	    which contains deeply nested types or declarations can
+	    cause a panic due to stack exhaustion.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1705</cvename>
+      <cvename>CVE-2022-32148</cvename>
+      <cvename>CVE-2022-30631</cvename>
+      <cvename>CVE-2022-30633</cvename>
+      <cvename>CVE-2022-28131</cvename>
+      <cvename>CVE-2022-30635</cvename>
+      <cvename>CVE-2022-30632</cvename>
+      <cvename>CVE-2022-30630</cvename>
+      <cvename>CVE-2022-1962</cvename>
+      <url>https://groups.google.com/g/golang-dev/c/frczlF8OFQ0</url>
+    </references>
+    <dates>
+      <discovery>2022-07-12</discovery>
+      <entry>2022-07-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b99f99f6-021e-11ed-8c6f-000c29ffbb6c">
     <topic>git -- privilege escalation</topic>
     <affects>
