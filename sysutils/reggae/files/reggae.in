@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# PROVIDE: reggae
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=reggae
+desc="reggae backend"
+rcvar=${name}_enable
+load_rc_config $name
+
+: ${reggae_enable:="NO"}
+: ${reggae_socket_dir:="/var/run/reggae"}
+
+pidfile="/var/run/${name}.pid"
+procname=/bin/sh
+start_precmd="${name}_prestart"
+start_cmd="${name}_start"
+
+
+reggae_prestart() {
+  install -d "${reggae_socket_dir}"
+}
+
+
+reggae_start() {
+  echo -n "Starting ${name} ... "
+  /usr/sbin/daemon -S %%PREFIX%%/bin/reggae service "${reggae_socket_dir}" "${pidfile}"
+  status=$?
+  if [ "${status}" = "0" ]; then
+    echo "done"
+  else
+    echo "failed!"
+  fi
+}
+
+run_rc_command $*

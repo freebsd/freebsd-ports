@@ -35,7 +35,12 @@ man/man1/reggae.1.gz
 %%DATADIR%%/cbsd-profile/skel/usr/home/provision/.rhosts
 %%DATADIR%%/cbsd-profile/skel/usr/home/provision/.shrc
 %%DATADIR%%/cbsd-profile/skel/usr/local/etc/sudoers
+%%DATADIR%%/cbsd-profile/system/clone-local.d/placeholder
+%%DATADIR%%/cbsd-profile/system/clone.d/placeholder
+%%DATADIR%%/cbsd-profile/system/create.d/placeholder
+%%DATADIR%%/cbsd-profile/system/facts.d/placeholder
 %%DATADIR%%/cbsd-profile/system/facts.d/reggae_ip
+%%DATADIR%%/cbsd-profile/system/master_create.d/placeholder
 %%DATADIR%%/cbsd-profile/system/master_poststart.d/placeholder
 %%DATADIR%%/cbsd-profile/system/master_poststop.d/deregister.sh
 %%DATADIR%%/cbsd-profile/system/master_poststop.d/placeholder
@@ -43,6 +48,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/cbsd-profile/system/master_prestart.d/register.sh
 %%DATADIR%%/cbsd-profile/system/master_prestop.d/placeholder
 %%DATADIR%%/cbsd-profile/system/remove.d/placeholder
+%%DATADIR%%/cbsd-profile/system/rename.d/placeholder
 %%DATADIR%%/cbsd-profile/system/start.d/placeholder
 %%DATADIR%%/cbsd-profile/system/stop.d/placeholder
 %%DATADIR%%/id_rsa
@@ -81,6 +87,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/scripts/register.sh
 %%DATADIR%%/scripts/salt-provision.sh
 %%DATADIR%%/scripts/scp.sh
+%%DATADIR%%/scripts/service.sh
 %%DATADIR%%/scripts/shell-provision.sh
 %%DATADIR%%/scripts/ssh-ping.sh
 %%DATADIR%%/scripts/ssh.sh
@@ -104,8 +111,6 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/cbsd-bhyve.conf.tpl
 %%DATADIR%%/templates/cbsd-vnet.conf.tpl
 %%DATADIR%%/templates/cbsd.conf.tpl
-%%DATADIR%%/templates/cbsd.zone
-%%DATADIR%%/templates/cbsd_reverse.zone
 %%DATADIR%%/templates/cloud-devops.sh
 %%DATADIR%%/templates/cloud-init/meta-data
 %%DATADIR%%/templates/cloud-init/user-data
@@ -114,6 +119,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/dhcpcd.conf
 %%DATADIR%%/templates/dhcpd-hook.sh
 %%DATADIR%%/templates/dhcpd.conf
+%%DATADIR%%/templates/dhcpd6.conf
 %%DATADIR%%/templates/export-ports.sh
 %%DATADIR%%/templates/freebsd-update.conf
 %%DATADIR%%/templates/gitignore
@@ -121,6 +127,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/initenv.conf
 %%DATADIR%%/templates/install-packages.sh
 %%DATADIR%%/templates/ip-by-mac.sh
+%%DATADIR%%/templates/linux.conf.tpl
 %%DATADIR%%/templates/master.conf
 %%DATADIR%%/templates/master.fstab
 %%DATADIR%%/templates/mount-project.sh
@@ -131,6 +138,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/pkg.conf
 %%DATADIR%%/templates/reggae-register.sh
 %%DATADIR%%/templates/resolvconf.conf
+%%DATADIR%%/templates/rtadvd.conf
 %%DATADIR%%/templates/rtsold
 %%DATADIR%%/templates/setup-vm.sh
 %%DATADIR%%/templates/sudoers

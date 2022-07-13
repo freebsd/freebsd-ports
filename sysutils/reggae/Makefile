@@ -1,5 +1,5 @@
 PORTNAME=	reggae
-PORTVERSION=	0.2.1
+DISTVERSION=	0.2.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
@@ -13,7 +13,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/cbsd:sysutils/cbsd \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cbsd
-USE_RC_SUBR=	reggae_pf
+USE_RC_SUBR=	reggae reggae_pf
 
 NO_ARCH=	yes
 
