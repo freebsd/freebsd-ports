@@ -2059,7 +2059,6 @@
     SUBDIR += rubygem-rails52
     SUBDIR += rubygem-rails60
     SUBDIR += rubygem-rails61
-    SUBDIR += rubygem-rails61-node16
     SUBDIR += rubygem-rails70
     SUBDIR += rubygem-rails_12factor
     SUBDIR += rubygem-rails_autolink
