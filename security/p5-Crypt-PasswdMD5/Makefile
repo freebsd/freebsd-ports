@@ -1,7 +1,7 @@
 # Created by: Erwin Lansing <erwin@FreeBSD.org>
 
 PORTNAME=	Crypt-PasswdMD5
-PORTVERSION=	1.41
+PORTVERSION=	1.42
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
