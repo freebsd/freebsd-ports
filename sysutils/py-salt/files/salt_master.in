@@ -25,14 +25,15 @@ load_rc_config ${name}
 
 : ${salt_master_enable:=NO}
 : ${salt_master_paths=/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/bin:%%PREFIX%%/sbin}
+: ${salt_master_configdir:=%%PREFIX%%/etc/salt}
 : ${salt_master_pidfile:=/var/run/salt-master.pid}
 : ${salt_master_eggcache=/tmp}
 
 command="%%PREFIX%%/bin/salt-master"
 command_interpreter="%%PYTHON_CMD%%"
-required_files="%%PREFIX%%/etc/salt"
-command_args="-c ${required_files} -d"
+required_files=${salt_master_configdir}
 pidfile=${salt_master_pidfile}
+command_args="-c ${required_files} --pid-file=${pidfile} -d"
 
 export PATH="${salt_master_paths}"
 export PYTHON_EGG_CACHE="${salt_master_eggcache}"
