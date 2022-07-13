@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	cssutils
-PORTVERSION=	2.4.2
+PORTVERSION=	2.5.0
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -21,8 +21,6 @@ USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
