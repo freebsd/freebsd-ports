@@ -1,0 +1,6 @@
+GNOME Text Editor is a simple text editor that focuses on session
+management. It works hard to keep track of changes and state even
+if you quit the application. You can come back to your work even
+if you've never saved it to a file.
+
+WWW: https://gitlab.gnome.org/GNOME/gnome-text-editor

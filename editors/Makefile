@@ -51,6 +51,7 @@
     SUBDIR += ghostwriter
     SUBDIR += gmanedit
     SUBDIR += gnome-latex
+    SUBDIR += gnome-text-editor
     SUBDIR += gobby
     SUBDIR += gomate
     SUBDIR += gummi
