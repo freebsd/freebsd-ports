@@ -5,7 +5,7 @@ PORTVERSION=	1.26.0
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Next evolution of the Gedit plugins engine
