@@ -1,7 +1,7 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
 
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.17.0
+PORTVERSION=	2.17.1
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
