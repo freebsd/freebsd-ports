@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-text-editor
 PORTVERSION=	42.2
 CATEGORIES=	editors gnome
