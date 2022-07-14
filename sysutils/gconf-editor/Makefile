@@ -7,7 +7,7 @@ PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gconf database editor for the GNOME 3 environment
