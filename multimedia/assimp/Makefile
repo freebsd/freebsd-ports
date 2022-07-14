@@ -9,6 +9,8 @@ COMMENT=	Library to import various 3D model formats in a uniform manner
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv6=	field within 'Assimp::MDL::Vertex_MDL7' is less aligned than 'Assimp::MDL::Vertex_MDL7::..., see https://github.com/assimp/assimp/issues/4640
+
 USES=		cmake:testing compiler:c++11-lib cpe localbase:ldflags minizip pkgconfig
 
 USE_GITHUB=	yes
