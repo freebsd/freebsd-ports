@@ -1,6 +1,5 @@
 PORTNAME=	xfce4-xkb-plugin
-PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTVERSION=	0.8.3
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 
@@ -9,7 +8,8 @@ COMMENT=	Keyboard layout switching plugin for the Xfce panel
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libxklavier.so:x11/libxklavier
+LIB_DEPENDS=	libxklavier.so:x11/libxklavier \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
@@ -25,9 +25,5 @@ OPTIONS_SUB=		yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
-
-# Downgrade libxklavier
-post-patch:
-	@${REINPLACE_CMD} -e 's|5.4|5.3|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
