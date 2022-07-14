@@ -1,5 +1,5 @@
 PORTNAME=	DDNet
-PORTVERSION=	16.1
+PORTVERSION=	16.2.1
 CATEGORIES=	games
 MASTER_SITES=	https://ddnet.tw/downloads/
 

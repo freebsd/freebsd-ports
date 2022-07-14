@@ -5,7 +5,6 @@ lib/ddnet/config_store
 lib/ddnet/crapnet
 lib/ddnet/dilate
 lib/ddnet/dummy_map
-lib/ddnet/fake_server
 lib/ddnet/map_convert_07
 lib/ddnet/map_diff
 lib/ddnet/map_extract
@@ -13,6 +12,7 @@ lib/ddnet/map_optimize
 lib/ddnet/map_replace_image
 lib/ddnet/map_resave
 lib/ddnet/packetgen
+lib/ddnet/stun
 lib/ddnet/unicode_confusables
 lib/ddnet/uuid
 %%CLIENT%%share/applications/ddnet.desktop
