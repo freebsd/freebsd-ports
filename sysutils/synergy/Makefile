@@ -1,7 +1,6 @@
 PORTNAME=	synergy
-DISTVERSION=	1.14.0.4
+DISTVERSION=	1.14.5.14
 DISTVERSIONSUFFIX=	-stable
-PORTEPOCH=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,19 +9,24 @@ COMMENT=	Mouse and keyboard sharing utility
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libnotify.so:devel/libnotify \
+		libxkbfile.so:x11/libxkbfile
 
-USES=		cmake compiler:c++14-lang cpe localbase:ldflags qt:5 ssl xorg
+USES=		cmake compiler:c++14-lang cpe gnome localbase:ldflags qt:5 ssl xorg
 CPE_VENDOR=	synergy-foss
+USE_QT=		core dbus network widgets buildtools_build linguisttools_build qmake_build
+USE_GNOME=	gdkpixbuf2 glib20
 USE_XORG=	ice xtst x11 sm xext xinerama xrandr xi
-USE_QT=		core network widgets buildtools_build linguisttools_build qmake_build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	symless
 GH_PROJECT=	synergy-core
-GH_TUPLE=	google:googletest:18f8200e3079b0e54fa00cb7ac55d4c39dcf6da6:google_googletest/ext/googletest
+GH_TUPLE=	google:googletest:18f8200e3079b0e54fa00cb7ac55d4c39dcf6da6:google_googletest/ext/googletest \
+		mohabouje:WinToast:8abb85b:WinToast/ext/WinToast \
+		zeux:pugixml:9e382f9:pugixml/ext/pugixml
 
-CMAKE_ARGS=	-DSYNERGY_REVISION:STRING=${PORTVERSION:S/.//g}000 # it expects a 8-digit hash
+CMAKE_ARGS=	-DSYNERGY_REVISION:STRING=${PORTVERSION:S/.//g}00 # it expects a 8-digit hash
 CMAKE_OFF=	BUILD_TESTS
 
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
