@@ -329,5 +329,6 @@ Please note that the general update instructions got another command that needs
 to be issued after each update:
 
 # python%%PYTHON_VER%% manage.py clearcache
+EOD
 }
 ]

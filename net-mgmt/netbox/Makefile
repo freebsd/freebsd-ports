@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.5
+DISTVERSION=	3.2.6
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -22,9 +22,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj40-django-tables2
 # - www/py-dj40-djangorestframework (in conjunction with www/py-dj40-drf-yasg)
 #
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=4.0.5<4.1:www/py-django40@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=4.0.6<4.1:www/py-django40@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-cors-headers>=3.13.0<4:www/py-dj40-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj40-django-debug-toolbar>=3.2.4<4:www/py-dj40-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj40-django-debug-toolbar>=3.5.0<4:www/py-dj40-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-filter>=22.1<23:www/py-dj40-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-graphiql-debug-toolbar>=0.2.0<1:www/py-dj40-django-graphiql-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-django-mptt>=0.13.4<0.14:www/py-dj40-django-mptt@${PY_FLAVOR} \
@@ -38,7 +38,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=4.0.5<4.1:www/py-django40@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj40-drf-yasg>=1.20.0<1.21:www/py-dj40-drf-yasg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj40-graphene-django>=2.15.0<3:devel/py-dj40-graphene-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}bleach>=5.0.0<6:www/py-bleach@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}bleach>=5.0.1<6:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.1<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7<3.5:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown-include>=0.6.0<1:textproc/py-markdown-include@${PY_FLAVOR} \
