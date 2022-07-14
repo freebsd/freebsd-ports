@@ -1,6 +1,6 @@
---- SConstruct.orig	2021-07-15 20:56:31 UTC
+--- SConstruct.orig	2022-05-17 13:56:34 UTC
 +++ SConstruct
-@@ -1328,9 +1328,9 @@ if has_option('variables-help'):
+@@ -1301,9 +1301,9 @@ if has_option('variables-help'):
      print(env_vars.GenerateHelpText(env))
      Exit(0)
  
@@ -13,7 +13,7 @@
  
  if get_option('install-action') != 'default' and get_option('ninja') != "disabled":
      env.FatalError("Cannot use non-default install actions when generating Ninja.")
-@@ -2507,7 +2507,7 @@ if env.TargetOSIs('posix'):
+@@ -2370,13 +2370,13 @@ if env.TargetOSIs('posix'):
              # If runtime hardening is requested, then build anything
              # destined for an executable with the necessary flags for PIE.
              env.AppendUnique(
@@ -22,7 +22,14 @@
                  PROGLINKFLAGS=['-pie'],
              )
  
-@@ -2684,8 +2684,12 @@ if not env.TargetOSIs('windows', 'macOS') and (env.Too
+     # -Winvalid-pch Warn if a precompiled header (see Precompiled Headers) is found in the search path but can't be used.
+     env.Append( CCFLAGS=["-fasynchronous-unwind-tables",
+-                         "-ggdb" if not env.TargetOSIs('emscripten') else "-g",
++    #                    "-ggdb" if not env.TargetOSIs('emscripten') else "-g",
+                          "-Wall",
+                          "-Wsign-compare",
+                          "-Wno-unknown-pragmas",
+@@ -2541,8 +2541,12 @@ if not env.TargetOSIs('windows', 'macOS') and (env.Too
      # setting it for both C and C++ by setting both of CFLAGS and
      # CXXFLAGS.
  
