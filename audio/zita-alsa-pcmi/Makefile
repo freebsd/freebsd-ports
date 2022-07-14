@@ -1,5 +1,5 @@
 PORTNAME=	zita-alsa-pcmi
-DISTVERSION=	0.4.0
+DISTVERSION=	0.5.1
 CATEGORIES=	audio
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
