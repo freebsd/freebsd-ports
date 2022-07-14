@@ -80,6 +80,7 @@
     SUBDIR += gmrun
     SUBDIR += gnome
     SUBDIR += gnome-clipboard-daemon
+    SUBDIR += gnome-console
     SUBDIR += gnome-desktop
     SUBDIR += gnome-menus
     SUBDIR += gnome-pie

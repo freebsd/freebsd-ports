@@ -1,0 +1,10 @@
+Console is a minimal terminal for GNOME
+
+Console is supposed to be a simple terminal emulator for the average user
+to carry out simple cli tasks and aims to be a ‘core’ app for GNOME/Phosh.
+
+We are not however trying to replace GNOME Terminal/Tilix, these advanced
+tools are great for developers and administrators, rather Console aims to
+serve the casual linux user who rarely needs a terminal
+
+WWW: https://gitlab.gnome.org/GNOME/console
