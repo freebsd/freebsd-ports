@@ -9,6 +9,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BROKEN_i386=	error: assigning to '__m256i' (vector of 4 'long long' values) from incompatible type 'int'
+BROKEN_aarch64=	error: invalid output constraint '=a', see https://github.com/libxsmm/libxsmm/issues/669
 
 BUILD_DEPENDS=	bash:shells/bash
 
