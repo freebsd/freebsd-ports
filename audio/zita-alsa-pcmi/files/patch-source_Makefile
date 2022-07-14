@@ -1,3 +1,7 @@
+- patch out ldcondig: the author believes that users mostly install manually
+- and not through packages, and refuses to fix the bug that it fails to install
+- into a stage directory. Do not contact the author about this.
+
 --- source/Makefile.orig	2018-08-24 18:41:30 UTC
 +++ source/Makefile
 @@ -20,7 +20,7 @@
