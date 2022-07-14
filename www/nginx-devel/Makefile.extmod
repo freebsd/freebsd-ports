@@ -93,7 +93,8 @@ HTTP_AUTH_DIGEST_VARS=		DSO_EXTMODS+=auth_digest
 
 HTTP_AUTH_KRB5_GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:c626163:auth_krb5
 HTTP_AUTH_KRB5_VARS=		DSO_EXTMODS+=auth_krb5
-HTTP_AUTH_KRB5_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config
+HTTP_AUTH_KRB5_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-spnego-http-auth-nginx-module-config \
+				${PATCHDIR}/extra-patch-ngx_http_auth_spnego_module.c
 HTTP_AUTH_KRB5_USES=		gssapi:mit
 
 HTTP_AUTH_LDAP_GH_TUPLE=	kvspb:nginx-auth-ldap:83c059b:http_auth_ldap
