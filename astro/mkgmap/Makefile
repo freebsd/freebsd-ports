@@ -1,5 +1,5 @@
 PORTNAME=	mkgmap
-PORTVERSION=	r4904
+PORTVERSION=	r4905
 CATEGORIES=	astro converters java
 MASTER_SITES=	https://www.mkgmap.org.uk/download/
 
