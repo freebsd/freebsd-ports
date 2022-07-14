@@ -5,7 +5,7 @@ PORTVERSION=	0.5.1
 PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	SVG/Mathml renderer and editor
