@@ -11,6 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=	error: use of undeclared identifier '__builtin_ia32_packssdw'
+BROKEN_riscv64=	error: functions that differ only in their return type cannot be overloaded - simde-related, see https://github.com/simd-everywhere/simde/issues/962
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/nanosvg.h:graphics/nanosvg \
