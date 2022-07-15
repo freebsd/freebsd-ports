@@ -17452,7 +17452,6 @@ audio/forked-daapd||2022-06-30|Has expired: Deprecated upstream, project is now 
 multimedia/tstools||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
 multimedia/sabbu||2022-06-30|Has expired: please consider using multimedia/aegisub
 multimedia/avinfo||2022-06-30|Has expired: Last release in 2008, please consider using multimedia/mediainfo or multimedia/ffmpeg instead
-audio/asterisk-espeak||2022-06-30|Has expired: Depends on deprecated audio/espeaak
 multimedia/mpgtx||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
 devel/psptoolchain||2022-06-30|Has expired: Security issues for multiple years
 devel/psptoolchain-binutils||2022-06-30|Has expired: Security issues for multiple years
@@ -17505,3 +17504,4 @@ devel/rubygem-webpacker-rails61-node16|devel/rubygem-webpacker-rails61|2022-07-1
 textproc/rubygem-autoprefixer-rails-node16|textproc/rubygem-autoprefixer-rails|2022-07-13|Remove obsoleted port. Use textproc/rubygem-autoprefixer-rails instead
 www/rubygem-rails61-node16|www/rubygem-rails61|2022-07-13|Remove obsoleted port. Use www/rubygem-rails61 instead
 www/rubygem-uglifier-node16|www/rubygem-uglifier|2022-07-13|Remove obsoleted port. Use www/rubygem-uglifier instead
+audio/espeak|audio/espeak-ng|2022-07-15|Switch to fork of (stale) original repository
