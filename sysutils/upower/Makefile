@@ -1,7 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 
 PORTNAME=	upower
-PORTVERSION=	0.99.19
+PORTVERSION=	0.99.20
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	https://gitlab.freedesktop.org/upower/upower/-/archive/${DISTVERSIONFULL}/
