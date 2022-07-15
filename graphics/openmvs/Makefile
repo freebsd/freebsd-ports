@@ -9,6 +9,8 @@ COMMENT=	Open Multi-View Stereo reconstruction library
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_arm64=	use of undeclared identifier '__builtin_ia32_emms'
+
 BUILD_DEPENDS=	cgal>0:math/cgal \
 		${LOCALBASE}/include/sys/sysinfo.h:devel/libsysinfo \
 		vcglib>0:devel/vcglib
