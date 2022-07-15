@@ -1,0 +1,12 @@
+Download and search FreeBSD build cluster fallout logs.
+
+`fallout fetch` downloads build failure logs so they can be accessed and
+searched from the local file system. It organizes these logs into a directory
+hierarchy under ~/.cache by the builder name and port origin.
+
+`fallout grep` finds failure logs matching a given set of conditions and
+regular expressions. Combining it with portgrep allows advanced
+searching for e.g. specific maintainer, failures of ports with specific USES,
+with specific dependency, etc.
+
+WWW: https://github.com/dmgk/fallout
