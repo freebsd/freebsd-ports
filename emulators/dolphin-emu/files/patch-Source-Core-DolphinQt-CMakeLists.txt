@@ -1,104 +1,23 @@
 Add DISABLE_NLS option
 
---- Source/Core/DolphinQt/CMakeLists.txt.orig	2020-07-04 04:19:59 UTC
+--- Source/Core/DolphinQt/CMakeLists.txt.orig	2022-07-06 07:23:55 UTC
 +++ Source/Core/DolphinQt/CMakeLists.txt
-@@ -365,51 +365,54 @@ if(WIN32)
+@@ -475,6 +475,9 @@ if(WIN32)
+   )
  endif()
  
- # Handle localization
--find_package(Gettext)
--
--if(WIN32 AND NOT Gettext_FOUND)
--  message(STATUS "Using Gettext from Externals")
--  set(GETTEXT_MSGFMT_EXECUTABLE "${CMAKE_SOURCE_DIR}/Externals/gettext/msgfmt.exe")
--endif()
--
--if(GETTEXT_MSGFMT_EXECUTABLE)
--  set(pot_file "${CMAKE_SOURCE_DIR}/Languages/po/dolphin-emu.pot")
--  file(GLOB LINGUAS ${CMAKE_SOURCE_DIR}/Languages/po/*.po)
--
--  target_sources(dolphin-emu PRIVATE ${pot_file} ${LINGUAS})
--  source_group("Localization" FILES ${LINGUAS})
--  source_group("Localization\\\\Generated" FILES ${pot_file})
--
--  foreach(po ${LINGUAS})
--    get_filename_component(lang ${po} NAME_WE)
--    set(mo_dir ${CMAKE_CURRENT_BINARY_DIR}/${lang})
--    set(mo ${mo_dir}/dolphin-emu.mo)
--
--    target_sources(dolphin-emu PRIVATE ${mo})
--    source_group("Localization\\\\Generated" FILES ${mo})
--
--    if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
--      set_source_files_properties(${mo} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/${lang}.lproj")
--    else()
--      install(FILES ${mo} DESTINATION share/locale/${lang}/LC_MESSAGES)
--    endif()
--
--    if(WIN32)
--      add_custom_command(OUTPUT ${mo}
--        COMMAND ${CMAKE_COMMAND} -E make_directory ${mo_dir}
--        COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} -o ${mo} ${po}
--        COMMAND ${CMAKE_COMMAND} -E copy ${mo} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Languages/${lang}/dolphin-emu.mo
--        DEPENDS ${po}
--      )
--    else()
--      add_custom_command(OUTPUT ${mo}
--        COMMAND ${CMAKE_COMMAND} -E make_directory ${mo_dir}
--        COMMAND ${GETTEXT_MSGMERGE_EXECUTABLE} --quiet --update --backup=none -s ${po} ${pot_file}
--        COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} -o ${mo} ${po}
--        DEPENDS ${po}
--      )
--    endif()
--  endforeach()
 +option(DISABLE_NLS "Disable native language support (NLS)" OFF)
 +if(NOT DISABLE_NLS)
-+  find_package(Gettext)
-+  
-+  if(WIN32 AND NOT Gettext_FOUND)
-+    message(STATUS "Using Gettext from Externals")
-+    set(GETTEXT_MSGFMT_EXECUTABLE "${CMAKE_SOURCE_DIR}/Externals/gettext/msgfmt.exe")
-+  endif()
-+  
-+  if(GETTEXT_MSGFMT_EXECUTABLE)
-+    set(pot_file "${CMAKE_SOURCE_DIR}/Languages/po/dolphin-emu.pot")
-+    file(GLOB LINGUAS ${CMAKE_SOURCE_DIR}/Languages/po/*.po)
-+  
-+    target_sources(dolphin-emu PRIVATE ${pot_file} ${LINGUAS})
-+    source_group("Localization" FILES ${LINGUAS})
-+    source_group("Localization\\\\Generated" FILES ${pot_file})
-+  
-+    foreach(po ${LINGUAS})
-+      get_filename_component(lang ${po} NAME_WE)
-+      set(mo_dir ${CMAKE_CURRENT_BINARY_DIR}/${lang})
-+      set(mo ${mo_dir}/dolphin-emu.mo)
-+  
-+      target_sources(dolphin-emu PRIVATE ${mo})
-+      source_group("Localization\\\\Generated" FILES ${mo})
-+  
-+      if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-+        set_source_files_properties(${mo} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources/${lang}.lproj")
-+      else()
-+        install(FILES ${mo} DESTINATION share/locale/${lang}/LC_MESSAGES)
-+      endif()
-+  
-+      if(WIN32)
-+        add_custom_command(OUTPUT ${mo}
-+          COMMAND ${CMAKE_COMMAND} -E make_directory ${mo_dir}
-+          COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} -o ${mo} ${po}
-+          COMMAND ${CMAKE_COMMAND} -E copy ${mo} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Languages/${lang}/dolphin-emu.mo
-+          DEPENDS ${po}
-+        )
-+      else()
-+        add_custom_command(OUTPUT ${mo}
-+          COMMAND ${CMAKE_COMMAND} -E make_directory ${mo_dir}
-+          COMMAND ${GETTEXT_MSGMERGE_EXECUTABLE} --quiet --update --backup=none -s ${po} ${pot_file}
-+          COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} -o ${mo} ${po}
-+          DEPENDS ${po}
-+        )
-+      endif()
-+    endforeach()
-+  endif()
++
+ # Handle localization
+ find_package(Gettext)
+ 
+@@ -526,6 +529,8 @@ if(GETTEXT_MSGFMT_EXECUTABLE)
+     endif()
+   endforeach()
  endif()
++
++endif() # NOT DISABLE_NLS
  
  if(APPLE)
+   include(BundleUtilities)
