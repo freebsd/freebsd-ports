@@ -52,7 +52,6 @@ ALSA_CONFIGURE_WITH=	alsa
 AO_LIB_DEPENDS=		libao.so:audio/libao
 AO_CONFIGURE_WITH=	libao
 
-ESPEAK_DESC=		eSpeak speech synthesizer support
 ESPEAK_LIB_DEPENDS=	libespeak-ng.so:audio/espeak-ng
 ESPEAK_CONFIGURE_WITH=	espeak
 
