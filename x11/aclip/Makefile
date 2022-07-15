@@ -1,6 +1,10 @@
 PORTNAME=	aclip
-DISTVERSION=	0.6.1.1
+DISTVERSION=	0.6.2
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCH_WRKSRC=	${WRKSRC:H:H:H}
+PATCHFILES+=	c5dab1ac1657.patch:-p1 # https://github.com/letoram/arcan/pull/254
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Command line interface to Arcan clipboards
@@ -16,6 +20,6 @@ GH_ACCOUNT=	letoram
 GH_PROJECT=	arcan
 WRKSRC_SUBDIR=	src/tools/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		share/man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

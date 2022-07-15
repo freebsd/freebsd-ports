@@ -45,7 +45,7 @@ libdata/pkgconfig/arcan-shmif-ext.pc
 libdata/pkgconfig/arcan-shmif-srv.pc
 libdata/pkgconfig/arcan-shmif-tui.pc
 libdata/pkgconfig/arcan-shmif.pc
-%%WAYLAND%%man/man1/arcan-wayland.1.gz
+%%WAYLAND%%share/man/man1/arcan-wayland.1.gz
 man/man1/arcan.1.gz
 man/man1/arcan_db.1.gz
 %%MANPAGES%%man/man3/accept_target.3.gz
@@ -158,6 +158,7 @@ man/man1/arcan_db.1.gz
 %%MANPAGES%%man/man3/led_intensity.3.gz
 %%MANPAGES%%man/man3/link_image.3.gz
 %%MANPAGES%%man/man3/list_audio_inputs.3.gz
+%%MANPAGES%%man/man3/list_namespaces.3.gz
 %%MANPAGES%%man/man3/list_target_tags.3.gz
 %%MANPAGES%%man/man3/list_targets.3.gz
 %%MANPAGES%%man/man3/load_asample.3.gz
