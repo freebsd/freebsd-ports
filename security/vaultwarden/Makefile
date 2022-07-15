@@ -2,8 +2,7 @@
 
 PORTNAME=	vaultwarden
 DISTVERSION=	1.25.0
-PORTREVISION=	2
-#PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/dani-garcia/bw_web_builds/releases/download/v${DISTVERSION_WV}/:web
 DISTFILES=	${WV_DISTFILE}:web
@@ -20,7 +19,7 @@ LIB_DEPENDS+=	libnettle.so:security/nettle
 
 USES=		cargo ssl pgsql mysql:client
 
-DISTVERSION_WV=	2.28.1
+DISTVERSION_WV=	2022.6.0
 WV_DISTFILE=	bw_web_v${DISTVERSION_WV}.tar.gz
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
@@ -442,6 +441,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 post-install:
 	${MKDIR} ${STAGEDIR}/${ETCDIR}/rc.conf.d
 	${CP} ${FILESDIR}/${PORTNAME}_conf.in ${STAGEDIR}/${LOCALBASE}/etc/rc.conf.d/${PORTNAME}.sample
+	${CHMOD} 0600 ${STAGEDIR}/${LOCALBASE}/etc/rc.conf.d/${PORTNAME}.sample
 	${MKDIR} ${STAGEDIR}/${WWWDIR}
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/data
 	(cd ${WRKDIR} && ${COPYTREE_SHARE} web-vault ${STAGEDIR}/${WWWDIR})
