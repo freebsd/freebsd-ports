@@ -1,5 +1,6 @@
 PORTNAME=	telegram-desktop
 DISTVERSION=	4.0.2
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -23,7 +24,8 @@ BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib \
 		v4l_compat>0:multimedia/v4l_compat \
 		yasm:devel/yasm \
 		${LOCALBASE}/lib/libtg_owt.a:net-im/tg_owt
-LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libavformat.so:multimedia/ffmpeg \
 		libdbus-1.so:devel/dbus \
 		libdbusmenu-qt5.so:devel/libdbusmenu-qt \
 		libenchant-2.so:textproc/enchant2 \
