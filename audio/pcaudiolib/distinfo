@@ -1,3 +1,3 @@
-TIMESTAMP = 1657291568
-SHA256 (espeak-ng-pcaudiolib-1.2_GH0.tar.gz) = 44b9d509b9eac40a0c61585f756d76a7b555f732e8b8ae4a501c8819c59c6619
-SIZE (espeak-ng-pcaudiolib-1.2_GH0.tar.gz) = 34310
+TIMESTAMP = 1657546946
+SHA256 (pcaudiolib-1.2.tar.gz) = 6fae11e87425482acbb12c4e001282d329be097074573060f893349255d3664b
+SIZE (pcaudiolib-1.2.tar.gz) = 377066

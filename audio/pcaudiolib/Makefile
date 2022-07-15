@@ -1,6 +1,7 @@
 PORTNAME=	pcaudiolib
 DISTVERSION=	1.2
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Portable C audio library
@@ -9,13 +10,13 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf libtool pkgconfig
-USE_GITHUB=	yes
+#USE_GITHUB=	yes
 GH_ACCOUNT=	espeak-ng
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFAULT=	OSS
-OPTIONS_MULTI=		Backend
-OPTIONS_MULTI_Backend=	ALSA OSS PULSEAUDIO
+OPTIONS_MULTI=		BACKEND
+OPTIONS_MULTI_BACKEND=	ALSA OSS PULSEAUDIO
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
