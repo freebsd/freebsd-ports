@@ -1,0 +1,182 @@
+partial:
+
+From 7afe0aedc320dd2689bfbf45e97fdb09adb89686 Mon Sep 17 00:00:00 2001
+From: Alexandru Chirila <alex@alexkiro.com>
+Date: Fri, 15 Jan 2016 12:30:39 +0200
+Subject: [PATCH] Refs. #46. Fix all unitest for Python3.
+
+Adjust all the unittest and code to pass on  Python3
+without any 2to3 conversion (even without the
+python-future library installed).
+---
+ pyzor/client.py                            |  6 ++--
+ pyzor/digest.py                            |  2 +-
+ pyzor/engines/common.py                    |  4 +--
+ pyzor/engines/gdbm_.py                     |  2 +-
+ pyzor/engines/mysql.py                     |  2 +-
+ pyzor/server.py                            |  4 +--
+ scripts/pyzor                              |  4 +--
+ scripts/pyzord                             |  2 +-
+
+| ------------------------------------------ |
+| removed from original patch:
+|
+| scripts/run_tests                          |  5 ++--
+| tests/benchmark/measure_server_response.py |  8 ++---
+| tests/functional/test_pyzor.py             | 22 +++++++-------
+| tests/unit/test_account.py                 | 35 +++++++++++-----------
+| tests/unit/test_config.py                  |  7 +++--
+| tests/unit/test_engines/test_gdbm.py       |  2 +-
+| tests/unit/test_forwarder.py               |  2 +-
+| tests/unit/test_server.py                  |  9 ++++--
+| tests/util/__init__.py                     |  8 ++---
+| web/application.py                         |  4 +--
+| ------------------------------------------ |
+ 18 files changed, 67 insertions(+), 61 deletions(-)
+
+diff --git a/pyzor/client.py b/pyzor/client.py
+index 82d6361..07daba2 100644
+--- pyzor/client.py
++++ pyzor/client.py
+@@ -78,7 +78,7 @@ def __init__(self, accounts=None, timeout=None, spec=None):
+         if accounts is None:
+             accounts = {}
+         self.accounts = dict(((host, int(port)), account)
+-                             for (host, port), account in accounts.iteritems())
++                             for (host, port), account in accounts.items())
+         if spec is None:
+             spec = pyzor.digest.digest_spec
+         self.spec = spec
+@@ -227,12 +227,12 @@ def flush(self):
+ 
+     def force(self):
+         """Force send any remaining reports."""
+-        for address, msg in self.r_requests.iteritems():
++        for address, msg in self.r_requests.items():
+             try:
+                 self.send(msg, address)
+             except:
+                 continue
+-        for address, msg in self.w_requests.iteritems():
++        for address, msg in self.w_requests.items():
+             try:
+                 self.send(msg, address)
+             except:
+diff --git a/pyzor/digest.py b/pyzor/digest.py
+index 100a4c6..058c208 100644
+--- pyzor/digest.py
++++ pyzor/digest.py
+@@ -105,7 +105,7 @@ def handle_atomic(self, lines):
+     def handle_pieced(self, lines, spec):
+         """Digest stuff according to the spec."""
+         for offset, length in spec:
+-            for i in xrange(length):
++            for i in range(length):
+                 try:
+                     line = lines[int(offset * len(lines) // 100) + i]
+                 except IndexError:
+diff --git a/pyzor/engines/common.py b/pyzor/engines/common.py
+index a96c656..17f083c 100644
+--- pyzor/engines/common.py
++++ pyzor/engines/common.py
+@@ -31,7 +31,7 @@ def __init__(self, r_count=0, wl_count=0, r_entered=None,
+ 
+     def wl_increment(self):
+         # overflow prevention
+-        if self.wl_count < sys.maxint:
++        if self.wl_count < sys.maxsize:
+             self.wl_count += 1
+         if self.wl_entered is None:
+             self.wl_entered = datetime.datetime.now()
+@@ -39,7 +39,7 @@ def wl_increment(self):
+ 
+     def r_increment(self):
+         # overflow prevention
+-        if self.r_count < sys.maxint:
++        if self.r_count < sys.maxsize:
+             self.r_count += 1
+         if self.r_entered is None:
+             self.r_entered = datetime.datetime.now()
+diff --git a/pyzor/engines/gdbm_.py b/pyzor/engines/gdbm_.py
+index d9415ba..e75fbd3 100644
+--- pyzor/engines/gdbm_.py
++++ pyzor/engines/gdbm_.py
+@@ -75,7 +75,7 @@ def items(self):
+     def apply_method(self, method, varargs=(), kwargs=None):
+         if kwargs is None:
+             kwargs = {}
+-        return apply(method, varargs, kwargs)
++        return method(*varargs, **kwargs)
+ 
+     def __getitem__(self, key):
+         return self.apply_method(self._really_getitem, (key,))
+diff --git a/pyzor/engines/mysql.py b/pyzor/engines/mysql.py
+index baef14d..f8d893d 100644
+--- pyzor/engines/mysql.py
++++ pyzor/engines/mysql.py
+@@ -294,7 +294,7 @@ def _safe_call(self, name, method, args):
+     def reconnect(self):
+         if not self.bound:
+             return
+-        for _ in xrange(self.bound):
++        for _ in range(self.bound):
+             self.db_queue.put(self._get_new_connection())
+ 
+     def _reconnect(self, db):
+diff --git a/pyzor/server.py b/pyzor/server.py
+index abae192..b342222 100644
+--- pyzor/server.py
++++ pyzor/server.py
+@@ -137,7 +137,7 @@ def __init__(self, address, database, passwd_fn, access_fn, prefork=4):
+     def serve_forever(self, poll_interval=0.5):
+         """Fork the current process and wait for all children to finish."""
+         pids = []
+-        for dummy in xrange(self._prefork):
++        for dummy in range(self._prefork):
+             database = self.database.next()
+             pid = os.fork()
+             if not pid:
+@@ -312,7 +312,7 @@ def handle_pong(self, digests):
+         This command returns maxint for report counts and 0 whitelist.
+         """
+         self.server.log.debug("Request pong for %s", digests[0])
+-        self.response["Count"] = "%d" % sys.maxint
++        self.response["Count"] = "%d" % sys.maxsize
+         self.response["WL-Count"] = "%d" % 0
+ 
+     def handle_check(self, digests):
+diff --git a/scripts/pyzor b/scripts/pyzor
+index 19b1d21..040b4c5 100755
+--- scripts/pyzor
++++ scripts/pyzor
+@@ -110,7 +110,7 @@ def load_configuration():
+     config = ConfigParser.ConfigParser()
+     # Set the defaults.
+     config.add_section("client")
+-    for key, value in defaults.iteritems():
++    for key, value in defaults.items():
+         config.set("client", key, value)
+     # Override with the configuration.
+     config.read(os.path.join(options.homedir, "config"))
+@@ -372,7 +372,7 @@ def genkey(client, servers, config, hash_func=hashlib.sha1):
+         return False
+     # pylint: disable-msg=W0612
+     salt = "".join([chr(random.randint(0, 255))
+-                    for unused in xrange(hash_func(b"").digest_size)])
++                    for unused in range(hash_func(b"").digest_size)])
+     if sys.version_info >= (3, 0):
+         salt = salt.encode("utf8")
+     salt_digest = hash_func(salt)
+diff --git a/scripts/pyzord b/scripts/pyzord
+index 7b073a7..3ac7a2c 100755
+--- scripts/pyzord
++++ scripts/pyzord
+@@ -244,7 +244,7 @@ def load_configuration():
+     config = ConfigParser.ConfigParser()
+     # Set the defaults.
+     config.add_section("server")
+-    for key, value in defaults.iteritems():
++    for key, value in defaults.items():
+         config.set("server", key, value)
+     # Override with the configuration.
+     config.read(os.path.join(options.homedir, "config"))
