@@ -1,7 +1,7 @@
 PORTNAME=	pcaudiolib
 DISTVERSION=	1.2
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Portable C audio library
@@ -9,7 +9,7 @@ COMMENT=	Portable C audio library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool pkgconfig
+USES=		libtool pkgconfig
 #USE_GITHUB=	yes
 GH_ACCOUNT=	espeak-ng
 GNU_CONFIGURE=	yes
