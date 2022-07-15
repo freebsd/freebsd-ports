@@ -1,17 +1,17 @@
 Disable wrappers as Python version is controlled by FLAVORS
 
---- README.md.orig	2021-11-19 21:23:13 UTC
+--- README.md.orig	2022-07-15 21:17:31 UTC
 +++ README.md
-@@ -53,17 +53,6 @@ Setup:
+@@ -53,17 +53,6 @@ - A native helper is used for faster operations. You c
  
    If you want to build git along the helper, you can run `make git`.
  
 -Python:
 --------
 -
--git-cinnabar will use one of `python3`, `python2.7` or `python2`, whichever has
--mercurial libraries. If none of them does, it will use the first that can be
--found.
+-git-cinnabar will use one of `python3`, `python`, `python2.7` or `python2`,
+-whichever has mercurial libraries. If none of them does, it will use the first
+-that can be found.
 -
 -You may force a specific python through the `GIT_CINNABAR_PYTHON` environment
 -variable.
@@ -20,50 +20,66 @@ Disable wrappers as Python version is controlled by FLAVORS
  Usage:
  ------
  
---- git-cinnabar.orig	2021-11-19 21:23:13 UTC
+--- git-cinnabar.orig	2022-07-15 21:17:31 UTC
 +++ git-cinnabar
-@@ -1,21 +1,4 @@
+@@ -1,29 +1,4 @@
 -#!/bin/sh
 -''':'
 -py="$GIT_CINNABAR_PYTHON"
 -if test -z "$py"; then
--  for py in python3 python2.7 python2; do
+-  for py in python3 python python2.7 python2; do
 -    "$py" -c "from mercurial import hg" >/dev/null 2>&1 && break
 -    py=
 -  done
 -fi
 -if test -z "$py"; then
--  for py in python3 python2.7 python2; do
--    command -v "$py" > /dev/null && break
+-  for py in python3 python python2.7 python2 "py -3" "py -2"; do
+-    # Make sure this Python actually works. On Windows, python.exe, etc. might
+-    # try to run the Windows Store app even if it's not installed.
+-    $py -c "import sys" >/dev/null 2>&1 && break
 -    py=python3
 -  done
 -fi
--exec "$py" "$0" "$@"
+-if test -n "$GIT_CINNABAR_PYTHON"; then
+-  # $GIT_CINNABAR_PYTHON is an executable which might contain spaces.
+-  exec "$GIT_CINNABAR_PYTHON" "$0" "$@"
+-else
+-  # If $py contains spaces, these will be arguments.
+-  exec $py "$0" "$@"
+-fi
 -exit 1
 -'''
 +#!/usr/bin/env python
  
  import os
  import sys
---- git-remote-hg.orig	2021-11-19 21:23:13 UTC
+--- git-remote-hg.orig	2022-07-15 21:17:31 UTC
 +++ git-remote-hg
-@@ -1,21 +1,4 @@
+@@ -1,29 +1,4 @@
 -#!/bin/sh
 -''':'
 -py="$GIT_CINNABAR_PYTHON"
 -if test -z "$py"; then
--  for py in python3 python2.7 python2; do
+-  for py in python3 python python2.7 python2; do
 -    "$py" -c "from mercurial import hg" >/dev/null 2>&1 && break
 -    py=
 -  done
 -fi
 -if test -z "$py"; then
--  for py in python3 python2.7 python2; do
--    command -v "$py" > /dev/null && break
+-  for py in python3 python python2.7 python2 "py -3" "py -2"; do
+-    # Make sure this Python actually works. On Windows, python.exe, etc. might
+-    # try to run the Windows Store app even if it's not installed.
+-    $py -c "import sys" >/dev/null 2>&1 && break
 -    py=python3
 -  done
 -fi
--exec "$py" "$0" "$@"
+-if test -n "$GIT_CINNABAR_PYTHON"; then
+-  # $GIT_CINNABAR_PYTHON is an executable which might contain spaces.
+-  exec "$GIT_CINNABAR_PYTHON" "$0" "$@"
+-else
+-  # If $py contains spaces, these will be arguments.
+-  exec $py "$0" "$@"
+-fi
 -exit 1
 -'''
 +#!/usr/bin/env python
