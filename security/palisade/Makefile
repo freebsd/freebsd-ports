@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	fails to build: a declaration of 'Mul128' must be available
 BROKEN_powerpc64=	fails to build: math/native_int/binint.h:510:11: error: Architecture not supported for MultD()
+BROKEN_armv6=	configure fails: ** ERROR ** OpenMP is not installed
 
 BUILD_DEPENDS=	autoconf:devel/autoconf # possibly a mistake in the project
 
