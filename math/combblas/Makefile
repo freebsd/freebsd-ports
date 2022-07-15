@@ -23,6 +23,8 @@ GH_ACCOUNT=	PASSIONLab
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
+# many tests fail, see https://github.com/PASSIONLab/CombBLAS/issues/15
+
 post-extract:
 	@cd ${WRKSRC}/include && ${RM} .DS_Store ._.DS_Store CombBLAS/._CombBLAS.h
 
