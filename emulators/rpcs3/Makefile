@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.23-13908 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g7499f875a6
+DISTVERSION=	0.0.23-13925 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g73ed657e00
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,7 +27,7 @@ GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.12.0-2-gc2aa9dd:hidapi/3rdparty/hidapi/hidapi \
 		RPCS3:llvm-mirror:5521155be5c8:llvm/llvm \
 		RPCS3:soundtouch:2.3.1-16-g83cfba6:soundtouch/3rdparty/SoundTouch/soundtouch \
-		asmjit:asmjit:fc2a5d8:asmjit/3rdparty/asmjit/asmjit \
+		asmjit:asmjit:06d0bad:asmjit/3rdparty/asmjit/asmjit \
 		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-152-g4995a2f:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2022.2:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
