@@ -862,6 +862,7 @@
     SUBDIR += py-faiss
     SUBDIR += py-fastcluster
     SUBDIR += py-fastdtw
+    SUBDIR += py-fenics-basix
     SUBDIR += py-flax
     SUBDIR += py-fpylll
     SUBDIR += py-fraction
