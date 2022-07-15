@@ -1,8 +1,7 @@
 PORTNAME=	qbe
-DISTVERSION=	g20220411
+DISTVERSION=	1.0
 CATEGORIES=	devel
 MASTER_SITES=	https://c9x.me/git/qbe.git/snapshot/
-DISTNAME=	qbe-2caa26e388b
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Embeddable compiler backend for C type languages
@@ -12,13 +11,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
 
+TEST_TARGET=	check
+
 OPTIONS_DEFINE=	DOCS
 
 do-build:
-		cd ${WRKSRC}; ${GMAKE}
+		cd ${WRKSRC}; ${GMAKE} CC=cc
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/obj/qbe ${STAGEDIR}${PREFIX}/bin
+		${INSTALL_PROGRAM} ${WRKSRC}/qbe ${STAGEDIR}${PREFIX}/bin
 		${MKDIR} ${STAGEDIR}${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${STAGEDIR}${DOCSDIR}/
 
