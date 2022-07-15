@@ -21,7 +21,7 @@ start_precmd="${name}_precmd"
 load_rc_config $name
 
 : ${reggae_pf_enable:="NO"}
-: ${reggae_pf_directory:="/etc/pf.d"}
+: ${reggae_pf_directory:="/etc/pf.conf.d"}
 
 command="%%PREFIX%%/bin/reggae"
 command_args="pf ${reggae_pf_directory}"
