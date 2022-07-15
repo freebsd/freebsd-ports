@@ -11,7 +11,10 @@ COMMENT=	Graphical user interface for several chemistry software packages
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License
 
+BROKEN_armv6=	fatal error: 'omp.h' file not found
+BROKEN_armv7=	fatal error: 'omp.h' file not found
 BROKEN_i386=	undefined reference to `__atomic_load'
+BROKEN_riscv64=	fatal error: 'omp.h' file not found
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
