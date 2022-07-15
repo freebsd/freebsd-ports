@@ -1,0 +1,6 @@
+eSpeak For Asterisk provides the "Espeak" dialplan application,
+which allows you to use the Espeak speech synthesizer with Asterisk.
+This module invokes the Espeak TTS engine locally, and uses it to
+render text to speech.
+
+WWW: https://zaf.github.io/Asterisk-eSpeak/

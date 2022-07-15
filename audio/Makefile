@@ -35,6 +35,7 @@
     SUBDIR += artyfx-lv2
     SUBDIR += asmix
     SUBDIR += asmixer
+    SUBDIR += asterisk-espeak
     SUBDIR += asterisk-flite
     SUBDIR += asunder
     SUBDIR += atunes
