@@ -81,6 +81,7 @@ DTRACE_DESC?=		Build with DTrace probes
 DV_DESC?=		Quasar DV video codec support (libdv)
 DVDCSS_DESC?=		Encrypted DVD support via libdvdcss
 ECW_DESC?=		ECW image format support
+ESPEAK_DESC?=		eSpeak speech synthesizer support
 EXAMPLES_DESC?=		Build and/or install examples
 EXIV2_DESC?=		EXIF and IPTC metadata support via exiv2
 EXPAT_DESC?=		XML parser support via Expat
