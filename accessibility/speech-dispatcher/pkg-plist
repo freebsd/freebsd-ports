@@ -38,6 +38,7 @@ lib/speech-dispatcher/spd_oss.so
 %%PULSEAUDIO%%lib/speech-dispatcher/spd_pulse.so
 libexec/speech-dispatcher-modules/sd_cicero
 libexec/speech-dispatcher-modules/sd_dummy
+%%ESPEAK%%libexec/speech-dispatcher-modules/sd_espeak
 libexec/speech-dispatcher-modules/sd_festival
 %%FLITE%%libexec/speech-dispatcher-modules/sd_flite
 libexec/speech-dispatcher-modules/sd_generic
@@ -337,10 +338,10 @@ share/sounds/speech-dispatcher/dummy-message.wav
 %%DATADIR%%/locale/tg/emojis.dic
 %%DATADIR%%/locale/tg/orca-chars.dic
 %%DATADIR%%/locale/tg/orca.dic
-%%DATADIR%%/locale/ti/emojis.dic
 %%DATADIR%%/locale/th/emojis.dic
 %%DATADIR%%/locale/th/orca-chars.dic
 %%DATADIR%%/locale/th/orca.dic
+%%DATADIR%%/locale/ti/emojis.dic
 %%DATADIR%%/locale/tk/emojis.dic
 %%DATADIR%%/locale/to/emojis.dic
 %%DATADIR%%/locale/tr/emojis.dic
