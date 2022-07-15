@@ -141,7 +141,7 @@
     SUBDIR += enscribe
     SUBDIR += epos-devel
     SUBDIR += eq10q-lv2
-    SUBDIR += espeak
+    SUBDIR += espeak-ng
     SUBDIR += espressivo-lv2
     SUBDIR += etcd
     SUBDIR += eteroj-lv2

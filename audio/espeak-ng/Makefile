@@ -2,10 +2,9 @@
 
 PORTNAME=	espeak-ng
 PORTVERSION=	1.51.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
-#MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
-#DISTNAME=	${PORTNAME}-${PORTVERSION}-source
+#MASTER_SITES=	https://github.com/espeak-ng/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Software speech synthesizer
