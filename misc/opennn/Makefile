@@ -9,6 +9,10 @@ COMMENT=	Open neural networks library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_armv6=	fatal error: 'omp.h' file not found
+BROKEN_armv7=	fatal error: 'omp.h' file not found
+BROKEN_riscv64=	fatal error: 'omp.h' file not found
+
 USES=		cmake compiler dos2unix zip
 DOS2UNIX_FILES=	opennn/CMakeLists.txt
 USE_LDCONFIG=	yes
