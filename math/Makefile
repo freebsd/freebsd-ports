@@ -309,6 +309,7 @@
     SUBDIR += fastops
     SUBDIR += fcl
     SUBDIR += fcl05
+    SUBDIR += fenics-basix
     SUBDIR += fflas-ffpack
     SUBDIR += fftw
     SUBDIR += fftw-float

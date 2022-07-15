@@ -1,0 +1,20 @@
+Basix is a finite element definition and tabulation runtime library.
+
+Basix allows users to:
+* evaluate finite element basis functions and their derivatives at a
+  set of points
+* access geometric and topological information about reference cells
+* apply push forward and pull back operations to map data between a
+  reference cell and a physical cell
+* permute and transform DOFs to allow higher-order elements to be use
+  on arbitrary meshes
+* interpolate into a finite element space and between finite element
+  spaces
+
+Basix includes a range of built-in elements, and also allows the user
+to define their own custom elements.
+
+Basix is one of the components of FEniCSx, alongside UFL, FFCx, and
+DOLFINx.
+
+WWW: https://github.com/FEniCS/basix
