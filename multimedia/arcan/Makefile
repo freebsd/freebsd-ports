@@ -1,6 +1,6 @@
 PORTNAME=	arcan
 DISTVERSION=	0.6.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,10 +30,11 @@ CMAKE_ARGS=	-DDISTR_TAG:STRING="portbld" \
 LDFLAGS+=	-Wl,--as-needed # bzip2, ffmpeg, librt, libutil, lzma, zlib
 LDFLAGS_i386=	-Wl,-z,notext
 
-OPTIONS_DEFINE=	FFMPEG LUAJIT MANPAGES SDL SUID TESSERACT UVC VLC VNC WAYLAND
-OPTIONS_DEFAULT=FFMPEG LUAJIT MANPAGES SDL SUID TESSERACT UVC VLC VNC WAYLAND
+OPTIONS_DEFINE=	ESPEAK FFMPEG LUAJIT MANPAGES SDL SUID TESSERACT UVC VLC VNC WAYLAND
+OPTIONS_DEFAULT=ESPEAK FFMPEG LUAJIT MANPAGES SDL SUID TESSERACT UVC VLC VNC WAYLAND
 OPTIONS_SUB=	yes
 
+ESPEAK_LIB_DEPENDS=	libespeak-ng.so:audio/espeak-ng
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 MANPAGES_USE=		RUBY=yes
@@ -84,11 +85,13 @@ post-patch:
 		${WRKSRC}/frameserver/terminal/default/cli_builtin.c \
 		${WRKSRC}/platform/posix/paths.c \
 		${WRKSRC}/shmif/arcan_shmif_debugif.c
-	@${REINPLACE_CMD} -i.noespeak '/find.*Espeak/d' \
-		${WRKSRC}/frameserver/decode/default/CMakeLists.txt
 
 pre-configure-MANPAGES-on:
 	@${RUBY} -C ${WRKSRC:H}/doc -Ku docgen.rb mangen 2>/dev/null
+
+post-patch-ESPEAK-off:
+	@${REINPLACE_CMD} -i.noespeak '/find.*Espeak/d' \
+		${WRKSRC}/frameserver/decode/default/CMakeLists.txt
 
 post-patch-FFMPEG-off:
 	@${REINPLACE_CMD} -i.noffmpeg '/pkg.*FFMPEG/d' \
