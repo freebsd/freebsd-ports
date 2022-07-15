@@ -1,7 +1,9 @@
 PORTNAME=	CombBLAS
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
+MASTER_SITES=	https://portal.nersc.gov/project/m1982/CombBLAS/:test_data
 CATEGORIES=	math
+DISTFILES=	testdata_combblas1.6.1.tgz:test_data
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Combinatorial BLAS library: an extensible parallel graph library
@@ -27,5 +29,10 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 post-extract:
 	@cd ${WRKSRC}/include && ${RM} .DS_Store ._.DS_Store CombBLAS/._CombBLAS.h
+
+pre-test:
+	@if [ ! -L ${TEST_WRKSRC}TESTDATA ]; then \
+		${RLN} ${WRKDIR}/TESTDATA ${TEST_WRKSRC}/; \
+	fi
 
 .include <bsd.port.mk>
