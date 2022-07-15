@@ -1,5 +1,6 @@
 PORTNAME=	fheroes2
 PORTVERSION=	0.9.17
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -9,6 +10,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
+RUN_DEPENDS=	timidity:audio/timidity
 
 USES=		cmake gettext-tools iconv localbase:ldflags pkgconfig sdl \
 		shebangfix
