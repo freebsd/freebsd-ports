@@ -1,6 +1,6 @@
 PORTNAME=		oolite
 PORTVERSION=		1.88
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		games gnustep
 MASTER_SITES=		https://github.com/OoliteProject/oolite/releases/download/1.88/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE_FILE_CC-BY-NC-SA-3.0=	${WRKSRC}/Doc/LICENSE.TXT
 
 BUILD_DEPENDS=		zip:archivers/zip \
 			${LOCALBASE}/bin/unzip:archivers/unzip
-LIB_DEPENDS=		libespeak.so:audio/espeak \
+LIB_DEPENDS=		libespeak-ng.so:audio/espeak-ng \
 			libnspr4.so:devel/nspr \
 			libvorbisfile.so:audio/libvorbis \
 			libpng.so:graphics/png
