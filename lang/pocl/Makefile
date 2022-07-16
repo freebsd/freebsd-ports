@@ -11,6 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	only tested on ${ONLY_FOR_ARCHS:tW:S/ /, /g}
+BROKEN_i386=	Unable to access file /wrkdirs/usr/ports/lang/pocl/work/stage/usr/local/share/pocl/kernel-i386-portbld-freebsd13.0-avx.bc:No such file or directory
 
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>=10:devel/llvm${LLVM_VERSION} \
 		opencl>=2.2:devel/opencl
