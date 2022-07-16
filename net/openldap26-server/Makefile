@@ -1,7 +1,7 @@
 # Created by: Xin LI <delphij@FreeBSD.org>
 
 PORTNAME=		openldap
-DISTVERSION=		2.6.2
+DISTVERSION=		2.6.3
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
@@ -80,6 +80,7 @@ OPTIONS_GROUP_OVLYS+=	DENYOP
 OPTIONS_GROUP_OVLYS+=	DEREF
 OPTIONS_GROUP_OVLYS+=	DYNGROUP
 OPTIONS_GROUP_OVLYS+=	DYNLIST
+OPTIONS_GROUP_OVLYS+=	EMPTYDS
 OPTIONS_GROUP_OVLYS+=	HOMEDIR
 OPTIONS_GROUP_OVLYS+=	LASTBIND
 OPTIONS_GROUP_OVLYS+=	LASTMOD
@@ -167,6 +168,7 @@ ALLOP_DESC=		With allop overlay (experimental)
 AUTOGROUP_DESC=		With autogroup overlay (experimental)
 CLOAK_DESC=		With cloak overlay (experimental)
 DENYOP_DESC=		With denyop overlay (experimental)
+EMPTYDS_DESC=		With emptyds overlay (experimental)
 LASTBIND_DESC=		With lastbind overlay
 LASTMOD_DESC=		With lastmod overlay (experimental)
 TRACE_DESC=		With Trace overlay
@@ -341,6 +343,10 @@ CONTRIB_CLEANFILES+=	cloak.a
 .if ${PORT_OPTIONS:MDENYOP}
 CONTRIB_MODULES+=	slapd-modules/denyop
 CONTRIB_CLEANFILES+=	denyop.a
+.endif
+.if ${PORT_OPTIONS:MEMPTYDS}
+CONTRIB_MODULES+=	slapd-modules/emptyds
+CONTRIB_CLEANFILES+=	emptyds.a
 .endif
 .if ${PORT_OPTIONS:MLASTBIND}
 CONTRIB_MODULES+=	slapd-modules/lastbind
