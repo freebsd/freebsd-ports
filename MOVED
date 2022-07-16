@@ -17506,3 +17506,4 @@ www/rubygem-rails61-node16|www/rubygem-rails61|2022-07-13|Remove obsoleted port.
 www/rubygem-uglifier-node16|www/rubygem-uglifier|2022-07-13|Remove obsoleted port. Use www/rubygem-uglifier instead
 audio/espeak|audio/espeak-ng|2022-07-15|Switch to fork of (stale) original repository
 misc/ngraph||2022-07-15|Software is discontinued because its developer Nervana Systems is defunct
+math/hipmcl||2022-07-16|Discontinued: old versions aren't compatible with new combblas-2.0, latest versions require CUDA that is not available on FreeBSD
