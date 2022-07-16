@@ -1,8 +1,7 @@
 # Created by: Mageirias Anastasios <anastmag@gmail.com>
 
 PORTNAME=	clamfs
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/burghardt/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
@@ -11,21 +10,21 @@ COMMENT=	User-space fs with on-access antivirus scanning
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	boost-libs>=1.33:devel/boost-libs
 LIB_DEPENDS=	libPocoFoundation.so:devel/poco \
 		libPocoNet.so:devel/poco \
 		libPocoXML.so:devel/poco \
 		librlog.so:devel/rlog
-BUILD_DEPENDS=	boost-libs>=1.33:devel/boost-libs
 RUN_DEPENDS=	clamd:security/clamav
 
-USES=		compiler:c++11-lib autoreconf fuse
+USES=		autoreconf compiler:c++11-lib fuse:3 pkgconfig
 
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/clamfs \
 		man/man1/clamfs.1.gz
-PORTDOCS=	*
 
+PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
