@@ -15,6 +15,7 @@ BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ADR_PR
 .if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 BROKEN_i386=		ld: error: can't create dynamic relocation R_386_32 against symbol: vtable for LV2UI in readonly segment
 .endif
+BROKEN_riscv64=		can't create dynamic relocation R_RISCV_LO12_I against symbol: vtable for LV2UI in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		faust>0:audio/faust \
@@ -32,7 +33,7 @@ CFLAGS_armv7=		-fPIC
 CFLAGS_powerpc=		-fPIC
 CFLAGS_powerpc64=	-fPIC
 CFLAGS_powerpc64le=	-fPIC
-LDFLAGS+=	-fPIC # recommended by 13i386 failure messages, it was only failing 
+LDFLAGS+=		-fPIC # recommended by 13i386 failure messages, it was only failing
 
 OPTIONS_DEFINE_amd64=	SIMD
 OPTIONS_DEFINE_i386=	SIMD
