@@ -191,6 +191,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/e/eterm-direct
 %%DATADIR%%/%%EMACS_VER%%/etc/edt-user.el
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs-buffer.gdb
+%%DATADIR%%/%%EMACS_VER%%/etc/emacs_lldb.py
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/emacsclient-mail.desktop
@@ -1555,7 +1556,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-custom.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-datadebug.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-datadebug.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-opt.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-opt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/eieio-speedbar.el.gz
@@ -2545,6 +2545,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/loadup.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/locate.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/locate.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/longlines.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/longlines.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/lpr.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/lpr.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ls-lisp.el.gz
@@ -2602,7 +2604,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc6068.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc822.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rfc822.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmail-loaddefs.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmail-spam-filter.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmail-spam-filter.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mail/rmail.el.gz
@@ -2803,8 +2804,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/rcirc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/rfc2104.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/rfc2104.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/rlogin.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/rlogin.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-cram.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-cram.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/sasl-digest.el.gz
@@ -2966,8 +2965,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/landmark.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/lazy-lock.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/lazy-lock.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/longlines.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/longlines.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mantemp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mantemp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/meese.el.gz
@@ -2995,6 +2992,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rcompile.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rfc2368.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rfc2368.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rlogin.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rlogin.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sb-image.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sb-image.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/starttls.el.gz
