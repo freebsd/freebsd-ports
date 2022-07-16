@@ -1,0 +1,13 @@
+diff --git a/fetchmail.man b/fetchmail.man
+index 37792b81084549c1579de5b6844b10e55377468d..aebfdfdbeaf33a4435a5a074960059bbd337242b 100644
+--- a/fetchmail.man
++++ b/fetchmail.man
+@@ -10,7 +10,7 @@
+ .\" Load www macros to process .URL requests, this requires groff:
+ .mso www.tmac
+ .\"
+-.TH fetchmail 1 2022-02-18 "fetchmail 6.4.30" "fetchmail reference manual"
++.TH fetchmail 1 2022-07-16 "fetchmail 6.4.31" "fetchmail reference manual"
+ 
+ .SH NAME
+ fetchmail \- fetch mail from a POP, IMAP, ETRN, or ODMR-capable server
