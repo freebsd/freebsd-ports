@@ -10,7 +10,7 @@ COMMENT=	Statistical learning for neuroimaging in Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		does not install: ModuleNotFoundError: No module named 'threadpoolctl'. Module "sklearn" could not be found.
+BROKEN=		does not install: No module named 'threadpoolctl'. Module "sklearn" could not be found. Core reason is that threadpoolctl is broken, see https://reviews.freebsd.org/D35513
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}codecov>0:devel/py-codecov@${PY_FLAVOR} \
