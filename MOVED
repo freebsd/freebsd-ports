@@ -17505,3 +17505,4 @@ textproc/rubygem-autoprefixer-rails-node16|textproc/rubygem-autoprefixer-rails|2
 www/rubygem-rails61-node16|www/rubygem-rails61|2022-07-13|Remove obsoleted port. Use www/rubygem-rails61 instead
 www/rubygem-uglifier-node16|www/rubygem-uglifier|2022-07-13|Remove obsoleted port. Use www/rubygem-uglifier instead
 audio/espeak|audio/espeak-ng|2022-07-15|Switch to fork of (stale) original repository
+misc/ngraph||2022-07-15|Software is discontinued because its developer Nervana Systems is defunct
