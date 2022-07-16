@@ -1,5 +1,5 @@
-TIMESTAMP = 1657894482
-SHA256 (go/ports-mgmt_fallout/fallout-v1.0.2/v1.0.2.mod) = 3a131acb3f00f99f80613322d01f9f6e89933f1fa74e856eae41e68a1ee2002c
-SIZE (go/ports-mgmt_fallout/fallout-v1.0.2/v1.0.2.mod) = 1098
-SHA256 (go/ports-mgmt_fallout/fallout-v1.0.2/v1.0.2.zip) = fbef23683a437e86fdfb778bfc032fa8df2236d49bb2a2201eb6d99664a2bf41
-SIZE (go/ports-mgmt_fallout/fallout-v1.0.2/v1.0.2.zip) = 26359
+TIMESTAMP = 1657972662
+SHA256 (go/ports-mgmt_fallout/fallout-v1.0.3/v1.0.3.mod) = 3a131acb3f00f99f80613322d01f9f6e89933f1fa74e856eae41e68a1ee2002c
+SIZE (go/ports-mgmt_fallout/fallout-v1.0.3/v1.0.3.mod) = 1098
+SHA256 (go/ports-mgmt_fallout/fallout-v1.0.3/v1.0.3.zip) = c049cb15ffaf680366cafb60669e4a519e85fadb4c36e6b2b3cb47933a324455
+SIZE (go/ports-mgmt_fallout/fallout-v1.0.3/v1.0.3.zip) = 26762
