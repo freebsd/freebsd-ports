@@ -4,7 +4,7 @@ CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCH_WRKSRC=	${WRKSRC:H:H:H}
-PATCHFILES+=	c5dab1ac1657.patch:-p1 # https://github.com/letoram/arcan/pull/254
+PATCHFILES+=	f1ff13a78c8a.patch:-p1 # https://github.com/letoram/arcan/pull/254
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	FUSE file system driver for Arcan window managers

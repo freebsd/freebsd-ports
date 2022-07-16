@@ -1,5 +1,5 @@
 TIMESTAMP = 1657870390
 SHA256 (letoram-arcan-0.6.2_GH0.tar.gz) = 635c447c341c7b803fd13317d3027ce438e8965803943a213a8f4409352d889c
 SIZE (letoram-arcan-0.6.2_GH0.tar.gz) = 11802619
-SHA256 (c5dab1ac1657.patch) = 72cd7efaa3c298305788673dff6a0d29fb5093bb7b8c5e55df573e7b4fd665e1
-SIZE (c5dab1ac1657.patch) = 1734
+SHA256 (f1ff13a78c8a.patch) = c2a69072b454edadda8f6013d64cca56ccff171b44f46f9121c9f73ce2c6156f
+SIZE (f1ff13a78c8a.patch) = 1741
