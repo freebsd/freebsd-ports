@@ -75,7 +75,6 @@ lib/saga/libio_grid.so
 lib/saga/libio_grid_image.so
 lib/saga/libio_pdal.so
 lib/saga/libio_shapes.so
-lib/saga/libio_shapes_dxf.so
 lib/saga/libio_table.so
 lib/saga/libio_virtual.so
 lib/saga/libio_webservices.so
@@ -189,15 +188,9 @@ share/pixmaps/saga.png
 %%DATADIR%%/saga_tip.txt
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/CMakeLists.txt
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/Makefile
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/Makefile.am
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/TLB_Interface.cpp
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool.cpp
 %%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool.h
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool_library.cbp
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool_library.layout
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool_library.vcxproj
-%%DATADIR%%/templates/template4saga-tools/my_tool_library/my_tool_library.vcxproj.filters
-%%DATADIR%%/templates/template4saga-tools/my_tools.vc14.sln
 %%DATADIR%%/templates/template4saga-tools/readme.txt
 %%DATADIR%%/toolchains/climate_tools.xml
 %%DATADIR%%/toolchains/cluster_terrain.xml
