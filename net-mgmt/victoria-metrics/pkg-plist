@@ -15,6 +15,7 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/Release-Guide.md
 %%PORTDOCS%%%%DOCSDIR%%/Single-server-VictoriaMetrics.md
+%%PORTDOCS%%%%DOCSDIR%%/Troubleshooting.md
 %%PORTDOCS%%%%DOCSDIR%%/_config.yml
 %%PORTDOCS%%%%DOCSDIR%%/_includes/extra/head.html
 %%PORTDOCS%%%%DOCSDIR%%/_includes/extra/script.js
