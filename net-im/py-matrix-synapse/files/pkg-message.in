@@ -79,7 +79,7 @@ EOM
   message: <<EOM
 Starting with synapse 1.62.0, this port will no longer ship with sqlite support
 by default. If you rely on sqlite for your setup, please either migrate to
-postfix, install the sqlite dependency manually or build a custom flavor of the
+postgresql, install the sqlite dependency manually or build a custom flavor of the
 port.
 EOM
 }
