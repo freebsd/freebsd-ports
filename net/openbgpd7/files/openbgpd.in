@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: bgpd dynamicrouting
+# REQUIRE: LOGIN abi
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable openbgpd:
+#
+# openbgpd_enable="YES"
+# openbgpd_flags="<set as needed>"
+#
+# See bgpd(8) for openbgpd_flags
+
+. /etc/rc.subr
+
+name=openbgpd
+rcvar=openbgpd_enable
+
+extra_commands=reload
+command="%%PREFIX%%/sbin/bgpd"
+required_files="%%PREFIX%%/etc/bgpd.conf"
+
+: ${openbgpd_enable=NO}
+
+check_process()
+{
+	/bin/pgrep -f 'bgpd: parent.*'
+}
+
+load_rc_config $name
+run_rc_command "$1"
