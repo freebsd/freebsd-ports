@@ -1545,6 +1545,7 @@
     SUBDIR += py-translationstring
     SUBDIR += py-transpopy
     SUBDIR += py-ttp
+    SUBDIR += py-ttp-templates
     SUBDIR += py-typogrify
     SUBDIR += py-ucl
     SUBDIR += py-ufal.udpipe

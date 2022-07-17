@@ -1,0 +1,14 @@
+This package contains a collection of TTP (= Template Text Parser) templates,
+which is divided into three sections corresponding to folder names:
+
+* "platform" collection
+  Mimics ntc-templates API and follows same naming rule.
+
+* "yang" collection
+  Contains templates capable of producing YANG compatible structures out
+  of text data.
+
+* "misc" collection
+  Miscellaneous templates for various use cases organized in folders.
+
+WWW: https://github.com/dmulyalin/ttp_templates
