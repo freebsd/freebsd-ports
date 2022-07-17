@@ -734,6 +734,7 @@ lib/emby-server/system/dashboard-ui/modules/formdialog.css
 lib/emby-server/system/dashboard-ui/modules/formhelper.js
 lib/emby-server/system/dashboard-ui/modules/fullscreen/fullscreen-dc.js
 lib/emby-server/system/dashboard-ui/modules/fullscreen/fullscreenmanager.js
+lib/emby-server/system/dashboard-ui/modules/genericedit/genericedit.js
 lib/emby-server/system/dashboard-ui/modules/headroom/headroom.css
 lib/emby-server/system/dashboard-ui/modules/headroom/headroom.js
 lib/emby-server/system/dashboard-ui/modules/hlsjs/hls.min.js
