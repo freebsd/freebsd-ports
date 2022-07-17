@@ -1,0 +1,7 @@
+KpLib is a C++ library for finding the optimal Generalized
+Monkhorst-Pack k-points grid. It can be imported into
+electronic-structure packages as a generator of efficient
+generalized k-point grids, or be integrated into user scripts through
+the python interface.
+
+WWW: https://gitlab.com/muellergroup/kplib

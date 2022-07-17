@@ -123,6 +123,7 @@
     SUBDIR += jstrack
     SUBDIR += kalzium
     SUBDIR += kim-api
+    SUBDIR += kplib
     SUBDIR += kst2
     SUBDIR += lammps
     SUBDIR += lamprop
