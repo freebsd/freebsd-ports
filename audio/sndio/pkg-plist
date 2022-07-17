@@ -4,7 +4,7 @@ bin/sndioctl
 bin/sndiod
 include/sndio.h
 lib/libsndio.so
-lib/libsndio.so.7.1
+lib/libsndio.so.7.2
 libdata/pkgconfig/sndio.pc
 share/man/man1/aucat.1.gz
 share/man/man1/midicat.1.gz
