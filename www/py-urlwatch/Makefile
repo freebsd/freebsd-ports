@@ -36,7 +36,7 @@ PORTEXAMPLES=	hooks.py.example urls.yaml.example
 OPTIONS_DEFINE=		DOCS EXAMPLES
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_PORTDOCS=		html/* text/*
-DOCS_VARS=		BINARY_ALIAS=sphinx-build=sphinx-build-${PYTHON_VER} USES+=gmake
+DOCS_VARS=		BINARY_ALIAS=sphinx-build=sphinx-build-${PYTHON_VER} MAKE_JOBS_UNSAFE=yes USES+=gmake
 
 post-build-DOCS-on:
 		cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} -j${MAKE_JOBS_NUMBER} html text
