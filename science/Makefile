@@ -297,6 +297,7 @@
     SUBDIR += py-kim-query
     SUBDIR += py-kinematics
     SUBDIR += py-kliff
+    SUBDIR += py-kpLib
     SUBDIR += py-liac-arff
     SUBDIR += py-libgetar
     SUBDIR += py-libpysal
