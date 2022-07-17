@@ -1535,6 +1535,7 @@
     SUBDIR += py-django-registration-redux
     SUBDIR += py-django-reversion
     SUBDIR += py-django-reversion-compare
+    SUBDIR += py-django-rich
     SUBDIR += py-django-sekizai
     SUBDIR += py-django-simple-captcha
     SUBDIR += py-django-simple-history
