@@ -15,6 +15,8 @@ COMMENT=	Modern Music Server and Streamer compatible with Subsonic/Airsonic
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		react-scripts: not found
+
 BUILD_DEPENDS+=	npm>0:www/npm \
 				go-bindata:devel/go-bindata
 LIB_DEPENDS+=	libtag.so:audio/taglib
