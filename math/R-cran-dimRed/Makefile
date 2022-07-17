@@ -1,7 +1,7 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
 
 PORTNAME=	dimRed
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
