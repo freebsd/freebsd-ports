@@ -12,6 +12,8 @@ COMMENT=	RedHat OpenShift installer
 LICENSE=	APACHE20
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE
 
+BROKEN=		unfetchable dependency openshift-cluster-api-provider-gcp
+
 ONLY_FOR_ARCHS=	amd64
 
 USES=		go:modules
