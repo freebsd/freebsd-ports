@@ -1,5 +1,5 @@
---- src/gmic.cpp.orig	2022-06-30 12:35:34 UTC
-+++ src/gmic.cpp
+--- gmic.cpp.orig	2022-06-30 12:35:34 UTC
++++ gmic.cpp
 @@ -2314,7 +2314,7 @@ inline CImgList<void*>& gmic_runs() {
  }
  

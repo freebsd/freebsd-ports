@@ -1,3 +1,4 @@
+bin/gmic
 include/gmic.h
 include/gmic_libc.h
 lib/libgmic.so
