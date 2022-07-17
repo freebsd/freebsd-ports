@@ -1,8 +1,7 @@
 # Created by: Richard Gallamore <ultima@FreeBSD.org>
 
 PORTNAME=	django-constance
-PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTVERSION=	2.9.0
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
