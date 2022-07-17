@@ -1,6 +1,5 @@
 PORTNAME=	fleur
-DISTVERSION=	5.1.20220103
-PORTREVISION=	2
+DISTVERSION=	6.0.20220715
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,64 +10,73 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=	Fatal Error: Cannot find an intrinsic module named 'ieee_arithmetic' at (1)
 
-LIB_DEPENDS=	liblapack.so:math/lapack \
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 
-USES=		cmake:noninja fortran gnome localbase:ldflags shebangfix tar:tgz
+USES=		cmake:noninja fortran gnome localbase:ldflags python:test tar:tgz
 USE_GNOME=	libxml2
 
 USE_GITLAB=	yes
 GL_SITE=	https://iffgit.fz-juelich.de
-GL_COMMIT=	0d3b9c4b71dc42ec0ba60fe5c6d2fce212e6fcd4
-
-SHEBANG_FILES=	tests/test.pl
+GL_COMMIT=	a2934446e0eb1fcbf7a69d4d652c969cef0c8c8d
 
 FFLAGS=		-I${LOCALBASE}/include
 LDFLAGS+=	-llapack -lopenblas -lxml2 # to fix missing symbols, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/670
 
-OPTIONS_DEFINE=		HDF5 MPI SCALAPACK ELPA WANNIER
-OPTIONS_DEFAULT=	MPI SCALAPACK WANNIER # ELPA
+OPTIONS_DEFINE=		HDF5 KPLIB MPI SCALAPACK ELPA LIBXC WANNIER
+OPTIONS_DEFAULT=	MPI SCALAPACK ELPA WANNIER # HDF5 KPLIB LIBXC
 
-HDF5_CONFIGURE_ENV=	FLEUR_USE_HDF5=1 HDF5_ROOT=${LOCALBASE}/lib
-HDF5_CONFIGURE_ENV_OFF=	FLEUR_USE_HDF5=0
+HDF5_CMAKE_BOOL=	CLI_FLEUR_USE_HDF5
 HDF5_CMAKE_ON=		-DHDF5_INCLUDE_DIRS=${LOCALBASE}/include
-HDF5_LDFLAGS=		-lhdf5
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
-HDF5_BROKEN=		Missing hdf5.mod in hdf5
+HDF5_BROKEN=		Missing hdf5.mod in hdf5 # hdf5 doesn't include Fortran binding
 
-MPI_CONFIGURE_ENV=	FLEUR_USE_MPI=1
-MPI_CONFIGURE_ENV_OFF=	FLEUR_USE_MPI=0
+KPLIB_DESC=		Use kpLib library
+#KPLIB_CMAKE_BOOL=	CLI_FLEUR_USE_KPLIB
+KPLIB_DEPENDS=		libkplib.so:science/kplib
+KPLIB_BROKEN=		Fails to find the pre-installed libkplib.so library, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/691
+
+MPI_CMAKE_BOOL=		CLI_FLEUR_USE_MPI
 MPI_LDFLAGS=		-lmpich -lmpifort
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich
+MPI_VARS=		SUFFIX=_MPI
 
 SCALAPACK_DESC=		Use the ScaLAPACK Scalable LAPACK library
-SCALAPACK_CMAKE_BOOL=	FREEBSD_USE_SCALAPACK
+SCALAPACK_CMAKE_BOOL=	FLEUR_USE_SCALAPACK # no such variable, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/692, it works only through LDFLAGS set below
+SCALAPACK_VARS=		FFLAGS+=-fallow-argument-mismatch
 SCALAPACK_LDFLAGS=	-lscalapack
 SCALAPACK_LIB_DEPENDS=	libscalapack.so:math/scalapack
 SCALAPACK_IMPLIES=	MPI
 
 ELPA_DESC=		Use libelpa, Eigenvalue SoLver for Petaflop Applications
-ELPA_CMAKE_BOOL=	FREEBSD_USE_ELPA
-ELPA_VARS=		FFLAGS+=-I${LOCALBASE}/include/elpa-2018.05.001/modules
+ELPA_CMAKE_BOOL=	FLEUR_USE_ELPA # no such variable, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/689, it works only through FFLAGS set below
+ELPA_VARS=		FFLAGS+=-I${LOCALBASE}/include/elpa-2021.11.001/modules
 ELPA_LDFLAGS=		-lelpa
 ELPA_LIB_DEPENDS=	libelpa.so:math/elpa
-ELPA_IMPLIES=		MPI
-ELPA_BROKEN=		math/elpa fails to build
+
+LIBXC_DESC=		Use libxc library
+LIBXC_CMAKE_BOOL=	CLI_FLEUR_USE_LIBXC
+LIBXC_LIB_DEPENDS=	libxc.so:science/libxc
+LIBXC_BROKEN=		Silently links with libxc when CLI_FLEUR_USE_LIBXC=OFF, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/690
 
 WANNIER_DESC=		Use Wannier library
-WANNIER_CONFIGURE_ENV=	FLEUR_USE_WANNIER=1
-WANNIER_CONFIGURE_ENV_OFF=	FLEUR_USE_WANNIER=0
-WANNIER_LDFLAGS=	-lwannier
+WANNIER_CMAKE_BOOL=	CLI_FLEUR_USE_WANNIER
 WANNIER_LIB_DEPENDS=	libwannier.so:science/wannier90
 
-EXECUTABLES=	bin/fleur \
+EXECUTABLES=	bin/fleur${SUFFIX} \
 		bin/inpgen
 PLIST_FILES=	${EXECUTABLES}
+
+CONFLICTS_BUILD=	libxc # see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/690
 
 post-install: # strip
 	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} ${EXECUTABLES}
 
-do-test: # 9 testcases are known to fail, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/671
-	@cd ${TEST_WRKSRC} && ctest
+do-test:
+	# now: some tests fail or freeze, possibly because of missing hdf5 and kplib dependencies
+	# was: 9 testcases are known to fail, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/671
+	@cd ${WRKSRC}/tests && pytest ../tests --build_dir=${TEST_WRKSRC}
 
 .include <bsd.port.mk>
