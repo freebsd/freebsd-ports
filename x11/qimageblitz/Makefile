@@ -11,6 +11,8 @@ COMMENT=	Graphical effects and filters library for Qt5
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+FETCH_DEPENDS=	svn:devel/subversion
+
 USES=		cmake compiler:c++11-lang qt:5
 USE_LDCONFIG=	yes
 USE_QT=		core gui widgets qmake_build buildtools_build
@@ -23,7 +25,7 @@ do-fetch:
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}" ]; then \
 	  ${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
 	  cd ${DISTDIR}/${DIST_SUBDIR} && \
-	    svnlite co -r ${SVN_REVISION} ${SVN_URL} ${PORTNAME}-${DISTVERSIONFULL} && \
+	    svn co -r ${SVN_REVISION} ${SVN_URL} ${PORTNAME}-${DISTVERSIONFULL} && \
 	    (cd ${PORTNAME}-${DISTVERSIONFULL} && ${RM} -r .svn) && \
 	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
 	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -print0 | LC_ALL=C ${SORT} -z | \
