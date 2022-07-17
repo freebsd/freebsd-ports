@@ -1,0 +1,11 @@
+--- python/chemicalfun/CMakeLists.txt.orig	2022-07-17 18:29:23 UTC
++++ python/chemicalfun/CMakeLists.txt
+@@ -43,7 +43,7 @@ install(CODE
+     endif()
+ 
+     execute_process(
+-        COMMAND ${PYTHON_EXECUTABLE} ${SETUP_PY} install --prefix=\${CHEMICALFUN_PYTHON_INSTALL_PREFIX_NATIVE}
++        COMMAND ${PYTHON_EXECUTABLE} ${SETUP_PY} install --root=${FREEBSD_STAGEDIR} --prefix=\${CHEMICALFUN_PYTHON_INSTALL_PREFIX_NATIVE}
+         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+ "
+ )
