@@ -1,7 +1,7 @@
 PORTNAME=	1password-client2
 DISTVERSION=	2.5.1
 CATEGORIES=	security
-MASTER_SITES=	https://cache.agilebits.com/dist/1P/op2/pkg/v${DISTVERSION}/ 
+MASTER_SITES=	https://cache.agilebits.com/dist/1P/op2/pkg/v${DISTVERSION}/
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	1Password CLI client
@@ -13,11 +13,12 @@ USES=		zip
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/op
-CONFLICTS_INSTALL=	security/op security/1password-client
+PLIST_FILES=		bin/op
+CONFLICTS_INSTALL=	security/1password-client security/op
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/op ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/op \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.pre.mk>
 
@@ -32,10 +33,10 @@ DISTNAME=	op_freebsd_386_v${DISTVERSION}
 .endif
 
 .if ${.TARGETS} == "makesum"
-DISTFILES=	op_freebsd_amd64_v${DISTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	op_freebsd_386_v${DISTVERSION}${EXTRACT_SUFX} \
+		op_freebsd_amd64_v${DISTVERSION}${EXTRACT_SUFX} \
 		op_freebsd_arm64_v${DISTVERSION}${EXTRACT_SUFX} \
-		op_freebsd_arm_v${DISTVERSION}${EXTRACT_SUFX} \
-		op_freebsd_386_v${DISTVERSION}${EXTRACT_SUFX}
+		op_freebsd_arm_v${DISTVERSION}${EXTRACT_SUFX}
 .endif
 
 .include <bsd.port.post.mk>
