@@ -1,0 +1,11 @@
+--- python/thermofun/CMakeLists.txt.orig	2022-07-17 19:24:14 UTC
++++ python/thermofun/CMakeLists.txt
+@@ -43,7 +43,7 @@ install(CODE
+     endif()
+ 
+     execute_process(
+-        COMMAND ${PYTHON_EXECUTABLE} ${SETUP_PY} install --prefix=\${THERMOFUN_PYTHON_INSTALL_PREFIX_NATIVE}
++        COMMAND ${PYTHON_EXECUTABLE} ${SETUP_PY} install --root=${FREEBSD_STAGEDIR} --prefix=\${THERMOFUN_PYTHON_INSTALL_PREFIX_NATIVE}
+         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+ "
+ )
