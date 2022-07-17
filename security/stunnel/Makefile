@@ -1,7 +1,7 @@
 # Created by: Martti Kuparinen <martti.kuparinen@ericsson.com>
 
 PORTNAME=	stunnel
-DISTVERSION=	5.63
+DISTVERSION=	5.65
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.stunnel.org/downloads/archive/5.x/ \
