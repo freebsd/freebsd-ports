@@ -31,6 +31,12 @@ PLIST_FILES+=	share/icons/hicolor/${SZ}x${SZ}/apps/pgAdmin3.png
 .endfor
 PORTDATA=	*
 
+.include <bsd.port.pre.mk>
+
+.if ${PGSQL_VER}>=13
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-pg13
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/wx-config,/${WX_CONFIG:T},' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,wxrc ,${WXRC_CMD:T} ,' ${WRKSRC}/pgadmin/ui/embed-xrc
@@ -50,4 +56,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/pgadmin/include/images/pgAdmin3-${SZ}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/${SZ}x${SZ}/apps/pgAdmin3.png
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
