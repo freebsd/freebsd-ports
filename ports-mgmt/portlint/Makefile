@@ -1,7 +1,7 @@
 # Created by: Jun-ichiro itojun Hagino <itojun@itojun.org>
 
 PORTNAME=	portlint
-PORTVERSION=	2.19.11
+PORTVERSION=	2.19.12
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
