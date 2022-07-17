@@ -1,5 +1,6 @@
 PORTNAME=	gmic
 DISTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://gmic.eu/files/source/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -9,7 +10,7 @@ COMMENT=	Framework for image processing
 
 LICENSE=	CeCILL
 LICENSE_NAME=	CeCILL
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/../COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_i386=	error: "c++ crashes, clang-5 and 6 fail: undefined reference to `__atomic_load'"
@@ -30,9 +31,11 @@ USE_XORG=	x11 xau xcb xdmcp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAKE_JOBS_UNSAFE=	yes
+WRKSRC_SUBDIR=	src # because of makefile issues, see https://github.com/dtschump/gmic/issues/405
 
-ALL_TARGET=	lib
+MAKE_JOBS_UNSAFE=	yes # see https://github.com/dtschump/gmic/issues/406
+
+ALL_TARGET=	lib cli # cli is bundled here until https://github.com/dtschump/gmic/issues/407 is fixed, afvter which is would be moved to gmic-cli
 
 PORTSCOUT=	limit:[0-9]\..* # not v.220 and similar
 

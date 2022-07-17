@@ -1,8 +1,0 @@
---- Makefile.orig	2022-05-16 23:01:27 UTC
-+++ Makefile
-@@ -76,4 +76,4 @@
- all: all
- 
- %:
--	cd src && make $*
-+	cd src && $(MAKE) $*
