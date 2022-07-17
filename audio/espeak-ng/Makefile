@@ -2,7 +2,7 @@
 
 PORTNAME=	espeak-ng
 PORTVERSION=	1.51.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 #MASTER_SITES=	https://github.com/espeak-ng/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pcaudiolib
 
-CONFLICTS_INSTALL=	speak
+CONFLICTS_INSTALL=	espeak speak
 
 OPTIONS_DEFINE=	DOCS
 
