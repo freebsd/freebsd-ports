@@ -1,7 +1,7 @@
 # Created by: ijliao
 
 PORTNAME=	gsasl
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	security
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	lib
