@@ -1,14 +1,8 @@
 PORTNAME=	irssi
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 PORTEPOCH=	2
 CATEGORIES?=	irc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/ailin-nemui/${PORTNAME}/commit/
-PATCHFILES=	3404d822c83546b031d47a99e37ae65b887bec94.patch:-p1 \
-		c6a7f02042f63d01a38e8d522cff8f5d951afd51.patch:-p1 \
-		730c3c1a12f782b92d710883f52a106e37f148e4.patch:-p1 \
-		1b6b92ffff6950ee28c1b7936f53d83988843ed4.patch:-p1
 
 MAINTAINER=	dor.bsd@xm0.uk
 COMMENT=	Modular IRC client with many features
