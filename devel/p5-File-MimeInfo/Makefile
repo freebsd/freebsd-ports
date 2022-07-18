@@ -1,7 +1,7 @@
 # Created by: Rong-En Fan <rafan@infor.org>
 
 PORTNAME=	File-MimeInfo
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
