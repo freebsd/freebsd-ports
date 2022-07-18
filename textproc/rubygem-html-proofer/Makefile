@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 
 PORTNAME=	html-proofer
-PORTVERSION=	3.19.4
+PORTVERSION=	4.0.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,8 @@ RUN_DEPENDS=	rubygem-addressable>=2.3<3:www/rubygem-addressable \
 		rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
 		rubygem-rainbow>=3.0<4:devel/rubygem-rainbow \
 		rubygem-typhoeus>=1.3<2:www/rubygem-typhoeus \
-		rubygem-yell>=2.0<3:sysutils/rubygem-yell
+		rubygem-yell>=2.0<3:sysutils/rubygem-yell \
+		rubygem-zeitwerk>=2.5<3:devel/rubygem-zeitwerk
 
 USES=		gem
 USE_RUBY=	yes
