@@ -16,52 +16,68 @@ COMMENT=	Oracle Berkeley DB, Release ${BDBVER}
 LICENSE=	AGPLv3 BSD3CLAUSE UPL10
 LICENSE_COMB=	multi
 LICENSE_NAME_UPL10=	The Universal Permissive License (UPL), Version 1.0
-LICENSE_FILE=	${WRKSRC}/../LICENSE
 LICENSE_FILE_UPL10=	${WRKSRC}/../EXAMPLES-LICENSE
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 LICENSE_PERMS_UPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_mips64=	no usable MUTEX implementation, assy works only for MIPS32, POSIX mutexes are unshared
 
-BDBVER=		${PORTVERSION:R}
-BDBMAJ=		${BDBVER:R}
-CONFIGURE_ARGS=	--enable-cxx --enable-stl --enable-dbm \
-		--enable-compat185 --enable-dump185 \
-		--includedir=${PREFIX}/include/${PORTNAME} \
-		--libdir=${PREFIX}/lib/${PORTNAME} \
-		--bindir=${PREFIX}/bin/${PORTNAME}
-CONFIGURE_SCRIPT=	../dist/configure
-GNU_CONFIGURE=	yes
 USES=		gmake libtool ssl
-INSTALL_TARGET=	install_include install_lib install_utilities
-WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 USE_LDCONFIG=	yes
-PLIST_SUB=	BDBMAJ=${BDBMAJ} BDBVER=${BDBVER}
-MAKE_ARGS+=	docdir=${DOCSDIR}
 
-OPTIONS_DEFINE=	CRYPTO DEBUG L10N JAVA TCL DOCS
-OPTIONS_DEFAULT=CRYPTO
-OPTIONS_SUB=	yes
+GNU_CONFIGURE=		yes
+CONFIGURE_SCRIPT=	../dist/configure
+CONFIGURE_ARGS=		--bindir=${PREFIX}/bin/${PORTNAME} \
+			--enable-compat185 \
+			--enable-cxx \
+			--enable-dbm \
+			--enable-dump185 \
+			--enable-stl \
+			--includedir=${PREFIX}/include/${PORTNAME} \
+			--libdir=${PREFIX}/lib/${PORTNAME}
+
+MAKE_ARGS+=	docdir=${DOCSDIR}
+INSTALL_TARGET=	install_include install_lib install_utilities
+
+CFLAGS+=	-I${OPENSSLINC}
+CPPFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
+
+PLIST_SUB=	BDBMAJ=${BDBMAJ} \
+		BDBVER=${BDBVER}
+PORTDOCS=	*
+
+OPTIONS_DEFINE=		CRYPTO DEBUG DOCS JAVA L10N TCL
+OPTIONS_DEFAULT=	CRYPTO
+OPTIONS_SUB=		yes
+
 CRYPTO_DESC=	Cryptography support
 L10N_DESC=	Localization support (EXPERIMENTAL)
 
-PORTDOCS=	*
-
-DBLIBS=	libdb libdb_cxx libdb_stl
-
-DEBUG_CONFIGURE_ENABLE=	debug umrw
 CRYPTO_CONFIGURE_WITH=	cryptography=yes
-L10N_CONFIGURE_ENABLE=	localization
-JAVA_USE=		java
-JAVA_VARS=		DBLIBS+=libdb_java JAVA_VERSION="7+"
-JAVA_CONFIGURE_ENABLE=	java
-JAVA_CPPFLAGS=		-I"${JAVA_HOME}/include"
-JAVA_CONFIGURE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}" JAVA="${JAVA}"
-TCL_CONFIGURE_ENABLE=	tcl
-TCL_USES=		tcl
-TCL_CONFIGURE_WITH=	tcl=${TCL_LIBDIR}
-TCL_VARS=		DBLIBS+=libdb_tcl 
+DEBUG_CONFIGURE_ENABLE=	debug umrw
 DOCS_INSTALL_TARGET=	install_docs
+JAVA_USE=		java
+JAVA_CONFIGURE_ENABLE=	java
+JAVA_CONFIGURE_ENV=	JAR="${JAR}" \
+			JAVA="${JAVA}" \
+			JAVAC="${JAVAC}"
+JAVA_CPPFLAGS=		-I"${JAVA_HOME}/include"
+JAVA_VARS=		DBLIBS+=libdb_java \
+			JAVA_VERSION="7+"
+L10N_CONFIGURE_ENABLE=	localization
+TCL_USES=		tcl
+TCL_CONFIGURE_ENABLE=	tcl
+TCL_CONFIGURE_WITH=	tcl=${TCL_LIBDIR}
+TCL_VARS=		DBLIBS+=libdb_tcl
+
+BDBVER=		${PORTVERSION:R}
+BDBMAJ=		${BDBVER:R}
+
+DBLIBS=		libdb libdb_cxx libdb_stl
 
 .include <bsd.port.options.mk>
 
