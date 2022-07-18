@@ -1,16 +1,3 @@
-include/genht/hash.h
-include/genht/ht.c
-include/genht/ht.h
-include/genht/ht_inlines.h
-include/genht/ht_utils.h
-include/genht/htip.h
-include/genht/htpi.h
-include/genht/htpp.h
-include/genht/htsi.h
-include/genht/htsp.h
-include/genht/htss.h
-include/genht/siphash24.h
-include/genht/version.h
 include/libfungw/fungw.h
 include/libfungw/fungw_conv.h
 include/libfungw/scconfig_hooks.h
@@ -50,10 +37,6 @@ lib/libfungw_fawk.so.1.2.1
 %%TCL%%lib/libfungw_tcl.so.1
 %%TCL%%lib/libfungw_tcl.so.1.2
 %%TCL%%lib/libfungw_tcl.so.1.2.1
-lib/libgenht.a
-lib/libgenht.so
-lib/libgenht.so.1
-lib/libgenht.so.1.1.2
 lib/puplug/fungw_c.a
 lib/puplug/fungw_c.mak
 lib/puplug/fungw_c.pup
