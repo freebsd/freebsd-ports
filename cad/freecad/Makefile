@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	0.20
-PORTREVISION=	1
+PORTREVISION=	2
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -30,7 +30,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libmed.so:french/med \
 		libmpi.so:net/mpich \
 		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
-		libhdf5.so:science/hdf5
+		libhdf5-110.so:science/hdf5-110
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
@@ -58,6 +58,11 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DPYTHON_PACKAGES_PATH="${PYTHON_SITELIBDIR}" \
 		-DPYTHON_EXECUTABLE="${PYTHON_CMD}" \
 		-DBUILD_ASSEMBLY="OFF" -DBUILD_FLAT_MESH="ON" \
+		-DHDF5_CFLAGS="-I${LOCALBASE}/include/hdf5-110" \
+		-DHDF5_FOUND=TRUE \
+		-DHDF5_INCLUDE_DIRS="${LOCALBASE}/include/hdf5-110" \
+		-DHDF5_LIBRARIES="-L${LOCALBASE}/lib -lhdf5-110" \
+		-DHDF5_LIBRARY_DIRS="${LOCALBASE}/lib" \
 		-DPYSIDE2RCCBINARY="${RCC}" \
 		-DPYSIDE2UICBINARY="${UIC}" \
 		-DBUILD_ENABLE_CXX_STD=C++17
