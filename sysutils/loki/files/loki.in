@@ -51,9 +51,6 @@ command_args="-p ${pidfile} -t ${name} -o ${loki_logfile} \
 
 start_precmd="loki_start_precmd"
 
-# required for Go runtime 1.18
-export ASSUME_NO_MOVING_GC_UNSAFE_RISK_IT_WITH=go1.18
-
 loki_start_precmd()
 {
 	if [ ! -d "/var/run/${name}" ]; then

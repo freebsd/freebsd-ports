@@ -1,4 +1,7 @@
 bin/loki
+bin/loki-canary
+bin/logcli
+bin/promtail
 @sample etc/loki.yaml.sample
 @owner %%LOKI_USER%%
 @group %%LOKI_GROUP%%

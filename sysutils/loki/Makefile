@@ -1,7 +1,6 @@
 PORTNAME=	loki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
-PORTREVISION=	2
+DISTVERSION=	2.6.0
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	grafana-
 
@@ -11,7 +10,7 @@ COMMENT=	Scalable, highly-available, multi-tenant log aggregation system
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 armv7 armv6 amd64 i386
 USES=		go:modules cpe
 USE_GITHUB=	yes
 
@@ -50,6 +49,7 @@ GH_TUPLE=	\
 		armon:go-metrics:v0.3.9:armon_go_metrics/vendor/github.com/armon/go-metrics \
 		asaskevich:govalidator:7a23bdc65eef:asaskevich_govalidator/vendor/github.com/asaskevich/govalidator \
 		aws:aws-sdk-go:v1.43.10:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		baidubce:bce-sdk-go:v0.9.81:baidubce_bce_sdk_go/vendor/github.com/baidubce/bce-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bmatcuk:doublestar:v1.2.2:bmatcuk_doublestar/vendor/github.com/bmatcuk/doublestar \
 		buger:jsonparser:v1.1.1:buger_jsonparser/vendor/github.com/buger/jsonparser \
@@ -115,11 +115,11 @@ GH_TUPLE=	\
 		go-redis:redis:v8.11.4:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
 		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
 		go-tomb:tomb:dd632973f1e7:go_tomb_tomb/vendor/gopkg.in/tomb.v1 \
-		go-yaml:yaml:496545a6307b:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-zookeeper:zk:v1.0.2:go_zookeeper_zk/vendor/github.com/go-zookeeper/zk \
-		go4org:go4:d4a079459e60:go4org_go4_1/vendor/go4.org/unsafe/assume-no-moving-gc \
 		go4org:go4:d4a079459e60:go4org_go4/vendor/go4.org/intern \
+		go4org:go4:d4a079459e60:go4org_go4_1/vendor/go4.org/unsafe/assume-no-moving-gc \
 		gofrs:flock:v0.7.1:gofrs_flock/vendor/github.com/gofrs/flock \
 		gogo:googleapis:v1.4.0:gogo_googleapis/vendor/github.com/gogo/googleapis \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
@@ -149,7 +149,7 @@ GH_TUPLE=	\
 		google:renameio:v2.0.0:google_renameio_v2/vendor/github.com/google/renameio/v2 \
 		google:uuid:v1.2.0:google_uuid/vendor/github.com/google/uuid \
 		googleapis:gax-go:v2.1.1:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
-		googleapis:gnostic:v0.4.1:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
+		googleapis:gnostic:v0.5.5:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
 		googleapis:google-api-go-client:v0.70.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:bigtable/v1.3.0:googleapis_google_cloud_go_bigtable \
 		googleapis:google-cloud-go:compute/v1.3.0:googleapis_google_cloud_go_compute \
@@ -161,11 +161,12 @@ GH_TUPLE=	\
 		gophercloud:gophercloud:v0.24.0:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		grafana:dskit:19921f863583:grafana_dskit/vendor/github.com/grafana/dskit \
-		grafana:go-gelf:126646b86de8:grafana_go_gelf/vendor/gopkg.in/Graylog2/go-gelf.v2 \
+		grafana:dskit:49faf69f72ca:grafana_dskit/vendor/github.com/grafana/dskit \
+		grafana:go-gelf:v2.0.1:grafana_go_gelf_v2/vendor/github.com/grafana/go-gelf/v2 \
 		grafana:gocql:ba5dc39ece85:grafana_gocql/vendor/github.com/gocql/gocql \
+		grafana:memberlist:6b97a09b7167:grafana_memberlist/vendor/github.com/hashicorp/memberlist \
 		grafana:regexp:149c8afcd6cb:grafana_regexp/vendor/github.com/grafana/regexp \
-		grafana:tail:7aa4e4a91f03:grafana_tail/vendor/github.com/hpcloud/tail \
+		grafana:tail:98e8eb28ea4c:grafana_tail/vendor/github.com/hpcloud/tail \
 		grpc-ecosystem:go-grpc-middleware:9f6bf00c00a7:grpc_ecosystem_go_grpc_middleware_v2/vendor/github.com/grpc-ecosystem/go-grpc-middleware/v2 \
 		grpc-ecosystem:go-grpc-middleware:v1.3.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:grpc-opentracing:8e809c8a8645:grpc_ecosystem_grpc_opentracing/vendor/github.com/grpc-ecosystem/grpc-opentracing \
@@ -183,11 +184,10 @@ GH_TUPLE=	\
 		hashicorp:go-sockaddr:v1.0.2:hashicorp_go_sockaddr/vendor/github.com/hashicorp/go-sockaddr \
 		hashicorp:go-uuid:v1.0.2:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
-		hashicorp:memberlist:v0.3.0:hashicorp_memberlist/vendor/github.com/hashicorp/memberlist \
 		hashicorp:serf:v0.9.6:hashicorp_serf/vendor/github.com/hashicorp/serf \
 		huandu:xstrings:v1.3.1:huandu_xstrings/vendor/github.com/huandu/xstrings \
 		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
-		inetaf:netaddr:70468d781e6c:inetaf_netaddr/vendor/inet.af/netaddr \
+		inetaf:netaddr:c74959edd3b6:inetaf_netaddr/vendor/inet.af/netaddr \
 		influxdata:go-syslog:a1889d947b48:influxdata_go_syslog_v3/vendor/github.com/influxdata/go-syslog/v3 \
 		influxdata:telegraf:v1.16.3:influxdata_telegraf/vendor/github.com/influxdata/telegraf \
 		jcmturner:aescts:v2.0.0:jcmturner_aescts_v2/vendor/github.com/jcmturner/aescts \
@@ -204,14 +204,16 @@ GH_TUPLE=	\
 		klauspost:compress:v1.14.1:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.3.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		klauspost:pgzip:v1.2.5:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
-		kubernetes-sigs:structured-merge-diff:v4.1.0:kubernetes_sigs_structured_merge_diff/vendor/sigs.k8s.io/structured-merge-diff/v4 \
+		kubernetes-sigs:json:c049b76a60c6:kubernetes_sigs_json/vendor/sigs.k8s.io/json \
+		kubernetes-sigs:structured-merge-diff:v4.2.1:kubernetes_sigs_structured_merge_diff/vendor/sigs.k8s.io/structured-merge-diff/v4 \
 		kubernetes-sigs:yaml:v1.2.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
-		kubernetes:api:v0.21.0:kubernetes_api/vendor/k8s.io/api \
-		kubernetes:apimachinery:v0.21.0:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
-		kubernetes:client-go:v0.21.0:kubernetes_client_go/vendor/k8s.io/client-go \
+		kubernetes:api:v0.23.6:kubernetes_api/vendor/k8s.io/api \
+		kubernetes:apimachinery:v0.23.6:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
+		kubernetes:client-go:v0.23.6:kubernetes_client_go/vendor/k8s.io/client-go \
 		kubernetes:klog:v1.0.0:kubernetes_klog/vendor/k8s.io/klog \
 		kubernetes:klog:v2.40.1:kubernetes_klog_1/vendor/k8s.io/klog/v2 \
-		kubernetes:utils:67b214c5f920:kubernetes_utils/vendor/k8s.io/utils \
+		kubernetes:kube-openapi:e816edb12b65:kubernetes_kube_openapi/vendor/k8s.io/kube-openapi \
+		kubernetes:utils:6203023598ed:kubernetes_utils/vendor/k8s.io/utils \
 		leodido:ragel-machinery:299bdde78165:leodido_ragel_machinery/vendor/github.com/leodido/ragel-machinery \
 		mailru:easyjson:v0.7.6:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		mattn:go-colorable:v0.1.9:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
@@ -220,7 +222,7 @@ GH_TUPLE=	\
 		matttproud:golang_protobuf_extensions:c182affec369:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		miekg:dns:v1.1.46:miekg_dns/vendor/github.com/miekg/dns \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:v7.0.10:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio-go:v7.0.24:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		mitchellh:copystructure:v1.0.0:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
@@ -269,11 +271,12 @@ GH_TUPLE=	\
 		shurcooL:vfsgen:0d455de96546:shurcool_vfsgen/vendor/github.com/shurcooL/vfsgen \
 		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		sony:gobreaker:v0.4.1:sony_gobreaker/vendor/github.com/sony/gobreaker \
+		spaolacci:murmur3:f09979ecbc72:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
 		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.7.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		thanos-io:thanos:c5505f5eaa7d:thanos_io_thanos/vendor/github.com/thanos-io/thanos \
 		themihai:gomemcache:24332e2d58ab:themihai_gomemcache/vendor/github.com/bradfitz/gomemcache \
 		tonistiigi:fifo:a9fb20d87448:tonistiigi_fifo/vendor/github.com/tonistiigi/fifo \
@@ -286,6 +289,8 @@ GH_TUPLE=	\
 		ugorji:go:v1.1.7:ugorji_go_codec/vendor/github.com/ugorji/go \
 		weaveworks:common:ebe5bdc2c89e:weaveworks_common/vendor/github.com/weaveworks/common \
 		weaveworks:promrus:v1.2.0:weaveworks_promrus/vendor/github.com/weaveworks/promrus \
+		willf:bitset:v1.1.11:willf_bitset/vendor/github.com/willf/bitset \
+		willf:bloom:v2.0.3:willf_bloom/vendor/github.com/willf/bloom \
 		xdg-go:pbkdf2:v1.0.0:xdg_go_pbkdf2/vendor/github.com/xdg-go/pbkdf2 \
 		xdg-go:scram:v1.0.2:xdg_go_scram/vendor/github.com/xdg-go/scram \
 		xdg-go:stringprep:v1.0.2:xdg_go_stringprep/vendor/github.com/xdg-go/stringprep \
@@ -293,7 +298,7 @@ GH_TUPLE=	\
 
 USE_RC_SUBR=	loki
 
-GO_TARGET=	./cmd/loki
+GO_TARGET=	./cmd/loki ./cmd/loki-canary ./cmd/logcli ./clients/cmd/promtail
 
 SUB_LIST=	LOKI_USER=${LOKI_USER} \
 		LOKI_GROUP=${LOKI_GROUP} \
