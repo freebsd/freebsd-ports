@@ -1,8 +1,7 @@
 # Created by: jpaetzel@FreeBSD.org
 
 PORTNAME=	catfish
-PORTVERSION=	4.16.3
-PORTREVISION=	4
+PORTVERSION=	4.16.4
 CATEGORIES=	sysutils
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
