@@ -1,0 +1,10 @@
+ckanapi is a command line interface and Python module for accessing the CKAN
+Action API.
+
+The ckanapi command line interface lets you access local and remote CKAN
+instances for bulk operations and simple API actions.
+
+The ckanapi Python module may be used from within a CKAN extension or in a
+Python 2 or Python 3 application separate from CKAN.
+
+WWW: https://github.com/ckan/ckanapi
