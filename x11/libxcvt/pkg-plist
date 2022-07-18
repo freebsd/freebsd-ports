@@ -3,6 +3,6 @@ include/libxcvt/libxcvt.h
 include/libxcvt/libxcvt_mode.h
 lib/libxcvt.so
 lib/libxcvt.so.0
-lib/libxcvt.so.0.1.1
+lib/libxcvt.so.0.1.2
 libdata/pkgconfig/libxcvt.pc
 @comment man/man1/cvt.1.gz
