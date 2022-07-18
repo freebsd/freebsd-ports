@@ -1,3 +1,3 @@
-TIMESTAMP = 1653151102
-SHA256 (keystoneauth1-4.6.0.tar.gz) = 066f1addd89114cd6a1b9cb3555c8eaa7d013673ee1034bdfe506068804a9e05
-SIZE (keystoneauth1-4.6.0.tar.gz) = 267019
+TIMESTAMP = 1658151361
+SHA256 (keystoneauth1-5.0.0.tar.gz) = 6ebb5f044c9dfd263087a328d51d479947d1ddc90c09daf4191df7dc71334323
+SIZE (keystoneauth1-5.0.0.tar.gz) = 267142
