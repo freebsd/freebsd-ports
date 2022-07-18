@@ -1,6 +1,7 @@
 PORTNAME=	libpki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	security
 
 PATCH_SITES=	https://github.com/openca/libpki/commit/
@@ -12,6 +13,8 @@ COMMENT=	OpenCA PKI library (libpki) and tools
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=	arm64
+
 USES=		autoreconf gnome libtool ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	openca
@@ -20,17 +23,38 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
-		--disable-dns \
-		--disable-iphone \
-		--disable-ldap \
-		--disable-mysql \
-		--disable-pg
+		--disable-iphone
+
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DNS LDAP MYSQL PGSQL
+
+DNS_DESC=	"Enable DNS support"
+LDAP_DESC=	"Enable LDAP support"
+MYSQL_DESC=	"Enable MySQL support"
+PGSQL_DESC=	"Enable PostgreSQL support"
+
+DNS_CONFIGURE_ENABLE=	dns
+LDAP_LIB_DEPENDS=	liblber.so:net/openldap24-client \
+			libldap_r.so:net/openldap24-client
+LDAP_CONFIGURE_ENABLE=	ldap
+LDAP_LDFLAGS+=		-llber
+MYSQL_USES=		mysql
+MYSQL_CONFIGURE_ENABLE=	mysql
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_ENABLE=	pg
+
 post-stage:
-	${MV} ${STAGEDIR}${PREFIX}/etc/pki.conf ${STAGEDIR}${PREFIX}/etc/pki.conf.sample; \
-	for f in $$(find ${STAGEDIR}${PREFIX}/etc/libpki -type f); do \
-		${MV} $$f $$f.sample; \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/libpki/etc; \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/libpki/etc/libpki; \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/libpki/etc/libpki/hsm.d; \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/libpki/etc/libpki/profile.d; \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/libpki/etc/libpki/store.d; \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/libpki/etc/libpki/token.d; \
+	${MV} ${STAGEDIR}${PREFIX}/etc/pki.conf ${STAGEDIR}${PREFIX}/share/libpki/etc/pki.conf.sample; \
+	cd ${STAGEDIR}${PREFIX}/etc/libpki; \
+	for f in $$(find * -type f); do \
+		${MV} ${STAGEDIR}${PREFIX}/etc/libpki/$$f ${STAGEDIR}${PREFIX}/share/libpki/etc/libpki/$$f.sample; \
 	done; \
 	${RM} -rf ${STAGEDIR}${PREFIX}/include/internal
 
