@@ -1,7 +1,7 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 
 PORTNAME=	redis
-DISTVERSION=	7.0.2
+DISTVERSION=	7.0.4
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 
