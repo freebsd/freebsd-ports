@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2016 - 2019 Rozhuk Ivan <rozhuk.im@gmail.com>
+ * Copyright (c) 2016 - 2021 Rozhuk Ivan <rozhuk.im@gmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -130,13 +130,18 @@ typedef struct kq_file_mon_msg_pkt_s {
 #define KF_MSG_PKT_MAGIC	0xffddaa00
 
 
+#ifdef O_PATH
+#	define OPEN_MODE_FLAG	O_PATH
+#elif defined(O_EVTONLY)
+#	define OPEN_MODE_FLAG	O_EVTONLY
+#else
+#	define OPEN_MODE_FLAG	O_RDONLY
+#endif
 #ifndef O_NOATIME
 #	define O_NOATIME	0
 #endif
-#ifndef O_EVTONLY
-#	define O_EVTONLY	O_RDONLY
-#endif
-#define OPEN_FILE_FLAGS		(O_EVTONLY | O_NONBLOCK | O_NOFOLLOW | O_NOATIME | O_CLOEXEC)
+#define OPEN_FILE_MON_FLAGS	(O_NONBLOCK | O_NOFOLLOW | O_NOATIME | O_CLOEXEC | OPEN_MODE_FLAG)
+#define OPEN_FILE_READ_FLAGS	(O_NONBLOCK | O_NOFOLLOW | O_NOATIME | O_CLOEXEC | O_RDONLY)
 
 #ifndef NOTE_CLOSE_WRITE
 #	define NOTE_CLOSE_WRITE	0
@@ -273,47 +278,64 @@ mounts_find_name(struct statfs *mounts, size_t mounts_count,
 }
 
 
-static int
-readdir_start(int fd, struct stat *sb, size_t exp_count, readdir_ctx_p rdd) {
-	size_t buf_size;
+static void
+readdir_free(readdir_ctx_p rdd) {
 
-	if (-1 == fd || NULL == sb || NULL == rdd)
+	if (NULL == rdd)
+		return;
+
+	if (-1 != rdd->fd) {
+		close(rdd->fd);
+		rdd->fd = -1;
+	}
+	if (NULL != rdd->buf) {
+		free(rdd->buf);
+		rdd->buf = NULL;
+	}
+}
+
+static int
+readdir_start(const int fd, struct stat *sb, const size_t exp_count,
+    readdir_ctx_p rdd) {
+	struct stat _sb;
+
+	if (-1 == fd || NULL == rdd)
 		return (EINVAL);
-	if (-1 == lseek(fd, 0, SEEK_SET))
+
+	if (NULL == sb) {
+		sb = &_sb;
+		if (0 != fstat(fd, sb))
+			return (errno);
+	}
+	/* Init. */
+	memset(rdd, 0x00, sizeof(readdir_ctx_t));
+	/* Reopen for read. */
+	rdd->fd = openat(fd, ".", (OPEN_FILE_READ_FLAGS | O_DIRECTORY));
+	if (-1 == rdd->fd)
 		return (errno);
 	/* Calculate buf size for getdents(). */
-	buf_size = MAX((size_t)sb->st_size, (exp_count * sizeof(struct dirent)));
-	if (0 == buf_size) {
-		buf_size = (16 * PAGE_SIZE);
+	rdd->buf_size = MAX((size_t)sb->st_size, (exp_count * sizeof(struct dirent)));
+	if (0 == rdd->buf_size) {
+		rdd->buf_size = (16 * PAGE_SIZE);
 	}
 	/* Make buf size well aligned. */
 	if (0 != sb->st_blksize) {
 		if (powerof2(sb->st_blksize)) {
-			buf_size = roundup2(buf_size, sb->st_blksize);
+			rdd->buf_size = roundup2(rdd->buf_size, sb->st_blksize);
 		} else {
-			buf_size = roundup(buf_size, sb->st_blksize);
+			rdd->buf_size = roundup(rdd->buf_size, sb->st_blksize);
 		}
 	} else {
-		buf_size = round_page(buf_size);
+		rdd->buf_size = round_page(rdd->buf_size);
 	}
-	/* Init. */
-	memset(rdd, 0x00, sizeof(readdir_ctx_t));
-	rdd->buf = malloc(buf_size);
-	if (NULL == rdd->buf)
+	/* Allocate buf. */
+	rdd->buf = malloc(rdd->buf_size);
+	if (NULL == rdd->buf) {
+		readdir_free(rdd);
 		return (ENOMEM);
-	rdd->buf_size = buf_size;
-	rdd->fd = fd;
+	}
 
 	return (0);
-}
-
-static void
-readdir_free(readdir_ctx_p rdd) {
-
-	if (NULL == rdd || NULL == rdd->buf)
-		return;
-	free(rdd->buf);
-	memset(rdd, 0x00, sizeof(readdir_ctx_t));
 }
 
 static int
@@ -362,7 +384,7 @@ readdir_next(readdir_ctx_p rdd, struct dirent *de) {
 		return (0); /* OK. */
 	}
 
-	/* Err or no more files. */
+	/* Err or no more files, auto cleanup. */
 	readdir_free(rdd);
 
 	return (error);
@@ -678,7 +700,7 @@ kq_fnmo_readdir(kq_fnmo_p fnmo, size_t exp_count) {
 			fnmo->files = NULL;
 			fnmo->files_count = 0;
 			fnmo->files_allocated = 0;
-			readdir_free(&rdd);
+			readdir_free(&rdd); /* Force cleanup here. */
 			return (ENOMEM);
 		}
 		de = &fnmo->files[fnmo->files_count].de; /* Use short name. */
@@ -697,14 +719,13 @@ kq_fnmo_readdir(kq_fnmo_p fnmo, size_t exp_count) {
 		fnmo->files[fnmo->files_count].fd = -1;
 		fnmo->files_count ++;
 	}
+
 	/* Mem compact. */
 	tmfi = reallocarray(fnmo->files, sizeof(file_info_t), (fnmo->files_count + 1));
 	if (NULL != tmfi) { /* realloc ok. */
 		fnmo->files = tmfi;
 		fnmo->files_allocated = (fnmo->files_count + 1);
 	}
-
-	readdir_free(&rdd);
 
 	return (0); /* OK. */
 }
@@ -716,13 +737,25 @@ kq_fnmo_fi_start(kq_fnmo_p fnmo, file_info_p fi) {
 
 	if (NULL == fnmo || -1 == fnmo->fd || NULL == fi)
 		return;
-	fi->fd = openat(fnmo->fd, fi->de.d_name, OPEN_FILE_FLAGS);
+	/* Filter files that can not be monitored, redice openat() calls. */
+	switch (fi->de.d_type) {
+	case DT_FIFO:
+	case DT_SOCK:
+#ifdef DT_WHT
+	case DT_WHT:
+#endif
+		return;
+	}
+	fi->fd = openat(fnmo->fd, fi->de.d_name, OPEN_FILE_MON_FLAGS);
 	if (-1 == fi->fd)
 		return;
 	EV_SET(&kev, fi->fd, EVFILT_VNODE,
 	    (EV_ADD | EV_CLEAR),
 	    EVFILT_VNODE_SUB_FLAGS, 0, fnmo);
-	kevent(fnmo->kfnm->fd, &kev, 1, NULL, 0, NULL);
+	if (-1 == kevent(fnmo->kfnm->fd, &kev, 1, NULL, 0, NULL)) {
+		close(fi->fd);
+		fi->fd = -1;
+	}
 }
 
 static int
@@ -757,7 +790,7 @@ kq_fnmo_reopen_fd(kq_fnmo_p fnmo) {
 		fnmo->fd = -1;
 	}
 
-	fd = open(fnmo->path, OPEN_FILE_FLAGS);
+	fd = open(fnmo->path, (OPEN_FILE_MON_FLAGS | O_DIRECTORY));
 	if (-1 == fd)
 		return (errno);
 	if (0 != fstat(fd, &fnmo->sb)) {
@@ -1021,16 +1054,12 @@ notify_removed:
 	/* Get parent folder name. */
 	fnmo->path[fnmo->name_offset] = 0;
 	/* Try to open. */
-	up_dir_fd = open(fnmo->path, (OPEN_FILE_FLAGS | O_DIRECTORY));
+	up_dir_fd = open(fnmo->path, (OPEN_FILE_MON_FLAGS | O_DIRECTORY));
 	/* Restore '/' after parent folder. */
 	fnmo->path[fnmo->name_offset] = '/';
 	if (-1 == up_dir_fd)
 		goto notify_removed_errno;
-	if (0 != fstat(up_dir_fd, &sb)) {
-		close(up_dir_fd);
-		goto notify_removed_errno;
-	}
-	error = readdir_start(up_dir_fd, &sb, 0, &rdd);
+	error = readdir_start(up_dir_fd, NULL, 0, &rdd);
 	if (0 != error) {
 		close(up_dir_fd);
 		goto notify_removed;
@@ -1039,6 +1068,7 @@ notify_removed:
 	while (0 == readdir_next(&rdd, &de)) {
 		if (0 == fstatat(up_dir_fd, de.d_name, &sb, AT_SYMLINK_NOFOLLOW) &&
 		    0 == memcmp(&fnmo->sb, &sb, sizeof(struct stat))) {
+			readdir_free(&rdd); /* Force cleanup here. */
 			found ++;
 			break;
 		}
