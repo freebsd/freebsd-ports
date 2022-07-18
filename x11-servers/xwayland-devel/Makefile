@@ -2,6 +2,7 @@ PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
 DISTVERSION=	21.0.99.1-256
 DISTVERSIONSUFFIX=	-g6907b6ea2
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
@@ -40,6 +41,7 @@ MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxvfb=false \
 		-Dudev=false \
 		-Dudev_kms=false \
+		-Dxcsecurity=true \
 		-Ddefault_font_path="${DEFAULT_FONTPATH_LIST:ts,}"
 PLIST_FILES=	bin/Xwayland \
 		"@comment lib/xorg/protocol.txt" \
