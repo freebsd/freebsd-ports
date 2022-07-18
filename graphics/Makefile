@@ -118,6 +118,7 @@
     SUBDIR += curtail
     SUBDIR += cuttlefish
     SUBDIR += darktable
+    SUBDIR += darktable40
     SUBDIR += dataplot
     SUBDIR += dbow2
     SUBDIR += dc20pack
