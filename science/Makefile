@@ -110,6 +110,7 @@
     SUBDIR += harminv
     SUBDIR += hdf
     SUBDIR += hdf5
+    SUBDIR += hdf5-110
     SUBDIR += hdf5-18
     SUBDIR += healpix
     SUBDIR += helfem
