@@ -1,7 +1,7 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 
 PORTNAME=	oj
-PORTVERSION=	3.13.16
+PORTVERSION=	3.13.17
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
