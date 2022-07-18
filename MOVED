@@ -17509,3 +17509,4 @@ misc/ngraph||2022-07-15|Software is discontinued because its developer Nervana S
 math/hipmcl||2022-07-16|Discontinued: old versions aren't compatible with new combblas-2.0, latest versions require CUDA that is not available on FreeBSD
 security/base-audit|ports-mgmt/pkg|2022-07-17|Merged into ports-mgmt/pkg
 net/py-pyroute2.core|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream moves back to single package layout (net/py-pyroute2)
+net/py-pyroute2.ethtool|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream moves back to single package layout (net/py-pyroute2)
