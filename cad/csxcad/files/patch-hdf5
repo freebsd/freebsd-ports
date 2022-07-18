@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2022-07-01 18:43:14 UTC
++++ CMakeLists.txt
+@@ -100,7 +100,8 @@ message(STATUS "TinyXML_LIBRARY: ${TinyXML_LIBRARY}")
+ 
+ INCLUDE_DIRECTORIES( ${TinyXML_INCLUDE_DIR} )
+ 
+-find_package(HDF5 1.8 COMPONENTS C HL REQUIRED)
++set(HDF5_INCLUDE_DIRS "${LOCALBASE}/include")
++set(HDF5_LIBRARY_DIRS "${LOCALBASE}/lib")
+ INCLUDE_DIRECTORIES (${HDF5_INCLUDE_DIRS})
+ link_directories(${HDF5_LIBRARY_DIRS})
+ # hdf5 compat
