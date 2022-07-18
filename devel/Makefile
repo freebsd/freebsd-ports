@@ -4544,6 +4544,7 @@
     SUBDIR += py-gitdb
     SUBDIR += py-gitless
     SUBDIR += py-gitpython
+    SUBDIR += py-giturlparse
     SUBDIR += py-glance-store
     SUBDIR += py-glob2
     SUBDIR += py-gobject3
