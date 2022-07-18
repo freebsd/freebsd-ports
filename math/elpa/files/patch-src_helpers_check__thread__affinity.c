@@ -1,6 +1,6 @@
 --- src/helpers/check_thread_affinity.c.orig	2021-11-16 11:26:03 UTC
 +++ src/helpers/check_thread_affinity.c
-@@ -47,11 +47,14 @@
+@@ -47,29 +47,41 @@
  //
  // Author: Andreas Marek, MPCDF
  
@@ -15,12 +15,21 @@
 +#include <sys/cpuset.h>
  #include <unistd.h>
  
++#if FREEBSD_OSVERSION >= 1301000
++#  define HAVE_SCHED_FUNCS // sched_getcpu() and sched_getaffinity() were added in 13.1
++#endif
  
-@@ -60,11 +63,11 @@ void get_thread_affinity(int *cpu_id) {
+ void get_thread_affinity(int *cpu_id) {
++#if defined(HAVE_SCHED_FUNCS)
+   *cpu_id = sched_getcpu();
++#else
++  *cpu_id = 0;
++#endif
  }
  
  void get_process_affinity(int cpu_id) {
 -  cpu_set_t set;
++#if defined(HAVE_SCHED_FUNCS)
 +  cpuset_t set;
    int ret, i;
    int cpu;
@@ -30,3 +39,9 @@
    for (i=0; i < CPU_SETSIZE; i++)
      {
        cpu = CPU_ISSET(i, &set);
+       if (cpu == 1) { cpu_id = i; }
+     }
++#endif
+ }
+ 
+ void get_process_id(int *process_id, int *pprocess_id) {

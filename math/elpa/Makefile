@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--disable-avx --disable-avx2 --disable-avx512 --disable-static \
 		--disable-c-tests
 
 CFLAGS+=	-I${WRKSRC} -I${WRKSRC}/private_modules
+CFLAGS+=	-DFREEBSD_OSVERSION=${OSVERSION}
 FCFLAGS+=	-I${WRKSRC} -I${WRKSRC}/private_modules
 LDFLAGS+=	-lutil
 
