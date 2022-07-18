@@ -1,7 +1,7 @@
 # Created by: cy@FreeBSD.org
 
 PORTNAME=	cfengine-masterfiles
-PORTVERSION=	3.18.1
+PORTVERSION=	3.18.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
 
