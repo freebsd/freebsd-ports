@@ -188,10 +188,12 @@ lib/emscripten/src/headless.js
 lib/emscripten/src/headlessCanvas.js
 lib/emscripten/src/jsifier.js
 lib/emscripten/src/library.js
+lib/emscripten/src/library_addfunction.js
 lib/emscripten/src/library_async.js
 lib/emscripten/src/library_bootstrap.js
 lib/emscripten/src/library_browser.js
 lib/emscripten/src/library_c_preprocessor.js
+lib/emscripten/src/library_ccall.js
 lib/emscripten/src/library_cyberdwarf.js
 lib/emscripten/src/library_dylink.js
 lib/emscripten/src/library_egl.js
@@ -213,6 +215,7 @@ lib/emscripten/src/library_html5_webgpu.js
 lib/emscripten/src/library_idbfs.js
 lib/emscripten/src/library_idbstore.js
 lib/emscripten/src/library_int53.js
+lib/emscripten/src/library_legacy.js
 lib/emscripten/src/library_little_endian_heap.js
 lib/emscripten/src/library_lz4.js
 lib/emscripten/src/library_math.js
@@ -254,6 +257,7 @@ lib/emscripten/src/modules.js
 lib/emscripten/src/node_shell_read.js
 lib/emscripten/src/parseTools.js
 lib/emscripten/src/parseTools_legacy.js
+lib/emscripten/src/polyfill/bigint64array.js
 lib/emscripten/src/polyfill/objassign.js
 lib/emscripten/src/polyfill/promise.js
 lib/emscripten/src/postamble.js
@@ -266,15 +270,12 @@ lib/emscripten/src/runtime.js
 lib/emscripten/src/runtime_asan.js
 lib/emscripten/src/runtime_assertions.js
 lib/emscripten/src/runtime_debug.js
-lib/emscripten/src/runtime_functions.js
 lib/emscripten/src/runtime_init_memory.js
 lib/emscripten/src/runtime_init_table.js
-lib/emscripten/src/runtime_legacy.js
 lib/emscripten/src/runtime_math.js
 lib/emscripten/src/runtime_safe_heap.js
 lib/emscripten/src/runtime_stack_check.js
 lib/emscripten/src/runtime_strings.js
-lib/emscripten/src/runtime_strings_extra.js
 lib/emscripten/src/settings.js
 lib/emscripten/src/settings_internal.js
 lib/emscripten/src/shell.html
@@ -1035,6 +1036,7 @@ lib/emscripten/system/lib/libc/compat/strlwr.c
 lib/emscripten/system/lib/libc/compat/strtol_l.c
 lib/emscripten/system/lib/libc/compat/strupr.c
 lib/emscripten/system/lib/libc/crt1.c
+lib/emscripten/system/lib/libc/crt1_proxy_main.c
 lib/emscripten/system/lib/libc/crt1_reactor.c
 lib/emscripten/system/lib/libc/dynlink.c
 lib/emscripten/system/lib/libc/emscripten_console.c
@@ -3416,11 +3418,11 @@ lib/emscripten/system/lib/libunwind/src/libunwind.cpp
 lib/emscripten/system/lib/libunwind/src/libunwind_ext.h
 lib/emscripten/system/lib/pkgconfig/egl.pc
 lib/emscripten/system/lib/pkgconfig/glesv2.pc
+lib/emscripten/system/lib/pkgconfig/glfw3.pc
 lib/emscripten/system/lib/pkgconfig/sdl.pc
 lib/emscripten/system/lib/pthread/emscripten_atomic.c
 lib/emscripten/system/lib/pthread/emscripten_futex_wait.c
 lib/emscripten/system/lib/pthread/emscripten_futex_wake.c
-lib/emscripten/system/lib/pthread/emscripten_proxy_main.c
 lib/emscripten/system/lib/pthread/emscripten_thread_init.c
 lib/emscripten/system/lib/pthread/emscripten_thread_state.S
 lib/emscripten/system/lib/pthread/emscripten_tls_init.c
@@ -3437,9 +3439,7 @@ lib/emscripten/system/lib/pthread/threading_internal.h
 lib/emscripten/system/lib/push_llvm_changes.py
 lib/emscripten/system/lib/push_musl_changes.py
 lib/emscripten/system/lib/sbrk.c
-lib/emscripten/system/lib/standalone/__main_argc_argv.c
 lib/emscripten/system/lib/standalone/__main_void.c
-lib/emscripten/system/lib/standalone/__original_main.c
 lib/emscripten/system/lib/standalone/standalone.c
 lib/emscripten/system/lib/standalone/standalone_wasm_stdio.c
 lib/emscripten/system/lib/stb_image.c
@@ -3730,6 +3730,7 @@ lib/emscripten/tools/ports/sdl2_image.py
 lib/emscripten/tools/ports/sdl2_mixer.py
 lib/emscripten/tools/ports/sdl2_net.py
 lib/emscripten/tools/ports/sdl2_ttf.py
+lib/emscripten/tools/ports/sqlite3.py
 lib/emscripten/tools/ports/vorbis.py
 lib/emscripten/tools/ports/zlib.py
 lib/emscripten/tools/preprocessor.js
