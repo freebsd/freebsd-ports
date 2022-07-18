@@ -1,7 +1,7 @@
 # Created by: Wen Heping<wenheping@gmail.com>
 
 PORTNAME=	HTTP_WebDAV_Server
-PORTVERSION=	1.0.0RC7
+PORTVERSION=	1.0.0RC8
 CATEGORIES=	www devel pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,6 +13,7 @@ USES=		pear
 
 NO_ARCH=	yes
 
-PORTSCOUT=	skipv:1.0.0RC8
+USE_GITHUB=	yes
+GH_ACCOUNT=	pear
 
 .include <bsd.port.mk>
