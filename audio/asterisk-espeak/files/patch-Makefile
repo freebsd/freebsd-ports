@@ -1,4 +1,4 @@
---- Makefile.orig	2017-01-08 00:20:52 UTC
+--- Makefile.orig	2018-08-01 16:53:07 UTC
 +++ Makefile
 @@ -6,31 +6,18 @@
  # the GNU General Public License Version 2. See the COPYING file
@@ -23,8 +23,8 @@
 -DEBUG:=-g
 +CC?=gcc
  
--LIBS+=-lespeak -lsamplerate
-+LIBS+=$(LDFLAGS) -lespeak -lsamplerate
+-LIBS+=-lespeak-ng -lsamplerate
++LIBS+=$(LDFLAGS) -lespeak-ng -lsamplerate
  CFLAGS+=-pipe -fPIC -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -D_REENTRANT -D_GNU_SOURCE -DAST_MODULE_SELF_SYM=__internal_app_espeak_self
  
  all: app_espeak.so
@@ -37,7 +37,7 @@
  
  app_espeak.o: app_espeak.c
  	$(CC) $(CFLAGS) $(DEBUG) $(OPTIMIZE) -c -o $@ $*.c
-@@ -44,20 +31,7 @@ clean:
+@@ -44,20 +31,7 @@ install: all
  install: all
  	$(INSTALL) -m 755 -d $(DESTDIR)$(MODULES_DIR)
  	$(INSTALL) -m 755 app_espeak.so $(DESTDIR)$(MODULES_DIR)

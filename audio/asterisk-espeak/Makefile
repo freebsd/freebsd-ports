@@ -1,7 +1,6 @@
 PORTNAME=	espeak
-PORTVERSION=	4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+DISTVERSION=	5.0-rc1
 CATEGORIES=	audio
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -15,9 +14,13 @@ LIB_DEPENDS=	libespeak-ng.so:audio/espeak-ng \
 FLAVORS=	asterisk18 asterisk16
 FLAVOR?=	${FLAVORS:[1]}
 
-PKGNAMEPREFIX=		${FLAVOR}-
-BUILD_DEPENDS=		asterisk:net/${FLAVOR}
-RUN_DEPENDS=		asterisk:net/${FLAVOR}
+asterisk16_PKGNAMEPREFIX=	asterisk16-
+asterisk16_BUILD_DEPENDS=	asterisk:net/asterisk16
+asterisk16_RUN_DEPENDS=		asterisk:net/asterisk16
+
+asterisk18_PKGNAMEPREFIX=       asterisk18-
+asterisk18_BUILD_DEPENDS=       asterisk:net/asterisk18
+asterisk18_RUN_DEPENDS=         asterisk:net/asterisk18
 
 USES=		compiler:c11 gmake localbase
 INSTALL_TARGET=	install samples
