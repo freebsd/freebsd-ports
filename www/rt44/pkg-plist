@@ -611,6 +611,8 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/4.4.2/schema.SQLite
 %%DOCSDIR%%/upgrade/4.4.2/schema.mysql
 %%DOCSDIR%%/upgrade/4.4.5/content
+%%DOCSDIR%%/upgrade/4.4.6/indexes
+%%DOCSDIR%%/upgrade/4.4.6/schema.Pg
 %%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%DOCSDIR%%/upgrade/reset-sequences
 %%DOCSDIR%%/upgrade/sanity-check-stylesheets
