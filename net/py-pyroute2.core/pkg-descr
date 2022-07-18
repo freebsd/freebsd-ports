@@ -1,6 +1,0 @@
-PyRoute2 is a pure Python netlink library.
-
-This is the core package, it implements the netlink parser and several netlink
-sockets, including RTNL (IPRoute), WireGuard, MPTCP etc.
-
-WWW: https://github.com/svinota/pyroute2/tree/master/pyroute2.core
