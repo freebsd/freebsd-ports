@@ -1,0 +1,5 @@
+genht is a simple generic hash table implementation in C.
+Uses open addressing scheme with space doubling.
+Type generics is achieved by ugly name prefixing macros.
+
+WWW: http://www.repo.hu/projects/genht/

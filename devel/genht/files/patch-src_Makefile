@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2022-07-17 07:03:04 UTC
++++ src/Makefile
+@@ -35,7 +35,7 @@ mainsi: mainsi.o htsi.o
+ 	$(CC) -o $@ mainsi.o htsi.o $(LDFLAGS)
+ 
+ $(LIBSO): $(OBJS)
+-	$(CC) $(LDFLAGS) -shared -dynamic -rdynamic -o $@ $(OBJS)
++	$(CC) $(LDFLAGS) -shared -dynamic -rdynamic -Wl,-soname,$(LIBSO1) -o $@ $(OBJS)
+ 
+ $(LIBA): $(OBJS)
+ 	ar rvu $@ $(OBJS)
