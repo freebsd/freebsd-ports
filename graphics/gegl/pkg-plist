@@ -163,6 +163,7 @@ share/locale/hr/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/id/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/is/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/it/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
+share/locale/ka/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/kab/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ko/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/lv/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
