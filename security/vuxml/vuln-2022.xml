@@ -1,3 +1,33 @@
+  <vuln vid="871d93f9-06aa-11ed-8d5f-080027f5fec9">
+    <topic>redis -- Potential remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><ge>7.0.0</ge><lt>7.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Redis core team reports:</p>
+	<blockquote cite="https://groups.google.com/g/redis-db/c/FWngtg3WpfA">
+	  <p>
+	    A specially crafted XAUTOCLAIM command on a stream key in
+	    a specific state may result with heap overflow, and
+	    potentially remote code execution.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31144</cvename>
+      <url>https://groups.google.com/g/redis-db/c/FWngtg3WpfA</url>
+    </references>
+    <dates>
+      <discovery>2022-07-18</discovery>
+      <entry>2022-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4f2416c-02a0-11ed-b817-10c37b4ac2ea">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
