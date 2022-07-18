@@ -1,10 +1,10 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
 
 PORTNAME=	firefox
-DISTVERSION=	102.0.1
+DISTVERSION=	103.0
 PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
+MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}${DISTVERSIONSUFFIX}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}${DISTVERSIONSUFFIX}-candidates/build1/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
@@ -12,10 +12,10 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.79:security/nss \
+		nss>=3.80:security/nss \
 		icu>=71.1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=4.1.0:print/harfbuzz \
+		harfbuzz>=4.3.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
 		png>=1.6.37:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
@@ -36,6 +36,8 @@ CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 CONFIGURE_ENV+=	BINDGEN_CFLAGS="-I${LOCALBASE}/include"
 
 USES=		tar:xz
+# helpful when testing beta
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
