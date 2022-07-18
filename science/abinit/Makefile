@@ -41,6 +41,9 @@ SHEBANG_FILES=	config/scripts/* doc/tutorial/paral_gspw_assets/abinit.sub.*
 SHEBANG_GLOB=	*.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC_LDFLAGS="${LDFLAGS}" CXX_LDFLAGS="${LDFLAGS}" FC_LDFLAGS="${LDFLAGS}"	\
+		H5CC="${LOCALBASE}/bin/h5cc" \
+		HDF5_CFLAGS="-I${LOCALBASE}/include" \
+		HDF5_LDFLAGS="-L${LOCALBASE}/lib -lhdf5" \
 		LINALG_FCFLAGS="-I${LOCALBASE}/include/elpa-2019.05.002/modules"	\
 		LINALG_LIBS="${BLASLIB}  ${LAPACKLIB} -lelpa"	\
 		NETCDF_FORTRAN_FCFLAGS=-I${LOCALBASE}/include	\
