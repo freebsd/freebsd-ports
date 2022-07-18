@@ -1,7 +1,9 @@
 PORTNAME=	juce
-DISTVERSION=	6.0.8
-PORTREVISION=	4
+DISTVERSION=	7.0.1
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	27d6e8388c620bf32be0c86c66ff8c403f4c1d71.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ application framework to develop desktop and mobile applications
@@ -13,18 +15,23 @@ LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
 BUILD_DEPENDS=	ladspa>0:audio/ladspa
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libjavascriptcoregtk-4.0.so:www/webkit2-gtk3 \
+		libpng16.so:graphics/png \
+		libsoup-2.4.so:devel/libsoup \
 		libsysinfo.so:devel/libsysinfo
 
-USES=		cmake compiler:c++11-lang dos2unix gl localbase:ldflags pkgconfig xorg
+USES=		cmake compiler:c++11-lang dos2unix gl gnome localbase:ldflags pkgconfig xorg
 DOS2UNIX_FILES=	modules/juce_core/juce_core.h
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
 USE_GL=		gl
 USE_XORG=	x11 xcomposite xcursor xext xinerama xorgproto xrandr
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	yurivict # juce-framework + BSD patches
+GH_ACCOUNT=	juce-framework
 GH_PROJECT=	JUCE
-GH_TAGNAME=	f37e9a1
 
 CMAKE_ON=	JUCE_BUILD_EXTRAS
 
@@ -75,7 +82,7 @@ post-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/extras/${exe}/${exe}_artefacts/Release/${exe} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	# fix path and strip juceaide
-	cd ${STAGEDIR}${PREFIX} && ${MV} bin/JUCE-${PORTVERSION}/juceaide bin/ && ${RMDIR} bin/JUCE-${PORTVERSION}
+	cd ${STAGEDIR}${PREFIX} && ${MV} bin/JUCE-${PORTVERSION}/juceaide bin/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/juceaide
 
 do-install-DEMOS-on:
