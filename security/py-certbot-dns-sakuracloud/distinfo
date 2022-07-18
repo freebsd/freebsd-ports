@@ -1,3 +1,3 @@
-TIMESTAMP = 1651624959
-SHA256 (certbot-dns-sakuracloud-1.27.0.tar.gz) = 1d90f1af89a1c17eda76b622082358d4490477ba9344fd865d787141e9ba580f
-SIZE (certbot-dns-sakuracloud-1.27.0.tar.gz) = 12567
+TIMESTAMP = 1657158092
+SHA256 (certbot-dns-sakuracloud-1.29.0.tar.gz) = 0198f1b4868251f4dee7c186835d085d35d76174d58f2c0b4d58b70a6dc95cd3
+SIZE (certbot-dns-sakuracloud-1.29.0.tar.gz) = 12546
