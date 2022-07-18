@@ -6,6 +6,6 @@
    s.licenses = ["MIT".freeze]
 -  s.required_ruby_version = Gem::Requirement.new(["~> 2.2".freeze, ">= 2.2.5".freeze])
 +  s.required_ruby_version = Gem::Requirement.new([">= 2.2".freeze, ">= 2.2.5".freeze])
-   s.rubygems_version = "3.3.17".freeze
+   s.rubygems_version = "3.3.18".freeze
    s.summary = "Extracts supported Ruby versions from Travis file".freeze
  

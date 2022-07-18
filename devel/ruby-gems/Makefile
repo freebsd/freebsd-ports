@@ -1,7 +1,7 @@
 # Created by: Alexander Novitsky <alecn2002@yandex.ru>
 
 PORTNAME=	gems
-PORTVERSION=	3.3.17
+PORTVERSION=	3.3.18
 CATEGORIES=	devel ruby
 MASTER_SITES=	https://rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
