@@ -1,6 +1,5 @@
 PORTNAME=	MasonX-Profiler
-PORTVERSION=	0.06
-PORTREVISION=	2
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,5 +12,7 @@ RUN_DEPENDS=	p5-HTML-Mason>=0:www/p5-HTML-Mason
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
