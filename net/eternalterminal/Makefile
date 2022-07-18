@@ -22,6 +22,8 @@ GH_PROJECT=	EternalTerminal
 
 CMAKE_ON=	DISABLE_VCPKG
 
+MAKE_JOBS_UNSAFE=	yes # workaround for a suspected dependency problem, see https://github.com/MisterTea/EternalTerminal/issues/528
+
 CONFLICTS_INSTALL=	linux-enemyterritory # bin/et
 
 post-patch:
