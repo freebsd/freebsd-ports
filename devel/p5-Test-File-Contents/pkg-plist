@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Test/File/Contents.pm
+%%SITE_PERL%%/Test/File/boilerplate.pl
 %%PERL5_MAN3%%/Test::File::Contents.3.gz
