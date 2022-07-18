@@ -1089,7 +1089,6 @@
     SUBDIR += py-pypcap
     SUBDIR += py-pyroute2
     SUBDIR += py-pyroute2.minimal
-    SUBDIR += py-pyroute2.nslink
     SUBDIR += py-pyroute2.protocols
     SUBDIR += py-pysendfile
     SUBDIR += py-pyshark
