@@ -1,0 +1,51 @@
+Avoid a crash caused by UB (use of uninitialized value).
+
+Initialize a value to NULL and backport code handling this case from main.
+This won't hurt and avoids the crash, although it's probably not the correct
+fix.
+
+Upstream issue: https://github.com/fvwmorg/fvwm3/issues/659
+
+--- modules/FvwmIconMan/x.c.orig	2022-07-18 23:18:50 UTC
++++ modules/FvwmIconMan/x.c
+@@ -742,6 +742,7 @@ void X_init_manager (int man_id)
+     char *scr;
+     fscreen_scr_arg arg;
+     arg.mouse_ev = NULL;
++    arg.name = NULL;
+ 
+     geometry_mask = FScreenParseGeometryWithScreen(
+       man->geometry_str, &man->geometry.x, &man->geometry.y,
+--- libs/FScreen.c.orig	2022-07-21 10:39:30 UTC
++++ libs/FScreen.c
+@@ -186,6 +186,11 @@ monitor_resolve_name(const char *scr)
+ {
+ 	struct monitor	*m = NULL;
+ 
++	if (scr == NULL)
++	{
++		return NULL;
++	}
++
+ 	/* Assume the monitor name is a literal RandR name (such as HDMI2) and
+ 	 * look it up regardless.
+ 	 */
+@@ -698,11 +703,14 @@ FindScreen(fscreen_scr_arg *arg, fscreen_scr_t screen)
+ 		m = FindScreenOfXY(arg->xypos.x, arg->xypos.y);
+ 		break;
+ 	case FSCREEN_BY_NAME:
+-		if (arg == NULL || arg->name == NULL) {
+-			/* XXX: Work out what to do. */
+-			break;
++		if (arg == NULL || arg->name == NULL)
++		{
++			m = monitor_by_primary();
+ 		}
+-		m = monitor_resolve_name(arg->name);
++		else
++		{
++			m = monitor_resolve_name(arg->name);
++		}
+ 		break;
+ 	default:
+ 		/* XXX: Possible error condition here? */
