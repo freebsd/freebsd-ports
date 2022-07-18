@@ -12,6 +12,9 @@
 %%SITE_PERL%%/Type/Coercion/Union.pm
 %%SITE_PERL%%/Type/Library.pm
 %%SITE_PERL%%/Type/Params.pm
+%%SITE_PERL%%/Type/Params/Coderef.pm
+%%SITE_PERL%%/Type/Params/Parameter.pm
+%%SITE_PERL%%/Type/Params/Signature.pm
 %%SITE_PERL%%/Type/Parser.pm
 %%SITE_PERL%%/Type/Registry.pm
 %%SITE_PERL%%/Type/Tiny.pm
