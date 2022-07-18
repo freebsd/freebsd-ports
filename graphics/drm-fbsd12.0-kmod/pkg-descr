@@ -3,4 +3,4 @@ Currently corresponding to Linux 4.16 DRM.
 This version is for FreeBSD 12.x.
 amdgpu and radeonkms are known to fail with EFI boot.
 
-WWW: https://github.com/FreeBSDDesktop/kms-drm
+WWW: https://github.com/freebsd/drm-kmod

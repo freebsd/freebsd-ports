@@ -10,4 +10,4 @@ DRM.
 This port does not however hinder the expert user to make other decisions and
 continue to install DRM ports directly.
 
-WWW: https://github.com/FreeBSDDesktop/kms-drm
+WWW: https://github.com/freebsd/drm-kmod
