@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Parallel/Iterator.pm
+%%SITE_PERL%%/Parallel/boilerplate.pl
 %%PERL5_MAN3%%/Parallel::Iterator.3.gz
