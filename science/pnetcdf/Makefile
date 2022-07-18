@@ -1,17 +1,15 @@
 # Created by: Chao Shin <quakelee@cn.FreeBSD.org>
 
 PORTNAME=	pnetcdf
-PORTVERSION=	1.8.1
-PORTREVISION=	10
+PORTVERSION=	1.12.3
 CATEGORIES=	science parallel
-MASTER_SITES=	http://cucis.ece.northwestern.edu/projects/PnetCDF/Release/ \
+MASTER_SITES=	https://parallel-netcdf.github.io/Release/ \
 		LOCAL/sunpoet
-DISTNAME=	parallel-netcdf-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library providing high-performance I/O
 
-USES=		fortran gmake pathfix perl5 tar:bzip2
+USES=		fortran gmake libtool pathfix perl5
 USE_PERL5=	build
 
 CFLAGS+=	-fPIC
@@ -19,11 +17,8 @@ CONFIGURE_ARGS=	--with-mpi=${MPI_HOME} ac_cv_fc_compiler_nag=no
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-PORTDOCS=	COPYRIGHT INSTALL README
-
 CONFLICTS_INSTALL=	hdf-4.*
 
-OPTIONS_DEFINE=	DOCS
 OPTIONS_SINGLE=	MPI
 OPTIONS_SINGLE_MPI=	OPENMPI MPICH
 OPTIONS_DEFAULT=OPENMPI
@@ -41,11 +36,7 @@ FCFLAGS+=	-fallow-argument-mismatch
 post-patch:
 	@${REINPLACE_CMD} -e '/$$(INSTALL.*$$(PREFIX)/ s|$$(PREFIX)|$$(DESTDIR)&|' ${WRKSRC}/Makefile.in
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/n* ${STAGEDIR}${PREFIX}/bin/pnetcdf_version
-
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
+x-post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cdfdiff ${STAGEDIR}${PREFIX}/bin/n* ${STAGEDIR}${PREFIX}/bin/pnetcdf_version
 
 .include <bsd.port.post.mk>
