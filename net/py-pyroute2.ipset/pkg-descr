@@ -1,5 +1,0 @@
-PyRoute2 is a pure Python netlink library.
-
-This module provides IPSet and WiSet classes.
-
-WWW: https://github.com/svinota/pyroute2/tree/master/pyroute2.ipset

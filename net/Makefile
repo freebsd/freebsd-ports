@@ -1088,7 +1088,6 @@
     SUBDIR += py-pypacker
     SUBDIR += py-pypcap
     SUBDIR += py-pyroute2
-    SUBDIR += py-pyroute2.ipset
     SUBDIR += py-pyroute2.minimal
     SUBDIR += py-pyroute2.ndb
     SUBDIR += py-pyroute2.nftables
