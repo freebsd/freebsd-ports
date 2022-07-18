@@ -334,6 +334,7 @@ lib/node_modules/npm/man/man1/npm-prefix.1.gz
 lib/node_modules/npm/man/man1/npm-profile.1.gz
 lib/node_modules/npm/man/man1/npm-prune.1.gz
 lib/node_modules/npm/man/man1/npm-publish.1.gz
+lib/node_modules/npm/man/man1/npm-query.1.gz
 lib/node_modules/npm/man/man1/npm-rebuild.1.gz
 lib/node_modules/npm/man/man1/npm-repo.1.gz
 lib/node_modules/npm/man/man1/npm-restart.1.gz
@@ -365,6 +366,7 @@ lib/node_modules/npm/man/man5/npmrc.5.gz
 lib/node_modules/npm/man/man5/package-json.5.gz
 lib/node_modules/npm/man/man5/package-lock-json.5.gz
 lib/node_modules/npm/man/man7/config.7.gz
+lib/node_modules/npm/man/man7/dependency-selectors.7.gz
 lib/node_modules/npm/man/man7/developers.7.gz
 lib/node_modules/npm/man/man7/logging.7.gz
 lib/node_modules/npm/man/man7/orgs.7.gz
@@ -1124,6 +1126,7 @@ lib/node_modules/npm/node_modules/libnpmversion/lib/version.js
 lib/node_modules/npm/node_modules/libnpmversion/lib/write-json.js
 lib/node_modules/npm/node_modules/libnpmversion/package.json
 lib/node_modules/npm/node_modules/lru-cache/LICENSE
+lib/node_modules/npm/node_modules/lru-cache/index.d.ts
 lib/node_modules/npm/node_modules/lru-cache/index.js
 lib/node_modules/npm/node_modules/lru-cache/package.json
 lib/node_modules/npm/node_modules/make-fetch-happen/LICENSE
@@ -1145,6 +1148,7 @@ lib/node_modules/npm/node_modules/minimatch/lib/path.js
 lib/node_modules/npm/node_modules/minimatch/minimatch.js
 lib/node_modules/npm/node_modules/minimatch/package.json
 lib/node_modules/npm/node_modules/minipass/LICENSE
+lib/node_modules/npm/node_modules/minipass/index.d.ts
 lib/node_modules/npm/node_modules/minipass/index.js
 lib/node_modules/npm/node_modules/minipass/package.json
 lib/node_modules/npm/node_modules/minipass-collect/LICENSE
