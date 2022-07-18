@@ -3,3 +3,4 @@ schemas for documents and query collections using syntax inspired by the
 Django ORM.
 
 WWW: http://mongoengine.org/
+WWW: https://github.com/MongoEngine/mongoengine

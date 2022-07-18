@@ -1,7 +1,7 @@
 # Created by: Mirko Zinn <mail@derzinn.de>
 
 PORTNAME=	mongoengine
-PORTVERSION=	0.24.1
+PORTVERSION=	0.24.2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
