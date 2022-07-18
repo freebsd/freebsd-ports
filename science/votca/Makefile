@@ -47,7 +47,7 @@ SHEBANG_FILES=	csg/scripts/csg_call.in csg/scripts/csg_inverse.in \
 		xtp/scripts/xtp_qmmm2qm.in
 
 CMAKE_ON=	BUILD_XTP
-CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
+CMAKE_ARGS=	-DLOCALBASE=${LOCALBASE} -DPython_EXECUTABLE=${PYTHON_CMD}
 
 OPTIONS_DEFINE=		APPS
 OPTIONS_DEFAULT=	APPS

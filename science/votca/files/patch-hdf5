@@ -1,0 +1,28 @@
+--- csg/src/libcsg/CMakeLists.txt.orig	2022-01-15 22:47:05 UTC
++++ csg/src/libcsg/CMakeLists.txt
+@@ -14,8 +14,9 @@ if (TARGET Gromacs::libgromacs)
+   target_link_libraries(votca_csg PRIVATE Gromacs::libgromacs)
+ endif()
+ 
+-
+-find_package(HDF5 COMPONENTS "CXX")
++set(HDF5_FOUND TRUE)
++set(HDF5_INCLUDE_DIRS "${LOCALBASE}/include")
++set(HDF5_LIBRARIES "-L${LOCALBASE}/lib -lhdf5 -lhdf5_cpp")
+ set_package_properties(HDF5 PROPERTIES TYPE RECOMMENDED PURPOSE "Used to read h5md data files")
+ if(HDF5_FOUND)
+   set(H5MD true)
+--- xtp/CMakeLists.txt.orig	2022-01-15 22:47:05 UTC
++++ xtp/CMakeLists.txt
+@@ -50,7 +50,10 @@ find_package(ecpint REQUIRED)
+ set_package_properties(ecpint PROPERTIES TYPE REQUIRED PURPOSE "Calculates Gaussian integrals over pseudo potentials")
+ message(STATUS "Found libecpint: ${ecpint_DIR}")
+ 
+-find_package(HDF5 1.8 REQUIRED COMPONENTS CXX)
++set(HDF5_FOUND TRUE)
++set(HDF5_VERSION 1.12)
++set(HDF5_INCLUDE_DIRS "${LOCALBASE}/include")
++set(HDF5_LIBRARIES "-L${LOCALBASE}/lib -lhdf5 -lhdf5_cpp")
+ set_package_properties(HDF5 PROPERTIES TYPE REQUIRED PURPOSE "Used to read/write HDF5 data files")
+ 
+ if(HDF5_VERSION VERSION_GREATER 1.8)
