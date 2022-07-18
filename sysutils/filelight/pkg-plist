@@ -1,12 +1,12 @@
 bin/filelight
 etc/xdg/filelightrc
 share/applications/org.kde.filelight.desktop
+share/icons/hicolor/128x128/apps/filelight.png
 share/icons/hicolor/16x16/apps/filelight.png
 share/icons/hicolor/22x22/apps/filelight.png
 share/icons/hicolor/32x32/apps/filelight.png
 share/icons/hicolor/48x48/apps/filelight.png
 share/icons/hicolor/64x64/apps/filelight.png
-share/icons/hicolor/128x128/apps/filelight.png
 share/kxmlgui5/filelight/filelightui.rc
 share/locale/ar/LC_MESSAGES/filelight.mo
 share/locale/ast/LC_MESSAGES/filelight.mo
@@ -30,6 +30,7 @@ share/locale/ga/LC_MESSAGES/filelight.mo
 share/locale/gl/LC_MESSAGES/filelight.mo
 share/locale/hu/LC_MESSAGES/filelight.mo
 share/locale/ia/LC_MESSAGES/filelight.mo
+share/locale/is/LC_MESSAGES/filelight.mo
 share/locale/it/LC_MESSAGES/filelight.mo
 share/locale/ja/LC_MESSAGES/filelight.mo
 share/locale/kk/LC_MESSAGES/filelight.mo
@@ -50,6 +51,7 @@ share/locale/sk/LC_MESSAGES/filelight.mo
 share/locale/sl/LC_MESSAGES/filelight.mo
 share/locale/sr/LC_MESSAGES/filelight.mo
 share/locale/sv/LC_MESSAGES/filelight.mo
+share/locale/ta/LC_MESSAGES/filelight.mo
 share/locale/tr/LC_MESSAGES/filelight.mo
 share/locale/ug/LC_MESSAGES/filelight.mo
 share/locale/uk/LC_MESSAGES/filelight.mo

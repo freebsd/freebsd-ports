@@ -1,6 +1,7 @@
 include/KF5/KManageSieve/KManageSieve/SieveJob
 include/KF5/KManageSieve/kmanagesieve/kmanagesieve_export.h
 include/KF5/KManageSieve/kmanagesieve/sievejob.h
+include/KF5/KSieve/libksieve_version.h
 include/KF5/KSieveUi/KSieveUi/AbstractMoveImapFolderWidget
 include/KF5/KSieveUi/KSieveUi/AbstractRegexpEditorLineEdit
 include/KF5/KSieveUi/KSieveUi/AbstractSelectEmailLineEdit
@@ -45,7 +46,6 @@ include/KF5/KSieveUi/ksieveui/sievetreewidgetitem.h
 include/KF5/KSieveUi/ksieveui/util.h
 include/KF5/KSieveUi/ksieveui/util_p.h
 include/KF5/KSieveUi/ksieveui/vacationmanager.h
-include/KF5/libksieve_version.h
 lib/cmake/KF5LibKSieve/KF5LibKSieveConfig.cmake
 lib/cmake/KF5LibKSieve/KF5LibKSieveConfigVersion.cmake
 lib/cmake/KF5LibKSieve/KF5LibKSieveTargets-%%CMAKE_BUILD_TYPE%%.cmake

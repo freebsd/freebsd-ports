@@ -96,15 +96,14 @@ lib/libKF5ContactEditor.so.5
 lib/libKF5ContactEditor.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_AkonadiContact.pri
 %%QT_MKSPECDIR%%/modules/qt_ContactEditor.pri
-%%QT_PLUGINDIR%%/akonadi/contacts/plugins/categorieseditwidgetplugin.so
 %%QT_PLUGINDIR%%/akonadi_serializer_addressee.so
 %%QT_PLUGINDIR%%/akonadi_serializer_contactgroup.so
-%%QT_PLUGINDIR%%/pim/kcms/kaddressbook/kcm_akonadicontact_actions.so
+%%QT_PLUGINDIR%%/pim5/akonadi/contacts/plugins/categorieseditwidgetplugin.so
+%%QT_PLUGINDIR%%/pim5/kcms/kaddressbook/kcm_akonadicontact_actions.so
 share/akonadi/plugins/serializer/akonadi_serializer_addressee.desktop
 share/akonadi/plugins/serializer/akonadi_serializer_contactgroup.desktop
 share/kf5/akonadi/contact/data/zone.tab
 share/kf5/akonadi/contact/pics/world.jpg
-share/kservices5/akonadicontact_actions.desktop
 share/locale/ar/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/ar/LC_MESSAGES/akonadicontact5.mo
 share/locale/ar/LC_MESSAGES/kcm_akonadicontact_actions.mo

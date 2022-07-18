@@ -37,8 +37,8 @@ include/kpmcore/fs/iso9660.h
 include/kpmcore/fs/jfs.h
 include/kpmcore/fs/linuxraidmember.h
 include/kpmcore/fs/linuxswap.h
-include/kpmcore/fs/luks2.h
 include/kpmcore/fs/luks.h
+include/kpmcore/fs/luks2.h
 include/kpmcore/fs/lvm2_pv.h
 include/kpmcore/fs/minix.h
 include/kpmcore/fs/nilfs2.h
@@ -161,6 +161,7 @@ share/locale/sl/LC_MESSAGES/kpmcore.mo
 share/locale/sr/LC_MESSAGES/kpmcore.mo
 share/locale/sv/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/sv/LC_MESSAGES/kpmcore.mo
+share/locale/tr/LC_MESSAGES/kpmcore._policy_.mo
 share/locale/tr/LC_MESSAGES/kpmcore.mo
 share/locale/ug/LC_MESSAGES/kpmcore.mo
 share/locale/uk/LC_MESSAGES/kpmcore._policy_.mo

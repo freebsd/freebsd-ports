@@ -1,6 +1,5 @@
 PORTNAME=	kdev-php
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,7 +18,7 @@ USE_QT=		concurrent core dbus gui network webkit widgets xml \
 		buildtools_build qmake_build
 
 # Versioning values, to reduce plist churn (match with devel/kdevelop)
-PLATFORM_VER=	36
+PLATFORM_VER=	37
 PRIVATE_VER=	5.7
 PLIST_SUB+=	PLATFORM_VER=${PLATFORM_VER} PRIVATE_VER=${PRIVATE_VER}
 

@@ -7,6 +7,7 @@ include/KPim/KPkPass/barcode.h
 include/KPim/KPkPass/boardingpass.h
 include/KPim/KPkPass/field.h
 include/KPim/KPkPass/kpkpass_export.h
+include/KPim/KPkPass/kpkpass_version.h
 include/KPim/KPkPass/location.h
 include/KPim/KPkPass/pass.h
 lib/cmake/KPimPkPass/KPimPkPassConfig.cmake

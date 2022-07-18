@@ -131,6 +131,7 @@ include/KF5/AkonadiCore/Akonadi/StatisticsProxyModel
 include/KF5/AkonadiCore/Akonadi/Supertrait
 include/KF5/AkonadiCore/Akonadi/Tag
 include/KF5/AkonadiCore/Akonadi/TagAttribute
+include/KF5/AkonadiCore/Akonadi/TagCache
 include/KF5/AkonadiCore/Akonadi/TagCreateJob
 include/KF5/AkonadiCore/Akonadi/TagDeleteJob
 include/KF5/AkonadiCore/Akonadi/TagFetchJob
@@ -236,6 +237,7 @@ include/KF5/AkonadiCore/akonadi/statisticsproxymodel.h
 include/KF5/AkonadiCore/akonadi/supertrait.h
 include/KF5/AkonadiCore/akonadi/tag.h
 include/KF5/AkonadiCore/akonadi/tagattribute.h
+include/KF5/AkonadiCore/akonadi/tagcache.h
 include/KF5/AkonadiCore/akonadi/tagcreatejob.h
 include/KF5/AkonadiCore/akonadi/tagdeletejob.h
 include/KF5/AkonadiCore/akonadi/tagfetchjob.h
@@ -250,12 +252,14 @@ include/KF5/AkonadiCore/akonadi/trashrestorejob.h
 include/KF5/AkonadiCore/akonadi/trashsettings.h
 include/KF5/AkonadiCore/akonadi/unlinkjob.h
 include/KF5/AkonadiCore/akonadi/vectorhelper.h
+include/KF5/AkonadiCore/akonadi_version.h
 include/KF5/AkonadiWidgets/Akonadi/AgentActionManager
 include/KF5/AkonadiWidgets/Akonadi/AgentConfigurationDialog
 include/KF5/AkonadiWidgets/Akonadi/AgentConfigurationWidget
 include/KF5/AkonadiWidgets/Akonadi/AgentInstanceWidget
 include/KF5/AkonadiWidgets/Akonadi/AgentTypeDialog
 include/KF5/AkonadiWidgets/Akonadi/AgentTypeWidget
+include/KF5/AkonadiWidgets/Akonadi/ClearCacheJob
 include/KF5/AkonadiWidgets/Akonadi/CollectionComboBox
 include/KF5/AkonadiWidgets/Akonadi/CollectionDialog
 include/KF5/AkonadiWidgets/Akonadi/CollectionMaintenancePage
@@ -264,6 +268,7 @@ include/KF5/AkonadiWidgets/Akonadi/CollectionPropertiesPage
 include/KF5/AkonadiWidgets/Akonadi/CollectionRequester
 include/KF5/AkonadiWidgets/Akonadi/CollectionStatisticsDelegate
 include/KF5/AkonadiWidgets/Akonadi/ControlGui
+include/KF5/AkonadiWidgets/Akonadi/DbAccess
 include/KF5/AkonadiWidgets/Akonadi/ETMViewStateSaver
 include/KF5/AkonadiWidgets/Akonadi/EntityListView
 include/KF5/AkonadiWidgets/Akonadi/EntityTreeView
@@ -283,6 +288,7 @@ include/KF5/AkonadiWidgets/akonadi/agentinstancewidget.h
 include/KF5/AkonadiWidgets/akonadi/agenttypedialog.h
 include/KF5/AkonadiWidgets/akonadi/agenttypewidget.h
 include/KF5/AkonadiWidgets/akonadi/akonadiwidgets_export.h
+include/KF5/AkonadiWidgets/akonadi/clearcachejob.h
 include/KF5/AkonadiWidgets/akonadi/collectioncombobox.h
 include/KF5/AkonadiWidgets/akonadi/collectiondialog.h
 include/KF5/AkonadiWidgets/akonadi/collectionmaintenancepage.h
@@ -291,6 +297,7 @@ include/KF5/AkonadiWidgets/akonadi/collectionpropertiespage.h
 include/KF5/AkonadiWidgets/akonadi/collectionrequester.h
 include/KF5/AkonadiWidgets/akonadi/collectionstatisticsdelegate.h
 include/KF5/AkonadiWidgets/akonadi/controlgui.h
+include/KF5/AkonadiWidgets/akonadi/dbaccess.h
 include/KF5/AkonadiWidgets/akonadi/entitylistview.h
 include/KF5/AkonadiWidgets/akonadi/entitytreeview.h
 include/KF5/AkonadiWidgets/akonadi/etmviewstatesaver.h
@@ -312,7 +319,6 @@ include/KF5/AkonadiXml/akonadi/xmldocument.h
 include/KF5/AkonadiXml/akonadi/xmlreader.h
 include/KF5/AkonadiXml/akonadi/xmlwritejob.h
 include/KF5/AkonadiXml/akonadi/xmlwriter.h
-include/KF5/akonadi_version.h
 lib/cmake/KF5Akonadi/KF5AkonadiConfig.cmake
 lib/cmake/KF5Akonadi/KF5AkonadiConfigVersion.cmake
 lib/cmake/KF5Akonadi/KF5AkonadiMacros.cmake
@@ -337,8 +343,8 @@ lib/libKF5AkonadiXml.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_AkonadiCore.pri
 %%QT_MKSPECDIR%%/modules/qt_AkonadiWidgets.pri
 %%QT_MKSPECDIR%%/modules/qt_AkonadiXml.pri
-%%QT_PLUGINDIR%%/akonadi/akonadi_test_searchplugin.so
 %%QT_PLUGINDIR%%/designer/akonadiwidgets.so
+%%QT_PLUGINDIR%%/pim5/akonadi/akonadi_test_searchplugin.so
 %%SQLITE%%%%QT_PLUGINDIR%%/sqldrivers/libqsqlite3.so
 %%DATADIR%%/agents/knutresource.desktop
 share/config.kcfg/resourcebase.kcfg
@@ -357,13 +363,13 @@ share/dbus-1/interfaces/org.freedesktop.Akonadi.StorageDebugger.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 share/dbus-1/services/org.freedesktop.Akonadi.Control.service
+share/icons/hicolor/128x128/apps/akonadi.png
 share/icons/hicolor/16x16/apps/akonadi.png
 share/icons/hicolor/22x22/apps/akonadi.png
+share/icons/hicolor/256x256/apps/akonadi.png
 share/icons/hicolor/32x32/apps/akonadi.png
 share/icons/hicolor/48x48/apps/akonadi.png
 share/icons/hicolor/64x64/apps/akonadi.png
-share/icons/hicolor/128x128/apps/akonadi.png
-share/icons/hicolor/256x256/apps/akonadi.png
 share/icons/hicolor/scalable/apps/akonadi.svgz
 share/kf5/akonadi/akonadi-xml.xsd
 share/kf5/akonadi/kcfg2dbus.xsl

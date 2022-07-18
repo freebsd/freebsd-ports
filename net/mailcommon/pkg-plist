@@ -32,7 +32,7 @@ include/KF5/MailCommon/MailCommon/FolderTreeWidgetProxyModel
 include/KF5/MailCommon/MailCommon/ItemContext
 include/KF5/MailCommon/MailCommon/JobScheduler
 include/KF5/MailCommon/MailCommon/KMFilterDialog
-include/KF5/MailCommon/MailCommon/MDNStateAttribute
+include/KF5/MailCommon/MailCommon/MDNWarningJob
 include/KF5/MailCommon/MailCommon/MailFilter
 include/KF5/MailCommon/MailCommon/MailInterfaces
 include/KF5/MailCommon/MailCommon/MailKernel
@@ -90,7 +90,7 @@ include/KF5/MailCommon/mailcommon/mailfilter.h
 include/KF5/MailCommon/mailcommon/mailinterfaces.h
 include/KF5/MailCommon/mailcommon/mailkernel.h
 include/KF5/MailCommon/mailcommon/mailutil.h
-include/KF5/MailCommon/mailcommon/mdnstateattribute.h
+include/KF5/MailCommon/mailcommon/mdnwarningjob.h
 include/KF5/MailCommon/mailcommon/pop3settings.h
 include/KF5/MailCommon/mailcommon/redirectdialog.h
 include/KF5/MailCommon/mailcommon/resourcereadconfigfile.h

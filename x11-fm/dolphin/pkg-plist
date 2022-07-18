@@ -14,9 +14,9 @@ lib/libdolphinprivate.so.%%SHLIB_VER%%
 lib/libdolphinvcs.so
 lib/libdolphinvcs.so.%%SHLIB_SHVER%%
 lib/libdolphinvcs.so.%%SHLIB_VER%%
-%%QT_PLUGINDIR%%/dolphin/kcms/libkcm_dolphingeneral.so
-%%QT_PLUGINDIR%%/dolphin/kcms/libkcm_dolphinnavigation.so
-%%QT_PLUGINDIR%%/dolphin/kcms/libkcm_dolphinviewmodes.so
+%%QT_PLUGINDIR%%/dolphin/kcms/kcm_dolphingeneral.so
+%%QT_PLUGINDIR%%/dolphin/kcms/kcm_dolphinnavigation.so
+%%QT_PLUGINDIR%%/dolphin/kcms/kcm_dolphinviewmodes.so
 %%QT_PLUGINDIR%%/kf%%SHLIB_SHVER%%/parts/dolphinpart.so
 lib/systemd/user/plasma-dolphin.service
 share/applications/org.kde.dolphin.desktop
@@ -29,12 +29,10 @@ share/config.kcfg/dolphin_iconsmodesettings.kcfg
 share/config.kcfg/dolphin_versioncontrolsettings.kcfg
 share/dbus-1/interfaces/org.freedesktop.FileManager1.xml
 share/dbus-1/services/org.kde.dolphin.FileManager1.service
+share/kconf_update/dolphin_detailsmodesettings.upd
 share/kglobalaccel/org.kde.dolphin.desktop
 share/knsrcfiles/servicemenu.knsrc
 share/kservices5/dolphinpart.desktop
-share/kservices5/kcmdolphingeneral.desktop
-share/kservices5/kcmdolphinnavigation.desktop
-share/kservices5/kcmdolphinviewmodes.desktop
 share/kservicetypes5/fileviewversioncontrolplugin.desktop
 share/locale/ar/LC_MESSAGES/dolphin.mo
 share/locale/ar/LC_MESSAGES/dolphin_servicemenuinstaller.mo

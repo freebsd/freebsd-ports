@@ -26,6 +26,8 @@ share/locale/ru/LC_MESSAGES/kontrast.mo
 share/locale/sk/LC_MESSAGES/kontrast.mo
 share/locale/sl/LC_MESSAGES/kontrast.mo
 share/locale/sv/LC_MESSAGES/kontrast.mo
+share/locale/tr/LC_MESSAGES/kontrast.mo
 share/locale/uk/LC_MESSAGES/kontrast.mo
 share/locale/zh_CN/LC_MESSAGES/kontrast.mo
+share/locale/zh_TW/LC_MESSAGES/kontrast.mo
 share/metainfo/org.kde.kontrast.appdata.xml

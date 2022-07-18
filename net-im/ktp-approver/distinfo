@@ -1,3 +1,3 @@
-TIMESTAMP = 1657013304
-SHA256 (KDE/release-service/22.04.3/ktp-approver-22.04.3.tar.xz) = d7e20c08b208366e80995674526914c6074632c49542151bb23573da0e21d333
-SIZE (KDE/release-service/22.04.3/ktp-approver-22.04.3.tar.xz) = 38328
+TIMESTAMP = 1660628482
+SHA256 (KDE/release-service/22.08.0/ktp-approver-22.08.0.tar.xz) = 43c28a2d1c46a4e061f28d601609f91fc1528e3d6a8a5ff18fd3401f08362ff8
+SIZE (KDE/release-service/22.08.0/ktp-approver-22.08.0.tar.xz) = 38464

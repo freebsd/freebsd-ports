@@ -1,6 +1,5 @@
 PORTNAME=	kdenlive
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,9 +9,11 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	librttr_core.so:devel/rttr
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
-		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
+		${LOCALBASE}/lib/mlt-7/libmltglaxnimate.so:multimedia/mlt7-glaxnimate
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
-		${LOCALBASE}/lib/mlt-7/libmltqt.so:multimedia/mlt7-qt5
+		${LOCALBASE}/lib/mlt-7/libmltqt.so:multimedia/mlt7-qt5 \
+		${LOCALBASE}/lib/mlt-7/libmltglaxnimate.so:multimedia/mlt7-glaxnimate
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext-tools \
 		gl mlt:7 pkgconfig qt:5 shared-mime-info kde:5 tar:xz xorg
