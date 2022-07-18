@@ -1,33 +1,13 @@
-The PowerDNS Authoritative Server is the only solution that enables
-authoritative DNS service from all major databases, including but not limited
-to MySQL, PostgreSQL, SQLite3, LDAP and plain text files.
+The PowerDNS Authoritative Server is a versatile nameserver which supports a
+large number of backends. These backends can either be plain zone files or be
+more dynamic in nature.
 
-DNS answers can also be fully scripted using a variety of (scripting) languages
-such as Lua, Java, Perl, Python, Ruby, C and C++. Such scripting can be used
-for dynamic redirection, (spam) filtering or real time intervention.
+PowerDNS has the concepts of ‘backends’. A backend is a datastore that the
+server will consult that contains DNS records (and some metadata). The backends
+range from database backends (MySQL, PostgreSQL) and BIND zone files to
+co-processes and JSON API’s.
 
-In addition, the PowerDNS Authoritative Server is the leading DNSSEC
-implementation, hosting the majority of all DNSSEC domains worldwide. The
-Authoritative Server hosts at least 30% of all domain names in Europe, and
-around 90% of all DNSSEC domains in Europe.
-
- * IPv4, UDP/TCP
- * IPv6, UDP/TCP, 100% compliant
- * Remotely pollable statistics for real time graphing
- * MySQL, PostgreSQL, Oracle, Sybase, Microsoft SQL Server, LDAP, SQLite3
-   - Including replication
- * Near instant start up time
- * Plain BIND zone files
-   - Brief start up time
- * Migration tools from legacy DNS platforms (zone2sql)
- * Internal Lua-based scripted answer generation
- * External high-performance Script-based answer generation
- * Geographical load balancing
- * Full DNSSEC support including all standardized algorithms
- * TSIG for transaction signatures, AXFR authorization/requests
- * Master/Slave support
- * Built-in web server for statistics and limited direct control
- * API for direct control (pdns_control, pdnssec)
-   - Local and remote access
+Multiple backends can be enabled in the configuration by using the launch
+option. Each backend can be configured separately.
 
 WWW: https://www.powerdns.com/auth.html

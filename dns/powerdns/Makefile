@@ -1,5 +1,5 @@
 PORTNAME=	powerdns
-DISTVERSION=	4.6.2
+DISTVERSION=	4.6.3
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
