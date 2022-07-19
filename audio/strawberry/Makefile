@@ -1,5 +1,6 @@
 PORTNAME=	strawberry
 DISTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://files.jkvinge.net/packages/strawberry/
@@ -16,21 +17,23 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libtag.so:audio/taglib
 TEST_DEPENDS=	googletest>=0:devel/googletest
 
-USES=		compiler:c++11-lang cmake desktop-file-utils gnome \
-		gettext-runtime gettext-tools gstreamer iconv pkgconfig \
-		qt:5 sqlite pkgconfig tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext-runtime \
+		gettext-tools gnome gstreamer iconv:translit pkgconfig qt:5 \
+		sqlite tar:xz xorg
 
 USE_GNOME=	glib20
-USE_QT=		buildtools_build concurrent core dbus gui network \
-		linguisttools qmake_build sql sql-sqlite3 testlib_build \
-		widgets x11extras
+USE_QT=		concurrent core dbus gui linguisttools network sql sql-sqlite3 \
+		widgets x11extras buildtools_build qmake_build testlib_build
 USE_XORG=	ice sm x11 xcb xext
 
-CMAKE_ARGS=	-DUSE_SYSTEM_TAGLIB=ON -DENABLE_UDISKS2=OFF \
-		-DENABLE_GSTREAMER:BOOL=true \
-		-DENABLE_TRANSLATIONS:BOOL=true
+CMAKE_ARGS=	-DENABLE_GSTREAMER:BOOL=true \
+		-DENABLE_TRANSLATIONS:BOOL=true \
+		-DENABLE_UDISKS2=OFF \
+		-DUSE_SYSTEM_TAGLIB=ON
 
 TEST_TARGET=	strawberry_test
+
+SUB_FILES=	pkg-message
 
 # NLS is not optional, as of 0.6.11,
 # src/core/utilities.cpp always includes iconv.h and calls iconv_*().
@@ -40,8 +43,7 @@ TEST_TARGET=	strawberry_test
 # error: member initializer 'transcode_dialog_' does not name a non-static data member or base class
 # transcode_dialog_([=]() {
 
-OPTIONS_DEFINE=		AUDIOCD IPOD MOODBAR MTPDEV MUSICBRAINZ \
-			SUBSONIC TIDAL VLC
+OPTIONS_DEFINE=	AUDIOCD IPOD MOODBAR MTPDEV MUSICBRAINZ SUBSONIC TIDAL VLC
 
 OPTIONS_DEFAULT=	ALSA MOODBAR
 
@@ -74,7 +76,7 @@ MTPDEV_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 MOODBAR_CMAKE_BOOL=	ENABLE_MOODBAR
 MOODBAR_LIB_DEPENDS=	libfftw3.so:math/fftw3
 
-MUSICBRAINZ_CMAKE_BOOL=	ENABLE_CHROMAPRINT
+MUSICBRAINZ_CMAKE_BOOL=		ENABLE_CHROMAPRINT
 MUSICBRAINZ_LIB_DEPENDS=	libchromaprint.so:audio/chromaprint
 
 PULSEAUDIO_CMAKE_BOOL=	ENABLE_LIBPULSE
@@ -86,7 +88,5 @@ TIDAL_CMAKE_BOOL=	ENABLE_TIDAL
 
 VLC_CMAKE_BOOL=		ENABLE_VLC
 VLC_LIB_DEPENDS=	libvlc.so:multimedia/vlc
-
-SUB_FILES=		pkg-message
 
 .include <bsd.port.mk>
