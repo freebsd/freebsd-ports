@@ -3,6 +3,7 @@
 PORTNAME=	google-perftools
 DISTVERSIONPREFIX=	gperftools-
 DISTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/gperftools/gperftools/releases/download/gperftools-${PORTVERSION}/
 DISTNAME=	gperftools-${PORTVERSION}
@@ -25,11 +26,25 @@ LIBS+=		-lexecinfo
 
 DOCSDIR=	${PREFIX}/share/doc/gperftools
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=		DOCS PROFILER
 OPTIONS_SINGLE=		PAGESIZE ALIGN
 OPTIONS_SINGLE_ALIGN=	ALIGN8 ALIGN16
 OPTIONS_SINGLE_PAGESIZE=	PAGE8K PAGE32K PAGE64K
 OPTIONS_DEFAULT=	PAGE8K ALIGN16
+OPTIONS_DEFAULT_amd64=		PROFILER
+OPTIONS_DEFINE_aarch64=		PROFILER
+OPTIONS_DEFINE_amd64=		PROFILER
+OPTIONS_DEFINE_armv6=		# PROFILER is disabled: WARNING: Could not find the PC. Will not try to compile libprofiler.
+OPTIONS_DEFINE_armv7=		# PROFILER is disabled: WARNING: Could not find the PC. Will not try to compile libprofiler.
+OPTIONS_DEFINE_i386=		PROFILER
+OPTIONS_DEFINE_powerpc=		PROFILER
+OPTIONS_DEFINE_powerpc64=	PROFILER
+OPTIONS_DEFINE_powerpc64le=	PROFILER
+OPTIONS_DEFINE_riscv64=		PROFILER
+OPTIONS_SUB=		yes
+
+PROFILER_DESC=		Enable CPU profiler
+PROFILER_CONFIGURE_ENABLE=	cpu-profiler
 
 ALIGN_DESC=	The tcmalloc allocation alignment
 ALIGN8_DESC=	8 bytes allocation alignment
