@@ -11,6 +11,7 @@ lib/vm-bhyve/vm-rctl
 lib/vm-bhyve/vm-run
 lib/vm-bhyve/vm-switch
 lib/vm-bhyve/vm-switch-manual
+lib/vm-bhyve/vm-switch-netgraph
 lib/vm-bhyve/vm-switch-standard
 lib/vm-bhyve/vm-switch-vale
 lib/vm-bhyve/vm-switch-vxlan
