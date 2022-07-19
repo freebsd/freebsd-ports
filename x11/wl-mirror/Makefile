@@ -1,7 +1,10 @@
 PORTNAME=	wl-mirror
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.2
+DISTVERSION=	0.12.0
 CATEGORIES=	x11 wayland
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	18100a897c66.patch:-p1 # https://github.com/Ferdi265/wl-mirror/pull/12
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple Wayland output mirror client
@@ -21,6 +24,13 @@ USE_GL=		glesv2 egl
 GH_ACCOUNT=	Ferdi265
 GL_TUPLE=	https://gitlab.freedesktop.org:wlroots:wlr-protocols:0c7437e2b600382f0be33949c4e244b2a3702fcb:wlrproto/proto/wlr-protocols
 PLIST_FILES=	bin/${PORTNAME}
+
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=MANPAGES
+
+MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
+MANPAGES_CMAKE_BOOL=	INSTALL_DOCUMENTATION
+MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 
 post-patch:
 	@${ECHO_CMD} "${DISTVERSIONFULL}" >${WRKSRC}/version.txt
