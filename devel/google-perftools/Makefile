@@ -14,9 +14,6 @@ COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to compile: src/stacktrace.cc:230:2: Cannot calculate stack trace: will need to write for your environment
-BROKEN_riscv64=		fails to compile: src/base/basictypes.h:387:5: Could not determine cache line length - unknown architecture
-
 USES=		compiler:c11 gmake libtool localbase:ldflags
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
