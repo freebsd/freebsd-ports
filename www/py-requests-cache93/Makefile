@@ -23,7 +23,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-PORTSCOUT=	skipv
+PORTSCOUT=	ignore:1
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
