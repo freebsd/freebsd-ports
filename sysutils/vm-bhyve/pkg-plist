@@ -11,6 +11,7 @@ lib/vm-bhyve/vm-rctl
 lib/vm-bhyve/vm-run
 lib/vm-bhyve/vm-switch
 lib/vm-bhyve/vm-switch-manual
+lib/vm-bhyve/vm-switch-netgraph
 lib/vm-bhyve/vm-switch-standard
 lib/vm-bhyve/vm-switch-vale
 lib/vm-bhyve/vm-switch-vxlan
@@ -29,6 +30,7 @@ sbin/vm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dragonfly.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/freebsd-zvol.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/freepbx.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gentoo.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/linux-zvol.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netbsd.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/openbsd.conf
