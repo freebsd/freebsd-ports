@@ -34,6 +34,7 @@ include/groonga/groonga/cache.h
 include/groonga/groonga/cast.h
 include/groonga/groonga/column.h
 include/groonga/groonga/command.h
+include/groonga/groonga/command_arguments.hpp
 include/groonga/groonga/config.h
 include/groonga/groonga/dat.h
 include/groonga/groonga/db.h
