@@ -187,6 +187,10 @@ for _line in ${dp_RAWDEPENDS} ; do
 	fi
 	[ ${pattern} = "/nonexistent" ] || anynotfound=1
 
+	if [ "${origin}" = "/nonexistent" ]; then
+		exit 1
+	fi
+
 	if [ ! -f "${origin}/Makefile" ]; then
 		echo "Error a dependency refers to a non existing origin: ${origin} in ${dp_DEPTYPE}" >&2
 		err=1

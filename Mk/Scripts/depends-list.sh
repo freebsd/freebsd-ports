@@ -84,6 +84,10 @@ check_dep() {
 		done
 		esac
 
+		if [ "${d}" = "/nonexistent" ]; then
+			continue
+		fi
+
 		if [ ${flavors} -eq 1 -a -n "${FLAVOR:-}" ]; then
 			port_display="${d}@${FLAVOR}"
 		else
