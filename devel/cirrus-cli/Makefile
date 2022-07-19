@@ -1,6 +1,5 @@
 PORTNAME=	cirrus-cli
-PORTVERSION=	0.79.0
-PORTREVISION=	1
+PORTVERSION=	0.82.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -14,15 +13,19 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	cirruslabs
 GH_TUPLE=	\
+		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
 		Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+		Microsoft:hcsshim:v0.8.18:microsoft_hcsshim/vendor/github.com/Microsoft/hcsshim \
 		PaesslerAG:gval:v1.1.0:paesslerag_gval/vendor/github.com/PaesslerAG/gval \
 		ProtonMail:go-crypto:a4f6767435ab:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
 		acomagu:bufpipe:v1.0.3:acomagu_bufpipe/vendor/github.com/acomagu/bufpipe \
 		agext:levenshtein:v1.2.3:agext_levenshtein/vendor/github.com/agext/levenshtein \
 		antihax:optional:v1.0.0:antihax_optional/vendor/github.com/antihax/optional \
 		avast:retry-go:v3.0.0:avast_retry_go/vendor/github.com/avast/retry-go \
+		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		certifi:gocertifi:431795d63e8d:certifi_gocertifi/vendor/github.com/certifi/gocertifi \
-		cirruslabs:cirrus-ci-agent:v1.78.0:cirruslabs_cirrus_ci_agent/vendor/github.com/cirruslabs/cirrus-ci-agent \
+		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
+		cirruslabs:cirrus-ci-agent:v1.80.0:cirruslabs_cirrus_ci_agent/vendor/github.com/cirruslabs/cirrus-ci-agent \
 		cirruslabs:echelon:v1.7.0:cirruslabs_echelon/vendor/github.com/cirruslabs/echelon \
 		cirruslabs:go-java-glob:v0.1.0:cirruslabs_go_java_glob/vendor/github.com/cirruslabs/go-java-glob \
 		cirruslabs:podmanapi:v0.2.0:cirruslabs_podmanapi/vendor/github.com/cirruslabs/podmanapi \
@@ -36,10 +39,13 @@ GH_TUPLE=	\
 		docker:cli:v20.10.7:docker_cli/vendor/github.com/docker/cli \
 		docker:distribution:v2.7.1:docker_distribution/vendor/github.com/docker/distribution \
 		docker:go-connections:v0.4.0:docker_go_connections/vendor/github.com/docker/go-connections \
+		docker:go-metrics:v0.0.1:docker_go_metrics/vendor/github.com/docker/go-metrics \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
+		docker:go:d30aec9fd63c:docker_go/vendor/github.com/docker/go \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		fvbommel:sortorder:v1.0.2:fvbommel_sortorder/vendor/github.com/fvbommel/sortorder \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
 		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:a5bbcd278ab1:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
@@ -56,6 +62,7 @@ GH_TUPLE=	\
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:1d35b9e2eb4e:golang_sys/vendor/golang.org/x/sys \
+		golang:term:7de9c90e9dd1:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:2b146023228c:google_go_genproto/vendor/google.golang.org/genproto \
 		google:go-github:v32.1.0:google_go_github_v32/vendor/github.com/google/go-github/v32 \
@@ -63,6 +70,7 @@ GH_TUPLE=	\
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
 		google:starlark-go:7a1108eaa012:google_starlark_go/vendor/go.starlark.net \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
+		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		grpc-ecosystem:go-grpc-middleware:v1.3.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc:grpc-go:v1.41.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:go-version:v1.3.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
@@ -81,6 +89,8 @@ GH_TUPLE=	\
 		lestrrat-go:pdebug:4d6bd78da58d:lestrrat_go_pdebug/vendor/github.com/lestrrat-go/pdebug \
 		lestrrat-go:structinfo:acd51874663b:lestrrat_go_structinfo/vendor/github.com/lestrrat-go/structinfo \
 		magiconair:properties:v1.8.4:magiconair_properties/vendor/github.com/magiconair/properties \
+		matttproud:golang_protobuf_extensions:c182affec369:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
+		miekg:pkcs11:v1.0.3:miekg_pkcs11/vendor/github.com/miekg/pkcs11 \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:go-ps:v1.0.0:mitchellh_go_ps/vendor/github.com/mitchellh/go-ps \
 		mitchellh:mapstructure:v1.4.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
@@ -88,8 +98,10 @@ GH_TUPLE=	\
 		moby:locker:v1.0.1:moby_locker/vendor/github.com/moby/locker \
 		moby:moby:v0.6.3:moby_moby_1/vendor/github.com/docker/docker-credential-helpers \
 		moby:moby:v20.10.7:moby_moby/vendor/github.com/docker/docker \
-		moby:sys:mountinfo/v0.4.1:moby_sys_mountinfo/vendor/github.com/moby/sys \
+		moby:sys:mount/v0.2.0:moby_sys_mount/vendor/github.com/moby/sys \
+		moby:sys:mountinfo/v0.4.1:moby_sys_mountinfo \
 		moby:term:df9cb8a40635:moby_term/vendor/github.com/moby/term \
+		morikuni:aec:v1.0.0:morikuni_aec/vendor/github.com/morikuni/aec \
 		natefinch:lumberjack:v2.0.0:natefinch_lumberjack/vendor/gopkg.in/natefinch/lumberjack.v2 \
 		onsi:ginkgo:v1.14.2:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
@@ -101,6 +113,10 @@ GH_TUPLE=	\
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pkg:sftp:v1.12.0:pkg_sftp/vendor/github.com/pkg/sftp \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		prometheus:client_golang:v1.7.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:common:v0.10.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.7.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		qri-io:starlib:v0.5.0:qri_io_starlib/vendor/github.com/qri-io/starlib \
 		sergi:go-diff:v1.2.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
@@ -114,6 +130,7 @@ GH_TUPLE=	\
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		syndtr:gocapability:42c35b437635:syndtr_gocapability/vendor/github.com/syndtr/gocapability \
+		theupdateframework:notary:v0.7.0:theupdateframework_notary/vendor/github.com/theupdateframework/notary \
 		xanzy:ssh-agent:v0.3.1:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		xeipuuv:gojsonpointer:df4f5c81cb3b:xeipuuv_gojsonpointer/vendor/github.com/xeipuuv/gojsonpointer \
 		xeipuuv:gojsonreference:bd5ef7bd5415:xeipuuv_gojsonreference/vendor/github.com/xeipuuv/gojsonreference \
@@ -121,8 +138,13 @@ GH_TUPLE=	\
 		yudai:gojsondiff:v1.0.0:yudai_gojsondiff/vendor/github.com/yudai/gojsondiff \
 		yudai:golcs:ecda9a501e82:yudai_golcs/vendor/github.com/yudai/golcs \
 		yudai:pp:v2.0.1:yudai_pp/vendor/github.com/yudai/pp
+
 GO_TARGET=	./cmd/cirrus
 
 PLIST_FILES=	bin/cirrus
+
+post-extract:
+	@${RM} -r ${WRKSRC}/vendor/github.com/moby/sys/mountinfo
+	@${RLN} ${WRKSRC_moby_sys_mountinfo}/mountinfo ${WRKSRC}/vendor/github.com/moby/sys/mountinfo
 
 .include <bsd.port.mk>
