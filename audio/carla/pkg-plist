@@ -205,12 +205,12 @@ share/carla/ui_xycontroller.py
 share/carla/widgets/__init__.py
 share/carla/widgets/canvaspreviewframe.py
 share/carla/widgets/collapsablewidget.py
+share/carla/widgets/commondial.py
 share/carla/widgets/digitalpeakmeter.py
 share/carla/widgets/draggablegraphicsview.py
 share/carla/widgets/ledbutton.py
 share/carla/widgets/paramspinbox.py
 share/carla/widgets/pianoroll.py
-share/carla/widgets/pixmapbutton.py
 share/carla/widgets/pixmapdial.py
 share/carla/widgets/pixmapkeyboard.py
 share/carla/widgets/racklistwidget.py
