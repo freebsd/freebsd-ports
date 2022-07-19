@@ -5,8 +5,9 @@ PORTVERSION=	5.2.3
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/ \
-		ftp://ftp.nsk.su/pub/RinetSoftware/
+MASTER_SITES=	https://src.fedoraproject.org/rpms/trafshow/blob/f32/f/ \
+		http://gentoo.osuosl.org/distfiles/ \
+		ftp://ftp.iij.ad.jp/pub/linux/gentoo/distfiles/0a/
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Full screen visualization of network traffic
