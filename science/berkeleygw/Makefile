@@ -32,8 +32,8 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386 && ${GCC_DEFAULT} >= 10
-BROKEN=		f951: internal compiler error: Segmentation fault
+.if ${GCC_DEFAULT} >= 10
+BROKEN_i386=	f951: internal compiler error: Segmentation fault
 .endif
 
 post-patch:
