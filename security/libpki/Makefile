@@ -1,7 +1,7 @@
 PORTNAME=	libpki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 PATCH_SITES=	https://github.com/openca/libpki/commit/
@@ -35,10 +35,8 @@ MYSQL_DESC=	"Enable MySQL support"
 PGSQL_DESC=	"Enable PostgreSQL support"
 
 DNS_CONFIGURE_ENABLE=	dns
-LDAP_LIB_DEPENDS=	liblber.so:net/openldap24-client \
-			libldap_r.so:net/openldap24-client
+LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_ENABLE=	ldap
-LDAP_LDFLAGS+=		-llber
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ENABLE=	mysql
 PGSQL_USES=		pgsql
