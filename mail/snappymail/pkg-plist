@@ -756,6 +756,10 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/uk-UA/relativetimeformat.js
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/uk-UA/static.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/uk-UA/user.json
+%%WWWDIR%%/snappymail/v/%%VER%%/app/localization/vi-VN/admin.json
+%%WWWDIR%%/snappymail/v/%%VER%%/app/localization/vi-VN/relativetimeformat.js
+%%WWWDIR%%/snappymail/v/%%VER%%/app/localization/vi-VN/static.json
+%%WWWDIR%%/snappymail/v/%%VER%%/app/localization/vi-VN/user.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/zh-CN/admin.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/zh-CN/relativetimeformat.js
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/zh-CN/static.json
