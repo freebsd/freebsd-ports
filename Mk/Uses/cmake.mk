@@ -56,11 +56,18 @@ IGNORE=	Incorrect 'USES+= cmake:${cmake_ARGS}' usage: argument [${arg}] is not r
 .    endif
 .  endfor
 
-CMAKE_BIN=		${LOCALBASE}/bin/cmake
-BUILD_DEPENDS+=		${CMAKE_BIN}:devel/cmake
+CMAKE_CMD_RUN=		${LOCALBASE}/bin/cmake
+.if defined(CMAKE_CMD)
+_CMAKE_PORT=		/nonexistent
+.else
+CMAKE_CMD=		${CMAKE_CMD_RUN}
+_CMAKE_PORT=		devel/cmake
+.endif
+BUILD_DEPENDS+=		${CMAKE_CMD}:${_CMAKE_PORT}
+CMAKE_BIN=		${CMAKE_CMD}
 
 .  if ${cmake_ARGS:Mrun}
-RUN_DEPENDS+=		${CMAKE_BIN}:devel/cmake
+RUN_DEPENDS+=		${CMAKE_CMD_RUN}:devel/cmake
 .  endif
 
 .  if defined(WITH_DEBUG)

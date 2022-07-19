@@ -448,11 +448,16 @@ PYTHON_SUFFIX=		${_PYTHON_VERSION:S/.//g}
 PYTHON_MAJOR_VER=	${PYTHON_VER:R}
 PYTHON_REL=		# empty
 PYTHON_ABIVER=		# empty
-PYTHON_PORTSDIR=	${_PYTHON_RELPORTDIR}${PYTHON_SUFFIX}
+PYTHON_PORTSDIR_RUN=	${_PYTHON_RELPORTDIR}${PYTHON_SUFFIX}
+.  if defined(PYTHON_CMD)
+PYTHON_PORTSDIR=	/nonexistent
+.  else
+PYTHON_PORTSDIR=	${PYTHON_PORTSDIR_RUN}
+.  endif
 
 # Protect partial checkouts from Mk/Scripts/functions.sh:export_ports_env().
-.  if !defined(_PORTS_ENV_CHECK) || exists(${PORTSDIR}/${PYTHON_PORTSDIR})
-.include "${PORTSDIR}/${PYTHON_PORTSDIR}/Makefile.version"
+.  if !defined(_PORTS_ENV_CHECK) || exists(${PORTSDIR}/${PYTHON_PORTSDIR_RUN})
+.include "${PORTSDIR}/${PYTHON_PORTSDIR_RUN}/Makefile.version"
 .  endif
 # Create a 5 integer version string, prefixing 0 to the minor and patch
 # tokens if it's a single character. Only use the the first 3 tokens of
@@ -460,8 +465,9 @@ PYTHON_PORTSDIR=	${_PYTHON_RELPORTDIR}${PYTHON_SUFFIX}
 # any Python port (lang/pythonXY)
 PYTHON_REL=	${PYTHON_DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/:C/\.([0-9])$/.0\1/:C/\.([0-9]\.[0-9]+)/.0\1/:S/.//g}
 
+PYTHON_CMD_RUN?=	${_PYTHON_BASECMD}${_PYTHON_VERSION}
 # Might be overridden by calling ports
-PYTHON_CMD?=		${_PYTHON_BASECMD}${_PYTHON_VERSION}
+PYTHON_CMD?=		${PYTHON_CMD_RUN}
 .  if ${PYTHON_VER} != 2.7
 .    if exists(${PYTHON_CMD}-config)
 PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
@@ -664,9 +670,14 @@ PY_BOOST_LIB=	boost_python${PYTHON_SUFFIX}
 PY_BOOST=	lib${PY_BOOST_LIB}.so:devel/boost-python-libs@${PY_FLAVOR}
 
 # dependencies
-.  for _stage in PATCH BUILD RUN TEST
+.  for _stage in PATCH BUILD
 .    if defined(_PYTHON_${_stage}_DEP)
 ${_stage}_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
+.    endif
+.  endfor
+.  for _stage in RUN TEST
+.    if defined(_PYTHON_${_stage}_DEP)
+${_stage}_DEPENDS+=	${PYTHON_CMD_RUN}:${PYTHON_PORTSDIR_RUN}
 .    endif
 .  endfor
 

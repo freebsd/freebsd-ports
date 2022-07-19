@@ -24,7 +24,11 @@ _INCLUDE_USES_MESON_MK=	yes
 IGNORE=	Incorrect 'USES+= meson:${meson_ARGS}'. meson takes no arguments
 .  endif
 
+.  if defined(MESON_CMD)
+BUILD_DEPENDS+=		${MESON_CMD}:/nonexistent
+.  else
 BUILD_DEPENDS+=		meson>=0.57.1_1:devel/meson
+.  endif
 
 # meson uses ninja
 .include "${USESDIR}/ninja.mk"

@@ -29,12 +29,16 @@ ninja_ARGS+=	make
 ninja_ARGS+=	build
 .  endif
 
+.  if defined(NINJA_CMD)
+_NINJA_PORT=	/nonexistent
+.  endif
+
 .  if ${NINJA_DEFAULT} == ninja
-NINJA_CMD=	ninja
-_NINJA_PORT=	devel/ninja
+NINJA_CMD_RUN=	ninja
+_NINJA_PORT_RUN=devel/ninja
 .  elif ${NINJA_DEFAULT} == samurai
-NINJA_CMD=	samu
-_NINJA_PORT=	devel/samurai
+NINJA_CMD_RUN=	samu
+_NINJA_PORT_RUN=devel/samurai
 MAKE_ENV+=	SAMUFLAGS="-v -j${MAKE_JOBS_NUMBER}"
 .    if ${ninja_ARGS:Mbuild} && !${BINARY_ALIAS:U:Mninja=*}
 # Cmake and Meson have native support for Samurai and detect and
@@ -47,6 +51,9 @@ BINARY_ALIAS+=	ninja=samu
 .  else
 IGNORE=	invalid DEFAULT_VERSIONS+=ninja=${NINJA_DEFAULT}
 .  endif
+
+NINJA_CMD?=	${NINJA_CMD_RUN}
+_NINJA_PORT?=	${_NINJA_PORT_RUN}
 
 .  if ${ninja_ARGS:Mbuild}
 BUILD_DEPENDS+=	${NINJA_CMD}:${_NINJA_PORT}
@@ -72,7 +79,7 @@ _DESTDIR_VIA_ENV=	yes
 .  endif
 
 .  if ${ninja_ARGS:Mrun}
-RUN_DEPENDS+=	${NINJA_CMD}:${_NINJA_PORT}
+RUN_DEPENDS+=	${NINJA_CMD_RUN}:${_NINJA_PORT_RUN}
 .  endif
 
 .endif
