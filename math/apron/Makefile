@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.13
 CATEGORIES=	math
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	444ed837298d595f0f579d93e6e96d5af085bdac.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	APRON numerical abstract domain library
 
