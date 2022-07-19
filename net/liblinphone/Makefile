@@ -1,5 +1,5 @@
 PORTNAME=	liblinphone
-DISTVERSION=	5.0.49
+DISTVERSION=	5.1.32
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -28,7 +28,7 @@ USES=		cmake gnome iconv pkgconfig python:build sqlite
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_COMMIT=	b1c3ab19e6d4200293593d29afe8d4f3c121d5db
+GL_COMMIT=	05b13b98229fc69ed3075916857dbe32b60b2b39
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
@@ -49,9 +49,10 @@ LDAP_USE=		OPENLDAP=yes
 LDAP_CMAKE_BOOL=	ENABLE_LDAP
 VIDEO_CMAKE_BOOL=	ENABLE_VIDEO
 
-#post-patch:
-#	@${REINPLACE_CMD} 's|jsoncpp_object|jsoncpp|g' \
-#		${WRKSRC}/src/CMakeLists.txt
+post-patch:
+.for h in xml conference-info conference-info-linphone-extension
+	@${REINPLACE_CMD} '/^#error/d' ${WRKSRC}/src/xml/${h}.h
+.endfor
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/${DISTNAME}
