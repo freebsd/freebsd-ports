@@ -1,8 +1,10 @@
-%%OPENGL%%bin/sdl2-glfont
-bin/sdl2-showfont
 include/SDL2/SDL_ttf.h
+lib/cmake/SDL2_ttf/SDL2_ttf-shared-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SDL2_ttf/SDL2_ttf-shared-targets.cmake
+lib/cmake/SDL2_ttf/SDL2_ttfConfig.cmake
+lib/cmake/SDL2_ttf/SDL2_ttfConfigVersion.cmake
+lib/libSDL2_ttf-2.0.so
 lib/libSDL2_ttf-2.0.so.0
-lib/libSDL2_ttf-2.0.so.0.18.0
-lib/libSDL2_ttf.a
+lib/libSDL2_ttf-2.0.so.0.2000.0
 lib/libSDL2_ttf.so
 libdata/pkgconfig/SDL2_ttf.pc
