@@ -12,6 +12,7 @@
     SUBDIR += freebsd-bugzilla-cli
     SUBDIR += genpatch
     SUBDIR += genplist
+    SUBDIR += hs-cabal2tuple
     SUBDIR += hs-panopticum
     SUBDIR += jailaudit
     SUBDIR += lsknobs

@@ -1,0 +1,5 @@
+Cabal2Tuple is an utility to help develop ports for Haskell software. It
+generates USE_CABAL and GH_TUPLE knobs for port's Makefiles based on the
+plan.json file.
+
+WWW: https://foss.heptapod.net/bsdutils/cabal2tuple
