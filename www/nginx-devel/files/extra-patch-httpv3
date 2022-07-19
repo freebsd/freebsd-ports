@@ -1,6 +1,6 @@
-diff -r fecd73db563f README
+diff -r 5da2c0902e8e README
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/README	Thu Jun 23 13:33:29 2022 -0400
++++ b/README	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,232 @@
 +Experimental QUIC support for nginx
 +-----------------------------------
@@ -234,9 +234,9 @@ diff -r fecd73db563f README
 +    [6] https://nginx.org/en/docs/http/ngx_http_core_module.html#listen
 +    [7] https://nginx.org/en/docs/debugging_log.html
 +    [8] http://vger.kernel.org/lpc_net2018_talks/willemdebruijn-lpc2018-udpgso-paper-DRAFT-1.pdf
-diff -r fecd73db563f auto/lib/openssl/conf
---- a/auto/lib/openssl/conf	Tue Jun 21 17:25:37 2022 +0300
-+++ b/auto/lib/openssl/conf	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e auto/lib/openssl/conf
+--- a/auto/lib/openssl/conf	Tue Jun 21 17:25:36 2022 +0300
++++ b/auto/lib/openssl/conf	Tue Jul 19 12:13:58 2022 -0400
 @@ -5,12 +5,16 @@
  
  if [ $OPENSSL != NONE ]; then
@@ -296,9 +296,9 @@ diff -r fecd73db563f auto/lib/openssl/conf
 +        fi
 +    fi
  fi
-diff -r fecd73db563f auto/make
---- a/auto/make	Tue Jun 21 17:25:37 2022 +0300
-+++ b/auto/make	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e auto/make
+--- a/auto/make	Tue Jun 21 17:25:36 2022 +0300
++++ b/auto/make	Tue Jul 19 12:13:58 2022 -0400
 @@ -6,9 +6,10 @@
  echo "creating $NGX_MAKEFILE"
  
@@ -312,9 +312,9 @@ diff -r fecd73db563f auto/make
           $NGX_OBJS/src/mail \
           $NGX_OBJS/src/stream \
           $NGX_OBJS/src/misc
-diff -r fecd73db563f auto/modules
---- a/auto/modules	Tue Jun 21 17:25:37 2022 +0300
-+++ b/auto/modules	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e auto/modules
+--- a/auto/modules	Tue Jun 21 17:25:36 2022 +0300
++++ b/auto/modules	Tue Jul 19 12:13:58 2022 -0400
 @@ -102,7 +102,7 @@ if [ $HTTP = YES ]; then
      fi
  
@@ -475,9 +475,9 @@ diff -r fecd73db563f auto/modules
  if [ $USE_PCRE = YES ]; then
      ngx_module_type=CORE
      ngx_module_name=ngx_regex_module
-diff -r fecd73db563f auto/options
---- a/auto/options	Tue Jun 21 17:25:37 2022 +0300
-+++ b/auto/options	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e auto/options
+--- a/auto/options	Tue Jun 21 17:25:36 2022 +0300
++++ b/auto/options	Tue Jul 19 12:13:58 2022 -0400
 @@ -45,6 +45,8 @@ USE_THREADS=NO
  
  NGX_FILE_AIO=NO
@@ -565,9 +565,9 @@ diff -r fecd73db563f auto/options
    --with-stream_realip_module        enable ngx_stream_realip_module
    --with-stream_geoip_module         enable ngx_stream_geoip_module
    --with-stream_geoip_module=dynamic enable dynamic ngx_stream_geoip_module
-diff -r fecd73db563f auto/os/linux
---- a/auto/os/linux	Tue Jun 21 17:25:37 2022 +0300
-+++ b/auto/os/linux	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e auto/os/linux
+--- a/auto/os/linux	Tue Jun 21 17:25:36 2022 +0300
++++ b/auto/os/linux	Tue Jul 19 12:13:58 2022 -0400
 @@ -232,6 +232,50 @@ ngx_feature_test="struct crypt_data  cd;
  ngx_include="sys/vfs.h";     . auto/include
  
@@ -619,9 +619,9 @@ diff -r fecd73db563f auto/os/linux
  # UDP segmentation offloading
  
  ngx_feature="UDP_SEGMENT"
-diff -r fecd73db563f auto/sources
---- a/auto/sources	Tue Jun 21 17:25:37 2022 +0300
-+++ b/auto/sources	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e auto/sources
+--- a/auto/sources	Tue Jun 21 17:25:36 2022 +0300
++++ b/auto/sources	Tue Jul 19 12:13:58 2022 -0400
 @@ -83,7 +83,7 @@ CORE_SRCS="src/core/nginx.c \
  
  EVENT_MODULES="ngx_events_module ngx_event_core_module"
@@ -631,9 +631,9 @@ diff -r fecd73db563f auto/sources
  
  EVENT_DEPS="src/event/ngx_event.h \
              src/event/ngx_event_timer.h \
-diff -r fecd73db563f src/core/nginx.c
---- a/src/core/nginx.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/core/nginx.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/core/nginx.c
+--- a/src/core/nginx.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/core/nginx.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -680,6 +680,9 @@ ngx_exec_new_binary(ngx_cycle_t *cycle, 
  
      ls = cycle->listening.elts;
@@ -644,9 +644,9 @@ diff -r fecd73db563f src/core/nginx.c
          p = ngx_sprintf(p, "%ud;", ls[i].fd);
      }
  
-diff -r fecd73db563f src/core/ngx_bpf.c
+diff -r 5da2c0902e8e src/core/ngx_bpf.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/core/ngx_bpf.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/core/ngx_bpf.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,143 @@
 +
 +/*
@@ -791,9 +791,9 @@ diff -r fecd73db563f src/core/ngx_bpf.c
 +
 +    return ngx_bpf(BPF_MAP_LOOKUP_ELEM, &attr, sizeof(attr));
 +}
-diff -r fecd73db563f src/core/ngx_bpf.h
+diff -r 5da2c0902e8e src/core/ngx_bpf.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/core/ngx_bpf.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/core/ngx_bpf.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,43 @@
 +
 +/*
@@ -838,9 +838,9 @@ diff -r fecd73db563f src/core/ngx_bpf.h
 +int ngx_bpf_map_lookup(int fd, const void *key, void *value);
 +
 +#endif /* _NGX_BPF_H_INCLUDED_ */
-diff -r fecd73db563f src/core/ngx_connection.c
---- a/src/core/ngx_connection.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/core/ngx_connection.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/core/ngx_connection.c
+--- a/src/core/ngx_connection.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/core/ngx_connection.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -72,10 +72,6 @@ ngx_create_listening(ngx_conf_t *cf, str
  
      ngx_memcpy(ls->addr_text.data, text, len);
@@ -865,9 +865,9 @@ diff -r fecd73db563f src/core/ngx_connection.c
          c = ls[i].connection;
  
          if (c) {
-diff -r fecd73db563f src/core/ngx_connection.h
---- a/src/core/ngx_connection.h	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/core/ngx_connection.h	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/core/ngx_connection.h
+--- a/src/core/ngx_connection.h	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/core/ngx_connection.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -73,6 +73,7 @@ struct ngx_listening_s {
      unsigned            reuseport:1;
      unsigned            add_reuseport:1;
@@ -887,9 +887,9 @@ diff -r fecd73db563f src/core/ngx_connection.h
  #if (NGX_SSL || NGX_COMPAT)
      ngx_ssl_connection_t  *ssl;
  #endif
-diff -r fecd73db563f src/core/ngx_core.h
---- a/src/core/ngx_core.h	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/core/ngx_core.h	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/core/ngx_core.h
+--- a/src/core/ngx_core.h	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/core/ngx_core.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -27,6 +27,7 @@ typedef struct ngx_connection_s      ngx
  typedef struct ngx_thread_task_s     ngx_thread_task_t;
  typedef struct ngx_ssl_s             ngx_ssl_t;
@@ -918,9 +918,9 @@ diff -r fecd73db563f src/core/ngx_core.h
  
  
  #define LF     (u_char) '\n'
-diff -r fecd73db563f src/event/ngx_event.c
---- a/src/event/ngx_event.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/event/ngx_event.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/event/ngx_event.c
+--- a/src/event/ngx_event.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/event/ngx_event.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -267,6 +267,18 @@ ngx_process_events_and_timers(ngx_cycle_
  ngx_int_t
  ngx_handle_read_event(ngx_event_t *rev, ngx_uint_t flags)
@@ -977,9 +977,9 @@ diff -r fecd73db563f src/event/ngx_event.c
  
  #if (NGX_HAVE_REUSEPORT)
  
-diff -r fecd73db563f src/event/ngx_event_openssl.c
---- a/src/event/ngx_event_openssl.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/event/ngx_event_openssl.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/event/ngx_event_openssl.c
+--- a/src/event/ngx_event_openssl.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/event/ngx_event_openssl.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -3149,6 +3149,13 @@ ngx_ssl_shutdown(ngx_connection_t *c)
      ngx_err_t   err;
      ngx_uint_t  tries;
@@ -994,9 +994,9 @@ diff -r fecd73db563f src/event/ngx_event_openssl.c
      rc = NGX_OK;
  
      ngx_ssl_ocsp_cleanup(c);
-diff -r fecd73db563f src/event/ngx_event_openssl.h
---- a/src/event/ngx_event_openssl.h	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/event/ngx_event_openssl.h	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/event/ngx_event_openssl.h
+--- a/src/event/ngx_event_openssl.h	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/event/ngx_event_openssl.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -24,6 +24,14 @@
  #include <openssl/engine.h>
  #endif
@@ -1012,9 +1012,9 @@ diff -r fecd73db563f src/event/ngx_event_openssl.h
  #include <openssl/hmac.h>
  #ifndef OPENSSL_NO_OCSP
  #include <openssl/ocsp.h>
-diff -r fecd73db563f src/event/ngx_event_udp.c
---- a/src/event/ngx_event_udp.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/event/ngx_event_udp.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/event/ngx_event_udp.c
+--- a/src/event/ngx_event_udp.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/event/ngx_event_udp.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -12,13 +12,6 @@
  
  #if !(NGX_WIN32)
@@ -1029,9 +1029,9 @@ diff -r fecd73db563f src/event/ngx_event_udp.c
  static void ngx_close_accepted_udp_connection(ngx_connection_t *c);
  static ssize_t ngx_udp_shared_recv(ngx_connection_t *c, u_char *buf,
      size_t size);
-diff -r fecd73db563f src/event/ngx_event_udp.h
---- a/src/event/ngx_event_udp.h	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/event/ngx_event_udp.h	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/event/ngx_event_udp.h
+--- a/src/event/ngx_event_udp.h	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/event/ngx_event_udp.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -23,6 +23,13 @@
  #endif
  
@@ -1046,9 +1046,9 @@ diff -r fecd73db563f src/event/ngx_event_udp.h
  #if (NGX_HAVE_ADDRINFO_CMSG)
  
  typedef union {
-diff -r fecd73db563f src/event/quic/bpf/bpfgen.sh
+diff -r 5da2c0902e8e src/event/quic/bpf/bpfgen.sh
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/bpfgen.sh	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/bpf/bpfgen.sh	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,113 @@
 +#!/bin/bash
 +
@@ -1163,9 +1163,9 @@ diff -r fecd73db563f src/event/quic/bpf/bpfgen.sh
 +process_section
 +generate_tail
 +
-diff -r fecd73db563f src/event/quic/bpf/makefile
+diff -r 5da2c0902e8e src/event/quic/bpf/makefile
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/makefile	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/bpf/makefile	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,30 @@
 +CFLAGS=-O2 -Wall
 +
@@ -1197,9 +1197,9 @@ diff -r fecd73db563f src/event/quic/bpf/makefile
 +	llvm-objdump -S -no-show-raw-insn $<
 +
 +.DELETE_ON_ERROR:
-diff -r fecd73db563f src/event/quic/bpf/ngx_quic_reuseport_helper.c
+diff -r 5da2c0902e8e src/event/quic/bpf/ngx_quic_reuseport_helper.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/ngx_quic_reuseport_helper.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/bpf/ngx_quic_reuseport_helper.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,140 @@
 +#include <errno.h>
 +#include <linux/string.h>
@@ -1341,9 +1341,9 @@ diff -r fecd73db563f src/event/quic/bpf/ngx_quic_reuseport_helper.c
 +     */
 +    return SK_PASS;
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,1459 @@
 +
 +/*
@@ -2804,9 +2804,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic.c
 +
 +    ngx_quic_finalize_connection(c, qc->shutdown_code, qc->shutdown_reason);
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,123 @@
 +
 +/*
@@ -2931,9 +2931,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic.h
 +    ngx_str_t *secret, ngx_str_t *salt, u_char *out, size_t len);
 +
 +#endif /* _NGX_EVENT_QUIC_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_ack.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ack.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ack.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_ack.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,1193 @@
 +
 +/*
@@ -4128,9 +4128,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_ack.c
 +
 +    return NGX_OK;
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic_ack.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ack.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ack.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_ack.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,30 @@
 +
 +/*
@@ -4162,9 +4162,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_ack.h
 +    ngx_quic_send_ctx_t *ctx);
 +
 +#endif /* _NGX_EVENT_QUIC_ACK_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_bpf.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_bpf.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_bpf.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_bpf.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,657 @@
 +
 +/*
@@ -4823,9 +4823,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_bpf.c
 +
 +    return NGX_OK;
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic_bpf_code.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_bpf_code.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_bpf_code.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_bpf_code.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,88 @@
 +/* AUTO-GENERATED, DO NOT EDIT. */
 +
@@ -4915,9 +4915,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_bpf_code.c
 +    .license = "BSD",
 +    .type = BPF_PROG_TYPE_SK_REUSEPORT,
 +};
-diff -r fecd73db563f src/event/quic/ngx_event_quic_connection.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_connection.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connection.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_connection.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,276 @@
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -5195,9 +5195,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_connection.h
 +#endif
 +
 +#endif /* _NGX_EVENT_QUIC_CONNECTION_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_connid.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_connid.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connid.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_connid.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,502 @@
 +
 +/*
@@ -5701,9 +5701,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_connid.c
 +
 +    return NGX_OK;
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic_connid.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_connid.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connid.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_connid.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,29 @@
 +
 +/*
@@ -5734,9 +5734,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_connid.h
 +    ngx_quic_client_id_t *cid);
 +
 +#endif /* _NGX_EVENT_QUIC_CONNID_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_frames.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_frames.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_frames.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_frames.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,844 @@
 +
 +/*
@@ -6582,9 +6582,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_frames.c
 +}
 +
 +#endif
-diff -r fecd73db563f src/event/quic/ngx_event_quic_frames.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_frames.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_frames.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_frames.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,43 @@
 +
 +/*
@@ -6629,9 +6629,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_frames.h
 +#endif
 +
 +#endif /* _NGX_EVENT_QUIC_FRAMES_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_migration.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_migration.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_migration.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_migration.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,671 @@
 +
 +/*
@@ -7304,9 +7304,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_migration.c
 +        ngx_add_timer(&qc->path_validation, next);
 +    }
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic_migration.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_migration.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_migration.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_migration.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,42 @@
 +
 +/*
@@ -7350,9 +7350,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_migration.h
 +void ngx_quic_path_validation_handler(ngx_event_t *ev);
 +
 +#endif /* _NGX_EVENT_QUIC_MIGRATION_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_output.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_output.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_output.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_output.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,1283 @@
 +
 +/*
@@ -8637,9 +8637,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_output.c
 +
 +    return size;
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic_output.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_output.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_output.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_output.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,40 @@
 +
 +/*
@@ -8681,9 +8681,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_output.h
 +    size_t min, ngx_quic_path_t *path);
 +
 +#endif /* _NGX_EVENT_QUIC_OUTPUT_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_protection.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_protection.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_protection.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,1177 @@
 +
 +/*
@@ -9862,9 +9862,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_protection.c
 +
 +    return NGX_OK;
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic_protection.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_protection.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_protection.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_protection.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,37 @@
 +
 +/*
@@ -9903,9 +9903,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_protection.h
 +
 +
 +#endif /* _NGX_EVENT_QUIC_PROTECTION_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_socket.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_socket.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_socket.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_socket.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,237 @@
 +
 +/*
@@ -10144,9 +10144,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_socket.c
 +
 +    return NULL;
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic_socket.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_socket.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_socket.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_socket.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,28 @@
 +
 +/*
@@ -10176,9 +10176,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_socket.h
 +
 +
 +#endif /* _NGX_EVENT_QUIC_SOCKET_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_ssl.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ssl.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ssl.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_ssl.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,614 @@
 +
 +/*
@@ -10794,9 +10794,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_ssl.c
 +
 +    return NGX_OK;
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic_ssl.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_ssl.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ssl.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_ssl.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,19 @@
 +
 +/*
@@ -10817,9 +10817,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_ssl.h
 +    ngx_quic_header_t *pkt, ngx_quic_frame_t *frame);
 +
 +#endif /* _NGX_EVENT_QUIC_SSL_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_streams.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_streams.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_streams.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_streams.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,1654 @@
 +
 +/*
@@ -12475,9 +12475,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_streams.c
 +
 +    return NGX_OK;
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic_streams.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_streams.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_streams.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_streams.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,44 @@
 +
 +/*
@@ -12523,9 +12523,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_streams.h
 +    ngx_quic_connection_t *qc);
 +
 +#endif /* _NGX_EVENT_QUIC_STREAMS_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_tokens.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_tokens.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_tokens.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_tokens.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,295 @@
 +
 +/*
@@ -12822,9 +12822,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_tokens.c
 +
 +    return NGX_DECLINED;
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic_tokens.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_tokens.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_tokens.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_tokens.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,23 @@
 +
 +/*
@@ -12849,9 +12849,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_tokens.h
 +    u_char *key, ngx_quic_header_t *pkt);
 +
 +#endif /* _NGX_EVENT_QUIC_TOKENS_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_transport.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_transport.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_transport.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_transport.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,2164 @@
 +
 +/*
@@ -15017,9 +15017,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_transport.c
 +{
 +    (void) ngx_quic_write_uint64(dcid, key);
 +}
-diff -r fecd73db563f src/event/quic/ngx_event_quic_transport.h
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_transport.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_transport.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_transport.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,397 @@
 +
 +/*
@@ -15418,9 +15418,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_transport.h
 +void ngx_quic_dcid_encode_key(u_char *dcid, uint64_t key);
 +
 +#endif /* _NGX_EVENT_QUIC_TRANSPORT_H_INCLUDED_ */
-diff -r fecd73db563f src/event/quic/ngx_event_quic_udp.c
+diff -r 5da2c0902e8e src/event/quic/ngx_event_quic_udp.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_udp.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/event/quic/ngx_event_quic_udp.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,473 @@
 +
 +/*
@@ -15895,9 +15895,9 @@ diff -r fecd73db563f src/event/quic/ngx_event_quic_udp.c
 +
 +    return NULL;
 +}
-diff -r fecd73db563f src/http/modules/ngx_http_ssl_module.c
---- a/src/http/modules/ngx_http_ssl_module.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/http/modules/ngx_http_ssl_module.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/http/modules/ngx_http_ssl_module.c
+--- a/src/http/modules/ngx_http_ssl_module.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/http/modules/ngx_http_ssl_module.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -419,16 +419,19 @@ ngx_http_ssl_alpn_select(ngx_ssl_conn_t 
      unsigned char *outlen, const unsigned char *in, unsigned int inlen,
      void *arg)
@@ -16022,9 +16022,9 @@ diff -r fecd73db563f src/http/modules/ngx_http_ssl_module.c
                  return NGX_ERROR;
              }
          }
-diff -r fecd73db563f src/http/ngx_http.c
---- a/src/http/ngx_http.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/http/ngx_http.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/http/ngx_http.c
+--- a/src/http/ngx_http.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/http/ngx_http.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -1200,7 +1200,10 @@ ngx_http_add_listen(ngx_conf_t *cf, ngx_
      port = cmcf->ports->elts;
      for (i = 0; i < cmcf->ports->nelts; i++) {
@@ -16123,9 +16123,9 @@ diff -r fecd73db563f src/http/ngx_http.c
          addrs6[i].conf.proxy_protocol = addr[i].opt.proxy_protocol;
  
          if (addr[i].hash.buckets == NULL
-diff -r fecd73db563f src/http/ngx_http.h
---- a/src/http/ngx_http.h	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/http/ngx_http.h	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/http/ngx_http.h
+--- a/src/http/ngx_http.h	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/http/ngx_http.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -20,6 +20,8 @@ typedef struct ngx_http_file_cache_s  ng
  typedef struct ngx_http_log_ctx_s     ngx_http_log_ctx_t;
  typedef struct ngx_http_chunked_s     ngx_http_chunked_t;
@@ -16166,9 +16166,9 @@ diff -r fecd73db563f src/http/ngx_http.h
  ngx_int_t ngx_http_huff_decode(u_char *state, u_char *src, size_t len,
      u_char **dst, ngx_uint_t last, ngx_log_t *log);
  size_t ngx_http_huff_encode(u_char *src, size_t len, u_char *dst,
-diff -r fecd73db563f src/http/ngx_http_core_module.c
---- a/src/http/ngx_http_core_module.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/http/ngx_http_core_module.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/http/ngx_http_core_module.c
+--- a/src/http/ngx_http_core_module.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/http/ngx_http_core_module.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -3989,6 +3989,7 @@ ngx_http_core_listen(ngx_conf_t *cf, ngx
      ngx_memzero(&lsopt, sizeof(ngx_http_listen_opt_t));
  
@@ -16210,9 +16210,9 @@ diff -r fecd73db563f src/http/ngx_http_core_module.c
      for (n = 0; n < u.naddrs; n++) {
          lsopt.sockaddr = u.addrs[n].sockaddr;
          lsopt.socklen = u.addrs[n].socklen;
-diff -r fecd73db563f src/http/ngx_http_core_module.h
---- a/src/http/ngx_http_core_module.h	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/http/ngx_http_core_module.h	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/http/ngx_http_core_module.h
+--- a/src/http/ngx_http_core_module.h	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/http/ngx_http_core_module.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -75,6 +75,7 @@ typedef struct {
      unsigned                   wildcard:1;
      unsigned                   ssl:1;
@@ -16245,9 +16245,9 @@ diff -r fecd73db563f src/http/ngx_http_core_module.h
      in_port_t                  port;
      ngx_array_t                addrs;     /* array of ngx_http_conf_addr_t */
  } ngx_http_conf_port_t;
-diff -r fecd73db563f src/http/ngx_http_request.c
---- a/src/http/ngx_http_request.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/http/ngx_http_request.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/http/ngx_http_request.c
+--- a/src/http/ngx_http_request.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/http/ngx_http_request.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -29,10 +29,6 @@ static ngx_int_t ngx_http_process_connec
  static ngx_int_t ngx_http_process_user_agent(ngx_http_request_t *r,
      ngx_table_elt_t *h, ngx_uint_t offset);
@@ -16385,9 +16385,9 @@ diff -r fecd73db563f src/http/ngx_http_request.c
  #if (NGX_STAT_STUB)
      (void) ngx_atomic_fetch_add(ngx_stat_active, -1);
  #endif
-diff -r fecd73db563f src/http/ngx_http_request.h
---- a/src/http/ngx_http_request.h	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/http/ngx_http_request.h	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/http/ngx_http_request.h
+--- a/src/http/ngx_http_request.h	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/http/ngx_http_request.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -24,6 +24,7 @@
  #define NGX_HTTP_VERSION_10                1000
  #define NGX_HTTP_VERSION_11                1001
@@ -16423,9 +16423,9 @@ diff -r fecd73db563f src/http/ngx_http_request.h
      unsigned                          expect_tested:1;
      unsigned                          root_tested:1;
      unsigned                          done:1;
-diff -r fecd73db563f src/http/ngx_http_request_body.c
---- a/src/http/ngx_http_request_body.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/http/ngx_http_request_body.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/http/ngx_http_request_body.c
+--- a/src/http/ngx_http_request_body.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/http/ngx_http_request_body.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -92,6 +92,13 @@ ngx_http_read_client_request_body(ngx_ht
      }
  #endif
@@ -16482,9 +16482,9 @@ diff -r fecd73db563f src/http/ngx_http_request_body.c
         )
      {
          return NGX_OK;
-diff -r fecd73db563f src/http/ngx_http_upstream.c
---- a/src/http/ngx_http_upstream.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/http/ngx_http_upstream.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/http/ngx_http_upstream.c
+--- a/src/http/ngx_http_upstream.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/http/ngx_http_upstream.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -521,6 +521,13 @@ ngx_http_upstream_init(ngx_http_request_
      }
  #endif
@@ -16519,9 +16519,9 @@ diff -r fecd73db563f src/http/ngx_http_upstream.c
  #if (NGX_HAVE_KQUEUE)
  
      if (ngx_event_flags & NGX_USE_KQUEUE_EVENT) {
-diff -r fecd73db563f src/http/ngx_http_write_filter_module.c
---- a/src/http/ngx_http_write_filter_module.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/http/ngx_http_write_filter_module.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/http/ngx_http_write_filter_module.c
+--- a/src/http/ngx_http_write_filter_module.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/http/ngx_http_write_filter_module.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -240,6 +240,10 @@ ngx_http_write_filter(ngx_http_request_t
              r->out = NULL;
              c->buffered &= ~NGX_HTTP_WRITE_BUFFERED;
@@ -16544,9 +16544,9 @@ diff -r fecd73db563f src/http/ngx_http_write_filter_module.c
      if ((c->buffered & NGX_LOWLEVEL_BUFFERED) && r->postponed == NULL) {
          return NGX_AGAIN;
      }
-diff -r fecd73db563f src/http/v3/ngx_http_v3.c
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,123 @@
 +
 +/*
@@ -16671,9 +16671,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3.c
 +
 +    return NGX_OK;
 +}
-diff -r fecd73db563f src/http/v3/ngx_http_v3.h
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,166 @@
 +
 +/*
@@ -16841,9 +16841,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3.h
 +
 +
 +#endif /* _NGX_HTTP_V3_H_INCLUDED_ */
-diff -r fecd73db563f src/http/v3/ngx_http_v3_encode.c
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_encode.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_encode.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3_encode.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,304 @@
 +
 +/*
@@ -17149,9 +17149,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3_encode.c
 +
 +    return (uintptr_t) p;
 +}
-diff -r fecd73db563f src/http/v3/ngx_http_v3_encode.h
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_encode.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_encode.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3_encode.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,34 @@
 +
 +/*
@@ -17187,9 +17187,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3_encode.h
 +
 +
 +#endif /* _NGX_HTTP_V3_ENCODE_H_INCLUDED_ */
-diff -r fecd73db563f src/http/v3/ngx_http_v3_filter_module.c
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_filter_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_filter_module.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3_filter_module.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,1536 @@
 +
 +/*
@@ -18727,9 +18727,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3_filter_module.c
 +
 +    return NGX_OK;
 +}
-diff -r fecd73db563f src/http/v3/ngx_http_v3_module.c
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_module.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3_module.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,551 @@
 +
 +/*
@@ -19282,9 +19282,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3_module.c
 +
 +    return NGX_CONF_OK;
 +}
-diff -r fecd73db563f src/http/v3/ngx_http_v3_parse.c
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_parse.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_parse.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3_parse.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,2013 @@
 +
 +/*
@@ -21299,9 +21299,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3_parse.c
 +        }
 +    }
 +}
-diff -r fecd73db563f src/http/v3/ngx_http_v3_parse.h
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_parse.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_parse.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3_parse.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,146 @@
 +
 +/*
@@ -21449,9 +21449,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3_parse.h
 +
 +
 +#endif /* _NGX_HTTP_V3_PARSE_H_INCLUDED_ */
-diff -r fecd73db563f src/http/v3/ngx_http_v3_request.c
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_request.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_request.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3_request.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,1687 @@
 +
 +/*
@@ -23140,9 +23140,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3_request.c
 +
 +    return rc;
 +}
-diff -r fecd73db563f src/http/v3/ngx_http_v3_table.c
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_table.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_table.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3_table.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,720 @@
 +
 +/*
@@ -23864,9 +23864,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3_table.c
 +
 +    return NGX_OK;
 +}
-diff -r fecd73db563f src/http/v3/ngx_http_v3_table.h
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_table.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_table.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3_table.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,58 @@
 +
 +/*
@@ -23926,9 +23926,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3_table.h
 +
 +
 +#endif /* _NGX_HTTP_V3_TABLE_H_INCLUDED_ */
-diff -r fecd73db563f src/http/v3/ngx_http_v3_uni.c
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_uni.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_uni.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3_uni.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,760 @@
 +
 +/*
@@ -24690,9 +24690,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3_uni.c
 +
 +    return NGX_OK;
 +}
-diff -r fecd73db563f src/http/v3/ngx_http_v3_uni.h
+diff -r 5da2c0902e8e src/http/v3/ngx_http_v3_uni.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_uni.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/http/v3/ngx_http_v3_uni.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,38 @@
 +
 +/*
@@ -24732,9 +24732,9 @@ diff -r fecd73db563f src/http/v3/ngx_http_v3_uni.h
 +
 +
 +#endif /* _NGX_HTTP_V3_UNI_H_INCLUDED_ */
-diff -r fecd73db563f src/os/unix/ngx_socket.h
---- a/src/os/unix/ngx_socket.h	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/os/unix/ngx_socket.h	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/os/unix/ngx_socket.h
+--- a/src/os/unix/ngx_socket.h	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/os/unix/ngx_socket.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -13,6 +13,8 @@
  
  
@@ -24744,9 +24744,9 @@ diff -r fecd73db563f src/os/unix/ngx_socket.h
  
  typedef int  ngx_socket_t;
  
-diff -r fecd73db563f src/stream/ngx_stream.c
---- a/src/stream/ngx_stream.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/stream/ngx_stream.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/stream/ngx_stream.c
+--- a/src/stream/ngx_stream.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/stream/ngx_stream.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -518,6 +518,24 @@ ngx_stream_optimize_servers(ngx_conf_t *
              ls->reuseport = addr[i].opt.reuseport;
  #endif
@@ -24792,9 +24792,9 @@ diff -r fecd73db563f src/stream/ngx_stream.c
          addrs6[i].conf.proxy_protocol = addr[i].opt.proxy_protocol;
          addrs6[i].conf.addr_text = addr[i].opt.addr_text;
      }
-diff -r fecd73db563f src/stream/ngx_stream.h
---- a/src/stream/ngx_stream.h	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/stream/ngx_stream.h	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/stream/ngx_stream.h
+--- a/src/stream/ngx_stream.h	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/stream/ngx_stream.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -16,6 +16,10 @@
  #include <ngx_stream_ssl_module.h>
  #endif
@@ -24822,9 +24822,9 @@ diff -r fecd73db563f src/stream/ngx_stream.h
      unsigned                       proxy_protocol:1;
  } ngx_stream_addr_conf_t;
  
-diff -r fecd73db563f src/stream/ngx_stream_core_module.c
---- a/src/stream/ngx_stream_core_module.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/stream/ngx_stream_core_module.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/stream/ngx_stream_core_module.c
+--- a/src/stream/ngx_stream_core_module.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/stream/ngx_stream_core_module.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -760,6 +760,29 @@ ngx_stream_core_listen(ngx_conf_t *cf, n
  #endif
          }
@@ -24868,9 +24868,9 @@ diff -r fecd73db563f src/stream/ngx_stream_core_module.c
          if (ls->so_keepalive) {
              return "\"so_keepalive\" parameter is incompatible with \"udp\"";
          }
-diff -r fecd73db563f src/stream/ngx_stream_handler.c
---- a/src/stream/ngx_stream_handler.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/stream/ngx_stream_handler.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/stream/ngx_stream_handler.c
+--- a/src/stream/ngx_stream_handler.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/stream/ngx_stream_handler.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -129,6 +129,10 @@ ngx_stream_init_connection(ngx_connectio
      s->ssl = addr_conf->ssl;
  #endif
@@ -24904,9 +24904,9 @@ diff -r fecd73db563f src/stream/ngx_stream_handler.c
      rev = c->read;
      rev->handler = ngx_stream_session_handler;
  
-diff -r fecd73db563f src/stream/ngx_stream_proxy_module.c
---- a/src/stream/ngx_stream_proxy_module.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/stream/ngx_stream_proxy_module.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/stream/ngx_stream_proxy_module.c
+--- a/src/stream/ngx_stream_proxy_module.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/stream/ngx_stream_proxy_module.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -1769,6 +1769,21 @@ ngx_stream_proxy_process(ngx_stream_sess
          if (dst->type == SOCK_STREAM && pscf->half_close
              && src->read->eof && !u->half_closed && !dst->buffered)
@@ -24929,9 +24929,9 @@ diff -r fecd73db563f src/stream/ngx_stream_proxy_module.c
              if (ngx_shutdown_socket(dst->fd, NGX_WRITE_SHUTDOWN) == -1) {
                  ngx_connection_error(c, ngx_socket_errno,
                                       ngx_shutdown_socket_n " failed");
-diff -r fecd73db563f src/stream/ngx_stream_quic_module.c
+diff -r 5da2c0902e8e src/stream/ngx_stream_quic_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/stream/ngx_stream_quic_module.c	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/stream/ngx_stream_quic_module.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,377 @@
 +
 +/*
@@ -25310,9 +25310,9 @@ diff -r fecd73db563f src/stream/ngx_stream_quic_module.c
 +
 +    return NGX_CONF_ERROR;
 +}
-diff -r fecd73db563f src/stream/ngx_stream_quic_module.h
+diff -r 5da2c0902e8e src/stream/ngx_stream_quic_module.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/stream/ngx_stream_quic_module.h	Thu Jun 23 13:33:29 2022 -0400
++++ b/src/stream/ngx_stream_quic_module.h	Tue Jul 19 12:13:58 2022 -0400
 @@ -0,0 +1,20 @@
 +
 +/*
@@ -25334,9 +25334,9 @@ diff -r fecd73db563f src/stream/ngx_stream_quic_module.h
 +
 +
 +#endif /* _NGX_STREAM_QUIC_H_INCLUDED_ */
-diff -r fecd73db563f src/stream/ngx_stream_ssl_module.c
---- a/src/stream/ngx_stream_ssl_module.c	Tue Jun 21 17:25:37 2022 +0300
-+++ b/src/stream/ngx_stream_ssl_module.c	Thu Jun 23 13:33:29 2022 -0400
+diff -r 5da2c0902e8e src/stream/ngx_stream_ssl_module.c
+--- a/src/stream/ngx_stream_ssl_module.c	Tue Jun 21 17:25:36 2022 +0300
++++ b/src/stream/ngx_stream_ssl_module.c	Tue Jul 19 12:13:58 2022 -0400
 @@ -1194,7 +1194,10 @@ ngx_stream_ssl_conf_command_check(ngx_co
  static ngx_int_t
  ngx_stream_ssl_init(ngx_conf_t *cf)
