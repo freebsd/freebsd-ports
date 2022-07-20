@@ -111,6 +111,7 @@
     SUBDIR += gxmessage
     SUBDIR += gxneur
     SUBDIR += havoc
+    SUBDIR += health
     SUBDIR += hebcal
     SUBDIR += helpviewer
     SUBDIR += horde-groupware
