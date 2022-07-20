@@ -1,5 +1,3 @@
-# Created by: miwi
-
 PORTNAME=	wordpress
 DISTVERSION=	6.0
 DISTVERSIONSUFFIX=	-de_DE

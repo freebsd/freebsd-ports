@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	alt-aspell
 SPELLVERSION=	6-de-alt-2.1-1
 PORTREVISION=	1

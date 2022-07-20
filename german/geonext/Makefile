@@ -1,5 +1,3 @@
-# Created by: Andreas Fehlner (fehlner@gmx.de)
-
 CATEGORIES=	german
 
 MAINTAINER=	ports@FreeBSD.org

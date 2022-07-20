@@ -1,5 +1,3 @@
-# Created by: hq@FreeBSD.org
-
 PORTNAME=	jdictionary-eng-ger
 PORTVERSION=	1.4
 PORTREVISION=	2
