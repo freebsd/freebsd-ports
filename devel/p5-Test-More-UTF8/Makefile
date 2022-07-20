@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	Test-More-UTF8
 PORTVERSION=	0.05
 CATEGORIES=	devel perl5

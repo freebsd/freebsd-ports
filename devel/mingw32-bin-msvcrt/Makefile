@@ -1,5 +1,3 @@
-# Created by: Lev A. Serebryakov <lev@serebryakov.spb.ru>
-
 PORTNAME=	bin-msvcrt
 PORTVERSION=	r${RUNTIMEVERSION:S/-/./}.a${APIVERSION:S/-/./}
 CATEGORIES=	devel

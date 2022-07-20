@@ -1,5 +1,3 @@
-# Created by: Vladimir Kondratyev <wulf@FreeBSD.org>
-
 PORTNAME=	evemu
 PORTVERSION=	2.7.0
 CATEGORIES=	devel

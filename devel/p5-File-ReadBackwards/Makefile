@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	File-ReadBackwards
 PORTVERSION=	1.06
 CATEGORIES=	devel perl5

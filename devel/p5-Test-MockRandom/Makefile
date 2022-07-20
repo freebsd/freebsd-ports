@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Test-MockRandom
 PORTVERSION=	1.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <alex@kapranoff.ru>
-
 PORTNAME=	Devel-StealthDebug
 PORTVERSION=	1.008
 PORTREVISION=	1

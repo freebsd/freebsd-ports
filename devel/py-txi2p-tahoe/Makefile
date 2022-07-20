@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	txi2p-tahoe
 PORTVERSION=	0.3.5
 CATEGORIES=	devel python

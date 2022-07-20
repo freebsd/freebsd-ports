@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	msghack
 PORTVERSION=	0.21
 CATEGORIES=	devel

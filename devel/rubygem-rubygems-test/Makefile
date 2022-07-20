@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rubygems-test
 PORTVERSION=	0.4.3
 PORTREVISION=	1

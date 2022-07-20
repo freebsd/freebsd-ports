@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	blinker
 PORTVERSION=	1.5
 CATEGORIES=	devel python

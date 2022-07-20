@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	main
 PORTVERSION=	6.2.3
 CATEGORIES=	devel rubygems

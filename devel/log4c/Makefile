@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	log4c
 PORTVERSION=	1.2.4
 PORTREVISION=	1

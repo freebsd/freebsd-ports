@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Sys-Info-Driver-BSD
 PORTVERSION=	0.7801
 PORTREVISION=	1

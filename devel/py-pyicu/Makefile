@@ -1,5 +1,3 @@
-# Created by: bland@FreeBSD.org
-
 PORTNAME=	pyicu
 PORTVERSION=	2.4.3
 PORTREVISION=	4

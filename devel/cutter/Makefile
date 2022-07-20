@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@FreeBSD.org>
-
 PORTNAME=	cutter
 PORTVERSION=	1.2.6
 PORTREVISION=	3

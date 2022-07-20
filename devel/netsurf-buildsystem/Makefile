@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	buildsystem
 PORTVERSION=	1.9
 CATEGORIES=	devel

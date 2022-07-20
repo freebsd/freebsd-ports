@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-Fixme
 PORTVERSION=	0.16
 CATEGORIES=	devel perl5

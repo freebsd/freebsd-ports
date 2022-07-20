@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rubocop-rspec
 PORTVERSION=	2.12.1
 CATEGORIES=	devel rubygems

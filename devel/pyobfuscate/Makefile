@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pyobfuscate
 PORTVERSION=	0.3.20131129
 PORTREVISION=	1

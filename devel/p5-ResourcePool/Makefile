@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ResourcePool
 PORTVERSION=	1.0107
 PORTREVISION=	1

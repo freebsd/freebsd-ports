@@ -1,5 +1,3 @@
-# Created by: jkoshy
-
 PORTNAME=		cvslines
 PORTVERSION=		1.6.9
 CATEGORIES=		devel

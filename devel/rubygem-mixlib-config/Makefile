@@ -1,5 +1,3 @@
-# Created by: renchap@cocoa-x.com
-
 PORTNAME=	mixlib-config
 PORTVERSION=	3.0.9
 CATEGORIES=	devel rubygems

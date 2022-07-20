@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-workspaces
 PORTVERSION=	1.69.0
 CATEGORIES=	devel rubygems

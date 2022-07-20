@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pip-tools
 PORTVERSION=	6.8.0
 CATEGORIES=	devel python

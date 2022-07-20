@@ -1,5 +1,3 @@
-# Created by: Thomas-Martin Seck <tmseck@netcologne.de>
-
 PORTNAME=	libowfat
 PORTVERSION=	0.32
 CATEGORIES=	devel

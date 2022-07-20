@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Term-ProgressBar
 PORTVERSION=	2.22
 CATEGORIES=	devel perl5

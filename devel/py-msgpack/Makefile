@@ -1,5 +1,3 @@
-# Created by: Andrey Zonov <andrey@zonov.org>
-
 PORTNAME=	msgpack
 PORTVERSION=	1.0.4
 CATEGORIES=	devel python

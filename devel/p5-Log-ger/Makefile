@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Log-ger
 PORTVERSION=	0.040
 CATEGORIES=	devel perl5

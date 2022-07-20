@@ -1,5 +1,3 @@
-# Created by: Mitsuru YOSHIDA
-
 PORTNAME=	scalatest
 PORTVERSION=	1.6.1
 CATEGORIES=	devel java

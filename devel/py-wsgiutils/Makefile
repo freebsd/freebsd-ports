@@ -1,5 +1,3 @@
-# Created by: Jordi Haarman
-
 PORTNAME=	wsgiutils
 PORTVERSION=	0.7.2
 CATEGORIES=	devel textproc www python

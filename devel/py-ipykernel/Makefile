@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ipykernel
 PORTVERSION=	6.15.1
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	inifiled
 PORTVERSION=	1.3.1
 PORTREVISION=	2

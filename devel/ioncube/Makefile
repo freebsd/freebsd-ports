@@ -1,5 +1,3 @@
-# Created by: Svyatoslav Lempert <svyatoslav.lempert@gmail.com>
-
 PORTNAME=	ioncube
 DISTVERSION=	10.4.1
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	vcrpy
 PORTVERSION=	4.1.1
 CATEGORIES=	devel www python

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ptable
 PORTVERSION=	0.9.2
 PORTREVISION=	1

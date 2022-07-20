@@ -1,5 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
-
 PORTNAME=	File-Sync
 PORTVERSION=	0.11
 PORTREVISION=	1

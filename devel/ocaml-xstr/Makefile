@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	xstr
 PORTVERSION=	0.2.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	zookeeper
 PORTVERSION=	1.0.0
 CATEGORIES=	devel

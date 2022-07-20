@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-codegurureviewer
 PORTVERSION=	1.31.0
 CATEGORIES=	devel rubygems

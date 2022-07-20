@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Class-Multimethods-Pure
 PORTVERSION=	0.13
 PORTREVISION=	1

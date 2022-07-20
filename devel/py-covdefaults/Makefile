@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	covdefaults
 PORTVERSION=	2.2.0
 CATEGORIES=	devel python

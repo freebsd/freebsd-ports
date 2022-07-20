@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	skalibs
 PORTVERSION=	2.12.0.1
 CATEGORIES=	devel

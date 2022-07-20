@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	SVN-ACL
 PORTVERSION=	0.02
 PORTREVISION=	6

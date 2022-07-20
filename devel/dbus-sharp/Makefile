@@ -1,5 +1,3 @@
-# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-
 PORTNAME=	dbus-sharp
 PORTVERSION=	0.8.1
 PORTREVISION=	1

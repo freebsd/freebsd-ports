@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Module-Pluggable-Fast
 PORTVERSION=	0.19
 PORTREVISION=	1

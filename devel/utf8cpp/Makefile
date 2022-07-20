@@ -1,5 +1,3 @@
-# Created by: Keith Gaughan <k@stereochro.me>
-
 PORTNAME=	utf8cpp
 PORTVERSION=	3.1.2
 DISTVERSIONPREFIX=	v

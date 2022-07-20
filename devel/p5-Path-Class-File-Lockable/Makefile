@@ -1,5 +1,3 @@
-# Created by: Tatsuya Ueda <ml+freebsd@tatsuya.info>
-
 PORTNAME=	Path-Class-File-Lockable
 PORTVERSION=	0.03
 PORTREVISION=	1

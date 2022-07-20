@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Class-Accessor-Installer
 PORTVERSION=	1.100880
 PORTREVISION=	1

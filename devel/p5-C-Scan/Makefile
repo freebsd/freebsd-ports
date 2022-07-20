@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	C-Scan
 PORTVERSION=	0.74
 PORTREVISION=	1

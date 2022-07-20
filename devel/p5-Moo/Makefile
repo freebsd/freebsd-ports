@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Moo
 PORTVERSION=	2.005004
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-athena
 PORTVERSION=	1.55.0
 CATEGORIES=	devel rubygems

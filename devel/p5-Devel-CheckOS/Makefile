@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Devel-CheckOS
 PORTVERSION=	1.93
 CATEGORIES=	devel perl5

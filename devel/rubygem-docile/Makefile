@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	docile
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems

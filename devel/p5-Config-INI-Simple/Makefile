@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Config-INI-Simple
 PORTVERSION=	1.00
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Devel-Leak-Object
 PORTVERSION=	1.02
 CATEGORIES=	devel perl5

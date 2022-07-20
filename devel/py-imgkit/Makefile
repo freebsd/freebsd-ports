@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	imgkit
 PORTVERSION=	1.2.2
 CATEGORIES=	devel python

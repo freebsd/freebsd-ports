@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	cbang
 PORTVERSION=	1.6.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	libassetml
 PORTVERSION=	1.2.1
 PORTREVISION=	16

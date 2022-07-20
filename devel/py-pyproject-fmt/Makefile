@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyproject-fmt
 PORTVERSION=	0.3.4
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Config-INI-Reader-Ordered
 PORTVERSION=	0.021
 CATEGORIES=	devel perl5

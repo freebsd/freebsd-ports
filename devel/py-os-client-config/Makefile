@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	os-client-config
 PORTVERSION=	2.1.0
 CATEGORIES=	devel python

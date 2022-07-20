@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MouseX-NativeTraits
 PORTVERSION=	1.09
 PORTREVISION=	2

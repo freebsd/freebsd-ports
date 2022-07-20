@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	cffi
 PORTVERSION=	1.15.1
 CATEGORIES=	devel python

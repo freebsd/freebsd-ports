@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	pyparsing
 PORTVERSION=	3.0.9
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Ruben van Staveren
-
 PORTNAME=	Thread-Cancel
 PORTVERSION=	1.13
 PORTREVISION=	1

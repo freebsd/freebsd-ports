@@ -1,5 +1,3 @@
-# Created by: torstenb@FreeBSD.org
-
 PORTNAME=	autoconf
 PORTVERSION=	2.13
 CATEGORIES=	devel

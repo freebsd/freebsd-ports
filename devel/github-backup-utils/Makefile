@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	github-backup-utils
 PORTVERSION=	3.5.0
 DISTVERSIONPREFIX=	v

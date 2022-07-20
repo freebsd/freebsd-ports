@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytest-aiohttp
 PORTVERSION=	1.0.4
 CATEGORIES=	devel python

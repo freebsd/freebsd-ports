@@ -1,5 +1,3 @@
-# Created by: Shane Ambler <FreeBSD@Shaneware.biz>
-
 PORTREVISION=	4
 PKGNAMESUFFIX=	-tools
 

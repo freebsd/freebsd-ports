@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	log4shib
 DISTVERSION=	2.0.1
 CATEGORIES=	devel

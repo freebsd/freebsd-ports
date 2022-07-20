@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Alias
 PORTVERSION=	2.32
 PORTREVISION=	3

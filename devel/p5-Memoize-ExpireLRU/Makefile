@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Memoize-ExpireLRU
 PORTVERSION=	0.56
 CATEGORIES=	devel perl5

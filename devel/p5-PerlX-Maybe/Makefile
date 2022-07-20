@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	PerlX-Maybe
 PORTVERSION=	1.202
 CATEGORIES=	devel perl5

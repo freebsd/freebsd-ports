@@ -1,5 +1,3 @@
-# Created by: Stefan Pauly <stefan@fh-mainz.de>
-
 PORTNAME=	cunit
 PORTVERSION=	2.1.3
 PORTREVISION=	3

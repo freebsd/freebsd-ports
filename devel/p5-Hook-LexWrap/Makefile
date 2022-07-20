@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Hook-LexWrap
 PORTVERSION=	0.26
 CATEGORIES=	devel perl5

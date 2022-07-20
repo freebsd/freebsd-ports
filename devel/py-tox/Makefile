@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	tox
 PORTVERSION=	3.25.0
 CATEGORIES=	devel python

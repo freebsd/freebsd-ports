@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-
 PORTNAME=	avalon-framework
 PORTVERSION=	4.2.0
 PORTREVISION=	2

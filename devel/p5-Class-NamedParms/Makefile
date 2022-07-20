@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Class-NamedParms
 PORTVERSION=	1.08
 CATEGORIES=	devel perl5

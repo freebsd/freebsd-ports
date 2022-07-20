@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Stream
 PORTVERSION=	1.6.3
 CATEGORIES=	devel www pear

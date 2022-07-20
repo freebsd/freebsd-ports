@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek <mich@freebsdcluster.org>
-
 PORTNAME=	doctorj
 PORTVERSION=	5.1.2
 PORTREVISION=	2

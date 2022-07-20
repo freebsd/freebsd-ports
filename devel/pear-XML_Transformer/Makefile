@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	XML_Transformer
 PORTVERSION=	1.1.2
 CATEGORIES=	devel www pear

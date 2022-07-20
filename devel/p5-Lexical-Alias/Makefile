@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Lexical-Alias
 PORTVERSION=	0.04
 PORTREVISION=	1

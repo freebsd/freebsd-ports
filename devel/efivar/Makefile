@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	efivar
 PORTVERSION=	0.15
 PORTREVISION=	7

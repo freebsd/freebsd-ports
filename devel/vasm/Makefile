@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	vasm
 PORTVERSION=	1.8c
 CATEGORIES=	devel

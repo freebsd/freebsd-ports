@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	matrix-angular-sdk
 PORTVERSION=	0.6.8
 CATEGORIES=	devel www python

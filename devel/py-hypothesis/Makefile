@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	hypothesis
 PORTVERSION=	6.51.0
 CATEGORIES=	devel python

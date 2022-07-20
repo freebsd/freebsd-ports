@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	nuitka
 PORTVERSION=	0.6.18.6
 CATEGORIES=	devel python

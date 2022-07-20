@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Array-Iterator
 PORTVERSION=	0.131
 CATEGORIES=	devel perl5

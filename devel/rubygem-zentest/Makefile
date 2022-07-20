@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	zentest
 PORTVERSION=	4.12.1
 PORTEPOCH=	1

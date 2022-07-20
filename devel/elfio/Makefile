@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	elfio
 PORTVERSION=	3.10
 CATEGORIES=	devel

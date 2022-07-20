@@ -1,5 +1,3 @@
-# Created by: Craig Leres <leres@FreeBSD.org>
-
 PORTNAME=	arduino-openglcd
 DISTVERSION=	1.0rc3
 PORTREVISION=	1

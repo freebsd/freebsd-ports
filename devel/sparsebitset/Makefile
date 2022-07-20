@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	SparseBitSet
 PORTVERSION=	1.2
 CATEGORIES=	devel java

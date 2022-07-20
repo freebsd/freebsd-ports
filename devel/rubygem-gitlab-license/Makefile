@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	gitlab-license
 PORTVERSION=	2.1.0
 CATEGORIES=	devel rubygems

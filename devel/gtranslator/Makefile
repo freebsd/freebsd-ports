@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	gtranslator
 PORTVERSION=	40.0
 PORTREVISION=	2

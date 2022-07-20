@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@tandon.net>
-
 PORTNAME=	ExtUtils-CChecker
 PORTVERSION=	0.11
 CATEGORIES=	devel perl5

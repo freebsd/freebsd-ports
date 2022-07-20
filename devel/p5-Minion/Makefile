@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Minion
 PORTVERSION=	10.25
 CATEGORIES=	devel perl5

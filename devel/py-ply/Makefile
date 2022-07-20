@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ply
 PORTVERSION=	3.11
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <william88@gmail.com>
-
 PORTNAME=	pytest-runner
 PORTVERSION=	5.3.2
 CATEGORIES=	devel python

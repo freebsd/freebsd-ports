@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	Net-DBus
 PORTVERSION=	1.2.0
 CATEGORIES=	devel perl5

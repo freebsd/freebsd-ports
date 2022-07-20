@@ -1,5 +1,3 @@
-# Created by: Vladimir Chukharev
-
 PORTNAME=	envisage
 PORTVERSION=	4.9.0
 CATEGORIES=	devel python

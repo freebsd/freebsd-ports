@@ -1,5 +1,3 @@
-# Created by: Kurt Kanzenbach <kurt@kmk-computers.de>
-
 PORTNAME=	libflatarray
 PORTVERSION=	0.3.0
 PORTREVISION=	17

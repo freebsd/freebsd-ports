@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	itertools
 DISTVERSION=	0.1-3
 PORTREVISION=	5

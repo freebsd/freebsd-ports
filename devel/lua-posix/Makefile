@@ -1,5 +1,3 @@
-# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
-
 PORTNAME=	posix
 PORTVERSION=	35.1
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	humanize
 PORTVERSION=	4.2.1
 CATEGORIES=	devel python

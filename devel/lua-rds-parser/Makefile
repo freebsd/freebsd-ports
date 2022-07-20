@@ -1,5 +1,3 @@
-# Created by: osa
-
 PORTNAME=	lua-rds-parser
 PORTVERSION=	0.06
 DISTVERSIONPREFIX=	v

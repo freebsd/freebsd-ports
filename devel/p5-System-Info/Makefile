@@ -1,5 +1,3 @@
-# Created by: James E Keenan <jkeenan@cpan.org>
-
 PORTNAME=	System-Info
 PORTVERSION=	0.058
 CATEGORIES=	devel perl5

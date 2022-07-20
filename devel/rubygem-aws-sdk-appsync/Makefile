@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-appsync
 PORTVERSION=	1.52.0
 CATEGORIES=	devel rubygems

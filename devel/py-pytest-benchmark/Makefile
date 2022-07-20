@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytest-benchmark
 PORTVERSION=	3.4.1
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyyaml_env_tag
 PORTVERSION=	0.1
 CATEGORIES=	devel python

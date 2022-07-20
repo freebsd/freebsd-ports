@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-marketplacemetering
 PORTVERSION=	1.44.0
 CATEGORIES=	devel rubygems

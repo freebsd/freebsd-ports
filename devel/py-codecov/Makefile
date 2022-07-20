@@ -1,5 +1,3 @@
-# Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-
 PORTNAME=	codecov
 PORTVERSION=	2.1.12
 DISTVERSIONPREFIX=	v

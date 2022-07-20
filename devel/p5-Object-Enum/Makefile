@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Object-Enum
 PORTVERSION=	0.07.3
 PORTREVISION=	1

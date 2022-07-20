@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	dbus-c++
 PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=	v

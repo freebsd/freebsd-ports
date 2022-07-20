@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	default_value_for
 PORTVERSION=	3.4.0
 CATEGORIES=	devel rubygems

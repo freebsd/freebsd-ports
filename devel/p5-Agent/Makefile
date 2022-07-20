@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Agent
 PORTVERSION=	3.20
 PORTREVISION=	1

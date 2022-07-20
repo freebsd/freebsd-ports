@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Data-Visitor
 PORTVERSION=	0.31
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: gugu
-
 PORTNAME=	MooseX-InsideOut
 PORTVERSION=	0.106
 PORTREVISION=	2

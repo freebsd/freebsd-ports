@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Term-RawInput
 PORTVERSION=	1.23
 CATEGORIES=	devel perl5

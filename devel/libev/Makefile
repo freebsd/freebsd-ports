@@ -1,5 +1,3 @@
-# Created by: vsevolod
-
 PORTNAME=	libev
 DISTVERSION=	4.33
 PORTEPOCH=	1

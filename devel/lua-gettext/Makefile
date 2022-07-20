@@ -1,5 +1,3 @@
-# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
-
 PORTNAME=	gettext
 DISTVERSION=	1.6
 CATEGORIES=	devel

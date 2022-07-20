@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	App-Info
 PORTVERSION=	0.57
 PORTREVISION=	1

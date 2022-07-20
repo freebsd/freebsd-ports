@@ -1,5 +1,3 @@
-# Created by: redcrash@gmail.com
-
 PORTNAME=	papi
 PORTVERSION=	5.4.3
 PORTREVISION=	10

@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	foolscap
 PORTVERSION=	21.7.0
 CATEGORIES=	devel python

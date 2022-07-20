@@ -1,5 +1,3 @@
-# Created by: Chris St Denis <chris@ctgameinfo.com>
-
 PORTNAME=	HTML_QuickForm_advmultiselect
 PORTVERSION=	1.5.1
 CATEGORIES=	devel www pear

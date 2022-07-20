@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	xdis
 PORTVERSION=	6.0.4
 CATEGORIES=	devel python

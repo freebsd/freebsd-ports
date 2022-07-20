@@ -1,5 +1,3 @@
-# Created by: Jonathan Anderson <jonathan@FreeBSD.org>
-
 PORTNAME=		git-cola
 DISTVERSIONPREFIX=	v
 DISTVERSION=		3.10.1

@@ -1,5 +1,3 @@
-# Created by: Sylvio Cesar <sylvio@FreeBSD.org>
-
 PORTNAME=	PEAR_PackageFileManager2
 PORTVERSION=	1.0.4
 CATEGORIES=	devel www pear

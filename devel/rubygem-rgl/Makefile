@@ -1,5 +1,3 @@
-# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-
 PORTNAME=	rgl
 PORTVERSION=	0.5.8
 CATEGORIES=	devel rubygems

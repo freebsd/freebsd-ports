@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <kapr@crosswinds.net>
-
 PORTNAME=	Tie-Cache
 PORTVERSION=	0.21
 PORTREVISION=	1

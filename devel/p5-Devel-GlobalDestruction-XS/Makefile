@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Devel-GlobalDestruction-XS
 PORTVERSION=	0.03
 CATEGORIES=	devel perl5

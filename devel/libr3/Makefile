@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	libr3
 PORTVERSION=	1.0.0
 PORTREVISION=	2

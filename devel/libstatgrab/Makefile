@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	libstatgrab
 PORTVERSION=	0.92.1
 CATEGORIES=	devel

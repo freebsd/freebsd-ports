@@ -1,5 +1,3 @@
-# Created by: rafan@FreeBSD.org
-
 PORTNAME=	Test-HTML-Tidy
 PORTVERSION=	1.00
 PORTREVISION=	1

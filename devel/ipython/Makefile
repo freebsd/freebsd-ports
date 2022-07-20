@@ -1,5 +1,3 @@
-# Created by: Dryice Liu
-
 PORTNAME=	ipython
 PORTVERSION=	7.34.0
 CATEGORIES=	devel python

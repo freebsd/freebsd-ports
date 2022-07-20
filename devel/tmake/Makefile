@@ -1,5 +1,3 @@
-# Created by: jesse@cs.uni-magdeburg.de
-
 PORTNAME=	tmake
 PORTVERSION=	2.12
 CATEGORIES=	devel perl5

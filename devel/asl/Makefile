@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@freebsd.org>
-
 PORTNAME=	asl
 PORTVERSION=	1.42.183
 CATEGORIES=	devel

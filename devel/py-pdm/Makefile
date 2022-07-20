@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pdm
 PORTVERSION=	1.15.4
 PORTREVISION=	1

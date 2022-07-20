@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pipx
 PORTVERSION=	1.1.0
 PORTREVISION=	1

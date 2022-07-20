@@ -1,5 +1,3 @@
-# Created by: Marzhan Mykola <delgod@portaone.com>
-
 PORTNAME=	libalarm
 PORTVERSION=	1.0
 PORTREVISION=	2

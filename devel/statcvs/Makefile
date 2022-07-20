@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	statcvs
 PORTVERSION=	0.7.0
 PORTREVISION=	1

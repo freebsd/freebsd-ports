@@ -1,5 +1,3 @@
-# Created by: Wes Peters <wes@FreeBSD.org>
-
 PORTNAME=	poco
 DISTVERSION=	1.10.1
 DISTVERSIONSUFFIX=	-all

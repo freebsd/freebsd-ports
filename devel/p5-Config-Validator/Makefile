@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	Config-Validator
 PORTVERSION=	1.4
 CATEGORIES=	devel perl5

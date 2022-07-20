@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	pyinstaller
 PORTVERSION=	3.5
 PORTREVISION=	1

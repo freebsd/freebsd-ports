@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Tie-Hash-Indexed
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

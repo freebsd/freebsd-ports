@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	CPAN-Site
 PORTVERSION=	1.15
 CATEGORIES=	devel perl5

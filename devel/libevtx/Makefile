@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libevtx
 DISTVERSION=	alpha-20210525
 CATEGORIES=	devel

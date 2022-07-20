@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pbr
 PORTVERSION=	5.9.0
 PORTREVISION=	1

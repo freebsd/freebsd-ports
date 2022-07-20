@@ -1,5 +1,3 @@
-# Created by: lars.eggert@gmx.net
-
 PORTNAME=	Algorithm-ChooseSubsets
 PORTVERSION=	0.02
 PORTREVISION=	1

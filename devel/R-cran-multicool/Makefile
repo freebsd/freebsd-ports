@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	multicool
 DISTVERSION=	0.1-12
 CATEGORIES=	devel

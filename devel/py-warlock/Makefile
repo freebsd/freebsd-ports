@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	warlock
 PORTVERSION=	2.0.1
 CATEGORIES=	devel python

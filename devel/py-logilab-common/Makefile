@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	logilab-common
 PORTVERSION=	1.9.7
 CATEGORIES=	devel python

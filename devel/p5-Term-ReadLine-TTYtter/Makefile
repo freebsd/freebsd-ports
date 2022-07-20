@@ -1,5 +1,3 @@
-# Created by: Sébastien Santoro <dereckson@gmail.com>
-
 PORTNAME=	Term-ReadLine-TTYtter
 PORTVERSION=	1.4
 PORTREVISION=	2

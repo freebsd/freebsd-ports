@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	qt
 PORTVERSION=	4.8.7
 DISTVERSIONSUFFIX=	-9.el7_9

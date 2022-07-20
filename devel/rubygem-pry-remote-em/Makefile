@@ -1,5 +1,3 @@
-# Created by: Kimo <kimor79@yahoo.com>
-
 PORTNAME=	pry-remote-em
 PORTVERSION=	1.1.2
 CATEGORIES=	devel rubygems

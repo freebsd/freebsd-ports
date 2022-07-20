@@ -1,5 +1,3 @@
-# Created by: olgeni@FreeBSD.org
-
 PORTNAME=	adacurses
 DISTVERSION=	20180127
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libclc
 DISTVERSION=	12.0.1
 CATEGORIES=	devel

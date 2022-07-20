@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	MooseX-Has-Options
 PORTVERSION=	0.003
 PORTREVISION=	1

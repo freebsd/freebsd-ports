@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	ncnf
 PORTVERSION=	3.0.1
 PORTREVISION=	5

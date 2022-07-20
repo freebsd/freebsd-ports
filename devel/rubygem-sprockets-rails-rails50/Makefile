@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	sprockets-rails
 PORTVERSION=	3.2.2
 CATEGORIES=	devel rubygems

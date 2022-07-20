@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	magrittr
 PORTVERSION=	2.0.3
 CATEGORIES=	devel

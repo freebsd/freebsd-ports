@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	sdl
 PORTVERSION=	0.9.1
 PORTREVISION=	4

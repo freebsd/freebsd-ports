@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Format-Roman
 PORTVERSION=	0.04
 CATEGORIES=	devel perl5

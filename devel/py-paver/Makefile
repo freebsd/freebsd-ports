@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	paver
 PORTVERSION=	1.3.4
 CATEGORIES=	devel

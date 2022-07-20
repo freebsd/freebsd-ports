@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	kafo
 PORTVERSION=	6.5.0
 CATEGORIES=	devel rubygems

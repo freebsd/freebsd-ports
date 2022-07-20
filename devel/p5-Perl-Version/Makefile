@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Perl-Version
 PORTVERSION=	1.013
 PORTREVISION=	2

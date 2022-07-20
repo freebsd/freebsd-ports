@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-dlm
 PORTVERSION=	1.50.0
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Viacheslav Mikerov <SlavaMikerov@gmail.com>
-
 PORTNAME=	json
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.10.5

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	HTML_Common
 PORTVERSION=	1.2.5
 CATEGORIES=	devel www pear

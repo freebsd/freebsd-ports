@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	forwardable
 PORTVERSION=	1.3.2
 CATEGORIES=	devel rubygems

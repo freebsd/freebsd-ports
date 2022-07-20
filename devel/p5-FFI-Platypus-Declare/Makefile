@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	FFI-Platypus-Declare
 PORTVERSION=	1.34
 CATEGORIES=	devel perl5

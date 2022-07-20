@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Algorithm-MinMax
 PORTVERSION=	0.01
 PORTREVISION=	1

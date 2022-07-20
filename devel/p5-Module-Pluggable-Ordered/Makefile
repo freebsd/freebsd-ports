@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Module-Pluggable-Ordered
 PORTVERSION=	1.5
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	MooseX-NonMoose
 PORTVERSION=	0.26
 PORTREVISION=	2

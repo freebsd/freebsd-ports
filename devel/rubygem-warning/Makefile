@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	warning
 PORTVERSION=	1.2.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyina
 PORTVERSION=	0.2.5
 CATEGORIES=	devel python

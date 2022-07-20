@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	frozendict
 PORTVERSION=	2.3.2
 CATEGORIES=	devel python

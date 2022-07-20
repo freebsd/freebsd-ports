@@ -1,5 +1,3 @@
-# Created by: Bartek Rutkowski <ports@robakdesign.com>
-
 PORTNAME=	plan
 PORTVERSION=	0.5
 CATEGORIES=	devel python

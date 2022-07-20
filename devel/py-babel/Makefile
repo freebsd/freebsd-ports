@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	Babel
 PORTVERSION=	2.10.3
 CATEGORIES=	devel python

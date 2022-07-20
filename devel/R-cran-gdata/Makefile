@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	gdata
 PORTVERSION=	2.18.0.1
 CATEGORIES=	devel

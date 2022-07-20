@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_consumption
 PORTVERSION=	0.18.1
 CATEGORIES=	devel rubygems

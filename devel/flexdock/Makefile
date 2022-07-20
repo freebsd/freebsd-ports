@@ -1,5 +1,3 @@
-# Created by: Otacilio de Araujo Ramos Neto <otacilio.neto@bsd.com.br>
-
 PORTNAME=	flexdock
 PORTVERSION=	1.2.4
 CATEGORIES=	devel java

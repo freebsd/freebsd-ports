@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	SUPER
 PORTVERSION=	1.17
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: netchild@FreeBSD.org
-
 PORTNAME=	cscout
 PORTVERSION=	3.01
 CATEGORIES=	devel

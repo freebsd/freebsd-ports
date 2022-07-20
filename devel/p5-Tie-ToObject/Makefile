@@ -1,5 +1,3 @@
-# Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
-
 PORTNAME=	Tie-ToObject
 PORTVERSION=	0.03
 PORTREVISION=	2

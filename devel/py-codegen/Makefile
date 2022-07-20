@@ -1,5 +1,3 @@
-# Created by: antoine@FreeBSD.org
-
 PORTNAME=	codegen
 PORTVERSION=	1.0
 CATEGORIES=	devel python

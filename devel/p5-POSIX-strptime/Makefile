@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	POSIX-strptime
 PORTVERSION=	0.13
 CATEGORIES=	devel perl5

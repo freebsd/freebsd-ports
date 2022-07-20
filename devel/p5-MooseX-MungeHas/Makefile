@@ -1,5 +1,3 @@
-# Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-
 PORTNAME=	MooseX-MungeHas
 PORTVERSION=	0.011
 CATEGORIES=	devel perl5

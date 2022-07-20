@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Data-Capture
 PORTVERSION=	0.27
 PORTREVISION=	1

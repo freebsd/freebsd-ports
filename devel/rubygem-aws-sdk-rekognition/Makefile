@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-rekognition
 PORTVERSION=	1.68.0
 CATEGORIES=	devel rubygems

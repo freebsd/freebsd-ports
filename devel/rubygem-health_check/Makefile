@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-
 PORTNAME=	health_check
 PORTVERSION=	3.1.0
 PORTREVISION=	3

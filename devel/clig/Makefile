@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@chc-chimes.com>
-
 PORTNAME=	clig
 PORTVERSION=	1.9.11.1
 PORTREVISION=	3

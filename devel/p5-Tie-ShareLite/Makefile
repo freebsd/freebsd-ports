@@ -1,5 +1,3 @@
-# Created by: jnlin@freebsd.cs.nctu.edu.tw
-
 PORTNAME=	Tie-ShareLite
 PORTVERSION=	0.03
 PORTREVISION=	2

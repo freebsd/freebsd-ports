@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pip-api
 PORTVERSION=	0.0.29
 CATEGORIES=	devel python

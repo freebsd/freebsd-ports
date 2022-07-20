@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	google-i18n-address
 PORTVERSION=	2.5.0
 CATEGORIES=	devel python

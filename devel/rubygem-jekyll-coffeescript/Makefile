@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jekyll-coffeescript
 PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems

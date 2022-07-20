@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	String-Parity
 PORTVERSION=	1.34
 CATEGORIES=	devel perl5

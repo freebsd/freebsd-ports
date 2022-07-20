@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@FreeBSD.org>
-
 PORTNAME=	urwid
 PORTVERSION=	2.1.2
 CATEGORIES=	devel python

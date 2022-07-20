@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	crank
 PORTVERSION=	0.8.1
 CATEGORIES=	devel python

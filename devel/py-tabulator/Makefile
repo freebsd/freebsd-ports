@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tabulator
 PORTVERSION=	1.53.5
 PORTREVISION=	1

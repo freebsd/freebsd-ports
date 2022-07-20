@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	cpplint
 PORTVERSION=	1.6.0
 CATEGORIES=	devel

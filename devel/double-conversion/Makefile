@@ -1,5 +1,3 @@
-# Created by: Waitman Gobble <waitman@waitman.net>
-
 PORTNAME=	double-conversion
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.0

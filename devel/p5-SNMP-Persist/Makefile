@@ -1,5 +1,3 @@
-# Created by: Philippe Audeoud <jadawin@tuxaco.net>
-
 PORTNAME=	SNMP-Persist
 PORTVERSION=	0.05
 PORTREVISION=	1

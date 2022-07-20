@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	List-UtilsBy-XS
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

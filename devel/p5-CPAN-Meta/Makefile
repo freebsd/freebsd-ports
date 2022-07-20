@@ -1,5 +1,3 @@
-# Created by: jupengfei <jupengfei@gmail.com>
-
 PORTNAME=	CPAN-Meta
 PORTVERSION=	2.150010
 CATEGORIES=	devel perl5

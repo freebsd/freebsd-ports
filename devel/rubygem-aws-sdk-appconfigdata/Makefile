@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-appconfigdata
 PORTVERSION=	1.5.0
 CATEGORIES=	devel rubygems

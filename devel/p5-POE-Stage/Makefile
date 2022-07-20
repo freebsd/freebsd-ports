@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Stage
 PORTVERSION=	0.0600
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-Warnings
 PORTVERSION=	0.031
 CATEGORIES=	devel perl5

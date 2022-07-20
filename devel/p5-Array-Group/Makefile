@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Array-Group
 PORTVERSION=	4.2
 CATEGORIES=	devel perl5

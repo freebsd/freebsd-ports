@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarev <krion@FreeBSD.org>
-
 PORTNAME=	pop
 PORTVERSION=	20.1.1
 CATEGORIES=	devel python

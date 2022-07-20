@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	danger
 PORTVERSION=	8.6.1
 PORTREVISION=	1

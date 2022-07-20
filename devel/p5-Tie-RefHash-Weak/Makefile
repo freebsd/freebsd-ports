@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Tie-RefHash-Weak
 PORTVERSION=	0.09
 PORTREVISION=	2

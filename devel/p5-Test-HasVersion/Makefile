@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Test-HasVersion
 PORTVERSION=	0.014
 CATEGORIES=	devel perl5

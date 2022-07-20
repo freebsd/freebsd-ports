@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	arrayfields
 PORTVERSION=	4.9.2
 CATEGORIES=	devel rubygems

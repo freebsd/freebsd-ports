@@ -1,5 +1,3 @@
-# Created by: Choe, Cheng-Dae
-
 PORTNAME=	configobj
 PORTVERSION=	5.0.6
 PORTREVISION=	1

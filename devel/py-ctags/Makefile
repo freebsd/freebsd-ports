@@ -1,5 +1,3 @@
-# Created by: Aaron H. K. Diep <ahkdiep@gmail.com>
-
 PORTNAME=	ctags
 PORTVERSION=	1.0.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Anish Mistry <amistry@am-productions.biz>
-
 PORTNAME=	lrmi
 PORTVERSION=	0.10
 CATEGORIES=	devel

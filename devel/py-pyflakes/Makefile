@@ -1,5 +1,3 @@
-# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-
 PORTNAME=	pyflakes
 PORTVERSION=	2.4.0
 CATEGORIES=	devel python

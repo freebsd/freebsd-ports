@@ -1,5 +1,3 @@
-# Created by: Danny Warren <danny@dannywarren.com>
-
 PORTNAME=	Devel-InheritNamespace
 PORTVERSION=	0.00003
 PORTREVISION=	1

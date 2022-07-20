@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	POE-Component-Daemon
 PORTVERSION=	0.1400
 PORTREVISION=	2

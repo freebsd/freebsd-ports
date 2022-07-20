@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Object-Accessor
 PORTVERSION=	0.48
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	CPANPLUS-Dist-Build
 PORTVERSION=	0.90
 CATEGORIES=	devel perl5

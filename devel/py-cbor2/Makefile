@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	cbor2
 PORTVERSION=	5.4.3
 CATEGORIES=	devel python

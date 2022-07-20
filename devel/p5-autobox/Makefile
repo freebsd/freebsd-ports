@@ -1,5 +1,3 @@
-# Created by: Bill Brinzer <bill.brinzer@gmail.com>
-
 PORTNAME=	autobox
 PORTVERSION=	2.84
 CATEGORIES=	devel perl5

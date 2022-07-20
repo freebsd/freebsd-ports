@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Package-Util-Lite
 PORTVERSION=	0.001
 CATEGORIES=	devel perl5

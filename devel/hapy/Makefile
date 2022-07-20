@@ -1,5 +1,3 @@
-# Created by: rousskov
-
 PORTNAME=	hapy
 PORTVERSION=	0.0.8
 PORTREVISION=	1

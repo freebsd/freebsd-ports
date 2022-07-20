@@ -1,5 +1,3 @@
-# Created by: Mirko Zinn <mail@derzinn.de>
-
 PORTNAME=		mongokit
 PORTVERSION=		0.9.1.1
 DISTVERSIONPREFIX=	v

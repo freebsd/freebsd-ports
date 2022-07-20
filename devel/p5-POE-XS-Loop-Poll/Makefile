@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	POE-XS-Loop-Poll
 PORTVERSION=	1.000
 PORTREVISION=	1

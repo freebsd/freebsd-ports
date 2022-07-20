@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	MooseX-Types-VariantTable
 PORTVERSION=	0.04
 PORTREVISION=	1

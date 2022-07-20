@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libmba
 PORTVERSION=	0.9.1
 PORTREVISION=	1

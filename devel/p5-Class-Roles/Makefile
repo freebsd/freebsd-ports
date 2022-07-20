@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <kappa@FreeBSD.org.ua>
-
 PORTNAME=	Class-Roles
 PORTVERSION=	0.30
 PORTREVISION=	2

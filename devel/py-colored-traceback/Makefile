@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	colored-traceback
 PORTVERSION=	0.3.0
 CATEGORIES=	devel python

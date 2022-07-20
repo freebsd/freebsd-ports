@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	exceptiongroup
 PORTVERSION=	1.0.0rc8
 CATEGORIES=	devel python

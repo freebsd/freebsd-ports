@@ -1,5 +1,3 @@
-# Created by: Jean Milanez Melo <jmelo@FreeBSD.org>
-
 PORTNAME=	libepp-nicbr
 PORTVERSION=	1.18
 CATEGORIES=	devel

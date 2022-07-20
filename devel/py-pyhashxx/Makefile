@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pyhashxx
 PORTVERSION=	0.1.3
 CATEGORIES=	devel python

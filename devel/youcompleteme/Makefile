@@ -1,5 +1,3 @@
-# Created by: Richard Gallamore <ultima@freebsd.org>
-
 PORTNAME=	YouCompleteMe
 DISTVERSION=	g20210518
 CATEGORIES=	devel

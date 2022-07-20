@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	oslo.concurrency
 PORTVERSION=	4.5.1
 CATEGORIES=	devel python

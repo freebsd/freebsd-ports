@@ -1,5 +1,3 @@
-# Created by: Don Croyle <croyle@gelemna.org>
-
 PORTNAME=	astyle
 PORTVERSION=	3.1
 PORTREVISION=	3

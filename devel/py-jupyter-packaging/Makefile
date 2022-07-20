@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jupyter-packaging
 PORTVERSION=	0.12.2
 CATEGORIES=	devel python

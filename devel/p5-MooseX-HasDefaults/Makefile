@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
-
 PORTNAME=	MooseX-HasDefaults
 PORTVERSION=	0.03
 PORTREVISION=	1

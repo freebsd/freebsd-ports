@@ -1,5 +1,3 @@
-# Created by: Alex Miller (<asm@asm.kiev.ua>)
-
 PORTNAME=	XML_RSS
 PORTVERSION=	1.1.0
 CATEGORIES=	devel www pear

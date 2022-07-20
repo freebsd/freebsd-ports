@@ -1,5 +1,3 @@
-# Created by: Jeremy Norris <ishmael27x@yahoo.com>
-
 PORTNAME=	libltdl
 PORTREVISION=	0
 

@@ -1,5 +1,3 @@
-# Created by: Martin Waschbuesch <martin@waschbuesch.de>
-
 PORTNAME=	Any-Daemon
 PORTVERSION=	0.96
 PORTEPOCH=	1

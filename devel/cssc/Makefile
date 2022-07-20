@@ -1,5 +1,3 @@
-# Created by: Oliver Fromme
-
 PORTNAME=	cssc
 PORTVERSION=	1.4.1
 CATEGORIES=	devel

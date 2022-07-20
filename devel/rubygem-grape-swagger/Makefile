@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	grape-swagger
 PORTVERSION=	1.4.2
 CATEGORIES=	devel rubygems

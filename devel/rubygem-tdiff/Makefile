@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tdiff
 PORTVERSION=	0.3.4
 CATEGORIES=	devel rubygems

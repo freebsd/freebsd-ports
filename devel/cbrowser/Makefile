@@ -1,5 +1,3 @@
-# Created by: jkoshy
-
 PORTNAME=	cbrowser
 PORTVERSION=	0.8
 PORTREVISION=	4

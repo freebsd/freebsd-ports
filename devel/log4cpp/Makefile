@@ -1,5 +1,3 @@
-# Created by: ijliao@FreeBSD.org
-
 PORTNAME=	log4cpp
 PORTVERSION=	1.1.3
 PORTREVISION=	2

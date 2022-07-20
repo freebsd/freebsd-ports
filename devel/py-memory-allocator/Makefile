@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	memory_allocator
 PORTVERSION=	0.1.2
 CATEGORIES=	devel python

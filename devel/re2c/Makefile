@@ -1,5 +1,3 @@
-# Created by: Eivind Eklund <eivind@FreeBSD.org>
-
 PORTNAME=	re2c
 DISTVERSION=	2.2
 CATEGORIES=	devel

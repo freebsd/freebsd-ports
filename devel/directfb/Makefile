@@ -1,5 +1,3 @@
-# Created by: Devaux Fabien <fab@gcu.info>
-
 PORTNAME=	directfb
 PORTVERSION=	1.4.17
 PORTREVISION=	2

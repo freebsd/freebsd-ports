@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	spatialindex
 PORTVERSION=	1.8.5
 CATEGORIES=	devel

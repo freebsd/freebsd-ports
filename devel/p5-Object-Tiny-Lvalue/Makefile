@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Object-Tiny-Lvalue
 PORTVERSION=	1.083
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-neptune
 PORTVERSION=	1.46.0
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	wsme
 PORTVERSION=	0.11.0
 CATEGORIES=	devel python

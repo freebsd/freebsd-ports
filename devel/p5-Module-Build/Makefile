@@ -1,4 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 #
 # If you have compelling evidence that some ports need at least this version of
 # p5-Module-Build to build, be sure to update the BUILD_DEPENDS version in

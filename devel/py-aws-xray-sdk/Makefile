@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-xray-sdk
 PORTVERSION=	2.10.0
 CATEGORIES=	devel python

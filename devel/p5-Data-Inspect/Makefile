@@ -1,5 +1,3 @@
-# Created by: Kurt Lidl <kurt.lidl@cello.com>
-
 PORTNAME=	Data-Inspect
 PORTVERSION=	0.04
 PORTREVISION=	1

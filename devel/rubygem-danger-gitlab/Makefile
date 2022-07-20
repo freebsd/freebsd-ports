@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	danger-gitlab
 PORTVERSION=	8.0.0
 CATEGORIES=	devel rubygems

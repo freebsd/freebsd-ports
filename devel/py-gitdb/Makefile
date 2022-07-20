@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	gitdb
 PORTVERSION=	4.0.9
 CATEGORIES=	devel python

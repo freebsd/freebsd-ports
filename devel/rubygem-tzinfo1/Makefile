@@ -1,5 +1,3 @@
-# Created by: Rui Lopes (rgl ruilopes com)
-
 PORTNAME=	tzinfo
 PORTVERSION=	1.2.9
 CATEGORIES=	devel rubygems

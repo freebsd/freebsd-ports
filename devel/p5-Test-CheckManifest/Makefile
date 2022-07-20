@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Test-CheckManifest
 PORTVERSION=	1.42
 CATEGORIES=	devel perl5

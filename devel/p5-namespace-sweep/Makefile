@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	namespace-sweep
 PORTVERSION=	0.006
 PORTREVISION=	1

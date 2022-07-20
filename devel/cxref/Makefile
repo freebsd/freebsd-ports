@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	cxref
 PORTVERSION=	1.6e
 CATEGORIES=	devel

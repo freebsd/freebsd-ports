@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	CLI-Osprey
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

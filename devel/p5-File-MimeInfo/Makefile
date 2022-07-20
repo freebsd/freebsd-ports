@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	File-MimeInfo
 PORTVERSION=	0.33
 CATEGORIES=	devel perl5

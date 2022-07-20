@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	tup
 PORTVERSION=	0.7.11
 DISTVERSIONPREFIX=	v

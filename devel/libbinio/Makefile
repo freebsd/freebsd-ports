@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	libbinio
 PORTVERSION=	1.5
 DISTVERSIONPREFIX=	${PORTNAME}-

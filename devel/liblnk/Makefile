@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	liblnk
 PORTVERSION=	20210417
 DISTVERSIONPREFIX=	alpha-

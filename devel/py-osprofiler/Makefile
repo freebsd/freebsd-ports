@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	osprofiler
 PORTVERSION=	3.4.3
 CATEGORIES=	devel python

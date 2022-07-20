@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	appstream-glib
 PORTVERSION=	0.7.18
 CATEGORIES=	devel

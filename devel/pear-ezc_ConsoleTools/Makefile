@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	ConsoleTools
 PORTVERSION=	1.6.1
 CATEGORIES=	devel pear

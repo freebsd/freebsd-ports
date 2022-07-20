@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pytest-capturelog
 PORTVERSION=	0.7
 CATEGORIES=	devel python

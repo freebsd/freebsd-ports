@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	pdcurses
 DISTVERSION=	3.5
 CATEGORIES=	devel

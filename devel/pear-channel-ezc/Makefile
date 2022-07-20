@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	ezc
 PORTVERSION=	20060124
 CATEGORIES=	devel www pear

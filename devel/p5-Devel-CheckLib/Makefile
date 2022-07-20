@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	Devel-CheckLib
 PORTVERSION=	1.16
 CATEGORIES=	devel perl5

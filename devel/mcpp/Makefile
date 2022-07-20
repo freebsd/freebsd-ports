@@ -1,5 +1,3 @@
-# Created by: Kiyoshi Matsui <kmatsui@t3.rim.or.jp>
-
 PORTNAME=	mcpp
 PORTVERSION=	2.7.2
 PORTREVISION=	3

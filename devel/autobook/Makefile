@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis (edwin@mavetju.org)
-
 PORTNAME=	autobook
 PORTVERSION=	1.5
 CATEGORIES=	devel

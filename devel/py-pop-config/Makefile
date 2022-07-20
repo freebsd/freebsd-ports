@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarev <krion@FreeBSD.org>
-
 PORTNAME=		pop-config
 PORTVERSION=	8.0.2
 CATEGORIES=		devel python

@@ -1,5 +1,3 @@
-# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-
 PORTNAME=	Perl-PrereqScanner
 PORTVERSION=	1.023
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-
 PORTNAME=	Sepia
 PORTVERSION=	0.992
 PORTREVISION=	19

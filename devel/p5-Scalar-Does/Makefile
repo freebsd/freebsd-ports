@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Scalar-Does
 PORTVERSION=	0.203
 CATEGORIES=	devel perl5

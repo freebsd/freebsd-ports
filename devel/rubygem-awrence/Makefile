@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	awrence
 PORTVERSION=	1.1.1
 CATEGORIES=	devel rubygems

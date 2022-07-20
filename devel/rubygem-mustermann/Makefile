@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mustermann
 PORTVERSION=	1.1.2
 CATEGORIES=	devel rubygems

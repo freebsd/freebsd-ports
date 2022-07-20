@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	Class-Tangram
 PORTVERSION=	1.57
 PORTREVISION=	1

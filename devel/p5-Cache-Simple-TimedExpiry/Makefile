@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@pingpong.net>
-
 PORTNAME=	Cache-Simple-TimedExpiry
 PORTVERSION=	0.27
 PORTREVISION=	1

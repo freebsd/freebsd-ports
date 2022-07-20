@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	resque-scheduler
 PORTVERSION=	4.5.0
 CATEGORIES=	devel rubygems

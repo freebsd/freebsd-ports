@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	lazy
 PORTVERSION=	1.4
 CATEGORIES=	devel python

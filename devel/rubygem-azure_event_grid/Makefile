@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_event_grid
 PORTVERSION=	0.18.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-robomaker
 PORTVERSION=	1.51.0
 CATEGORIES=	devel rubygems

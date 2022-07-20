@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	remake
 PORTVERSION=	1.6
 CATEGORIES=	devel

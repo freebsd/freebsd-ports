@@ -1,5 +1,3 @@
-# Created by: Petr Holub <hopet@ics.muni.cz>
-
 PORTNAME=	jrtplib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.11.2

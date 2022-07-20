@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <rpsfa@rit.edu>
-
 PORTNAME=	delayed_job
 PORTVERSION=	4.1.10
 CATEGORIES=	devel rubygems

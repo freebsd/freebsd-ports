@@ -1,5 +1,3 @@
-# Created by: glarkin
-
 PORTNAME=	statsvn
 PORTVERSION=	0.7.0
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	dbus
 DISTVERSION=	1.14.0
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-cloudwatchlogs
 PORTVERSION=	1.53.0
 CATEGORIES=	devel rubygems

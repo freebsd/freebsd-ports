@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libbde
 DISTVERSION=	alpha-20220121
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Class-Singleton
 PORTVERSION=	1.6
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	sumbur
 PORTVERSION=	0.1.2.2
 CATEGORIES=	devel rubygems

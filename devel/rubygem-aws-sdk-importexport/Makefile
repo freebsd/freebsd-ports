@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-importexport
 PORTVERSION=	1.35.0
 CATEGORIES=	devel rubygems

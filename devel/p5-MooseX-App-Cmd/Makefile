@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	MooseX-App-Cmd
 PORTVERSION=	0.34
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	cvs-syncmail
 PORTVERSION=	2.1
 CATEGORIES=	devel python

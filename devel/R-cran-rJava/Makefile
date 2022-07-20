@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	rJava
 DISTVERSION=	1.0-6
 CATEGORIES=	devel java

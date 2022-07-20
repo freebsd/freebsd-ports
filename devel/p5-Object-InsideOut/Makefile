@@ -1,5 +1,3 @@
-# Created by: Geraud Continsouzas <geraud@gcu.info>
-
 PORTNAME=	Object-InsideOut
 PORTVERSION=	4.05
 CATEGORIES=	devel perl5

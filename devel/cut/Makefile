@@ -1,5 +1,3 @@
-# Created by: Sergei Gnezdov <sergeiga@yahoo.com>
-
 PORTNAME=	cut
 PORTVERSION=	2.7
 PORTREVISION=	1

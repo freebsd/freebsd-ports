@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	libvirt
 PORTVERSION=	8.5.0
 CATEGORIES=	devel

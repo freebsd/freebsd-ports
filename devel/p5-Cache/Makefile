@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Cache
 PORTVERSION=	2.11
 CATEGORIES=	devel perl5

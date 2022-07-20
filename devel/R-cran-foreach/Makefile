@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	foreach
 PORTVERSION=	1.5.2
 CATEGORIES=	devel

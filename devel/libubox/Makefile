@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	libubox
 PORTVERSION=	20180803
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Class-Throwable
 PORTVERSION=	0.13
 CATEGORIES=	devel perl5

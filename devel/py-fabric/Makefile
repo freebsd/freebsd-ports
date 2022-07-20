@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-
 PORTNAME=	fabric
 PORTVERSION=	2.7.1
 PORTEPOCH=	1

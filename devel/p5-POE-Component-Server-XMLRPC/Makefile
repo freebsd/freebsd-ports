@@ -1,5 +1,3 @@
-# Created by: Jesper Dalberg <jesper@jdn.dk>
-
 PORTNAME=	POE-Component-Server-XMLRPC
 PORTVERSION=	0.05
 PORTREVISION=	1

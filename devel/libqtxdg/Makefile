@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	libqtxdg
 PORTVERSION=	3.9.0
 CATEGORIES=	devel

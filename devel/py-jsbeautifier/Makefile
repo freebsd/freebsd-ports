@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@FreeBSD.org>
-
 PORTNAME=	jsbeautifier
 PORTVERSION=	1.11.0
 CATEGORIES=	devel python

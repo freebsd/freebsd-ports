@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Sub-Uplevel
 PORTVERSION=	0.2800
 CATEGORIES=	devel perl5

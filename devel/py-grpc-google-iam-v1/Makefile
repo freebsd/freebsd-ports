@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	grpc-google-iam-v1
 PORTVERSION=	0.12.4
 CATEGORIES=	devel python

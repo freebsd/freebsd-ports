@@ -1,5 +1,3 @@
-# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-
 PORTNAME=	Unix-Uptime
 PORTVERSION=	0.3701
 PORTREVISION=	1

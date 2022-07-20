@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	dxa
 PORTVERSION=	0.1.4
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Module-Release
 PORTVERSION=	2.128
 CATEGORIES=	devel perl5

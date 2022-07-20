@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	hike
 PORTVERSION=	1.2.3
 PORTEPOCH=	1

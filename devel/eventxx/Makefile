@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	eventxx
 PORTVERSION=	1.0.1
 PORTREVISION=	5

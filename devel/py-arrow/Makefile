@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	arrow
 PORTVERSION=	1.2.2
 CATEGORIES=	devel python

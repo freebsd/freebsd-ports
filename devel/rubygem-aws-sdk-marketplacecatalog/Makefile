@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-marketplacecatalog
 PORTVERSION=	1.21.0
 CATEGORIES=	devel rubygems

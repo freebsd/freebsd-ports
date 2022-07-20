@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Term-EditLine
 PORTVERSION=	0.11
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	jsmin
 PORTVERSION=	20130329
 CATEGORIES=	devel

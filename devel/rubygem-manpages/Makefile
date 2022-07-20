@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	manpages
 PORTVERSION=	0.6.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Boris Samorodov <bsam@FreeBSD.org>
-
 PORTNAME=	libastylej
 PORTVERSION=	3.0.1
 PORTREVISION=	2

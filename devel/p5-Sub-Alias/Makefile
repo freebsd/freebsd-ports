@@ -1,5 +1,3 @@
-# Created by: Peter Vereshagin <peter@vereshagin.org>
-
 PORTNAME=	Sub-Alias
 PORTVERSION=	1.0.0
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Fukang Chen <loader@FreeBSD.org>
-
 PORTNAME=	File-Copy-Link
 PORTVERSION=	0.140
 CATEGORIES=	devel perl5

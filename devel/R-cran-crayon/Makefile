@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	crayon
 DISTVERSION=	1.5.1
 CATEGORIES=	devel

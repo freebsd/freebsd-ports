@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	libvirt-java
 PORTVERSION=	0.5.3
 CATEGORIES=	devel java

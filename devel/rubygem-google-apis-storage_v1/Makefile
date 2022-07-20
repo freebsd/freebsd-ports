@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-apis-storage_v1
 PORTVERSION=	0.18.0
 CATEGORIES=	devel rubygems

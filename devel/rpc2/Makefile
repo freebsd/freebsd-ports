@@ -1,5 +1,3 @@
-# Created by: jaharkes
-
 PORTNAME=	rpc2
 DISTVERSION=	2.14
 CATEGORIES=	devel

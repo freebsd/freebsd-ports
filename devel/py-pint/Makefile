@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	pint
 PORTVERSION=	0.19.2
 CATEGORIES=	devel python

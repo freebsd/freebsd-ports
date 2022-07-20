@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=		codeville
 PORTVERSION=	0.1.18
 CATEGORIES=		devel python

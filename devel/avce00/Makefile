@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	avce00
 PORTVERSION=	2.0.0
 CATEGORIES=	devel

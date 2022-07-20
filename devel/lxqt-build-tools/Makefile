@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	lxqt-build-tools
 PORTVERSION=	0.11.0
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Dan Rench <citric@cubicone.tmetic.com>
-
 PORTNAME=	Child
 PORTVERSION=	0.009
 PORTREVISION=	1

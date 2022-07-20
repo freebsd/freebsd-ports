@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	pipestatus
 PORTVERSION=	0.7.0
 CATEGORIES=	devel

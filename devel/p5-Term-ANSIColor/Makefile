@@ -1,5 +1,3 @@
-# Created by: Denis Shaposhnikov <dsh@vlink.ru>
-
 PORTNAME=	Term-ANSIColor
 PORTVERSION=	5.01
 CATEGORIES=	devel perl5

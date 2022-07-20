@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	lintr
 DISTVERSION=	2.0.1
 CATEGORIES=	devel

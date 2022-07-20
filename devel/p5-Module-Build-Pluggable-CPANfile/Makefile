@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Module-Build-Pluggable-CPANfile
 PORTVERSION=	0.05
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	pushmi
 PORTVERSION=	1.0.0
 PORTREVISION=	9

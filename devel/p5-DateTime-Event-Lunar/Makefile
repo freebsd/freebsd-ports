@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	DateTime-Event-Lunar
 PORTVERSION=	0.06
 PORTREVISION=	2

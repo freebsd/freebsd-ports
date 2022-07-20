@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic
 PORTVERSION=	1.0.2
 CATEGORIES=	devel python

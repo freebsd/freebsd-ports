@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mem
 PORTVERSION=	0.4.7
 CATEGORIES=	devel perl5

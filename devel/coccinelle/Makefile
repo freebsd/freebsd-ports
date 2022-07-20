@@ -1,5 +1,3 @@
-# Created by: Andriy Gapon
-
 PORTNAME=	coccinelle
 PORTVERSION=	1.0.7
 PORTREVISION=	1

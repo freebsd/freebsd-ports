@@ -1,5 +1,3 @@
-# Created by: Bruce M. Simpson <bms@FreeBSD.org>
-
 PORTNAME=	pickle
 PORTVERSION=	4.20
 CATEGORIES=	devel

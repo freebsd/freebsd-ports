@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <william88@gmail.com>
-
 PORTNAME=	dogpile.cache
 PORTVERSION=	1.1.8
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	PHP-Serialization
 PORTVERSION=	0.34
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin
-
 PORTNAME=	pycos
 PORTVERSION=	4.8.11
 PORTREVISION=	1

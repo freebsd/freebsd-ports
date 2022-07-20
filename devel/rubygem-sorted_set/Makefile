@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	sorted_set
 PORTVERSION=	1.0.3
 CATEGORIES=	devel rubygems

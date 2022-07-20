@@ -1,5 +1,3 @@
-# Created by: Stefan Wendler <stefan.wendler@tngtech.com>
-
 PORTNAME=	rubymine
 PORTVERSION=	2022.1.3
 CATEGORIES=	devel java

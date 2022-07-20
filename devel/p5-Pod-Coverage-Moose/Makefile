@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Pod-Coverage-Moose
 PORTVERSION=	0.07
 CATEGORIES=	devel textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Method-Signatures
 PORTVERSION=	20170211
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: jaharkes
-
 PORTNAME=	rvm
 DISTVERSION=	1.20
 CATEGORIES=	devel

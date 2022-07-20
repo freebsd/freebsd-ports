@@ -1,5 +1,3 @@
-# Created by: vazquez@iqm.unicamp.br
-
 PORTNAME=	fpp
 PORTVERSION=	1.1
 PORTREVISION=	1

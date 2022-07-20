@@ -1,5 +1,3 @@
-# Created by: simond@irrelevant.org
-
 PORTNAME=	Module-Reload-Sel
 PORTVERSION=	1.02
 PORTREVISION=	1

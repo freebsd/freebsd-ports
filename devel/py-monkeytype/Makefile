@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	monkeytype
 PORTVERSION=	22.2.0
 CATEGORIES=	devel python

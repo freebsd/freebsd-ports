@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine (<gerrit@beine-computer.de>)
-
 PORTNAME=	HTML_QuickForm
 PORTVERSION=	3.2.16
 CATEGORIES=	devel www pear

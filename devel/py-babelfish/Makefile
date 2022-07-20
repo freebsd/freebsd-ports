@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	babelfish
 DISTVERSION=	0.6.0
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	Pympler
 PORTVERSION=	0.4.2
 CATEGORIES=	devel python

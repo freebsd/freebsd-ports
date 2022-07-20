@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ppft
 PORTVERSION=	1.7.6.5
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <xmj@FreeBSD.org>
-
 PORTNAME=	rails-deprecated_sanitizer
 PORTVERSION=	1.0.4
 CATEGORIES=	devel rubygems

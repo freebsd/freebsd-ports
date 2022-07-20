@@ -1,5 +1,3 @@
-# Created by: philip@FreeBSD.org
-
 PORTNAME=	threema-msgapi
 PORTVERSION=	3.0.6
 DISTVERSIONPREFIX=	v

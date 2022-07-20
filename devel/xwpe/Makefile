@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@FreeBSD.org)
-
 PORTNAME=	xwpe
 PORTVERSION=	1.5.30a
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_hdinsight
 PORTVERSION=	0.18.5
 CATEGORIES=	devel rubygems

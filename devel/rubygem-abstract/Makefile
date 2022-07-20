@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	abstract
 PORTVERSION=	1.0.0
 PORTREVISION=	1

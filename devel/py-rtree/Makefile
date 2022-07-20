@@ -1,5 +1,3 @@
-# Created by: wenheping@gmail.com
-
 PORTNAME=	rtree
 PORTVERSION=	1.0.0
 CATEGORIES=	devel science python

@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@geeksrus.net>
-
 PORTNAME=	l2
 PORTVERSION=	0.9.13
 PORTREVISION=	1

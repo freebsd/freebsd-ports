@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	giturlparse
 PORTVERSION=	0.10.0
 CATEGORIES=	devel python

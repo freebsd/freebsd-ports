@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	git-semver
 PORTVERSION=	0.3.2
 PORTREVISION=	1

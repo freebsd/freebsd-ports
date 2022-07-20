@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	memory_profiler
 PORTVERSION=	0.9.14
 CATEGORIES=	devel rubygems

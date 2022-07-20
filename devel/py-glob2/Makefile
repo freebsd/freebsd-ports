@@ -1,5 +1,3 @@
-# Created by: Fukang Chen <loader@FreeBSD.org>
-
 PORTNAME=	glob2
 PORTVERSION=	0.7
 CATEGORIES=	devel python

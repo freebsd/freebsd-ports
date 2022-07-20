@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	wdm
 PORTVERSION=	0.1.1
 CATEGORIES=	devel rubygems

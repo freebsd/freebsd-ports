@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	IPC-ShareLite
 PORTVERSION=	0.17
 PORTREVISION=	2

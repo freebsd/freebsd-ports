@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	cloudpickle
 PORTVERSION=	2.1.0
 CATEGORIES=	devel python

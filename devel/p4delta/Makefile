@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	p4delta
 PORTVERSION=	1.3.2
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Future-IO
 PORTVERSION=	0.11
 CATEGORIES=	devel perl5

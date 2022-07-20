@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	jsonschema
 PORTVERSION=	3.2.0
 CATEGORIES=	devel python

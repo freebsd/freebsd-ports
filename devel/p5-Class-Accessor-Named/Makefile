@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Class-Accessor-Named
 PORTVERSION=	0.009
 PORTREVISION=	1

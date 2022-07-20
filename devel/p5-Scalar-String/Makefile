@@ -1,5 +1,3 @@
-# Created by: brix@FreeBSD.org
-
 PORTNAME=	Scalar-String
 PORTVERSION=	0.003
 CATEGORIES=	devel perl5

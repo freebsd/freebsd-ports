@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <rpsfa@rit.edu>
-
 PORTNAME=	warden
 PORTVERSION=	1.2.9
 CATEGORIES=	devel rubygems

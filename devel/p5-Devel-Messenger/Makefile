@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Devel-Messenger
 PORTVERSION=	0.02
 PORTREVISION=	1

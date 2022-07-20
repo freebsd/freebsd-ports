@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	zope.deprecation
 PORTVERSION=	4.1.2
 CATEGORIES=	devel python

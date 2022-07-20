@@ -1,5 +1,3 @@
-# Created by: Kurt Lidl <kurt.lidl@cello.com>
-
 PORTNAME=	Text-Outdent
 PORTVERSION=	0.01
 PORTREVISION=	1

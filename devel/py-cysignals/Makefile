@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	cysignals
 PORTVERSION=	1.11.2
 CATEGORIES=	devel python

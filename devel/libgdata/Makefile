@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libgdata
 PORTVERSION=	0.17.13
 PORTREVISION=	3

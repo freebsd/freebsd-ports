@@ -1,5 +1,3 @@
-# Created by: Martin Kammerhofer <mkamm@gmx.net>
-
 PORTNAME=	libreadline-java
 PORTVERSION=	0.8.0
 DISTVERSIONSUFFIX=	-src

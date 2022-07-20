@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	flipper-active_support_cache_store
 PORTVERSION=	0.21.0
 PORTREVISION=	1

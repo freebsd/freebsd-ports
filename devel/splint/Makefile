@@ -1,5 +1,3 @@
-# Created by: moeding
-
 PORTNAME=	splint
 PORTVERSION=	3.1.2
 CATEGORIES=	devel security

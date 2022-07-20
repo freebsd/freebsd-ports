@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	json_post
 PORTVERSION=	1.1.0
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbrabez@gmail.com>
-
 PORTNAME=	bitstring
 PORTVERSION=	3.1.9
 CATEGORIES=	devel python

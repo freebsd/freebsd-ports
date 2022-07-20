@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Class-InsideOut
 PORTVERSION=	1.14
 CATEGORIES=	devel perl5

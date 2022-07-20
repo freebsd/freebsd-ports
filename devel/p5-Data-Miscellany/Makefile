@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Data-Miscellany
 PORTVERSION=	1.100850
 PORTREVISION=	1

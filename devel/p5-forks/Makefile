@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	forks
 PORTVERSION=	0.36
 PORTREVISION=	2

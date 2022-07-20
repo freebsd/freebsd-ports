@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	IPC-Cmd
 PORTVERSION=	1.04
 CATEGORIES=	devel perl5

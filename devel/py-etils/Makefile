@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	etils
 PORTVERSION=	0.6.0
 CATEGORIES=	devel python

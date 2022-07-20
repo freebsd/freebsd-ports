@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Log-Dispatch-Email-EmailSend
 DISTVERSION=	0.03
 PORTREVISION=	2

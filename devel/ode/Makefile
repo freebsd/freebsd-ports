@@ -1,5 +1,3 @@
-# Created by: David Yeske <dyeske@yahoo.com>
-
 PORTNAME=	ode
 PORTVERSION=	0.13
 PORTREVISION=	4

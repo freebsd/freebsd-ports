@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	zope.component
 PORTVERSION=	4.2.2
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	jsonschema
 PORTVERSION=	4.6.0
 PORTREVISION=	1

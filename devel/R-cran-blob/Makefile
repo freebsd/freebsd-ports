@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	blob
 DISTVERSION=	1.2.3
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	dill
 DISTVERSION=	0.3.4
 CATEGORIES=	devel python

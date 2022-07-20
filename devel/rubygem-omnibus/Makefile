@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	omnibus
 PORTVERSION=	8.3.2
 CATEGORIES=	devel rubygems

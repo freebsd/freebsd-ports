@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pid
 PORTVERSION=	3.0.4
 CATEGORIES=	devel python

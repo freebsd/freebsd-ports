@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	MooseX-Types-DateTimeX
 PORTVERSION=	0.10
 PORTREVISION=	1

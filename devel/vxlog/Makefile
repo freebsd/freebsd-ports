@@ -1,5 +1,3 @@
-# Created by: Konstantin Lepa <konstantin.lepa@gmail.com>
-
 PORTNAME=	vxlog
 PORTVERSION=	1.0.3
 PORTREVISION=	1

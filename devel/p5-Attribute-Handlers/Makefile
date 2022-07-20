@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Attribute-Handlers
 PORTVERSION=	0.99
 CATEGORIES=	devel perl5

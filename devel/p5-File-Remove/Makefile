@@ -1,5 +1,3 @@
-# Created by: Justin Stanford <jus@security.za.net>
-
 PORTNAME=	File-Remove
 PORTVERSION=	1.58
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Serge Gagnon <serge.gagnon@b2b2c.ca>
-
 PORTNAME=	plan9port
 PORTVERSION=	20200816
 CATEGORIES=	devel plan9

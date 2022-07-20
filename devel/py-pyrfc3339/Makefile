@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyrfc3339
 PORTVERSION=	1.1
 CATEGORIES=	devel python

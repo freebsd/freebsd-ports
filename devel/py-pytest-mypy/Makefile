@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytest-mypy
 PORTVERSION=	0.9.1
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	libsoup
 DISTVERSION=	2.74.2
 CATEGORIES=	devel gnome

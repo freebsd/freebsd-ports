@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	gapic-generator
 PORTVERSION=	1.1.1
 CATEGORIES=	devel python

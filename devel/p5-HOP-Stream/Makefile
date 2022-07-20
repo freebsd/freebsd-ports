@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	HOP-Stream
 PORTVERSION=	0.03
 PORTREVISION=	1

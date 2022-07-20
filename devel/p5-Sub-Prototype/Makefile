@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Sub-Prototype
 PORTVERSION=	0.03
 CATEGORIES=	devel perl5

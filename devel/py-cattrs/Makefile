@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cattrs
 PORTVERSION=	22.1.0
 CATEGORIES=	devel python

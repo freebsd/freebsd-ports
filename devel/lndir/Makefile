@@ -1,5 +1,3 @@
-# Created by: Carlos A M dos Santos <unixmania@gmail.com>
-
 PORTNAME=	lndir
 PORTVERSION=	1.0.3
 PORTREVISION=	2

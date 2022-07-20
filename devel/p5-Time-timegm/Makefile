@@ -1,5 +1,3 @@
-# Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-
 PORTNAME=	Time-timegm
 PORTVERSION=	0.01
 CATEGORIES=	devel perl5

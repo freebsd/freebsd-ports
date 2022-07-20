@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Proc-Simple
 PORTVERSION=	1.31
 PORTREVISION=	1

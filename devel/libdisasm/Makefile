@@ -1,5 +1,3 @@
-# Created by: Lutz Boehne <lboehne@damogran.de>
-
 PORTNAME=	libdisasm
 PORTVERSION=	0.23
 PORTREVISION=	2

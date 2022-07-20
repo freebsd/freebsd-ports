@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	allison
 PORTVERSION=	2.0.3
 CATEGORIES=	devel rubygems

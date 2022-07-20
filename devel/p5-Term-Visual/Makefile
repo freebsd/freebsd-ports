@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Term-Visual
 PORTVERSION=	0.08
 PORTREVISION=	1

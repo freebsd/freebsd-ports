@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	async
 PORTVERSION=	1.30.3
 CATEGORIES=	devel rubygems

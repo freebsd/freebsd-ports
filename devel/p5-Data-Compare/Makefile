@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Data-Compare
 PORTVERSION=	1.2200
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	automake
 PORTVERSION=	1.16.5
 CATEGORIES=	devel

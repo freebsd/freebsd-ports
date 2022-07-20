@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	File-Temp
 PORTVERSION=	0.2311
 CATEGORIES=	devel perl5

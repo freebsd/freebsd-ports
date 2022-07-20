@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	cvsspam
 PORTVERSION=	0.2.12
 PORTREVISION=	1

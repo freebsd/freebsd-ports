@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	imake
 PORTVERSION=	1.0.8
 PORTEPOCH=	1

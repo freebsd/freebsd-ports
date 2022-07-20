@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-cognitoidentity
 PORTVERSION=	1.40.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Config-Model
 PORTVERSION=	2.150
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Bill Brinzer <bill.brinzer@gmail.com>
-
 PORTNAME=	MooseX-Traits-Pluggable
 PORTVERSION=	0.12
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	libdsp
 PORTVERSION=	5.0.2
 PORTREVISION=	3

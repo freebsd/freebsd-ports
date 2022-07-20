@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	p4.el
 PORTVERSION=	10.6
 PORTREVISION=	1

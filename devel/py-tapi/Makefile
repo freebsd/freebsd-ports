@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	tapi
 PORTVERSION=	0.1.7
 PORTREVISION=	2

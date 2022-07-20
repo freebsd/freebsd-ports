@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-costandusagereportservice
 PORTVERSION=	1.40.0
 CATEGORIES=	devel rubygems

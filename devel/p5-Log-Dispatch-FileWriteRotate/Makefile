@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Log-Dispatch-FileWriteRotate
 PORTVERSION=	0.062
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Log-Report
 PORTVERSION=	1.33
 CATEGORIES=	devel perl5

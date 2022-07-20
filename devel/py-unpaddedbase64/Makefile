@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	unpaddedbase64
 PORTVERSION=	2.1.0
 CATEGORIES=	devel python

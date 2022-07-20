@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	rpyc
 PORTVERSION=	5.1.0
 CATEGORIES=	devel python

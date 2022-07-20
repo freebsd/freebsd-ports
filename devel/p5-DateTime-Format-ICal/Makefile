@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Format-ICal
 PORTVERSION=	0.09
 PORTREVISION=	1

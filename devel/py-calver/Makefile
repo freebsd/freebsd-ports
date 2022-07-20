@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	calver
 PORTVERSION=	2022.6.26
 CATEGORIES=	devel python

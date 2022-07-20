@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	cdash
 PORTVERSION=	2.2.3
 PORTREVISION=	2

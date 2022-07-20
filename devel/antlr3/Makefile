@@ -1,5 +1,3 @@
-# Created by: Takumi Takahashi <takumiiinn@gmail.com>
-
 PORTNAME=	antlr3
 PORTVERSION=	3.5.2
 PORTREVISION=	1

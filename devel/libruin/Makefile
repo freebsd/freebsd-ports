@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libruin
 PORTVERSION=	0.2.0
 PORTREVISION=	3

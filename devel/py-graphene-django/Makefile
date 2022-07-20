@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	graphene-django
 PORTVERSION=	2.15.0
 PORTREVISION=	2

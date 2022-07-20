@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Devel-MAT
 PORTVERSION=	0.47
 CATEGORIES=	devel perl5

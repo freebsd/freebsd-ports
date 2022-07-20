@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	data.table
 DISTVERSION=	1.14.2
 CATEGORIES=	devel

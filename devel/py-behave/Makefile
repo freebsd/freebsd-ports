@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	behave
 PORTVERSION=	1.2.6
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	gitlab-shell
 PORTVERSION=	14.7.4
 PORTREVISION=	1

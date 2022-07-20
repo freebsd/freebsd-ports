@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	semverse
 PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems

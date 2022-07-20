@@ -1,5 +1,3 @@
-# Created by: Ju Pengfei <jupengfei@gmail.com>
-
 PORTNAME=	Sys-Trace
 PORTVERSION=	0.03
 PORTREVISION=	1

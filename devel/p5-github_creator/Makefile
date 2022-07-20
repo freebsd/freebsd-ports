@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	github_creator
 PORTVERSION=	0.15
 PORTREVISION=	1

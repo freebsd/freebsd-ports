@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	virtualenv-api
 PORTVERSION=	2.1.18
 CATEGORIES=	devel python

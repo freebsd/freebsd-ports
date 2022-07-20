@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung
-
 PORTNAME=	Module-Dependency
 PORTVERSION=	1.86
 PORTREVISION=	2

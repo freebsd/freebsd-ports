@@ -1,5 +1,3 @@
-# Created by: Eric Schnoebelen <eric@cirr.com>
-
 PORTNAME=	Getopt-ArgvFile
 PORTVERSION=	1.11
 PORTREVISION=	1

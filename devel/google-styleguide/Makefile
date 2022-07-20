@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	styleguide
 PORTVERSION=	20220608
 CATEGORIES=	devel

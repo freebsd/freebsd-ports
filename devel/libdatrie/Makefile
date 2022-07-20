@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	libdatrie
 PORTVERSION=	0.2.13
 CATEGORIES=	devel

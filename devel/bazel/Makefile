@@ -1,5 +1,3 @@
-# Created by: Klaus Aehlig <aehlig@linta.de>
-
 PORTNAME=	bazel
 DISTVERSION=	5.2.0
 CATEGORIES=	devel java

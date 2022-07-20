@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Test-If
 PORTVERSION=	0.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	MooX-TypeTiny
 PORTVERSION=	0.002003
 CATEGORIES=	devel perl5

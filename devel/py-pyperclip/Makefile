@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@FreeBSD.org>
-
 PORTNAME=	pyperclip
 PORTVERSION=	1.7.0
 CATEGORIES=	devel python

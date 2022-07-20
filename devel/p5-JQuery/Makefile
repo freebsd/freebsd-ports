@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	JQuery
 PORTVERSION=	1.06
 PORTREVISION=	2

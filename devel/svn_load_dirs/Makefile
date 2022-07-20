@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	svn_load_dirs
 PORTVERSION=	1.8.4
 CATEGORIES=	devel

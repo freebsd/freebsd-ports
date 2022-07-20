@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Sub-Exporter-Lexical
 PORTVERSION=	0.092292
 PORTREVISION=	1

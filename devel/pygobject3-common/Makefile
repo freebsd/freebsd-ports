@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gobject
 PORTVERSION=	3.38.0
 PORTREVISION=	1

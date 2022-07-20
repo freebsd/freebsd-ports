@@ -1,5 +1,3 @@
-# Created by: Frank Wall <freebsd@moov.de>
-
 PORTNAME=	server_sent_events
 PORTVERSION=	0.1.3
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Remington Lang <MrL0Lz@gmail.com>
-
 PORTNAME=	geany
 PORTVERSION=	1.38
 CATEGORIES=	devel editors

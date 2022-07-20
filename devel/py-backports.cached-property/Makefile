@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	backports.cached-property
 PORTVERSION=	1.0.2
 CATEGORIES=	devel python

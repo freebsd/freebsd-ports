@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-quicksight
 PORTVERSION=	1.66.0
 CATEGORIES=	devel rubygems

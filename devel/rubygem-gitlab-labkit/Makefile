@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	gitlab-labkit
 PORTVERSION=	0.23.0
 CATEGORIES=	devel rubygems

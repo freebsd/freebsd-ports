@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	IO-TieCombine
 PORTVERSION=	1.005
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Michael Lyngbøl <lyngbol@wheel.dk>
-
 PORTNAME=	Parse-Yapp
 PORTVERSION=	1.21
 CATEGORIES=	devel perl5

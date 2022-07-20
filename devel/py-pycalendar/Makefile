@@ -1,5 +1,3 @@
-# Created by: Roland van Laar <roland@micite.net>
-
 PORTNAME=	pycalendar
 PORTVERSION=	2.0
 PORTREVISION=	1

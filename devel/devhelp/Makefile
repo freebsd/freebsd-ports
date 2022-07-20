@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	devhelp
 PORTVERSION=	41.2
 CATEGORIES=	devel gnome

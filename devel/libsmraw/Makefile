@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libsmraw
 DISTVERSION=	alpha-20210807
 CATEGORIES=	devel

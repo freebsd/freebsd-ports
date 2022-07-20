@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	args
 PORTVERSION=	0.1.0
 PORTREVISION=	0

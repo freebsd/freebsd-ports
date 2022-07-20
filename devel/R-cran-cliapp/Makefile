@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	cliapp
 DISTVERSION=	0.1.1
 CATEGORIES=	devel

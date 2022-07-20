@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pycmd
 PORTVERSION=	1.2
 PORTREVISION=	1

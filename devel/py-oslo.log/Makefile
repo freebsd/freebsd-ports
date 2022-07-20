@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	oslo.log
 PORTVERSION=	4.4.0
 CATEGORIES=	devel python

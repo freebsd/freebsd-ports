@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	nspr
 DISTVERSION=	4.34
 CATEGORIES=	devel

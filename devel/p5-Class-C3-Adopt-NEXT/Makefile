@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	Class-C3-Adopt-NEXT
 PORTVERSION=	0.14
 CATEGORIES=	devel perl5

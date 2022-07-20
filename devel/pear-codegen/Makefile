@@ -1,5 +1,3 @@
-# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-
 PORTNAME=	codegen
 PORTVERSION=	1.0.7
 CATEGORIES=	devel pear

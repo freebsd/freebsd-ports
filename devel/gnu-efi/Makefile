@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	gnu-efi
 PORTVERSION=	3.0.14
 CATEGORIES=	devel

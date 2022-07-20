@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	configargparse
 PORTVERSION=	1.5.3
 CATEGORIES=	devel python

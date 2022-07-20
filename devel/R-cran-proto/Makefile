@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	proto
 DISTVERSION=	1.0.0
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	aws-c-compression
 PORTVERSION=	0.2.14
 DISTVERSIONPREFIX=	v

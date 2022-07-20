@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-apigatewayv2
 PORTVERSION=	1.42.0
 CATEGORIES=	devel rubygems

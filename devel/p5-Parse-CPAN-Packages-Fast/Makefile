@@ -1,5 +1,3 @@
-# Created by: jupengfei <jupengfei@gmail.com>
-
 PORTNAME=	Parse-CPAN-Packages-Fast
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	jclassinfo
 PORTVERSION=	0.19.1
 PORTREVISION=	1

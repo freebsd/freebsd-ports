@@ -1,5 +1,3 @@
-# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-
 PORTNAME=	Sub-Exporter-GlobExporter
 PORTVERSION=	0.005
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	licensee
 PORTVERSION=	9.14.1
 PORTREVISION=	0

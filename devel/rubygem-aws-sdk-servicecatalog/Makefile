@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-servicecatalog
 PORTVERSION=	1.71.0
 CATEGORIES=	devel rubygems

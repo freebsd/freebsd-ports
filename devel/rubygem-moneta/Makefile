@@ -1,5 +1,3 @@
-# Created by: renchap@cocoa-x.com
-
 PORTNAME=	moneta
 PORTVERSION=	1.5.1
 CATEGORIES=	devel rubygems

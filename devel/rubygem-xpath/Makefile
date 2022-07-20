@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	xpath
 PORTVERSION=	3.2.0
 CATEGORIES=	devel rubygems

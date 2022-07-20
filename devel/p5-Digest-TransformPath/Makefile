@@ -1,5 +1,3 @@
-# Created by: Cory R. King <coryking@mozimedia.com>
-
 PORTNAME=	Digest-TransformPath
 PORTVERSION=	1.00
 PORTREVISION=	2

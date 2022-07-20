@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
-
 PORTNAME=	webby
 PORTVERSION=	0.9.4
 PORTREVISION=	2

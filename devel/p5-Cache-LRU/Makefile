@@ -1,5 +1,3 @@
-# Created by: Andrey Chernov <ache@FreeBSD.org>
-
 PORTNAME=	Cache-LRU
 PORTVERSION=	0.04
 PORTREVISION=	1

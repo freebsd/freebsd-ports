@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libregf
 DISTVERSION=	alpha-20220131
 CATEGORIES=	devel

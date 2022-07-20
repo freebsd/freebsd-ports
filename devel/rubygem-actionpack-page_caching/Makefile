@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	actionpack-page_caching
 PORTVERSION=	1.2.4
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <stas@FreeBSD.org>
-
 PORTNAME=	libatomic_ops
 DISTVERSION=	7.6.12
 CATEGORIES=	devel

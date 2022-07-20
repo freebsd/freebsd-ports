@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Tickit-Widgets
 PORTVERSION=	0.35
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Class-Std-Fast
 PORTVERSION=	0.0.8
 DISTVERSIONPREFIX=	v

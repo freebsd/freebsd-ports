@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Getopt-Declare
 PORTVERSION=	1.14
 PORTREVISION=	1

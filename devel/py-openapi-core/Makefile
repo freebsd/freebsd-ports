@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	openapi-core
 PORTVERSION=	0.14.2
 CATEGORIES=	devel python

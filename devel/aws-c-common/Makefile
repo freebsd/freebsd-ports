@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	aws-c-common
 PORTVERSION=	0.6.19
 DISTVERSIONPREFIX=	v

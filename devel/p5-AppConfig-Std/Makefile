@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	AppConfig-Std
 PORTVERSION=	1.10
 CATEGORIES=	devel perl5

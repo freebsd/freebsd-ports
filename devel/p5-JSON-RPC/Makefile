@@ -1,5 +1,3 @@
-# Created by: Vadim Vatlin
-
 PORTNAME=	JSON-RPC
 PORTVERSION=	1.06
 PORTREVISION=	1

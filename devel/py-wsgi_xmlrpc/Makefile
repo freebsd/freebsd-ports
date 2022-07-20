@@ -1,5 +1,3 @@
-# Created by: Yevgen Drachenko <geka@sippysoft.com>
-
 PORTNAME=	wsgi_xmlrpc
 PORTVERSION=	0.2.8
 PORTREVISION=	1

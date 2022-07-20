@@ -1,5 +1,3 @@
-# Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-
 PORTNAME=	method_source
 PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems

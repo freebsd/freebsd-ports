@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tty-markdown
 PORTVERSION=	0.7.0
 CATEGORIES=	devel rubygems

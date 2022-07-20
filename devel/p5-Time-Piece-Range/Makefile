@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Time-Piece-Range
 PORTVERSION=	1.2
 PORTREVISION=	1

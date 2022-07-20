@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Class-Workflow
 PORTVERSION=	0.11
 PORTREVISION=	1

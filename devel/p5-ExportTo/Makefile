@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	ExportTo
 PORTVERSION=	0.03
 CATEGORIES=	devel perl5

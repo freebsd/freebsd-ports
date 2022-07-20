@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Filesys-Virtual-Plain
 PORTVERSION=	0.10
 PORTREVISION=	1

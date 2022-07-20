@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	attic
 PORTVERSION=	0.5.3
 CATEGORIES=	devel rubygems

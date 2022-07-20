@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	dmucs
 PORTVERSION=	0.6.1
 PORTREVISION=	1

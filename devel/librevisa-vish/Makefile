@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	librevisa-vish
 PORTVERSION=	0.0.20130714
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	os-win
 PORTVERSION=	5.7.0
 CATEGORIES=	devel python

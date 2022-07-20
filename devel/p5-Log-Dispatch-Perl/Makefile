@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Log-Dispatch-Perl
 PORTVERSION=	0.05
 CATEGORIES=	devel perl5

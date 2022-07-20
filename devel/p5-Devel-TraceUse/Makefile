@@ -1,5 +1,3 @@
-# Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
-
 PORTNAME=	Devel-TraceUse
 PORTVERSION=	2.096
 CATEGORIES=	devel perl5

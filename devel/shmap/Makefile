@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	shmap
 PORTVERSION=	0.3.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	virtualenv-clone
 PORTVERSION=	0.5.4
 PORTREVISION=	0

@@ -1,5 +1,3 @@
-# Created by: David Shane Holden <dpejesh@yahoo.com>
-
 PORTNAME=	kronosnet
 PORTVERSION=	1.24
 CATEGORIES=	devel

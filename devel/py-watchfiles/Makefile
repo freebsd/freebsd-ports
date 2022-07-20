@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	watchfiles
 PORTVERSION=	0.15.0
 CATEGORIES=	devel python

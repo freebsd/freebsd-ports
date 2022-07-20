@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	readme-renderer
 PORTVERSION=	35.0
 CATEGORIES=	devel python

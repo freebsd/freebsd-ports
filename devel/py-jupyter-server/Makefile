@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jupyter-server
 PORTVERSION=	1.18.1
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: joerg@FreeBSD.org
-
 PORTNAME=	dwarfdump
 PORTVERSION=	20161124
 CATEGORIES=	devel

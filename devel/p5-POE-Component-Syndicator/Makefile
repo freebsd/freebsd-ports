@@ -1,5 +1,3 @@
-# Created by: Jase Thew <freebsd@beardz.net>
-
 PORTNAME=	POE-Component-Syndicator
 PORTVERSION=	0.06
 PORTREVISION=	2

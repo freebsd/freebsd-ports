@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	copier
 PORTVERSION=	6.1.0
 CATEGORIES=	devel python

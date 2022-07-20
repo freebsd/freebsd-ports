@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Time-Warp
 PORTVERSION=	0.54
 CATEGORIES=	devel perl5

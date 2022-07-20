@@ -1,5 +1,3 @@
-# Created by: Sulev-Madis Silber <madis555@hot.ee>
-
 PORTNAME=	Time-Stopwatch
 PORTVERSION=	1.00
 PORTREVISION=	1

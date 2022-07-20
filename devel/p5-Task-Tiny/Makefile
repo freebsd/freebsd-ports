@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Task-Tiny
 PORTVERSION=	0.002
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Sub-Installer
 PORTVERSION=	0.0.3
 DISTVERSIONPREFIX=	v

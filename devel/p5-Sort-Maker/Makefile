@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Sort-Maker
 DISTVERSION=	0.06
 PORTREVISION=	1

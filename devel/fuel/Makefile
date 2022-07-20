@@ -1,5 +1,3 @@
-# Created by: Hakisho Nukama <nukama@gmail.com>
-
 PORTNAME=	fuel
 DISTVERSION=	1.0.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	libhoard
 PORTVERSION=	3.13
 CATEGORIES=	devel

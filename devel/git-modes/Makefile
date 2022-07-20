@@ -1,5 +1,3 @@
-# Created by: KIMURA Yasuhiro <yasu@utahime.org>
-
 PORTNAME=	git-modes
 DISTVERSION=	1.4.0
 PORTREVISION=	2

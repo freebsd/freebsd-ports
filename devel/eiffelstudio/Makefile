@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	eiffelstudio
 PORTVERSION=	5.7
 PORTREVISION=	8

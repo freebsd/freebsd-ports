@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	Gearman-Client-Async
 PORTVERSION=	0.94
 PORTREVISION=	2

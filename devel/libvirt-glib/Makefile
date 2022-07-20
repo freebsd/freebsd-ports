@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	libvirt-glib
 PORTVERSION=	4.0.0
 PORTREVISION=	2

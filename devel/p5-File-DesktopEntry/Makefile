@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	File-DesktopEntry
 PORTVERSION=	0.22
 CATEGORIES=	devel perl5

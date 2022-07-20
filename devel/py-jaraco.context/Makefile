@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jaraco.context
 PORTVERSION=	4.1.2
 CATEGORIES=	devel python

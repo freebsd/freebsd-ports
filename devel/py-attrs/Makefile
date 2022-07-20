@@ -1,5 +1,3 @@
-# Created by: Axel Rau <axel.rau@chaos1.de>
-
 PORTNAME=	attrs
 PORTVERSION=	21.4.0
 CATEGORIES=	devel python

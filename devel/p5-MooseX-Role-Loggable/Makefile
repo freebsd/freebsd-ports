@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	MooseX-Role-Loggable
 PORTVERSION=	0.114
 CATEGORIES=	devel perl5

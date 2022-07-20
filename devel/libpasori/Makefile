@@ -1,5 +1,3 @@
-# Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
-
 PORTNAME=	libpasori
 PORTVERSION=	02
 PORTREVISION=	2

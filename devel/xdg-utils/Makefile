@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	xdg-utils
 PORTVERSION=	1.1.3
 PORTREVISION=	1

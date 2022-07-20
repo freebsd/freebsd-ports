@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <stas@fonon.realnet>
-
 PORTNAME=	libmpcbdm
 PORTVERSION=	0.0.3
 PORTREVISION=	1

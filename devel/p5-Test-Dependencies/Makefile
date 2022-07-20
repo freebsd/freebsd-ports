@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Test-Dependencies
 PORTVERSION=	0.30
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: obraun@FreeBSD.org
-
 PORTNAME=	cpphs
 PORTVERSION=	1.20.9.1
 PORTREVISION=	3

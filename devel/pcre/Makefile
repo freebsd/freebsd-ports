@@ -1,5 +1,3 @@
-# Created by: dom
-
 PORTNAME=	pcre
 PORTVERSION=	8.45
 PORTREVISION=	1

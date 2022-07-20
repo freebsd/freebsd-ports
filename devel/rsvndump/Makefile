@@ -1,5 +1,3 @@
-# Created by: glarkin
-
 PORTNAME=	rsvndump
 PORTVERSION=	0.6
 PORTREVISION=	2

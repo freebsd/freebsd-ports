@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Object-Destroyer
 PORTVERSION=	2.02
 CATEGORIES=	devel perl5

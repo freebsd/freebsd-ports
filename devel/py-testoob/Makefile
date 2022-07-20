@@ -1,5 +1,3 @@
-# Created by: Tobias Roth <ports@fsck.ch>
-
 PORTNAME=	testoob
 PORTVERSION=	1.15
 PORTREVISION=	2

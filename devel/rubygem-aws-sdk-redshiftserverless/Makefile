@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-redshiftserverless
 PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems

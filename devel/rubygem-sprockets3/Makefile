@@ -1,5 +1,3 @@
-# Created by: Johannes Jost Meixner <xmj@FreeBSD.org>
-
 PORTNAME=	sprockets
 PORTVERSION=	3.7.2
 CATEGORIES=	devel rubygems

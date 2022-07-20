@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	git-version-bump
 PORTVERSION=	0.17.2
 CATEGORIES=	devel rubygems

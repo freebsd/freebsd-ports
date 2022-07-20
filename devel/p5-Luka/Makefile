@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Luka
 PORTVERSION=	1.08
 PORTREVISION=	2

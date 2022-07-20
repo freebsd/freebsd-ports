@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	thriftpy2
 DISTVERSION=	0.4.14
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Oleksii Tsai <oleksii.tsai@gmail.com>
-
 PORTNAME=	LLnextgen
 PORTVERSION=	0.5.5
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	gearmand
 PORTVERSION=	1.0.6
 PORTREVISION=	23

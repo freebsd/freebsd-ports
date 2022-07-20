@@ -1,5 +1,3 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	git
 PORTVERSION=	1.11.0
 CATEGORIES=	devel rubygems

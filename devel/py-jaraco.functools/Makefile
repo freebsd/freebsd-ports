@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	jaraco.functools
 PORTVERSION=	3.5.1
 CATEGORIES=	devel python

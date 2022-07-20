@@ -1,5 +1,3 @@
-# Created by: tiger <tiger@whitetigersd.com>
-
 PORTNAME=	SSN-Validate
 PORTVERSION=	0.18
 PORTREVISION=	2

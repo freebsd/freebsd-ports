@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni
-
 PORTNAME=	jwasm
 PORTVERSION=	2.14
 PORTEPOCH=	1

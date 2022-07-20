@@ -1,5 +1,3 @@
-# Created by: Ben Haga <tuximus@tuximus.mine.nu>
-
 PORTNAME=	tigcc
 PORTVERSION=	0.96.b8
 PORTREVISION=	10

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ColorThemeUtil-ANSI
 PORTVERSION=	0.002
 CATEGORIES=	devel perl5

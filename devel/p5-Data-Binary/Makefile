@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Data-Binary
 PORTVERSION=	0.01
 CATEGORIES=	devel perl5

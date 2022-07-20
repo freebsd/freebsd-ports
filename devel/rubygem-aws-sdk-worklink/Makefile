@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-worklink
 PORTVERSION=	1.33.0
 CATEGORIES=	devel rubygems

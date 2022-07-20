@@ -1,5 +1,3 @@
-# Created by: Aaron Hurt <ahurt@anbcs.com>
-
 PORTNAME=		protobuf-c
 PORTVERSION=		1.4.0
 DISTVERSIONPREFIX=	v

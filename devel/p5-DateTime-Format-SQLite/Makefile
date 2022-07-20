@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	DateTime-Format-SQLite
 PORTVERSION=	0.11
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Inline-ASM
 PORTVERSION=	0.03
 PORTREVISION=	2

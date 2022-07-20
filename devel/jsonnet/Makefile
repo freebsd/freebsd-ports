@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	jsonnet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.0

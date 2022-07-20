@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	cvsdelta
 PORTVERSION=	1.7.0
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libddprof
 PORTVERSION=	0.6.0.1.0
 CATEGORIES=	devel rubygems

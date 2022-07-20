@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	MooseX-AttributeHelpers
 PORTVERSION=	0.25
 CATEGORIES=	devel perl5

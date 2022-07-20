@@ -1,5 +1,3 @@
-# Created by: Evgueni V. Gavrilov <aquatique@rusunix.org>
-
 PORTNAME=	silc-toolkit
 PORTVERSION=	1.1.12
 PORTREVISION=	1

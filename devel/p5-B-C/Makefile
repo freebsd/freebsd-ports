@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	B-C
 PORTVERSION=	1.57
 CATEGORIES=	devel perl5

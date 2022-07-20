@@ -1,5 +1,3 @@
-# Created by: iblis <iblis@hs.ntnu.edu.tw>
-
 PORTNAME=	unittest-cpp
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Frank Steinborn <steinex@nognu.de>
-
 PORTNAME=	libgee
 PORTVERSION=	0.20.3
 CATEGORIES=	devel

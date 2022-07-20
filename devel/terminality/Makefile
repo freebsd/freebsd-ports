@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	terminality
 PORTVERSION=	2.1
 CATEGORIES=	devel

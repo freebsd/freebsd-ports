@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Storable
 PORTVERSION=	3.25
 CATEGORIES=	devel perl5

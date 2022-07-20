@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-
 PORTNAME=	pythontidy
 PORTVERSION=	1.23
 PORTREVISION=	1

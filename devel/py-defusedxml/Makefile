@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	defusedxml
 PORTVERSION=	0.7.1
 CATEGORIES=	devel python textproc

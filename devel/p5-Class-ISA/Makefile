@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	Class-ISA
 PORTVERSION=	0.36
 PORTREVISION=	1

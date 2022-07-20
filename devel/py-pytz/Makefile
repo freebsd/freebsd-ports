@@ -1,5 +1,3 @@
-# Created by: Khairil Yusof <kaeru@inigo-tech.com>
-
 PORTNAME=	pytz
 PORTVERSION=	2021.3
 PORTEPOCH=	1

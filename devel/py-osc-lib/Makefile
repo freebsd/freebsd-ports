@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	osc-lib
 PORTVERSION=	2.6.1
 CATEGORIES=	devel python

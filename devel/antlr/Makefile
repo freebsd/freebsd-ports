@@ -1,5 +1,3 @@
-# Created by: Geoffrey Mainland <mainland@apeiron.net>
-
 PORTNAME=	antlr
 PORTVERSION=	2.7.7
 PORTREVISION=	2

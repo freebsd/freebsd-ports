@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Calendar-Christian
 PORTVERSION=	0.14
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Giacomo Mariani <giacomomariani_at_yahoo_dot_it>
-
 PORTNAME=	clewn
 PORTVERSION=	1.14
 PORTREVISION=	3

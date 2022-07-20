@@ -1,5 +1,3 @@
-# Created by: Yuan-Chen Cheng <ycheng@sinica.edu.tw>
-
 PORTNAME=	popt
 PORTVERSION=	1.18
 PORTREVISION=	1

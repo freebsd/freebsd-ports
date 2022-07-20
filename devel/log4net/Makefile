@@ -1,5 +1,3 @@
-# Created by: Christopher Nehren <apeiron@coitusmentis.info>
-
 PORTNAME=	log4net
 PORTVERSION=	1.2.10
 PORTREVISION=	3

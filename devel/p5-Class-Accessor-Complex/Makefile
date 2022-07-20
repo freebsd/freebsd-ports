@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Class-Accessor-Complex
 PORTVERSION=	1.100880
 PORTREVISION=	2

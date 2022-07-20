@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	pydenticon
 PORTVERSION=	0.3.1
 PORTREVISION=	1

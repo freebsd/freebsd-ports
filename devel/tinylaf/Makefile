@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	tinylaf
 DISTVERSION=	1_4_0
 CATEGORIES=	devel java

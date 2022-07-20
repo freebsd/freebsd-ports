@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Devel-Caller-IgnoreNamespaces
 PORTVERSION=	1.1
 CATEGORIES=	devel perl5

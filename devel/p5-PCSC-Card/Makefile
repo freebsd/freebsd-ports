@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson
-
 PORTNAME=	PCSC-Card
 PORTVERSION=	1.4.14
 CATEGORIES=	devel perl5

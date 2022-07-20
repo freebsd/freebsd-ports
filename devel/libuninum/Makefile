@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	libuninum
 PORTVERSION=	2.7
 PORTREVISION=	4

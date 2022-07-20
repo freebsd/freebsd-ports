@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	caesars
 PORTVERSION=	0.7.4
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Michael Beer <beerml@sigma6audio.de>
-
 PORTNAME=	sord
 PORTVERSION=	0.16.10
 CATEGORIES=	devel

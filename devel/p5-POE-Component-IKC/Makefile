@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-IKC
 PORTVERSION=	0.2402
 CATEGORIES=	devel perl5

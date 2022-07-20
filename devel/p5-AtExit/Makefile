@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	AtExit
 PORTVERSION=	2.05
 CATEGORIES=	devel perl5

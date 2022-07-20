@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Test-Number-Delta
 PORTVERSION=	1.06
 PORTREVISION=	1

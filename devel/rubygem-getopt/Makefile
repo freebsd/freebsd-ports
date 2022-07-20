@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	getopt
 PORTVERSION=	1.6.0
 CATEGORIES=	devel rubygems

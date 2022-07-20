@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	opendht
 DISTVERSION=	1.10.1
 PORTREVISION=	4

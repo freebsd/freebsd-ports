@@ -1,5 +1,3 @@
-# Created by: Joerg Wunsch <joerg@FreeBSD.org>
-
 PORTNAME=	gnulibiberty
 PORTVERSION=	2.37
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Dir-Project
 PORTVERSION=	3.026
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	apipie-bindings
 PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems

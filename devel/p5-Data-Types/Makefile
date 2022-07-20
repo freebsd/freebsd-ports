@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Data-Types
 PORTVERSION=	0.17
 CATEGORIES=	devel perl5

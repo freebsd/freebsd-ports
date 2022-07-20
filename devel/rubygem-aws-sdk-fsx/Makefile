@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-fsx
 PORTVERSION=	1.56.0
 CATEGORIES=	devel rubygems

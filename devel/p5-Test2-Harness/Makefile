@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test2-Harness
 PORTVERSION=	1.000125
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	libshhopt
 PORTVERSION=	1.1.7
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	path
 PORTVERSION=	16.4.0
 CATEGORIES=	devel python

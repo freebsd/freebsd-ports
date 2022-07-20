@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	graphlient
 PORTVERSION=	0.5.0
 PORTREVISION=	1

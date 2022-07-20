@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytest-checkdocs
 PORTVERSION=	2.7.1
 CATEGORIES=	devel python

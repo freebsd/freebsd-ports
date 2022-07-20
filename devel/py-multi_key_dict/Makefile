@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	multi_key_dict
 PORTVERSION=	2.0.3
 CATEGORIES=	devel python

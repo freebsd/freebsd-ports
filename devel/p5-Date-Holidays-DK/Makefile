@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Date-Holidays-DK
 PORTVERSION=	0.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Carp-Clan
 PORTVERSION=	6.08
 CATEGORIES=	devel perl5

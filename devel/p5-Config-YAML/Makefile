@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	Config-YAML
 PORTVERSION=	1.42
 PORTREVISION=	1

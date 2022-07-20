@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	OLE
 DISTVERSION=	1.0.0RC3
 CATEGORIES=	devel www pear

@@ -1,5 +1,3 @@
-# Created by: jkh
-
 PORTNAME=	xxgdb
 PORTVERSION=	1.12
 PORTREVISION=	4

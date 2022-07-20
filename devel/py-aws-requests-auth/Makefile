@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-requests-auth
 PORTVERSION=	0.4.3
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	theseer
 PORTVERSION=	20120501
 PORTREVISION=	1

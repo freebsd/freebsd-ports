@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <m.tsatsenko@gmail.com>
-
 PORTNAME=	rubytree
 PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems

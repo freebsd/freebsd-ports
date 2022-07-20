@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	objecthash
 PORTVERSION=	20160802
 PORTREVISION=	16

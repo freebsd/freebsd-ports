@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Locale-Maketext-Gettext
 PORTVERSION=	1.32
 CATEGORIES=	devel perl5

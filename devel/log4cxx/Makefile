@@ -1,5 +1,3 @@
-# Created by: Thaddeus Covert <tcovert@grimmy.sahuagin.net>
-
 PORTNAME=	log4cxx
 PORTVERSION=	0.11.0
 CATEGORIES=	devel

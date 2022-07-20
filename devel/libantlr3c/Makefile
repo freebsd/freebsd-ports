@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman<5u623l20@gmail.com>
-
 PORTNAME=	libantlr3c
 PORTVERSION=	3.4
 PORTREVISION=	1

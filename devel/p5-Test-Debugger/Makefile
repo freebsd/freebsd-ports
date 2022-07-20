@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	Test-Debugger
 PORTVERSION=	0.14
 PORTREVISION=	1

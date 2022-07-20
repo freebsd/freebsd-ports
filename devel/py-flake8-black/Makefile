@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	flake8-black
 PORTVERSION=	0.3.3
 CATEGORIES=	devel python

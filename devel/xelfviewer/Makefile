@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	${GH_PROJECT:[1]:tl}
 PORTVERSION=	0.05
 CATEGORIES=	devel

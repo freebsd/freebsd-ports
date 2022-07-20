@@ -1,5 +1,3 @@
-# Created by: gebhart@secnetix.de
-
 PORTNAME=	Tree-Trie
 PORTVERSION=	1.9
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	retrying
 PORTVERSION=	1.3.3
 CATEGORIES=	devel python

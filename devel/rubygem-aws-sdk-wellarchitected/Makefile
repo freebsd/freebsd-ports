@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-wellarchitected
 PORTVERSION=	1.17.0
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	goprotobuf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0

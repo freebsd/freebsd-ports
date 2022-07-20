@@ -1,5 +1,3 @@
-# Created by: mig
-
 PORTNAME=	Config-Simple
 PORTVERSION=	4.59
 PORTREVISION=	1

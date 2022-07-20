@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytest-black
 PORTVERSION=	0.3.12
 CATEGORIES=	devel python

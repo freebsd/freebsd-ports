@@ -1,5 +1,3 @@
-# Created by: Janni <jannisan@t-online.de>
-
 PORTNAME=	Atlas
 PORTVERSION=	0.6.4
 PORTREVISION=	2

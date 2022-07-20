@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Data-OptList
 PORTVERSION=	0.112
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Readonly-XS
 PORTVERSION=	1.05
 PORTREVISION=	2

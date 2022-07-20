@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	prettytable
 PORTVERSION=	3.3.0
 CATEGORIES=	devel python

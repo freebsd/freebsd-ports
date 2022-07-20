@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Syntax-Keyword-Dynamically
 PORTVERSION=	0.10
 CATEGORIES=	devel perl5

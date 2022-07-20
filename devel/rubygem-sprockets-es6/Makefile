@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	sprockets-es6
 PORTVERSION=	0.9.2
 CATEGORIES=	devel rubygems

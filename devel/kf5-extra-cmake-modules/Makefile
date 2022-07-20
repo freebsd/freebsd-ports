@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	extra-cmake-modules
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
 CATEGORIES=	devel kde kde-frameworks

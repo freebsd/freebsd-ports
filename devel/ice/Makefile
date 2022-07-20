@@ -1,5 +1,3 @@
-# Created by: Stefan Ehmann <shoesoft@gmx.net>
-
 PORTNAME=		Ice
 PORTVERSION=		3.6.5
 PORTREVISION=		1

@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	JSON-Hyper
 PORTVERSION=	0.011
 PORTREVISION=	1

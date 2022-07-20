@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	POE-Component-Pluggable
 PORTVERSION=	1.28
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Glib
 PORTVERSION=	1.3293
 PORTREVISION=	1

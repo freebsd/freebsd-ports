@@ -1,5 +1,3 @@
-# Created by: Evgeniy Kosov <evgeniy@kosov.su>
-
 PORTNAME=	Log-Any-App
 PORTVERSION=	0.540
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	dbus-glib
 PORTVERSION=	0.100
 DISTVERSIONSUFFIX=	-7.el7

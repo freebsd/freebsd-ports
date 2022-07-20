@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	include-what-you-use
 PORTVERSION=	0.18
 PORTREVISION=	1

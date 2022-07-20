@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	threads
 PORTVERSION=	2.21
 CATEGORIES=	devel perl5

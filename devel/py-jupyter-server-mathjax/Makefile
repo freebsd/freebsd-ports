@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jupyter-server-mathjax
 PORTVERSION=	0.2.6
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Perl6-Builtins
 PORTVERSION=	0.0.3
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libglade2
 PORTVERSION=	2.6.4
 DISTVERSIONSUFFIX=	-11.el7

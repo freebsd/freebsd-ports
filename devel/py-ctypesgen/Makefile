@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ctypesgen
 PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	ctypesgen-

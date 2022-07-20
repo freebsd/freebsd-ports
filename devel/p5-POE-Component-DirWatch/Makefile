@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-DirWatch
 PORTVERSION=	0.300004
 CATEGORIES=	devel perl5

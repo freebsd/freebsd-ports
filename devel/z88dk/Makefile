@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	z88dk
 PORTVERSION=	2.1
 PORTREVISION=	3

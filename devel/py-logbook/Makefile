@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	logbook
 PORTVERSION=	1.1.0
 CATEGORIES=	devel python

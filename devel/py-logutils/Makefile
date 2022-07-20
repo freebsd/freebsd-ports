@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	logutils
 PORTVERSION=	0.3.5
 CATEGORIES=	devel python

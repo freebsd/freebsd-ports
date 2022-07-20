@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Mo
 PORTVERSION=	0.40
 PORTEPOCH=	1

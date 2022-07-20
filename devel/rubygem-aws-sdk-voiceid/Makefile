@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-voiceid
 PORTVERSION=	1.8.0
 CATEGORIES=	devel rubygems

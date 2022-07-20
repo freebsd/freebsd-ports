@@ -1,5 +1,3 @@
-# Created by: mfechner@FreeBSD.org
-
 PORTNAME=	view_component
 PORTVERSION=	2.50.0
 CATEGORIES=	devel rubygems

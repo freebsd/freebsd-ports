@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-iotwireless
 PORTVERSION=	1.24.0
 CATEGORIES=	devel rubygems

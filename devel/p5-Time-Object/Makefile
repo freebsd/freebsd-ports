@@ -1,5 +1,3 @@
-# Created by: dom@happygiraffe.net
-
 PORTNAME=	Time-Object
 PORTVERSION=	1.00
 PORTREVISION=	2

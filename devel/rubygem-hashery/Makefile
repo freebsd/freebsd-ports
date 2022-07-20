@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	hashery
 PORTVERSION=	2.1.2
 CATEGORIES=	devel rubygems

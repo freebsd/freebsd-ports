@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	libdaemon
 PORTVERSION=	0.14
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sun Chang-Ming
-
 PORTNAME=	loki
 PORTVERSION=	0.1.7
 CATEGORIES=	devel

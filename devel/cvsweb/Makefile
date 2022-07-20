@@ -1,5 +1,3 @@
-# Created by: SADA Kenji <sada@FreeBSD.org>
-
 PORTNAME=	cvsweb
 PORTVERSION=	2.0.6
 PORTREVISION=	2

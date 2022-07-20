@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jupyterlab
 PORTVERSION=	3.4.3
 CATEGORIES=	devel python

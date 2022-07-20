@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	ExtUtils-PkgConfig
 PORTVERSION=	1.16
 CATEGORIES=	devel perl5

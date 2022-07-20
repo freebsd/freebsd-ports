@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	userpath
 PORTVERSION=	1.8.0
 PORTREVISION=	1

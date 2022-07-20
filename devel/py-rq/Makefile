@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	rq
 PORTVERSION=	1.10.1
 CATEGORIES=	devel python

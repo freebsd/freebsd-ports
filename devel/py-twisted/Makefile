@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <wjv@FreeBSD.org>
-
 PORTNAME=	twisted
 PORTVERSION=	22.4.0
 CATEGORIES=	devel net python

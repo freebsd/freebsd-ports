@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Sah
 PORTVERSION=	0.9.50
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	vulture
 PORTVERSION=	2.5
 CATEGORIES=	devel python

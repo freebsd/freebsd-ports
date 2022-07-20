@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	event_emitter
 PORTVERSION=	0.2.6
 CATEGORIES=	devel rubygems

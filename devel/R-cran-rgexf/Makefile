@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	rgexf
 PORTVERSION=	0.16.2
 CATEGORIES=	devel

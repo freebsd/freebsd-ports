@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Test-Inter
 PORTVERSION=	1.09
 CATEGORIES=	devel perl5

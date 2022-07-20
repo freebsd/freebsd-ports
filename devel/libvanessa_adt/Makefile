@@ -1,5 +1,3 @@
-# Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
-
 PORTNAME=	libvanessa_adt
 PORTVERSION=	0.0.9
 PORTREVISION=	1

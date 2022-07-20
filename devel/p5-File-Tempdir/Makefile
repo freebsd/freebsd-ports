@@ -1,5 +1,3 @@
-# Created by: Fukang Chen <loader@FreeBSD.org>
-
 PORTNAME=	File-Tempdir
 PORTVERSION=	0.02
 PORTREVISION=	1

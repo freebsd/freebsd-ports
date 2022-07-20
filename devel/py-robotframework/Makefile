@@ -1,5 +1,3 @@
-# Created by: Vladimir Chukharev
-
 PORTNAME=	robotframework
 PORTVERSION=	3.1.2
 CATEGORIES=	devel www python

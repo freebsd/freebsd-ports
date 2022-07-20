@@ -1,5 +1,3 @@
-# Created by: roberto
-
 PORTNAME=	dlmalloc
 PORTVERSION=	2.8.6
 CATEGORIES=	devel

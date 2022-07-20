@@ -1,5 +1,3 @@
-# Created by: Patrick Alken <alken@colorado.edu>
-
 PORTNAME=		ald
 PORTVERSION=		0.1.7
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	waldo
 DISTVERSION=	0.4.0
 CATEGORIES=	devel

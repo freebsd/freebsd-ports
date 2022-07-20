@@ -1,5 +1,3 @@
-# Created by: jkoshy
-
 PORTNAME=	ctags
 PORTVERSION=	5.8
 CATEGORIES=	devel

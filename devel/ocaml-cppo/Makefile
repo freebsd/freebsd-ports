@@ -1,5 +1,3 @@
-# Created by: Michael Grunewald
-
 PORTNAME=	cppo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.9

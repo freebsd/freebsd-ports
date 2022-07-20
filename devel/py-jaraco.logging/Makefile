@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	jaraco.logging
 PORTVERSION=	3.1.0
 CATEGORIES=	devel python

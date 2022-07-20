@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	plex
 PORTVERSION=	1.1.5
 CATEGORIES=	devel python

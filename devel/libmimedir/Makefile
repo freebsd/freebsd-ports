@@ -1,5 +1,3 @@
-# Created by: Sam Lawrance <boris@brooknet.com.au>
-
 PORTNAME=	libmimedir
 PORTVERSION=	0.5.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	accessors-fast
 PORTVERSION=	0.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Config-AutoConf
 PORTVERSION=	0.320
 CATEGORIES=	devel perl5

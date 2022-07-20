@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	CommitBit
 PORTVERSION=	0.02
 PORTREVISION=	3

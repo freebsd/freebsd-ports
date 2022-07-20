@@ -1,5 +1,3 @@
-# Created by: Shell Hung <shell@shellhung.org>
-
 PORTNAME=	Test-Simple
 PORTVERSION=	1.302191
 CATEGORIES=	devel perl5

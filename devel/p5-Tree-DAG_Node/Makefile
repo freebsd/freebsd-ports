@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Tree-DAG_Node
 PORTVERSION=	1.32
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	iso8601
 PORTVERSION=	1.0.2
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Ruben van Staveren
-
 PORTNAME=	Thread-Suspend
 PORTVERSION=	1.23
 CATEGORIES=	devel perl5

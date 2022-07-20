@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	symfony
 PORTVERSION=	20110701
 CATEGORIES=	devel www pear

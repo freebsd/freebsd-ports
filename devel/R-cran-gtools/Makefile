@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	gtools
 PORTVERSION=	3.9.3
 CATEGORIES=	devel

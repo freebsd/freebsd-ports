@@ -1,5 +1,3 @@
-# Created by: David Sugar <dyfet@gnu.org>
-
 PORTNAME=	commoncpp
 PORTVERSION=	1.8.1
 PORTREVISION=	3

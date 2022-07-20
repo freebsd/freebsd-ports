@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	claide-plugins
 PORTVERSION=	0.9.2
 CATEGORIES=	devel rubygems

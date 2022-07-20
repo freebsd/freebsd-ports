@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	MooseX-MethodAttributes
 PORTVERSION=	0.32
 CATEGORIES=	devel perl5

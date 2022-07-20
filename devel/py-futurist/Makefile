@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	futurist
 PORTVERSION=	2.4.1
 CATEGORIES=	devel python

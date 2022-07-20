@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	SVN-Notify-Snapshot
 PORTVERSION=	0.04
 PORTREVISION=	1

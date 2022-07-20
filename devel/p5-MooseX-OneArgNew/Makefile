@@ -1,5 +1,3 @@
-# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-
 PORTNAME=	MooseX-OneArgNew
 PORTVERSION=	0.005
 CATEGORIES=	devel perl5

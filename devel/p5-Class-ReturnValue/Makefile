@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	Class-ReturnValue
 PORTVERSION=	0.55
 PORTREVISION=	1

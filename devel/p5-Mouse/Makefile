@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Mouse
 PORTVERSION=	2.5.10
 DISTVERSIONPREFIX=	v

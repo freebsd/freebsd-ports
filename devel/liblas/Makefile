@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	liblas
 PORTVERSION=	1.8.1
 PORTREVISION=	20

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	csv23
 PORTVERSION=	0.3.4
 CATEGORIES=	devel python

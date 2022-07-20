@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cucumber-rails
 PORTVERSION=	2.5.1
 PORTREVISION=	1

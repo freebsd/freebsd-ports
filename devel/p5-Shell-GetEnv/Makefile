@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Shell-GetEnv
 PORTVERSION=	0.10
 CATEGORIES=	devel perl5

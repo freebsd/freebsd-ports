@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	avro
 PORTVERSION=	1.11.0
 CATEGORIES=	devel python

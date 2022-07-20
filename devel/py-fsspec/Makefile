@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fsspec
 PORTVERSION=	2022.5.0
 CATEGORIES=	devel python

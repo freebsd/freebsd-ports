@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	genson
 PORTVERSION=	1.2.2
 PORTREVISION=	1

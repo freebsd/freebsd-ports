@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	websockify
 PORTVERSION=	0.10.0
 CATEGORIES=	devel python

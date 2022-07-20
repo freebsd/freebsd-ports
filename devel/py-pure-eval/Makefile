@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pure-eval
 PORTVERSION=	0.2.2
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Struct-Dumb
 PORTVERSION=	0.12
 CATEGORIES=	devel perl5

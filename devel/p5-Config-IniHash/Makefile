@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Config-IniHash
 PORTVERSION=	3.01.01
 PORTREVISION=	2

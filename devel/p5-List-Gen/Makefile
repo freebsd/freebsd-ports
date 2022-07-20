@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	List-Gen
 PORTVERSION=	0.974
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Class-Inner
 PORTVERSION=	0.200001
 PORTREVISION=	1

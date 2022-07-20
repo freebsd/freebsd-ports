@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pluggy
 PORTVERSION=	0.13.1
 CATEGORIES=	devel python

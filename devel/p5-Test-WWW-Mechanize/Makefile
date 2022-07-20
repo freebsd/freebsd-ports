@@ -1,5 +1,3 @@
-# Created by: aturetta@commit.it
-
 PORTNAME=	Test-WWW-Mechanize
 PORTVERSION=	1.58
 CATEGORIES=	devel perl5

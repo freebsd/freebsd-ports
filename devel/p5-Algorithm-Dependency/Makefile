@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Algorithm-Dependency
 PORTVERSION=	1.112
 CATEGORIES=	devel perl5

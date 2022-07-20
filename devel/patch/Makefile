@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	patch
 PORTVERSION=	2.7.6
 PORTREVISION=	2

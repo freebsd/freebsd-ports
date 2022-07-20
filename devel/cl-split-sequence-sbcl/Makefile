@@ -1,5 +1,3 @@
-# Created by: Henrik Motakef <henrik.motakef@web.de>
-
 PORTNAME=	split-sequence
 PORTVERSION=	20011114.1
 PORTREVISION=	70

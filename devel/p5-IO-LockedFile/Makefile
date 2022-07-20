@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	IO-LockedFile
 PORTVERSION=	0.23
 PORTREVISION=	1

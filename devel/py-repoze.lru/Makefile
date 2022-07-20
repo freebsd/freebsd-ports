@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	repoze.lru
 PORTVERSION=	0.7
 CATEGORIES=	devel python

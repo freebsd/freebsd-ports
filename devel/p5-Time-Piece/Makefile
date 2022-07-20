@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Time-Piece
 PORTVERSION=	1.3300
 CATEGORIES=	devel perl5

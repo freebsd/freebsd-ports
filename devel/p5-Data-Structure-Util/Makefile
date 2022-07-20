@@ -1,5 +1,3 @@
-# Created by: Jon Nistor <nistor@snickers.org>
-
 PORTNAME=	Data-Structure-Util
 PORTVERSION=	0.16
 PORTREVISION=	1

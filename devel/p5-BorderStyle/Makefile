@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	BorderStyle
 PORTVERSION=	3.0.2
 PORTREVISION=	1

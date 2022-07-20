@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Module-Find
 PORTVERSION=	0.15
 CATEGORIES=	devel perl5

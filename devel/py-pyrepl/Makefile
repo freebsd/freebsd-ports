@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	pyrepl
 PORTVERSION=	0.9.0
 CATEGORIES=	devel python

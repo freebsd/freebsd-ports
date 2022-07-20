@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	MooseX-Emulate-Class-Accessor-Fast
 PORTVERSION=	0.009032
 CATEGORIES=	devel perl5

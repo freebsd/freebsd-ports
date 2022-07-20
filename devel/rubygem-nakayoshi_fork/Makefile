@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	nakayoshi_fork
 PORTVERSION=	0.0.4
 CATEGORIES=	devel rubygems

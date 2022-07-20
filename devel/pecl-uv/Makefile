@@ -1,5 +1,3 @@
-# Created by: John Chen <johnpupu@gmail.com>
-
 PORTNAME=	uv
 PORTVERSION=	0.2.4
 PORTREVISION=	1

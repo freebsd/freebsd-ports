@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	caf
 PORTVERSION=	0.18.6
 CATEGORIES=	devel

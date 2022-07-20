@@ -1,5 +1,3 @@
-# Created by: tobez@FreeBSD.org
-
 PORTNAME=	IO-NestedCapture
 PORTVERSION=	1.03
 PORTREVISION=	1

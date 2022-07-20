@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	Log-Dispatch-Config
 PORTVERSION=	1.04
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-costexplorer
 PORTVERSION=	1.77.0
 CATEGORIES=	devel rubygems

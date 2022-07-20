@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	frictionless
 PORTVERSION=	4.40.3
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Nemo Liu <nemoliu@FreeBSD.org>
-
 PORTNAME=	flexjson
 DISTVERSION=	2.1
 CATEGORIES=	devel java

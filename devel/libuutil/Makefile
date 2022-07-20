@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	libuutil
 PORTVERSION=	1.0.3
 CATEGORIES=	devel

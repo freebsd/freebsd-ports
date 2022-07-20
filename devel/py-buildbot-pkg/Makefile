@@ -1,5 +1,3 @@
-# Created by: Michael Gmelin <grembo@FreeBSD.org>
-
 PORTNAME=	buildbot-pkg
 PORTVERSION=	3.5.0
 CATEGORIES=	devel python

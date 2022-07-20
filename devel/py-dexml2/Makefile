@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	dexml2
 PORTVERSION=	0.5.3
 CATEGORIES=	devel python

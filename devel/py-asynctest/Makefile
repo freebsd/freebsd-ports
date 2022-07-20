@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	asynctest
 PORTVERSION=	0.13.0
 CATEGORIES=	devel python

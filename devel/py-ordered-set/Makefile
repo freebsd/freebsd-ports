@@ -1,5 +1,3 @@
-# Created by: antoine@FreeBSD.org
-
 PORTNAME=	ordered-set
 PORTVERSION=	4.1.0
 CATEGORIES=	devel python

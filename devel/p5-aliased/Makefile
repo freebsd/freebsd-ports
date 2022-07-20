@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	aliased
 PORTVERSION=	0.34
 CATEGORIES=	devel perl5

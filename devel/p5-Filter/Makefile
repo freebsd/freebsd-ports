@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Filter
 PORTVERSION=	1.61
 CATEGORIES=	devel perl5

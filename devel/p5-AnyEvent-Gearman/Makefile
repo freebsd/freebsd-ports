@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	AnyEvent-Gearman
 PORTVERSION=	0.10
 PORTREVISION=	1

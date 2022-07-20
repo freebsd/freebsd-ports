@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	stack-data
 PORTVERSION=	0.3.0
 CATEGORIES=	devel python

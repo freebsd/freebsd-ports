@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	bglibs
 PORTVERSION=	2.04
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Samy Al Bahra <samy@kerneled.org>
-
 PORTNAME=	z80-asm
 PORTVERSION=	2.4.p3
 CATEGORIES=	devel

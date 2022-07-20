@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test-BinaryData
 PORTVERSION=	0.014
 PORTREVISION=	1

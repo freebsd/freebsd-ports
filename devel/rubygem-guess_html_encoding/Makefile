@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	guess_html_encoding
 PORTVERSION=	0.0.11
 CATEGORIES=	devel rubygems

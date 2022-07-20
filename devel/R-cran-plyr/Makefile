@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	plyr
 PORTVERSION=	1.8.7
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	Pirum
 PORTVERSION=	1.1.5
 CATEGORIES=	devel www pear

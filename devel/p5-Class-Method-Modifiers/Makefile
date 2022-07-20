@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Class-Method-Modifiers
 PORTVERSION=	2.13
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	Config-Parser
 PORTVERSION=	1.05
 CATEGORIES=	devel perl5

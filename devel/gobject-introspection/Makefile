@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <avl@FreeBSD.org>
-
 PORTNAME=	gobject-introspection
 DISTVERSION=	1.72.0
 PORTREVISION=	1

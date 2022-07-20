@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman<5u623l20@gmail.com>
-
 PORTNAME=	MooX-Cmd
 PORTVERSION=	0.017
 CATEGORIES=	devel perl5

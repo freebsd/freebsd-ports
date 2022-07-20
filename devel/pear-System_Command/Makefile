@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	System_Command
 PORTVERSION=	1.0.8
 CATEGORIES=	devel pear

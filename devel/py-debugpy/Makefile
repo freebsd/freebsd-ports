@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	debugpy
 PORTVERSION=	1.6.2
 CATEGORIES=	devel python

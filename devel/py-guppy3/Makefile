@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	guppy3
 PORTVERSION=	3.1.2
 CATEGORIES=	devel python

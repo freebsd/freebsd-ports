@@ -1,5 +1,3 @@
-# Created by: bf <bf@FreeBSD.org>
-
 PORTNAME=	api-sanity-checker
 PORTVERSION=	1.98.4
 PORTREVISION=	6

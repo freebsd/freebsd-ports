@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	Inline-Java
 PORTVERSION=	0.540
 PORTREVISION=	2

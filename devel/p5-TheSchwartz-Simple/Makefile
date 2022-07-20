@@ -1,5 +1,3 @@
-# Created by: Kurt Lidl <kurt.lidl@cello.com>
-
 PORTNAME=	TheSchwartz-Simple
 PORTVERSION=	0.05
 PORTREVISION=	1

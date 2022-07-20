@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	validate-pyproject
 PORTVERSION=	0.9
 CATEGORIES=	devel python

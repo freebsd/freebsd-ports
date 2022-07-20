@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	pycparser
 PORTVERSION=	2.21
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Code-Perl
 PORTVERSION=	0.03
 PORTREVISION=	2

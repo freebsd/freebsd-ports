@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	xmltodict
 PORTVERSION=	0.13.0
 CATEGORIES=	devel python

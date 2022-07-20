@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	Psr_Log
 PORTVERSION=	1.0.2
 CATEGORIES=	devel

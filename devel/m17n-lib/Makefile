@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	m17n-lib
 PORTVERSION=	1.8.0
 PORTREVISION=	4

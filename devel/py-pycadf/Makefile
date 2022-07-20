@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	pycadf
 PORTVERSION=	3.1.1
 CATEGORIES=	devel python

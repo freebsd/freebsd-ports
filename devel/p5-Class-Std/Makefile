@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Class-Std
 DISTVERSION=	0.013
 CATEGORIES=	devel perl5

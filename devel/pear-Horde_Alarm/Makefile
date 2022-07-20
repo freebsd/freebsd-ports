@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Alarm
 PORTVERSION=	2.2.10
 CATEGORIES=	devel www pear

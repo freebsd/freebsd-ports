@@ -1,5 +1,3 @@
-# Created by: Nikolay Dachev <freebsd@dacehv.info>
-
 PORTNAME=	tabulate
 PORTVERSION=	0.8.9
 CATEGORIES=	devel python

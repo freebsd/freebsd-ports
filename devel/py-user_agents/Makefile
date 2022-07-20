@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	user_agents
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python

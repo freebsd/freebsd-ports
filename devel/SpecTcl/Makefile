@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	SpecTcl
 PORTVERSION=	1.2.2a
 CATEGORIES=	devel tk

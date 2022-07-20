@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	oniguruma
 DISTVERSION=	6.9.8
 PORTREVISION=	1

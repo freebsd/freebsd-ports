@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Smart-Comments
 PORTVERSION=	1.06
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ppl
 PORTVERSION=	1.2
 CATEGORIES=	devel

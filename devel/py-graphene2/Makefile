@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	graphene
 PORTVERSION=	2.1.9
 CATEGORIES=	devel python

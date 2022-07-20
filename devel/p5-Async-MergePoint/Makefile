@@ -1,5 +1,3 @@
-# Created by: Felippe M. Motta <lippe@shire.freebsd.org>
-
 PORTNAME=	Async-MergePoint
 PORTVERSION=	0.04
 PORTREVISION=	1

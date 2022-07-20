@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	ireport
 PORTVERSION=	3.7.6
 PORTREVISION=	1

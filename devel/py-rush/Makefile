@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rush
 PORTVERSION=	2021.4.0
 CATEGORIES=	devel python

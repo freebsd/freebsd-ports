@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-iotdataplane
 PORTVERSION=	1.39.0
 CATEGORIES=	devel rubygems

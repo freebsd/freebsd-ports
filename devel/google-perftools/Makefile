@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	google-perftools
 DISTVERSIONPREFIX=	gperftools-
 DISTVERSION=	2.10

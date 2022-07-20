@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	ExtUtils-XSpp
 PORTVERSION=	0.18
 CATEGORIES=	devel perl5

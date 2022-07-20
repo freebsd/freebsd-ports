@@ -1,5 +1,3 @@
-# Created by: matthew.closson@gmail.com
-
 PORTNAME=	libCello
 PORTVERSION=	1.1.7
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-
 PORTNAME=	bmake
 PORTVERSION=	20220418
 CATEGORIES=	devel

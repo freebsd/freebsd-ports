@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	sdl_console
 PORTVERSION=	2.1
 PORTREVISION=	7

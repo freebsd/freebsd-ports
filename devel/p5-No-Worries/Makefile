@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	No-Worries
 PORTVERSION=	1.7
 CATEGORIES=	devel perl5

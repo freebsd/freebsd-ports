@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	typing-extensions
 PORTVERSION=	4.3.0
 CATEGORIES=	devel python

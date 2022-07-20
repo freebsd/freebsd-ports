@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	File-Pid
 PORTVERSION=	1.01
 PORTREVISION=	2

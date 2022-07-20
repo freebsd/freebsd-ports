@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-route53recoveryreadiness
 PORTVERSION=	1.10.0
 CATEGORIES=	devel rubygems

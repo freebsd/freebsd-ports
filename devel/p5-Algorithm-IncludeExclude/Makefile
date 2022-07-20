@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Algorithm-IncludeExclude
 PORTVERSION=	0.01
 PORTREVISION=	1

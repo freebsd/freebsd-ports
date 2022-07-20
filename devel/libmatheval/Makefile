@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	libmatheval
 PORTVERSION=	1.1.11
 PORTREVISION=	4

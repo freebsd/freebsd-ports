@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	inflecto
 PORTVERSION=	0.0.2
 CATEGORIES=	devel rubygems

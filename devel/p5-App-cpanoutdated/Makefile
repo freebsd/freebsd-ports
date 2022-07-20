@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	App-cpanoutdated
 PORTVERSION=	0.24
 PORTREVISION=	1

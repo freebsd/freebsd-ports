@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	PHP_CompatInfo
 PORTVERSION=	1.9.0
 PORTREVISION=	5

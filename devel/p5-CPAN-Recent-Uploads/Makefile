@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	CPAN-Recent-Uploads
 PORTVERSION=	0.16
 CATEGORIES=	devel perl5

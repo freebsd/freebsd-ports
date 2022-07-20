@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cvsplot
 PORTVERSION=	1.7.4
 PORTREVISION=	5

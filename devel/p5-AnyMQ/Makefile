@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	AnyMQ
 PORTVERSION=	0.35
 PORTREVISION=	1

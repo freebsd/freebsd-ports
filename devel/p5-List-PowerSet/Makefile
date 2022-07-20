@@ -1,5 +1,3 @@
-# Created by: Anish Mistry <amistry@am-productions.biz>
-
 PORTNAME=	List-PowerSet
 PORTVERSION=	0.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	libtar
 PORTVERSION=	1.2.11
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Log-Any-IfLOG
 PORTVERSION=	0.090
 CATEGORIES=	devel perl5

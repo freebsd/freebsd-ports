@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarev <krion@FreeBSD.org>
-
 PORTNAME=		aiologger
 PORTVERSION=	0.6.1
 CATEGORIES=		devel python

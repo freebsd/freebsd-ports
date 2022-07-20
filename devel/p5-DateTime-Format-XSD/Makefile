@@ -1,5 +1,3 @@
-# Created by: Sergey V. Dyatko <Sergey.Dyatko@gmail.com>
-
 PORTNAME=	DateTime-Format-XSD
 PORTVERSION=	0.2
 PORTREVISION=	1

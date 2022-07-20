@@ -1,5 +1,3 @@
-# Created by: Rui Lopes <rui@ruilopes.com>
-
 PORTNAME=	regexxer
 PORTVERSION=	0.10
 PORTREVISION=	8

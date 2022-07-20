@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	cli
 PORTVERSION=	3.3.0
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Roger Hardiman <roger@freebsd.org>
-
 PORTNAME=	ptlib
 PORTVERSION=	2.10.11
 PORTREVISION=	5

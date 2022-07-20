@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Rdo
 PORTVERSION=	2.1.0
 CATEGORIES=	devel www pear

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Term-Choose-Util
 PORTVERSION=	0.137
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Niels Kristensen <niels@kristensen.io>
-
 PORTNAME=	IPC-PerlSSH
 PORTVERSION=	0.17
 CATEGORIES=	devel perl5

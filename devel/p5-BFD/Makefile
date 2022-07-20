@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	BFD
 PORTVERSION=	0.31
 PORTREVISION=	1

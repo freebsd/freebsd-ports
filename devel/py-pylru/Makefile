@@ -1,5 +1,3 @@
-# Created by: Kyle Evans <kevans@FreeBSD.org>
-
 PORTNAME=	pylru
 PORTVERSION=	1.2.0
 CATEGORIES=	devel python

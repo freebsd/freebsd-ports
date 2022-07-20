@@ -1,5 +1,3 @@
-# Created by: Julien Laffaye <kimelto@gmail.com>
-
 PORTNAME=	re2
 PORTVERSION=	20220601
 CATEGORIES=	devel

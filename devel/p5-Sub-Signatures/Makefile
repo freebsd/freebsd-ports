@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	Sub-Signatures
 PORTVERSION=	0.21
 PORTREVISION=	2

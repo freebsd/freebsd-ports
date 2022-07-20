@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	autodia
 PORTVERSION=	2.14
 PORTREVISION=	1

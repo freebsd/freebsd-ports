@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Term-Title
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

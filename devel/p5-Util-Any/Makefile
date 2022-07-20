@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	Util-Any
 PORTVERSION=	0.25
 CATEGORIES=	devel perl5

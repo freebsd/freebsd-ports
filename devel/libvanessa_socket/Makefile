@@ -1,5 +1,3 @@
-# Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
-
 PORTNAME=	libvanessa_socket
 PORTVERSION=	0.0.12
 PORTREVISION=	1

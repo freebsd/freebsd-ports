@@ -1,5 +1,3 @@
-# Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
-
 PORTNAME=	Test-YAML-Meta
 PORTVERSION=	0.22
 CATEGORIES=	devel perl5

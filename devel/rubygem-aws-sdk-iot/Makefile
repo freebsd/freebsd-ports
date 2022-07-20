@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-iot
 PORTVERSION=	1.92.0
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Params-Validate-Dependencies
 PORTVERSION=	1.40
 CATEGORIES=	devel perl5

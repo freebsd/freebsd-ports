@@ -1,5 +1,3 @@
-# Created by: rooneg@electricjellyfish.net
-
 PORTREVISION=	1
 PKGNAMESUFFIX=	-lts
 

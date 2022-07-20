@@ -1,5 +1,3 @@
-# Created by: Carlo Strub <cs@FreeBSD.org>
-
 PORTNAME=	protobuf
 DISTVERSION=	1.3.2
 PORTREVISION=	3

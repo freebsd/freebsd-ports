@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	liberasurecode
 PORTVERSION=	1.6.3
 CATEGORIES=	devel

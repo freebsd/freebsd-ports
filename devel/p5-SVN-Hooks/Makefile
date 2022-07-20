@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	SVN-Hooks
 PORTVERSION=	1.34
 CATEGORIES=	devel perl5

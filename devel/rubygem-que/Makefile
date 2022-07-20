@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	que
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems

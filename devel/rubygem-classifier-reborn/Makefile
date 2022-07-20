@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv@kvedulv.de>
-
 PORTNAME=	classifier-reborn
 PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	coffee-script
 PORTVERSION=	2.4.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	PerlIO-utf8_strict
 PORTVERSION=	0.009
 CATEGORIES=	devel perl5

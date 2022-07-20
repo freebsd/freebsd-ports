@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	Log-Dispatch-File-Stamped
 PORTVERSION=	0.12
 PORTREVISION=	2

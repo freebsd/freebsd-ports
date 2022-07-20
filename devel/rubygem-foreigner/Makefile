@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	foreigner
 PORTVERSION=	1.7.4
 CATEGORIES=	devel rubygems

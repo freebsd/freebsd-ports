@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Asm-Preproc
 PORTVERSION=	1.03
 CATEGORIES=	devel perl5

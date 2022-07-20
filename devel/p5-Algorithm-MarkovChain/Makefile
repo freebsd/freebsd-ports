@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Algorithm-MarkovChain
 PORTVERSION=	0.06
 PORTREVISION=	2

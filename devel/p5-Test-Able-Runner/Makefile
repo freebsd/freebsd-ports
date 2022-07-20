@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Test-Able-Runner
 PORTVERSION=	1.002
 CATEGORIES=	devel perl5

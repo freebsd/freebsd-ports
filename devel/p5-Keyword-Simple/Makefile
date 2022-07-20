@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Keyword-Simple
 PORTVERSION=	0.04
 CATEGORIES=	devel perl5

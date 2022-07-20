@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Unix-Groups
 PORTVERSION=	0.01
 CATEGORIES=	devel perl5

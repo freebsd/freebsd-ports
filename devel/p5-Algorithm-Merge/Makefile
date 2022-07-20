@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Algorithm-Merge
 PORTVERSION=	0.08
 PORTREVISION=	1

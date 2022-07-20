@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Exporter-Lite
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

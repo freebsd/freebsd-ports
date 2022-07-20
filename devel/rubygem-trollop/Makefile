@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	trollop
 PORTVERSION=	2.9.10
 CATEGORIES=	devel rubygems

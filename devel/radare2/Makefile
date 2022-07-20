@@ -1,5 +1,3 @@
-# Created by: Karsten Pedersen <kpedersen@opencde.org>
-
 PORTNAME=	radare2
 DISTVERSION=	5.1.1
 PORTREVISION=	1

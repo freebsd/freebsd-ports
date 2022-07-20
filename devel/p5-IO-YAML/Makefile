@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	IO-YAML
 PORTVERSION=	0.10
 PORTREVISION=	1

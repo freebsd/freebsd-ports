@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	findlib
 PORTVERSION=	1.8.1
 CATEGORIES=	devel

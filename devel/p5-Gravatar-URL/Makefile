@@ -1,5 +1,3 @@
-# Created by: andrey@kostenko.name
-
 PORTNAME=	Gravatar-URL
 PORTVERSION=	1.07
 CATEGORIES=	devel perl5

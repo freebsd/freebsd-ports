@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.idv.tw>
-
 PORTNAME=	Perl6-Form
 PORTVERSION=	0.04
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Klaus Goger <klaus.goger@reflex.at>
-
 PORTNAME=	SDL
 PORTVERSION=	2.548
 PORTREVISION=	4

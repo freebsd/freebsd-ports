@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	ruby-ole
 PORTVERSION=	1.2.12.2
 CATEGORIES=	devel rubygems

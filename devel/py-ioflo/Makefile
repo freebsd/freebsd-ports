@@ -1,5 +1,3 @@
-# Created by: Christer Edwards <christer.edwards@gmail.com>
-
 PORTNAME=	ioflo
 PORTVERSION=	2.0.0
 PORTREVISION=	0

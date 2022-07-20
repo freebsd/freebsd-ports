@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test2-Plugin-Cover
 PORTVERSION=	0.000027
 CATEGORIES=	devel perl5

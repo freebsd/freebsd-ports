@@ -1,5 +1,3 @@
-# Created by: Sergey Matveychuk <sem@ciam.ru>
-
 PORTNAME=	gsoap
 PORTVERSION=	2.8.122
 CATEGORIES=	devel

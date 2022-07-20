@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	funcsigs
 PORTVERSION=	1.0.2
 CATEGORIES=	devel python

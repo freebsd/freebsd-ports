@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test2-Plugin-MemUsage
 PORTVERSION=	0.002003
 PORTREVISION=	1

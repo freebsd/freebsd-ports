@@ -1,5 +1,3 @@
-# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-
 PORTNAME=	glib
 DISTVERSION=	2.72.3
 PORTEPOCH=	2

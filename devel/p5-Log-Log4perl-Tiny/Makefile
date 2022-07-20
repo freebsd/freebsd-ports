@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Log-Log4perl-Tiny
 PORTVERSION=	1.6.4
 CATEGORIES=	devel perl5

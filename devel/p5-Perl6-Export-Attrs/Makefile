@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Perl6-Export-Attrs
 PORTVERSION=	0.000006
 CATEGORIES=	devel perl5

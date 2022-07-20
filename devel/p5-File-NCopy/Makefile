@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	File-NCopy
 PORTVERSION=	0.36
 PORTREVISION=	2

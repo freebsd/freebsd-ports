@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	uvloop
 PORTVERSION=	0.16.0
 CATEGORIES=	devel python

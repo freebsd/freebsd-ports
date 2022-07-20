@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	MouseX-ConfigFromFile
 PORTVERSION=	0.05
 PORTREVISION=	1

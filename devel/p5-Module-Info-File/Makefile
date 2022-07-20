@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Module-Info-File
 PORTVERSION=	1.01
 CATEGORIES=	devel perl5

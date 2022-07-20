@@ -1,5 +1,3 @@
-# Created by: Andreas Kohout <shanee@augusta.de>
-
 PORTNAME=	tkcvs
 PORTVERSION=	8.2.3
 CATEGORIES=	devel

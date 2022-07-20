@@ -1,5 +1,3 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	atlantis
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.2

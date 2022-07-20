@@ -1,5 +1,3 @@
-# Created by: Samy Al Bahra <samy@kerneled.org>
-
 PORTNAME=	libpci
 PORTVERSION=	3.8.0
 CATEGORIES=	devel

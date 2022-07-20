@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	libgtop
 PORTVERSION=	2.40.0
 CATEGORIES=	devel gnome

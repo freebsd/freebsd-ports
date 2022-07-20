@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	PHP_UML
 PORTVERSION=	1.6.2
 CATEGORIES=	devel

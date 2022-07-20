@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytzdata
 PORTVERSION=	2020.1
 CATEGORIES=	devel python

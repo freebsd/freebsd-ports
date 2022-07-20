@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	tcllib
 PORTVERSION=	1.21
 CATEGORIES=	devel tcl

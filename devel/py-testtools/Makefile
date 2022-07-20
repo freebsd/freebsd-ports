@@ -1,5 +1,3 @@
-# Created by: Carlo Strub
-
 PORTNAME=	testtools
 PORTVERSION=	2.5.0
 CATEGORIES=	devel python

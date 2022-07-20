@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	types-mock
 PORTVERSION=	4.0.15
 CATEGORIES=	devel python

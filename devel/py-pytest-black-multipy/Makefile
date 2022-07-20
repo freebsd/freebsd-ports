@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytest-black-multipy
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python

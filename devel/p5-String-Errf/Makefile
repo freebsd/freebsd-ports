@@ -1,5 +1,3 @@
-# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-
 PORTNAME=	String-Errf
 PORTVERSION=	0.007
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Jeremy Norris <ishmael27@home.com>
-
 PORTNAME=	fam
 PORTVERSION=	2.6.10
 PORTREVISION=	9

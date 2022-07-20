@@ -1,5 +1,3 @@
-# Created by: thinker@branda.to
-
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lev@FreeBSD.org

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyscaffold
 PORTVERSION=	4.2.3
 CATEGORIES=	devel python

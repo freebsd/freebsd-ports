@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns.company>
-
 PORTNAME=	cqueues
 DISTVERSIONPREFIX=	rel-
 DISTVERSION=	20200726

@@ -1,5 +1,3 @@
-# Created by: Nemo Liu <nemoliu@FreeBSD.org>
-
 PORTNAME=	commons-jxpath
 PORTVERSION=	1.3
 CATEGORIES=	devel www java

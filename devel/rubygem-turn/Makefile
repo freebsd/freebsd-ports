@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	turn
 PORTVERSION=	0.9.7
 PORTREVISION=	1

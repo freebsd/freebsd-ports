@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Exporter-Easy
 PORTVERSION=	0.18
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	MooseX-Types-Perl
 PORTVERSION=	0.101343
 PORTREVISION=	1

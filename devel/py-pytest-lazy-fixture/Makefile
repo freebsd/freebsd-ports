@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytest-lazy-fixture
 PORTVERSION=	0.6.3
 CATEGORIES=	devel python

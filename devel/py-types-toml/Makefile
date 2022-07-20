@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	types-toml
 PORTVERSION=	0.10.8
 CATEGORIES=	devel python

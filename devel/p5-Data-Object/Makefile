@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Data-Object
 PORTVERSION=	2.05
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	PHP_ArrayOf
 PORTVERSION=	0.2.1
 CATEGORIES=	devel www pear

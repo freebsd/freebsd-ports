@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	Gearman
 PORTVERSION=	2.004.015
 CATEGORIES=	devel perl5

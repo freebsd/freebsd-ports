@@ -1,5 +1,3 @@
-# Created by: Jonathan Weiss (<jw@innerewut.de>)
-
 PORTNAME=	activesupport
 PORTVERSION=	5.2.8.1
 CATEGORIES=	devel rubygems

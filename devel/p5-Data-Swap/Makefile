@@ -1,5 +1,3 @@
-# Created by: Parv <parv@pair.org>
-
 PORTNAME=	Data-Swap
 PORTVERSION=	0.08
 PORTREVISION=	1

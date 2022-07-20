@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	concurrencykit
 PORTVERSION=	0.6.0
 CATEGORIES=	devel

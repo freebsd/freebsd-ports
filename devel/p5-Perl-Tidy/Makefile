@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	Perl-Tidy
 PORTVERSION=	20220613
 CATEGORIES=	devel perl5

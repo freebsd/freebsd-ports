@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	MCE
 PORTVERSION=	1.879
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Bartek Rutkowski <ports@robakdesign.com>
-
 PORTNAME=	click
 PORTVERSION=	7.1.2
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Alfred Perlstein <alfred@FreeBSD.org>
-
 PORTNAME=	monotonic
 PORTVERSION=	1.5
 CATEGORIES=	devel python

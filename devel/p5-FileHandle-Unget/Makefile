@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	FileHandle-Unget
 PORTVERSION=	0.1634
 CATEGORIES=	devel perl5

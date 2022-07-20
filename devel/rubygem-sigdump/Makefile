@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	sigdump
 PORTVERSION=	0.2.4
 CATEGORIES=	devel rubygems

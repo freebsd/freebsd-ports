@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@geeksrus.net>
-
 PORTNAME=	al
 PORTVERSION=	0.9.3
 PORTREVISION=	1

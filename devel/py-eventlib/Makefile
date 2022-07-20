@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	eventlib
 PORTVERSION=	0.1.5
 PORTREVISION=	4

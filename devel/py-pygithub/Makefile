@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pygithub
 PORTVERSION=	1.55
 CATEGORIES=	devel www python

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Path-Resource
 PORTVERSION=	0.072
 PORTREVISION=	1

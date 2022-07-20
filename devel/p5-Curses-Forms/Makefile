@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Curses-Forms
 PORTVERSION=	1.997
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Test-DBIx-Class
 PORTVERSION=	0.52
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Tony Narlock <tony@git-pull.com>
-
 PORTNAME=	argcomplete
 PORTVERSION=	2.0.0
 CATEGORIES=	devel python

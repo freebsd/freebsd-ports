@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Scheduler
 DISTVERSION=	2.0.3
 CATEGORIES=	devel www pear

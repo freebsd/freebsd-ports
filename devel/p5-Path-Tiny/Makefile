@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Path-Tiny
 PORTVERSION=	0.122
 CATEGORIES=	devel perl5

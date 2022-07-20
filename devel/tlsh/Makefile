@@ -1,5 +1,3 @@
-# Created by: John Hood <cgull@glup.org>
-
 PORTNAME=	tlsh
 DISTVERSION=	4.7.2
 CATEGORIES=	devel

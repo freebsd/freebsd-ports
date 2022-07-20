@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Object-MultiType
 PORTVERSION=	0.05
 PORTREVISION=	1

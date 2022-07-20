@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Carp-Always-Color
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

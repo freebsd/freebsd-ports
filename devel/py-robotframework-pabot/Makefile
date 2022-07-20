@@ -1,5 +1,3 @@
-# Created by: Vladimir Chukharev
-
 PORTNAME=	robotframework-pabot
 PORTVERSION=	0.99
 CATEGORIES=	devel www python

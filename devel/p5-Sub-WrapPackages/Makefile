@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	Sub-WrapPackages
 PORTVERSION=	2.02
 CATEGORIES=	devel perl5

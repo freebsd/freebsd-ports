@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	PadWalker
 PORTVERSION=	2.5
 CATEGORIES=	devel perl5

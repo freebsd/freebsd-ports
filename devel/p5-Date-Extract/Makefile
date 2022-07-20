@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	Date-Extract
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

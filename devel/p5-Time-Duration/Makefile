@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Time-Duration
 PORTVERSION=	1.21
 PORTEPOCH=	1

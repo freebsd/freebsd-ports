@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Event-Sunrise
 PORTVERSION=	0.0506
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	MooseX-SimpleConfig
 PORTVERSION=	0.11
 CATEGORIES=	devel perl5

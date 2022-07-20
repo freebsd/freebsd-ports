@@ -1,5 +1,3 @@
-# Created by: Timur I. Bakeyev <bat@cpan.org>
-
 PORTNAME=	File-ExtAttr
 PORTVERSION=	1.09
 PORTREVISION=	1

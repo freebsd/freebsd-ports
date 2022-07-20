@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytest-twisted
 PORTVERSION=	1.13.4
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Shapely
 PORTVERSION=	1.8.2
 CATEGORIES=	devel python

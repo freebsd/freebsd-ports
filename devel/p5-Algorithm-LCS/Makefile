@@ -1,5 +1,3 @@
-# Created by: tiger@whitetigersd.com
-
 PORTNAME=	Algorithm-LCS
 PORTVERSION=	1.04
 PORTREVISION=	1

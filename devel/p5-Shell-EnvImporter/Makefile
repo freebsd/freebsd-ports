@@ -1,5 +1,3 @@
-# Created by: Martin Jackson (mhjacks@swbell.net)
-
 PORTNAME=	Shell-EnvImporter
 PORTVERSION=	1.07
 PORTREVISION=	1

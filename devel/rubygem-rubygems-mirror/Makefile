@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rubygems-mirror
 PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems

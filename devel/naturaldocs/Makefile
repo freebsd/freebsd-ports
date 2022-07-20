@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	naturaldocs
 PORTVERSION=	1.52
 PORTREVISION=	2

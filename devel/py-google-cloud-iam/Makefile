@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-cloud-iam
 PORTVERSION=	2.8.0
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Fukang Chen <loader@FreeBSD.org>
-
 PORTNAME=	pytest-timeout
 PORTVERSION=	1.4.2
 CATEGORIES=	devel python

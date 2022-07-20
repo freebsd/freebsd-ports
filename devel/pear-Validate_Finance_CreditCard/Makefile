@@ -1,5 +1,3 @@
-# Created by: Anish Mistry (<amistry@am-productions.biz>)
-
 PORTNAME=	Validate_Finance_CreditCard
 PORTVERSION=	0.7.0
 CATEGORIES=	devel www pear

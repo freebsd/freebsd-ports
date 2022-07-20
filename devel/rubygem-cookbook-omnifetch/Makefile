@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	cookbook-omnifetch
 PORTVERSION=	0.10.1
 CATEGORIES=	devel rubygems

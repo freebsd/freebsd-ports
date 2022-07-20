@@ -1,5 +1,3 @@
-# Created by: IWATSUKI Hiroyuki <don@na.rim.or.jp>
-
 PORTNAME=	platform
 PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems

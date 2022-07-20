@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	gzstream
 DISTVERSION=	1.5
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Sean Chittenden <sean@chittenden.org>
-
 PORTNAME=	rbprof
 PORTVERSION=	0.2.1
 CATEGORIES=	devel ruby

@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	gtgt
 PORTVERSION=	3.2.0
 PORTREVISION=	1

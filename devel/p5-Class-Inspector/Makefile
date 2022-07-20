@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Class-Inspector
 PORTVERSION=	1.36
 CATEGORIES=	devel perl5

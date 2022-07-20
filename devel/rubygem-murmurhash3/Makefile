@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	murmurhash3
 PORTVERSION=	0.1.6
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	twine
 PORTVERSION=	4.0.1
 CATEGORIES=	devel python

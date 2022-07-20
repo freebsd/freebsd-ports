@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	DefHash
 PORTVERSION=	2.0.0
 CATEGORIES=	devel perl5

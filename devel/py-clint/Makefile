@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	clint
 PORTVERSION=	0.5.1
 PORTREVISION=	0

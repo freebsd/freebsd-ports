@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	dateutil
 PORTVERSION=	2.8.2
 CATEGORIES=	devel python

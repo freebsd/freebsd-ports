@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	grpc
 PORTVERSION=	1.47.1
 DISTVERSIONPREFIX=	v

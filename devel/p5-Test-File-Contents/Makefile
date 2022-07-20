@@ -1,5 +1,3 @@
-# Created by: Rod Taylor <ports@rbt.ca>
-
 PORTNAME=	Test-File-Contents
 PORTVERSION=	0.24
 CATEGORIES=	devel perl5

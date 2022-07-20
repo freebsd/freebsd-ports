@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Format-DateManip
 PORTVERSION=	0.04
 PORTREVISION=	1

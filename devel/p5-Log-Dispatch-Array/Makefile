@@ -1,5 +1,3 @@
-# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-
 PORTNAME=	Log-Dispatch-Array
 PORTVERSION=	1.003
 CATEGORIES=	devel perl5

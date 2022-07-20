@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	dune
 PORTVERSION=	1.11.4
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	quickcheck++
 PORTVERSION=	0.0.3
 CATEGORIES=	devel

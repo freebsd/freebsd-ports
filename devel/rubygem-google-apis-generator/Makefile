@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-apis-generator
 PORTVERSION=	0.9.0
 CATEGORIES=	devel rubygems

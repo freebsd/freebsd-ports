@@ -1,5 +1,3 @@
-# Created by: Denis Shaposhnikov <dsh@vlink.ru>
-
 PORTNAME=	decorator
 PORTVERSION=	5.1.1
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cython-test-exception-raiser
 PORTVERSION=	1.0.2
 PORTREVISION=	1

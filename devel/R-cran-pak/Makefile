@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	pak
 DISTVERSION=	0.3.0
 CATEGORIES=	devel

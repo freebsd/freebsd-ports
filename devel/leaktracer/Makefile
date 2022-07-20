@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	leaktracer
 PORTVERSION=	2.4
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	MooseX-FollowPBP
 PORTVERSION=	0.05
 PORTREVISION=	1

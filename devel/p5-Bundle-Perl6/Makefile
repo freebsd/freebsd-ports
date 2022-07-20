@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-
 PORTNAME=	Bundle-Perl6
 PORTVERSION=	0.12
 PORTREVISION=	1

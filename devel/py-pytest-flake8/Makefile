@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytest-flake8
 PORTVERSION=	1.1.1
 CATEGORIES=	devel python

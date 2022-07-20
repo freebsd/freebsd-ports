@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	nprogress-rails
 PORTVERSION=	0.2.0.2
 CATEGORIES=	devel rubygems

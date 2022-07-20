@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	xdg
 PORTVERSION=	3.1.1
 PORTREVISION=	1

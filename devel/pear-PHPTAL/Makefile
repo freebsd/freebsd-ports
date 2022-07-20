@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tom@tomjudge.com>
-
 PORTNAME=	PHPTAL
 PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear

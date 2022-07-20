@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	omnijson
 PORTVERSION=	0.1.2
 DISTVERSIONPREFIX=	v

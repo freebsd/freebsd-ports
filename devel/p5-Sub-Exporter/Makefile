@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Sub-Exporter
 PORTVERSION=	0.988
 CATEGORIES=	devel perl5

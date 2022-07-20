@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	m17n-db
 PORTVERSION=	1.8.0
 CATEGORIES=	devel textproc

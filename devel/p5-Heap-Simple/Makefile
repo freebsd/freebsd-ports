@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Heap-Simple
 PORTVERSION=	0.13
 PORTREVISION=	1

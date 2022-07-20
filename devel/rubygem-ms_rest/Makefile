@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ms_rest
 PORTVERSION=	0.7.6
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sheldon Hearn <sheldonh@FreeBSD.org>
-
 PORTNAME=	Config-General
 PORTVERSION=	2.65
 CATEGORIES=	devel perl5

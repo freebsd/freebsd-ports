@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Format-Bork
 PORTVERSION=	0.02
 PORTREVISION=	2

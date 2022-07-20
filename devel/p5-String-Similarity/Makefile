@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	String-Similarity
 PORTVERSION=	1.04
 PORTREVISION=	1

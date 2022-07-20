@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	grpc
 PORTVERSION=	1.42.0
 PORTREVISION=	2

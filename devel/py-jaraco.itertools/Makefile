@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	jaraco.itertools
 PORTVERSION=	6.2.1
 CATEGORIES=	devel python

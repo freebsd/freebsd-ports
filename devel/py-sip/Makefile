@@ -1,5 +1,3 @@
-# Created by: nbm
-
 PORTNAME=	sip
 PORTVERSION=	${SIP_VERSION}
 PORTEPOCH=	1

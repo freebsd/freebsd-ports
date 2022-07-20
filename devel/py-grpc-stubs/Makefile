@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	grpc-stubs
 PORTVERSION=	1.24.11
 CATEGORIES=	devel python

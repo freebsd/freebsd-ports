@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	tempora
 PORTVERSION=	5.0.2
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	UNIVERSAL-moniker
 PORTVERSION=	0.08
 PORTREVISION=	1

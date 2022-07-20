@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	wsgi-intercept
 PORTVERSION=	1.10.0
 CATEGORIES=	devel python

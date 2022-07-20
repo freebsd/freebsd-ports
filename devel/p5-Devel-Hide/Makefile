@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Devel-Hide
 PORTVERSION=	0.0015
 CATEGORIES=	devel perl5

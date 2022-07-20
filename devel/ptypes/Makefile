@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ptypes
 PORTVERSION=	2.1.1
 CATEGORIES=	devel

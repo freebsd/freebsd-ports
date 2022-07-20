@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cxx
 PORTVERSION=	7.1.7
 CATEGORIES=	devel python

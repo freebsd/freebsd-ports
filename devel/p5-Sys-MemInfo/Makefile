@@ -1,5 +1,3 @@
-# Created by: Terry Sposato <terry@sucked-in.com>
-
 PORTNAME=	Sys-MemInfo
 PORTVERSION=	0.99
 CATEGORIES=	devel perl5

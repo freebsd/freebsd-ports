@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Data-ACL
 PORTVERSION=	0.02
 PORTREVISION=	1

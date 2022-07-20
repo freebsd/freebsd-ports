@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	libvolume_id
 PORTVERSION=	0.81.1
 CATEGORIES=	devel

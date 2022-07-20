@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pipenv
 PORTVERSION=	2022.7.4
 CATEGORIES=	devel python

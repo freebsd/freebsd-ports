@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-
 PORTNAME=	IO-BufferedSelect
 PORTVERSION=	1.0
 PORTREVISION=	2

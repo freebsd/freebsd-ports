@@ -1,5 +1,3 @@
-# Created by: jaharkes
-
 PORTNAME=	lwp
 PORTVERSION=	2.8
 CATEGORIES=	devel

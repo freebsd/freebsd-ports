@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-bootstrap-scss
 PORTVERSION=	3.4.1.0
 CATEGORIES=	devel python

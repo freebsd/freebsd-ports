@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	fastercsv
 PORTVERSION=	1.5.5
 CATEGORIES=	devel rubygems

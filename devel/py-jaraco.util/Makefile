@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	jaraco.util
 PORTVERSION=	15.0.0
 CATEGORIES=	devel python

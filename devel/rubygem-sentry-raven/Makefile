@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-
 PORTNAME=	sentry-raven
 PORTVERSION=	3.1.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	File-Share
 PORTVERSION=	0.25
 CATEGORIES=	devel perl5

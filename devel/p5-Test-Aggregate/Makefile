@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Test-Aggregate
 PORTVERSION=	0.375
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-states
 PORTVERSION=	1.48.0
 CATEGORIES=	devel rubygems

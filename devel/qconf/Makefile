@@ -1,5 +1,3 @@
-# Created by: Andreev Maxim <andreevmaxim@gmail.com>
-
 PORTNAME=	qconf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5

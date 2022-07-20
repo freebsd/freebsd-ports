@@ -1,5 +1,3 @@
-# Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-
 PORTNAME=	gitless
 PORTVERSION=	0.8.8
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyright
 PORTVERSION=	1.1.261
 CATEGORIES=	devel python

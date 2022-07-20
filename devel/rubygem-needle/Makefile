@@ -1,5 +1,3 @@
-# Created by: Roderick van Domburg <r.s.a.vandomburg@student.utwente.nl>
-
 PORTNAME=	needle
 PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems

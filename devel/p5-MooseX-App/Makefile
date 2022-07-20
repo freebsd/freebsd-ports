@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MooseX-App
 PORTVERSION=	1.42
 CATEGORIES=	devel perl5

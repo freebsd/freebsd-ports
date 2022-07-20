@@ -1,5 +1,3 @@
-# Created by: Jim Pirzyk <pirzyk@uiuc.edu>
-
 PORTNAME=	ParseLex
 PORTVERSION=	2.21
 PORTREVISION=	1

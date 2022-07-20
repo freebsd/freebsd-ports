@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	efl
 DISTVERSION=	1.26.2
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Hung-Yi Chen <gaod@hychen.org>
-
 PORTNAME=	File-Tail-Scribe
 PORTVERSION=	0.13
 PORTREVISION=	1

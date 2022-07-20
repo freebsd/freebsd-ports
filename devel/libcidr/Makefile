@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	libcidr
 DISTVERSION=	1.2.3
 CATEGORIES=	devel

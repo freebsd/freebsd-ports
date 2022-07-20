@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Project-Gantt
 PORTVERSION=	1.03
 PORTREVISION=	8

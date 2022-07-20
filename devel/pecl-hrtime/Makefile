@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	hrtime
 PORTVERSION=	0.6.0
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Adam Saponara <as@php.net>
-
 PORTNAME=	termbox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.3

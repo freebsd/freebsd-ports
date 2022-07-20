@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	colorize
 PORTVERSION=	0.8.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	ccid
 PORTVERSION=	1.4.36
 CATEGORIES=	devel

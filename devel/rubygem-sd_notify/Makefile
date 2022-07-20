@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	sd_notify
 PORTVERSION=	0.1.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Alexandros Kosiaris <akosiaris+ports@gmail.com>
-
 PORTNAME=	jira
 PORTVERSION=	2.0.0
 PORTREVISION=	4

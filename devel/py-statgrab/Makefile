@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	statgrab
 PORTVERSION=	0.7.1
 CATEGORIES=	devel python

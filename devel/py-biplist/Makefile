@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	biplist
 PORTVERSION=	1.0.3
 CATEGORIES=	devel python

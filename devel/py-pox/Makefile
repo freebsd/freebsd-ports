@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pox
 PORTVERSION=	0.3.1
 CATEGORIES=	devel python

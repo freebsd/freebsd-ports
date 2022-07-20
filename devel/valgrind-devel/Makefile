@@ -1,5 +1,3 @@
-# Created by: Simon Barner <barner@gmx.de>
-
 PORTNAME=	valgrind
 PORTVERSION=	3.20.0.g20220612
 DISTVERSIONPREFIX=	freebsd-

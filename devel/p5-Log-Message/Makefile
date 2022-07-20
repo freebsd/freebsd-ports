@@ -1,5 +1,3 @@
-# Created by: aaron@FreeBSD.org
-
 PORTNAME=	Log-Message
 PORTVERSION=	0.08
 PORTREVISION=	2

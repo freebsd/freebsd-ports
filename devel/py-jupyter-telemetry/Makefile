@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jupyter-telemetry
 PORTVERSION=	0.1.0
 CATEGORIES=	devel python

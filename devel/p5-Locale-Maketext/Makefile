@@ -1,5 +1,3 @@
-# Created by: Frank Mayhar <frank@exit.com>
-
 PORTNAME=	Locale-Maketext
 PORTVERSION=	1.31
 CATEGORIES=	devel perl5

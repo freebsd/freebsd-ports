@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	stfl
 PORTVERSION=	0.24
 PORTREVISION=	1

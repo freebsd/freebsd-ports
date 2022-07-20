@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift
-
 PORTNAME=	jeweler
 PORTVERSION=	2.3.9
 CATEGORIES=	devel rubygems

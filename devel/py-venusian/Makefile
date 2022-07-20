@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	venusian
 PORTVERSION=	3.0.0
 PORTEPOCH=	1

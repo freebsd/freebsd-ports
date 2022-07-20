@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Data-Unixish
 PORTVERSION=	1.572
 PORTREVISION=	2

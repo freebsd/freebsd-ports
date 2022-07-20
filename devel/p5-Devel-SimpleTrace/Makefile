@@ -1,5 +1,3 @@
-# Created by: estith
-
 PORTNAME=	Devel-SimpleTrace
 PORTVERSION=	0.08
 PORTREVISION=	2

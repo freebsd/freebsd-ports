@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Method-Signatures-Simple
 PORTVERSION=	1.07
 PORTREVISION=	1

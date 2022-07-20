@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	hp48cc
 PORTVERSION=	1.3
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: mm
-
 PORTNAME=	orc
 PORTVERSION=	0.4.31
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytz-deprecation-shim
 PORTVERSION=	0.1.0.post0
 CATEGORIES=	devel python

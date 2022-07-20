@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	librevisa-vxi
 PORTVERSION=	0.0.20121221
 CATEGORIES=	devel

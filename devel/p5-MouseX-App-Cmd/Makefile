@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MouseX-App-Cmd
 PORTVERSION=	0.30
 CATEGORIES=	devel perl5

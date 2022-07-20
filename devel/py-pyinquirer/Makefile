@@ -1,5 +1,3 @@
-# Created by: Gilbert Morgan <gmm@tutanota.com>
-
 PORTNAME=	PyInquirer
 PORTVERSION=	1.0.3
 PORTREVISION=	1

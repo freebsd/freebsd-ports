@@ -1,5 +1,3 @@
-# Created by: Dima Panov <fluffy@FreeBSD.org>
-
 PORTNAME=	libdbusmenu-qt
 PORTVERSION=	${MAJOR_VER}.${SNAPSHOT_VER:S/.//g}
 PORTREVISION=	11

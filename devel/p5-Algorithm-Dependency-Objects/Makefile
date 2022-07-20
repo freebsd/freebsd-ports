@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Algorithm-Dependency-Objects
 PORTVERSION=	0.04
 PORTREVISION=	3

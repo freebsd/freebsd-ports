@@ -1,5 +1,3 @@
-# Created by: milki <milki@rescomp.berkeley.edu>
-
 PORTNAME=	Pod-Coverage-TrustPod
 PORTVERSION=	0.100005
 CATEGORIES=	devel textproc perl5

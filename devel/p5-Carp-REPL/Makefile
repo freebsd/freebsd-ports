@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Carp-REPL
 PORTVERSION=	0.18
 CATEGORIES=	devel perl5

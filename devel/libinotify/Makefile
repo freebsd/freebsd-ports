@@ -1,5 +1,3 @@
-# Created by: stas
-
 PORTNAME=	libinotify
 PORTVERSION=	20211018
 CATEGORIES=	devel

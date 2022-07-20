@@ -1,5 +1,3 @@
-# Created by: Denise H. G. <darcsis@gmail.com>
-
 PORTNAME=	tig
 DISTVERSION=	2.5.5
 CATEGORIES=	devel

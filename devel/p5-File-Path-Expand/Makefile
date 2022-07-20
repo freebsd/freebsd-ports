@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	File-Path-Expand
 PORTVERSION=	1.02
 PORTREVISION=	1

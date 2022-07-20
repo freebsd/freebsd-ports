@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	autotools
 PORTVERSION=	20220528
 CATEGORIES=	devel

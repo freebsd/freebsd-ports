@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Every
 PORTVERSION=	0.08
 PORTREVISION=	1

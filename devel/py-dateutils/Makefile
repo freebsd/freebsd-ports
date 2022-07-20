@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	dateutils
 PORTVERSION=	0.6.12
 CATEGORIES=	devel python

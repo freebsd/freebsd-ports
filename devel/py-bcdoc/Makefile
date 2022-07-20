@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	bcdoc
 PORTVERSION=	0.16.0
 CATEGORIES=	devel

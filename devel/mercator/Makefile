@@ -1,5 +1,3 @@
-# Created by: Janni
-
 PORTNAME=	mercator
 PORTVERSION=	0.3.3
 PORTREVISION=	10

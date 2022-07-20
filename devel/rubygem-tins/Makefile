@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	tins
 PORTVERSION=	1.31.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin
-
 PORTNAME=	frink
 PORTVERSION=	2.2.2p4
 PORTREVISION=	3

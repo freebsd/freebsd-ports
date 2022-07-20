@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	File-CreationTime
 PORTVERSION=	2.04
 PORTREVISION=	1

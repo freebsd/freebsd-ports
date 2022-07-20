@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Inline-CPP
 PORTVERSION=	0.80
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cvsps
 PORTVERSION=	2.1
 PORTREVISION=	2

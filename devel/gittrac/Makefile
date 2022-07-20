@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	gittrac
 
 COMMENT=	Web-Based Bug And Patch-Set Tracking System For Git

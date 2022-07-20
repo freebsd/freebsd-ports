@@ -1,5 +1,3 @@
-# Created by: Jordi Haarman
-
 PORTNAME=	simpletal
 PORTVERSION=	4.3
 PORTREVISION=	1

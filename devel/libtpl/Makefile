@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	libtpl
 PORTVERSION=	1.6
 PORTREVISION=	1

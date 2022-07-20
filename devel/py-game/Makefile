@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	game
 DISTVERSION=	2.1.2
 PORTREVISION=	1

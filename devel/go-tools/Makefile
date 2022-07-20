@@ -1,5 +1,3 @@
-# Created by: Carlo Strub <cs@FreeBSD.org>
-
 PORTNAME=	tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.11

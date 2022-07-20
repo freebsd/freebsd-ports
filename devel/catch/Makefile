@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	catch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.13.9

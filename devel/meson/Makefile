@@ -1,5 +1,3 @@
-# Created by: Ting-Wei Lan <lantw44@gmail.com>
-
 PORTNAME=	meson
 PORTVERSION=	0.62.2
 CATEGORIES=	devel python

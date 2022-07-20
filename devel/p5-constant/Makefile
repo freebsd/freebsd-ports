@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	constant
 PORTVERSION=	1.33
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	py-ubjson
 PORTVERSION=	0.16.1
 CATEGORIES=	devel python

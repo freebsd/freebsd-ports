@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	vcver
 PORTVERSION=	0.2.12
 CATEGORIES=	devel python

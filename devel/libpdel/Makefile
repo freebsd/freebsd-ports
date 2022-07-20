@@ -1,5 +1,3 @@
-# Created by: Archie Cobbs
-
 PORTNAME=	libpdel
 PORTVERSION=	0.6.1
 CATEGORIES=	devel net www

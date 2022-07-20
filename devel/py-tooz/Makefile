@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	tooz
 PORTVERSION=	2.11.1
 CATEGORIES=	devel python

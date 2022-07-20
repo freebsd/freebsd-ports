@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Date-Calc-Iterator
 PORTVERSION=	1.02
 CATEGORIES=	devel net perl5

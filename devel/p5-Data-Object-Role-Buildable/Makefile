@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Data-Object-Role-Buildable
 PORTVERSION=	0.03
 CATEGORIES=	devel perl5

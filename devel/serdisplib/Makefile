@@ -1,5 +1,3 @@
-# Created by: Markus Dolze <bsdfan@nurfuerspam.de>
-
 PORTNAME=	serdisplib
 PORTVERSION=	1.97.9
 CATEGORIES=	devel

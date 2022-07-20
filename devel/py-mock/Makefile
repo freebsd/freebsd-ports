@@ -1,5 +1,3 @@
-# Created by: jessekempf@gmail.com
-
 PORTNAME=	mock
 PORTVERSION=	4.0.3
 CATEGORIES=	devel python

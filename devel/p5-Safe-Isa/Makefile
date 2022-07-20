@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Safe-Isa
 PORTVERSION=	1.000010
 CATEGORIES=	devel perl5

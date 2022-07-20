@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
-
 PORTNAME=	configuration
 PORTVERSION=	1.3.4
 CATEGORIES=	devel rubygems

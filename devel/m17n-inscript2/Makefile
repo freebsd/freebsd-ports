@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	inscript2
 PORTVERSION=	20210820
 CATEGORIES=	devel textproc

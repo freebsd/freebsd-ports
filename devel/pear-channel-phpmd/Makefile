@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	phpmd
 PORTVERSION=	20120607
 CATEGORIES=	devel www pear

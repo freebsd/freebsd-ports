@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	grpcio
 PORTVERSION=	1.47.0
 CATEGORIES=	devel python

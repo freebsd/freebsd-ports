@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	libzfs
 PORTVERSION=	1.1.2022071900
 CATEGORIES=	devel python

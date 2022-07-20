@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	m17n-docs
 PORTVERSION=	1.5.5
 CATEGORIES=	devel textproc

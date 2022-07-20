@@ -1,5 +1,3 @@
-# Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-
 PORTNAME=	ice_cube
 PORTVERSION=	0.16.4
 CATEGORIES=	devel rubygems

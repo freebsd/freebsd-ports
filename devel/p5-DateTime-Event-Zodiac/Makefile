@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <michael@fun-box.ru>
-
 PORTNAME=	DateTime-Event-Zodiac
 PORTVERSION=	1.03
 PORTREVISION=	1

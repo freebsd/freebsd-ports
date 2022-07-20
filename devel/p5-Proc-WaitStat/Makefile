@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	Proc-WaitStat
 PORTVERSION=	1.00
 PORTREVISION=	1

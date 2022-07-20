@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Data-Table
 PORTVERSION=	1.78
 CATEGORIES=	devel perl5

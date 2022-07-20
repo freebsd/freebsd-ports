@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Symbol-Util
 PORTVERSION=	0.0203
 PORTREVISION=	1

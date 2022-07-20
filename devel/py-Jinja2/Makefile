@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	Jinja2
 PORTVERSION=	3.0.1
 PORTREVISION=	0

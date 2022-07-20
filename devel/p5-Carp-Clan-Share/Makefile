@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Carp-Clan-Share
 PORTVERSION=	0.013
 PORTREVISION=	1

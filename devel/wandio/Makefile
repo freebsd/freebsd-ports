@@ -1,5 +1,3 @@
-# Created by: Alistair King <alistair@caida.org>
-
 PORTNAME=	wandio
 PORTVERSION=	1.0.5
 CATEGORIES=	devel

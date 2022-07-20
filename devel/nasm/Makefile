@@ -1,5 +1,3 @@
-# Created by: Murray Stokely <murray@cdrom.com>
-
 PORTNAME=	nasm
 PORTVERSION=	2.15.05
 PORTEPOCH=	1

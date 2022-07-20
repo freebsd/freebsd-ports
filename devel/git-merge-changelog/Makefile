@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	git-merge-changelog
 PORTVERSION=	${GNULIB_PORTVERSION}
 PORTREVISION=	${GNULIB_PORTREVISION}

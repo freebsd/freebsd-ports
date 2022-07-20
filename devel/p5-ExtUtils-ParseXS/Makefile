@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	ExtUtils-ParseXS
 PORTVERSION=	3.35
 CATEGORIES=	devel perl5

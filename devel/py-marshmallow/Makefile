@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	marshmallow
 PORTVERSION=	3.17.0
 CATEGORIES=	devel python

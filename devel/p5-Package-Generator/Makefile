@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Package-Generator
 PORTVERSION=	1.106
 PORTREVISION=	1

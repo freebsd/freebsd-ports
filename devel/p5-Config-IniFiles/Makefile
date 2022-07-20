@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Config-IniFiles
 PORTVERSION=	3.000003
 PORTREVISION=	1

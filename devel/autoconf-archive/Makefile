@@ -1,5 +1,3 @@
-# Created by: Martin Kammerhofer
-
 PORTNAME=	autoconf-archive
 PORTVERSION=	0.${DISTDATE:C/-/./g}
 CATEGORIES=	devel

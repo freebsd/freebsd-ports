@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	deprecation
 PORTVERSION=	2.1.0
 CATEGORIES=	devel python

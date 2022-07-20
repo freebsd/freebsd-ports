@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Test-Able
 PORTVERSION=	0.11
 PORTREVISION=	1

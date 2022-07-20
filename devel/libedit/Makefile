@@ -1,5 +1,3 @@
-# Created by: jasone
-
 PORTNAME=	libedit
 PORTVERSION=	${EDITVERSION}.${EDITDATE}
 PORTEPOCH=	1

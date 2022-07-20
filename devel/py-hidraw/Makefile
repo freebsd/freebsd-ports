@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	hidraw
 PORTVERSION=	0.2.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Data-Section-Simple
 PORTVERSION=	0.07
 PORTREVISION=	1

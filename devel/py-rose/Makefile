@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <william88@gmail.com>
-
 PORTNAME=	rose
 PORTVERSION=	1.0.0
 PORTREVISION=	1

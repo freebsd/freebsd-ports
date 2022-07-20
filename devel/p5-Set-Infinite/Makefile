@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Set-Infinite
 PORTVERSION=	0.65
 PORTREVISION=	1

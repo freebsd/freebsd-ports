@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Lexical-Import
 PORTVERSION=	0.002
 PORTREVISION=	2

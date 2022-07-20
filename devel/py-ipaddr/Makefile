@@ -1,5 +1,3 @@
-# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-
 PORTNAME=	ipaddr
 PORTVERSION=	2.2.0
 CATEGORIES=	devel python

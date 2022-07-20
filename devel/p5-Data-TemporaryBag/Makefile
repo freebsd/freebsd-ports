@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Data-TemporaryBag
 PORTVERSION=	0.09
 PORTREVISION=	1

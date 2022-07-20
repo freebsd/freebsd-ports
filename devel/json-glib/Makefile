@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	json-glib
 PORTVERSION=	1.6.6
 CATEGORIES=	devel

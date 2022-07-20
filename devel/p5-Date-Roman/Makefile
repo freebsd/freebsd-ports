@@ -1,5 +1,3 @@
-# Created by: Philip Paeps <philip@paeps.cx>
-
 PORTNAME=	Date-Roman
 PORTVERSION=	1.06
 PORTREVISION=	1

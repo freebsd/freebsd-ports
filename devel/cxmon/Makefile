@@ -1,5 +1,3 @@
-# Created by: Joachim Strombergson
-
 PORTNAME=	cxmon
 PORTVERSION=	3.2
 CATEGORIES=	devel

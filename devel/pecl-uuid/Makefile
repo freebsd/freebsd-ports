@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	uuid
 PORTVERSION=	1.2.0
 CATEGORIES=	devel pear

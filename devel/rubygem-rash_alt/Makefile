@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rash_alt
 PORTVERSION=	0.4.12
 CATEGORIES=	devel rubygems

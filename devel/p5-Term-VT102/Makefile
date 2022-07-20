@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Term-VT102
 PORTVERSION=	0.91
 PORTREVISION=	1

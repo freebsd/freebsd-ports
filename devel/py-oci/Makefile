@@ -1,5 +1,3 @@
-# Created by: Alessando Sagratini <ale_sagra@hotmail.com>
-
 PORTNAME=	oci
 PORTVERSION=	2.75.1
 CATEGORIES=	devel python

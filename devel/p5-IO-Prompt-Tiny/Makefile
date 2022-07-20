@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	IO-Prompt-Tiny
 PORTVERSION=	0.003
 CATEGORIES=	devel perl5

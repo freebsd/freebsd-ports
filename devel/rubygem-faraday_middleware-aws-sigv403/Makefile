@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	faraday_middleware-aws-sigv4
 PORTVERSION=	0.3.0
 PORTREVISION=	1

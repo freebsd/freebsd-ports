@@ -1,5 +1,3 @@
-# Created by: David Kalliecharan <dave@dal.ca>
-
 PORTNAME=	astor
 PORTVERSION=	0.8.1
 CATEGORIES=	devel python

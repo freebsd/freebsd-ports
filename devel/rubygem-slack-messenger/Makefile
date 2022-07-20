@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	slack-messenger
 PORTVERSION=	2.3.4
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Arun Sharma <arun@sharma-home.net>
-
 PORTNAME=	tbb
 PORTVERSION=	2020.3
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	Sort-Array
 DISTVERSION=	0.26
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fugit
 PORTVERSION=	1.2.3
 CATEGORIES=	devel rubygems

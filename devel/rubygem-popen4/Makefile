@@ -1,5 +1,3 @@
-# Created by: rpsfa@rit.edu
-
 PORTNAME=	popen4
 PORTVERSION=	0.1.4
 CATEGORIES=	devel rubygems

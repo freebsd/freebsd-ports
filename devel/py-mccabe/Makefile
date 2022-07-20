@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <william88@gmail.com>
-
 PORTNAME=	mccabe
 PORTVERSION=	0.7.0
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	gettext
 PORTVERSION=	3.4.3
 CATEGORIES=	devel rubygems

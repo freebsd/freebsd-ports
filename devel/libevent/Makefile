@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	libevent
 DISTVERSION=	2.1.12
 DISTVERSIONSUFFIX=	-stable

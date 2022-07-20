@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Bread-Board-Declare
 PORTVERSION=	0.16
 PORTREVISION=	1

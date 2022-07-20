@@ -1,5 +1,3 @@
-# Created by: ws	Christoph Kick
-
 PORTNAME=	nice-ffi
 PORTVERSION=	0.4
 PORTREVISION=	1

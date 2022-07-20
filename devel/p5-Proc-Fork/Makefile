@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Proc-Fork
 PORTVERSION=	0.806
 CATEGORIES=	devel perl5

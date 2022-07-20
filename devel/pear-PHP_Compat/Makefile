@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	PHP_Compat
 PORTVERSION=	1.5.0
 CATEGORIES=	devel www pear

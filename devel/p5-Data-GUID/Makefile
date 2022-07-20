@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Data-GUID
 PORTVERSION=	0.050
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Bruce Simpson
-
 PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}
 PORTREVISION=	14

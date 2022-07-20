@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Tie-DB_File-SplitHash
 PORTVERSION=	1.07
 CATEGORIES=	devel perl5

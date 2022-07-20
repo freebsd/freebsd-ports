@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	glibmm
 PORTVERSION=	2.66.4
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=		pretend
 PORTVERSION=		1.0.9
 DISTVERSIONPREFIX=	v

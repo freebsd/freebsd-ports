@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=		cpp-netlib
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=		0.13.0

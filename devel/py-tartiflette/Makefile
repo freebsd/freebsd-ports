@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tartiflette
 PORTVERSION=	1.4.1
 PORTREVISION=	1

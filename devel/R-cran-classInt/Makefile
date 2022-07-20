@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	classInt
 DISTVERSION=	0.4-7
 CATEGORIES=	devel

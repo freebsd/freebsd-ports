@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-lookoutmetrics
 PORTVERSION=	1.20.0
 CATEGORIES=	devel rubygems

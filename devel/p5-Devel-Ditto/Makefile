@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Devel-Ditto
 PORTVERSION=	0.06
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	ExtUtils-Depends
 PORTVERSION=	0.8001
 CATEGORIES=	devel perl5

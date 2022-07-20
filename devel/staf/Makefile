@@ -1,5 +1,3 @@
-# Created by: Sergey Kozlov <kozlov.sergey.404@gmail.com>
-
 PORTNAME=	staf
 PORTVERSION=	3.4.26
 PORTREVISION=	1

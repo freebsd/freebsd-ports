@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	File-Tail-Multi
 PORTVERSION=	0.1
 PORTREVISION=	1

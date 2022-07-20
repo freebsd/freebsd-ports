@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Chen
-
 PORTNAME=	Data-Bind
 PORTVERSION=	0.30
 PORTREVISION=	2

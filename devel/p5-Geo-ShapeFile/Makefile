@@ -1,5 +1,3 @@
-# Created by: estith
-
 PORTNAME=	Geo-ShapeFile
 PORTVERSION=	3.01
 CATEGORIES=	devel perl5

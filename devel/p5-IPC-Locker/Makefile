@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	IPC-Locker
 PORTVERSION=	1.502
 CATEGORIES=	devel perl5

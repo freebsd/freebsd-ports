@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Sub-Info
 PORTVERSION=	0.002
 CATEGORIES=	devel perl5

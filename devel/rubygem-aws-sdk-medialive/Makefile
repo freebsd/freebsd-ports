@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-medialive
 PORTVERSION=	1.87.0
 CATEGORIES=	devel rubygems

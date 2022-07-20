@@ -1,5 +1,3 @@
-# Created by: Dusan Vejnovic <freebsd@dussan.org>
-
 PORTNAME=	sonarqube-ant-task
 PORTVERSION=	2.7.0.1612
 CATEGORIES=	devel java

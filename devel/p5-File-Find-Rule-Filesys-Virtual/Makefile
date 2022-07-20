@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	File-Find-Rule-Filesys-Virtual
 PORTVERSION=	1.22
 PORTREVISION=	1

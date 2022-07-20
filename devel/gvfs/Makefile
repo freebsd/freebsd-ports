@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	gvfs
 PORTVERSION=	1.46.2
 PORTREVISION=	2

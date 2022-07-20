@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	subatom
 PORTVERSION=	0.12
 CATEGORIES=	devel perl5

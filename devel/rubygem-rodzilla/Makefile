@@ -1,5 +1,3 @@
-# Created by: Jin-Sih, Lin <linpct@gmail.com>
-
 PORTNAME=	rodzilla
 PORTVERSION=	0.3.6
 CATEGORIES=	devel ruby

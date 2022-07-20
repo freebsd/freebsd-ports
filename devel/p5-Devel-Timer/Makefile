@@ -1,5 +1,3 @@
-# Created by: Cory R. King <coryking@mozimediacom>
-
 PORTNAME=	Devel-Timer
 PORTVERSION=	0.04
 PORTREVISION=	2

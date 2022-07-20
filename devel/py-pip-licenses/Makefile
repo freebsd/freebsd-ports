@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pip-licenses
 PORTVERSION=	3.5.4
 CATEGORIES=	devel python

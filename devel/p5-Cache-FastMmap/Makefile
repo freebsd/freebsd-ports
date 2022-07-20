@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Cache-FastMmap
 PORTVERSION=	1.57
 CATEGORIES=	devel perl5

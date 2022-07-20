@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	columnize
 PORTVERSION=	0.9.0
 CATEGORIES=	devel rubygems

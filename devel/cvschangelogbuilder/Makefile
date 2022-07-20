@@ -1,5 +1,3 @@
-# Created by: Matthew Will <mwill@spingen.com>
-
 PORTNAME=	cvschangelogbuilder
 PORTVERSION=	2.5
 CATEGORIES=	devel

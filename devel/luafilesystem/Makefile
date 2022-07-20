@@ -1,5 +1,3 @@
-# Created by: Kelly Hays <kelly.hays@jkhfamily.org>
-
 PORTNAME=	luafilesystem
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1_8_0

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	pkg-config
 PORTVERSION=	1.4.7
 CATEGORIES=	devel rubygems

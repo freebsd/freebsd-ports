@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	yac
 PORTVERSION=	2.2.1
 PORTEPOCH=	1

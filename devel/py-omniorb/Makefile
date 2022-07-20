@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	omniorb
 DISTVERSION=	4.3.0
 CATEGORIES=	devel python

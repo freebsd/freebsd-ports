@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libscca
 DISTVERSION=	alpha-20210419
 CATEGORIES=	devel

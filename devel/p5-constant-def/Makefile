@@ -1,5 +1,3 @@
-# Created by: Mons Anderson <mons@cpan.org>
-
 PORTNAME=	constant-def
 PORTVERSION=	0.01
 PORTREVISION=	2

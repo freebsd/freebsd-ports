@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Test-Benchmark
 PORTVERSION=	0.004
 PORTREVISION=	2

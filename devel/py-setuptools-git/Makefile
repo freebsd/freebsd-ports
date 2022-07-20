@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	setuptools-git
 PORTVERSION=	1.2
 CATEGORIES=	devel python

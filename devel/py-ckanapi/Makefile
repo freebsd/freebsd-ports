@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ckanapi
 PORTVERSION=	4.7
 CATEGORIES=	devel python

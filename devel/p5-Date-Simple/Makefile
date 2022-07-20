@@ -1,5 +1,3 @@
-# Created by: Alexey V. Antipovsky <kemm@in-line.ru>
-
 PORTNAME=	Date-Simple
 PORTVERSION=	3.03
 PORTREVISION=	2

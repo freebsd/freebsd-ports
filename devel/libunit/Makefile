@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	libunit
 PORTVERSION=	${UNIT_VERSION}
 MASTER_SITES?=	https://unit.nginx.org/download/

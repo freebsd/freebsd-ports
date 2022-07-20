@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Reaper
 PORTVERSION=	1.00
 PORTREVISION=	1

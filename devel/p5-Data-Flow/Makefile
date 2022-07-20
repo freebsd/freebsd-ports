@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Data-Flow
 PORTVERSION=	1.02
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	proto-plus
 PORTVERSION=	1.20.6
 CATEGORIES=	devel python

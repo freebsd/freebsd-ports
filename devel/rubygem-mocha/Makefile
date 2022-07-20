@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	mocha
 PORTVERSION=	1.14.0
 CATEGORIES=	devel rubygems

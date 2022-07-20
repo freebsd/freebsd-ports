@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libfwnt
 PORTVERSION=	20210906
 DISTVERSIONPREFIX=	alpha-

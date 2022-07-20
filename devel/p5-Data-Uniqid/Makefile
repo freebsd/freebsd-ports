@@ -1,5 +1,3 @@
-# Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
-
 PORTNAME=	Data-Uniqid
 PORTVERSION=	0.12
 PORTREVISION=	1

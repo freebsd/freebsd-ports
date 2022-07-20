@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	webfinger
 PORTVERSION=	1.1.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	poetry-dynamic-versioning
 PORTVERSION=	0.17.1
 CATEGORIES=	devel python

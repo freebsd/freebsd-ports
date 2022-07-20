@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-term.js
 PORTVERSION=	0.0.7.0
 PORTREVISION=	2

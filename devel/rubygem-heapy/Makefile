@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	heapy
 PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	cheffish
 PORTVERSION=	16.0.26
 CATEGORIES=	devel rubygems

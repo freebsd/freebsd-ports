@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Class-Constant
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5

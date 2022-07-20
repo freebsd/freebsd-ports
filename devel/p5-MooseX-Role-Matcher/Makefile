@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	MooseX-Role-Matcher
 PORTVERSION=	0.05
 PORTREVISION=	1

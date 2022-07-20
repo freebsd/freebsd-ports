@@ -1,5 +1,3 @@
-# Created by: Wen Heping <ruby@FreeBSD.org>
-
 PORTNAME=	treetop
 PORTVERSION=	1.6.11
 CATEGORIES=	devel rubygems

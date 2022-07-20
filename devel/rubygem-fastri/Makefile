@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	fastri
 PORTVERSION=	0.3.1.1
 CATEGORIES=	devel rubygems

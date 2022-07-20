@@ -1,5 +1,3 @@
-# Created by: Simon Olofsson <simon@olofsson.de>
-
 PORTNAME=	hub
 PORTVERSION=	2.14.2
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	Parallel-Iterator
 PORTVERSION=	1.001
 CATEGORIES=	devel perl5

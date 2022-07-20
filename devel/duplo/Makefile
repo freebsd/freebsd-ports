@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	duplo
 PORTVERSION=	0.2.0
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	xparam
 PORTVERSION=	1.22
 PORTREVISION=	3

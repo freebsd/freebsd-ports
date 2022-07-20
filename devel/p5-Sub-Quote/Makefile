@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Sub-Quote
 PORTVERSION=	2.006006
 CATEGORIES=	devel perl5

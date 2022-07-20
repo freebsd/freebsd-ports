@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Class-XPath
 PORTVERSION=	1.4
 PORTREVISION=	1

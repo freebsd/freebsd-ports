@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Package-Constants
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

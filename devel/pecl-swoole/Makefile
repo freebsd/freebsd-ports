@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	swoole
 PORTVERSION=	4.8.11
 CATEGORIES=	devel net

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Test-Expect
 PORTVERSION=	0.34
 CATEGORIES=	devel perl5

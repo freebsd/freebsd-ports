@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	HOP-Lexer
 PORTVERSION=	0.032
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	whisker
 DISTVERSION=	0.4
 CATEGORIES=	devel

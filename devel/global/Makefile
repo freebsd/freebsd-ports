@@ -1,5 +1,3 @@
-# Created by: chuckr@FreeBSD.org
-
 PORTNAME=	global
 PORTVERSION=	6.6.8
 CATEGORIES=	devel

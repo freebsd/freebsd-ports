@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rbtrace
 PORTVERSION=	0.4.14
 CATEGORIES=	devel rubygems

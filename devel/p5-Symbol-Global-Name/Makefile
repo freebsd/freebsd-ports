@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	Symbol-Global-Name
 PORTVERSION=	0.05
 PORTREVISION=	1

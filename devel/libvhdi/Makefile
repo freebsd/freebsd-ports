@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libvhdi
 PORTVERSION=	20210425
 DISTVERSIONPREFIX=	alpha-

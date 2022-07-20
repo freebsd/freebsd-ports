@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-identitystore
 PORTVERSION=	1.15.0
 CATEGORIES=	devel rubygems

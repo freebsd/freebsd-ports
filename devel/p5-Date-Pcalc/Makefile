@@ -1,5 +1,3 @@
-# Created by: Gregory Shapiro <gshapiro@FreeBSD.org>
-
 PORTNAME=	Date-Pcalc
 PORTVERSION=	6.1
 PORTREVISION=	1

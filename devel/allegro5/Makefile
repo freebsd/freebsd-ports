@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	allegro
 DISTVERSION=	5.2.7.0
 PORTREVISION=	2

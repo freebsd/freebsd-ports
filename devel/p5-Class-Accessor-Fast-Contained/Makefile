@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Class-Accessor-Fast-Contained
 PORTVERSION=	1.01
 PORTREVISION=	1

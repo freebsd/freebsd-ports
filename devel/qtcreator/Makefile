@@ -1,5 +1,3 @@
-# Created by: Kris Moore <kris@pcbsd.org>
-
 PORTNAME=	qtcreator
 DISTVERSION=	7.0.2
 CATEGORIES=	devel

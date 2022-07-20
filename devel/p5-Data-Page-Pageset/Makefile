@@ -1,5 +1,3 @@
-# Created by: Mike Fisher <Michael_Fisher@URMC.Rochester.edu>
-
 PORTNAME=	Data-Page-Pageset
 PORTVERSION=	1.02
 PORTREVISION=	1

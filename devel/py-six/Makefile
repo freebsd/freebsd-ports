@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	six
 PORTVERSION=	1.16.0
 CATEGORIES=	devel python

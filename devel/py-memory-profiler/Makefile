@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	memory-profiler
 PORTVERSION=	0.60.0
 CATEGORIES=	devel python

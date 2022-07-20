@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	dotconf
 PORTVERSION=	1.3
 PORTREVISION=	1

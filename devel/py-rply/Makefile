@@ -1,5 +1,3 @@
-# Created by: David Kalliecharan <dave@dal.ca>
-
 PORTNAME=	rply
 PORTVERSION=	0.7.7
 CATEGORIES=	devel python

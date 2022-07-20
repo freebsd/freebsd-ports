@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	UUID-Random-Patch-UseMRS
 PORTVERSION=	0.030
 CATEGORIES=	devel perl5

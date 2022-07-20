@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	pymarc
 PORTVERSION=	4.2.0
 PORTEPOCH=	1

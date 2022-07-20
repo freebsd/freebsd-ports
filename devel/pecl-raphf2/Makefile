@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman<bofh@FreeBSD.org>
-
 PORTNAME=	raphf
 PORTVERSION=	2.0.1
 PORTREVISION=	1

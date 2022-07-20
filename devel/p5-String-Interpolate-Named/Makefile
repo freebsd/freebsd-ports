@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	String-Interpolate-Named
 PORTVERSION=	1.03
 CATEGORIES=	devel perl5

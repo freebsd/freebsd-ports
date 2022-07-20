@@ -1,5 +1,3 @@
-# Created by: Mons Anderson <mons@cpan.org>
-
 PORTNAME=	Object-Event
 PORTVERSION=	1.220
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	holidays
 PORTVERSION=	8.5.0
 CATEGORIES=	devel rubygems

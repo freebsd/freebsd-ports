@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jinja2-ansible-filters
 PORTVERSION=	1.3.2
 CATEGORIES=	devel python

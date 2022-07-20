@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Path-FindDev
 PORTVERSION=	0.5.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alexander Botero-Lowry <alexbl@FreeBSD.org>
-
 PORTNAME=	magic
 PORTVERSION=	5.42
 CATEGORIES=	devel python

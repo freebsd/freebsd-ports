@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Tree-Simple-VisitorFactory
 PORTVERSION=	0.16
 CATEGORIES=	devel perl5

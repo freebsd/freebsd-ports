@@ -1,5 +1,3 @@
-# Created by: Philip Schulz <phs@deadc0.de>
-
 PORTNAME=	dev86
 PORTVERSION=	0.16.20
 CATEGORIES=	devel

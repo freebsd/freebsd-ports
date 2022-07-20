@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-dynamodb
 PORTVERSION=	1.75.0
 CATEGORIES=	devel rubygems

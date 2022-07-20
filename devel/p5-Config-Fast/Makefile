@@ -1,5 +1,3 @@
-# Created by: Xavier Beaudouin <kiwi@oav.net>
-
 PORTNAME=	Config-Fast
 PORTVERSION=	1.07
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aliyun-sdk
 PORTVERSION=	0.8.0
 CATEGORIES=	devel rubygems

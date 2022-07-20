@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	ExtUtils-AutoInstall
 PORTVERSION=	0.64
 CATEGORIES=	devel perl5

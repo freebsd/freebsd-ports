@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Test-Assertions
 PORTVERSION=	1.054
 PORTREVISION=	1

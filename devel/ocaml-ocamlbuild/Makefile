@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	ocamlbuild
 PORTVERSION=	0.14.1
 CATEGORIES=	devel

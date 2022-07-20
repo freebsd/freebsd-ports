@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-
 PORTNAME=	log4j
 PORTVERSION=	1.2.17
 CATEGORIES=	devel java

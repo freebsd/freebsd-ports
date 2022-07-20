@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	Role-Basic
 PORTVERSION=	0.13
 PORTREVISION=	2

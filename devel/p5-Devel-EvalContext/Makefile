@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Devel-EvalContext
 PORTVERSION=	0.09
 PORTREVISION=	1

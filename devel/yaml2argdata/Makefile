@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@FreeBSD.org>
-
 PORTNAME=	yaml2argdata
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4

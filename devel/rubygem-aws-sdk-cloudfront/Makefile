@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-cloudfront
 PORTVERSION=	1.65.0
 CATEGORIES=	devel rubygems

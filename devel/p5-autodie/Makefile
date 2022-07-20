@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	autodie
 PORTVERSION=	2.29
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	rauth
 PORTVERSION=	0.7.2
 CATEGORIES=	devel www python

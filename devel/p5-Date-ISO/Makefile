@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	Date-ISO
 PORTVERSION=	1.31
 PORTREVISION=	1

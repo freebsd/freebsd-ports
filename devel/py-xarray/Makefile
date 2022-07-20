@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	xarray
 PORTVERSION=	2022.3.0
 CATEGORIES=	devel python

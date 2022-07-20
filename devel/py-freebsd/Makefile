@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	freebsd
 PORTVERSION=	0.9.5
 DISTVERSIONPREFIX=v

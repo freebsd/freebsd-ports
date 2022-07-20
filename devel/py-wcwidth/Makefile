@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	wcwidth
 PORTVERSION=	0.1.8
 CATEGORIES=	devel python

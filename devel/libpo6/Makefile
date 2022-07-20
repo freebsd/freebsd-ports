@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	libpo6
 PORTVERSION=	0.8.0
 CATEGORIES=	devel

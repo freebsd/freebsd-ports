@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fuzzy_match
 PORTVERSION=	2.1.0
 CATEGORIES=	devel rubygems

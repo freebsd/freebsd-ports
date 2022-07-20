@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	Tie-File
 PORTVERSION=	1.05
 CATEGORIES=	devel perl5

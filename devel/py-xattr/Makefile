@@ -1,5 +1,3 @@
-# Created by: bland@FreeBSD.org
-
 PORTNAME=	xattr
 PORTVERSION=	0.9.8
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine (<gerrit.beine@gmx.de>)
-
 PORTNAME=	PhpDocumentor
 PORTVERSION=	1.4.4
 CATEGORIES=	devel www pear

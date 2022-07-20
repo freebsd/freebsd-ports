@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Rcs
 PORTVERSION=	1.05
 PORTREVISION=	1

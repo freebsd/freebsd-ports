@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	File-Slurper
 PORTVERSION=	0.013
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Johannes Lundberg <johalun0@gmail.com>
-
 PORTNAME=	libepoll-shim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.20220703

@@ -1,5 +1,3 @@
-# Created by: Henrik Motakef <henrik.motakef@web.de>
-
 PORTNAME=	pcre
 PORTVERSION=	7.2.3
 DISTVERSIONPREFIX=	v

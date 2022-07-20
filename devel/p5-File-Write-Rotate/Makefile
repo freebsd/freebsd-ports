@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	File-Write-Rotate
 PORTVERSION=	0.321
 CATEGORIES=	devel perl5

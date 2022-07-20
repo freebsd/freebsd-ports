@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	MooseX-Clone
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

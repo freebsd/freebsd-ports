@@ -1,5 +1,3 @@
-# Created by: Dominic Marks <d.marks@student.umist.ac.uk>
-
 PORTNAME=	ccache
 PKGNAMESUFFIX?=	-memcached
 PORTVERSION=	3.5.dev.20180926

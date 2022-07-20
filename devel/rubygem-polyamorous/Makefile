@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	polyamorous
 PORTVERSION=	2.3.2
 CATEGORIES=	devel rubygems

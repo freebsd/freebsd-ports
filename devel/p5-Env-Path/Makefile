@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Env-Path
 PORTVERSION=	0.19
 PORTREVISION=	1

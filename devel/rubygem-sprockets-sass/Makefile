@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	sprockets-sass
 PORTVERSION=	1.3.1
 PORTREVISION=	1

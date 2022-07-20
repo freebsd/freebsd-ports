@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	BS-Event
 PORTVERSION=	0.3
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Resources
 PORTVERSION=	1.04
 PORTREVISION=	1

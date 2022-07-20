@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Parse-Distname
 PORTVERSION=	0.05
 CATEGORIES=	devel perl5

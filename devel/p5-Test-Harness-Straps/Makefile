@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Test-Harness-Straps
 PORTVERSION=	0.30
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	injeqt
 PORTVERSION=	1.2.0
 PORTREVISION=	5

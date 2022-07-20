@@ -1,5 +1,3 @@
-# Created by: mi@aldan.algebra.com
-
 PORTNAME=	qmake
 PORTVERSION=	3.3.8
 PORTREVISION=	2

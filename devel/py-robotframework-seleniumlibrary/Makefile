@@ -1,5 +1,3 @@
-# Created by: Vladimir Chukharev
-
 PORTNAME=	robotframework-seleniumlibrary
 PORTVERSION=	3.3.1
 CATEGORIES=	devel www python

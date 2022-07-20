@@ -1,5 +1,3 @@
-# Created by: Choe, Cheng-Dae
-
 PORTNAME=	jep
 PORTVERSION=	3.9.1
 CATEGORIES=	devel java python

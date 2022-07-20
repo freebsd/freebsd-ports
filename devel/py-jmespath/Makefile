@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	jmespath
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python

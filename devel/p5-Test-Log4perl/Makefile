@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Test-Log4perl
 PORTVERSION=	0.1001
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	pkgconfig
 PORTVERSION=	2.0.3
 PORTREVISION=	1

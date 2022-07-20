@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-API-Hooks
 PORTVERSION=	1.0800
 PORTREVISION=	1

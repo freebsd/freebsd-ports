@@ -1,5 +1,3 @@
-# Created by: Klaus T. Aehlig <aehlig@linta.de>
-
 PORTNAME=	wsgitools
 PORTVERSION=	0.3.1
 CATEGORIES=	devel

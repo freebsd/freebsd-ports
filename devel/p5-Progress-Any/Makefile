@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Progress-Any
 PORTVERSION=	0.219
 CATEGORIES=	devel perl5

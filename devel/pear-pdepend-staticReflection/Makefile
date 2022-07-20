@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	staticReflection
 PORTVERSION=	1.0.0
 CATEGORIES=	devel pear

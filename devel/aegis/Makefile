@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	aegis
 PORTVERSION=	4.25
 DISTVERSIONSUFFIX=	.D510

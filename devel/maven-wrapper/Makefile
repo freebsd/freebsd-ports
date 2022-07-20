@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
-
 PORTNAME=	maven-wrapper
 PORTVERSION=	1
 PORTREVISION=	2

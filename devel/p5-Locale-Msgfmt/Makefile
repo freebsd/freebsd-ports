@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Locale-Msgfmt
 PORTVERSION=	0.15
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	statsd
 PORTVERSION=	3.3.0
 CATEGORIES=	devel python

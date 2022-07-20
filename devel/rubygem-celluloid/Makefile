@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	celluloid
 PORTVERSION=	0.18.0
 CATEGORIES=	devel rubygems

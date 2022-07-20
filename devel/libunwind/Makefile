@@ -1,5 +1,3 @@
-# Created by: stas@FreeBSD.org
-
 PORTNAME=	libunwind
 PORTVERSION=	20211201	# This is the release date on https://download.savannah.gnu.org/releases/libunwind/
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	pip
 PORTVERSION=	22.1.2
 CATEGORIES=	devel python

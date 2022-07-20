@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Clone-Fast
 PORTVERSION=	0.97
 PORTREVISION=	1

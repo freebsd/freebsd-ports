@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	B-Deobfuscate
 PORTVERSION=	0.20
 PORTREVISION=	1

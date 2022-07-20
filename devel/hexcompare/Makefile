@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	hexcompare
 PORTVERSION=	1.0.4
 CATEGORIES=	devel

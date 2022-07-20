@@ -1,5 +1,3 @@
-# Created by: rv@gnu.org
-
 PORTNAME=	cons
 PORTVERSION=	2.2.0
 PORTREVISION=	3

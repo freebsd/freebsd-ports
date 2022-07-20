@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	B-Hooks-EndOfScope
 PORTVERSION=	0.26
 CATEGORIES=	devel perl5

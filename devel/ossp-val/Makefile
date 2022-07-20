@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@geeksrus.net>
-
 PORTNAME=	val
 PORTVERSION=	0.9.4
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	IOC
 PORTVERSION=	0.29
 PORTREVISION=	3

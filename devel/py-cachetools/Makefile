@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	cachetools
 PORTVERSION=	5.2.0
 CATEGORIES=	devel python

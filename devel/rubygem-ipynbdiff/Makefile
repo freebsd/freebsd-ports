@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	ipynbdiff
 PORTVERSION=	0.4.7
 CATEGORIES=	devel rubygems

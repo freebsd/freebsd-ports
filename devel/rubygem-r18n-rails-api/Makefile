@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	r18n-rails-api
 PORTVERSION=	5.0.0
 CATEGORIES=	devel rubygems

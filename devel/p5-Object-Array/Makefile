@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Object-Array
 PORTVERSION=	0.060
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	CPAN-Inject
 PORTVERSION=	1.14
 PORTREVISION=	1

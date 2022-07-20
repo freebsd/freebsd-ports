@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Tie-RefHash
 PORTVERSION=	1.40
 CATEGORIES=	devel perl5

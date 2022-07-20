@@ -1,5 +1,3 @@
-# Created by: Shinsuke Matsui <smatsui@karashi.org>
-
 PORTNAME=	File-chmod
 PORTVERSION=	0.42
 CATEGORIES=	devel perl5

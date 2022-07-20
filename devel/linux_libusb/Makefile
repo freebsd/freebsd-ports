@@ -1,5 +1,3 @@
-# Created by: nox@FreeBSD.org
-
 PORTNAME=	linux_libusb
 PORTVERSION=	13.1.0
 CATEGORIES=	devel linux

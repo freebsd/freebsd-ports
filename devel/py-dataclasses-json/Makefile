@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	dataclasses-json
 PORTVERSION=	0.5.7
 CATEGORIES=	devel python

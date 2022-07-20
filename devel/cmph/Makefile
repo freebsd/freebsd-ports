@@ -1,5 +1,3 @@
-# Created by: Jesse Kempf (jessekempf@gmail.com)
-
 PORTNAME=	cmph
 PORTVERSION=	2.0
 PORTREVISION=	1

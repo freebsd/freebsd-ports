@@ -1,5 +1,3 @@
-# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-
 PORTNAME=	String-Formatter
 PORTVERSION=	0.102084
 PORTREVISION=	1

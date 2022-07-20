@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	IO-Async
 PORTVERSION=	0.801
 CATEGORIES=	devel perl5

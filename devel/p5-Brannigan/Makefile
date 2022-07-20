@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Brannigan
 PORTVERSION=	1.1.00001
 CATEGORIES=	devel www perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test2-Plugin-DBIProfile
 PORTVERSION=	0.002006
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	MooseX-MultiMethods
 PORTVERSION=	0.10
 PORTREVISION=	1

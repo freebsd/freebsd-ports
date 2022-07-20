@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Sub-HandlesVia
 PORTVERSION=	0.032
 CATEGORIES=	devel perl5

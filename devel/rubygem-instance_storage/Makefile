@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	instance_storage
 PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	psvn
 PORTVERSION=	20150720.214200
 PORTREVISION=	6

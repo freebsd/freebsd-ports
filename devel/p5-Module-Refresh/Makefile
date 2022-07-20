@@ -1,5 +1,3 @@
-# Created by: aturetta@commit.it
-
 PORTNAME=	Module-Refresh
 PORTVERSION=	0.18
 CATEGORIES=	devel perl5

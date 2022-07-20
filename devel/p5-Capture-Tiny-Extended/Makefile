@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Capture-Tiny-Extended
 PORTVERSION=	0.114
 CATEGORIES=	devel perl5

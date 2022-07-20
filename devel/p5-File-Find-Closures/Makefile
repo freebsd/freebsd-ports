@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	File-Find-Closures
 PORTVERSION=	1.113
 CATEGORIES=	devel perl5

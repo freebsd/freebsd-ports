@@ -1,5 +1,3 @@
-# Created by: Thomas Abthorpe <thomas@goodking.ca>
-
 PORTNAME=	Date_Holidays
 PORTVERSION=	0.21.8
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: milki@rescomp.berkeley.edu
-
 PORTNAME=	Test-EOL
 PORTVERSION=	1.5
 PORTREVISION=	1

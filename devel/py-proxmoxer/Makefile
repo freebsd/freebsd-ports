@@ -1,5 +1,3 @@
-# Created by: Davíð Steinn Geirsson <david@isnic.is>
-
 PORTNAME=	proxmoxer
 PORTVERSION=	1.2.0
 CATEGORIES=	devel python

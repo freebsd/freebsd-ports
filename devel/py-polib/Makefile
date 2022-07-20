@@ -1,5 +1,3 @@
-# Created by: Oleg Ukraincev <oleg@ht-systems.ru>
-
 PORTNAME=	polib
 PORTVERSION=	1.1.1
 CATEGORIES=	devel python

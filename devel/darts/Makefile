@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	darts
 PORTVERSION=	0.32
 PORTREVISION=	1

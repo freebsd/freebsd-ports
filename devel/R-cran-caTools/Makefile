@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	caTools
 PORTVERSION=	1.18.2
 CATEGORIES=	devel

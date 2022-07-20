@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	timelib
 PORTVERSION=	0.2.5
 CATEGORIES=	devel python

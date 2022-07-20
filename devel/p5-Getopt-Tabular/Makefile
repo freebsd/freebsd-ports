@@ -1,5 +1,3 @@
-# Created by: Dimitry Andric <dim@FreeBSD.org>
-
 PORTNAME=	Getopt-Tabular
 PORTVERSION=	0.3
 PORTREVISION=	1

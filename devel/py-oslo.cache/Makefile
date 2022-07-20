@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	oslo.cache
 PORTVERSION=	3.0.0
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <michael@fun-box.ru>
-
 PORTNAME=	Async-Interrupt
 PORTVERSION=	1.26
 CATEGORIES=	devel perl5

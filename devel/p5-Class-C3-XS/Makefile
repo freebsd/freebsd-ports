@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Class-C3-XS
 PORTVERSION=	0.15
 CATEGORIES=	devel perl5

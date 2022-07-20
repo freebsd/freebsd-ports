@@ -1,5 +1,3 @@
-# Created by: mr
-
 PORTNAME=	m4
 PORTVERSION=	1.4.19
 PORTEPOCH=	1

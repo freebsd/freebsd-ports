@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	xorg-macros
 PORTVERSION=	1.19.3
 CATEGORIES=	devel x11

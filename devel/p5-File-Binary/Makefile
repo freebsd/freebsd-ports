@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	File-Binary
 PORTVERSION=	1.7
 PORTREVISION=	2

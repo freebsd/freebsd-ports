@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbrabez@gmail.com>
-
 PORTNAME=	elfkickers
 PORTVERSION=	3.2
 CATEGORIES=	devel education sysutils

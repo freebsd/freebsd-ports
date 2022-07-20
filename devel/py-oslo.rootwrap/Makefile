@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	oslo.rootwrap
 PORTVERSION=	6.3.1
 CATEGORIES=	devel python

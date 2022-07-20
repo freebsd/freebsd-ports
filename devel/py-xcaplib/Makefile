@@ -1,5 +1,3 @@
-# Created by: Eugene Grosbein <ports@grosbein.net>
-
 PORTNAME=	xcaplib
 PORTVERSION=	1.2.2
 PORTREVISION=	1

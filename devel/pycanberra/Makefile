@@ -1,5 +1,3 @@
-# Created by: blubee <hello@blubee.me>
-
 PORTNAME=	pycanberra
 DISTVERSION=	1
 PORTREVISION=	2

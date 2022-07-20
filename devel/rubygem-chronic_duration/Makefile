@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	chronic_duration
 PORTVERSION=	0.10.6
 CATEGORIES=	devel rubygems

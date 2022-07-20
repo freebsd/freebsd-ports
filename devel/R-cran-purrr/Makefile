@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	purrr
 PORTVERSION=	0.3.4
 PORTREVISION=	1

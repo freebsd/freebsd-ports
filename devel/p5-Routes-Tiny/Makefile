@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Routes-Tiny
 PORTVERSION=	0.21
 CATEGORIES=	devel perl5

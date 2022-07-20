@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pytrie
 PORTVERSION=	0.4.0
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Andre Rikkert de Koe - ARK-ICT <andre@ark-ict.nl>
-
 PORTNAME=	gitlist
 DISTVERSION=	1.1.1
 CATEGORIES=	devel www

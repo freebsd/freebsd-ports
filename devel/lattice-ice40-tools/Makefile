@@ -1,5 +1,3 @@
-# Created by: Johnny Sorocil <jsorocil@gmail.com>
-
 PORTNAME=	lattice-ice40-tools
 PORTVERSION=	g20181021
 CATEGORIES=	devel

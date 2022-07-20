@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Inline-Python
 PORTVERSION=	0.56
 CATEGORIES=	devel perl5

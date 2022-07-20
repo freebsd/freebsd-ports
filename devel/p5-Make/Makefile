@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Make
 PORTVERSION=	2.011
 CATEGORIES=	devel perl5

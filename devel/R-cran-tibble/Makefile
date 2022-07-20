@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	tibble
 PORTVERSION=	3.1.7
 CATEGORIES=	devel

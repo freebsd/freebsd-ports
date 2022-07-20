@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	requirementslib
 PORTVERSION=	1.6.7
 CATEGORIES=	devel python

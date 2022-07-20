@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	gsubfn
 DISTVERSION=	0.7
 CATEGORIES=	devel

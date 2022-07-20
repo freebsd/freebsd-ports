@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Calendar-Mayan
 PORTVERSION=	0.0601
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	setuptools_hg
 PORTVERSION=	0.4
 PORTREVISION=	1

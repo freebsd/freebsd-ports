@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	include
 PORTVERSION=	0.4.2
 CATEGORIES=	devel

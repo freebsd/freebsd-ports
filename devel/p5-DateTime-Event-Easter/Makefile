@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Event-Easter
 PORTVERSION=	1.09
 PORTEPOCH=	1

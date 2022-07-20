@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Rose-Object
 PORTVERSION=	0.860
 PORTREVISION=	1

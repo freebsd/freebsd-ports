@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Set-Crontab
 PORTVERSION=	1.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	concurrent-ruby-edge
 PORTVERSION=	0.6.0
 CATEGORIES=	devel rubygems

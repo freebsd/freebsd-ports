@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	pkgconfig
 PORTVERSION=	1.5.5
 PORTEPOCH=	1

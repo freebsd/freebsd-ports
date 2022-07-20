@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	viewvc
 DISTVERSION=	1.3.0-20201006
 PORTREVISION=	1

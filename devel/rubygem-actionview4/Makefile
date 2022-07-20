@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	actionview
 PORTVERSION=	4.2.11.3
 CATEGORIES=	devel rubygems

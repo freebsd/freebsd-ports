@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Format-Excel
 PORTVERSION=	0.31
 PORTREVISION=	1

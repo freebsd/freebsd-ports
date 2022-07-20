@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tty-editor
 PORTVERSION=	0.7.0
 CATEGORIES=	devel rubygems

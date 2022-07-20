@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-apis-compute_v1
 PORTVERSION=	0.42.0
 CATEGORIES=	devel rubygems

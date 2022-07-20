@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Devel-CheckCompiler
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5

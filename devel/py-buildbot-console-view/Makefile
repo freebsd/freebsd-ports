@@ -1,5 +1,3 @@
-# Created by: Michael Gmelin <grembo@FreeBSD.org>
-
 PORTNAME=	buildbot-console-view
 PORTVERSION=	3.5.0
 CATEGORIES=	devel python

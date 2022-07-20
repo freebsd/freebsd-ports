@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	latest
 PORTVERSION=	0.03
 PORTREVISION=	2

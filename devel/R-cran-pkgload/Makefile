@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	pkgload
 DISTVERSION=	1.2.4
 CATEGORIES=	devel

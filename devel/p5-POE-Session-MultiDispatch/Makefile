@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Session-MultiDispatch
 PORTVERSION=	1.3
 PORTREVISION=	1

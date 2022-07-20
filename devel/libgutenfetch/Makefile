@@ -1,5 +1,3 @@
-# Created by: Russell Francis <johntabularasa@users.sf.net>
-
 PORTNAME=	libgutenfetch
 PORTVERSION=	1.2
 PORTREVISION=	6

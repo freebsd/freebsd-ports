@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Function-Fallback-CoreOrPP
 PORTVERSION=	0.090
 CATEGORIES=	devel perl5

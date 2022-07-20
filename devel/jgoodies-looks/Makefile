@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	jgoodies-looks
 DISTVERSION=	2.7.0
 CATEGORIES=	devel java

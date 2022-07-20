@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	stella
 PORTVERSION=	2.1.2.004
 PORTREVISION=	1

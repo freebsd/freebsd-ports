@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	tpasm
 PORTVERSION=	1.11
 CATEGORIES=	devel

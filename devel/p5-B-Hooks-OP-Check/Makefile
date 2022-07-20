@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	B-Hooks-OP-Check
 PORTVERSION=	0.22
 CATEGORIES=	devel perl5

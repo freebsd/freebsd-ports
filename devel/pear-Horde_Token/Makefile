@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Token
 PORTVERSION=	2.0.9
 CATEGORIES=	devel www pear

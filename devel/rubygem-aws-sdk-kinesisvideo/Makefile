@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-kinesisvideo
 PORTVERSION=	1.42.0
 CATEGORIES=	devel rubygems

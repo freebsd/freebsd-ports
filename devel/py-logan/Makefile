@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	logan
 PORTVERSION=	0.7.2
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	File-Copy-Recursive-Reduced
 PORTVERSION=	0.006
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Perl-PrereqScanner-NotQuiteLite
 PORTVERSION=	0.9916
 CATEGORIES=	devel perl5

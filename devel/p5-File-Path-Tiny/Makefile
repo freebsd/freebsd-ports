@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net <ports@c0decafe.net>
-
 PORTNAME=	File-Path-Tiny
 PORTVERSION=	1.0
 CATEGORIES=	devel perl5

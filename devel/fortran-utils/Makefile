@@ -1,5 +1,3 @@
-# Created by: kris@FreeBSD.org
-
 PORTNAME=	fortran-utils
 PORTVERSION=	1.1
 CATEGORIES=	devel

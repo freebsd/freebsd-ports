@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Log-Minimal
 PORTVERSION=	0.19
 PORTREVISION=	1

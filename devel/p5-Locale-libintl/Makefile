@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Locale-libintl
 PORTVERSION=	1.32
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure-storage-common
 PORTVERSION=	2.0.4
 PORTREVISION=	1

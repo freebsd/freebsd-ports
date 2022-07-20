@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	callr
 DISTVERSION=	3.7.0
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	gmodels
 DISTVERSION=	2.18.1.1
 CATEGORIES=	devel

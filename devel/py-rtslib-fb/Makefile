@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	rtslib-fb
 PORTVERSION=	2.1.75
 CATEGORIES=	devel python

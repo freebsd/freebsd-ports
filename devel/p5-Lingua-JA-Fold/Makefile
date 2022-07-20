@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Lingua-JA-Fold
 PORTVERSION=	0.08
 PORTREVISION=	2

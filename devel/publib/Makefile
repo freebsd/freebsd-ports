@@ -1,5 +1,3 @@
-# Created by: never@nevermind.kiev.ua
-
 PORTNAME=	publib
 PORTVERSION=	0.40
 CATEGORIES=	devel

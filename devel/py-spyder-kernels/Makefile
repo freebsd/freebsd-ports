@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	spyder-kernels
 PORTVERSION=	2.3.2
 CATEGORIES=	devel python

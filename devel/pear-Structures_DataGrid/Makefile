@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	Structures_DataGrid
 PORTVERSION=	0.9.3
 CATEGORIES=	devel www pear

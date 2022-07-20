@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Data-Hexdumper
 PORTVERSION=	3.0001
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Oliver Braun
-
 PORTNAME=	libvc
 PORTVERSION=	003
 PORTREVISION=	4

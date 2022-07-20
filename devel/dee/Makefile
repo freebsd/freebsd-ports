@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	dee
 PORTVERSION=	1.2.7
 PORTREVISION=	22

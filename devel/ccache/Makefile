@@ -1,5 +1,3 @@
-# Created by: Dominic Marks <d.marks@student.umist.ac.uk>
-
 PORTNAME=	ccache
 PORTVERSION=	3.7.12
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Rinci
 PORTVERSION=	1.1.102
 CATEGORIES=	devel perl5

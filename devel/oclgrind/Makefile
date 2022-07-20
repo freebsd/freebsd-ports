@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <jmd@freebsd.org>
-
 PORTNAME=	oclgrind
 PORTVERSION=	21.10
 DISTVERSIONPREFIX=	v

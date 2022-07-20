@@ -1,5 +1,3 @@
-# Created by: David Xu
-
 PORTNAME=	byaccj
 PORTVERSION=	1.15
 CATEGORIES=	devel java

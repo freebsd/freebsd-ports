@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	AnyEvent-Fork
 PORTVERSION=	1.32
 CATEGORIES=	devel perl5

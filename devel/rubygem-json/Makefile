@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	json
 PORTVERSION=	2.6.2
 CATEGORIES=	devel rubygems

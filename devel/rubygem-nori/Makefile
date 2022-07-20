@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	nori
 PORTVERSION=	2.6.0
 CATEGORIES=	devel rubygems

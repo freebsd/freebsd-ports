@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Test-Spelling
 PORTVERSION=	0.25
 CATEGORIES=	devel perl5

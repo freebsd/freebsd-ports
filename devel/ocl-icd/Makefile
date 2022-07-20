@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	ocl-icd
 DISTVERSIONPREFIX=	v
 PORTVERSION=	2.3.1

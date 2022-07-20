@@ -1,5 +1,3 @@
-# Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	flang
 DISTVERSION=	7.0-g20191020
 PORTREVISION=	1

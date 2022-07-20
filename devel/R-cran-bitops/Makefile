@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	bitops
 DISTVERSION=	1.0-7
 CATEGORIES=	devel

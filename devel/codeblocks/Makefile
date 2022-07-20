@@ -1,5 +1,3 @@
-# Created by: Matthias Sund <m.sund@arcor.de>
-
 PORTNAME=	codeblocks
 PORTVERSION=	20.03
 PORTREVISION=	2

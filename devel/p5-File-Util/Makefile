@@ -1,5 +1,3 @@
-# Created by: jeffhung
-
 PORTNAME=	File-Util
 PORTVERSION=	4.161950
 CATEGORIES=	devel perl5

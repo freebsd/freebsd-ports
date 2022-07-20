@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	Event-Join
 PORTVERSION=	0.06
 PORTREVISION=	1

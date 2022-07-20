@@ -1,5 +1,3 @@
-# Created by: wahjava
-
 PORTNAME=	libpthread-stubs
 PORTVERSION=	0.4
 CATEGORIES=	devel

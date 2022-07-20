@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	oslo.policy
 PORTVERSION=	4.0.0
 CATEGORIES=	devel python

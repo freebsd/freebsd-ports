@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	bindrcpp
 DISTVERSION=	0.2.2
 PORTREVISION=	3

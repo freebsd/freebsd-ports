@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	Debug-Client
 PORTVERSION=	0.31
 CATEGORIES=	devel perl5

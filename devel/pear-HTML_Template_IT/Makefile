@@ -1,5 +1,3 @@
-# Created by: Alex Miller (<asm@asm.kiev.ua>)
-
 PORTNAME=	HTML_Template_IT
 PORTVERSION=	1.3.1
 PORTEPOCH=	1

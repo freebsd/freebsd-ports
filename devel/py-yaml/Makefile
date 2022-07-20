@@ -1,5 +1,3 @@
-# Created by: ijliao@FreeBSD.org
-
 PORTNAME=	yaml
 PORTVERSION=	5.4.1
 CATEGORIES=	devel python

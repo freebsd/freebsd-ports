@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytest-sugar
 PORTVERSION=	0.9.5
 CATEGORIES=	devel python

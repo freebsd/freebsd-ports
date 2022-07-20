@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	vcd
 DISTVERSION=	1.4-10
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Term-App-Roles
 PORTVERSION=	0.031
 CATEGORIES=	devel perl5

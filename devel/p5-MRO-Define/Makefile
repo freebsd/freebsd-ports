@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	MRO-Define
 PORTVERSION=	0.02
 PORTREVISION=	1

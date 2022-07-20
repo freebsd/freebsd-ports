@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	Locale-gettext
 PORTVERSION=	1.07
 CATEGORIES=	devel perl5

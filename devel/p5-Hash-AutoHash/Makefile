@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	Hash-AutoHash
 PORTVERSION=	1.17
 PORTREVISION=	1

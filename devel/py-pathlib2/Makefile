@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	pathlib2
 PORTVERSION=	2.3.7
 CATEGORIES=	devel python

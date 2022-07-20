@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Clone-More
 PORTVERSION=	0.90.2
 PORTREVISION=	2

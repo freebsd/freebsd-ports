@@ -1,5 +1,3 @@
-# Created by: Vladimir Chukharev
-
 PORTNAME=	pyface
 DISTVERSION=	7.4.2
 CATEGORIES=	devel python

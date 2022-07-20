@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Config-Tiny
 PORTVERSION=	2.28
 CATEGORIES=	devel perl5

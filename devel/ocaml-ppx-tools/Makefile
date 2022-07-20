@@ -1,5 +1,3 @@
-# Created by: Michael Grünewald <michipili@gmail.com>
-
 PORTNAME=	ppx-tools
 PORTVERSION=	5.1
 DISTVERSIONSUFFIX=+4.06.0

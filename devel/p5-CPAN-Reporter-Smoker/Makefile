@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	CPAN-Reporter-Smoker
 PORTVERSION=	0.29
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	CPAN-Perl-Releases
 PORTVERSION=	5.20220620
 CATEGORIES=	devel perl5

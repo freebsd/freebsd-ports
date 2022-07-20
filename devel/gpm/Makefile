@@ -1,5 +1,3 @@
-# Created by: Luke Jee <lukejee@gmail.com>
-
 PORTNAME=	gpm
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v

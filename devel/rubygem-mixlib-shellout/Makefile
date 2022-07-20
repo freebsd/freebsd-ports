@@ -1,5 +1,3 @@
-# Created by: ndewing@experts-exchange.com
-
 PORTNAME=	mixlib-shellout
 PORTVERSION=	3.2.5
 CATEGORIES=	devel rubygems

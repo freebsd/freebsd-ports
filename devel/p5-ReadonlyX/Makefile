@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	ReadonlyX
 PORTVERSION=	1.04
 CATEGORIES=	devel perl5

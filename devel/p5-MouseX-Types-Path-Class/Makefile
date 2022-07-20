@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	MouseX-Types-Path-Class
 PORTVERSION=	0.07
 PORTREVISION=	1

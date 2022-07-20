@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-mgn
 PORTVERSION=	1.14.0
 CATEGORIES=	devel rubygems

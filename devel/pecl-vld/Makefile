@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	vld
 PORTVERSION=	0.17.2
 CATEGORIES=	devel pear

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	flake8-bugbear
 PORTVERSION=	22.7.1
 CATEGORIES=	devel python

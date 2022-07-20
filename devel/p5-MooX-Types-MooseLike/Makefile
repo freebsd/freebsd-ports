@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MooX-Types-MooseLike
 PORTVERSION=	0.29
 CATEGORIES=	devel perl5

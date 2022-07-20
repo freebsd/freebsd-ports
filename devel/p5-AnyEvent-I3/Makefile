@@ -1,5 +1,3 @@
-# Created by: Aldis Berjoza <aldis@bsdroot.lv>
-
 PORTNAME=	AnyEvent-I3
 PORTVERSION=	0.17
 CATEGORIES=	devel perl5

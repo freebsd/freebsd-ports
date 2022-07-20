@@ -1,5 +1,3 @@
-# Created by: Sean Chittenden <seanc@FreeBSD.org>
-
 PORTNAME=	rubyinline
 PORTVERSION=	3.12.6
 CATEGORIES=	devel rubygems

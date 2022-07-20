@@ -1,5 +1,3 @@
-# Created by: J Han <hjh@photino.com>
-
 PORTNAME=	libcii
 PORTVERSION=	1.1
 CATEGORIES=	devel

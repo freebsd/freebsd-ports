@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cucumber-ci-environment
 PORTVERSION=	9.0.4
 CATEGORIES=	devel rubygems

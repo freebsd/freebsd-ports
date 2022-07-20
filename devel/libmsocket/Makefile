@@ -1,5 +1,3 @@
-# Created by: Matt Harris <mattdharris@users.sourceforge.net>
-
 PORTNAME=	libmsocket
 PORTVERSION=	0.4
 PORTREVISION=	6

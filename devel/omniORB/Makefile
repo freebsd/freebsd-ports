@@ -1,5 +1,3 @@
-# Created by: ejc@bazzle.com
-
 PORTNAME=	omniORB
 DISTVERSION=	${ABI_VER}.${ABI_MAJOR_VER}.${ABI_MINOR_VER}
 CATEGORIES=	devel

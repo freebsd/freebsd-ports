@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Test-Weaken
 PORTVERSION=	3.022000
 PORTREVISION=	1

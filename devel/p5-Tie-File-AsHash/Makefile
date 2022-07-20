@@ -1,5 +1,3 @@
-# Created by: Ruben de Groot <rdg@bzerk.org>
-
 PORTNAME=	Tie-File-AsHash
 PORTVERSION=	0.08
 PORTREVISION=	1

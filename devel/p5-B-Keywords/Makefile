@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	B-Keywords
 PORTVERSION=	1.24
 CATEGORIES=	devel perl5

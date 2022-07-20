@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	childprocess
 PORTVERSION=	4.1.0
 CATEGORIES=	devel rubygems

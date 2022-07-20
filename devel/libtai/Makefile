@@ -1,5 +1,3 @@
-# Created by: Mario S F Ferreira <lioux@linf.unb.br> et al.
-
 PORTNAME=	libtai
 PORTVERSION=	0.60
 PORTREVISION=	6

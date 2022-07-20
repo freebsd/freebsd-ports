@@ -1,5 +1,3 @@
-# Created by: Mons Anderson <mons@cpan.org>
-
 PORTNAME=	uni-perl
 PORTVERSION=	0.91
 PORTREVISION=	2

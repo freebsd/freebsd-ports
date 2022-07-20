@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	libnsutils
 PORTVERSION=	0.1.0
 CATEGORIES=	devel

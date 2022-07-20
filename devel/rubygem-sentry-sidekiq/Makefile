@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	sentry-sidekiq
 PORTVERSION=	5.1.1
 PORTREVISION=	1

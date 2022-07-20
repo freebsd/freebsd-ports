@@ -1,5 +1,3 @@
-# Created by: Peter Jeremy <peterjeremy@acm.org>
-
 PORTNAME=	mspdebug
 PORTVERSION=	0.25.20200402
 PORTREVISION=	0

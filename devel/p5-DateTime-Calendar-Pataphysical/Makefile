@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Calendar-Pataphysical
 PORTVERSION=	0.06
 CATEGORIES=	devel perl5

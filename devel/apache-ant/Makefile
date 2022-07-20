@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	apache-ant
 DISTVERSION=	1.10.8
 CATEGORIES=	devel java

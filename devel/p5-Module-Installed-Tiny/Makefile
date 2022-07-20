@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Module-Installed-Tiny
 PORTVERSION=	0.005
 CATEGORIES=	devel perl5

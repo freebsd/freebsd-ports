@@ -1,5 +1,3 @@
-# Created by: René Ladan <rene@freebsd.org>
-
 PORTNAME=	django-rq
 PORTVERSION=	2.5.1
 PORTREVISION=	1

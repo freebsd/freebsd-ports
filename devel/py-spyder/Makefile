@@ -1,5 +1,3 @@
-# Created by: Rod Person <rodperson@rodperson.com>
-
 PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.7

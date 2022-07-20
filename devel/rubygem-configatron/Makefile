@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	configatron
 PORTVERSION=	4.5.1
 CATEGORIES=	devel ruby

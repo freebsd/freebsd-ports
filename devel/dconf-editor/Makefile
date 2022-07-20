@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	dconf-editor
 PORTVERSION=	3.38.3
 CATEGORIES=	devel gnome

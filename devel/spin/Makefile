@@ -1,5 +1,3 @@
-# Created by: jhanna@home.com
-
 PORTNAME=	spin
 PORTVERSION=	6.5.0
 DISTVERSIONPREFIX=	version-

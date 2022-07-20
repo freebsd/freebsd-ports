@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	annoy
 PORTVERSION=	0.5.6
 CATEGORIES=	devel rubygems

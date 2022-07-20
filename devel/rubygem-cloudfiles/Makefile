@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	cloudfiles
 PORTVERSION=	1.5.0.3
 CATEGORIES=	devel rubygems

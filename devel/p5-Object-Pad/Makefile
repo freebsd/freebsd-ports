@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Object-Pad
 PORTVERSION=	0.66
 CATEGORIES=	devel perl5

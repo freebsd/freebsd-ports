@@ -1,5 +1,3 @@
-# Created by: Hardy Schumacher <hardy.schumacher@gmx.de>
-
 PORTNAME=	z80ex
 PORTVERSION=	1.1.21
 CATEGORIES=	devel

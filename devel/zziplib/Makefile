@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	zziplib
 PORTVERSION=	0.13.72
 DISTVERSIONPREFIX=	v

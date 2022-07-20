@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	Package-DeprecationManager
 PORTVERSION=	0.17
 PORTREVISION=	1

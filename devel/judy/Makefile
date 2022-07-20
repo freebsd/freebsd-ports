@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Judy
 DISTVERSION=	1.0.5
 PORTREVISION=	3

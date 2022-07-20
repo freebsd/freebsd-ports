@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	projectcenter
 PORTVERSION=	0.6.2
 PORTREVISION=	5

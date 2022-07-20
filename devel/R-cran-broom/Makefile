@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	broom
 DISTVERSION=	1.0.0
 CATEGORIES=	devel

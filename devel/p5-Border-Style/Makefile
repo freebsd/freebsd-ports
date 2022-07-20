@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Border-Style
 PORTVERSION=	0.01
 CATEGORIES=	devel perl5

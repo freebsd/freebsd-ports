@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rbs_json_schema
 PORTVERSION=	0.1.0
 CATEGORIES=	devel rubygems

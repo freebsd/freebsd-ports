@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	debase-ruby_core_source
 PORTVERSION=	0.10.16
 CATEGORIES=	devel rubygems

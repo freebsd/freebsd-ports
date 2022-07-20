@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	Locale-Maketext-Simple
 PORTVERSION=	0.21
 PORTREVISION=	1

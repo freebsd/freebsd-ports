@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	gitlab-experiment
 PORTVERSION=	0.7.1
 CATEGORIES=	devel rubygems

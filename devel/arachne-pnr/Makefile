@@ -1,5 +1,3 @@
-# Created by: Johnny Sorocil <jsorocil@gmail.com>
-
 PORTNAME=	arachne-pnr
 PORTVERSION=	g20181021
 PORTREVISION=	2

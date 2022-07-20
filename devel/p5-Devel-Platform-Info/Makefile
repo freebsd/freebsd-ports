@@ -1,5 +1,3 @@
-# Created by: James E Keenan <jkeenan@cpan.org>
-
 PORTNAME=	Devel-Platform-Info
 PORTVERSION=	1.00
 CATEGORIES=	devel perl5

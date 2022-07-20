@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	anjuta
 PORTVERSION=	3.34.0
 PORTREVISION=	3

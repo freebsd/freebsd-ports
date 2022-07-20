@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-jasmine
 PORTVERSION=	2.4.1.2
 PORTREVISION=	1

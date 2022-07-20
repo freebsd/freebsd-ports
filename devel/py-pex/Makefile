@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	pex
 PORTVERSION=	1.2.7
 CATEGORIES=	devel python

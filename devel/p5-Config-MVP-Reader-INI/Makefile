@@ -1,5 +1,3 @@
-# Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-
 PORTNAME=	Config-MVP-Reader-INI
 PORTVERSION=	2.101463
 CATEGORIES=	devel perl5

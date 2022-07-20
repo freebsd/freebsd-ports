@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	capstone
 PORTVERSION=	4.0.2
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	Devel-Constants
 PORTVERSION=	1.04
 CATEGORIES=	devel perl5

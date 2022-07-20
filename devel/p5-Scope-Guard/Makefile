@@ -1,5 +1,3 @@
-# Created by: Craig Manley
-
 PORTNAME=	Scope-Guard
 PORTVERSION=	0.21
 CATEGORIES=	devel perl5

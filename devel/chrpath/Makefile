@@ -1,5 +1,3 @@
-# Created by: bms
-
 PORTNAME=	chrpath
 PORTVERSION=	0.16
 CATEGORIES=	devel sysutils

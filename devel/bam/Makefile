@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	bam
 PORTVERSION=	0.4.0
 CATEGORIES=	devel

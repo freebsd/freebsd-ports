@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gsettings-desktop-schemas
 DISTVERSION=	42.0
 CATEGORIES=	devel gnome

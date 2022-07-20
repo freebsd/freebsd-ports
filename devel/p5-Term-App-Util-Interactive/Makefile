@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Term-App-Util-Interactive
 PORTVERSION=	0.002
 CATEGORIES=	devel perl5

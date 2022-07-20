@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	libmsiecf
 DISTVERSION=	alpha-20210420
 CATEGORIES=	devel

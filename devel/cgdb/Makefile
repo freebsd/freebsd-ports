@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	cgdb
 DISTVERSION=	0.8.0
 CATEGORIES=	devel

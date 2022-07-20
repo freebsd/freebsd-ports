@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytype
 PORTVERSION=	2022.1.7
 CATEGORIES=	devel python

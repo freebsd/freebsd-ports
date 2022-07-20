@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Time-ParseDate
 PORTVERSION=	2015.103
 CATEGORIES=	devel perl5

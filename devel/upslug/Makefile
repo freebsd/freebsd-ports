@@ -1,5 +1,3 @@
-# Created by: Bruce M. Simpson <bms@FreeBSD.org>
-
 PORTNAME=	upslug
 PORTVERSION=	2.11
 CATEGORIES=	devel

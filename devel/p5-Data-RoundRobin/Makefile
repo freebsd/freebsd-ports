@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-
 PORTNAME=	Data-RoundRobin
 PORTVERSION=	0.03
 PORTREVISION=	1

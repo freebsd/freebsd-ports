@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@geeksrus.net>
-
 PORTNAME=	var
 PORTVERSION=	1.1.3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	MooseX-Async
 PORTVERSION=	0.07
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Git-Repository
 PORTVERSION=	1.325
 CATEGORIES=	devel perl5

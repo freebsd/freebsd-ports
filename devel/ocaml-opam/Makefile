@@ -1,5 +1,3 @@
-# Created by: J. Giovannangeli
-
 PORTNAME=	opam
 PORTVERSION=	2.1.2
 CATEGORIES=	devel

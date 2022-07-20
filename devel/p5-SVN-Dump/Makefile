@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	SVN-Dump
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

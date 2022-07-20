@@ -1,5 +1,3 @@
-# Created by: Dryice Liu <dryice@dryice.name>
-
 PORTNAME=	nose
 PORTVERSION=	1.3.7
 PORTREVISION=	1

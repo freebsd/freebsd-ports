@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	celluloid-io
 PORTVERSION=	0.17.3
 CATEGORIES=	devel rubygems

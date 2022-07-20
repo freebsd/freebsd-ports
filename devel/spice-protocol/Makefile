@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	spice-protocol
 PORTVERSION=	0.14.4
 CATEGORIES=	devel

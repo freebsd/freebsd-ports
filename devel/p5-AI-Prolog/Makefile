@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	AI-Prolog
 PORTVERSION=	0.741
 PORTREVISION=	1

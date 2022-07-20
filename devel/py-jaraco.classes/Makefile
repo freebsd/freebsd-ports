@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	jaraco.classes
 PORTVERSION=	3.2.2
 CATEGORIES=	devel python

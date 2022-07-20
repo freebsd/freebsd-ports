@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	Structures_DataGrid_Renderer_Console
 PORTVERSION=	0.1.1
 CATEGORIES=	devel www pear

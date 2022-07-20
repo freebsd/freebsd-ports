@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Decision-ACL
 PORTVERSION=	0.02
 PORTREVISION=	1

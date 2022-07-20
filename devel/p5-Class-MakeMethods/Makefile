@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Class-MakeMethods
 PORTVERSION=	1.010
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	libgsf
 PORTVERSION=	1.14.49
 CATEGORIES=	devel

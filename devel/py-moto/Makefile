@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	moto
 PORTVERSION=	3.1.16
 CATEGORIES=	devel python

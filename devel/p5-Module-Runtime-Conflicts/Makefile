@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Module-Runtime-Conflicts
 PORTVERSION=	0.003
 PORTREVISION=	1

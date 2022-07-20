@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	POE-XS-Queue-Array
 PORTVERSION=	0.006
 PORTREVISION=	1

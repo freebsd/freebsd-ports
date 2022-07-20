@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cucumber-core
 PORTVERSION=	11.0.0
 PORTREVISION=	1

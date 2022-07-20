@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	Unix-Statgrab
 PORTVERSION=	0.112
 CATEGORIES=	devel perl5

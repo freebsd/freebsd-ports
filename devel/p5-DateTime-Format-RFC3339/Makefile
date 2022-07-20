@@ -1,5 +1,3 @@
-# Created by: Dan Rench <citric@cubicone.tmetic.com>
-
 PORTNAME=	DateTime-Format-RFC3339
 PORTVERSION=	1.0.5
 PORTREVISION=	1

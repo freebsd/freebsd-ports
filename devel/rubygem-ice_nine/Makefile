@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	ice_nine
 PORTVERSION=	0.11.2
 CATEGORIES=	devel rubygems

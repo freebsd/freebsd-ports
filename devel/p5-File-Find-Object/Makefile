@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	File-Find-Object
 PORTVERSION=	0.3.2
 DISTVERSIONPREFIX=	v

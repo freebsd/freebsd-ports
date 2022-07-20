@@ -1,5 +1,3 @@
-# Created by: is grammatically incorrect in this context.
-
 PORTNAME=	ptmalloc2
 PORTVERSION=	20060605
 PORTREVISION=	3

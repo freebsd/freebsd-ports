@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	JSON-RPC-Dispatcher
 PORTVERSION=	0.0508
 CATEGORIES=	devel perl5

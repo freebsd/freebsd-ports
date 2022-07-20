@@ -1,5 +1,3 @@
-# Created by: nils@guru.ims.uni-stuttgart.de
-
 PORTNAME=	dmake
 PORTVERSION=	4.13.1
 DISTVERSIONPREFIX=	v

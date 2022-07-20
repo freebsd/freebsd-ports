@@ -1,5 +1,3 @@
-# Created by: Henrik Motakef <henrik.motakef@web.de>
-
 PORTNAME=	port
 PORTVERSION=	2002.10.02.1
 PORTREVISION=	71

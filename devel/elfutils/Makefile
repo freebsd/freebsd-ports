@@ -1,5 +1,3 @@
-# Created by: Conrad Meyer <cem@FreeBSD.org>
-
 PORTNAME=	elfutils
 DISTVERSION=	0.187
 CATEGORIES=	devel

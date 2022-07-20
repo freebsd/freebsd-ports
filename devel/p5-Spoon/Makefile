@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Spoon
 PORTVERSION=	0.24
 PORTREVISION=	2

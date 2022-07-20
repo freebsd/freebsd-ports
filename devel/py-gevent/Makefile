@@ -1,5 +1,3 @@
-# Created by: Peter Schuller <peter.schuller@infidyne.com>
-
 PORTNAME=	gevent
 PORTVERSION=	21.12.0
 CATEGORIES=	devel python

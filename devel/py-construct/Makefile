@@ -1,5 +1,3 @@
-# Created by: Piotr Florczyk <p.florczyk@adminworkshop.pl>
-
 PORTNAME=	construct
 PORTVERSION=	2.10.68
 PORTEPOCH=	1

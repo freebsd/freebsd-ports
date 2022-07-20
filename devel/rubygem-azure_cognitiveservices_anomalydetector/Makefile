@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_cognitiveservices_anomalydetector
 PORTVERSION=	0.17.1
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Tree-Node
 PORTVERSION=	0.08
 PORTREVISION=	2

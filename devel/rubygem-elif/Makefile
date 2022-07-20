@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	elif
 PORTVERSION=	0.1.0
 CATEGORIES=	devel rubygems

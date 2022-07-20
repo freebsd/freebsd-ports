@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	Devel-Backtrace
 PORTVERSION=	0.12
 PORTREVISION=	2

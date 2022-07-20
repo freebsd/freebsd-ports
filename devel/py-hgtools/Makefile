@@ -1,5 +1,3 @@
-# Created by: William Grzybowski
-
 PORTNAME=	hgtools
 PORTVERSION=	6.3
 CATEGORIES=	devel python

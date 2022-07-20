@@ -1,5 +1,3 @@
-# Created by: stas
-
 COMMENT=	Garbage collection and memory leak detection for C and C++ with malloc redirection
 
 MASTERDIR=	${.CURDIR}/../boehm-gc

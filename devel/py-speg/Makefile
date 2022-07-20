@@ -1,5 +1,3 @@
-# Created by: Nicola Stanislao Vitale <nivit@FreeBSD:org>
-
 PORTNAME=	speg
 DISTVERSION=	0.3
 CATEGORIES=	devel python

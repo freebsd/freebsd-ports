@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	rote
 PORTVERSION=	0.2.8
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	ruby-magic
 PORTVERSION=	0.5.4
 CATEGORIES=	devel rubygems

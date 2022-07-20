@@ -1,5 +1,3 @@
-# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-
 PORTNAME=	List-Uniq
 PORTVERSION=	0.20
 PORTREVISION=	1

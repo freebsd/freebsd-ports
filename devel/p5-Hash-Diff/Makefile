@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	Hash-Diff
 PORTVERSION=	0.007
 CATEGORIES=	devel perl5

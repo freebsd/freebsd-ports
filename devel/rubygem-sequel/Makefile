@@ -1,5 +1,3 @@
-# Created by: Wen Heping<wenheping@gmail.com>
-
 PORTNAME=	sequel
 PORTVERSION=	5.58.0
 CATEGORIES=	devel rubygems

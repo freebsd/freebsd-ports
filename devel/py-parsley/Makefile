@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	parsley
 PORTVERSION=	1.3
 CATEGORIES=	devel python

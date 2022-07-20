@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure_mgmt_iot_hub
 PORTVERSION=	0.17.5
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni <giffunip@asme.org>
-
 PORTNAME=	tnt
 PORTVERSION=	1.2.6
 CATEGORIES=	devel math

@@ -1,5 +1,3 @@
-# Created by: Fukang Chen <loader@FreeBSD.org>
-
 PORTNAME=	semantic-version
 PORTVERSION=	2.10.0
 MASTER_SITES=	CHEESESHOP

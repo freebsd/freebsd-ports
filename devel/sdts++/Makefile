@@ -1,5 +1,3 @@
-# Created by: erik@habatech.no
-
 PORTNAME=	sdts++
 PORTVERSION=	1.5.1
 PORTREVISION=	20

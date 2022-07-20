@@ -1,5 +1,3 @@
-# Created by: Sergey Matveychuk <sem@ciam.ru>
-
 PORTNAME=	argp-standalone
 DISTVERSION=	1.5.0
 CATEGORIES=	devel

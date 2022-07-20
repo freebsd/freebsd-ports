@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	pika-pool
 PORTVERSION=	0.1.3
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	System2
 PORTVERSION=	0.84
 PORTREVISION=	1

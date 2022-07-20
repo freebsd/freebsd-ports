@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	ExtUtils-MakeMaker
 PORTVERSION=	7.64
 CATEGORIES=	devel perl5

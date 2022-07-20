@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pathos
 PORTVERSION=	0.2.8
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	sundawg_country_codes
 PORTVERSION=	0.0.7
 CATEGORIES=	devel rubygems

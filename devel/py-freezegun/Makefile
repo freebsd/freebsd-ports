@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	freezegun
 PORTVERSION=	1.2.1
 CATEGORIES=	devel python

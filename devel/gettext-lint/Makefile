@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gettext-lint
 PORTVERSION=	0.4
 PORTREVISION=	4

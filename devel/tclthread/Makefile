@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	thread
 PORTVERSION=	2.8.7
 PORTREVISION=	0

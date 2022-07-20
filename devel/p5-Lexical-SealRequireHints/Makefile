@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Lexical-SealRequireHints
 PORTVERSION=	0.011
 CATEGORIES=	devel perl5

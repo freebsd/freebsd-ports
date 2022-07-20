@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	InlineX-CPP2XS
 PORTVERSION=	0.25
 CATEGORIES=	devel perl5

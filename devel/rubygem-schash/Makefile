@@ -1,5 +1,3 @@
-# Created by: Yuichiro NAITO <naito.yuichiro@gmail.com>
-
 PORTNAME=	schash
 PORTVERSION=	0.1.2
 CATEGORIES=	devel rubygems

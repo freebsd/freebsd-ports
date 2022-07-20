@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Time-Elapsed
 PORTVERSION=	0.33
 CATEGORIES=	devel perl5

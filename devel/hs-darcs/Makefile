@@ -1,5 +1,3 @@
-# Created by: Oliver Braun <obraun@FreeBSD.org>
-
 PORTNAME=	darcs
 PORTVERSION=	2.16.5
 PORTREVISION=	2

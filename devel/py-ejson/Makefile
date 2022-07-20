@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ejson
 PORTVERSION=	0.1.6
 CATEGORIES=	devel python

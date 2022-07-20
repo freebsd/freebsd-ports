@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	Module-ScanDeps
 PORTVERSION=	1.31
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Config-Auto
 PORTVERSION=	0.44
 PORTREVISION=	1

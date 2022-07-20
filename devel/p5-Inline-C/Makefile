@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Inline-C
 PORTVERSION=	0.82
 CATEGORIES=	devel perl5

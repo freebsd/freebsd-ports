@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Class-Accessor-Grouped
 PORTVERSION=	0.10014
 CATEGORIES=	devel perl5

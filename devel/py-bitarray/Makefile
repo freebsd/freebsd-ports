@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbrabez@gmail.com>
-
 PORTNAME=	bitarray
 PORTVERSION=	2.5.1
 CATEGORIES=	devel python

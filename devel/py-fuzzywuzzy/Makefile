@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	fuzzywuzzy
 PORTVERSION=	0.18.0
 CATEGORIES=	devel python

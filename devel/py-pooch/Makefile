@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pooch
 PORTVERSION=	1.6.0
 PORTREVISION=	1

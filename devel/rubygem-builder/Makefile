@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	builder
 PORTVERSION=	3.2.4
 CATEGORIES=	devel rubygems

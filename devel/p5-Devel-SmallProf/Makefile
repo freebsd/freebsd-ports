@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Devel-SmallProf
 PORTVERSION=	2.02
 PORTREVISION=	2

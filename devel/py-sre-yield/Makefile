@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sre-yield
 PORTVERSION=	1.2
 CATEGORIES=	devel python

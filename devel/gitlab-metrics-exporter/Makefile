@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	gitlab-metrics-exporter
 PORTVERSION=	0.1.1
 PORTREVISION=	2

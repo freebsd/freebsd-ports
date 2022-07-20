@@ -1,5 +1,3 @@
-# Created by: osa
-
 PORTNAME=	cjson
 PORTVERSION=	2.1.0
 PORTREVISION=	1

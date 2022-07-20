@@ -1,5 +1,3 @@
-# Created by: Frederic Praca <frederic.praca@freebsd-fr.org>
-
 PORTNAME=	buildbot-worker
 PORTVERSION=	3.5.0
 PORTREVISION=	2

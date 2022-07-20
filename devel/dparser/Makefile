@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	dparser
 PORTVERSION=	1.33
 DISTVERSIONPREFIX=	v

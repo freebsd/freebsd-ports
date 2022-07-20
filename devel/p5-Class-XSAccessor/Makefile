@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Class-XSAccessor
 PORTVERSION=	1.19
 PORTREVISION=	2

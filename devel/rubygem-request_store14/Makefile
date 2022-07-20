@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	request_store
 PORTVERSION=	1.4.1
 CATEGORIES=	devel rubygems

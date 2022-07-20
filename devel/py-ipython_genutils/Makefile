@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	ipython_genutils
 PORTVERSION=	0.2.0
 CATEGORIES=	devel python

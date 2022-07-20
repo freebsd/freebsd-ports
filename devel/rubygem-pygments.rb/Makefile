@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	pygments.rb
 PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems

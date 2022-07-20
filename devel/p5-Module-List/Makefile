@@ -1,5 +1,3 @@
-# Created by: Oleg A. Mamontov <oleg@mamontov.net>
-
 PORTNAME=	Module-List
 PORTVERSION=	0.004
 CATEGORIES=	devel perl5

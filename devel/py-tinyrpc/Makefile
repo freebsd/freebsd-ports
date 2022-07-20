@@ -1,5 +1,3 @@
-# Created by: dpejesh@yahoo.com
-
 PORTNAME=	tinyrpc
 PORTVERSION=	1.1.5
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: mwest@uct.ac.za
-
 PORTNAME=	glui
 PORTVERSION=	2.36
 PORTREVISION=	6

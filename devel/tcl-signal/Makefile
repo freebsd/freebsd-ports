@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	tcl-signal
 PORTVERSION=	1.4.0.1
 CATEGORIES=	devel

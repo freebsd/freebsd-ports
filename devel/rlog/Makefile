@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	rlog
 PORTVERSION=	1.4
 PORTREVISION=	3

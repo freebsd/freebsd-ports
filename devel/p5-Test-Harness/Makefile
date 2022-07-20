@@ -1,5 +1,3 @@
-# Created by: Shell Hung <shell@shellhung.org>
-
 PORTNAME=	Test-Harness
 PORTVERSION=	3.44
 CATEGORIES=	devel perl5

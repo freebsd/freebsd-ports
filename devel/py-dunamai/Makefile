@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	dunamai
 PORTVERSION=	1.12.0
 CATEGORIES=	devel python

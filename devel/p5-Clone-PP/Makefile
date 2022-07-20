@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Clone-PP
 PORTVERSION=	1.08
 CATEGORIES=	devel perl5

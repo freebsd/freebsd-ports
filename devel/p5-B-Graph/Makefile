@@ -1,5 +1,3 @@
-# Created by: Leo Kim <leo@florida.sarang.net>
-
 PORTNAME=	B-Graph
 PORTVERSION=	0.51
 PORTREVISION=	1

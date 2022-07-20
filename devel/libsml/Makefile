@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <mail+freebsd@gerritbeine.de>
-
 PORTNAME=	libsml
 PORTVERSION=	0.1.1
 PORTREVISION=	1

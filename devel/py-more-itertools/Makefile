@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	more-itertools
 PORTVERSION=	8.13.0
 CATEGORIES=	devel python

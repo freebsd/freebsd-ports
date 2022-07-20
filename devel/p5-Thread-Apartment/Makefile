@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Thread-Apartment
 PORTVERSION=	0.51
 PORTREVISION=	1

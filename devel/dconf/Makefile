@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	dconf
 PORTVERSION=	0.40.0
 PORTREVISION=	3

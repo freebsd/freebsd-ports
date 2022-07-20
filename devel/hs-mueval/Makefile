@@ -1,5 +1,3 @@
-# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-
 PORTNAME=	mueval
 PORTVERSION=	0.9.3
 PORTREVISION=	12

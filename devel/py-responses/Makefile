@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	responses
 PORTVERSION=	0.21.0
 CATEGORIES=	devel www python

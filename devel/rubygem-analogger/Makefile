@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	analogger
 PORTVERSION=	0.9.3
 CATEGORIES=	devel rubygems

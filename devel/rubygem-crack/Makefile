@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	crack
 PORTVERSION=	0.4.5
 CATEGORIES=	devel rubygems

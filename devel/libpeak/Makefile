@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libpeak
 PORTVERSION=	0.1.2
 PORTREVISION=	2

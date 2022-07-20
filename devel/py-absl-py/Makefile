@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	absl-py
 PORTVERSION=	1.1.0
 CATEGORIES=	devel python

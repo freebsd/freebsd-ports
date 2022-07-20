@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	python-json-logger
 PORTVERSION=	2.0.4
 CATEGORIES=	devel python

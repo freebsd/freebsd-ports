@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	DateTime-Format-RSS
 PORTVERSION=	0.03000
 PORTREVISION=	1

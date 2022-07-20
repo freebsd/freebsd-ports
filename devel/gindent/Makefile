@@ -1,5 +1,3 @@
-# Created by: Kapil Chowksey <kchowksey@hss.hns.com>
-
 PORTNAME=	gindent
 DISTVERSION=	2.2.12
 PORTREVISION=	1

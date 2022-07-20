@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pip-run
 PORTVERSION=	8.8.1
 CATEGORIES=	devel python

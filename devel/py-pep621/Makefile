@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pep621
 PORTVERSION=	0.4.0
 DISTVERSIONSUFFIX=	.post2

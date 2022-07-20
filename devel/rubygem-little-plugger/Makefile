@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
-
 PORTNAME=	little-plugger
 PORTVERSION=	1.1.4
 CATEGORIES=	devel rubygems

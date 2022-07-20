@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Module-Starter-PBP
 PORTVERSION=	0.0.3
 DISTVERSIONPREFIX=	v

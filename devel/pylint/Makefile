@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	pylint
 PORTVERSION=	2.14.5
 CATEGORIES=	devel python

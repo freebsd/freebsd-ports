@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	ExtUtils-XSBuilder
 PORTVERSION=	0.28
 PORTREVISION=	2

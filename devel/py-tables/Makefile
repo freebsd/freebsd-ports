@@ -1,5 +1,3 @@
-# Created by: ijliao@FreeBSD.org
-
 PORTNAME=	tables
 PORTVERSION=	3.7.0
 CATEGORIES=	devel python

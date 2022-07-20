@@ -1,5 +1,3 @@
-# Created by: Landon Fuller <landonf@opendarwin.org>
-
 PORTNAME=	zconfig
 PORTVERSION=	3.0.4
 CATEGORIES=	devel python

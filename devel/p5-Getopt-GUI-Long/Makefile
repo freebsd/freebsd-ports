@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org
-
 PORTNAME=	Getopt-GUI-Long
 PORTVERSION=	0.93
 PORTREVISION=	1

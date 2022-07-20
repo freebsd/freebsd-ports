@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	graphql-docs
 PORTVERSION=	1.6.1
 CATEGORIES=	devel rubygems

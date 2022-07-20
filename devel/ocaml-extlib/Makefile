@@ -1,5 +1,3 @@
-# Created by: mukai
-
 PORTNAME=	extlib
 PORTVERSION=	1.7.5
 CATEGORIES=	devel

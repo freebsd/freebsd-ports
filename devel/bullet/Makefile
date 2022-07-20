@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	bullet
 PORTVERSION=	3.24
 CATEGORIES=	devel

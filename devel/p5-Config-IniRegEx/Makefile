@@ -1,5 +1,3 @@
-# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-
 PORTNAME=	Config-IniRegEx
 PORTVERSION=	0.01
 PORTREVISION=	1

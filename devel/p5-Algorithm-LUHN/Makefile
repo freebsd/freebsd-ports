@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Algorithm-LUHN
 PORTVERSION=	1.02
 CATEGORIES=	devel perl5

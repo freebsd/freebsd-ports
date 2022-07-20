@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Curses-UI
 PORTVERSION=	0.9609
 PORTREVISION=	1

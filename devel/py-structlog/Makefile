@@ -1,5 +1,3 @@
-# Created by: Dave Cottlehuber <dch@skunkwerks.at>
-
 PORTNAME=	structlog
 PORTVERSION=	18.2.0
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@FreeBSD.org>
-
 PORTNAME=	cloudabi-toolchain
 PORTVERSION=	1.11
 PORTREVISION=	2

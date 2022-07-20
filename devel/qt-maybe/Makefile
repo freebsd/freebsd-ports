@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	qt-maybe
 PORTVERSION=	0.0.20151227
 PORTREVISION=	1

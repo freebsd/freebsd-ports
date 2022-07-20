@@ -1,5 +1,3 @@
-# Created by: nork@cityfujisawa.ne.jp
-
 PORTNAME=	IPC-SharedCache
 PORTVERSION=	1.3
 PORTREVISION=	2

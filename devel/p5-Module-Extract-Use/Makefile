@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Module-Extract-Use
 PORTVERSION=	1.051
 CATEGORIES=	devel perl5

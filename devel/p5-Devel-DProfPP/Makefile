@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Devel-DProfPP
 PORTVERSION=	1.3
 PORTREVISION=	1

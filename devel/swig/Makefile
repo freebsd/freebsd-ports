@@ -1,5 +1,3 @@
-# Created by: jkh
-
 PORTNAME=	swig
 PORTVERSION=	4.0.2
 CATEGORIES=	devel

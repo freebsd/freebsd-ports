@@ -1,5 +1,3 @@
-# Created by: "Waitman Gobble" <uzimac@da3m0n8t3r.com>
-
 PORTNAME=	mongo-c-driver
 PORTVERSION=	1.8.1
 CATEGORIES=	devel

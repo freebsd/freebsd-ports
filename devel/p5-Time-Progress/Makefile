@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Time-Progress
 PORTVERSION=	2.12
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Toni Andjelkovic <toni@soth.at>
-
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.9.5
 PORTEPOCH=	2

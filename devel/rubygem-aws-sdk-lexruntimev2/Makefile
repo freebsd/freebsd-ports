@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-lexruntimev2
 PORTVERSION=	1.15.0
 CATEGORIES=	devel rubygems

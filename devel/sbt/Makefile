@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	sbt
 PORTVERSION=	1.7.1
 CATEGORIES=	devel java

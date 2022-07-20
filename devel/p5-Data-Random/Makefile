@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Data-Random
 PORTVERSION=	0.13
 CATEGORIES=	devel perl5

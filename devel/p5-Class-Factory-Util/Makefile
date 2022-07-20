@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	Class-Factory-Util
 PORTVERSION=	1.7
 PORTREVISION=	1

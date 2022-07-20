@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Module-Math-Depends
 PORTVERSION=	0.02
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Dan Rench <citric@cubicone.tmetic.com>
-
 PORTNAME=	indirect
 PORTVERSION=	0.39
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Garrett Rooney <rooneg@electricjellyfish.net>
-
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
 PORTREVISION=	2

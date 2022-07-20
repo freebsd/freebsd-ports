@@ -1,5 +1,3 @@
-# Created by: Armin Pirkovitsch <armin@frozen-zone.org>
-
 PORTNAME=	libg19draw
 PORTVERSION=	1.0.0
 PORTREVISION=	2

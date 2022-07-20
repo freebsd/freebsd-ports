@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	CPS
 PORTVERSION=	0.19
 CATEGORIES=	devel perl5

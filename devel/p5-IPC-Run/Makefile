@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	IPC-Run
 PORTVERSION=	20200505.0
 CATEGORIES=	devel perl5

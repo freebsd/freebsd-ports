@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	rprojroot
 DISTVERSION=	2.0.3
 CATEGORIES=	devel

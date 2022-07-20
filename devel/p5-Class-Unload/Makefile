@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Class-Unload
 PORTVERSION=	0.11
 CATEGORIES=	devel perl5

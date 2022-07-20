@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Data-Serializer-Sereal
 PORTVERSION=	1.05
 CATEGORIES=	devel perl5

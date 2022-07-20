@@ -1,5 +1,3 @@
-# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-
 PORTNAME=	hoogle
 PORTVERSION=	5.0.18.3
 PORTREVISION=	1

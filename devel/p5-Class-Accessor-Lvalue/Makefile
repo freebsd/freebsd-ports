@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Class-Accessor-Lvalue
 PORTVERSION=	0.11
 PORTREVISION=	1

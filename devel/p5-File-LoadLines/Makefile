@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	File-LoadLines
 PORTVERSION=	1.021
 CATEGORIES=	devel perl5

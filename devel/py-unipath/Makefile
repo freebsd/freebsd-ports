@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	Unipath
 PORTVERSION=	1.1
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Test-Object
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

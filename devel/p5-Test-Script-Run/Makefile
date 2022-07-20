@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Test-Script-Run
 PORTVERSION=	0.08
 PORTREVISION=	1

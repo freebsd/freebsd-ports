@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Log-Dispatch-Dir
 PORTVERSION=	0.160
 CATEGORIES=	devel perl5

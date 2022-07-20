@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Tree-Binary-Dictionary
 PORTVERSION=	1.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Test-CleanNamespaces
 PORTVERSION=	0.24
 CATEGORIES=	devel perl5

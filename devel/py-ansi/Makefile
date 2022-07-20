@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ansi
 PORTVERSION=	0.3.6
 CATEGORIES=	devel python

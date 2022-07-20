@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	Data-HashArray
 PORTVERSION=	1.03
 CATEGORIES=	devel perl5

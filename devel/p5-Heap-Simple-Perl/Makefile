@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Heap-Simple-Perl
 PORTVERSION=	0.14
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold
-
 PORTNAME=	IO-Pipely
 PORTVERSION=	0.006
 CATEGORIES=	devel perl5

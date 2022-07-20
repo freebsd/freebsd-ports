@@ -1,4 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
 #   $MCom: ports/devel/ndesk-dbus-glib/Makefile,v 1.2 2008/01/14 22:35:41 mezz Exp $
 
 PORTNAME=	ndesk-dbus-glib

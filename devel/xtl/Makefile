@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	xtl
 PORTVERSION=	1.4.2
 CATEGORIES=	devel

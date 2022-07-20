@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MetaCPAN-Client
 PORTVERSION=	2.029000
 CATEGORIES=	devel perl5

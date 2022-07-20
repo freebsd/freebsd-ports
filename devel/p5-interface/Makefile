@@ -1,5 +1,3 @@
-# Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
-
 PORTNAME=	interface
 PORTVERSION=	0.03
 PORTREVISION=	1

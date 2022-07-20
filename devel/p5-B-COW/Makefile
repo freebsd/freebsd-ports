@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	B-COW
 PORTVERSION=	0.004
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	olefile
 PORTVERSION=	0.46
 CATEGORIES=	devel python

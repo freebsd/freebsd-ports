@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Tie-Hash-Regex
 PORTVERSION=	1.14
 CATEGORIES=	devel perl5

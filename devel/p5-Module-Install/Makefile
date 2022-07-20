@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Module-Install
 PORTVERSION=	1.19
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: skreuzer@FreeBSD.org
-
 PORTNAME=	zookeeper
 PORTVERSION=	3.8.0
 CATEGORIES=	devel

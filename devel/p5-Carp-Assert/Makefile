@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Carp-Assert
 PORTVERSION=	0.21
 PORTREVISION=	2

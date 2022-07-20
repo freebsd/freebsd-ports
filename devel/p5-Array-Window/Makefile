@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Array-Window
 PORTVERSION=	1.02
 PORTREVISION=	1

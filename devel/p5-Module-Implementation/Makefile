@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Module-Implementation
 PORTVERSION=	0.09
 PORTREVISION=	1

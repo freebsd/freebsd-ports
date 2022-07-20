@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-jquery-migrate
 PORTVERSION=	3.3.2.1
 CATEGORIES=	devel python

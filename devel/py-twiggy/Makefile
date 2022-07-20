@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	twiggy
 PORTVERSION=	0.5.1
 CATEGORIES=	devel python

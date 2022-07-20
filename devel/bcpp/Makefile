@@ -1,5 +1,3 @@
-# Created by: Mike Buchanon <buchanon@msu.edu>
-
 PORTNAME=	bcpp
 PORTVERSION=	20210108
 CATEGORIES=	devel

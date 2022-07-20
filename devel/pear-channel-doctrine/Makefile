@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	doctrine
 PORTVERSION=	20130618
 CATEGORIES=	devel www pear

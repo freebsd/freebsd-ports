@@ -1,5 +1,3 @@
-# Created by: Nikos Ntarmos <ntarmos@ceid.upatras.gr>
-
 PORTNAME=	libconfig
 PORTVERSION=	1.7.3
 CATEGORIES=	devel

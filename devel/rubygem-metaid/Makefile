@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	metaid
 PORTVERSION=	1.0
 CATEGORIES=	devel rubygems

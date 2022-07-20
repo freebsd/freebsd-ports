@@ -1,5 +1,3 @@
-# Created by: Anatoliy Dmytriyev
-
 PORTNAME=	Heap
 PORTVERSION=	0.80
 PORTREVISION=	1

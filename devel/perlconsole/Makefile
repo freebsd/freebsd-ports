@@ -1,5 +1,3 @@
-# Created by: Philippe Audeoud <jadawin@tuxaco.net>
-
 PORTNAME=	perlconsole
 PORTVERSION=	0.4
 PORTREVISION=	2

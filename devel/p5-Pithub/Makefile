@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Pithub
 PORTVERSION=	0.01036
 CATEGORIES=	devel

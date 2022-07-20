@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	fabric3
 DISTVERSION=	1.14
 DISTVERSIONSUFFIX=	.post1

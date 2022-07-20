@@ -1,5 +1,3 @@
-# Created by: Felix Hanley
-
 PORTNAME=	capnproto
 DISTVERSION=	0.10.1
 CATEGORIES=	devel

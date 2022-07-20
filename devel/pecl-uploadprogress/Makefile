@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	uploadprogress
 DISTVERSION=	1.1.3
 CATEGORIES=	devel pear

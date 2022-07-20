@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-mdi
 PORTVERSION=	1.6.50.2
 CATEGORIES=	devel python

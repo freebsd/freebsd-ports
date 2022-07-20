@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	parver
 PORTVERSION=	0.3.1
 PORTREVISION=	1

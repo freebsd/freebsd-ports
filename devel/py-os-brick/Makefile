@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	os-brick
 PORTVERSION=	5.2.1
 CATEGORIES=	devel python

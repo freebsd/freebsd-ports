@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	Stream-Reader
 PORTVERSION=	0.09
 PORTREVISION=	1

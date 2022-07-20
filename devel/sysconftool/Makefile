@@ -1,5 +1,3 @@
-# Created by: Yarema <yds@CoolRat.org>
-
 PORTNAME=	sysconftool
 PORTVERSION=	0.19
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Hash-Merge-Simple
 PORTVERSION=	0.051
 PORTREVISION=	5

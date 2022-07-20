@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	xfce4-dev-tools
 PORTVERSION=	4.16.0
 CATEGORIES=	devel xfce

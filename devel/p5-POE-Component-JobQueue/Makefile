@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-JobQueue
 PORTVERSION=	0.5710
 PORTREVISION=	1

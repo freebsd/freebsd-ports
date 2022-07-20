@@ -1,5 +1,3 @@
-# Created by: Phil Oleson <oz@nixil.net>
-
 PORTNAME=	libdnsres
 PORTVERSION=	0.1a
 PORTREVISION=	10

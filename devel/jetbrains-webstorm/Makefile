@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <pfg@FreeBSD.org>
-
 PORTNAME=	webstorm
 PORTVERSION=	2022.1.2
 CATEGORIES=	devel java

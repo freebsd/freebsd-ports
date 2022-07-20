@@ -1,5 +1,3 @@
-# Created by: meka
-
 PORTNAME=	serd
 PORTVERSION=	0.30.12
 CATEGORIES=	devel

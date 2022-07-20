@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Sub-Multi
 PORTVERSION=	0.003
 PORTREVISION=	1

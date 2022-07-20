@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	pycerberus
 PORTVERSION=	0.6
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Env-PS1
 PORTVERSION=	0.06
 PORTREVISION=	1

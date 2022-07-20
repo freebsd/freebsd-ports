@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MCE-Shared
 PORTVERSION=	1.877
 CATEGORIES=	devel perl5

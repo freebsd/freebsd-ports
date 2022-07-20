@@ -1,5 +1,3 @@
-# Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-
 PORTNAME=	rotp
 PORTVERSION=	6.2.0
 CATEGORIES=	devel rubygems

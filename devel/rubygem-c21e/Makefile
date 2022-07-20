@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	c21e
 PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems

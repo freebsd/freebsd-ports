@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	check-manifest
 PORTVERSION=	0.48
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: jeffhung
-
 PORTNAME=	Class-OOorNO
 PORTVERSION=	0.011
 PORTREVISION=	1

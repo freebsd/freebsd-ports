@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@exit2shell.com>
-
 PORTNAME=	Data-Validate
 PORTVERSION=	0.09
 PORTREVISION=	1

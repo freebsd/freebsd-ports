@@ -1,5 +1,3 @@
-# Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-
 PORTNAME=	sidetiq
 PORTVERSION=	0.7.2
 PORTREVISION=	1

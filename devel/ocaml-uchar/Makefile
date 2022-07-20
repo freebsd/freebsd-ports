@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	uchar
 PORTVERSION=	0.0.2
 DISTVERSIONPREFIX=	v

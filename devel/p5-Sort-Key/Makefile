@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Sort-Key
 PORTVERSION=	1.33
 PORTREVISION=	1

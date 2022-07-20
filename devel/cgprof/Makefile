@@ -1,5 +1,3 @@
-# Created by: Adam McLaurin
-
 PORTNAME=	cgprof
 PORTVERSION=	1.2
 PORTREVISION=	4

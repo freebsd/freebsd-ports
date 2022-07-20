@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime-Event-Recurrence
 PORTVERSION=	0.19
 CATEGORIES=	devel perl5

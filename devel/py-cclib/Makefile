@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	cclib
 PORTVERSION=	1.7.1
 DISTVERSIONPREFIX=	v

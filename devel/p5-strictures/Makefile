@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	strictures
 PORTVERSION=	2.000006
 PORTEPOCH=	1

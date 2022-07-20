@@ -1,5 +1,3 @@
-# Created by: Vladimir Kondratiev <wulf@mail.mipt.ru>
-
 PORTNAME=	debugger-xml
 PORTVERSION=	0.4.1
 PORTREVISION=	1

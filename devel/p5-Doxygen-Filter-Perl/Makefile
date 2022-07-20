@@ -1,5 +1,3 @@
-# Created by: Sergey Golyashov <svvord@soft-wizard.ru>
-
 PORTNAME=	Doxygen-Filter-Perl
 PORTVERSION=	1.61
 PORTREVISION=	1

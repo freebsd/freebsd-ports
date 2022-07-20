@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	jsond
 DISTVERSION=	1.4.0
 CATEGORIES=	devel

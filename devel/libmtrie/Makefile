@@ -1,5 +1,3 @@
-# Created by: alfred@FreeBSD.org
-
 PORTNAME=	libmtrie
 PORTVERSION=	1.0.3
 CATEGORIES=	devel

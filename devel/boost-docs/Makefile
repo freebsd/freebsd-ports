@@ -1,5 +1,3 @@
-# Created by: Alexander Churanov <churanov.port.maintainer@gmail.com>
-
 PORTNAME=	boost-docs
 COMMENT=	Documentation for libraries from boost.org
 

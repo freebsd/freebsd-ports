@@ -1,5 +1,3 @@
-# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-
 PORTNAME=	simplejson
 PORTVERSION=	3.17.6
 CATEGORIES=	devel python

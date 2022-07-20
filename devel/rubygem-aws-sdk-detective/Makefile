@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-detective
 PORTVERSION=	1.28.0
 CATEGORIES=	devel rubygems

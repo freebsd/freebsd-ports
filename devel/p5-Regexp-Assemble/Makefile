@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	Regexp-Assemble
 PORTVERSION=	0.38
 CATEGORIES=	devel perl5

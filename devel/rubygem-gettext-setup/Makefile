@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	gettext-setup
 PORTVERSION=	0.34
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	POE-Component-TSTP
 PORTVERSION=	0.02
 PORTREVISION=	1

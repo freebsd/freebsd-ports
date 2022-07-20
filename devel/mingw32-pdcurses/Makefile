@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@fxq.nl>
-
 PORTNAME=	pdcurses
 PORTVERSION=	3.4
 PORTREVISION=	2

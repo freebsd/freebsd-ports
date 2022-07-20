@@ -1,5 +1,3 @@
-# Created by: Terry Sposato <terry@sucked-in.com>
-
 PORTNAME=	Sys-CPU
 PORTVERSION=	0.61
 CATEGORIES=	devel perl5

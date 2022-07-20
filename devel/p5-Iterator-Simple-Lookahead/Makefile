@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Iterator-Simple-Lookahead
 PORTVERSION=	0.09
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Johnny Sorocil <jsorocil@gmail.com>
-
 PORTNAME=	icestorm
 PORTVERSION=	g20190526
 PORTREVISION=	3

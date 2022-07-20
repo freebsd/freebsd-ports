@@ -1,4 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
 #
 PORTNAME=	thor
 PORTVERSION=	1.0.1

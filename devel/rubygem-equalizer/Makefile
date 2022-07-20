@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	equalizer
 PORTVERSION=	0.0.11
 CATEGORIES=	devel rubygems

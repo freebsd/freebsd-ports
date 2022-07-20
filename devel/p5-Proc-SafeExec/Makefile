@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
-
 PORTNAME=	Proc-SafeExec
 PORTVERSION=	1.5
 PORTREVISION=	1

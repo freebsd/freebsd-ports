@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-backup
 PORTVERSION=	1.45.0
 CATEGORIES=	devel rubygems

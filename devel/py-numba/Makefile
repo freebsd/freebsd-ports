@@ -1,5 +1,3 @@
-# Created by: David Kalliecharan <dave@dal.ca>
-
 PORTNAME=	numba
 DISTVERSION=	0.51.2
 CATEGORIES=	devel python

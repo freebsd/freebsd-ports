@@ -1,5 +1,3 @@
-# Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
-
 PORTNAME=	libaura
 PORTVERSION=	3.1.20051222
 CATEGORIES=	devel

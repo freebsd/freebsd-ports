@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Test2-Plugin-IOEvents
 PORTVERSION=	0.001001
 PORTREVISION=	1

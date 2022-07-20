@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	smmap
 PORTVERSION=	5.0.0
 CATEGORIES=	devel python

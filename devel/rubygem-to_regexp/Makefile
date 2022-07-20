@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	to_regexp
 PORTVERSION=	0.2.1
 CATEGORIES=	devel rubygems

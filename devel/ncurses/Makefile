@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	ncurses
 DISTVERSION=	6.3
 CATEGORIES=	devel

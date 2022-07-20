@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Time-Out
 PORTVERSION=	0.11
 PORTREVISION=	1

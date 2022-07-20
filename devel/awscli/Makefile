@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	awscli
 PORTVERSION=	1.20.61
 CATEGORIES=	devel

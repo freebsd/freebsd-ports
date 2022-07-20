@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold
-
 PORTNAME=	DateTime-Format-Strptime
 PORTVERSION=	1.79
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	libsigrok
 PORTVERSION=	0.5.2
 CATEGORIES=	devel

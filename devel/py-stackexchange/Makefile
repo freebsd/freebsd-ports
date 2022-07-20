@@ -1,5 +1,3 @@
-# Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-
 PORTNAME=	stackexchange
 PORTVERSION=	2.2.7
 CATEGORIES=	devel python

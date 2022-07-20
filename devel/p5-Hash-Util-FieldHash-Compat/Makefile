@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Hash-Util-FieldHash-Compat
 PORTVERSION=	0.11
 CATEGORIES=	devel perl5

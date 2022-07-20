@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fixtures
 PORTVERSION=	4.0.1
 CATEGORIES=	devel python

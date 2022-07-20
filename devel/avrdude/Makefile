@@ -1,5 +1,3 @@
-# Created by: Brian Dean <bsd@FreeBSD.org>
-
 PORTNAME=	avrdude
 PORTVERSION=	7.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	term-ansicolor
 PORTVERSION=	1.7.1
 CATEGORIES=	devel ruby

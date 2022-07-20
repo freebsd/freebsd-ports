@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-
 PORTNAME=	SVN-Agent
 PORTVERSION=	0.04
 PORTREVISION=	3

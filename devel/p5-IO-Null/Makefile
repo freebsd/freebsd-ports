@@ -1,5 +1,3 @@
-# Created by: Rouslan Iskhakov <rouslan@rshell.net>
-
 PORTNAME=	IO-Null
 PORTVERSION=	1.01
 PORTREVISION=	1

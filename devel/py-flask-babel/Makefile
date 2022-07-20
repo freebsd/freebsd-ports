@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-
 PORTNAME=	flask-babel
 PORTVERSION=	1.0.0
 PORTREVISION=	1

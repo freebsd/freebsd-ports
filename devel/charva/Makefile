@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	charva
 PORTVERSION=	1.1.4
 PORTREVISION=	6

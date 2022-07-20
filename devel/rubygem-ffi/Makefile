@@ -1,5 +1,3 @@
-# Created by: Christoph Kick
-
 PORTNAME=	ffi
 PORTVERSION=	1.15.5
 PORTREVISION=	1

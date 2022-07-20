@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	paexec
 PORTVERSION=	1.1.4
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	gradle
 PORTVERSION=	6.2.2
 PORTREVISION=	1

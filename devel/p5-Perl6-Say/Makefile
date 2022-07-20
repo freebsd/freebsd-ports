@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Perl6-Say
 PORTVERSION=	0.16
 PORTREVISION=	1

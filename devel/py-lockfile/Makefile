@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	lockfile
 PORTVERSION=	0.12.2
 CATEGORIES=	devel python

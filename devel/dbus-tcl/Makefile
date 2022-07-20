@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	dbus-tcl
 PORTVERSION=	2.2
 PORTREVISION=	0

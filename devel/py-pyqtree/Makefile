@@ -1,5 +1,3 @@
-# Created by: Loïc BARTOLETTI <lbartoletti@FreeBSD.org>
-
 PORTNAME=	pyqtree
 PORTVERSION=	0.24
 CATEGORIES=	devel python geography

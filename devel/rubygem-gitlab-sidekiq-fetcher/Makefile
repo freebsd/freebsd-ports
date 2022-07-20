@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	gitlab-sidekiq-fetcher
 PORTVERSION=	0.8.0
 PORTREVISION=	1

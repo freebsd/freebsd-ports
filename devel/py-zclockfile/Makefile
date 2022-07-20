@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	zclockfile
 DISTVERSION=	2.0
 CATEGORIES=	devel python

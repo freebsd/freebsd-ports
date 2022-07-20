@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	spring
 PORTVERSION=	4.0.0
 CATEGORIES=	devel rubygems

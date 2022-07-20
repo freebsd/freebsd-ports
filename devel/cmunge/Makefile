@@ -1,5 +1,3 @@
-# Created by: Frerich Raabe <frerich.raabe@gmx.de>
-
 PORTNAME=	cmunge
 PORTVERSION=	1.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Luke Jee <lukejee@gmail.com>
-
 PORTNAME=	gvp
 PORTVERSION=	0.3.0
 DISTVERSIONPREFIX=	v

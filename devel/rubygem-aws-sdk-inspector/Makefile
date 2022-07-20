@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-inspector
 PORTVERSION=	1.43.0
 CATEGORIES=	devel rubygems

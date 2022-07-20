@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	pudb
 PORTVERSION=	2022.1.1
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pre-commit-hooks
 PORTVERSION=	4.3.0
 CATEGORIES=	devel python

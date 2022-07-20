@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	UUID
 PORTVERSION=	0.28
 CATEGORIES=	devel perl5

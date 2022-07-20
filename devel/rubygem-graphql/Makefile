@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	graphql
 PORTVERSION=	1.13.13
 CATEGORIES=	devel rubygems

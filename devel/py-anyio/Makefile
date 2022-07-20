@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	anyio
 PORTVERSION=	3.6.1
 CATEGORIES=	devel python

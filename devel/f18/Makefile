@@ -1,5 +1,3 @@
-# Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	f18
 DISTVERSION=	g20191019
 PORTREVISION=	1

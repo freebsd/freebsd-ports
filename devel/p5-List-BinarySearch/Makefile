@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	List-BinarySearch
 PORTVERSION=	0.25
 CATEGORIES=	devel perl5

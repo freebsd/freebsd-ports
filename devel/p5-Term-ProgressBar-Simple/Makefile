@@ -1,5 +1,3 @@
-# Created by: adamw
-
 PORTNAME=	Term-ProgressBar-Simple
 PORTVERSION=	0.03
 PORTREVISION=	1

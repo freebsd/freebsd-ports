@@ -1,5 +1,3 @@
-# Created by: Felix Palmen <felix@palmen-it.de>
-
 PORTNAME=	simavr
 PORTVERSION=	1.7
 DISTVERSIONPREFIX=	v

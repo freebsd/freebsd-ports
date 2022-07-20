@@ -1,5 +1,3 @@
-# Created by: Andrew Baznikin <dikiy@scn.ru>
-
 PORTNAME=	raknet
 PORTVERSION=	3.9.2
 PORTREVISION=	10

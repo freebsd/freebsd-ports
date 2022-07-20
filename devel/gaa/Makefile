@@ -1,5 +1,3 @@
-# Created by: Dima Sivachenko <dima@chg.ru>
-
 PORTNAME=	gaa
 PORTVERSION=	1.6.6
 CATEGORIES=	devel

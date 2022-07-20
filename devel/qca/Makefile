@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-
 PORTNAME=	qca
 DISTVERSION=	2.3.4
 CATEGORIES=	devel

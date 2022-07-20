@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Thread-Queue
 PORTVERSION=	3.13
 CATEGORIES=	devel perl5

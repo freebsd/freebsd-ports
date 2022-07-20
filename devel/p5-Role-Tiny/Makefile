@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Role-Tiny
 PORTVERSION=	2.002004
 CATEGORIES=	devel perl5

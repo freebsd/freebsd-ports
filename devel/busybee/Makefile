@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=		busybee
 PORTVERSION=		0.7.0
 DISTVERSIONPREFIX=	releases/

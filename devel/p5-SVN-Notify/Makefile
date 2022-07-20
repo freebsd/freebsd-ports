@@ -1,5 +1,3 @@
-# Created by: dom@happygiraffe.net
-
 PORTNAME=	SVN-Notify
 PORTVERSION=	2.87
 CATEGORIES=	devel perl5

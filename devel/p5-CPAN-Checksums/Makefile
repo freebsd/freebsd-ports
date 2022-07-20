@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	CPAN-Checksums
 PORTVERSION=	2.14
 CATEGORIES=	devel perl5

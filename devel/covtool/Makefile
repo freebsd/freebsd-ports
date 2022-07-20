@@ -1,5 +1,3 @@
-# Created by: novator24 <novator24@gmail.com>
-
 PORTNAME=	covtool
 PORTVERSION=	2.1
 PORTREVISION=	10

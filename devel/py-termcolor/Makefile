@@ -1,5 +1,3 @@
-# Created by: Volodymyr Kostyrko <c.kworr@gmail.com>
-
 PORTNAME=	termcolor
 PORTVERSION=	1.1.0
 PORTREVISION=	1

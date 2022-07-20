@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	awscrt
 PORTVERSION=	0.13.14
 CATEGORIES=	devel python

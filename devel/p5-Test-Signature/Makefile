@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Test-Signature
 PORTVERSION=	1.11
 CATEGORIES=	devel perl5

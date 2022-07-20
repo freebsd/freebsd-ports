@@ -1,5 +1,3 @@
-# Created by: Frank Wall <fw@moov.de>
-
 PORTNAME=	rsec
 PORTVERSION=	0.4.3
 CATEGORIES=	devel rubygems

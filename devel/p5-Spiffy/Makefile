@@ -1,5 +1,3 @@
-# Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-
 PORTNAME=	Spiffy
 PORTVERSION=	0.46
 PORTREVISION=	1

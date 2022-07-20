@@ -1,5 +1,3 @@
-# Created by: Oleg Mamontov <oleg@mamontov.net>
-
 PORTNAME=	Log-Dispatch-Configurator-YAML
 PORTVERSION=	0.03
 PORTREVISION=	1

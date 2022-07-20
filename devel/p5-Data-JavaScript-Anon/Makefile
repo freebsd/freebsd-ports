@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	Data-JavaScript-Anon
 PORTVERSION=	1.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	active_scaffold
 PORTVERSION=	3.4.43
 CATEGORIES=	devel rubygems

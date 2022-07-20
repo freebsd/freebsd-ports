@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	JSON-Path
 PORTVERSION=	0.500
 CATEGORIES=	devel perl5

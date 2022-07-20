@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	File-Append-TempFile
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5

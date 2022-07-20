@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Class-Generate
 PORTVERSION=	1.18
 CATEGORIES=	devel perl5

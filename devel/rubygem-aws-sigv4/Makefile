@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sigv4
 PORTVERSION=	1.5.0
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Time-Mock
 PORTVERSION=	0.0.2
 DISTVERSIONPREFIX=	v

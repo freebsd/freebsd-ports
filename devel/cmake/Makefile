@@ -1,5 +1,3 @@
-# Created by: Kyle Martin <mkm@ieee.org>
-
 PORTNAME=	cmake
 # Remember to update devel/cmake-doc and devel/cmake-gui as well.
 DISTVERSION=	3.23.2

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Config-Std
 PORTVERSION=	0.903
 CATEGORIES=	devel perl5

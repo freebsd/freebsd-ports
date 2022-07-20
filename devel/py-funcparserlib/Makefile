@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	funcparserlib
 PORTVERSION=	1.0.0
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Tony Narlock <tony@git-pull.com>
-
 PORTNAME=	kaptan
 PORTVERSION=	0.5.12
 CATEGORIES=	devel python

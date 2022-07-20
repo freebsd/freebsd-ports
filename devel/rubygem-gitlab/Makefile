@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	gitlab
 PORTVERSION=	4.18.0
 CATEGORIES=	devel rubygems

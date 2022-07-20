@@ -1,5 +1,3 @@
-# Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
-
 PORTNAME=	Mac-PropertyList
 PORTVERSION=	1.502
 CATEGORIES=	devel perl5

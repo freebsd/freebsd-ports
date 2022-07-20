@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	inflect
 PORTVERSION=	5.6.2
 CATEGORIES=	devel python

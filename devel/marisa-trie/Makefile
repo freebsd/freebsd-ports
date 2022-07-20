@@ -1,5 +1,3 @@
-# Created by: Iblis Lin <iblis@hs.ntnu.edu.tw>
-
 PORTNAME=	marisa-tire
 PORTVERSION=	0.24
 PORTREVISION=	1

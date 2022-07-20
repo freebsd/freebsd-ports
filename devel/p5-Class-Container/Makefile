@@ -1,5 +1,3 @@
-# Created by: Denis Shaposhnikov <dsh@vlink.ru>
-
 PORTNAME=	Class-Container
 PORTVERSION=	0.13
 CATEGORIES=	devel perl5

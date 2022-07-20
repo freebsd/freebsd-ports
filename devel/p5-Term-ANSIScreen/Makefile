@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Term-ANSIScreen
 PORTVERSION=	1.50
 PORTREVISION=	1

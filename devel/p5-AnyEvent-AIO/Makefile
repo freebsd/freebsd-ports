@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	AnyEvent-AIO
 PORTVERSION=	1.1
 PORTREVISION=	1

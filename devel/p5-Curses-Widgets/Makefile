@@ -1,5 +1,3 @@
-# Created by: petef@FreeBSD.org
-
 PORTNAME=	Curses-Widgets
 PORTVERSION=	1.997
 PORTREVISION=	1

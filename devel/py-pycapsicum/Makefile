@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pycapsicum
 PORTVERSION=	1.0
 CATEGORIES=	devel security python

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	sprockets-helpers
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems

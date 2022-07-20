@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <wahjava@gmail.com>
-
 PORTNAME=	Devel-REPL
 PORTVERSION=	1.003028
 PORTREVISION=	1

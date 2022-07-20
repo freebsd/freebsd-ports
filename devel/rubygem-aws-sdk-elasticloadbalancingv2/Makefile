@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-elasticloadbalancingv2
 PORTVERSION=	1.78.0
 CATEGORIES=	devel rubygems

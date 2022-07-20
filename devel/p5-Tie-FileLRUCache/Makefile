@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Tie-FileLRUCache
 PORTVERSION=	1.06
 CATEGORIES=	devel perl5

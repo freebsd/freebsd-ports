@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	File-Flat
 PORTVERSION=	1.07
 CATEGORIES=	devel perl5

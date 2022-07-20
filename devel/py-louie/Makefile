@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	Louie
 PORTVERSION=	2.0
 CATEGORIES=	devel python

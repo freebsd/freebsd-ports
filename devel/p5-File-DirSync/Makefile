@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	File-DirSync
 PORTVERSION=	1.22
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	cursive
 PORTVERSION=	0.2.2
 PORTREVISION=	5

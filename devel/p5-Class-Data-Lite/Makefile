@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Class-Data-Lite
 PORTVERSION=	0.0010
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	colorama
 PORTVERSION=	0.4.5
 CATEGORIES=	devel python

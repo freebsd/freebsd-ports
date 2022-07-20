@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	ruamel.yaml
 PORTVERSION=	0.16.12
 CATEGORIES=	devel python

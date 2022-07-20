@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	mocked
 PORTVERSION=	0.09
 PORTREVISION=	2

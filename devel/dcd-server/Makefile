@@ -1,5 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	dcd
 PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v

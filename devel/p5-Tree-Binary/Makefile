@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@daltons.ca>
-
 PORTNAME=	Tree-Binary
 PORTVERSION=	1.08
 CATEGORIES=	devel perl5

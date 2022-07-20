@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	xstatic-smart-table
 PORTVERSION=	1.4.13.2
 PORTREVISION=	2

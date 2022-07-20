@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Test-Compile
 PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v

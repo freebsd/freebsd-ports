@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	PerlIO-via-MD5
 PORTVERSION=	0.08
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	cgilib
 PORTVERSION=	0.7
 PORTREVISION=	1

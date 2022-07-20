@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	terrapin
 PORTVERSION=	0.6.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	cvsmonitor
 DISTVERSION=	0-6-3
 PORTREVISION=	8

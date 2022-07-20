@@ -1,5 +1,3 @@
-# Created by: Christopher Boumenot <boumenot@gmail.com>
-
 PORTNAME=	Class-Gomor
 PORTVERSION=	1.03
 CATEGORIES=	devel perl5

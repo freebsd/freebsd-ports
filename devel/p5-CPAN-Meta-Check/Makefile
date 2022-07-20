@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	CPAN-Meta-Check
 PORTVERSION=	0.014
 CATEGORIES=	devel perl5

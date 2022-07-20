@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@FreeBSD.org>
-
 PORTNAME=	arpc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7

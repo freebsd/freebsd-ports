@@ -1,5 +1,3 @@
-# Created by: dcf@aracnet.com
-
 PORTNAME=	IO-Tee
 PORTVERSION=	0.66
 CATEGORIES=	devel perl5

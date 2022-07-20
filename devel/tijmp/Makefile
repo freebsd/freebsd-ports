@@ -1,5 +1,3 @@
-# Created by: Ronald Klop <ronald@echteman.nl>
-
 PORTNAME=	tijmp
 PORTVERSION=	0.7
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	buildbot
 PORTVERSION=	3.5.0
 CATEGORIES=	devel python

@@ -1,5 +1,3 @@
-# Created by: Igor Vinokurov <igor@zynaps.ru>
-
 PORTNAME=	AppConfig
 PORTVERSION=	1.71
 CATEGORIES=	devel perl5

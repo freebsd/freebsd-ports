@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Parse-ErrorString-Perl
 PORTVERSION=	0.27
 CATEGORIES=	devel perl5

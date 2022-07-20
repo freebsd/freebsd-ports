@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	desktop-file-utils
 PORTVERSION=	0.26
 PORTREVISION=	1

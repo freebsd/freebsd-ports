@@ -1,5 +1,3 @@
-# Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
-
 PORTNAME=	libvanessa_logger
 PORTVERSION=	0.0.10
 PORTREVISION=	1

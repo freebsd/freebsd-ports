@@ -1,5 +1,3 @@
-# Created by: elbarto
-
 PORTNAME=	asmx
 PORTVERSION=	1.8.2
 PORTREVISION=	2

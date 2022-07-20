@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-migrationhubrefactorspaces
 PORTVERSION=	1.7.0
 CATEGORIES=	devel rubygems

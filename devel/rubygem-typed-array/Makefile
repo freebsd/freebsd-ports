@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	typed-array
 PORTVERSION=	0.1.2
 CATEGORIES=	devel rubygems

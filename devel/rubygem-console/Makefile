@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	console
 PORTVERSION=	1.15.3
 CATEGORIES=	devel rubygems

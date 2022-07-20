@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	exam
 PORTVERSION=	0.10.6
 CATEGORIES=	devel python

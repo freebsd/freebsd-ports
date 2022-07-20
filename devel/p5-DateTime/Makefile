@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	DateTime
 PORTVERSION=	1.58
 CATEGORIES=	devel perl5

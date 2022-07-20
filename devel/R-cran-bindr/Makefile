@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	bindr
 PORTVERSION=	0.1.1
 PORTREVISION=	3

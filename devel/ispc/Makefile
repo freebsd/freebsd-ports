@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.18.0

@@ -1,5 +1,3 @@
-# Created by: philip@FreeBSD.org
-
 PORTNAME=	pylru-cache
 PORTVERSION=	0.1.4
 CATEGORIES=	devel python

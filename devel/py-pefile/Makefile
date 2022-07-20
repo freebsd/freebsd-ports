@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	pefile
 PORTVERSION=	2021.5.24
 CATEGORIES=	devel python

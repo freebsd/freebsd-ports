@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	coffee-rails
 PORTVERSION=	5.0.0
 CATEGORIES=	devel rubygems

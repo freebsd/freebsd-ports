@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	mspec
 PORTVERSION=	1.9.1
 CATEGORIES=	devel rubygems

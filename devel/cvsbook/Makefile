@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@geeksrus.net>
-
 PORTNAME=	cvsbook
 PORTVERSION=	1.21
 PORTREVISION=	3

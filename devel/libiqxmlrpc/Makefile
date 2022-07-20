@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	libiqxmlrpc
 PORTVERSION=	0.13.5
 PORTREVISION=	16

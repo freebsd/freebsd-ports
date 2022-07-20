@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cachecontrol
 PORTVERSION=	0.12.11
 CATEGORIES=	devel python

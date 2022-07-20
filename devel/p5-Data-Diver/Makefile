@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Data-Diver
 PORTVERSION=	1.0101
 PORTREVISION=	1

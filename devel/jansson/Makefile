@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	jansson
 DISTVERSION=	2.14
 CATEGORIES=	devel

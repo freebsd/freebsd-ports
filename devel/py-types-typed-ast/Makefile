@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	types-typed-ast
 PORTVERSION=	1.5.6
 CATEGORIES=	devel python

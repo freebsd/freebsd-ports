@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	cld
 PORTVERSION=	20150113
 PORTREVISION=	1

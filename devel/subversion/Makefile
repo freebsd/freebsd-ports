@@ -1,5 +1,3 @@
-# Created by: rooneg@electricjellyfish.net
-
 PORTREVISION=	2
 
 MAINTAINER=	lev@FreeBSD.org

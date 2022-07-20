@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Acme-MetaSyntactic
 PORTVERSION=	1.015
 CATEGORIES=	devel perl5

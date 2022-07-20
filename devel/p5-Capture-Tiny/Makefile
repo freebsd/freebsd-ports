@@ -1,5 +1,3 @@
-# Created by: Bill Brinzer <bill.brinzer@gmail.com>
-
 PORTNAME=	Capture-Tiny
 PORTVERSION=	0.48
 CATEGORIES=	devel perl5

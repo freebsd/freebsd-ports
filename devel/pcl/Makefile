@@ -1,5 +1,3 @@
-# Created by: Manuel Giraud <manuel.giraud@gmail.com>
-
 PORTNAME=	pcl
 PORTVERSION=	1.6
 PORTREVISION=	1

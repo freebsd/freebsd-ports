@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	VCS
 PORTVERSION=	0.25
 CATEGORIES=	devel perl5

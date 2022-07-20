@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libsigc++20
 PORTVERSION=	2.10.0
 DISTVERSIONSUFFIX=	-1.el7

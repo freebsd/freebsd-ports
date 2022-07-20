@@ -1,5 +1,3 @@
-# Created by: Ralf S. Engelschall
-
 PORTNAME=	mm
 PORTVERSION=	1.4.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Devel-PartialDump
 PORTVERSION=	0.20
 CATEGORIES=	devel perl5

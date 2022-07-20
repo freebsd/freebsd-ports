@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	cheetah
 DISTVERSION=	3.2.6
 PORTREVISION=	1

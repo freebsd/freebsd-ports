@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Object-Signature
 PORTVERSION=	1.08
 CATEGORIES=	devel perl5

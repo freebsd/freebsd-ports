@@ -1,5 +1,3 @@
-# Created by: Andreas Kohn
-
 PORTNAME=	mercurial
 PORTVERSION=	6.2
 CATEGORIES=	devel python

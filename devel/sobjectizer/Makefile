@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	sobjectizer
 PORTVERSION=	5.7.4.1
 DISTVERSIONPREFIX=	v.

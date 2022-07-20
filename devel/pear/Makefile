@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	pear
 PORTVERSION=	1.10.12
 PORTREVISION=	0

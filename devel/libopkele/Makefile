@@ -1,5 +1,3 @@
-# Created by: Sutra Zhou <zhoushuqun@gmail.com>
-
 PORTNAME=	libopkele
 PORTVERSION=	2.0.4
 PORTREVISION=	19

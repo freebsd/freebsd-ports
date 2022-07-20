@@ -1,5 +1,3 @@
-# Created by: milki <milki@rescomp.berkeley.edu>
-
 PORTNAME=	POE-Component-Hailo
 PORTVERSION=	0.11
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	B-Hooks-OP-Annotation
 PORTVERSION=	0.44
 PORTREVISION=	2

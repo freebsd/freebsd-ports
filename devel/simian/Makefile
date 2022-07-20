@@ -1,5 +1,3 @@
-# Created by: andreas@syndrom23.de
-
 PORTNAME=	simian
 PORTVERSION=	2.5.10
 CATEGORIES=	devel java

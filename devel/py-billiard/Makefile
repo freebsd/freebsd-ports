@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <william88@gmail.com>
-
 PORTNAME=	billiard
 PORTVERSION=	3.6.3.0
 CATEGORIES=	devel python

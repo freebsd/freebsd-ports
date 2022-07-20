@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mustermann-grape
 PORTVERSION=	1.0.2
 CATEGORIES=	devel rubygems

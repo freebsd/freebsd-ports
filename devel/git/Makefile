@@ -1,5 +1,3 @@
-# Created by: Eric Anholt
-
 PORTNAME=	git
 DISTVERSION=	2.37.1
 CATEGORIES=	devel

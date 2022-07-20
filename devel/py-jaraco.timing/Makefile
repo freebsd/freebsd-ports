@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <sunpoet@FreeBSD.org>
-
 PORTNAME=	jaraco.timing
 PORTVERSION=	2.0
 PORTREVISION=	1

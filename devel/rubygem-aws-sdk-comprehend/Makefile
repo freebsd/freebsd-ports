@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-comprehend
 PORTVERSION=	1.61.0
 CATEGORIES=	devel rubygems

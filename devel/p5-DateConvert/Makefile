@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	DateConvert
 PORTVERSION=	0.16
 PORTREVISION=	1

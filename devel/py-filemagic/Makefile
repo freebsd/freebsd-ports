@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	filemagic
 PORTVERSION=	1.6
 CATEGORIES=	devel python

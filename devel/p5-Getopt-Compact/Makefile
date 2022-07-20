@@ -1,5 +1,3 @@
-# Created by: Evgeniy Kosov <evgeniy@kosov.su>
-
 PORTNAME=	Getopt-Compact
 PORTVERSION=	0.04
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Travis Campbell <hcoyote@ghostar.org>
-
 PORTNAME=	Class-Observable
 PORTVERSION=	2.000
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Lung-Pin Chang <changlp@cs.nctu.edu.tw>
-
 PORTNAME=	pythonbrew
 PORTVERSION=	1.3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	AnyEvent
 PORTVERSION=	7.17
 PORTEPOCH=	1

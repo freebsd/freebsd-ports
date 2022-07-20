@@ -1,5 +1,3 @@
-# Created by: Craig Leres <leres@FreeBSD.org>
-
 PORTNAME=	flynt
 PORTVERSION=	0.76
 PORTREVISION=	1

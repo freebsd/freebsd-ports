@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Proc-Background
 PORTVERSION=	1.30
 CATEGORIES=	devel perl5

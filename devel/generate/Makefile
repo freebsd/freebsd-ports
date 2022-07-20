@@ -1,5 +1,3 @@
-# Created by: D'Arcy J.M. Cain <darcy@druid.net>
-
 PORTNAME=	generate
 PORTVERSION=	2.8
 PORTREVISION=	1

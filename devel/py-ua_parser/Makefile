@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	ua_parser
 PORTVERSION=	0.7.1
 CATEGORIES=	devel python

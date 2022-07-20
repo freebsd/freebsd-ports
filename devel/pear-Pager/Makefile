@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Pager
 PORTVERSION=	2.5.1
 CATEGORIES=	devel www pear

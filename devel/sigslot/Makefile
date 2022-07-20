@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	sigslot
 DISTVERSION=	1-0-0
 CATEGORIES=	devel

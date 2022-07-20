@@ -1,5 +1,3 @@
-# Created by: John Merryweather Cooper
-
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fv
 

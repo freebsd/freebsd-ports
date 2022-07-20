@@ -1,5 +1,3 @@
-# Created by: Rui Lopes (<rgl ruilopes com>)
-
 PORTNAME=	gem_plugin
 PORTVERSION=	0.2.3
 PORTREVISION=	1

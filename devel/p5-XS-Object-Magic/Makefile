@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	XS-Object-Magic
 PORTVERSION=	0.05
 CATEGORIES=	devel perl5

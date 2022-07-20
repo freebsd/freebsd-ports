@@ -1,5 +1,3 @@
-# Created by: Mons Anderson <mons@cpan.org>
-
 PORTNAME=	lib-abs
 PORTVERSION=	0.92
 PORTREVISION=	1

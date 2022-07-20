@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-
 PORTNAME=	IO-Toolkit
 PORTVERSION=	1.008
 PORTREVISION=	2

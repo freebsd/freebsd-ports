@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	sentry-ruby
 PORTVERSION=	5.1.1
 CATEGORIES=	devel rubygems

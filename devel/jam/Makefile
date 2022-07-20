@@ -1,5 +1,3 @@
-# Created by: Jeffrey Hsu <hsu@FreeBSD.org>
-
 PORTNAME=	jam
 PORTVERSION=	2.6
 CATEGORIES=	devel

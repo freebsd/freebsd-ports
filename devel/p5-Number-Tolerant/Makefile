@@ -1,5 +1,3 @@
-# Created by: Kurt Lidl <kurt.lidl@cello.com>
-
 PORTNAME=	Number-Tolerant
 PORTVERSION=	1.709
 CATEGORIES=	devel perl5

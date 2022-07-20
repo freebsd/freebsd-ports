@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	multitasking
 PORTVERSION=	0.0.11
 CATEGORIES=	devel python

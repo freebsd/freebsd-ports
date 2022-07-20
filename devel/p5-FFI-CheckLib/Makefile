@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	FFI-CheckLib
 PORTVERSION=	0.28
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	flyspray
 PORTVERSION=	0.9.9.7
 PORTREVISION=	4

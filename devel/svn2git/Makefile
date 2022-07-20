@@ -1,5 +1,3 @@
-# Created by: David Naylor <naylor.b.david@gmail.com>
-
 PORTNAME=	svn2git
 PORTVERSION=	1.0.18
 CATEGORIES=	devel kde

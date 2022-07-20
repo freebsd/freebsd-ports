@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	List-Rotation-Cycle
 PORTVERSION=	1.009
 PORTREVISION=	1

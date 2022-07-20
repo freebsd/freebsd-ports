@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	rappdirs
 DISTVERSION=	0.3.3
 CATEGORIES=	devel

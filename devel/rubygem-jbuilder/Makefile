@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	jbuilder
 PORTVERSION=	2.9.1
 CATEGORIES=	devel rubygems

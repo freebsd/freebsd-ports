@@ -1,5 +1,3 @@
-# Created by: Marzhan Mykola <delgod@portaone.com>
-
 PORTNAME=	Hash-MultiKey
 PORTVERSION=	0.06
 PORTREVISION=	1

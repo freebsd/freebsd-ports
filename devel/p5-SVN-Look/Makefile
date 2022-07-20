@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	SVN-Look
 PORTVERSION=	0.43
 CATEGORIES=	devel perl5

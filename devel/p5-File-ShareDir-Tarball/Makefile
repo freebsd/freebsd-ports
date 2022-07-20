@@ -1,5 +1,3 @@
-# Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-
 PORTNAME=	File-ShareDir-Tarball
 PORTVERSION=	0.2.2
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Matthias Sund <m.sund@arcor.de>
-
 PORTNAME=	upp
 DISTVERSION=	15260
 CATEGORIES=	devel x11-toolkits

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	MooseX-Meta-TypeConstraint-ForceCoercion
 PORTVERSION=	0.01
 PORTREVISION=	1

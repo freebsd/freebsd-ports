@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Badger
 PORTVERSION=	0.13
 CATEGORIES=	devel perl5

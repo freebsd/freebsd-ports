@@ -1,5 +1,3 @@
-# Created by: Valery Komarov <komarov@valerka.net>
-
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION}
 PORTREVISION=	1

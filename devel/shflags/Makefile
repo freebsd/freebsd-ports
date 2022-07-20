@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng Lin <yzlin@FreeBSD.org>
-
 PORTNAME=	shflags
 PORTVERSION=	1.2.3
 DISTVERSIONPREFIX=	v

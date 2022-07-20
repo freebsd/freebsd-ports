@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	umlgraph
 DISTVERSIONPREFIX=	R
 DISTVERSION=	5_7_2

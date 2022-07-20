@@ -1,5 +1,3 @@
-# Created by: Martin Preuss <martin@libchipcard.de>
-
 PORTNAME=	libchipcard
 PORTVERSION=	5.1.6
 CATEGORIES=	devel

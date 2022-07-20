@@ -1,5 +1,3 @@
-# Created by: Geistteufel <geistteufel@yahoo.fr>
-
 PORTNAME=	Dancer-Debug
 PORTVERSION=	0.03
 PORTREVISION=	1

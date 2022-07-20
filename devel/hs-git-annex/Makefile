@@ -1,5 +1,3 @@
-# Created by: frase@frase.id.au
-
 PORTNAME=	git-annex
 PORTVERSION=	10.20220525
 CATEGORIES=	devel haskell

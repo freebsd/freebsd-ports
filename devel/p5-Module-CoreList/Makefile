@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	Module-CoreList
 PORTVERSION=	5.20220620
 CATEGORIES=	devel perl5

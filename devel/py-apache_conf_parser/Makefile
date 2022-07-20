@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	apache_conf_parser
 PORTVERSION=	1.0.1
 PORTREVISION=	1

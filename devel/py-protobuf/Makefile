@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	protobuf
 PORTVERSION=	3.20.1
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	UNIVERSAL-isa
 PORTVERSION=	1.20171012
 CATEGORIES=	devel perl5

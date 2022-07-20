@@ -1,5 +1,3 @@
-# Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
-
 PORTNAME=	Parse-Win32Registry
 PORTVERSION=	1.1
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	File-ShareDir-PathClass
 PORTVERSION=	1.112440
 PORTREVISION=	1

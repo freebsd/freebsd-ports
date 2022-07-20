@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	pytimeparse
 PORTVERSION=	1.1.8
 CATEGORIES=	devel python

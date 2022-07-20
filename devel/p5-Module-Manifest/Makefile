@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Module-Manifest
 PORTVERSION=	1.09
 CATEGORIES=	devel perl5

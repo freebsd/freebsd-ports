@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Module-Loaded
 PORTVERSION=	0.08
 PORTREVISION=	1

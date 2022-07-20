@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
-
 PORTNAME=	typed-ast
 PORTVERSION=	1.5.4
 CATEGORIES=	devel python

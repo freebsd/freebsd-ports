@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman<bofh@FreeBSD.org>
-
 PORTNAME=	propro
 PORTVERSION=	2.1.0
 CATEGORIES=	devel

@@ -1,5 +1,3 @@
-# Created by: Joseph Scott <joseph@randomnetworks.com>
-
 PORTNAME=	Text_Diff
 PORTVERSION=	1.2.2
 CATEGORIES=	devel pear

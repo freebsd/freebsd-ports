@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	kyra
 PORTVERSION=	2.1.3
 PORTREVISION=	5

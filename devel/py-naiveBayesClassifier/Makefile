@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	naiveBayesClassifier
 PORTVERSION=	0.1.3
 PORTREVISION=	1

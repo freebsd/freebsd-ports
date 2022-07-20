@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-timestreamquery
 PORTVERSION=	1.16.0
 CATEGORIES=	devel rubygems

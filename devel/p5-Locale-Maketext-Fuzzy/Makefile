@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Locale-Maketext-Fuzzy
 PORTVERSION=	0.11
 PORTREVISION=	1

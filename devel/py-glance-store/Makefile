@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	glance-store
 PORTVERSION=	4.0.1
 CATEGORIES=	devel python

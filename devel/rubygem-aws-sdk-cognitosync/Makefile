@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-cognitosync
 PORTVERSION=	1.36.0
 CATEGORIES=	devel rubygems

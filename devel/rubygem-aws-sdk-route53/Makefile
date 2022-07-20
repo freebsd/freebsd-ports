@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-route53
 PORTVERSION=	1.63.0
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Simon Barner <barner@gmx.de>
-
 PORTNAME=	valgrind
 PORTVERSION=	3.19.0
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	petname
 PORTVERSION=	2.2
 PORTREVISION=	1

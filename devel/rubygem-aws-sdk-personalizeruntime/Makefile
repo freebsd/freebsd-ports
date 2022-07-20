@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-sdk-personalizeruntime
 PORTVERSION=	1.32.0
 CATEGORIES=	devel rubygems

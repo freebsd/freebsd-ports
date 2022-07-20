@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	Module-Info
 PORTVERSION=	0.35
 PORTREVISION=	1

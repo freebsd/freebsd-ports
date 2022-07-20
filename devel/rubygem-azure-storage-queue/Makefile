@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure-storage-queue
 PORTVERSION=	2.0.4
 CATEGORIES=	devel rubygems

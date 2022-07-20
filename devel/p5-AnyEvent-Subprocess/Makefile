@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	AnyEvent-Subprocess
 PORTVERSION=	1.102912
 PORTREVISION=	2

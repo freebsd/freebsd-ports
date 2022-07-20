@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	logster
 PORTVERSION=	1.2.11
 CATEGORIES=	devel rubygems

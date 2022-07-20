@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Inline
 PORTVERSION=	0.86
 CATEGORIES=	devel perl5

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	DateTime-Astro
 PORTVERSION=	1.04
 CATEGORIES=	devel perl5

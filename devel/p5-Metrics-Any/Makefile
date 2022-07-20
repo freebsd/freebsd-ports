@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Metrics-Any
 PORTVERSION=	0.07
 CATEGORIES=	devel perl5

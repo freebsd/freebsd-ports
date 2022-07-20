@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-
 PORTNAME=	SVN-Log
 PORTVERSION=	0.03
 PORTREVISION=	6

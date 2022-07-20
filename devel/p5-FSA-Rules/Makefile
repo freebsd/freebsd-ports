@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	FSA-Rules
 PORTVERSION=	0.35
 CATEGORIES=	devel perl5

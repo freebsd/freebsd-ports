@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Regexp-Compare
 PORTVERSION=	0.33
 CATEGORIES=	devel perl5

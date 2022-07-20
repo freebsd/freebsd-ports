@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Test-CheckDeps
 PORTVERSION=	0.010
 PORTREVISION=	2

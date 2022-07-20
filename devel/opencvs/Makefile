@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-
 PORTNAME=	opencvs
 PORTVERSION=	20151230
 CATEGORIES=	devel

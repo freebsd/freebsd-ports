@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	asetus
 PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems

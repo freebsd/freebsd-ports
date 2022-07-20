@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	libshhmsg
 PORTVERSION=	1.4.2
 CATEGORIES=	devel

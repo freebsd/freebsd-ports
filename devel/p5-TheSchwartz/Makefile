@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	TheSchwartz
 PORTVERSION=	1.12
 CATEGORIES=	devel perl5

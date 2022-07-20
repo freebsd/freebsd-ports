@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Sub-Exporter-ForMethods
 PORTVERSION=	0.100054
 CATEGORIES=	devel perl5

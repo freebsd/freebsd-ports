@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Term-Prompt
 PORTVERSION=	1.04
 PORTREVISION=	1

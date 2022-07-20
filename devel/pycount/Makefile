@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-
 PORTNAME=	pycount
 PORTVERSION=	0.0.6
 PORTREVISION=	1

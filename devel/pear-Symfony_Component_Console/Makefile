@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	Console
 PORTVERSION=	2.4.4
 CATEGORIES=	devel pear

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	actionpack-action_caching
 PORTVERSION=	1.2.2
 PORTREVISION=	1

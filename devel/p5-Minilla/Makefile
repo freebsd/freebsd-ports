@@ -1,4 +1,3 @@
-# Created by: Serguei Okladnikov <oklaspec@gmail.com>
 # Date created: 2015-05-28
 
 PORTNAME=	Minilla

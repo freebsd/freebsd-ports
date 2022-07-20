@@ -1,5 +1,3 @@
-# Created by: Chris D. Faulhaber <jedgar@fxp.org>
-
 PORTNAME=	kdbg
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	3.0.1

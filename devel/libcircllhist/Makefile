@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	libcircllhist
 PORTVERSION=	g20211005
 CATEGORIES=	devel

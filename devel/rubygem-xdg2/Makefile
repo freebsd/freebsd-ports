@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	xdg
 PORTVERSION=	2.2.5
 CATEGORIES=	devel rubygems

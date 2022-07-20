@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-
 PORTNAME=	py
 PORTVERSION=	1.11.0
 CATEGORIES=	devel python

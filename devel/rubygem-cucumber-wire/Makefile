@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cucumber-wire
 PORTVERSION=	6.2.1
 PORTREVISION=	2

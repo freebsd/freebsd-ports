@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	emoji_regex
 PORTVERSION=	3.2.3
 CATEGORIES=	devel rubygems

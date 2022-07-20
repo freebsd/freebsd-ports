@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	typeguard
 PORTVERSION=	2.13.3
 PORTREVISION=	1

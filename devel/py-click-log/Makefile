@@ -1,5 +1,3 @@
-# Created by: Christian Geier <geier@lostpackets.de>
-
 PORTNAME=	click-log
 DISTVERSION=	0.3.2
 CATEGORIES=	devel python

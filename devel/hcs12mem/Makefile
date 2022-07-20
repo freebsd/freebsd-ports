@@ -1,5 +1,3 @@
-# Created by: mk
-
 PORTNAME=	hcs12mem
 PORTVERSION=	1.4.1
 CATEGORIES=	devel

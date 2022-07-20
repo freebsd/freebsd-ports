@@ -1,5 +1,3 @@
-# Created by: Simon Marlow <simonmar@microsoft.com>
-
 PORTNAME=	happy
 PORTVERSION=	1.20.0
 PORTREVISION=	2

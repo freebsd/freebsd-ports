@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Algorithm-Permute
 PORTVERSION=	0.16
 CATEGORIES=	devel perl5

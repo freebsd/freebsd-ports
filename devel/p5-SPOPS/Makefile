@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski
-
 PORTNAME=	SPOPS
 PORTVERSION=	0.87
 CATEGORIES=	devel perl5

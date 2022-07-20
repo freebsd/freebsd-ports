@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	io-event
 PORTVERSION=	1.0.9
 CATEGORIES=	devel rubygems

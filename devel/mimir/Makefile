@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@fxq.nl>
-
 PORTNAME=	mimir
 PORTVERSION=	2.15
 PORTREVISION=	1

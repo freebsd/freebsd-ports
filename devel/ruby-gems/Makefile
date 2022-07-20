@@ -1,5 +1,3 @@
-# Created by: Alexander Novitsky <alecn2002@yandex.ru>
-
 PORTNAME=	gems
 PORTVERSION=	3.3.18
 CATEGORIES=	devel ruby

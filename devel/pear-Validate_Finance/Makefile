@@ -1,5 +1,3 @@
-# Created by: Anish Mistry (<amistry@am-productions.biz>)
-
 PORTNAME=	Validate_Finance
 PORTVERSION=	0.5.6
 CATEGORIES=	devel www pear

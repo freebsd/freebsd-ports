@@ -1,5 +1,3 @@
-# Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-
 PORTNAME=	ddt
 PORTVERSION=	1.5.0
 CATEGORIES=	devel python

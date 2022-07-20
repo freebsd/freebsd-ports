@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	json-schema
 PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems

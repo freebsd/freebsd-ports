@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	ParseTemplate
 PORTVERSION=	3.08
 PORTREVISION=	1

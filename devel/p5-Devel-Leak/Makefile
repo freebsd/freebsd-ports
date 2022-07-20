@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Devel-Leak
 PORTVERSION=	0.03
 PORTREVISION=	2

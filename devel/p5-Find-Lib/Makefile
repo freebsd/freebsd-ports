@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Find-Lib
 PORTVERSION=	1.04
 PORTREVISION=	1

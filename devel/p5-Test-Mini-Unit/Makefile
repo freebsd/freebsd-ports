@@ -1,5 +1,3 @@
-# Created by: Kurt Lidl <kurt.lidl@cello.com>
-
 PORTNAME=	Test-Mini-Unit
 PORTVERSION=	v1.0.3
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	zhexdump
 PORTVERSION=	0.0.2
 CATEGORIES=	devel rubygems

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	File-NFSLock
 PORTVERSION=	1.29
 CATEGORIES=	devel perl5

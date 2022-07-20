@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	lockfile
 PORTVERSION=	2.1.3
 CATEGORIES=	devel rubygems

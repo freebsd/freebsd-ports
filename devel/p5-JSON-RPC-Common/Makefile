@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	JSON-RPC-Common
 PORTVERSION=	0.11
 PORTREVISION=	2

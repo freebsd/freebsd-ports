@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Proc-Find-Parents
 PORTVERSION=	0.631
 CATEGORIES=	devel perl5

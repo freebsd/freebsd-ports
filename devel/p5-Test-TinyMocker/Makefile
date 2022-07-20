@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Test-TinyMocker
 PORTVERSION=	0.05
 PORTREVISION=	1

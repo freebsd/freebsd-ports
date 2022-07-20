@@ -1,5 +1,3 @@
-# Created by: alexander smishlajev
-
 PORTNAME=	Extremes
 PORTVERSION=	1.1.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Test-Pod-Coverage
 PORTVERSION=	1.10
 PORTREVISION=	2

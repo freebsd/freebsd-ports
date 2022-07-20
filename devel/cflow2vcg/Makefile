@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cflow2vcg
 PORTVERSION=	0.5
 PORTREVISION=	1

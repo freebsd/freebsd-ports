@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	bitlib
 PORTVERSION=	24
 PORTREVISION=	1
