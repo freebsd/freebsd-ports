@@ -1,5 +1,3 @@
-# Created by: Jordan Irwin <antumdeluge@gmail.com>
-
 PORTNAME=		stendhal
 PORTVERSION=		1.35
 DISTVERSIONSUFFIX=	-src

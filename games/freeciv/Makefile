@@ -1,5 +1,3 @@
-# Created by: ada@bsd.org
-
 PORTNAME=	freeciv
 PORTVERSION=	2.6.6
 CATEGORIES=	games

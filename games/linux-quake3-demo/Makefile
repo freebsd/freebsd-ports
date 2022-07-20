@@ -1,5 +1,3 @@
-# Created by: Marc van Woerkom <3d@FreeBSD.org>
-
 PORTNAME=	quake3
 DISTVERSION=	1.11-6
 PORTREVISION=	5

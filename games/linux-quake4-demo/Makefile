@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	quake4
 PORTVERSION=	1.0
 PORTREVISION=	1

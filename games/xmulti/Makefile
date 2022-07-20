@@ -1,5 +1,3 @@
-# Created by: Toru YANO <toru@s-fine.co.jp>
-
 PORTNAME=	xmulti
 PORTVERSION=	2.00b4
 PORTREVISION=	4

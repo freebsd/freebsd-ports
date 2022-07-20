@@ -1,5 +1,3 @@
-# Created by: Wouter Reckman <gennerate@zonnet.nl>
-
 PORTNAME=	enygma
 PORTVERSION=	1.04
 CATEGORIES=	games

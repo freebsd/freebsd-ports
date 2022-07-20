@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	ctf
 PORTVERSION=	1.52
 CATEGORIES=	games

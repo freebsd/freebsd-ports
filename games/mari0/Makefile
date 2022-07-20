@@ -1,5 +1,3 @@
-# Created by: Mahdi Mokhtari <mokhi64@gmail.com>
-
 PORTNAME=	mari0
 PORTVERSION=	1.6.2
 CATEGORIES=	games

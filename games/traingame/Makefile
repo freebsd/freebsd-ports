@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	traingame
 PORTVERSION=	0.3
 PORTREVISION=	24

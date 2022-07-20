@@ -1,5 +1,3 @@
-# Created by: Dominic Fandrey
-
 PORTNAME=	oax
 PORTVERSION=	B51
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Klaus Goger <klaus.goger@reflex.at>
-
 PORTNAME=	frozen-bubble
 DISTVERSION=	2.213.g${SNAPDATE}
 PORTREVISION=	1

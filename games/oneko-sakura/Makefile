@@ -1,5 +1,3 @@
-# Created by: HOTARU-YA <hotaru@tail.net>
-
 PORTNAME=	oneko
 PORTVERSION=	1.2
 PORTREVISION=	2

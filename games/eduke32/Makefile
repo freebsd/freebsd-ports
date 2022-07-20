@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	eduke32
 PORTVERSION=	20220204
 CATEGORIES=	games

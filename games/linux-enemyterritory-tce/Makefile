@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-
 PORTNAME=	enemyterritory-tce
 PORTVERSION=	0.49
 PORTREVISION=	1

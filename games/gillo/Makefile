@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-
 PORTNAME=	gillo
 DISTVERSION=	1.0beta1
 PORTREVISION=	11

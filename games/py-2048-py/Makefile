@@ -1,5 +1,3 @@
-# Created by: Mateusz Piotrowski <0mp@FreeBSD.org>
-
 PORTNAME=	2048-py
 DISTVERSION=	0.1.6
 CATEGORIES=	games python

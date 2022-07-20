@@ -1,5 +1,3 @@
-# Created by: swallace
-
 PORTNAME=	xmille
 PORTVERSION=	2.0
 PORTREVISION=	4

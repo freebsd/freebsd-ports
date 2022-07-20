@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	tali
 PORTVERSION=	40.7
 CATEGORIES=	games gnome

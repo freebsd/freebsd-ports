@@ -1,5 +1,3 @@
-# Created by: Andy Kosela <akosela@andykosela.com>
-
 PORTNAME=	inform7
 PORTVERSION=	6L38
 CATEGORIES=	games

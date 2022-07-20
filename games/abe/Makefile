@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	abe
 PORTVERSION=	1.1
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	oldrunner
 PORTVERSION=	20120131
 CATEGORIES=	games

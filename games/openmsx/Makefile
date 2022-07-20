@@ -1,5 +1,3 @@
-# Created by: Ilya A. Arhipov <admin@gorodkirov.ru>
-
 PORTNAME=	openmsx
 PORTVERSION=	0.4.2
 CATEGORIES=	games

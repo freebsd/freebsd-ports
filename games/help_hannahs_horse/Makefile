@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	help_hannahs_horse
 PORTVERSION=	1.0
 PORTREVISION=	2

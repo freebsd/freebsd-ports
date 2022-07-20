@@ -1,5 +1,3 @@
-# Created by: James Howard <howardj@wam.umd.edu>
-
 PORTNAME=	cursive
 PORTVERSION=	0.11
 PORTEPOCH=	1

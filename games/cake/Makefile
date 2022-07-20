@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	cake
 PORTVERSION=	2005.12.26
 PORTREVISION=	13

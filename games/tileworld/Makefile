@@ -1,5 +1,3 @@
-# Created by: sec@42.org
-
 PORTNAME=	tileworld
 PORTVERSION=	1.3.0
 PORTREVISION=	6

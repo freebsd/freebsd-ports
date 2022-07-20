@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	glest
 PORTVERSION=	3.2.2
 PORTREVISION=	15

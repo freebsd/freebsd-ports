@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	quadrapassel
 PORTVERSION=	40.2
 CATEGORIES=	games gnome

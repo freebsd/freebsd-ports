@@ -1,5 +1,3 @@
-# Created by: Karsten Brandt <kbrandt@sdf-eu.org>
-
 PORTNAME=	quadra
 PORTVERSION=	1.3.0
 PORTREVISION=	6

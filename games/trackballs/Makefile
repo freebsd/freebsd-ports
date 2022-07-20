@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	trackballs
 PORTVERSION=	1.3.3
 DISTVERSIONPREFIX=	v

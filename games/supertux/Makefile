@@ -1,5 +1,3 @@
-# Created by: michael johnson <ahze@ahze.net>
-
 PORTNAME=	supertux
 PORTVERSION=	0.1.3
 PORTREVISION=	14

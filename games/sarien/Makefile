@@ -1,5 +1,3 @@
-# Created by: Radim Kolar
-
 PORTNAME=	sarien
 PORTVERSION=	0.7.0
 PORTREVISION=	3

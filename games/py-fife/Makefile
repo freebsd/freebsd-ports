@@ -1,5 +1,3 @@
-# Created by: GreenDog <fiziologus@gmail.com>
-
 PORTNAME=	fife
 PORTVERSION=	0.4.2
 PORTREVISION=	2

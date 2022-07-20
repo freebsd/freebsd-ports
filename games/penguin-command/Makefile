@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	penguin-command
 PORTVERSION=	1.6.11
 PORTREVISION=	11

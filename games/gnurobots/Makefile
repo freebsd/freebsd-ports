@@ -1,5 +1,3 @@
-# Created by: Aaron VonderHaar <avh4@usa.net>
-
 PORTNAME=	gnurobots
 PORTVERSION=	1.2.0
 PORTREVISION=	15

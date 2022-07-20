@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xhexagons
 PORTVERSION=	5.5.2
 PORTREVISION=	2

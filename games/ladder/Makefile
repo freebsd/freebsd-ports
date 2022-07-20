@@ -1,5 +1,3 @@
-# Created by: Stefan Zehl <sec@42.org>
-
 PORTNAME=	ladder
 PORTVERSION=	1.00
 PORTREVISION=	2

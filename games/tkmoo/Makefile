@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	tkmoo
 PORTVERSION=	0.3.32
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	suyimazu
 DISTVERSION=	5.8
 CATEGORIES=	games

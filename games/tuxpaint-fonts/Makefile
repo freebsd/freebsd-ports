@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	tuxpaint
 PORTVERSION=	2004.06.05
 PORTREVISION=	1

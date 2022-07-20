@@ -1,5 +1,3 @@
-# Created by: proff
-
 PORTNAME=	an
 PORTVERSION=	1.2
 PORTREVISION=	14

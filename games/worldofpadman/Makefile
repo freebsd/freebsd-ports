@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	worldofpadman
 PORTVERSION=	1.2.20080621
 PORTREVISION=	15

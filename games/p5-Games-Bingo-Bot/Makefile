@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Games-Bingo-Bot
 PORTVERSION=	0.01
 PORTREVISION=	2

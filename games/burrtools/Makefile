@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	burrtools
 PORTVERSION=	0.6.3
 PORTREVISION=	20

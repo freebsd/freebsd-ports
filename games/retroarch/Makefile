@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	RetroArch
 PORTVERSION=	1.10.3
 DISTVERSIONPREFIX=	v

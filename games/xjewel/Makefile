@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	xjewel
 PORTVERSION=	1.6
 PORTREVISION=	6

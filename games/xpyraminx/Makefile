@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xpyraminx
 PORTVERSION=	5.5.2
 PORTREVISION=	2

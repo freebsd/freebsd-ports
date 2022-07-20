@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	xrot
 PORTVERSION=	1.3.2
 PORTREVISION=	2

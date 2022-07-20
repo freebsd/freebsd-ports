@@ -1,5 +1,3 @@
-# Created by: ayu <ayunyan@gmail.com>
-
 PORTNAME=	etqw
 PORTVERSION=	2.0.r1
 CATEGORIES=	games linux

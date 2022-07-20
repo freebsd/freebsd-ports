@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis
-
 PORTNAME=	enigma
 PORTVERSION=	1.30
 CATEGORIES=	games

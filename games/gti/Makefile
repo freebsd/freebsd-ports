@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	gti
 PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=	v

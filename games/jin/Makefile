@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	jin
 PORTVERSION=	2.14.1
 PORTREVISION=	4

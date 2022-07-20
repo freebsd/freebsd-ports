@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	ladder
 PORTVERSION=	1.0
 PORTREVISION=	10

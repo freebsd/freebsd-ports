@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@inerd.com>
-
 PORTNAME=	nuclearchess
 PORTVERSION=	1.0.0
 PORTREVISION=	10

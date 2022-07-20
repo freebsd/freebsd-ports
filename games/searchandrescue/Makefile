@@ -1,5 +1,3 @@
-# Created by: Jesse Smith <jessefrgsmith@yahoo.ca>
-
 PORTNAME=	SearchAndRescue
 PORTVERSION=	1.4.0
 PORTREVISION=	9

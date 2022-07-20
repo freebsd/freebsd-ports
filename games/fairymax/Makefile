@@ -1,5 +1,3 @@
-# Created by: Kalten <kalten@gmx.at>
-
 PORTNAME=	fairymax
 PORTVERSION=	5.0b.20160316.1
 PORTREVISION=	1

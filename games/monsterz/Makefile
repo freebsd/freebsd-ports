@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	monsterz
 PORTVERSION=	0.7.1
 PORTREVISION=	15

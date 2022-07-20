@@ -1,5 +1,3 @@
-# Created by: verm@drunkmonk.net
-
 PORTNAME=	lmarbles
 PORTVERSION=	1.0.8
 PORTREVISION=	5

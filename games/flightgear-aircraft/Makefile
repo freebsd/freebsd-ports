@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-
 PORTNAME=	flightgear-aircraft
 PORTVERSION=	20190826
 CATEGORIES=	games

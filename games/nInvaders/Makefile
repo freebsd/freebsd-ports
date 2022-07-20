@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	nInvaders
 PORTVERSION=	0.1.1
 CATEGORIES=	games

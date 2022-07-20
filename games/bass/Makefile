@@ -1,5 +1,3 @@
-# Created by: Alex Trull <freebsd.alex@trull.org>
-
 PORTNAME=	bass
 PORTVERSION=	1.2
 PORTREVISION=	4

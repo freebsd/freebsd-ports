@@ -1,5 +1,3 @@
-# Created by: Dominic Fandrey
-
 PORTNAME=	data
 PORTVERSION=	0.8.8
 CATEGORIES=	games

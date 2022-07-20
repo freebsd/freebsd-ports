@@ -1,5 +1,3 @@
-# Created by: Holger Lamm <holger@eit.uni-kl.de>
-
 PORTNAME=	HeroesOfMightAndMagic
 PORTVERSION=	3
 PORTREVISION=	1

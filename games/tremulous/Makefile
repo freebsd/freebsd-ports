@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	tremulous
 PORTVERSION=	1.1.0
 PORTREVISION=	13

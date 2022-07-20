@@ -1,5 +1,3 @@
-# Created by: Oleg Alexeenkov
-
 PORTNAME=	astromenace
 PORTVERSION=	1.4.1
 PORTREVISION=	3

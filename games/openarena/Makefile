@@ -1,5 +1,3 @@
-# Created by: Josh Tolbert
-
 PORTNAME=	openarena
 PORTVERSION=	${GAMEVERSION}.s${SVNREVISION}
 PORTEPOCH=	2

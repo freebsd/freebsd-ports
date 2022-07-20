@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	hitori
 PORTVERSION=	3.38.4
 CATEGORIES=	games gnome

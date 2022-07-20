@@ -1,5 +1,3 @@
-# Created by: UMENO Takashi
-
 PORTNAME=	ninix-aya
 PORTVERSION=	5.0.9
 CATEGORIES=	games

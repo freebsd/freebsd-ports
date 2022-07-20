@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	simsu
 PORTVERSION=	1.4.0
 PORTREVISION=	1

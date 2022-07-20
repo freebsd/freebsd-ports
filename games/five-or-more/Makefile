@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	five-or-more
 PORTVERSION=	3.32.3
 CATEGORIES=	games gnome

@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	seabattle
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1

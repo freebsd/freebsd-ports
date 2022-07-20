@@ -1,5 +1,3 @@
-# Created by: Eckart "Isegrim" Hofmann
-
 PORTNAME=	xteddy
 PORTVERSION=	2.2
 PORTREVISION=	1

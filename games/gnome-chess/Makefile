@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	gnome-chess
 PORTVERSION=	42.0
 CATEGORIES=	games gnome

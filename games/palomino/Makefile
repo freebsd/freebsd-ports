@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	palomino
 PORTVERSION=	20131231
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: Michael Alyn Miller <malyn@strangeGizmo.com>
-
 PORTNAME=	alephone
 DISTVERSION=	20190331
 PORTREVISION=	4

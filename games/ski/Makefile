@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	ski
 PORTVERSION=	6.13
 CATEGORIES=	games python

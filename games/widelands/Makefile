@@ -1,5 +1,3 @@
-# Created by: Bartosz Fabianowski <freebsd@chillt.de>
-
 PORTNAME=	widelands
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0

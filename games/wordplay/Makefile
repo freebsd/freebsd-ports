@@ -1,5 +1,3 @@
-# Created by: Ben Smithurst <ben@scientia.demon.co.uk>
-
 PORTNAME=	wordplay
 PORTVERSION=	7.22
 PORTREVISION=	1

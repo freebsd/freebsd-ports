@@ -1,5 +1,3 @@
-# Created by: lightside <lightside@gmx.com>
-
 PORTNAME=	diaspora
 PORTVERSION=	1.1.1
 PORTREVISION=	2

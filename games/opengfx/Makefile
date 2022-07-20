@@ -1,5 +1,3 @@
-# Created by: Ilya A. Arkhipov <rum1cro@yandex.ru>
-
 PORTNAME=	opengfx
 PORTVERSION=	7.1
 CATEGORIES=	games

@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	open-adventure
 PORTVERSION=	1.9
 CATEGORIES=	games

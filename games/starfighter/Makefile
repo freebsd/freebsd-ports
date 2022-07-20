@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	starfighter
 PORTVERSION=	2.4
 DISTVERSIONPREFIX=	v

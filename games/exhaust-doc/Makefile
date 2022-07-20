@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	exhaust
 PORTVERSION=	1.9.2
 CATEGORIES=	games

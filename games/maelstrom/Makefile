@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	maelstrom
 PORTVERSION=	3.0.6
 PORTREVISION=	14

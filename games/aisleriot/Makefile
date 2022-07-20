@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	aisleriot
 DISTVERSION=	3.22.19
 CATEGORIES=	games gnome

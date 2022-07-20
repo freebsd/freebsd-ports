@@ -1,5 +1,3 @@
-# Created by: Jeremy Chadwick <yoshi@parodius.com>
-
 MASTERDIR=	${.CURDIR}/../nethack36
 
 PKGNAMESUFFIX=	-nox11

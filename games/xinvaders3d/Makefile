@@ -1,5 +1,3 @@
-# Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
-
 PORTNAME=	xinvaders3d
 DISTVERSION=	1.3.6
 DISTVERSIONSUFFIX=	.src

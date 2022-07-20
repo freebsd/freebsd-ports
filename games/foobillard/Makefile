@@ -1,5 +1,3 @@
-# Created by: Thomas Vogt <thomas.vogt@bsdunix.ch>
-
 PORTNAME=	foobillard
 PORTVERSION=	3.0a
 PORTREVISION=	12

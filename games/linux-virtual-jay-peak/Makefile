@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-
 PORTNAME=	virtual-jay-peak
 PORTVERSION=	1.1a
 PORTREVISION=	3

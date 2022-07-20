@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	lapispuzzle
 PORTVERSION=	1.2
 PORTREVISION=	8

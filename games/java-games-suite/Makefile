@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	java-games-suite
 PORTVERSION=	1.0
 PORTREVISION=	1

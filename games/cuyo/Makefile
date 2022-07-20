@@ -1,5 +1,3 @@
-# Created by: Matthew Gibson <mdg583@hotmail.com>
-
 PORTNAME=	cuyo
 PORTVERSION=	2.1.0
 PORTEPOCH=	1

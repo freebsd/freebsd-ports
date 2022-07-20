@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	2048
 PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=	v

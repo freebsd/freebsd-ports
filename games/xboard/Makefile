@@ -1,5 +1,3 @@
-# Created by: xaa@stack.nl
-
 PORTNAME?=	xboard
 PORTVERSION?=	4.9.1
 PORTREVISION?=	3

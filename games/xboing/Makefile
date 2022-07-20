@@ -1,5 +1,3 @@
-# Created by: janek
-
 PORTNAME=	xboing
 PORTVERSION=	2.4
 PORTREVISION=	5

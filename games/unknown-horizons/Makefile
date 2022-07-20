@@ -1,5 +1,3 @@
-# Created by: GreenDog <fiziologus@gmail.com>
-
 PORTNAME=	unknown-horizons
 PORTVERSION=	2019.1
 CATEGORIES=	games

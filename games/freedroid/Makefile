@@ -1,5 +1,3 @@
-# Created by: <benlutz@datacomm.ch>
-
 PORTNAME=	freedroid
 PORTVERSION=	1.0.2
 PORTREVISION=	19

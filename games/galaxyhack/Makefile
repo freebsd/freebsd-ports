@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	galaxyhack
 PORTVERSION=	1.74
 PORTREVISION=	36

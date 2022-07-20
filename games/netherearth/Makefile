@@ -1,5 +1,3 @@
-# Created by: Ginzburg Oleg
-
 PORTNAME=	netherearth
 PORTVERSION=	0.51
 PORTREVISION=	12

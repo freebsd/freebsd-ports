@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	nethack36
 PORTVERSION=	3.6.6
 PORTREVISION=	1

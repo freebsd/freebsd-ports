@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	vamos
 PORTVERSION=	0.7.1
 PORTREVISION=	24

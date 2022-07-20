@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	atr3d
 PORTVERSION=	0.6
 PORTREVISION=	19

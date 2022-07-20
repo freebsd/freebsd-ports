@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	swell-foop
 PORTVERSION=	41.1
 CATEGORIES=	games gnome

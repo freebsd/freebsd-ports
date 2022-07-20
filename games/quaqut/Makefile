@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	quaqut
 PORTVERSION=	0.2.0
 CATEGORIES=	games

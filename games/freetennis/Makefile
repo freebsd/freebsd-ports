@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-
 PORTNAME=	freetennis
 PORTVERSION=	0.4.8
 PORTREVISION=	16

@@ -1,5 +1,3 @@
-# Created by: issei <issei@jp.FreeBSD.org>
-
 PORTNAME=	xchadance
 PORTVERSION=	1.0
 PORTREVISION=	2

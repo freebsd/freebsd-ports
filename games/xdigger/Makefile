@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xdigger
 PORTVERSION=	1.0.10
 PORTREVISION=	4

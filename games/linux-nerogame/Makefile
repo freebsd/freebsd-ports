@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	nerogame
 PORTVERSION=	2.0
 PORTREVISION=	2

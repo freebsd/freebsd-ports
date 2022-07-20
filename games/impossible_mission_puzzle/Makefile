@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	impossible_mission_puzzle
 PORTVERSION=	1.0.1
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Bob Bomar <bob@fly.homeunix.org>
-
 PORTNAME=	eights
 PORTVERSION=	1.0
 CATEGORIES=	games

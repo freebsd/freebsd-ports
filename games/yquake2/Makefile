@@ -1,5 +1,3 @@
-# Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
-
 PORTNAME=	yquake2
 PORTVERSION=	8.01
 CATEGORIES=	games

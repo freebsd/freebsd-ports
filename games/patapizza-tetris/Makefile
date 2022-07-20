@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	patapizza-tetris
 PORTVERSION=	1.0
 PORTREVISION=	7

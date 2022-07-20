@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	ballerburg
 PORTVERSION=	1.2.1
 CATEGORIES=	games

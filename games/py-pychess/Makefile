@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	pychess
 PORTVERSION=	1.0.2
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Jesse Smith <jessefrgsmith@yahoo.ca>
-
 PORTNAME=	SearchAndRescue
 PORTVERSION=	1.3.0
 CATEGORIES=	games

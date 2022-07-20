@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	umark
 DISTVERSION=	2.0.0-Beta3
 PORTREVISION=	8

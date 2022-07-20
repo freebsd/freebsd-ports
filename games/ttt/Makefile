@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	ttt
 PORTVERSION=	2011.04
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	frikqcc
 PORTVERSION=	2.6
 CATEGORIES=	games devel

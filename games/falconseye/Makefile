@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	falconseye
 PORTVERSION=	1.9.3
 PORTREVISION=	11

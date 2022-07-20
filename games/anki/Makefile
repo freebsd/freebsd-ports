@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	anki
 DISTVERSION=	2.1.49
 PORTREVISION=	3

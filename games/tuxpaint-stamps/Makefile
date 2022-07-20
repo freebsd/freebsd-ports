@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	tuxpaint-stamps
 PORTVERSION=	2022.06.04
 CATEGORIES=	games

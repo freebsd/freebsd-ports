@@ -1,5 +1,3 @@
-# Created by: Beech Rintoul <beech@FreeBSD.org>
-
 PORTNAME=	mnemosyne
 PORTVERSION=		2.9
 PORTEPOCH=	1

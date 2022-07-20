@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	vavoom-extras
 PORTVERSION=	1.30
 PORTREVISION=	4

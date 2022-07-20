@@ -1,5 +1,3 @@
-# Created by: markand
-
 PORTNAME=	viruskiller
 PORTVERSION=	1.03
 DISTVERSIONSUFFIX=	-1

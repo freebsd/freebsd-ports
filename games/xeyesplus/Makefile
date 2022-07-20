@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	xeyes+
 PORTVERSION=	2.02
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Leland Wang <llwang@infor.org>
-
 PORTNAME=	vultures
 PORTVERSION=	2.3.67
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	tomenet
 PORTVERSION=	4.6.0
 CATEGORIES=	games

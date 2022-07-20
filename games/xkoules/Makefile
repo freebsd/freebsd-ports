@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xkoules
 PORTVERSION=	1.4
 PORTREVISION=	4

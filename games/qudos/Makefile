@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	qudos
 PORTVERSION=	0.40.1
 PORTREVISION=	20

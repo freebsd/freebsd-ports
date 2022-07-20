@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	asciiquarium
 PORTVERSION=	1.1
 PORTREVISION=	1

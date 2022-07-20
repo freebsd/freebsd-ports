@@ -1,5 +1,3 @@
-# Created by: Jesse Smith <jessefrgsmith@yahoo.ca>
-
 PORTNAME=	atanks
 PORTVERSION=	6.5
 PORTREVISION=	3

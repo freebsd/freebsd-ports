@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	emptyepsilon
 DISTVERSIONPREFIX=	EE-
 DISTVERSION=	2021.06.23

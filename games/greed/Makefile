@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	greed
 PORTVERSION=	4.2
 CATEGORIES=	games

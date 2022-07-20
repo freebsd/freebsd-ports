@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	scummvm-tools
 PORTVERSION=	2.5.0
 PORTREVISION=	2

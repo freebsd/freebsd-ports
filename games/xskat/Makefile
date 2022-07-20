@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	xskat
 PORTVERSION=	4.0
 PORTREVISION=	2

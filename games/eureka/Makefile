@@ -1,5 +1,3 @@
-# Created by: Kalten <kalten@gmx.at>
-
 PORTNAME=	eureka
 DISTVERSION=	1.27b
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	openbubbles
 PORTVERSION=	1.2
 PORTREVISION=	5

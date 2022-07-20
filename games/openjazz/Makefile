@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	openjazz
 PORTVERSION=	20190106
 CATEGORIES=	games

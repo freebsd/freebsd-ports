@@ -1,5 +1,3 @@
-# Created by: Aaron Zauner <az_mail@gmx.at>
-
 PORTNAME=	aop
 PORTVERSION=	0.6
 PORTREVISION=	2

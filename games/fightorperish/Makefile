@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	fightorperish
 PORTVERSION=	0.5
 PORTREVISION=	2

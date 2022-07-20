@@ -1,5 +1,3 @@
-# Created by: neuroworker@gmail.com
-
 PORTNAME=	instead
 PORTVERSION=	3.4.1
 CATEGORIES=	games

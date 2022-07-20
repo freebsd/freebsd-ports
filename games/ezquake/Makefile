@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	ezquake
 DISTVERSION=	3.2.3
 PORTREVISION=	2

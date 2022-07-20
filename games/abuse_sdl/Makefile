@@ -1,5 +1,3 @@
-# Created by: Dag-Erling C. Smørgrav <des@FreeBSD.org>
-
 PORTNAME=	abuse_sdl
 PORTVERSION=	0.8
 PORTREVISION=	8

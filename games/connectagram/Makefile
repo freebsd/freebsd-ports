@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	connectagram
 PORTVERSION=	1.2.11
 DISTVERSIONSUFFIX=	-src

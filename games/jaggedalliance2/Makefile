@@ -1,5 +1,3 @@
-# Created by: Christoph Mallon <christoph.mallon@gmx.de>
-
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.19.1

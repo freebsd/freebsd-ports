@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	data
 PORTVERSION=	4.2.023
 CATEGORIES=	games

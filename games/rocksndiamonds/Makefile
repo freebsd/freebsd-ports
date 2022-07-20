@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	rocksndiamonds
 PORTVERSION=	3.3.1.2
 PORTREVISION=	5

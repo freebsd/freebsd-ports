@@ -1,5 +1,3 @@
-# Created by: Sven Moeller <smoeller@nichthelfer.de>
-
 PORTNAME=	megaglest
 PORTVERSION=	3.13.0
 CATEGORIES=	games

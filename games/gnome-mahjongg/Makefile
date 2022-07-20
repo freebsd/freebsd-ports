@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	gnome-mahjongg
 DISTVERSION=	3.38.3
 CATEGORIES=	games gnome

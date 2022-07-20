@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Games-GuessWord
 PORTVERSION=	0.16
 PORTREVISION=	1

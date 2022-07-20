@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	gnubg
 PORTVERSION=	1.06.002
 PORTREVISION=	5

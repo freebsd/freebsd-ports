@@ -1,5 +1,3 @@
-# Created by: Andrej Zverev
-
 PORTNAME=	lincity-ng
 PORTVERSION=	2.0
 PORTREVISION=	19

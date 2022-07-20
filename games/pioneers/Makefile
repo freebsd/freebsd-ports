@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	pioneers
 PORTVERSION=	15.6
 PORTREVISION=	2

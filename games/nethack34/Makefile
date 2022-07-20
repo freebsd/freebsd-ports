@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	nethack34
 PORTVERSION=	3.4.3
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	glightoff
 PORTVERSION=	1.0.0
 PORTREVISION=	4

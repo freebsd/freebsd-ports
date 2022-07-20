@@ -1,5 +1,3 @@
-# Created by: Travis Poppe <tlp@liquidx.org>
-
 PORTNAME=	stratagus
 PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	v

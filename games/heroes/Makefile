@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	heroes
 PORTVERSION=	0.21
 PORTREVISION=	19

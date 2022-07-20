@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	four-in-a-row
 PORTVERSION=	3.38.1
 PORTREVISION=	1

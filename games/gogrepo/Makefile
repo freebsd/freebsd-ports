@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	gogrepo
 PORTVERSION=	0.3a
 PORTREVISION=	3

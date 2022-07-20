@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@FreeBSD.org>
-
 PORTNAME=	ut
 PORTVERSION=	3.7
 PORTREVISION=	1

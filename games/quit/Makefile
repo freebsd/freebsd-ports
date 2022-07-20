@@ -1,5 +1,3 @@
-# Created by: UMENO Takashi <umeno@rr.iij4u.or.jp>
-
 PORTNAME=	quit
 PORTVERSION=	1.2a
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
-
 PORTNAME=	gnome-tetravex
 PORTVERSION=	3.38.2
 CATEGORIES=	games gnome

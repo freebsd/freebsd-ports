@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	bomns
 PORTVERSION=	0.99.3
 PORTREVISION=	2

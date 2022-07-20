@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	atomix
 PORTVERSION=	3.34.0
 CATEGORIES=	games gnome

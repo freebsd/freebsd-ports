@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	blobby
 PORTVERSION=	1.0
 PORTREVISION=	15

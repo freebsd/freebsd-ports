@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	btanks
 PORTVERSION=	0.9.8083
 PORTREVISION=	10

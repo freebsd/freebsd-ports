@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	frogatto
 PORTVERSION=	1.3.1
 PORTREVISION=	25

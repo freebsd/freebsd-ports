@@ -1,5 +1,3 @@
-# Created by: Jeremy <karlj000@unbc.ca>
-
 PORTNAME=	magiccube4d
 PORTVERSION=	2.2
 PORTREVISION=	3

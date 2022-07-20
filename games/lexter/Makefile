@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	lexter
 PORTVERSION=	1.0.3
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	glmaze
 DISTVERSION=	1.1a
 PORTREVISION=	13

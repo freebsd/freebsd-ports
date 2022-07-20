@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	iceicepenguin
 PORTVERSION=	1.5.1
 PORTREVISION=	9

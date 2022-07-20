@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	lm-solve
 PORTVERSION=	0.8.4
 PORTREVISION=	1

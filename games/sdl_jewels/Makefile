@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	sdl_jewels
 PORTVERSION=	1.1.1
 PORTREVISION=	5

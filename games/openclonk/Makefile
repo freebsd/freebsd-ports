@@ -1,5 +1,3 @@
-# Created by: Kevin Zheng <kevinz5000@gmail.com>
-
 PORTNAME=	openclonk
 DISTVERSION=	8.1
 PORTREVISION=	3

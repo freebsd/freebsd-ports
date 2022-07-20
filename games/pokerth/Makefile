@@ -1,5 +1,3 @@
-# Created by: Yinghong.Liu <relaxbsd@gmail.com>
-
 PORTNAME=	pokerth
 PORTVERSION=	1.1.2
 PORTREVISION=	16

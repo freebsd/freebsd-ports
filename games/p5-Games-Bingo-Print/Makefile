@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Games-Bingo-Print
 PORTVERSION=	0.04
 PORTREVISION=	3

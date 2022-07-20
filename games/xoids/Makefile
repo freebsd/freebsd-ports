@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xoids
 PORTVERSION=	1.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	data
 PORTVERSION=	1.3.110
 CATEGORIES=	games python

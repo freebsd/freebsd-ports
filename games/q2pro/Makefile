@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	q2pro
 PORTVERSION=	${SVN_REV}
 PORTREVISION=	13

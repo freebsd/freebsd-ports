@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	gnome-robots
 PORTVERSION=	40.0
 CATEGORIES=	games gnome

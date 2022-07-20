@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	3zb2
 PORTVERSION=	0.97
 PORTREVISION=	1

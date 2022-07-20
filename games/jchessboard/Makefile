@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	jchessboard
 PORTVERSION=	1.5
 PORTREVISION=	4

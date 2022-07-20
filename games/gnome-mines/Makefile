@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	gnome-mines
 PORTVERSION=	40.1
 CATEGORIES=	games gnome

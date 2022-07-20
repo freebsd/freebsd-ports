@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	klavaro
 PORTVERSION=	3.11
 CATEGORIES=	games

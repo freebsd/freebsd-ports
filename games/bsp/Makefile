@@ -1,5 +1,3 @@
-# Created by: Christian Brueffer <chris@unixpages.org>
-
 PORTNAME=	bsp
 PORTVERSION=	5.2
 CATEGORIES=	games

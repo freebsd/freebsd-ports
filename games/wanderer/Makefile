@@ -1,5 +1,3 @@
-# Created by: marina@surferz.net
-
 PORTNAME=	wanderer
 PORTVERSION=	3.2
 CATEGORIES=	games

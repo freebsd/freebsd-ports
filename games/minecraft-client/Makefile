@@ -1,5 +1,3 @@
-# Created by: Martin Kropfinger
-
 PORTNAME=	minecraft-client
 PORTVERSION=	1.7.9
 PORTREVISION=	6

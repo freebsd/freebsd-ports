@@ -1,5 +1,3 @@
-# Created by: jkh
-
 PORTNAME=	xspringies
 PORTVERSION=	1.12
 CATEGORIES=	games

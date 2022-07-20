@@ -1,5 +1,3 @@
-# Created by: Sean Bruno
-
 PORTNAME=	Cockatrice
 PORTVERSION=	2.8.0
 PORTREVISION=	3

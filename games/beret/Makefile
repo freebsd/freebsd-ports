@@ -1,5 +1,3 @@
-# Created by: Alfonso S. Siciliano <alfix86@gmail.com>
-
 PORTNAME=	beret
 PORTVERSION=	1.2.1
 CATEGORIES=	games

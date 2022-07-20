@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	tecnoballz
 PORTVERSION=	0.93.1
 PORTREVISION=	2

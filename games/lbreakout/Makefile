@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	lbreakout
 PORTVERSION=	010315
 PORTREVISION=	9

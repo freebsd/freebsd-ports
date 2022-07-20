@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	gtkradiant
 PORTVERSION=	1.5.0
 PORTREVISION=	18

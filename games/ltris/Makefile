@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	ltris
 PORTVERSION=	1.2.1
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@fxq.nl>
-
 PORTNAME=	quake4
 PORTVERSION=	1.4.2
 PORTREVISION=	1

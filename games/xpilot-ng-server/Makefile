@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	xpilot-ng
 PORTVERSION=	4.7.3
 PORTREVISION?=	5

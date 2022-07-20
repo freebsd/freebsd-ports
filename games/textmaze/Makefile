@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	textmaze
 PORTVERSION=	1.2
 CATEGORIES=	games perl5

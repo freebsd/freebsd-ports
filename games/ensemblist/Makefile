@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-
 PORTNAME=	ensemblist
 PORTVERSION=	040126
 PORTREVISION=	12

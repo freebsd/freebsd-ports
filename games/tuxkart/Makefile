@@ -1,5 +1,3 @@
-# Created by: Alexander Langer <alex@FreeBSD.org>
-
 PORTNAME=	tuxkart
 PORTVERSION=	0.4.0
 PORTREVISION=	7

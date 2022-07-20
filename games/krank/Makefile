@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	krank
 PORTVERSION=	07
 PORTREVISION=	9

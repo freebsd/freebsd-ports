@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	psychomod
 PORTVERSION=	3.1
 CATEGORIES=	games

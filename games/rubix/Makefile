@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	rubix
 PORTVERSION=	1.0.6
 PORTREVISION=	7

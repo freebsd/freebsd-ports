@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	xcowsay
 PORTVERSION=	1.6
 CATEGORIES=	games

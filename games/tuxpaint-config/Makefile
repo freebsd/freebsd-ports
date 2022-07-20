@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	tuxpaint-config
 PORTVERSION=	0.0.19
 CATEGORIES=	games

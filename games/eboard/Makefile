@@ -1,5 +1,3 @@
-# Created by: petef@FreeBSD.org
-
 PORTNAME=	eboard
 PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v

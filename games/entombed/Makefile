@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	entombed
 PORTVERSION=	2007.07.04
 PORTREVISION=	2

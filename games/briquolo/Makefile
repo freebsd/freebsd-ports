@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <krion@FreeBSD.org>
-
 PORTNAME=	briquolo
 PORTVERSION=	0.5.7
 PORTREVISION=	16

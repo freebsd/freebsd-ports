@@ -1,5 +1,3 @@
-# Created by: Filippo Natali <filippo@widestore.net>
-
 PORTNAME=	lgeneral
 DISTVERSION=	1.4.4
 CATEGORIES=	games

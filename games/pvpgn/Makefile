@@ -1,5 +1,3 @@
-# Created by: mek
-
 PORTNAME=	pvpgn
 PORTVERSION=	1.8.5
 PORTREVISION=	1

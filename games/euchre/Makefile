@@ -1,5 +1,3 @@
-# Created by: Frank Laszlo <laszlof@freebsdmatrix.net>
-
 PORTNAME=	euchre
 PORTVERSION=	0.8
 PORTREVISION=	3

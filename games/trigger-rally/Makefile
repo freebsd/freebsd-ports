@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	trigger-rally
 PORTVERSION=	0.6.6.1
 PORTREVISION=	4

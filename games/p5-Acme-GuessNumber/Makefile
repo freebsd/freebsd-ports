@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Acme-GuessNumber
 PORTVERSION=	0.05
 CATEGORIES=	games perl5

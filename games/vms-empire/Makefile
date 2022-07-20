@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	vms-empire
 PORTVERSION=	1.16
 CATEGORIES=	games

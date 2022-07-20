@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov <andy@icc.surw.chel.su>
-
 PORTNAME=	omega
 PORTVERSION=	0.90.4
 PORTREVISION=	1

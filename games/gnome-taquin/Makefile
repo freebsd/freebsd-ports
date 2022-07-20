@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
-
 PORTNAME=	gnome-taquin
 PORTVERSION=	3.38.1
 PORTREVISION=	1

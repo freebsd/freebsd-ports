@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	tomatoes
 PORTVERSION=	1.55
 PORTREVISION=	2

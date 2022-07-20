@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	iagno
 PORTVERSION=	3.38.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	xonotic
 PORTVERSION=	0.8.5
 CATEGORIES=	games

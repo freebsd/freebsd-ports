@@ -1,5 +1,3 @@
-# Created by: Jordan DeLong <fracture@allusion.net>
-
 PORTNAME=	prboom-plus
 PORTVERSION=	2.5.1.3
 PORTREVISION=	10

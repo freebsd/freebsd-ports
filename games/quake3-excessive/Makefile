@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	excessive
 PORTVERSION=	003
 CATEGORIES=	games

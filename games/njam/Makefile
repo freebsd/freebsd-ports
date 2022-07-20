@@ -1,5 +1,3 @@
-# Created by: <janos.mohacsi@bsd.hu>
-
 PORTNAME=	njam
 PORTVERSION=	1.25
 PORTREVISION=	12

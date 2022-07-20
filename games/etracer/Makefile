@@ -1,5 +1,3 @@
-# Created by: Peter Dunning
-
 PORTNAME=	etr
 PORTVERSION=	0.8.1
 CATEGORIES=	games

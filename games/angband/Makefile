@@ -1,5 +1,3 @@
-# Created by: Matthew Hunt <mph@pobox.com>
-
 PORTNAME=	angband
 DISTVERSION=	4.2.2
 DISTNAME=	Angband-${DISTVERSION}

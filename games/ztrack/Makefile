@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov <andy@icc.surw.chel.su>
-
 PORTNAME=	ztrack
 PORTVERSION=	1.0
 CATEGORIES=	games

@@ -1,5 +1,3 @@
-# Created by: Nik Clayton <nik@FreeBSD.org>
-
 PORTNAME=	data
 DISTVERSION=	1.32b-3
 PORTREVISION=	2

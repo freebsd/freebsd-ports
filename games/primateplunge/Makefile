@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	primateplunge
 PORTVERSION=	1.1
 PORTREVISION=	8

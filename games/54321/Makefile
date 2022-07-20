@@ -1,5 +1,3 @@
-# Created by: Leland Wang <llwang@infor.org>
-
 PORTNAME=	54321
 PORTVERSION=	1.0.2001.11.16
 PORTREVISION=	15

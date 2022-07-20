@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov <andy@icc.surw.chel.su>
-
 PORTNAME=	3dpong
 PORTVERSION=	0.5
 PORTREVISION=	6

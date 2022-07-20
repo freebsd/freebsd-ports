@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	jtans
 PORTVERSION=	1.0
 PORTREVISION=	4

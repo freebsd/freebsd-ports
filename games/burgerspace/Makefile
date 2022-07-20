@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	burgerspace
 PORTVERSION=	1.9.4
 CATEGORIES=	games

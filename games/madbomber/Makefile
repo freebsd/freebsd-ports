@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	madbomber
 PORTVERSION=	0.2.5
 PORTREVISION=	15

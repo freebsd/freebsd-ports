@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	cowsay
 PORTVERSION=	3.04
 DISTVERSIONPREFIX=	cowsay-

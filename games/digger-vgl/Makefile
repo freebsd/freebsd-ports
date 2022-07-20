@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	digger
 PORTVERSION=	20020314
 PORTREVISION=	3

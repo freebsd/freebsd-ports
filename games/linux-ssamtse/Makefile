@@ -1,5 +1,3 @@
-# Created by: Sergey Akifyev
-
 PORTNAME=	ssamtse
 PORTVERSION=	1.07b1
 PORTREVISION=	1

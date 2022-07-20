@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	highmoon
 PORTVERSION=	1.2.4
 PORTREVISION=	12

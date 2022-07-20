@@ -1,5 +1,3 @@
-# Created by: Makoto YAMAKURA <makoto@pinpott.spnet.ne.jp>
-
 PORTNAME=	zangband
 DISTVERSION=	2.7.5pre1
 CATEGORIES+=	games

@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	avp
 DISTVERSION=	20170505
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Klaus Goger <klaus.goger@reflex.at>
-
 PORTNAME=	xbubble
 PORTVERSION=	0.5.8
 PORTREVISION=	7

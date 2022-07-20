@@ -1,5 +1,3 @@
-# Created by: lightside <lightside@gmx.com>
-
 PORTNAME=	pioneer
 DISTVERSION=	20220203
 CATEGORIES=	games

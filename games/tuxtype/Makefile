@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	tuxtype
 PORTVERSION=	1.8.3
 PORTREVISION=	3

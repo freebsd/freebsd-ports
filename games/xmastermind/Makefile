@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xmastermind
 PORTVERSION=	0.1
 PORTREVISION=	8

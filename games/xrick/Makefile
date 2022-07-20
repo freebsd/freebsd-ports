@@ -1,5 +1,3 @@
-# Created by: David Siebörger <drs@rucus.ru.ac.za>
-
 PORTNAME=	xrick
 PORTVERSION=	021212
 PORTREVISION=	10

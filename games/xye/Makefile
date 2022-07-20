@@ -1,5 +1,3 @@
-# Created by: Robert Gogolok <gogo@cs.uni-sb.de>
-
 PORTNAME=	xye
 PORTVERSION=	0.12.2
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	joequake
 PORTVERSION=	0.15b1329
 PORTREVISION=	10

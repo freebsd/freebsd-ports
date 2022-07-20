@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	lightsoff
 PORTVERSION=	40.0.1
 CATEGORIES=	games gnome

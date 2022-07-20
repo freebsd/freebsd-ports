@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	robocode
 PORTVERSION=	1.9.4.5
 CATEGORIES=	games education java

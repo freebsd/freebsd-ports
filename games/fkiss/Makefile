@@ -1,5 +1,3 @@
-# Created by: Seiichirou Hiraoka <flathill@flathill.gr.jp>
-
 PORTNAME=	fkiss
 PORTVERSION=	0.33a
 PORTREVISION=	6

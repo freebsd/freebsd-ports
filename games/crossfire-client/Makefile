@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	crossfire-client
 PORTVERSION=	1.75.2
 CATEGORIES=	games

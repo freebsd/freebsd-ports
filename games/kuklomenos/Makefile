@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	kuklomenos
 PORTVERSION=	0.4.5
 PORTREVISION=	4

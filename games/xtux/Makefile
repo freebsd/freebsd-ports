@@ -1,5 +1,3 @@
-# Created by: Göran Runfeldt <goranrunfeldt@home.se>
-
 PORTNAME=	xtux
 PORTVERSION=	20030306
 CATEGORIES=	games

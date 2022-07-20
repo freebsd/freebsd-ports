@@ -1,5 +1,3 @@
-# Created by: Sakai Hiroaki <sakai@seki.ee.kagu.sut.ac.jp>
-
 PORTNAME=	xfireworks
 PORTVERSION=	1.4
 PORTREVISION=	2

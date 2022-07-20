@@ -1,5 +1,3 @@
-# Created by: Matthew Hunt <mph@pobox.com>
-
 PORTNAME=	xpat2
 PORTVERSION=	1.07
 DISTVERSIONSUFFIX=	-src

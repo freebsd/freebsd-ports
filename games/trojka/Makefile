@@ -1,5 +1,3 @@
-# Created by: Edwin Mons
-
 PORTNAME=	trojka
 PORTVERSION=	1.0
 PORTREVISION=	1

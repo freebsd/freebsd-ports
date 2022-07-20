@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	popstar
 PORTVERSION=	0.0.2
 PORTREVISION=	2

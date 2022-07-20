@@ -1,5 +1,3 @@
-# Created by: edwin@mavetju.org
-
 PORTNAME=	einstein
 PORTVERSION=	2.0
 PORTREVISION=	10

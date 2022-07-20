@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	xsc
 PORTVERSION=	1.6
 PORTREVISION=	2

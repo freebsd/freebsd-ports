@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	mancala
 PORTVERSION=	1.0.3
 CATEGORIES=	games

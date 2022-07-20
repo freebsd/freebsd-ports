@@ -1,5 +1,3 @@
-# Created by: Adam Kranzel (adam@alameda.edu)
-
 PORTNAME=	slashem
 PORTVERSION=	0.0.7E.7F.3
 CATEGORIES=	games

@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	tycho
 PORTVERSION=	0.1
 CATEGORIES=	games

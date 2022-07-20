@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis
-
 PORTNAME=	xrally
 PORTVERSION=	1.1.1
 PORTREVISION=	6

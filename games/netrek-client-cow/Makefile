@@ -1,5 +1,3 @@
-# Created by: Kevin Zheng <kevinz5000@gmail.com>
-
 PORTNAME=	netrek-client-cow
 PORTVERSION=	3.3.2
 CATEGORIES=	games

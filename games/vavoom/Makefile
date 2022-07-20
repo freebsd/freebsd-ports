@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	vavoom
 PORTVERSION=	1.33
 PORTREVISION=	16

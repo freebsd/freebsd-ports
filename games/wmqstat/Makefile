@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	wmqstat
 PORTVERSION=	0.0.4
 PORTREVISION=	2

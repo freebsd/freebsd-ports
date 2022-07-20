@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	atris
 PORTVERSION=	1.0.7
 PORTREVISION=	7

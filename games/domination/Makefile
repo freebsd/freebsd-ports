@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	domination
 PORTVERSION=	1.2.4
 CATEGORIES=	games java

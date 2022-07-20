@@ -1,5 +1,3 @@
-# Created by: chris_pressey@yahoo.ca
-
 PORTNAME=	fargoal
 PORTVERSION=	20040629
 PORTREVISION=	3

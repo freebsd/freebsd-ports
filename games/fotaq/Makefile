@@ -1,5 +1,3 @@
-# Created by: Alex Trull <freebsd.alex@trull.org>
-
 PORTNAME=	fotaq
 PORTVERSION=	1.1
 PORTREVISION=	1

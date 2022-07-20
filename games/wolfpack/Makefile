@@ -1,5 +1,3 @@
-# Created by: Daniel O'Connor <darius@dons.net.au>
-
 PORTNAME=	wolfpack
 PORTVERSION=	4.4.1
 CATEGORIES=	games

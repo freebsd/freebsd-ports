@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	bluemoon
 PORTVERSION=	2.12
 CATEGORIES=	games

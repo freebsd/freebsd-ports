@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	megamario
 PORTVERSION=	1.7
 PORTREVISION=	5

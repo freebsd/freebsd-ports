@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cryptoslam
 PORTVERSION=	1.2
 CATEGORIES=	games

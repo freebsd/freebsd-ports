@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	gigalomania
 PORTVERSION=	0.28
 CATEGORIES=	games

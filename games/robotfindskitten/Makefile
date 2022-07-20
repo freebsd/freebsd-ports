@@ -1,5 +1,3 @@
-# Created by: Ceri Davies (ceri@FreeBSD.org)
-
 PORTNAME=	robotfindskitten
 PORTVERSION=	2.8284271.702
 PORTEPOCH=	1

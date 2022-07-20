@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	rnd_jue
 PORTVERSION=	3.3.0.0
 PORTREVISION=	6

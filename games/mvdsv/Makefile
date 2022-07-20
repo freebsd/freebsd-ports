@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME?=	mvdsv
 PORTVERSION=	0.34
 PORTEPOCH=	2

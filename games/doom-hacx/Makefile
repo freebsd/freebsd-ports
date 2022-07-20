@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	hacx
 PORTVERSION=	1.0
 CATEGORIES=	games

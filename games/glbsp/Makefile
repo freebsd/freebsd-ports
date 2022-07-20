@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	glbsp
 PORTVERSION=	2.20
 PORTREVISION=	1

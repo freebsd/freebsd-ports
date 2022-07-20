@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	hr2
 PORTVERSION=	1.0
 CATEGORIES=	games

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	openyahtzee
 PORTVERSION=	1.9.3
 PORTREVISION=	4

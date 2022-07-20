@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	xlife
 PORTVERSION=	6.7.6
 CATEGORIES=	games

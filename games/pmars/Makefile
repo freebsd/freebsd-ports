@@ -1,5 +1,3 @@
-# Created by: gmarco@giovannelli.it
-
 PORTNAME=	pmars
 PORTVERSION=	0.9.2
 PORTREVISION=	3

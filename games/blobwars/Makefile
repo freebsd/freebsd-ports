@@ -1,5 +1,3 @@
-# Created by: Loren M. Lang <lorenl@alzatex.com>
-
 PORTNAME=	blobwars
 PORTVERSION=	2.00
 CATEGORIES=	games

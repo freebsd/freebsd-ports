@@ -1,5 +1,3 @@
-# Created by: Brian Buchanan <brian@CSUA.Berkeley.EDU>
-
 PORTNAME=	flightgear
 PORTVERSION=	2020.3.13
 PORTREVISION=	1

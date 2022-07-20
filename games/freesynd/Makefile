@@ -1,5 +1,3 @@
-# Created by: Lars Engels <lars.engels@0x20.net>
-
 PORTNAME=	freesynd
 PORTVERSION=	0.7.5
 CATEGORIES=	games

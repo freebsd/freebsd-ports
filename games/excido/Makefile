@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	excido
 PORTVERSION=	0.1.5c
 PORTREVISION=	17

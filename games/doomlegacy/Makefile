@@ -1,5 +1,3 @@
-# Created by: Alexander G. Chetirbock <bock@bock.nnov.ru>
-
 PORTNAME=	doomlegacy
 PORTVERSION=	1.48.8
 PORTREVISION=	1

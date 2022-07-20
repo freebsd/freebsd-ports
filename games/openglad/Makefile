@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	openglad
 PORTVERSION=	0.98
 PORTREVISION=	10

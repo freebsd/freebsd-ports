@@ -1,5 +1,3 @@
-# Created by: Nikolai Lifanov <lifanov@mail.lifanov.com>
-
 PORTNAME=	scroll
 PORTVERSION=	1.20180421
 PORTREVISION=	11

@@ -1,5 +1,3 @@
-# Created by: gmarco@giovannelli.it
-
 PORTNAME=	tetrinet-x
 PORTVERSION=	1.13.16
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Jordan DeLong <fracture@allusion.net>
-
 PORTNAME=	yadex
 PORTVERSION=	1.7.0
 PORTREVISION=	3

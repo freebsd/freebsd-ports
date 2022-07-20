@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	tuxpaint
 PORTVERSION=	0.9.28
 CATEGORIES=	games

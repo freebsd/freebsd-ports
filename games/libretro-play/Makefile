@@ -1,5 +1,3 @@
-# Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
-
 PORTNAME=	play
 PORTVERSION=	0.48
 PORTREVISION=	1

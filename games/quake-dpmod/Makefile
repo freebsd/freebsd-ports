@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	dpmod
 PORTVERSION=	20130301
 CATEGORIES=	games

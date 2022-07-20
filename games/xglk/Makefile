@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	xglk
 PORTVERSION=	411
 PORTREVISION=	6

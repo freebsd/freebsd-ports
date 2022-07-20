@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	masterserver
 PORTVERSION=	0.4.1
 CATEGORIES=	games

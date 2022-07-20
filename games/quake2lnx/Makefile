@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
 PORTREVISION=	16

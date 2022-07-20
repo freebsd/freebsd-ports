@@ -1,5 +1,3 @@
-# Created by: Stas Timokhin <stast@bsdportal.ru>
-
 PORTNAME=	blockout
 PORTVERSION=	2.5
 PORTREVISION=	5

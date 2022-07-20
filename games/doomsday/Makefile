@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-
 PORTNAME=	doomsday
 PORTVERSION=	2.3.1
 PORTREVISION=	4

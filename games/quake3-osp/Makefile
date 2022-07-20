@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	osp
 PORTVERSION=	1.03a
 CATEGORIES=	games

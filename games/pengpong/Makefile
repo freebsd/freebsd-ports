@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	pengpong
 PORTVERSION=	0.3
 PORTREVISION=	13

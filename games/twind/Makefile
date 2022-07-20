@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	twind
 PORTVERSION=	1.1.0
 PORTREVISION=	5

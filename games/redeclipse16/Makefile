@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	redeclipse
 PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v

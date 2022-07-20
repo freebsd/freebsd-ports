@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	acm
 PORTVERSION=	5.0
 PORTREVISION=	3

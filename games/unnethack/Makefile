@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	unnethack
 DISTVERSION=	5.1.0-20131208
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Kuang-che Wu <kcwu@csie.org>
-
 PORTNAME=	tsito
 PORTVERSION=	0.8.4
 CATEGORIES=	games

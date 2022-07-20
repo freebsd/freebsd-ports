@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	lmpc
 PORTVERSION=	3.4.4
 CATEGORIES=	games

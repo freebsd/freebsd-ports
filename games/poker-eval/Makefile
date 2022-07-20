@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	poker-eval
 PORTVERSION=	138.0
 CATEGORIES=	games

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	filters
 PORTVERSION=	2.55
 DISTVERSIONSUFFIX=	.orig

@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	scare
 PORTVERSION=	1.3.10
 CATEGORIES=	games

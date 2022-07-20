@@ -1,5 +1,3 @@
-# Created by: Eric Anholt
-
 PORTNAME=	tuxracer
 PORTVERSION=	0.61
 PORTREVISION=	15

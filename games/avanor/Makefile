@@ -1,5 +1,3 @@
-# Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
-
 PORTNAME=	avanor
 PORTVERSION=	0.5.8
 CATEGORIES=	games

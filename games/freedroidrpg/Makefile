@@ -1,5 +1,3 @@
-# Created by: Travis Poppe <tlp@liquidx.org>
-
 PORTNAME=	freedroidrpg
 PORTVERSION=	0.16.1
 PORTREVISION=	3

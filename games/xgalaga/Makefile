@@ -1,5 +1,3 @@
-# Created by: Satoshi Asami <asami@FreeBSD.org>
-
 PORTNAME=	xgalaga
 PORTVERSION=	2.1.1.0
 CATEGORIES=	games

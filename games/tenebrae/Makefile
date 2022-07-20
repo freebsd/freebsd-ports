@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	tenebrae
 PORTVERSION=	1.04
 PORTREVISION=	13

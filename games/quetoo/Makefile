@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	quetoo
 PORTVERSION=	0.6.1
 PORTREVISION=	10

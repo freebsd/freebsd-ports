@@ -1,5 +1,3 @@
-# Created by: Seiichirou Hiraoka
-
 PORTNAME=	xhime
 PORTVERSION=	1.51
 PORTREVISION=	2

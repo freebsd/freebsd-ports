@@ -1,5 +1,3 @@
-# Created by: Stas Timokhin <devel@stasyan.com>
-
 PORTNAME=	openomf
 PORTVERSION=	0.6.5
 PORTREVISION=	6

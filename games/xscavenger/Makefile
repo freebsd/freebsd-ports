@@ -1,5 +1,3 @@
-# Created by: eivind
-
 PORTNAME=	xscavenger
 PORTVERSION=	1.4.5
 PORTREVISION=	1

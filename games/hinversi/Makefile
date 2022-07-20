@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	hinversi
 PORTVERSION=	0.8.2
 PORTREVISION=	2

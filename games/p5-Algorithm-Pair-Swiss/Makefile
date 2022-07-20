@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Algorithm-Pair-Swiss
 PORTVERSION=	0.14
 PORTREVISION=	1

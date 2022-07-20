@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=		cardpics
 PORTVERSION=		0.4
 CATEGORIES=		games devel

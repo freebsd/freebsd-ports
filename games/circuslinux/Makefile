@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis
-
 PORTNAME=	circuslinux
 PORTVERSION=	1.0.3
 PORTREVISION=	14

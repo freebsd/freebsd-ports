@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	mrboom
 PORTVERSION=	5.2
 CATEGORIES=	games

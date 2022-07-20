@@ -1,5 +1,3 @@
-# Created by: Pierre-Paul Lavoie <ppl@nbnet.nb.ca>
-
 PORTNAME=	holotz-castle
 PORTVERSION=	1.3.14
 PORTREVISION=	8

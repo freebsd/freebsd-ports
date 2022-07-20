@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	braincurses
 PORTVERSION=	1.1.0
 PORTREVISION=	5

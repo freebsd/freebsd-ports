@@ -1,5 +1,3 @@
-# Created by: Ilya A. Arhipov <admin@gorodkirov.ru>
-
 PORTNAME=	opensfx
 PORTVERSION=	1.0.3
 CATEGORIES=	games

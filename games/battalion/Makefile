@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	battalion
 PORTVERSION=	1.4b
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Christopher Preston <rbg@gayteenresource.org>
-
 PORTNAME=	nettoe
 PORTVERSION=	1.5.1
 PORTREVISION=	1

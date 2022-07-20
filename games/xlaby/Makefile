@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xlaby
 PORTVERSION=	2.0.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Alexander Langer <alex@FreeBSD.org>
-
 PORTNAME=	tux_aqfh
 PORTVERSION=	1.0.14
 PORTREVISION=	12
