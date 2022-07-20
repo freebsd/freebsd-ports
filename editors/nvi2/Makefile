@@ -1,5 +1,3 @@
-# Created by: Craig Leres <leres@FreeBSD.org>
-
 PORTNAME=	nvi2
 PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v

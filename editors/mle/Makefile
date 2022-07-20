@@ -1,5 +1,3 @@
-# Created by: Adam Saponara <as@php.net>
-
 PORTNAME=	mle
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.0

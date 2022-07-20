@@ -1,5 +1,3 @@
-# Created by: Martin Blapp
-
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
 PORTREVISION=	0

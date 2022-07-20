@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	dhex
 PORTVERSION=	0.69
 CATEGORIES=	editors

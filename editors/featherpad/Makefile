@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=		featherpad
 PORTVERSION=		1.2.0
 DISTVERSIONPREFIX=	V

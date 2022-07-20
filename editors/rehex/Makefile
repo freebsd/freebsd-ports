@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	rehex
 DISTVERSION=	0.5.3
 CATEGORIES=	editors

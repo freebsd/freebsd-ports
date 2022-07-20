@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	codelite
 PORTVERSION=	12.0
 PORTREVISION=	4

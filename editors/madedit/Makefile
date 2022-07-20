@@ -1,5 +1,3 @@
-# Created by: Xin LI <delphij@FreeBSD.org>
-
 PORTNAME=	madedit
 PORTVERSION=	0.2.9
 PORTREVISION=	25

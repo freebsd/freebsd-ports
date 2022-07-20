@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	hexedit
 PORTVERSION=	1.6
 CATEGORIES=	editors

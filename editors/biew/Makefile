@@ -1,5 +1,3 @@
-# Created by: Michael Vasilenko <acid@stu.cn.ua>
-
 PORTNAME=	biew
 PORTVERSION=	6.1.0
 PORTREVISION=	4

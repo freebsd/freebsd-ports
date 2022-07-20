@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	sted
 PORTVERSION=	0.2.2
 CATEGORIES=	editors

@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	abiword
 PORTVERSION=	3.0.5
 PORTREVISION=	3

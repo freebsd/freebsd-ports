@@ -1,5 +1,3 @@
-# Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
-
 PORTNAME=	boiling-egg
 PORTVERSION=	0.02
 PORTREVISION=	1

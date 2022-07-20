@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-
 PORTNAME=	emacs
 DISTVERSION=	28.1
 PORTREVISION=	1

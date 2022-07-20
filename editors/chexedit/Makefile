@@ -1,5 +1,3 @@
-# Created by: Roman Shterenzon <roman@xpert.com>
-
 PORTNAME=	chexedit
 PORTVERSION=	0.9.7
 PORTREVISION=	2

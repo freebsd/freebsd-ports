@@ -1,5 +1,3 @@
-# Created by: rch@richard.eu.org
-
 PORTNAME=	yudit
 PORTVERSION=	3.0.7
 CATEGORIES=	editors converters print

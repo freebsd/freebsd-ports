@@ -1,5 +1,3 @@
-# Created by: giffunip@asme.org
-
 PORTNAME=	the
 PORTVERSION=	3.3.r4
 PORTREVISION=	2

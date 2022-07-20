@@ -1,5 +1,3 @@
-# Created by: Shigeyuki Fukushima <shige@FreeBSD.org>
-
 PORTNAME=	psgml
 PORTVERSION=	1.4.0
 PORTREVISION=	14

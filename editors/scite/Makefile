@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	scite
 DISTVERSION=	4.4.5
 CATEGORIES=	editors gnome

@@ -1,5 +1,3 @@
-# Created by: Chris D. Faulhaber <jedgar@fxp.org>
-
 PORTNAME=	bvi
 PORTVERSION=	1.4.0
 CATEGORIES=	editors

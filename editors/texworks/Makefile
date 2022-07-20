@@ -1,5 +1,3 @@
-# Created by: Diego Depaoli <trebestie@gmail.com>
-
 PORTNAME=	texworks
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.6.2

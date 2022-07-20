@@ -1,5 +1,3 @@
-# Created by: Kelly Yancey <kbyanc@posi.net>
-
 PORTNAME=	aee
 DISTVERSION=	2.2.22
 CATEGORIES=	editors

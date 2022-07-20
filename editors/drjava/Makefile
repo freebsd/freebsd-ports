@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale	<nivit@email.it>
-
 PORTNAME=	drjava
 DISTVERSION=	20140826-r5761
 PORTREVISION=	1

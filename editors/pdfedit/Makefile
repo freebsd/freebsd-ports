@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	pdfedit
 PORTVERSION=	0.4.5
 PORTREVISION=	16

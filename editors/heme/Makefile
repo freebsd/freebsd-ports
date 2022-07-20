@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	heme
 PORTVERSION=	0.4.2
 CATEGORIES=	editors

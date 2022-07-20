@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	mousepad
 PORTVERSION=	0.5.10
 CATEGORIES=	editors xfce

@@ -1,5 +1,3 @@
-# Created by: Philippe Lefebvre <nemesis@balistik.net>
-
 PORTNAME=	nano
 DISTVERSION=	6.2
 CATEGORIES=	editors

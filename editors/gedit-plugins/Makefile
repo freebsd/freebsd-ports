@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	gedit-plugins
 PORTVERSION=	42.1
 CATEGORIES=	editors gnome

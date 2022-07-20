@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	lite
 PORTVERSION=	1.11
 CATEGORIES=	editors

@@ -1,5 +1,3 @@
-# Created by: joseph@randomnetworks.com
-
 PORTNAME=	e3
 PORTVERSION=	2.8
 PORTEPOCH=	3

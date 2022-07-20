@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	textadept
 PORTVERSION=	11.1
 DISTVERSIONPREFIX=	${PORTNAME}_

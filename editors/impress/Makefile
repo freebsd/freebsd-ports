@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	impress
 PORTVERSION=	1.1b9
 PORTREVISION=	3

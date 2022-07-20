@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	bitedit
 PORTVERSION=	0.9.4
 CATEGORIES=	editors

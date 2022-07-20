@@ -1,5 +1,3 @@
-# Created by: Kenneth Vestergaard Schmidt <kvs@pil.dk>
-
 PORTNAME=	emacs
 DISTVERSION=	29.0.50.20220715
 PORTEPOCH=	2

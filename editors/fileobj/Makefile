@@ -1,5 +1,3 @@
-# Created by: Rimvydas Jasinskas <zrj@ef.irc>
-
 PORTNAME=	fileobj
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.108

@@ -1,5 +1,3 @@
-# Created by: Jason Evans <jasone@FreeBSD.org>
-
 PORTNAME=	zile
 PORTVERSION=	2.6.2
 CATEGORIES=	editors

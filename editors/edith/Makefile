@@ -1,5 +1,3 @@
-# Created by: Christian Brueffer <chris@unixpages.org>
-
 PORTNAME=	edith
 PORTVERSION=	1.58
 PORTREVISION=	2

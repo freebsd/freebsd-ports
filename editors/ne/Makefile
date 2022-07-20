@@ -1,5 +1,3 @@
-# Created by: Andrej Zverev <az@inec.ru>
-
 PORTNAME=	ne
 PORTVERSION=	3.3.1
 CATEGORIES=	editors

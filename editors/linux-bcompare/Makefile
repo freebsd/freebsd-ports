@@ -1,5 +1,3 @@
-# Created by: Matías Pizarro <matias@pizarro.net>
-
 PORTNAME=	bcompare
 DISTVERSION=	4.3.7
 DISTVERSIONSUFFIX=	.25118

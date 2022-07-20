@@ -1,5 +1,3 @@
-# Created by: Frederic Cambus
-
 PORTNAME=	tetradraw
 PORTVERSION=	2.0.2
 PORTREVISION=	1

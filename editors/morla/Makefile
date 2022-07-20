@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	morla
 PORTVERSION=	0.16.1
 PORTREVISION=	12

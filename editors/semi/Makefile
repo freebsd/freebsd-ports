@@ -1,5 +1,3 @@
-# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-
 PORTNAME=	semi
 PORTVERSION=	${SEMI_VER}.${SNAPDATE}
 PORTREVISION=	3

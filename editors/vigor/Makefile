@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@chc-chimes.com>
-
 PORTNAME=	vigor
 PORTVERSION=	0.016
 PORTREVISION=	4

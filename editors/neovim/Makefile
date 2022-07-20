@@ -1,5 +1,3 @@
-# Created by: Anton Tornqvist <antont@inbox.lv>
-
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.2

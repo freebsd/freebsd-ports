@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	sublime
 PORTVERSION=	2.0.2
 PORTREVISION=	6

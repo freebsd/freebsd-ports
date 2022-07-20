@@ -1,5 +1,3 @@
-# Created by: Geoffrey Mainland <mainland@apeiron.net>
-
 PORTNAME=	texmacs
 PORTVERSION=	1.99.4
 PORTREVISION=	5

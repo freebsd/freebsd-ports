@@ -1,5 +1,3 @@
-# Created by: Hakisho Nukama <nukama@gmail.com>
-
 PORTNAME=	gummi
 PORTVERSION=	0.8.1
 PORTREVISION=	14

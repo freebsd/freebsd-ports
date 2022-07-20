@@ -1,5 +1,3 @@
-# Created by: KIMURA Yasuhiro <yasu@utahime.org>
-
 PORTNAME=	with-editor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.0

@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	gmanedit
 PORTVERSION=	0.4.2
 PORTREVISION=	7

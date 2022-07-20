@@ -1,5 +1,3 @@
-# Created by: torstenb@FreeBSD.org
-
 PORTNAME=	joe
 PORTVERSION=	4.6
 PORTEPOCH=	1

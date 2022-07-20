@@ -1,4 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 #    $MCom: ports/editors/poedit/Makefile,v 1.2 2006/10/05 07:03:09 mezz Exp $
 
 PORTNAME=	poedit

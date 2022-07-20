@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	gnome-latex
 PORTVERSION=	3.40.0
 CATEGORIES=	editors

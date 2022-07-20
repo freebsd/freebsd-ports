@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	pluma-plugins
 PORTVERSION=	1.26.0
 PORTREVISION=	3

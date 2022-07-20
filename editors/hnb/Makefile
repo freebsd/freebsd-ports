@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	hnb
 PORTVERSION=	1.9.18
 DISTVERSIONPREFIX=	v

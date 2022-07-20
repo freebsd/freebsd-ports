@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	vi
 PORTVERSION=	050325
 PORTREVISION=	2

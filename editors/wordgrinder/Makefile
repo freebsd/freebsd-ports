@@ -1,5 +1,3 @@
-# Created by: Vitaly Magerya <vmagerya@gmail.com>
-
 PORTNAME=	wordgrinder
 PORTVERSION=	0.6
 CATEGORIES=	editors

@@ -1,5 +1,3 @@
-# Created by: Miguel Clara <miguelmclara@gmail.com>
-
 PORTNAME=	sublime
 PORTVERSION=	3.2.2
 PORTREVISION=	2
