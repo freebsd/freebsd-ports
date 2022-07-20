@@ -2,7 +2,7 @@ PORTNAME=	dexed
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6-16
 DISTVERSIONSUFFIX=	-g1df9a58
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-synth
 
@@ -11,8 +11,6 @@ COMMENT=	DX7 FM multi plaform/multi format plugin
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_aarch64=	fails to compile due to a seemingly clang issue: https://github.com/llvm/llvm-project/issues/55604
 
 BUILD_DEPENDS=	libX11>0:x11/libX11 \
 		libXcursor>0:x11/libXcursor \
