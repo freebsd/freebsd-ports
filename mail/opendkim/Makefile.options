@@ -1,5 +1,3 @@
-# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-
 # This file is used to tune build time options.
 
 OPTIONS_GROUP+=		DEVELOPER

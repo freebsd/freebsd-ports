@@ -1,5 +1,3 @@
-# Created by johalun0@gmail.com
-
 PORTNAME=	libgudev
 PORTVERSION=	234
 CATEGORIES=	devel

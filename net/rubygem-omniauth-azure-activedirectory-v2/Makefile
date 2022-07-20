@@ -1,5 +1,3 @@
-# Created by Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	omniauth-azure-activedirectory-v2
 PORTVERSION=	1.0.0
 CATEGORIES=	net rubygems

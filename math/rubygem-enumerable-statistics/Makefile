@@ -1,5 +1,3 @@
-# Created by Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	enumerable-statistics
 PORTVERSION=	2.0.7
 CATEGORIES=	math rubygems

@@ -1,5 +1,3 @@
-# Created by: lev@FreeBSD.org
-
 WITH_SUBVERSION_VER?=	114
 
 PKGDIR=			${.CURDIR}

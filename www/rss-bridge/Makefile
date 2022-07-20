@@ -1,5 +1,3 @@
-#  Created by: Oleg Sidorkin <osidorkin@gmail.com>
-
 PORTNAME=	rss-bridge
 DISTVERSION=	2022-06-14
 PORTEPOCH=	1

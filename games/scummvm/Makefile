@@ -1,5 +1,3 @@
-#_ Created by: Alex Trull <freebsd.alex@trull.org>
-
 PORTNAME=	scummvm
 PORTVERSION=	2.5.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: David Shane Holden <dpejesh@yahoo.com>
-
 PORTNAME=		pacemaker
 DISTVERSIONPREFIX=	Pacemaker-
 CATEGORIES=		net

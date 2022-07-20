@@ -1,5 +1,3 @@
-# Created by Kevin Bowling <kbowling@FreeBSD.org>
-
 PORTNAME=	timescaledb-backup
 DISTVERSION=	0.1.1
 PORTREVISION=	3

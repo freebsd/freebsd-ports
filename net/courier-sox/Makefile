@@ -1,5 +1,3 @@
-# Created by Radim Kolar <hsn@sendmail.cz>
-
 PORTNAME=	courier-sox
 DISTVERSION=	0.16
 CATEGORIES=	net

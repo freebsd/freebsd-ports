@@ -1,5 +1,3 @@
-# Created by: Felix Palmen <felix@palmen-it.de>
-
 OCBM_VERSION=	0.4.99.102
 DISTVERSIONPREFIX=	v
 DIST_SUBDIR=	opencbm

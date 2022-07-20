@@ -1,5 +1,3 @@
-# Created by Kevin Bowling <kbowling@FreeBSD.org>
-
 PORTNAME=	promscale
 DISTVERSION=	0.6.2
 PORTREVISION=	3

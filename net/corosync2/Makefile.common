@@ -1,5 +1,3 @@
-# Created by: David Shane Holden <dpejesh@yahoo.com>
-
 PORTNAME=		corosync
 CATEGORIES=		net
 MASTER_SITES=		http://build.clusterlabs.org/corosync/releases/

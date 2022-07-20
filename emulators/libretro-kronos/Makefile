@@ -1,5 +1,3 @@
-# Created by Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	libretro-kronos
 PORTVERSION=	0.20210617
 CATEGORIES=	emulators games
