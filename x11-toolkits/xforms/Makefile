@@ -1,5 +1,3 @@
-# Created by: gena
-
 PORTNAME=	xforms
 DISTVERSION=	1.2.4
 PORTREVISION=	5

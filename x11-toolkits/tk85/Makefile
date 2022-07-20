@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	tk
 PORTVERSION=	8.5.19
 PORTREVISION=	2

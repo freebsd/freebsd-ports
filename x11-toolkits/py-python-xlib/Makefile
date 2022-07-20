@@ -1,5 +1,3 @@
-# Created by: Mike Meyer <mwm@mired.org>
-
 PORTNAME=	xlib
 DISTVERSION=	0.27
 CATEGORIES=	x11-toolkits python

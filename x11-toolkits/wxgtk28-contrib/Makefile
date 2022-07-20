@@ -1,5 +1,3 @@
-# Created by: fjoe@FreeBSD.org
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit contributed libraries
 

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Tk-Role-Dialog
 PORTVERSION=	1.112380
 CATEGORIES=	x11-toolkits tk perl5

@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gtksourceview
 PORTVERSION=	3.24.11
 PORTREVISION=	2

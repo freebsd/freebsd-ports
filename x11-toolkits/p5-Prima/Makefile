@@ -1,5 +1,3 @@
-# Created by: dmitry@karasik.eu.org
-
 PORTNAME=	Prima
 PORTVERSION=	1.65
 CATEGORIES=	x11-toolkits graphics perl5

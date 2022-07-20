@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	rep-gtk2
 PORTVERSION=	0.90.8.3
 PORTEPOCH=	1

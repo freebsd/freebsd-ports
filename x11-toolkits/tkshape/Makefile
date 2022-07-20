@@ -1,5 +1,3 @@
-# Created by: nivit@users.sourceforge.net
-
 PORTNAME=		tkshape
 PORTVERSION=		0.4
 PORTREVISION=		2

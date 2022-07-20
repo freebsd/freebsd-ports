@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	tktreectrl
 DISTVERSION=	2.0.2
 CATEGORIES=	x11-toolkits tk python

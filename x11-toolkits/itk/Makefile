@@ -1,5 +1,3 @@
-# Created by: chuckr
-
 PORTNAME=	itk
 PORTVERSION=	3.3
 PORTREVISION=	3

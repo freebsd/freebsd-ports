@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	granite
 DISTVERSION=	6.2.0
 CATEGORIES=	x11-toolkits

@@ -1,5 +1,3 @@
-# Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-
 PORTNAME=	gtkmm
 PORTVERSION=	3.24.2
 PORTREVISION?=	2

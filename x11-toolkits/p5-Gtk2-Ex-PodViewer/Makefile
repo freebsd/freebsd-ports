@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	Gtk2-Ex-PodViewer
 PORTVERSION=	0.18
 PORTREVISION=	5

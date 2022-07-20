@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	sdl_pango
 PORTVERSION=	0.1.2
 PORTREVISION=	11

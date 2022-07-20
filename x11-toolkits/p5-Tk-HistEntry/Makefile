@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	Tk-HistEntry
 PORTVERSION=	0.45
 CATEGORIES=	x11-toolkits perl5

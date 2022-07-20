@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	gtk2
 PORTVERSION=	2.24.31
 DISTVERSIONSUFFIX=	-1.el7

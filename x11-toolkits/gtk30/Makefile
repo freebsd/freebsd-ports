@@ -1,4 +1,3 @@
-# Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # Please keep gtk30 in sync with the following x11-themes ports:
 # adwaita-icon-theme, gnome-themes-standard and mate-themes
 

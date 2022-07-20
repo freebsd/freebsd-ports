@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-pty-helper
 PORTVERSION=	0.40.2
 CATEGORIES=	x11-toolkits gnome

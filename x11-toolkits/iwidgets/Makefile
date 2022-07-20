@@ -1,5 +1,3 @@
-# Created by: chuckr
-
 PORTNAME=	iwidgets
 PORTVERSION=	4.0.1
 PORTREVISION=	1

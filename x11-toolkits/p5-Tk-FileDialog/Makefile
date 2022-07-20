@@ -1,5 +1,3 @@
-# Created by: minter@lunenburg.org
-
 PORTNAME=	Tk-FileDialog
 PORTVERSION=	1.3
 PORTREVISION=	6

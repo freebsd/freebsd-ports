@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	tkdnd
 PORTVERSION=	2.8
 CATEGORIES=	x11-toolkits tk

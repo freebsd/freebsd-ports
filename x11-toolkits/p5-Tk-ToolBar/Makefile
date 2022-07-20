@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Tk-ToolBar
 PORTVERSION=	0.12
 CATEGORIES=	x11-toolkits tk perl5

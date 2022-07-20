@@ -1,5 +1,3 @@
-# Created by: Robert C. Noland III <rnoland@FreeBSD.org>
-
 PORTNAME=	swt
 DISTVERSION=	4.21
 CATEGORIES=	x11-toolkits devel java

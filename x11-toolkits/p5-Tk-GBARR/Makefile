@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	Tk-GBARR
 PORTVERSION=	2.08
 PORTREVISION=	4

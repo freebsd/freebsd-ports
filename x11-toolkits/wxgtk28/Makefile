@@ -1,5 +1,3 @@
-# Created by: fjoe@FreeBSD.org
-
 PORTNAME=	wx
 PORTVERSION=	2.8.12
 PORTREVISION?=	10

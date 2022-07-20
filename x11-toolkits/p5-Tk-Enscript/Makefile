@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	Tk-Enscript
 PORTVERSION=	1.10
 PORTREVISION=	4

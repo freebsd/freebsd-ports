@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	tix
 PORTVERSION=	8.4.3
 PORTREVISION=	1

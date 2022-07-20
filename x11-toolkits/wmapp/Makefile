@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	wmapp
 PORTVERSION=	0.0.4.3
 PORTREVISION=	2

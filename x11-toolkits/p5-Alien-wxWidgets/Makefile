@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Alien-wxWidgets
 PORTVERSION=	0.69
 PORTREVISION=	3

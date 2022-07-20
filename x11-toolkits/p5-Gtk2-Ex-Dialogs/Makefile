@@ -1,5 +1,3 @@
-# Created by: Paul Schmehl <pauls@utdallas.edu>
-
 PORTNAME=	Gtk2-Ex-Dialogs
 PORTVERSION=	0.11
 PORTREVISION=	6

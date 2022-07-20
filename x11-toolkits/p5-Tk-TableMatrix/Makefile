@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	Tk-TableMatrix
 PORTVERSION=	1.26
 CATEGORIES=	x11-toolkits perl5

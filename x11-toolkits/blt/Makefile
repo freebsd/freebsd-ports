@@ -1,5 +1,3 @@
-# Created by: Kenjiro Cho <kjc@csl.sony.co.jp>
-
 PORTNAME=	blt
 PORTVERSION=	2.5.3
 PORTREVISION=	5

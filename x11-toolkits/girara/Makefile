@@ -1,5 +1,3 @@
-# Created by: Mike Krutov <neko@takino.org>
-
 PORTNAME=	girara
 PORTVERSION=	0.3.7
 CATEGORIES=	x11-toolkits graphics

@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	Pmw
 PORTVERSION=	2.0.1
 PORTREVISION=	1

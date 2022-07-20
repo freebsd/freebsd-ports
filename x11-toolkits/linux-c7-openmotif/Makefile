@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	motif
 PORTVERSION=	2.3.4
 DISTVERSIONSUFFIX=	-14.el7_5

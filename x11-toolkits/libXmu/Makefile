@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXmu
 PORTVERSION=	1.1.3
 PORTEPOCH=	1

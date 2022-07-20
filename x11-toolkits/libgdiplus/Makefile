@@ -1,5 +1,3 @@
-# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-
 PORTNAME=	libgdiplus
 PORTVERSION=	6.0.4
 CATEGORIES=	x11-toolkits

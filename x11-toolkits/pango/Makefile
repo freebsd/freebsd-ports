@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	pango
 PORTVERSION=	1.50.7
 CATEGORIES=	x11-toolkits

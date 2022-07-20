@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	neXtaw
 PORTVERSION=	0.15.1
 PORTREVISION=	5

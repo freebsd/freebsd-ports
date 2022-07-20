@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	Tk-Autoscroll
 PORTVERSION=	1.14
 PORTREVISION=	4

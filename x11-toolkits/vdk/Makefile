@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	vdk
 PORTVERSION=	2.5.1
 PORTREVISION=	6

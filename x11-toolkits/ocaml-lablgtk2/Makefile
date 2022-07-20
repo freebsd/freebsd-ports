@@ -1,5 +1,3 @@
-# Created by: Rene Ladan <rene@FreeBSD.org>
-
 PORTNAME=	lablgtk2
 PORTVERSION=	2.18.12
 CATEGORIES=	x11-toolkits

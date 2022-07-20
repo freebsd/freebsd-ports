@@ -1,5 +1,3 @@
-# Created by: Peter Hawkins <thepish@FreeBSD.org>
-
 PORTNAME=	XmHTML
 PORTVERSION=	1.1.10
 CATEGORIES=	x11-toolkits www

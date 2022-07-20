@@ -1,5 +1,3 @@
-# Created by: 1wardd@airmail.net
-
 PORTNAME=	lesstif
 PORTVERSION=	0.95.2
 PORTREVISION=	7

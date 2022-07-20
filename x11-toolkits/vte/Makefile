@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	vte
 PORTVERSION=	0.28.2
 PORTREVISION?=	3

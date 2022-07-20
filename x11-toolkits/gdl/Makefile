@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	gdl
 PORTVERSION=	3.40.0
 CATEGORIES=	x11-toolkits gnome

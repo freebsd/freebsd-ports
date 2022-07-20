@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	tk
 DISTVERSION=	${TK_VERSION}${TK_RC}
 CATEGORIES=	x11-toolkits

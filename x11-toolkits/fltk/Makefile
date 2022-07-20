@@ -1,5 +1,3 @@
-# Created by: Dima Sivachenko <dima@Chg.RU>
-
 PORTNAME=	fltk
 PORTVERSION=	1.3.8
 CATEGORIES=	x11-toolkits

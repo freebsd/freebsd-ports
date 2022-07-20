@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Gtk2-ImageView
 PORTVERSION=	0.05
 PORTREVISION=	7

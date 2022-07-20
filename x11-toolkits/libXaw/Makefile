@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXaw
 PORTVERSION=	1.0.14
 PORTEPOCH=	2

@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Gtk2-PathButtonBar
 PORTVERSION=	0.1.2
 PORTREVISION=	4

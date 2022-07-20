@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	Tk-Date
 PORTVERSION=	0.44
 PORTREVISION=	2

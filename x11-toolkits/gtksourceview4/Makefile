@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gtksourceview
 PORTVERSION=	4.8.3
 CATEGORIES=	x11-toolkits gnome

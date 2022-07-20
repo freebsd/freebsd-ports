@@ -1,5 +1,3 @@
-# Created by: Andreas Kohn <andreas@syndrom23.de>
-
 PORTNAME=	libsexy
 PORTVERSION=	0.1.11
 PORTREVISION=	12

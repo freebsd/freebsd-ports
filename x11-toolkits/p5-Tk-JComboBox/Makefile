@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Tk-JComboBox
 PORTVERSION=	1.14
 PORTREVISION=	6

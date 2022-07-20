@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	viewklass
 PORTVERSION=	0.7.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	Gtk3-SimpleList
 PORTVERSION=	0.21
 CATEGORIES=	x11-toolkits perl5

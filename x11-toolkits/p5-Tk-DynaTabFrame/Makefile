@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Tk-DynaTabFrame
 PORTVERSION=	0.23
 PORTREVISION=	5

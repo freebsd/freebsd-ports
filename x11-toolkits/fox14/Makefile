@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	fox
 PORTVERSION=	1.4.35
 PORTREVISION=	15
