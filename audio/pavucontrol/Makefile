@@ -1,5 +1,3 @@
-# Created by: Romain Tartière <romain@blogreen.org>
-
 PORTNAME=	pavucontrol
 PORTVERSION=	5.0
 PORTREVISION=	2

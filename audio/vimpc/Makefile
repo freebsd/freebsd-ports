@@ -1,5 +1,3 @@
-# Created by: Thomas Zander <riggs@FreeBSD.org>
-
 PORTNAME=	vimpc
 PORTVERSION=	0.09.2
 PORTREVISION=	1

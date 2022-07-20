@@ -1,5 +1,3 @@
-# Created by: Michael Beer <beerml@sigma6audio.de>
-
 PORTNAME=	suil
 PORTVERSION=	0.10.12
 CATEGORIES=	audio

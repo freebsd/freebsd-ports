@@ -1,5 +1,3 @@
-# Created by: t.vanklaveren@student.utwente.nl
-
 PORTNAME=	vorbis-tools
 PORTVERSION=	1.4.2
 PORTEPOCH=	3

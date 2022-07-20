@@ -1,5 +1,3 @@
-# Created by: Hans Petter Selasky <hselasky@FreeBSD.org>
-
 PORTNAME=	qaudiosonar
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.8.0

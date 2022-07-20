@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	gradio
 PORTVERSION=	7.3
 DISTVERSIONPREFIX=	v

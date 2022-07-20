@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	adplay
 PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v

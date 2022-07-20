@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	liblo
 PORTVERSION=	0.31
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Tilman Linneweh <arved@FreeBSD.org>
-
 PORTNAME=	swhplugins
 PORTVERSION=	0.4.17
 DISTVERSIONPREFIX=	v

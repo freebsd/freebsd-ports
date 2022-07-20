@@ -1,5 +1,3 @@
-# Created by: Lars Engels <lars.engels@0x20.net>
-
 PORTNAME=	osdmixer
 PORTVERSION=	0.9
 PORTREVISION=	7

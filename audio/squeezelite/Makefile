@@ -1,5 +1,3 @@
-# Created by: jockl <jockl@pianojockl.org>
-
 PORTNAME=	squeezelite
 PORTVERSION=	1.9.7.1253
 CATEGORIES=	audio

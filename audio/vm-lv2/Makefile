@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	vm
 DISTVERSION=	0.14.0
 PORTREVISION=	1

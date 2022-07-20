@@ -1,5 +1,3 @@
-# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-
 PORTNAME=	mp3gain
 PORTVERSION=	1.6.2
 CATEGORIES=	audio

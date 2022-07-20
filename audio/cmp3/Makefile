@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	cmp3
 PORTVERSION=	2.0.p6
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Anton Yuzhaninov <citrin@citrin.ru>
-
 PORTNAME=	libmp3splt
 PORTVERSION=	0.9.2
 PORTREVISION=	2

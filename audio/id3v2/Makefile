@@ -1,5 +1,3 @@
-# Created by: David MacKenzie <djm@pix.net>
-
 PORTNAME=	id3v2
 PORTVERSION=	0.1.12
 CATEGORIES=	audio

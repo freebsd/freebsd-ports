@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	librmpd
 PORTVERSION=	0.1.1
 CATEGORIES=	audio rubygems

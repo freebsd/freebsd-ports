@@ -1,5 +1,3 @@
-# Created by: Joris Vandalon <joris@vandalon.nl>
-
 PORTNAME=	mp3c
 PORTVERSION=	0.31
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	mp-player
 PORTVERSION=	0.6
 PORTREVISION=	1

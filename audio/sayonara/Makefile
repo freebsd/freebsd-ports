@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	sayonara
 DISTVERSION=	1.7.0
 CATEGORIES=	audio

@@ -1,5 +1,3 @@
-# Created by: pjm <pierrejacqes.mimifir@gmail.com>
-
 PORTNAME=	bristol
 PORTVERSION=	0.60.10
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: Oyvind Moll <oyvindmo@initio.no>
-
 PORTNAME=	juke
 PORTVERSION=	0.7
 CATEGORIES=	audio

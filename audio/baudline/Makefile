@@ -1,5 +1,3 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	baudline
 PORTVERSION=	1.08
 PORTREVISION=	1

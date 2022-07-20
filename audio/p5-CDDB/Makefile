@@ -1,5 +1,3 @@
-# Created by: Yar Tikhiy <yar@comp.chem.msu.su>
-
 PORTNAME=	CDDB
 PORTVERSION=	1.222
 PORTREVISION=	1

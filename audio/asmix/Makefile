@@ -1,5 +1,3 @@
-# Created by: mtm@identd.net
-
 PORTNAME=	asmix
 PORTVERSION=	1.5
 PORTREVISION=	3

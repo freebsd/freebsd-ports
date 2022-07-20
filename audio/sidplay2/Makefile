@@ -1,5 +1,3 @@
-# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-
 PORTNAME=	sidplay2
 PORTVERSION=	2.0.9
 PORTREVISION=	4

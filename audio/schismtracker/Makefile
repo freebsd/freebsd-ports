@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	schismtracker
 PORTVERSION=	20220506
 CATEGORIES=	audio

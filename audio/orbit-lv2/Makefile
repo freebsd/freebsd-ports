@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	orbit
 PORTVERSION=	0.1.431
 PORTREVISION=	1

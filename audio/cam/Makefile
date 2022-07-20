@@ -1,5 +1,3 @@
-# Created by: erich@FreeBSD.org
-
 PORTNAME=	cam
 PORTVERSION=	1.02
 CATEGORIES=	audio

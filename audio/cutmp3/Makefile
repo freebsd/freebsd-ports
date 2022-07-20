@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	cutmp3
 PORTVERSION=	3.0.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: sobomax
-
 PORTNAME=	bcg729
 PORTVERSION=	1.1.1
 CATEGORIES=	audio

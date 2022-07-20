@@ -1,5 +1,3 @@
-# Created by: Philippe Audeoud <jadawin@tuxaco.net>
-
 PORTNAME=	ampache
 PORTVERSION=	5.0.0
 DISTVERSIONSUFFIX=	_all

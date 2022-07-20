@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	soundgrab
 PORTVERSION=	1.0.1
 PORTREVISION=	3

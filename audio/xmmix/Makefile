@@ -1,5 +1,3 @@
-# Created by: Erik Cederstrand <erich@FreeBSD.org>
-
 PORTNAME=	xmmix
 PORTVERSION=	1.2.2
 PORTREVISION=	5

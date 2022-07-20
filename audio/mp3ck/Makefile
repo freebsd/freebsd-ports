@@ -1,5 +1,3 @@
-# Created by: Yar Tikhiy <yar@FreeBSD.org>
-
 PORTNAME=	mp3ck
 PORTVERSION=	0.04
 CATEGORIES=	audio

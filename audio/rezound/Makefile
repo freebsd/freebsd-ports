@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	rezound
 DISTVERSION=	0.13.1beta
 PORTREVISION=	3

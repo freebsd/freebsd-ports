@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	ruby-ogginfo
 PORTVERSION=	0.7.2
 CATEGORIES=	audio rubygems

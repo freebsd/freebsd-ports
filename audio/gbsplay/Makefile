@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	gbsplay
 DISTVERSION=	0.0.94
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Jonathan Lennox <lennox@cs.columbia.edu>
-
 PORTNAME=	eawpats
 PORTVERSION=	12
 PORTREVISION=	4

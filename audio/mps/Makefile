@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	mps
 PORTVERSION=	0.20.16
 PORTREVISION=	3

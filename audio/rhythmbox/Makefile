@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	rhythmbox
 PORTVERSION=	3.4.6
 CATEGORIES=	audio gnome

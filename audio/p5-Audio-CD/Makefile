@@ -1,5 +1,3 @@
-# Created by: Roman Shterenzon <roman@xpert.com>
-
 PORTNAME=	Audio-CD
 PORTVERSION=	0.04
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	sound-juicer
 PORTVERSION=	3.38.0
 CATEGORIES=	audio gnome

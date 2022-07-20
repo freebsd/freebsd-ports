@@ -1,5 +1,3 @@
-# Created by: Aragon Gouveia <aragon@phat.za.net>
-
 PORTNAME=	alsa-lib
 PORTVERSION=	1.2.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: David Le Brun <david@dyn-ns.net>
-
 PORTNAME=	gtkpod
 PORTVERSION=	1.0.0
 PORTREVISION=	11

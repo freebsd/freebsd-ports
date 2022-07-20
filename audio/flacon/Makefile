@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	flacon
 PORTVERSION=	9.1.0
 DISTVERSIONPREFIX=	v

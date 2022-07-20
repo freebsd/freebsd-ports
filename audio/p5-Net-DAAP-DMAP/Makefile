@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Net-DAAP-DMAP
 PORTVERSION=	1.27
 PORTREVISION=	3

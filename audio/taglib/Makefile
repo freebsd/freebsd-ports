@@ -1,5 +1,3 @@
-# Created by: Frank Laszlo <laszlof@vonostingroup.com>
-
 PORTNAME=	taglib
 DISTVERSION=	1.12
 CATEGORIES=	audio

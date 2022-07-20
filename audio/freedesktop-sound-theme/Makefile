@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	freedesktop-sound-theme
 PORTVERSION=	0.8
 CATEGORIES=	audio gnome

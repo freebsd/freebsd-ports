@@ -1,5 +1,3 @@
-# Created by: Mark Reidel <ports@mark.reidle.info>
-
 PORTNAME=	musicpc
 DISTVERSION=	0.34
 CATEGORIES=	audio

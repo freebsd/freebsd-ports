@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	wavpack
 DISTVERSION=	5.5.0
 CATEGORIES=	audio

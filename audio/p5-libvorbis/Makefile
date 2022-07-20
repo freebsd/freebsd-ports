@@ -1,5 +1,3 @@
-# Created by: Dominic Mitchell <dom@happygiraffe.net>
-
 PORTNAME=	libvorbis
 PORTVERSION=	0.05
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	twolame
 PORTVERSION=	0.4.0
 PORTREVISION=	1

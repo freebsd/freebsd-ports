@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	mp3asm
 PORTVERSION=	0.1.3.1
 PORTREVISION=	1

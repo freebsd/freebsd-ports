@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	dssi
 PORTVERSION=	1.1.1
 PORTREVISION=	11

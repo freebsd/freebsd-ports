@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	ft2play
 DISTVERSION=	g20220407
 CATEGORIES=	audio

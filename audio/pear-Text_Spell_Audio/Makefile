@@ -1,5 +1,3 @@
-# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-
 PORTNAME=	Text_Spell_Audio
 PORTVERSION=	0.1.0
 CATEGORIES=	audio pear

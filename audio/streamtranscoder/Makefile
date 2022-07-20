@@ -1,5 +1,3 @@
-# Created by: Mark Kane <mark@mkproductions.org>
-
 PORTNAME=	streamtranscoder
 PORTVERSION=	1.2.8
 PORTREVISION=	14

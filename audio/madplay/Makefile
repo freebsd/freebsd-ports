@@ -1,5 +1,3 @@
-# Created by: Sergey Akifyev <asa@gascom.ru>
-
 PORTNAME=	madplay
 PORTVERSION=	0.15.2b
 PORTREVISION=	9

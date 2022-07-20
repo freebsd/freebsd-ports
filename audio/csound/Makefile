@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	csound
 DISTVERSION=	6.15.0
 PORTREVISION=	4

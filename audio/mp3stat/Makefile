@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	mp3stat
 PORTVERSION=	2.6.01
 PORTREVISION=	12

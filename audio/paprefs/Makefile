@@ -1,5 +1,3 @@
-# Created by: Romain Tartière <romain@blogreen.org>
-
 PORTNAME=	paprefs
 PORTVERSION=	1.2
 PORTREVISION=	2

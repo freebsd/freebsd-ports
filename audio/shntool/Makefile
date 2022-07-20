@@ -1,5 +1,3 @@
-# Created by: Bill Fenner <fenner@FreeBSD.org>
-
 PORTNAME=	shntool
 DISTVERSION=	3.0.10
 PORTREVISION=	3

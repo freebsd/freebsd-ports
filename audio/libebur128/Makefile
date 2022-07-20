@@ -1,5 +1,3 @@
-# Created by: Pietro Cerutti <gahr@FreeBSD.org>
-
 PORTNAME=	libebur128
 PORTVERSION=	1.2.6
 DISTVERSIONPREFIX=	v

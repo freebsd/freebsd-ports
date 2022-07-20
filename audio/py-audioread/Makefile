@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	audioread
 PORTVERSION=	2.1.9
 CATEGORIES=	audio python

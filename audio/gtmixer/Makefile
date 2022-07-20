@@ -1,5 +1,3 @@
-# Created by: Putrya Statislav
-
 PORTNAME=	gtmixer
 PORTVERSION=	1.0.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	spotify-qt
 PORTVERSION=	3.9
 DISTVERSIONPREFIX=	v

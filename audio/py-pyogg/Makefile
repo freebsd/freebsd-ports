@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	PyOgg
 DISTVERSION=	0.6.14a1
 PORTREVISION=	1

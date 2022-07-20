@@ -1,5 +1,3 @@
-# Created by: Christian Laursen <xi@borderworlds.dk>
-
 PORTNAME=	musiccontrol
 PORTVERSION=	0.3
 PORTREVISION=	2

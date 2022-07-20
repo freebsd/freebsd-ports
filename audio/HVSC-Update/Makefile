@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	HVSC-Update
 PORTVERSION=	2.8.7
 CATEGORIES=	audio emulators

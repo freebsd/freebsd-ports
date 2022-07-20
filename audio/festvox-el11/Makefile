@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	festvox-el11
 PORTVERSION=	1.4.0
 PORTREVISION=	2

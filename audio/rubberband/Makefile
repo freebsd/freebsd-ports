@@ -1,5 +1,3 @@
-# Created by: mathias.picker@gmx.de
-
 PORTNAME=	rubberband
 DISTVERSION=	2.0.2
 CATEGORIES=	audio

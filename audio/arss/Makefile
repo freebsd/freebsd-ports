@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	arss
 PORTVERSION=	0.2.3
 PORTREVISION=	2

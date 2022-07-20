@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	espeak-ng
 PORTVERSION=	1.51.1
 PORTREVISION=	3

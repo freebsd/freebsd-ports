@@ -1,5 +1,3 @@
-# Created by: Manuel Creach <manuel.creach@icloud.com>
-
 PORTNAME=	libshairport
 PORTVERSION=	1.2.0.20310
 PORTREVISION=	2

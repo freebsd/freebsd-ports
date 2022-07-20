@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	hvl2wav
 DISTVERSION=	g20180905
 CATEGORIES=	audio

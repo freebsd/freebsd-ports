@@ -1,5 +1,3 @@
-# Created by: Matthias Andree <matthias.andree@gmx.de>
-
 PORTNAME=	squash
 PORTVERSION=	1.0
 PORTREVISION=	19

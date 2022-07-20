@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	rtmidi
 DISTVERSION=	5.0.0
 CATEGORIES=	audio

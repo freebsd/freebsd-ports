@@ -1,5 +1,3 @@
-# Created by: Yoichi Asai <yatt@luna2.org>
-
 PORTNAME=	timidity++
 PORTVERSION=	2.15.0
 CATEGORIES+=	audio

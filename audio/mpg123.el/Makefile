@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	mpg123.el
 PORTVERSION=	1.60
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	ripperx
 PORTVERSION=	2.7.3
 PORTREVISION=	4

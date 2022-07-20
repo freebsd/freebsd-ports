@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	freac
 PORTVERSION=	1.1.5
 DISTVERSIONPREFIX=	v

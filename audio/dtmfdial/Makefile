@@ -1,5 +1,3 @@
-# Created by: David Bushong <david@bushong.net>
-
 PORTNAME=	dtmfdial
 PORTVERSION=	0.2
 CATEGORIES=	audio comms

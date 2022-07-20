@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	libsidplay2
 DISTVERSION=	2.1.1
 PORTREVISION=	9

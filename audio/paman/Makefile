@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME=	paman
 PORTVERSION=	0.9.4
 PORTREVISION=	11

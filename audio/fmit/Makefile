@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	fmit
 PORTVERSION=	1.2.14
 DISTVERSIONPREFIX=	v

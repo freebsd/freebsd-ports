@@ -1,5 +1,3 @@
-# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-
 PORTNAME=	cdparanoia
 PORTVERSION=	3.9.8
 PORTREVISION=	10

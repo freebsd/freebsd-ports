@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	festalon
 PORTVERSION=	0.5.5
 PORTREVISION=	14

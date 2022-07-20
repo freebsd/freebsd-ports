@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	fluidsynth-dssi
 PORTVERSION=	1.0.0
 PORTREVISION=	17

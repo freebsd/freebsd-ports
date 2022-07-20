@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	whysynth
 PORTVERSION=	20120903
 PORTREVISION=	5

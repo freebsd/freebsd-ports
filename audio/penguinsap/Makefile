@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	penguinsap
 PORTVERSION=	0.1
 CATEGORIES=	audio

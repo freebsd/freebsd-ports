@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libogg
 PORTVERSION=	1.3.0
 DISTVERSIONSUFFIX=	-7.el7

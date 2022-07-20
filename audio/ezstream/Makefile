@@ -1,5 +1,3 @@
-# Created by: Frank Laszlo <laszlof@vonostingroup.com>
-
 PORTNAME=	ezstream
 PORTVERSION=	0.5.6
 PORTREVISION=	8

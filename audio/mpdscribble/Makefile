@@ -1,5 +1,3 @@
-# Created by: Stepan Zastupov [RedChrom] <redchrom@gmail.com>
-
 PORTNAME=	mpdscribble
 PORTVERSION=	0.22
 PORTREVISION=	1

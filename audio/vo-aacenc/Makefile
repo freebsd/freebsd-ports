@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	vo-aacenc
 PORTVERSION=	0.1.3
 PORTREVISION=	1

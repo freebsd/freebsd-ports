@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	jack-smf-utils
 PORTVERSION=	1.0
 PORTREVISION=	9

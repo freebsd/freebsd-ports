@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tdb@FreeBSD.org>
-
 PORTNAME=	trackstat
 PORTVERSION=	3.2.3951
 CATEGORIES=	audio

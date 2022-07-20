@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	yell
 PORTVERSION=	1.1
 CATEGORIES=	audio

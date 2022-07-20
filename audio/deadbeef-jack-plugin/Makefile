@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	deadbeef-jack-plugin
 DISTVERSION=	0.0.2011.03.22
 PORTREVISION=	1

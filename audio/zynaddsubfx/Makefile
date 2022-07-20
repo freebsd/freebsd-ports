@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	zynaddsubfx
 DISTVERSION=	3.0.6
 PORTEPOCH=	2

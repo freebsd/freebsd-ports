@@ -1,5 +1,3 @@
-# Created by: Philip Paeps <philip@paeps.cx>
-
 PORTNAME=	crip
 PORTVERSION=	3.9
 PORTREVISION=	1

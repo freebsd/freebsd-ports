@@ -1,5 +1,3 @@
-# Created by: Stepan Zastupov [RedChrom] <redchrom@gmail.com>
-
 PORTNAME=	libmpd
 PORTVERSION=	11.8.17
 PORTREVISION=	2

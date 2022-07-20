@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	tap-plugins
 PORTVERSION=	0.7.2
 CATEGORIES=	audio

@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	mctoolame
 PORTVERSION=	0.1.a
 PORTREVISION=	2

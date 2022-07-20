@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	gnuitar
 PORTVERSION=	0.3.2
 PORTREVISION=	9

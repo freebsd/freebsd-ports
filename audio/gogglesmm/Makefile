@@ -1,5 +1,3 @@
-# Created by: Sascha Klauder <sklauder@trimind.de>
-
 PORTNAME=	gogglesmm
 PORTVERSION=	1.2.2
 PORTREVISION=	7

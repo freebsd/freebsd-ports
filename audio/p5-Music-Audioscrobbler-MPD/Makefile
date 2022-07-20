@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Music-Audioscrobbler-MPD
 PORTVERSION=	0.13
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	pragha
 PORTVERSION=	1.3.3
 PORTREVISION=	8

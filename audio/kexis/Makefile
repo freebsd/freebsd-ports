@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	kexis
 PORTVERSION=	0.2.2
 CATEGORIES=	audio

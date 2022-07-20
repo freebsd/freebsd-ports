@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	Audio-Mixer
 PORTVERSION=	0.7
 PORTREVISION=	3

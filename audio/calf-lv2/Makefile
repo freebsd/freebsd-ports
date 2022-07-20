@@ -1,5 +1,3 @@
-# Created by: <trasz@FreeBSD.org>
-
 PORTNAME=	calf
 DISTVERSION=	0.90.3.20210427
 CATEGORIES=	audio

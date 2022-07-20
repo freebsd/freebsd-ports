@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	tap-plugins
 DISTVERSION=	g20180220
 CATEGORIES=	audio

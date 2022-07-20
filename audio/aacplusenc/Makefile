@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	aacplusenc
 PORTVERSION=	0.17.5
 PORTREVISION=	2

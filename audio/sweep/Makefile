@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	sweep
 PORTVERSION=	0.9.3
 PORTREVISION=	13

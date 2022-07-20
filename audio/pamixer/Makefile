@@ -1,5 +1,3 @@
-# Created by: Daniel Menelkir <dmenelkir@gmail.com>
-
 PORTNAME=	pamixer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4-15

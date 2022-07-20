@@ -1,5 +1,3 @@
-# Created by: Stefan Zehl <sec@42.org>
-
 PORTNAME=	libsidplay
 PORTVERSION=	1.36.60
 PORTREVISION=	1

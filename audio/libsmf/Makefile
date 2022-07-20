@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	libsmf
 PORTVERSION=	1.3
 PORTREVISION=	4

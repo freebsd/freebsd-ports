@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	picard
 PORTVERSION=	2.8.1
 CATEGORIES=	audio python

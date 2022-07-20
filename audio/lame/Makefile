@@ -1,5 +1,3 @@
-# Created by: yoshiaki Uchikawa
-
 PORTNAME=	lame
 PORTVERSION=	3.100
 PORTREVISION=	4

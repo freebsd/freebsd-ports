@@ -1,5 +1,3 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	goobox
 PORTVERSION=	3.6.0
 CATEGORIES=	audio gnome

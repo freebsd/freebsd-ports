@@ -1,5 +1,3 @@
-# Created by: Alexander Yerenkow <yerenkow@gmail.com>
-
 PORTNAME=	festvox
 PORTVERSION=	0.5
 CATEGORIES=	audio

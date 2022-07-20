@@ -1,5 +1,3 @@
-# Created by: John Hixson <jhixson@FreeBSD.org>
-
 PORTNAME=	pianod2
 PORTVERSION=	329
 PORTREVISION=	2

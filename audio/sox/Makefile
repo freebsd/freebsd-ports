@@ -1,5 +1,3 @@
-# Created by: torstenb
-
 PORTNAME=	sox
 PORTVERSION=	14.4.2
 PORTREVISION=	6

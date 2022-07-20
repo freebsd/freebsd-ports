@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	freepats
 PORTVERSION=	20060219
 CATEGORIES=	audio

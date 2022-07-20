@@ -1,5 +1,3 @@
-# Created by: Stefan Ehmann <shoesoft@gmx.net>
-
 PORTNAME=	musepack
 PORTVERSION=	2011.08.10
 CATEGORIES=	audio

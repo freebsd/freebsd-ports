@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	mixer.app
 PORTVERSION=	1.8.0
 PORTREVISION=	2

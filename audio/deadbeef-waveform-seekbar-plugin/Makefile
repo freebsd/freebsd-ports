@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	deadbeef-waveform-seekbar-plugin
 DISTVERSION=	0.0.2016.01.01
 CATEGORIES=	audio

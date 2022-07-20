@@ -1,5 +1,3 @@
-# Created by: michaelnottebrock@gmx.net and lioux@FreeBSD.org
-
 PORTNAME=	portaudio
 PORTVERSION=	19.6.0
 PORTREVISION=	6

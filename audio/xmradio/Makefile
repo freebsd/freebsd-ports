@@ -1,5 +1,3 @@
-# Created by: Thomas Runge <runge@rostock.zgdv.de>
-
 PORTNAME=	xmradio
 PORTVERSION=	1.2
 PORTREVISION=	3

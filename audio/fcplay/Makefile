@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	fcplay
 PORTVERSION=	0.0.1
 PORTREVISION=	2

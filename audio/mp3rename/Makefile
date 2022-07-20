@@ -1,5 +1,3 @@
-# Created by: Sander Janssen <janssen@rendo.dekooi.nl>
-
 PORTNAME=	mp3rename
 PORTVERSION=	0.6
 CATEGORIES=	audio

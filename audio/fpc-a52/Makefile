@@ -1,5 +1,3 @@
-# Created by: Christopher Key <cjk32@cam.ac.uk>
-
 CATEGORIES=	audio lang
 PKGNAMESUFFIX=	-a52
 

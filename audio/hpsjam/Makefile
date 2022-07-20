@@ -1,5 +1,3 @@
-# Created by: Hans Petter Selasky <hselasky@freebsd.org>
-
 PORTNAME=	hpsjam
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0.25

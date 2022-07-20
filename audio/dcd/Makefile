@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	dcd
 PORTVERSION=	0.99.2
 PORTREVISION=	2

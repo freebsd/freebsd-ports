@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	komposter
 DISTVERSION=	g20201211
 PORTREVISION=	1

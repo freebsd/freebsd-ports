@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	alac
 PORTVERSION=	0.0.7
 PORTEPOCH=	1

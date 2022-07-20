@@ -1,5 +1,3 @@
-# Created by: Chip Marshall <chip@eboai.org>
-
 PORTNAME=	icecast
 PORTVERSION=	2.4.4
 PORTREVISION=	2

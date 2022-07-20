@@ -1,5 +1,3 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	sdl_sound
 PORTVERSION=	1.0.3
 PORTREVISION=	15

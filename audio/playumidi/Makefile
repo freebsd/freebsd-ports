@@ -1,5 +1,3 @@
-# Created by: Koine Yuusuke(koinec) <koinec@users.osdn.me>
-
 PORTNAME=		playumidi
 PORTVERSION=		0.8.3
 CATEGORIES=		audio

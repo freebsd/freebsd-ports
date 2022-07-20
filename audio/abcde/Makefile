@@ -1,5 +1,3 @@
-# Created by: Munish Chopra <mchopra@engmail.uwaterloo.ca>
-
 PORTNAME=	abcde
 DISTVERSION=	2.9.3
 CATEGORIES=	audio

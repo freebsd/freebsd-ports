@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	klystrack
 DISTVERSION=	1.7.6-make-fix-12
 DISTVERSIONSUFFIX=	-gfe6e746

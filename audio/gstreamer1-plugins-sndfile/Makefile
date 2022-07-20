@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTREVISION=	3
 CATEGORIES=	audio
 

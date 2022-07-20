@@ -1,5 +1,3 @@
-# Created by: Stefan Zehl <sec@42.org>
-
 PORTNAME=	sidplay
 PORTVERSION=	1.0.9
 DISTVERSIONPREFIX=	base-

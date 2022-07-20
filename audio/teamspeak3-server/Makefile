@@ -1,5 +1,3 @@
-# Created by: Daniel O'Connor
-
 PORTNAME=	teamspeak3-server
 PORTVERSION=	3.13.6
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@FreeBSD.org
-
 PORTNAME=	qsampler
 DISTVERSIONPREFIX=	qsampler_
 DISTVERSION=	0_9_6

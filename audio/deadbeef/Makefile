@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	deadbeef
 PORTVERSION=	0.7.2
 PORTREVISION=	20

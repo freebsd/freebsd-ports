@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	deadbeef-mpris2-plugin
 PORTVERSION=	1.12
 DISTVERSIONPREFIX=	v

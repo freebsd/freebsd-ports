@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	moony
 DISTVERSION=	0.36.0
 PORTREVISION=	1

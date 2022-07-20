@@ -1,5 +1,3 @@
-# Created by: marius nuennerich
-
 PORTNAME=	mumble
 PORTVERSION=	1.3.3
 PORTREVISION=	7

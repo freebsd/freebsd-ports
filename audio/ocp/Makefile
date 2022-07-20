@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	ocp
 PORTVERSION=	0.2.99
 PORTREVISION=	1

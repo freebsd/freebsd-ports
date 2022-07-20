@@ -1,5 +1,3 @@
-# Created by: Michael Beer <beerml@sigma6audio.de>
-
 PORTNAME=	ardour6
 PORTVERSION=	6.9.0
 PORTREVISION=	4

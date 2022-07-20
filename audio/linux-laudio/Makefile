@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	laudio
 PORTVERSION=	0.4
 CATEGORIES=	audio linux

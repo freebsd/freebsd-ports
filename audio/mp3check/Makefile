@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	mp3check
 PORTVERSION=	1.6
 CATEGORIES=	audio

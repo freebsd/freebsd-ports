@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	Audio-Scrobbler
 PORTVERSION=	0.01
 PORTREVISION=	3

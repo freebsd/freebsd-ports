@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	osdlyrics
 PORTVERSION=	0.4.3
 PORTREVISION=	6

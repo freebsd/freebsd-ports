@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	lv2file
 DISTVERSIONPREFIX=	upstream/
 DISTVERSION=	0.95

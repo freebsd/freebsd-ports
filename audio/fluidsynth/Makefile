@@ -1,5 +1,3 @@
-# Created by: Juha Nygard <juha.nygard1@netikka.fi>
-
 PORTNAME=	fluidsynth
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.7

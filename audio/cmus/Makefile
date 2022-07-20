@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger
-
 PORTNAME=	cmus
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.10.0

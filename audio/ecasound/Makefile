@@ -1,5 +1,3 @@
-# Created by: The Anarcat <anarcat@anarcat.dyndns.org>
-
 PORTNAME=	ecasound
 PORTVERSION=	2.9.3
 PORTREVISION=	1

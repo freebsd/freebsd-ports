@@ -1,5 +1,3 @@
-# Created by: Michael Beer <beerml@sigma6audio.de>
-
 PORTNAME=	sratom
 PORTVERSION=	0.6.10
 CATEGORIES=	audio

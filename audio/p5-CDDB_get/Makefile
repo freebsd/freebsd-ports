@@ -1,5 +1,3 @@
-# Created by: Oyvind Moll <oyvindmo@initio.no>
-
 PORTNAME=	CDDB_get
 PORTVERSION=	2.28
 PORTREVISION=	3

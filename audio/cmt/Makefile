@@ -1,5 +1,3 @@
-# Created by: Tilman Linneweh <arved@FreeBSD.org>
-
 PORTNAME=	cmt
 PORTVERSION=	1.16
 CATEGORIES=	audio

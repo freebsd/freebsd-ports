@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	fluid-soundfont
 PORTVERSION=	3.1
 CATEGORIES=	audio

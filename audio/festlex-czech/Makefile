@@ -1,5 +1,3 @@
-# Created by: František Dvořák <valtri@civ.zcu.cz>
-
 PORTNAME=	festlex-czech
 PORTVERSION=	0.2.1
 CATEGORIES=	audio accessibility

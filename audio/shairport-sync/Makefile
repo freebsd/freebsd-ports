@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	shairport-sync
 DISTVERSION=	3.3.9
 PORTREVISION=	1

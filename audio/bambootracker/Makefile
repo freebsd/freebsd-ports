@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0

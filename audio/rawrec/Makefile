@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	rawrec
 PORTVERSION=	0.9.991
 PORTREVISION=	1

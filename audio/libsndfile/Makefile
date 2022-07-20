@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libsndfile
 DISTVERSION=	1.0.31
 PORTREVISION=	1

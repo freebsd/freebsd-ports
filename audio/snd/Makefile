@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	snd
 PORTVERSION=	21.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	CDDB-File
 PORTVERSION=	1.05
 PORTREVISION=	2

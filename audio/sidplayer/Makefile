@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	sidplayer
 PORTVERSION=	4.4
 PORTREVISION=	9

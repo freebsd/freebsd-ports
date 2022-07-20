@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	xmp
 PORTVERSION=	4.1.0
 PORTREVISION=	2

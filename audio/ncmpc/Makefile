@@ -1,5 +1,3 @@
-# Created by: Mark Reidel <ports@mark.reidel.info>
-
 PORTNAME=	ncmpc
 PORTVERSION=	0.41
 PORTREVISION=	1

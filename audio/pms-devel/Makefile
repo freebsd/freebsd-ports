@@ -1,5 +1,3 @@
-# Created by: Thomas Zander <riggs@FreeBSD.org>
-
 PORTNAME=	pms-devel
 PORTVERSION=	0.0.20211015
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Tilman Linneweh <arved@FreeBSD.org>
-
 PORTNAME=	blop
 PORTVERSION=	0.2.8
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	speex
 DISTVERSION=	1.2.1
 PORTEPOCH=	1

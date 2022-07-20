@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	mp3info
 PORTVERSION=	0.8.5a
 CATEGORIES=	audio

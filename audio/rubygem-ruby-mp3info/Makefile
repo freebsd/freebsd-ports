@@ -1,5 +1,3 @@
-# Created by: Brad Walker <tha_walka@hotmail.com>
-
 PORTNAME=	ruby-mp3info
 PORTVERSION=	0.8.10
 CATEGORIES=	audio rubygems

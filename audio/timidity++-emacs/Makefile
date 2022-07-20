@@ -1,5 +1,3 @@
-# Created by: Yoichi Asai <yatt@luna2.org>
-
 PKGNAMESUFFIX=	-emacs
 
 MAINTAINER=	ports@FreeBSD.org

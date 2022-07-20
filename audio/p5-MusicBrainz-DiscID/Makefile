@@ -1,5 +1,3 @@
-# Created by: Tobias Rehbein <tobias.rehbein@web.de>
-
 PORTNAME=	MusicBrainz-DiscID
 PORTVERSION=	0.06
 CATEGORIES=	audio perl5

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	opencore-amr
 PORTVERSION=	0.1.5
 CATEGORIES=	audio

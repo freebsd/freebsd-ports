@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	lollypop
 DISTVERSION=	1.4.16
 CATEGORIES=	audio

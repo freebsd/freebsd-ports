@@ -1,5 +1,3 @@
-# Created by: lx
-
 PORTNAME=	listener
 PORTVERSION=	2.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	adplug
 PORTVERSION=	2.3.3
 DISTVERSIONPREFIX=	${PORTNAME}-

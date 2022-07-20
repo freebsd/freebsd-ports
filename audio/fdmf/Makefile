@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	fdmf
 DISTVERSION=	0.0.9s
 PORTREVISION=	11

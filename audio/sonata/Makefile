@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=		sonata
 DISTVERSION=		1.7b1-22
 DISTVERSIONSUFFIX=	-gcee3555

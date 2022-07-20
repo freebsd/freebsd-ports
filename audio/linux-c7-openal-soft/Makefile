@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <emulation@FreeBSD.org$
-
 PORTNAME=	openal-soft
 PORTVERSION=	1.16.0
 DISTVERSIONSUFFIX=	-3.el7

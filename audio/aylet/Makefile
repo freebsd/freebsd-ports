@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	aylet
 PORTVERSION=	0.5
 PORTREVISION=	6

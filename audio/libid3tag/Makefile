@@ -1,5 +1,3 @@
-# Created by: Sergey Akifyev <asa@gascom.ru>
-
 PORTNAME=	libid3tag
 DISTVERSION=	0.16.2
 CATEGORIES=	audio

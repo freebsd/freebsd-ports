@@ -1,5 +1,3 @@
-# Created by: Dominic Mitchell <dom@happygiraffe.net>
-
 PORTNAME=	Audio-Wav
 PORTVERSION=	0.14
 PORTREVISION=	2

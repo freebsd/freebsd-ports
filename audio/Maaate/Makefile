@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	Maaate
 PORTVERSION=	0.3.1
 PORTREVISION=	5

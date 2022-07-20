@@ -1,5 +1,3 @@
-# Created by: numisemis at yahoo dot com
-
 PORTNAME=	julius
 PORTVERSION=	4.1.2
 PORTREVISION=	2

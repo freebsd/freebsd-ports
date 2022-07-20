@@ -1,5 +1,3 @@
-# Created by: Denise H. G. <darcsis@gmail.com>
-
 PORTNAME=	gnormalize
 PORTVERSION=	0.63
 PORTREVISION=	10

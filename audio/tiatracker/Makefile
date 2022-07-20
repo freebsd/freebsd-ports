@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	tiatracker
 PORTVERSION=	1.3
 DISTVERSIONSUFFIX=	.orig

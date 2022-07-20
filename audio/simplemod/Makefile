@@ -1,5 +1,3 @@
-# Created by: Christian Laursen <xi@borderworlds.dk>
-
 PORTNAME=	simplemod
 PORTVERSION=	1.1
 PORTREVISION=	1

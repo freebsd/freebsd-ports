@@ -1,5 +1,3 @@
-# Created by: leo
-
 PORTNAME=	Shout
 PORTVERSION=	2.1
 PORTREVISION=	2

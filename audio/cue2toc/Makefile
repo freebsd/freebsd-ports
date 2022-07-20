@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@oook.cz>
-
 PORTNAME=	cue2toc
 PORTVERSION=	0.1
 CATEGORIES=	audio perl5

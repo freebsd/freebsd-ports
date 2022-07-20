@@ -1,5 +1,3 @@
-# Created by: Byung-Hee HWANG <bh@izb.knu.ac.kr>
-
 PORTNAME=	mutagen
 DISTVERSION=	1.45.1
 CATEGORIES=	audio python

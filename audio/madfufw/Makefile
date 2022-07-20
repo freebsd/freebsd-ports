@@ -1,5 +1,3 @@
-# Created by: Aragon Gouveia <aragon@phat.za.net>
-
 PORTNAME=	madfufw
 PORTVERSION=	1.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libvorbis
 PORTVERSION=	1.3.3
 DISTVERSIONSUFFIX=	-8.el7.1

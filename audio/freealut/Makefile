@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	freealut
 PORTVERSION=	1.1.0
 PORTREVISION=	4

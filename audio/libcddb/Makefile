@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	libcddb
 PORTVERSION=	1.3.2
 PORTREVISION=	4

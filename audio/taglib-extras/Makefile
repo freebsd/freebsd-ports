@@ -1,5 +1,3 @@
-# Created by: Matt Tosto <datahead4@gmail.com>
-
 PORTNAME=	taglib-extras
 PORTVERSION=	1.0.1
 CATEGORIES=	audio

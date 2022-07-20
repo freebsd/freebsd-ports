@@ -1,5 +1,3 @@
-# Created by: Francisco Gomez <francisco@gomezmarin.com>
-
 PORTNAME=	mp3riot
 PORTVERSION=	1.3
 PORTREVISION=	1

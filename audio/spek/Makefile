@@ -1,5 +1,3 @@
-# Created by: Alexander Kojevnikov <alexander@kojevnikov.com>
-
 PORTNAME=	spek
 PORTVERSION=	0.8.2
 PORTREVISION=	17

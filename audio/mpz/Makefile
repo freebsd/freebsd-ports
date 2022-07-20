@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	mpz
 PORTVERSION=	1.0.20
 CATEGORIES=	audio

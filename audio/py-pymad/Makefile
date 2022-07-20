@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	pymad
 PORTVERSION=	0.10
 PORTREVISION=	1

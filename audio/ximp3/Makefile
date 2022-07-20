@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ximp3
 PORTVERSION=	0.1.15
 CATEGORIES=	audio

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	goattracker
 PORTVERSION=	2.76
 CATEGORIES=	audio

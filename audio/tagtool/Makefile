@@ -1,4 +1,3 @@
-# Created by: Anthony Ginepro <anthony.ginepro@laposte.net>
 #    $MCom: ports/audio/tagtool/Makefile,v 1.1 2006/09/30 01:15:37 ahze Exp $
 
 PORTNAME=	tagtool

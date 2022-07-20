@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	gmusicbrowser
 PORTVERSION=	1.1.15
 PORTREVISION=	1

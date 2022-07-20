@@ -1,5 +1,3 @@
-# Created by: Tatsuki Makino <tatsuki_makino@hotmail.com>
-
 PORTNAME=	libamrwb
 DISTVERSION=	11.0.0.0
 PORTREVISION=	3

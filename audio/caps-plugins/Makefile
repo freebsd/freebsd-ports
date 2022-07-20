@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	caps-plugins
 PORTVERSION=	0.4.5
 CATEGORIES=	audio

@@ -1,5 +1,3 @@
-# Created by: Tilman Linneweh <arved@FreeBSD.org>
-
 PORTNAME=	alienwah
 PORTVERSION=	1.13
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	siren
 PORTVERSION=	0.10
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Audio-Scan
 PORTVERSION=	1.01
 CATEGORIES=	audio perl5

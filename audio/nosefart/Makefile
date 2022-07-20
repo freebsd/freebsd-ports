@@ -1,5 +1,3 @@
-# Created by: Seth Kingsley <sethk@osd.bsdi.com>
-
 PORTNAME=	nosefart
 PORTVERSION=	1.92f
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke (miwi@FreeBSD.org)
-
 PORTNAME=	xfce4-mpc-plugin
 PORTVERSION=	0.5.2
 CATEGORIES=	audio xfce

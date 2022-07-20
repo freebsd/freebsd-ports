@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	mp3val
 PORTVERSION=	0.1.8
 DISTVERSIONSUFFIX=	-src

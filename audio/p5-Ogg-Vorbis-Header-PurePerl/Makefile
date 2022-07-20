@@ -1,5 +1,3 @@
-# Created by: Dominique Goncalves <dominique.goncalves@gmail.com>
-
 PORTNAME=	Ogg-Vorbis-Header-PurePerl
 PORTVERSION=	1.0
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Fraser Tweedale <frase@frase.id.au>
-
 PORTNAME=	asunder
 PORTVERSION=	2.9.6
 CATEGORIES=	audio

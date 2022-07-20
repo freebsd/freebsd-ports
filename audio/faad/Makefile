@@ -1,5 +1,3 @@
-# Created by: Sean McGovern <sean@sfarc.net>
-
 PORTNAME=	faad2
 PORTVERSION=	2.10.0
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Simon Barner <barner@gmx.de>
-
 PORTNAME=	Audio-WMA
 PORTVERSION=	1.3
 PORTREVISION=	1

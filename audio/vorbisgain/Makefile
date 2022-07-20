@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	vorbisgain
 PORTVERSION=	0.37
 PORTREVISION=	5

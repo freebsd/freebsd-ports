@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	xmixer
 PORTVERSION=	0.9.4
 PORTREVISION=	8

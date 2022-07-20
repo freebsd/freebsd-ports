@@ -1,5 +1,3 @@
-# Created by: swallace
-
 PORTNAME=	xcdplayer
 PORTVERSION=	2.2
 PORTREVISION=	5

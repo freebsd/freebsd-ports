@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	mp3plot
 DISTVERSION=	0.6.0
 PORTREVISION=	30

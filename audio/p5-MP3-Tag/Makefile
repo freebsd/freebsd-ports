@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy
-
 PORTNAME=	MP3-Tag
 PORTVERSION=	1.15
 CATEGORIES=	audio perl5

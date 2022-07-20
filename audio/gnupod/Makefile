@@ -1,5 +1,3 @@
-# Created by: David Le Brun <david@dyn-ns.net>
-
 PORTNAME=	gnupod
 PORTVERSION=	0.99.8
 PORTREVISION=	3

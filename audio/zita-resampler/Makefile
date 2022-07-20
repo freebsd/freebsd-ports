@@ -1,5 +1,3 @@
-# Created by: Goran Mekić <meka@tilda.center>
-
 PORTNAME=	zita-resampler
 DISTVERSION=	1.8.0
 CATEGORIES=	audio

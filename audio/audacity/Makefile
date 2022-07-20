@@ -1,5 +1,3 @@
-# Created by: Marc van Woerkom <3d@FreeBSD.org>
-
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
 DISTVERSION=	3.1.3

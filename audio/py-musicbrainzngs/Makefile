@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	musicbrainzngs
 PORTVERSION=	0.7.1
 CATEGORIES=	audio python

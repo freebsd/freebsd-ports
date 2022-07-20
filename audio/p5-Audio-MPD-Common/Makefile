@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Audio-MPD-Common
 PORTVERSION=	2.003
 CATEGORIES=	audio perl5

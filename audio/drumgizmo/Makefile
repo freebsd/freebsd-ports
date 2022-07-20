@@ -1,5 +1,3 @@
-# Created by: Goran Mekić <meka@tilda.center>
-
 PORTNAME=	drumgizmo
 PORTVERSION=	0.9.19
 PORTREVISION=	1

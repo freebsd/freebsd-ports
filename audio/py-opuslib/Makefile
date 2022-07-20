@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich
-
 PORTNAME=	opuslib
 DISTVERSION=	3.0.1
 CATEGORIES=	audio python

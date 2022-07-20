@@ -1,5 +1,3 @@
-# Created by: t.vanklaveren@student.utwente.nl
-
 PORTNAME=	libao
 PORTVERSION=	1.2.0
 PORTREVISION=	5

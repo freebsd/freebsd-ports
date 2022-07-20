@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-music
 PORTVERSION=	42.1
 CATEGORIES=	audio gnome

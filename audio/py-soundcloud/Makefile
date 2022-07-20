@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@FreeBSD.org>
-
 PORTNAME=	soundcloud
 PORTVERSION=	0.5.0
 CATEGORIES=	audio devel www python

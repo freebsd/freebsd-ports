@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	qjackctl
 DISTVERSIONPREFIX=	qjackctl_
 DISTVERSION=	0_9_7

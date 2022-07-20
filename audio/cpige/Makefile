@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	cpige
 DISTVERSION=	1.5
 PORTREVISION=	1

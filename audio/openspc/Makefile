@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	openspc
 PORTVERSION=	0.3.1
 PORTREVISION=	9

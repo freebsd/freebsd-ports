@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	x42-plugins
 DISTVERSION=	20220714 # the version is published here: http://gareus.org/misc/x42-plugins.php
 CATEGORIES=	audio

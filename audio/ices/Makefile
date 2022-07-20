@@ -1,5 +1,3 @@
-# Created by: Michael Nottebrock <michaelnottebrock@gmx.net>
-
 PORTNAME=	ices
 PORTVERSION=	2.0.3
 PORTREVISION=	2

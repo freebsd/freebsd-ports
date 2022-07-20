@@ -1,5 +1,3 @@
-# Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
-
 PORTNAME=	wmix
 PORTVERSION=	3.1
 PORTREVISION=	3

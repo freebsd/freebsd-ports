@@ -1,5 +1,3 @@
-# Created by: Jerry Eriksson <jerry@freebsd.se>
-
 PORTNAME=	rexima
 PORTVERSION=	1.4
 CATEGORIES=	audio

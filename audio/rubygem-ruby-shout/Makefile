@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	ruby-shout
 PORTVERSION=	2.2.2
 CATEGORIES=	audio rubygems

@@ -1,5 +1,3 @@
-# Created by: Sergey Akifyev <asa@gascom.ru>
-
 PORTNAME=	libmad
 PORTVERSION=	0.16.2
 PORTREVISION=	1

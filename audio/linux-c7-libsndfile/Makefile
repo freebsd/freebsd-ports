@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libsndfile
 PORTVERSION=	1.0.25
 DISTVERSIONSUFFIX=	-12.el7

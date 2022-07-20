@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	aacgain
 PORTVERSION=	1.8
 PORTREVISION=	2

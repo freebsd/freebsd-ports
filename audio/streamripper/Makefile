@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	streamripper
 PORTVERSION=	1.64.6
 PORTREVISION=	8
