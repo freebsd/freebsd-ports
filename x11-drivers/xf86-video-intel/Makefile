@@ -1,5 +1,3 @@
-# Created by: lesi@FreeBSD.org
-
 PORTNAME=	xf86-video-intel
 DISTVERSION=	2.99.917-916
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}

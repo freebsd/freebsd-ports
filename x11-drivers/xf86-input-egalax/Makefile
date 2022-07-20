@@ -1,5 +1,3 @@
-# Created by: Gleb Smirnoff <glebius@FreeBSD.org>
-
 PORTNAME=	xf86-input-egalax
 PORTVERSION=	0.3
 PORTREVISION=	5

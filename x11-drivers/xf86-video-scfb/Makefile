@@ -1,5 +1,3 @@
-# Created by: Florent Thoumie <flz@freebsd.org>
-
 PORTNAME=	xf86-video-scfb
 PORTVERSION=	0.0.7
 CATEGORIES=	x11-drivers
