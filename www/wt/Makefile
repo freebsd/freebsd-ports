@@ -1,5 +1,3 @@
-# Created by: Mohammad S. Babaei <info@babaei.net>
-
 PORTNAME=	wt
 DISTVERSION=	4.7.2
 PORTREVISION=	1

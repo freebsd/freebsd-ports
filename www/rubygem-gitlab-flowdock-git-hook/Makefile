@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	gitlab-flowdock-git-hook
 PORTVERSION=	1.0.1
 CATEGORIES=	www rubygems

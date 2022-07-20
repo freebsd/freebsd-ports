@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	html2hdml
 PORTVERSION=	1.0.5
 CATEGORIES=	www textproc

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Plack-Middleware-Rewrite
 PORTVERSION=	2.101
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	tinymce
 PORTVERSION=	6.1.0
 CATEGORIES=	www

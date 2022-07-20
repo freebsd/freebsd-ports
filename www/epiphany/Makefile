@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	epiphany
 PORTVERSION=	42.2
 CATEGORIES=	www gnome

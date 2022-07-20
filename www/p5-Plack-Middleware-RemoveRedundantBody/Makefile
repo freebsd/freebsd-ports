@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Plack-Middleware-RemoveRedundantBody
 PORTVERSION=	0.09
 CATEGORIES=	www perl5

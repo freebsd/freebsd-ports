@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	cgicc
 PORTVERSION=	3.2.19
 PORTREVISION=	1

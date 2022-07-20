@@ -1,5 +1,3 @@
-# Created by: Espen Tagestad <espen@tagestad.no>
-
 PORTNAME=	CGI-Application-Plugin-DBH
 PORTVERSION=	4.04
 CATEGORIES=	www perl5

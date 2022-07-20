@@ -1,5 +1,3 @@
-# Created by: Euan Thoms <euan@potensol.com>
-
 PORTNAME=		sogo2
 PORTVERSION=		2.4.3
 CATEGORIES=		www gnustep

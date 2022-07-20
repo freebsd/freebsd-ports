@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Authorization-Roles
 PORTVERSION=	0.09
 PORTREVISION=	1

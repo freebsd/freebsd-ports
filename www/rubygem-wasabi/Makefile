@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	wasabi
 PORTVERSION=	3.5.0
 CATEGORIES=	www rubygems

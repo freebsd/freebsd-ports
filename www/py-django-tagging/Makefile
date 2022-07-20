@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	django-tagging
 PORTVERSION=	0.5.0
 PORTREVISION=	1

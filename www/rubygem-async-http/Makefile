@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	async-http
 PORTVERSION=	0.56.6
 PORTREVISION=	1

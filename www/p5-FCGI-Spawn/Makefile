@@ -1,5 +1,3 @@
-# Created by: Peter <peter@vereshagin.org>
-
 PORTNAME=	FCGI-Spawn
 PORTVERSION=	0.16.7
 PORTREVISION=	1

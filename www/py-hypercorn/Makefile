@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	hypercorn
 PORTVERSION=	0.13.2
 PORTREVISION=	1

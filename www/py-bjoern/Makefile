@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-
 PORTNAME=	bjoern
 PORTVERSION=	3.2.1
 CATEGORIES=	www python

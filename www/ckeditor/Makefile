@@ -1,5 +1,3 @@
-# Created by: Joe Horn <joehorn@gmail.com>
-
 PORTNAME=	ckeditor
 PORTVERSION=	4.18.0
 CATEGORIES=	www

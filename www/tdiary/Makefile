@@ -1,5 +1,3 @@
-# Created by: Fumihiko Kimura <jfkimura@yahoo.co.jp>
-
 PORTNAME=	tdiary
 DISTVERSION=	5.2.2
 CATEGORIES?=	www ruby

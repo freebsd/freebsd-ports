@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	Catalyst-Plugin-Params-Nested
 PORTVERSION=	0.05
 PORTREVISION=	1

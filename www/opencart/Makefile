@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>
-
 PORTNAME=	opencart
 PORTVERSION=	4.0.0.0
 CATEGORIES=	www misc

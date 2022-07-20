@@ -1,5 +1,3 @@
-# Created by: Anes Muhametov <anes@anes.su>
-
 PORTNAME=	FCGI-Engine
 PORTVERSION=	0.22
 CATEGORIES=	www perl5

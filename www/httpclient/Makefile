@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	httpclient
 DISTVERSION=	4.5.12
 CATEGORIES=	www java

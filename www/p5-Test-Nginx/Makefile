@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	Test-Nginx
 PORTVERSION=	0.30
 CATEGORIES=	www perl5

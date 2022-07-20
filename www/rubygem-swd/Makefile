@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	swd
 PORTVERSION=	1.2.0
 CATEGORIES=	www rubygems

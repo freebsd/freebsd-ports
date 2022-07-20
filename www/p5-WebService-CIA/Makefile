@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	WebService-CIA
 PORTVERSION=	1.4
 PORTREVISION=	2

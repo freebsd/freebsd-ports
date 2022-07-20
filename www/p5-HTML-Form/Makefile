@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	HTML-Form
 PORTVERSION=	6.07
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Static-Simple
 PORTVERSION=	0.37
 CATEGORIES=	www perl5

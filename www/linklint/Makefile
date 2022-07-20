@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	linklint
 DISTVERSION=	2.3.6.d
 CATEGORIES=	www

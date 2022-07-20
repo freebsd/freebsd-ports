@@ -1,5 +1,3 @@
-# Created by: Bartek Rutkowski <robak@FreeBSD.org>
-
 PORTNAME=	nginx
 PKGNAMESUFFIX=	-naxsi
 

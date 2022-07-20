@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	quilt3
 PORTVERSION=	5.0.0
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	tvdb_api
 PORTVERSION=	3.1.0
 PORTREVISION=	2

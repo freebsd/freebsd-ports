@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	WWW-Instapaper-Client
 PORTVERSION=	0.901
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Radim Kolar <hsn@sanatana.dharma>
-
 PORTNAME=	scloader
 PORTVERSION=	0.32
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Carlo Strub
-
 PORTNAME=	django-mptt
 PORTVERSION=	0.13.4
 PORTREVISION=	1

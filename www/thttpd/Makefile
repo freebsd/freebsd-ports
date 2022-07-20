@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	thttpd
 PORTVERSION=	2.29
 PORTREVISION=	1

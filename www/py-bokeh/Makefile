@@ -1,5 +1,3 @@
-# Created by: Sergey Kozlov <kozlov.sergey.404@gmail.com>
-
 PORTNAME=	bokeh
 PORTVERSION=	2.4.3
 CATEGORIES=	www python

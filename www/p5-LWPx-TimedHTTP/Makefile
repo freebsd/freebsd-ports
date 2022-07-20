@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	LWPx-TimedHTTP
 PORTVERSION=	1.8
 PORTREVISION=	1

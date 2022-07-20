@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <clement@FreeBSD.org>
-
 PORTNAME=	mod_log_sql
 PORTVERSION=	1.101
 PORTREVISION=	7

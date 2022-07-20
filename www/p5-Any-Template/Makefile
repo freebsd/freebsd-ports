@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Any-Template
 PORTVERSION=	1.015
 PORTREVISION=	1

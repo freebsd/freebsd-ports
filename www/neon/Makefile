@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	neon
 DISTVERSION=	0.32.2
 CATEGORIES=	www

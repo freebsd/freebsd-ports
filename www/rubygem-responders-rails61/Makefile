@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	responders
 PORTVERSION=	3.0.1
 CATEGORIES=	www rubygems

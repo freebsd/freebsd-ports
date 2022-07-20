@@ -1,5 +1,3 @@
-# Created by: Dave Cottlehuber <dch@FreeBSD.org>
-
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.6

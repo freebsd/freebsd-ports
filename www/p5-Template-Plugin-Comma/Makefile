@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	Template-Plugin-Comma
 PORTVERSION=	0.04
 PORTREVISION=	1

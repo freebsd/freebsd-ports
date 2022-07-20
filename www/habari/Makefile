@@ -1,5 +1,3 @@
-# Created by: Ayumi M <ayu@commun.jp>
-
 PORTNAME=	habari
 PORTVERSION=	0.8
 CATEGORIES=	www

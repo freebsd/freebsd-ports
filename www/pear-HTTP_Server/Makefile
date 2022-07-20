@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine (<tux@pinguru.net>)
-
 PORTNAME=	HTTP_Server
 PORTVERSION=	0.4.1
 CATEGORIES=	www devel pear

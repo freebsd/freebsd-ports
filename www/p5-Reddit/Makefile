@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Reddit
 PORTVERSION=	0.30.03
 CATEGORIES=	www perl5

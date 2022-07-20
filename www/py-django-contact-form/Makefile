@@ -1,5 +1,3 @@
-# Created by: René Ladan <rene@freebsd.org>
-
 PORTNAME=	django-contact-form
 PORTVERSION=	2.0.1
 CATEGORIES=	www python

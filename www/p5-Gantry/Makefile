@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Gantry
 PORTVERSION=	3.64
 PORTREVISION=	1

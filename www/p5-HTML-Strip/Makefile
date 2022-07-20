@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	HTML-Strip
 PORTVERSION=	2.10
 CATEGORIES=	www perl5

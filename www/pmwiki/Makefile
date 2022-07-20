@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	pmwiki
 PORTVERSION=	2.3.2
 PORTEPOCH=	1

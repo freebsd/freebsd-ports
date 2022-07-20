@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	smashing
 PORTVERSION=	1.3.5
 CATEGORIES=	www rubygems

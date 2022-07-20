@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	WWW-NioTV
 PORTVERSION=	0.04
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Mathias Monnerville <mathias@monnerville.com>
-
 PORTNAME=	glpi
 PORTVERSION=	9.5.7
 PORTEPOCH=	1

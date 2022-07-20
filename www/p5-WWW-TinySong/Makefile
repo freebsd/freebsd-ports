@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	WWW-TinySong
 PORTVERSION=	1.01
 PORTREVISION=	2

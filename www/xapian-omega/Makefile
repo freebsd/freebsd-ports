@@ -1,5 +1,3 @@
-# Created by: Henrik Brix Andersen <brix@FreeBSD.org>
-
 PORTNAME=	xapian-omega
 PORTVERSION=	1.4.20
 CATEGORIES=	www

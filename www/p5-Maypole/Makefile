@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Maypole
 PORTVERSION=	2.13
 PORTREVISION=	6

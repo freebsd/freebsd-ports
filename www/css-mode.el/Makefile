@@ -1,5 +1,3 @@
-# Created by: Shigeyuki Fukushima <shige@FreeBSD.org>
-
 PORTNAME=	css-mode-elisp
 PORTVERSION=	0.11
 PORTREVISION=	2

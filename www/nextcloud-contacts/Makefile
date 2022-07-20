@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	contacts
 PORTVERSION=	4.1.1
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Jin-Sih Lin <linpct@gmail.com>
-
 PORTNAME=	phalcon
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.0.0RC2

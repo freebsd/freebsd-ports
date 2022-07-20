@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	wysiwyg
 DISTVERSION=	7.x-2.9
 CATEGORIES=	www

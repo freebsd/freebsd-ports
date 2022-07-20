@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	tt-rss
 PORTVERSION=	g20220620
 PORTEPOCH=	2

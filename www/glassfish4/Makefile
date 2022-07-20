@@ -1,5 +1,3 @@
-# Created by: cjr@cruwe.de
-
 PORTNAME=	glassfish
 PORTVERSION=	4.1
 CATEGORIES=	www java

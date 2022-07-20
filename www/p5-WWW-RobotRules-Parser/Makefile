@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	WWW-RobotRules-Parser
 PORTVERSION=	0.04001
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	httpie
 PORTVERSION=	3.0.2
 CATEGORIES=	www

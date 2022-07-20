@@ -1,5 +1,3 @@
-# Created by: Hiten Pandya <hiten@uk.FreeBSD.org>
-
 PORTNAME=	larbin
 PORTVERSION=	2.6.3
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	WWW-Wikipedia
 PORTVERSION=	2.05
 CATEGORIES=	www perl5

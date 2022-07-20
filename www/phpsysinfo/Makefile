@@ -1,5 +1,3 @@
-# Created by: Bob Bomar <bob@fly.homeunix.org>
-
 PORTNAME=	phpsysinfo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.1

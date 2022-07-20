@@ -1,5 +1,3 @@
-# Created by: Søren Straarup <xride@x12.dk>
-
 PORTNAME=	jonpy
 PORTVERSION=	0.12
 CATEGORIES=	www python

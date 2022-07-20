@@ -1,5 +1,3 @@
-# Created by: Cecile Neu <neu@mycontrol.de>
-
 PORTNAME=	tomee
 PORTVERSION=	1.7.4
 CATEGORIES=	www java

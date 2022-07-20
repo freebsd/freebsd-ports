@@ -1,5 +1,3 @@
-# Created by: Andrey Chernov <ache@FreeBSD.org>
-
 PORTNAME=	sfnt2woff
 PORTVERSION=	20091004
 CATEGORIES=	www converters

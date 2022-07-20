@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	HTML-Table
 PORTVERSION=	2.08a
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Mojolicious-Plugin-TtRenderer
 PORTVERSION=	1.62
 CATEGORIES=	www perl5

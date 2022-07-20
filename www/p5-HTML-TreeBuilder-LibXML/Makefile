@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	HTML-TreeBuilder-LibXML
 PORTVERSION=	0.23
 PORTREVISION=	1

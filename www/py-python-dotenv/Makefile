@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	python-dotenv
 PORTVERSION=	0.20.0
 CATEGORIES=	www python

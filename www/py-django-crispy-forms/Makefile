@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	django-crispy-forms
 PORTVERSION=	1.14.0
 PORTREVISION=	1

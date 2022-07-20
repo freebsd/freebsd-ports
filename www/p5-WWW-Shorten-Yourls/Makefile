@@ -1,5 +1,3 @@
-# Created by: Lawrence Chen <beastie@tardisi.com>
-
 PORTNAME=	WWW-Shorten-Yourls
 PORTVERSION=	0.06
 PORTREVISION=	1

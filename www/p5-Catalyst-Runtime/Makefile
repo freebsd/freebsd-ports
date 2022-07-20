@@ -1,5 +1,3 @@
-# Created by: lbr
-
 PORTNAME=	Catalyst-Runtime
 PORTVERSION=	5.90128
 CATEGORIES=	www perl5

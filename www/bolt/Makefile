@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	bolt
 PORTVERSION=	2.2.24
 PORTREVISION=	0

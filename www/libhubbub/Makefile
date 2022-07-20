@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	libhubbub
 PORTVERSION=	0.3.7
 CATEGORIES=	www

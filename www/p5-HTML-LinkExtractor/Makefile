@@ -1,5 +1,3 @@
-# Created by: Lars Eggert <lars.eggert@gmx.net>
-
 PORTNAME=	HTML-LinkExtractor
 PORTVERSION=	0.130
 PORTREVISION=	1

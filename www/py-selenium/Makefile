@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	selenium
 PORTVERSION=	3.141.0
 PORTREVISION=	1

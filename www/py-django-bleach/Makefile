@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	django-bleach
 PORTVERSION=	3.0.0
 CATEGORIES=	www python

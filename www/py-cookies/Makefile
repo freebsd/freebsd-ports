@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	cookies
 PORTVERSION=	2.2.1
 CATEGORIES=	www devel python

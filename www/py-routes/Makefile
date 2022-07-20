@@ -1,5 +1,3 @@
-# Created by: Dryice Liu <dryice@dryice.name>
-
 PORTNAME=	routes
 PORTVERSION=	2.5.1
 CATEGORIES=	www python

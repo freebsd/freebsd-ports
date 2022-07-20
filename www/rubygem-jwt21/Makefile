@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jwt
 PORTVERSION=	2.1.0
 CATEGORIES=	www devel rubygems

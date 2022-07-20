@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	rfc3987
 PORTVERSION=	1.3.8
 CATEGORIES=	www python

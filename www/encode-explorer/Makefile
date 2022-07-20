@@ -1,5 +1,3 @@
-# Created by: Frank Wall <fw@moov.de>
-
 PORTNAME=	encode
 PORTVERSION=	6.3
 CATEGORIES=	www

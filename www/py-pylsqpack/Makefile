@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pylsqpack
 PORTVERSION=	0.3.16
 CATEGORIES=	www python

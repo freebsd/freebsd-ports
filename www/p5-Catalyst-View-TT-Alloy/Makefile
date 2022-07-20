@@ -1,5 +1,3 @@
-# Created by: Danny Warren <danny@dannywarren.com>
-
 PORTNAME=	Catalyst-View-TT-Alloy
 PORTVERSION=	0.00007
 PORTREVISION=	1

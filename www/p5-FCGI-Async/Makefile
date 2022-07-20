@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	FCGI-Async
 PORTVERSION=	0.22
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Apache-AuthTicket
 PORTVERSION=	0.94
 CATEGORIES=	www perl5

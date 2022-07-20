@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PKGNAMESUFFIX=	-node18
 
 CONFLICTS_INSTALL=	npm npm-node14 npm-node16

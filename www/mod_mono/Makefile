@@ -1,5 +1,3 @@
-# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-
 PORTNAME=	mod_mono
 PORTVERSION=	3.13
 CATEGORIES=	www

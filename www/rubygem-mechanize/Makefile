@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	mechanize
 PORTVERSION=	2.8.5
 CATEGORIES=	www rubygems

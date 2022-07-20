@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-cloud-appengine-logging
 PORTVERSION=	1.1.2
 CATEGORIES=	www python

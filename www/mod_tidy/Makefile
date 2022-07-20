@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-
 PORTNAME=	mod_tidy
 PORTVERSION=	0.5.5
 PORTREVISION=	1

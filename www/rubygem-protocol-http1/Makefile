@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	protocol-http1
 PORTVERSION=	0.14.4
 CATEGORIES=	www rubygems

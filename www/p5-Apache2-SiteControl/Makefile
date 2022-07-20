@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org
-
 PORTNAME=	Apache2-SiteControl
 PORTVERSION=	1.05
 PORTREVISION=	3

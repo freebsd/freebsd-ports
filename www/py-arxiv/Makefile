@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	arxiv
 PORTVERSION=	1.4.2
 CATEGORIES=	www python

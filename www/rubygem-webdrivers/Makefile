@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	webdrivers
 PORTVERSION=	5.0.0
 CATEGORIES=	www rubygems

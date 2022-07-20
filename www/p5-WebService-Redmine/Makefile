@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	WebService-Redmine
 PORTVERSION=	0.06
 CATEGORIES=	www perl5

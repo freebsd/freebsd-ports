@@ -1,5 +1,3 @@
-# Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-
 PORTNAME=	Services_urlTea
 PORTVERSION=	0.1.0
 CATEGORIES=	www pear

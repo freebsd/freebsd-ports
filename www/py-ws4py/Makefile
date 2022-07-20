@@ -1,5 +1,3 @@
-# Created by: rene@FreeBSD.org
-
 PORTNAME=	ws4py
 PORTVERSION=	0.5.1
 CATEGORIES=	www python

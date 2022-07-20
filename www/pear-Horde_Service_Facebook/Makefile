@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Service_Facebook
 DISTVERSION=	2.0.10
 CATEGORIES=	www pear

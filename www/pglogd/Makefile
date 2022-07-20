@@ -1,5 +1,3 @@
-# Created by: Allie Micka <allie@pajunas.com>
-
 PORTNAME=	pglogd
 PORTVERSION=	2.3
 PORTREVISION=	4

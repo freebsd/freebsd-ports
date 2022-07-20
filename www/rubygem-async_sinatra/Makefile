@@ -1,5 +1,3 @@
-# Created by: Kimo <kimor79@yahoo.com>
-
 PORTNAME=	async_sinatra
 PORTVERSION=	1.3.0
 CATEGORIES=	www rubygems

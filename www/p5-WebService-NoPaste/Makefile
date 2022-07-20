@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@netnews.NCTU.edu.tw>
-
 PORTNAME=	WebService-NoPaste
 PORTVERSION=	0.03
 PORTREVISION=	1

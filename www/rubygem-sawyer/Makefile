@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	sawyer
 PORTVERSION=	0.9.2
 CATEGORIES=	www rubygems

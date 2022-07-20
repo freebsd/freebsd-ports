@@ -1,5 +1,3 @@
-# Created by: Scott Sanders <scott@jssjr.com>
-
 PORTNAME=	url_escape
 PORTVERSION=	2009.06.24
 CATEGORIES=	www rubygems

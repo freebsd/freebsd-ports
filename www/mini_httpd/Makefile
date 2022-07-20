@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	mini_httpd
 PORTVERSION=	1.30
 PORTREVISION=	3

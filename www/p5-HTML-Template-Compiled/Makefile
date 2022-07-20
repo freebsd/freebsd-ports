@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	HTML-Template-Compiled
 PORTVERSION=	1.003
 CATEGORIES=	www perl5

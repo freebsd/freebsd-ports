@@ -1,5 +1,3 @@
-# Created by: Alex Deiter <Alex.Deiter@Gmail.COM>
-
 PORTNAME=	HTML-Toc
 PORTVERSION=	1.12
 PORTREVISION=	1

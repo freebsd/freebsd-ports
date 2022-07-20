@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Model-Xapian
 PORTVERSION=	0.06
 PORTREVISION=	5

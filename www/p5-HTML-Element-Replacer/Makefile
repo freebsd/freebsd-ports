@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	HTML-Element-Replacer
 PORTVERSION=	0.08
 CATEGORIES=	www perl5

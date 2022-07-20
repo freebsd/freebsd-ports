@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	mod_auth_openidc
 PORTVERSION=	2.4.11.1
 DISTVERSIONPREFIX=	v

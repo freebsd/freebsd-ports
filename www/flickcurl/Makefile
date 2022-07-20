@@ -1,5 +1,3 @@
-# Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-
 PORTNAME=	flickcurl
 PORTVERSION=	1.26
 PORTREVISION=	3

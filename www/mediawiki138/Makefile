@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <tux@pinguru.net>
-
 PORTNAME=	mediawiki
 PORTVERSION=	1.38.2
 CATEGORIES=	www

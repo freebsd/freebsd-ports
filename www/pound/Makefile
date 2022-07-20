@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	pound
 PORTVERSION=	2.8
 CATEGORIES=	www net

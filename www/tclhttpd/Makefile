@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	tclhttpd
 PORTVERSION=	3.5.1
 PORTREVISION=	4

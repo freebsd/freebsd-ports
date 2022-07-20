@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Continuity
 PORTVERSION=	1.6
 CATEGORIES=	www perl5

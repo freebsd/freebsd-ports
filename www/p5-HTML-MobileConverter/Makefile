@@ -1,5 +1,3 @@
-# Created by: Dmitry Liakh <dliakh@ukr.net>
-
 PORTNAME=	HTML-MobileConverter
 PORTVERSION=	0.011
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	Net-YAP
 PORTVERSION=	0.6
 PORTREVISION=	1

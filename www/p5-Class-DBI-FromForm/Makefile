@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Class-DBI-FromForm
 PORTVERSION=	0.04
 PORTREVISION=	1

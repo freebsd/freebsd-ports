@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	e107
 PORTVERSION=	2.3.0
 CATEGORIES=	www

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	MojoMojo
 PORTVERSION=	1.12
 PORTREVISION=	1

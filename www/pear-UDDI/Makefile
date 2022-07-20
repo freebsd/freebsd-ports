@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	UDDI
 PORTVERSION=	0.2.4
 CATEGORIES=	www pear finance

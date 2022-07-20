@@ -1,5 +1,3 @@
-# Created by: Mohammad S. Babaei <info@babaei.net>
-
 PORTNAME=	nift
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.11

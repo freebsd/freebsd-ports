@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	protocol-hpack
 PORTVERSION=	1.4.2
 CATEGORIES=	www rubygems

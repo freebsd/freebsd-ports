@@ -1,5 +1,3 @@
-# Created by: Sergey Osokin <osa@FreeBSD.org>
-
 PKGNAMESUFFIX=	-${UNIT_MODNAME}
 
 UNIT_MODNAME=	perl${PERL_VER}

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-Amazon-AWIS
 PORTVERSION=	0.36
 PORTREVISION=	2

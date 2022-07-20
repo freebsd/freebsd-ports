@@ -1,5 +1,3 @@
-# Created by: Michael Schout <mschout@gkg.net>
-
 PORTNAME=	RT-Extension-CommandByMail
 PORTVERSION=	3.00
 PORTREVISION=	2

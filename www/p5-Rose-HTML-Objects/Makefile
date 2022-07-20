@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Rose-HTML-Objects
 PORTVERSION=	0.623
 CATEGORIES=	www perl5

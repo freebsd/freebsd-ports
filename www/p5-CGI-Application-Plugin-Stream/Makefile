@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Plugin-Stream
 PORTVERSION=	2.12
 CATEGORIES=	www perl5

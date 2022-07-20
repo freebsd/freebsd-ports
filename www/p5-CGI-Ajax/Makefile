@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	CGI-Ajax
 PORTVERSION=	0.707
 PORTREVISION=	1

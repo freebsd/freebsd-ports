@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-
 PORTNAME=	Flask
 DISTVERSION=	2.1.2
 CATEGORIES=	www python

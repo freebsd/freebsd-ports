@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	WebService-GData
 PORTVERSION=	0.0600
 PORTREVISION=	2

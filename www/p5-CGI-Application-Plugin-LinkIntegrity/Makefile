@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Plugin-LinkIntegrity
 PORTVERSION=	0.06
 PORTREVISION=	2

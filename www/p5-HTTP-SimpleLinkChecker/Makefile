@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	HTTP-SimpleLinkChecker
 PORTVERSION=	1.168
 CATEGORIES=	www perl5

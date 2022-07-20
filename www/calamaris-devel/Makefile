@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <mitya@yandex-team.ru>
-
 PORTNAME=	calamaris
 PORTVERSION=	2.99.4.5
 CATEGORIES=	www textproc

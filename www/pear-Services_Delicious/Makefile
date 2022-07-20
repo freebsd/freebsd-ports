@@ -1,5 +1,3 @@
-# Created by: chinsan <chisnan.tw@gmail.com>
-
 PORTNAME=	Services_Delicious
 PORTVERSION=	0.6.0
 CATEGORIES=	www pear

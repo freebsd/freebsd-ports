@@ -1,5 +1,3 @@
-# Created by: Kristaps Kulis <kristaps.kulis@gmail.com>
-
 PORTNAME=	django-haystack
 PORTVERSION=	3.2.1
 CATEGORIES=	www databases python

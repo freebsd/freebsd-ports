@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	httpretty
 PORTVERSION=	1.1.4
 CATEGORIES=	www python

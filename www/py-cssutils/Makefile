@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cssutils
 PORTVERSION=	2.5.0
 PORTEPOCH=	1

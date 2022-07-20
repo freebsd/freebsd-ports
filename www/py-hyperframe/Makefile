@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@FreeBSD.org>
-
 PORTNAME=	hyperframe
 PORTVERSION=	6.0.0
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: Daniel Wijnands <daniel@itxl.nl>
-
 PORTNAME=	CGI-Builder-TT2
 PORTVERSION=	0.03
 PORTREVISION=	1

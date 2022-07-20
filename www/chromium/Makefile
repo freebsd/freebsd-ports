@@ -1,5 +1,3 @@
-# Created by: Florent Thoumie <flz@FreeBSD.org>
-
 PORTNAME=	chromium
 PORTVERSION=	103.0.5060.134
 CATEGORIES=	www wayland

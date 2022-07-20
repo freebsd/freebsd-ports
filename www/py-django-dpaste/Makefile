@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	dpaste
 PORTVERSION=	3.5
 PORTREVISION=	1

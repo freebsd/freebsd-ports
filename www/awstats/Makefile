@@ -1,5 +1,3 @@
-# Created by: Munish Chopra <mchopra@engmail.uwaterloo.ca>
-
 PORTNAME=	awstats
 PORTVERSION=	7.8
 PORTEPOCH=	1

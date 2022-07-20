@@ -1,5 +1,3 @@
-# Created by: dsh@vlink.ru
-
 PORTNAME=	jesred
 PORTVERSION=	1.2.1
 PORTREVISION=	1

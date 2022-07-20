@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	wikitools
 PORTVERSION=	1.1.1
 PORTREVISION=	1

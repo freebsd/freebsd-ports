@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Squatting
 PORTVERSION=	0.83
 CATEGORIES=	www perl5

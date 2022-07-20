@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <michael@fun-box.ru>
-
 PORTNAME=	davclient
 PORTVERSION=	0.0.8
 CATEGORIES=	www rubygems

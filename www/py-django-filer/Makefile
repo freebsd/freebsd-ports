@@ -1,5 +1,3 @@
-# Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-
 PORTNAME=	django-filer
 PORTVERSION=	2.1.2
 PORTREVISION=	1

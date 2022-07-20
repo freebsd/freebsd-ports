@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Catalyst-Model-CDBI
 PORTVERSION=	0.12
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Danny Warren <danny@dannywarren.com>
-
 PORTNAME=	CatalystX-VirtualComponents
 PORTVERSION=	0.00004
 PORTREVISION=	1

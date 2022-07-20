@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	notes
 PORTVERSION=	4.4.0
 DISTVERSIONPREFIX=	v

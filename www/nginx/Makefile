@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	nginx
 PORTVERSION=	1.22.0
 PORTREVISION?=	6

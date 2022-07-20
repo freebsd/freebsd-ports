@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	HTTP-Throwable
 PORTVERSION=	0.027
 CATEGORIES=	www perl5

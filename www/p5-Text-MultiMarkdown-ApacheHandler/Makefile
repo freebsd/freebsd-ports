@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Text-MultiMarkdown-ApacheHandler
 PORTVERSION=	0.01
 PORTREVISION=	2

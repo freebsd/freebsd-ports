@@ -1,5 +1,3 @@
-# Created by: Hubert Tournier <hubert@frbsd.org>
-
 PORTNAME=	geneweb
 DISTVERSIONPREFIX=	distrib-
 DISTVERSION=	6-08

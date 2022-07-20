@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pnews
 PORTVERSION=	2.6.6
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@FreeBSD.org>
-
 PORTNAME=	mod_http2
 PORTVERSION=	2.0.2
 DISTVERSIONPREFIX=	v

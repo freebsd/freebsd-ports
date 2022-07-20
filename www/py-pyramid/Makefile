@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	pyramid
 PORTVERSION=	1.7.3
 CATEGORIES=	www python

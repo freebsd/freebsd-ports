@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	CatalystX-Profile
 PORTVERSION=	0.02
 CATEGORIES=	www perl5

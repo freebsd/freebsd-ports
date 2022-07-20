@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	Flask-Cache
 PORTVERSION=	0.13.1
 CATEGORIES=	www python

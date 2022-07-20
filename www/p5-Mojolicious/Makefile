@@ -1,5 +1,3 @@
-# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-
 PORTNAME=	Mojolicious
 PORTVERSION=	9.26
 CATEGORIES=	www perl5

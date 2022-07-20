@@ -1,5 +1,3 @@
-# Created by: Mun-Kyo Seo <munggo@pmy.lv>
-
 PORTNAME=	template_
 PORTVERSION=	2.2.3
 CATEGORIES=	www

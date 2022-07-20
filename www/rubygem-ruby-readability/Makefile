@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	ruby-readability
 PORTVERSION=	0.7.0
 CATEGORIES=	www rubygems

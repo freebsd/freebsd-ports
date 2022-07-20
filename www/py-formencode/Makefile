@@ -1,5 +1,3 @@
-# Created by: Choe, Cheng-Dae
-
 PORTNAME=	formencode
 PORTVERSION=	1.3.0
 CATEGORIES=	www python

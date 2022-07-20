@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	mod_memcache
 PORTVERSION=	0.1.0
 PORTREVISION=	5

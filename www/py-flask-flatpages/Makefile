@@ -1,5 +1,3 @@
-# Created by: Oleg Pudeyev <oleg@bsdpower.com>
-
 PORTNAME=	Flask-FlatPages
 PORTVERSION=	0.6
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	acts_as_taggable
 PORTVERSION=	2.0.2
 CATEGORIES=	www rubygems

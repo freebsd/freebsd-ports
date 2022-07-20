@@ -1,5 +1,3 @@
-# Created by: Christopher Knaust <jigboe@gmx.de>
-
 PORTNAME=	surf
 DISTVERSION=	2.1
 CATEGORIES=	www

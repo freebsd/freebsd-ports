@@ -1,5 +1,3 @@
-# Created by: Travis Campbell <hcoyote@ghostar.org>
-
 PORTNAME=	Catalyst-Plugin-Textile
 PORTVERSION=	0.01
 PORTREVISION=	2

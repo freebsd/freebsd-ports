@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Blog-Spam
 PORTVERSION=	1.0.2
 PORTREVISION=	2

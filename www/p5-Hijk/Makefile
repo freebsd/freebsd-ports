@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	Hijk
 PORTVERSION=	0.28
 CATEGORIES=	www perl5

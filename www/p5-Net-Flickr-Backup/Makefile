@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Net-Flickr-Backup
 PORTVERSION=	3.1
 PORTREVISION=	2

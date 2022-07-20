@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	sahi
 PORTVERSION=	3.5.${SAHI_BUILD}
 PORTREVISION=	2

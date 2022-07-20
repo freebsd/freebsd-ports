@@ -1,5 +1,3 @@
-# Created by: Michael Vasilenko <acid@stu.cn.ua>
-
 PORTNAME=	elinks
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.0

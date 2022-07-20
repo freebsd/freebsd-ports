@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Google-Search
 PORTVERSION=	0.028
 PORTREVISION=	1

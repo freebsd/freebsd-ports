@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	CGI-Application-Plugin-Config-YAML
 PORTVERSION=	0.01
 PORTREVISION=	1

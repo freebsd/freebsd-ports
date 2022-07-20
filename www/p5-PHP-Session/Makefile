@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	PHP-Session
 PORTVERSION=	0.27
 PORTREVISION=	1

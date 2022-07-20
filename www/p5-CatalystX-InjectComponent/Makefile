@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	CatalystX-InjectComponent
 PORTVERSION=	0.025
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Kozlov Sergey <kozlov.sergey.404@gmail.com>
-
 PORTNAME=	django-tables2
 DISTVERSION=	2.4.1
 PORTREVISION=	1

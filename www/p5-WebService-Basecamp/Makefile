@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	WebService-Basecamp
 PORTVERSION=	0.1.4
 PORTREVISION=	1

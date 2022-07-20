@@ -1,5 +1,3 @@
-# Created by: Alexander Kriventsov <avk@vl.ru>
-
 PORTNAME=	django-ldapdb
 DISTVERSION=	1.5.1-7
 DISTVERSIONSUFFIX=	-gd3a0b20

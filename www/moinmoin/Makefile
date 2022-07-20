@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@python.or.kr>
-
 PORTNAME=	moinmoin
 PORTVERSION=	1.9.11
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: Jose Garcia Juanino <jjuanino@gmail.com>
-
 PORTNAME=	mod_authnz_external
 PORTVERSION=	3.3.2
 CATEGORIES=	www

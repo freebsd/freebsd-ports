@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Catalyst-Model-Oryx
 PORTVERSION=	0.01
 PORTREVISION=	1

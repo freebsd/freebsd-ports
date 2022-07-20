@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	LWP-Protocol-socks
 PORTVERSION=	1.7
 CATEGORIES=	www perl5

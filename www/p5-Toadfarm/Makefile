@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Toadfarm
 PORTVERSION=	0.83
 CATEGORIES=	www perl5

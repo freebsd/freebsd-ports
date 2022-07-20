@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	mod_amazon_proxy
 PORTVERSION=	20100913
 PORTREVISION=	1

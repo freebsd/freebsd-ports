@@ -1,5 +1,3 @@
-# Created by: Marek Holienka	<marekholienka@gmail.com>
-
 PORTNAME=	nibbleblog
 PORTVERSION=	3.0.2
 PORTREVISION=	2

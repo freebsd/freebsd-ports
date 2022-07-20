@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer
-
 PORTNAME=	rfacebook
 PORTVERSION=	0.9.8
 PORTREVISION=	1

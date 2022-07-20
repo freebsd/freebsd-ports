@@ -1,5 +1,3 @@
-# Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-
 PORTNAME=	django-cms
 PORTVERSION=	3.9.0
 PORTREVISION=	1

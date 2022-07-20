@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	unicorn
 PORTVERSION=	6.1.0
 CATEGORIES=	www rubygems

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	httpx
 PORTVERSION=	0.13.3
 PORTREVISION=	3

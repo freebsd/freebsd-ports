@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	django-polymorphic
 PORTVERSION=	3.1.0
 PORTREVISION=	1

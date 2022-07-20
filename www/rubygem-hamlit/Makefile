@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	hamlit
 PORTVERSION=	2.15.2
 CATEGORIES=	www rubygems

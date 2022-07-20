@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	WWW-FreeProxy
 PORTVERSION=	0.04
 PORTREVISION=	1

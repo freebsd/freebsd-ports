@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-cloud-bigtable
 PORTVERSION=	2.10.1
 CATEGORIES=	www python

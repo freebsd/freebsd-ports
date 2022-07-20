@@ -1,5 +1,3 @@
-# Created by: lars.eggert@gmx.net
-
 PORTNAME=	podcastamatic
 PORTVERSION=	1.3
 PORTREVISION=	1

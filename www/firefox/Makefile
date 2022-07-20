@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@FreeBSD.org>
-
 PORTNAME=	firefox
 DISTVERSION=	103.0
 PORTEPOCH=	2

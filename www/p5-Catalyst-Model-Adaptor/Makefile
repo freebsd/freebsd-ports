@@ -1,5 +1,3 @@
-# Created by: Vladimir Timofeev <vovkasm@gmail.com>
-
 PORTNAME=	Catalyst-Model-Adaptor
 PORTVERSION=	0.10
 PORTREVISION=	1

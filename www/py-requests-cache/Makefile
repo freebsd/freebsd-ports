@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	requests-cache
 PORTVERSION=	0.9.5
 CATEGORIES=	www python

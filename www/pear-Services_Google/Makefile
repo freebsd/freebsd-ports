@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>)
-
 PORTNAME=	Services_Google
 PORTVERSION=	0.2.0
 CATEGORIES=	www pear

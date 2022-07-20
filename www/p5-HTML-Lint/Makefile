@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	HTML-Lint
 PORTVERSION=	2.32
 CATEGORIES=	www perl5

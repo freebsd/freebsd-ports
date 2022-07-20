@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	enmerkar
 PORTVERSION=	0.7.1
 PORTREVISION=	1

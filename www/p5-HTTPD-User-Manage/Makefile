@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	HTTPD-User-Manage
 PORTVERSION=	1.66
 PORTREVISION=	1

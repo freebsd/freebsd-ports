@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	CGI-Deurl-XS
 PORTVERSION=	0.08
 CATEGORIES=	www perl5

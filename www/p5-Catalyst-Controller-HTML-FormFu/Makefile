@@ -1,5 +1,3 @@
-# Created by: Andrej Zverev <andrey.zverev@electro-com.ru>
-
 PORTNAME=	Catalyst-Controller-HTML-FormFu
 PORTVERSION=	2.04
 PORTREVISION=	1

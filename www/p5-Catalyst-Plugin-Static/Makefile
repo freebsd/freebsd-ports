@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Static
 PORTVERSION=	0.11
 PORTREVISION=	2

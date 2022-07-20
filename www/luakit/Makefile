@@ -1,5 +1,3 @@
-# Created by: Stefan Hagen <ports@textmail.me>
-
 PORTNAME=	luakit
 PORTVERSION=	2.3
 PORTEPOCH=	1

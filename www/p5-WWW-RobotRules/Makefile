@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	WWW-RobotRules
 PORTVERSION=	6.02
 PORTREVISION=	1

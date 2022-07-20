@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	mod_dnssd
 PORTVERSION=	0.6
 PORTREVISION=	12

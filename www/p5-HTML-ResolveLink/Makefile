@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	HTML-ResolveLink
 PORTVERSION=	0.05
 PORTREVISION=	2

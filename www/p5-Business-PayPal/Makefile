@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer
-
 PORTNAME=	Business-PayPal
 PORTVERSION=	0.19
 CATEGORIES=	www perl5

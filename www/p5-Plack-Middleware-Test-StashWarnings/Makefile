@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	Plack-Middleware-Test-StashWarnings
 PORTVERSION=	0.08
 PORTREVISION=	1

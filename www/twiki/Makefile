@@ -1,5 +1,3 @@
-# Created by: Justin Hawkins <justin@hawkins.id.au>
-
 PORTNAME=	twiki
 PORTVERSION=	6.1.0
 PORTEPOCH=	2

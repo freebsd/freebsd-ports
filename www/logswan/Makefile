@@ -1,5 +1,3 @@
-# Created by: Juraj Lutter <juraj@lutter.sk>
-
 PORTNAME=	logswan
 DISTVERSION=	2.1.11
 CATEGORIES=	www

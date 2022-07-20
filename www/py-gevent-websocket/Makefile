@@ -1,5 +1,3 @@
-# Created by: antoine@FreeBSD.org
-
 PORTNAME=	gevent-websocket
 PORTVERSION=	0.10.1
 CATEGORIES=	www python

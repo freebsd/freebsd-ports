@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Flickr-Upload
 PORTVERSION=	1.60
 CATEGORIES=	www perl5

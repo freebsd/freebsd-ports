@@ -1,5 +1,3 @@
-# Created by: Sergey Matveychuk <sem@FreeBSD.org>
-
 PORTNAME=	sqstat
 PORTVERSION=	1.20
 PORTREVISION=	1

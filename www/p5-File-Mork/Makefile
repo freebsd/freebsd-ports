@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	File-Mork
 PORTVERSION=	0.3
 PORTREVISION=	1

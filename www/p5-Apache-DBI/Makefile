@@ -1,5 +1,3 @@
-# Created by: Igor Vinokurov <igor@zynaps.ru>
-
 PORTNAME=	Apache-DBI
 PORTVERSION=	1.12
 PORTREVISION=	2

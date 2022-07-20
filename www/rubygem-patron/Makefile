@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	patron
 PORTVERSION=	0.13.3
 CATEGORIES=	www rubygems

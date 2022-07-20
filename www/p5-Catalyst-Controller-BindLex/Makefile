@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero  <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	Catalyst-Controller-BindLex
 PORTVERSION=	0.03
 PORTREVISION=	2

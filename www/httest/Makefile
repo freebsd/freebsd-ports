@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	httest
 PORTVERSION=	2.4.24
 CATEGORIES=	www

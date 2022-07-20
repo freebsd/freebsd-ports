@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	HTTP-Server-Simple-Mason
 PORTVERSION=	0.14
 PORTREVISION=	1

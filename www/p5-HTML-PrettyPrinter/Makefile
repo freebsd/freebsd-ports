@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	HTML-PrettyPrinter
 PORTVERSION=	0.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	maruku
 PORTVERSION=	0.7.3
 CATEGORIES=	www rubygems

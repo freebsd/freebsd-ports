@@ -1,5 +1,3 @@
-# Created by: Marc G. Fournier <scrappy@hub.org>
-
 PORTNAME=	CGI-Untaint-email
 PORTVERSION=	0.03
 PORTREVISION=	1

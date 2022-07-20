@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gtkhtml
 PORTVERSION=	4.10.0
 PORTREVISION=	2

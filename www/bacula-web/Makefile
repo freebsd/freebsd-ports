@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dan@langille.org>
-
 PORTNAME=	bacula-web
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.5.5

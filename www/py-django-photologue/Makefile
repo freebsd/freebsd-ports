@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	django-photologue
 PORTVERSION=	3.15
 PORTREVISION=	1

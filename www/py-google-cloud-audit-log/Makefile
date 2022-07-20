@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-cloud-audit-log
 PORTVERSION=	0.2.3
 CATEGORIES=	www python

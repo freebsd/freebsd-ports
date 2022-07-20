@@ -1,5 +1,3 @@
-# Created by: Sergey Osipov <sipopo@yandex.ru>
-
 PKGNAMESUFFIX=	-api
 
 COMMENT=	Baculum API

@@ -1,5 +1,3 @@
-# Created by: Scott Sanders <scott@jssjr.com>
-
 PORTNAME=	em-http-request
 PORTVERSION=	1.1.7
 CATEGORIES=	www rubygems

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	rack_csrf
 PORTVERSION=	2.6.0
 CATEGORIES=	www rubygems

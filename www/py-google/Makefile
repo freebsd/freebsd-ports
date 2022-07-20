@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	google
 DISTVERSION=	3.0.0
 CATEGORIES=	www python

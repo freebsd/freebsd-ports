@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	libsass
 DISTVERSION=	0.21.0
 CATEGORIES=	www python

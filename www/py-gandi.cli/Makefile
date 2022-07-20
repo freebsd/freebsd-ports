@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	gandi.cli
 PORTVERSION=	1.6
 CATEGORIES=	www python

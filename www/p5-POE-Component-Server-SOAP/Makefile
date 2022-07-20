@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	POE-Component-Server-SOAP
 PORTVERSION=	1.14
 PORTREVISION=	1

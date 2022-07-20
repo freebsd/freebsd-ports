@@ -1,5 +1,3 @@
-# Created by: Hung-Yi Chen <gaod@hychen.org>
-
 PORTNAME=	mitmproxy
 PORTVERSION=	7.0.4
 DISTVERSIONPREFIX=	v

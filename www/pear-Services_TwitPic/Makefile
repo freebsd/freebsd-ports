@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Services_TwitPic
 PORTVERSION=	0.1.0
 CATEGORIES=	www pear

@@ -1,5 +1,3 @@
-# Created by: Alex Varju <freebsd-ports@varju.ca>
-
 PORTNAME=	gallery2
 PORTVERSION=	2.3.2
 PORTREVISION=	10

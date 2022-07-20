@@ -1,5 +1,3 @@
-# Created by: Alfred Perlstein <alfred@freebsd.org>
-
 PORTNAME=	djangorestframework-csv
 PORTVERSION=	2.0.0
 CATEGORIES=	www python

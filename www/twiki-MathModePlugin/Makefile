@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	MathModePlugin
 SVNREV=		15934
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sentinelhub
 PORTVERSION=	3.6.3
 CATEGORIES=	www python

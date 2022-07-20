@@ -1,5 +1,3 @@
-# Created by: Travis Campbell <hcoyote@ghostar.org>
-
 PORTNAME=	MasonX-WebApp
 PORTVERSION=	0.12
 PORTREVISION=	6

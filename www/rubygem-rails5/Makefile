@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	rails
 PORTVERSION=	5.1.7
 PORTREVISION=	2

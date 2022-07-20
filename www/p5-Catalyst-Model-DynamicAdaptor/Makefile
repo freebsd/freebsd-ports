@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	Catalyst-Model-DynamicAdaptor
 PORTVERSION=	0.02
 PORTREVISION=	2

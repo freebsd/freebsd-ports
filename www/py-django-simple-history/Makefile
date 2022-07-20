@@ -1,5 +1,3 @@
-# Created by: Carlo Strub
-
 PORTNAME=	django-simple-history
 PORTVERSION=	3.0.0
 PORTREVISION=	1

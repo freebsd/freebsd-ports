@@ -1,5 +1,3 @@
-# Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-
 PORTNAME=	Dancer-Plugin-Swagger
 PORTVERSION=	0.2.0
 CATEGORIES=	www perl5

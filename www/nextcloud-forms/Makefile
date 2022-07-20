@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	forms
 PORTVERSION=	2.5.1
 DISTVERSIONPREFIX=	v

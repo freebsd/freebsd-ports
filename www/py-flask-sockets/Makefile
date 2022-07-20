@@ -1,5 +1,3 @@
-# Created by: antoine@FreeBSD.org
-
 PORTNAME=	Flask-Sockets
 PORTVERSION=	0.2.1
 CATEGORIES=	www python

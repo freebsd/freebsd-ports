@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	uvicorn
 PORTVERSION=	0.18.2
 CATEGORIES=	www python

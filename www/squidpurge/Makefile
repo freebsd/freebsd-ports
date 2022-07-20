@@ -1,5 +1,3 @@
-# Created by: Dean Hollister <dean@odyssey.apana.org.au>
-
 PORTNAME=	squidpurge
 PORTVERSION=	1.17
 PORTREVISION=	4

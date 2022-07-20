@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	hstspreload
 PORTVERSION=	2022.7.10
 CATEGORIES=	www python

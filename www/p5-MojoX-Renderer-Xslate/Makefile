@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	MojoX-Renderer-Xslate
 PORTVERSION=	0.14
 CATEGORIES=	www textproc perl5

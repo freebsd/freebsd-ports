@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	URI-ParseSearchString
 PORTVERSION=	3.51
 PORTREVISION=	1

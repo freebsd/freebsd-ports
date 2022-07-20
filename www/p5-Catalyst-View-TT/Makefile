@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Catalyst-View-TT
 PORTVERSION=	0.45
 CATEGORIES=	www perl5

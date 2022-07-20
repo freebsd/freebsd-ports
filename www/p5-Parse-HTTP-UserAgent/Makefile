@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Parse-HTTP-UserAgent
 PORTVERSION=	0.42
 CATEGORIES=	www perl5

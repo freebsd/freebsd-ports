@@ -1,5 +1,3 @@
-# Created by: tobez@plab.ku.dk
-
 PORTNAME=	mathopd
 PORTVERSION=	1.5p8
 PORTREVISION=	1

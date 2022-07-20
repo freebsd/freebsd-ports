@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	HTTP-Parser
 PORTVERSION=	0.06
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Authorization-ACL
 PORTVERSION=	0.16
 CATEGORIES=	www perl5

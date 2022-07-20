@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	appointments
 PORTVERSION=	1.12.7
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Fanying Jen <fanying@fynet.com>
-
 PORTNAME=	WWW-Search-AltaVista
 PORTVERSION=	2.154
 PORTREVISION=	1

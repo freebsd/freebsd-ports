@@ -1,5 +1,3 @@
-# Created by: Stefan `Sec` Zehl <sec@42.org>
-
 PORTNAME=	Protocol-WebSocket
 PORTVERSION=	0.2300
 CATEGORIES=	www perl5

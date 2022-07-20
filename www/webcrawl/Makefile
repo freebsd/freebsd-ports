@@ -1,5 +1,3 @@
-# Created by: Dima Sivachenko
-
 PORTNAME=	webcrawl
 PORTVERSION=	1.10
 PORTREVISION=	1

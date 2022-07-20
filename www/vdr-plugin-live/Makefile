@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-live
 PORTVERSION=	0.3.0
 PORTREVISION=	5

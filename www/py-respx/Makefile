@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	respx
 PORTVERSION=	0.19.2
 CATEGORIES=	www python

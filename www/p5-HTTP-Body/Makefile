@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	HTTP-Body
 PORTVERSION=	1.22
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Kim Scarborough <user@unknown.nu>
-
 PORTNAME=	micro_httpd
 PORTVERSION=	2014.08.14
 CATEGORIES=	www

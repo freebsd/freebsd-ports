@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	HTML-FormFu-MultiForm
 PORTVERSION=	1.03
 PORTREVISION=	1

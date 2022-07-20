@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	horizon
 PORTVERSION=	21.0.0
 CATEGORIES=	www python

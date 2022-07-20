@@ -1,5 +1,3 @@
-# Created by: hrs@FreeBSD.org
-
 PORTNAME=	PodToHTML
 PORTVERSION=	0.08
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Lawrence Chen <beastie@tardisi.com>
-
 PORTNAME=	LWP-Protocol-connect
 PORTVERSION=	6.09
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	CGI-Cache
 PORTVERSION=	1.4214
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	HTML-RSSAutodiscovery
 PORTVERSION=	1.21
 PORTREVISION=	1

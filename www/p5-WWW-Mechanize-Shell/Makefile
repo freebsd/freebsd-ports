@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	WWW-Mechanize-Shell
 PORTVERSION=	0.59
 CATEGORIES=	www perl5

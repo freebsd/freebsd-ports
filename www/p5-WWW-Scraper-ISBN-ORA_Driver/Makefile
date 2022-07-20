@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-
 PORTNAME=	WWW-Scraper-ISBN-ORA_Driver
 PORTVERSION=	0.23
 CATEGORIES=	www perl5

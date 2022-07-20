@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Tie-TinyURL
 PORTVERSION=	0.02
 PORTREVISION=	2

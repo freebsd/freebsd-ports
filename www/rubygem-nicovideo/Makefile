@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	nicovideo
 PORTVERSION=	0.1.8
 PORTREVISION=	2

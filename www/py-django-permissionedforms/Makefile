@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	django-permissionedforms
 PORTVERSION=	0.1
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: Maurice Castro <maurice@castro.aus.net>
-
 PORTNAME=	davical
 DISTVERSIONPREFIX=	r
 DISTVERSION=	1.1.10

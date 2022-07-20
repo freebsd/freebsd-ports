@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	HTTP-Tiny
 PORTVERSION=	0.080
 CATEGORIES=	www perl5

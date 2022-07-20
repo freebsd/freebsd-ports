@@ -1,5 +1,3 @@
-# Created by: Richard Gallamore <ultima@FreeBSD.org>
-
 PORTNAME=	guacamole-client
 DISTVERSION=	1.4.0
 CATEGORIES=	www java

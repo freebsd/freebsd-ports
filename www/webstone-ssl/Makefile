@@ -1,5 +1,3 @@
-# Created by: Kazumasa Nishizawa <k_nishizawa@anet.ne.jp>
-
 PORTNAME=	webstone
 PORTVERSION=	2.5
 PORTREVISION=	4

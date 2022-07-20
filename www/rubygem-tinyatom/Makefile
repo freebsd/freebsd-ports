@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	tinyatom
 PORTVERSION=	0.3.6
 PORTREVISION=	2

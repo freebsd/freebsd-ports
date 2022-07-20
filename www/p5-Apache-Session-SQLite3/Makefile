@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Apache-Session-SQLite3
 PORTVERSION=	0.03
 PORTREVISION=	1

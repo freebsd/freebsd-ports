@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Dancer-Plugin-REST
 PORTVERSION=	0.11
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Michael Fausten <ports@michael-fausten.de>
-
 PORTNAME=	smarty
 DISTVERSIONPREFIX=	v
 PORTVERSION=	3.1.45

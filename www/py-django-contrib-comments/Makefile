@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	django-contrib-comments
 PORTVERSION=	2.2.0
 PORTREVISION=	1

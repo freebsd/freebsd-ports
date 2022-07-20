@@ -1,5 +1,3 @@
-# Created by: Alex Miller (<asm@asm.kiev.ua>)
-
 PORTNAME=	HTTP_Session2
 PORTVERSION=	0.7.3
 CATEGORIES=	www devel pear

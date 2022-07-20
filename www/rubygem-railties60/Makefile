@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	railties
 PORTVERSION=	6.0.5.1
 CATEGORIES=	www rubygems

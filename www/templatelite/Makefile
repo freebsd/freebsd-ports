@@ -1,5 +1,3 @@
-# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-
 PORTNAME=	templatelite
 PORTVERSION=	2.10
 CATEGORIES=	www

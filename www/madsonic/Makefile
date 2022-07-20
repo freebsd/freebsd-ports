@@ -1,5 +1,3 @@
-# Created by: Nicole Reid <root@cooltrainer.org>
-
 PORTNAME=	madsonic
 PORTVERSION=	6.2.9040
 PORTREVISION=	3

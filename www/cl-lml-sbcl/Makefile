@@ -1,5 +1,3 @@
-# Created by: Henrik Motakef <henrik.motakef@web.de>
-
 PORTNAME=	lml
 PORTVERSION=	2.5.7
 PORTREVISION=	68

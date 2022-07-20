@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	feedjira
 PORTVERSION=	3.2.1
 CATEGORIES=	www rubygems

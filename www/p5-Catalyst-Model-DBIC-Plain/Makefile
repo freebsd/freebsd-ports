@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Model-DBIC-Plain
 PORTVERSION=	0.03
 PORTREVISION=	1

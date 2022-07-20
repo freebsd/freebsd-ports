@@ -1,5 +1,3 @@
-# Created by: Andrej Zverev <andrey.zverev@electro-com.ru>
-
 PORTNAME=	HTML-FormFu
 PORTVERSION=	2.07
 CATEGORIES=	www perl5

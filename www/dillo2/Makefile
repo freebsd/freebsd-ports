@@ -1,5 +1,3 @@
-# Created by: bf <bf2006a@yahoo.com>
-
 PORTNAME=	dillo
 PORTVERSION=	3.0.5
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-
 PORTNAME=	emacs-w3m
 PORTVERSION=	1.4.632.b.${SNAPDATE}
 CATEGORIES=	www elisp

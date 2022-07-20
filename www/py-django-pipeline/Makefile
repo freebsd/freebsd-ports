@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	django-pipeline
 PORTVERSION=	1.6.14
 CATEGORIES=	www python

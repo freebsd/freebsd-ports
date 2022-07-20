@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	HTML-TableTiler
 PORTVERSION=	1.21
 PORTREVISION=	1

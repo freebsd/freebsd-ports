@@ -1,5 +1,3 @@
-# Created by: Chris Larsen <darth@vader.dk>
-
 PORTNAME=	WWW-Curl
 PORTVERSION=	4.17
 PORTREVISION=	4

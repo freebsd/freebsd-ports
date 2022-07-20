@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	otrs
 DISTVERSIONPREFIX=	rel-
 DISTVERSION=	6_0_29

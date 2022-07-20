@@ -1,5 +1,3 @@
-# Created by: Kurt Lidl <kurt.lidl@cello.com>
-
 PORTNAME=	CGI-Application-Plugin-Apache
 PORTVERSION=	1.02
 PORTREVISION=	2

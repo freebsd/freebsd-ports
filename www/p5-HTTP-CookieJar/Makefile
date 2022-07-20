@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	HTTP-CookieJar
 PORTVERSION=	0.012
 CATEGORIES=	www perl5

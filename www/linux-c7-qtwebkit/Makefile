@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	qtwebkit
 PORTVERSION=	2.3.4
 DISTVERSIONSUFFIX=	-6.el7

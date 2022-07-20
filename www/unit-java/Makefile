@@ -1,5 +1,3 @@
-# Created by: Sergey Osokin <osa@FreeBSD.org>
-
 MASTER_SITES=	https://unit.nginx.org/download/:unit \
 	https://repo1.maven.org/maven2/io/github/classgraph/classgraph/${CLASSGRAPH_VERSION}/:classgraph \
 	https://repo1.maven.org/maven2/org/apache/tomcat/tomcat-api/${TOMCAT_VERSION}/:api \

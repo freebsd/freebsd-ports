@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	JSON-WebToken
 PORTVERSION=	0.10
 CATEGORIES=	www perl5

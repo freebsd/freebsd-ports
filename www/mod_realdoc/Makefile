@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	mod_realdoc
 PORTVERSION=	20170405
 CATEGORIES=	www

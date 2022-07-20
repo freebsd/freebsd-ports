@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <m.seaman@infracaninophile.co.uk>
-
 PORTNAME=	RTx-Calendar
 PORTVERSION=	1.03
 PORTREVISION=	1

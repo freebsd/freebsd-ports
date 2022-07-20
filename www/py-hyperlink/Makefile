@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	hyperlink
 PORTVERSION=	21.0.0
 CATEGORIES=	www python

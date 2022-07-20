@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Session-Store-Memcached
 PORTVERSION=	0.05
 PORTREVISION=	1

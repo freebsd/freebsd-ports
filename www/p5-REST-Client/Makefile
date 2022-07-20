@@ -1,5 +1,3 @@
-# Created by: Paul Schmehl <pauls@utdallas.edu>
-
 PORTNAME=	REST-Client
 PORTVERSION=	273
 CATEGORIES=	www perl5

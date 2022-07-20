@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	mod_auth_mellon
 PORTVERSION=	0.18.0
 CATEGORIES=	www

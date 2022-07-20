@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	css-parser
 PORTVERSION=	1.0.7
 DISTVERSIONPREFIX=	v

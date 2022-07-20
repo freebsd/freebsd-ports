@@ -1,5 +1,3 @@
-# Created by: milki <milki@rescomp.berkeley.edu>
-
 PORTNAME=	LWP-Online
 PORTVERSION=	1.08
 PORTREVISION=	1

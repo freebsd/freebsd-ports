@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	selenium-webdriver
 PORTVERSION=	4.3.0
 CATEGORIES=	www rubygems

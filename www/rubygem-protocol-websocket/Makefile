@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	protocol-websocket
 PORTVERSION=	0.7.5
 CATEGORIES=	www rubygems

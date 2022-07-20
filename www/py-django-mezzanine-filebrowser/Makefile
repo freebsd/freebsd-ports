@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	django-mezzanine-filebrowser
 PORTVERSION=	1.1.1
 CATEGORIES=	www python

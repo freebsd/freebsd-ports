@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	async-websocket
 PORTVERSION=	0.19.0
 CATEGORIES=	www rubygems

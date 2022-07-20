@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	rails
 PORTVERSION=	5.2.8.1
 CATEGORIES=	www rubygems

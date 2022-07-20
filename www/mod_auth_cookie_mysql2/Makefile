@@ -1,5 +1,3 @@
-# Created by: clement
-
 PORTNAME=	mod_auth_cookie_mysql2
 PORTVERSION=	1.0
 PORTREVISION=	1

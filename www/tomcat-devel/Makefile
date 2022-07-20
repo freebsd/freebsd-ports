@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	tomcat
 DISTVERSION=	10.1.0-M16
 CATEGORIES=	www java

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	platform-api
 PORTVERSION=	3.3.0
 CATEGORIES=	www rubygems

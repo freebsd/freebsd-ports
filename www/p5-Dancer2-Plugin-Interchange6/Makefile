@@ -1,5 +1,3 @@
-# Created by: <hvo.pm@xs4all.nl>
-
 PORTNAME=	Dancer2-Plugin-Interchange6
 PORTVERSION=	0.204
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: lbr@FreeBSD.org
-
 PORTNAME=	Catalyst-Model-XML-Feed
 PORTVERSION=	0.04
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	envoy
 PORTVERSION=	1.10.0
 DISTVERSIONPREFIX=	v

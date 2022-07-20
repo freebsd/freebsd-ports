@@ -1,5 +1,3 @@
-# Created by: Domas Mituzas <midom@dammit.lt>
-
 PORTNAME=	kannel
 PORTVERSION=	1.4.4
 PORTREVISION=	11

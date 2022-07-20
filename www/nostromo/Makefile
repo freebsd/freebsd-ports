@@ -1,5 +1,3 @@
-# Created by: Adrian Steinmann <ast@marabu.ch>
-
 PORTNAME=	nostromo
 PORTVERSION=	1.9.6
 CATEGORIES=	www

@@ -1,5 +1,3 @@
-# Created by: Elisey Savateev <b3k@mail.ru>
-
 PORTNAME=	rejik
 PORTVERSION=	3.2.12
 CATEGORIES=	www

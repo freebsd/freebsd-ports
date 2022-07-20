@@ -1,5 +1,3 @@
-# Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-
 PORTNAME=	django-reversion
 PORTVERSION=	4.0.1
 PORTREVISION=	1

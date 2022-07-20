@@ -1,5 +1,3 @@
-# Created by: Dirk Froemberg <dirk@FreeBSD.org>
-
 PORTNAME=	httrack
 PORTVERSION=	3.49.2
 PORTREVISION=	1

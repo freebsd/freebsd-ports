@@ -1,5 +1,3 @@
-# Created by: Daniel Gerzo <danger@FreeBSD.org>
-
 PORTNAME=	uwsgi
 PORTVERSION=	2.0.20
 CATEGORIES=	www python

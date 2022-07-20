@@ -1,5 +1,3 @@
-# Created by: Brian Somers <brian@FreeBSD.org>
-
 PORTNAME=	httptunnel
 PORTVERSION=	3.3
 PORTREVISION=	3

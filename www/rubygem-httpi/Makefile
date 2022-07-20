@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	httpi
 PORTVERSION=	2.4.2
 CATEGORIES=	www rubygems

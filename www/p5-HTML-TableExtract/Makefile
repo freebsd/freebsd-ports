@@ -1,5 +1,3 @@
-# Created by: Sergey Osokin aka oZZ <ports@FreeBSD.org>
-
 PORTNAME=	HTML-TableExtract
 PORTVERSION=	2.15
 CATEGORIES=	www perl5

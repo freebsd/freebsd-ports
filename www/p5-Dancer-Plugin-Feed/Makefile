@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	Dancer-Plugin-Feed
 PORTVERSION=	1.131470
 PORTREVISION=	1

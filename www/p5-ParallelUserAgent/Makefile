@@ -1,5 +1,3 @@
-# Created by: ache@FreeBSD.org
-
 PORTNAME=	ParallelUserAgent
 PORTVERSION=	2.62
 CATEGORIES=	www perl5

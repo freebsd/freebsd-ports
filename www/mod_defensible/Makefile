@@ -1,5 +1,3 @@
-# Created by: Peter Libassi <peter@libassi.se>
-
 PORTNAME=	mod_defensible
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5

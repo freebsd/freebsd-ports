@@ -1,5 +1,3 @@
-# Created by: Guixing Bai <khsing.cn@gmail.com>
-
 PORTNAME=	tornado
 PORTVERSION=	6.2
 CATEGORIES=	www python

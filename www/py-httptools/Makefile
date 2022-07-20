@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	httptools
 PORTVERSION=	0.4.0
 CATEGORIES=	www python

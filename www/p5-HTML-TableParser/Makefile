@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	HTML-TableParser
 PORTVERSION=	0.43
 CATEGORIES=	www perl5

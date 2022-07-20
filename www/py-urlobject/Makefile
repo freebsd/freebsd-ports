@@ -1,5 +1,3 @@
-# Created by: Ilia Skalozubov <freebsd@skinc.ru>
-
 PORTNAME=	urlobject
 PORTVERSION=	2.4.3
 CATEGORIES=	www devel python

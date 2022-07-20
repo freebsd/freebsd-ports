@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	bleach
 PORTVERSION=	5.0.1
 CATEGORIES=	www python

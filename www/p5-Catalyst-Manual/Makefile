@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Manual
 PORTVERSION=	5.9011
 PORTEPOCH=	1

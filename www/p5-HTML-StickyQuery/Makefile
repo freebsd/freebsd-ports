@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	HTML-StickyQuery
 PORTVERSION=	0.13
 PORTREVISION=	1

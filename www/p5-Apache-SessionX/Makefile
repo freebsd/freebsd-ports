@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Apache-SessionX
 PORTVERSION=	2.01
 PORTREVISION=	1

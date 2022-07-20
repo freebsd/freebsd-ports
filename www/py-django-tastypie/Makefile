@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <william88@gmail.com>
-
 PORTNAME=	django-tastypie
 PORTVERSION=	0.14.4
 PORTREVISION=	1

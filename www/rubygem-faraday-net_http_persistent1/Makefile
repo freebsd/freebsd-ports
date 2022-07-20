@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	faraday-net_http_persistent
 PORTVERSION=	1.2.0
 CATEGORIES=	www rubygems

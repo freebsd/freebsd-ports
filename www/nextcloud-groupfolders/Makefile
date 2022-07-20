@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	groupfolders
 PORTVERSION=	12.0.1
 DISTVERSIONPREFIX=	v

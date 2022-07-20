@@ -1,5 +1,3 @@
-# Created by: Yi-Hsuan Hsin <mhsin@mhsin.org>
-
 PORTNAME=	WWW-LongURL
 PORTVERSION=	0.05
 PORTREVISION=	1

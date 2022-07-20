@@ -1,5 +1,3 @@
-# Created by: Andrea Cervesato <andrea@cervesato.it>
-
 PORTNAME=	mod_qos
 DISTVERSION=	11.72
 CATEGORIES=	www

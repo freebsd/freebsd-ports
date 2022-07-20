@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	orangehrm
 PORTVERSION=	5.0
 CATEGORIES=	www misc

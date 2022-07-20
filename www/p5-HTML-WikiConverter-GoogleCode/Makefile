@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	HTML-WikiConverter-GoogleCode
 PORTVERSION=	0.12
 PORTREVISION=	1

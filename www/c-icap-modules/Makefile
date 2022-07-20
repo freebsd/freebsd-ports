@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	c-icap
 PORTVERSION=	0.5.5
 CATEGORIES=	www security

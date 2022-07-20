@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	django-registration-redux
 PORTVERSION=	2.10
 PORTREVISION=	2

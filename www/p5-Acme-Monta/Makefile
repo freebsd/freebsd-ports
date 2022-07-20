@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Acme-Monta
 PORTVERSION=	0.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alfred Perlstein <alfred@freebsd.org>
-
 PORTNAME=	djangorestframework-xml
 PORTVERSION=	1.3.0
 CATEGORIES=	www python

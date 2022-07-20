@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Net-Flickr-RDF
 PORTVERSION=	2.2
 PORTREVISION=	1

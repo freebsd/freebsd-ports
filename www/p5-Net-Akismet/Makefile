@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	Net-Akismet
 PORTVERSION=	0.05
 PORTREVISION=	1

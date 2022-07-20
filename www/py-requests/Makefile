@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-
 PORTNAME=	requests
 PORTVERSION=	2.28.1
 CATEGORIES=	www python

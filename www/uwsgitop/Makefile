@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	uwsgitop
 PORTVERSION=	0.10
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Services_GeoNames
 PORTVERSION=	1.0.1
 CATEGORIES=	www pear

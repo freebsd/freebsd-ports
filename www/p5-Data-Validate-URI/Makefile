@@ -1,5 +1,3 @@
-# Created by: Tuc <freebsd-ports@t-b-o-h.net>
-
 PORTNAME=	Data-Validate-URI
 PORTVERSION=	0.07
 CATEGORIES=	www perl5

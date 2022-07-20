@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	domainatrix
 PORTVERSION=	0.0.11
 CATEGORIES=	www rubygems

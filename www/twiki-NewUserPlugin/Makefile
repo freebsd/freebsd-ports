@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	NewUserPlugin
 SVNREV=		17515
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \

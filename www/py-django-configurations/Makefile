@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	django-configurations
 PORTVERSION=	2.3.2
 PORTREVISION=	1

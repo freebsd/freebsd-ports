@@ -1,5 +1,3 @@
-# Created by: Peter <peter@vereshagin.org>
-
 PORTNAME=	FCGI-ProcManager
 PORTVERSION=	0.28
 CATEGORIES=	www perl5

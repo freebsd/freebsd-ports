@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	faraday_middleware
 PORTVERSION=	1.2.0
 PORTREVISION=	1

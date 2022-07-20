@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	CatalystX-SimpleLogin
 PORTVERSION=	0.21
 CATEGORIES=	www perl5

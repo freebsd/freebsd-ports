@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	Apache-Session-SharedMem
 PORTVERSION=	0.6
 PORTREVISION=	1

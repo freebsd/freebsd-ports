@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pysmartdl
 PORTVERSION=	1.3.4
 PORTREVISION=	1

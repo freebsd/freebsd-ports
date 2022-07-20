@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	HTTP-MHTTP
 PORTVERSION=	0.15
 PORTREVISION=	1

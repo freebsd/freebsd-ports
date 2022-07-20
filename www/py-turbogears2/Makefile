@@ -1,5 +1,3 @@
-# Created by: Wen Heping	<wenheping@gmail.com>
-
 PORTNAME=	TurboGears2
 PORTVERSION=	2.3.12
 PORTREVISION=	1

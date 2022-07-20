@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	django-registration
 PORTVERSION=	3.2
 PORTREVISION=	1

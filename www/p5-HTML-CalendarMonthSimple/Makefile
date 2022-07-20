@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	HTML-CalendarMonthSimple
 PORTVERSION=	1.26
 CATEGORIES=	www perl5

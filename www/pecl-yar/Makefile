@@ -1,5 +1,3 @@
-# Created by: John Chen <johnpupu@gmail.com>
-
 PORTNAME=	yar
 PORTVERSION=	2.3.2
 CATEGORIES=	www

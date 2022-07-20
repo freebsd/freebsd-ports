@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	castget
 DISTVERSION=	2.0.1
 PORTREVISION=	2

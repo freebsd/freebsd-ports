@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	semantic-ui-sass
 PORTVERSION=	2.2.12.1
 CATEGORIES=	www rubygems

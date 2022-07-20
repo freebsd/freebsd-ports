@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@exit2shell.com>
-
 PORTNAME=	Net-GeoPlanet
 PORTVERSION=	0.2
 PORTREVISION=	1

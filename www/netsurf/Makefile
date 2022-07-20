@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	netsurf
 PORTVERSION=	3.10
 PORTREVISION=	6

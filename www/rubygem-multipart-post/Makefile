@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	multipart-post
 PORTVERSION=	2.2.3
 CATEGORIES=	www rubygems

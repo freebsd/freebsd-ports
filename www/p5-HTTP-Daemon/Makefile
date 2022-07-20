@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	HTTP-Daemon
 PORTVERSION=	6.14
 CATEGORIES=	www perl5

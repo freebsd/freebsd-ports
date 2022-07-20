@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	CGI-Application-Plugin-JSON
 PORTVERSION=	1.02
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: nik
-
 PORTNAME=	sitecopy
 PORTVERSION=	0.16.6
 PORTREVISION=	8

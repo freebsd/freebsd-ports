@@ -1,5 +1,3 @@
-# Created by: Carlo Strub
-
 PORTNAME=	django-markdownx
 PORTVERSION=	3.0.1
 PORTREVISION=	1

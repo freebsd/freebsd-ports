@@ -1,5 +1,3 @@
-# Created by: Hung-Yi Chen <gaod@hychen.org>
-
 PORTNAME=	mod_memcache_block
 PORTVERSION=	1.0
 PORTEPOCH=	1

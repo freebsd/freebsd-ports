@@ -1,5 +1,3 @@
-# Created by: Shinsuke Matsui <smatsui@karashi.org>
-
 PORTNAME=	HTML-Selector-XPath
 PORTVERSION=	0.26
 CATEGORIES=	www perl5

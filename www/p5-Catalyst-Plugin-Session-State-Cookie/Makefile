@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Session-State-Cookie
 PORTVERSION=	0.18
 CATEGORIES=	www perl5

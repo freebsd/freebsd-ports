@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Test-HTTP-Server-Simple
 PORTVERSION=	0.11
 PORTREVISION=	2

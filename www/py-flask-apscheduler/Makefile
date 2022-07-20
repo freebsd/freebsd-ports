@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	flask-apscheduler
 PORTVERSION=	1.12.4
 CATEGORIES=	www python

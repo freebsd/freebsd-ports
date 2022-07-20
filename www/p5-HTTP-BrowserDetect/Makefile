@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	HTTP-BrowserDetect
 PORTVERSION=	3.35
 CATEGORIES=	www perl5

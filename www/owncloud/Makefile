@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	owncloud
 PORTVERSION=	10.10.0
 CATEGORIES=	www

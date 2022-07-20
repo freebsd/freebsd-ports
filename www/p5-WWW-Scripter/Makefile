@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	WWW-Scripter
 PORTVERSION=	0.032
 CATEGORIES=	www perl5

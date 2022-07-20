@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	csstidy
 PORTVERSION=	1.4
 CATEGORIES=	www

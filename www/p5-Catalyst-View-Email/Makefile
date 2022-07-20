@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	Catalyst-View-Email
 PORTVERSION=	0.36
 CATEGORIES=	www perl5

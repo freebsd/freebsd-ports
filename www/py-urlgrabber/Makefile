@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	urlgrabber
 PORTVERSION=	4.0.0
 PORTREVISION=	0

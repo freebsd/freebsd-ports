@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@FreeBSD.org>)
-
 PORTNAME=	HTTP_Request
 PORTVERSION=	1.4.4
 CATEGORIES=	www pear

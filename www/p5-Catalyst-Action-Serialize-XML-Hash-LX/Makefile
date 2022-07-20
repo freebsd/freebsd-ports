@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Catalyst-Action-Serialize-XML-Hash-LX
 PORTVERSION=	0.06
 PORTREVISION=	1

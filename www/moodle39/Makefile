@@ -1,5 +1,3 @@
-# Created by: Javier Martin Rueda <jmrueda@diatel.upm.es>
-
 PORTNAME=	moodle
 PORTVERSION=	3.9.15
 CATEGORIES=	www education

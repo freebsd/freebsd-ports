@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	IMDB-Film
 PORTVERSION=	0.53
 PORTREVISION=	1

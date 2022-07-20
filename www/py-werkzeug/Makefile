@@ -1,5 +1,3 @@
-# Created by: Moggie <moggie@elasticmind.net>
-
 PORTNAME=	werkzeug
 PORTVERSION=	2.1.2
 CATEGORIES=	www python

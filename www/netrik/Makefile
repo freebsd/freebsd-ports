@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@FreeBSD.org>
-
 PORTNAME=	netrik
 PORTVERSION=	1.16.1
 CATEGORIES=	www

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
-
 PORTNAME=	dhttpd
 PORTVERSION=	1.02a
 PORTREVISION=	1

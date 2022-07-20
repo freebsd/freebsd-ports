@@ -1,5 +1,3 @@
-# Created by: Craig Rodrigues <rodrigc@FreeBSD.org>
-
 PORTNAME=	serf
 PORTVERSION=	1.3.9
 PORTREVISION=	6

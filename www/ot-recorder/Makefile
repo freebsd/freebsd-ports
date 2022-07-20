@@ -1,5 +1,3 @@
-# Created by: tundra
-
 PORTNAME=	ot-recorder
 PORTVERSION=	0.9.0
 CATEGORIES=	www

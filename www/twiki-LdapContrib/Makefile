@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	LdapContrib
 SVNREV=		16840
 PORTREVISION=	1

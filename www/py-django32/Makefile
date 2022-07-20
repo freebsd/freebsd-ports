@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-
 PORTNAME=	django
 PORTVERSION=	3.2.14
 CATEGORIES=	www python

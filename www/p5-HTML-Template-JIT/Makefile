@@ -1,5 +1,3 @@
-# Created by: alex@kapranoff.ru
-
 PORTNAME=	HTML-Template-JIT
 PORTVERSION=	0.05
 PORTREVISION=	3

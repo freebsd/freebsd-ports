@@ -1,5 +1,3 @@
-# Created by: Kurt Lidl (kurt.lidl@cello.com)
-
 PORTNAME=	HTML-GenerateUtil
 PORTVERSION=	1.20
 PORTREVISION=	1

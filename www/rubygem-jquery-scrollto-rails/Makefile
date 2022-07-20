@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	jquery-scrollto-rails
 PORTVERSION=	1.4.3
 CATEGORIES=	www rubygems

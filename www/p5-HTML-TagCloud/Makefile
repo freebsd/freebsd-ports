@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	HTML-TagCloud
 PORTVERSION=	0.38
 PORTREVISION=	1

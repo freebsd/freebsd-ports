@@ -1,5 +1,3 @@
-# Created by: Thomas-Martin Seck <tmseck@netcologne.de>
-
 PORTNAME=	gatling
 PORTVERSION=	0.15
 PORTREVISION=	2

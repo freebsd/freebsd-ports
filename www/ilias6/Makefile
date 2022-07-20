@@ -1,5 +1,3 @@
-# Created by: Bartlomiej Rutkowski <r@robakdesign.com>
-
 PORTNAME=	ilias
 PORTVERSION=	6.17
 PORTREVISION=	1

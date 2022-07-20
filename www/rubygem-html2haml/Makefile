@@ -1,5 +1,3 @@
-# Created by: Horia Racoviceanu <horia@racoviceanu.com>
-
 PORTNAME=	html2haml
 PORTVERSION=	2.2.0
 CATEGORIES=	www rubygems

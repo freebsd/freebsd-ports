@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	csso
 PORTVERSION=	1.3.9
 DISTVERSIONPREFIX=	v

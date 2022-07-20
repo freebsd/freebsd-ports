@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	closure-compiler
 DISTVERSIONPREFIX=	v
 DISTVERSION=	20220601

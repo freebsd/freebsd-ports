@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	anyterm
 PORTVERSION=	1.1.29
 PORTREVISION=	23

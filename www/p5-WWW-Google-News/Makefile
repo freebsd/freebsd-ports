@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	WWW-Google-News
 PORTVERSION=	0.12
 PORTREVISION=	2

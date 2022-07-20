@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-
 PORTNAME=	gollum-rugged_adapter
 PORTVERSION=	1.1.2
 PORTREVISION=	1

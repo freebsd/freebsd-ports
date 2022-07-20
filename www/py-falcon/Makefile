@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	falcon
 PORTVERSION=	3.0.1
 CATEGORIES=	www python

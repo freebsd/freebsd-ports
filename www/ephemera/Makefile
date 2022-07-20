@@ -1,5 +1,3 @@
-# Created by: James Bailie <jimmy@mammothcheese.ca>
-
 PORTNAME=	ephemera
 PORTVERSION=	6.34
 CATEGORIES=	www

@@ -1,5 +1,3 @@
-# Created by: Jim Riggs <ports@christianserving.org>
-
 PORTNAME=	mod_setenvifplus
 PORTVERSION=	0.40
 CATEGORIES=	www

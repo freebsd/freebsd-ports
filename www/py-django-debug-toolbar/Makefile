@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	django-debug-toolbar
 PORTVERSION=	3.5.0
 CATEGORIES=	www python

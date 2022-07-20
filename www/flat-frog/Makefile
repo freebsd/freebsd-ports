@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	flat-frog
 PORTVERSION=	2.2.13
 CATEGORIES=	www

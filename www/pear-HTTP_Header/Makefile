@@ -1,5 +1,3 @@
-# Created by: Alex Miller (<asm@asm.kiev.ua>)
-
 PORTNAME=	HTTP_Header
 PORTVERSION=	1.2.1
 CATEGORIES=	www devel pear

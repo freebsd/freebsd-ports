@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	CGI-Compress-Gzip
 PORTVERSION=	1.03
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	WWW-Salesforce
 PORTVERSION=	0.304
 CATEGORIES=	www perl5

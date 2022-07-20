@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	HTML-Escape
 PORTVERSION=	1.11
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-View-Mason
 PORTVERSION=	0.19
 CATEGORIES=	www perl5

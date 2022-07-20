@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.1.2
 PORTREVISION=	2

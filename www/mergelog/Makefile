@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	mergelog
 PORTVERSION=	4.5
 PORTREVISION=	2

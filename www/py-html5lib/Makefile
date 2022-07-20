@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	html5lib
 PORTVERSION=	1.0.1
 CATEGORIES=	www python

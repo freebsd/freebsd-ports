@@ -1,5 +1,3 @@
-# Created by: mwlucas
-
 PORTNAME=	mod_auth_xradius
 PORTVERSION=	0.4.6
 PORTREVISION=	2

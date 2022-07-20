@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cssed
 PORTVERSION=	0.4.0
 PORTREVISION=	14

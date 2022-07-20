@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	SCGI
 PORTVERSION=	0.6
 PORTREVISION=	1

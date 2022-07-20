@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	requests-aws4auth
 PORTVERSION=	1.1.2
 CATEGORIES=	www python

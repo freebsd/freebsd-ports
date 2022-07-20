@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	mod_h264_streaming
 CATEGORIES=	www multimedia
 PKGNAMEPREFIX=	lighttpd-

@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	sinatra-respond_to
 PORTVERSION=	0.9.0
 PORTREVISION=	1

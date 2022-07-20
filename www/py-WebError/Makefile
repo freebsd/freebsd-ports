@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	WebError
 PORTVERSION=	0.13.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Bill Brinzer <bill.brinzer@gmail.com>
-
 PORTNAME=	Catalyst-Controller-RequestToken
 PORTVERSION=	0.07
 PORTREVISION=	1

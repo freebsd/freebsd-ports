@@ -1,5 +1,3 @@
-# Created by: gugu
-
 PORTNAME=	Catalyst-Plugin-AutoCRUD
 PORTVERSION=	2.200002
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	WWW-Search
 PORTVERSION=	2.519
 CATEGORIES=	www perl5

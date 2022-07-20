@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <martin@matuska.org>
-
 PORTNAME=	Apache-Clean
 PORTVERSION=	2.00
 DISTVERSIONSUFFIX=	_7

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	buku
 PORTVERSION=	4.7.1
 CATEGORIES=	www python

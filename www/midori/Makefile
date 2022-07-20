@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	midori
 PORTVERSION=	9.0
 DISTVERSIONPREFIX=	v

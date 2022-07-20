@@ -1,5 +1,3 @@
-# Created by: Masaki TAGAWA <masaki@club.kyutech.ac.jp>
-
 PORTNAME=	http_post
 PORTVERSION=	1.0.20140814
 CATEGORIES=	www

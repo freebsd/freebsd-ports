@@ -1,5 +1,3 @@
-# Created by: babak@farrokhi.net
-
 PORTNAME=	serendipity
 PORTVERSION=	2.3.5
 CATEGORIES=	www

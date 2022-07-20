@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PKGNAMESUFFIX=	-${UNIT_MODNAME}
 
 UNIT_MODNAME=	python${PYTHON_SUFFIX}

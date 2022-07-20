@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	puma_worker_killer
 PORTVERSION=	0.3.1
 CATEGORIES=	www rubygems

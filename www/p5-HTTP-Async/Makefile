@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	HTTP-Async
 PORTVERSION=	0.33
 CATEGORIES=	www perl5

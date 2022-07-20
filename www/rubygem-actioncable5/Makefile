@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	actioncable
 PORTVERSION=	5.1.7
 CATEGORIES=	www rubygems

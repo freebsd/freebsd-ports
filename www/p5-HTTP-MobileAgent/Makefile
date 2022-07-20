@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	HTTP-MobileAgent
 PORTVERSION=	0.36
 PORTREVISION=	2

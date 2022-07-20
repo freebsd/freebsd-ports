@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	django-annoying
 PORTVERSION=	0.10.6
 PORTREVISION=	1

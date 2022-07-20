@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	Any-URI-Escape
 PORTVERSION=	0.01
 PORTREVISION=	1

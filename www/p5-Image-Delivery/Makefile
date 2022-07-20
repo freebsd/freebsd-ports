@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Image-Delivery
 PORTVERSION=	0.14
 PORTREVISION=	2

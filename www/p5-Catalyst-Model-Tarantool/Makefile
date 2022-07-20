@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	Catalyst-Model-Tarantool
 PORTVERSION=	0.02
 CATEGORIES=	www perl5

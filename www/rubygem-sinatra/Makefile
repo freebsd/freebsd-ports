@@ -1,5 +1,3 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	sinatra
 PORTVERSION=	2.2.1
 CATEGORIES=	www rubygems

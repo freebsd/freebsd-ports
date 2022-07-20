@@ -1,5 +1,3 @@
-# Created by: J.R. Oldroyd <fbsd@opal.com>
-
 PORTNAME=	webtrees
 PORTVERSION=	1.7.18
 CATEGORIES=	www

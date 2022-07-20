@@ -1,5 +1,3 @@
-# Created by: Jonathan Weiss (<jw@innerewut.de>)
-
 PORTNAME=	redcloth
 PORTVERSION=	4.3.2
 CATEGORIES=	www rubygems

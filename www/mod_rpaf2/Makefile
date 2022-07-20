@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <clement@FreeBSD.org>
-
 PORTNAME=	mod_rpaf
 PORTVERSION=	0.8.4
 DISTVERSIONPREFIX=	v

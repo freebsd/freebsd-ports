@@ -1,5 +1,3 @@
-# Created by: Wen Heping
-
 PORTNAME=	WebTest
 PORTVERSION=	2.0.32
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-
 PORTNAME=	Net-eBay
 PORTVERSION=	0.62
 CATEGORIES=	www perl5

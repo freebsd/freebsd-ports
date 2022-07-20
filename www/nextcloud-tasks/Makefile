@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	tasks
 PORTVERSION=	0.14.4
 DISTVERSIONPREFIX=	v

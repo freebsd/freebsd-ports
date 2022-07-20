@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift
-
 PORTNAME=	dtflickr
 PORTVERSION=	1.5
 PORTREVISION=	1

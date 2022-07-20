@@ -1,5 +1,3 @@
-# Created by: Mike Meyer
-
 PORTNAME=	beautifulsoup
 PORTVERSION=	4.11.1
 CATEGORIES=	www python

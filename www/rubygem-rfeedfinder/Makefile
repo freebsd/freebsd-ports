@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	rfeedfinder
 PORTVERSION=	0.9.13
 CATEGORIES=	www textproc rubygems

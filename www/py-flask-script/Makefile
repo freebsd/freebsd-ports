@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	flask-script
 PORTVERSION=	2.0.6
 CATEGORIES=	www python

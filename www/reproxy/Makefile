@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	reproxy
 PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v

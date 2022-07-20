@@ -1,5 +1,3 @@
-# Created by: Choe, Cheng-Dae
-
 PORTNAME=	mod_webkit
 PORTVERSION=	1.2.3
 CATEGORIES=	www

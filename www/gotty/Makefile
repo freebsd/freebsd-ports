@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	gotty
 PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v

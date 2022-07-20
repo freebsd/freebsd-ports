@@ -1,5 +1,3 @@
-# Created by: Rod Taylor <ports@rbt.ca>
-
 PORTNAME=	MasonX-Interp-WithCallbacks
 PORTVERSION=	1.19
 PORTREVISION=	1

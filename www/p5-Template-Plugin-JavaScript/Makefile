@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Template-Plugin-JavaScript
 PORTVERSION=	0.02
 PORTREVISION=	1

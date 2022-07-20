@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	HTTP-Link-Parser
 PORTVERSION=	0.200
 PORTREVISION=	1

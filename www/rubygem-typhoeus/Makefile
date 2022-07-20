@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	typhoeus
 PORTVERSION=	1.4.0
 CATEGORIES=	www rubygems

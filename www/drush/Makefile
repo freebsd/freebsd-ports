@@ -1,5 +1,3 @@
-# Created by: Thomas Sandford <freebsduser@paradisegreen.co.uk>
-
 PORTNAME=	drush
 DISTVERSION=	8.4.11
 PORTREVISION=	0

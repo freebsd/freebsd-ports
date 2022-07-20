@@ -1,5 +1,3 @@
-# Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-
 PORTNAME=	wordpress
 DISTVERSION=	6.0
 PORTEPOCH=	1

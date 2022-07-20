@@ -1,5 +1,3 @@
-# Created by: Ken McGlothlen <ken.mcglothlen@gmail.com>
-
 PORTNAME=	Template-Simple
 PORTVERSION=	0.06
 PORTREVISION=	1

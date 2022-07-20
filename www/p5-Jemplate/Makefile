@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Jemplate
 PORTVERSION=	0.300
 CATEGORIES=	www perl5

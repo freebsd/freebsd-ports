@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Mojolicious-Plugin-SetUserGroup
 PORTVERSION=	1.000
 CATEGORIES=	www perl5

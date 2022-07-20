@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	HTTP-Negotiate
 PORTVERSION=	6.01
 PORTREVISION=	1

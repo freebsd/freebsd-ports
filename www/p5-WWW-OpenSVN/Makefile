@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	WWW-OpenSVN
 PORTVERSION=	0.1.3
 PORTREVISION=	1

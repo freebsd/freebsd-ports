@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	squidclamav
 PORTVERSION=	7.1
 CATEGORIES=	www security

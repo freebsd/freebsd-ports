@@ -1,5 +1,3 @@
-# Created by: Kozlov Sergey <kozlov.sergey.404@gmail.com>
-
 PORTNAME=	django-tinymce
 PORTVERSION=	3.4.0
 PORTREVISION=	1

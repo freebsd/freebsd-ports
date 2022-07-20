@@ -1,5 +1,3 @@
-# Created by: k@123.org
-
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.65
 CATEGORIES?=	www

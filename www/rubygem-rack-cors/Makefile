@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	rack-cors
 PORTVERSION=	1.1.1
 CATEGORIES=	www rubygems

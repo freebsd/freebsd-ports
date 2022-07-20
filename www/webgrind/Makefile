@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	webgrind
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.2

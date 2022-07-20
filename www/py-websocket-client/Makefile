@@ -1,5 +1,3 @@
-# Created by: Alfred Perlstein <alfred@freebsd.org>
-
 PORTNAME=	websocket-client
 PORTVERSION=	0.58.0
 CATEGORIES=	www python

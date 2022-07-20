@@ -1,5 +1,3 @@
-# Created by: Alex Kapranoff <alex@kapranoff.ru>
-
 PORTNAME=	CGI-Application-Plugin-ConfigAuto
 PORTVERSION=	1.33
 PORTREVISION=	1

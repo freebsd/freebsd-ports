@@ -1,5 +1,3 @@
-# Created by: Mitsuru Yoshida <mitsuru@riken.go.jp>
-
 PORTNAME=	tinyproxy
 PORTVERSION=	1.11.1
 PORTEPOCH=	1

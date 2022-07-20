@@ -1,5 +1,3 @@
-# Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-
 PORTNAME=	CGI-Utils
 PORTVERSION=	0.12
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	autobahn
 PORTVERSION=	21.2.1
 DISTVERSIONPREFIX=	v

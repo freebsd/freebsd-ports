@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>)
-
 PORTNAME=	Services_Facebook
 PORTVERSION=	0.2.14
 CATEGORIES=	www pear

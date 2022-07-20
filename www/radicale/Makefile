@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	radicale
 PORTVERSION=	3.1.7
 CATEGORIES=	www python

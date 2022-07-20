@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <michael@fun-box.ru>
-
 PORTNAME=	Catalyst-Plugin-DateTime
 PORTVERSION=	0.03
 PORTREVISION=	1

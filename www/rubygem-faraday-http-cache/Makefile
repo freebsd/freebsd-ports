@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	faraday-http-cache
 PORTVERSION=	2.2.0
 PORTREVISION=	1

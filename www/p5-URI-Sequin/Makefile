@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	URI-Sequin
 PORTVERSION=	1.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Helper-Controller-Scaffold
 PORTVERSION=	0.04
 PORTREVISION=	1

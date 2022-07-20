@@ -1,5 +1,3 @@
-# Created by: Espen Tagestad <espen@tagestad.no>
-
 PORTNAME=	CGI-Application-Plugin-ValidateRM
 PORTVERSION=	2.5
 PORTREVISION=	1

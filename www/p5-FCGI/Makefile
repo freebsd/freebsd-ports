@@ -1,5 +1,3 @@
-# Created by: Kelly Yancey <kbyanc@posi.net>
-
 PORTNAME=	FCGI
 PORTVERSION=	0.82
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	HTML-QuickCheck
 PORTVERSION=	1.0b1
 PORTREVISION=	1

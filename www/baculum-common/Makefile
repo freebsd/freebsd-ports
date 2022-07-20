@@ -1,5 +1,3 @@
-# Created by: Sergey Osipov <sipopo@yandex.ru>
-
 PORTNAME=	baculum
 PORTVERSION=	11.0.6
 CATEGORIES?=	www

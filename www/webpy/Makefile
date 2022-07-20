@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	webpy
 PORTVERSION=	0.62
 CATEGORIES=	www python

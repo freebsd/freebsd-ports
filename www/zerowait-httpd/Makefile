@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov
-
 PORTNAME=	zerowait
 PORTVERSION=	0.8d
 PORTREVISION=	4

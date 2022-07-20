@@ -1,5 +1,3 @@
-# Created by: Yi-Hsuan Hsin <mhsin@mhsin.org>
-
 PORTNAME=	WWW-Plurk
 PORTVERSION=	0.02
 PORTREVISION=	3

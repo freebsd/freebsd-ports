@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	httparty
 PORTVERSION=	0.20.0
 CATEGORIES=	www rubygems

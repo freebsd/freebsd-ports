@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	webkit
 DISTVERSION=	2.34.6
 PORTREVISION=	3

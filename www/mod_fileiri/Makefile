@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	mod_fileiri
 PORTVERSION=	1.15
 PORTREVISION=	1

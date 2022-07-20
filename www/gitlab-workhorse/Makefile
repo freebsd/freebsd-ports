@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	gitlab-workhorse
 PORTVERSION=	15.1.2
 DISTVERSIONPREFIX=	v

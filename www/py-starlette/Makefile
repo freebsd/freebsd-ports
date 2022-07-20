@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	starlette
 PORTVERSION=	0.20.4
 CATEGORIES=	www python

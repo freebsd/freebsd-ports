@@ -1,5 +1,3 @@
-# Created by: Koop Mast <einekoai@chello.nl>
-
 PORTNAME=	bluefish
 PORTVERSION=	2.2.12
 PORTREVISION=	2

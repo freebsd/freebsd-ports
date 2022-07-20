@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-
 PORTNAME=	mod_auth_pam
 PORTVERSION=	1.1.1
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Renaud Chaput <renchap@cocoa-x.com>
-
 PORTNAME=	rest-client
 PORTVERSION=	2.1.0
 CATEGORIES=	www rubygems

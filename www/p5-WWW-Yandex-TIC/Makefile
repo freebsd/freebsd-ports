@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	WWW-Yandex-TIC
 PORTVERSION=	0.07
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	WebService-YouTube
 PORTVERSION=	1.0.3
 PORTREVISION=	2

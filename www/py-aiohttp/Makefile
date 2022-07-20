@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	aiohttp
 PORTVERSION=	3.8.1
 PORTREVISION=	1

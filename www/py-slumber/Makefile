@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	slumber
 PORTVERSION=	0.7.1
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@rtfm.jp>
-
 PORTNAME=	yapra
 PORTVERSION=	0.2.2
 CATEGORIES=	www rubygems

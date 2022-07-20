@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	django-modelcluster
 PORTVERSION=	6.0
 PORTREVISION=	1

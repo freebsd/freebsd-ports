@@ -1,5 +1,3 @@
-# Created by: Simon Dick <simond@irrelevant.org>
-
 PORTNAME=	Nginx-Simple
 PORTVERSION=	0.07
 PORTREVISION=	1

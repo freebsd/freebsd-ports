@@ -1,5 +1,3 @@
-# Created by: Vladimir Timofeev <vovkasm@gmail.com>
-
 PORTNAME=	AnyEvent-HTTP
 PORTVERSION=	2.22
 PORTEPOCH=	2

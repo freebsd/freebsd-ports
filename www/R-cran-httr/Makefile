@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	httr
 PORTVERSION=	1.4.3
 CATEGORIES=	www

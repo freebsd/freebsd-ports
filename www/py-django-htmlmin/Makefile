@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <mitya@yandex-team.ru>
-
 PORTNAME=	django-htmlmin
 PORTVERSION=	0.9.1
 CATEGORIES=	www python

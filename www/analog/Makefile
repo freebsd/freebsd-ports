@@ -1,5 +1,3 @@
-# Created by: jfitz
-
 PORTNAME=	analog
 PORTVERSION=	6.0
 PORTREVISION=	12

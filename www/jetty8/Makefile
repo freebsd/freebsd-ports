@@ -1,5 +1,3 @@
-# Created by: Stephane Legrand <stephane@freebsd-fr.org>
-
 PORTNAME=	jetty
 PORTVERSION=	8.1.15
 PORTREVISION=	1

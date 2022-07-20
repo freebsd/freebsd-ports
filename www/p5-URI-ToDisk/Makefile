@@ -1,5 +1,3 @@
-# Created by: Cory R King <coryking@mozimedia.com>
-
 PORTNAME=	URI-ToDisk
 PORTVERSION=	1.12
 PORTREVISION=	2

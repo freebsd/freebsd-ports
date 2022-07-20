@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	django-classy-tags
 PORTVERSION=	2.0.0
 PORTREVISION=	2

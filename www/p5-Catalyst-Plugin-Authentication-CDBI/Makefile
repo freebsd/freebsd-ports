@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Catalyst-Plugin-Authentication-CDBI
 PORTVERSION=	0.10
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	kaminari
 PORTVERSION=	1.2.2
 CATEGORIES=	www rubygems

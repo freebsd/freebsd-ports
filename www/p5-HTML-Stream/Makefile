@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	HTML-Stream
 PORTVERSION=	1.60
 PORTREVISION=	1

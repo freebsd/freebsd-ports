@@ -1,5 +1,3 @@
-# Created by: lev@FreeBSD.org
-
 PORTNAME=	mod_dav_svn
 DISTNAME=	subversion-${PORTVERSION}
 

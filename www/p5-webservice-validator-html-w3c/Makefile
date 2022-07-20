@@ -1,5 +1,3 @@
-# Created by: toni.viemero@iki.fi
-
 PORTNAME=	WebService-Validator-HTML-W3C
 PORTVERSION=	0.28
 PORTREVISION=	1

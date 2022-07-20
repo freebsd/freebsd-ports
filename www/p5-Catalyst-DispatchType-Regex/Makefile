@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Catalyst-DispatchType-Regex
 PORTVERSION=	5.90035
 PORTREVISION=	1

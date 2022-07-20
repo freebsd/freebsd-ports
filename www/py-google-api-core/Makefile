@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-api-core
 PORTVERSION=	2.8.2
 CATEGORIES=	www python

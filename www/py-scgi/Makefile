@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner <nbm@FreeBSD.org>
-
 PORTNAME=	scgi
 PORTVERSION=	2.2
 CATEGORIES=	www python

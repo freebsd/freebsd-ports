@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@rtfm.jp>
-
 PORTNAME=	amazon-ecs
 PORTVERSION=	2.6.0
 CATEGORIES=	www rubygems

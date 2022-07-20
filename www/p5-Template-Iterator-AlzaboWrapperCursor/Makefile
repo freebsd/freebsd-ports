@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Template-Iterator-AlzaboWrapperCursor
 DISTVERSION=	0.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Scott Sanders <scott@jssjr.com>
-
 PORTNAME=	merb-param-protection
 PORTVERSION=	1.1.3
 CATEGORIES=	www rubygems

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	McBain-WithPSGI
 PORTVERSION=	2.001001
 CATEGORIES=	www perl5

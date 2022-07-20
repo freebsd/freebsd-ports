@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	HTTP-Server-Simple-PSGI
 PORTVERSION=	0.16
 PORTREVISION=	1

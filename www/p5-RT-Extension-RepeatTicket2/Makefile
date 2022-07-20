@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	RT-Extension-RepeatTicket
 PORTVERSION=	2.00
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: MIHIRA Yoshiro <sanpei@FreeBSD.org>
-
 PORTNAME=	ntlm-http
 PORTVERSION=	0.1.1
 CATEGORIES=	www rubygems

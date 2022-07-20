@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rack-attack
 PORTVERSION=	6.6.1
 CATEGORIES=	www rubygems

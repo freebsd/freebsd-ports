@@ -1,5 +1,3 @@
-# Created by: Alexander Kriventsov <avk@vl.ru>
-
 PORTNAME=	django-auth-ldap
 PORTVERSION=	4.1.0
 CATEGORIES=	www security python

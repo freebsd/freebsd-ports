@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	WebFlash
 PORTVERSION=	0.1a9
 PORTREVISION=	1

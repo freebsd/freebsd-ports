@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	rfc3986
 DISTVERSION=	1.5.0 # before updating to 2.0.0 make sure that dependencies listed in bug#261243 build
 PORTEPOCH=	1

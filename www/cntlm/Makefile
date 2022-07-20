@@ -1,5 +1,3 @@
-# Created by: Antony Mawer <ports@mawer.org>
-
 PORTNAME=	cntlm
 PORTVERSION=	0.92.3
 CATEGORIES=	www

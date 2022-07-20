@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	praw
 PORTVERSION=	7.6.0
 DISTVERSIONPREFIX=v

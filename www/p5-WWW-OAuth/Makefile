@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	WWW-OAuth
 PORTVERSION=	1.000
 PORTREVISION=	1

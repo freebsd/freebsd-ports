@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	HTML-TagParser
 PORTVERSION=	0.20
 PORTREVISION=	1

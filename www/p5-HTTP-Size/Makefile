@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	HTTP-Size
 PORTVERSION=	1.153
 CATEGORIES=	www perl5

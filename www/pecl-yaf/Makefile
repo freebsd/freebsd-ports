@@ -1,5 +1,3 @@
-# Created by: johnpupu <johnpupu@gmail.com>
-
 PORTNAME=	yaf
 PORTVERSION=	3.3.5
 CATEGORIES=	www

@@ -1,5 +1,3 @@
-# Created by: Ricky E. <codeblock@eighthbit.net>
-
 PORTNAME=	gist
 PORTVERSION=	5.1.0
 DISTVERSIONPREFIX=	v

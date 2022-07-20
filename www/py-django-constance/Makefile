@@ -1,5 +1,3 @@
-# Created by: Richard Gallamore <ultima@FreeBSD.org>
-
 PORTNAME=	django-constance
 PORTVERSION=	2.9.0
 CATEGORIES=	www python

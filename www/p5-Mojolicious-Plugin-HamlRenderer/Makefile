@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Mojolicious-Plugin-HamlRenderer
 PORTVERSION=	2.100000
 CATEGORIES=	www perl5

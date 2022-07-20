@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	butterfly
 PORTVERSION=	2.0.1
 PORTREVISION=	1

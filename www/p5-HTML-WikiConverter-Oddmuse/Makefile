@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	HTML-WikiConverter-Oddmuse
 PORTVERSION=	0.52
 PORTREVISION=	1

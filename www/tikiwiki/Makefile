@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <babak@farrokhi.net>
-
 PORTNAME=	tikiwiki
 DISTVERSION=	23.1
 CATEGORIES=	www

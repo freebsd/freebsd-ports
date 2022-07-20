@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	Web-Scraper-Config
 PORTVERSION=	0.01
 PORTREVISION=	1

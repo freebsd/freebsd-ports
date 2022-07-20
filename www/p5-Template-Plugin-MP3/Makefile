@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	Template-Plugin-MP3
 PORTVERSION=	1.02
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	Dancer-Plugin-Lexicon
 PORTVERSION=	0.06
 PORTREVISION=	1

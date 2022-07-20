@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Plugin-Redirect
 PORTVERSION=	1.00
 PORTREVISION=	1

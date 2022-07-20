@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	spyne
 PORTVERSION=	2.14.0
 PORTREVISION=	1

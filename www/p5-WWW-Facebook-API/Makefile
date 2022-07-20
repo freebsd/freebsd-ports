@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	WWW-Facebook-API
 PORTVERSION=	0.4.18
 PORTREVISION=	3

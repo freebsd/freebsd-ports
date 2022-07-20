@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@alerce.com>
-
 PORTNAME=	CGI-Application-Plugin-AutoRunmode
 PORTVERSION=	0.18
 PORTREVISION=	1

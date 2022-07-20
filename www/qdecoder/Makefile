@@ -1,5 +1,3 @@
-# Created by: CHOI Junho <cjh@FreeBSD.org>
-
 PORTNAME=	qdecoder
 PORTVERSION=	12.1.0
 DISTVERSIONPREFIX=	v

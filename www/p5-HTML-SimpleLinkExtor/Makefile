@@ -1,5 +1,3 @@
-# Created by: Andrey Chernov <ache@FreeBSD.org>
-
 PORTNAME=	HTML-SimpleLinkExtor
 PORTVERSION=	1.273
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	hashicorp-checkpoint
 PORTVERSION=	0.1.5
 CATEGORIES=	www rubygems

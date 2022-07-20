@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	turbo-rails
 PORTVERSION=	1.1.1
 CATEGORIES=	www rubygems

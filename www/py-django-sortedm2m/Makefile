@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	django-sortedm2m
 PORTVERSION=	3.1.1
 PORTREVISION=	1

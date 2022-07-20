@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-
 PORTNAME=	w3m
 PORTVERSION=	0.5.3.${SNAPDATE}
 CATEGORIES+=	www

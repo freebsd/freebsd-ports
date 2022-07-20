@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	net-http-digest_auth
 PORTVERSION=	1.4.1
 CATEGORIES=	www net rubygems

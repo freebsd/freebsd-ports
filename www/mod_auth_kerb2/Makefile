@@ -1,5 +1,3 @@
-# Created by: wollman
-
 PORTNAME=	mod_auth_kerb
 PORTVERSION=	5.4
 PORTREVISION=	8

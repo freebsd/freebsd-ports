@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	templatetag-sugar
 PORTVERSION=	1.0
 PORTREVISION=	3

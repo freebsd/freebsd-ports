@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	guile-www
 PORTVERSION=	1.1.1
 PORTREVISION=	4

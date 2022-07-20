@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	HTTP-Tiny-SPDY
 PORTVERSION=	0.020
 PORTREVISION=	1

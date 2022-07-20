@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	Catalyst-Plugin-Session-Store-DBIC
 PORTVERSION=	0.14
 PORTREVISION=	1

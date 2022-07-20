@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fancybox
 PORTVERSION=	3.5.7
 DISTVERSIONPREFIX=	v

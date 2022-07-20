@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	instabot
 PORTVERSION=	0.117.0
 PORTREVISION=	2

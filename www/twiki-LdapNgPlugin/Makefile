@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	LdapNgPlugin
 SVNREV=		15577
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \

@@ -1,5 +1,3 @@
-# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-
 PORTNAME=	xsp
 PORTVERSION=	4.5
 CATEGORIES=	www

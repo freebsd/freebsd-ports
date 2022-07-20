@@ -1,5 +1,3 @@
-# Created by: dom@happygiraffe.net
-
 PORTNAME=	ApacheBench
 PORTVERSION=	0.73
 PORTREVISION=	1

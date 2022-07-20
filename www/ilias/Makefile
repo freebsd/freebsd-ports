@@ -1,5 +1,3 @@
-# Created by: Bartlomiej Rutkowski <r@robakdesign.com>
-
 PORTNAME=	ilias
 PORTVERSION=	7.10
 DISTVERSIONPREFIX=	v

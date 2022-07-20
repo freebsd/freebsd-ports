@@ -1,5 +1,3 @@
-# Created by: Joe Horn <joehorn@gmail.com>
-
 PORTNAME=	twig
 PORTVERSION=	1.29.0
 CATEGORIES=	www pear

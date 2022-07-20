@@ -1,5 +1,3 @@
-# Created by: Chadwick Sorrell chad@wickdev.com
-
 PORTNAME=	awffull
 PORTVERSION=	3.10.2
 PORTREVISION=	18

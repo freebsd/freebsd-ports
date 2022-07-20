@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	WWW-Google-PageRank
 PORTVERSION=	0.17
 PORTREVISION=	1

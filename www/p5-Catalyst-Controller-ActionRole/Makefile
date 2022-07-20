@@ -1,5 +1,3 @@
-# Created by: mons
-
 PORTNAME=	Catalyst-Controller-ActionRole
 PORTVERSION=	0.15
 PORTREVISION=	1

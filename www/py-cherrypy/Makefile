@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale	<nivit@email.it>
-
 PORTNAME=	cherrypy
 PORTVERSION=	17.4.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Josef El-Rayes <j.el-rayes@daemon.li>
-
 PORTNAME=	swiggle
 PORTVERSION=	0.4
 PORTREVISION=	9

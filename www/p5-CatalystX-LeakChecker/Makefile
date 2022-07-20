@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	CatalystX-LeakChecker
 PORTVERSION=	0.06
 PORTREVISION=	1

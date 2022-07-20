@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	openbrokerapi
 PORTVERSION=	4.1.2
 CATEGORIES=	www python

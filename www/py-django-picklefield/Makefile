@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	django-picklefield
 PORTVERSION=	3.1
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	websocat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.1

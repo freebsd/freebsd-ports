@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aioquic
 PORTVERSION=	0.9.20
 CATEGORIES=	www python

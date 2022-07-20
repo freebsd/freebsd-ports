@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	fake-useragent
 PORTVERSION=	0.1.11
 CATEGORIES=	www python

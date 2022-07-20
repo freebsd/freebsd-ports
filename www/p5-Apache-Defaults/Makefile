@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Apache-Defaults
 PORTVERSION=	1.03
 CATEGORIES=	www perl5

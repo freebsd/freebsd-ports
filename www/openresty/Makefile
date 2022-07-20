@@ -1,5 +1,3 @@
-# Created by: Jochen Neumeister <joneum@FreeBSD.org>
-
 PORTNAME=	openresty
 PORTVERSION=	1.21.4.1
 CATEGORIES=	www

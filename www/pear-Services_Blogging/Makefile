@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Services_Blogging
 PORTVERSION=	0.2.4
 CATEGORIES=	www pear

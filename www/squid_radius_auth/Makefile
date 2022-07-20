@@ -1,5 +1,3 @@
-# Created by: Michael Capp <myntric@exeonline.com>
-
 PORTNAME=	squid_radius_auth
 PORTVERSION=	1.10
 CATEGORIES=	www

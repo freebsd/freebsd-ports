@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	CGI-Simple
 PORTVERSION=	1.280
 CATEGORIES=	www perl5

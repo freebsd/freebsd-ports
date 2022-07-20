@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	HTML-RobotsMETA
 PORTVERSION=	0.00004
 PORTREVISION=	1

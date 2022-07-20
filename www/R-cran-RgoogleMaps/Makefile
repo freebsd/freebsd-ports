@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	RgoogleMaps
 PORTVERSION=	1.4.5.3
 PORTREVISION=	1

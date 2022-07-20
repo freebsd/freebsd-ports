@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
-
 PORTNAME=	servlet-api
 PORTVERSION=	2.5
 PORTREVISION=	3

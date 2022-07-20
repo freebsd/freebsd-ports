@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	libwww
 PORTVERSION=	6.67
 DISTVERSIONPREFIX=	perl-

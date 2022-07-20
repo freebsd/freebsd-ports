@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rtlit
 PORTVERSION=	0.0.5
 CATEGORIES=	www rubygems

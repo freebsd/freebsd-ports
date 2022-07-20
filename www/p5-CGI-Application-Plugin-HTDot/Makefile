@@ -1,5 +1,3 @@
-# Created by: Espen Tagestad <espen@tagestad.no>
-
 PORTNAME=	CGI-Application-Plugin-HTDot
 PORTVERSION=	0.07
 PORTREVISION=	1

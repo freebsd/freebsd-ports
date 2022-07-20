@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	LWP-ConnCache-MaxKeepAliveRequests
 PORTVERSION=	0.33
 PORTREVISION=	1

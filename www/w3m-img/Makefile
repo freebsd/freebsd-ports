@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-
 PKGNAMESUFFIX=	-img
 
 MAINTAINER=	nobutaka@FreeBSD.org

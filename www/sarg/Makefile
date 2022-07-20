@@ -1,5 +1,3 @@
-# Created by: mt@primats.org.ua
-
 PORTNAME=	sarg
 PORTVERSION=	2.4.0
 PORTREVISION=	2

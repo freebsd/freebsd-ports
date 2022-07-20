@@ -1,5 +1,3 @@
-# Created by: Oleg Mamontov <oleg@mamontov.net>
-
 PORTNAME=	Catalyst-Plugin-SmartURI
 PORTVERSION=	0.041
 CATEGORIES=	www perl5

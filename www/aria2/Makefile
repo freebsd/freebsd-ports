@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	aria2
 PORTVERSION=	1.36.0
 PORTREVISION=	2

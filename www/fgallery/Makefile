@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	fgallery
 PORTVERSION=	1.8.2
 PORTREVISION=	5

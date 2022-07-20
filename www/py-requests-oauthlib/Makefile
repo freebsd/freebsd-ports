@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	requests-oauthlib
 PORTVERSION=	1.3.1
 CATEGORIES=	www python

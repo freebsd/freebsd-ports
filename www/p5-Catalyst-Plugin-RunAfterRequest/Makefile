@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	Catalyst-Plugin-RunAfterRequest
 PORTVERSION=	0.04
 PORTREVISION=	1

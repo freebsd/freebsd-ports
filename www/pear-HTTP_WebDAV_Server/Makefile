@@ -1,5 +1,3 @@
-# Created by: Wen Heping<wenheping@gmail.com>
-
 PORTNAME=	HTTP_WebDAV_Server
 PORTVERSION=	1.0.0RC8
 CATEGORIES=	www devel pear

@@ -1,5 +1,3 @@
-# Created by: Marcello Coutinho
-
 PORTNAME=	e2guardian
 PORTVERSION=	5.3.4
 DISTVERSIONPREFIX=	v

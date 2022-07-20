@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	pywikibot
 DISTVERSION=	7.3.0
 CATEGORIES=	www python

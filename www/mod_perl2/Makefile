@@ -1,5 +1,3 @@
-# Created by: Lars Eggert <larse@isi.edu>
-
 PORTNAME=	mod_perl
 PORTVERSION=	2.0.12
 PORTEPOCH=	3

@@ -1,5 +1,3 @@
-# Created by: wosch@FreeBSD.org
-
 PORTNAME=	checkbot
 PORTVERSION=	1.80
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyjwt
 PORTVERSION=	2.4.0
 CATEGORIES=	www python

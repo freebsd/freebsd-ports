@@ -1,5 +1,3 @@
-# Created by: Jev Björsell <ports@ecadlabs.com>
-
 PORTNAME=	nginx-prometheus-exporter
 PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v

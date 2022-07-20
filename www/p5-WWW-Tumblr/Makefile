@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	WWW-Tumblr
 PORTVERSION=	5.00
 PORTREVISION=	1

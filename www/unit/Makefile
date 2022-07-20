@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	unit
 PORTVERSION=	${UNIT_VERSION}
 CATEGORIES=	www

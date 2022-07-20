@@ -1,5 +1,3 @@
-# Created by: andrey@kostenko.name
-
 PORTNAME=	Catalyst-Plugin-ErrorCatcher
 PORTVERSION=	0.0.8.21
 CATEGORIES=	www perl5

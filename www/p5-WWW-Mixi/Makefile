@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	WWW-Mixi
 PORTVERSION=	0.50
 PORTREVISION=	1

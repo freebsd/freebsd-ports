@@ -1,5 +1,3 @@
-# Created by: Lukasz Stelmach <lukasz.stelmach@iem.pw.edu.pl>
-
 PORTNAME=	MathJax
 DISTVERSION=	2.7.8
 CATEGORIES=	www

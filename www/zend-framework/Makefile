@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	ZendFramework
 PORTVERSION=	2.4.13
 PORTREVISION=	0

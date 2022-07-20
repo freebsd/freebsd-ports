@@ -1,5 +1,3 @@
-# Created by: sada
-
 PORTNAME=	cgi-lib_pl
 PORTVERSION=	2.18
 PORTREVISION=	1

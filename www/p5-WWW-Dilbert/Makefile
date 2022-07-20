@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	WWW-Dilbert
 PORTVERSION=	1.19
 PORTREVISION=	1

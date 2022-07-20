@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	waitress
 PORTVERSION=	2.1.2
 CATEGORIES=	www python

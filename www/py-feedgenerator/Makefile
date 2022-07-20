@@ -1,5 +1,3 @@
-# Created by: Julien Laffaye <jlaffaye@FreeBSD.org>
-
 PORTNAME=	feedgenerator
 PORTVERSION=	2.0.0
 CATEGORIES=	www python

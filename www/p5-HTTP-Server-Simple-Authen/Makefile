@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	HTTP-Server-Simple-Authen
 PORTVERSION=	0.04
 PORTREVISION=	2

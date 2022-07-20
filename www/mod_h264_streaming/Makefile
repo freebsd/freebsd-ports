@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	mod_h264_streaming
 PORTVERSION=	2.2.7
 PORTREVISION=	2

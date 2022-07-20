@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	django-pyscss
 PORTVERSION=	2.0.2
 PORTREVISION=	3

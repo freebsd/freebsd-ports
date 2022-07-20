@@ -1,5 +1,3 @@
-# Created by: Christopher Key <cjk32@cam.ac.uk>
-
 PORTNAME=	WebService-MusicBrainz
 PORTVERSION=	1.0.5
 CATEGORIES=	www perl5

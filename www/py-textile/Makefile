@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-
 PORTNAME=	textile
 PORTVERSION=	4.0.2
 CATEGORIES=	www textproc python

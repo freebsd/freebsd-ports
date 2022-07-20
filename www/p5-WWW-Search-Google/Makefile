@@ -1,5 +1,3 @@
-# Created by: Tom Hukins <tom@FreeBSD.org>
-
 PORTNAME=	WWW-Search-Google
 PORTVERSION=	0.23
 PORTREVISION=	1

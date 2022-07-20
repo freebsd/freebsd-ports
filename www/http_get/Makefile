@@ -1,5 +1,3 @@
-# Created by: Aaron Zauner <az_mail@gmx.at>
-
 PORTNAME=	http_get
 PORTVERSION=	1.0.20140814
 CATEGORIES=	www

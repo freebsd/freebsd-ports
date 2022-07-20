@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 UNIT_MODNAME=	php${PHP_VER}

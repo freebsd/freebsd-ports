@@ -1,5 +1,3 @@
-# Created by: Ask Bjoern Hansen <ask@valueclick.com>
-
 PORTNAME=	http_load
 PORTVERSION=	20160309
 CATEGORIES=	www

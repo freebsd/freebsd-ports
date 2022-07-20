@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	websocket
 PORTVERSION=	1.2.9
 CATEGORIES=	www rubygems

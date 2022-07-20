@@ -1,5 +1,3 @@
-# Created by: clive
-
 PORTNAME=	Template-Toolkit
 PORTVERSION=	3.100
 CATEGORIES=	www textproc perl5

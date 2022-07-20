@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	HTML-TableContentParser
 PORTVERSION=	0.300
 CATEGORIES=	www perl5

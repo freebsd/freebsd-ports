@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	bottle
 PORTVERSION=	0.12.19
 PORTREVISION=	0

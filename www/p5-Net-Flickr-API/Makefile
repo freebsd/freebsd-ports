@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Net-Flickr-API
 PORTVERSION=	1.7
 PORTREVISION=	2

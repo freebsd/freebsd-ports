@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	HTML-Summary
 PORTVERSION=	0.020
 CATEGORIES=	www perl5

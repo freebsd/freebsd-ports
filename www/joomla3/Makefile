@@ -1,5 +1,3 @@
-# Created by: Francisco Cabrita <include@npf.pt.freebsd.org>
-
 PORTNAME=	joomla
 DISTVERSION=	3-10-8
 CATEGORIES=	www

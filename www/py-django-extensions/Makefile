@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	django-extensions
 PORTVERSION=	3.1.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	roda
 PORTVERSION=	3.58.0
 CATEGORIES=	www rubygems

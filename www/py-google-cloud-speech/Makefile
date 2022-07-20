@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-cloud-speech
 PORTVERSION=	2.15.0
 CATEGORIES=	www python

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	nghttp2
 PORTVERSION=	1.48.0
 CATEGORIES=	www net

@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@exit2shel.com>
-
 PORTNAME=	Net-FireEagle
 PORTVERSION=	1.6
 PORTREVISION=	2

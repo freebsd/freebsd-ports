@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	BugzillaLinkPlugin
 SVNREV=		15560
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \

@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	tomcat
 PORTVERSION=	8.5.81
 CATEGORIES=	www java

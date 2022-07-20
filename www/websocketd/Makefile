@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	websocketd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1

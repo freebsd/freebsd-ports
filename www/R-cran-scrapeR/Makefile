@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	scrapeR
 PORTVERSION=	0.1.6
 PORTREVISION=	17

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	faraday_middleware
 PORTVERSION=	0.14.0
 CATEGORIES=	www rubygems

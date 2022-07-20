@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	HTML-Query
 PORTVERSION=	0.09
 PORTREVISION=	1

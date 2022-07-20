@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Services_Amazon
 PORTVERSION=	0.9.0
 CATEGORIES=	www pear

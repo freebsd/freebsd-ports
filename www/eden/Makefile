@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	eden
 PORTVERSION=	0.7.4
 DISTVERSIONPREFIX=	v

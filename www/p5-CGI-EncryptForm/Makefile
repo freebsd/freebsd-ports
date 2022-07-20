@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	CGI-EncryptForm
 PORTVERSION=	1.02
 PORTREVISION=	2

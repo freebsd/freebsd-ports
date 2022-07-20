@@ -1,5 +1,3 @@
-# Created by: Joseph Scott (<joseph@randomnetworks.com>)
-
 PORTNAME=	HTTP_Client
 PORTVERSION=	1.2.1
 CATEGORIES=	www pear

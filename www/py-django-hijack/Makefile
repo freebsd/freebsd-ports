@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	django-hijack
 PORTVERSION=	3.2.0
 PORTREVISION=	1

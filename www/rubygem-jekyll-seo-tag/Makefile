@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jekyll-seo-tag
 PORTVERSION=	2.8.0
 CATEGORIES=	www rubygems

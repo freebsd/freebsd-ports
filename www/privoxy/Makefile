@@ -1,5 +1,3 @@
-# Created by: John von Essen
-
 PORTNAME=	privoxy
 PORTVERSION=	3.0.33
 CATEGORIES=	www

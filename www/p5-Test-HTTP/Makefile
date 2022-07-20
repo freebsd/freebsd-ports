@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Test-HTTP
 PORTVERSION=	0.19
 CATEGORIES=	www perl5

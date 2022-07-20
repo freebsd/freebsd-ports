@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@freebsd.org>
-
 PORTNAME=	puma
 PORTVERSION=	5.6.4
 CATEGORIES=	www rubygems

@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	WWW-Comic
 PORTVERSION=	1.06
 PORTREVISION=	2

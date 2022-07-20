@@ -1,5 +1,3 @@
-# Created by: Aldert Nooitgedagt
-
 PORTNAME=	tDOM
 PORTVERSION=	0.9.1
 CATEGORIES=	www

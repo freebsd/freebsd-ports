@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	multisort
 PORTVERSION=	1.1
 CATEGORIES=	www

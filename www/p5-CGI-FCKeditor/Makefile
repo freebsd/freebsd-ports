@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	CGI-FCKeditor
 PORTVERSION=	0.02
 PORTREVISION=	1

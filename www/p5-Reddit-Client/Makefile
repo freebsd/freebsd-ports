@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Reddit-Client
 PORTVERSION=	1.389
 PORTEPOCH=	4

@@ -1,5 +1,3 @@
-# Created by: Espen Tagestad <espen@tagestad.no>
-
 PORTNAME=	HTML-Template-Pluggable
 PORTVERSION=	0.22
 CATEGORIES=	www perl5

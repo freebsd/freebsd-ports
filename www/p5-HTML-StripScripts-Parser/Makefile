@@ -1,5 +1,3 @@
-# Created by: kftseng@iyard.org
-
 PORTNAME=	HTML-StripScripts-Parser
 PORTVERSION=	1.03
 PORTREVISION=	1

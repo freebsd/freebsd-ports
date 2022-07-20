@@ -1,5 +1,3 @@
-# Created by: otaviof@gmail.com
-
 PORTNAME=	Apache-Htgroup
 PORTVERSION=	1.23
 PORTREVISION=	1

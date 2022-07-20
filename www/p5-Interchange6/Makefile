@@ -1,5 +1,3 @@
-# Created by: <hvo.pm@xs4all.nl>
-
 PORTNAME=	Interchange6
 PORTVERSION=	0.120
 CATEGORIES=	www perl5

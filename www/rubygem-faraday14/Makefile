@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	faraday
 PORTVERSION=	1.4.3
 PORTREVISION=	1

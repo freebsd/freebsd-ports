@@ -1,5 +1,3 @@
-# Created by: anders
-
 PORTNAME=	varnish-nagios
 PORTVERSION=	1.1.20151214
 PORTREVISION=	1

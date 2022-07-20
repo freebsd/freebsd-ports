@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan@mail2000.com.tw>
-
 PORTNAME=	phpmyfaq
 PORTVERSION=	3.1.4
 CATEGORIES=	www

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	WWW-Mechanize-Pluggable
 PORTVERSION=	1.14
 CATEGORIES=	www perl5

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Services_Yahoo
 PORTVERSION=	0.2.0
 CATEGORIES=	www pear

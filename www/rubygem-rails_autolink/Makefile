@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	rails_autolink
 PORTVERSION=	1.1.6
 CATEGORIES=	www rubygems

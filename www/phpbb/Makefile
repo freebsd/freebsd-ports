@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <wjv@FreeBSD.org>
-
 PORTNAME=	phpbb
 PORTVERSION=	2.0.23
 CATEGORIES=	www

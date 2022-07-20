@@ -1,5 +1,3 @@
-# Created by: John Hixson <john@ixsystems.com>
-
 PORTNAME=	django-simple-captcha
 PORTVERSION=	0.5.14
 PORTREVISION=	1

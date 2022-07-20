@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	WWW-HatenaStar
 PORTVERSION=	0.04
 PORTREVISION=	2

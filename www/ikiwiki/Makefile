@@ -1,5 +1,3 @@
-# Created by: Henrik Brix Andersen <henrik@brixandersen.dk>
-
 PORTNAME=	ikiwiki
 DISTVERSION=	3.20200202.3
 CATEGORIES=	www

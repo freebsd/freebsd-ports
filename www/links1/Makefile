@@ -1,5 +1,3 @@
-# Created by: Michael Vasilenko <acid@stu.cn.ua>
-
 PORTNAME=	links
 PORTVERSION=	1.04
 PORTEPOCH=	1

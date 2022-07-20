@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	dtse
 PORTVERSION=	1.3
 PORTREVISION=	2

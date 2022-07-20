@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	calendar
 PORTVERSION=	3.4.2
 DISTVERSIONPREFIX=	v

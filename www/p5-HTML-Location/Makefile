@@ -1,5 +1,3 @@
-# Created by: coryking
-
 PORTNAME=	HTML-Location
 PORTVERSION=	1.03
 PORTREVISION=	2

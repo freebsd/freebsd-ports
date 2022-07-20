@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	boto3
 PORTVERSION=	1.18.61
 PORTREVISION=	1
