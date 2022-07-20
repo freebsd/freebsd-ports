@@ -3,7 +3,7 @@ PORTVERSION=	4.4.8
 PORTEPOCH=	1
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	felix@palmen-it.de
 COMMENT=	SIP client supporting voice/video calls and text messaging
 
 LICENSE=	GPLv3
@@ -40,6 +40,7 @@ post-patch:
 		-e 's/set(FULL_VERSION /&${PORTVERSION}/' \
 		-e 's/INSTALL_RPATH_USE_LINK_PATH/BUILD_WITH_INSTALL_RPATH/' \
 		-e '/add_subdirectory.*linphone_package/d' \
+		-e '/add_subdirectory.*build/d' \
 		-e '/add_custom_command/d' -e '/deployqt_hack/d' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} 's/LINPHONE_QT_GIT_VERSION/"${PORTVERSION}"/' \
