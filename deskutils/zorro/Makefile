@@ -1,5 +1,3 @@
-# Created by: shanee@rabbit.augusta.de
-
 PORTNAME=	zorro
 PORTVERSION=	1.1.8
 PORTREVISION=	3

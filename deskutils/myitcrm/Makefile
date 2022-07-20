@@ -1,5 +1,3 @@
-# Created by: jamrich.majo@gmail.com
-
 PORTNAME=	myitcrm
 PORTVERSION=	0.2.9.3
 PORTREVISION=	4

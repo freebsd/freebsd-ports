@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	tumbler
 PORTVERSION=	4.16.0
 PORTREVISION=	19

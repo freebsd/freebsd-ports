@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-font-viewer
 PORTVERSION=	42.0
 CATEGORIES=	deskutils gnome

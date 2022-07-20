@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gucharmap
 PORTVERSION=	14.0.1
 CATEGORIES=	deskutils gnome

@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	send2trash
 PORTVERSION=	1.8.0
 CATEGORIES=	deskutils python

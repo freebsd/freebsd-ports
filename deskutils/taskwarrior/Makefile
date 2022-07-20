@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	taskwarrior
 PORTVERSION=	2.6.2
 DISTVERSIONPREFIX=	v

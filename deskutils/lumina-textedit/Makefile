@@ -1,5 +1,3 @@
-# Created by: Ken Moore <ken@pcbsd.org>
-
 PORTNAME=	lumina-textedit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.2

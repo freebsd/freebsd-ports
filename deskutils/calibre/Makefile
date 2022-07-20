@@ -1,5 +1,3 @@
-# Created by: stas
-
 PORTNAME=	calibre
 PORTVERSION=	5.44.0
 PORTREVISION=	1

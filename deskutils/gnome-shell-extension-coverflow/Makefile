@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-shell-extension-coverflow
 PORTVERSION=	0.0.0.20180110
 PORTREVISION=	1

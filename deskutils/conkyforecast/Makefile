@@ -1,5 +1,3 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-
 PORTNAME=	conkyforecast
 PORTVERSION=	2.20
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-shell-extension-panel-osd
 PORTVERSION=	0.0.0.20171023
 PORTREVISION=	1

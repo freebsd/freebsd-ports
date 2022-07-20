@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold
-
 PORTNAME=	nextcloudclient
 PORTVERSION=	3.5.2
 DISTVERSIONPREFIX=	v

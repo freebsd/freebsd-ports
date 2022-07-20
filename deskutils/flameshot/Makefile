@@ -1,5 +1,3 @@
-# Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	flameshot
 PORTVERSION=	11.0.0
 DISTVERSIONPREFIX=	v

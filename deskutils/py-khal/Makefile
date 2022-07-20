@@ -1,5 +1,3 @@
-# Created by: che@bein.link
-
 PORTNAME=	khal
 DISTVERSION=	0.10.5
 CATEGORIES=	deskutils python

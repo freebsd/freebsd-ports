@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	bijiben
 PORTVERSION=	40.1
 PORTREVISION=	4

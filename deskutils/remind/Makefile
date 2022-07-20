@@ -1,5 +1,3 @@
-# Created by: Lewis Thompson <purple@lewiz.net>
-
 PORTNAME=	remind
 DISTVERSION=	04.00.01
 CATEGORIES=	deskutils

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	notify-osd
 PORTVERSION=	0.9.34
 PORTREVISION=	2

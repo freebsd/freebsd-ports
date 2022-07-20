@@ -1,5 +1,3 @@
-# Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-
 PORTNAME=	rubrica
 PORTVERSION=	2.1.6
 PORTREVISION=	2

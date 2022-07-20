@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-shell-extension-weather
 PORTVERSION=	0.0.0.20180411
 PORTREVISION=	1

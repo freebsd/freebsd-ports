@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold
-
 PORTNAME=	owncloudclient
 DISTVERSION=	2.8.2
 DISTVERSIONSUFFIX=	.4246

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	taskw
 PORTVERSION=	2.0.0
 CATEGORIES=	deskutils python

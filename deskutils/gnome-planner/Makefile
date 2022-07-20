@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-planner
 PORTVERSION=	0.14.6.20220531
 CATEGORIES=	deskutils gnome

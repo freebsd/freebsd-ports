@@ -1,5 +1,3 @@
-# Created by: Martin Wilke
-
 PORTNAME=	py3status
 PORTVERSION=	3.45
 CATEGORIES=	deskutils python

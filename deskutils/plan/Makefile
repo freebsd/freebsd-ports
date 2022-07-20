@@ -1,5 +1,3 @@
-# Created by: Daniel Eischen <deischen@FreeBSD.org>
-
 # Also update	ports/japanese/plan/ (ja-plan) when this port is updated
 
 PORTNAME=	plan

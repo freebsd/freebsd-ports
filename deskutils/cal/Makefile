@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov <andy@icc.surw.chel.su>
-
 PORTNAME=	cal
 DISTVERSION=	4.1
 CATEGORIES=	deskutils

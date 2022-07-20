@@ -1,5 +1,3 @@
-# Created by: Marcin Cieslak <saper@saper.info>
-
 PORTNAME=	x026
 PORTVERSION=	1.2
 CATEGORIES=	deskutils

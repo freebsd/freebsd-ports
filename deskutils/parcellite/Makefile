@@ -1,5 +1,3 @@
-# Created by: Joey Mingrone <joey@mingrone.org>
-
 PORTNAME=	parcellite
 PORTVERSION=	1.2.1
 PORTEPOCH=	1

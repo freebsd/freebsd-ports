@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-documents
 PORTVERSION=	3.34.0
 PORTREVISION=	3

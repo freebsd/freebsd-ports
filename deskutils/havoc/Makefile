@@ -1,5 +1,3 @@
-# Created by: Emmanuel Vadot <manu@FreeBSD.org>
-
 PORTNAME=	havoc
 PORTVERSION=	0.3.1
 CATEGORIES=	deskutils wayland

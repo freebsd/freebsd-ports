@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	bugwarrior
 PORTVERSION=	1.8.0
 CATEGORIES=	deskutils python

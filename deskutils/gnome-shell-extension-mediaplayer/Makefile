@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-shell-extension-mediaplayer
 PORTVERSION=	4.0
 CATEGORIES=	deskutils gnome

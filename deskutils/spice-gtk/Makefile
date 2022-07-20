@@ -1,5 +1,3 @@
-# Created by: olevole@olevole.ru
-
 PORTNAME=	spice-gtk
 PORTVERSION=	0.37
 CATEGORIES?=	deskutils gnome

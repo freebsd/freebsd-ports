@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-utils
 PORTVERSION=	42
 PORTEPOCH=	1

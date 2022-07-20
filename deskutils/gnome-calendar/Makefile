@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gnome-calendar
 PORTVERSION=	42.2
 CATEGORIES=	deskutils gnome

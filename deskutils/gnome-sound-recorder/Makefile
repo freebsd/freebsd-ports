@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-sound-recorder
 DISTVERSION=	42.0
 CATEGORIES=	deskutils gnome

@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	gxneur
 PORTVERSION=	0.20.0
 PORTREVISION=	2

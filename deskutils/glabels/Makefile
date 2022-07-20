@@ -1,5 +1,3 @@
-# Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-
 PORTNAME=	glabels
 PORTVERSION=	3.4.1
 PORTREVISION=	2

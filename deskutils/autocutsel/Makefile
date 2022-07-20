@@ -1,5 +1,3 @@
-# Created by: john@jnielsen.net
-
 PORTNAME=	autocutsel
 PORTVERSION=	0.10.0
 PORTREVISION=	1

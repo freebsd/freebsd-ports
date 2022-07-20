@@ -1,5 +1,3 @@
-# Created by: Eric Turgeon <ericturgeon@ghostbsd.org>
-
 PORTNAME=	caja-extensions
 PORTVERSION=	1.26.0
 PORTREVISION=	1

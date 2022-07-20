@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	vobject
 PORTVERSION=	0.9.6.1
 PORTREVISION=	1

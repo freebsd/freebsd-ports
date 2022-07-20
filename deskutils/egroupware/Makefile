@@ -1,5 +1,3 @@
-# Created by: Jimmy Olgeni <olgeni@uli.it>
-
 PORTNAME=	eGroupware
 PORTVERSION=	20.1.20210503
 CATEGORIES=	deskutils

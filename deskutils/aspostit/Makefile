@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	aspostit
 PORTVERSION=	1.3
 PORTREVISION=	6

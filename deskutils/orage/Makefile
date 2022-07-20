@@ -1,5 +1,3 @@
-# Created by: Matt Lancereau <matt@rimasec.net>
-
 PORTNAME=	orage
 PORTVERSION=	4.16.0
 CATEGORIES=	deskutils xfce

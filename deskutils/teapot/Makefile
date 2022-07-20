@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	teapot
 PORTVERSION=	2.3.0
 CATEGORIES=	deskutils

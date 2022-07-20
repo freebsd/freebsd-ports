@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-shell-extension-windowoverlay-icons
 PORTVERSION=	36
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <dhn@FreeBSD.org>
-
 PORTNAME=	i3lock
 PORTVERSION=	2.13
 CATEGORIES=	deskutils x11

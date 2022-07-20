@@ -1,5 +1,3 @@
-# Created by: Eric L. Hernes <erich@FreeBSD.org>
-
 PORTNAME=	ical
 PORTVERSION=	3.0.4
 CATEGORIES=	deskutils tk

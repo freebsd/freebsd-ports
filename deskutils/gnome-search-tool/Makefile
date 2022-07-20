@@ -1,4 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 #   $MCom: ports/trunk/deskutils/gnome-search-tool/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	gnome-search-tool

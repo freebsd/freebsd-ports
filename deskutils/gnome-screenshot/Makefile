@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-screenshot
 PORTVERSION=	41.0
 CATEGORIES=	deskutils gnome

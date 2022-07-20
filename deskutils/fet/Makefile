@@ -1,5 +1,3 @@
-# Created by: Leinier Cruz Salfran <salfrancl@yahoo.es>
-
 PORTNAME=	fet
 DISTVERSION=	6.3.4
 CATEGORIES=	deskutils education

@@ -1,5 +1,3 @@
-# Created by: mi@aldan.ziplink.net
-
 PORTNAME=	xmdiary
 PORTVERSION=	3.0.3
 PORTREVISION=	6

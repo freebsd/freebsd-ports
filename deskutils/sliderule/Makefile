@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	sliderule
 PORTVERSION=	1.0
 PORTREVISION=	9

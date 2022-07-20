@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	term-background
 PORTVERSION=	1.0.1
 CATEGORIES=	deskutils python shells

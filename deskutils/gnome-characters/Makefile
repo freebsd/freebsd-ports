@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gnome-characters
 PORTVERSION=	42.0
 CATEGORIES=	deskutils gnome

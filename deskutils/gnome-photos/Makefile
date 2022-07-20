@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-photos
 DISTVERSION=	42.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	znotes
 DISTVERSION=	0.4.7
 CATEGORIES=	deskutils

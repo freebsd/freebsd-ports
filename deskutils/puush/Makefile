@@ -1,5 +1,3 @@
-# Created by: Richard Gallamore <ultima@FreeBSD.org>
-
 PORTNAME=	puush
 PORTVERSION=	0.0.2
 CATEGORIES=	deskutils

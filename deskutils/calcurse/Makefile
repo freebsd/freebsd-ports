@@ -1,5 +1,3 @@
-# Created by: Herbert J. Skuhra <h.skuhra@gmail.com>
-
 PORTNAME=	calcurse
 DISTVERSION=	4.8.0
 CATEGORIES=	deskutils

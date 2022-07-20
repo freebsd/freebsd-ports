@@ -1,5 +1,3 @@
-# Created by: johans
-
 PORTNAME=	ljclive
 PORTVERSION=	0.4.10
 PORTREVISION=	2

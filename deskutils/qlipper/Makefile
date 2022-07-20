@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	qlipper
 PORTVERSION=	5.1.2
 CATEGORIES=	deskutils

@@ -1,4 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 #
 # !!!NOTE!!! Update of x11-toolkits/gtk30 (specially >= 3.20.x) must be
 # accompanied by PORTREVISION bumps of this port.

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	fbreader
 PORTVERSION=	0.99.6
 DISTVERSIONSUFFIX=	-freebsdport

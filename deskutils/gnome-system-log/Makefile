@@ -1,4 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 #   $MCom: ports/trunk/deskutils/gnome-system-log/Makefile 19571 2014-04-25 18:12:46Z kwm $
 
 PORTNAME=	gnome-system-log

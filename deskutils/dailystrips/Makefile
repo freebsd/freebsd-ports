@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	dailystrips
 PORTVERSION=	1.0.28
 PORTREVISION=	1

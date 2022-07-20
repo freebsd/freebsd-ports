@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	xpad
 PORTVERSION=	5.8.0
 CATEGORIES=	deskutils

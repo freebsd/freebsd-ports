@@ -1,5 +1,3 @@
-# Created by: Andrew Hsu <ahsu@users.sf.net>
-
 PORTNAME=	rolo
 PORTVERSION=	011
 CATEGORIES=	deskutils

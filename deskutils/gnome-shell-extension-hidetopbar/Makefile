@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-shell-extension-hidetopbar
 PORTVERSION=	0.0.0.20180511
 PORTREVISION=	1

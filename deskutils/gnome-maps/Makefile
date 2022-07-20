@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-maps
 DISTVERSION=	42.2
 CATEGORIES=	deskutils gnome

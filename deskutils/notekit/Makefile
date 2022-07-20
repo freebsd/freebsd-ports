@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	notekit
 PORTVERSION=	g20211222
 PORTREVISION=	2

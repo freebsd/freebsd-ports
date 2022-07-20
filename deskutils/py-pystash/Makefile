@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	pystash
 PORTVERSION=	0.0.14
 PORTREVISION=	0

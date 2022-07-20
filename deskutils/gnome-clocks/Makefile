@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-clocks
 PORTVERSION=	40.0
 PORTEPOCH=	1

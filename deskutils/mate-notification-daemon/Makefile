@@ -1,5 +1,3 @@
-# Created by: Andreas Kohn <andreas@syndrom23.de>
-
 PORTNAME=	mate-notification-daemon
 PORTVERSION=	1.26.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	bigyear
 PORTVERSION=	20010226
 PORTEPOCH=	1

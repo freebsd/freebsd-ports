@@ -1,5 +1,3 @@
-# Created by: Jeremy Messenger <mezz@FreeBSD.org>
-
 PORTNAME=	gnome-tweaks
 PORTVERSION=	40.10
 CATEGORIES=	deskutils gnome

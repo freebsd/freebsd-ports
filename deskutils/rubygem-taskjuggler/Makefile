@@ -1,5 +1,3 @@
-# Created by: Dean Povey <povey@wedgetail.com>
-
 PORTNAME=	taskjuggler
 PORTVERSION=	3.7.1
 CATEGORIES=	deskutils rubygems

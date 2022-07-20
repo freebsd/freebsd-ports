@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	todo
 PORTVERSION=	0.2.1
 CATEGORIES=	deskutils

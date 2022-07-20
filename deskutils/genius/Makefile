@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	genius
 DISTVERSION=	1.0.27
 PORTREVISION=	3

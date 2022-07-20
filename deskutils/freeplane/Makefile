@@ -1,5 +1,3 @@
-# Created by: Loïc Bartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	freeplane
 DISTVERSION=	1.10.3
 CATEGORIES=	deskutils editors java

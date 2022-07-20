@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	xfce4-generic-slider
 PORTVERSION=	0.0.20171223
 PORTREVISION=	1
