@@ -1,5 +1,3 @@
-# Created by: shigeru@iij.ad.jp
-
 PORTNAME=	libarms
 PORTVERSION=	5.01
 PORTREVISION=	2

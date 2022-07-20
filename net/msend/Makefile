@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	msend
 PORTVERSION=	3.0
 PORTREVISION=	3

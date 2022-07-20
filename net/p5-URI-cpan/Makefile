@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	URI-cpan
 PORTVERSION=	1.008
 CATEGORIES=	net perl5

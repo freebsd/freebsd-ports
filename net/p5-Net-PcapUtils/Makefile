@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Net-PcapUtils
 PORTVERSION=	0.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	xprobe2
 PORTVERSION=	0.3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Net-LDAP-AutoDNs
 PORTVERSION=	0.2.2
 PORTREVISION=	1

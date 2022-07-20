@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	ngrep
 PORTVERSION=	1.45
 PORTREVISION=	4

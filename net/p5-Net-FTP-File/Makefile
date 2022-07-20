@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Net-FTP-File
 PORTVERSION=	0.06
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	net-ntp
 PORTVERSION=	2.1.3
 CATEGORIES=	net rubygems

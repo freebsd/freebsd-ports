@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@FreeBSD.org>
-
 PORTNAME=	liferea
 DISTVERSION=	1.12.7
 PORTREVISION=	2

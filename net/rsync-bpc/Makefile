@@ -1,5 +1,3 @@
-# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
-
 PORTNAME=	rsync-bpc
 PORTVERSION=	3.1.3.0
 CATEGORIES=	net

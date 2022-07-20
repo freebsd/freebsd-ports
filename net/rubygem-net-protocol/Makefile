@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	net-protocol
 PORTVERSION=	0.1.3
 CATEGORIES=	net rubygems

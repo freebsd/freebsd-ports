@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	libfb
 PORTVERSION=	2.0.2
 PORTREVISION=	2

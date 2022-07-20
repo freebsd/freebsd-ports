@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Net-Libdnet
 PORTVERSION=	0.99
 CATEGORIES=	net perl5

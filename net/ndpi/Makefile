@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
-
 PORTNAME=	ndpi
 PORTVERSION=	4.2.d20220608
 PORTEPOCH=	1

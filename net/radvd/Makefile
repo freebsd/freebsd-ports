@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	radvd
 PORTVERSION=	2.19
 PORTREVISION=	1

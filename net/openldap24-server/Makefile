@@ -1,5 +1,3 @@
-# Created by: Xin LI <delphij@FreeBSD.org>
-
 PORTNAME=		openldap
 DISTVERSION=		2.4.59
 PORTREVISION=		${OPENLDAP_PORTREVISION}

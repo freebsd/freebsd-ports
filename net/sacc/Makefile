@@ -1,5 +1,3 @@
-# Created by: Stefan Hagen <sh@codevoid.de>
-
 PORTNAME=	sacc
 PORTVERSION=	1.01
 CATEGORIES=	net

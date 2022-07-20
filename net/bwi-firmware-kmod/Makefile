@@ -1,5 +1,3 @@
-# Created by: Andrew Thompson <thompsa@FreeBSD.org>
-
 PORTNAME=	bwi-firmware
 PORTVERSION=	${FWVERSION}
 CATEGORIES=	net

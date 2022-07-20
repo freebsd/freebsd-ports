@@ -1,5 +1,3 @@
-# Created by: Carlos J Puga Medina <cpm@FreeBSD.org>
-
 PORTNAME=	grive2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.2-dev

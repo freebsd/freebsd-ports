@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rye
 PORTVERSION=	0.9.13
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	stund
 PORTVERSION=	0.96
 CATEGORIES=	net

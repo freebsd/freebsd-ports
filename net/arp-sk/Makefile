@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	arp-sk
 PORTVERSION=	0.0.16
 PORTREVISION=	4

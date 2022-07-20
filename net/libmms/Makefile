@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libmms
 PORTVERSION=	0.6.4
 PORTREVISION=	1

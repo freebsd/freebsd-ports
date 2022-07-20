@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	prtunnel
 PORTVERSION=	0.2.7
 CATEGORIES=	net

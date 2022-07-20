@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	amq-protocol
 PORTVERSION=	2.3.2
 PORTREVISION=	1

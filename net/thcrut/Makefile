@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	thcrut
 PORTVERSION=	1.2.5
 CATEGORIES=	net

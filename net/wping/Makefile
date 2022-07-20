@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek <mich@freebsdcluster.org>
-
 PORTNAME=	wping
 PORTVERSION=	0.1a
 PORTREVISION=	5

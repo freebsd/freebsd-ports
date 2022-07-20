@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	bird
 PORTVERSION=	1.6.8
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	smbprotocol
 PORTVERSION=	1.9.0
 CATEGORIES=	net python

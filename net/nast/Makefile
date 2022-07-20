@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	nast
 PORTVERSION=	0.2.0
 PORTREVISION=	5

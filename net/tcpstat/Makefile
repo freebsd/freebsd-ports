@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	tcpstat
 PORTVERSION=	1.5
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: dikshie@sfc.wide.ad.jp
-
 PORTNAME=	iffinder
 PORTVERSION=	1.38
 CATEGORIES=	net

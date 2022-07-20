@@ -1,5 +1,3 @@
-# Created by: Chris Hutchinson <portmaster@BSDforge.com>
-
 PORTNAME=	xrdesktop2
 PORTVERSION=	2.00
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Matt Peterson <matt@peterson.org>
-
 PORTNAME=	libtrace
 PORTVERSION=	3.0.19
 PORTREVISION=	2

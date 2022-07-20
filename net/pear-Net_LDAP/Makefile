@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine (<tux@pinguru.net>)
-
 PORTNAME=	Net_LDAP
 PORTVERSION=	1.1.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Danny Howard <dannyman@tellme.com>
-
 PORTNAME=	Net-DLookup
 PORTVERSION=	1.01
 PORTREVISION=	1

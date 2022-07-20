@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	fspd
 PORTVERSION=	2.8.1.29
 CATEGORIES=	net

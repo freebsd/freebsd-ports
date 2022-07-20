@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	mosh
 PORTVERSION=	1.3.2
 PORTREVISION=	19

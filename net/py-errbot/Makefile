@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	errbot
 PORTVERSION=	6.1.9
 CATEGORIES=	net python

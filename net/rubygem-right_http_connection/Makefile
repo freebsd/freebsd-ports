@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	right_http_connection
 PORTVERSION=	1.5.1
 CATEGORIES=	net rubygems

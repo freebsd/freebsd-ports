@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Net-EPP-Proxy
 PORTVERSION=	0.04
 PORTREVISION=	1

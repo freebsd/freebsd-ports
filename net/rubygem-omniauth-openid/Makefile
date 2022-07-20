@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	omniauth-openid
 PORTVERSION=	2.0.1
 CATEGORIES=	net rubygems

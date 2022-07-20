@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	libfixbuf
 PORTVERSION=	2.3.1
 CATEGORIES=	net

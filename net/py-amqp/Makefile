@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	amqp
 PORTVERSION=	2.6.1
 CATEGORIES=	net python

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-ovirt
 PORTVERSION=	2.0.2
 CATEGORIES=	net rubygems

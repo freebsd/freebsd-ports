@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	gwhois
 PORTVERSION=	20120626
 CATEGORIES=	net

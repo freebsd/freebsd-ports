@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libsignal-protocol-c
 PORTVERSION=	2.3.3
 DISTVERSIONPREFIX=	v

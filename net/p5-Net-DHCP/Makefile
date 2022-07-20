@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Net-DHCP
 PORTVERSION=	0.700
 CATEGORIES=	net perl5

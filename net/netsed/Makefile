@@ -1,5 +1,3 @@
-# Created by: Roman Shterenzon <roman@xpert.com>
-
 PORTNAME=	netsed
 PORTVERSION=	1.3
 CATEGORIES=	net security

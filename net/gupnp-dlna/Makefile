@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gupnp-dlna
 PORTVERSION=	0.10.3
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Igor Vinokurov <igor@zynaps.ru>
-
 PORTNAME=	Net-ext
 PORTVERSION=	1.011
 PORTREVISION=	2

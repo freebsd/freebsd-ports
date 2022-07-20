@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Net-Ifconfig-Wrapper
 PORTVERSION=	0.26
 CATEGORIES=	net perl5

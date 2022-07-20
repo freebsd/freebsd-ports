@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	gspread
 PORTVERSION=	5.4.0
 DISTVERSIONPREFIX=	v

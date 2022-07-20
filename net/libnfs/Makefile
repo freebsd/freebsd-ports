@@ -1,5 +1,3 @@
-# Created by: Manuel Creach <manuel.creach@icloud.com>
-
 PORTNAME=	libnfs
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	5.0.1

@@ -1,5 +1,3 @@
-# Created by: Dominic Mitchell <dom@happygiraffe.net>
-
 PORTNAME=	RPC-XML
 PORTVERSION=	0.82
 CATEGORIES=	net www perl5

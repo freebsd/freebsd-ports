@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	nxproxy
 DISTVERSION=	3.5.99.20
 DISTVERSIONSUFFIX=	-1

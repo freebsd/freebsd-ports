@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@FreeBSD.org>)
-
 PORTNAME=	SOAP
 PORTVERSION=	0.14.0
 CATEGORIES=	net www pear

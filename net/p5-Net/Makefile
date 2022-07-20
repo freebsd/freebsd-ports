@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Net
 PORTVERSION=	3.14
 PORTEPOCH=	1

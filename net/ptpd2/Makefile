@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	ptpd
 DISTVERSION=	2.3.1
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Net-HTTP
 PORTVERSION=	6.22
 CATEGORIES=	net perl5

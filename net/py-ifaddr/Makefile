@@ -1,5 +1,3 @@
-# Created by: John Hixson<jhixson@FreeBSD.org>
-
 PORTNAME=	ifaddr
 PORTVERSION=	0.1.7
 CATEGORIES=	net python

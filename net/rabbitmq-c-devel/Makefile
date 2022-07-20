@@ -1,5 +1,3 @@
-# Created by: Geoff Garside
-
 PORTNAME=	rabbitmq-c
 PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v

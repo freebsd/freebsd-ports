@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	IO-Socket-Socks
 PORTVERSION=	0.74
 CATEGORIES=	net perl5

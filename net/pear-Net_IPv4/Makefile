@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Net_IPv4
 PORTVERSION=	1.3.5
 CATEGORIES=	net pear

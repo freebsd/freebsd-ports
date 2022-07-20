@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-aliyun
 PORTVERSION=	0.3.19
 CATEGORIES=	net rubygems

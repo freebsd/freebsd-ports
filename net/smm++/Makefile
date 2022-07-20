@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis (edwin@mavetju.org)
-
 PORTNAME=	smm++
 PORTVERSION=	6.1.1
 PORTREVISION=	1

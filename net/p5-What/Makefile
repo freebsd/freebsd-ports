@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	What
 PORTVERSION=	1.01
 PORTREVISION=	2

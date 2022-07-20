@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	apollo_upload_server
 PORTVERSION=	2.1.0
 CATEGORIES=	net rubygems

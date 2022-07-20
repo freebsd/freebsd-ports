@@ -1,5 +1,3 @@
-# Created by: Simun Mikecin <numisemis@yahoo.com>
-
 PORTNAME=	mod_amd
 PORTVERSION=	g20150926
 CATEGORIES=	net

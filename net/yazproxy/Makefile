@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	yazproxy
 PORTVERSION=	1.3.9
 PORTREVISION=	2

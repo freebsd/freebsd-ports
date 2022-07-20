@@ -1,5 +1,3 @@
-# Created by: Mars G Miro <spry@anarchy.in.the.ph>
-
 PORTNAME=	Net-Frame-Layer-IPv6
 PORTVERSION=	1.07
 CATEGORIES=	net perl5

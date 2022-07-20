@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	gupnp
 PORTVERSION=	1.5.2
 CATEGORIES=	net

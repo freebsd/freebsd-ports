@@ -1,5 +1,3 @@
-# Created by: Juraj Lutter <otis@FreeBSD.org>
-
 PORTNAME=	oha
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.2

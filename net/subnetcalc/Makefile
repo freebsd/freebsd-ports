@@ -1,5 +1,3 @@
-# Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-
 PORTNAME=	subnetcalc
 PORTVERSION=	2.4.18
 CATEGORIES=	net

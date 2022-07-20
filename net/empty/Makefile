@@ -1,5 +1,3 @@
-# Created by: Mikhail Zakharov <zmey20000@yahoo.com>
-
 PORTNAME=	empty
 PORTVERSION=	0.6.20b
 CATEGORIES=	net

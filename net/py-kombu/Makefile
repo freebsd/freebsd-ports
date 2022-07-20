@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	kombu
 PORTVERSION=	4.6.11
 CATEGORIES=	net python

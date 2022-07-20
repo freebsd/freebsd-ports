@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	fping
 PORTVERSION=	5.0
 PORTREVISION=	2

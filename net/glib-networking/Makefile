@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	glib-networking
 PORTVERSION=	2.72.1
 CATEGORIES=	net

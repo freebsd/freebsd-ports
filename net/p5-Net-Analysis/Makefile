@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Net-Analysis
 PORTVERSION=	0.41
 PORTREVISION=	1

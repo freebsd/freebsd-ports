@@ -1,5 +1,3 @@
-# Created by: Arne Lundberg <arlu@telia.com>
-
 PORTNAME=	qadsl
 PORTVERSION=	1.3.3
 PORTREVISION=	3

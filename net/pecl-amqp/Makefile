@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	amqp
 PORTVERSION=	1.10.2
 CATEGORIES=	net pear

@@ -1,5 +1,3 @@
-# Created by: Brent B. Powers <bbp2006@columbia.edu>
-
 PORTNAME=	Net-HL7
 PORTVERSION=	0.76
 CATEGORIES=	net perl5

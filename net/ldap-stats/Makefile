@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	ldap-stats
 PORTVERSION=	5.2
 PORTREVISION=	1

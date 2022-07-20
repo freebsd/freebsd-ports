@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	XML-Compile-SOAP-Daemon
 PORTVERSION=	3.14
 CATEGORIES=	net perl5

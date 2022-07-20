@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine (<tux@pinguru.net>)
-
 PORTNAME=	Net_Server
 PORTVERSION=	1.0.3
 CATEGORIES=	net pear

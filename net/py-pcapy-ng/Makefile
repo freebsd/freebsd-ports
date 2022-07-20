@@ -1,5 +1,3 @@
-# Created by: Michael Muenz <m.muenz@gmail.com>
-
 PORTNAME=	pcapy-ng
 PORTVERSION=	1.0.9
 CATEGORIES=	net python

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	eventlet
 PORTVERSION=	0.33.1
 CATEGORIES=	net python

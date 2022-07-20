@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	serviio
 PORTVERSION=	2.2.1
 PORTREVISION=	0

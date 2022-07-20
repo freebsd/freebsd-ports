@@ -1,5 +1,3 @@
-# Created by: Aaron Straup Cope <ascope@cpan.org>
-
 PORTNAME=	Net-Delicious
 PORTVERSION=	1.14
 PORTREVISION=	1

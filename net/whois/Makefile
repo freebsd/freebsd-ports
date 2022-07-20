@@ -1,5 +1,3 @@
-# Created by: Filippo Natali <filippo@widestore.net>
-
 PORTNAME=	whois
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.5.7

@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-
 PORTNAME=	sslh
 PORTVERSION=	1.22c
 DISTVERSIONPREFIX=	v

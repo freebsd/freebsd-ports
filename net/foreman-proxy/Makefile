@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	foreman-proxy
 PORTVERSION=	3.1.2
 CATEGORIES=	net

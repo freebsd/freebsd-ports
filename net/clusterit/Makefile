@@ -1,5 +1,3 @@
-# Created by: Dima Sivachenko
-
 PORTNAME=	clusterit
 PORTVERSION=	2.5
 CATEGORIES=	net devel parallel

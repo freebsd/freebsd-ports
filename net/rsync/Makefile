@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@cs.ucdavis.edu)
-
 PORTNAME=	rsync
 DISTVERSION=	3.2.4
 PORTREVISION=	1

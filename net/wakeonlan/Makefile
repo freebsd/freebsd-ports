@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-
 PORTNAME=	wakeonlan
 PORTVERSION=	0.41
 PORTREVISION=	3

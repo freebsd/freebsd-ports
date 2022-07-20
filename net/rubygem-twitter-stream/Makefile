@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	twitter-stream
 PORTVERSION=	0.1.16
 PORTREVISION=	2

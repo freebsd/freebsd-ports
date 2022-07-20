@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	Net-Z3950-ZOOM
 PORTVERSION=	1.30
 PORTREVISION=	3

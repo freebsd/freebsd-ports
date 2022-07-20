@@ -1,5 +1,3 @@
-# Created by: dikshie <dikshie@lapi.itb.ac.id>
-
 PORTNAME=	IP-Country
 PORTVERSION=	2.28
 PORTREVISION=	1

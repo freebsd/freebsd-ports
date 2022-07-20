@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	Net-Amazon-MechanicalTurk
 PORTVERSION=	1.02
 PORTREVISION=	2

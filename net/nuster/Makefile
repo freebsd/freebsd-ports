@@ -1,5 +1,3 @@
-# Created by: Felix Hanley
-
 PORTNAME=	nuster
 PORTVERSION=	5.0.4.21
 DISTVERSIONPREFIX=	v

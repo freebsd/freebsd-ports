@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-DAV-Server
 PORTVERSION=	1.30.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Emmanuel Richiardone (err@tollari.org)
-
 PORTNAME=	netembryo
 PORTVERSION=	0.1.1
 PORTREVISION=	2

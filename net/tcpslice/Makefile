@@ -1,5 +1,3 @@
-# Created by: smace@FreeBSD.org
-
 PORTNAME=	tcpslice
 PORTVERSION=	1.5
 PORTEPOCH=	1

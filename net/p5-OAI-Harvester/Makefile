@@ -1,5 +1,3 @@
-# Created by: Paul Dlug <paul@aps.org>
-
 PORTNAME=	OAI-Harvester
 PORTVERSION=	1.20
 PORTEPOCH=	1

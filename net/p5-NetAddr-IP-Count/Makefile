@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	NetAddr-IP-Count
 PORTVERSION=	2.01
 PORTREVISION=	1

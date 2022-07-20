@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	SOAP-Lite
 PORTVERSION=	1.27
 CATEGORIES=	net perl5

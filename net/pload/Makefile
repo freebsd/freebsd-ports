@@ -1,5 +1,3 @@
-# Created by: J.R. Oldroyd <fbsd@opal.com>
-
 PORTNAME=	pload
 PORTVERSION=	0.9.5
 PORTREVISION=	4

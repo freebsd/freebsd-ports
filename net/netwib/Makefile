@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	netwib
 PORTVERSION=	5.38.0
 PORTREVISION=	1

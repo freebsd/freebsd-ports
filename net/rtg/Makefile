@@ -1,5 +1,3 @@
-# Created by: Brad Davis <so14k@so14k.com>
-
 PORTNAME=	rtg
 PORTVERSION=	0.7.5
 CATEGORIES=	net

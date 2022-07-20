@@ -1,5 +1,3 @@
-# Created by: John Polstra <jdp@FreeBSD.org>
-
 PORTNAME=	pptpclient
 DISTVERSION=	1.10.0
 CATEGORIES=	net net-vpn

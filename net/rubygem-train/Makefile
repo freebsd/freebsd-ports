@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	train
 PORTVERSION=	3.10.1
 CATEGORIES=	net rubygems

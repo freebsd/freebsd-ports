@@ -1,5 +1,3 @@
-# Created by: Roman Shterenzon <roman@xpert.com>
-
 PORTNAME=	cryptcat
 PORTVERSION=	1.2.1
 PORTEPOCH=	1

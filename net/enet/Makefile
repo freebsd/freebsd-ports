@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <stas@FreeBSD.org>
-
 PORTNAME=	enet
 PORTVERSION=	1.3.17
 PORTEPOCH=	1

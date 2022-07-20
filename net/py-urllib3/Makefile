@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	urllib3
 PORTVERSION=	1.26.10
 PORTEPOCH=	1

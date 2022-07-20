@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	ipsvd
 PORTVERSION=	1.0.0
 CATEGORIES=	net

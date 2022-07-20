@@ -1,5 +1,3 @@
-# Created by: devin@spamcop.net
-
 PORTNAME=	Net-SNPP
 PORTVERSION=	1.17
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Krzysztof Stryjek <ports@bsdserwis.com>
-
 PORTNAME=	self-service-password
 DISTVERSION=	1.4.5
 CATEGORIES=	net www

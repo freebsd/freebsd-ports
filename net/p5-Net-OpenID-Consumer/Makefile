@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-OpenID-Consumer
 PORTVERSION=	1.18
 CATEGORIES=	net security perl5

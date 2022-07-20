@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	u2f
 PORTVERSION=	1.0.0
 CATEGORIES=	net rubygems

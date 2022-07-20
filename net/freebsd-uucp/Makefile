@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	freebsd-uucp
 PORTREVISION=	3
 DISTVERSIONPREFIX=	r

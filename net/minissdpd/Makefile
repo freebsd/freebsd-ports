@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	minissdpd
 PORTVERSION=	1.5.20211105
 CATEGORIES=	net

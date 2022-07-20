@@ -1,5 +1,3 @@
-# Created by: Zhen REN <bg1tpt@gmail.com>
-
 PORTNAME=	File_Bittorrent2
 PORTVERSION=	1.3.1
 CATEGORIES=	net pear

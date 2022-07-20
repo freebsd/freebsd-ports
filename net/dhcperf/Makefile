@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis (edwin@mavetju.org)
-
 PORTNAME=	dhcperf
 PORTVERSION=	1.0.1.0
 CATEGORIES=	net benchmarks

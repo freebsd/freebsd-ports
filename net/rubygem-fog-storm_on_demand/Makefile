@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-storm_on_demand
 PORTVERSION=	0.1.1
 CATEGORIES=	net rubygems

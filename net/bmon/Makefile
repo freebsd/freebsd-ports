@@ -1,5 +1,3 @@
-# Created by: Jon Nistor <nistor@snickers.org>
-
 PORTNAME=	bmon
 PORTVERSION=	4.0
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@bsd.hu
-
 PORTNAME=	beacon
 PORTVERSION=	1.4
 PORTREVISION=	4

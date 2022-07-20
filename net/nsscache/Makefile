@@ -1,5 +1,3 @@
-# Created by: Kevin Bowling <kbowling@freebsd.org>
-
 PORTNAME=	nsscache
 PORTVERSION=	0.45
 DISTVERSIONPREFIX=	version/

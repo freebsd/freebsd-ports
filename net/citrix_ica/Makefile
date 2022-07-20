@@ -1,5 +1,3 @@
-# Created by: msmith
-
 PORTNAME=	citrix_ica
 PORTVERSION=	13.10.0
 CATEGORIES=	net comms linux

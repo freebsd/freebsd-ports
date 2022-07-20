@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	oauth2
 PORTVERSION=	2.0.6
 CATEGORIES=	net rubygems

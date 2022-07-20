@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@chc-chimes.com>
-
 PORTNAME=	mtr
 PORTVERSION=	0.95
 DISTVERSIONPREFIX=	v

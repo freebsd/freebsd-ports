@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	URI
 PORTVERSION=	5.12
 CATEGORIES=	net perl5

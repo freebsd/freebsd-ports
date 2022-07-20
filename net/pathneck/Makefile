@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <babak@farrokhi.net>
-
 PORTNAME=	pathneck
 PORTVERSION=	1.3
 CATEGORIES=	net

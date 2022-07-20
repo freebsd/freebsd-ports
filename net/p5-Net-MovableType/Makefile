@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Net-MovableType
 PORTVERSION=	1.74
 PORTREVISION=	1

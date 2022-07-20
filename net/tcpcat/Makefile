@@ -1,5 +1,3 @@
-# Created by: roam@orbitel.bg
-
 PORTNAME=	tcpcat
 PORTVERSION=	1.2.0
 CATEGORIES=	net

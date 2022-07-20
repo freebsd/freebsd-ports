@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-
 PORTNAME=	omniauth-auth0
 PORTVERSION=	2.0.0
 PORTREVISION=	1

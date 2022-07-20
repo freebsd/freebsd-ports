@@ -1,5 +1,3 @@
-# Created by: Andreas Kohn <andreas@syndrom23.de>
-
 PORTNAME=	net6
 PORTVERSION=	1.3.14
 PORTREVISION=	9

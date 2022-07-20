@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@FreeBSD.org>)
-
 PORTNAME=	Net_DIME
 PORTVERSION=	1.0.2
 PORTEPOCH=	1

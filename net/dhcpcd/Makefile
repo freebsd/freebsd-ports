@@ -1,5 +1,3 @@
-# Created by: Roy Marples <roy@marples.name>
-
 PORTNAME=	dhcpcd
 DISTVERSION=	9.4.1
 PORTREVISION=	2

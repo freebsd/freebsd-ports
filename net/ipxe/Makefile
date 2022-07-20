@@ -1,5 +1,3 @@
-# Created by: Guerkan Karaman <gk.freebsd@googlemail.com>
-
 PORTNAME=	ipxe
 DISTVERSION=	g20220610
 PORTEPOCH=	1

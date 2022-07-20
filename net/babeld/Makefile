@@ -1,5 +1,3 @@
-# Created by: Hung-Yi Chen <gaod@hychen.org>
-
 PORTNAME=	babeld
 PORTVERSION=	1.10
 DISTVERSIONPREFIX=	${PORTNAME}-

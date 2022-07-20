@@ -1,5 +1,3 @@
-# Created by: J.R. Oldroyd <fbsd@opal.com>
-
 PORTNAME=	boinc-client
 PORTVERSION=	7.8.6
 DISTVERSIONPREFIX=	client_release/7.8/

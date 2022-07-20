@@ -1,5 +1,3 @@
-# Created by: Joshua Goodall <joshua@roughtrade.net>
-
 PORTNAME=	spread
 PORTVERSION=	3.17.3
 PORTREVISION=	1

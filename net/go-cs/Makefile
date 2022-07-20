@@ -1,5 +1,3 @@
-# Created by: Andy Kosela <akosela@andykosela.com>
-
 PORTNAME=	go-cs
 PORTVERSION=	0.9
 DISTVERSIONPREFIX=	v

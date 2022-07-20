@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	ip2location
 PORTVERSION=	8.4.1
 CATEGORIES=	net

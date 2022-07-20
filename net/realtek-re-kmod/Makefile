@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	re
 PORTVERSION=	196.04
 DISTVERSIONPREFIX=	v

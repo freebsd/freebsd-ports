@@ -1,5 +1,3 @@
-# Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-
 PORTNAME=	tsctp
 PORTVERSION=	0.7.5
 CATEGORIES=	net

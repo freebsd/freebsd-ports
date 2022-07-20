@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	dictd
 PORTVERSION=	1.13.1
 CATEGORIES+=	net textproc

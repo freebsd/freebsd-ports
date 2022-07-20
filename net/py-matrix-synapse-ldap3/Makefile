@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	matrix-synapse-ldap3
 PORTVERSION=	0.2.1
 CATEGORIES=	net python

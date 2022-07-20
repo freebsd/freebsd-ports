@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Net-Connection-ncnetstat
 PORTVERSION=	0.7.1
 CATEGORIES=	net perl5

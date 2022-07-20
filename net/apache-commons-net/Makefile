@@ -1,5 +1,3 @@
-# Created by: Sergey Matveychuk <sem@FreeBSD.org>
-
 PORTNAME=	commons-net
 PORTVERSION=	3.8.0
 CATEGORIES=	net java

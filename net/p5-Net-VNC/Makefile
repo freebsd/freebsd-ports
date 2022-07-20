@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-VNC
 PORTVERSION=	0.40
 PORTREVISION=	3

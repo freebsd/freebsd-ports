@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	aws-s3
 PORTVERSION=	0.6.3
 CATEGORIES=	net rubygems

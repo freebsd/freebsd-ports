@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	SOAP-Amazon-S3
 PORTVERSION=	0.0401
 CATEGORIES=	net perl5

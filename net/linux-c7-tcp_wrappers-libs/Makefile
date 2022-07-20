@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	tcp_wrappers
 PORTVERSION=	7.6
 DISTVERSIONSUFFIX=	-77.el7

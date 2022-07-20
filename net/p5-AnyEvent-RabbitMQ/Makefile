@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	AnyEvent-RabbitMQ
 PORTVERSION=	1.22
 CATEGORIES=	net devel perl5

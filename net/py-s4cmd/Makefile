@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	s4cmd
 DISTVERSION=	2.1.0-11
 DISTVERSIONSUFFIX=	-ge74e0e7

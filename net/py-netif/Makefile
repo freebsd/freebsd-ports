@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	netif
 PORTVERSION=	1.0.20220211
 CATEGORIES=	net python

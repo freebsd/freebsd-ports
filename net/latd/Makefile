@@ -1,5 +1,3 @@
-# Created by: Tillman Hodgson <tillman@seekingfire.com>
-
 PORTNAME=	latd
 PORTVERSION=	1.31
 CATEGORIES=	net

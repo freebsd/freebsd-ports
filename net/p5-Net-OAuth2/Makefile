@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Net-OAuth2
 PORTVERSION=	0.67
 CATEGORIES=	net perl5

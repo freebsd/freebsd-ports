@@ -1,5 +1,3 @@
-# Created by: Alfred Perlstein <alfred@FreeBSD.org>
-
 PORTNAME=	mDNSResponder
 PORTVERSION=	1310.140.1
 CATEGORIES=	net dns

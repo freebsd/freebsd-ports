@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Net-Appliance-Session
 PORTVERSION=	4.300005
 CATEGORIES=	net perl5

@@ -1,5 +1,3 @@
-# Created by: steinex
-
 PORTNAME=	Event-tcp
 PORTVERSION=	0.14
 PORTREVISION=	1

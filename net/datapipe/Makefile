@@ -1,5 +1,3 @@
-# Created by: Daniel Baker <dbaker@FreeBSD.org> <dbaker@cuckoo.com>
-
 PORTNAME=	datapipe
 PORTVERSION=	1.0
 PORTREVISION=	1

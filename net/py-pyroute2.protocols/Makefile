@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyroute2.protocols
 PORTVERSION=	0.6.13
 PORTREVISION=	1

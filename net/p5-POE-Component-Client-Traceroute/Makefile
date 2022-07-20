@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	POE-Component-Client-Traceroute
 PORTVERSION=	0.21
 PORTREVISION=	1

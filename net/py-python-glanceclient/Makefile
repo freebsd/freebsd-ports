@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	python-glanceclient
 PORTVERSION=	4.0.1
 CATEGORIES=	net python

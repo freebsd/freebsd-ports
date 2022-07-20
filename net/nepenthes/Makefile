@@ -1,5 +1,3 @@
-# Created by: ryo
-
 PORTNAME=	nepenthes
 PORTVERSION=	0.2.2
 PORTREVISION=	16

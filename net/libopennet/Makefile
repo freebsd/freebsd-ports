@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
-
 PORTNAME=	libopennet
 PORTVERSION=	0.9.9
 PORTREVISION=	1

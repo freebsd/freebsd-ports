@@ -1,5 +1,3 @@
-# Created by: Clement Laforet
-
 PORTNAME=	haproxy
 DISTVERSION=	1.8.30
 CATEGORIES=	net www

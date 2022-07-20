@@ -1,5 +1,3 @@
-# Created by: Gunter Wambaugh <gunter@six-two.net>
-
 PORTNAME=	Net-Google-DataAPI
 PORTVERSION=	0.28.01
 PORTREVISION=	1

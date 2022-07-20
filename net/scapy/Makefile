@@ -1,4 +1,3 @@
-# Created by: vanhu <vanhu@netasq.com>
 PORTNAME=	scapy
 PORTVERSION=	2.4.5
 CATEGORIES=	net python

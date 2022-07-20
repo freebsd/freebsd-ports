@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <babak@farrokhi.net>
-
 PORTNAME=	mping
 PORTVERSION=	2.01
 CATEGORIES=	net

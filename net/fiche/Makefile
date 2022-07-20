@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	fiche
 PORTVERSION=	0.9.1
 PORTREVISION=	3

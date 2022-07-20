@@ -1,5 +1,3 @@
-# Created by: fenner
-
 PORTNAME=	rtptools
 DISTVERSION=	1.22
 CATEGORIES=	net mbone

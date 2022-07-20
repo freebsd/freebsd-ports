@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Net-RTP
 PORTVERSION=	0.09
 PORTREVISION=	2

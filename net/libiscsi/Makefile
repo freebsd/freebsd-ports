@@ -1,5 +1,3 @@
-# Created by: M. Birgmeier
-
 PORTNAME=	libiscsi
 DISTVERSION=	1.19.0
 CATEGORIES=	net

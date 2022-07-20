@@ -1,5 +1,3 @@
-# Created by: Antonio Querubin <tony@lava.net>
-
 PORTNAME=	dbeacon
 PORTVERSION=	0.3.9.1
 CATEGORIES=	net

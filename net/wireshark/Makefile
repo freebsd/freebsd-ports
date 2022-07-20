@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@chc-chimes.com>
-
 PORTNAME?=	wireshark
 DISTVERSION=	3.6.6
 CATEGORIES=	net

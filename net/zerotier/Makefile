@@ -1,5 +1,3 @@
-# Created by: Corey Smith <corsmith@gmail.com>
-
 PORTNAME=	zerotier
 DISTVERSION=	1.8.9
 CATEGORIES=	net

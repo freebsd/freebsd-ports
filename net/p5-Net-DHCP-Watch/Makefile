@@ -1,5 +1,3 @@
-# Created by: Lawrence Chen <beastie@tardisi.com>
-
 PORTNAME=	Net-DHCP-Watch
 PORTVERSION=	2.03
 PORTREVISION=	1

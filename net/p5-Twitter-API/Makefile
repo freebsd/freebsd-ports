@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Twitter-API
 PORTVERSION=	1.0006
 CATEGORIES=	net perl5

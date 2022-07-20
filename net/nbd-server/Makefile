@@ -1,5 +1,3 @@
-# Created by: Christian Laursen <xi@borderworlds.dk>
-
 PORTNAME=	nbd
 PORTVERSION=	3.24
 PORTEPOCH=	1

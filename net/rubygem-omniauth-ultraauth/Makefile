@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	omniauth-ultraauth
 PORTVERSION=	0.0.2
 CATEGORIES=	net rubygems

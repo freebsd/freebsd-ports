@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	apinger
 PORTVERSION=	0.6.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: kris@FreeBSD.org
-
 PORTNAME=	libnids
 PORTVERSION=	1.24
 PORTREVISION=	4

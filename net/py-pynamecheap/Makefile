@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pynamecheap
 PORTVERSION=	0.0.3
 CATEGORIES=	net python

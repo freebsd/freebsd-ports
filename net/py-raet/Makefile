@@ -1,5 +1,3 @@
-# Created by: Christer Edwards <christer.edwards@gmail.com>
-
 PORTNAME=	raet
 PORTVERSION=	0.6.8
 PORTREVISION=	1

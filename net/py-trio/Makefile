@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	trio
 PORTVERSION=	0.21.0
 CATEGORIES=	net python

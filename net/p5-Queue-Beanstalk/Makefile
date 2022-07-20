@@ -1,5 +1,3 @@
-# Created by: Anton Yuzhaninov <citrin@citrin.ru>
-
 PORTNAME=	Queue-Beanstalk
 PORTVERSION=	0.02
 PORTREVISION=	1

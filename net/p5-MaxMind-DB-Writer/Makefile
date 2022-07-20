@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MaxMind-DB-Writer
 PORTVERSION=	0.300003
 CATEGORIES=	net perl5

@@ -1,5 +1,3 @@
-# Created by: Sebastien Santoro <dereckson@gmail.com>
-
 PORTNAME=	tclsoap
 PORTVERSION=	1.6.7
 CATEGORIES=	net

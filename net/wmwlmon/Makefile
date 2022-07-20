@@ -1,5 +1,3 @@
-# Created by: Marcus Glocker <marcus@nazgul.ch>
-
 PORTNAME=	wmwlmon
 PORTVERSION=	1.0
 CATEGORIES=	net windowmaker

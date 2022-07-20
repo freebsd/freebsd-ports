@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-online-miners
 PORTVERSION=	3.34.0
 PORTREVISION=	2

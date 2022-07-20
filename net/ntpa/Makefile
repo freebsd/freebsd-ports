@@ -1,5 +1,3 @@
-# Created by: Carsten Larsen <cs@innolan.dk>
-
 PORTNAME=	ntpa
 PORTVERSION=	0.8.2
 PORTREVISION=	4

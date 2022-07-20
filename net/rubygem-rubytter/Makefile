@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <dhn@FreeBSD.org>
-
 PORTNAME=	rubytter
 PORTVERSION=	1.5.1
 CATEGORIES=	net rubygems

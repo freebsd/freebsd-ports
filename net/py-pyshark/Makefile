@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pyshark
 PORTVERSION=	0.4.6
 CATEGORIES=	net python

@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	mgen
 PORTVERSION=	4.2b6
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	python-openstackclient
 PORTVERSION=	5.8.0
 CATEGORIES=	net python

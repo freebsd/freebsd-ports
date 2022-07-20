@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	irrd
 PORTVERSION=	4.2.4
 DISTVERSIONPREFIX=	v

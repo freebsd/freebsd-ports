@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	libmaia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0

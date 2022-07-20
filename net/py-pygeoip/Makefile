@@ -1,5 +1,3 @@
-# Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
-
 PORTNAME=	pygeoip
 PORTVERSION=	0.3.2
 DISTVERSIONPREFIX=	v

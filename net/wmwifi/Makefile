@@ -1,5 +1,3 @@
-# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-
 PORTNAME=	wmwifi
 PORTVERSION=	0.4
 DISTVERSIONSUFFIX=-bsd

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	nusoap
 PORTVERSION=	0.9.5
 CATEGORIES=	net www

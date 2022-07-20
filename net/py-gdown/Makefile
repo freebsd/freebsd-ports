@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	gdown
 PORTVERSION=	4.5.1
 CATEGORIES=	net python

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	tightvnc
 PORTVERSION=	1.3.10
 PORTREVISION=	6

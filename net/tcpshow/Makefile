@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	tcpshow
 PORTVERSION=	1.74
 PORTREVISION=	2

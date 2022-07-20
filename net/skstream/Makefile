@@ -1,5 +1,3 @@
-# Created by: Janni
-
 PORTNAME=	skstream
 PORTVERSION=	0.3.9
 PORTREVISION=	8

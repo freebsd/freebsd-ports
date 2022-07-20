@@ -1,5 +1,3 @@
-# Created by: Russell Francis
-
 PORTNAME=	gutenfetch
 PORTVERSION=	1.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyroute2
 PORTVERSION=	0.7.1
 CATEGORIES=	net python

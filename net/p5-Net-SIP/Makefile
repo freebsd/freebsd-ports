@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Net-SIP
 PORTVERSION=	0.833
 CATEGORIES=	net perl5

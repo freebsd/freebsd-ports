@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@leeym.com>
-
 PORTNAME=	udptunnel
 PORTVERSION=	1.1
 PORTREVISION=	1

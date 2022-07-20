@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pysmb
 PORTVERSION=	1.1.27
 CATEGORIES=	net python

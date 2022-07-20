@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Net-Twitter
 PORTVERSION=	4.01043
 CATEGORIES=	net perl5

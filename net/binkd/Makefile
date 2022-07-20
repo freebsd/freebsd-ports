@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	binkd
 PORTVERSION=	1.0.4
 PORTREVISION=	1

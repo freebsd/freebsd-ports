@@ -1,5 +1,3 @@
-# Created by: Neil Booth
-
 PORTNAME=	pysocks
 PORTVERSION=	1.7.1
 CATEGORIES=	net python

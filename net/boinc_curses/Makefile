@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	boinc_curses
 PORTVERSION=	0.2.3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	ndg-httpsclient
 PORTVERSION=	0.5.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alex Bakhtin <Alex.Bakhtin@gmail.com>
-
 PORTNAME=	Net-MQTT
 PORTVERSION=	1.143260
 PORTREVISION=	1

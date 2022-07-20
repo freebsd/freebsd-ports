@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	XML_RPC2
 PORTVERSION=	1.1.4
 CATEGORIES=	net devel pear

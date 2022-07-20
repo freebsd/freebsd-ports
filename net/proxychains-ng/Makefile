@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	proxychains-ng
 DISTVERSION=	4.16
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@bsd.hu
-
 PORTNAME=	IO-Socket-INET6
 PORTVERSION=	2.72
 PORTREVISION=	1

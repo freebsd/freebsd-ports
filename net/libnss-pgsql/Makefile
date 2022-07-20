@@ -1,5 +1,3 @@
-# Created by: Felix Hanley <felix@userspace.com.au>
-
 PORTNAME=	libnss-pgsql
 PORTVERSION=	1.5.0
 PORTREVISION=	2

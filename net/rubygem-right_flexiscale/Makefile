@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	right_flexiscale
 PORTVERSION=	0.1.0
 PORTREVISION=	1

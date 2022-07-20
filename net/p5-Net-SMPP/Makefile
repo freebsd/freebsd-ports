@@ -1,5 +1,3 @@
-# Created by: jhay
-
 PORTNAME=	Net-SMPP
 PORTVERSION=	1.19
 PORTREVISION=	2

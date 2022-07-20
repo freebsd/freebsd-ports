@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	URI-OpenURL
 PORTVERSION=	0.4.6
 PORTREVISION=	1

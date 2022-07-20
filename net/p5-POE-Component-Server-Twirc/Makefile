@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	POE-Component-Server-Twirc
 PORTVERSION=	0.20
 CATEGORIES=	net perl5

@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	python-barbicanclient
 PORTVERSION=	5.4.0
 CATEGORIES=	net python

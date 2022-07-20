@@ -1,5 +1,3 @@
-# Created by: Archie Cobbs
-
 PORTNAME=	mpd
 DISTVERSION=	5.9
 PORTREVISION=	9

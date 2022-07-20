@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	recvnet
 PORTVERSION=	0.0.1
 PORTREVISION=	1

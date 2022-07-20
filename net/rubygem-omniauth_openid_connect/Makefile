@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	omniauth_openid_connect
 PORTVERSION=	0.3.5
 PORTREVISION=	1

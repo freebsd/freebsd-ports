@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	POE-Component-Client-Telnet
 PORTVERSION=	0.06
 PORTREVISION=	3

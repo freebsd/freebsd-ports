@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Net-LDAP-Server
 PORTVERSION=	0.43
 PORTREVISION=	1

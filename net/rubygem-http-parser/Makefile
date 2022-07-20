@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	http-parser
 PORTVERSION=	1.2.3
 CATEGORIES=	net rubygems

@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	omnitty
 PORTVERSION=	0.3.0
 PORTREVISION=	4

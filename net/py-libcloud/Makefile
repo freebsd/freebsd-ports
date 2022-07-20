@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	libcloud
 PORTVERSION=	3.6.0
 CATEGORIES=	net python

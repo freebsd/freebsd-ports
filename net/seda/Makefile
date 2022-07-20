@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	seda
 PORTVERSION=	3.0
 PORTREVISION=	2

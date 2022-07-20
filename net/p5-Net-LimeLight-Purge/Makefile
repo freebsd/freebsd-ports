@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-LimeLight-Purge
 PORTVERSION=	0.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Kelly Yancey <kbyanc@posi.net>
-
 PORTNAME=	radreport
 PORTVERSION=	1.3
 CATEGORIES=	net

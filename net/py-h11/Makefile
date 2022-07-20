@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	h11
 PORTVERSION=	0.13.0
 CATEGORIES=	net python

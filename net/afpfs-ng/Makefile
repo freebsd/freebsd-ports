@@ -1,5 +1,3 @@
-# Created by: Manuel Creach <manuel.creach@icloud.com>
-
 PORTNAME=	afpfs-ng
 PORTVERSION=	0.8.1
 PORTREVISION=	6

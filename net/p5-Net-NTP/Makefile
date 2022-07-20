@@ -1,5 +1,3 @@
-# Created by: brd@FreeBSD.org
-
 PORTNAME=	Net-NTP
 PORTVERSION=	1.5
 CATEGORIES=	net

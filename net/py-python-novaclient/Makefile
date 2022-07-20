@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	python-novaclient
 PORTVERSION=	18.0.0
 CATEGORIES=	net python

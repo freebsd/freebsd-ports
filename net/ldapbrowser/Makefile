@@ -1,5 +1,3 @@
-# Created by: Bruce M. Simpson <bms@FreeBSD.org>
-
 PORTNAME=	ldapbrowser
 PORTVERSION=	2.8.2
 PORTREVISION=	4

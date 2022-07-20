@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	Amazon-SQS-Simple
 PORTVERSION=	1.06
 PORTREVISION=	1

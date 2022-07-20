@@ -1,5 +1,3 @@
-# Created by: Alexander Hausner <alex@hugo.bmg.gv.at>
-
 PORTNAME=	ifdepd
 PORTVERSION=	20110412
 PORTREVISION=	1

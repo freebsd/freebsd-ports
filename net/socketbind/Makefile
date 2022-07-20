@@ -1,5 +1,3 @@
-# Created by: Gaspar Chilingarov <nm@web.am>
-
 PORTNAME=	socketbind
 PORTVERSION=	1
 CATEGORIES=	net

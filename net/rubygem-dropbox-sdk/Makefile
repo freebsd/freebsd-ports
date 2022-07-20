@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	dropbox-sdk
 PORTVERSION=	1.6.5
 CATEGORIES=	net rubygems

@@ -1,5 +1,3 @@
-# Created by: Diederik de Groot
-
 PORTNAME=	chan_sccp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.3

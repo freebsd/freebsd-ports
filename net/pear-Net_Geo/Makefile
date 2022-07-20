@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Net_Geo
 PORTVERSION=	1.0.5
 CATEGORIES=	net pear

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-powerdns
 PORTVERSION=	0.2.0
 CATEGORIES=	net rubygems

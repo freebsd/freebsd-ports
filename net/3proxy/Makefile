@@ -1,5 +1,3 @@
-# Created by: tim@relay.nnn.tstu.ru
-
 PORTNAME=	3proxy
 DISTVERSION=	0.9.4
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Simun Mikecin < numisemis at yahoo dot com >
-
 PORTNAME=	Cisco-IPPhone
 PORTVERSION=	0.05
 PORTREVISION=	1

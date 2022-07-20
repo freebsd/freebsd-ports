@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	shodan
 PORTVERSION=	1.28.0
 CATEGORIES=	net python

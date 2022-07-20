@@ -1,5 +1,3 @@
-# Created by: Matthew Luckie <mjl@luckie.org.nz>
-
 PORTNAME=	Net-IPTrie
 PORTVERSION=	0.7
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: mfechner@FreeBSD.org
-
 PORTNAME=	knxd
 PORTVERSION=	0.14.39
 PORTREVISION=	4

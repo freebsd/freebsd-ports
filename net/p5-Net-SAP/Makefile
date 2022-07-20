@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Net-SAP
 PORTVERSION=	0.10
 PORTREVISION=	4

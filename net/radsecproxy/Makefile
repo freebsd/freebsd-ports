@@ -1,5 +1,3 @@
-# Created by: Honza Betik
-
 PORTNAME=	radsecproxy
 DISTVERSION=	1.8.2
 CATEGORIES=	net

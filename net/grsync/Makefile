@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	grsync
 PORTVERSION=	1.3.0
 CATEGORIES=	net

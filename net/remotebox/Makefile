@@ -1,5 +1,3 @@
-# Created by: Haowu Ge <ghw@7axu.com>
-
 PORTNAME=	remotebox
 DISTVERSION=	2.7
 CATEGORIES=	net

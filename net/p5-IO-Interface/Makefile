@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	IO-Interface
 PORTVERSION=	1.09
 PORTREVISION=	1

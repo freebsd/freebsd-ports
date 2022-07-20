@@ -1,5 +1,3 @@
-# Created by: Roman Shterenzon <roman@xpert.com>
-
 PORTNAME=	arping
 DISTVERSION=	2.21
 CATEGORIES=	net

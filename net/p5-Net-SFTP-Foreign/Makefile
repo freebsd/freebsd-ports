@@ -1,5 +1,3 @@
-# Created by: Simun Mikecin <numisemis@yahoo.com>
-
 PORTNAME=	Net-SFTP-Foreign
 DISTVERSION=	1.93
 CATEGORIES=	net perl5

@@ -1,5 +1,3 @@
-# Created by: jameskamlyn@gmail.com
-
 PORTNAME=	tableutil
 PORTVERSION=	0.6
 PORTREVISION=	1

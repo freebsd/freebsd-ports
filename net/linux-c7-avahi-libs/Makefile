@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	avahi
 PORTVERSION=	0.6.31
 DISTVERSIONSUFFIX=	-20.el7

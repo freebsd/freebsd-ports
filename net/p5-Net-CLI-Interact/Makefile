@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Net-CLI-Interact
 PORTVERSION=	2.300003
 CATEGORIES=	net perl5

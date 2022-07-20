@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-
 PORTNAME=	htpdate
 PORTVERSION=	1.2.3
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	pyzmq
 PORTVERSION=	22.3.0
 PORTREVISION=	1

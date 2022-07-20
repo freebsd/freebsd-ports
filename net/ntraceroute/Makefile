@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	ntraceroute
 PORTVERSION=	6.4.2
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	ipinfo
 DISTVERSIONPREFIX=	ipinfo-
 DISTVERSION=	2.8.1

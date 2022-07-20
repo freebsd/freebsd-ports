@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	ruby-growl
 PORTVERSION=	4.1
 PORTREVISION=	1

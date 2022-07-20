@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Net-ARP
 PORTVERSION=	1.0.12
 CATEGORIES=	net perl5

@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi
-
 PORTNAME=	tapidbus
 PORTVERSION=	0.2.1
 PORTREVISION=	7

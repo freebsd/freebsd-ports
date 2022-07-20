@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gtk-vnc
 PORTVERSION=	1.3.0
 CATEGORIES=	net gnome

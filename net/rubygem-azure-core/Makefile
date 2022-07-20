@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	azure-core
 PORTVERSION=	0.1.15
 PORTREVISION=	1

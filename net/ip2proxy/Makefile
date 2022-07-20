@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	ip2proxy
 PORTVERSION=	20211122
 CATEGORIES=	net

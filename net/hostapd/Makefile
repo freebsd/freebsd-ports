@@ -1,5 +1,3 @@
-# Created by: Craig Leres <leres@FreeBSD.org>
-
 PORTNAME=	hostapd
 PORTVERSION=	2.10
 PORTREVISION=	5

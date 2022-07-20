@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	gitaly-proto
 PORTVERSION=	1.37.0
 CATEGORIES=	net rubygems

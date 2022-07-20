@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	POE-Component-Client-Whois
 PORTVERSION=	1.38
 CATEGORIES=	net perl5

@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	wmwave
 DISTVERSION=	0-4
 PORTREVISION=	6

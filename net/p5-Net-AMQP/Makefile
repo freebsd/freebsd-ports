@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Net-AMQP
 PORTVERSION=	0.06
 PORTREVISION=	1

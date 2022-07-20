@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-
 PORTNAME=	omniauth-azure-oauth2
 PORTVERSION=	0.0.10
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Net-OAuth
 PORTVERSION=	0.28
 PORTREVISION=	1

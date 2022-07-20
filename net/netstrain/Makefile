@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@bsd.hu
-
 PORTNAME=	netstrain
 PORTVERSION=	3.0
 CATEGORIES=	net

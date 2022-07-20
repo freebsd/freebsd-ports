@@ -1,5 +1,3 @@
-# Created by: Masaki TAGAWA <masaki@club.kyutech.ac.jp>
-
 PORTNAME=	packter-agent
 PORTVERSION=	2.5
 PORTREVISION=	2

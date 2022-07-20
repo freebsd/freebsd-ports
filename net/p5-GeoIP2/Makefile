@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	GeoIP2
 PORTVERSION=	2.006002
 CATEGORIES=	net perl5

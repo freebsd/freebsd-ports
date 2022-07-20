@@ -1,5 +1,3 @@
-# Created by: Hugo Saro <hugo@barafranca.com>
-
 PORTNAME=	haproxy
 DISTVERSION=	2.0.29
 CATEGORIES=	net www

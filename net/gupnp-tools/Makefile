@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	gupnp-tools
 PORTVERSION=	0.10.3
 CATEGORIES=	net

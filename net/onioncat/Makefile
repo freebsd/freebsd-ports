@@ -1,5 +1,3 @@
-# Created by: <ports@c0decafe.net>
-
 PORTNAME=	onioncat
 DISTVERSION=	0.3.9
 CATEGORIES=	net security

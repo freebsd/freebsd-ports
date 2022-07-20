@@ -1,5 +1,3 @@
-# Created by: michael johnson <ahze@ahze.net>
-
 PORTNAME=	minisapserver
 PORTVERSION=	0.3.8
 PORTREVISION=	1

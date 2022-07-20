@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-
 PORTNAME=	netaddr
 PORTVERSION=	0.8.0
 CATEGORIES=	net python

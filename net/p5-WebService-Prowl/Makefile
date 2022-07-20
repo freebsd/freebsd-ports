@@ -1,5 +1,3 @@
-# Created by: brix@FreeBSD.org
-
 PORTNAME=	WebService-Prowl
 PORTVERSION=	0.08
 CATEGORIES=	net perl5

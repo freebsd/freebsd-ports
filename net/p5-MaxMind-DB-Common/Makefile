@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	MaxMind-DB-Common
 PORTVERSION=	0.040001
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	Net_SMS
 PORTVERSION=	0.2.1
 CATEGORIES=	net pear

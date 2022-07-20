@@ -1,5 +1,3 @@
-# Created by: Cory R. King <coryking@mozimedia.com>
-
 PORTNAME=	Net-Trackback
 PORTVERSION=	1.01
 PORTREVISION=	1

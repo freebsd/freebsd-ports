@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	Net-Ping-External
 PORTVERSION=	0.15
 CATEGORIES=	net perl5

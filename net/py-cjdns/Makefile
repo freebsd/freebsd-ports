@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	cjdns
 PORTVERSION=	0.2.4
 CATEGORIES=	net security python

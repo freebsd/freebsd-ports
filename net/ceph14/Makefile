@@ -1,5 +1,3 @@
-# Created by: Willem Jan Withagen <wjw@digiware.nl>
-
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
 DISTVERSION=	14.2.22

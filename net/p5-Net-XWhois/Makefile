@@ -1,5 +1,3 @@
-# Created by: Danny Howard <dannyman@tellme.com>
-
 PORTNAME=	Net-XWhois
 PORTVERSION=	0.90
 PORTREVISION=	5

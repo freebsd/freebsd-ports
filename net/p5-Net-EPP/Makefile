@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Net-EPP
 PORTVERSION=	0.22
 CATEGORIES=	net perl5

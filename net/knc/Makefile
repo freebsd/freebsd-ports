@@ -1,5 +1,3 @@
-# Created by: Denis Generalov <gd.workbox@gmail.com>
-
 PORTNAME=	knc
 PORTVERSION=	1.7.1
 CATEGORIES=	net

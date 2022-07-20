@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	remmina
 DISTVERSION=	1.4.27
 PORTREVISION=	1

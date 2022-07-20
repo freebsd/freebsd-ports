@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	SOAP-MySOAP
 PORTVERSION=	0.023
 PORTREVISION=	2

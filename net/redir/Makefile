@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	redir
 PORTVERSION=	2.2.1
 PORTREVISION=	2

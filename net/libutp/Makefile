@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	bittorrent-libutp
 PORTVERSION=	0.20130514
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	wsproto
 PORTVERSION=	1.1.0
 CATEGORIES=	net python

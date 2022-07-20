@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@FreeBSD.org>
-
 PORTNAME=	serverengine
 PORTVERSION=	2.3.0
 CATEGORIES=	net rubygems

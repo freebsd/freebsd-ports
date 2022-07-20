@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	python-designateclient
 PORTVERSION=	5.0.0
 CATEGORIES=	net python

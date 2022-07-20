@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	opennx
 PORTVERSION=	0.16.0.729
 PORTREVISION=	10

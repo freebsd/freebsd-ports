@@ -1,5 +1,3 @@
-# Created by: Anatoliy Dmytriyev
-
 PORTNAME=	NetPacket
 PORTVERSION=	1.6.0
 CATEGORIES=	net perl5

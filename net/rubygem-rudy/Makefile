@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rudy
 PORTVERSION=	0.9.8.020
 PORTREVISION=	1

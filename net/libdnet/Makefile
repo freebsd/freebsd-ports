@@ -1,5 +1,3 @@
-# Created by: Dominic Marks <dominic.marks@btinternet.com>
-
 PORTNAME=	libdnet
 PORTVERSION=	1.13
 DISTVERSIONPREFIX=	v

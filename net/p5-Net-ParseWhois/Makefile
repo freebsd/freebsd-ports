@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	Net-ParseWhois
 PORTVERSION=	0.70
 PORTREVISION=	1

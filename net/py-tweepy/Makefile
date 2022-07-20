@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	tweepy
 PORTVERSION=	4.10.0
 DISTVERSIONPREFIX=	v

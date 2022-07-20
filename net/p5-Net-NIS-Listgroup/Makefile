@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-NIS-Listgroup
 PORTVERSION=	1.0.0
 PORTREVISION=	3

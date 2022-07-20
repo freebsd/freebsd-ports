@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	mosquitto
 PORTVERSION=	2.0.13
 CATEGORIES=	net

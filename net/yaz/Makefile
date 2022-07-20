@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	yaz
 DISTVERSION=	5.31.1
 PORTREVISION=	3

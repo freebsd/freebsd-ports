@@ -1,5 +1,3 @@
-# Created by: Yi-Hsuan Hsin <mhsin@mhsin.org>
-
 PORTNAME=	Net-Google-Calendar
 PORTVERSION=	1.01
 PORTREVISION=	1

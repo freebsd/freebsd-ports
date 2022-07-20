@@ -1,5 +1,3 @@
-# Created by: Kristof Provost <kp@FreeBSD.org>
-
 PORTNAME=	libpfctl
 PORTVERSION=	0.1
 CATEGORIES=	net

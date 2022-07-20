@@ -1,5 +1,3 @@
-# Created by: Clement Laforet
-
 PORTNAME=	haproxy
 PORTVERSION=	1.7.14
 CATEGORIES=	net www

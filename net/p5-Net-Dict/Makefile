@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	Net-Dict
 PORTVERSION=	2.22
 CATEGORIES=	net perl5

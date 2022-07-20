@@ -1,5 +1,3 @@
-# Created by: wenheping <wenheping@gmail.com>
-
 PORTNAME=	oauth
 PORTVERSION=	0.5.10
 CATEGORIES=	net rubygems

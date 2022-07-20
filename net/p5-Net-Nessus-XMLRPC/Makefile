@@ -1,5 +1,3 @@
-# Created by: Paul Schmehl <pauls@utdallas.edu>
-
 PORTNAME=	Net-Nessus-XMLRPC
 PORTVERSION=	0.30
 PORTREVISION=	2

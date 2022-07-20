@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	Net-Growl
 PORTVERSION=	0.99
 PORTREVISION=	1

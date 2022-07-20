@@ -1,5 +1,3 @@
-# Created by: Dean Freeman (wfreeman@sourcefire.com)
-
 PORTNAME=	daq
 PORTVERSION=	2.2.2
 PORTREVISION=	3

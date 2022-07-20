@@ -1,5 +1,3 @@
-# Created by: Blaz Zupan <blaz@si.FreeBSD.org>
-
 PORTNAME=	pyrad
 DISTVERSION=	2.4
 CATEGORIES=	net python

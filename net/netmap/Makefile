@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	netmap
 PORTVERSION=	0.1.3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	libdmapsharing
 PORTVERSION=	2.9.41
 CATEGORIES=	net gnome

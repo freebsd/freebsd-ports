@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Net_GeoIP
 PORTVERSION=	1.0.0.r1
 PORTREVISION=	1

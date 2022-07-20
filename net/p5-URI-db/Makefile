@@ -1,5 +1,3 @@
-# Created by: Henrik Hodne <henrik@hodne.io>
-
 PORTNAME=	URI-db
 PORTVERSION=	0.16
 PORTREVISION=	1

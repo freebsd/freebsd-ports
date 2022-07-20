@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Net-SDP
 PORTVERSION=	0.07
 PORTREVISION=	2

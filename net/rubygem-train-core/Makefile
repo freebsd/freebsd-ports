@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	train-core
 PORTVERSION=	3.10.1
 PORTREVISION=	1

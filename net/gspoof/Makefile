@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gspoof
 PORTVERSION=	3.2
 PORTREVISION=	16

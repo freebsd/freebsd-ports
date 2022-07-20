@@ -1,5 +1,3 @@
-# Created by: paul@FreeBSD.org
-
 PORTNAME=	ldapsdk
 PORTVERSION=	6.0.7
 PORTREVISION=	1

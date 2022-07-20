@@ -1,5 +1,3 @@
-# Created by: Nathan Whitehon <nwhitehorn@freebsd.org>
-
 PORTNAME=	sems
 DISTVERSION=	${SEMS_VERSION}.g20200510
 PORTREVISION=	1

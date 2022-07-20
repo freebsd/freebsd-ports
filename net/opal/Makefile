@@ -1,5 +1,3 @@
-# Created by: Roger Hardiman <roger@FreeBSD.org>
-
 PORTNAME=	opal
 PORTVERSION=	3.10.10
 PORTREVISION=	29

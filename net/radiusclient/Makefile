@@ -1,5 +1,3 @@
-# Created by: maurice
-
 PORTNAME=	radiusclient
 PORTVERSION=	0.5.6
 PORTREVISION=	3

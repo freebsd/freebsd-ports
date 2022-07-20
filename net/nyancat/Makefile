@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	nyancat
 PORTVERSION=	1.5.2
 PORTEPOCH=	1

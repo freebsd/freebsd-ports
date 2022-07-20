@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	python-ceilometerclient
 PORTVERSION=	2.9.0
 PORTREVISION=	4

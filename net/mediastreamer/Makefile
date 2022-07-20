@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	mediastreamer
 PORTVERSION=	5.1.43
 CATEGORIES=	net

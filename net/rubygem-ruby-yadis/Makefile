@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	ruby-yadis
 PORTVERSION=	0.3.4
 CATEGORIES=	net rubygems

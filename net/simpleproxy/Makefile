@@ -1,5 +1,3 @@
-# Created by: Sergey Kandaurov <pluknet@gmail.com>
-
 PORTNAME=	simpleproxy
 PORTVERSION=	3.4
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libvncserver
 PORTVERSION=	0.9.13
 DISTVERSIONPREFIX=	LibVNCServer-

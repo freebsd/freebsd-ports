@@ -1,5 +1,3 @@
-# Created by: gugu
-
 PORTNAME=	XML-RPC-Fast
 PORTVERSION=	0.8
 PORTREVISION=	2

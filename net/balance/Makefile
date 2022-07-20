@@ -1,5 +1,3 @@
-# Created by: Joseph Scott <joseph@randomnetworks.com>
-
 PORTNAME=	balance
 PORTVERSION=	3.57
 CATEGORIES=	net

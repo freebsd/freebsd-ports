@@ -1,5 +1,3 @@
-# Created by: Lars Erik Gullerud <lerik@nolink.net>
-
 PORTNAME=	radix
 PORTVERSION=	0.10.0
 CATEGORIES=	net python

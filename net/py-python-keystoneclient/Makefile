@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	python-keystoneclient
 PORTVERSION=	5.0.0
 CATEGORIES=	net python

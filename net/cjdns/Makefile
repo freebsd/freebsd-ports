@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	cjdns
 DISTVERSIONPREFIX=	cjdns-v
 DISTVERSION=	21.1

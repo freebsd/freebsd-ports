@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	rssguard
 PORTVERSION=	4.2.3
 CATEGORIES=	net www

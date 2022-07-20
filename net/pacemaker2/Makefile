@@ -1,5 +1,3 @@
-# Created by: David Shane Holden <dpejesh@yahoo.com>
-
 PORTVERSION=		2.1.2
 PORTREVISION=	3
 PKGNAMESUFFIX=		2

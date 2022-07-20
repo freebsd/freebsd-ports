@@ -1,5 +1,3 @@
-# Created by: Gregory Edigarov <greg@bestnet.kharkov.ua>
-
 PORTNAME=	sflowtool
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.07

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-cloudstack
 PORTVERSION=	0.1.0
 CATEGORIES=	net rubygems

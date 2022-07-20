@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libgweather
 PORTVERSION=	40.0
 PORTREVISION=	3

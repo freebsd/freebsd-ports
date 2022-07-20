@@ -1,5 +1,3 @@
-# Created by: Olivier Tharan <olive@oban.frmug.org>
-
 PORTNAME=	nload
 PORTVERSION=	0.7.4
 PORTREVISION=	1

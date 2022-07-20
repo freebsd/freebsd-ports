@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	aslookup
 PORTVERSION=	0.13d
 CATEGORIES=	net

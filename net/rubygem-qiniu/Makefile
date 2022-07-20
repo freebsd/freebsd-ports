@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	qiniu
 PORTVERSION=	6.9.1
 CATEGORIES=	net rubygems

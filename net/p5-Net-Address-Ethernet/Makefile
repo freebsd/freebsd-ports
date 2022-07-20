@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-Address-Ethernet
 PORTVERSION=	1.129
 CATEGORIES=	net perl5

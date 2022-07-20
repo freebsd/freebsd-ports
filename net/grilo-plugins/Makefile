@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	grilo-plugins
 PORTVERSION=	0.3.14
 PORTREVISION=	2

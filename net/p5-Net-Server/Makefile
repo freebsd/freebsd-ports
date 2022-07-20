@@ -1,5 +1,3 @@
-# Created by: Jesse McConnell <jesse@gallup.com>
-
 PORTNAME=	Net-Server
 PORTVERSION=	2.010
 CATEGORIES=	net perl5

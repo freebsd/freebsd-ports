@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	uget
 PORTVERSION=	2.2.1
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	openid_connect
 PORTVERSION=	1.2.0
 PORTREVISION=	1

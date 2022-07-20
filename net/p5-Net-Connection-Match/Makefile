@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Net-Connection-Match
 PORTVERSION=	0.5.0
 CATEGORIES=	net perl5

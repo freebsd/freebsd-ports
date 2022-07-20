@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Net-Whois-RIPE
 PORTVERSION=	2.008001
 CATEGORIES=	net perl5

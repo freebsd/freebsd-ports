@@ -1,5 +1,3 @@
-# Created by: quest <quest@mac.com>
-
 PORTNAME=	throttled
 PORTVERSION=	0.5.2
 CATEGORIES=	net

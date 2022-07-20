@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	openrsync
 PORTVERSION=	0.0.20200401
 CATEGORIES=	net

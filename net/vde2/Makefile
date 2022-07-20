@@ -1,5 +1,3 @@
-# Created by: Philip M. Gollucci <ports@FreeBSD.org>
-
 PORTNAME=	vde
 PORTVERSION=	2.3.3
 DISTVERSIONPREFIX=	v

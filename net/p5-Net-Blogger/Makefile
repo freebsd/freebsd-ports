@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Net-Blogger
 PORTVERSION=	1.03
 CATEGORIES=	net perl5

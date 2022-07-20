@@ -1,5 +1,3 @@
-# Created by: cy@FreeBSD.org
-
 PORTNAME=	freebsd-telnetd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	14.0

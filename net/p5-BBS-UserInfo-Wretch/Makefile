@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	BBS-UserInfo-Wretch
 PORTVERSION=	0.03
 PORTREVISION=	1

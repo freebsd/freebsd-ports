@@ -1,5 +1,3 @@
-# Created by: nishida@sfc.wide.ad.jp
-
 PORTNAME=	tcpillust
 PORTVERSION=	2.01
 PORTREVISION=	2

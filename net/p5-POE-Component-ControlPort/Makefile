@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	POE-Component-ControlPort
 PORTVERSION=	0.01
 PORTREVISION=	2

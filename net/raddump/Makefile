@@ -1,5 +1,3 @@
-# Created by: shanali
-
 PORTNAME=	raddump
 PORTVERSION=	0.3.1
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Koop Mast <einekoai@chello.nl>
-
 PORTNAME=	tsclient
 PORTVERSION=	0.150
 PORTREVISION=	11

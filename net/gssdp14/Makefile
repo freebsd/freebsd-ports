@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	gssdp
 PORTVERSION=	1.4.0.1
 CATEGORIES=	net

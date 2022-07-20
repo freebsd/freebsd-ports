@@ -1,5 +1,3 @@
-# Created by: Dirk-Willem van Gulik / dirkx@webweaving.org
-
 PORTNAME=	widentd
 PORTVERSION=	1.04
 PORTREVISION=	1

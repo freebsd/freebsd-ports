@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-NIS
 PORTVERSION=	0.44
 PORTREVISION=	1

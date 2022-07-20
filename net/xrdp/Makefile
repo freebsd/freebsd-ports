@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.19

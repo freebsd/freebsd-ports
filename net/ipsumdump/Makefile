@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <krion@FreeBSD.org>
-
 PORTNAME=	ipsumdump
 PORTVERSION=	1.86
 CATEGORIES=	net

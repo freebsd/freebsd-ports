@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	exabgp
 PORTVERSION=	4.2.13
 PORTREVISION=	2

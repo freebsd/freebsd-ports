@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	urlextract
 PORTVERSION=	1.6.0
 CATEGORIES=	net python

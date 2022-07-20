@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	EasyTCP
 PORTVERSION=	0.26
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	xmlrpc-c
 PORTVERSION=	1.54.05
 CATEGORIES=	net

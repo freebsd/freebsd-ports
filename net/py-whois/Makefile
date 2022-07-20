@@ -1,5 +1,3 @@
-# Created by: Gabriel Dutra <0xdutra@gmail.com>
-
 PORTNAME=	whois
 PORTVERSION=	0.9.13
 CATEGORIES=	net python

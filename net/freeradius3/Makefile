@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	freeradius
 DISTVERSION=	3.0.25
 CATEGORIES=	net

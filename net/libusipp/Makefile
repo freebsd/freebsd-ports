@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libusipp
 PORTVERSION=	2.25
 DISTVERSIONPREFIX=	libusipp-

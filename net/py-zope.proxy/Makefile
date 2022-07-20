@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	zope.proxy
 DISTVERSION=	4.3.5
 CATEGORIES=	net python zope

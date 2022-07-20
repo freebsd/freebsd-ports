@@ -1,5 +1,3 @@
-# Created by: Trenton Schulz <trueos@norwegianrockcat.com>
-
 PORTNAME=	jotta-cli
 DISTVERSION=	0.14.60923
 CATEGORIES=	net

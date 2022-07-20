@@ -1,5 +1,3 @@
-# Created by: Ilya Bakulin <webmaster@kibab.com>
-
 PORTNAME=	wpa_supplicant_gui
 DISTVERSION=	2.10
 CATEGORIES=	net

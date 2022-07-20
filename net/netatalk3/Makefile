@@ -1,5 +1,3 @@
-# Created by: stb
-
 PORTNAME=	netatalk
 PORTVERSION=	3.1.13
 PORTREVISION=	2

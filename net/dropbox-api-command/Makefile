@@ -1,5 +1,3 @@
-# Created by: Lung-Pin Chang <changlp@cs.nctu.edu.tw>
-
 PORTNAME=	dropbox-api-command
 PORTVERSION=	2.13
 PORTEPOCH=	1

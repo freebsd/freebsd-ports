@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	tintin++
 PORTVERSION=	2.02.20
 CATEGORIES+=	net games

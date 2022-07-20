@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	libdaq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.8

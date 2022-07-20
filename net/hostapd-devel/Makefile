@@ -1,5 +1,3 @@
-# Created by: Craig Leres <leres@FreeBSD.org>
-
 PORTNAME=	hostapd
 PORTVERSION=	${COMMIT_DATE}
 PORTREVISION=	1

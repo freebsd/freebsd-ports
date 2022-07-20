@@ -1,5 +1,3 @@
-# Created by: Sergey Kozlov <skozlov@FreeBSD.org>
-
 PORTNAME=	ix
 PORTVERSION=	3.3.24
 PORTEPOCH=	0

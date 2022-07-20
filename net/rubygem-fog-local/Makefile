@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-local
 PORTVERSION=	0.8.0
 CATEGORIES=	net rubygems

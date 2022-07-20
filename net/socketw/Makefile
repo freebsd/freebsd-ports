@@ -1,5 +1,3 @@
-# Created by: Thibault Payet <monwarez@mailoo.org>
-
 PORTNAME=	socketw
 DISTVERSION=	3.10.27
 CATEGORIES=	net

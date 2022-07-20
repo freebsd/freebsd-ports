@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Net-HTTP-Spore
 PORTVERSION=	0.09
 CATEGORIES=	net www perl5

@@ -1,5 +1,3 @@
-# Created by: IWATSUKI Hiroyuki <don@na.rim.or.jp>
-
 PORTNAME=	net-netrc
 PORTVERSION=	0.2.2
 CATEGORIES=	net rubygems

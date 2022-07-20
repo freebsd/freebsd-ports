@@ -1,5 +1,3 @@
-# Created by: Florent Thoumie <flz@xbsd.org>
-
 PORTNAME=	ldapsh
 PORTVERSION=	2.00
 PORTREVISION=	4

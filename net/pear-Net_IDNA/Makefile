@@ -1,5 +1,3 @@
-# Created by: Michael Frey <frey@raum3.de>
-
 PORTNAME=	Net_IDNA
 PORTVERSION=	0.8.1
 CATEGORIES=	net pear

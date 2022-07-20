@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-Compile-SOAP-AnyEvent
 PORTVERSION=	0.90
 CATEGORIES=	net perl5

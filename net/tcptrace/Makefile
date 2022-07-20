@@ -1,5 +1,3 @@
-# Created by: fenner
-
 PORTNAME=	tcptrace
 PORTVERSION=	6.6.8
 CATEGORIES=	net

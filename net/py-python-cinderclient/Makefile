@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	python-cinderclient
 PORTVERSION=	9.0.0
 CATEGORIES=	net python

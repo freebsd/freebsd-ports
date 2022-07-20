@@ -1,5 +1,3 @@
-# Created by: Alexander V. Chernikov <melifaro@FreeBSD.org>
-
 PORTNAME=	bird
 DISTVERSION=	2.0.10
 CATEGORIES=	net

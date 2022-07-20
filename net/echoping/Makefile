@@ -1,5 +1,3 @@
-# Created by: peter
-
 PORTNAME=	echoping
 PORTVERSION=	6.0.2
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-Cassandra
 PORTVERSION=	0.35
 PORTREVISION=	1

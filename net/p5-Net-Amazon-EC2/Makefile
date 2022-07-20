@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	Net-Amazon-EC2
 PORTVERSION=	0.36
 CATEGORIES=	net perl5

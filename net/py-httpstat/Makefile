@@ -1,5 +1,3 @@
-# Created by: Danilo G. Baio <dbaio@FreeBSD.org>
-
 PORTNAME=	httpstat
 PORTVERSION=	1.3.0
 CATEGORIES=	net python

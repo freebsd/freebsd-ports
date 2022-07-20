@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	gupnp-ui
 PORTVERSION=	0.1.1
 PORTREVISION=	9

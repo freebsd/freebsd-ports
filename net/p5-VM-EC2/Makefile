@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	VM-EC2
 PORTVERSION=	1.28
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Andrei Lavreniyuk <andy.lavr@gmail.com>
-
 PORTNAME=	torsocks
 DISTVERSION=	2.3.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alex Miller <asm@asm.kiev.ua>
-
 PORTNAME=	ilbc
 DISTVERSION=	rfc3951
 PORTREVISION=	1

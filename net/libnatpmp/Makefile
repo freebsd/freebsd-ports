@@ -1,5 +1,3 @@
-# Created by: Hung-Yi Chen <gaod@hychen.org>
-
 PORTNAME=	libnatpmp
 PORTVERSION=	20220122
 PORTREVISION=	1

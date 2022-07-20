@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	gorss
 PORTVERSION=	0.3
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Erich Zigler <erich@tacni.net>
-
 PORTNAME=	Net-SCP
 PORTVERSION=	0.08
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	POE-Component-Client-Ident
 PORTVERSION=	1.16
 PORTREVISION=	1

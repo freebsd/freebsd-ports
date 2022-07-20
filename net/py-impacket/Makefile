@@ -1,5 +1,3 @@
-# Created by: Marcin Jessa <yazzy@yazzy.org>
-
 PORTNAME=	impacket
 PORTVERSION=	0.9.17
 PORTREVISION=	1

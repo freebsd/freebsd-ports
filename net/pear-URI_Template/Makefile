@@ -1,5 +1,3 @@
-# Created by: wenheping <wenheping@gmail.com>
-
 PORTNAME=	URI_Template
 PORTVERSION=	0.3.3
 CATEGORIES=	net pear

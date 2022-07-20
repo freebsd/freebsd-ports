@@ -1,5 +1,3 @@
-# Created by: Philippe Audeoud <jadawin@tuxaco.net>
-
 PORTNAME=	Net-Proxy
 PORTVERSION=	0.13
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Michael Joyner <mjoyner@hq.dyns.cx>
-
 PORTNAME=	yptransitd
 PORTVERSION=	0.5
 PORTREVISION=	8

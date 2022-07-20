@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Phone-Info
 PORTVERSION=	0.0.1
 PORTREVISION=	2

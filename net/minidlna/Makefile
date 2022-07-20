@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	minidlna
 PORTVERSION=	1.3.0
 PORTREVISION=	2

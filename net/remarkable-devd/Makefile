@@ -1,5 +1,3 @@
-# Created by: Trenton Schulz <trueos@norwegianrockcat.com>
-
 PORTNAME=	remarkable-devd
 PORTVERSION=	1.0
 PORTREVISION=	1

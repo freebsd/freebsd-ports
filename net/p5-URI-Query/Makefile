@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	URI-Query
 PORTVERSION=	0.16
 CATEGORIES=	net perl5

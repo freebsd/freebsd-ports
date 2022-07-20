@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	s3cmd
 DISTVERSION=	2.2.0
 CATEGORIES=	net python

@@ -1,5 +1,3 @@
-# Created by: Kevin Bowling <k@kev009.com>
-
 PORTNAME=	libnss-cache
 PORTVERSION=	0.21
 DISTVERSIONPREFIX=	version/

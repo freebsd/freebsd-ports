@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-Client-Ping
 PORTVERSION=	1.177
 CATEGORIES=	net perl5

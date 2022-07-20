@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	sshuttle
 PORTVERSION=	1.1.0
 CATEGORIES=	net python net-vpn

@@ -1,5 +1,3 @@
-# Created by: Vadim Belman <vab@lflat.vas.mobilix.dk>
-
 PORTNAME=	Net-SSH
 PORTVERSION=	0.09
 PORTREVISION=	1

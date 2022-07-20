@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bd_subzero@yahoo.com>
-
 PORTNAME=	libeXosip2
 PORTVERSION=	5.3.0
 CATEGORIES=	net

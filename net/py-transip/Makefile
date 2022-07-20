@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	transip
 PORTVERSION=	2.1.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PKGNAMESUFFIX=	-nox11
 
 MASTERDIR=	${.CURDIR}/../mtr

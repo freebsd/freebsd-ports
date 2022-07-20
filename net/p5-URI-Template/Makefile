@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	URI-Template
 PORTVERSION=	0.24
 CATEGORIES=	net perl5

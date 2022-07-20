@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	iwnet
 PORTVERSION=	g20220223
 CATEGORIES=	net www

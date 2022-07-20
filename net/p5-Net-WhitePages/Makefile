@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Net-WhitePages
 PORTVERSION=	1.04
 PORTREVISION=	2

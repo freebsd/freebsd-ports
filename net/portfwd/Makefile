@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <sysadmin@alexdupre.com>
-
 PORTNAME=	portfwd
 PORTVERSION=	0.29
 PORTREVISION=	1

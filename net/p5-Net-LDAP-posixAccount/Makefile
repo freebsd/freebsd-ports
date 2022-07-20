@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Net-LDAP-posixAccount
 PORTVERSION=	0.0.2
 PORTREVISION=	1

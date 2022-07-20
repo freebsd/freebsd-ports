@@ -1,5 +1,3 @@
-# Created by: Anton Karpov <toxa@toxahost.ru>
-
 PORTNAME=	gotthard
 PORTVERSION=	1.3
 CATEGORIES=	net

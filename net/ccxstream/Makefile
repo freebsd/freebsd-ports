@@ -1,5 +1,3 @@
-# Created by: Michael Handler <handler@grendel.net>
-
 PORTNAME=	ccxstream
 PORTVERSION=	1.0.15
 PORTREVISION=	4

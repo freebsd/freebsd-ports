@@ -1,5 +1,3 @@
-# Created by: Yann Berthier <yb@sainte-barbe.org>
-
 PORTNAME=	libpcapnav
 PORTVERSION=	0.8
 PORTREVISION=	1

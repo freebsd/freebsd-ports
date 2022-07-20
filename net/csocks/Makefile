@@ -1,5 +1,3 @@
-# Created by: Raffaele De Lorenzo - raffaele.delorenzo@libero.it
-
 PORTNAME=	csocks
 PORTVERSION=	1.7
 PORTREVISION=	1

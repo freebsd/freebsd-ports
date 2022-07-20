@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	mosquitto
 PORTVERSION=	0.4.0
 CATEGORIES=	net pear

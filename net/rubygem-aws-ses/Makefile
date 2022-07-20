@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aws-ses
 PORTVERSION=	0.7.1
 CATEGORIES=	net rubygems

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	rfbproxy
 PORTVERSION=	1.1.1
 CATEGORIES=	net

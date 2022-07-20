@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	netscript
 PORTVERSION=	1.7.1
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-cloud-pubsub-v1
 PORTVERSION=	0.11.0
 CATEGORIES=	net rubygems

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	gnome-nettool
 PORTVERSION=	42.0
 PORTEPOCH=	1

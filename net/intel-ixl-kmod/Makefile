@@ -1,5 +1,3 @@
-# Created by: Sergey Kozlov <sergey.kozlov@intel.com>
-
 PORTNAME?=	ixl
 PORTVERSION?=	1.12.2
 PORTREVISION?=	0

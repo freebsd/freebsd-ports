@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Net-Connection-Sort
 PORTVERSION=	0.0.1
 CATEGORIES=	net perl5

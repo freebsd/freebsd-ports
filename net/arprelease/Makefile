@@ -1,5 +1,3 @@
-# Created by: nbm
-
 PORTNAME=	arprelease
 PORTVERSION=	1.2
 PORTREVISION=	4

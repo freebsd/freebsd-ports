@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	geoclue
 DISTVERSION=	2.5.7
 CATEGORIES=	net devel gnome

@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	mrouted
 PORTVERSION=	3.9.8
 PORTREVISION=	1

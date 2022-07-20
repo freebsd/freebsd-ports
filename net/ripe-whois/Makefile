@@ -1,5 +1,3 @@
-# Created by: Lars Erik Gullerud <lerik@nolink.net>
-
 PORTNAME=	ripe-whois
 PORTVERSION=	3.2.2
 CATEGORIES=	net

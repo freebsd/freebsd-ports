@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTREVISION=	4
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

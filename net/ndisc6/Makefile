@@ -1,5 +1,3 @@
-# Created by: rdenis@simphalempin.com
-
 PORTNAME=	ndisc6
 PORTVERSION=	1.0.5
 CATEGORIES=	net

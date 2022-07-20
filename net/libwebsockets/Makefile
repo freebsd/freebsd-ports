@@ -1,5 +1,3 @@
-# Created by: Iblis Lin <iblis@hs.ntnu.edu.tw>
-
 PORTNAME=	libwebsockets
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.2

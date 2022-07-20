@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Net-Google-PicasaWeb
 PORTVERSION=	0.11
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Data-IPV4-Range-Parse
 PORTVERSION=	1.05
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	activestorage
 PORTVERSION=	6.1.6.1
 CATEGORIES=	net rubygems

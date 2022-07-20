@@ -1,5 +1,3 @@
-# Created by: David Thiel (lx@redundancy.redundancy.org)
-
 PORTNAME=	sbd
 PORTVERSION=	1.37
 CATEGORIES=	net security

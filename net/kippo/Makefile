@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	kippo
 PORTVERSION=	0.9
 DISTVERSIONPREFIX=	v

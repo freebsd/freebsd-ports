@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-
 PORTNAME=	Net_NNTP
 PORTVERSION=	1.5.2
 PORTEPOCH=	1

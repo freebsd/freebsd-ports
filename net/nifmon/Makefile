@@ -1,5 +1,3 @@
-# Created by: Simon Barner <barner@gmx.de>
-
 PORTNAME=	nifmon
 PORTVERSION=	1.4
 CATEGORIES=	net

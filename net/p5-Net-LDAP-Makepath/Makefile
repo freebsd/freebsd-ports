@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Net-LDAP-Makepath
 PORTVERSION=	1.0.1
 PORTREVISION=	2

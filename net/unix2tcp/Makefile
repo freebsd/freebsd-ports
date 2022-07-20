@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	unix2tcp
 PORTVERSION=	0.8.2
 CATEGORIES=	net

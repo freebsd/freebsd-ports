@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <babak@farrokhi.net>
-
 PORTNAME=	tcpxd
 PORTVERSION=	1.4
 PORTREVISION=	2

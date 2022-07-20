@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	vinagre
 PORTVERSION=	3.22.0
 PORTREVISION=	6

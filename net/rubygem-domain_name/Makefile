@@ -1,5 +1,3 @@
-# Created by: MIHIRA Yoshiro <sanpei@FreeBSD.org>
-
 PORTNAME=	domain_name
 PORTVERSION=	0.5.20190701
 CATEGORIES=	net rubygems

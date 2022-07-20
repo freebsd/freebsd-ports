@@ -1,5 +1,3 @@
-# Created by: bsdx
-
 PORTNAME=	sniffit
 PORTVERSION=	0.5
 DISTVERSIONPREFIX=	${PORTNAME}-

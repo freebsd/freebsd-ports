@@ -1,5 +1,3 @@
-# Created by: krion@FreeBSD.org
-
 PORTNAME=	icpld
 PORTVERSION=	1.1.5
 PORTREVISION=	2

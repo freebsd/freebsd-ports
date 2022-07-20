@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	radius
 PORTVERSION=	1.4.0b1
 PORTREVISION=	1

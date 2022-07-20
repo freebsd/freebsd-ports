@@ -1,5 +1,3 @@
-# Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
-
 PORTNAME=	krill
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6

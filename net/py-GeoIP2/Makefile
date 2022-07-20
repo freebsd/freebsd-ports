@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbé <olivier@FreeBSD.org>
-
 PORTNAME=	GeoIP2
 PORTVERSION=	4.2.0
 DISTVERSIONPREFIX=	v

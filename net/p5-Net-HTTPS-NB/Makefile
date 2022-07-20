@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Net-HTTPS-NB
 PORTVERSION=	0.15
 CATEGORIES=	net www perl5

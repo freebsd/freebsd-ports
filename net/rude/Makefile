@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@bsd.hu
-
 PORTNAME=	rude
 PORTVERSION=	0.70
 PORTREVISION=	4

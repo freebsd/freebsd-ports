@@ -1,5 +1,3 @@
-# Created by: Alex Deiter <Alex.Deiter@Gmail.COM>
-
 PORTNAME=	udpxy
 DISTVERSION=	1.0-24.1
 CATEGORIES=	net

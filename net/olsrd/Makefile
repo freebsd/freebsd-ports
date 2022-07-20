@@ -1,5 +1,3 @@
-# Created by: dave@dogwood.com
-
 PORTNAME=	olsrd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.8

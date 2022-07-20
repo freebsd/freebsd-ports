@@ -1,5 +1,3 @@
-# Created by: shipley@dis.org
-
 PORTNAME=	libnet
 PORTVERSION=	1.1.6
 PORTREVISION=	5

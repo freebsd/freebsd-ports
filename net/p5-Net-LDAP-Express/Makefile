@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Net-LDAP-Express
 PORTVERSION=	0.12
 PORTREVISION=	1

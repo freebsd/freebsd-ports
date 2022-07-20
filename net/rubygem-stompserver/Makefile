@@ -1,5 +1,3 @@
-# Created by: Mike Carlson <carlson39@llnl.gov>
-
 PORTNAME=	stompserver
 PORTVERSION=	0.9.9
 CATEGORIES=	net rubygems

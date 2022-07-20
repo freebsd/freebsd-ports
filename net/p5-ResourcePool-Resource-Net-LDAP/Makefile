@@ -1,5 +1,3 @@
-# Created by: erwin@FreeBSD.org
-
 PORTNAME=	ResourcePool-Resource-Net-LDAP
 PORTVERSION=	1.0003
 CATEGORIES=	net perl5

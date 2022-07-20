@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-IP-RangeCompare
 PORTVERSION=	4.025
 PORTREVISION=	1

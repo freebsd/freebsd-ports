@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	octokit
 PORTVERSION=	4.25.1
 CATEGORIES=	net rubygems

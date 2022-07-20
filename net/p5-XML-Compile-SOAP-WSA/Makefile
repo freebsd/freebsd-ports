@@ -1,5 +1,3 @@
-# Created by: Patrick Powell <papowell@astart.com>
-
 PORTNAME=	XML-Compile-SOAP-WSA
 PORTVERSION=	0.12
 PORTREVISION=	1

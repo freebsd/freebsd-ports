@@ -1,5 +1,3 @@
-# Created by: Raffaele De Lorenzo  - raffaele.delorenzo@libero.it
-
 PORTNAME=	ss5
 DISTVERSION=	3.8.9-8
 PORTREVISION=	2

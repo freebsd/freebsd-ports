@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	micro_proxy
 PORTVERSION=	20140814
 CATEGORIES=	net

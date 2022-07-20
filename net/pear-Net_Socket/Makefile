@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	Net_Socket
 PORTVERSION=	1.2.2
 CATEGORIES=	net www pear

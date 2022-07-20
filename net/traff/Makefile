@@ -1,5 +1,3 @@
-# Created by: Dan Caescu <daniel at freebsd.ro>
-
 PORTNAME=	traff
 PORTVERSION=	0.7
 PORTREVISION=	1

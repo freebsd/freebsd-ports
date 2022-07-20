@@ -1,5 +1,3 @@
-# Created by: lbartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	quiterss
 PORTVERSION=	0.19.4
 PORTREVISION=	1

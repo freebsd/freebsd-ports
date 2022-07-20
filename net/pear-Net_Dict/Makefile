@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Net_Dict
 PORTVERSION=	1.0.7
 CATEGORIES=	net www pear

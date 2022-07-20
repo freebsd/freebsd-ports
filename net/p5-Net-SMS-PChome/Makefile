@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Net-SMS-PChome
 PORTVERSION=	0.11
 PORTREVISION=	1

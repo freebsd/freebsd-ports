@@ -1,5 +1,3 @@
-# Created by: james@targetnet.com
-
 PORTNAME=	libunp
 PORTVERSION=	1.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	dante
 PORTVERSION=	1.4.3
 CATEGORIES=	net security

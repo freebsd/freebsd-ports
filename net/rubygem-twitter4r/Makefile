@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	twitter4r
 PORTVERSION=	0.7.0
 CATEGORIES=	net rubygems

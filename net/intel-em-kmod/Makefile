@@ -1,5 +1,3 @@
-# Created by: Franco Fichtner <franco@opnsense.org>
-
 PORTNAME=	em
 PORTVERSION=	7.7.8
 PORTREVISION=	0

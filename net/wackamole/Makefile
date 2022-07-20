@@ -1,5 +1,3 @@
-# Created by: Marcin Cieslak <saper@system.pl>
-
 PORTNAME=	wackamole
 PORTVERSION=	2.1.5
 CATEGORIES=	net

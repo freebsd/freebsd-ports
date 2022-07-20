@@ -1,5 +1,3 @@
-# Created by: Sunagawa Koji <koj@ofug.net>
-
 PORTNAME=	lla
 PORTVERSION=	0.99.1
 PORTREVISION=	1

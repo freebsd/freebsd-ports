@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	spiritvnc
 PORTVERSION=	0.4.6
 CATEGORIES=	net

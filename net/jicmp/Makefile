@@ -1,5 +1,3 @@
-# Created by: Ryan T. Dean <rtdean@cytherianage.net>
-
 PORTNAME=	jicmp
 PORTVERSION=	1.4.4
 CATEGORIES=	net java

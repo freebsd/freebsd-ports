@@ -1,5 +1,3 @@
-# Created by: BluePex Security Solutions <freebsd-ports@bluepex.com>
-
 PORTNAME=	Daemon-Generic
 PORTVERSION=	0.85
 CATEGORIES=	net perl5

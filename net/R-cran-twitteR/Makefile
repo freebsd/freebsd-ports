@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	twitteR
 PORTVERSION=	1.1.9
 PORTREVISION=	4

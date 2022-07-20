@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	uri-redis
 PORTVERSION=	0.4.2
 CATEGORIES=	net rubygems

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	arataga
 PORTVERSION=	0.5.1
 DISTVERSIONPREFIX=	v

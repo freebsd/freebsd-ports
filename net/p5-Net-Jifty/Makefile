@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Net-Jifty
 PORTVERSION=	0.14
 PORTREVISION=	1

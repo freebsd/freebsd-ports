@@ -1,5 +1,3 @@
-# Created by: Phillip Neumann <pneumann@gmail.com>
-
 PORTNAME=	rabbitmq
 DISTVERSION=	3.9.17
 CATEGORIES=	net

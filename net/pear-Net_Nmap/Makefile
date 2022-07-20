@@ -1,5 +1,3 @@
-# Created by: Wen Heping<wenheping@gmail.com>
-
 PORTNAME=	Net_Nmap
 PORTVERSION=	1.0.5
 CATEGORIES=	net pear

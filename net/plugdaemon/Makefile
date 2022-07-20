@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	plugdaemon
 PORTVERSION=	2.5.5
 PORTREVISION=	1

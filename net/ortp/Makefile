@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	ortp
 PORTVERSION=	5.1.32
 CATEGORIES=	net

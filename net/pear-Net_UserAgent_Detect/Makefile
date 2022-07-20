@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Net_UserAgent_Detect
 PORTVERSION=	2.5.2
 PORTREVISION=	1

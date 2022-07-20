@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	findmtu
 PORTVERSION=	0.9
 CATEGORIES=	net

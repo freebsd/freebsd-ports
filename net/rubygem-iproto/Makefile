@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	iproto
 PORTVERSION=	0.3.17
 CATEGORIES=	net rubygems

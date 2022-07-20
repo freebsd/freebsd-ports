@@ -1,5 +1,3 @@
-# Created by: Michael Kohn <mike@mikekohn.net>
-
 PORTNAME=	nakenchat
 DISTVERSION=	3.00b1
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Simun Mikecin <numisemis@yahoo.com>
-
 PORTNAME=	Apache2-SOAP
 PORTVERSION=	0.73
 PORTREVISION=	4

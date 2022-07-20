@@ -1,5 +1,3 @@
-# Created by: Sergey Matveychuk <sem@FreeBSD.org>
-
 PORTNAME=	dhcprelya
 PORTVERSION=	6.1
 PORTREVISION=	1

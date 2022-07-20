@@ -1,5 +1,3 @@
-# Created by: Dima Panov <fluffy@FreeBSD.org>
-
 PORTNAME=	qoauth
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v

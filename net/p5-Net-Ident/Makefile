@@ -1,5 +1,3 @@
-# Created by: kai
-
 PORTNAME=	Net-Ident
 PORTVERSION=	1.23
 PORTREVISION=	1

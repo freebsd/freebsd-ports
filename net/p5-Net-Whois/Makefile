@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Net-Whois
 PORTVERSION=	1.9
 PORTREVISION=	1

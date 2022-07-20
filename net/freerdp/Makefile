@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <avl@FreeBSD.org>
-
 PORTNAME=	freerdp
 DISTVERSION=	2.7.0
 CATEGORIES=	net comms wayland

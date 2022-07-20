@@ -1,5 +1,3 @@
-# Created by: Dryice Liu
-
 PORTNAME=	tcping
 PORTVERSION=	1.3.6
 CATEGORIES=	net

@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	spread
 PORTVERSION=	3.17.4
 PORTREVISION=	7

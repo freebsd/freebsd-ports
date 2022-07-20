@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Net-MAC-Vendor
 PORTVERSION=	1.2000
 PORTREVISION=	1
