@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@cs.ucdavis.edu)
-
 PORTNAME=	vnpstext
 PORTVERSION=	1.1
 CATEGORIES=	vietnamese print

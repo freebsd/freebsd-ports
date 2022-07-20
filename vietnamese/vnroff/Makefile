@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@cs.ucdavis.edu)
-
 PORTNAME=	vnroff
 PORTVERSION=	2.1
 CATEGORIES=	vietnamese print

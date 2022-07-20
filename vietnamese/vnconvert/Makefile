@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	vnconvert
 PORTVERSION=	1.0
 PORTREVISION=	1

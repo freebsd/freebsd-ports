@@ -1,5 +1,3 @@
-# Created by: Alexander Yerenkow <yerenkow@gmail.com>
-
 PORTNAME=	x-unikey
 PORTVERSION=	1.0.4
 CATEGORIES=	vietnamese textproc

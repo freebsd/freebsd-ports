@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	vietunicode-web1
 PORTVERSION=	2004.04.30
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	urwvn
 PORTVERSION=	3.04
 PORTREVISION=	5

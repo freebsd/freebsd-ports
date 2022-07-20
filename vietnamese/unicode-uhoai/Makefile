@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	unicode-uhoai
 PORTVERSION=	2.1
 PORTREVISION=	5

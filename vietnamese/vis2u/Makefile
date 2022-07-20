@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	vis2u
 PORTVERSION=	1.0
 CATEGORIES=	vietnamese textproc
