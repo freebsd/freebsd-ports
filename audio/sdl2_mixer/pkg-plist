@@ -1,6 +1,10 @@
 include/SDL2/SDL_mixer.h
+lib/cmake/SDL2_mixer/SDL2_mixer-shared-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SDL2_mixer/SDL2_mixer-shared-targets.cmake
+lib/cmake/SDL2_mixer/SDL2_mixerConfig.cmake
+lib/cmake/SDL2_mixer/SDL2_mixerConfigVersion.cmake
+lib/libSDL2_mixer-2.0.so
 lib/libSDL2_mixer-2.0.so.0
-lib/libSDL2_mixer-2.0.so.0.2.2
-lib/libSDL2_mixer.a
+lib/libSDL2_mixer-2.0.so.0.600.1
 lib/libSDL2_mixer.so
 libdata/pkgconfig/SDL2_mixer.pc

@@ -1,36 +1,39 @@
 PORTNAME=	sdl2_mixer
-PORTVERSION=	2.0.4
-PORTREVISION=	5
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	2.6.1
 CATEGORIES=	audio
-MASTER_SITES=	https://www.libsdl.org/projects/SDL_mixer/release/
-DISTNAME=	SDL2_mixer-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Sample multi-channel audio mixer library
 
 LICENSE=	ZLIB
-LICENSE_FILE_ZLIB=${WRKSRC}/COPYING.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		gmake libtool localbase pathfix pkgconfig sdl
+USES=		cmake sdl
+USE_GITHUB=	yes
+GH_ACCOUNT=	libsdl-org
+GH_PROJECT=	SDL_mixer
 USE_SDL=	sdl2
-GNU_CONFIGURE=	yes
+CMAKE_OFF=	SDL2MIXER_SAMPLES \
+		SDL2MIXER_DEPS_SHARED \
+		SDL2MIXER_FLAC_LIBFLAC_SHARED \
+		SDL2MIXER_MOD_MODPLUG_SHARED \
+		SDL2MIXER_MOD_XMP_SHARED \
+		SDL2MIXER_MP3_MPG123_SHARED \
+		SDL2MIXER_MIDI_FLUIDSYNTH_SHARED \
+		SDL2MIXER_OPUS_SHARED \
+		SDL2MIXER_VORBIS_TREMOR_SHARED \
+		SDL2MIXER_VORBIS_VORBISFILE_SHARED \
+		SDL2MIXER_FLAC_DRFLAC \
+		SDL2MIXER_MP3_DRMP3 \
+		SDL2MIXER_MIDI_TIMIDITY
+
 USE_LDCONFIG=	yes
 
-# disabled dynamic loading of shared libraries, not shared linking
-CONFIGURE_ARGS=	--disable-music-mod-modplug-shared \
-		--disable-music-mod-mikmod-shared \
-		--disable-music-midi-fluidsynth-shared \
-		--disable-music-ogg-shared \
-		--disable-music-flac-shared \
-		--disable-music-mp3-mpg123-shared \
-		--disable-music-opus-shared
-
-OPTIONS_DEFINE=		FLAC OPUS
-OPTIONS_RADIO=		MOD MIDI OGG MP3
-OPTIONS_RADIO_MOD=	MIKMOD MODPLUG
-OPTIONS_RADIO_MIDI=	FLUIDSYNTH
+OPTIONS_DEFINE=		FLAC OPUS MPG123 FLUIDSYNTH
+OPTIONS_RADIO=		MOD OGG
+OPTIONS_RADIO_MOD=	MODPLUG XMP
 OPTIONS_RADIO_OGG=	VORBIS TREMOR
-OPTIONS_RADIO_MP3=	MAD MPG123
 OPTIONS_DEFAULT=	FLUIDSYNTH MODPLUG FLAC OPUS MPG123
 
 .if defined(MACHINE_CPU) && ${MACHINE_CPU:Msoftfp}
@@ -39,55 +42,42 @@ OPTIONS_DEFAULT+=	TREMOR
 OPTIONS_DEFAULT+=	VORBIS
 .endif
 
-# MOD
 MOD_DESC=			Tracker music support
 
-MIKMOD_LIB_DEPENDS=		libmikmod.so:audio/libmikmod
-MIKMOD_CONFIGURE_ENABLE=	music-mod-mikmod
-
 MODPLUG_LIB_DEPENDS=		libmodplug.so:audio/libmodplug
-MODPLUG_CONFIGURE_ENABLE=	music-mod-modplug
+MODPLUG_CMAKE_BOOL=		SDL2MIXER_MOD_MODPLUG
 
-# MIDI
-MIDI_DESC=			MIDI music support
+XMP_DESC=			MOD music via libxmp
+XMP_LIB_DEPENDS=		libxmp.so:audio/libxmp
+XMP_CMAKE_BOOL=			SDL2MIXER_MOD_XMP
 
 FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:audio/fluidsynth
-FLUIDSYNTH_CONFIGURE_ENABLE=	music-midi-fluidsynth
-
+FLUIDSYNTH_CMAKE_BOOL=		SDL2MIXER_MIDI SDL2MIXER_MIDI_FLUIDSYNTH
 # TODO: add timidity?
 
-# OGG
 VORBIS_LIB_DEPENDS=		libvorbis.so:audio/libvorbis
+VORBIS_CMAKE_ON=		-DSDL2MIXER_VORBIS="VORBISFILE"
 
 TREMOR_LIB_DEPENDS=		libvorbisidec.so:audio/libtremor
-TREMOR_CONFIGURE_ENABLE=	music-ogg-tremor
-
-# MP3
-MAD_LIB_DEPENDS=		libmad.so:audio/libmad
-MAD_CONFIGURE_ENABLE=		music-mp3-mad-gpl
-MAD_VARS=			LICENSE+=GPLv2+ LICENSE_COMB=multi
+TREMOR_CMAKE_ON=		-DSDL2MIXER_VORBIS="TREMOR"
 
 MPG123_LIB_DEPENDS=		libmpg123.so:audio/mpg123
-MPG123_CONFIGURE_ENABLE=	music-mp3-mpg123
+MPG123_CMAKE_BOOL=		SDL2MIXER_MP3 SDL2MIXER_MP3_MPG123
 
-# Others
 FLAC_LIB_DEPENDS=		libFLAC.so:audio/flac
-FLAC_CONFIGURE_ENABLE=		music-flac
+FLAC_CMAKE_BOOL=		SDL2MIXER_FLAC SDL2MIXER_FLAC_LIBFLAC
 
 OPUS_LIB_DEPENDS=		libopusfile.so:audio/opusfile
-OPUS_CONFIGURE_ENABLE=		music-opus
+OPUS_CMAKE_BOOL=		SDL2MIXER_OPUS
 
 .include <bsd.port.options.mk>
 
-.if !${PORT_OPTIONS:MVORBIS} && !${PORT_OPTIONS:MTREMOR}
-CONFIGURE_ARGS+=		--disable-music-ogg
+.if !${PORT_OPTIONS:MXMP} && !${PORT_OPTIONS:MMODPLUG}
+CMAKE_OFF+=			SDL2MIXER_MOD
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|\($$(prefix)/libdata/pkgconfig\)|$$(DESTDIR)\1|' \
-		${WRKSRC}/Makefile.in
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libSDL2_mixer.so
+.if !${PORT_OPTIONS:MVORBIS} && !${PORT_OPTIONS:MTREMOR}
+CMAKE_ARGS+=			-DSDL2MIXER_VORBIS=""
+.endif
 
 .include <bsd.port.mk>
