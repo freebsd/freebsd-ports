@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	fortune-mod-zarathoustra
 PORTVERSION=	20100905
 CATEGORIES=	french

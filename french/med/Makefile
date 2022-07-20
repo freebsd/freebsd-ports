@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	med
 DISTVERSION=	4.0.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
 PORTREVISION=	4
