@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20220722:
+AUTHOR: portmgr@FreeBSD.org
+
+  'Created by' are being removed from the ports makefiles.
+
+  Created by lines have historically been used to attribute contributions
+  to the original creators of the ports. However, those might no longer
+  be contributing to the port
+
 20220430:
 AUTHOR: tcberner@FreeBSD.org
 
