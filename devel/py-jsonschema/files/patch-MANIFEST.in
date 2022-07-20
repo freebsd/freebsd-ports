@@ -1,7 +1,0 @@
---- MANIFEST.in.orig	2022-06-04 16:19:42 UTC
-+++ MANIFEST.in
-@@ -3,3 +3,4 @@ include *.rst
- include COPYING
- include pyproject.toml
- include tox.ini
-+graft jsonschema/schemas
