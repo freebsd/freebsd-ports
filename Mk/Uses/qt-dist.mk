@@ -226,7 +226,8 @@ _EXTRA_PATCHES_QT5+=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_
 .    endif
 EXTRA_PATCHES?=		${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-configure \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-sync.profiles \
-			${_EXTRA_PATCHES_QT5}
+			${_EXTRA_PATCHES_QT5} \
+			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-cheribsd.patch
 .  endif #  ${_QT_DIST} == "base"
 
 # Override settings installed in qconfig.h and *.pri files. The flags will be

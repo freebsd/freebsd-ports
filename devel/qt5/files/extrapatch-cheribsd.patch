@@ -1,0 +1,4259 @@
+diff --git bin/fixqt4headers.pl bin/fixqt4headers.pl
+index b572f469dc..777dff88d1 100755
+--- bin/fixqt4headers.pl
++++ bin/fixqt4headers.pl
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/local64/bin/perl
+ #############################################################################
+ ##
+ ## Copyright (C) 2016 The Qt Company Ltd.
+diff --git bin/syncqt.pl bin/syncqt.pl
+index 7ede34cf1d..955b97a506 100755
+--- bin/syncqt.pl
++++ bin/syncqt.pl
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/local64/bin/perl
+ #############################################################################
+ ##
+ ## Copyright (C) 2016 The Qt Company Ltd.
+diff --git config_help.txt config_help.txt
+index bce61577e7..1604f4271c 100644
+--- config_help.txt
++++ config_help.txt
+@@ -91,7 +91,7 @@ Build options:
+   -debug-and-release ... Build two versions of Qt, with and without
+                          debugging turned on [yes] (Apple and Windows only)
+   -optimize-debug ...... Enable debug-friendly optimizations in debug builds
+-                         [auto] (Not supported with MSVC or Clang toolchains)
++                         [auto] (Not supported with MSVC toolchains)
+   -optimize-size ....... Optimize release builds for size instead of speed [no]
+   -optimized-tools ..... Build optimized host tools even in debug build [no]
+   -force-debug-info .... Create symbol files for release builds [no]
+@@ -120,6 +120,9 @@ Build options:
+                          through an app store by default, in particular Android,
+                          iOS, tvOS, watchOS, and Universal Windows Platform. [auto]
+ 
++  -additional-datadir <dir> ... List of directories that QStandardPaths
++                         will search before the system locations (macOS only).
++
+   -qtnamespace <name> .. Wrap all Qt library code in 'namespace <name> {...}'.
+   -qtlibinfix <infix> .. Rename all libQt5*.so to libQt5*<infix>.so.
+   -qtlibinfix-plugins .. Rename Qt plugins according to -qtlibinfix [no]
+diff --git configure configure
+index b6c9b462f2..071a1e47b7 100755
+--- configure
++++ configure
+@@ -42,7 +42,7 @@ outpath=`/bin/pwd`
+ 
+ WHICH="which"
+ 
+-PERL=`$WHICH perl 2>/dev/null`
++PERL=/usr/local64/bin/perl
+ 
+ # find out which awk we want to use, prefer gawk, then nawk, then regular awk
+ AWK=
+diff --git configure.json configure.json
+index 4a7c50f684..54edb7c02f 100644
+--- configure.json
++++ configure.json
+@@ -59,6 +59,7 @@
+             "android-javac-target": "string",
+             "android-javac-source": "string",
+ 
++            "additional-datadir": { "type": "addString", "name": "additional_datadirs" },
+             "android-style-assets": "boolean",
+             "appstore-compliant": "boolean",
+             "avx": "boolean",
+@@ -203,7 +204,7 @@
+                     },
+                     "condition": "config.win32"
+                 },
+-                { "libs": "-ldbus-1", "condition": "!config.win32" }
++                { "libs": "-L/usr/local/lib -ldbus-1", "condition": "!config.win32" }
+             ]
+         },
+         "host_dbus": {
+@@ -751,7 +752,7 @@
+         "optimize_debug": {
+             "label": "Optimize debug build",
+             "autoDetect": "!features.developer-build",
+-            "condition": "!config.msvc && !config.clang && (features.debug || features.debug_and_release) && tests.optimize_debug",
++            "condition": "!config.msvc && (features.debug || features.debug_and_release) && tests.optimize_debug",
+             "output": [ "privateConfig" ]
+         },
+         "optimize_size": {
+@@ -1531,7 +1532,7 @@ Configure with '-qreal float' to create a build that is binary-compatible with 5
+                 {
+                     "type": "feature",
+                     "args": "optimize_debug",
+-                    "condition": "!config.msvc && !config.clang && (features.debug || features.debug_and_release)"
++                    "condition": "!config.msvc && (features.debug || features.debug_and_release)"
+                 },
+                 {
+                     "type": "feature",
+diff --git configure.pri configure.pri
+index 49755f7abf..4496bab7ef 100644
+--- configure.pri
++++ configure.pri
+@@ -788,6 +788,16 @@ defineTest(qtConfOutput_preparePaths) {
+     else: \
+         qmake_crossbuild = true
+ 
++    !isEmpty(config.input.additional_datadirs) {
++        # Ensure that all the -additional-datadirs entries are absolute paths
++        extradirs =
++        for (dir, config.input.additional_datadirs) {
++            extradirs += $$absolute_path($$dir, $$OUT_PWD)
++        }
++        config.input.additional_datadirs = $$extradirs
++        export(config.input.additional_datadirs)
++    }
++
+     PREFIX_COMPLAINTS =
+     PREFIX_REMINDER = false
+     win32: \
+@@ -1284,6 +1294,17 @@ output += \
+     return($$output)
+ }
+ 
++defineReplace(qtConfOutputPostProcess_privateHeader) {
++    output = $$1
++    # Add support for additional QStandardPaths::GenericDataLocation on macOS (useful for homebrew, etc.)
++    macos:!isEmpty(config.input.additional_datadirs) {
++        extraDataDirsDefine = $$join(config.input.additional_datadirs, \
++            "\"), QStringLiteral(\"", "{ QStringLiteral(\"", "\") }")
++        output += "$${LITERAL_HASH}define QT_STANDARDPATHS_ADDITIONAL_DATADIRS $$extraDataDirsDefine"
++    }
++    return($$output)
++}
++
+ 
+ # custom reporting
+ 
+diff --git mkspecs/common/bsd/bsd.conf mkspecs/common/bsd/bsd.conf
+index 390dfc58d2..352b929cd2 100644
+--- mkspecs/common/bsd/bsd.conf
++++ mkspecs/common/bsd/bsd.conf
+@@ -16,7 +16,8 @@ QMAKE_LFLAGS_GCSECTIONS = -Wl,--gc-sections
+ 
+ QMAKE_LIBS              =
+ QMAKE_LIBS_DYNLOAD      =
+-QMAKE_LIBS_EXECINFO     = -lexecinfo
++# when linked statically we also need libelf for libexecinfo
++QMAKE_LIBS_EXECINFO     = -lexecinfo -lelf
+ QMAKE_LIBS_X11          = -lXext -lX11 -lm
+ QMAKE_LIBS_OPENGL       = -lGL
+ QMAKE_LIBS_THREAD       =
+@@ -28,3 +29,10 @@ QMAKE_RANLIB            =
+ 
+ QMAKE_STRIP             = strip
+ QMAKE_STRIPFLAGS_LIB   += --strip-unneeded
++
++QMAKE_INCDIR_WAYLAND    =
++QMAKE_LIBS_WAYLAND_CLIENT = -lwayland-client
++QMAKE_LIBS_WAYLAND_SERVER = -lwayland-server
++QMAKE_LIBDIR_WAYLAND    =
++QMAKE_DEFINES_WAYLAND   =
++QMAKE_WAYLAND_SCANNER   = wayland-scanner
+diff --git mkspecs/common/clang.conf mkspecs/common/clang.conf
+index dad15a22a8..a978e94715 100644
+--- mkspecs/common/clang.conf
++++ mkspecs/common/clang.conf
+@@ -17,6 +17,7 @@ CONFIG                 += clang_pch_style
+ QMAKE_PCH_OUTPUT_EXT    = .pch
+ 
+ QMAKE_CFLAGS_OPTIMIZE_SIZE = -Oz
++QMAKE_CFLAGS_OPTIMIZE_DEBUG = -Og
+ 
+ QMAKE_CFLAGS_PRECOMPILE          = -x c-header -c ${QMAKE_PCH_INPUT} -o ${QMAKE_PCH_OUTPUT}
+ QMAKE_CFLAGS_USE_PRECOMPILE      = -Xclang -include-pch -Xclang ${QMAKE_PCH_OUTPUT}
+diff --git mkspecs/devices/common/freebsd_device_pre.conf mkspecs/devices/common/freebsd_device_pre.conf
+index 8eb76f60f1..dcecd35bd0 100644
+--- mkspecs/devices/common/freebsd_device_pre.conf
++++ mkspecs/devices/common/freebsd_device_pre.conf
+@@ -1,4 +1,4 @@
+-QT_QPA_DEFAULT_PLATFORM = bsdfb
++QT_QPA_DEFAULT_PLATFORM = offscreen
+ 
+ MAKEFILE_GENERATOR      = UNIX
+ CONFIG                 += incremental
+diff --git mkspecs/features/data/unix/findclasslist.pl mkspecs/features/data/unix/findclasslist.pl
+index b74b8b6a58..1c1933d9d0 100644
+--- mkspecs/features/data/unix/findclasslist.pl
++++ mkspecs/features/data/unix/findclasslist.pl
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/local64/bin/perl
+ #############################################################################
+ ##
+ ## Copyright (C) 2016 Intel Corporation.
+diff --git mkspecs/features/qt_functions.prf mkspecs/features/qt_functions.prf
+index 7777e615bd..b57005dee5 100644
+--- mkspecs/features/qt_functions.prf
++++ mkspecs/features/qt_functions.prf
+@@ -90,11 +90,11 @@ defineTest(qtPrepareTool) {
+         cmd = $$[QT_HOST_BINS]/$$2
+         exists($${cmd}.pl) {
+             $${1}_EXE = $${cmd}.pl
+-            cmd = perl -w $$system_path($${cmd}.pl)
+-        } else: contains(QMAKE_HOST.os, Windows) {
++            cmd = /usr/local64/bin/perl -w $$system_path($${cmd}.pl)
++        } else: contains(QMAKE_PLATFORM, win32) {
+             $${1}_EXE = $${cmd}.exe
+             cmd = $$system_path($${cmd}.exe)
+-        } else:contains(QMAKE_HOST.os, Darwin) {
++        } else:contains(QMAKE_PLATFORM, darwin) {
+             BUNDLENAME = $${cmd}.app/Contents/MacOS/$$2
+             exists($$BUNDLENAME) {
+                 cmd = $$BUNDLENAME
+@@ -170,7 +170,7 @@ defineTest(qtAddToolEnv) {
+         !isEmpty(cmd): cmd = "$$cmd "
+         equals(ds, /) {
+             batch_name = $${batch_name}.sh
+-            equals(QMAKE_HOST.os, Darwin):exists(/bin/bash): \
++            contains(QMAKE_PLATFORM, darwin):exists(/bin/bash): \
+                 shell = /bin/bash
+             else: \
+                 shell = /bin/sh
+@@ -209,21 +209,21 @@ defineTest(qtAddTargetEnv) {
+     !isEmpty(deps) {
+         libs = libs
+         deppath.CONFIG = prepend
+-        equals(QMAKE_HOST.os, Windows) {
++        contains(QMAKE_PLATFORM, win32) {
+             libs = bins
+             deppath.CONFIG = always_prepend
+             deppath.name = PATH
+-        } else:contains(QMAKE_HOST.os, Linux|FreeBSD|OpenBSD|NetBSD|DragonFly|SunOS|HP-UX|QNX|GNU) {
+-            deppath.name = LD_LIBRARY_PATH
+-        } else:contains(QMAKE_HOST.os, Haiku) {
++        } else:contains(QMAKE_PLATFORM, haiku) {
+             deppath.name = LIBRARY_PATH
+-        } else:equals(QMAKE_HOST.os, Darwin) {
++        } else:contains(QMAKE_PLATFORM, darwin) {
+             qtConfig(framework): \
+                 deppath.name = DYLD_FRAMEWORK_PATH
+             else: \
+                 deppath.name = DYLD_LIBRARY_PATH
+-        } else:equals(QMAKE_HOST.os, AIX) {
++        } else:contains(QMAKE_PLATFORM, aix) {
+             deppath.name = LIBPATH
++        } else:contains(QMAKE_PLATFORM, unix) {
++            deppath.name = LD_LIBRARY_PATH
+         } else {
+             error("Operating system not supported.")
+         }
+diff --git mkspecs/features/testcase.prf mkspecs/features/testcase.prf
+index 7e9903d663..83c9d574f4 100644
+--- mkspecs/features/testcase.prf
++++ mkspecs/features/testcase.prf
+@@ -83,7 +83,7 @@ unix {
+ }
+ 
+ # Allow for custom arguments to tests
+-$${type}.commands += $(TESTARGS)
++!catch: $${type}.commands += $(TESTARGS)
+ 
+ !isEmpty(TESTRUN_CWD):!contains(TESTRUN_CWD, ^\\./?): \
+     $${type}.commands = $$QMAKE_CD $$shell_path($$TESTRUN_CWD) && $$eval($${type}.commands)
+diff --git mkspecs/freebsd-g++/qmake.conf mkspecs/freebsd-g++/qmake.conf
+index 4df444480d..862e24ca6e 100644
+--- mkspecs/freebsd-g++/qmake.conf
++++ mkspecs/freebsd-g++/qmake.conf
+@@ -8,8 +8,8 @@ QMAKE_PLATFORM          = freebsd
+ include(../common/bsd/bsd.conf)
+ 
+ # Addon software goes into /usr/local on FreeBSD, by default we will look there
+-QMAKE_INCDIR_POST       = /usr/local/include
+-QMAKE_LIBDIR_POST       = /usr/local/lib
++QMAKE_INCDIR_POST       = $$[QT_SYSROOT]/usr/local/include
++QMAKE_LIBDIR_POST       = $$[QT_SYSROOT]/usr/local/lib
+ 
+ include(../common/gcc-base-unix.conf)
+ include(../common/g++-unix.conf)
+diff --git qtbase.pro qtbase.pro
+index c0ce0972ef..98a99e7524 100644
+--- qtbase.pro
++++ qtbase.pro
+@@ -57,11 +57,11 @@ INSTALLS += syncqt
+ # qtPrepareTool() to find the non-installed syncqt.
+ prefix_build|!equals(PWD, $$OUT_PWD) {
+ 
+-    cmd = perl -w $$system_path($$PWD/bin/syncqt.pl)
++    cmd = /usr/local64/bin/perl -w $$system_path($$PWD/bin/syncqt.pl)
+ 
+     TOOL_PRI = $$OUT_PWD/mkspecs/modules/qt_tool_syncqt.pri
+ 
+-    TOOL_PRI_CONT = "QT_TOOL.syncqt.binary = $$val_escape(cmd)"
++    TOOL_PRI_CONT = "QT_TOOL.syncqt.binary = /usr/local64/bin/perl -w $$system_path($$PWD/bin/syncqt.pl)"
+     write_file($$TOOL_PRI, TOOL_PRI_CONT)|error("Aborting.")
+ 
+     # Then, inject the new tool into the current cache state
+diff --git src/3rdparty/freetype/src/raster/ftraster.c src/3rdparty/freetype/src/raster/ftraster.c
+index 023b6c1eff..3b903ebf27 100644
+--- src/3rdparty/freetype/src/raster/ftraster.c
++++ src/3rdparty/freetype/src/raster/ftraster.c
+@@ -386,8 +386,14 @@
+   } black_TBand;
+ 
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++//XXXKG: assumes that _MIPS_SZCAP/8 is a multiple of sizeof(Long)
++#define AlignProfileSize \
++  ( __builtin_align_up( sizeof ( TProfile ), sizeof (__uintcap_t) ) / sizeof ( Long ) )
++#else
+ #define AlignProfileSize \
+   ( ( sizeof ( TProfile ) + sizeof ( Alignment ) - 1 ) / sizeof ( Long ) )
++#endif
+ 
+ 
+ #undef RAS_ARG
+@@ -749,6 +755,12 @@
+       }
+ 
+       oldProfile   = ras.cProfile;
++#ifdef __CHERI_PURE_CAPABILITY__
++      //XXXKG: re-align ras.top, as it may have become unaligned (e.g. due to
++      //       calls to Line_Up)
++      ras.top = __builtin_align_up(ras.top, sizeof (__uintcap_t));
++#endif
++
+       ras.cProfile = (PProfile)ras.top;
+ 
+       ras.top += AlignProfileSize;
+@@ -858,7 +870,12 @@
+ 
+ 
+         if ( n > 1 )
++#ifdef __CHERI_PURE_CAPABILITY__
++          //XXXKG: align link so that it correctly points to the next Profile
++          p->link = (PProfile)__builtin_align_up( p->offset + p->height, sizeof (__uintcap_t) );
++#else
+           p->link = (PProfile)( p->offset + p->height );
++#endif
+         else
+           p->link = NULL;
+ 
+@@ -872,7 +889,12 @@
+           bottom     = (Int)( p->start - p->height + 1 );
+           top        = (Int)p->start;
+           p->start   = bottom;
++#ifdef __CHERI_PURE_CAPABILITY__
++          //XXXKG: align offset so that it correctly points to the Profile's data
++          p->offset = __builtin_align_up( p->offset + p->height - 1, sizeof (__uintcap_t) );
++#else
+           p->offset += p->height - 1;
++#endif
+         }
+ 
+         if ( Insert_Y_Turn( RAS_VARS bottom )  ||
+diff --git src/3rdparty/freetype/src/tools/afblue.pl src/3rdparty/freetype/src/tools/afblue.pl
+index 937d4ecf6e..f641f01123 100644
+--- src/3rdparty/freetype/src/tools/afblue.pl
++++ src/3rdparty/freetype/src/tools/afblue.pl
+@@ -1,4 +1,4 @@
+-#! /usr/bin/perl -w
++#! /usr/local64/bin/perl -w
+ # -*- Perl -*-
+ #
+ # afblue.pl
+diff --git src/3rdparty/harfbuzz-ng/src/hb-blob.cc src/3rdparty/harfbuzz-ng/src/hb-blob.cc
+index 59c8333637..7a498c0f8a 100644
+--- src/3rdparty/harfbuzz-ng/src/hb-blob.cc
++++ src/3rdparty/harfbuzz-ng/src/hb-blob.cc
+@@ -24,11 +24,6 @@
+  * Red Hat Author(s): Behdad Esfahbod
+  */
+ 
+-/* http://www.oracle.com/technetwork/articles/servers-storage-dev/standardheaderfiles-453865.html */
+-#ifndef _POSIX_C_SOURCE
+-#define _POSIX_C_SOURCE 199309L
+-#endif
+-
+ #include "hb-private.hh"
+ #include "hb-debug.hh"
+ 
+diff --git src/3rdparty/harfbuzz-ng/src/hb-buffer.cc src/3rdparty/harfbuzz-ng/src/hb-buffer.cc
+index 7ead43b018..8e4520036b 100644
+--- src/3rdparty/harfbuzz-ng/src/hb-buffer.cc
++++ src/3rdparty/harfbuzz-ng/src/hb-buffer.cc
+@@ -81,7 +81,7 @@ hb_segment_properties_hash (const hb_segment_properties_t *p)
+ {
+   return (unsigned int) p->direction ^
+ 	 (unsigned int) p->script ^
+-	 (intptr_t) (p->language);
++	 (ptrdiff_t) (p->language);
+ }
+ 
+ 
+@@ -200,7 +200,7 @@ hb_buffer_t::get_scratch_buffer (unsigned int *size)
+   out_len = 0;
+   out_info = info;
+ 
+-  assert ((uintptr_t) pos % sizeof (scratch_buffer_t) == 0);
++  assert ((size_t) pos % sizeof (scratch_buffer_t) == 0);
+   *size = allocated * sizeof (pos[0]) / sizeof (scratch_buffer_t);
+   return (scratch_buffer_t *) (void *) pos;
+ }
+diff --git src/3rdparty/harfbuzz-ng/src/hb-open-type-private.hh src/3rdparty/harfbuzz-ng/src/hb-open-type-private.hh
+index 2f4e1b9e9e..2ffc06e5e0 100644
+--- src/3rdparty/harfbuzz-ng/src/hb-open-type-private.hh
++++ src/3rdparty/harfbuzz-ng/src/hb-open-type-private.hh
+@@ -131,8 +131,12 @@ static inline Type& StructAfter(TObject &X)
+  */
+ 
+ /* Global nul-content Null pool.  Enlarge as necessary. */
+-
++#ifndef __CHERI_PURE_CAPABILITY__
+ #define HB_NULL_POOL_SIZE 264
++#else
++// XXXAR: not entirely sure what this should be, let's just multiply by 2
++#define HB_NULL_POOL_SIZE (264 * 2)
++#endif
+ static_assert (HB_NULL_POOL_SIZE % sizeof (void *) == 0, "Align HB_NULL_POOL_SIZE.");
+ extern HB_INTERNAL const void * const _hb_NullPool[HB_NULL_POOL_SIZE / sizeof (void *)];
+ 
+diff --git src/3rdparty/libpng/pngpriv.h src/3rdparty/libpng/pngpriv.h
+index 2ab9b70d73..3afed292bc 100644
+--- src/3rdparty/libpng/pngpriv.h
++++ src/3rdparty/libpng/pngpriv.h
+@@ -510,7 +510,8 @@
+          typedef unsigned __int64 png_ptruint;
+ #     endif
+ #  else
+-      typedef unsigned long png_ptruint;
++#     include <stdint.h>
++      typedef uintptr_t png_ptruint;
+ #  endif
+ #  define png_constcast(type, value) ((type)(png_ptruint)(const void*)(value))
+ #  define png_aligncast(type, value) ((void*)(value))
+diff --git src/3rdparty/pcre2/pcre2.pro src/3rdparty/pcre2/pcre2.pro
+index bfa42b88d3..b92c1904fe 100644
+--- src/3rdparty/pcre2/pcre2.pro
++++ src/3rdparty/pcre2/pcre2.pro
+@@ -25,6 +25,9 @@ win32:contains(QT_ARCH, "arm"): DEFINES += PCRE2_DISABLE_JIT
+ win32:contains(QT_ARCH, "arm64"): DEFINES += PCRE2_DISABLE_JIT
+ macos:contains(QT_ARCH, "arm64"): DEFINES += PCRE2_DISABLE_JIT
+ 
++# TODO: do this only for CHERI
++DEFINES += PCRE2_DISABLE_JIT
++
+ SOURCES += \
+     $$PWD/src/pcre2_auto_possess.c \
+     $$PWD/src/pcre2_chartables.c \
+diff --git src/3rdparty/pcre2/src/pcre2_intmodedep.h src/3rdparty/pcre2/src/pcre2_intmodedep.h
+index ea3b3ec698..f5189b00a5 100644
+--- src/3rdparty/pcre2/src/pcre2_intmodedep.h
++++ src/3rdparty/pcre2/src/pcre2_intmodedep.h
+@@ -838,6 +838,17 @@ multiple of PCRE2_SIZE. See various comments above. */
+ typedef char check_heapframe_size[
+   ((sizeof(heapframe) % sizeof(PCRE2_SIZE)) == 0)? (+1):(-1)];
+ 
++/* Structure for computing the alignment of heapframe. */
++
++typedef struct heapframe_align {
++  char unalign;    /* Completely unalign the current offset */
++  heapframe frame; /* Offset is its alignment */
++} heapframe_align;
++
++/* This define is the minimum alignment required for a heapframe, in bytes. */
++
++#define HEAPFRAME_ALIGNMENT offsetof(heapframe_align, frame)
++
+ /* Structure for passing "static" information around between the functions
+ doing traditional NFA matching (pcre2_match() and friends). */
+ 
+diff --git src/3rdparty/pcre2/src/pcre2_match.c src/3rdparty/pcre2/src/pcre2_match.c
+index ed60517131..a7e4a29889 100644
+--- src/3rdparty/pcre2/src/pcre2_match.c
++++ src/3rdparty/pcre2/src/pcre2_match.c
+@@ -6601,10 +6601,16 @@ the pattern. It is not used at all if there are no capturing parentheses.
+ 
+ The last of these is changed within the match() function if the frame vector
+ has to be expanded. We therefore put it into the match block so that it is
+-correct when calling match() more than once for non-anchored patterns. */
++correct when calling match() more than once for non-anchored patterns.
+ 
+-frame_size = offsetof(heapframe, ovector) +
+-  re->top_bracket * 2 * sizeof(PCRE2_SIZE);
++We must also pad frame_size for alignment to ensure subsequent frames are as
++aligned as heapframe. Whilst ovector is word-aligned due to being a PCRE2_SIZE
++array, that does not guarantee it is suitably aligned for pointers, as some
++architectures have pointers that are larger than a size_t. */
++
++frame_size = (offsetof(heapframe, ovector) +
++  re->top_bracket * 2 * sizeof(PCRE2_SIZE) + HEAPFRAME_ALIGNMENT - 1) &
++  ~(HEAPFRAME_ALIGNMENT - 1);
+ 
+ /* Limits set in the pattern override the match context only if they are
+ smaller. */
+@@ -6648,7 +6654,7 @@ mb->match_frames_top =
+ to avoid uninitialized memory read errors when it is copied to a new frame. */
+ 
+ memset((char *)(mb->match_frames) + offsetof(heapframe, ovector), 0xff,
+-  re->top_bracket * 2 * sizeof(PCRE2_SIZE));
++  frame_size - offsetof(heapframe, ovector));
+ 
+ /* Pointers to the individual character tables */
+ 
+diff --git src/3rdparty/sqlite/sqlite3.c src/3rdparty/sqlite/sqlite3.c
+index df53e437ba..0e4a0e8a87 100644
+--- src/3rdparty/sqlite/sqlite3.c
++++ src/3rdparty/sqlite/sqlite3.c
+@@ -13608,9 +13608,9 @@ struct fts5_api {
+ #if defined(HAVE_STDINT_H)   /* Use this case if we have ANSI headers */
+ # define SQLITE_INT_TO_PTR(X)  ((void*)(intptr_t)(X))
+ # define SQLITE_PTR_TO_INT(X)  ((int)(intptr_t)(X))
+-#elif defined(__PTRDIFF_TYPE__)  /* This case should work for GCC */
+-# define SQLITE_INT_TO_PTR(X)  ((void*)(__PTRDIFF_TYPE__)(X))
+-# define SQLITE_PTR_TO_INT(X)  ((int)(__PTRDIFF_TYPE__)(X))
++#elif defined(__INTPTR_TYPE__)  /* This case should work for GCC */
++# define SQLITE_INT_TO_PTR(X)  ((void*)(__INTPTR_TYPE__)(X))
++# define SQLITE_PTR_TO_INT(X)  ((int)(__INTPTR_TYPE__)(X))
+ #elif !defined(__GNUC__)       /* Works for compilers other than LLVM */
+ # define SQLITE_INT_TO_PTR(X)  ((void*)&((char*)0)[X])
+ # define SQLITE_PTR_TO_INT(X)  ((int)(((char*)X)-(char*)0))
+diff --git src/corelib/global/archdetect.cpp src/corelib/global/archdetect.cpp
+index 1d00b7f5a5..6b77cb36b1 100644
+--- src/corelib/global/archdetect.cpp
++++ src/corelib/global/archdetect.cpp
+@@ -95,7 +95,15 @@
+ #endif
+ 
+ // pointer type
+-#if defined(Q_OS_WIN64) || (defined(Q_OS_WINRT) && defined(_M_X64))
++#if defined(__CHERI_PURE_CAPABILITY__)
++#  if QT_POINTER_SIZE - 0 == 16
++#    define ARCH_POINTER "l64pc128"
++#  elif QT_POINTER_SIZE - 0 == 8
++#    define ARCH_POINTER "il32pc64"
++#  else
++#    error "Unsupported pure-capability pointer size"
++#  endif
++#elif defined(Q_OS_WIN64) || (defined(Q_OS_WINRT) && defined(_M_X64))
+ #  define ARCH_POINTER "llp64"
+ #elif defined(__LP64__) || QT_POINTER_SIZE - 0 == 8
+ #  define ARCH_POINTER "lp64"
+diff --git src/corelib/global/qglobal.cpp src/corelib/global/qglobal.cpp
+index 0efcf6ba53..093a1b231c 100644
+--- src/corelib/global/qglobal.cpp
++++ src/corelib/global/qglobal.cpp
+@@ -177,9 +177,36 @@ Q_STATIC_ASSERT_X(std::numeric_limits<float>::radix == 2,
+                   "Qt assumes binary IEEE 754 floating point");
+ 
+ // not required by the definition of size_t, but we depend on this
++#ifndef __CHERI_PURE_CAPABILITY__
+ Q_STATIC_ASSERT_X(sizeof(size_t) == sizeof(void *), "size_t and a pointer don't have the same size");
++#else
++Q_STATIC_ASSERT_X((std::is_same<qintptr, __intcap_t>::value), "Bad qintptr");
++Q_STATIC_ASSERT_X((std::is_same<quintptr, __uintcap_t>::value), "Bad quintptr");
++
++#endif
+ Q_STATIC_ASSERT(sizeof(size_t) == sizeof(qsizetype)); // implied by the definition
++#if 0
++// XXXAR: these are not the same type
+ Q_STATIC_ASSERT((std::is_same<qsizetype, qptrdiff>::value));
++#endif
++
++Q_STATIC_ASSERT_X(sizeof(quint64) == 8, "quint64 is not 64 bits!");
++Q_STATIC_ASSERT_X(sizeof(qint64) == 8, "qint64 is not 64 bits!");
++Q_STATIC_ASSERT_X(sizeof(quint32) == 4, "quint32 is not 32 bits!");
++Q_STATIC_ASSERT_X(sizeof(qint32) == 4, "qint32 is not 32 bits!");
++Q_STATIC_ASSERT_X(sizeof(quint16) == 2, "quint16 is not 16 bits!");
++Q_STATIC_ASSERT_X(sizeof(qint16) == 2, "qint16 is not 16 bits!");
++Q_STATIC_ASSERT_X(sizeof(quint8) == 1, "quint8 is not 8 bits!");
++Q_STATIC_ASSERT_X(sizeof(qint8) == 1, "qint8 is not 8 bits!");
++Q_STATIC_ASSERT_X(sizeof(qlonglong) == 8, "Qt assumes that long long is 64 bits");
++Q_STATIC_ASSERT_X(sizeof(qulonglong) == 8, "Qt assumes that unsigned long long is 64 bits");
++#if __has_feature(capabilities)
++Q_STATIC_ASSERT_X(sizeof(qregisteruint) == 8, "Qt on CHERI assumes that qregisteruint is 64 bits");
++Q_STATIC_ASSERT_X(sizeof(qptraddr) == 8, "Qt on CHERI assumes that qptraddr is 64 bits");
++#endif
++static_assert(sizeof(size_t) == sizeof(qsizetype), ""); // implied by the definition
++static_assert(sizeof(qsizetype) == sizeof(qptrdiff), "size_t and a ptrdiff_t don't have the same size");
++static_assert(sizeof(qptrdiff) == sizeof(qptraddr), ""); // implied by the definition
+ 
+ /*!
+     \class QFlag
+@@ -855,7 +882,7 @@ Q_STATIC_ASSERT((std::is_same<qsizetype, qptrdiff>::value));
+     on a system with 64-bit pointers, quintptr is a typedef for
+     quint64.
+ 
+-    Note that quintptr is unsigned. Use qptrdiff for signed values.
++    Note that quintptr is unsigned. Use qintptr for signed values.
+ 
+     \sa qptrdiff, quint32, quint64
+ */
+@@ -867,13 +894,16 @@ Q_STATIC_ASSERT((std::is_same<qsizetype, qptrdiff>::value));
+     Integral type for representing pointer differences.
+ 
+     Typedef for either qint32 or qint64. This type is guaranteed to be
+-    the same size as a pointer on all platforms supported by Qt. On a
+-    system with 32-bit pointers, quintptr is a typedef for quint32; on
++    the same size as a pointer on all platforms supported by Qt except for those
++    targeting a CHERI CPU. On a CHERI CPU qptrdiff will be the same size as the
++    size of a virtual memory address except that it is signed
++
++    On a system with 32-bit pointers, quintptr is a typedef for quint32; on
+     a system with 64-bit pointers, quintptr is a typedef for quint64.
+ 
+-    Note that qptrdiff is signed. Use quintptr for unsigned values.
++    Note that qptrdiff is signed. Use qptraddr for unsigned values.
+ 
+-    \sa quintptr, qint32, qint64
++    \sa quintptr, qint32, qint64, qptraddr
+ */
+ 
+ /*!
+diff --git src/corelib/global/qglobal.h src/corelib/global/qglobal.h
+index 12ac48f3cb..ee78837670 100644
+--- src/corelib/global/qglobal.h
++++ src/corelib/global/qglobal.h
+@@ -556,10 +556,10 @@ namespace QtPrivate {
+ 
+ 
+ /*
+-  quintptr and qptrdiff is guaranteed to be the same size as a pointer, i.e.
++  quintptr and qintptr is guaranteed to be the same size as a pointer, i.e.
+ 
+       sizeof(void *) == sizeof(quintptr)
+-      && sizeof(void *) == sizeof(qptrdiff)
++      && sizeof(void *) == sizeof(qintptr)
+ 
+   size_t and qsizetype are not guaranteed to be the same size as a pointer, but
+   they usually are.
+@@ -569,16 +569,46 @@ template <>    struct QIntegerForSize<1> { typedef quint8  Unsigned; typedef qin
+ template <>    struct QIntegerForSize<2> { typedef quint16 Unsigned; typedef qint16 Signed; };
+ template <>    struct QIntegerForSize<4> { typedef quint32 Unsigned; typedef qint32 Signed; };
+ template <>    struct QIntegerForSize<8> { typedef quint64 Unsigned; typedef qint64 Signed; };
+-#if defined(Q_CC_GNU) && defined(__SIZEOF_INT128__)
+-template <>    struct QIntegerForSize<16> { __extension__ typedef unsigned __int128 Unsigned; __extension__ typedef __int128 Signed; };
++#if defined(__CHERI_PURE_CAPABILITY__)
++template<>
++struct QIntegerForSize<sizeof(void *)>
++{
++    // typedef __uintcap_t Unsigned; typedef __intcap_t Signed;
++};
++#elif defined(Q_CC_GNU) && defined(__SIZEOF_INT128__)
++template<>
++struct QIntegerForSize<16>
++{
++    __extension__ typedef unsigned __int128 Unsigned;
++    __extension__ typedef __int128 Signed;
++};
+ #endif
+-template <class T> struct QIntegerForSizeof: QIntegerForSize<sizeof(T)> { };
++template<class T>
++struct QIntegerForSizeof : QIntegerForSize<sizeof(T)>
++{
++};
+ typedef QIntegerForSize<Q_PROCESSOR_WORDSIZE>::Signed qregisterint;
+ typedef QIntegerForSize<Q_PROCESSOR_WORDSIZE>::Unsigned qregisteruint;
+-typedef QIntegerForSizeof<void*>::Unsigned quintptr;
+-typedef QIntegerForSizeof<void*>::Signed qptrdiff;
++#ifdef __CHERI_PURE_CAPABILITY__
++// Prevent pointers
++template<class T>
++struct QIntegerForSizeof<T *> : QIntegerForSize<-sizeof(T)>
++{
++};
++typedef uintptr_t quintptr;
++typedef intptr_t qintptr;
++typedef ptrdiff_t qptrdiff;
++#else
++typedef QIntegerForSizeof<void *>::Unsigned quintptr;
++typedef QIntegerForSizeof<void *>::Signed qptrdiff;
+ typedef qptrdiff qintptr;
++#endif
+ using qsizetype = QIntegerForSizeof<std::size_t>::Signed;
++#ifdef __PTRADDR_TYPE__
++using qptraddr = __PTRADDR_TYPE__;
++#else
++using qptraddr = QIntegerForSizeof<std::ptrdiff_t>::Unsigned;
++#endif
+ 
+ /* moc compats (signals/slots) */
+ #ifndef QT_MOC_COMPAT
+@@ -990,6 +1020,44 @@ Q_CORE_EXPORT void *qMallocAligned(size_t size, size_t alignment) Q_ALLOC_SIZE(1
+ Q_CORE_EXPORT void *qReallocAligned(void *ptr, size_t size, size_t oldsize, size_t alignment) Q_ALLOC_SIZE(2);
+ Q_CORE_EXPORT void qFreeAligned(void *ptr);
+ 
++#if QT_HAS_BUILTIN(__builtin_is_aligned)
++#define qIsAligned(val, alignment) __builtin_is_aligned(val, alignment)
++#else
++template <typename T> inline bool qIsAligned(T val, size_t align) {
++  Q_ASSERT_X((align & (align - 1)) == 0, "qIsAligned",
++             "alignment was not a power of two");
++  return (val & (align - 1)) == 0;
++}
++template <typename T> inline bool qIsAligned(T *val, size_t align) {
++  return qIsAligned(reinterpret_cast<quintptr>(val), align);
++}
++#endif
++#if QT_HAS_BUILTIN(__builtin_align_down)
++#define qAlignDown(val, alignment) __builtin_align_down(val, alignment)
++#else
++template <typename T> inline T qAlignDown(T val, size_t align) {
++  Q_ASSERT_X((align & (align - 1)) == 0, "qAlignDown",
++             "alignment was not a power of two");
++  return val & ~(align - 1);
++}
++template <typename T> inline T *qAlignDown(T *val, size_t align) {
++  return reinterpret_cast<T *>(
++      qAlignDown(reinterpret_cast<quintptr>(val), align));
++}
++#endif
++#if QT_HAS_BUILTIN(__builtin_align_up)
++#define qAlignUp(val, alignment) __builtin_align_up(val, alignment)
++#else
++template <typename T> inline T qAlignUp(T val, size_t align) {
++  Q_ASSERT_X((align & (align - 1)) == 0, "qAlignDown",
++             "alignment was not a power of two");
++  return qAlignDown(val + (align - 1), align);
++}
++template <typename T> inline T *qAlignUp(T *val, size_t align) {
++  return reinterpret_cast<T *>(
++      qAlignUp(reinterpret_cast<quintptr>(val), align));
++}
++#endif
+ 
+ /*
+    Avoid some particularly useless warnings from some stupid compilers.
+@@ -1274,6 +1342,31 @@ Q_CORE_EXPORT QT_DEPRECATED_VERSION_X_5_15("use QRandomGenerator instead") void
+ Q_CORE_EXPORT QT_DEPRECATED_VERSION_X_5_15("use QRandomGenerator instead") int qrand();
+ #endif
+ 
++template<qptraddr lowBitsMask>
++inline qptraddr qGetLowPointerBits(quintptr ptr)
++{
++    Q_STATIC_ASSERT_X(lowBitsMask <= 31, "Cannot use more than the low 5 pointer bits");
++    return static_cast<qptraddr>(ptr) & lowBitsMask;
++}
++
++template<qptraddr lowBitsMask>
++inline quintptr qClearLowPointerBits(quintptr ptr)
++{
++    Q_STATIC_ASSERT_X(lowBitsMask <= 31, "Cannot use more than the low 5 pointer bits");
++    constexpr qptraddr clearingMask = ~qptraddr(lowBitsMask);
++    Q_STATIC_ASSERT(qptrdiff(clearingMask) < 0);
++    return ptr & clearingMask;
++}
++
++// This one is not a template since unlike the mask values the bits parameter
++// might not be a compile-time constant
++// XXXAR: this function is not actually needed since bitwise or works
++// as expected but I added it for symmetry.
++inline quintptr qSetLowPointerBits(quintptr ptr, qptraddr bits) {
++    Q_ASSERT(bits <= 31 && "Cannot use more than the low 5 pointer bits");
++    return ptr | bits;
++}
++
+ #define QT_MODULE(x)
+ 
+ #if !defined(QT_BOOTSTRAPPED) && defined(QT_REDUCE_RELOCATIONS) && defined(__ELF__) && \
+@@ -1290,6 +1383,16 @@ template <typename T> struct QEnableIf<true, T> { typedef T Type; };
+ 
+ QT_END_NAMESPACE
+ 
++#if __has_feature(capabilities)
++#define cheri_debug(...) fprintf(stderr, __VA_ARGS__)
++inline qptrdiff cheri_bytes_remaining(void* __capability ptr)
++{
++    return __builtin_cheri_length_get(ptr) - __builtin_cheri_offset_get(ptr);
++}
++#else
++#define cheri_debug(...)
++#endif
++
+ // We need to keep QTypeInfo, QSysInfo, QFlags, qDebug & family in qglobal.h for compatibility with Qt 4.
+ // Be careful when changing the order of these files.
+ #include <QtCore/qtypeinfo.h>
+diff --git src/corelib/global/qlogging.cpp src/corelib/global/qlogging.cpp
+index 89f49324c0..4ccbe44931 100644
+--- src/corelib/global/qlogging.cpp
++++ src/corelib/global/qlogging.cpp
+@@ -1444,7 +1444,7 @@ QString qFormatLogMessage(QtMsgType type, const QMessageLogContext &context, con
+             message.append(QString::number(qt_gettid()));
+         } else if (token == qthreadptrTokenC) {
+             message.append(QLatin1String("0x"));
+-            message.append(QString::number(qlonglong(QThread::currentThread()->currentThread()), 16));
++            message.append(QString::number((qptraddr)QThread::currentThread()->currentThread(), 16));
+ #ifdef QLOGGING_HAVE_BACKTRACE
+         } else if (token == backtraceTokenC) {
+             QMessagePattern::BacktraceParams backtraceParams = pattern->backtraceArgs.at(backtraceArgsIdx);
+diff --git src/corelib/global/qmalloc.cpp src/corelib/global/qmalloc.cpp
+index b071c1df62..feb624bf62 100644
+--- src/corelib/global/qmalloc.cpp
++++ src/corelib/global/qmalloc.cpp
+@@ -103,13 +103,15 @@ void *qReallocAligned(void *oldptr, size_t newsize, size_t oldsize, size_t align
+     // However, we need to store the actual pointer, so we need to allocate actually size +
+     // alignment anyway.
+ 
++    // XXXAR: FIXME: this will probably not work!
++    // alignment is greater than sizeof(void*) so there should be space for one void* before the return value?
++
+     void *real = realloc(actualptr, newsize + alignment);
+     if (!real)
+         return nullptr;
+ 
+-    quintptr faked = reinterpret_cast<quintptr>(real) + alignment;
+-    faked &= ~(alignment - 1);
+-    void **faked_ptr = reinterpret_cast<void **>(faked);
++    void **faked_ptr =
++            reinterpret_cast<void **>(qAlignDown(static_cast<char *>(real) + alignment, alignment));
+ 
+     if (oldptr) {
+         qptrdiff oldoffset = static_cast<char *>(oldptr) - static_cast<char *>(actualptr);
+diff --git src/corelib/global/qprocessordetection.h src/corelib/global/qprocessordetection.h
+index 8d65720850..d0967bd28c 100644
+--- src/corelib/global/qprocessordetection.h
++++ src/corelib/global/qprocessordetection.h
+@@ -392,10 +392,15 @@
+    the size of the register). On some architectures where a pointer could be
+    smaller than the register, the macro is defined above.
+ 
+-   Falls back to QT_POINTER_SIZE if not set explicitly for the platform.
++   Falls back to __SIZEOF_SIZE_T__ then QT_POINTER_SIZE if not set explicitly
++   for the platform.
+ */
+ #ifndef Q_PROCESSOR_WORDSIZE
+-#  define Q_PROCESSOR_WORDSIZE        QT_POINTER_SIZE
++#  if defined __SIZEOF_SIZE_T__
++#    define Q_PROCESSOR_WORDSIZE    __SIZEOF_SIZE_T__
++#  else
++#    define Q_PROCESSOR_WORDSIZE    QT_POINTER_SIZE
++#  endif
+ #endif
+ 
+ 
+diff --git src/corelib/global/qrandom.cpp src/corelib/global/qrandom.cpp
+index 25f87c7e6a..81c8a05557 100644
+--- src/corelib/global/qrandom.cpp
++++ src/corelib/global/qrandom.cpp
+@@ -1188,8 +1188,8 @@ bool operator==(const QRandomGenerator &rng1, const QRandomGenerator &rng2)
+ void QRandomGenerator::_fillRange(void *buffer, void *bufferEnd)
+ {
+     // Verify that the pointers are properly aligned for 32-bit
+-    Q_ASSERT(quintptr(buffer) % sizeof(quint32) == 0);
+-    Q_ASSERT(quintptr(bufferEnd) % sizeof(quint32) == 0);
++    Q_ASSERT(qIsAligned(buffer, sizeof(quint32)));
++    Q_ASSERT(qIsAligned(bufferEnd, sizeof(quint32)));
+     quint32 *begin = static_cast<quint32 *>(buffer);
+     quint32 *end = static_cast<quint32 *>(bufferEnd);
+ 
+diff --git src/corelib/global/qtypeinfo.h src/corelib/global/qtypeinfo.h
+index 30be47296e..7eff995401 100644
+--- src/corelib/global/qtypeinfo.h
++++ src/corelib/global/qtypeinfo.h
+@@ -330,6 +330,11 @@ Q_DECLARE_TYPEINFO(qint64, Q_PRIMITIVE_TYPE);
+ Q_DECLARE_TYPEINFO(quint64, Q_PRIMITIVE_TYPE);
+ Q_DECLARE_TYPEINFO(float, Q_PRIMITIVE_TYPE);
+ Q_DECLARE_TYPEINFO(double, Q_PRIMITIVE_TYPE);
++#if __has_feature(capabilities)
++// XXXAR: possibly isPointer should be true here
++Q_DECLARE_TYPEINFO(__intcap_t, Q_PRIMITIVE_TYPE);
++Q_DECLARE_TYPEINFO(__uintcap_t, Q_PRIMITIVE_TYPE);
++#endif
+ 
+ #if QT_VERSION >= QT_VERSION_CHECK(6,0,0)
+ // ### Qt 6: remove the other branch
+diff --git src/corelib/io/qdebug.h src/corelib/io/qdebug.h
+index 421c5d933b..f801773282 100644
+--- src/corelib/io/qdebug.h
++++ src/corelib/io/qdebug.h
+@@ -166,6 +166,10 @@ public:
+     inline QDebug &operator<<(const QByteArray & t) { putByteArray(t.constData(), t.size(), ContainsBinary); return maybeSpace(); }
+     inline QDebug &operator<<(const void * t) { stream->ts << t; return maybeSpace(); }
+     inline QDebug &operator<<(std::nullptr_t) { stream->ts << "(nullptr)"; return maybeSpace(); }
++#if defined(__CHERI__)
++    inline QDebug &operator<<(__intcap_t t) { stream->ts << t; return maybeSpace(); }
++    inline QDebug &operator<<(__uintcap_t t) { stream->ts << t; return maybeSpace(); }
++#endif
+     inline QDebug &operator<<(QTextStreamFunction f) {
+         stream->ts << f;
+         return *this;
+diff --git src/corelib/io/qfilesystemmetadata_p.h src/corelib/io/qfilesystemmetadata_p.h
+index 3154658e5c..80894d2d41 100644
+--- src/corelib/io/qfilesystemmetadata_p.h
++++ src/corelib/io/qfilesystemmetadata_p.h
+@@ -75,11 +75,6 @@ class QFileSystemEngine;
+ class Q_AUTOTEST_EXPORT QFileSystemMetaData
+ {
+ public:
+-    QFileSystemMetaData()
+-        : size_(-1)
+-    {
+-    }
+-
+     enum MetaDataFlag {
+         // Permissions, overlaps with QFile::Permissions
+         OtherReadPermission = 0x00000004,   OtherWritePermission = 0x00000002,  OtherExecutePermission = 0x00000001,
+@@ -242,27 +237,27 @@ public:
+ private:
+     friend class QFileSystemEngine;
+ 
+-    MetaDataFlags knownFlagsMask;
+-    MetaDataFlags entryFlags;
++    MetaDataFlags knownFlagsMask = {};
++    MetaDataFlags entryFlags = {};
+ 
+-    qint64 size_;
++    qint64 size_ = Q_INT64_C(-1);
+ 
+     // Platform-specific data goes here:
+ #if defined(Q_OS_WIN)
+-    DWORD fileAttribute_;
+-    FILETIME birthTime_;
+-    FILETIME changeTime_;
+-    FILETIME lastAccessTime_;
+-    FILETIME lastWriteTime_;
++    DWORD fileAttribute_ = 0;
++    FILETIME birthTime_ = 0;
++    FILETIME changeTime_ = 0;
++    FILETIME lastAccessTime_ = 0;
++    FILETIME lastWriteTime_ = 0;
+ #else
+     // msec precision
+-    qint64 accessTime_;
+-    qint64 birthTime_;
+-    qint64 metadataChangeTime_;
+-    qint64 modificationTime_;
++    qint64 accessTime_ = 0;
++    qint64 birthTime_ = 0;
++    qint64 metadataChangeTime_ = 0;
++    qint64 modificationTime_ = 0;
+ 
+-    uint userId_;
+-    uint groupId_;
++    uint userId_ = 0;
++    uint groupId_ = 0;
+ #endif
+ 
+ };
+diff --git src/corelib/io/qfilesystemwatcher_kqueue.cpp src/corelib/io/qfilesystemwatcher_kqueue.cpp
+index 06383a103a..0b2d5eec19 100644
+--- src/corelib/io/qfilesystemwatcher_kqueue.cpp
++++ src/corelib/io/qfilesystemwatcher_kqueue.cpp
+@@ -105,7 +105,8 @@ QStringList QKqueueFileSystemWatcherEngine::addPaths(const QStringList &paths,
+         fd = qt_safe_open(QFile::encodeName(path), O_RDONLY);
+ #endif
+         if (fd == -1) {
+-            perror("QKqueueFileSystemWatcherEngine::addPaths: open");
++            qWarning("QKqueueFileSystemWatcherEngine::addPaths(%s): open: %s", qPrintable(path),
++                     strerror(errno));
+             continue;
+         }
+         if (fd >= (int)FD_SETSIZE / 2 && fd < (int)FD_SETSIZE) {
+@@ -118,7 +119,8 @@ QStringList QKqueueFileSystemWatcherEngine::addPaths(const QStringList &paths,
+ 
+         QT_STATBUF st;
+         if (QT_FSTAT(fd, &st) == -1) {
+-            perror("QKqueueFileSystemWatcherEngine::addPaths: fstat");
++            qWarning("QKqueueFileSystemWatcherEngine::addPaths(%s): fstat: %s", qPrintable(path),
++                     strerror(errno));
+             ::close(fd);
+             continue;
+         }
+@@ -144,7 +146,8 @@ QStringList QKqueueFileSystemWatcherEngine::addPaths(const QStringList &paths,
+                0,
+                0);
+         if (kevent(kqfd, &kev, 1, 0, 0, 0) == -1) {
+-            perror("QKqueueFileSystemWatcherEngine::addPaths: kevent");
++            qWarning("QKqueueFileSystemWatcherEngine::addPaths(%s): kevent: %s", qPrintable(path),
++                     strerror(errno));
+             ::close(fd);
+             continue;
+         }
+@@ -203,13 +206,14 @@ void QKqueueFileSystemWatcherEngine::readFromKqueue()
+         struct timespec ts = { 0, 0 }; // 0 ts, because we want to poll
+         EINTR_LOOP(r, kevent(kqfd, 0, 0, &kev, 1, &ts));
+         if (r < 0) {
+-            perror("QKqueueFileSystemWatcherEngine: error during kevent wait");
++            qWarning("QKqueueFileSystemWatcherEngine: error during kevent wait: %s",
++                     strerror(errno));
+             return;
+         } else if (r == 0) {
+             // polling returned no events, so stop
+             break;
+         } else {
+-            int fd = kev.ident;
++            int fd = (int)kev.ident;
+ 
+             DEBUG() << "QKqueueFileSystemWatcherEngine: processing kevent" << kev.ident << kev.filter;
+ 
+diff --git src/corelib/io/qstandardpaths_mac.mm src/corelib/io/qstandardpaths_mac.mm
+index 11b5cc8c37..a9b28f2739 100644
+--- src/corelib/io/qstandardpaths_mac.mm
++++ src/corelib/io/qstandardpaths_mac.mm
+@@ -184,6 +184,24 @@ QStringList QStandardPaths::standardLocations(StandardLocation type)
+         dirs << writableLocation(PicturesLocation) << QLatin1String("assets-library://");
+ #endif
+ 
++#if !defined(QT_BOOTSTRAPPED) && defined(Q_OS_MACOS)
++#ifdef QT_STANDARDPATHS_ADDITIONAL_DATADIRS
++    if (type == AppDataLocation || type == AppLocalDataLocation || type == GenericDataLocation) {
++        QStringList extraDataDirs;
++        // Add the value of -additional-datadir configure argument to the list.
++        // This allows e.g. homebrew to use a Qt build that is configured to search
++        // for generic data in /usr/local/share instead of requiring it to be in
++        // /Library/Application Support which is not writable from the homebrew sandbox.
++        extraDataDirs = QStringList(QT_STANDARDPATHS_ADDITIONAL_DATADIRS);
++        if (type == AppDataLocation || type == AppLocalDataLocation) {
++            for (QString &dir : extraDataDirs)
++                appendOrganizationAndApp(dir);
++        }
++        dirs << extraDataDirs;
++    }
++#endif
++#endif
++
+     if (type == GenericDataLocation || type == FontsLocation || type == ApplicationsLocation
+             || type == AppDataLocation || type == AppLocalDataLocation
+             || type == GenericCacheLocation || type == CacheLocation) {
+diff --git src/corelib/kernel/qcoreapplication.cpp src/corelib/kernel/qcoreapplication.cpp
+index 132b2eae52..7982d82c45 100644
+--- src/corelib/kernel/qcoreapplication.cpp
++++ src/corelib/kernel/qcoreapplication.cpp
+@@ -112,6 +112,7 @@
+ 
+ #ifdef Q_OS_UNIX
+ #  include <locale.h>
++#  include <langinfo.h>
+ #  include <unistd.h>
+ #  include <sys/types.h>
+ #endif
+@@ -338,9 +339,6 @@ void Q_CORE_EXPORT qt_call_post_routines()
+ }
+ 
+ 
+-// initialized in qcoreapplication and in qtextstream autotest when setlocale is called.
+-static bool qt_locale_initialized = false;
+-
+ #ifndef QT_NO_QOBJECT
+ 
+ // app starting up if false
+@@ -590,11 +588,45 @@ QString qAppName()
+ 
+ void QCoreApplicationPrivate::initLocale()
+ {
++#if defined(Q_OS_UNIX) && !defined(QT_BOOTSTRAPPED)
++    static bool qt_locale_initialized = false;
+     if (qt_locale_initialized)
+         return;
+     qt_locale_initialized = true;
+-#if defined(Q_OS_UNIX) && !defined(QT_BOOTSTRAPPED)
+-    setlocale(LC_ALL, "");
++
++#ifdef Q_OS_ANDROID
++    // Android's Bionic didn't get nl_langinfo until NDK 15 (Android 8.0),
++    // which is too new for Qt, so we just assume it's always UTF-8.
++    auto nl_langinfo = [](int) { return "UTF-8"; };
++#endif
++
++    const char *locale = setlocale(LC_ALL, "");
++    const char *codec = nl_langinfo(CODESET);
++    if (Q_UNLIKELY(strcmp(codec, "UTF-8") != 0 && strcmp(codec, "utf8") != 0)) {
++        QByteArray oldLocale = locale;
++        QByteArray newLocale = setlocale(LC_CTYPE, nullptr);
++        if (int dot = newLocale.indexOf('.'); dot != -1)
++            newLocale.truncate(dot);    // remove encoding, if any
++        if (int at = newLocale.indexOf('@'); at != -1)
++            newLocale.truncate(at);     // remove variant, as the old de_DE@euro
++        newLocale += ".UTF-8";
++        newLocale = setlocale(LC_CTYPE, newLocale);
++
++        // if locale doesn't exist, try some fallbacks
++#  ifdef Q_OS_DARWIN
++        if (newLocale.isEmpty())
++            newLocale = setlocale(LC_CTYPE, "UTF-8");
++#  endif
++        if (newLocale.isEmpty())
++            newLocale = setlocale(LC_CTYPE, "C.UTF-8");
++        if (newLocale.isEmpty())
++            newLocale = setlocale(LC_CTYPE, "C.utf8");
++
++        qWarning("Detected system locale encoding (%s, locale \"%s\") is not UTF-8.\n"
++                 "Qt shall use a UTF-8 locale (\"%s\") instead. If this causes problems,\n"
++                 "reconfigure your locale. See the locale(1) manual for more information.",
++                 codec, oldLocale.constData(), newLocale.constData());
++    }
+ #endif
+ }
+ 
+diff --git src/corelib/kernel/qelapsedtimer_unix.cpp src/corelib/kernel/qelapsedtimer_unix.cpp
+index ccc2eeafa3..d0530ef33e 100644
+--- src/corelib/kernel/qelapsedtimer_unix.cpp
++++ src/corelib/kernel/qelapsedtimer_unix.cpp
+@@ -114,9 +114,9 @@ static inline void qt_clock_gettime(clockid_t clock, struct timespec *ts)
+ 
+ static int unixCheckClockType()
+ {
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
+     // Despite glibc claiming that we should check at runtime, the Linux kernel
+-    // always supports the monotonic clock
++    // always supports the monotonic clock. FreeBSD also always supports it.
+     return CLOCK_MONOTONIC;
+ #elif (_POSIX_MONOTONIC_CLOCK-0 == 0) && defined(_SC_MONOTONIC_CLOCK)
+     // we need a value we can store in a clockid_t that isn't a valid clock
+diff --git src/corelib/kernel/qeventdispatcher_unix.cpp src/corelib/kernel/qeventdispatcher_unix.cpp
+index 0165ce9075..0bc8b142e7 100644
+--- src/corelib/kernel/qeventdispatcher_unix.cpp
++++ src/corelib/kernel/qeventdispatcher_unix.cpp
+@@ -395,7 +395,7 @@ QEventDispatcherUNIX::registeredTimers(QObject *object) const
+ void QEventDispatcherUNIX::registerSocketNotifier(QSocketNotifier *notifier)
+ {
+     Q_ASSERT(notifier);
+-    int sockfd = notifier->socket();
++    int sockfd = static_cast<int>(notifier->socket());
+     QSocketNotifier::Type type = notifier->type();
+ #ifndef QT_NO_DEBUG
+     if (notifier->thread() != thread() || thread() != QThread::currentThread()) {
+@@ -417,7 +417,7 @@ void QEventDispatcherUNIX::registerSocketNotifier(QSocketNotifier *notifier)
+ void QEventDispatcherUNIX::unregisterSocketNotifier(QSocketNotifier *notifier)
+ {
+     Q_ASSERT(notifier);
+-    int sockfd = notifier->socket();
++    int sockfd = static_cast<int>(notifier->socket());
+     QSocketNotifier::Type type = notifier->type();
+ #ifndef QT_NO_DEBUG
+     if (notifier->thread() != thread() || thread() != QThread::currentThread()) {
+diff --git src/corelib/kernel/qmetaobject.cpp src/corelib/kernel/qmetaobject.cpp
+index 47fcada302..c333a7ebd6 100644
+--- src/corelib/kernel/qmetaobject.cpp
++++ src/corelib/kernel/qmetaobject.cpp
+@@ -178,7 +178,7 @@ static inline QByteArray typeNameFromTypeInfo(const QMetaObject *mo, uint typeIn
+     } else {
+         // ### Use the QMetaType::typeName() that returns QByteArray
+         const char *t = QMetaType::typeName(typeInfo);
+-        return QByteArray::fromRawData(t, qstrlen(t));
++        return t ? QByteArray::fromNulTerminatedRawData(t, qstrlen(t)) : QByteArray();
+     }
+ }
+ 
+diff --git src/corelib/kernel/qmetaobjectbuilder.cpp src/corelib/kernel/qmetaobjectbuilder.cpp
+index 0f018074e4..a7dcf41de6 100644
+--- src/corelib/kernel/qmetaobjectbuilder.cpp
++++ src/corelib/kernel/qmetaobjectbuilder.cpp
+@@ -1149,7 +1149,7 @@ static void writeString(char *out, int i, const QByteArray &str,
+ // moc (see generator.cpp).
+ void QMetaStringTable::writeBlob(char *out) const
+ {
+-    Q_ASSERT(!(reinterpret_cast<quintptr>(out) & (preferredAlignment()-1)));
++    Q_ASSERT(qIsAligned(out, preferredAlignment()));
+ 
+     int offsetOfStringdataMember = m_entries.size() * sizeof(QByteArrayData);
+     int stringdataOffset = 0;
+diff --git src/corelib/kernel/qmetatype.cpp src/corelib/kernel/qmetatype.cpp
+index 21254108e3..241f35bd51 100644
+--- src/corelib/kernel/qmetatype.cpp
++++ src/corelib/kernel/qmetatype.cpp
+@@ -936,13 +936,29 @@ template <int... TypeIds> struct MetaTypeOffsets<QtPrivate::IndexesList<TypeIds.
+ #endif
+     }
+ 
++    static constexpr short calculateSizeForIdx(int i) { return i < 0 ? -1 : metaTypeNameSizes[i]; }
++    static constexpr short calculateSizeForTypeId(int typeId)
++    {
++        return calculateSizeForIdx(findTypeId(typeId));
++    }
++
+     short offsets[sizeof...(TypeIds)];
+-    constexpr MetaTypeOffsets() : offsets{calculateOffsetForTypeId(TypeIds)...} {}
++    short sizes[sizeof...(TypeIds)];
++    constexpr MetaTypeOffsets()
++        : offsets { calculateOffsetForTypeId(TypeIds)... },
++          sizes { calculateSizeForTypeId(TypeIds)... }
++    {
++    }
+ 
+     const char *operator[](int typeId) const noexcept
+     {
+         short o = offsets[typeId];
++#ifdef __CHERI_PURE_CAPABILITY__
++        // For CHERI, we set bounds on the constant string data.
++        return o < 0 ? nullptr : __builtin_cheri_bounds_set(metaTypeStrings + o, sizes[typeId]);
++#else
+         return o < 0 ? nullptr : metaTypeStrings + o;
++#endif
+     }
+ };
+ } // anonymous namespace
+diff --git src/corelib/kernel/qmetatype.h src/corelib/kernel/qmetatype.h
+index 7c22ff1693..5d9b247075 100644
+--- src/corelib/kernel/qmetatype.h
++++ src/corelib/kernel/qmetatype.h
+@@ -91,8 +91,20 @@ inline Q_DECL_CONSTEXPR int qMetaTypeId();
+     F(Nullptr, 51, std::nullptr_t) \
+     F(QCborSimpleType, 52, QCborSimpleType) \
+ 
++#if __has_feature(capabilities)
++// We use the last two values before the GUI types for (u)intcap.
++// Note: there needs to be at least one unused type between Core and GUI types,
++// so we can't use 63.
++#define QT_FOR_EACH_STATIC_PRIMITIVE_CAPABILITY_TYPE(F) \
++    F(IntCap, 61, __intcap_t) \
++    F(UIntCap, 62, __uintcap_t)
++#else
++#define QT_FOR_EACH_STATIC_PRIMITIVE_CAPABILITY_TYPE(F)
++#endif
++
+ #define QT_FOR_EACH_STATIC_PRIMITIVE_POINTER(F)\
+     F(VoidStar, 31, void*) \
++    QT_FOR_EACH_STATIC_PRIMITIVE_CAPABILITY_TYPE(F) \
+ 
+ #if QT_CONFIG(easingcurve)
+ #define QT_FOR_EACH_STATIC_EASINGCURVE(F)\
+@@ -436,7 +448,11 @@ public:
+         QT_FOR_EACH_STATIC_TYPE(QT_DEFINE_METATYPE_ID)
+ 
+         FirstCoreType = Bool,
++#if __has_feature(capabilities)
++        LastCoreType = UIntCap,
++#else
+         LastCoreType = QCborMap,
++#endif
+         FirstGuiType = QFont,
+         LastGuiType = QColorSpace,
+         FirstWidgetsType = QSizePolicy,
+diff --git src/corelib/kernel/qobject_p.h src/corelib/kernel/qobject_p.h
+index 66c19d174e..594f56ae69 100644
+--- src/corelib/kernel/qobject_p.h
++++ src/corelib/kernel/qobject_p.h
+@@ -136,12 +136,12 @@ public:
+         };
+ 
+         static SignalVector *asSignalVector(ConnectionOrSignalVector *c) {
+-            if (reinterpret_cast<quintptr>(c) & 1)
+-                return reinterpret_cast<SignalVector *>(reinterpret_cast<quintptr>(c) & ~quintptr(1u));
++            if (reinterpret_cast<qptraddr>(c) & 1)
++                return reinterpret_cast<SignalVector *>(reinterpret_cast<quintptr>(c) & ~qptraddr(1u));
+             return nullptr;
+         }
+         static Connection *fromSignalVector(SignalVector *v) {
+-            return reinterpret_cast<Connection *>(reinterpret_cast<quintptr>(v) | quintptr(1u));
++            return reinterpret_cast<Connection *>(reinterpret_cast<quintptr>(v) | qptraddr(1u));
+         }
+     };
+ 
+@@ -297,7 +297,8 @@ public:
+             SignalVector *newVector = reinterpret_cast<SignalVector *>(malloc(sizeof(SignalVector) + (size + 1) * sizeof(ConnectionList)));
+             int start = -1;
+             if (vector) {
+-                memcpy(newVector, vector, sizeof(SignalVector) + (vector->allocated + 1) * sizeof(ConnectionList));
++                memcpy(newVector, vector,
++                       sizeof(SignalVector) + (vector->count() + 1) * sizeof(ConnectionList));
+                 start = vector->count();
+             }
+             for (int i = start; i < int(size); ++i)
+diff --git src/corelib/kernel/qsocketnotifier.cpp src/corelib/kernel/qsocketnotifier.cpp
+index 6e1d2103bd..ac84009bc6 100644
+--- src/corelib/kernel/qsocketnotifier.cpp
++++ src/corelib/kernel/qsocketnotifier.cpp
+@@ -156,7 +156,7 @@ QSocketNotifier::QSocketNotifier(qintptr socket, Type type, QObject *parent)
+     qRegisterMetaType<QSocketDescriptor>();
+     qRegisterMetaType<QSocketNotifier::Type>();
+ 
+-    d->sockfd = socket;
++    d->sockfd = QSocketDescriptor::DescriptorType(socket);
+     d->sntype = type;
+     d->snenabled = true;
+ 
+diff --git src/corelib/kernel/qvariant.cpp src/corelib/kernel/qvariant.cpp
+index 3be9a02248..b8191c6cb0 100644
+--- src/corelib/kernel/qvariant.cpp
++++ src/corelib/kernel/qvariant.cpp
+@@ -170,6 +170,10 @@ static qlonglong qMetaTypeNumber(const QVariant::Private *d)
+         return qRound64(d->data.f);
+     case QMetaType::Double:
+         return qRound64(d->data.d);
++#if __has_feature(capabilities)
++    case QMetaType::IntCap:
++        return (qlonglong)d->data.intcap;
++#endif
+ #ifndef QT_BOOTSTRAPPED
+     case QMetaType::QJsonValue:
+         return v_cast<QJsonValue>(d)->toDouble();
+@@ -194,11 +198,23 @@ static qulonglong qMetaTypeUNumber(const QVariant::Private *d)
+         return d->data.us;
+     case QMetaType::ULong:
+         return d->data.ul;
++#if __has_feature(capabilities)
++    case QMetaType::UIntCap:
++        return (qlonglong)d->data.uintcap;
++#endif
+     }
+     Q_ASSERT(false);
+     return 0;
+ }
+ 
++#if __has_feature(capabilities)
++#define CASE_CHERI_INTCAP case QMetaType::IntCap:
++#define CASE_CHERI_UINTCAP case QMetaType::UIntCap:
++#else
++#define CASE_CHERI_INTCAP
++#define CASE_CHERI_UINTCAP
++#endif
++
+ static qlonglong qConvertToNumber(const QVariant::Private *d, bool *ok)
+ {
+     *ok = true;
+@@ -230,13 +246,14 @@ static qlonglong qConvertToNumber(const QVariant::Private *d, bool *ok)
+     case QMetaType::Long:
+     case QMetaType::Float:
+     case QMetaType::LongLong:
++    CASE_CHERI_INTCAP
+         return qMetaTypeNumber(d);
+     case QMetaType::ULongLong:
+     case QMetaType::UInt:
+     case QMetaType::UChar:
+     case QMetaType::UShort:
+     case QMetaType::ULong:
+-
++    CASE_CHERI_UINTCAP
+         return qlonglong(qMetaTypeUNumber(d));
+     }
+ 
+@@ -317,12 +334,14 @@ static qulonglong qConvertToUnsignedNumber(const QVariant::Private *d, bool *ok)
+     case QMetaType::Long:
+     case QMetaType::Float:
+     case QMetaType::LongLong:
++    CASE_CHERI_INTCAP
+         return qulonglong(qMetaTypeNumber(d));
+     case QMetaType::ULongLong:
+     case QMetaType::UInt:
+     case QMetaType::UChar:
+     case QMetaType::UShort:
+     case QMetaType::ULong:
++    CASE_CHERI_UINTCAP
+         return qMetaTypeUNumber(d);
+     }
+ 
+@@ -457,12 +476,14 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+         case QMetaType::Long:
+         case QMetaType::Int:
+         case QMetaType::LongLong:
++        CASE_CHERI_INTCAP
+             *str = QString::number(qMetaTypeNumber(d));
+             break;
+         case QMetaType::UInt:
+         case QMetaType::ULongLong:
+         case QMetaType::UShort:
+         case QMetaType::ULong:
++        CASE_CHERI_UINTCAP
+             *str = QString::number(qMetaTypeUNumber(d));
+             break;
+         case QMetaType::Float:
+@@ -486,7 +507,7 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+             *str = d->data.b ? QStringLiteral("true") : QStringLiteral("false");
+             break;
+         case QMetaType::QByteArray:
+-            *str = QString::fromUtf8(v_cast<QByteArray>(d)->constData());
++            *str = QString::fromUtf8(*v_cast<QByteArray>(d));
+             break;
+         case QMetaType::QStringList:
+             if (v_cast<QStringList>(d)->count() == 1)
+@@ -538,6 +559,7 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+         case QMetaType::Short:
+         case QMetaType::Long:
+         case QMetaType::Float:
++        CASE_CHERI_INTCAP
+             *c = QChar(ushort(qMetaTypeNumber(d)));
+             break;
+         case QMetaType::UInt:
+@@ -545,6 +567,7 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+         case QMetaType::UChar:
+         case QMetaType::UShort:
+         case QMetaType::ULong:
++        CASE_CHERI_UINTCAP
+             *c = QChar(ushort(qMetaTypeUNumber(d)));
+             break;
+         default:
+@@ -690,12 +713,14 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+         case QMetaType::LongLong:
+         case QMetaType::Short:
+         case QMetaType::Long:
++        CASE_CHERI_INTCAP
+             *ba = QByteArray::number(qMetaTypeNumber(d));
+             break;
+         case QMetaType::UInt:
+         case QMetaType::ULongLong:
+         case QMetaType::UShort:
+         case QMetaType::ULong:
++        CASE_CHERI_UINTCAP
+             *ba = QByteArray::number(qMetaTypeUNumber(d));
+             break;
+         case QMetaType::Bool:
+@@ -763,6 +788,34 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+         *static_cast<uchar *>(result) = qConvertToUnsignedNumber(d, ok);
+         return *ok;
+     }
++#if __has_feature(capabilities)
++    case QMetaType::IntCap: {
++      switch (d->type) {
++      case QMetaType::IntCap:
++        *static_cast<__intcap_t *>(result) = d->data.intcap;
++        return true;
++      case QMetaType::UIntCap:
++        *static_cast<__intcap_t *>(result) = d->data.uintcap;
++        return true;
++      default:
++          *static_cast<__intcap_t *>(result) = qConvertToNumber(d, ok);
++          return *ok;
++      }
++    }
++    case QMetaType::UIntCap: {
++      switch (d->type) {
++      case QMetaType::IntCap:
++        *static_cast<__uintcap_t *>(result) = d->data.intcap;
++        return true;
++      case QMetaType::UIntCap:
++        *static_cast<__uintcap_t *>(result) = d->data.uintcap;
++        return true;
++      default:
++          *static_cast<__uintcap_t *>(result) = qConvertToUnsignedNumber(d, ok);
++          return *ok;
++      }
++    }
++#endif
+     case QMetaType::Bool: {
+         bool *b = static_cast<bool *>(result);
+         switch(d->type) {
+@@ -783,6 +836,7 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+         case QMetaType::Short:
+         case QMetaType::Long:
+         case QMetaType::Float:
++        CASE_CHERI_INTCAP
+             *b = qMetaTypeNumber(d) != Q_INT64_C(0);
+             break;
+         case QMetaType::UInt:
+@@ -790,6 +844,7 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+         case QMetaType::UChar:
+         case QMetaType::UShort:
+         case QMetaType::ULong:
++        CASE_CHERI_UINTCAP
+             *b = qMetaTypeUNumber(d) != Q_UINT64_C(0);
+             break;
+ #ifndef QT_BOOTSTRAPPED
+@@ -831,6 +886,7 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+         case QMetaType::SChar:
+         case QMetaType::Short:
+         case QMetaType::Long:
++        CASE_CHERI_INTCAP
+             *f = double(qMetaTypeNumber(d));
+             break;
+         case QMetaType::UInt:
+@@ -838,6 +894,7 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+         case QMetaType::UChar:
+         case QMetaType::UShort:
+         case QMetaType::ULong:
++        CASE_CHERI_UINTCAP
+             *f = double(qMetaTypeUNumber(d));
+             break;
+ #ifndef QT_BOOTSTRAPPED
+@@ -879,6 +936,7 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+         case QMetaType::SChar:
+         case QMetaType::Short:
+         case QMetaType::Long:
++        CASE_CHERI_INTCAP
+             *f = float(qMetaTypeNumber(d));
+             break;
+         case QMetaType::UInt:
+@@ -886,6 +944,7 @@ static bool convert(const QVariant::Private *d, int t, void *result, bool *ok)
+         case QMetaType::UChar:
+         case QMetaType::UShort:
+         case QMetaType::ULong:
++        CASE_CHERI_UINTCAP
+             *f = float(qMetaTypeUNumber(d));
+             break;
+ #ifndef QT_BOOTSTRAPPED
+@@ -2168,6 +2227,15 @@ QVariant::QVariant(float val)
+     : d(QMetaType::Float)
+ { d.data.f = val; }
+ 
++#if __has_feature(capabilities)
++QVariant::QVariant(__intcap_t val)
++    : d(QMetaType::IntCap)
++{ d.data.intcap = val; }
++QVariant::QVariant(__uintcap_t val)
++    : d(QMetaType::UIntCap)
++{ d.data.uintcap = val; }
++#endif
++
+ QVariant::QVariant(const QByteArray &val)
+     : d(ByteArray)
+ { v_construct<QByteArray>(&d, val); }
+diff --git src/corelib/kernel/qvariant.h src/corelib/kernel/qvariant.h
+index 24657818c5..e32042cfe2 100644
+--- src/corelib/kernel/qvariant.h
++++ src/corelib/kernel/qvariant.h
+@@ -223,6 +223,10 @@ class Q_CORE_EXPORT QVariant
+     QVariant(bool b);
+     QVariant(double d);
+     QVariant(float f);
++#if __has_feature(capabilities)
++    QVariant(__intcap_t c);
++    QVariant(__uintcap_t c);
++#endif
+ #ifndef QT_NO_CAST_FROM_ASCII
+     QT_ASCII_CAST_WARN QVariant(const char *str);
+ #endif
+@@ -427,6 +431,10 @@ class Q_CORE_EXPORT QVariant
+             qulonglong ull;
+             QObject *o;
+             void *ptr;
++#if __has_feature(capabilities)
++            __intcap_t intcap;
++            __uintcap_t uintcap;
++#endif
+             PrivateShared *shared;
+         } data;
+         uint type : 30;
+diff --git src/corelib/mimetypes/mime/generate.pl src/corelib/mimetypes/mime/generate.pl
+index 4f2d7d5f2b..88b07e792d 100644
+--- src/corelib/mimetypes/mime/generate.pl
++++ src/corelib/mimetypes/mime/generate.pl
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/local64/bin/perl
+ #############################################################################
+ ##
+ ## Copyright (C) 2019 Intel Corporation.
+diff --git src/corelib/mimetypes/mime/packages/freedesktop.org.xml src/corelib/mimetypes/mime/packages/freedesktop.org.xml
+index e73929c9bb..c4867356fc 100644
+--- src/corelib/mimetypes/mime/packages/freedesktop.org.xml
++++ src/corelib/mimetypes/mime/packages/freedesktop.org.xml
+@@ -18713,9 +18713,9 @@ command to generate the output files.
+     <generic-icon name="text-x-script"/>
+     <alias type="text/x-perl"/>
+     <magic priority="50">
+-      <match type="string" value="eval \&quot;exec /usr/local/bin/perl" offset="0"/>
+-      <match type="string" value="/bin/perl" offset="2:16"/>
+-      <match type="string" value="/bin/env perl" offset="2:16"/>
++      <match type="string" value="eval \&quot;exec /usr/local64/bin/perl" offset="0"/>
++      <match type="string" value="/usr/local64/bin/perl" offset="2:16"/>
++      <match type="string" value="/usr/local64/bin/perl" offset="2:16"/>
+       <match type="string" value="use Test::" offset="0:256"/>
+       <match type="string" value="BEGIN {" offset="0:256"/>
+     </magic>
+diff --git src/corelib/mimetypes/qmimedatabase.cpp src/corelib/mimetypes/qmimedatabase.cpp
+index ff868a3268..2fc671d268 100644
+--- src/corelib/mimetypes/qmimedatabase.cpp
++++ src/corelib/mimetypes/qmimedatabase.cpp
+@@ -60,6 +60,11 @@
+ 
+ QT_BEGIN_NAMESPACE
+ 
++namespace QtPrivate {
++Q_LOGGING_CATEGORY(lcMimeDatabase, "qt.core.mimedatabase");
++}
++using namespace QtPrivate;
++
+ Q_GLOBAL_STATIC(QMimeDatabasePrivate, staticQMimeDatabase)
+ 
+ QMimeDatabasePrivate *QMimeDatabasePrivate::instance()
+@@ -102,8 +107,15 @@ void QMimeDatabasePrivate::loadProviders()
+     const auto fdoIterator = std::find_if(mimeDirs.constBegin(), mimeDirs.constEnd(), [](const QString &mimeDir) -> bool {
+         return QFileInfo::exists(mimeDir + QStringLiteral("/packages/freedesktop.org.xml")); }
+     );
+-    const bool needInternalDB = QMimeXMLProvider::InternalDatabaseAvailable && fdoIterator == mimeDirs.constEnd();
+-    //qDebug() << "mime dirs:" << mimeDirs;
++    const bool needInternalDB =
++            QMimeXMLProvider::InternalDatabaseAvailable && fdoIterator == mimeDirs.constEnd();
++    if (mimeDirs.isEmpty()) {
++        qCWarning(lcMimeDatabase) << "Could not find any mime/ directories in "
++                                  << QStandardPaths::standardLocations(
++                                             QStandardPaths::GenericDataLocation);
++    } else {
++        qCDebug(lcMimeDatabase) << "mime dirs:" << mimeDirs;
++    }
+ 
+     Providers currentProviders;
+     std::swap(m_providers, currentProviders);
+@@ -124,7 +136,7 @@ void QMimeDatabasePrivate::loadProviders()
+ #if defined(QT_USE_MMAP)
+             if (qEnvironmentVariableIsEmpty("QT_NO_MIME_CACHE") && fileInfo.exists()) {
+                 provider.reset(new QMimeBinaryProvider(this, mimeDir));
+-                //qDebug() << "Created binary provider for" << mimeDir;
++                qCDebug(lcMimeDatabase) << "Created binary provider for" << mimeDir;
+                 if (!provider->isValid()) {
+                     provider.reset();
+                 }
+@@ -132,7 +144,8 @@ void QMimeDatabasePrivate::loadProviders()
+ #endif
+             if (!provider) {
+                 provider.reset(new QMimeXMLProvider(this, mimeDir));
+-                //qDebug() << "Created XML provider for" << mimeDir;
++                qCWarning(lcMimeDatabase) << "Created XML provider for" << mimeDir
++                           << "\n    Consider running \"update-mime-database\"";
+             }
+             m_providers.push_back(std::move(provider));
+         } else {
+@@ -140,7 +153,7 @@ void QMimeDatabasePrivate::loadProviders()
+             provider->ensureLoaded();
+             if (!provider->isValid()) {
+                 provider.reset(new QMimeXMLProvider(this, mimeDir));
+-                //qDebug() << "Created XML provider to replace binary provider for" << mimeDir;
++                qCDebug(lcMimeDatabase) << "Created XML provider to replace binary provider for" << mimeDir;
+             }
+             m_providers.push_back(std::move(provider));
+         }
+@@ -148,6 +161,7 @@ void QMimeDatabasePrivate::loadProviders()
+     // mimeDirs is sorted "most local first, most global last"
+     // so the internal XML DB goes at the end
+     if (needInternalDB) {
++        qCDebug(lcMimeDatabase) << "using internal mime database";
+         // Check if we already have a provider for the InternalDatabase
+         const auto isInternal = [](const std::unique_ptr<QMimeProviderBase> &prov)
+         {
+diff --git src/corelib/mimetypes/qmimedatabase_p.h src/corelib/mimetypes/qmimedatabase_p.h
+index d9cf446d44..c3d583127f 100644
+--- src/corelib/mimetypes/qmimedatabase_p.h
++++ src/corelib/mimetypes/qmimedatabase_p.h
+@@ -60,6 +60,7 @@ QT_REQUIRE_CONFIG(mimetype);
+ #include "qmimeglobpattern_p.h"
+ 
+ #include <QtCore/qelapsedtimer.h>
++#include <QtCore/qloggingcategory.h>
+ #include <QtCore/qmutex.h>
+ #include <QtCore/qvector.h>
+ 
+@@ -67,6 +68,10 @@ QT_REQUIRE_CONFIG(mimetype);
+ 
+ QT_BEGIN_NAMESPACE
+ 
++namespace QtPrivate {
++Q_CORE_EXPORT Q_DECLARE_LOGGING_CATEGORY(lcMimeDatabase);
++}
++
+ class QIODevice;
+ class QMimeDatabase;
+ class QMimeProviderBase;
+diff --git src/corelib/mimetypes/qmimemagicrule.cpp src/corelib/mimetypes/qmimemagicrule.cpp
+index a97fe5bdc4..e12cef83c2 100644
+--- src/corelib/mimetypes/qmimemagicrule.cpp
++++ src/corelib/mimetypes/qmimemagicrule.cpp
+@@ -139,7 +139,7 @@ bool QMimeMagicRule::matchSubstring(const char *dataPtr, int dataSize, int range
+         if (!found)
+             return false;
+     }
+-    //qDebug() << "Found" << value << "in" << searchedData;
++    //qCDebug(lcMimeDatabase) << "Found" << value << "in" << searchedData;
+     return true;
+ }
+ 
+@@ -155,8 +155,8 @@ bool QMimeMagicRule::matchNumber(const QByteArray &data) const
+     const T value(m_number);
+     const T mask(m_numberMask);
+ 
+-    //qDebug() << "matchNumber" << "0x" << QString::number(m_number, 16) << "size" << sizeof(T);
+-    //qDebug() << "mask" << QString::number(m_numberMask, 16);
++    //qCDebug(lcMimeDatabase) << "matchNumber" << "0x" << QString::number(m_number, 16) << "size" << sizeof(T);
++    //qCDebug(lcMimeDatabase) << "mask" << QString::number(m_numberMask, 16);
+ 
+     const char *p = data.constData() + m_startPos;
+     const char *e = data.constData() + qMin(data.size() - int(sizeof(T)), m_endPos);
+@@ -347,7 +347,7 @@ bool QMimeMagicRule::matches(const QByteArray &data) const
+     if (m_subMatches.isEmpty())
+         return true;
+ 
+-    //qDebug() << "Checking" << m_subMatches.count() << "sub-rules";
++    //qCDebug(lcMimeDatabase) << "Checking" << m_subMatches.count() << "sub-rules";
+     // Check that one of the submatches matches too
+     for ( QList<QMimeMagicRule>::const_iterator it = m_subMatches.begin(), end = m_subMatches.end() ;
+           it != end ; ++it ) {
+diff --git src/corelib/mimetypes/qmimeprovider.cpp src/corelib/mimetypes/qmimeprovider.cpp
+index 4642d0f2d0..d2b34063f0 100644
+--- src/corelib/mimetypes/qmimeprovider.cpp
++++ src/corelib/mimetypes/qmimeprovider.cpp
+@@ -42,6 +42,7 @@
+ #include "qmimeprovider_p.h"
+ 
+ #include "qmimetypeparser_p.h"
++#include "qmimedatabase_p.h"
+ #include <qstandardpaths.h>
+ #include "qmimemagicrulematcher_p.h"
+ 
+@@ -84,6 +85,8 @@ __attribute__((section(".qtmimedatabase"), aligned(4096)))
+ 
+ QT_BEGIN_NAMESPACE
+ 
++using namespace QtPrivate;
++
+ QMimeProviderBase::QMimeProviderBase(QMimeDatabasePrivate *db, const QString &directory)
+     : m_db(db), m_directory(directory)
+ {
+@@ -261,7 +264,7 @@ void QMimeBinaryProvider::addFileNameMatches(const QString &fileName, QMimeGlobM
+ void QMimeBinaryProvider::matchGlobList(QMimeGlobMatchResult &result, CacheFile *cacheFile, int off, const QString &fileName)
+ {
+     const int numGlobs = cacheFile->getUint32(off);
+-    //qDebug() << "Loading" << numGlobs << "globs from" << cacheFile->file.fileName() << "at offset" << cacheFile->globListOffset;
++    qCDebug(lcMimeDatabase) << "Loading" << numGlobs << "globs from" << cacheFile->file.fileName() << "at offset" << off;
+     for (int i = 0; i < numGlobs; ++i) {
+         const int globOffset = cacheFile->getUint32(off + 4 + 12 * i);
+         const int mimeTypeOffset = cacheFile->getUint32(off + 4 + 12 * i + 4);
+@@ -272,7 +275,7 @@ void QMimeBinaryProvider::matchGlobList(QMimeGlobMatchResult &result, CacheFile
+         const QString pattern = QLatin1String(cacheFile->getCharStar(globOffset));
+ 
+         const char *mimeType = cacheFile->getCharStar(mimeTypeOffset);
+-        //qDebug() << pattern << mimeType << weight << caseSensitive;
++        //qCDebug(lcMimeDatabase) << pattern << mimeType << weight << caseSensitive;
+         QMimeGlobPattern glob(pattern, QString() /*unused*/, weight, qtCaseSensitive);
+ 
+         if (glob.matchFileName(fileName))
+@@ -463,11 +466,12 @@ void QMimeBinaryProvider::loadMimeTypeList()
+         // So we have to parse the plain-text files called "types".
+         QFile file(m_directory + QStringLiteral("/types"));
+         if (file.open(QIODevice::ReadOnly)) {
+-            QTextStream stream(&file);
+-            stream.setCodec("ISO 8859-1");
+-            QString line;
+-            while (stream.readLineInto(&line))
+-                m_mimetypeNames.insert(line);
++            while (!file.atEnd()) {
++                QByteArray line = file.readLine();
++                if (line.endsWith('\n'))
++                    line.chop(1);
++                m_mimetypeNames.insert(QString::fromLatin1(line));
++            }
+         }
+     }
+ }
+@@ -756,7 +760,7 @@ void QMimeXMLProvider::ensureLoaded()
+     m_mimeTypeGlobs.clear();
+     m_magicMatchers.clear();
+ 
+-    //qDebug() << "Loading" << m_allFiles;
++    qCDebug(lcMimeDatabase) << "Loading" << m_allFiles;
+ 
+     for (const QString &file : qAsConst(allFiles))
+         load(file);
+diff --git src/corelib/mimetypes/qmimetypeparser.cpp src/corelib/mimetypes/qmimetypeparser.cpp
+index 91b11ab589..5d8874e24e 100644
+--- src/corelib/mimetypes/qmimetypeparser.cpp
++++ src/corelib/mimetypes/qmimetypeparser.cpp
+@@ -279,7 +279,7 @@ bool QMimeTypeParserBase::parse(QIODevice *dev, const QString &fileName, QString
+ 
+                 }
+                 currentRules.clear();
+-                //qDebug() << "MAGIC start for mimetype" << data.name;
++                //qCDebug(lcMimeDatabase) << "MAGIC start for mimetype" << data.name;
+             }
+                 break;
+             case ParseMagicMatchRule: {
+@@ -293,7 +293,7 @@ bool QMimeTypeParserBase::parse(QIODevice *dev, const QString &fileName, QString
+                 else // nest this rule into the proper parent
+                     ruleList = &currentRules.top()->m_subMatches;
+                 ruleList->append(std::move(result.rule));
+-                //qDebug() << " MATCH added. Stack size was" << currentRules.size();
++                //qCDebug(lcMimeDatabase) << " MATCH added. Stack size was" << currentRules.size();
+                 currentRules.push(&ruleList->last());
+                 break;
+             }
+@@ -316,9 +316,9 @@ bool QMimeTypeParserBase::parse(QIODevice *dev, const QString &fileName, QString
+             } else if (elementName == QLatin1String(matchTagC)) {
+                 // Closing a <match> tag, pop stack
+                 currentRules.pop();
+-                //qDebug() << " MATCH closed. Stack size is now" << currentRules.size();
++                //qCDebug(lcMimeDatabase) << " MATCH closed. Stack size is now" << currentRules.size();
+             } else if (elementName == QLatin1String(magicTagC)) {
+-                //qDebug() << "MAGIC ended, we got" << rules.count() << "rules, with prio" << priority;
++                //qCDebug(lcMimeDatabase) << "MAGIC ended, we got" << rules.count() << "rules, with prio" << priority;
+                 // Finished a <magic> sequence
+                 QMimeMagicRuleMatcher ruleMatcher(data.name, priority);
+                 ruleMatcher.addRules(rules);
+diff --git src/corelib/plugin/qelfparser_p.h src/corelib/plugin/qelfparser_p.h
+index cdf055329d..94cc124adc 100644
+--- src/corelib/plugin/qelfparser_p.h
++++ src/corelib/plugin/qelfparser_p.h
+@@ -65,8 +65,8 @@ class QLibraryPrivate;
+ 
+ typedef quint16  qelfhalf_t;
+ typedef quint32  qelfword_t;
+-typedef quintptr qelfoff_t;
+-typedef quintptr qelfaddr_t;
++typedef qregisteruint qelfoff_t;
++typedef qptraddr qelfaddr_t;
+ 
+ class QElfParser
+ {
+diff --git src/corelib/plugin/qfactoryloader.cpp src/corelib/plugin/qfactoryloader.cpp
+index 582f48e93e..c2629122b5 100644
+--- src/corelib/plugin/qfactoryloader.cpp
++++ src/corelib/plugin/qfactoryloader.cpp
+@@ -77,6 +77,20 @@ static QJsonDocument jsonFromCborMetaData(const char *raw, qsizetype size, QStri
+         *errMsg = QStringLiteral("Invalid metadata version");
+         return QJsonDocument();
+     }
++#ifdef __CHERI_PURE_CAPABILITY__
++    qsizetype bytes_remaining = __builtin_cheri_length_get(raw) - __builtin_cheri_offset_get(raw);
++    // This can be set to INT_MAX when called from qt_get_metadata(), ensure we don't attempt to
++    // create a capability with bounds == INT_MAX.
++    // XXX: Could also check for size == INT_MAX - metaDataSignatureLength(), but checking the
++    // remaining bytes seems safer.
++    // Note: This is not needed for Qt6 - removed in 9a189a096f134e80e0c11523db14c8580275b4ad
++    if (size > bytes_remaining) {
++        if (qt_debug_component())
++            qDebug() << "jsonFromCborMetaData limiting metadata size to" << bytes_remaining
++                     << "(was " << size << ")";
++        size = bytes_remaining;
++    }
++#endif
+ 
+     raw += 4;
+     size -= 4;
+diff --git src/corelib/serialization/qcborstreamreader.cpp src/corelib/serialization/qcborstreamreader.cpp
+index 993a05a337..2091dc2cfc 100644
+--- src/corelib/serialization/qcborstreamreader.cpp
++++ src/corelib/serialization/qcborstreamreader.cpp
+@@ -720,7 +720,8 @@ static CborError qt_cbor_decoder_transfer_string(void *token, const void **userp
+         return CborErrorDataTooLarge;
+ 
+     // our string transfer is just saving the offset to the userptr
+-    *userptr = reinterpret_cast<void *>(offset);
++    // FIXME: is this safe for CHERI?
++    *userptr = reinterpret_cast<void *>(quintptr(offset));
+ 
+     qint64 avail = (self->device ? self->device->bytesAvailable() : self->buffer.size()) -
+             self->bufferStart;
+diff --git src/corelib/serialization/qcborvalue.cpp src/corelib/serialization/qcborvalue.cpp
+index 89a928d348..4d3090e293 100644
+--- src/corelib/serialization/qcborvalue.cpp
++++ src/corelib/serialization/qcborvalue.cpp
+@@ -792,7 +792,7 @@ static QCborValue::Type convertToExtendedType(QCborContainerPrivate *d)
+             qint64 msecs;
+             bool ok = false;
+             if (e.type == QCborValue::Integer) {
+-#if QT_POINTER_SIZE == 8
++#if QT_POINTER_SIZE >= 8
+                 // we don't have a fast 64-bit mul_overflow implementation on
+                 // 32-bit architectures.
+                 ok = !mul_overflow(e.value, qint64(1000), &msecs);
+diff --git src/corelib/serialization/qcborvalue_p.h src/corelib/serialization/qcborvalue_p.h
+index 66d5799290..552ca52cfa 100644
+--- src/corelib/serialization/qcborvalue_p.h
++++ src/corelib/serialization/qcborvalue_p.h
+@@ -95,7 +95,11 @@ struct Element
+     }
+ };
+ Q_DECLARE_OPERATORS_FOR_FLAGS(Element::ValueFlags)
++#ifdef __CHERI_PURE_CAPABILITY__
++Q_STATIC_ASSERT(sizeof(Element) == 32);
++#else
+ Q_STATIC_ASSERT(sizeof(Element) == 16);
++#endif
+ 
+ struct ByteData
+ {
+diff --git src/corelib/serialization/qjsondocument.cpp src/corelib/serialization/qjsondocument.cpp
+index 1d48dcaf24..cdc02778c8 100644
+--- src/corelib/serialization/qjsondocument.cpp
++++ src/corelib/serialization/qjsondocument.cpp
+@@ -270,7 +270,7 @@ QJsonDocument &QJsonDocument::operator =(const QJsonDocument &other)
+  */
+ QJsonDocument QJsonDocument::fromRawData(const char *data, int size, DataValidation validation)
+ {
+-    if (quintptr(data) & 3) {
++    if (qptraddr(data) & 3) {
+         qWarning("QJsonDocument::fromRawData: data has to have 4 byte alignment");
+         return QJsonDocument();
+     }
+diff --git src/corelib/serialization/qtextstream.cpp src/corelib/serialization/qtextstream.cpp
+index 36afd107d8..763badc6b5 100644
+--- src/corelib/serialization/qtextstream.cpp
++++ src/corelib/serialization/qtextstream.cpp
+@@ -2506,6 +2506,18 @@ QTextStream &QTextStream::operator<<(qulonglong i)
+     return *this;
+ }
+ 
++#if defined(__CHERI__)
++QTextStream &QTextStream::operator<<(__intcap_t i)
++{
++    return *this << qint64(i);
++}
++
++QTextStream &QTextStream::operator<<(__uintcap_t i)
++{
++    return *this << quint64(i);
++}
++#endif
++
+ /*!
+     Writes the real number \a f to the stream, then returns a
+     reference to the QTextStream. By default, QTextStream stores it
+@@ -2684,7 +2696,7 @@ QTextStream &QTextStream::operator<<(const void *ptr)
+     const NumberFlags oldFlags = d->params.numberFlags;
+     d->params.integerBase = 16;
+     d->params.numberFlags |= ShowBase;
+-    d->putNumber(reinterpret_cast<quintptr>(ptr), false);
++    d->putNumber(reinterpret_cast<qptraddr>(ptr), false);
+     d->params.integerBase = oldBase;
+     d->params.numberFlags = oldFlags;
+     return *this;
+diff --git src/corelib/serialization/qtextstream.h src/corelib/serialization/qtextstream.h
+index 97d596137e..b0afd1e685 100644
+--- src/corelib/serialization/qtextstream.h
++++ src/corelib/serialization/qtextstream.h
+@@ -190,6 +190,10 @@ public:
+     QTextStream &operator<<(const QByteArray &array);
+     QTextStream &operator<<(const char *c);
+     QTextStream &operator<<(const void *ptr);
++#if __has_feature(capabilities)
++    QTextStream &operator<<(__intcap_t t);
++    QTextStream &operator<<(__uintcap_t t);
++#endif
+ 
+ private:
+     Q_DISABLE_COPY(QTextStream)
+diff --git src/corelib/text/qbytearray.cpp src/corelib/text/qbytearray.cpp
+index 9a72df58d3..a04f754806 100644
+--- src/corelib/text/qbytearray.cpp
++++ src/corelib/text/qbytearray.cpp
+@@ -65,13 +65,13 @@
+ #include <string.h>
+ #include <stdlib.h>
+ 
+-#define IS_RAW_DATA(d) ((d)->offset != sizeof(QByteArrayData))
++#define IS_RAW_DATA(d) ((d)->dataOffset() != sizeof(QByteArrayData))
+ 
+ QT_BEGIN_NAMESPACE
+ 
+ // Latin 1 case system, used by QByteArray::to{Upper,Lower}() and qstr(n)icmp():
+ /*
+-#!/usr/bin/perl -l
++#!/usr/local64/bin/perl -l
+ use feature "unicode_strings";
+ for (0..255) {
+     $up = uc(chr($_));
+@@ -100,7 +100,7 @@ static const uchar latin1_uppercased[256] = {
+ };
+ 
+ /*
+-#!/usr/bin/perl -l
++#!/usr/local64/bin/perl -l
+ use feature "unicode_strings";
+ for (0..255) {
+     $up = lc(chr($_));
+@@ -1866,11 +1866,17 @@ void QByteArray::expand(int i)
+ QByteArray QByteArray::nulTerminated() const
+ {
+     // is this fromRawData?
+-    if (!IS_RAW_DATA(d))
++    if (!IS_RAW_DATA(d)) {
++        // XXXAR: for CHERI we need hack in data() to treat sharedNull as having length 1
++        qarraydata_dbg("QByteArray::nulTerminated() IS_RAW_DATA: %#p -- data()= %#p\n", static_cast<const void*>(d), d->data());
+         return *this;           // no, then we're sure we're zero terminated
++    }
+ 
++    qarraydata_dbg("QByteArray::nulTerminated() not raw data: %#p, data()= %#p\n", static_cast<const void*>(d), d->data());
+     QByteArray copy(*this);
++    qarraydata_dbg("QByteArray::nulTerminated() not raw data copy: %#p, copy.data() = %#p\n", static_cast<const void*>(copy.d), copy.d->data());
+     copy.detach();
++    qarraydata_dbg("QByteArray::nulTerminated() copy detached: %#p -- copy.data() = %#p\n", static_cast<const void*>(copy.d), copy.d->data());
+     return copy;
+ }
+ 
+@@ -4417,6 +4423,24 @@ QByteArray QByteArray::number(qulonglong n, int base)
+     return s;
+ }
+ 
++#if __has_feature(capabilities)
++/*!
++    \overload
++*/
++QByteArray QByteArray::number(__intcap_t n, int base)
++{
++    return QByteArray::number(qlonglong(n), base);
++}
++
++/*!
++    \overload
++*/
++QByteArray QByteArray::number(__uintcap_t n, int base)
++{
++    return QByteArray::number(qulonglong(n), base);
++}
++#endif
++
+ /*!
+     \overload
+ 
+@@ -4503,6 +4527,15 @@ QByteArray QByteArray::fromRawData(const char *data, int size)
+     return QByteArray(dataPtr);
+ }
+ 
++QByteArray QByteArray::fromNulTerminatedRawData(const char *data, int size)
++{
++    Q_CHECK_PTR(data);
++    Data *x = Data::fromRawData(data, size + 1, Data::WithNulTerminator);
++    Q_CHECK_PTR(x);
++    QByteArrayDataPtr dataPtr = { x };
++    return QByteArray(dataPtr);
++}
++
+ /*!
+     \since 4.7
+ 
+@@ -4524,10 +4557,26 @@ QByteArray &QByteArray::setRawData(const char *data, uint size)
+     } else {
+         if (data) {
+             d->size = size;
++#ifndef __CHERI_PURE_CAPABILITY__
+             d->offset = data - reinterpret_cast<char *>(d);
++#else
++            d->setPointer(data);
++#endif
+         } else {
+-            d->offset = sizeof(QByteArrayData);
++            // If we get passed a null pointer we still ensure that data()
++            // returns a zero-length null terminated string
++            d->setOffset(sizeof(QByteArrayData));
+             d->size = 0;
++            // If d->alloc is zero set it to one to allow writing to the first byte of
++            // d->data(). On capability architectures like CHERI data() will return
++            // a capability with length set to max(alloc, size) and if both of these are
++            // zero we will get a trap when attempting to write the '\0'.
++            // FIXME: Due to the way that malloc works we should generally have at least
++            // one free byte after the QByteArrayData object but we should probably
++            // actually check that there is enough allocated space.
++            if (d->alloc == 0)
++                d->alloc = 1;
++            *d->data() = 0;
+         }
+     }
+     return *this;
+diff --git src/corelib/text/qbytearray.h src/corelib/text/qbytearray.h
+index f4c335ca93..44f7fe36d7 100644
+--- src/corelib/text/qbytearray.h
++++ src/corelib/text/qbytearray.h
+@@ -394,8 +394,21 @@ public:
+     Q_REQUIRED_RESULT static QByteArray number(uint, int base = 10);
+     Q_REQUIRED_RESULT static QByteArray number(qlonglong, int base = 10);
+     Q_REQUIRED_RESULT static QByteArray number(qulonglong, int base = 10);
++    Q_REQUIRED_RESULT static QByteArray number(long l, int base = 10)
++    {
++        return number(qlonglong(l), base);
++    }
++    Q_REQUIRED_RESULT static QByteArray number(ulong l, int base = 10)
++    {
++        return number(qulonglong(l), base);
++    }
++#if __has_feature(capabilities)
++    Q_REQUIRED_RESULT static QByteArray number(__intcap_t, int base = 10);
++    Q_REQUIRED_RESULT static QByteArray number(__uintcap_t, int base = 10);
++#endif
+     Q_REQUIRED_RESULT static QByteArray number(double, char f = 'g', int prec = 6);
+     Q_REQUIRED_RESULT static QByteArray fromRawData(const char *, int size);
++    Q_REQUIRED_RESULT static QByteArray fromNulTerminatedRawData(const char *, int size);
+ 
+     class FromBase64Result;
+     Q_REQUIRED_RESULT static FromBase64Result fromBase64Encoding(QByteArray &&base64, Base64Options options = Base64Encoding);
+@@ -518,7 +531,7 @@ inline const char *QByteArray::data() const
+ inline const char *QByteArray::constData() const
+ { return d->data(); }
+ inline void QByteArray::detach()
+-{ if (d->ref.isShared() || (d->offset != sizeof(QByteArrayData))) reallocData(uint(d->size) + 1u, d->detachFlags()); }
++{ if (d->ref.isShared() || (d->dataOffset() != sizeof(QByteArrayData))) reallocData(uint(d->size) + 1u, d->detachFlags()); }
+ inline bool QByteArray::isDetached() const
+ { return !d->ref.isShared(); }
+ inline QByteArray::QByteArray(const QByteArray &a) noexcept : d(a.d)
+diff --git src/corelib/text/qstring.cpp src/corelib/text/qstring.cpp
+index be472d7956..9e9f68691e 100644
+--- src/corelib/text/qstring.cpp
++++ src/corelib/text/qstring.cpp
+@@ -100,7 +100,7 @@
+ #define ULLONG_MAX quint64_C(18446744073709551615)
+ #endif
+ 
+-#define IS_RAW_DATA(d) ((d)->offset != sizeof(QStringData))
++#define IS_RAW_DATA(d) ((d)->dataOffset() != sizeof(QStringData))
+ 
+ QT_BEGIN_NAMESPACE
+ 
+@@ -1001,9 +1001,9 @@ static int ucstrncmp(const QChar *a, const QChar *b, size_t l)
+         return 0;
+ 
+     // check alignment
+-    if ((reinterpret_cast<quintptr>(a) & 2) == (reinterpret_cast<quintptr>(b) & 2)) {
++    if ((reinterpret_cast<qptraddr>(a) & 2) == (reinterpret_cast<qptraddr>(b) & 2)) {
+         // both addresses have the same alignment
+-        if (reinterpret_cast<quintptr>(a) & 2) {
++        if (reinterpret_cast<qptraddr>(a) & 2) {
+             // both addresses are not aligned to 4-bytes boundaries
+             // compare the first character
+             if (*a != *b)
+@@ -2372,9 +2372,11 @@ void QString::reallocData(uint alloc, bool grow)
+             Data::deallocate(d);
+         d = x;
+     } else {
++        qarraydata_dbg("%s: %d, d=%#p\n", __func__, alloc, d);
+         Data *p = Data::reallocateUnaligned(d, alloc, allocOptions);
+         Q_CHECK_PTR(p);
+         d = p;
++        qarraydata_dbg("%s: p->alloc = %d, resulting p=%#p, %ld bytes in p, %ld bytes in data()\n", __func__, p->alloc, p, cheri_bytes_remaining(p), cheri_bytes_remaining(p->data()));
+     }
+ }
+ 
+@@ -2680,10 +2682,17 @@ QString &QString::append(const QString &str)
+         if (d == Data::sharedNull()) {
+             operator=(str);
+         } else {
+-            if (d->ref.isShared() || uint(d->size + str.d->size) + 1u > d->alloc)
++            if (d->ref.isShared() || uint(d->size + str.d->size) + 1u > d->alloc) {
++                qarraydata_dbg("%s: d=%#p, reallocating to %d\n", Q_FUNC_INFO, static_cast<void*>(d), uint(d->size + str.d->size) + 1u);
+                 reallocData(uint(d->size + str.d->size) + 1u, true);
++                qarraydata_dbg("%s: after realloc: d=%#p\n", Q_FUNC_INFO, static_cast<void*>(d));
++            }
++            qarraydata_dbg("%s: d=%#p, d->data() = %#p, d->alloc = %d, d->size = %d\n", Q_FUNC_INFO,
++                static_cast<void*>(d), static_cast<void*>(d->data()), d->alloc, d->size);
+             memcpy(d->data() + d->size, str.d->data(), str.d->size * sizeof(QChar));
+             d->size += str.d->size;
++            qarraydata_dbg("%s: d=%#p, d->data() = %#p, d->alloc = %d, d->size = %d, remaining = %ld\n", Q_FUNC_INFO,
++                 static_cast<void*>(d), static_cast<void*>(d->data()), d->alloc, d->size, cheri_bytes_remaining(d->data()));
+             d->data()[d->size] = '\0';
+         }
+     }
+@@ -2699,10 +2708,17 @@ QString &QString::append(const QString &str)
+ QString &QString::append(const QChar *str, int len)
+ {
+     if (str && len > 0) {
+-        if (d->ref.isShared() || uint(d->size + len) + 1u > d->alloc)
++        if (d->ref.isShared() || uint(d->size + len) + 1u > d->alloc) {
++            qarraydata_dbg("%s: d=%#p, reallocating to %d\n", Q_FUNC_INFO, static_cast<void*>(d), uint(d->size + len) + 1u);
+             reallocData(uint(d->size + len) + 1u, true);
++            qarraydata_dbg("%s: after realloc: d=%#p\n", Q_FUNC_INFO, static_cast<void*>(d));
++        }
++        qarraydata_dbg("%s: d=%#p, d->data() = %#p, d->alloc = %d, d->size = %d\n", Q_FUNC_INFO,
++            static_cast<void*>(d),  static_cast<void*>(d->data()), d->alloc, d->size);
+         memcpy(d->data() + d->size, str, len * sizeof(QChar));
+         d->size += len;
++        qarraydata_dbg("%s: d=%#p, d->data() = %#p, d->alloc = %d, d->size = %d, remaining = %ld\n",
++             Q_FUNC_INFO, static_cast<void*>(d), static_cast<void*>(d->data()), d->alloc, d->size, cheri_bytes_remaining(d->data()));
+         d->data()[d->size] = '\0';
+     }
+     return *this;
+@@ -5263,7 +5279,7 @@ QByteArray QString::toLatin1_helper_inplace(QString &s)
+     s.d = QString().d;
+ 
+     // do the in-place conversion
+-    uchar *dst = reinterpret_cast<uchar *>(ba_d->data());
++    uchar *dst = static_cast<uchar *>(ba_d->boundedData(sizeof(uchar)));
+     qt_to_latin1(dst, data, length);
+     dst[length] = '\0';
+ 
+@@ -7196,7 +7212,7 @@ QString QString::vasprintf(const char *cformat, va_list ap)
+             }
+             case 'p': {
+                 void *arg = va_arg(ap, void*);
+-                const quint64 i = reinterpret_cast<quintptr>(arg);
++                const quint64 i = reinterpret_cast<quint64>(arg);
+                 flags |= QLocaleData::ShowBase;
+                 subst = QLocaleData::c()->unsLongLongToString(i, precision, 16, width, flags);
+                 ++c;
+@@ -7802,6 +7818,38 @@ QString QString::number(double n, char f, int prec)
+     return QLocaleData::c()->doubleToString(n, prec, form, -1, flags);
+ }
+ 
++#if __has_feature(capabilities)
++/*!
++    \overload
++*/
++QString QString::number(__uintcap_t n, int base)
++{
++#    if defined(QT_CHECK_RANGE)
++    if (base < 2 || base > 36) {
++        qWarning("QString::setNum: Invalid base (%d)", base);
++        base = 10;
++    }
++#    endif
++    qulonglong v = static_cast<qulonglong>(n);
++    return QLocaleData::c()->unsLongLongToString(v, -1, base);
++}
++
++/*!
++    \overload
++*/
++QString QString::number(__intcap_t n, int base)
++{
++#    if defined(QT_CHECK_RANGE)
++    if (base < 2 || base > 36) {
++        qWarning("QString::setNum: Invalid base (%d)", base);
++        base = 10;
++    }
++#    endif
++    qlonglong v = static_cast<qlonglong>(n);
++    return QLocaleData::c()->longLongToString(v, -1, base);
++}
++#endif // __has_feature(capabilities)
++
+ namespace {
+ template<class ResultList, class StringSource>
+ static ResultList splitString(const StringSource &source, const QChar *sep,
+@@ -7866,6 +7914,7 @@ QT_WARNING_POP
+ */
+ QStringList QString::split(const QString &sep, Qt::SplitBehavior behavior, Qt::CaseSensitivity cs) const
+ {
++    Q_ASSERT(qIsAligned(this->d, alignof(void *)));
+     return splitString<QStringList>(*this, sep.constData(), behavior, cs, sep.size());
+ }
+ 
+@@ -7898,6 +7947,7 @@ QStringList QString::split(const QString &sep, SplitBehavior behavior, Qt::CaseS
+ QVector<QStringRef> QString::splitRef(const QString &sep, Qt::SplitBehavior behavior,
+                                       Qt::CaseSensitivity cs) const
+ {
++    Q_ASSERT(qIsAligned(this->d, alignof(void *)));
+     return splitString<QVector<QStringRef>>(QStringRef(this), sep.constData(), behavior,
+                                             cs, sep.size());
+ }
+@@ -9471,9 +9521,13 @@ QString &QString::setRawData(const QChar *unicode, int size)
+     } else {
+         if (unicode) {
+             d->size = size;
++#ifndef __CHERI_PURE_CAPABILITY__
+             d->offset = reinterpret_cast<const char *>(unicode) - reinterpret_cast<char *>(d);
++#else
++            d->setPointer(unicode);
++#endif
+         } else {
+-            d->offset = sizeof(QStringData);
++            d->setOffset(sizeof(QStringData));
+             d->size = 0;
+         }
+     }
+diff --git src/corelib/text/qstring.h src/corelib/text/qstring.h
+index 0fdab96e28..0f99f069ab 100644
+--- src/corelib/text/qstring.h
++++ src/corelib/text/qstring.h
+@@ -310,6 +310,12 @@ public:
+     Q_REQUIRED_RESULT inline QChar back() const { return at(size() - 1); }
+     Q_REQUIRED_RESULT inline QCharRef back();
+ 
++#if __has_feature(capabilities)
++    Q_REQUIRED_RESULT QString arg(__intcap_t a, int fieldwidth=0, int base=10,
++                QChar fillChar = QLatin1Char(' ')) const;
++    Q_REQUIRED_RESULT QString arg(__uintcap_t a, int fieldwidth=0, int base=10,
++                QChar fillChar = QLatin1Char(' ')) const;
++#endif
+     Q_REQUIRED_RESULT QString arg(qlonglong a, int fieldwidth=0, int base=10,
+                 QChar fillChar = QLatin1Char(' ')) const;
+     Q_REQUIRED_RESULT QString arg(qulonglong a, int fieldwidth=0, int base=10,
+@@ -801,6 +807,10 @@ public:
+     static QString number(ulong, int base=10);
+     static QString number(qlonglong, int base=10);
+     static QString number(qulonglong, int base=10);
++#if __has_feature(capabilities)
++    static QString number(__intcap_t, int base=10);
++    static QString number(__uintcap_t, int base=10);
++#endif
+     static QString number(double, char f='g', int prec=6);
+ 
+     friend Q_CORE_EXPORT bool operator==(const QString &s1, const QString &s2) noexcept;
+@@ -964,7 +974,16 @@ public:
+     { return QStringView(*this).isValidUtf16(); }
+ 
+     QString(int size, Qt::Initialization);
+-    Q_DECL_CONSTEXPR inline QString(QStringDataPtr dd) : d(dd.ptr) {}
++    Q_DECL_CONSTEXPR inline QString(QStringDataPtr dd) : d(dd.ptr) {
++#ifdef __CHERI_PURE_CAPABILITY__
++        QT_WARNING_PUSH
++        QT_WARNING_DISABLE_CLANG("-Wc++14-extensions")
++        if (!__builtin_is_constant_evaluated()) {
++            Q_ASSERT(qIsAligned(this->d, alignof(void *)));
++        }
++        QT_WARNING_POP
++#endif
++    }
+ 
+ private:
+ #if defined(QT_NO_CAST_FROM_ASCII)
+@@ -1085,7 +1104,7 @@ inline QChar *QString::data()
+ inline const QChar *QString::constData() const
+ { return reinterpret_cast<const QChar*>(d->data()); }
+ inline void QString::detach()
+-{ if (d->ref.isShared() || (d->offset != sizeof(QStringData))) reallocData(uint(d->size) + 1u); }
++{ if (d->ref.isShared() || (d->dataOffset() != sizeof(QStringData))) reallocData(uint(d->size) + 1u); }
+ inline bool QString::isDetached() const
+ { return !d->ref.isShared(); }
+ inline void QString::clear()
+@@ -1120,6 +1139,12 @@ inline QString QString::arg(short a, int fieldWidth, int base, QChar fillChar) c
+ { return arg(qlonglong(a), fieldWidth, base, fillChar); }
+ inline QString QString::arg(ushort a, int fieldWidth, int base, QChar fillChar) const
+ { return arg(qulonglong(a), fieldWidth, base, fillChar); }
++#if __has_feature(capabilities)
++inline QString QString::arg(__intcap_t a, int fieldWidth, int base, QChar fillChar) const
++{ return arg(qlonglong(a), fieldWidth, base, fillChar); }
++inline QString QString::arg(__uintcap_t a, int fieldWidth, int base, QChar fillChar) const
++{ return arg(qulonglong(a), fieldWidth, base, fillChar); }
++#endif
+ #if QT_STRINGVIEW_LEVEL < 2
+ inline QString QString::arg(const QString &a1, const QString &a2) const
+ { return qToStringViewIgnoringNull(*this).arg(a1, a2); }
+@@ -2089,7 +2114,8 @@ inline QString &&asString(QString &&s)              { return std::move(s); }
+ 
+ namespace QtPrivate {
+ 
+-struct ArgBase {
++// alignas() needed to work around https://git.morello-project.org/morello/llvm-project/-/issues/52
++struct alignas(QStringView) ArgBase {
+     enum Tag : uchar { L1, U8, U16 } tag;
+ };
+ 
+diff --git src/corelib/thread/qatomic.cpp src/corelib/thread/qatomic.cpp
+index 5c3ad9412f..d72cd4d240 100644
+--- src/corelib/thread/qatomic.cpp
++++ src/corelib/thread/qatomic.cpp
+@@ -1754,6 +1754,7 @@ Q_STATIC_ASSERT(sizeof(QAtomicInteger<unsigned>));
+ Q_STATIC_ASSERT(sizeof(QAtomicInteger<long>));
+ Q_STATIC_ASSERT(sizeof(QAtomicInteger<unsigned long>));
+ Q_STATIC_ASSERT(sizeof(QAtomicInteger<quintptr>));
++static_assert(sizeof(QAtomicInteger<qptraddr>));
+ Q_STATIC_ASSERT(sizeof(QAtomicInteger<qptrdiff>));
+ #ifdef Q_COMPILER_UNICODE_STRINGS
+ Q_STATIC_ASSERT(sizeof(QAtomicInteger<char32_t>));
+diff --git src/corelib/thread/qatomic_cxx11.h src/corelib/thread/qatomic_cxx11.h
+index 9669554515..e68f902e59 100644
+--- src/corelib/thread/qatomic_cxx11.h
++++ src/corelib/thread/qatomic_cxx11.h
+@@ -217,6 +217,13 @@ template <> Q_DECL_CONSTEXPR inline bool QAtomicTraits<8>::isLockFree()
+ #  endif
+ #endif
+ 
++#if __has_feature(capabilities)
++// Needed for atomic ops on quintptr to compile
++template<> struct QAtomicOpsSupport<sizeof(__uintcap_t)> { enum { IsSupported = 1 }; };
++template <> Q_DECL_CONSTEXPR inline bool QAtomicTraits<sizeof(__uintcap_t)>::isLockFree()
++{ return true; }
++#endif
++
+ template <typename X> struct QAtomicOps
+ {
+     typedef std::atomic<X> Type;
+diff --git src/corelib/thread/qmutex.h src/corelib/thread/qmutex.h
+index b2e2640ba2..e0bf5294b7 100644
+--- src/corelib/thread/qmutex.h
++++ src/corelib/thread/qmutex.h
+@@ -230,8 +230,7 @@ public:
+ #ifndef Q_CLANG_QDOC
+     inline explicit QMutexLocker(QBasicMutex *m) QT_MUTEX_LOCK_NOEXCEPT
+     {
+-        Q_ASSERT_X((reinterpret_cast<quintptr>(m) & quintptr(1u)) == quintptr(0),
+-                   "QMutexLocker", "QMutex pointer is misaligned");
++        Q_ASSERT_X(qIsAligned(m, 2), "QMutexLocker", "QMutex pointer is misaligned");
+         val = quintptr(m);
+         if (Q_LIKELY(m)) {
+             // call QMutex::lock() instead of QBasicMutex::lock()
+@@ -249,8 +248,8 @@ public:
+ 
+     inline void unlock() noexcept
+     {
+-        if ((val & quintptr(1u)) == quintptr(1u)) {
+-            val &= ~quintptr(1u);
++        if (qGetLowPointerBits<1u>(val) == 1u) {
++            val = qClearLowPointerBits<1u>(val);
+             mutex()->unlock();
+         }
+     }
+@@ -258,7 +257,7 @@ public:
+     inline void relock() QT_MUTEX_LOCK_NOEXCEPT
+     {
+         if (val) {
+-            if ((val & quintptr(1u)) == quintptr(0u)) {
++            if (qGetLowPointerBits<1u>(val) == 0u) {
+                 mutex()->lock();
+                 val |= quintptr(1u);
+             }
+@@ -272,7 +271,7 @@ public:
+ 
+     inline QMutex *mutex() const
+     {
+-        return reinterpret_cast<QMutex *>(val & ~quintptr(1u));
++        return reinterpret_cast<QMutex *>(qClearLowPointerBits<1u>(val));
+     }
+ 
+ #if defined(Q_CC_MSVC)
+diff --git src/corelib/thread/qreadwritelock.cpp src/corelib/thread/qreadwritelock.cpp
+index 9dd8503116..687c78c728 100644
+--- src/corelib/thread/qreadwritelock.cpp
++++ src/corelib/thread/qreadwritelock.cpp
+@@ -73,7 +73,7 @@ enum {
+ const auto dummyLockedForRead = reinterpret_cast<QReadWriteLockPrivate *>(quintptr(StateLockedForRead));
+ const auto dummyLockedForWrite = reinterpret_cast<QReadWriteLockPrivate *>(quintptr(StateLockedForWrite));
+ inline bool isUncontendedLocked(const QReadWriteLockPrivate *d)
+-{ return quintptr(d) & StateMask; }
++{ return qptraddr(d) & StateMask; }
+ }
+ 
+ /*! \class QReadWriteLock
+@@ -144,7 +144,7 @@ inline bool isUncontendedLocked(const QReadWriteLockPrivate *d)
+ QReadWriteLock::QReadWriteLock(RecursionMode recursionMode)
+     : d_ptr(recursionMode == Recursive ? new QReadWriteLockPrivate(true) : nullptr)
+ {
+-    Q_ASSERT_X(!(quintptr(d_ptr.loadRelaxed()) & StateMask), "QReadWriteLock::QReadWriteLock", "bad d_ptr alignment");
++    Q_ASSERT_X(!(qptraddr(d_ptr.loadRelaxed()) & StateMask), "QReadWriteLock::QReadWriteLock", "bad d_ptr alignment");
+ }
+ 
+ /*!
+@@ -233,7 +233,7 @@ bool QReadWriteLock::tryLockForRead(int timeout)
+             return true;
+         }
+ 
+-        if ((quintptr(d) & StateMask) == StateLockedForRead) {
++        if ((qptraddr(d) & StateMask) == StateLockedForRead) {
+             // locked for read, increase the counter
+             const auto val = reinterpret_cast<QReadWriteLockPrivate *>(quintptr(d) + (1U<<4));
+             Q_ASSERT_X(quintptr(val) > (1U<<4), "QReadWriteLock::tryLockForRead()",
+@@ -356,7 +356,7 @@ bool QReadWriteLock::tryLockForWrite(int timeout)
+             if (d == dummyLockedForWrite)
+                 val->writerCount = 1;
+             else
+-                val->readerCount = (quintptr(d) >> 4) + 1;
++                val->readerCount = (qptraddr(d) >> 4) + 1;
+             if (!d_ptr.testAndSetOrdered(d, val, d)) {
+                 val->writerCount = val->readerCount = 0;
+                 val->release();
+@@ -403,7 +403,7 @@ void QReadWriteLock::unlock()
+             return;
+         }
+ 
+-        if ((quintptr(d) & StateMask) == StateLockedForRead) {
++        if ((qptraddr(d) & StateMask) == StateLockedForRead) {
+             Q_ASSERT(quintptr(d) > (1U<<4)); //otherwise that would be the fast case
+             // Just decrease the reader's count.
+             auto val = reinterpret_cast<QReadWriteLockPrivate *>(quintptr(d) - (1U<<4));
+@@ -446,7 +446,7 @@ void QReadWriteLock::unlock()
+ QReadWriteLock::StateForWaitCondition QReadWriteLock::stateForWaitCondition() const
+ {
+     QReadWriteLockPrivate *d = d_ptr.loadAcquire();
+-    switch (quintptr(d) & StateMask) {
++    switch (qptraddr(d) & StateMask) {
+     case StateLockedForRead: return LockedForRead;
+     case StateLockedForWrite: return LockedForWrite;
+     }
+diff --git src/corelib/thread/qreadwritelock.h src/corelib/thread/qreadwritelock.h
+index 3c1ed91b94..10997289fa 100644
+--- src/corelib/thread/qreadwritelock.h
++++ src/corelib/thread/qreadwritelock.h
+@@ -92,8 +92,8 @@ public:
+     inline void unlock()
+     {
+         if (q_val) {
+-            if ((q_val & quintptr(1u)) == quintptr(1u)) {
+-                q_val &= ~quintptr(1u);
++            if (qGetLowPointerBits<1u>(q_val) == 1u) {
++                q_val = qClearLowPointerBits<1u>(q_val);
+                 readWriteLock()->unlock();
+             }
+         }
+@@ -102,7 +102,7 @@ public:
+     inline void relock()
+     {
+         if (q_val) {
+-            if ((q_val & quintptr(1u)) == quintptr(0u)) {
++            if (qGetLowPointerBits<1u>(q_val) == quintptr(0u)) {
+                 readWriteLock()->lockForRead();
+                 q_val |= quintptr(1u);
+             }
+@@ -110,7 +110,7 @@ public:
+     }
+ 
+     inline QReadWriteLock *readWriteLock() const
+-    { return reinterpret_cast<QReadWriteLock *>(q_val & ~quintptr(1u)); }
++    { return reinterpret_cast<QReadWriteLock *>(qClearLowPointerBits<1u>(q_val)); }
+ 
+ private:
+     Q_DISABLE_COPY(QReadLocker)
+@@ -120,8 +120,7 @@ private:
+ inline QReadLocker::QReadLocker(QReadWriteLock *areadWriteLock)
+     : q_val(reinterpret_cast<quintptr>(areadWriteLock))
+ {
+-    Q_ASSERT_X((q_val & quintptr(1u)) == quintptr(0),
+-               "QReadLocker", "QReadWriteLock pointer is misaligned");
++    Q_ASSERT_X(qIsAligned(q_val, 2), "QReadLocker", "QReadWriteLock pointer is misaligned");
+     relock();
+ }
+ 
+@@ -136,8 +135,8 @@ public:
+     inline void unlock()
+     {
+         if (q_val) {
+-            if ((q_val & quintptr(1u)) == quintptr(1u)) {
+-                q_val &= ~quintptr(1u);
++            if (qGetLowPointerBits<1u>(q_val) == 1u) {
++                q_val = qClearLowPointerBits<1u>(q_val);
+                 readWriteLock()->unlock();
+             }
+         }
+@@ -146,7 +145,7 @@ public:
+     inline void relock()
+     {
+         if (q_val) {
+-            if ((q_val & quintptr(1u)) == quintptr(0u)) {
++            if (qGetLowPointerBits<1u>(q_val) == 0u) {
+                 readWriteLock()->lockForWrite();
+                 q_val |= quintptr(1u);
+             }
+@@ -154,7 +153,7 @@ public:
+     }
+ 
+     inline QReadWriteLock *readWriteLock() const
+-    { return reinterpret_cast<QReadWriteLock *>(q_val & ~quintptr(1u)); }
++    { return reinterpret_cast<QReadWriteLock *>(qClearLowPointerBits<1u>(q_val)); }
+ 
+ 
+ private:
+@@ -165,8 +164,7 @@ private:
+ inline QWriteLocker::QWriteLocker(QReadWriteLock *areadWriteLock)
+     : q_val(reinterpret_cast<quintptr>(areadWriteLock))
+ {
+-    Q_ASSERT_X((q_val & quintptr(1u)) == quintptr(0),
+-               "QWriteLocker", "QReadWriteLock pointer is misaligned");
++    Q_ASSERT_X(qIsAligned(q_val, 2), "QWriteLocker", "QReadWriteLock pointer is misaligned");
+     relock();
+ }
+ 
+diff --git src/corelib/thread/qsemaphore.cpp src/corelib/thread/qsemaphore.cpp
+index 3ecdee3747..9a009a94b0 100644
+--- src/corelib/thread/qsemaphore.cpp
++++ src/corelib/thread/qsemaphore.cpp
+@@ -132,10 +132,10 @@ static Q_CONSTEXPR bool futexHasWaiterCount = true;
+ static Q_CONSTEXPR bool futexHasWaiterCount = false;
+ #endif
+ 
+-static const quintptr futexNeedsWakeAllBit =
+-        Q_UINT64_C(1) << (sizeof(quintptr) * CHAR_BIT - 1);
++static const qptraddr futexNeedsWakeAllBit =
++        Q_UINT64_C(1) << (sizeof(qptraddr) * CHAR_BIT - 1);
+ 
+-static int futexAvailCounter(quintptr v)
++static int futexAvailCounter(qptraddr v)
+ {
+     // the low 31 bits
+     if (futexHasWaiterCount) {
+@@ -148,7 +148,7 @@ static int futexAvailCounter(quintptr v)
+     return int(v & 0x7fffffffU);
+ }
+ 
+-static bool futexNeedsWake(quintptr v)
++static bool futexNeedsWake(qptraddr v)
+ {
+     // If we're counting waiters, the number of waiters is stored in the low 31
+     // bits of the high word (that is, bits 32-62). If we're not, then we use
+@@ -157,7 +157,7 @@ static bool futexNeedsWake(quintptr v)
+     return v >> 31;
+ }
+ 
+-static QBasicAtomicInteger<quint32> *futexLow32(QBasicAtomicInteger<quintptr> *ptr)
++static QBasicAtomicInteger<quint32> *futexLow32(QBasicAtomicInteger<qptraddr> *ptr)
+ {
+     auto result = reinterpret_cast<QBasicAtomicInteger<quint32> *>(ptr);
+ #if Q_BYTE_ORDER == Q_BIG_ENDIAN && QT_POINTER_SIZE > 4
+@@ -166,7 +166,7 @@ static QBasicAtomicInteger<quint32> *futexLow32(QBasicAtomicInteger<quintptr> *p
+     return result;
+ }
+ 
+-static QBasicAtomicInteger<quint32> *futexHigh32(QBasicAtomicInteger<quintptr> *ptr)
++static QBasicAtomicInteger<quint32> *futexHigh32(QBasicAtomicInteger<qptraddr> *ptr)
+ {
+     auto result = reinterpret_cast<QBasicAtomicInteger<quint32> *>(ptr);
+ #if Q_BYTE_ORDER == Q_LITTLE_ENDIAN && QT_POINTER_SIZE > 4
+@@ -176,7 +176,7 @@ static QBasicAtomicInteger<quint32> *futexHigh32(QBasicAtomicInteger<quintptr> *
+ }
+ 
+ template <bool IsTimed> bool
+-futexSemaphoreTryAcquire_loop(QBasicAtomicInteger<quintptr> &u, quintptr curValue, quintptr nn, int timeout)
++futexSemaphoreTryAcquire_loop(QBasicAtomicInteger<qptraddr> &u, qptraddr curValue, qptraddr nn, int timeout)
+ {
+     QDeadlineTimer timer(IsTimed ? QDeadlineTimer(timeout) : QDeadlineTimer());
+     qint64 remainingTime = timeout * Q_INT64_C(1000) * 1000;
+@@ -188,7 +188,7 @@ futexSemaphoreTryAcquire_loop(QBasicAtomicInteger<quintptr> &u, quintptr curValu
+     forever {
+         if (futexAvailCounter(curValue) >= n) {
+             // try to acquire
+-            quintptr newValue = curValue - nn;
++            qptraddr newValue = curValue - nn;
+             if (u.testAndSetOrdered(curValue, newValue, curValue))
+                 return true;        // succeeded!
+             continue;
+@@ -225,18 +225,18 @@ start_wait:
+     }
+ }
+ 
+-template <bool IsTimed> bool futexSemaphoreTryAcquire(QBasicAtomicInteger<quintptr> &u, int n, int timeout)
++template <bool IsTimed> bool futexSemaphoreTryAcquire(QBasicAtomicInteger<qptraddr> &u, int n, int timeout)
+ {
+     // Try to acquire without waiting (we still loop because the testAndSet
+     // call can fail).
+-    quintptr nn = unsigned(n);
++    qptraddr nn = unsigned(n);
+     if (futexHasWaiterCount)
+         nn |= quint64(nn) << 32;    // token count replicated in high word
+ 
+-    quintptr curValue = u.loadAcquire();
++    qptraddr curValue = u.loadAcquire();
+     while (futexAvailCounter(curValue) >= n) {
+         // try to acquire
+-        quintptr newValue = curValue - nn;
++        qptraddr newValue = curValue - nn;
+         if (u.testAndSetOrdered(curValue, newValue, curValue))
+             return true;        // succeeded!
+     }
+@@ -244,7 +244,7 @@ template <bool IsTimed> bool futexSemaphoreTryAcquire(QBasicAtomicInteger<quintp
+         return false;
+ 
+     // we need to wait
+-    quintptr oneWaiter = quintptr(Q_UINT64_C(1) << 32); // zero on 32-bit
++    qptraddr oneWaiter = qptraddr(Q_UINT64_C(1) << 32); // zero on 32-bit
+     if (futexHasWaiterCount) {
+         // increase the waiter count
+         u.fetchAndAddRelaxed(oneWaiter);
+@@ -290,7 +290,7 @@ QSemaphore::QSemaphore(int n)
+ {
+     Q_ASSERT_X(n >= 0, "QSemaphore", "parameter 'n' must be non-negative");
+     if (futexAvailable()) {
+-        quintptr nn = unsigned(n);
++        qptraddr nn = unsigned(n);
+         if (futexHasWaiterCount)
+             nn |= quint64(nn) << 32;    // token count replicated in high word
+         u.storeRelaxed(nn);
+@@ -351,11 +351,11 @@ void QSemaphore::release(int n)
+     Q_ASSERT_X(n >= 0, "QSemaphore::release", "parameter 'n' must be non-negative");
+ 
+     if (futexAvailable()) {
+-        quintptr nn = unsigned(n);
++        qptraddr nn = unsigned(n);
+         if (futexHasWaiterCount)
+             nn |= quint64(nn) << 32;    // token count replicated in high word
+-        quintptr prevValue = u.loadRelaxed();
+-        quintptr newValue;
++        qptraddr prevValue = u.loadRelaxed();
++        qptraddr newValue;
+         do { // loop just to ensure the operations are done atomically
+             newValue = prevValue + nn;
+             newValue &= (futexNeedsWakeAllBit - 1);
+diff --git src/corelib/thread/qsemaphore.h src/corelib/thread/qsemaphore.h
+index b3b9b52052..be78561ca7 100644
+--- src/corelib/thread/qsemaphore.h
++++ src/corelib/thread/qsemaphore.h
+@@ -67,7 +67,7 @@ private:
+ 
+     union {
+         QSemaphorePrivate *d;
+-        QBasicAtomicInteger<quintptr> u;        // ### Qt6: make 64-bit
++        QBasicAtomicInteger<qptraddr> u;
+     };
+ };
+ 
+diff --git src/corelib/time/qdatetime.cpp src/corelib/time/qdatetime.cpp
+index 2c0b098079..def335bc0e 100644
+--- src/corelib/time/qdatetime.cpp
++++ src/corelib/time/qdatetime.cpp
+@@ -3125,7 +3125,7 @@ static inline qint64 getMSecs(const QDateTimeData &d)
+     if (d.isShort()) {
+         // same as, but producing better code
+         //return d.data.msecs;
+-        return qintptr(d.d) >> 8;
++        return qptrdiff(d.d) >> 8;
+     }
+     return d->m_msecs;
+ }
+@@ -3135,7 +3135,7 @@ static inline QDateTimePrivate::StatusFlags getStatus(const QDateTimeData &d)
+     if (d.isShort()) {
+         // same as, but producing better code
+         //return StatusFlag(d.data.status);
+-        return QDateTimePrivate::StatusFlag(qintptr(d.d) & 0xFF);
++        return QDateTimePrivate::StatusFlag(qptrdiff(d.d) & 0xFF);
+     }
+     return d->m_status;
+ }
+diff --git src/corelib/time/qdatetime.h src/corelib/time/qdatetime.h
+index 60cf05f30f..8ad2e51193 100644
+--- src/corelib/time/qdatetime.h
++++ src/corelib/time/qdatetime.h
+@@ -257,13 +257,13 @@ class Q_CORE_EXPORT QDateTime
+     // ### Qt 6: revisit the optimization
+     struct ShortData {
+ #if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
+-        quintptr status : 8;
++        qsizetype status : 8;
+ #endif
+         // note: this is only 24 bits on 32-bit systems...
+-        qintptr msecs : sizeof(void *) * 8 - 8;
++        qptrdiff msecs : sizeof(qptrdiff) * 8 - 8;
+ 
+ #if Q_BYTE_ORDER == Q_BIG_ENDIAN
+-        quintptr status : 8;
++        qsizetype status : 8;
+ #endif
+     };
+ 
+diff --git src/corelib/time/qdatetime_p.h src/corelib/time/qdatetime_p.h
+index f4f00a8b9b..1216f042b7 100644
+--- src/corelib/time/qdatetime_p.h
++++ src/corelib/time/qdatetime_p.h
+@@ -115,14 +115,16 @@ public:
+ 
+ #if QT_CONFIG(timezone)
+     static QDateTime::Data create(const QDate &toDate, const QTime &toTime, const QTimeZone & timeZone);
++#elif !defined(QT_BOOTSTRAPPED)
++#error "Need timezone support"
+ #endif // timezone
+ 
+-    StatusFlags m_status = StatusFlag(Qt::LocalTime << TimeSpecShift);
+-    qint64 m_msecs = 0;
+-    int m_offsetFromUtc = 0;
+ #if QT_CONFIG(timezone)
+     QTimeZone m_timeZone;
+ #endif // timezone
++    StatusFlags m_status = StatusFlag(Qt::LocalTime << TimeSpecShift);
++    qint64 m_msecs = 0;
++    int m_offsetFromUtc = 0;
+ 
+ #if QT_CONFIG(timezone)
+     static qint64 zoneMSecsToEpochMSecs(qint64 msecs, const QTimeZone &zone,
+diff --git src/corelib/tools/qarraydata.cpp src/corelib/tools/qarraydata.cpp
+index c380893678..af717ead66 100644
+--- src/corelib/tools/qarraydata.cpp
++++ src/corelib/tools/qarraydata.cpp
+@@ -180,7 +180,16 @@ static inline size_t calculateBlockSize(size_t &capacity, size_t objectSize, siz
+ 
+ static QArrayData *reallocateData(QArrayData *header, size_t allocSize, uint options)
+ {
++    qarraydata_dbg("%s: current length = %ld, allocSize=%zd -- h=%#p, offset=%#p\n", __func__,
++        cheri_bytes_remaining(header), allocSize, static_cast<void*>(header),
++        reinterpret_cast<void*>(header->_internal_cheri_offset));
++#ifdef __CHERI_PURE_CAPABILITY__
++    // XXXAR: we could also just move the pointer?
++    Q_ASSERT(!__builtin_cheri_tag_get(reinterpret_cast<void*>(header->_internal_cheri_offset)) &&
++             "To able to use ::realloc QArrayData must not contain pointers!");
++#endif
+     header = static_cast<QArrayData *>(::realloc(header, allocSize));
++    qarraydata_dbg("%s: result length = %ld -- h=%#p\n", __func__, cheri_bytes_remaining(header), static_cast<void*>(header));
+     if (header)
+         header->capacityReserved = bool(options & QArrayData::CapacityReserved);
+     return header;
+@@ -217,8 +226,14 @@ QArrayData *QArrayData::allocate(size_t objectSize, size_t alignment,
+     size_t allocSize = calculateBlockSize(capacity, objectSize, headerSize, options);
+     QArrayData *header = static_cast<QArrayData *>(::malloc(allocSize));
+     if (header) {
++        // XXXAR: this is a __builtin_align_up (but again we need bootstrap compat)
++        // TODO: add qAlignUp()i
++#if QT_HAS_BUILTIN(__builtin_align_up)
++        quintptr data = __builtin_align_up(quintptr(header) + sizeof(QArrayData), alignment);
++#else
+         quintptr data = (quintptr(header) + sizeof(QArrayData) + alignment - 1)
+                 & ~(alignment - 1);
++#endif
+ 
+ #if !defined(QT_NO_UNSHARABLE_CONTAINERS)
+         header->ref.atomic.storeRelaxed(bool(!(options & Unsharable)));
+@@ -228,9 +243,12 @@ QArrayData *QArrayData::allocate(size_t objectSize, size_t alignment,
+         header->size = 0;
+         header->alloc = capacity;
+         header->capacityReserved = bool(options & CapacityReserved);
+-        header->offset = data - quintptr(header);
++        // XXX: always store the bounded pointer for purecap to make this more efficient?
++        // We always use an offset except for fromRawData()
++        header->setOffset(reinterpret_cast<const char*>(data) - reinterpret_cast<const char*>(header));
+     }
+ 
++    Q_ASSERT(qIsAligned(header, alignof(void *)));
+     return header;
+ }
+ 
+@@ -240,12 +258,16 @@ QArrayData *QArrayData::reallocateUnaligned(QArrayData *data, size_t objectSize,
+     Q_ASSERT(data);
+     Q_ASSERT(data->isMutable());
+     Q_ASSERT(!data->ref.isShared());
++    qarraydata_dbg("QArrayData::reallocateUnaligned(%#p, osize=%zd, capacity=%zd, options=%x)\n", data, objectSize, capacity, int(options));
+ 
+     size_t headerSize = sizeof(QArrayData);
+     size_t allocSize = calculateBlockSize(capacity, objectSize, headerSize, options);
+     QArrayData *header = static_cast<QArrayData *>(reallocateData(data, allocSize, options));
+-    if (header)
++    if (header) {
+         header->alloc = capacity;
++        qarraydata_dbg("QArrayData::reallocateUnaligned() new alloc=%zd\n", (size_t)header->alloc);
++    }
++    Q_ASSERT(qIsAligned(header, alignof(void *)));
+     return header;
+ }
+ 
+@@ -256,6 +278,7 @@ void QArrayData::deallocate(QArrayData *data, size_t objectSize,
+     Q_ASSERT(alignment >= Q_ALIGNOF(QArrayData)
+             && !(alignment & (alignment - 1)));
+     Q_UNUSED(objectSize) Q_UNUSED(alignment)
++    Q_ASSERT(qIsAligned(data, alignof(void *)));
+ 
+ #if !defined(QT_NO_UNSHARABLE_CONTAINERS)
+     if (data == &qt_array_unsharable_empty)
+diff --git src/corelib/tools/qarraydata.h src/corelib/tools/qarraydata.h
+index d01739e7e6..c48af885bb 100644
+--- src/corelib/tools/qarraydata.h
++++ src/corelib/tools/qarraydata.h
+@@ -44,6 +44,16 @@
+ #include <string.h>
+ #include <cstdint>
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++#undef QARRAYDATA_DEBUG_OUTPUT
++#endif
++#ifdef QARRAYDATA_DEBUG_OUTPUT
++#include <cstdio>
++#define qarraydata_dbg(...) fprintf(stderr, __VA_ARGS__)
++#else
++#define qarraydata_dbg(...) do {} while(false)
++#endif
++
+ QT_BEGIN_NAMESPACE
+ 
+ struct Q_CORE_EXPORT QArrayData
+@@ -53,20 +63,90 @@ struct Q_CORE_EXPORT QArrayData
+     uint alloc : 31;
+     uint capacityReserved : 1;
+ 
++#ifndef __CHERI_PURE_CAPABILITY__
+     qptrdiff offset; // in bytes from beginning of header
+-
+-    void *data()
++    inline qptrdiff dataOffset() const { return offset; }
++    void setOffset(qptrdiff newOffset) { offset = newOffset; }
++#else
++    // FIXME: See if we can make this work somehow without runtime relocs
++    // See https://woboq.com/blog/qstringliteral.html
++    qintptr _internal_cheri_offset;
++    void setOffset(qptrdiff offset) { _internal_cheri_offset = offset; }
++    void setPointer(const void *data)
+     {
+-        Q_ASSERT(size == 0
+-                || offset < 0 || size_t(offset) >= sizeof(QArrayData));
+-        return reinterpret_cast<void *> (reinterpret_cast<uintptr_t>(this) + offset);
++        Q_ASSERT(__builtin_cheri_tag_get(data) && "Setting untagged pointer?");
++        _internal_cheri_offset = reinterpret_cast<quintptr>(data);
+     }
+-
+-    const void *data() const
++    inline qptrdiff dataOffset() const
++    {
++        void *ptr = reinterpret_cast<void *>(_internal_cheri_offset);
++        if (__builtin_cheri_tag_get(ptr))
++            return static_cast<const char *>(ptr) - reinterpret_cast<const char *>(this);
++        // otherwise just return the offset:
++        return qptrdiff(_internal_cheri_offset);
++    }
++    static inline void *cheri_get_arraydata(const QArrayData *obj, quintptr offset, size_t objsize)
+     {
+-        Q_ASSERT(size == 0
+-                || offset < 0 || size_t(offset) >= sizeof(QArrayData));
+-        return reinterpret_cast<void *> (reinterpret_cast<uintptr_t>(this) + offset);
++        // For CHERI we can't just always add the offset to this since that may be be out-of-bounds
++        void *ret = reinterpret_cast<void *>(offset);
++        qarraydata_dbg("%s(%#p, %zd): %#p\n", __func__, static_cast<const void *>(obj), objsize,
++                       ret);
++        if (__builtin_cheri_tag_get(ret))
++            return ret; // valid pointer so can just return
++
++        // The generated QMetaObject tables uses large offsets so just assert that the length is
++        // sensible.
++        Q_ASSERT(offset < __builtin_cheri_length_get(obj));
++        ret = const_cast<char *>(reinterpret_cast<const char *>(obj) + qint64(offset));
++        qarraydata_dbg("Remaining bytes in buffer: %ld (obj = %#p), obj->alloc=%d, obj->size=%d\n",
++                       cheri_bytes_remaining(ret), static_cast<const void *>(obj), obj->alloc,
++                       obj->size);
++
++        // If we have an allocation set the bounds of data() to the size of the allocation so that
++        // modifying code like QString::append() works.
++        // TODO: for the const overload this should probably always be just the size (+1 for the
++        // zero terminator) to avoid accidental modification?
++        size_t bounds = (obj->alloc ? obj->alloc : obj->size) * objsize;
++        // We could set alloc == size + 1 for QByteArrayLiteral/QStringLiteral, but for the
++        // shared_null case we have to set alloc==0 since shared_null is also used for
++        // types > sizeof(QArrayData) and setting it to one would cause a bounds violation.
++        // For QByteArray/Qstring we have to ensure that qrintable(QByteArray()) and
++        // qUtf16Printable(QString()) return a single '\0' character and not a zero-size capability,
++        // so that that they can be passed to printf()/QString::vasprintf().
++        // TO avoid many other changes just assume that alloc==0+static+size<2 means a constant
++        // zero-terminated string -> set bounds to size+1
++        if (Q_UNLIKELY(obj->alloc == 0 && objsize <= 2 && obj->ref.isStatic())) {
++            qarraydata_dbg("%s: Adding nul byte since data is static\n", __func__);
++            return __builtin_cheri_bounds_set(ret, bounds + objsize);
++        }
++#ifndef QT_CHERI_NO_SET_BOUNDS
++        ret = __builtin_cheri_bounds_set(ret, bounds);
++#endif
++        qarraydata_dbg("%s with size(%zd): %#p\n", __func__, bounds, ret);
++        return ret;
++    }
++#endif
++    void *boundedData(size_t objsize)
++    {
++#ifndef __CHERI_PURE_CAPABILITY__
++        Q_UNUSED(objsize);
++        Q_ASSERT(size == 0 || offset < 0 || size_t(offset) >= sizeof(QArrayData));
++        return reinterpret_cast<void *>(reinterpret_cast<uintptr_t>(this) + offset);
++#else
++        Q_ASSERT(size == 0 || reinterpret_cast<void *>(_internal_cheri_offset));
++        return cheri_get_arraydata(this, _internal_cheri_offset, objsize);
++#endif
++    }
++    const void *boundedData(size_t objsize) const
++    {
++#ifndef __CHERI_PURE_CAPABILITY__
++        Q_UNUSED(objsize);
++        Q_ASSERT(size == 0 || offset < 0 || size_t(offset) >= sizeof(QArrayData));
++        return reinterpret_cast<const void *>(reinterpret_cast<uintptr_t>(this) + offset);
++#else
++        Q_ASSERT(size == 0 || reinterpret_cast<void *>(_internal_cheri_offset));
++        return cheri_get_arraydata(this, _internal_cheri_offset, objsize);
++#endif
+     }
+ 
+     // This refers to array data mutability, not "header data" represented by
+@@ -84,6 +164,7 @@ struct Q_CORE_EXPORT QArrayData
+ #endif
+         RawData             = 0x4,
+         Grow                = 0x8,
++        WithNulTerminator   = 0x10,
+ 
+         Default = 0
+     };
+@@ -206,8 +287,8 @@ struct QTypedArrayData
+     typedef const T* const_iterator;
+ #endif
+ 
+-    T *data() { return static_cast<T *>(QArrayData::data()); }
+-    const T *data() const { return static_cast<const T *>(QArrayData::data()); }
++    T *data() { return static_cast<T *>(QArrayData::boundedData(sizeof(T))); }
++    const T *data() const { return static_cast<const T *>(QArrayData::boundedData(sizeof(T))); }
+ 
+     iterator begin(iterator = iterator()) { return data(); }
+     iterator end(iterator = iterator()) { return data() + size; }
+@@ -244,13 +325,24 @@ struct QTypedArrayData
+             AllocationOptions options = Default)
+     {
+         Q_STATIC_ASSERT(sizeof(QTypedArrayData) == sizeof(QArrayData));
++        Q_ASSERT(data && "Creating rawData from NULL");
+         QTypedArrayData *result = allocate(0, options | RawData);
+         if (result) {
+             Q_ASSERT(!result->ref.isShared()); // No shared empty, please!
+-
++#ifndef __CHERI_PURE_CAPABILITY__
+             result->offset = reinterpret_cast<const char *>(data)
+                 - reinterpret_cast<const char *>(result);
+-            result->size = int(n);
++#else
++            result->setPointer(__builtin_cheri_bounds_set(data, n * sizeof(T)));
++#endif
++            if (options & WithNulTerminator) {
++                // The raw capability includes a nul terminator, but the size
++                // should not include it.
++                Q_ASSERT(data[n - 1] == '\0');
++                result->size = int(n - 1);
++            } else {
++                result->size = int(n);
++            }
+         }
+         return result;
+     }
+diff --git src/corelib/tools/qhashfunctions.h src/corelib/tools/qhashfunctions.h
+index 2ff3464912..bd4f7dab3d 100644
+--- src/corelib/tools/qhashfunctions.h
++++ src/corelib/tools/qhashfunctions.h
+@@ -89,6 +89,10 @@ Q_DECL_CONST_FUNCTION Q_DECL_CONSTEXPR inline uint qHash(quint64 key, uint seed
+     return uint(((key >> (8 * sizeof(uint) - 1)) ^ key) & (~0U)) ^ seed;
+ }
+ Q_DECL_CONST_FUNCTION Q_DECL_CONSTEXPR inline uint qHash(qint64 key, uint seed = 0) noexcept { return qHash(quint64(key), seed); }
++#if __has_feature(capabilities)
++Q_DECL_CONST_FUNCTION Q_DECL_CONSTEXPR inline uint qHash(__intcap_t key, uint seed = 0) Q_DECL_NOTHROW { return qHash(qint64(key), seed); }
++Q_DECL_CONST_FUNCTION Q_DECL_CONSTEXPR inline uint qHash(__uintcap_t key, uint seed = 0) Q_DECL_NOTHROW { return qHash(quint64(key), seed); }
++#endif
+ Q_CORE_EXPORT Q_DECL_CONST_FUNCTION uint qHash(float key, uint seed = 0) noexcept;
+ Q_CORE_EXPORT Q_DECL_CONST_FUNCTION uint qHash(double key, uint seed = 0) noexcept;
+ #if !defined(Q_OS_DARWIN) || defined(Q_CLANG_QDOC)
+@@ -112,7 +116,7 @@ Q_DECL_CONST_FUNCTION inline uint qHash(std::nullptr_t, uint seed = 0) noexcept
+ 
+ template <class T> inline uint qHash(const T *key, uint seed = 0) noexcept
+ {
+-    return qHash(reinterpret_cast<quintptr>(key), seed);
++    return qHash(reinterpret_cast<qptraddr>(key), seed);
+ }
+ template<typename T> inline uint qHash(const T &t, uint seed)
+     noexcept(noexcept(qHash(t)))
+diff --git src/corelib/tools/qlist.h src/corelib/tools/qlist.h
+index e395c3b3ac..6190f978b2 100644
+--- src/corelib/tools/qlist.h
++++ src/corelib/tools/qlist.h
+@@ -471,7 +471,7 @@ Q_INLINE_TEMPLATE void QList<T>::node_construct(Node *n, const T &t)
+     else *reinterpret_cast<T*>(n) = t;
+ #else
+     // This is always safe, but penaltizes unoptimized builds a lot.
+-    else ::memcpy(n, static_cast<const void *>(&t), sizeof(T));
++    else ::memcpy(n, static_cast<const T *>(&t), sizeof(T));
+ #endif
+ }
+ 
+diff --git src/corelib/tools/qmap.h src/corelib/tools/qmap.h
+index 676d9a1fec..d7a787ef09 100644
+--- src/corelib/tools/qmap.h
++++ src/corelib/tools/qmap.h
+@@ -90,10 +90,10 @@ struct Q_CORE_EXPORT QMapNodeBase
+     const QMapNodeBase *previousNode() const;
+     QMapNodeBase *previousNode() { return const_cast<QMapNodeBase *>(const_cast<const QMapNodeBase *>(this)->previousNode()); }
+ 
+-    Color color() const { return Color(p & 1); }
+-    void setColor(Color c) { if (c == Black) p |= Black; else p &= ~Black; }
+-    QMapNodeBase *parent() const { return reinterpret_cast<QMapNodeBase *>(p & ~Mask); }
+-    void setParent(QMapNodeBase *pp) { p = (p & Mask) | quintptr(pp); }
++    Color color() const { return Color(qGetLowPointerBits<1>(p)); }
++    void setColor(Color c) { if (c == Black) p = qSetLowPointerBits(p, Black); else p = qClearLowPointerBits<Black>(p); }
++    QMapNodeBase *parent() const { return reinterpret_cast<QMapNodeBase *>(qClearLowPointerBits<Mask>(p)); }
++    void setParent(QMapNodeBase *pp) { p = quintptr(pp) | qGetLowPointerBits<Mask>(p); }
+ 
+     template <typename T>
+     static typename std::enable_if<QTypeInfo<T>::isComplex>::type
+diff --git src/corelib/tools/qvarlengtharray.h src/corelib/tools/qvarlengtharray.h
+index 2b30da0d2c..8d156bbb22 100644
+--- src/corelib/tools/qvarlengtharray.h
++++ src/corelib/tools/qvarlengtharray.h
+@@ -244,6 +244,7 @@ private:
+         char array[Prealloc * sizeof(T)];
+         qint64 q_for_alignment_1;
+         double q_for_alignment_2;
++        void *q_for_alignment_3;
+     };
+ 
+     bool isValidIterator(const const_iterator &i) const
+diff --git src/corelib/tools/qversionnumber.h src/corelib/tools/qversionnumber.h
+index 2843f2b043..b52320f71f 100644
+--- src/corelib/tools/qversionnumber.h
++++ src/corelib/tools/qversionnumber.h
+@@ -87,7 +87,7 @@ class QVersionNumber
+         };
+ 
+         // set the InlineSegmentMarker and set length to zero
+-        SegmentStorage() noexcept : dummy(1) {}
++        SegmentStorage() noexcept : dummy(0) { setInlineSize(0); }
+ 
+         SegmentStorage(const QVector<int> &seg)
+         {
+@@ -122,7 +122,7 @@ class QVersionNumber
+         SegmentStorage(SegmentStorage &&other) noexcept
+             : dummy(other.dummy)
+         {
+-            other.dummy = 1;
++            other.setInlineSize(0);
+         }
+ 
+         SegmentStorage &operator=(SegmentStorage &&other) noexcept
+@@ -195,13 +195,14 @@ class QVersionNumber
+         }
+         void setInlineData(const int *data, int len)
+         {
++#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN && !defined(__CHERI_PURE_CAPABILITY__)
+             dummy = 1 + len * 2;
+-#if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
+             for (int i = 0; i < len; ++i)
+-                dummy |= quintptr(data[i] & 0xFF) << (8 * (i + 1));
+-#elif Q_BYTE_ORDER == Q_BIG_ENDIAN
++                dummy |= qptraddr(data[i] & 0xFF) << (8 * (i + 1));
++#elif Q_BYTE_ORDER == Q_BIG_ENDIAN && !defined(__CHERI_PURE_CAPABILITY__)
++            dummy = 1 + len * 2;
+             for (int i = 0; i < len; ++i)
+-                dummy |= quintptr(data[i] & 0xFF) << (8 * (sizeof(void *) - i - 1));
++                dummy |= qptraddr(data[i] & 0xFF) << (8 * (sizeof(void *) - i - 1));
+ #else
+             // the code above is equivalent to:
+             setInlineSize(len);
+diff --git src/gui/configure.json src/gui/configure.json
+index 12c95742d2..94c26596ed 100644
+--- src/gui/configure.json
++++ src/gui/configure.json
+@@ -563,7 +563,8 @@
+             },
+             "headers": "X11/Xlib.h",
+             "sources": [
+-                { "type": "makeSpec", "spec": "X11" }
++                { "type": "pkgConfig", "args": "x11" },
++                "-lX11"
+             ]
+         },
+         "x11sm": {
+diff --git src/gui/image/qimage_conversions.cpp src/gui/image/qimage_conversions.cpp
+index 9257ab8cfe..7ad7c97c80 100644
+--- src/gui/image/qimage_conversions.cpp
++++ src/gui/image/qimage_conversions.cpp
+@@ -468,7 +468,7 @@ Q_GUI_EXPORT void QT_FASTCALL qt_convert_rgb888_to_rgb32(quint32 *dest_data, con
+ {
+     int pixel = 0;
+     // prolog: align input to 32bit
+-    while ((quintptr(src_data) & 0x3) && pixel < len) {
++    while ((qptraddr(src_data) & 0x3) && pixel < len) {
+         *dest_data = 0xff000000 | (src_data[0] << 16) | (src_data[1] << 8) | (src_data[2]);
+         src_data += 3;
+         ++dest_data;
+@@ -503,7 +503,7 @@ Q_GUI_EXPORT void QT_FASTCALL qt_convert_rgb888_to_rgbx8888(quint32 *dest_data,
+ {
+     int pixel = 0;
+     // prolog: align input to 32bit
+-    while ((quintptr(src_data) & 0x3) && pixel < len) {
++    while ((qptraddr(src_data) & 0x3) && pixel < len) {
+         *dest_data = ARGB2RGBA(0xff000000 | (src_data[0] << 16) | (src_data[1] << 8) | (src_data[2]));
+         src_data += 3;
+         ++dest_data;
+diff --git src/gui/painting/qdrawhelper.cpp src/gui/painting/qdrawhelper.cpp
+index a61793508a..61e6ac8359 100644
+--- src/gui/painting/qdrawhelper.cpp
++++ src/gui/painting/qdrawhelper.cpp
+@@ -4642,7 +4642,7 @@ static void blend_color_rgb16(int count, const QSpan *spans, void *userData)
+             ushort c = qConvertRgb32To16(color);
+             ushort *target = ((ushort *)data->rasterBuffer->scanLine(spans->y)) + spans->x;
+             int len = spans->len;
+-            bool pre = (((quintptr)target) & 0x3) != 0;
++            bool pre = (((qptraddr)target) & 0x3) != 0;
+             bool post = false;
+             if (pre) {
+                 // skip to word boundary
+@@ -4995,14 +4995,14 @@ static inline void blend_sourceOver_rgb16_rgb16(quint16 *Q_DECL_RESTRICT dest,
+                                                 const quint8 alpha,
+                                                 const quint8 ialpha)
+ {
+-    const int dstAlign = ((quintptr)dest) & 0x3;
++    const int dstAlign = ((qptraddr)dest) & 0x3;
+     if (dstAlign) {
+         *dest = interpolate_pixel_rgb16_255(*src, alpha, *dest, ialpha);
+         ++dest;
+         ++src;
+         --length;
+     }
+-    const int srcAlign = ((quintptr)src) & 0x3;
++    const int srcAlign = ((qptraddr)src) & 0x3;
+     int length32 = length >> 1;
+     if (length32 && srcAlign == 0) {
+         while (length32--) {
+diff --git src/gui/painting/qmemrotate.cpp src/gui/painting/qmemrotate.cpp
+index b82adb5d35..5b3477e300 100644
+--- src/gui/painting/qmemrotate.cpp
++++ src/gui/painting/qmemrotate.cpp
+@@ -51,7 +51,7 @@ static inline void qt_memrotate90_tiled(const T *src, int w, int h, int isstride
+ 
+     const int pack = sizeof(quint32) / sizeof(T);
+     const int unaligned =
+-        qMin(uint((quintptr(dest) & (sizeof(quint32)-1)) / sizeof(T)), uint(h));
++        qMin(uint((qptraddr(dest) & (sizeof(quint32)-1)) / sizeof(T)), uint(h));
+     const int restX = w % tileSize;
+     const int restY = (h - unaligned) % tileSize;
+     const int unoptimizedY = restY % pack;
+@@ -137,7 +137,7 @@ static inline void qt_memrotate270_tiled(const T *src, int w, int h, int isstrid
+ 
+     const int pack = sizeof(quint32) / sizeof(T);
+     const int unaligned =
+-        qMin(uint((quintptr(dest) & (sizeof(quint32)-1)) / sizeof(T)), uint(h));
++        qMin(uint((qptraddr(dest) & (sizeof(quint32)-1)) / sizeof(T)), uint(h));
+     const int restX = w % tileSize;
+     const int restY = (h - unaligned) % tileSize;
+     const int unoptimizedY = restY % pack;
+diff --git src/gui/painting/qpaintengine_raster.cpp src/gui/painting/qpaintengine_raster.cpp
+index 1525a09af4..b4043d86d9 100644
+--- src/gui/painting/qpaintengine_raster.cpp
++++ src/gui/painting/qpaintengine_raster.cpp
+@@ -3625,7 +3625,11 @@ extern "C" {
+ 
+ static inline uchar *alignAddress(uchar *address, quintptr alignmentMask)
+ {
++#if __has_builtin(__builtin_align_up)
++    return __builtin_align_up(address, alignmentMask + 1);
++#else
+     return (uchar *)(((quintptr)address + alignmentMask) & ~alignmentMask);
++#endif
+ }
+ 
+ void QRasterPaintEnginePrivate::rasterize(QT_FT_Outline *outline,
+diff --git src/gui/text/qtextengine_p.h src/gui/text/qtextengine_p.h
+index f069951ce5..fbb1e049c3 100644
+--- src/gui/text/qtextengine_p.h
++++ src/gui/text/qtextengine_p.h
+@@ -208,7 +208,15 @@ struct QGlyphLayout
+ 
+     int numGlyphs;
+ 
+-    inline QGlyphLayout() : numGlyphs(0) {}
++    inline QGlyphLayout()
++        : offsets(Q_NULLPTR),
++          glyphs(Q_NULLPTR),
++          advances(Q_NULLPTR),
++          justifications(Q_NULLPTR),
++          attributes(Q_NULLPTR),
++          numGlyphs(0)
++    {
++    }
+ 
+     inline explicit QGlyphLayout(char *address, int totalGlyphs)
+     {
+diff --git src/plugins/platforms/ios/qioseventdispatcher.mm src/plugins/platforms/ios/qioseventdispatcher.mm
+index c5856051de..129a94a84f 100644
+--- src/plugins/platforms/ios/qioseventdispatcher.mm
++++ src/plugins/platforms/ios/qioseventdispatcher.mm
+@@ -59,9 +59,6 @@
+ 
+ #include <sys/mman.h>
+ 
+-#define qAlignDown(val, align) val & ~(align - 1)
+-#define qAlignUp(val, align) qAlignDown(val + (align - 1), align)
+-
+ static const size_t kBytesPerKiloByte = 1024;
+ static const long kPageSize = sysconf(_SC_PAGESIZE);
+ 
+diff --git src/plugins/platforms/xcb/qxcbnativeinterface.cpp src/plugins/platforms/xcb/qxcbnativeinterface.cpp
+index 30fa6864ac..e866da5fe6 100644
+--- src/plugins/platforms/xcb/qxcbnativeinterface.cpp
++++ src/plugins/platforms/xcb/qxcbnativeinterface.cpp
+@@ -170,13 +170,15 @@ void *QXcbNativeInterface::nativeResourceForScreen(const QByteArray &resourceStr
+         result = appUserTime(xcbScreen);
+         break;
+     case ScreenHintStyle:
+-        result = reinterpret_cast<void *>(xcbScreen->hintStyle() + 1);
++        result = reinterpret_cast<void *>(static_cast<std::intptr_t>(xcbScreen->hintStyle() + 1));
+         break;
+     case ScreenSubpixelType:
+-        result = reinterpret_cast<void *>(xcbScreen->subpixelType() + 1);
++        result =
++                reinterpret_cast<void *>(static_cast<std::intptr_t>(xcbScreen->subpixelType() + 1));
+         break;
+     case ScreenAntialiasingEnabled:
+-        result = reinterpret_cast<void *>(xcbScreen->antialiasingEnabled() + 1);
++        result = reinterpret_cast<void *>(
++                static_cast<std::intptr_t>(xcbScreen->antialiasingEnabled() + 1));
+         break;
+     case TrayWindow:
+         if (QXcbSystemTrayTracker *s = systemTrayTracker(screen))
+@@ -186,7 +188,7 @@ void *QXcbNativeInterface::nativeResourceForScreen(const QByteArray &resourceStr
+         result = getTimestamp(xcbScreen);
+         break;
+     case RootWindow:
+-        result = reinterpret_cast<void *>(xcbScreen->root());
++        result = reinterpret_cast<void *>(static_cast<std::intptr_t>(xcbScreen->root()));
+         break;
+     case CompositingEnabled:
+         if (QXcbVirtualDesktop *vd = xcbScreen->virtualDesktop())
+@@ -373,7 +375,8 @@ void *QXcbNativeInterface::x11Screen()
+     QXcbIntegration *integration = QXcbIntegration::instance();
+     QXcbConnection *defaultConnection = integration->defaultConnection();
+     if (defaultConnection)
+-        return reinterpret_cast<void *>(defaultConnection->primaryScreenNumber());
++        return reinterpret_cast<void *>(
++                static_cast<std::intptr_t>(defaultConnection->primaryScreenNumber()));
+     return nullptr;
+ }
+ 
+@@ -382,7 +385,8 @@ void *QXcbNativeInterface::rootWindow()
+     QXcbIntegration *integration = QXcbIntegration::instance();
+     QXcbConnection *defaultConnection = integration->defaultConnection();
+     if (defaultConnection)
+-        return reinterpret_cast<void *>(defaultConnection->rootWindow());
++        return reinterpret_cast<void *>(
++                static_cast<std::intptr_t>(defaultConnection->rootWindow()));
+     return nullptr;
+ }
+ 
+diff --git src/plugins/platforms/xcb/qxcbwindow.cpp src/plugins/platforms/xcb/qxcbwindow.cpp
+index 5c12d76069..52c52d0fa3 100644
+--- src/plugins/platforms/xcb/qxcbwindow.cpp
++++ src/plugins/platforms/xcb/qxcbwindow.cpp
+@@ -1332,7 +1332,7 @@ void QXcbWindow::setWindowIcon(const QIcon &icon)
+     if (!icon_data.isEmpty()) {
+         // Ignore icon exceeding maximum xcb request length
+         if (icon_data.size() > xcb_get_maximum_request_length(xcb_connection())) {
+-            qWarning("Ignoring window icon: Size %llu exceeds maximum xcb request length %u.",
++            qWarning("Ignoring window icon: Size %u exceeds maximum xcb request length %u.",
+                      icon_data.size(), xcb_get_maximum_request_length(xcb_connection()));
+             return;
+         }
+diff --git src/plugins/sqldrivers/configure.json src/plugins/sqldrivers/configure.json
+index 28ccbeadcd..d8ae1d0e34 100644
+--- src/plugins/sqldrivers/configure.json
++++ src/plugins/sqldrivers/configure.json
+@@ -149,10 +149,12 @@
+             "headers": "sqlite3.h",
+             "sources": [
+                 { "type": "pkgConfig", "args": "sqlite3" },
++                { "type": "pkgConfig", "args": "--static sqlite3" },
+                 "-lsqlite3"
+             ],
+             "use": [
+-                { "lib": "zlib", "condition": "!config.win32 && features.system-zlib" }
++                { "lib": "zlib", "condition": "!config.win32 && features.system-zlib" },
++                { "lib": "thread" }
+             ]
+         }
+     },
+diff --git src/testlib/doc/snippets/code/src_qtestlib_qtestcase.cpp src/testlib/doc/snippets/code/src_qtestlib_qtestcase.cpp
+index eec0491c23..155ff16993 100644
+--- src/testlib/doc/snippets/code/src_qtestlib_qtestcase.cpp
++++ src/testlib/doc/snippets/code/src_qtestlib_qtestcase.cpp
+@@ -49,6 +49,9 @@
+ ****************************************************************************/
+ #include <QTest>
+ #include <QSqlDatabase>
++#include <QtGui/qfontdatabase.h>
++
++#include <initializer_list>
+ 
+ // dummy
+ class TestBenchmark : public QObject
+@@ -246,3 +249,20 @@ QVERIFY2(file.open(QIODevice::WriteOnly),
+                     .arg(file.fileName()).arg(file.errorString())));
+ //! [33]
+ }
++
++void compareListToArray()
++{
++//! [34]
++    const int expected[] = {8, 10, 12, 16, 20, 24};
++    QCOMPARE(QFontDatabase::standardSizes(), expected);
++//! [34]
++}
++
++void compareListToInitializerList()
++{
++//! [35]
++ #define ARG(...) __VA_ARGS__
++     QCOMPARE(QFontDatabase::standardSizes(), ARG({8, 10, 12, 16, 20, 24}));
++ #undef ARG
++//! [35]
++}
+diff --git src/testlib/qbenchmarkperfevents.cpp src/testlib/qbenchmarkperfevents.cpp
+index e8c6969d4a..f5105a893b 100644
+--- src/testlib/qbenchmarkperfevents.cpp
++++ src/testlib/qbenchmarkperfevents.cpp
+@@ -194,7 +194,7 @@ bool QBenchmarkPerfEventsMeasurer::isAvailable()
+ 
+    Use the following Perl script to re-generate the list
+ === cut perl ===
+-#!/usr/bin/env perl
++#!/usr/local64/bin/perl
+ # Load all entries into %map
+ while (<STDIN>) {
+     m/^\s*(.*)\s*$/;
+diff --git src/testlib/qjunittestlogger.cpp src/testlib/qjunittestlogger.cpp
+index 2d71f7967b..147777f77c 100644
+--- src/testlib/qjunittestlogger.cpp
++++ src/testlib/qjunittestlogger.cpp
+@@ -43,6 +43,7 @@
+ #include <QtTest/qtestcase.h>
+ #include <QtTest/private/qtestresult_p.h>
+ #include <QtTest/private/qbenchmark_p.h>
++#include <QtTest/private/qtestlog_p.h>
+ 
+ #ifdef min // windows.h without NOMINMAX is included by the benchmark headers.
+ #  undef min
+@@ -64,7 +65,7 @@ QJUnitTestLogger::QJUnitTestLogger(const char *filename)
+ 
+ QJUnitTestLogger::~QJUnitTestLogger()
+ {
+-    delete currentLogElement;
++    Q_ASSERT(!currentTestSuite);
+     delete logFormatter;
+ }
+ 
+@@ -73,27 +74,19 @@ void QJUnitTestLogger::startLogging()
+     QAbstractTestLogger::startLogging();
+ 
+     logFormatter = new QTestJUnitStreamer(this);
+-    delete errorLogElement;
+-    errorLogElement = new QTestElement(QTest::LET_SystemError);
+-}
++    delete systemOutputElement;
++    systemOutputElement = new QTestElement(QTest::LET_SystemOutput);
++    delete systemErrorElement;
++    systemErrorElement = new QTestElement(QTest::LET_SystemError);
+ 
+-void QJUnitTestLogger::stopLogging()
+-{
+-    QTestElement *iterator = listOfTestcases;
++    Q_ASSERT(!currentTestSuite);
++    currentTestSuite = new QTestElement(QTest::LET_TestSuite);
++    currentTestSuite->addAttribute(QTest::AI_Name, QTestResult::currentTestObjectName());
+ 
+-    char buf[10];
+-
+-    currentLogElement = new QTestElement(QTest::LET_TestSuite);
+-    currentLogElement->addAttribute(QTest::AI_Name, QTestResult::currentTestObjectName());
+-
+-    qsnprintf(buf, sizeof(buf), "%i", testCounter);
+-    currentLogElement->addAttribute(QTest::AI_Tests, buf);
+-
+-    qsnprintf(buf, sizeof(buf), "%i", failureCounter);
+-    currentLogElement->addAttribute(QTest::AI_Failures, buf);
+-
+-    qsnprintf(buf, sizeof(buf), "%i", errorCounter);
+-    currentLogElement->addAttribute(QTest::AI_Errors, buf);
++    auto localTime = QDateTime::currentDateTime();
++    auto localTimeWithUtcOffset = localTime.toOffsetFromUtc(localTime.offsetFromUtc());
++    currentTestSuite->addAttribute(QTest::AI_Timestamp,
++        localTimeWithUtcOffset.toString(Qt::ISODate).toUtf8().constData());
+ 
+     QTestElement *property;
+     QTestElement *properties = new QTestElement(QTest::LET_Properties);
+@@ -113,21 +106,42 @@ void QJUnitTestLogger::stopLogging()
+     property->addAttribute(QTest::AI_PropertyValue, QLibraryInfo::build());
+     properties->addLogElement(property);
+ 
+-    currentLogElement->addLogElement(properties);
++    currentTestSuite->addLogElement(properties);
++}
+ 
+-    currentLogElement->addLogElement(iterator);
++void QJUnitTestLogger::stopLogging()
++{
++    char buf[10];
++
++    qsnprintf(buf, sizeof(buf), "%i", testCounter);
++    currentTestSuite->addAttribute(QTest::AI_Tests, buf);
++
++    qsnprintf(buf, sizeof(buf), "%i", failureCounter);
++    currentTestSuite->addAttribute(QTest::AI_Failures, buf);
+ 
+-    /* For correct indenting, make sure every testcase knows its parent */
+-    QTestElement* testcase = iterator;
++    qsnprintf(buf, sizeof(buf), "%i", errorCounter);
++    currentTestSuite->addAttribute(QTest::AI_Errors, buf);
++
++    currentTestSuite->addAttribute(QTest::AI_Time,
++        QByteArray::number(QTestLog::msecsTotalTime() / 1000, 'f').constData());
++
++    currentTestSuite->addLogElement(listOfTestcases);
++
++    // For correct indenting, make sure every testcase knows its parent
++    QTestElement *testcase = listOfTestcases;
+     while (testcase) {
+-        testcase->setParent(currentLogElement);
++        testcase->setParent(currentTestSuite);
+         testcase = testcase->nextElement();
+     }
+ 
+-    currentLogElement->addLogElement(errorLogElement);
++    if (systemOutputElement->childElements())
++        currentTestSuite->addLogElement(systemOutputElement);
++    currentTestSuite->addLogElement(systemErrorElement);
++
++    logFormatter->output(currentTestSuite);
+ 
+-    QTestElement *it = currentLogElement;
+-    logFormatter->output(it);
++    delete currentTestSuite;
++    currentTestSuite = nullptr;
+ 
+     QAbstractTestLogger::stopLogging();
+ }
+@@ -138,11 +152,15 @@ void QJUnitTestLogger::enterTestFunction(const char *function)
+     currentLogElement->addAttribute(QTest::AI_Name, function);
+     currentLogElement->addToList(&listOfTestcases);
+ 
++    // The element will be deleted when the suite is deleted
++
+     ++testCounter;
+ }
+ 
+ void QJUnitTestLogger::leaveTestFunction()
+ {
++    currentLogElement->addAttribute(QTest::AI_Time,
++        QByteArray::number(QTestLog::msecsFunctionTime() / 1000, 'f').constData());
+ }
+ 
+ void QJUnitTestLogger::addIncident(IncidentTypes type, const char *description,
+@@ -291,11 +309,13 @@ void QJUnitTestLogger::addTag(QTestElement* element)
+ 
+ void QJUnitTestLogger::addMessage(MessageTypes type, const QString &message, const char *file, int line)
+ {
+-    QTestElement *errorElement = new QTestElement(QTest::LET_Error);
++    auto messageElement = new QTestElement(QTest::LET_Message);
++    auto systemLogElement = systemOutputElement;
+     const char *typeBuf = nullptr;
+ 
+     switch (type) {
+     case QAbstractTestLogger::Warn:
++        systemLogElement = systemErrorElement;
+         typeBuf = "warn";
+         break;
+     case QAbstractTestLogger::QSystem:
+@@ -308,9 +328,11 @@ void QJUnitTestLogger::addMessage(MessageTypes type, const QString &message, con
+         typeBuf = "qinfo";
+         break;
+     case QAbstractTestLogger::QWarning:
++        systemLogElement = systemErrorElement;
+         typeBuf = "qwarn";
+         break;
+     case QAbstractTestLogger::QFatal:
++        systemLogElement = systemErrorElement;
+         typeBuf = "qfatal";
+         break;
+     case QAbstractTestLogger::Skip:
+@@ -324,27 +346,27 @@ void QJUnitTestLogger::addMessage(MessageTypes type, const QString &message, con
+         break;
+     }
+ 
+-    errorElement->addAttribute(QTest::AI_Type, typeBuf);
+-    errorElement->addAttribute(QTest::AI_Description, message.toUtf8().constData());
+-    addTag(errorElement);
++    messageElement->addAttribute(QTest::AI_Type, typeBuf);
++    messageElement->addAttribute(QTest::AI_Description, message.toUtf8().constData());
++    addTag(messageElement);
+ 
+     if (file)
+-        errorElement->addAttribute(QTest::AI_File, file);
++        messageElement->addAttribute(QTest::AI_File, file);
+     else
+-        errorElement->addAttribute(QTest::AI_File, "");
++        messageElement->addAttribute(QTest::AI_File, "");
+ 
+     char buf[100];
+     qsnprintf(buf, sizeof(buf), "%i", line);
+-    errorElement->addAttribute(QTest::AI_Line, buf);
++    messageElement->addAttribute(QTest::AI_Line, buf);
+ 
+-    currentLogElement->addLogElement(errorElement);
++    currentLogElement->addLogElement(messageElement);
+     ++errorCounter;
+ 
+-    // Also add the message to the system error log (i.e. stderr), if one exists
+-    if (errorLogElement) {
+-        QTestElement *systemErrorElement = new QTestElement(QTest::LET_Error);
+-        systemErrorElement->addAttribute(QTest::AI_Description, message.toUtf8().constData());
+-        errorLogElement->addLogElement(systemErrorElement);
++    // Also add the message to the system log (stdout/stderr), if one exists
++    if (systemLogElement) {
++        auto messageElement = new QTestElement(QTest::LET_Message);
++        messageElement->addAttribute(QTest::AI_Description, message.toUtf8().constData());
++        systemLogElement->addLogElement(messageElement);
+     }
+ }
+ 
+diff --git src/testlib/qjunittestlogger_p.h src/testlib/qjunittestlogger_p.h
+index 6fd4e4c331..0be9e8aeb0 100644
+--- src/testlib/qjunittestlogger_p.h
++++ src/testlib/qjunittestlogger_p.h
+@@ -79,9 +79,11 @@ class QJUnitTestLogger : public QAbstractTestLogger
+                     const char *file = nullptr, int line = 0) override;
+ 
+     private:
++        QTestElement *currentTestSuite = nullptr;
+         QTestElement *listOfTestcases = nullptr;
+         QTestElement *currentLogElement = nullptr;
+-        QTestElement *errorLogElement = nullptr;
++        QTestElement *systemOutputElement = nullptr;
++        QTestElement *systemErrorElement = nullptr;
+         QTestJUnitStreamer *logFormatter = nullptr;
+ 
+         int testCounter = 0;
+diff --git src/testlib/qsignaldumper.cpp src/testlib/qsignaldumper.cpp
+index 70f4d5e63d..09d2d826a8 100644
+--- src/testlib/qsignaldumper.cpp
++++ src/testlib/qsignaldumper.cpp
+@@ -87,7 +87,7 @@ static void qSignalDumperCallback(QObject *caller, int signal_index, void **argv
+     str += objname.toLocal8Bit();
+     if (!objname.isEmpty())
+         str += ' ';
+-    str += QByteArray::number(quintptr(caller), 16).rightJustified(8, '0');
++    str += QByteArray::number(qptraddr(caller), 16).rightJustified(8, '0');
+ 
+     str += ") ";
+     str += member.name();
+@@ -104,7 +104,7 @@ static void qSignalDumperCallback(QObject *caller, int signal_index, void **argv
+             if (arg.endsWith('&'))
+                 str += '@';
+ 
+-            quintptr addr = quintptr(*reinterpret_cast<void **>(argv[i + 1]));
++            qptraddr addr = qptraddr(*reinterpret_cast<void **>(argv[i + 1]));
+             str.append(QByteArray::number(addr, 16).rightJustified(8, '0'));
+         } else if (typeId != QMetaType::UnknownType) {
+             Q_ASSERT(typeId != QMetaType::Void); // void parameter => metaobject is corrupt
+@@ -144,7 +144,7 @@ static void qSignalDumperCallbackSlot(QObject *caller, int method_index, void **
+     str += objname.toLocal8Bit();
+     if (!objname.isEmpty())
+         str += ' ';
+-    str += QByteArray::number(quintptr(caller), 16).rightJustified(8, '0');
++    str += QByteArray::number(qptraddr(caller), 16).rightJustified(8, '0');
+ 
+     str += ") ";
+     str += member.methodSignature();
+@@ -166,8 +166,16 @@ static void qSignalDumperCallbackEndSignal(QObject *caller, int /*signal_index*/
+ 
+ }
+ 
++void QSignalDumper::setEnabled(bool enabled)
++{
++    s_isEnabled = enabled;
++}
++
+ void QSignalDumper::startDump()
+ {
++    if (!s_isEnabled)
++        return;
++
+     static QSignalSpyCallbackSet set = { QTest::qSignalDumperCallback,
+         QTest::qSignalDumperCallbackSlot, QTest::qSignalDumperCallbackEndSignal, nullptr };
+     qt_register_signal_spy_callbacks(&set);
+@@ -190,4 +198,6 @@ void QSignalDumper::clearIgnoredClasses()
+         QTest::ignoreClasses()->clear();
+ }
+ 
++bool QSignalDumper::s_isEnabled = false;
++
+ QT_END_NAMESPACE
+diff --git src/testlib/qsignaldumper_p.h src/testlib/qsignaldumper_p.h
+index 0f443fd612..e211f5c059 100644
+--- src/testlib/qsignaldumper_p.h
++++ src/testlib/qsignaldumper_p.h
+@@ -60,11 +60,14 @@ class QByteArray;
+ class QSignalDumper
+ {
+ public:
++    static void setEnabled(bool);
+     static void startDump();
+     static void endDump();
+ 
+     static void ignoreClass(const QByteArray &klass);
+     static void clearIgnoredClasses();
++private:
++    static bool s_isEnabled;
+ };
+ 
+ QT_END_NAMESPACE
+diff --git src/testlib/qtest.h src/testlib/qtest.h
+index 0298ff96e3..3632e8f9a2 100644
+--- src/testlib/qtest.h
++++ src/testlib/qtest.h
+@@ -64,6 +64,7 @@
+ #include <QtCore/qsize.h>
+ #include <QtCore/qrect.h>
+ 
++#include <initializer_list>
+ #include <memory>
+ 
+ QT_BEGIN_NAMESPACE
+@@ -284,27 +285,36 @@ inline bool qCompare(QLatin1String const &t1, QString const &t2, const char *act
+     return qCompare(QString(t1), t2, actual, expected, file, line);
+ }
+ 
+-template <typename T>
+-inline bool qCompare(QList<T> const &t1, QList<T> const &t2, const char *actual, const char *expected,
+-                    const char *file, int line)
++namespace Internal {
++
++// Compare sequences of equal size
++template <typename ActualIterator, typename ExpectedIterator>
++bool compareSequence(ActualIterator actualIt, ActualIterator actualEnd,
++                     ExpectedIterator expectedBegin, ExpectedIterator expectedEnd,
++                     const char *actual, const char *expected,
++                     const char *file, int line)
+ {
+     char msg[1024];
+     msg[0] = '\0';
+-    bool isOk = true;
+-    const int actualSize = t1.count();
+-    const int expectedSize = t2.count();
+-    if (actualSize != expectedSize) {
++
++    const qsizetype actualSize = actualEnd - actualIt;
++    const qsizetype expectedSize = expectedEnd - expectedBegin;
++    bool isOk = actualSize == expectedSize;
++
++    if (!isOk) {
+         qsnprintf(msg, sizeof(msg), "Compared lists have different sizes.\n"
+-                  "   Actual   (%s) size: %d\n"
+-                  "   Expected (%s) size: %d", actual, actualSize, expected, expectedSize);
+-        isOk = false;
++                  "   Actual   (%s) size: %zd\n"
++                  "   Expected (%s) size: %zd", actual, actualSize,
++                  expected, expectedSize);
+     }
+-    for (int i = 0; isOk && i < actualSize; ++i) {
+-        if (!(t1.at(i) == t2.at(i))) {
+-            char *val1 = toString(t1.at(i));
+-            char *val2 = toString(t2.at(i));
+ 
+-            qsnprintf(msg, sizeof(msg), "Compared lists differ at index %d.\n"
++    for (auto expectedIt = expectedBegin; isOk && expectedIt < expectedEnd; ++actualIt, ++expectedIt) {
++        if (!(*actualIt == *expectedIt)) {
++            const qsizetype i = qsizetype(expectedIt - expectedBegin);
++            char *val1 = QTest::toString(*actualIt);
++            char *val2 = QTest::toString(*expectedIt);
++
++            qsnprintf(msg, sizeof(msg), "Compared lists differ at index %zd.\n"
+                       "   Actual   (%s): %s\n"
+                       "   Expected (%s): %s", i, actual, val1 ? val1 : "<null>",
+                       expected, val2 ? val2 : "<null>");
+@@ -317,6 +327,35 @@ inline bool qCompare(QList<T> const &t1, QList<T> const &t2, const char *actual,
+     return compare_helper(isOk, msg, nullptr, nullptr, actual, expected, file, line);
+ }
+ 
++} // namespace Internal
++
++template <typename T>
++inline bool qCompare(QList<T> const &t1, QList<T> const &t2, const char *actual, const char *expected,
++                     const char *file, int line)
++{
++    return Internal::compareSequence(t1.cbegin(), t1.cend(), t2.cbegin(), t2.cend(),
++                                     actual, expected, file, line);
++}
++
++template <typename T, int N>
++bool qCompare(QList<T> const &t1, std::initializer_list<T> t2,
++              const char *actual, const char *expected,
++              const char *file, int line)
++{
++    return Internal::compareSequence(t1.cbegin(), t1.cend(), t2.cbegin(), t2.cend(),
++                                     actual, expected, file, line);
++}
++
++// Compare QList against array
++template <typename T, int N>
++bool qCompare(QList<T> const &t1, const T (& t2)[N],
++              const char *actual, const char *expected,
++              const char *file, int line)
++{
++    return Internal::compareSequence(t1.cbegin(), t1.cend(), t2, t2 + N,
++                                     actual, expected, file, line);
++}
++
+ template <>
+ inline bool qCompare(QStringList const &t1, QStringList const &t2, const char *actual, const char *expected,
+                             const char *file, int line)
+diff --git src/testlib/qtestcase.cpp src/testlib/qtestcase.cpp
+index 979fd6e1d2..fb69a794de 100644
+--- src/testlib/qtestcase.cpp
++++ src/testlib/qtestcase.cpp
+@@ -212,28 +212,26 @@ static void stackTrace()
+     if (debuggerPresent() || hasSystemCrashReporter())
+         return;
+ 
+-#if defined(Q_OS_LINUX) || defined(Q_OS_MACOS)
++#if defined(Q_OS_LINUX) || defined(Q_OS_MACOS) || defined(Q_OS_FREEBSD)
+     const int msecsFunctionTime = qRound(QTestLog::msecsFunctionTime());
+     const int msecsTotalTime = qRound(QTestLog::msecsTotalTime());
+     fprintf(stderr, "\n=== Received signal at function time: %dms, total time: %dms, dumping stack ===\n",
+             msecsFunctionTime, msecsTotalTime);
+ #endif
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
+     char cmd[512];
+-    qsnprintf(cmd, 512, "gdb --pid %d 2>/dev/null <<EOF\n"
+-                         "set prompt\n"
+-                         "set height 0\n"
+-                         "thread apply all where full\n"
+-                         "detach\n"
+-                         "quit\n"
+-                         "EOF\n",
++    qsnprintf(cmd, 512, "gdb --pid %d -batch"
++                        " -ex 'thread apply all where full'"
++                        " -ex detach"
++                        " -ex quit"
++                        " 1>&2 2>/dev/null </dev/null\n",
+                          (int)getpid());
+     if (system(cmd) == -1)
+         fprintf(stderr, "calling gdb failed\n");
+     fprintf(stderr, "=== End of stack trace ===\n");
+ #elif defined(Q_OS_MACOS)
+     char cmd[512];
+-    qsnprintf(cmd, 512, "lldb -p %d 2>/dev/null <<EOF\n"
++    qsnprintf(cmd, 512, "lldb -p %d 1>&2 2>/dev/null <<EOF\n"
+                          "bt all\n"
+                          "quit\n"
+                          "EOF\n",
+@@ -643,7 +641,7 @@ Q_TESTLIB_EXPORT void qtest_qParseArgs(int argc, const char *const argv[], bool
+         } else if (strcmp(argv[i], "-v2") == 0) {
+             QTestLog::setVerboseLevel(2);
+         } else if (strcmp(argv[i], "-vs") == 0) {
+-            QSignalDumper::startDump();
++            QSignalDumper::setEnabled(true);
+         } else if (strcmp(argv[i], "-o") == 0) {
+             if (i + 1 >= argc) {
+                 fprintf(stderr, "-o needs an extra parameter specifying the filename and optional format\n");
+@@ -1030,6 +1028,7 @@ class WatchDog : public QThread
+ public:
+     WatchDog()
+     {
++        setObjectName(QLatin1String("QtTest Watchdog"));
+         auto locker = qt_unique_lock(mutex);
+         expecting = ThreadStart;
+         start();
+@@ -1489,6 +1488,8 @@ void TestMethods::invokeTests(QObject *testObject) const
+         watchDog.reset(new WatchDog);
+     }
+ 
++    QSignalDumper::startDump();
++
+     if (!QTestResult::skipCurrentTest() && !QTest::currentTestFailed()) {
+         if (m_initTestCaseMethod.isValid())
+             m_initTestCaseMethod.invoke(testObject, Qt::DirectConnection);
+@@ -1521,6 +1522,8 @@ void TestMethods::invokeTests(QObject *testObject) const
+     }
+     QTestResult::finishedCurrentTestFunction();
+     QTestResult::setCurrentTestFunction(nullptr);
++
++    QSignalDumper::endDump();
+ }
+ 
+ #if defined(Q_OS_WIN) && !defined(Q_OS_WINRT)
+@@ -1971,8 +1974,6 @@ void QTest::qCleanup()
+     delete QBenchmarkGlobalData::current;
+     QBenchmarkGlobalData::current = nullptr;
+ 
+-    QSignalDumper::endDump();
+-
+ #if defined(Q_OS_MACOS)
+     IOPMAssertionRelease(macPowerSavingDisabled);
+ #endif
+@@ -2736,6 +2737,25 @@ TO_STRING_FLOAT(qfloat16, %.3g)
+ TO_STRING_FLOAT(float, %g)
+ TO_STRING_FLOAT(double, %.12g)
+ 
++#if __has_feature(capabilities)
++template <> Q_TESTLIB_EXPORT char *QTest::toString<__uintcap_t>(const __uintcap_t &t)
++{
++    char *msg = new char[128];
++    __uintcap_t tmp = t;
++    snprintf(msg, 128, "%lu (%#p)", (qptraddr)tmp, (void *)tmp);
++    return msg;
++}
++
++template <> Q_TESTLIB_EXPORT char *QTest::toString<__intcap_t>(const __intcap_t &t)
++{
++    char *msg = new char[128];
++    __intcap_t tmp = t;
++    snprintf(msg, 128, "%ld (%#p)", (qptraddr)tmp, (void *)tmp);
++    return msg;
++}
++#endif
++
++
+ template <> Q_TESTLIB_EXPORT char *QTest::toString<char>(const char &t)
+ {
+     unsigned char c = static_cast<unsigned char>(t);
+diff --git src/testlib/qtestcase.h src/testlib/qtestcase.h
+index b5aea46689..f44722c527 100644
+--- src/testlib/qtestcase.h
++++ src/testlib/qtestcase.h
+@@ -441,6 +441,10 @@ namespace QTest
+     QTEST_COMPARE_DECL(signed char)
+     QTEST_COMPARE_DECL(unsigned char)
+     QTEST_COMPARE_DECL(bool)
++#if __has_feature(capabilities)
++    QTEST_COMPARE_DECL(__intcap_t)
++    QTEST_COMPARE_DECL(__uintcap_t)
++#endif
+ #endif
+ 
+     template <typename T1, typename T2>
+@@ -463,6 +467,26 @@ namespace QTest
+         return qCompare(qreal(t1), qreal(t2), actual, expected, file, line);
+     }
+ 
++#if __has_feature(capabilities)
++// XXXAR: TODO: enable these overloads but for now turn linker errors into compiler errors
++#define DELETE_COMPARE(Type1, Type2) \
++    bool qCompare(Type1 t1, Type2 t2, const char *actual, const char *expected, const char *file, int line) = delete
++#define DELETE_CAP_COMPARE_WITH(type) \
++    DELETE_COMPARE(__intcap_t, type); \
++    DELETE_COMPARE(type, __intcap_t); \
++    DELETE_COMPARE(__uintcap_t, type); \
++    DELETE_COMPARE(type, __uintcap_t)
++
++    DELETE_CAP_COMPARE_WITH(int);
++    DELETE_CAP_COMPARE_WITH(uint);
++    DELETE_CAP_COMPARE_WITH(long);
++    DELETE_CAP_COMPARE_WITH(ulong);
++    DELETE_CAP_COMPARE_WITH(qlonglong);
++    DELETE_CAP_COMPARE_WITH(qulonglong);
++    DELETE_CAP_COMPARE_WITH(void*);
++    DELETE_CAP_COMPARE_WITH(std::nullptr_t);
++#endif
++
+     template <typename T>
+     inline bool qCompare(const T *t1, const T *t2, const char *actual, const char *expected,
+                         const char *file, int line)
+diff --git src/testlib/qtestcase.qdoc src/testlib/qtestcase.qdoc
+index e39b47024f..c726add9fb 100644
+--- src/testlib/qtestcase.qdoc
++++ src/testlib/qtestcase.qdoc
+@@ -116,19 +116,28 @@
+    Expected.  If the parameter order is swapped, debugging a failing test can be
+    confusing and tests expecting zero may fail due to rounding errors.
+ 
++   QCOMPARE() tries to output the contents of the values if the comparison fails,
++   so it is visible from the test log why the comparison failed.
++
++   Example:
++   \snippet code/src_qtestlib_qtestcase.cpp 2
++
+    When comparing floating-point types (\c float, \c double, and \c qfloat16),
+    \l qFuzzyCompare() is used for finite values. If qFuzzyIsNull() is true for
+    both values, they are also considered equal. Infinities match if they have
+    the same sign, and any NaN as actual value matches with any NaN as expected
+    value (even though NaN != NaN, even when they're identical).
+ 
+-   QCOMPARE() tries to output the contents of the values if the comparison fails,
+-   so it is visible from the test log why the comparison failed.
++   When comparing QList, arrays and initializer lists of the value type
++   can be passed as expected value:
++   \snippet code/src_qtestlib_qtestcase.cpp 34
+ 
+-   Example:
+-   \snippet code/src_qtestlib_qtestcase.cpp 2
++   Note that using initializer lists requires a defining a helper macro
++   to prevent the preprocessor from interpreting the commas as macro argument
++   delimiters:
++   \snippet code/src_qtestlib_qtestcase.cpp 35
+ 
+-   \note This macro can only be used in a test function that is invoked
++   \note QCOMPARE() can only be used in a test function that is invoked
+    by the test framework.
+ 
+    For your own classes, you can use \l QTest::toString() to format values for
+diff --git src/testlib/qtestcoreelement_p.h src/testlib/qtestcoreelement_p.h
+index a101ab5ea3..4eb7361a5c 100644
+--- src/testlib/qtestcoreelement_p.h
++++ src/testlib/qtestcoreelement_p.h
+@@ -139,7 +139,8 @@ const char *QTestCoreElement<ElementType>::elementName() const
+         "testcase",
+         "testsuite",
+         "benchmark",
+-        "system-err"
++        "system-err",
++        "system-out"
+     };
+ 
+     if (type != QTest::LET_Undefined)
+diff --git src/testlib/qtestelementattribute.cpp src/testlib/qtestelementattribute.cpp
+index e194ee50f7..134804a060 100644
+--- src/testlib/qtestelementattribute.cpp
++++ src/testlib/qtestelementattribute.cpp
+@@ -135,7 +135,9 @@ const char *QTestElementAttribute::name() const
+         "metric",
+         "tag",
+         "value",
+-        "iterations"
++        "iterations",
++        "time",
++        "timestamp"
+     };
+ 
+     if (attributeIndex != QTest::AI_Undefined)
+diff --git src/testlib/qtestelementattribute_p.h src/testlib/qtestelementattribute_p.h
+index f3815b72d1..523dd7435e 100644
+--- src/testlib/qtestelementattribute_p.h
++++ src/testlib/qtestelementattribute_p.h
+@@ -76,7 +76,9 @@ namespace QTest {
+         AI_Metric = 12,
+         AI_Tag = 13,
+         AI_Value = 14,
+-        AI_Iterations = 15
++        AI_Iterations = 15,
++        AI_Time = 16,
++        AI_Timestamp = 17
+     };
+ 
+     enum LogElementType
+@@ -85,11 +87,12 @@ namespace QTest {
+         LET_Property = 0,
+         LET_Properties = 1,
+         LET_Failure = 2,
+-        LET_Error = 3,
++        LET_Message = 3,
+         LET_TestCase = 4,
+         LET_TestSuite = 5,
+         LET_Benchmark = 6,
+-        LET_SystemError = 7
++        LET_SystemError = 7,
++        LET_SystemOutput = 8
+     };
+ }
+ 
+diff --git src/testlib/qtestevent.h src/testlib/qtestevent.h
+index faad914a47..88b269d56e 100644
+--- src/testlib/qtestevent.h
++++ src/testlib/qtestevent.h
+@@ -58,6 +58,11 @@
+ 
+ QT_BEGIN_NAMESPACE
+ 
++#ifdef QT_WIDGETS_LIB
++# define QT_ONLY_WIDGETLIB_USES
++#else
++# define QT_ONLY_WIDGETLIB_USES Q_DECL_UNUSED_MEMBER
++#endif
+ 
+ class QTestEvent
+ {
+@@ -103,10 +108,7 @@ class QTestKeyClicksEvent: public QTestEvent
+ {
+ public:
+     inline QTestKeyClicksEvent(const QString &keys, Qt::KeyboardModifiers modifiers, int delay)
+-        : _keys(keys), _modifiers(modifiers), _delay(delay)
+-        {
+-            Q_UNUSED(_delay) // Silence -Werror,-Wunused-private-field
+-        }
++        : _keys(keys), _modifiers(modifiers), _delay(delay) {}
+     inline QTestEvent *clone() const override { return new QTestKeyClicksEvent(*this); }
+ 
+ #ifdef QT_WIDGETS_LIB
+@@ -114,12 +116,18 @@ public:
+     {
+         QTest::keyClicks(w, _keys, _modifiers, _delay);
+     }
++#else
++    inline void silenceWarnings() {
++        Q_UNUSED(_keys)
++        Q_UNUSED(_modifiers)
++        Q_UNUSED(_delay)
++    }
+ #endif
+ 
+ private:
+-    QString _keys;
+-    Qt::KeyboardModifiers _modifiers;
+-    int _delay;
++    QT_ONLY_WIDGETLIB_USES QString _keys;
++    QT_ONLY_WIDGETLIB_USES Qt::KeyboardModifiers _modifiers;
++    QT_ONLY_WIDGETLIB_USES int _delay;
+ };
+ 
+ class QTestMouseEvent: public QTestEvent
+@@ -127,12 +135,7 @@ class QTestMouseEvent: public QTestEvent
+ public:
+     inline QTestMouseEvent(QTest::MouseAction action, Qt::MouseButton button,
+             Qt::KeyboardModifiers modifiers, QPoint position, int delay)
+-        : _action(action), _button(button), _modifiers(modifiers), _pos(position), _delay(delay)
+-        {
+-            Q_UNUSED(_action)
+-            Q_UNUSED(_button)
+-            Q_UNUSED(_delay)
+-        }
++        : _action(action), _button(button), _modifiers(modifiers), _pos(position), _delay(delay) {}
+     inline QTestEvent *clone() const override { return new QTestMouseEvent(*this); }
+ 
+ #ifdef QT_WIDGETS_LIB
+@@ -140,14 +143,22 @@ public:
+     {
+         QTest::mouseEvent(_action, w, _button, _modifiers, _pos, _delay);
+     }
++#else
++    inline void silenceWarnings() {
++        Q_UNUSED(_action)
++        Q_UNUSED(_button)
++        Q_UNUSED(_modifiers)
++        Q_UNUSED(_pos)
++        Q_UNUSED(_delay)
++    }
+ #endif
+ 
+ private:
+-    QTest::MouseAction _action;
+-    Qt::MouseButton _button;
+-    Qt::KeyboardModifiers _modifiers;
+-    QPoint _pos;
+-    int _delay;
++    QT_ONLY_WIDGETLIB_USES QTest::MouseAction _action;
++    QT_ONLY_WIDGETLIB_USES Qt::MouseButton _button;
++    QT_ONLY_WIDGETLIB_USES Qt::KeyboardModifiers _modifiers;
++    QT_ONLY_WIDGETLIB_USES QPoint _pos;
++    QT_ONLY_WIDGETLIB_USES int _delay;
+ };
+ #endif //QT_GUI_LIB
+ 
+@@ -155,18 +166,19 @@ private:
+ class QTestDelayEvent: public QTestEvent
+ {
+ public:
+-    inline QTestDelayEvent(int msecs): _delay(msecs)
+-    {
+-        Q_UNUSED(_delay)
+-    }
++    inline QTestDelayEvent(int msecs): _delay(msecs) {}
+     inline QTestEvent *clone() const override { return new QTestDelayEvent(*this); }
+ 
+ #ifdef QT_WIDGETS_LIB
+     inline void simulate(QWidget * /*w*/) override { QTest::qWait(_delay); }
++#else
++    inline void silenceWarnings() {
++        Q_UNUSED(_delay)
++    }
+ #endif
+ 
+ private:
+-    int _delay;
++    QT_ONLY_WIDGETLIB_USES int _delay;
+ };
+ 
+ class QTestEventList: public QList<QTestEvent *>
+@@ -230,6 +242,8 @@ public:
+ #endif
+ };
+ 
++#undef QT_ONLY_WIDGETLIB_USES
++
+ QT_END_NAMESPACE
+ 
+ Q_DECLARE_METATYPE(QTestEventList)
+diff --git src/testlib/qtestjunitstreamer.cpp src/testlib/qtestjunitstreamer.cpp
+index 9c3a9c9ca5..28879c6e06 100644
+--- src/testlib/qtestjunitstreamer.cpp
++++ src/testlib/qtestjunitstreamer.cpp
+@@ -82,12 +82,17 @@ void QTestJUnitStreamer::formatStart(const QTestElement *element, QTestCharBuffe
+     char indent[20];
+     indentForElement(element, indent, sizeof(indent));
+ 
+-    // Errors are written as CDATA within system-err, comments elsewhere
+-    if (element->elementType() == QTest::LET_Error) {
+-        if (element->parentElement()->elementType() == QTest::LET_SystemError) {
++    // Messages/errors are written as CDATA within system-out, system-err,
++    // respectively, comments elsewhere
++    if (element->elementType() == QTest::LET_Message) {
++        switch (element->parentElement()->elementType()) {
++        case QTest::LET_SystemOutput:
++        case QTest::LET_SystemError:
+             QTest::qt_asprintf(formatted, "<![CDATA[");
+-        } else {
++            break;
++        default:
+             QTest::qt_asprintf(formatted, "%s<!--", indent);
++            break;
+         }
+         return;
+     }
+@@ -118,9 +123,11 @@ void QTestJUnitStreamer::formatAttributes(const QTestElement* element, const QTe
+ 
+     QTest::AttributeIndex attrindex = attribute->index();
+ 
+-    // For errors within system-err, we only want to output `message'
+-    if (element && element->elementType() == QTest::LET_Error
+-        && element->parentElement()->elementType() == QTest::LET_SystemError) {
++    // For messages/errors within system-out, system-err, respectively,
++    // we only want to output `message'
++    if (element && element->elementType() == QTest::LET_Message
++        && (element->parentElement()->elementType() == QTest::LET_SystemOutput
++            || element->parentElement()->elementType() == QTest::LET_SystemError)) {
+ 
+         if (attrindex != QTest::AI_Description) return;
+ 
+@@ -148,12 +155,17 @@ void QTestJUnitStreamer::formatAfterAttributes(const QTestElement *element, QTes
+     if (!element || !formatted )
+         return;
+ 
+-    // Errors are written as CDATA within system-err, comments elsewhere
+-    if (element->elementType() == QTest::LET_Error) {
+-        if (element->parentElement()->elementType() == QTest::LET_SystemError) {
++    // Messages/errors are written as CDATA within system-out, system-err,
++    // respectively, comments elsewhere
++    if (element->elementType() == QTest::LET_Message) {
++        switch (element->parentElement()->elementType()) {
++        case QTest::LET_SystemOutput:
++        case QTest::LET_SystemError:
+             QTest::qt_asprintf(formatted, "]]>\n");
+-        } else {
++            break;
++        default:
+             QTest::qt_asprintf(formatted, " -->\n");
++            break;
+         }
+         return;
+     }
+@@ -176,13 +188,12 @@ void QTestJUnitStreamer::outputElements(QTestElement *element, bool) const
+ {
+     QTestCharBuffer buf;
+     bool hasChildren;
+-    /*
+-        Elements are in reverse order of occurrence, so start from the end and work
+-        our way backwards.
+-    */
+-    while (element && element->nextElement()) {
++
++    // Elements are in reverse order of occurrence, so
++    // start from the end and work our way backwards.
++    while (element && element->nextElement())
+         element = element->nextElement();
+-    }
++
+     while (element) {
+         hasChildren = element->childElements();
+ 
+@@ -208,10 +219,16 @@ void QTestJUnitStreamer::outputElements(QTestElement *element, bool) const
+ void QTestJUnitStreamer::outputElementAttributes(const QTestElement* element, QTestElementAttribute *attribute) const
+ {
+     QTestCharBuffer buf;
++
++    // Attributes are in reverse order of occurrence, so
++    // start from the end and work our way backwards.
++    while (attribute && attribute->nextElement())
++        attribute = attribute->nextElement();
++
+     while (attribute) {
+         formatAttributes(element, attribute, &buf);
+         outputString(buf.data());
+-        attribute = attribute->nextElement();
++        attribute = attribute->previousElement();
+     }
+ }
+ 
+diff --git src/widgets/graphicsview/qgraphicsanchorlayout_p.h src/widgets/graphicsview/qgraphicsanchorlayout_p.h
+index e484f45a2e..f368ad71e5 100644
+--- src/widgets/graphicsview/qgraphicsanchorlayout_p.h
++++ src/widgets/graphicsview/qgraphicsanchorlayout_p.h
+@@ -266,7 +266,7 @@ struct AnchorVertexPair : public AnchorVertex {
+ inline QString AnchorVertex::toString() const
+ {
+     if (!m_item)
+-        return QString::fromLatin1("NULL_%1").arg(quintptr(this));
++        return QString::fromLatin1("NULL_%1").arg(qptraddr(this));
+ 
+     QString edge;
+     switch (m_edge) {
+diff --git src/widgets/graphicsview/qsimplex_p.h src/widgets/graphicsview/qsimplex_p.h
+index a69cef6115..b4f8b5c175 100644
+--- src/widgets/graphicsview/qsimplex_p.h
++++ src/widgets/graphicsview/qsimplex_p.h
+@@ -125,11 +125,11 @@ struct QSimplexConstraint
+ #ifdef QT_DEBUG
+     QString toString() {
+         QString result;
+-        result += QString::fromLatin1("-- QSimplexConstraint %1 --").arg(quintptr(this), 0, 16);
++        result += QString::fromLatin1("-- QSimplexConstraint %1 --").arg(qptraddr(this), 0, 16);
+ 
+         QHash<QSimplexVariable *, qreal>::const_iterator iter;
+         for (iter = variables.constBegin(); iter != variables.constEnd(); ++iter) {
+-            result += QString::fromLatin1("  %1 x %2").arg(iter.value()).arg(quintptr(iter.key()), 0, 16);
++            result += QString::fromLatin1("  %1 x %2").arg(iter.value()).arg(qptraddr(iter.key()), 0, 16);
+         }
+ 
+         switch (ratio) {
+diff --git util/includemocs/includemocs.pl util/includemocs/includemocs.pl
+index ce04d961d8..2ab1f9098c 100755
+--- util/includemocs/includemocs.pl
++++ util/includemocs/includemocs.pl
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/local64/bin/perl
+ #############################################################################
+ ##
+ ## Copyright (C) 2017 Intel Corporation.
+diff --git util/unicode/x11/makeencodings util/unicode/x11/makeencodings
+index 841fc404ab..64944a93ad 100755
+--- util/unicode/x11/makeencodings
++++ util/unicode/x11/makeencodings
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl
++#!/usr/local64/bin/perl
+ 
+ use strict;
+ 
+diff --git util/x86simdgen/generate.pl util/x86simdgen/generate.pl
+index 5df2f4d526..be1a2c49b9 100755
+--- util/x86simdgen/generate.pl
++++ util/x86simdgen/generate.pl
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/local64/bin/perl
+ #############################################################################
+ ##
+ ## Copyright (C) 2018 Intel Corporation.

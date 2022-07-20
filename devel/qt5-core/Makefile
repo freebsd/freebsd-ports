@@ -12,7 +12,8 @@ LIB_DEPENDS=	libdouble-conversion.so:devel/double-conversion \
 		libpcre2-posix.so:devel/pcre2 \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c++11-lang gnome perl5 qmake:no_env qt-dist:5,base
+USES=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5,base
+
 USE_GNOME=	glib20
 USE_PERL5=	extract
 USE_QT=		qmake_build buildtools_build
@@ -40,6 +41,14 @@ QT_CONFIG=	glib icu
 MORE_WRKSRCS=	src/tools/bootstrap src/corelib src/tools/qlalr
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} != aarch64c && ${ARCH} != riscv64c
+USES+=		gnome
+.endif
+
+.if ${ARCH} == aarch64c || ${ARCH} == riscv64c
+CONFIGURE_ARGS+=-no-glib -no-mimetype-database
+.endif
 
 # FreeBSD base gained an os-release in r354922, but that does not exist
 # always (see Synth bug 191, or PR 255354). Be a little more forgiving:
