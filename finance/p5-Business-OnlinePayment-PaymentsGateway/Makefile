@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OnlinePayment-PaymentsGateway
 PORTVERSION=	0.02
 PORTREVISION=	2

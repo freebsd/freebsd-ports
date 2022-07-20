@@ -1,5 +1,3 @@
-# Created by: Neil Booth
-
 PORTNAME=	electrum
 PORTVERSION=	4.2.2
 CATEGORIES=	finance python

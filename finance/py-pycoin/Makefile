@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	pycoin
 PORTVERSION=	0.92.20220529
 CATEGORIES=	finance

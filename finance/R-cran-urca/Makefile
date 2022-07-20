@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	urca
 PORTREVISION=	5
 DISTVERSION=	1.3-0

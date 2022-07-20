@@ -1,5 +1,3 @@
-# Created by: wcarey
-
 PORTNAME=	ledger
 PORTVERSION=	3.2.1
 PORTREVISION=	2

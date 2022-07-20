@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Finance-TW-TSEQuote
 PORTVERSION=	0.28
 CATEGORIES=	finance perl5

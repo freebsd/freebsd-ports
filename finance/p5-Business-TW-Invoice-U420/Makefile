@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Business-TW-Invoice-U420
 PORTVERSION=	0.01
 PORTREVISION=	1

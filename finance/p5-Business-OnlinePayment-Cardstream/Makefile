@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OnlinePayment-Cardstream
 PORTVERSION=	1.0
 PORTREVISION=	3

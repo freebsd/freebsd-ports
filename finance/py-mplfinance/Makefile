@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mplfinance
 PORTVERSION=	0.12.9b1
 CATEGORIES=	finance python

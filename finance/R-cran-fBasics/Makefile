@@ -1,5 +1,3 @@
-# Created by: David Naylor <naylor.b.david@gmail.com>
-
 PORTNAME=	fBasics
 DISTVERSION=	3042.89.2
 CATEGORIES=	finance

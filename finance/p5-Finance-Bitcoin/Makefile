@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	Finance-Bitcoin
 PORTVERSION=	0.902
 CATEGORIES=	finance perl5

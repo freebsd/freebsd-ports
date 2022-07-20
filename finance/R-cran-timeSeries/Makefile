@@ -1,5 +1,3 @@
-# Created by: David Naylor <naylor.b.david@gmail.com>
-
 PORTNAME=	timeSeries
 DISTVERSION=	3062.100
 CATEGORIES=	finance

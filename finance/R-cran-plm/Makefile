@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	plm
 DISTVERSION=	2.6-1
 CATEGORIES=	finance

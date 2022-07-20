@@ -1,5 +1,3 @@
-# Created by: Michael Reifenberger <mr@freebsd.org>
-
 PORTNAME=	cospend
 PORTVERSION=	1.4.8
 CATEGORIES=	finance www editors

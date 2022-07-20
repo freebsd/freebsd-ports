@@ -1,5 +1,3 @@
-# Created by: Glenn Johnson <glennpj@charter.net>
-
 PORTNAME=	libofx
 PORTVERSION=	0.10.4
 CATEGORIES=	finance

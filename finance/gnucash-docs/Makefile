@@ -1,5 +1,3 @@
-# Created by: Glenn Johnson <glennpj@charter.net>
-
 PORTNAME=	gnucash-docs
 PORTVERSION=	4.11
 CATEGORIES=	finance gnome

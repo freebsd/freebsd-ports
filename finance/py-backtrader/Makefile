@@ -1,5 +1,3 @@
-# Created by: Mikhail T.  <m.tsatsenko@gmail.com>
-
 PORTNAME=	backtrader
 PORTVERSION=	1.9.74.123
 PORTREVISION=	1

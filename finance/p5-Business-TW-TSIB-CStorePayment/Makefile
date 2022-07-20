@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Business-TW-TSIB-CStorePayment
 PORTVERSION=	0.04
 PORTREVISION=	1

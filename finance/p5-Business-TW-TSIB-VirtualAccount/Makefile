@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Business-TW-TSIB-VirtualAccount
 PORTVERSION=	0.04b
 PORTREVISION=	2

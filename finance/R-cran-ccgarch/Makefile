@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	ccgarch
 DISTVERSION=	0.2.3
 PORTREVISION=	6

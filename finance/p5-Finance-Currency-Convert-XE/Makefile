@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Finance-Currency-Convert-XE
 PORTVERSION=	0.25
 PORTREVISION=	1

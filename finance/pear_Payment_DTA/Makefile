@@ -1,5 +1,3 @@
-# Created by: Dorit Rottner (<rottner@punkt.de>)
-
 PORTNAME=	Payment_DTA
 PORTVERSION=	1.4.3
 CATEGORIES=	finance pear

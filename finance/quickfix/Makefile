@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <m.tsatsenko@gmail.com>
-
 PORTNAME=	quickfix
 PORTVERSION=	1.15.1
 PORTREVISION=	2

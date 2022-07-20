@@ -1,5 +1,3 @@
-# Created by: David Naylor <naylor.b.david@gmail.com>
-
 PORTNAME=	fGarch
 DISTVERSION=	3042.83.2
 CATEGORIES=	finance

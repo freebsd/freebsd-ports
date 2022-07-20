@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Finance-Quote
 PORTVERSION=	1.52
 CATEGORIES=	finance perl5

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	vars
 DISTVERSION=	1.5-6
 CATEGORIES=	finance

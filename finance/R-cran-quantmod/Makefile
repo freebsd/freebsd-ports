@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	quantmod
 DISTVERSION=	0.4.20
 CATEGORIES=	finance

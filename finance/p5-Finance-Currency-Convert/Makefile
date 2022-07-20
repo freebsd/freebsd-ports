@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Finance-Currency-Convert
 PORTVERSION=	1.08
 PORTREVISION=	1

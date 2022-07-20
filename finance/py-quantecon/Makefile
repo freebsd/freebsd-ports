@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	quantecon
 PORTVERSION=	0.5.3
 CATEGORIES=	finance python

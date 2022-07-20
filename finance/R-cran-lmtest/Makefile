@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	lmtest
 DISTVERSION=	0.9-40
 CATEGORIES=	finance

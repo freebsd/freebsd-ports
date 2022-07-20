@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OCV
 PORTVERSION=	0.1
 PORTREVISION=	1

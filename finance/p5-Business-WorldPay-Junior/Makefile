@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-WorldPay-Junior
 PORTVERSION=	1.07
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin
-
 PORTNAME=	quantlib
 PORTVERSION=	1.20
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Christopher Boumenot <boumenot@gmail.com>
-
 PORTNAME=	Finance-Amortization
 PORTVERSION=	0.5
 PORTREVISION=	1

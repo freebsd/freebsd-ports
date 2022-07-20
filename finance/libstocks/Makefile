@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin
-
 PORTNAME=	libstocks
 PORTVERSION=	0.5.0
 CATEGORIES=	finance devel

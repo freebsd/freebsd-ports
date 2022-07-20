@@ -1,5 +1,3 @@
-# Created by: anarcat@anarcat.ath.cx
-
 PORTNAME=	ledgersmb
 PORTVERSION=	1.2.26
 PORTREVISION=	2

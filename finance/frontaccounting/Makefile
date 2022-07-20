@@ -1,5 +1,3 @@
-# Created by: Janky Jay <ek@purplehat.org>
-
 PORTNAME=	frontaccounting
 DISTVERSION=	2.3.25
 CATEGORIES=	finance www

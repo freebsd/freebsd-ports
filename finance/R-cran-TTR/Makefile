@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	TTR
 DISTVERSION=	0.24.3
 CATEGORIES=	finance

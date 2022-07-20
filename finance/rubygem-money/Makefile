@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	money
 PORTVERSION=	6.14.1
 CATEGORIES=	finance rubygems

@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	PayflowPro
 PORTVERSION=	4706
 CATEGORIES=	finance perl5

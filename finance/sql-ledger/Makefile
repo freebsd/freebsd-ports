@@ -1,5 +1,3 @@
-# Created by: lth@FreeBSD.org
-
 PORTNAME=	sql-ledger
 PORTVERSION=	3.2.11
 CATEGORIES=	finance perl5

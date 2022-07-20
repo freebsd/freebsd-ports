@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	RFinanceYJ
 PORTVERSION=	0.3.1
 PORTREVISION=	11

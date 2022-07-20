@@ -1,5 +1,3 @@
-# Created by: David Naylor <naylor.b.david@gmail.com>
-
 PORTNAME=	timeDate
 DISTVERSION=	3043.102
 PORTREVISION=	3

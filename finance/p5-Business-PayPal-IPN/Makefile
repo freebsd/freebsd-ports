@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Business-PayPal-IPN
 PORTVERSION=	1.94
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	Finance-YahooQuote
 PORTVERSION=	0.26
 CATEGORIES=	finance perl5

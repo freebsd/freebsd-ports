@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OnlinePayment-BankOfAmerica
 PORTVERSION=	1.02
 PORTREVISION=	2

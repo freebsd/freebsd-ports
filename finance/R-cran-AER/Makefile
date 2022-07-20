@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	AER
 DISTVERSION=	1.2-10
 CATEGORIES=	finance

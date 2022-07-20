@@ -1,5 +1,3 @@
-# Created by: Trevor Caira <trevor@bitba.se>
-
 PORTNAME=	stripe
 PORTVERSION=	2.76.0
 CATEGORIES=	finance python

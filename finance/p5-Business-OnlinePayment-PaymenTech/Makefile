@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Business-OnlinePayment-PaymenTech
 PORTVERSION=	2.07
 CATEGORIES=	finance perl5

@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OnlinePayment
 PORTVERSION=	3.05
 CATEGORIES=	finance perl5

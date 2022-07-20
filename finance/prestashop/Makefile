@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	prestashop
 PORTVERSION=	1.7.8.6
 CATEGORIES=	finance www

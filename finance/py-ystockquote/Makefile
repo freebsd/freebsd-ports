@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	ystockquote
 PORTVERSION=	0.2.5
 CATEGORIES=	finance python

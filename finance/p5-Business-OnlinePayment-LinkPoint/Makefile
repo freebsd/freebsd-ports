@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Business-OnlinePayment-LinkPoint
 PORTVERSION=	0.10
 PORTREVISION=	1

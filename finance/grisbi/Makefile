@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	grisbi
 PORTVERSION=	2.0.5
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	venice
 DISTVERSION=	0.752beta
 CATEGORIES=	finance java

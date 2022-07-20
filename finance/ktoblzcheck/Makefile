@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	ktoblzcheck
 PORTVERSION=	1.53
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	yfinance
 PORTVERSION=	0.1.74
 CATEGORIES=	finance python
