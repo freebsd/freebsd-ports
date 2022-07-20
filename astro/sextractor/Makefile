@@ -1,5 +1,3 @@
-# Created by: Mathias Monnerville <mathias@monnerville.com>
-
 PORTNAME=	sextractor
 PORTVERSION=	2.5.0
 PORTREVISION=	2

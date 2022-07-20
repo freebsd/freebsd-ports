@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pp3
 PORTVERSION=	1.3.3
 PORTREVISION=	6

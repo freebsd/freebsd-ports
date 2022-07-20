@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	skyfield
 PORTVERSION=	1.43.1
 CATEGORIES=	astro python

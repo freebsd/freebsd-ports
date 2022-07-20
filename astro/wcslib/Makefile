@@ -1,5 +1,3 @@
-# Created by: Tony Maher <tonymaher@optusnet.com.au>
-
 PORTNAME=	wcslib
 PORTVERSION=	7.11
 CATEGORIES=	astro

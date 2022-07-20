@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	weather
 PORTVERSION=	2.4.2
 PORTREVISION=	1

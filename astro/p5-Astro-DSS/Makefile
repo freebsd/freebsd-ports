@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Astro-DSS
 PORTVERSION=	1.6.1
 PORTREVISION=	1

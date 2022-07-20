@@ -1,5 +1,3 @@
-# Created by: Lukas Maly <Iam@LukasMaly.NET>
-
 PORTNAME=	gpscorrelate
 PORTVERSION=	1.6.1
 PORTREVISION=	9

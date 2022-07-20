@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	xphoon
 PORTVERSION=	20000613
 CATEGORIES=	astro

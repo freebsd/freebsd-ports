@@ -1,5 +1,3 @@
-# Created by: Loïc BARTOLETTI <lbartoletti@FreeBSD.org>
-
 PORTNAME=	readosm
 PORTVERSION=	1.1.0
 CATEGORIES=	astro geography devel

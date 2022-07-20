@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libnova
 PORTVERSION=	0.15.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Keith Walker <kew@icehouse.net>
-
 PORTNAME=	sscalc
 PORTVERSION=	1.0
 CATEGORIES=	astro

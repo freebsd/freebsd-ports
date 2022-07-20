@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	astlib
 PORTVERSION=	0.11.7
 CATEGORIES=	astro python

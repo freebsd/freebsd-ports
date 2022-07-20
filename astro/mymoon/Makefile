@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	mymoon
 DISTVERSION=	1.2a
 PORTREVISION=	5

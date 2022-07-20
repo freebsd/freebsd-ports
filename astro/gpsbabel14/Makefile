@@ -1,5 +1,3 @@
-# Created by: Laurent Courty
-
 PORTNAME=	gpsbabel
 PORTVERSION=	1.4.4
 PORTREVISION=	1

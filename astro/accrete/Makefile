@@ -1,5 +1,3 @@
-# Created by: chuck@pkix.net
-
 PORTNAME=	accrete
 PORTVERSION=	1.0
 CATEGORIES=	astro

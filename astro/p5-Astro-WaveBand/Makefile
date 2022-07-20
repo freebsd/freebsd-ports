@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Astro-WaveBand
 PORTVERSION=	0.09
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alexander Leidinger
-
 PORTNAME=	fowsr
 PORTVERSION=	${FILEVER}
 CATEGORIES=	astro

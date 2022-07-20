@@ -1,5 +1,3 @@
-# Created by: nwhitehorn
-
 PORTNAME=	astropy
 DISTVERSION=	5.1
 PORTEPOCH=	2

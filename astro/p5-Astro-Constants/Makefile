@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Astro-Constants
 PORTVERSION=	0.1400
 CATEGORIES=	astro perl5 science

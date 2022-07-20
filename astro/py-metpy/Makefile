@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	metpy
 PORTVERSION=	1.3.1
 CATEGORIES=	astro python

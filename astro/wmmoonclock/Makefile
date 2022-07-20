@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kkennawa@physics.adelaide.edu.au>
-
 PORTNAME=	wmmoonclock
 PORTVERSION=	1.30
 CATEGORIES=	astro windowmaker

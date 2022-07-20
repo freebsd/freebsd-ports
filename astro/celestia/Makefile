@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	celestia
 PORTVERSION=	1.6.1
 PORTREVISION=	13

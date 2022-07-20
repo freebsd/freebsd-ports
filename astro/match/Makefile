@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	match
 PORTVERSION=	1.0
 CATEGORIES=	astro

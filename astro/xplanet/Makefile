@@ -1,5 +1,3 @@
-# Created by: darius@dons.net.au
-
 PORTNAME=	xplanet
 PORTVERSION=	1.3.1
 CATEGORIES=	astro geography

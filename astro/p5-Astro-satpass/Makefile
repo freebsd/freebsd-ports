@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Astro-satpass
 PORTVERSION=	0.126
 CATEGORIES=	astro perl5

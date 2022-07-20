@@ -1,5 +1,3 @@
-# Created by: Jan Srzednicki <w@wrzask.pl>
-
 PORTNAME=	gkrellmoon2
 PORTVERSION=	0.6
 PORTREVISION=	10

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Astro-PAL
 PORTVERSION=	1.09
 CATEGORIES=	astro perl5

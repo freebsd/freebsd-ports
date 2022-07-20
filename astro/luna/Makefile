@@ -1,5 +1,3 @@
-# Created by: ABURAYER Rewsirow <rewsirow@ff.iij4u.or.jp>
-
 PORTNAME=	luna
 PORTVERSION=	1.9
 CATEGORIES=	astro games

@@ -1,5 +1,3 @@
-# Created by: crwhipp@gmail.com
-
 PORTNAME=	foxtrotgps
 PORTVERSION=	1.2.2
 PORTREVISION=	4

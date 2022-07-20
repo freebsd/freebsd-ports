@@ -1,5 +1,3 @@
-# Created by: Slaven Rezic <slaven@rezic.de>
-
 PORTNAME=	merkaartor
 PORTVERSION=	0.19.0
 PORTREVISION=	4

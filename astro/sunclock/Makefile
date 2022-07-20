@@ -1,5 +1,3 @@
-# Created by: torstenb
-
 PORTNAME=	sunclock
 PORTVERSION=	3.57
 PORTREVISION=	2

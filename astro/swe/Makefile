@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	swe
 PORTVERSION=	2.10.02
 DISTVERSIONPREFIX=	v

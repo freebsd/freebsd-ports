@@ -1,5 +1,3 @@
-# Created by: Markus Brueffer <markus@FreeBSD.org>
-
 PORTNAME=	cfitsio
 PORTVERSION=	4.1.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	gnuastro
 PORTVERSION=	0.17
 CATEGORIES=	astro

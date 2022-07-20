@@ -1,5 +1,3 @@
-# Created by: erich@FreeBSD.org
-
 PORTNAME=	xephem
 PORTVERSION=	4.1.0
 CATEGORIES=	astro

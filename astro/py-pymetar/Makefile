@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@fallin.lv>
-
 PORTNAME=	pymetar
 PORTVERSION=	1.4
 CATEGORIES=	astro geography python

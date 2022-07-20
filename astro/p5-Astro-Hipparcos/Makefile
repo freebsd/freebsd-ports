@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Astro-Hipparcos
 PORTVERSION=	0.09
 PORTREVISION=	3

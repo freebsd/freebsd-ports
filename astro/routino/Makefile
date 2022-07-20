@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	routino
 PORTVERSION=	3.3.3
 CATEGORIES=	astro

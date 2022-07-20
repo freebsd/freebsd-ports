@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Astro-SIMBAD
 PORTVERSION=	2.0.0
 PORTREVISION=	2

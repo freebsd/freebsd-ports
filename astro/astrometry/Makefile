@@ -1,5 +1,3 @@
-# Created by: Sébastien Santoro <dereckson@gmail.com>
-
 PORTNAME=	astrometry
 PORTVERSION=	0.89
 PORTREVISION=	3

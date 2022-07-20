@@ -1,5 +1,3 @@
-# Created by: Gleb Smirnoff <glebius@FreeBSD.org>
-
 PORTNAME=	josm
 PORTVERSION=	18513
 CATEGORIES=	astro java

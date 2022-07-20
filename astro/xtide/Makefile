@@ -1,5 +1,3 @@
-# Created by: Brion Moss <brion@queeg.com>
-
 PORTNAME=	xtide
 PORTVERSION=	2.15.5
 CATEGORIES=	astro geography

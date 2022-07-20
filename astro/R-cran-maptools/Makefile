@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	maptools
 DISTVERSION=	1.1-4
 CATEGORIES=	astro

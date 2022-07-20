@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Astro-SunTime
 PORTVERSION=	0.06
 CATEGORIES=	astro perl5

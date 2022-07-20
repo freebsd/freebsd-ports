@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Astro-ADS
 PORTVERSION=	1.26
 PORTREVISION=	1

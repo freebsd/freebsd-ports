@@ -1,5 +1,3 @@
-# Created by: Christian Brueffer <chris@unixpages.org>
-
 PORTNAME=	nightfall
 PORTVERSION=	1.92
 PORTREVISION=	2

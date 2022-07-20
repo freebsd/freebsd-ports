@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	ephem
 PORTVERSION=	4.1.3
 CATEGORIES=	astro math python
