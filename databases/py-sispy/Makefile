@@ -1,5 +1,3 @@
-# Created by: Rick Miller
-
 PORTNAME=	sispy
 PORTVERSION=	1.1.0
 CATEGORIES=	databases python

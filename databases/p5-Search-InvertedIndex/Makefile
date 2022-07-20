@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Search-InvertedIndex
 PORTVERSION=	1.17
 CATEGORIES=	databases perl5

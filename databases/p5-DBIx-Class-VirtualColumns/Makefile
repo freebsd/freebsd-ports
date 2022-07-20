@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	DBIx-Class-VirtualColumns
 PORTVERSION=	1.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <trociny@FreeBSD.org>
-
 PORTNAME=	python-swiftclient
 PORTVERSION=	3.13.1
 CATEGORIES=	databases python

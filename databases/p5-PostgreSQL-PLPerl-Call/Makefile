@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	PostgreSQL-PLPerl-Call
 PORTVERSION=	1.007
 CATEGORIES=	databases perl5

@@ -1,5 +1,3 @@
-# Created by: wolman@cs.washington.edu
-
 PORTNAME=	SQL-Statement
 PORTVERSION=	1.414
 CATEGORIES=	databases perl5

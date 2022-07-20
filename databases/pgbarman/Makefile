@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=		barman
 DISTVERSIONPREFIX=	release/
 DISTVERSION=		3.0.0

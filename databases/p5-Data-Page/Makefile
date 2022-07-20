@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Data-Page
 PORTVERSION=	2.03
 CATEGORIES=	databases perl5

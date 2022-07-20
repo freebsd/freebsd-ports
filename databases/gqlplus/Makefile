@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	gqlplus
 PORTVERSION=	1.16
 PORTREVISION=	2

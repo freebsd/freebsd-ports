@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	check_redis
 PORTVERSION=	0.1
 PORTREVISION=	1

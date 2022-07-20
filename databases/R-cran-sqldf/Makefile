@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	sqldf
 DISTVERSION=	0.4-11
 CATEGORIES=	databases

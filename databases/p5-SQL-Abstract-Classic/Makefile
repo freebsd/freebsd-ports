@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	SQL-Abstract-Classic
 PORTVERSION=	1.91
 CATEGORIES=	databases perl5

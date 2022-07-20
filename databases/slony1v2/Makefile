@@ -1,5 +1,3 @@
-# Created by: Radim Kolar
-
 PORTNAME=	slony1v2
 PORTVERSION=	2.2.10
 CATEGORIES=	databases

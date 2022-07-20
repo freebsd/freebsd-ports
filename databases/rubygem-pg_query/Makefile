@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	pg_query
 PORTVERSION=	2.1.3
 CATEGORIES=	databases rubygems

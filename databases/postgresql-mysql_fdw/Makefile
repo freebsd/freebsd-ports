@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	mysql_fdw
 DISTVERSIONPREFIX=	REL-
 DISTVERSION=	2_8_0

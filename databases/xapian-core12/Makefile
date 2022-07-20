@@ -1,5 +1,3 @@
-# Created by: J.F. Dockes
-
 PORTNAME=	xapian-core
 PORTVERSION=	1.2.25
 PORTEPOCH=	1

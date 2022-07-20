@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	percona57
 PORTREVISION?=	0
 PKGNAMESUFFIX=	-pam-for-mysql

@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME?=	percona
 DISTVERSION=	5.7.37-40
 PORTREVISION?=	0

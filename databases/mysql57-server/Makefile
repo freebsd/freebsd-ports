@@ -1,5 +1,3 @@
-# Created by: Mahdi Mokhtari <mokhi64@gmail.com>
-
 PORTNAME?=	mysql
 PORTVERSION=	5.7.38
 PORTREVISION?=	0

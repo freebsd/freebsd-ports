@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-LaDBI
 PORTVERSION=	1.2.1
 PORTREVISION=	1

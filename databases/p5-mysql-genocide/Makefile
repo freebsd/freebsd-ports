@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	mysql-genocide
 PORTVERSION=	0.03
 PORTREVISION=	1

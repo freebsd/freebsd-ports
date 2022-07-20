@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	plproxy
 PORTVERSION=	2.10.0
 CATEGORIES=	databases

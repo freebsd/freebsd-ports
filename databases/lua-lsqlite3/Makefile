@@ -1,5 +1,3 @@
-# Created by: Yarema <yds@Necessitu.de>
-
 PORTNAME=	lsqlite3
 PORTVERSION=	0.9.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	asyncmy
 PORTVERSION=	0.2.5
 CATEGORIES=	databases python

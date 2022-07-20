@@ -1,5 +1,3 @@
-# Created by: <jsmith@resonatingmedia.com>
-
 PORTNAME=	mysqldump-secure
 PORTVERSION=	0.16.3
 CATEGORIES=	databases

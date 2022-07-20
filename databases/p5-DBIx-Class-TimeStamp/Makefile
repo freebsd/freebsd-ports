@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-TimeStamp
 PORTVERSION=	0.14
 PORTREVISION=	2

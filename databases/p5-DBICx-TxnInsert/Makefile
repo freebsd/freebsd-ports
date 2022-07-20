@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	DBICx-TxnInsert
 PORTVERSION=	0.02
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Rose-DBx-Object-MoreHelpers
 PORTVERSION=	0.100
 PORTREVISION=	1

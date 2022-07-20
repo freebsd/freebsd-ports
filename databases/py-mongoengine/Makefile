@@ -1,5 +1,3 @@
-# Created by: Mirko Zinn <mail@derzinn.de>
-
 PORTNAME=	mongoengine
 PORTVERSION=	0.24.2
 CATEGORIES=	databases python

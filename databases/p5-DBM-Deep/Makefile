@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@bsd.hu
-
 PORTNAME=	DBM-Deep
 PORTVERSION=	2.0016
 CATEGORIES=	databases perl5

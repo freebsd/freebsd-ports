@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@nigredo.org>
-
 PORTNAME=	qdbm
 PORTVERSION=	1.8.78
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	pylibmc
 PORTVERSION=	1.6.1
 CATEGORIES=	databases python

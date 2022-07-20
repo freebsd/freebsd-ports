@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	Elixir
 PORTVERSION=	0.7.1
 PORTREVISION=	3

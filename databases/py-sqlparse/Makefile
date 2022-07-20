@@ -1,5 +1,3 @@
-# Created by: Roland van Laar <roland@micite.net>
-
 PORTNAME=	sqlparse
 PORTVERSION=	0.4.2
 CATEGORIES=	databases python

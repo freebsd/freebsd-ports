@@ -1,5 +1,3 @@
-# Created by: erwin@FreeBSD.org
-
 PORTNAME=	ResourcePool-Resource-DBI
 PORTVERSION=	1.0101
 PORTREVISION=	1

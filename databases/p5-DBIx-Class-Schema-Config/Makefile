@@ -1,5 +1,3 @@
-# Created by: Espen Tagestad <espen@tagestad.no>
-
 PORTNAME=	DBIx-Class-Schema-Config
 PORTVERSION=	0.001008
 PORTREVISION=	1

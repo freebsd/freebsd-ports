@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	gmdb2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.1

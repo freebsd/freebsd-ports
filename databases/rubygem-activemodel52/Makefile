@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	activemodel
 PORTVERSION=	5.2.8.1
 CATEGORIES=	databases rubygems

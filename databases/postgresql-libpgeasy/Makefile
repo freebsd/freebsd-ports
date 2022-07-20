@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@pingpong.net>
-
 PKGNAMEPREFIX=	postgresql-
 PORTNAME=	libpgeasy
 PORTVERSION=	3.0.4

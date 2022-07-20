@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Structures_DataGrid_DataSource_PDO
 PORTVERSION=	0.2.0
 CATEGORIES=	databases www pear

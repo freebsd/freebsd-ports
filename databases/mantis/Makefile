@@ -1,5 +1,3 @@
-# Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
-
 PORTNAME=	mantis
 PORTVERSION=	2.25.2
 PORTEPOCH=	1

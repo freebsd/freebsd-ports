@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-Helpers
 PORTVERSION=	2.036000
 CATEGORIES=	databases perl5

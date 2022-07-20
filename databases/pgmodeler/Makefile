@@ -1,5 +1,3 @@
-# Created by: Loïc BARTOLETTI
-
 PORTNAME=	pgmodeler
 PORTVERSION=	0.9.4
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	DBIx-Introspector
 PORTVERSION=	0.001005
 CATEGORIES=	databases perl5

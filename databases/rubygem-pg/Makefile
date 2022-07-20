@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	pg
 PORTVERSION=	1.4.1
 CATEGORIES=	databases rubygems

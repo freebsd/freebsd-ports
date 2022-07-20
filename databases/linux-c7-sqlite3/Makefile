@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	sqlite
 PORTVERSION=	3.7.17
 DISTVERSIONSUFFIX=	-8.el7_7.1

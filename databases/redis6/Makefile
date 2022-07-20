@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	redis6
 PORTVERSION=	6.0.16
 PORTREVISION=	1

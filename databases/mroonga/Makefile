@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	mroonga
 PORTVERSION=	12.04
 CATEGORIES=	databases textproc

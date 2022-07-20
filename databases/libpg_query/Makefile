@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	libpg_query
 DISTVERSION=	13-2.1.0
 CATEGORIES=	databases devel

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	psycopg2
 PORTVERSION=	2.9.3
 CATEGORIES=	databases python

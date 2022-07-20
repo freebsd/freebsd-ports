@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	plv8
 PORTVERSION=	3.0.0
 PORTREVISION=	2

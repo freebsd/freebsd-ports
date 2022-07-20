@@ -1,5 +1,3 @@
-# Created by: Frank Wall <fw@moov.de>
-
 PORTNAME=	autobackupmysql
 PORTVERSION=	1.4
 CATEGORIES=	databases

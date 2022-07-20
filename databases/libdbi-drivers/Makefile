@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libdbi-drivers
 PORTVERSION=	0.9.0
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: nork@cityfujisawa.ne.jp
-
 PORTNAME=	DBD-SQLite2
 PORTVERSION=	0.38
 CATEGORIES=	databases perl5

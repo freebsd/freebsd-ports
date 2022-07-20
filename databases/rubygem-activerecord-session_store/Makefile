@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	activerecord-session_store
 PORTVERSION=	2.0.0
 CATEGORIES=	databases rubygems

@@ -1,5 +1,3 @@
-# Created by: lbartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	pointcloud
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.2

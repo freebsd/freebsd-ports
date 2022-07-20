@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	sqlite-ext-spellfix
 PORTVERSION=	3.8.11.1
 PORTREVISION=	1

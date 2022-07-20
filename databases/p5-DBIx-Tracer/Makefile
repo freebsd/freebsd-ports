@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	DBIx-Tracer
 PORTVERSION=	0.03
 CATEGORIES=	databases perl5

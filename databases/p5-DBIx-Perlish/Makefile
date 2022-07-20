@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	DBIx-Perlish
 PORTVERSION=	1.06
 CATEGORIES=	databases perl5

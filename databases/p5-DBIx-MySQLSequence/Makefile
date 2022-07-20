@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	DBIx-MySQLSequence
 PORTVERSION=	1.04
 PORTREVISION=	1

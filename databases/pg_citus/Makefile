@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	citus
 PORTVERSION=	11.0.3
 DISTVERSIONPREFIX=	v

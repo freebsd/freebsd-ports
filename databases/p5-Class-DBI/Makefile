@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	Class-DBI
 PORTVERSION=	3.0.17
 DISTVERSIONPREFIX=	v

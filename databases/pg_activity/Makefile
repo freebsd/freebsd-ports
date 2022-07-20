@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	pg_activity
 PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=	v

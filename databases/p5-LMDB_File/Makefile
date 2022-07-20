@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	LMDB_File
 PORTVERSION=	0.12
 CATEGORIES=	databases perl5

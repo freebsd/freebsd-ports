@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	DBIx-Admin-DSNManager
 PORTVERSION=	2.02
 CATEGORIES=	databases perl5

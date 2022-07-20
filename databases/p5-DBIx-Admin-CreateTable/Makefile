@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	DBIx-Admin-CreateTable
 PORTVERSION=	2.11
 CATEGORIES=	databases perl5

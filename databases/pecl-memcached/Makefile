@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	memcached
 PORTVERSION=	3.2.0
 CATEGORIES=	databases

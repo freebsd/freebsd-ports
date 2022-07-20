@@ -1,5 +1,3 @@
-# Created by: Hiroyuki Hanai <hanai@FreeBSD.org>
-
 PORTNAME=	tokyotyrant
 PORTVERSION=	1.16
 PORTREVISION=	3

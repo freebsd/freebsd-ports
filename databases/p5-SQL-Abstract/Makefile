@@ -1,5 +1,3 @@
-# Created by: Dominic Mitchell
-
 PORTNAME=	SQL-Abstract
 PORTVERSION=	2.000001
 CATEGORIES=	databases perl5

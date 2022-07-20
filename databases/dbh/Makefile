@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	dbh
 PORTVERSION=	5.0.22
 PORTREVISION=	1

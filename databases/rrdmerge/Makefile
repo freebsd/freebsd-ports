@@ -1,5 +1,3 @@
-# Created by: sobomax
-
 PORTNAME=	rrdmerge
 PORTVERSION=	0.0.1
 PORTREVISION=	2

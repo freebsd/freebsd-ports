@@ -1,5 +1,3 @@
-# Created by: nbm
-
 PORTNAME=	phppgadmin
 DISTVERSIONPREFIX=	REL_
 DISTVERSION=	7-13-0

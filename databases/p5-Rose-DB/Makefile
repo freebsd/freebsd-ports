@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Rose-DB
 PORTVERSION=	0.783
 PORTEPOCH=	1

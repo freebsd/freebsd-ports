@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	aioredis
 PORTVERSION=	1.3.1
 CATEGORIES=	databases python

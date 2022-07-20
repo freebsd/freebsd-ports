@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	GraphViz-DBI
 PORTVERSION=	1.100860
 PORTREVISION=	2

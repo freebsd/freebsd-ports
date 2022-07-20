@@ -1,5 +1,3 @@
-# Created by: johnpupu <johnpupu@gmail.com>
-
 PORTNAME=	leveldb
 PORTVERSION=	0.3.0
 CATEGORIES=	databases

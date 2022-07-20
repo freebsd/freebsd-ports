@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	hiredis
 PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=v

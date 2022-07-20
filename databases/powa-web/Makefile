@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@FreeBSD.org>
-
 PORTNAME=	powa-web
 PORTVERSION=	4.1.3
 CATEGORIES=	databases python

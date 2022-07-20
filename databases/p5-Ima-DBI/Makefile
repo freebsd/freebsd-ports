@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Ima-DBI
 PORTVERSION=	0.35
 PORTREVISION=	1

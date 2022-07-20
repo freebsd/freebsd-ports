@@ -1,5 +1,3 @@
-# Created by: Jeremy Chadwick <koitsu@FreeBSD.org>
-
 PORTNAME=	rrdtool
 PORTVERSION=	1.2.30
 PORTREVISION=	8

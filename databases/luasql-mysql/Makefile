@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <martin@matuska.org>
-
 PORTNAME=	luasql
 PORTVERSION=	2.6.0
 CATEGORIES=	databases

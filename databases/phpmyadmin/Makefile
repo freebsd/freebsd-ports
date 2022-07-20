@@ -1,5 +1,3 @@
-# Created by: nbm
-
 PORTNAME=	phpMyAdmin
 DISTVERSION=	4.9.10
 CATEGORIES=	databases www

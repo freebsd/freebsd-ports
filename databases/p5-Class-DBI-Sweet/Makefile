@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org
-
 PORTNAME=	Class-DBI-Sweet
 PORTVERSION=	0.11
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	whisper
 PORTVERSION=	1.1.10
 CATEGORIES=	databases python

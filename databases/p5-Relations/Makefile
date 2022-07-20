@@ -1,5 +1,3 @@
-# Created by: Timur I. Bakeyev <bat@cpan.org>
-
 PORTNAME=	Relations
 PORTVERSION=	0.95
 PORTREVISION=	1

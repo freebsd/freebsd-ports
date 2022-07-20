@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	python-memcached
 PORTVERSION=	1.59
 CATEGORIES=	databases python

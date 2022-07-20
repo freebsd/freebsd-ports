@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@FreeBSD.org>
-
 PORTNAME=	postgresql
 PORTREVISION=	0
 

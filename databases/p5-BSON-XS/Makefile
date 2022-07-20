@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	BSON-XS
 PORTVERSION=	0.8.4
 DISTVERSIONPREFIX=	v

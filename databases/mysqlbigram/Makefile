@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	mysqlbigram
 PORTVERSION=	1.0.1
 PORTREVISION=	1

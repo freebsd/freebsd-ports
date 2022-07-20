@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	AsciiDB-TagFile
 PORTVERSION=	1.06
 PORTREVISION=	1

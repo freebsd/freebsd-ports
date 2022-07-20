@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Dancer-Plugin-Database
 PORTVERSION=	2.13
 CATEGORIES=	databases perl5

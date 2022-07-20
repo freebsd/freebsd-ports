@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	geoserver
 PORTVERSION=	2.21.0
 CATEGORIES=	databases geography java

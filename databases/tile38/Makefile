@@ -1,5 +1,3 @@
-# Created by: olevole@olevole.ru
-
 PORTNAME=	tile38
 DISTVERSION=	1.12.0
 PORTREVISION=	3

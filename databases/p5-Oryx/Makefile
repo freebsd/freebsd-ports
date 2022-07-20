@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	Oryx
 PORTVERSION=	0.24
 PORTREVISION=	2

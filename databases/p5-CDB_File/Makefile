@@ -1,5 +1,3 @@
-# Created by: Jon Nistor <nistor@snickers.org>
-
 PORTNAME=	CDB_File
 PORTVERSION=	1.02
 CATEGORIES=	databases perl5

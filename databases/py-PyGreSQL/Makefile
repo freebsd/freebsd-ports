@@ -1,5 +1,3 @@
-# Created by: nectar@FreeBSD.org
-
 PORTNAME=	PyGreSQL
 PORTVERSION=	5.2
 PORTEPOCH=	1

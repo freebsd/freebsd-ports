@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Test-Cukes
 PORTVERSION=	0.11
 CATEGORIES=	databases perl5

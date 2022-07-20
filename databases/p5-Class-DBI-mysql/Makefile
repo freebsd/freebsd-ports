@@ -1,5 +1,3 @@
-# Created by: andrew@scoop.co.nz
-
 PORTNAME=	Class-DBI-mysql
 PORTVERSION=	1.00
 PORTREVISION=	1

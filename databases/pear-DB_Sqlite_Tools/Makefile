@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	DB_Sqlite_Tools
 PORTVERSION=	0.1.7
 CATEGORIES=	databases www pear

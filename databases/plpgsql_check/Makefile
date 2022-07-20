@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	plpgsql_check
 PORTVERSION=	2.1.7
 DISTVERSIONPREFIX=	v

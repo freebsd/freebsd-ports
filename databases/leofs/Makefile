@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <trociny@FreeBSD.org>
-
 PORTNAME=	leofs
 DISTVERSION=	1.4.3
 PORTREVISION=	1

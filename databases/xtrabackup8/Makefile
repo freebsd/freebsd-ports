@@ -1,5 +1,3 @@
-# Created by: Alex Samorukov <samm@freebsd.org>
-
 PORTNAME=	xtrabackup
 PORTVERSION=	8.0.14
 PORTREVISION=	5

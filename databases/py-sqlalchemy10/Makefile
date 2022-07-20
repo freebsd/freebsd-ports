@@ -1,5 +1,3 @@
-# Created by: Dryice Dong Liu <dryice@dryice.name>
-
 PORTNAME=	sqlalchemy
 PORTVERSION=	1.0.14
 CATEGORIES=	databases python

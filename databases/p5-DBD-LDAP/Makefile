@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	DBD-LDAP
 PORTVERSION=	1.00
 CATEGORIES=	databases perl5

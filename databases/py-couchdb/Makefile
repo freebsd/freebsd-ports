@@ -1,5 +1,3 @@
-# Created by: Andrei Antoukh <niwi@niwi.be>
-
 PORTNAME=	CouchDB
 PORTVERSION=	1.1
 PORTREVISION=	1

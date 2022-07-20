@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov,com>
-
 PORTNAME=	activerecord-jdbc-adapter
 PORTVERSION=	51.0
 CATEGORIES=	databases rubygems java

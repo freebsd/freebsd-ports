@@ -1,5 +1,3 @@
-# Created by: kirk@daycos.com
-
 PORTNAME=	pgdbf
 PORTVERSION=	0.6.2
 CATEGORIES=	databases

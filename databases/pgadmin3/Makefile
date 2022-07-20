@@ -1,5 +1,3 @@
-# Created by: Max Khon
-
 PORTNAME=	pgadmin3
 PORTVERSION=	1.22.2
 PORTREVISION=	8

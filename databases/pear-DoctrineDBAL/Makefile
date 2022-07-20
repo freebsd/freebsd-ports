@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	DoctrineDBAL
 PORTVERSION=	2.3.4
 CATEGORIES=	databases pear

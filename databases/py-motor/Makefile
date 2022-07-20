@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <mitya@yandex-team.ru>
-
 PORTNAME=	motor
 PORTVERSION=	1.0
 CATEGORIES=	databases python

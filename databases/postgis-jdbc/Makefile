@@ -1,5 +1,3 @@
-# Created by: Sam Lawrance <boris@brooknet.com.au>
-
 PORTNAME=	postgis-jdbc
 PORTVERSION=	2.1.7
 CATEGORIES=	databases java geography

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	PostgreSQL-PLPerl-Trace
 PORTVERSION=	1.001
 PORTREVISION=	1

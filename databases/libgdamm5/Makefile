@@ -1,5 +1,3 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	libgdamm
 PORTVERSION=	4.99.11
 PORTREVISION=	2

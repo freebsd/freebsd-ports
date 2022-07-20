@@ -1,5 +1,3 @@
-# Created by: proler@gmail.com
-
 PORTNAME=	clickhouse
 PORTVERSION=	22.1.3.7
 DISTVERSIONPREFIX=	v

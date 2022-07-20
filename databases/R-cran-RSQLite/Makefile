@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	RSQLite
 PORTVERSION=	2.2.14
 CATEGORIES=	databases

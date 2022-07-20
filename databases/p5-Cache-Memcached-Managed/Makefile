@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Cache-Memcached-Managed
 PORTVERSION=	0.26
 CATEGORIES=	databases perl5

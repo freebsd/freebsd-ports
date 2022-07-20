@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	DBD-MariaDB
 PORTVERSION=	1.21
 CATEGORIES=	databases perl5

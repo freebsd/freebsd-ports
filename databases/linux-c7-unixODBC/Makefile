@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	unixODBC
 PORTVERSION=	2.3.1
 DISTVERSIONSUFFIX=	-14.el7

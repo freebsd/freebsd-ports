@@ -1,5 +1,3 @@
-# Created by: Matthias Andree <mandree@FreeBSD.org>
-
 PORTNAME=	db18
 PORTVERSION=	18.1.40
 CATEGORIES=	databases java

@@ -1,5 +1,3 @@
-# Created by: Peter Avalos <pavalos@theshell.com>
-
 PORTNAME=	DBIx-DBSchema
 PORTVERSION=	0.45
 CATEGORIES=	databases perl5

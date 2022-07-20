@@ -1,5 +1,3 @@
-# Created by: Philip M. Gollucci
-
 PORTNAME=	bigrecord
 PORTVERSION=	0.1.1
 PORTREVISION=	1

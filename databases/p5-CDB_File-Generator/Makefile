@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	CDB_File-Generator
 PORTVERSION=	0.030
 PORTREVISION=	1

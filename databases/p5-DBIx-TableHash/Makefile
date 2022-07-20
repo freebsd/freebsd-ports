@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	DBIx-TableHash
 CATEGORIES=	databases perl5
 PORTVERSION=	1.05

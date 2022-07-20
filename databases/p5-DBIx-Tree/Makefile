@@ -1,5 +1,3 @@
-# Created by: Philip M. Gollucci <philip@p6m7g8.com>
-
 PORTNAME=	DBIx-Tree
 PORTVERSION=	1.98
 CATEGORIES=	databases perl5

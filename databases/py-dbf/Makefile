@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	dbf
 PORTVERSION=	0.99.2
 CATEGORIES=	databases python

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	gdbm
 PORTVERSION=	2.1.0
 PORTEPOCH=	2

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-DigestColumns
 PORTVERSION=	0.06000
 PORTREVISION=	2

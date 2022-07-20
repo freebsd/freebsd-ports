@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	activerecord
 PORTVERSION=	6.0.5.1
 CATEGORIES=	databases rubygems

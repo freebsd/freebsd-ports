@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	DBIx-Class
 PORTVERSION=	0.082843
 CATEGORIES=	databases perl5

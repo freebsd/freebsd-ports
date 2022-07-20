@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	pgbouncer
 PORTVERSION=	1.17.0
 CATEGORIES=	databases

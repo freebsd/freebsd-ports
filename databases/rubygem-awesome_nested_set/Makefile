@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@freebsd.org>
-
 PORTNAME=	awesome_nested_set
 PORTVERSION=	3.5.0
 CATEGORIES=	databases rubygems

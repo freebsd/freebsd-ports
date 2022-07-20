@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	DBD-Google
 PORTVERSION=	0.51
 PORTREVISION=	2

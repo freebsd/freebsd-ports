@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	libgda
 DISTVERSION?=	5.2.10
 PORTREVISION=	2

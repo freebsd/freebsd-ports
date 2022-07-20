@@ -1,5 +1,3 @@
-# Created by: Oleg Sharoiko <os@rsu.ru>
-
 PORTNAME=	MDB
 PORTVERSION=	1.3.0
 CATEGORIES=	databases www pear

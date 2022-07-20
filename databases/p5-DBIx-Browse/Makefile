@@ -1,5 +1,3 @@
-# Created by: Philip M. Gollucci <philip@p6m7g8.com>
-
 PORTNAME=	DBIx-Browse
 PORTVERSION=	2.09
 PORTREVISION=	1

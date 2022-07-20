@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Mango
 PORTVERSION=	1.30
 PORTREVISION=	2

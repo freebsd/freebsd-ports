@@ -1,5 +1,3 @@
-# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-
 PORTNAME=	mysqlreport
 PORTVERSION=	3.5
 PORTREVISION=	3

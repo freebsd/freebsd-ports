@@ -1,5 +1,3 @@
-# Created by: Sean Chittenden <seanc@FreeBSD.org>
-
 PORTNAME=	memcached
 PORTVERSION=	1.6.14
 CATEGORIES=	databases

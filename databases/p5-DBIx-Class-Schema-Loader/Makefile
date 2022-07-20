@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-Schema-Loader
 PORTVERSION=	0.07049
 CATEGORIES=	databases perl5

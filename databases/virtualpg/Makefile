@@ -1,5 +1,3 @@
-# Created by: Loïc BARTOLETTI <lbartoletti@FreeBSD.org>
-
 PORTNAME=	virtualpg
 PORTVERSION=	2.0.1
 CATEGORIES=	databases geography

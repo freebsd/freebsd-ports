@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@partitur.se>
-
 WANT_PGSQL_VER=	10
 
 INSTALL_DIRS=	src/pl/plperl contrib/hstore_plperl

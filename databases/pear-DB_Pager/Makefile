@@ -1,5 +1,3 @@
-# Created by: Toshiya Saitoh (<toshiya@saitoh.nu>)
-
 PORTNAME=	DB_Pager
 PORTVERSION=	0.7.2
 CATEGORIES=	databases www pear

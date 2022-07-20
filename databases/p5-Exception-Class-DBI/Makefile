@@ -1,5 +1,3 @@
-# Created by: Rod Taylor <ports@rbt.ca>
-
 PORTNAME=	Exception-Class-DBI
 PORTVERSION=	1.04
 CATEGORIES=	databases perl5

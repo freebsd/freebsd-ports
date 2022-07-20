@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME?=	mysql
 PORTVERSION=	5.6.51
 PORTREVISION?=	0

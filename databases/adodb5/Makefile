@@ -1,5 +1,3 @@
-# Created by: mm@FreeBSD.org
-
 PORTNAME=	adodb
 PORTVERSION=	5.22.2
 DISTVERSIONPREFIX=	v

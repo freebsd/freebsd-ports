@@ -1,5 +1,3 @@
-# Created by: Parv <parv@pair.org>
-
 PORTNAME=	DBIx-Simple
 PORTVERSION=	1.37
 CATEGORIES=	databases perl5

@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Mojo-Pg
 PORTVERSION=	4.27
 CATEGORIES=	databases www perl5

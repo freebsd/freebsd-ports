@@ -1,5 +1,3 @@
-# Created by: Joe Horn <joehorn@gmail.com>
-
 PORTNAME=	tuning-primer
 PORTVERSION=	1.6.r1
 CATEGORIES=	databases

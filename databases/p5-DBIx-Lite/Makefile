@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	DBIx-Lite
 PORTVERSION=	0.33
 CATEGORIES=	databases perl5

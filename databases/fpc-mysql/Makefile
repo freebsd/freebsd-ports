@@ -1,5 +1,3 @@
-# Created by: John Merryweather Cooper
-
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-mysql
 

@@ -1,5 +1,3 @@
-# Created by: Espen Volden aka voldern <voldern@hoeggen.net>
-
 PORTNAME=	do_mysql
 PORTVERSION=	0.10.17
 CATEGORIES=	databases rubygems

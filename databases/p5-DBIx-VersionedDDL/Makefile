@@ -1,5 +1,3 @@
-# Created by: Alan Snelson <Alan@Wave2.org>
-
 PORTNAME=	DBIx-VersionedDDL
 PORTVERSION=	0.17
 PORTREVISION=	1

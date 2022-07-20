@@ -1,5 +1,3 @@
-# Created by: Vladimir Timofeev <vovkasm@gmail.com>
-
 PORTNAME=	DBIx-Class-DynamicSubclass
 PORTVERSION=	0.03
 PORTREVISION=	1

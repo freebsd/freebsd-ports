@@ -1,5 +1,3 @@
-# Created by: Mohammad S. Babaei <info@babaei.net>
-
 PORTNAME=	cppdb
 PORTVERSION=	0.3.1
 PORTREVISION=	2

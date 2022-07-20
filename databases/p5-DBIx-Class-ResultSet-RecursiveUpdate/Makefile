@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-ResultSet-RecursiveUpdate
 PORTVERSION=	0.42
 CATEGORIES=	databases perl5

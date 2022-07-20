@@ -1,5 +1,3 @@
-# Created by: Nick Hibma <n_hibma@freebsd.org>
-
 PORTNAME=	Mongoose
 PORTVERSION=	2.00
 CATEGORIES=	databases perl5

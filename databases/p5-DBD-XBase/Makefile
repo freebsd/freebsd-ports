@@ -1,5 +1,3 @@
-# Created by: Ilia Chipitsine <ilia@jane.cgu.chel.su>
-
 PORTNAME=	DBD-XBase
 PORTVERSION=	1.08
 CATEGORIES=	databases perl5

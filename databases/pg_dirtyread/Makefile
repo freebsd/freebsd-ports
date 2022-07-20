@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	pg_dirtyread
 PORTVERSION=	2.4
 CATEGORIES=	databases

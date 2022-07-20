@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	sharedance
 PORTVERSION=	0.6
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: Andrew McNaughton <andrew@scoop.co.nz>
-
 PORTNAME=	MySQL-Diff
 PORTVERSION=	0.50
 CATEGORIES=	databases perl5

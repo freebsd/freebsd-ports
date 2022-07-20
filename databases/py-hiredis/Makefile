@@ -1,5 +1,3 @@
-# Created by: Denis Generalov <gd@rambler-co.ru>
-
 PORTNAME=	hiredis
 PORTVERSION=	2.0.0
 CATEGORIES=	databases python

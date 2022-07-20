@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	DBI
 PORTVERSION=	1.643
 CATEGORIES=	databases perl5

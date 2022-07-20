@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	DB
 PORTVERSION=	1.11.0
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@python.or.kr>
-
 PORTNAME=	berkeleydb
 PORTVERSION=	18.1.5
 CATEGORIES=	databases python

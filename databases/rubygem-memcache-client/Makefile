@@ -1,5 +1,3 @@
-# Created by: Jonathan Weiss (<jw@innerewut.de>)
-
 PORTNAME=	memcache-client
 PORTVERSION=	1.8.5
 CATEGORIES=	databases rubygems

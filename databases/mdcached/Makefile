@@ -1,5 +1,3 @@
-# Created by: Ivan Voras <ivoras@FreeBSD.org>
-
 PORTNAME=	mdcached
 PORTVERSION=	1.0.9
 PORTREVISION=	1

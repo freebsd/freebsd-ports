@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Xapian
 PORTVERSION=	1.4.20.0
 CATEGORIES=	databases perl5

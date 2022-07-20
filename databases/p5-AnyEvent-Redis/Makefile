@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	AnyEvent-Redis
 PORTVERSION=	0.24
 PORTREVISION=	3

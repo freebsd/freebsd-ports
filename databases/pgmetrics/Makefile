@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@FreeBSD.org>
-
 PORTNAME=	pgmetrics
 PORTVERSION=	1.13.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: John Chen <johnpupu@gmail.com>
-
 PORTNAME=	couchbase
 DISTVERSION=	2.6.2
 CATEGORIES=	databases

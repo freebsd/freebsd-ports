@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	libdrizzle
 PORTVERSION=	0.8
 PORTREVISION=	7

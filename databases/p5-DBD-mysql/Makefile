@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	DBD-mysql
 PORTVERSION=	4.050
 PORTREVISION=	1

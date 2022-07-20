@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	oracle8-client
 PORTVERSION=	0.2.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	puredb
 PORTVERSION=	2.1
 PORTREVISION=	2

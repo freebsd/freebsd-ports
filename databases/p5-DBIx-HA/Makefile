@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	DBIx-HA
 PORTVERSION=	1.1
 PORTREVISION=	1

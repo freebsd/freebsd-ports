@@ -1,5 +1,3 @@
-# Created by: Mahlon E. Smith <mahlon@martini.nu>
-
 PORTNAME=	mdbx
 PORTVERSION=	0.11.2
 DISTVERSIONPREFIX=	v

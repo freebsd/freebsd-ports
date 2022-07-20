@@ -1,5 +1,3 @@
-# Created by: alfred
-
 PORTNAME=	jlog
 # version is YYYYMMDDxx <- xx is 00, 01 as needed per day
 PORTVERSION=	1.2.2.s2015012200

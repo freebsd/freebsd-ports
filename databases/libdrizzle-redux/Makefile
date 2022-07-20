@@ -1,5 +1,3 @@
-# Created by: Jim Ohlstein <jim@ohlste.in>
-
 PORTNAME=	libdrizzle
 PORTVERSION=	5.1.4
 PORTREVISION=	2

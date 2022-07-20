@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	globalid
 PORTVERSION=	0.4.2
 CATEGORIES=	databases rubygems

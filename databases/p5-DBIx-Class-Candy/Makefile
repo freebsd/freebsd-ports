@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-Candy
 PORTVERSION=	0.005003
 CATEGORIES=	databases perl5

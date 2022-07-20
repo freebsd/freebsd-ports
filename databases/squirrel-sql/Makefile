@@ -1,5 +1,3 @@
-# Created by: Roy Boerner
-
 PORTNAME=	squirrel-sql
 PORTVERSION=	4.4.0
 CATEGORIES=	databases java

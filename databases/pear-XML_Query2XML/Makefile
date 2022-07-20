@@ -1,5 +1,3 @@
-# Created by: wenheping<wenheping@gmail.com>
-
 PORTNAME=	XML_Query2XML
 PORTVERSION=	1.7.2
 CATEGORIES=	databases pear

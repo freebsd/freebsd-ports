@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <rpsfa@rit.edu>
-
 PORTNAME=	dm-pager
 PORTVERSION=	1.1.0
 CATEGORIES=	databases rubygems

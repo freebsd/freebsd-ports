@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	pgroonga
 PORTVERSION=	2.3.7
 CATEGORIES=	databases textproc

@@ -1,5 +1,3 @@
-# Created by: Vladimir Timofeev <vovkasm@gmail.com>
-
 PORTNAME=	DBIx-Class-FrozenColumns
 PORTVERSION=	0.09
 PORTREVISION=	2

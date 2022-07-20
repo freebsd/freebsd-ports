@@ -1,5 +1,3 @@
-# Created by: dcf@aracnet.com
-
 PORTNAME=	DBI-Shell
 PORTVERSION=	11.97
 CATEGORIES=	databases perl5

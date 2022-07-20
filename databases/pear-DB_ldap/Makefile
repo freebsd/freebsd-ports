@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	DB_ldap
 PORTVERSION=	1.2.1
 CATEGORIES=	databases net pear

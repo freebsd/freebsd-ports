@@ -1,5 +1,3 @@
-# Created by: Scott McWhirter <scott@surreytech.co.uk>
-
 PORTNAME=	T2
 PORTVERSION=	0.10
 PORTREVISION=	3

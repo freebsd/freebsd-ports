@@ -1,5 +1,3 @@
-# Created by: Daniel O'Connor
-
 PORTNAME=	rrdtool
 DISTVERSION=	0.1.15
 CATEGORIES=	databases python

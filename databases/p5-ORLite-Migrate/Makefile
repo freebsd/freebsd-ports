@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	ORLite-Migrate
 PORTVERSION=	1.10
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: michael johnson <ahze@ahze.net>
-
 PORTNAME=	Cache-Memcached
 PORTVERSION=	1.30
 PORTREVISION=	1

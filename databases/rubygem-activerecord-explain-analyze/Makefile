@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	activerecord-explain-analyze
 PORTVERSION=	0.1.0
 PORTREVISION=	4

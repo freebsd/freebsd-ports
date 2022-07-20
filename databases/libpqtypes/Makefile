@@ -1,5 +1,3 @@
-# Created by: Dave Green <dg@fastmail.co.uk>
-
 PORTNAME=	libpqtypes
 PORTVERSION=	1.5.1
 PORTREVISION=	2

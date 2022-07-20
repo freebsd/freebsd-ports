@@ -1,5 +1,3 @@
-# Created by: spam@rm-rf.kiev.ua
-
 PORTNAME=	phpminiadmin
 PORTVERSION=	1.9.170730
 CATEGORIES=	databases www

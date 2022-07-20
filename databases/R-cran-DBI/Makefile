@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	DBI
 DISTVERSION=	1.1.3
 CATEGORIES=	databases

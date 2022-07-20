@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	sqlitemanager
 PORTVERSION=	1.2.4
 CATEGORIES=	databases www

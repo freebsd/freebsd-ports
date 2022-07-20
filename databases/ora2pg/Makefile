@@ -1,5 +1,3 @@
-# Created by: Jov amutu@amutu.com
-
 PORTNAME=	ora2pg
 PORTVERSION=	23.1
 DISTVERSIONPREFIX=	v

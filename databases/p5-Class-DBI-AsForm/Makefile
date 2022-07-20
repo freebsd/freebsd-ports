@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Class-DBI-AsForm
 PORTVERSION=	2.42
 PORTREVISION=	1

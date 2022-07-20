@@ -1,5 +1,3 @@
-# Created by: Ganbold Tsagaankhuu <ganbold@FreeBSD.org>
-
 PORTNAME=	ateam_mysql57_ldap_auth
 PORTVERSION=	1.0
 PORTREVISION=	2

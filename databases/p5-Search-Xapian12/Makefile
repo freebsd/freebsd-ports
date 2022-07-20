@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Search-Xapian
 PORTVERSION=	1.2.25.2
 CATEGORIES=	databases perl5

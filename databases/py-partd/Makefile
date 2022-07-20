@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	partd
 PORTVERSION=	1.2.0
 CATEGORIES=	databases python

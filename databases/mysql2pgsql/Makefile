@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	mysql2pgsql
 PORTVERSION=	1.2
 PORTEPOCH=	1

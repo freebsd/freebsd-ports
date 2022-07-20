@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	DBIx-SQLite-Simple
 PORTVERSION=	0.35
 CATEGORIES=	databases perl5

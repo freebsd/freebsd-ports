@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-
 PORTNAME=	rrdman
 PORTVERSION=	1.0.1
 PORTREVISION=	5

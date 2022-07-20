@@ -1,5 +1,3 @@
-# Created by: Mikael URANKAR and Loïc BARTOLETTI
-
 PORTNAME=	grass
 PORTVERSION=	7.8.6
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	queries
 PORTVERSION=	2.1.1
 CATEGORIES=	databases python

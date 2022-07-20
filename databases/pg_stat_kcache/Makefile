@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@FreeBSD.org>
-
 PORTNAME=	pg_stat_kcache
 DISTVERSIONPREFIX=	REL
 DISTVERSION=	2_2_1

@@ -1,5 +1,3 @@
-# Created by: Domas Mituzas <midom@dammit.lt>
-
 PORTNAME=	freetds
 PORTVERSION=	1.3.12
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Michael Winking <mwfp@foldl.net>
-
 PORTNAME=	commons-dbutils
 PORTVERSION=	1.7
 CATEGORIES=	databases java

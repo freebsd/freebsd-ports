@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	redis62
 DISTVERSION=	6.2.7
 PORTREVISION=	1

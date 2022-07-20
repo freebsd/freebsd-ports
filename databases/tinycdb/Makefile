@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	tinycdb
 PORTVERSION=	0.78
 PORTREVISION=	2

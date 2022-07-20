@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Genezzo
 PORTVERSION=	0.72
 PORTREVISION=	2

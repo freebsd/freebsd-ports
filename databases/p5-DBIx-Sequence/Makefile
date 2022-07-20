@@ -1,5 +1,3 @@
-# Created by: Jon Nistor <nistor@snickers.org>
-
 PORTNAME=	DBIx-Sequence
 PORTVERSION=	1.5
 PORTREVISION=	1

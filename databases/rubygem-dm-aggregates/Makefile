@@ -1,5 +1,3 @@
-# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-
 PORTNAME=	dm-aggregates
 PORTVERSION=	1.2.0
 CATEGORIES=	databases rubygems

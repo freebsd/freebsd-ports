@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@FreeBSD.org>
-
 PORTNAME=	rocksdb
 PORTVERSION=	7.2.2
 DISTVERSIONPREFIX=	v

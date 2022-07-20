@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Cache-Memcached-Fast
 PORTVERSION=	0.27
 CATEGORIES=	databases perl5

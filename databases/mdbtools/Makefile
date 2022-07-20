@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	mdbtools
 DISTVERSION=	1.0.0
 PORTREVISION=	1

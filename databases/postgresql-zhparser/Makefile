@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	zhparser
 PORTVERSION=	0.2.0
 PORTREVISION=	2

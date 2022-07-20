@@ -1,5 +1,3 @@
-# Created by: <hvo.pm@xs4all.nl>
-
 PORTNAME=	Interchange6-Schema
 PORTVERSION=	0.133
 CATEGORIES=	databases perl5

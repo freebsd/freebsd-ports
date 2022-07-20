@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>
-
 PORTNAME=	DB_ldap2
 PORTVERSION=	0.5.1
 PORTREVISION=	1

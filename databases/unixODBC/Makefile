@@ -1,5 +1,3 @@
-# Created by: Nick Sayer <nsayer@FreeBSD.org>
-
 PORTNAME=	unixODBC
 PORTVERSION=	2.3.11
 CATEGORIES=	databases

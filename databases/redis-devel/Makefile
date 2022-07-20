@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	redis
 DISTVERSION=	7.0.0.20220531
 CATEGORIES=	databases

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pgspecial
 PORTVERSION=	1.13.1
 CATEGORIES=	databases python

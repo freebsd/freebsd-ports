@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Template-DBI
 PORTVERSION=	2.65
 PORTREVISION=	1

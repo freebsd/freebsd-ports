@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	adminer
 PORTVERSION=	4.8.1
 CATEGORIES=	databases www

@@ -1,5 +1,3 @@
-# Created by: alp@sfedu.ru
-
 PORTNAME=	postgresql-repmgr
 PORTVERSION=	5.3.2
 CATEGORIES=	databases

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	bdb
 PORTVERSION=	0.6.6
 PORTREVISION=	8

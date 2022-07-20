@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	mydumper
 DISTVERSION=	0.12.5-2
 DISTVERSIONPREFIX=	v

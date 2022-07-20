@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libsdb
 PORTVERSION=	0.10.1
 CATEGORIES=	databases

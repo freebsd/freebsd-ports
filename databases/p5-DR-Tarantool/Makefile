@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	DR-Tarantool
 PORTVERSION=	0.44
 PORTREVISION=	1

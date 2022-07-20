@@ -1,5 +1,3 @@
-# Created by: Matthias Petermann <matthias@petermann-it.de>
-
 PORTNAME=	peewee
 DISTVERSION=	3.15.0
 CATEGORIES=	databases python

@@ -1,5 +1,3 @@
-# Created by: Sean Chittenden <seanc@FreeBSD.org>
-
 PORTNAME=	wfb2sql
 PORTVERSION=	0.6
 PORTREVISION=	1

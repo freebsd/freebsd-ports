@@ -1,5 +1,3 @@
-# Created by: Espen Volden aka voldern <voldern@hoeggen.net>
-
 PORTNAME=	do_postgres
 PORTVERSION=	0.10.17
 PORTREVISION=	2

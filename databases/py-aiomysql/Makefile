@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	aiomysql
 PORTVERSION=	0.1.1
 CATEGORIES=	databases python

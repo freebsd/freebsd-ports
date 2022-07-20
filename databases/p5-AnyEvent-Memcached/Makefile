@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	AnyEvent-Memcached
 PORTVERSION=	0.08
 CATEGORIES=	databases perl5

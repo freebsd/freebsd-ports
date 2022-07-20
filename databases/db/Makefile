@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis (edwin@mavetju.org)
-
 PORTNAME=	db
 PORTVERSION=	1.27
 PORTEPOCH=	2

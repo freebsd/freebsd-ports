@@ -1,5 +1,3 @@
-# Created by: Evan Sarmiento <bsdports@wayfair.com>
-
 PORTNAME=	carbon
 PORTVERSION=	1.1.10
 PORTREVISION=	2

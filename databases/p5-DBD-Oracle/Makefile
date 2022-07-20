@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	DBD-Oracle
 PORTVERSION=	1.19
 PORTREVISION=	6

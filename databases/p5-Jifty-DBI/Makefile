@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Jifty-DBI
 PORTVERSION=	0.78
 CATEGORIES=	databases perl5

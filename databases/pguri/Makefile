@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-
 PORTNAME=	pguri
 PORTVERSION=	1.20151224
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	percona
 PORTREVISION?=	0
 PKGNAMESUFFIX=	57-client

@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-
 PORTNAME=	pickleDB
 PORTVERSION=	0.6.2
 CATEGORIES=	databases python

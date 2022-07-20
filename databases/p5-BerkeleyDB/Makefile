@@ -1,5 +1,3 @@
-# Created by: T. William Wells <bill@twwells.com>
-
 PORTNAME=	BerkeleyDB
 PORTVERSION=	0.65
 CATEGORIES=	databases perl5

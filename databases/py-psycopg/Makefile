@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	psycopg
 PORTVERSION=	3.0.15
 CATEGORIES=	databases python

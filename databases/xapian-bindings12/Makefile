@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	xapian-bindings
 PORTVERSION=	1.2.25
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	dbtool
 PORTVERSION=	1.9.1
 PORTREVISION=	1

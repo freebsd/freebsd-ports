@@ -1,5 +1,3 @@
-# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-
 PORTNAME=	dm-do-adapter
 PORTVERSION=	1.2.0
 CATEGORIES=	databases rubygems

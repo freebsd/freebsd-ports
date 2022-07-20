@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	mysql-udf
 PORTVERSION=	0.3
 PORTREVISION=	3

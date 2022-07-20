@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	MDB2
 DISTVERSION=	2.5.0b5
 CATEGORIES=	databases www pear

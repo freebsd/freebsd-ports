@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>
-
 PORTNAME=	mysqltuner
 PORTVERSION=	1.8.3
 CATEGORIES=	databases

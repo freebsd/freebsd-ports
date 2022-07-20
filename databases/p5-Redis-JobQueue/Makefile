@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Redis-JobQueue
 PORTVERSION=	1.19
 CATEGORIES=	databases perl5

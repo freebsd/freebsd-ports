@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@FreeBSD.org>
-
 PORTNAME?=	mariadb
 PORTVERSION=	10.6.8
 PORTREVISION?=	0

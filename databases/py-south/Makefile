@@ -1,5 +1,3 @@
-# Created by: Stanislav Svirid <count@211.ru>
-
 PORTNAME=	south
 PORTVERSION=	1.0.2
 CATEGORIES=	databases python

@@ -1,5 +1,3 @@
-# Created by: Julien Laffaye <kimelto@gmail.com>
-
 PORTNAME=	soci
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.3

@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	speedtables
 PORTVERSION=	1.13.18
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	liquibase
 PORTVERSION=	4.3.5
 CATEGORIES=	databases java

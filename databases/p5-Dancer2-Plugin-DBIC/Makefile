@@ -1,5 +1,3 @@
-# Created by: <hvo.pm@xs4all.nl>
-
 PORTNAME=	Dancer2-Plugin-DBIC
 PORTVERSION=	0.0100
 CATEGORIES=	databases perl5

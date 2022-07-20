@@ -1,5 +1,3 @@
-# Created by: Espen Tagestad <espen@tagestad.no>
-
 PORTNAME=	SQL-Abstract-More
 PORTVERSION=	1.38
 CATEGORIES=	databases perl5

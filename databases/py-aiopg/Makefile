@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	aiopg
 PORTVERSION=	1.3.4
 CATEGORIES=	databases python

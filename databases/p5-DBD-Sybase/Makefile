@@ -1,5 +1,3 @@
-# Created by: Sheldon Hearn <sheldonh@FreeBSD.org>
-
 PORTNAME=	DBD-Sybase
 PORTVERSION=	1.19
 CATEGORIES=	databases perl5

@@ -1,5 +1,3 @@
-# Created by: Alessando Sagratini <ale_sagra@hotmail.com>
-
 PORTNAME=	pymemcache
 PORTVERSION=	3.5.2
 CATEGORIES=	databases python

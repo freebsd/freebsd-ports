@@ -1,5 +1,3 @@
-# Created by: Pierre-Emmanuel Andre <pea@raveland.org>
-
 PORTNAME=	pgfouine
 PORTVERSION=	1.2
 CATEGORIES=	databases

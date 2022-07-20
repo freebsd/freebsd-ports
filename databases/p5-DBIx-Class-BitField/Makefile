@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	DBIx-Class-BitField
 PORTVERSION=	0.13
 PORTREVISION=	1

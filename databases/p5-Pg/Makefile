@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Pg
 PORTVERSION=	2.1.1
 PORTREVISION=	6

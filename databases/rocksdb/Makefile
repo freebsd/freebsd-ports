@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rocksdb
 PORTVERSION=	7.3.1
 DISTVERSIONPREFIX=	v

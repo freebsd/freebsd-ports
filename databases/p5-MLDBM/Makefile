@@ -1,5 +1,3 @@
-# Created by: ache@FreeBSD.org
-
 PORTNAME=	MLDBM
 PORTVERSION=	2.05
 PORTREVISION=	1

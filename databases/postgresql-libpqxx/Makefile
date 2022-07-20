@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@pingpong.net>
-
 PORTNAME=	libpqxx
 PORTVERSION=	7.2.0
 CATEGORIES=	databases

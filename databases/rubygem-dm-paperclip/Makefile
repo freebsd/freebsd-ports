@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <rpsfa@rit.edu>
-
 PORTNAME=	dm-paperclip
 PORTVERSION=	2.5.0
 CATEGORIES=	databases rubygems

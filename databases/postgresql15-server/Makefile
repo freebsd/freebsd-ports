@@ -1,5 +1,3 @@
-# Created by: Marc G. Fournier <scrappy@FreeBSD.org>
-
 PORTNAME?=	postgresql
 DISTVERSION?=	15beta2
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and

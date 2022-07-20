@@ -1,5 +1,3 @@
-# Created by: Xin Li <delphij@FreeBSD.org>
-
 PORTNAME=	lmdb
 PORTVERSION=	0.9.29
 PORTREVISION=	1

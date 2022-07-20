@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	iowow
 PORTVERSION=	1.4.14
 DISTVERSIONPREFIX=	v

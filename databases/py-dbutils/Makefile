@@ -1,5 +1,3 @@
-# Created by: Choe, Cheng-Dae
-
 PORTNAME=	dbutils
 PORTVERSION=	2.0
 CATEGORIES=	databases python

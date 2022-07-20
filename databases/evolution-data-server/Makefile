@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	evolution-data-server
 DISTVERSION=	3.44.3
 CATEGORIES=	databases gnome

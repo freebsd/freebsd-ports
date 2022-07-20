@@ -1,5 +1,3 @@
-# Created by: erikhb@bgnett.no
-
 PORTNAME=	libiodbc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.52.15

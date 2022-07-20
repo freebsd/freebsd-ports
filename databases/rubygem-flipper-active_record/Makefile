@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	flipper-active_record
 PORTVERSION=	0.25.0
 CATEGORIES=	databases rubygems

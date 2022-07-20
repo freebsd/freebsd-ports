@@ -1,5 +1,3 @@
-# Created by: Jens Rehsack <rehsack@liwing.de>
-
 PORTNAME=	WWWdb
 PORTVERSION=	0.8.3
 PORTREVISION=	2

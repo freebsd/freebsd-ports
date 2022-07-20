@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	sqlite
 PORTVERSION=	2.8.17
 PORTREVISION=	5

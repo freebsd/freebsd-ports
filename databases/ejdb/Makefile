@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	ejdb
 PORTVERSION=	2.72
 DISTVERSIONPREFIX=	v

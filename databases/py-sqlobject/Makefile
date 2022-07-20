@@ -1,5 +1,3 @@
-# Created by: "Choe, Cheng-Dae" whitekid
-
 PORTNAME=	sqlobject
 PORTVERSION=	1.6.0
 PORTREVISION=	1

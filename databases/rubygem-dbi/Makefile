@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	dbi
 PORTVERSION=	0.4.5
 PORTREVISION=	1

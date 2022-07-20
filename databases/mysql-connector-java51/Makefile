@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	mysql-connector-java
 PORTVERSION=	5.1.49
 CATEGORIES=	databases java

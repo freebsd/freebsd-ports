@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Class-Inflate
 PORTVERSION=	0.07
 PORTREVISION=	1

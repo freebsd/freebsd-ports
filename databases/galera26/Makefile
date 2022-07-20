@@ -1,5 +1,3 @@
-# Created by: Nicolas Embriz <nbari@tequila.io>
-
 PORTNAME=	galera
 PORTVERSION=	26.4.12
 DISTVERSIONPREFIX=	release_

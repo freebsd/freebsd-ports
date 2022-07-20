@@ -1,5 +1,3 @@
-# Created by: Vladimir Timofeev <vovkasm@gmail.com>
-
 PORTNAME=	HTML-FormHandler-Model-DBIC
 PORTVERSION=	0.29
 CATEGORIES=	databases perl5 www

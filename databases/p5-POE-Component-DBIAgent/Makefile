@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-DBIAgent
 PORTVERSION=	0.26
 PORTREVISION=	2

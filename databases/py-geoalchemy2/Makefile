@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	geoalchemy2
 PORTVERSION=	0.12.1
 CATEGORIES=	databases geography python

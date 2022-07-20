@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	namazu
 PORTVERSION=	${NAMAZU_PORTVERSION}
 PORTREVISION=	2

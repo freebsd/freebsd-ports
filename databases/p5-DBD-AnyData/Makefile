@@ -1,5 +1,3 @@
-# Created by: ijlioa
-
 PORTNAME=	DBD-AnyData
 PORTVERSION=	0.110
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	ip4r
 PORTVERSION=	2.4.1
 PORTREVISION=	1

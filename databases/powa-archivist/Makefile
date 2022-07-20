@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@FreeBSD.org>
-
 PORTNAME=	powa-archivist
 DISTVERSIONPREFIX=	REL_
 DISTVERSION=	4_1_4

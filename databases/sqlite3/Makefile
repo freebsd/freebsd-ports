@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	sqlite3
 DISTVERSION=	3.39.0
 PORTEPOCH=	1

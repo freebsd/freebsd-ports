@@ -1,5 +1,3 @@
-# Created by: Vasil Dimov <vd@FreeBSD.org>
-
 PORTNAME=	mysqlwsrep
 PORTVERSION?=	5.7.35
 DISTVERSIONPREFIX?=	wsrep_

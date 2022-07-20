@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	pickleshare
 PORTVERSION=	0.7.5
 CATEGORIES=	databases python

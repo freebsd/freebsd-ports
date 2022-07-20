@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Class-DBI-SQLite
 PORTVERSION=	0.11
 PORTREVISION=	2

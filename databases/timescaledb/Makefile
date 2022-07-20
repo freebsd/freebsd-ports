@@ -1,5 +1,3 @@
-# Created by: Kevin Bowling <kbowling@freebsd.org>
-
 PORTNAME=	timescaledb
 PORTVERSION=	2.7.0
 CATEGORIES=	databases

@@ -1,5 +1,3 @@
-# Created by: wen@FreeBSD.org
-
 PORTNAME=	pymongo
 PORTVERSION=	3.12.3
 CATEGORIES=	databases python

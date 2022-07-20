@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	hiredis
 PORTVERSION=	0.6.3
 PORTREVISION=	4

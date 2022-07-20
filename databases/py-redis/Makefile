@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	redis
 PORTVERSION=	3.5.3
 PORTREVISION=	1

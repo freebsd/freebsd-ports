@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Metadata
 PORTVERSION=	0.24
 PORTREVISION=	1

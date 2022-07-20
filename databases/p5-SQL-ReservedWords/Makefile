@@ -1,5 +1,3 @@
-# Created by: Zach Thompson <hideo@lastamericanempire.com>
-
 PORTNAME=	SQL-ReservedWords
 PORTVERSION=	0.8
 PORTREVISION=	1

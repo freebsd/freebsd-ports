@@ -1,5 +1,3 @@
-# Created by: Rusty Nejdl
-
 PORTNAME=	apsw
 PORTVERSION=	3.38.5
 DISTVERSIONSUFFIX=	-r1

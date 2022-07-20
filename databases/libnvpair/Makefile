@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	libnvpair
 PORTVERSION=	2.0
 CATEGORIES=	databases devel

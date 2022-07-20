@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	Dancer-Plugin-Redis
 PORTVERSION=	0.8
 PORTREVISION=	1

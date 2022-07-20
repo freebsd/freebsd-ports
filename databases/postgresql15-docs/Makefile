@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@pingpong.net>
-
 PORTNAME=	postgresql
 PORTREVISION=	0
 PKGNAMESUFFIX?=	${WANT_PGSQL_VER:S,.,,}-docs

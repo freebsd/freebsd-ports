@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	redisjson
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.8

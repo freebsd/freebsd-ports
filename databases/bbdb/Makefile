@@ -1,5 +1,3 @@
-# Created by: Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-
 PORTNAME=	bbdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.2a

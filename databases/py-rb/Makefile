@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	rb
 PORTVERSION=	1.9.0
 CATEGORIES=	databases python

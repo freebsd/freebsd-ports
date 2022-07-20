@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <trociny@FreeBSD.org>
-
 PORTNAME=	leo_manager_client
 PORTVERSION=	0.4.13
 CATEGORIES=	databases

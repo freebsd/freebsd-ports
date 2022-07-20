@@ -1,5 +1,3 @@
-# Created by: Jon Nistor <nistor@snickers.org>
-
 PORTNAME=	DBIx-Abstract
 PORTVERSION=	1.040
 CATEGORIES=	databases perl5

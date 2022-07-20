@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Class-DBI-Untaint
 PORTVERSION=	1.00
 PORTREVISION=	1

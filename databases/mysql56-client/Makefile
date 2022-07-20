@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	mysql
 PORTREVISION=	0
 PKGNAMESUFFIX=	56-client

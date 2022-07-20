@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Imsp
 DISTVERSION=	2.0.10
 CATEGORIES=	databases www pear

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Data-Pageset
 PORTVERSION=	1.06
 PORTREVISION=	2

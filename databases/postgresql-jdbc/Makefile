@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@partitur.se>
-
 PORTNAME=	postgresql
 PORTVERSION=	42.4.0
 CATEGORIES=	databases java

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	SQL-Abstract-Limit
 PORTVERSION=	0.143
 CATEGORIES=	databases perl5

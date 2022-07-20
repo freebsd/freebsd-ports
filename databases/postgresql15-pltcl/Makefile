@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@partitur.se>
-
 PORTNAME=	postgresql
 # Keep the ?=, it is used by the other pltcl ports.
 PORTREVISION?=	0

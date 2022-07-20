@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	sqlite3-ruby
 PORTVERSION=	1.3.3
 PORTREVISION=	1

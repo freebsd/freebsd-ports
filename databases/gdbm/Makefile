@@ -1,5 +1,3 @@
-# Created by: Brent J. Nordquist <bjn@visi.com>
-
 PORTNAME=	gdbm
 PORTVERSION=	1.23
 CATEGORIES=	databases

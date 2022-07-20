@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	marshmallow-sqlalchemy
 PORTVERSION=	0.28.0
 CATEGORIES=	databases python

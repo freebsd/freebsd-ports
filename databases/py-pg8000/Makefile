@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	pg8000
 PORTVERSION=	1.28.1
 CATEGORIES=	databases python

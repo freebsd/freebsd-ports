@@ -1,5 +1,3 @@
-# Created by: Keith Gaughan <k@sterechro.me>
-
 PORTNAME=	lmdb
 PORTVERSION=	0.97
 CATEGORIES=	databases python

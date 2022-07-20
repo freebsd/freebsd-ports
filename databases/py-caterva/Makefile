@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	caterva
 PORTVERSION=	0.7.2
 CATEGORIES=	databases python
