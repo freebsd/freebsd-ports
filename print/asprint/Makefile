@@ -1,5 +1,3 @@
-# Created by: brett@peloton.physics.montana.edu
-
 PORTNAME=	asprint
 PORTVERSION=	1.0
 PORTREVISION=	3

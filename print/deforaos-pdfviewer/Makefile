@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	pdfviewer
 PORTVERSION=	0.0.2
 PORTREVISION=	37

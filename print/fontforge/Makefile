@@ -1,5 +1,3 @@
-# Created by: KANOU Hiroki <kanou@khdd.net>
-
 PORTNAME=	fontforge
 DISTVERSION=	20201107
 PORTREVISION=	3

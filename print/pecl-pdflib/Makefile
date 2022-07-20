@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	pdflib
 PORTVERSION=	4.1.4
 PORTREVISION=	1

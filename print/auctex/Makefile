@@ -1,5 +1,3 @@
-# Created by: Martin Kammerhofer
-
 PORTNAME=	auctex
 PORTVERSION=	13.1
 CATEGORIES=	print elisp

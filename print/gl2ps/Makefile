@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	gl2ps
 PORTVERSION=	1.4.2
 PORTREVISION=	1

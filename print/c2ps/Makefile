@@ -1,5 +1,3 @@
-# Created by: Matthew Hunt <mph@pobox.com>
-
 PORTNAME=	c2ps
 PORTVERSION=	4.0
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
-
 PORTNAME=	muttprint
 PORTVERSION=	0.73
 PORTREVISION=	4

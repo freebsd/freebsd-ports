@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	harfbuzz
 DISTVERSION=	4.4.1
 PORTREVISION?=	0

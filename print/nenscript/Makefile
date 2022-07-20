@@ -1,5 +1,3 @@
-# Created by: cjm2
-
 PORTNAME=	nenscript
 PORTVERSION=	1.13.3
 CATEGORIES=	print

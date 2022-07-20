@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	afm
 PORTVERSION=	0.2.2
 CATEGORIES=	print rubygems

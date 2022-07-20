@@ -1,5 +1,3 @@
-# Created by: David O'Brien <obrien@cs.ucdavis.edu>
-
 PORTNAME=	mp-${PAPERSIZE}
 PORTVERSION=	3.0.1
 CATEGORIES=	print

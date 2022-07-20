@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	PostScript-Simple
 PORTVERSION=	0.09
 CATEGORIES=	print perl5

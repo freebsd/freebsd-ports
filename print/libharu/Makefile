@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libharu
 DISTVERSIONPREFIX=	RELEASE_
 DISTVERSION=	2_3_0

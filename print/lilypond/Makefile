@@ -1,5 +1,3 @@
-# Created by: patrick, trevor
-
 PORTNAME=	lilypond
 DISTVERSION=	2.22.2
 CATEGORIES=	print audio

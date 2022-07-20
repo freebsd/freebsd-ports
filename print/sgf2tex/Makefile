@@ -1,5 +1,3 @@
-# Created by: spcoltri@unm.edu
-
 PORTNAME=	sgf2tex
 PORTVERSION=	3.3
 PORTREVISION=	6

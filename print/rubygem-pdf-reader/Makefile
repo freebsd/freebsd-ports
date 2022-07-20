@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	pdf-reader
 PORTVERSION=	2.10.0
 CATEGORIES=	print rubygems

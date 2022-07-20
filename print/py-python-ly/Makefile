@@ -1,5 +1,3 @@
-# Created by: martin.dieringer@gmx.de
-
 PORTNAME=	python-ly
 PORTVERSION=	0.9.6
 DISTVERSIONPREFIX=	v

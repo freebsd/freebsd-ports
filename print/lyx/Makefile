@@ -1,5 +1,3 @@
-# Created by: Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	lyx
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}
 PORTREVISION=	1

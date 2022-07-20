@@ -1,5 +1,3 @@
-# Created by: mwest@uct.ac.za
-
 PORTNAME=	pcal
 PORTVERSION=	4.11.0
 CATEGORIES=	print

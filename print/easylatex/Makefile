@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale	<nivit@email.it>
-
 PORTNAME=	easylatex
 PORTVERSION=	0.080
 CATEGORIES=	print textproc

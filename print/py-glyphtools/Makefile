@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	glyphtools
 PORTVERSION=	0.8.0
 CATEGORIES=	print python

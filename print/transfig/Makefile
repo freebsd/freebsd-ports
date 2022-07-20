@@ -1,5 +1,3 @@
-# Created by: chuckr@FreeBSD.org
-
 PORTNAME=	transfig
 PORTVERSION=	3.2.5e
 PORTREVISION=	4

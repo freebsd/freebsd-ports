@@ -1,5 +1,3 @@
-# Created by: oly@world.std.com
-
 PORTNAME=	lout
 PORTVERSION=	3.42
 CATEGORIES=	print

@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	pdf
 PORTVERSION=	1.27.12
 CATEGORIES=	print python

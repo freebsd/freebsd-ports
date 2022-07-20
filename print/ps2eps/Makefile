@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	ps2eps
 PORTVERSION=	1.64
 PORTREVISION=	5

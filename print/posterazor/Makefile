@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	posterazor
 PORTVERSION=	1.9.7
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: hrs
-
 PORTNAME=	papersize-default
 PORTVERSION=	0.0.20120302
 PORTREVISION=	1

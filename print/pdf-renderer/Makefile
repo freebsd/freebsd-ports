@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	pdf-renderer
 PORTVERSION=	0.9.1
 PORTEPOCH=	1

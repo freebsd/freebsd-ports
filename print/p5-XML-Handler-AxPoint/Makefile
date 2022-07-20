@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	XML-Handler-AxPoint
 PORTVERSION=	1.5
 CATEGORIES=	print perl5

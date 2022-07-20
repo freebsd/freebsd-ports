@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pfbtopfa
 PORTVERSION=	1.0
 PORTREVISION=	1

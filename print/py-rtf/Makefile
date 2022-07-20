@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	rtf
 PORTVERSION=	0.45
 CATEGORIES=	print python

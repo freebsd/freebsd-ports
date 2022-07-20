@@ -1,5 +1,3 @@
-# Created by: Maxim Loginov <Zeliboba@mail.ru>
-
 PORTNAME=	latexdiff
 PORTVERSION=	1.3.2
 CATEGORIES=	print perl5

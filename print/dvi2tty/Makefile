@@ -1,5 +1,3 @@
-# Created by: Joel Sutton <jsutton@bbcon.com.au>
-
 PORTNAME=	dvi2tty
 PORTVERSION=	5.3.4
 CATEGORIES=	print

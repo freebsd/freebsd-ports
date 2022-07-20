@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	texinfo
 PORTVERSION=	6.8
 PORTREVISION=	3

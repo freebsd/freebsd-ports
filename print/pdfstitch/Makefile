@@ -1,5 +1,3 @@
-# Created by: Stefan Hagen <ports@textmail.me>
-
 PORTNAME=	pdfstitch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6

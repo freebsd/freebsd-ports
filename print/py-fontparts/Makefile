@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fontparts
 PORTVERSION=	0.10.7
 CATEGORIES=	print python

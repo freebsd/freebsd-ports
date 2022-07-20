@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	simple-fb2-reader
 PORTVERSION=	1.1.3
 PORTREVISION=	2

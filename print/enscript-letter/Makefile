@@ -1,5 +1,3 @@
-# Created by: kline
-
 PORTNAME=	enscript
 PORTVERSION=	1.6.6
 PORTREVISION?=	3	# ?= for chinese/enscript

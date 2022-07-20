@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	typetools
 PORTVERSION=	2.108
 CATEGORIES=	print

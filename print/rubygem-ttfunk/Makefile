@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	ttfunk
 PORTVERSION=	1.7.0
 CATEGORIES=	print rubygems

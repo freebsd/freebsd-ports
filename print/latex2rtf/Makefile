@@ -1,5 +1,3 @@
-# Created by: Joerg Wunsch <joerg@FreeBSD.org>
-
 PORTNAME=	latex2rtf
 DISTVERSION=	2.3.17
 CATEGORIES=	print

@@ -1,5 +1,3 @@
-# Created by: Martin Dieringer <martin.dieringer@gmx.de>
-
 PORTNAME=	rtf2latex2e
 DISTVERSION=	2-2-2
 CATEGORIES=	print

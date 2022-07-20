@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	rbpdf
 PORTVERSION=	1.20.1
 CATEGORIES=	print rubygems

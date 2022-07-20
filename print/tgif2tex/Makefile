@@ -1,5 +1,3 @@
-# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-
 PORTNAME=	tgif2tex
 PORTVERSION=	2.13
 PORTREVISION=	4

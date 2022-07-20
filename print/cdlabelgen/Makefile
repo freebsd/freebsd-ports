@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
-
 PORTNAME=	cdlabelgen
 PORTVERSION=	4.3.0
 CATEGORIES=	print perl5

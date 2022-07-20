@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	qpdfview
 DISTVERSION=	0.4.18
 PORTREVISION=	31

@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	detex
 PORTVERSION=	2.8
 PORTREVISION=	1

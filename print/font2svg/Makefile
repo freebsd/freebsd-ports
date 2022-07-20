@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	font2svg
 PORTVERSION=	1.0
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	trueprint
 PORTVERSION=	5.4
 PORTREVISION=	2

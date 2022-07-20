@@ -1,5 +1,3 @@
-# Created by: Mike Meyer <mwm@mired.org>
-
 PORTNAME=	t1utils
 PORTVERSION=	1.32
 CATEGORIES=	print

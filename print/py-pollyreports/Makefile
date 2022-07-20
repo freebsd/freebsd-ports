@@ -1,5 +1,3 @@
-# Created by: Jose Jachuf <jjachuf@gmail.com>
-
 PORTNAME=	PollyReports
 PORTVERSION=	1.8
 CATEGORIES=	print python

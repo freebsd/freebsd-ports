@@ -1,5 +1,3 @@
-# Created by: martin.dieringer@gmx.de
-
 PORTNAME=	frescobaldi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2

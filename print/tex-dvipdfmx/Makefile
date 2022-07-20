@@ -1,5 +1,3 @@
-# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-
 PORTNAME=	dvipdfmx
 PORTVERSION=	${TEXLIVE_VERSION}
 CATEGORIES=	print

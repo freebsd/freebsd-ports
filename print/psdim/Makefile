@@ -1,5 +1,3 @@
-# Created by: e-masson@kisoft-services.com
-
 PORTNAME=	psdim
 PORTVERSION=	1.4
 PORTREVISION=	8

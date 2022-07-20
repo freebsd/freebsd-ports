@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pypdf3
 PORTVERSION=	1.0.6
 CATEGORIES=	print python

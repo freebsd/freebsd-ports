@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	pdf-redact-tools
 PORTVERSION=	0.1.2
 DISTVERSIONPREFIX=	v

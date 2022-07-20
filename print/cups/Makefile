@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@geeksrus.net>
-
 PORTNAME=	cups
 PORTVERSION=	2.4.2
 DISTVERSIONPREFIX=v

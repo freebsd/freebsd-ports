@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	ghostscript
 PORTVERSION=	7.07
 PORTREVISION=	32

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ufolib2
 PORTVERSION=	0.13.1
 CATEGORIES=	print python

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	xreader
 PORTVERSION=	3.2.2
 PORTREVISION=	8

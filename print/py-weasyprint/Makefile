@@ -1,5 +1,3 @@
-# Created by: D'Arcy Cain <darcy@druid.net>
-
 PORTNAME=	weasyprint
 PORTVERSION=	51
 CATEGORIES=	print python

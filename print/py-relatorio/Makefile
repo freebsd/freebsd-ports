@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	relatorio
 PORTVERSION=	0.10.1
 CATEGORIES=	print python

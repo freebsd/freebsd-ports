@@ -1,5 +1,3 @@
-# Created by: Satoshi Asami <asami@FreeBSD.org>
-
 RESOLUTION=	600
 MASTERDIR=	${.CURDIR}/../pkfonts300
 

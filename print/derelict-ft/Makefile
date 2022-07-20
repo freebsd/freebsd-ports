@@ -1,5 +1,3 @@
-# Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTNAME=	derelict-ft
 PORTVERSION=	1.1.3
 PORTREVISION=	4

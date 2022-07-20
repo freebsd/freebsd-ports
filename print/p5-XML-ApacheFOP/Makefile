@@ -1,5 +1,3 @@
-# Created by: Simun Mikecin <numisemis@yahoo.com>
-
 PORTNAME=	XML-ApacheFOP
 PORTVERSION=	0.03
 PORTREVISION=	3

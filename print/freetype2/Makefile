@@ -1,5 +1,3 @@
-# Created by: jseger@FreeBSD.org
-
 PORTNAME=	freetype2
 DISTVERSION=	2.12.1
 PORTREVISION=	1

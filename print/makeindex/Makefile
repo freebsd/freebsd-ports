@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	makeindex
 PORTVERSION=	3.0.8
 PORTREVISION=	1

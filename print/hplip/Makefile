@@ -1,5 +1,3 @@
-# Created by: amistry@am-productions.biz
-
 PORTNAME=	hplip
 PORTVERSION=	3.22.4
 CATEGORIES=	print

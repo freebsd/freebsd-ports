@@ -1,5 +1,3 @@
-# Created by: Fabiano Sidler <fabianosidler@swissonline.ch>
-
 PORTNAME=	fpdf
 PORTVERSION=	1.7.2
 CATEGORIES=	print python

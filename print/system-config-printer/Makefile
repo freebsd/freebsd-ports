@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	system-config-printer
 PORTVERSION=	1.5.12
 PORTREVISION=	2

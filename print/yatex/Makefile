@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	yatex
 PORTVERSION=	1.82
 PORTREVISION=	4

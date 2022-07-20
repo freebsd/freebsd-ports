@@ -1,5 +1,3 @@
-# Created by: smace@FreeBSD.org
-
 PORTNAME=	pnm2ppa
 PORTVERSION=	1.13
 PORTREVISION=	5

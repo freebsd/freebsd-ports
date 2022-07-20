@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	a2pdf
 PORTVERSION=	1.13
 PORTREVISION=	2

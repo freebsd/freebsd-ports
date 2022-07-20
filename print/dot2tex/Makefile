@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@FreeBSD.org>
-
 PORTNAME=	dot2tex
 PORTVERSION=	2.11.3
 CATEGORIES=	print python

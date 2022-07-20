@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	uharfbuzz
 PORTVERSION=	0.27.0
 CATEGORIES=	print python

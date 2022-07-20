@@ -1,5 +1,3 @@
-# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
-
 PORTNAME=	fonttools
 PORTVERSION=	4.34.4
 CATEGORIES=	print python

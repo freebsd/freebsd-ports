@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan.aguero@gmail.com>
-
 PORTNAME=	PostScript
 PORTVERSION=	0.06
 PORTREVISION=	2

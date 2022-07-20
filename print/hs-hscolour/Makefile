@@ -1,5 +1,3 @@
-# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-
 PORTNAME=	hscolour
 PORTVERSION=	1.24.4
 PORTREVISION=	9

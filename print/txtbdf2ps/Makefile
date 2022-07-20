@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	txtbdf2ps
 PORTVERSION=	0.7.1
 PORTREVISION=	1

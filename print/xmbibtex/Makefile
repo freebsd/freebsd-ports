@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	xmbibtex
 PORTVERSION=	1.7
 PORTREVISION=	4

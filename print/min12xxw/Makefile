@@ -1,5 +1,3 @@
-# Created by: Tim McCormick <tim@pcbsd.org>
-
 PORTNAME=	min12xxw
 PORTVERSION=	0.0.9
 CATEGORIES=	print

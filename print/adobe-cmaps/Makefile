@@ -1,5 +1,3 @@
-# Created by: KATO Tsuguru <tkato@prontomail.com>
-
 PORTNAME=	adobe-cmaps
 PORTVERSION=	20051217
 PORTREVISION=	4

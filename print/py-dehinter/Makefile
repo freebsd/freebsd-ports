@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	dehinter
 PORTVERSION=	4.0.0
 CATEGORIES=	print python

@@ -1,5 +1,3 @@
-# Created by: Martin Ranne <gasp@ridcully.dnsalias.org>
-
 PORTNAME=	foomatic-db-engine
 PORTVERSION=	4.0.13
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	catdvi
 PORTVERSION=	0.14
 PORTREVISION=	7
