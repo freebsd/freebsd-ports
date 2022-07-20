@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@bsd.hu
-
 PORTNAME=	scmxx
 PORTVERSION=	0.9.0
 PORTREVISION=	3

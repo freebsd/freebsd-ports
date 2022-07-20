@@ -1,5 +1,3 @@
-# Created by: Mike Heffner <mikeh@FreeBSD.org>
-
 PORTNAME=	lirc
 PORTVERSION=	0.9.0
 PORTREVISION=	12

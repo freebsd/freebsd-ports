@@ -1,5 +1,3 @@
-# Created by: Devon H. O'Dell <devon.odell@coyotepoint.com>
-
 PORTNAME=	ser2net
 PORTVERSION=	3.5.1
 CATEGORIES=	comms net

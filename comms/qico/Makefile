@@ -1,5 +1,3 @@
-# Created by: Denis Shaposhnikov <dsh@vlink.ru>
-
 PORTNAME=	qico
 PORTVERSION=	0.59.1
 CATEGORIES=	comms

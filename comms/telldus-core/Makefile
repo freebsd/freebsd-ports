@@ -1,5 +1,3 @@
-# Created by: Johan Strom <johna@stromnet.se>
-
 PORTNAME=	telldus-core
 PORTVERSION=	2.1.2
 PORTREVISION=	7

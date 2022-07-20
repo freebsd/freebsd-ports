@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	nec2c
 PORTVERSION=	.9
 PORTREVISION=	3

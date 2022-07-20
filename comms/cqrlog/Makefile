@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	cqrlog
 PORTVERSION=	2.5.2
 DISTVERSIONPREFIX=	v

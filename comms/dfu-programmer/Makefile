@@ -1,5 +1,3 @@
-# Created by: elbarto@ArcadeBSD.org
-
 PORTNAME=	dfu-programmer
 PORTVERSION=	0.7.2
 CATEGORIES=	comms

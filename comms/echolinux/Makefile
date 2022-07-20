@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	echolinux
 PORTVERSION=	0.17a
 PORTREVISION=	8

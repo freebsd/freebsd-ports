@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	gnocky
 PORTVERSION=	0.0.7
 PORTREVISION=	5

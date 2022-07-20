@@ -1,5 +1,3 @@
-# Created by: Steve Woodford <scw@netbsd.hut.fi>
-
 PORTNAME=	tits
 PORTVERSION=	1.3.0
 CATEGORIES=	comms

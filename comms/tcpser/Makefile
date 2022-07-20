@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	tcpser
 DISTVERSION=	g20210425
 PORTEPOCH=	1

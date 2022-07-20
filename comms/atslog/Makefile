@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	atslog
 PORTVERSION=	2.1.1
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Diane Bruce <db@db.net>
-
 PORTNAME=	cwdaemon
 PORTVERSION=	0.10.2
 CATEGORIES=	comms hamradio

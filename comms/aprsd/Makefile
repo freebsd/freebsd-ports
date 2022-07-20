@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	aprsd
 PORTVERSION=	2.2.515
 PORTREVISION=	2

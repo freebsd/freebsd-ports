@@ -1,5 +1,3 @@
-# Created by: Vladimir Grebenschikov
-
 PORTNAME=	snap7
 PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	full-

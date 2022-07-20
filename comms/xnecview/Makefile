@@ -1,5 +1,3 @@
-# Created by: Søren Straarup <xride@x12.dk>
-
 PORTNAME=	xnecview
 PORTVERSION=	1.36
 PORTREVISION=	2

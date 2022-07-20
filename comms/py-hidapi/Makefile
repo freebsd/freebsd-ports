@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	hidapi
 DISTVERSION=	0.11.0.post2
 CATEGORIES=	comms python

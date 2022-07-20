@@ -1,5 +1,3 @@
-# Created by: Nicole Reid <root@cooltrainer.org>
-
 PORTNAME=	ems-flasher
 PORTVERSION=	0.03
 PORTREVISION=	10

@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	gqrx
 PORTVERSION=	2.15.9
 PORTREVISION=	1

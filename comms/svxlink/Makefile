@@ -1,5 +1,3 @@
-# Created by: shurd
-
 PORTNAME?=	svxlink
 PORTVERSION=	19.09.1
 PORTREVISION=	2

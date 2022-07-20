@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	smstools
 PORTVERSION=	3.1.21
 CATEGORIES=	comms

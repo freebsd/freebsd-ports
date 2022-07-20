@@ -1,5 +1,3 @@
-# Created by: Darren <igla@batterybackups.net>
-
 PORTNAME=	acfax
 PORTVERSION=	0.981011
 PORTREVISION=	4

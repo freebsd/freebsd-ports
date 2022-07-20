@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	tlf
 PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=	${PORTNAME}-

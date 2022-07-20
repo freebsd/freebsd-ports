@@ -1,5 +1,3 @@
-# Created by: Jeffrey Baitis <jeff@baitis.net>
-
 PORTNAME=	libsdr
 PORTVERSION=	0.1.0
 DISTVERSIONPREFIX=	v

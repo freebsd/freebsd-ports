@@ -1,5 +1,3 @@
-# Created by: Felix Palmen <felix@palmen-it.de>
-
 PORTNAME=	opencbm-plugin-xa1541
 PORTVERSION=	${OCBM_VERSION}
 CATEGORIES=	comms archivers

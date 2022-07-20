@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	fllog
 PORTVERSION=	1.2.6
 CATEGORIES=	comms hamradio

@@ -1,5 +1,3 @@
-# Created by: Sebastian Yepes <esn@x123.info>
-
 PORTNAME=	hamlib
 PORTVERSION=	4.4
 PORTREVISION=	3

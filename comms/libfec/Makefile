@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	libfec
 PORTVERSION=	3.0.1
 PORTREVISION=	4

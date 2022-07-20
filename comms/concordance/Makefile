@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	concordance
 PORTVERSION=	1.5
 CATEGORIES=	comms

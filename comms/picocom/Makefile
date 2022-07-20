@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	picocom
 DISTVERSION=	3.1
 CATEGORIES=	comms

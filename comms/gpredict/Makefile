@@ -1,5 +1,3 @@
-# Created by: Matt Dawson <matt@mattsnetwork.co.uk>
-
 PORTNAME=	gpredict
 DISTVERSION=	2.2.1
 PORTREVISION=	2

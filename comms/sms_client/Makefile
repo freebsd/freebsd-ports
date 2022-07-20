@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	sms_client
 PORTVERSION=	3.0.2
 PORTREVISION=	3

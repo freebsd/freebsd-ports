@@ -1,5 +1,3 @@
-# Created by: Felix Palmen <felix@palmen-it.de>
-
 PORTNAME=	opencbm
 PORTVERSION=	${OCBM_VERSION}
 CATEGORIES=	comms archivers

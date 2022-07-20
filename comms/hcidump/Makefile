@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	hcidump
 PORTVERSION=	1.5.1
 CATEGORIES=	comms sysutils

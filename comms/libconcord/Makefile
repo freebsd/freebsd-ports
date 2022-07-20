@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	libconcord
 PORTVERSION=	1.2
 PORTREVISION=	2

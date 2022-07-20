@@ -1,5 +1,3 @@
-# Created by: Devon H. O'Dell <devon.odell@coyotepoint.com>
-
 PORTNAME=	serialoverip
 PORTVERSION=	1.0
 CATEGORIES=	comms net

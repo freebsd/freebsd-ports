@@ -1,5 +1,3 @@
-# Created by: Paul Traina <pst@FreeBSD.org>
-
 PORTNAME=	kermit
 DISTVERSION=	10.0-beta04
 CATEGORIES=	comms ftp net

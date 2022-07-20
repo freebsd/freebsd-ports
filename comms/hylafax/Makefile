@@ -1,5 +1,3 @@
-# Created by: Julian Stacey <jhs@FreeBSD.org>
-
 PORTNAME=	hylafax
 PORTVERSION=	6.0.7
 CATEGORIES=	comms

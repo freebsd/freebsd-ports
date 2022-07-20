@@ -1,5 +1,3 @@
-# Created by: 'Big Bad Bob' Frazier <bobf@mrp3.com>
-
 PORTNAME=	uarduno
 PORTVERSION=	1.02
 PORTREVISION=	1

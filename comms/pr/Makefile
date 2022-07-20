@@ -1,5 +1,3 @@
-# Created by: Anton Voronin <anton@urc.ac.ru>
-
 PORTNAME=	pr
 PORTVERSION=	1.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	phone
 PORTVERSION=	0.5.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	flrig
 PORTVERSION=	1.3.54
 CATEGORIES=	comms hamradio

@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	thebridge
 PORTVERSION=	1.09
 PORTREVISION=	2

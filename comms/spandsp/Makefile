@@ -1,5 +1,3 @@
-# Created by: wlloyd@slap.net
-
 PORTNAME=	spandsp
 DISTVERSION=	${SPANDSP_VERSION}.g20211014
 CATEGORIES=	comms

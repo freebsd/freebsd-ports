@@ -1,5 +1,3 @@
-# Created by: Rodrigo Osorio <rodrigo@FreeBSD.org>
-
 PORTNAME=	rtl-433
 PORTVERSION=	21.12
 CATEGORIES=	comms hamradio

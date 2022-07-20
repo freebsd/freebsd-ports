@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	remserial
 PORTVERSION=	1.4
 CATEGORIES=	comms

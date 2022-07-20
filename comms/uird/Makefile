@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	uird
 PORTVERSION=	1.1
 CATEGORIES=	comms

@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	SMS-Send-NexmoUnicode
 PORTVERSION=	0.02
 CATEGORIES=	comms perl5

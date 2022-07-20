@@ -1,5 +1,3 @@
-# Created by: Brian Dean <bsd@FreeBSD.org>
-
 PORTNAME=	comserv
 PORTVERSION=	1.4.4
 CATEGORIES=	comms net

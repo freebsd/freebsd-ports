@@ -1,5 +1,3 @@
-# Created by: Tomasz "CeDeROM" CEDRO (http://www.tomek.cedro.info)
-
 PORTNAME=	hackrf
 PORTVERSION=	g${GIT_SRC_DATE}
 PORTREVISION=	1

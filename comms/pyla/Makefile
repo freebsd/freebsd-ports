@@ -1,5 +1,3 @@
-# Created by: Michael Reifenberger (mike@Reifenberger.com)
-
 PORTNAME=	pyla
 PORTVERSION=	1.1.7.1
 PORTREVISION=	2

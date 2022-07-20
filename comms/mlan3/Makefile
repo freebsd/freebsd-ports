@@ -1,5 +1,3 @@
-# Created by: hm
-
 PORTNAME=	mlan3
 PORTVERSION=	1.00
 CATEGORIES=	comms

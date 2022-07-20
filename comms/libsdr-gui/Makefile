@@ -1,5 +1,3 @@
-# Created by: Jeffrey Baitis <jeff@baitis.net>
-
 PORTNAME=	libsdr-gui
 PORTVERSION=	0.1.0
 PORTREVISION=	4

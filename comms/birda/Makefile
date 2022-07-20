@@ -1,5 +1,3 @@
-# Created by: Brandon S. Allbery KF8NH <allbery@ece.cmu.edu>
-
 PORTNAME=	birda
 PORTVERSION=	1.3
 CATEGORIES=	comms

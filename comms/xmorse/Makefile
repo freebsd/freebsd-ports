@@ -1,5 +1,3 @@
-# Created by: Sunry Chen <sunrychen@gmail.com>
-
 PORTNAME=	xmorse
 PORTVERSION=	20041125
 PORTREVISION=	10
