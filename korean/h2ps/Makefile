@@ -1,5 +1,3 @@
-# Created by: Junho CHOI <junho.choi@gmail.com>
-
 PORTNAME=	h2ps
 PORTVERSION=	2.06
 CATEGORIES=	korean print

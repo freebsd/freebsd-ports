@@ -1,5 +1,3 @@
-# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-
 CATEGORIES=	korean
 PKGNAMESUFFIX=	-server
 

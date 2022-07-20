@@ -1,5 +1,3 @@
-# Created by: Junho CHOI <junho.choi@gmail.com>
-
 PORTNAME=	uniksc
 PORTVERSION=	0.9
 CATEGORIES=	korean converters

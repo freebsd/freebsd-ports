@@ -1,5 +1,3 @@
-# Created by: Junho CHOI <junho.choi@gmail.com>
-
 PORTNAME=	scim-hangul
 PORTVERSION=	0.4.0
 PORTREVISION=	3

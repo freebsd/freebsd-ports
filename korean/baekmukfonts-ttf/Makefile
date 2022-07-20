@@ -1,5 +1,3 @@
-# Created by: Junho CHOI <junho.choi@gmail.com>
-
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.2
 PORTREVISION=	3

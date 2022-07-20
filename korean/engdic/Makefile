@@ -1,5 +1,3 @@
-# Created by: Oh Junseon <hollywar@mail.holywar.net>
-
 PORTNAME=	engdic
 PORTVERSION=	0.2
 PORTREVISION=	1
