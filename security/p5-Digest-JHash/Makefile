@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-JHash
 PORTVERSION=	0.10
 CATEGORIES=	security perl5

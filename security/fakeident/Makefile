@@ -1,5 +1,3 @@
-# Created by: Dean Hollister <dean@odyssey.apana.org.au>
-
 PORTNAME=	fakeident
 PORTVERSION=	2.7
 CATEGORIES=	security

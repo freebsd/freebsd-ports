@@ -1,5 +1,3 @@
-# Created by: Ulf Lilleengen
-
 PORTNAME=	paramiko
 PORTVERSION=	2.11.0
 PORTREVISION=	1

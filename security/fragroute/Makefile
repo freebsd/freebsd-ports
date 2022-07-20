@@ -1,5 +1,3 @@
-# Created by: Dominic Marks <dominic.marks@btinternet.com>
-
 PORTNAME=	fragroute
 PORTVERSION=	1.2
 PORTREVISION=	16

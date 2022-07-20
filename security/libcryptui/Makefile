@@ -1,5 +1,3 @@
-# Created by: Dave McKay <dave@mu.org>
-
 PORTNAME=	libcryptui
 PORTVERSION=	3.12.2
 PORTREVISION=	2

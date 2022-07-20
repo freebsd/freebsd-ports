@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Sudo
 PORTVERSION=	0.33
 PORTREVISION=	1

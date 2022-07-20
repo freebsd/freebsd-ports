@@ -1,5 +1,3 @@
-# Created by: teramoto@comm.eng.osaka-u.ac.jp
-
 PORTNAME=	gpgme
 PORTVERSION=	1.17.1
 PORTREVISION?=	0

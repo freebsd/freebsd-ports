@@ -1,5 +1,3 @@
-# Created by: Paul Schmehl <pauls@utdallas.edu>
-
 PORTNAME=	sancp
 PORTVERSION=	1.6.1
 DISTVERSIONSUFFIX=	-stable

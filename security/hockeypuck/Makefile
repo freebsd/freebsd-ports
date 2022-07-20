@@ -1,5 +1,3 @@
-# Created by: Michiel van Baak <michiel@vanbaak.eu
-
 PORTNAME=	hockeypuck
 DISTVERSION=	g20180725
 PORTREVISION=	3

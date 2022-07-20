@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-keyring
 PORTVERSION=	40.0
 PORTREVISION=	3

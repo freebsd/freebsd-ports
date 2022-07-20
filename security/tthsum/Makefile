@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	tthsum
 PORTVERSION=	1.3.2
 PORTREVISION=	1

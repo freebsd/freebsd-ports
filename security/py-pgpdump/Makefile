@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	pgpdump
 PORTVERSION=	1.5
 CATEGORIES=	security python

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	authlib
 PORTVERSION=	1.0.1
 CATEGORIES=	security python

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	openssl
 PORTVERSION=	20.0.1
 PORTEPOCH=	1

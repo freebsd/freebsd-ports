@@ -1,5 +1,3 @@
-# Created by: Peter Johnson <johnson.peter@gmail.com>
-
 PORTNAME=	zzuf
 PORTVERSION=	0.13
 PORTREVISION=	1

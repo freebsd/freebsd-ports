@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Crypt-X509-CRL
 PORTVERSION=	0.4
 CATEGORIES=	security perl5

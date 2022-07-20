@@ -1,5 +1,3 @@
-# Created by: kris@FreeBSD.org
-
 PORTNAME=	pks
 PORTVERSION=	0.9.6.20040312
 PORTREVISION=	9

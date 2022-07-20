@@ -1,5 +1,3 @@
-# Created by: Frank Laszlo <laszlof@vonostingroup.com>
-
 PORTNAME=	md5deep
 PORTVERSION=	4.4
 PORTREVISION=	3

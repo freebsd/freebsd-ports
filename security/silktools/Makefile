@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	silktools
 PORTVERSION=	3.19.1
 CATEGORIES=	security net

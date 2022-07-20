@@ -1,5 +1,3 @@
-# Created by: Christer Edwards <christer.edwards@gmail.com>
-
 PORTNAME=	python-gnupg
 DISTVERSION=	0.4.7
 CATEGORIES=	security python

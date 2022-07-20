@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	ckcc-protocol
 PORTVERSION=	1.3.2
 CATEGORIES=	security

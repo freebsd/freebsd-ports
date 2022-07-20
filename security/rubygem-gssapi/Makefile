@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	gssapi
 PORTVERSION=	1.3.0
 CATEGORIES=	security rubygems

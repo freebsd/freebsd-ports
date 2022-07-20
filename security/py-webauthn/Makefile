@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	webauthn
 PORTVERSION=	1.2.1
 CATEGORIES=	security python

@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	virustotal-api
 PORTVERSION=	1.1.11
 CATEGORIES=	security python

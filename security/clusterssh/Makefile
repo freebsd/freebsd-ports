@@ -1,5 +1,3 @@
-# Created by: lx
-
 PORTNAME=	clusterssh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.16

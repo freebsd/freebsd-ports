@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	mixbox
 PORTVERSION=	1.0.5
 CATEGORIES=	security python

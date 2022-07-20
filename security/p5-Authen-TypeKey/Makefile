@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Authen-TypeKey
 PORTVERSION=	0.05
 PORTREVISION=	3

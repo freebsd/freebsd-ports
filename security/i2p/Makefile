@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	i2p
 DISTVERSION=	0.9.48
 CATEGORIES=	security java net-p2p

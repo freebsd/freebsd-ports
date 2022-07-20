@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	p11-kit
 DISTVERSION=	0.24.1
 PORTREVISION=	1

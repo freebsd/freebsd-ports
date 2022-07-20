@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	libsodium
 PORTVERSION=	2.0.23
 CATEGORIES=	security

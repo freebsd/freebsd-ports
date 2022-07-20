@@ -1,5 +1,3 @@
-# Created by: Remington Lang <MrL0Lz@gmail.com>
-
 PORTNAME=	openvpn-admin
 PORTVERSION=	1.9.4
 DISTVERSIONSUFFIX=	-2

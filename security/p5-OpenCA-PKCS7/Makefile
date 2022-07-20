@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	OpenCA-PKCS7
 PORTVERSION=	0.9.1.1.1
 PORTREVISION=	1

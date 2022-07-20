@@ -1,5 +1,3 @@
-# Created by: truckman
-
 PORTNAME=	chrootuid
 PORTVERSION=	1.3
 CATEGORIES=	security

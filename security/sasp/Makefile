@@ -1,5 +1,3 @@
-# Created by: sviat
-
 PORTNAME=	sasp
 PORTVERSION=	0.1
 PORTREVISION=	4

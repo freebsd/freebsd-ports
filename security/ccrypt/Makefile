@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ccrypt
 DISTVERSION=	1.11
 CATEGORIES=	security

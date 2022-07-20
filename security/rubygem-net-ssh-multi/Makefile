@@ -1,5 +1,3 @@
-# Created by: Renaud Chaput <renchap@cocoa-x.com>
-
 PORTNAME=	net-ssh-multi
 PORTVERSION=	1.2.1
 CATEGORIES=	security rubygems

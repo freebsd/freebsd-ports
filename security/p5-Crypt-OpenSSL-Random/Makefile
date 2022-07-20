@@ -1,5 +1,3 @@
-# Created by: nork@cityfujisawa.ne.jp
-
 PORTNAME=	Crypt-OpenSSL-Random
 PORTVERSION=	0.15
 CATEGORIES=	security perl5

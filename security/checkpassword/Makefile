@@ -1,5 +1,3 @@
-# Created by: sada@FreeBSD.org
-
 PORTNAME=	checkpassword
 PORTVERSION=	0.90
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	acme-client
 PORTVERSION=	2.0.11
 PORTREVISION=	1

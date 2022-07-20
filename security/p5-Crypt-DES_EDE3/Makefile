@@ -1,5 +1,3 @@
-# Created by: jesper
-
 PORTNAME=	Crypt-DES_EDE3
 PORTVERSION=	0.01
 PORTREVISION=	2

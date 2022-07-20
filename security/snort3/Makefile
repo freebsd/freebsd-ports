@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	snort
 DISTVERSION=	3.1.36.0
 PORTEPOCH=	1

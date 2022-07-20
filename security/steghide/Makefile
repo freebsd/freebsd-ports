@@ -1,5 +1,3 @@
-# Created by: RaRa Rasputin <rasputin@submonkey.net>
-
 PORTNAME=	steghide
 PORTVERSION=	0.5.1
 PORTREVISION=	7

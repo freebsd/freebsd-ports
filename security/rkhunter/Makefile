@@ -1,5 +1,3 @@
-# Created by: Radim Kolar
-
 PORTNAME=	rkhunter
 PORTVERSION=	1.4.6
 PORTREVISION=	1

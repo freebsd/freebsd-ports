@@ -1,5 +1,3 @@
-# Created by: alex@FreeBSD.org
-
 PORTNAME=	mindterm-binary
 PORTVERSION=	1.2.1
 PORTREVISION=	1

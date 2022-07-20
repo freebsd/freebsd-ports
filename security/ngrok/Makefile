@@ -1,5 +1,3 @@
-# Created by: John Hixson <jhixson@gmail.com>
-
 PORTNAME=	ngrok
 PORTVERSION=	2.2.8
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Digest-MD5-M4p
 PORTVERSION=	0.01
 PORTREVISION=	2

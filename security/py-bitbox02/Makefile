@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	bitbox02
 PORTVERSION=	6.0.0
 CATEGORIES=	security python

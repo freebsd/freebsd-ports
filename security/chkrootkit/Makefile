@@ -1,5 +1,3 @@
-# Created by: Luiz Eduardo R. Cordeiro
-
 PORTNAME=	chkrootkit
 PORTVERSION=	0.55
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: michaelnottebrock@gmx.net
-
 PORTNAME=	dirmngr
 PORTVERSION=	1.1.0
 PORTREVISION=	15

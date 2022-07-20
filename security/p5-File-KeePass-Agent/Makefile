@@ -1,5 +1,3 @@
-# Created by: Cy Schubert <cy@FreeBSD.org>
-
 PORTNAME=	File-KeePass-Agent
 PORTVERSION=	2.01
 PORTREVISION=	2

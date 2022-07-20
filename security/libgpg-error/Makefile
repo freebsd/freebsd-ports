@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	libgpg-error
 PORTVERSION=	1.45
 CATEGORIES=	security devel

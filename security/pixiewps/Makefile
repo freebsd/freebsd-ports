@@ -1,5 +1,3 @@
-# Created by: Franz Bettag <franz@bett.ag>
-
 PORTNAME=	pixiewps
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1

@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	GnuPG-Interface
 PORTVERSION=	1.02
 CATEGORIES=	security perl5

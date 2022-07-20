@@ -1,5 +1,3 @@
-# Created by: Philippe Audeoud <jadawin@tuxaco.net>
-
 PORTNAME=	pdfcrack
 PORTVERSION=	0.16
 CATEGORIES=	security print

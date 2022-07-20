@@ -1,5 +1,3 @@
-# Created by: Cristiano Deana <cris@gufi.org>
-
 PORTNAME=	expiretable
 PORTVERSION=	0.6
 PORTREVISION=	2

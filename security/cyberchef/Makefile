@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	cyberchef
 PORTVERSION=	9.39.1
 DISTVERSIONPREFIX=	v

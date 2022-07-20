@@ -1,5 +1,3 @@
-# Created by: Carlo Strub
-
 PORTNAME=	nyx
 PORTVERSION=	2.1.0
 PORTREVISION=	1

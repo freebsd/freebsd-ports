@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	twofactor_totp
 PORTVERSION=	6.4.0
 DISTVERSIONPREFIX=	v

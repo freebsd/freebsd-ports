@@ -1,5 +1,3 @@
-# Created by: Horia Racoviceanu <horia@racoviceanu.com>
-
 PORTNAME=	libscrypt
 PORTVERSION=	1.22
 DISTVERSIONPREFIX=	v

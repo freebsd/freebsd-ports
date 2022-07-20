@@ -1,5 +1,3 @@
-# Created by: Eugene Grosbein <eugen@FreeBSD.org>
-
 PORTNAME=	gost-engine
 DISTVERSION=	g20190421
 CATEGORIES=	security

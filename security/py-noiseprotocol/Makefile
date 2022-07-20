@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	noiseprotocol
 PORTVERSION=	0.3.1
 CATEGORIES=	security python

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Data-Entropy
 PORTVERSION=	0.007
 PORTREVISION=	1

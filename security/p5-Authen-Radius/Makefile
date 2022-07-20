@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Authen-Radius
 PORTVERSION=	0.32
 CATEGORIES=	security perl5

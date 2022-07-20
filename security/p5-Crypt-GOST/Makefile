@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-GOST
 PORTVERSION=	1.00
 PORTREVISION=	1

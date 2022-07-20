@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-Adler32
 PORTVERSION=	0.03
 PORTREVISION=	2

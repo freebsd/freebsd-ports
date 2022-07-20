@@ -1,5 +1,3 @@
-# Created by: Martin Mersberger
-
 PORTNAME=	pam_mkhomedir
 PORTVERSION=	0.2
 CATEGORIES=	security

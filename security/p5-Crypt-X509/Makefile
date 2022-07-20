@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-X509
 PORTVERSION=	0.54
 CATEGORIES=	security perl5

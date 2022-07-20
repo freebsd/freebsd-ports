@@ -1,5 +1,3 @@
-# Created by: Joe Clarke <marcus@marcuscom.com>
-
 PORTNAME=	pam_ldap
 PORTVERSION=	186
 PORTREVISION=	1

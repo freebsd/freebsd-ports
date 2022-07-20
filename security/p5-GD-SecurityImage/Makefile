@@ -1,5 +1,3 @@
-# Created by: ports@rbt.ca
-
 PORTNAME=	GD-SecurityImage
 PORTVERSION=	1.75
 PORTREVISION=	1

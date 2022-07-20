@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	rhash
 PORTVERSION=	1.4.3
 CATEGORIES=	security

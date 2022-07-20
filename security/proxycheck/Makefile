@@ -1,5 +1,3 @@
-# Created by: Paul Chvostek <paul@it.ca>
-
 PORTNAME=	proxycheck
 PORTVERSION=	0.49a
 CATEGORIES=	security

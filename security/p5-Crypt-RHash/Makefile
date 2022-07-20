@@ -1,5 +1,3 @@
-# Created by: perl@FreeBSD.org
-
 PORTNAME=	Crypt-RHash
 PORTVERSION=	1.00
 CATEGORIES=	security perl5

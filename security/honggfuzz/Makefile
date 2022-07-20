@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbrabez@gmail.com>
-
 PORTNAME=	honggfuzz
 PORTVERSION=	0.7
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libssh2
 PORTVERSION=	1.8.0
 DISTVERSIONSUFFIX=	-4.el7

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-auth-httplib2
 PORTVERSION=	0.1.0
 CATEGORIES=	security python

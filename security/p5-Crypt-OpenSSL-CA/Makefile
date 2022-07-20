@@ -1,5 +1,3 @@
-# Created by: Mosconi <mosconi.rmg@gmail.com>
-
 PORTNAME=	Crypt-OpenSSL-CA
 PORTVERSION=	0.91
 CATEGORIES=	security perl5

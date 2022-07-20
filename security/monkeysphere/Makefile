@@ -1,5 +1,3 @@
-# Created by: Daniel Kahn Gillmor <dkg@fifthhorseman.net>
-
 PORTNAME=	monkeysphere
 PORTVERSION=	0.43
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	python-registry
 PORTVERSION=	1.4
 CATEGORIES=	security devel python

@@ -1,5 +1,3 @@
-# Created by: barner
-
 PORTNAME=	libfprint
 PORTVERSION=	0.7.0
 PORTREVISION=	1

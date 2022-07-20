@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	pymacaroons
 PORTVERSION=	0.13.0
 CATEGORIES=	security devel python

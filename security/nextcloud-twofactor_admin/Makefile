@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	twofactor_admin
 PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	v

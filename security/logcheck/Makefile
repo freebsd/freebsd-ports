@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dan@freebsddiary.org>
-
 PORTNAME=	logcheck
 DISTVERSION=	1.3.24
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	poly1305aes
 PORTVERSION=	20050218
 CATEGORIES=	security

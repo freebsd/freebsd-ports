@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Digest-MD4
 PORTVERSION=	1.9
 PORTREVISION=	1

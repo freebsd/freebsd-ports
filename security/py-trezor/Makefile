@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	trezor
 PORTVERSION=	0.13.3
 CATEGORIES=	security

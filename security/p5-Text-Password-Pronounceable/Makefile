@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Text-Password-Pronounceable
 PORTVERSION=	0.30
 PORTREVISION=	1

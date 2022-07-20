@@ -1,5 +1,3 @@
-# Created by: Stephon Chen <stephon@gmail.com>
-
 PORTNAME=	Net-SSL-ExpireDate
 PORTVERSION=	1.24
 CATEGORIES=	security perl5

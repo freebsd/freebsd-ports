@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	nss
 PORTVERSION=	3.80
 CATEGORIES=	security

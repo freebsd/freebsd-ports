@@ -1,5 +1,3 @@
-# Created by: Milan Obuch
-
 PORTNAME=	pyClamd
 PORTVERSION=	0.3.17
 CATEGORIES=	security python

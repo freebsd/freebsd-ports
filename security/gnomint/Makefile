@@ -1,5 +1,3 @@
-# Created by: Kevin Zheng <kevinz5000@gmail.com>
-
 PORTNAME=	gnomint
 PORTVERSION=	1.2.1
 PORTREVISION=	13

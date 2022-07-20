@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@exit2shell.com>
-
 PORTNAME=	ratproxy
 PORTVERSION=	1.58
 CATEGORIES=	security

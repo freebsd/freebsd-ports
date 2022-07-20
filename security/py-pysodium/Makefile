@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pysodium
 PORTVERSION=	0.7.12
 CATEGORIES=	security python

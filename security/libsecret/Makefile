@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libsecret
 PORTVERSION=	0.20.5
 PORTREVISION=	1

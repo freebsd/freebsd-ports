@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	end_to_end_encryption
 PORTVERSION=	1.10.0
 DISTVERSIONPREFIX=	v

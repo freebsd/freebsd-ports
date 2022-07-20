@@ -1,5 +1,3 @@
-# Created by: nectar@FreeBSD.org
-
 PORTNAME=		pam_krb5
 PORTVERSION=		4.9
 CATEGORIES=		security

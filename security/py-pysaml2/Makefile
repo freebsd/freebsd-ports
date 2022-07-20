@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	pysaml2
 PORTVERSION=	7.1.2
 CATEGORIES=	security devel python

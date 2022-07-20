@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	highwayhash
 PORTVERSION=	g20201021
 PORTREVISION=	1

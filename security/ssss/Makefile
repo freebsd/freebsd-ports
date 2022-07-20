@@ -1,5 +1,3 @@
-# Created by: Lukasz Komsta
-
 PORTNAME=	ssss
 PORTVERSION=	0.5
 PORTREVISION=	4

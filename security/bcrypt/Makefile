@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	bcrypt
 PORTVERSION=	1.1
 CATEGORIES=	security

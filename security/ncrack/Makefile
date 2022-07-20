@@ -1,5 +1,3 @@
-# Created by: David E. Thiel <lx@FreeBSD.org>
-
 PORTNAME=	ncrack
 DISTVERSION=	0.7
 CATEGORIES=	security

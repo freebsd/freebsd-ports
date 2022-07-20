@@ -1,5 +1,3 @@
-# Created by: kftseng@iyard.org
-
 PORTNAME=	Crypt-OpenSSL-X509
 PORTVERSION=	1.914
 CATEGORIES=	security perl5

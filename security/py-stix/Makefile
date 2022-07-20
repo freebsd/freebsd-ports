@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	stix
 PORTVERSION=	1.2.0.11
 DISTVERSIONPREFIX=	v

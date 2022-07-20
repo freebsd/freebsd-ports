@@ -1,5 +1,3 @@
-# Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-
 PORTNAME=	encryptor
 PORTVERSION=	3.0.0
 CATEGORIES=	security rubygems

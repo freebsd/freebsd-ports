@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Crypt-OpenSSL-ECDSA
 PORTVERSION=	0.10
 CATEGORIES=	security perl5

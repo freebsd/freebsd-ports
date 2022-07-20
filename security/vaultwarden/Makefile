@@ -1,5 +1,3 @@
-# Created by: Michael Reifenberger <mr@FreeBSD.org>
-
 PORTNAME=	vaultwarden
 DISTVERSION=	1.25.0
 PORTREVISION=	3

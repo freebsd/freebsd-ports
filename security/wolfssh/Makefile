@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	wolfssh
 PORTVERSION=	1.4.10
 CATEGORIES=	security

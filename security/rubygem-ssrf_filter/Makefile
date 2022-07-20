@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	ssrf_filter
 PORTVERSION=	1.0.7
 CATEGORIES=	security rubygems

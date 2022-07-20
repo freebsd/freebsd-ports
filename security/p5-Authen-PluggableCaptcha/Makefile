@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Authen-PluggableCaptcha
 PORTVERSION=	0.05
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Matt Behrens <matt@zigg.com>
-
 PORTNAME=	pgpgpg
 PORTVERSION=	0.13
 PORTREVISION=	5

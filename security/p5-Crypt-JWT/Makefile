@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski
-
 PORTNAME=	Crypt-JWT
 DISTVERSION=	0.034
 CATEGORIES=	security perl5

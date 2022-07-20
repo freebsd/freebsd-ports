@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	HTML-Email-Obfuscate
 PORTVERSION=	1.00
 PORTREVISION=	1

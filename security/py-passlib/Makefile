@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	passlib
 PORTVERSION=	1.7.4
 CATEGORIES=	security python

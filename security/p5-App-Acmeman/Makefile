@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	App-Acmeman
 PORTVERSION=	3.05
 CATEGORIES=	security perl5

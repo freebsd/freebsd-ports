@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-Haval256
 PORTVERSION=	1.0.5
 PORTREVISION=	2

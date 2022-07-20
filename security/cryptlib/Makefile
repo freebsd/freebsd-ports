@@ -1,5 +1,3 @@
-# Created by: Foxfair Hu <foxfair@FreeBSD.org>
-
 PORTNAME=		cryptlib
 PORTVERSION=		3.4.3
 CATEGORIES=		security

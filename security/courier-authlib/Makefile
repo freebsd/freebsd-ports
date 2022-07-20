@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann
-
 PORTNAME=	courier-authlib
 PORTVERSION=	0.71.5
 CATEGORIES?=	security mail

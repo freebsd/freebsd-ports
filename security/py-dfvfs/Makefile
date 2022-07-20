@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	dfvfs
 PORTVERSION=	20210606
 CATEGORIES=	security devel python

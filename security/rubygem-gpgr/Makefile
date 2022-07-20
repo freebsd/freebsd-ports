@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	gpgr
 PORTVERSION=	0.1.0
 CATEGORIES=	security rubygems

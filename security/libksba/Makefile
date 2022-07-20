@@ -1,5 +1,3 @@
-# Created by: Tilman Linneweh <arved@FreeBSD.org>
-
 PORTNAME=	libksba
 PORTVERSION=	1.6.0
 CATEGORIES=	security

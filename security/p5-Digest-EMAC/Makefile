@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-EMAC
 PORTVERSION=	1.2
 PORTREVISION=	2

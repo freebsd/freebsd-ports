@@ -1,5 +1,3 @@
-# Created by: Sebastian Schuetz <sschuetz@fhm.edu>
-
 PORTNAME=	trousers
 PORTVERSION=	0.3.14
 PORTREVISION=	3

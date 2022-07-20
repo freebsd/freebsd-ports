@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	PBKDF2-Tiny
 PORTVERSION=	0.005
 CATEGORIES=	security perl5

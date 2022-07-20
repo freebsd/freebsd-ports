@@ -1,5 +1,3 @@
-# Created by: Jim Geovedi <jim@corebsd.or.id>
-
 PORTNAME=	Crypt-Blowfish_PP
 PORTVERSION=	1.12
 PORTREVISION=	1

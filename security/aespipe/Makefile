@@ -1,5 +1,3 @@
-# Created by: Ekkehard 'Ekki' Gehm <gehm@physik.tu-berlin.de>
-
 PORTNAME=	aespipe
 PORTVERSION=	2.4e
 DISTVERSIONPREFIX=	v

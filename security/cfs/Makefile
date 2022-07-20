@@ -1,5 +1,3 @@
-# Created by: John Polstra <jdp@polstra.com>
-
 PORTNAME=	cfs
 DISTVERSION=	1.5.0.beta
 CATEGORIES=	security

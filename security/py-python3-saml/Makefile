@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	python3-saml
 PORTVERSION=	1.14.0
 CATEGORIES=	security python

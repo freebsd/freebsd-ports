@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	signedjson
 PORTVERSION=	1.1.4
 CATEGORIES=	security devel python

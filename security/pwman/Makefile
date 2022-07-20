@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	pwman
 DISTVERSION=	0.4.5
 PORTREVISION=	3

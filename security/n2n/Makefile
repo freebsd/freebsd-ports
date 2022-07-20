@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	n2n
 PORTVERSION=	${PORT_V_MAJOR}.${PORT_V_MINOR}
 CATEGORIES=	security net net-vpn

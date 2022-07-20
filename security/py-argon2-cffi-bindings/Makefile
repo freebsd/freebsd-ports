@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	argon2-cffi-bindings
 PORTVERSION=	21.2.0
 CATEGORIES=	security python

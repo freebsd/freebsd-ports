@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	pkcs11-dump
 PORTVERSION=	0.3.4
 CATEGORIES=	security

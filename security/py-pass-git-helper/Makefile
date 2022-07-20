@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	pass-git-helper
 PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v

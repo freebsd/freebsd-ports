@@ -1,5 +1,3 @@
-# Created by: Damien Bobillot
-
 PORTNAME=	pam_jail
 PORTVERSION=	0.4
 CATEGORIES=	security

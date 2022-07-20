@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-FNV
 PORTVERSION=	2.00
 PORTREVISION=	1

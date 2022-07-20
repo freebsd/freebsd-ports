@@ -1,5 +1,3 @@
-# Created by: Valentin Zahariev <curly@e-card.bg>
-
 PORTNAME=	xca
 PORTVERSION=	2.4.0
 CATEGORIES=	security

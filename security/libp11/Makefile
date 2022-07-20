@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	libp11
 PORTVERSION=	0.4.12
 DISTVERSIONPREFIX=	${PORTNAME}-

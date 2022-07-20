@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	btchip-python
 PORTVERSION=	0.1.32
 CATEGORIES=	security python

@@ -1,5 +1,3 @@
-# Created by: Andrew Lewis <freeghb@gmail.com>
-
 PORTNAME=	luasec
 PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v

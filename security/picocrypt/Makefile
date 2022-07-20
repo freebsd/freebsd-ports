@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	picocrypt
 PORTVERSION=	1.25
 PORTREVISION=	2

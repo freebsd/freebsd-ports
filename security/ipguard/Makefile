@@ -1,5 +1,3 @@
-# Created by: SeaD
-
 PORTNAME=	ipguard
 PORTVERSION=	1.04
 PORTREVISION=	2

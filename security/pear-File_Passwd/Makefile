@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior <antonio@inf.ufsc.br>
-
 PORTNAME=	File_Passwd
 PORTVERSION=	1.1.7
 CATEGORIES=	security pear

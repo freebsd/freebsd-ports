@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	pam-modules
 PORTVERSION=	2.2
 PORTREVISION=	1

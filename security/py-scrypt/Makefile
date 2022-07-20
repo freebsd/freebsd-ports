@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	scrypt
 DISTVERSION=	0.8.20
 CATEGORIES=	security python

@@ -1,5 +1,3 @@
-# Created by: kris@FreeBSD.org
-
 PORTNAME=	fragrouter
 PORTVERSION=	1.6
 CATEGORIES=	security

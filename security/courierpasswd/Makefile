@@ -1,5 +1,3 @@
-# Created by: Andrew St. Jean <andrew@arda.homeunix.net>
-
 PORTNAME=	courierpasswd
 PORTVERSION=	1.1.3
 CATEGORIES=	security mail

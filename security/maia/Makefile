@@ -1,5 +1,3 @@
-# Created by: Janky Jay <ek@purplehat.org>
-
 PORTNAME=	maia
 DISTVERSION=	1.0.4
 PORTREVISION=	9

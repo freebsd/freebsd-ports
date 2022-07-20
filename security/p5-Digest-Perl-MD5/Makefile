@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-Perl-MD5
 PORTVERSION=	1.9
 PORTREVISION=	1

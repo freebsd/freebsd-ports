@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	Crypt-HSXKPasswd
 PORTVERSION=	3.6
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Filter-Crypto
 PORTVERSION=	2.09
 CATEGORIES=	security perl5

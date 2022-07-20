@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	pyelliptic
 PORTVERSION=	2.0.1
 CATEGORIES=	security python

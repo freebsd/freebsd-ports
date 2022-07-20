@@ -1,5 +1,3 @@
-# Created by: nectar@FreeBSD.org
-
 PORTNAME=	vxquery
 PORTVERSION=	0.2.1
 CATEGORIES=	security textproc

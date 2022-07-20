@@ -1,5 +1,3 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	gokart
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0

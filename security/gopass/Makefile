@@ -1,5 +1,3 @@
-# Created by: Sascha Holzleiter <sascha@root-login.org>
-
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.14.3

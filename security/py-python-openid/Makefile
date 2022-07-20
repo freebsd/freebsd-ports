@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	python-openid
 PORTVERSION=	2.2.5
 PORTREVISION=	2

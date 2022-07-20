@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	dfwinreg
 PORTVERSION=	20211207
 CATEGORIES=	security devel python

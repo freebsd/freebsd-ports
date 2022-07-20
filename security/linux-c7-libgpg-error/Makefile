@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libgpg-error
 PORTVERSION=	1.12
 DISTVERSIONSUFFIX=	-3.el7

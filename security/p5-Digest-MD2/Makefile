@@ -1,5 +1,3 @@
-# Created by: petef@FreeBSD.org
-
 PORTNAME=	Digest-MD2
 PORTVERSION=	2.04
 PORTREVISION=	1

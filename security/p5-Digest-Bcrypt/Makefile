@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	Digest-Bcrypt
 PORTVERSION=	1.212
 CATEGORIES=	security perl5

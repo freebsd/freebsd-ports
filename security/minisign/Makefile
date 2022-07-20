@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	minisign
 PORTVERSION=	0.9
 CATEGORIES=	security

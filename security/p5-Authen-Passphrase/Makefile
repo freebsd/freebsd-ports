@@ -1,5 +1,3 @@
-# Created by: brix@FreeBSD.org
-
 PORTNAME=	Authen-Passphrase
 PORTVERSION=	0.008
 PORTREVISION=	1

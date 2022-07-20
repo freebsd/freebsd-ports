@@ -1,5 +1,3 @@
-# Created by: Boris Kochergin <spawk@acm.poly.edu>
-
 PORTNAME=	arpCounterattack
 PORTVERSION=	1.2.0
 PORTREVISION=	8

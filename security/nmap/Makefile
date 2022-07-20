@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	nmap
 DISTVERSION=	7.91
 PORTREVISION=	2

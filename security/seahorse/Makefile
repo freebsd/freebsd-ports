@@ -1,5 +1,3 @@
-# Created by: Dave McKay <dave@mu.org>
-
 PORTNAME=	seahorse
 PORTVERSION=	41.0
 CATEGORIES=	security gnome

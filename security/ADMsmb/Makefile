@@ -1,5 +1,3 @@
-# Created by: Jacek Serwatynski <tutus@trynet.eu.org>
-
 PORTNAME=	ADMsmb
 PORTVERSION=	0.3
 CATEGORIES=	security

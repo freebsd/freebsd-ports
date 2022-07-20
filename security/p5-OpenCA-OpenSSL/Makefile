@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	OpenCA-OpenSSL
 PORTVERSION=	2.0.29
 PORTREVISION=	2

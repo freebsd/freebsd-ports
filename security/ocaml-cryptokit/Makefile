@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	cryptokit
 PORTVERSION=	1.11
 CATEGORIES=	security

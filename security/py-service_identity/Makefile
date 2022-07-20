@@ -1,5 +1,3 @@
-# Created by: Axel Rau <axel.rau@chaos1.de>
-
 PORTNAME=	service_identity
 PORTVERSION=	18.1.0
 CATEGORIES=	security python

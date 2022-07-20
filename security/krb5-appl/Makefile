@@ -1,5 +1,3 @@
-# Created by: cy@FreeBSD.org
-
 PORTNAME=		krb5-appl
 PORTVERSION=		1.0.3
 PORTREVISION=		4

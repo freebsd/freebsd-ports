@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sslyze
 PORTVERSION=	5.0.5
 CATEGORIES=	security python

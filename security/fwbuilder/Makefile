@@ -1,5 +1,3 @@
-# Created by: Roman Shterenzon <roman@xpert.com>
-
 PORTNAME=	fwbuilder
 PORTVERSION=	5.3.7
 PORTREVISION=	2

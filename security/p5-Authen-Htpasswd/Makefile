@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Authen-Htpasswd
 PORTVERSION=	0.171
 PORTREVISION=	1

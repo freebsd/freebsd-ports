@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-GPG
 PORTVERSION=	1.64
 CATEGORIES=	security perl5

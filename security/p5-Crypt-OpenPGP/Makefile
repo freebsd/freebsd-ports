@@ -1,5 +1,3 @@
-# Created by: Michael Haro <mharo@FreeBSD.org>
-
 PORTNAME=	Crypt-OpenPGP
 PORTVERSION=	1.12
 CATEGORIES=	security perl5

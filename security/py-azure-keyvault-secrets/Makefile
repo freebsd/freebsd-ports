@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure-keyvault-secrets
 PORTVERSION=	4.4.0
 CATEGORIES=	security python

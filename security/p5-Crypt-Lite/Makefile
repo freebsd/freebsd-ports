@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-Lite
 PORTVERSION=	0.82.11
 PORTREVISION=	2

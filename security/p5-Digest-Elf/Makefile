@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-Elf
 PORTVERSION=	1.42
 CATEGORIES=	security perl5

@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Crypt-ECB
 PORTVERSION=	2.22
 CATEGORIES=	security perl5

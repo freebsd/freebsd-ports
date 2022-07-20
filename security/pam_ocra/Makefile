@@ -1,5 +1,3 @@
-# Created by: Stefan Grundmann
-
 PORTNAME=	pam_ocra
 DISTVERSION=	1.5
 CATEGORIES=	security

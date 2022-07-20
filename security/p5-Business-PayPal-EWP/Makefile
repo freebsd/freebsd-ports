@@ -1,5 +1,3 @@
-# Created by: Alfred Perlstein
-
 PORTNAME=	Business-PayPal-EWP
 PORTVERSION=	1.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Michael Nottebrock <lofi@FreeBSD.org>
-
 PORTNAME=	libassuan
 PORTVERSION=	2.5.5
 CATEGORIES=	security devel

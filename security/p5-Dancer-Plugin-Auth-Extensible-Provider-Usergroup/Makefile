@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	Dancer-Plugin-Auth-Extensible-Provider-Usergroup
 PORTVERSION=	0.21
 PORTREVISION=	2

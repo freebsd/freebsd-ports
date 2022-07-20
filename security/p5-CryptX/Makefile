@@ -1,5 +1,3 @@
-# Created by: vanilla@
-
 PORTNAME=	CryptX
 PORTVERSION=	0.076
 CATEGORIES=	security perl5

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Net-OpenID-JanRain
 PORTVERSION=	1.1.1
 PORTREVISION=	3

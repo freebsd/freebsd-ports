@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	paperkey
 PORTVERSION=	1.6
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Ben Woods <woodsb02@FreeBSD.org>
-
 PORTNAME=	keepass
 PORTVERSION=	2.51.1
 CATEGORIES=	security

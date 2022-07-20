@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	Crypt-OpenSSL-DSA
 PORTVERSION=	0.20
 CATEGORIES=	security perl5

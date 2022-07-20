@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	lxqt-openssh-askpass
 PORTVERSION=	1.1.0
 CATEGORIES=	security

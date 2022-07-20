@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pysha3
 DISTVERSION=	1.0.2
 CATEGORIES=	security python

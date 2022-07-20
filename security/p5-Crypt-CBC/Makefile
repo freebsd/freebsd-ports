@@ -1,5 +1,3 @@
-# Created by: Mark Murray <markm@FreeBSD.org>
-
 PORTNAME=	Crypt-CBC
 PORTVERSION=	3.04
 CATEGORIES=	security perl5

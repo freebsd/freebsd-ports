@@ -1,5 +1,3 @@
-# Created by: Carlos J Puga Medina <cpm@fbsd.es>
-
 PORTNAME=	acme
 PORTVERSION=	${ACME_VERSION}
 PORTEPOCH=	1

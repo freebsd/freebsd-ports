@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	azure-keyvault-certificates
 PORTVERSION=	4.4.0
 CATEGORIES=	security python

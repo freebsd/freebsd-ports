@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	twofactor_nextcloud_notification
 PORTVERSION=	3.4.0
 DISTVERSIONPREFIX=	v

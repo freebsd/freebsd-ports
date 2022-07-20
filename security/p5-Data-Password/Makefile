@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	Data-Password
 PORTVERSION=	1.12
 CATEGORIES=	security perl5

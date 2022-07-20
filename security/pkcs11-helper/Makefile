@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	pkcs11-helper
 PORTVERSION=	1.29.0
 CATEGORIES=	security devel

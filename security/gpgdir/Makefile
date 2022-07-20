@@ -1,5 +1,3 @@
-# Created by: Hakisho Nukama <nukama@gmail.com>
-
 PORTNAME=	gpgdir
 PORTVERSION=	1.9.5
 PORTREVISION=	1

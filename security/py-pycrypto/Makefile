@@ -1,5 +1,3 @@
-# Created by: nbm
-
 PORTNAME=	pycrypto
 PORTVERSION=	2.6.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@FreeBSD.org>
-
 PORTNAME=	libressl
 PORTVERSION=	3.5.3
 CATEGORIES=	security devel

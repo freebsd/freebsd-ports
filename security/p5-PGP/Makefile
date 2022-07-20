@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	PGP
 PORTVERSION=	0.3a
 PORTREVISION=	2

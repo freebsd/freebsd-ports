@@ -1,5 +1,3 @@
-# Created by: Vaida Bogdan <vaida.bogdan@gmail.com>
-
 PORTNAME=	secure_delete
 PORTVERSION=	3.1
 PORTREVISION=	1

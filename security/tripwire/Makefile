@@ -1,5 +1,3 @@
-# Created by: Cy Schubert <Cy.Schubert@uumail.gov.bc.ca>
-
 PORTNAME=	tripwire
 PORTVERSION=	2.4.3.7
 PORTREVISION=	1

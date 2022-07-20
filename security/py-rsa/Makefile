@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	rsa
 PORTVERSION=	4.8
 CATEGORIES=	security python

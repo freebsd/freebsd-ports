@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME=	gnome-keyring-sharp
 PORTVERSION=	1.0.2
 PORTREVISION=	5

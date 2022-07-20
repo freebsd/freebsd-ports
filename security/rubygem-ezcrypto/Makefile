@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer
-
 PORTNAME=	ezcrypto
 PORTVERSION=	0.7.2
 PORTREVISION=	1

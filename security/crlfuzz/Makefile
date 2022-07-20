@@ -1,5 +1,3 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	crlfuzz
 PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=	v

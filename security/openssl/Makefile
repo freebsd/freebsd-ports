@@ -1,5 +1,3 @@
-# Created by: Dirk Froemberg <dirk@FreeBSD.org>
-
 PORTNAME=	openssl
 PORTVERSION=	1.1.1q
 PORTEPOCH=	1

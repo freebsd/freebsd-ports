@@ -1,5 +1,3 @@
-# Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
-
 PORTNAME=	fuzz
 PORTVERSION=	0.6
 PORTREVISION=	1

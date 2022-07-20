@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Cisco-Hash
 PORTVERSION=	0.02
 PORTREVISION=	1

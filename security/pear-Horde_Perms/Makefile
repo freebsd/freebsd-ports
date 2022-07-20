@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Perms
 PORTVERSION=	2.1.8
 CATEGORIES=	security www pear

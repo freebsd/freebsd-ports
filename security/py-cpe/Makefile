@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	cpe
 PORTVERSION=	1.2.1
 CATEGORIES=	security python

@@ -1,5 +1,3 @@
-# Created by: Nick Barkas <snb@threerings.net>
-
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.4
 PORTREVISION=	1

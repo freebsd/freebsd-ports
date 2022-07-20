@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-Rabbit
 PORTVERSION=	1.0.0
 PORTREVISION=	1

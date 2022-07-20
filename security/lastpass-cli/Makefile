@@ -1,5 +1,3 @@
-# Created by: Thomas Hurst <tom@hur.st>
-
 PORTNAME=	lastpass-cli
 PORTVERSION=	1.3.3
 PORTREVISION=	2

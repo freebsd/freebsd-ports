@@ -1,5 +1,3 @@
-# Created by: Carlos J Puga Medina <cpm@FreeBSD.org>
-
 PORTNAME=	josepy
 PORTVERSION=	1.13.0
 CATEGORIES=	security python

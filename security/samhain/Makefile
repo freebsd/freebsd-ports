@@ -1,5 +1,3 @@
-# Created by: Nikola Kolev <koue@chaosophia.net>
-
 PORTNAME=	samhain
 PORTVERSION=	4.4.3
 CATEGORIES=	security

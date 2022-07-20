@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	op
 PORTVERSION=	1.34
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-
 PORTNAME=	checkpassword-pam
 PORTVERSION=	0.99
 PORTREVISION=	1

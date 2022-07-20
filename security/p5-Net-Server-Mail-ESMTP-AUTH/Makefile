@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Net-Server-Mail-ESMTP-AUTH
 PORTVERSION=	0.2
 CATEGORIES=	security mail perl5

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	omniauth-cas3
 PORTVERSION=	1.1.4
 PORTREVISION=	1

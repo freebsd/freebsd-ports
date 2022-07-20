@@ -1,5 +1,3 @@
-# Created by: erich@rrnet.com
-
 PORTNAME=	sudo
 PORTVERSION=	1.9.11p3
 CATEGORIES=	security

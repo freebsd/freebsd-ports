@@ -1,5 +1,3 @@
-# Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-
 PORTNAME=	omniauth-saml
 PORTVERSION=	1.10.3
 CATEGORIES=	security rubygems

@@ -1,5 +1,3 @@
-# Created by: Neil Booth <kyuupichan@gmail.com>
-
 PORTNAME=	pbkdf2
 PORTVERSION=	1.3
 CATEGORIES=	security python

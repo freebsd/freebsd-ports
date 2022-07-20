@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	PerlCryptLib
 PORTVERSION=	1.12
 CATEGORIES=	security perl5

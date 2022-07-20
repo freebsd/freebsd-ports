@@ -1,5 +1,3 @@
-# Created by: Ralf Meister
-
 PORTNAME=	opencryptoki
 PORTVERSION=	3.18.0
 DISTVERSIONPREFIX=	v

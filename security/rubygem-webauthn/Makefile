@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	webauthn
 PORTVERSION=	2.4.1
 CATEGORIES=	security rubygems

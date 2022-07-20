@@ -1,5 +1,3 @@
-# Created by: Aldis Berjoza <aldis@bsdroot.lv>
-
 PORTNAME=	dicewaregen
 PORTVERSION=	1.4
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-MD5-Reverse
 PORTVERSION=	1.3
 PORTREVISION=	1

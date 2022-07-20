@@ -1,5 +1,3 @@
-# Created by: Carlo Strub
-
 PORTNAME=	stem
 PORTVERSION=	1.8.0
 CATEGORIES=	security net python

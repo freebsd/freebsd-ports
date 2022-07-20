@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=		hitch
 PORTVERSION=		1.7.2
 CATEGORIES=		security

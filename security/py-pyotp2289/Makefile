@@ -1,5 +1,3 @@
-# Created by: Simeon Simeonov <sgs@pichove.org>
-
 PORTNAME=	pyotp2289
 PORTVERSION=	1.1.1
 CATEGORIES=	security python

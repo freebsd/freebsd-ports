@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	Crypt-Serpent
 PORTVERSION=	1.01
 PORTREVISION=	1

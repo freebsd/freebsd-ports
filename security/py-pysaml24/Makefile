@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	pysaml2
 PORTVERSION=	4.9.0
 PORTREVISION=	1

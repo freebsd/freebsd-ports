@@ -1,5 +1,3 @@
-# Created by: Michael Schout <mschout@gkg.net>
-
 PORTNAME=	pam_pwdfile
 PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-AppleTwoFish
 PORTVERSION=	0.051
 PORTREVISION=	1

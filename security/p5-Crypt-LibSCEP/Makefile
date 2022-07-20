@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Crypt-LibSCEP
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.09

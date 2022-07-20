@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy
-
 PORTNAME=	scanlogd
 PORTVERSION=	2.2.8
 CATEGORIES=	security

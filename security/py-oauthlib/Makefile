@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	oauthlib
 PORTVERSION=	3.2.0
 CATEGORIES=	security net python

@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	keyrings.alt
 PORTVERSION=	3.1.1
 CATEGORIES=	security python

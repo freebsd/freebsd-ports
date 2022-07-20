@@ -1,5 +1,3 @@
-# Created by: ajk@iu.edu
-
 PORTNAME=	Authen-Krb5
 PORTVERSION=	1.9
 PORTREVISION=	2

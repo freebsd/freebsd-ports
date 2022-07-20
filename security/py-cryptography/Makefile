@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	cryptography
 PORTVERSION=	3.4.8
 CATEGORIES=	security python

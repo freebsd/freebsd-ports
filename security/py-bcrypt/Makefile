@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	bcrypt
 PORTVERSION=	3.2.2
 CATEGORIES=	security python

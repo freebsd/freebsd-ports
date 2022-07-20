@@ -1,5 +1,3 @@
-# Created by: Seth Kingsley <sethk@meowfishies.com>
-
 PORTNAME=	Safe-Hole
 PORTVERSION=	0.13
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PKGNAMESUFFIX=	-gnome-keyring
 CATEGORIES=	security gnome
 

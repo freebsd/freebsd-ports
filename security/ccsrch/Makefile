@@ -1,5 +1,3 @@
-# Created by: Pavel I Volkov <pavelivolkov@googlemail.com>
-
 PORTNAME=	ccsrch
 PORTVERSION=	1.0.3
 PORTREVISION=	1

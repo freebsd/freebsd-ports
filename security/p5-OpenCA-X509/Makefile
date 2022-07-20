@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	OpenCA-X509
 PORTVERSION=	0.9.10
 PORTREVISION=	2

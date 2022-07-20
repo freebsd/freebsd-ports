@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libfido2
 PORTVERSION=	1.11.0
 CATEGORIES=	security

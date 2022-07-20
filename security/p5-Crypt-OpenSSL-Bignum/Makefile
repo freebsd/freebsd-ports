@@ -1,5 +1,3 @@
-# Created by: erwin@FreeBSD.org
-
 PORTNAME=	Crypt-OpenSSL-Bignum
 PORTVERSION=	0.09
 CATEGORIES=	security perl5

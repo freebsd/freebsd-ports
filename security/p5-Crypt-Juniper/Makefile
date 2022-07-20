@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Crypt-Juniper
 PORTVERSION=	0.02
 PORTREVISION=	1

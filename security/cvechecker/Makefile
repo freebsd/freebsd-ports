@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	cvechecker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.9

@@ -1,5 +1,3 @@
-# Created by: Hammurabi Mendes <hmendes@brturbo.com>
-
 PORTNAME=	proxytunnel
 PORTVERSION=	1.10.20210604
 DISTVERSIONPREFIX=	v

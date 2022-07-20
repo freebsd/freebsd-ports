@@ -1,5 +1,3 @@
-# Created by: James Thomason <james@divide.org>
-
 PORTNAME=	Authen-NTLM
 PORTVERSION=	1.09
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Aldis Berjoza <aldis@bsdroot.lv>
-
 PORTNAME=	htpasswd
 PORTVERSION=	2019.10.15
 CATEGORIES=	security python

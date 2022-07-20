@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	twofactor_u2f
 PORTVERSION=	6.3.0
 DISTVERSIONPREFIX=	v

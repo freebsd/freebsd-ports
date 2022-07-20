@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@FreeBSD.org>
-
 PORTNAME=	openconnect-gui
 PORTVERSION=	1.5.3
 DISTVERSIONPREFIX=v

@@ -1,5 +1,3 @@
-# Created by: oly
-
 PORTNAME=	cops
 PORTVERSION=	1.04
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-MySQL
 PORTVERSION=	0.04
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: tobez@FreeBSD.org
-
 PORTNAME=	Authen-Captcha
 PORTVERSION=	1.024
 CATEGORIES=	security perl5

@@ -1,5 +1,3 @@
-# Created by: Jim Ohlstein <jim@ohlste.in>
-
 PORTNAME=	ct-submit
 PORTVERSION=	1.1.2
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Roderick van Domburg <r.s.a.vandomburg@student.utwente.nl>
-
 PORTNAME=	net-ssh
 PORTVERSION=	7.0.1
 PORTEPOCH=	2

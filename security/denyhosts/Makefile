@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-
 PORTNAME=	denyhosts
 PORTVERSION=	3.1.2
 CATEGORIES=	security

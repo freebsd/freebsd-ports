@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Secret
 PORTVERSION=	2.0.6
 CATEGORIES=	security www pear

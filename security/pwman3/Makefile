@@ -1,5 +1,3 @@
-# Created by: Yarodin <yarodin@gmail.com>
-
 PORTNAME=	pwman3
 PORTVERSION=	0.0.6
 PORTREVISION=	2

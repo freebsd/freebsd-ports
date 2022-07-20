@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	Dancer-Plugin-Auth-Extensible
 PORTVERSION=	1.00
 CATEGORIES=	security perl5

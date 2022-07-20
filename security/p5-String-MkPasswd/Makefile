@@ -1,5 +1,3 @@
-# Created by: Frank Wall <fw@moov.de>
-
 PORTNAME=	String-MkPasswd
 PORTVERSION=	0.04
 PORTREVISION=	1

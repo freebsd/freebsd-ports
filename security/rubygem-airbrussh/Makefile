@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	airbrussh
 PORTVERSION=	1.4.0
 CATEGORIES=	security rubygems

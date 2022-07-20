@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	dsniff
 DISTVERSION=	2.4b1
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	s2n
 PORTVERSION=	1.3.4
 DISTVERSIONPREFIX=	v

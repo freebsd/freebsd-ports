@@ -1,5 +1,3 @@
-# Created by: Michael Haro <mharo@FreeBSD.org>
-
 PORTNAME=	Tie-EncryptedHash
 PORTVERSION=	1.24
 PORTREVISION=	1

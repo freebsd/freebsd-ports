@@ -1,5 +1,3 @@
-# Created by: Dirk Froemberg <dirk@FreeBSD.org>
-
 PORTNAME=	snort
 PORTVERSION=	2.9.20
 CATEGORIES=	security

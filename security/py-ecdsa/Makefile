@@ -1,5 +1,3 @@
-# Created by: Neil Booth
-
 PORTNAME=	ecdsa
 PORTVERSION=	0.18.0
 CATEGORIES=	security python

@@ -1,5 +1,3 @@
-# Created by: Clive Lin <clive@CirX.ORG>
-
 PORTNAME=	gpa
 PORTVERSION=	0.10.0
 CATEGORIES=	security

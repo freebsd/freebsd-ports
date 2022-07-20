@@ -1,5 +1,3 @@
-# Created by: George Reid <services@nevernet.net>
-
 PORTNAME=	vlock
 PORTVERSION=	2.2.3
 PORTREVISION=	4

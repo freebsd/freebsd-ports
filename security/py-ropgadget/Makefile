@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	ropgadget
 PORTVERSION=	6.8
 CATEGORIES=	security python

@@ -1,5 +1,3 @@
-# Created by: Tatsuki Makino <tatsuki_makino@hotmail.com>
-
 PORTNAME=	Mcrypt
 DISTVERSION=	2.5.7.0
 PORTREVISION=	4

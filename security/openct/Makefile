@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-
 PORTNAME=	openct
 PORTVERSION=	0.6.20
 PORTREVISION=	2

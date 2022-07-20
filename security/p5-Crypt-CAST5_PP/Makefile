@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	Crypt-CAST5_PP
 PORTVERSION=	1.04
 PORTREVISION=	1

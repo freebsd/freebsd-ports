@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
-
 PORTNAME=	munge
 DISTVERSION=	0.5.14
 PORTREVISION=	1

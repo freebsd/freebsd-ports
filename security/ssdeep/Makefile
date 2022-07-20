@@ -1,5 +1,3 @@
-# Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
-
 PORTNAME=	ssdeep
 PORTVERSION=	2.14.1
 CATEGORIES=	security

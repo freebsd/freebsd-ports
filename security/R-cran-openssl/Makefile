@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	openssl
 PORTVERSION=	2.0.2
 CATEGORIES=	security

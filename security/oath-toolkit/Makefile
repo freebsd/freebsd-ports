@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	oath-toolkit
 PORTVERSION=	2.6.7
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-CFB
 PORTVERSION=	0.02
 PORTREVISION=	1

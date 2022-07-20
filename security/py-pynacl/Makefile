@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	pynacl
 DISTVERSION=	1.5.0
 CATEGORIES=	security python

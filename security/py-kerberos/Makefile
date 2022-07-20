@@ -1,5 +1,3 @@
-# Created by: Roland van Laar <roland@micite.net>
-
 PORTNAME=	kerberos
 PORTVERSION=	1.3.1
 PORTREVISION=	0

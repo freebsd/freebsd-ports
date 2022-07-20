@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	itsdangerous
 PORTVERSION=	2.0.1
 CATEGORIES=	security python

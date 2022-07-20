@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-License
 PORTVERSION=	2.04
 PORTREVISION=	1

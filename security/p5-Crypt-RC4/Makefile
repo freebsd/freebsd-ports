@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Crypt-RC4
 PORTVERSION=	2.02
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: hbo@egbok.com
-
 PORTNAME=	sudoscript
 PORTVERSION=	2.1.2
 CATEGORIES=	security

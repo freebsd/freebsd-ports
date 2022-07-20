@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	Crypt-OICQ
 PORTVERSION=	1.1
 PORTREVISION=	1

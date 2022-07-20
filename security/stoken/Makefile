@@ -1,5 +1,3 @@
-# Created by: Alex Samorukov <samm@freebsd.org>
-
 PORTNAME=	stoken
 DISTVERSION=	0.92
 PORTREVISION=	2

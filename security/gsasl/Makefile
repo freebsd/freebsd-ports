@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gsasl
 PORTVERSION=	2.0.1
 CATEGORIES=	security

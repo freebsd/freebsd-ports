@@ -1,5 +1,3 @@
-# Created by: jesper
-
 PORTNAME=	Digest-BubbleBabble
 PORTVERSION=	0.02
 PORTREVISION=	1

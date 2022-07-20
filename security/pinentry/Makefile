@@ -1,5 +1,3 @@
-# Created by: Michael Nottebrock <lofi@FreeBSD.org>
-
 PORTNAME=	pinentry
 PORTVERSION=	1.2.0
 PORTREVISION?=	1

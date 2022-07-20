@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	libnacl
 PORTVERSION=	1.8.0
 CATEGORIES=	security python

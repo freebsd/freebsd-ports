@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	snort-rep
 PORTVERSION=	1.10
 PORTREVISION=	1

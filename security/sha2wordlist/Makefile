@@ -1,5 +1,3 @@
-# Created by: Peter Ankerstal <peter@pean.org>
-
 PORTNAME=	sha2wordlist
 PORTVERSION=	1.0.20140124
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: andrew@scoop.co.nz
-
 PORTNAME=	Crypt-GeneratePassword
 PORTVERSION=	0.05
 CATEGORIES=	security perl5

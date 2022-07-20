@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	pgpdump
 PORTVERSION=	0.35
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Christian Lackas
-
 PORTNAME=	vpnc
 PORTVERSION=	0.5.3
 PORTREVISION=	14

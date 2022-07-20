@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	APKiD
 PORTVERSION=	2.1.3
 DISTVERSIONPREFIX=	v

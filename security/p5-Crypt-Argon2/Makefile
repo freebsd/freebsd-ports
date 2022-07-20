@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Crypt-Argon2
 DISTVERSION=	0.012
 CATEGORIES=	security

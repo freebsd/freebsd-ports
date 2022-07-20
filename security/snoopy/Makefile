@@ -1,5 +1,3 @@
-# Created by: Philippe Audeoud <jadawin@tuxaco.net>
-
 PORTNAME=	snoopy
 PORTVERSION=	2.4.15
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	Dancer-Plugin-Passphrase
 PORTVERSION=	2.0.1
 PORTREVISION=	2

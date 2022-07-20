@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	passman
 PORTVERSION=	2.4.1
 CATEGORIES=	security

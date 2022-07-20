@@ -1,5 +1,3 @@
-# Created by: Yonatan <Yonatan@Xpert.com>
-
 PORTNAME=	libtomcrypt
 PORTVERSION=	1.18.2
 PORTREVISION=	1

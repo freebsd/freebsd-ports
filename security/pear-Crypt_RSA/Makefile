@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Crypt_RSA
 PORTVERSION=	1.2.1
 PORTREVISION=	1

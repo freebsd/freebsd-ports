@@ -1,5 +1,3 @@
-# Created by: Marcel Prisi <marcel.prisi@virtua.ch>
-
 PORTNAME=	distcache
 DISTVERSION=	1.5.1
 CATEGORIES=	security www

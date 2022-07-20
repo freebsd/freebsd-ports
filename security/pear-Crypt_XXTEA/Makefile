@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Crypt_XXTEA
 PORTVERSION=	0.9.0
 CATEGORIES=	security www pear

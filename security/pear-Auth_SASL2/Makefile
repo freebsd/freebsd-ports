@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Auth_SASL2
 PORTVERSION=	0.2.0
 PORTREVISION=	1

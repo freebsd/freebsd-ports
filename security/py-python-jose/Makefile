@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@sourcefire.com>
-
 PORTNAME=	python-jose
 PORTVERSION=	3.3.0
 CATEGORIES=	security

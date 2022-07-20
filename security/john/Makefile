@@ -1,5 +1,3 @@
-# Created by: David O'Brien <obrien@FreeBSD.org>
-
 PORTNAME=	john
 # NB: starting from the next version, community-enhanced (jumbo) patch
 # should be offered as an option (suggested by Solar Designer himself).

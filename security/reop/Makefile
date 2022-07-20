@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	reop
 PORTVERSION=	2.1.1
 CATEGORIES=	security

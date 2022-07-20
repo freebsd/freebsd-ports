@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	twitter_oauth
 PORTVERSION=	0.4.94
 CATEGORIES=	security rubygems

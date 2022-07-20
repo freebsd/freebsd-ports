@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	openxpki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.20.0

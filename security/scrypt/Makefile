@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	scrypt
 PORTVERSION=	1.3.1
 CATEGORIES=	security

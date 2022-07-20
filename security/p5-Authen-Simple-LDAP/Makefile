@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Authen-Simple-LDAP
 PORTVERSION=	0.3
 PORTREVISION=	1

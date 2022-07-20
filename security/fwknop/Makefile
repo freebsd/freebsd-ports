@@ -1,5 +1,3 @@
-# Created by: Sean Greven <sean.greven@gmail.com>
-
 PORTNAME=	fwknop
 PORTVERSION=	2.6.10
 PORTREVISION=	2

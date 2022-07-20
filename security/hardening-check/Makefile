@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	hardening-check
 PORTVERSION=	2.6
 CATEGORIES=	security

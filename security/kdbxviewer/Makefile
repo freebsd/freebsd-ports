@@ -1,5 +1,3 @@
-# Created by: Ben Woods <woodsb02@FreeBSD.org>
-
 PORTNAME=	kdbxviewer
 PORTVERSION=	0.1.10
 DISTVERSIONPREFIX=v

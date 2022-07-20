@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	bsdsfv
 PORTVERSION=	1.18
 CATEGORIES=	security

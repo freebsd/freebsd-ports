@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Oauth
 DISTVERSION=	2.0.4
 CATEGORIES=	security www pear

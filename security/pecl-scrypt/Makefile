@@ -1,5 +1,3 @@
-# Created by: Horia Racoviceanu <horia@racoviceanu.com>
-
 PORTNAME=	scrypt
 PORTVERSION=	1.4.2
 CATEGORIES=	security pear

@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	knocker
 PORTVERSION=	0.8.0
 CATEGORIES=	security net

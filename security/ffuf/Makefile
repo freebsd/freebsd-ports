@@ -1,5 +1,3 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	ffuf
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.5.0

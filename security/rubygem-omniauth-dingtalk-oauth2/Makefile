@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	omniauth-dingtalk-oauth2
 PORTVERSION=	1.0.1
 CATEGORIES=	security rubygems

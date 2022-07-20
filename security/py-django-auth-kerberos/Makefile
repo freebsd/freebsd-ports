@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@freebsd.org>
-
 PORTNAME=	django-auth-kerberos
 PORTVERSION=	1.2.5
 PORTREVISION=	2

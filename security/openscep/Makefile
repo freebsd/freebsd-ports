@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov
-
 PORTNAME=	openscep
 PORTVERSION=	0.4.2
 PORTREVISION=	11

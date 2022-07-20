@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	Crypt-Twofish2
 PORTVERSION=	1.03
 CATEGORIES=	security perl5

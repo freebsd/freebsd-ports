@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@leeym.com>
-
 PORTNAME=	Digest-Nilsimsa
 PORTVERSION=	0.06
 PORTREVISION=	1

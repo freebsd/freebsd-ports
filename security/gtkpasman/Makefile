@@ -1,5 +1,3 @@
-# Created by: Philippe Rocques <phil@teaser.fr>
-
 PORTNAME=	gtkpasman
 PORTVERSION=	0.12.1
 PORTREVISION=	1

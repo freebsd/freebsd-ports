@@ -1,5 +1,3 @@
-# Created by: clement
-
 PORTNAME=	pwauth
 PORTVERSION=	2.3.11
 CATEGORIES=	security www

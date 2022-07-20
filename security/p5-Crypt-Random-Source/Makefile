@@ -1,5 +1,3 @@
-# Created by: Dereckson <dereckson@gmail.com>
-
 PORTNAME=	Crypt-Random-Source
 PORTVERSION=	0.12
 CATEGORIES=	security perl5

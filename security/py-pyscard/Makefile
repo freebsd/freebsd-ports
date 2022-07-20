@@ -1,5 +1,3 @@
-# Created by: mp39590@gmail.com
-
 PORTNAME=	pyscard
 PORTVERSION=	2.0.0
 CATEGORIES=	security python

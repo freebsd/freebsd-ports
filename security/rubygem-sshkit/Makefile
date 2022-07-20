@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sshkit
 PORTVERSION=	1.21.2
 CATEGORIES=	security rubygems

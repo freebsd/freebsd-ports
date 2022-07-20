@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	cardpeek
 PORTVERSION=	0.8.4
 CATEGORIES=	security

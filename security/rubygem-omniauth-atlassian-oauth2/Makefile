@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	omniauth-atlassian-oauth2
 PORTVERSION=	0.2.0
 PORTREVISION=	1

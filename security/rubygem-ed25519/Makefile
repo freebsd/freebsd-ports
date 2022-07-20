@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ed25519
 PORTVERSION=	1.3.0
 CATEGORIES=	security rubygems

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sshpubkeys
 PORTVERSION=	3.3.1
 CATEGORIES=	security python

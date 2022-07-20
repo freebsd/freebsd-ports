@@ -1,5 +1,3 @@
-# Created by: Attila Nagy <bra@fsn.hu>
-
 PORTNAME=	Authen-CyrusSASL
 PORTVERSION=	0.01
 PORTREVISION=	1

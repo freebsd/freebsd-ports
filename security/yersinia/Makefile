@@ -1,5 +1,3 @@
-# Created by: se
-
 PORTNAME=	yersinia
 PORTVERSION=	0.8.2
 PORTREVISION=	1

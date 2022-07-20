@@ -1,5 +1,3 @@
-# Created by: Mageirias Anastasios <anastmag@gmail.com>
-
 PORTNAME=	clamfs
 PORTVERSION=	1.2.0
 CATEGORIES=	security

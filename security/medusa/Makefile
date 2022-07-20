@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	medusa
 PORTVERSION=	2.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: barner
-
 PORTNAME=	fprint_demo
 PORTVERSION=	20080303
 PORTREVISION=	2

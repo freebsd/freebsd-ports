@@ -1,5 +1,3 @@
-# Created by: Thibault Payet <monwarez@mailoo.org>
-
 PORTNAME=	libnitrokey
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7

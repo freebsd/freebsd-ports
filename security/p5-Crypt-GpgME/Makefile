@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Crypt-GpgME
 PORTVERSION=	0.09
 CATEGORIES=	security perl5

@@ -1,5 +1,3 @@
-# Created by: patrick@mindstep.com
-
 PORTNAME=	Crypt-Blowfish
 PORTVERSION=	2.14
 PORTREVISION=	1

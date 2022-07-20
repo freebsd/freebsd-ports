@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Digest-CRC
 PORTVERSION=	0.24
 CATEGORIES=	security perl5

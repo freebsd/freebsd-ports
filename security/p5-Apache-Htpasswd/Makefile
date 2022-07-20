@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	Apache-Htpasswd
 PORTVERSION=	1.9
 PORTREVISION=	2

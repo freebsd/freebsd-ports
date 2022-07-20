@@ -1,5 +1,3 @@
-# Created by: Eric Crist <ecrist@secure-computing.net>
-
 PORTNAME=	ssl-admin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.1

@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-Salt
 PORTVERSION=	0.01
 PORTREVISION=	1

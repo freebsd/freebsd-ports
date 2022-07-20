@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	safety_net_attestation
 PORTVERSION=	0.4.0
 CATEGORIES=	security rubygems

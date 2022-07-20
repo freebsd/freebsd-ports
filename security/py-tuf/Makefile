@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	tuf
 PORTVERSION=	1.1.0
 CATEGORIES=	security devel python

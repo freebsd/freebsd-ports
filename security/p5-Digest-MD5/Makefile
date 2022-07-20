@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	Digest-MD5
 PORTVERSION=	2.58
 CATEGORIES=	security perl5

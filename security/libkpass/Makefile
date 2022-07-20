@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	libkpass
 PORTVERSION=	6
 PORTREVISION=	2

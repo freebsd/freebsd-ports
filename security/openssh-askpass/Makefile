@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	OpenSSH-askpass
 PORTVERSION=	1.2.4.1
 PORTREVISION=	3

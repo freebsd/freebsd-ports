@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Net-SinFP
 PORTVERSION=	2.10
 CATEGORIES=	security perl5

@@ -1,5 +1,3 @@
-# Created by: rokaz
-
 PORTNAME=	belier
 PORTVERSION=	1.2
 PORTREVISION=	1

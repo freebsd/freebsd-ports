@@ -1,5 +1,3 @@
-# Created by: Henk van Oers <hvo.pm@xs4all.nl>
-
 PORTNAME=	Crypt-Password-Util
 PORTVERSION=	0.17
 CATEGORIES=	security perl5

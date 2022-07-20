@@ -1,5 +1,3 @@
-# Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-
 PORTNAME=	devise-two-factor
 PORTVERSION=	4.0.2
 CATEGORIES=	security rubygems

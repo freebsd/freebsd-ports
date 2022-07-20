@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	pam_krb5
 DISTVERSION=	2.4.13
 CATEGORIES=	security

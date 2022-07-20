@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	nettle
 PORTVERSION=	3.8
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: brix@FreeBSD.org
-
 PORTNAME=	Authen-DecHpwd
 PORTVERSION=	2.007
 CATEGORIES=	security perl5

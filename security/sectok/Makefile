@@ -1,5 +1,3 @@
-# Created by: Bruce M. Simpson <bms@FreeBSD.org>
-
 PORTNAME=	sectok
 PORTVERSION=	20030825
 PORTREVISION=	2

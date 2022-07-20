@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-auth
 PORTVERSION=	2.9.1
 CATEGORIES=	security python

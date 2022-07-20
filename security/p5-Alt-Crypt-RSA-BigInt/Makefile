@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Alt-Crypt-RSA-BigInt
 PORTVERSION=	0.06
 CATEGORIES=	security perl5

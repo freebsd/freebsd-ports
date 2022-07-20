@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	xml-security
 DISTVERSION=	1_5_5
 PORTREVISION=	1

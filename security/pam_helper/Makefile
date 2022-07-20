@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	pam_helper
 PORTVERSION=	1.1
 CATEGORIES=	security sysutils

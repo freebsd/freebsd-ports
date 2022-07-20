@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	crackpkcs12
 PORTVERSION=	0.2.11
 CATEGORIES=	security

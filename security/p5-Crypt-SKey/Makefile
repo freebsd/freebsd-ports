@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan
-
 PORTNAME=	Crypt-SKey
 PORTVERSION=	0.10
 PORTREVISION=	3

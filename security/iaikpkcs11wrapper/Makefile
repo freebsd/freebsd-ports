@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	iaikPkcs11Wrapper
 PORTVERSION=	1.2.18
 CATEGORIES=	security java devel

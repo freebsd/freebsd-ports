@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	Net-SSLeay
 PORTVERSION=	1.92
 CATEGORIES=	security perl5

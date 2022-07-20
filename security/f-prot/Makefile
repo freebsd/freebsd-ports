@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	f-prot
 PORTVERSION=	6.5.1.5927
 PORTREVISION=	1

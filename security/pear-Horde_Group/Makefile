@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Group
 PORTVERSION=	2.1.1
 CATEGORIES=	security www pear

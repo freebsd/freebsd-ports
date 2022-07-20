@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	gnutls
 PORTVERSION=	3.3.29
 DISTVERSIONSUFFIX=	-9.el7_6

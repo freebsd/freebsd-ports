@@ -1,5 +1,3 @@
-# Created by: nectar@FreeBSD.org
-
 PORTNAME=		krb5
 PORTVERSION=		1.19.3
 CATEGORIES=		security

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Authen-Simple-RADIUS
 PORTVERSION=	0.1
 PORTREVISION=	1

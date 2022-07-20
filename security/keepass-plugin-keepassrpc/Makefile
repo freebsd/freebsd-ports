@@ -1,5 +1,3 @@
-# Created by: Ben Woods <woodsb02@FreeBSD.org>
-
 PORTNAME=	keepassrpc
 PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=v

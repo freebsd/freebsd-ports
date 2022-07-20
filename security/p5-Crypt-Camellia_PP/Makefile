@@ -1,5 +1,3 @@
-# Created by: Yoshisato YANAGISAWA
-
 PORTNAME=	Crypt-Camellia_PP
 PORTVERSION=	0.02
 PORTREVISION=	1

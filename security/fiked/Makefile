@@ -1,5 +1,3 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	fiked
 PORTVERSION=	0.0.5
 PORTREVISION=	7

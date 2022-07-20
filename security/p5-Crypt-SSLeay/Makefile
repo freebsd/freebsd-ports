@@ -1,5 +1,3 @@
-# Created by: Alfred Perlstein <alfred@FreeBSD.org>
-
 PORTNAME=	Crypt-SSLeay
 PORTVERSION=	0.72
 PORTREVISION=	3

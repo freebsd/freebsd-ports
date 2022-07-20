@@ -1,5 +1,3 @@
-# Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
-
 PORTNAME=	softhsm
 PORTVERSION=	2.6.1
 PORTREVISION=	2

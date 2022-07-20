@@ -1,5 +1,3 @@
-# Created by: pandzilla
-
 PORTNAME=	nikto
 PORTVERSION=	2.1.6
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	keynote
 PORTVERSION=	2.3
 PORTREVISION=	2

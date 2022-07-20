@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	pwntools
 PORTVERSION=	4.8.0
 CATEGORIES=	security python

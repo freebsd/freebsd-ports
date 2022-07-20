@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	secpanel
 PORTVERSION=	0.6.1
 PORTREVISION=	4

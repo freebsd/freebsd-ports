@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	yara-python-dex
 PORTVERSION=	1.0.3
 CATEGORIES=	security python

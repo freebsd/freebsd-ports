@@ -1,5 +1,3 @@
-# Created by: Charlie Root <se@FreeBSD.org>
-
 PORTNAME=	pwned-check
 PORTVERSION=	2.2
 PORTREVISION=	1

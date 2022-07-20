@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	digest
 PORTVERSION=	0.6.29
 CATEGORIES=	security

@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net
-
 PORTNAME=	pidgin
 PORTVERSION=	3.1
 PORTREVISION=	6

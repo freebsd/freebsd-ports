@@ -1,5 +1,3 @@
-# Created by: torstenb@FreeBSD.org
-
 PORTNAME=	libident
 PORTVERSION=	0.32
 PORTREVISION=	4

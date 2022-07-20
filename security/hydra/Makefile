@@ -1,5 +1,3 @@
-# Created by: Laurent LEVIER <llevier@argosnet.com>
-
 PORTNAME=	hydra
 DISTVERSIONPREFIX=v
 DISTVERSION=	9.2

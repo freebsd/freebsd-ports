@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	beecrypt
 PORTVERSION=	4.2.1
 PORTREVISION=	2

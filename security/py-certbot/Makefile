@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	certbot
 PORTVERSION=	${ACME_VERSION}
 PORTEPOCH=	1

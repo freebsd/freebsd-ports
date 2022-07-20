@@ -1,5 +1,3 @@
-# Created by: David O'Brien <obrien@FreeBSD.org>
-
 PORTNAME=	zeek
 PORTVERSION=	5.0.0
 PORTREVISION=	2

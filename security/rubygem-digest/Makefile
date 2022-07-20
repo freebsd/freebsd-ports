@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	digest
 PORTVERSION=	3.1.0
 CATEGORIES=	security rubygems

@@ -1,5 +1,3 @@
-# Created by: pauls
-
 PORTNAME=	chaosreader
 PORTVERSION=	0.96
 CATEGORIES=	security

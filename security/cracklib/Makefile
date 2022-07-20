@@ -1,5 +1,3 @@
-# Created by: ajk@iu.edu
-
 PORTNAME=	cracklib
 PORTVERSION=	2.9.7
 PORTREVISION=	1
