@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# Check that ports do not contain a 'Created by' tag
+#
+
+makefiles=$(git diff --name-only --cached --diff-filter=ACMR | grep -E '^[^/]+/[^/]+/Makefile$')
+if [ $? -eq 0 ] ; then
+	for makefile in ${makefiles} ; do
+		created_by=$(head -n1 ${makefile} | awk -F : '/Created by/{print $NF}')
+		if [ -n "${created_by}" ] ; then
+			echo -e "[pre-commit] ERROR: ${makefile} contains obsolete 'Created by' line\n" \
+			        "                    Please remove the the line, and append:\n\n" \
+			        "                    - Removed 'Created by ${created_by}'.\n\n" \
+			        "                    to your commit message."
+			exit 1
+		fi
+	done
+fi
