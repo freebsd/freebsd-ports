@@ -10,8 +10,9 @@ COMMENT=	Open neural networks library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_armv6=	fatal error: 'omp.h' file not found
-BROKEN_armv7=	fatal error: 'omp.h' file not found
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 USES=		cmake:testing compiler:c++11-lang dos2unix zip
 USE_LDCONFIG=	yes
@@ -24,12 +25,6 @@ CMAKE_TESTING_TARGET=	tests
 
 LDFLAGS+=	-lomp -pthread # https://github.com/Artelnics/opennn/issues/182
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1301000
-BROKEN_riscv64=	fatal error: 'omp.h' file not found
-.endif
-
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME} && ${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${BUILD_WRKSRC}/${PORTNAME}/libopennn.so ${STAGEDIR}${PREFIX}/lib
@@ -38,4 +33,4 @@ do-install:
 post-test:
 	@cd ${TEST_WRKSRC} && (${ECHO} suite | tests/tests)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
