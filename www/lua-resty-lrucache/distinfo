@@ -1,3 +1,3 @@
-TIMESTAMP = 1627723070
-SHA256 (openresty-lua-resty-lrucache-v0.11_GH0.tar.gz) = e810ed124fe788b8e4aac2c8960dda1b9a6f8d0ca94ce162f28d3f4d877df8af
-SIZE (openresty-lua-resty-lrucache-v0.11_GH0.tar.gz) = 17410
+TIMESTAMP = 1658310322
+SHA256 (openresty-lua-resty-lrucache-v0.13_GH0.tar.gz) = da70ba4b84292a862e845e10be10095c6ce78ec75ec9bba0e3b5b7987c5e11df
+SIZE (openresty-lua-resty-lrucache-v0.13_GH0.tar.gz) = 17434
