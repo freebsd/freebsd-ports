@@ -1,5 +1,3 @@
-# Created by: Kris Moore <kmoore@freebsd.org>
-
 PORTNAME=	telegram-purple
 PORTVERSION=	1.4.7
 DISTVERSIONPREFIX=	v

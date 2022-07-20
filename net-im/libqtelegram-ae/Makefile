@@ -1,5 +1,3 @@
-# Created by: Henry Hu <henry.hu.sh@gmail.com>
-
 PORTNAME=	libqtelegram-ae
 PORTVERSION=	6.1
 PORTREVISION=	5

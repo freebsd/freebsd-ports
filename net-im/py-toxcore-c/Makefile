@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich
-
 PORTNAME=	toxcore-c
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0

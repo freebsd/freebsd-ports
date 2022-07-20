@@ -1,5 +1,3 @@
-# Created by: Matthew West <mwest@uct.ac.za>
-
 PORTNAME=	icmpchat
 PORTVERSION=	0.6
 PORTREVISION=	1

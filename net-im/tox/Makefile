@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	toxcore
 PORTVERSION=	0.2.18
 DISTVERSIONPREFIX=	v

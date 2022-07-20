@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	DJabberd
 PORTVERSION=	0.85
 PORTREVISION=	2

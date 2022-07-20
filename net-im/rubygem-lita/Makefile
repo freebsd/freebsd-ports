@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	lita
 PORTVERSION=	4.8.0
 PORTREVISION=	1

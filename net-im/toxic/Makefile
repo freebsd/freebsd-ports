@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	toxic
 PORTVERSION=	0.11.3
 DISTVERSIONPREFIX=	v

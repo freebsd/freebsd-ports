@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	mikutter
 PORTVERSION=	5.0.4
 CATEGORIES=	net-im ruby

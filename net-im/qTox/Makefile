@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	qTox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17.6

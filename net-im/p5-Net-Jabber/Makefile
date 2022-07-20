@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-
 PORTNAME=	Net-Jabber
 PORTVERSION=	2.0
 PORTREVISION=	1

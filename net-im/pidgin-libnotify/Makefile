@@ -1,5 +1,3 @@
-# Created by: Meethune Bhowmick <meethune@gmail.com>
-
 PORTNAME=	libnotify
 PORTVERSION=	0.14
 PORTREVISION=	14

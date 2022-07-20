@@ -1,5 +1,3 @@
-# Created by: Jonathan Chen <jonc@chen.org.nz>
-
 PORTNAME=	psi
 PORTVERSION=	1.5
 CATEGORIES=	net-im

@@ -1,5 +1,3 @@
-# Created by: Joseph S. Atkinson <jsatkinson@embarqmail.com>
-
 PORTNAME=	manualsize
 PORTVERSION=	0.7
 PORTREVISION=	5

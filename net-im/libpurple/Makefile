@@ -1,5 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-
 PORTNAME?=	libpurple
 PORTVERSION=	2.14.10
 CATEGORIES?=	net-im

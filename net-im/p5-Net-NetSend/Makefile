@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	Net-NetSend
 PORTVERSION=	0.12
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: <ports@c0decafe.net>
-
 PORTNAME=	Protocol-XMPP
 PORTVERSION=	0.006
 PORTREVISION=	1

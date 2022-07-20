@@ -1,5 +1,3 @@
-# Created by: SeaD
-
 PORTNAME=	echat
 DISTVERSION=	0.04beta1
 CATEGORIES=	net-im

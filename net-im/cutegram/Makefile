@@ -1,5 +1,3 @@
-# Created by: Henry Hu <henry.hu.sh@gmail.com>
-
 PORTNAME=	cutegram
 PORTVERSION=	2.7.1
 DISTVERSIONPREFIX=	v

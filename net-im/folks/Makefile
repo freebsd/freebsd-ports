@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	folks
 PORTVERSION=	0.15.5
 CATEGORIES=	net-im

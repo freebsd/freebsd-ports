@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-
 PORTNAME=	gajim
 DISTVERSION=	1.3.3
 CATEGORIES=	net-im

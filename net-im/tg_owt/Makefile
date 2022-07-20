@@ -1,5 +1,3 @@
-# Created by: Henry Hu <henry.hu.sh@gmail.com>
-
 PORTNAME=	tg_owt
 PORTVERSION=	0.0.20220508
 CATEGORIES=	net-im

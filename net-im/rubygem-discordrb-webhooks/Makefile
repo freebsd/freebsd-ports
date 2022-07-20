@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	discordrb-webhooks
 PORTVERSION=	3.4.2
 CATEGORIES=	net-im rubygems

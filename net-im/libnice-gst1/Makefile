@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PKGNAMESUFFIX=	-gst1
 
 COMMENT=	GStreamer 1 plugin from libnice

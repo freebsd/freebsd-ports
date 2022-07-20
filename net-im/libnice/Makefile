@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	libnice
 PORTVERSION=	0.1.19
 PORTREVISION=	1

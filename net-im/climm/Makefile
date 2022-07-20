@@ -1,5 +1,3 @@
-# Created by: mph
-
 PORTNAME=	climm
 PORTVERSION=	0.7.1
 PORTREVISION=	12

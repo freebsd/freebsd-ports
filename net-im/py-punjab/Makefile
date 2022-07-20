@@ -1,5 +1,3 @@
-# Created by: jodocus <jodocus@jodocus.org>
-
 PORTNAME=	punjab
 PORTVERSION=	0.15
 CATEGORIES=	net-im python

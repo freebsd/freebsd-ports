@@ -1,5 +1,3 @@
-# Created by: Andrew Lewis <freeghb@gmail.com>
-
 PORTNAME=	prosody
 DISTVERSION=	0.12.1
 CATEGORIES=	net-im

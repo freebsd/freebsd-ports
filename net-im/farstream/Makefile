@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	farstream
 PORTVERSION=	0.2.9
 CATEGORIES=	net-im devel

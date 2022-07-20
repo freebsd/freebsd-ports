@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	pidgin-bot-sentry
 PORTVERSION=	1.3.0
 PORTREVISION=	11

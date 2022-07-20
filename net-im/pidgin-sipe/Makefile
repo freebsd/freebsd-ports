@@ -1,5 +1,3 @@
-# Created by: John Prather
-
 PORTNAME=	pidgin-sipe
 PORTVERSION=	1.24.0
 PORTREVISION=	2

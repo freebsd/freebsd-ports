@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Net-AOLIM
 PORTVERSION=	1.61
 PORTREVISION=	2

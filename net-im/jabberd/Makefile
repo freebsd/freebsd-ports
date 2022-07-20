@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	jabberd
 PORTVERSION=	2.7.0
 PORTREVISION=	5

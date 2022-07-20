@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	matrix-synapse
 DISTVERSION=	1.63.0
 CATEGORIES=	net-im python

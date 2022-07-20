@@ -1,5 +1,3 @@
-# Created by: Frank Altpeter <frank@altpeter.de>
-
 PORTNAME=	centerim
 PORTVERSION=	4.22.10
 PORTREVISION=	6

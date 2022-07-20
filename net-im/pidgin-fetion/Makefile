@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	fetion
 PORTVERSION=	0.98.5.2
 PORTREVISION=	7

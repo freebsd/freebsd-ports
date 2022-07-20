@@ -1,5 +1,3 @@
-# Created by: Nikolay Pavlov <qpadla@gmail.com>
-
 PORTNAME=	openfire
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.7.1

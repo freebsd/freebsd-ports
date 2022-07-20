@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	SOAP-Transport-JABBER
 PORTVERSION=	0.713
 PORTREVISION=	1

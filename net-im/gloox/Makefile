@@ -1,5 +1,3 @@
-# Created by: trasz
-
 PORTNAME=	gloox
 DISTVERSION=	1.0.24
 CATEGORIES=	net-im

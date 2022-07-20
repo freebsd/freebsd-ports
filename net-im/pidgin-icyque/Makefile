@@ -1,5 +1,3 @@
-# Created by: Eugene Grosbein <eugen@FreeBSD.org>
-
 PORTNAME=	pidgin-icyque
 DISTVERSION=	g20200619
 CATEGORIES=	net-im

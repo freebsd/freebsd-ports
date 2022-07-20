@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Net-Stomp
 PORTVERSION=	0.61
 CATEGORIES=	net-im perl5

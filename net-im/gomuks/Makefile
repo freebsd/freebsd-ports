@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	gomuks
 PORTVERSION=	0.2.4
 DISTVERSIONPREFIX=	v

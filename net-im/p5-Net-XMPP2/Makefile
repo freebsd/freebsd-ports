@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-XMPP2
 PORTVERSION=	0.14
 PORTREVISION=	2

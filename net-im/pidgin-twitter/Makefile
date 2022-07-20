@@ -1,5 +1,3 @@
-# Created by: Junji NAKANISHI <jun-g@daemonfreaks.com>
-
 PORTNAME=	pidgin-twitter
 PORTVERSION=	0.9.2
 PORTREVISION=	7

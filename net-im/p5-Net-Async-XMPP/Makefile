@@ -1,5 +1,3 @@
-# Created by: <ports@c0decafe.net>
-
 PORTNAME=	Net-Async-XMPP
 PORTVERSION=	0.003
 PORTREVISION=	3

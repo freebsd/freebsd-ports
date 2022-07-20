@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	telegram-cli
 DISTVERSION=	20200106
 PORTREVISION=	1

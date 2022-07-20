@@ -1,4 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
 #    $MCom: ports/trunk/net-im/telepathy-mission-control/Makefile 19955 2014-10-15 10:15:00Z gusi $
 
 PORTNAME=	telepathy-mission-control

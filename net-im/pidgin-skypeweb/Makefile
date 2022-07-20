@@ -1,5 +1,3 @@
-# Created by: Andrey Akhmichin <sepulkarium45@yahoo.com>
-
 PORTNAME=	pidgin-skypeweb
 PORTVERSION=	1.7
 PORTEPOCH=	1

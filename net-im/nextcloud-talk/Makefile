@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	talk
 PORTVERSION=	14.0.3
 DISTVERSIONPREFIX=	v

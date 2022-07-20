@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	meanwhile
 PORTVERSION=	1.0.2
 PORTREVISION=	6
