@@ -1,5 +1,3 @@
-# Created by: Vitaly Magerya <vmagerya@gmail.com>
-
 PORTNAME=	ypsilon
 PORTVERSION=	0.9.6.3
 PORTREVISION=	12

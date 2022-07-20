@@ -1,5 +1,3 @@
-# Created by: Frank Fischer
-
 PORTNAME=	abcl
 PORTVERSION=	1.9.0
 CATEGORIES=	lang lisp java

@@ -1,5 +1,3 @@
-# Created by: aaron@FreeBSD.org
-
 PORTNAME=	tolua++
 PORTVERSION=	1.0.93
 PORTREVISION=	3

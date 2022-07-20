@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	v
 PORTVERSION=	0.1.29
 CATEGORIES=	lang

@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	tolua
 PORTVERSION=	5.2.4
 CATEGORIES=	lang

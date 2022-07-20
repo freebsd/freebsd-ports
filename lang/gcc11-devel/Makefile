@@ -1,5 +1,3 @@
-# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
-
 PORTNAME=	gcc
 PORTVERSION=	11.3.1.s20220715
 CATEGORIES=	lang

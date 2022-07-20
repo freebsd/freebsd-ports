@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	dlv
 PORTVERSION=	20121217
 CATEGORIES=	lang

@@ -1,5 +1,3 @@
-# Created by: Ralf S. Engelschall <rse@engelschall.com>
-
 PORTNAME=	eperl
 PORTVERSION=	2.2.14
 PORTREVISION=	1

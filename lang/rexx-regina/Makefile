@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	regina
 PORTVERSION=	3.9.3
 CATEGORIES=	lang

@@ -1,5 +1,3 @@
-# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
-
 PORTNAME=	gcc-ecj
 PORTVERSION=	4.5
 CATEGORIES=	lang java

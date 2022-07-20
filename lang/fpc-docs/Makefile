@@ -1,5 +1,3 @@
-# Created by: John Merryweather Cooper
-
 PORTNAME=	docs
 PORTVERSION=	3.2.2
 CATEGORIES=	lang

@@ -1,5 +1,3 @@
-# Created by: hsu
-
 PORTNAME=	scm
 PORTVERSION=	5f2
 PORTREVISION=	10

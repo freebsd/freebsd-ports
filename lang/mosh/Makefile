@@ -1,5 +1,3 @@
-# Created by: Katsuji ISHIKAWA <katsuji.ishikawa@gmail.com>
-
 PORTNAME=	mosh
 PORTVERSION=	0.2.7
 PORTREVISION=	6

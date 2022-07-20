@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	Try-Catch
 PORTVERSION=	1.1.0
 CATEGORIES=	lang perl5

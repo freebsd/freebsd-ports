@@ -1,5 +1,3 @@
-# Created by: Phillip Neumann <pneumann@gmail.com>
-
 PORTNAME=	fsharp
 PORTVERSION=	10.2.1
 CATEGORIES=	lang

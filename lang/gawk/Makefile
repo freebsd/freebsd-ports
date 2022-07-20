@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	gawk
 PORTVERSION=	5.1.1
 CATEGORIES=	lang

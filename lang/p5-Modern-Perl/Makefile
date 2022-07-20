@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Modern-Perl
 PORTVERSION=	1.20220515
 CATEGORIES=	lang perl5

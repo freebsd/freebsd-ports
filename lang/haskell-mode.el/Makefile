@@ -1,5 +1,3 @@
-# Created by: Josh Elsasser <jre@vineyard.net>
-
 PORTNAME=	haskell-mode
 DISTVERSION=	17.2
 PORTREVISION=	3

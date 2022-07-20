@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-
 PORTNAME=	sagittarius
 PORTVERSION=	0.9.8
 PORTREVISION=	2

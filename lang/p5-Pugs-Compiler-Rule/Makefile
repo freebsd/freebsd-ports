@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Pugs-Compiler-Rule
 PORTVERSION=	0.37
 PORTREVISION=	2

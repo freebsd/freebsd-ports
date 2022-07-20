@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	slisp
 PORTVERSION=	1.2
 PORTREVISION=	1

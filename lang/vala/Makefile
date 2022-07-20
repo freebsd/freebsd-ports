@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	vala
 PORTVERSION=	0.48.23
 PORTREVISION=	2

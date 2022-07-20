@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	rexx-imc
 PORTVERSION=	1.76
 PORTREVISION=	3

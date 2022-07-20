@@ -1,5 +1,3 @@
-# Created by: Chuck Robey <chuckr@FreeBSD.org>
-
 PORTNAME=	mosml
 PORTVERSION=	2.10.1
 DISTVERSIONPREFIX=	ver-

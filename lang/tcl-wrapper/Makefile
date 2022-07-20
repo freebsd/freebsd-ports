@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	wrapper
 PORTVERSION=	1.1
 PORTREVISION=	3

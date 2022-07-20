@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	camlidl
 PORTVERSION=	1.05
 PORTREVISION=	2

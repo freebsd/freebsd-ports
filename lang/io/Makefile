@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	io
 PORTVERSION=	2017.09.06
 PORTREVISION=	8

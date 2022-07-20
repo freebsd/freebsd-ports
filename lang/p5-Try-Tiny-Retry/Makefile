@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Try-Tiny-Retry
 PORTVERSION=	0.004
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@nigredo.org>
-
 PORTNAME=	slib
 PORTVERSION=	3b6 # Keep this in sync with lang/slib
 CATEGORIES=	lang scheme

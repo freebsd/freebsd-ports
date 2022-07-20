@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	List-MoreUtils-XS
 PORTVERSION=	0.430
 CATEGORIES=	lang perl5

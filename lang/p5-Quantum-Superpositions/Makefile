@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Quantum-Superpositions
 PORTVERSION=	2.03
 CATEGORIES=	lang science perl5

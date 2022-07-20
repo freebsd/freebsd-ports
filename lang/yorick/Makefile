@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <giffunip@asme.org>
-
 PORTNAME=	yorick
 DISTVERSIONPREFIX=	y_
 DISTVERSION=	2_2_04

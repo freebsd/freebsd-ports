@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@technologist.com>
-
 PORTNAME=	slib
 PORTVERSION=	3b6
 CATEGORIES=	lang scheme

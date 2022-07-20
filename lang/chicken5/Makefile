@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-
 PORTNAME=	chicken
 DISTVERSION=	5.3.0
 CATEGORIES=	lang scheme

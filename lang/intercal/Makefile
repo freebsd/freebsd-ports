@@ -1,5 +1,3 @@
-# Created by: Matthew Hunt <mph@FreeBSD.org>
-
 PORTNAME=	intercal
 PORTVERSION=	0.31
 CATEGORIES=	lang

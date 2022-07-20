@@ -1,5 +1,3 @@
-# Created by: jmacd@FreeBSD.org
-
 PORTNAME=	mit-scheme
 PORTVERSION=	9.2
 PORTREVISION=	4

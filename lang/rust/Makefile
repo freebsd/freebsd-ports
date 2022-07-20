@@ -1,5 +1,3 @@
-# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-
 PORTNAME=	rust
 PORTVERSION?=	1.62.0
 PORTREVISION?=	0

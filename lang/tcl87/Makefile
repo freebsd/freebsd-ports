@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	tcl
 DISTVERSION=	${TCL_VERSION}${TCL_RC}
 PORTREVISION=	1

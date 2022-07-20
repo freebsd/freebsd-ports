@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	angelscript
 PORTVERSION=	2.34.0
 CATEGORIES=	lang

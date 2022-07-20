@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	Promises
 PORTVERSION=	0.94
 CATEGORIES=	lang perl5

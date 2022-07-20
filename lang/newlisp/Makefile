@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	newlisp
 PORTVERSION=	10.7.5
 PORTREVISION=	3

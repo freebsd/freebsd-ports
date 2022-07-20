@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	execline
 PORTVERSION=	2.9.0.0
 CATEGORIES=	lang shells

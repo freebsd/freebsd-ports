@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	luajit
 DISTVERSION=	2.1.0.20220712
 CATEGORIES=	lang

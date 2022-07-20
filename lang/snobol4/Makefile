@@ -1,5 +1,3 @@
-# Created by: Wes Peters <wes@softweyr.com>
-
 PORTNAME=	snobol4
 PORTVERSION=	2.3.1
 PORTREVISION=	2

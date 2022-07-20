@@ -1,5 +1,3 @@
-# Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
-
 PORTNAME=	nhc98
 PORTVERSION=	1.22
 PORTREVISION=	7

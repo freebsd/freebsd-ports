@@ -1,5 +1,3 @@
-# Created by: ruslan@shevchenko.kiev.ua
-
 PORTNAME=	erlang
 PORTVERSION=	24.3
 CATEGORIES=	lang parallel

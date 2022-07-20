@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Perl6-Subs
 PORTVERSION=	0.05
 PORTREVISION=	2

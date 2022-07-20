@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	librep
 PORTVERSION=	0.92.7
 PORTREVISION=	5

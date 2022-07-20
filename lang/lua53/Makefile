@@ -1,5 +1,3 @@
-# Created by: GreenDog <fiziologus@gmail.com>
-
 PORTNAME=	lua
 DISTVERSION=	5.3.6
 CATEGORIES=	lang

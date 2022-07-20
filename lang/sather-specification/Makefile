@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	specification
 PORTVERSION=	000328
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: netchild@FreeBSD.org
-
 PORTNAME=	icc
 PORTVERSION=	8.1.038
 PORTREVISION=	2

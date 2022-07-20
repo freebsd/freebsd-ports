@@ -1,5 +1,3 @@
-# Created by: James Bailie <jimmy@mammothcheese.ca>
-
 PORTNAME=	munger
 PORTVERSION=	5.12
 CATEGORIES=	lang

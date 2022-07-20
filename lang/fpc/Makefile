@@ -1,5 +1,3 @@
-# Created by: John Merryweather Cooper et al
-
 PORTNAME=	fpc
 PORTVERSION=	3.2.2
 PORTREVISION?=	3

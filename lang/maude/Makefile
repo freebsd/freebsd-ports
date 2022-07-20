@@ -1,5 +1,3 @@
-# Created by: Rick van der Zwet <rick@wzoeterwoude.net>
-
 PORTNAME=	maude
 PORTVERSION=	2.7.1
 CATEGORIES=	lang

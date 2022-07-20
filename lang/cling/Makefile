@@ -1,5 +1,3 @@
-# Created by: Mahdi Mokhtari <mokhi64@gmail.com>
-
 PORTNAME=		cling
 DISTVERSION=		0.5-2018-08-13
 PORTREVISION=	11

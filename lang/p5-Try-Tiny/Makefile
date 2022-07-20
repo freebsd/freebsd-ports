@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Try-Tiny
 PORTVERSION=	0.31
 CATEGORIES=	lang perl5

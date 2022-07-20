@@ -1,5 +1,3 @@
-# Created by: Jean-Sébastien Pédron <dumbbell@FreeBSD.org>
-
 # Run update.sh to update to the latest nightly
 PORTVERSION=	1.63.0.${NIGHTLY_DATE:C,-,,g}
 # Always set PORTREVISION explicitly as otherwise it is inherited from lang/rust

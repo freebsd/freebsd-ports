@@ -1,4 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@nigredo.org>
 #    $MCom: ports/lang/slib-guile/Makefile,v 1.3 2006/10/13 02:32:48 marcus Exp $
 
 PORTNAME=	slib

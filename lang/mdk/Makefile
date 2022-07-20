@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	mdk
 PORTVERSION=	1.3.0
 CATEGORIES=	lang gnome

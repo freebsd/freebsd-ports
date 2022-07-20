@@ -1,5 +1,3 @@
-# Created by: jkh
-
 PORTNAME=	tclX
 PORTVERSION=	8.4.1
 CATEGORIES=	lang tcl devel

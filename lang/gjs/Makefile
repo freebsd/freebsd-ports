@@ -1,5 +1,3 @@
-# Created by: Pawel Worach <pawel.worach@gmail.com>
-
 PORTNAME=	gjs
 PORTVERSION=	1.72.1
 CATEGORIES=	lang gnome

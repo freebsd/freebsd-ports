@@ -1,5 +1,3 @@
-# Created by: Oliver Breuninger <ob@seicom.NET>
-
 PORTNAME=	oo2c
 PORTVERSION=	2.1.11
 PORTREVISION=	13

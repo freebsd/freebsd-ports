@@ -1,5 +1,3 @@
-# Created by: ruslan@shevchenko.kiev.ua
-
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	22.3.4.26

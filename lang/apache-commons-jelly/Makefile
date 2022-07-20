@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
-
 PORTNAME=	commons-jelly
 PORTVERSION=	1.0
 PORTREVISION=	1

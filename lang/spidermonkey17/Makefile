@@ -1,5 +1,3 @@
-# Created by: Dan Rench <citric@cubicone.tmetic.com>
-
 PORTNAME=	spidermonkey17
 DISTVERSION=	1.7.0
 PORTREVISION=	5

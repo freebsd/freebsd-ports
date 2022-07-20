@@ -1,5 +1,3 @@
-# Created by: Cyrille Lefevre <clefevre@citeweb.net>
-
 PORTNAME=	gforth
 PORTVERSION=	0.7.3
 PORTREVISION=	14

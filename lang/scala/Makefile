@@ -1,5 +1,3 @@
-# Created by: Mitsuru YOSHIDA <mitsuru@riken.jp>
-
 PORTNAME=	scala
 DISTVERSION=	3.1.0
 CATEGORIES=	lang java

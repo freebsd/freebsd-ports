@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Tcl
 PORTVERSION=	1.27
 CATEGORIES=	lang perl5

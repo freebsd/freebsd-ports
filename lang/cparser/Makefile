@@ -1,5 +1,3 @@
-# Created by: Christoph Mallon <christoph.mallon@gmx.de>
-
 PORTNAME=	cparser
 PORTVERSION=	0.9.14
 CATEGORIES=	lang devel

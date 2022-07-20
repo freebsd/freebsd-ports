@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni <giffunip@asme.org>
-
 PORTNAME=	mawk
 DISTVERSION=	1.3.4-20190203
 CATEGORIES=	lang

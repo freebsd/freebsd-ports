@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	tcl
 PORTVERSION=	8.5.13
 DISTVERSIONSUFFIX=	-8.el7

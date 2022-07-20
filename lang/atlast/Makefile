@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	atlast
 PORTVERSION=	1.2
 CATEGORIES=	lang

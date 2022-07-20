@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@fallin.lv>
-
 PORTNAME=	spl
 PORTVERSION=	1.2.1
 PORTREVISION=	5

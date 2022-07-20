@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	elk
 PORTVERSION=	3.99.8
 PORTREVISION=	2

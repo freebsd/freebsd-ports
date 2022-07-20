@@ -1,5 +1,3 @@
-# Created by: gahr@FreeBSD.org
-
 PORTNAME=	nx
 DISTVERSION=	2.3.0
 PORTREVISION=	0

@@ -1,5 +1,3 @@
-# Created by: Nils M Holm <nmh@t3x.org>
-
 PORTNAME=	sketchy
 PORTVERSION=	20070218
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Anton Shterenlikht
-
 PORTNAME=	opencoarrays
 DISTVERSION=	2.9.0
 CATEGORIES=	lang parallel

@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	List-MoreUtils
 PORTVERSION=	0.430
 CATEGORIES=	lang perl5

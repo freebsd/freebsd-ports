@@ -1,5 +1,3 @@
-# Created by: Devon H. O'Dell <devon.odell@gmail.com>
-
 PORTNAME=	go
 DISTVERSION?=	g20220712
 PORTREVISION?=	0

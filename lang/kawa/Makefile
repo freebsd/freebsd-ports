@@ -1,5 +1,3 @@
-# Created by: Zach Garner <zach@neurosoft.org>
-
 PORTNAME=	kawa
 PORTVERSION=	3.1.1
 CATEGORIES=	lang scheme java

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	lafontaine
 PORTVERSION=	0.4.1
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenhping@gmail.com>
-
 PORTNAME=	cython
 PORTVERSION=	0.29.30
 PORTREVISION=	1

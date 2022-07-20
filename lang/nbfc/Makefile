@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	nbfc
 PORTVERSION=	0.1
 CATEGORIES=	lang

@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	ExtUtils-F77
 PORTVERSION=	1.26
 PORTREVISION=	1

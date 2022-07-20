@@ -1,5 +1,3 @@
-# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
-
 PORTNAME=	racket
 PORTVERSION=	8.5
 PORTREVISION=	1

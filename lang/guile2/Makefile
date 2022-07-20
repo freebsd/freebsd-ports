@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
-
 PORTNAME=	guile
 PORTVERSION=	2.2.7
 PORTREVISION=	2

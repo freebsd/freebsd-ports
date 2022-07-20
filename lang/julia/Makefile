@@ -1,5 +1,3 @@
-# Created by: Iblis Lin <iblis@hs.ntnu.edu.tw>
-
 PORTNAME=	julia
 DISTVERSION=	1.7.3
 DISTVERSIONSUFFIX=	-full

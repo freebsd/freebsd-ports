@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ruby_language_server
 PORTVERSION=	0.3.16
 CATEGORIES=	lang rubygems

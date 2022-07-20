@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	gcc6-aux
 PORTVERSION=	${SNAPSHOT}
 PORTREVISION=	${MAIN_PR}

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	parrot
 PORTVERSION=	8.1.0
 PORTREVISION=	17

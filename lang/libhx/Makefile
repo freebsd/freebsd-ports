@@ -1,5 +1,3 @@
-# Created by: Sylvio Cesar <sylvio@FreeBSD.org>
-
 PORTNAME=	libHX
 PORTVERSION=	4.5
 CATEGORIES=	lang

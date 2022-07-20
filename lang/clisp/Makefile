@@ -1,5 +1,3 @@
-# Created by: Jeff Brown <jabrown@caida.org>
-
 PORTNAME=	clisp
 PORTVERSION=	2.49.93+
 PORTREVISION=	3

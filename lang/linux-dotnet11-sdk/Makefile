@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
-
 PORTNAME=	dotnet10-sdk
 DISTVERSION=	1.1.9
 DISTNAME=	dotnet-dev-centos-x64.${DISTVERSION}

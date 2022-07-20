@@ -1,5 +1,3 @@
-# Created by: Simun Mikecin <numisemis@yahoo.com>
-
 PORTNAME=	see
 PORTVERSION=	3.1.1424
 PORTREVISION=	4

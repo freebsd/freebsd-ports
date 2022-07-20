@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	seed7
 DISTVERSION=	05_20220522
 PORTREVISION=	0

@@ -1,5 +1,3 @@
-# Created by: Dario Freni <saturnero@gufi.org>
-
 PORTNAME=	python-mode.el
 PORTVERSION=	1.0
 PORTREVISION=	2

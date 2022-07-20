@@ -1,5 +1,3 @@
-# Created by: gpalmer
-
 PORTNAME=	smalltalk
 PORTVERSION=	3.2.5
 PORTREVISION=	17

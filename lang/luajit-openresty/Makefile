@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	luajit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1-20220411

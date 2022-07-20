@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	hla
 PORTVERSION=	1.103
 CATEGORIES=	lang

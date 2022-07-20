@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTREVISION=	0
 PKGNAMESUFFIX=	-x86
 

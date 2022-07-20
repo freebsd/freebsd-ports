@@ -1,5 +1,3 @@
-# Created by: Timothy Bourke <timbob@bigpond.com>
-
 PORTNAME=	polyml
 PORTVERSION=	5.9
 DISTVERSIONPREFIX=	v

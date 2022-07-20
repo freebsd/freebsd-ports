@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	elixir
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13.4

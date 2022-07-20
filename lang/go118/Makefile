@@ -1,5 +1,3 @@
-# Created by: Devon H. O'Dell <devon.odell@gmail.com>
-
 DISTVERSION=	1.18.4
 # Always set PORTREVISION explicitly as otherwise they are inherited from lang/go-devel
 PORTREVISION=	1

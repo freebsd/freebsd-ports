@@ -1,5 +1,3 @@
-# Created by: Neal Nelson <ports@nicandneal.net>
-
 PORTNAME=	nim
 DISTVERSION=	1.6.6
 CATEGORIES=	lang

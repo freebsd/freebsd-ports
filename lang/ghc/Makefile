@@ -1,5 +1,3 @@
-# Created by: Simon Marlow <simonmar@microsoft.com>
-
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
 CATEGORIES=	lang haskell

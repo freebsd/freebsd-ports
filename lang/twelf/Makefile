@@ -1,5 +1,3 @@
-# Created by: andrewb@cs.cmu.edu
-
 PORTNAME=	twelf
 PORTVERSION=	1.7.1
 PORTREVISION=	4

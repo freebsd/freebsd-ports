@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	mono
 PORTVERSION=	5.10.1.57
 PORTREVISION=	3

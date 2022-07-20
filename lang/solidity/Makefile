@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	solidity
 PORTVERSION=	0.8.15
 CATEGORIES=	lang
