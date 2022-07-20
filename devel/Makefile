@@ -1501,6 +1501,7 @@
     SUBDIR += magit-devel
     SUBDIR += make++
     SUBDIR += makedepend
+    SUBDIR += malloy
     SUBDIR += marisa-trie
     SUBDIR += marl
     SUBDIR += mate-common
