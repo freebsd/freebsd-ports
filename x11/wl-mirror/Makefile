@@ -1,10 +1,7 @@
 PORTNAME=	wl-mirror
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.12.1
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	18100a897c66.patch:-p1 # https://github.com/Ferdi265/wl-mirror/pull/12
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple Wayland output mirror client
