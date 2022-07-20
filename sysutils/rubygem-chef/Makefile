@@ -1,5 +1,3 @@
-# Created by: Renaud Chaput <renchap@cocoa-x.com>
-
 PORTNAME=	chef
 PORTVERSION=	16.18.0
 CATEGORIES=	sysutils

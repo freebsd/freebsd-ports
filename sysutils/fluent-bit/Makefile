@@ -1,5 +1,3 @@
-# Created by: Palle Girgensohn <girgen@FreeBSD.org>
-
 PORTNAME=	fluent-bit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.6

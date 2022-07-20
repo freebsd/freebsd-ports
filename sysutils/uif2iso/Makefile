@@ -1,5 +1,3 @@
-# Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
-
 PORTNAME=	uif2iso
 PORTVERSION=	0.1.7c
 PORTREVISION=	1

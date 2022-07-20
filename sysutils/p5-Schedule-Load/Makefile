@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Schedule-Load
 PORTVERSION=	3.064
 PORTREVISION=	1

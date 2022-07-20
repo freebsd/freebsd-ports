@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	cpu-x
 PORTVERSION=	4.0.1
 DISTVERSIONPREFIX=	v

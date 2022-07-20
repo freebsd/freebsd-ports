@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	libtree
 PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	v

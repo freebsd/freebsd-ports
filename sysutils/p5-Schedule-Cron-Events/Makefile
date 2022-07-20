@@ -1,5 +1,3 @@
-# Created by: Andrey Kuzmin <akuz84@gmail.com>
-
 PORTNAME=	Schedule-Cron-Events
 PORTVERSION=	1.95
 PORTREVISION=	1

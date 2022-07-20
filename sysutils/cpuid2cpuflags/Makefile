@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	cpuid2cpuflags
 PORTVERSION=	12
 DISTVERSIONPREFIX=	v

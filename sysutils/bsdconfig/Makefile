@@ -1,5 +1,3 @@
-# Created by: Devin Teske <dteske@FreeBSD.org>
-
 PORTNAME=	bsdconfig
 PORTVERSION=	0.9.0
 PORTREVISION=	1

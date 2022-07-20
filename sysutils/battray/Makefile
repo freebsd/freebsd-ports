@@ -1,5 +1,3 @@
-# Created by: Martin Tournoij <martin@arp242.net>
-
 PORTNAME=	battray
 DISTVERSIONPREFIX=	version-
 DISTVERSION=	2.3

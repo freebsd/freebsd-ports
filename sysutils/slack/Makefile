@@ -1,5 +1,3 @@
-# Created by: Steve Atwell
-
 PORTNAME=	slack
 PORTVERSION=	0.15.2
 PORTREVISION=	2

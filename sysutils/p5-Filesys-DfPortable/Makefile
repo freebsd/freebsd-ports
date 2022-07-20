@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Filesys-DfPortable
 PORTVERSION=	0.85
 PORTREVISION=	1

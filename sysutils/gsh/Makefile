@@ -1,5 +1,3 @@
-# Created by: <jsmith@resonatingmedia.com>
-
 PORTNAME=	gsh
 PORTVERSION=	1.1.0
 CATEGORIES=	sysutils

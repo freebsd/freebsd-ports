@@ -1,5 +1,3 @@
-# Created by: Markus Dolze
-
 PORTNAME=	iograph
 PORTVERSION=	0.9.1
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek <mich@freebsdcluster.org>
-
 PORTNAME=	ah-tty
 PORTVERSION=	0.3.12
 PORTREVISION=	3

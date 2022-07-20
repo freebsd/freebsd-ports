@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarev <krion@FreeBSD.org>
-
 PORTNAME=	dict-toolbox
 PORTVERSION=	2.1.2
 CATEGORIES=	sysutils python

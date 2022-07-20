@@ -1,5 +1,3 @@
-# Created by: Matthew Fuller <fullermd@over-yonder.net>
-
 PORTNAME=	pwd_unmkdb
 PORTVERSION=	1.4
 CATEGORIES=	sysutils

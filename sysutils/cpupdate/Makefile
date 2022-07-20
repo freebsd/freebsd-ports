@@ -1,5 +1,3 @@
-# Created by: Eugene Grosbein <eugen@FreeBSD.org>
-
 PORTNAME=	cpupdate
 DISTVERSION=	g20180513
 PORTREVISION=	3

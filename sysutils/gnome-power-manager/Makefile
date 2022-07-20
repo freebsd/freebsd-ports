@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-power-manager
 PORTVERSION=	3.32.0
 CATEGORIES=	sysutils gnome

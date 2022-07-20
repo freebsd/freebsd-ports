@@ -1,5 +1,3 @@
-# Created by: bsdx
-
 PORTNAME=	bchunk
 DISTVERSION=	1.2.2
 CATEGORIES=	sysutils

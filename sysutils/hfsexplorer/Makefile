@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	hfsexplorer
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	0.23.1

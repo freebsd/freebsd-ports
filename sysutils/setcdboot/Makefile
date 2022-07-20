@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	setcdboot
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

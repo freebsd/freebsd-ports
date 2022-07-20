@@ -1,5 +1,3 @@
-# Created by: Oleg Ginzburg
-
 PORTNAME=	retail
 PORTVERSION=	1.0.1
 PORTREVISION=	1

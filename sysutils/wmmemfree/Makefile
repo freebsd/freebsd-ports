@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	wmmemfree
 PORTVERSION=	0.7
 PORTREVISION=	4

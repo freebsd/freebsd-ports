@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	mate-settings-daemon
 PORTVERSION=	1.26.0
 PORTREVISION=	1

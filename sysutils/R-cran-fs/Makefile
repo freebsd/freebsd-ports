@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	fs
 DISTVERSION=	1.5.2
 CATEGORIES=	sysutils

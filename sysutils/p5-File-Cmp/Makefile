@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	File-Cmp
 PORTVERSION=	1.07
 CATEGORIES=	sysutils perl5

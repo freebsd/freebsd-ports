@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	POSIX-Run-Capture
 PORTVERSION=	1.03
 CATEGORIES=	sysutils perl5

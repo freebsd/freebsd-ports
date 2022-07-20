@@ -1,5 +1,3 @@
-# Created by: mm
-
 PORTNAME=	cciss_vol_status
 PORTVERSION=	1.12a
 CATEGORIES=	sysutils

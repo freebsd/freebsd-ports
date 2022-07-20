@@ -1,5 +1,3 @@
-# Created by: Jamie Heckford <jamie@jamiesdomain.co.uk>
-
 PORTNAME=	userlist
 PORTVERSION=	0.1
 CATEGORIES=	sysutils

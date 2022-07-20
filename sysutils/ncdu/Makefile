@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	ncdu
 PORTVERSION=	1.17
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Colin Percival
-
 PORTNAME=	ec2-scripts
 PORTVERSION=	1.11
 CATEGORIES=	sysutils

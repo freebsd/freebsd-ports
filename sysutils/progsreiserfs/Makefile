@@ -1,5 +1,3 @@
-# Created by: Florent Thoumie <flz@xbsd.org>
-
 PORTNAME=	progsreiserfs
 DISTVERSION=	0.3.1-rc8
 PORTREVISION=	7

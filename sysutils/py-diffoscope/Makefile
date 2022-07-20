@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	diffoscope
 PORTVERSION=	218
 CATEGORIES=	sysutils python

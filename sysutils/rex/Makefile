@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	rex
 PORTVERSION=	4.1
 CATEGORIES=	sysutils tcl

@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	open
 PORTVERSION=	1.4
 CATEGORIES=	sysutils

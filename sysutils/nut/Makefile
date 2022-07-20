@@ -1,5 +1,3 @@
-# Created by: Boris Popov <bp@FreeBSD.org>
-
 PORTNAME=	nut
 PORTVERSION=	2.8.0
 PORTREVISION=	6

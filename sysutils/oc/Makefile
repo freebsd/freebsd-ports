@@ -1,5 +1,3 @@
-# Created by: John Hixson <jhixson@freebsd.org>
-
 PORTNAME=	oc
 PORTVERSION=	4.9
 DISTVERSIONPREFIX=	release-

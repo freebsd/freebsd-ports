@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	xe-guest-utilities
 PORTVERSION=	6.2.0
 PORTREVISION=	3

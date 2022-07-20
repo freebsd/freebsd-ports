@@ -1,5 +1,3 @@
-# Created by: wosch
-
 PORTNAME=	socket
 PORTVERSION=	1.2
 PORTREVISION=	0

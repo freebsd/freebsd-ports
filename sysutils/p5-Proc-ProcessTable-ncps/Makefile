@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Proc-ProcessTable-ncps
 PORTVERSION=	0.1.1
 CATEGORIES=	sysutils perl5

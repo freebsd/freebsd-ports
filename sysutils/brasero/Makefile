@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	brasero
 PORTVERSION=	3.12.3
 PORTREVISION=	2

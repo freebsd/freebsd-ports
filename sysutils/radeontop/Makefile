@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	radeontop
 PORTVERSION=	1.4
 DISTVERSIONPREFIX=	v

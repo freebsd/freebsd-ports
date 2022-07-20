@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	swapd
 PORTVERSION=	1.0.5
 PORTREVISION=	2

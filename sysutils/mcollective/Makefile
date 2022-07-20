@@ -1,5 +1,3 @@
-# Created by: Russell Jackson <raj@csub.edu>
-
 PORTNAME=	mcollective
 PORTVERSION=	2.12.5
 CATEGORIES=	sysutils

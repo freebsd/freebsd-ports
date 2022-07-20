@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	httpfs
 PORTVERSION=	2.${VERSION}
 PORTREVISION=	2

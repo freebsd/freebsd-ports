@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	racktables
 DISTVERSION=	0.22.0
 PORTREVISION=	1

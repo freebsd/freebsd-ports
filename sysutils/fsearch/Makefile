@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	fsearch
 PORTVERSION=	0.1.4
 CATEGORIES=	sysutils

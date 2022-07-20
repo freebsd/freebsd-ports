@@ -1,5 +1,3 @@
-# Created by: Anish Mistry
-
 PORTNAME=	sshfs
 PORTVERSION=	3.7.3
 PORTREVISION=	1

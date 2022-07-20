@@ -1,5 +1,3 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	tflint
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.38.1

@@ -1,5 +1,3 @@
-# Created by: Ju Pengfei <jupengfei@gmail.com>
-
 PORTNAME=	psutil
 PORTVERSION=	1.2.1
 PORTREVISION=	2

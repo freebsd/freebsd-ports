@@ -1,5 +1,3 @@
-# Created by: rantapaa@uswest.net
-
 PORTNAME=	psmisc
 PORTVERSION=	22.16
 PORTREVISION=	1

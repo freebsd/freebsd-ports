@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	File-DirCompare
 PORTVERSION=	0.7
 PORTREVISION=	1

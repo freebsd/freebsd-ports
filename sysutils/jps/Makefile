@@ -1,5 +1,3 @@
-# Created by: Pavel Novikov
-
 PORTNAME=	jps
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

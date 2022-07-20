@@ -1,5 +1,3 @@
-# Created by: desmo@bandwidth.org
-
 PORTNAME=	LPRng
 PORTVERSION=	3.8.C
 PORTREVISION=	5

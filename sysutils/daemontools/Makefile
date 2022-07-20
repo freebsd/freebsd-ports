@@ -1,5 +1,3 @@
-# Created by: Dom Mitchell <dom@myrddin.demon.co.uk>
-
 PORTNAME=	daemontools
 PORTVERSION=	0.76
 PORTREVISION=	18

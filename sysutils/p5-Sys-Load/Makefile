@@ -1,5 +1,3 @@
-# Created by: Konstantin Menshikov <kostjnspb@yandex.ru>
-
 PORTNAME=	Sys-Load
 PORTVERSION=	0.2
 PORTREVISION=	1

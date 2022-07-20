@@ -1,5 +1,3 @@
-# Created by: Dmitry Frolov <frol@nov.net>
-
 PORTNAME=	ipmitool
 PORTVERSION=	1.8.18
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	chef-bin
 PORTVERSION=	16.18.0
 CATEGORIES=	sysutils rubygems

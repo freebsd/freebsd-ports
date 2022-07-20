@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <trociny@FreeBSD.org>
-
 PORTNAME=	cmogstored
 PORTVERSION=	1.8.1
 CATEGORIES=	sysutils

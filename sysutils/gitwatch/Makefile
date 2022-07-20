@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	gitwatch
 DISTVERSION=	0.1.a.20200814
 CATEGORIES=	sysutils

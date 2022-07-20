@@ -1,5 +1,3 @@
-# Created by: Max Laier <max@love2party.net>
-
 PORTNAME=	pftop
 PORTVERSION=	0.8
 CATEGORIES=	sysutils net

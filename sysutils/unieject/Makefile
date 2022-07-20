@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	unieject
 PORTVERSION=	6
 PORTREVISION=	7

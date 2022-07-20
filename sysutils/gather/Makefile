@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-
 PORTNAME=	gather
 PORTVERSION=	0.4.1
 CATEGORIES=	sysutils

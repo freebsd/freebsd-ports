@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	MogileFS-Utils
 PORTVERSION=	2.30
 CATEGORIES=	sysutils net perl5

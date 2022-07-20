@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	wmmemload
 PORTVERSION=	0.1.8
 CATEGORIES=	sysutils windowmaker

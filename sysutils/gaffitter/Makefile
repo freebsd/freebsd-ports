@@ -1,5 +1,3 @@
-# Created by: Charlie Kester <corky1951@comcast.net>
-
 PORTNAME=	gaffitter
 PORTVERSION=	0.6.0
 PORTREVISION=	1

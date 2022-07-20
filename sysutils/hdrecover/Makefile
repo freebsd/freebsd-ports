@@ -1,5 +1,3 @@
-# Created by: Cy Schubert <cy@FreeBSD.org>
-
 PORTNAME=	hdrecover
 PORTVERSION=	0.5
 CATEGORIES=	sysutils

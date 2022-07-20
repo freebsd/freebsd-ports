@@ -1,5 +1,3 @@
-# Created by: Vasiliy Ch <blttll@gmail.com>
-
 PORTNAME=	ciso
 PORTVERSION=	1.0.0
 PORTREVISION=	2

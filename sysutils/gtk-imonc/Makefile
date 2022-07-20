@@ -1,5 +1,3 @@
-# Created by: Steffen Vogelreuter
-
 PORTNAME=	gtk-imonc
 PORTVERSION=	0.6.4.1
 PORTREVISION=	16

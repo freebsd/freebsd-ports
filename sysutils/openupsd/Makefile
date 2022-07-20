@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	openupsd
 PORTVERSION=	0.3.1
 PORTREVISION=	1

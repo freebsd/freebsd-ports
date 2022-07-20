@@ -1,5 +1,3 @@
-# Created by: Anton Statutov <astatutov@gmail.com>
-
 PORTNAME=	getdelta
 PORTVERSION=	0.7.8
 PORTREVISION=	5

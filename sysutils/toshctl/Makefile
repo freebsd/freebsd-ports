@@ -1,5 +1,3 @@
-# Created by: carl@servicefactory.com
-
 PORTNAME=	toshctl
 PORTVERSION=	0.0.0p3
 PORTREVISION=	1

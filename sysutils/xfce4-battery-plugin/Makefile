@@ -1,5 +1,3 @@
-# Created by: Thorsten Greiner <thorsten.greiner@web.de>
-
 PORTNAME=	xfce4-battery-plugin
 PORTVERSION=	1.1.4
 CATEGORIES=	sysutils xfce

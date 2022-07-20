@@ -1,5 +1,3 @@
-# Created by: Jonathan Liu <Net147@hotmail.com>
-
 PORTNAME=	nitrogen
 DISTVERSION=	1.6.1
 PORTREVISION=	4

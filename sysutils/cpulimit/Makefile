@@ -1,5 +1,3 @@
-# Created by: Jesse Smith <jessefrgsmith@yahoo.ca>
-
 PORTNAME=	cpulimit
 PORTVERSION=	2.2
 CATEGORIES=	sysutils

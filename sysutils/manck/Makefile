@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	manck
 PORTVERSION=	1.2
 PORTREVISION=	1

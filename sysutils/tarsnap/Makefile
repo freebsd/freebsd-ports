@@ -1,5 +1,3 @@
-# Created by: Colin Percival
-
 PORTNAME=	tarsnap
 PORTVERSION=	1.0.40
 PORTREVISION=	1

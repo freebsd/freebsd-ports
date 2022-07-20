@@ -1,5 +1,3 @@
-# Created by: Jung-uk Kim <jkim@FreeBSD.org>
-
 PORTNAME=	vbetool
 PORTVERSION=	1.1
 PORTREVISION=	2

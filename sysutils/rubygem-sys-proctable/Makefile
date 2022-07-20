@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	sys-proctable
 PORTVERSION=	1.2.6
 CATEGORIES=	sysutils rubygems

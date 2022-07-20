@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	kops
 PORTVERSION=	1.22.3
 DISTVERSIONPREFIX=	v

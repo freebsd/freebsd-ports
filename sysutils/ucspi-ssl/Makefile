@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	ucspi-ssl
 PORTVERSION=	0.99b
 CATEGORIES=	sysutils

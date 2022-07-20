@@ -1,5 +1,3 @@
-# Created by: Anton Karpov <toxa@toxahost.ru>
-
 PORTNAME=	graveman
 DISTVERSION=	0.3.12-5
 PORTREVISION=	14

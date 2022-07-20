@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	guard-minitest
 PORTVERSION=	2.4.6
 CATEGORIES=	sysutils rubygems

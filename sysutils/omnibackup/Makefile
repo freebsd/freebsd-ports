@@ -1,5 +1,3 @@
-# Created by: Mohammad S. Babaei <info@babaei.net>
-
 PORTNAME=	omnibackup
 PORTVERSION=	0.2.1
 CATEGORIES=	sysutils

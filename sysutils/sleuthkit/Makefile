@@ -1,5 +1,3 @@
-# Created by: Pieter Danhieux <opr@bsdaemon.be>
-
 PORTNAME=	sleuthkit
 PORTVERSION=	4.7.0
 CATEGORIES=	sysutils security

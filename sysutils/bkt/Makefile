@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	bkt
 PORTVERSION=	0.5.4
 PORTREVISION=	3

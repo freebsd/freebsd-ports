@@ -1,5 +1,3 @@
-# Created by: Dereckson <dereckson@gmail.com>
-
 PORTNAME=	rhc
 PORTVERSION=	1.32.2
 PORTREVISION=	2

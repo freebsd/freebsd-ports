@@ -1,5 +1,3 @@
-# Created by: Lucas Holt <luke@foolishgames.com>
-
 PORTNAME=	ciso-maker
 PORTVERSION=	1.02
 CATEGORIES=	sysutils

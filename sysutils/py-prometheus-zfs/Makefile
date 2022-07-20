@@ -1,5 +1,3 @@
-# Created by: Mateusz Piotrowski <0mp@FreeBSD.org>
-
 PORTNAME=	prometheus-zfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.4

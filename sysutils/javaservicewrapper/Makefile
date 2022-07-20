@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME=	javaservicewrapper
 PORTVERSION=	3.5.49
 CATEGORIES=	sysutils java

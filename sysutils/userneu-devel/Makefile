@@ -1,5 +1,3 @@
-# Created by: Andreas Fehlner (fehlner@gmx.de)
-
 PORTNAME=	userneu
 PORTVERSION=	1.43
 DISTVERSIONSUFFIX=	b

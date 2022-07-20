@@ -1,5 +1,3 @@
-# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-
 PORTNAME=	libretto-config
 PORTVERSION=	1.0.b5
 PORTREVISION=	8

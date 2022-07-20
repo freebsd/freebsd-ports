@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@FreeBSD.org>
-
 PORTNAME=	tree
 PORTVERSION=	2.0.2
 CATEGORIES=	sysutils

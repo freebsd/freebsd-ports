@@ -1,5 +1,3 @@
-# Created by: Max Laier <max@love2party.net>
-
 PORTNAME=	pfstat
 PORTVERSION=	2.5
 PORTREVISION=	6

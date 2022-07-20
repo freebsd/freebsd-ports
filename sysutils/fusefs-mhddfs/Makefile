@@ -1,5 +1,3 @@
-# Created by: Oleg Alexeenkov <proler@gmail.com>
-
 PORTNAME=	mhddfs
 PORTVERSION=	0.1.37
 CATEGORIES=	sysutils

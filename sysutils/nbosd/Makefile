@@ -1,5 +1,3 @@
-# Created by: Lars Engels <lars.engels@0x20.net>
-
 PORTNAME=	nbosd
 PORTVERSION=	0.5.0
 PORTREVISION=	7

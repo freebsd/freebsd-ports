@@ -1,5 +1,3 @@
-# Created by: Daniel Johansson <donnex@donnex.net>
-
 PORTNAME=	pwsafe
 DISTVERSION=	0.2.2beta-196
 DISTVERSIONSUFFIX=	-g4bf61c5

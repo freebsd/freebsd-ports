@@ -1,5 +1,3 @@
-# Created by: Michael Gmelin <freebsd@grem.de>
-
 PORTNAME=	bhyve-rc
 PORTVERSION=	4
 CATEGORIES=	sysutils

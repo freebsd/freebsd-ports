@@ -1,4 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # heavily modified by: Matthias Andree <mandree@FreeBSD.org>
 #
 # supported FLAVORS=	default nobootfsck roothardlinks

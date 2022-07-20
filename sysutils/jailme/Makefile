@@ -1,5 +1,3 @@
-# Created by: wmoran
-
 PORTNAME=	jailme
 PORTVERSION=	0.2.0
 CATEGORIES=	sysutils

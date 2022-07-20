@@ -1,5 +1,3 @@
-# Created by: jkh
-
 PORTNAME=	rtty
 PORTVERSION=	4.0
 CATEGORIES=	sysutils

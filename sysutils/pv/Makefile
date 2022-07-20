@@ -1,5 +1,3 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	pv
 PORTVERSION=	1.6.20
 CATEGORIES=	sysutils

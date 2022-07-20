@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	istatserver
 PORTVERSION=	3.02
 PORTREVISION=	2

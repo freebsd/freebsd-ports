@@ -1,5 +1,3 @@
-# Created by: Greg Larkin <glarkin@FreeBSD.org>
-
 PORTNAME=	hiera
 PORTVERSION=	3.9.0
 CATEGORIES=	sysutils rubygems

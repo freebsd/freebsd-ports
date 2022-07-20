@@ -1,5 +1,3 @@
-# Created by: Jose G. Juanino <jjuanino@gmail.com>
-
 PORTNAME=	xpipe
 DISTVERSION=	g20200503
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	lxtask
 PORTVERSION=	0.1.10
 CATEGORIES=	sysutils gnome

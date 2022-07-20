@@ -1,5 +1,3 @@
-# Created by: Thomas Hurst <tom@hur.st>
-
 PORTNAME=	k8temp
 PORTVERSION=	0.4.1
 CATEGORIES=	sysutils

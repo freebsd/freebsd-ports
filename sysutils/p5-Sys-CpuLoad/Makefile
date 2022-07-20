@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Sys-CpuLoad
 PORTVERSION=	0.31
 CATEGORIES=	sysutils perl5

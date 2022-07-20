@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	installwatch
 PORTVERSION=	0.6.3
 PORTREVISION=	3

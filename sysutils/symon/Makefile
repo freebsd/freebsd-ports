@@ -1,5 +1,3 @@
-# Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-
 PORTNAME=	symon
 PORTVERSION=	2.88
 CATEGORIES=	sysutils

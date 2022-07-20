@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	runit
 PORTVERSION=	2.1.2
 PORTREVISION=	3

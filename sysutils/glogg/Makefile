@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	glogg
 DISTVERSION=	1.1.4
 PORTREVISION=	10

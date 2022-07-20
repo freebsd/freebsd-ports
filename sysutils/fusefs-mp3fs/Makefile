@@ -1,5 +1,3 @@
-# Created by: Stefan Rumetshofer
-
 PORTNAME=	mp3fs
 PORTVERSION=	0.91
 PORTREVISION=	1

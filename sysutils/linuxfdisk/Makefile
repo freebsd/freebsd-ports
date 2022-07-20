@@ -1,5 +1,3 @@
-# Created by: netch@netch.kiev.ua
-
 PORTNAME=	linuxfdisk
 PORTVERSION=	2.11z
 PORTREVISION=	1

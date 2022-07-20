@@ -1,5 +1,3 @@
-# Created by: Ivan Dreckman <ivannashdreckman@fastmail.fm>
-
 PORTNAME=	zxfer
 PORTVERSION=	1.1.7
 DISTVERSIONPREFIX=	v

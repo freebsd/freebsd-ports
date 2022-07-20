@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	hilite
 PORTVERSION=	1.5
 CATEGORIES=	sysutils

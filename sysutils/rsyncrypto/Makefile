@@ -1,5 +1,3 @@
-# Created by: Jin-Sih Lin <linpct@gmail.com>
-
 PORTNAME=	rsyncrypto
 PORTVERSION=	1.14
 CATEGORIES=	sysutils net

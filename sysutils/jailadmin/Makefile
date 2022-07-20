@@ -1,5 +1,3 @@
-# Created by: Kirk Strauser <kirk@strauser.com>
-
 PORTNAME=	jailadmin
 PORTVERSION=	1.9
 CATEGORIES=	sysutils

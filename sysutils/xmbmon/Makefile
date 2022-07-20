@@ -1,5 +1,3 @@
-# Created by: kaz@kobe1995.net (NAKAMURA Kauzushi)
-
 PORTNAME=	xmbmon
 PORTVERSION=	205
 PORTREVISION=	14

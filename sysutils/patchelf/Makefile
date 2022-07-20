@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	patchelf
 DISTVERSION=	0.14.3
 CATEGORIES=	sysutils

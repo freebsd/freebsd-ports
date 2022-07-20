@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	setsid
 DISTVERSION=	2.37
 CATEGORIES=	sysutils

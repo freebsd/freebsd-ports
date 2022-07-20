@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	chef-vault
 PORTVERSION=	4.1.10
 CATEGORIES=	sysutils rubygems

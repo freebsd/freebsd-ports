@@ -1,4 +1,3 @@
-# Created by: Koop Mast<kwm@FreeBSD.org>
 #    $MCom: ports/trunk/sysutils/polkit-gnome/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	polkit-gnome

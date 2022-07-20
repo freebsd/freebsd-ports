@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	pytsk
 PORTVERSION=	20210419
 CATEGORIES=	sysutils security devel python

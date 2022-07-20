@@ -1,5 +1,3 @@
-# Created by: Aaron Landwehr <aaron@snaphat.com>
-
 PORTNAME=	usrinfo
 PORTVERSION=	.10
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: David O'Brien <obrien@FreeBSD.org>
-
 # note: If someone has a fix for a particular ARCH please feel free
 #       to commit it.  I (ler) don't have access to all the ARCH's
 

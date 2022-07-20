@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	socklog
 PORTVERSION=	2.1.0
 PORTREVISION=	1

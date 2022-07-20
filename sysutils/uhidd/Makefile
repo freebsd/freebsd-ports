@@ -1,5 +1,3 @@
-# Created by: Kai Wang <kaiwang27@gmail.com>
-
 PORTNAME=	uhidd
 PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	REL-

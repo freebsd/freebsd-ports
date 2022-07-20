@@ -1,5 +1,3 @@
-# Created by: Xin LI <delphij@FreeBSD.org>
-
 PORTNAME=	smp_utils
 PORTVERSION=	0.99
 CATEGORIES=	sysutils

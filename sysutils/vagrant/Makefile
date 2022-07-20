@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	vagrant
 PORTVERSION=	2.2.19
 DISTVERSIONPREFIX=	v

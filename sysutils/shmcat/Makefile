@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	shmcat
 PORTVERSION=	1.8
 CATEGORIES=	sysutils

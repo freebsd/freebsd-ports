@@ -1,5 +1,3 @@
-# Created by: Marcel Kaiser <mk@nic-nac-project.org>
-
 PORTNAME=	dsbmc
 DISTVERSION=	1.2
 PORTREVISION=	1

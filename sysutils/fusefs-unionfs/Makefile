@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	unionfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2

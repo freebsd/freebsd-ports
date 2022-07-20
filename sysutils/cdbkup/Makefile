@@ -1,5 +1,3 @@
-# Created by: Kay Lehmann
-
 PORTNAME=	cdbkup
 PORTVERSION=	1.0
 PORTREVISION=	2

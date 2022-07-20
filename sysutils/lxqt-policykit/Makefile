@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	lxqt-policykit
 PORTVERSION=	1.1.0
 CATEGORIES=	sysutils

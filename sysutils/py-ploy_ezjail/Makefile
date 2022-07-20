@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	ploy_ezjail
 PORTVERSION=	1.5.1
 CATEGORIES=	sysutils python

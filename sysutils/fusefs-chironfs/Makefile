@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	chironfs
 PORTVERSION=	1.1.1
 PORTREVISION=	2

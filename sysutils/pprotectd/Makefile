@@ -1,5 +1,3 @@
-# Created by: Andrey Zonov <andrey@zonov.org>
-
 PORTNAME=	pprotectd
 PORTVERSION=	0.1
 CATEGORIES=	sysutils

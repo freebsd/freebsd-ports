@@ -1,5 +1,3 @@
-# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
-
 PORTNAME=	BackupPC-XS
 PORTVERSION=	0.62
 CATEGORIES=	sysutils perl5

@@ -1,5 +1,3 @@
-# Created by: Dmitry Yashin <dmitry@yashin.su>
-
 PORTNAME=	Ubic
 PORTVERSION=	1.58
 CATEGORIES=	sysutils perl5

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	direvent
 PORTVERSION=	5.3
 CATEGORIES=	sysutils

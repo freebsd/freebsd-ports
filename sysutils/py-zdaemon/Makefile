@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	zdaemon
 PORTVERSION=	4.1.0
 CATEGORIES=	sysutils python

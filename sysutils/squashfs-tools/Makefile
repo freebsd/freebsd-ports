@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <wahjava@gmail.com>
-
 PORTNAME=	squashfs-tools
 PORTVERSION=	4.5.1
 CATEGORIES=	sysutils

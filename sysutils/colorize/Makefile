@@ -1,5 +1,3 @@
-# Created by: petef@FreeBSD.org
-
 PORTNAME=	colorize
 PORTVERSION=	0.3.4
 DISTVERSIONPREFIX=	v

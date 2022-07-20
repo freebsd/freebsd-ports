@@ -1,5 +1,3 @@
-# Created by: Brian Somers <brian@FreeBSD.org>
-
 PORTNAME=	vmdktool
 PORTVERSION=	1.4
 CATEGORIES=	sysutils

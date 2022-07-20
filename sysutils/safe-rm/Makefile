@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-
 PORTNAME=	safe-rm
 PORTVERSION=	0.12
 CATEGORIES=	sysutils

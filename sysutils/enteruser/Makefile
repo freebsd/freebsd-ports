@@ -1,5 +1,3 @@
-# Created by: Danny Howard <dannyman@toldme.com>
-
 PORTNAME=	enteruser
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

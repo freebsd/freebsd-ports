@@ -1,5 +1,3 @@
-# Created by: Daniel Bond
-
 PORTNAME=	rsyncbackup
 PORTVERSION=	1.1
 CATEGORIES=	sysutils

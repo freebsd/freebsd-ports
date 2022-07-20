@@ -1,5 +1,3 @@
-# Created by: Kamila Souckova <kamila@ksp.sk>
-
 PORTNAME=	tarsnap-periodic
 PORTVERSION=	1.0.20170413
 CATEGORIES=	sysutils

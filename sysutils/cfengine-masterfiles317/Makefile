@@ -1,5 +1,3 @@
-# Created by: cy@FreeBSD.org
-
 PORTNAME=	cfengine-masterfiles
 PORTVERSION=	3.17.0
 CATEGORIES=	sysutils

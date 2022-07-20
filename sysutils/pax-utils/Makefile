@@ -1,5 +1,3 @@
-# Created by: Timothy Redaelli
-
 PORTNAME=	pax-utils
 PORTVERSION=	1.3.4
 DISTVERSIONPREFIX=	v

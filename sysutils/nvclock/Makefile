@@ -1,5 +1,3 @@
-# Created by: Samy Al Bahra <samy@kerneled.com>
-
 PORTNAME=	nvclock
 DISTVERSION=	0.8b4
 PORTREVISION=	7

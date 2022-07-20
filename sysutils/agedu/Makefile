@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	agedu
 PORTVERSION=	20211129.8cd63c5
 CATEGORIES=	sysutils

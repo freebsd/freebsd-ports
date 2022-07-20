@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Filesys-Statvfs
 PORTVERSION=	0.82
 PORTREVISION=	1

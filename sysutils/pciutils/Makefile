@@ -1,5 +1,3 @@
-# Created by: Samy Al Bahra <samy@kerneled.org>
-
 PORTNAME=	pciutils
 PORTVERSION=	3.8.0
 CATEGORIES=	sysutils

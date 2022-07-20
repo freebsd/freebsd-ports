@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gnome-settings-daemon
 PORTVERSION=	42.2
 CATEGORIES=	sysutils gnome

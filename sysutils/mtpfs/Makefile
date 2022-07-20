@@ -1,5 +1,3 @@
-# Created by: John Hixson <john@pcbsd.org>
-
 PORTNAME=	mtpfs
 PORTVERSION=	1.1
 PORTREVISION=	4

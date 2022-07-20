@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	puppet-mode.el
 PORTVERSION=	0.2
 PORTREVISION=	11

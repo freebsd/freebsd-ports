@@ -1,5 +1,3 @@
-# Created by: Colin Booth <colin@heliocat.net>
-
 PORTNAME=	s6
 PORTVERSION=	2.11.1.1
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	accountsservice
 PORTVERSION=	0.6.55
 PORTREVISION=	3

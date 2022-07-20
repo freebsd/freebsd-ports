@@ -1,5 +1,3 @@
-# Created by: Andreas Dobloug <andreasd@@ifi.uio.no>
-
 PORTNAME=	mgeupsd
 PORTVERSION=	0.3
 PORTREVISION=	2

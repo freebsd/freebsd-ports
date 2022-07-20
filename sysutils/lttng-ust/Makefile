@@ -1,5 +1,3 @@
-# Created by: Mahdi Mokhtari <mokhi64@gmail.com>
-
 PORTNAME=	lttng-ust
 PORTVERSION=	2.9.0
 PORTREVISION=	2

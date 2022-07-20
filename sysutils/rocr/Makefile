@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	rocr
 PORTVERSION=	1.9.1
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <tux@pinguru.net>
-
 PORTNAME=	megarc
 PORTVERSION=	1.51
 CATEGORIES=	sysutils

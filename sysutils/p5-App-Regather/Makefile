@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	App-Regather
 PORTVERSION=	0.83.00
 CATEGORIES=	sysutils perl5

@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	dvdbackup
 PORTVERSION=	0.4.2
 PORTREVISION=	7

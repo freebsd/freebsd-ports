@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	istio
 PORTVERSION=	1.7.4
 PORTREVISION=	3

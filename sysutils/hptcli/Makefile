@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	hptcli
 PORTVERSION=	3.6
 PORTREVISION=	1

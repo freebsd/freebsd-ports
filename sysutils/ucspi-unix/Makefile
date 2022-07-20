@@ -1,5 +1,3 @@
-# Created by: Patrick Rinke <patrick@rinke-bochum.de>
-
 PORTNAME=	ucspi-unix
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

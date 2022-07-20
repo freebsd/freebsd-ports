@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	fdupes
 PORTVERSION=	2.1.2
 DISTVERSIONPREFIX=	v

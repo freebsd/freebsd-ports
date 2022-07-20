@@ -1,5 +1,3 @@
-# Created by: Konstantin Reznichenko <kot@premierbank.dp.ua>
-
 PORTNAME=	mapchan
 PORTVERSION=	3.2
 PORTREVISION=	3

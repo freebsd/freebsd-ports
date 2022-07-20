@@ -1,5 +1,3 @@
-# Created by: Gert Doering <gert@space.net>
-
 PORTNAME=	BSD-getloadavg
 PORTVERSION=	0.03
 CATEGORIES=	sysutils perl5

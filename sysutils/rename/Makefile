@@ -1,5 +1,3 @@
-# Created by: Chad Castleberry AKA ritalin
-
 PORTNAME=	rename
 PORTVERSION=	1.99.2
 CATEGORIES=	sysutils

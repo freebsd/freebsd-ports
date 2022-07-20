@@ -1,5 +1,3 @@
-# Created by: Eugene Grosbein <eugen@FreeBSD.org>
-
 PORTNAME=	fusefs-webdavfs
 DISTVERSION=	g20200520
 PORTREVISION=	4

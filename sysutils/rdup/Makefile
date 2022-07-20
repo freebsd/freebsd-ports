@@ -1,5 +1,3 @@
-# Created by: Charlie Kester <corky1951@comcast.net>
-
 PORTNAME=	rdup
 PORTVERSION=	1.1.15
 PORTREVISION=	2

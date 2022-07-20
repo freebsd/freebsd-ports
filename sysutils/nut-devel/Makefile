@@ -1,5 +1,3 @@
-# Created by: Boris Popov <bp@FreeBSD.org>
-
 PORTNAME=	nut
 PORTVERSION=	${NUT_COMMIT_DATE}
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	neofetch
 DISTVERSION=	7.1.0
 CATEGORIES=	sysutils

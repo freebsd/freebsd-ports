@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Translation2
 PORTVERSION=	2.0.4
 PORTEPOCH=	1

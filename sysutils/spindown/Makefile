@@ -1,5 +1,3 @@
-# Created by: Arjan van der Velde <noresult@xs4all.nl>
-
 PORTNAME=	spindown
 PORTVERSION=	0.4
 CATEGORIES=	sysutils

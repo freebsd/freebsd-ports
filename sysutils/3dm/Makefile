@@ -1,5 +1,3 @@
-# Created by: Daniel Baker <dbaker@FreeBSD.org>
-
 PORTNAME=	3dm
 DISTVERSION=	2.11.00.021
 PORTREVISION=	4

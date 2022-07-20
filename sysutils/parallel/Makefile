@@ -1,5 +1,3 @@
-# Created by: Chris Howey <howeyc@gmail.com>
-
 PORTNAME=	parallel
 PORTVERSION=	20220622
 CATEGORIES=	sysutils

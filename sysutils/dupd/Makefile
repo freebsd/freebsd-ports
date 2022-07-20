@@ -1,5 +1,3 @@
-# Created by: Thomas Hurst <tom@hur.st>
-
 PORTNAME=	dupd
 PORTVERSION=	1.7
 CATEGORIES=	sysutils

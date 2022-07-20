@@ -1,5 +1,3 @@
-# Created by: sterling
-
 PORTNAME=	pcpustat
 PORTVERSION=	1.6
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Yinghong Liu <relaxbsd@gmail.com>
-
 PORTNAME=	relaxconf
 PORTVERSION=	1.1.1
 PORTREVISION=	3

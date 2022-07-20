@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	qlogtools
 PORTVERSION=	3.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	sqlfs
 PORTVERSION=	1.1
 PORTREVISION=	1

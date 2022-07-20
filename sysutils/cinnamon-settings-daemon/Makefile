@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	cinnamon-settings-daemon
 PORTVERSION=	4.8.5
 PORTREVISION=	2

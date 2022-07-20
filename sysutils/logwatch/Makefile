@@ -1,5 +1,3 @@
-# Created by: John D. "Trix" Farrar <trix@basement.net>
-
 PORTNAME=	logwatch
 PORTVERSION=	7.5.1
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Yonatan <Yonatan@xpert.com>
-
 PORTNAME=	foremost
 PORTVERSION=	1.5.7
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Jev Björsell <ports@ecadlabs.com>
-
 PORTNAME=	node_exporter
 PORTVERSION=	1.3.1
 DISTVERSIONPREFIX=v

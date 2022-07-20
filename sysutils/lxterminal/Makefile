@@ -1,5 +1,3 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
-
 PORTNAME=	lxterminal
 PORTVERSION=	0.4.0
 CATEGORIES=	sysutils

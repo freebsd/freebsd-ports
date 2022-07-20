@@ -1,5 +1,3 @@
-# Created by: pat
-
 PORTNAME=	lcdproc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.9

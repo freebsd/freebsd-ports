@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	File-Signature
 PORTVERSION=	1.009
 PORTREVISION=	1

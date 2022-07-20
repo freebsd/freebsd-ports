@@ -1,5 +1,3 @@
-# Created by: Jim Shewmaker
-
 PORTNAME=	nagios-statd
 PORTVERSION=	3.12
 PORTREVISION=	2

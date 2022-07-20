@@ -1,5 +1,3 @@
-# Created by: Dan Piponi <wmtop@tanelorn.demon.co.uk>
-
 PORTNAME=	wmtop
 PORTVERSION=	0.84
 PORTREVISION=	3

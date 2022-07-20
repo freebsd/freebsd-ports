@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	tmux
 DISTVERSION=	2.3
 PORTREVISION=	1

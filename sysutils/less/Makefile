@@ -1,5 +1,3 @@
-# Created by: Andrey A. Chernov <ache@FreeBSD.org>
-
 PORTNAME=	less
 PORTVERSION=	551
 PORTREVISION=	1

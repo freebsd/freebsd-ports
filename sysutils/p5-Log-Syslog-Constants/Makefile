@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	Log-Syslog-Constants
 PORTVERSION=	1.02
 CATEGORIES=	sysutils perl5

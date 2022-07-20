@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	byobu
 PORTVERSION=	5.133
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	magicrescue
 PORTVERSION=	1.1.10
 DISTVERSIONPREFIX=	v

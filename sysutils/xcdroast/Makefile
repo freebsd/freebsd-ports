@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <Kai_Allard_Liao@gmx.de>
-
 PORTNAME=	xcdroast
 PORTVERSION=	0.98.a.16
 PORTREVISION=	7

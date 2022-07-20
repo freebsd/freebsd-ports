@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	sys-admin
 PORTVERSION=	1.8.1
 CATEGORIES=	sysutils rubygems

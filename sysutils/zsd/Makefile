@@ -1,5 +1,3 @@
-# Created by: Fabian Keil <fk@fabiankeil.de>
-
 PORTNAME=	zsd
 PORTVERSION=	0.0.2014.12.07
 CATEGORIES=	sysutils

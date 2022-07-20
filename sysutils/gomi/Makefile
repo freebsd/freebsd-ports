@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	gomi
 PORTVERSION=	1.1.3
 PORTREVISION=	2

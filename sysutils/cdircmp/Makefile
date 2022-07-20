@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	cdircmp
 PORTVERSION=	0.3
 CATEGORIES=	sysutils

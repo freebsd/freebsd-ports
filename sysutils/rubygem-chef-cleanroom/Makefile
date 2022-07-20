@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	chef-cleanroom
 PORTVERSION=	1.0.5
 CATEGORIES=	sysutils rubygems

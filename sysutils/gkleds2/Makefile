@@ -1,5 +1,3 @@
-# Created by: Jan Stocker <Jan.Stocker@t-online.de>
-
 PORTNAME=	gkleds2
 PORTVERSION=	0.8.2
 PORTREVISION=	9

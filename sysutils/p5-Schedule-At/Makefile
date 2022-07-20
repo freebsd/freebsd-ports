@@ -1,5 +1,3 @@
-# Created by: kuriyama
-
 PORTNAME=	Schedule-At
 PORTVERSION=	1.15
 PORTREVISION=	1

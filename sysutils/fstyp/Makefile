@@ -1,5 +1,3 @@
-# Created by: Sachidananda Urs
-
 PORTNAME=	fstyp
 PORTVERSION=	0.1
 CATEGORIES=	sysutils

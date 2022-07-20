@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	tmux
 PORTVERSION=	3.3a
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Jim Pirzyk <pirzyk@FreeBSD.org>
-
 PORTNAME=	Sys-Filesystem
 PORTVERSION=	1.401
 PORTREVISION=	1

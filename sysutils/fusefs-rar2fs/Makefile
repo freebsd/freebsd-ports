@@ -1,5 +1,3 @@
-# Created by: Joris Vandalon
-
 PORTNAME=	rar2fs
 DISTVERSION=	1.29.5
 DISTVERSIONPREFIX=	v

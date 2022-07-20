@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	pdumpfs
 PORTVERSION=	1.3
 PORTREVISION=	5

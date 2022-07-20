@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	watchfolder
 PORTVERSION=	0.3.3
 PORTREVISION=	1

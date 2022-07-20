@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	rubyipmi
 PORTVERSION=	0.11.1
 CATEGORIES=	sysutils rubygems

@@ -1,5 +1,3 @@
-# Created by: KIMURA Takamichi <takamiti@tsden.org>
-
 PORTNAME=	extipl
 PORTVERSION=	5.04
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	tmpreaper
 PORTVERSION=	1.6.17
 CATEGORIES=	sysutils

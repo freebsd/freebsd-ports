@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	debhelper
 PORTVERSION=	13.8
 CATEGORIES=	sysutils

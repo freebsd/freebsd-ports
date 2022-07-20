@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	liquidctl
 PORTVERSION=	1.10.0
 CATEGORIES=	sysutils python

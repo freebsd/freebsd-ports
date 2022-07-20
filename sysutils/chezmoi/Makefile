@@ -1,5 +1,3 @@
-# Created by: Samir Noir <samir@noir.im>
-
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.17.1

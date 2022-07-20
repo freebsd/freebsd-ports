@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	freecolor
 PORTVERSION=	0.9.3
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Xin Li <delphij@FreeBSD.org>
-
 PORTNAME=	ddpt
 PORTVERSION=	0.97
 CATEGORIES=	sysutils

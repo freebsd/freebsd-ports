@@ -1,5 +1,3 @@
-# Created by: Stefan Jahn <stefan.jahn@nemesis-sektor.de>
-
 PORTNAME=	k4dirstat
 PORTVERSION=	3.3.0
 CATEGORIES=	sysutils kde

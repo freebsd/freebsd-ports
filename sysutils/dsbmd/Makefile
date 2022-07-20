@@ -1,5 +1,3 @@
-# Created by: Marcel Kaiser <mk@nic-nac-project.org>
-
 PORTNAME=	dsbmd
 PORTVERSION=	1.11.4
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Rodrigo OSORIO <rodrigo@FreeBSD.org>
-
 PORTNAME=	filemon
 PORTVERSION=	0.0.1
 CATEGORIES=	sysutils

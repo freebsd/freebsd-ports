@@ -1,5 +1,3 @@
-# Created by: Gleb Smirnoff <glebius@FreeBSD.org>
-
 PORTNAME=	Filesys-ZFS
 PORTVERSION=	1.5
 CATEGORIES=	sysutils perl5

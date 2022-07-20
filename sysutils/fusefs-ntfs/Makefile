@@ -1,5 +1,3 @@
-# Created by: Max Khon
-
 PORTNAME=	ntfs
 PORTVERSION=	2022.5.17
 CATEGORIES=	sysutils

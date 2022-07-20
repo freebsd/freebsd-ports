@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	xfce4-settings
 PORTVERSION=	4.16.3
 CATEGORIES=	sysutils xfce

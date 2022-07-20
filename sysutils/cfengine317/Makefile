@@ -1,5 +1,3 @@
-# Created by: jrhett@netconsonance.com
-
 PORTNAME=	cfengine
 PORTVERSION=	3.17.0
 PORTREVISION=	2

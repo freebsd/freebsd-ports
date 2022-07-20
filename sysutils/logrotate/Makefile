@@ -1,5 +1,3 @@
-# Created by: Yuan-Chen Cheng <ycheng@sinica.edu.tw>
-
 PORTNAME=	logrotate
 PORTVERSION=	3.13.0
 PORTREVISION=	1

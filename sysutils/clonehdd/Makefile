@@ -1,5 +1,3 @@
-# Created by: Anton Lysenok <bart@tapolsky.net.ua>
-
 PORTNAME=	clonehdd
 PORTVERSION=	2.0.3
 PORTREVISION=	1

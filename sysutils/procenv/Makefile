@@ -1,5 +1,3 @@
-# Created by: James Hunt <james.hunt@ubuntu.com>
-
 PORTNAME=	procenv
 DISTVERSION=	0.60
 CATEGORIES=	sysutils

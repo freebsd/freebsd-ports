@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Sys-User-UIDhelper
 PORTVERSION=	0.0.1
 PORTREVISION=	1

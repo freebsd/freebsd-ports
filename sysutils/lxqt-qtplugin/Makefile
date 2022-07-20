@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	lxqt-qtplugin
 PORTVERSION=	1.1.0
 CATEGORIES=	sysutils

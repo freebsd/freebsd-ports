@@ -1,5 +1,3 @@
-# Created by: Patrice Clement <monsieurp@gentoo.org>
-
 PORTNAME=	hstr
 DISTVERSION=	2.3
 CATEGORIES=	sysutils

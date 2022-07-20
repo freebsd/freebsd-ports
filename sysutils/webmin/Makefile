@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	webmin
 PORTVERSION=	1.996
 PORTREVISION=	0

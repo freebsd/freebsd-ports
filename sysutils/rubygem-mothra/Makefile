@@ -1,5 +1,3 @@
-# Created by: Jin-Sih, Lin <linpct@gmail.com>
-
 PORTNAME=	mothra
 PORTVERSION=	0.0.3
 CATEGORIES=	sysutils rubygems

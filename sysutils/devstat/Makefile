@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-
 PORTNAME=	devstat
 PORTVERSION=	0.3.3
 PORTREVISION=	1

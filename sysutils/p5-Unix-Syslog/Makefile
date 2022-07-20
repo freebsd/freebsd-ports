@@ -1,5 +1,3 @@
-# Created by: Blaz Zupan <blaz@amis.net>
-
 PORTNAME=	Unix-Syslog
 PORTVERSION=	1.1
 PORTREVISION=	1

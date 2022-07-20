@@ -1,5 +1,3 @@
-# Created by: Christer Edwards <christer.edwards@gmail.com>
-
 PORTNAME=	salt
 PORTVERSION=	3004.2
 PORTREVISION=	1

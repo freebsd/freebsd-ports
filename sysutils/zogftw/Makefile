@@ -1,5 +1,3 @@
-# Created by: Fabian Keil <fk@fabiankeil.de>
-
 PORTNAME=	zogftw
 PORTVERSION=	0.0.2022.06.25
 CATEGORIES=	sysutils

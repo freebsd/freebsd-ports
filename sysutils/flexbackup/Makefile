@@ -1,5 +1,3 @@
-# Created by: John Reynolds <johnjen@reynoldsnet.org>
-
 PORTNAME=	flexbackup
 PORTVERSION=	1.2.1
 PORTREVISION=	7

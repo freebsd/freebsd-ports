@@ -1,5 +1,3 @@
-# Created by: Edson Brandi <ebrandi@fugspbr.org>
-
 PORTNAME=	dar
 PORTVERSION=	2.5.14
 PORTREVISION=	3

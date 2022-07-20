@@ -1,5 +1,3 @@
-# Created by: Marius Strobl <marius@FreeBSD.org>
-
 PORTNAME=	mmc-utils
 DISTVERSION=	20211202
 DISTVERSIONSUFFIX=	-${MMC_GITSHASH}

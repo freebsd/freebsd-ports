@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	bulk_extractor
 PORTVERSION=	2.0.0
 PORTREVISION=	3

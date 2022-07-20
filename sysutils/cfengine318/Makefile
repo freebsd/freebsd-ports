@@ -1,5 +1,3 @@
-# Created by: jrhett@netconsonance.com
-
 PORTNAME=	cfengine
 PORTVERSION=	3.18.2
 CATEGORIES=	sysutils

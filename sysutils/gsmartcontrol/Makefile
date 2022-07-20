@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <c0rn@o2.pl>
-
 PORTNAME=	gsmartcontrol
 PORTVERSION=	1.1.3
 PORTREVISION=	6

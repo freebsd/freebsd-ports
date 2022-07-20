@@ -1,5 +1,3 @@
-# Created by: Artem Zaytsev <a.arepo@gmail.com>
-
 PORTNAME=	pp
 PORTVERSION=	1.03
 PORTREVISION=	1

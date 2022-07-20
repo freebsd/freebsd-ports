@@ -1,5 +1,3 @@
-# Created by: Michael Ranner <michael@ranner.eu>
-
 PORTNAME=	duply
 PORTVERSION=	2.1
 PORTREVISION=	1

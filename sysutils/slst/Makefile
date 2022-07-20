@@ -1,5 +1,3 @@
-# Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-
 PORTNAME=	slst
 PORTVERSION=	0.2
 PORTREVISION=	1

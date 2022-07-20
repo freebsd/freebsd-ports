@@ -1,5 +1,3 @@
-# Created by: Cosmin Stroe <cstroe1@uic.edu>
-
 PORTNAME=	zidrav
 PORTVERSION=	1.2.0
 PORTREVISION=	1

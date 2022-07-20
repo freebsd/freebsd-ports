@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	finfo
 PORTVERSION=	0.1
 CATEGORIES=	sysutils

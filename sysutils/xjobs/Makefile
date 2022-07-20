@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	xjobs
 PORTVERSION=	20200726
 CATEGORIES=	sysutils

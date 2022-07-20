@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tdb@FreeBSD.org>
-
 PORTNAME=	puppet-lint
 PORTVERSION=	2.5.2
 CATEGORIES=	sysutils rubygems

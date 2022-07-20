@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	screenFetch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.9.1-57

@@ -1,4 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 #   $MCom: ports/trunk/sysutils/gconf-editor/Makefile 19804 2014-08-13 14:55:11Z kwm $
 
 PORTNAME=	gconf-editor

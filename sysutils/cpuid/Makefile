@@ -1,5 +1,3 @@
-# Created by: uffe@uffe.org
-
 PORTNAME=	cpuid
 DISTVERSION=	20211031
 DISTVERSIONSUFFIX=	.src

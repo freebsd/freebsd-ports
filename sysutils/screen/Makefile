@@ -1,5 +1,3 @@
-# Created by: Andrey Chernov <ache@FreeBSD.org>
-
 PORTNAME=	screen
 PORTVERSION=	4.9.0
 PORTREVISION=	6

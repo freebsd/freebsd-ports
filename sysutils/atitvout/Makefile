@@ -1,5 +1,3 @@
-# Created by: Anish Mistry <amistry@am-productions.biz>
-
 PORTNAME=	atitvout
 PORTVERSION=	0.4
 CATEGORIES=	sysutils

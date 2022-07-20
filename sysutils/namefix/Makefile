@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	namefix
 PORTVERSION=	4.0.2
 PORTREVISION=	2

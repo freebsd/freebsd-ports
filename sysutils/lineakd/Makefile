@@ -1,5 +1,3 @@
-# Created by: Kay Lehmann
-
 PORTNAME=	lineakd
 PORTVERSION=	0.9
 PORTREVISION=	4

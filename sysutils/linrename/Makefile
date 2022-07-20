@@ -1,5 +1,3 @@
-# Created by: Jonathan Liu <Net147@hotmail.com>
-
 PORTNAME=	linrename
 PORTVERSION=	2.25.2
 CATEGORIES=	sysutils

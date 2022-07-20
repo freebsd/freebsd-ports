@@ -1,5 +1,3 @@
-# Created by: Daniel Solsona <daniel@ish.com.au>, Guido Falsi <madpilot@FreeBSD.org>
-
 PORTNAME=	logstash
 PORTVERSION=	7.17.3
 DISTVERSIONSUFFIX=	-darwin-x86_64

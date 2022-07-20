@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	BSD-Sysctl
 PORTVERSION=	0.12.2
 DISTVERSIONPREFIX=	v

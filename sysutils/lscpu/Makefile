@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	lscpu
 PORTVERSION=	1.2.0
 CATEGORIES=	sysutils

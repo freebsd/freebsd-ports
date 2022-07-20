@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@FreeBSD.org)
-
 PORTNAME=	tcplist
 PORTVERSION=	2.2
 PORTREVISION=	2

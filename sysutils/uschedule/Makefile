@@ -1,5 +1,3 @@
-# Created by: Thomas Seck <tmseck@netcologne.de>
-
 PORTNAME=	uschedule
 PORTVERSION=	0.7.1
 PORTREVISION=	1

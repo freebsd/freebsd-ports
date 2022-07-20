@@ -1,5 +1,3 @@
-# Created by: ntarmos@ceid.upatras.gr
-
 PORTNAME=	battmond
 DISTVERSION=	0.4
 PORTREVISION=	1

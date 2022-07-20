@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	mcollective-puppet-agent
 
 COMMENT=	MCollective agent to manage the Puppet Agent

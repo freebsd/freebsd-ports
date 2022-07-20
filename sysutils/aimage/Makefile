@@ -1,5 +1,3 @@
-# Created by: Chris Calvey <chris@securityforensics.co.uk>
-
 PORTNAME=	aimage
 PORTVERSION=	3.2.5
 PORTREVISION=	2

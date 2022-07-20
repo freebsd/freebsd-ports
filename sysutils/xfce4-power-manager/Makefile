@@ -1,5 +1,3 @@
-# Created by: J.R. Oldroyd <fbsd@opal.com>
-
 PORTNAME=	xfce4-power-manager
 PORTVERSION=	4.16.0
 CATEGORIES=	sysutils xfce

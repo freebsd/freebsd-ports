@@ -1,5 +1,3 @@
-# Created by: Dom Mitchell <dom@happygiraffe.net>
-
 PORTNAME=	npadmin
 PORTVERSION=	0.8.7
 PORTREVISION=	1

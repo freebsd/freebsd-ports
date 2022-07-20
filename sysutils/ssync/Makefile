@@ -1,5 +1,3 @@
-# Created by: Andrew Shevtsov <nyxo@dnuc.polyn.kiae.su>
-
 PORTNAME=	ssync
 PORTVERSION=	2.3
 PORTREVISION=	2

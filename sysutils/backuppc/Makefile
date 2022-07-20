@@ -1,5 +1,3 @@
-# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
-
 PORTNAME=	backuppc
 PORTVERSION=	3.3.2
 PORTREVISION=	5

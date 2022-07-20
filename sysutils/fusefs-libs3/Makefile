@@ -1,5 +1,3 @@
-# Created by: Stefan Esser
-
 PORTNAME=	fusefs-libs3
 DISTVERSION=	3.11.0
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv at kvedulv.de>
-
 PORTNAME=	yell
 PORTVERSION=	2.2.2
 CATEGORIES=	sysutils ruby

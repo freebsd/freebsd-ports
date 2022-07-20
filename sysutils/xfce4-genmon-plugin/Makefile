@@ -1,5 +1,3 @@
-# Created by: Matt Lancereau <ports@FreeBSD.org>
-
 PORTNAME=	xfce4-genmon-plugin
 PORTVERSION=	4.1.1
 CATEGORIES=	sysutils xfce

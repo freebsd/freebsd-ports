@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	vimpager
 DISTVERSION=	2.06.20200712
 PORTREVISION=	1

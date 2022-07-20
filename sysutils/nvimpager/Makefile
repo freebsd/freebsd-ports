@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	nvimpager
 PORTVERSION=	0.10.4
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Sys-Group-GIDhelper
 PORTVERSION=	0.0.2
 PORTREVISION=	1

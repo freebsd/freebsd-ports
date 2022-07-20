@@ -1,5 +1,3 @@
-# Created by: Charles Swiger <chuck@pkix.net>
-
 PORTNAME=	dvd+rw-tools
 PORTVERSION=	7.1
 PORTREVISION=	3

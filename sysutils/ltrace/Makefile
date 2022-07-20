@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbz@FreeBSD.org>
-
 PORTNAME=	ltrace
 PORTVERSION=	0.6.0
 CATEGORIES=	sysutils

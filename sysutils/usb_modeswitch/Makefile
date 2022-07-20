@@ -1,5 +1,3 @@
-# Created by: Alexander V. Chernikov <melifaro@FreeBSD.org>
-
 PORTNAME=	usb_modeswitch
 PORTVERSION=	2.6.0
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: michael@fuckner.net
-
 PORTNAME=	arcconf
 DISTVERSION=	4_01_24763
 PORTEPOCH=	1

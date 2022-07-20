@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	rovclock
 PORTVERSION=	0.6e
 CATEGORIES=	sysutils

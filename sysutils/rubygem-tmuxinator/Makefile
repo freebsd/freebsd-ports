@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	tmuxinator
 PORTVERSION=	3.0.5
 CATEGORIES=	sysutils ruby

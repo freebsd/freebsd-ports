@@ -1,5 +1,3 @@
-# Created by: shige
-
 PORTNAME=	eject
 PORTVERSION=	1.5
 PORTREVISION=	4

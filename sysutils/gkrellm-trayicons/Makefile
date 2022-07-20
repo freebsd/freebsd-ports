@@ -1,5 +1,3 @@
-# Created by: Tobias Roth <ports@fsck.ch>
-
 PORTNAME=	trayicons
 PORTVERSION=	1.03
 PORTREVISION=	8

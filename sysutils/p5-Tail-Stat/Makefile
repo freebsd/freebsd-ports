@@ -1,5 +1,3 @@
-# Created by: Oleg A. Mamontov <oleg@mamontov.net>
-
 PORTNAME=	Tail-Stat
 PORTVERSION=	0.26
 CATEGORIES=	sysutils perl5

@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	f3
 PORTVERSION=	8.0
 DISTVERSIONPREFIX=	v

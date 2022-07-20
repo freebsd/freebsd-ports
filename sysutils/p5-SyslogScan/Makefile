@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	SyslogScan
 PORTVERSION=	0.32
 PORTREVISION=	3

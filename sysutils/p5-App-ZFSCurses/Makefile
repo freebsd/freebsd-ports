@@ -1,5 +1,3 @@
-# Created by: Patrice Clement <monsieurp@gentoo.org
-
 PORTNAME=	App-ZFSCurses
 PORTVERSION=	1.212
 CATEGORIES=	sysutils perl5

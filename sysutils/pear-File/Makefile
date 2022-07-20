@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	File
 PORTVERSION=	1.4.1
 PORTEPOCH=	2

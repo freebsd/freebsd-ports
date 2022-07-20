@@ -1,5 +1,3 @@
-# Created by: Christer Edwards <christer.edwards@gmail.com>
-
 PORTNAME=	rocinante
 DISTVERSION=	0.1.20220216
 CATEGORIES=	sysutils

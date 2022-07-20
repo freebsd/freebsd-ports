@@ -1,5 +1,3 @@
-# Created by: Jason Harris <jharris@widomaker.com>
-
 PORTNAME=	file
 PORTVERSION=	5.39
 CATEGORIES=	sysutils

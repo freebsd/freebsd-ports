@@ -1,5 +1,3 @@
-# Created by: Xavier Beaudouin <kiwi@oav.net>
-
 PORTNAME=	syslogger
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

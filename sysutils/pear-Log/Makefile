@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas (<thierry@pompo.net>)
-
 PORTNAME=	Log
 PORTVERSION=	1.13.3
 CATEGORIES=	sysutils www pear

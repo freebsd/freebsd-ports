@@ -1,5 +1,3 @@
-# Created by: Michael Reifenberger
-
 PORTNAME=	gstopd
 PORTVERSION=	1.1
 CATEGORIES=	sysutils

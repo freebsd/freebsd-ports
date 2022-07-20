@@ -1,5 +1,3 @@
-# Created by: futatuki
-
 PORTNAME=	cdrdao
 PORTVERSION=	1.2.4
 PORTREVISION=	5

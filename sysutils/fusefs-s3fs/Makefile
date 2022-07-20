@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	s3fs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.91

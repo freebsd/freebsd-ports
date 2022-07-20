@@ -1,5 +1,3 @@
-# Created by: Hung-Yi Chen <gaod@hychen.org>
-
 PORTNAME=	sshsudo
 PORTVERSION=	1.0
 PORTREVISION=	1

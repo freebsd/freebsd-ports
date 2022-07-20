@@ -1,5 +1,3 @@
-# Created by: Denis Barov
-
 PORTNAME=	smbnetfs
 PORTVERSION=	0.6.1
 PORTREVISION=	4

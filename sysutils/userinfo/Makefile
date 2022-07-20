@@ -1,5 +1,3 @@
-# Created by: Ben Kibbey <bjk@arbornet.org>
-
 PORTNAME=	userinfo
 PORTVERSION=	2.5
 CATEGORIES=	sysutils

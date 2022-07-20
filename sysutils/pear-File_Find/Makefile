@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	File_Find
 PORTVERSION=	1.3.3
 CATEGORIES=	sysutils www pear

@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-control-center
 PORTVERSION=	42.2
 CATEGORIES=	sysutils gnome

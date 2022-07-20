@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	upower
 PORTVERSION=	0.99.20
 DISTVERSIONPREFIX=	v

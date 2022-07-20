@@ -1,5 +1,3 @@
-# Created by: Boris Samorodov <bsam@FreeBSD.org>
-
 PORTNAME=		seatools
 PORTVERSION=		2.54
 CATEGORIES=		sysutils linux

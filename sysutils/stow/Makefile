@@ -1,5 +1,3 @@
-# Created by: Cyrille Lefevre <clefevre@citeweb.net>
-
 PORTNAME=	stow
 PORTVERSION=	2.3.1
 CATEGORIES=	sysutils

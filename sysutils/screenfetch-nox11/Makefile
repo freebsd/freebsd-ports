@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PKGNAMESUFFIX=	-nox11
 
 MASTERDIR=	${.CURDIR}/../screenfetch

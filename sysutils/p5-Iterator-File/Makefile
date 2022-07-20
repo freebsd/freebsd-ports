@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Iterator-File
 PORTVERSION=	1.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Samba-SIDhelper
 PORTVERSION=	0.0.0
 PORTREVISION=	3

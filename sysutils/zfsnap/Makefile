@@ -1,5 +1,3 @@
-# Created by: Aldis Berjoza <aldis@bsdroot.lv>
-
 PORTNAME=	zfsnap
 PORTVERSION=	1.11.1
 DISTVERSIONPREFIX=	v

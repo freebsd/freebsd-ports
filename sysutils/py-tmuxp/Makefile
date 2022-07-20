@@ -1,5 +1,3 @@
-# Created by: Tony Narlock <tony@git-pull.com>
-
 PORTNAME=	tmuxp
 PORTVERSION=	1.11.1
 CATEGORIES=	sysutils python

@@ -1,5 +1,3 @@
-# Created by: Fukang Chen <loader@FreeBSD.org>
-
 PORTNAME=	honcho
 PORTVERSION=	1.0.1
 PORTREVISION=	1

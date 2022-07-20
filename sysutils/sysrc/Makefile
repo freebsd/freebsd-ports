@@ -1,5 +1,3 @@
-# Created by: Devin Teske <dteske@FreeBSD.org>
-
 PORTNAME=	sysrc
 PORTVERSION=	5.2
 CATEGORIES=	sysutils

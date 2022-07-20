@@ -1,5 +1,3 @@
-# Created by: Matthew Dillon <dillon@backplane.com>
-
 PORTNAME=	cpdup
 PORTVERSION=	1.22
 CATEGORIES=	sysutils

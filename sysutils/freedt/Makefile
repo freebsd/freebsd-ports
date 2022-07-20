@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	freedt
 PORTVERSION=	23
 CATEGORIES=	sysutils

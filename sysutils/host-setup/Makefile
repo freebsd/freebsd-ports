@@ -1,5 +1,3 @@
-# Created by: Devin Teske <dteske@vicor.com>
-
 PORTNAME=	host-setup
 PORTVERSION=	4.0.2
 CATEGORIES=	sysutils

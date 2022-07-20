@@ -1,5 +1,3 @@
-# Created by: Andris Raugulis <moo@arthepsy.eu>
-
 PORTNAME=	s6-rc
 PORTVERSION=	0.5.3.2
 CATEGORIES=	sysutils

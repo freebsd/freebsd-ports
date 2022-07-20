@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	fpart
 PORTVERSION=	1.5.1
 CATEGORIES=	sysutils

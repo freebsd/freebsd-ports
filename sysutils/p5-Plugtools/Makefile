@@ -1,5 +1,3 @@
-# Created by: Zane C, Bowers <vvelox@vvelox.net>
-
 PORTNAME=	Plugtools
 PORTVERSION=	1.3.0
 PORTREVISION=	2

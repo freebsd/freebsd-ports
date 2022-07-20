@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Proc-PidUtil
 PORTVERSION=	0.09
 PORTREVISION=	1

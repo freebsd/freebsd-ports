@@ -1,5 +1,3 @@
-# Created by: Thomas Bartelmess <thomas@bartelmess.io>
-
 PORTNAME=	graylog
 DISTVERSION=	4.3.1
 CATEGORIES=	sysutils java

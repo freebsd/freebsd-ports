@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	helm
 PORTVERSION=	3.7.2
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Charlie Kester <corky1951@comcast.net>
-
 PORTNAME=	moreutils
 PORTVERSION=	0.67
 PORTREVISION=	2

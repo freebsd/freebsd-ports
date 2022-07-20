@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	zfsnap
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0-beta3

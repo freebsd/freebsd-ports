@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	rainbarf
 PORTVERSION=	1.4
 PORTREVISION=	1

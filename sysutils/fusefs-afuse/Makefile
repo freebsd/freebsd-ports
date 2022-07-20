@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	afuse
 PORTVERSION=	0.4.1
 PORTREVISION=	1

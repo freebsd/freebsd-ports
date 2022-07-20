@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Cache_Lite
 PORTVERSION=	1.8.3
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	hiera-file
 PORTVERSION=	1.1.1
 PORTREVISION=	2

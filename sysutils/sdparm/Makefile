@@ -1,5 +1,3 @@
-# Created by: Xin LI <delphij@FreeBSD.org>
-
 PORTNAME=	sdparm
 PORTVERSION=	1.12
 CATEGORIES=	sysutils

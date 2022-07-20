@@ -1,5 +1,3 @@
-# Created by: Boris Kochergin <spawk@acm.poly.edu>
-
 PORTNAME=	geomWatch
 PORTVERSION=	1.3.0
 PORTREVISION=	3

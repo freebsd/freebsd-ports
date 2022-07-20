@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	metalog
 PORTVERSION=	3
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: jpaetzel@FreeBSD.org
-
 PORTNAME=	catfish
 PORTVERSION=	4.16.4
 CATEGORIES=	sysutils

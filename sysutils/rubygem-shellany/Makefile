@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	shellany
 PORTVERSION=	0.0.1
 CATEGORIES=	sysutils rubygems

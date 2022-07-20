@@ -1,5 +1,3 @@
-# Created by: Mario S F Ferreira <lioux@linf.unb.br> et al.
-
 PORTNAME=	clockspeed
 PORTVERSION=	0.62
 PORTREVISION=	5

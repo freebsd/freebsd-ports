@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	vmstat
 PORTVERSION=	2.3.1
 CATEGORIES=	sysutils rubygems

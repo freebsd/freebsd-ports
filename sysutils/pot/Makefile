@@ -1,5 +1,3 @@
-# Created by: Luca Pizzamiglio <pizzamig@FreeBSD.org>
-
 PORTNAME=	pot
 DISTVERSION=	0.14.0
 PORTREVISION=	0

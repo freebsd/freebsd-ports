@@ -1,5 +1,3 @@
-# Created by: Mykola Dzham <i@levsha.me>
-
 PORTNAME=	drmaa
 PORTVERSION=	0.4b3
 PORTREVISION=	1

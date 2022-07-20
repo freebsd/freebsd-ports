@@ -1,5 +1,3 @@
-# Created by: samm
-
 PORTNAME=	fsbackup
 PORTVERSION=	1.2.1
 PORTREVISION=	3

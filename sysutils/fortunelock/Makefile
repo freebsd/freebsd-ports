@@ -1,5 +1,3 @@
-# Created by: Daniel Harris <dannyboy@subdimension.com>
-
 PORTNAME=	fortunelock
 PORTVERSION=	0.1.2
 CATEGORIES=	sysutils

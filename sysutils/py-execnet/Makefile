@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	execnet
 PORTVERSION=	1.9.0
 CATEGORIES=	sysutils python

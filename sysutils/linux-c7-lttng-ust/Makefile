@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
-
 PORTNAME=	lttng-ust
 PORTVERSION=	2.4.1
 DISTVERSIONSUFFIX=	-4.el7

@@ -1,5 +1,3 @@
-# Created by: Jeremy Chadwick <jdc@parodius.com>
-
 PORTNAME=	bsdhwmon
 PORTVERSION=	20151206
 CATEGORIES=	sysutils

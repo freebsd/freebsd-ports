@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@jelal.hb.north.de>
-
 PORTNAME=	afio
 PORTVERSION=	2.5.2
 CATEGORIES=	sysutils

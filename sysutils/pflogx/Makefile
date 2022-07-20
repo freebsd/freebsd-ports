@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	pflogx
 PORTVERSION=	0.86
 CATEGORIES=	sysutils

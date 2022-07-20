@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	libfvde
 PORTVERSION=	20210425
 DISTVERSIONPREFIX=	experimental-

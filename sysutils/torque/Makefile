@@ -1,5 +1,3 @@
-# Created by: trasz
-
 PORTNAME=	torque
 PORTVERSION=	2.5.13
 PORTREVISION=	2

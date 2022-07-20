@@ -1,5 +1,3 @@
-# Created by: Gabor Zahemszky
-
 PORTNAME=	ifuse
 PORTVERSION=	1.1.4
 CATEGORIES=	sysutils

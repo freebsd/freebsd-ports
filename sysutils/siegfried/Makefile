@@ -1,5 +1,3 @@
-# Created by: Steffen Fritz <steffen@fritz.wtf>
-
 PORTNAME=	siegfried
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.4

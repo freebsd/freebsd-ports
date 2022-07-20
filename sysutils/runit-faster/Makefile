@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	runit
 DISTVERSION=	2.1.3.7
 CATEGORIES=	sysutils

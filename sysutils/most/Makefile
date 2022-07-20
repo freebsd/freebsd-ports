@@ -1,5 +1,3 @@
-# Created by: rhwang@bigpanda.com
-
 PORTNAME=	most
 PORTVERSION=	5.1.0
 CATEGORIES=	sysutils

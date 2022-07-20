@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	filedupe
 PORTVERSION=	1.1
 PORTREVISION=	4

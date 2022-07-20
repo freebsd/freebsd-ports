@@ -1,5 +1,3 @@
-# Created by: Peter Edwards <pmedwards@eircom.net>
-
 PORTNAME=	pstack
 PORTVERSION=	1.3
 CATEGORIES=	sysutils

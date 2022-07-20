@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PKGNAMESUFFIX=	-awesome
 
 MAINTAINER=	madpilot@FreeBSD.org

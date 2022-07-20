@@ -1,5 +1,3 @@
-# Created by: Sean Rees <sean@rees.us>
-
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
 CATEGORIES=	sysutils perl5

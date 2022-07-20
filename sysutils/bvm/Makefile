@@ -1,5 +1,3 @@
-# Created by: Qiang Guo <guoqiang_cn@126.com>
-
 PORTNAME=	bvm
 PORTVERSION=	1.3.3
 CATEGORIES=	sysutils

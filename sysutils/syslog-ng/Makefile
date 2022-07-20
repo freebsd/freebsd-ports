@@ -1,5 +1,3 @@
-# Created by: Ivan Lago <ivan.lago@ifom-ieo-campus.it>
-
 PORTNAME=	syslog-ng
 DISTVERSION=	3.37.1
 CATEGORIES=	sysutils

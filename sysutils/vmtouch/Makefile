@@ -1,5 +1,3 @@
-# Created by: Mikolaj Golub <trociny@FreeBSD.org>
-
 PORTNAME=	vmtouch
 PORTVERSION=	1.3.1
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Tom Rhodes <trhodes@FreeBSD.org>
-
 PORTNAME=	fsc
 PORTVERSION=	1.2
 CATEGORIES=	sysutils

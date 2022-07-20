@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	titlefix
 PORTVERSION=	0.5.3
 CATEGORIES=	sysutils

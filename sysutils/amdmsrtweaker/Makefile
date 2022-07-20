@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	amdmsrtweaker
 PORTVERSION=	1.1
 CATEGORIES=	sysutils

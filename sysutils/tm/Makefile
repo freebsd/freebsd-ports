@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	tm
 PORTVERSION=	0.4.1
 PORTREVISION=	1

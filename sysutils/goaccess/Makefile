@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbrabez@gmail.com>
-
 PORTNAME=	goaccess
 PORTVERSION=	1.5.7
 CATEGORIES=	sysutils

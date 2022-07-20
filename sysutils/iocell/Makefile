@@ -1,5 +1,3 @@
-# Created by: Bartek Rutkowski <robak@FreeBSD.org>
-
 PORTNAME=	iocell
 PORTVERSION=	2.1.2
 DISTVERSIONPREFIX=v

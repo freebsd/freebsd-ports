@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	dolly
 DISTVERSION=	0.58C
 CATEGORIES=	sysutils net

@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	sysvbanner
 PORTVERSION=	1.0.15
 DISTVERSIONPREFIX=	v

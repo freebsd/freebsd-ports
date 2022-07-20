@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	vobcopy
 PORTVERSION=	1.2.0
 PORTREVISION=	8

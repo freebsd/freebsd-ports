@@ -1,5 +1,3 @@
-# Created by: Cy Schubert <cy@FreeBSD.org>
-
 PORTNAME=	mxkill
 PORTVERSION=	1.2
 CATEGORIES=	sysutils

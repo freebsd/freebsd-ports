@@ -1,5 +1,3 @@
-# Created by: Peter TKATHENKO <peter@flytrace.com>
-
 PORTNAME=	evisum
 PORTVERSION=	0.6.0
 CATEGORIES=	sysutils enlightenment

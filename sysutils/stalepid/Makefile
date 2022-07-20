@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	stalepid
 PORTVERSION=	1.0.2
 CATEGORIES=	sysutils

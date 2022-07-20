@@ -1,5 +1,3 @@
-# Created by: Markus Brueffer <markus@FreeBSD.org>
-
 PORTNAME=	pdixtract
 PORTVERSION=	1.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Evgeny Zhirnov <jirnov@gmail.com>
-
 PORTNAME=	archivemount
 DISTVERSION=	0.8.12
 PORTREVISION=	2

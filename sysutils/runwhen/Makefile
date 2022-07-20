@@ -1,5 +1,3 @@
-# Created by: David Thiel <lx@redundancy.redundancy.org>
-
 PORTNAME=	runwhen
 PORTVERSION=	2021.04.30
 CATEGORIES=	sysutils

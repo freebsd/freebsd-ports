@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	bacula
 PORTVERSION=	11.0.6
 CATEGORIES?=	sysutils

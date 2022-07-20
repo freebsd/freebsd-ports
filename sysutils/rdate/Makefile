@@ -1,5 +1,3 @@
-# Created by: cracauer@cons.org "Martin Cracauer"
-
 PORTNAME=	rdate
 PORTVERSION=	20150501
 CATEGORIES=	sysutils

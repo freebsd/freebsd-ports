@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	dd_rescue
 PORTVERSION=	1.99.11
 CATEGORIES=	sysutils

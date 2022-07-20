@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	wiimms
 DISTVERSION=	2.23a
 PORTREVISION=	9

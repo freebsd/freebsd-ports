@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	unetbootin
 PORTVERSION=	702
 PORTREVISION=	2

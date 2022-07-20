@@ -1,5 +1,3 @@
-# Created by: Dryice Liu <dryice@dryice.name>
-
 PORTNAME=	cw
 PORTVERSION=	1.0.16
 PORTREVISION=	1

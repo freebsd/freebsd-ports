@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	license_scout
 PORTVERSION=	2.6.7
 CATEGORIES=	sysutils rubygems

@@ -1,5 +1,3 @@
-# Created by: Emmanuel Vadot <manu@freebsd.org>
-
 PORTNAME=	u-boot-tools
 DISTVERSION=	2020.07
 CATEGORIES=	sysutils

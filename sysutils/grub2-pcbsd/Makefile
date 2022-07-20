@@ -1,5 +1,3 @@
-# Created by: kmoore@FreeBSD.org
-
 PORTNAME=	grub2-pcbsd
 PORTVERSION=	2.02q
 PORTREVISION=	17

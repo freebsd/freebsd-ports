@@ -1,5 +1,3 @@
-# Created by: Craig Leres <leres@FreeBSD.org>
-
 PORTNAME=	cf
 PORTVERSION=	1.2.5
 CATEGORIES=	sysutils

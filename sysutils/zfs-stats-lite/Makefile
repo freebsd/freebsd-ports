@@ -1,5 +1,3 @@
-# Created by: Devin Teske <dteske@FreeBSD.org>
-
 PORTNAME=	zfs-stats-lite
 PORTVERSION=	1.4
 CATEGORIES=	sysutils

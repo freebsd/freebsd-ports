@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	read-edid
 PORTVERSION=	3.0.2
 CATEGORIES=	sysutils

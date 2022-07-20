@@ -1,5 +1,3 @@
-# Created by: mranner@inode.at
-
 PORTNAME=	scan_ffs
 PORTVERSION=	1.2
 CATEGORIES=	sysutils

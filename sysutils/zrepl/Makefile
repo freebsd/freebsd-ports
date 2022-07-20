@@ -1,5 +1,3 @@
-# Created by: Nikolai Lifanov <lifanov@FreeBSD.org> and Ben Woods <woodsb02@FreeBSD.org>
-
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0-8

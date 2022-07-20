@@ -1,5 +1,3 @@
-# Created by: Nikolay Dachev <jadm@dachev.info>
-
 PORTNAME=	jadm
 PORTVERSION=	1.0
 CATEGORIES=	sysutils python

@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	vttest
 PORTVERSION=	2018.08.11
 CATEGORIES=	sysutils

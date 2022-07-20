@@ -1,5 +1,3 @@
-# Created by: Austin Shafer <ashafer@badland.io>
-
 PORTNAME=	packmule
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.1

@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <steven@exit2shell.com>
-
 PORTNAME=	dtrace-toolkit
 PORTVERSION=	1.0
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Log
 PORTVERSION=	2.3.0
 PORTREVISION=	1

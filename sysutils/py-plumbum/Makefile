@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
-
 PORTNAME=	plumbum
 PORTVERSION=	1.7.2
 CATEGORIES=	sysutils python

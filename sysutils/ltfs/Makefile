@@ -1,5 +1,3 @@
-# Created by: Kevin Bowling <kbowling@FreeBSD.org>
-
 PORTNAME=	ltfs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.4.0

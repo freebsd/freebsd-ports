@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	conky
 PORTVERSION=	1.12.2
 DISTVERSIONPREFIX=	v

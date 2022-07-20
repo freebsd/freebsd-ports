@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	eclat
 PORTVERSION=	2.1
 CATEGORIES=	sysutils net

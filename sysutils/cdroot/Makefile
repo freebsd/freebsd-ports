@@ -1,5 +1,3 @@
-# Created by: Brian Dean <bsd@FreeBSD.org>
-
 PORTNAME=	cdroot
 PORTVERSION=	1.2.6
 CATEGORIES=	sysutils

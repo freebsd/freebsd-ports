@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Filesys-DiskSpace
 PORTVERSION=	0.05
 PORTREVISION=	1

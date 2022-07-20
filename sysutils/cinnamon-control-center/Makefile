@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	4.8.2
 PORTREVISION=	2

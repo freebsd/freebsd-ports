@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	chgrep
 PORTVERSION=	1.2.4
 CATEGORIES=	sysutils

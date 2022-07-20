@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	unquote
 PORTVERSION=	1.0.b4
 CATEGORIES=	sysutils

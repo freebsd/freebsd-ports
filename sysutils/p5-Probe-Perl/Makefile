@@ -1,5 +1,3 @@
-# Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
-
 PORTNAME=	Probe-Perl
 PORTVERSION=	0.03
 CATEGORIES=	sysutils perl5

@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv@kvedulv.de>
-
 PORTNAME=	hammer_cli
 PORTVERSION=	3.3.0
 CATEGORIES=	sysutils ruby

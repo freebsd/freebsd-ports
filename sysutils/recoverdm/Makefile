@@ -1,5 +1,3 @@
-# Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-
 PORTNAME=	recoverdm
 PORTVERSION=	0.20
 CATEGORIES=	sysutils

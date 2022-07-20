@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	File-Which
 PORTVERSION=	1.27
 CATEGORIES=	sysutils perl5

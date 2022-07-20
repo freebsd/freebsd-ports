@@ -1,5 +1,3 @@
-# Created by: Andrew <andrew@ugh.net.au>, Iain Templeton <iain@ugh.net.au>
-
 PORTNAME=	doinkd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.02

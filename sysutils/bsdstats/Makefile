@@ -1,5 +1,3 @@
-# Created by: Marc G. Fournier <scrappy@FreeBSD.org>
-
 PORTNAME=	bsdstats
 PORTVERSION=	7.0
 PORTREVISION=	2

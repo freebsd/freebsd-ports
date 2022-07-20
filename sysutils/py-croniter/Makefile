@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	croniter
 PORTVERSION=	0.3.20
 CATEGORIES=	sysutils python

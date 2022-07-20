@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	logstalgia
 DISTVERSION=	1.1.3
 PORTREVISION=	1

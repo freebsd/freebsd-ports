@@ -1,5 +1,3 @@
-# Created by: Miguel Mendez <flynn@energyhq.homeip.net>
-
 PORTNAME=	thefish
 PORTVERSION=	0.6.7
 CATEGORIES=	sysutils

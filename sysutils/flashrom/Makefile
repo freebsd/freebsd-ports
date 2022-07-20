@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	flashrom
 PORTVERSION=	1.2
 DISTVERSIONPREFIX=	v

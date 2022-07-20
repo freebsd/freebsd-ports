@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	Sys-Hostname-Long
 PORTVERSION=	1.5
 PORTREVISION=	1

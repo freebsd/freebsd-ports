@@ -1,5 +1,3 @@
-# Created by: lx@redundancy.redundancy.org
-
 PORTNAME=	minirsyslogd
 PORTVERSION=	1.02
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Yasuhiro KIMURA <yasu@utahime.org>
-
 PORTNAME=	lockfile-progs
 DISTVERSION=	0.1.19
 CATEGORIES=	sysutils

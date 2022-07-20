@@ -1,5 +1,3 @@
-# Created by: Oliver Eikemeier
-
 PORTNAME=	tenshi
 PORTVERSION=	0.17
 PORTREVISION=	1

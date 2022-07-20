@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	sys-uname
 PORTVERSION=	1.2.2
 CATEGORIES=	sysutils rubygems

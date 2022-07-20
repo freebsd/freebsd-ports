@@ -1,5 +1,3 @@
-# Created by: Juraj Lutter <otis@sk.FreeBSD.org>
-
 PORTNAME=	tartarus
 PORTVERSION=	0.9.8
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Natacha Porte <natbsd@instinctive.eu>
-
 PORTNAME=	filewatcherd
 DISTVERSION=	1.0-beta3
 PORTEPOCH=	1

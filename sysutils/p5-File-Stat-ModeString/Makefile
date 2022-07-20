@@ -1,5 +1,3 @@
-# Created by: Jase Thew <freebsd@beardz.net>
-
 PORTNAME=	File-Stat-ModeString
 PORTVERSION=	1.00
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Dom Mitchell <dom@happygiraffe.net>
-
 PORTNAME=	ucspi-tcp
 PORTVERSION=	0.88
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Andrew Stevenson <andrew@ugh.net.au>
-
 PORTNAME=	gpart
 PORTVERSION=	0.1h
 PORTREVISION=	2

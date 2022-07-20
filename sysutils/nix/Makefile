@@ -1,5 +1,3 @@
-# Created by: Mateusz Piotrowski <0mp@FreeBSD.org>
-
 PORTNAME=	nix
 DISTVERSION=	2.3.10
 PORTREVISION=	2

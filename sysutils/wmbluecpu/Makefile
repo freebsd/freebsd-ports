@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	wmbluecpu
 PORTVERSION=	0.4
 PORTREVISION=	4

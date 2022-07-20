@@ -1,5 +1,3 @@
-# Created by: Bjoern A. Zeeb <bzeeb+freebsd+ports@zabbadoz.net>
-
 PORTNAME=	amrstat
 PORTVERSION=	20070216
 PORTREVISION=	1

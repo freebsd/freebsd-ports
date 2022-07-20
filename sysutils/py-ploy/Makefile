@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	ploy
 PORTVERSION=	1.5.2
 CATEGORIES=	sysutils python

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	batterycat
 PORTVERSION=	1.6
 CATEGORIES=	sysutils

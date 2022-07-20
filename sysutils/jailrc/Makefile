@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	jailrc
 PORTVERSION=	1.0
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Andy Fawcett <andy@athame.co.uk>
-
 PORTNAME=	uptimed
 PORTVERSION=	0.4.6
 DISTVERSIONPREFIX=	v

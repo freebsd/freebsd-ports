@@ -1,5 +1,3 @@
-# Created by: Baptiste Grenier <gwarf@gwarf.org>
-
 PORTNAME=	pydf
 PORTVERSION=	12
 CATEGORIES=	sysutils

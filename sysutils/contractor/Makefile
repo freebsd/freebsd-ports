@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	contractor
 PORTVERSION=	0.3.5
 CATEGORIES=	sysutils

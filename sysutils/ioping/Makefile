@@ -1,5 +1,3 @@
-# Created by: Oleg Ginzburg <olevole@olevole.ru>
-
 PORTNAME=	ioping
 PORTVERSION=	1.2
 DISTVERSIONPREFIX=	v

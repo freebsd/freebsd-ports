@@ -1,5 +1,3 @@
-# Created by: Remington Lang <MrL0Lz@gmail.com>
-
 PORTNAME=	915resolution
 PORTVERSION=	0.5.3
 PORTREVISION=	1

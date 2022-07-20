@@ -1,5 +1,3 @@
-# Created by: kmoore@FreeBSD.org
-
 PORTNAME=	grub2-efi
 PORTVERSION=	2.02
 PORTREVISION=	20

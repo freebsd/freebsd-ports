@@ -1,5 +1,3 @@
-# Created by: mich@freebsdcluster.org
-
 PORTNAME=	spinner
 PORTVERSION=	1.2.4
 CATEGORIES=	sysutils

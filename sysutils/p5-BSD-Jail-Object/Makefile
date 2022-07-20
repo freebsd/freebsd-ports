@@ -1,5 +1,3 @@
-# Created by: Mahlon E. Smith <mahlon@martini.nu>
-
 PORTNAME=	BSD-Jail-Object
 PORTVERSION=	0.02
 PORTREVISION=	4

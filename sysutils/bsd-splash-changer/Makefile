@@ -1,5 +1,3 @@
-# Created by: Martin Otto
-
 PORTNAME=	bsd-splash-changer
 PORTVERSION=	060211
 CATEGORIES=	sysutils

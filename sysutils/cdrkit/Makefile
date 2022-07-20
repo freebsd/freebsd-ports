@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	cdrkit
 PORTVERSION=	1.1.11
 PORTREVISION=	2

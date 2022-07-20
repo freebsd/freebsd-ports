@@ -1,5 +1,3 @@
-# Created by: jhb
-
 PORTNAME=	etcupdate
 PORTVERSION=	1.1
 CATEGORIES=	sysutils

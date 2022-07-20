@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	pxattr
 PORTVERSION=	2.1.0
 CATEGORIES=	sysutils

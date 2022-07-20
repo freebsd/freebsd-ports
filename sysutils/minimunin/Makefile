@@ -1,5 +1,3 @@
-# Created by: Dirk Engling <erdgeist@erdgeist.org>
-
 PORTNAME=	minimunin
 PORTVERSION=	0.5
 CATEGORIES=	sysutils

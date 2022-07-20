@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	bundler_ext
 PORTVERSION=	0.4.1
 CATEGORIES=	sysutils rubygems

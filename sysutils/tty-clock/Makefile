@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	tty-clock
 PORTVERSION=	2.3
 DISTVERSIONPREFIX=	v

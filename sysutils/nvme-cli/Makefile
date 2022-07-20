@@ -1,5 +1,3 @@
-# Created by: imp
-
 PORTNAME=	nvme-cli
 PORTVERSION=	1.8.1
 CATEGORIES=	sysutils

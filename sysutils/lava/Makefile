@@ -1,5 +1,3 @@
-# Created by: Dave Cottlehuber <dch@skunkwerks.at>
-
 PORTNAME=	lava
 PORTVERSION=	1.0.1
 CATEGORIES=	sysutils

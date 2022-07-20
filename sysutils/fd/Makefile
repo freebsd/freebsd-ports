@@ -1,5 +1,3 @@
-# Created by: Andrey Cherkashin <andoriyu@gmail.com>
-
 PORTNAME=	fd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.4.0

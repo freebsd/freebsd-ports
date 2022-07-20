@@ -1,5 +1,3 @@
-# Created by: koma2@lovepeers.org
-
 PORTNAME=	topless
 PORTVERSION=	1.52
 CATEGORIES=	sysutils

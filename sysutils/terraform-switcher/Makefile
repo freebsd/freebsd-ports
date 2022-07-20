@@ -1,5 +1,3 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	terraform-switcher
 DISTVERSION=	0.13.1250
 PORTREVISION=	2

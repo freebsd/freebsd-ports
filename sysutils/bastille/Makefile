@@ -1,5 +1,3 @@
-# Created by: Christer Edwards <christer.edwards@gmail.com>
-
 PORTNAME=	bastille
 PORTVERSION=	0.9.20220216
 CATEGORIES=	sysutils

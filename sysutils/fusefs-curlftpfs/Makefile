@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	curlftpfs
 PORTVERSION=	0.9.2
 PORTREVISION=	6

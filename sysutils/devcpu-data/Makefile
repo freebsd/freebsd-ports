@@ -1,5 +1,3 @@
-# Created by: stas
-
 PORTNAME=	data
 PORTVERSION=	20220510
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Sergey Kozlov <skozlov@FreeBSD.org>
-
 PORTNAME=	zfs-autobackup
 DISTVERSION=	3.1.2
 CATEGORIES=	sysutils python

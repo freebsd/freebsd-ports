@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	inotify-tools
 DISTVERSION=	3.22.6.0
 CATEGORIES=	sysutils

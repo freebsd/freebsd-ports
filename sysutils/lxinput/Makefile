@@ -1,5 +1,3 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
-
 PORTNAME=	lxinput
 PORTVERSION=	0.3.5
 CATEGORIES=	sysutils

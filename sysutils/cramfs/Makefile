@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	cramfs
 PORTVERSION=	1.1
 PORTREVISION=	1

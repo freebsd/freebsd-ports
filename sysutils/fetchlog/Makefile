@@ -1,5 +1,3 @@
-# Created by: Alexander Haderer <alexander.haderer@loescap.de>
-
 PORTNAME=	fetchlog
 PORTVERSION=	1.4
 CATEGORIES=	sysutils

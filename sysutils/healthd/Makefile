@@ -1,5 +1,3 @@
-# Created by: jim@thehousleys.net
-
 PORTNAME=	healthd
 PORTVERSION=	0.7.9
 PORTREVISION=	2

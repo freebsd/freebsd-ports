@@ -1,5 +1,3 @@
-# Created by: Dmitry Yu Okunev dyokunev@ut.mephi.ru
-
 PORTNAME=	clsync
 DISTVERSION=	0.4~rc2
 PORTREVISION=	2

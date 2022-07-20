@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	Dir-Purge
 PORTVERSION=	1.02
 PORTREVISION=	1

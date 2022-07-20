@@ -1,5 +1,3 @@
-# Created by: John Hixson <jhixson@FreeBSD.org>
-
 PORTNAME=	conman
 PORTVERSION=	0.3.0
 DISTVERSIONPREFIX=	conman-

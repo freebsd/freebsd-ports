@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	libieee1284
 PORTVERSION=	0.2.11
 CATEGORIES=	sysutils

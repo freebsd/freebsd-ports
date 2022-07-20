@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	parkverbot
 PORTVERSION=	1.5
 CATEGORIES=	sysutils

@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	isc-cron
 PORTVERSION=	4.1
 PORTREVISION=	2

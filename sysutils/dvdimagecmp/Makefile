@@ -1,5 +1,3 @@
-# Created by: Tim Welch <ports@thepentagon.org>
-
 PORTNAME=	dvdimagecmp
 PORTVERSION=	0.3
 CATEGORIES=	sysutils

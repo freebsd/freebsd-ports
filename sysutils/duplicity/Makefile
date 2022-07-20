@@ -1,5 +1,3 @@
-# Created by: Gerhard Häring <gh@ghaering.de>
-
 PORTNAME=	duplicity
 PORTVERSION=	0.8.23
 CATEGORIES=	sysutils

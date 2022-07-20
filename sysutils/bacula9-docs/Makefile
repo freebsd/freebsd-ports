@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dan@langille.org>
-
 PORTNAME=	bacula
 PORTVERSION=	9.6.7
 PORTREVISION=	1

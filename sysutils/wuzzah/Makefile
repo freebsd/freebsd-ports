@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	wuzzah
 PORTVERSION=	0.53
 CATEGORIES=	sysutils

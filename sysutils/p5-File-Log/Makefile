@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tom@tomjudge.com>
-
 PORTNAME=		File-Log
 PORTVERSION=		1.05
 PORTREVISION=	1

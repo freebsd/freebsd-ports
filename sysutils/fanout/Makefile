@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	fanout
 PORTVERSION=	0.6.1
 CATEGORIES=	sysutils

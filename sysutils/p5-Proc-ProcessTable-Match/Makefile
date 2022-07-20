@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Proc-ProcessTable-Match
 PORTVERSION=	0.0.1
 CATEGORIES=	sysutils perl5

@@ -1,5 +1,3 @@
-# Created by: Anish Mistry
-
 PORTNAME=	fusefs
 DISTVERSION=	2.9.9
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	kubectl
 PORTVERSION=	1.24.1
 PORTREVISION=	2

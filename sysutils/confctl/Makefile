@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	confctl
 PORTVERSION=	1.2
 CATEGORIES=	sysutils

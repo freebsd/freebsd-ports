@@ -1,5 +1,3 @@
-# Created by: J.R. Oldroyd <fbsd@opal.com>
-
 PORTNAME=	xfburn
 PORTVERSION=	0.6.2
 PORTREVISION=	1

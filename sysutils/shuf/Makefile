@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	shuf
 DISTVERSION=	3.0
 CATEGORIES=	sysutils

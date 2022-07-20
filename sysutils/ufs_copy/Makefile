@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	ufs_copy
 PORTVERSION=	20060921
 PORTREVISION=	2

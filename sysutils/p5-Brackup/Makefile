@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Brackup
 PORTVERSION=	1.10
 PORTREVISION=	3
