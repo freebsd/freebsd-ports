@@ -1,5 +1,3 @@
-# Created by: Doug Barton <dougb@FreeBSD.org>
-
 PORTNAME=	libtorrent-rasterbar
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.16

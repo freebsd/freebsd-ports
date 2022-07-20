@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	cpuminer
 PORTVERSION=	2.5.0
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Stas Timokhin <stast@bsdportal.ru>
-
 PORTNAME=	eiskaltdcpp
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	-data

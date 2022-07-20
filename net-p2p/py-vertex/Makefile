@@ -1,5 +1,3 @@
-# Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-
 PORTNAME=	vertex
 PORTVERSION=	0.3.1
 PORTREVISION=	3

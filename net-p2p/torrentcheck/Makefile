@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	torrentcheck
 PORTVERSION=	1.00
 PORTREVISION=	1

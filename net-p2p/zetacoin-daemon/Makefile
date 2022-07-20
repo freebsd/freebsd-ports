@@ -1,5 +1,3 @@
-# Created by: Daniel Morante <daniel@morante.net>
-
 MASTERDIR=	${.CURDIR}/../zetacoin
 PORTREVISION=	1
 PKGNAMESUFFIX=	-daemon

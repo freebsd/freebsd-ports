@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	udpt
 DISTVERSION=	g20200202
 CATEGORIES=	net-p2p

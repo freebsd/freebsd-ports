@@ -1,5 +1,3 @@
-# Created by: Yashin Dmitry <yashin.dm@gmail.com>
-
 PORTNAME=	uhub
 PORTVERSION=	0.5.1
 CATEGORIES=	net-p2p

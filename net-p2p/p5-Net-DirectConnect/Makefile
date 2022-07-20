@@ -1,5 +1,3 @@
-# Created by: Oleg Alexeenkov <proler@gmail.com>
-
 PORTNAME=	Net-DirectConnect
 PORTVERSION=	0.14
 PORTREVISION=	1

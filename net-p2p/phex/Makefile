@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	phex
 PORTVERSION=	3.4.2.116
 PORTREVISION=	1

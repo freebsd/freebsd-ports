@@ -1,5 +1,3 @@
-# Created by: Damian Gerow <dgerow@afflictions.org>
-
 PORTNAME=	mktorrent
 PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v

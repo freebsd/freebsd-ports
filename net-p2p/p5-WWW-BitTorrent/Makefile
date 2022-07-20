@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	WWW-BitTorrent
 PORTVERSION=	0.01
 PORTREVISION=	2

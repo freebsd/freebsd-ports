@@ -1,5 +1,3 @@
-# Created by: Pankov Pavel <pankov_p@mail.ru>
-
 PORTNAME=	microdc2
 PORTVERSION=	0.15.6
 PORTREVISION=	10

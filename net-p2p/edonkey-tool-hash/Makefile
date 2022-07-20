@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	edonkey
 PORTVERSION=	0.4.0
 CATEGORIES=	net-p2p

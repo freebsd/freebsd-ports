@@ -1,5 +1,3 @@
-# Created by: Stas Timokhin <stast@bsdportal.ru>
-
 PORTNAME=	eiskaltdcpp
 PORTVERSION=	2.2.10
 DISTVERSIONPREFIX=	v

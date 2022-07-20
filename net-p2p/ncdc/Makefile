@@ -1,5 +1,3 @@
-# Created by: Dmitriy Limonov
-
 PORTNAME=	ncdc
 PORTVERSION=	1.22.1
 PORTREVISION=	3

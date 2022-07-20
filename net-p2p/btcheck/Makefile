@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	btcheck
 PORTVERSION=	2.1
 PORTREVISION=	1

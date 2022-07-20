@@ -1,5 +1,3 @@
-# Created by: Chad J. Milios <milios@ccsys.com>
-
 PORTNAME=	namecoin
 PORTVERSION=	0.21.0.1
 DISTVERSIONPREFIX=	nc

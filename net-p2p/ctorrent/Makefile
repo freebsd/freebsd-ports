@@ -1,5 +1,3 @@
-# Created by: Florent Thoumie <flz@xbsd.org>
-
 PORTNAME=	ctorrent
 PORTVERSION=	3.3.2
 PORTREVISION=	4

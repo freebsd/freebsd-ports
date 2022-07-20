@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	go-prysm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.7

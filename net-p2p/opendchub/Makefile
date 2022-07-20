@@ -1,5 +1,3 @@
-# Created by: Munish Chopra <mchopra@engmail.uwaterloo.ca>
-
 PORTNAME=	opendchub
 PORTVERSION=	0.8.3
 CATEGORIES=	net-p2p

@@ -1,5 +1,3 @@
-# Created by: Vasil Dimov <vd@FreeBSD.org>
-
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
 PORTVERSION=	0.11.2

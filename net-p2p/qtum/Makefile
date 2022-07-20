@@ -1,5 +1,3 @@
-# Created by: Vasil Dimov <vd@FreeBSD.org>
-
 PORTNAME=	qtum
 PORTVERSION=	0.20.3
 DISTVERSIONPREFIX=	mainnet-fastlane-v

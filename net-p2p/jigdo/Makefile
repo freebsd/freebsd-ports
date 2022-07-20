@@ -1,5 +1,3 @@
-# Created by: Attila Nagy <bra@fsn.hu>
-
 PORTNAME=	jigdo
 PORTVERSION=	0.7.3
 PORTREVISION=	8

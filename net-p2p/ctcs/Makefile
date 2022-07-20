@@ -1,5 +1,3 @@
-# Created by: Dereckson <dereckson@gmail.com>
-
 PORTNAME=	ctcs
 PORTVERSION=	1.4.1
 PORTREVISION=	1

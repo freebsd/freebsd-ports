@@ -1,5 +1,3 @@
-# Created by: Vasil Dimov <vd@FreeBSD.org>
-
 PORTNAME=	monero-cli
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
 PORTVERSION=	0.17.3.2

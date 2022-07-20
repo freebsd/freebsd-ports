@@ -1,5 +1,3 @@
-# Created by: Rod Taylor <rbt@zort.on.ca>
-
 PORTNAME=	gtk-gnutella
 PORTVERSION=	1.2.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: glocke@bsdstammtisch.at
-
 PORTNAME=	retroshare
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.4

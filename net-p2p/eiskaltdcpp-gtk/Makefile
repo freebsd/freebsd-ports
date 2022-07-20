@@ -1,5 +1,3 @@
-# Created by: Stas Timokhin <stast@bsdportal.ru>
-
 PORTNAME=	eiskaltdcpp
 PORTREVISION=	20
 CATEGORIES=	net-p2p

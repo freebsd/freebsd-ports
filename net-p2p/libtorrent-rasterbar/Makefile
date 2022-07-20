@@ -1,5 +1,3 @@
-# Created by: Doug Barton <dougb@FreeBSD.org>
-
 PORTNAME=	libtorrent-rasterbar
 DISTVERSION=	1.2.16 # 2.x is unusable until memory problems are resolved, see https://github.com/arvidn/libtorrent/issues/6781
 PORTREVISION=	1

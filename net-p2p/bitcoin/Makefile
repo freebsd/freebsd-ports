@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@FreeBSD.org>
-
 PORTNAME=	bitcoin
 PORTVERSION=	23.0
 PORTREVISION?=	1

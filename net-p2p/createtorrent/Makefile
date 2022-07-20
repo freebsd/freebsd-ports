@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	createtorrent
 PORTVERSION=	1.1.4
 CATEGORIES=	net-p2p

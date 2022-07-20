@@ -1,5 +1,3 @@
-# Created by: Holger Lamm <holger@e-gitt.net>
-
 PORTNAME=	mldonkey
 PORTVERSION=	3.1.5
 PORTREVISION=	4

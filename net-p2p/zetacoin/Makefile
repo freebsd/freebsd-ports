@@ -1,5 +1,3 @@
-# Created by: Daniel Morante <daniel@morante.net>
-
 PORTNAME=	zetacoin
 PORTVERSION=	0.13.2.1
 DISTVERSIONPREFIX=	v
