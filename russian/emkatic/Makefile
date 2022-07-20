@@ -1,5 +1,3 @@
-# Created by: Andrey Fesenko <andrey@bsdnir.info>
-
 PORTNAME=	emkatic
 PORTVERSION=	0.41
 PORTREVISION=	2

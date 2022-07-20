@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <avl@FreeBSD.org>
-
 PORTNAME=	russian
 PORTVERSION=	0.6.0
 CATEGORIES=	russian devel rubygems

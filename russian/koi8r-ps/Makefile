@@ -1,5 +1,3 @@
-# Created by: mi@aldan.algebra.com
-
 PORTNAME=	koi8rPS
 PORTVERSION=	1.0
 PORTREVISION=	1

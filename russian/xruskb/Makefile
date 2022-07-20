@@ -1,5 +1,3 @@
-# Created by: Igor Vinokurov <igor@zynaps.ru>
-
 PORTNAME=	xruskb
 PORTVERSION=	1.15.4
 PORTREVISION=	3

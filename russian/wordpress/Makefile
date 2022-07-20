@@ -1,5 +1,3 @@
-# Created by: Mihail Timofeev <9267096@gmail.com>
-
 PORTNAME=	wordpress
 DISTVERSION=	6.0
 DISTVERSIONSUFFIX=	-ru_RU

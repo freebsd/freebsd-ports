@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
-
 PORTNAME=	artwiz-ru
 PORTVERSION=	20041031
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-
 PORTNAME=	stardict-computer
 PORTVERSION=	2.4.2
 CATEGORIES=	russian
