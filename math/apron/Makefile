@@ -3,14 +3,15 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.13
 CATEGORIES=	math
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	444ed837298d595f0f579d93e6e96d5af085bdac.patch:-p1
-
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	APRON numerical abstract domain library
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BROKEN_armv6=	uses deprecated fpsetround(3) that isn't even defined on armv6, see https://github.com/antoinemine/apron/issues/47
+BROKEN_armv7=	uses deprecated fpsetround(3) that isn't even defined on armv7, see https://github.com/antoinemine/apron/issues/47
+BROKEN_riscv64=	uses deprecated fpsetround(3) that isn't even defined on riscv64, see https://github.com/antoinemine/apron/issues/47
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
