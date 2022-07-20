@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	hunspell
 PORTVERSION=	1.6.1
 CATEGORIES=	hungarian textproc

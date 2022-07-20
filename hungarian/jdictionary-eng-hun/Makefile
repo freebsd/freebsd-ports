@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	jdictionary-eng-hun
 PORTVERSION=	1.4
 PORTREVISION=	4
