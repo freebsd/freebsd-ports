@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-session
 PORTVERSION=	42.0
 CATEGORIES=	x11 gnome

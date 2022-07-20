@@ -1,5 +1,3 @@
-# Created by: Dejan Lesjak <lesi@FreeBSD.org>
-
 PORTNAME=	xbitmaps
 PORTVERSION=	1.1.2
 CATEGORIES=	x11

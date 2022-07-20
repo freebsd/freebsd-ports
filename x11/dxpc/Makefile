@@ -1,5 +1,3 @@
-# Created by: Bruce A. Mah <bmah@ca.sandia.gov>
-
 PORTNAME=	dxpc
 PORTVERSION=	3.9.2
 CATEGORIES=	x11

@@ -1,5 +1,3 @@
-# Created by: Markus Brueffer <markus@FreeBSD.org>
-
 PORTNAME=	libsynaptics
 DISTVERSION=	0.14.6c
 CATEGORIES=	x11

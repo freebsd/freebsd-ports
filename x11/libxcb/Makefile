@@ -1,5 +1,3 @@
-# Created by: Ashish Shukla <wahjava@gmail.com>
-
 PORTNAME=	libxcb
 PORTVERSION=	1.15
 CATEGORIES=	x11

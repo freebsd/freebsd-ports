@@ -1,5 +1,3 @@
-# Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
-
 PORTNAME=	xrsi
 PORTVERSION=	0.9
 PORTREVISION=	2

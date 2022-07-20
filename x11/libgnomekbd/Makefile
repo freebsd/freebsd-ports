@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	libgnomekbd
 PORTVERSION=	3.26.1
 CATEGORIES=	x11 gnome

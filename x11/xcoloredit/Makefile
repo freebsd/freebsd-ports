@@ -1,5 +1,3 @@
-# Created by: Satoshi TAOKA
-
 PORTNAME=	xcoloredit
 PORTVERSION=	1.2
 PORTREVISION=	2

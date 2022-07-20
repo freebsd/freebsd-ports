@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	xbindkeys
 PORTVERSION=	1.8.6
 PORTREVISION=	2

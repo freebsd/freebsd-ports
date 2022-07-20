@@ -1,5 +1,3 @@
-# Created by: Michiel Overtoom <motoom@xs4all.nl>
-
 PORTNAME=	xbrightness
 PORTVERSION=	0.3
 CATEGORIES=	x11

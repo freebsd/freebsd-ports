@@ -1,5 +1,3 @@
-# Created by: Cy Schubert <cy@FreeBSD.org>
-
 PORTNAME=	xforward
 PORTVERSION=	1.0
 PORTREVISION=	1

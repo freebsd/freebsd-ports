@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	xwatchwin
 PORTVERSION=	1.1.1
 PORTREVISION=	3

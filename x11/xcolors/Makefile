@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	xcolors
 PORTVERSION=	1.3
 PORTREVISION=	5

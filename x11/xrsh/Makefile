@@ -1,5 +1,3 @@
-# Created by: KIMURA Yasuhiro <yasu@utahime.org>
-
 PORTNAME=	xrsh
 PORTVERSION=	5.92
 PORTREVISION=	2

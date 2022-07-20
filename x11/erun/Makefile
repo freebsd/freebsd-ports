@@ -1,5 +1,3 @@
-# Created by: Kelly Yancey <kbyanc@posi.net>
-
 PORTNAME=	E-Run
 PORTVERSION=	1.2
 PORTREVISION=	15

@@ -1,5 +1,3 @@
-# Created by: Dave Grochowski
-
 PORTNAME=	xorg-cf-files
 PORTVERSION=	1.0.7
 CATEGORIES=	x11

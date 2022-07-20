@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXrandr
 PORTVERSION=	1.5.2
 CATEGORIES=	x11

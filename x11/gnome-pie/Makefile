@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	gnome-pie
 PORTVERSION=	0.5.7
 DISTVERSIONPREFIX=	v

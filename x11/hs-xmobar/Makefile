@@ -1,5 +1,3 @@
-# Created by: Samy Al Bahra <sbahra@kerneled.org>
-
 PORTNAME=	xmobar
 PORTVERSION=	0.43
 PORTREVISION=	1

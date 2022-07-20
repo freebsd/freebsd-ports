@@ -1,5 +1,3 @@
-# Created by: Eric Turgeon <ericturgeon.bsd@gmail.com>
-
 PORTNAME=	lxrandr
 PORTVERSION=	0.3.2
 CATEGORIES=	x11

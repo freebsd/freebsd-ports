@@ -1,5 +1,3 @@
-# Created by: Lars Engels <lars.engels@0x20.net>
-
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.4
 PORTREVISION=	11

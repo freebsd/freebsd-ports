@@ -1,5 +1,3 @@
-# Created by: Cy Schubert <Cy.Schubert@uumail.gov.bc.ca>
-
 PORTNAME=	xcut
 PORTVERSION=	0.2
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	wdm
 PORTVERSION=	1.28
 PORTREVISION=	16

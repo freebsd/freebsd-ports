@@ -1,5 +1,3 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
-
 PORTNAME=	libfm
 PKGNAMESUFFIX=	-extra
 

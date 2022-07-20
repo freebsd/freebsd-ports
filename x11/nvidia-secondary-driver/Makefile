@@ -1,5 +1,3 @@
-# Created by: Theron Tarigo <theron.tarigo@gmail.com>
-
 PORTNAME=	nvidia-secondary-driver
 # Explicitly set PORTREVISION as it can be overridden by the master port
 PORTREVISION=	1

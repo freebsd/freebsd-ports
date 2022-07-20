@@ -1,5 +1,3 @@
-# Created by: Lin, Cheng-Tao <b89605222@ntu.edu.tw>
-
 PORTNAME=	lxpanel
 PORTVERSION=	0.9.3
 PORTREVISION=	2

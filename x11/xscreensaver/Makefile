@@ -1,5 +1,3 @@
-# Created by: dom@myrddin.demon.co.uk
-
 PORTNAME=	xscreensaver
 PORTVERSION=	6.02
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Eric Turgeon <ericbsd@FreeBSD.org>
-
 PORTNAME=	mate-dock-applet
 PORTVERSION=	21.10.0
 CATEGORIES=	x11 mate

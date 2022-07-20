@@ -1,5 +1,3 @@
-# Created by: Eric Turgeon <ericbsd@FreeBSD.org>
-
 PORTNAME=	xcffib
 PORTVERSION=	0.11.1
 CATEGORIES=	x11 python

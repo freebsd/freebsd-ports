@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXtst
 PORTVERSION=	1.2.3
 PORTREVISION=	2

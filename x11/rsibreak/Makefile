@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	rsibreak
 DISTVERSION=	0.12.15
 CATEGORIES=	x11 kde

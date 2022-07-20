@@ -1,5 +1,3 @@
-# Created by: Yinghong Liu <relaxbsd@gmail.com>
-
 PORTNAME=	roxterm
 PORTVERSION=	3.11.1
 PORTREVISION=	2

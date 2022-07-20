@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXvMC
 PORTVERSION=	1.0.12
 CATEGORIES=	x11

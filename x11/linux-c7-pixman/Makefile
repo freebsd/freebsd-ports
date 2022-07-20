@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	pixman
 PORTVERSION=	0.34.0
 DISTVERSIONSUFFIX=	-1.el7

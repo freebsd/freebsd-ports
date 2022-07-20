@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	desktop
 PORTVERSION=	0.1
 PORTREVISION=	6

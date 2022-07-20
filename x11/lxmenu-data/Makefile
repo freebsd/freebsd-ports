@@ -1,5 +1,3 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
-
 PORTNAME=	lxmenu-data
 PORTVERSION=	0.1.5
 CATEGORIES=	x11

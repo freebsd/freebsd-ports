@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	wmdrawer
 PORTVERSION=	0.10.5
 PORTREVISION=	12

@@ -1,5 +1,3 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
-
 PORTNAME=	florence
 PORTVERSION=	0.6.3
 PORTREVISION=	4

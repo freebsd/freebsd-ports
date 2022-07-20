@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	cool-retro-term
 PORTVERSION=	1.1.1
 PORTREVISION=	2

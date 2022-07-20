@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	babl
 PORTVERSION=	0.1.92
 PORTREVISION=	1

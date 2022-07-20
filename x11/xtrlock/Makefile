@@ -1,5 +1,3 @@
-# Created by: Alexey Mikhailov <karma@ez.pereslavl.ru>
-
 PORTNAME=	xtrlock
 PORTVERSION=	2.15
 CATEGORIES=	x11

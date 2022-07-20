@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	runner
 PORTVERSION=	1.1
 CATEGORIES=	x11

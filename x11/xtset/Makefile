@@ -1,5 +1,3 @@
-# Created by: grog
-
 PORTNAME=	xtset
 PORTVERSION=	1.1
 CATEGORIES=	x11

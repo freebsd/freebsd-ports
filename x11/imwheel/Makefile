@@ -1,5 +1,3 @@
-# Created by: jhb
-
 PORTNAME=	imwheel
 DISTVERSION=	1.0.0pre12
 PORTREVISION=	2

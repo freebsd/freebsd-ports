@@ -1,5 +1,3 @@
-# Created by: Matthew Fuller <fullermd@futuresouth.com>
-
 PORTNAME=	bgrot
 PORTVERSION=	1.31
 CATEGORIES=	x11

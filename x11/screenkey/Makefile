@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	screenkey
 PORTVERSION=	1.5
 CATEGORIES=	x11 python

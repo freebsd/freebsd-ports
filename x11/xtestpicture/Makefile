@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	xtestpicture
 PORTVERSION=	1.2
 PORTREVISION=	2

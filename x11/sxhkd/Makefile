@@ -1,5 +1,3 @@
-# Created by: Anton Tornqvist <antont@inbox.lv>
-
 PORTNAME=	sxhkd
 PORTVERSION=	0.6.2
 CATEGORIES=	x11

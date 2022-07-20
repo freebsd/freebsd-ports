@@ -1,5 +1,3 @@
-# Created by: Sascha Holzleiter <sascha@root-login.org>
-
 PORTNAME=	idesk
 PORTVERSION=	0.7.5
 PORTREVISION=	11

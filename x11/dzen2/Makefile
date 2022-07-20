@@ -1,5 +1,3 @@
-# Created by: Morten Slot Kristensen
-
 PORTNAME=	dzen
 PORTVERSION=	0.9.5
 CATEGORIES=	x11

@@ -1,5 +1,3 @@
-# Created by: jkh
-
 PORTNAME=	xcb
 PORTVERSION=	2.4
 PORTREVISION=	3

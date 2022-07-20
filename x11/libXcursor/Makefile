@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXcursor
 PORTVERSION=	1.2.0
 CATEGORIES=	x11

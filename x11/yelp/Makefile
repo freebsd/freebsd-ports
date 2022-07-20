@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	yelp
 DISTVERSION=	42.1
 CATEGORIES=	x11 gnome

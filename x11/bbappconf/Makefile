@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <tux@pinguru.net>
-
 PORTNAME=	bbappconf
 PORTVERSION=	0.0.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	xnee
 PORTVERSION=	3.19
 PORTREVISION=	2

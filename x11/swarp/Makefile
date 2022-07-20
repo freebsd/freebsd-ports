@@ -1,5 +1,3 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	swarp
 PORTVERSION=	0.1
 PORTREVISION=	1

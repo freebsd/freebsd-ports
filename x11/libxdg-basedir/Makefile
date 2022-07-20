@@ -1,5 +1,3 @@
-# Created by: Nikos Ntarmos <ntarmos@cs.uoi.gr>
-
 PORTNAME=	libxdg-basedir
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.2

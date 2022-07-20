@@ -1,5 +1,3 @@
-# Created by: Scott Mace <smace@FreeBSD.org>
-
 PORTNAME=	xlockmore
 PORTVERSION=	5.70
 CATEGORIES=	x11

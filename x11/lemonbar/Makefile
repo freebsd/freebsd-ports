@@ -1,5 +1,3 @@
-# Created by: Evgeni Dimitrov <evgeni.dimitrov@gmail.com>
-
 PORTNAME=	lemonbar
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.4

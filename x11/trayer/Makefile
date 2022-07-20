@@ -1,5 +1,3 @@
-# Created by: Alexey Mikhailov <karma@ez.pereslavl.ru>
-
 PORTNAME=	trayer
 PORTVERSION=	1.1.8
 DISTVERSIONPREFIX=	${PORTNAME}-

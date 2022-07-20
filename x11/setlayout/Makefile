@@ -1,5 +1,3 @@
-# Created by: oleg@bsdpower.com
-
 PORTNAME=	setlayout
 DISTVERSION=	20080210
 CATEGORIES=	x11

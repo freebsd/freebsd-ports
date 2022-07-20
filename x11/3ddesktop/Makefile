@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	3ddesktop
 PORTVERSION=	0.2.9
 PORTREVISION=	15

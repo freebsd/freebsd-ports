@@ -1,5 +1,3 @@
-# Created by: Theron Tarigo <theron.tarigo@gmail.com>
-
 PORTNAME=	nvidia-hybrid-graphics
 PORTVERSION=	0.5
 CATEGORIES=	x11

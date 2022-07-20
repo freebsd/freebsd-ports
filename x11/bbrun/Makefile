@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adam@vectors.cx>
-
 PORTNAME=	bbrun
 PORTVERSION=	1.6
 PORTREVISION=	13

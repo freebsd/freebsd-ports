@@ -1,5 +1,3 @@
-# Created by: michael johnson <ahze@ahze.net>
-
 PORTNAME=	gtkterm2
 PORTVERSION=	0.2.3
 PORTREVISION=	12

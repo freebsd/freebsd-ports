@@ -1,5 +1,3 @@
-# Created by: jsellens
-
 PORTNAME=	xmsg
 PORTVERSION=	1.1
 PORTREVISION=	2

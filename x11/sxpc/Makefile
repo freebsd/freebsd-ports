@@ -1,5 +1,3 @@
-# Created by: jkh@FreeBSD.org
-
 PORTNAME=	sxpc
 PORTVERSION=	1.4
 PORTREVISION=	2

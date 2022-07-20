@@ -1,5 +1,3 @@
-# Created by: jacs
-
 PORTNAME=	xfishtank
 PORTVERSION=	2.2
 PORTREVISION=	2

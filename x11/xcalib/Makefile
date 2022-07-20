@@ -1,5 +1,3 @@
-# Created by: Petr Holub <hopet@ics.muni.cz>
-
 PORTNAME=	xcalib
 PORTVERSION=	0.10
 PORTREVISION=	0

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	X11-GUITest
 PORTVERSION=	0.28
 PORTREVISION=	1

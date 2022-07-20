@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	wmcliphist
 PORTVERSION=	1.0
 PORTREVISION=	2

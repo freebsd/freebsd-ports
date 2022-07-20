@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	keyboard
 PORTVERSION=	0.3.1
 CATEGORIES=	x11

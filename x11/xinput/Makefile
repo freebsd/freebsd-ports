@@ -1,5 +1,3 @@
-# Created by: Martin Ranne <gasp@ridcully.dnsalias.org>
-
 PORTNAME=	xinput
 PORTVERSION=	1.6.3
 CATEGORIES=	x11

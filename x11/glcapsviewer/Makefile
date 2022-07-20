@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	glcapsviewer
 DISTVERSION=	g20190521
 PORTREVISION=	1

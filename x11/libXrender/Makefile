@@ -1,5 +1,3 @@
-# Created by: Foxfair Hu <foxfair@FreeBSD.org>
-
 PORTNAME=	libXrender
 PORTVERSION=	0.9.10
 PORTREVISION=	2

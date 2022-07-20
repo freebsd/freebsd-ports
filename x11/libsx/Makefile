@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	libsx
 PORTVERSION=	1.1
 PORTREVISION=	4

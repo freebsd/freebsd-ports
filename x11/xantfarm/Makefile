@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	xantfarm
 PORTVERSION=	1.16
 PORTREVISION=	2

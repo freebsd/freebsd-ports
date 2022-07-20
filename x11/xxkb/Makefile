@@ -1,5 +1,3 @@
-# Created by: Alexander Matey <matey@cis.ohio-state.edu>
-
 PORTNAME=	xxkb
 PORTVERSION=	1.11.1
 PORTREVISION=	1

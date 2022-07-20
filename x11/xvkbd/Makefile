@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	xvkbd
 PORTVERSION=	4.1
 CATEGORIES=	x11

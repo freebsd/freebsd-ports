@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	thinglaunch
 PORTVERSION=	1.8
 PORTREVISION=	3

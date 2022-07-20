@@ -1,5 +1,3 @@
-# Created by: FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
-
 PORTNAME=	lupe
 PORTVERSION=	0.08c
 CATEGORIES=	x11 accessibility

@@ -1,5 +1,3 @@
-# Created by: nkazushi@highway.or.jp
-
 PORTNAME=	xskyroot
 PORTVERSION=	920428
 PORTREVISION=	2

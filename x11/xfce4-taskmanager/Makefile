@@ -1,5 +1,3 @@
-# Created by: DaJoob
-
 PORTNAME=	xfce4-taskmanager
 PORTVERSION=	1.5.4
 CATEGORIES=	x11 xfce

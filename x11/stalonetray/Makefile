@@ -1,5 +1,3 @@
-# Created by: Stepan Zastupov [RedChrom] <redchrom@gmail.com>
-
 PORTNAME=	stalonetray
 PORTVERSION=	0.8.3
 CATEGORIES=	x11

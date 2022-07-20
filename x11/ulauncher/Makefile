@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	ulauncher
 PORTVERSION=	5.14.4
 CATEGORIES=	x11

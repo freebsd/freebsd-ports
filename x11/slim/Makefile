@@ -1,5 +1,3 @@
-# Created by: Tobias Roth <ports@fsck.ch>
-
 PORTNAME=	slim
 PORTVERSION=	1.3.6
 PORTREVISION=	22

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	X11-Protocol-Other
 PORTVERSION=	31
 CATEGORIES=	x11 perl5

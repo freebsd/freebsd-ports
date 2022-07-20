@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	xfce4-conf
 PORTVERSION=	4.16.0
 CATEGORIES=	x11 xfce

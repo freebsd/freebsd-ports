@@ -1,5 +1,3 @@
-# Created by: Denis Shaposhnikov <dsh@vlink.ru>
-
 PORTNAME=	wmblob
 PORTVERSION=	1.0.4
 PORTREVISION=	1

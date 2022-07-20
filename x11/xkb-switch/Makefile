@@ -1,5 +1,3 @@
-# Created by: Dmitri Goutnik <dg@syrec.org>
-
 PORTNAME=	xkb-switch
 PORTVERSION=	1.8.5
 CATEGORIES=	x11

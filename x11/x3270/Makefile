@@ -1,5 +1,3 @@
-# Created by: janek
-
 PORTNAME?=	x3270
 PORTVERSION=	4.2
 CATEGORIES?=	x11 net

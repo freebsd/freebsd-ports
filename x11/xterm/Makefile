@@ -1,5 +1,3 @@
-# Created by: krion
-
 PORTNAME=	xterm
 PORTVERSION=	372
 CATEGORIES=	x11

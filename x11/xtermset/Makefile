@@ -1,5 +1,3 @@
-# Created by: Dominik Rothert <dr@domix.de>
-
 PORTNAME=	xtermset
 PORTVERSION=	0.5.2
 PORTREVISION=	2

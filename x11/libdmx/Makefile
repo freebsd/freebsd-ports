@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libdmx
 PORTVERSION=	1.1.4
 PORTREVISION=	2

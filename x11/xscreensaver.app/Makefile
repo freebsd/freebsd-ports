@@ -1,5 +1,3 @@
-# Created by: hemi@puresimplicity.net
-
 PORTNAME=	XScreenSaver.App
 PORTVERSION=	2.3
 PORTREVISION=	4

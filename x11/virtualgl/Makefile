@@ -1,5 +1,3 @@
-# Created by: David Mackay <davidjx8p@gmail.com>
-
 PORTNAME=	virtualgl
 DISTVERSION=	3.0
 PORTREVISION=	1

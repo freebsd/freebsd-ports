@@ -1,5 +1,3 @@
-# Created by: Per Otterstr=F6m <pelle@fukt.bth.se>
-
 PORTNAME=	temperature.app
 PORTVERSION=	1.5
 CATEGORIES=	x11 windowmaker

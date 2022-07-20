@@ -1,5 +1,3 @@
-# Created by: Matthew West <mwest@uct.ac.za>
-
 PORTNAME=	xmotd
 DISTVERSION=	1.17.3b
 PORTREVISION=	2

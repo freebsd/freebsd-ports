@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-
 PORTNAME=	xdialog
 PORTVERSION=	2.3.1
 PORTREVISION=	8

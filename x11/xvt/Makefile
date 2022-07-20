@@ -1,5 +1,3 @@
-# Created by: Chris Hutchinson <portmaster@BSDforge.com>
-
 PORTNAME=	xvt
 PORTVERSION=	3.0.1
 PORTREVISION=	1

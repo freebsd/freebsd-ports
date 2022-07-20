@@ -1,5 +1,3 @@
-# Created by: Kris Moore <kmoore@FreeBSD.org>
-
 PORTNAME=	libfm
 DISTVERSION=	1.3.2
 PORTREVISION=	1

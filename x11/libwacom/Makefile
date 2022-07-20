@@ -1,5 +1,3 @@
-# Created by: johalun0@gmail.com
-
 PORTNAME=	libwacom
 DISTVERSION=	1.5
 CATEGORIES=	x11

@@ -1,5 +1,3 @@
-# Created by: gpalmer
-
 PORTNAME=	xdtm
 PORTVERSION=	2.5.8
 PORTREVISION=	2

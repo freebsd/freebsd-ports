@@ -1,5 +1,3 @@
-# Created by: Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
-
 PORTNAME=	xstarroll
 PORTVERSION=	1.1b
 PORTREVISION=	3

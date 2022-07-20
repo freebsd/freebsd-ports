@@ -1,5 +1,3 @@
-# Created by: Eric L. Hernes <erich@rrnet.com>
-
 PORTNAME=	9menu
 PORTVERSION=	1.10
 DISTVERSIONPREFIX=	${PORTNAME}-release-

@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	mate-terminal
 PORTVERSION=	1.26.0
 CATEGORIES=	x11 mate

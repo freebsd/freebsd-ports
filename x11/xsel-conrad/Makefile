@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	xsel
 PORTVERSION=	1.2.0
 PORTREVISION=	1

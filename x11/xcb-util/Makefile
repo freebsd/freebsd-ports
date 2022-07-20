@@ -1,5 +1,3 @@
-# Created by: Nikos Ntarmos <ntarmos@ceid.upatras.gr>
-
 PORTNAME=	xcb-util
 PORTVERSION=	0.4.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <stas@FreeBSD.org>
-
 PORTNAME=	emprint
 PORTVERSION=	20130520
 PORTREVISION=	4

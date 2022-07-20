@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXv
 PORTVERSION=	1.0.11
 PORTREVISION=	2

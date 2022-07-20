@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	mate-screensaver
 PORTVERSION=	1.26.1
 PORTREVISION=	2

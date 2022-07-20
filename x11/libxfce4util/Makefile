@@ -1,5 +1,3 @@
-# Created by: James Earl <jdearl@telus.net>
-
 PORTNAME=	libxfce4util
 PORTVERSION=	4.16.0
 CATEGORIES=	x11 xfce

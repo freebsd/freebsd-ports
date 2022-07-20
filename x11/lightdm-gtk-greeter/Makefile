@@ -1,5 +1,3 @@
-# Created by: Ben Woods <woodsb02@FreeBSD.org>
-
 PORTNAME=	lightdm-gtk-greeter
 PORTVERSION=	2.0.8
 PORTREVISION=	2

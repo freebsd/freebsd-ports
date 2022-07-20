@@ -1,5 +1,3 @@
-# Created by: od <od@iclub.nsu.ru>
-
 PORTNAME=	wmappl
 PORTVERSION=	0.71
 PORTREVISION=	2

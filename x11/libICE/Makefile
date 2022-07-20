@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libICE
 PORTVERSION=	1.0.10
 PORTEPOCH=	1

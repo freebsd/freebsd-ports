@@ -1,5 +1,3 @@
-# Created by: Koop Mast <einekoai@chello.nl>
-
 PORTNAME=	workrave
 PORTVERSION=	1.10.44
 PORTREVISION=	2

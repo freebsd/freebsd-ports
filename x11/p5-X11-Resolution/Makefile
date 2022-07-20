@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers
-
 PORTNAME=	X11-Resolution
 PORTVERSION=	0.0.0
 PORTREVISION=	1

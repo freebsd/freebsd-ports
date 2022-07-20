@@ -1,5 +1,3 @@
-# Created by: UMENO Takashi <umeno@rr.iij4u.or.jp>
-
 PORTNAME=	fireflies
 PORTVERSION=	2.07
 PORTREVISION=	8

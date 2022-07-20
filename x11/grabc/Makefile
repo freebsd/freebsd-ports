@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	grabc
 PORTVERSION=	1.1
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	xwit
 PORTVERSION=	3.4
 PORTREVISION=	3

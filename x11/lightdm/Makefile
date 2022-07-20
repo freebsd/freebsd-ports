@@ -1,5 +1,3 @@
-# Created by: Ben Woods <woodsb02@FreeBSD.org>
-
 PORTNAME=	lightdm
 PORTVERSION=	1.30.0
 PORTREVISION=	3

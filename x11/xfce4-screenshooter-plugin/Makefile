@@ -1,5 +1,3 @@
-# Created by: Martin Wilke (miwi@FreeBSD.org)
-
 PORTNAME=	xfce4-screenshooter-plugin
 PORTVERSION=	1.9.10
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Ben Woods <woodsb02@FreeBSD.org>
-
 PORTNAME=	xfce4-goodies
 PORTVERSION=	4.16
 CATEGORIES=	x11

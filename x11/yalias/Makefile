@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	yalias
 PORTVERSION=	0.7
 PORTREVISION=	11

@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gnome-shell-extensions
 PORTVERSION=	42.2
 CATEGORIES=	x11 gnome

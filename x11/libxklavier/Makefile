@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	libxklavier
 PORTVERSION=	5.3
 PORTREVISION=	3

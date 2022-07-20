@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <dhn@FreeBSD.org>
-
 PORTNAME=	lsw
 PORTVERSION=	0.3
 PORTREVISION=	2

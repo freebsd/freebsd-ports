@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	dashboard
 PORTVERSION=	0.8.1
 PORTREVISION=	1

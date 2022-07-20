@@ -1,5 +1,3 @@
-# Created by: Jacob House <jacob@jwfh.ca>
-
 PORTNAME=	i3lock-color
 DISTVERSION=	2.13.c.4
 CATEGORIES=	x11

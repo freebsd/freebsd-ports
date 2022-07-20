@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	terminal.app
 PORTVERSION=	0.9.9
 PORTREVISION=	4

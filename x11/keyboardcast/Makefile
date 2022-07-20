@@ -1,5 +1,3 @@
-# Created by: eimar.koort
-
 PORTNAME=	keyboardcast
 PORTVERSION=	0.1.1
 DISTVERSIONPREFIX=	v

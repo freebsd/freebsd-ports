@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	xsnow
 PORTVERSION=	3.5.0
 CATEGORIES=	x11

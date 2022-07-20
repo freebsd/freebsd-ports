@@ -1,5 +1,3 @@
-# Created by: Matt Lancereau
-
 PORTNAME=	libexo
 PORTVERSION=	4.16.4
 CATEGORIES=	x11 xfce

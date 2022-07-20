@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adam@vectors.cx>
-
 PORTNAME=	gmrun
 PORTVERSION=	0.9.2
 PORTREVISION=	14

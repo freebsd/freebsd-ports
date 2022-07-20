@@ -1,5 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-
 PORTNAME=	aterm
 PORTVERSION=	1.0.1
 PORTREVISION=	7

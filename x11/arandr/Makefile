@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbz@FreeBSD.org>
-
 PORTNAME=	arandr
 PORTVERSION=	0.1.10
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	xautomation
 PORTVERSION=	1.09
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Serge Gagnon <gagnon__s@videotron.ca>
-
 PORTNAME=	9box
 PORTVERSION=	0.2.1
 PORTREVISION=	3

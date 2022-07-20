@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	bmpanel2
 DISTVERSION=	2.1pre1
 PORTREVISION=	2

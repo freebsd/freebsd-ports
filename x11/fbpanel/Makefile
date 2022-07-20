@@ -1,5 +1,3 @@
-# Created by: Tobias Roth <ports@fsck.ch>
-
 PORTNAME=	fbpanel
 PORTVERSION=	6.1
 PORTREVISION=	5

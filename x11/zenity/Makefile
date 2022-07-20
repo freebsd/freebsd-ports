@@ -1,5 +1,3 @@
-# Created by: Franz Klammer <klammer@webonaut.com>
-
 PORTNAME=	zenity
 PORTVERSION=	3.42.1
 CATEGORIES=	x11 gnome

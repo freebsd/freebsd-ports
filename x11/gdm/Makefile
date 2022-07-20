@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gdm
 PORTVERSION=	42.0
 PORTREVISION=	2

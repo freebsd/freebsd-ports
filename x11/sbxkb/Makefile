@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	sbxkb
 PORTVERSION=	0.7.6
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-terminal
 DISTVERSION=	3.44.1
 CATEGORIES=	x11 gnome

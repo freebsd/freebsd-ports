@@ -1,5 +1,3 @@
-# Created by: Winston Weinert <winstonw@lavabit.com>
-
 PORTNAME=	tabbed
 PORTVERSION=	0.6
 CATEGORIES=	x11

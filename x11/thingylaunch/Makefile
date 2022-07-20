@@ -1,5 +1,3 @@
-# Created by: Pietro Cerutti <gahr@FreeBSD.org>
-
 PORTNAME=	thingylaunch
 PORTVERSION=	2.0.3
 PORTREVISION=	8

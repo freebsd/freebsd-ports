@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libXi
 DISTVERSION=	1.8
 PORTEPOCH=	1

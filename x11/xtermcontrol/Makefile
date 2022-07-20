@@ -1,5 +1,3 @@
-# Created by: krion
-
 PORTNAME=	xtermcontrol
 PORTVERSION=	3.6
 CATEGORIES=	x11

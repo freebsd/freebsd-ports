@@ -1,5 +1,3 @@
-# Created by: Satoshi Asami <asami@FreeBSD.org>
-
 PORTNAME=	yeahconsole
 PORTVERSION=	0.3.4
 CATEGORIES=	x11
