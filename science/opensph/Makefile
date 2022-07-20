@@ -1,6 +1,6 @@
 PORTNAME=	OpenSPH
 DISTVERSION=	0.3.8
-PORTREVISION=	5 # accounts for the upstream moving 0.3.8 release, including bugfixes
+PORTREVISION=	6 # accounts for the upstream moving 0.3.8 release, including bugfixes
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	avogadro2
 DISTVERSION=	1.95.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 # REGRESSION: https://github.com/OpenChemistry/avogadroapp/issues/191
