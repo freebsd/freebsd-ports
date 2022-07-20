@@ -1,0 +1,53 @@
+bin/MQTTAsync_publish
+bin/MQTTAsync_publish_time
+bin/MQTTAsync_subscribe
+bin/MQTTClient_publish
+bin/MQTTClient_publish_async
+bin/MQTTClient_subscribe
+bin/MQTTVersion
+bin/paho_c_pub
+bin/paho_c_sub
+bin/paho_cs_pub
+bin/paho_cs_sub
+include/MQTTAsync.h
+include/MQTTClient.h
+include/MQTTClientPersistence.h
+include/MQTTExportDeclarations.h
+include/MQTTProperties.h
+include/MQTTReasonCodes.h
+include/MQTTSubscribeOpts.h
+lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfig.cmake
+lib/cmake/eclipse-paho-mqtt-c/eclipse-paho-mqtt-cConfigVersion.cmake
+lib/libpaho-mqtt3a.so
+lib/libpaho-mqtt3a.so.1
+lib/libpaho-mqtt3a.so.1.3.10
+lib/libpaho-mqtt3as.so
+lib/libpaho-mqtt3as.so.1
+lib/libpaho-mqtt3as.so.1.3.10
+lib/libpaho-mqtt3c.so
+lib/libpaho-mqtt3c.so.1
+lib/libpaho-mqtt3c.so.1.3.10
+lib/libpaho-mqtt3cs.so
+lib/libpaho-mqtt3cs.so.1
+lib/libpaho-mqtt3cs.so.1.3.10
+man/man1/paho_c_pub.1.gz
+man/man1/paho_c_sub.1.gz
+man/man1/paho_cs_pub.1.gz
+man/man1/paho_cs_sub.1.gz
+share/doc/Eclipse Paho C/CONTRIBUTING.md
+share/doc/Eclipse Paho C/README.md
+share/doc/Eclipse Paho C/edl-v10
+share/doc/Eclipse Paho C/epl-v20
+share/doc/Eclipse Paho C/notice.html
+share/doc/Eclipse Paho C/samples/MQTTAsync_publish.c
+share/doc/Eclipse Paho C/samples/MQTTAsync_publish_time.c
+share/doc/Eclipse Paho C/samples/MQTTAsync_subscribe.c
+share/doc/Eclipse Paho C/samples/MQTTClient_publish.c
+share/doc/Eclipse Paho C/samples/MQTTClient_publish_async.c
+share/doc/Eclipse Paho C/samples/MQTTClient_subscribe.c
+share/doc/Eclipse Paho C/samples/paho_c_pub.c
+share/doc/Eclipse Paho C/samples/paho_c_sub.c
+share/doc/Eclipse Paho C/samples/paho_cs_pub.c
+share/doc/Eclipse Paho C/samples/paho_cs_sub.c
+share/doc/Eclipse Paho C/samples/pubsub_opts.c

@@ -391,6 +391,7 @@
     SUBDIR += libopennet
     SUBDIR += liboping
     SUBDIR += libosip2
+    SUBDIR += libpaho-mqtt3
     SUBDIR += libpcap
     SUBDIR += libpcapnav
     SUBDIR += libpfctl
