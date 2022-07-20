@@ -1,5 +1,3 @@
-# Created by: mike@LITech.lviv.ua
-
 MASTERDIR=	${.CURDIR:H:H}/graphics/gd
 CATEGORIES=	ukrainian
 
