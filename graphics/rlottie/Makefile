@@ -10,6 +10,8 @@ COMMENT=	Platform independent standalone library that plays Lottie Animation
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/licenses/COPYING.MIT
 
+BROKEN_armv7=	undefined symbol: pixman_composite_src_n_8888_asm_neon
+
 USES=		cmake:testing compiler:c++14-lang
 USE_LDCONFIG=	yes
 
