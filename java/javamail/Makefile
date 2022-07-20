@@ -1,5 +1,3 @@
-# Created by: Jose Marques
-
 PORTNAME=	javamail
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
 DISTVERSION=	1_6_2

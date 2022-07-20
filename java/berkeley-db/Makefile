@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin
-
 PORTNAME=	je
 PORTVERSION=	7.5.11
 CATEGORIES=	java databases

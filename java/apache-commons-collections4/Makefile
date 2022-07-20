@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	commons-collections4
 PORTVERSION=	4.4
 CATEGORIES=	java devel

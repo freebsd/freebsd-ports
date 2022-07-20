@@ -1,5 +1,3 @@
-# Created by: Filippo Natali <filippo@widestore.net>
-
 PORTNAME=	mx4j
 PORTVERSION=	3.0.2
 PORTREVISION=	1

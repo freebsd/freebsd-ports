@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <michael@fun-box.ru>
-
 PORTNAME=	netty
 PORTVERSION=	4.1.53
 DISTVERSIONSUFFIX=	.Final

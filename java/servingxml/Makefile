@@ -1,5 +1,3 @@
-# Created by: jpbeconne
-
 PORTNAME=	servingxml
 PORTVERSION=	1.1.2
 CATEGORIES=	java devel

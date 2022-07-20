@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	jcommon
 PORTVERSION=	1.0.23
 CATEGORIES=	java devel

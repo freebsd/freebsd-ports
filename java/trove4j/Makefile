@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-
 PORTNAME=	trove4j
 PORTVERSION=	3.1a1
 CATEGORIES=	java devel

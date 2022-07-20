@@ -1,5 +1,3 @@
-# Created by: mi
-
 PORTNAME=	jode
 PORTVERSION=	1.1.1.1
 PORTREVISION=	4

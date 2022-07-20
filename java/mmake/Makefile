@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	mmake
 PORTVERSION=	2.3
 PORTREVISION=	1

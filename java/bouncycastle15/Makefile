@@ -1,5 +1,3 @@
-# Created by: Eugene Grosbein <ports@grosbein.net>
-
 PORTNAME=	bouncycastle
 PORTVERSION=	1.71
 CATEGORIES=	java security

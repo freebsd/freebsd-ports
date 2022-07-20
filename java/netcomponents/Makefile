@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	netcomponents
 PORTVERSION=	1.3.8
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	jgraph
 PORTVERSION=	5.13.0.4
 CATEGORIES=	java graphics

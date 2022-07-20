@@ -1,5 +1,3 @@
-# Created by: OKAZAKI Tetsurou
-
 PORTNAME=	junit
 PORTVERSION=	4.12
 CATEGORIES=	java devel

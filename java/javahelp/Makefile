@@ -1,5 +1,3 @@
-# Created by: rfarmer@predatorlabs.net
-
 PORTNAME=	javahelp
 PORTVERSION=	2.0.05.20170719
 PORTREVISION=	1

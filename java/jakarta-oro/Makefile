@@ -1,5 +1,3 @@
-# Created by: Dave Glowacki <dglo@ssec.wisc.edu>
-
 PORTNAME=	jakarta-oro
 PORTVERSION=	2.0.8
 PORTREVISION=	2

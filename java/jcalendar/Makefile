@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	jcalendar
 PORTVERSION=	1.3.3
 CATEGORIES=	java misc

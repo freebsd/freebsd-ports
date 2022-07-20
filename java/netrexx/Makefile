@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	NetRexx
 PORTVERSION=	2.05
 PORTREVISION=	3

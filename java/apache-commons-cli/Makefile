@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	commons-cli
 PORTVERSION=	1.4
 CATEGORIES=	java devel

@@ -1,5 +1,3 @@
-# Created by: Alexander Yerenkow <yerenkow@gmail.com>
-
 PORTNAME=	wildfly90
 PORTVERSION=	9.0.2
 PORTREVISION=	2

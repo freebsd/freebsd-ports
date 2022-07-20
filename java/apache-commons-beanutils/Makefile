@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	commons-beanutils
 PORTVERSION=	1.9.4
 CATEGORIES=	java devel

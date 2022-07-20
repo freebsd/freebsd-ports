@@ -1,5 +1,3 @@
-# Created by: Jonathan Chen <jonc@chen.org.nz>
-
 PORTNAME=	eclipse
 PORTVERSION=	4.24
 CATEGORIES=	java devel

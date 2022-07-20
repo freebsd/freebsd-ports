@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	java3d
 PORTVERSION=	1.5.2
 PORTREVISION=	7

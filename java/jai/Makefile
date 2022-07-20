@@ -1,5 +1,3 @@
-# Created by: OISHI Masakuni <yamasa@bsdhouse.org>
-
 PORTNAME=	jai
 DISTVERSION=	1_1_3
 PORTREVISION=	2

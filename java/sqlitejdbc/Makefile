@@ -1,5 +1,3 @@
-# Created by: Lapo Luchini <lapo@lapo.it>
-
 PORTNAME=	sqlitejdbc
 PORTVERSION=	056
 DISTVERSIONPREFIX=	v

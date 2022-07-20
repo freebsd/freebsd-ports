@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	pydev
 PORTVERSION=	8.2.0
 CATEGORIES=	java devel python

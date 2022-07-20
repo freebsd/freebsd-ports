@@ -1,5 +1,3 @@
-# Created by: Benjamin Close <benjsc@FreeBSD.org>
-
 PORTNAME=	avis
 PORTVERSION=	1.2.0
 PORTREVISION=	1

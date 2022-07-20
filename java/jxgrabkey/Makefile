@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <mi@aldan.algebra.com>
-
 PORTNAME=	jxgrabkey
 PORTVERSION=	0.3.2
 CATEGORIES=	java devel

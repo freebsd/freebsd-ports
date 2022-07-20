@@ -1,5 +1,3 @@
-# Created by: rasputin
-
 PORTNAME=	bouncycastle
 PORTVERSION=	1.45
 PORTREVISION=	2

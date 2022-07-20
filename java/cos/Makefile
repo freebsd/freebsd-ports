@@ -1,5 +1,3 @@
-# Created by: Jose Marques <noway@nohow.demon.co.uk>
-
 PORTNAME=	cos
 PORTVERSION=	2002.11.05
 PORTREVISION=	3

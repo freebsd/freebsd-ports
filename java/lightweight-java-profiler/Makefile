@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	lightweight-java-profiler
 PORTVERSION=	g20170308
 CATEGORIES=	java devel

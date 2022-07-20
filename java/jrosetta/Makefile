@@ -1,5 +1,3 @@
-# Created by: rfarmer@predatorlabs.net
-
 PORTNAME=	jrosetta
 PORTVERSION=	1.0.4
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	commons-lang
 PORTVERSION=	2.6
 CATEGORIES=	java devel

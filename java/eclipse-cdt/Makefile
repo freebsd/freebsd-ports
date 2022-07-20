@@ -1,5 +1,3 @@
-# Created by: gldisater@gldis.ca
-
 PORTNAME=	cdt
 PORTVERSION=	9.0.1
 CATEGORIES=	java devel

@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	ecj
 PORTVERSION=	4.4.2
 PORTREVISION=	1

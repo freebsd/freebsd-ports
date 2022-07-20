@@ -1,5 +1,3 @@
-# Created by: Anton Yudin <toha@toha.org.ua>
-
 PORTNAME=	commons-pool
 PORTVERSION=	2.11.1
 CATEGORIES=	java devel

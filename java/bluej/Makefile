@@ -1,5 +1,3 @@
-# Created by: Jeremy <karlj000@unbc.ca>
-
 PORTNAME=	bluej
 PORTVERSION=	4.2.2
 CATEGORIES=	java editors

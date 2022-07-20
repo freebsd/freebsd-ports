@@ -1,5 +1,3 @@
-# Created by: jake@checker.org
-
 PORTNAME=	jlex
 PORTVERSION=	1.2.6
 PORTREVISION=	3

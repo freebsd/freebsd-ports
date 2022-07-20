@@ -1,5 +1,3 @@
-# Created by: Anton Yudin <toha@toha.org.ua>
-
 PORTNAME=	commons-dbcp
 PORTVERSION=	2.9.0
 CATEGORIES=	java databases
