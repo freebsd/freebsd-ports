@@ -1,5 +1,3 @@
-# Created by: Maciek Korzen <eaquer@ceti.pl>
-
 PORTNAME=	tleenx2
 PORTVERSION=	20040214
 PORTREVISION=	11

@@ -1,5 +1,3 @@
-# Created by: Piotr Smyrak <smyru@heron.pl> and
-
 PORTNAME=	libtlen
 PORTVERSION=	20041113
 PORTREVISION=	1

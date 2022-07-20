@@ -1,5 +1,3 @@
-# Created by: Maciek Korzen <eaquer@ceti.pl>
-
 PORTNAME=	trf
 PORTVERSION=	0.4
 CATEGORIES=	polish finance

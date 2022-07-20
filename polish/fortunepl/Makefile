@@ -1,5 +1,3 @@
-# Created by: Aleksander Fafula <alex@bsdguru.org>
-
 PORTNAME=	fortunepl
 PORTVERSION=	20091121
 CATEGORIES=	polish

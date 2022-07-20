@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <c0rn@o2.pl>
-
 PORTNAME=	qnapi
 PORTVERSION=	0.2.3
 PORTREVISION=	9
