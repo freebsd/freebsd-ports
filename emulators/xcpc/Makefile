@@ -1,5 +1,3 @@
-# Created by: joerg
-
 PORTNAME=	xcpc
 PORTVERSION=	20070122
 PORTREVISION=	15

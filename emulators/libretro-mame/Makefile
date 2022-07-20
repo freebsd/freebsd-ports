@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	libretro-mame
 PORTVERSION=	20220124
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: okeeblow <root@cooltrainer.org>
-
 PORTNAME=	snes9x
 PORTVERSION=	1.54.1
 PORTREVISION=	8

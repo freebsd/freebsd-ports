@@ -1,5 +1,3 @@
-# Created by: Gerald Pfeifer <gerald@FreeBSD.org>
-
 PORTNAME=	wine
 DISTVERSION=	6.0.4
 PORTEPOCH=	1

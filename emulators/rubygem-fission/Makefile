@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fission
 PORTVERSION=	0.5.0
 PORTREVISION=	1

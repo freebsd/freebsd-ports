@@ -1,5 +1,3 @@
-# Created by: dchapes@ddm.on.ca
-
 PORTNAME=	vice
 PORTVERSION=	3.6.1
 PORTREVISION=	1

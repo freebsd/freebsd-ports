@@ -1,5 +1,3 @@
-# Created by: Brian Gaeke <brg@dgate.org>
-
 PORTNAME=	vmips
 PORTVERSION=	1.5.1
 PORTREVISION=	1

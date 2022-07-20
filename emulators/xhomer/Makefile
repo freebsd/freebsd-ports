@@ -1,5 +1,3 @@
-# Created by: trasz
-
 PORTNAME=	xhomer
 DISTVERSION=	9-16-06
 PORTREVISION=	2

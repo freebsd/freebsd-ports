@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
-
 PORTNAME=	qemu
 PORTVERSION=	7.0.0
 PORTREVISION=	1

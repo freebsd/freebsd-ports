@@ -1,5 +1,3 @@
-# Created by: mbr@FreeBSD.org
-
 PORTNAME=	open-vm-tools
 PORTVERSION=	12.0.0
 DISTVERSIONPREFIX=	stable-

@@ -1,5 +1,3 @@
-# Created by: alex
-
 PORTNAME=	bochs
 PORTVERSION=	2.7
 PORTEPOCH=	2

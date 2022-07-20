@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	darcnes
 PORTVERSION=	9b0401
 PORTREVISION=	7

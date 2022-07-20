@@ -1,5 +1,3 @@
-# Created by: Eric L. Hernes <erich@FreeBSD.org>
-
 PORTNAME=	x48
 PORTVERSION=	0.6.4
 PORTREVISION=	1

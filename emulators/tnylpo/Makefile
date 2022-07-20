@@ -1,5 +1,3 @@
-# Created by: Joerg Wunsch <joerg@FreeBSD.org>
-
 PORTNAME=	tnylpo
 DISTVERSION=	1.1.3
 CATEGORIES=	emulators

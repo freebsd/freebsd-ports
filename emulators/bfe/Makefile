@@ -1,5 +1,3 @@
-# Created by: jhb
-
 PORTNAME=	bfe2
 PORTVERSION=	20030723
 PORTREVISION=	9

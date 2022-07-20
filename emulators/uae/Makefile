@@ -1,5 +1,3 @@
-# Created by: Simon Dick <simond@irrelevant.org>
-
 PORTNAME=	uae
 PORTVERSION=	0.8.29
 PORTREVISION=	3

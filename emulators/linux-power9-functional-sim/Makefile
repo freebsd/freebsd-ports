@@ -1,5 +1,3 @@
-# Created by: Kevin Bowling <kbowling@FreeBSD.org>
-
 PORTNAME=	power9-functional-sim
 PORTVERSION=	1.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	libretro-flycast
 PORTVERSION=	0.20210608
 PORTREVISION=	1

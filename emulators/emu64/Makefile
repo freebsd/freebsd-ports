@@ -1,5 +1,3 @@
-# Created by: Felix Palmen <felix@palmen-it.de>
-
 PORTNAME=	emu64
 PORTVERSION=	5.0.19
 PORTREVISION=	1

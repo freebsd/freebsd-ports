@@ -1,5 +1,3 @@
-# Created by: tenser@spitfire.ecsel.psu.edu
-
 PORTNAME=	bsvc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.6

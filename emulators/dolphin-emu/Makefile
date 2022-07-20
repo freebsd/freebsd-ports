@@ -1,5 +1,3 @@
-# Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-
 PORTNAME=	dolphin-emu
 PORTVERSION=	5.0.16795
 PORTREVISION=	1

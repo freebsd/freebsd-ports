@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	fs-uae-launcher
 PORTVERSION=	3.0.5
 PORTREVISION=	4

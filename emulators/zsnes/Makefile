@@ -1,5 +1,3 @@
-# Created by: Stijn Hoop <stijn@win.tue.nl>
-
 PORTNAME=	zsnes
 PORTVERSION=	1.51
 PORTREVISION=	12

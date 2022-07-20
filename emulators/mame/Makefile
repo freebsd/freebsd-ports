@@ -1,5 +1,3 @@
-# Created by: alepulver
-
 PORTNAME?=	mame
 PORTVERSION=	0.226
 PORTREVISION=	2

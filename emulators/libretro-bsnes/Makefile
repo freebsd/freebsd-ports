@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	libretro-bsnes
 PORTVERSION=	20211218
 CATEGORIES=	emulators games

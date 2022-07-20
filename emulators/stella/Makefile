@@ -1,5 +1,3 @@
-# Created by: Jacques Vidrine <nectar@FreeBSD.org>
-
 PORTNAME=	stella
 PORTVERSION=	6.7
 CATEGORIES=	emulators

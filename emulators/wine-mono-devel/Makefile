@@ -1,5 +1,3 @@
-# Created by: David Naylor <naylor.b.david@gmail.com>
-
 PORTNAME=	wine-mono
 DISTVERSION=	7.3.0
 DISTVERSIONSUFFIX=-x86

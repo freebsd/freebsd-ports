@@ -1,5 +1,3 @@
-# Created by: Seiichirou Hiraoka
-
 PORTNAME=	xsystem35
 DISTVERSION=	1.7.3-pre5
 PORTREVISION=	4

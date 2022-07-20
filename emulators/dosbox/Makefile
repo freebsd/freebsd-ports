@@ -1,5 +1,3 @@
-# Created by: Tom Carrick <knyghtmare@knyghtmare.com>
-
 PORTNAME=	dosbox
 DISTVERSION=	0.74-3
 PORTREVISION=	1

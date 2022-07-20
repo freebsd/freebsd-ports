@@ -1,5 +1,3 @@
-# Created by: Michael Neumann <mneumann@ntecs.de>
-
 PORTNAME=	hatari
 PORTVERSION=	2.3.1
 CATEGORIES=	emulators

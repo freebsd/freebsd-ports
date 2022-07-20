@@ -1,5 +1,3 @@
-# Created by: Kaltashkin Eugene <zhecka@gmail.com>
-
 PORTNAME=	qemu
 DISTVERSION=	5.0.1
 CATEGORIES=	emulators

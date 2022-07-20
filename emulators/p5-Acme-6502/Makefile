@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	Acme-6502
 PORTVERSION=	0.77
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Tobias Reifenberger <tr@freebsd.mayn.de>
-
 PORTNAME=	stonx
 PORTVERSION=	0.6.7e.6
 PORTREVISION=	3

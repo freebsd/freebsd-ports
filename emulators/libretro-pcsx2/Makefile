@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	libretro-pcsx2
 PORTVERSION=	0.20201030
 PORTREVISION=	1

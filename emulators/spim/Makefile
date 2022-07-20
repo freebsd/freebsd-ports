@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@cs.ucdavis.edu)
-
 PORTNAME=	spim
 PORTVERSION=	8.0
 CATEGORIES=	emulators

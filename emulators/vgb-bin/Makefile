@@ -1,5 +1,3 @@
-# Created by: Mario S F Ferreira <lioux@linf.unb.br> et al.
-
 PORTNAME=	vgb
 PORTVERSION=	3.0
 PORTREVISION=	5

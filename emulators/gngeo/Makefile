@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	gngeo
 PORTVERSION=	0.8
 DISTVERSIONPREFIX=	${PORTNAME}_

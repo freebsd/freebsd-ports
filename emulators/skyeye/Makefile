@@ -1,5 +1,3 @@
-# Created by: Ruan Wei (iamayan@gmail.com)
-
 PORTNAME=	skyeye
 PORTVERSION=	1.2.5
 PORTREVISION=	7

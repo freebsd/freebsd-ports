@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@jelal.kn-bremen.de>
-
 PORTNAME=	qemu
 DISTVERSION=	6.1.0.20210928
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Naram Qashat <cyberbotx@cyberbotx.com>
-
 PORTNAME=	tiemu3
 PORTVERSION=	3.03
 PORTREVISION=	12

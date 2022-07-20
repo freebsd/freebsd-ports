@@ -1,5 +1,3 @@
-# Created by: jraynard
-
 PORTNAME=	simh
 PORTVERSION=	3.9.0
 PORTREVISION=	5

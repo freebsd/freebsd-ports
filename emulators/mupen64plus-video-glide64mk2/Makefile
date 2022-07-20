@@ -1,5 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-
 PORTREVISION=	20
 PKGNAMESUFFIX=	-video-glide64mk2
 

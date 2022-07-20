@@ -1,5 +1,3 @@
-# Created by: Miguel Mendez <flynn@energyhq.homeip.net>
-
 PORTNAME=	hercules
 PORTVERSION=	3.13
 CATEGORIES=	emulators

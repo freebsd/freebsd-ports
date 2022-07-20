@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	tme
 PORTVERSION=	0.8
 PORTREVISION=	6

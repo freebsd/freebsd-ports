@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	cingb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.32

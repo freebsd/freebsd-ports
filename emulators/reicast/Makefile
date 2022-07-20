@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	reicast
 PORTVERSION=	0.20201231
 PORTREVISION=	1

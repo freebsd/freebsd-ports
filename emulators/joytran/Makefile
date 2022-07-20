@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	joytran
 PORTVERSION=	0.9.5.2
 PORTREVISION=	1

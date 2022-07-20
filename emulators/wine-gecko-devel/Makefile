@@ -1,5 +1,3 @@
-# Created by: David Naylor <naylor.b.david@gmail.com>
-
 PORTNAME=	wine-gecko
 DISTVERSION=	2.47.2
 CATEGORIES=	emulators
