@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	liac-arff
 PORTVERSION=	2.5.0
 CATEGORIES=	science python

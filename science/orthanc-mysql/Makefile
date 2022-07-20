@@ -1,5 +1,3 @@
-# Created by: maintainer.freebsd@xpoundit.com
-
 PORTNAME=	orthanc-mysql
 DISTVERSION=	4.3
 PORTREVISION=	2

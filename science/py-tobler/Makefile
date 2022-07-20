@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tobler
 PORTVERSION=	0.9.0
 CATEGORIES=	science python

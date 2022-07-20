@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>
-
 PORTNAME=	colt
 PORTVERSION=	1.2.0
 PORTREVISION=	1

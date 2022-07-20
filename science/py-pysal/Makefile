@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pysal
 PORTVERSION=	2.6.0
 CATEGORIES=	science python

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	hdf5
 PORTVERSION=	1.10.9
 CATEGORIES=	science archivers graphics

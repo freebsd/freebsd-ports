@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Chemistry-Mol
 PORTVERSION=	0.39
 CATEGORIES=	science perl5

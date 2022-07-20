@@ -1,5 +1,3 @@
-# Created by: mi
-
 PORTNAME=	hdf
 PORTVERSION=	4.2.15
 PORTREVISION=	1

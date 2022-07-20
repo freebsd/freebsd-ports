@@ -1,5 +1,3 @@
-# Created by: Glenn Johnson
-
 PORTNAME=	tinker
 DISTVERSION=	8.10.2
 PORTREVISION=	1

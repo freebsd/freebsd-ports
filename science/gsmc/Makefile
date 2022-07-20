@@ -1,5 +1,3 @@
-# Created by: db
-
 PORTNAME=	gsmc
 PORTVERSION=	1.1
 PORTREVISION=	5

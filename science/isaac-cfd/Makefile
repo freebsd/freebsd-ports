@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni
-
 PORTNAME=	isaac
 PORTVERSION=	4.2
 PORTREVISION=	16

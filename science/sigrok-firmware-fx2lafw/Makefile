@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	firmware
 PORTVERSION=	0.1.7
 CATEGORIES=	science

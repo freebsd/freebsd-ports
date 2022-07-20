@@ -1,5 +1,3 @@
-# Created by: Wen heping <wenheping@gmail.com>
-
 PORTNAME=	Jmol
 DISTVERSION=	14.32.63
 CATEGORIES=	science java

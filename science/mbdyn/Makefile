@@ -1,5 +1,3 @@
-# Created by: Kay Lehmann <kay_lehmann@web.de>
-
 PORTNAME=	mbdyn
 DISTVERSION=	1.7.3
 PORTREVISION=	3

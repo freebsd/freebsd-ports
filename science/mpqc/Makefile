@@ -1,5 +1,3 @@
-# Created by: batman <batman@udel.edu>
-
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
 PORTREVISION=	47

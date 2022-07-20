@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	access
 PORTVERSION=	1.1.8
 CATEGORIES=	science python

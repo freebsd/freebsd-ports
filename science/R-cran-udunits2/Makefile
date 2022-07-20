@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	udunits2
 PORTVERSION=	0.13.2.1
 CATEGORIES=	science

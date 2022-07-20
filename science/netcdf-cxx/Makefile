@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	netcdf-cxx
 PORTVERSION=	4.3.1
 PORTREVISION=	2

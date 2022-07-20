@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@oook.cz>
-
 PORTNAME=	gchemutils
 PORTVERSION=	0.14.16
 PORTREVISION=	10

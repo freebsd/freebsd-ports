@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	v_sim
 PORTVERSION=	3.8.0
 PORTREVISION=	3

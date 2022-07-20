@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	mpb
 DISTVERSION=	1.11.1
 CATEGORIES=	science

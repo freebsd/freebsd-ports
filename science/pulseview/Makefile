@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	pulseview
 PORTVERSION=	0.4.2
 PORTREVISION=	2

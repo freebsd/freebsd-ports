@@ -1,5 +1,3 @@
-# Created by: Shin-ya Murakami <murashin@gfd-dennou.org>
-
 PORTNAME=	ruby-netcdf
 PORTVERSION=	0.8.0
 CATEGORIES=	science rubygems

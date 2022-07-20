@@ -1,5 +1,3 @@
-# Created by: Nakata Maho <chat95@mbox.kyoto-inet.or.jp>
-
 PORTNAME=	pymol
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.0

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	Chemistry-InternalCoords
 PORTVERSION=	0.18
 PORTREVISION=	1

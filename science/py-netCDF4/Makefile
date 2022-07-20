@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	netCDF4
 PORTVERSION=	1.5.8
 PORTREVISION=	1

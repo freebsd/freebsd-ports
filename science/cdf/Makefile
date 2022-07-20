@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	cdf3
 PORTVERSION=	3.8.0
 CATEGORIES=	science

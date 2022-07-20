@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	liblinear
 PORTVERSION=	2.44
 CATEGORIES=	science math

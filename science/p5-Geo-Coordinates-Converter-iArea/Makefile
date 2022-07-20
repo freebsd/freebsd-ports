@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Geo-Coordinates-Converter-iArea
 PORTVERSION=	0.14
 PORTREVISION=	1

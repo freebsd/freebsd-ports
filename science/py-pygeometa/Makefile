@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pygeometa
 PORTVERSION=	0.11.1
 CATEGORIES=	science python

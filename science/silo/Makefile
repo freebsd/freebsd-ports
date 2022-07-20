@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni <giffunip@tutopia.com>
-
 PORTNAME=	silo
 PORTVERSION=	4.10.2
 DISTVERSIONSUFFIX=	-bsd

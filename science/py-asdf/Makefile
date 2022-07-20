@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	asdf
 PORTVERSION=	2.12.0
 CATEGORIES=	science python

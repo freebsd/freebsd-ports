@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Geo-WebService-Elevation-USGS
 PORTVERSION=	0.120
 CATEGORIES=	science perl5

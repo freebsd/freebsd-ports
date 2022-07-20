@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	AMORE
 PORTVERSION=	0.2.14
 PORTREVISION=	7

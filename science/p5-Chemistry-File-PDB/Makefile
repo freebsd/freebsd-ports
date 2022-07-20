@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Chemistry-File-PDB
 PORTVERSION=	0.23
 PORTREVISION=	1

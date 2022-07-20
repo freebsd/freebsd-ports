@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	kernlab
 DISTVERSION=	0.9-31
 CATEGORIES=	science

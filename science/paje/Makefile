@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	paje
 PORTVERSION=	1.97
 PORTREVISION=	11

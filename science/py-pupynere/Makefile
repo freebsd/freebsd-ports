@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	pupynere
 PORTVERSION=	1.0.15
 PORTREVISION=	8

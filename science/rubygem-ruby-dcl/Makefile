@@ -1,5 +1,3 @@
-# Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-
 PORTNAME=	ruby-dcl
 PORTVERSION=	1.8.1
 CATEGORIES=	science rubygems

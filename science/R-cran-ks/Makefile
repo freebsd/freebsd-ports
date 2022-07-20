@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	ks
 PORTVERSION=	1.13.5
 CATEGORIES=	science

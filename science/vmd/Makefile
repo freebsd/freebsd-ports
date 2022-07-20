@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	vmd
 DISTVERSION=	1.9.3
 PORTREVISION=	11

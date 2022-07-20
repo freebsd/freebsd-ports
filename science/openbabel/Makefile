@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	openbabel
 DISTVERSION=	3.1.1
 PORTREVISION=	5

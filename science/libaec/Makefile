@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libaec
 PORTVERSION=	1.0.6
 CATEGORIES=	science

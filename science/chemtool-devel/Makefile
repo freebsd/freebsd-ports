@@ -1,5 +1,3 @@
-# Created by: NAKATA, Maho <maho@FreeBSD.org>
-
 PORTNAME=	chemtool
 PORTVERSION=	1.7.20050716
 PORTREVISION=	10

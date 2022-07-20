@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	medit
 PORTVERSION=	2012.02.05
 PORTREVISION=	5

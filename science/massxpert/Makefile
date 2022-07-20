@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	massxpert
 DISTVERSION=	6.0.3
 CATEGORIES=	science

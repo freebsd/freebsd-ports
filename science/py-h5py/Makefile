@@ -1,5 +1,3 @@
-# Created by: TAOKA Fumiyoshi
-
 PORTNAME=	h5py
 PORTVERSION=	3.7.0
 CATEGORIES=	science python

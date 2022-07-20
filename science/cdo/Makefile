@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	cdo
 PORTVERSION=	2.0.5
 PORTREVISION=	1

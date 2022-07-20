@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	scikit-learn
 DISTVERSION=	1.1.1
 CATEGORIES=	science python

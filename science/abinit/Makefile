@@ -1,5 +1,3 @@
-# Created by: NAKATA Maho <maho@FreeBSD.org>
-
 PORTNAME=	abinit
 DISTVERSION=	9.4.2
 PORTREVISION=	5

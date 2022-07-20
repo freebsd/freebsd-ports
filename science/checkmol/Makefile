@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	checkmol
 PORTVERSION=	0.5
 PORTREVISION=	14

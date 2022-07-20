@@ -1,5 +1,3 @@
-# Created by: Stas Timokhin <devel@stasyan.com>
-
 PORTNAME=	harminv
 PORTVERSION=	1.3.1
 PORTREVISION=	19

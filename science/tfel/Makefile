@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni
-
 PORTNAME=	tfel
 PORTVERSION=	4.0.0
 PORTREVISION=	1

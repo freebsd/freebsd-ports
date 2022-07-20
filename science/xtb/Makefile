@@ -1,5 +1,3 @@
-# Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	xtb
 PORTVERSION=	6.4.1
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	gnudatalanguage
 PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v

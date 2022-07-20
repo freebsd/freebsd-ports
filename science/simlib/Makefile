@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	simlib
 DISTVERSION=	3.06
 DISTVERSIONSUFFIX=	-20181003

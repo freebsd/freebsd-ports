@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	scipy
 DISTVERSION=	1.8.1
 CATEGORIES=	science python

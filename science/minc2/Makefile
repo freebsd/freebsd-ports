@@ -1,5 +1,3 @@
-# Created by: jbacon
-
 PORTNAME=	minc
 PORTVERSION=	2.2.00
 DISTVERSIONPREFIX=	release-

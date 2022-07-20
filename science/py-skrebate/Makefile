@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	skrebate
 PORTVERSION=	0.62
 CATEGORIES=	science python

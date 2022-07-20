@@ -1,5 +1,3 @@
-# Created by: Nakata Maho <maho@FreeBSD.org>
-
 PORTNAME=	ghemical
 PORTVERSION=	3.0.0
 PORTREVISION=	23

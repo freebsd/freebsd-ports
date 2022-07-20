@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	Chemistry-File-MDLMol
 PORTVERSION=	0.21
 PORTREVISION=	1

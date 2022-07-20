@@ -1,5 +1,3 @@
-# Created by: maintainer.freebsd@xpoundit.com
-
 PORTNAME=	orthanc-postgresql
 DISTVERSION=	4.0
 PORTREVISION=	2

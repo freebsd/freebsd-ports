@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pygeodesy
 PORTVERSION=	22.7.7
 CATEGORIES=	science python

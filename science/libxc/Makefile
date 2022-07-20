@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <dieterich@ogolem.org>
-
 PORTNAME=	libxc
 DISTVERSION=	5.2.3
 CATEGORIES=	science

@@ -1,5 +1,3 @@
-# Created by: Erik B Knudsen
-
 PORTNAME=	mcstas-comps
 PORTVERSION=	2.5
 PORTREVISION=	2

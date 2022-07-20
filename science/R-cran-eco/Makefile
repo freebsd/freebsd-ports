@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	eco
 PORTVERSION=	3.1.6
 PORTREVISION=	10

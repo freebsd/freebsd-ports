@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	chemical-mime-data
 PORTVERSION=	0.1.94
 PORTREVISION=	10

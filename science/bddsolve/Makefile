@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@FreeBSD.org>
-
 PORTNAME=	bddsolve
 PORTVERSION=	1.04
 PORTREVISION=	10

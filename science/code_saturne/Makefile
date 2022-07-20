@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	code_saturne
 PORTVERSION=	7.1.1
 DISTVERSIONPREFIX=	v

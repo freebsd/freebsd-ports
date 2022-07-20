@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	geometer
 PORTVERSION=	0.3.4
 PORTREVISION=	1

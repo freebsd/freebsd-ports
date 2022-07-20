@@ -1,5 +1,3 @@
-# Created by: Chao Shin <quakelee@cn.FreeBSD.org>
-
 PORTNAME=	pnetcdf
 PORTVERSION=	1.12.3
 CATEGORIES=	science parallel

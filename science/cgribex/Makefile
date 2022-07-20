@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cgribex
 PORTVERSION=	1.9.4
 PORTREVISION=	2

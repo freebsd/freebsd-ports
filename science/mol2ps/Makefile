@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	mol2ps
 PORTVERSION=	0.4b
 PORTREVISION=	12

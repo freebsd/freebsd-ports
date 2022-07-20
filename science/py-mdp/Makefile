@@ -1,5 +1,3 @@
-# Created by: Li-Lun Wang <llwang@infor.org>
-
 PORTNAME=	mdp
 PORTVERSION=	3.5
 PORTREVISION=	3

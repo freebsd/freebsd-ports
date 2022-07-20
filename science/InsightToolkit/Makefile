@@ -1,5 +1,3 @@
-# Created by: bacon@smithers.neuro.mcw.edu
-
 PORTNAME=	InsightToolkit
 PORTVERSION=	5.0.1
 DISTVERSIONPREFIX=v

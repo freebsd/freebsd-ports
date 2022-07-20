@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <frederic@culot.org>
-
 PORTNAME=	Physics-Unit
 PORTVERSION=	0.54
 CATEGORIES=	science perl5

@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	elmerfem
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	9.0

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net
-
 PORTNAME=	Chemistry-3DBuilder
 PORTVERSION=	0.10
 PORTREVISION=	1

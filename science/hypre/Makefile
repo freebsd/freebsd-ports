@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	hypre
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.25.0

@@ -1,5 +1,3 @@
-# Created by: Andreas Fehlner <fehlner@gmx.de>
-
 PORTNAME=	gramps
 PORTVERSION=	5.1.5
 DISTVERSIONPREFIX=	v

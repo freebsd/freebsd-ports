@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	hdf5
 PORTVERSION=	1.12.2
 PORTEPOCH=	1

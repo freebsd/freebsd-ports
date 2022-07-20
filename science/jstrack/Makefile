@@ -1,5 +1,3 @@
-# Created by: Chris Rees <utisoft@gmail.com>
-
 PORTNAME=	jstrack
 PORTVERSION=	3.4.0
 CATEGORIES=	science

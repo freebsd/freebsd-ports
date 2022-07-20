@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	spaghetti
 PORTVERSION=	1.6.5
 CATEGORIES=	science python

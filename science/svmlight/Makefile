@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	svmlight
 PORTVERSION=	6.02
 PORTREVISION=	1

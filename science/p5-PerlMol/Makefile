@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	PerlMol
 PORTVERSION=	0.3500
 PORTREVISION=	2

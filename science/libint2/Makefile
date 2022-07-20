@@ -1,5 +1,3 @@
-# Created by: NAKATA, Maho <maho@FreeBSD.org>
-
 PORTNAME=	libint
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.2

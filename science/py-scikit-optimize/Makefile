@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	scikit-optimize
 PORTVERSION=	0.9.0
 CATEGORIES=	science python

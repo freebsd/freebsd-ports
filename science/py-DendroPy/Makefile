@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	DendroPy
 PORTVERSION=	4.5.2
 CATEGORIES=	science python

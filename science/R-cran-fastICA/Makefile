@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
-
 PORTNAME=	fastICA
 DISTVERSION=	1.2-3
 CATEGORIES=	science math

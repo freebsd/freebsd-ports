@@ -1,5 +1,3 @@
-# Created by: maintainer.freebsd@xpoundit.com
-
 PORTNAME=	orthanc-webviewer
 DISTVERSION=	2.8
 PORTREVISION=	1

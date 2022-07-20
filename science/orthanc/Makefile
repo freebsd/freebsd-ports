@@ -1,5 +1,3 @@
-# Created by: maintainer.freebsd@xpoundit.com
-
 PORTNAME=	orthanc
 DISTVERSION=	1.11.0
 PORTREVISION=	2

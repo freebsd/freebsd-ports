@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	gromacs
 DISTVERSION=	2022.2
 CATEGORIES=	science

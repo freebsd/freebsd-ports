@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	bodr
 PORTVERSION=	10
 CATEGORIES=	science

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Geo-BUFR
 PORTVERSION=	1.38
 CATEGORIES=	science perl5 geography

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	Epi
 PORTVERSION=	2.47
 CATEGORIES=	science

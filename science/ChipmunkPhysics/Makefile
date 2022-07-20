@@ -1,5 +1,3 @@
-# Created by: Tim Cas <ports@stdrand.com>
-
 PORTNAME=	ChipmunkPhysics
 PORTVERSION=	7.0.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	chemtool
 DISTVERSION=	1.6.14
 PORTREVISION=	3

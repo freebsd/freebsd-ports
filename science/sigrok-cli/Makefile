@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	sigrok-cli
 PORTVERSION=	0.7.2
 CATEGORIES=	science cad

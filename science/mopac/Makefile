@@ -1,5 +1,3 @@
-# Created by: Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
-
 PORTNAME=	mopac
 PORTVERSION=	7.${MOPAC_SUBVERSION}
 PORTREVISION=	8

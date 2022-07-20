@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	jupyter-jsmol
 PORTVERSION=	2021.3.0
 DISTVERSIONPREFIX=	v

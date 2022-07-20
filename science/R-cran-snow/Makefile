@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	snow
 DISTVERSION=	0.4-4
 CATEGORIES=	science

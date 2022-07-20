@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	eccodes
 PORTVERSION=	2.26.0
 DISTVERSIONSUFFIX=	-Source

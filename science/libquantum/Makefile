@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	libquantum
 PORTVERSION=	1.1.1
 PORTREVISION=	1

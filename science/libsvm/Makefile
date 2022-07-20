@@ -1,5 +1,3 @@
-# Created by: Chia-Hsing Yu <me@davidyu.org>
-
 PORTNAME=	libsvm
 PORTVERSION=	3.23
 CATEGORIES=	science math

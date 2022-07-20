@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	e1071
 DISTVERSION=	1.7-11
 CATEGORIES=	science

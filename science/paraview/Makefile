@@ -1,5 +1,3 @@
-# Created by: anholt@FreeBSD.org
-
 PORTNAME=	paraview
 DISTVERSION=	5.10.1
 PORTREVISION=	1

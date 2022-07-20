@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	crf++
 # 0.59 as defined in
 # https://github.com/taku910/crfpp/commit/d78526835e4cfcc4822156724edda8a3839327c2

@@ -1,5 +1,3 @@
-# Created by: Markus Brueffer <markus@FreeBSD.org>
-
 PORTNAME=	kst
 DISTVERSION=	${KST_VERSION}.${KST_DATE}
 CATEGORIES=	science

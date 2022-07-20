@@ -1,5 +1,3 @@
-# Created by: Shin'ya Murakami <murakami@ahs.scitec.kobe-u.ac.jp>
-
 PORTNAME=	cdcl
 PORTVERSION=	5.4.8
 PORTREVISION=	1

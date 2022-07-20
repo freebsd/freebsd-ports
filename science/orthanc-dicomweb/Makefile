@@ -1,5 +1,3 @@
-# Created by: maintainer.freebsd@xpoundit.com
-
 PORTNAME=	orthanc-dicomweb
 DISTVERSION=	1.8
 PORTREVISION=	1

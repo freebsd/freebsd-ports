@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	getdp
 PORTVERSION=	3.5.0
 CATEGORIES=	science

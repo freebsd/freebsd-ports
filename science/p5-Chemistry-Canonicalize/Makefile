@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	Chemistry-Canonicalize
 PORTVERSION=	0.11
 PORTREVISION=	1
