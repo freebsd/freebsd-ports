@@ -1,5 +1,3 @@
-# Created by: NAKAJI Hiroyuki <nakaji@jp.freebsd.org>
-
 PORTNAME=	nqueens
 PORTVERSION=	1.0
 CATEGORIES=	benchmarks

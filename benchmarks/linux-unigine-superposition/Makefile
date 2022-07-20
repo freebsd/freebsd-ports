@@ -1,4 +1,3 @@
-# Created by: Hannes Hauswedell <h2+fbsdports@fsfe.org>
 #
 # The distfile for this port is quite huge (1.5GB); you might consider
 # fetching it via BitTorrent instead:

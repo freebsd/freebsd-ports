@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	nosqlbench
 PORTVERSION=	0.0.${DATE}
 PORTREVISION=	1

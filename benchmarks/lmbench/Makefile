@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	lmbench
 PORTVERSION=	3.0.a9
 PORTREVISION=	3

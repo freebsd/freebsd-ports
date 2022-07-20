@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	blogbench
 PORTVERSION=	1.1
 PORTREVISION=	1

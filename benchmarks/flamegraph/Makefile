@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	flamegraph
 PORTVERSION=	1.1
 CATEGORIES=	benchmarks

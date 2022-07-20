@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Dumbbench
 PORTVERSION=	0.503
 CATEGORIES=	benchmarks perl5

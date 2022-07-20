@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	railsbench
 PORTVERSION=	0.9.8
 PORTREVISION=	1

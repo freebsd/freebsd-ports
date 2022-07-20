@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	2.3.0
 CATEGORIES=	benchmarks

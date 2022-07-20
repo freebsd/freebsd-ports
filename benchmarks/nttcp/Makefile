@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@chc-chimes.com>
-
 PORTNAME=	nttcp
 PORTVERSION=	1.47
 PORTREVISION=	3

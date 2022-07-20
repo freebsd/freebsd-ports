@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	scimark4c
 PORTVERSION=	4
 CATEGORIES=	benchmarks

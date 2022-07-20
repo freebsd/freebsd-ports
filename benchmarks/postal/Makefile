@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	postal
 PORTVERSION=	0.73
 PORTREVISION=	3

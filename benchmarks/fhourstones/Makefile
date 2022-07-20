@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	fhourstones
 PORTVERSION=	3.1
 PORTREVISION=	2

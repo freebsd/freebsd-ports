@@ -1,5 +1,3 @@
-# Created by: Andrew Shevtsov <nyxo@dnuc.polyn.kiae.su>
-
 PORTNAME=	dbench
 PORTVERSION=	4.0
 PORTREVISION=	2

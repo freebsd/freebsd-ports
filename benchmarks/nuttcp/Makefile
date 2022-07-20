@@ -1,5 +1,3 @@
-# Created by: Andy Clark <andrewclarkii@gmail.com>
-
 PORTNAME=	nuttcp
 PORTVERSION=	8.2.2
 CATEGORIES=	benchmarks net

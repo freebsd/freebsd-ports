@@ -1,5 +1,3 @@
-# Created by: se
-
 PORTNAME=	bonnie
 PORTVERSION=	2.0.6
 PORTREVISION=	1

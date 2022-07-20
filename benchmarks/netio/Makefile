@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	netio
 PORTVERSION=	1.33
 CATEGORIES=	benchmarks net

@@ -1,5 +1,3 @@
-# Created by: Andreas Kohn <andreas@syndrom23.de>
-
 PORTNAME=	gtkperf
 PORTVERSION=	0.40
 PORTREVISION=	10

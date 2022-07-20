@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	interbench
 PORTVERSION=	0.31
 PORTREVISION=	1

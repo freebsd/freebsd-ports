@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	autobench
 PORTVERSION=	2.1.2
 PORTREVISION=	9

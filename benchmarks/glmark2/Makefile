@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	glmark2
 PORTVERSION=	2021.12
 CATEGORIES=	benchmarks wayland

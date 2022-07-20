@@ -1,5 +1,3 @@
-# Created by: Scott Flatman <sf@dsinw.com>
-
 PORTNAME=	stream
 PORTVERSION=	5.10
 CATEGORIES=	benchmarks

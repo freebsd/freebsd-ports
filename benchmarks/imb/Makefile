@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	imb
 PORTVERSION=	3.0
 PORTREVISION=	17

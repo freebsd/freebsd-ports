@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	slowloris
 PORTVERSION=	0.7
 PORTREVISION=	2

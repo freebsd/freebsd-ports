@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	hpl
 DISTVERSION=	2.3
 PORTREVISION=	2

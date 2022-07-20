@@ -1,5 +1,3 @@
-# Created by: koshy
-
 PORTNAME=	netperf
 PORTVERSION=	2.7.1.p20170921
 PORTREVISION=	1

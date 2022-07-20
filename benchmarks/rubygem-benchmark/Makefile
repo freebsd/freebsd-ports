@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	benchmark
 PORTVERSION=	0.2.0
 CATEGORIES=	benchmarks rubygems

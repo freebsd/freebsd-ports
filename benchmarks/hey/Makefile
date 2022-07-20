@@ -1,5 +1,3 @@
-# Created by: Brad Davis <brd@FreeBSD.org>
-
 PORTNAME=	hey
 PORTVERSION=	0.1.4
 DISTVERSIONPREFIX=	v

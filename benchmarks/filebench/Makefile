@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tom@tomjudge.com>
-
 PORTNAME=	filebench
 DISTVERSION=	1.5-alpha3-27
 DISTVERSIONSUFFIX=	-g22620e6

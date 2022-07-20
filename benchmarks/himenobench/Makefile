@@ -1,5 +1,3 @@
-# Created by: NAKATA Maho <maho@FreeBSD.org>
-
 PORTNAME=	himenobench
 PORTVERSION=	2015.07.09
 PORTREVISION=	9

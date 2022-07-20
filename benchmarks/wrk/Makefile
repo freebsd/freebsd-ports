@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	wrk
 PORTVERSION=	4.1.0
 PORTREVISION=	1

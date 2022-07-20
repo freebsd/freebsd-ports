@@ -1,5 +1,3 @@
-# Created by: Lars Eggert <lars@eggert.org>
-
 PORTNAME=	spp
 PORTVERSION=	0.4.2
 CATEGORIES=	benchmarks

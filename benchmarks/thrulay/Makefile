@@ -1,5 +1,3 @@
-# Created by: shalunov
-
 PORTNAME=	thrulay
 PORTVERSION=	0.9
 PORTREVISION=	1

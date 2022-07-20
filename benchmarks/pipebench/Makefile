@@ -1,5 +1,3 @@
-# Created by: mich@freebsdcluster.org
-
 PORTNAME=	pipebench
 PORTVERSION=	0.40
 CATEGORIES=	benchmarks

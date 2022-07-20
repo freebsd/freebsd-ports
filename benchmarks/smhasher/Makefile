@@ -1,5 +1,3 @@
-# Created by: gnn
-
 PORTNAME=	smhasher
 PORTVERSION=	1.0
 DISTVERSIONPREFIX=	v

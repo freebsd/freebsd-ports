@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	siege
 PORTVERSION=	4.1.3
 CATEGORIES=	benchmarks www

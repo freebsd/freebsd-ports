@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	unigine-sanctuary
 PORTVERSION=	2.3
 CATEGORIES=	benchmarks linux

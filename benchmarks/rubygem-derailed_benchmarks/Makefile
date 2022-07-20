@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	derailed_benchmarks
 PORTVERSION=	1.7.0
 CATEGORIES=	benchmarks rubygems

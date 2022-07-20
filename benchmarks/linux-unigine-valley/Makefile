@@ -1,5 +1,3 @@
-# Created by: Hannes Hauswedell <h2+fbsdports@fsfe.org>
-
 PORTNAME=	unigine-valley
 PORTVERSION=	1.0
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Radim Kolar <hsn@sendmail.cz>
-
 PORTNAME=	dhrystone
 PORTVERSION=	2.1
 PORTREVISION=	2

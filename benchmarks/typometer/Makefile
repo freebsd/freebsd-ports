@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	typometer
 PORTVERSION=	1.0.1
 DISTVERSIONSUFFIX=	-bin

@@ -1,5 +1,3 @@
-# Created by: dikshie <dikshie@lapi.itb.ac.id>
-
 PORTNAME=	pathrate
 PORTVERSION=	2.4.1
 CATEGORIES=	benchmarks

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
-
 PORTNAME=	sysbench
 PORTVERSION=	1.0.20
 CATEGORIES=	benchmarks databases

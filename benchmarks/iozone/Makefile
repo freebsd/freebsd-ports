@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME=	iozone
 DISTVERSION=	3_493
 CATEGORIES=	benchmarks

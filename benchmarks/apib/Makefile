@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	apib
 DISTVERSIONPREFIX=	${PORTNAME:tu}_
 DISTVERSION=	1_2_1

@@ -1,5 +1,3 @@
-# Created by: Lars Eggert <lars@eggert.org>
-
 PORTNAME=	flowgrind
 PORTVERSION=	0.8.2
 DISTVERSIONPREFIX=	${PORTNAME}-

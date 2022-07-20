@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	lzbench
 PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v

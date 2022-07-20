@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	flops
 PORTVERSION=	2.2
 CATEGORIES=	benchmarks

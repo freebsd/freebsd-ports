@@ -1,5 +1,3 @@
-# Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-
 PORTNAME=	ddosify
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0

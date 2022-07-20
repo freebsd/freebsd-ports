@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	postmark
 PORTVERSION=	1.53
 CATEGORIES=	benchmarks

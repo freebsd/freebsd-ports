@@ -1,5 +1,3 @@
-# Created by: luigi@FreeBSD.org
-
 PORTNAME=	fio
 PORTVERSION=	3.30
 PORTREVISION=	1

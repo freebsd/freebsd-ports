@@ -1,5 +1,3 @@
-# Created by: dikshie <dikshie@lapi.itb.ac.id>
-
 PORTNAME=	pathchirp
 PORTVERSION=	2.4.1
 PORTREVISION=	1

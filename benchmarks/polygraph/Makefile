@@ -1,5 +1,3 @@
-# Created by: Dima Sivachenko <dima@chg.ru>
-
 PORTNAME=	polygraph
 DISTVERSION=	4.13.0
 PORTREVISION=	3

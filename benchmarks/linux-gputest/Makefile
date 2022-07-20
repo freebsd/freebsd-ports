@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	gputest
 PORTVERSION=	0.7.0
 CATEGORIES=	benchmarks linux

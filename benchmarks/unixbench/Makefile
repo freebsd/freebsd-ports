@@ -1,5 +1,3 @@
-# Created by: se
-
 PORTNAME=	unixbench
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.1.3
