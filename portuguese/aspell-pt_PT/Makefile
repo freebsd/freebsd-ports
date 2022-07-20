@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	aspell
 SPELLVERSION=	6-pt_PT-20070510-0
 PORTREVISION=	2
