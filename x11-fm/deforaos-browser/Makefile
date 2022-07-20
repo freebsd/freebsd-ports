@@ -1,5 +1,3 @@
-# Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-
 PORTNAME=	deforaos-browser
 PORTVERSION=	0.5.1
 CATEGORIES=	x11-fm

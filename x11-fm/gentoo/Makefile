@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	gentoo
 PORTVERSION=	0.20.7
 CATEGORIES=	x11-fm

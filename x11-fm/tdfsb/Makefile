@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alejandro@varnet.biz>
-
 PORTNAME=	tdfsb
 PORTVERSION=	0.0.10
 PORTREVISION=	10

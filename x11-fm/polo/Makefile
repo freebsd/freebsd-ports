@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	polo
 DISTVERSION=	18.8-beta
 PORTREVISION=	2

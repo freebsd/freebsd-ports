@@ -1,5 +1,3 @@
-# Created by: Simon Dick <simond@irrelevant.org>
-
 PORTNAME=	worker
 PORTVERSION=	4.10.1
 CATEGORIES=	x11-fm

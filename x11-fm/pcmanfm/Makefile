@@ -1,5 +1,3 @@
-# Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
-
 PORTNAME=	pcmanfm
 PORTVERSION=	1.3.2
 CATEGORIES=	x11-fm

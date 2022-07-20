@@ -1,5 +1,3 @@
-# Created by: Jens K. Loewe <bsd@tuxproject.de>
-
 PORTNAME=	rodent
 PORTVERSION=	5.3.16.3
 PORTREVISION=	4

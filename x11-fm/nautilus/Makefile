@@ -1,5 +1,3 @@
-# Created by: ade, archie
-
 PORTNAME=	nautilus
 PORTVERSION=	42.1
 CATEGORIES=	x11-fm gnome

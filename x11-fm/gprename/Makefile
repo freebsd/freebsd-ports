@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	gprename
 PORTVERSION=	2.7
 PORTEPOCH=	1

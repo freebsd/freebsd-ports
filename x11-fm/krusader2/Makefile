@@ -1,5 +1,3 @@
-# Created by: Heiner <h.eichmann@gmx.de>
-
 PORTNAME=	krusader
 DISTVERSION=	2.7.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Lars Engels <lars.engels@0x20.net>
-
 PORTNAME=	mucommander
 DISTVERSION=	0.9.5-1
 CATEGORIES=	x11-fm java

@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	sushi
 PORTVERSION=	42.0
 CATEGORIES=	x11-fm gnome

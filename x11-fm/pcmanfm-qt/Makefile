@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	pcmanfm-qt
 PORTVERSION=	1.1.0
 CATEGORIES=	x11-fm

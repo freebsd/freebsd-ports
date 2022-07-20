@@ -1,5 +1,3 @@
-# Created by: ade, archie
-
 PORTNAME=	caja
 PORTVERSION=	1.26.1
 CATEGORIES=	x11-fm mate

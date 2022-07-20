@@ -1,5 +1,3 @@
-# Created by: Beñat Gonzalez Etxepare <bbtruk@users.sourceforge.net>
-
 PORTNAME=	doublecmd
 PORTVERSION=	1.0.4
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: ptiJo
-
 PORTNAME=	xfe
 PORTVERSION=	1.44
 CATEGORIES=	x11-fm
