@@ -2,7 +2,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	103.0.5060.114
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
