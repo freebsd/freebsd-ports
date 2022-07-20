@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	pitivi
 PORTVERSION=	0.999
 PORTREVISION=	2

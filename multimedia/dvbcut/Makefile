@@ -1,5 +1,3 @@
-# Created by: se@FreeBSD.org
-
 PORTNAME=	dvbcut
 PORTVERSION=	0.7.4
 DISTVERSIONPREFIX=	v

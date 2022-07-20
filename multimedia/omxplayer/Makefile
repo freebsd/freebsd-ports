@@ -1,5 +1,3 @@
-# Created by: mikael.urankar@gmail.com
-
 PORTNAME=	omxplayer
 PORTVERSION=	20161004
 PORTREVISION=	17

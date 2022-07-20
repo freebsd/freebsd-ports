@@ -1,5 +1,3 @@
-# Created by: kamikaze@bsdforen.de
-
 PORTNAME=	libbluray
 DISTVERSION=	1.3.1
 PORTEPOCH=	1

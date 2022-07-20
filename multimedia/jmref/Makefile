@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	jmref
 PORTVERSION=	19.0
 PORTREVISION=	1

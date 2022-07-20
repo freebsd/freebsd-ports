@@ -1,5 +1,3 @@
-# Created by: Raaf <freebsd@luna.afraid.org>
-
 PORTNAME=	pwcbsd
 PORTVERSION=	1.4.1
 PORTREVISION=	12

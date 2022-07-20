@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	spook
 PORTVERSION=	20050207
 PORTREVISION=	5

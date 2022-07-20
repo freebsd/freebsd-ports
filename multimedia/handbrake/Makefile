@@ -1,5 +1,3 @@
-# Created by: Andrew Thompson <andy@fud.org.nz>
-
 PORTNAME=	handbrake
 DISTVERSION=	1.5.1
 PORTREVISION=	2

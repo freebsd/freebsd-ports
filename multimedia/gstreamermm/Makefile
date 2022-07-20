@@ -1,4 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
 #    $MCom: ports/multimedia/gstreamermm/Makefile,v 1.6 2009/09/26 13:42:00 marcus Exp $
 
 PORTNAME=	gstreamermm

@@ -1,5 +1,3 @@
-# Created by: michael johnson <ahze@ahze.net>
-
 PORTNAME=	lsdvd
 PORTVERSION=	0.17
 PORTREVISION=	5

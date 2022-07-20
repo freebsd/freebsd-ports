@@ -1,5 +1,3 @@
-# Created by: Felix Palmen <felix@palmen-it.de>
-
 PORTNAME=	makemkv
 PORTVERSION=	1.17.0
 CATEGORIES=	multimedia

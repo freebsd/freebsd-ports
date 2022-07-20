@@ -1,5 +1,3 @@
-# Created by: Brian Somers <brian@FreeBSD.org>
-
 PORTNAME=	vlc
 DISTVERSION=	3.0.17.4
 PORTREVISION=	3

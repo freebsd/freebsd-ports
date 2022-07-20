@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	periscope
 PORTVERSION=	0.2.4
 PORTREVISION=	4

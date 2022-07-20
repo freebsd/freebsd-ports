@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	gavl
 PORTVERSION=	1.4.0
 PORTREVISION=	4

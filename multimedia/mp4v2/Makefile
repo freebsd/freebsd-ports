@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	mp4v2
 PORTVERSION=	2.0.0
 CATEGORIES=	multimedia

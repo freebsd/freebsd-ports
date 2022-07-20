@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	phonon
 DISTVERSION=	4.10.0
 PORTREVISION=	4

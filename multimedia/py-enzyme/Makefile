@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <william88@gmail.com>
-
 PORTNAME=	enzyme
 PORTVERSION=	0.4.1
 PORTREVISION=	1

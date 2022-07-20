@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	gpac
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0

@@ -1,5 +1,3 @@
-# Created by: Leinier Cruz Salfran <salfrancl@yahoo.es>
-
 PORTNAME=	aegisub
 PORTVERSION=	3.2.2
 PORTREVISION=	53

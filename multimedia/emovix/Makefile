@@ -1,5 +1,3 @@
-# Created by: Heiner <h.eichmann@gmx.de>
-
 PORTNAME=	emovix
 PORTVERSION=	0.9.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@rainbow-runner.nl>
-
 PORTNAME=	gstreamer1-vaapi
 PORTVERSION=	1.16.2
 PORTREVISION=	2

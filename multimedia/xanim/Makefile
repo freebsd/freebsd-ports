@@ -1,5 +1,3 @@
-# Created by: piero
-
 PORTNAME=	xanim
 PORTVERSION=	2.92.0
 PORTREVISION=	9

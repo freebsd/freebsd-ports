@@ -1,5 +1,3 @@
-# Created by: Sylvio Cesar <sylvio@FreeBSD.org>
-
 PORTNAME=	mp3cd
 PORTVERSION=	1.027
 PORTREVISION=	1

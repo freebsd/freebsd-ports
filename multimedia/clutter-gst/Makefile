@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	clutter-gst
 PORTVERSION=	2.0.18
 PORTREVISION=	2

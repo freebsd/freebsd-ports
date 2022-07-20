@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	ffmpeg
 PORTVERSION=	4.4.2
 PORTREVISION=	5

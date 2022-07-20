@@ -1,5 +1,3 @@
-# Created by: Jason Harmening <jason.harmening@gmail.com>
-
 PORTNAME=	cx88
 DISTVERSION=	1.5.4
 CATEGORIES=	multimedia

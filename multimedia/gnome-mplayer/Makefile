@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	gnome-mplayer
 PORTVERSION=	1.0.9
 PORTREVISION=	4

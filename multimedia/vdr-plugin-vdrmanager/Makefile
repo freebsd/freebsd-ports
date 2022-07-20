@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-vdrmanager
 PORTVERSION=	0.6
 PORTREVISION=	7

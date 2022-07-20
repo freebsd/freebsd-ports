@@ -1,5 +1,3 @@
-# Created by: Rozhuk Ivan 2018 <rozhuk.im@gmail.com>
-
 PORTNAME=	peripheral.joystick
 DISTVERSION=	19.0.1
 DISTVERSIONSUFFIX=	-Matrix

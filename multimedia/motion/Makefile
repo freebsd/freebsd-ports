@@ -1,5 +1,3 @@
-# Created by: Angel Carpintero <ack@telefonica.net>
-
 # PORTNAME block
 PORTNAME=	motion
 PORTVERSION=	4.3.2

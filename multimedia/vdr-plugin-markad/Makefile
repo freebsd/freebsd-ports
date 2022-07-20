@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-markad
 PORTVERSION=	0.1.4
 PORTREVISION=	10

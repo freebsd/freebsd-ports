@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	libmediaart
 DISTVERSION=	1.9.6
 CATEGORIES=	multimedia devel

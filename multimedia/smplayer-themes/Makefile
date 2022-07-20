@@ -1,5 +1,3 @@
-# Created by: Diego Depaoli <trebestie@gmail.com> and Yinghong Liu <relaxbsd@gmail.com>
-
 PORTNAME=	smplayer-themes
 PORTVERSION=	20.11.0
 PORTREVISION=	1

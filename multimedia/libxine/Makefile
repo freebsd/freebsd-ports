@@ -1,5 +1,3 @@
-# Created by: alex
-
 PORTNAME=	xine
 DISTVERSION=	1.2.12
 PORTREVISION=	2

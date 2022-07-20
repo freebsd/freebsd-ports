@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gstreamer1-editing-services
 PORTVERSION=	1.16.3
 CATEGORIES=	multimedia

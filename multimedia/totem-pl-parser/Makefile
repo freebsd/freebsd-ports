@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	totem-pl-parser
 PORTVERSION=	3.26.6
 CATEGORIES=	multimedia gnome

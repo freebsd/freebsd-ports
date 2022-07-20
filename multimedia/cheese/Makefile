@@ -1,5 +1,3 @@
-# Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-
 PORTNAME=	cheese
 PORTVERSION=	41.1
 PORTREVISION=	1

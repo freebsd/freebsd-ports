@@ -1,4 +1,3 @@
-# Created by: Andrew Thompson <thompsa@FreeBSD.org>
 # Check v4l_compat and v4l-utils slave ports
 
 PORTNAME?=	libv4l

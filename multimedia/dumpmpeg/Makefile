@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	dumpmpeg
 PORTVERSION=	0.6
 PORTREVISION=	10

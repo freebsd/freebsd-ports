@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	lives
 DISTVERSION=	3.2.0
 PORTREVISION=	9

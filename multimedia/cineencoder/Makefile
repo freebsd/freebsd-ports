@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	${GH_ACCOUNT:tl}
 PORTVERSION=	3.5.3
 CATEGORIES=	multimedia

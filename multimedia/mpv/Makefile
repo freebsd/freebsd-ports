@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.34.1

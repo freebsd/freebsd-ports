@@ -1,5 +1,3 @@
-# Created by: Herbert J. Skuhra <h.skuhra@gmail.com>
-
 PORTNAME=	gst123
 PORTVERSION=	0.3.3
 PORTREVISION=	3

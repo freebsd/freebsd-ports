@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	gstreamer1-plugins-gnonlin
 PORTVERSION=	1.4.0
 CATEGORIES=	multimedia

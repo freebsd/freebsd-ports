@@ -1,5 +1,3 @@
-# Created by: Anonymous <swell.k@gmail.com>
-
 PORTNAME=	vdpauinfo
 PORTVERSION=	1.5
 CATEGORIES=	multimedia

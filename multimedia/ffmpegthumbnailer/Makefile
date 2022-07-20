@@ -1,5 +1,3 @@
-# Created by: Dierk Sacher <dierk@blaxxtarz.de>
-
 PORTNAME=	ffmpegthumbnailer
 PORTVERSION=	2.2.2
 CATEGORIES=	multimedia graphics

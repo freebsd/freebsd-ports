@@ -1,5 +1,3 @@
-# Created by: KalleDK <plexmaintainer@k-moeller.dk>
-
 PORTNAME=	plexmediaserver
 PORTVERSION?=	1.27.2.5929
 DISTVERSIONSUFFIX?=a806c5905

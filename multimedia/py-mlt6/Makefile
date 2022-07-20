@@ -1,5 +1,3 @@
-# Created by: Charlie Kester <corky1951@comcast.net>
-
 MASTERDIR=	${.CURDIR:H}/mlt6
 SLAVEPORT=	python
 

@@ -1,5 +1,3 @@
-# Created by: Marc van Woerkom <3d@FreeBSD.org>
-
 PORTNAME=	libdvdread
 PORTVERSION=	6.1.3
 CATEGORIES=	multimedia

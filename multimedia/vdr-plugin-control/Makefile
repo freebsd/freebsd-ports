@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-control
 PORTVERSION=	0.0.2a45
 PORTREVISION=	16

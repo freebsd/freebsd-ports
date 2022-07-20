@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libzen
 PORTVERSION=	22.06
 CATEGORIES=	multimedia

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@mouf.net>
-
 PORTNAME=	xporthdmv
 PORTVERSION=	1.01
 CATEGORIES=	multimedia

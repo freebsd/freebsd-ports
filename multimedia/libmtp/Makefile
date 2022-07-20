@@ -1,5 +1,3 @@
-# Created by: Petar Zhivkov Petrov <pesho.petrov@gmail.com>
-
 PORTNAME=	libmtp
 PORTVERSION=	1.1.18
 CATEGORIES=	multimedia audio

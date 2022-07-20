@@ -1,5 +1,3 @@
-# Created by: osa
-
 PORTNAME=	Subtitles
 PORTVERSION=	1.04
 PORTREVISION=	1

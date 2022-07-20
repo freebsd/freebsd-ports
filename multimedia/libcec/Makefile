@@ -1,5 +1,3 @@
-# Created by: Manuel Creach <manuel.creach@icloud.com>
-
 PORTNAME=	libcec
 PORTVERSION=	6.0.2
 DISTVERSIONPREFIX=	libcec-

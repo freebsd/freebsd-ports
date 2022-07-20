@@ -1,5 +1,3 @@
-# Created by: Byung-Hee HWANG <bh@izb.knu.ac.kr>
-
 PORTNAME=	quodlibet
 DISTVERSION=	4.3.0
 CATEGORIES=	multimedia audio python

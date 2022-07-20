@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <hq@FreeBSD.org>
-
 PORTNAME=	ogmrip
 PORTVERSION=	1.0.1
 PORTREVISION=	14

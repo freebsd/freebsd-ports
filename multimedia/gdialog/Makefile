@@ -1,5 +1,3 @@
-# Created by: Heiner Eichmann <h.eichmann@gmx.de>
-
 PORTNAME=	gdialog
 PORTVERSION=	2.5
 PORTREVISION=	1

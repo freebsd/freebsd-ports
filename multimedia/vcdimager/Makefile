@@ -1,5 +1,3 @@
-# Created by: Harold Gutch <logix@foobar.franken.de>
-
 PORTNAME=	vcdimager
 PORTVERSION=	2.0.1
 PORTREVISION=	4

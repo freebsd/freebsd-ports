@@ -1,5 +1,3 @@
-# Created by: Pascal Vizeli <pvizeli@yahoo.de>
-
 PORTNAME=	mp4box
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0

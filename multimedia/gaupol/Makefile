@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	gaupol
 DISTVERSION=	1.4-3
 DISTVERSIONSUFFIX=	-g6116d42b

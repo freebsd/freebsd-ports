@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gstreamer1-rtsp-server
 PORTVERSION=	1.16.2
 CATEGORIES=	multimedia

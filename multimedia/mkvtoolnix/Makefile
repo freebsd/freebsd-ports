@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	mkvtoolnix
 PORTVERSION=	69.0.0
 CATEGORIES=	multimedia audio

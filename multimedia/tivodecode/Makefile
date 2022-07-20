@@ -1,5 +1,3 @@
-# Created by: Yi-Hsuan Hsin <mhsin@mhsin.org>
-
 PORTNAME=	tivodecode
 DISTVERSION=	0.2pre4
 CATEGORIES=	multimedia

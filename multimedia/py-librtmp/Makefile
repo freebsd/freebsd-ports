@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	librtmp
 PORTVERSION=	0.3.0
 PORTREVISION=	1

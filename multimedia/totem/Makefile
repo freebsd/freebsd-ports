@@ -1,5 +1,3 @@
-# Created by: Hendrik Scholz <hendrik@scholz.net>
-
 PORTNAME=	totem
 PORTVERSION=	3.38.2
 PORTREVISION=	2

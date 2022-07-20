@@ -1,5 +1,3 @@
-# Created by: Diego Depaoli <trebestie@gmail.com> and Yinghong Liu <relaxbsd@gmail.com>
-
 PORTNAME=	smplayer
 DISTVERSION=	22.2.0
 CATEGORIES=	multimedia audio kde

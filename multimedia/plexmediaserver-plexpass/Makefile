@@ -1,5 +1,3 @@
-# Created by: KalleDK <plexmaintainer@k-moeller.dk>
-
 PORTVERSION=	1.27.2.5929
 DISTVERSIONSUFFIX=a806c5905
 MASTER_SITES=	https://downloads.plex.tv/plex-media-server-new/${DISTVERSION}-${DISTVERSIONSUFFIX}/freebsd/

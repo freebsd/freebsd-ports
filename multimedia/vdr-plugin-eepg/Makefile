@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-eepg
 PORTVERSION=	0.0.6p2011071921
 PORTREVISION=	8

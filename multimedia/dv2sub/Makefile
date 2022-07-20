@@ -1,5 +1,3 @@
-# Created by: Phil Oleson
-
 PORTNAME=	dv2sub
 PORTVERSION=	0.3
 PORTREVISION=	5

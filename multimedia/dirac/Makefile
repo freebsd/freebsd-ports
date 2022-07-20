@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	dirac
 PORTVERSION=	1.0.2
 PORTREVISION=	5

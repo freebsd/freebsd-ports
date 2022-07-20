@@ -1,5 +1,3 @@
-# Created by: Holger Lamm
-
 PORTNAME=	win32-codecs
 DISTVERSION=	20110131
 PORTEPOCH=	1

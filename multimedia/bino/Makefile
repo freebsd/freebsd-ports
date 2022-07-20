@@ -1,5 +1,3 @@
-# Created by: Mykola Dzham <i@levsha.me>
-
 PORTNAME=	bino
 PORTVERSION=	1.6.5
 PORTREVISION=	6

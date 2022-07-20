@@ -1,5 +1,3 @@
-# Created by: Juergen Lock <nox@FreeBSD.org>
-
 PORTNAME=	vdr-plugin-osdteletext
 PORTVERSION=	0.9.2
 PORTREVISION=	7

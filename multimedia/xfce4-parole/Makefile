@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	parole
 PORTVERSION=	4.16.0
 CATEGORIES=	multimedia xfce

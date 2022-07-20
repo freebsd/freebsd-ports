@@ -1,5 +1,3 @@
-# Created by: Daniel Morante <daniel@morante.net>
-
 PORTNAME=	navidrome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.40.0

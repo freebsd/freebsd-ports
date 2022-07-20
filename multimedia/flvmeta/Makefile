@@ -1,5 +1,3 @@
-# Created by: Earl Gay <earl@eeg3.net>
-
 PORTNAME=	flvmeta
 PORTVERSION=	1.0.11
 DISTVERSIONPREFIX=	v

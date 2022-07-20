@@ -1,5 +1,3 @@
-# Created by: Anish Mistry (with help from mean)
-
 PORTNAME=	avidemux
 PORTVERSION=	${AVIDEMUX_VERSION}
 PORTREVISION=	1

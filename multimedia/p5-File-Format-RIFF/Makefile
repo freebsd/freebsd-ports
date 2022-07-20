@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	File-Format-RIFF
 DISTVERSION=	1.0.1
 PORTREVISION=	1

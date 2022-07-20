@@ -1,5 +1,3 @@
-# Created by: J.R. Oldroyd <fbsd@opal.com>
-
 PORTNAME=	dvbsnoop
 PORTVERSION=	1.4.50
 CATEGORIES=	multimedia

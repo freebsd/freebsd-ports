@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	WinFF
 PORTVERSION=	1.5.5
 PORTREVISION=	24

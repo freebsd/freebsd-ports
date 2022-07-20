@@ -1,5 +1,3 @@
-# Created by: Kuan-Chung Chiu <buganini@gmail.com>
-
 PORTNAME=	yamdi
 PORTVERSION=	1.9
 CATEGORIES=	multimedia

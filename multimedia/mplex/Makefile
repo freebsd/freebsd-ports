@@ -1,5 +1,3 @@
-# Created by: erich@FreeBSD.org
-
 PORTNAME=	mplex
 PORTVERSION=	1.1
 CATEGORIES=	multimedia

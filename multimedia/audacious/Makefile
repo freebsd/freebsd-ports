@@ -1,5 +1,3 @@
-# Created by: Zastupov Stepan [RedChrom] <redchrom@mail.ru>
-
 PORTNAME=	audacious
 PORTVERSION=	4.2
 CATEGORIES=	multimedia audio

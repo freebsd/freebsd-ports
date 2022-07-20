@@ -1,5 +1,3 @@
-# Created by: Kris Moore
-
 PORTNAME=	kmplayer
 PORTVERSION=	0.12.0b
 PORTREVISION=	5

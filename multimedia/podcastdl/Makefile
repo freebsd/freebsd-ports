@@ -1,5 +1,3 @@
-# Created by: Rodrigo OSORIO <rodrigo@FreeBSD.org>
-
 PORTNAME=	podcastdl
 PORTVERSION=	0.3.3
 CATEGORIES=	multimedia

@@ -1,5 +1,3 @@
-# Created by: kamikaze@bsdforen.de
-
 PORTNAME=	libbdplus
 DISTVERSION=	0.2.0
 CATEGORIES=	multimedia

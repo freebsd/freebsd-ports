@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libdvdcss
 DISTVERSION=	1.4.3
 CATEGORIES=	multimedia

@@ -1,5 +1,3 @@
-# Created by: Thomas E. Zander with help from Vladimir Kushnir
-
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES=	multimedia audio

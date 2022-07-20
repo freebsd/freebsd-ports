@@ -1,5 +1,3 @@
-# Created by: adamw
-
 PORTNAME=	x265
 PORTVERSION=	3.4
 PORTREVISION=	2

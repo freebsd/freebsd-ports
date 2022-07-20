@@ -1,5 +1,3 @@
-# Created by: Chess Griffin <chess@chessgriffin.com>
-
 PORTNAME=	gpodder
 DISTVERSION=	3.10.17
 PORTREVISION=	2

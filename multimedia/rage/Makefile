@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	rage
 PORTVERSION=	0.4.0
 CATEGORIES=	multimedia enlightenment

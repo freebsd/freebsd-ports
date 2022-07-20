@@ -1,5 +1,3 @@
-# Created by: Franz Bettag <franz@bett.ag>
-
 PORTNAME=	oscam
 PORTVERSION=	1.20.20210729
 CATEGORIES=	multimedia

@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <william88@gmail.com>
-
 PORTNAME=	guessit
 PORTVERSION=	3.4.3
 PORTREVISION=	1

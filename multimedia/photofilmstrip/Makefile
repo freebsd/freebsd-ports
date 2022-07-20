@@ -1,5 +1,3 @@
-# Created by: Charlie Kester <corky1951@comcast.net>
-
 PORTNAME=	photofilmstrip
 PORTVERSION=	3.7.0
 PORTREVISION=	3

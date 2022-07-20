@@ -1,5 +1,3 @@
-# Created by: freebsd-ports@evilcode.net
-
 PORTNAME=	mediainfo
 PORTVERSION=	22.06
 CATEGORIES=	multimedia

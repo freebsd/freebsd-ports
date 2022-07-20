@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gstreamer1-validate
 PORTVERSION=	1.16.1
 CATEGORIES=	multimedia

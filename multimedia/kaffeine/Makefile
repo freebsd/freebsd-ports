@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	kaffeine
 DISTVERSION=	2.0.18
 PORTREVISION=	3

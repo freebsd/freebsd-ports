@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	gstreamer1-plugins-all
 PORTVERSION=	1.16
 PORTREVISION=	2

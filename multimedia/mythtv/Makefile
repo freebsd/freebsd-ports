@@ -1,5 +1,3 @@
-# Created by: Stacey Son <mythdev@son.org>, Ari Maniatis <ari@ish.com.au>
-
 PORTNAME=	mythtv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	31.0

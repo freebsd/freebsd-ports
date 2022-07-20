@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libquicktime
 PORTVERSION=	1.2.4
 PORTREVISION?=	32

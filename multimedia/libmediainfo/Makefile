@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	libmediainfo
 PORTVERSION=	22.06
 CATEGORIES=	multimedia
