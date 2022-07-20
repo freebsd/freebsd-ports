@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-Client-DNS
 PORTVERSION=	1.054
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	ipcheck
 PORTVERSION=	0.240
 PORTEPOCH=	1

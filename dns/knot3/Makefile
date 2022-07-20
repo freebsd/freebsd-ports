@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns.company>
-
 PORTNAME=	knot
 DISTVERSION=	3.1.8
 CATEGORIES=	dns

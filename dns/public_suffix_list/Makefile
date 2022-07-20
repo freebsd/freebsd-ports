@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	public_suffix_list
 PORTVERSION=	20220629
 CATEGORIES=	dns

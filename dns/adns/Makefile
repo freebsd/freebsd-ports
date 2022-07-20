@@ -1,5 +1,3 @@
-# Created by: Kostya Lukin <lukin@okbmei.msk.su>
-
 PORTNAME=	adns
 PORTVERSION=	1.6.0
 CATEGORIES=	dns

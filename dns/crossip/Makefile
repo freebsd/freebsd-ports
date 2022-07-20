@@ -1,5 +1,3 @@
-# Created by: Dan Smith <dan@algenta.com>
-
 PORTNAME=	crossip
 DISTVERSION=	1.2
 PORTREVISION=	5

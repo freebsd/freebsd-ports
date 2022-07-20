@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	localzone
 PORTVERSION=	0.9.8
 CATEGORIES=	dns python

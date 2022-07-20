@@ -1,5 +1,3 @@
-# Created by: alexis
-
 PORTNAME=	nsd
 DISTVERSION=	4.6.0
 CATEGORIES=	dns

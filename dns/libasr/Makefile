@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-
 PORTNAME=	libasr
 PORTVERSION=	1.0.4
 CATEGORIES=	dns

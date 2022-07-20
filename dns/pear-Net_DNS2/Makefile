@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Net_DNS2
 PORTVERSION=	1.5.2
 CATEGORIES=	dns net pear

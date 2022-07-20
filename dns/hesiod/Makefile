@@ -1,5 +1,3 @@
-# Created by: n@nectar.com
-
 PORTNAME=	hesiod
 PORTVERSION=	3.2.1
 PORTREVISION=	3

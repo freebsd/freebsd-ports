@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	udns
 PORTVERSION=	0.4
 PORTREVISION=	1

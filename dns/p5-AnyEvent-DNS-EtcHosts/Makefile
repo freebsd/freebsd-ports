@@ -1,5 +1,3 @@
-# Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-
 PORTNAME=	AnyEvent-DNS-EtcHosts
 PORTVERSION=	0.0103
 PORTREVISION=	1

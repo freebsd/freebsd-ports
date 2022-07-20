@@ -1,5 +1,3 @@
-# Created by: Roy Marples <roy@marples.name>
-
 PORTNAME=	openresolv
 PORTVERSION=	3.12.0
 CATEGORIES=	dns

@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	simpleidn
 PORTVERSION=	0.1.1
 CATEGORIES=	dns rubygems

@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns.company>
-
 PORTNAME=	packetq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1

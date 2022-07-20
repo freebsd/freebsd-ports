@@ -1,5 +1,3 @@
-# Created by: Goran Mekić <meka@tilda.center>
-
 PORTNAME=	dns-lexicon
 PORTVERSION=	3.11.3
 CATEGORIES=	dns python

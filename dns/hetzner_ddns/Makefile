@@ -1,5 +1,3 @@
-# Created by: Filip Parag <filip@parag.rs>
-
 PORTNAME=	hetzner_ddns
 DISTVERSION=	0.2.2
 CATEGORIES=	dns

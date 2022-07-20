@@ -1,5 +1,3 @@
-# Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
-
 PORTNAME=	opendnssec
 DISTVERSION=	2.1.10
 PORTREVISION=	2

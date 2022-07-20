@@ -1,5 +1,3 @@
-# Created by: Matthew Hunt <mph@pobox.com>
-
 PORTNAME=	dnswalk
 PORTVERSION=	2.0.2
 PORTREVISION=	3

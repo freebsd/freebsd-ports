@@ -1,5 +1,3 @@
-# Created by: Chris St Denis (<chris@ctgameinfo.com>)
-
 PORTNAME=	File_DNS
 PORTVERSION=	0.1.0
 CATEGORIES=	dns devel pear

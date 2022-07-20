@@ -1,5 +1,3 @@
-# Created by: Simon Dick <simond@irrelevant.org>
-
 PORTNAME=	mydns-ng
 PORTVERSION=	1.2.8.31
 PORTREVISION=	5

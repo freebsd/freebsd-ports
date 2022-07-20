@@ -1,5 +1,3 @@
-# Created by: sten@blinkenlights.nl
-
 PORTNAME=	recursor
 DISTVERSION=	4.7.0
 CATEGORIES=	dns

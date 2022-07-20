@@ -1,5 +1,3 @@
-# Created by: andrew@ugh.net.au
-
 PORTNAME=	BIND-Conf_Parser
 PORTVERSION=	0.95
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sahil Tandon <sahil@tandon.net>
-
 PORTNAME=	Net-DNS-Async
 PORTVERSION=	1.07
 PORTREVISION=	1

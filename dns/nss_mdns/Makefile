@@ -1,5 +1,3 @@
-# Created by: Bruce M. Simpson <bms@FreeBSD.org>
-
 PORTNAME=	nss_mdns
 PORTVERSION=	0.14.1.20200624
 CATEGORIES=	dns

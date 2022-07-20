@@ -1,5 +1,3 @@
-# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-
 PORTNAME=	validns
 PORTVERSION=	0.8
 PORTREVISION=	1

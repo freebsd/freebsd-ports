@@ -1,5 +1,3 @@
-# Created by: Paul Chvostek <paul@it.ca>
-
 PORTNAME=	rbldnsd
 PORTVERSION=	0.998
 CATEGORIES=	dns

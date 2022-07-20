@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	dns-ui
 PORTREVISION=	1
 DISTVERSION=	v0.2.7

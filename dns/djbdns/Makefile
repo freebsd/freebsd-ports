@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner
-
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
 PORTREVISION?=	22

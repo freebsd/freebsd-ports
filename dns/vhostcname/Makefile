@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	vhostcname
 PORTVERSION=	2.00
 CATEGORIES=	dns perl5

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-RBLClient
 PORTVERSION=	0.5
 PORTREVISION=	2

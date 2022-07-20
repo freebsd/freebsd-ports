@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns.company>
-
 PORTNAME=	p5-App-DSC-DataTool
 PORTVERSION=	0.03
 CATEGORIES=	dns perl5

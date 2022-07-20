@@ -1,5 +1,3 @@
-# Created by: Mark Linimon <linimon@lonesome.com>
-
 PORTNAME=	py3dns
 PORTVERSION=	3.2.1
 CATEGORIES=	dns python

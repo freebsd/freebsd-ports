@@ -1,5 +1,3 @@
-# Created by: dglo@ssec.wisc.edu
-
 PORTNAME=	nslint
 PORTVERSION=	3.1
 CATEGORIES=	dns

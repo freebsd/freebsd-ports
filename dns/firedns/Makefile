@@ -1,5 +1,3 @@
-# Created by: Dean Hollister <dean@odyssey.apana.org.au>
-
 PORTNAME=	firedns
 PORTVERSION=	0.9.12
 CATEGORIES=	dns devel

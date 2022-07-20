@@ -1,5 +1,3 @@
-# Created by: mark@foster.cc
-
 PORTNAME=	scavenge
 PORTVERSION=	2.0
 PORTREVISION=	1

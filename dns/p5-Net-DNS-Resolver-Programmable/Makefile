@@ -1,5 +1,3 @@
-# Created by: Koen Martens <gmc@sonologic.nl>
-
 PORTNAME=	Net-DNS-Resolver-Programmable
 PORTVERSION=	0.009
 CATEGORIES=	dns net perl5

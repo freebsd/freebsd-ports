@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	dnscap
 PORTVERSION=	2.0.3
 PORTEPOCH=	1

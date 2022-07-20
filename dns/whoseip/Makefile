@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	whoseip
 PORTVERSION=	1.00
 CATEGORIES=	dns perl5

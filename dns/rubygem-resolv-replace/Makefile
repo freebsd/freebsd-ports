@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	resolv-replace
 PORTVERSION=	0.1.0
 CATEGORIES=	dns rubygems

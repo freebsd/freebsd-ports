@@ -1,5 +1,3 @@
-# Created by: Dan Pelleg <daniel+mdnsd@pelleg.org>
-
 PORTNAME=	mdnsd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7G-107

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	POE-Filter-DNS-TCP
 PORTVERSION=	0.06
 CATEGORIES=	dns perl5

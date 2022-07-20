@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	DNS-nsdiff
 PORTVERSION=	1.82
 PORTREVISION=	1

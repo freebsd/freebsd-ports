@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Net-DNS
 PORTVERSION=	1.34
 PORTEPOCH=	1

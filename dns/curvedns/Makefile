@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns-lab.com>
-
 PORTNAME=	curvedns
 PORTVERSION=	0.88.b
 PORTREVISION=	13

@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	bindgraph
 PORTVERSION=	0.3
 PORTREVISION=	1

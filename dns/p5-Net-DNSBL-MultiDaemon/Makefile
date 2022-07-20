@@ -1,5 +1,3 @@
-# Created by: Andrew Greenwood <greenwood.andy@gmail.com>
-
 PORTNAME=	Net-DNSBL-MultiDaemon
 PORTVERSION=	0.39
 PORTREVISION=	1

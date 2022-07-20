@@ -1,5 +1,3 @@
-# Created by: Steven Honson
-
 PORTNAME=	dnsmasq
 DISTVERSION=	2.87test8
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:

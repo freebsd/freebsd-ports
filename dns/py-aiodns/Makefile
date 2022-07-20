@@ -1,5 +1,3 @@
-# Created by: Waitman Gobble <waitman@waitman.net>
-
 PORTNAME=	aiodns
 PORTVERSION=	3.0.0
 CATEGORIES=	dns python

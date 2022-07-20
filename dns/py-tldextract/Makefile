@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	tldextract
 PORTVERSION=	3.3.1
 CATEGORIES=	dns python

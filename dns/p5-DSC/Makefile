@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns.company>
-
 PORTNAME=	p5-DSC
 PORTVERSION=	2.04
 CATEGORIES=	dns perl5

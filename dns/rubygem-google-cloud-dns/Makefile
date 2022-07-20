@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-cloud-dns
 PORTVERSION=	0.35.1
 CATEGORIES=	dns rubygems

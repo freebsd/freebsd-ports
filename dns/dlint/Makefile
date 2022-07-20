@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	dlint
 PORTVERSION=	1.4.1
 CATEGORIES=	dns

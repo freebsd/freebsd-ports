@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Net-DNS-ZoneFile-Fast
 PORTVERSION=	1.27
 CATEGORIES=	dns perl5

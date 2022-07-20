@@ -1,5 +1,3 @@
-# Created by: Natacha Porte <natbsd@instinctive.eu>
-
 PORTNAME=	ddns
 PORTVERSION=	1.0
 CATEGORIES=	dns

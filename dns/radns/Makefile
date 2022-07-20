@@ -1,5 +1,3 @@
-# Created by: Michael Cardell Widerkrantz <mc@hack.org>
-
 PORTNAME=	radns
 DISTVERSION=	20110809-2
 CATEGORIES=	dns

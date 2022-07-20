@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	cli53
 DISTVERSION=	0.8.18
 PORTREVISION=	3

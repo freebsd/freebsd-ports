@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	dnswall
 PORTVERSION=	0.1.4
 DISTVERSIONPREFIX=	v

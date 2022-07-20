@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	c-ares
 PORTVERSION=	1.18.1
 PORTREVISION=	1

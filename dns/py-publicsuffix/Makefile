@@ -1,5 +1,3 @@
-# Created by: Dmitry Pryadko <d.pryadko@rambler-co.ru>
-
 PORTNAME=	publicsuffix
 PORTVERSION=	1.1.0
 PORTREVISION=	54

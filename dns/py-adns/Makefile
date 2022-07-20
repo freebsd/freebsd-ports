@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@fallin.lv>
-
 PORTNAME=	adns
 DISTVERSION=	1.4
 DISTVERSIONSUFFIX=	-py1

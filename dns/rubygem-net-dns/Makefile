@@ -1,5 +1,3 @@
-# Created by: rpsfa@rit.edu
-
 PORTNAME=	net-dns
 PORTVERSION=	0.9.0
 CATEGORIES=	dns rubygems

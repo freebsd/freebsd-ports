@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	public_suffix
 PORTVERSION=	4.0.7
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	libidn
 DISTVERSION=	1.38
 CATEGORIES=	dns

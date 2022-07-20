@@ -1,5 +1,3 @@
-# Created by: bkhl
-
 PORTNAME=	sheerdns
 PORTVERSION=	1.04
 CATEGORIES=	dns

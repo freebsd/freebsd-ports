@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	dnspython
 PORTVERSION=	2.2.1
 PORTREVISION=	1

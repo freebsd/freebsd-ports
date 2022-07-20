@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <mitya@yandex-team.ru>
-
 PORTNAME=	pycares
 PORTVERSION=	4.1.2
 CATEGORIES=	dns python

@@ -1,5 +1,3 @@
-# Created by: Joe Barbish
-
 PORTNAME=	dynip
 PORTVERSION=	0.0
 CATEGORIES=	dns

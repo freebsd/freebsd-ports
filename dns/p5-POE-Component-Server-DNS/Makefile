@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	POE-Component-Server-DNS
 PORTVERSION=	0.32
 CATEGORIES=	dns perl5

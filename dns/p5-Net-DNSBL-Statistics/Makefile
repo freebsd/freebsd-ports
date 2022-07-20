@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Net-DNSBL-Statistics
 PORTVERSION=	0.14
 PORTREVISION=	1

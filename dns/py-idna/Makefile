@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	idna
 PORTVERSION=	3.3
 CATEGORIES=	dns python

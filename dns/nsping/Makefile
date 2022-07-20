@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	nsping
 PORTVERSION=	0.8
 PORTREVISION=	2

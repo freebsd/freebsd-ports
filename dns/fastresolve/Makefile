@@ -1,5 +1,3 @@
-# Created by: Amar Takhar <verm@drunkmonk.net>
-
 PORTNAME=	fastresolve
 PORTVERSION=	2.10
 PORTREVISION=	6

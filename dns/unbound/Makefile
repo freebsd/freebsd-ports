@@ -1,5 +1,3 @@
-# Created by: Sergey Matveychuk <sem@FreeBSD.org>
-
 PORTNAME=	unbound
 DISTVERSION=	1.16.1
 CATEGORIES=	dns

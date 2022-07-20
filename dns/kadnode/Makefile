@@ -1,5 +1,3 @@
-# Created by: Moritz Warning <moritzwarning@web.de>
-
 PORTNAME=	kadnode
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0

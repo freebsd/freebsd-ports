@@ -1,5 +1,3 @@
-# Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
-
 PORTNAME=	drool
 DISTVERSION=	2.0.0
 CATEGORIES=	dns

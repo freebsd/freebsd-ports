@@ -1,5 +1,3 @@
-# Created by: dnscheckengine-port@academ.com (Stan Barber)
-
 PORTNAME=	dnscheckengine
 PORTVERSION=	1.1
 PORTREVISION=	4

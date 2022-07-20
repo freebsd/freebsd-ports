@@ -1,5 +1,3 @@
-# Created by: rodrigc@FreeBSD.org
-
 PORTNAME=	hostdb
 PORTVERSION=	1.004
 PORTREVISION=	1

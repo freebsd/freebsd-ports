@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	Net-DRI
 PORTVERSION=	0.96
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	libdjbdns
 PORTVERSION=	1.05
 PORTREVISION=	2

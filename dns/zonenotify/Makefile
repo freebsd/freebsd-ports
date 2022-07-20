@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	zonenotify
 PORTVERSION=	0.1
 PORTREVISION=	1

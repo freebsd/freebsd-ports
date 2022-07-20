@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	dns2tcp
 PORTVERSION=	0.5.2
 CATEGORIES=	dns

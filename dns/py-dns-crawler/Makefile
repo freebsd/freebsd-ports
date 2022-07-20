@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	dns-crawler
 PORTVERSION=	1.4.9
 CATEGORIES=	dns python

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	Net-DNS-TestNS
 PORTVERSION=	1.10
 PORTREVISION=	2

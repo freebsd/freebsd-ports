@@ -1,5 +1,3 @@
-# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-
 PORTNAME=	nss_resinit
 PORTVERSION=	20060412
 PORTREVISION=	0

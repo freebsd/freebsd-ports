@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	dnrd
 PORTVERSION=	2.20.3
 PORTREVISION=	1

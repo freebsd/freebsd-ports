@@ -1,5 +1,3 @@
-# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
-
 PORTNAME=	URBL-Prepare
 PORTVERSION=	0.09
 PORTREVISION=	1

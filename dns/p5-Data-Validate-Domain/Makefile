@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Data-Validate-Domain
 PORTVERSION=	0.15
 CATEGORIES=	dns perl5

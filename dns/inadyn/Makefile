@@ -1,5 +1,3 @@
-# Created by: Alex Samorukov <samm@freebsd.org>
-
 PORTNAME=	inadyn
 PORTVERSION=	2.9.1
 CATEGORIES=	dns

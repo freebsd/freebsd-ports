@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	idna_ssl
 PORTVERSION=	1.1.0
 CATEGORIES=	dns python

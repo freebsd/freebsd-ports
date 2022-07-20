@@ -1,5 +1,3 @@
-# Created by: Frank Behrens
-
 PORTNAME=		zkt
 DISTVERSION=		1.1.4
 CATEGORIES=		dns

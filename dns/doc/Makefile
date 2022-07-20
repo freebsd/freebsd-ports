@@ -1,5 +1,3 @@
-# Created by: MIHIRA Yoshiro <sanpei@jp.FreeBSD.org>
-
 PORTNAME=	doc
 PORTVERSION=	2.2.3
 CATEGORIES=	dns

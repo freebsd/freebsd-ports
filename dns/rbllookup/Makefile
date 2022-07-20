@@ -1,5 +1,3 @@
-# Created by: Marcin Gondek <drixter@e-utp.net>
-
 PORTNAME=	rbllookup
 PORTVERSION=	0.0.1.1
 PORTREVISION=	1

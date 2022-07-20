@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@FreeBSD.org>
-
 PORTNAME=	dq
 PORTVERSION=	20181021
 CATEGORIES=	dns

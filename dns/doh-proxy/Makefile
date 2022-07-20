@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	doh-proxy
 DISTVERSION=	0.9.3
 PORTREVISION=	3

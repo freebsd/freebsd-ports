@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Tie-DNS
 PORTVERSION=	1.151560
 PORTEPOCH=	1

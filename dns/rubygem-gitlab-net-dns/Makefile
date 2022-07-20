@@ -1,5 +1,3 @@
-# Created by: rpsfa@rit.edu
-
 PORTNAME=	gitlab-net-dns
 PORTVERSION=	0.9.1
 CATEGORIES=	dns rubygems

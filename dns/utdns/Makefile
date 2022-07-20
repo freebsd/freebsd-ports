@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	utdns
 PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v

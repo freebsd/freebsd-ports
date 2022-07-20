@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 MASTERDIR=	${.CURDIR}/../../dns/ldns
 
 BUILD_PYLDNS=yes

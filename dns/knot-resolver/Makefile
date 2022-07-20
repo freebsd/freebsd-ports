@@ -1,5 +1,3 @@
-# Created by: Leo Vandewoestijne <freebsd@dns.company>
-
 PORTNAME=	knot-resolver
 DISTVERSION=	5.5.0
 CATEGORIES=	dns

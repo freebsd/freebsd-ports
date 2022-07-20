@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	Net-Amazon-Route53
 PORTVERSION=	0.122310
 PORTREVISION=	1

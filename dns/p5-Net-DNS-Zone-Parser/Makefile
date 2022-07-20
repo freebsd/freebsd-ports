@@ -1,5 +1,3 @@
-# Created by: Jimmy Bergman jimmy@sigint.se
-
 PORTNAME=	Net-DNS-Zone-Parser
 PORTVERSION=	0.02
 PORTREVISION=	1
