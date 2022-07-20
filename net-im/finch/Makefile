@@ -1,5 +1,3 @@
-#   $MCom: ports-stable/net-im/gaim-consoleui-devel/Makefile,v 1.2 2006/10/29 18:55:28 marcus Exp $
-
 PORTNAME=	finch
 
 MAINTAINER=	marcus@FreeBSD.org

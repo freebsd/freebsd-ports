@@ -1,5 +1,3 @@
-#   $MCom: ports/textproc/exempi/Makefile,v 1.1 2008/02/26 18:50:26 ahze Exp $
-
 PORTNAME=	exempi
 DISTVERSION=	2.5.2
 PORTREVISION=	1

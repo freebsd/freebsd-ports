@@ -1,5 +1,3 @@
-#   $MCom: ports/graphics/xsvg/Makefile,v 1.3 2005/08/09 05:09:09 ahze Exp $
-
 PORTNAME=	xsvg
 PORTVERSION=	0.2.1
 PORTREVISION=	7

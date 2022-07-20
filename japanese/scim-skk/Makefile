@@ -1,5 +1,3 @@
-#    $MCom: ports/japanese/scim-skk/Makefile,v 1.1 2006/09/30 05:17:05 ahze Exp $
-
 PORTNAME=	scim-skk
 PORTVERSION=	0.5.2
 PORTREVISION=	12

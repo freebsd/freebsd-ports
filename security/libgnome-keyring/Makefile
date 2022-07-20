@@ -1,5 +1,3 @@
-#   $MCom: ports/trunk/security/libgnome-keyring/Makefile 20031 2014-11-02 21:47:55Z kwm $
-
 PORTNAME=	libgnome-keyring
 PORTVERSION=	3.12.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-#   $MCom: ports/trunk/x11/gnome-menus/Makefile 20031 2014-11-02 21:47:55Z kwm $
-
 PORTNAME=	gnome-menus
 PORTVERSION=	3.36.0
 CATEGORIES=	x11 gnome

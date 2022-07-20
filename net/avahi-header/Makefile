@@ -1,5 +1,3 @@
-#   $MCom: ports/net/avahi-header/Makefile,v 1.4 2012/07/09 18:22:19 kwm Exp $
-
 PORTREVISION=	0
 CATEGORIES=	net
 PKGNAMESUFFIX=	-header

@@ -1,5 +1,3 @@
-#   $MCom: ports/trunk/x11-themes/mint-themes/Makefile 19873 2014-09-14 17:17:23Z kwm $
-
 PORTNAME=	mint-themes
 PORTVERSION=	0.0.41cf70d
 CATEGORIES=	x11-themes gnome

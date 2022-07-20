@@ -1,5 +1,3 @@
-#    $MCom: ports/trunk/net-im/telepathy-idle/Makefile 20041 2014-11-04 11:13:49Z kwm $
-
 PORTNAME=	telepathy-idle
 PORTVERSION=	0.2.0
 PORTREVISION=	3

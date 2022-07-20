@@ -1,5 +1,3 @@
-#   $MCom$
-
 PORTNAME=	balsa
 PORTVERSION=	2.5.1
 PORTREVISION=	7

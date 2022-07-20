@@ -1,5 +1,3 @@
-#   $MCom: ports/x11-themes/gnome-themes/Makefile,v 1.183 2010/11/15 22:11:44 kwm Exp $
-
 PORTNAME=	gnome-themes
 PORTVERSION=	2.32.1
 PORTREVISION=	1

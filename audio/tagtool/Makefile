@@ -1,5 +1,3 @@
-#    $MCom: ports/audio/tagtool/Makefile,v 1.1 2006/09/30 01:15:37 ahze Exp $
-
 PORTNAME=	tagtool
 PORTVERSION=	0.12.3
 PORTREVISION=	17

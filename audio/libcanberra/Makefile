@@ -1,5 +1,3 @@
-#   $MCom: ports/trunk/audio/libcanberra/Makefile 20031 2014-11-02 21:47:55Z kwm $
-
 PORTNAME=	libcanberra
 PORTVERSION=	0.30
 PORTREVISION=	8

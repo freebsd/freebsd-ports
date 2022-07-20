@@ -1,5 +1,3 @@
-#   $MCom: ports/ports-mgmt/packagekit/Makefile,v 1.26 2010/10/10 15:49:51 marcus Exp $
-
 PORTNAME=	PackageKit
 PORTVERSION=	0.6.11
 PORTREVISION?=	9

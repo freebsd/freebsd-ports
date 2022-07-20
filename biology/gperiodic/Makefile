@@ -1,5 +1,3 @@
-#    $MCom: ports/biology/gperiodic/Makefile,v 1.1 2006/09/29 23:42:13 ahze Exp $
-
 PORTNAME=	gperiodic
 PORTVERSION=	3.0.3
 CATEGORIES=	biology

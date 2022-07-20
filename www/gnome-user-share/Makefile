@@ -1,5 +1,3 @@
-#   $MCom: ports/trunk/www/gnome-user-share/Makefile 19970 2014-10-16 08:47:02Z gusi $
-
 PORTNAME=	gnome-user-share
 PORTVERSION=	3.14.0
 PORTREVISION=	5

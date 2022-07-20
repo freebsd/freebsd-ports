@@ -1,5 +1,3 @@
-#   $MCom: ports-experimental/trunk/misc/gnome-icon-theme-extras/Makefile 19329 2014-03-25 14:54:05Z gusi $
-
 PORTNAME=	gnome-icon-theme-extras
 PORTVERSION=	3.12.0
 CATEGORIES=	misc gnome

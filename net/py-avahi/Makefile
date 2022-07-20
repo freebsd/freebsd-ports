@@ -1,5 +1,3 @@
-#   $MCom: ports/net/py-avahi/Makefile,v 1.4 2007/07/31 18:24:13 ahze Exp $
-
 PORTREVISION=	0
 CATEGORIES=	net gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -1,5 +1,3 @@
-#    $MCom: ports/games/adonthell/Makefile,v 1.1 2006/10/04 20:13:33 ahze Exp $
-
 PORTNAME=	wastesedge
 PORTVERSION=	0.3.8
 CATEGORIES=	games

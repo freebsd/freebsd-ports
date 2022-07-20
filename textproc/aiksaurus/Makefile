@@ -1,5 +1,3 @@
-#    $MCom: ports/textproc/aiksaurus/Makefile,v 1.2 2006/09/10 00:51:13 mezz Exp $
-
 PORTNAME=	aiksaurus
 PORTVERSION=	1.2.1
 PORTREVISION?=	3

@@ -1,5 +1,3 @@
-#    $MCom: ports/editors/poedit/Makefile,v 1.2 2006/10/05 07:03:09 mezz Exp $
-
 PORTNAME=	poedit
 PORTVERSION=	3.0.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-#   $MCom: ports/trunk/net/libzapojit/Makefile 19822 2014-08-20 08:57:46Z gusi $
-
 PORTNAME=	libzapojit
 PORTVERSION=	0.0.3
 PORTREVISION=	2
