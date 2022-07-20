@@ -3,7 +3,7 @@
 PORTNAME=	thunderbird
 DISTVERSION=	91.11.0
 PORTREVISION=	2
-CATEGORIES=	mail news net-im
+CATEGORIES=	mail news net-im wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build2/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}

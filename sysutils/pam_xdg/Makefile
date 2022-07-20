@@ -1,7 +1,7 @@
 PORTNAME=	pam_xdg
 PORTVERSION=	s20210916
 PORTREVISION=	1
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PAM module to manage XDG Base Directories

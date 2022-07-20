@@ -1,6 +1,6 @@
 PORTNAME=	mpvpaper
 DISTVERSION=	1.2.1
-CATEGORIES=	multimedia
+CATEGORIES=	multimedia wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Video wallpaper for wlroots compositors

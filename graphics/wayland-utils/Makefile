@@ -1,7 +1,7 @@
 PORTNAME=	wayland-utils
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1.0.0
-CATEGORIES=	graphics
+CATEGORIES=	graphics wayland
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	d367b894f9c8.patch:-p1 # https://gitlab.freedesktop.org/wayland/wayland-utils/-/merge_requests/1

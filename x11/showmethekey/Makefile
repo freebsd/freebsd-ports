@@ -1,7 +1,7 @@
 PORTNAME=	showmethekey
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.3
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Show keys you typed on screen
