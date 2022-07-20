@@ -1,5 +1,3 @@
-# Created by: David K. Gerry
-
 PORTNAME=	yasr
 PORTVERSION=	0.6.9
 PORTREVISION=	5

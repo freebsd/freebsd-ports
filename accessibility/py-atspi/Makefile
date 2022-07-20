@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	atspi
 PORTVERSION=	2.38.2
 CATEGORIES=	accessibility x11-toolkits python

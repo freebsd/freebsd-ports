@@ -1,5 +1,3 @@
-# Created by: David K. Gerry
-
 PORTNAME=	eflite
 PORTVERSION=	0.4.1
 CATEGORIES=	accessibility

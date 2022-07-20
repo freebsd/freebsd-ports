@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	at-spi2-atk
 PORTVERSION=	2.34.2
 CATEGORIES=	accessibility x11-toolkits

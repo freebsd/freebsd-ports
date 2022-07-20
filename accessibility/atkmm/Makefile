@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	atkmm
 PORTVERSION=	2.28.0
 CATEGORIES=	accessibility gnome

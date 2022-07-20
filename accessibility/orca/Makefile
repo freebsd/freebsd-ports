@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	orca
 PORTVERSION=	42.1
 CATEGORIES=	accessibility gnome

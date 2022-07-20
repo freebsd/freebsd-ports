@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	atk
 PORTVERSION=	2.36.0
 PORTREVISION?=	0

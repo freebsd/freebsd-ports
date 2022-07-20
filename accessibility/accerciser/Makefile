@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	accerciser
 PORTVERSION=	3.38.0
 CATEGORIES=	accessibility gnome

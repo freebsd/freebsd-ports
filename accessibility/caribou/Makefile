@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	caribou
 PORTVERSION=	0.4.21
 PORTREVISION=	5
