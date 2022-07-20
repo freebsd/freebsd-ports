@@ -178,6 +178,10 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/git-base/syntaxes/git-rebase.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/git-base/syntaxes/ignore.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/git/README.md
+%%DATADIR%%/resources/app/extensions/git/dist/164.js
+%%DATADIR%%/resources/app/extensions/git/dist/488.js
+%%DATADIR%%/resources/app/extensions/git/dist/939.js
+%%DATADIR%%/resources/app/extensions/git/dist/939.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/git/dist/askpass-empty.sh
 %%DATADIR%%/resources/app/extensions/git/dist/askpass-main.js
 %%DATADIR%%/resources/app/extensions/git/dist/askpass.sh
@@ -209,8 +213,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/git/resources/icons/light/status-renamed.svg
 %%DATADIR%%/resources/app/extensions/git/resources/icons/light/status-untracked.svg
 %%DATADIR%%/resources/app/extensions/github-authentication/README.md
+%%DATADIR%%/resources/app/extensions/github-authentication/dist/164.js
+%%DATADIR%%/resources/app/extensions/github-authentication/dist/488.js
+%%DATADIR%%/resources/app/extensions/github-authentication/dist/939.js
+%%DATADIR%%/resources/app/extensions/github-authentication/dist/939.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/extension.js
-%%DATADIR%%/resources/app/extensions/github-authentication/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/nls.metadata.json
 %%DATADIR%%/resources/app/extensions/github-authentication/images/icon.png
@@ -271,6 +278,10 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/hlsl/package.nls.json
 %%DATADIR%%/resources/app/extensions/hlsl/syntaxes/hlsl.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/html-language-features/README.md
+%%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/278.htmlClientMain.js
+%%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/493.htmlClientMain.js
+%%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/493.htmlClientMain.js.LICENSE.txt
+%%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/955.htmlClientMain.js
 %%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/htmlClientMain.js
 %%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/nls.metadata.json
@@ -328,8 +339,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/javascript/syntaxes/Regular Expressions (JavaScript).tmLanguage
 %%DATADIR%%/resources/app/extensions/javascript/tags-language-configuration.json
 %%DATADIR%%/resources/app/extensions/json-language-features/README.md
+%%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/278.jsonClientMain.js
+%%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/493.jsonClientMain.js
+%%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/493.jsonClientMain.js.LICENSE.txt
+%%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/955.jsonClientMain.js
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/jsonClientMain.js
-%%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/jsonClientMain.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/nls.metadata.json
 %%DATADIR%%/resources/app/extensions/json-language-features/icons/json.png
@@ -379,8 +393,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/markdown-basics/snippets/markdown.code-snippets
 %%DATADIR%%/resources/app/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/README.md
+%%DATADIR%%/resources/app/extensions/markdown-language-features/dist/164.js
+%%DATADIR%%/resources/app/extensions/markdown-language-features/dist/488.js
+%%DATADIR%%/resources/app/extensions/markdown-language-features/dist/939.js
+%%DATADIR%%/resources/app/extensions/markdown-language-features/dist/939.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/extension.js
-%%DATADIR%%/resources/app/extensions/markdown-language-features/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/nls.metadata.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/esbuild-notebook.js
@@ -433,8 +450,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/merge-conflict/package.json
 %%DATADIR%%/resources/app/extensions/merge-conflict/package.nls.json
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/README.md
+%%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/164.js
+%%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/488.js
+%%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/939.js
+%%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/939.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/extension.js
-%%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/nls.metadata.json
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/media/auth.css
@@ -840,8 +860,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/typescript-basics/syntaxes/jsdoc.js.injection.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/typescript-language-features/README.md
+%%DATADIR%%/resources/app/extensions/typescript-language-features/dist/164.js
+%%DATADIR%%/resources/app/extensions/typescript-language-features/dist/488.js
+%%DATADIR%%/resources/app/extensions/typescript-language-features/dist/939.js
+%%DATADIR%%/resources/app/extensions/typescript-language-features/dist/939.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/typescript-language-features/dist/extension.js
-%%DATADIR%%/resources/app/extensions/typescript-language-features/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/typescript-language-features/dist/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/typescript-language-features/dist/nls.metadata.json
 %%DATADIR%%/resources/app/extensions/typescript-language-features/media/icon.png
