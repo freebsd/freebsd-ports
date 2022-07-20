@@ -1,5 +1,6 @@
 PORTNAME=	nextcloud
 PORTVERSION=	24.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -14,7 +15,7 @@ USES=		cpe gettext-runtime php:flavors,web tar:bzip2
 USE_PHP=	bcmath bz2 ctype curl dom fileinfo filter gd gmp hash iconv \
 		json mbstring pcntl pdo posix session simplexml xml xmlreader \
 		xmlwriter xsl zip zlib
-IGNORE_WITH_PHP=81 82
+IGNORE_WITH_PHP=82
 
 NEXTCLOUD_USERNAME?=	${WWWOWN}
 NEXTCLOUD_GROUPNAME?=	${WWWGRP}
