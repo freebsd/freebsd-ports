@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-
 PORTNAME=	curl
 PORTVERSION=	7.84.0
 CATEGORIES=	ftp net www

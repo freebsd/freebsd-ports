@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	axel
 PORTVERSION=	2.4
 PORTREVISION=	2

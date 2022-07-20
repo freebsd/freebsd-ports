@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	ftpsync
 PORTVERSION=	1.3.06
 PORTEPOCH=	1

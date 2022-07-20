@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	lftp
 PORTVERSION=	4.9.2
 CATEGORIES=	ftp

@@ -1,5 +1,3 @@
-# Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-
 PORTNAME=	tnftp
 PORTVERSION=	20210827
 CATEGORIES=	ftp

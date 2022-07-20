@@ -1,5 +1,3 @@
-# Created by: George V. Neville-Neil <gnn@FreeBSD.org>
-
 PORTNAME=	uftp
 PORTVERSION=	5.0
 PORTEPOCH=	1

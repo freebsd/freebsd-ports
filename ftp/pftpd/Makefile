@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
-
 PORTNAME=	pftpd
 PORTVERSION=	1.0.3
 PORTREVISION=	2

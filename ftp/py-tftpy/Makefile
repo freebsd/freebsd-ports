@@ -1,5 +1,3 @@
-# Created by: Ju Pengfei <jupengfei@gmail.com>
-
 PORTNAME=	tftpy
 PORTVERSION=	0.8.2
 CATEGORIES=	ftp python

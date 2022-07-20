@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	RCurl
 DISTVERSION=	1.98-1.7
 CATEGORIES=	ftp

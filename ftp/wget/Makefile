@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	wget
 DISTVERSION=	1.21.3
 CATEGORIES=	ftp www

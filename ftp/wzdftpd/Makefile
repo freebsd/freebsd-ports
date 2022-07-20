@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy
-
 PORTNAME=	wzdftpd
 PORTVERSION=	0.8.3
 PORTREVISION=	8

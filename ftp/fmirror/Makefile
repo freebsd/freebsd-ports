@@ -1,5 +1,3 @@
-# Created by: Xavier Beaudouin <kiwi@oav.net>
-
 PORTNAME=	fmirror
 PORTVERSION=	0.8.4
 PORTREVISION=	4

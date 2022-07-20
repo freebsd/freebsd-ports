@@ -1,5 +1,3 @@
-# Created by: cy@FreeBSD.org
-
 PORTNAME=	freebsd-ftpd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	20220711

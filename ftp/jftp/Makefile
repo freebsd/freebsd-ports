@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	jftp
 PORTVERSION=	1.60
 CATEGORIES=	ftp java

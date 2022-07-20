@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	curlpp
 PORTVERSION=	0.8.1
 DISTVERSIONPREFIX=	v

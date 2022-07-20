@@ -1,5 +1,3 @@
-# Created by: Jordan Hubbard <jkh@FreeBSD.org>
-
 PORTNAME=	spegla
 PORTVERSION=	1.1p5
 DISTVERSIONPREFIX=	v

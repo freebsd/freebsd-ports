@@ -1,5 +1,3 @@
-# Created by: Sergey Matveychuk <sem@FreeBSD.org>
-
 PORTNAME=	ftpsesame
 PORTVERSION=	0.95
 CATEGORIES=	ftp

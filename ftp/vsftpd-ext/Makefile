@@ -1,5 +1,3 @@
-# Created by: Maxim Ignatenko
-
 PORTNAME=	vsftpd-ext
 PORTVERSION=	${UPSTREAMVERSION}.${EXTVERSION}
 PORTREVISION=	1

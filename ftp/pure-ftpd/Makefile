@@ -1,5 +1,3 @@
-# Created by: Frank DENIS
-
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.51
 CATEGORIES=	ftp

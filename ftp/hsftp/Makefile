@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	hsftp
 PORTVERSION=	1.15
 PORTREVISION=	3

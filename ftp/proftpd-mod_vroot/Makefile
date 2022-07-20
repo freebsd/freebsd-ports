@@ -1,5 +1,3 @@
-# Created by: Joseph Benden <joe@thrallingpenguin.com>
-
 PORTNAME=	mod_vroot
 DISTVERSION=	0.9.5
 PORTREVISION=	2

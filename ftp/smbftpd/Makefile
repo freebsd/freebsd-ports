@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-
 PORTNAME=	smbftpd
 PORTVERSION=	2.4
 PORTREVISION=	1

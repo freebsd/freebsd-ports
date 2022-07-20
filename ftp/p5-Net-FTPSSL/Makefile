@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Net-FTPSSL
 PORTVERSION=	0.42
 CATEGORIES=	ftp perl5
