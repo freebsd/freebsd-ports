@@ -1,5 +1,3 @@
-# Created by: Rodrigo Graeff <delphus@gmail.com>
-
 PORTNAME=	ytnef
 PORTVERSION=	1.9.3
 DISTVERSIONPREFIX=	v

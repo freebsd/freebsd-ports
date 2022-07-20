@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Convert-NLS_DATE_FORMAT
 PORTVERSION=	0.06
 CATEGORIES=	converters perl5

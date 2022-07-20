@@ -1,5 +1,3 @@
-# Created by: Ryan T. Dean <rtdean@cytherianage.net>
-
 PORTNAME=	Unicode-MapUTF8
 PORTVERSION=	1.14
 CATEGORIES=	converters perl5

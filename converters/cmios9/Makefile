@@ -1,5 +1,3 @@
-# Created by: M.Indlekofer@gmx.de
-
 PORTNAME=	cmios9
 PORTVERSION=	2.1
 CATEGORIES=	converters

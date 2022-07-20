@@ -1,5 +1,3 @@
-# Created by: nork@cityfujisawa.ne.jp
-
 PORTNAME=	Convert-ASCII-Armour
 PORTVERSION=	1.4
 PORTREVISION=	3

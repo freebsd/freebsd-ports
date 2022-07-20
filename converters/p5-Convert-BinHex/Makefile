@@ -1,5 +1,3 @@
-# Created by: Jan-Peter Koopmann <j.koopmann@seceidos.de>
-
 PORTNAME=	Convert-BinHex
 PORTVERSION=	1.125
 CATEGORIES=	converters perl5

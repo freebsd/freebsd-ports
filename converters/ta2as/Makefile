@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	ta2as
 PORTVERSION=	0.8.2
 CATEGORIES=	converters devel

@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	jsonm
 PORTVERSION=	1.0.1
 CATEGORIES=	converters

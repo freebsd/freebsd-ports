@@ -1,5 +1,3 @@
-# Created by: Brent J. Nordquist <bjn@visi.com>
-
 PORTNAME=	btoa
 PORTVERSION=	5.2
 PORTREVISION=	1

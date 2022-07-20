@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Convert-Binary-C
 PORTVERSION=	0.84
 CATEGORIES=	converters perl5

@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@oook.cz>
-
 PORTNAME=	Cstools
 PORTVERSION=	3.44
 CATEGORIES=	converters perl5

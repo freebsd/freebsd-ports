@@ -1,5 +1,3 @@
-# Created by: G. Adam Stanislav
-
 PORTNAME=	i18ntools
 PORTVERSION=	1.0
 PORTREVISION=	1

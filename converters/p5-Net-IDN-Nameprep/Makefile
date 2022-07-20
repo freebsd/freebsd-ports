@@ -1,5 +1,3 @@
-# Created by: Timur Bakeyev <bat@cpan.org>
-
 PORTNAME=	Net-IDN-Nameprep
 PORTVERSION=	1.102
 CATEGORIES=	converters perl5

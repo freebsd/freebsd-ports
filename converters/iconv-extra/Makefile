@@ -1,5 +1,3 @@
-# Created by: Konstantin Chuguev <Konstantin.Chuguev@dante.org.uk>
-
 PORTNAME=	iconv-extra
 PORTVERSION=	2.0
 PORTREVISION=	1

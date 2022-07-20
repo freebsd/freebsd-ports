@@ -1,5 +1,3 @@
-# Created by: never@nevermind.kiev.ua
-
 PORTNAME=	mimelib
 PORTVERSION=	1.1.2
 PORTREVISION=	2

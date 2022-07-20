@@ -1,5 +1,3 @@
-# Created by: Alexandr Kovalenko <never@nevermind.kiev.ua>
-
 PORTNAME=	enca
 PORTVERSION=	1.19
 CATEGORIES=	converters textproc russian ukrainian

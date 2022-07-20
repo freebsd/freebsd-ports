@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	Bencode
 PORTVERSION=	1.500
 PORTREVISION=	0

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Cpanel-JSON-XS
 PORTVERSION=	4.30
 CATEGORIES=	converters perl5

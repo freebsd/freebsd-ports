@@ -1,5 +1,3 @@
-# Created by: Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	JSON-XS
 PORTVERSION=	4.03
 CATEGORIES=	converters perl5

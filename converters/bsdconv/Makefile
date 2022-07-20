@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	bsdconv
 PORTVERSION=	11.6
 CATEGORIES=	converters

@@ -1,5 +1,3 @@
-# Created by: Masanori Kiriake <seiken@nbs.co.jp>
-
 PORTNAME=	aish
 PORTVERSION=	1.13
 CATEGORIES=	converters

@@ -1,5 +1,3 @@
-# Created by: Cyrus Rahman <cr@jcmax.com>
-
 PORTNAME=	tnef
 PORTVERSION=	1.4.12
 CATEGORIES=	converters mail

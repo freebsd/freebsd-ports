@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	dosunix
 PORTVERSION=	1.0.14
 CATEGORIES=	converters

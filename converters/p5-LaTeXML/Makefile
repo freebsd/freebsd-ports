@@ -1,5 +1,3 @@
-# Created by: Carlos J. Puga Medina <cpm@fbsd.es>
-
 PORTNAME=	LaTeXML
 PORTVERSION=	0.8.6
 CATEGORIES=	converters perl5

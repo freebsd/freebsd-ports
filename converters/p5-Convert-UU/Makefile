@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Convert-UU
 PORTVERSION=	0.52.01
 PORTREVISION=	1

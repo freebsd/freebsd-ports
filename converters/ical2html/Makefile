@@ -1,5 +1,3 @@
-# Created by: keiichi@iijlab.net
-
 PORTNAME=	ical2html
 PORTVERSION=	2.1
 CATEGORIES=	converters

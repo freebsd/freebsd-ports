@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Text-Unidecode
 PORTVERSION=	1.30
 CATEGORIES=	converters perl5

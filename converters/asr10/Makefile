@@ -1,5 +1,3 @@
-# Created by: M.Indlekofer@gmx.de
-
 PORTNAME=	asr10
 PORTVERSION=	1.0
 CATEGORIES=	converters

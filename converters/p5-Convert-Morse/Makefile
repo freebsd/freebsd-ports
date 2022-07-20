@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Convert-Morse
 PORTVERSION=	0.06
 PORTREVISION=	1

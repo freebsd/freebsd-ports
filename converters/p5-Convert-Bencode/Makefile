@@ -1,5 +1,3 @@
-# Created by: Oleg R. Muhutdinov <mor@WhiteLuna.com>
-
 PORTNAME=	Convert-Bencode
 PORTVERSION=	1.03
 PORTREVISION=	2

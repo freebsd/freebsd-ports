@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	Encode
 PORTVERSION=	3.18
 CATEGORIES=	converters perl5

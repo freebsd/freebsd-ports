@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	libiconv
 PORTVERSION=	1.16
 CATEGORIES=	converters devel

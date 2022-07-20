@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Unicode-IMAPUtf7
 PORTVERSION=	2.01
 PORTREVISION=	2

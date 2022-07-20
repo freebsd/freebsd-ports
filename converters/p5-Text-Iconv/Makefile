@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Text-Iconv
 PORTVERSION=	1.7
 PORTREVISION=	4

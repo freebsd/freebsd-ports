@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	cocot
 PORTVERSION=	20120313
 DISTVERSIONPREFIX=	${PORTNAME}-1.1-

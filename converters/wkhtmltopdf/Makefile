@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	wkhtmltopdf
 PORTVERSION=	0.12.6
 CATEGORIES=	converters

@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	Unicode-UTF8simple
 PORTVERSION=	1.06
 PORTREVISION=	1

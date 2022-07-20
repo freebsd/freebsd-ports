@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	JSON-XS-VersionOneAndTwo
 PORTVERSION=	0.31
 PORTREVISION=	1

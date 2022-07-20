@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	Text-Bidi
 PORTVERSION=	2.18
 CATEGORIES=	converters perl5

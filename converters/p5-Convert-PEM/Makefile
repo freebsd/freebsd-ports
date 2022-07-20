@@ -1,5 +1,3 @@
-# Created by: Michael Haro <mharo@FreeBSD.org>
-
 PORTNAME=	Convert-PEM
 PORTVERSION=	0.08
 PORTREVISION=	1

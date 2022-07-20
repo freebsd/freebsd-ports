@@ -1,5 +1,3 @@
-# Created by: G. Adam Stanislav <adam@whizkidtech.net>
-
 PORTNAME=	tuc
 PORTVERSION=	1.10
 PORTREVISION=	1

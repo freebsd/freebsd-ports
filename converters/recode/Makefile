@@ -1,5 +1,3 @@
-# Created by: torstenb@FreeBSD.org
-
 PORTNAME=	recode
 PORTVERSION=	3.6
 DISTVERSIONPREFIX=	v

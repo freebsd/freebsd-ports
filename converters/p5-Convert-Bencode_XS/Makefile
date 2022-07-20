@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Convert-Bencode_XS
 PORTVERSION=	0.06
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	bsdconv
 PORTVERSION=	11.3.0
 CATEGORIES=	converters perl5

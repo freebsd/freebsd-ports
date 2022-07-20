@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	zfec
 PORTVERSION=	1.5.7.2
 CATEGORIES=	converters python

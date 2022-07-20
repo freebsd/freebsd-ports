@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Encode-DoubleEncodedUTF8
 PORTVERSION=	0.05
 PORTREVISION=	1

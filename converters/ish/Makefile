@@ -1,5 +1,3 @@
-# Created by: hosokawa
-
 PORTNAME=	ish
 PORTVERSION=	2.01a5
 CATEGORIES=	converters

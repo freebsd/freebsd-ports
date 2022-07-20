@@ -1,5 +1,3 @@
-# Created by: roman@xpert.com
-
 PORTNAME=	Convert-TNEF
 PORTVERSION=	0.18
 PORTREVISION=	2

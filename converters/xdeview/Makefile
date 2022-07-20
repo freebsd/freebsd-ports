@@ -1,5 +1,3 @@
-# Created by: Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
-
 PORTNAME=	xdeview
 PORTVERSION=	0.5.20
 PORTREVISION=	3

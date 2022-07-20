@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	rjson
 PORTVERSION=	0.2.21
 CATEGORIES=	converters

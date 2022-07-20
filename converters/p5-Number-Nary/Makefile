@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Number-Nary
 PORTVERSION=	1.100312
 CATEGORIES=	converters perl5

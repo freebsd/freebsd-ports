@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	Boulder
 PORTVERSION=	1.30
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Dan Rench <citric@cubicone.tmetic.com>
-
 PORTNAME=	MIME-Base64-URLSafe
 PORTVERSION=	0.01
 PORTREVISION=	2

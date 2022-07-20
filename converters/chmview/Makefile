@@ -1,5 +1,3 @@
-# Created by: Alex Semenyaka <alex@rinet.ru>
-
 PORTNAME=	chmview
 PORTVERSION=	2.0b4
 PORTREVISION=	2

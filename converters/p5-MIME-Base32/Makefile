@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	MIME-Base32
 PORTVERSION=	1.303
 CATEGORIES=	converters perl5

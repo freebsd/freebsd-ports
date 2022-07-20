@@ -1,5 +1,3 @@
-# Created by: Jason Burgess <dev@fenux.net>
-
 PORTNAME=	Convert-IBM390
 PORTVERSION=	0.30
 CATEGORIES=	converters perl5

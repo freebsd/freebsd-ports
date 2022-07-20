@@ -1,5 +1,3 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-
 PORTNAME=	fondu
 PORTVERSION=	051010
 CATEGORIES=	converters

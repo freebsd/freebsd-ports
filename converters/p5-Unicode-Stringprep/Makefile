@@ -1,5 +1,3 @@
-# Created by: Timur Bakeyev <bat@cpan.org>
-
 PORTNAME=	Unicode-Stringprep
 PORTVERSION=	1.105
 PORTREVISION=	1

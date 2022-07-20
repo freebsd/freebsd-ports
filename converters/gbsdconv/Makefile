@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	gbsdconv
 PORTVERSION=	11.3
 PORTREVISION=	1
