@@ -1,5 +1,3 @@
-# Created by: Diane Bruce <db@db.net>
-
 PORTNAME=	basicdsp
 PORTVERSION=	1.01
 PORTREVISION=	10

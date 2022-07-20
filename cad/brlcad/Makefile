@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni <giffunip@asme.org>
-
 PORTNAME=	brlcad
 PORTVERSION=	7.32.4
 CATEGORIES=	cad

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	astk
 
 COMMENT=	Graphical interface for Code_Aster (client side)

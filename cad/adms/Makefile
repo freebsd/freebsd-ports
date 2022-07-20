@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	adms
 PORTVERSION=	2.3.7
 DISTVERSIONPREFIX=	release-

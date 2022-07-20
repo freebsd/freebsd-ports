@@ -1,5 +1,3 @@
-# Created by: swallace
-
 PORTNAME=	magic
 DISTVERSION=	8.3.245
 CATEGORIES=	cad

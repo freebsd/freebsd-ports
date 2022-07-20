@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni <giffunip@asme.org>
-
 PORTNAME=	xcircuit
 PORTVERSION=	3.10.30
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Michael Reifenberger <mr@FreeBSD.org>
-
 PORTNAME=	openscad
 PORTVERSION=	2021.01.01
 PORTREVISION=	12

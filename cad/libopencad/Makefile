@@ -1,5 +1,3 @@
-# Created by: lbartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	libopencad
 PORTVERSION=	0.2.0
 PORTREVISION=	5

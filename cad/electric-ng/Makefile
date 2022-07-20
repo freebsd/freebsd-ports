@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-
 PORTNAME=	electric
 PORTVERSION=	9.07
 PORTREVISION=	1

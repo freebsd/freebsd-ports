@@ -1,5 +1,3 @@
-# Created by: Martin Dieringer <martin.dieringe@gmx.de>
-
 PORTNAME=	repsnapper
 DISTVERSION=	2.5a4
 PORTREVISION=	9

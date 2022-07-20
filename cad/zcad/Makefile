@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	zcad
 PORTVERSION=	0.9.8.5
 PORTREVISION=	5

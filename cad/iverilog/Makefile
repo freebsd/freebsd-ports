@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	iverilog
 PORTVERSION=	11.0
 CATEGORIES=	cad

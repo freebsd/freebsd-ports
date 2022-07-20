@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	opencascade
 PORTVERSION=	7.6.0
 PORTREVISION=	6

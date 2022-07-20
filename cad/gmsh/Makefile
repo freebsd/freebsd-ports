@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <giffunip@asme.org>
-
 PORTNAME=	gmsh
 DISTVERSION=	4.9.2
 PORTREVISION=	1

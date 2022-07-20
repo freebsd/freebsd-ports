@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	qcad
 PORTVERSION=	3.27.6.0
 DISTVERSIONPREFIX=	v

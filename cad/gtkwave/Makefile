@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	gtkwave
 DISTVERSION=	3.3.111
 CATEGORIES=	cad

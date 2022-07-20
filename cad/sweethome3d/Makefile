@@ -1,5 +1,3 @@
-# Created by: Matthias Petermann <matthias@petermann-it.de>
-
 PORTNAME=	sweethome3d
 PORTVERSION=	7.0
 CATEGORIES=	cad java

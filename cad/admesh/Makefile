@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni <giffunip@asme.org>
-
 PORTNAME=	admesh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.98.4

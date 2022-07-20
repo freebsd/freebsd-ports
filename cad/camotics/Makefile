@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	CAMotics
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.2-rc1

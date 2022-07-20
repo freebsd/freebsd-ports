@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	meshdev
 PORTVERSION=	0.5
 CATEGORIES=	cad

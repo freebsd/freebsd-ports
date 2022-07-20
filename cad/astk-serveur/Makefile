@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	astk
 DISTVERSION=	2020.0-1
 PORTREVISION=	1

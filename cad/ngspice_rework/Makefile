@@ -1,5 +1,3 @@
-# Created by: AMAKAWA Shuhei <amakawa@jp.FreeBSD.org>
-
 PORTNAME=	ngspice_rework
 PORTVERSION=	37
 CATEGORIES=	cad

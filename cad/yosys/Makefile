@@ -1,5 +1,3 @@
-# Created by: Johnny Sorocil <jsorocil@gmail.com>
-
 PORTNAME=	yosys
 DISTVERSIONPREFIX=	yosys-
 DISTVERSION=	0.19

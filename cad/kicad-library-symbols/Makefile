@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@FreeBSD.org>
-
 PORTNAME=	kicad
 PORTVERSION=	6.0.6
 CATEGORIES=	cad

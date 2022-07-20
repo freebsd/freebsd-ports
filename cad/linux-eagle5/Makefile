@@ -1,5 +1,3 @@
-# Created by: Michael Durian <durian@shadetreesoftware.com>
-
 PORTNAME=	eagle5
 PORTVERSION=	${EAGLEVERSION}
 PORTREVISION=	7

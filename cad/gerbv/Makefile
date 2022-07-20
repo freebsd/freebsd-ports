@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gerbv
 PORTVERSION=	2.7.0
 PORTREVISION=	1

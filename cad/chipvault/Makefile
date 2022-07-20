@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	chipvault
 PORTVERSION=	200607
 CATEGORIES=	cad

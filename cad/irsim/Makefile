@@ -1,5 +1,3 @@
-# Created by: swallace
-
 PORTNAME=	irsim
 DISTVERSION=	9.7.110
 CATEGORIES=	cad

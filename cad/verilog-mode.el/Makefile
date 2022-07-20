@@ -1,5 +1,3 @@
-# Created by: stas
-
 PORTNAME=	verilog-mode.el
 PORTVERSION=	801
 PORTREVISION=	13

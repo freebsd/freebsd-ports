@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	fidocadj
 PORTVERSION=	0.24.8
 PORTREVISION=	0

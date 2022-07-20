@@ -1,5 +1,3 @@
-# Created by: Michael Reifenberger <mr@FreeBSD.org>
-
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
 PORTREVISION=	1

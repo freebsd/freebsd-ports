@@ -1,5 +1,3 @@
-# Created by: lon_kamikaze@gmx.de
-
 PORTNAME=	freehdl
 PORTVERSION=	0.0.7
 PORTREVISION=	9

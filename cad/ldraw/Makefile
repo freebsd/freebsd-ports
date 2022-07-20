@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	ldraw
 DISTVERSION=	20220211
 PORTEPOCH=	1

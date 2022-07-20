@@ -1,5 +1,3 @@
-# Created by: Marc Fonvieille <blackend@FreeBSD.org>
-
 PORTNAME=	cascade
 PORTVERSION=	1.4
 CATEGORIES=	cad

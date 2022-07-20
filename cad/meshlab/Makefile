@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	meshlab
 DISTVERSIONPREFIX=	Meshlab-
 DISTVERSION=	2020.05
