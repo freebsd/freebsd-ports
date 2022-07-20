@@ -1,4 +1,5 @@
 bin/assimp
+include/assimp/Base64.hpp
 include/assimp/BaseImporter.h
 include/assimp/Bitmap.h
 include/assimp/BlobIOSystem.h
@@ -27,6 +28,7 @@ include/assimp/Logger.hpp
 include/assimp/MathFunctions.h
 include/assimp/MemoryIOWrapper.h
 include/assimp/NullLogger.hpp
+include/assimp/ObjMaterial.h
 include/assimp/ParsingUtils.h
 include/assimp/Profiler.h
 include/assimp/ProgressHandler.hpp
@@ -85,11 +87,11 @@ include/assimp/vector2.inl
 include/assimp/vector3.h
 include/assimp/vector3.inl
 include/assimp/version.h
-lib/cmake/assimp-5.1/assimpConfig.cmake
-lib/cmake/assimp-5.1/assimpConfigVersion.cmake
-lib/cmake/assimp-5.1/assimpTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/assimp-5.1/assimpTargets.cmake
+lib/cmake/assimp-5.2/assimpConfig.cmake
+lib/cmake/assimp-5.2/assimpConfigVersion.cmake
+lib/cmake/assimp-5.2/assimpTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/assimp-5.2/assimpTargets.cmake
 lib/libassimp.so
 lib/libassimp.so.5
-lib/libassimp.so.5.1.4
+lib/libassimp.so.5.2.0
 libdata/pkgconfig/assimp.pc
