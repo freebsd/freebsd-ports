@@ -9,6 +9,9 @@ COMMENT=	Graphical user interface for GAP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv6=	cannot find sources (xgap.c) in ../../src.x11
+BROKEN_armv7=	cannot find sources (xgap.c) in ../../src.x11
+
 BUILD_DEPENDS=	gap:math/gap
 LIB_DEPENDS=	libXaw.so:x11-toolkits/libXaw
 RUN_DEPENDS=	gap:math/gap
