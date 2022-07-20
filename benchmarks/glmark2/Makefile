@@ -2,7 +2,7 @@
 
 PORTNAME=	glmark2
 PORTVERSION=	2021.12
-CATEGORIES=	benchmarks
+CATEGORIES=	benchmarks wayland
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Benchmark for OpenGL (ES) 2.0
