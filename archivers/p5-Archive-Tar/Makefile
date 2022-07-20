@@ -1,5 +1,3 @@
-# Created by: Roman Shterenzon <roman@xpert.com>
-
 PORTNAME=	Archive-Tar
 PORTVERSION=	2.40
 CATEGORIES=	archivers perl5

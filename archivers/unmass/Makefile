@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	unmass
 PORTVERSION=	0.92
 CATEGORIES=	archivers

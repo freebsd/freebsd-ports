@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	makeself
 DISTVERSION=	2.4.5
 CATEGORIES=	archivers

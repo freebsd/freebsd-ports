@@ -1,5 +1,3 @@
-# Created by: Radim Kolar
-
 PORTNAME=	advancecomp
 DISTVERSION=	2.3
 CATEGORIES=	archivers

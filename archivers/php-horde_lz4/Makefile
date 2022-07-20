@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	horde_lz4
 PORTVERSION=	1.0.10
 PORTREVISION=	1

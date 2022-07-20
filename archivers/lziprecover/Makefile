@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	lziprecover
 PORTVERSION=	1.23
 CATEGORIES=	archivers

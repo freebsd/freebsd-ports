@@ -1,5 +1,3 @@
-# Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
-
 PORTNAME=	parchive
 PORTVERSION=	1.1
 CATEGORIES=	archivers

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	minitar
 PORTVERSION=	0.9
 CATEGORIES=	archivers rubygems

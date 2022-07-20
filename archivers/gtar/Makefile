@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	tar
 PORTVERSION=	1.34
 CATEGORIES=	archivers sysutils

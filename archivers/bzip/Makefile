@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	bzip
 PORTVERSION=	0.21
 PORTREVISION=	1

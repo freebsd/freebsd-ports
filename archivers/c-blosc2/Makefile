@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	c-blosc2
 PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v

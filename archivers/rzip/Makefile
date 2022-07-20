@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	rzip
 PORTVERSION=	2.1
 PORTREVISION=	1

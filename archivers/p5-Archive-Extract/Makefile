@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Archive-Extract
 PORTVERSION=	0.88
 CATEGORIES=	archivers perl5

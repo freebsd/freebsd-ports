@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	POE-Filter-Zlib
 PORTVERSION=	2.04
 CATEGORIES=	archivers perl5

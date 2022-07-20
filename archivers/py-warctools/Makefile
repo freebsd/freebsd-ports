@@ -1,5 +1,3 @@
-# Created by: Poul-Henning Kamp <phk@FreeBSD.org>
-
 PORTNAME=	warctools
 PORTVERSION=	4.10.0
 CATEGORIES=	archivers python

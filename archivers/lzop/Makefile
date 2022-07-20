@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	lzop
 DISTVERSION=	1.04
 CATEGORIES=	archivers

@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	undms
 PORTVERSION=	1.3
 CATEGORIES=	archivers

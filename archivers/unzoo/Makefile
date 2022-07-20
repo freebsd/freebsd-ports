@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	unzoo
 PORTVERSION=	4.4
 PORTREVISION=	2

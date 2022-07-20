@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Archive-Any-Lite
 PORTVERSION=	0.11
 CATEGORIES=	archivers perl5

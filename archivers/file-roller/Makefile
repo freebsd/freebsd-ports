@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	file-roller
 PORTVERSION=	3.42.0
 PORTEPOCH=	1

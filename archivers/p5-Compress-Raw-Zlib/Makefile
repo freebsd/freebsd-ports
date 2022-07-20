@@ -1,5 +1,3 @@
-# Created by: Thomas Abthorpe <thomas@goodking.ca>
-
 PORTNAME=	Compress-Raw-Zlib
 PORTVERSION=	2.202
 CATEGORIES=	archivers perl5

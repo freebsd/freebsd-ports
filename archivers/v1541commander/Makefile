@@ -1,5 +1,3 @@
-# Created by: Felix Palmen <felix@palmen-it.de>
-
 PORTNAME=	v1541commander
 PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v

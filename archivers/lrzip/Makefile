@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	lrzip
 PORTVERSION=	0.631
 CATEGORIES=	archivers

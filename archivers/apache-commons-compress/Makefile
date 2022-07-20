@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	commons-compress
 PORTVERSION=	1.21
 CATEGORIES=	archivers java

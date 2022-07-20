@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	unalz
 DISTVERSION=	0.66
 CATEGORIES=	archivers

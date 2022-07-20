@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	mar
 DISTVERSION=	0.5
 CATEGORIES=	archivers

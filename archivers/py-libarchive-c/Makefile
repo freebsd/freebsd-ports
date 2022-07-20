@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	libarchive-c
 PORTVERSION=	4.0
 CATEGORIES=	archivers python

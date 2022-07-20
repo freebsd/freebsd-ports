@@ -1,5 +1,3 @@
-# Created by: giffunip@asme.org
-
 PORTNAME=	lzo2
 PORTVERSION=	2.10
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	bzip2
 PORTVERSION=	1.0.8
 CATEGORIES=	archivers

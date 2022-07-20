@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	sectar
 PORTVERSION=	1.02
 CATEGORIES=	archivers

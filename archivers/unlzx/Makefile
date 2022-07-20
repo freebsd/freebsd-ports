@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	unlzx
 PORTVERSION=	1.1
 CATEGORIES=	archivers

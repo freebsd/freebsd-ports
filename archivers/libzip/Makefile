@@ -1,5 +1,3 @@
-# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-
 PORTNAME=	libzip
 PORTVERSION=	1.7.3
 CATEGORIES=	archivers devel

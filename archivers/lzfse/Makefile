@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	lzfse
 PORTVERSION=	20160707
 CATEGORIES=	archivers

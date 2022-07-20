@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	libarc
 PORTVERSION=	2.0.2
 PORTREVISION=	2

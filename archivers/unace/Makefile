@@ -1,5 +1,3 @@
-# Created by: Joao Carlos Mendes Luis <jonny@jonny.eng.br>
-
 PORTNAME=	unace
 PORTVERSION=	1.2b
 PORTREVISION=	3

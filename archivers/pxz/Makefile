@@ -1,5 +1,3 @@
-# Created by: mm
-
 PORTNAME=	pxz
 PORTVERSION=	0.20220509
 CATEGORIES=	archivers

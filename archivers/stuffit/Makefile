@@ -1,5 +1,3 @@
-# Created by: Nathan Ahlstrom <nra@FreeBSD.org>
-
 PORTNAME=	stuffit
 PORTVERSION=	5.2.0.611
 PORTREVISION=	1

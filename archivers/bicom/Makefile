@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	bicom
 PORTVERSION=	1.01
 CATEGORIES=	archivers

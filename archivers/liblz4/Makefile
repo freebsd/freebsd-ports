@@ -1,5 +1,3 @@
-# Created by: adamw
-
 PORTNAME=	lz4
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.3

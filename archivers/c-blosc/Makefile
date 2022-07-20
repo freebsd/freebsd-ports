@@ -1,5 +1,3 @@
-# Created by: iblis <iblis.dif01@nctu.edu.tw>
-
 PORTNAME=	c-blosc
 PORTVERSION=	1.21.0
 DISTVERSIONPREFIX=	v

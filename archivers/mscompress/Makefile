@@ -1,5 +1,3 @@
-# Created by: Patrick Seal <patseal@hyperhost.net>
-
 PORTNAME=	mscompress
 PORTVERSION=	0.3
 CATEGORIES=	archivers

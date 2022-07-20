@@ -1,5 +1,3 @@
-# Created by: Sir l33tname <sirl33tname@gmail.com>
-
 PORTNAME=	zlib
 PORTVERSION=	1.2
 PORTREVISION=	1

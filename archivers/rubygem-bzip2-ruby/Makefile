@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	bzip2-ruby
 PORTVERSION=	0.2.7
 PORTREVISION=	2

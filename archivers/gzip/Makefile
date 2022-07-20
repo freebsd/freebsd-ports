@@ -1,5 +1,3 @@
-# Created by: Cyrille Lefevre <cyrille.lefevre@laposte.net>
-
 PORTNAME=	gzip
 PORTVERSION=	1.12
 CATEGORIES=	archivers

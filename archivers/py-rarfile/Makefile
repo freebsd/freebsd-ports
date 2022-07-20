@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	rarfile
 PORTVERSION=	4.0
 CATEGORIES=	archivers python

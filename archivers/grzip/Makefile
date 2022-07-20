@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	grzip
 PORTVERSION=	0.3.0
 PORTREVISION=	3

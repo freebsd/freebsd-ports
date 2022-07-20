@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	unrar
 PORTVERSION=	6.12
 PORTEPOCH=	6

@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	gzrecover
 PORTVERSION=	0.8
 CATEGORIES=	archivers

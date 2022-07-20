@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-
 PORTNAME=	IO-Compress-Lzma
 PORTVERSION=	2.201
 CATEGORIES=	archivers perl5

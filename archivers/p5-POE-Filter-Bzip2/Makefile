@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	POE-Filter-Bzip2
 PORTVERSION=	1.60
 CATEGORIES=	archivers perl5

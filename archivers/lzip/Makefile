@@ -1,5 +1,3 @@
-# Created by: Sylvio Cesar <sylvio@FreeBSD.org>
-
 PORTNAME=	lzip
 DISTVERSION=	1.23
 CATEGORIES=	archivers

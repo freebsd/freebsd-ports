@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	libarchive
 PORTVERSION=	0.1.2
 PORTREVISION=	1

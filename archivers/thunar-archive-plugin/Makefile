@@ -1,5 +1,3 @@
-# Created by: ports@c0decafe.net <ports@c0decafe.net>
-
 PORTNAME=	thunar-archive-plugin
 PORTVERSION=	0.5.0
 CATEGORIES=	archivers xfce

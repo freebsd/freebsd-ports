@@ -1,5 +1,3 @@
-# Created by: Alex Samorukov <samm@freebsd.org>
-
 PORTNAME=	qpress
 PORTVERSION=	1.1
 CATEGORIES=	archivers

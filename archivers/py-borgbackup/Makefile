@@ -1,5 +1,3 @@
-# Created by: José García Juanino <jjuanino@gmail.com>
-
 PORTNAME=	borgbackup
 DISTVERSION=	1.1.18
 CATEGORIES=	archivers python

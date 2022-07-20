@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libcomprex
 PORTVERSION=	0.3.3
 PORTREVISION=	13

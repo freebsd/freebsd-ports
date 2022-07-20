@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Archive-Tar-Wrapper
 PORTVERSION=	0.38
 CATEGORIES=	archivers perl5

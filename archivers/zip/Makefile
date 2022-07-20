@@ -1,5 +1,3 @@
-# Created by: Andrey Chernov <ache@FreeBSD.org>
-
 PORTNAME=	zip
 PORTVERSION=	3.0
 PORTREVISION=	1

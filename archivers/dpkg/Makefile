@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@FreeBSD.org>
-
 PORTNAME=	dpkg
 PORTVERSION=	1.19.7
 CATEGORIES=	archivers sysutils

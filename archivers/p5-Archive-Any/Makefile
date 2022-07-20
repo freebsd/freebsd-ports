@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Archive-Any
 PORTVERSION=	0.0946
 CATEGORIES=	archivers perl5

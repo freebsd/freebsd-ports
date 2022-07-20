@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	bz2file
 PORTVERSION=	0.98
 CATEGORIES=	archivers python

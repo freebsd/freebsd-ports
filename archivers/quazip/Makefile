@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	quazip
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3

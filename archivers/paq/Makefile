@@ -1,5 +1,3 @@
-# Created by: bf <bf2006a@yahoo.com>
-
 PORTNAME=	paq
 PORTVERSION=	20140131
 PORTREVISION=	6

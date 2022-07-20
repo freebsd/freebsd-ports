@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	IO-Compress
 PORTVERSION=	2.201
 CATEGORIES=	archivers perl5

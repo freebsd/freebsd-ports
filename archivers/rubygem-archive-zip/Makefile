@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	archive-zip
 PORTVERSION=	0.12.0
 CATEGORIES=	archivers rubygems

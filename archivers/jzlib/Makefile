@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	jzlib
 PORTVERSION=	1.1.1
 CATEGORIES=	archivers java

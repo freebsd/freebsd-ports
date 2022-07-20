@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	ppmd
 PORTVERSION=	9.04
 CATEGORIES=	archivers

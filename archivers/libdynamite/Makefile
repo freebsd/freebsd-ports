@@ -1,5 +1,3 @@
-# Created by: Sam Lawrance <boris@brooknet.com.au>
-
 PORTNAME=	libdynamite
 PORTVERSION=	0.1.1
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	zstd
 PORTVERSION=	1.5.2
 CATEGORIES=	archivers

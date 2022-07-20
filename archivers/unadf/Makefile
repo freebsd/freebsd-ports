@@ -1,5 +1,3 @@
-# Created by: Per Wigren
-
 PORTNAME=	unadf
 PORTVERSION=	0.7.12
 PORTREVISION=	2

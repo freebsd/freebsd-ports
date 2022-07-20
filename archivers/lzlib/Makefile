@@ -1,5 +1,3 @@
-# Created by: Albert Vernon <f3cun3c02@sneakemail.com>
-
 PORTNAME=	lzlib
 PORTVERSION=	1.13
 CATEGORIES=	archivers

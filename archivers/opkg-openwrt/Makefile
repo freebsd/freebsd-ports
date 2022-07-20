@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	opkg
 DISTVERSION=	20180803
 PORTREVISION=	1

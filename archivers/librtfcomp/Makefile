@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	librtfcomp
 PORTVERSION=	1.3
 PORTREVISION=	3

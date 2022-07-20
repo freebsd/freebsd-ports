@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-
 PORTNAME=	lbzip2
 PORTVERSION=	2.5
 CATEGORIES=	archivers

@@ -1,5 +1,3 @@
-# Created by: kwm@FreeBSD.org
-
 PORTNAME=	gcab
 PORTVERSION=	1.4
 CATEGORIES=	archivers gnome

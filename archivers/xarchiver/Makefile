@@ -1,5 +1,3 @@
-# Created by: Andreev Maxim
-
 PORTNAME=	xarchiver
 PORTVERSION=	0.5.4.17
 PORTREVISION=	2

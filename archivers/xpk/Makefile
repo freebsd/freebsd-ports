@@ -1,5 +1,3 @@
-# Created by: Miguel Mendez <flynn@energyhq.homeip.net>
-
 PORTNAME=	xpk
 PORTVERSION=	0.1.4
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Carsten Larsen <cs@innolan.dk>
-
 PORTNAME=	python-lhafile
 DISTVERSION=	0.2.2
 CATEGORIES=	archivers python

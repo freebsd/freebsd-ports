@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	libcabinet
 PORTVERSION=	0.30
 PORTREVISION=	2

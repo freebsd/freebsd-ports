@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gnome-autoar
 DISTVERSION=	0.4.3
 CATEGORIES=	archivers

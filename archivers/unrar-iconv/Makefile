@@ -1,5 +1,3 @@
-# Created by: Yarodin <yarodin@gmail.com>
-
 PKGNAMESUFFIX=	-iconv
 
 MAINTAINER=	yarodin@gmail.com

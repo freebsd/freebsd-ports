@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	unshield
 PORTVERSION=	1.5.1
 CATEGORIES=	archivers

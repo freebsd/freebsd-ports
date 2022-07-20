@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	PHP_Archive
 PORTVERSION=	0.14.0
 CATEGORIES=	archivers pear

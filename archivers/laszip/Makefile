@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	laszip
 DISTVERSION=	3.4.3
 CATEGORIES=	archivers

@@ -1,5 +1,3 @@
-# Created by: Philippe Casidy <pcasidy@casidy.com>
-
 PORTNAME=	mtf
 PORTVERSION=	0.2.1
 PORTREVISION=	1

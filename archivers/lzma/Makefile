@@ -1,5 +1,3 @@
-# Created by: Radim Kolar <hsn@netmag.cz>
-
 PORTNAME=	lzma
 PORTVERSION=	19.00
 CATEGORIES=	archivers

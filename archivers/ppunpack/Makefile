@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	ppunpack
 PORTVERSION=	1.0
 CATEGORIES=	archivers

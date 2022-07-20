@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	brotlicffi
 PORTVERSION=	1.0.9.2
 CATEGORIES=	archivers python

@@ -1,5 +1,3 @@
-# Created by: Chin-San Huang <chinsan.tw@gmail.com>
-
 PORTNAME=	rar
 PORTVERSION=	4.2.0
 CATEGORIES=	archivers pear

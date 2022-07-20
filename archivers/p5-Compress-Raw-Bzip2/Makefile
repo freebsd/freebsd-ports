@@ -1,5 +1,3 @@
-# Created by: Thomas Abthorpe <thomas@goodking.ca>
-
 PORTNAME=	Compress-Raw-Bzip2
 PORTVERSION=	2.201
 CATEGORIES=	archivers perl5

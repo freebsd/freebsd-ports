@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	unfoo
 PORTVERSION=	1.0.8
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	zopfli
 PORTVERSION=	0.2.1
 CATEGORIES=	archivers python

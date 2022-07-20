@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	POE-Filter-LZF
 PORTVERSION=	1.72
 CATEGORIES=	archivers perl5

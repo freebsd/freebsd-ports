@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	lzf
 PORTVERSION=	1.7.0
 CATEGORIES=	archivers pear

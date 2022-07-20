@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	nomarch
 PORTVERSION=	1.4
 CATEGORIES=	archivers

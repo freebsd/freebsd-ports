@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	liblzxcomp
 PORTVERSION=	20050705
 CATEGORIES=	archivers

@@ -1,5 +1,3 @@
-# Created by: Felix Palmen <felix@palmen-it.de>
-
 PORTNAME=	lib1541img
 PORTVERSION=	1.1
 PORTREVISION=	1

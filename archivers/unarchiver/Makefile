@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	unar
 PORTVERSION=	1.10.1
 PORTREVISION=	21

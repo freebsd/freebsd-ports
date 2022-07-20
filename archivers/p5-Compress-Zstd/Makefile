@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Compress-Zstd
 PORTVERSION=	0.20
 CATEGORIES=	archivers perl5

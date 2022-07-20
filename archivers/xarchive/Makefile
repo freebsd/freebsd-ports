@@ -1,5 +1,3 @@
-# Created by: Mark Kane <mark@mkproductions.org>
-
 PORTNAME=	xarchive
 DISTVERSION=	0.2.8-6
 PORTREVISION=	9

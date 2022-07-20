@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	brotli
 PORTVERSION=	1.0.9
 DISTVERSIONPREFIX=	v
