@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@brutele.be>
-
 PORTNAME=	devilspie2
 PORTVERSION=	0.43
 CATEGORIES=	x11-wm

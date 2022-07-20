@@ -1,5 +1,3 @@
-# Created by: Matt Lancereau <matt@rimasec.net>
-
 PORTNAME=	xfce4-session
 PORTVERSION=	4.16.0
 PORTREVISION=	1

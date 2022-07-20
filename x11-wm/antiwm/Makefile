@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	antiwm
 PORTVERSION=	0.0.5
 CATEGORIES=	x11-wm

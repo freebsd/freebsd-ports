@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	obpager
 PORTVERSION=	1.8
 CATEGORIES=	x11-wm

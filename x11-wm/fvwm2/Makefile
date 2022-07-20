@@ -1,5 +1,3 @@
-# Created by: peter
-
 PORTNAME=	fvwm
 PORTVERSION=	2.6.9
 PORTREVISION=	2

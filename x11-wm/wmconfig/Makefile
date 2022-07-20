@@ -1,5 +1,3 @@
-# Created by: Tommy Scheunemann <net@arrishq.org>
-
 PORTNAME=	wmconfig
 PORTVERSION=	1.5.1
 CATEGORIES=	x11-wm

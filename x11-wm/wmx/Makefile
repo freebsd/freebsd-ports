@@ -1,5 +1,3 @@
-# Created by: Stefan Zehl <sec@42.org>
-
 PORTNAME=	wmx
 PORTVERSION=	8
 CATEGORIES=	x11-wm

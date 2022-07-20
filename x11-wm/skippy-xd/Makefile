@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	skippy-xd
 PORTVERSION=	0.5.0
 PORTREVISION=	2

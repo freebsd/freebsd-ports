@@ -1,5 +1,3 @@
-# Created by: Pawel Worach <pawel.worach@gmail.com>
-
 PORTNAME=	mutter
 PORTVERSION=	42.2
 CATEGORIES=	x11-wm

@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	enlightenment
 PORTVERSION=	0.25.3
 PORTEPOCH=	2

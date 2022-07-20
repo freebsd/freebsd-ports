@@ -1,5 +1,3 @@
-# Created by: Robert Noland <rnoland@FreeBSD.org>
-
 PORTNAME=	compiz-plugins-main
 PORTVERSION=	0.8.8
 PORTREVISION=	10

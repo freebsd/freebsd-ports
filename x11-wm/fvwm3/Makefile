@@ -1,5 +1,3 @@
-# Created by: Felix Palmen <felix@palmen-it.de>
-
 PORTNAME=	fvwm3
 PORTVERSION=	1.0.4
 PORTREVISION=	5

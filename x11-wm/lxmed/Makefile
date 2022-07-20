@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	lxmed
 PORTVERSION=	20120515
 PORTREVISION=	3

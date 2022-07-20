@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	wmii
 PORTVERSION=	3.9.2
 PORTREVISION=	3

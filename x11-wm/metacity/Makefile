@@ -1,5 +1,3 @@
-# Created by: Garrett Rooney <rooneg@electricjellyfish.net>
-
 PORTNAME=	metacity
 PORTVERSION=	3.44.0
 CATEGORIES=	x11-wm

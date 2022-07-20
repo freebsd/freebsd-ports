@@ -1,5 +1,3 @@
-# Created by: spn
-
 PORTNAME=	fluxbox
 PORTVERSION=	1.3.7
 PORTREVISION=	5

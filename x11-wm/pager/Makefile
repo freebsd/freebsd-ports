@@ -1,5 +1,3 @@
-# Created by: Michael Ebert <ebert@informatik.unibw-muenchen.de>
-
 PORTNAME=	pager
 PORTVERSION=	0.90.3
 PORTREVISION=	2

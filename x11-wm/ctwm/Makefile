@@ -1,5 +1,3 @@
-# Created by: torstenb
-
 PORTNAME=	ctwm
 DISTVERSION=	4.0.3
 PORTEPOCH=	1

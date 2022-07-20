@@ -1,5 +1,3 @@
-# Created by: Matthieu Guegan <matt.guegan@free.fr>
-
 PORTNAME=	xmonad
 PORTVERSION=	0.17.0
 PORTREVISION=	1

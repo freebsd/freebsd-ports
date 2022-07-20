@@ -1,5 +1,3 @@
-# Created by: Jeroen Schot <schot@a-eskwadraat.nl>
-
 PORTNAME=	dwm
 DISTVERSION=	6.3
 CATEGORIES=	x11-wm

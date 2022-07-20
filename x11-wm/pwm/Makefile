@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner
-
 PORTNAME=	pwm
 PORTVERSION=	2007.07.20
 PORTREVISION=	3

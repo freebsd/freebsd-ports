@@ -1,5 +1,3 @@
-# Created by: J Han <hjh@photino.com>
-
 PORTNAME=	lwm
 PORTVERSION=	1.2.4
 CATEGORIES=	x11-wm

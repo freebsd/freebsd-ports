@@ -1,5 +1,3 @@
-# Created by: Dominik Rothert <dr@domix.de>
-
 PORTNAME=	wmakerconf
 PORTVERSION=	2.12
 PORTREVISION=	11

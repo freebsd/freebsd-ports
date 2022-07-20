@@ -1,5 +1,3 @@
-# Created by: Patrick Seal <patseal@hyperhost.net>
-
 PORTNAME=	bbkeys
 PORTVERSION=	0.9.1
 PORTREVISION=	1

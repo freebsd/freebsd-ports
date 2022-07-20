@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	lxappearance-obconf
 PORTVERSION=	0.2.3
 PORTREVISION=	3

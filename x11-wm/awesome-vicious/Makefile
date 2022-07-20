@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	awesome-vicious
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.1

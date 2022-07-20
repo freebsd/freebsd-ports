@@ -1,5 +1,3 @@
-# Created by: Brian Handy <handy@physics.montana.edu>
-
 PORTNAME=	blackbox
 PORTVERSION=	0.70.1
 PORTREVISION=	6

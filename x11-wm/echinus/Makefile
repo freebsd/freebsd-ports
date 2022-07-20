@@ -1,5 +1,3 @@
-# Created by: hrkfrd@gmail.com
-
 PORTNAME=	echinus
 PORTVERSION=	0.4.9
 PORTREVISION=	2

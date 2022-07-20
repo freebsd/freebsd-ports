@@ -1,5 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-
 PORTNAME=	libdockapp
 PORTVERSION=	0.7.2
 CATEGORIES=	x11-wm

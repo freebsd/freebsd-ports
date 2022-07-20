@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
-
 PORTNAME=	fbcmd
 PORTVERSION=	0.5.1
 PORTREVISION=	4

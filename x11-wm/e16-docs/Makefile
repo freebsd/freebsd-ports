@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	e16-docs
 PORTVERSION=	0.16.8.0.2
 PORTREVISION=	4

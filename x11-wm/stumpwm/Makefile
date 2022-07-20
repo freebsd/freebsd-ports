@@ -1,5 +1,3 @@
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-
 PORTNAME=	stumpwm
 DISTVERSION=	22.05
 PORTREVISION=	1

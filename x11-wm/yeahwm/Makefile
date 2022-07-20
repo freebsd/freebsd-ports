@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	yeahwm
 PORTVERSION=	0.3.5
 CATEGORIES=	x11-wm

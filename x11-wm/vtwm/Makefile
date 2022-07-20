@@ -1,5 +1,3 @@
-# Created by: Bruce A. Mah <bmah@ca.sandia.gov>
-
 PORTNAME=	vtwm
 PORTVERSION=	5.5.0
 CATEGORIES=	x11-wm

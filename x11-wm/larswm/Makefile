@@ -1,5 +1,3 @@
-# Created by: lab@fnurt.net
-
 PORTNAME=	larswm
 PORTVERSION=	7.5.3
 PORTREVISION=	2

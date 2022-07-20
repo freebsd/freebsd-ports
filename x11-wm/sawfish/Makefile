@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	sawfish
 DISTVERSION=	1.13.0
 CATEGORIES=	x11-wm

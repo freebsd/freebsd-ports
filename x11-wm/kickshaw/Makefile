@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	kickshaw
 PORTVERSION=	0.5.26
 CATEGORIES=	x11-wm

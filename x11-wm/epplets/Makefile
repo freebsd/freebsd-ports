@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-
 PORTNAME=	epplets
 PORTVERSION=	0.14
 PORTREVISION=	9

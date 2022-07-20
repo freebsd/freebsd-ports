@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	lxqt-panel
 PORTVERSION=	1.1.0
 CATEGORIES=	x11-wm
