@@ -1,5 +1,3 @@
-# Created by: Cyrille.Lefevre@laposte.net
-
 PORTNAME=	v7sh
 PORTVERSION=	1.0
 PORTREVISION=	1

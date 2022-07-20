@@ -1,5 +1,3 @@
-# Created by: Sean Chittenden <seanc@FreeBSD.org>
-
 PORTNAME=	tcshrc
 PORTVERSION=	1.6.2
 CATEGORIES=	shells

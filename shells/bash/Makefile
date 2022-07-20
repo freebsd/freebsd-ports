@@ -1,5 +1,3 @@
-# Created by: Oliver Eikemeier
-
 PORTNAME=		bash
 PATCHLEVEL=		16
 PORTVERSION=		5.1.${PATCHLEVEL:S/^0//g}

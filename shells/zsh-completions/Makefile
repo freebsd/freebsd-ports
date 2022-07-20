@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	zsh-completions
 PORTVERSION=	0.34.0
 CATEGORIES=	shells

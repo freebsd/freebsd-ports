@@ -1,5 +1,3 @@
-# Created by: Danijel Tasov <danielt@pilgerer.org>
-
 PORTNAME=	heirloom-sh
 PORTVERSION=	050706
 PORTREVISION=	1

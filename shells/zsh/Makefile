@@ -1,5 +1,3 @@
-# Created by: torstenb
-
 PORTNAME=	zsh
 DISTVERSION=	5.9
 CATEGORIES=	shells

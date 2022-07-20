@@ -1,5 +1,3 @@
-# Created by: Shinsuke Matsui <smatsui@karashi.org>
-
 PORTNAME=	Shell-Perl
 PORTVERSION=	0.0040
 PORTREVISION=	1

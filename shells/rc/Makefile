@@ -1,5 +1,3 @@
-# Created by: erich@rrnet.com
-
 PORTNAME=	rc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.4

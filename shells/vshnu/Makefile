@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	vshnu
 PORTVERSION=	1.0500
 CATEGORIES=	shells perl5

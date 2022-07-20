@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <ip@unixway.org>
-
 PORTNAME=	bashc
 PORTVERSION=	5.1.8
 CATEGORIES=	shells

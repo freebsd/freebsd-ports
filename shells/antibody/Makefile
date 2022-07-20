@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	antibody
 PORTVERSION=	6.1.1
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	PHP_Shell
 PORTVERSION=	0.3.2
 PORTREVISION=	1

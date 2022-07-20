@@ -1,5 +1,3 @@
-# Created by: Vaida Bogdan
-
 PORTNAME=	ibsh
 PORTVERSION=	0.3e
 PORTREVISION=	1

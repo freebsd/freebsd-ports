@@ -1,5 +1,3 @@
-# Created by: mcglk@artlogix.com
-
 PORTNAME=	scponly
 PORTVERSION=	4.8.20110526
 PORTREVISION=	5

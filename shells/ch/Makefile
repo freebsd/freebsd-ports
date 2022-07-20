@@ -1,5 +1,3 @@
-# Created by: conrads@cox.net
-
 PORTNAME=	ch
 PORTVERSION=	7.0.0
 PORTREVISION=	1

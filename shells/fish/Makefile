@@ -1,5 +1,3 @@
-# Created by: Kai Wang <kaiw27@gmail.com>
-
 PORTNAME=	fish
 DISTVERSION=	3.4.1
 CATEGORIES=	shells

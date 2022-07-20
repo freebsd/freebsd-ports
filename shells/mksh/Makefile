@@ -1,5 +1,3 @@
-# Created by: Andreas Kohn <andreas@syndrom23.de>
-
 PORTNAME=	mksh
 PORTVERSION=	59c
 DISTVERSIONPREFIX=	R

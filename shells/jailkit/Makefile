@@ -1,5 +1,3 @@
-# Created by: Sylvio Cesar <sylvio@FreeBSD.org>
-
 PORTNAME=	jailkit
 PORTVERSION=	2.22
 CATEGORIES=	shells
