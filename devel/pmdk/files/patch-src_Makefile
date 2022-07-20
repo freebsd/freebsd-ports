@@ -1,0 +1,20 @@
+- remove examples from build: they use ncurses and break on 14
+
+--- src/Makefile.orig	2022-07-20 21:50:52 UTC
++++ src/Makefile
+@@ -37,13 +37,13 @@ include $(TOP)/src/common.inc
+ 
+ TARGETS = libpmem libvmem libpmemblk libpmemlog libpmemobj libpmempool\
+ 		  libvmmalloc tools
+-ALL_TARGETS = $(TARGETS) common librpmem examples benchmarks
++ALL_TARGETS = $(TARGETS) common librpmem benchmarks
+ 
+ SCOPE_DIRS = $(TARGETS) common librpmem rpmem_common
+ 
+ DEBUG_RELEASE_TARGETS = common libpmem libvmem libpmemblk libpmemlog libpmemobj\
+ 	libpmempool libvmmalloc librpmem
+-RELEASE_TARGETS = tools examples benchmarks
++RELEASE_TARGETS = tools benchmarks
+ 
+ CLEAN_NO_JE_TARGETS = $(ALL_TARGETS) rpmem_common test
+ CLEAN_TARGETS = $(CLEAN_NO_JE_TARGETS) jemalloc
