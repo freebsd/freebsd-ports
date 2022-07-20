@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@cs.ucdavis.edu)
-
 PORTNAME=	figlet
 PORTVERSION=	2.2.5
 CATEGORIES=	misc

@@ -1,5 +1,3 @@
-# Created by: Dean Hollister <dean@odyssey.apana.org.au>
-
 PORTNAME=	firestring
 PORTVERSION=	0.9.12
 CATEGORIES=	misc net devel

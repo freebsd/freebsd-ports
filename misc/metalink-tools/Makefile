@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	metalink
 PORTVERSION=	0.3.6
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: gpalmer
-
 PORTNAME=	amanda
 PORTVERSION=	3.3.9
 PORTREVISION=	4

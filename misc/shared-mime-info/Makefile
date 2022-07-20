@@ -1,5 +1,3 @@
-# Created by: olgeni@FreeBSD.org
-
 PORTNAME=	shared-mime-info
 DISTVERSION=	2.2
 PORTREVISION=	1

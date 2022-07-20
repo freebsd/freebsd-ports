@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	bb
 DISTVERSION=	1.3rc1
 PORTREVISION=	2

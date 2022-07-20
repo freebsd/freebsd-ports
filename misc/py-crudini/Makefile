@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	crudini
 PORTVERSION=	0.9.3
 CATEGORIES=	misc python

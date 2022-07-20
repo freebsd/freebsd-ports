@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	wmjulia
 PORTVERSION=	0.40
 PORTREVISION=	5

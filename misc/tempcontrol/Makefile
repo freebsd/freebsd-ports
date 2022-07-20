@@ -1,5 +1,3 @@
-# Created by: Greg Lehey <grog@FreeBSD.org>
-
 PORTNAME=	tempcontrol
 PORTVERSION=	1.2
 PORTREVISION=	3

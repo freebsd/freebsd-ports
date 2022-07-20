@@ -1,5 +1,3 @@
-# Created by: Marie Loise Nolden <loise@kde.org>
-
 PORTNAME=	examples
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
 CATEGORIES=	misc

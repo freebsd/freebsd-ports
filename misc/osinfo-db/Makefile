@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-
 PORTNAME=	osinfo-db
 PORTVERSION=	20220516
 CATEGORIES=	misc

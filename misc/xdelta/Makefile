@@ -1,5 +1,3 @@
-# Created by: jmacd
-
 PORTNAME=	xdelta
 PORTVERSION=	1.1.4
 PORTREVISION=	5

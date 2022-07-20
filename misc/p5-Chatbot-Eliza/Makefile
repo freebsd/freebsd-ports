@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Chatbot-Eliza
 PORTVERSION=	1.08
 CATEGORIES=	misc perl5

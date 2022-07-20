@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	dotenv-rails
 PORTVERSION=	2.7.6
 CATEGORIES=	misc rubygems

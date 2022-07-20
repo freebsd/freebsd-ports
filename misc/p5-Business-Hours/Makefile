@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	Business-Hours
 PORTVERSION=	0.13
 CATEGORIES=	misc perl5

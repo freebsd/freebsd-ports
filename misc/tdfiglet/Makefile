@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	tdfiglet
 PORTVERSION=	0.5
 CATEGORIES=	misc

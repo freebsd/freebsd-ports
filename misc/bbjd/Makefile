@@ -1,5 +1,3 @@
-# Created by: Dima Sivachenko
-
 PORTNAME=	bbjd
 PORTVERSION=	1.01
 PORTREVISION=	1

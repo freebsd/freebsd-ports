@@ -1,5 +1,3 @@
-# Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-
 PORTNAME=	cinder
 PORTVERSION=	12.0.10
 PORTREVISION=	22

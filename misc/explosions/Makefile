@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	explosions
 PORTVERSION=	0.2005.07.31
 PORTREVISION=	16

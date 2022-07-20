@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	termatrix
 PORTVERSION=	0.2
 CATEGORIES=	misc

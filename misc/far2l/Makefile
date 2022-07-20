@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	far2l
 PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	v_

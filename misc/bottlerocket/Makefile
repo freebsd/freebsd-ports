@@ -1,5 +1,3 @@
-# Created by: Mike Smith <msmith@FreeBSD.org>
-
 PORTNAME=	bottlerocket
 PORTVERSION=	0.04c
 PORTREVISION=	2

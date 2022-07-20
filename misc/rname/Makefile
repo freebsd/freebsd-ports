@@ -1,5 +1,3 @@
-# Created by: roam@FreeBSD.org
-
 PORTNAME=	rname
 PORTVERSION=	1.0.2
 CATEGORIES=	misc

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	clpbar
 PORTVERSION=	1.11.1
 CATEGORIES=	misc

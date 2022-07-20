@@ -1,5 +1,3 @@
-# Created by: Patrick Seal <patseal@hyperhost.net>
-
 PORTNAME=	tkregexp
 PORTVERSION=	3.1
 CATEGORIES=	misc tk

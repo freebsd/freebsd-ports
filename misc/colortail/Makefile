@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	colortail
 PORTVERSION=	0.3.3
 PORTREVISION=	1

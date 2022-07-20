@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	Array-Diff
 PORTVERSION=	0.09
 CATEGORIES=	misc perl5

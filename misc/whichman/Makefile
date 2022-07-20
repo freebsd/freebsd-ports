@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-
 PORTNAME=	whichman
 PORTVERSION=	2.4
 CATEGORIES=	misc

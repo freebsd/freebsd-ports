@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	ini_file_manager
 PORTVERSION=	03
 PORTREVISION=	3

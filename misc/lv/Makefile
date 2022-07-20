@@ -1,5 +1,3 @@
-# Created by: sumikawa@FreeBSD.org
-
 PORTNAME=	lv
 PORTVERSION=	4.51.20200728
 DISTVERSIONPREFIX=	v

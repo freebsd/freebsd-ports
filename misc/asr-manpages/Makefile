@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	asr-manpages
 PORTVERSION=	20000406
 CATEGORIES=	misc

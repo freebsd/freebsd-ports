@@ -1,5 +1,3 @@
-# Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-
 PORTNAME=	mime-support
 PORTVERSION=	3.62
 CATEGORIES=	misc

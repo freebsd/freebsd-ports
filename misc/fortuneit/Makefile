@@ -1,5 +1,3 @@
-# Created by: gmarco@giovannelli.it
-
 PORTNAME=	fortuneit
 PORTVERSION=	1.99
 CATEGORIES=	misc

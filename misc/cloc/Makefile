@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	cloc
 PORTVERSION=	1.94
 CATEGORIES=	misc

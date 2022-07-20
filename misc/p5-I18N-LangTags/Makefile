@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	I18N-LangTags
 PORTVERSION=	0.35
 PORTREVISION=	2

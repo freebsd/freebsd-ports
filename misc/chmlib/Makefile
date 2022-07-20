@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	chmlib
 PORTVERSION=	0.40
 PORTREVISION=	1

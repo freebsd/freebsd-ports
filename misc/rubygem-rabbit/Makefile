@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	rabbit
 PORTVERSION=	3.0.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: mnag
-
 PORTNAME=	compat6x
 PORTVERSION=	6.4.604000.200810
 PORTREVISION=	3

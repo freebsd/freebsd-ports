@@ -1,5 +1,3 @@
-# Created by: gmarco@giovannelli.it
-
 PORTNAME=	xtail
 PORTVERSION=	2.1
 CATEGORIES=	misc

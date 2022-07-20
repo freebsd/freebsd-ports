@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	xfce4-appfinder
 PORTVERSION=	4.16.1
 CATEGORIES=	misc xfce

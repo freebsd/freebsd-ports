@@ -1,5 +1,3 @@
-# Created by: Leland Wang <llwang@infor.org>
-
 PORTNAME=	dvorak7min
 PORTVERSION=	1.6.1
 DISTVERSIONSUFFIX=%2Brepack

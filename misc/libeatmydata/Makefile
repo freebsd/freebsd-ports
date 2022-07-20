@@ -1,5 +1,3 @@
-# Created by: Attila Nagy <bra@fsn.hu>
-
 PORTNAME=	libeatmydata
 PORTVERSION=	9
 CATEGORIES=	misc

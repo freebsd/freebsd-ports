@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <ip@unixway.org>
-
 PORTNAME=	wmforecast
 DISTVERSION=	1.8.1
 CATEGORIES=	misc windowmaker geography

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Geo-Coder-OpenCage
 PORTVERSION=	0.33
 CATEGORIES=	misc geography perl5

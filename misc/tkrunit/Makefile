@@ -1,5 +1,3 @@
-# Created by: Stephen Farrell <steve@farrell.org>
-
 PORTNAME=	tkRunIt
 PORTVERSION=	0.94.1
 PORTREVISION=	2

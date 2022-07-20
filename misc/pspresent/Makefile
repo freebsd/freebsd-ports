@@ -1,5 +1,3 @@
-# Created by: Timothy Bourke <timbob@bigpond.com>
-
 PORTNAME=	pspresent
 PORTVERSION=	1.3
 PORTREVISION=	6

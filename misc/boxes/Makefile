@@ -1,5 +1,3 @@
-# Created by: Patrick Seal <patseal@hyperhost.net>
-
 PORTNAME=	boxes
 PORTVERSION=	1.3
 DISTVERSIONPREFIX=	v

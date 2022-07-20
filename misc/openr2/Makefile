@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	openr2
 PORTVERSION=	1.3.3
 CATEGORIES=	misc

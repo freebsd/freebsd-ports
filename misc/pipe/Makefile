@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pipe
 PORTVERSION=	2.5
 PORTREVISION=	2

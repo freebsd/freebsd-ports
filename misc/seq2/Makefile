@@ -1,5 +1,3 @@
-# Created by: osa
-
 PORTNAME=	seq2
 PORTVERSION=	0.2
 PORTREVISION=	1

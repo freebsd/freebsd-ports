@@ -1,5 +1,3 @@
-# Created by: dbaker
-
 PORTNAME=	dnetc
 PORTVERSION=	${VERSION}
 PORTREVISION=	${REVISION:U0}

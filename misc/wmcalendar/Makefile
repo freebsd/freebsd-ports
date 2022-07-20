@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	wmcalendar
 PORTVERSION=	0.5.2
 PORTREVISION=	18

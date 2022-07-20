@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	jojodiff
 PORTVERSION=	0.8.5
 CATEGORIES=	misc devel

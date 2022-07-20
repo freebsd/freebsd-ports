@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	iso-codes
 PORTVERSION=	4.7
 CATEGORIES=	misc

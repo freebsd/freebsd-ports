@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	I18N-Charset
 PORTVERSION=	1.39.4
 PORTREVISION=	1

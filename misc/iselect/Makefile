@@ -1,5 +1,3 @@
-# Created by: Ralf S. Engelschall <rse@engelschall.com>
-
 PORTNAME=	iselect
 PORTVERSION=	1.4.0
 PORTREVISION=	2

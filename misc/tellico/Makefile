@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	tellico
 DISTVERSION=	3.4.4
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: Ting-Wei Lan <lantw44@gmail.com>
-
 PORTNAME=	hwdata
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.361

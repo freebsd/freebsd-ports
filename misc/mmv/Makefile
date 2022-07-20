@@ -1,5 +1,3 @@
-# Created by: Michael Elbel (me)
-
 PORTNAME=	mmv
 PORTVERSION=	1.01b.19
 PORTREVISION=	1

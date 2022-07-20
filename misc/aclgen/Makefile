@@ -1,5 +1,3 @@
-# Created by: igor@zynaps.ru
-
 PORTNAME=	aclgen
 PORTVERSION=	2.02
 CATEGORIES=	misc

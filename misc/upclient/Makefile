@@ -1,5 +1,3 @@
-# Created by: Kelly Yancey <kbyanc@posi.net>
-
 PORTNAME=	upclient
 PORTVERSION=	5.0.b8
 PORTREVISION=	7

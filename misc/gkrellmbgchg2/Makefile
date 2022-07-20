@@ -1,5 +1,3 @@
-# Created by: Chris Stuart <firewolf@lightningfire.net>
-
 PORTNAME=	gkrellmbgchg2
 PORTVERSION=	0.1.11
 PORTREVISION=	2

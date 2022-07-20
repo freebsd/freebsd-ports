@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	help2man
 PORTVERSION=	1.49.2
 CATEGORIES=	misc

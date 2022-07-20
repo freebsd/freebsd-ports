@@ -1,5 +1,3 @@
-# Created by: Kim Scarborough <user@unknown.nu>
-
 PORTNAME=	bible-kjv
 PORTVERSION=	4.30
 CATEGORIES=	misc

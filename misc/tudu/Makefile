@@ -1,5 +1,3 @@
-# Created by: mp39590@gmail.com
-
 PORTNAME=	tudu
 PORTVERSION=	0.10.3
 CATEGORIES=	misc

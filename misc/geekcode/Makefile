@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	geekcode
 PORTVERSION=	1.7.3
 CATEGORIES=	misc

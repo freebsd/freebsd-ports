@@ -1,5 +1,3 @@
-# Created by: Torsten Blum <torstenb@FreeBSD.org>
-
 PORTNAME=	mc
 PORTVERSION=	4.8.28
 CATEGORIES=	misc shells

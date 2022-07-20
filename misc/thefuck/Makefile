@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	thefuck
 DISTVERSION=	3.32
 CATEGORIES=	misc python

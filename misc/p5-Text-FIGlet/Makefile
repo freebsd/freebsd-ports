@@ -1,5 +1,3 @@
-# Created by: Daniel B. Hemmerich <dan@spot.org>
-
 PORTNAME=	Text-FIGlet
 PORTVERSION=	2.19.4
 CATEGORIES=	misc perl5

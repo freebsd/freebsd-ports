@@ -1,5 +1,3 @@
-# Created by: Patrick Li <pat@databits.net>
-
 PORTNAME=	wmScoreBoard
 PORTVERSION=	0.30
 PORTREVISION=	4

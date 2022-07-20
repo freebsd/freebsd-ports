@@ -1,5 +1,3 @@
-# Created by: stolz@i2.informatik.rwth-aachen.de
-
 PORTNAME=	fortune-mod-futurama
 PORTVERSION=	0.2
 PORTREVISION=	4

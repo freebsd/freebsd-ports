@@ -1,5 +1,3 @@
-# Created by: Dmitry Morozovsky <marck@FreeBSD.org>
-
 PORTNAME=	List-Compare
 PORTVERSION=	0.53
 CATEGORIES=	misc perl5

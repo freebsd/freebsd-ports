@@ -1,5 +1,3 @@
-# Created by: Martin Blapp <mb@imp.ch>
-
 PORTNAME=	mtx
 PORTVERSION=	1.3.12
 PORTREVISION=	1

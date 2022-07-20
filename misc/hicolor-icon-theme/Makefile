@@ -1,5 +1,3 @@
-# Created by: marcus@FreeBSD.org
-
 PORTNAME=	hicolor-icon-theme
 PORTVERSION=	0.17
 CATEGORIES=	misc gnome

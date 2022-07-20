@@ -1,5 +1,3 @@
-# Created by: shipley@dis.org
-
 PORTNAME=	hello
 PORTVERSION=	2.12.1
 CATEGORIES=	misc

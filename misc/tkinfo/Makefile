@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	tkinfo
 PORTVERSION=	2.11
 CATEGORIES=	misc tk

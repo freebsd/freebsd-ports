@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	libmetalink
 PORTVERSION=	0.1.3
 CATEGORIES=	misc

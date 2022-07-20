@@ -1,5 +1,3 @@
-# Created by: shanee@augusta.de
-
 PORTNAME=	logsurfer
 PORTVERSION=	1.8
 PORTREVISION=	1

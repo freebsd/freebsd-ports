@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	pciids
 PORTVERSION=	20220518
 CATEGORIES=	misc

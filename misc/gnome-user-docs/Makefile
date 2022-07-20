@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-user-docs
 PORTVERSION=	42.0
 CATEGORIES=	misc gnome

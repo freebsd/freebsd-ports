@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	toilet
 PORTVERSION=	0.3
 PORTREVISION=	2

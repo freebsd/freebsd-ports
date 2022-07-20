@@ -1,5 +1,3 @@
-# Created by: Mikael Urankar <mikael.urankar@gmail.com>
-
 PORTNAME=	raspberrypi-userland
 PORTVERSION=	20161026
 PORTREVISION=	3

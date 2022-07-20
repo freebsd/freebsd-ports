@@ -1,5 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-
 PORTNAME=	asbutton
 PORTVERSION=	0.3
 PORTREVISION=	3

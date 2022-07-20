@@ -1,5 +1,3 @@
-# Created by: Willem van Engen <wvengen@stack.nl>
-
 PORTNAME=	sword
 PORTVERSION=	1.8.1
 PORTREVISION=	14

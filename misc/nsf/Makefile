@@ -1,5 +1,3 @@
-# Created by: kaz
-
 PORTNAME=	nsf
 PORTVERSION=	1.0
 CATEGORIES=	misc

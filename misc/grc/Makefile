@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	grc
 PORTVERSION=	1.13
 DISTVERSIONPREFIX=	v

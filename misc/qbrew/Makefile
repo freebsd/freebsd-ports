@@ -1,5 +1,3 @@
-# Created by: David Johnson <david@usermode.org>
-
 PORTNAME=	qbrew
 PORTVERSION=	0.4.1
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: James Earl <jdearl@telus.net>
-
 PORTNAME=	xfce4-wm-themes
 PORTVERSION=	4.10.0
 PORTREVISION=	2

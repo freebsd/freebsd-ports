@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	g810-led
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.2

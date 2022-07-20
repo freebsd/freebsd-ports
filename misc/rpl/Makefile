@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	rpl
 PORTVERSION=	1.4.1
 CATEGORIES=	misc

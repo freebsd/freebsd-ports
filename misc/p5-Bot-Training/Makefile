@@ -1,5 +1,3 @@
-# Created by: milki <milki@rescomp.berkeley.edu>
-
 PORTNAME=	Bot-Training
 PORTVERSION=	0.07
 CATEGORIES=	misc perl5

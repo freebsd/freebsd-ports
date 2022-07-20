@@ -1,5 +1,3 @@
-# Created by: Brent J. Nordquist <bjn@visi.com>
-
 PORTNAME=	viz
 PORTVERSION=	1.1.1
 PORTREVISION=	1

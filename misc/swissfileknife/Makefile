@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	swissfileknife
 PORTVERSION=	1.9.8
 CATEGORIES=	misc

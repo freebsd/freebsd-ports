@@ -1,5 +1,3 @@
-# Created by: Scot W. Hetzel
-
 PORTNAME=	compat4x
 PORTVERSION=	${COMPAT4X_PORTVERSION}
 PORTREVISION=	11

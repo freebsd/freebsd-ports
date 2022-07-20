@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	lazyread
 PORTVERSION=	2.0
 CATEGORIES=	misc

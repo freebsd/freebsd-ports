@@ -1,5 +1,3 @@
-# Created by: Michael A. Kohn <mike@mikekohn.net>
-
 PORTNAME=	ringtonetools
 PORTVERSION=	2.26
 CATEGORIES=	misc

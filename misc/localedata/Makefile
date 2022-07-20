@@ -1,5 +1,3 @@
-# Created by: sf
-
 PORTNAME=	localedata
 PORTVERSION=	5.4
 PORTREVISION=	2

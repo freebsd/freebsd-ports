@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	teseq
 PORTVERSION=	1.1.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Marc Fonvieille <blackend@FreeBSD.org>
-
 CATEGORIES=	misc docs
 PKGNAMEPREFIX=	ko-
 

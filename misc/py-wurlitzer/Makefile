@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	wurlitzer
 PORTVERSION=	3.0.2
 CATEGORIES=	misc python

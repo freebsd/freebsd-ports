@@ -1,5 +1,3 @@
-# Created by: Conrad Sabatier <conrads@home.com>
-
 PORTNAME=	xless
 PORTVERSION=	1.7
 PORTREVISION=	2

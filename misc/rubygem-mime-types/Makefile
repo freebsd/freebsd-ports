@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	mime-types
 PORTVERSION=	3.4.1
 CATEGORIES=	misc rubygems

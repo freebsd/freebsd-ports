@@ -1,5 +1,3 @@
-# Created by: alfred@FreeBSD.org
-
 PORTNAME=	hulgalugha
 PORTVERSION=	1.0
 CATEGORIES=	misc

@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-
 PORTNAME=	wmwork
 PORTVERSION=	0.2.5
 PORTREVISION=	3

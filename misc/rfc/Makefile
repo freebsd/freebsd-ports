@@ -1,5 +1,3 @@
-# Created by: Chris D. Faulhaber <jedgar@fxp.org>
-
 PORTNAME=	rfc
 PORTVERSION=	3.2.3
 PORTREVISION=	4

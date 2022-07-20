@@ -1,5 +1,3 @@
-# Created by: Andy Kosela <akosela@andykosela.com>
-
 PORTNAME=	fortune-mod-epictetus
 PORTVERSION=	0.2
 DISTVERSIONPREFIX=	v

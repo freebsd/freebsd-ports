@@ -1,5 +1,3 @@
-# Created by: Tomoyuki Sakurai <cherry@trombik.org>
-
 PORTNAME=	Locale-US
 PORTVERSION=	3.04
 CATEGORIES=	misc perl5

@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	progressbar
 PORTVERSION=	2.5
 CATEGORIES=	misc python

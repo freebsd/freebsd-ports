@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	clifm
 PORTVERSION=	1.6
 DISTVERSIONPREFIX=	v

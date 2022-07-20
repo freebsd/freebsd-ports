@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	rump
 PORTVERSION=	20170822
 PORTREVISION=	2

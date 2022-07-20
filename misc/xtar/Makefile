@@ -1,5 +1,3 @@
-# Created by: Andreas Kohout <shanee@rabbit.augusta.de>
-
 PORTNAME=	xtar
 PORTVERSION=	1.4
 PORTREVISION=	5

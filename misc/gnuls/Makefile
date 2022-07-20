@@ -1,5 +1,3 @@
-# Created by: bmc@WillsCreek.COM
-
 PORTNAME=	gnuls
 PORTVERSION=	8.30
 CATEGORIES=	misc

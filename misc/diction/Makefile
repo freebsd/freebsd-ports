@@ -1,5 +1,3 @@
-# Created by: J Han <hjh@best.com>
-
 PORTNAME=	diction
 PORTVERSION=	1.11
 PORTREVISION=	2

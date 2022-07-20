@@ -1,5 +1,3 @@
-# Created by: Dan Moschuk <dan@FreeBSD.org>
-
 PORTNAME=	sshbuddy
 PORTVERSION=	1.05
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	ytree
 DISTVERSION=	2.03
 CATEGORIES=	misc

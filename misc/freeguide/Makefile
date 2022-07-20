@@ -1,5 +1,3 @@
-# Created by: Stephen Hurd <shurd@FreeBSD.org>
-
 PORTNAME=	freeguide
 PORTVERSION=	0.11.1
 CATEGORIES=	misc java

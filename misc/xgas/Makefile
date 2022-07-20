@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	xgas
 PORTVERSION=	1.0
 PORTREVISION=	2

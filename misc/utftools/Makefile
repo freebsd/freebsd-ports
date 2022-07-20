@@ -1,5 +1,3 @@
-# Created by: Serge Gagnon <gagnon__s@videotron.ca>
-
 PORTNAME=	utftools
 PORTVERSION=	1.6
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Geo-GeoNames
 PORTVERSION=	1.130
 CATEGORIES=	misc perl5

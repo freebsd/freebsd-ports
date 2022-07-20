@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Locale-Geocode
 PORTVERSION=	1.20
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	mirmon
 PORTVERSION=	2.11
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Serge Gagnon <gagnon__s@videotron.ca>
-
 PORTNAME=	libutf
 PORTVERSION=	2.10
 PORTREVISION=	3

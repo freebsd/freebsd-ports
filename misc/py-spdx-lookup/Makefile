@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	spdx-lookup
 PORTVERSION=	0.3.3
 CATEGORIES=	misc python

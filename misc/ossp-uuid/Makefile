@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@nigredo.org>
-
 PORTNAME=	uuid
 PORTVERSION=	1.6.2
 PORTREVISION=	9

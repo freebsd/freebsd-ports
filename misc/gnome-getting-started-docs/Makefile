@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-getting-started-docs
 PORTVERSION=	3.38.1
 CATEGORIES=	misc gnome

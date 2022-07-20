@@ -1,5 +1,3 @@
-# Created by: djp
-
 PORTNAME=	fortune-mod-bible
 PORTVERSION=	1.0
 PORTREVISION=	1

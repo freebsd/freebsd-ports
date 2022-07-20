@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	latex-mk
 PORTVERSION=	2.1
 PORTREVISION=	5

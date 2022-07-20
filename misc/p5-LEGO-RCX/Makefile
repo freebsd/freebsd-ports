@@ -1,5 +1,3 @@
-# Created by: Kelly Yancey <kbyanc@posi.net>
-
 PORTNAME=	LEGO-RCX
 PORTVERSION=	1.01
 PORTREVISION=	1

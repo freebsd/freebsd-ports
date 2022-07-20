@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Geo-Coder-Bing
 PORTVERSION=	0.13
 CATEGORIES=	misc geography perl5

@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	translate
 PORTVERSION=	1.20
 CATEGORIES=	misc perl5

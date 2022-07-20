@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@FreeBSD.org>
-
 PORTNAME=	mbuffer
 PORTVERSION=	20220418
 CATEGORIES=	misc

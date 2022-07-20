@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	Geo-Weather
 PORTVERSION=	1.41
 PORTREVISION=	1

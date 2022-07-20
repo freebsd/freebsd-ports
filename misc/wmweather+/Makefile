@@ -1,5 +1,3 @@
-# Created by: Harald Wille <harald.wille@students.jku.at>
-
 PORTNAME=	wmweather+
 PORTVERSION=	2.18
 CATEGORIES=	misc windowmaker geography

@@ -1,5 +1,3 @@
-# Created by: Tom Rhodes <trhodes@FreeBSD.org>
-
 PORTNAME=	window
 PORTVERSION=	1.0
 PORTREVISION=	1

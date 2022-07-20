@@ -1,5 +1,3 @@
-# Created by: cracauer@cons.org "Martin Cracauer"
-
 PORTNAME=	cstream
 PORTVERSION=	3.2.1
 CATEGORIES=	misc

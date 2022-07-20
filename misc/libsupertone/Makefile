@@ -1,5 +1,3 @@
-# Created by: Max Khon <fjoe@FreeBSD.org>
-
 PORTNAME=	libsupertone
 PORTVERSION=	0.0.2
 PORTREVISION=	9

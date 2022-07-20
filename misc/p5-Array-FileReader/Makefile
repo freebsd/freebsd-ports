@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Array-FileReader
 PORTVERSION=	0.03
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	pinfo
 DISTVERSION=	0.6.13
 CATEGORIES=	misc

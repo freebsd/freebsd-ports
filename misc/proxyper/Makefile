@@ -1,5 +1,3 @@
-# Created by: globalpanic@gmx.net
-
 PORTNAME=	proxyper
 PORTVERSION=	347
 PORTREVISION=	1

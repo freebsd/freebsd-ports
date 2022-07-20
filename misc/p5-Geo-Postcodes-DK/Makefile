@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Geo-Postcodes-DK
 PORTVERSION=	0.32
 PORTREVISION=	1

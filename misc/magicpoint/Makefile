@@ -1,5 +1,3 @@
-# Created by: itojun@itojun.org
-
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
 PORTREVISION=	19

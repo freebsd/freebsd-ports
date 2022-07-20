@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Tie-DxHash
 PORTVERSION=	1.05
 PORTREVISION=	2

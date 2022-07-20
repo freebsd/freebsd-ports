@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Software-License
 PORTVERSION=	0.104002
 CATEGORIES=	misc perl5

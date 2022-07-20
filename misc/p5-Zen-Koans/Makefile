@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Zen-Koans
 PORTVERSION=	0.05
 PORTREVISION=	1

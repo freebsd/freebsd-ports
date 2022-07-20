@@ -1,5 +1,3 @@
-# Created by: Lars Engels <lars.engels@0x20.net>
-
 PORTNAME=	tvbrowser
 PORTVERSION=	4.2.6
 CATEGORIES=	misc java

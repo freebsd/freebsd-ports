@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	ree
 PORTVERSION=	1.4.1
 CATEGORIES=	misc

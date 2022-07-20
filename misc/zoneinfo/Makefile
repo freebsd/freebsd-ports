@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	zoneinfo
 DISTVERSION=	2022a
 PORTREVISION=	1

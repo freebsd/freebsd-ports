@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	Business-ISBN-Data
 PORTVERSION=	20210112.006
 CATEGORIES=	misc perl5

@@ -1,5 +1,3 @@
-# Created by: Joao Carlos Mendes Luis <jonny@jonny.eng.br>
-
 PORTNAME=	buffer
 PORTVERSION=	1.19
 CATEGORIES=	misc

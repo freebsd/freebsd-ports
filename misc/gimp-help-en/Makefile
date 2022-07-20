@@ -1,5 +1,3 @@
-# Created by: SimaMoto,RyoTa <liangtai.s4@gmail.com>
-
 PORTNAME=	gimp-help
 PORTVERSION=	2.10.0
 PORTREVISION=	2
