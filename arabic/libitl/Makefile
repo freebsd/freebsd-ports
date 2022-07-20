@@ -1,5 +1,3 @@
-# Created by: Samy Al Bahra <samy@kerneled.org>
-
 PORTNAME=	libitl
 PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v

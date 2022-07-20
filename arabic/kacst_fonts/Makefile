@@ -1,5 +1,3 @@
-# Created by: Samy Al Bahra <samy@kerneled.com>
-
 PORTNAME=	kacst_fonts
 PORTVERSION=	2.01
 PORTREVISION=	3

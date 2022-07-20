@@ -1,5 +1,3 @@
-# Created by: Samy Al Bahra <samy@kerneled.com>
-
 PORTNAME=	ae_fonts1_ttf
 PORTVERSION=	1.1
 PORTREVISION=	5
