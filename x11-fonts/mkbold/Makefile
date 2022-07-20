@@ -1,5 +1,3 @@
-# Created by: KOMATSU Shinichiro
-
 PORTNAME=	mkbold
 PORTVERSION=	1.0
 PORTREVISION=	2

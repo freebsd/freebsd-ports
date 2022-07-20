@@ -1,5 +1,3 @@
-# Created by: Mateusz Piotrowski <0mp@FreeBSD.org>
-
 PORTNAME=	steps-mono
 DISTVERSION=	0.3-29
 DISTVERSIONSUFFIX=	-gc090a79

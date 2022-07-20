@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@FreeBSD.org>
-
 PORTNAME=	exo
 PORTVERSION=	2
 PORTREVISION=	2

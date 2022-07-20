@@ -1,5 +1,3 @@
-# Created by: Kuan-Chung Chiu <buganini@gmail.com>
-
 PORTNAME=	khmeros
 PORTVERSION=	5.0
 PORTREVISION=	2

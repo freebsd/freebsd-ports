@@ -1,5 +1,3 @@
-# Created by: Mateusz Piotrowski <0mp@FreeBSD.org>
-
 PORTNAME=	manrope
 PORTVERSION=	4.504
 CATEGORIES=	x11-fonts

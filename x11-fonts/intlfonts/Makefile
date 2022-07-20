@@ -1,5 +1,3 @@
-# Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-
 PORTNAME=	intlfonts
 PORTVERSION=	1.4.2
 CATEGORIES=	x11-fonts

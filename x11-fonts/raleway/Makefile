@@ -1,5 +1,3 @@
-# Created by: Florian Limberger <flo@snakeoilproductions.net>
-
 PORTNAME=	raleway
 DISTVERSION=	4.101
 CATEGORIES=	x11-fonts

@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	fontconfig
 DISTVERSION=	2.13.94
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: arrowd <6yearold@gmail.com>
-
 PORTNAME=	Hasklig
 DISTVERSION=	1.1
 PORTREVISION=	1

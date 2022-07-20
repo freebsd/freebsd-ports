@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	bdf2sfd
 PORTVERSION=	1.1.7
 CATEGORIES=	x11-fonts

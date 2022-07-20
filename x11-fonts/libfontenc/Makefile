@@ -1,5 +1,3 @@
-# Created by: Dejan Lesjak <lesi@FreeBSD.org>
-
 PORTNAME=	libfontenc
 PORTVERSION=	1.1.4
 CATEGORIES=	x11-fonts

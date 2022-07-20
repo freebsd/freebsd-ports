@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	dejavu
 PORTVERSION=	2.37
 DISTVERSIONPREFIX=	fonts-ttf-

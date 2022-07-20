@@ -1,5 +1,3 @@
-# Created by: Andreas Kohn <andreas@syndrom23.de>
-
 PORTNAME=	freefont-ttf
 PORTVERSION=	20120503
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
-
 PORTNAME=	webfonts
 PORTVERSION=	0.30
 PORTREVISION=	14

@@ -1,5 +1,3 @@
-# Created by: Naresh Venkateshappa <nareshov@gmail.com>
-
 PORTNAME=	fonts-indic
 PORTVERSION=	2.1.5
 PORTREVISION=	4

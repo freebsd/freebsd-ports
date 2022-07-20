@@ -1,5 +1,3 @@
-# Created by: Pawel Worach
-
 PORTNAME=	font-adobe-utopia-100dpi
 PORTVERSION=	1.0.4
 PORTREVISION=	4

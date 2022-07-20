@@ -1,5 +1,3 @@
-# Created by: Alexey Illarionov <littlesavage@rambler.ru>
-
 PORTNAME=	paratype
 PORTVERSION=	2.005
 PORTREVISION=	2

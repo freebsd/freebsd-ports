@@ -1,5 +1,3 @@
-# Created by: Björn König <bkoenig@alpha-tierchen.de>
-
 PORTNAME=	linuxlibertine
 PORTVERSION=	4.7.5
 PORTREVISION=	4

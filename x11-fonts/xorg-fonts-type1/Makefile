@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	xorg-fonts-type1
 PORTVERSION=	7.7
 CATEGORIES=	x11-fonts

@@ -1,5 +1,3 @@
-# Created by: Guerkan Senguen <gurkan@phys.ethz.ch>
-
 PORTNAME=	junicode
 DISTVERSION=	1.002
 PORTREVISION=	1

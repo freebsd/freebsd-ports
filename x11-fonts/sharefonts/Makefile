@@ -1,5 +1,3 @@
-# Created by: dburr@FreeBSD.org
-
 PORTNAME=	sharefonts
 PORTVERSION=	0.10
 PORTREVISION=	8

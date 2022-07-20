@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	pcf2bdf
 PORTVERSION=	1.07
 CATEGORIES=	x11-fonts

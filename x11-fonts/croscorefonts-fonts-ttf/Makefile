@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	croscorefonts
 PORTVERSION=	1.31.0
 PORTREVISION=	2

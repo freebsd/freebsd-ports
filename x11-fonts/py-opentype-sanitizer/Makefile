@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	opentype-sanitizer
 PORTVERSION=	8.2.1
 CATEGORIES=	x11-fonts python

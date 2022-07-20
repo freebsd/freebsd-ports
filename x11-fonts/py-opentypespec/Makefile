@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	opentypespec
 PORTVERSION=	1.8.4
 CATEGORIES=	x11-fonts python

@@ -1,5 +1,3 @@
-# Created by: Florian Limberger <flo@snakeoilproductions.net>
-
 PORTNAME=	league-spartan
 DISTVERSION=	2.220
 CATEGORIES=	x11-fonts

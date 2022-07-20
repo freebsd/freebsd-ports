@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	fntsample
 PORTVERSION=	5.4
 PORTREVISION=	1

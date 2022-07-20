@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	amigafonts
 PORTVERSION=	1.02
 CATEGORIES=	x11-fonts

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ots
 PORTVERSION=	8.2.1
 PORTREVISION=	2

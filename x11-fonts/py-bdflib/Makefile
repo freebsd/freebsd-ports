@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	bdflib
 PORTVERSION=	1.0.4
 PORTREVISION=	1

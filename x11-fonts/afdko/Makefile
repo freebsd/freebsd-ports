@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	afdko
 PORTVERSION=	3.9.1
 CATEGORIES=	x11-fonts

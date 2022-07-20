@@ -1,5 +1,3 @@
-# Created by: bf <bf@FreeBSD.org>
-
 PORTNAME=	CharisSILCompact
 PORTVERSION=	4.114
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	montecarlo_fonts
 PORTVERSION=	1.0
 PORTREVISION=	3

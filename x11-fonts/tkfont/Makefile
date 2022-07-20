@@ -1,5 +1,3 @@
-# Created by: Brett Taylor
-
 PORTNAME=	tkfont
 PORTVERSION=	1.1
 PORTREVISION=	3

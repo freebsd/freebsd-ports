@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	axisregistry
 PORTVERSION=	0.3.5
 CATEGORIES=	x11-fonts python

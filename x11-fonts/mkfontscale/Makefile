@@ -1,5 +1,3 @@
-# Created by: Pawel Worach
-
 PORTNAME=	mkfontscale
 PORTVERSION=	1.2.1
 CATEGORIES=	x11-fonts

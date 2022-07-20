@@ -1,5 +1,3 @@
-# Created by: Marcin Cieslak <saper@SYSTEM.PL>
-
 PORTNAME=	c64bdf
 PORTVERSION=	1.0
 PORTREVISION=	4

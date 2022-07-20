@@ -1,5 +1,3 @@
-# Created by: past@ebs.gr
-
 PORTNAME=	mgopen
 PORTVERSION=	1.1
 PORTREVISION=	1

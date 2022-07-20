@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	code2000
 PORTVERSION=	1.171
 PORTREVISION=	3

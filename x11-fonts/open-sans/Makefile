@@ -1,5 +1,3 @@
-# Created by: Florian Limberger <flo@snakeoilproductions.net>
-
 PORTNAME=	open-sans
 PORTVERSION=	20180831
 CATEGORIES=	x11-fonts

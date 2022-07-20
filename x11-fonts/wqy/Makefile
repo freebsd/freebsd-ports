@@ -1,5 +1,3 @@
-# Created by: Dryice Liu <dryice@liu.com.cn>
-
 PORTNAME=	wqy-fonts
 PORTVERSION=	20100803
 PORTREVISION=	10

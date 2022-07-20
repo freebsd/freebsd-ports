@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sourceserifpro
 PORTVERSION=	3.001
 CATEGORIES=	x11-fonts

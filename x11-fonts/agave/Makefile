@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	agave
 PORTVERSION=	37
 DISTVERSIONPREFIX=	v

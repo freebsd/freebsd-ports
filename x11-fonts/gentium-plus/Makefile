@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	GentiumPlus
 PORTVERSION=	6.001
 CATEGORIES=	x11-fonts

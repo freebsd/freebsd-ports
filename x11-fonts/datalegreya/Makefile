@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	datalegreya
 PORTVERSION=	0.2017.03.29
 PORTREVISION=	1

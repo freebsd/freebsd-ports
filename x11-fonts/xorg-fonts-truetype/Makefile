@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	xorg-fonts-truetype
 PORTVERSION=	7.7
 PORTREVISION=	1

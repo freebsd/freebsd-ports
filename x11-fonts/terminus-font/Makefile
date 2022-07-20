@@ -1,5 +1,3 @@
-# Created by: Michael Hsin <mhsin@mhsin.org>
-
 PORTNAME=	terminus-font
 PORTVERSION=	4.48
 CATEGORIES=	x11-fonts

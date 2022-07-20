@@ -1,5 +1,3 @@
-# Created by: trevor
-
 PORTNAME=	sgifonts
 PORTVERSION=	1.0.1
 PORTREVISION=	5

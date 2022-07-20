@@ -1,5 +1,3 @@
-# Created by: Lowell Gilbert <lgfbsd@be-well.ilk.org>
-
 PORTNAME=	isabella-ttf
 PORTVERSION=	1.202
 PORTREVISION=	3

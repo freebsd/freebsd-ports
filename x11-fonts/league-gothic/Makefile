@@ -1,5 +1,3 @@
-# Created by: Florian Limberger <flo@snakeoilproductions.net>
-
 PORTNAME=	league-gothic
 DISTVERSION=	1.601
 CATEGORIES=	x11-fonts

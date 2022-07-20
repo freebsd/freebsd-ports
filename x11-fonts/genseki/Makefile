@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	genseki
 PORTVERSION=	1.501
 DISTVERSIONPREFIX=	v
