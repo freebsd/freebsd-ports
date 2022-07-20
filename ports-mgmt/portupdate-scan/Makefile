@@ -1,5 +1,3 @@
-# Created by: Alex Stangl <alex@stangl.us>
-
 PORTNAME=	portupdate-scan
 PORTVERSION=	0.4
 CATEGORIES=	ports-mgmt

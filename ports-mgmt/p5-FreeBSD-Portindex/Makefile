@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman
-
 PORTNAME=	FreeBSD-Portindex
 PORTVERSION=	3.6
 CATEGORIES=	ports-mgmt perl5

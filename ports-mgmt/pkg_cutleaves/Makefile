@@ -1,5 +1,3 @@
-# Created by: Stefan Walter <sw@gegenunendlich.de>
-
 PORTNAME=	pkg_cutleaves
 PORTVERSION=	20181216
 CATEGORIES=	ports-mgmt

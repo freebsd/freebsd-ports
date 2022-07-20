@@ -1,5 +1,3 @@
-# Created by: Conrad J. Sabatier <conrads@cox.net>
-
 PORTNAME=	mkreadmes
 DISTVERSION=	1.3
 CATEGORIES=	ports-mgmt

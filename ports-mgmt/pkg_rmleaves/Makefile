@@ -1,5 +1,3 @@
-# Created by: Timothy Redaelli <drizzt@gufi.org>
-
 PORTNAME=	pkg_rmleaves
 PORTVERSION=	20190108
 CATEGORIES=	ports-mgmt

@@ -1,5 +1,3 @@
-# Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-
 PORTNAME=	pytoport
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1-4

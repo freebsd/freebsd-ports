@@ -1,5 +1,3 @@
-# Created by: kmoore@FreeBSD.org
-
 PORTNAME=	octopkg
 PORTVERSION=	0.3.1
 DISTVERSIONPREFIX=	v

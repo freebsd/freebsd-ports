@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME?=	portshaker
 PORTVERSION=	1.0.19
 DISTVERSIONPREFIX=	v

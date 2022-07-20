@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	genpatch
 PORTVERSION=	1.40
 PORTREVISION=	1

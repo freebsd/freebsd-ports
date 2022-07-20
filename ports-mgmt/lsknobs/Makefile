@@ -1,5 +1,3 @@
-# Created by: Gabriel Linder <linder.gabriel@gmail.com>
-
 PORTNAME=	lsknobs
 PORTVERSION=	1.0
 CATEGORIES=	ports-mgmt

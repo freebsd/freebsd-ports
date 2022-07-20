@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	fastest_pkg
 PORTVERSION=	0.2.0
 DISTVERSIONPREFIX=	v

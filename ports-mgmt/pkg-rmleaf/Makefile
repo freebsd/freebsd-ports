@@ -1,5 +1,3 @@
-# Created by: Yanhui Shen <shen.elf@gmail.com>
-
 PORTNAME=	pkg-rmleaf
 PORTVERSION=	0.4
 CATEGORIES=	ports-mgmt

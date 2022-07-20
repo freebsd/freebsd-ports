@@ -1,5 +1,3 @@
-# Created by: Philipp Wuensche <cryx-ports@h3q.com>
-
 PORTNAME=	jailaudit
 PORTVERSION=	1.6.1
 CATEGORIES=	ports-mgmt

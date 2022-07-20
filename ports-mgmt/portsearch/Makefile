@@ -1,5 +1,3 @@
-# Created by: Vasil Dimov <vd@datamax.bg>
-
 PORTNAME=	portsearch
 PORTVERSION=	1.3.5
 CATEGORIES=	ports-mgmt

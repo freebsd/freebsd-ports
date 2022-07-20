@@ -1,5 +1,3 @@
-# Created by: Vladimir Chukharev
-
 PORTNAME=	porttree
 PORTVERSION=	1.1.r${SVN_REV}
 PORTREVISION=	1

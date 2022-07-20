@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	portupgrade
 PORTVERSION=	2.4.16
 PORTREVISION=	0

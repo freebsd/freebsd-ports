@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	synth
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.12

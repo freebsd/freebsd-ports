@@ -1,5 +1,3 @@
-# Created by: Benjamin Lutz
-
 PORTNAME=	psearch
 PORTVERSION=	2.1.0
 CATEGORIES=	ports-mgmt

@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis (edwin@mavetju.org)
-
 PORTNAME=	pkg_tree
 DISTVERSION=	1.1
 PORTREVISION=	5

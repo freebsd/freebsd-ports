@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	ports-tools
 PORTVERSION=	1.8
 CATEGORIES=	ports-mgmt
