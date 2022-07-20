@@ -20,6 +20,7 @@ LLVM_COMMANDS=	\
 		llvm-dis \
 		llvm-dlltool \
 		llvm-dwarfdump \
+		llvm-dwarfutil \
 		llvm-dwp \
 		llvm-exegesis \
 		llvm-extract \

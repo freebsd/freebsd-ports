@@ -16,6 +16,7 @@ LLVM_MAN1SRCS= \
 	llvm-diff.1 \
 	llvm-dis.1 \
 	llvm-dwarfdump.1 \
+	llvm-dwarfutil.1 \
 	llvm-exegesis.1 \
 	llvm-extract.1 \
 	llvm-ifs.1 \
