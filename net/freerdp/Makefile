@@ -2,7 +2,7 @@
 
 PORTNAME=	freerdp
 DISTVERSION=	2.7.0
-CATEGORIES=	net comms
+CATEGORIES=	net comms wayland
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 

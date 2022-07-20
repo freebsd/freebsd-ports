@@ -1,6 +1,6 @@
 PORTNAME=	egl-wayland
 DISTVERSION=	1.1.10
-CATEGORIES=	graphics
+CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	EGLStream-based Wayland external platform

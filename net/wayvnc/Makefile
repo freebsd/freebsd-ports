@@ -1,7 +1,7 @@
 PORTNAME=	wayvnc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1
-CATEGORIES=	net
+CATEGORIES=	net wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VNC server for wlroots-based compositors

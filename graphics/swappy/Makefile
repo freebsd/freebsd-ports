@@ -1,7 +1,7 @@
 PORTNAME=	swappy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.0
-CATEGORIES=	graphics
+CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Snapshot editing for Wayland (a la Snappy on macOS)

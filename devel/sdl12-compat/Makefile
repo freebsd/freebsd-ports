@@ -1,7 +1,7 @@
 PORTNAME=	sdl12-compat
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1.2.52
-CATEGORIES=	devel
+CATEGORIES=	devel wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	SDL-1.2 compatibility layer that uses SDL 2.0 behind the scenes

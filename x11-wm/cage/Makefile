@@ -2,7 +2,7 @@ PORTNAME=	cage
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.4
 PORTREVISION=	3
-CATEGORIES=	x11-wm
+CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	70ecdcb02ea0.patch:-p1 # https://github.com/Hjdskes/cage/pull/148

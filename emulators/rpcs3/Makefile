@@ -2,7 +2,7 @@ PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.23 # git rev-list --count HEAD
 DISTVERSIONSUFFIX=	-13833-g969b9eb89d
-CATEGORIES=	emulators
+CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger

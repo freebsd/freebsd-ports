@@ -1,6 +1,6 @@
 PORTNAME=	wallutils
 DISTVERSION=	5.11.0
-CATEGORIES=	x11
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Utilities for handling monitors, resolutions, wallpapers and timed wallpapers

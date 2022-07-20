@@ -1,6 +1,6 @@
 PORTNAME=	wlvncc
 PORTVERSION=	s20220630
-CATEGORIES=	net
+CATEGORIES=	net wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland Native VNC Client

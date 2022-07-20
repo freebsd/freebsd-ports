@@ -1,7 +1,7 @@
 PORTNAME=	waypipe
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2
-CATEGORIES=	net
+CATEGORIES=	net wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Network transparency with Wayland

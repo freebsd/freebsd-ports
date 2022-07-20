@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-caps-viewer
 DISTVERSION=	3.23
-CATEGORIES=	graphics
+CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Vulkan Hardware Capability Viewer
