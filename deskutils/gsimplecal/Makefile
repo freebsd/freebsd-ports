@@ -1,12 +1,14 @@
 PORTNAME=	gsimplecal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Lightweight calendar applet written in C++ using GTK
 
-LICENSE=	GPLv3
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf compiler:c++11-lang gmake gnome pkgconfig
 USE_GITHUB=	yes
