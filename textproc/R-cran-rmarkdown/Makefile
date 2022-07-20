@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	rmarkdown
 PORTVERSION=	2.14
 CATEGORIES=	textproc

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-SAX-Machines
 PORTVERSION=	0.46
 PORTREVISION=	2

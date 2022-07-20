@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	String-Print
 PORTVERSION=	0.94
 CATEGORIES=	textproc perl5

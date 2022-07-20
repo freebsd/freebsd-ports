@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	jarnal
 PORTVERSION=	1079
 CATEGORIES=	textproc editors

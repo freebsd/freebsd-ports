@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	Pod-Parser
 PORTVERSION=	1.65
 CATEGORIES=	textproc perl5

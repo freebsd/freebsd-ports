@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Text-ParagraphDiff
 PORTVERSION=	2.70
 PORTREVISION=	2

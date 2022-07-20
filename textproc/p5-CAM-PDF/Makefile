@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	CAM-PDF
 PORTVERSION=	1.60
 PORTREVISION=	1

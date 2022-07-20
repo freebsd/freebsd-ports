@@ -1,5 +1,3 @@
-# Created by: Cyrille Lefevre <clefevre@citeweb.net>
-
 PORTNAME=	docbook-to-man
 PORTVERSION=	1.0
 PORTREVISION=	2

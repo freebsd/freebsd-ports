@@ -1,5 +1,3 @@
-# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
-
 PORTNAME=	Text-EtText
 PORTVERSION=	2.2
 PORTREVISION=	2

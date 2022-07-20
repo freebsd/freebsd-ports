@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Number-Format
 PORTVERSION=	1.75
 CATEGORIES=	textproc perl5

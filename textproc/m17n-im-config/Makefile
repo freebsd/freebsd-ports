@@ -1,5 +1,3 @@
-# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-
 PORTNAME=	m17n-im-config
 PORTVERSION=	0.9.0
 PORTREVISION=	9

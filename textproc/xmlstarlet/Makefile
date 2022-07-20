@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	xmlstarlet
 PORTVERSION=	1.6.1
 PORTREVISION=	2

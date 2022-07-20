@@ -1,5 +1,3 @@
-# Created by: paulh@logicsquad.net
-
 PORTNAME=	refdb
 PORTVERSION=	0.9.9
 DISTVERSIONSUFFIX=	-1

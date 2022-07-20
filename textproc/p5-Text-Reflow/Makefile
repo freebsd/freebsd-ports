@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Text-Reflow
 PORTVERSION=	1.17
 CATEGORIES=	textproc perl5

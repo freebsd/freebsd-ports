@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	antiword
 PORTVERSION=	0.37
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Sort-ArbBiLex
 PORTVERSION=	4.01
 PORTREVISION=	1

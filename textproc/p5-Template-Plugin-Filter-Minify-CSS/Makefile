@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Template-Plugin-Filter-Minify-CSS
 PORTVERSION=	0.95
 PORTREVISION=	1

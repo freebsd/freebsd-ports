@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	y2l
 PORTVERSION=	1.2
 CATEGORIES=	textproc

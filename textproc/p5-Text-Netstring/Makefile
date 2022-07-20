@@ -1,5 +1,3 @@
-# Created by: James Raftery <james@now.ie>
-
 PORTNAME=	Text-Netstring
 PORTVERSION=	0.07
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	TeX-Encode
 PORTVERSION=	2.010
 CATEGORIES=	textproc perl5

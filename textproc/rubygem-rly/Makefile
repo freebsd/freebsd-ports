@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rly
 PORTVERSION=	0.2.3
 CATEGORIES=	textproc rubygems

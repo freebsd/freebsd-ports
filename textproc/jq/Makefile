@@ -1,5 +1,3 @@
-# Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-
 PORTNAME=	jq
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1.6

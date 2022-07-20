@@ -1,5 +1,3 @@
-# Created by: kuriyama
-
 PORTNAME=	xhtml
 PORTVERSION=	1.0.20020801
 PORTREVISION=	5

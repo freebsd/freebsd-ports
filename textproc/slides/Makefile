@@ -1,5 +1,3 @@
-# Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-
 PORTNAME=	slides
 PORTVERSION=	3.4.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: risner@stdio.com
-
 PORTNAME=	diff
 PORTVERSION=	2.11.1
 PORTREVISION=	1

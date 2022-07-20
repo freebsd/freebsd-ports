@@ -1,5 +1,3 @@
-# Created by: skreuzer
-
 PORTNAME=	custom_inherit
 PORTVERSION=	2.3.1
 CATEGORIES=	textproc python

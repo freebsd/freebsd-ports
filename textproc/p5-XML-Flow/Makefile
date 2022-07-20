@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	XML-Flow
 PORTVERSION=	0.86
 PORTREVISION=	1

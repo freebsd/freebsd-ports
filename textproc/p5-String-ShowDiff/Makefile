@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	String-ShowDiff
 PORTVERSION=	0.03
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	sphinx
 PORTVERSION=	4.5.0
 PORTEPOCH=	1

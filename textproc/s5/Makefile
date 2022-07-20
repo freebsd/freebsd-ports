@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	s5
 PORTVERSION=	1.1
 PORTREVISION=	2

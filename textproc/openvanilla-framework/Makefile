@@ -1,5 +1,3 @@
-# Created by: Leland Wang <llwang@infor.org>
-
 PORTNAME=	openvanilla-framework
 PORTVERSION=	0.7.2.20070514
 CATEGORIES=	textproc

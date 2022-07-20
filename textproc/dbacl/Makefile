@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	dbacl
 PORTVERSION=	1.14.1
 CATEGORIES=	textproc

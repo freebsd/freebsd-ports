@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <wahjava@gmail.com>
-
 PORTNAME=	POD2-Base
 PORTVERSION=	0.043
 PORTREVISION=	1

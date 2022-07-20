@@ -1,5 +1,3 @@
-# Created by: Rene Ladan <rene@FreeBSD.org>
-
 PORTNAME=	diff-match-patch
 PORTVERSION=	20200713
 CATEGORIES=	textproc python

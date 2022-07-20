@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@oook.cz>
-
 PORTNAME=	meld
 PORTVERSION=	3.20.4
 PORTEPOCH=	1

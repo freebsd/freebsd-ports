@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	sass
 PORTVERSION=	3.7.4
 CATEGORIES=	textproc ruby

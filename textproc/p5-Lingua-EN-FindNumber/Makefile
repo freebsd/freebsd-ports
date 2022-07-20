@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Lingua-EN-FindNumber
 PORTVERSION=	1.32
 CATEGORIES=	textproc perl5

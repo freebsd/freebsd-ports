@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	saxon
 PORTVERSION=	6.5.5
 PORTREVISION=	1

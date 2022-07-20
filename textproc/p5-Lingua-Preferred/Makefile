@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-Preferred
 PORTVERSION=	0.2.4
 PORTREVISION=	1

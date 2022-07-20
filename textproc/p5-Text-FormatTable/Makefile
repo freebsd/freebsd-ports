@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Text-FormatTable
 PORTVERSION=	1.03
 PORTREVISION=	1

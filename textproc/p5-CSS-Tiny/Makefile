@@ -1,5 +1,3 @@
-# Created by: Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
-
 PORTNAME=	CSS-Tiny
 PORTVERSION=	1.20
 CATEGORIES=	textproc perl5

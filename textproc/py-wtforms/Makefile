@@ -1,5 +1,3 @@
-# Created by: Moggie <moggie@elasticmind.net>
-
 PORTNAME=	wtforms
 PORTVERSION=	2.1
 PORTREVISION=	1

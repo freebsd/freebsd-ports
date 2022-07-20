@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-MarkdownTable
 PORTVERSION=	0.3.1
 CATEGORIES=	textproc perl5

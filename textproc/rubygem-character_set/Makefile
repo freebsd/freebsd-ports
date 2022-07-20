@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	character_set
 PORTVERSION=	1.4.1
 CATEGORIES=	textproc rubygems

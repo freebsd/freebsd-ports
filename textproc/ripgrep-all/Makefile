@@ -1,5 +1,3 @@
-# Created by: Alexis Praga <alexis.praga@free.fr>
-
 PORTNAME=	ripgrep-all
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6

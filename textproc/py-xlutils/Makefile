@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	xlutils
 PORTVERSION=	2.0.0
 CATEGORIES=	textproc python

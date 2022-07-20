@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	textdistance
 PORTVERSION=	4.3.0
 CATEGORIES=	textproc python

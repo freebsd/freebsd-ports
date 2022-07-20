@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libxode
 PORTVERSION=	0.71
 PORTREVISION=	6

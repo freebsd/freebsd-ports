@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	anyascii
 PORTVERSION=	0.3.1
 CATEGORIES=	textproc python

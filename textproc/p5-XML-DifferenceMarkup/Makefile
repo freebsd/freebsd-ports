@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-DifferenceMarkup
 PORTVERSION=	1.05
 CATEGORIES=	textproc perl5

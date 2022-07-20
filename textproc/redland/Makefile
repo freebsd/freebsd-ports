@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	redland
 PORTVERSION=	1.0.17
 PORTREVISION=	4

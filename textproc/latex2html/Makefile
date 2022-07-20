@@ -1,5 +1,3 @@
-# Created by: brett@peloton.physics.montana.edu
-
 PORTNAME=	latex2html
 PORTVERSION=	2016
 PORTREVISION=	1

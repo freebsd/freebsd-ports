@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	align
 PORTVERSION=	1.7.5
 CATEGORIES=	textproc

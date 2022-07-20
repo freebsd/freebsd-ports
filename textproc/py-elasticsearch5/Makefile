@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	elasticsearch
 PORTVERSION=	5.5.2
 PORTREVISION=	2

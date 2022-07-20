@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	sparqlwrapper
 PORTVERSION=	1.8.5
 CATEGORIES=	textproc python

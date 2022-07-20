@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cucumber-html-formatter
 PORTVERSION=	19.2.0
 PORTREVISION=	1

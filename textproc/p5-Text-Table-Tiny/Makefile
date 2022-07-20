@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-Table-Tiny
 PORTVERSION=	1.03
 CATEGORIES=	textproc perl5

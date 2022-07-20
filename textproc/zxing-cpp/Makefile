@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	zxing-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0

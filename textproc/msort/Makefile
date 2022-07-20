@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	msort
 PORTVERSION=	8.53
 PORTREVISION=	3

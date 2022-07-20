@@ -1,5 +1,3 @@
-# Created by: Max N. Boyarov <m.boyarov@gmail.com>
-
 PORTNAME=	dictem
 PORTVERSION=	1.0.4
 PORTREVISION=	13

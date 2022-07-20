@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pycountry
 PORTVERSION=	22.3.5
 CATEGORIES=	textproc python

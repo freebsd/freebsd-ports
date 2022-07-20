@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Lingua-StopWords
 PORTVERSION=	0.12
 CATEGORIES=	textproc perl5

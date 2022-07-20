@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	markaby
 PORTVERSION=	0.9.0
 CATEGORIES=	textproc rubygems

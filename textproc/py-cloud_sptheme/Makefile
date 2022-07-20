@@ -1,5 +1,3 @@
-# Created by: Horia Racoviceanu <horia@racoviceanu.com>
-
 PORTNAME=	cloud_sptheme
 PORTVERSION=	1.10.1
 DISTVERSIONSUFFIX=	.post20200504175005

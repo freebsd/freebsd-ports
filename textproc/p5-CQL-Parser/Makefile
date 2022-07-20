@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	CQL-Parser
 PORTVERSION=	1.13
 PORTREVISION=	1

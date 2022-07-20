@@ -1,5 +1,3 @@
-# Created by: philip@p6m7g8.com
-
 PORTNAME=	Filter-Simple
 PORTVERSION=	0.94
 CATEGORIES=	textproc perl5

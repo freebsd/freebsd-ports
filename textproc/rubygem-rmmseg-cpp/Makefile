@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	rmmseg-cpp
 PORTVERSION=	0.2.9
 PORTREVISION=	1

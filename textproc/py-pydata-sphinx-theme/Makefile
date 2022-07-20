@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pydata-sphinx-theme
 PORTVERSION=	0.8.1
 CATEGORIES=	textproc python

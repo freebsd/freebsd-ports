@@ -1,5 +1,3 @@
-# Created by: Mykola Dzham <freebsd@levsha.org.ua>
-
 PORTNAME=	lttoolbox
 PORTVERSION=	${APVER}.${APREV}
 DISTVERSIONPREFIX=	v

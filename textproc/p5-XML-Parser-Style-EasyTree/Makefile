@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	XML-Parser-Style-EasyTree
 PORTVERSION=	0.09
 PORTREVISION=	1

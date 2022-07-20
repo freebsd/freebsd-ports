@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	dictionary
 PORTVERSION=	1.8.7
 PORTREVISION=	29

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	XML-Parsepp
 PORTVERSION=	0.08
 CATEGORIES=	textproc perl5

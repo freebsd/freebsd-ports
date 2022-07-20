@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	Search-Elasticsearch-Client-5_0
 PORTVERSION=	6.00
 CATEGORIES=	textproc perl5

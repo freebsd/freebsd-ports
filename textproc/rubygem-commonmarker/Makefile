@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	commonmarker
 PORTVERSION=	0.23.5
 CATEGORIES=	textproc rubygems

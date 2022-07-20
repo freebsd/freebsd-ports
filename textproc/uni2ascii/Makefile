@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	uni2ascii
 PORTVERSION=	4.18
 CATEGORIES=	textproc

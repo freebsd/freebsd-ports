@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	xtable
 DISTVERSION=	1.8-4
 PORTREVISION=	2

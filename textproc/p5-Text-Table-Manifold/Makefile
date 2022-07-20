@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-Table-Manifold
 PORTVERSION=	1.03
 CATEGORIES=	textproc perl5

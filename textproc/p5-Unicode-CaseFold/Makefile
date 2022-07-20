@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Unicode-CaseFold
 PORTVERSION=	1.01
 CATEGORIES=	textproc perl5

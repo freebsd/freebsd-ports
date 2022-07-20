@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Text-Diff
 PORTVERSION=	1.45
 CATEGORIES=	textproc perl5

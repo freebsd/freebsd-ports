@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sphinx-basic-ng
 PORTVERSION=	0.0.1a12
 CATEGORIES=	textproc python

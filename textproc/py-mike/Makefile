@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mike
 PORTVERSION=	1.1.2
 CATEGORIES=	textproc python

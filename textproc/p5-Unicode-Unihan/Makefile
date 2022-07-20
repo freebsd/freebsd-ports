@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	Unicode-Unihan
 PORTVERSION=	0.04.3
 CATEGORIES=	textproc perl5

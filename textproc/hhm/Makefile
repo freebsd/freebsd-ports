@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	hhm
 PORTVERSION=	0.1.1
 CATEGORIES=	textproc

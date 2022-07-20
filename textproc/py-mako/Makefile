@@ -1,5 +1,3 @@
-# Created by: Dryice Liu <dryice@dryice.name>
-
 PORTNAME=	mako
 PORTVERSION=	1.0.14
 PORTREVISION=	1

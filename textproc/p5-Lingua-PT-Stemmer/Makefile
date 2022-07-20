@@ -1,5 +1,3 @@
-# Created by: Thorsten Greiner <thorsten.greiner@web.de>
-
 PORTNAME=	Lingua-PT-Stemmer
 PORTVERSION=	0.02
 CATEGORIES=	textproc perl5

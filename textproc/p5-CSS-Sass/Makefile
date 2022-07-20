@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	CSS-Sass
 PORTVERSION=	3.6.4
 CATEGORIES=	textproc perl5

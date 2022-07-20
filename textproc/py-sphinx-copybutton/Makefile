@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sphinx-copybutton
 PORTVERSION=	0.5.0
 CATEGORIES=	textproc python

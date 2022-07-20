@@ -1,5 +1,3 @@
-# Created by: znerd@FreeBSD.org
-
 PORTNAME=	xalan-j
 PORTVERSION=	2.7.2
 CATEGORIES=	textproc java

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	UML-State
 PORTVERSION=	0.02
 PORTREVISION=	1

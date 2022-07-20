@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	Text-Markdown
 PORTVERSION=	1.000031
 PORTREVISION=	2

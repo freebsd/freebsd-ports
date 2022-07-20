@@ -1,5 +1,3 @@
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
-
 PORTNAME=	xincluder
 PORTVERSION=	1.0.d11
 PORTREVISION=	6

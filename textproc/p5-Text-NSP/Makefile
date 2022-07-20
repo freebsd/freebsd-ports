@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Text-NSP
 PORTVERSION=	1.31
 CATEGORIES=	textproc perl5

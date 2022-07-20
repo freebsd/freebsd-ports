@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	yard
 PORTVERSION=	0.9.28
 CATEGORIES=	textproc devel rubygems

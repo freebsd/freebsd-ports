@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	URI-Find
 PORTVERSION=	20160806
 PORTREVISION=	1

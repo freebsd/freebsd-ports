@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	pygtail
 PORTVERSION=	0.6.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	XML-NamespaceFactory
 PORTVERSION=	1.02
 CATEGORIES=	textproc perl5

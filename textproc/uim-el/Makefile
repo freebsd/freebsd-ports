@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	uim-el
 PORTVERSION=	1.8.9.b.${SNAPDATE}
 CATEGORIES=	textproc

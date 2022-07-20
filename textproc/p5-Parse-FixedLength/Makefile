@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Parse-FixedLength
 PORTVERSION=	5.39
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-
 PORTNAME=	Data-SpreadPagination
 PORTVERSION=	0.1.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	raptor2
 PORTVERSION=	2.0.15
 PORTREVISION=	22

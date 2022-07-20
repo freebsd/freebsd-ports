@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <dhn@FreeBSD.org>
-
 PORTNAME=	termcolor
 PORTVERSION=	1.2.2
 CATEGORIES=	textproc rubygems

@@ -1,5 +1,3 @@
-# Created by: antoine@FreeBSD.org
-
 PORTNAME=	acora
 PORTVERSION=	2.3
 CATEGORIES=	textproc devel python

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Text-Similarity
 PORTVERSION=	0.13
 CATEGORIES=	textproc perl5

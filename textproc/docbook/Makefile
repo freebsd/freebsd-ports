@@ -1,5 +1,3 @@
-# Created by: Nik Clayton <nik@FreeBSD.org>
-
 PORTNAME=	docbook
 PORTVERSION=	1.5
 CATEGORIES=	textproc

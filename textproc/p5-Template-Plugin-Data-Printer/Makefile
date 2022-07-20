@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	Template-Plugin-DataPrinter
 PORTVERSION=	0.015
 CATEGORIES=	textproc perl5

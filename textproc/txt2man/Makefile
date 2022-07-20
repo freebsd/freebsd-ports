@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	txt2man
 DISTVERSIONPREFIX=	txt2man-
 DISTVERSION=	1.7.1

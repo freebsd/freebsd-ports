@@ -1,5 +1,3 @@
-# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-
 PORTNAME=	teckit
 DISTVERSION=	2.5.11
 CATEGORIES=	textproc converters

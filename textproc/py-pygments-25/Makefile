@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	pygments
 PORTVERSION=	2.5.2
 PORTREVISION=	0

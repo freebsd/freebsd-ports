@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ttp
 PORTVERSION=	0.9.1
 CATEGORIES=	textproc python

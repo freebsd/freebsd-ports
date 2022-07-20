@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	XML-Liberal
 PORTVERSION=	0.32
 CATEGORIES=	textproc perl5

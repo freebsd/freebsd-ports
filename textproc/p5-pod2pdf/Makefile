@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	pod2pdf
 PORTVERSION=	0.42
 PORTREVISION=	2

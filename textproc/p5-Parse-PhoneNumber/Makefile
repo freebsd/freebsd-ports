@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Parse-PhoneNumber
 PORTVERSION=	1.9
 PORTREVISION=	1

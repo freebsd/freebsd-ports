@@ -1,4 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
 #   $MCom: ports/textproc/exempi/Makefile,v 1.1 2008/02/26 18:50:26 ahze Exp $
 
 PORTNAME=	exempi

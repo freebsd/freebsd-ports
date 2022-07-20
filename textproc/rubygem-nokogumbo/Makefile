@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	nokogumbo
 PORTVERSION=	2.0.5
 PORTREVISION=	2

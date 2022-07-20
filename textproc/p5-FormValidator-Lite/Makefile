@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	FormValidator-Lite
 PORTVERSION=	0.41
 CATEGORIES=	textproc perl5

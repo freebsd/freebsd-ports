@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	HTML-Entities-Interpolate
 PORTVERSION=	1.10
 CATEGORIES=	textproc www perl5

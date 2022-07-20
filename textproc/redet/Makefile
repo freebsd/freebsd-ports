@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-
 PORTNAME=	redet
 PORTVERSION=	8.26
 CATEGORIES=	textproc tk

@@ -1,5 +1,3 @@
-# Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-
 PORTNAME=	Text-SimpleTable
 PORTVERSION=	2.07
 CATEGORIES=	textproc perl5

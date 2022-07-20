@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	text
 PORTVERSION=	1.3.1
 CATEGORIES=	textproc rubygems

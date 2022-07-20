@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	String-Koremutake
 PORTVERSION=	0.30
 PORTREVISION=	1

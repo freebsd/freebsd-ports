@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	scss
 PORTVERSION=	0.4.2
 PORTREVISION=	2

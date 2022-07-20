@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	randlm
 PORTVERSION=	0.2.5
 PORTREVISION=	20

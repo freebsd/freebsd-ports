@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	coccigrep
 PORTVERSION=	1.20
 DISTVERSIONPREFIX=	v

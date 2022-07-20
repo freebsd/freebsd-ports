@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Parse-CSV
 PORTVERSION=	2.07
 CATEGORIES=	textproc perl5

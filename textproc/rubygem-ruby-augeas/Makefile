@@ -1,5 +1,3 @@
-# Created by: Russell Jackson <raj@csub.edu>
-
 PORTNAME=	ruby-augeas
 PORTVERSION=	0.5.0
 PORTREVISION=	4

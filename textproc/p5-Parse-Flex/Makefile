@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Parse-Flex
 PORTVERSION=	0.12
 PORTREVISION=	1

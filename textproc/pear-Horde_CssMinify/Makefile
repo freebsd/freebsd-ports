@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_CssMinify
 PORTVERSION=	1.0.4
 CATEGORIES=	textproc www pear

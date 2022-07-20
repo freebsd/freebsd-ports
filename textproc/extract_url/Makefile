@@ -1,5 +1,3 @@
-# Created by: Horia Racoviceanu <horia@racoviceanu.com>
-
 PORTNAME=	extract_url
 PORTVERSION=	1.6.2
 DISTVERSIONPREFIX=	v

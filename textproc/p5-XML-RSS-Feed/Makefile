@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	XML-RSS-Feed
 PORTVERSION=	2.40
 PORTREVISION=	1

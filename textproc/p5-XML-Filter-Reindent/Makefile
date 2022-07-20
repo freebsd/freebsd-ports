@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	XML-Filter-Reindent
 PORTVERSION=	0.03
 PORTREVISION=	1

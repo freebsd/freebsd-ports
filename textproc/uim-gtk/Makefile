@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PKGNAMESUFFIX=	-gtk
 
 COMMENT=	GTK+ modules of uim input method

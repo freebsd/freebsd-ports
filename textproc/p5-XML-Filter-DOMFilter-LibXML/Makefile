@@ -1,5 +1,3 @@
-# Created by: Andrew Humphrey <ahumphrey@realestate.com.au>
-
 PORTNAME=	XML-Filter-DOMFilter-LibXML
 PORTVERSION=	0.04
 CATEGORIES=	textproc perl5

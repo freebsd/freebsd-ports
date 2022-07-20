@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	kibana
 PORTVERSION=	7.17.3
 DISTVERSIONSUFFIX=	-darwin-x86_64

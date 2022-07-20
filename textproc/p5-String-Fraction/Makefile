@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	String-Fraction
 PORTVERSION=	0.30
 PORTREVISION=	1

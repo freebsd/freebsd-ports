@@ -1,5 +1,3 @@
-# Created by: jkoshy
-
 PORTNAME=	rxp
 PORTVERSION=	1.4.4
 PORTREVISION=	2

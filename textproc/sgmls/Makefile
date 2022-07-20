@@ -1,5 +1,3 @@
-# Created by: Eugene Furs <justas@mbank.lv>
-
 PORTNAME=	sgmls
 PORTVERSION=	1.1.91
 PORTREVISION=	2

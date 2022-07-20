@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <pfg@FreeBSD.org>
-
 PORTNAME=	commons-csv
 PORTVERSION=	1.9.0
 CATEGORIES=	textproc java devel

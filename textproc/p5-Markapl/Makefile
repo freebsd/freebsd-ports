@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Markapl
 PORTVERSION=	0.14
 PORTREVISION=	1

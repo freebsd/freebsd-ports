@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	formatR
 DISTVERSION=	1.12
 CATEGORIES=	textproc

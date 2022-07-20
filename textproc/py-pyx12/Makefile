@@ -1,5 +1,3 @@
-# Created by: john@zoner.org
-
 PORTNAME=	pyx12
 PORTVERSION=	2.3.3
 CATEGORIES=	textproc python

@@ -1,5 +1,3 @@
-# Created by: Pavel Timofeev <timp87@gmail.com>
-
 PORTNAME=		go-yq
 DISTVERSIONPREFIX=	v
 DISTVERSION=		4.25.1

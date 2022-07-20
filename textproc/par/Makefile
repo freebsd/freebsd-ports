@@ -1,5 +1,3 @@
-# Created by: Mark R V Murray <mark@grondar.za>
-
 PORTNAME=	par
 PORTVERSION=	1.53.0
 PKGNAMESUFFIX=	_format

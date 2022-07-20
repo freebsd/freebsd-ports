@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	XML-Parser-EasyTree
 PORTVERSION=	0.01
 PORTREVISION=	1

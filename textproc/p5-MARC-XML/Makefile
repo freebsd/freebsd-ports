@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	MARC-XML
 PORTVERSION=	1.0.3
 PORTREVISION=	1

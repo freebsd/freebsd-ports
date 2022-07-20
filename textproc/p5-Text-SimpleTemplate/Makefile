@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Text-SimpleTemplate
 PORTVERSION=	0.36
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
-
 PORTNAME=	unrtf
 PORTVERSION=	0.21.10
 CATEGORIES=	textproc

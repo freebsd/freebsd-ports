@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	String-LCSS
 PORTVERSION=	1.00
 CATEGORIES=	textproc perl5

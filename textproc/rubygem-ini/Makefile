@@ -1,5 +1,3 @@
-# Created by: Yarema <yds@CoolRat.org>
-
 PORTNAME=	ini
 PORTVERSION=	0.1.1
 CATEGORIES=	textproc rubygems

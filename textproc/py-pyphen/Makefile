@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	pyphen
 PORTVERSION=	0.12.0
 CATEGORIES=	textproc python

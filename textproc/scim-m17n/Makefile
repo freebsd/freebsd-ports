@@ -1,5 +1,3 @@
-# Created by: Yinghong Liu <relaxbsd@gmail.com>
-
 PORTNAME=	scim-m17n
 PORTVERSION=	0.2.3
 PORTREVISION=	10

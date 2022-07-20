@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Plucene-Plugin-Analyzer-SnowballAnalyzer
 PORTVERSION=	1.1
 PORTREVISION=	2

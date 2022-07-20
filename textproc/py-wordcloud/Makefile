@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	wordcloud
 DISTVERSION=	1.8.2.2
 CATEGORIES=	textproc python

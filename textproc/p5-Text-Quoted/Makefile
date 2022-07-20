@@ -1,5 +1,3 @@
-# Created by: Erwin Lansing <erwin@FreeBSD.org>
-
 PORTNAME=	Text-Quoted
 PORTVERSION=	2.10
 CATEGORIES=	textproc perl5

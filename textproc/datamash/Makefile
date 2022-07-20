@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	datamash
 PORTVERSION=	1.7
 CATEGORIES=	textproc

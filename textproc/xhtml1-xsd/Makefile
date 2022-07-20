@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	xhtml1-xsd
 PORTVERSION=	200208
 CATEGORIES=	textproc

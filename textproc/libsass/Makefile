@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	libsass
 DISTVERSION=	3.6.4
 PORTREVISION=	0

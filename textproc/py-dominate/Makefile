@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	dominate
 PORTVERSION=	2.6.0
 CATEGORIES=	textproc python

@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libxml2
 PORTVERSION=	2.9.1
 DISTVERSIONSUFFIX=	-6.el7.5

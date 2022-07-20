@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@nigredo.org>
-
 PORTNAME=	trang
 PORTVERSION=	20220510
 CATEGORIES=	textproc java

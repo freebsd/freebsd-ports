@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Text-Hyphen
 PORTVERSION=	0.2
 PORTEPOCH=	1

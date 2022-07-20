@@ -1,5 +1,3 @@
-# Created by: Greg Lewis <glewis@FreeBSD.org>
-
 PORTNAME=	html-pretty
 PORTVERSION=	1.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	CSS-SAC
 PORTVERSION=	0.08
 PORTREVISION=	2

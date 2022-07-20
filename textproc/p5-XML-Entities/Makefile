@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tom@tomjudge.com>
-
 PORTNAME=	XML-Entities
 PORTVERSION=	1.0002
 CATEGORIES=	textproc perl5

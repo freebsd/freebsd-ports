@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	denature
 PORTVERSION=	0.6.5
 PORTREVISION=	2

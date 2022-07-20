@@ -1,5 +1,3 @@
-# Created by: Thorsten Greiner <thorsten.greiner@web.de>
-
 PORTNAME=	Lingua-Stem
 PORTVERSION=	2.31
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-
 PORTNAME=	laserhammer
 PORTVERSION=	2.4
 CATEGORIES=	textproc python

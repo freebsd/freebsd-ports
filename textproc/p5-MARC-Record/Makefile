@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	MARC-Record
 PORTVERSION=	2.0.7
 CATEGORIES=	textproc perl5

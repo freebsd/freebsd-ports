@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	UML-Sequence
 PORTVERSION=	0.08
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Andrei V. Shetuhin <reki@reki.ru>
-
 PORTNAME=	ctpp2
 PORTVERSION=	2.8.3
 PORTREVISION=	8

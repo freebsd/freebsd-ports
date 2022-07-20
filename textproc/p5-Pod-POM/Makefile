@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Pod-POM
 PORTVERSION=	2.01
 CATEGORIES=	textproc perl5

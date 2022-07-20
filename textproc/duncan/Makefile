@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	duncan
 PORTVERSION=	0.4
 CATEGORIES=	textproc gnustep

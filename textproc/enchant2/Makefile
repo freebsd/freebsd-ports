@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	enchant
 PORTVERSION=	2.2.15
 PORTREVISION=	1

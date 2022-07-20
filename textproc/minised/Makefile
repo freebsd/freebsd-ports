@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	minised
 PORTVERSION=	1.15
 CATEGORIES=	textproc

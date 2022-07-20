@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	CSS-Compressor
 PORTVERSION=	0.05
 CATEGORIES=	textproc perl5

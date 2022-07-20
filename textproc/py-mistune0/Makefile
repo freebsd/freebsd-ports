@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	mistune
 PORTVERSION=	0.8.4
 CATEGORIES=	textproc python

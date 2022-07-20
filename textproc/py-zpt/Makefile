@@ -1,5 +1,3 @@
-# Created by: Benno Rice <benno@jeamland.net>
-
 PORTNAME=	zpt
 PORTVERSION=	2.5
 CATEGORIES=	textproc python

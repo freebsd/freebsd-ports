@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Regexp-Log
 PORTVERSION=	0.06
 PORTREVISION=	1

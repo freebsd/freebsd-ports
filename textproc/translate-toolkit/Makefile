@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	translate-toolkit
 PORTVERSION=	3.7.1
 CATEGORIES=	textproc

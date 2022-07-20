@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	paragrep
 PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	release-

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	actionpack-xml_parser
 PORTVERSION=	2.0.1
 PORTREVISION=	1

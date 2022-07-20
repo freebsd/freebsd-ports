@@ -1,5 +1,3 @@
-# Created by: Cyrille Lefevre <clefevre@citeweb.net>
-
 PORTNAME=	sed
 PORTVERSION=	4.8
 CATEGORIES=	textproc

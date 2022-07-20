@@ -1,5 +1,3 @@
-# Created by: Boris Samorodov <bsam@FreeBSD.org>
-
 PORTNAME=	goldendict
 DISTVERSION=	1.5.0-g20220602
 CATEGORIES=	textproc

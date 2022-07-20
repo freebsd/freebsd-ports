@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	rnv
 PORTVERSION=	1.7.11
 PORTREVISION=	1

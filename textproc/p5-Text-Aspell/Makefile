@@ -1,5 +1,3 @@
-# Created by: lars.eggert@gmx.net
-
 PORTNAME=	Text-Aspell
 PORTVERSION=	0.09
 PORTREVISION=	3

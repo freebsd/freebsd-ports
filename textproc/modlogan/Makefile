@@ -1,5 +1,3 @@
-# Created by: Alexander@Leidinger.net
-
 PORTNAME=	modlogan
 PORTVERSION=	0.8.13
 PORTREVISION=	18

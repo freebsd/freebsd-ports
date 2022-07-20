@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	word2x
 PORTVERSION=	0.005
 PORTREVISION=	2

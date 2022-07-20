@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	JSON-Validator
 PORTVERSION=	5.08
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Template-Declare
 PORTVERSION=	0.47
 PORTREVISION=	1

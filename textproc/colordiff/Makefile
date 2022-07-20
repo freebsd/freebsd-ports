@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	colordiff
 PORTVERSION=	1.0.20
 CATEGORIES=	textproc

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Text-Diff3
 PORTVERSION=	0.10
 PORTREVISION=	1

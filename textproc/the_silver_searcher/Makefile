@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	the_silver_searcher
 PORTVERSION=	2.2.0
 CATEGORIES=	textproc

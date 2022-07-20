@@ -1,5 +1,3 @@
-# Created by: nivit@users.sourceforge.net
-
 PORTNAME=		tkxmlive
 PORTVERSION=		0.1.5
 PORTREVISION=		2

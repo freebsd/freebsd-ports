@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Text-DoubleMetaphone
 PORTVERSION=	0.07
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Net-YASA
 PORTVERSION=	0.03
 PORTREVISION=	1

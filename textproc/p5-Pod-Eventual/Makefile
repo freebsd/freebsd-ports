@@ -1,5 +1,3 @@
-# Created by: Andrey Kostenko <andrey@kostenko.name>
-
 PORTNAME=	Pod-Eventual
 PORTVERSION=	0.094002
 CATEGORIES=	textproc perl5

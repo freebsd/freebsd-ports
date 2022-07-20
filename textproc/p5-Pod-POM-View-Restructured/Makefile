@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Pod-POM-View-Restructured
 PORTVERSION=	1.000003
 CATEGORIES=	textproc perl5

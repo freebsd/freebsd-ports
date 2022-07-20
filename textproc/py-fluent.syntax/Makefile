@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fluent.syntax
 PORTVERSION=	0.18.1
 CATEGORIES=	textproc python

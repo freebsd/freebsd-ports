@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <dhn@FreeBSD.org>
-
 PORTNAME=	smu
 PORTVERSION=	1.5
 DISTVERSIONPREFIX=	v

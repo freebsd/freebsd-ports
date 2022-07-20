@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	bibtool
 PORTVERSION=	2.68
 CATEGORIES=	textproc print

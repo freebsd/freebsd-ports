@@ -1,5 +1,3 @@
-# Created by: jfieber
-
 PORTNAME=	linuxdoc
 PORTVERSION=	1.1
 PORTREVISION=	2

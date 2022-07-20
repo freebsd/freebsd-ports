@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	Vroom
 PORTVERSION=	0.37
 PORTREVISION=	1

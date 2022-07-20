@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	XlsxWriter
 PORTVERSION=	1.4.3
 CATEGORIES=	textproc python

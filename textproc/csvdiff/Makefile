@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	csvdiff
 PORTVERSION=	1.7
 PORTREVISION=	1

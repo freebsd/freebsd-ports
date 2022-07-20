@@ -1,5 +1,3 @@
-# Created by: KANOU Hiroki <kanou@khdd.net>
-
 PORTNAME=	libuninameslist
 DISTVERSION=	20211114
 CATEGORIES=	textproc

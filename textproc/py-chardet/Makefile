@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	chardet
 PORTVERSION=	4.0.0
 PORTEPOCH=	1

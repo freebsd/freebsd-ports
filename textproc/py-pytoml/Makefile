@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pytoml
 PORTVERSION=	0.1.21
 CATEGORIES=	textproc python

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ini2toml
 PORTVERSION=	0.11
 CATEGORIES=	textproc python

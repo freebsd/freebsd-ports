@@ -1,5 +1,3 @@
-# Created by: Dima Sivachenko <demon@gpad.ac.ru>
-
 PORTNAME=	man2html
 DISTVERSION=	3.1.20220712
 CATEGORIES=	textproc

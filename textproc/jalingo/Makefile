@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	jalingo
 PORTVERSION=	0.6.0
 PORTREVISION=	3

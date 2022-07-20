@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Unicode-EastAsianWidth
 PORTVERSION=	12.0
 CATEGORIES=	textproc perl5

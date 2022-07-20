@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Text-Ngram
 PORTVERSION=	0.15
 PORTREVISION=	1

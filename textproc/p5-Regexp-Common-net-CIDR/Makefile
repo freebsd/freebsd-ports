@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Regexp-Common-net-CIDR
 PORTVERSION=	0.03
 CATEGORIES=	textproc perl5

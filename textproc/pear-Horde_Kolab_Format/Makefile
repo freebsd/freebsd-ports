@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Kolab_Format
 DISTVERSION=	2.0.9
 CATEGORIES=	textproc www pear

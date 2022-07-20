@@ -1,5 +1,3 @@
-# Created by: lth@FreeBSD.org
-
 PORTNAME=	Text-FixEOL
 PORTVERSION=	1.08
 CATEGORIES=	textproc perl5

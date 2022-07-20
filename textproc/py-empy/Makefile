@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	empy
 PORTVERSION=	3.3.3
 CATEGORIES=	textproc python

@@ -1,5 +1,3 @@
-# Created by: nik
-
 PORTNAME=	scr2txt
 PORTVERSION=	1.2
 CATEGORIES=	textproc

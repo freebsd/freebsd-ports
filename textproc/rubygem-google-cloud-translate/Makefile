@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	google-cloud-translate
 PORTVERSION=	3.3.0
 CATEGORIES=	textproc rubygems

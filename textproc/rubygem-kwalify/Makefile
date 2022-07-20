@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	kwalify
 PORTVERSION=	0.7.2
 CATEGORIES=	textproc rubygems

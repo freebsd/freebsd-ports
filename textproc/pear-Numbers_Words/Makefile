@@ -1,5 +1,3 @@
-# Created by: Piotr Rybicki <meritus@innervision.pl>
-
 PORTNAME=	Numbers_Words
 PORTVERSION=	0.16.4
 CATEGORIES=	textproc pear

@@ -1,5 +1,3 @@
-# Created by: Anton Yudin <toha@toha.org.ua>
-
 PORTNAME=	poi
 PORTVERSION=	4.1.2
 CATEGORIES=	textproc devel java

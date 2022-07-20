@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	colorator
 PORTVERSION=	1.1.0
 CATEGORIES=	textproc rubygems

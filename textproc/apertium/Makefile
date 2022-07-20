@@ -1,5 +1,3 @@
-# Created by: Mykola Dzham <freebsd@levsha.org.ua>
-
 PORTNAME=	apertium
 PORTVERSION=	3.8.1
 DISTVERSIONPREFIX=	v

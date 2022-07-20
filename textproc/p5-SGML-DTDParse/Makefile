@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	SGML-DTDParse
 PORTVERSION=	2.00
 PORTREVISION=	1

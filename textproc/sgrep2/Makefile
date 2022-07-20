@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	sgrep2
 PORTVERSION=	1.94a
 CATEGORIES=	textproc

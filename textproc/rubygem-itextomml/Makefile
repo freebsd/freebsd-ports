@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	itextomml
 PORTVERSION=	1.6.1
 CATEGORIES=	textproc rubygems

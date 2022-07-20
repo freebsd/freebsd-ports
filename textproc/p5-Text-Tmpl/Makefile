@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Text-Tmpl
 PORTVERSION=	0.33
 PORTREVISION=	1

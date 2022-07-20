@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <wjv@FreeBSD.org>
-
 PORTNAME=	XML-Twig
 PORTVERSION=	3.52
 CATEGORIES=	textproc perl5

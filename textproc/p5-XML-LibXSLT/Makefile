@@ -1,5 +1,3 @@
-# Created by: Dom Mitchell <dom@happygiraffe.net>
-
 PORTNAME=	XML-LibXSLT
 PORTVERSION=	2.002000
 CATEGORIES=	textproc perl5

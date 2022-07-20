@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	String-BufferStack
 PORTVERSION=	1.16
 PORTREVISION=	1

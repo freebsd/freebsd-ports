@@ -1,5 +1,3 @@
-# Created by: Brion Moss <brion@queeg.com>
-
 PORTNAME=	catdoc
 PORTVERSION=	0.95
 CATEGORIES=	textproc

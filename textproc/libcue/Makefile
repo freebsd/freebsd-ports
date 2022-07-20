@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	libcue
 PORTVERSION=	2.1.0
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Rodrigo OSORIO <rodrigo@FreeBSD.org>
-
 PORTNAME=	libsoldout
 PORTVERSION=	0.02
 PORTREVISION=	2

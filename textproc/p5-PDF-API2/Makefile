@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	PDF-API2
 PORTVERSION=	2.043
 CATEGORIES=	textproc perl5

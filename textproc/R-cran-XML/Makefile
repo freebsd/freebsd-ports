@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	XML
 DISTVERSION=	3.99-0.10
 CATEGORIES=	textproc

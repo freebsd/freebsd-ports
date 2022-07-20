@@ -1,5 +1,3 @@
-# Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-
 PORTNAME=	Text-VimColor
 PORTVERSION=	0.26
 CATEGORIES=	textproc perl5

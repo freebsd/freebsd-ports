@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@technologist.com>
-
 PORTNAME=	libxml2
 DISTVERSION=	2.9.13
 PORTREVISION?=	2

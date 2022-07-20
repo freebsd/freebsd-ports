@@ -1,5 +1,3 @@
-# Created by: Kouichi ABE (WALL) <kouichi@mysticwall.com>
-
 PORTNAME=	sxml
 PORTVERSION=	1.0.7
 CATEGORIES=	textproc

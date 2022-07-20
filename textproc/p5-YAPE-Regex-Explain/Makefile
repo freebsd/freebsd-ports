@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	YAPE-Regex-Explain
 PORTVERSION=	4.01
 PORTREVISION=	1

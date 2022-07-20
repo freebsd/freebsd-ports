@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	version_sorter
 PORTVERSION=	2.2.4
 CATEGORIES=	textproc rubygems

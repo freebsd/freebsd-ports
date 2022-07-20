@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	zorba
 PORTVERSION=	2.7.0
 PORTREVISION=	36

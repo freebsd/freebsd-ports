@@ -1,5 +1,3 @@
-# Created by: Rod Taylor <ports@rbt.ca>
-
 PORTNAME=	Text-WordDiff
 PORTVERSION=	0.09
 CATEGORIES=	textproc perl5

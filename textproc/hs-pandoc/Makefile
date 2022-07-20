@@ -1,5 +1,3 @@
-# Created by: John MacFarlane <jgm@berkeley.edu>
-
 PORTNAME=	pandoc
 PORTVERSION=	2.18
 CATEGORIES=	textproc haskell

@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	dtdparse
 PORTVERSION=	2.00
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	dwdiff
 PORTVERSION=	2.1.4
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sphinxcontrib-bibtex
 PORTVERSION=	2.4.2
 CATEGORIES=	textproc python

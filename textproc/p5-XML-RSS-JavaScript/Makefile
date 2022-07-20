@@ -1,5 +1,3 @@
-# Created by: Foxfair Hu <foxfair@FreeBSD.org>
-
 PORTNAME=	XML-RSS-JavaScript
 PORTVERSION=	0.65
 PORTREVISION=	1

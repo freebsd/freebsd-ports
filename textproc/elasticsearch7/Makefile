@@ -1,5 +1,3 @@
-# Created by: Tom Judge <tj@FreeBSD.org>
-
 PORTNAME=	elasticsearch
 PORTVERSION=	7.17.3
 CATEGORIES=	textproc java devel

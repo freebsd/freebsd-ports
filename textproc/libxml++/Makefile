@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	libxml++
 PORTVERSION=	5.0.1
 CATEGORIES=	textproc

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Text-Unaccent-PurePerl
 PORTVERSION=	0.05
 CATEGORIES=	textproc perl5

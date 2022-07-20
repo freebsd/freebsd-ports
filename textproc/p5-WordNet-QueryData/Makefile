@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	WordNet-QueryData
 PORTVERSION=	1.49
 PORTREVISION=	1

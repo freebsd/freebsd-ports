@@ -1,5 +1,3 @@
-# Created by: Kuan-Chung Chiu <buganini@gmail.com>
-
 PORTNAME=	khmer
 PORTVERSION=	1.0
 CATEGORIES=	textproc

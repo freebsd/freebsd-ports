@@ -1,5 +1,3 @@
-# Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-
 PORTNAME=	Text-WikiFormat
 PORTVERSION=	0.81
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Roger Leigh <rleigh@codelibre.net>
-
 PORTNAME=	xalan-c
 PORTVERSION=	1.12
 PORTREVISION=	4

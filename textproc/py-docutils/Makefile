@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	docutils
 PORTVERSION=	0.17.1
 PORTEPOCH=	1

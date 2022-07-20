@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Plucene-Simple
 DISTVERSION=	1.04
 PORTREVISION=	3

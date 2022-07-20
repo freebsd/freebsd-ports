@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Syntax-Highlight-Engine-Kate
 PORTVERSION=	0.14
 CATEGORIES=	textproc perl5

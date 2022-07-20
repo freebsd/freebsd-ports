@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	rdflib
 PORTVERSION=	6.1.1
 CATEGORIES=	textproc python

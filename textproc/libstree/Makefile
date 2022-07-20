@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	libstree
 PORTVERSION=	0.4.2
 PORTREVISION=	2

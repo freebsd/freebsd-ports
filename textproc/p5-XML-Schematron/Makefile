@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	XML-Schematron
 PORTVERSION=	1.10
 CATEGORIES=	textproc perl5

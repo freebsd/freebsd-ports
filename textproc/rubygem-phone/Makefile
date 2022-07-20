@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	phone
 PORTVERSION=	1.2.3
 CATEGORIES=	textproc rubygems

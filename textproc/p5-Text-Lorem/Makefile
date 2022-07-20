@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Text-Lorem
 PORTVERSION=	0.34
 CATEGORIES=	textproc perl5

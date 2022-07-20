@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	libwapcaplet
 PORTVERSION=	0.4.3
 CATEGORIES=	textproc

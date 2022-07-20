@@ -1,5 +1,3 @@
-# Created by: Jaap Boender <jaapb@kerguelen.org>
-
 PORTNAME=	text
 PORTVERSION=	0.8
 CATEGORIES=	textproc

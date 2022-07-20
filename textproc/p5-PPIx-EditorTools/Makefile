@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	PPIx-EditorTools
 PORTVERSION=	0.21
 CATEGORIES=	textproc perl5

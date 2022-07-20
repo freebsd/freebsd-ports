@@ -1,5 +1,3 @@
-# Created by: Waitman Gobble <waitman@waitman.net>
-
 PORTNAME=	toml
 PORTVERSION=	0.10.2
 CATEGORIES=	textproc python

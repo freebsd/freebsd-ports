@@ -1,5 +1,3 @@
-# Created by: Andrew Romero <melanhit@gmail.com>
-
 PORTNAME=	xorg-sgml-doctools
 PORTVERSION=	1.12
 CATEGORIES=	textproc x11

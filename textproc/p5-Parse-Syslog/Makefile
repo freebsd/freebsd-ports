@@ -1,5 +1,3 @@
-# Created by: Stephen Roznowski (sjr@home.com)
-
 PORTNAME=	Parse-Syslog
 PORTVERSION=	1.10
 PORTREVISION=	2

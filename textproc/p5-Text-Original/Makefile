@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Text-Original
 PORTVERSION=	1.5
 PORTREVISION=	1

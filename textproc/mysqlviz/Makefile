@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	mysqlviz
 PORTVERSION=	0.3
 PORTREVISION=	1

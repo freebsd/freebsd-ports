@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libtre
 PORTVERSION=	0.8.0
 PORTREVISION=	3

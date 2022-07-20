@@ -1,5 +1,3 @@
-# Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-
 PORTNAME=	jing
 PORTVERSION=	20220510
 CATEGORIES=	textproc java

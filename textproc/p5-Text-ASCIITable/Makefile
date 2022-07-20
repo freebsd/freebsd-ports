@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Text-ASCIITable
 PORTVERSION=	0.22
 CATEGORIES=	textproc perl5

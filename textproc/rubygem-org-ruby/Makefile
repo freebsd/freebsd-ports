@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	org-ruby
 PORTVERSION=	0.9.12
 CATEGORIES=	textproc rubygems

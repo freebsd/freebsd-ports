@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	clucene
 PORTVERSION=	2.3.3.4
 PORTREVISION=	19

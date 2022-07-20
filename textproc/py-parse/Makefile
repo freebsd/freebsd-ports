@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	parse
 PORTVERSION=	1.19.0
 CATEGORIES=	textproc python

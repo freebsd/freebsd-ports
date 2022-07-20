@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	markuppy
 PORTVERSION=	1.14
 CATEGORIES=	textproc python

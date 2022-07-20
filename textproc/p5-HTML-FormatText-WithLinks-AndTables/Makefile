@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	HTML-FormatText-WithLinks-AndTables
 PORTVERSION=	0.07
 CATEGORIES=	textproc perl5

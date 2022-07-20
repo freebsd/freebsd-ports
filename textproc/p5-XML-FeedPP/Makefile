@@ -1,5 +1,3 @@
-# Created by: Oleg Mamontov <oleg@mamontov.net>
-
 PORTNAME=	XML-FeedPP
 PORTVERSION=	0.95
 CATEGORIES=	textproc perl5

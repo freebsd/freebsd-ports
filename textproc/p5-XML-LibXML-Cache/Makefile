@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	XML-LibXML-Cache
 PORTVERSION=	0.14
 CATEGORIES=	textproc perl5

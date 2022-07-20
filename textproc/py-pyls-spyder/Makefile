@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	pyls-spyder
 PORTVERSION=	0.4.0
 CATEGORIES=	textproc python

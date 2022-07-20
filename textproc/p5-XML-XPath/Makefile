@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-XPath
 PORTVERSION=	1.47
 CATEGORIES=	textproc perl5

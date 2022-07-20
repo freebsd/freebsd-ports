@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sphinx-book-theme
 PORTVERSION=	0.3.2
 CATEGORIES=	textproc python

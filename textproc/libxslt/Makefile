@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	libxslt
 DISTVERSION=	1.1.35
 PORTREVISION=	3

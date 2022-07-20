@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	XML-Atom-SimpleFeed
 PORTVERSION=	0.904
 CATEGORIES=	textproc perl5

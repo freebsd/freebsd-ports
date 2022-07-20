@@ -1,5 +1,3 @@
-# Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
-
 PORTNAME=	XML-DOM-XPath
 PORTVERSION=	0.14
 PORTREVISION=	1

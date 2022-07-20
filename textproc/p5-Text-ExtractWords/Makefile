@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Text-ExtractWords
 PORTVERSION=	0.08
 PORTREVISION=	1

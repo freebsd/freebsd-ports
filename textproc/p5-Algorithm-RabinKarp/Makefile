@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Algorithm-RabinKarp
 PORTVERSION=	0.41
 DISTVERSIONSUFFIX=	_1

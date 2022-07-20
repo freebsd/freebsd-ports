@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	HTML-FromANSI-Tiny
 PORTVERSION=	0.105
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Nik Clayton <nik@FreeBSD.org>
-
 PORTNAME=	docproj
 PORTVERSION=	3.1
 CATEGORIES=	textproc

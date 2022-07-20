@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	XML_DTD
 PORTVERSION=	0.5.2
 CATEGORIES=	textproc devel pear

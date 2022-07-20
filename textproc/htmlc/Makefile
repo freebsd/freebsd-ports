@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	htmlc
 PORTVERSION=	2.21.0
 CATEGORIES=	textproc

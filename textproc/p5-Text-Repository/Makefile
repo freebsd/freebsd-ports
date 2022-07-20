@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Text-Repository
 PORTVERSION=	1.04
 PORTREVISION=	1

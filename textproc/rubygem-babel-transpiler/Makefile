@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	babel-transpiler
 PORTVERSION=	0.7.0
 CATEGORIES=	textproc rubygems

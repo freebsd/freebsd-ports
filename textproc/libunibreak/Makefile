@@ -1,5 +1,3 @@
-# Created by: Yuri Pankov <yuri.pankov@gmail.com>
-
 PORTNAME=	libunibreak
 PORTVERSION=	4.3
 PORTEPOCH=	1

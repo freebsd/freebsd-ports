@@ -1,5 +1,3 @@
-# Created by: Bill "I hate Perl" Fumerola
-
 PORTNAME=	Text-Template
 PORTVERSION=	1.61
 CATEGORIES=	textproc perl5

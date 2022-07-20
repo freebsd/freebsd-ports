@@ -1,5 +1,3 @@
-# Created by: Gasol Wu <gasol.wu@gmail.com>
-
 PORTNAME=	Yaml
 PORTVERSION=	2.4.4
 CATEGORIES=	textproc pear

@@ -1,5 +1,3 @@
-# Created by: Ache
-
 PORTNAME=	Text-CSV_XS
 DISTVERSION=	1.48
 CATEGORIES=	textproc perl5

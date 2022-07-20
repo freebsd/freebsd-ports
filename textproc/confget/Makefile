@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	confget
 PORTVERSION=	4.1.0
 DISTVERSIONPREFIX=	release-

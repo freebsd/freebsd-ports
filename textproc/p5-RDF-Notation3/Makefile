@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	RDF-Notation3
 PORTVERSION=	0.91
 PORTREVISION=	2

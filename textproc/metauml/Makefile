@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@rtfm.jp>
-
 PORTNAME=	metauml
 PORTVERSION=	0.2.5
 PORTREVISION=	5

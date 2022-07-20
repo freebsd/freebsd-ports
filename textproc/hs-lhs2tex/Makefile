@@ -1,5 +1,3 @@
-# Created by: mainland@apeiron.net
-
 PORTNAME=	lhs2tex
 PORTVERSION=	1.24
 PORTREVISION=	2

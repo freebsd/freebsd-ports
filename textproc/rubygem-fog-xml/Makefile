@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fog-xml
 PORTVERSION=	0.1.4
 CATEGORIES=	textproc rubygems

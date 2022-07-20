@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-Padding
 PORTVERSION=	1.110170
 CATEGORIES=	textproc perl5

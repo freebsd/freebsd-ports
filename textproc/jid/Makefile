@@ -1,5 +1,3 @@
-# Created by: Sofian Brabez <sbz@FreeBSD.org>
-
 PORTNAME=	jid
 PORTVERSION=	0.7.6
 DISTVERSIONPREFIX=	v

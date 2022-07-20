@@ -1,5 +1,3 @@
-# Created by: Max Baryshnikov <mephius@gmail.com>
-
 PORTNAME=	libsphinxclient
 DISTVERSION=	2.0.9
 PORTREVISION=	1

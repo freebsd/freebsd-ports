@@ -1,5 +1,3 @@
-# Created by: Matt Mills <matt_mills@btopenworld.com>
-
 PORTNAME=	String-Format
 PORTVERSION=	1.18
 CATEGORIES=	textproc perl5

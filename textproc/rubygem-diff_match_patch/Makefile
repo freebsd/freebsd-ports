@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	diff_match_patch
 PORTVERSION=	0.1.0
 CATEGORIES=	textproc rubygems

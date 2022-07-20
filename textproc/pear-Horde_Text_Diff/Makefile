@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Text_Diff
 PORTVERSION=	2.2.1
 CATEGORIES=	textproc www pear

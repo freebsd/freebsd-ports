@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Text-Context-EitherSide
 PORTVERSION=	1.4
 PORTREVISION=	1

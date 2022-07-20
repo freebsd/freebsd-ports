@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	Net-Snort-Parser
 PORTVERSION=	1.41
 PORTREVISION=	1

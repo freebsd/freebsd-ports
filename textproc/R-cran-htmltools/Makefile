@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	htmltools
 PORTVERSION=	0.5.3
 CATEGORIES=	textproc

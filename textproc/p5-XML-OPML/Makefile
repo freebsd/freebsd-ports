@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	XML-OPML
 PORTVERSION=	0.26
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Jason Burgess <dev@fenux.net>
-
 PORTNAME=	Text-Chomp
 PORTVERSION=	0.02
 PORTREVISION=	1

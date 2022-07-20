@@ -1,5 +1,3 @@
-# Created by: Timur Bakeyev <bat@cpan.org>
-
 PORTNAME=	Net-IDN-Encode
 PORTVERSION=	2.500
 CATEGORIES=	textproc perl5

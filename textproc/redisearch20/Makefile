@@ -1,5 +1,3 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	redisearch20
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.15

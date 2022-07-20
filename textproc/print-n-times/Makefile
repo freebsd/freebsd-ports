@@ -1,5 +1,3 @@
-# Created by: Aaron Straup Cope
-
 PORTNAME=	print-n-times
 PORTVERSION=	1.0
 PORTREVISION=	1

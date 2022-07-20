@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	ftfy
 PORTVERSION=	6.0.3
 CATEGORIES=	textproc python

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-UnicodeBox
 PORTVERSION=	0.03
 CATEGORIES=	textproc perl5

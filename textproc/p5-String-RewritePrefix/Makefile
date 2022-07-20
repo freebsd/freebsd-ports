@@ -1,5 +1,3 @@
-# Created by: Bill Brinzer <bill.brinzer@gmail.com>
-
 PORTNAME=	String-RewritePrefix
 PORTVERSION=	0.007
 PORTREVISION=	1

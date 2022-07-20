@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	multimarkdown
 DISTVERSION=	6.6.0
 CATEGORIES=	textproc

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	sowing
 PORTVERSION=	1.1.18
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Samuel Tardieu <sam@inf.enst.fr>
-
 PORTNAME=	ltxml
 PORTVERSION=	1.2.9
 PORTREVISION=	1

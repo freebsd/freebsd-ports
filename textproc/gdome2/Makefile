@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	gdome2
 PORTVERSION=	0.8.1
 PORTREVISION=	13

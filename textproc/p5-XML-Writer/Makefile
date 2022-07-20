@@ -1,5 +1,3 @@
-# Created by: Adam Herzog <adam@herzogdesigns.com>
-
 PORTNAME=	XML-Writer
 PORTVERSION=	0.900
 CATEGORIES=	textproc perl5

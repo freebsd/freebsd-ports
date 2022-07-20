@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	bbe
 PORTVERSION=	0.2.2
 PORTREVISION=	2

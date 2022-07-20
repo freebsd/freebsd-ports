@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	String-ToIdentifier-EN
 PORTVERSION=	0.12
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	Time-Human
 PORTVERSION=	1.03
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	XML-XSLT
 PORTVERSION=	0.48
 PORTREVISION=	1

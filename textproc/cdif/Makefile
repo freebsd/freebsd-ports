@@ -1,5 +1,3 @@
-# Created by: Yoshiro MIHIRA <sanpei@sanpei.org>
-
 PORTNAME=	cdif
 PORTVERSION=	2.14.20170401
 DISTVERSIONPREFIX=	v

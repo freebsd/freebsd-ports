@@ -1,5 +1,3 @@
-# Created by: tj@FreeBSD.org
-
 PORTNAME=	Text-CSV-Hashify
 PORTVERSION=	0.11
 CATEGORIES=	textproc perl5

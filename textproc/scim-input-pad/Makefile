@@ -1,5 +1,3 @@
-# Created by: chinsan	<chinsan@mail2000.com.tw>
-
 PORTNAME=	scim-input-pad
 PORTVERSION=	0.1.3.1
 PORTREVISION=	5

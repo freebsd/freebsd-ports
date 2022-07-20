@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	DelimMatch
 PORTVERSION=	1.06
 DISTVERSIONSUFFIX=	a

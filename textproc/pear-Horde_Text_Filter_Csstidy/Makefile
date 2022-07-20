@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Text_Filter_Csstidy
 PORTVERSION=	2.0.1
 CATEGORIES=	textproc www pear

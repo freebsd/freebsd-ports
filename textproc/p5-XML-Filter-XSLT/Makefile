@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-Filter-XSLT
 PORTVERSION=	0.03
 PORTREVISION=	1

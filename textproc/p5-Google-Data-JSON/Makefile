@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Google-Data-JSON
 PORTVERSION=	0.1.10
 DISTVERSIONPREFIX=	v

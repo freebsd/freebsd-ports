@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	Pod-Constants
 PORTVERSION=	0.19
 CATEGORIES=	textproc perl5

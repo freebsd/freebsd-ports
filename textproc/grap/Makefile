@@ -1,5 +1,3 @@
-# Created by: faber@lunabase.org
-
 PORTNAME=	grap
 PORTVERSION=	1.46
 CATEGORIES=	textproc graphics

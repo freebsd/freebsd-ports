@@ -1,5 +1,3 @@
-# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-
 PORTNAME=	kmfl-sil-ipa-unicode
 PORTVERSION=	1.2
 PORTREVISION=	4

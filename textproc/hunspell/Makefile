@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	hunspell
 PORTVERSION=	1.7.0
 PORTREVISION=	2

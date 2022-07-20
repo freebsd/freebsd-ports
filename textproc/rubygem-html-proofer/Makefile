@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	html-proofer
 PORTVERSION=	4.0.1
 CATEGORIES=	textproc rubygems

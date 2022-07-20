@@ -1,5 +1,3 @@
-# Created by: TERAMOTO Masahiro <markun@onohara.to>
-
 PORTNAME=	YAML-LibYAML
 PORTVERSION=	0.83
 CATEGORIES=	textproc perl5

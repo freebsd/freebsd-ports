@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Pod-HtmlEasy
 PORTVERSION=	1.0108
 PORTREVISION=	2

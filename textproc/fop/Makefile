@@ -1,5 +1,3 @@
-# Created by: KIRIYAMA Kazuhiko <kiri@FreeBSD.org>
-
 PORTNAME=	fop
 DISTVERSION=	2.6
 CATEGORIES=	textproc java

@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	XML-Clean
 PORTVERSION=	1.06
 PORTREVISION=	1

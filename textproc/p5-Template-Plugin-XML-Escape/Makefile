@@ -1,5 +1,3 @@
-# Created by: kevit
-
 PORTNAME=	Template-Plugin-XML-Escape
 PORTVERSION=	0.02
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-
 PORTNAME=	numpydoc
 PORTVERSION=	0.9.1
 CATEGORIES=	textproc python

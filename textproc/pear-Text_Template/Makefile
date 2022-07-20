@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Text_Template
 PORTVERSION=	2.0.4
 CATEGORIES=	textproc www pear

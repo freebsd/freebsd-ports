@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-
 PORTNAME=	Number-Format-Metric
 PORTVERSION=	0.60
 CATEGORIES=	textproc perl5

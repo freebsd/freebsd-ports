@@ -1,5 +1,3 @@
-# Created by: Cezary Morga <cm@therek.net>
-
 PORTNAME=	Pod-Abstract
 PORTVERSION=	0.20
 PORTREVISION=	1

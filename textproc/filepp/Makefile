@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	filepp
 PORTVERSION=	1.8.0
 CATEGORIES=	textproc

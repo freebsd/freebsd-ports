@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Text-Greeking
 PORTVERSION=	0.15
 CATEGORIES=	textproc perl5

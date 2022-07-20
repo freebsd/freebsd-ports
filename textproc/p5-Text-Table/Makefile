@@ -1,5 +1,3 @@
-# Created by: Autrijus Tang <autrijus@autrijus.org>
-
 PORTNAME=	Text-Table
 PORTVERSION=	1.134
 CATEGORIES=	textproc perl5

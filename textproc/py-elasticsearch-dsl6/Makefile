@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	elasticsearch-dsl
 PORTVERSION=	6.4.0
 CATEGORIES=	textproc python

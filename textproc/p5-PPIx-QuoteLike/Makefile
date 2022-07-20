@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	PPIx-QuoteLike
 PORTVERSION=	0.022
 CATEGORIES=	textproc perl5

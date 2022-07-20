@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-EN-Sentence
 PORTVERSION=	0.33
 CATEGORIES=	textproc perl5

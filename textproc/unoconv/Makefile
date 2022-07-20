@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	unoconv
 PORTVERSION=	0.7
 CATEGORIES=	textproc python

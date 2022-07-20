@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	sphinxcontrib-towncrier
 PORTVERSION=	0.2.1a0
 CATEGORIES=	textproc python

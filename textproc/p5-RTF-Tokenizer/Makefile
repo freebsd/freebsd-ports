@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	RTF-Tokenizer
 PORTVERSION=	1.20
 CATEGORIES=	textproc perl5

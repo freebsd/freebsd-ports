@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	QDarkStyle
 PORTVERSION=	3.1
 CATEGORIES=	textproc devel python

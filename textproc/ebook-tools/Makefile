@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	ebook-tools
 PORTVERSION=	0.2.2
 PORTREVISION=	7

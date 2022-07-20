@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	yelp-tools
 PORTVERSION=	42.0
 CATEGORIES=	textproc gnome

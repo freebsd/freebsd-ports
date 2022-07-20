@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Regexp-Common-profanity_us
 PORTVERSION=	4.112150
 PORTREVISION=	1

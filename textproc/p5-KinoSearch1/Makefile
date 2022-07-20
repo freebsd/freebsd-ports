@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	KinoSearch1
 PORTVERSION=	1.01
 PORTREVISION=	1

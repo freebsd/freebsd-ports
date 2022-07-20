@@ -1,5 +1,3 @@
-# Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
-
 PORTNAME=	XML-NodeFilter
 PORTVERSION=	0.01
 PORTREVISION=	1

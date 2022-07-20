@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	colored
 PORTVERSION=	1.2
 CATEGORIES=	textproc rubygems

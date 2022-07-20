@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	elasticsearch
 PORTVERSION=	7.17.4
 CATEGORIES=	textproc python

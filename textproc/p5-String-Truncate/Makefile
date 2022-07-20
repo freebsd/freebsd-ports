@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	String-Truncate
 PORTVERSION=	1.100602
 PORTREVISION=	1

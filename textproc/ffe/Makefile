@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	ffe
 DISTVERSION=	0.3.9
 CATEGORIES=	textproc

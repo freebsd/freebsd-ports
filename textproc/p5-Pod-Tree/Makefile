@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Pod-Tree
 PORTVERSION=	1.31
 CATEGORIES=	textproc devel perl5

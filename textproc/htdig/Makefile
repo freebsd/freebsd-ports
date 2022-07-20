@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@chc-chimes.com>
-
 PORTNAME=	htdig
 PORTVERSION=	3.2.0.b6
 PORTREVISION=	6

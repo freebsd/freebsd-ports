@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	elasticsearch-transport
 PORTVERSION=	7.13.3
 PORTREVISION=	1

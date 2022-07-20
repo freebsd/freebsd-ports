@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	Tk-XMLViewer
 PORTVERSION=	0.21
 PORTREVISION=	4

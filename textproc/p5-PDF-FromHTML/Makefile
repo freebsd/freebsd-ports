@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	PDF-FromHTML
 PORTVERSION=	0.33
 CATEGORIES=	textproc perl5

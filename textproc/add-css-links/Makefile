@@ -1,5 +1,3 @@
-# Created by: Aaron Straup Cope
-
 PORTNAME=	add-css-links
 PORTVERSION=	1.0
 PORTREVISION=	1

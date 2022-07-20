@@ -1,5 +1,3 @@
-# Created by: George Hartzell <hartzell@fruitfly.org>
-
 PORTNAME=	Text-Shellwords
 PORTVERSION=	1.08
 PORTREVISION=	1

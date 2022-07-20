@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	CSS-Packer
 PORTVERSION=	2.08
 CATEGORIES=	textproc www perl5

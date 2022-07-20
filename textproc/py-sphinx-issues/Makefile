@@ -1,5 +1,3 @@
-# Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	sphinx-issues
 PORTVERSION=	1.2.0
 CATEGORIES=	textproc python

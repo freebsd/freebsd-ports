@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	xmlppm
 PORTVERSION=	0.98.3
 PORTREVISION=	2

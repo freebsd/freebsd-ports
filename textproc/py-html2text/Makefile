@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	html2text
 PORTVERSION=	2020.1.16
 CATEGORIES=	textproc python

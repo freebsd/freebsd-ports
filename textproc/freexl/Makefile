@@ -1,5 +1,3 @@
-# Created by: lbartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	freexl
 DISTVERSION=	1.0.6
 CATEGORIES=	textproc

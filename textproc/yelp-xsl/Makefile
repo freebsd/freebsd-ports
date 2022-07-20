@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	yelp-xsl
 DISTVERSION=	42.0
 CATEGORIES=	textproc gnome

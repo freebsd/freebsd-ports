@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	htmltolatex
 PORTVERSION=	1
 PORTREVISION=	25

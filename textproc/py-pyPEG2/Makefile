@@ -1,5 +1,3 @@
-# Created by: Ed Schouten <ed@FreeBSD.org>
-
 PORTNAME=	pyPEG2
 PORTVERSION=	2.15.2
 CATEGORIES=	textproc python

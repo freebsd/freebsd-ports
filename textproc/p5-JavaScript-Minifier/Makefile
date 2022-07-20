@@ -1,5 +1,3 @@
-# Created by: Kurt Lidl <kurt.lidl@cello.com>
-
 PORTNAME=	JavaScript-Minifier
 PORTVERSION=	1.16
 CATEGORIES=	textproc perl5

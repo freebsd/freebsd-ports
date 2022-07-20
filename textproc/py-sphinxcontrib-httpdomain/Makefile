@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	sphinxcontrib-httpdomain
 PORTVERSION=	1.8.0
 CATEGORIES=	textproc

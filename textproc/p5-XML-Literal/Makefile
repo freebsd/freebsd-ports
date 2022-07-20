@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	XML-Literal
 PORTVERSION=	0.02
 PORTREVISION=	1

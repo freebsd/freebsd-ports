@@ -1,5 +1,3 @@
-# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-
 PORTNAME=	kmfl-sil-yi
 PORTVERSION=	20020903
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-EN-NameParse
 PORTVERSION=	1.38
 CATEGORIES=	textproc perl5

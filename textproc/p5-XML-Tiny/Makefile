@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	XML-Tiny
 PORTVERSION=	2.07
 CATEGORIES=	textproc perl5

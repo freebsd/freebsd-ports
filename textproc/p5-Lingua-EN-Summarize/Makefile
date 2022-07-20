@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-EN-Summarize
 PORTVERSION=	0.2
 PORTREVISION=	2

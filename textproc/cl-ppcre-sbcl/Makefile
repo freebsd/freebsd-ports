@@ -1,5 +1,3 @@
-# Created by: Henrik Motakef <henrik.motakef@web.de>
-
 PORTNAME=	cl-ppcre
 PORTVERSION=	2.1.1
 PORTREVISION=	19

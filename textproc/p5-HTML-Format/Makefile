@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	HTML-Format
 PORTVERSION=	2.12
 CATEGORIES=	textproc perl5

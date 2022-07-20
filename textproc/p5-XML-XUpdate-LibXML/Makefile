@@ -1,5 +1,3 @@
-# Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
-
 PORTNAME=	XML-XUpdate-LibXML
 PORTVERSION=	0.6.0
 PORTREVISION=	2

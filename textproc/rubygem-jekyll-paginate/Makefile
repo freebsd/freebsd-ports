@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv@kvedulv.de>
-
 PORTNAME=	jekyll-paginate
 PORTVERSION=	1.1.0
 PORTREVISION=	1

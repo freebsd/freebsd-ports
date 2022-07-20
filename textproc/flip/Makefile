@@ -1,5 +1,3 @@
-# Created by: Radim Kolar <hsn@sanatana.dharma>
-
 PORTNAME=	flip
 PORTVERSION=	1.19
 CATEGORIES=	textproc

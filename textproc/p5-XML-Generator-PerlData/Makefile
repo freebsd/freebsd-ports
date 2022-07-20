@@ -1,5 +1,3 @@
-# Created by: Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
-
 PORTNAME=	XML-Generator-PerlData
 PORTVERSION=	0.95
 CATEGORIES=	textproc perl5

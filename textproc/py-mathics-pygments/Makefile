@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	mathics_pygments
 PORTVERSION=	1.0.2
 CATEGORIES=	textproc math python

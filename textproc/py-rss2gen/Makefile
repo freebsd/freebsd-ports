@@ -1,5 +1,3 @@
-# Created by: "Choe, Cheng-Dae" whitekid
-
 PORTNAME=	rss2gen
 PORTVERSION=	1.1
 CATEGORIES=	textproc python

@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	TOML
 PORTVERSION=	0.97
 CATEGORIES=	textproc perl5

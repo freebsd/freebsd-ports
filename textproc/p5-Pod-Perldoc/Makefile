@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <wahjava@gmail.com>
-
 PORTNAME=	Pod-Perldoc
 PORTVERSION=	3.25
 PORTREVISION=	2

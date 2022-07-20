@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Search-Odeum
 PORTVERSION=	0.02
 PORTREVISION=	3

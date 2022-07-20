@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	jdictionary-int-eng
 PORTVERSION=	1.0
 PORTREVISION=	4

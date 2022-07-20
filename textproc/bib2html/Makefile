@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	bib2html
 DISTVERSION=	6.7
 CATEGORIES=	textproc print

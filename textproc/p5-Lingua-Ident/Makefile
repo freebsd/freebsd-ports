@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Lingua-Ident
 PORTVERSION=	1.7
 PORTREVISION=	1

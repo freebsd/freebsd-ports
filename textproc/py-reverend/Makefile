@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale	<nivit@email.it>
-
 PORTNAME=	reverend
 PORTVERSION=	0.3
 CATEGORIES=	textproc mail math python

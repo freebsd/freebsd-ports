@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Lingua-EN-Words2Nums
 PORTVERSION=	0.18
 PORTREVISION=	1

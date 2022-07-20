@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Text-Ngrams
 PORTVERSION=	2.006
 CATEGORIES=	textproc perl5

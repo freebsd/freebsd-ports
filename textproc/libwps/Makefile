@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	libwps
 PORTVERSION=	0.4.12
 CATEGORIES=	textproc

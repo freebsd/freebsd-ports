@@ -1,5 +1,3 @@
-# Created by: Naram Qashat <cyberbotx@cyberbotx.com>
-
 PORTNAME=	SGML-Parser-OpenSP
 PORTVERSION=	0.994
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Meno Abels <meno.abels@adviser.com>
-
 PORTNAME=	po4a
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.67

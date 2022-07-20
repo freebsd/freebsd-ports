@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	regexp_parser
 PORTVERSION=	2.1.1
 CATEGORIES=	textproc rubygems

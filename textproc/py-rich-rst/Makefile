@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rich-rst
 PORTVERSION=	1.1.7
 CATEGORIES=	textproc python

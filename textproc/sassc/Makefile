@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	sassc
 PORTVERSION=	3.6.1
 PORTREVISION=	0

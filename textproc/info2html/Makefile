@@ -1,5 +1,3 @@
-# Created by: wosch
-
 PORTNAME=	info2html
 PORTVERSION=	2.0
 CATEGORIES=	textproc

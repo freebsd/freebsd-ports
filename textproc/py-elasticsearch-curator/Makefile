@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	elasticsearch-curator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.8.4

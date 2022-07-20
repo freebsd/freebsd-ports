@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	re_graph
 PORTVERSION=	0.2
 PORTREVISION=	3

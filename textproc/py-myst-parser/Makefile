@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	myst-parser
 PORTVERSION=	0.18.0
 CATEGORIES=	textproc python

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Makefile-DOM
 PORTVERSION=	0.008
 PORTREVISION=	1

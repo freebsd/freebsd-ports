@@ -1,5 +1,3 @@
-# Created by: Henry Hu <henry.hu.sh@gmail.com>
-
 PORTNAME=	ibus
 PORTVERSION=	1.5.24
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Thorsten Greiner <thorsten.greiner@web.de>
-
 PORTNAME=	Lingua-Stem-It
 PORTVERSION=	0.02
 PORTREVISION=	1

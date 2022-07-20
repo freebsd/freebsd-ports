@@ -1,5 +1,3 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	pysrt
 PORTVERSION=	1.1.2
 CATEGORIES=	textproc python

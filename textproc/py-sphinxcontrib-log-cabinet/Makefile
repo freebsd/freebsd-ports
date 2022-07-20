@@ -1,5 +1,3 @@
-# Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	sphinxcontrib-log-cabinet
 PORTVERSION=	1.0.1
 CATEGORIES=	textproc

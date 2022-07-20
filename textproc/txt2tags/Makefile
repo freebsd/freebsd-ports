@@ -1,5 +1,3 @@
-# Created by: Alan Eldridge <alane@FreeBSD.org>
-
 PORTNAME=	txt2tags
 PORTVERSION=	3.7
 CATEGORIES=	textproc

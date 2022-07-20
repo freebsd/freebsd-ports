@@ -1,5 +1,3 @@
-# Created by: Thorsten Greiner <thorsten.greiner@web.de>
-
 PORTNAME=	Text-German
 PORTVERSION=	0.06
 PORTREVISION=	1

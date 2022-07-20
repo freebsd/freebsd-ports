@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_Xml_Wbxml
 PORTVERSION=	2.0.4
 CATEGORIES=	textproc www pear

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	CSS-Minifier-XS
 PORTVERSION=	0.13
 CATEGORIES=	textproc www perl5

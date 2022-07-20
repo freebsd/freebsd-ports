@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	MARC-Charset
 PORTVERSION=	1.35
 PORTREVISION=	1

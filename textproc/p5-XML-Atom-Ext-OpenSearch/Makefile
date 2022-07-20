@@ -1,5 +1,3 @@
-# Created by: Denis Pokataev <catone@cpan.org>
-
 PORTNAME=	XML-Atom-Ext-OpenSearch
 PORTVERSION=	0.03
 PORTREVISION=	1

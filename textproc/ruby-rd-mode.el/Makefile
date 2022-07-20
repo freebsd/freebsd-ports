@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	rd-mode.el
 PORTVERSION=	0.6.38
 PORTREVISION=	1

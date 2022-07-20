@@ -1,5 +1,3 @@
-# Created by: René Ladan <rene@freebsd.org>
-
 PORTNAME=	sphinx-me
 PORTVERSION=	0.3
 CATEGORIES=	textproc python

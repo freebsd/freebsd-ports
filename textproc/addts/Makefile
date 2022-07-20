@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	addts
 PORTVERSION=	1.0
 CATEGORIES=	textproc

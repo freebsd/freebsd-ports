@@ -1,5 +1,3 @@
-# Created by: kuriyama
-
 PORTNAME=	openjade
 PORTVERSION=	1.3.3p1
 PORTREVISION=	4

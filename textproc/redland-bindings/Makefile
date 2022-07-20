@@ -1,5 +1,3 @@
-# Created by: Russell Cloran <russell@rucus.ru.ac.za>
-
 PORTNAME=	redland-bindings
 PORTVERSION=	1.0.17.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Antoine Brodin <antoine@FreeBSD.org>
-
 PORTNAME=	openpyxl
 PORTVERSION=	2.6.4
 CATEGORIES=	textproc python

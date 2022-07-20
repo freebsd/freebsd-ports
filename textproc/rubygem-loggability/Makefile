@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	loggability
 PORTVERSION=	0.18.2
 CATEGORIES=	textproc rubygems

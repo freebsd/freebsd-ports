@@ -1,5 +1,3 @@
-# Created by: clsung
-
 PORTNAME=	Tree-Suffix
 PORTVERSION=	0.22
 CATEGORIES=	textproc perl5

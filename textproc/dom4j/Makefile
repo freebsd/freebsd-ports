@@ -1,5 +1,3 @@
-# Created by: <glewis@FreeBSD.org>
-
 PORTNAME=	dom4j
 PORTVERSION=	1.6.1
 PORTREVISION=	2

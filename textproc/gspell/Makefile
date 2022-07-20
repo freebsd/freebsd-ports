@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	gspell
 PORTVERSION=	1.10.0
 CATEGORIES=	textproc

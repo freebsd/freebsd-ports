@@ -1,5 +1,3 @@
-# Created by: Scott Sanders <scott@jssjr.com>
-
 PORTNAME=	escape_utils
 PORTVERSION=	1.3.0
 CATEGORIES=	textproc rubygems

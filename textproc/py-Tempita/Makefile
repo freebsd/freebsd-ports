@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Tempita
 PORTVERSION=	0.5.2
 CATEGORIES=	textproc python

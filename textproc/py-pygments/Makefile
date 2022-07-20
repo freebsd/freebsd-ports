@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	pygments
 DISTVERSION=	2.9.0
 CATEGORIES=	textproc python

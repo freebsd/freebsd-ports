@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	libxslt
 PORTVERSION=	1.1.28
 DISTVERSIONSUFFIX=	-6.el7

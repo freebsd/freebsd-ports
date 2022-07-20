@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@FreeBSD.org>
-
 PORTNAME=	peco
 PORTVERSION=	0.4.4
 DISTVERSIONPREFIX=	v

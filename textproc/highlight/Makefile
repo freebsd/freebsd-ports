@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	highlight
 PORTVERSION=	4.2
 PORTEPOCH=	3

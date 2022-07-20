@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold <m@absolight.net>
-
 PORTNAME=	Pod-Simple
 PORTVERSION=	3.43
 CATEGORIES=	textproc devel perl5

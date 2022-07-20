@@ -1,5 +1,3 @@
-# Created by: Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
-
 PORTNAME=	dsssl-docbook-modular
 PORTVERSION=	1.79
 PORTREVISION=	1

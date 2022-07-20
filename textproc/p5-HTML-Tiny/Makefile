@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	HTML-Tiny
 PORTVERSION=	1.05
 PORTREVISION=	1

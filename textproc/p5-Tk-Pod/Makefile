@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Tk-Pod
 PORTVERSION=	0.9943
 CATEGORIES=	textproc tk perl5

@@ -1,5 +1,3 @@
-# Created by: Vadim Vatlin
-
 PORTNAME=	Unicode-Escape
 PORTVERSION=	0.0.2
 PORTREVISION=	1

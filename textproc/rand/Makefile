@@ -1,5 +1,3 @@
-# Created by: domi@saargate.de
-
 PORTNAME=	rand
 PORTVERSION=	1.9
 PORTREVISION=	1

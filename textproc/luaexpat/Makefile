@@ -1,5 +1,3 @@
-# Created by: Andrew Lewis <freeghb@gmail.com>
-
 PORTNAME=	luaexpat
 PORTVERSION=	1.4.1
 CATEGORIES=	textproc

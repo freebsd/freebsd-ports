@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@FreeBSD.org>
-
 PORTNAME=	XML-Filter-BufferText
 PORTVERSION=	1.01
 PORTREVISION=	1

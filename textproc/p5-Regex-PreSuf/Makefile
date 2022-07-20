@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Regex-PreSuf
 PORTVERSION=	1.17
 PORTREVISION=	1

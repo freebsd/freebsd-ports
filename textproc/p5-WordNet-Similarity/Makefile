@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	WordNet-Similarity
 PORTVERSION=	2.07
 CATEGORIES=	textproc perl5

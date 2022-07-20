@@ -1,5 +1,3 @@
-# Created by: Jov <amutu@amutu.com>
-
 PORTNAME=	scws
 PORTVERSION=	1.2.3
 CATEGORIES=	textproc

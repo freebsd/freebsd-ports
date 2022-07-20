@@ -1,5 +1,3 @@
-# Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-
 PORTNAME=	ezamar
 PORTVERSION=	2009.06
 CATEGORIES=	textproc rubygems

@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-
 PORTNAME=	saxon-he
 PORTVERSION=	9.5.1.5
 CATEGORIES=	textproc java

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	pss
 PORTVERSION=	1.44
 CATEGORIES=	textproc python

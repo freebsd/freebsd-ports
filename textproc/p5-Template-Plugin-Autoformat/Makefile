@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	Template-Plugin-Autoformat
 PORTVERSION=	2.77
 CATEGORIES=	textproc perl5

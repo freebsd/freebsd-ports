@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Pod-Section
 PORTVERSION=	0.02
 CATEGORIES=	textproc perl5

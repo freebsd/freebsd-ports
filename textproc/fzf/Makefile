@@ -1,5 +1,3 @@
-# Created by: Sascha Holzleiter <sascha@root-login.org>
-
 PORTNAME=	fzf
 DISTVERSION=	0.30.0
 PORTREVISION=	2

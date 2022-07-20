@@ -1,5 +1,3 @@
-# Created by: Leo Kim <leo@florida.sarang.net>
-
 PORTNAME=	xslide.el
 PORTVERSION=	0.2.2
 PORTREVISION=	2

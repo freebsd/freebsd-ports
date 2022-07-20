@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pytidylib
 PORTVERSION=	0.3.2
 CATEGORIES=	textproc python

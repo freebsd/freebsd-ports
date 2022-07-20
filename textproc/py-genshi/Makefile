@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	Genshi
 PORTVERSION=	0.7.3
 CATEGORIES=	textproc www python

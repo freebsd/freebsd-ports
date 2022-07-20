@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	isbntools
 PORTVERSION=	4.3.28
 CATEGORIES=	textproc python

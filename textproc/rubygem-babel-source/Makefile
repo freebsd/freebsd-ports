@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	babel-source
 PORTVERSION=	5.8.35
 CATEGORIES=	textproc rubygems

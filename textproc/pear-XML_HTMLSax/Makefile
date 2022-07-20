@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	XML_HTMLSax
 PORTVERSION=	2.1.2
 CATEGORIES=	textproc devel pear

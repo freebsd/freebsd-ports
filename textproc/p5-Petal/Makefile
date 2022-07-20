@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Petal
 PORTVERSION=	2.26
 CATEGORIES=	textproc perl5

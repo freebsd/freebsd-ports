@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-
 PORTNAME=	grep
 DISTVERSION=	2.6.0
 DISTVERSIONSUFFIX=	-FreeBSD

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Pod-Xhtml
 PORTVERSION=	1.61
 PORTREVISION=	1

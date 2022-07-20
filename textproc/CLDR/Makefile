@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	CLDR
 PORTVERSION=	41.0
 CATEGORIES=	textproc

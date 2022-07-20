@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	confetti
 PORTVERSION=	0.0.${DATE}
 CATEGORIES=	textproc

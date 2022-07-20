@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Template-Plugin-Lingua-EN-Inflect
 PORTVERSION=	0.04
 CATEGORIES=	textproc perl5

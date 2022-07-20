@@ -1,5 +1,3 @@
-# Created by: Michael Moll <kvedulv@kvedulv.de>
-
 PORTNAME=	jekyll-gist
 PORTVERSION=	1.5.0
 CATEGORIES=	textproc rubygems

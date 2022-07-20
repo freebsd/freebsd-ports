@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-
 PORTNAME=	html2text
 PORTVERSION=	0.3.1
 CATEGORIES=	textproc rubygems

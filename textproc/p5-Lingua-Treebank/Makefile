@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Lingua-Treebank
 PORTVERSION=	0.16
 PORTREVISION=	1

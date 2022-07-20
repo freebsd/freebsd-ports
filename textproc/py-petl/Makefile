@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	petl
 PORTVERSION=	1.7.10
 CATEGORIES=	textproc python

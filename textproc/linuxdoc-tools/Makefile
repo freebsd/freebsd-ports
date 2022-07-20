@@ -1,5 +1,3 @@
-# Created by: Felix Palmen <felix@palmen-it.de>
-
 PORTNAME=	linuxdoc-tools
 PORTVERSION=	0.9.82
 CATEGORIES=	textproc

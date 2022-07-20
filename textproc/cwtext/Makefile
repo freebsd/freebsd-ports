@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	cwtext
 PORTVERSION=	0.96
 CATEGORIES=	textproc hamradio

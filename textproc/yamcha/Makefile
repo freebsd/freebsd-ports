@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	yamcha
 PORTVERSION=	0.33
 PORTREVISION=	2

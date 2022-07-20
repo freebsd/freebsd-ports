@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-ANSI-WideUtil
 PORTVERSION=	0.232
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-
 PORTNAME=	diff
 PORTVERSION=	20120705
 PORTREVISION=	2

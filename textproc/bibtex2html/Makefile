@@ -1,5 +1,3 @@
-# Created by: Gerald Pfeifer <gerald@pfeifer.com>
-
 PORTNAME=	bibtex2html
 PORTVERSION=	1.99
 CATEGORIES=	textproc print

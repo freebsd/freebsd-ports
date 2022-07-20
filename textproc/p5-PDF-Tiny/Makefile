@@ -1,5 +1,3 @@
-# Created by: wen@FreeBSD.org
-
 PORTNAME=	PDF-Tiny
 DISTVERSION=	0.09
 CATEGORIES=	textproc perl5

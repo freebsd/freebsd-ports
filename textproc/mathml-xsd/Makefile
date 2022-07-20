@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	mathml-xsd
 PORTVERSION=	2
 PORTREVISION=	3

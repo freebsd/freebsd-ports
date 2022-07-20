@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	rexml
 PORTVERSION=	3.2.5
 CATEGORIES=	textproc rubygems

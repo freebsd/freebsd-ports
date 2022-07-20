@@ -1,5 +1,3 @@
-# Created by: Ben Haga <tuxsuximus@hotmail.com>
-
 PORTNAME=	asm2html
 PORTVERSION=	1.7
 CATEGORIES=	textproc

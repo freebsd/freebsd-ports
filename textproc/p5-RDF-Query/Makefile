@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	RDF-Query
 PORTVERSION=	2.918
 CATEGORIES=	textproc perl5

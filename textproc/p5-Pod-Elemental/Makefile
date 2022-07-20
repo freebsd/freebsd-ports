@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Pod-Elemental
 PORTVERSION=	0.103005
 CATEGORIES=	textproc perl5

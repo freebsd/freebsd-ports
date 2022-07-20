@@ -1,5 +1,3 @@
-# Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org
-
 PORTNAME=	Pallets-Sphinx-Themes
 PORTVERSION=	1.2.3
 CATEGORIES=	textproc python

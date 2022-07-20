@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	XML-Handler-Dtd2DocBook
 PORTVERSION=	0.41
 PORTREVISION=	1

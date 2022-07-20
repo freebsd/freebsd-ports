@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	TOML-Parser
 PORTVERSION=	0.91
 CATEGORIES=	textproc perl5

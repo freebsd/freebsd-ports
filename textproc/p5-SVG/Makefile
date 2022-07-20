@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	SVG
 PORTVERSION=	2.87
 CATEGORIES=	textproc graphics perl5

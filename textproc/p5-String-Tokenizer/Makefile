@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	String-Tokenizer
 PORTVERSION=	0.06
 CATEGORIES=	textproc perl5

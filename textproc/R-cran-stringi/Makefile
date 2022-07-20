@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	stringi
 DISTVERSION=	1.7.8
 CATEGORIES=	textproc

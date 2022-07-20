@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Text-Flow
 DISTVERSION=	0.01
 PORTREVISION=	1

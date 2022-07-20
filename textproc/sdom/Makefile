@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	sdom
 PORTVERSION=	0.5.1
 PORTREVISION=	1

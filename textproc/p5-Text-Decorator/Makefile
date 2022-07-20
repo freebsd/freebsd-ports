@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Text-Decorator
 PORTVERSION=	1.65
 PORTREVISION=	1

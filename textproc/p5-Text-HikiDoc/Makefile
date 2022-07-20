@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	Text-HikiDoc
 PORTVERSION=	1.023
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Jos Backus <josb@cncdsl.com>
-
 PORTNAME=	gpp
 PORTVERSION=	2.24
 CATEGORIES=	textproc

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	furo
 PORTVERSION=	2022.6.21
 CATEGORIES=	textproc python

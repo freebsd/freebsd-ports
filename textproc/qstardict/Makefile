@@ -1,5 +1,3 @@
-# Created by: Yinghong.Liu <relaxbsd@gmail.com>
-
 PORTNAME=	qstardict
 DISTVERSIONPREFIX=	qstardict-
 DISTVERSION=	1.3

@@ -1,5 +1,3 @@
-# Created by: jabley@automagic.org
-
 PORTNAME=	xml2rfc
 PORTVERSION=	3.5.0
 CATEGORIES=	textproc

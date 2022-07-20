@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	PPI
 PORTVERSION=	1.275
 CATEGORIES=	textproc perl5

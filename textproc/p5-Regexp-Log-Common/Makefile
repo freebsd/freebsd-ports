@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Regexp-Log-Common
 PORTVERSION=	0.10
 CATEGORIES=	textproc perl5

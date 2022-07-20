@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Perl-Critic
 PORTVERSION=	1.140
 CATEGORIES=	textproc devel perl5

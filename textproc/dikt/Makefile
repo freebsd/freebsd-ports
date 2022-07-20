@@ -1,5 +1,3 @@
-# Created by: Goran Tal <goran.tal@gmail.com>
-
 PORTNAME=	dikt
 PORTVERSION=	2s4
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: KIRIYAMA Kazuhiko <kiri@FreeBSD.org>
-
 PORTNAME=	sdocbook-xml
 PORTVERSION=	1.1
 PORTREVISION=	2

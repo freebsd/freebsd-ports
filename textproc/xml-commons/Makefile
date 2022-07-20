@@ -1,5 +1,3 @@
-# Created by: rfarmer@predatorlabs.net
-
 PORTNAME=	xml-commons
 DISTVERSION=	1.4.01
 CATEGORIES=	textproc java

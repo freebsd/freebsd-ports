@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	xmlbeans
 PORTVERSION=	3.1.0 # Do not upgrade without checking compatibility with math/R-cran-XLConnect
 CATEGORIES=	textproc java

@@ -1,5 +1,3 @@
-# Created by: Glenn Trewitt <glenn@trewitt.org>
-
 PORTNAME=	htmldoc
 PORTVERSION=	1.9.16
 DISTVERSIONPREFIX=	v

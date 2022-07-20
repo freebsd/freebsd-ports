@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-STX
 PORTVERSION=	0.43
 PORTREVISION=	2

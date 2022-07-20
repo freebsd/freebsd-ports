@@ -1,5 +1,3 @@
-# Created by: Frederic Culot <culot@FreeBSD.org>
-
 PORTNAME=	Text-TestBase
 PORTVERSION=	0.13
 CATEGORIES=	textproc perl5

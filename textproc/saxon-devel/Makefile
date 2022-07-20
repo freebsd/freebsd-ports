@@ -1,5 +1,3 @@
-# Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-
 PORTNAME=	saxon
 PORTVERSION=	9.1.0.8
 PORTREVISION=	1

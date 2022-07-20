@@ -1,5 +1,3 @@
-# Created by: Don Croyle <croyle@gelemna.org>
-
 PORTNAME=	txt2html
 PORTVERSION=	2.51
 PORTREVISION=	2

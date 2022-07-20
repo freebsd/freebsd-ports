@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Parse-ANSIColor-Tiny
 PORTVERSION=	0.601
 CATEGORIES=	textproc perl5

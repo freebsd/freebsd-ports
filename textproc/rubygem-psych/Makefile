@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	psych
 PORTVERSION=	4.0.4
 CATEGORIES=	textproc rubygems

@@ -1,5 +1,3 @@
-# Created by: Josh Gilliam <josh@quick.net>
-
 PORTNAME=	urlview
 PORTVERSION=	0.9.20131021
 PORTREVISION=	1

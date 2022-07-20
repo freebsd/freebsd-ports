@@ -1,5 +1,3 @@
-# Created by: Dru Lavigne <dru@FreeBSD.org>
-
 PORTNAME=	sphinx_wikipedia
 PORTVERSION=	20150903
 CATEGORIES=	textproc

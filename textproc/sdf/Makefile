@@ -1,5 +1,3 @@
-# Created by: dannyman <dannyman@tellme.com>
-
 PORTNAME=	sdf
 PORTVERSION=	2.001
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libyaml
 PORTVERSION=	0.2.5
 CATEGORIES=	textproc

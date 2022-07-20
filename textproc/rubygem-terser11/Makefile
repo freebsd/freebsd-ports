@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	terser
 PORTVERSION=	1.1.12
 CATEGORIES=	textproc rubygems

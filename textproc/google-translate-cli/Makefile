@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	google-translate-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6.12

@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	htree
 PORTVERSION=	0.8
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-
 PORTNAME=	ansifilter
 PORTVERSION=	2.18
 CATEGORIES=	textproc

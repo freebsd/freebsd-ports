@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	libucl
 PORTVERSION=	0.8.1
 CATEGORIES=	textproc devel

@@ -1,5 +1,3 @@
-# Created by: Erik Greenwald <erik@smluc.org>
-
 PORTNAME=	bar
 PORTVERSION=	1.4
 DISTVERSIONSUFFIX=	-src

@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	tkdiff
 DISTVERSION=	4-3
 CATEGORIES=	textproc tk

@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Chameleon
 PORTVERSION=	3.6
 CATEGORIES=	textproc www python

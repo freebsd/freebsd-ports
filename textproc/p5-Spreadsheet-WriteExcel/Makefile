@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Spreadsheet-WriteExcel
 PORTVERSION=	2.40
 PORTREVISION=	1

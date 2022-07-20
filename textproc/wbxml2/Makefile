@@ -1,5 +1,3 @@
-# Created by: Clemens Zauner <czauner+ports@onlineloop.com>
-
 PORTNAME=	wbxml2
 PORTVERSION=	0.11.8
 DISTVERSIONPREFIX=	libwbxml-

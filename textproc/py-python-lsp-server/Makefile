@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	python-lsp-server
 PORTVERSION=	1.5.0
 CATEGORIES=	textproc python

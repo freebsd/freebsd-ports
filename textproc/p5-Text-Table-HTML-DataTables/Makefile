@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Text-Table-HTML-DataTables
 PORTVERSION=	0.012
 CATEGORIES=	textproc perl5

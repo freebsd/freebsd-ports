@@ -1,5 +1,3 @@
-# Created by: anholt@FreeBSD.org
-
 PORTNAME=	asciidoc
 PORTVERSION=	10.2.0
 CATEGORIES=	textproc

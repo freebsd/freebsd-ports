@@ -1,5 +1,3 @@
-# Created by: markm@FreeBSD.org
-
 PORTNAME=	Text-CSV
 PORTVERSION=	2.01
 CATEGORIES=	textproc perl5

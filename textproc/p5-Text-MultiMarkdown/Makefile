@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Text-MultiMarkdown
 PORTVERSION=	1.000035
 PORTREVISION=	2

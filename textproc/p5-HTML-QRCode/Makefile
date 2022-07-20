@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	HTML-QRCode
 PORTVERSION=	0.01
 PORTREVISION=	3

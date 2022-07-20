@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Text-ASCIIMathML
 PORTVERSION=	0.81
 PORTREVISION=	1

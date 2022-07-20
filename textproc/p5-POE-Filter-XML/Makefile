@@ -1,5 +1,3 @@
-# Created by: Jeff Putsch <jdputsch@comcast.net>
-
 PORTNAME=	POE-Filter-XML
 PORTVERSION=	1.140700
 CATEGORIES=	textproc devel perl5

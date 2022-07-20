@@ -1,5 +1,3 @@
-# Created by: Andrew <andrew@ugh.net.au>
-
 PORTNAME=	XML-Simple
 PORTVERSION=	2.25
 CATEGORIES=	textproc perl5

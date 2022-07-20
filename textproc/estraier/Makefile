@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	estraier
 PORTVERSION=	1.2.30
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	minima
 PORTVERSION=	2.5.1
 CATEGORIES=	textproc rubygems

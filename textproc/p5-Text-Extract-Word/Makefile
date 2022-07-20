@@ -1,5 +1,3 @@
-# Created by: jupengfei <jupengfei@gmail.com>
-
 PORTNAME=	Text-Extract-Word
 PORTVERSION=	0.04
 PORTREVISION=	1

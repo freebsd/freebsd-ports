@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Text-Balanced
 PORTVERSION=	2.06
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau <olivierd@FreeBSD.org>
-
 PORTNAME=	lasem
 PORTVERSION=	0.5.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Neil Booth
-
 PORTNAME=	qrcode
 PORTVERSION=	7.3
 CATEGORIES=	textproc python

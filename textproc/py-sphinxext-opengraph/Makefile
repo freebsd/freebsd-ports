@@ -1,5 +1,3 @@
-# Created by: Alexis Praga <alexis.praga@free.fr>
-
 PORTNAME=	sphinxext-opengraph
 PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v

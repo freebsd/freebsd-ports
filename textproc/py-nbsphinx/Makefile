@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	nbsphinx
 PORTVERSION=	0.8.9
 CATEGORIES=	textproc python

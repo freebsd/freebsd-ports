@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	XML-XML2JSON
 PORTVERSION=	0.06
 PORTREVISION=	1

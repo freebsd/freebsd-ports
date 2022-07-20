@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@dragon2.net>
-
 PORTNAME=	Lingua-EN-Tagger
 PORTVERSION=	0.31
 CATEGORIES=	textproc perl5

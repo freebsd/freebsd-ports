@@ -1,5 +1,3 @@
-# Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
-
 PORTNAME=	Syntax-Highlight-Perl-Improved
 PORTVERSION=	1.01
 PORTREVISION=	1

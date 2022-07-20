@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	Unicode-CheckUTF8
 DISTVERSION=	1.03
 PORTREVISION=	1

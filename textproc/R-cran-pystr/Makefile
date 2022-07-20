@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	pystr
 PORTREVISION=	5
 DISTVERSION=	2.0.0

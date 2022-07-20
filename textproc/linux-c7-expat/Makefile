@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	expat
 PORTVERSION=	2.1.0
 DISTVERSIONSUFFIX=	-12.el7

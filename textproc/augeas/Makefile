@@ -1,5 +1,3 @@
-# Created by: Russell Jackson <raj@csub.edu>
-
 PORTNAME=	augeas
 PORTVERSION=	1.12.0
 PORTREVISION=	3

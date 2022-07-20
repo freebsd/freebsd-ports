@@ -1,5 +1,3 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	diff-lcs
 PORTVERSION=	1.5.0
 CATEGORIES=	textproc rubygems

@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Regexp-Common-Email-Address
 PORTVERSION=	1.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	XML_Feed_Parser
 PORTVERSION=	1.0.5
 CATEGORIES=	textproc devel pear

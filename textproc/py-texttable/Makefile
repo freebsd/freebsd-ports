@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	texttable
 PORTVERSION=	1.6.4
 CATEGORIES=	textproc python

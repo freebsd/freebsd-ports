@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Text-Trim
 PORTVERSION=	1.04
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	${DICT}-aspell
 DICTVERSION=	2.4-20070901-0
 MASTER_SITES=	SF/linguistico/Dizionario%20italiano%20per%20Aspell/${DICTVERSION}

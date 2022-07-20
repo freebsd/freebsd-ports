@@ -1,5 +1,3 @@
-# Created by: Stephon Chen <stephon@gmail.com>
-
 PORTNAME=	Term-QRCode
 PORTVERSION=	0.01
 PORTREVISION=	1

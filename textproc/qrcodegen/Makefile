@@ -1,5 +1,3 @@
-# Created by: Lars Engels <lme@FreeBSD.org>
-
 PORTNAME=	qrcodegen
 PORTVERSION=	1.14.2
 PORTREVISION=	1

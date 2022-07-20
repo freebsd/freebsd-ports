@@ -1,5 +1,3 @@
-# Created by: Stefan Walter <sw@gegenunendlich.de>
-
 PORTNAME=	ppower4
 PORTVERSION=	0.9.4
 PORTREVISION=	8

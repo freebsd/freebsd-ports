@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	aspell
 PORTVERSION=	0.60.6.1
 DISTVERSIONSUFFIX=	-9.el7

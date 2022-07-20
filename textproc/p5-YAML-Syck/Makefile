@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	YAML-Syck
 PORTVERSION=	1.34
 CATEGORIES=	textproc perl5

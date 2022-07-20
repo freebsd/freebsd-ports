@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Text-Emoticon
 PORTVERSION=	0.04
 PORTREVISION=	1

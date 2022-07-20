@@ -1,5 +1,3 @@
-# Created by: Thorsten Greiner <thorsten.greiner@web.de>
-
 PORTNAME=	Lingua-Stem-Snowball-Da
 PORTVERSION=	1.01
 PORTREVISION=	1

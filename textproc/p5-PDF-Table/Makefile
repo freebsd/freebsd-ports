@@ -1,5 +1,3 @@
-# Created by: scheidell@secnap.net
-
 PORTNAME=	PDF-Table
 PORTVERSION=	1.003
 CATEGORIES=	textproc perl5

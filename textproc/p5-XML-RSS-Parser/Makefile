@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	XML-RSS-Parser
 PORTVERSION=	4.0
 PORTREVISION=	2

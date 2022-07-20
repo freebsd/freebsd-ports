@@ -1,5 +1,3 @@
-# Created by: Simon Olofsson <simon@olofsson.de>
-
 PORTNAME=	weka
 DISTVERSION=	3-8-5
 CATEGORIES=	textproc java

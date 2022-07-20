@@ -1,5 +1,3 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-
 PORTNAME=	cgrep
 PORTVERSION=	6.6.32
 PORTREVISION=	3

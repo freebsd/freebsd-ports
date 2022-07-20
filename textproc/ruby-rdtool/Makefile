@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	rdtool
 PORTVERSION=	0.6.38
 DISTVERSIONPREFIX=	v

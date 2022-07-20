@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	DT
 PORTVERSION=	0.23
 CATEGORIES=	textproc

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	rasqal
 PORTVERSION=	0.9.33
 PORTREVISION=	1

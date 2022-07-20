@@ -1,5 +1,3 @@
-# Created by: Kevin Lo <kevlo@FreeBSD.org>
-
 PORTNAME=	libextractor
 PORTVERSION=	1.11
 PORTREVISION=	2

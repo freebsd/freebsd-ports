@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@fallin.lv>
-
 PORTNAME=	wordnet
 PORTVERSION=	2.0.1
 PORTREVISION=	1

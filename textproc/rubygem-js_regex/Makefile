@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	js_regex
 PORTVERSION=	3.7.1
 CATEGORIES=	textproc rubygems

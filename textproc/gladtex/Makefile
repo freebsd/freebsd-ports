@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	gladtex
 PORTVERSION=	1.3
 PORTREVISION=	4

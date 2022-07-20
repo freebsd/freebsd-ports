@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	latexcodec
 PORTVERSION=	2.0.1
 CATEGORIES=	textproc python

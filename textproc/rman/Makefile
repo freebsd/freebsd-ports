@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	rman
 PORTVERSION=	3.2
 CATEGORIES=	textproc

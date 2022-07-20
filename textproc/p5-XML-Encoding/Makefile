@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	XML-Encoding
 PORTVERSION=	2.11
 CATEGORIES=	textproc perl5

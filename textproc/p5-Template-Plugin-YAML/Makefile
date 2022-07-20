@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	Template-Plugin-YAML
 PORTVERSION=	1.23
 CATEGORIES=	textproc perl5

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Text-Quote
 PORTVERSION=	0.33
 CATEGORIES=	textproc perl5

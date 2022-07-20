@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	lucene
 PORTVERSION=	5.5.5
 CATEGORIES=	textproc java devel

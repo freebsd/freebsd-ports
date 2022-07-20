@@ -1,5 +1,3 @@
-# Created by: lars.eggert@gmx.net
-
 PORTNAME=	rfcdiff
 PORTVERSION=	1.33
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-
 PORTNAME=	libkmfl
 PORTVERSION=	0.9.9
 PORTREVISION=	2

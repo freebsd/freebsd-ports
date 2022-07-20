@@ -1,5 +1,3 @@
-# Created by: Andreas Heil <ah@linux-hq.de>
-
 PORTNAME=	XML-Generator
 PORTVERSION=	1.04
 PORTREVISION=	1
