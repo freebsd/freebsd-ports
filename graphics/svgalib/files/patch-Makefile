@@ -36,3 +36,12 @@
  	@echo "Installing keymap utilities in $(bindir):"
  	@echo "svgakeymap:       Perl script that generates scancode conversion maps."
  	@cp utils/svgakeymap $(bindir)
+@@ -261,7 +259,7 @@ installman:
+ installman:
+ 	(cd doc; $(MAKE) -f $(srcdir)/doc/Makefile srcdir="$(srcdir)" install )
+ 	 
+-install: uninstall $(INSTALLAOUTLIB) installheaders $(INSTALLSHAREDLIB) installconfig \
++install: $(INSTALLAOUTLIB) installheaders $(INSTALLSHAREDLIB) installconfig \
+ 	$(INSTALLSTATICLIB) $(INSTALLUTILS) $(INSTALLMAN)
+ 	@echo
+ 	@echo
