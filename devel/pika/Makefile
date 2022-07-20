@@ -8,6 +8,8 @@ COMMENT=	C++ library for concurrency and parallelism
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
+BROKEN_aarch64=	error: 'regparm' is not valid on this platform, see https://github.com/pika-org/pika/issues/331
+
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
 		libtcmalloc_minimal.so:devel/google-perftools
