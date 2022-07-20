@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	imageio-ffmpeg
 PORTVERSION=	0.4.7
 CATEGORIES=	graphics python

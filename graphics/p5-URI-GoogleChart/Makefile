@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	URI-GoogleChart
 PORTVERSION=	1.02
 PORTREVISION=	1

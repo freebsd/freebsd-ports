@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	cosmoplayer
 PORTVERSION=	2.1.1
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Graphics-GnuplotIF
 PORTVERSION=	1.8
 CATEGORIES=	graphics perl5

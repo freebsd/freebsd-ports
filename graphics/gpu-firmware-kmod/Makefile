@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	gpu-firmware-kmod
 PORTVERSION=	20220511
 PORTEPOCH=	1

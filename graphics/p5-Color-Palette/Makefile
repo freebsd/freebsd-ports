@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Color-Palette
 PORTVERSION=	0.100003
 CATEGORIES=	graphics perl5

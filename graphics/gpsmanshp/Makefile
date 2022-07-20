@@ -1,5 +1,3 @@
-# Created by: John Hay
-
 PORTNAME=	gpsmanshp
 PORTVERSION=	1.2.3
 PORTREVISION=	1

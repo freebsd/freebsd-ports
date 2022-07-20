@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	libiptcdata
 PORTVERSION=	1.0.4
 PORTREVISION=	2

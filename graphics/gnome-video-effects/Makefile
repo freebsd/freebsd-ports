@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gnome-video-effects
 PORTVERSION=	0.5.0
 CATEGORIES=	graphics

@@ -1,5 +1,3 @@
-# Created by: Mike Krutov <neko@takino.org>
-
 PORTNAME=	zathura-pdf-poppler
 DISTVERSION=	0.3.0
 PORTREVISION=	10

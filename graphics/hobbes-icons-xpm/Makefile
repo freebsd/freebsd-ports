@@ -1,5 +1,3 @@
-# Created by: pgs
-
 PORTNAME=	hobbes-icons-xpm3
 PORTVERSION=	1.0
 PORTREVISION=	1

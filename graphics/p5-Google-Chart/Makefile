@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Google-Chart
 PORTVERSION=	0.05014
 PORTREVISION=	4

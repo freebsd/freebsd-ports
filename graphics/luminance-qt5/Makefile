@@ -1,5 +1,3 @@
-# Created by: Yinghong Liu <relaxbsd@gmail.com>
-
 PORTNAME=	luminance-hdr
 DISTVERSION=	2.6.1.1
 PORTREVISION=	10

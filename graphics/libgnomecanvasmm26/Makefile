@@ -1,4 +1,3 @@
-# Created by: Alexander Nedotsukov <bland@mail.ru>
 #   $MCom: ports/graphics/libgnomecanvasmm26/Makefile,v 1.22 2009/03/17 15:05:06 kwm Exp $
 
 PORTNAME=	libgnomecanvasmm

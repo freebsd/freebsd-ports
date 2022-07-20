@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@lovett.com>
-
 PORTNAME=	gdk-pixbuf
 PORTVERSION=	2.40.0
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
 DISTVERSION=	3.1.4

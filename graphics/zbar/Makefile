@@ -1,5 +1,3 @@
-# Created by: Oliver Heesakkers <dev2@heesakkers.info>
-
 PORTNAME=	zbar
 DISTVERSION=	0.23.90
 CATEGORIES=	graphics

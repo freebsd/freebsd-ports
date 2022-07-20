@@ -1,5 +1,3 @@
-# Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-
 PORTNAME=	Imager-Graph
 PORTVERSION=	0.10
 PORTREVISION=	1

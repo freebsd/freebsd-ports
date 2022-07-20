@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	dygraphs
 DISTVERSION=	1.1.1.6
 PORTREVISION=	3

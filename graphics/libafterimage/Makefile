@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libafterimage
 PORTVERSION=	1.20
 PORTREVISION=	7

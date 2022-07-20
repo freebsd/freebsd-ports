@@ -1,5 +1,3 @@
-# Created by: roland.jesse@gmx.net
-
 PORTNAME=	Coin
 PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=	Coin-

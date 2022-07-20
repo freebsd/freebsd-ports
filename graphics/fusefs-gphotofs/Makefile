@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	gphotofs
 PORTVERSION=	0.5
 PORTREVISION=	5

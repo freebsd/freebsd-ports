@@ -1,5 +1,3 @@
-# Created by: Rod Person <rodperson@rodperson.com>
-
 PORTNAME=	fotoxx
 PORTVERSION=	22.18
 CATEGORIES=	graphics

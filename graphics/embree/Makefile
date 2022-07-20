@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	embree
 PORTVERSION=	3.13.4
 DISTVERSIONPREFIX=	v

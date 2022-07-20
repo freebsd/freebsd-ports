@@ -1,5 +1,3 @@
-# Created by: bf <bf@FreeBSD.org>
-
 PORTNAME=	tesseract-data
 PORTVERSION=	4.1.0
 CATEGORIES=	graphics

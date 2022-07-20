@@ -1,5 +1,3 @@
-# Created by: stb@lassitu.de
-
 PORTNAME=	pngnq
 PORTVERSION=	1.1
 PORTREVISION=	3

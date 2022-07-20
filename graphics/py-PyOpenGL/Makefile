@@ -1,5 +1,3 @@
-# Created by: Randall Hopper <aa8vb@ipass.net>
-
 PORTNAME=	PyOpenGL
 PORTVERSION=	3.1.5
 PORTREVISION=	1

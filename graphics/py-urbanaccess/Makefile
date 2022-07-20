@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	urbanaccess
 PORTVERSION=	0.2.2
 CATEGORIES=	graphics python

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	batik
 PORTVERSION=	1.14
 CATEGORIES=	graphics java

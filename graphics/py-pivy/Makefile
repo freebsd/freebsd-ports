@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <pfg@FreeBSD.org>
-
 PORTNAME=	pivy
 PORTVERSION=	0.6.6
 CATEGORIES=	graphics python

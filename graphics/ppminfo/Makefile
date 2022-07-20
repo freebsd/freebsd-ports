@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	ppminfo
 PORTVERSION=	0.1
 PORTREVISION=	5

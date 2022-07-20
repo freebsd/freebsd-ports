@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Geo-GML
 PORTVERSION=	0.18
 CATEGORIES=	graphics perl5

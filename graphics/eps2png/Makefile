@@ -1,5 +1,3 @@
-# Created by: nik
-
 PORTNAME=	eps2png
 PORTVERSION=	2.905
 CATEGORIES=	graphics

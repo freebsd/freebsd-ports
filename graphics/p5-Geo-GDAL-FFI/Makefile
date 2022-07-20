@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Geo-GDAL-FFI
 PORTVERSION=	0.09
 CATEGORIES=	graphics perl5

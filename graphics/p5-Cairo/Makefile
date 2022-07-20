@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	Cairo
 PORTVERSION=	1.109
 CATEGORIES=	graphics perl5

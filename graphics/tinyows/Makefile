@@ -1,5 +1,3 @@
-# Created by: Joris Dedieu <joris.dedieu@gmail.com>
-
 PORTNAME=	tinyows
 PORTVERSION=	1.2.0
 PORTREVISION=	2

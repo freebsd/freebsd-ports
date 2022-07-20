@@ -1,5 +1,3 @@
-# Created by: Emmanuel Vadot <manu@FreeBSD.org>
-
 PORTNAME=	gpu-firmware-intel-kmod
 PORTVERSION=	20220511
 CATEGORIES=	graphics

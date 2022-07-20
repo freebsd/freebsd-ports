@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@rtfm.jp>
-
 PORTNAME=	objectdetect
 PORTVERSION=	0.0.3
 PORTREVISION=	11

@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	mini_magick
 PORTVERSION=	4.11.0
 CATEGORIES=	graphics rubygems

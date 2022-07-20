@@ -1,4 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 #   $MCom: ports/trunk/graphics/gthumb/Makefile 19823 2014-08-20 09:28:14Z gusi $
 
 PORTNAME=	gthumb

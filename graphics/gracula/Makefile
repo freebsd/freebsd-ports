@@ -1,5 +1,3 @@
-# Created by: G. Adam Stanislav <adam@whizkidtech.net>
-
 PORTNAME=	gracula
 PORTVERSION=	3.0
 PORTREVISION=	1

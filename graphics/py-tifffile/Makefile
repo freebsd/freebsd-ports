@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	tifffile
 PORTVERSION=	2022.5.4
 CATEGORIES=	graphics python

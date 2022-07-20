@@ -1,5 +1,3 @@
-# Created by: Denis Podolskiy <bytestore@yandex.ru>
-
 PKGNAMEPREFIX=	lib
 PORTREVISION=	1
 

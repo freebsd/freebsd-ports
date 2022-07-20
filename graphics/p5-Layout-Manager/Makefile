@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Layout-Manager
 PORTVERSION=	0.35
 PORTREVISION=	1

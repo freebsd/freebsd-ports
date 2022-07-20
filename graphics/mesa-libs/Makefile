@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics

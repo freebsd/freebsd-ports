@@ -1,5 +1,3 @@
-# Created by: Mark Murray <markm@FreeBSD.org>
-
 PORTNAME=	ufraw
 PORTVERSION=	0.22.20210424
 PORTREVISION=	3

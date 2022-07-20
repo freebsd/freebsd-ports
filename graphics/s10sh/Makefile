@@ -1,5 +1,3 @@
-# Created by: John Reynolds <johnjen@reynoldsnet.org>
-
 PORTNAME=	s10sh
 PORTVERSION=	0.2.2
 PORTREVISION=	3

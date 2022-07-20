@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	GD-Graph-histogram
 PORTVERSION=	1.1
 PORTREVISION=	5

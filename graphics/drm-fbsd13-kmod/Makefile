@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	drm-fbsd13-kmod
 PORTVERSION=	5.4.191.g20220604
 PORTREVISION=	1

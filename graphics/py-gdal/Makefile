@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	gdal
 PORTVERSION=	3.5.1
 CATEGORIES=	graphics python

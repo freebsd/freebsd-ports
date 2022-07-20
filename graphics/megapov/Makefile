@@ -1,5 +1,3 @@
-# Created by: maho@FreeBSD.org
-
 PORTNAME=	megapov
 PORTVERSION=	1.2.1
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <mi@aldan.algebra.com>
-
 PORTNAME=	lepton
 PORTVERSION=	0.2016.07.16
 CATEGORIES=	graphics devel

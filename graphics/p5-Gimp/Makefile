@@ -1,5 +1,3 @@
-# Created by: Mathieu Arnold
-
 PORTNAME=	Gimp
 PORTVERSION=	2.33
 PORTREVISION=	2

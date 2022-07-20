@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	librsvg
 PORTVERSION=	2.54.1
 PORTREVISION=	3

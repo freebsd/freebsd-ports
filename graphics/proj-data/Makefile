@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	proj-data
 PORTVERSION=	1.10
 CATEGORIES=	graphics geography

@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	xfpovray
 PORTVERSION=	1.3.1
 PORTREVISION=	13

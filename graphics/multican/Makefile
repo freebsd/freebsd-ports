@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	multican
 DISTVERSION=	0.0.5
 PORTREVISION=	3

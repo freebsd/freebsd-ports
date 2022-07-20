@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	founts
 PORTVERSION=	13
 PORTREVISION=	2

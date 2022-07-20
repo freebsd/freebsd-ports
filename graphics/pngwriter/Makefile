@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pngwriter
 PORTVERSION=	0.7.0
 PORTREVISION=	2

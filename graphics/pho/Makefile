@@ -1,5 +1,3 @@
-# Created by: Roland Jesse <roland.jesse@gmx.net>
-
 PORTNAME=	pho
 PORTVERSION=	1.0
 CATEGORIES=	graphics

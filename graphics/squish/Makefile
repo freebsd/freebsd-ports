@@ -1,5 +1,3 @@
-# Created by: Reinier de Blois <rddeblois@gmail.com>
-
 PORTNAME=	squish
 PORTVERSION=	1.10
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	webcolors
 PORTVERSION=	1.8.1
 CATEGORIES=	graphics python

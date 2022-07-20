@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	gpaint
 PORTVERSION=	0.3.3
 DISTVERSIONPREFIX=	2-

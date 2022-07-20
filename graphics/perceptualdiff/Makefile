@@ -1,5 +1,3 @@
-# Created by: sobomax
-
 PORTNAME=	perceptualdiff
 PORTVERSION=	2.1
 PORTREVISION=	2

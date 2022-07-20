@@ -1,5 +1,3 @@
-# Created by: Tod McQuillin <devin@spamcop.net>
-
 PORTNAME=	Image-ExifTool
 PORTVERSION=	12.14
 CATEGORIES=	graphics perl5

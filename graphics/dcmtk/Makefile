@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	dcmtk
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
 DISTVERSION=	3.6.7

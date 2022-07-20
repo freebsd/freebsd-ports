@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@fallin.lv>
-
 PORTNAME=	pygraphviz
 PORTVERSION=	1.6
 CATEGORIES=	graphics python

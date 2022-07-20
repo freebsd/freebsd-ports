@@ -1,5 +1,3 @@
-# Created by: fernan@iib.unsam.edu.ar
-
 PORTNAME=	SpringGraph
 PORTVERSION=	0.05
 PORTREVISION=	8

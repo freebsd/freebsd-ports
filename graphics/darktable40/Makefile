@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	darktable
 PORTVERSION=	4.0.0
 PORTREVISION=	0

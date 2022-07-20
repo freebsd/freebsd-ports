@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	kludge3d
 PORTVERSION=	20040822
 PORTREVISION=	15

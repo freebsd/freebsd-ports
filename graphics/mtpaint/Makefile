@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	mtpaint
 DISTVERSION=	3.50.09
 PORTREVISION=	1

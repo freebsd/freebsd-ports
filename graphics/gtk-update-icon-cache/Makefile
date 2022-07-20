@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	gtk-update-icon-cache
 PORTVERSION=	3.24.31
 CATEGORIES=	graphics

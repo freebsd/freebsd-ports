@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	colord
 PORTVERSION=	1.3.5
 PORTREVISION=	2

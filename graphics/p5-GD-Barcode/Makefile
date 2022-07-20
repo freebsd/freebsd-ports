@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	GD-Barcode
 PORTVERSION=	1.15
 PORTREVISION=	6

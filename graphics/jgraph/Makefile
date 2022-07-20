@@ -1,5 +1,3 @@
-# Created by: wolman@cs.washington.edu
-
 PORTNAME=	jgraph
 PORTVERSION=	8.3
 PORTREVISION=	1

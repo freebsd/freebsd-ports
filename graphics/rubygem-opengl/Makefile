@@ -1,5 +1,3 @@
-# Created by: Steve Wills <steve@meatwad.mouf.net>
-
 PORTNAME=	opengl
 PORTVERSION=	0.10.0
 PORTREVISION=	1

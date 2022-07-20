@@ -1,5 +1,3 @@
-# Created by: Daniel O'Connor <darius@dons.net.au>
-
 PORTNAME=	pfstools
 DISTVERSION=	2.1.0
 PORTREVISION=	13

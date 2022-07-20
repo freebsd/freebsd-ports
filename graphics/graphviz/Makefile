@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	graphviz
 PORTVERSION=	2.50.0
 PORTREVISION=	7

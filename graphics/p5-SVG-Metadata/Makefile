@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	SVG-Metadata
 PORTVERSION=	0.28
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	fastimage
 DISTVERSION=	2.2.6
 CATEGORIES=	graphics rubygems

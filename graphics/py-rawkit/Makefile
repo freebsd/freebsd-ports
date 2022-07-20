@@ -1,5 +1,3 @@
-# Created by: Martin Neubauer <m.ne@gmx.net>
-
 PORTNAME=	rawkit
 PORTVERSION=	0.6.0
 CATEGORIES=	graphics devel python

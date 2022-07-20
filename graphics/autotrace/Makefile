@@ -1,5 +1,3 @@
-# Created by: KANOU Hiroki <kanou@mil.allnet.ne.jp>
-
 PORTNAME=	autotrace
 PORTVERSION=	0.31.1
 PORTREVISION=	33

@@ -1,5 +1,3 @@
-# Created by: mm@FreeBSD.org
-
 # the SVG and PANGO plugins need X11
 OPTIONS_EXCLUDE=	X11 SVG PANGO RAQM
 PORTSCOUT=	ignore:1

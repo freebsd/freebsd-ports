@@ -1,5 +1,3 @@
-# Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-
 PORTNAME=	zint
 PORTVERSION=	2.11.0
 CATEGORIES=	graphics

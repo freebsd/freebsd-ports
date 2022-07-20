@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	azpainter
 PORTVERSION=	2.1.7
 CATEGORIES=	graphics

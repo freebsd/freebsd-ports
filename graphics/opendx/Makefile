@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
 PORTREVISION=	35

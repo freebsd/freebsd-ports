@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	tanuki_emoji
 PORTVERSION=	0.6.0
 CATEGORIES=	graphics rubygems

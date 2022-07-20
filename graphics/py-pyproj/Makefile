@@ -1,5 +1,3 @@
-# Created by: TAOKA Fumiyoshi
-
 PORTNAME=	pyproj
 PORTVERSION=	3.3.1
 CATEGORIES=	graphics geography python

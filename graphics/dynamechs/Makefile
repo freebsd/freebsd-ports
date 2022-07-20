@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	dynamechs
 PORTVERSION=	4.0.p1
 PORTREVISION=	9

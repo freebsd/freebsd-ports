@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@chc-chimes.com>
-
 PORTNAME=	qiv
 PORTVERSION=	2.3.2
 CATEGORIES=	graphics

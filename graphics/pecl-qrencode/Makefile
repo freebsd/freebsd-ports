@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	qrencode
 PORTVERSION=	0.9
 DISTVERSIONPREFIX=	v

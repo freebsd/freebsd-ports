@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	lcms
 PORTVERSION=	1.19
 PORTREVISION=	6

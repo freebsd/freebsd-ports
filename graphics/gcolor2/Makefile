@@ -1,5 +1,3 @@
-# Created by: Piotr Smyrak, piotr.smyrak@heron.pl
-
 PORTNAME=	gcolor2
 PORTVERSION=	0.4
 PORTREVISION=	10

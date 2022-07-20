@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	fotofix
 PORTVERSION=	0.01.1.88
 PORTREVISION=	1

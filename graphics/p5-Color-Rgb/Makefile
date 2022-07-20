@@ -1,5 +1,3 @@
-# Created by: Rong-En Fan <rafan@infor.org>
-
 PORTNAME=	Color-Rgb
 PORTVERSION=	1.4
 PORTREVISION=	1

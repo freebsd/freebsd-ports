@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <dima@Chg.RU>
-
 PORTNAME=	GD-Graph3d
 PORTVERSION=	0.63
 PORTREVISION=	6

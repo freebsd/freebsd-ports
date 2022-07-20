@@ -1,5 +1,3 @@
-# Created by: Denis Barov <dindin@dindin.ru>
-
 PORTNAME=	lensfun
 PORTVERSION=	0.3.95
 PORTREVISION=	1

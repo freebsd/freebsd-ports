@@ -1,5 +1,3 @@
-# Created by: Dave Cottlehuber <dch@skunkwerks.at>
-
 PORTNAME=	cairocffi
 PORTVERSION=	1.2.0
 CATEGORIES=	graphics python

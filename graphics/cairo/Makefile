@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	cairo
 DISTVERSION=	1.17.4
 PORTREVISION=	1

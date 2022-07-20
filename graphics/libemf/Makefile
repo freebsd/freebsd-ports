@@ -1,5 +1,3 @@
-# Created by: NAKATA Maho <maho@FreeBSD.org>
-
 PORTNAME=	libEMF
 PORTVERSION=	1.0.13
 CATEGORIES=	graphics

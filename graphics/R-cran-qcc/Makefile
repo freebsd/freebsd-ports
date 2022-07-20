@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	qcc
 DISTVERSION=	2.7
 PORTREVISION=	4

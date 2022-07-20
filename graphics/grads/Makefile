@@ -1,5 +1,3 @@
-# Created by: Greg Lewis <glewis@FreeBSD.org>
-
 PORTNAME=	grads
 PORTVERSION=	1.9b4
 PORTREVISION=	16

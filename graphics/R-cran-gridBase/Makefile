@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	gridBase
 DISTVERSION=	0.4-7
 PORTREVISION=	4

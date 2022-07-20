@@ -1,5 +1,3 @@
-# Created by: cartola (Carlos E. G. Carvalho)
-
 PORTNAME=	vigra
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.11.1

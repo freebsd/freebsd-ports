@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	sdl_ttf
 PORTVERSION=	2.0.11
 DISTVERSIONSUFFIX=	-6.el7

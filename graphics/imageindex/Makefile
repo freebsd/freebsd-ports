@@ -1,5 +1,3 @@
-# Created by: John Reynolds <johnjen@reynoldsnet.org>
-
 PORTNAME=	imageindex
 PORTVERSION=	2.0
 PORTREVISION=	2

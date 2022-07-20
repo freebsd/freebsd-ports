@@ -1,5 +1,3 @@
-# Created by: Pedro Garcia Freitas <sawp@sawp.com.br>
-
 PORTNAME=	mahotas
 PORTVERSION=	1.4.11
 CATEGORIES=	graphics python

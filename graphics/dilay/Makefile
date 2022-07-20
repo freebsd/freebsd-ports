@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	dilay
 DISTVERSION=	1.9.0
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Imager
 PORTVERSION=	1.019
 CATEGORIES=	graphics perl5

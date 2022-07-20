@@ -1,5 +1,3 @@
-# Created by: nik
-
 PORTNAME=	scr2png
 PORTVERSION=	1.2
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Alexander Logvinov <ports@logvinov.com>
-
 PORTNAME=	captcha
 PORTVERSION=	1.2.2
 CATEGORIES=	graphics rubygems

@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	CAD-Drawing
 PORTVERSION=	0.26
 PORTREVISION=	10

@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	flamegraph
 PORTVERSION=	0.9.5
 CATEGORIES=	graphics rubygems

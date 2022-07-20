@@ -1,5 +1,3 @@
-# Created by: Nikolay Korotkiy <sikmir@gmail.com>
-
 PORTNAME=	gpxsee
 DISTVERSION=	7.32
 PORTREVISION=	1

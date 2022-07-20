@@ -1,5 +1,3 @@
-# Created by: David Gilbert <dgilbert@velocet.ca>
-
 PORTNAME=	gle
 PORTVERSION=	3.1.0
 PORTREVISION=	8

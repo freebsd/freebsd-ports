@@ -1,5 +1,3 @@
-# Created by: Jan Henrik Sylvester <me@janh.de>
-
 PORTNAME=	xournal
 PORTVERSION=	0.4.8.2016
 PORTREVISION=	39

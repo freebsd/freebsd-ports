@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	DiagrammeR
 PORTVERSION=	1.0.9
 CATEGORIES=	graphics

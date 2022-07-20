@@ -1,5 +1,3 @@
-# Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-
 PORTNAME=	easy-thumbnails
 PORTVERSION=	2.8.1
 PORTREVISION=	1

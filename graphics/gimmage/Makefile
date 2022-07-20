@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	gimmage
 PORTVERSION=	0.2.3
 PORTREVISION=	18

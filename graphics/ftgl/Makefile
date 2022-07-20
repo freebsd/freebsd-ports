@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	ftgl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.0

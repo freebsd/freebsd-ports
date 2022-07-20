@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Image-IPTCInfo
 PORTVERSION=	1.95
 PORTREVISION=	1

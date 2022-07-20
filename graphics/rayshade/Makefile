@@ -1,5 +1,3 @@
-# Created by: giffunip@asme.org
-
 PORTNAME=	rayshade
 PORTVERSION=	4.0.6
 PORTREVISION=	7

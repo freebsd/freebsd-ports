@@ -1,5 +1,3 @@
-# Created by: Douglas Carmichael <dcarmich@mcs.com>
-
 PORTNAME=	photopc
 PORTVERSION=	3.07
 PORTREVISION=	1

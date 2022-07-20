@@ -1,4 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 #   $MCom: ports/graphics/libgnomecanvas/Makefile,v 1.79 2010/09/28 07:31:27 kwm Exp $
 
 PORTNAME=	libgnomecanvas

@@ -1,5 +1,3 @@
-# Created by: Yinghong.Liu <relaxbsd@gmail.com>
-
 PORTNAME=	synfig
 PORTVERSION=	1.4.2
 PORTREVISION=	1

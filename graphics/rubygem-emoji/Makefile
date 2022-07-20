@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	emoji
 PORTVERSION=	1.0.7
 CATEGORIES=	graphics rubygems

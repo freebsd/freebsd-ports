@@ -1,5 +1,3 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	evolvotron
 DISTVERSION=	0.7.1
 PORTREVISION=	12

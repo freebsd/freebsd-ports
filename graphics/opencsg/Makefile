@@ -1,5 +1,3 @@
-# Created by: Michael Reifenberger <mr@FreeBSD.org>
-
 PORTNAME=	opencsg
 PORTVERSION=	1.4.2
 PORTREVISION=	7

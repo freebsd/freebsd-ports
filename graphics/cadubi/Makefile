@@ -1,5 +1,3 @@
-# Created by: Kris Kennaway <kris@FreeBSD.org>
-
 PORTNAME=	cadubi
 PORTVERSION=	1.3.4
 DISTVERSIONPREFIX=	v

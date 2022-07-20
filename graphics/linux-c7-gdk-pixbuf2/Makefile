@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	gdk-pixbuf2
 PORTVERSION=	2.36.12
 DISTVERSIONSUFFIX=	-3.el7

@@ -1,5 +1,3 @@
-# Created by: Choe, Cheng-Dae
-
 PORTNAME=	freeimagepy
 PORTVERSION=	2.0.1
 PORTREVISION=	1

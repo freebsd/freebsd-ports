@@ -1,5 +1,3 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	quat
 PORTVERSION=	1.20
 PORTREVISION=	17

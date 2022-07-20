@@ -1,5 +1,3 @@
-# Created by: John McAree <john@mcaree.org>
-
 PORTNAME=	comical
 PORTVERSION=	0.8
 PORTREVISION=	14

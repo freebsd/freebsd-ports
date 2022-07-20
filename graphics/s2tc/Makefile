@@ -1,5 +1,3 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
-
 PORTNAME=	s2tc
 PORTVERSION=	1.0+20151228
 PORTREVISION=	2

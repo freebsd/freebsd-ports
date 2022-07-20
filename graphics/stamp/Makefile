@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@chc-chimes.com>
-
 PORTNAME=	stamp
 PORTVERSION=	2.0.8
 PORTREVISION=	12

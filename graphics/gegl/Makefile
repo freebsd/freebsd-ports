@@ -1,5 +1,3 @@
-# Created by: Pietro Cerutti <gahr@FreeBSD.org>
-
 PORTNAME=	gegl
 PORTVERSION=	0.4.38
 CATEGORIES=	graphics

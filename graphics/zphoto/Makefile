@@ -1,5 +1,3 @@
-# Created by: UMENO Takashi <umeno@rr.iij4u.or.jp>
-
 PORTNAME=	zphoto
 PORTVERSION=	1.2
 PORTREVISION=	14

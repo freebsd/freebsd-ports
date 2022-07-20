@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org> et al.
-
 PORTNAME=	shotwell
 PORTVERSION=	0.30.16
 CATEGORIES=	graphics gnome

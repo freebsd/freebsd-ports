@@ -1,5 +1,3 @@
-# Created by: johans
-
 PORTNAME=	webp
 PORTVERSION=	1.2.3
 CATEGORIES=	graphics

@@ -1,5 +1,3 @@
-# Created by: David Bremner <bremner@unb.ca>
-
 PORTNAME=	ipe
 PORTVERSION=	7.2.23
 DISTVERSIONSUFFIX=	-src

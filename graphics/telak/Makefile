@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	telak
 PORTVERSION=	0.7
 PORTREVISION=	1

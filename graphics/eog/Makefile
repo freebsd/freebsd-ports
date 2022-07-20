@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	eog
 DISTVERSION=	42.2
 CATEGORIES=	graphics gnome

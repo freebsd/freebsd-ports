@@ -1,5 +1,3 @@
-# Created by: erich@FreeBSD.org
-
 PORTNAME=	gimp
 DISTVERSION?=	2.10.32
 PORTEPOCH?=	2

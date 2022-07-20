@@ -1,5 +1,3 @@
-# Created by: lbartoletti <lbartoletti@FreeBSD.org>
-
 PORTNAME=	graphviz
 PORTVERSION=	0.10.1
 CATEGORIES=	graphics python

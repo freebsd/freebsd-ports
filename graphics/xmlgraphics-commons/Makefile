@@ -1,5 +1,3 @@
-# Created by: rfarmer@predatorlabs.net
-
 PORTNAME=	xmlgraphics-commons
 PORTVERSION=	2.6
 DISTVERSIONSUFFIX=	-bin

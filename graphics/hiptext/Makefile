@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	hiptext
 PORTVERSION=	0.0.s20160621
 PORTREVISION=	13

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	giddy
 PORTVERSION=	2.3.3
 CATEGORIES=	graphics python

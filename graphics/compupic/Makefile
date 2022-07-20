@@ -1,5 +1,3 @@
-# Created by: Abel Chow <ozsanh45vds001@sneakemail.com>
-
 PORTNAME=	compupic
 PORTVERSION=	5.1.1063
 CATEGORIES=	graphics

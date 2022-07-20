@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	cenon
 # Per r492056, 4.0.2 is the last version which actually works with GNUstep,
 # the later ones use XCode >= 5 .xib files which GNUstep cannot parse.

@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	Graph-ReadWrite
 PORTVERSION=	2.10
 CATEGORIES=	graphics perl5

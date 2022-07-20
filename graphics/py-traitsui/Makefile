@@ -1,5 +1,3 @@
-# Created by: Vladimir Chukharev
-
 PORTNAME=	traitsui
 DISTVERSION=	7.4.0
 CATEGORIES=	graphics python

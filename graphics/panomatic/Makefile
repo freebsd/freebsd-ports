@@ -1,5 +1,3 @@
-# Created by: argv[0] (Iouri V. Ivliev)
-
 PORTNAME=	panomatic
 PORTVERSION=	0.9.4
 PORTREVISION=	12

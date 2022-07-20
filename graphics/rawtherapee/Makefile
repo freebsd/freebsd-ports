@@ -1,5 +1,3 @@
-# Created by: stas
-
 PORTNAME=	rawtherapee
 PORTVERSION=	5.8
 PORTREVISION=	13

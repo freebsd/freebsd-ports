@@ -1,5 +1,3 @@
-# Created by: Michael Nottebrock <lofi@FreeBSD.org>
-
 PORTREVISION=	0
 
 COMMENT=	Poppler's xpdf-workalike command line utilities # '

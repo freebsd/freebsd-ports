@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	face_recognition_models
 PORTVERSION=	0.3.0
 CATEGORIES=	graphics python devel

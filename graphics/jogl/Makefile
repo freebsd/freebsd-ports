@@ -1,5 +1,3 @@
-# Created by: Peter Jeremy <peterjeremy@optushome.com.au>
-
 PORTNAME=	jogl
 PORTVERSION=	1.1.1
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	ampasACES-container
 PORTVERSION=	1.0.2
 PORTREVISION=	1

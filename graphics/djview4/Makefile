@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <stas@FreeBSD.org>
-
 PORTNAME=	djview
 PORTVERSION=	4.12
 PORTREVISION=	2

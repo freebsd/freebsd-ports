@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	SVG-Graph
 PORTVERSION=	0.04
 PORTREVISION=	1

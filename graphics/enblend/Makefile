@@ -1,5 +1,3 @@
-# Created by: cartola@openit.com.br
-
 PORTNAME=	enblend
 PORTVERSION=	4.2
 PORTREVISION=	19

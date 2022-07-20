@@ -1,5 +1,3 @@
-# Created by: Lev Serebryakov <lev@FreeBSD.org>
-
 PORTNAME=	nip2
 PORTVERSION=	8.7.1
 PORTREVISION=	11

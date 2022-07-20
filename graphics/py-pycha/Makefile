@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	pycha
 PORTVERSION=	0.8.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Joseph Koshy <koshy@india.hp.com>
-
 PORTNAME=	xaos
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	4.2.1

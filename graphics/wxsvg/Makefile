@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	wxsvg
 PORTVERSION=	1.5.23
 CATEGORIES=	graphics

@@ -1,5 +1,3 @@
-# Created by: Vladimir Chukharev
-
 PORTNAME=	mayavi
 DISTVERSION=	4.7.4
 PORTREVISION=	1

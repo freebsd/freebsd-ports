@@ -1,5 +1,3 @@
-# Created by: Vasil Dimov <vd@FreeBSD.org>
-
 PORTNAME=	libpano13
 DISTVERSION=	2.9.21
 CATEGORIES=	graphics java

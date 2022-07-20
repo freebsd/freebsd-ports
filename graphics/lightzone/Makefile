@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	lightzone
 DISTVERSION=	4.1.8-3
 DISTVERSIONSUFFIX=	-g36e87773

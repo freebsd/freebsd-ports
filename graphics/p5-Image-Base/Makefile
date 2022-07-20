@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Image-Base
 PORTVERSION=	1.17
 PORTREVISION=	1

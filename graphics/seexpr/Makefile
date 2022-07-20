@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	seexpr
 PORTVERSION=	3.4.4.0
 PORTREVISION=	2

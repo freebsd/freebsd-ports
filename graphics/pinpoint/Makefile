@@ -1,5 +1,3 @@
-# Created by: lichray@gmail.com
-
 PORTNAME=	pinpoint
 DISTVERSION=	0.1.4
 PORTREVISION=	8

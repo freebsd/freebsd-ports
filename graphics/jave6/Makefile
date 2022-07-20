@@ -1,5 +1,3 @@
-# Created by: Andreas Daehn <ad001@uni-rostock.de>
-
 PORTNAME=	jave6
 PORTVERSION=	0.1
 PORTREVISION=	5

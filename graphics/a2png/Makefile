@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	a2png
 PORTVERSION=	0.1.5
 PORTREVISION=	11

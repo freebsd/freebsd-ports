@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	nwdiag
 PORTVERSION=	3.0.0
 CATEGORIES=	graphics python

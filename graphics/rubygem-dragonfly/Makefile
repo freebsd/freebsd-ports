@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	dragonfly
 PORTVERSION=	1.4.0
 CATEGORIES=	graphics rubygems

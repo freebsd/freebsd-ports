@@ -1,5 +1,3 @@
-# Created by: fenner
-
 PORTNAME=	geomview
 PORTVERSION=	1.9.5
 PORTREVISION=	4

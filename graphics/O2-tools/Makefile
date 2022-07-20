@@ -1,5 +1,3 @@
-# Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
-
 PORTNAME=	O2-tools
 PORTVERSION=	2.01
 CATEGORIES=	graphics

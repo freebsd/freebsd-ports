@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	epix
 DISTVERSION=	1.2.22
 CATEGORIES=	graphics

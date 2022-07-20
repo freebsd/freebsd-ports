@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	cairo
 PORTVERSION=	1.15.12
 DISTVERSIONSUFFIX=	-4.el7

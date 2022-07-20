@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	png
 PORTVERSION=	0.0.17
 CATEGORIES=	graphics python

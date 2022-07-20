@@ -1,5 +1,3 @@
-# Created by: Ulrich Spoerlein <q@uni.de>
-
 PORTNAME=	ocrad
 DISTVERSION=	0.28
 CATEGORIES=	graphics

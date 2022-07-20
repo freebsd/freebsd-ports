@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xwpick
 PORTVERSION=	2.20
 PORTREVISION=	2

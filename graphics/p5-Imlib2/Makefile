@@ -1,5 +1,3 @@
-# Created by: Jeremy Norris <ishmael27@home.com>
-
 PORTNAME=	Imlib2
 PORTVERSION=	1.0.0
 PORTREVISION=	12

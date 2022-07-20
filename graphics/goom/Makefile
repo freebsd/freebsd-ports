@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	goom
 PORTVERSION=	2k4.0
 PORTREVISION=	7

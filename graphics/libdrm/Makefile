@@ -1,5 +1,3 @@
-# Created by: lesi@FreeBSD.org
-
 PORTNAME=	libdrm
 PORTVERSION=	2.4.112
 PORTEPOCH=	1

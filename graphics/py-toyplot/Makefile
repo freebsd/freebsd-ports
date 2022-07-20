@@ -1,5 +1,3 @@
-# Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-
 PORTNAME=	toyplot
 PORTVERSION=	0.19.0
 CATEGORIES=	graphics python

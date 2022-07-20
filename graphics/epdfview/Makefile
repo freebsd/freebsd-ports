@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	epdfview
 PORTVERSION=	0.1.8
 PORTREVISION=	54

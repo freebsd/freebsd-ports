@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	VCG
 PORTVERSION=	0.5
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Stas Timokhin <devel@stasyan.com>
-
 PORTNAME=	picpuz
 PORTVERSION=	2.1.1
 PORTREVISION=	7

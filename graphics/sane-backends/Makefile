@@ -1,5 +1,3 @@
-# Created by: gary@hotlava.com
-
 PORTNAME=	sane-backends
 DISTVERSION=	1.1.1
 PORTREVISION=	7

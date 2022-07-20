@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	libboard
 DISTVERSION=	0.9.4
 PORTREVISION=	9

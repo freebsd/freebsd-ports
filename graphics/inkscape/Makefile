@@ -1,5 +1,3 @@
-# Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-
 PORTNAME=	inkscape
 DISTVERSION=	1.2
 PORTREVISION=	2

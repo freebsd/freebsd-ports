@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	altair
 PORTVERSION=	4.2.0
 CATEGORIES=	graphics python

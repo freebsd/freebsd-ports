@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	GraphViz
 PORTVERSION=	2.24
 CATEGORIES=	graphics perl5

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	sdl_gfx
 PORTVERSION=	2.0.26
 CATEGORIES=	graphics

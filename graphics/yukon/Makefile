@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	yukon
 PORTVERSION=	2010011201
 PORTREVISION=	3

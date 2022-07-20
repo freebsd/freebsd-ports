@@ -1,5 +1,3 @@
-# Created by: Shell Hung <shell@shellhung.org>
-
 PORTNAME=	Image-Info
 PORTVERSION=	1.42
 CATEGORIES=	graphics perl5

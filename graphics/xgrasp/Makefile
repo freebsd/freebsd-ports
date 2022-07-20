@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	xgrasp
 PORTVERSION=	1.7d
 PORTREVISION=	2

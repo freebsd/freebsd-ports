@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	libGLU
 PORTVERSION=	9.0.2
 PORTREVISION=	1

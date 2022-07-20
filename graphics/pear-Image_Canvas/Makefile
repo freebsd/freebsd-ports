@@ -1,5 +1,3 @@
-# Created by: Simun Mikecin <numisemis@yahoo.com>
-
 PORTNAME=	Image_Canvas
 PORTVERSION=	0.3.2
 PORTREVISION=	1

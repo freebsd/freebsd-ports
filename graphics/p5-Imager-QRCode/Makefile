@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Imager-QRCode
 PORTVERSION=	0.035
 CATEGORIES=	graphics perl5

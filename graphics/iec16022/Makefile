@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	iec16022
 DISTVERSION=	0.3.1
 CATEGORIES=	graphics

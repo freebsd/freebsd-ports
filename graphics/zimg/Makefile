@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	zimg
 PORTVERSION=	5.0.0
 PORTREVISION=	9

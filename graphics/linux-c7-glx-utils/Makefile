@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	glx-utils
 PORTVERSION=	8.3.0
 DISTVERSIONSUFFIX=	-10.el7

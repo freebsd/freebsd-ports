@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTREVISION=	2
 PKGNAMESUFFIX=	-lite
 

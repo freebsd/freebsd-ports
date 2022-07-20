@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	jalbum
 PORTVERSION=	10.10.7
 CATEGORIES=	graphics java

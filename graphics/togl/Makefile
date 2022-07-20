@@ -1,5 +1,3 @@
-# Created by: Randall Hopper <aa8vb@ipass.net>
-
 PORTNAME=	togl
 DISTVERSION=	2.0
 DISTVERSIONSUFFIX=	-src

@@ -1,5 +1,3 @@
-# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-
 PORTNAME=	glfw
 PORTVERSION=	3.3.7
 CATEGORIES=	graphics

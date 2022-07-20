@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	pstoedit
 PORTVERSION=	3.70
 PORTREVISION=	11

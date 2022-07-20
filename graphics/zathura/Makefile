@@ -1,5 +1,3 @@
-# Created by: Quentin Stievenart <acieroid@awesom.eu>
-
 PORTNAME=	zathura
 DISTVERSION=	0.4.9
 CATEGORIES=	graphics print

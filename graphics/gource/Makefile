@@ -1,5 +1,3 @@
-# Created by: demon@FreeBSD.org
-
 PORTNAME=	gource
 PORTVERSION=	0.51
 PORTREVISION=	3

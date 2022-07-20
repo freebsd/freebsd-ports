@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	clutter-gdk
 PORTVERSION=	3.5.1
 CATEGORIES=	graphics rubygems

@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	c-a-i-r
 PORTVERSION=	2.19
 CATEGORIES=	graphics

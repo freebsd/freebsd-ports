@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	rgdal
 DISTVERSION=	1.5-32
 CATEGORIES=	graphics

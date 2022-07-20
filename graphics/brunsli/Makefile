@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	brunsli
 PORTVERSION=	0.1
 DISTVERSIONPREFIX=	v

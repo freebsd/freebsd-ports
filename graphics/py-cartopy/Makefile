@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cartopy
 PORTVERSION=	0.20.3
 CATEGORIES=	graphics python

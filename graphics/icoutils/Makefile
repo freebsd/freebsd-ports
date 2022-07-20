@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	icoutils
 PORTVERSION=	0.32.3
 CATEGORIES=	graphics

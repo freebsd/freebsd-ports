@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	libgfx
 DISTVERSION=	1.1.0
 PORTREVISION=	12

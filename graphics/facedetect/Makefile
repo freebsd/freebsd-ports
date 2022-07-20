@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	facedetect
 PORTVERSION=	0.1
 DISTVERSIONPREFIX=	v

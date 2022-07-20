@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	openrm
 PORTVERSION=	1.6.0.2
 PORTREVISION=	3

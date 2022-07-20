@@ -1,5 +1,3 @@
-# Created by: Paul Everlund
-
 PORTNAME=	xmedcon
 PORTVERSION=	0.17.0
 CATEGORIES=	graphics

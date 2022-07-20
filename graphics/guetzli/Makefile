@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	guetzli
 PORTVERSION=	1.0.1
 PORTREVISION=	5

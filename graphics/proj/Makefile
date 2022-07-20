@@ -1,5 +1,3 @@
-# Created by: jedgar@FreeBSD.org
-
 PORTNAME=	proj
 PORTVERSION=	8.2.1
 PORTREVISION=	2

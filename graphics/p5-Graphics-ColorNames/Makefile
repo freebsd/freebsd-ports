@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	Graphics-ColorNames
 PORTVERSION=	2.11
 PORTREVISION=	2

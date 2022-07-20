@@ -1,5 +1,3 @@
-# Created by: Eugene Mychlo <myc@barev.net>
-
 PORTNAME=	yed
 DISTVERSION=	3.22
 CATEGORIES=	graphics java

@@ -1,5 +1,3 @@
-# Created by: Tassilo Philipp <tphilipp@potion-studios.com>
-
 PORTNAME=	jogamp-jogl
 PORTVERSION=	2.3.2
 PORTREVISION=	1

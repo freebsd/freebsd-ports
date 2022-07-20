@@ -1,5 +1,3 @@
-# Created by: Kyle Martin <mkm@ieee.org>
-
 PORTNAME=	duhdraw
 PORTVERSION=	2.8.13
 CATEGORIES=	graphics

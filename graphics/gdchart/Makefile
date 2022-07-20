@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	gdchart
 PORTVERSION=	0.11.5
 PORTREVISION=	10

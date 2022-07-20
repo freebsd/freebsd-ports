@@ -1,5 +1,3 @@
-# Created by: Stefan Walter <sw@gegenunendlich.de>
-
 PORTNAME=	pydot
 PORTVERSION=	1.4.2
 CATEGORIES=	graphics python

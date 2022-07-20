@@ -1,5 +1,3 @@
-# Created by: bmc@WillsCreek.COM
-
 PORTNAME=	tgif
 PORTVERSION=	4.2.5
 PORTREVISION=	2

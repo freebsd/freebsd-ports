@@ -1,5 +1,3 @@
-# Created by: Steven Wallace <swallace@FreeBSD.org>
-
 PORTNAME=	xpaint
 PORTVERSION=	2.9.10.3
 PORTREVISION=	3

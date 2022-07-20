@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	agg
 PORTVERSION=	2.5
 PORTREVISION=	11

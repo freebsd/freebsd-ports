@@ -1,5 +1,3 @@
-# Created by: nemysis <nemysis@gmx.ch>
-
 PORTNAME=	apngdis
 PORTVERSION=	2.9
 DISTVERSIONSUFFIX=-src

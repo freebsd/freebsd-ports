@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	freeglut
 PORTVERSION=	3.2.1
 CATEGORIES=	graphics

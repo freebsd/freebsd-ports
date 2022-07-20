@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-
 PORTNAME=	gpicview
 PORTVERSION=	0.2.5
 CATEGORIES=	graphics

@@ -1,5 +1,3 @@
-# Created by: kwm@FreeBSD.org
-
 PORTNAME=	wayland
 DISTVERSION=	1.21.0
 CATEGORIES=	graphics wayland

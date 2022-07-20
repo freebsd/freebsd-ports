@@ -1,5 +1,3 @@
-# Created by: Oliver Lehmann <oliver@FreeBSD.org>
-
 PORTNAME=	ogre3d
 PORTVERSION=	1.9.0
 PORTREVISION=	21

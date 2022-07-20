@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	ristretto
 PORTVERSION=	0.12.3
 CATEGORIES=	graphics xfce

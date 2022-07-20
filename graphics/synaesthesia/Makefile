@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@FreeBSD.org>
-
 PORTNAME=	synaesthesia
 PORTVERSION=	2.4
 PORTREVISION=	7

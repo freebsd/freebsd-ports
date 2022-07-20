@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	ming
 DISTVERSIONPREFIX=	ming-
 DISTVERSION=	0_4_8

@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	libnsgif
 PORTVERSION=	0.2.1
 CATEGORIES=	graphics

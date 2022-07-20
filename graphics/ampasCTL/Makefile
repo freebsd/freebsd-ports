@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	ampasCTL
 PORTVERSION=	1.5.2
 PORTREVISION=	16

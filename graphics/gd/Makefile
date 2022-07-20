@@ -1,5 +1,3 @@
-# Created by: jeff@cetlink.net
-
 PORTNAME=	libgd
 PORTVERSION=	2.3.3
 PORTREVISION=	1

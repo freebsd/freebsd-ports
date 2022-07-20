@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	asciitree
 PORTVERSION=	0.3.3
 CATEGORIES=	graphics python

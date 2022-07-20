@@ -1,5 +1,3 @@
-# Created by: trasz <trasz@pin.if.uz.zgora.pl>
-
 PORTNAME=	openjpeg
 PORTVERSION=	2.5.0
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	Hermes
 PORTVERSION=	1.3.3
 PORTREVISION=	5

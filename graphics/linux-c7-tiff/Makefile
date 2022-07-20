@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	libtiff
 PORTVERSION=	4.0.3
 DISTVERSIONSUFFIX=	-35.el7

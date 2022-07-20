@@ -1,5 +1,3 @@
-# Created by: Jose Jachuf <jjachuf@gmail.com>
-
 PORTNAME=	pygal
 PORTVERSION=	2.4.0
 CATEGORIES=	graphics python

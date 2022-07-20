@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	dust3d
 DISTVERSION=	1.0.0-rc.6
 CATEGORIES=	graphics

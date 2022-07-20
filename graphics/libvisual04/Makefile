@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	libvisual
 PORTVERSION=	0.4.0
 PORTREVISION=	6

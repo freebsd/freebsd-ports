@@ -1,4 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
 #
 # Please update update atril-lite also
 

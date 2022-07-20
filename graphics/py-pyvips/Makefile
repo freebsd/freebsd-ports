@@ -1,5 +1,3 @@
-# Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-
 PORTNAME=	pyvips
 PORTVERSION=	2.2.1
 CATEGORIES=	graphics python

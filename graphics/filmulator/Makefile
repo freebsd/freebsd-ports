@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	filmulator
 PORTVERSION=	0.11.1
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	IPA
 PORTVERSION=	1.08
 PORTREVISION=	2

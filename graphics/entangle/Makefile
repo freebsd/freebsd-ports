@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	entangle
 PORTVERSION=	1.0
 CATEGORIES=	graphics

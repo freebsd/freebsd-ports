@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	dri
 PORTVERSION=	18.3.4
 DISTVERSIONSUFFIX=	-12.el7_9

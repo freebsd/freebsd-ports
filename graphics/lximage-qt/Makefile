@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	lximage-qt
 PORTVERSION=	1.1.0
 CATEGORIES=	graphics

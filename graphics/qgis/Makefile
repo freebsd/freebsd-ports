@@ -1,5 +1,3 @@
-# Created by: Laurent Courty
-
 PORTNAME=	qgis
 DISTVERSION=	3.26.1
 CATEGORIES=	graphics geography

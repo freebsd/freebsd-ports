@@ -1,5 +1,3 @@
-# Created by: nork@FreeBSD.org
-
 PORTNAME=	openexr
 PORTVERSION=	3.1.5
 CATEGORIES=	graphics devel

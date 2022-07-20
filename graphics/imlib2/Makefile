@@ -1,5 +1,3 @@
-# Created by: Jeremy Norris <ishmael27@home.com>
-
 PORTNAME=	imlib2
 PORTVERSION=	1.7.0
 PORTEPOCH=	2

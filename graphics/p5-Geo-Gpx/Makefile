@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Geo-Gpx
 PORTVERSION=	0.26
 PORTREVISION=	7

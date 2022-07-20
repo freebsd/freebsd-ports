@@ -1,5 +1,3 @@
-# Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
-
 PORTNAME=	lua-gd
 PORTVERSION=	2.0.33r3
 CATEGORIES=	graphics

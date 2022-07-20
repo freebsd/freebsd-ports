@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Image-Compare
 PORTVERSION=	1.03
 CATEGORIES=	graphics perl5

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	graphlib-backport
 PORTVERSION=	1.0.3
 CATEGORIES=	graphics python

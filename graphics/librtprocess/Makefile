@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	librtprocess
 PORTVERSION=	0.12.0
 CATEGORIES=	graphics

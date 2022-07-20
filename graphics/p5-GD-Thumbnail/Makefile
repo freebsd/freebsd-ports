@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	GD-Thumbnail
 PORTVERSION=	1.44
 CATEGORIES=	graphics perl5

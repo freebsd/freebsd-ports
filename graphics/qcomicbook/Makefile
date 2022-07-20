@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	QComicBook
 PORTVERSION=	0.9.1
 PORTREVISION=	39

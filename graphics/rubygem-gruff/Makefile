@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gruff
 PORTVERSION=	0.18.0
 CATEGORIES=	graphics rubygems

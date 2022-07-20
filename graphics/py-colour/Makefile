@@ -1,5 +1,3 @@
-# Created by: Martin Neubauer <m.ne@gmx.net>
-
 PORTNAME=	colour
 PORTVERSION=	0.1.5
 CATEGORIES=	graphics devel python

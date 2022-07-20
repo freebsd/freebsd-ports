@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	chafa
 PORTVERSION=	1.12.3
 CATEGORIES=	graphics

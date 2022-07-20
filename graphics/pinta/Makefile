@@ -1,5 +1,3 @@
-# Created by: Alexander Kojevnikov <alexander@kojevnikov.com>
-
 PORTNAME=	pinta
 PORTVERSION=	1.7.1
 CATEGORIES=	graphics

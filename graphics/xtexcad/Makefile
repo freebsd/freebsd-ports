@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	xtexcad
 PORTVERSION=	2.4.1
 PORTREVISION=	2

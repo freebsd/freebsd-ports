@@ -1,5 +1,3 @@
-# Created by: stas
-
 PORTNAME=	podofo
 PORTVERSION=	0.9.8
 CATEGORIES=	graphics print

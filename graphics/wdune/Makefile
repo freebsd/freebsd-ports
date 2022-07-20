@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	wdune
 PORTVERSION=	1.926
 PORTREVISION=	3

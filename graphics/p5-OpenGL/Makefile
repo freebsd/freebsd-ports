@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	OpenGL
 PORTVERSION=	0.66
 PORTREVISION=	7

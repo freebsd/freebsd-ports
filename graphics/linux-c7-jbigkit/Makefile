@@ -1,5 +1,3 @@
-# Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-
 PORTNAME=	jbigkit
 PORTVERSION=	2.0
 DISTVERSIONSUFFIX=	-11.el7

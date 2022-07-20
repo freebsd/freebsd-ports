@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	libosmesa
 PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics

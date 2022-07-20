@@ -1,5 +1,3 @@
-# Created by: luigi@FreeBSD.org
-
 # Maintainers:		Luigi Rizzo <luigi@FreeBSD.org>
 #
 # This port builds version 2.11.0 of the sane-epkowa driver for SANE.

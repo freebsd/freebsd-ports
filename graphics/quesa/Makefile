@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	quesa
 PORTVERSION=	1.8
 PORTREVISION=	9

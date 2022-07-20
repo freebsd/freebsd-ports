@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Color-Library
 PORTVERSION=	0.021
 PORTREVISION=	1

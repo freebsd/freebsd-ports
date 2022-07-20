@@ -1,5 +1,3 @@
-# Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	GraphViz2
 PORTVERSION=	2.66
 CATEGORIES=	graphics perl5

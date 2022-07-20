@@ -1,5 +1,3 @@
-# Created by: frankch@waru.life.nthu.edu.tw
-
 PORTNAME=	aview
 DISTVERSION=	1.3.0rc1
 PORTREVISION=	6

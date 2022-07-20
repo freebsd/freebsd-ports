@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	vp
 PORTVERSION=	1.8
 PORTREVISION=	2

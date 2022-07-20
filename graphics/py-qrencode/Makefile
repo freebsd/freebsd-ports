@@ -1,5 +1,3 @@
-# Created by: Dan Langille <dvl@FreeBSD.org>
-
 PORTNAME=	qrencode
 PORTVERSION=	1.2
 CATEGORIES=	graphics python

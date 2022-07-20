@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	beziers
 PORTVERSION=	0.4.0
 PORTREVISION=	1

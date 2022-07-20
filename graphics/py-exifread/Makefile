@@ -1,5 +1,3 @@
-# Created by: Mikhail Teterin <mi@aldan.algebra.com>
-
 PORTNAME=	ExifRead
 PORTVERSION=	2.1.2
 CATEGORIES=	graphics python

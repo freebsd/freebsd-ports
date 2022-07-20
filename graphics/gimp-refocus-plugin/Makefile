@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	refocus
 PORTVERSION=	0.9.0
 PORTREVISION=	11

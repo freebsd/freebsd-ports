@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	silgraphite
 PORTVERSION=	2.3.1
 PORTREVISION=	4

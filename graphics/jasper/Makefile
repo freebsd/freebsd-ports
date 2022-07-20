@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	jasper
 PORTVERSION=	3.0.6
 CATEGORIES=	graphics

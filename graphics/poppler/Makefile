@@ -1,5 +1,3 @@
-# Created by: marcus@FreeBSD.org
-
 PORTNAME=	poppler
 DISTVERSION=	22.07.0
 CATEGORIES=	graphics print

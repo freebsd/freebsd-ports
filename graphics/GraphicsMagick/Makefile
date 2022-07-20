@@ -1,5 +1,3 @@
-# Created by: Ron van Daal
-
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.38
 PORTREVISION=	2

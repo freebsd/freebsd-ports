@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	libsvgtiny
 PORTVERSION=	0.1.7
 DISTVERSIONSUFFIX=	-src

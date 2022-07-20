@@ -1,5 +1,3 @@
-# Created by: erich@FreeBSD.org
-
 PORTNAME?=	gimp
 PORTVERSION=	2.10.32
 PORTREVISION=	3

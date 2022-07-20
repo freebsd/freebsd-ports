@@ -1,5 +1,3 @@
-# Created by: Wen heping<wenheping@gmail.com>
-
 PORTNAME=	geoserver
 PORTVERSION=	2.21.0
 CATEGORIES=	graphics geography java

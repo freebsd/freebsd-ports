@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	OpenJUMP
 PORTVERSION=	2.0
 CATEGORIES=	graphics java geography

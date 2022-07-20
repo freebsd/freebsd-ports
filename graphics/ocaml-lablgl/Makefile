@@ -1,5 +1,3 @@
-# Created by: Ronald Kuehn <rk@ronald.org>
-
 PORTNAME=	lablgl
 PORTVERSION=	1.05
 PORTREVISION=	4

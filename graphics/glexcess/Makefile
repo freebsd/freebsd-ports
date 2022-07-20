@@ -1,5 +1,3 @@
-# Created by: Hernan Di Pietro <hernan.di.pietro@gmail.com>
-
 PORTNAME=	glexcess
 PORTVERSION=	1.0
 PORTREVISION=	8

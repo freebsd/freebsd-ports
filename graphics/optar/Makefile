@@ -1,5 +1,3 @@
-# Created by: antonakis@gmail.com
-
 PORTNAME=	optar
 PORTVERSION=	2015.02.09
 PORTREVISION=	1

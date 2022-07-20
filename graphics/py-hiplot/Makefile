@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	hiplot
 PORTVERSION=	0.1.33
 CATEGORIES=	graphics python

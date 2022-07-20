@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	imc
 PORTVERSION=	4.3
 PORTREVISION=	8

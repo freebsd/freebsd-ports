@@ -1,5 +1,3 @@
-# Created by: Vincent Tantardini <vinc@FreeBSD-fr.org>
-
 PORTNAME=	libcaca
 DISTVERSION=	0.99.beta19
 PORTREVISION=	2

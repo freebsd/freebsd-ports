@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	eog-plugins
 DISTVERSION=	3.26.8
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Randall Hopper <aa8vb@nc.rr.com>
-
 PORTNAME=	osg
 PORTVERSION=	3.6.5
 DISTVERSIONPREFIX=	OpenSceneGraph-

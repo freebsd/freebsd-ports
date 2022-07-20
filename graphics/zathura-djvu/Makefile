@@ -1,5 +1,3 @@
-# Created by: Alexander Y. Grigoryev <alexander.4mail@gmail.com>
-
 PORTNAME=	zathura-djvu
 DISTVERSION=	0.2.9
 PORTREVISION=	1

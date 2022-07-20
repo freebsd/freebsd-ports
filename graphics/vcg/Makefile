@@ -1,5 +1,3 @@
-# Created by: hsu
-
 PORTNAME=	vcg
 PORTVERSION=	1.30
 PORTREVISION=	3

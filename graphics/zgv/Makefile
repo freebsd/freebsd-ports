@@ -1,5 +1,3 @@
-# Created by: Radim Kolar
-
 PORTNAME=	zgv
 PORTVERSION=	5.9
 PORTREVISION=	9

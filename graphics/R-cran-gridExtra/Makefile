@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	gridExtra
 PORTVERSION=	2.3
 PORTREVISION=	4

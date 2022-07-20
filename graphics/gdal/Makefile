@@ -1,5 +1,3 @@
-# Created by: Randall Hopper
-
 PORTNAME=	gdal
 PORTVERSION=	3.5.1
 CATEGORIES=	graphics geography

@@ -1,5 +1,3 @@
-# Created by: Alexander Gromnitsky
-
 PORTNAME=	xoris
 PORTVERSION=	0.1e
 PORTREVISION=	1

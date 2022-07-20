@@ -1,5 +1,3 @@
-# Created by: Martin Dieringer <martin.dieringe@gmx.de>
-
 PORTNAME=	pdf2svg
 PORTVERSION=	0.2.3
 PORTREVISION=	41

@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	libgxps
 PORTVERSION=	0.3.2
 CATEGORIES=	graphics gnome

@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pillow
 PORTVERSION=	9.2.0
 CATEGORIES=	graphics python

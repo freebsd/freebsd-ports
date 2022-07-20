@@ -1,5 +1,3 @@
-# Created by: Jeremy Norris <ishmael127@home.com>
-
 PORTNAME=	feh
 PORTVERSION=	3.9
 CATEGORIES=	graphics

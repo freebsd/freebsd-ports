@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Image_Transform
 PORTVERSION=	0.9.5
 CATEGORIES=	graphics www pear

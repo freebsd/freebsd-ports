@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	dcp2icc
 PORTVERSION=	0.1
 PORTREVISION=	8

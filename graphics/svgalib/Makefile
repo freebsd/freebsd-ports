@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	svgalib
 PORTVERSION=	1.4.3
 PORTREVISION=	7

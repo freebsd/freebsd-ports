@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	CAD-Drawing-Template
 PORTVERSION=	0.01
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	gexiv2
 PORTVERSION=	0.14.0
 CATEGORIES=	graphics

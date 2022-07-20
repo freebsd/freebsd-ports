@@ -1,5 +1,3 @@
-# Created by: Phil Phillips <pphillips@experts-exchange.com>
-
 PORTNAME=	chunky_png
 PORTVERSION=	1.4.0
 CATEGORIES=	graphics rubygems

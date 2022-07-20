@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	python-djvulibre
 DISTVERSION=	0.8.7
 CATEGORIES=	graphics python

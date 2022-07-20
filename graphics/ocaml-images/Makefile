@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	images
 PORTVERSION=	4.0.1
 PORTREVISION=	10

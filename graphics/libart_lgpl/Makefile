@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@python.or.kr>
-
 PORTNAME=	libart_lgpl
 PORTVERSION=	2.3.21
 PORTREVISION=	3

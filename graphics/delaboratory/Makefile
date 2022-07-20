@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	delaboratory
 PORTVERSION=	0.8
 PORTREVISION=	13

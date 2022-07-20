@@ -1,5 +1,3 @@
-# Created by: Brad Hendrickse <bradh@iafrica.com>
-
 PORTNAME=	gifsicle
 PORTVERSION=	1.93
 PORTREVISION=	1

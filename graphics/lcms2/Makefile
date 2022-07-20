@@ -1,5 +1,3 @@
-# Created by: Stanislav Sedov <stas@FreeBSD.org>
-
 PORTNAME=	lcms2
 PORTVERSION=	2.13.1
 CATEGORIES=	graphics

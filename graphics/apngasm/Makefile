@@ -1,5 +1,3 @@
-# Created by: Anonymous <swell.k@gmail.com>
-
 PORTNAME=	apngasm
 PORTVERSION=	2.91
 DISTVERSIONSUFFIX=-src

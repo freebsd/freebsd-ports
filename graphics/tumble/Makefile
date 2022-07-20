@@ -1,5 +1,3 @@
-# Created by: Rob Farmer <rfarmer@predatorlabs.net>
-
 PORTNAME=	tumble
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.38

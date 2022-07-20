@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Image-PBMlib
 PORTVERSION=	2.00
 PORTREVISION=	1

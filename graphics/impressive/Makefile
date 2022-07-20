@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	impressive
 DISTVERSION=	0.13.1
 PORTREVISION=	3

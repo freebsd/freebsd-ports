@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	red-colors
 PORTVERSION=	0.3.0
 CATEGORIES=	graphics rubygems

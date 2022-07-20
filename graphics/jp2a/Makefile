@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	jp2a
 DISTVERSION=	1.1.1
 CATEGORIES=	graphics

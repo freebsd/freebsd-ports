@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	png
 PORTVERSION=	1.6.37
 PORTREVISION=	1

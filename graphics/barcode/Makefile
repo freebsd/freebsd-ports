@@ -1,5 +1,3 @@
-# Created by: Emil J.V. Björsell (Jev)
-
 PORTNAME=	barcode
 PORTVERSION=	0.98
 PORTREVISION=	1

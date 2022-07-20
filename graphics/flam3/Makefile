@@ -1,5 +1,3 @@
-# Created by: John Prather
-
 PORTNAME=	flam3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.1-5

@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	sorl-thumbnail
 PORTVERSION=	12.8.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libqrencode
 PORTVERSION=	4.1.1
 DISTVERSIONPREFIX=	v

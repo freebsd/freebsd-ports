@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pandana
 PORTVERSION=	0.6.1
 PORTREVISION=	1

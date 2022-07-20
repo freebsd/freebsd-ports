@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@FreeBSD.org>
-
 PORTNAME=	libQGLViewer
 DISTVERSION=	2.7.2
 PORTREVISION=	1

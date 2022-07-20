@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	guilib
 PORTVERSION=	1.2.1
 PORTREVISION=	5

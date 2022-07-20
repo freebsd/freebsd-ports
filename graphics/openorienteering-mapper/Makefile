@@ -1,5 +1,3 @@
-# Created by: Nikolay Korotkiy <sikmir@gmail.com>
-
 PORTNAME=	openorienteering-mapper
 PORTVERSION=	0.9.5
 DISTVERSIONPREFIX=	v

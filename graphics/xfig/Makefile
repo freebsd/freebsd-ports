@@ -1,5 +1,3 @@
-# Created by: roberto
-
 PORTNAME=	xfig
 PORTVERSION=	3.2.8a
 CATEGORIES=	graphics

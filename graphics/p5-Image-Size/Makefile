@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Image-Size
 PORTVERSION=	3.300
 CATEGORIES=	graphics www perl5

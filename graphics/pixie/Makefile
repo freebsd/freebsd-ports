@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	pixie
 PORTVERSION=	2.2.6
 PORTREVISION=	35

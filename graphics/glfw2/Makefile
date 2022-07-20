@@ -1,5 +1,3 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
-
 PORTNAME=	glfw
 PORTVERSION=	2.7.9
 PORTREVISION=	3

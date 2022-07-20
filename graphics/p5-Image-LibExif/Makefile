@@ -1,5 +1,3 @@
-# Created by: Anes Mukhametov <anes@anes.su>
-
 PORTNAME=	Image-LibExif
 PORTVERSION=	0.04
 PORTREVISION=	1

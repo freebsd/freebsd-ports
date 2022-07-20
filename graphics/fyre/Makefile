@@ -1,5 +1,3 @@
-# Created by: Adam Weinberger <adamw@FreeBSD.org>
-
 PORTNAME=	fyre
 PORTVERSION=	1.0.1
 PORTREVISION=	25

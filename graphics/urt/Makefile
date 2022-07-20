@@ -1,5 +1,3 @@
-# Created by: cfs@ing.puc.cl (original)
-
 PORTNAME=	urt
 PORTVERSION=	3.1b1
 PORTREVISION=	12

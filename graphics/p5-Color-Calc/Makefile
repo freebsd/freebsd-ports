@@ -1,5 +1,3 @@
-# Created by: vanilla
-
 PORTNAME=	Color-Calc
 PORTVERSION=	1.074
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: TATEISHI Katsuyuki <katsu@iec.hiroshima-u.ac.jp>
-
 PORTNAME=	gimageview
 PORTVERSION=	0.2.27
 PORTREVISION=	26

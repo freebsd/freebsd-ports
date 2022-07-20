@@ -1,5 +1,3 @@
-# Created by: Zsolt Udvari <udvzsolt@gmail.com>
-
 PORTNAME=	zathura-pdf-mupdf
 DISTVERSION=	0.3.5
 PORTREVISION=	12

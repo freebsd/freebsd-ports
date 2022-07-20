@@ -1,5 +1,3 @@
-# Created by: Jamie Hermans <jamie@hermans.ca>
-
 PORTNAME=	jhead
 PORTVERSION=	3.06.0.1
 CATEGORIES=	graphics

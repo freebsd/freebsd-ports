@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	appleseed
 DISTVERSION=	2.1.0-beta
 PORTREVISION=	8

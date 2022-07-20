@@ -1,5 +1,3 @@
-# Created by: Norio Suzuki <nosuzuki@e-mail.ne.jp>
-
 PORTNAME=	xzgv
 PORTVERSION=	0.9.2
 CATEGORIES=	graphics

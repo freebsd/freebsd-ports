@@ -1,5 +1,3 @@
-# Created by: Leonardo Martins <lmartins@nepe.eee.ufg.br>
-
 PORTNAME=	geos
 PORTVERSION=	3.11.0
 CATEGORIES=	graphics geography

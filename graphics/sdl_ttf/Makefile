@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	sdl_ttf
 PORTVERSION=	2.0.11
 PORTREVISION=	8

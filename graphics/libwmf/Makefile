@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	libwmf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.12

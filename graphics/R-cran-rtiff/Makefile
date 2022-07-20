@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	rtiff
 PORTVERSION=	1.4.8
 CATEGORIES=	graphics

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Image-Magick-Iterator
 PORTVERSION=	0.01
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: Anatoliy Dmytriyev <tolid@plab.ku.dk>
-
 PORTNAME=	Image-Grab
 PORTVERSION=	1.4.2
 PORTREVISION=	4
