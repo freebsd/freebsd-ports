@@ -32,7 +32,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/asm-commons-7.1.jar
 %%DATADIR%%/lib/asm-tree-7.1.jar
 %%DATADIR%%/lib/asm-util-7.1.jar
-%%DATADIR%%/lib/build-marker-PC-221.5787.24
+%%DATADIR%%/lib/build-marker-PC-221.5921.27
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/dbus-java-3.2.1.jar
@@ -155,8 +155,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/plugins/platform-images/lib/platform-images.jar
 %%DATADIR%%/plugins/properties/lib/properties.jar
 %%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-ecfff69c7bbf-af0249357b51.ijx
-%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-ecfff69c7bbf-af0249357b51.txt
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-47e0960b85fc-af0249357b51.ijx
+%%DATADIR%%/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-47e0960b85fc-af0249357b51.txt
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/local/local.js
