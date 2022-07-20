@@ -1,5 +1,3 @@
-# Created by: Yonatan <onatan@gmail.com>
-
 PORTNAME=	culmus
 PORTVERSION=	0.133
 CATEGORIES=	hebrew
