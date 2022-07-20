@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	nevergrad
 PORTVERSION=	0.4.3
 DISTVERSIONSUFFIX=	.post2

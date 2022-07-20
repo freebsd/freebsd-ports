@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	truncnorm
 PORTREVISION=	5
 DISTVERSION=	1.0-8

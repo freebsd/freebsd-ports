@@ -1,5 +1,3 @@
-# Created by: Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
-
 PORTNAME=	fftw
 PORTVERSION=	2.1.5
 PORTREVISION?=	22

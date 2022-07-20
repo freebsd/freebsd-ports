@@ -1,5 +1,3 @@
-# Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	tblis
 PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v

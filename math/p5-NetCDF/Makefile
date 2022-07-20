@@ -1,5 +1,3 @@
-# Created by: Douglas K. Rand (rand@meridian-enviro.com)
-
 PORTNAME=	NetCDF
 PORTVERSION=	1.2.4
 PORTREVISION=	8

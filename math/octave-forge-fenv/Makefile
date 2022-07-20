@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-fenv
 PORTVERSION=	0.1.0
 PORTREVISION=	25

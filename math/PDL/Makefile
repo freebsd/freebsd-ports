@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@plab.ku.dk>
-
 PORTNAME=	PDL
 PORTVERSION=	2.019
 PORTREVISION=	5

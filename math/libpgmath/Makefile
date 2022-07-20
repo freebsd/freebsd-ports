@@ -1,5 +1,3 @@
-# Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	libpgmath
 DISTVERSION=	g20191020
 PORTREVISION=	1

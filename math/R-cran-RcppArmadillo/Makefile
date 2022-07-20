@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	RcppArmadillo
 PORTVERSION=	0.11.2.0.0
 CATEGORIES=	math

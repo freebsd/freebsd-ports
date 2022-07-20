@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	moments
 PORTVERSION=	0.14.1
 CATEGORIES=	math

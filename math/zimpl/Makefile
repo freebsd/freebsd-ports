@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@FreeBSD.org>
-
 PORTNAME=	zimpl
 DISTVERSION=	3.3.6
 PORTREVISION=	1

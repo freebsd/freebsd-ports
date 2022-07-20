@@ -1,5 +1,3 @@
-# Created by: Cyrille Szymanski <cnszym@gmail.com>
-
 PORTNAME=	dlmodeler
 DISTVERSION=	1.4-2
 PORTREVISION=	3

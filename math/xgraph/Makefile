@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	xgraph
 PORTVERSION=	11.3.2.20000910
 PORTREVISION=	4

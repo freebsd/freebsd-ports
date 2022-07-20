@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Math-CDF
 PORTVERSION=	0.1
 PORTREVISION=	2

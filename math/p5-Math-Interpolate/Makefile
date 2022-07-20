@@ -1,5 +1,3 @@
-# Created by: Mario S F Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	Math-Interpolate
 PORTVERSION=	1.06
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@tsoft.com>
-
 PORTNAME=	timbl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.6

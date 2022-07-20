@@ -1,5 +1,3 @@
-# Created by: Rod Taylor <ports@rbt.ca>
-
 PORTNAME=	Geo-Distance
 PORTVERSION=	0.25
 CATEGORIES=	math perl5 geography

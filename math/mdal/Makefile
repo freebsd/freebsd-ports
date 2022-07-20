@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	mdal
 DISTVERSION=	0.9.4
 PORTREVISION=	1

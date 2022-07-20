@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	lambda
 PORTVERSION=	0.1.4
 PORTREVISION=	2

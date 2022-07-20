@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	memisc
 DISTVERSION=	0.99.30.7
 CATEGORIES=	math

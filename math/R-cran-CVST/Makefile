@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	CVST
 DISTVERSION=	0.2-3
 CATEGORIES=	math

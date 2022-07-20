@@ -1,5 +1,3 @@
-# Created by: Andrew L. Neporada <andrew@chg.ru>
-
 PORTNAME=	pspp
 PORTVERSION=	1.6.1
 CATEGORIES=	math

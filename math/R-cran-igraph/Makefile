@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	igraph
 DISTVERSION=	1.3.3
 CATEGORIES=	math

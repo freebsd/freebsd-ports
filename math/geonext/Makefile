@@ -1,5 +1,3 @@
-# Created by: Andreas Fehlner (fehlner@gmx.de)
-
 PORTNAME=	geonext
 PORTVERSION=	1.74
 CATEGORIES+=	math education graphics java

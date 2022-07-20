@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-Symbolic-Custom-Transformation
 PORTVERSION=	2.02
 PORTREVISION=	1

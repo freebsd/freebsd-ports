@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	recipes
 PORTVERSION=	1.0.1
 CATEGORIES=	math

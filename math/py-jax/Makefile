@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	jax
 PORTVERSION=	0.3.14
 CATEGORIES=	math python

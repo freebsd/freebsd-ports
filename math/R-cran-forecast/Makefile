@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	forecast
 PORTVERSION=	8.16
 CATEGORIES=	math

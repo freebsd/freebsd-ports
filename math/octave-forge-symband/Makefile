@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-symband
 PORTVERSION=	1.0.10
 PORTREVISION=	27

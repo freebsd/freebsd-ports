@@ -1,5 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-
 PORTNAME=	gnome-calculator
 PORTVERSION=	42.2
 CATEGORIES=	math gnome

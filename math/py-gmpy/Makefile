@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	gmpy
 PORTVERSION=	1.17
 PORTREVISION=	1

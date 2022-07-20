@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang <perky@fallin.lv>
-
 PORTNAME=	pygsl
 PORTVERSION=	2.3.2
 CATEGORIES=	math python

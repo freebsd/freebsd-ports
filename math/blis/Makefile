@@ -1,5 +1,3 @@
-# Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-
 PORTNAME=	blis
 PORTVERSION=	0.8.1
 PORTREVISION=	1

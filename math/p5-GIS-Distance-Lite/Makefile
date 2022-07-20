@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	GIS-Distance-Lite
 PORTVERSION=	1.0
 PORTREVISION=	2

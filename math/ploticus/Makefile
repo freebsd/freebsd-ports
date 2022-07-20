@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ploticus
 PORTVERSION=	2.40
 PORTREVISION=	11

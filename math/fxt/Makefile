@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	fxt
 DISTVERSION=	2022.04.13
 CATEGORIES=	math

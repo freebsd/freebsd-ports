@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	yt
 DISTVERSION=	4.0.4
 CATEGORIES=	math astro python

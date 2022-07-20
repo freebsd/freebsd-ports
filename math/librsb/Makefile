@@ -1,5 +1,3 @@
-# Created by: stephen@FreeBSD.org
-
 PORTNAME=	librsb
 PORTVERSION=	1.3.0.1
 CATEGORIES=	math

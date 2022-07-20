@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	glgraph
 PORTVERSION=	0.2.6
 PORTREVISION=	11

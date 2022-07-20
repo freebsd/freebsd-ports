@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	DoE.base
 DISTVERSION=	1.2-1
 CATEGORIES=	math devel

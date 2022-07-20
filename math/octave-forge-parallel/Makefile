@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-parallel
 PORTVERSION=	4.0.1
 PORTREVISION=	2

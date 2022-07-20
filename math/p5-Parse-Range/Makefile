@@ -1,5 +1,3 @@
-# Created by: pauls@utdallas.edu
-
 PORTNAME=	Parse-Range
 PORTVERSION=	0.96
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Statistics-CaseResampling
 PORTVERSION=	0.15
 CATEGORIES=	math perl5

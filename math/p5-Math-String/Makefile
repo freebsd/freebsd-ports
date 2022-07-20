@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	Math-String
 PORTVERSION=	1.30
 CATEGORIES=	math perl5

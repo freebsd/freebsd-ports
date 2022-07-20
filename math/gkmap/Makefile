@@ -1,5 +1,3 @@
-# Created by: Javad Kouhi <javad.kouhi@gmail.com>
-
 PORTNAME=	gkmap
 PORTVERSION=	0.2
 PORTREVISION=	6

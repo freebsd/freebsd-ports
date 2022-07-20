@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	linbox
 PORTVERSION=	1.6.3
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: bf@FreeBSD.org
-
 PORTNAME=	cblas
 
 MAINTAINER=	fortran@FreeBSD.org

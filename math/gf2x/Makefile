@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	gf2x
 PORTVERSION=	1.3.0
 CATEGORIES=	math

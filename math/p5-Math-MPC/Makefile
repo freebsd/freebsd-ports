@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Math-MPC
 PORTVERSION=	1.16
 CATEGORIES=	math perl5

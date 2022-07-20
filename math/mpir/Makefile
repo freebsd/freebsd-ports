@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	mpir
 PORTVERSION=	3.0.0
 PORTREVISION=	1

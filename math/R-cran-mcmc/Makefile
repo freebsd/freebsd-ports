@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	mcmc
 DISTVERSION=	0.9-7
 PORTREVISION=	1

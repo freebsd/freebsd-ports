@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	BsMD
 DISTVERSION=	2020.4.30
 CATEGORIES=	math

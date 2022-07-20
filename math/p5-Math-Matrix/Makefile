@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Math-Matrix
 PORTVERSION=	0.94
 CATEGORIES=	math perl5

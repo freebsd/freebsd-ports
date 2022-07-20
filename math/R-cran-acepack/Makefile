@@ -1,5 +1,3 @@
-# Created by: Devin Teske <dteske@FreeBSD.org>
-
 PORTNAME=	acepack
 PORTVERSION=	1.4.1
 PORTREVISION=	1

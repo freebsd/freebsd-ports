@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	pracma
 PORTVERSION=	2.3.8
 CATEGORIES=	math

@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-missing-functions
 PORTVERSION=	1.0.2
 PORTREVISION=	27

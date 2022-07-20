@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Math-ConvexHull
 PORTVERSION=	1.04
 PORTREVISION=	1

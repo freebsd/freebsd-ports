@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	affine
 PORTVERSION=	2.3.1
 CATEGORIES=	math python

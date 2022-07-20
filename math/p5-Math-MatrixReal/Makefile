@@ -1,5 +1,3 @@
-# Created by: Sander Vesik <sander@haldjas.folklore.ee>
-
 PORTNAME=	Math-MatrixReal
 PORTVERSION=	2.13
 CATEGORIES=	math perl5

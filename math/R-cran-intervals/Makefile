@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	intervals
 DISTVERSION=	0.15.2
 CATEGORIES=	math

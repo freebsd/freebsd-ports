@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	galpol
 DISTVERSION=	2018-06-25
 PORTREVISION=	1

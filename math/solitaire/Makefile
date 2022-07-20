@@ -1,5 +1,3 @@
-# Created by: dd
-
 PORTNAME=	solitaire
 PORTVERSION=	19980817
 PORTREVISION=	1

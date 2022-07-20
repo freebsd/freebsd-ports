@@ -1,5 +1,3 @@
-# Created by: John Marino <marino@FreeBSD.org>
-
 PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	1.12
 DISTVERSIONPREFIX=	release-

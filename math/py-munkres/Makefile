@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	munkres
 PORTVERSION=	1.1.4
 CATEGORIES=	math python

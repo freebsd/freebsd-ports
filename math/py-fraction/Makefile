@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	fraction
 PORTVERSION=	2.2.0
 CATEGORIES=	math python

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@FreeBSD.org>
-
 PORTNAME=	libmesh
 DISTVERSION=	1.7.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	locfit
 DISTVERSION=	1.5-9.6
 CATEGORIES=	math

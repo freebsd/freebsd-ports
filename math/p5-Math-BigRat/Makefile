@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Math-BigRat
 PORTVERSION=	0.2624
 CATEGORIES=	math perl5

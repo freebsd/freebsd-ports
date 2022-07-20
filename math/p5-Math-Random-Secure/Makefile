@@ -1,5 +1,3 @@
-# Created by: Dereckson <dereckson@gmail.com>
-
 PORTNAME=	Math-Random-Secure
 PORTVERSION=	0.080001
 CATEGORIES=	math perl5

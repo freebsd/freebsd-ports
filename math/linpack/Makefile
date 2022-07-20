@@ -1,5 +1,3 @@
-# Created by: ljo
-
 PORTNAME=	linpack
 PORTVERSION=	1.0
 PORTREVISION=	14

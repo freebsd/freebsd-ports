@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	lcalc
 PORTVERSION=	2.0.5
 CATEGORIES=	math

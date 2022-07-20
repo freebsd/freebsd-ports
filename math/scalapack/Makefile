@@ -1,5 +1,3 @@
-# Created by: NAKATA, Maho <maho@FreeBSD.org>
-
 PORTNAME=	scalapack
 PORTVERSION=	2.1.0
 DISTVERSIONPREFIX=	v

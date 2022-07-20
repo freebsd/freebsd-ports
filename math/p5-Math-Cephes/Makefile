@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-Cephes
 PORTVERSION=	0.5305
 CATEGORIES=	math perl5

@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	Data-Float
 PORTVERSION=	0.013
 CATEGORIES=	math perl5

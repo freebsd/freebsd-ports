@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	seadata
 DISTVERSION=	2009-06-18
 PORTREVISION=	1

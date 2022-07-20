@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	ChangeAnomalyDetection
 PORTVERSION=	0.1.0
 PORTREVISION=	9

@@ -1,5 +1,3 @@
-# Created by: eserte
-
 PORTNAME=	eval
 PORTVERSION=	113
 PORTREVISION=	2

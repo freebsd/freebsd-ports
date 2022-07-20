@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Math-Random
 PORTVERSION=	0.72
 CATEGORIES=	math perl5

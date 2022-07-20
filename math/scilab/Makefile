@@ -1,5 +1,3 @@
-# Created by: js@jeannot.org
-
 PORTNAME=	scilab
 PORTVERSION=	6.1.1
 PORTREVISION=	2

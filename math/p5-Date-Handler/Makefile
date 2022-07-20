@@ -1,5 +1,3 @@
-# Created by: Shell Hung <shell@shellhung.org>
-
 PORTNAME=	Date-Handler
 PORTVERSION=	1.2
 PORTREVISION=	1

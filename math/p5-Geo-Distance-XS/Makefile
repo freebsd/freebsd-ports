@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Geo-Distance-XS
 PORTVERSION=	0.13
 CATEGORIES=	math perl5

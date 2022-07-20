@@ -1,5 +1,3 @@
-# Created by: ljo
-
 PORTNAME=	blas
 
 MAINTAINER=	fortran@FreeBSD.org

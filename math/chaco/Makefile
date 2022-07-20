@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni <giffunip@asme.org>
-
 PORTNAME=	chaco
 PORTVERSION=	2.2
 CATEGORIES=	math

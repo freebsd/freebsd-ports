@@ -1,5 +1,3 @@
-# Created by: Christopher J. Ruwe
-
 PORTNAME=	ess
 DISTVERSION=	18.10.2
 PORTREVISION=	8

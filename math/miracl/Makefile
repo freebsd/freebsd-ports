@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	miracl
 PORTVERSION=	5.6
 PORTREVISION=	7

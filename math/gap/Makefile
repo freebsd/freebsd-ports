@@ -1,5 +1,3 @@
-# Created by: keith@FreeBSD.org
-
 PORTNAME=	gap
 DISTVERSION=	4.11.1
 PORTREVISION=	2

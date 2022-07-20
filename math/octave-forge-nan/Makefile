@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-nan
 PORTVERSION=	3.7.0
 CATEGORIES=	math

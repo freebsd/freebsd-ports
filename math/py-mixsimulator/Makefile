@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mixsimulator
 PORTVERSION=	0.4.3
 CATEGORIES=	math python

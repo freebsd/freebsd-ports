@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 PORTNAME=	ldouble
 PORTVERSION=	0.1
 PORTREVISION=	2

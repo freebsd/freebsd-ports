@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-SymbolicX-ParserExtensionFactory
 PORTVERSION=	3.02
 PORTREVISION=	1

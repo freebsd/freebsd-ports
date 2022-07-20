@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Math-BaseCnv
 PORTVERSION=	1.14
 CATEGORIES=	math perl5

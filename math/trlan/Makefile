@@ -1,5 +1,3 @@
-# Created by: b.f. <bf@FreeBSD.org>
-
 PORTNAME=	trlan
 PORTVERSION=	201009
 PORTREVISION=	11

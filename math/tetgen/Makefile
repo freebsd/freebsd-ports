@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni
-
 PORTNAME=	tetgen
 PORTVERSION=	1.5.1
 CATEGORIES=	math

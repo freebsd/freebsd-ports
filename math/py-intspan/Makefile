@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	intspan
 PORTVERSION=	1.6.1
 CATEGORIES=	math python

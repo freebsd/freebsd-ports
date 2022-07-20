@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	BRiAl
 PORTVERSION=	1.2.10
 PORTREVISION=	1

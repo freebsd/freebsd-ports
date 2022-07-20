@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-miscellaneous
 PORTVERSION=	1.3.0
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@technologist.com>
-
 PORTNAME=	gnumeric
 PORTVERSION=	1.12.52
 CATEGORIES=	math gnome

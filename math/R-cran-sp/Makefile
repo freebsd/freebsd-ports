@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	sp
 DISTVERSION=	1.5-0
 CATEGORIES=	math

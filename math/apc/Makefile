@@ -1,5 +1,3 @@
-# Created by: Eric A. Griff <eagriff@global2000.net>
-
 PORTNAME=	apc
 PORTVERSION=	1.0
 PORTREVISION=	8

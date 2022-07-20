@@ -1,5 +1,3 @@
-# Created by: Guangyuan Yang <ygy@FreeBSD.org>
-
 PORTNAME=	hexbin
 DISTVERSION=	1.28.2
 CATEGORIES=	math

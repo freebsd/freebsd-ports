@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	GIS-Distance
 PORTVERSION=	0.19
 PORTEPOCH=	1

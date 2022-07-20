@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	hdrcde
 PORTVERSION=	3.4
 CATEGORIES=	math

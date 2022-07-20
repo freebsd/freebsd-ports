@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Math-Bezier-Convert
 PORTVERSION=	0.02
 PORTREVISION=	1

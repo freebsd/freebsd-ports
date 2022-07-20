@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	randlib
 PORTVERSION=	1.3
 CATEGORIES=	math

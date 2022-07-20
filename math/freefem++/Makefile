@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	freefem++
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.11

@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	FrF2
 DISTVERSION=	2.2-3
 CATEGORIES=	math

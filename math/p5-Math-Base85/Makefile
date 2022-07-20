@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Math-Base85
 PORTVERSION=	0.5
 CATEGORIES=	math perl5 converters net

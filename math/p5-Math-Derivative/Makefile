@@ -1,5 +1,3 @@
-# Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-
 PORTNAME=	Math-Derivative
 PORTVERSION=	1.01
 CATEGORIES=	math perl5

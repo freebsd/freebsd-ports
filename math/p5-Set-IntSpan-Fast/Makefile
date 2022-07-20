@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Set-IntSpan-Fast
 PORTVERSION=	1.15
 PORTREVISION=	1

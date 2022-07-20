@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	DEoptimR
 DISTVERSION=	1.0-11
 CATEGORIES=	math

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	coda
 DISTVERSION=	0.19-4
 CATEGORIES=	math

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	snuggs
 PORTVERSION=	1.4.7
 CATEGORIES=	math python

@@ -1,5 +1,3 @@
-# Created by: b.f. <bf@FreeBSD.org>
-
 PORTNAME=	libocas
 PORTVERSION=	0.96
 CATEGORIES=	math

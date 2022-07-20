@@ -1,5 +1,3 @@
-# Created by: jmz
-
 PORTNAME?=	lapack
 PORTVERSION=	3.10.1
 .if !(defined(BLAS_SLAVEPORT) || defined(CBLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT) || defined(LAPACKE_SLAVEPORT))

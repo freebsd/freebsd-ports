@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	statsmodels
 PORTVERSION=	0.13.2
 CATEGORIES=	math python

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	sympow
 PORTVERSION=	2.023.6
 DISTVERSIONPREFIX=	v

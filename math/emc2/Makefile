@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	emc2
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.17

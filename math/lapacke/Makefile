@@ -1,5 +1,3 @@
-# Created by: Eijiro Shibusawa <ej-sib@ice.uec.ac.jp>
-
 PORTNAME=	lapacke
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp

@@ -1,5 +1,3 @@
-# Created by: Seamus Venasse <svenasse@polaris.ca>
-
 PORTNAME=	Math-BaseCalc
 PORTVERSION=	1.019
 CATEGORIES=	math perl5

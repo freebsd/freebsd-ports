@@ -1,5 +1,3 @@
-# Created by: Ju Pengfei <ju.pengfei@gmail.com>
-
 PORTNAME=	numexpr
 PORTVERSION=	2.8.3
 CATEGORIES=	math python

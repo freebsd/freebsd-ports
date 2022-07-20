@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	mclust
 PORTVERSION=	5.4.10
 CATEGORIES=	math

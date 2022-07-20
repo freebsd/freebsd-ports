@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	eclib
 PORTVERSION=	20210625
 PORTREVISION=	1

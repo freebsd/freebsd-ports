@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	spdep
 DISTVERSION=	1.2-4
 CATEGORIES=	math

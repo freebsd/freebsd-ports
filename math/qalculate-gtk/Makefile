@@ -1,5 +1,3 @@
-# Created by: Sergey Akifyev <asa@gascom.ru>
-
 PORTNAME=	qalculate-gtk
 PORTVERSION=	4.2.0
 CATEGORIES=	math

@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-struct
 PORTVERSION=	1.0.18
 CATEGORIES=	math

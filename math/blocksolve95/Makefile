@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	blocksolve95
 PORTVERSION=	3.0
 PORTREVISION=	26

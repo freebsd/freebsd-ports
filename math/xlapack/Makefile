@@ -1,5 +1,3 @@
-# Created by: bf@FreeBSD.org
-
 PORTNAME=	xlapack
 
 MAINTAINER=	fortran@FreeBSD.org

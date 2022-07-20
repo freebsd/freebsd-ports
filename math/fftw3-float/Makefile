@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@FreeBSD.org>
-
 COMMENT=	Fast Discrete Fourier Transform (Single Precision C Routines)
 
 FFTW3_FLAVOR=	float

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	misc3d
 DISTVERSION=	0.9-1
 CATEGORIES=	math

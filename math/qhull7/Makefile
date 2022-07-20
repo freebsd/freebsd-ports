@@ -1,5 +1,3 @@
-# Created by: pusto@web.de
-
 PORTNAME=	qhull
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.3.2

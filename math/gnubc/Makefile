@@ -1,5 +1,3 @@
-# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-
 PORTNAME=	bc
 DISTVERSION=	1.07.1
 PORTREVISION=	2

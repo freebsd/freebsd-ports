@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	ump
 PORTVERSION=	0.8.6
 PORTREVISION=	13

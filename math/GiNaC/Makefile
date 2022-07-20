@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-
 PORTNAME=	GiNaC
 PORTVERSION=	1.8.3
 CATEGORIES=	math

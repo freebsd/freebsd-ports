@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Task-Math-Symbolic
 PORTVERSION=	1.01
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-
 PORTNAME=	octave-forge-doctest
 PORTVERSION=	0.7.0
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Math-Polynomial-Solve
 PORTVERSION=	2.86
 CATEGORIES=	math perl5

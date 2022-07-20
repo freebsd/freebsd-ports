@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	outliers
 DISTVERSION=	0.15
 CATEGORIES=	math

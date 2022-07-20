@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	Ipopt
 DISTVERSION=	3.14.4
 PORTREVISION=	1

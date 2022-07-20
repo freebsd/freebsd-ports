@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	palp
 PORTVERSION=	2.20
 CATEGORIES=	math

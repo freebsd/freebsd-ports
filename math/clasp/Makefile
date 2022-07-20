@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov <vsevolod@FreeBSD.org>
-
 PORTNAME=	clasp
 PORTVERSION=	3.3.5
 DISTVERSIONPREFIX=	v

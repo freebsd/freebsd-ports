@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	fastops
 PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v

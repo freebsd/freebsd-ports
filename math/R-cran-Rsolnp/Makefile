@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	Rsolnp
 DISTVERSION=	1.16
 PORTREVISION=	4

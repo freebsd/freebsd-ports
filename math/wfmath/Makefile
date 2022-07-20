@@ -1,5 +1,3 @@
-# Created by: Janni
-
 PORTNAME=	wfmath
 PORTVERSION=	1.0.2
 PORTREVISION=	10

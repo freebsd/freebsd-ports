@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	M4RI
 PORTVERSION=	20200125
 DISTVERSIONPREFIX=	release-

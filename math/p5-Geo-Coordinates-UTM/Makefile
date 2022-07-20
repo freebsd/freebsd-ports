@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Geo-Coordinates-UTM
 PORTVERSION=	0.11
 PORTREVISION=	1

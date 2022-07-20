@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	fastcluster
 PORTVERSION=	1.2.6
 CATEGORIES=	math python

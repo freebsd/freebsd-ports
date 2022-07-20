@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	lava
 DISTVERSION=	1.6.10
 CATEGORIES=	math

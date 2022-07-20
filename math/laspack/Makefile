@@ -1,5 +1,3 @@
-# Created by: giffunip
-
 PORTNAME=	laspack
 PORTVERSION=	1.12.2
 CATEGORIES=	math

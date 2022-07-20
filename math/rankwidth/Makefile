@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	rankwidth	# Also known as: rw
 PORTVERSION=	0.9
 CATEGORIES=	math

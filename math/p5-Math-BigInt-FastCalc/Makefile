@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Math-BigInt-FastCalc
 PORTVERSION=	0.5013
 CATEGORIES=	math perl5

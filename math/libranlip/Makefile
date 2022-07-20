@@ -1,5 +1,3 @@
-# Created by: bf <bf@FreeBSD.org>
-
 PORTNAME=	libranlip
 DISTVERSION=	1.0
 PORTREVISION=	2

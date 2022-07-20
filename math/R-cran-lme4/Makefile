@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	lme4
 DISTVERSION=	1.1-30
 CATEGORIES=	math

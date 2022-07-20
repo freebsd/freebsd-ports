@@ -1,5 +1,3 @@
-# Created by: Tony Maher
-
 PORTNAME=	numpy
 PORTVERSION=	1.23.0
 PORTEPOCH=	1

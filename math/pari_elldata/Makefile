@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	elldata
 DISTVERSION=	2021-03-21
 CATEGORIES=	math

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@FreeBSD.org>
-
 PORTNAME=	SCIP
 DISTVERSION=	8.0.0
 CATEGORIES=	math science

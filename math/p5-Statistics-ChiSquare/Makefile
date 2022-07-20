@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Statistics-ChiSquare
 PORTVERSION=	1.0000
 CATEGORIES=	math perl5

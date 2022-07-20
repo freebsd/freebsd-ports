@@ -1,5 +1,3 @@
-# Created by: Michael Johnson <ahze@ahze.net>
-
 PORTNAME=	convertall
 PORTVERSION=	0.8.0
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-
 PORTNAME=	cgal
 PORTVERSION=	5.3
 PORTREVISION=	2

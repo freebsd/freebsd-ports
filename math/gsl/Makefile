@@ -1,5 +1,3 @@
-# Created by: Andrew L. Neporada <andrew@chg.ru>
-
 PORTNAME=	gsl
 PORTVERSION=	2.7.1
 CATEGORIES=	math

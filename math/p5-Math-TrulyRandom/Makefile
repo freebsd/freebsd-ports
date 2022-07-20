@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	Math-TrulyRandom
 PORTVERSION=	1.0
 PORTREVISION=	2

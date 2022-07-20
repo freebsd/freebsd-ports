@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	CoinMP
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	1.8.4

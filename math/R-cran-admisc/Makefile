@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	admisc
 DISTVERSION=	0.29
 CATEGORIES=	math

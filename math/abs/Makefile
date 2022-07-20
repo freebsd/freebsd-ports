@@ -1,5 +1,3 @@
-# Created by: gmarco@giovannelli.it
-
 PORTNAME=	abs
 PORTVERSION=	0908
 PORTREVISION=	4

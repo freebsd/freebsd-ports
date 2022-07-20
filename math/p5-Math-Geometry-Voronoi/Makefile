@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Math-Geometry-Voronoi
 PORTVERSION=	1.3
 PORTREVISION=	2

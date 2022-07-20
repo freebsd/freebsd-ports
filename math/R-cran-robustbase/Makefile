@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	robustbase
 DISTVERSION=	0.95-0
 CATEGORIES=	math

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	ash
 DISTVERSION=	1.0-15
 CATEGORIES=	math

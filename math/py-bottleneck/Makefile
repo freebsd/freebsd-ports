@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	bottleneck
 PORTVERSION=	1.3.5
 CATEGORIES=	math python

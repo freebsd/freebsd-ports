@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	gym-notices
 PORTVERSION=	0.0.7
 CATEGORIES=	math python

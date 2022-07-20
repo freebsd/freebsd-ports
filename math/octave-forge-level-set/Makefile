@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-
 PORTNAME=	octave-forge-level-set
 PORTVERSION=	0.3.0
 PORTREVISION=	16

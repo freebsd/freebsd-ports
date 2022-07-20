@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	plastex
 PORTVERSION=	2.1
 CATEGORIES=	math python

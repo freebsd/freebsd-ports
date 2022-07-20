@@ -1,5 +1,3 @@
-# Created by: Anton Shterenlikht <mexas@bris.ac.uk>
-
 PORTNAME=	cmlib
 PORTVERSION=	3.0
 PORTREVISION=	8

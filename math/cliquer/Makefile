@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	cliquer
 PORTVERSION=	1.22
 DISTVERSIONPREFIX=	v

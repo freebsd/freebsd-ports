@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Math-Bezier
 PORTVERSION=	0.01
 PORTREVISION=	1

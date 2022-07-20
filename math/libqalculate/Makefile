@@ -1,5 +1,3 @@
-# Created by: Sergey Akifyev <asa@agava.com>
-
 PORTNAME=	libqalculate
 PORTVERSION=	4.2.0
 CATEGORIES=	math

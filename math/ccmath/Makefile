@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	ccmath
 PORTVERSION=	2.2.1
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	glpk
 DISTVERSION=	5.0
 CATEGORIES=	math

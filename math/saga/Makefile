@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	saga
 PORTVERSION=	8.3.0
 CATEGORIES=	math

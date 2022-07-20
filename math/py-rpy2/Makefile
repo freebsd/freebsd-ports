@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	rpy2
 PORTVERSION=	3.5.2
 CATEGORIES=	math python

@@ -1,5 +1,3 @@
-# Created by: Kay Lehmann <kay_lehmann@web.de>
-
 PORTNAME=	labplot
 DISTVERSION=	2.8.2
 PORTREVISION=	18

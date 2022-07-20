@@ -1,5 +1,3 @@
-# Created by: Nakata Maho <maho@FreeBSD.org>
-
 PORTNAME=	octave-forge
 PORTVERSION=	20210221
 PORTREVISION=	2

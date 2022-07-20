@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	AI-Perceptron
 PORTVERSION=	1.0
 PORTREVISION=	1

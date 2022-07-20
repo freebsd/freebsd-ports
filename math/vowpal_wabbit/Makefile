@@ -1,5 +1,3 @@
-# Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-
 PORTNAME=	vowpal_wabbit
 PORTVERSION=	7.10
 PORTREVISION=	18

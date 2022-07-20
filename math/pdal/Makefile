@@ -1,5 +1,3 @@
-# Created by: bart <lbartoletti@FreeBSD.org>
-
 PORTNAME=	pdal
 DISTVERSION=	2.3.0
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Math-Prime-Util-GMP
 PORTVERSION=	0.52
 CATEGORIES=	math perl5

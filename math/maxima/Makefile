@@ -1,5 +1,3 @@
-# Created by: Scott Flatman <sf@dsinw.com>
-
 PORTNAME=	maxima
 PORTVERSION=	5.46.0
 PORTREVISION=	4

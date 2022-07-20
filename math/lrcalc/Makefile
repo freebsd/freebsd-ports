@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	lrcalc
 PORTVERSION=	2.1
 CATEGORIES=	math

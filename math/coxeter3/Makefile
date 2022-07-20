@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	coxeter
 PORTVERSION=	3.1.20210124
 CATEGORIES=	math

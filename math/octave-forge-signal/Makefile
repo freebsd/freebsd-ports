@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-signal
 PORTVERSION=	1.4.2
 CATEGORIES=	math

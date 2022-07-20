@@ -1,5 +1,3 @@
-# Created by: Edwin Groothuis <edwin@mavetju.org>
-
 PORTNAME=	rpcalc
 PORTVERSION=	0.8.2
 PORTREVISION=	8

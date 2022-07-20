@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Math-GMP
 PORTVERSION=	2.25
 CATEGORIES=	math perl5

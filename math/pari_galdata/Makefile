@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	galdata
 DISTVERSION=	2008-04-11
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Piotr Rybicki <meritus@innervision.pl>
-
 PORTNAME=	Math_BigInteger
 PORTVERSION=	1.0.3
 CATEGORIES=	math pear

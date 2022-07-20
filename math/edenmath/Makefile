@@ -1,5 +1,3 @@
-# Created by: gurkan@phys.ethz.ch
-
 PORTNAME=	edenmath
 PORTVERSION=	1.1.1
 PORTREVISION=	11

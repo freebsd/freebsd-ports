@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-bim
 PORTVERSION=	1.1.5
 PORTREVISION=	16

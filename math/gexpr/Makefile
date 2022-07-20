@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gexpr
 PORTVERSION=	2.0.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-video
 PORTVERSION=	2.0.2
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	primecount
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.3

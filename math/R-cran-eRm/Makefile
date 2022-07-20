@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	eRm
 DISTVERSION=	1.0-2
 CATEGORIES=	math

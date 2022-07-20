@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	spar
 PORTVERSION=	0.5.10
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	XLConnect
 PORTVERSION=	1.0.5
 CATEGORIES=	math

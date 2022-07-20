@@ -1,5 +1,3 @@
-# Created by: Dylan Simon <dylan@dylex.net>
-
 PORTNAME=	orpie
 PORTVERSION=	1.5.2
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	MCMCpack
 DISTVERSION=	1.6-3
 CATEGORIES=	math

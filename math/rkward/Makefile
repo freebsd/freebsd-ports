@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	rkward
 PORTVERSION=	0.7.4
 CATEGORIES=	math

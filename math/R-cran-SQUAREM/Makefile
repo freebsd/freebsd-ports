@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	SQUAREM
 DISTVERSION=	2021.1
 CATEGORIES=	math

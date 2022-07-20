@@ -1,5 +1,3 @@
-# Created by: Maxime Henrion <mux@FreeBSD.org>
-
 PORTNAME=	Math-BigInt-GMP
 PORTVERSION=	1.6011
 CATEGORIES=	math perl5

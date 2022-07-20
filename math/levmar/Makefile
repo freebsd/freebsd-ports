@@ -1,5 +1,3 @@
-# Created by: Eijiro Shibusawa <ej-sib@ice.uec.ac.jp>
-
 PORTNAME=	levmar
 PORTVERSION=	2.6
 PORTREVISION=	14

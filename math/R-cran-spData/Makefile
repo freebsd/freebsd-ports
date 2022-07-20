@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	spData
 PORTVERSION=	2.0.1
 CATEGORIES=	math

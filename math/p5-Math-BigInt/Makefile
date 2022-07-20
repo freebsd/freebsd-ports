@@ -1,5 +1,3 @@
-# Created by: tobez
-
 PORTNAME=	Math-BigInt
 PORTVERSION=	1.999837
 CATEGORIES=	math perl5

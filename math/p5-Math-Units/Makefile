@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-Units
 PORTVERSION=	1.3
 PORTREVISION=	1

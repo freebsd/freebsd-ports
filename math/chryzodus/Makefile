@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	chryzodus
 PORTVERSION=	0.32
 DISTVERSIONSUFFIX=	-src

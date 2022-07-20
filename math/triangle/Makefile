@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	triangle
 PORTVERSION=	1.6
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Olivier Duchateau
-
 PORTNAME=	xfce4-calculator-plugin
 PORTVERSION=	0.7.1
 PORTREVISION=	1

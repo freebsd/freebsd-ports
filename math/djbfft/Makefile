@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	djbfft
 PORTVERSION=	0.76
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Peter Pentchev <roam@FreeBSD.org>
-
 PORTNAME=	gecode
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	6.3.0

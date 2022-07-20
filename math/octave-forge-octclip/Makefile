@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-octclip
 PORTVERSION=	2.0.1
 PORTREVISION=	3

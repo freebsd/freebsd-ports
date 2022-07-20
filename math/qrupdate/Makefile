@@ -1,5 +1,3 @@
-# Created by: Robert Jenssen
-
 PORTNAME=	qrupdate
 PORTVERSION=	1.1.2
 PORTREVISION=	11

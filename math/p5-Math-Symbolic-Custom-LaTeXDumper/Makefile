@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-Symbolic-Custom-LaTeXDumper
 PORTVERSION=	0.208
 PORTREVISION=	1

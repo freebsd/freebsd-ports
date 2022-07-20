@@ -1,5 +1,3 @@
-# Created by: Pietro Cerutti <gahr@FreeBSD.org>
-
 PORTNAME=	ogdf
 PORTVERSION=	2020.02
 CATEGORIES=	math

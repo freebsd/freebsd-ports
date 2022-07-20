@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-
 PORTNAME=	octave-forge-optics
 PORTVERSION=	0.1.4
 PORTREVISION=	3

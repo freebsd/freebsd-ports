@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	roman
 PORTVERSION=	3.3
 CATEGORIES=	math python

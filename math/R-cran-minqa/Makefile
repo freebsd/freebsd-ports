@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	minqa
 PORTVERSION=	1.2.4
 PORTREVISION=	5

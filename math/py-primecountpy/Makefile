@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	primecountpy
 PORTVERSION=	0.1.0
 CATEGORIES=	math python

@@ -1,5 +1,3 @@
-# Created by: Waitman Gobble <waitman@waitman.net>
-
 PORTNAME=	secp256k1
 PORTVERSION=	0.13.2
 CATEGORIES=	math python

@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	pynac
 PORTVERSION=	0.7.29
 PORTREVISION=	1

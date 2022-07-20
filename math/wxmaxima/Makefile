@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	wxmaxima
 PORTVERSION=	22.05.0
 DISTVERSIONPREFIX=	Version-

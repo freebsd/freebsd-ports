@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Math-Random-ISAAC-XS
 PORTVERSION=	1.004
 PORTREVISION=	3

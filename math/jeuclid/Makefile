@@ -1,5 +1,3 @@
-# Created by: rfarmer@predatorlabs.net
-
 PORTNAME=	jeuclid
 PORTVERSION=	3.1.9
 CATEGORIES=	math java

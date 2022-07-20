@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	magic
 DISTVERSION=	1.6-0
 CATEGORIES=	math

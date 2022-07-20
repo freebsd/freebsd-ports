@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	Formula
 DISTVERSION=	1.2-4
 CATEGORIES=	math

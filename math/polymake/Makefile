@@ -1,5 +1,3 @@
-# Created by: Ewgenij Gawrilow <gawrilow@math.tu-berlin.de>
-
 PORTNAME=	polymake
 DISTVERSION=	4.6
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	librdata
 PORTVERSION=	0.1.0.g20210224
 CATEGORIES=	math

@@ -1,5 +1,3 @@
-# Created by: mr
-
 PORTNAME=	oleo
 PORTVERSION=	1.99.16
 PORTREVISION=	15

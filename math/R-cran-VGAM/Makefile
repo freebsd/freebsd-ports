@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	VGAM
 DISTVERSION=	1.1-6
 CATEGORIES=	math

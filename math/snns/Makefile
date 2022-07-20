@@ -1,5 +1,3 @@
-# Created by: reg@shale.csir.co.za
-
 PORTNAME=	snns
 PORTVERSION=	4.3
 PORTREVISION=	1

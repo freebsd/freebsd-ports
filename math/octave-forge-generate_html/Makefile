@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-generate_html
 PORTVERSION=	0.3.3
 CATEGORIES=	math

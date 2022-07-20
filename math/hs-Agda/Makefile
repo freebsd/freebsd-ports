@@ -1,5 +1,3 @@
-# Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-
 PORTNAME=	Agda
 PORTVERSION=	2.6.2.2
 PORTREVISION=	1

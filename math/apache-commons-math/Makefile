@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahmanh <5u623l20@gmail.com>
-
 PORTNAME=	commons-math
 PORTVERSION=	3.6.1
 PORTREVISION=	1

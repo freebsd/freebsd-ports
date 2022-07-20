@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	nlopt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.1

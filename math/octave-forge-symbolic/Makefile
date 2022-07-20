@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-symbolic
 PORTVERSION=	3.0.0
 CATEGORIES=	math

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	prime
 PORTVERSION=	0.1.2
 CATEGORIES=	math rubygems

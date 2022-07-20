@@ -1,5 +1,3 @@
-# Created by: Alessando Sagratini <ale_sagra@hotmail.com>
-
 PORTNAME=	mcsim
 PORTVERSION=	6.2.0
 PORTREVISION=	2

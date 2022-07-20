@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	pyhull
 DISTVERSION=	2015.2.1
 PORTREVISION=	2

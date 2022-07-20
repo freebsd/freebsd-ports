@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	mate-calc
 PORTVERSION=	1.26.0
 PORTREVISION=	2

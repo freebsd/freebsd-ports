@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	cypari2
 PORTVERSION=	2.1.2
 CATEGORIES=	math python

@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	exactRankTests
 DISTVERSION=	0.8-35
 CATEGORIES=	math

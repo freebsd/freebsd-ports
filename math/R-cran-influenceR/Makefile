@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	influenceR
 PORTVERSION=	0.1.0.1
 CATEGORIES=	math

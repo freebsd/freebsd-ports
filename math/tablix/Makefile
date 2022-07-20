@@ -1,5 +1,3 @@
-# Created by: amir.husaini@gmail.com
-
 PORTNAME=	tablix2
 PORTVERSION=	0.3.5
 PORTREVISION=	8

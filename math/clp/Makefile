@@ -1,5 +1,3 @@
-# Created by: Robin Schilham
-
 PORTNAME=	Clp
 DISTVERSION=	1.17.6
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	hdbscan
 PORTVERSION=	0.8.28
 CATEGORIES=	math python

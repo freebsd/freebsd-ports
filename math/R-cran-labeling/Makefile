@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	labeling
 PORTVERSION=	0.4.2
 CATEGORIES=	math

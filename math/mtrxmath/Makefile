@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	mtrxmath
 PORTVERSION=	1.0.2
 CATEGORIES=	math

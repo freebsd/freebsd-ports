@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	pwr
 DISTVERSION=	1.3-0
 CATEGORIES=	math

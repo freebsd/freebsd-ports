@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	pycosat
 PORTVERSION=	0.6.3
 CATEGORIES=	math python

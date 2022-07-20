@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-
 PORTNAME=	sage
 PORTVERSION=	9.2
 PORTREVISION=	27

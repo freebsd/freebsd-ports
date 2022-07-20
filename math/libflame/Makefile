@@ -1,5 +1,3 @@
-# Created by: bf@FreeBSD.org
-
 PORTNAME=	libflame
 DISTVERSION=	5.2.0
 CATEGORIES=	math

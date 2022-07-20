@@ -1,5 +1,3 @@
-# Created by: bf <bf2006a@yahoo.com>
-
 PORTNAME=	rngstreams
 PORTVERSION=	1.0.1
 PORTREVISION=	2

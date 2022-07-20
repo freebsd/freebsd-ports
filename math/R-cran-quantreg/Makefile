@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	quantreg
 PORTVERSION=	5.93
 CATEGORIES=	math

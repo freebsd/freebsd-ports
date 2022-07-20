@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	altgraph
 PORTVERSION=	0.15
 CATEGORIES=	math python

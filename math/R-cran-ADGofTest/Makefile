@@ -1,5 +1,3 @@
-# Created by: Devin Teske <dteske@FreeBSD.org>
-
 PORTNAME=	ADGofTest
 PORTVERSION=	0.3
 PORTREVISION=	1

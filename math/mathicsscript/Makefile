@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	mathicsscript
 PORTVERSION=	4.0.0
 CATEGORIES=	math python

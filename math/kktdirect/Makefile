@@ -1,5 +1,3 @@
-# Created by: bf@FreeBSD.org
-
 PORTNAME=	kktdirect
 PORTVERSION=	0.5
 PORTREVISION=	12

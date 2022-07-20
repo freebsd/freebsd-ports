@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	eukleides
 PORTVERSION=	1.5.4
 PORTREVISION=	6

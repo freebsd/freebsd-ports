@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	yacas
 PORTVERSION=	1.9.1
 DISTVERSIONPREFIX=	v

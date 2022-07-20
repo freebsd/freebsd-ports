@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gretl
 PORTVERSION=	2022a
 PORTREVISION=	2

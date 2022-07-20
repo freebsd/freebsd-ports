@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	plot3D
 PORTVERSION=	1.4
 CATEGORIES=	math

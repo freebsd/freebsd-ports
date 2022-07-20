@@ -1,5 +1,3 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-
 PORTNAME=	Math-GSL
 PORTVERSION=	0.43
 PORTREVISION=	1

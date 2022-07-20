@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	plplot
 DISTVERSION=	5.15.0
 PORTREVISION=	6

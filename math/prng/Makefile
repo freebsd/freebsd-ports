@@ -1,5 +1,3 @@
-# Created by: bf <bf@FreeBSD.org>
-
 PORTNAME=	prng
 DISTVERSION=	3.0.2
 PORTREVISION=	3

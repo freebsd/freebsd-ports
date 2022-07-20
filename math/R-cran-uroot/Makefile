@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	uroot
 DISTVERSION=	2.1-2
 CATEGORIES=	math

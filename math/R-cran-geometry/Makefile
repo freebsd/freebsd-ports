@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	geometry
 DISTVERSION=	0.4.6.1
 CATEGORIES=	math

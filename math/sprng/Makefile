@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	SPRNG
 PORTVERSION=	5.0
 CATEGORIES=	math science

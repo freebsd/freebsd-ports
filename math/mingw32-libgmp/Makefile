@@ -1,5 +1,3 @@
-# Created by: Timothy Bourke <timbob@bigpond.com>
-
 PORTNAME=	libgmp
 PORTVERSION=	6.0.0
 PORTREVISION=	3

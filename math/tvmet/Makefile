@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	tvmet
 PORTVERSION=	1.7.2
 PORTREVISION=	1

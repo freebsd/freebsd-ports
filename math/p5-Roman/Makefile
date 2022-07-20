@@ -1,5 +1,3 @@
-# Created by: Philip Paeps <philip@FreeBSD.org>
-
 PORTNAME=	Roman
 PORTVERSION=	1.24
 CATEGORIES=	math perl5

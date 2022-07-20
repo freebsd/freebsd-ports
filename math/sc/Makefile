@@ -1,5 +1,3 @@
-# Created by: Heinz Tschabitscher
-
 PORTNAME=	sc
 PORTVERSION=	7.16
 PORTREVISION=	3

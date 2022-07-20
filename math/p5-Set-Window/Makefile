@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Set-Window
 PORTVERSION=	1.01
 PORTREVISION=	1

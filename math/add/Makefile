@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	add
 PORTVERSION=	20220117
 CATEGORIES=	math

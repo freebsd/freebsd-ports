@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <dieterich@ogolem.org>
-
 PORTNAME=	clblas
 PORTVERSION=	2.10
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Rainer Hurling <rhurlin@gwdg.de>
-
 PORTNAME=	matplotlib-scalebar
 PORTVERSION=	0.8.1
 CATEGORIES=	math python

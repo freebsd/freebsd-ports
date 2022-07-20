@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	Statistics-Forecast
 PORTVERSION=	0.3
 PORTREVISION=	1

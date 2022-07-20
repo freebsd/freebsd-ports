@@ -1,5 +1,3 @@
-# Created by: Nicola Vitale <nivit@email.it>
-
 PORTNAME=	asymptote
 PORTVERSION=	2.80
 PORTREVISION=	1

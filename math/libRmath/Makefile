@@ -1,5 +1,3 @@
-# Created by: Eric van Gyzen <vangyzen@stat.duke.edu>
-
 PORTNAME=	libRmath
 DISTVERSION=	4.1.2
 CATEGORIES=	math lang

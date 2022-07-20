@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	jts
 DISTVERSION=	1.18.1
 DISTVERSIONPREFIX=	jts-

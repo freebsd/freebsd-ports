@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	brial
 PORTVERSION=	1.2.10
 CATEGORIES=	math python

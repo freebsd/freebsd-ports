@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	pplpy
 PORTVERSION=	0.8.7
 PORTREVISION=	2

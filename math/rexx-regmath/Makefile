@@ -1,5 +1,3 @@
-# Created by: Bob Eager <bob@eager.cx>
-
 PORTNAME=	regmath
 PORTVERSION=	1.00
 PORTREVISION=	1

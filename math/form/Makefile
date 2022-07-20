@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	form
 PORTVERSION=	4.2.1
 PORTREVISION=	1

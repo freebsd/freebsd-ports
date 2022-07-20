@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-mechanics
 PORTVERSION=	1.3.1
 PORTREVISION=	20

@@ -1,5 +1,3 @@
-# Created by: Pedro Giffuni
-
 PORTNAME=	scatterplot3d
 DISTVERSION=	0.3-41
 PORTREVISION=	2

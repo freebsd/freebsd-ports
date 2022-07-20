@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Math-SymbolicX-Error
 PORTVERSION=	1.01
 PORTREVISION=	1

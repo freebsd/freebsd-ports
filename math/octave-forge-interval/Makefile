@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-interval
 PORTVERSION=	3.2.1
 PORTREVISION=	1

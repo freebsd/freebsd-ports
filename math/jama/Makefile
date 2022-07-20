@@ -1,5 +1,3 @@
-# Created by: Pedro F. Giffuni <giffunip@asme.org>
-
 PORTNAME=	jama
 PORTVERSION=	1.2.5
 CATEGORIES=	math devel

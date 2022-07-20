@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Statistics-R
 PORTVERSION=	0.34
 PORTREVISION=	4

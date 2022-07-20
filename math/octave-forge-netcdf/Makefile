@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-
 PORTNAME=	octave-forge-netcdf
 PORTVERSION=	1.0.14
 PORTREVISION=	5

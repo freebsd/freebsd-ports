@@ -1,5 +1,3 @@
-# Created by: Johannes Dieterich <dieterich@ogolem.org>
-
 PORTNAME=	clfft
 PORTVERSION=	2.12.2
 DISTVERSIONPREFIX=	v

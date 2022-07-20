@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-outliers
 PORTVERSION=	0.13.9
 PORTREVISION=	27

@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	physcalc
 PORTVERSION=	2.4
 PORTREVISION=	1

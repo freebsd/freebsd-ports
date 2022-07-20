@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	units
 DISTVERSION=	0.8-0
 CATEGORIES=	math

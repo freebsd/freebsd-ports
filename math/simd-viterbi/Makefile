@@ -1,5 +1,3 @@
-# Created by: Thomas Sandford <freebsduser@paradisegreen.co.uk>
-
 PORTNAME=	simd-viterbi
 PORTVERSION=	2.0.3
 PORTREVISION=	1

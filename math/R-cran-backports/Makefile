@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	backports
 PORTVERSION=	1.4.1
 CATEGORIES=	math

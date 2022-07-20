@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-
 PORTNAME=	aamath
 PORTVERSION=	0.3
 PORTREVISION=	4

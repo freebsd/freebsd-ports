@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	irlba
 PORTVERSION=	2.3.5
 CATEGORIES=	math

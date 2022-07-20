@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	mprime
 PORTVERSION=	30.7b9
 CATEGORIES=	math benchmarks net

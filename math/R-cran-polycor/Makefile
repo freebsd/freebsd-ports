@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	polycor
 DISTVERSION=	0.8-1
 CATEGORIES=	math

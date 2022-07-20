@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	gym
 PORTVERSION=	0.25.0
 CATEGORIES=	math python

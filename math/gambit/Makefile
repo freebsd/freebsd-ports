@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	gambit
 DISTVERSION=	16.0.2
 CATEGORIES=	math

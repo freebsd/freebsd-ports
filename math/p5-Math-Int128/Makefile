@@ -1,5 +1,3 @@
-# Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
-
 PORTNAME=	Math-Int128
 PORTVERSION=	0.22
 PORTREVISION=	6

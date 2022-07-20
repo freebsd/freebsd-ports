@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Math-FixedPrecision
 PORTVERSION=	0.21
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-sockets
 PORTVERSION=	1.3.0
 PORTREVISION=	1

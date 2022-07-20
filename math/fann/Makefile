@@ -1,5 +1,3 @@
-# Created by: Tz-Huan Huang <tzhuan@csie.org>
-
 PORTNAME=	fann
 PORTVERSION=	2.2.0
 CATEGORIES=	math science

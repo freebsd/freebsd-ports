@@ -1,5 +1,3 @@
-# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
-
 PORTNAME=	ocamlgraph
 PORTVERSION=	1.8.8
 CATEGORIES=	math

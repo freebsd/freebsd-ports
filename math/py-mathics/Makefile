@@ -1,5 +1,3 @@
-# Created by: Thierry Thomas <thierry@pompo.net>
-
 PORTNAME=	Mathics3
 PORTVERSION=	4.0.0
 PORTREVISION=	2

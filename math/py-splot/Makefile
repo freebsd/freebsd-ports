@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	splot
 PORTVERSION=	1.1.5.post1
 CATEGORIES=	math python

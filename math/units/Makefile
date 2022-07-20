@@ -1,5 +1,3 @@
-# Created by: Jason Harris <jharris@widomaker.com>
-
 PORTNAME=	units
 PORTVERSION=	2.16
 PORTREVISION=	2

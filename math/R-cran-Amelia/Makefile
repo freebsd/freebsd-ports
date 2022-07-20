@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Amelia
 DISTVERSION=	1.8.0
 CATEGORIES=	math

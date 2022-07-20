@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-
 PORTNAME=	octave-forge-multicore
 PORTVERSION=	0.2.15
 PORTREVISION=	27

@@ -1,5 +1,3 @@
-# Created by: Eoin Lawless (eoin@maths.tcd.ie)
-
 PORTNAME=	ParMetis
 PORTVERSION=	4.0.3
 PORTREVISION=	7

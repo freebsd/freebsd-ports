@@ -1,5 +1,3 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	mpfi
 PORTVERSION=	1.5.4
 CATEGORIES=	math

@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@FreeBSD.org>
-
 PORTNAME=	SoPlex
 DISTVERSION=	6.0.0
 PORTREVISION=	1

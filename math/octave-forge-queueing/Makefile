@@ -1,5 +1,3 @@
-# Created by: Stephen Montgomery-Smith <stephen@FreeBSD.edu>
-
 PORTNAME=	octave-forge-queueing
 PORTVERSION=	1.2.7
 PORTREVISION=	3
