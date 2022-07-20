@@ -9,7 +9,7 @@ COMMENT=	Sympathetic string resonator LV2 plugin
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	fatal error: 'linux/auxvec.h' file not found
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64le powerpc64 powerpc # same as in sysutils/libcpuid because libcpuid is bundled in ssr
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
