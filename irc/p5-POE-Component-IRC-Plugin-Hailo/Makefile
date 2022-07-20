@@ -1,5 +1,3 @@
-# Created by: milki <milki@rescomp.berkeley.edu>
-
 PORTNAME=	POE-Component-IRC-Plugin-Hailo
 PORTVERSION=	0.18
 PORTREVISION=	1

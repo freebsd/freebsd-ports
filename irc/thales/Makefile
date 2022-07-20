@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <tux@pinguru.net>
-
 PORTNAME=	thales
 PORTVERSION=	1.0
 PORTREVISION=	5

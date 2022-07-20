@@ -1,5 +1,3 @@
-# Created by: pgl@instinct.org
-
 PORTNAME=	pisg
 PORTVERSION=	0.73
 PORTREVISION=	1

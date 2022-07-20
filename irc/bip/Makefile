@@ -1,5 +1,3 @@
-# Created by: Chess Griffin <chess@chessgriffin.com>
-
 PORTNAME=	bip
 DISTVERSION=	0.9.0-rc4
 CATEGORIES=	irc

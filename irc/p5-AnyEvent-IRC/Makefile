@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	AnyEvent-IRC
 PORTVERSION=	0.97
 PORTREVISION=	1

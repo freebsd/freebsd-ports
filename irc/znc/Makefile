@@ -1,5 +1,3 @@
-# Created by: elvstone@gmail.com
-
 PORTNAME=	znc
 PORTVERSION=	1.8.2
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	polari
 PORTVERSION=	42.0
 CATEGORIES=	irc gnome

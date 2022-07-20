@@ -1,5 +1,3 @@
-# Created by: Maxim Ignatenko
-
 PORTNAME=	irc2dc
 PORTVERSION=	0.1
 CATEGORIES=	irc net-p2p

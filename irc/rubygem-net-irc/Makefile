@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-
 PORTNAME=	net-irc
 PORTVERSION=	0.0.9
 PORTREVISION=	1

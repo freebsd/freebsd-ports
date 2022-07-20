@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@inerd.com>
-
 PORTNAME=	ircd-ratbox
 PORTVERSION=	3.0.10
 PORTREVISION=	7

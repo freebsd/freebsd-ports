@@ -1,5 +1,3 @@
-# Created by: Jase Thew <freebsd@beardz.net>
-
 PORTNAME=	POE-Component-IRC-Plugin-Blowfish
 PORTVERSION=	0.01
 PORTREVISION=	1

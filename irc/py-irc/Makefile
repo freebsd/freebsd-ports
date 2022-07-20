@@ -1,5 +1,3 @@
-# Created by: Hye-Shik Chang
-
 PORTNAME=	irc
 PORTVERSION=	20.1.0
 CATEGORIES=	irc python

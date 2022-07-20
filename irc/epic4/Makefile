@@ -1,5 +1,3 @@
-# Created by: Ben Hutchinson <benhutch@xfiles.org.uk>
-
 PORTNAME=	epic4
 PORTVERSION=	2.10.10
 CATEGORIES=	irc

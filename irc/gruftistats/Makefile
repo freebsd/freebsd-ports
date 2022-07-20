@@ -1,5 +1,3 @@
-# Created by: Matthew West <mwest@uct.ac.za>
-
 PORTNAME=	gruftistats
 PORTVERSION=	0.2.4
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	POE-Component-IRC
 PORTVERSION=	6.93
 CATEGORIES=	irc devel perl5

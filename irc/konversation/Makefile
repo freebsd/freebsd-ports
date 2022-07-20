@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	konversation
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	irc kde kde-applications

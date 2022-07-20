@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tim@bishnet.net>
-
 PORTNAME=	pircbot
 PORTVERSION=	1.5.0
 PORTREVISION=	1

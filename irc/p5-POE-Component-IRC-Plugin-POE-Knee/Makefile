@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	POE-Component-IRC-Plugin-POE-Knee
 PORTVERSION=	1.12
 CATEGORIES=	irc perl5 devel

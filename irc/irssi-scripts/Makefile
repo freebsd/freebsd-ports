@@ -1,5 +1,3 @@
-# Created by: Alexey Mikhailov <karma@ez.pereslavl.ru>
-
 PORTNAME=	irssi-scripts
 PORTVERSION=	20181120
 CATEGORIES=	irc

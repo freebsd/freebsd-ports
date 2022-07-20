@@ -1,5 +1,3 @@
-# Created by: hrs
-
 PORTNAME=	icbirc
 PORTVERSION=	2.1
 CATEGORIES=	irc

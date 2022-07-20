@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@chc-chimes.com>
-
 PORTNAME=	muh
 PORTVERSION=	2.2a
 CATEGORIES=	irc

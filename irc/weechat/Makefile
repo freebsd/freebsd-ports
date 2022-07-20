@@ -1,5 +1,3 @@
-# Created by: clement
-
 PORTNAME=	weechat
 DISTVERSION=	3.6
 CATEGORIES=	irc

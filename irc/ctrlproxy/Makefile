@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	ctrlproxy
 PORTVERSION=	3.0.8
 PORTREVISION=	9

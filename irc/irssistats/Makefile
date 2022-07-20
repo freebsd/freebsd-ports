@@ -1,5 +1,3 @@
-# Created by: Travis Poppe <tlp@liquidx.org>
-
 PORTNAME=	irssistats
 PORTVERSION=	0.75
 CATEGORIES=	irc

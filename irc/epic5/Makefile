@@ -1,5 +1,3 @@
-# Created by: Josh Paetzel <josh@tcbug.org>
-
 PORTNAME=	epic5
 PORTVERSION=	2.1.7
 PORTREVISION=	1

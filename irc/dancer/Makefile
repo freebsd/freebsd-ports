@@ -1,5 +1,3 @@
-# Created by: Dominic Marks <dom@cus.org.uk>
-
 PORTNAME=	dancer
 PORTVERSION=	4.16
 PORTREVISION=	1

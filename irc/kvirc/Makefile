@@ -1,5 +1,3 @@
-# Created by: Michael Ranner
-
 PORTNAME=	KVIrc
 DISTVERSION=	5.0.0-73
 DISTVERSIONSUFFIX=	-gbdeac0429

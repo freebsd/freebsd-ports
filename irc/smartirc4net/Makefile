@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME=	smartirc4net
 PORTVERSION=	1.1
 PORTREVISION=	1

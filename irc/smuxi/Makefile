@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME=	smuxi
 PORTVERSION=	1.1
 CATEGORIES=	irc

@@ -1,5 +1,3 @@
-# Created by: David Taylor <davidt@yadt.co.uk>
-
 PORTNAME=	ircd-hybrid
 PORTVERSION=	8.2.40
 CATEGORIES=	irc

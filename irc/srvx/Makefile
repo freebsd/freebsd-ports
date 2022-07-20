@@ -1,5 +1,3 @@
-# Created by: Walter Venable <weaseal@hotmail.com>
-
 PORTNAME=	srvx
 PORTVERSION=	1.3.1
 CATEGORIES=	irc net

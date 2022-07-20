@@ -1,5 +1,3 @@
-# Created by: Will Andrews <andrews@technologist.com>
-
 PORTNAME=	ScrollZ
 PORTVERSION=	2.3.1
 DISTVERSIONPREFIX=	${PORTNAME}-

@@ -1,5 +1,3 @@
-# Created by: Timothy Redaelli <drizzt@gufi.org>
-
 PORTNAME=	dcc_send_limiter
 PORTVERSION=	0.8.10
 PORTREVISION=	2

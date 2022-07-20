@@ -1,5 +1,3 @@
-# Created by: Bill Fumerola <billf@chc-chimes.com>
-
 PORTNAME=	bnc
 PORTVERSION=	2.9.4
 CATEGORIES=	irc

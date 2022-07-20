@@ -1,5 +1,3 @@
-# Created by: koji@jet.es
-
 PORTNAME=	onis
 PORTVERSION=	0.8.2
 CATEGORIES=	irc

@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	POE-Component-IRC-Plugin-QueryDNSBL
 PORTVERSION=	1.04
 PORTREVISION=	1

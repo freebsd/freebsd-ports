@@ -1,5 +1,3 @@
-# Created by: Jimbo Bahooli <griffin@blackhole.iceworld.org>
-
 PORTNAME=	bitchx
 PORTVERSION=	1.2.1
 PORTREVISION=	2

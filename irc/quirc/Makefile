@@ -1,5 +1,3 @@
-# Created by: Chris Piazza <cpiazza@FreeBSD.org>
-
 PORTNAME=	quirc
 PORTVERSION=	0.9.84
 PORTREVISION=	6

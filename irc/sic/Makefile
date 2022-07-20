@@ -1,5 +1,3 @@
-# Created by: sec@42.org
-
 PORTNAME=	sic
 PORTVERSION=	0.23a
 CATEGORIES=	irc

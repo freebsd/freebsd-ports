@@ -1,5 +1,3 @@
-# Created by: Julien Laffaye <kimelto@gmail.com>
-
 PORTNAME=	libircclient
 DISTVERSION=	1.10
 CATEGORIES=	irc devel

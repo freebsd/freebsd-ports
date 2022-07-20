@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	quassel
 DISTVERSION=	0.14.0
 CATEGORIES=	irc

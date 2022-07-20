@@ -1,5 +1,3 @@
-# Created by: Walter Venable <weaseal@users.sourceforge.net>
-
 PORTNAME=	undernet-ircu
 PORTVERSION=	2.10.12.19
 CATEGORIES=	irc net

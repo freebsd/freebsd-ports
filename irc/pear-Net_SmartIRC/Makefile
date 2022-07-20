@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Net_SmartIRC
 PORTVERSION=	1.1.14
 CATEGORIES=	irc www pear

@@ -1,5 +1,3 @@
-# Created by: Philippe Audeoud <jadawin@tuxaco.net>
-
 PORTNAME=	irssi-xmpp
 PORTVERSION=	0.54
 CATEGORIES=	irc

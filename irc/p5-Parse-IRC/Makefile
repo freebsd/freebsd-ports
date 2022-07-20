@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	Parse-IRC
 PORTVERSION=	1.22
 CATEGORIES=	irc perl5

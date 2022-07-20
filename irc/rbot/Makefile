@@ -1,5 +1,3 @@
-# Created by: David Bushong <david+ports@bushong.net>
-
 PORTNAME=	rbot
 PORTVERSION=	20160325
 PORTREVISION=	1

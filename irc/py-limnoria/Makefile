@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	limnoria
 PORTVERSION=	2019.09.08
 CATEGORIES=	irc python

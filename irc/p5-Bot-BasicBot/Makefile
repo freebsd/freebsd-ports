@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Bot-BasicBot
 PORTVERSION=	0.93
 CATEGORIES=	irc perl5

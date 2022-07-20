@@ -1,5 +1,3 @@
-# Created by: tdb
-
 PORTNAME=	atheme-services
 PORTVERSION=	7.2.12
 CATEGORIES=	irc net

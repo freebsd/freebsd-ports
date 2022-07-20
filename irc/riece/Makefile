@@ -1,5 +1,3 @@
-# Created by: KIMURA Yasuhiro <yasu@utahime.org>
-
 PORTNAME=	riece
 PORTVERSION=	9.0.0
 PORTREVISION=	17
