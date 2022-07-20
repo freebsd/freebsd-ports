@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	japana
 PORTVERSION=	2.0.6
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: mutoh@openedu.org
-
 PORTNAME=	seaside
 DISTVERSION=	080908-sq39
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: kuriyama
-
 PORTNAME=	chasen
 PORTVERSION=	2.4.5
 PORTREVISION=	2

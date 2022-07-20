@@ -1,5 +1,3 @@
-# Created by: nkazushi@highway.or.jp
-
 PORTNAME=	plain2
 PORTVERSION=	2.54.1
 PORTREVISION=	2

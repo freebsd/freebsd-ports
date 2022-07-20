@@ -1,5 +1,3 @@
-# Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
-
 PORTNAME=	marumoji
 PORTVERSION=	1.0
 PORTREVISION=	11

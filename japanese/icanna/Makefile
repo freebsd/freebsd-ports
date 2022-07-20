@@ -1,5 +1,3 @@
-# Created by: Takayuki Nakao <t@nakao.org>
-
 PORTNAME=	icanna
 PORTVERSION=	0.9.0
 CATEGORIES=	japanese

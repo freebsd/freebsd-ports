@@ -1,5 +1,3 @@
-# Created by: Takefu
-
 PORTNAME=	wordpress
 DISTVERSION=	6.0
 DISTVERSIONSUFFIX=	-ja

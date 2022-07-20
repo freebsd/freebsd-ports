@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	waeijiro-fpw
 PORTVERSION=	1.1
 PORTREVISION=	6

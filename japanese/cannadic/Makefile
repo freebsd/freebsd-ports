@@ -1,5 +1,3 @@
-# Created by: TOGAWA Satoshi <toga@puyo.org>
-
 PORTNAME=	cannadic
 PORTVERSION=	0.95c
 PORTREVISION=	4

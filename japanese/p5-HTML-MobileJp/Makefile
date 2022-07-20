@@ -1,5 +1,3 @@
-# Created by: Masahiro Teramoto <markun@onohara.to>
-
 PORTNAME=	HTML-MobileJp
 PORTVERSION=	0.08
 PORTREVISION=	1

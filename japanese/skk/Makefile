@@ -1,5 +1,3 @@
-# Created by: Makoto Matsushita <matusita@jp.freebsd.org>
-
 PORTNAME=	skk
 PORTVERSION=	9.6
 PORTREVISION=	3

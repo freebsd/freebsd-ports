@@ -1,5 +1,3 @@
-# Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-
 PORTNAME=	gawk
 PORTVERSION=	3.0.6
 PORTREVISION=	1

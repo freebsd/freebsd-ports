@@ -1,5 +1,3 @@
-# Created by: Timothy Beyer <beyert@cs.ucr.edu>
-
 PORTNAME=	tegaki
 PORTVERSION=	0.3
 CATEGORIES=	japanese python

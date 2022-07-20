@@ -1,5 +1,3 @@
-# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-
 PORTNAME=	gsuica
 PORTVERSION=	0.9.1
 PORTREVISION=	4

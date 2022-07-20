@@ -1,5 +1,3 @@
-# Created by: Seth Kingsley <sethk@osd.bsdi.com>
-
 PORTNAME=	kdrill
 PORTVERSION=	6.5
 CATEGORIES=	japanese

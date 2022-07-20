@@ -1,5 +1,3 @@
-# Created by: Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
-
 PORTNAME=	skkserv
 PORTVERSION=	9.6
 PORTREVISION=	6

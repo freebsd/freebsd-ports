@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	Unicode-Japanese
 PORTVERSION=	0.49
 PORTREVISION=	1

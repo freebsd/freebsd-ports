@@ -1,5 +1,3 @@
-# Created by: Hyper NIKKI System Project <hnsmaster@h14m.org>
-
 PORTNAME=	hns
 PORTVERSION=	2.19.9
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	fcitx-anthy
 PORTVERSION=	0.2.3
 PORTREVISION=	1

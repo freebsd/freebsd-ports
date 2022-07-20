@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	wdic-fpw
 PORTVERSION=	1.4
 PORTREVISION=	0

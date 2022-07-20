@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	nethack
 PORTVERSION=	3.4.3
 PORTREVISION=	7

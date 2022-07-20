@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	fumeikai-fpw
 PORTVERSION=	1.0
 PORTREVISION=	1

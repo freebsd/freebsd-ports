@@ -1,5 +1,3 @@
-# Created by: KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-
 PORTNAME=	vftool
 PORTVERSION=	1.2
 PORTREVISION=	1

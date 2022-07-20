@@ -1,5 +1,3 @@
-# Created by: Seiichirou Hiraoka
-
 PORTNAME=	namazu
 PORTVERSION=	1.3.0.11
 PORTREVISION=	1

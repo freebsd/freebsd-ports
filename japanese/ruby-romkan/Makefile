@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	romkan
 PORTVERSION=	0.4
 PORTREVISION=	1

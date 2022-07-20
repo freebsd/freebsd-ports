@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	Text-Kakasi
 PORTVERSION=	2.04
 PORTREVISION=	3

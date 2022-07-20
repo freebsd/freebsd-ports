@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	FreeWnn
 PORTVERSION=	1.1.1.a021
 PORTREVISION=	13

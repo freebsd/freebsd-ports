@@ -1,5 +1,3 @@
-# Created by: ichiro@ichiro.org
-
 CATEGORIES=	japanese
 
 MAINTAINER=	ichiro@ichiro.org

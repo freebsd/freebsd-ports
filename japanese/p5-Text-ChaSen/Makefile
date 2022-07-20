@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	Text-ChaSen
 PORTVERSION=	1.03
 PORTREVISION=	7

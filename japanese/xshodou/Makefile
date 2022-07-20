@@ -1,5 +1,3 @@
-# Created by: Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
-
 PORTNAME=	xshodou
 PORTVERSION=	1.11
 PORTREVISION=	4

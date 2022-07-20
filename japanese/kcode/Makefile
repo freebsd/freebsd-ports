@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	kcode
 PORTVERSION=	1.0
 CATEGORIES=	japanese

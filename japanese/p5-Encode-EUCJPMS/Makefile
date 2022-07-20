@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	Encode-EUCJPMS
 PORTVERSION=	0.07
 PORTREVISION=	3

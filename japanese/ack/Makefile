@@ -1,5 +1,3 @@
-# Created by: Masanori Kiriake <seiken@nbs.co.jp>
-
 PORTNAME=	ack
 PORTVERSION=	1.39
 PORTREVISION=	1

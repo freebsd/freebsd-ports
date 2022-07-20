@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	kasumi
 PORTVERSION=	2.5
 PORTREVISION=	8

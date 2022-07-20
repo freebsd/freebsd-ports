@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	mona
 PORTVERSION=	2.90
 PORTREVISION=	1

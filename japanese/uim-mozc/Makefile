@@ -1,5 +1,3 @@
-# Created by: Koichiro IWAO <meta+ports@vmeta.jp>
-
 PORTREVISION=	5
 PKGNAMEPREFIX=	ja-uim-
 

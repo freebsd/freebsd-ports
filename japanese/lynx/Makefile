@@ -1,5 +1,3 @@
-# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-
 PORTNAME=	lynx
 DISTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}
 CATEGORIES=	japanese www

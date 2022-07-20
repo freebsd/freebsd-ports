@@ -1,5 +1,3 @@
-# Created by: Makoto Matsushita <matusita@jp.freebsd.org>
-
 PORTNAME=	kon2
 PORTVERSION=	0.3
 PORTREVISION=	7

@@ -1,5 +1,3 @@
-# Created by: Daisuke Kawahara <kawahara@pine.kuee.kyoto-u.ac.jp>
-
 PORTNAME=	e2ps
 PORTVERSION=	4.34
 CATEGORIES=	japanese print

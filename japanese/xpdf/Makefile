@@ -1,5 +1,3 @@
-# Created by: MITA Yoshio <mita@FreeBSD.org>
-
 PORTNAME=	xpdf
 PORTVERSION=	4.02
 CATEGORIES=	japanese

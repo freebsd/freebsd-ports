@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	lookup
 PORTVERSION=	1.99.96.20180209
 PORTREVISION=	10

@@ -1,5 +1,3 @@
-# Created by: Seiya Yanagita <s_yanagita@ybb.ne.jp>
-
 PORTNAME=	scim-uim
 PORTVERSION=	0.2.0
 PORTREVISION=	14

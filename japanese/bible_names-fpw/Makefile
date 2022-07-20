@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	bible_names-fpw
 PORTVERSION=	1.1.3
 PORTREVISION=	0

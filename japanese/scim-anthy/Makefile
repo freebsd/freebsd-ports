@@ -1,5 +1,3 @@
-# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-
 PORTNAME=	scim-anthy
 PORTVERSION=	1.2.7
 PORTREVISION=	6

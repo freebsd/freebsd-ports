@@ -1,5 +1,3 @@
-# Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-
 CATEGORIES=	japanese
 
 MAINTAINER=	ports@FreeBSD.org

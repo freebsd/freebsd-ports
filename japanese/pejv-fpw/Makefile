@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	pejv-fpw
 PORTVERSION=	1.0.4
 PORTREVISION=	0

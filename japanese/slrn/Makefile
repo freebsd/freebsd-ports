@@ -1,5 +1,3 @@
-# Created by: Takashi Mega <mega@minz.org>
-
 PORTNAME=	slrn
 PORTVERSION=	0.9.6.2
 CATEGORIES=	japanese news

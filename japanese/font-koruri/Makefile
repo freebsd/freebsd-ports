@@ -1,5 +1,3 @@
-# Created by: Koichiro IWAO <meta@FreeBSD.org>
-
 PORTNAME=	koruri
 PORTVERSION=	20210720
 CATEGORIES=	japanese x11-fonts

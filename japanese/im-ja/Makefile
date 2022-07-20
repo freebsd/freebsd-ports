@@ -1,5 +1,3 @@
-# Created by: Jacques Vidrine <nectar@FreeBSD.org>
-
 PORTNAME=	im-ja
 PORTVERSION=	1.5
 PORTREVISION=	15

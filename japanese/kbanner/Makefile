@@ -1,5 +1,3 @@
-# Created by: sumikawa
-
 PORTNAME=	kbanner
 PORTVERSION=	2.1
 PORTREVISION=	5

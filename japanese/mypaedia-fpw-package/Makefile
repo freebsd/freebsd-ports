@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	mypaedia-fpw-package
 PORTVERSION=	1.0.7
 PORTREVISION=	10

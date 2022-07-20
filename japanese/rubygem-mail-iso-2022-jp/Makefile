@@ -1,5 +1,3 @@
-# Created by: MIHIRA Yoshiro <sanpei@FreeBSD.org>
-
 PORTNAME=	mail-iso-2022-jp
 PORTVERSION=	2.0.9
 CATEGORIES=	japanese mail rubygems

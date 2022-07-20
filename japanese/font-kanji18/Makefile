@@ -1,5 +1,3 @@
-# Created by: Yoshiro MIHIRA <sanpei@sanpei.org>
-
 PORTNAME=	kanji
 PORTVERSION=	1.0
 PORTREVISION=	3

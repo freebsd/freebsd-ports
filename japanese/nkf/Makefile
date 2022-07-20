@@ -1,5 +1,3 @@
-# Created by: asami
-
 PORTNAME=	nkf
 PORTVERSION=	2.1.4
 PORTEPOCH=	1

@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	web1913-fpw
 PORTVERSION=	${WEBFPW_VER}
 PORTREVISION=	0

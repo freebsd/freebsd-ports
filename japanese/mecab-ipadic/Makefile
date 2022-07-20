@@ -1,5 +1,3 @@
-# Created by: TAKATSU Tomonari <tota@rtfm.jp>
-
 PORTNAME=	mecab-ipadic
 DISTVERSION=	2.7.0-20070801
 PORTREVISION=	1

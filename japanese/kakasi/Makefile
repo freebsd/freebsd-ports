@@ -1,5 +1,3 @@
-# Created by: Masafumi NAKANE <max@FreeBSD.org>
-
 PORTNAME=	kakasi
 PORTVERSION=	2.3.5
 PORTREVISION=	3

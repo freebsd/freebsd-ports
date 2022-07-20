@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	ryaku-fpw
 PORTVERSION=	1.0.1
 PORTREVISION=	1

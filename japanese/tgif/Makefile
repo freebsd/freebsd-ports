@@ -1,5 +1,3 @@
-# Created by: Mita Yoshio <mita@jp.FreeBSD.org>
-
 PORTNAME=	tgif
 PORTVERSION=	4.2.2
 PORTREVISION=	1

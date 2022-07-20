@@ -1,5 +1,3 @@
-# Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-
 PORTNAME=	newosaka
 PORTVERSION=	1.0
 CATEGORIES+=	japanese

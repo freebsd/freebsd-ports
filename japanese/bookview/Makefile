@@ -1,5 +1,3 @@
-# Created by: Motoyuki Kasahara <m-kasahr@sra.co.jp>
-
 PORTNAME=	bookview
 PORTVERSION=	3.2.1
 PORTREVISION=	1

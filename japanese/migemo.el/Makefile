@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 PORTNAME=	migemo.el
 PORTVERSION=	1.9.2
 PORTREVISION=	6

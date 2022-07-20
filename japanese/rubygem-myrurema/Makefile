@@ -1,5 +1,3 @@
-# Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-
 PORTNAME=	myrurema
 PORTVERSION=	0.3.5
 CATEGORIES=	japanese rubygems

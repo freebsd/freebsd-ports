@@ -1,5 +1,3 @@
-# Created by: Norikatsu Shigemura <nork@FreeBSD.org>
-
 CATEGORIES=	japanese www
 
 MAINTAINER=	ports@FreeBSD.org

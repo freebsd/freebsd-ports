@@ -1,5 +1,3 @@
-# Created by: Satoshi Taoka <taoka@FreeBSD.org>
-
 PORTNAME=	Wnn7
 PORTVERSION=	2001.10.17
 PORTREVISION=	3

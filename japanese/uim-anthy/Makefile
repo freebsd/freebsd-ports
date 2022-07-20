@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-
 CATEGORIES=	japanese
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-anthy-nox11

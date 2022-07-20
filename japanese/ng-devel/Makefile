@@ -1,5 +1,3 @@
-# Created by: Kawaguti Ginga <ginga-freebsd@ginganet.org>
-
 PORTNAME=	ng
 DISTVERSION=	1.5beta1
 CATEGORIES=	japanese editors

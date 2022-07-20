@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	esecanna
 PORTVERSION=	1.0.1
 PORTREVISION=	6

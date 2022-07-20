@@ -1,5 +1,3 @@
-# Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-
 PORTNAME=	esecanna-module-wnn6
 PORTVERSION=	1.0.0
 PORTREVISION=	4

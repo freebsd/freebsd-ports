@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@cs.ucdavis.edu)
-
 PORTNAME=	plan
 PORTVERSION=	1.9
 PORTREVISION=	2

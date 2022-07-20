@@ -1,5 +1,3 @@
-# Created by: IWASHITA Yoji <shuna@pop16.odn.ne.jp>
-
 PORTNAME=	celrw
 PORTVERSION=	0.16
 CATEGORIES=	japanese

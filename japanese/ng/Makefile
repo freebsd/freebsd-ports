@@ -1,5 +1,3 @@
-# Created by: Kawaguti Ginga <ginga@athena.club.ne.jp>
-
 PORTNAME=	ng
 PORTVERSION=	1.4.4
 PORTREVISION=	2

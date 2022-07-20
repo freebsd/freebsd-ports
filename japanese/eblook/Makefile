@@ -1,5 +1,3 @@
-# Created by: Shigeyuki Fukushima <shige@FreeBSD.org>
-
 PORTNAME=	eblook
 PORTVERSION=	1.6.1
 PORTREVISION=	10

@@ -1,5 +1,3 @@
-# Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-
 PORTNAME=	groff
 PORTVERSION=	1.18.1
 DISTVERSIONSUFFIX=	.1

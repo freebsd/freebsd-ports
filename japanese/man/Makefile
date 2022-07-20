@@ -1,5 +1,3 @@
-# Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-
 PORTNAME=	man
 PORTVERSION=	1.1j
 PORTREVISION=	9

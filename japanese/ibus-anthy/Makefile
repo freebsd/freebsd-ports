@@ -1,5 +1,3 @@
-# Created by: Daichi GOTO <daichi@FreeBSD.org>
-
 PORTNAME=	ibus-anthy
 PORTVERSION=	1.5.11
 CATEGORIES=	japanese

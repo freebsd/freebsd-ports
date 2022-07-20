@@ -1,5 +1,3 @@
-# Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-
 PORTNAME=	gskk
 PORTVERSION=	20041208
 CATEGORIES=	japanese

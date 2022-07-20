@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-
 CATEGORIES=	japanese
 
 MASTERDIR=	${.CURDIR}/../../x11/eterm
