@@ -10,8 +10,9 @@ COMMENT=	Maximum independent sets and vertex covers of large sparse graphs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv6=	fatal error: 'omp.h' file not found
-BROKEN_armv7=	fatal error: 'omp.h' file not found
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 USES=		cmake
 USE_LDCONFIG=	yes
@@ -25,10 +26,4 @@ PLIST_FILES=	bin/graphchecker \
 		bin/redumis \
 		bin/sort_adjacencies
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1301000
-BROKEN_riscv64=	fatal error: 'omp.h' file not found
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
