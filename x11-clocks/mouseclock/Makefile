@@ -1,5 +1,3 @@
-# Created by: FURUSAWA, Kazuhisa <kazu@jp.freebsd.org>
-
 PORTNAME=	mouseclock
 PORTVERSION=	1.0
 PORTREVISION=	5

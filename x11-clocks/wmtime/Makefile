@@ -1,5 +1,3 @@
-# Created by: Rich Neswold <rneswold@mcs.net>
-
 PORTNAME=	wmtime
 PORTVERSION=	1.0b2
 PORTREVISION=	2

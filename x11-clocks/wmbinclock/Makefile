@@ -1,5 +1,3 @@
-# Created by: Harold Gutch <logix@foobar.franken.de>
-
 PORTNAME=	wmbinclock
 PORTVERSION=	0.51
 CATEGORIES=	x11-clocks windowmaker

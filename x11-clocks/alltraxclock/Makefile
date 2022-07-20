@@ -1,5 +1,3 @@
-# Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
-
 PORTNAME=	alltraxclock
 PORTVERSION=	2.0.2
 PORTREVISION=	12

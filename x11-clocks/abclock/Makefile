@@ -1,5 +1,3 @@
-# Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
-
 PORTNAME=	abclock
 PORTVERSION=	1.0d
 PORTREVISION=	4

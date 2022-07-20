@@ -1,5 +1,3 @@
-# Created by: Martin Wilke (miwi@FreeBSD.org)
-
 PORTNAME=	xfce4-time-out-plugin
 PORTVERSION=	1.1.2
 CATEGORIES=	x11-clocks xfce

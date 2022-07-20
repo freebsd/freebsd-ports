@@ -1,5 +1,3 @@
-# Created by: Brian Handy <handy@physics.montana.edu>
-
 PORTNAME=	astime
 PORTVERSION=	2.8
 PORTREVISION=	2

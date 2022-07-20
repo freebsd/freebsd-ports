@@ -1,5 +1,3 @@
-# Created by: Martin Wilke (miwi@FreeBSD.org)
-
 PORTNAME=	xfce4-datetime-plugin
 PORTVERSION=	0.8.1
 PORTREVISION=	1
