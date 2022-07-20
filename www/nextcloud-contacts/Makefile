@@ -1,5 +1,5 @@
 PORTNAME=	contacts
-PORTVERSION=	4.1.1
+PORTVERSION=	4.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
@@ -11,7 +11,6 @@ MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Contacts app for Nextcloud
 
 LICENSE=	AGPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=20:www/nextcloud@${PHP_FLAVOR}
 
