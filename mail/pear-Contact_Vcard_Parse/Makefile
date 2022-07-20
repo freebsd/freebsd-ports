@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Contact_Vcard_Parse
 PORTVERSION=	1.32.0
 CATEGORIES=	mail www pear

@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	bayespam
 PORTVERSION=	0.9.2
 PORTREVISION=	1

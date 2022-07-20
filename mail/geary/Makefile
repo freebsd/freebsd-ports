@@ -1,5 +1,3 @@
-# Created by: Gustau Perez <gustau.perez@gmail.com>
-
 PORTNAME=	geary
 PORTVERSION=	40.0
 PORTREVISION=	4

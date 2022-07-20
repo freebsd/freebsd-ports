@@ -1,5 +1,3 @@
-# Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-
 PORTNAME=	premailer-rails
 PORTVERSION=	1.10.3
 CATEGORIES=	mail rubygems

@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	multilogin
 PORTVERSION=	2.4
 PORTREVISION=	3

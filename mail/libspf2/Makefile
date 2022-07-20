@@ -1,5 +1,3 @@
-# Created by: snowchyld
-
 PORTNAME=	libspf2
 PORTVERSION=	1.2.11
 CATEGORIES=	mail

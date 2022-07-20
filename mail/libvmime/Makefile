@@ -1,5 +1,3 @@
-# Created by: delphij@FreeBSD.org
-
 PORTNAME=	libvmime
 PORTVERSION=	0.9.2
 DISTVERSIONPREFIX=	v

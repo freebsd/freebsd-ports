@@ -1,5 +1,3 @@
-# Created by: Attila Nagy <bra@fsn.hu>
-
 PORTNAME=	mailutils
 PORTVERSION=	3.15
 CATEGORIES=	mail

@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Mail-SendEasy
 PORTVERSION=	1.2
 PORTREVISION=	1

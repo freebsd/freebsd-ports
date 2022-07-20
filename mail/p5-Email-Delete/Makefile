@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Email-Delete
 PORTVERSION=	2.002
 CATEGORIES=	mail perl5

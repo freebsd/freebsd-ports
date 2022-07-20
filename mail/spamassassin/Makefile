@@ -1,5 +1,3 @@
-# Created by: Anthony Kim
-
 PORTNAME=	spamassassin
 PORTVERSION=	3.4.6
 CATEGORIES?=	mail perl5

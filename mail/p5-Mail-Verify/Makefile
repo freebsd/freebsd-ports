@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net >
-
 PORTNAME=	Mail-Verify
 PORTVERSION=	0.02
 PORTREVISION=	1

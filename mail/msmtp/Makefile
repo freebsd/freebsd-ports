@@ -1,5 +1,3 @@
-# Created by: R.I.Pienaar <rip@devco.net>
-
 PORTNAME=	msmtp
 PORTVERSION=	1.8.20
 PORTREVISION=	1

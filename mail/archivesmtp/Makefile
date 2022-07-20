@@ -1,5 +1,3 @@
-# Created by: Netherby <netherby@dancingfortune.com>
-
 PORTNAME=	archivesmtp
 PORTVERSION=	1.2
 PORTREVISION=	3

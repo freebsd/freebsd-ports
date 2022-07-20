@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	mailfront
 PORTVERSION=	2.22
 CATEGORIES=	mail

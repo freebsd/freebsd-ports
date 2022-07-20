@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	mobilecube
 PORTVERSION=	${THEME_VERSION}.${THEME_BUILD}
 CATEGORIES=	mail

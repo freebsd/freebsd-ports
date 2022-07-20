@@ -1,5 +1,3 @@
-# Created by: Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
-
 PORTNAME?=	xpbiff
 PORTVERSION?=	1.27
 PORTREVISION=	5

@@ -1,5 +1,3 @@
-# Created by: Neil Darlow <neil@darlow.co.uk>
-
 PORTNAME=	avelsieve
 PORTVERSION=	1.9.9
 CATEGORIES=	mail www

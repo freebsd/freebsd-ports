@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	Email-Address-List
 PORTVERSION=	0.06
 CATEGORIES=	mail perl5

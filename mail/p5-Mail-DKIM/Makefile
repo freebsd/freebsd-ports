@@ -1,5 +1,3 @@
-# Created by: Yoshisato YANAGISAWA
-
 PORTNAME=	Mail-DKIM
 PORTVERSION=	1.20220520
 CATEGORIES=	mail perl5

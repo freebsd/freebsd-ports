@@ -1,5 +1,3 @@
-# Created by: Matthew Seaman <matthew@FreeBSD.org>
-
 PORTNAME=	Test-Email
 PORTVERSION=	0.07
 PORTREVISION=	2

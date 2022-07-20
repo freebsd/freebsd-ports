@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	ez-pine-gpg
 DISTVERSION=	0.4h
 PORTREVISION=	2

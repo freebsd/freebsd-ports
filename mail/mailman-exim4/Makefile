@@ -1,5 +1,3 @@
-# Created by: Matthias Andree <mandree@FreeBSD.org>
-
 PKGNAMESUFFIX=		-exim4
 
 COMMENT=		mailman with Exim4 configuration and dependency

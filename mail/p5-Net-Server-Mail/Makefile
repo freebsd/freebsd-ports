@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	Net-Server-Mail
 PORTVERSION=	0.26
 CATEGORIES=	mail perl5

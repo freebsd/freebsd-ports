@@ -1,5 +1,3 @@
-# Created by: Dean Hollister <dean@odyssey.apana.org.au>
-
 PORTNAME=	dcc-dccd
 PORTVERSION=	2.3.168
 CATEGORIES=	mail

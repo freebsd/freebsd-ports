@@ -1,5 +1,3 @@
-# Created by: Andy Gilligan
-
 PORTNAME=	mb2md
 PORTVERSION=	3.20
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	login_info
 DISTVERSION=	1.2
 PORTREVISION=	1

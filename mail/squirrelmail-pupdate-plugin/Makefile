@@ -1,5 +1,3 @@
-# Created by: Thomas Abthorpe <thomas@goodking.ca>
-
 PORTNAME=	pupdate
 PORTVERSION=	0.7
 PORTREVISION=	4

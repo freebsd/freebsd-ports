@@ -1,5 +1,3 @@
-# Created by: Axel Steiner <ast@treibsand.com>
-
 PORTNAME=	libcmime
 PORTVERSION=	0.2.1
 PORTREVISION=	4

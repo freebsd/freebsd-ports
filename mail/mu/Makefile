@@ -1,5 +1,3 @@
-# Created by: rea@FreeBSD.org
-
 PORTNAME=	mu
 PORTVERSION=	1.6.10
 CATEGORIES=	mail

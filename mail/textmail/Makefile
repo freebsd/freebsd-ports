@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	textmail
 PORTVERSION=	20070803
 PORTREVISION=	32

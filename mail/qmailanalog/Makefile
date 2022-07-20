@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-
 PORTNAME=	qmailanalog
 PORTVERSION=	0.70
 PORTREVISION=	4

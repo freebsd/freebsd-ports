@@ -1,5 +1,3 @@
-# Created by: torstenb
-
 PORTNAME=	metamail
 PORTVERSION=	2.7
 PORTREVISION=	16

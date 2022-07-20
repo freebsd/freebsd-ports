@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-
 PORTNAME=	exipick
 PORTVERSION=	20100323.0
 CATEGORIES=	mail

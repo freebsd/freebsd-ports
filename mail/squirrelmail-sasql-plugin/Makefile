@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	sasql
 PORTVERSION=	3.2.0
 PORTREVISION=	3

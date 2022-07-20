@@ -1,5 +1,3 @@
-# Created by: Will Andrews <will@FreeBSD.org>
-
 PORTNAME=	postgrey
 PORTVERSION=	1.37
 PORTREVISION=	3

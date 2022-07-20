@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-
 PORTNAME=	sa-stats
 PORTVERSION=	1.0
 PORTREVISION=	3

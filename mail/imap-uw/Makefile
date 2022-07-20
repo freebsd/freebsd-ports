@@ -1,5 +1,3 @@
-# Created by: pst
-
 PORTNAME=	imap
 PORTVERSION=	2007f
 PORTREVISION=	1

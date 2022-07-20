@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	pyzor
 PORTVERSION=	1.0.0
 PORTREVISION=	2

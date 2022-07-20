@@ -1,5 +1,3 @@
-# Created by: Robert Felber <robtone@ek-muc.de>
-
 PORTNAME=	policyd-weight
 PORTVERSION=	0.1.15.2
 PORTREVISION=	6

@@ -1,5 +1,3 @@
-# Created by: Johannes Meixner <johannes@perceivon.net>
-
 PORTNAME=	actionmailer
 PORTVERSION=	5.1.7
 CATEGORIES=	mail rubygems

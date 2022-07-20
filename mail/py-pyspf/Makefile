@@ -1,5 +1,3 @@
-# Created by: Marcus Alves Grando <mnag@FreeBSD.org>
-
 PORTNAME=	pyspf
 PORTVERSION=	2.0.14
 CATEGORIES=	mail python

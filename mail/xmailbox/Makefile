@@ -1,5 +1,3 @@
-# Created by: Andrey Zakhvatov
-
 PORTNAME=	xmailbox
 PORTVERSION=	2.5
 PORTREVISION=	2

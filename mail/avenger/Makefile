@@ -1,5 +1,3 @@
-# Created by: dm
-
 PORTNAME=	avenger
 PORTVERSION=	0.8.5
 CATEGORIES=	mail

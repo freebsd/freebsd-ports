@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Mail-Transport-Dbx
 PORTVERSION=	0.07
 PORTREVISION=	1

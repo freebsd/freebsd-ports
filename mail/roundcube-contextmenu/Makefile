@@ -1,5 +1,3 @@
-# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
-
 PORTNAME=	contextmenu
 PORTVERSION=	3.3
 CATEGORIES=	mail

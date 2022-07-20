@@ -1,5 +1,3 @@
-# Created by: Xavier Beaudouin <kiwi@oav.net>
-
 PORTNAME=	gnarwl
 PORTVERSION=	3.6
 PORTREVISION=	7

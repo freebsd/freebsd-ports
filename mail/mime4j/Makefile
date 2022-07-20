@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	mime4j
 PORTVERSION=	0.7.2
 PORTREVISION=	1

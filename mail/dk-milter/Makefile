@@ -1,5 +1,3 @@
-# Created by: ache
-
 PORTNAME=	dk-milter
 PORTVERSION=	1.0.2
 PORTREVISION=	6

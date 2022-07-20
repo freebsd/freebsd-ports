@@ -1,5 +1,3 @@
-# Created by: Xavier Beaudouin <kiwi@oav.net>
-
 PORTNAME=	ovs
 PORTVERSION=	1.05
 PORTREVISION=	5

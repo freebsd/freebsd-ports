@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	pony
 PORTVERSION=	1.13
 CATEGORIES=	mail rubygems

@@ -1,5 +1,3 @@
-# Created by: Zeus Panchenko <zeus@gnu.org.ua>
-
 PORTNAME=	mailfromd
 PORTVERSION=	8.13
 CATEGORIES=	mail

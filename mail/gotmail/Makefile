@@ -1,5 +1,3 @@
-# Created by: Christopher Elkins <chrise@scardini.com>
-
 PORTNAME=	gotmail
 PORTVERSION=	0.9.0
 PORTREVISION=	3

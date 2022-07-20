@@ -1,5 +1,3 @@
-# Created by: Martin Matuska <mm@FreeBSD.org>
-
 PORTNAME=	Horde_ListHeaders
 PORTVERSION=	1.2.5
 CATEGORIES=	mail www pear

@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	spamassassin
 
 COMMENT=	SpamAssassin plugin for Claws Mail

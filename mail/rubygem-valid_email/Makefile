@@ -1,5 +1,3 @@
-# Created by: Matthias Fechner <mfechner@FreeBSD.org>
-
 PORTNAME=	valid_email
 PORTVERSION=	0.1.4
 PORTREVISION=	1

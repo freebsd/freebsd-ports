@@ -1,5 +1,3 @@
-# Created by: Yarema <yds@CoolRat.org>
-
 PORTNAME=	courier
 PORTVERSION=	0.65.3
 PORTREVISION=	6

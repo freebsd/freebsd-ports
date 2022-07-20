@@ -1,5 +1,3 @@
-# Created by: Olivier Girard <Olivier.Girard@univ-angers.fr>
-
 PORTNAME=	MIME-Charset
 PORTVERSION=	1.012.2
 CATEGORIES=	mail perl5

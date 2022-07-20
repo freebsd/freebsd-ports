@@ -1,5 +1,3 @@
-# Created by: Yasuhiro KIMURA <yasu@utahime.org>
-
 PORTNAME=	authres
 PORTVERSION=	1.2.0
 CATEGORIES=	mail python

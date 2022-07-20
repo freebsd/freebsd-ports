@@ -1,4 +1,3 @@
-# Created by: Glenn Johnson <gljohns@bellsouth.net>
 #   $MCom$
 
 PORTNAME=	balsa

@@ -1,5 +1,3 @@
-# Created by: Max Laier <max@love2party.net>
-
 PORTNAME=	spamd
 PORTVERSION=	4.9.1
 PORTREVISION=	6

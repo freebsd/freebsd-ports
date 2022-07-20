@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	smtprc
 PORTVERSION=	2.0.3
 CATEGORIES=	mail

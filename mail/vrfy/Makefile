@@ -1,5 +1,3 @@
-# Created by: kaz
-
 PORTNAME=	vrfy
 PORTVERSION=	1.0
 DISTVERSIONPREFIX=v

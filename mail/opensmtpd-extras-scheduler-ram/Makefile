@@ -1,5 +1,3 @@
-# Created by: fluffy
-
 PKGNAMESUFFIX=		-scheduler-ram
 PORTREVISION=		0
 

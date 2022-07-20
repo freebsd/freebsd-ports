@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	anubis
 PORTVERSION=	4.2
 PORTREVISION=	14

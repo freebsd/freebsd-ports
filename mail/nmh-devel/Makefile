@@ -1,5 +1,3 @@
-# Created by: Scott Blachowicz <scott+ports@sabami.seaslug.org>
-
 PORTNAME=	nmh
 PORTVERSION=	${NMH_COMMIT_DATE}
 MASTER_SITES=	#

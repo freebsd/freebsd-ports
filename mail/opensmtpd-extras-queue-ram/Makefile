@@ -1,5 +1,3 @@
-# Created by: fluffy
-
 PKGNAMESUFFIX=		-queue-ram
 PORTREVISION=		0
 

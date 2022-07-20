@@ -1,5 +1,3 @@
-# Created by: Nils Vogels <nivo+kw+ports.bfa274@is-root.com>
-
 PORTNAME=	dovecot-pigeonhole
 PORTVERSION=	0.5.19
 CATEGORIES=	mail

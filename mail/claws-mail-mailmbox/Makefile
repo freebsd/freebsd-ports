@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <c0rn@o2.pl>
-
 PORTNAME=	mailmbox
 
 COMMENT=	Mbox maildir plugin for Claws Mail

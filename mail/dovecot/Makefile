@@ -1,5 +1,3 @@
-# Created by: Nagy, Attila <bra@fsn.hu>
-
 ######################################################################
 # Anytime PORTVERSION changes please bump PORTREVISION of:           #
 # - mail/dovecot-pigeonhole. See ports/146029 for an explanation.    #

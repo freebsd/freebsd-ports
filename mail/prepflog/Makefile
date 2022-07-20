@@ -1,5 +1,3 @@
-# Created by: Terry Sposato
-
 PORTNAME=	prepflog
 PORTVERSION=	0.4.1
 CATEGORIES=	mail

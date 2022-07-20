@@ -1,5 +1,3 @@
-# Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-
 PORTNAME=	MIME-Lite-HTML
 PORTVERSION=	1.24
 PORTREVISION=	1

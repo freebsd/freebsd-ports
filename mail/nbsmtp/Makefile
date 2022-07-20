@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	nbsmtp
 PORTVERSION=	1.00
 PORTREVISION=	2

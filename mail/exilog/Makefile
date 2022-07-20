@@ -1,5 +1,3 @@
-# Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-
 PORTNAME=	exilog
 PORTVERSION=	0.5
 PORTREVISION=	9

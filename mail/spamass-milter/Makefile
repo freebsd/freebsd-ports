@@ -1,5 +1,3 @@
-# Created by: Eugene M. Kim <ab@astralblue.net>
-
 PORTNAME=	spamass-milter
 PORTVERSION=	0.4.0
 PORTREVISION=	4

@@ -1,5 +1,3 @@
-# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-
 PORTNAME=	change-sqlpass
 PORTVERSION=	3.3
 PORTREVISION=	3

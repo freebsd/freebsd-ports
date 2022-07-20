@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Email-Date
 PORTVERSION=	1.104
 CATEGORIES=	mail perl5

@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Mail-GnuPG
 PORTVERSION=	0.23
 CATEGORIES=	mail security perl5

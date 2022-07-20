@@ -1,5 +1,3 @@
-# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
-
 PORTNAME=	thunderbird_labels
 PORTVERSION=	1.4.10
 DISTVERSIONPREFIX=	v

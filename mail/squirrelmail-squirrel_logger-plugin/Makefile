@@ -1,5 +1,3 @@
-# Created by: Satoru Suzuki <xsuzu@yokohama.riken.jp>
-
 PORTNAME=	squirrel_logger
 PORTVERSION=	2.3
 PORTREVISION=	2

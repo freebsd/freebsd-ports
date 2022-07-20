@@ -1,5 +1,3 @@
-# Created by: Axel Steiner <ast@treibsand.com>
-
 PORTNAME=	spmfilter-clamav
 PORTVERSION=	0.2.3
 CATEGORIES=	mail

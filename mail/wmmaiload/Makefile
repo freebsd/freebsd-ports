@@ -1,5 +1,3 @@
-# Created by: pat
-
 PORTNAME=	wmmaiload
 PORTVERSION=	2.3.0
 CATEGORIES=	mail windowmaker

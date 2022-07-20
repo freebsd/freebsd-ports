@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	notes
 PORTVERSION=	1.2
 PORTREVISION=	3

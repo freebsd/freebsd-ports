@@ -1,5 +1,3 @@
-# Created by: Fukang Chen <loader@FreeBSD.org>
-
 PORTNAME=	Net-LMTP
 PORTVERSION=	0.02
 CATEGORIES=	mail perl5

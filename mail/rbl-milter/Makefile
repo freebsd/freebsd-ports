@@ -1,5 +1,3 @@
-# Created by: wolpert
-
 PORTNAME=	rbl-milter
 PORTVERSION=	0.30
 PORTREVISION=	6

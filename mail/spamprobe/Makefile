@@ -1,5 +1,3 @@
-# Created by: Matthew N. Dodd <mdodd@FreeBSD.org>
-
 PORTNAME=		spamprobe
 PORTVERSION=	1.4d
 PORTREVISION=	19

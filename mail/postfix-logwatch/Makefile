@@ -1,5 +1,3 @@
-# Created by: Alexander Moisseev <moiseev@mezonplus.ru>
-
 PORTNAME=	postfix-logwatch
 PORTVERSION=	1.40.03
 PORTREVISION=	1

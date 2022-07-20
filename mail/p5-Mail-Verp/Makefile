@@ -1,5 +1,3 @@
-# Created by: Vivek Khera <vivek@khera.org>
-
 PORTNAME=	Mail-Verp
 PORTVERSION=	0.06
 PORTREVISION=	1

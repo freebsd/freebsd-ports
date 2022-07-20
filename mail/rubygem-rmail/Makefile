@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	rmail
 PORTVERSION=	1.1.4
 CATEGORIES=	mail rubygems

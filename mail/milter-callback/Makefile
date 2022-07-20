@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	milter-callback
 PORTVERSION=	1.6.0
 PORTREVISION=	8

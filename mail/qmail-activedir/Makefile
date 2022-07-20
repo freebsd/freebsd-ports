@@ -1,5 +1,3 @@
-# Created by: Jean Milanez Melo <jmelo@FreeBSD.org>
-
 PORTNAME=	qmail-activedir
 PORTVERSION=	0.17
 PORTREVISION=	3

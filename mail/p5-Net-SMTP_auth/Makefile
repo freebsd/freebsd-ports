@@ -1,5 +1,3 @@
-# Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-
 PORTNAME=	Net-SMTP_auth
 PORTVERSION=	0.08
 PORTREVISION=	1

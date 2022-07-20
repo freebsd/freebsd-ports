@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	mvision2
 PORTVERSION=	2
 PORTREVISION=	1

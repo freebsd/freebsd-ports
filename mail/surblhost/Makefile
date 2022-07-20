@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	surblhost
 PORTVERSION=	0.8.0
 CATEGORIES=	mail

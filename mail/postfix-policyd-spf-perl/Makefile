@@ -1,5 +1,3 @@
-# Created by: Darren Pilgrim <ports.maintainer@evilphi.com>
-
 PORTNAME=	postfix-policyd-spf-perl
 PORTVERSION=	2.010
 PORTREVISION=	1

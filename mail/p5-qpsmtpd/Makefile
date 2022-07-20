@@ -1,5 +1,3 @@
-# Created by: Zane C. Bowers
-
 PORTNAME=	qpsmtpd
 PORTVERSION=	0.93
 DISTVERSIONPREFIX=	v

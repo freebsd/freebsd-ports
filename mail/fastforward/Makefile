@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	fastforward
 PORTVERSION=	0.51
 CATEGORIES=	mail

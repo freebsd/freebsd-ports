@@ -1,5 +1,3 @@
-# Created by: Cyril Guibourg
-
 PORTNAME=	milter-greylist
 PORTVERSION=	4.6.4
 CATEGORIES=	mail

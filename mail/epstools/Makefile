@@ -1,5 +1,3 @@
-# Created by: ismail@enderunix.org
-
 PORTNAME=	epstools
 PORTVERSION=	1.8
 CATEGORIES=	mail

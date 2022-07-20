@@ -1,5 +1,3 @@
-# Created by: pst
-
 PORTNAME=	qpopper
 PORTVERSION=	4.1.0
 PORTREVISION=	6

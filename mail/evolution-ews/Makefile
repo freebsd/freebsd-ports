@@ -1,5 +1,3 @@
-# Created by: Koop Mast <kwm@FreeBSD.org>
-
 PORTNAME=	evolution-ews
 DISTVERSION=	3.44.3
 CATEGORIES=	mail gnome

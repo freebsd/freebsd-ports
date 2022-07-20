@@ -1,5 +1,3 @@
-# Created by: Kevin Golding <ports@caomhin.org>
-
 PORTNAME=	dkimpy
 DISTVERSION=	1.0.5
 CATEGORIES=	mail python

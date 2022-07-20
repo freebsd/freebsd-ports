@@ -1,5 +1,3 @@
-# Created by: Aaron Dalton <aaron@FreeBSD.org>
-
 PORTNAME=	Mail-Audit-Attach
 PORTVERSION=	0.96
 PORTREVISION=	1

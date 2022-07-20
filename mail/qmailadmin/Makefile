@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner
-
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.15
 PORTREVISION=	8

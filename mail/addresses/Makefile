@@ -1,5 +1,3 @@
-# Created by: Miguel Mendez <flynn@energyhq.es.eu.org>
-
 PORTNAME=	addresses
 PORTVERSION=	0.4.8
 PORTREVISION=	8

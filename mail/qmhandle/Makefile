@@ -1,5 +1,3 @@
-# Created by: petef
-
 PORTNAME=	qmhandle
 PORTVERSION=	1.3.2
 PORTREVISION=	2

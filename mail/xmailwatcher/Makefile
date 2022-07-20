@@ -1,5 +1,3 @@
-# Created by: Harry Newton
-
 PORTNAME=	xmailwatcher
 PORTVERSION=	1.6
 PORTREVISION=	2

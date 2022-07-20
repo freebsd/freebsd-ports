@@ -1,5 +1,3 @@
-# Created by: Hsin-Han You <hhyou@cs.nctu.edu.tw>
-
 PORTNAME=	vmail
 PORTVERSION=	2.9.8
 PORTREVISION=	2

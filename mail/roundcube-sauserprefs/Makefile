@@ -1,5 +1,3 @@
-# Created by: Stefan Bethke <stb@lassitu.de>
-
 PORTNAME=	sauserprefs
 PORTVERSION=	1.10 # PLEASE MIRROR DISTFILE WITH VERSIONED DIR
 PORTREVISION=	1

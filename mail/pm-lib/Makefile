@@ -1,5 +1,3 @@
-# Created by: Jeremy Norris <ishmael27@home.com>
-
 PORTNAME=	pm-lib
 PORTVERSION=	20091202
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Adam McDougall <mcdouga9@egr.msu.edu>
-
 PORTNAME=	vacation
 PORTVERSION=	3.3.3
 CATEGORIES=	mail

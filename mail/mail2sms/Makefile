@@ -1,5 +1,3 @@
-# Created by: Gerhard Gonter <g.gonter@ieee.org>
-
 PORTNAME=	mail2sms
 PORTVERSION=	1.3.5
 CATEGORIES=	mail

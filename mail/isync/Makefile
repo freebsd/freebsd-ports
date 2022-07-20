@@ -1,5 +1,3 @@
-# Created by: eivind
-
 PORTNAME=	isync
 PORTVERSION=	1.4.4
 CATEGORIES=	mail

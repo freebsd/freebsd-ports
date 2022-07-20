@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	umich
 PORTVERSION=	20090813
 CATEGORIES=	mail

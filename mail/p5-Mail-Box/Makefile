@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Mail-Box
 PORTVERSION=	3.009
 CATEGORIES=	mail perl5

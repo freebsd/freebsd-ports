@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <c0rn@o2.pl>
-
 PORTNAME=	newmail
 
 COMMENT=	Message header summary logging plugin for Claws Mail

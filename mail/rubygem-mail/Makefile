@@ -1,5 +1,3 @@
-# Created by: Eric Freeman <freebsdports@chillibear.com>
-
 PORTNAME=	mail
 PORTVERSION=	2.7.1
 PORTREVISION=	2

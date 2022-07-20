@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner
-
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.33
 PORTREVISION=	4

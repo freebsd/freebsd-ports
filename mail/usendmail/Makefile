@@ -1,5 +1,3 @@
-# Created by: Thomas Seck <tmseck@netcologne.de>
-
 PORTNAME=	usendmail
 PORTVERSION=	0.1.6
 PORTREVISION=	2

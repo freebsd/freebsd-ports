@@ -1,5 +1,3 @@
-# Created by: Mark Felder <feld@FreeBSD.org>
-
 PORTNAME=	veximaccountadmin
 PORTVERSION=	0.1
 PORTREVISION=	2

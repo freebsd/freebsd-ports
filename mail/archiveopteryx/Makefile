@@ -1,5 +1,3 @@
-# Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.2.0
 PORTREVISION=	8

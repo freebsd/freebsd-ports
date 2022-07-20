@@ -1,5 +1,3 @@
-# Created by: Jan-Peter Koopmann <j.koopmann@seceidos.de>
-
 PORTNAME=	MailScanner
 DISTVERSION=	5.3.4-3
 DISTVERSIONSUFFIX=	.nix

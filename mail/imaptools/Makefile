@@ -1,5 +1,3 @@
-# Created by: bsam
-
 PORTNAME=	imaptools
 PORTVERSION=	1.135
 CATEGORIES=	mail

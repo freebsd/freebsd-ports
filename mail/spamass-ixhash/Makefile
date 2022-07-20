@@ -1,5 +1,3 @@
-# Created by: Michael Ranner <michael@ranner.eu>
-
 PORTNAME=	iXhash
 PORTVERSION=	1.5.5
 PORTREVISION=	3

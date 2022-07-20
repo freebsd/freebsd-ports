@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	mail-parser
 PORTVERSION=	3.15.0
 CATEGORIES=	mail python

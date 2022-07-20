@@ -1,5 +1,3 @@
-# Created by: Lasse L. Johnsen (lasse@freebsdcluster.org)
-
 PORTNAME=	sortmail
 PORTVERSION=	1.20
 CATEGORIES=	mail

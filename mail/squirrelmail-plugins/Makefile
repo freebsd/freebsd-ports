@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	squirrelmail-plugins
 PORTVERSION=	1.0
 PORTREVISION=	2

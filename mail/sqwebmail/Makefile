@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner
-
 PORTNAME=	sqwebmail
 PORTVERSION=	6.0.6
 CATEGORIES=	mail www

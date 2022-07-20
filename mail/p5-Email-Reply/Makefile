@@ -1,5 +1,3 @@
-# Created by: Kay Abendroth <kay.abendroth@raxion.net>
-
 PORTNAME=	Email-Reply
 PORTVERSION=	1.204
 CATEGORIES=	mail perl5

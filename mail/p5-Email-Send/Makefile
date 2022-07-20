@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Email-Send
 PORTVERSION=	2.201
 CATEGORIES=	mail perl5

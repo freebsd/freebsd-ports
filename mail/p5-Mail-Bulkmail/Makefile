@@ -1,5 +1,3 @@
-# Created by: will
-
 PORTNAME=	Mail-Bulkmail
 PORTVERSION=	3.12
 PORTREVISION=	1

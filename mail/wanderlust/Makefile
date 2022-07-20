@@ -1,5 +1,3 @@
-# Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-
 PORTNAME=	wanderlust
 PORTVERSION=	2.15.9.b.${SNAPDATE}
 PORTREVISION=	1

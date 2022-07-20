@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	pgp
 
 COMMENT=	PGP plugins for Claws Mail

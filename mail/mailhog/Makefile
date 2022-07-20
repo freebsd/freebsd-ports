@@ -1,5 +1,3 @@
-# Created by: punkt.de Hosting Team <mops@punkt.de>
-
 PORTNAME=	mailhog
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1

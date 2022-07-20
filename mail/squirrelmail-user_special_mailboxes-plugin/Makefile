@@ -1,5 +1,3 @@
-# Created by: Ion-Mihai "IOnut" Tetcu <itetcu@FreeBSD.org>
-
 PORTNAME=	user_special_mailboxes
 PORTVERSION=	0.1
 PORTREVISION=	3

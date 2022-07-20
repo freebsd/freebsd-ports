@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	spamcup
 PORTVERSION=	1.09
 PORTREVISION=	5

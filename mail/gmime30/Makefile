@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	gmime
 PORTVERSION=	3.2.7
 CATEGORIES=	mail

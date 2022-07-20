@@ -1,5 +1,3 @@
-# Created by: Tom Hukins <tom@eborcom.com>
-
 # You can define the following to enable further compile time
 # customizations:
 # MAILDROP_SUID=<username>,

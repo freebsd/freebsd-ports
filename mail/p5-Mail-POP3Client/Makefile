@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	Mail-POP3Client
 PORTVERSION=	2.19
 PORTREVISION=	1

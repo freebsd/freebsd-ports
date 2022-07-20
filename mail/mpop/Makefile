@@ -1,5 +1,3 @@
-# Created by: Sylvio Cesar <sylvio@FreeBSD.org>
-
 PORTNAME=	mpop
 DISTVERSION=	1.4.16
 PORTREVISION=	2

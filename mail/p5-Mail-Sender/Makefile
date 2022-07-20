@@ -1,5 +1,3 @@
-# Created by: Ben Smithurst <ben@FreeBSD.org>
-
 PORTNAME=	Mail-Sender
 PORTVERSION=	0.903
 CATEGORIES=	mail perl5

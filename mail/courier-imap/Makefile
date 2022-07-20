@@ -1,5 +1,3 @@
-# Created by: Neil Blakey-Milner
-
 PORTNAME=	courier-imap
 PORTVERSION=	5.1.8
 PORTEPOCH=	2

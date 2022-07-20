@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	smtpmail
 PORTVERSION=	0.4.5
 CATEGORIES=	mail

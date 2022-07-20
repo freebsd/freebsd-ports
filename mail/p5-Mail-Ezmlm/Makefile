@@ -1,5 +1,3 @@
-# Created by: Guy Antony Halse <guy@rucus.ru.za.za>
-
 PORTNAME=	Mail-Ezmlm
 PORTVERSION=	0.08.2
 PORTREVISION=	2

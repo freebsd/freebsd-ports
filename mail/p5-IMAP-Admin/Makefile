@@ -1,5 +1,3 @@
-# Created by: Martti Kuparinen <martti.kuparinen@ericsson.com>
-
 PORTNAME=	IMAP-Admin
 PORTVERSION=	1.6.8
 CATEGORIES=	mail perl5

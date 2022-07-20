@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	Mail-DomainKeys
 PORTVERSION=	1.0
 PORTREVISION=	2

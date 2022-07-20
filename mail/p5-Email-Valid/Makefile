@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@tobez.org>
-
 PORTNAME=	Email-Valid
 PORTVERSION=	1.203
 CATEGORIES=	mail perl5

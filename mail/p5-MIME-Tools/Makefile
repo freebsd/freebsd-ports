@@ -1,5 +1,3 @@
-# Created by: Eivind Eklund <eivind@FreeBSD.org>
-
 PORTNAME=	MIME-Tools
 PORTVERSION=	5.510
 PORTEPOCH=	2

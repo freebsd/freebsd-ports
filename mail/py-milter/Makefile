@@ -1,5 +1,3 @@
-# Created by: Vsevolod Lobko <seva@sevasoft.kiev.ua>
-
 PORTNAME=	milter
 PORTVERSION=	1.0.4
 DISTVERSIONPREFIX=	${GH_PROJECT}-

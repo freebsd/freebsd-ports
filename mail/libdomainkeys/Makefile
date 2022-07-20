@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	libdomainkeys
 PORTVERSION=	0.69
 PORTREVISION=	1

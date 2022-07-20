@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@freebsd.org>
-
 PORTNAME=	mail
 PORTVERSION=	1.13.6
 DISTVERSIONPREFIX=	v

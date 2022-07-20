@@ -1,5 +1,3 @@
-# Created by: Lukasz Wasikowski <lukasz@wasikowski.net>
-
 PORTNAME=	sgwi
 PORTVERSION=	1.1.8
 PORTREVISION=	1

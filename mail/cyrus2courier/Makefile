@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@critical.ch>
-
 PORTNAME=	cyrus2courier
 PORTVERSION=	1.4
 PORTREVISION=	1

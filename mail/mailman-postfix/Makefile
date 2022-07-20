@@ -1,5 +1,3 @@
-# Created by: Matthias Andree <mandree@FreeBSD.org>
-
 PKGNAMESUFFIX=		-postfix
 
 COMMENT=		mailman with postfix dependency

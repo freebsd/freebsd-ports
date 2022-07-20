@@ -1,5 +1,3 @@
-# Created by: petef
-
 PORTNAME=	Mail-ListDetector
 PORTVERSION=	1.04
 PORTREVISION=	2

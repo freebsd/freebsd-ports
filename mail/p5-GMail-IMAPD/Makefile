@@ -1,5 +1,3 @@
-# Created by: Ali Mashtizadeh <ali@mashtizadeh.org>
-
 PORTNAME=	GMail-IMAPD
 PORTVERSION=	0.94
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: krion
-
 PKGNAMESUFFIX=	-sqlite
 MASTERDIR=	${.CURDIR}/../exim
 

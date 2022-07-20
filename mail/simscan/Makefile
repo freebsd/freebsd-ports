@@ -1,5 +1,3 @@
-# Created by: Anton Karpov <toxa@toxahost.ru>
-
 PORTNAME=	simscan
 PORTVERSION=	1.4.0
 PORTREVISION=	8

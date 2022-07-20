@@ -1,5 +1,3 @@
-# Created by: Jim Mock <jim@FreeBSD.org>
-
 PORTNAME=	wmbiff
 PORTVERSION=	0.4.36
 PORTREVISION=	1

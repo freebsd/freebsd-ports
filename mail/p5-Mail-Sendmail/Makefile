@@ -1,5 +1,3 @@
-# Created by: Wei-chun Chao
-
 PORTNAME=	Mail-Sendmail
 PORTVERSION=	0.80
 CATEGORIES=	mail perl5

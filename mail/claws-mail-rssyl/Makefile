@@ -1,5 +1,3 @@
-# Created by: v.velox@vvelox.net
-
 PORTNAME=	rssyl
 PORTEPOCH=	4
 

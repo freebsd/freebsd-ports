@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	calendar_file_backend
 PORTVERSION=	1.0
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: David Bushong <david+ports@bushong.net>
-
 PORTNAME=	ifile
 PORTVERSION=	1.3.8
 CATEGORIES=	mail textproc

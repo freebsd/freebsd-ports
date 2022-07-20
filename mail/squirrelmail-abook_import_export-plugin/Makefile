@@ -1,5 +1,3 @@
-# Created by: Scott Lambert <lambert@lambertfam.org>
-
 PORTNAME=	abook_import_export
 PORTVERSION=	1.1
 PORTREVISION=	2

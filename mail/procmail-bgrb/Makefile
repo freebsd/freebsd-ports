@@ -1,5 +1,3 @@
-# Created by: Adam David <adam@FreeBSD.org>
-
 PORTNAME=	procmail
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.24

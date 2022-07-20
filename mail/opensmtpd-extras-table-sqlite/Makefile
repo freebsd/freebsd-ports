@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PKGNAMESUFFIX=	-table-sqlite
 PORTREVISION=	0
 

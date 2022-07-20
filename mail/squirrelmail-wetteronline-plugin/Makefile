@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	wetteronline
 PORTVERSION=	0.1
 PORTREVISION=	3

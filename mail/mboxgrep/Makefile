@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@fix.no>
-
 PORTNAME=	mboxgrep
 PORTVERSION=	0.7.9
 PORTREVISION=	5

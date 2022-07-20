@@ -1,5 +1,3 @@
-# Created by: snowchyld
-
 PORTNAME=	Mail-Alias
 PORTVERSION=	1.15
 CATEGORIES=	mail perl5

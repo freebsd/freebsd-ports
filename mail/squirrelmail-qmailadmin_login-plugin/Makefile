@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	qmailadmin_login
 PORTVERSION=	1.1
 PORTREVISION=	4

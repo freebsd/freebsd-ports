@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <sysadmin@alexdupre.com>
-
 PORTNAME=	nocc
 PORTVERSION=	1.9.11
 CATEGORIES=	mail www

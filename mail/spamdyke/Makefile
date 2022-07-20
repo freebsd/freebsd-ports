@@ -1,5 +1,3 @@
-# Created by: Peter Kieser <peter@kieser.ca>
-
 PORTNAME=	spamdyke
 PORTVERSION=	5.0.1
 PORTREVISION=	8

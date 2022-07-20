@@ -1,5 +1,3 @@
-# Created by: Shaun Amott <shaun@FreeBSD.org>
-
 PORTNAME=	LMAP-CID2SPF
 PORTVERSION=	0.9
 PORTREVISION=	2

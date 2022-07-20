@@ -1,5 +1,3 @@
-# Created by: snowchyld
-
 PORTNAME=	Mail-SRS
 PORTVERSION=	0.31
 PORTREVISION=	2

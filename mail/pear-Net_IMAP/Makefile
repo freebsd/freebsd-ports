@@ -1,5 +1,3 @@
-# Created by: Attila Nagy <bra@fsn.hu>
-
 PORTNAME=	Net_IMAP
 PORTVERSION=	1.1.3
 CATEGORIES=	mail net pear

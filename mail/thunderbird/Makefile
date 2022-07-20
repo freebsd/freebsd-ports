@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	thunderbird
 DISTVERSION=	91.11.0
 PORTREVISION=	2

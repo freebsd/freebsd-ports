@@ -1,5 +1,3 @@
-# Created by: Alexander Wittig <alexander@wittig.name>
-
 PORTNAME=	compatibility
 PORTVERSION=	2.0.16
 PORTREVISION=	1

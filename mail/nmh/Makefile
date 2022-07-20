@@ -1,5 +1,3 @@
-# Created by: Scott Blachowicz <scott+ports@sabami.seaslug.org>
-
 PORTNAME=	nmh
 PORTVERSION=	1.7.1
 PORTREVISION=	4

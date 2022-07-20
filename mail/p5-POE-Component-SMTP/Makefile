@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-SMTP
 PORTVERSION=	1.6
 PORTREVISION=	2

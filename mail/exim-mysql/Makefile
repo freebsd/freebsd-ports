@@ -1,5 +1,3 @@
-# Created by: Sheldon Hearn <sheldonh@FreeBSD.org>
-
 PKGNAMESUFFIX=	-mysql
 MASTERDIR=	${.CURDIR}/../exim
 

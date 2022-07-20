@@ -1,5 +1,3 @@
-# Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-
 PORTNAME=	opendkim
 PORTVERSION=	2.10.3
 PORTREVISION=	16

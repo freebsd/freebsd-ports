@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Filter-Transparent-SMTP
 PORTVERSION=	0.2
 PORTREVISION=	1

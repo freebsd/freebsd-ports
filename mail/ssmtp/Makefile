@@ -1,5 +1,3 @@
-# Created by: Tomasz Paszkowski <ns88@k.pl>
-
 PORTNAME=	ssmtp
 PORTVERSION=	2.64
 PORTREVISION=	7

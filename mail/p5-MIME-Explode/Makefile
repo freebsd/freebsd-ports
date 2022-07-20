@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	MIME-Explode
 PORTVERSION=	0.39
 PORTREVISION=	1

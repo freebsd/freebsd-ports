@@ -1,5 +1,3 @@
-# Created by: Chifeng QU <chifeng@gmail.com>
-
 PORTNAME=	policyd2
 PORTVERSION=	2.0.14
 PORTREVISION=	3

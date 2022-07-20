@@ -1,5 +1,3 @@
-# Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
-
 PORTNAME=	websieve
 PORTVERSION=	0.63.a
 PORTREVISION=	3

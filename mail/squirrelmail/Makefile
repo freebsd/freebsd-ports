@@ -1,5 +1,3 @@
-# Created by: Simon Dick <simond@irrelevant.org>
-
 PORTNAME=	squirrelmail
 DISTVERSION=	20211024
 CATEGORIES=	mail www

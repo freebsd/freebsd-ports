@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lth@FreeBSD.org>
-
 PORTNAME=	Net-IMAP-Simple
 PORTVERSION=	1.2212
 CATEGORIES=	mail perl5

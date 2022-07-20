@@ -1,5 +1,3 @@
-# Created by: Nick Hilliard <nick@foobar.org>
-
 PORTNAME=	phplist
 DISTVERSION=	3.6.8
 CATEGORIES=	mail www

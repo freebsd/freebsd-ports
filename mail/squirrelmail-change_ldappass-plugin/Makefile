@@ -1,5 +1,3 @@
-# Created by: Alexander Wittig <alexander@wittig.name>
-
 PORTNAME=	change_ldappass
 PORTVERSION=	2.2
 PORTREVISION=	6

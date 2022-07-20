@@ -1,5 +1,3 @@
-# Created by: Andrey Slusar <anray@FreeBSD.org>
-
 PORTNAME=	masqmail
 PORTVERSION=	0.3.5
 CATEGORIES=	mail

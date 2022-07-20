@@ -1,5 +1,3 @@
-# Created by: nbm
-
 PORTNAME=	vqadmin
 PORTVERSION=	2.3.6
 PORTREVISION=	1

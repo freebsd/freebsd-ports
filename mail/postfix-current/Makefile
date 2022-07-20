@@ -1,5 +1,3 @@
-# Created by: Torsten Blum <torstenb@FreeBSD.org>
-
 PORTNAME=	postfix
 DISTVERSION=	3.8-20220325
 PORTREVISION?=	1

@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	carddav
 PORTVERSION=	4.3.0
 DISTVERSIONPREFIX=v

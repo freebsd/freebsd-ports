@@ -1,5 +1,3 @@
-# Created by: Udo Schweigert
-
 PORTNAME=	mutt
 DISTVERSION=	2.2.6
 PORTREVISION=	1

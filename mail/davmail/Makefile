@@ -1,5 +1,3 @@
-# Created by: John Prather
-
 PORTNAME=	davmail
 PORTVERSION=	6.0.1
 CATEGORIES=	mail java

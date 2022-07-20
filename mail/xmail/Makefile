@@ -1,5 +1,3 @@
-# Created by: Stephen Roznowski <sjr1@flash.net>
-
 PORTNAME=	xmail
 PORTVERSION=	1.6
 PORTREVISION=	2

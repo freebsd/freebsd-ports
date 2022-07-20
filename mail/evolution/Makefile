@@ -1,5 +1,3 @@
-# Created by: Ade Lovett <ade@FreeBSD.org>
-
 PORTNAME=	evolution
 DISTVERSION=	3.44.3
 CATEGORIES=	mail gnome

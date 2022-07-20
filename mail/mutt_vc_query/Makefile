@@ -1,5 +1,3 @@
-# Created by: Oliver Braun
-
 PORTNAME=	mutt_vc_query
 PORTVERSION=	002
 CATEGORIES=	mail

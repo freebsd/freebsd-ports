@@ -1,5 +1,3 @@
-# Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-
 PORTNAME=	Mail-IMAPClient
 PORTVERSION=	3.43
 CATEGORIES=	mail perl5

@@ -1,5 +1,3 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	dma
 PORTREVISION=	1
 DISTVERSIONPREFIX=	v

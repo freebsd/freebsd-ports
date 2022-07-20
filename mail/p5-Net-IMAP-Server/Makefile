@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	Net-IMAP-Server
 PORTVERSION=	1.39
 CATEGORIES=	mail perl5

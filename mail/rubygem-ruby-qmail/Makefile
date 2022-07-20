@@ -1,5 +1,3 @@
-# Created by: Glen Barber <gjb@FreeBSD.org>
-
 PORTNAME=	ruby-qmail
 PORTVERSION=	0.1.1
 CATEGORIES=	mail rubygems

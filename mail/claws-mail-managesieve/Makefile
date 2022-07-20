@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <pawel@FreeBSD.org>
-
 PORTNAME=	managesieve
 
 COMMENT=	Sieve filters manager for Claws Mail

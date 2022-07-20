@@ -1,5 +1,3 @@
-# Created by: CyrilM <cyrilm@tower.pp.ru>
-
 PORTNAME=	jamlib
 PORTVERSION=	1.4.7
 PORTREVISION=	2

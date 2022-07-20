@@ -1,5 +1,3 @@
-# Created by: Peter Wemm <peter@FreeBSD.org>
-
 # "+=" and "?=" lines are for sharing this Makefile with japanese/exmh2.
 
 PORTNAME=	exmh

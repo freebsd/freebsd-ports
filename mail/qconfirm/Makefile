@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	qconfirm
 PORTVERSION=	0.14.3
 PORTREVISION=	1

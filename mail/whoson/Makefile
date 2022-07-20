@@ -1,5 +1,3 @@
-# Created by: Sergey Matveychuk <sem@FreeBSD.org>
-
 PORTNAME=	whoson
 PORTVERSION=	2.05
 PORTREVISION=	1

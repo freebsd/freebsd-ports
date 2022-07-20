@@ -1,5 +1,3 @@
-# Created by: Masafumi NAKANE <max@FreeBSD.org>
-
 PORTNAME=	mailagent
 PORTVERSION=	3.1.106
 CATEGORIES=	mail

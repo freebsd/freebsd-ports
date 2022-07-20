@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	qmail-autoresponder
 PORTVERSION=	2.0
 CATEGORIES=	mail

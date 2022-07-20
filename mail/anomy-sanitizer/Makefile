@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	anomy-sanitizer
 PORTVERSION=	1.76
 PORTREVISION=	6

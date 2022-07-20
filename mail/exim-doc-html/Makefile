@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <wjv@FreeBSD.org>
-
 PORTNAME=	exim
 PORTVERSION=	4.95
 CATEGORIES=	mail

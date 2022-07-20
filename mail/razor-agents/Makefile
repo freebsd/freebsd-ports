@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@leeym.com>
-
 PORTNAME=	razor-agents
 PORTVERSION=	2.84
 PORTREVISION=	1

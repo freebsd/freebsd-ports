@@ -1,5 +1,3 @@
-# Created by: Craig Leres <leres@FreeBSD.org>
-
 PORTNAME=	spfmilter
 PORTVERSION=	2.001
 PORTREVISION=	1

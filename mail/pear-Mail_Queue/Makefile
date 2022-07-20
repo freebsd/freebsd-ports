@@ -1,5 +1,3 @@
-# Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-
 PORTNAME=	Mail_Queue
 PORTVERSION=	1.2.7
 PORTREVISION=	1

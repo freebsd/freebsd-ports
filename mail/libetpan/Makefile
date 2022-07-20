@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	libetpan
 PORTVERSION=	1.9.4
 CATEGORIES=	mail

@@ -1,5 +1,3 @@
-# Created by: johnpupu <johnpupu@gmail.com>
-
 PORTNAME=	Net-POP3-SSLWrapper
 PORTVERSION=	0.06
 PORTREVISION=	1

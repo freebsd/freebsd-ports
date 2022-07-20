@@ -1,5 +1,3 @@
-# Created by: Ville Eerola <ve@sci.fi>
-
 PORTNAME?=	fetchmail
 DISTVERSION=	6.4.31
 PORTREVISION?=	0

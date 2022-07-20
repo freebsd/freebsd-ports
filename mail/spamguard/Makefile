@@ -1,5 +1,3 @@
-# Created by: Omer Faruk Sen <ofsen@enderunix.org>
-
 PORTNAME=	spamguard
 PORTVERSION=	1.8
 PORTREVISION=	1

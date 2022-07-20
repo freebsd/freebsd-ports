@@ -1,5 +1,3 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
-
 PORTNAME=	exception_notification
 PORTVERSION=	4.5.0
 CATEGORIES=	mail rubygems

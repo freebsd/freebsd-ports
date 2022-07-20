@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Email-Filter
 PORTVERSION=	1.035
 CATEGORIES=	mail perl5

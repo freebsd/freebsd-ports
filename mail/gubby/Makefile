@@ -1,5 +1,3 @@
-# Created by: mich@freebsdcluster.org
-
 PORTNAME=	gubby
 PORTVERSION=	0.5.5
 CATEGORIES=	mail

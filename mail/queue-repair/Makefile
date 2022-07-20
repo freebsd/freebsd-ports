@@ -1,5 +1,3 @@
-# Created by: Sergei Kolobov <sergei@kolobov.com>
-
 PORTNAME=	queue-repair
 PORTVERSION=	0.9.0
 PORTREVISION=	1

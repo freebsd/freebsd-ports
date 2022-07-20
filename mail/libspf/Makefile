@@ -1,5 +1,3 @@
-# Created by: Daniel Roethlisberger <daniel@roe.ch>
-
 PORTNAME=	libspf
 DISTVERSION=	1.0.0-p5
 PORTREVISION=	1

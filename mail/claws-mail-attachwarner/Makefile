@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <c0rn@o2.pl>
-
 PORTNAME=	attachwarner
 
 COMMENT=	Not attached file warning plugin for Claws Mail

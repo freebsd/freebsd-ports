@@ -1,5 +1,3 @@
-# Created by: Yoshisato YANAGISAWA
-
 PORTNAME=	dkfilter
 PORTVERSION=	0.11
 PORTREVISION=	1

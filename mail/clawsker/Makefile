@@ -1,5 +1,3 @@
-# Created by: Pawel Pekala <c0rn@o2.pl>
-
 PORTNAME=	clawsker
 PORTVERSION=	1.3.5
 CATEGORIES=	mail perl5

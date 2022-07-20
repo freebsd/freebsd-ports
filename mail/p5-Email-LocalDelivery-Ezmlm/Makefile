@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	Email-LocalDelivery-Ezmlm
 PORTVERSION=	0.10
 PORTREVISION=	1

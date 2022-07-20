@@ -1,5 +1,3 @@
-# Created by: James Raftery <james@now.ie>
-
 PORTNAME=	Net-QMTP
 PORTVERSION=	0.06
 PORTREVISION=	1

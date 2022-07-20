@@ -1,5 +1,3 @@
-# Created by: Bernard Spil <brnrd@FreeBSD.org>
-
 PORTNAME=	twofactor_gauthenticator
 PORTVERSION=	g20210816
 CATEGORIES=	mail security

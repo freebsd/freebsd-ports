@@ -1,5 +1,3 @@
-# Created by: Pav Lucistnik <pav@FreeBSD.org>
-
 PORTNAME=	popular
 PORTVERSION=	1.5.5
 PORTREVISION=	8

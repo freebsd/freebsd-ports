@@ -1,5 +1,3 @@
-# Created by: Mario S F Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${MYSQL_PATCH_VERSION}
 PORTREVISION=	3

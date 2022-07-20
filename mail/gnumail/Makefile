@@ -1,5 +1,3 @@
-# Created by: Thomas Gellekum <tg@FreeBSD.org>
-
 PORTNAME=	gnumail
 PORTVERSION=	1.3.0
 PORTREVISION=	1

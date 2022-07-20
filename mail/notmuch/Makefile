@@ -1,5 +1,3 @@
-# Created by: DarwinSurvivor <darwinsurvivor@gmail.com>
-
 PORTNAME=	notmuch
 DISTVERSION=	0.36
 PORTREVISION?=	0

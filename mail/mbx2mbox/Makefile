@@ -1,5 +1,3 @@
-# Created by: Josh Gilliam <josh@quick.net>
-
 PORTNAME=	mbx2mbox
 PORTVERSION=	0.34
 PORTREVISION=	1

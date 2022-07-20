@@ -1,5 +1,3 @@
-# Created by: bremner@unb.ca
-
 PORTNAME=	hashcash
 PORTVERSION=	1.22
 CATEGORIES=	mail

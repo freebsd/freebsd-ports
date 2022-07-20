@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
-
 PORTNAME=	mailgraph
 PORTVERSION=	1.14
 PORTREVISION=	10

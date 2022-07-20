@@ -1,5 +1,3 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
-
 PORTNAME=	qmailmrtg7
 PORTVERSION=	4.2
 PORTREVISION=	5

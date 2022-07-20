@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME=	jmba
 PORTVERSION=	0.5.5
 CATEGORIES=	mail

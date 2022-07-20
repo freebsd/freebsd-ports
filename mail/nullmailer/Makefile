@@ -1,5 +1,3 @@
-# Created by: clive
-
 PORTNAME=	nullmailer
 PORTVERSION=	2.2
 PORTEPOCH=	1

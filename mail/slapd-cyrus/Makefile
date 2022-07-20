@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	slapd-cyrus
 PORTVERSION=	1.00
 PORTREVISION=	2

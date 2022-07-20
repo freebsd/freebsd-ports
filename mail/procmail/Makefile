@@ -1,5 +1,3 @@
-# Created by: Adam David <adam@FreeBSD.org>
-
 PORTNAME=	procmail
 PORTVERSION=	3.22
 PORTREVISION=	10

@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	lookout
 DISTVERSION=	1.4
 PORTREVISION=	1

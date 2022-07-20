@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	esmtp
 PORTVERSION=	1.2
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Giel van Schijndel <me@mortis.eu>
-
 PORTNAME=	spf-engine
 DISTVERSION=	2.9.3
 CATEGORIES=	mail python

@@ -1,5 +1,3 @@
-# Created by: David Siebörger <drs@rucus.ru.ac.za>
-
 PORTNAME=	mess822
 PORTVERSION=	0.58
 PORTREVISION=	2
