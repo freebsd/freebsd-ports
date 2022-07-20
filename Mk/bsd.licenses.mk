@@ -8,7 +8,6 @@ Licenses_Include_MAINTAINER=         portmgr@FreeBSD.org
 #
 # bsd.licenses.mk - License auditing framework.
 #
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 #
 # Please view me with 4 column tabs!
 #

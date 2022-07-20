@@ -1,6 +1,5 @@
 # bsd.commands.mk - Common commands used within the ports infrastructure
 #
-# Created by: Gabor Kovesdan <gabor@FreeBSD.org>
 #
 # DO NOT COMMIT CHANGES TO THIS FILE BY YOURSELF, EVEN IF YOU DID NOT GET
 # A RESPONSE FROM THE MAINTAINER(S) WITHIN A REASONABLE TIMEFRAME! ALL

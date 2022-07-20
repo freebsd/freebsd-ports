@@ -8,7 +8,6 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 #
 # bsd.licenses.db.mk - License database for bsd.licenses.mk
 #
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 #
 # Please view me with 4 column tabs!
 #

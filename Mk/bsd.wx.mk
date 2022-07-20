@@ -1,6 +1,5 @@
 # bsd.wx.mk - Support for wxWidgets based ports.
 #
-# Created by: Alejandro Pulver <alepulver@FreeBSD.org>
 #
 # The following variables can be defined in a port that uses the wxWidgets
 # library, contributed libraries, WxPython and/or more wxWidgets related

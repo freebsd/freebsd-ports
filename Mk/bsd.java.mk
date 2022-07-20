@@ -3,7 +3,6 @@
 #
 # bsd.java.mk - Support for Java-based ports.
 #
-# Created by: Ernst de Haan <znerd@FreeBSD.org>
 #
 # For FreeBSD committers:
 # Please send all suggested changes to the maintainer instead of committing

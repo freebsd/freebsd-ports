@@ -3,7 +3,6 @@
 #
 # bsd.gcc.mk - Support for smarter USE_GCC usage.
 #
-# Created by: Edwin Groothuis <edwin@freebsd.org>
 #
 # To request the use of a current version of GCC, specify USE_GCC=yes in
 # your port/system configuration.  This is the preferred use of USE_GCC.
