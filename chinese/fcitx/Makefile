@@ -1,5 +1,3 @@
-# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-
 PORTNAME=	fcitx
 PORTVERSION=	4.2.9.8
 CATEGORIES=	chinese x11

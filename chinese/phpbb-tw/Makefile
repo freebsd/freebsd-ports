@@ -1,5 +1,3 @@
-# Created by: chinsan <chinsan.tw@gmail.com>
-
 PORTNAME=	phpbb
 PORTVERSION=	2.0.23
 CATEGORIES=	chinese www

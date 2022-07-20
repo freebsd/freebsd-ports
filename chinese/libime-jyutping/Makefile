@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	libime-jyutping
 DISTVERSION=	1.0.3
 PORTREVISION=	1

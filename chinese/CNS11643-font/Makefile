@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	CNS11643-font
 PORTVERSION=	98.1
 PORTREVISION=	6

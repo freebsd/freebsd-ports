@@ -1,5 +1,3 @@
-# Created by: clive
-
 PORTNAME=	bitchx
 CATEGORIES=	chinese
 

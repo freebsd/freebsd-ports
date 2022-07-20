@@ -1,5 +1,3 @@
-# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-
 PORTNAME=	oicq
 PORTVERSION=	1.6
 PORTREVISION=	1

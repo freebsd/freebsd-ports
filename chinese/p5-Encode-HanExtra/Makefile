@@ -1,5 +1,3 @@
-# Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-
 PORTNAME=	Encode-HanExtra
 PORTVERSION=	0.23
 PORTREVISION=	2

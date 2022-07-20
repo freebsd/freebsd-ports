@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@cs.ucdavis.edu)
-
 PORTNAME=	cless
 PORTVERSION=	290
 CATEGORIES=	chinese

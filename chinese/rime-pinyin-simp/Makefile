@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-pinyin-simp
 DISTVERSION=	g20210627
 CATEGORIES=	chinese textproc

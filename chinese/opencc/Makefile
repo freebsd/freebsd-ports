@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	opencc
 PORTVERSION=	1.0.5
 DISTVERSIONPREFIX=	ver.

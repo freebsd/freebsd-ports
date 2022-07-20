@@ -1,5 +1,3 @@
-# Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-
 PORTNAME=	oto
 PORTVERSION=	0.5
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Zhang Shu
-
 PORTNAME=	jis2gb
 PORTVERSION=	1.5
 CATEGORIES=	chinese

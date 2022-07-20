@@ -1,5 +1,3 @@
-# Created by: Shen Chuan-Hsing
-
 PORTNAME=	gcin
 PORTVERSION=	2.9.0
 CATEGORIES=	chinese textproc gnome

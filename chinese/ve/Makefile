@@ -1,5 +1,3 @@
-# Created by: Ching-Hong Wu <woju@freebsd.ntu.edu.tw>
-
 PORTNAME=	ve
 PORTVERSION=	1.1
 CATEGORIES=	chinese

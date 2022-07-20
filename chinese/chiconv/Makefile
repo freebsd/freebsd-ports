@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	chiconv
 PORTVERSION=	11.3
 CATEGORIES=	chinese converters

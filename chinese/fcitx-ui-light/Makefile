@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	fcitx-ui-light
 PORTVERSION=	0.1.3
 PORTREVISION=	2

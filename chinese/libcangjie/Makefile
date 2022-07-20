@@ -1,5 +1,3 @@
-# Created by: blubee <hello@blubee.me>
-
 PORTNAME=	libcangjie
 PORTVERSION=	1.3
 PORTREVISION=	1

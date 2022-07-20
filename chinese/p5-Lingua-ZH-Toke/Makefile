@@ -1,5 +1,3 @@
-# Created by: clsung@dragon2.net
-
 PORTNAME=	Lingua-ZH-Toke
 PORTVERSION=	0.02
 PORTREVISION=	2

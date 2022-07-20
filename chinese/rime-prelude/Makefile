@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-prelude
 DISTVERSION=	g20211023
 CATEGORIES=	chinese textproc

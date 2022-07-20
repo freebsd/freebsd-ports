@@ -1,5 +1,3 @@
-# Created by: gugod@gugod.org
-
 PORTNAME=	aterm
 PORTVERSION=	1.0.1
 CATEGORIES=	chinese x11

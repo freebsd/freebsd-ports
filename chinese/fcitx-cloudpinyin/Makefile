@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	fcitx-cloudpinyin
 PORTVERSION=	0.3.7
 CATEGORIES=	chinese

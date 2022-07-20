@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@cs.ucdavis.edu)
-
 PORTNAME=	celvis
 PORTVERSION=	1.3
 CATEGORIES=	chinese editors

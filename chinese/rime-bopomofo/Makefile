@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-bopomofo
 DISTVERSION=	g20210131
 CATEGORIES=	chinese textproc

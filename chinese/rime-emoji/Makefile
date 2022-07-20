@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-emoji
 DISTVERSION=	g20210909
 CATEGORIES=	chinese textproc

@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@FreeBSD.org)
-
 PORTNAME=	gb2ps
 PORTVERSION=	2.02
 CATEGORIES=	chinese print

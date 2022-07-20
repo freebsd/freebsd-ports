@@ -1,5 +1,3 @@
-# Created by: Joe Horn <joehorn@gmail.com>
-
 PORTNAME=	wordpress
 DISTVERSION=	6.0
 DISTVERSIONSUFFIX=	-zh_CN

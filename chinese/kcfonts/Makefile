@@ -1,5 +1,3 @@
-# Created by: Ming-I Hseh <PA@FreeBSD.Ntu.edu.TW>
-
 PORTNAME=	kcfonts
 PORTVERSION=	1.05
 PORTREVISION=	4

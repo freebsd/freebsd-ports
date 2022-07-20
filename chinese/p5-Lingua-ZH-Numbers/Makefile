@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	Lingua-ZH-Numbers
 PORTVERSION=	0.04
 PORTREVISION=	1

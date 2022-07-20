@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	libime
 DISTVERSION=	1.0.9
 PORTREVISION=	1

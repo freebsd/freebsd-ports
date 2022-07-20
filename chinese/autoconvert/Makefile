@@ -1,5 +1,3 @@
-# Created by: Yin-Jieh Chen <yinjieh@csie.nctu.edu.tw>
-
 PORTNAME=	autoconvert
 PORTVERSION=	0.3.16
 PORTREVISION=	5

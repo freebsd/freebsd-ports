@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-jyutping
 DISTVERSION=	g20200809
 CATEGORIES=	chinese textproc

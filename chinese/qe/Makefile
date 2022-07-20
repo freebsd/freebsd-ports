@@ -1,5 +1,3 @@
-# Created by: Shen Chuan-Hsing
-
 PORTNAME=	qe
 PORTVERSION=	0.1.1
 PORTREVISION=	3

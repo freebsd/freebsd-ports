@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-luna-pinyin
 DISTVERSION=	g20210805
 CATEGORIES=	chinese textproc

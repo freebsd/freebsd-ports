@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	fcitx-chewing
 PORTVERSION=	0.2.3
 PORTREVISION=	1

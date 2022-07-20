@@ -1,5 +1,3 @@
-# Created by: buganini@gmail.com
-
 PORTNAME=	opencc
 PORTVERSION=	11.5
 CATEGORIES=	chinese converters

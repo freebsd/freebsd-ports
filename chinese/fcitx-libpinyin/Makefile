@@ -1,5 +1,3 @@
-# Created by: Zhihao Yuan <lichray@gmail.com>
-
 PORTNAME=	fcitx-libpinyin
 PORTVERSION=	0.5.4
 CATEGORIES=	chinese

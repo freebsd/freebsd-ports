@@ -1,5 +1,3 @@
-# Created by: Jing-Tang Keith Jang <keith@FreeBSD.org>
-
 PORTNAME=	libtabe
 PORTVERSION=	0.2.6
 PORTREVISION=	8

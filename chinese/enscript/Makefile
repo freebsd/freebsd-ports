@@ -1,5 +1,3 @@
-# Created by: Jing-Tang Keith Jang <keith@FreeBSD.org>
-
 PORTREVISION=	3
 CATEGORIES=	chinese
 

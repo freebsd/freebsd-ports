@@ -1,5 +1,3 @@
-# Created by: Eric L. Camachat <eric@camachat.org>
-
 PORTNAME=	ibus-chewing
 PORTVERSION=	1.5.1
 CATEGORIES=	chinese

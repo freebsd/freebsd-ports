@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-middle-chinese
 DISTVERSION=	g20210926
 CATEGORIES=	chinese textproc

@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	fcitx5-table-other
 DISTVERSION=	5.0.6
 CATEGORIES=	chinese textproc

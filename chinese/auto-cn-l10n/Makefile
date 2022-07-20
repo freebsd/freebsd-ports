@@ -1,5 +1,3 @@
-# Created by: Yinghong Liu <relaxbsd@gmail.com>
-
 PORTNAME=	auto-cn-l10n
 PORTVERSION=	1.1
 PORTREVISION=	3

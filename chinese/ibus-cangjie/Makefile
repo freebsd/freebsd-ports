@@ -1,5 +1,3 @@
-# Created by: blubee <hello@blubee.me>
-
 PORTNAME=	ibus-cangjie
 PORTVERSION=	2.4
 DISTVERSIONPREFIX=	v

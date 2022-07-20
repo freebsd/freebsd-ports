@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@FreeBSD.org)
-
 PORTNAME=	lunar
 PORTVERSION=	2.1
 PORTREVISION=	1

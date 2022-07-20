@@ -1,5 +1,3 @@
-# Created by: Ka Ho Ng <khng300@gmail.com>
-
 PORTNAME=	rime-array
 DISTVERSION=	g20210824
 CATEGORIES=	chinese textproc

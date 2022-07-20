@@ -1,5 +1,3 @@
-# Created by: Yinghong Liu <relaxbsd@gmail.com>
-
 PORTNAME=	scim
 PORTVERSION=	3.1.1
 PORTREVISION=	9

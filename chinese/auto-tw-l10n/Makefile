@@ -1,5 +1,3 @@
-# Created by: Michael C . Wu <keichii@iteration.net>
-
 PORTNAME=	auto-tw-l10n
 PORTVERSION=	1.16
 CATEGORIES=	chinese
