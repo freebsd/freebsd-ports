@@ -344,6 +344,13 @@ include/dart/optimizer/ipopt/ipopt.hpp
 include/dart/optimizer/nlopt/NloptSolver.hpp
 include/dart/optimizer/nlopt/nlopt.hpp
 include/dart/optimizer/optimizer.hpp
+include/dart/planning/Path.hpp
+include/dart/planning/PathFollowingTrajectory.hpp
+include/dart/planning/PathPlanner.hpp
+include/dart/planning/PathShortener.hpp
+include/dart/planning/RRT.hpp
+include/dart/planning/Trajectory.hpp
+include/dart/planning/planning.hpp
 include/dart/simulation/Recording.hpp
 include/dart/simulation/SmartPointer.hpp
 include/dart/simulation/World.hpp
@@ -396,6 +403,9 @@ lib/libdart-optimizer-ipopt.so.6.12.1
 lib/libdart-optimizer-nlopt.so
 lib/libdart-optimizer-nlopt.so.6.12
 lib/libdart-optimizer-nlopt.so.6.12.1
+lib/libdart-planning.so
+lib/libdart-planning.so.6.12
+lib/libdart-planning.so.6.12.1
 lib/libdart-utils-urdf.so
 lib/libdart-utils-urdf.so.6.12
 lib/libdart-utils-urdf.so.6.12.1
@@ -420,6 +430,8 @@ libdata/pkgconfig/dart.pc
 %%DATADIR%%/cmake/DARTFindassimp.cmake
 %%DATADIR%%/cmake/DARTFindccd.cmake
 %%DATADIR%%/cmake/DARTFindfcl.cmake
+%%DATADIR%%/cmake/DARTFindflann.cmake
+%%DATADIR%%/cmake/DARTFindlz4.cmake
 %%DATADIR%%/cmake/DARTFindoctomap.cmake
 %%DATADIR%%/cmake/DARTFindtinyxml2.cmake
 %%DATADIR%%/cmake/DARTFindurdfdom.cmake
@@ -429,6 +441,8 @@ libdata/pkgconfig/dart.pc
 %%DATADIR%%/cmake/Findassimp.cmake
 %%DATADIR%%/cmake/Findccd.cmake
 %%DATADIR%%/cmake/Findfcl.cmake
+%%DATADIR%%/cmake/Findflann.cmake
+%%DATADIR%%/cmake/Findlz4.cmake
 %%DATADIR%%/cmake/Findtinyxml2.cmake
 %%DATADIR%%/cmake/dart_collision-bulletComponent.cmake
 %%DATADIR%%/cmake/dart_collision-bulletTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -460,6 +474,9 @@ libdata/pkgconfig/dart.pc
 %%DATADIR%%/cmake/dart_optimizer-nloptComponent.cmake
 %%DATADIR%%/cmake/dart_optimizer-nloptTargets-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/cmake/dart_optimizer-nloptTargets.cmake
+%%DATADIR%%/cmake/dart_planningComponent.cmake
+%%DATADIR%%/cmake/dart_planningTargets-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/cmake/dart_planningTargets.cmake
 %%DATADIR%%/cmake/dart_utils-urdfComponent.cmake
 %%DATADIR%%/cmake/dart_utils-urdfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 %%DATADIR%%/cmake/dart_utils-urdfTargets.cmake
