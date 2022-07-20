@@ -1,5 +1,3 @@
-# Created by: Chris S.J. Peron <maneo@bsdpro.com>
-
 PORTNAME=	subcalc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3

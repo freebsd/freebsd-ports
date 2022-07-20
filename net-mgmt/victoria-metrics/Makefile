@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME?=	victoria-metrics
 PORTVERSION=	1.79.0		# don't forget to update BUILDINFO_TAG
 DISTVERSIONPREFIX=	v

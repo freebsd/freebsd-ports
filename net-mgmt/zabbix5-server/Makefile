@@ -1,5 +1,3 @@
-# Created by: Pakhom Golynga <pg@pakhom.spb.ru>
-
 PORTNAME=	zabbix5
 DISTVERSION=	5.0.25
 PORTREVISION?=	0

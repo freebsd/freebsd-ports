@@ -1,5 +1,3 @@
-# Created by: Tor Halvard "Squat" Furulund <squat@squat.no>
-
 PORTNAME=	tcptrack
 PORTVERSION=	1.4.2
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Douglas Fraser <doug@idmf.net>
-
 PORTNAME=	grepcidr
 PORTVERSION=	2.0
 CATEGORIES=	net-mgmt textproc

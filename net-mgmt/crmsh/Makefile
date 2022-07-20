@@ -1,5 +1,3 @@
-# Created by: David Shane Holden <dpejesh@yahoo.com>
-
 PORTNAME=	crmsh
 PORTVERSION=	4.3.1
 CATEGORIES=	net-mgmt python

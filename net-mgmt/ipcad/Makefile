@@ -1,5 +1,3 @@
-# Created by: Lev Walkin <vlm@lionet.info>
-
 PORTNAME=	ipcad
 PORTVERSION=	3.7.3
 PORTREVISION=	2

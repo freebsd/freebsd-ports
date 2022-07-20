@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	braa
 PORTVERSION=	0.82
 CATEGORIES=	net-mgmt

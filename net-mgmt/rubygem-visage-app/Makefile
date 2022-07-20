@@ -1,5 +1,3 @@
-# Created by: Brad Davis <brd@FreeBSD.org>
-
 PORTNAME=	visage-app
 PORTVERSION=	2.1.0
 PORTREVISION=	4

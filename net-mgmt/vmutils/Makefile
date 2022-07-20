@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	vmutils
 
 COMMENT=	Ancillary utilities and agent for VictoriaMetrics

@@ -1,5 +1,3 @@
-# Created by: Rihaz Jerrin <rihaz.jerrin@gmail.com>
-
 PORTNAME=	dnsmap
 PORTVERSION=	0.30
 DISTVERSIONPREFIX=	v

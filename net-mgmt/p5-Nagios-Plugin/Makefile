@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	Nagios-Plugin
 PORTVERSION=	0.36
 PORTREVISION=	1

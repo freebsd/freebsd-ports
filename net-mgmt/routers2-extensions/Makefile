@@ -1,5 +1,3 @@
-# Created by: Xavier Beaudouin <kiwi@oav.net>
-
 PORTNAME=	routers2-extensions
 PORTVERSION=	2.23
 CATEGORIES=	net-mgmt

@@ -1,5 +1,3 @@
-# Created by: Dave Cottlehuber <dch@skunkwerks.at>
-
 PORTNAME=	riemann-c-client
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	${PORTNAME}-

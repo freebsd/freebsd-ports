@@ -1,5 +1,3 @@
-# Created by: James Flemer <jflemer@acm.jhu.edu>
-
 PORTNAME=	docsis
 PORTVERSION=	0.9.8
 DISTVERSIONPREFIX=	upstream/

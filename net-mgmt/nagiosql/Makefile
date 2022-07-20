@@ -1,5 +1,3 @@
-# Created by: Chris St Denis <chris@smartt.com>
-
 PORTNAME=	nagiosql
 PORTVERSION=	3.4.1
 CATEGORIES=	net-mgmt www

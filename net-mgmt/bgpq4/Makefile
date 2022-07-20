@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	bgpq4
 PORTVERSION=	1.4
 CATEGORIES=	net-mgmt

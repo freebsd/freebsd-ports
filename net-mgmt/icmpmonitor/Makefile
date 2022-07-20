@@ -1,5 +1,3 @@
-# Created by: nbm
-
 PORTNAME=	icmpmonitor
 PORTVERSION=	1.2
 CATEGORIES=	net-mgmt

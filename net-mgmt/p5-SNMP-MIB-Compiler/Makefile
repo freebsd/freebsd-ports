@@ -1,5 +1,3 @@
-# Created by: Joe Clarke <marcus@marcuscom.com
-
 PORTNAME=	SNMP-MIB-Compiler
 PORTVERSION=	0.06
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	netspoc
 PORTVERSION=	3.2
 PORTREVISION=	1

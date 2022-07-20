@@ -1,5 +1,3 @@
-# Created by: salexanov@gmail.com
-
 PORTNAME=	fetchconfig
 DISTVERSION=	0.26
 CATEGORIES=	net-mgmt

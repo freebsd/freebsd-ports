@@ -1,5 +1,3 @@
-# Created by: Johannes Jost Meixner <johannes@perceivon.net>
-
 PORTNAME=	adal
 PORTVERSION=	1.2.7
 PORTREVISION=	2

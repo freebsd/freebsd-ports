@@ -1,5 +1,3 @@
-# Created by: Boris Samorodov <bsam@FreeBSDD.org>
-
 PORTNAME=	blackbox_exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.1

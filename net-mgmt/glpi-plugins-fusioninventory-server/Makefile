@@ -1,5 +1,3 @@
-# Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-
 PORTNAME=	server
 PORTVERSION=	${GLPI_VER}.${FUNV_VER}
 PORTEPOCH=	1

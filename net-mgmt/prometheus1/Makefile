@@ -1,5 +1,3 @@
-# Created by: Jev Björsell <ports@ecadlabs.com>
-
 PORTNAME=	prometheus
 PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Serge Maslov <serge@maslov.biz>
-
 PORTNAME=	grepip
 PORTVERSION=	1.0
 PORTREVISION=	3

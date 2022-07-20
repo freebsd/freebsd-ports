@@ -1,5 +1,3 @@
-# Created by: David O'Brien (obrien@NUXI.com)
-
 PORTNAME=	clog
 PORTVERSION=	1.6
 CATEGORIES=	net-mgmt security

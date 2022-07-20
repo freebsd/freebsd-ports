@@ -1,5 +1,3 @@
-# Created by: Sevan Janiyan <venture37@geeklan.co.uk>
-
 PORTNAME=	coovachilli
 PORTVERSION=	1.0.12
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: mich@FreeBSD.org
-
 PORTNAME=	rate
 PORTVERSION=	0.9
 PORTREVISION=	2

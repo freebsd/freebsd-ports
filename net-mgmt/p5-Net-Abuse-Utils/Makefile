@@ -1,5 +1,3 @@
-# Created by: Gea-Suan Lin <gslin@gslin.org>
-
 PORTNAME=	Net-Abuse-Utils
 PORTVERSION=	0.27
 CATEGORIES=	net-mgmt perl5

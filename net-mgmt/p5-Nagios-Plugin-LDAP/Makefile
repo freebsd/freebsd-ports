@@ -1,5 +1,3 @@
-# Created by: Alexander Kriventsov <avk@vl.ru>
-
 PORTNAME=	Nagios-Plugin-LDAP
 PORTVERSION=	0.04
 PORTREVISION=	2

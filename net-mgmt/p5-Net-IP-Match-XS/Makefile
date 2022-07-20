@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Net-IP-Match-XS
 PORTVERSION=	0.03
 PORTREVISION=	1

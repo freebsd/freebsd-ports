@@ -1,5 +1,3 @@
-# Created by: janos.mohacsi@bsd.hu
-
 PORTNAME=	ndpmon
 PORTVERSION=	1.4.0
 PORTREVISION=	8

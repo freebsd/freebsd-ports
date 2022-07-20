@@ -1,5 +1,3 @@
-# Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-
 PORTNAME=	cdpr
 PORTVERSION=	2.4
 CATEGORIES=	net-mgmt

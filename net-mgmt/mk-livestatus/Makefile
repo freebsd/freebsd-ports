@@ -1,5 +1,3 @@
-# Created by: Peter C. Lai <cowbert@gmail.com>
-
 PORTNAME=	mk-livestatus
 PORTVERSION=	1.2.8p25
 PORTREVISION=	3

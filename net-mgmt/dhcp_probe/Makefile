@@ -1,5 +1,3 @@
-# Created by: Kevin Hung <khung@nullaxiom.com>
-
 PORTNAME=	dhcp_probe
 PORTVERSION=	1.3.1
 PORTREVISION=	0

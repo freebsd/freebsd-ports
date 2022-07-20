@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	mtrace
 PORTVERSION=	5.2
 PORTREVISION=	1

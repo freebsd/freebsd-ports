@@ -1,5 +1,3 @@
-# Created by: Anton Berezin <tobez@FreeBSD.org>
-
 PORTNAME=	Net-IP-Resolver
 PORTVERSION=	0.02
 PORTREVISION=	1

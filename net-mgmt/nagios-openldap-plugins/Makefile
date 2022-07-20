@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	openldap-plugins
 PORTVERSION=	0.5
 PORTREVISION=	1

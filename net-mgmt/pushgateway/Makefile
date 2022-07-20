@@ -1,5 +1,3 @@
-# Created by: Athanasios Douitsis <aduitsis@cpan.org>
-
 PORTNAME=	pushgateway
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.2

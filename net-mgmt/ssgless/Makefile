@@ -1,5 +1,3 @@
-# Created by: Pavel I Volkov
-
 PORTNAME=	ssgless
 PORTVERSION=	1.3
 CATEGORIES=	net-mgmt

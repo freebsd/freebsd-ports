@@ -1,5 +1,3 @@
-# Created by: Stephen J. Roznowski <sjr@home.net>
-
 PORTNAME=	SNMP_Session
 PORTVERSION=	1.13
 PORTREVISION=	4

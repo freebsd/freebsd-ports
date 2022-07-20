@@ -1,5 +1,3 @@
-# Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-
 PORTNAME=	bandwidthd
 PORTVERSION=	2.0.1
 PORTREVISION=	12

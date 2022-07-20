@@ -1,5 +1,3 @@
-# Created by: Paul Dlug <paul@nerdlabs.com>
-
 PORTNAME=	nsca
 PORTVERSION=	2.7.2
 PORTREVISION=	8

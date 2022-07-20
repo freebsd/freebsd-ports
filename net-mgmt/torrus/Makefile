@@ -1,5 +1,3 @@
-# Created by: Corey Smith <corsmith@gmail.com>
-
 PORTNAME=	torrus
 PORTVERSION=	2.09
 PORTREVISION=	2

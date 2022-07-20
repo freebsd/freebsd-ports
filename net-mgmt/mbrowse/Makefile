@@ -1,5 +1,3 @@
-# Created by: Mark Pulford <mark@kyne.com.au>
-
 PORTNAME=	mbrowse
 PORTVERSION=	0.4.3
 PORTREVISION=	2

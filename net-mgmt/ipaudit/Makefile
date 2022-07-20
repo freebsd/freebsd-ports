@@ -1,5 +1,3 @@
-# Created by: Ying-Chieh Chen <yinjieh@csie.nctu.edu.tw>
-
 PORTNAME=	ipaudit
 PORTVERSION=	1.1
 CATEGORIES=	net-mgmt sysutils

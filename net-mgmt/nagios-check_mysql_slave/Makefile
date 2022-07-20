@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz
-
 PORTNAME=	check_mysql_slave
 PORTVERSION=	0.1.1
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Brad Hendrickse <bradh@uunet.co.za>
-
 PORTNAME=	isic
 PORTVERSION=	0.07
 PORTREVISION=	4

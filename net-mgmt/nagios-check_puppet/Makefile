@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	check_puppet
 PORTVERSION=	1.3
 CATEGORIES=	net-mgmt

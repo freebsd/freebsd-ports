@@ -1,5 +1,3 @@
-# Created by: brock@cotcomsol.com
-
 PORTNAME=	bsnmp-regex
 PORTVERSION=	0.6
 PORTREVISION=	2

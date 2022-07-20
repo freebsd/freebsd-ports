@@ -1,5 +1,3 @@
-# Created by: Christer Edwards <christer.edwards@gmail.com>
-
 PORTNAME=		adguard-exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.14

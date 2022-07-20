@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	fprobe
 PORTVERSION=	1.1
 PORTREVISION=	1

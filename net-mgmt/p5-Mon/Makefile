@@ -1,5 +1,3 @@
-# Created by: Nicholas Esborn <nick@netdot.net>
-
 PORTNAME=	Mon
 PORTVERSION=	0.11
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: Matt Peterson <matt@peterson.org>
-
 PORTNAME=	collectd
 PORTVERSION=	5.12.0
 PORTREVISION=	6

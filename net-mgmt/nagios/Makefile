@@ -1,5 +1,3 @@
-# Created by: Blaz Zupan <blaz@si.FreeBSD.org>
-
 PORTNAME=	nagios
 PORTVERSION=	3.5.1
 PORTREVISION=	12

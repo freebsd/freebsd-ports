@@ -1,5 +1,3 @@
-# Created by: Hsin-Han You <hhyou@cs.nctu.edu.tw>
-
 PORTNAME=	phpweathermap
 PORTVERSION=	0.97a
 PORTREVISION=	3

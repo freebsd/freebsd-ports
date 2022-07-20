@@ -1,5 +1,3 @@
-# Created by: Paul Dlug<paul@nerdlabs.com>
-
 PORTNAME=	nrpe
 PORTVERSION=	3.2.1
 DISTVERSIONPREFIX=	nrpe-

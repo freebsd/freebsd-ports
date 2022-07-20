@@ -1,5 +1,3 @@
-# Created by: Alexandre Biancalana <ale@biancalanas.net>
-
 PORTNAME=	Net-IPAddress
 PORTVERSION=	1.10
 PORTREVISION=	1

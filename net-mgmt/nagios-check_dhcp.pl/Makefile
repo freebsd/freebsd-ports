@@ -1,5 +1,3 @@
-# Created by: Lawrence Chen <beastie@tardisi.com>
-
 PORTNAME=	check_dhcp.pl
 PORTVERSION=	0.1
 CATEGORIES=	net-mgmt

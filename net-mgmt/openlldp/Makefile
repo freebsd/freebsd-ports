@@ -1,5 +1,3 @@
-# Created by: Roar Pettersen <roar@uib.no>
-
 PORTNAME=	openlldp
 DISTVERSION=	0.4alpha
 PORTREVISION=	2

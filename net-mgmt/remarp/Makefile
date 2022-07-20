@@ -1,5 +1,3 @@
-# Created by: mich@freebsdcluster.org
-
 PORTNAME=	remarp
 PORTVERSION=	0.05
 PORTREVISION=	1

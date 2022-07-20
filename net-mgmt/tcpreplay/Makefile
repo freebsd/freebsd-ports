@@ -1,5 +1,3 @@
-# Created by: cnh@ivmg.net
-
 PORTNAME=	tcpreplay
 DISTVERSION=	4.4.1
 PORTREVISION=	1

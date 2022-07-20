@@ -1,5 +1,3 @@
-# Created by: Douglas K. Rand <rand@meridian-enviro.com>
-
 PORTNAME=	nagcon
 PORTVERSION=	0.0.32
 CATEGORIES=	net-mgmt

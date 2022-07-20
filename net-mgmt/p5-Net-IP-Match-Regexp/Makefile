@@ -1,5 +1,3 @@
-# Created by: Timur I. Bakeyev <bat@cpan.org>
-
 PORTNAME=	Net-IP-Match-Regexp
 PORTVERSION=	1.01
 PORTREVISION=	2

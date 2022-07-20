@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-SNMP
 PORTVERSION=	1.1006
 PORTREVISION=	1

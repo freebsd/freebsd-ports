@@ -1,5 +1,3 @@
-# Created by: Tim Bishop <tdb@FreeBSD.org>
-
 PORTNAME=	bwm-ng
 PORTVERSION=	0.6
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: arved
-
 PORTNAME=	SNMP-Info
 PORTVERSION=	3.84
 CATEGORIES=	net-mgmt perl5

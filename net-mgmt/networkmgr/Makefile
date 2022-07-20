@@ -1,5 +1,3 @@
-# Created by: Eric Turgeon <ericturgeon.bsd@gmail.org>
-
 PORTNAME=	networkmgr
 DISTVERSION=	6.1
 PORTREVISION=	1

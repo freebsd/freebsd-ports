@@ -1,5 +1,3 @@
-# Created by: Anders Nordby <anders@FreeBSD.org>
-
 PORTNAME=	darkstat
 DISTVERSION=	3.0.721
 CATEGORIES=	net-mgmt

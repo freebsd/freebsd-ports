@@ -1,5 +1,3 @@
-# Created by: Andrew 'derfi' Sidorov <derfi@vei.ru>
-
 PORTNAME=	nagvis
 PORTVERSION=	1.9.33
 CATEGORIES=	net-mgmt

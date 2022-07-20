@@ -1,5 +1,3 @@
-# Created by: Nick F <ffault@gmail.com>
-
 PORTNAME=	dhcdrop
 PORTVERSION=	0.5
 PORTREVISION=	3

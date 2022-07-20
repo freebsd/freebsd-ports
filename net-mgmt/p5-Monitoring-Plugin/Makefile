@@ -1,5 +1,3 @@
-# Created by: Gerrit Beine <gerrit.beine@gmx.de>
-
 PORTNAME=	Monitoring-Plugin
 PORTVERSION=	0.40
 CATEGORIES=	net-mgmt perl5

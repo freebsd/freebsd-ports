@@ -1,5 +1,3 @@
-# Created by: JJ Behrens <jj@nttmcl.com>
-
 PORTNAME=	Net-IPv6Addr
 PORTVERSION=	1.02
 CATEGORIES=	net-mgmt perl5

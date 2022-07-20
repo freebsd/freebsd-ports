@@ -1,5 +1,3 @@
-# Created by: marck@rinet.ru
-
 PORTNAME=	ehnt
 PORTVERSION=	0.3
 PORTREVISION=	8

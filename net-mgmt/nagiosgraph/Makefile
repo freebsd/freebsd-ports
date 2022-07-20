@@ -1,5 +1,3 @@
-# Created by: Denis Shaposhnikov <dsh@vlink.ru>
-
 PORTNAME=	nagiosgraph
 PORTVERSION=	1.5.2
 PORTREVISION=	3

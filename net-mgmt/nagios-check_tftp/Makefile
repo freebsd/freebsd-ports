@@ -1,5 +1,3 @@
-# Created by: hr <holgerrepp@googlemail.com>
-
 PORTNAME=	check_tftp
 PORTVERSION=	1.0.1
 CATEGORIES=	net-mgmt

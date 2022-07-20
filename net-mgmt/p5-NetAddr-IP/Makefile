@@ -1,5 +1,3 @@
-# Created by: Christopher N. Harrell <cnh@ivmg.net>
-
 PORTNAME=	NetAddr-IP
 PORTVERSION=	4.079
 CATEGORIES=	net-mgmt perl5

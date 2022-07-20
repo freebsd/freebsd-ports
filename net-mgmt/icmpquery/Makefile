@@ -1,5 +1,3 @@
-# Created by: dom@happygiraffe.net
-
 PORTNAME=	icmpquery
 PORTVERSION=	1.0.3
 CATEGORIES=	net-mgmt

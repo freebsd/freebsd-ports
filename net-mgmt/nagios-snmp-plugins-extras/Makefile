@@ -1,5 +1,3 @@
-# Created by: Alexey V. Degtyarev
-
 PORTNAME=	nagios-snmp-plugins-extras
 PORTVERSION=	1.1.2
 PORTREVISION=	1

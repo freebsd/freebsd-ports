@@ -1,5 +1,3 @@
-# Created by: El Vampiro <vampiro@rootshell.ru>
-
 PORTNAME=	bpft
 PORTVERSION=	4.20040506
 PORTREVISION=	1

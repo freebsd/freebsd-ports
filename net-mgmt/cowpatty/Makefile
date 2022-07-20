@@ -1,5 +1,3 @@
-# Created by: Dennis Herrmann <adox@mcx2.org>
-
 PORTNAME=	cowpatty
 PORTVERSION=	4.8
 CATEGORIES=	net-mgmt security

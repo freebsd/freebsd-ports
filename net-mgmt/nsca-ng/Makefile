@@ -1,5 +1,3 @@
-# Created by: Alexander Sulfrian <alexander@sulfrian.net>
-
 PORTNAME=	nsca-ng
 PORTVERSION=	1.6
 DISTVERSIONPREFIX=v

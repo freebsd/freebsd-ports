@@ -1,5 +1,3 @@
-# Created by: Eugene Grosbein <eugen@FreeBSD.org>
-
 PORTNAME=	RDR-Collector
 PORTVERSION=	1.0000
 CATEGORIES=	net-mgmt perl5

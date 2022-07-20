@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@bsd.hu
-
 PORTNAME=	rancid
 PORTVERSION=	3.13
 PORTREVISION=	1

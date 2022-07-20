@@ -1,5 +1,3 @@
-# Created by: Ryan Steinmetz <zi@FreeBSD.org>
-
 PORTNAME=	pypowerwall
 PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Athanasios Douitsis <aduitsis@cpan.org>
-
 PORTNAME=		unbound_exporter
 PORTVERSION=		0.3
 DISTVERSIONPREFIX=	v

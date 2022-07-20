@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@dante.org.uk
-
 PORTNAME=	sipcalc
 PORTVERSION=	1.1.6
 CATEGORIES=	net-mgmt

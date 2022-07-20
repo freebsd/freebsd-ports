@@ -1,5 +1,3 @@
-# Created by: anarcat@anarcat.ath.cx
-
 PORTNAME=	nagircbot
 PORTVERSION=	0.0.33
 PORTREVISION=	2

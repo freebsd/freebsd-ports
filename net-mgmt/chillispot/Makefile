@@ -1,5 +1,3 @@
-# Created by: Sevan Janiyan <venture37@geeklan.co.uk>
-
 PORTNAME=	chillispot
 PORTVERSION=	1.0
 PORTREVISION=	12

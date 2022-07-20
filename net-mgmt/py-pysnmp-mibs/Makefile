@@ -1,5 +1,3 @@
-# Created by: Martin Jackson <mhjacks@swbell.net>
-
 PORTNAME=	pysnmp-mibs
 PORTVERSION=	0.1.6
 PORTREVISION=	1

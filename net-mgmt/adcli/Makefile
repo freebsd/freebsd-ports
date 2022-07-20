@@ -1,5 +1,3 @@
-# Created by: Mikhail T. <mi@aldan.algebra.com>
-
 PORTNAME=	adcli
 PORTVERSION=	0.9.1
 CATEGORIES=	net-mgmt net security

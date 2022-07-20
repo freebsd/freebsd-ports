@@ -1,5 +1,3 @@
-# Created by: Bartlomiej Rutkowski <r@robakdesign.com>
-
 PORTNAME=	pftabled
 PORTVERSION=	1.09
 PORTREVISION=	2

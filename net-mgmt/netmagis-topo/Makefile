@@ -1,5 +1,3 @@
-# Created by: Pierre David <pdagog@gmail.com>, Jean Benoit <jean@unistra.fr>
-
 PORTNAME=	netmagis
 PORTREVISION=	1
 PKGNAMESUFFIX=	-topo

@@ -1,5 +1,3 @@
-# Created by: Michal Hanula <michal@hanu.la>
-
 PORTNAME=	alertmanager
 PORTVERSION=	0.23.0
 DISTVERSIONPREFIX=	v

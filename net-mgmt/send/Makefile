@@ -1,5 +1,3 @@
-# Created by: Janos Mohacsi <mohacsi@niif.hu>
-
 PORTNAME=	send
 PORTVERSION=	0.3
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,3 @@
-# Created by: Alexey Bobkov <mr.deadlystorm@gmail.com>
-
 PORTNAME=	mysqld_exporter
 PORTVERSION=	0.12.1
 DISTVERSIONPREFIX=v

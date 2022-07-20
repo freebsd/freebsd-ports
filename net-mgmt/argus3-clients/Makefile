@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	argus-clients
 PORTVERSION=	3.0.8.3
 CATEGORIES=	net-mgmt security

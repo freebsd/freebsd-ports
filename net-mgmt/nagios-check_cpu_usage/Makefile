@@ -1,5 +1,3 @@
-# Created by: jamrich.majo@gmail.com
-
 PORTNAME=	nagios-check_cpu_usage
 PORTVERSION=	1.0
 PORTREVISION=	1

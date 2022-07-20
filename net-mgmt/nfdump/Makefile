@@ -1,5 +1,3 @@
-# Created by: Janos.Mohacsi@bsd.hu
-
 PORTNAME=	nfdump
 PORTVERSION=	1.6.20
 PORTREVISION=	1

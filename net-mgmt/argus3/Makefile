@@ -1,5 +1,3 @@
-# Created by: Stefan Esser <se@FreeBSD.org>
-
 PORTNAME=	argus
 PORTVERSION=	3.0.8.2
 PORTREVISION=	1

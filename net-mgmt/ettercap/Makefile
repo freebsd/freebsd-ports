@@ -1,5 +1,3 @@
-# Created by: George Reid <greid@ukug.uk.freebsd.org>
-
 PORTNAME=	ettercap
 PORTVERSION=	0.8.3.1
 PORTEPOCH=	1

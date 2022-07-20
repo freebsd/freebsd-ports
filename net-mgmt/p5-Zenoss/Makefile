@@ -1,5 +1,3 @@
-# Created by: Phil Phillips
-
 PORTNAME=	Zenoss
 PORTVERSION=	1.11
 PORTREVISION=	1

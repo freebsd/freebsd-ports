@@ -1,5 +1,3 @@
-# Created by: Mike Bristow <mike@urgle.com>
-
 PORTNAME=	netmask
 PORTVERSION=	2.4
 PORTREVISION=	2

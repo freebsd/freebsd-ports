@@ -1,5 +1,3 @@
-# Created by: Brad Davis <brd@FreeBSD.org>
-
 PORTNAME=	intel-snap
 PORTVERSION=	0.0.1
 PORTREVISION=	4

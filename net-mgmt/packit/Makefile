@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	packit
 PORTVERSION=	1.8
 CATEGORIES=	net-mgmt

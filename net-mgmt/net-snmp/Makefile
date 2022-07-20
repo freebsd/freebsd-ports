@@ -1,5 +1,3 @@
-# Created by: gpalmer
-
 PORTNAME=	snmp
 PORTVERSION=	5.9.1
 PORTREVISION=	1

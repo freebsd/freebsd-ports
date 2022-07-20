@@ -1,5 +1,3 @@
-# Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-
 PORTNAME=	fastnetmon
 PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v

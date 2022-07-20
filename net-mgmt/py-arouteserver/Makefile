@@ -1,5 +1,3 @@
-# Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-
 PORTNAME=	arouteserver
 PORTVERSION=	1.15.1
 CATEGORIES=	net-mgmt python

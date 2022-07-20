@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	iftop
 DISTVERSION=	1.0pre4
 CATEGORIES=	net-mgmt

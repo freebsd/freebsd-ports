@@ -1,5 +1,3 @@
-# Created by: Stefan Lambrev <cheffo@freebsd-bg.org>
-
 PORTNAME=	kapacitor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1

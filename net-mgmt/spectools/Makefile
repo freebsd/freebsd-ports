@@ -1,5 +1,3 @@
-# Created by: Henrik Brix Andersen <henrik@brixandersen.dk>
-
 PORTNAME=	spectools
 PORTVERSION=	201108.r1
 PORTREVISION=	3

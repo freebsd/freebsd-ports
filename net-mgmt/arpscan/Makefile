@@ -1,5 +1,3 @@
-# Created by: David Yeske <dyeske@gmail.com>
-
 PORTNAME=	arpscan
 PORTVERSION=	0.5
 PORTREVISION=	1

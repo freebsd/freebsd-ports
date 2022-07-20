@@ -1,5 +1,3 @@
-# Created by: Brian Somers <brian@FreeBSD.org>
-
 PORTNAME=	arpwatch
 PORTVERSION=	3.3
 CATEGORIES=	net-mgmt

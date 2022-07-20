@@ -1,5 +1,3 @@
-# Created by: dpejesh@yahoo.com
-
 PORTNAME=	resource-agents
 PORTVERSION=	4.10.0
 DISTVERSIONPREFIX=v

@@ -1,5 +1,3 @@
-# Created by: Thomas Spreng <spreng@socket.ch>
-
 PORTNAME=	kismet
 DISTVERSION=	2016-07-R1
 PORTREVISION=	2

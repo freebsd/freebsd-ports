@@ -1,5 +1,3 @@
-# Created by: Douglas K. Rand <rand@iteris.com>
-
 PORTNAME=	check_relayd_status
 PORTVERSION=	1.1
 CATEGORIES=	net-mgmt

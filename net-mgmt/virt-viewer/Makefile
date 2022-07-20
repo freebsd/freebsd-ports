@@ -1,5 +1,3 @@
-# Created by: Jason Helfman <jgh@FreeBSD.org>
-
 PORTNAME=	virt-viewer
 PORTVERSION=	11.0
 PORTREVISION=	2

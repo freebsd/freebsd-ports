@@ -1,5 +1,3 @@
-# Created by: Mathieu Simon <freebsd@simweb.ch>
-
 PORTNAME=	lldpd
 PORTVERSION=	1.0.14
 CATEGORIES=	net-mgmt

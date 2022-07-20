@@ -1,5 +1,3 @@
-# Created by: clement@FreeBSD.org
-
 PORTNAME=	spine
 PORTVERSION=	1.2.17
 CATEGORIES=	net-mgmt

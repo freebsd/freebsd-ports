@@ -1,5 +1,3 @@
-# Created by: Jake Smith <jake@xz.cx>
-
 PORTNAME=	phpipam
 DISTVERSION=	1.5.0
 CATEGORIES=	net-mgmt

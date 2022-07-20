@@ -1,5 +1,3 @@
-# Created by: Kirill Ponomarew <ponomarew@oberon.net>
-
 PORTNAME=	pmacct
 DISTVERSION=	1.7.7
 CATEGORIES=	net-mgmt

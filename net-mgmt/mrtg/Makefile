@@ -1,5 +1,3 @@
-# Created by: James FitzGibbon <jfitz@FreeBSD.org>
-
 PORTNAME=	mrtg
 PORTVERSION=	2.17.4
 PORTREVISION=	8

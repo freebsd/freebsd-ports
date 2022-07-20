@@ -1,5 +1,3 @@
-# Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-
 PORTNAME=	pktstat
 PORTVERSION=	1.8.5
 PORTREVISION=	1

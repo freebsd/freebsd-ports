@@ -1,5 +1,3 @@
-# Created by: Bruce M Simpson <bms@FreeBSD.org>
-
 PORTNAME=	nagios-snmp-plugins
 PORTVERSION=	1.3.1
 CATEGORIES=	net-mgmt

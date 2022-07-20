@@ -1,5 +1,3 @@
-# Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-
 PORTNAME=	BigIP-iControl
 PORTVERSION=	0.095
 PORTREVISION=	2

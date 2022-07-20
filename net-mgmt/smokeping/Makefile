@@ -1,5 +1,3 @@
-# Created by: Lars Thegler <lars@thegler.dk>
-
 PORTNAME=	smokeping
 PORTVERSION=	2.8.2
 PORTREVISION=	1

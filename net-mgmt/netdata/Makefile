@@ -1,5 +1,3 @@
-# Created by: Mahdi Mokhtari <mokhi63@gmail.com>
-
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.35.1
