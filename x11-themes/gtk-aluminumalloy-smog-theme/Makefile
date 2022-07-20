@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTREVISION=	5
 
 THEME_FLAVOR=	smog

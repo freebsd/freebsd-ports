@@ -1,5 +1,3 @@
-# Created by: Phillip Neumann <pneumann@gmail.com>
-
 PORTNAME=	icon-naming-utils
 PORTVERSION=	0.8.90
 PORTREVISION=	1

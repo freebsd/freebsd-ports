@@ -1,5 +1,3 @@
-# Created by: Nicole Reid <root@cooltrainer.org>
-
 PORTNAME=	elementary
 DISTVERSION=	7.0.0
 CATEGORIES=	x11-themes gnome

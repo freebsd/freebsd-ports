@@ -1,5 +1,3 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
-
 PORTNAME=	claws-mail-themes
 PORTVERSION=	20140629
 CATEGORIES=	x11-themes mail

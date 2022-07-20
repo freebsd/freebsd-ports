@@ -1,4 +1,3 @@
-# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 #   $MCom: ports/trunk/x11-themes/mint-themes/Makefile 19873 2014-09-14 17:17:23Z kwm $
 
 PORTNAME=	mint-themes

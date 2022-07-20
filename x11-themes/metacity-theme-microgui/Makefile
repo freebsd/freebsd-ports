@@ -1,5 +1,3 @@
-# Created by: Douglas Thrift <douglas@douglasthrift.net>
-
 PORTNAME=	microgui
 PORTVERSION=	1.0
 PORTREVISION=	3

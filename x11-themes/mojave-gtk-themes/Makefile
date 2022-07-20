@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	mojave-gtk-themes
 DISTVERSION=	2022-06-07
 CATEGORIES=	x11-themes

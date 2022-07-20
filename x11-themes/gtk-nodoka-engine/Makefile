@@ -1,5 +1,3 @@
-# Created by: Romain Tartiere <romain@blogreen.org>
-
 PORTNAME=	gtk-nodoka-engine
 PORTVERSION=	0.7.5
 PORTREVISION=	3

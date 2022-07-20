@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	nuvola
 PORTVERSION=	1.0
 PORTREVISION=	1

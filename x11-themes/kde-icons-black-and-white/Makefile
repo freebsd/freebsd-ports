@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	black-and-white
 PORTVERSION=	2.0.a
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/

@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	pop-gtk-themes
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3.1

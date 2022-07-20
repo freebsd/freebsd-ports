@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	audacious-skins
 PORTVERSION=	0.4
 CATEGORIES=	x11-themes

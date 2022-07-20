@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	graphite-rade8
 PORTVERSION=	3.1
 MASTER_SITES=	SF/graphitekde/graphitekde/Graphite-RAD.E8-${PORTVERSION}

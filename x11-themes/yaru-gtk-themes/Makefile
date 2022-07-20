@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	yaru-gtk-themes
 DISTVERSION=	22.04.3.1
 CATEGORIES=	x11-themes

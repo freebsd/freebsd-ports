@@ -1,5 +1,3 @@
-# Created by: Grzegorz Blach <gblach@FreeBSD.org>
-
 PORTNAME=	cursor-neutral-white-theme
 DISTVERSION=	1.1.1
 CATEGORIES=	x11-themes

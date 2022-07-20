@@ -1,5 +1,3 @@
-# Created by: chinsan
-
 PORTNAME=	lxappearance
 PORTVERSION=	0.6.3
 CATEGORIES=	x11-themes gnome

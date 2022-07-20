@@ -1,5 +1,3 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-
 PORTNAME=	lush
 PORTVERSION=	0.1.0
 MASTER_SITES=	LOCAL/lioux

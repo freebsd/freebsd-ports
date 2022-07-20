@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	ant-dracula-theme
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0

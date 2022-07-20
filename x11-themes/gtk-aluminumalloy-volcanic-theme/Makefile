@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	aluminumalloy
 PORTVERSION?=	2004.01.04
 PORTREVISION?=	8

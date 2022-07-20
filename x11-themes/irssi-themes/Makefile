@@ -1,5 +1,3 @@
-# Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-
 PORTNAME=	irssi-themes
 PORTVERSION=	2016082001
 CATEGORIES=	x11-themes irc

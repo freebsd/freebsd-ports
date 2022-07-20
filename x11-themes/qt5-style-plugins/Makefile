@@ -1,5 +1,3 @@
-# Created by: Marie Loise Nolden <loise@kde.org>
-
 PORTNAME=	qt5-style-plugins
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.0.0-23

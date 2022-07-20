@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	digital-harmony
 PORTVERSION=	1.1
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	canta-icon-theme
 DISTVERSION=	2020-05-17
 CATEGORIES=	x11-themes

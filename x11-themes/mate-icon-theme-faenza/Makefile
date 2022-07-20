@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	mate-icon-theme-faenza
 PORTVERSION=	1.20.0
 CATEGORIES=	x11-themes mate

@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	flatery-icon-themes
 DISTVERSION=	2022-01-17
 CATEGORIES=	x11-themes

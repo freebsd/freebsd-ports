@@ -1,5 +1,3 @@
-# Created by: Filippo Natali <filippo@widestore.net>
-
 PORTNAME=	gtk-lila-theme-extras
 PORTVERSION=	0.4.5
 PORTREVISION=	7

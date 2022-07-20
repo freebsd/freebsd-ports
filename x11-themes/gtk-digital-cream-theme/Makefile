@@ -1,5 +1,3 @@
-# Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-
 PORTNAME=	digital-cream
 PORTVERSION=	1.0
 PORTREVISION=	8

@@ -1,5 +1,3 @@
-# Created by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
-
 PORTNAME=	slim-themes
 PORTVERSION=	1.0.1
 PORTREVISION=	2

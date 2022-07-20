@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-backgrounds
 PORTVERSION=	42.0
 CATEGORIES=	x11-themes graphics gnome

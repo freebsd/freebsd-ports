@@ -1,5 +1,3 @@
-# Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-
 PORTNAME=	gnome-themes-extra
 PORTVERSION=	3.28
 PORTREVISION=	3

@@ -1,5 +1,3 @@
-# Created by: Piotr Smyrak <smyru@heron.pl>
-
 PORTNAME=	cursor-jimmac-theme
 PORTVERSION=	0.1
 PORTREVISION=	3

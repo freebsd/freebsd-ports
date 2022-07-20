@@ -1,5 +1,3 @@
-# Created by: Filippo Natali <filippo@widestore.net>
-
 # Port logic gratuitously stolen from x11-themes/kde-icons-noia by
 # lioux@.  If it's not defined here and you think it should be, check
 # x11-themes/gnome-icons/bsd.gnome-icons.mk for it.

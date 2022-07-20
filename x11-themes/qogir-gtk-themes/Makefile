@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	qogir-gtk-themes
 DISTVERSION=	2021-11-17
 CATEGORIES=	x11-themes

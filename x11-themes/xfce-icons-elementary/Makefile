@@ -1,5 +1,3 @@
-# Created by: Matthias Petermann <matthias@petermann-it.de>
-
 PORTNAME=	elementary
 PORTVERSION=	0.17
 DISTVERSIONPREFIX=v

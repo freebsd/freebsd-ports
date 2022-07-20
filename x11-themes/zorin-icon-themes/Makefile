@@ -1,5 +1,3 @@
-# Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-
 PORTNAME=	zorin-icon-themes
 DISTVERSION=	2.9.7
 CATEGORIES=	x11-themes

@@ -1,5 +1,3 @@
-# Created by: archfan <mail_me@riseup.net>
-
 PORTNAME=	gtk-arc-themes
 DISTVERSION=	20220223
 CATEGORIES=	x11-themes

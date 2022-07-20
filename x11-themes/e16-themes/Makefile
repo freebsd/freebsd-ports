@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	e16-themes
 PORTVERSION=	1.0.2
 CATEGORIES=	x11-themes enlightenment

@@ -1,5 +1,3 @@
-# Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-
 PORTNAME=	adapta-backgrounds
 PORTVERSION=	0.5.2.3
 PORTREVISION=	2
