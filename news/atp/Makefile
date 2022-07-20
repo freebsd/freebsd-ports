@@ -1,5 +1,3 @@
-# Created by: Donald Burr <dburr@FreeBSD.org>
-
 PORTNAME=	atp
 PORTVERSION=	1.50
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Ralf van der Enden <tremere@cainites.net>
-
 PORTNAME=	sabyenc3
 PORTVERSION=	5.4.3
 CATEGORIES=	news python

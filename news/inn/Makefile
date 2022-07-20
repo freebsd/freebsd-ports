@@ -1,5 +1,3 @@
-# Created by: torstenb
-
 PORTNAME?=		inn
 PORTVERSION?=		2.6.5
 PORTREVISION?=		0

@@ -1,5 +1,3 @@
-# Created by: Andrey Slusar <anray@FreeBSD.org>
-
 PORTNAME=	s-news
 PORTVERSION=	0.1.11
 PORTREVISION=	5

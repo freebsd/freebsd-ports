@@ -1,5 +1,3 @@
-# Created by: John Holland <john@zoner.org>
-
 PORTNAME=	ubh
 PORTVERSION=	2.5
 PORTREVISION=	3

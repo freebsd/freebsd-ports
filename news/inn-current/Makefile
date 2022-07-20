@@ -1,5 +1,3 @@
-# Created by: kbowling
-
 PORTNAME=		inn-current
 PORTVERSION=		${SNAPSHOT}
 MASTER_SITE_SUBDIR=	inn/snapshots

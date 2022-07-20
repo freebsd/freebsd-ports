@@ -1,5 +1,3 @@
-# Created by: smace
-
 PORTNAME=	trn
 PORTVERSION=	3.6
 CATEGORIES=	news

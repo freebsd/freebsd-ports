@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	multisuck
 PORTVERSION=	1.0.4
 CATEGORIES=	news

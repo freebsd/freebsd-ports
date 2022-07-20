@@ -1,5 +1,3 @@
-# Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-
 PORTNAME=	POE-Component-Server-NNTP
 PORTVERSION=	1.06
 CATEGORIES=	news perl5

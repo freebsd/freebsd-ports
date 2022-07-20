@@ -1,5 +1,3 @@
-# Created by: ijliao
-
 PORTNAME=	yencode
 PORTVERSION=	0.46
 PORTREVISION=	7

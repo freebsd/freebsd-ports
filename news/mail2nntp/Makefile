@@ -1,5 +1,3 @@
-# Created by: gary@hayers.org
-
 PORTNAME=	mail2nntp
 PORTVERSION=	1.0
 CATEGORIES=	news mail

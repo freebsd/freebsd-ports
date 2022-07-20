@@ -1,5 +1,3 @@
-# Created by: Frederic Cambus
-
 PORTNAME=	mmail
 DISTVERSION=	0.52
 CATEGORIES=	news

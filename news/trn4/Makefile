@@ -1,5 +1,3 @@
-# Created by: smace
-
 PORTNAME=	trn
 PORTVERSION=	4.0.b77
 PKGNAMESUFFIX=	4

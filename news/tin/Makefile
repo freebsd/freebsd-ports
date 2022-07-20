@@ -1,5 +1,3 @@
-# Created by: obrien@cs.ucdavis.edu
-
 PORTNAME=	tin
 PORTVERSION=	2.6.1
 PORTREVISION=	1

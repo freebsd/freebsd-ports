@@ -1,5 +1,3 @@
-# Created by: George Sorsby <george@crackpipe.net>
-
 PORTNAME=	nget
 PORTVERSION=	0.27.1
 DISTVERSIONSUFFIX=	+uulib

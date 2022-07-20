@@ -1,5 +1,3 @@
-# Created by: Andreas Klemm <andreas@klemm.gtn.com>
-
 PORTNAME=	knews
 PORTVERSION=	1.0b.1
 PORTREVISION=	13

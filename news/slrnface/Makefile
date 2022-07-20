@@ -1,5 +1,3 @@
-# Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
-
 PORTNAME=	slrnface
 PORTVERSION=	2.1.1
 PORTREVISION=	6

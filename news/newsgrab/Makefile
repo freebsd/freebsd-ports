@@ -1,5 +1,3 @@
-# Created by: Pete Fritchman <petef@databits.net>
-
 PORTNAME=	newsgrab
 PORTVERSION=	0.4.0
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: asaddi@philosophysw.com
-
 PORTNAME=	newsfish
 PORTVERSION=	1.2.6
 CATEGORIES=	news

@@ -1,5 +1,3 @@
-# Created by: Denis Shaposhnikov <dsh@vlink.ru>
-
 PORTNAME=	gup
 PORTVERSION=	0.4
 CATEGORIES=	news

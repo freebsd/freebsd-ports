@@ -1,5 +1,3 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
 PORTNAME=	POE-Component-Client-NNTP
 PORTVERSION=	2.22
 PORTREVISION=	1

@@ -1,5 +1,3 @@
-# Created by: proff@suburbia.net
-
 PORTNAME=	nntpcache
 PORTVERSION=	3.0.2
 PORTREVISION=	11

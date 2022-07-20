@@ -1,5 +1,3 @@
-# Created by: bkhl@elektrubadur.se
-
 PORTNAME=	cg
 PORTVERSION=	0.4
 CATEGORIES=	news

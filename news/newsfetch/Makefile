@@ -1,5 +1,3 @@
-# Created by: Jun-ichiro itojun Itoh <itojun@itojun.org>
-
 PORTNAME=	newsfetch
 PORTVERSION=	1.21
 PORTREVISION=	2

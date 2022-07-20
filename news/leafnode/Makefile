@@ -1,5 +1,3 @@
-# Created by: Brian Somers <brian@FreeBSD.org>
-
 PORTNAME=	leafnode
 DISTVERSION=	1.12.0
 CATEGORIES=	news

@@ -1,5 +1,3 @@
-# Created by: Adam David <adam@FreeBSD.org>
-
 PORTNAME=	nntp
 PORTVERSION=	1.5.12.2
 PORTREVISION=	10
