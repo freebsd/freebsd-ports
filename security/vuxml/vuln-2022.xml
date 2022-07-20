@@ -1,3 +1,42 @@
+  <vuln vid="27cc4258-0805-11ed-8ac1-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>103.0.5060.134</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/07/stable-channel-update-for-desktop_19.html">
+	  <p>This release contains 11 security fixes, including:</p>
+	  <ul>
+	    <li>[1336266] High CVE-2022-2477: Use after free in Guest View. Reported by anonymous on 2022-06-14</li>
+	    <li>[1335861] High CVE-2022-2478: Use after free in PDF. Reported by triplepwns on 2022-06-13</li>
+	    <li>[1329987] High CVE-2022-2479: Insufficient validation of untrusted input in File. Reported by anonymous on 2022-05-28</li>
+	    <li>[1339844] High CVE-2022-2480: Use after free in Service Worker API. Reported by Sergei Glazunov of Google Project Zero on 2022-06-27</li>
+	    <li>[1341603] High CVE-2022-2481: Use after free in Views. Reported by YoungJoo Lee(@ashuu_lee) of CompSecLab at Seoul National University on 2022-07-04</li>
+	    <li>[1308341] Low CVE-2022-2163: Use after free in Cast UI and Toolbar. Reported by Chaoyuan Peng (@ret2happy) on 2022-03-21</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2163</cvename>
+      <cvename>CVE-2022-2477</cvename>
+      <cvename>CVE-2022-2478</cvename>
+      <cvename>CVE-2022-2479</cvename>
+      <cvename>CVE-2022-2480</cvename>
+      <cvename>CVE-2022-2481</cvename>
+      <url>https://chromereleases.googleblog.com/2022/07/stable-channel-update-for-desktop_19.html</url>
+    </references>
+    <dates>
+      <discovery>2022-07-19</discovery>
+      <entry>2022-07-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="871d93f9-06aa-11ed-8d5f-080027f5fec9">
     <topic>redis -- Potential remote code execution vulnerability</topic>
     <affects>
