@@ -1,5 +1,3 @@
-# Created by: jabley@clear.co.nz
-
 PORTNAME=	xfstt
 PORTVERSION=	1.11
 CATEGORIES=	x11-servers

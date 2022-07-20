@@ -1,5 +1,3 @@
-# Created by: lesi@FreeBSD.org
-
 PORTNAME=	xorg-dmx
 PORTREVISION=	0
 

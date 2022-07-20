@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	xorg-nestserver
 PORTREVISION=	0
 PORTEPOCH=	2

@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME?=	xorg-server
 PORTVERSION?=	1.20.14
 PORTREVISION?=	0

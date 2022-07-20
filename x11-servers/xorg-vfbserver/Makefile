@@ -1,5 +1,3 @@
-# Created by: Eric Anholt <anholt@FreeBSD.org>
-
 PORTNAME=	xorg-vfbserver
 PORTREVISION=	0
 PORTEPOCH=	1
