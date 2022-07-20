@@ -1,5 +1,3 @@
-# Created by: Yuri Victorovich <yuri@rawbw.com>
-
 PORTNAME=	bx-python
 DISTVERSION=	0.8.13
 CATEGORIES=	biology python

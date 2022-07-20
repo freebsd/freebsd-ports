@@ -1,5 +1,3 @@
-# Created by: dbader@eece.unm.edu
-
 PORTNAME=	paml
 PORTVERSION=	4.9j
 CATEGORIES=	biology

@@ -1,5 +1,3 @@
-# Created by: Tony Maher
-
 PORTNAME=	seqio
 PORTVERSION=	1.2.2
 PORTREVISION=	1

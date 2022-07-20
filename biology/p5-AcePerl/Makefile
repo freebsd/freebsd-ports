@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	AcePerl
 PORTVERSION=	1.92
 PORTREVISION=	5

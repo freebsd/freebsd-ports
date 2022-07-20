@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Bio-GFF3
 PORTVERSION=	2.0
 PORTREVISION=	2

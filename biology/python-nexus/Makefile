@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wen@FreeBSD.org>
-
 PORTNAME=	python-nexus
 PORTVERSION=	1.63
 CATEGORIES=	biology python

@@ -1,5 +1,3 @@
-# Created by: J. Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	biolibc-tools
 DISTVERSION=	0.1.3
 CATEGORIES=	biology

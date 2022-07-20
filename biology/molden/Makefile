@@ -1,5 +1,3 @@
-# Created by: Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
-
 PORTNAME=	molden
 DISTVERSION=	6.7
 PORTEPOCH=	1

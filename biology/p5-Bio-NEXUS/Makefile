@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Bio-NEXUS
 PORTVERSION=	0.78
 PORTREVISION=	1

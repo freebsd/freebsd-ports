@@ -1,5 +1,3 @@
-# Created by: J. Bacon <jwb@FreeBSD.org>
-
 PORTNAME=	ucsc-userapps
 DISTVERSION=	414
 PORTREVISION=	1

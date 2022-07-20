@@ -1,5 +1,3 @@
-# Created by: Jeremy <karlj000@unbc.ca>
-
 PORTNAME=	avida
 PORTVERSION=	2.12.4
 DISTVERSIONSUFFIX=	-src

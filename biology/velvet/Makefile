@@ -1,5 +1,3 @@
-# Created by: Motomichi Matsuzaki <mzaki@m.u-tokyo.ac.jp>
-
 PORTNAME=	velvet
 PORTVERSION=	1.2.10
 PORTREVISION=	2

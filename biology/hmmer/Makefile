@@ -1,5 +1,3 @@
-# Created by: barnhart@genetics.wustl.edu
-
 PORTNAME=	hmmer
 PORTVERSION=	3.3
 CATEGORIES=	biology

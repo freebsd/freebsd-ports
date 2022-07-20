@@ -1,5 +1,3 @@
-# Created by: tonym
-
 PORTNAME=	ncbi-toolkit
 DISTVERSION=	2017.01.06	# containing BLAST v2.2.27 (? is this true)
 PORTREVISION=	6

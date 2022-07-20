@@ -1,5 +1,3 @@
-# Created by: frankch@waru.life.nthu.edu.tw
-
 PORTNAME=	seaview
 PORTVERSION=	5.0.5
 PORTEPOCH=	1

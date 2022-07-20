@@ -1,5 +1,3 @@
-# Created by: frankch@waru.life.nthu.edu.tw
-
 PORTNAME=	babel
 PORTVERSION=	1.6
 PORTREVISION=	4

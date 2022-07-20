@@ -1,5 +1,3 @@
-# Created by: Tony Maher <tonym@biolateral.com.au>
-
 PORTNAME=	primer3
 PORTVERSION=	2.3.6
 CATEGORIES=	biology

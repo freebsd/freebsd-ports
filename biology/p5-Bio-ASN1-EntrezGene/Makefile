@@ -1,5 +1,3 @@
-# Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
-
 PORTNAME=	Bio-ASN1-EntrezGene
 PORTVERSION=	1.73
 PORTREVISION=	2

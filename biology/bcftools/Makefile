@@ -1,5 +1,3 @@
-# Created by: Reed A. Cartwright <cartwright@asu.edu>
-
 PORTNAME=	bcftools
 PORTVERSION=	1.15
 CATEGORIES=	biology

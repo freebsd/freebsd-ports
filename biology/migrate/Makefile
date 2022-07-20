@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <wjv@FreeBSD.org>
-
 PORTNAME=	migrate
 PORTVERSION=	3.6.11
 CATEGORIES=	biology

@@ -1,5 +1,3 @@
-# Created by: Camson Huynh <chuynh@biolateral.com.au>
-
 PORTNAME=	gff2ps
 PORTVERSION=	0.98l
 CATEGORIES=	biology

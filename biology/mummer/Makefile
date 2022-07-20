@@ -1,5 +1,3 @@
-# Created by: Tony Maher
-
 PORTNAME=	mummer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.0beta2-2

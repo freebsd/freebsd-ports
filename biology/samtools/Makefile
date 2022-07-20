@@ -1,5 +1,3 @@
-# Created by: Reed A. Cartwright <cartwright@asu.edu>
-
 PORTNAME=	samtools
 DISTVERSION=	1.15
 CATEGORIES=	biology

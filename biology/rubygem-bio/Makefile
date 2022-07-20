@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	bio
 PORTVERSION=	2.0.3
 CATEGORIES=	biology rubygems

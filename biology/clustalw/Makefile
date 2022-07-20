@@ -1,5 +1,3 @@
-# Created by: dbader@eece.unm.edu
-
 PORTNAME=	clustalw
 PORTVERSION=	2.1
 PORTREVISION=	2

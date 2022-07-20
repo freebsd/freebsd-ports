@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	libsbml
 PORTVERSION=	5.19.0
 PORTREVISION=	2

@@ -1,5 +1,3 @@
-# Created by: Wen Heping <wenheping@gmail.com>
-
 PORTNAME=	Bio-Glite
 PORTVERSION=	0.10
 PORTREVISION=	2

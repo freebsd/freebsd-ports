@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	Bio-Cluster
 PORTVERSION=	1.7.3
 PORTREVISION=	1

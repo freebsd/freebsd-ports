@@ -1,5 +1,3 @@
-# Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
-
 PORTNAME=	BioPerl-Run
 PORTVERSION=	1.007003
 CATEGORIES=	biology perl5

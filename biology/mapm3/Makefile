@@ -1,5 +1,3 @@
-# Created by: Tassilo Philipp <tphilipp@potion-studios.com>
-
 PORTNAME=	mapm3
 PORTVERSION=	3.0
 PORTREVISION=	1

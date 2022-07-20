@@ -1,5 +1,3 @@
-# Created by: Jason Bacon <jwb@FreeBSD.org>
-
 PORTNAME=		bowtie2
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.4.5

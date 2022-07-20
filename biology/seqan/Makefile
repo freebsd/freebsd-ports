@@ -1,5 +1,3 @@
-# Created by: h2
-
 PORTNAME=	seqan
 DISTVERSION=	2.4.0
 CATEGORIES=	biology

@@ -1,5 +1,3 @@
-# Created by: Johann Visagie <johann@egenetics.com>
-
 PORTNAME=	emboss
 PORTVERSION=	6.6.0
 PORTREVISION=	6
