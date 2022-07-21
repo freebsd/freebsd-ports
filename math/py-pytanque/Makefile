@@ -9,6 +9,8 @@ COMMENT=	Petanque static python bindings
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_riscv64=	ld: error: lto.tmp: cannot link object files with different floating-point ABI
+
 USES=		compiler:c++14-lang python:3.6+
 USE_PYTHON=	distutils autoplist
 
