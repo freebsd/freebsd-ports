@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20220718
+PORTVERSION=	s20220721
 CATEGORIES=	emulators
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -41,11 +41,11 @@ TEST_DEPENDS=	catch>0:devel/catch
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	caaf2368b
+GH_TAGNAME=	6e36f4d23
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.3.213:Vulkan_Headers/externals/Vulkan-Headers \
-		MerryMage:dynarmic:6.2.0:dynarmic/externals/dynarmic \
+		MerryMage:dynarmic:6.2.0-7-g91d1f944:dynarmic/externals/dynarmic \
 		ReinUsesLisp:sirit:aa292d5:sirit/externals/sirit \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		benhoyt:inih:r52:inih/externals/inih/inih \
