@@ -5,6 +5,7 @@
     SUBDIR += abiword-docs
     SUBDIR += aee
     SUBDIR += aewan
+    SUBDIR += amp
     SUBDIR += apel
     SUBDIR += asedit
     SUBDIR += beav
