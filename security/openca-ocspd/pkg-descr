@@ -1,0 +1,6 @@
+OpenCA OCSP Responder is an rfc2560 compliant OCSPD responder.
+The server is a stand-alone application and can be integrated into many
+different PKI solutions as it does not depend on specific database scheme.
+Furthermore it can be used as a responder for multiple CAs.
+
+WWW: https://www.openca.org/projects/ocspd

@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+Sample Configuration files have been installed in
+$PREFIX/share/openca-ocspd/etc, in a hierachy that mimics the one created in
+$PREFIX/etc.
+They may be used as templates to be copied into the corresponding subdirectory
+under $PREFIX/etc and customized according to user context.
+EOM
+}
+{
+type: remove
+message: <<EOM
+User-installed configuration files under $PREFIX/etc/ocspd have been preserved and
+must be removed manually if needed, as well as this directory. 
+EOM
+}
+]

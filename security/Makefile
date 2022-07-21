@@ -379,6 +379,7 @@
     SUBDIR += onionscan
     SUBDIR += op
     SUBDIR += openbsm
+    SUBDIR += openca-ocspd
     SUBDIR += openconnect
     SUBDIR += openconnect-freebsd-daemon
     SUBDIR += openconnect-gui
