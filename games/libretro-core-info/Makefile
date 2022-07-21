@@ -9,6 +9,8 @@ COMMENT=	Metadata about libretro cores
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not build: broken plist
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 
