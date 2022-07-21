@@ -30,6 +30,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-LWPx-ParanoidAgent>=0:www/p5-LWPx-ParanoidAgent \
 		p5-RPC-XML>=0:net/p5-RPC-XML \
 		p5-XML-Feed>=0:textproc/p5-XML-Feed
+TEST_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run
 
 USES=		cpe gettext gmake perl5 python shebangfix
 USE_PERL5=	configure
