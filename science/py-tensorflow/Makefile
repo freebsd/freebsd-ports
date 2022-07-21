@@ -13,6 +13,8 @@ COMMENT=	Computation using data flow graphs for scalable machine learning
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not build: candidate function template not viable: requires 3 arguments, but 2 were provided
+
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
