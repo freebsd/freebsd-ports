@@ -8,6 +8,8 @@ COMMENT=	Tools for running commands at particular times
 
 LICENSE=	GPLv2
 
+BROKEN=		does not build: error: use of undeclared identifier 'localtmn_t'
+
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 
 USES=		tar:bzip2
