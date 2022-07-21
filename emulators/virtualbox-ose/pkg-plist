@@ -409,7 +409,7 @@ lib/virtualbox/VBoxRT.so
 %%X11%%lib/virtualbox/VBoxSDL.so
 lib/virtualbox/VBoxSVC
 %%X11%%lib/virtualbox/VBoxSVGA3D.so
-%%X11%%lib/virtualbox/VBoxSharedClipboard.so
+lib/virtualbox/VBoxSharedClipboard.so
 lib/virtualbox/VBoxSharedFolders.so
 %%QT%%lib/virtualbox/VBoxTestOGL
 lib/virtualbox/VBoxVMM.so
