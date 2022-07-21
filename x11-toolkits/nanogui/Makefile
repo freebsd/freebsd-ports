@@ -9,6 +9,8 @@ COMMENT=	Minimalistic GUI library for OpenGL
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_riscv64=	ld: error: lto.tmp: cannot link object files with different floating-point ABI
+
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 TEST_DEPENDS=	zenity:x11/zenity
 
