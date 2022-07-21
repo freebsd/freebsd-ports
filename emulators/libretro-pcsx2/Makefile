@@ -1,6 +1,6 @@
 PORTNAME=	libretro-pcsx2
 PORTVERSION=	0.20201030
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators games
 
 MAINTAINER=	beyert@cs.ucr.edu
@@ -22,12 +22,11 @@ USES=	cmake compiler:c++11-lib
 .include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include/wx-3.0
-USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 CMAKE_CPP_FLAGS=	${CPPFLAGS}
 CMAKE_PREFIX_PATH=	${LOCALBASE}/include/wx-3.0
 CMAKE_C_FLAGS=	${CFLAGS}
-CMAKE_CXX_FLAGS=	${CFLAGS}
+CMAKE_CXX_FLAGS=	${CXXFLAGS}
 CMAKE_ARGS+=	-DLIBRETRO=yes
 CMAKE_ARGS+=	-Dgtk_INCLUDE_DIR="${LOCALBASE}/include/gtk-3.0" \
 		-DwxWidgets_INCLUDE_DIRS="${LOCALBASE}/include/wx-3.0"
@@ -51,6 +50,7 @@ PLIST_FILES=	lib/libretro/pcsx2_libretro.so
 
 .if ${ARCH} == i386
 LDFLAGS+=	-Wl,-z,notext
+CXXFLAGS+=	-fPIC
 .endif
 
 post-patch:
@@ -60,7 +60,6 @@ post-patch:
 	@${REINPLACE_CMD} 's|-D_FILE_OFFSET_BITS=64|-D_FILE_OFFSET_BITS=32|' \
 		${WRKSRC}/3rdparty/wxwidgets3.0/UsewxWidgets.cmake
 .endif
-# filename.cpp first to have 2u
 	@${REINPLACE_CMD} -e 's|\[0u\]|[0]|' -e 's|\[1u\]|[1]|' \
 		-e 's|\[2u\]|[2]|' \
 		${WRKSRC}/3rdparty/wxwidgets3.0/include/wx/filename.h \
