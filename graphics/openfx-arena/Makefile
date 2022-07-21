@@ -12,6 +12,8 @@ COMMENT=	Extra OpenFX plugins for Natron
 
 LICENSE=	GPLv2
 
+BROKEN=		does not build: error: no member named 'apply' in 'OpenColorIO_v2_1::Processor'
+
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 BUILD_DEPENDS=	opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
