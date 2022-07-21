@@ -15,7 +15,7 @@ include/rtrlib/transport/tcp/tcp_transport.h
 include/rtrlib/transport/transport.h
 lib/librtr.so
 lib/librtr.so.0
-lib/librtr.so.0.6.3
+lib/librtr.so.0.8.0
 libdata/pkgconfig/rtrlib.pc
 share/man/man1/rpki-rov.1.gz
 share/man/man1/rtrclient.1.gz
