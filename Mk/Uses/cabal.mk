@@ -109,14 +109,6 @@ _hackage_is_default=	no
 MASTER_SITES=	https://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/ \
 		http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
 DISTFILES+=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
-EXTRACT_ONLY+=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
-.  else
-.    if defined(USE_GITHUB) && !defined(DISTFILES) && !${USE_GITHUB:Mnodefault}
-EXTRACT_ONLY+=	${DISTNAME_DEFAULT}${_GITHUB_EXTRACT_SUFX}
-.    endif
-.    if defined(USE_GITLAB) && !defined(DISTFILES) && !${USE_GITLAB:Mnodefault}
-EXTRACT_ONLY+=	${DISTNAME}${_GITLAB_EXTRACT_SUFX}
-.    endif
 .  endif
 
 _USES_extract=	701:cabal-post-extract
@@ -141,16 +133,18 @@ MASTER_SITES+=	https://hackage.haskell.org/package/:${package:C/[\.-]//g} \
 		http://hackage.haskell.org/package/:${package:C/[\.-]//g}
 DISTFILES+=	${package:C/_[0-9]+//}/${package:C/_[0-9]+//}${CABAL_EXTRACT_SUFX}:${package:C/[\.-]//g}
 
-.    if !defined(CABAL_BOOTSTRAP)
-EXTRACT_ONLY+=	${package:C/_[0-9]+//}/${package:C/_[0-9]+//}${CABAL_EXTRACT_SUFX}
-.    endif
-
 .    if ${package:C/[^_]*//:S/_//} != ""
 DISTFILES+=	${package:C/_[0-9]+//}/revision/${package:C/[^_]*//:S/_//}.cabal:${package:C/[\.-]//g}
 .    endif
 
+_CABAL_EXTRACT_ONLY+=	${package:C/_[0-9]+//}/${package:C/_[0-9]+//}${CABAL_EXTRACT_SUFX}
 .  endfor
 
+.  if !defined(EXTRACT_ONLY)
+EXTRACT_ONLY=	${_DISTFILES:N*\.cabal}
+.  else
+EXTRACT_ONLY+= ${_CABAL_EXTRACT_ONLY}
+.  endif
 
 # Auxiliary targets used during port creation/updating.
 

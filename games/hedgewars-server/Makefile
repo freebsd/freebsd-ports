@@ -7,7 +7,6 @@ MASTER_SITES=	http://www.hedgewars.org/download/releases/ \
 PKGNAMESUFFIX=	-server
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Server part of free Worms-like turn based strategy game
