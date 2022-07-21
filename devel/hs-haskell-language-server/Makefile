@@ -5,6 +5,8 @@ CATEGORIES=	devel haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	LSP provider implementation for Haskell language
 
+BROKEN_aarch64=	Causes compiler to crash
+
 LICENSE=	APACHE20
 
 USES=		cabal
