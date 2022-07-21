@@ -9,6 +9,8 @@ COMMENT=	Texture compressor for Adaptive Scalable Texture Compression format
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_riscv64=	ld: error: lto.tmp: cannot link object files with different floating-point ABI
+
 USES=		cmake:testing compiler:c++14-lang python:test
 
 USE_GITHUB=	yes
