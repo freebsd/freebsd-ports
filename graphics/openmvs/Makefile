@@ -9,7 +9,7 @@ COMMENT=	Open Multi-View Stereo reconstruction library
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_arm64=	use of undeclared identifier '__builtin_ia32_emms'
+BROKEN_aarch64=	use of undeclared identifier '__builtin_ia32_emms' # https://github.com/cdcseacave/openMVS/issues/847
 
 BUILD_DEPENDS=	cgal>0:math/cgal \
 		${LOCALBASE}/include/sys/sysinfo.h:devel/libsysinfo \
