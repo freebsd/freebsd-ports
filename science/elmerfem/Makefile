@@ -9,8 +9,6 @@ COMMENT=	Multiphysical simulation software
 
 LICENSE=	GPLv2
 
-BROKEN=		does not build: /usr/local/bin/ld: cannot find -lMPI::MPI_C
-
 LIB_DEPENDS=	libblas.so:math/blas \
 		libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis \
