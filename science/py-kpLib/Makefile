@@ -10,9 +10,8 @@ COMMENT=	Library for finding optimal Generalized Monkhorst-Pack k-points grid
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		does not build: tries to run pip
-
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=7.1.2:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymatgen>=2021.3.9:science/py-pymatgen@${PY_FLAVOR}
 BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
 		${PY_DEPENDS}
