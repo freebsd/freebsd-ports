@@ -7,6 +7,8 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenWeather extension for the GNOME3 shell
 
+BROKEN=		does not fetch
+
 BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
