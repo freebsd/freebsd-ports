@@ -1,7 +1,5 @@
+%%TESTS%%bin/amdgpu_stress
 %%TESTS%%bin/drmdevice
-%%TESTS%%bin/kms-steal-crtc
-%%TESTS%%bin/kms-universal-planes
-%%TESTS%%bin/kmstest
 %%TESTS%%bin/modeprint
 %%TESTS%%bin/modetest
 %%TESTS%%bin/proptest
