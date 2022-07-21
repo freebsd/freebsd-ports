@@ -5,6 +5,8 @@ CATEGORIES=	devel haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Manage files with git, without checking their contents into git
 
+BROKEN_aarch64=	Causes compiler to crash
+
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	rsync:net/rsync \
