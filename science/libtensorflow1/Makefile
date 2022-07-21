@@ -16,6 +16,7 @@ LICENSE_FILE_THIRD_PARTY_TF_C_LICENSES=	${WRKDIR}/THIRD_PARTY_TF_C_LICENSES
 LICENSE_PERMS_THIRD_PARTY_TF_C_LICENSES=	dist-mirror dist-sell \
 						pkg-mirror pkg-sell auto-accept
 
+BROKEN=		does not build: tries to fetch during the build
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	bash:shells/bash \
@@ -93,7 +94,7 @@ OPTIONS_SINGLE_CPUFEATURE=	AVX AVX2 NOAVX
 OPTIONS_EXCLUDE:=	${OPTIONS_SINGLE_CPUFEATURE}
 .endif
 
-CPUFEATURE_DESC=  Vector Processing Extensions
+CPUFEATURE_DESC=Vector Processing Extensions
 
 NOAVX_DESC=	Disable Advanced Vector Extensions
 AVX_DESC=	Enable Advanced Vector Extensions (AVX)
