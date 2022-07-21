@@ -1,3 +1,71 @@
+  <vuln vid="8e150606-08c9-11ed-856e-d4c9ef517024">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql-server56</name>
+	<range><lt>5.6.52</lt></range>
+      </package>
+      <package>
+	<name>mysql-server57</name>
+	<range><lt>5.7.39</lt></range>
+      </package>
+      <package>
+	<name>mysql-client80</name>
+	<range><lt>8.0.30</lt></range>
+      </package>
+      <package>
+	<name>mysql-server80</name>
+	<range><lt>8.0.30</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujul2022.html#AppendixMSQL">
+	  <p>This Critical Patch Update contains 34 new security patches plus
+	    additional third party patches noted below for Oracle MySQL. 10 of
+	    these vulnerabilities may be remotely exploitable without
+	    authentication, i.e., may be exploited over a network without
+	    requiring user credentials.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-1292</cvename>
+      <cvename>CVE-2022-21824</cvename>
+      <cvename>CVE-2022-27778</cvename>
+      <cvename>CVE-2018-25032</cvename>
+      <cvename>CVE-2022-21556</cvename>
+      <cvename>CVE-2022-21569</cvename>
+      <cvename>CVE-2022-21550</cvename>
+      <cvename>CVE-2022-21519</cvename>
+      <cvename>CVE-2022-21527</cvename>
+      <cvename>CVE-2022-21528</cvename>
+      <cvename>CVE-2022-21509</cvename>
+      <cvename>CVE-2022-21539</cvename>
+      <cvename>CVE-2022-21517</cvename>
+      <cvename>CVE-2022-21537</cvename>
+      <cvename>CVE-2022-21547</cvename>
+      <cvename>CVE-2022-21525</cvename>
+      <cvename>CVE-2022-21526</cvename>
+      <cvename>CVE-2022-21529</cvename>
+      <cvename>CVE-2022-21530</cvename>
+      <cvename>CVE-2022-21531</cvename>
+      <cvename>CVE-2022-21553</cvename>
+      <cvename>CVE-2022-21515</cvename>
+      <cvename>CVE-2022-21455</cvename>
+      <cvename>CVE-2022-21534</cvename>
+      <cvename>CVE-2022-21522</cvename>
+      <cvename>CVE-2022-21538</cvename>
+      <cvename>CVE-2022-21535</cvename>
+      <url>https://www.oracle.com/security-alerts/cpujul2022.html#AppendixMSQL</url>
+    </references>
+    <dates>
+      <discovery>2022-07-19</discovery>
+      <entry>2022-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="27cc4258-0805-11ed-8ac1-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
