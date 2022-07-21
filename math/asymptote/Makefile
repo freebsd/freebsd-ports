@@ -11,6 +11,8 @@ COMMENT=	Powerful script-based vector graphics language
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
+BROKEN=		does not build: No rule to make target 'gc.h', needed by 'lspserv.o'
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
