@@ -100,6 +100,10 @@ post-patch-OCC-on:
 	@${REINPLACE_CMD} -e 's|$${INCLUDE}|${LOCALBASE}/include/OpenCASCADE|' \
 		"${WRKSRC}/cmake/Modules/FindOCE.cmake"
 
+post-configure:
+	# workaround for https://github.com/ElmerCSC/elmerfem/issues/334
+	@${REINPLACE_CMD} -e 's| -lMPI::MPI_C | |' ${BUILD_WRKSRC}/ElmerGUI/Application/CMakeFiles/ElmerGUI.dir/link.txt
+
 post-install:
 	${LN} -sf ElmerSolver_mpi ${STAGEDIR}${PREFIX}/bin/ElmerSolver
 	${LN} -sf libelmersolver.so ${_LIBSTAGEDIR}/libelmersolver.so.0
