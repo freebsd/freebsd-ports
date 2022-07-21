@@ -15,6 +15,8 @@ LICENSE_TEXT_LOGOS=	Installs station logos
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_PERMS_LOGOS=	auto-accept
 
+BROKEN=		does not fetch
+
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 USES=		compiler:c++11-lang pkgconfig tar:tgz
