@@ -12,6 +12,8 @@ COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_riscv64=	error: Cannot calculate stack trace: will need to write for your environment, see https://github.com/gperftools/gperftools/issues/1359
+
 USES=		compiler:c11 gmake libtool localbase:ldflags
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
