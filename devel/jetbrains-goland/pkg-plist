@@ -34,7 +34,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/asm-tree-7.1.jar
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-GO-221.5787.30
+%%DATADIR%%/lib/build-marker-GO-221.5921.26
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/dbus-java-3.2.1.jar
@@ -157,8 +157,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-6fad43be1057.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-6fad43be1057.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-b2f682bc4951.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-b2f682bc4951.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -308,8 +308,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/git4idea/lib/git4idea.jar
 %%DATADIR%%/plugins/github/lib/github.jar
 %%DATADIR%%/plugins/go-ide/lib/go-ide.jar
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d291ceac8cd3-8c6456b3036d.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d291ceac8cd3-8c6456b3036d.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d291ceac8cd3-86a88dcf89c3.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-d291ceac8cd3-86a88dcf89c3.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/go/lib/go-openapi.jar
