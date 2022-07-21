@@ -1,10 +1,2 @@
-MANCK(1)                     UNIX Reference Manual                    MANCK(1)
-
-NAME
-     manck - check manual pages
-...
-DESCRIPTION
-     Manck check manual pages. Currently supported section FILES, NAME, SEE
-     ALSO, and SYNOPSIS.
-...
- FreeBSD                         July 25, 1995                               2
+Manck checks manual pages. Currently supported sections are
+FILES, NAME, SEE ALSO, and SYNOPSIS.
