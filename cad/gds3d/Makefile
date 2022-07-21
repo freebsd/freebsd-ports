@@ -12,6 +12,10 @@ USES=		gl gmake localbase:ldflags xorg
 USE_XORG=	x11
 USE_GL=		gl
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	trilomix
 GH_PROJECT=	${PORTNAME:tu}
