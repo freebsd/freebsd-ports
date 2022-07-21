@@ -325,17 +325,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # usage inside the ports framework, and the latter are reserved for user-
 # settable options.  (Setting USE_* in /etc/make.conf is always wrong).
 #
-# WITH_DEBUG            - If set, debugging flags are added to CFLAGS and the
-#                         binaries don't get stripped by INSTALL_PROGRAM or
-#                         INSTALL_LIB. Besides, individual ports might
-#                         add their specific to produce binaries for debugging
-#                         purposes. You can override the debug flags that are
-#                         passed to the compiler by setting DEBUG_FLAGS. It is
-#                         set to "-g" at default.
-#
-#			  NOTE: to override a globally defined WITH_DEBUG at a
-#			        later time ".undef WITH_DEBUG" can be used
-#
 # WITH_DEBUG_PORTS		- A list of origins for which WITH_DEBUG will be set
 #
 # WITHOUT_SSP	- Disable SSP.
@@ -1019,6 +1008,8 @@ LC_ALL=		C
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
+_LIST_OF_WITH_FEATURES=	debug lto ssp
+_DEFAULT_WITH_FEATURES=	ssp
 PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
 LINUXBASE?=		/compat/linux
@@ -1310,6 +1301,11 @@ TMPDIR?=	/tmp
 .      if ${WITH_DEBUG_PORTS:M${PKGORIGIN}}
 WITH_DEBUG=	yes
 .      endif
+.    endif
+
+.    if defined(USE_LTO)
+WITH_LTO=	${USE_LTO}
+WARNING+=	USE_LTO is precrecated in favor of WITH_LTO
 .    endif
 
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
@@ -1766,27 +1762,11 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 .      endif
 .    endif
 
-# Reset value from bsd.own.mk.
-.    if defined(WITH_DEBUG)
-.      if !defined(INSTALL_STRIPPED)
-STRIP=	#none
-MAKE_ENV+=	DONTSTRIP=yes
-STRIP_CMD=	${TRUE}
+.    for f in ${_LIST_OF_WITH_FEATURES}
+.      if defined(WITH_${f:tu}) || ( ${_DEFAULT_WITH_FEATURES:M${f}} &&  !defined(WITHOUT_${f:tu}) )
+.include "${PORTSDIR}/Mk/Features/$f.mk"
 .      endif
-DEBUG_FLAGS?=	-g
-CFLAGS:=		${CFLAGS:N-O*:N-fno-strict*} ${DEBUG_FLAGS}
-.      if defined(INSTALL_TARGET)
-INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
-.      endif
-.    endif
-
-.    if defined(USE_LTO)
-.include "${PORTSDIR}/Mk/bsd.lto.mk"
-.    endif
-
-.    if !defined(WITHOUT_SSP)
-.include "${PORTSDIR}/Mk/bsd.ssp.mk"
-.    endif
+.    endfor
 
 # XXX PIE support to be added here
 MAKE_ENV+=	NO_PIE=yes
