@@ -1,6 +1,6 @@
 PORTNAME=	loki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	grafana-
 
@@ -12,9 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 armv7 armv6 amd64 i386
 USES=		go:modules cpe
+CPE_VENDOR=	grafana
 USE_GITHUB=	yes
 
-CPE_VENDOR=	grafana
 
 GH_ACCOUNT=	grafana
 GH_PROJECT=	loki
@@ -161,10 +161,10 @@ GH_TUPLE=	\
 		gophercloud:gophercloud:v0.24.0:gophercloud_gophercloud/vendor/github.com/gophercloud/gophercloud \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		grafana:dskit:49faf69f72ca:grafana_dskit/vendor/github.com/grafana/dskit \
+		grafana:dskit:99f3d0043c23:grafana_dskit/vendor/github.com/grafana/dskit \
 		grafana:go-gelf:v2.0.1:grafana_go_gelf_v2/vendor/github.com/grafana/go-gelf/v2 \
 		grafana:gocql:ba5dc39ece85:grafana_gocql/vendor/github.com/gocql/gocql \
-		grafana:memberlist:6b97a09b7167:grafana_memberlist/vendor/github.com/hashicorp/memberlist \
+		grafana:memberlist:bd88e10a3d91:grafana_memberlist/vendor/github.com/hashicorp/memberlist \
 		grafana:regexp:149c8afcd6cb:grafana_regexp/vendor/github.com/grafana/regexp \
 		grafana:tail:98e8eb28ea4c:grafana_tail/vendor/github.com/hpcloud/tail \
 		grpc-ecosystem:go-grpc-middleware:9f6bf00c00a7:grpc_ecosystem_go_grpc_middleware_v2/vendor/github.com/grpc-ecosystem/go-grpc-middleware/v2 \
@@ -256,7 +256,7 @@ GH_TUPLE=	\
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.1.0:prometheus_common_sigv4/vendor/github.com/prometheus/common/sigv4 \
 		prometheus:common:v0.32.1:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:node_exporter:01054558c289:prometheus_node_exporter/vendor/github.com/prometheus/node_exporter \
+		prometheus:exporter-toolkit:v0.7.1:prometheus_exporter_toolkit/vendor/github.com/prometheus/exporter-toolkit \
 		prometheus:procfs:v0.7.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		prometheus:prometheus:edfe657b5405:prometheus_prometheus/vendor/github.com/prometheus/prometheus \
 		protocolbuffers:protobuf-go:v1.27.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
@@ -287,7 +287,7 @@ GH_TUPLE=	\
 		uber:jaeger-client-go:v2.30.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib \
 		ugorji:go:v1.1.7:ugorji_go_codec/vendor/github.com/ugorji/go \
-		weaveworks:common:ebe5bdc2c89e:weaveworks_common/vendor/github.com/weaveworks/common \
+		weaveworks:common:e3b70df0f08b:weaveworks_common/vendor/github.com/weaveworks/common \
 		weaveworks:promrus:v1.2.0:weaveworks_promrus/vendor/github.com/weaveworks/promrus \
 		willf:bitset:v1.1.11:willf_bitset/vendor/github.com/willf/bitset \
 		willf:bloom:v2.0.3:willf_bloom/vendor/github.com/willf/bloom \
