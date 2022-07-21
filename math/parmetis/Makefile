@@ -13,6 +13,8 @@ LICENSE_NAME=	University of Minnesota METIS License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept
 
+BROKEN=		does not fetch
+
 USES=		cmake:insource,noninja gmake
 USE_LDCONFIG=	${PREFIX}/lib/parmetis
 
