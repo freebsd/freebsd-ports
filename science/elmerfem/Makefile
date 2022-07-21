@@ -63,7 +63,8 @@ OCC_LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 			libvtksys-9.1.so:math/vtk9
 OCC_USES=		python
 OCC_CMAKE_BOOL=		WITH_OCC
-OCC_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.0
+OCC_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-9.0 \
+			-DPython3_EXECUTABLE=${PYTHON_CMD}
 
 _LIBSTAGEDIR=	${STAGEDIR}/${PREFIX}/lib/elmersolver
 _PYVERSION=	${PYTHON_VER}${PYTHON_ABIVER}
