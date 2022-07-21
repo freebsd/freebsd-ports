@@ -2,6 +2,7 @@
 
 PORTNAME=	libdrm
 PORTVERSION=	2.4.112
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	https://dri.freedesktop.org/libdrm/
@@ -22,7 +23,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	MANPAGES TESTS
 OPTIONS_SUB=	yes
 
-TESTS_DESC=	Install test programs (which are always built)
+TESTS_DESC=	Build and install test programs
 
 .if defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=	MANPAGES
