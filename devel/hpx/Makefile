@@ -8,6 +8,8 @@ COMMENT=	C++ Standard Library for Parallelism and Concurrency
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
+BROKEN_riscv64=	hpx/hardware/timestamp.hpp:43:6: error: Unsupported platform
+
 BUILD_DEPENDS=	asio>0:net/asio
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libhwloc.so.15:devel/hwloc2
