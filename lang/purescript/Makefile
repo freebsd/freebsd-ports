@@ -5,6 +5,8 @@ CATEGORIES=	lang
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Functional language that compiles to JavaScript
 
+BROKEN_aarch64=	Causes compiler to crash
+
 LICENSE=	BSD3CLAUSE
 
 USES=		cabal
