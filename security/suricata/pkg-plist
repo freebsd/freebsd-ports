@@ -138,6 +138,7 @@ man/man1/suricata.1.gz
 %%DATADIR%%/rules/ntp-events.rules
 %%DATADIR%%/rules/smb-events.rules
 %%DATADIR%%/rules/smtp-events.rules
+%%DATADIR%%/rules/ssh-events.rules
 %%DATADIR%%/rules/stream-events.rules
 %%DATADIR%%/rules/tls-events.rules
 @sample %%ETCDIR%%/classification.config.sample
