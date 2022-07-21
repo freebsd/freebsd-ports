@@ -16,6 +16,8 @@ COMMENT=	Irssi plugin to limit the transmit speed of DCC sends
 
 LICENSE=	GPLv2+
 
+BROKEN=		does not build: error: use of undeclared identifier 'G_INPUT_WRITE'
+
 BUILD_DEPENDS=	irssi:irc/irssi
 RUN_DEPENDS=	irssi:irc/irssi
 
