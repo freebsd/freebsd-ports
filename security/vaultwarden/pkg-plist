@@ -9,8 +9,8 @@ etc/rc.d/vaultwarden
 %%WWWDIR%%/web-vault/app-id.json
 %%WWWDIR%%/web-vault/app/main.bd475a6b5f200ae225e5.css
 %%WWWDIR%%/web-vault/app/main.bd475a6b5f200ae225e5.css.map
-%%WWWDIR%%/web-vault/app/main.e1d1e2280fea1a72e8c0.js
-%%WWWDIR%%/web-vault/app/main.e1d1e2280fea1a72e8c0.js.map
+%%WWWDIR%%/web-vault/app/main.42d6fb82e7594e6ba473.js
+%%WWWDIR%%/web-vault/app/main.42d6fb82e7594e6ba473.js.map
 %%WWWDIR%%/web-vault/app/polyfills.2f6b3e68c5cef70d796f.js
 %%WWWDIR%%/web-vault/app/polyfills.2f6b3e68c5cef70d796f.js.LICENSE.txt
 %%WWWDIR%%/web-vault/app/polyfills.2f6b3e68c5cef70d796f.js.map
@@ -34,8 +34,8 @@ etc/rc.d/vaultwarden
 %%WWWDIR%%/web-vault/connectors/sso.f9bb62a792028198e6bb.css.map
 %%WWWDIR%%/web-vault/connectors/webauthn-fallback.7f59f3063fbff194f544.css
 %%WWWDIR%%/web-vault/connectors/webauthn-fallback.7f59f3063fbff194f544.css.map
-%%WWWDIR%%/web-vault/connectors/webauthn-fallback.fa51791826ba7563f5c7.js
-%%WWWDIR%%/web-vault/connectors/webauthn-fallback.fa51791826ba7563f5c7.js.map
+%%WWWDIR%%/web-vault/connectors/webauthn-fallback.af943a96dff6c6ea7a19.js
+%%WWWDIR%%/web-vault/connectors/webauthn-fallback.af943a96dff6c6ea7a19.js.map
 %%WWWDIR%%/web-vault/connectors/webauthn.7f59f3063fbff194f544.css
 %%WWWDIR%%/web-vault/connectors/webauthn.7f59f3063fbff194f544.css.map
 %%WWWDIR%%/web-vault/connectors/webauthn.b35ed6af52cfea7081b1.js
