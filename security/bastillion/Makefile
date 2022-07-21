@@ -1,5 +1,3 @@
-# $FreeBSD: head/security/bastillion/Makefile 513677 2019-10-03 17:22:17Z glewis $
-
 PORTNAME=		bastillion
 DISTVERSIONPREFIX=	jetty-v
 DISTVERSION=		3.14_00
