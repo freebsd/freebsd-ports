@@ -1,3 +1,3 @@
-TIMESTAMP = 1615115152
-SHA256 (ncclient-0.6.10.tar.gz) = 67b1eba5a6c7c6075746d8c33d4e8f4ded17604034c1fcd1c78996ef52bf66ff
-SIZE (ncclient-0.6.10.tar.gz) = 105349
+TIMESTAMP = 1658060350
+SHA256 (ncclient-0.6.13.tar.gz) = f9f8cea8bcbe057e1b948b9cd1b241eafb8a3f73c4981fbdfa1cc6ed69c0a7b3
+SIZE (ncclient-0.6.13.tar.gz) = 105739
