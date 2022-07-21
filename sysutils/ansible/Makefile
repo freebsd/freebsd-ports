@@ -1,5 +1,6 @@
 PORTNAME=	ansible
 DISTVERSION=	6.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +22,12 @@ SHEBANG_FILES=	ansible_collections/community/zabbix/roles/zabbix_proxy/files/ins
 		ansible_collections/cyberark/conjur/ci/build_release \
 		ansible_collections/cyberark/conjur/ci/publish_to_galaxy \
 		ansible_collections/ovirt/ovirt/roles/disaster_recovery/files/ovirt-dr
-SHEBANG_GLOB=	*.py *.sh build.py.generic
+# It's probably best to leave shebangs in modules untouched as they must be
+# either unversioned or absent.
+# See [1] and [2].
+# [1]: https://github.com/ansible/ansible/issues/78243
+# [2]: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265211
+SHEBANG_REGEX=	(([^/])|(/[^m])|(/m[^o])|(/mo[^d])|(/mod[^u])|(/modu[^l])|(/modul[^e])|(/module[^s])|(/modules[^/]))*\.(py|sh|build.py.generic)
 python_OLD_CMD=	/Users/kbreit/Documents/Programming/ansible_collections/cisco/meraki/venv/bin/python
 
 CONFLICTS_INSTALL=	${_ANSIBLE_PACKAGES:N${PKGBASE}}
