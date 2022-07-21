@@ -1,5 +1,5 @@
 PORTNAME=	1password-client2
-DISTVERSION=	2.5.1
+DISTVERSION=	2.6.0
 CATEGORIES=	security
 MASTER_SITES=	https://cache.agilebits.com/dist/1P/op2/pkg/v${DISTVERSION}/
 
