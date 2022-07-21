@@ -11,6 +11,8 @@ COMMENT=	DJ mixing application (previous version)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not build: scons: _defines() missing 2 required positional arguments:
+
 BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libFLAC.so:audio/flac \
