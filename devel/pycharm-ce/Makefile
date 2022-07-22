@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-ce
-PORTVERSION=	2022.1.3
+DISTVERSION=	2022.1.4
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -14,10 +14,9 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		intellij-pty4j>0:java/intellij-pty4j
 
 USES=		python:run shebangfix
-SHEBANG_FILES=	bin/restart.py
-
 USE_JAVA=	yes
 JAVA_VERSION=	11+
+SHEBANG_FILES=	bin/restart.py
 
 NO_ARCH=	yes
 NO_BUILD=	yes
