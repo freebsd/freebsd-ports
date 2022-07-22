@@ -11,6 +11,8 @@ COMMENT=	Open-source 3D modeling software
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	build fails: use of undeclared identifier '__TBB_machine_fetchadd4', see https://github.com/huxingyi/dust3d/issues/127
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/config.hpp:devel/boost-libs \
 		${LOCALBASE}/include/CGAL/Polygon_mesh_processing/corefinement.h:math/cgal \
 		cmake:devel/cmake
