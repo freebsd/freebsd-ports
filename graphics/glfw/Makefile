@@ -1,5 +1,5 @@
 PORTNAME=	glfw
-PORTVERSION=	3.3.7
+DISTVERSION=	3.3.8
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/glfw/glfw/releases/download/${PORTVERSION}/
 
@@ -9,16 +9,16 @@ COMMENT=	Portable framework for OpenGL development
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-CONFLICTS_INSTALL=	glfw2
-
 USES=		cmake:insource gl localbase zip
 USE_GL=		glu
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
-PLIST_SUB=	MAJVER="${PORTVERSION:C|\..*||}" \
-		VERSION=${PORTVERSION:R}
+CONFLICTS_INSTALL=	glfw2
+
+PLIST_SUB=	MAJVER="${DISTVERSION:C|\..*||}" \
+		VERSION=${DISTVERSION:R}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
