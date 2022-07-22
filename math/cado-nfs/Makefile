@@ -9,6 +9,9 @@ COMMENT=	Implementation of the Number Field Sieve Algorithm
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=	unused function 'purge_matrix_compute_sum2_row_mt', see https://gitlab.inria.fr/cado-nfs/cado-nfs/-/issues/30045
+BROKEN_armv7=	unused function 'purge_matrix_compute_sum2_row_mt', see https://gitlab.inria.fr/cado-nfs/cado-nfs/-/issues/30045
+
 CONFLICTS_BUILD=	libfmt # bundled libfmt conflicts with package-installed headers
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
