@@ -1,6 +1,6 @@
 PORTNAME=	cado-nfs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0.20220612
+DISTVERSION=	2.3.0.20220722
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,9 +8,6 @@ COMMENT=	Implementation of the Number Field Sieve Algorithm
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_armv6=	unused function 'purge_matrix_compute_sum2_row_mt', see https://gitlab.inria.fr/cado-nfs/cado-nfs/-/issues/30045
-BROKEN_armv7=	unused function 'purge_matrix_compute_sum2_row_mt', see https://gitlab.inria.fr/cado-nfs/cado-nfs/-/issues/30045
 
 CONFLICTS_BUILD=	libfmt # bundled libfmt conflicts with package-installed headers
 
@@ -27,7 +24,7 @@ USES=		cmake:noninja compiler:c++11-lang perl5 python shebangfix # noninja becau
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.inria.fr
-GL_COMMIT=	9044db91bbb2cc853f27b166862077c8ce8e8686
+GL_COMMIT=	3ab6a4781fa5d218ed332834809ba6c6fd1a591f
 
 SHEBANG_GLOB=	*.py
 
