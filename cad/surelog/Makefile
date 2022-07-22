@@ -10,6 +10,8 @@ COMMENT=	SystemVerilog 2017 Pre-processor, Parser, Elaborator, etc
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	Creating OVM precompiled package... Segmentation fault (core dumped) # update to the current revision might help but it has C++ errors
+
 BUILD_DEPENDS=	utf8cpp>0:devel/utf8cpp \
 		${PYTHON_PKGNAMEPREFIX}orderedmultidict>0:devel/py-orderedmultidict@${PY_FLAVOR}
 LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
