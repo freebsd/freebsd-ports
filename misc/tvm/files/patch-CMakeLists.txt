@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-07-21 21:46:05 UTC
++++ CMakeLists.txt
+@@ -656,7 +656,7 @@ endif()
+ 
+ # Create the `cpptest` target if we can find GTest.  If not, we create dummy
+ # targets that give the user an informative error message.
+-if(GTEST_FOUND)
++if(BUILD_TESTING AND GTEST_FOUND)
+   tvm_file_glob(GLOB_RECURSE TEST_SRCS tests/cpp/*.cc)
+   add_executable(cpptest ${TEST_SRCS})
+   # include runtime files for unit testing
