@@ -1,3 +1,6 @@
+bin/cosma_miniapp
+bin/cosma_statistics
+bin/layout_miniapp
 include/cosma/aligned_allocator.hpp
 include/cosma/blacs.hpp
 include/cosma/blas.hpp
