@@ -46,6 +46,7 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/is.pak
 %%DATADIR%%/locales/it.pak
 %%DATADIR%%/locales/ja.pak
+%%DATADIR%%/locales/ka.pak
 %%DATADIR%%/locales/km.pak
 %%DATADIR%%/locales/kn.pak
 %%DATADIR%%/locales/ko.pak
@@ -57,6 +58,7 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/ml.pak
 %%DATADIR%%/locales/mr.pak
 %%DATADIR%%/locales/ms.pak
+%%DATADIR%%/locales/my.pak
 %%DATADIR%%/locales/nb.pak
 %%DATADIR%%/locales/nl.pak
 %%DATADIR%%/locales/nn.pak
@@ -82,6 +84,7 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/uk.pak
 %%DATADIR%%/locales/ur.pak
 %%DATADIR%%/locales/vi.pak
+%%DATADIR%%/locales/yue.pak
 %%DATADIR%%/locales/zh-CN.pak
 %%DATADIR%%/locales/zh-TW.pak
 %%DATADIR%%/resources.pak
