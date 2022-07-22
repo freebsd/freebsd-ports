@@ -11,6 +11,8 @@ COMMENT=	ArtyFX plugin bundle
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv6=	error: "NEON support not enabled"
+
 BUILD_DEPENDS=	lv2>0:audio/lv2
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
