@@ -1,0 +1,11 @@
+Synr is a library that provides a stable Abstract Syntax Tree for Python.
+
+Features:
+* The Synr AST does not change between Python versions.
+* Every AST node contains line and column information.
+* There is a single AST node for assignments (compared to three in Python's ast
+  module).
+* Support for returning multiple errors at once.
+* Support for custom error reporting.
+
+WWW: https://github.com/octoml/synr
