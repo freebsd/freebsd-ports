@@ -1,6 +1,6 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.07.11.00
+DISTVERSION=	2022.07.18.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,10 +28,12 @@ RUN_DEPENDS=	elfutils>0:devel/elfutils # workaround for missing symbols like DW_
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake compiler:c++17-lang cpe localbase ssl
+USE_LDCONFIG=	yes
+
 CPE_VENDOR=	facebook
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
-USE_LDCONFIG=	yes
+GH_TAGNAME=	437b29dd062a40c741b2147827025a2f413b76c7 # includes fixes to build 2022.07.18.00
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	FREEBSD_BUILD_EXAMPLES FREEBSD_FOLLY_USE_SYMBOLIZER # enabling symbolizer causes undefined symbol _r_debug, see https://github.com/facebook/folly/issues/1373
