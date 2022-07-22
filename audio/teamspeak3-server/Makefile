@@ -1,5 +1,5 @@
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.13.6
+PORTVERSION=	3.13.7
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	https://files.teamspeak-services.com/releases/server/${PORTVERSION}/
