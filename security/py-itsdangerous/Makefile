@@ -1,5 +1,5 @@
 PORTNAME=	itsdangerous
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ COMMENT=	Various helpers to pass data in untrusted environments
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
