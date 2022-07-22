@@ -1,3 +1,3 @@
-TIMESTAMP = 1657188734
-SHA256 (ansible-core-2.13.1.tar.gz) = abd478ceff1a0aba95e94ceab8dc820f407bcc0f0033dc546840cddc29a36958
-SIZE (ansible-core-2.13.1.tar.gz) = 7407801
+TIMESTAMP = 1658447397
+SHA256 (ansible-core-2.13.2.tar.gz) = b779d0e55a97717c0ee5e86b486aa67c07c2809ef477be2ac84ad091a8dd2ddb
+SIZE (ansible-core-2.13.2.tar.gz) = 13332205
