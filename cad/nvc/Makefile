@@ -9,6 +9,9 @@ COMMENT=	VHDL compiler and simulator
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=	use of undeclared identifier '_URC_NO_REASON', see https://github.com/nickg/nvc/issues/492
+BROKEN_armv7=	use of undeclared identifier '_URC_NO_REASON', see https://github.com/nickg/nvc/issues/492
+
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
 TEST_DEPENDS=	check>0:devel/check
