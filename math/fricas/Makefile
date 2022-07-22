@@ -1,5 +1,5 @@
 PORTNAME=	fricas
-DISTVERSION=	1.3.7
+DISTVERSION=	1.3.8
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	math
 MASTER_SITES=	SF
@@ -13,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/license/LICENSE.AXIOM
 BUILD_DEPENDS=	sbcl:lang/sbcl
 
 USES=		autoreconf gmake tar:bz2 xorg
+USE_XORG=	ice sm x11 xpm
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lisp=sbcl
-USE_XORG=	ice sm x11 xpm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
