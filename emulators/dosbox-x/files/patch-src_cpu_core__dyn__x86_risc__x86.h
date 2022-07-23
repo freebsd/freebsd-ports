@@ -1,6 +1,6 @@
---- src/cpu/core_dyn_x86/risc_x86.h.orig	2014-12-31 12:59:53.015190887 +0000
-+++ src/cpu/core_dyn_x86/risc_x86.h	2014-12-31 13:00:30.953180886 +0000
-@@ -138,7 +138,7 @@
+--- src/cpu/core_dyn_x86/risc_x86.h.orig	2022-07-01 13:24:06 UTC
++++ src/cpu/core_dyn_x86/risc_x86.h
+@@ -137,7 +137,7 @@ return_address:
  		"run_return_adress:					\n"
  		"popl %%ebp							\n"
  		:"=a" (retval), "=c" (tempflags)
