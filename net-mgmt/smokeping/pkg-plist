@@ -15,12 +15,14 @@ bin/tSmoke
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.simple
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.targetvars-with-Curl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.template
+man/man1/smokeinfo.1.gz
 man/man1/smokeping.1.gz
 man/man1/smokeping_cgi.1.gz
 man/man1/tSmoke.1.gz
 man/man3/Smokeping_matchers_Avgratio.3.gz
 man/man3/Smokeping_matchers_CheckLatency.3.gz
 man/man3/Smokeping_matchers_CheckLoss.3.gz
+man/man3/Smokeping_matchers_ConsecutiveLoss.3.gz
 man/man3/Smokeping_matchers_ExpLoss.3.gz
 man/man3/Smokeping_matchers_Median.3.gz
 man/man3/Smokeping_matchers_Medratio.3.gz
@@ -116,6 +118,7 @@ smokeping/lib/Smokeping/ciscoRttMonMIB.pm
 smokeping/lib/Smokeping/matchers/Avgratio.pm
 smokeping/lib/Smokeping/matchers/CheckLatency.pm
 smokeping/lib/Smokeping/matchers/CheckLoss.pm
+smokeping/lib/Smokeping/matchers/ConsecutiveLoss.pm
 smokeping/lib/Smokeping/matchers/ExpLoss.pm
 smokeping/lib/Smokeping/matchers/Median.pm
 smokeping/lib/Smokeping/matchers/Medratio.pm
