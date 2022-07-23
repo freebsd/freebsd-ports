@@ -10,6 +10,7 @@ COMMENT=	QDLDL free LDL factorization routine for linear systems: Ax = b
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	error: no matching function for call to 'amd_l_order', see https://github.com/oxfordcontrol/qdldl-python/issues/15
 BROKEN_i386=	error: no matching function for call to 'amd_l_order', see https://github.com/oxfordcontrol/qdldl-python/issues/15
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
