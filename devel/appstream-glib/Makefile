@@ -1,5 +1,5 @@
 PORTNAME=	appstream-glib
-PORTVERSION=	0.7.18
+PORTVERSION=	0.8.0
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freedesktop.org/~hughsient/appstream-glib/releases/
 DIST_SUBDIR=	gnome
@@ -11,7 +11,7 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gcab:archivers/gcab
-LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjson-glib-1.0.so:devel/json-glib \
 		libyaml.so:textproc/libyaml \
 		libuuid.so:misc/e2fsprogs-libuuid \
