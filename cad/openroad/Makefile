@@ -12,6 +12,9 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	C++ issue on i386, should be resolved in the next update
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 BUILD_DEPENDS=	base64:converters/base64 \
 		boost-libs>0:devel/boost-libs \
