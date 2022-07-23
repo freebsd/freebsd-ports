@@ -11,6 +11,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
 BROKEN_aarch64=	error: sys/prctl.h file not found
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 TEST_DEPENDS=	bash:shells/bash \
 		libsysinfo>0:devel/libsysinfo
