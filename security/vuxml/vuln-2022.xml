@@ -167,6 +167,88 @@
     </dates>
   </vuln>
 
+  <vuln vid="0c367e98-0415-11ed-a53b-6c3be5272acd">
+    <topic>Grafana -- Stored XSS</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>8.3.0</ge><lt>8.3.10</lt></range>
+	<range><ge>8.4.0</ge><lt>8.4.10</lt></range>
+	<range><ge>8.5.0</ge><lt>8.5.9</lt></range>
+	<range><ge>9.0.0</ge><lt>9.0.3</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.3.0</ge><lt>8.3.10</lt></range>
+	<range><ge>8.4.0</ge><lt>8.4.10</lt></range>
+	<range><ge>8.5.0</ge><lt>8.5.9</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><lt>9.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/07/14/grafana-v9-0-3-8-5-9-8-4-10-and-8-3-10-released-with-high-severity-security-fix/">
+	  <p>An attacker can exploit this vulnerability to escalate privilege from editor to admin by tricking an authenticated admin to click on a link. (Note: Grafana Alerting is activated by default in Grafana 9.0.)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31097</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-vw7q-p2qg-4m5f</url>
+    </references>
+    <dates>
+      <discovery>2022-06-19</discovery>
+      <entry>2022-07-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0859e6d5-0415-11ed-a53b-6c3be5272acd">
+    <topic>Grafana -- OAuth Account Takeover</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>5.3.0</ge><lt>8.3.10</lt></range>
+	<range><ge>8.4.0</ge><lt>8.4.10</lt></range>
+	<range><ge>8.5.0</ge><lt>8.5.9</lt></range>
+	<range><ge>9.0.0</ge><lt>9.0.3</lt></range>
+      </package>
+      <package>
+	<name>grafana7</name>
+	<range><ge>7.0</ge></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.3.0</ge><lt>8.3.10</lt></range>
+	<range><ge>8.4.0</ge><lt>8.4.10</lt></range>
+	<range><ge>8.5.0</ge><lt>8.5.9</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><lt>9.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2022/07/14/grafana-v9-0-3-8-5-9-8-4-10-and-8-3-10-released-with-high-severity-security-fix/">
+	  <p>It is possible for a malicious user who has authorization to log into a Grafana instance via a configured OAuth IdP to take over an existing Grafana account under some conditions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-31107</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-mx47-6497-3fv2</url>
+    </references>
+    <dates>
+      <discovery>2022-06-27</discovery>
+      <entry>2022-07-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4f2416c-02a0-11ed-b817-10c37b4ac2ea">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
