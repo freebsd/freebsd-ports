@@ -1,5 +1,5 @@
 PORTNAME=	wine-gecko
-DISTVERSION=	2.47.2
+DISTVERSION=	2.47.3
 CATEGORIES=	emulators
 MASTER_SITES=	http://dl.winehq.org/wine/wine-gecko/${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
