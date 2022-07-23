@@ -546,6 +546,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/features/alerting/unified/components/rule-editor/AnnotationsField.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rule-editor/CloudConditionsStep.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rule-editor/CloudRulesSourcePicker.tsx
+%%DATADIR%%/public/app/features/alerting/unified/components/rule-editor/ConditionField.test.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rule-editor/ConditionField.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rule-editor/DetailsStep.tsx
 %%DATADIR%%/public/app/features/alerting/unified/components/rule-editor/ExpressionEditor.tsx
@@ -2209,6 +2210,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/dashboards/v1Alerts.json
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/dashboards/vMInsightsRG.json
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/dashboards/vMInsightsWorkspace.json
+%%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/datasource.test.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/datasource.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/grafanaTemplateVariableFns.ts
 %%DATADIR%%/public/app/plugins/datasource/grafana-azure-monitor-datasource/grafanaTemplateVariables.test.ts
