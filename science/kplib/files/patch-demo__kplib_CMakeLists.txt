@@ -1,0 +1,11 @@
+--- demo_kplib/CMakeLists.txt.orig	2022-07-23 20:23:38 UTC
++++ demo_kplib/CMakeLists.txt
+@@ -3,7 +3,7 @@ project(demo_kplib)
+ 
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Werror -fPIC")
+ set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")                 # Debug mode.
+-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native")    # Default optimization.
++set(CMAKE_CXX_FLAGS_RELEASE "-O3")    # Default optimization.
+ 
+ if(NOT CMAKE_BUILD_TYPE)
+     set(CMAKE_BUILD_TYPE Release)
