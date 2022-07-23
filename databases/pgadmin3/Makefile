@@ -10,8 +10,6 @@ COMMENT=	PostgreSQL database design and management system
 
 LICENSE=	PostgreSQL
 
-BROKEN=		does not build: error: too few arguments provided to function-like macro invocation
-
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 
 USES=		compiler:c++11-lib gettext gmake gnome pgsql:9.0+ ssl
@@ -33,7 +31,7 @@ PORTDATA=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${PGSQL_VER}>=13
+.if ${PGSQL_VER}>13
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-pg13
 .endif
 
