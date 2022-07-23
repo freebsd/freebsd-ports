@@ -119,6 +119,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-4-2-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-4-3-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-4-4-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-5-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-full.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/apple-advanced-typography-api.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/buffers-language-script-and-direction.html
