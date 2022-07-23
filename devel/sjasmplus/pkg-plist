@@ -1,0 +1,33 @@
+bin/sjasmplus
+%%PORTDOCS%%%%DOCSDIR%%/documentation.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/3color/3color.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/3color/killerbean2.$c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BasicLib/BasicLib.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BasicLib/Example-code-in-rem.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BasicLib/Example-goto-restore.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BasicLib/Example-line-numbering.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/BasicLib/Example-simple-loader.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SaveCDT/asm-loaders/loader464.z80
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SaveCDT/asm-loaders/loader6128.z80
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SymbOS_nslookup/#readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SymbOS_nslookup/Cmd-NsLookUp-sj.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SymbOS_nslookup/adaptation.patch
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SymbOS_nslookup/nslookup.com
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SymbOS_nslookup/src/Cmd-NsLookUp-head.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SymbOS_nslookup/src/Cmd-NsLookUp.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SymbOS_nslookup/src/SymbOS-Constants.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SymbOS_nslookup/src/symbos_lib-NetworkDaemon.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SymbOS_nslookup/src/symbos_lib-SymShell.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SymbOS_nslookup/src/symbos_lib-SystemManager.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TapLib/Example.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TapLib/TapLib.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chargfx2asm/ZX Courier.ch8
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/chargfx2asm/chargfx2asm.script.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file name test/option zxnext ignore.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file name test/option zxnext.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/file name test/option zxnext.options
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/frost4k/frost10.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/frost4k/samples.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/relocation/relocate.tap
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/relocation/relocation_basic.i.asm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/relocation/relocation_main.asm

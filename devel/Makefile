@@ -7107,6 +7107,7 @@
     SUBDIR += simdjson
     SUBDIR += simgear
     SUBDIR += simian
+    SUBDIR += sjasmplus
     SUBDIR += skalibs
     SUBDIR += skypat
     SUBDIR += slf4j
