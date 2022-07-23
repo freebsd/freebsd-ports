@@ -1,6 +1,5 @@
 PORTNAME=	liquidsfz
-DISTVERSION=	0.3.0-2
-DISTVERSIONSUFFIX=	-g82ce2bb
+DISTVERSION=	0.3.1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +27,7 @@ PLIST_FILES=	bin/liquidsfz \
 		include/liquidsfz.hh \
 		lib/libliquidsfz.so \
 		lib/libliquidsfz.so.3 \
-		lib/libliquidsfz.so.3.0.0 \
+		lib/libliquidsfz.so.3.0.1 \
 		lib/lv2/liquidsfz.lv2/liquidsfz.ttl \
 		lib/lv2/liquidsfz.lv2/liquidsfz_lv2.so \
 		lib/lv2/liquidsfz.lv2/manifest.ttl \
