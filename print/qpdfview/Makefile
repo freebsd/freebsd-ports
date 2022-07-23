@@ -5,7 +5,7 @@ CATEGORIES=	print
 MASTER_SITES=	https://launchpadlibrarian.net/294276875/ \
 		https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION}/+download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Tabbed DjVu/PDF/PS document viewer
 
 LICENSE=	GPLv2+
@@ -14,23 +14,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig qmake qt:5
-USE_LDCONFIG=	yes
-USE_QT=		buildtools_build concurrent core dbus gui imageformats linguisttools printsupport sql sql-sqlite3 svg widgets xml
 USE_GL=		gl
+USE_LDCONFIG=	yes
+USE_QT=		concurrent core dbus gui imageformats linguisttools \
+		printsupport sql sql-sqlite3 svg widgets xml buildtools_build
 
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 
-OPTIONS_DEFINE=	CUPS DJVU PS
+OPTIONS_DEFINE=		CUPS DJVU PS
 OPTIONS_DEFAULT=	CUPS DJVU PS
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
-CUPS_QMAKE_OFF=	"CONFIG+=without_cups"
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
+CUPS_QMAKE_OFF=		"CONFIG+=without_cups"
 
 DJVU_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
-DJVU_QMAKE_OFF=	"CONFIG+=without_djvu"
+DJVU_QMAKE_OFF=		"CONFIG+=without_djvu"
 
 PS_LIB_DEPENDS=	libspectre.so:print/libspectre
 PS_QMAKE_OFF=	"CONFIG+=without_ps"
