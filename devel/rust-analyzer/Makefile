@@ -1,6 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2022-06-20
-PORTREVISION=	1
+DISTVERSION=	2022-07-18
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -19,9 +18,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
 		always-assert-0.1.2 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.57 \
+		anyhow-1.0.58 \
 		anymap-1.0.0-beta.2 \
-		arbitrary-1.1.0 \
+		arbitrary-1.1.3 \
 		arrayvec-0.7.2 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -29,29 +28,29 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		bitflags-1.3.2 \
 		camino-1.0.9 \
 		cargo-platform-0.1.2 \
-		cargo_metadata-0.14.2 \
+		cargo_metadata-0.15.0 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		chalk-derive-0.82.0 \
-		chalk-ir-0.82.0 \
-		chalk-recursive-0.82.0 \
-		chalk-solve-0.82.0 \
+		chalk-derive-0.83.0 \
+		chalk-ir-0.83.0 \
+		chalk-recursive-0.83.0 \
+		chalk-solve-0.83.0 \
 		countme-3.0.1 \
 		cov-mark-2.0.0-pre.1 \
 		crc32fast-1.3.2 \
-		crossbeam-channel-0.5.4 \
+		crossbeam-channel-0.5.5 \
 		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.8 \
-		crossbeam-utils-0.8.8 \
+		crossbeam-epoch-0.9.9 \
+		crossbeam-utils-0.8.10 \
 		dashmap-5.3.4 \
-		derive_arbitrary-1.1.0 \
+		derive_arbitrary-1.1.3 \
 		dissimilar-1.0.4 \
 		dot-0.1.4 \
 		drop_bomb-0.1.5 \
-		either-1.6.1 \
+		either-1.7.0 \
 		ena-0.14.0 \
 		expect-test-1.3.0 \
-		filetime-0.2.16 \
+		filetime-0.2.17 \
 		fixedbitset-0.2.0 \
 		flate2-1.0.24 \
 		form_urlencoded-1.0.1 \
@@ -59,13 +58,12 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		fsevent-sys-4.1.0 \
 		fst-0.4.7 \
 		gimli-0.26.1 \
-		hashbrown-0.11.2 \
 		hashbrown-0.12.1 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
 		home-0.5.3 \
 		idna-0.2.3 \
-		indexmap-1.8.2 \
+		indexmap-1.9.1 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
@@ -88,11 +86,12 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		memoffset-0.6.5 \
 		mimalloc-0.1.29 \
 		miniz_oxide-0.5.3 \
-		mio-0.8.3 \
+		mio-0.8.4 \
 		miow-0.4.0 \
 		notify-5.0.0-pre.15 \
 		num_cpus-1.13.1 \
 		object-0.28.4 \
+		object-0.29.0 \
 		once_cell-1.12.0 \
 		oorandom-11.1.3 \
 		parking_lot-0.11.2 \
@@ -105,10 +104,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		perf-event-open-sys-1.0.1 \
 		petgraph-0.5.1 \
 		pin-project-lite-0.2.9 \
-		proc-macro2-1.0.39 \
+		proc-macro2-1.0.40 \
 		pulldown-cmark-0.9.1 \
-		pulldown-cmark-to-cmark-10.0.1 \
-		quote-1.0.18 \
+		pulldown-cmark-to-cmark-10.0.2 \
+		quote-1.0.20 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
 		redox_syscall-0.2.13 \
@@ -125,37 +124,37 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
-		semver-1.0.10 \
-		serde-1.0.137 \
-		serde_derive-1.0.137 \
-		serde_json-1.0.81 \
+		semver-1.0.12 \
+		serde-1.0.138 \
+		serde_derive-1.0.138 \
+		serde_json-1.0.82 \
 		serde_repr-0.1.8 \
 		sharded-slab-0.1.4 \
-		smallvec-1.8.0 \
+		smallvec-1.9.0 \
 		smol_str-0.1.23 \
 		snap-1.0.5 \
-		syn-1.0.96 \
+		syn-1.0.98 \
 		synstructure-0.12.6 \
 		text-size-1.1.0 \
 		thread_local-1.1.4 \
 		threadpool-1.8.1 \
 		tikv-jemalloc-ctl-0.5.0 \
-		tikv-jemalloc-sys-0.5.0+5.3.0 \
+		tikv-jemalloc-sys-0.5.1+5.3.0-patched \
 		tikv-jemallocator-0.5.0 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
 		tracing-0.1.35 \
-		tracing-attributes-0.1.21 \
-		tracing-core-0.1.27 \
+		tracing-attributes-0.1.22 \
+		tracing-core-0.1.28 \
 		tracing-log-0.1.3 \
-		tracing-subscriber-0.3.11 \
+		tracing-subscriber-0.3.14 \
 		tracing-tree-0.2.1 \
 		typed-arena-2.0.1 \
 		ungrammar-1.16.1 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.8 \
-		unicode-ident-1.0.0 \
-		unicode-normalization-0.1.19 \
+		unicode-ident-1.0.1 \
+		unicode-normalization-0.1.21 \
 		unicode-segmentation-1.9.0 \
 		unicode-xid-0.2.3 \
 		url-2.2.2 \
