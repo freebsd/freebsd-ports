@@ -1,5 +1,5 @@
 PORTNAME=	future
-PORTVERSION=	1.26.1
+PORTVERSION=	1.27.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,7 +11,7 @@ LICENSE=	LGPL21+
 CRAN_DEPENDS=	R-cran-digest>0:security/R-cran-digest \
 		R-cran-globals>=0.15.0:devel/R-cran-globals \
 		R-cran-listenv>=0.8.0:devel/R-cran-listenv \
-		R-cran-parallelly>=1.30.0:devel/R-cran-parallelly
+		R-cran-parallelly>=1.31.1:devel/R-cran-parallelly
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
