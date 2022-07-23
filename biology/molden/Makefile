@@ -1,8 +1,8 @@
 PORTNAME=	molden
-DISTVERSION=	6.7
+DISTVERSION=	7.1
 PORTEPOCH=	1
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.cmbi.umcn.nl/pub/molgraph/molden/
+MASTER_SITES=	https://ftp.science.ru.nl/Molden/
 DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	jmd@FreeBSD.org

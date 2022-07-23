@@ -1,6 +1,6 @@
 - pass supplied FFLAGS to the build
 
---- makefile.orig	2021-01-28 14:05:10 UTC
+--- makefile.orig	2022-01-21 11:28:48 UTC
 +++ makefile
 @@ -107,7 +107,7 @@ ifneq ($(comgcc), $(empty))
     EXTRAZ = -Wno-implicit-function-declaration
@@ -11,12 +11,13 @@
  LIBS =  -L/usr/X11R6/lib -lX11 -lm
  ifeq ($(AFLAG),"-m64")
  LIBS =  -L/usr/X11R6/lib64 -lX11 -lm
-@@ -132,11 +132,11 @@ ifeq ($(uname), Darwin)
+@@ -132,12 +132,12 @@ ifeq ($(uname), Darwin)
  #
  CC=cc
  CFLAGS= -std=gnu89 -Wno-return-type -DDARWIN -I/usr/X11R6/include -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0 -Wno-logical-op-parentheses
--FFLAGS=-O3 -funroll-loops
-+FFLAGS+=-O3 -funroll-loops
+-FFLAGS=-O3 -funroll-loops -fallow-argument-mismatch
++FFLAGS+=-O3 -funroll-loops -fallow-argument-mismatch
+ 
  LIBS = -L/usr/X11R6/lib -lX11 -lm
  LIBSG = -L/usr/X11R6/lib -lGLU "-Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib" -lGL -lXmu -lX11 -lm
  EXT= -std=gnu89 -Wno-return-type -DDARWIN ${EXTRAZ}
@@ -24,8 +25,8 @@
 +FFLAGS+=-O3 -funroll-loops
  LIBS = -L/usr/X11R6/lib -lX11 -lm
  LIBSG = -L/usr/X11R6/lib -lGLU "-Wl,-dylib_file,/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib:/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib" -lGL -lXmu -lX11 -lm
- CFLAGS= -g -std=gnu89 -Wno-return-type -DDARWIN -I/usr/X11R6/include -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0 -Wno-logical-op-parentheses -Wno-implicit-function-declaration -Wno-tautological-pointer-compare -Wno-tautological-constant-out-of-range-compare
-@@ -306,11 +306,11 @@ gmolden:	$(OBJS) src/mpdum.o src/xwingl.o 
+ CFLAGS= -g -std=gnu89 -Wno-return-type -DDARWIN -I/usr/X11R6/include -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0 -Wno-logical-op-parentheses -Wno-tautological-pointer-compare -Wno-tautological-constant-out-of-range-compare -fallow-argument-mismatch
+@@ -307,16 +307,16 @@ gmolden:	$(OBJS) src/mpdum.o src/xwingl.o 
  	mv gmolden bin/gmolden
  
  ambfor/ambfor:	src/ambfor/*.f src/ambfor/*.c
@@ -39,3 +40,9 @@
  	mv src/ambfor/ambmd bin/ambmd
  
  surf/surf:	src/surf/*.h src/surf/*.c
+ 	$(MAKE) -C src/surf depend 
+-	$(MAKE) -C src/surf EXT="${EXT}"
++	$(MAKE) -C src/surf EXT="${EXT}" FFLAGS="$(FFLAGS)"
+ 	mv src/surf/surf bin/surf
+ 
+ # noxwin will not work as long as the old ocglbck calls arent in dummys
