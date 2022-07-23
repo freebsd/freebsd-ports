@@ -25,6 +25,10 @@ LDFLAGS+=	-lpthread
 
 PLIST_FILES=	bin/mmseqs ${DATADIR}/bash-completion.sh
 
+.if !exists(/usr/include/omp.h)
+CMAKE_ARGS+=	-DREQUIRE_OPENMP=0
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" && empty(CFLAGS:M*march=native*)
