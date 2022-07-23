@@ -1206,6 +1206,7 @@ lib/wine/%%WINEARCH%%-unix/libadvapi32.a
 lib/wine/%%WINEARCH%%-unix/libadvpack.a
 lib/wine/%%WINEARCH%%-unix/libatl.a
 lib/wine/%%WINEARCH%%-unix/libatl100.a
+lib/wine/%%WINEARCH%%-unix/libatl110.a
 lib/wine/%%WINEARCH%%-unix/libatl80.a
 lib/wine/%%WINEARCH%%-unix/libatlthunk.a
 lib/wine/%%WINEARCH%%-unix/libavicap32.a
@@ -1728,6 +1729,7 @@ lib/wine/%%WINEARCH%%-windows/libadvapi32.a
 lib/wine/%%WINEARCH%%-windows/libadvpack.a
 lib/wine/%%WINEARCH%%-windows/libatl.a
 lib/wine/%%WINEARCH%%-windows/libatl100.a
+lib/wine/%%WINEARCH%%-windows/libatl110.a
 lib/wine/%%WINEARCH%%-windows/libatl80.a
 lib/wine/%%WINEARCH%%-windows/libatlthunk.a
 lib/wine/%%WINEARCH%%-windows/libavicap32.a
@@ -2038,6 +2040,7 @@ lib/wine/%%WINEARCH%%-windows/msvcp120.dll
 lib/wine/%%WINEARCH%%-windows/msvcp120_app.dll
 lib/wine/%%WINEARCH%%-windows/msvcp140.dll
 lib/wine/%%WINEARCH%%-windows/msvcp140_1.dll
+lib/wine/%%WINEARCH%%-windows/msvcp140_2.dll
 lib/wine/%%WINEARCH%%-windows/msvcp140_atomic_wait.dll
 lib/wine/%%WINEARCH%%-windows/msvcp60.dll
 lib/wine/%%WINEARCH%%-windows/msvcp70.dll
