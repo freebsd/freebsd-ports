@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_i386=	error: "c++ crashes, clang-5 and 6 fail: undefined reference to `__atomic_load'"
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 BUILD_DEPENDS=	gimptool-2.0:graphics/gimp-app
 LIB_DEPENDS=	libcurl.so:ftp/curl \
