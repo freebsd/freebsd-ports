@@ -1,29 +1,7 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	7.1.0-34
+DISTVERSION=	7.1.0.43
 PORTREVISION=	1
 CATEGORIES=	graphics perl5
-MASTER_SITES=	https://www.imagemagick.org/download/ \
-		https://www.imagemagick.org/download/releases/ \
-		http://servingzone.com/mirrors/ImageMagick/ \
-		http://mirror.checkdomain.de/imagemagick/ \
-		http://imagemagick.spd.co.il/ \
-		http://www.champground.com/imagemagick/ \
-		http://ftp.surfnet.nl/pub/ImageMagick/ \
-		http://mirror.searchdaimon.com/ImageMagick/ \
-		http://mirror.is.co.za/pub/imagemagick/ \
-		http://imagemagick.mirrorcatalogs.com/ \
-		ftp://ftp.imagemagick.org/pub/ImageMagick/ \
-		ftp://mirror.aarnet.edu.au/pub/imagemagick/ \
-		ftp://mirror.checkdomain.de/imagemagick/ \
-		ftp://ftp.kddlabs.co.jp/graphics/ImageMagick/ \
-		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/imagemagick.org/ \
-		ftp://ftp.nluug.nl/pub/ImageMagick/ \
-		ftp://mirror.searchdaimon.com/ImageMagick/ \
-		ftp://sunsite.icm.edu.pl/packages/ImageMagick/ \
-		ftp://ftp.tpnet.pl/pub/graphics/ImageMagick/ \
-		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
-		ftp://ftp.is.co.za/pub/imagemagick/ \
-		ftp://ftp.fifi.org/pub/ImageMagick/
 PKGNAMESUFFIX=	7
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -42,7 +20,7 @@ CONFLICTS_INSTALL=	ImageMagick6 ImageMagick6-nox11
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		cpe gettext-runtime gmake gnome libtool:keepla \
-		localbase pathfix perl5 pkgconfig:both shebangfix tar:xz
+		localbase pathfix perl5 pkgconfig:both shebangfix
 CPE_PRODUCT=	imagemagick
 CPE_VENDOR=	imagemagick
 SHEBANG_FILES=	www/source/examples.pl
@@ -51,6 +29,7 @@ CONFIGURE_ENV=	MAKE=${MAKE_CMD}
 CONFIGURE_ARGS=	--without-dps \
 		--without-flif \
 		--without-zstd
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
