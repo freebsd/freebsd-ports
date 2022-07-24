@@ -42,6 +42,12 @@ share/icons/Yaru-dark/16x16/panel/gnome-netstatus-50-74.svg
 share/icons/Yaru-dark/16x16/panel/gnome-netstatus-75-100.svg
 share/icons/Yaru-dark/16x16/panel/gnome-netstatus-disconn.svg
 share/icons/Yaru-dark/16x16/panel/gnome-netstatus-error.svg
+share/icons/Yaru-dark/16x16/panel/gpm-gaming-input-000.svg
+share/icons/Yaru-dark/16x16/panel/gpm-gaming-input-020.svg
+share/icons/Yaru-dark/16x16/panel/gpm-gaming-input-040.svg
+share/icons/Yaru-dark/16x16/panel/gpm-gaming-input-060.svg
+share/icons/Yaru-dark/16x16/panel/gpm-gaming-input-080.svg
+share/icons/Yaru-dark/16x16/panel/gpm-gaming-input-100.svg
 share/icons/Yaru-dark/16x16/panel/gpm-keyboard-000.svg
 share/icons/Yaru-dark/16x16/panel/gpm-keyboard-020.svg
 share/icons/Yaru-dark/16x16/panel/gpm-keyboard-040.svg
@@ -370,10 +376,13 @@ share/icons/Yaru-dark/22x22/panel/blueman-tray.svg
 share/icons/Yaru-dark/22x22/panel/bluetooth-active.svg
 share/icons/Yaru-dark/22x22/panel/bluetooth-disabled.svg
 share/icons/Yaru-dark/22x22/panel/bluetooth-paired.svg
+share/icons/Yaru-dark/22x22/panel/caffeine-cup-empty.svg
+share/icons/Yaru-dark/22x22/panel/caffeine-cup-full.svg
 share/icons/Yaru-dark/22x22/panel/connect_creating.svg
 share/icons/Yaru-dark/22x22/panel/connect_established.svg
 share/icons/Yaru-dark/22x22/panel/connect_no.svg
 share/icons/Yaru-dark/22x22/panel/deluge-panel.svg
+share/icons/Yaru-dark/22x22/panel/diodon-panel.svg
 share/icons/Yaru-dark/22x22/panel/dropboxstatus-busy.svg
 share/icons/Yaru-dark/22x22/panel/dropboxstatus-busy2.svg
 share/icons/Yaru-dark/22x22/panel/dropboxstatus-idle.svg
@@ -394,6 +403,12 @@ share/icons/Yaru-dark/22x22/panel/gnome-netstatus-idle.svg
 share/icons/Yaru-dark/22x22/panel/gnome-netstatus-rx.svg
 share/icons/Yaru-dark/22x22/panel/gnome-netstatus-tx.svg
 share/icons/Yaru-dark/22x22/panel/gnome-netstatus-txrx.svg
+share/icons/Yaru-dark/22x22/panel/gpm-gaming-input-000.svg
+share/icons/Yaru-dark/22x22/panel/gpm-gaming-input-020.svg
+share/icons/Yaru-dark/22x22/panel/gpm-gaming-input-040.svg
+share/icons/Yaru-dark/22x22/panel/gpm-gaming-input-060.svg
+share/icons/Yaru-dark/22x22/panel/gpm-gaming-input-080.svg
+share/icons/Yaru-dark/22x22/panel/gpm-gaming-input-100.svg
 share/icons/Yaru-dark/22x22/panel/gpm-keyboard-000.svg
 share/icons/Yaru-dark/22x22/panel/gpm-keyboard-020.svg
 share/icons/Yaru-dark/22x22/panel/gpm-keyboard-040.svg
@@ -1331,6 +1346,7 @@ share/icons/Yaru-dark/24x24/panel/bluetooth-paired.svg
 share/icons/Yaru-dark/24x24/panel/connect_creating.svg
 share/icons/Yaru-dark/24x24/panel/connect_established.svg
 share/icons/Yaru-dark/24x24/panel/connect_no.svg
+share/icons/Yaru-dark/24x24/panel/diodon-panel.svg
 share/icons/Yaru-dark/24x24/panel/dropboxstatus-busy.svg
 share/icons/Yaru-dark/24x24/panel/dropboxstatus-busy2.svg
 share/icons/Yaru-dark/24x24/panel/dropboxstatus-idle.svg
@@ -1351,6 +1367,12 @@ share/icons/Yaru-dark/24x24/panel/gnome-netstatus-idle.svg
 share/icons/Yaru-dark/24x24/panel/gnome-netstatus-rx.svg
 share/icons/Yaru-dark/24x24/panel/gnome-netstatus-tx.svg
 share/icons/Yaru-dark/24x24/panel/gnome-netstatus-txrx.svg
+share/icons/Yaru-dark/24x24/panel/gpm-gaming-input-000.svg
+share/icons/Yaru-dark/24x24/panel/gpm-gaming-input-020.svg
+share/icons/Yaru-dark/24x24/panel/gpm-gaming-input-040.svg
+share/icons/Yaru-dark/24x24/panel/gpm-gaming-input-060.svg
+share/icons/Yaru-dark/24x24/panel/gpm-gaming-input-080.svg
+share/icons/Yaru-dark/24x24/panel/gpm-gaming-input-100.svg
 share/icons/Yaru-dark/24x24/panel/gpm-keyboard-000.svg
 share/icons/Yaru-dark/24x24/panel/gpm-keyboard-020.svg
 share/icons/Yaru-dark/24x24/panel/gpm-keyboard-040.svg
@@ -1459,6 +1481,9 @@ share/icons/Yaru-dark/24x24/panel/nm-tech-hspa.svg
 share/icons/Yaru-dark/24x24/panel/nm-tech-umts.svg
 share/icons/Yaru-dark/24x24/panel/nm-vpn-standalone-lock.svg
 share/icons/Yaru-dark/24x24/panel/nm-wwan-tower.svg
+share/icons/Yaru-dark/24x24/panel/optimus-indicator-intel.svg
+share/icons/Yaru-dark/24x24/panel/optimus-indicator-nvidia.svg
+share/icons/Yaru-dark/24x24/panel/optimus-indicator-unknown.svg
 share/icons/Yaru-dark/24x24/panel/org.remmina.Remmina-status.svg
 share/icons/Yaru-dark/24x24/panel/printer-symbolic.svg
 share/icons/Yaru-dark/24x24/panel/redshift-status-off.svg
@@ -1533,6 +1558,7 @@ share/icons/Yaru-dark/24x24/panel/user-idle-panel.svg
 share/icons/Yaru-dark/24x24/panel/user-indeterminate-panel.svg
 share/icons/Yaru-dark/24x24/panel/user-invisible-panel.svg
 share/icons/Yaru-dark/24x24/panel/user-offline-panel.svg
+share/icons/Yaru-dark/24x24/panel/variety-indicator.svg
 share/icons/Yaru-dark/24x24/panel/xfce4-mixer-muted.svg
 share/icons/Yaru-dark/24x24/panel/xfce4-mixer-no-record.svg
 share/icons/Yaru-dark/24x24/panel/xfce4-mixer-record.svg
@@ -2712,6 +2738,12 @@ share/icons/Yaru/16x16/panel/gnome-netstatus-50-74.svg
 share/icons/Yaru/16x16/panel/gnome-netstatus-75-100.svg
 share/icons/Yaru/16x16/panel/gnome-netstatus-disconn.svg
 share/icons/Yaru/16x16/panel/gnome-netstatus-error.svg
+share/icons/Yaru/16x16/panel/gpm-gaming-input-000.svg
+share/icons/Yaru/16x16/panel/gpm-gaming-input-020.svg
+share/icons/Yaru/16x16/panel/gpm-gaming-input-040.svg
+share/icons/Yaru/16x16/panel/gpm-gaming-input-060.svg
+share/icons/Yaru/16x16/panel/gpm-gaming-input-080.svg
+share/icons/Yaru/16x16/panel/gpm-gaming-input-100.svg
 share/icons/Yaru/16x16/panel/gpm-keyboard-000.svg
 share/icons/Yaru/16x16/panel/gpm-keyboard-020.svg
 share/icons/Yaru/16x16/panel/gpm-keyboard-040.svg
@@ -3897,6 +3929,7 @@ share/icons/Yaru/16x16@2x/status/stock_dialog-warning.png
 share/icons/Yaru/16x16@2x/status/user-info.png
 share/icons/Yaru/16x16@2x/status/user-trash-full.png
 share/icons/Yaru/22x22/actions/address-book-new.png
+share/icons/Yaru/22x22/actions/application-exit.png
 share/icons/Yaru/22x22/actions/appointment-new.png
 share/icons/Yaru/22x22/actions/blueman-send-file.png
 share/icons/Yaru/22x22/actions/blueman-trust.png
@@ -3906,6 +3939,8 @@ share/icons/Yaru/22x22/actions/cancel.png
 share/icons/Yaru/22x22/actions/computer-log-out.png
 share/icons/Yaru/22x22/actions/contact-new.png
 share/icons/Yaru/22x22/actions/dialog-cancel.png
+share/icons/Yaru/22x22/actions/dialog-close.png
+share/icons/Yaru/22x22/actions/dialog-no.png
 share/icons/Yaru/22x22/actions/document-new.png
 share/icons/Yaru/22x22/actions/document-open-recent.png
 share/icons/Yaru/22x22/actions/document-open.png
@@ -3963,6 +3998,7 @@ share/icons/Yaru/22x22/actions/go-last.png
 share/icons/Yaru/22x22/actions/group-delete.png
 share/icons/Yaru/22x22/actions/gshutdown.png
 share/icons/Yaru/22x22/actions/gtk-cancel.png
+share/icons/Yaru/22x22/actions/gtk-close.png
 share/icons/Yaru/22x22/actions/gtk-copy.png
 share/icons/Yaru/22x22/actions/gtk-cut.png
 share/icons/Yaru/22x22/actions/gtk-delete.png
@@ -4014,6 +4050,7 @@ share/icons/Yaru/22x22/actions/printers.png
 share/icons/Yaru/22x22/actions/process-stop.png
 share/icons/Yaru/22x22/actions/redo.png
 share/icons/Yaru/22x22/actions/stock_calc-cancel.png
+share/icons/Yaru/22x22/actions/stock_close.png
 share/icons/Yaru/22x22/actions/stock_copy.png
 share/icons/Yaru/22x22/actions/stock_cut.png
 share/icons/Yaru/22x22/actions/stock_delete.png
@@ -4046,6 +4083,7 @@ share/icons/Yaru/22x22/actions/system-shutdown.png
 share/icons/Yaru/22x22/actions/undo.png
 share/icons/Yaru/22x22/actions/view-zoom-in.png
 share/icons/Yaru/22x22/actions/view-zoom-out.png
+share/icons/Yaru/22x22/actions/window-close.png
 share/icons/Yaru/22x22/actions/xfsm-logout.png
 share/icons/Yaru/22x22/actions/xfsm-reboot.png
 share/icons/Yaru/22x22/actions/xfsm-shutdown.png
@@ -4099,6 +4137,7 @@ share/icons/Yaru/22x22/animations/nm-vpn-connecting11.svg
 share/icons/Yaru/22x22/animations/nm-vpn-connecting12.svg
 share/icons/Yaru/22x22/animations/nm-vpn-connecting13.svg
 share/icons/Yaru/22x22/animations/nm-vpn-connecting14.svg
+share/icons/Yaru/22x22/apps/ubiquity.png
 share/icons/Yaru/22x22/categories/preferences-system-bluetooth.png
 share/icons/Yaru/22x22/legacy/document-export.png
 share/icons/Yaru/22x22/legacy/document-import.png
@@ -4168,10 +4207,13 @@ share/icons/Yaru/22x22/panel/blueman-tray.svg
 share/icons/Yaru/22x22/panel/bluetooth-active.svg
 share/icons/Yaru/22x22/panel/bluetooth-disabled.svg
 share/icons/Yaru/22x22/panel/bluetooth-paired.svg
+share/icons/Yaru/22x22/panel/caffeine-cup-empty.svg
+share/icons/Yaru/22x22/panel/caffeine-cup-full.svg
 share/icons/Yaru/22x22/panel/connect_creating.svg
 share/icons/Yaru/22x22/panel/connect_established.svg
 share/icons/Yaru/22x22/panel/connect_no.svg
 share/icons/Yaru/22x22/panel/deluge-panel.svg
+share/icons/Yaru/22x22/panel/diodon-panel.svg
 share/icons/Yaru/22x22/panel/dropboxstatus-busy.svg
 share/icons/Yaru/22x22/panel/dropboxstatus-busy2.svg
 share/icons/Yaru/22x22/panel/dropboxstatus-idle.svg
@@ -4192,6 +4234,12 @@ share/icons/Yaru/22x22/panel/gnome-netstatus-idle.svg
 share/icons/Yaru/22x22/panel/gnome-netstatus-rx.svg
 share/icons/Yaru/22x22/panel/gnome-netstatus-tx.svg
 share/icons/Yaru/22x22/panel/gnome-netstatus-txrx.svg
+share/icons/Yaru/22x22/panel/gpm-gaming-input-000.svg
+share/icons/Yaru/22x22/panel/gpm-gaming-input-020.svg
+share/icons/Yaru/22x22/panel/gpm-gaming-input-040.svg
+share/icons/Yaru/22x22/panel/gpm-gaming-input-060.svg
+share/icons/Yaru/22x22/panel/gpm-gaming-input-080.svg
+share/icons/Yaru/22x22/panel/gpm-gaming-input-100.svg
 share/icons/Yaru/22x22/panel/gpm-keyboard-000.svg
 share/icons/Yaru/22x22/panel/gpm-keyboard-020.svg
 share/icons/Yaru/22x22/panel/gpm-keyboard-040.svg
@@ -5079,6 +5127,7 @@ share/icons/Yaru/22x22@2x/actions/system-reboot.png
 share/icons/Yaru/22x22@2x/actions/system-shutdown.png
 share/icons/Yaru/22x22@2x/actions/zoom-in.png
 share/icons/Yaru/22x22@2x/actions/zoom-out.png
+share/icons/Yaru/22x22@2x/apps/ubiquity.png
 share/icons/Yaru/22x22@2x/categories/preferences-system-bluetooth.png
 share/icons/Yaru/22x22@2x/legacy/document-export.png
 share/icons/Yaru/22x22@2x/legacy/document-import.png
@@ -6118,6 +6167,7 @@ share/icons/Yaru/24x24/panel/bluetooth-paired.svg
 share/icons/Yaru/24x24/panel/connect_creating.svg
 share/icons/Yaru/24x24/panel/connect_established.svg
 share/icons/Yaru/24x24/panel/connect_no.svg
+share/icons/Yaru/24x24/panel/diodon-panel.svg
 share/icons/Yaru/24x24/panel/dropboxstatus-busy.svg
 share/icons/Yaru/24x24/panel/dropboxstatus-busy2.svg
 share/icons/Yaru/24x24/panel/dropboxstatus-idle.svg
@@ -6138,6 +6188,12 @@ share/icons/Yaru/24x24/panel/gnome-netstatus-idle.svg
 share/icons/Yaru/24x24/panel/gnome-netstatus-rx.svg
 share/icons/Yaru/24x24/panel/gnome-netstatus-tx.svg
 share/icons/Yaru/24x24/panel/gnome-netstatus-txrx.svg
+share/icons/Yaru/24x24/panel/gpm-gaming-input-000.svg
+share/icons/Yaru/24x24/panel/gpm-gaming-input-020.svg
+share/icons/Yaru/24x24/panel/gpm-gaming-input-040.svg
+share/icons/Yaru/24x24/panel/gpm-gaming-input-060.svg
+share/icons/Yaru/24x24/panel/gpm-gaming-input-080.svg
+share/icons/Yaru/24x24/panel/gpm-gaming-input-100.svg
 share/icons/Yaru/24x24/panel/gpm-keyboard-000.svg
 share/icons/Yaru/24x24/panel/gpm-keyboard-020.svg
 share/icons/Yaru/24x24/panel/gpm-keyboard-040.svg
@@ -6246,6 +6302,9 @@ share/icons/Yaru/24x24/panel/nm-tech-hspa.svg
 share/icons/Yaru/24x24/panel/nm-tech-umts.svg
 share/icons/Yaru/24x24/panel/nm-vpn-standalone-lock.svg
 share/icons/Yaru/24x24/panel/nm-wwan-tower.svg
+share/icons/Yaru/24x24/panel/optimus-indicator-intel.svg
+share/icons/Yaru/24x24/panel/optimus-indicator-nvidia.svg
+share/icons/Yaru/24x24/panel/optimus-indicator-unknown.svg
 share/icons/Yaru/24x24/panel/org.remmina.Remmina-status.svg
 share/icons/Yaru/24x24/panel/printer-symbolic.svg
 share/icons/Yaru/24x24/panel/redshift-status-off.svg
@@ -6320,6 +6379,7 @@ share/icons/Yaru/24x24/panel/user-idle-panel.svg
 share/icons/Yaru/24x24/panel/user-indeterminate-panel.svg
 share/icons/Yaru/24x24/panel/user-invisible-panel.svg
 share/icons/Yaru/24x24/panel/user-offline-panel.svg
+share/icons/Yaru/24x24/panel/variety-indicator.svg
 share/icons/Yaru/24x24/panel/xfce4-mixer-muted.svg
 share/icons/Yaru/24x24/panel/xfce4-mixer-no-record.svg
 share/icons/Yaru/24x24/panel/xfce4-mixer-record.svg
