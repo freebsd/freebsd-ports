@@ -1,6 +1,5 @@
 PORTNAME=	inkscape
-DISTVERSION=	1.2
-PORTREVISION=	2
+DISTVERSION=	1.2.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
@@ -43,14 +42,16 @@ RUN_DEPENDS=	${PYNUMPY} \
 		ps2pdf:print/ghostscript9-agpl-base \
 		fig2dev:print/fig2dev
 
-USES=		compiler:c++11-lib cmake cpe desktop-file-utils gnome \
+USES=		compiler:c++17-lang cmake cpe desktop-file-utils gnome \
 		iconv:wchar_t jpeg pathfix pkgconfig python:3.7+ \
 		shebangfix tar:xz xorg
 USE_GNOME=	gtkmm30 libxml2 libxslt
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
-DATETAG=	2022-05-15_dc2aedaf03
+CXXSTD=		gnu++17
+
+DATETAG=	2022-07-14_9c6d41e410
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_${DATETAG}
 
