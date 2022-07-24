@@ -1,6 +1,5 @@
 PORTNAME=	SimGrid
-DISTVERSION=	3.28
-PORTREVISION=	2
+DISTVERSION=	3.31
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://framagit.org/
 GL_ACCOUNT=	simgrid
 GL_PROJECT=	simgrid
-GL_COMMIT=	04e3ca46dcefdd19f2f1fee3e75c27fb2f7fc2ec
+GL_COMMIT=	fcfdefe62e01e5353377ebe3573782ba4d368eeb
 
 CMAKE_OFF=	enable_python
 
