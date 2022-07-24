@@ -1,5 +1,5 @@
 PORTNAME=	yaru-gtk-themes
-DISTVERSION=	22.04.3.1
+DISTVERSION=	22.04.4
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
