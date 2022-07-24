@@ -1,6 +1,5 @@
 PORTNAME=	libsoup
-PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -12,10 +11,19 @@ COMMENT=	HTTP client/server library for GNOME
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	glib-networking>0:net/glib-networking
+BUILD_DEPENDS=	glib-networking>0:net/glib-networking \
+		${PYTHON_PKGNAMEPREFIX}gi-docgen>=0:textproc/py-gi-docgen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}markupsafe>0:textproc/py-markupsafe@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}smartypants>0:textproc/py-smartypants@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typogrify>0:textproc/py-typogrify@${PY_FLAVOR}
+
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libnghttp2.so:www/libnghttp2 \
-		libpsl.so:dns/libpsl \
+		libpsl.so:dns/libpsl
 
 RUN_DEPENDS=	glib-networking>0:net/glib-networking
 
@@ -29,8 +37,7 @@ OPTIONS_SINGLE=			GSSAPI
 OPTIONS_SINGLE_GSSAPI=		GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 OPTIONS_DEFAULT=		GSSAPI_${${SSL_DEFAULT} == base :?BASE :NONE}
 
-MESON_ARGS=	-Dgtk_doc=false \
-		-Dtests=false \
+MESON_ARGS=	-Dtests=false \
 		-Dinstalled_tests=false \
 		-Dsysprof=disabled \
 		-Dpkcs11_tests=disabled \
@@ -39,7 +46,6 @@ MESON_ARGS=	-Dgtk_doc=false \
 		-Dautobahn=disabled \
 		-Dtls_check=true \
 		-Dvapi=disabled \
-		-Dbrotli=disabled \
 		-Dntlm=disabled
 
 GSSAPI_BASE_USES=		gssapi
@@ -54,7 +60,6 @@ GSSAPI_MIT_MESON_ON=		-Dgssapi=enabled -Dkrb5_config=${KRB5CONFIG}
 GSSAPI_NONE_MESON_DISABLED=	gssapi
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
-
 
 .include <bsd.port.mk>
 
