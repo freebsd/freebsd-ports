@@ -1,5 +1,5 @@
 PORTNAME=	keyboard
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.1
 CATEGORIES=	deskutils kde
 PKGNAMEPREFIX=	maliit-
 
