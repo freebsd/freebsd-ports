@@ -21,6 +21,13 @@ share/icons/hicolor/64x64/mimetypes/x-gameboy-color-rom.png
 share/icons/hicolor/64x64/mimetypes/x-gameboy-rom.png
 share/mime/packages/sameboy.xml
 @comment %%DATADIR%%/LICENSE
+%%DATADIR%%/Palettes/Desert.sbp
+%%DATADIR%%/Palettes/Evening.sbp
+%%DATADIR%%/Palettes/Fog.sbp
+%%DATADIR%%/Palettes/Magic Eggplant.sbp
+%%DATADIR%%/Palettes/Radioactive Pea.sbp
+%%DATADIR%%/Palettes/Seaweed.sbp
+%%DATADIR%%/Palettes/Twilight.sbp
 %%DATADIR%%/Shaders/AAOmniScaleLegacy.fsh
 %%DATADIR%%/Shaders/AAScale2x.fsh
 %%DATADIR%%/Shaders/AAScale4x.fsh
