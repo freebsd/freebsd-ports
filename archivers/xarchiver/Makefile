@@ -26,6 +26,8 @@ GH_ACCOUNT=	ib
 USE_GNOME=	cairo gdkpixbuf2 glib20 intltool
 GNU_CONFIGURE=	yes
 
+PORTSCOUT=	limit:^\d\.\d\.\d\.\d+$ # avoid tags like identical_to_xfce_git_content
+
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_GROUP=	FORMATS
 OPTIONS_GROUP_FORMATS=	ARJ LZO RAR
