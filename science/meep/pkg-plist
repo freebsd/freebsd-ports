@@ -1,0 +1,12 @@
+include/meep.hpp
+include/meep/adjust_verbosity.hpp
+include/meep/material_data.hpp
+include/meep/meep-config.h
+include/meep/meepgeom.hpp
+include/meep/mympi.hpp
+include/meep/vec.hpp
+lib/libmeep.a
+lib/libmeep.so
+lib/libmeep.so.29
+lib/libmeep.so.29.0.0
+libdata/pkgconfig/meep.pc
