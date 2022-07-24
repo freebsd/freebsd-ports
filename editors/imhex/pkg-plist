@@ -54,6 +54,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/prodinfo.hexpat
 %%DATADIR%%/patterns/spirv.hexpat
 %%DATADIR%%/patterns/tga.hexpat
+%%DATADIR%%/patterns/uf2.hexpat
 %%DATADIR%%/patterns/vdf.hexpat
 %%DATADIR%%/patterns/wav.hexpat
 %%DATADIR%%/patterns/zip.hexpat

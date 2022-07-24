@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-07-04 19:53:18 UTC
+--- CMakeLists.txt.orig	2022-07-16 11:41:37 UTC
 +++ CMakeLists.txt
-@@ -12,7 +12,6 @@ include("${IMHEX_BASE_FOLDER}/cmake/build_helpers.cmak
+@@ -14,7 +14,6 @@ option(IMHEX_OFFLINE_BUILD "Enable offline build" OFF)
  
  # Make sure project is configured correctly
  setDefaultBuiltTypeIfUnset()
