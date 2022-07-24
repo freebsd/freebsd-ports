@@ -184,27 +184,11 @@ share/ART/iccprofiles/input/sd1_merrill_sunny8161-crop-wp10.icm
 share/ART/iccprofiles/input/sd1_merrill_sunny8161-crop-wp11.icm
 share/ART/iccprofiles/input/sd1_merrill_tungsten8130-CROP-WP10.icm
 share/ART/iccprofiles/input/sd1_merrill_tungsten8130-CROP-WP11.icm
-share/ART/iccprofiles/output/DCI-P3 D65.icc
-share/ART/iccprofiles/output/DCI-P3 Theater.icc
-share/ART/iccprofiles/output/RTv2_ACES-AP0.icc
-share/ART/iccprofiles/output/RTv2_ACES-AP1.icc
-share/ART/iccprofiles/output/RTv2_Best.icc
-share/ART/iccprofiles/output/RTv2_Beta.icc
-share/ART/iccprofiles/output/RTv2_Bruce.icc
-share/ART/iccprofiles/output/RTv2_Large.icc
-share/ART/iccprofiles/output/RTv2_Medium.icc
-share/ART/iccprofiles/output/RTv2_Rec2020.icc
-share/ART/iccprofiles/output/RTv2_Wide.icc
 share/ART/iccprofiles/output/RTv2_sRGB.icc
 share/ART/iccprofiles/output/RTv4_ACES-AP0.icc
-share/ART/iccprofiles/output/RTv4_ACES-AP1.icc
-share/ART/iccprofiles/output/RTv4_Best.icc
-share/ART/iccprofiles/output/RTv4_Beta.icc
-share/ART/iccprofiles/output/RTv4_Bruce.icc
 share/ART/iccprofiles/output/RTv4_Large.icc
 share/ART/iccprofiles/output/RTv4_Medium.icc
 share/ART/iccprofiles/output/RTv4_Rec2020.icc
-share/ART/iccprofiles/output/RTv4_Wide.icc
 share/ART/iccprofiles/output/RTv4_sRGB.icc
 share/ART/images/ART-logo-128.png
 share/ART/images/ART-logo-16.png
@@ -256,6 +240,7 @@ share/ART/images/circle-bluepurple-small.svg
 share/ART/images/circle-cyan-red-small.svg
 share/ART/images/circle-cyan-small.svg
 share/ART/images/circle-darkgray-small.svg
+share/ART/images/circle-dot-big.svg
 share/ART/images/circle-empty-blue-small.svg
 share/ART/images/circle-empty-darkgray-small.svg
 share/ART/images/circle-empty-gray-small.svg
@@ -457,6 +442,7 @@ share/ART/images/power-off-small.svg
 share/ART/images/power-on-small-faded.svg
 share/ART/images/power-on-small.svg
 share/ART/images/preferences.svg
+share/ART/images/profile-append.svg
 share/ART/images/profile-filled.svg
 share/ART/images/profile-partial.svg
 share/ART/images/raw-clip-curve.svg
