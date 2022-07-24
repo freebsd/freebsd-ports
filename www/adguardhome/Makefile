@@ -15,6 +15,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 USES=		cpe go:modules
 
 GO_MODULE=	github.com/AdguardTeam/AdGuardHome
+GO_BUILDFLAGS=  -ldflags="-s -w -X github.com/AdguardTeam/AdGuardHome/internal/version.version=${DISTVERSION}" # workaround for https://github.com/AdguardTeam/AdGuardHome/issues/4774
 
 # to rebuild the deps archives:
 #   1. set DEV_UPDATE_MODE=yes
@@ -30,10 +31,6 @@ SUB_LIST=	USER=${USER}
 USE_RC_SUBR=	${PORTNAME}
 
 CPE_VENDOR=	adguard
-
-post-patch:
-	# workaround for https://github.com/AdguardTeam/AdGuardHome/issues/4774
-	@${REINPLACE_CMD} -e 's|version    string|version    string = "${PORTVERSION}"|' ${WRKSRC}/internal/version/version.go
 
 .if (${DEV_UPDATE_MODE} == "yes")
 BUILD_DEPENDS=	npm:www/npm \
