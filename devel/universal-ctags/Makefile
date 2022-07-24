@@ -1,5 +1,5 @@
 PORTNAME=	universal-ctags
-PORTVERSION=	p5.9.20220529.0
+PORTVERSION=	p5.9.20220724.0
 CATEGORIES=	devel
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -8,7 +8,7 @@ COMMENT=	Fork of Exuberant Ctags to generate index/tag files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake pkgconfig
+USES=		autoreconf gmake pkgconfig python:3.5+,test
 USE_GITHUB=	yes
 GH_PROJECT=	ctags
 
