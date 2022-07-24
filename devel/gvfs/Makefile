@@ -1,6 +1,5 @@
 PORTNAME=	gvfs
-PORTVERSION=	1.46.2
-PORTREVISION=	2
+PORTVERSION=	1.50.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -15,7 +14,7 @@ BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libdbus-1.so:devel/dbus \
 		libgcr-base-3.so:security/gcr \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libgudev-1.0.so:devel/libgudev \
 		libudisks2.so:sysutils/libudisks \
 		libsecret-1.so:security/libsecret
