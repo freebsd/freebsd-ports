@@ -62,6 +62,8 @@ include/libgdata/gdata/services/contacts/gdata-contacts-service.h
 include/libgdata/gdata/services/documents/gdata-documents-access-rule.h
 include/libgdata/gdata/services/documents/gdata-documents-document.h
 include/libgdata/gdata/services/documents/gdata-documents-drawing.h
+include/libgdata/gdata/services/documents/gdata-documents-drive-query.h
+include/libgdata/gdata/services/documents/gdata-documents-drive.h
 include/libgdata/gdata/services/documents/gdata-documents-entry.h
 include/libgdata/gdata/services/documents/gdata-documents-enums.h
 include/libgdata/gdata/services/documents/gdata-documents-feed.h
@@ -108,7 +110,7 @@ include/libgdata/gdata/services/youtube/gdata-youtube-video.h
 lib/girepository-1.0/GData-0.0.typelib
 lib/libgdata.so
 lib/libgdata.so.22
-lib/libgdata.so.22.5.2
+lib/libgdata.so.22.6.0
 libdata/pkgconfig/libgdata.pc
 share/gir-1.0/GData-0.0.gir
 share/locale/ar/LC_MESSAGES/gdata.mo
