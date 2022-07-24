@@ -5,7 +5,7 @@
  #define _LIBICONV_H
  
 +#ifndef LIBICONV_PLUG
- #define _LIBICONV_VERSION 0x0110    /* version number: (major<<8) + minor */
+ #define _LIBICONV_VERSION 0x0111    /* version number: (major<<8) + minor */
  extern @DLL_VARIABLE@ int _libiconv_version; /* Likewise */
 +#endif
  
