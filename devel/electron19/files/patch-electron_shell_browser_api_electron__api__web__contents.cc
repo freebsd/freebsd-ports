@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_web_contents.cc.orig	2022-06-30 15:53:29 UTC
+--- electron/shell/browser/api/electron_api_web_contents.cc.orig	2022-07-21 18:53:47 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.cc
 @@ -150,11 +150,11 @@
  #include "ui/base/cocoa/defaults_utils.h"
@@ -23,7 +23,7 @@
    if (auto* linux_ui = views::LinuxUI::instance())
      return linux_ui->GetCursorBlinkInterval();
  #elif BUILDFLAG(IS_WIN)
-@@ -834,7 +834,7 @@ void WebContents::InitWithSessionAndOptions(
+@@ -849,7 +849,7 @@ void WebContents::InitWithSessionAndOptions(
    accept_languages.pop_back();
    prefs->accept_languages = accept_languages;
  
@@ -32,7 +32,7 @@
    // Update font settings.
    static const gfx::FontRenderParams params(
        gfx::GetFontRenderParams(gfx::FontRenderParamsQuery(), nullptr));
-@@ -2360,7 +2360,7 @@ void WebContents::ForcefullyCrashRenderer() {
+@@ -2375,7 +2375,7 @@ void WebContents::ForcefullyCrashRenderer() {
  
    content::RenderProcessHost* rph = rwh->GetProcess();
    if (rph) {

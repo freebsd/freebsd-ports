@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2022-05-25 04:00:41 UTC
+--- BUILD.gn.orig	2022-07-22 06:18:29 UTC
 +++ BUILD.gn
 @@ -54,7 +54,7 @@ declare_args() {
    root_extra_deps = []
@@ -69,7 +69,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1565,7 +1573,7 @@ group("chromium_builder_perf") {
+@@ -1567,7 +1575,7 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]
