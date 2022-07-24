@@ -9,6 +9,8 @@ COMMENT=	C++ library for isogeometric analysis (IGA)
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_armv7=	unknown target architecture: "generic".  Please set TARGET_ARCHITECTURE to a supported value, see https://github.com/gismo/gismo/issues/541
+
 USES=		cmake:testing compiler:c++14-lang
 USE_GITHUB=	yes
 USE_GCC=	yes # clang-11 crashes: https://bugs.llvm.org/show_bug.cgi?id=51468
