@@ -1,6 +1,7 @@
 PORTNAME=	adguardhome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.107.8
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,6 +30,10 @@ SUB_LIST=	USER=${USER}
 USE_RC_SUBR=	${PORTNAME}
 
 CPE_VENDOR=	adguard
+
+post-patch:
+	# workaround for https://github.com/AdguardTeam/AdGuardHome/issues/4774
+	@${REINPLACE_CMD} -e 's|version    string|version    string = "${PORTVERSION}"|' ${WRKSRC}/internal/version/version.go
 
 .if (${DEV_UPDATE_MODE} == "yes")
 BUILD_DEPENDS=	npm:www/npm \
