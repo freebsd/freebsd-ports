@@ -63,4 +63,10 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 
 PORTSCOUT=	ignore:1 # conflicts with old-gen audio/surge-synthesizer-lv2
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == aarch64
+CMAKE_ARGS+=	-DARM_NATIVE=native # based on https://github.com/surge-synthesizer/surge/tree/release/1.9.0#building-for-arm-platforms
+.endif
+
 .include <bsd.port.mk>
