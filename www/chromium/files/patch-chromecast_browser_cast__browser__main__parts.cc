@@ -1,4 +1,4 @@
---- chromecast/browser/cast_browser_main_parts.cc.orig	2022-06-17 14:20:10 UTC
+--- chromecast/browser/cast_browser_main_parts.cc.orig	2022-07-22 17:30:31 UTC
 +++ chromecast/browser/cast_browser_main_parts.cc
 @@ -91,7 +91,7 @@
  #include "ui/base/ui_base_switches.h"
@@ -9,16 +9,7 @@
  #include <fontconfig/fontconfig.h>
  #include <signal.h>
  #include <sys/prctl.h>
-@@ -146,7 +146,7 @@
- #include "extensions/browser/extension_prefs.h"  // nogncheck
- #endif
- 
--#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(USE_OZONE)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && defined(USE_OZONE)
- #include "chromecast/browser/exo/wayland_server_controller.h"
- #endif
- 
-@@ -282,7 +282,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
+@@ -278,7 +278,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
  
  #endif  // defined(USE_AURA)
  
@@ -27,7 +18,7 @@
  
  base::FilePath GetApplicationFontsDir() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
-@@ -328,7 +328,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
+@@ -324,7 +324,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
      {cc::switches::kDisableThreadedAnimation, ""},
  #endif  // BUILDFLAG(IS_ANDROID)
  #endif  // BUILDFLAG(IS_CAST_AUDIO_ONLY)
@@ -36,7 +27,7 @@
  #if defined(ARCH_CPU_X86_FAMILY)
      // This is needed for now to enable the x11 Ozone platform to work with
      // current Linux/NVidia OpenGL drivers.
-@@ -516,7 +516,7 @@ void CastBrowserMainParts::ToolkitInitialized() {
+@@ -512,7 +512,7 @@ void CastBrowserMainParts::ToolkitInitialized() {
      views_delegate_ = std::make_unique<CastViewsDelegate>();
  #endif  // defined(USE_AURA)
  
@@ -45,21 +36,3 @@
    base::FilePath dir_font = GetApplicationFontsDir();
    const FcChar8 *dir_font_char8 = reinterpret_cast<const FcChar8*>(dir_font.value().data());
    if (!FcConfigAppFontAddDir(gfx::GetGlobalFontConfig(), dir_font_char8)) {
-@@ -747,7 +747,7 @@ int CastBrowserMainParts::PreMainMessageLoopRun() {
-       cast_browser_process_->browser_context());
- #endif
- 
--#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(USE_OZONE)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && defined(USE_OZONE)
-   wayland_server_controller_ =
-       std::make_unique<WaylandServerController>(window_manager_.get());
- #endif
-@@ -822,7 +822,7 @@ void CastBrowserMainParts::PostMainMessageLoopRun() {
- 
-   cast_browser_process_->cast_service()->Stop();
- 
--#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(USE_OZONE)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && defined(USE_OZONE)
-   wayland_server_controller_.reset();
- #endif
- #if BUILDFLAG(ENABLE_CHROMECAST_EXTENSIONS)

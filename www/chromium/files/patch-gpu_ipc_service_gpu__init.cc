@@ -1,6 +1,6 @@
---- gpu/ipc/service/gpu_init.cc.orig	2022-06-17 14:20:10 UTC
+--- gpu/ipc/service/gpu_init.cc.orig	2022-07-22 17:30:31 UTC
 +++ gpu/ipc/service/gpu_init.cc
-@@ -318,7 +318,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -315,7 +315,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    enable_watchdog = false;
  #endif
  
@@ -9,7 +9,7 @@
    bool gpu_sandbox_start_early = gpu_preferences_.gpu_sandbox_start_early;
  #else   // !(BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
    // For some reasons MacOSX's VideoToolbox might crash when called after
-@@ -368,7 +368,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -365,7 +365,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    }
  
    bool attempted_startsandbox = false;
@@ -18,7 +18,7 @@
    // On Chrome OS ARM Mali, GPU driver userspace creates threads when
    // initializing a GL context, so start the sandbox early.
    // TODO(zmo): Need to collect OS version before this.
-@@ -417,7 +417,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -414,7 +414,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
  
    if (gl_initialized && gl_use_swiftshader_ &&
        !gl::IsSoftwareGLImplementation(gl::GetGLImplementationParts())) {
@@ -45,7 +45,7 @@
          VLOG(1) << "Quit GPU process launch to fallback to SwiftShader cleanly "
                  << "on Linux";
          return false;
-@@ -637,7 +637,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -638,7 +638,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
  
    InitializePlatformOverlaySettings(&gpu_info_, gpu_feature_info_);
  
@@ -54,7 +54,7 @@
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -867,7 +867,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -872,7 +872,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
  
    InitializePlatformOverlaySettings(&gpu_info_, gpu_feature_info_);
  

@@ -1,6 +1,6 @@
---- chrome/common/chrome_features.h.orig	2022-06-17 14:20:10 UTC
+--- chrome/common/chrome_features.h.orig	2022-07-22 17:30:31 UTC
 +++ chrome/common/chrome_features.h
-@@ -91,7 +91,7 @@ extern const base::Feature kArcPiGhostWindow;
+@@ -89,7 +89,7 @@ extern const base::Feature kArcPiGhostWindow;
  COMPONENT_EXPORT(CHROME_FEATURES) extern const base::Feature kAsyncDns;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kAutofillAddressSurvey;
  COMPONENT_EXPORT(CHROME_FEATURES)
-@@ -100,7 +100,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -98,7 +98,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kAutofillPasswordSurvey;
  #endif
  
@@ -18,7 +18,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kBackgroundModeAllowRestart;
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -220,7 +220,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -223,7 +223,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kDesktopPWAsWebBundles;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kDesktopPWAsWebAppSettingsPage;
  COMPONENT_EXPORT(CHROME_FEATURES)
-@@ -449,7 +449,7 @@ extern const base::Feature kIncognitoParamFilterEnable
+@@ -437,7 +437,7 @@ extern const base::Feature kUpdateHistoryEntryPointsIn
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kIPHInWebUIDemo;
  
@@ -36,7 +36,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::Feature kLinuxLowMemoryMonitor;
  COMPONENT_EXPORT(CHROME_FEATURES)
-@@ -458,7 +458,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -446,7 +446,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorCriticalLevel;
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

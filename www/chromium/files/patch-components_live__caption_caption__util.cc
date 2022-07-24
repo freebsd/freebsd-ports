@@ -1,6 +1,6 @@
---- components/live_caption/caption_util.cc.orig	2022-05-19 14:06:27 UTC
+--- components/live_caption/caption_util.cc.orig	2022-07-22 17:30:31 UTC
 +++ components/live_caption/caption_util.cc
-@@ -142,7 +142,7 @@ bool IsLiveCaptionFeatureSupported() {
+@@ -140,7 +140,7 @@ bool IsLiveCaptionFeatureSupported() {
      return false;
  #endif
  

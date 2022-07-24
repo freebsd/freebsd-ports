@@ -1,6 +1,6 @@
---- third_party/zlib/BUILD.gn.orig	2022-06-17 14:20:10 UTC
+--- third_party/zlib/BUILD.gn.orig	2022-07-22 17:30:31 UTC
 +++ third_party/zlib/BUILD.gn
-@@ -115,7 +115,7 @@ if (use_arm_neon_optimizations) {
+@@ -117,7 +117,7 @@ if (use_arm_neon_optimizations) {
      # Disabled for iPhone, as described in DDI0487C_a_armv8_arm:
      #  "All implementations of the ARMv8.1 architecture are required to
      #   implement the CRC32* instructions. These are optional in ARMv8.0."
@@ -9,7 +9,7 @@
        defines = [ "CRC32_ARMV8_CRC32" ]
        if (is_android) {
          defines += [ "ARMV8_OS_ANDROID" ]
-@@ -136,7 +136,7 @@ if (use_arm_neon_optimizations) {
+@@ -138,7 +138,7 @@ if (use_arm_neon_optimizations) {
    source_set("zlib_arm_crc32") {
      visibility = [ ":*" ]
  
@@ -18,7 +18,7 @@
        include_dirs = [ "." ]
  
        if (!is_win && !is_clang) {
-@@ -398,7 +398,7 @@ static_library("minizip") {
+@@ -401,7 +401,7 @@ static_library("minizip") {
      ]
    }
  

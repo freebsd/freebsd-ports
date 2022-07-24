@@ -1,11 +1,11 @@
---- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig	2022-05-19 14:06:27 UTC
+--- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig	2022-07-22 17:30:31 UTC
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.html
 @@ -27,7 +27,7 @@
            <cr-link-row class="first" hidden="[[!pageVisibility.setTheme]]"
                label="$i18n{themes}" sub-label="[[themeSublabel_]]"
                on-click="openThemeUrl_" external></cr-link-row>
--<if expr="not is_linux or chromeos_ash or chromeos_lacros">
-+<if expr="not is_posix or chromeos_ash or chromeos_lacros">
+-<if expr="not is_linux">
++<if expr="not is_posix">
            <template is="dom-if" if="[[prefs.extensions.theme.id.value]]">
              <div class="separator"></div>
              <cr-button id="useDefault" on-click="onUseDefaultTap_">
@@ -13,8 +13,8 @@
              </cr-button>
            </template>
  </if>
--<if expr="is_linux and not chromeos_ash and not chromeos_lacros">
-+<if expr="is_posix and not chromeos_ash and not chromeos_lacros">
+-<if expr="is_linux">
++<if expr="is_posix">
            <div class="settings-row continuation"
                hidden="[[!showThemesSecondary_(
                    prefs.extensions.theme.id.value, useSystemTheme_)]]"
@@ -22,8 +22,8 @@
              pref="{{prefs.bookmark_bar.show_on_all_tabs}}"
              label="$i18n{showBookmarksBar}">
          </settings-toggle-button>
--<if expr="is_linux and not chromeos_ash and not chromeos_lacros">
-+<if expr="is_posix and not chromeos_ash and not chromeos_lacros">
+-<if expr="is_linux">
++<if expr="is_posix">
          <div class="hr" hidden="[[!pageVisibility.bookmarksBar]]"></div>
          <settings-toggle-button
              hidden="[[!showCustomChromeFrame_]]"

@@ -1,4 +1,4 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2022-06-17 14:20:10 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2022-07-22 17:30:31 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
 @@ -20,7 +20,9 @@
  #include "content/public/common/result_codes.h"
@@ -13,7 +13,7 @@
 @@ -74,6 +76,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      int* launch_result) {
    *is_synchronous_launch = true;
- 
+   Process process;
 +#if !BUILDFLAG(IS_BSD)
    ZygoteHandle zygote_handle =
        base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote)
@@ -26,22 +26,26 @@
      if (handle) {
        // It could be a renderer process or an utility process.
        int oom_score = content::kMiscOomScore;
-@@ -96,13 +98,13 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -96,15 +98,17 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
          oom_score = content::kLowestRendererOomScore;
        ZygoteHostImpl::GetInstance()->AdjustRendererOOMScore(handle, oom_score);
      }
 -#endif
  
-     Process process;
      process.process = base::Process(handle);
      process.zygote = zygote_handle;
-     return process;
+   } else {
++#endif
+     process.process = base::LaunchProcess(*command_line(), options);
+     *launch_result = process.process.IsValid() ? LAUNCH_RESULT_SUCCESS
+                                                : LAUNCH_RESULT_FAILURE;
++#if !BUILDFLAG(IS_BSD)
    }
 +#endif
  
-   Process process;
-   process.process = base::LaunchProcess(*command_line(), options);
-@@ -120,10 +122,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
+ #if BUILDFLAG(IS_CHROMEOS)
+   if (GetProcessType() == switches::kRendererProcess) {
+@@ -124,10 +128,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead) {
    ChildProcessTerminationInfo info;
@@ -56,7 +60,7 @@
      info.status = base::GetKnownDeadTerminationStatus(process.process.Handle(),
                                                        &info.exit_code);
    } else {
-@@ -147,13 +153,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
+@@ -151,13 +159,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
    DCHECK(CurrentlyOnProcessLauncherTaskRunner());
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.

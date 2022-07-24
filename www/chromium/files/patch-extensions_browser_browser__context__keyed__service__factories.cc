@@ -1,6 +1,6 @@
---- extensions/browser/browser_context_keyed_service_factories.cc.orig	2022-03-25 21:59:56 UTC
+--- extensions/browser/browser_context_keyed_service_factories.cc.orig	2022-07-22 17:30:31 UTC
 +++ extensions/browser/browser_context_keyed_service_factories.cc
-@@ -89,7 +89,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
+@@ -88,7 +88,7 @@ void EnsureBrowserContextKeyedServiceFactoriesBuilt() 
    IdleManagerFactory::GetInstance();
    ManagementAPI::GetFactoryInstance();
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \

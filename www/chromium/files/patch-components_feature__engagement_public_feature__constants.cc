@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2022-06-17 14:20:10 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2022-07-22 17:30:31 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -23,7 +23,7 @@ const base::Feature kIPHDummyFeature{"IPH_Dummy",
                                       base::FEATURE_DISABLED_BY_DEFAULT};
@@ -9,7 +9,7 @@
  const base::Feature kIPHDesktopSharedHighlightingFeature{
      "IPH_DesktopSharedHighlighting", base::FEATURE_DISABLED_BY_DEFAULT};
  const base::Feature kIPHDesktopTabGroupsNewGroupFeature{
-@@ -293,7 +293,7 @@ const base::Feature kIPHFollowWhileBrowsingFeature{
+@@ -298,7 +298,7 @@ const base::Feature kIPHFollowWhileBrowsingFeature{
      "IPH_FollowWhileBrowsing", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // BUILDFLAG(IS_IOS)
  

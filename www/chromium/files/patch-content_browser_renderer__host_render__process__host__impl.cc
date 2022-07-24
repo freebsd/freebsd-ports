@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2022-06-17 14:20:10 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2022-07-22 17:30:31 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
 @@ -211,7 +211,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
@@ -27,7 +27,7 @@
      if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
        ConnectToFontService(std::move(font_receiver));
        return;
-@@ -3212,6 +3212,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3211,6 +3211,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,

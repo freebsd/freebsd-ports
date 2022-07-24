@@ -1,4 +1,4 @@
---- third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h.orig	2022-05-19 14:06:27 UTC
+--- third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h.orig	2022-07-22 17:30:31 UTC
 +++ third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h
 @@ -43,7 +43,7 @@
  #include "dlopen_fuchsia.h"
@@ -9,7 +9,7 @@
  #include <unistd.h>
  // Note: The following file is for dynamic loading:
  #include <dlfcn.h>
-@@ -106,7 +106,7 @@
+@@ -103,7 +103,7 @@
  // Override layer information
  #define VK_OVERRIDE_LAYER_NAME "VK_LAYER_LUNARG_override"
  
@@ -18,7 +18,7 @@
  /* Linux-specific common code: */
  
  // VK Library Filenames, Paths, etc.:
-@@ -197,6 +197,15 @@ static inline char *loader_platform_executable_path(ch
+@@ -194,6 +194,15 @@ static inline char *loader_platform_executable_path(ch
      if (sysctl(mib, sizeof(mib) / sizeof(mib[0]), buffer, &size, NULL, 0) < 0) {
          return NULL;
      }

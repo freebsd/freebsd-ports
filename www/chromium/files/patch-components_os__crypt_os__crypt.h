@@ -1,4 +1,4 @@
---- components/os_crypt/os_crypt.h.orig	2022-06-17 14:20:10 UTC
+--- components/os_crypt/os_crypt.h.orig	2022-07-22 17:30:31 UTC
 +++ components/os_crypt/os_crypt.h
 @@ -15,7 +15,7 @@
  #include "build/build_config.h"
@@ -31,8 +31,8 @@
  COMPONENT_EXPORT(OS_CRYPT) void SetLegacyEncryptionForTesting(bool legacy);
  COMPONENT_EXPORT(OS_CRYPT) void ResetStateForTesting();
  #endif  // BUILDFLAG(IS_WIN)
--#if (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMECAST))
-+#if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && !BUILDFLAG(IS_CHROMECAST))
+-#if (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS))
++#if (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS)) || BUILDFLAG(IS_BSD)
  COMPONENT_EXPORT(OS_CRYPT)
  void UseMockKeyStorageForTesting(
      base::OnceCallback<std::unique_ptr<KeyStorageLinux>()>
@@ -49,8 +49,8 @@
    void ResetStateForTesting();
  #endif
  
--#if (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMECAST))
-+#if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && !BUILDFLAG(IS_CHROMECAST))
+-#if (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS))
++#if (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS)) || BUILDFLAG(IS_BSD)
    // For unit testing purposes, inject methods to be used.
    // |storage_provider_factory| provides the desired |KeyStorage|
    // implementation. If the provider returns |nullptr|, a hardcoded password

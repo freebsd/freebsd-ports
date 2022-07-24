@@ -1,4 +1,4 @@
---- chrome/app/generated_resources.grd.orig	2022-06-17 14:20:10 UTC
+--- chrome/app/generated_resources.grd.orig	2022-07-22 17:30:31 UTC
 +++ chrome/app/generated_resources.grd
 @@ -2,7 +2,7 @@
  
@@ -18,21 +18,21 @@
          <message name="IDS_BLUETOOTH_DEVICE_CREDENTIALS_TITLE" desc="Title of the Bluetooth device credentials prompt dialog.">
            Device Credentials
          </message>
-@@ -8669,7 +8669,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
+@@ -8737,7 +8737,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
          Google Pay
        </message>
  
--      <if expr="is_linux and not chromeos_ash and not chromeos_lacros">
-+      <if expr="is_posix and not chromeos_ash and not chromeos_lacros">
+-      <if expr="is_linux">
++      <if expr="is_posix">
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -9823,7 +9823,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -9897,7 +9897,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  
--      <if expr="is_linux and not chromeos_ash and not chromeos_lacros">
-+      <if expr="is_posix and not chromeos_ash and not chromeos_lacros">
+-      <if expr="is_linux">
++      <if expr="is_posix">
          <message name="IDS_MINIMIZE_WINDOW_MENU" desc="The Linux browser window menu item text for minimizing the window.">
            Minimize
          </message>

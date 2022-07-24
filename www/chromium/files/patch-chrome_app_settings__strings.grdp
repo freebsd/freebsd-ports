@@ -1,11 +1,11 @@
---- chrome/app/settings_strings.grdp.orig	2022-05-19 14:06:27 UTC
+--- chrome/app/settings_strings.grdp.orig	2022-07-22 17:30:31 UTC
 +++ chrome/app/settings_strings.grdp
 @@ -131,7 +131,7 @@
        Theme
      </message>
    </if>
--  <if expr="is_linux and not chromeos_ash and not chromeos_lacros">
-+  <if expr="is_posix and not chromeos_ash and not chromeos_lacros">
+-  <if expr="is_linux">
++  <if expr="is_posix">
      <message name="IDS_SETTINGS_SYSTEM_THEME" desc="Text of the label describing the system (GTK+) browser theme on Linux">
        GTK+
      </message>

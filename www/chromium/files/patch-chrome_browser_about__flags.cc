@@ -1,6 +1,6 @@
---- chrome/browser/about_flags.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/about_flags.cc.orig	2022-07-22 17:30:31 UTC
 +++ chrome/browser/about_flags.cc
-@@ -202,7 +202,7 @@
+@@ -203,7 +203,7 @@
  #include "ui/native_theme/native_theme_features.h"
  #include "ui/ui_features.h"
  
@@ -9,7 +9,7 @@
  #include "base/allocator/buildflags.h"
  #endif
  
-@@ -275,7 +275,7 @@
+@@ -277,7 +277,7 @@
  #include "chrome/browser/supervised_user/supervised_user_features/supervised_user_features.h"  // nogncheck
  #endif  // ENABLE_SUPERVISED_USERS
  
@@ -18,7 +18,7 @@
  #include "ui/ozone/buildflags.h"
  #include "ui/ozone/public/ozone_switches.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -364,7 +364,7 @@ const FeatureEntry::Choice kUseAngleChoicesMac[] = {
+@@ -366,7 +366,7 @@ const FeatureEntry::Choice kUseAngleChoicesMac[] = {
       gl::kANGLEImplementationMetalName}};
  #endif
  
@@ -27,7 +27,7 @@
  const FeatureEntry::Choice kOzonePlatformHintRuntimeChoices[] = {
      {flag_descriptions::kOzonePlatformHintChoiceDefault, "", ""},
      {flag_descriptions::kOzonePlatformHintChoiceAuto,
-@@ -1055,7 +1055,7 @@ const FeatureEntry::FeatureVariation kJourneysOnDevice
+@@ -1137,7 +1137,7 @@ const FeatureEntry::FeatureVariation
  };
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -36,8 +36,8 @@
  const FeatureEntry::FeatureParam kOmniboxDocumentProviderServerScoring[] = {
      {"DocumentUseServerScore", "true"},
      {"DocumentUseClientScore", "false"},
-@@ -3681,7 +3681,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(chromeos::kLacrosTtsSupport)},
+@@ -3841,7 +3841,7 @@ const FeatureEntry kFeatureEntries[] = {
+      FEATURE_VALUE_TYPE(base::kOneGroupPerRenderer)},
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
 -#if BUILDFLAG(IS_LINUX)
@@ -45,7 +45,7 @@
      {
          "enable-accelerated-video-decode",
          flag_descriptions::kAcceleratedVideoDecodeName,
-@@ -4283,7 +4283,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4449,7 +4449,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kWebShare)},
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  
@@ -54,7 +54,7 @@
      {"ozone-platform-hint", flag_descriptions::kOzonePlatformHintName,
       flag_descriptions::kOzonePlatformHintDescription, kOsLinux,
       MULTI_VALUE_TYPE(kOzonePlatformHintRuntimeChoices)},
-@@ -4302,7 +4302,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -4468,7 +4468,7 @@ const FeatureEntry kFeatureEntries[] = {
           password_manager::features::kForceInitialSyncWhenDecryptionFails)},
  #endif  // BUILDFLAG(IS_LINUX)
  
@@ -63,7 +63,7 @@
      {"skip-undecryptable-passwords",
       flag_descriptions::kSkipUndecryptablePasswordsName,
       flag_descriptions::kSkipUndecryptablePasswordsDescription,
-@@ -4979,7 +4979,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -5159,7 +5159,7 @@ const FeatureEntry kFeatureEntries[] = {
                                      "OmniboxBundledExperimentV1")},
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -72,7 +72,7 @@
      {"omnibox-experimental-keyword-mode",
       flag_descriptions::kOmniboxExperimentalKeywordModeName,
       flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
-@@ -6378,7 +6378,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6582,7 +6582,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kMouseSubframeNoImplicitCapture)},
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -81,7 +81,7 @@
      {"global-media-controls-modern-ui",
       flag_descriptions::kGlobalMediaControlsModernUIName,
       flag_descriptions::kGlobalMediaControlsModernUIDescription,
-@@ -7251,7 +7251,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7495,7 +7495,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -90,7 +90,7 @@
      {"quick-commands", flag_descriptions::kQuickCommandsName,
       flag_descriptions::kQuickCommandsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kQuickCommands)},
-@@ -7547,7 +7547,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -7803,7 +7803,7 @@ const FeatureEntry kFeatureEntries[] = {
  
  #if BUILDFLAG(IS_WIN) ||                                      \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
