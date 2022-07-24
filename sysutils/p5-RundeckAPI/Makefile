@@ -11,8 +11,8 @@ COMMENT=	Easily queries Rundeck's REST API
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-HTTP-Cookies-6.10>0:www/p5-HTTP-Cookies \
-		p5-REST-Client-273>=0:www/p5-REST-Client
+RUN_DEPENDS=	p5-HTTP-Cookies>0:www/p5-HTTP-Cookies \
+		p5-REST-Client>=0:www/p5-REST-Client
 
 USES=		perl5
 USE_PERL5=	configure
