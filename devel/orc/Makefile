@@ -1,5 +1,5 @@
 PORTNAME=	orc
-PORTVERSION=	0.4.31
+PORTVERSION=	0.4.32
 CATEGORIES=	devel
 MASTER_SITES=	http://gstreamer.freedesktop.org/data/src/orc/
 
@@ -15,5 +15,7 @@ BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 USES=		gmake meson pkgconfig tar:xz
 
 USE_LDCONFIG=	yes
+
+PLIST_SUB+=	LIBMINORVER=${PORTVERSION:E}
 
 .include <bsd.port.mk>

@@ -38,11 +38,11 @@ include/orc-0.4/orc/orcx86.h
 include/orc-0.4/orc/orcx86insn.h
 lib/liborc-0.4.so
 lib/liborc-0.4.so.0
-lib/liborc-0.4.so.0.31.0
+lib/liborc-0.4.so.0.%%LIBMINORVER%%.0
 lib/liborc-test-0.4.a
 lib/liborc-test-0.4.so
 lib/liborc-test-0.4.so.0
-lib/liborc-test-0.4.so.0.31.0
+lib/liborc-test-0.4.so.0.%%LIBMINORVER%%.0
 libdata/pkgconfig/orc-0.4.pc
 libdata/pkgconfig/orc-test-0.4.pc
 share/aclocal/orc.m4
