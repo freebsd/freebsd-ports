@@ -1,7 +1,7 @@
 include/oqs/aes.h
 include/oqs/common.h
 include/oqs/kem.h
-include/oqs/kem_bike.h
+%%KEM_BIKE%%include/oqs/kem_bike.h
 include/oqs/kem_classic_mceliece.h
 include/oqs/kem_frodokem.h
 include/oqs/kem_hqc.h
@@ -9,7 +9,7 @@ include/oqs/kem_kyber.h
 include/oqs/kem_ntru.h
 include/oqs/kem_ntruprime.h
 include/oqs/kem_saber.h
-include/oqs/kem_sike.h
+%%KEM_BIKE%%include/oqs/kem_sike.h
 include/oqs/oqs.h
 include/oqs/oqsconfig.h
 include/oqs/rand.h
