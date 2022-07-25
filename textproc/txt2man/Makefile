@@ -20,6 +20,8 @@ GH_ACCOUNT=	mvertes
 MAKE_ENV=	prefix=${STAGEDIR}${PREFIX}
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^d\.d\.
+
 PLIST_FILES=	bin/bookman \
 		bin/src2man \
 		bin/txt2man \
