@@ -1,5 +1,6 @@
 PORTNAME=	juce
 DISTVERSION=	7.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -37,7 +38,7 @@ GH_PROJECT=	JUCE
 
 CMAKE_ON=	JUCE_BUILD_EXTRAS
 
-CXXFLAGS+=	-I${LOCALBASE}/include/freetype2
+CXXFLAGS+=	-I${LOCALBASE}/include/freetype2 -DJUCE_INCLUDE_PNGLIB_CODE=0
 LDFLAGS+=	-pthread -lfreetype -lpng16
 LDFLAGS+=	-lGL # while building NetworkGraphicsDemo ld: error: undefined symbol: glXGetCurrentContext referenced by ld-temp.o
 LDFLAGS+=	-lasound # while building AudioPerformanceTest ld: error: undefined symbol: snd_seq_system_info_sizeof
