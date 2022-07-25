@@ -9,6 +9,10 @@ COMMENT=	Quantum chemistry and solid state physics software package
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 BUILD_DEPENDS=	fypp:devel/py-fypp@${PY_FLAVOR}
 LIB_DEPENDS=	libblas.so:math/blas \
 		libfftw3.so:math/fftw3 \
