@@ -9,6 +9,10 @@ COMMENT=	Distributed Block Compressed Sparse Row matrix library
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 BUILD_DEPENDS=	fypp:devel/py-fypp@${PY_FLAVOR}
 
 USES=		blaslapack:openblas cmake:noninja compiler:c++14-lang fortran \
