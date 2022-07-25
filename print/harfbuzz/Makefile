@@ -15,15 +15,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgraphite2.so:graphics/graphite2
 
-USES=		compiler:c++11-lib cpe gnome meson \
-		pkgconfig python:build shebangfix tar:xz
+USES=		compiler:c++11-lib cpe meson pkgconfig python:build \
+		shebangfix tar:xz
+
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 SHEBANG_GLOB=	*.py
 CPE_VENDOR=	harfbuzz_project
 
-MESON_ARGS=	-Dglib=enabled -Dgobject=enabled -Dgraphite=enabled \
-		-Dfreetype=enabled -Dbenchmark=disabled
+MESON_ARGS=	-Dgraphite=enabled -Dfreetype=enabled -Dbenchmark=disabled
 
 PLIST_SUB+=	LIBVER=0.40201.0
 
@@ -36,6 +36,22 @@ OPTIONS_SUB=	yes
 DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 DOCS_MESON_ENABLED=	docs
 TEST_MESON_ENABLED=	tests
+.endif
+
+OPTIONS_DEFINE+=	GOBJECT GLIB
+OPTIONS_DEFAULT=	GOBJECT GLIB
+GOBJECT_MESON_ENABLED=	gobject
+GLIB_MESON_ENABLED=	glib
+GOBJECT_DESC=		Depend on gobject
+GLIB_DESC=		Depend on glib
+
+OPTIONS_EXCLUDE_aarch64c=	GOBJECT GLIB
+OPTIONS_EXCLUDE_riscv64c=	GOBJECT GLIB
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != aarch64c && ${ARCH} != riscv64c
+USES+=			gnome
 .endif
 
 .if ${HARFBUZZ_SLAVE} == no
@@ -53,4 +69,4 @@ LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
 USE_GNOME+=	cairo
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

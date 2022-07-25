@@ -1,0 +1,14 @@
+--- src/hb-null.hh.orig	2022-07-25 10:34:16.734345000 +0100
++++ src/hb-null.hh	2022-07-25 10:34:44.257296000 +0100
+@@ -37,7 +37,11 @@
+ 
+ /* Global nul-content Null pool.  Enlarge as necessary. */
+ 
++#ifndef __CHERI_PURE_CAPABILITY__
+ #define HB_NULL_POOL_SIZE 384
++#else
++#define HB_NULL_POOL_SIZE (384 * 2)
++#endif
+ 
+ /* Use SFINAE to sniff whether T has min_size; in which case return the larger
+  * of sizeof(T) and T::null_size, otherwise return sizeof(T).
