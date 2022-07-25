@@ -28,4 +28,12 @@ TEST_TARGET=	run_tests
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == amd64
+PLIST_SUB+=	KEM_BIKE="" # BIKE algorithm is limited by architecture in .CMake/alg_support.cmake
+.else
+PLIST_SUB+=	KEM_BIKE="@comment "
+.endif
+
 .include <bsd.port.mk>
