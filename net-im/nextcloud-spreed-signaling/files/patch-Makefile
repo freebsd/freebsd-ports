@@ -1,104 +1,59 @@
---- Makefile.orig	2020-12-08 13:00:05 UTC
+--- Makefile.orig	2022-06-02 12:16:33 UTC
 +++ Makefile
-@@ -1,8 +1,8 @@
+@@ -1,7 +1,7 @@
  all: build
  
  GO := $(shell which go)
--GOPATH := "$(CURDIR)/vendor:$(CURDIR)"
--BINDIR := "$(CURDIR)/bin"
-+GOPATH := $(CURDIR)/vendor:$(CURDIR)
-+BINDIR := $(CURDIR)/bin
- VERSION := $(shell "$(CURDIR)/scripts/get-version.sh")
- TARVERSION := $(shell "$(CURDIR)/scripts/get-version.sh" --tar)
- ifneq ($(VERSION),)
-@@ -35,26 +35,10 @@ ifneq ($(COUNT),)
- TESTARGS := $(TESTARGS) -count $(COUNT)
- endif
+-GOPATH := $(shell "$(GO)" env GOPATH)
++GOPATH := $(CURDIR):$(CURDIR)/vendor
+ GODIR := $(shell dirname "$(GO)")
+ GOFMT := "$(GODIR)/gofmt"
+ GOOS ?= linux
+@@ -52,10 +52,8 @@ endif
+ hook:
+ 	[ ! -d "$(CURDIR)/.git/hooks" ] || ln -sf "$(CURDIR)/scripts/pre-commit.hook" "$(CURDIR)/.git/hooks/pre-commit"
  
--hook:
--	[ ! -d "$(CURDIR)/.git/hooks" ] || ln -sf "$(CURDIR)/scripts/pre-commit.hook" "$(CURDIR)/.git/hooks/pre-commit"
+-$(GOPATHBIN)/easyjson:
+-	$(GO) get -u -d github.com/mailru/easyjson/...
+-	$(GO) install github.com/mailru/easyjson/...
 -
--godeps:
--	GOPATH=$(GOPATH) $(GO) get github.com/rogpeppe/godeps
--
--easyjson: dependencies
--	GOPATH=$(GOPATH) $(GO) get -d github.com/mailru/easyjson/...
 +easyjson:
- 	GOPATH=$(GOPATH) $(GO) build -o ./vendor/bin/easyjson ./vendor/src/github.com/mailru/easyjson/easyjson/main.go
- 
--dependencies: hook godeps
--	GOPATH=$(GOPATH) ./vendor/bin/godeps -u dependencies.tsv
- 
--dependencies.tsv: godeps
--	set -e ;\
--	TMP=$$(mktemp -d) ;\
--	echo Make sure to remove $$TMP on error ;\
--	cp -r "$(CURDIR)/vendor" $$TMP ;\
--	GOPATH=$$TMP/vendor:"$(CURDIR)" "$(CURDIR)/vendor/bin/godeps" ./src/... > "$(CURDIR)/dependencies.tsv" ;\
--	rm -rf $$TMP
- 
- src/signaling/continentmap.go:
++	GOPATH=$(GOPATH):$(CURDIR) $(GO) build -o ./bin/easyjson ./vendor/src/github.com/mailru/easyjson/easyjson/main.go
+ continentmap.go:
  	$(CURDIR)/scripts/get_continent_map.py $@
-@@ -73,27 +57,28 @@ get:
- fmt: hook
- 	$(GO) fmt ./src/...
  
--vet: dependencies common
-+vet: common
- 	GOPATH=$(GOPATH) $(GO) vet ./src/...
- 
--test: dependencies vet common
-+test: vet common
- 	GOPATH=$(GOPATH) $(GO) test -v -timeout $(TIMEOUT) $(TESTARGS) ./src/...
- 
--cover: dependencies vet common
-+cover: vet common
- 	rm -f cover.out && \
- 	GOPATH=$(GOPATH) $(GO) test -v -timeout $(TIMEOUT) -coverprofile cover.out ./src/signaling/... && \
+@@ -91,8 +89,8 @@ coverhtml: vet common
  	sed -i "/_easyjson/d" cover.out && \
- 	GOPATH=$(GOPATH) $(GO) tool cover -func=cover.out
+ 	$(GO) tool cover -html=cover.out -o coverage.html
  
--coverhtml: dependencies vet common
-+coverhtml: vet common
- 	rm -f cover.out && \
- 	GOPATH=$(GOPATH) $(GO) test -v -timeout $(TIMEOUT) -coverprofile cover.out ./src/signaling/... && \
- 	sed -i "/_easyjson/d" cover.out && \
- 	GOPATH=$(GOPATH) $(GO) tool cover -html=cover.out -o coverage.html
+-%_easyjson.go: %.go $(GOPATHBIN)/easyjson
+-	PATH="$(GODIR)":$(PATH) "$(GOPATHBIN)/easyjson" -all $*.go
++%_easyjson.go: %.go easyjson
++	PATH="$(GODIR)":$(PATH) ./bin/easyjson -all $(CURDIR)/vendor/src/github.com/strukturag/nextcloud-spreed-signaling/$*.go
  
--%_easyjson.go: %.go
-+%_easyjson.go: %.go | easyjson
- 	PATH=$(shell dirname $(GO)):$(PATH) GOPATH=$(GOPATH) ./vendor/bin/easyjson -all $*.go
+ common: \
+ 	api_signaling_easyjson.go \
+@@ -100,7 +98,6 @@ common: \
+ 	api_proxy_easyjson.go \
+ 	natsclient_easyjson.go \
+ 	room_easyjson.go
+-	$(GO) mod tidy
  
-+
- common: easyjson \
- 	src/signaling/api_signaling_easyjson.go \
- 	src/signaling/api_backend_easyjson.go \
-@@ -101,17 +86,17 @@ common: easyjson \
- 	src/signaling/natsclient_easyjson.go \
- 	src/signaling/room_easyjson.go
- 
--client: dependencies common
-+client: common
+ $(BINDIR):
  	mkdir -p $(BINDIR)
- 	GOPATH=$(GOPATH) $(GO) build $(BUILDARGS) -ldflags '$(INTERNALLDFLAGS)' -o $(BINDIR)/client ./src/client/...
+@@ -112,7 +109,7 @@ server: common $(BINDIR)
+ 	$(GO) build $(BUILDARGS) -ldflags '$(INTERNALLDFLAGS)' -o $(BINDIR)/signaling ./server/...
  
--server: dependencies common
-+server: common
- 	mkdir -p $(BINDIR)
- 	GOPATH=$(GOPATH) $(GO) build $(BUILDARGS) -ldflags '$(INTERNALLDFLAGS)' -o $(BINDIR)/signaling ./src/server/...
- 
--proxy: dependencies common
-+proxy: common
- 	mkdir -p $(BINDIR)
--	GOPATH=$(GOPATH) $(GO) build $(BUILDARGS) -ldflags '$(INTERNALLDFLAGS)' -o $(BINDIR)/proxy ./src/proxy/...
-+	GOPATH="$(GOPATH)" $(GO) build $(BUILDARGS) -ldflags '$(INTERNALLDFLAGS)' -o $(BINDIR)/proxy ./src/proxy/...
+ proxy: common $(BINDIR)
+-	$(GO) build $(BUILDARGS) -ldflags '$(INTERNALLDFLAGS)' -o $(BINDIR)/proxy ./proxy/...
++	GOPATH=$(GOPATH):$(CURDIR) GOPATH="$(CURDIR)/vendor" $(GO) build $(BUILDARGS) -ldflags '$(INTERNALLDFLAGS)' -o $(BINDIR)/proxy ./proxy/...
  
  clean:
- 	rm -f src/signaling/*_easyjson.go
-@@ -123,6 +108,13 @@ tarball:
- 		--prefix=nextcloud-spreed-signaling-$(TARVERSION)/ \
- 		-o nextcloud-spreed-signaling-$(TARVERSION).tar.gz \
+ 	rm -f *_easyjson.go
+@@ -126,6 +123,13 @@ tarball:
  		HEAD
+ 
+ dist: tarball
 +install:
 +	install -d $(DESTDIR)$(PREFIX)/etc/ncs/
 +	install -m 644 server.conf.in $(DESTDIR)$(PREFIX)/etc/ncs/server.conf.sample
@@ -107,5 +62,5 @@
 +	install -m 755 bin/signaling $(DESTDIR)$(PREFIX)/bin/ncs-signaling
 +	install -m 755 bin/proxy $(DESTDIR)$(PREFIX)/bin/ncs-proxy
  
- dist: tarball
- 
+ .NOTPARALLEL: %_easyjson.go
+ .PHONY: continentmap.go
