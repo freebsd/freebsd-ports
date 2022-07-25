@@ -1,6 +1,5 @@
 PORTNAME=	ansible
-DISTVERSION=	6.0.0
-PORTREVISION=	1
+DISTVERSION=	6.1.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +20,9 @@ SHEBANG_FILES=	ansible_collections/community/zabbix/roles/zabbix_proxy/files/ins
 		ansible_collections/community/zabbix/roles/zabbix_server/files/install_semodule.bsx \
 		ansible_collections/cyberark/conjur/ci/build_release \
 		ansible_collections/cyberark/conjur/ci/publish_to_galaxy \
-		ansible_collections/ovirt/ovirt/roles/disaster_recovery/files/ovirt-dr
+		ansible_collections/ovirt/ovirt/roles/disaster_recovery/files/ovirt-dr \
+		ansible_collections/ovirt/ovirt/roles/disaster_recovery/files/ovirt-dr \
+		ansible_collections/cisco/meraki/scripts/sublime-build/build.py.generic
 # It's probably best to leave shebangs in modules untouched as they must be
 # either unversioned or absent.
 # See [1] and [2].
