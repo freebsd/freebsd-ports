@@ -1,10 +1,7 @@
 PORTNAME=	keyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.2
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	bb49007fb074.patch:-p1 # https://github.com/rvaiya/keyd/pull/239
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Key remapping daemon for evdev
@@ -24,8 +21,8 @@ MAKE_ARGS=	DESTDIR="${DESTDIR}" PREFIX="${PREFIX}" \
 		VERSION="${DISTVERSIONFULL}" COMMIT=""
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-application-mapper \
-		${DATADIR}/keyd.compose \
 		"@dir ${ETCDIR}"
+PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
@@ -51,6 +48,7 @@ post-patch:
 		-e 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/docs/*.scdoc \
 		${WRKSRC}/examples/*.conf \
+		${WRKSRC}/src/config.c \
 		${WRKSRC}/src/${PORTNAME}.c
 # https://lists.freebsd.org/pipermail/freebsd-x11/2019-March/023097.html
 	@${REINPLACE_CMD} -e 's,__FreeBSD,&_disabled,' \
