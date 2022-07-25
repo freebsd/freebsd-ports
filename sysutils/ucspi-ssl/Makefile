@@ -1,23 +1,21 @@
 PORTNAME=	ucspi-ssl
 PORTVERSION=	0.99b
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fehcom.de/ipnet/ucspi-ssl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd@charles.lecklider.org
 COMMENT=	UCSPI tools for building SSL client-server applications
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: strnum
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: strnum
 
 RUN_DEPENDS=	tcpserver:sysutils/ucspi-tcp \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		perl5 ssl tar:tgz
-CFLAGS+=	-I${OPENSSLINC}
-
-PORTDOCS=	CERTS CHAIN-SSL CHANGES TODO UCSPI-SSL
+CFLAGS+=	-I${OPENSSLINC} -fcommon
 
 WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
+
+PORTDOCS=	CERTS CHAIN-SSL CHANGES TODO UCSPI-SSL
 
 SCRIPTS_TO_INSTALL=	https@ sslcat sslconnect
 
