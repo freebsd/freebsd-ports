@@ -38,6 +38,8 @@ USE_XORG=	x11 xau xcb xdmcp xtst
 
 LDFLAGS+=	-Wl,--as-needed
 
+PORTSCOUT=	limit:^d\.d\.
+
 OPTIONS_DEFINE=		PLUGINS WEBKIT
 OPTIONS_DEFAULT=	PLUGINS WEBKIT
 OPTIONS_SUB=		yes
