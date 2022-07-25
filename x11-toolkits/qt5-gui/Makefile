@@ -9,7 +9,6 @@ COMMENT=	Qt graphical user interface module
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 		${LOCALBASE}/include/xf86drm.h:graphics/libdrm \
-		at-spi2-core>=0:accessibility/at-spi2-core \
 		${BUILD_DEPENDS_${ARCH}}
 BUILD_DEPENDS_armv6=	as:devel/binutils
 BUILD_DEPENDS_armv7=	as:devel/binutils
@@ -28,10 +27,9 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libxcb.so:x11/libxcb \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
-		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri \
-		xdg-open:devel/xdg-utils
+		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
 
-USES=			compiler:c++11-lang gl gnome jpeg localbase \
+USES=			compiler:c++11-lang gl jpeg localbase \
 			perl5 qmake:no_env qt-dist:5,base
 USE_GL=			egl gl
 USE_GNOME=		glib20
@@ -39,7 +37,7 @@ USE_PERL5=		extract
 USE_QT=			core dbus network buildtools_build qmake_build
 QT_BINARIES=		yes
 QT_CONFIG=		accessibility accessibility-atspi-bridge dbus \
-			fontconfig glib opengl png system-freetype system-jpeg \
+			fontconfig opengl png system-freetype system-jpeg \
 			system-png xcb xcb-glx xcb-render xcb-xlib xinput2 xlib \
 			xrender
 QT_DEFINES=		ACCESSIBILITY DBUS FONTCONFIG FREETYPE GLIB \
@@ -53,7 +51,6 @@ CONFIGURE_ARGS=		-no-eglfs \
 # are using the obsolete 'register' keyword.
 CONFIGURE_ARGS+=	-c++std \
 			c++14
-
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
@@ -63,6 +60,15 @@ OPTIONS_SUB=		yes
 
 X11_USES=	xorg
 X11_USE=	xorg=x11
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != aarch64c && ${ARCH} != riscv64c
+USES+=		gnome
+QT_CONFIG+=	glib
+BUILD_DEPENDS+=	at-spi2-core>=0:accessibility/at-spi2-core
+RUN_DEPENDS+=	xdg-open:devel/xdg-utils
+.endif
 
 # Build and install QtPlatformSupport and default QPA plugins (XCB,
 # minimal and offscreen). QtGui won't work without (one of) them, but
@@ -112,4 +118,4 @@ post-install:
 		${MAKE_ARGS} ${INSTALL_TARGET}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
