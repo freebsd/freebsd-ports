@@ -1,0 +1,48 @@
+commit 9583d02e454318568191e5c31c51c34fd1332182
+Author: Robert Mader <robert.mader@posteo.de>
+Date:   Tue Jul 19 21:52:04 2022 +0000
+
+    Bug 1779425 - Check for GbmDevice before using it, r=stransky,jgilbert
+    
+    In some non-standard configurations we unexpectedly end up in this paths
+    without a GBM device - one example being the GPU process. Fail cleanly
+    instead of crashing in those cases, triggering fallback paths.
+    
+    Context: in the past DMABuf usage was tightly coupled to GBM. Since the
+    introduction of the surfaceless and device EGL platforms that is not
+    longer the case, thus we can't make checks like `IsDMABufWebGLEnabled()`
+    depend on the presence of a GBM device.
+    
+    Optimally all affected cases get fixed eventually. Until then and also
+    for future cases it makes sense to fail softly.
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D152173
+
+diff --git widget/gtk/DMABufSurface.cpp widget/gtk/DMABufSurface.cpp
+index 92c8e75218f8..7fddb32c7cda 100644
+--- widget/gtk/DMABufSurface.cpp
++++ widget/gtk/DMABufSurface.cpp
+@@ -382,6 +382,11 @@ bool DMABufSurfaceRGBA::Create(int aWidth, int aHeight,
+   LOGDMABUF(("DMABufSurfaceRGBA::Create() UID %d size %d x %d\n", mUID, mWidth,
+              mHeight));
+ 
++  if (!GetDMABufDevice()->GetGbmDevice()) {
++    LOGDMABUF(("    Missing GbmDevice!"));
++    return false;
++  }
++
+   mGmbFormat = GetDMABufDevice()->GetGbmFormat(mSurfaceFlags & DMABUF_ALPHA);
+   if (!mGmbFormat) {
+     // Requested DRM format is not supported.
+@@ -1025,6 +1030,11 @@ bool DMABufSurfaceYUV::CreateYUVPlane(int aPlane, int aWidth, int aHeight,
+   LOGDMABUF(("DMABufSurfaceYUV::CreateYUVPlane() UID %d size %d x %d", mUID,
+              aWidth, aHeight));
+ 
++  if (!GetDMABufDevice()->GetGbmDevice()) {
++    LOGDMABUF(("    Missing GbmDevice!"));
++    return false;
++  }
++
+   mWidth[aPlane] = aWidth;
+   mHeight[aPlane] = aHeight;
+   mDrmFormats[aPlane] = aDrmFormat;
