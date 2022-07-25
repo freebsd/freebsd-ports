@@ -1,7 +1,6 @@
 PORTNAME=	mackerel-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.72.14
-PORTREVISION=	1
+DISTVERSION=	0.72.15
 CATEGORIES=	sysutils
 
 MAINTAINER=	meta@FreeBSD.org
@@ -42,7 +41,7 @@ GH_TUPLE=	\
 		klauspost:pgzip:v1.2.5:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
 		mackerelio:go-osstat:v0.2.2:mackerelio_go_osstat/vendor/github.com/mackerelio/go-osstat \
 		mackerelio:golib:v1.2.1:mackerelio_golib/vendor/github.com/mackerelio/golib \
-		mackerelio:mackerel-client-go:v0.21.0:mackerelio_mackerel_client_go/vendor/github.com/mackerelio/mackerel-client-go \
+		mackerelio:mackerel-client-go:v0.21.1:mackerelio_mackerel_client_go/vendor/github.com/mackerelio/mackerel-client-go \
 		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:goveralls:v0.0.11:mattn_goveralls/vendor/github.com/mattn/goveralls \
 		mholt:archiver:v3.5.1:mholt_archiver_v3/vendor/github.com/mholt/archiver/v3 \
