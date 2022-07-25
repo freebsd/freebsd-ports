@@ -183,6 +183,7 @@ lib/emby-server/system/SharpDX.MediaFoundation.dll
 lib/emby-server/system/SharpDX.dll
 lib/emby-server/system/SimpleInjector.dll
 lib/emby-server/system/SkiaSharp.dll
+lib/emby-server/system/SMBLibrary.dll
 lib/emby-server/system/System.AppContext.dll
 lib/emby-server/system/System.Buffers.dll
 lib/emby-server/system/System.Collections.Concurrent.dll
