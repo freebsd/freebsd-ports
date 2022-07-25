@@ -38,7 +38,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/lib/asm-tree-7.1.jar
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-PY-221.5787.24
+%%DATADIR%%/lib/build-marker-PY-221.6008.17
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/dbus-java-3.2.1.jar
@@ -176,8 +176,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-stringifier.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-tree.js
 %%DATADIR%%/plugins/JavaScriptLanguage/helpers/protractor-intellij/lib/protractor-intellij-util.js
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-6fad43be1057.ijx
-%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-6fad43be1057.txt
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-b2f682bc4951.ijx
+%%DATADIR%%/plugins/JavaScriptLanguage/js/js-predefined-ffdd448c697d-b2f682bc4951.txt
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -380,8 +380,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/puppet/lib/stubs/builtin_variables.pp
 %%DATADIR%%/plugins/puppet/lib/stubs/stub_functions.rb
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-ecfff69c7bbf-f5cbd9eb7d86.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-ecfff69c7bbf-f5cbd9eb7d86.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-739b63160038-7f0ff5dbc1c8.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-739b63160038-7f0ff5dbc1c8.txt
 %%DATADIR%%/plugins/python-sharedIndexes-downloadable/lib/python-sharedIndexes-downloadable.jar
 %%DATADIR%%/plugins/python-sharedIndexes/lib/python-sharedIndexes.jar
 %%DATADIR%%/plugins/python/debugger-eggs-output/pydevd-pycharm.egg
