@@ -431,10 +431,8 @@ lib/libMagickWand-6.so.7
 lib/libMagickWand-6.so.7.0.0
 %%WITH_PERL%%%%SITE_ARCH%%/Image/Magick.pm
 %%WITH_PERL%%%%SITE_ARCH%%/Image/Magick/%%QBIT%%%%HDRI%%.pm
-%%SITE_ARCH%%/auto/Image/Magick/Magick.so
 %%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%/%%QBIT%%%%HDRI%%.so
 %%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%/autosplit.ix
-%%SITE_ARCH%%/auto/Image/Magick/autosplit.ix
 %%WITH_PERL%%%%PERL5_MAN3%%/Image::Magick.3.gz
 %%WITH_PERL%%%%PERL5_MAN3%%/Image::Magick::%%QBIT%%%%HDRI%%.3.gz
 libdata/pkgconfig/ImageMagick++-6.pc

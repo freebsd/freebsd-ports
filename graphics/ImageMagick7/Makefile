@@ -1,7 +1,12 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	7.1.0.43
-PORTREVISION=	1
+DISTVERSION=	7.1.0-43
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
+MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
+		https://mirror.dogado.de/imagemagick/releases/ \
+		https://mirror.checkdomain.de/imagemagick/releases/ \
+		https://ftp.icm.edu.pl/pub/unix/graphics/ImageMagick/releases/ \
+		https://imagemagick.org/archive/releases/
 PKGNAMESUFFIX=	7
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -20,7 +25,7 @@ CONFLICTS_INSTALL=	ImageMagick6 ImageMagick6-nox11
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		cpe gettext-runtime gmake gnome libtool:keepla \
-		localbase pathfix perl5 pkgconfig:both shebangfix
+		localbase pathfix perl5 pkgconfig:both shebangfix tar:xz
 CPE_PRODUCT=	imagemagick
 CPE_VENDOR=	imagemagick
 SHEBANG_FILES=	www/source/examples.pl
@@ -29,7 +34,6 @@ CONFIGURE_ENV=	MAKE=${MAKE_CMD}
 CONFIGURE_ARGS=	--without-dps \
 		--without-flif \
 		--without-zstd
-USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
@@ -210,10 +214,10 @@ _IMAGEMAGICK_THREADS=no
 . if ${_IMAGEMAGICK_THREADS} == "no"
 IGNORE=OpenMP requires threads${_IMAGEMAGICK_THREADS_IGNORE_MSG}
 . else
-CONFIGURE_ARGS+=       --enable-openmp
+CONFIGURE_ARGS+=	--enable-openmp
 . endif
 .else
-CONFIGURE_ARGS+=       --disable-openmp
+CONFIGURE_ARGS+=	--disable-openmp
 .endif
 .if defined(WITH_WINDOWS_FONT_DIR)
 CONFIGURE_ARGS+=	--with-windows-font-dir=${WITH_WINDOWS_FONT_DIR}
