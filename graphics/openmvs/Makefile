@@ -32,4 +32,10 @@ CMAKE_ON=	BUILD_SHARED_LIBS OpenMVS_USE_CERES
 CMAKE_OFF=	OpenMVS_BUILD_TOOLS # tools can't be built because of https://github.com/cdcseacave/openMVS/issues/846
 CMAKE_ARGS=	-DVCG_ROOT=${LOCALBASE}/include/vcglib
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CMAKE_ARGS+=	-DOpenMVS_USE_SSE:BOOL=OFF
+.endif
+
 .include <bsd.port.mk>
