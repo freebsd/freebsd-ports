@@ -10,6 +10,9 @@ COMMENT=	Library for fingerprint reader devices
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Very outdated, unsupported upstream which now have systemd as a non optional requirement
+EXPIRATION_DATE=2022-12-31
+
 LIB_DEPENDS=	libnss3.so:security/nss \
 		libnspr4.so:devel/nspr
 
