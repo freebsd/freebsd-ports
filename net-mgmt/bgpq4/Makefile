@@ -1,5 +1,5 @@
 PORTNAME=	bgpq4
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -10,12 +10,11 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		autoreconf compiler:c11 libtool
 USE_GITHUB=	yes
-
-MAKE_ARGS+=	CC="${CC}"
-
 GH_ACCOUNT=	bgp
 
 GNU_CONFIGURE=	yes
+
+MAKE_ARGS+=	CC="${CC}"
 
 PLIST_FILES=	bin/bgpq4 \
 		man/man8/bgpq4.8.gz
