@@ -224,7 +224,10 @@ cabal-post-extract:
 
 cabal-post-patch:
 # Create our own cabal.project
-	${ECHO_CMD} "packages: ." > ${WRKSRC}/cabal.project
+	${ECHO_CMD} "packages:" > ${WRKSRC}/cabal.project
+.    if "${CABAL_PROJECT}" != "append"
+	${ECHO_CMD} "        ." >> ${WRKSRC}/cabal.project
+.    endif
 .    for package in ${_use_cabal}
 	${ECHO_CMD} "        ${CABAL_DEPS_SUBDIR}/${package:C/_[0-9]+//}" >> ${WRKSRC}/cabal.project
 .    endfor
