@@ -851,6 +851,11 @@ EOF
 	exit ;;
     *:FreeBSD:*:*)
 	UNAME_PROCESSOR=`/usr/bin/uname -p`
+	case $UNAME_PROCESSOR in
+	aarch64c|riscv64c)
+	    UNAME_PROCESSOR=${UNAME_PROCESSOR%c}
+	    ;;
+	esac
 	echo "$UNAME_PROCESSOR"-unknown-freebsd"`echo "$UNAME_RELEASE"|sed -e 's/[-(].*//'`"
 	exit ;;
     i*:CYGWIN*:*)
