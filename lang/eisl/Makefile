@@ -1,6 +1,7 @@
 PORTNAME=	eisl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.50-114
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g1216d9e
 CATEGORIES=	lang devel
 
@@ -12,12 +13,15 @@ LICENSE_FILE=	${WRKSRC}/documents/license.txt
 
 BROKEN_riscv64=	hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension (ignoring target-abi)
 
-USES=		gmake ncurses:base
+TEST_DEPENDS=	cppcheck:devel/cppcheck
+
+USES=		gmake ncurses:port # port because tests need ncurses6-config
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sasagawa888
 
 ALL_TARGET=	${PORTNAME}
+TEST_TARGET=	check # tests print some errors and warnings, see https://github.com/sasagawa888/eisl/issues/181#issuecomment-1195147029
 
 MAKEFILE=	makefile
 
