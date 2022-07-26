@@ -9,6 +9,9 @@ COMMENT=	Daemon that provides fingerprint scanning functionality over D-Bus
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Very outdated, unsupported upstream which now have systemd as a non optional requirement
+EXPIRATION_DATE=2022-12-31 
+
 LIB_DEPENDS=	libfprint.so:security/libfprint \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
