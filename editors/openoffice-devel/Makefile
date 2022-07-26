@@ -49,6 +49,7 @@ LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 BROKEN_powerpc64=	fails to compile: aoo-4.2.0/main/solver/420/unxfbsdppc64.pro/inc/stl/vector:31:11: fatal error: boost/tr1/tr1/vector: No such file or directory
+BROKEN=		does not build: fails to build vcl module with C++ errors in boost
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
