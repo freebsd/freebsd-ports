@@ -794,6 +794,7 @@
     SUBDIR += git-merge-changelog
     SUBDIR += git-modes
     SUBDIR += git-p4
+    SUBDIR += git-prev-next
     SUBDIR += git-review
     SUBDIR += git-subrepo
     SUBDIR += git-svn
