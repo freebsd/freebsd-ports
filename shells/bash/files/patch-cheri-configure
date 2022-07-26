@@ -1,0 +1,20 @@
+--- configure.orig
++++ configure
+@@ -19914,13 +19914,13 @@
+ main ()
+ {
+   int n_sigs = 2 * NSIG;
+-#ifdef SIGRTMIN
+-  int rtmin = SIGRTMIN;
++#ifdef SIGRTMAX
++  int rtmax = SIGRTMAX;
+ #else
+-  int rtmin = 0;
++  int rtmax = 0;
+ #endif
+ 
+-  exit(rtmin < n_sigs);
++  exit(rtmax < n_sigs);
+ }
+ _ACEOF
+ if ac_fn_c_try_run "$LINENO"; then :
