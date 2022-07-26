@@ -10,12 +10,15 @@ LICENSE=	BSD2CLAUSE BSD3CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
-
 USES=		gmake meson pkgconfig tar:xz
 
 USE_LDCONFIG=	yes
 
 PLIST_SUB+=	LIBMINORVER=${PORTVERSION:E}
+
+OPTIONS_DEFINE=	DOCS
+
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+DOCS_MESON_ENABLED=	gtk_doc
 
 .include <bsd.port.mk>
