@@ -1,7 +1,8 @@
 PORTNAME=	freeciv
-PORTVERSION=	2.6.6
+PORTVERSION=	3.0.2
 CATEGORIES=	games
-MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
+MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
+		http://files.freeciv.org/stable/
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Free turn-based multiplayer strategy
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libltdl.so:devel/libltdl
 
 USES=		autoreconf compiler:c++11-lang cpe gmake iconv libtool lua:53 \
-		pkgconfig readline ssl tar:bzip2
+		pkgconfig readline ssl tar:xz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
@@ -33,11 +34,12 @@ OPTIONS_DEFINE=		DOCS IPV6 NLS
 OPTIONS_DEFAULT=	QT5 SQLITE3
 OPTIONS_MULTI=		DB UI
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE3
-OPTIONS_MULTI_UI=	GTK2 GTK3 QT5 SDL
+OPTIONS_MULTI_UI=	GTK2 GTK3 GTK4 QT5 SDL
 OPTIONS_SUB=		yes
 
 DB_DESC=	Database support
 UI_DESC=	GUI clients
+GTK4_DESC=	GTK+ 4 GUI toolkit support (modpack only)
 
 GTK2_USES=	gnome sdl
 GTK2_USE=	GNOME=gdkpixbuf2,glib20,gtk20,pango \
@@ -49,7 +51,14 @@ GTK3_USES=	gnome sdl
 GTK3_USE=	GNOME=cairo,gdkpixbuf2,glib20,gtk30,pango \
 		SDL=mixer2
 GTK3_VARS=	_FREECIV_CLIENT+=gtk3 \
+		_FREECIV_CLIENT+=gtk3.22 \
 		_FREECIV_MP+=gtk3
+
+GTK4_IMPLIES=	GTK3
+GTK4_USES=	gnome sdl
+GTK4_USE=	GNOME=cairo,gdkpixbuf2,glib20,gtk40,pango \
+		SDL=mixer2
+GTK4_VARS=	_FREECIV_MP+=gtk4
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
