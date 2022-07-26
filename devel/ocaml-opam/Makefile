@@ -32,6 +32,8 @@ GIT_RUN_DEPENDS=	git:devel/git
 MERCURIAL_RUN_DEPENDS=	${PY_MERCURIAL}
 RSYNC_RUN_DEPENDS=	rsync:net/rsync
 
+NOPRECIOUSMAKEVARS=	yes
+
 pre-configure:
 	cd ${WRKSRC} && ${MAKE_CMD} compiler
 
