@@ -832,6 +832,7 @@
     SUBDIR += py-sqlalchemy12
     SUBDIR += py-sqlalchemy13
     SUBDIR += py-sqlalchemy14
+    SUBDIR += py-sqlite-fts4
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlparse
