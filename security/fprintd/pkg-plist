@@ -4,8 +4,8 @@ bin/fprintd-list
 bin/fprintd-verify
 %%ETCDIR%%/dbus-1/system.d/net.reactivated.Fprint.conf
 %%ETCDIR%%/fprintd.conf
-lib/security/pam_fprintd.a
-lib/security/pam_fprintd.so
+%%PAM%%lib/security/pam_fprintd.a
+%%PAM%%lib/security/pam_fprintd.so
 libexec/fprintd
 share/dbus-1/interfaces/net.reactivated.Fprint.Device.xml
 share/dbus-1/interfaces/net.reactivated.Fprint.Manager.xml
@@ -81,5 +81,5 @@ share/dbus-1/system-services/net.reactivated.Fprint.service
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/fprintd.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/fprintd.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/fprintd.mo
-share/man/man1/fprintd.1.gz
+man/man1/fprintd.1.gz
 share/polkit-1/actions/net.reactivated.fprint.device.policy
