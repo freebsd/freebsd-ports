@@ -46,7 +46,7 @@ post-patch:
 		-e 's,${DOCSDIR_REL}/examples,${EXAMPLESDIR_REL},' \
 		-e 's/ -O3//' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's,/usr,${PREFIX}&,' \
+	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
 		-e 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/docs/*.scdoc \
 		${WRKSRC}/examples/*.conf \
