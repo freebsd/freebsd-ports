@@ -30,7 +30,7 @@ SYSBASHRC_DESC=		Enable system-wide rc files
 
 OPTIONS_DEFAULT=	HELP PORTS_READLINE
 
-USES=			bison cpe iconv makeinfo pathfix localbase
+USES=			bison cpe iconv pathfix localbase
 GNU_CONFIGURE=		yes
 OPTIONS_SUB=		yes
 CPE_VENDOR=		gnu
@@ -38,6 +38,7 @@ CPE_VENDOR=		gnu
 FDESCFS_CONFIGURE_ENV_OFF=	bash_cv_dev_fd=absent
 FDESCFS_SUB_FILES=	pkg-message
 
+DOCS_USES=		makeinfo
 HELP_CONFIGURE_ENABLE=	help-builtin
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
