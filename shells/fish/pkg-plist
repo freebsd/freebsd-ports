@@ -73,6 +73,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/apt.fish
 %%DATADIR%%/completions/aptitude.fish
 %%DATADIR%%/completions/arc.fish
+%%DATADIR%%/completions/archlinux-java.fish
 %%DATADIR%%/completions/arepack.fish
 %%DATADIR%%/completions/argparse.fish
 %%DATADIR%%/completions/arp.fish
@@ -113,6 +114,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/bower.fish
 %%DATADIR%%/completions/break.fish
 %%DATADIR%%/completions/brew.fish
+%%DATADIR%%/completions/brightnessctl.fish
 %%DATADIR%%/completions/btdownloadcurses.py.fish
 %%DATADIR%%/completions/btdownloadheadless.py.fish
 %%DATADIR%%/completions/btrfs.fish
@@ -231,6 +233,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/dvipdfm.fish
 %%DATADIR%%/completions/ebuild.fish
 %%DATADIR%%/completions/echo.fish
+%%DATADIR%%/completions/efibootmgr.fish
 %%DATADIR%%/completions/egrep.fish
 %%DATADIR%%/completions/eix-sync.fish
 %%DATADIR%%/completions/eix.fish
@@ -258,6 +261,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/expand.fish
 %%DATADIR%%/completions/ezjail-admin.fish
 %%DATADIR%%/completions/fab.fish
+%%DATADIR%%/completions/fastboot.fish
 %%DATADIR%%/completions/feh.fish
 %%DATADIR%%/completions/ffmpeg.fish
 %%DATADIR%%/completions/ffplay.fish
@@ -528,6 +532,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/openocd.fish
 %%DATADIR%%/completions/openssl.fish
 %%DATADIR%%/completions/opkg.fish
+%%DATADIR%%/completions/optimus-manager.fish
 %%DATADIR%%/completions/optipng.fish
 %%DATADIR%%/completions/or.fish
 %%DATADIR%%/completions/p4.fish
@@ -543,6 +548,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/pandoc.fish
 %%DATADIR%%/completions/passwd.fish
 %%DATADIR%%/completions/patch.fish
+%%DATADIR%%/completions/path.fish
 %%DATADIR%%/completions/patool.fish
 %%DATADIR%%/completions/pbget.fish
 %%DATADIR%%/completions/pdfelatex.fish
@@ -618,6 +624,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/rc-status.fish
 %%DATADIR%%/completions/rc-update.fish
 %%DATADIR%%/completions/rcctl.fish
+%%DATADIR%%/completions/rclone.fish
 %%DATADIR%%/completions/read.fish
 %%DATADIR%%/completions/readlink.fish
 %%DATADIR%%/completions/realpath.fish
@@ -683,6 +690,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/shortcuts.fish
 %%DATADIR%%/completions/signify.fish
 %%DATADIR%%/completions/snap.fish
+%%DATADIR%%/completions/sops.fish
 %%DATADIR%%/completions/sort.fish
 %%DATADIR%%/completions/source.fish
 %%DATADIR%%/completions/spago.fish
@@ -746,6 +754,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/tsc.fish
 %%DATADIR%%/completions/tshark.fish
 %%DATADIR%%/completions/ttx.fish
+%%DATADIR%%/completions/tuned-adm.fish
 %%DATADIR%%/completions/type.fish
 %%DATADIR%%/completions/udevadm.fish
 %%DATADIR%%/completions/udisksctl.fish
@@ -781,6 +790,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/watch.fish
 %%DATADIR%%/completions/wc.fish
 %%DATADIR%%/completions/wesnoth.fish
+%%DATADIR%%/completions/wg-quick.fish
 %%DATADIR%%/completions/wget.fish
 %%DATADIR%%/completions/whatis.fish
 %%DATADIR%%/completions/which.fish
@@ -854,7 +864,6 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/zypper.fish
 %%DATADIR%%/config.fish
 %%DATADIR%%/functions/N_.fish
-%%DATADIR%%/functions/__fish_abbr_old.fish
 %%DATADIR%%/functions/__fish_any_arg_in.fish
 %%DATADIR%%/functions/__fish_anypython.fish
 %%DATADIR%%/functions/__fish_append.fish
@@ -1105,11 +1114,13 @@ libdata/pkgconfig/fish.pc
 %%MANPAGES%%%%DATADIR%%/man/man1/exit.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/false.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fg.1.gz
-%%MANPAGES%%%%DATADIR%%/man/man1/fish-releasenotes.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish-completions.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish-doc.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish-faq.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish-for-bash-users.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/fish-interactive.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/fish-language.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/fish-releasenotes.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish-tutorial.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_add_path.1.gz
@@ -1120,10 +1131,8 @@ libdata/pkgconfig/fish.pc
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_greeting.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_hg_prompt.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_indent.1.gz
-%%MANPAGES%%%%DATADIR%%/man/man1/fish-interactive.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_is_root_user.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_key_reader.1.gz
-%%MANPAGES%%%%DATADIR%%/man/man1/fish-language.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_mode_prompt.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_opt.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_prompt.1.gz
@@ -1148,6 +1157,7 @@ libdata/pkgconfig/fish.pc
 %%MANPAGES%%%%DATADIR%%/man/man1/not.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/open.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/or.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/path.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/popd.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/prevd.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/printf.1.gz
@@ -1215,6 +1225,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/tools/web_config/partials/variables.html
 %%DATADIR%%/tools/web_config/sample_prompts/acidhub.fish
 %%DATADIR%%/tools/web_config/sample_prompts/arrow.fish
+%%DATADIR%%/tools/web_config/sample_prompts/astronaut.fish
 %%DATADIR%%/tools/web_config/sample_prompts/default.fish
 %%DATADIR%%/tools/web_config/sample_prompts/disco.fish
 %%DATADIR%%/tools/web_config/sample_prompts/informative.fish
