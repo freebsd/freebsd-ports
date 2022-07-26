@@ -4,13 +4,13 @@ PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://constexpr.org/innoextract/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Program to extract Inno Setup files
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_sparc64=		Does not build: undefined reference to std::ctype<char>::_M_widen_init()
+BROKEN_sparc64=	does not build: undefined reference to std::ctype<char>::_M_widen_init()
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
