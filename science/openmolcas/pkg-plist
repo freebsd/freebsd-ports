@@ -137,6 +137,7 @@
 %%DATADIR%%/bin/single_aniso.exe
 %%DATADIR%%/bin/slapaf.exe
 %%DATADIR%%/bin/surfacehop.exe
+%%DATADIR%%/bin/symmetrize.exe
 %%DATADIR%%/bin/vibrot.exe
 %%DATADIR%%/data/MolGUI.prgm
 %%DATADIR%%/data/abdata

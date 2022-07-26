@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2022-05-24 05:51:48 UTC
+--- CMakeLists.txt.orig	2022-06-07 08:43:34 UTC
 +++ CMakeLists.txt
 @@ -48,7 +48,7 @@ find_program (GIT "git")
  find_program (PERL "perl")
@@ -9,3 +9,14 @@
  
  ################################################################################
  #                                                                              #
+@@ -2375,6 +2375,10 @@ message ("Configuring runtime environment settings:")
+ cmake_host_system_information (RESULT host_mem QUERY TOTAL_PHYSICAL_MEMORY)
+ cmake_host_system_information (RESULT host_name QUERY HOSTNAME)
+ cmake_host_system_information (RESULT host_system QUERY OS_NAME)
++
++# workaround for https://gitlab.kitware.com/cmake/cmake/-/issues/23776
++execute_process(COMMAND sysctl -n hw.physmem OUTPUT_VARIABLE host_mem)
++math (EXPR host_mem "${host_mem}/1024/1024")
+ 
+ # memory/disk default sizes
+ #==========================
