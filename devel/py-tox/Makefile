@@ -1,5 +1,5 @@
 PORTNAME=	tox
-PORTVERSION=	3.25.0
+PORTVERSION=	3.25.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,11 +21,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=3.0.0<4:sysutils/py-filelock@${PY_
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flaky>=3.4.0:devel/py-flaky@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>=0.3.11:devel/py-freezegun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=1.10.0:devel/py-pytest-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.22.2:devel/py-pytest-xdist@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>=4.0.0,1:devel/py-pytest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.22.2:devel/py-pytest-xdist@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest4
 
 NO_ARCH=	yes
 
@@ -38,8 +37,5 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0.12:devel/py-importlib
 # tox.ini clobbers our pytest arguments
 post-extract:
 	${RM} ${WRKSRC}/tox.ini
-
-do-test:
-	@cd ${WRKSRC} && PYTHONPATH=${WRKSRC}/src ${PYTHON_CMD} -m pytest -v -rs -n ${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.post.mk>
