@@ -21,7 +21,7 @@ USE_RC_SUBR=	${PORTNAME}
 GH_ACCOUNT=	rvaiya
 SHEBANG_FILES=	scripts/*
 MAKE_ARGS=	DESTDIR="${DESTDIR}" PREFIX="${PREFIX}" \
-		GIT_HASH="${DISTVERSIONFULL}"
+		VERSION="${DISTVERSIONFULL}" COMMIT=""
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-application-mapper \
 		${DATADIR}/keyd.compose \
@@ -45,6 +45,7 @@ post-patch:
 		-e 's,/usr/local,${LOCALBASE},' \
 		-e 's,${DOCSDIR_REL}/examples,${EXAMPLESDIR_REL},' \
 		-e 's/ -O3//' \
+		-e 's,v$$(VERSION)\\ \\($$(COMMIT)\\),$$(VERSION),' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
 		-e 's,/etc,${PREFIX}&,' \
