@@ -606,6 +606,7 @@
     SUBDIR += kio-fuse
     SUBDIR += kldfind
     SUBDIR += kldpatch
+    SUBDIR += kopia
     SUBDIR += kops
     SUBDIR += kpmcore
     SUBDIR += krename
