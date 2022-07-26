@@ -7848,6 +7848,8 @@
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_SMB.wrl
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_SMC.step
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_SMC.wrl
+%%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_SMF.step
+%%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_SMF.wrl
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_SOD-110.step
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_SOD-110.wrl
 %%DATADIR%%/3dmodels/Diode_SMD.3dshapes/D_SOD-123.step
@@ -12224,6 +12226,8 @@
 %%DATADIR%%/3dmodels/Transformer_THT.3dshapes/Transformer_NF_ETAL_P1165.wrl
 %%DATADIR%%/3dmodels/Transistor_Power_Module.3dshapes/Infineon_EasyPIM-2B.step
 %%DATADIR%%/3dmodels/Transistor_Power_Module.3dshapes/Infineon_EasyPIM-2B.wrl
+%%DATADIR%%/3dmodels/Transistor_Power_Module.3dshapes/ST_ACEPACK-2-CIB.step
+%%DATADIR%%/3dmodels/Transistor_Power_Module.3dshapes/ST_ACEPACK-2-CIB.wrl
 %%DATADIR%%/3dmodels/Transistor_Power_Module.3dshapes/ST_SDIP-25L.step
 %%DATADIR%%/3dmodels/Transistor_Power_Module.3dshapes/ST_SDIP-25L.wrl
 %%DATADIR%%/3dmodels/Valve.3dshapes/Valve_Mini_Pentode_Linear.step

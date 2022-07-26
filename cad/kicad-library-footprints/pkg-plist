@@ -8942,7 +8942,7 @@
 %%DATADIR%%/footprints/Package_CSP.pretty/LFCSP-WD-10-1EP_3x3mm_P0.5mm_EP1.64x2.38mm_ThermalVias.kicad_mod
 %%DATADIR%%/footprints/Package_CSP.pretty/LFCSP-WD-8-1EP_3x3mm_P0.65mm_EP1.6x2.44mm.kicad_mod
 %%DATADIR%%/footprints/Package_CSP.pretty/LFCSP-WD-8-1EP_3x3mm_P0.65mm_EP1.6x2.44mm_ThermalVias.kicad_mod
-%%DATADIR%%/footprints/Package_CSP.pretty/Maxim_WLCSP-32_3.0x2.17mm_Layout7x5_P0.4mm_Ball0.27mm_Pad0.25mm.kicad_mod
+%%DATADIR%%/footprints/Package_CSP.pretty/Maxim_WLCSP-35_3.0x2.17mm_Layout7x5_P0.4mm_Ball0.27mm_Pad0.25mm.kicad_mod
 %%DATADIR%%/footprints/Package_CSP.pretty/ST_WLCSP-100_Die422.kicad_mod
 %%DATADIR%%/footprints/Package_CSP.pretty/ST_WLCSP-100_Die446.kicad_mod
 %%DATADIR%%/footprints/Package_CSP.pretty/ST_WLCSP-100_Die452.kicad_mod
@@ -10204,13 +10204,17 @@
 %%DATADIR%%/footprints/Package_SO.pretty/TSOP-II-32_21.0x10.2mm_P1.27mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSOP-II-44_10.16x18.41mm_P0.8mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSOP-II-54_22.2x10.16mm_P0.8mm.kicad_mod
+%%DATADIR%%/footprints/Package_SO.pretty/TSSOP-100_6.1x20.8mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-10_3x3mm_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-14-1EP_4.4x5mm_P0.65mm.kicad_mod
+%%DATADIR%%/footprints/Package_SO.pretty/TSSOP-14_4.4x3.6mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-14_4.4x5mm_P0.65mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-16-1EP_4.4x5mm_P0.65mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-16-1EP_4.4x5mm_P0.65mm_EP3x3mm_ThermalVias.kicad_mod
+%%DATADIR%%/footprints/Package_SO.pretty/TSSOP-16_4.4x3.6mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-16_4.4x5mm_P0.65mm.kicad_mod
+%%DATADIR%%/footprints/Package_SO.pretty/TSSOP-20_4.4x5mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-20_4.4x5mm_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-20_4.4x6.5mm_P0.65mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-24-1EP_4.4x7.8mm_P0.65mm_EP3.2x5mm.kicad_mod
@@ -10255,6 +10259,7 @@
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-50_4.4x12.5mm_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-52_6.1x11mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-52_8x11mm_P0.4mm.kicad_mod
+%%DATADIR%%/footprints/Package_SO.pretty/TSSOP-56_4.4x11.3mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-56_6.1x12.5mm_P0.4mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-56_6.1x14mm_P0.5mm.kicad_mod
 %%DATADIR%%/footprints/Package_SO.pretty/TSSOP-56_8x12.5mm_P0.4mm.kicad_mod
@@ -11275,6 +11280,7 @@
 %%DATADIR%%/footprints/Sensor.pretty/SHT1x.kicad_mod
 %%DATADIR%%/footprints/Sensor.pretty/Senseair_S8_Down.kicad_mod
 %%DATADIR%%/footprints/Sensor.pretty/Senseair_S8_Up.kicad_mod
+%%DATADIR%%/footprints/Sensor.pretty/Sensirion_SCD4x-1EP_10.1x10.1mm_P1.25mm_EP4.8x4.8mm.kicad_mod
 %%DATADIR%%/footprints/Sensor.pretty/Winson_GM-402B_5x5mm_P1.27mm.kicad_mod
 %%DATADIR%%/footprints/Sensor_Audio.pretty/CUI_CMC-4013-SMT.kicad_mod
 %%DATADIR%%/footprints/Sensor_Audio.pretty/Infineon_PG-LLGA-5-1.kicad_mod
@@ -12090,6 +12096,7 @@
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Halo_N5_SO-16_7.11x12.7mm.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Halo_N6_SO-16_7.11x14.73mm.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_Wuerth_749013011A.kicad_mod
+%%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Ethernet_YDS_30F-51NL_SO-24_7.1x15.1mm.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_MACOM_SM-22.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_Murata_78250JC.kicad_mod
 %%DATADIR%%/footprints/Transformer_SMD.pretty/Transformer_NF_ETAL_P2781.kicad_mod

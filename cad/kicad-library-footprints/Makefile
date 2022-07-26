@@ -1,5 +1,5 @@
 PORTNAME=	kicad
-PORTVERSION=	6.0.6
+PORTVERSION=	6.0.7
 CATEGORIES=	cad
 MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-footprints/-/archive/${DISTVERSION}/
 PKGNAMESUFFIX=	-library-footprints
