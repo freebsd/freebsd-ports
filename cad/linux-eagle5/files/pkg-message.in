@@ -12,5 +12,13 @@ directory upon initial startup. If this user does no longer want to
 work on projects with eagle (e.g. the root account has been used to
 create the mentioned key file), this directory can safely be deleted.
 EOM
+},
+{ type: rmeove
+  message: <<EOM
+WARNING: If you will *NOT* use this package anymore, please remove the
+ following file and the directory manually:
+ %%DATADIR%%/bin/eagle.key
+ %%DATADIR%%
+EOM
 }
 ]

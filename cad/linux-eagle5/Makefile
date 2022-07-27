@@ -1,6 +1,6 @@
 PORTNAME=	eagle5
 PORTVERSION=	${EAGLEVERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	cad linux
 MASTER_SITES=	LOCAL/riggs/${PORTNAME} \
 		ftp://ftp.cadsoft.de/eagle/program/${EAGLEBASEVERSION}/
@@ -37,7 +37,7 @@ EAGLEVERSION=	${EAGLEBASEVERSION}.${EAGLEBUGFIX}
 USES=		linux
 USE_LINUX=	xorglibs jpeg png
 NO_BUILD=	yes
-SUB_FILES=	pkg-deinstall pkg-message
+SUB_FILES=	pkg-message
 
 DESKTOP_ENTRIES=	"Eagle5" "Tool for designing printed circuit boards" \
 			${DATADIR}/ulp/eagle.bmp \
