@@ -1,3 +1,3 @@
-TIMESTAMP = 1657913272
-SHA256 (matteocorti-check_ssl_cert-v2.35.0_GH0.tar.gz) = 655ba07e81e2d730bbf31a6a2e2ef7b3febed39de2ccbce6b26f879c6a7ca2f9
-SIZE (matteocorti-check_ssl_cert-v2.35.0_GH0.tar.gz) = 316655
+TIMESTAMP = 1658954131
+SHA256 (check_ssl_cert-2.36.0.tar.bz2) = 4e173a4e826c01783500a8aa3fd79af1aca1cb9f4d33724dff915ac8ba1a730d
+SIZE (check_ssl_cert-2.36.0.tar.bz2) = 72899
