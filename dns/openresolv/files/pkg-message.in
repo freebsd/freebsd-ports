@@ -5,5 +5,18 @@ To make sure openresolv runs correctly
 please symlink /etc/resolv.conf to
 %%PREFIX%%/etc/resolvconf/run/resolv.conf
 EOM
+},
+{ type: remove
+  message: <<EOM
+===> post-deinstallation information for %%PORTNAME%%
+
+Please note that %%PORTNAME%% was not completely removed
+from this system:
+
+/etc/resolv.conf should now be changed to be a regular
+file and /var/run/resolvconf can be removed if openresolv
+will no longer be used.
+
+EOM
 }
 ]
