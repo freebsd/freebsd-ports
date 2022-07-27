@@ -1,6 +1,6 @@
 PORTNAME=	freebsd-snapshot
 DISTVERSION=	20091208.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://people.freebsd.org/~rse/dist/
 
@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-SUB_FILES=	pkg-message pkg-deinstall
+SUB_FILES=	pkg-message
 
 PLIST_FILES=	etc/amd.map.snap man/man8/periodic-snapshot.8.gz \
 		man/man8/snapshot.8.gz sbin/periodic-snapshot sbin/snapshot
