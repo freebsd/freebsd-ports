@@ -1,5 +1,6 @@
 PORTNAME=	robocode
 PORTVERSION=	1.9.4.5
+PORTREVISION=	1
 CATEGORIES=	games education java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}-setup.jar
@@ -28,7 +29,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 SUB_FILES=	${PORTNAME}-MeleeRumble ${PORTNAME}-RoboRumble \
 		${PORTNAME}-Robocode ${PORTNAME}-TeamRumble \
-		${PORTNAME}-TwinDuel pkg-deinstall pkg-message
+		${PORTNAME}-TwinDuel pkg-message
 
 do-install:
 	cd ${WRKDIR} && ${INSTALL_SCRIPT} ${SUB_FILES:Mrobocode-*} \

@@ -1,6 +1,6 @@
 PORTNAME=	robocode
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-setup
 CATEGORIES=	games education java
 MASTER_SITES=	SF/${PORTNAME}/naval-robocode/${PORTVERSION}
@@ -28,7 +28,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}${PKGNAMESUFFIX}
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-SUB_FILES=	${PORTNAME}-NavalRobocode pkg-deinstall pkg-message
+SUB_FILES=	${PORTNAME}-NavalRobocode pkg-message
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-NavalRobocode \
