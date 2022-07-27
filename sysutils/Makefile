@@ -731,7 +731,6 @@
     SUBDIR += memtester
     SUBDIR += metalog
     SUBDIR += mfid
-    SUBDIR += mgeupsd
     SUBDIR += minikube
     SUBDIR += minimunin
     SUBDIR += minipot

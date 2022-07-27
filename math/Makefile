@@ -388,7 +388,6 @@
     SUBDIR += ignition-math
     SUBDIR += igraph
     SUBDIR += iml
-    SUBDIR += intervaltree
     SUBDIR += intx
     SUBDIR += ipopt
     SUBDIR += ised

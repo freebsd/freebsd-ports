@@ -124,7 +124,6 @@
     SUBDIR += ibus-mozc
     SUBDIR += ibus-skk
     SUBDIR += icanna
-    SUBDIR += im-ja
     SUBDIR += ipadic
     SUBDIR += ja-tex-xdvik
     SUBDIR += jacode.pl

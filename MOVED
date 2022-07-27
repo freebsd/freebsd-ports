@@ -17513,3 +17513,7 @@ net/py-pyroute2.ipset|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream
 net/py-pyroute2.ndb|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream moves back to single package layout (net/py-pyroute2)
 net/py-pyroute2.nftables|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream moves back to single package layout (net/py-pyroute2)
 net/py-pyroute2.nslink|net/py-pyroute2|2022-07-18|Remove obsoleted port. Upstream moves back to single package layout (net/py-pyroute2)
+math/intervaltree||2022-07-27|Has expired: Dependent ports now use GH_TUPLE
+security/gnomint||2022-07-27|Has expired: Abandonware, depending on gconf2
+japanese/im-ja||2022-07-27|Has expired: Abandonware, depending on gconf2
+sysutils/mgeupsd||2022-07-27|Has expired: Last release is 23 years old. It is not clear what devices are supported.
