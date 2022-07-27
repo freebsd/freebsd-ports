@@ -14,6 +14,8 @@ LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 RUN_DEPENDS=	bash:shells/bash
 
 MAKE_ENV+=	LDADD=-largp
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME}
 
 USES=		autoreconf pkgconfig shebangfix
 
