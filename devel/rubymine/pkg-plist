@@ -475,7 +475,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/lib/asm-tree-7.1.jar
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-RM-221.5921.22
+%%DATADIR%%/lib/build-marker-RM-221.6008.14
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/dbus-java-3.2.1.jar
