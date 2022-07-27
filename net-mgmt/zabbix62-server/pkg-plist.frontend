@@ -426,6 +426,7 @@
 %%WWWDIR%%/app/views/js/monitoring.map.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.problem.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.web.view.js.php
+%%WWWDIR%%/app/views/js/monitoring.widget.navtreeitem.edit.js.php
 %%WWWDIR%%/app/views/js/popup.acknowledge.edit.js.php
 %%WWWDIR%%/app/views/js/popup.dashboard.share.edit.js.php
 %%WWWDIR%%/app/views/js/popup.discovery.check.js.php
