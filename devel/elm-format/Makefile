@@ -61,7 +61,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/with-compiler: ghc-8.10.4/d' \
-		${WRKSRC}/cabal.project.${PORTNAME}
+		${WRKSRC}/cabal.project.${PORTNAME} || ${TRUE}
 	${RM} ${WRKSRC}/cabal.config
 
 .include <bsd.port.mk>
