@@ -27,6 +27,7 @@ bin/sigtool
 %%PORTDOCS%%%%DOCSDIR%%/html/book.js
 %%PORTDOCS%%%%DOCSDIR%%/html/clipboard.min.js
 %%PORTDOCS%%%%DOCSDIR%%/html/community_resources/CommunityResources.html
+%%PORTDOCS%%%%DOCSDIR%%/html/community_resources/CompileClamAV_AmazonLinux2.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/css/chrome.css
 %%PORTDOCS%%%%DOCSDIR%%/html/css/general.css
 %%PORTDOCS%%%%DOCSDIR%%/html/css/print.css
