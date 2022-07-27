@@ -1,17 +1,17 @@
 PORTNAME=	asymptote
-PORTVERSION=	2.80
-PORTREVISION=	1
+PORTVERSION=	2.81
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
+
+PATCH_SITES=	https://github.com/vectorgraphics/asymptote/commit/
+PATCHFILES+=	fa28442195bd99b9bac87e3ff752953ac57ee172.patch:-p1 # backport fix for https://github.com/vectorgraphics/asymptote/issues/328
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Powerful script-based vector graphics language
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
-
-BROKEN=		does not build: No rule to make target 'gc.h', needed by 'lspserv.o'
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -32,9 +32,10 @@ USE_PYQT=	pyqt5_run
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-lsp # disable the module with Boost-related errors
 
 MAKE_ENV=	ASYMPTOTE_HOME=${WRKDIR} HOME=${WRKDIR}
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_UNSAFE=	yes # see https://github.com/vectorgraphics/asymptote/issues/331
 
 ALL_TARGET=	asy asy-keywords.el
 INSTALL_TARGET=	install-asy
@@ -75,6 +76,8 @@ READLINE_USES=	readline
 
 TEST_TARGET=	test
 TEST_WRKSRC=	${WRKSRC}/tests
+
+PORTEXAMPLES=	*
 
 post-patch:
 	@${REINPLACE_CMD} 's/-lgc/-lgc-threaded/' ${WRKSRC}/configure
