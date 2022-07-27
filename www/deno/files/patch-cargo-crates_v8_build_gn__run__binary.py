@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.44.2/build/gn_run_binary.py.orig	2020-06-26 16:27:54 UTC
-+++ cargo-crates/v8-0.44.2/build/gn_run_binary.py
+--- cargo-crates/v8-0.47.0/build/gn_run_binary.py.orig	2020-06-26 16:27:54 UTC
++++ cargo-crates/v8-0.47.0/build/gn_run_binary.py
 @@ -24,7 +24,7 @@ if not os.path.isabs(path):
  # The rest of the arguments are passed directly to the executable.
  args = [path] + sys.argv[2:]

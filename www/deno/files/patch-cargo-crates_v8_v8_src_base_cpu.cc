@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.44.2/v8/src/base/cpu.cc.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/v8-0.44.2/v8/src/base/cpu.cc
+--- cargo-crates/v8-0.47.0/v8/src/base/cpu.cc.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/v8-0.47.0/v8/src/base/cpu.cc
 @@ -475,6 +475,7 @@ CPU::CPU()
  
  #if V8_OS_LINUX

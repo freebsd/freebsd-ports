@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.44.2/build/config/compiler/BUILD.gn.orig	1973-11-29 22:33:09.000000000 +0100
-+++ cargo-crates/v8-0.44.2/build/config/compiler/BUILD.gn	2022-05-31 15:40:38.996239000 +0200
+--- cargo-crates/v8-0.47.0/build/config/compiler/BUILD.gn.orig	1973-11-29 22:33:09.000000000 +0100
++++ cargo-crates/v8-0.47.0/build/config/compiler/BUILD.gn	2022-05-31 15:40:38.996239000 +0200
 @@ -137,7 +137,7 @@ declare_args() {
    #
    # TODO(crbug.com/1131993): Enabling this when 'is_android' is true breaks
