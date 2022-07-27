@@ -1,6 +1,6 @@
 PORTNAME=	aprsd
 PORTVERSION=	2.2.515
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.2.5-15
 DISTNAME=	aprsd-2.2.5-15
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: httpserver.o:(.text+0x1074): undefined reference to `convertUpTime(int)'
 
 GNU_CONFIGURE=	yes
-SUB_FILES=	pkg-message pkg-deinstall
+SUB_FILES=	pkg-message
 USE_RC_SUBR=	aprsd
 
 USERS=	aprsd tnc
