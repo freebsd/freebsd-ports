@@ -27,6 +27,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-scheme \
 		--without-python
 
+CXXFLAGS_i386=	-msse2 # to fix this error: '_mm_getcsr' needs target feature sse
+
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
