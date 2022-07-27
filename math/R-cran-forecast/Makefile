@@ -1,5 +1,5 @@
 PORTNAME=	forecast
-PORTVERSION=	8.16
+PORTVERSION=	8.17.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,6 +10,7 @@ LICENSE=	GPLv3
 
 CRAN_DEPENDS=	R-cran-colorspace>0:graphics/R-cran-colorspace \
 		R-cran-fracdiff>0:math/R-cran-fracdiff \
+		R-cran-generics>=0.1.2:devel/R-cran-generics \
 		R-cran-ggplot2>=2.2.1:graphics/R-cran-ggplot2 \
 		R-cran-lmtest>0:finance/R-cran-lmtest \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
