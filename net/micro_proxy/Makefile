@@ -1,5 +1,6 @@
 PORTNAME=	micro_proxy
 PORTVERSION=	20140814
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.acme.com/software/micro_proxy/ \
 		LOCAL/ehaupt
