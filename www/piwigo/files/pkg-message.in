@@ -38,5 +38,13 @@ A typical configuration would be:
 
 For installation and upgrade information, check the readme file.
 EOM
+},
+{ type: remove
+  message: <<EOM
+WARNING: If you intend *NOT* use this package anymore,
+  you may need to remove the following directory manually:
+  %%WWWDIR%%
+  and delete the application database.
+EOM
 }
 ]
