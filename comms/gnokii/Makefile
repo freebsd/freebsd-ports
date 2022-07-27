@@ -22,7 +22,7 @@ USE_CSTD=	gnu89
 USE_GNOME=	glib20 intltool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-security
-SHEBANG_FILES=	smsd/action utils/sendsms
+SHEBANG_FILES=	smsd/action
 
 SUB_FILES+=	pkg-message
 PORTDOCS=	*
