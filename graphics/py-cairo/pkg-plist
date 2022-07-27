@@ -1,8 +1,8 @@
 include/pycairo/py3cairo.h
 %%PYTHON_SITELIBDIR%%/cairo/__init__.py
 %%PYTHON_SITELIBDIR%%/cairo/__init__.pyi
-%%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/cairo/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/cairo/_cairo%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/cairo/include/py3cairo.h
 %%PYTHON_SITELIBDIR%%/cairo/py.typed
