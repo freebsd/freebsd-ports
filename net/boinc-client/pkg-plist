@@ -36,6 +36,7 @@ include/boinc/notice.h
 include/boinc/opencl_boinc.h
 include/boinc/parse.h
 include/boinc/prefs.h
+include/boinc/proc_control.h
 include/boinc/procinfo.h
 include/boinc/project_specific_defines.h
 include/boinc/proxy_info.h
@@ -58,12 +59,16 @@ lib/libboinc.a
 lib/libboinc_api.a
 lib/libboinc_api.so
 lib/libboinc_api.so.7
-lib/libboinc_api.so.7.8.6
+lib/libboinc_api.so.7.20.2
 lib/libboinc_crypt.a
 lib/libboinc_opencl.a
 lib/libboinc_opencl.so
 lib/libboinc_opencl.so.7
-lib/libboinc_opencl.so.7.8.6
+lib/libboinc_opencl.so.7.20.2
+libdata/pkgconfig/libboinc.pc
+libdata/pkgconfig/libboinc_api.pc
+libdata/pkgconfig/libboinc_crypt.pc
+libdata/pkgconfig/libboinc_opencl.pc
 %%X11%%lib/libboinc_graphics2.a
 %%X11%%lib/libboinc_graphics2.so
 %%X11%%lib/libboinc_graphics2.so.7
