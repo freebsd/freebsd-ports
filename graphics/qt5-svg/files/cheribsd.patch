@@ -1,0 +1,30 @@
+diff --git src/svg/qsvghandler.cpp src/svg/qsvghandler.cpp
+index b3d9aaf..f00bf43 100644
+--- src/svg/qsvghandler.cpp
++++ src/svg/qsvghandler.cpp
+@@ -681,6 +681,12 @@ static qreal toDouble(const QChar *&str)
+ }
+ static qreal toDouble(const QString &str, bool *ok = NULL)
+ {
++    if (str.isEmpty()) {
++        if (ok) {
++            *ok = false;
++        }
++        return {};
++    }
+     const QChar *c = str.constData();
+     qreal res = toDouble(c);
+     if (ok) {
+@@ -691,6 +697,12 @@ static qreal toDouble(const QString &str, bool *ok = NULL)
+ 
+ static qreal toDouble(const QStringRef &str, bool *ok = NULL)
+ {
++    if (str.isEmpty()) {
++        if (ok) {
++            *ok = false;
++        }
++        return {};
++    }
+     const QChar *c = str.constData();
+     qreal res = toDouble(c);
+     if (ok) {
