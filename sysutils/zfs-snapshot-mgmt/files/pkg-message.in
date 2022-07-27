@@ -9,5 +9,11 @@ To actually turn on the automatic snapshots you have to do the following:
 
 See zfs-snapshot-mgmt(8) manpage for more details.
 EOM
+},
+{ type: remove
+  message: <<EOM
+Remember to remove zfs-snapshot-mgmt entry from cron configuration.
+Otherwise the system will be constantly trying to call the deinstalled script.
+EOM
 }
 ]
