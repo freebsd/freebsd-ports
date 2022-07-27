@@ -1,0 +1,2070 @@
+diff --git src/3rdparty/masm/stubs/ExecutableAllocator.h src/3rdparty/masm/stubs/ExecutableAllocator.h
+index 515285a7dc..8df6ef94e4 100644
+--- src/3rdparty/masm/stubs/ExecutableAllocator.h
++++ src/3rdparty/masm/stubs/ExecutableAllocator.h
+@@ -111,10 +111,10 @@ struct ExecutableAllocator {
+ 
+     static bool makeWritable(void* addr, size_t size)
+     {
+-        quintptr pageSize = WTF::pageSize();
++        size_t pageSize = WTF::pageSize();
+         quintptr iaddr = reinterpret_cast<quintptr>(addr);
+         quintptr roundAddr = iaddr & ~(pageSize - 1);
+-        size = size + (iaddr - roundAddr);
++        size = size + (size_t(iaddr) - size_t(roundAddr));
+         addr = reinterpret_cast<void*>(roundAddr);
+ 
+ #if ENABLE(ASSEMBLER_WX_EXCLUSIVE) && !defined(V4_BOOTSTRAP)
+@@ -132,6 +132,11 @@ struct ExecutableAllocator {
+          OSAllocator::setMemoryAttributes(addr, size, /*writable*/ true, /*executable*/ false);
+ #  else
+         int mode = PROT_READ | PROT_WRITE;
++        // On recent versions of FreeBSD, we have to pass PROT_MAX() to allow
++        // changing a writable mapping to an executable one later.
++#ifdef PROT_MAX
++        mode |= PROT_MAX(PROT_READ | PROT_WRITE | PROT_EXEC);
++#endif
+         if (mprotect(addr, size, mode) != 0) {
+             perror("mprotect failed in ExecutableAllocator::makeWritable");
+             return false;
+@@ -147,10 +152,10 @@ struct ExecutableAllocator {
+ 
+     static bool makeExecutable(void* addr, size_t size)
+     {
+-        quintptr pageSize = WTF::pageSize();
++        size_t pageSize = WTF::pageSize();
+         quintptr iaddr = reinterpret_cast<quintptr>(addr);
+         quintptr roundAddr = iaddr & ~(pageSize - 1);
+-        size = size + (iaddr - roundAddr);
++        size = size + (size_t(iaddr) - size_t(roundAddr));
+         addr = reinterpret_cast<void*>(roundAddr);
+ 
+ #if !defined(V4_BOOTSTRAP)
+@@ -169,6 +174,11 @@ struct ExecutableAllocator {
+         OSAllocator::setMemoryAttributes(addr, size, /*writable*/ false, /*executable*/ true);
+ #  else
+         int mode = PROT_READ | PROT_EXEC;
++        // On recent versions of FreeBSD, we have to pass PROT_MAX() to allow
++        // changing a writable mapping to an executable one later.
++#ifdef PROT_MAX
++        mode |= PROT_MAX(PROT_READ | PROT_WRITE | PROT_EXEC);
++#endif
+         if (mprotect(addr, size, mode) != 0) {
+             perror("mprotect failed in ExecutableAllocator::makeExecutable");
+             return false;
+diff --git src/3rdparty/masm/wtf/OSAllocatorPosix.cpp src/3rdparty/masm/wtf/OSAllocatorPosix.cpp
+index d59fdcd675..5673f062f7 100644
+--- src/3rdparty/masm/wtf/OSAllocatorPosix.cpp
++++ src/3rdparty/masm/wtf/OSAllocatorPosix.cpp
+@@ -148,6 +148,16 @@ void* OSAllocator::reserveAndCommit(size_t bytes, Usage usage, bool writable, bo
+     int fd = memfdForUsage(bytes, usage);
+     if (fd != -1)
+         flags &= ~MAP_ANON;
++#elif OS(FREEBSD)
++    // In order to allow changing pages between RW/RX, we need to specify PROT_MAX() on
++    // recent versions of FreeBSD.
++    int fd = -1;
++#ifdef PROT_MAX
++    if (usage == JSJITCodePages)
++        protection |= PROT_MAX(PROT_READ | PROT_WRITE | PROT_EXEC);
++#else
++    UNUSED_PARAM(usage);
++#endif
+ #else
+     UNUSED_PARAM(usage);
+     int fd = -1;
+diff --git src/3rdparty/masm/wtf/PageBlock.h src/3rdparty/masm/wtf/PageBlock.h
+index d85c39cb33..0cbe329149 100644
+--- src/3rdparty/masm/wtf/PageBlock.h
++++ src/3rdparty/masm/wtf/PageBlock.h
+@@ -35,7 +35,7 @@ inline namespace hidden {
+ WTF_EXPORT_PRIVATE size_t pageSize();
+ WTF_EXPORT_PRIVATE size_t pageMask();
+ }
+-inline bool isPageAligned(void* address) { return !(reinterpret_cast<intptr_t>(address) & (pageSize() - 1)); }
++inline bool isPageAligned(void* address) { return qIsAligned(address, pageSize()); }
+ inline bool isPageAligned(size_t size) { return !(size & (pageSize() - 1)); }
+ inline bool isPowerOfTwo(size_t size) { return !(size & (size - 1)); }
+ 
+diff --git src/3rdparty/masm/wtf/VMTags.h src/3rdparty/masm/wtf/VMTags.h
+index af5352e471..b2f3bacf75 100644
+--- src/3rdparty/masm/wtf/VMTags.h
++++ src/3rdparty/masm/wtf/VMTags.h
+@@ -62,7 +62,7 @@
+ #define VM_TAG_FOR_WEBCORE_PURGEABLE_MEMORY VM_MAKE_TAG(69)
+ #endif // defined(VM_MEMORY_WEBCORE_PURGEABLE_BUFFERS)
+ 
+-#elif OS(LINUX)
++#elif OS(LINUX) || OS(FREEBSD)
+ 
+ #define VM_TAG_FOR_TCMALLOC_MEMORY 0
+ #define VM_TAG_FOR_COLLECTOR_MEMORY 1
+diff --git src/3rdparty/masm/yarr/YarrInterpreter.cpp src/3rdparty/masm/yarr/YarrInterpreter.cpp
+index cdcd16af64..7d91e86616 100644
+--- src/3rdparty/masm/yarr/YarrInterpreter.cpp
++++ src/3rdparty/masm/yarr/YarrInterpreter.cpp
+@@ -515,7 +515,7 @@ public:
+                 if (checkCharacter(term.atom.patternCharacter, term.inputPosition + 1))
+                     return true;
+             }
+-            input.setPos(backTrack->begin);
++            input.setPos(static_cast<unsigned>(backTrack->begin));
+             break;
+         }
+ 
+@@ -544,7 +544,7 @@ public:
+                 if (checkCasedCharacter(term.atom.casedCharacter.lo, term.atom.casedCharacter.hi, term.inputPosition + 1))
+                     return true;
+             }
+-            input.uncheckInput(backTrack->matchAmount);
++            input.uncheckInput(static_cast<unsigned>(backTrack->matchAmount));
+             break;
+         }
+ 
+@@ -563,7 +563,7 @@ public:
+                 unsigned matchAmount = 0;
+                 for (matchAmount = 0; matchAmount < term.atom.quantityMaxCount; ++matchAmount) {
+                     if (!checkCharacterClass(term.atom.characterClass, term.invert(), term.inputPosition - matchAmount)) {
+-                        input.setPos(backTrack->begin);
++                        input.setPos(static_cast<unsigned>(backTrack->begin));
+                         return false;
+                     }
+                 }
+@@ -613,14 +613,14 @@ public:
+         switch (term.atom.quantityType) {
+         case QuantifierFixedCount:
+             if (unicode)
+-                input.setPos(backTrack->begin);
++                input.setPos(static_cast<unsigned>(backTrack->begin));
+             break;
+ 
+         case QuantifierGreedy:
+             if (backTrack->matchAmount) {
+                 if (unicode) {
+                     // Rematch one less match
+-                    input.setPos(backTrack->begin);
++                    input.setPos(static_cast<unsigned>(backTrack->begin));
+                     --backTrack->matchAmount;
+                     for (unsigned matchAmount = 0; (matchAmount < backTrack->matchAmount) && input.checkInput(1); ++matchAmount) {
+                         if (!checkCharacterClass(term.atom.characterClass, term.invert(), term.inputPosition + 1)) {
+@@ -642,7 +642,7 @@ public:
+                 if (checkCharacterClass(term.atom.characterClass, term.invert(), term.inputPosition + 1))
+                     return true;
+             }
+-            input.setPos(backTrack->begin);
++            input.setPos(static_cast<unsigned>(backTrack->begin));
+             break;
+         }
+ 
+@@ -676,7 +676,7 @@ public:
+             backTrack->begin = input.getPos();
+             for (unsigned matchAmount = 0; matchAmount < term.atom.quantityMaxCount; ++matchAmount) {
+                 if (!tryConsumeBackReference(matchBegin, matchEnd, term.inputPosition)) {
+-                    input.setPos(backTrack->begin);
++                    input.setPos(static_cast<unsigned>(backTrack->begin));
+                     return false;
+                 }
+             }
+@@ -720,7 +720,7 @@ public:
+         switch (term.atom.quantityType) {
+         case QuantifierFixedCount:
+             // for quantityMaxCount == 1, could rewind.
+-            input.setPos(backTrack->begin);
++            input.setPos(static_cast<unsigned>(backTrack->begin));
+             break;
+ 
+         case QuantifierGreedy:
+@@ -736,7 +736,7 @@ public:
+                 ++backTrack->matchAmount;
+                 return true;
+             }
+-            input.setPos(backTrack->begin);
++            input.setPos(static_cast<unsigned>(backTrack->begin));
+             break;
+         }
+ 
+@@ -956,7 +956,7 @@ public:
+ 
+         BackTrackInfoParentheticalAssertion* backTrack = reinterpret_cast<BackTrackInfoParentheticalAssertion*>(context->frame + term.frameLocation);
+ 
+-        input.setPos(backTrack->begin);
++        input.setPos(static_cast<unsigned>(backTrack->begin));
+ 
+         // We've reached the end of the parens; if they are inverted, this is failure.
+         if (term.invert()) {
+@@ -988,7 +988,7 @@ public:
+ 
+         BackTrackInfoParentheticalAssertion* backTrack = reinterpret_cast<BackTrackInfoParentheticalAssertion*>(context->frame + term.frameLocation);
+ 
+-        input.setPos(backTrack->begin);
++        input.setPos(static_cast<unsigned>(backTrack->begin));
+ 
+         context->term -= term.atom.parenthesesWidth;
+         return false;
+@@ -1506,7 +1506,7 @@ public:
+         case ByteTerm::TypeAlternativeEnd: {
+             // We should never backtrack back into an alternative of the main body of the regex.
+             BackTrackInfoAlternative* backTrack = reinterpret_cast<BackTrackInfoAlternative*>(context->frame + currentTerm().frameLocation);
+-            unsigned offset = backTrack->offset;
++            unsigned offset = static_cast<unsigned>(backTrack->offset);
+             context->term -= offset;
+             BACKTRACK();
+         }
+diff --git src/qml/common/qqmljsmemorypool_p.h src/qml/common/qqmljsmemorypool_p.h
+index 0cf7ea84e6..bbb8c9e3fe 100644
+--- src/qml/common/qqmljsmemorypool_p.h
++++ src/qml/common/qqmljsmemorypool_p.h
+@@ -86,7 +86,8 @@ public:
+ 
+     inline void *allocate(size_t size)
+     {
+-        size = (size + 7) & ~size_t(7);
++        constexpr size_t alignment = qMax(alignof(void *), (size_t)8);
++        size = qAlignUp(size, alignment);
+         if (Q_LIKELY(_ptr && (_ptr + size < _end))) {
+             void *addr = _ptr;
+             _ptr += size;
+diff --git src/qml/common/qv4compileddata_p.h src/qml/common/qv4compileddata_p.h
+index a5a1cf8969..5ffdb7dc17 100644
+--- src/qml/common/qv4compileddata_p.h
++++ src/qml/common/qv4compileddata_p.h
+@@ -75,7 +75,7 @@ QT_BEGIN_NAMESPACE
+ // Also change the comment behind the number to describe the latest change. This has the added
+ // benefit that if another patch changes the version too, it will result in a merge conflict, and
+ // not get removed silently.
+-#define QV4_DATA_STRUCTURE_VERSION 0x29// support additional required property features
++#define QV4_DATA_STRUCTURE_VERSION 0x2a // layout compatibility with CHERI QStringData
+ 
+ class QIODevice;
+ class QQmlTypeNameCache;
+@@ -104,6 +104,10 @@ struct Lookup;
+ struct RegExp;
+ struct Unit;
+ 
++// Needs to be the same on host and target, so we just use the CHERI-128 size
++constexpr size_t pointerAlign = 16;
++constexpr size_t vectorAlign = 16;
++
+ template <typename ItemType, typename Container, const ItemType *(Container::*IndexedGetter)(int index) const>
+ struct TableIterator
+ {
+@@ -191,7 +195,10 @@ struct JSClass
+     quint32_le nMembers;
+     // JSClassMember[nMembers]
+ 
+-    static int calculateSize(int nMembers) { return (sizeof(JSClass) + nMembers * sizeof(JSClassMember) + 7) & ~7; }
++    static int calculateSize(int nMembers)
++    {
++        return qAlignUp(sizeof(JSClass) + nMembers * sizeof(JSClassMember), pointerAlign);
++    }
+ };
+ static_assert(sizeof(JSClass) == 4, "JSClass structure needs to have the expected size to be binary compatible on disk when generated by host compiler and loaded by target");
+ 
+@@ -203,27 +210,43 @@ static_assert(sizeof(JSClass) == 4, "JSClass structure needs to have the expecte
+ // On 64-bit systems compilers enforce an 8-byte alignment and thus place it at offset 16, while
+ // on 32-bit systems offset 12 is sufficient. Therefore the two values don't overlap and contain
+ // the same value.
+-struct String
++// On CHERI systems the offset field is a uintptr_t (and 16 bytes in size), so we  ensure that
++// the string data only starts at offset 32 (and not offset 24 as would be sufficient for a
++// non-CHERI 64-bit architecture)
++struct alignas(16) String
+ {
+     qint32_le refcount; // -1
+     qint32_le size;
+     quint32_le allocAndCapacityReservedFlag; // 0
++#if defined(__CHERI_PURE_CAPABILITY__) && Q_BYTE_ORDER == Q_BIG_ENDIAN
++#error "Probably does not work on big endian systems"
++#endif
+     quint32_le offsetOn32Bit;
+     quint64_le offsetOn64Bit;
++    quint64_le padForCHERI;
++
+     // uint16 strdata[]
+ 
+     static int calculateSize(const QString &str) {
+-        return (sizeof(String) + (str.length() + 1) * sizeof(quint16) + 7) & ~0x7;
++        return qAlignUp(sizeof(String) + (str.length() + 1) * sizeof(quint16), pointerAlign);
+     }
+ };
+-static_assert(sizeof(String) == 24, "String structure needs to have the expected size to be binary compatible on disk when generated by host compiler and loaded by target");
+-
+ // Ensure compatibility with QString
+ static_assert(offsetof(QArrayData, ref) == offsetof(String, refcount), "refcount must be at the same location");
+ static_assert(offsetof(QArrayData, size) == offsetof(String, size), "size must be at the same location");
++static_assert(sizeof(String) == 32,
++              "String structure needs to have the expected size to be binary compatible on disk "
++              "when generated by host compiler and loaded by target");
+ static_assert(offsetof(String, offsetOn64Bit) == 16, "offset must be at 8-byte aligned location");
+ static_assert(offsetof(String, offsetOn32Bit) == 12, "offset must be at 4-byte aligned location");
+-#if QT_POINTER_SIZE == 8
++#ifdef __CHERI_PURE_CAPABILITY__
++static_assert(offsetof(QStringData, _internal_cheri_offset) == offsetof(String, offsetOn64Bit),
++              "offset must be at the same location");
++static_assert(sizeof(String) == sizeof(QStringData),
++              "String structure needs to have the expected size to be binary compatible on disk "
++              "when generated by host compiler and loaded by target");
++static_assert(alignof(String) == alignof(QStringData), "alignment must match");
++#elif QT_POINTER_SIZE == 8
+ static_assert(offsetof(QArrayData, offset) == offsetof(String, offsetOn64Bit), "offset must be at the same location");
+ #else
+ static_assert(offsetof(QArrayData, offset) == offsetof(String, offsetOn32Bit), "offset must be at the same location");
+@@ -251,9 +274,7 @@ struct Block
+         return int(size);
+     }
+ 
+-    static size_t align(size_t a) {
+-        return (a + 7) & ~size_t(7);
+-    }
++    static size_t align(size_t a) { return qAlignUp(a, pointerAlign); }
+ };
+ static_assert(sizeof(Block) == 12, "Block structure needs to have the expected size to be binary compatible on disk when generated by host compiler and loaded by target");
+ 
+@@ -343,9 +364,7 @@ struct Function
+         return int(size);
+     }
+ 
+-    static size_t align(size_t a) {
+-        return (a + 7) & ~size_t(7);
+-    }
++    static size_t align(size_t a) { return qAlignUp(a, pointerAlign); }
+ };
+ static_assert(sizeof(Function) == 56, "Function structure needs to have the expected size to be binary compatible on disk when generated by host compiler and loaded by target");
+ 
+@@ -380,9 +399,7 @@ struct Class
+         return int(size);
+     }
+ 
+-    static size_t align(size_t a) {
+-        return (a + 7) & ~size_t(7);
+-    }
++    static size_t align(size_t a) { return qAlignUp(a, pointerAlign); }
+ };
+ static_assert(sizeof(Class) == 24, "Class structure needs to have the expected size to be binary compatible on disk when generated by host compiler and loaded by target");
+ 
+@@ -397,9 +414,7 @@ struct TemplateObject
+         return int(s);
+     }
+ 
+-    static size_t align(size_t a) {
+-        return (a + 7) & ~size_t(7);
+-    }
++    static size_t align(size_t a) { return qAlignUp(a, pointerAlign); }
+ 
+     const quint32_le *stringTable() const {
+         return reinterpret_cast<const quint32_le *>(reinterpret_cast<const char *>(this + 1));
+@@ -626,9 +641,7 @@ struct Enum
+     }
+ 
+     static int calculateSize(int nEnumValues) {
+-        return (sizeof(Enum)
+-                + nEnumValues * sizeof(EnumValue)
+-                + 7) & ~0x7;
++        return qAlignUp(sizeof(Enum) + nEnumValues * sizeof(EnumValue), pointerAlign);
+     }
+ 
+     // --- QQmlPropertyCacheCreatorInterface
+@@ -651,9 +664,7 @@ struct Signal
+     }
+ 
+     static int calculateSize(int nParameters) {
+-        return (sizeof(Signal)
+-                + nParameters * sizeof(Parameter)
+-                + 7) & ~0x7;
++        return qAlignUp(sizeof(Signal) + nParameters * sizeof(Parameter), pointerAlign);
+     }
+ 
+     // --- QQmlPropertyCacheCceatorInterface
+@@ -782,18 +793,14 @@ struct Object
+ 
+     static int calculateSizeExcludingSignalsAndEnums(int nFunctions, int nProperties, int nAliases, int nEnums, int nSignals, int nBindings, int nNamedObjectsInComponent, int nInlineComponents, int nRequiredPropertyExtraData)
+     {
+-        return ( sizeof(Object)
+-                 + nFunctions * sizeof(quint32)
+-                 + nProperties * sizeof(Property)
+-                 + nAliases * sizeof(Alias)
+-                 + nEnums * sizeof(quint32)
+-                 + nSignals * sizeof(quint32)
+-                 + nBindings * sizeof(Binding)
+-                 + nNamedObjectsInComponent * sizeof(int)
+-                 + nInlineComponents * sizeof(InlineComponent)
+-                 + nRequiredPropertyExtraData * sizeof(RequiredPropertyExtraData)
+-                 + 0x7
+-               ) & ~0x7;
++        return qAlignUp(sizeof(Object) + nFunctions * sizeof(quint32)
++                                + nProperties * sizeof(Property) + nAliases * sizeof(Alias)
++                                + nEnums * sizeof(quint32) + nSignals * sizeof(quint32)
++                                + nBindings * sizeof(Binding)
++                                + nNamedObjectsInComponent * sizeof(int)
++                                + nInlineComponents * sizeof(InlineComponent)
++                                + nRequiredPropertyExtraData * sizeof(RequiredPropertyExtraData),
++                        pointerAlign);
+     }
+ 
+     const quint32_le *functionOffsetTable() const
+@@ -936,7 +943,8 @@ static_assert(sizeof(QmlUnit) == 16, "QmlUnit structure needs to have the expect
+ enum { QmlCompileHashSpace = 48 };
+ static const char magic_str[] = "qv4cdata";
+ 
+-struct Unit
++// Align the struct to 16 bytes to ensure that the trailing data can be loaded as a CHERI capability
++struct alignas(16) Unit
+ {
+     // DO NOT CHANGE THESE FIELDS EVER
+     char magic[8];
+@@ -1016,10 +1024,14 @@ struct Unit
+         const quint32_le *offsetTable = reinterpret_cast<const quint32_le*>((reinterpret_cast<const char *>(this)) + offsetToStringTable);
+         const quint32_le offset = offsetTable[idx];
+         const String *str = reinterpret_cast<const String*>(reinterpret_cast<const char *>(this) + offset);
++        Q_ASSERT(qIsAligned(str, alignof(QStringData)));
++        Q_ASSERT(qIsAligned(this, alignof(QStringData)));
++        Q_ASSERT(qIsAligned((uint)offset, alignof(QStringData)));
+         if (str->size == 0)
+             return QString();
+ #if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
+         if (flags & StaticData) {
++            Q_ASSERT(str->refcount == -1);
+             const QStringDataPtr holder = { const_cast<QStringData *>(reinterpret_cast<const QStringData*>(str)) };
+             return QString(holder);
+         }
+@@ -1093,7 +1105,9 @@ struct Unit
+     const quint32_le *moduleRequestTable() const { return reinterpret_cast<const quint32_le*>((reinterpret_cast<const char *>(this)) + offsetToModuleRequestTable); }
+ };
+ 
+-static_assert(sizeof(Unit) == 248, "Unit structure needs to have the expected size to be binary compatible on disk when generated by host compiler and loaded by target");
++static_assert(sizeof(Unit) == 256,
++              "Unit structure needs to have the expected size to be binary compatible on disk when "
++              "generated by host compiler and loaded by target");
+ 
+ struct TypeReference
+ {
+diff --git src/qml/common/qv4staticvalue_p.h src/qml/common/qv4staticvalue_p.h
+index 0716f7ea20..4853e509d6 100644
+--- src/qml/common/qv4staticvalue_p.h
++++ src/qml/common/qv4staticvalue_p.h
+@@ -67,7 +67,11 @@ namespace QV4 {
+ // the type has to be a primitive type (no struct or union), so that the compiler
+ // will return it in a register on all platforms.
+ // It will be returned in rax on x64, [eax,edx] on x86 and [r0,r1] on arm
++#if QT_POINTER_SIZE == 4
+ typedef quint64 ReturnedValue;
++#else
++typedef quintptr ReturnedValue;
++#endif
+ 
+ struct Double {
+     quint64 d;
+@@ -119,7 +123,15 @@ struct Double {
+ struct StaticValue
+ {
+     StaticValue() = default;
+-    constexpr StaticValue(quint64 val) : _val(val) {}
++    constexpr StaticValue(ReturnedValue val) : _val(val)
++    {
++#ifdef __CHERI_PURE_CAPABILITY__
++        if (!__builtin_is_constant_evaluated()) {
++            if (isManaged())
++                Q_ASSERT(__builtin_cheri_tag_get(_val));
++        }
++#endif
++    }
+ 
+     StaticValue &operator=(ReturnedValue v)
+     {
+@@ -189,11 +201,11 @@ struct StaticValue
+           63) are zero. No need to shift.
+     */
+ 
+-    quint64 _val;
++    ReturnedValue _val;
+ 
+-    QV4_NEARLY_ALWAYS_INLINE Q_DECL_RELAXED_CONSTEXPR quint64 &rawValueRef() { return _val; }
+-    QV4_NEARLY_ALWAYS_INLINE Q_DECL_RELAXED_CONSTEXPR quint64 rawValue() const { return _val; }
+-    QV4_NEARLY_ALWAYS_INLINE Q_DECL_RELAXED_CONSTEXPR void setRawValue(quint64 raw) { _val = raw; }
++    QV4_NEARLY_ALWAYS_INLINE Q_DECL_RELAXED_CONSTEXPR ReturnedValue &rawValueRef() { return _val; }
++    QV4_NEARLY_ALWAYS_INLINE Q_DECL_RELAXED_CONSTEXPR ReturnedValue rawValue() const { return _val; }
++    QV4_NEARLY_ALWAYS_INLINE Q_DECL_RELAXED_CONSTEXPR void setRawValue(ReturnedValue raw) { _val = raw; }
+ 
+ #if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
+     static inline int valueOffset() { return 0; }
+@@ -204,8 +216,8 @@ struct StaticValue
+ #endif
+     static inline constexpr quint64 tagValue(quint32 tag, quint32 value) { return quint64(tag) << 32 | value; }
+     QV4_NEARLY_ALWAYS_INLINE Q_DECL_RELAXED_CONSTEXPR void setTagValue(quint32 tag, quint32 value) { _val = quint64(tag) << 32 | value; }
+-    QV4_NEARLY_ALWAYS_INLINE constexpr quint32 value() const { return _val & quint64(~quint32(0)); }
+-    QV4_NEARLY_ALWAYS_INLINE constexpr quint32 tag() const { return _val >> 32; }
++    QV4_NEARLY_ALWAYS_INLINE constexpr quint32 value() const { return quint64(_val) & quint64(~quint32(0)); }
++    QV4_NEARLY_ALWAYS_INLINE constexpr quint32 tag() const { return quint64(_val) >> 32; }
+     QV4_NEARLY_ALWAYS_INLINE Q_DECL_RELAXED_CONSTEXPR void setTag(quint32 tag) { setTagValue(tag, value()); }
+ 
+     QV4_NEARLY_ALWAYS_INLINE constexpr int int_32() const
+@@ -305,7 +317,7 @@ struct StaticValue
+         NaN_Mask = 0x7ff80000,
+     };
+ 
+-    inline quint64 quickType() const { return (_val >> QuickType_Shift); }
++    inline quint64 quickType() const { return (quint64(_val) >> QuickType_Shift); }
+ 
+     // used internally in property
+     inline bool isEmpty() const { return tag() == quint32(ValueTypeInternal::Empty); }
+@@ -316,13 +328,13 @@ struct StaticValue
+     inline bool isNumber() const { return quickType() >= QT_Int; }
+ 
+     inline bool isUndefined() const { return _val == 0; }
+-    inline bool isDouble() const { return (_val >> IsDouble_Shift); }
++    inline bool isDouble() const { return (quint64(_val) >> IsDouble_Shift); }
+     inline bool isManaged() const
+     {
+ #if QT_POINTER_SIZE == 4
+         return value() && tag() == Managed_Type_Internal;
+ #else
+-        return _val && ((_val >> IsManagedOrUndefined_Shift) == 0);
++        return _val && ((quint64(_val) >> IsManagedOrUndefined_Shift) == 0);
+ #endif
+     }
+     inline bool isManagedOrUndefined() const
+@@ -330,17 +342,17 @@ struct StaticValue
+ #if QT_POINTER_SIZE == 4
+         return tag() == Managed_Type_Internal;
+ #else
+-        return ((_val >> IsManagedOrUndefined_Shift) == 0);
++        return ((quint64(_val) >> IsManagedOrUndefined_Shift) == 0);
+ #endif
+     }
+ 
+     inline bool isIntOrBool() const {
+-        return (_val >> IsIntegerOrBool_Shift) == 3;
++        return (quint64(_val) >> IsIntegerOrBool_Shift) == 3;
+     }
+ 
+     inline bool integerCompatible() const {
+         Q_ASSERT(!isEmpty());
+-        return (_val >> IsIntegerConvertible_Shift) == 1;
++        return (quint64(_val) >> IsIntegerConvertible_Shift) == 1;
+     }
+ 
+     static inline bool integerCompatible(StaticValue a, StaticValue b) {
+@@ -360,7 +372,7 @@ struct StaticValue
+ #if QT_POINTER_SIZE == 4
+         return isInteger() && int_32() >= 0;
+ #else
+-        return (_val >> IsPositiveIntShift) == (quint64(ValueTypeInternal::Integer) << 1);
++        return (quint64(_val) >> IsPositiveIntShift) == (quint64(ValueTypeInternal::Integer) << 1);
+ #endif
+     }
+ 
+@@ -547,7 +559,7 @@ struct Encode {
+     constexpr operator ReturnedValue() const {
+         return val;
+     }
+-    quint64 val;
++    ReturnedValue val;
+ private:
+     explicit Encode(void *);
+ };
+diff --git src/qml/common/qv4stringtoarrayindex_p.h src/qml/common/qv4stringtoarrayindex_p.h
+index 61bd988d1e..d4b064f865 100644
+--- src/qml/common/qv4stringtoarrayindex_p.h
++++ src/qml/common/qv4stringtoarrayindex_p.h
+@@ -65,6 +65,8 @@ inline uint charToUInt(const char *ch) { return static_cast<unsigned char>(*ch);
+ template <typename T>
+ uint stringToArrayIndex(const T *ch, const T *end)
+ {
++    if (ch == end)
++        return std::numeric_limits<uint>::max();
+     uint i = charToUInt(ch) - '0';
+     if (i > 9)
+         return std::numeric_limits<uint>::max();
+diff --git src/qml/compiler/qv4compiler.cpp src/qml/compiler/qv4compiler.cpp
+index 14cf0a0c8f..3bf34f4ee3 100644
+--- src/qml/compiler/qv4compiler.cpp
++++ src/qml/compiler/qv4compiler.cpp
+@@ -48,14 +48,6 @@
+ #include <private/qqmlirbuilder_p.h>
+ #include <QCryptographicHash>
+ 
+-// Efficient implementation that takes advantage of powers of two.
+-static inline size_t roundUpToMultipleOf(size_t divisor, size_t x)
+-{
+-    Q_ASSERT(divisor && !(divisor & (divisor - 1)));
+-    const size_t remainderMask = divisor - 1;
+-    return (x + remainderMask) & ~remainderMask;
+-}
+-
+ QV4::Compiler::StringTableGenerator::StringTableGenerator()
+ {
+     clear();
+@@ -100,19 +92,28 @@ void QV4::Compiler::StringTableGenerator::serialize(CompiledData::Unit *unit)
+ {
+     char *dataStart = reinterpret_cast<char *>(unit);
+     quint32_le *stringTable = reinterpret_cast<quint32_le *>(dataStart + unit->offsetToStringTable);
+-    char *stringData = reinterpret_cast<char *>(stringTable) + roundUpToMultipleOf(8, unit->stringTableSize * sizeof(uint));
++    constexpr size_t stringAlignment = CompiledData::pointerAlign;
++    static_assert(stringAlignment >= alignof(QStringData), "must be loadable at run time");
++    Q_ASSERT(qIsAligned(dataStart, stringAlignment));
++    Q_ASSERT(qIsAligned(stringTable, stringAlignment));
++    Q_ASSERT(qIsAligned((uint)unit->offsetToStringTable, stringAlignment));
++    char *stringData = reinterpret_cast<char *>(stringTable)
++            + qAlignUp(unit->stringTableSize * sizeof(uint), CompiledData::pointerAlign);
+     for (int i = backingUnitTableSize ; i < strings.size(); ++i) {
+         const int index = i - backingUnitTableSize;
+         stringTable[index] = stringData - dataStart;
++        Q_ASSERT(qIsAligned((quint32)stringTable[index], stringAlignment));
+         const QString &qstr = strings.at(i);
+ 
+         QV4::CompiledData::String *s = reinterpret_cast<QV4::CompiledData::String *>(stringData);
+-        Q_ASSERT(reinterpret_cast<uintptr_t>(s) % alignof(QV4::CompiledData::String) == 0);
++
++        Q_ASSERT(qIsAligned(s, stringAlignment));
+         s->refcount = -1;
+         s->size = qstr.length();
+         s->allocAndCapacityReservedFlag = 0;
+         s->offsetOn32Bit = sizeof(QV4::CompiledData::String);
+         s->offsetOn64Bit = sizeof(QV4::CompiledData::String);
++        s->padForCHERI = 0;
+ 
+         ushort *uc = reinterpret_cast<ushort *>(reinterpret_cast<char *>(s) + sizeof(*s));
+ #if Q_BYTE_ORDER == Q_LITTLE_ENDIAN
+@@ -428,7 +429,8 @@ void QV4::Compiler::JSUnitGenerator::writeFunction(char *f, QV4::Compiler::Conte
+ {
+     QV4::CompiledData::Function *function = (QV4::CompiledData::Function *)f;
+ 
+-    quint32 currentOffset = static_cast<quint32>(roundUpToMultipleOf(8, sizeof(*function)));
++    quint32 currentOffset =
++            static_cast<quint32>(qAlignUp(sizeof(*function), CompiledData::pointerAlign));
+ 
+     function->nameIndex = getStringId(irFunction->name);
+     function->flags = 0;
+@@ -583,7 +585,8 @@ void QV4::Compiler::JSUnitGenerator::writeBlock(char *b, QV4::Compiler::Context
+ {
+     QV4::CompiledData::Block *block = reinterpret_cast<QV4::CompiledData::Block *>(b);
+ 
+-    quint32 currentOffset = static_cast<quint32>(roundUpToMultipleOf(8, sizeof(*block)));
++    quint32 currentOffset =
++            static_cast<quint32>(qAlignUp(sizeof(*block), CompiledData::pointerAlign));
+ 
+     block->sizeOfLocalTemporalDeadZone = irBlock->sizeOfLocalTemporalDeadZone;
+     block->nLocals = irBlock->locals.size();
+@@ -618,6 +621,7 @@ QV4::CompiledData::Unit QV4::Compiler::JSUnitGenerator::generateHeader(QV4::Comp
+     memset(unit.dependencyMD5Checksum, 0, sizeof(unit.dependencyMD5Checksum));
+ 
+     quint32 nextOffset = sizeof(CompiledData::Unit);
++    static_assert((sizeof(CompiledData::Unit) % alignof(void *)) == 0, "");
+ 
+     unit.functionTableSize = module->functions.size();
+     unit.offsetToFunctionTable = nextOffset;
+@@ -646,7 +650,7 @@ QV4::CompiledData::Unit QV4::Compiler::JSUnitGenerator::generateHeader(QV4::Comp
+     unit.constantTableSize = constants.size();
+ 
+     // Ensure we load constants from well-aligned addresses into for example SSE registers.
+-    nextOffset = static_cast<quint32>(roundUpToMultipleOf(16, nextOffset));
++    nextOffset = static_cast<quint32>(qAlignUp(nextOffset, CompiledData::vectorAlign));
+     unit.offsetToConstantTable = nextOffset;
+     nextOffset += unit.constantTableSize * sizeof(ReturnedValue);
+ 
+@@ -657,19 +661,19 @@ QV4::CompiledData::Unit QV4::Compiler::JSUnitGenerator::generateHeader(QV4::Comp
+     *jsClassDataOffset = nextOffset;
+     nextOffset += jsClassData.size();
+ 
+-    nextOffset = static_cast<quint32>(roundUpToMultipleOf(8, nextOffset));
++    nextOffset = static_cast<quint32>(qAlignUp(nextOffset, CompiledData::pointerAlign));
+ 
+     unit.translationTableSize = translations.count();
+     unit.offsetToTranslationTable = nextOffset;
+     nextOffset += unit.translationTableSize * sizeof(CompiledData::TranslationData);
+ 
+-    nextOffset = static_cast<quint32>(roundUpToMultipleOf(8, nextOffset));
++    nextOffset = static_cast<quint32>(qAlignUp(nextOffset, CompiledData::pointerAlign));
+ 
+     const auto reserveExportTable = [&nextOffset](int count, quint32_le *tableSizePtr, quint32_le *offsetPtr) {
+         *tableSizePtr = count;
+         *offsetPtr = nextOffset;
+         nextOffset += count * sizeof(CompiledData::ExportEntry);
+-        nextOffset = static_cast<quint32>(roundUpToMultipleOf(8, nextOffset));
++        nextOffset = static_cast<quint32>(qAlignUp(nextOffset, CompiledData::pointerAlign));
+     };
+ 
+     reserveExportTable(module->localExportEntries.count(), &unit.localExportEntryTableSize, &unit.offsetToLocalExportEntryTable);
+@@ -679,12 +683,12 @@ QV4::CompiledData::Unit QV4::Compiler::JSUnitGenerator::generateHeader(QV4::Comp
+     unit.importEntryTableSize = module->importEntries.count();
+     unit.offsetToImportEntryTable = nextOffset;
+     nextOffset += unit.importEntryTableSize * sizeof(CompiledData::ImportEntry);
+-    nextOffset = static_cast<quint32>(roundUpToMultipleOf(8, nextOffset));
++    nextOffset = static_cast<quint32>(qAlignUp(nextOffset, CompiledData::pointerAlign));
+ 
+     unit.moduleRequestTableSize = module->moduleRequests.count();
+     unit.offsetToModuleRequestTable = nextOffset;
+     nextOffset += unit.moduleRequestTableSize * sizeof(uint);
+-    nextOffset = static_cast<quint32>(roundUpToMultipleOf(8, nextOffset));
++    nextOffset = static_cast<quint32>(qAlignUp(nextOffset, CompiledData::pointerAlign));
+ 
+     quint32 functionSize = 0;
+     for (int i = 0; i < module->functions.size(); ++i) {
+@@ -724,7 +728,7 @@ QV4::CompiledData::Unit QV4::Compiler::JSUnitGenerator::generateHeader(QV4::Comp
+ 
+     if (option == GenerateWithStringTable) {
+         unit.stringTableSize = stringTable.stringCount();
+-        nextOffset = static_cast<quint32>(roundUpToMultipleOf(8, nextOffset));
++        nextOffset = static_cast<quint32>(qAlignUp(nextOffset, CompiledData::pointerAlign));
+         unit.offsetToStringTable = nextOffset;
+         nextOffset += stringTable.sizeOfTableAndData();
+     } else {
+diff --git src/qml/compiler/qv4compiler_p.h src/qml/compiler/qv4compiler_p.h
+index 4f3c718175..09ab943f1d 100644
+--- src/qml/compiler/qv4compiler_p.h
++++ src/qml/compiler/qv4compiler_p.h
+@@ -86,7 +86,10 @@ struct Q_QMLCOMPILER_PRIVATE_EXPORT StringTableGenerator {
+     QString stringForIndex(int index) const { return strings.at(index); }
+     uint stringCount() const { return strings.size() - backingUnitTableSize; }
+ 
+-    uint sizeOfTableAndData() const { return stringDataSize + ((stringCount() * sizeof(uint) + 7) & ~7); }
++    uint sizeOfTableAndData() const
++    {
++        return stringDataSize + qAlignUp(stringCount() * sizeof(uint), CompiledData::pointerAlign);
++    }
+ 
+     void freeze() { frozen = true; }
+ 
+diff --git src/qml/jsapi/qjsvalue.cpp src/qml/jsapi/qjsvalue.cpp
+index c2bf5c411d..e14a19ee92 100644
+--- src/qml/jsapi/qjsvalue.cpp
++++ src/qml/jsapi/qjsvalue.cpp
+@@ -199,7 +199,11 @@ QJSValue::QJSValue(bool value)
+ /*!
+   \internal
+ */
++#if QT_POINTER_SIZE < 4
+ QJSValue::QJSValue(ExecutionEngine *e, quint64 val)
++#else
++QJSValue::QJSValue(ExecutionEngine *e, quintptr val)
++#endif
+ {
+     QJSValuePrivate::setValue(this, e, val);
+ }
+diff --git src/qml/jsapi/qjsvalue.h src/qml/jsapi/qjsvalue.h
+index 80641ff235..f9e5ed6733 100644
+--- src/qml/jsapi/qjsvalue.h
++++ src/qml/jsapi/qjsvalue.h
+@@ -152,7 +152,11 @@ public:
+     QT_DEPRECATED QJSEngine *engine() const;
+ #endif
+ 
++#if QT_POINTER_SIZE < 4
+     QJSValue(QV4::ExecutionEngine *e, quint64 val);
++#else
++    QJSValue(QV4::ExecutionEngine *e, quintptr val);
++#endif
+ private:
+     friend class QJSValuePrivate;
+     // force compile error, prevent QJSValue(bool) to be called
+diff --git src/qml/jsapi/qjsvalue_p.h src/qml/jsapi/qjsvalue_p.h
+index 2faffffbae..bf09ba5dc7 100644
+--- src/qml/jsapi/qjsvalue_p.h
++++ src/qml/jsapi/qjsvalue_p.h
+@@ -69,14 +69,14 @@ class Q_AUTOTEST_EXPORT QJSValuePrivate
+ public:
+     static inline QV4::Value *getValue(const QJSValue *jsval)
+     {
+-        if (jsval->d & 3)
++        if (qptraddr(jsval->d) & 3)
+             return nullptr;
+         return reinterpret_cast<QV4::Value *>(jsval->d);
+     }
+ 
+     static inline QVariant *getVariant(const QJSValue *jsval)
+     {
+-        if (jsval->d & 1)
++        if (qptraddr(jsval->d) & 1)
+             return reinterpret_cast<QVariant *>(jsval->d & ~3);
+         return nullptr;
+     }
+diff --git src/qml/jsruntime/qv4context_p.h src/qml/jsruntime/qv4context_p.h
+index 75fa2d08e6..3a176b3998 100644
+--- src/qml/jsruntime/qv4context_p.h
++++ src/qml/jsruntime/qv4context_p.h
+@@ -90,6 +90,8 @@ DECLARE_HEAP_OBJECT(ExecutionContext, Base) {
+     quint32 nArgs : 24;
+ #if QT_POINTER_SIZE == 8
+     quint8 padding_[4];
++#elif QT_POINTER_SIZE == 16
++    quint8 padding_[12];
+ #endif
+ };
+ Q_STATIC_ASSERT(std::is_trivial< ExecutionContext >::value);
+diff --git src/qml/jsruntime/qv4enginebase_p.h src/qml/jsruntime/qv4enginebase_p.h
+index 5e62c5bd50..29296c215c 100644
+--- src/qml/jsruntime/qv4enginebase_p.h
++++ src/qml/jsruntime/qv4enginebase_p.h
+@@ -64,8 +64,8 @@ struct CppStackFrame;
+ #if defined(Q_CC_MSVC) || defined(Q_CC_GNU)
+ #pragma pack(push, 1)
+ #endif
+-struct Q_QML_EXPORT EngineBase {
+-
++struct Q_QML_EXPORT alignas(void *) EngineBase
++{
+     CppStackFrame *currentStackFrame = nullptr;
+ 
+     Value *jsStackTop = nullptr;
+@@ -84,10 +84,19 @@ struct Q_QML_EXPORT EngineBase {
+ #endif
+ 
+     quint8 isExecutingInRegExpJIT = false;
++#if QT_POINTER_SIZE == 16
++    quint8 padding[11];
++#else
+     quint8 padding[3];
++#endif
+     MemoryManager *memoryManager = nullptr;
+ 
+     qint32 callDepth = 0;
++#if QT_POINTER_SIZE == 8
++    quint32 padding2;
++#elif QT_POINTER_SIZE == 16
++    quint8 padding2[12];
++#endif
+     Value *jsStackLimit = nullptr;
+     Value *jsStackBase = nullptr;
+ 
+@@ -144,7 +153,10 @@ Q_STATIC_ASSERT(std::is_standard_layout<EngineBase>::value);
+ Q_STATIC_ASSERT(offsetof(EngineBase, currentStackFrame) == 0);
+ Q_STATIC_ASSERT(offsetof(EngineBase, jsStackTop) == offsetof(EngineBase, currentStackFrame) + QT_POINTER_SIZE);
+ Q_STATIC_ASSERT(offsetof(EngineBase, hasException) == offsetof(EngineBase, jsStackTop) + QT_POINTER_SIZE);
+-Q_STATIC_ASSERT(offsetof(EngineBase, memoryManager) == offsetof(EngineBase, hasException) + 8);
++Q_STATIC_ASSERT(offsetof(EngineBase, memoryManager) == offsetof(EngineBase, hasException) + QT_POINTER_SIZE);
++Q_STATIC_ASSERT(offsetof(EngineBase, jsStackLimit) % QT_POINTER_SIZE == 0);
++Q_STATIC_ASSERT(offsetof(EngineBase, exceptionValue) % QT_POINTER_SIZE == 0);
++Q_STATIC_ASSERT(offsetof(EngineBase, classes) % QT_POINTER_SIZE == 0);
+ Q_STATIC_ASSERT(offsetof(EngineBase, isInterrupted) + sizeof(EngineBase::isInterrupted) <= offsetof(EngineBase, hasException) + 4);
+ 
+ }
+diff --git src/qml/jsruntime/qv4identifier.cpp src/qml/jsruntime/qv4identifier.cpp
+index c3d7165f71..6c68b56c6f 100644
+--- src/qml/jsruntime/qv4identifier.cpp
++++ src/qml/jsruntime/qv4identifier.cpp
+@@ -107,7 +107,7 @@ IdentifierHashEntry *IdentifierHash::addEntry(PropertyKey identifier)
+             const IdentifierHashEntry &e = d->entries[i];
+             if (!e.identifier.isValid())
+                 continue;
+-            uint idx = e.identifier.id() % newAlloc;
++            uint idx = uint(e.identifier.id()) % newAlloc;
+             while (newEntries[idx].identifier.isValid()) {
+                 ++idx;
+                 idx %= newAlloc;
+@@ -119,7 +119,7 @@ IdentifierHashEntry *IdentifierHash::addEntry(PropertyKey identifier)
+         d->alloc = newAlloc;
+     }
+ 
+-    uint idx = identifier.id() % d->alloc;
++    uint idx = uint(identifier.id()) % d->alloc;
+     while (d->entries[idx].identifier.isValid()) {
+         Q_ASSERT(d->entries[idx].identifier != identifier);
+         ++idx;
+@@ -136,7 +136,7 @@ const IdentifierHashEntry *IdentifierHash::lookup(PropertyKey identifier) const
+         return nullptr;
+     Q_ASSERT(d->entries);
+ 
+-    uint idx = identifier.id() % d->alloc;
++    uint idx = uint(identifier.id()) % d->alloc;
+     while (1) {
+         if (!d->entries[idx].identifier.isValid())
+             return nullptr;
+diff --git src/qml/jsruntime/qv4identifiertable.cpp src/qml/jsruntime/qv4identifiertable.cpp
+index 21b47c3909..742a897611 100644
+--- src/qml/jsruntime/qv4identifiertable.cpp
++++ src/qml/jsruntime/qv4identifiertable.cpp
+@@ -100,7 +100,7 @@ void IdentifierTable::addEntry(Heap::StringOrSymbol *str)
+             Heap::StringOrSymbol *e = entriesById[i];
+             if (!e)
+                 continue;
+-            uint idx = e->identifier.id() % newAlloc;
++            uint idx = uint(e->identifier.id()) % newAlloc;
+             while (newEntries[idx]) {
+                 ++idx;
+                 idx %= newAlloc;
+@@ -120,7 +120,7 @@ void IdentifierTable::addEntry(Heap::StringOrSymbol *str)
+     }
+     entriesByHash[idx] = str;
+ 
+-    idx = str->identifier.id() % alloc;
++    idx = quint64(str->identifier.id()) % alloc;
+     while (entriesById[idx]) {
+         ++idx;
+         idx %= alloc;
+@@ -211,7 +211,7 @@ Heap::StringOrSymbol *IdentifierTable::resolveId(PropertyKey i) const
+     if (!i.isValid())
+         return nullptr;
+ 
+-    uint idx = i.id() % alloc;
++    uint idx = uint(i.id()) % alloc;
+     while (1) {
+         Heap::StringOrSymbol *e = entriesById[idx];
+         if (!e || e->identifier == i)
+@@ -264,7 +264,7 @@ void IdentifierTable::sweep()
+         }
+         newTable[idx] = e;
+ 
+-        idx = e->identifier.id() % alloc;
++        idx = uint(e->identifier.id()) % alloc;
+         while (entriesById[idx]) {
+             ++idx;
+             if (idx == alloc)
+diff --git src/qml/jsruntime/qv4internalclass.cpp src/qml/jsruntime/qv4internalclass.cpp
+index 70849775cb..f85632e2e5 100644
+--- src/qml/jsruntime/qv4internalclass.cpp
++++ src/qml/jsruntime/qv4internalclass.cpp
+@@ -69,7 +69,7 @@ void PropertyHash::addEntry(const PropertyHash::Entry &entry, int classSize)
+     if (classSize < d->size || grow)
+         detach(grow, classSize);
+ 
+-    uint idx = entry.identifier.id() % d->alloc;
++    uint idx = uint(entry.identifier.id()) % d->alloc;
+     while (d->entries[idx].identifier.isValid()) {
+         ++idx;
+         idx %= d->alloc;
+@@ -90,7 +90,7 @@ int PropertyHash::removeIdentifier(PropertyKey identifier, int classSize)
+             val = e.index;
+             continue;
+         }
+-        uint idx = e.identifier.id() % dd->alloc;
++        uint idx = uint(e.identifier.id()) % dd->alloc;
+         while (dd->entries[idx].identifier.isValid()) {
+             ++idx;
+             idx %= dd->alloc;
+@@ -116,7 +116,7 @@ void PropertyHash::detach(bool grow, int classSize)
+         const Entry &e = d->entries[i];
+         if (!e.identifier.isValid() || e.index >= static_cast<unsigned>(classSize))
+             continue;
+-        uint idx = e.identifier.id() % dd->alloc;
++        uint idx = uint(e.identifier.id()) % dd->alloc;
+         while (dd->entries[idx].identifier.isValid()) {
+             ++idx;
+             idx %= dd->alloc;
+diff --git src/qml/jsruntime/qv4internalclass_p.h src/qml/jsruntime/qv4internalclass_p.h
+index 403702ae55..e46edab4e7 100644
+--- src/qml/jsruntime/qv4internalclass_p.h
++++ src/qml/jsruntime/qv4internalclass_p.h
+@@ -138,7 +138,7 @@ inline PropertyHash::Entry *PropertyHash::lookup(PropertyKey identifier) const
+ {
+     Q_ASSERT(d->entries);
+ 
+-    uint idx = identifier.id() % d->alloc;
++    uint idx = uint(identifier.id()) % d->alloc;
+     while (1) {
+         if (d->entries[idx].identifier == identifier)
+             return d->entries + idx;
+diff --git src/qml/jsruntime/qv4memberdata.cpp src/qml/jsruntime/qv4memberdata.cpp
+index 34b0c38ae6..7a0a48e779 100644
+--- src/qml/jsruntime/qv4memberdata.cpp
++++ src/qml/jsruntime/qv4memberdata.cpp
+@@ -53,9 +53,8 @@ static size_t nextPowerOfTwo(size_t s)
+     s |= s >> 4;
+     s |= s >> 8;
+     s |= s >> 16;
+-#if (QT_POINTER_SIZE == 8)
++    if (sizeof(size_t) == 8)
+         s |= s >> 32;
+-#endif
+     ++s;
+     return s;
+ }
+diff --git src/qml/jsruntime/qv4persistent.cpp src/qml/jsruntime/qv4persistent.cpp
+index f4901e3e4d..2602a49339 100644
+--- src/qml/jsruntime/qv4persistent.cpp
++++ src/qml/jsruntime/qv4persistent.cpp
+@@ -90,7 +90,7 @@ Page *allocatePage(PersistentValueStorage *storage)
+     PageAllocation page = WTF::PageAllocation::allocate(WTF::pageSize());
+     Page *p = reinterpret_cast<Page *>(page.base());
+ 
+-    Q_ASSERT(!((quintptr)p & (WTF::pageSize() - 1)));
++    Q_ASSERT(WTF::isPageAligned(p));
+ 
+     p->header.engine = storage->engine;
+     p->header.alloc = page;
+diff --git src/qml/jsruntime/qv4propertykey_p.h src/qml/jsruntime/qv4propertykey_p.h
+index b2a2ec3dea..3ec9f56ec4 100644
+--- src/qml/jsruntime/qv4propertykey_p.h
++++ src/qml/jsruntime/qv4propertykey_p.h
+@@ -51,6 +51,7 @@
+ //
+ 
+ #include <private/qv4global_p.h>
++#include <private/qv4staticvalue_p.h>
+ 
+ QT_BEGIN_NAMESPACE
+ 
+@@ -71,26 +72,26 @@ private:
+     // * If the key is a Symbol it simply points to the referenced symbol object
+     // * if the key is an array index (a uint < UINT_MAX), it's encoded as an
+     // integer value
+-    quint64 val;
++    ReturnedValue val;
+ 
+     // Important: Always keep this in sync with the definitions for Integers and heap objects in Value
+     static const quint64 ArrayIndexMask = 0x3800000000000ull;
+     enum {
+         IsManagedOrUndefined_Shift = 64-15,
+     };
+-    inline bool isManaged() const { return (val >> IsManagedOrUndefined_Shift) == 0; }
+-    inline quint32 value() const { return val & quint64(~quint32(0)); }
++    inline bool isManaged() const { return (quint64(val) >> IsManagedOrUndefined_Shift) == 0; }
++    inline quint32 value() const { return quint64(val) & quint64(~quint32(0)); }
+ 
+-#if QT_POINTER_SIZE == 8
++#if QT_POINTER_SIZE >= 8
+     QML_NEARLY_ALWAYS_INLINE Heap::StringOrSymbol *m() const
+     {
+         Heap::StringOrSymbol *b;
+-        memcpy(&b, &val, 8);
++        memcpy(&b, &val, sizeof(b));
+         return b;
+     }
+     QML_NEARLY_ALWAYS_INLINE void setM(Heap::StringOrSymbol *b)
+     {
+-        memcpy(&val, &b, 8);
++        memcpy(&val, &b, sizeof(b));
+     }
+ #elif QT_POINTER_SIZE == 4
+     QML_NEARLY_ALWAYS_INLINE Heap::StringOrSymbol *m() const
+@@ -113,7 +114,7 @@ public:
+     static PropertyKey invalid() { PropertyKey key; key.val = 0; return key; }
+     static PropertyKey fromArrayIndex(uint idx) { PropertyKey key; key.val = ArrayIndexMask | static_cast<quint64>(idx); return key; }
+     bool isStringOrSymbol() const { return isManaged() && val != 0; }
+-    uint asArrayIndex() const { Q_ASSERT(isArrayIndex()); return static_cast<uint>(val & 0xffffffff); }
++    uint asArrayIndex() const { Q_ASSERT(isArrayIndex()); return static_cast<uint>(val) & 0xffffffff; }
+     uint isArrayIndex() const { return !isManaged() && val != 0; }
+     bool isValid() const { return val != 0; }
+     static PropertyKey fromStringOrSymbol(Heap::StringOrSymbol *b)
+@@ -130,8 +131,9 @@ public:
+ 
+     Q_QML_EXPORT QString toQString() const;
+     Heap::StringOrSymbol *toStringOrSymbol(ExecutionEngine *e);
+-    quint64 id() const { return val; }
+-    static PropertyKey fromId(quint64 id) {
++    ReturnedValue id() const { return val; }
++    static PropertyKey fromId(ReturnedValue id)
++    {
+         PropertyKey key; key.val = id; return key;
+     }
+ 
+diff --git src/qml/jsruntime/qv4runtime.cpp src/qml/jsruntime/qv4runtime.cpp
+index 5fc94b9ddd..21574aa359 100644
+--- src/qml/jsruntime/qv4runtime.cpp
++++ src/qml/jsruntime/qv4runtime.cpp
+@@ -330,7 +330,7 @@ Bool Runtime::DeleteProperty_NoThrow::call(ExecutionEngine *engine, const Value
+     Scope scope(engine);
+     ScopedObject o(scope, base.toObject(engine));
+     if (scope.engine->hasException)
+-        return Encode::undefined();
++        return static_cast<Bool>(Encode::undefined());
+     Q_ASSERT(o);
+ 
+     ScopedPropertyKey key(scope, index.toPropertyKey(engine));
+diff --git src/qml/jsruntime/qv4sparsearray_p.h src/qml/jsruntime/qv4sparsearray_p.h
+index c1e50c8dcf..4b877804a5 100644
+--- src/qml/jsruntime/qv4sparsearray_p.h
++++ src/qml/jsruntime/qv4sparsearray_p.h
+@@ -61,6 +61,10 @@
+ #endif
+ 
+ #include <new>
++#ifdef __CHERI_PURE_CAPABILITY__
++#include <cheri.h>
++#include <assert.h>
++#endif
+ 
+ QT_BEGIN_NAMESPACE
+ 
+@@ -87,7 +91,7 @@ struct SparseArrayNode
+     Color color() const { return Color(p & 1); }
+     void setColor(Color c) { if (c == Black) p |= Black; else p &= ~Black; }
+     SparseArrayNode *parent() const { return reinterpret_cast<SparseArrayNode *>(p & ~Mask); }
+-    void setParent(SparseArrayNode *pp) { p = (p & Mask) | quintptr(pp); }
++    void setParent(SparseArrayNode *pp) { p = ((qptraddr)p & Mask) | quintptr(pp); }
+ 
+     uint key() const {
+         uint k = size_left;
+diff --git src/qml/jsruntime/qv4string_p.h src/qml/jsruntime/qv4string_p.h
+index 52fe09cd72..ebaa77fdd2 100644
+--- src/qml/jsruntime/qv4string_p.h
++++ src/qml/jsruntime/qv4string_p.h
+@@ -252,7 +252,7 @@ public:
+         }
+ 
+         if (subtype)
+-            *subtype = (charToUInt(ch) == '@') ? Heap::StringOrSymbol::StringType_Symbol : Heap::StringOrSymbol::StringType_Regular;
++            *subtype = (ch != end && charToUInt(ch) == '@') ? Heap::StringOrSymbol::StringType_Symbol : Heap::StringOrSymbol::StringType_Regular;
+         return h;
+     }
+ };
+diff --git src/qml/jsruntime/qv4value_p.h src/qml/jsruntime/qv4value_p.h
+index 42e97b1d36..64bf92f488 100644
+--- src/qml/jsruntime/qv4value_p.h
++++ src/qml/jsruntime/qv4value_p.h
+@@ -62,6 +62,10 @@
+ #include <private/qnumeric_p.h>
+ #include <private/qv4calldata_p.h>
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++#define QV4_USE_CAPABILITY_VALUE_ENCODING
++#endif
++
+ QT_BEGIN_NAMESPACE
+ 
+ namespace QV4 {
+@@ -76,14 +80,14 @@ struct Q_QML_PRIVATE_EXPORT Value : public StaticValue
+     using ManagedPtr = Managed *;
+ 
+     Value() = default;
+-    constexpr Value(quint64 val) : StaticValue(val) {}
++    constexpr Value(ReturnedValue val) : StaticValue(val) {}
+ 
+     static constexpr Value fromStaticValue(StaticValue staticValue)
+     {
+         return {staticValue._val};
+     }
+ 
+-#if QT_POINTER_SIZE == 8
++#if QT_POINTER_SIZE == 8 || defined(__CHERI_PURE_CAPABILITY__)
+     QML_NEARLY_ALWAYS_INLINE HeapBasePtr m() const
+     {
+         HeapBasePtr b;
+@@ -96,13 +100,13 @@ struct Q_QML_PRIVATE_EXPORT Value : public StaticValue
+         _tmp = (_tmp << 14) | (_val ^ _tmp);
+         memcpy(&b, &_tmp, 8);
+ #else
+-        memcpy(&b, &_val, 8);
++        memcpy(&b, &_val, sizeof(b));
+ #endif
+         return b;
+     }
+     QML_NEARLY_ALWAYS_INLINE void setM(HeapBasePtr b)
+     {
+-        memcpy(&_val, &b, 8);
++        memcpy(&_val, &b, sizeof(b));
+ #ifdef __ia64
+ // On ia64, bits 63-61 in a 64-bit pointer are used to store the virtual region
+ // number.  Since this implementation is not 64-bit clean, we move bits 63-61
+@@ -500,7 +504,7 @@ struct ValueArray {
+     static Q_CONSTEXPR size_t offset = o;
+     uint size;
+     uint alloc;
+-    Value values[1];
++    alignas(16) Value values[1];
+ 
+     Value::HeapBasePtr base() {
+         Value::HeapBasePtr base = reinterpret_cast<Value::HeapBasePtr>(this)
+@@ -545,7 +549,7 @@ struct ValueArray {
+ // It's really important that the offset of values in this structure is
+ // constant across all architecture,  otherwise JIT cross-compiled code will
+ // have wrong offsets between host and target.
+-Q_STATIC_ASSERT(offsetof(ValueArray<0>, values) == 8);
++Q_STATIC_ASSERT(offsetof(ValueArray<0>, values) == 16);
+ 
+ class OptionalReturnedValue {
+     ReturnedValue value;
+diff --git src/qml/memory/qv4heap_p.h src/qml/memory/qv4heap_p.h
+index d7cfa193e6..ad3813f20d 100644
+--- src/qml/memory/qv4heap_p.h
++++ src/qml/memory/qv4heap_p.h
+@@ -185,8 +185,8 @@ void Base::mark(QV4::MarkStack *markStack)
+     Chunk *c = h->chunk();
+     size_t index = h - c->realBase();
+     Q_ASSERT(!Chunk::testBit(c->extendsBitmap, index));
+-    quintptr *bitmap = c->blackBitmap + Chunk::bitmapIndex(index);
+-    quintptr bit = Chunk::bitForIndex(index);
++    size_t *bitmap = c->blackBitmap + Chunk::bitmapIndex(index);
++    size_t bit = Chunk::bitForIndex(index);
+     if (!(*bitmap & bit)) {
+         *bitmap |= bit;
+         markStack->push(this);
+diff --git src/qml/memory/qv4mm.cpp src/qml/memory/qv4mm.cpp
+index da149a67c4..71319f1d97 100644
+--- src/qml/memory/qv4mm.cpp
++++ src/qml/memory/qv4mm.cpp
+@@ -127,9 +127,13 @@ struct MemorySegment {
+             size = SegmentSize;
+ 
+         pageReservation = PageReservation::reserve(size, OSAllocator::JSGCHeapPages);
++#if QT_HAS_BUILTIN(__builtin_align_up)
++        base = reinterpret_cast<Chunk *>(__builtin_align_up(pageReservation.base(), (unsigned)Chunk::ChunkSize));
++#else
+         base = reinterpret_cast<Chunk *>((reinterpret_cast<quintptr>(pageReservation.base()) + Chunk::ChunkSize - 1) & ~(Chunk::ChunkSize - 1));
++#endif
+         nChunks = NumChunks;
+-        availableBytes = size - (reinterpret_cast<quintptr>(base) - reinterpret_cast<quintptr>(pageReservation.base()));
++        availableBytes = size - (reinterpret_cast<const char *>(base) - reinterpret_cast<const char *>(pageReservation.base()));
+         if (availableBytes < SegmentSize)
+             --nChunks;
+     }
+@@ -314,9 +318,9 @@ bool Chunk::sweep(ExecutionEngine *engine)
+ #if WRITEBARRIER(none)
+         Q_ASSERT((grayBitmap[i] | blackBitmap[i]) == blackBitmap[i]); // check that we don't have gray only objects
+ #endif
+-        quintptr toFree = objectBitmap[i] ^ blackBitmap[i];
++        size_t toFree = objectBitmap[i] ^ blackBitmap[i];
+         Q_ASSERT((toFree & objectBitmap[i]) == toFree); // check all black objects are marked as being used
+-        quintptr e = extendsBitmap[i];
++        size_t e = extendsBitmap[i];
+         SDUMP() << "   index=" << i;
+         SDUMP() << "        toFree      =" << binary(toFree);
+         SDUMP() << "        black       =" << binary(blackBitmap[i]);
+@@ -326,16 +330,16 @@ bool Chunk::sweep(ExecutionEngine *engine)
+             e &= (e + 1); // clear all lowest extent bits
+         while (toFree) {
+             uint index = qCountTrailingZeroBits(toFree);
+-            quintptr bit = (static_cast<quintptr>(1) << index);
++            size_t bit = (static_cast<size_t>(1) << index);
+ 
+             toFree ^= bit; // mask out freed slot
+             //            DEBUG << "       index" << hex << index << toFree;
+ 
+             // remove all extends slots that have been freed
+             // this is a bit of bit trickery.
+-            quintptr mask = (bit << 1) - 1; // create a mask of 1's to the right of and up to the current bit
+-            quintptr objmask = e | mask; // or'ing mask with e gives all ones until the end of the current object
+-            quintptr result = objmask + 1;
++            size_t mask = (bit << 1) - 1; // create a mask of 1's to the right of and up to the current bit
++            size_t objmask = e | mask; // or'ing mask with e gives all ones until the end of the current object
++            size_t result = objmask + 1;
+             Q_ASSERT(qCountTrailingZeroBits(result) - index != 0); // ensure we freed something
+             result |= mask; // ensure we don't clear stuff to the right of the current object
+             e &= result;
+@@ -360,7 +364,7 @@ bool Chunk::sweep(ExecutionEngine *engine)
+         grayBitmap[i] = 0;
+         hasUsedSlots |= (blackBitmap[i] != 0);
+         extendsBitmap[i] = e;
+-        lastSlotFree = !((objectBitmap[i]|extendsBitmap[i]) >> (sizeof(quintptr)*8 - 1));
++        lastSlotFree = !((objectBitmap[i]|extendsBitmap[i]) >> (sizeof(qptrdiff)*8 - 1));
+         SDUMP() << "        new extends =" << binary(e);
+         SDUMP() << "        lastSlotFree" << lastSlotFree;
+         Q_ASSERT((objectBitmap[i] & extendsBitmap[i]) == 0);
+@@ -375,21 +379,21 @@ void Chunk::freeAll(ExecutionEngine *engine)
+     //    DEBUG << "sweeping chunk" << this << (*freeList);
+     HeapItem *o = realBase();
+     for (uint i = 0; i < Chunk::EntriesInBitmap; ++i) {
+-        quintptr toFree = objectBitmap[i];
+-        quintptr e = extendsBitmap[i];
++        size_t toFree = objectBitmap[i];
++        size_t e = extendsBitmap[i];
+         //        DEBUG << hex << "   index=" << i << toFree;
+         while (toFree) {
+             uint index = qCountTrailingZeroBits(toFree);
+-            quintptr bit = (static_cast<quintptr>(1) << index);
++            size_t bit = (static_cast<size_t>(1) << index);
+ 
+             toFree ^= bit; // mask out freed slot
+             //            DEBUG << "       index" << hex << index << toFree;
+ 
+             // remove all extends slots that have been freed
+             // this is a bit of bit trickery.
+-            quintptr mask = (bit << 1) - 1; // create a mask of 1's to the right of and up to the current bit
+-            quintptr objmask = e | mask; // or'ing mask with e gives all ones until the end of the current object
+-            quintptr result = objmask + 1;
++            size_t mask = (bit << 1) - 1; // create a mask of 1's to the right of and up to the current bit
++            size_t objmask = e | mask; // or'ing mask with e gives all ones until the end of the current object
++            size_t result = objmask + 1;
+             Q_ASSERT(qCountTrailingZeroBits(result) - index != 0); // ensure we freed something
+             result |= mask; // ensure we don't clear stuff to the right of the current object
+             e &= result;
+@@ -427,12 +431,12 @@ void Chunk::collectGrayItems(MarkStack *markStack)
+ #if WRITEBARRIER(none)
+         Q_ASSERT((grayBitmap[i] | blackBitmap[i]) == blackBitmap[i]); // check that we don't have gray only objects
+ #endif
+-        quintptr toMark = blackBitmap[i] & grayBitmap[i]; // correct for a Steele type barrier
++        size_t toMark = blackBitmap[i] & grayBitmap[i]; // correct for a Steele type barrier
+         Q_ASSERT((toMark & objectBitmap[i]) == toMark); // check all black objects are marked as being used
+         //        DEBUG << hex << "   index=" << i << toFree;
+         while (toMark) {
+             uint index = qCountTrailingZeroBits(toMark);
+-            quintptr bit = (static_cast<quintptr>(1) << index);
++            size_t bit = (static_cast<size_t>(1) << index);
+ 
+             toMark ^= bit; // mask out marked slot
+             //            DEBUG << "       index" << hex << index << toFree;
+@@ -453,7 +457,7 @@ void Chunk::sortIntoBins(HeapItem **bins, uint nBins)
+ {
+ //    qDebug() << "sortIntoBins:";
+     HeapItem *base = realBase();
+-#if QT_POINTER_SIZE == 8
++#if QT_POINTER_SIZE == 8 || QT_POINTER_SIZE == 16
+     const int start = 0;
+ #else
+     const int start = 1;
+@@ -463,10 +467,10 @@ void Chunk::sortIntoBins(HeapItem **bins, uint nBins)
+     uint allocatedSlots = 0;
+ #endif
+     for (int i = start; i < EntriesInBitmap; ++i) {
+-        quintptr usedSlots = (objectBitmap[i]|extendsBitmap[i]);
+-#if QT_POINTER_SIZE == 8
++        size_t usedSlots = (objectBitmap[i]|extendsBitmap[i]);
++#if QT_POINTER_SIZE == 8 || QT_POINTER_SIZE == 16
+         if (!i)
+-            usedSlots |= (static_cast<quintptr>(1) << (HeaderSize/SlotSize)) - 1;
++            usedSlots |= (static_cast<size_t>(1) << (HeaderSize/SlotSize)) - 1;
+ #endif
+ #ifndef QT_NO_DEBUG
+         allocatedSlots += qPopulationCount(usedSlots);
+@@ -477,7 +481,7 @@ void Chunk::sortIntoBins(HeapItem **bins, uint nBins)
+             if (index == Bits)
+                 break;
+             uint freeStart = i*Bits + index;
+-            usedSlots &= ~((static_cast<quintptr>(1) << index) - 1);
++            usedSlots &= ~((static_cast<size_t>(1) << index) - 1);
+             while (!usedSlots) {
+                 if (++i < EntriesInBitmap) {
+                     usedSlots = (objectBitmap[i]|extendsBitmap[i]);
+@@ -485,7 +489,7 @@ void Chunk::sortIntoBins(HeapItem **bins, uint nBins)
+                     Q_ASSERT(i == EntriesInBitmap);
+                     // Overflows to 0 when counting trailing zeroes above in next iteration.
+                     // Then, all the bits are zeroes and we break.
+-                    usedSlots = std::numeric_limits<quintptr>::max();
++                    usedSlots = std::numeric_limits<size_t>::max();
+                     break;
+                 }
+ #ifndef QT_NO_DEBUG
+@@ -496,7 +500,7 @@ void Chunk::sortIntoBins(HeapItem **bins, uint nBins)
+             HeapItem *freeItem = base + freeStart;
+ 
+             index = qCountTrailingZeroBits(usedSlots);
+-            usedSlots |= (quintptr(1) << index) - 1;
++            usedSlots |= (size_t(1) << index) - 1;
+             uint freeEnd = i*Bits + index;
+             uint nSlots = freeEnd - freeStart;
+ #ifndef QT_NO_DEBUG
+@@ -511,7 +515,7 @@ void Chunk::sortIntoBins(HeapItem **bins, uint nBins)
+         }
+     }
+ #ifndef QT_NO_DEBUG
+-    Q_ASSERT(freeSlots + allocatedSlots == (EntriesInBitmap - start) * 8 * sizeof(quintptr));
++    Q_ASSERT(freeSlots + allocatedSlots == (EntriesInBitmap - start) * 8 * sizeof(size_t));
+ #endif
+ }
+ 
+diff --git src/qml/memory/qv4mmdefs_p.h src/qml/memory/qv4mmdefs_p.h
+index 117e8f4360..08be887f0c 100644
+--- src/qml/memory/qv4mmdefs_p.h
++++ src/qml/memory/qv4mmdefs_p.h
+@@ -90,28 +90,31 @@ typedef void(*ClassDestroyStatsCallback)(const char *);
+ struct HeapItem;
+ struct Chunk {
+     enum {
+-        ChunkSize = 64*1024,
++        ChunkSize = 64 * 1024,
+         ChunkShift = 16,
+         SlotSize = 32,
+         SlotSizeShift = 5,
+-        NumSlots = ChunkSize/SlotSize,
+-        BitmapSize = NumSlots/8,
+-        HeaderSize = 4*BitmapSize,
++        NumSlots = ChunkSize / SlotSize,
++        BitmapSize = NumSlots / 8,
++        HeaderSize = 4 * BitmapSize,
+         DataSize = ChunkSize - HeaderSize,
+-        AvailableSlots = DataSize/SlotSize,
+-#if QT_POINTER_SIZE == 8
++        AvailableSlots = DataSize / SlotSize,
++#if Q_PROCESSOR_WORDSIZE == 8
+         Bits = 64,
+         BitShift = 6,
+-#else
++#elif Q_PROCESSOR_WORDSIZE == 4
+         Bits = 32,
+         BitShift = 5,
++#    error "Unsupported word size"
+ #endif
+-        EntriesInBitmap = BitmapSize/sizeof(quintptr)
++        EntriesInBitmap = BitmapSize / sizeof(size_t)
+     };
+-    quintptr grayBitmap[BitmapSize/sizeof(quintptr)];
+-    quintptr blackBitmap[BitmapSize/sizeof(quintptr)];
+-    quintptr objectBitmap[BitmapSize/sizeof(quintptr)];
+-    quintptr extendsBitmap[BitmapSize/sizeof(quintptr)];
++    static_assert(sizeof(size_t) == Q_PROCESSOR_WORDSIZE,
++                  "This code assumes Q_PROCESSOR_WORDSIZE == sizeof(size_t)");
++    size_t grayBitmap[BitmapSize / sizeof(size_t)];
++    size_t blackBitmap[BitmapSize / sizeof(size_t)];
++    size_t objectBitmap[BitmapSize / sizeof(size_t)];
++    size_t extendsBitmap[BitmapSize / sizeof(size_t)];
+     char data[ChunkSize - HeaderSize];
+ 
+     HeapItem *realBase();
+@@ -120,37 +123,42 @@ struct Chunk {
+     static Q_ALWAYS_INLINE size_t bitmapIndex(size_t index) {
+         return index >> BitShift;
+     }
+-    static Q_ALWAYS_INLINE quintptr bitForIndex(size_t index) {
+-        return static_cast<quintptr>(1) << (index & (Bits - 1));
++    static Q_ALWAYS_INLINE size_t bitForIndex(size_t index)
++    {
++        return static_cast<size_t>(1) << (index & (Bits - 1));
+     }
+ 
+-    static void setBit(quintptr *bitmap, size_t index) {
+-//        Q_ASSERT(index >= HeaderSize/SlotSize && index < ChunkSize/SlotSize);
++    static void setBit(size_t *bitmap, size_t index)
++    {
++        //        Q_ASSERT(index >= HeaderSize/SlotSize && index < ChunkSize/SlotSize);
+         bitmap += bitmapIndex(index);
+-        quintptr bit = bitForIndex(index);
++        size_t bit = bitForIndex(index);
+         *bitmap |= bit;
+     }
+-    static void clearBit(quintptr *bitmap, size_t index) {
+-//        Q_ASSERT(index >= HeaderSize/SlotSize && index < ChunkSize/SlotSize);
++    static void clearBit(size_t *bitmap, size_t index)
++    {
++        //        Q_ASSERT(index >= HeaderSize/SlotSize && index < ChunkSize/SlotSize);
+         bitmap += bitmapIndex(index);
+-        quintptr bit = bitForIndex(index);
++        size_t bit = bitForIndex(index);
+         *bitmap &= ~bit;
+     }
+-    static bool testBit(quintptr *bitmap, size_t index) {
+-//        Q_ASSERT(index >= HeaderSize/SlotSize && index < ChunkSize/SlotSize);
++    static bool testBit(size_t *bitmap, size_t index)
++    {
++        //        Q_ASSERT(index >= HeaderSize/SlotSize && index < ChunkSize/SlotSize);
+         bitmap += bitmapIndex(index);
+-        quintptr bit = bitForIndex(index);
++        size_t bit = bitForIndex(index);
+         return (*bitmap & bit);
+     }
+-    static void setBits(quintptr *bitmap, size_t index, size_t nBits) {
+-//        Q_ASSERT(index >= HeaderSize/SlotSize && index + nBits <= ChunkSize/SlotSize);
++    static void setBits(size_t *bitmap, size_t index, size_t nBits)
++    {
++        //        Q_ASSERT(index >= HeaderSize/SlotSize && index + nBits <= ChunkSize/SlotSize);
+         if (!nBits)
+             return;
+         bitmap += index >> BitShift;
+         index &= (Bits - 1);
+         while (1) {
+             size_t bitsToSet = qMin(nBits, Bits - index);
+-            quintptr mask = static_cast<quintptr>(-1) >> (Bits - bitsToSet) << index;
++            size_t mask = static_cast<size_t>(-1) >> (Bits - bitsToSet) << index;
+             *bitmap |= mask;
+             nBits -= bitsToSet;
+             if (!nBits)
+@@ -159,16 +167,18 @@ struct Chunk {
+             ++bitmap;
+         }
+     }
+-    static bool hasNonZeroBit(quintptr *bitmap) {
++    static bool hasNonZeroBit(size_t *bitmap)
++    {
+         for (uint i = 0; i < EntriesInBitmap; ++i)
+             if (bitmap[i])
+                 return true;
+         return false;
+     }
+-    static uint lowestNonZeroBit(quintptr *bitmap) {
++    static uint lowestNonZeroBit(size_t *bitmap)
++    {
+         for (uint i = 0; i < EntriesInBitmap; ++i) {
+             if (bitmap[i]) {
+-                quintptr b = bitmap[i];
++                size_t b = bitmap[i];
+                 return i*Bits + qCountTrailingZeroBits(b);
+             }
+         }
+@@ -181,7 +191,7 @@ struct Chunk {
+     uint nUsedSlots() const {
+         uint usedSlots = 0;
+         for (uint i = 0; i < EntriesInBitmap; ++i) {
+-            quintptr used = objectBitmap[i] | extendsBitmap[i];
++            size_t used = objectBitmap[i] | extendsBitmap[i];
+             usedSlots += qPopulationCount(used);
+         }
+         return usedSlots;
+@@ -210,7 +220,12 @@ struct HeapItem {
+     T *as() { return static_cast<T *>(reinterpret_cast<Heap::Base *>(this)); }
+ 
+     Chunk *chunk() const {
++#if QT_HAS_BUILTIN(__builtin_align_down)
++        return const_cast<Chunk *>(reinterpret_cast<const Chunk *>(
++                __builtin_align_down(this, (unsigned)Chunk::ChunkSize)));
++#else
+         return reinterpret_cast<Chunk *>(reinterpret_cast<quintptr>(this) >> Chunk::ChunkShift << Chunk::ChunkShift);
++#endif
+     }
+ 
+     bool isGray() const {
+@@ -268,7 +283,11 @@ Q_STATIC_ASSERT(sizeof(Chunk) == Chunk::ChunkSize);
+ Q_STATIC_ASSERT((1 << Chunk::ChunkShift) == Chunk::ChunkSize);
+ Q_STATIC_ASSERT(1 << Chunk::SlotSizeShift == Chunk::SlotSize);
+ Q_STATIC_ASSERT(sizeof(HeapItem) == Chunk::SlotSize);
++#ifndef __CHERI_PURE_CAPABILITY__
+ Q_STATIC_ASSERT(QT_POINTER_SIZE*8 == Chunk::Bits);
++#else
++Q_STATIC_ASSERT(sizeof(vaddr_t)*8 == Chunk::Bits);
++#endif
+ Q_STATIC_ASSERT((1 << Chunk::BitShift) == Chunk::Bits);
+ 
+ struct Q_QML_PRIVATE_EXPORT MarkStack {
+@@ -283,8 +302,8 @@ struct Q_QML_PRIVATE_EXPORT MarkStack {
+ 
+         // If at or above soft limit, partition the remaining space into at most 64 segments and
+         // allow one C++ recursion of drain() per segment, plus one for the fence post.
+-        const quintptr segmentSize = qNextPowerOfTwo(quintptr(m_hardLimit - m_softLimit) / 64u);
+-        if (m_drainRecursion * segmentSize <= quintptr(m_top - m_softLimit)) {
++        const size_t segmentSize = qNextPowerOfTwo(qint64(m_hardLimit - m_softLimit) / 64u);
++        if (m_drainRecursion * segmentSize <= size_t(m_top - m_softLimit)) {
+             ++m_drainRecursion;
+             drain();
+             --m_drainRecursion;
+@@ -305,7 +324,7 @@ private:
+     Heap::Base **m_softLimit = nullptr;
+     Heap::Base **m_hardLimit = nullptr;
+     ExecutionEngine *m_engine = nullptr;
+-    quintptr m_drainRecursion = 0;
++    size_t m_drainRecursion = 0;
+ };
+ 
+ // Some helper to automate the generation of our
+diff --git src/qml/parser/qqmljslexer.cpp src/qml/parser/qqmljslexer.cpp
+index 243fc5bd30..078803d959 100644
+--- src/qml/parser/qqmljslexer.cpp
++++ src/qml/parser/qqmljslexer.cpp
+@@ -172,7 +172,12 @@ void Lexer::scanChar()
+         ++_codePtr;
+         _skipLinefeed = false;
+     }
+-    _char = *_codePtr++;
++    if (_codePtr == _endPtr) {
++        _char = QChar();
++    } else {
++        _char = *_codePtr;
++    }
++    _codePtr++;
+     ++_currentColumnNumber;
+ 
+     if (isLineTerminator()) {
+diff --git src/qml/parser/qqmljslexer_p.h src/qml/parser/qqmljslexer_p.h
+index e2ee4ae351..8f7b407ab8 100644
+--- src/qml/parser/qqmljslexer_p.h
++++ src/qml/parser/qqmljslexer_p.h
+@@ -190,7 +190,7 @@ protected:
+     static int classify(const QChar *s, int n, int parseModeFlags);
+ 
+ private:
+-    inline void scanChar();
++    void scanChar();
+     int scanToken();
+     int scanNumber(QChar ch);
+     int scanVersionNumber(QChar ch);
+diff --git src/qml/qml/ftw/qflagpointer_p.h src/qml/qml/ftw/qflagpointer_p.h
+index a10e57aeca..664063dfe4 100644
+--- src/qml/qml/ftw/qflagpointer_p.h
++++ src/qml/qml/ftw/qflagpointer_p.h
+@@ -52,6 +52,10 @@
+ //
+ 
+ #include <QtCore/qglobal.h>
++#ifdef __CHERI_PURE_CAPABILITY__
++#include <cheri.h>
++#include <assert.h>
++#endif
+ 
+ QT_BEGIN_NAMESPACE
+ 
+@@ -98,9 +102,9 @@ public:
+ private:
+     quintptr ptr_value = 0;
+ 
+-    static const quintptr FlagBit = 0x1;
+-    static const quintptr Flag2Bit = 0x2;
+-    static const quintptr FlagsMask = FlagBit | Flag2Bit;
++    static const qptraddr FlagBit = 0x1;
++    static const qptraddr Flag2Bit = 0x2;
++    static const qptraddr FlagsMask = FlagBit | Flag2Bit;
+ };
+ 
+ template<typename T, typename T2>
+@@ -130,9 +134,9 @@ public:
+ private:
+     quintptr ptr_value = 0;
+ 
+-    static const quintptr FlagBit = 0x1;
+-    static const quintptr Flag2Bit = 0x2;
+-    static const quintptr FlagsMask = FlagBit | Flag2Bit;
++    static const qptraddr FlagBit = 0x1;
++    static const qptraddr Flag2Bit = 0x2;
++    static const qptraddr FlagsMask = FlagBit | Flag2Bit;
+ };
+ 
+ template<typename T>
+@@ -145,7 +149,7 @@ QFlagPointer<T>::QFlagPointer(T *v)
+ : ptr_value(quintptr(v))
+ {
+     Q_STATIC_ASSERT_X(Q_ALIGNOF(T) >= 4, "Type T does not have sufficient alignment");
+-    Q_ASSERT((ptr_value & FlagsMask) == 0);
++    Q_ASSERT(((qptraddr)ptr_value & FlagsMask) == 0);
+ }
+ 
+ template<typename T>
+@@ -157,13 +161,13 @@ QFlagPointer<T>::QFlagPointer(const QFlagPointer<T> &o)
+ template<typename T>
+ bool QFlagPointer<T>::isNull() const
+ {
+-    return 0 == (ptr_value & (~FlagsMask));
++    return 0 == ((qptraddr)ptr_value & (~FlagsMask));
+ }
+ 
+ template<typename T>
+ bool QFlagPointer<T>::flag() const
+ {
+-    return ptr_value & FlagBit;
++    return (qptraddr)ptr_value & FlagBit;
+ }
+ 
+ template<typename T>
+@@ -188,13 +192,13 @@ void QFlagPointer<T>::setFlagValue(bool v)
+ template<typename T>
+ bool QFlagPointer<T>::flag2() const
+ {
+-    return ptr_value & Flag2Bit;
++    return (qptraddr)ptr_value & Flag2Bit;
+ }
+ 
+ template<typename T>
+ void QFlagPointer<T>::setFlag2()
+ {
+-    ptr_value|= Flag2Bit;
++    ptr_value |= Flag2Bit;
+ }
+ 
+ template<typename T>
+@@ -220,9 +224,9 @@ QFlagPointer<T> &QFlagPointer<T>::operator=(const QFlagPointer &o)
+ template<typename T>
+ QFlagPointer<T> &QFlagPointer<T>::operator=(T *o)
+ {
+-    Q_ASSERT((quintptr(o) & FlagsMask) == 0);
++    Q_ASSERT((qptraddr(o) & FlagsMask) == 0);
+ 
+-    ptr_value = quintptr(o) | (ptr_value & FlagsMask);
++    ptr_value = quintptr(o) | ((qptraddr)ptr_value & FlagsMask);
+     return *this;
+ }
+ 
+@@ -261,7 +265,7 @@ QBiPointer<T, T2>::QBiPointer(T *v)
+ {
+     Q_STATIC_ASSERT_X(QtPrivate::QFlagPointerAlignment<T>::Value >= 4,
+                       "Type T does not have sufficient alignment");
+-    Q_ASSERT((quintptr(v) & FlagsMask) == 0);
++    Q_ASSERT((qptraddr(v) & FlagsMask) == 0);
+ }
+ 
+ template<typename T, typename T2>
+@@ -270,7 +274,7 @@ QBiPointer<T, T2>::QBiPointer(T2 *v)
+ {
+     Q_STATIC_ASSERT_X(QtPrivate::QFlagPointerAlignment<T2>::Value >= 4,
+                       "Type T2 does not have sufficient alignment");
+-    Q_ASSERT((quintptr(v) & FlagsMask) == 0);
++    Q_ASSERT((qptraddr(v) & FlagsMask) == 0);
+ }
+ 
+ template<typename T, typename T2>
+@@ -282,25 +286,25 @@ QBiPointer<T, T2>::QBiPointer(const QBiPointer<T, T2> &o)
+ template<typename T, typename T2>
+ bool QBiPointer<T, T2>::isNull() const
+ {
+-    return 0 == (ptr_value & (~FlagsMask));
++    return 0 == ((qptraddr)ptr_value & (~FlagsMask));
+ }
+ 
+ template<typename T, typename T2>
+ bool QBiPointer<T, T2>::isT1() const
+ {
+-    return !(ptr_value & Flag2Bit);
++    return !((qptraddr)ptr_value & Flag2Bit);
+ }
+ 
+ template<typename T, typename T2>
+ bool QBiPointer<T, T2>::isT2() const
+ {
+-    return ptr_value & Flag2Bit;
++    return (qptraddr)ptr_value & Flag2Bit;
+ }
+ 
+ template<typename T, typename T2>
+ bool QBiPointer<T, T2>::flag() const
+ {
+-    return ptr_value & FlagBit;
++    return (qptraddr)ptr_value & FlagBit;
+ }
+ 
+ template<typename T, typename T2>
+@@ -332,18 +336,18 @@ QBiPointer<T, T2> &QBiPointer<T, T2>::operator=(const QBiPointer<T, T2> &o)
+ template<typename T, typename T2>
+ QBiPointer<T, T2> &QBiPointer<T, T2>::operator=(T *o)
+ {
+-    Q_ASSERT((quintptr(o) & FlagsMask) == 0);
++    Q_ASSERT((qptraddr(o) & FlagsMask) == 0);
+ 
+-    ptr_value = quintptr(o) | (ptr_value & FlagBit);
++    ptr_value = quintptr(o) | ((qptraddr)ptr_value & FlagBit);
+     return *this;
+ }
+ 
+ template<typename T, typename T2>
+ QBiPointer<T, T2> &QBiPointer<T, T2>::operator=(T2 *o)
+ {
+-    Q_ASSERT((quintptr(o) & FlagsMask) == 0);
++    Q_ASSERT((qptraddr(o) & FlagsMask) == 0);
+ 
+-    ptr_value = quintptr(o) | (ptr_value & FlagBit) | Flag2Bit;
++    ptr_value = quintptr(o) | ((qptraddr)ptr_value & FlagBit) | Flag2Bit;
+     return *this;
+ }
+ 
+diff --git src/qml/qml/ftw/qrecyclepool_p.h src/qml/qml/ftw/qrecyclepool_p.h
+index 39f4f88512..74ffc7072d 100644
+--- src/qml/qml/ftw/qrecyclepool_p.h
++++ src/qml/qml/ftw/qrecyclepool_p.h
+@@ -83,6 +83,7 @@ public:
+             char array[Step * sizeof(PoolType)];
+             qint64 q_for_alignment_1;
+             double q_for_alignment_2;
++			quintptr q_for_alignment_3;
+         };
+     };
+ 
+diff --git src/qml/qml/qqml.cpp src/qml/qml/qqml.cpp
+index fe4e2f4e55..0e0c1624a7 100644
+--- src/qml/qml/qqml.cpp
++++ src/qml/qml/qqml.cpp
+@@ -309,7 +309,7 @@ void QQmlPrivate::qmlunregister(RegistrationType type, quintptr data)
+     case SingletonRegistration:
+     case CompositeRegistration:
+     case CompositeSingletonRegistration:
+-        QQmlMetaType::unregisterType(data);
++        QQmlMetaType::unregisterType(static_cast<int>(data));
+         break;
+     case TypeAndRevisionsRegistration:
+     case SingletonAndRevisionsRegistration:
+diff --git src/qml/qml/qqmldata_p.h src/qml/qml/qqmldata_p.h
+index ee31cb38d9..9854ea44c4 100644
+--- src/qml/qml/qqmldata_p.h
++++ src/qml/qml/qqmldata_p.h
+@@ -165,7 +165,11 @@ public:
+     // bindingBitsValue. When we need more than sizeof(ptr) bits, we allocated
+     // sufficient space and use bindingBits to point to it.
+     quint32 bindingBitsArraySize : 16;
++#ifdef __CHERI_PURE_CAPABILITY__
++    typedef qptraddr BindingBitsType;
++#else
+     typedef quintptr BindingBitsType;
++#endif
+     enum {
+         BitsPerType = sizeof(BindingBitsType) * 8,
+         InlineBindingArraySize = 2
+diff --git src/qml/qml/qqmlpropertydata_p.h src/qml/qml/qqmlpropertydata_p.h
+index d9855797cd..f4fcd05b41 100644
+--- src/qml/qml/qqmlpropertydata_p.h
++++ src/qml/qml/qqmlpropertydata_p.h
+@@ -422,10 +422,13 @@ private:
+ 
+ #if QT_POINTER_SIZE == 4
+     Q_STATIC_ASSERT(sizeof(QQmlPropertyData) == 24);
+-#else // QT_POINTER_SIZE == 8
++#elif QT_POINTER_SIZE == 16
++    Q_STATIC_ASSERT(sizeof(QQmlPropertyData) == 48);
++#else// QT_POINTER_SIZE == 8
+     Q_STATIC_ASSERT(sizeof(QQmlPropertyData) == 32);
+ #endif
+ 
++
+ bool QQmlPropertyData::operator==(const QQmlPropertyData &other) const
+ {
+     return flags() == other.flags() &&
+diff --git src/qml/qml/qqmlvmemetaobject.cpp src/qml/qml/qqmlvmemetaobject.cpp
+index aa9f4bc1bd..4ccbad8c8c 100644
+--- src/qml/qml/qqmlvmemetaobject.cpp
++++ src/qml/qml/qqmlvmemetaobject.cpp
+@@ -73,10 +73,10 @@ public:
+     ResolvedList(QQmlListProperty<QObject> *prop)
+     {
+         // see QQmlVMEMetaObject::metaCall for how this was constructed
+-        auto encodedIndex = quintptr(prop->data);
+-        constexpr quintptr usableBits = sizeof(quintptr)  * CHAR_BIT;
+-        quintptr inheritanceDepth = encodedIndex >> (usableBits / 2);
+-        m_id = encodedIndex & ((quintptr(1) << (usableBits / 2)) - 1);
++        auto encodedIndex = qptraddr(prop->data);
++        qptraddr usableBits = sizeof(qptraddr)  * CHAR_BIT;
++        qptraddr inheritanceDepth = encodedIndex >> (usableBits / 2);
++        m_id = encodedIndex & ((qptraddr(1) << (usableBits / 2)) - 1);
+ 
+         // walk up to the correct meta object if necessary
+         auto mo = prop->object->metaObject();
+@@ -110,7 +110,7 @@ public:
+ 
+     QQmlVMEMetaObject *metaObject() const { return m_metaObject; }
+     QVector<QQmlGuard<QObject>> *list() const { return m_list; }
+-    quintptr id() const { return m_id; }
++    qptraddr id() const { return m_id; }
+ 
+     void activateSignal() const
+     {
+@@ -121,7 +121,7 @@ public:
+ private:
+     QQmlVMEMetaObject *m_metaObject = nullptr;
+     QVector<QQmlGuard<QObject>> *m_list = nullptr;
+-    quintptr m_id = 0;
++    qptraddr m_id = 0;
+ };
+ 
+ static void list_append(QQmlListProperty<QObject> *prop, QObject *o)
+@@ -767,21 +767,21 @@ int QQmlVMEMetaObject::metaCall(QObject *o, QMetaObject::Call c, int _id, void *
+                             // property in a single quintptr, with the first half storing the depth
+                             // and the second half storing the property id
+                             auto mo = object->metaObject();
+-                            quintptr inheritanceDepth = 0u;
++                            size_t inheritanceDepth = 0u;
+                             while (mo && mo != this) {
+                                 mo = mo->superClass();
+                                 ++inheritanceDepth;
+                             }
+-                            constexpr quintptr usableBits = sizeof(quintptr)  * CHAR_BIT;
+-                            if (Q_UNLIKELY(inheritanceDepth >= (quintptr(1) << quintptr(usableBits / 2u) ) )) {
++                            constexpr qptraddr usableBits = sizeof(qptraddr)  * CHAR_BIT;
++                            if (Q_UNLIKELY(inheritanceDepth >= (qptraddr(1) << qptraddr(usableBits / 2u) ) )) {
+                                 qmlWarning(object) << "Too many objects in inheritance hierarchy for list property";
+                                 return -1;
+                             }
+-                            if (Q_UNLIKELY(quintptr(id) >= (quintptr(1) << quintptr(usableBits / 2) ) )) {
++                            if (Q_UNLIKELY(qptraddr(id) >= (qptraddr(1) << qptraddr(usableBits / 2) ) )) {
+                                 qmlWarning(object) << "Too many properties in object for list property";
+                                 return -1;
+                             }
+-                            quintptr encodedIndex = (inheritanceDepth << (usableBits/2)) + id;
++                            qptraddr encodedIndex = (inheritanceDepth << (usableBits/2)) + id;
+ 
+ 
+                             readPropertyAsList(id); // Initializes if necessary
+diff --git src/qml/types/qqmlmodelindexvaluetype_p.h src/qml/types/qqmlmodelindexvaluetype_p.h
+index f5b1699574..52dd083868 100644
+--- src/qml/types/qqmlmodelindexvaluetype_p.h
++++ src/qml/types/qqmlmodelindexvaluetype_p.h
+@@ -65,7 +65,7 @@ struct QQmlModelIndexValueType
+     Q_PROPERTY(QModelIndex parent READ parent FINAL)
+     Q_PROPERTY(bool valid READ isValid CONSTANT FINAL)
+     Q_PROPERTY(QAbstractItemModel *model READ model CONSTANT FINAL)
+-    Q_PROPERTY(quint64 internalId READ internalId CONSTANT FINAL)
++    Q_PROPERTY(quintptr internalId READ internalId CONSTANT FINAL)
+     Q_GADGET
+ 
+ public:
+@@ -78,7 +78,7 @@ public:
+     inline bool isValid() const Q_DECL_NOTHROW { return v.isValid(); }
+     inline QAbstractItemModel *model() const Q_DECL_NOTHROW
+     { return const_cast<QAbstractItemModel *>(v.model()); }
+-    quint64 internalId() const { return v.internalId(); }
++    quintptr internalId() const { return v.internalId(); }
+ 
+     static QString propertiesString(const QModelIndex &idx);
+ 
+@@ -95,7 +95,7 @@ struct QQmlPersistentModelIndexValueType
+     Q_PROPERTY(QModelIndex parent READ parent FINAL)
+     Q_PROPERTY(bool valid READ isValid FINAL)
+     Q_PROPERTY(QAbstractItemModel *model READ model FINAL)
+-    Q_PROPERTY(quint64 internalId READ internalId FINAL)
++    Q_PROPERTY(quintptr internalId READ internalId FINAL)
+     Q_GADGET
+ 
+ public:
+@@ -107,7 +107,7 @@ public:
+     inline QModelIndex parent() const { return v.parent(); }
+     inline bool isValid() const { return v.isValid(); }
+     inline QAbstractItemModel *model() const { return const_cast<QAbstractItemModel *>(v.model()); }
+-    inline quint64 internalId() const { return v.internalId(); }
++    inline quintptr internalId() const { return v.internalId(); }
+ 
+     static const QModelIndex &toModelIndex(const QPersistentModelIndex &index)
+     { return index; }
+diff --git src/qmlworkerscript/qv4serialize.cpp src/qmlworkerscript/qv4serialize.cpp
+index f0a644a8b8..3ab8ae26d4 100644
+--- src/qmlworkerscript/qv4serialize.cpp
++++ src/qmlworkerscript/qv4serialize.cpp
+@@ -104,6 +104,7 @@ static inline quint32 headersize(quint32 header)
+ 
+ static inline void push(QByteArray &data, quint32 value)
+ {
++    Q_ASSERT(qIsAligned(data.end(), alignof(quint32)));
+     data.append((const char *)&value, sizeof(quint32));
+ }
+ 
+@@ -112,9 +113,18 @@ static inline void push(QByteArray &data, double value)
+     data.append((const char *)&value, sizeof(double));
+ }
+ 
+-static inline void push(QByteArray &data, void *ptr)
++static inline void pushPtr(QByteArray &data, void *ptr)
+ {
+-    data.append((const char *)&ptr, sizeof(void *));
++    char *alignedPtr = qAlignUp(data.end(), alignof(void *));
++    if (alignedPtr != data.end()) {
++        qptrdiff paddingBytes = alignedPtr - data.end();
++        data.append(paddingBytes, 'A');
++        // printf("%s: Added %zd padding bytes %#p\n", __func__, paddingBytes, data.end());
++    }
++    // printf("%s end pre %#p\n", __func__, data.end());
++    data.resize(data.size() + sizeof(void *));
++    // printf("%s end post %#p\n", __func__, data.end());
++    *(void **)(data.end() - sizeof(void *)) = ptr;
+ }
+ 
+ static inline void reserve(QByteArray &data, int extra)
+@@ -124,6 +134,7 @@ static inline void reserve(QByteArray &data, int extra)
+ 
+ static inline quint32 popUint32(const char *&data)
+ {
++    Q_ASSERT(qIsAligned(data, alignof(quint32)));
+     quint32 rv = *((const quint32 *)data);
+     data += sizeof(quint32);
+     return rv;
+@@ -131,13 +142,23 @@ static inline quint32 popUint32(const char *&data)
+ 
+ static inline double popDouble(const char *&data)
+ {
+-    double rv = *((const double *)data);
++    // Use memcpy since it might not be aligned
++    double rv;
++    memcpy(&rv, data, sizeof(double));
+     data += sizeof(double);
+     return rv;
+ }
+ 
+ static inline void *popPtr(const char *&data)
+ {
++    const char *alignedPtr = qAlignUp(data, alignof(void *));
++    if (alignedPtr != data) {
++        // qptrdiff paddingBytes = alignedPtr - data;
++        // Q_ASSERT(memcmp(data, QByteArray(paddingBytes, 'A').data(), paddingBytes) == 0);
++        // printf("%s: Skipped %zd padding bytes %#p->%#p\n", __func__, paddingBytes, data,
++        // alignedPtr);
++        data = alignedPtr;
++    }
+     void *rv = *((void *const *)data);
+     data += sizeof(void *);
+     return rv;
+@@ -237,7 +258,7 @@ void Serialize::serialize(QByteArray &data, const QV4::Value &v, ExecutionEngine
+             if (QObject *agent = qvariant_cast<QObject *>(lm->property("agent"))) {
+                 if (QMetaObject::invokeMethod(agent, "addref")) {
+                     push(data, valueheader(WorkerListModel));
+-                    push(data, (void *)agent);
++                    pushPtr(data, (void *)agent);
+                     return;
+                 }
+             }
+diff --git src/quick/items/qquickitem.cpp src/quick/items/qquickitem.cpp
+index 83e52b12e5..62f4d8c7b4 100644
+--- src/quick/items/qquickitem.cpp
++++ src/quick/items/qquickitem.cpp
+@@ -8961,7 +8961,7 @@ void QV4::Heap::QQuickItemWrapper::markObjects(QV4::Heap::Base *that, QV4::MarkS
+     QObjectWrapper::markObjects(that, markStack);
+ }
+ 
+-quint64 QQuickItemPrivate::_q_createJSWrapper(QV4::ExecutionEngine *engine)
++QV4::ReturnedValue QQuickItemPrivate::_q_createJSWrapper(QV4::ExecutionEngine *engine)
+ {
+     return (engine->memoryManager->allocate<QQuickItemWrapper>(q_func()))->asReturnedValue();
+ }
+diff --git src/quick/items/qquickitem.h src/quick/items/qquickitem.h
+index 8c04ced11b..8cfb00a809 100644
+--- src/quick/items/qquickitem.h
++++ src/quick/items/qquickitem.h
+@@ -456,7 +456,7 @@ protected:
+ 
+ private:
+     Q_PRIVATE_SLOT(d_func(), void _q_resourceObjectDeleted(QObject *))
+-    Q_PRIVATE_SLOT(d_func(), quint64 _q_createJSWrapper(QV4::ExecutionEngine *))
++    Q_PRIVATE_SLOT(d_func(), QV4::ReturnedValue _q_createJSWrapper(QV4::ExecutionEngine *))
+ 
+     friend class QQuickEventPoint;
+     friend class QQuickWindow;
+diff --git src/quick/items/qquickitem_p.h src/quick/items/qquickitem_p.h
+index 841d91bb40..62a1c79778 100644
+--- src/quick/items/qquickitem_p.h
++++ src/quick/items/qquickitem_p.h
+@@ -315,7 +315,7 @@ public:
+     static void transform_clear(QQmlListProperty<QQuickTransform> *list);
+ 
+     void _q_resourceObjectDeleted(QObject *);
+-    quint64 _q_createJSWrapper(QV4::ExecutionEngine *engine);
++    QV4::ReturnedValue _q_createJSWrapper(QV4::ExecutionEngine *engine);
+ 
+     enum ChangeType {
+         Geometry = 0x01,
+diff --git src/quick/items/qquicktextinput.cpp src/quick/items/qquicktextinput.cpp
+index 0e7f52e816..eebbbc8878 100644
+--- src/quick/items/qquicktextinput.cpp
++++ src/quick/items/qquicktextinput.cpp
+@@ -611,7 +611,10 @@ Qt::LayoutDirection QQuickTextInputPrivate::textDirection() const
+     if (text.isEmpty())
+         text = m_textLayout.preeditAreaText();
+ #endif
+-
++#if defined(__CHERI_PURE_CAPABILITY__)
++	if (text.isEmpty()) //assume LTR if empty, else we get a length violation
++        return Qt::LeftToRight;
++#endif
+     const QChar *character = text.constData();
+     while (!character->isNull()) {
+         switch (character->direction()) {
+diff --git src/quick/scenegraph/adaptations/software/qsgsoftwarerenderablenode.cpp src/quick/scenegraph/adaptations/software/qsgsoftwarerenderablenode.cpp
+index 95c7efd4cb..0c6095ed86 100644
+--- src/quick/scenegraph/adaptations/software/qsgsoftwarerenderablenode.cpp
++++ src/quick/scenegraph/adaptations/software/qsgsoftwarerenderablenode.cpp
+@@ -239,8 +239,10 @@ struct RenderNodeState : public QSGRenderNode::RenderState
+     int stencilValue() const override { return 0; }
+     bool stencilEnabled() const override { return false; }
+     const QRegion *clipRegion() const override { return &cr; }
++	QPainter *painter() const override { return pr; }
+     QMatrix4x4 ident;
+     QRegion cr;
++	QPainter *pr;
+ };
+ 
+ QRegion QSGSoftwareRenderableNode::renderNode(QPainter *painter, bool forceOpaquePainting)
+@@ -272,6 +274,7 @@ QRegion QSGSoftwareRenderableNode::renderNode(QPainter *painter, bool forceOpaqu
+ 
+             painter->save();
+             RenderNodeState rs;
++			rs.pr = painter;
+             rs.cr = cr;
+             m_handle.renderNode->render(&rs);
+             painter->restore();
+diff --git src/quick/scenegraph/coreapi/qsgbatchrenderer.cpp src/quick/scenegraph/coreapi/qsgbatchrenderer.cpp
+index a0a97c779a..d9eec2f479 100644
+--- src/quick/scenegraph/coreapi/qsgbatchrenderer.cpp
++++ src/quick/scenegraph/coreapi/qsgbatchrenderer.cpp
+@@ -4380,6 +4380,7 @@ struct RenderNodeState : public QSGRenderNode::RenderState
+     int stencilValue() const override { return m_stencilValue; }
+     bool stencilEnabled() const override { return m_stencilEnabled; }
+     const QRegion *clipRegion() const override { return nullptr; }
++    QPainter *painter() const override { return nullptr; }
+ 
+     const QMatrix4x4 *m_projectionMatrix;
+     QRect m_scissorRect;
+diff --git src/quick/scenegraph/coreapi/qsgrendernode.h src/quick/scenegraph/coreapi/qsgrendernode.h
+index 0fb83b080c..e057d0bac4 100644
+--- src/quick/scenegraph/coreapi/qsgrendernode.h
++++ src/quick/scenegraph/coreapi/qsgrendernode.h
+@@ -40,6 +40,8 @@
+ #ifndef QSGRENDERNODE_H
+ #define QSGRENDERNODE_H
+ 
++#include <QPainter>
++
+ #include <QtQuick/qsgnode.h>
+ 
+ QT_BEGIN_NAMESPACE
+@@ -77,6 +79,7 @@ public:
+         virtual bool stencilEnabled() const = 0;
+         virtual const QRegion *clipRegion() const = 0;
+         virtual void *get(const char *state) const;
++		virtual QPainter *painter() const = 0;
+     };
+ 
+     QSGRenderNode();

@@ -20,8 +20,19 @@ QT_BINARIES=	yes
 QT_DEFINES=	ACCESSIBILITY
 QT_CONFIG=	accessibility accessibility-atspi-bridge
 
+OPTIONS_DEFINE= QML_DEBUG
+OPTIONS_SUB=	yes
+QML_DEBUG_DESC=	qml debugging
+
 TOOLS=		qml qmlcachegen qmleasing qmlformat qmlimportscanner qmllint qmlmin \
 		qmlplugindump qmlpreview qmlprofiler qmlscene qmltyperegistrar
+
+.include <bsd.port.pre.mk>
+
+.if ! ${PORT_OPTIONS:MQML_DEBUG}
+QMAKE_CONFIGURE_ARGS+=	-no-qml-debug
+.endif
+
 post-patch:
 # qtdeclarative.pro wants to run python, replace that with PYTHON_CMD
 	${REINPLACE_CMD} '/py_out/s#python#${PYTHON_CMD}#g' \
@@ -29,4 +40,4 @@ post-patch:
 	${REINPLACE_CMD} 's,python,${PYTHON_CMD},g' \
 		${WRKSRC}/src/3rdparty/masm/masm.pri
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
