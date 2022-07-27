@@ -13,6 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
 TEST_DEPENDS=	check>0:devel/check
+.if !exists(/usr/include/unwind.h)
+LIB_DEPENDS=	libunwind.so:devel/libunwind
+.endif
 
 USES=		autoreconf compiler:c++14-lang localbase pkgconfig
 
