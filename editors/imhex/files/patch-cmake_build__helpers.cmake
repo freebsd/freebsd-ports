@@ -1,9 +1,9 @@
---- cmake/build_helpers.cmake.orig	2022-07-16 11:41:37 UTC
+--- cmake/build_helpers.cmake.orig	2022-07-26 14:13:07 UTC
 +++ cmake/build_helpers.cmake
-@@ -291,17 +291,9 @@ endmacro()
+@@ -297,17 +297,9 @@ function(downloadImHexPatternsFiles dest)
+             set(PATTERNS_BRANCH ImHex-v${IMHEX_VERSION})
+         endif ()
  
- function(downloadImHexPatternsFiles dest)
-     if (NOT IMHEX_OFFLINE_BUILD)
 -        FetchContent_Declare(
 -            imhex_patterns
 -            GIT_REPOSITORY https://github.com/WerWolv/ImHex-Patterns.git

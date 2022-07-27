@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-07-16 11:41:37 UTC
+--- CMakeLists.txt.orig	2022-07-26 14:13:07 UTC
 +++ CMakeLists.txt
-@@ -14,7 +14,6 @@ option(IMHEX_OFFLINE_BUILD "Enable offline build" OFF)
+@@ -15,7 +15,6 @@ option(IMHEX_PATTERNS_PULL_MASTER "Download latest fil
  
  # Make sure project is configured correctly
  setDefaultBuiltTypeIfUnset()
