@@ -1,5 +1,6 @@
 PORTNAME=	ejabberd
 PORTVERSION=	22.05
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 # See https://github.com/processone/ejabberd/issues/3819

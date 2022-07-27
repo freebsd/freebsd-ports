@@ -23,5 +23,11 @@ Please refer to the release notes[0] for required DB schema updates.
 
 [0] https://www.process-one.net/blog/ejabberd-22-05/
 EOM
+},
+{ type: remove
+  message: <<EOM
+If you wish to delete ejabberd data and log files, remove
+"/var/spool/ejabberd" and "/var/log/ejabberd" directories.
+EOM
 }
 ]
