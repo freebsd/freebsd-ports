@@ -11,6 +11,9 @@ COMMENT=	Check whether password is known to have been exposed in a data breach
 
 LICENSE=	BSD2CLAUSE
 
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME}
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/src
