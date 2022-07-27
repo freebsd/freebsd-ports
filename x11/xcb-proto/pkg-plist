@@ -53,10 +53,10 @@ libdata/pkgconfig/xcb-proto.pc
 %%PYTHON_SITELIBDIR%%/xcbgen/xtypes.py
 %%PYTHON_SITELIBDIR%%/xcbgen/xtypes.pyc
 %%PYTHON_SITELIBDIR%%/xcbgen/xtypes.pyo
-%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/align%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/error%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/expr%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/matcher%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/state%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/xtypes%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/align.cpython-%%PYTHON_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/error.cpython-%%PYTHON_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/expr.cpython-%%PYTHON_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/matcher.cpython-%%PYTHON_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/state.cpython-%%PYTHON_SUFFIX%%.opt-2.pyc
+%%PYTHON_SITELIBDIR%%/xcbgen/__pycache__/xtypes.cpython-%%PYTHON_SUFFIX%%.opt-2.pyc
