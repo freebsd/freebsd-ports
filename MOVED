@@ -17517,3 +17517,6 @@ math/intervaltree||2022-07-27|Has expired: Dependent ports now use GH_TUPLE
 security/gnomint||2022-07-27|Has expired: Abandonware, depending on gconf2
 japanese/im-ja||2022-07-27|Has expired: Abandonware, depending on gconf2
 sysutils/mgeupsd||2022-07-27|Has expired: Last release is 23 years old. It is not clear what devices are supported.
+x11-wm/lxmed||2022-07-27|Removed, depends on expired sysutils/gksu
+sysutils/gksu||2022-07-27|Has expired: Abandonware, depending on gconf2
+sysutils/libgksu||2022-07-27|Has expired: Abandonware, depending on gconf2

@@ -60,7 +60,6 @@
     SUBDIR += libwraster
     SUBDIR += lwm
     SUBDIR += lxappearance-obconf
-    SUBDIR += lxmed
     SUBDIR += lxqt
     SUBDIR += lxqt-panel
     SUBDIR += lxqt-session
