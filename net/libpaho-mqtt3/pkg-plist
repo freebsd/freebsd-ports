@@ -1,14 +1,4 @@
-bin/MQTTAsync_publish
-bin/MQTTAsync_publish_time
-bin/MQTTAsync_subscribe
-bin/MQTTClient_publish
-bin/MQTTClient_publish_async
-bin/MQTTClient_subscribe
 bin/MQTTVersion
-bin/paho_c_pub
-bin/paho_c_sub
-bin/paho_cs_pub
-bin/paho_cs_sub
 include/MQTTAsync.h
 include/MQTTClient.h
 include/MQTTClientPersistence.h
