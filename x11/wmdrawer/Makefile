@@ -1,6 +1,6 @@
 PORTNAME=	wmdrawer
 PORTVERSION=	0.10.5
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/ \
 		http://www.sourcefiles.org/Utilities/Desktops/
@@ -11,7 +11,7 @@ COMMENT=	Dockapp which provides a drawer to launch applications
 LICENSE=	GPLv2+
 
 USES=		gmake gnome pkgconfig xorg
-USE_GNOME=	gdkpixbuf2
+USE_GNOME=	gdkpixbuf2 gdkpixbuf2xlib
 USE_XORG=	x11 xext xi
 MAKE_ENV=	USE_GDKPIXBUF2=1
 

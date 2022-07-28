@@ -1,6 +1,6 @@
 PORTNAME=	fbpanel
 PORTVERSION=	6.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		alias gmake gnome pkgconfig tar:tbz2 xorg
-USE_GNOME=	gtk20
+USE_GNOME=	gdkpixbuf2 gdkpixbuf2xlib gtk20
 USE_XORG=	x11
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}

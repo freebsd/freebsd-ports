@@ -1,5 +1,6 @@
 PORTNAME=	xqf
 PORTVERSION=	1.0.6.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	games
 
@@ -9,7 +10,7 @@ COMMENT=	Server browser for many popular 3D action games
 RUN_DEPENDS=	qstat:games/qstat
 
 USES=		autoreconf gettext gmake gnome pkgconfig xorg
-USE_GNOME=	intlhack
+USE_GNOME=	intlhack gdkpixbuf2 gdkpixbuf2xlib
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
@@ -26,7 +27,6 @@ OPTIONS_DEFINE=	GTK2 BZIP2 DOCS
 OPTIONS_DEFAULT=GTK2 BZIP2
 
 GTK2_USE=		GNOME=gtk20
-GTK2_USE_OFF=		GNOME=gdkpixbuf
 GTK2_CONFIGURE_ENABLE=	gtk2
 
 BZIP2_CONFIGURE_ENABLE=	bzip2

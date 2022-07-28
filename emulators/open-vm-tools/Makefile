@@ -1,5 +1,6 @@
 PORTNAME=	open-vm-tools
 PORTVERSION=	12.0.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	stable-
 PORTEPOCH=	2
 CATEGORIES=	emulators
@@ -63,7 +64,7 @@ OPENSSL_CONFIGURE_WITH=	ssl
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
 X11_USES=		xorg
-X11_USE=		GNOME=gdkpixbuf2,gtk30,gtkmm30 \
+X11_USE=		GNOME=gdkpixbuf2,gdkpixbuf2xlib,gtk30,gtkmm30 \
 			XORG=ice,sm,x11,xext,xi,xinerama,xorgproto,xrandr,xrender,xtst
 X11_CONFIGURE_WITH=	gtk3 gtkmm3 x
 
