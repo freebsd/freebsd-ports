@@ -18,6 +18,13 @@ you update your ports collection, before attempting any port upgrades.
   # pkill stunnel;service stunnel start
   after the upgrade has been completed.
 
+202207XYZ:
+  AFFECTS: users of devel/maven-wrapper and devel/maven
+  AUTHOR: michaelo@apache.org
+
+  The environment variable M2_HOME has been replaced with more common
+  MAVEN_HOME which can be used to pass a custom Maven home directory.
+
 20220628:
   AFFECTS: users of Erlang and Elixir
   AUTHOR: dch@FreeBSD.org

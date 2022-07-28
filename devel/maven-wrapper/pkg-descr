@@ -1,7 +1,7 @@
 The maven-wrapper provides a convenient way to switch between several Maven
 installations.
 
-- By setting the M2_HOME environment variable the user can select the Maven
+- By setting the MAVEN_HOME environment variable the user can select the Maven
   instance to use.
 - A default Maven instance is selected according to the files in
-  /usr/local/etc/maven/instances.d/
+  /usr/local/etc/maven-wrapper/instances.d/

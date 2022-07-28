@@ -2,26 +2,23 @@
 
 set -e
 
-if [ -f "%%PREFIX%%/etc/maven/setenv.sh" ] ; then
-	. "%%PREFIX%%/etc/maven/setenv.sh"
-fi
+SCRIPT_NAME="$(basename $0)"
 
-if [ -z "${M2_HOME}" ] ; then
-	INSTANCES_DIRECTORY="/usr/local/etc/maven-wrapper/instances.d"
-	INSTANCE="`%%FIND%% -s "${INSTANCES_DIRECTORY}" -type f -mindepth 1 -maxdepth 1 | %%TAIL%% -n 1`"
+if [ -z "${MAVEN_HOME}" ] ; then
+	INSTANCES_DIRECTORY="%%ETCDIR%%/instances.d"
+	INSTANCE="$(%%FIND%% -s "${INSTANCES_DIRECTORY}" -type f -mindepth 1 -maxdepth 1 | %%TAIL%% -n 1)"
 
 	if [ -z "${INSTANCE}" ] ; then
-		echo "could not find a Maven instance! (${INSTANCES_DIRECTORY})" >&2
+		echo "Could not find a Maven instance in ${INSTANCES_DIRECTORY}" >&2
 		exit 1
 	fi
 
-	M2_HOME="`%%CAT%% "${INSTANCE}"`"
+	MAVEN_HOME="$(%%CAT%% "${INSTANCE}")"
 
-	if [ ! -d "${M2_HOME}" ] ; then
-		echo "not a directory: ${M2_HOME}" >&2
+	if [ ! -d "${MAVEN_HOME}" ] ; then
+		echo "Not a directory: ${MAVEN_HOME}" >&2
 		exit 2
 	fi
 fi
 
-export M2_HOME
-exec "${M2_HOME}/bin/mvn" "$@"
+exec "${MAVEN_HOME}/bin/${SCRIPT_NAME}" "$@"

@@ -1,2 +1,3 @@
 bin/mvn
-@dir etc/maven-wrapper/instances.d
+bin/mvnDebug
+@dir %%ETCDIR%%/instances.d
