@@ -1,6 +1,6 @@
 PORTNAME=	ab-av1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,11 +27,11 @@ CARGO_CRATES=	anyhow-1.0.58 \
 		bytes-1.2.0 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		clap-3.2.14 \
+		clap-3.2.15 \
 		clap_complete-3.2.3 \
-		clap_derive-3.2.7 \
+		clap_derive-3.2.15 \
 		clap_lex-0.2.4 \
-		console-0.15.0 \
+		console-0.15.1 \
 		encode_unicode-0.3.6 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
@@ -68,7 +68,7 @@ CARGO_CRATES=	anyhow-1.0.58 \
 		ppv-lite86-0.2.16 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.40 \
+		proc-macro2-1.0.42 \
 		quote-1.0.20 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -89,7 +89,7 @@ CARGO_CRATES=	anyhow-1.0.58 \
 		textwrap-0.15.0 \
 		time-0.3.11 \
 		time-macros-0.2.4 \
-		tokio-1.20.0 \
+		tokio-1.20.1 \
 		tokio-macros-1.8.0 \
 		tokio-process-stream-0.3.0 \
 		tokio-stream-0.1.9 \
