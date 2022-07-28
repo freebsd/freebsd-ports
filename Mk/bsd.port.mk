@@ -1305,7 +1305,7 @@ WITH_DEBUG=	yes
 
 .    if defined(USE_LTO)
 WITH_LTO=	${USE_LTO}
-WARNING+=	USE_LTO is precrecated in favor of WITH_LTO
+WARNING+=	USE_LTO is deprecated in favor of WITH_LTO
 .    endif
 
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
