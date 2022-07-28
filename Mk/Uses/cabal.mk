@@ -39,6 +39,9 @@
 #  CABAL_PROJECT	Sets how to treat existing cabal.project file. Possible
 #			values are "remove" and "append".
 #
+#  SKIP_CABAL_PLIST	Set to "yes" to prevent Haskell executables from being
+#			added to the pkg-plist automatically.
+#
 # MAINTAINER: haskell@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_CABAL_MK)
