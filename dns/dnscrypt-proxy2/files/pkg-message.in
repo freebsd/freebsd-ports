@@ -1,11 +1,8 @@
 [
 { type: install
   message: <<EOM
-Version 2 of dnscrypt-proxy is written in Go and therefore isn't capable
-of dropping privileges after binding to a low port on FreeBSD.
-
-By default, this port's daemon will listen on port 5353 (TCP/UDP) as the
-%%USER%% user.
+Version 2 of dnscrypt-proxy is written in Go. by default, this port's daemon
+will listen on port 5353 (TCP/UDP) as the %%USER%% user.
 
 It's possible to bind it and listen on port 53 (TCP/UDP) with mac_portacl(4)
 kernel module (network port access control policy). For this add
