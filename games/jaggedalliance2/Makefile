@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS_REASON=	requires little endian environment
 BUILD_DEPENDS=	string_theory>=3.1:devel/string_theory \
 		rapidjson>=1.1.0:devel/rapidjson \
 		sol2>=3.2.2:devel/sol2 \
-		miniaudio>=0.10.36<0.11:audio/miniaudio
+		miniaudio>=0.10.36,1<0.11,1:audio/miniaudio
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 USES=		cargo cmake compiler:c++17-lang pkgconfig sdl xorg gl lua:53
