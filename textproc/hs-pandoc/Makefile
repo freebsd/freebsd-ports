@@ -15,7 +15,6 @@ OPTIONS_DEFINE=		EMBED_DATA TRYPANDOC
 
 EMBED_DATA_DESC=	Embed data files in binary for relocatable executable
 EMBED_DATA_CABAL_FLAGS=	embed_data_files
-EMBED_DATA_USE_CABAL=	file-embed-0.0.15.0
 
 TRYPANDOC_DESC=		Build trypandoc cgi executable
 TRYPANDOC_CABAL_FLAGS=	trypandoc
@@ -177,10 +176,18 @@ USE_CABAL=	Glob-0.10.2_3 \
 		zip-archive-0.4.2.1 \
 		zlib-0.6.3.0
 
-CABAL_PROJECT=	remove
-EXECUTABLES=	pandoc
+CABAL_PROJECT=		remove
+EXECUTABLES=		pandoc
+CABAL_WRAPPER_SCRIPTS=	${EXECUTABLES}
 
 OPTIONS_SUB=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEMBED_DATA}
+# No need to use wrapper scripts when all data is compiled into an executable
+.undef CABAL_WRAPPER_SCRIPTS
+.endif
 
 .include <bsd.port.pre.mk>
 

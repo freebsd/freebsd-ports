@@ -122,7 +122,8 @@ USE_CABAL=	GraphSCC-1.0.4 \
 		zlib-0.6.3.0 \
 		zlib-bindings-0.1.1.5_2
 
-EXECUTABLES=	cryptol cryptol-html
+EXECUTABLES=		cryptol cryptol-html
+CABAL_WRAPPER_SCRIPTS=	${EXECUTABLES}
 
 post-install:
 	cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}

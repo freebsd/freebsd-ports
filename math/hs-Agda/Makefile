@@ -83,6 +83,7 @@ USE_CABAL=	OneTuple-0.3.1_2 \
 		zlib-0.6.3.0
 
 EXECUTABLES=		agda-mode agda
+CABAL_WRAPPER_SCRIPTS=	${EXECUTABLES}
 agda_DATADIR_VARS=	Agda
 agda-mode_DATADIR_VARS=	Agda
 

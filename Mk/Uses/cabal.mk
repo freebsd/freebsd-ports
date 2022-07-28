@@ -33,6 +33,12 @@
 #			and "-${opt_CABAL_FLAGS}" otherwise.
 #  opt_EXECUTABLES	Variant of EXECUTABLES to be used with options framework.
 #
+#  CABAL_WRAPPER_SCRIPTS	A subset of ${EXECUTABLES} containing Haskell
+#			programs to be wrapped into a shell script that sets
+#			*_datadir environment variables before running the program.
+#			This is needed for Haskell programs that install their
+#			data files under share/ directory.
+#
 #  FOO_DATADIR_VARS     Additional environment vars to add to FOO executable's
 #                       wrapper script.
 #
@@ -266,20 +272,28 @@ do-build:
 
 .  if !target(do-install)
 do-install:
+.    if defined(CABAL_WRAPPER_SCRIPTS) && !empty(CABAL_WRAPPER_SCRIPTS)
 	${MKDIR} ${STAGEDIR}${PREFIX}/${CABAL_LIBEXEC}
+.    endif
 .    for exe in ${EXECUTABLES}
+.      if defined(CABAL_WRAPPER_SCRIPTS) && ${CABAL_WRAPPER_SCRIPTS:M${exe}}
 	${INSTALL_PROGRAM} \
 		$$(find ${WRKSRC}/dist-newstyle -name ${exe} -type f -perm +111) \
 		${STAGEDIR}${PREFIX}/${CABAL_LIBEXEC}/${exe}
 	${ECHO_CMD} '#!/bin/sh' > ${STAGEDIR}${PREFIX}/bin/${exe}
 	${ECHO_CMD} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 	${ECHO_CMD} 'export ${exe:S/-/_/g}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
-.      for dep in ${${exe}_DATADIR_VARS}
+.        for dep in ${${exe}_DATADIR_VARS}
 	${ECHO_CMD} 'export ${dep:S/-/_/g}_datadir=${DATADIR}' >> ${STAGEDIR}${PREFIX}/bin/${exe}
-.      endfor
+.        endfor
 	${ECHO_CMD} '' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 	${ECHO_CMD} 'exec ${PREFIX}/${CABAL_LIBEXEC}/${exe} "$$@"' >> ${STAGEDIR}${PREFIX}/bin/${exe}
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${exe}
+.      else
+	${INSTALL_PROGRAM} \
+		$$(find ${WRKSRC}/dist-newstyle -name ${exe} -type f -perm +111) \
+		${STAGEDIR}${PREFIX}/bin/${exe}
+.      endif
 .    endfor
 .  endif
 
@@ -287,7 +301,9 @@ do-install:
 cabal-post-install-script:
 .      for exe in ${EXECUTABLES}
 		${ECHO_CMD} 'bin/${exe}' >> ${TMPPLIST}
+.        if defined(CABAL_WRAPPER_SCRIPTS) && ${CABAL_WRAPPER_SCRIPTS:M${exe}}
 		${ECHO_CMD} '${CABAL_LIBEXEC}/${exe}' >> ${TMPPLIST}
+.        endif
 .    endfor
 .  endif
 

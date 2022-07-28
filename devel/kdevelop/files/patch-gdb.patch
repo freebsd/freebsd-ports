@@ -1,0 +1,22 @@
+diff --git plugins/gdb/gdb.cpp plugins/gdb/gdb.cpp
+index eb15feb446..11c115400f 100644
+--- plugins/gdb/gdb.cpp
++++ plugins/gdb/gdb.cpp
+@@ -12,6 +12,8 @@
+ #include "debuglog.h"
+ 
+ #include <interfaces/icore.h>
++#include <interfaces/iruntime.h>
++#include <interfaces/iruntimecontroller.h>
+ #include <interfaces/iuicontroller.h>
+ #include <sublime/message.h>
+ 
+@@ -79,7 +81,7 @@ bool GdbDebugger::start(KConfigGroup& config, const QStringList& extraArguments)
+     }
+     fullCommand += arguments.join(QLatin1Char(' '));
+ 
+-    m_process->start();
++    KDevelop::ICore::self()->runtimeController()->currentRuntime()->startProcess(m_process);
+ 
+     qCDebug(DEBUGGERGDB) << "Starting GDB with command" << fullCommand;
+ #if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 78, 0)

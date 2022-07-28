@@ -1,0 +1,698 @@
+diff --git plugins/CMakeLists.txt plugins/CMakeLists.txt
+index 8bea62a97e..32a27dad9e 100644
+--- plugins/CMakeLists.txt
++++ plugins/CMakeLists.txt
+@@ -80,6 +80,7 @@ ecm_optional_add_subdirectory(genericprojectmanager)
+ 
+ # BEGIN: Runtimes
+ add_subdirectory(android)
++add_subdirectory(craft)
+ if (UNIX)
+     add_subdirectory(docker)
+     add_subdirectory(flatpak)
+diff --git plugins/craft/CMakeLists.txt plugins/craft/CMakeLists.txt
+new file mode 100644
+index 0000000000..8cf28b6c01
+--- /dev/null
++++ plugins/craft/CMakeLists.txt
+@@ -0,0 +1,22 @@
++add_definitions(-DTRANSLATION_DOMAIN=\"kdevcraft\")
++
++declare_qt_logging_category(craftplugin_LOG_SRCS
++    TYPE PLUGIN
++    HEADER debug_craft.h
++    IDENTIFIER CRAFT
++    CATEGORY_BASENAME "craft"
++)
++
++#qt5_add_resources(craftplugin_SRCS kdevcraftplugin.qrc)
++kdevplatform_add_plugin(kdevcraft SOURCES craftplugin.cpp craftruntime.cpp ${craftplugin_LOG_SRCS})
++target_link_libraries(kdevcraft
++    KF5::CoreAddons
++    KDev::Interfaces
++    KDev::Util
++    KDev::OutputView
++    KDev::Project
++)
++
++if(BUILD_TESTING)
++    add_subdirectory(tests)
++endif()
+diff --git plugins/craft/craftplugin.cpp plugins/craft/craftplugin.cpp
+new file mode 100644
+index 0000000000..c27e82a8b5
+--- /dev/null
++++ plugins/craft/craftplugin.cpp
+@@ -0,0 +1,84 @@
++// SPDX-FileCopyrightText: 2022 Gleb Popov <arrowd@FreeBSD.org>
++// SPDX-License-Identifier: BSD-3-Clause
++
++#include "craftplugin.h"
++#include "craftruntime.h"
++#include "debug_craft.h"
++
++#include <interfaces/icore.h>
++#include <interfaces/iproject.h>
++#include <interfaces/iprojectcontroller.h>
++#include <interfaces/iruntimecontroller.h>
++#include <interfaces/iuicontroller.h>
++
++#include <KParts/MainWindow>
++#include <KPluginFactory>
++#include <KLocalizedString>
++#include <KConfigGroup>
++#include <KMessageBox>
++
++K_PLUGIN_FACTORY_WITH_JSON(KDevCraftFactory, "kdevcraft.json", registerPlugin<CraftPlugin>();)
++
++using namespace KDevelop;
++
++CraftPlugin::CraftPlugin(QObject* parent, const QVariantList& /*args*/)
++    : IPlugin(QStringLiteral("kdevcraft"), parent), m_shouldAutoEnable(Uninitialized)
++{
++    const QString pythonExecutable = CraftRuntime::findPython();
++    if (pythonExecutable.isEmpty())
++        return;
++
++    // If KDevelop itself runs under Craft env, this plugin has nothing to do
++    if (qEnvironmentVariableIsSet("KDEROOT"))
++        return;
++
++    connect(ICore::self()->projectController(), &IProjectController::projectAboutToBeOpened, this,
++        [pythonExecutable, this](KDevelop::IProject* project) {
++            const QString craftRoot = CraftRuntime::findCraftRoot(project->path());
++
++            if (craftRoot.isEmpty())
++                return;
++
++            qCDebug(CRAFT) << "Found Craft root at" << craftRoot;
++
++            auto* runtime = m_runtimes.value(craftRoot, nullptr);
++
++            if (!runtime) {
++                runtime = new CraftRuntime(craftRoot, pythonExecutable);
++                ICore::self()->runtimeController()->addRuntimes(runtime);
++                m_runtimes.insert(craftRoot, runtime);
++            }
++
++            bool haveConfigEntry = project->projectConfiguration()->group("Project")
++                                           .entryMap().contains(QLatin1String("AutoEnableCraftRuntime"));
++
++            if (!haveConfigEntry && m_shouldAutoEnable == Uninitialized) {
++                const QString msgboxText =
++                    i18n("The project being loaded (%1) is detected to reside under a\n"
++                         "Craft root [%2] .\nDo you want to automatically switch to the Craft runtime?\n"
++                         "Note that this will switch the runtime for all projects in a session!",
++                         project->name(), craftRoot);
++
++                auto answer = KMessageBox::questionYesNo(ICore::self()->uiController()->activeMainWindow(), msgboxText);
++                m_shouldAutoEnable = answer == KMessageBox::Yes ? AutoEnable : DoNotAutoEnable;
++                project->projectConfiguration()->group("Project")
++                        .writeEntry("AutoEnableCraftRuntime", answer == KMessageBox::Yes);
++            }
++            else if (!haveConfigEntry)
++                project->projectConfiguration()->group("Project")
++                        .writeEntry("AutoEnableCraftRuntime", m_shouldAutoEnable == AutoEnable);
++            else
++                m_shouldAutoEnable =
++                    project->projectConfiguration()->group("Project")
++                            .readEntry("AutoEnableCraftRuntime", false)
++                                ? AutoEnable
++                                : DoNotAutoEnable ;
++
++            if (m_shouldAutoEnable == AutoEnable) {
++                qCDebug(CRAFT) << "Enabling Craft runtime at" << craftRoot << "with" << pythonExecutable;
++                ICore::self()->runtimeController()->setCurrentRuntime(runtime);
++            }
++        });
++}
++
++#include "craftplugin.moc"
+diff --git plugins/craft/craftplugin.h plugins/craft/craftplugin.h
+new file mode 100644
+index 0000000000..62ef30b928
+--- /dev/null
++++ plugins/craft/craftplugin.h
+@@ -0,0 +1,28 @@
++// SPDX-FileCopyrightText: 2022 Gleb Popov <arrowd@FreeBSD.org>
++// SPDX-License-Identifier: BSD-3-Clause
++
++#ifndef CRAFTPLUGIN_H
++#define CRAFTPLUGIN_H
++
++#include <QHash>
++
++#include <interfaces/iplugin.h>
++
++class CraftRuntime;
++
++class CraftPlugin : public KDevelop::IPlugin
++{
++    Q_OBJECT
++public:
++    CraftPlugin(QObject* parent, const QVariantList& args);
++
++private:
++    QHash<QString, CraftRuntime*> m_runtimes;
++    enum {
++        DoNotAutoEnable,
++        AutoEnable,
++        Uninitialized
++    } m_shouldAutoEnable;
++};
++
++#endif // CRAFTPLUGIN_H
+diff --git plugins/craft/craftruntime.cpp plugins/craft/craftruntime.cpp
+new file mode 100644
+index 0000000000..f30766e511
+--- /dev/null
++++ plugins/craft/craftruntime.cpp
+@@ -0,0 +1,173 @@
++// SPDX-FileCopyrightText: 2022 Gleb Popov <arrowd@FreeBSD.org>
++// SPDX-License-Identifier: BSD-3-Clause
++
++#include "craftruntime.h"
++#include "debug_craft.h"
++
++#include <QFileInfo>
++#include <QStandardPaths>
++#include <QProcess>
++#include <KProcess>
++
++using namespace KDevelop;
++
++namespace {
++    auto craftSetupHelperRelativePath() { return QLatin1String{"/craft/bin/CraftSetupHelper.py"}; }
++}
++
++CraftRuntime::CraftRuntime(const QString& craftRoot, const QString& pythonExecutable)
++    : m_craftRoot(craftRoot), m_pythonExecutable(pythonExecutable)
++{
++    Q_ASSERT(!pythonExecutable.isEmpty());
++
++    m_watcher.addPath(craftRoot + craftSetupHelperRelativePath());
++
++    connect(&m_watcher, &QFileSystemWatcher::fileChanged, this, [this](const QString &path)
++    {
++        if (QFileInfo::exists(path)) {
++            refreshEnvCache();
++            if (!m_watcher.files().contains(path)) {
++                m_watcher.addPath(path);
++            }
++        }
++    });
++    refreshEnvCache();
++}
++
++QString CraftRuntime::name() const
++{
++    return QStringLiteral("Craft [%1]").arg(m_craftRoot);
++}
++
++QString CraftRuntime::findCraftRoot(Path startingPoint)
++{
++    // CraftRuntime doesn't handle remote directories, because it needs
++    // to check file existence in the findCraftRoot() function
++    if (startingPoint.isRemote())
++        return QString();
++
++    QString craftRoot;
++    while(true) {
++        bool craftSettingsIniExists = QFileInfo::exists(startingPoint.path() + QLatin1String("/etc/CraftSettings.ini"));
++        bool craftSetupHelperExists = QFileInfo::exists(startingPoint.path() + craftSetupHelperRelativePath());
++        if (craftSettingsIniExists && craftSetupHelperExists) {
++            craftRoot = startingPoint.path();
++            break;
++        }
++
++        if (!startingPoint.hasParent())
++            break;
++        startingPoint = startingPoint.parent();
++    }
++
++    return QFileInfo(craftRoot).canonicalFilePath();
++}
++
++QString CraftRuntime::findPython()
++{
++    // Craft requires Python 3.6+, not any "python3", but
++    // - If the user set up Craft already, there is a high probability that
++    //   "python3" is a correct one
++    // - We are running only CraftSetupHelper.py, not the whole Craft, so
++    //   the 3.6+ requirement might be not relevant for this case.
++    // So just search for "python3" and hope for the best.
++    return QStandardPaths::findExecutable(QStringLiteral("python3"));
++}
++
++void CraftRuntime::setEnabled(bool /*enabled*/)
++{
++}
++
++void CraftRuntime::refreshEnvCache()
++{
++    QProcess python;
++    python.start(m_pythonExecutable, QStringList{m_craftRoot + craftSetupHelperRelativePath(), QStringLiteral("--getenv")});
++
++    if(!python.waitForFinished(5000)) {
++        qCWarning(CRAFT) << "CraftSetupHelper.py execution timed out";
++        return;
++    }
++
++    if (python.exitStatus() != QProcess::NormalExit) {
++        qCWarning(CRAFT) << "CraftSetupHelper.py execution failed with code" << python.exitCode();
++        return;
++    }
++
++    m_envCache.clear();
++
++    const QList<QByteArray> output = python.readAllStandardOutput().split('\n');
++    for (const auto& line : output) {
++        // line contains things like "VAR=VALUE"
++        int equalsSignIndex = line.indexOf('=');
++        if (equalsSignIndex == -1)
++            continue;
++
++        QByteArray varName = line.left(equalsSignIndex);
++        QByteArray value = line.mid(equalsSignIndex + 1);
++        m_envCache.emplace_back(varName, value);
++    }
++}
++
++QByteArray CraftRuntime::getenv(const QByteArray& varname) const
++{
++    auto it = std::find_if(m_envCache.begin(), m_envCache.end(),
++                           [&varname](const EnvironmentVariable& envVar)
++    {
++        return envVar.name == varname;
++    });
++
++    return it != m_envCache.end() ? it->value : QByteArray();
++}
++
++QString CraftRuntime::findExecutable(const QString& executableName) const
++{
++    auto runtimePaths = QString::fromLocal8Bit(getenv(QByteArrayLiteral("PATH"))).split(QLatin1Char(':'));
++
++    return QStandardPaths::findExecutable(executableName, runtimePaths);
++}
++
++Path CraftRuntime::pathInHost(const Path& runtimePath) const
++{
++    return runtimePath;
++}
++
++Path CraftRuntime::pathInRuntime(const Path& localPath) const
++{
++    return localPath;
++}
++
++void CraftRuntime::startProcess(KProcess* process) const
++{
++    QStringList program = process->program();
++    QString executableInRuntime = findExecutable(program.constFirst());
++    if (executableInRuntime != program.constFirst()) {
++        program.first() = std::move(executableInRuntime);
++        process->setProgram(program);
++    }
++    setEnvironmentVariables(process);
++    process->start();
++}
++
++void CraftRuntime::startProcess(QProcess* process) const
++{
++    QString executableInRuntime = findExecutable(process->program());
++    process->setProgram(executableInRuntime);
++    setEnvironmentVariables(process);
++    process->start();
++}
++
++void CraftRuntime::setEnvironmentVariables(QProcess* process) const
++{
++    auto env = process->processEnvironment();
++
++    for(const auto& envVar : m_envCache) {
++        env.insert(QString::fromLocal8Bit(envVar.name), QString::fromLocal8Bit(envVar.value));
++    }
++
++    process->setProcessEnvironment(env);
++}
++
++EnvironmentVariable::EnvironmentVariable(const QByteArray& name, const QByteArray& value)
++    : name(name.trimmed()), value(value)
++{
++}
+diff --git plugins/craft/craftruntime.h plugins/craft/craftruntime.h
+new file mode 100644
+index 0000000000..c23ee0246e
+--- /dev/null
++++ plugins/craft/craftruntime.h
+@@ -0,0 +1,62 @@
++// SPDX-FileCopyrightText: 2022 Gleb Popov <arrowd@FreeBSD.org>
++// SPDX-License-Identifier: BSD-3-Clause
++
++#ifndef CRAFTRUNTIME_H
++#define CRAFTRUNTIME_H
++
++#include <vector>
++
++#include <QString>
++#include <QFileSystemWatcher>
++#include <interfaces/iruntime.h>
++#include <util/path.h>
++
++class QProcess;
++
++namespace KDevelop {
++    class IProject;
++}
++
++// An auxiliary structure to hold normalized name and value of an env var
++struct EnvironmentVariable {
++    EnvironmentVariable(const QByteArray& name, const QByteArray& value);
++
++    QByteArray name;
++    QByteArray value;
++};
++Q_DECLARE_TYPEINFO(EnvironmentVariable, Q_MOVABLE_TYPE);
++
++
++class CraftRuntime : public KDevelop::IRuntime
++{
++    Q_OBJECT
++public:
++    CraftRuntime(const QString& craftRoot, const QString& pythonExecutable);
++
++    QString name() const override;
++
++    void setEnabled(bool enabled) override;
++
++    void startProcess(KProcess* process) const override;
++    void startProcess(QProcess* process) const override;
++    KDevelop::Path pathInHost(const KDevelop::Path& runtimePath) const override;
++    KDevelop::Path pathInRuntime(const KDevelop::Path& localPath) const override;
++    QString findExecutable(const QString& executableName) const override;
++    QByteArray getenv(const QByteArray& varname) const override;
++
++    KDevelop::Path buildPath() const override { return {}; }
++
++    static QString findCraftRoot(KDevelop::Path startingPoint);
++    static QString findPython();
++
++private:
++    void setEnvironmentVariables(QProcess* process) const;
++    void refreshEnvCache();
++
++    const QString m_craftRoot;
++    const QString m_pythonExecutable;
++    QFileSystemWatcher m_watcher;
++    std::vector<EnvironmentVariable> m_envCache;
++};
++
++#endif // CRAFTRUNTIME_H
+diff --git plugins/craft/kdevcraft.json plugins/craft/kdevcraft.json
+new file mode 100644
+index 0000000000..bd05794c23
+--- /dev/null
++++ plugins/craft/kdevcraft.json
+@@ -0,0 +1,22 @@
++{
++    "KPlugin": {
++        "Authors": [
++            {
++                "Email": "arrowd@FreeBSD.org",
++                "Name": "Gleb Popov",
++                "Name[ru]": "Глеб Попов"
++            }
++        ],
++        "Category": "Runtimes",
++        "Description": "Exposes KDE Craft environment as a runtime",
++        "Description[ru]": "Представляет среду KDE Craft как среду выполнения KDevelop",
++        "Icon": "kdevelop",
++        "Id": "kdevcraft",
++        "License": "BSD3",
++        "Name": "Craft runtime",
++        "Name[ru]": "Поддержка Craft",
++        "Version": "0.1"
++    },
++    "X-KDevelop-Category": "Global",
++    "X-KDevelop-Mode": "GUI"
++}
+diff --git plugins/craft/tests/CMakeLists.txt plugins/craft/tests/CMakeLists.txt
+new file mode 100644
+index 0000000000..3ed8f32d5c
+--- /dev/null
++++ plugins/craft/tests/CMakeLists.txt
+@@ -0,0 +1,16 @@
++include_directories(
++    ..
++    ${CMAKE_CURRENT_BINARY_DIR}/..
++)
++
++set(test_craftruntime_SRCS
++    test_craftruntime.cpp
++    ../craftruntime.cpp
++    ${craftplugin_LOG_SRCS}
++)
++
++ecm_add_test(${test_craftruntime_SRCS}
++    TEST_NAME test_craftruntime
++    LINK_LIBRARIES Qt5::Test KDev::Tests)
++
++target_compile_definitions(test_craftruntime PRIVATE -DCRAFT_ROOT_MOCK="${CMAKE_CURRENT_SOURCE_DIR}/craft_root_mock")
+diff --git plugins/craft/tests/craft_root_mock/bin/env plugins/craft/tests/craft_root_mock/bin/env
+new file mode 100755
+index 0000000000..630848fc56
+--- /dev/null
++++ plugins/craft/tests/craft_root_mock/bin/env
+@@ -0,0 +1,6 @@
++#!/usr/bin/env python3
++
++import os
++
++for var in os.environ:
++    print(var + "=" + os.environ[var])
+diff --git plugins/craft/tests/craft_root_mock/bin/printenv plugins/craft/tests/craft_root_mock/bin/printenv
+new file mode 100755
+index 0000000000..375a1945e4
+--- /dev/null
++++ plugins/craft/tests/craft_root_mock/bin/printenv
+@@ -0,0 +1,5 @@
++#!/usr/bin/env python3
++
++print("PYTHONPATH=/usr/lib/python3/site-packages")
++print("BAD LINE")
++print("FOO=")
+diff --git plugins/craft/tests/craft_root_mock/craft/bin/CraftSetupHelper.py plugins/craft/tests/craft_root_mock/craft/bin/CraftSetupHelper.py
+new file mode 100644
+index 0000000000..1ae643b89b
+--- /dev/null
++++ plugins/craft/tests/craft_root_mock/craft/bin/CraftSetupHelper.py
+@@ -0,0 +1,9 @@
++import os
++import sys
++
++root = os.path.realpath(os.path.dirname(os.path.realpath(__file__)) + "/../../")
++
++if "--getenv" in sys.argv:
++    print("KDEROOT=" + root)
++    print("PYTHONPATH=" + root + "/lib/site-packages")
++    print("PATH=" + root + "/bin:" + os.environ["PATH"])
+diff --git plugins/craft/tests/craft_root_mock/etc/CraftSettings.ini plugins/craft/tests/craft_root_mock/etc/CraftSettings.ini
+new file mode 100644
+index 0000000000..e69de29bb2
+diff --git plugins/craft/tests/test_craftruntime.cpp plugins/craft/tests/test_craftruntime.cpp
+new file mode 100644
+index 0000000000..ede259d0e2
+--- /dev/null
++++ plugins/craft/tests/test_craftruntime.cpp
+@@ -0,0 +1,164 @@
++// SPDX-FileCopyrightText: 2022 Gleb Popov <arrowd@FreeBSD.org>
++// SPDX-License-Identifier: BSD-3-Clause
++
++#include "test_craftruntime.h"
++
++#include <QFile>
++#include <QProcess>
++#include <QStandardPaths>
++#include <QTest>
++
++#include <KIO/CopyJob>
++#include <KProcess>
++
++#include <tests/testcore.h>
++#include <tests/testhelpers.h>
++
++#include "../craftruntime.h"
++
++using namespace KDevelop;
++
++QTEST_MAIN(CraftRuntimeTest)
++
++class TempDirWrapper
++{
++public:
++    TempDirWrapper() = default;
++    TempDirWrapper(const QString& craftRoot, const QString& pythonExecutable)
++        : m_tempCraftRoot(new QTemporaryDir())
++    {
++        QVERIFY(m_tempCraftRoot->isValid());
++        copyCraftRoot(craftRoot);
++        m_runtime = std::make_shared<CraftRuntime>(m_tempCraftRoot->path(), pythonExecutable);
++    }
++
++    QString path() const
++    {
++        QVERIFY_RETURN(m_tempCraftRoot, QString());
++        return m_tempCraftRoot->path();
++    }
++
++    CraftRuntime* operator->() const
++    {
++        QVERIFY_RETURN(m_runtime, nullptr);
++        return m_runtime.get();
++    }
++private:
++    void copyCraftRoot(const QString& oldRoot) const {
++        const QLatin1String craftSettingsRelativePath("/etc/CraftSettings.ini");
++        const QDir dest(m_tempCraftRoot->path());
++
++        auto* job = KIO::copy(QUrl::fromLocalFile(oldRoot + QLatin1String("/craft")),
++                              QUrl::fromLocalFile(dest.path()));
++        QVERIFY(job->exec());
++
++        QVERIFY(dest.mkpath(QLatin1String("bin")));
++        QVERIFY(dest.mkpath(QLatin1String("etc")));
++
++        QVERIFY(QFile::copy(oldRoot + craftSettingsRelativePath,
++                            dest.path() + craftSettingsRelativePath));
++    }
++    std::shared_ptr<CraftRuntime> m_runtime;
++    std::shared_ptr<QTemporaryDir> m_tempCraftRoot;
++};
++
++Q_DECLARE_METATYPE(TempDirWrapper)
++
++// When this test itself is ran under a Craft root, its environment gets in the way
++static void breakoutFromCraftRoot() {
++    auto craftRoot = qgetenv("KDEROOT");
++    if (craftRoot.isEmpty())
++        return;
++
++    auto paths = qgetenv("PATH").split(':');
++    std::remove_if(paths.begin(), paths.end(), [craftRoot](const QByteArray& path) {
++        return path.startsWith(craftRoot);
++    });
++    qputenv("PATH", paths.join(':'));
++
++    qunsetenv("KDEROOT");
++    qunsetenv("craftRoot");
++}
++
++void CraftRuntimeTest::initTestCase_data()
++{
++    breakoutFromCraftRoot();
++
++    const QString pythonExecutable = CraftRuntime::findPython();
++    if (pythonExecutable.isEmpty())
++        QSKIP("No python found, skipping kdevcraft tests.");
++
++    QTest::addColumn<TempDirWrapper>("runtimeInstance");
++
++    QTest::newRow("Mock") << TempDirWrapper(QStringLiteral(CRAFT_ROOT_MOCK), pythonExecutable);
++
++    auto craftRoot = CraftRuntime::findCraftRoot(Path(QStringLiteral(".")));
++    if (!craftRoot.isEmpty())
++        QTest::newRow("Real") << TempDirWrapper(craftRoot, pythonExecutable);
++}
++
++void CraftRuntimeTest::testFindCraftRoot()
++{
++    QFETCH_GLOBAL(TempDirWrapper, runtimeInstance);
++    QCOMPARE(CraftRuntime::findCraftRoot(Path(runtimeInstance.path())), runtimeInstance.path());
++    QCOMPARE(CraftRuntime::findCraftRoot(Path(runtimeInstance.path()).cd(QStringLiteral("bin"))), runtimeInstance.path());
++}
++
++void CraftRuntimeTest::testGetenv()
++{
++    QFETCH_GLOBAL(TempDirWrapper, runtimeInstance);
++
++    QVERIFY(!runtimeInstance->getenv("KDEROOT").isEmpty());
++
++    QDir craftDir1 = QDir(QString::fromLocal8Bit(runtimeInstance->getenv("KDEROOT")));
++    QDir craftDir2 = QDir(runtimeInstance.path());
++    QCOMPARE(craftDir1.canonicalPath(), craftDir2.canonicalPath());
++
++    QString pythonpathValue = QString::fromLocal8Bit(runtimeInstance->getenv("PYTHONPATH"));
++    QVERIFY(!pythonpathValue.isEmpty());
++    QDir craftPythonPathDir = QDir(pythonpathValue);
++
++    QVERIFY(craftPythonPathDir.path().startsWith(craftDir1.path()));
++}
++
++void CraftRuntimeTest::testStartProcess()
++{
++    QFETCH_GLOBAL(TempDirWrapper, runtimeInstance);
++
++    QString envPath = QStandardPaths::findExecutable(QStringLiteral("env"));
++    if (envPath.isEmpty())
++        QSKIP("Skipping startProcess() test, no \"env\" executable found");
++
++    QString envUnderCraftPath = runtimeInstance.path() + QStringLiteral("/bin/env");
++    QVERIFY(QFile::copy(envPath, envUnderCraftPath));
++
++    QProcess p;
++    p.setProgram(QStringLiteral("env"));
++    runtimeInstance->startProcess(&p);
++
++    // test that CraftRuntime::startProcess prefers programs under Craft root
++    QCOMPARE(QDir(p.program()).canonicalPath(), QDir(envUnderCraftPath).canonicalPath());
++
++    p.waitForFinished();
++    QVERIFY(QFile::remove(envUnderCraftPath));
++}
++
++void CraftRuntimeTest::testStartProcessEnv()
++{
++    QFETCH_GLOBAL(TempDirWrapper, runtimeInstance);
++
++    QString printenvPath = QStandardPaths::findExecutable(QStringLiteral("printenv"));
++    if (printenvPath.isEmpty())
++        QSKIP("Skipping startProcess() test, no \"printenv\" executable found");
++
++    QString printenvUnderCraftPath = runtimeInstance.path() + QStringLiteral("/bin/printenv");
++    QVERIFY(QFile::copy(printenvPath, printenvUnderCraftPath));
++
++    KProcess p;
++    p.setProgram(QStringLiteral("printenv"), QStringList {QStringLiteral("PYTHONPATH")});
++    p.setOutputChannelMode(KProcess::OnlyStdoutChannel);
++    runtimeInstance->startProcess(&p);
++    p.waitForFinished();
++
++    QVERIFY(p.readAllStandardOutput().contains("site-packages"));
++}
+diff --git plugins/craft/tests/test_craftruntime.h plugins/craft/tests/test_craftruntime.h
+new file mode 100644
+index 0000000000..d5a470f946
+--- /dev/null
++++ plugins/craft/tests/test_craftruntime.h
+@@ -0,0 +1,20 @@
++// SPDX-FileCopyrightText: 2022 Gleb Popov <arrowd@FreeBSD.org>
++// SPDX-License-Identifier: BSD-3-Clause
++
++#ifndef KDEVPLATFORM_PLUGIN_TEST_CRAFTRUNTIME_H
++#define KDEVPLATFORM_PLUGIN_TEST_CRAFTRUNTIME_H
++
++#include <QObject>
++
++class CraftRuntimeTest: public QObject
++{
++    Q_OBJECT
++private Q_SLOTS:
++    void initTestCase_data();
++    void testFindCraftRoot();
++    void testGetenv();
++    void testStartProcess();
++    void testStartProcessEnv();
++};
++
++#endif // KDEVPLATFORM_PLUGIN_TEST_CRAFTRUNTIME_H

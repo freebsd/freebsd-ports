@@ -1,5 +1,6 @@
 PORTNAME=	git-annex
 PORTVERSION=	10.20220525
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -261,8 +262,6 @@ DBUS_USE_CABAL=		dbus-1.2.24 \
 CABAL_FLAGS=		production torrentparser magicmime \
 			-benchmark -debuglocks
 
-EXECUTABLES=	git-annex
-
 MAN1PAGES=	git-annex-add git-annex-expire git-annex-lookupkey \
 		git-annex-remotedaemon git-annex-ungroup \
 		git-annex-addunused git-annex-find git-annex-map \
@@ -313,13 +312,7 @@ post-install:
 .endfor
 
 post-stage:
-	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/${CABAL_LIBEXEC}/git-annex-shell
-	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/${CABAL_LIBEXEC}/git-remote-tor-annex
-	${CP} ${STAGEDIR}${PREFIX}/bin/git-annex ${STAGEDIR}${PREFIX}/bin/git-annex-shell
-	${CP} ${STAGEDIR}${PREFIX}/bin/git-annex ${STAGEDIR}${PREFIX}/bin/git-remote-tor-annex
-	${REINPLACE_CMD} 's|${PREFIX}/${CABAL_LIBEXEC}/git-annex|${PREFIX}/${CABAL_LIBEXEC}/git-annex-shell|' \
-		${STAGEDIR}${PREFIX}/bin/git-annex-shell
-	${REINPLACE_CMD} 's|${PREFIX}/${CABAL_LIBEXEC}/git-annex|${PREFIX}/${CABAL_LIBEXEC}/git-remote-tor-annex|' \
-		${STAGEDIR}${PREFIX}/bin/git-remote-tor-annex
+	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/bin/git-annex-shell
+	${LN} -sf git-annex ${STAGEDIR}${PREFIX}/bin/git-remote-tor-annex
 
 .include <bsd.port.mk>

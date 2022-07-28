@@ -37,10 +37,8 @@ USE_CABAL=	async-2.2.4 \
 		th-compat-0.1.3 \
 		zlib-0.6.2.3_1
 
+EXECUTABLES=		cabal
 SKIP_CABAL_EXTRACT=	yes
-SKIP_CABAL_PLIST=	yes
-
-PLIST_FILES=	bin/cabal
 
 post-extract:
 	${MKDIR} ${WRKSRC}/_build/tarballs/

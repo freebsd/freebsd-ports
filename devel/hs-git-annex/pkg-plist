@@ -1,7 +1,5 @@
 bin/git-annex-shell
 bin/git-remote-tor-annex
-libexec/cabal/git-annex-shell
-libexec/cabal/git-remote-tor-annex
 man/man1/git-annex-add.1.gz
 man/man1/git-annex-addunused.1.gz
 man/man1/git-annex-addurl.1.gz
