@@ -153,7 +153,10 @@ EXTRACT_ONLY+= ${_CABAL_EXTRACT_ONLY}
 
 # Auxiliary targets used during port creation/updating.
 
+# Populates Haskell package list from Hackage.
 # Fetches and unpacks package source from Hackage using only PORTNAME and PORTVERSION.
+# If Hackage isn't a default MASTER_SITE (for instance, when USE_GITHUB is present)
+# this target requires distinfo to be present too.
 cabal-extract: check-cabal
 .  if ${_hackage_is_default} == no
 	@${ECHO_MSG} "===> Recursing down to make extract"
