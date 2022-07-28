@@ -1,4 +1,4 @@
---- net/BUILD.gn.orig	2022-06-17 14:20:10 UTC
+--- net/BUILD.gn.orig	2022-07-22 17:30:31 UTC
 +++ net/BUILD.gn
 @@ -104,7 +104,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
@@ -9,7 +9,7 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1201,6 +1201,15 @@ component("net") {
+@@ -1199,6 +1199,15 @@ component("net") {
      ]
    }
  
@@ -25,7 +25,7 @@
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1333,7 +1342,7 @@ component("net") {
+@@ -1331,7 +1340,7 @@ component("net") {
      }
    }
  
@@ -34,7 +34,7 @@
      sources += [
        "base/network_change_notifier_posix.cc",
        "base/network_change_notifier_posix.h",
-@@ -1366,7 +1375,7 @@ component("net") {
+@@ -1364,7 +1373,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -43,7 +43,7 @@
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -4373,7 +4382,7 @@ test("net_unittests") {
+@@ -4372,7 +4381,7 @@ test("net_unittests") {
      ]
    }
  
@@ -52,7 +52,7 @@
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -4445,6 +4454,10 @@ test("net_unittests") {
+@@ -4447,6 +4456,10 @@ test("net_unittests") {
      "//url:buildflags",
    ]
  
@@ -63,16 +63,16 @@
    if (enable_websockets) {
      deps += [ "//net/server:tests" ]
    }
-@@ -4517,7 +4530,7 @@ test("net_unittests") {
+@@ -4519,7 +4532,7 @@ test("net_unittests") {
      ]
    }
  
 -  if (is_linux || is_chromeos) {
 +  if ((is_linux || is_chromeos) && !is_bsd) {
-     sources += [
-       "quic/platform/impl/quic_flags_test.cc",
-       "tools/quic/quic_http_proxy_backend_stream_test.cc",
-@@ -4665,7 +4678,7 @@ test("net_unittests") {
+     sources += [ "tools/quic/quic_simple_server_test.cc" ]
+   }
+ 
+@@ -4661,7 +4674,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

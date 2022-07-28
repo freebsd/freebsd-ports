@@ -1,0 +1,13 @@
+--- third_party/swiftshader/src/Vulkan/BUILD.gn.orig	2022-07-22 17:30:31 UTC
++++ third_party/swiftshader/src/Vulkan/BUILD.gn
+@@ -48,6 +48,10 @@ config("swiftshader_libvulkan_private_config") {
+     defines = [ "VK_EXPORT=" ]
+   }
+ 
++  if (is_openbsd) {
++    defines -= [ "VK_USE_PLATFORM_WAYLAND_KHR" ]
++  }
++ 
+   if (is_clang) {
+     cflags = [
+       "-Wno-unused-private-field",

@@ -1,6 +1,6 @@
---- chrome/test/interaction/interaction_sequence_browser_util.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/test/interaction/interaction_sequence_browser_util.cc.orig	2022-07-22 17:30:31 UTC
 +++ chrome/test/interaction/interaction_sequence_browser_util.cc
-@@ -53,7 +53,7 @@ class RenderFrameHost;
+@@ -52,7 +52,7 @@ class RenderFrameHost;
  
  namespace {
  

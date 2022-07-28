@@ -1,7 +1,7 @@
---- chrome/browser/metrics/power/process_monitor.h.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/metrics/power/process_monitor.h.orig	2022-07-22 17:30:31 UTC
 +++ chrome/browser/metrics/power/process_monitor.h
-@@ -76,7 +76,7 @@ class ProcessMonitor : public content::BrowserChildPro
- #endif
+@@ -70,7 +70,7 @@ class ProcessMonitor : public content::BrowserChildPro
+     double cpu_usage = 0.0;
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
 -    BUILDFLAG(IS_AIX)

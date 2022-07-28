@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2022-06-17 14:20:10 UTC
+--- content/utility/utility_main.cc.orig	2022-07-22 17:30:31 UTC
 +++ content/utility/utility_main.cc
 @@ -31,17 +31,19 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
@@ -32,7 +32,7 @@
 +
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  #include "ash/services/ime/ime_sandbox_hook.h"
- #include "chromeos/assistant/buildflags.h"
+ #include "chromeos/ash/components/assistant/buildflags.h"
 @@ -129,7 +135,7 @@ int UtilityMain(MainFunctionParams parameters) {
      }
    }

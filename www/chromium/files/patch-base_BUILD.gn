@@ -1,15 +1,15 @@
---- base/BUILD.gn.orig	2022-06-17 14:20:10 UTC
+--- base/BUILD.gn.orig	2022-07-22 17:30:31 UTC
 +++ base/BUILD.gn
-@@ -1004,7 +1004,7 @@ mixed_component("base") {
+@@ -1001,7 +1001,7 @@ mixed_component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
 -    if (!is_nacl && !is_apple) {
 +    if (!is_nacl && !is_apple && !is_bsd) {
        sources += [
-         "cpu_affinity_posix.cc",
-         "cpu_affinity_posix.h",
-@@ -1015,6 +1015,12 @@ mixed_component("base") {
+         "profiler/stack_copier_signal.cc",
+         "profiler/stack_copier_signal.h",
+@@ -1010,6 +1010,12 @@ mixed_component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -23,11 +23,11 @@
  
    if (is_win) {
 @@ -1496,11 +1502,23 @@ mixed_component("base") {
+   # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
-   if (!use_sysroot &&
--      (is_android || ((is_linux || is_chromeos) && !is_chromecast)) &&
-+      (is_android || ((is_linux || is_chromeos) && !is_chromecast && !is_bsd)) &&
+-  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos)) &&
++  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos && !is_bsd)) &&
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
@@ -60,12 +60,12 @@
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
--  if (is_apple || is_chromeos || is_chromecast || is_fuchsia) {
-+  if (is_apple || is_chromeos || is_chromecast || is_fuchsia || is_bsd) {
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2158,6 +2176,42 @@ mixed_component("base") {
+@@ -2165,6 +2183,42 @@ mixed_component("base") {
      }
    }
  
@@ -108,7 +108,7 @@
    # iOS
    if (is_ios) {
      sources -= [
-@@ -3452,7 +3506,7 @@ test("base_unittests") {
+@@ -3467,7 +3521,7 @@ test("base_unittests") {
      }
    }
  
@@ -117,25 +117,25 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3500,7 +3554,7 @@ test("base_unittests") {
+@@ -3514,7 +3568,7 @@ test("base_unittests") {
+       "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
-       "task/thread_pool/task_tracker_posix_unittest.cc",
      ]
 -    if (!is_nacl && !is_apple) {
 +    if (!is_nacl && !is_apple && !is_bsd) {
        sources += [
-         "cpu_affinity_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3511,7 +3565,7 @@ test("base_unittests") {
+         "profiler/thread_delegate_posix_unittest.cc",
+@@ -3524,7 +3578,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
--  if (is_apple || is_chromeos || is_chromecast || is_fuchsia) {
-+  if (is_apple || is_chromeos || is_chromecast || is_fuchsia || is_bsd) {
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3683,7 +3737,7 @@ test("base_unittests") {
+@@ -3712,7 +3766,7 @@ test("base_unittests") {
      }
    }
  

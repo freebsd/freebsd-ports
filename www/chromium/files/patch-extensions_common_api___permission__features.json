@@ -1,11 +1,11 @@
---- extensions/common/api/_permission_features.json.orig	2022-05-19 14:06:27 UTC
+--- extensions/common/api/_permission_features.json.orig	2022-07-22 17:30:31 UTC
 +++ extensions/common/api/_permission_features.json
 @@ -140,7 +140,7 @@
      {
        "channel": "stable",
        "extension_types": ["platform_app"],
 -      "platforms": ["chromeos", "win", "mac", "linux"],
-+      "platforms": ["chromeos", "win", "mac", "linux", "openbsd"],
++      "platforms": ["chromeos", "win", "mac", "linux", "openbsd", "freebsd"],
        "allowlist": [
          "1C93BD3CF875F4A73C0B2A163BB8FBDA8B8B3D80",  // http://crbug.com/387169
          "A3BC37E2148AC4E99BE4B16AF9D42DD1E592BBBE",  // http://crbug.com/387169
@@ -14,7 +14,7 @@
      "channel": "stable",
      "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
 -    "platforms": ["chromeos", "mac", "win", "linux", "fuchsia"],
-+    "platforms": ["chromeos", "mac", "win", "linux", "fuchsia", "openbsd"],
++    "platforms": ["chromeos", "mac", "win", "linux", "fuchsia", "openbsd", "freebsd"],
      "allowlist": [
        "0DE0F05680A4A056BCEC864ED8DDA84296F82B40",  // http://crbug.com/434651
        "1C93BD3CF875F4A73C0B2A163BB8FBDA8B8B3D80",  // http://crbug.com/293683
@@ -23,7 +23,7 @@
      "channel": "stable",
      "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
 -    "platforms": ["chromeos", "mac", "win", "linux", "fuchsia"],
-+    "platforms": ["chromeos", "mac", "win", "linux", "fuchsia", "openbsd"],
++    "platforms": ["chromeos", "mac", "win", "linux", "fuchsia", "openbsd", "freebsd"],
      "allowlist": [
        // DO NOT ADD ANY MORE ENTRIES HERE.
        // networkingPrivate is being migrated to networking.onc.

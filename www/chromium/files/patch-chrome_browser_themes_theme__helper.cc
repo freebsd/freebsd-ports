@@ -1,4 +1,4 @@
---- chrome/browser/themes/theme_helper.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/themes/theme_helper.cc.orig	2022-07-22 17:30:31 UTC
 +++ chrome/browser/themes/theme_helper.cc
 @@ -24,7 +24,7 @@
  #include "ui/native_theme/common_theme.h"
@@ -9,7 +9,7 @@
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -494,7 +494,7 @@ bool ThemeHelper::UseDarkModeColors(const CustomThemeS
+@@ -498,7 +498,7 @@ bool ThemeHelper::UseDarkModeColors(const CustomThemeS
  
    ui::NativeTheme const* native_theme =
        ui::NativeTheme::GetInstanceForNativeUi();

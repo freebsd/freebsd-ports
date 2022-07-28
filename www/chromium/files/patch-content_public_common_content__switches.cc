@@ -1,6 +1,6 @@
---- content/public/common/content_switches.cc.orig	2022-06-17 14:20:10 UTC
+--- content/public/common/content_switches.cc.orig	2022-07-22 17:30:31 UTC
 +++ content/public/common/content_switches.cc
-@@ -365,6 +365,8 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
+@@ -369,6 +369,8 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  
@@ -9,7 +9,7 @@
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -975,7 +977,7 @@ const char kEnableAutomation[] = "enable-automation";
+@@ -972,7 +974,7 @@ const char kEnableAutomation[] = "enable-automation";
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

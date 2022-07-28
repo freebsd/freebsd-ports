@@ -1,6 +1,6 @@
---- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig	2022-07-22 17:30:31 UTC
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -186,7 +186,7 @@
+@@ -188,7 +188,7 @@
  #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/web_applications/policy/web_app_settings_policy_handler.h"
  #endif
  
-@@ -1562,7 +1562,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1566,7 +1566,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif // !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_CHROMEOS)
  
@@ -18,7 +18,7 @@
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -1626,7 +1626,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1627,7 +1627,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      base::Value::Type::BOOLEAN },
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -36,7 +36,7 @@
    handlers->AddHandler(std::make_unique<LocalSyncPolicyHandler>());
    handlers->AddHandler(std::make_unique<ThemeColorPolicyHandler>());
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-@@ -2299,7 +2299,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2300,7 +2300,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        static_cast<int>(variations::RestrictionPolicy::ALL), false));
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -45,7 +45,7 @@
    handlers->AddHandler(
        std::make_unique<web_app::WebAppSettingsPolicyHandler>(chrome_schema));
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
-@@ -2318,7 +2318,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2319,7 +2319,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
            policy::key::kSpellcheckLanguageBlocklist));
  #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  

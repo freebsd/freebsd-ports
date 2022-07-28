@@ -1,6 +1,6 @@
---- content/browser/browser_main_loop.cc.orig	2022-06-17 14:20:10 UTC
+--- content/browser/browser_main_loop.cc.orig	2022-07-22 17:30:31 UTC
 +++ content/browser/browser_main_loop.cc
-@@ -243,6 +243,12 @@
+@@ -241,6 +241,12 @@
  #include "mojo/public/cpp/bindings/lib/test_random_mojo_delays.h"
  #endif
  
@@ -13,7 +13,7 @@
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -540,6 +546,12 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -524,6 +530,12 @@ int BrowserMainLoop::EarlyInitialization() {
    // by now since a thread to start the ServiceManager has been created
    // before the browser main loop starts.
    DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());
@@ -26,7 +26,7 @@
  #endif
  
    // GLib's spawning of new processes is buggy, so it's important that at this
-@@ -567,7 +579,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -551,7 +563,7 @@ int BrowserMainLoop::EarlyInitialization() {
  
    // Up the priority of the UI thread unless it was already high (since Mac
    // and recent versions of Android (O+) do this automatically).
@@ -35,7 +35,7 @@
    if (base::FeatureList::IsEnabled(
            features::kBrowserUseDisplayThreadPriority) &&
        base::PlatformThread::GetCurrentThreadPriority() <
-@@ -578,7 +590,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -562,7 +574,7 @@ int BrowserMainLoop::EarlyInitialization() {
  #endif  // !BUILDFLAG(IS_MAC)
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

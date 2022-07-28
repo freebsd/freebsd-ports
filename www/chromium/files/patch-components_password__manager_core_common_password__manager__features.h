@@ -1,4 +1,4 @@
---- components/password_manager/core/common/password_manager_features.h.orig	2022-05-19 14:06:27 UTC
+--- components/password_manager/core/common/password_manager_features.h.orig	2022-07-22 17:30:31 UTC
 +++ components/password_manager/core/common/password_manager_features.h
 @@ -31,7 +31,7 @@ extern const base::Feature KEnablePasswordGenerationFo
  extern const base::Feature kEnablePasswordManagerWithinFencedFrame;
@@ -9,7 +9,7 @@
  extern const base::Feature kForceInitialSyncWhenDecryptionFails;
  #endif
  extern const base::Feature kInferConfirmationPasswordField;
-@@ -50,11 +50,11 @@ extern const base::Feature kPasswordsAccountStorageRev
+@@ -51,11 +51,11 @@ extern const base::Feature kPasswordsAccountStorageRev
  extern const base::Feature kPasswordScriptsFetching;
  extern const base::Feature kRecoverFromNeverSaveAndroid;
  extern const base::Feature kSecondaryServerFieldPredictions;

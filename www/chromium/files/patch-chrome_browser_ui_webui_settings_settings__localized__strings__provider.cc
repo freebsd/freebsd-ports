@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2022-07-22 17:30:31 UTC
 +++ chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
 @@ -116,7 +116,7 @@
  #include "chrome/browser/ui/webui/settings/chromeos/constants/routes.mojom.h"
@@ -18,7 +18,7 @@
  #include "ui/ozone/public/ozone_platform.h"
  #endif
  
-@@ -372,7 +372,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -373,7 +373,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
      {"huge", IDS_SETTINGS_HUGE_FONT_SIZE},
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -27,7 +27,7 @@
      {"systemTheme", IDS_SETTINGS_SYSTEM_THEME},
      {"useSystemTheme", IDS_SETTINGS_USE_SYSTEM_THEME},
      {"classicTheme", IDS_SETTINGS_CLASSIC_THEME},
-@@ -380,7 +380,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -381,7 +381,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
  #else
      {"resetToDefaultTheme", IDS_SETTINGS_RESET_TO_DEFAULT_THEME},
  #endif
@@ -36,7 +36,7 @@
      {"showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS},
  #endif
  #if BUILDFLAG(IS_MAC)
-@@ -401,7 +401,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -402,7 +402,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

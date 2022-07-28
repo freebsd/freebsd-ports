@@ -1,6 +1,6 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2022-07-22 17:30:31 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -434,14 +434,14 @@
+@@ -438,14 +438,14 @@
  #include "components/os_crypt/os_crypt.h"
  #endif
  
@@ -17,7 +17,7 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -1177,7 +1177,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1221,7 +1221,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -26,7 +26,7 @@
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
    web_app::url_handler_prefs::RegisterLocalStatePrefs(registry);
  #endif
-@@ -1492,7 +1492,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1543,7 +1543,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

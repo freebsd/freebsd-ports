@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2022-06-17 14:20:10 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2022-07-22 17:30:31 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -33,7 +33,7 @@
      // shipped stable can have its runtime flag removed soon after.
@@ -9,7 +9,7 @@
      },
  
      // "implied_by" or "depends_on" specifies relationship to other features:
-@@ -1059,7 +1059,7 @@
+@@ -1069,7 +1069,7 @@
        depends_on: ["FileSystemAccess"],
        status: {"Android": "test", "default": "experimental"},
        origin_trial_feature_name: "FileHandling",
@@ -18,7 +18,7 @@
      },
      {
        name: "FileHandlingIcons",
-@@ -2349,7 +2349,7 @@
+@@ -2403,7 +2403,7 @@
      {
        name: "U2FSecurityKeyAPI",
        origin_trial_feature_name: "U2FSecurityKeyAPI",
@@ -27,7 +27,7 @@
        origin_trial_type: "deprecation",
      },
      {
-@@ -2368,7 +2368,7 @@
+@@ -2422,7 +2422,7 @@
      {
        name: "UnrestrictedSharedArrayBuffer",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -36,7 +36,7 @@
      },
      {
        name: "URLPattern",
-@@ -2394,7 +2394,7 @@
+@@ -2444,7 +2444,7 @@
        origin_trial_feature_name: "UserAgentReduction",
        origin_trial_allows_third_party: true,
        // iOS not included as it should not send a reduced User-Agent string.
@@ -45,7 +45,7 @@
      },
      {
        name: "UUID",
-@@ -2519,12 +2519,12 @@
+@@ -2569,12 +2569,12 @@
        name: "WebAppUrlHandling",
        status: "experimental",
        origin_trial_feature_name: "WebAppUrlHandling",

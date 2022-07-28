@@ -1,6 +1,6 @@
---- content/child/child_process.cc.orig	2022-05-19 14:06:27 UTC
+--- content/child/child_process.cc.orig	2022-07-22 17:30:31 UTC
 +++ content/child/child_process.cc
-@@ -68,7 +68,7 @@ ChildProcess::ChildProcess(base::ThreadPriority io_thr
+@@ -67,7 +67,7 @@ ChildProcess::ChildProcess(base::ThreadPriority io_thr
    DCHECK(!g_lazy_child_process_tls.Pointer()->Get());
    g_lazy_child_process_tls.Pointer()->Set(this);
  

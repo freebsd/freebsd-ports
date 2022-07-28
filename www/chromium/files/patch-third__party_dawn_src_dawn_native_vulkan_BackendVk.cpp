@@ -1,11 +1,11 @@
---- third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp.orig	2022-06-17 14:20:10 UTC
+--- third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp.orig	2022-07-22 17:30:31 UTC
 +++ third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp
-@@ -41,7 +41,7 @@ constexpr char kSwiftshaderLibName[] = "libvk_swiftsha
+@@ -42,7 +42,7 @@ constexpr char kSwiftshaderLibName[] = "libvk_swiftsha
  #endif
  
- #if defined(DAWN_PLATFORM_LINUX)
--#if defined(DAWN_PLATFORM_ANDROID)
-+#if defined(DAWN_PLATFORM_ANDROID) || defined(DAWN_PLATFORM_BSD)
+ #if DAWN_PLATFORM_IS(LINUX)
+-#if DAWN_PLATFORM_IS(ANDROID)
++#if DAWN_PLATFORM_IS(ANDROID) || DAWN_PLATFORM_IS(BSD)
  constexpr char kVulkanLibName[] = "libvulkan.so";
  #else
  constexpr char kVulkanLibName[] = "libvulkan.so.1";

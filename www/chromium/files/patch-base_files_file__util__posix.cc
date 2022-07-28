@@ -1,12 +1,15 @@
---- base/files/file_util_posix.cc.orig	2022-06-17 14:20:10 UTC
+--- base/files/file_util_posix.cc.orig	2022-07-22 17:30:31 UTC
 +++ base/files/file_util_posix.cc
-@@ -696,32 +696,34 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
+@@ -696,32 +696,37 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
                                  File::Error* error) {
    ScopedBlockingCall scoped_blocking_call(
        FROM_HERE, BlockingType::MAY_BLOCK);  // For call to mkdir().
 +  const FilePath kFileSystemRoot("/");
    std::vector<FilePath> subpaths;
  
++  if (DirectoryExists(full_path))
++    return true;
++
    // Collect a list of all parent directories.
    FilePath last_path = full_path;
 -  subpaths.push_back(full_path);

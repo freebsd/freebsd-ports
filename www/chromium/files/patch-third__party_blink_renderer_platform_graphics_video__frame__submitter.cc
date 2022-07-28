@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/graphics/video_frame_submitter.cc.orig	2022-05-19 14:06:27 UTC
+--- third_party/blink/renderer/platform/graphics/video_frame_submitter.cc.orig	2022-07-22 17:30:31 UTC
 +++ third_party/blink/renderer/platform/graphics/video_frame_submitter.cc
-@@ -329,7 +329,7 @@ void VideoFrameSubmitter::OnBeginFrame(
+@@ -332,7 +332,7 @@ void VideoFrameSubmitter::OnBeginFrame(
        continue;
      auto& feedback =
          timing_details.find(frame_token)->value.presentation_feedback;

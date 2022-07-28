@@ -1,6 +1,6 @@
---- chrome/browser/defaults.cc.orig	2022-03-25 21:59:56 UTC
+--- chrome/browser/defaults.cc.orig	2022-07-22 17:30:31 UTC
 +++ chrome/browser/defaults.cc
-@@ -48,7 +48,7 @@ const bool kSyncAutoStarts = true;
+@@ -52,7 +52,7 @@ const bool kSyncAutoStarts = true;
  const bool kSyncAutoStarts = false;
  #endif
  

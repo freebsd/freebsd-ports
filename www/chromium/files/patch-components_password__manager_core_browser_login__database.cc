@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/login_database.cc.orig	2022-06-17 14:20:10 UTC
+--- components/password_manager/core/browser/login_database.cc.orig	2022-07-22 17:30:31 UTC
 +++ components/password_manager/core/browser/login_database.cc
-@@ -699,7 +699,7 @@ std::string GeneratePlaceholders(size_t count) {
+@@ -731,7 +731,7 @@ std::string GeneratePlaceholders(size_t count) {
    return result;
  }
  
@@ -9,7 +9,7 @@
  // Fills |form| with necessary data required to be removed from the database
  // and returns it.
  PasswordForm GetFormForRemoval(sql::Statement& statement) {
-@@ -716,7 +716,7 @@ PasswordForm GetFormForRemoval(sql::Statement& stateme
+@@ -748,7 +748,7 @@ PasswordForm GetFormForRemoval(sql::Statement& stateme
  // Whether we should try to return the decryptable passwords while the
  // encryption service fails for some passwords.
  bool ShouldReturnPartialPasswords() {
@@ -18,7 +18,7 @@
    return base::FeatureList::IsEnabled(features::kSkipUndecryptablePasswords);
  #else
    return false;
-@@ -1545,7 +1545,7 @@ bool LoginDatabase::DeleteAndRecreateDatabaseFile() {
+@@ -1577,7 +1577,7 @@ bool LoginDatabase::DeleteAndRecreateDatabaseFile() {
  }
  
  DatabaseCleanupResult LoginDatabase::DeleteUndecryptableLogins() {

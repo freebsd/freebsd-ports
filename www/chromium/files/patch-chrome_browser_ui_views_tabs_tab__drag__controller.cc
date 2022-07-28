@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2022-07-22 17:30:31 UTC
 +++ chrome/browser/ui/views/tabs/tab_drag_controller.cc
 @@ -480,7 +480,7 @@ void TabDragController::Init(TabDragContext* source_co
    //     synchronous on desktop Linux, so use that.
@@ -9,7 +9,7 @@
    can_release_capture_ = false;
  #endif
    start_point_in_screen_ = gfx::Point(source_view_offset, mouse_offset.y());
-@@ -1021,7 +1021,7 @@ TabDragController::DragBrowserToNewTabStrip(TabDragCon
+@@ -1023,7 +1023,7 @@ TabDragController::DragBrowserToNewTabStrip(TabDragCon
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,16 +18,16 @@
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -1977,7 +1977,7 @@ void TabDragController::CompleteDrag() {
+@@ -1979,7 +1979,7 @@ void TabDragController::CompleteDrag() {
        }
  
        // If source window was maximized - maximize the new window as well.
--#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && \
-+#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD) && \
-     !BUILDFLAG(IS_CHROMEOS_LACROS) && !BUILDFLAG(IS_MAC)
+-#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_MAC)
++#if !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_BSD)
        // Keeping maximized state breaks snap to Grid on Windows when dragging
        // tabs from maximized windows. TODO:(crbug.com/727051) Explore doing this
-@@ -2362,7 +2362,7 @@ TabDragController::Liveness TabDragController::GetLoca
+       // for other desktop OS's. kMaximizedStateRetainedOnTabDrag in
+@@ -2375,7 +2375,7 @@ TabDragController::Liveness TabDragController::GetLoca
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
