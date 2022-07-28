@@ -9,6 +9,8 @@ COMMENT=	Audio plugin host for Jack and PulseAudio
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
 
+BROKEN_powerpc64le=	fails to build, see https://github.com/falkTX/Carla/issues/1651
+
 LIB_DEPENDS=	liblo.so:audio/liblo \
 		libsndfile.so:audio/libsndfile
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyliblo>0:audio/py-pyliblo@${PY_FLAVOR}
