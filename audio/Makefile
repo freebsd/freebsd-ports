@@ -147,6 +147,7 @@
     SUBDIR += etcd
     SUBDIR += eteroj-lv2
     SUBDIR += etktab
+    SUBDIR += exaile
     SUBDIR += exhale
     SUBDIR += ezstream
     SUBDIR += faac

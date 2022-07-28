@@ -17408,7 +17408,6 @@ multimedia/livestreamer||2022-06-30|Has expired: Abandoned upstream, please cons
 net/kissd||2022-06-30|Has expired: Obsolete, target hardware was released 19 years ago
 www/gecko-mediaplayer||2022-06-30|Has expired: Uses incompatible plugin interface NPAPI
 multimedia/snappy||2022-06-30|Has expired: Deprecated upstream, please consider multimedia/mpv or multimedia/vlc
-audio/exaile||2022-06-30|Has expired: Requires py-bsddb3 which requires upstream EOLd db5
 multimedia/gnome-twitch||2022-06-30|Has expired: Unmaintained, please consider using www/yt-dlp or multimedia/streamlink
 multimedia/clive||2022-06-30|Has expired: Last release in 2012, please consider using www/yt-dlp or multimedia/streamlink
 multimedia/imagination||2022-06-30|Has expired: Obsolete, majority of DVD players made in the last 15+ years have been able to do image slideshows
