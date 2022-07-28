@@ -40,6 +40,8 @@ LOGGING_CMAKE_BOOL=	logging
 
 PORTSCOUT=	limit:^1.* # 2.x is WIP and we don't accept it before qBittorrent does
 
+CONFLICTS_INSTALL=	libtorrent-rasterbar2
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|return "python3";|return "${PYTHON_CMD}";|' \
 		${WRKSRC}/test/setup_transfer.cpp
