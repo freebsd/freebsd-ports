@@ -1,6 +1,6 @@
 PORTNAME=	litecoin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.2
+DISTVERSION=	0.21.2.1
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	hsw@bitmark.com
