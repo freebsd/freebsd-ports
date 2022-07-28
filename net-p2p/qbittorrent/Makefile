@@ -1,6 +1,6 @@
 PORTNAME=	qbittorrent
 DISTVERSION=	4.4.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_FreeBSD_12_powerpc64=	fails to build: ./base/tristatebool.h:44:5: 'constexpr' constructor does not have empty body
 
-LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
-		libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 FLAVORS=	default nox
 FLAVOR?=	${FLAVORS:[1]}
