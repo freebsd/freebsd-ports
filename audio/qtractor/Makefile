@@ -15,6 +15,8 @@ COMMENT=	Audio/MIDI multi-track sequencer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	non-constant-expression cannot be narrowed from type 'double' to 'float' in initializer list, see https://github.com/rncbc/qtractor/issues/353
+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libaubio.so:audio/aubio \
 		libfftw3.so:math/fftw3 \
