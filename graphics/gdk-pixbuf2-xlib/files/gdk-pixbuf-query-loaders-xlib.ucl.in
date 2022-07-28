@@ -1,0 +1,17 @@
+path: "%%PREFIX%%/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders"
+cleanup: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+print("Regenerate gdk-pixbuf cache directory")
+pkg.exec({"%%PREFIX%%/bin/gdk-pixbuf-query-loaders", "--update-cache"})
+EOS
+}
+trigger: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+print("Generating gdk-pixbuf modules cache")
+pkg.exec({"%%PREFIX%%/bin/gdk-pixbuf-query-loaders", "--update-cache"})
+EOS
+}
