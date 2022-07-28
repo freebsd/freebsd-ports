@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.222
+DISTVERSION=	1.3.223
 CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
