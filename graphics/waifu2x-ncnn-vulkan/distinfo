@@ -1,7 +1,7 @@
-TIMESTAMP = 1650376891
-SHA256 (nihui-waifu2x-ncnn-vulkan-20220419_GH0.tar.gz) = 7320b3d083d24ea92aff71f1172b127c5aa138b577fb8fb4ff6cb0e2353690ff
-SIZE (nihui-waifu2x-ncnn-vulkan-20220419_GH0.tar.gz) = 34076913
-SHA256 (KhronosGroup-glslang-11.1.0-44-g4afd6917_GH0.tar.gz) = 5ec414384bafcac14d096ca20205f811b61caf287ea1f7c30745735e7f483ae6
-SIZE (KhronosGroup-glslang-11.1.0-44-g4afd6917_GH0.tar.gz) = 3296291
-SHA256 (Tencent-ncnn-20220419_GH0.tar.gz) = d3d0568654555625f1093a4ea7cd9a4edab0808b45a4ec00dd4efdfbd57df90e
-SIZE (Tencent-ncnn-20220419_GH0.tar.gz) = 12158924
+TIMESTAMP = 1659015177
+SHA256 (nihui-waifu2x-ncnn-vulkan-20220728_GH0.tar.gz) = c3dcd3b4e3ebb7ac64ddfc0714c065432dbf385a1928fb95d6dea5cc307ced47
+SIZE (nihui-waifu2x-ncnn-vulkan-20220728_GH0.tar.gz) = 34076924
+SHA256 (KhronosGroup-glslang-11.9.0-19-g86ff4bca_GH0.tar.gz) = f7a19b57af200feeba77a5cc010fc031ba47c32287cb1438440ad32628fb798a
+SIZE (KhronosGroup-glslang-11.9.0-19-g86ff4bca_GH0.tar.gz) = 3535721
+SHA256 (Tencent-ncnn-20220721-10-gb4ba207c_GH0.tar.gz) = 30cf8c702d4805bbefc990d622293d3a93d36c8328977c2e28d6cc1846786396
+SIZE (Tencent-ncnn-20220721-10-gb4ba207c_GH0.tar.gz) = 12236168
