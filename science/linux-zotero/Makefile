@@ -1,5 +1,5 @@
 PORTNAME=	zotero
-DISTVERSION=	5.0.96.3
+DISTVERSION=	6.0.10
 CATEGORIES=	science deskutils linux
 MASTER_SITES=	https://download.zotero.org/client/release/${DISTVERSION}/ \
 		https://raw.githubusercontent.com/zotero/zotero-standalone-build/${DISTVERSION}/:LICENSE
