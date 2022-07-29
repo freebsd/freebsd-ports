@@ -1,6 +1,5 @@
 PORTNAME=	mayavi
-DISTVERSION=	4.7.4
-PORTREVISION=	1
+DISTVERSION=	4.8.0
 CATEGORIES=	graphics science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +17,6 @@ LICENSE_FILE_LGPL3=		${WRKSRC}/image_LICENSE_OOo.txt
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE_YORICK.txt
 LICENSE_FILE_APACHE11=		${WRKSRC}/LICENSE_COLORBREWER.txt
 
-BROKEN_i386=	Building TVTK classes... Fatal Python error: Segmentation fault # might be specific to Mayavi or Python versions
-
 BUILD_DEPENDS=	vtk9>0:math/vtk9 \
 		${PYNUMPY} \
 		${PY_SPHINX} \
@@ -28,11 +25,11 @@ RUN_DEPENDS=	vtk9>0:math/vtk9 \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}apptools>0:devel/py-apptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}envisage>0:devel/py-envisage@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyface>=6.0.0:devel/py-pyface@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyface>=6.1.1:devel/py-pyface@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}traits>=4.6.0:devel/py-traits@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}traitsui>=6.0.0:graphics/py-traitsui@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}traits>=6.0.0:devel/py-traits@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitsui>=7.0.0:graphics/py-traitsui@${PY_FLAVOR} # list is in mayavi/__init__.py
 
 USES=		python:3.6+ shebangfix
 USE_PYTHON=	noflavors distutils autoplist # noflavors to force python to be of the same version as in vtk9, which always has default python version
@@ -50,5 +47,8 @@ post-install:
 fix-plist:
 	@${REINPLACE_CMD} -e "s|${PYTHONPREFIX_SITELIBDIR:S/${PREFIX}\///}/mayavi/preferences/__pycache__$$||" ${TMPPLIST}
 	@${REINPLACE_CMD} -e "s|${PYTHONPREFIX_SITELIBDIR:S/${PREFIX}\///}/tvtk/plugins/scene/__pycache__$$||" ${TMPPLIST}
+
+do-test:
+	@${SETENV} ${TEST_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${PYTHON_CMD} ${WRKSRC}/examples/mayavi/interactive/coil_design_application.py
 
 .include <bsd.port.mk>
