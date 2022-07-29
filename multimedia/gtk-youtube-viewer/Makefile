@@ -1,5 +1,5 @@
 PORTNAME=	gtk-youtube-viewer
-PORTVERSION=	3.10.0
+PORTVERSION=	3.10.1
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	nc@FreeBSD.org
