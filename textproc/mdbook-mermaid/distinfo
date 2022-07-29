@@ -1,4 +1,4 @@
-TIMESTAMP = 1657976018
+TIMESTAMP = 1659127866
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
 SIZE (rust/crates/aho-corasick-0.7.18.crate) = 112923
 SHA256 (rust/crates/ansi_term-0.12.1.crate) = d52a9bb7ec0cf484c551830a7ce27bd20d67eac647e1befb56b0be4ee39a55d2
@@ -191,5 +191,5 @@ SHA256 (rust/crates/winapi-util-0.1.5.crate) = 70ec6ce85bb158151cae5e5c87f95a8e9
 SIZE (rust/crates/winapi-util-0.1.5.crate) = 10164
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
-SHA256 (badboy-mdbook-mermaid-v0.11.1_GH0.tar.gz) = d2585cb4892baa2da2a5f65061f234c17c8cc4ee92ccc27d116aea934d5b76cf
-SIZE (badboy-mdbook-mermaid-v0.11.1_GH0.tar.gz) = 329147
+SHA256 (badboy-mdbook-mermaid-v0.11.2_GH0.tar.gz) = 9de8f08d1a3e9fa2fa01b47a68803d1a05a348a3ae0e7b9d9d2742470b601250
+SIZE (badboy-mdbook-mermaid-v0.11.2_GH0.tar.gz) = 307975
