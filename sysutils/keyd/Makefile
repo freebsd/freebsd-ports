@@ -54,4 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,__FreeBSD,&_disabled,' \
 		${WRKSRC}/src/vkbd/uinput.c
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
 .include <bsd.port.mk>
