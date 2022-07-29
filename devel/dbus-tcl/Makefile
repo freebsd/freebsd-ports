@@ -1,5 +1,5 @@
 PORTNAME=	dbus-tcl
-PORTVERSION=	2.2
+PORTVERSION=	3.0
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://chiselapp.com/user/schelte/repository/dbus/uv/
