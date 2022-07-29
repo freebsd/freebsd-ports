@@ -1,5 +1,5 @@
 PORTNAME=	agrum
-DISTVERSION=	1.1.1
+DISTVERSION=	1.2.0
 CATEGORIES=	science math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,14 +8,17 @@ COMMENT=	Graphical modeler for Bayesian networks, influence diagrams, etc
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++14-lang # the 'act' executable uses 'python' and is broken, when act is broken CMakeLists.txt builds with default configuration which is fine
+USES=		cmake compiler:c++17-lang shebangfix # the 'act' executable uses 'python' and is broken, when act is broken CMakeLists.txt builds with default configuration which is fine
 USE_LDCONFIG=	yes
+
 LLD_UNSAFE=	yes
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	agrumery
 GL_PROJECT=	aGrUM
-GL_COMMIT=	1a905d0ecbe18c924a44d6e5024eb81fc252ecf6
+GL_COMMIT=	8141e589aaca335b9582c2ca8bbd6594bc4b174b
+
+SHEBANG_FILES=	act
 
 CMAKE_OFF=	USE_SWIG
 
@@ -47,5 +50,11 @@ PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR}
 			# see wrappers/pyAgrum/requirements.txt and wrappers/pyAgrum/testunits/optional_requirements.txt
+
+BINARY_ALIAS=	gcc=${CC} g++=${CXX} # only for tests, see https://gitlab.com/agrumery/aGrUM/-/issues/100
+
+do-test:
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ./act test release agrum -t all
 
 .include <bsd.port.mk>
