@@ -18,7 +18,7 @@ GH_TUPLE=	\
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		etcd-io:bbolt:v1.3.5:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
-		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		fsnotify:fsnotify:v1.5.4:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-oauth2:oauth2:v4.4.2:go_oauth2_oauth2/vendor/github.com/go-oauth2/oauth2/v4 \
 		go-redis:redis:v8.7.1:go_redis_redis/vendor/github.com/go-redis/redis/v8 \
@@ -29,19 +29,19 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-jwt:jwt:v3.2.1:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:30dcbda58838:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:793ad666bf5e:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
-		golang:net:69e39bad7dc2:golang_net/vendor/golang.org/x/net \
+		golang:mod:86c51ed26bb4:golang_mod/vendor/golang.org/x/mod \
+		golang:net:5463443f8c37:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:99c3d69c2c27:golang_sys/vendor/golang.org/x/sys \
-		golang:term:7de9c90e9dd1:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
+		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
+		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.1.1:golang_tools/vendor/golang.org/x/tools \
-		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
+		golang:tools:v0.1.10:golang_tools/vendor/golang.org/x/tools \
+		golang:xerrors:f3a8303e98df:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:cb27e3aa2013:google_go_genproto/vendor/google.golang.org/genproto \
 		google:pprof:e9b028704de0:google_pprof/vendor/github.com/google/pprof \
@@ -68,11 +68,11 @@ GH_TUPLE=	\
 		jtolds:tracetagger:v2.0.0-rc5:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger/v2 \
 		klauspost:cpuid:v2.0.12:klauspost_cpuid/vendor/github.com/klauspost/cpuid/v2 \
 		loov:hrtime:v1.0.3:loov_hrtime/vendor/github.com/loov/hrtime \
-		lucas-clemente:quic-go:v0.25.0:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
+		lucas-clemente:quic-go:v0.27.1:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
 		magiconair:properties:v1.8.5:magiconair_properties/vendor/github.com/magiconair/properties \
-		marten-seemann:qtls-go1-16:v0.1.4:marten_seemann_qtls_go1_16/vendor/github.com/marten-seemann/qtls-go1-16 \
-		marten-seemann:qtls-go1-17:v0.1.0:marten_seemann_qtls_go1_17/vendor/github.com/marten-seemann/qtls-go1-17 \
-		marten-seemann:qtls-go1-18:v0.1.0-beta.1:marten_seemann_qtls_go1_18/vendor/github.com/marten-seemann/qtls-go1-18 \
+		marten-seemann:qtls-go1-16:v0.1.5:marten_seemann_qtls_go1_16/vendor/github.com/marten-seemann/qtls-go1-16 \
+		marten-seemann:qtls-go1-17:v0.1.1:marten_seemann_qtls_go1_17/vendor/github.com/marten-seemann/qtls-go1-17 \
+		marten-seemann:qtls-go1-18:v0.1.1:marten_seemann_qtls_go1_18/vendor/github.com/marten-seemann/qtls-go1-18 \
 		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
@@ -81,7 +81,7 @@ GH_TUPLE=	\
 		nsf:jsondiff:f29ed568f4ce:nsf_jsondiff/vendor/github.com/nsf/jsondiff \
 		nsf:termbox-go:38ba6e5628f1:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
 		nxadm:tail:v1.4.8:nxadm_tail/vendor/github.com/nxadm/tail \
-		onsi:ginkgo:v1.16.4:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
+		onsi:ginkgo:v1.16.5:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		open-telemetry:opentelemetry-go:v0.18.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
 		oschwald:maxminddb-golang:v1.8.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
 		pelletier:go-toml:v1.9.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
@@ -100,11 +100,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:ec9c16f58d50:storj_common/vendor/storj.io/common \
-		storj:drpc:v0.0.30:storj_drpc/vendor/storj.io/drpc \
+		storj:common:5ba97afece12:storj_common/vendor/storj.io/common \
+		storj:drpc:v0.0.32:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:3ae4cae696b8:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:private:e18b72a55f43:storj_private/vendor/storj.io/private \
-		storj:uplink:7305e5b6da85:storj_uplink/vendor/storj.io/uplink \
+		storj:uplink:25d79c31a876:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v72.51.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
