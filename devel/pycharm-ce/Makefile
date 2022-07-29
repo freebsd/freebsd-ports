@@ -1,5 +1,5 @@
 PORTNAME=	pycharm-ce
-DISTVERSION=	2022.1.4
+DISTVERSION=	2022.2
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
