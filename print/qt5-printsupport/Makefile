@@ -24,10 +24,12 @@ CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 .include <bsd.port.options.mk>
 
+# Needed for qt5-assistant regardless of CUPS support
+MORE_WRKSRCS+=	src/plugins/printsupport
+
 .if ${PORT_OPTIONS:MCUPS}
 QT_DEFINES+=	CUPS
 QT_CONFIG+=	cups
-MORE_WRKSRCS+=	src/plugins/printsupport
 .else
 QT_DEFINES+=	-CUPS
 QT_CONFIG+=	-cups
