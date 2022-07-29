@@ -1,0 +1,23 @@
+--[[ net-mgmt/unifi7 post-install script --]]
+local lfs = require "posix"
+
+--[[ Directory substitution table --]]
+local dstable = {}
+dstable["/usr/local/share/java/unifi/data"] = "/var/db/unifi/data"
+dstable["/usr/local/share/java/unifi/dl"] = "/var/db/unifi/dl"
+dstable["/usr/local/share/java/unifi/logs"] = "/var/log/unifi"
+dstable["/usr/local/share/java/unifi/run"] = "/var/run/unifi"
+dstable["/usr/local/share/java/unifi/work2"] = "/var/run/unifi"
+
+--[[ Do we have any legacy dirs that need to be migrated? --]]
+needmig = 0
+
+for dold, dnew in pairs(dstable) do
+	st = lfs.stat(dold)
+	if (st ~= nil) then
+		print("===> " .. dold)
+		for k,v in pairs(st) do
+			print("key " .. k .. " value " .. v)
+		end
+	end
+end
