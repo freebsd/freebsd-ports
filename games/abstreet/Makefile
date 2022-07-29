@@ -12,7 +12,7 @@ COMMENT=	Game exploring how changes to city affect drivers/cyclists/pedestrians
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with rust 1.61.0+
+BROKEN=		fails to build with rust 1.61.0+ # also see the WIP https://github.com/a-b-street/abstreet/issues/959 why it can't be updated yet
 
 BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib
 
