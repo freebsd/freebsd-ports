@@ -4,9 +4,9 @@ CATEGORIES=	science deskutils linux
 MASTER_SITES=	https://download.zotero.org/client/release/${DISTVERSION}/ \
 		https://raw.githubusercontent.com/zotero/zotero-standalone-build/${DISTVERSION}/:LICENSE
 PKGNAMEPREFIX=	linux-
-DIST_SUBDIR=	${PORTNAME}
 DISTFILES=	${_MAIN_DISTFILE} \
 		COPYING:LICENSE
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${_MAIN_DISTFILE}
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -20,10 +20,13 @@ ONLY_FOR_ARCHS=	amd64
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		desktop-file-utils linux tar:bz2
-WRKSRC=		${WRKDIR}/Zotero_linux-x86_64
 USE_LINUX=	dbusglib gtk3
 
+NO_BUILD=	yes
+
 SUB_FILES=	zotero-wrapper
+
+WRKSRC=		${WRKDIR}/Zotero_linux-x86_64
 
 _BINARIES=	pdftotext pdfinfo zotero-bin
 _MAIN_DISTFILE=	Zotero-${DISTVERSION}_linux-x86_64${EXTRACT_SUFX}
@@ -31,7 +34,7 @@ _MAIN_DISTFILE=	Zotero-${DISTVERSION}_linux-x86_64${EXTRACT_SUFX}
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/COPYING ${WRKDIR}
 
-do-build:
+do-configure:
 	(cd ${WRKSRC} && ${BRANDELF} -t Linux ${_BINARIES})
 
 do-install:
