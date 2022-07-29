@@ -1,0 +1,19 @@
+--- exempi/Makefile.in.orig	2022-07-29 09:33:18 UTC
++++ exempi/Makefile.in
+@@ -128,7 +128,6 @@ bin_PROGRAMS = exempi$(EXEEXT)
+ build_triplet = @build@
+ host_triplet = @host@
+ bin_PROGRAMS = exempi$(EXEEXT)
+-@UNIX_ENV_TRUE@am__append_1 = -lrt
+ @WITH_UNIT_TEST_TRUE@check_PROGRAMS = testexempicore$(EXEEXT) \
+ @WITH_UNIT_TEST_TRUE@	testserialise$(EXEEXT) \
+ @WITH_UNIT_TEST_TRUE@	testwritenewprop$(EXEEXT) \
+@@ -801,7 +800,7 @@ libexempi_la_LIBADD = $(top_builddir)/source/libxmpcom
+ 	$(top_builddir)/XMPCore/source/libXMPCore.la \
+ 	$(top_builddir)/XMPFiles/source/libXMPFiles.la \
+ 	$(top_builddir)/third-party/zuid/interfaces/libmd5.la -lexpat \
+-	-lz -ldl $(am__append_1)
++	-lz $(am__append_1)
+ libexempi_la_LDFLAGS = -version-info @EXEMPI_VERSION_INFO@
+ dist_man1_MANS = exempi.1
+ 
