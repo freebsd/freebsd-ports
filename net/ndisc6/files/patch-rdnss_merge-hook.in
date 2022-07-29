@@ -1,6 +1,6 @@
---- rdnss/merge-hook.in.orig	2014-12-14 10:13:57 UTC
+--- rdnss/merge-hook.in.orig	2022-01-27 20:23:33 UTC
 +++ rdnss/merge-hook.in
-@@ -19,7 +19,7 @@
+@@ -19,7 +19,7 @@ set -e
  
  set -e
  
@@ -9,20 +9,3 @@
  
  # Max number of nameserver options taken into account. Should be as
  # defined in <resolv.h>
-@@ -31,14 +31,14 @@ MAXNS=3
- # will limit the IPv6 entries it adds to $RDNSS_LIMIT only.
- RDNSS_LIMIT=$(($MAXNS - 1))
- 
--sysconfdir='@SYSCONFDIR@'
-+sysconfdir='/etc'
- localstatedir='@LOCALSTATEDIR@'
- resolvconf="$sysconfdir/resolv.conf"
- myresolvconf="$localstatedir/run/rdnssd/resolv.conf"
- 
- # These should be POSIX-compliant BREs
- RE_NSV4='^nameserver  *\([0-9]\{1,3\}\.\)\{3,3\}[0-9]\{1,3\} *$'
--RE_NSV4OR6='^nameserver  *[a-fA-F0-9:\.]\{1,46\}\(%[a-zA-Z0-9]\{1,\}\)\{,1\} *$'
-+RE_NSV4OR6='^nameserver  *[a-fA-F0-9:\.]\{1,46\}\(%[a-zA-Z0-9]\{1,\}\)\{0,1\} *$'
- 
- # Count how many IPv6 nameservers we can fit
- 
