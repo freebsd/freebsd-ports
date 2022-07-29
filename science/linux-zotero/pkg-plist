@@ -1,5 +1,9 @@
 bin/zotero
 share/applications/zotero.desktop
+share/icons/hicolor/16x16/apps/zotero.png
+share/icons/hicolor/256x256/apps/zotero.png
+share/icons/hicolor/32x32/apps/zotero.png
+share/icons/hicolor/48x48/apps/zotero.png
 %%DATADIR%%/Throbber-small.gif
 %%DATADIR%%/application.ini
 %%DATADIR%%/chrome.manifest
@@ -13,7 +17,6 @@ share/applications/zotero.desktop
 %%DATADIR%%/components/zotero-protocol-handler.js
 %%DATADIR%%/components/zotero-service.js
 %%DATADIR%%/defaults/preferences/local-settings.js
-%%DATADIR%%/defaults/preferences/local-settings.js.orig
 %%DATADIR%%/defaults/preferences/prefs.js
 %%DATADIR%%/defaults/preferences/zotero.js
 %%DATADIR%%/dependentlibs.list
@@ -66,7 +69,6 @@ share/applications/zotero.desktop
 %%DATADIR%%/libxul.so.sig
 %%DATADIR%%/minidump-analyzer
 %%DATADIR%%/mozilla.cfg
-%%DATADIR%%/mozilla.cfg.orig
 %%DATADIR%%/omni.ja
 %%DATADIR%%/pdfinfo
 %%DATADIR%%/pdftotext
