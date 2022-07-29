@@ -43,6 +43,7 @@ bin/abyss-map-ssq
 bin/abyss-mergepairs
 bin/abyss-overlap
 bin/abyss-paired-dbg
+bin/abyss-paired-dbg-mpi
 bin/abyss-pe
 bin/abyss-rresolver-short
 bin/abyss-samtoafg
@@ -54,7 +55,4 @@ bin/abyss-todot
 bin/abyss-tofastq
 bin/konnector
 bin/logcounter
-man/man1/ABYSS.1.gz
-man/man1/abyss-pe.1.gz
 man/man1/abyss-sealer.1.gz
-man/man1/abyss-tofastq.1.gz

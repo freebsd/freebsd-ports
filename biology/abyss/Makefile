@@ -1,6 +1,5 @@
 PORTNAME=	abyss
-DISTVERSION=	2.3.1
-PORTREVISION=	1
+DISTVERSION=	2.3.5
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +14,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs \
 		ghc:lang/ghc \
 		pandoc:textproc/hs-pandoc # pandoc is required just for one man page: abyss-sealer
 LIB_DEPENDS=	libffi.so:devel/libffi \
-		libgmp.so:math/gmp
+		libgmp.so:math/gmp \
+		libmpich.so:net/mpich # binaries aren't linked with libmpich.so for some reason
 RUN_DEPENDS=	bash:shells/bash \
 		gmake:devel/gmake
 
