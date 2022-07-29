@@ -20,8 +20,8 @@ SHEBANG_FILES=	scripts/*
 MAKE_ARGS=	DESTDIR="${DESTDIR}" PREFIX="${PREFIX}" \
 		VERSION="${DISTVERSIONFULL}" COMMIT=""
 PLIST_FILES=	bin/${PORTNAME} \
-		bin/${PORTNAME}-application-mapper \
-		"@dir ${ETCDIR}"
+		bin/${PORTNAME}-application-mapper
+PLIST_DIRS=	${ETCDIR}
 PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
