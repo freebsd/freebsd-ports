@@ -143,6 +143,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/chgrp.fish
 %%DATADIR%%/completions/chmod.fish
 %%DATADIR%%/completions/choice.fish
+%%DATADIR%%/completions/choose.fish
 %%DATADIR%%/completions/chown.fish
 %%DATADIR%%/completions/chronyc.fish
 %%DATADIR%%/completions/chsh.fish
@@ -259,6 +260,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/exif.fish
 %%DATADIR%%/completions/exit.fish
 %%DATADIR%%/completions/expand.fish
+%%DATADIR%%/completions/expect.fish
 %%DATADIR%%/completions/ezjail-admin.fish
 %%DATADIR%%/completions/fab.fish
 %%DATADIR%%/completions/fastboot.fish
@@ -497,6 +499,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/mysqldump.fish
 %%DATADIR%%/completions/namei.fish
 %%DATADIR%%/completions/native2ascii.fish
+%%DATADIR%%/completions/navi.fish
 %%DATADIR%%/completions/nc.fish
 %%DATADIR%%/completions/nc.openbsd.fish
 %%DATADIR%%/completions/nc.traditional.fish
@@ -613,6 +616,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/python2.fish
 %%DATADIR%%/completions/python3.fish
 %%DATADIR%%/completions/pzstd.fish
+%%DATADIR%%/completions/qdbus.fish
 %%DATADIR%%/completions/qmk.fish
 %%DATADIR%%/completions/qubes-gpg-client.fish
 %%DATADIR%%/completions/quilt.fish
@@ -628,6 +632,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/read.fish
 %%DATADIR%%/completions/readlink.fish
 %%DATADIR%%/completions/realpath.fish
+%%DATADIR%%/completions/reflector.fish
 %%DATADIR%%/completions/reg.fish
 %%DATADIR%%/completions/reject.fish
 %%DATADIR%%/completions/rejmerge.fish
