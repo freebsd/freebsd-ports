@@ -1,0 +1,10 @@
+%%PYTHON%%include/pytalloc.h
+include/talloc.h
+%%PYTHON%%lib/libpytalloc-util%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%lib/libpytalloc-util%%PYTHON_EXT_SUFFIX%%.so.2
+lib/libtalloc.so
+lib/libtalloc.so.2
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/talloc%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PKGCONFIGDIR%%/pytalloc-util%%PYTHON_EXT_SUFFIX%%.pc
+%%PKGCONFIGDIR%%/talloc.pc
+man/man3/talloc.3.gz
