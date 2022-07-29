@@ -1,8 +1,7 @@
 PORTNAME=	Ipopt
-DISTVERSION=	3.14.4
-PORTREVISION=	1
+DISTVERSIONPREFIX=	releases/
+DISTVERSION=	3.14.9
 CATEGORIES=	math
-MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software package for large-scale nonlinear optimization
@@ -15,11 +14,15 @@ LIB_DEPENDS=	libcoinasl.so:math/asl \
 
 USES=		blaslapack compiler:c++11-lang fortran libtool pathfix \
 		pkgconfig
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-TEST_TARGET=	test
-INSTALL_TARGET=	install-strip
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	coin-or
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	test
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PREFIX}/libdata/pkgconfig \
 		CXX="${CXX} -B${LOCALBASE}/bin"
 CONFIGURE_ARGS=	--with-lapack-lib="${LAPACKLIB} -L${LOCALBASE}/lib"	\
@@ -29,7 +32,6 @@ CONFIGURE_ARGS=	--with-lapack-lib="${LAPACKLIB} -L${LOCALBASE}/lib"	\
 CXXFLAGS+=	-ffast-math
 DEBUG_CXXFLAGS=	-fomit-frame-pointer
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-releases-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/coin/doc/${PORTNAME}
 
 OPTIONS_DEFINE=		DEBUG
