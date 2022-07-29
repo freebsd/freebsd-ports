@@ -1,5 +1,5 @@
 PORTNAME=	pynauty
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,10 +19,12 @@ SHEBANG_FILES=	src/pynauty/tests/test_minimal.py
 
 BINARY_ALIAS=	make=${GMAKE} python3=${PYTHON_CMD}
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pynauty/nautywrap*.so
 
-do-test: install
-	@cd ${WRKSRC} && pytest
+do-test:
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} pytest
 
 .include <bsd.port.mk>
