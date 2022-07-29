@@ -1,7 +1,6 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.13.0
-PORTREVISION=	1
+DISTVERSION=	2.14.3
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -25,7 +24,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.5:alecaivazis_survey_v2/vendor/github.com/Alec
 		charmbracelet:lipgloss:v0.5.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
 		cli:browser:v1.1.0:cli_browser/vendor/github.com/cli/browser \
 		cli:crypto:6be313f59b03:cli_crypto/vendor/golang.org/x/crypto \
-		cli:go-gh:9dbbfe25d943:cli_go_gh/vendor/github.com/cli/go-gh \
+		cli:go-gh:79f89db738dc:cli_go_gh/vendor/github.com/cli/go-gh \
 		cli:oauth:v0.9.0:cli_oauth/vendor/github.com/cli/oauth \
 		cli:safeexec:v1.0.0:cli_safeexec/vendor/github.com/cli/safeexec \
 		cli:shurcooL-graphql:v0.0.1:cli_shurcool_graphql/vendor/github.com/cli/shurcooL-graphql \
@@ -34,10 +33,12 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.5:alecaivazis_survey_v2/vendor/github.com/Alec
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
-		gabriel-vasile:mimetype:v1.4.0:gabriel_vasile_mimetype/vendor/github.com/gabriel-vasile/mimetype \
+		gabriel-vasile:mimetype:v1.4.1:gabriel_vasile_mimetype/vendor/github.com/gabriel-vasile/mimetype \
+		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:net:cd36cc0744dd:golang_net/vendor/golang.org/x/net \
+		golang:net:1bab6f366d9e:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:6242fa91716a:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
@@ -75,7 +76,8 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.5:alecaivazis_survey_v2/vendor/github.com/Alec
 		spf13:cobra:v1.4.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:objx:v0.4.0:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.7.4:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.7.5:stretchr_testify/vendor/github.com/stretchr/testify \
+		thlib:go-timezone-local:ef149e42d28e:thlib_go_timezone_local/vendor/github.com/thlib/go-timezone-local \
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
 		yuin:goldmark:v1.4.4:yuin_goldmark/vendor/github.com/yuin/goldmark
 
