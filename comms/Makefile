@@ -65,6 +65,7 @@
     SUBDIR += hidapi
     SUBDIR += hylafax
     SUBDIR += ibp
+    SUBDIR += iceoryx
     SUBDIR += inspectrum
     SUBDIR += iwmbt-firmware
     SUBDIR += java-simple-serial-connector

@@ -1,0 +1,11 @@
+Iceoryx is an inter-process-communication (IPC) middleware. It has its origins
+in the automotive industry, where large amounts of data have to be transferred
+between different processes when it comes to driver assistance or automated
+driving systems. However, the efficient communication mechanisms can also be
+applied to a wider range of use cases, e.g. in the field of robotics or game
+development. Iceoryx uses a true zero-copy, shared memory approach that allows
+to transfer data from publishers to subscribers without a single copy. This
+ensures data transmissions with constant latency, regardless of the size of the
+payload.
+
+WWW: https://iceoryx.io/
