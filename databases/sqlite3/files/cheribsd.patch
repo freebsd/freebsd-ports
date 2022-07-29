@@ -1,0 +1,415 @@
+diff --git create-fossil-manifest create-fossil-manifest
+new file mode 100755
+index 000000000..07fb567b9
+--- /dev/null
++++ create-fossil-manifest
+@@ -0,0 +1,15 @@
++#!/bin/sh
++
++set -xe
++# See http://www.wtfpl.net/txt/copying for license details
++# Creates a minimal manifest and manifest.uuid file so sqlite (and fossil) can build
++git rev-parse --git-dir >/dev/null || exit 1
++echo $(git log -1 --format=format:%H) > manifest.uuid.tmp
++echo C $(cat manifest.uuid.tmp) > manifest.tmp
++git log -1 --format=format:%ci%n | sed 's/ [-+].*$//;s/ /T/;s/^/D /' >> manifest.tmp
++# Avoid updating the manifest files if nothing changed:
++cmp --quiet manifest.uuid manifest.uuid.tmp || cp -f manifest.uuid.tmp manifest.uuid
++rm -f manifest.uuid.tmp
++cmp --quiet manifest manifest.tmp || cp -f manifest.tmp manifest
++rm -f manifest.tmp
++
+diff --git src/mem1.c src/mem1.c
+index 512ab3747..2cdc30aa5 100644
+--- src/mem1.c
++++ src/mem1.c
+@@ -117,6 +117,8 @@ static malloc_zone_t* _sqliteZone_;
+ 
+ #endif /* __APPLE__ or not __APPLE__ */
+ 
++_Static_assert(SQLITE_DEFAULT_ALIGNMENT % sizeof(int64_t) == 0, "");
++
+ /*
+ ** Like malloc(), but remember the size of the allocation
+ ** so that we can find it later using sqlite3MemSize().
+@@ -139,8 +141,9 @@ static void *sqlite3MemMalloc(int nByte){
+   sqlite3_int64 *p;
+   assert( nByte>0 );
+   testcase( ROUND8(nByte)!=nByte );
+-  p = SQLITE_MALLOC( nByte+8 );
++  p = SQLITE_MALLOC( nByte+SQLITE_DEFAULT_ALIGNMENT );
+   if( p ){
++    p += (SQLITE_DEFAULT_ALIGNMENT/sizeof(int64_t))-1;
+     p[0] = nByte;
+     p++;
+   }else{
+@@ -165,7 +168,7 @@ static void sqlite3MemFree(void *pPrior){
+ #else
+   sqlite3_int64 *p = (sqlite3_int64*)pPrior;
+   assert( pPrior!=0 );
+-  p--;
++  p -= (SQLITE_DEFAULT_ALIGNMENT/sizeof(int64_t));
+   SQLITE_FREE(p);
+ #endif
+ }
+@@ -211,9 +214,10 @@ static void *sqlite3MemRealloc(void *pPrior, int nByte){
+   sqlite3_int64 *p = (sqlite3_int64*)pPrior;
+   assert( pPrior!=0 && nByte>0 );
+   assert( nByte==ROUND8(nByte) ); /* EV: R-46199-30249 */
+-  p--;
+-  p = SQLITE_REALLOC(p, nByte+8 );
++  p -= (SQLITE_DEFAULT_ALIGNMENT/sizeof(int64_t));
++  p = SQLITE_REALLOC(p, nByte+SQLITE_DEFAULT_ALIGNMENT );
+   if( p ){
++    p += (SQLITE_DEFAULT_ALIGNMENT/sizeof(int64_t))-1;
+     p[0] = nByte;
+     p++;
+   }else{
+diff --git src/mem2.c src/mem2.c
+index 04d6298db..2db30d7d5 100644
+--- src/mem2.c
++++ src/mem2.c
+@@ -42,19 +42,24 @@
+ /*
+ ** Each memory allocation looks like this:
+ **
+-**  ------------------------------------------------------------------------
+-**  | Title |  backtrace pointers |  MemBlockHdr |  allocation |  EndGuard |
+-**  ------------------------------------------------------------------------
++**  --------------------------------------------------------------------------
++**  | Pad | Title | backtrace pointers | MemBlockHdr | allocation | EndGuard |
++**  --------------------------------------------------------------------------
+ **
+ ** The application code sees only a pointer to the allocation.  We have
+ ** to back up from the allocation pointer to find the MemBlockHdr.  The
+ ** MemBlockHdr tells us the size of the allocation and the number of
+ ** backtrace pointers.  There is also a guard word at the end of the
+ ** MemBlockHdr.
++**
++** On CHERI systems we pad the front of the allocation to ensure
++** allocation is sufficently aligned.  We also exclude the EndGuard as it's
++** pointless with bounds.
+ */
+ struct MemBlockHdr {
+   i64 iSize;                          /* Size of this allocation */
+   struct MemBlockHdr *pNext, *pPrev;  /* Linked list of all unfreed memory */
++  void *pAllocation;                  /* What malloc allocated */
+   char nBacktrace;                    /* Number of backtraces on this alloc */
+   char nBacktraceSlots;               /* Available backtrace slots */
+   u8 nTitle;                          /* Bytes of title; includes '\0' */
+@@ -155,17 +160,31 @@ static struct MemBlockHdr *sqlite3MemsysGetHeader(const void *pAllocation){
+   u8 *pU8;
+   int nReserve;
+ 
++#ifndef __CHERI_PURE_CAPABILITY__
+   p = (struct MemBlockHdr*)pAllocation;
+   p--;
++#else
++  /*
++   * pAllocation's bounds don't contain p so walk the whole list
++   * to find the original.
++   */
++  for ( p = mem->pFirst; p != NULL; p = p->pNext ) {
++    if ( p + 1 == pAllocation )
++      break;
++  }
++  assert( p != NULL )
++#endif
+   assert( p->iForeGuard==(int)FOREGUARD );
+   nReserve = ROUND8(p->iSize);
+   pInt = (int*)pAllocation;
+   pU8 = (u8*)pAllocation;
++#ifndef __CHERI_PURE_CAPABILITY__
+   assert( pInt[nReserve/sizeof(int)]==(int)REARGUARD );
+   /* This checks any of the "extra" bytes allocated due
+   ** to rounding up to an 8 byte boundary to ensure 
+   ** they haven't been overwritten.
+   */
++#endif
+   while( nReserve-- > p->iSize ) assert( pU8[nReserve]==0x65 );
+   return p;
+ }
+@@ -247,16 +266,29 @@ static void *sqlite3MemMalloc(int nByte){
+   void *p = 0;
+   int totalSize;
+   int nReserve;
++  int nPad = 0;
+   sqlite3_mutex_enter(mem.mutex);
+   assert( mem.disallow==0 );
+   nReserve = ROUND8(nByte);
+-  totalSize = nReserve + sizeof(*pHdr) + sizeof(int) +
++#ifdef __CHERI_PURE_CAPABILITY__
++  nReserve = __builtin_cheri_round_representable_length(nReserve);
++#endif
++  totalSize = nReserve + sizeof(*pHdr) +
+                mem.nBacktrace*sizeof(void*) + mem.nTitle;
++#ifdef __CHERI_PURE_CAPABILITY__
++  int roundedSize = __builtin_cheri_round_representable_length(totalSize);
++  nPad = roundedSize - totalSize;
++  totalSize = roundedSize;
++#else
++  totalSize += sizeof(int);	/* EndGuard */
++#endif
+   p = malloc(totalSize);
+   if( p ){
+     z = p;
++    z += nPad;
+     pBt = (void**)&z[mem.nTitle];
+     pHdr = (struct MemBlockHdr*)&pBt[mem.nBacktrace];
++    pHdr->pAllocation = p;
+     pHdr->pNext = 0;
+     pHdr->pPrev = mem.pLast;
+     if( mem.pLast ){
+@@ -286,12 +318,18 @@ static void *sqlite3MemMalloc(int nByte){
+     pHdr->iSize = nByte;
+     adjustStats(nByte, +1);
+     pInt = (int*)&pHdr[1];
++#ifndef __CHERI_PURE_CAPABILITY__
+     pInt[nReserve/sizeof(int)] = REARGUARD;
++#endif
+     randomFill((char*)pInt, nByte);
+     memset(((char*)pInt)+nByte, 0x65, nReserve-nByte);
+     p = (void*)pInt;
+   }
+   sqlite3_mutex_leave(mem.mutex);
++#ifdef __CHERI_PURE_CAPABILITY__
++  if ( p != NULL )
++    p = __builtin_cheri_bounds_set_exact(p, nReserve);
++#endif
+   return p; 
+ }
+ 
+@@ -302,6 +340,7 @@ static void sqlite3MemFree(void *pPrior){
+   struct MemBlockHdr *pHdr;
+   void **pBt;
+   char *z;
++  void *p;
+   assert( sqlite3GlobalConfig.bMemstat || sqlite3GlobalConfig.bCoreMutex==0 
+        || mem.mutex!=0 );
+   pHdr = sqlite3MemsysGetHeader(pPrior);
+@@ -322,12 +361,13 @@ static void sqlite3MemFree(void *pPrior){
+     assert( mem.pLast==pHdr );
+     mem.pLast = pHdr->pPrev;
+   }
++  p = pHdr->pAllocation;
+   z = (char*)pBt;
+   z -= pHdr->nTitle;
+   adjustStats((int)pHdr->iSize, -1);
+   randomFill(z, sizeof(void*)*pHdr->nBacktraceSlots + sizeof(*pHdr) +
+                 (int)pHdr->iSize + sizeof(int) + pHdr->nTitle);
+-  free(z);
++  free(p);
+   sqlite3_mutex_leave(mem.mutex);  
+ }
+ 
+diff --git src/pcache1.c src/pcache1.c
+index a93b14689..aa77ffac9 100644
+--- src/pcache1.c
++++ src/pcache1.c
+@@ -771,7 +771,7 @@ static sqlite3_pcache *pcache1Create(int szPage, int szExtra, int bPurgeable){
+   int sz;               /* Bytes of memory required to allocate the new cache */
+ 
+   assert( (szPage & (szPage-1))==0 && szPage>=512 && szPage<=65536 );
+-  assert( szExtra < 300 );
++  assert( szExtra < 400 ); // XXX: with CHERI we get szExtra=384 here
+ 
+   sz = sizeof(PCache1) + sizeof(PGroup)*pcache1.separateCache;
+   pCache = (PCache1 *)sqlite3MallocZero(sz);
+diff --git src/sqliteInt.h src/sqliteInt.h
+index b45151104..0c9bc6616 100644
+--- src/sqliteInt.h
++++ src/sqliteInt.h
+@@ -936,16 +936,45 @@ typedef INT16_TYPE LogEst;
+ #define LARGEST_UINT64 (0xffffffff|(((u64)0xffffffff)<<32))
+ #define SMALLEST_INT64 (((i64)-1) - LARGEST_INT64)
+ 
++
++#define REQUIRE_CHERI_ALIGNMENT
++#ifdef REQUIRE_CHERI_ALIGNMENT
++# define SQLITE_DEFAULT_ALIGNMENT (sizeof(void*) < 16 ? 16 : sizeof(void*))
++#else
++# define SQLITE_DEFAULT_ALIGNMENT (sizeof(void*) < 8 ? 8 : sizeof(void*))
++#endif
++
+ /*
+ ** Round up a number to the next larger multiple of 8.  This is used
+ ** to force 8-byte alignment on 64-bit architectures.
++**
++** XXXAR: For CHERI, we change these macros to ensure 16-byte alignement since
++** renaming them would cause too many conflicts
+ */
+-#define ROUND8(x)     (((x)+7)&~7)
++#if __has_builtin(__builtin_align_up)
++# define ROUND(x, a) __builtin_align_up(x, a)
++#else
++# define ROUND(x, a)     (((x)+(a-1))&~(a-1))
++#endif
++/* XXX: not actually 8 for CHERI */
++#define ROUND8(x) ROUND(x, SQLITE_DEFAULT_ALIGNMENT)
+ 
+ /*
+ ** Round down to the nearest multiple of 8
+ */
+-#define ROUNDDOWN8(x) ((x)&~7)
++#if __has_builtin(__builtin_align_down)
++# define ROUNDDOWN(x, a) __builtin_align_down(x, 8)
++#else
++# define ROUNDDOWN(x, a) ((x)&~(a-1))
++#endif
++/* XXX: not actually 8 for CHERI */
++#define ROUNDDOWN8(x) ROUNDDOWN(x, SQLITE_DEFAULT_ALIGNMENT)
++
++#if __has_builtin(__builtin_is_aligned)
++# define ALIGNED_TO(X, A) __builtin_is_aligned(X, A)
++#else
++# define ALIGNED_TO(X, A) ((((char*)(X) - (char*)0)&((A)-1))==0)
++#endif
+ 
+ /*
+ ** Assert that the pointer X is aligned to an 8-byte boundary.  This
+@@ -959,7 +988,12 @@ typedef INT16_TYPE LogEst;
+ #ifdef SQLITE_4_BYTE_ALIGNED_MALLOC
+ # define EIGHT_BYTE_ALIGNMENT(X)   ((((char*)(X) - (char*)0)&3)==0)
+ #else
+-# define EIGHT_BYTE_ALIGNMENT(X)   ((((char*)(X) - (char*)0)&7)==0)
++/*
++ * For CHERI support we want 16-byte alignment. We also do this for native to
++ * make debugging easier. The macro name is a lie anyway so I don't see why we
++ * should't lie just a little bit more.
++ */
++# define EIGHT_BYTE_ALIGNMENT(X) ALIGNED_TO(X, SQLITE_DEFAULT_ALIGNMENT)
+ #endif
+ 
+ /*
+diff --git src/vdbe.c src/vdbe.c
+index 3476c02da..f6199a2bc 100644
+--- src/vdbe.c
++++ src/vdbe.c
+@@ -266,9 +266,10 @@ static VdbeCursor *allocateCursor(
+ 
+   int nByte;
+   VdbeCursor *pCx = 0;
+-  nByte = 
+-      ROUND8(sizeof(VdbeCursor)) + 2*sizeof(u32)*nField + 
+-      (eCurType==CURTYPE_BTREE?sqlite3BtreeCursorSize():0);
++  size_t basicSize = ROUND8(ROUND8(sizeof(VdbeCursor)) + 2*sizeof(u32)*nField);
++  assert( EIGHT_BYTE_ALIGNMENT(SQLITE_INT_TO_PTR(basicSize)) );
++  nByte = ROUND8(basicSize + (eCurType==CURTYPE_BTREE?sqlite3BtreeCursorSize():0));
++  assert( EIGHT_BYTE_ALIGNMENT(SQLITE_INT_TO_PTR(nByte)) );
+ 
+   assert( iCur>=0 && iCur<p->nCursor );
+   if( p->apCsr[iCur] ){ /*OPTIMIZATION-IF-FALSE*/
+@@ -710,6 +711,7 @@ int sqlite3VdbeExec(
+   u64 nProgressLimit;        /* Invoke xProgress() when nVmStep reaches this */
+ #endif
+   Mem *aMem = p->aMem;       /* Copy of p->aMem */
++  assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+   Mem *pIn1 = 0;             /* 1st input operand */
+   Mem *pIn2 = 0;             /* 2nd input operand */
+   Mem *pIn3 = 0;             /* 3rd input operand */
+@@ -1125,6 +1127,7 @@ case OP_Halt: {
+     }
+     aOp = p->aOp;
+     aMem = p->aMem;
++    assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+     pOp = &aOp[pcx];
+     break;
+   }
+@@ -4494,6 +4497,7 @@ case OP_SeekGT: {       /* jump, in3, group */
+     assert( oc!=OP_SeekLT || r.default_rc==+1 );
+ 
+     r.aMem = &aMem[pOp->p3];
++    assert( EIGHT_BYTE_ALIGNMENT(r.aMem) );
+ #ifdef SQLITE_DEBUG
+     { int i; for(i=0; i<r.nField; i++) assert( memIsValid(&r.aMem[i]) ); }
+ #endif
+@@ -4886,6 +4890,7 @@ case OP_Found: {        /* jump, in3 */
+     r.pKeyInfo = pC->pKeyInfo;
+     r.nField = (u16)pOp->p4.i;
+     r.aMem = pIn3;
++    assert( EIGHT_BYTE_ALIGNMENT(r.aMem) );
+ #ifdef SQLITE_DEBUG
+     for(ii=0; ii<r.nField; ii++){
+       assert( memIsValid(&r.aMem[ii]) );
+@@ -6013,6 +6018,7 @@ case OP_IdxInsert: {        /* in2 */
+   x.nKey = pIn2->n;
+   x.pKey = pIn2->z;
+   x.aMem = aMem + pOp->p3;
++  assert( EIGHT_BYTE_ALIGNMENT(x.aMem) );
+   x.nMem = (u16)pOp->p4.i;
+   rc = sqlite3BtreeInsert(pC->uc.pCursor, &x,
+        (pOp->p5 & (OPFLAG_APPEND|OPFLAG_SAVEPOSITION|OPFLAG_PREFORMAT)), 
+@@ -6083,6 +6089,7 @@ case OP_IdxDelete: {
+   r.nField = (u16)pOp->p3;
+   r.default_rc = 0;
+   r.aMem = &aMem[pOp->p2];
++  assert( EIGHT_BYTE_ALIGNMENT(r.aMem) );
+   rc = sqlite3BtreeIndexMoveto(pCrsr, &r, &res);
+   if( rc ) goto abort_due_to_error;
+   if( res==0 ){
+@@ -6270,6 +6277,8 @@ case OP_IdxGE:  {       /* jump */
+     r.default_rc = 0;
+   }
+   r.aMem = &aMem[pOp->p3];
++  assert( EIGHT_BYTE_ALIGNMENT(r.aMem) );
++
+ #ifdef SQLITE_DEBUG
+   {
+     int i;
+@@ -6862,6 +6871,8 @@ case OP_Program: {        /* jump */
+     pFrame->nChildCsr = pProgram->nCsr;
+     pFrame->pc = (int)(pOp - aOp);
+     pFrame->aMem = p->aMem;
++    assert( EIGHT_BYTE_ALIGNMENT(pFrame->aMem) );
++
+     pFrame->nMem = p->nMem;
+     pFrame->apCsr = p->apCsr;
+     pFrame->nCursor = p->nCursor;
+@@ -6876,6 +6887,7 @@ case OP_Program: {        /* jump */
+ #endif
+ 
+     pEnd = &VdbeFrameMem(pFrame)[pFrame->nChildMem];
++    assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+     for(pMem=VdbeFrameMem(pFrame); pMem!=pEnd; pMem++){
+       pMem->flags = MEM_Undefined;
+       pMem->db = db;
+@@ -6900,6 +6912,7 @@ case OP_Program: {        /* jump */
+   p->nChange = 0;
+   p->pFrame = pFrame;
+   p->aMem = aMem = VdbeFrameMem(pFrame);
++  assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+   p->nMem = pFrame->nChildMem;
+   p->nCursor = (u16)pFrame->nChildCsr;
+   p->apCsr = (VdbeCursor **)&aMem[p->nMem];
+diff --git src/vdbemem.c src/vdbemem.c
+index 570a2eb38..11198dbf6 100644
+--- src/vdbemem.c
++++ src/vdbemem.c
+@@ -1374,6 +1374,7 @@ static sqlite3_value *valueNew(sqlite3 *db, struct ValueNewStat4Ctx *p){
+           assert( pRec->pKeyInfo->nAllField==nCol );
+           assert( pRec->pKeyInfo->enc==ENC(db) );
+           pRec->aMem = (Mem *)((u8*)pRec + ROUND8(sizeof(UnpackedRecord)));
++          assert( EIGHT_BYTE_ALIGNMENT(pRec->aMem) );
+           for(i=0; i<nCol; i++){
+             pRec->aMem[i].flags = MEM_Null;
+             pRec->aMem[i].db = db;
+@@ -1888,6 +1889,7 @@ void sqlite3Stat4ProbeFree(UnpackedRecord *pRec){
+     int i;
+     int nCol = pRec->pKeyInfo->nAllField;
+     Mem *aMem = pRec->aMem;
++    assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+     sqlite3 *db = aMem[0].db;
+     for(i=0; i<nCol; i++){
+       sqlite3VdbeMemRelease(&aMem[i]);
+diff --git src/vdbesort.c src/vdbesort.c
+index 8bf7b5717..14d5b08cf 100644
+--- src/vdbesort.c
++++ src/vdbesort.c
+@@ -1739,6 +1739,7 @@ static int vdbeSorterFlushPMA(VdbeSorter *pSorter){
+       assert( pTask->list.aMemory==0 || pSorter->list.aMemory!=0 );
+ 
+       aMem = pTask->list.aMemory;
++      assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+       pCtx = (void*)pTask;
+       pSorter->iPrev = (u8)(pTask - pSorter->aTask);
+       pTask->list = pSorter->list;

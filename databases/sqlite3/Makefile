@@ -238,6 +238,8 @@ CPPFLAGS+=	-DHAVE_FCHOWN=1 \
 		-DSQLITE_OS_UNIX=1
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 
+.include <bsd.port.pre.mk>
+
 # For compare with checksum from of the site. Now, this is a NIST SHA3-256 hash. sha256 not suitable for compare.
 # But the creation of a new target does not justify the emergence of dependence on the perl5.
 # sha3sum maybe installed with p5-Digest-SHA3 port.
@@ -257,7 +259,9 @@ post-install:
 .if !defined(TEA)
 	${INSTALL_MAN} "${WRKSRC}/${PORTNAME}.1" "${STAGEDIR}${PREFIX}/man/man1"
 	${RM} "${STAGEDIR}${PREFIX}/include/msvc.h"
+.if ${ARCH} != aarch64c && ${ARCH} != riscv64c
 	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
+.endif
 .else
 	${RM} "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0.8.6" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.a"
 .endif
@@ -283,4 +287,4 @@ pre-test:
 	@${ECHO_MSG} "===>  Option TCL must be On for test purposes" && ${FALSE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
