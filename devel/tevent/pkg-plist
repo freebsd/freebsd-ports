@@ -1,0 +1,7 @@
+include/tevent.h
+lib/libtevent.so
+lib/libtevent.so.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/__pycache__/tevent%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_tevent%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/tevent.py
+%%PKGCONFIGDIR%%/tevent.pc
