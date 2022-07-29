@@ -1,6 +1,6 @@
 PORTNAME=	zotero
 DISTVERSION=	6.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science deskutils linux
 MASTER_SITES=	https://download.zotero.org/client/release/${DISTVERSION}/ \
 		https://raw.githubusercontent.com/zotero/zotero-standalone-build/${DISTVERSION}/:LICENSE
@@ -38,11 +38,12 @@ post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/COPYING ${WRKDIR}
 
 do-configure:
+	${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${PORTNAME}.desktop
 	(cd ${WRKSRC} && ${BRANDELF} -t Linux ${_BINARIES})
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} "! -name '*.orig'")
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} "! -name '*.orig' ! -name '*.bak'")
 	(cd ${WRKSRC} && ${CHMOD} +x ${_BINARIES})
 # Only strip zotero-bin. Other ${_BINARIES} break strip(1).
 	(cd ${STAGEDIR}${DATADIR} && ${STRIP_CMD} zotero-bin)
