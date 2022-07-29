@@ -17,7 +17,8 @@ GH_ACCOUNT=	kfrlib
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
-CXXFLAGS_armv6=	-march=native # to fix: ARM builds require NEON support. Add -march=native for native build or skip the check with CMT_FORCE_GENERIC_CPU=1
+#CXXFLAGS_armv6=	-march=native # to fix: ARM builds require NEON support. Add -march=native for native build or skip the check with CMT_FORCE_GENERIC_CPU=1
+CMAKE_ARGS_armv6=	-DCMT_FORCE_GENERIC_CPU=1 # to fix: ARM builds require NEON support. Add -march=native for native build or skip the check with CMT_FORCE_GENERIC_CPU=1
 
 do-test: # some tests fail: https://github.com/kfrlib/kfr/issues/132
 	@cd ${BUILD_WRKSRC} && \
