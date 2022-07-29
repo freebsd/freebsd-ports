@@ -1,5 +1,5 @@
-TIMESTAMP = 1653518460
-SHA256 (go/sysutils_smug/smug-v0.2.8/v0.2.8.mod) = c87af7b62bfc44b25b125bd9671c4e5ef4fade67ed3f68f29019cfe42bc1943c
-SIZE (go/sysutils_smug/smug-v0.2.8/v0.2.8.mod) = 109
-SHA256 (go/sysutils_smug/smug-v0.2.8/v0.2.8.zip) = 9a9cc79a14e4a94ca958bcf36fe115f369d69e8867176e4aab9fdff31b07a7db
-SIZE (go/sysutils_smug/smug-v0.2.8/v0.2.8.zip) = 23591
+TIMESTAMP = 1659116235
+SHA256 (go/sysutils_smug/smug-v0.3.2/v0.3.2.mod) = c87af7b62bfc44b25b125bd9671c4e5ef4fade67ed3f68f29019cfe42bc1943c
+SIZE (go/sysutils_smug/smug-v0.3.2/v0.3.2.mod) = 109
+SHA256 (go/sysutils_smug/smug-v0.3.2/v0.3.2.zip) = 6266406d8600520ee85f688f92fde2d9b5a00be97e27ce93ee61311fea7b3380
+SIZE (go/sysutils_smug/smug-v0.3.2/v0.3.2.zip) = 23267
