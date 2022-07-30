@@ -13,5 +13,6 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	p-ranav
 
-.include <bsd.port.mk>
+NO_ARCH=	yes
 
+.include <bsd.port.mk>
