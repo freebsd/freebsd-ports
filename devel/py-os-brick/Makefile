@@ -1,5 +1,5 @@
 PORTNAME=	os-brick
-PORTVERSION=	5.2.1
+PORTVERSION=	6.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.30.1:net/py-eventlet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}os-win>=5.5.0:devel/py-os-win@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.concurrency>=4.5.0:devel/py-oslo.concurrency@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oslo.config>=8.1.0:devel/py-oslo.config@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.context>=3.4.0:devel/py-oslo.context@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=5.1.0:devel/py-oslo.i18n@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.log>=4.4.0:devel/py-oslo.log@${PY_FLAVOR} \
