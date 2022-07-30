@@ -140,6 +140,7 @@ GRAPHMAGICK_DESC?=	GraphicsMagick image processing support
 GRAPHVIZ_DESC?=		Graphviz graph drawing support
 GRASS_DESC?=		Geographic Information System (GIS) support
 GRIB_API_DESC?=		ECMWF GRIB API support
+GRPC_DESC?=		gRPC Remote Procedure Call support
 GSM_DESC?=		GSM codec support
 GSSAPI_BASE_DESC?=	GSSAPI support via base system (needs Kerberos)
 GSSAPI_DESC?=		GSSAPI Security API support
