@@ -1,5 +1,7 @@
 bin/menulibre
 bin/menulibre-menu-validate
+%%PYTHON_SITELIBDIR%%/__pycache__/uninstall%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/__pycache__/uninstall%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/menulibre/Dialogs.py
 %%PYTHON_SITELIBDIR%%/menulibre/MenuEditor.py
 %%PYTHON_SITELIBDIR%%/menulibre/MenulibreApplication.py
@@ -45,6 +47,7 @@ bin/menulibre-menu-validate
 %%PYTHON_SITELIBDIR%%/menulibre_lib/__pycache__/menulibreconfig.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/menulibre_lib/helpers.py
 %%PYTHON_SITELIBDIR%%/menulibre_lib/menulibreconfig.py
+%%PYTHON_SITELIBDIR%%/uninstall.py
 share/man/man1/menulibre-menu-validate.1.gz
 share/man/man1/menulibre.1.gz
 share/applications/menulibre.desktop
@@ -100,7 +103,6 @@ share/locale/uk/LC_MESSAGES/menulibre.mo
 share/locale/zh_CN/LC_MESSAGES/menulibre.mo
 share/locale/zh_HK/LC_MESSAGES/menulibre.mo
 share/locale/zh_TW/LC_MESSAGES/menulibre.mo
-%%DATADIR%%/metainfo/menulibre.appdata.xml.in
 %%DATADIR%%/ui/MenulibreWindow.ui
 share/metainfo/menulibre.appdata.xml
 share/pixmaps/menulibre.png
