@@ -1,5 +1,5 @@
 PORTNAME=	pip
-PORTVERSION=	22.1.2
+PORTVERSION=	22.2
 CATEGORIES=	devel python
 MASTER_SITES=	https://files.pythonhosted.org/packages/fb/58/9efbfe68482dab9557c49d433a60fff9efd7ed8835f829eba8297c2c124a/:test_setuptools \
 		https://files.pythonhosted.org/packages/27/d6/003e593296a85fd6ed616ed962795b2f87709c3eee2bca4f6d0fe55c6d00/:test_wheel
