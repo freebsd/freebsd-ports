@@ -1,0 +1,11 @@
+--- cms_scanner.gemspec.orig	2022-07-30 15:34:06 UTC
++++ cms_scanner.gemspec
+@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+     s.add_runtime_dependency(%q<get_process_mem>.freeze, ["~> 0.2.5"])
+     s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.11.0"])
+     s.add_runtime_dependency(%q<opt_parse_validator>.freeze, ["~> 1.9.3"])
+-    s.add_runtime_dependency(%q<public_suffix>.freeze, ["~> 4.0.3"])
++    s.add_runtime_dependency(%q<public_suffix>.freeze, [">= 4.0.3"])
+     s.add_runtime_dependency(%q<ruby-progressbar>.freeze, [">= 1.10", "< 1.12"])
+     s.add_runtime_dependency(%q<typhoeus>.freeze, [">= 1.3", "< 1.5"])
+     s.add_runtime_dependency(%q<xmlrpc>.freeze, ["~> 0.3"])
