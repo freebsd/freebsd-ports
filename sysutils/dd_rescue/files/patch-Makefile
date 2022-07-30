@@ -1,8 +1,8 @@
---- Makefile.orig	2021-04-29 08:31:32 UTC
+--- Makefile.orig	2022-07-26 13:31:58 UTC
 +++ Makefile
-@@ -7,11 +7,7 @@ VERSION = 1.99.11
+@@ -7,11 +7,7 @@ VERSION = 1.99.12
  DESTDIR = 
- SRCDIR = .
+ SRCDIR ?= .
  
 -CC = gcc
 -SHELL = /bin/bash
@@ -13,7 +13,7 @@
  INSTALL ?= install
  INSTALLFLAGS = -s
  prefix = $(DESTDIR)/usr
-@@ -36,7 +32,7 @@ LIB = lib
+@@ -39,7 +35,7 @@ LIB = lib
  LIBDIR = /usr/$(LIB)
  COMPILER = $(shell $(CC) --version | head -n1)
  ID = $(shell git describe --tags || cat REL-ID)
@@ -22,7 +22,7 @@
  OUT = -o dd_rescue
  PIC = -fPIC
  PIE = -fPIE
-@@ -71,19 +67,13 @@ else
+@@ -74,19 +70,13 @@ else
    HAVE_XATTR=0
  endif
  
@@ -43,7 +43,7 @@
    ISX86 := 1
    LIB = lib64
  endif
-@@ -289,7 +279,7 @@ libddr_MD5.so: libddr_hash.so
+@@ -292,7 +282,7 @@ libddr_MD5.so: libddr_hash.so
  	ln -sf $< $@
  
  libddr_lzo.so: libddr_lzo.po
@@ -52,7 +52,7 @@
  
  libddr_null.so: libddr_null.po
  	$(CC) -shared -o $@ $^
-@@ -360,7 +350,7 @@ libfalloc-static: $(SRCDIR)/dd_rescue.c $(DDR_HEADERS)
+@@ -363,7 +353,7 @@ libfalloc-static: $(SRCDIR)/dd_rescue.c $(DDR_HEADERS)
  
  # This is the default built
  dd_rescue: $(SRCDIR)/dd_rescue.c $(DDR_HEADERS) $(OBJECTS) $(OBJECTS2)

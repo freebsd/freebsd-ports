@@ -1,6 +1,15 @@
---- libddr_lzo.c.orig	2017-11-04 09:14:24 UTC
+--- libddr_lzo.c.orig	2022-07-26 13:53:37 UTC
 +++ libddr_lzo.c
-@@ -46,6 +46,7 @@
+@@ -13,6 +13,8 @@
+ #define _LARGEFILE64_SOURCE 1
+ #define _FILE_OFFSET_BITS 64
+ 
++#include "config.h"
++
+ #include "ddr_plugin.h"
+ #include "ddr_ctrl.h"
+ 
+@@ -48,6 +50,7 @@
  #error __WORDSIZE unknown
  #endif
  

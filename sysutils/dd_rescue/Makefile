@@ -1,5 +1,5 @@
 PORTNAME=	dd_rescue
-PORTVERSION=	1.99.11
+PORTVERSION=	1.99.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.garloff.de/kurt/linux/ddrescue/ \
 		http://fossies.org/unix/privat/
@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	default
 MAKE_ARGS=	EXTRA_LDFLAGS=-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	DOCS
 
