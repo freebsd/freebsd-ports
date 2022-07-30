@@ -1,7 +1,7 @@
 PORTNAME=	cirq-google
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
-CATEGORIES=	science python
+CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
