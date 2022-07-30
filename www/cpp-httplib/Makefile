@@ -9,8 +9,7 @@ COMMENT=	C++ header-only HTTP/HTTPS server and client library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	gmake:devel/gmake \
-		googletest>0:devel/googletest
+TEST_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake localbase:ldflags python:test # localbase only for tests
 
@@ -29,6 +28,8 @@ PLIST_FILES=	include/httplib.h \
 		lib/cmake/httplib/httplibConfigVersion.cmake \
 		lib/cmake/httplib/httplibTargets.cmake
 
+CONFLICTS_BUILD=	googletest # should be CONFLICTS_TEST
+
 OPTIONS_DEFINE=		BROTLI SSL
 OPTIONS_DEFAULT=	BROTLI SSL
 
@@ -39,7 +40,7 @@ BROTLI_RUN_DEPENDS=	brotli>0:archivers/brotli
 SSL_USES=		ssl
 SSL_CMAKE_BOOL=		HTTPLIB_REQUIRE_OPENSSL HTTPLIB_USE_OPENSSL_IF_AVAILABLE
 
-do-test: install # some tests fail to compile, see https://github.com/yhirose/cpp-httplib/issues/1338
-	@cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
+do-test: # one test fails, see https://github.com/yhirose/cpp-httplib/issues/1339
+	@cd ${WRKSRC}/test && ${SETENV} ${MAKE_ENV} ${GMAKE} CXXFLAGS="${CXXFLAGS} -I${WRKSRC}/test" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>
