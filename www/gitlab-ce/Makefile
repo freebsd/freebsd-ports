@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	15.1.3
+PORTVERSION=	15.1.4
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -18,7 +18,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	gitlab-elasticsearch-indexer>=3.0.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=15.1.0:net/gitlab-agent \
 	gitlab-metrics-exporter>0:devel/gitlab-metrics-exporter \
-	gitlab-pages>=1.59.0:www/gitlab-pages \
+	gitlab-pages>=1.59.1:www/gitlab-pages \
 	gitlab-shell>=14.7.4:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
 	redis>=6.0.14:databases/redis \
@@ -280,7 +280,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	15fae3a516e7aa80640cc8f498676e2f83c956f6
+GL_COMMIT=	39245e886b4dbeac096a3ee649464f293627ff77
 
 USERS=	git
 GROUPS=	git
