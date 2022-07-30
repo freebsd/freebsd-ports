@@ -17520,3 +17520,4 @@ x11-wm/lxmed||2022-07-27|Removed, depends on expired sysutils/gksu
 sysutils/gksu||2022-07-27|Has expired: Abandonware, depending on gconf2
 sysutils/libgksu||2022-07-27|Has expired: Abandonware, depending on gconf2
 multimedia/webvfx-qt5||2022-07-29|Abandoned upstream, multimedia/shotcut no longer supports/uses
+textproc/rubygem-rouge312|textproc/rubygem-rouge|2022-07-30|Remove obsoleted port. Use textproc/rubygem-rouge instead
