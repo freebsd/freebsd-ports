@@ -1,3 +1,3 @@
-TIMESTAMP = 1646058400
-SHA256 (rubygem/aws-sdk-elasticsearchservice-1.65.0.gem) = 3cbfe1ec2b15780168173d12817db10af451b49e689aa8e77b578ba30e3ec944
-SIZE (rubygem/aws-sdk-elasticsearchservice-1.65.0.gem) = 70656
+TIMESTAMP = 1659161233
+SHA256 (rubygem/aws-sdk-elasticsearchservice-1.66.0.gem) = e81f93c3569c5a4bd77fcf00ffc7912b3cddb65bb93b6ca26c805e83ab47af1d
+SIZE (rubygem/aws-sdk-elasticsearchservice-1.66.0.gem) = 70656
