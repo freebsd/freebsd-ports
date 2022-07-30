@@ -6,6 +6,8 @@ include/rapidcheck/Check.h
 include/rapidcheck/Check.hpp
 include/rapidcheck/Classify.h
 include/rapidcheck/Classify.hpp
+include/rapidcheck/Compat.h
+include/rapidcheck/Compat.hpp
 include/rapidcheck/Gen.h
 include/rapidcheck/Gen.hpp
 include/rapidcheck/GenerationFailure.h
@@ -119,6 +121,6 @@ include/rapidcheck/state/gen/Commands.h
 include/rapidcheck/state/gen/Commands.hpp
 include/rapidcheck/state/gen/ExecCommands.h
 include/rapidcheck/state/gen/ExecCommands.hpp
-lib/cmake/rapidcheckConfig-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/rapidcheckConfig.cmake
 lib/librapidcheck.so
+%%DATADIR%%/cmake/rapidcheckConfig-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/cmake/rapidcheckConfig.cmake

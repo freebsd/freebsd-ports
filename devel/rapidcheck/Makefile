@@ -1,5 +1,5 @@
 PORTNAME=	rapidcheck
-PORTVERSION=	g20200504
+PORTVERSION=	g20220314
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,18 +11,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 TEST_DEPENDS=	catch>0:devel/catch
 
 USES=		cmake compiler:c++11-lang localbase
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	emil-e
-GH_TAGNAME=	7bc7d30
-USE_LDCONFIG=	yes
+GH_TAGNAME=	8fafda4
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 CXXFLAGS+=	-Wno-error
-
-post-install:
-	@${MV} ${STAGEDIR}${DATADIR}/cmake ${STAGEDIR}${PREFIX}/lib/
-	@${RMDIR} ${STAGEDIR}${DATADIR}
+CXXFLAGS+=	-I${WRKSRC}/extras/catch/include # only to fix tests (rapidcheck/catch.h)
 
 do-test: # broken: https://github.com/emil-e/rapidcheck/issues/242
 	@cd ${BUILD_WRKSRC} && \
