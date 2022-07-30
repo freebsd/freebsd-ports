@@ -19,7 +19,10 @@ CONFLICTS_INSTALL=	hdf-4.*
 
 OPTIONS_SINGLE=	MPI
 OPTIONS_SINGLE_MPI=	OPENMPI MPICH
-OPTIONS_DEFAULT=OPENMPI
+OPTIONS_DEFAULT=${OPTIONS_DEFAULT_${ARCH}}
+OPTIONS_DEFAULT_amd64=	OPENMPI
+OPTIONS_DEFAULT_i386=	MPICH
+#OPTIONS_DEFAULT=OPENMPI
 
 MPICH_USES=	mpi:mpich
 OPENMPI_USES=	mpi:openmpi
@@ -29,6 +32,10 @@ OPENMPI_USES=	mpi:openmpi
 .if ${GCC_DEFAULT} >= 10
 # workaround for Type mismatch between actual argument at (1) and actual argument at (2) (INTEGER(8)/CHARACTER(*)).
 FCFLAGS+=	-fallow-argument-mismatch
+.endif
+
+.if ${ARCH} == i386 && ${PORT_OPTIONS:MOPENMPI}
+BROKEN=		Use MPICH option instead. PnetCDF requires MPI_Offset >= 8 but Open MPI sets MPI_Offset to 4 on 32-bit architecture regardless of LFS. See https://github.com/open-mpi/ompi/issues/3195 for details
 .endif
 
 post-patch:
