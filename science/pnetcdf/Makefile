@@ -34,7 +34,4 @@ FCFLAGS+=	-fallow-argument-mismatch
 post-patch:
 	@${REINPLACE_CMD} -e '/$$(INSTALL.*$$(PREFIX)/ s|$$(PREFIX)|$$(DESTDIR)&|' ${WRKSRC}/Makefile.in
 
-x-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cdfdiff ${STAGEDIR}${PREFIX}/bin/n* ${STAGEDIR}${PREFIX}/bin/pnetcdf_version
-
 .include <bsd.port.post.mk>
