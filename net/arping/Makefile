@@ -1,5 +1,6 @@
 PORTNAME=	arping
 DISTVERSION=	2.21
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.habets.pp.se/synscan/files/
 

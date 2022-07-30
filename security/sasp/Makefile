@@ -1,6 +1,6 @@
 PORTNAME=	sasp
 PORTVERSION=	0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/ahze \
 		http://people.freebsd.org/~ahze/distfiles/

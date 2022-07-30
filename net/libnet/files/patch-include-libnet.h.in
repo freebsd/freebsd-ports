@@ -1,12 +1,12 @@
---- include/libnet.h.in.orig	2012-03-06 00:45:46 UTC
+--- include/libnet.h.in.orig	2019-10-06 06:18:52 UTC
 +++ include/libnet.h.in
-@@ -81,6 +81,9 @@ extern "C" {
- #if !defined(__WIN32__)
- # include <sys/socket.h>
- # include <net/if.h>
-+# if defined (__FreeBSD__) || defined (__DragonFly__)
-+#  include <netinet/in.h>
-+# endif
- #else /* __WIN32__ */
- # if (__CYGWIN__)
- #  include <sys/socket.h>
+@@ -75,6 +75,9 @@ extern "C" {
+ #include <sys/ioctl.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
++#if defined (__FreeBSD__) || defined (__DragonFly__)
++#include <netinet/in.h>
++#endif
+ #include <arpa/inet.h>
+ #include <sys/time.h>
+ #include <netdb.h>

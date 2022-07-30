@@ -1,6 +1,6 @@
 PORTNAME=	fiked
 PORTVERSION=	0.0.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://mirror.roe.ch/rel/fiked/
 

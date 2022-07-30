@@ -1,6 +1,6 @@
 PORTNAME=	arp-sk
 PORTVERSION=	0.0.16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://sid.rstack.org/arp-sk/files/
 EXTRACT_SUFX=	.tgz
