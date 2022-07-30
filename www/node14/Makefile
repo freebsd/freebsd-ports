@@ -1,6 +1,6 @@
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	14.19.3
+DISTVERSION=	14.20.0
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${DISTVERSION}/
 PKGNAMESUFFIX=	14
@@ -26,7 +26,7 @@ LIB_DEPENDS+=	libbrotlidec.so:archivers/brotli \
 USES=		compiler:c++11-lib gmake localbase pkgconfig \
 		python:2.7-3.10,build shebangfix
 BROKEN_SSL=	libressl libressl-devel
-BROKEN_SSL_REASON=	node.js 14.x LTS requires OpenSSL 1.1.x or the BUNDLED_SSL option enabled
+BROKEN_SSL_REASON=	node.js ${PORTVERSION:R:R}.x LTS requires OpenSSL 1.1.x or the BUNDLED_SSL option enabled
 SHEBANG_FILES=	deps/v8/third_party/inspector_protocol/*.py deps/v8/tools/*.py \
 		tools/*.py tools/inspector_protocol/*.py
 
