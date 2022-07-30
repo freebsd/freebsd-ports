@@ -10,6 +10,10 @@ COMMENT=	High-performance library for evaluation of molecular integrals
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 LIB_DEPENDS=	libopenblas.so:math/openblas
 
 USES=		cmake fortran zip
