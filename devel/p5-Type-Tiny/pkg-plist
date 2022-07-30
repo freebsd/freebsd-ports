@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Error/TypeTiny/Compilation.pm
 %%SITE_PERL%%/Error/TypeTiny/WrongNumberOfParameters.pm
 %%SITE_PERL%%/Eval/TypeTiny.pm
+%%SITE_PERL%%/Eval/TypeTiny/CodeAccumulator.pm
 %%SITE_PERL%%/Reply/Plugin/TypeTiny.pm
 %%SITE_PERL%%/Test/TypeTiny.pm
 %%SITE_PERL%%/Type/Coercion.pm
@@ -12,7 +13,6 @@
 %%SITE_PERL%%/Type/Coercion/Union.pm
 %%SITE_PERL%%/Type/Library.pm
 %%SITE_PERL%%/Type/Params.pm
-%%SITE_PERL%%/Type/Params/Coderef.pm
 %%SITE_PERL%%/Type/Params/Parameter.pm
 %%SITE_PERL%%/Type/Params/Signature.pm
 %%SITE_PERL%%/Type/Parser.pm
@@ -34,6 +34,7 @@
 %%SITE_PERL%%/Type/Tiny/Manual/Params.pod
 %%SITE_PERL%%/Type/Tiny/Manual/Policies.pod
 %%SITE_PERL%%/Type/Tiny/Manual/UsingWithClassTiny.pod
+%%SITE_PERL%%/Type/Tiny/Manual/UsingWithMite.pod
 %%SITE_PERL%%/Type/Tiny/Manual/UsingWithMoo.pod
 %%SITE_PERL%%/Type/Tiny/Manual/UsingWithMoo2.pod
 %%SITE_PERL%%/Type/Tiny/Manual/UsingWithMoo3.pod
@@ -65,6 +66,7 @@
 %%PERL5_MAN3%%/Error::TypeTiny::Compilation.3.gz
 %%PERL5_MAN3%%/Error::TypeTiny::WrongNumberOfParameters.3.gz
 %%PERL5_MAN3%%/Eval::TypeTiny.3.gz
+%%PERL5_MAN3%%/Eval::TypeTiny::CodeAccumulator.3.gz
 %%PERL5_MAN3%%/Reply::Plugin::TypeTiny.3.gz
 %%PERL5_MAN3%%/Test::TypeTiny.3.gz
 %%PERL5_MAN3%%/Type::Coercion.3.gz
@@ -91,6 +93,7 @@
 %%PERL5_MAN3%%/Type::Tiny::Manual::Params.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::Policies.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithClassTiny.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithMite.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithMoo.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithMoo2.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Manual::UsingWithMoo3.3.gz
