@@ -19,11 +19,5 @@ USES=		gem
 USE_RUBY=	yes
 
 NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
-
-post-patch:
-# Remove backports
-	@${REINPLACE_CMD} -e '/backports/d' ${WRKSRC}/${GEMSPEC}
-	@${REINPLACE_CMD} -e '/require "backports"/d' ${WRKSRC}/lib/sinatra/*.rb ${WRKSRC}/lib/sinatra/contrib/setup.rb
 
 .include <bsd.port.mk>
