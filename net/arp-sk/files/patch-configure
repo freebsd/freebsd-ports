@@ -1,0 +1,22 @@
+--- configure.orig	2004-12-07 15:26:51 UTC
++++ configure
+@@ -2932,8 +2932,8 @@ echo "${ECHO_T}yes" >&6
+ 
+ fi;
+ 
+-echo "$as_me:$LINENO: checking for version 1.1.x of libnet" >&5
+-echo $ECHO_N "checking for version 1.1.x of libnet... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for version 1.2.x of libnet" >&5
++echo $ECHO_N "checking for version 1.2.x of libnet... $ECHO_C" >&6
+ 
+ if test "$cross_compiling" = yes; then
+   { { echo "$as_me:$LINENO: error: cannot run test program while cross compiling
+@@ -2953,7 +2953,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ #include <string.h>
+ int main()
+ {
+-   return (strncmp(LIBNET_VERSION, "1.1.", 4));
++   return (strncmp(LIBNET_VERSION, "1.2", 3));
+ }
+ 
+ _ACEOF
