@@ -1,3 +1,3 @@
-TIMESTAMP = 1656702580
-SHA256 (rubygem/sidekiq-cron-1.6.0.gem) = a3a778eadb8bc2a077ba39cc03f2406df7116dd00e762a1a07232e6a38868d42
-SIZE (rubygem/sidekiq-cron-1.6.0.gem) = 28160
+TIMESTAMP = 1659161293
+SHA256 (rubygem/sidekiq-cron-1.7.0.gem) = 79a909635954b19b076be197487518227833312d86edd46b275874328b8ac5a5
+SIZE (rubygem/sidekiq-cron-1.7.0.gem) = 29184
