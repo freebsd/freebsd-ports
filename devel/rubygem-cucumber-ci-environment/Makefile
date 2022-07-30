@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-ci-environment
-PORTVERSION=	9.0.4
+PORTVERSION=	9.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
