@@ -1,11 +1,11 @@
 PORTNAME=	robotframework
-PORTVERSION=	3.1.2
+PORTVERSION=	5.0.1
 CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Generic test automation framework
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Generic automation framework for acceptance testing and robotic process automation
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
