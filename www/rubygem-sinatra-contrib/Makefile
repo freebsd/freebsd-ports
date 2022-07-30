@@ -1,5 +1,6 @@
 PORTNAME=	sinatra-contrib
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json \
-		rubygem-mustermann>=1.0<2:devel/rubygem-mustermann \
+		rubygem-mustermann>=2.0<3:devel/rubygem-mustermann \
 		rubygem-rack-protection>=${PORTVERSION}:www/rubygem-rack-protection \
 		rubygem-sinatra>=${PORTVERSION}:www/rubygem-sinatra \
 		rubygem-tilt>=2.0<3:devel/rubygem-tilt

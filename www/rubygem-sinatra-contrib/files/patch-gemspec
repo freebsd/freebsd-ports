@@ -1,0 +1,11 @@
+--- sinatra-contrib.gemspec.orig	2022-07-22 17:38:56 UTC
++++ sinatra-contrib.gemspec
+@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
+ 
+   if s.respond_to? :add_runtime_dependency then
+     s.add_runtime_dependency(%q<sinatra>.freeze, ["= 2.2.1"])
+-    s.add_runtime_dependency(%q<mustermann>.freeze, ["~> 1.0"])
++    s.add_runtime_dependency(%q<mustermann>.freeze, ["~> 2.0"])
+     s.add_runtime_dependency(%q<tilt>.freeze, ["~> 2.0"])
+     s.add_runtime_dependency(%q<rack-protection>.freeze, ["= 2.2.1"])
+     s.add_runtime_dependency(%q<multi_json>.freeze, [">= 0"])
