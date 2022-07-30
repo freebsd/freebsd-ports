@@ -8,11 +8,13 @@ with codecs.open('README.md', encoding="utf-8") as fp:
 INSTALL_REQUIRE = [
     'blinker',
     'click>=7',
+    'findpython',
     'importlib-metadata; python_version < "3.8"',
     'installer>=0.5.1,<0.6',
     'packaging',
     'pdm-pep517>=0.9',
     'pep517>=0.11.0',
+    'pip>=20.1',
     'platformdirs',
     'python-dotenv>=0.15',
     'resolvelib>=0.8,<0.9',
