@@ -10,9 +10,11 @@ COMMENT=	Collection of miscellaneous subroutines
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5
 
 .include <bsd.port.mk>
