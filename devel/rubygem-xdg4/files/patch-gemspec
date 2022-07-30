@@ -6,6 +6,6 @@
    s.licenses = ["Apache-2.0".freeze]
 -  s.required_ruby_version = Gem::Requirement.new("~> 2.7".freeze)
 +  s.required_ruby_version = Gem::Requirement.new(">= 2.7".freeze)
-   s.rubygems_version = "3.3.18".freeze
+   s.rubygems_version = "3.3.19".freeze
    s.summary = "Provides an implementation of the XDG Base Directory Specification.".freeze
  end
