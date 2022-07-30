@@ -1,7 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.0
-PORTREVISION=	1
+DISTVERSION=	0.31.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -27,6 +26,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		anyhow-1.0.57 \
 		arc-swap-1.5.0 \
 		arrayvec-0.5.2 \
+		arrayvec-0.7.2 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
 		async-global-executor-2.1.0 \
@@ -35,7 +35,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		async-process-1.4.0 \
 		async-std-1.11.0 \
 		async-task-4.2.0 \
-		async-trait-0.1.54 \
+		async-trait-0.1.56 \
 		atomic-waker-1.0.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -57,10 +57,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
-		clap-3.1.18 \
-		clap_complete-3.1.4 \
-		clap_derive-3.1.18 \
-		clap_lex-0.2.0 \
+		clap-3.2.4 \
+		clap_complete-3.2.1 \
+		clap_derive-3.2.4 \
+		clap_lex-0.2.2 \
 		close_fds-0.3.2 \
 		colored-2.0.0 \
 		colorsys-0.6.5 \
@@ -122,7 +122,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		generic-array-0.14.5 \
 		getopts-0.2.21 \
 		getrandom-0.1.16 \
-		getrandom-0.2.6 \
+		getrandom-0.2.7 \
 		ghost-0.1.4 \
 		gimli-0.22.0 \
 		gimli-0.26.1 \
@@ -137,14 +137,14 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		ident_case-1.0.1 \
 		idna-0.2.3 \
 		indexmap-1.8.2 \
-		insta-1.14.1 \
+		insta-1.14.0 \
 		instant-0.1.12 \
 		interprocess-1.1.1 \
 		intmap-0.7.1 \
 		inventory-0.2.3 \
 		is_ci-1.1.1 \
 		itoa-1.0.2 \
-		js-sys-0.3.57 \
+		js-sys-0.3.58 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
@@ -193,6 +193,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.8.5 \
 		parking_lot_core-0.9.3 \
+		paste-1.0.7 \
 		percent-encoding-2.1.0 \
 		pest-2.1.3 \
 		pest_derive-2.1.0 \
@@ -231,6 +232,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		regex-syntax-0.6.26 \
 		region-2.2.0 \
 		remove_dir_all-0.5.3 \
+		rmp-0.8.11 \
+		rmp-serde-1.1.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.10 \
@@ -250,6 +253,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		signal-hook-registry-1.4.0 \
 		similar-2.1.0 \
 		siphasher-0.3.10 \
+		sixel-image-0.1.0 \
+		sixel-tokenizer-0.1.0 \
 		slab-0.4.6 \
 		smallvec-1.8.0 \
 		smawk-0.3.1 \
@@ -282,9 +287,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		time-0.1.44 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tracing-0.1.34 \
+		tracing-0.1.35 \
 		tracing-attributes-0.1.21 \
-		tracing-core-0.1.26 \
+		tracing-core-0.1.27 \
 		traitobject-0.1.0 \
 		typemap-0.3.3 \
 		typenum-1.15.0 \
@@ -292,7 +297,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		typetag-impl-0.1.8 \
 		ucd-trie-0.1.3 \
 		unicode-bidi-0.3.8 \
-		unicode-ident-1.0.0 \
+		unicode-ident-1.0.1 \
 		unicode-linebreak-0.1.2 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.9.0 \
@@ -310,12 +315,14 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		waker-fn-1.1.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.80 \
-		wasm-bindgen-backend-0.2.80 \
-		wasm-bindgen-futures-0.4.30 \
-		wasm-bindgen-macro-0.2.80 \
-		wasm-bindgen-macro-support-0.2.80 \
-		wasm-bindgen-shared-0.2.80 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.81 \
+		wasm-bindgen-backend-0.2.81 \
+		wasm-bindgen-futures-0.4.31 \
+		wasm-bindgen-macro-0.2.81 \
+		wasm-bindgen-macro-support-0.2.81 \
+		wasm-bindgen-shared-0.2.81 \
+		wasm-encoder-0.13.0 \
 		wasmer-1.0.2 \
 		wasmer-compiler-1.0.2 \
 		wasmer-compiler-cranelift-1.0.2 \
@@ -328,9 +335,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		wasmer-vm-1.0.2 \
 		wasmer-wasi-1.0.2 \
 		wasmparser-0.65.0 \
-		wast-41.0.0 \
-		wat-1.0.43 \
-		web-sys-0.3.57 \
+		wast-42.0.0 \
+		wat-1.0.44 \
+		web-sys-0.3.58 \
 		wepoll-ffi-0.1.2 \
 		wezterm-bidi-0.1.0 \
 		wezterm-color-types-0.1.0 \
