@@ -1,5 +1,5 @@
 PORTNAME=	wlvncc
-PORTVERSION=	s20220710
+PORTVERSION=	s20220730
 CATEGORIES=	net wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,7 +26,7 @@ USE_GITHUB=	yes
 USE_GL=		egl gbm glesv2
 USE_XORG=	pixman
 GH_ACCOUNT=	any1
-GH_TAGNAME=	df203e5
+GH_TAGNAME=	9ef4184
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
