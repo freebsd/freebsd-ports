@@ -16,6 +16,7 @@ LICENSE_NAME=	libpng License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USE_CSTD=	gnu89
 USES=		cpe libtool tar:xz
 CPE_PRODUCT=	libpng
 GNU_CONFIGURE=	yes
