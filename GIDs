@@ -249,7 +249,7 @@ nats:*:305:
 jitsi:*:306:
 jicofo:*:307:jitsi
 jvb:*:308:jitsi
-# free: 309
+wazuh:*:309:
 # free: 310
 # free: 311
 _sphinx:*:312:

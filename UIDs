@@ -254,7 +254,7 @@ nats:*:305:305::0:0:NATS Daemon:/nonexistent:/usr/sbin/nologin
 jitsi:*:306:306::0:0:Jitsi Meet Owner:/nonexistent:/usr/sbin/nologin
 jicofo:*:307:307::0:0:Jitsi Conference Focus Owner:/nonexistent:/usr/sbin/nologin
 jvb:*:308:308::0:0:Jitsi VideoBridge Owner:/nonexistent:/usr/sbin/nologin
-# free: 309
+wazuh:*:309:309::0:0:Wazuh Owner:/var/ossec:/usr/sbin/nologin
 # free: 310
 # free: 311
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
