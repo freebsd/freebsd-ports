@@ -27,7 +27,6 @@
 %%DATADIR%%/bin/FluentValidation.dll
 %%DATADIR%%/bin/ICSharpCode.SharpZipLib.dll
 %%DATADIR%%/bin/ImpromptuInterface.dll
-%%DATADIR%%/bin/Kveer.XmlRPC.dll
 %%DATADIR%%/bin/LICENSE
 %%DATADIR%%/bin/Localization/Core/ar.json
 %%DATADIR%%/bin/Localization/Core/bg.json
@@ -49,6 +48,7 @@
 %%DATADIR%%/bin/Localization/Core/it.json
 %%DATADIR%%/bin/Localization/Core/ja.json
 %%DATADIR%%/bin/Localization/Core/ko.json
+%%DATADIR%%/bin/Localization/Core/lt.json
 %%DATADIR%%/bin/Localization/Core/nb_NO.json
 %%DATADIR%%/bin/Localization/Core/nl.json
 %%DATADIR%%/bin/Localization/Core/pl.json
