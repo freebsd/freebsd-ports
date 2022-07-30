@@ -7,10 +7,10 @@ etc/rc.d/vaultwarden
 %%WWWDIR%%/web-vault/404/styles.css
 %%WWWDIR%%/web-vault/70501c97b33df95adb32.json
 %%WWWDIR%%/web-vault/app-id.json
-%%WWWDIR%%/web-vault/app/main.bd475a6b5f200ae225e5.css
-%%WWWDIR%%/web-vault/app/main.bd475a6b5f200ae225e5.css.map
 %%WWWDIR%%/web-vault/app/main.42d6fb82e7594e6ba473.js
 %%WWWDIR%%/web-vault/app/main.42d6fb82e7594e6ba473.js.map
+%%WWWDIR%%/web-vault/app/main.bd475a6b5f200ae225e5.css
+%%WWWDIR%%/web-vault/app/main.bd475a6b5f200ae225e5.css.map
 %%WWWDIR%%/web-vault/app/polyfills.2f6b3e68c5cef70d796f.js
 %%WWWDIR%%/web-vault/app/polyfills.2f6b3e68c5cef70d796f.js.LICENSE.txt
 %%WWWDIR%%/web-vault/app/polyfills.2f6b3e68c5cef70d796f.js.map

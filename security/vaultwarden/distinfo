@@ -1,4 +1,4 @@
-TIMESTAMP = 1658069206
+TIMESTAMP = 1659088220
 SHA256 (bw_web_v2022.6.2.tar.gz) = 206fde0814d46bb78a79a7a5ab10963beaeb5c952e05a9e1b18c2495fb7174e1
 SIZE (bw_web_v2022.6.2.tar.gz) = 9291716
 SHA256 (rust/crates/addr2line-0.17.0.crate) = b9ecd88a8c8378ca913a680cd98f0f13ac67383d35993f86c90a70e3f137816b
@@ -683,5 +683,5 @@ SHA256 (rust/crates/yansi-0.5.1.crate) = 09041cd90cf85f7f8b2df60c646f853b7f535ce
 SIZE (rust/crates/yansi-0.5.1.crate) = 16525
 SHA256 (rust/crates/yubico-0.11.0.crate) = 173f75d2c4010429a2d74ae3a114a69930c59e2b1a4c97b1c75d259a4960d5fb
 SIZE (rust/crates/yubico-0.11.0.crate) = 17112
-SHA256 (dani-garcia-vaultwarden-1.25.1_GH0.tar.gz) = 6bb938ac3738d0bddb778892ed8832673c8b428232616dba542e9bbd7bc246c1
-SIZE (dani-garcia-vaultwarden-1.25.1_GH0.tar.gz) = 516278
+SHA256 (dani-garcia-vaultwarden-1.25.2_GH0.tar.gz) = f4afc2d8aa7aa59dd1ae16497b6a7f9b412ff426a24868e3081054e611d4824d
+SIZE (dani-garcia-vaultwarden-1.25.2_GH0.tar.gz) = 517477
