@@ -1,11 +1,11 @@
 %%SITE_PERL%%/Memoize.pm
-%%SITE_PERL%%/Memoize/ExpireTest.pm
-%%SITE_PERL%%/Memoize/Expire.pm
 %%SITE_PERL%%/Memoize/AnyDBM_File.pm
-%%SITE_PERL%%/Memoize/Storable.pm
-%%SITE_PERL%%/Memoize/SDBM_File.pm
+%%SITE_PERL%%/Memoize/Expire.pm
 %%SITE_PERL%%/Memoize/ExpireFile.pm
+%%SITE_PERL%%/Memoize/ExpireTest.pm
 %%SITE_PERL%%/Memoize/NDBM_File.pm
+%%SITE_PERL%%/Memoize/SDBM_File.pm
+%%SITE_PERL%%/Memoize/Storable.pm
 %%PERL5_MAN3%%/Memoize.3.gz
 %%PERL5_MAN3%%/Memoize::AnyDBM_File.3.gz
 %%PERL5_MAN3%%/Memoize::Expire.3.gz
