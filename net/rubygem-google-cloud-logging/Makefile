@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-logging
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
