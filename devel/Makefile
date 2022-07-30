@@ -5721,6 +5721,7 @@
     SUBDIR += rubygem-avro
     SUBDIR += rubygem-awesome_print
     SUBDIR += rubygem-awrence
+    SUBDIR += rubygem-aws-crt
     SUBDIR += rubygem-aws-eventstream
     SUBDIR += rubygem-aws-partitions
     SUBDIR += rubygem-aws-sdk
