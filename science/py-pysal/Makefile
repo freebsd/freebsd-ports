@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}access>=1.1.3:science/py-access@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}spvcm>=0.3.0:math/py-spvcm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tobler>=0.8.2:science/py-tobler@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
