@@ -1,5 +1,5 @@
-TIMESTAMP = 1658817664
-SHA256 (go/irc_soju/soju-v0.5.0/v0.5.0.mod) = df14df99d21c43fb592a5be28ac8751c8a967b17c53488ad281a00c5b4f3d4bb
-SIZE (go/irc_soju/soju-v0.5.0/v0.5.0.mod) = 883
-SHA256 (go/irc_soju/soju-v0.5.0/v0.5.0.zip) = 70d1a70d66613669e2dd89dadff03e98f21fdf5df11ae2d0ea182f2bb4e92087
-SIZE (go/irc_soju/soju-v0.5.0/v0.5.0.zip) = 165952
+TIMESTAMP = 1659219677
+SHA256 (go/irc_soju/soju-v0.5.1/v0.5.1.mod) = df14df99d21c43fb592a5be28ac8751c8a967b17c53488ad281a00c5b4f3d4bb
+SIZE (go/irc_soju/soju-v0.5.1/v0.5.1.mod) = 883
+SHA256 (go/irc_soju/soju-v0.5.1/v0.5.1.zip) = 1e4b8e9f1923121d99ee5bfd6321c1f87269430d8ddbc98522b3883e8b812c17
+SIZE (go/irc_soju/soju-v0.5.1/v0.5.1.zip) = 166097
