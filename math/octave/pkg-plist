@@ -826,7 +826,23 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/profiler/hierarchical.html
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/profiler/hierarchical_entry.html
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/profiler/style.css
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@cell/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@char/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@double/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@function_handle/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@int16/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@int32/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@int64/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@int8/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@logical/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@single/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@struct/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@uint16/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@uint32/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@uint64/tbcover.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/@uint8/tbcover.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/args.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bc-overloads.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-31371.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-35448/bug-35448.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-35448/fA.m
@@ -1207,6 +1223,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/struct.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/switch.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/system.tst
+%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/tbcover.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/transpose.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/try.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/unwind.tst
@@ -2453,7 +2470,6 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/web/weboptions.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/web/webread.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/web/webwrite.m
-%%DATADIR%%/imagelib
 %%DATADIR%%/site/m/startup/octaverc
 @dir lib/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%
 @dir lib/octave/site/oct/%%GNU_HOST%%
