@@ -1,6 +1,6 @@
 PORTNAME=	caja-extensions
 PORTVERSION=	1.26.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -24,6 +24,7 @@ USE_MATE=	caja desktop
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --enable-gksu=no
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.Caja.Sendto.gschema.xml \

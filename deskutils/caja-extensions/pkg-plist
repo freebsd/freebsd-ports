@@ -6,7 +6,6 @@ lib/caja-sendto/plugins/libnstgajim.so
 lib/caja-sendto/plugins/libnstpidgin.so
 lib/caja-sendto/plugins/libnstremovable_devices.so
 lib/caja-sendto/plugins/libnstupnp.so
-lib/caja/extensions-2.0/libcaja-gksu.so
 lib/caja/extensions-2.0/libcaja-image-converter.so
 lib/caja/extensions-2.0/libcaja-open-terminal.so
 lib/caja/extensions-2.0/libcaja-sendto.so
@@ -16,7 +15,6 @@ lib/caja/extensions-2.0/libcaja-xattr-tags.so
 libdata/pkgconfig/caja-sendto.pc
 man/man1/caja-sendto.1.gz
 %%DATADIR%%/share-dialog.ui
-share/caja/extensions/libcaja-gksu.caja-extension
 share/caja/extensions/libcaja-image-converter.caja-extension
 share/caja/extensions/libcaja-open-terminal.caja-extension
 share/caja/extensions/libcaja-sendto.caja-extension
