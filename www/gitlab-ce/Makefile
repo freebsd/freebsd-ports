@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.1.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -26,7 +26,7 @@ MY_DEPENDS=	git>=2.32.0:devel/git \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
 	rubygem-rails61>=6.1.6.0<6.1.7:www/rubygem-rails61 \
-	rubygem-bootsnap>=1.12.0<1.13:devel/rubygem-bootsnap \
+	rubygem-bootsnap112>=1.12.0<1.13:devel/rubygem-bootsnap112 \
 	rubygem-responders-rails61>=3.0<4.0:www/rubygem-responders-rails61 \
 	rubygem-sprockets3>=3.7<3.8:devel/rubygem-sprockets3 \
 	rubygem-view_component-rails61>=2.50.0<2.51:devel/rubygem-view_component-rails61 \
