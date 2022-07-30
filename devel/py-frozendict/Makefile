@@ -1,5 +1,5 @@
 PORTNAME=	frozendict
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/Marco-Sulla/python-frozendict/releases/download/v${PORTVERSSION}/
