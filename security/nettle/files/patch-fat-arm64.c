@@ -1,16 +1,16 @@
---- fat-arm64.c.orig	2022-06-02 17:57:15 UTC
+--- fat-arm64.c.orig	2022-07-27 19:23:20 UTC
 +++ fat-arm64.c
-@@ -46,6 +46,9 @@
- #  include <asm/hwcap.h>
- #  include <sys/auxv.h>
- # endif
+@@ -50,6 +50,9 @@
+ # include <sys/sysctl.h>
+ # include <machine/cpu.h>
+ # include <machine/armreg.h>
 +#elif defined(__FreeBSD__)
 +#  define USE_GETAUXVAL 1
 +#  include <sys/auxv.h>
  #endif
  
  #include "nettle-types.h"
-@@ -113,7 +116,14 @@ get_arm64_features (struct arm64_features *features)
+@@ -117,7 +120,14 @@ get_arm64_features (struct arm64_features *features)
    else
      {
  #if USE_GETAUXVAL
