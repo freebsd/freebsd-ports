@@ -136,11 +136,6 @@ CONFIGURE_ARGS+=	--enable-debug
 FFLAGS+=	-fallow-argument-mismatch
 .endif
 
-.if ${PORT_OPTIONS:MGUI}
-DEPRECATED=	Depends on expired devel/avalon-framework
-EXPIRATION_DATE=2022-09-30
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's, gfortran, ${FC},' ${WRKSRC}/modules/dynamic_link/src/scripts/configure
