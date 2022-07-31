@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: sniproxy
-# BEFORE:  DAEMON
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 
 #
