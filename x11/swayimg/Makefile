@@ -1,11 +1,9 @@
 PORTNAME=	swayimg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6
-PORTREVISION=	3
+DISTVERSION=	1.7
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	787d13e36783.patch:-p1 # https://github.com/artemsen/swayimg/pull/23
 PATCHFILES+=	d12f10e9ebbd.patch:-p1 # https://github.com/artemsen/swayimg/pull/24
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
+		libepoll-shim.so:devel/libepoll-shim \
 		libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
