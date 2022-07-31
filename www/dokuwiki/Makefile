@@ -15,10 +15,9 @@ LICENSE_FILE_GPLv2+ =		${WRKSRC}/vendor/geshi/geshi/LICENSE
 LICENSE_FILE_GPLv3=		${WRKSRC}/vendor/marcusschwarz/lesserphp/LICENSE
 LICENSE_FILE_MIT=		${WRKSRC}/vendor/composer/LICENSE
 
-DIST_VER=	${PORTNAME}-2020-07-29
+DIST_VER=	${PORTNAME}-2022-07-31
 USES=		cpe php:web shebangfix tar:tgz
 USE_PHP=	gd hash json mbstring openssl pcre session xml zlib
-IGNORE_WITH_PHP=	80 81 82
 NO_ARCH=	YES
 NO_BUILD=	YES
 
