@@ -1,4 +1,5 @@
 bin/snowflake
+bin/snowflake-broker
 bin/snowflake-client
 bin/snowflake-proxy
 %%MANPAGES%%man/man1/snowflake-client.1.gz

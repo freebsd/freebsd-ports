@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# PROVIDE: snowflake-broker
+# REQUIRE: cleanvar SERVERS
+#
+# Options to configure it via /etc/rc.conf:
+#
+# snowflake_broker_enable (bool)	Enable service on boot. Default: NO
+# snowflake_broker_args (str)		Broker arguments.	Default: -addr 127.0.0.1:8080 -disable-tls
+# snowflake_broker_user (str)		User to run as.		Default: _tor
+
+. /etc/rc.subr
+
+name="snowflake-broker"
+rcvar="snowflake_broker_enable"
+pidfile="/var/run/${name}.pid"
+logfile="/var/log/${name}.log"
+procname="%%PREFIX%%/bin/${name}"
+
+load_rc_config $name
+
+: ${snowflake_broker_enable:="NO"}
+: ${snowflake_broker_args:="-addr 127.0.0.1:8080 -disable-tls"}
+: ${snowflake_broker_user:="_tor"}
+
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -u ${snowflake_broker_user} -o ${logfile} -f ${procname} ${snowflake_broker_args}"
+
+run_rc_command "$1"
