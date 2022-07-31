@@ -1,7 +1,6 @@
 PORTNAME=	nanovna-saver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.10
-PORTREVISION=	2
+DISTVERSION=	0.4.0
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -21,7 +20,7 @@ USE_PYTHON=	distutils autoplist noflavors
 USE_PYQT=	pyqt5_run
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	mihtjel
+GH_ACCOUNT=	NanoVNA-Saver
 
 NO_ARCH=	yes
 

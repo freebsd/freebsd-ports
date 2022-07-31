@@ -1,4 +1,4 @@
---- NanoVNASaver/Hardware/Hardware.py.orig	2022-01-04 07:44:03 UTC
+--- NanoVNASaver/Hardware/Hardware.py.orig	2022-04-01 14:51:11 UTC
 +++ NanoVNASaver/Hardware/Hardware.py
 @@ -34,6 +34,7 @@ from NanoVNASaver.Hardware.NanoVNA_H4 import NanoVNA_H
  from NanoVNASaver.Hardware.NanoVNA_V2 import NanoVNA_V2
@@ -20,7 +20,19 @@
          for t in USBDEVICETYPES:
              if d.vid != t.vid or d.pid != t.pid:
                  continue
-@@ -94,7 +100,6 @@ def get_interfaces() -> List[Interface]:
+@@ -87,14 +93,17 @@ def get_interfaces() -> List[Interface]:
+                          t.name, d.vid, d.pid, d.device)
+             iface = Interface('serial', t.name)
+             iface.port = d.device
+-            iface.open()
++            try:
++                iface.open()
++            except serial.SerialException:
++                logger.warning("Could not open serial port %s", d.device)
++                continue
+             iface.comment = get_comment(iface)
+             iface.close()
+             interfaces.append(iface)
  
      logger.debug("Interfaces: %s", interfaces)
      return interfaces
