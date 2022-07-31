@@ -1,5 +1,5 @@
 PORTNAME=	phpstorm
-PORTVERSION=	2022.1.3
+PORTVERSION=	2022.1.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-
@@ -30,7 +30,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 
-WRKSRC=		${WRKDIR}/PhpStorm-221.5921.28
+WRKSRC=		${WRKDIR}/PhpStorm-221.6008.16
 
 do-install:
 # Linux/Windows/OS X only so remove them
