@@ -36,6 +36,12 @@ LLVM_CMAKE_ON=		-DUSE_LLVM=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
 LLVM_BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 LLVM_RUN_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+CMAKE_ARGS+=	-DUSE_RPC:BOOL=OFF
+.endif
+
 post-test:
 	@cd ${TEST_WRKSRC} && ./cpptest
 
