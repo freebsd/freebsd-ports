@@ -27,10 +27,7 @@ remove the following to complete the deinstallation process:"
   cbsdrsyncd_enable="YES"
   cbsdrsyncd_flags="--config=\$workdir/etc/rsyncd.conf"
   cbsdd_enable="YES"
-  devfs_load_rulesets="YES"
   cbsd_workdir="$workdir"
-  rcshutdown_timeout="900"
-  sshd_flags="-oPort=22222"
 
 2) Remove %%LOCALBASE%%/etc/sudoers.d/cbsd_sudoers
 
