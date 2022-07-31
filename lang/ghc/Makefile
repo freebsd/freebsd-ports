@@ -25,7 +25,6 @@ USE_PERL5=		build
 NO_CCACHE=		yes
 OPTIONS_SUB=		yes
 SHEBANG_FILES=		boot
-PORTDOCS=		*
 
 OPTIONS_DEFINE?=	DYNAMIC GMP PROFILE DOCS
 OPTIONS_DEFAULT=	DYNAMIC PROFILE GMP
@@ -95,6 +94,10 @@ BUILD_MK=		DYNAMIC_GHC_PROGRAMS=${ENABLE_DYNAMIC} \
 			V=0
 
 .include <bsd.port.pre.mk>
+
+.if ${SLAVE_PORT} != "yes"
+PORTDOCS=		*
+.endif
 
 GHC_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/}
 CONFIGURE_TARGET=	${GHC_ARCH}-portbld-${OPSYS:tl}
