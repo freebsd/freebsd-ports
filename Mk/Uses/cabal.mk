@@ -180,6 +180,7 @@ cabal-extract: check-cabal
 	@cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} ${HPACK_CMD}
 .    endif
 .  endif
+	@${RM} -r ${WRKSRC}/dist-newstyle
 	@${TOUCH} ${EXTRACT_COOKIE} ${CABAL_COOKIE}
 
 # Calls cabal configure on the Haskell package located in ${WRKSRC}
