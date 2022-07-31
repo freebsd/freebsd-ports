@@ -1,6 +1,5 @@
 PORTNAME=	yoda
-DISTVERSION=	1.9.4
-PORTREVISION=	1
+DISTVERSION=	1.9.6
 CATEGORIES=	science
 MASTER_SITES=	https://yoda.hepforge.org/downloads/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
