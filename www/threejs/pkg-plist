@@ -40,6 +40,7 @@
 %%WWWDIR%%/core/Object3D.js
 %%WWWDIR%%/core/Raycaster.js
 %%WWWDIR%%/core/Uniform.js
+%%WWWDIR%%/core/UniformsGroup.js
 %%WWWDIR%%/extras/DataUtils.js
 %%WWWDIR%%/extras/Earcut.js
 %%WWWDIR%%/extras/ImageUtils.js
@@ -347,6 +348,7 @@
 %%WWWDIR%%/renderers/webgl/WebGLState.js
 %%WWWDIR%%/renderers/webgl/WebGLTextures.js
 %%WWWDIR%%/renderers/webgl/WebGLUniforms.js
+%%WWWDIR%%/renderers/webgl/WebGLUniformsGroups.js
 %%WWWDIR%%/renderers/webgl/WebGLUtils.js
 %%WWWDIR%%/renderers/webxr/WebXRController.js
 %%WWWDIR%%/renderers/webxr/WebXRManager.js
