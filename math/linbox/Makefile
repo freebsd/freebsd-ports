@@ -1,8 +1,11 @@
 PORTNAME=	linbox
 PORTVERSION=	1.6.3
-PORTREVISION=	9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	10
 CATEGORIES=	math
+
+PATCH_SITES=	https://github.com/linbox-team/linbox/commit/
+PATCHFILES=	b79fb13522fceef79e291922ca9c7af0a09b65ae.diff:-p1
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	C++ library for exact, high-performance linear algebra
