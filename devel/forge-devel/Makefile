@@ -1,7 +1,7 @@
 PORTNAME=	forge
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1-48
-DISTVERSIONSUFFIX=	-g66b3993
+DISTVERSION=	0.3.1-65
+DISTVERSIONSUFFIX=	-ged8abda
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
@@ -15,19 +15,19 @@ BUILD_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.2.0:databases/closql@${EMACS_FLAV
 		compat.el${EMACS_PKGNAMESUFFIX}>=28.1.1.0:misc/compat.el@${EMACS_FLAVOR} \
 		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
 		emacsql${EMACS_PKGNAMESUFFIX}>=3.0.0:databases/emacsql@${EMACS_FLAVOR} \
-		ghub${EMACS_PKGNAMESUFFIX}>=3.5.4:devel/ghub@${EMACS_FLAVOR} \
+		ghub-devel${EMACS_PKGNAMESUFFIX}>=3.5.4:devel/ghub-devel@${EMACS_FLAVOR} \
 		magit-devel${EMACS_PKGNAMESUFFIX}>=3.3.0:devel/magit-devel@${EMACS_FLAVOR} \
 		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.4:textproc/markdown-mode.el@${EMACS_FLAVOR} \
-		transient${EMACS_PKGNAMESUFFIX}>=0.3.6:devel/transient@${EMACS_FLAVOR} \
+		transient-devel${EMACS_PKGNAMESUFFIX}>=0.3.6:devel/transient-devel@${EMACS_FLAVOR} \
 		yaml.el${EMACS_PKGNAMESUFFIX}>=0.3.4:textproc/yaml.el@${EMACS_FLAVOR}
 RUN_DEPENDS=	closql${EMACS_PKGNAMESUFFIX}>=1.2.0:databases/closql@${EMACS_FLAVOR} \
 		compat.el${EMACS_PKGNAMESUFFIX}>=28.1.1.0:misc/compat.el@${EMACS_FLAVOR} \
 		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
 		emacsql${EMACS_PKGNAMESUFFIX}>=3.0.0:databases/emacsql@${EMACS_FLAVOR} \
-		ghub${EMACS_PKGNAMESUFFIX}>=3.5.4:devel/ghub@${EMACS_FLAVOR} \
+		ghub-devel${EMACS_PKGNAMESUFFIX}>=3.5.4:devel/ghub-devel@${EMACS_FLAVOR} \
 		magit-devel${EMACS_PKGNAMESUFFIX}>=3.3.0:devel/magit-devel@${EMACS_FLAVOR} \
 		markdown-mode.el${EMACS_PKGNAMESUFFIX}>=2.4:textproc/markdown-mode.el@${EMACS_FLAVOR} \
-		transient${EMACS_PKGNAMESUFFIX}>=0.3.6:devel/transient@${EMACS_FLAVOR} \
+		transient-devel${EMACS_PKGNAMESUFFIX}>=0.3.6:devel/transient-devel@${EMACS_FLAVOR} \
 		yaml.el${EMACS_PKGNAMESUFFIX}>=0.3.4:textproc/yaml.el@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
