@@ -1,5 +1,5 @@
 PORTNAME=	puppetfile-resolver
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
