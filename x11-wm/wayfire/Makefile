@@ -1,6 +1,6 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.4
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
