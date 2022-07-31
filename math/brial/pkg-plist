@@ -189,8 +189,8 @@ include/polybori/routines/pbori_routines_order.h
 lib/libbrial.a
 lib/libbrial.so
 lib/libbrial.so.3
-lib/libbrial.so.3.0.6
+lib/libbrial.so.3.0.7
 lib/libbrial_groebner.a
 lib/libbrial_groebner.so
 lib/libbrial_groebner.so.3
-lib/libbrial_groebner.so.3.0.6
+lib/libbrial_groebner.so.3.0.7
