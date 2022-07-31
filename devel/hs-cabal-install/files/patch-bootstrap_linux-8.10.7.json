@@ -140,7 +140,7 @@
          {
              "package": "base",
 -            "version": "4.14.3.0"
-+            "version": "4.16.2.0"
++            "version": "4.16.3.0"
          },
          {
              "package": "array",
@@ -191,7 +191,7 @@
          {
              "package": "ghc-boot-th",
 -            "version": "8.10.7"
-+            "version": "9.2.3"
++            "version": "9.2.4"
          },
          {
              "package": "pretty",

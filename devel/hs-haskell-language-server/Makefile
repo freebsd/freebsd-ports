@@ -292,5 +292,7 @@ NOT_FOR_ARCHS=		i386
 
 post-patch:
 	${MV} ${WRKSRC}/cabal-ghc92.project ${WRKSRC}/cabal.project.${PORTNAME}
+	@${REINPLACE_CMD} -e '/with-compiler: ghc-9.2.3/d' \
+		${WRKSRC}/cabal.project.${PORTNAME} || ${TRUE}
 
 .include <bsd.port.mk>
