@@ -1,5 +1,5 @@
 PORTNAME=	smoldyn
-DISTVERSION=	2.67
+DISTVERSION=	2.68
 CATEGORIES=	science
 MASTER_SITES=	https://www.smoldyn.org/
 
@@ -11,13 +11,15 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
-USES=		cmake:testing compiler:c++11-lang gl tar:tgz xorg
+USES=		cmake:testing compiler:c++11-lang gl localbase:ldflags tar:tgz python:test shebangfix xorg
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
 USE_LDCONFIG=	yes
 
+SHEBANG_GLOB=	*.py.in
+
 CMAKE_OFF=	OPTION_PYTHON
-CMAKE_TESTING_ON=	OPTION_EXAMPLES # test code is missing from tarballs: https://github.com/ssandrews/Smoldyn/issues/111
+CMAKE_TESTING_ON=	OPTION_EXAMPLES # all tests fail to run, see https://github.com/ssandrews/Smoldyn/issues/127
 
 PLIST_FILES=	bin/${PORTNAME} \
 		include/libsmoldyn.h \
