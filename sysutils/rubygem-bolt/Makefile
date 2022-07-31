@@ -1,5 +1,5 @@
 PORTNAME=	bolt
-PORTVERSION=	3.24.0
+PORTVERSION=	3.25.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,8 @@ RUN_DEPENDS=	r10k:sysutils/rubygem-r10k \
 		rubygem-addressable>=2.5:www/rubygem-addressable \
 		rubygem-aws-sdk-ec2>1:devel/rubygem-aws-sdk-ec2 \
 		rubygem-CFPropertyList>=2.2:devel/rubygem-CFPropertyList \
-		rubygem-ffi>=1.13:devel/rubygem-ffi \
 		rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
+		rubygem-ffi>=1.13:devel/rubygem-ffi \
 		rubygem-hiera-eyaml>=3:sysutils/rubygem-hiera-eyaml \
 		rubygem-jwt>=2.2:www/rubygem-jwt \
 		rubygem-logging>=2.2:devel/rubygem-logging \
@@ -21,10 +21,9 @@ RUN_DEPENDS=	r10k:sysutils/rubygem-r10k \
 		rubygem-net-ssh>=4.0:security/rubygem-net-ssh \
 		rubygem-net-ssh-krb>=0.5:security/rubygem-net-ssh-krb \
 		rubygem-orchestrator_client>=0.5:net/rubygem-orchestrator_client \
-		rubygem-paint>=2.2:devel/rubygem-paint \
 		rubygem-puppet-resource_api>=1.8.1:devel/rubygem-puppet-resource_api \
 		rubygem-puppet-strings>=2.3:textproc/rubygem-puppet-strings \
-		rubygem-puppetfile-resolver>=0.1:sysutils/rubygem-puppetfile-resolver \
+		rubygem-puppetfile-resolver>=0.6.2:sysutils/rubygem-puppetfile-resolver \
 		rubygem-ruby_smb>=1.0:net/rubygem-ruby_smb \
 		rubygem-terminal-table>=3.0<4:textproc/rubygem-terminal-table \
 		rubygem-winrm-fs>=1.3:sysutils/rubygem-winrm-fs \
