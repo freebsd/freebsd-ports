@@ -183,12 +183,11 @@ cbsd/etc/defaults/virtualbox-default-default.conf
 cbsd/etc/defaults/vls.conf
 cbsd/etc/defaults/vm-dflybsd-cloud-DragonflyBSD-hammer-x64-6.conf
 cbsd/etc/defaults/vm-dflybsd-x86-6.conf
-cbsd/etc/defaults/vm-freebsd-FreeBSD-aarch64-13.0.conf
+cbsd/etc/defaults/vm-freebsd-FreeBSD-aarch64-13.1.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-bsdinstall-jail.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-from-jail.conf
-cbsd/etc/defaults/vm-freebsd-FreeBSD-riscv64-13.0.conf
+cbsd/etc/defaults/vm-freebsd-FreeBSD-riscv64-13.1.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-12.3.conf
-cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-13.0.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-13.1.conf
 cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-14.0-LATEST.conf
 cbsd/etc/defaults/vm-freebsd-GhostBSD-x64-22.conf
@@ -228,6 +227,8 @@ cbsd/etc/defaults/vm-linux-OracleLinux-9.conf
 cbsd/etc/defaults/vm-linux-Parrot-security-5-x64.conf
 cbsd/etc/defaults/vm-linux-Starface-7.conf
 cbsd/etc/defaults/vm-linux-Rocky-8-x86_64.conf
+cbsd/etc/defaults/vm-linux-Rocky-9-x86_64.conf
+cbsd/etc/defaults/vm-linux-Tails-5.conf
 cbsd/etc/defaults/vm-linux-TinyCore-x86-13.conf
 cbsd/etc/defaults/vm-linux-TrueNAS-Scale-22.conf
 cbsd/etc/defaults/vm-linux-cloud-Alma-9-x86_64.conf
@@ -245,6 +246,7 @@ cbsd/etc/defaults/vm-linux-cloud-Oracle-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-8-x86_64.conf
+cbsd/etc/defaults/vm-linux-cloud-Rocky-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-kubernetes-24.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntudesktop-amd64-22.04.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-20.04.conf
