@@ -1,6 +1,6 @@
 PORTNAME=	openvsp
 DISTVERSIONPREFIX=	${GH_PROJECT}_
-DISTVERSION=	3.28.0
+DISTVERSION=	3.29.1
 CATEGORIES=	cad
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -55,7 +55,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${BUILD_WRKSRC}/${BUILD_PREFIX}/vspIcon.png ${STAGEDIR}${DATADIR}
 	${RM} ${STAGEDIR}${PREFIX}/vspIcon.png ${BUILD_WRKSRC}/${BUILD_PREFIX}/vspIcon.png
-.for f in vsp vspaero vspscript vspslicer vspviewer
+.for f in vsp vspaero vspaero_adjoint vspaero_complex vspaero_opt vsploads vspscript vspviewer
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${BUILD_PREFIX}/${f} ${STAGEDIR}${PREFIX}/bin
 	${RM} ${STAGEDIR}${PREFIX}/${f}
 .endfor

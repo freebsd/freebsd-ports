@@ -1,8 +1,11 @@
 README.md
 bin/vsp
 bin/vspaero
+bin/vspaero_adjoint
+bin/vspaero_complex
+bin/vspaero_opt
+bin/vsploads
 bin/vspscript
-bin/vspslicer
 bin/vspviewer
 %%DATADIR%%/23015.af
 %%DATADIR%%/AirfoilExport.vspscript
