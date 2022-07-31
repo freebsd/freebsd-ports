@@ -1592,6 +1592,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/helper.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/hierarchy.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/hierarchy.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/icons.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/icons.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/inline.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/inline.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/let-alist.el.gz
@@ -2545,8 +2547,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/loadup.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/locate.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/locate.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/longlines.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/longlines.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/lpr.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/lpr.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ls-lisp.el.gz
@@ -2798,8 +2798,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/pop3.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/puny.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/puny.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/quickurl.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/quickurl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/rcirc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/rcirc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/rfc2104.el.gz
@@ -2947,8 +2945,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eieio-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/eudcb-ph.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/fast-lock.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/fast-lock.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/gulp.el.gz
@@ -2963,8 +2959,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/iswitchb.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/landmark.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/landmark.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/lazy-lock.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/lazy-lock.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/longlines.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/longlines.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mantemp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mantemp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/meese.el.gz
@@ -2988,6 +2984,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg-pgp5.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/quickurl.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/quickurl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rcompile.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rcompile.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rfc2368.el.gz
