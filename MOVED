@@ -17522,3 +17522,4 @@ sysutils/libgksu||2022-07-27|Has expired: Abandonware, depending on gconf2
 multimedia/webvfx-qt5||2022-07-29|Abandoned upstream, multimedia/shotcut no longer supports/uses
 textproc/rubygem-rouge312|textproc/rubygem-rouge|2022-07-30|Remove obsoleted port. Use textproc/rubygem-rouge instead
 textproc/rubygem-rouge327|textproc/rubygem-rouge|2022-07-30|Remove obsoleted port. Use textproc/rubygem-rouge instead
+net-mgmt/py-netbox-plugin-extensions||2022-07-31|Has expired: No longer required for net-mgmt/netbox 3.2+
