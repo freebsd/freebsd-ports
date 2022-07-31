@@ -1,0 +1,76 @@
+--- src/Makefile	2022-07-15 04:10:46.000000000 -0500
++++ src/Makefile	2022-07-29 01:20:22.816107000 -0500
+@@ -16,8 +16,10 @@
+ uname_M := $(shell sh -c 'uname -m 2>/dev/null || echo not')
+ HAS_CHECKMODULE = $(shell command -v checkmodule > /dev/null && echo YES)
+ HAS_SEMODULE_PACKAGE = $(shell command -v semodule_package > /dev/null && echo YES)
++ifeq (${uname_S},Linux)
+ CHECK_ARCHLINUX := $(shell sh -c 'grep "Arch Linux" /etc/os-release > /dev/null && echo YES || echo not')
+ CHECK_CENTOS5 := $(shell sh -c 'grep "CentOS release 5." /etc/redhat-release > /dev/null && echo YES || echo not')
++endif
+ 
+ ARCH_FLAGS =
+ 
+@@ -208,10 +210,10 @@
+ ifeq (${uname_S},FreeBSD)
+ 		DEFINES+=-DFreeBSD
+ 		OSSEC_CFLAGS+=-pthread -I/usr/local/include
+-		OSSEC_LDFLAGS+=-pthread
++		OSSEC_LDFLAGS+=-pthread -lnghttp2
+ 		OSSEC_LDFLAGS+=-L/usr/local/lib
+ 		OSSEC_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../lib'
+-		AR_LDFLAGS+=-pthread
++		AR_LDFLAGS+=-pthread -lnghttp2
+ 		AR_LDFLAGS+=-L/usr/local/lib
+ 		AR_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../../lib'
+ 		PRECOMPILED_OS:=freebsd
+@@ -812,6 +814,8 @@
+ 	EXTERNAL_LIBS += $(LIBCURL_LIB)
+ else ifeq (${uname_S},Linux)
+ 	EXTERNAL_LIBS += $(LIBCURL_LIB)
++else ifeq (${uname_S},FreeBSD)
++        EXTERNAL_LIBS += $(LIBCURL_LIB)
+ else ifeq (${uname_S},Darwin)
+ 	EXTERNAL_LIBS += $(LIBCURL_LIB)
+ endif
+@@ -2112,26 +2116,28 @@
+ 	mkdir -p ${WPYTHON_DIR}
+ 	cp external/${WPYTHON_TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} && ${TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} -C ${WPYTHON_DIR} && rm -rf ${WPYTHON_DIR}/${WPYTHON_TAR}
+ endif
+-	find ${WPYTHON_DIR} -name "*${WLIBPYTHON}" -exec ln -f {} ${INSTALLDIR}/lib/${WLIBPYTHON} \;
+ 
++	mkdir -p $(STAGEDIR)${INSTALLDIR}/lib
++	find $(STAGEDIR)${WPYTHON_DIR} -name "*${WLIBPYTHON}" -exec ln -f {} $(STAGEDIR)${INSTALLDIR}/lib/${WLIBPYTHON} \;
++
+ python_dependencies := requirements.txt
+ 
+-install_dependencies: install_python
++install_dependencies:
+ ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
+-	${WPYTHON_DIR}/bin/python3 -m pip install --upgrade pip --index-url=file://${ROUTE_PATH}/${EXTERNAL_CPYTHON}/Dependencies/simple
+-	LD_LIBRARY_PATH="${INSTALLDIR}/lib" LDFLAGS="-L${INSTALLDIR}/lib" ${WPYTHON_DIR}/bin/pip3 install -r ../framework/${python_dependencies}  --index-url=file://${ROUTE_PATH}/${EXTERNAL_CPYTHON}/Dependencies/simple
++	$(STAGEDIR)${WPYTHON_DIR}/bin/python3 -B -m pip install --upgrade pip --prefix=${WPYTHON_DIR} --root=$(STAGEDIR) --no-index --find-links=wazuh-cache/ --cache-dir=wazuh-cache/ --no-compile
++	LD_LIBRARY_PATH="$(STAGEDIR)${INSTALLDIR}/lib" LDFLAGS="-L$(STAGEDIR)${INSTALLDIR}/lib" $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -m pip install wazuh-cache-any/*.whl  --root=$(STAGEDIR) --prefix=${WPYTHON_DIR} --no-deps --no-compile
++	LD_LIBRARY_PATH="$(STAGEDIR)${INSTALLDIR}/lib" LDFLAGS="-L$(STAGEDIR)${INSTALLDIR}/lib" $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -m pip install wazuh-cache-${uname_M}/*.whl  --root=$(STAGEDIR) --prefix=${WPYTHON_DIR} --no-deps --no-compile
+ endif
+ 
+-install_framework: install_python
+-	cd ../framework && ${WPYTHON_DIR}/bin/python3 setup.py clean --all install --prefix=${WPYTHON_DIR} --wazuh-version=$(shell cat VERSION) --install-type=${TARGET}
+-	chown -R root:${WAZUH_GROUP} ${WPYTHON_DIR}
+-	chmod -R o=- ${WPYTHON_DIR}
++install_framework:
++	cd ../framework && $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -B setup.py clean --all install --prefix=${WPYTHON_DIR} --root=$(STAGEDIR) --wazuh-version=$(shell cat VERSION) --install-type=${TARGET} --no-compile
++	chmod -R o=- $(STAGEDIR)${WPYTHON_DIR}
+ 
+-install_api: install_python
+-	cd ../api && ${WPYTHON_DIR}/bin/python3 setup.py clean --all install --prefix=${WPYTHON_DIR}
++install_api:
++	cd ../api && $(STAGEDIR)${WPYTHON_DIR}/bin/python3 -B setup.py clean --all install --prefix=${WPYTHON_DIR} --root=$(STAGEDIR) --no-compile
+ 
+-install_mitre: install_python
+-	cd ../tools/mitre && ${WPYTHON_DIR}/bin/python3 mitredb.py -d ${INSTALLDIR}/var/db/mitre.db
++install_mitre:
++	cd ../tools/mitre && $(STAGEDIR)${WPYTHON_DIR}/bin/python3 mitredb.py -d $(STAGEDIR)${INSTALLDIR}/var/db/mitre.db
+ 
+ 
+ ####################
