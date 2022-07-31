@@ -17,6 +17,7 @@ bin/RNAforester
 bin/RNAheat
 bin/RNAinverse
 bin/RNAlocmin
+bin/RNAmultifold
 bin/RNApaln
 bin/RNAparconv
 bin/RNApdist
@@ -27,7 +28,6 @@ bin/RNApvmin
 bin/RNAsnoop
 bin/RNAsubopt
 bin/RNAup
-bin/RNAmultifold
 bin/b2ct
 bin/ct2db
 bin/kinwalker
@@ -138,7 +138,7 @@ include/ViennaRNA/plotting/RNApuzzler/RNApuzzler.h
 include/ViennaRNA/plotting/RNApuzzler/RNAturtle.h
 include/ViennaRNA/plotting/alignments.h
 include/ViennaRNA/plotting/layouts.h
-include/ViennaRNA/plotting/naview.h
+include/ViennaRNA/plotting/naview/naview.h
 include/ViennaRNA/plotting/probabilities.h
 include/ViennaRNA/plotting/structures.h
 include/ViennaRNA/plotting/utils.h
