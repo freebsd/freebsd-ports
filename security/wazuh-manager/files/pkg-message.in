@@ -1,0 +1,40 @@
+[
+{ type: install
+  message: <<EOM
+Wazuh Manager was installed
+
+1) Copy /etc/locatime to /var/ossec/etc directory
+
+   # cp /etc/localtime /var/ossec/etc
+
+2) You must edit /var/ossec/etc/ossec.conf.sample for your setup and rename/copy
+   it to ossec.conf. 
+
+   Take a look wazuh manager configuration at the following url:
+
+   https://documentation.wazuh.com/current/user-manual/manager/index.html
+
+3) You can find additional useful files installed at 
+
+  # /var/ossec/packages_files/manager_installation_scripts
+
+4) Do not forget generate auth certificate
+
+  # openssl req -x509 -batch -nodes -days 365 -newkey rsa:2048 \
+	-subj "/C=US/ST=California/CN=Wazuh/" \
+	-keyout /var/ossec/etc/sslmanager.key -out /var/ossec/etc/sslmanager.cert
+  # chmod 640 /var/ossec/etc/sslmanager.key
+  # chmod 640 /var/ossec/etc/sslmanager.cert
+
+5) Add Wazuh manager to /etc/rc.conf
+
+  # sysrc wazuh_manager_enable="YES"
+
+6) Start Wazuh manager
+
+  # service wazuh_manager start
+
+7) Enjoy it ;)
+EOM
+}
+]

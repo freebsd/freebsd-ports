@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# PROVIDE: wazuh_manager
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+# wazuh_manager_enable (bool):	Set to NO by default.
+# 				Set it to YES to enable Wazuh Agent.
+#
+
+. /etc/rc.subr
+
+name="wazuh_manager"	# How the service will be invoked from service
+rcvar="${name}_enable" 	# The variable in rc.conf that will allow this service to run
+
+load_rc_config $name 	# Loads the config file, if relevant.
+
+: ${wazuh_manager_enable:="NO"}
+
+command="/var/ossec/bin/wazuh-control"
+extra_commands="status"
+
+start_cmd="wazuh_manager_start"
+stop_cmd="wazuh_manager_stop"
+status_cmd="wazuh_manager_status"
+
+wazuh_manager_start() {
+	echo -n "Starting Wazuh Manager: "
+	${command} start > /dev/null
+	RETVAL=$?
+	if [ $RETVAL -eq 0 ]; then
+		echo success
+	else
+		echo failure
+	fi
+	echo
+	return $RETVAL
+}
+
+wazuh_manager_stop() {
+	echo -n "Stopping Wazuh Manager: "
+	${command} stop > /dev/null
+	RETVAL=$?
+	if [ $RETVAL -eq 0 ]; then
+		echo success
+	else
+		echo failure
+	fi
+	echo
+	return $RETVAL
+}
+
+wazuh_manager_status() {
+        ${command} status
+}
+
+run_rc_command "$@"
+
