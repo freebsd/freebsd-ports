@@ -269,6 +269,7 @@
 %%WWWDIR%%/j2s/J/adapter/readers/quantum/MopacSlaterReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/quantum/NBOParser.js
 %%WWWDIR%%/j2s/J/adapter/readers/quantum/NWChemReader.js
+%%WWWDIR%%/j2s/J/adapter/readers/quantum/OrcaReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/quantum/PsiReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/quantum/QCJSONReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/quantum/QchemReader.js
@@ -286,6 +287,7 @@
 %%WWWDIR%%/j2s/J/adapter/readers/simple/JmeReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/simple/MopacArchiveReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/simple/MopacReader.js
+%%WWWDIR%%/j2s/J/adapter/readers/simple/OrcaReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/simple/TinkerReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/spartan/OdysseyReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/spartan/SpartanArchive.js
