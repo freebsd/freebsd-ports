@@ -29,6 +29,7 @@ include/gcem_incl/incomplete_beta.hpp
 include/gcem_incl/incomplete_beta_inv.hpp
 include/gcem_incl/incomplete_gamma.hpp
 include/gcem_incl/incomplete_gamma_inv.hpp
+include/gcem_incl/inv_sqrt.hpp
 include/gcem_incl/is_even.hpp
 include/gcem_incl/is_finite.hpp
 include/gcem_incl/is_inf.hpp
