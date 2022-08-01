@@ -1,6 +1,5 @@
 PORTNAME=	cmh
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.1.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.multiprecision.org/downloads/
 
@@ -17,16 +16,17 @@ LIB_DEPENDS=	libfplll.so:math/fplll \
 		libmpfrcx.so:math/mpfrcx \
 		libpari.so:math/pari
 RUN_DEPENDS=	bash:shells/bash
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake libtool localbase shebangfix
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	scripts/cmh-classpol.sh.in
+SHEBANG_GLOB=	*.sh
 
 GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
-
-INFO=		cm
+TEST_TARGET=	check # tests fail, see https://gitlab.inria.fr/cmh/cmh/-/issues/1
 
 .include <bsd.port.mk>
