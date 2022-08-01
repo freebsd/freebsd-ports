@@ -1,6 +1,5 @@
 PORTNAME=	cm
-DISTVERSION=	0.3.1
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.multiprecision.org/downloads/
 
@@ -22,6 +21,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 INFO=		cm
 
