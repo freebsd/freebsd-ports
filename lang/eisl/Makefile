@@ -1,7 +1,7 @@
 PORTNAME=	eisl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.50-114
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-g1216d9e
 CATEGORIES=	lang devel
 
@@ -10,8 +10,6 @@ COMMENT=	Interpreter and compiler compatible with ISLisp standard
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/documents/license.txt
-
-BROKEN_riscv64=	hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension (ignoring target-abi)
 
 TEST_DEPENDS=	cppcheck:devel/cppcheck
 
@@ -29,5 +27,11 @@ LDFLAGS+=	-lncursesw
 
 PLIST_FILES=	bin/edlis \
 		bin/eisl
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64 || ${ARCH} == riscv64
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-makefile
+.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,19 @@
+--- makefile.orig	2022-08-01 14:01:09 UTC
++++ makefile
+@@ -42,7 +42,7 @@ ifeq ($(DEBUG),1)
+ 		LDFLAGS := -fsanitize=undefined
+ 	endif
+ else
+-	CFLAGS += -O3 -flto -DNDEBUG=1 -DWITHOUT_NANA=1
++	CFLAGS += -O3 -DNDEBUG=1 -DWITHOUT_NANA=1
+ 	SRC_CII += cii/src/mem.c
+ endif
+ OBJ_CII := $(SRC_CII:.c=.o)
+@@ -59,7 +59,6 @@ ifeq  ($(shell uname -n),raspberrypi)
+ 	CFLAGS += -D__rpi__
+ endif
+ ifneq ($(DEBUG),1)
+-	LDFLAGS += -flto
+ 	ifeq ($(OPSYS),macos)
+ 		LDFLAGS += -Wl,-S,-x
+ 	else
