@@ -1,5 +1,5 @@
 PORTNAME=	mkp224o
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/cathugger/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -13,9 +13,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		compiler:c11 gmake localbase:ldflags
+
 GNU_CONFIGURE=	yes
 
 MAKEFILE=	GNUmakefile
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
