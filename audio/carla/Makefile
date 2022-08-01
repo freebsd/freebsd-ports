@@ -67,6 +67,8 @@ PULSEAUDIO_LIB_DEPENDS=		libpulse-simple.so:audio/pulseaudio
 PULSEAUDIO_MAKE_ARGS_OFF=	HAVE_PULSEAUDIO=false
 
 CFLAGS_powerpc64le=	-DEEL_TARGET_PORTABLE
+CFLAGS_powerpc64=	-DEEL_TARGET_PORTABLE
+CFLAGS_powerpc=	-DEEL_TARGET_PORTABLE
 
 post-install:
 	@${REINPLACE_CMD} -i '' -e ' \
