@@ -1,9 +1,9 @@
 PORTNAME=	gsa
 DISTVERSIONPREFIX=	v
-DISTVERSION=	21.4.4
+DISTVERSION=	22.4.0
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/gsa/:yarn_cache
-DISTFILES=	${PORTNAME}-cache${EXTRACT_SUFX}:yarn_cache
+DISTFILES=	${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Greenbone Security Assistant webpage written in React
