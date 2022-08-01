@@ -7234,6 +7234,7 @@
     SUBDIR += tpasm
     SUBDIR += tradcpp
     SUBDIR += transient
+    SUBDIR += transient-devel
     SUBDIR += transwarp
     SUBDIR += tree-sitter
     SUBDIR += treepy.el
