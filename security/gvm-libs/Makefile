@@ -1,6 +1,5 @@
 PORTNAME=	gvm
-DISTVERSION=	21.4.4
-PORTREVISION=	1
+DISTVERSION=	22.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 PKGNAMESUFFIX=	-libs
@@ -19,7 +18,8 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libssh.so:security/libssh \
 		libhiredis.so:databases/hiredis \
 		libnet.so:net/libnet \
-		libgcrypt.so:security/libgcrypt
+		libgcrypt.so:security/libgcrypt \
+		libpaho-mqtt3a.so:net/libpaho-mqtt3
 RUN_DEPENDS=	doxygen>0:devel/doxygen
 
 USE_GITHUB=	yes
@@ -42,5 +42,6 @@ RADIUS_LIB_DEPENDS=	libfreeradius-client.so:net/freeradius-client
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.25.0|1.45.6|g' ${WRKSRC}/util/libgvm_util.pc.in
 	@${REINPLACE_CMD} -e 's|uuid>=2.25.0|uuid>=1.45.6|g' ${WRKSRC}/util/CMakeLists.txt
+	@${REINPLACE_CMD} '31d' ${WRKSRC}/base/proctitle.c
 
 .include <bsd.port.mk>
