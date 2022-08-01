@@ -1,0 +1,6 @@
+pysubs2 is a Python library for editing subtitle files. It's based on
+SubStation Alpha, the native format of Aegisub; it also supports
+SubRip (SRT), MicroDVD, MPL2, TMP and WebVTT formats. There is a small
+CLI tool for batch conversion and retiming.
+
+WWW: https://github.com/tkarabela/pysubs2

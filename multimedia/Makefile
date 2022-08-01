@@ -323,6 +323,7 @@
     SUBDIR += py-periscope
     SUBDIR += py-pretty_midi
     SUBDIR += py-pymediainfo
+    SUBDIR += py-pysubs2
     SUBDIR += py-soco
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer
