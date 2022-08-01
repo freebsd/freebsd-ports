@@ -203,7 +203,6 @@ include/thrift/lib/cpp2/FieldRefHash.h
 include/thrift/lib/cpp2/FieldRefTraits.h
 include/thrift/lib/cpp2/Flags.h
 include/thrift/lib/cpp2/GeneratedCodeHelper.h
-include/thrift/lib/cpp2/IndirectionWrapper.h
 include/thrift/lib/cpp2/PluggableFunction.h
 include/thrift/lib/cpp2/SerializationSwitch.h
 include/thrift/lib/cpp2/Thrift.h
@@ -261,6 +260,7 @@ include/thrift/lib/cpp2/async/tests/util/TestSinkService.h
 include/thrift/lib/cpp2/async/tests/util/TestStreamService.h
 include/thrift/lib/cpp2/async/tests/util/Util.h
 include/thrift/lib/cpp2/detail/meta.h
+include/thrift/lib/cpp2/detail/FieldMask.h
 include/thrift/lib/cpp2/frozen/FixedSizeStringHash.h
 include/thrift/lib/cpp2/frozen/Frozen.h
 include/thrift/lib/cpp2/frozen/FrozenAssociative-inl.h
@@ -434,7 +434,6 @@ include/thrift/lib/cpp2/server/WeightedRequestPileQueue-inl.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue.h
 include/thrift/lib/cpp2/server/peeking/PeekingManager.h
 include/thrift/lib/cpp2/server/peeking/TLSHelper.h
-include/thrift/lib/cpp2/test/IndirectionWrapperTest.h
 include/thrift/lib/cpp2/test/Matcher-inl.h
 include/thrift/lib/cpp2/test/Matcher.h
 include/thrift/lib/cpp2/test/MockCpp2ConnContext.h
