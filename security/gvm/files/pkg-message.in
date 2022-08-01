@@ -15,11 +15,29 @@ Basic instructions for configure your gvm infraestruture are following:
 
   # echo "db_address = /var/run/redis/redis.sock" > /usr/local/etc/openvas/openvas.conf
 
-2) Add user gvm to redis group
+2) Mosquitto broker is a new dependency of GVM. Please configure net/mosquitto
+   service and add the following line to openvas configuration file
+
+  # echo "mqtt_server_uri = localhost:1883" >> /usr/local/etc/openvas/openvas.conf
+
+3) security/py-notus-scanner is a new tool used by GVM. You must create a
+   notus-scanner.toml configuration file at usr/local/etc/gvm/ directory
+
+   # echo "[notus-scanner]" > /usr/local/etc/gvm/notus-scanner.toml
+   # echo 'mqtt-broker-address = "localhost"' >> /usr/local/etc/gvm/notus-scanner.toml
+   # echo 'mqtt-broker-port = "1883"' >> /usr/local/etc/gvm/notus-scanner.toml
+   # echo 'products-directory = "/var/lib/openvas/plugins/notus/products"' >> /usr/local/etc/gvm/notus-scanner.toml
+   # echo 'log-level = "INFO"' >> /usr/local/etc/gvm/notus-scanner.toml
+   # echo "disable-hashsum-verification = false" >> /usr/local/etc/gvm/notus-scanner.toml
+
+   Otherwise it can be defined into notus-scanner startup script. Take a look at 
+   /usr/local/etc/rc.d/notus-scanner file
+
+4) Add user gvm to redis group
 
   # pw groupmod redis -M gvm
 
-3) security/gvmd uses PostgreSQL database. Generally, PostgreSQL must be 
+5) security/gvmd uses PostgreSQL database. Generally, PostgreSQL must be 
    installed in the same server where security/gvmd is running: 
 
   # su postgres
@@ -30,19 +48,21 @@ Basic instructions for configure your gvm infraestruture are following:
   # grant dba to gvm;
   # create extension "uuid-ossp";
   # create extension "pgcrypto";
+  # create extension "pg-gvm";
 
-4) Add the following lines to /etc/rc.conf
+6) Add the following lines to /etc/rc.conf
 
   # sysrc redis_enable="YES"
   # sysrc gvmd_enable="YES"
   # sysrc ospd_openvas_enable="YES"
+  # sysrc notus_scanner_enable="YES"
   # sysrc gsad_enable="YES"
 
-5) Start redis service
+7) Start redis service
 
   # service redis start
 
-6) Currently, ospd_openvas should run as a user without elevated privileges 
+8) Currently, ospd_openvas should run as a user without elevated privileges 
    (gvm) and use sudo for run openvas scanner but it does not work properly. 
    Like a workaround you must run redis as root and the same with ospd_openvas.
 
@@ -58,12 +78,8 @@ Basic instructions for configure your gvm infraestruture are following:
 
    # echo "test_alive_hosts_only = no" >> /usr/local/etc/openvas/openvas.conf
 
-7) The following steps are neccessary before of you can access to GVM web 
+9) The following steps are neccessary before of you can access to GVM web 
    interface (gsad):
-
-  Start gvmd service. It will listen on /var/run/gvmd/gvmd.sock by default
-
-  # service gvmd start
 
   Create certificates
 
@@ -75,6 +91,10 @@ Basic instructions for configure your gvm infraestruture are following:
   # su -m gvm -c "greenbone-feed-sync --type GVMD_DATA"
   # su -m gvm -c "greenbone-feed-sync --type SCAP"
   # su -m gvm -c "greenbone-feed-sync --type CERT"
+
+  Start gvmd service. It will listen on /var/run/gvmd/gvmd.sock by default
+
+  # service gvmd start
 
   Create an admin user and set the Feed Import Owner
 
@@ -88,7 +108,7 @@ Basic instructions for configure your gvm infraestruture are following:
    
   # su -m gvm -c "gvmd --modify-setting 78eceaec-3385-11ea-b237-28d24461215b --value <uuid_of_user>
 
-8) Start OSPD-OpenVAS Wrapper service. It will listen on /var/run/ospd/ospd.sock by default
+10) Start OSPD-OpenVAS Wrapper service. It will listen on /var/run/ospd/ospd.sock by default
 
   # service ospd_openvas start
 
@@ -101,11 +121,15 @@ Basic instructions for configure your gvm infraestruture are following:
   # su -m gvm -c "gvmd --verify-scanner=08b69003-5fc2-4037-a479-93b440211c73"
   Scanner version: OpenVAS x.x.x
 
-9) Start GVM web interface. It will listen on http://127.0.0.1 by default
+11) Start Notus Scanner service
+
+  # service notus_scanner start
+
+12) Start GVM web interface. It will listen on http://127.0.0.1 by default
 
   # service gsad start
 
-10) Some openvas scanner tasks  need access to /dev/bpf device. Add the 
+13) Some openvas scanner tasks  need access to /dev/bpf device. Add the 
    following lines to /etc/devfs.conf
 
    own     bpf     root:gvm
@@ -115,26 +139,28 @@ Basic instructions for configure your gvm infraestruture are following:
 
    # service devfs restart
 
-11) gvm log files are stores to /var/log/gvm directory
+14) gvm log files are stores to /var/log/gvm directory
 
-12) gsad can export results to PDF. It needs print/texlive-texmf port
+15) gsad can export results to PDF. It needs print/texlive-texmf port
   
   # pkg install texlive-texmf
 
   It will install 1G of data
 
-13) If you need more configure information you can look at the following links:
+16) If you need more configure information you can look at the following links:
 
    https://github.com/greenbone/gvmd/blob/master/INSTALL.md
    https://github.com/greenbone/openvas/blob/master/INSTALL.md
    https://github.com/greenbone/ospd/blob/master/doc/INSTALL-ospd-scanner.md
    https://github.com/greenbone/gsa/blob/master/INSTALL.md
+   https://greenbone.github.io/docs/latest/index.html
 
    and
 
    # gvmd -h
    # openvas -h
    # ospd-openvas -h
+   # notus-scanner -h
    # gsad -h
 
 14) Enjoy it
