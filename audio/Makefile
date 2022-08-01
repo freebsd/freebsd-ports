@@ -832,6 +832,7 @@
     SUBDIR += vamp-plugin-sdk
     SUBDIR += vban
     SUBDIR += vgmplay
+    SUBDIR += vgmtools
     SUBDIR += vimpc
     SUBDIR += virtual_oss
     SUBDIR += virtual_oss_ctl
