@@ -9,6 +9,9 @@ COMMENT=	True zero-copy inter-process communication
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le riscv64
+ONLY_FOR_ARCHS_REASON=	upstream supports only 64-bit hardware
+
 BUILD_DEPENDS=	cpptoml>=0.1.1:textproc/cpptoml
 
 USES=		cmake
