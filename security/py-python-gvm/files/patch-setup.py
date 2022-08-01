@@ -1,10 +1,10 @@
---- setup.py	2021-11-30 04:41:11.846129000 -0500
-+++ setup.py	2022-05-02 18:30:17.004120000 -0500
-@@ -12,74 +12,7 @@
-  'gvm.protocols.gmpv2110.system',
-  'gvm.protocols.gmpv214',
-  'gvm.protocols.gmpv214.entities',
-- 'gvm.protocols.gmpv214.system',
+--- setup.py	2022-07-29 05:48:30.961574300 -0500
++++ setup.py	2022-08-01 00:25:33.168450000 -0500
+@@ -12,75 +12,7 @@
+  'gvm.protocols.gmpv214.system',
+  'gvm.protocols.gmpv224',
+  'gvm.protocols.gmpv224.entities',
+- 'gvm.protocols.gmpv224.system',
 - 'tests',
 - 'tests.connections',
 - 'tests.protocols',
@@ -48,16 +48,6 @@
 - 'tests.protocols.gmpv208.system.trashcan',
 - 'tests.protocols.gmpv208.system.user_settings',
 - 'tests.protocols.gmpv208.system.versions',
-- 'tests.protocols.gmpv2110',
-- 'tests.protocols.gmpv2110.entities',
-- 'tests.protocols.gmpv2110.entities.notes',
-- 'tests.protocols.gmpv2110.entities.overrides',
-- 'tests.protocols.gmpv2110.entities.scanners',
-- 'tests.protocols.gmpv2110.entities.targets',
-- 'tests.protocols.gmpv2110.entities.users',
-- 'tests.protocols.gmpv2110.enums',
-- 'tests.protocols.gmpv2110.system',
-- 'tests.protocols.gmpv2110.system.versions',
 - 'tests.protocols.gmpv214',
 - 'tests.protocols.gmpv214.entities',
 - 'tests.protocols.gmpv214.entities.notes',
@@ -68,11 +58,22 @@
 - 'tests.protocols.gmpv214.enums',
 - 'tests.protocols.gmpv214.system',
 - 'tests.protocols.gmpv214.system.versions',
+- 'tests.protocols.gmpv224',
+- 'tests.protocols.gmpv224.entities',
+- 'tests.protocols.gmpv224.entities.notes',
+- 'tests.protocols.gmpv224.entities.overrides',
+- 'tests.protocols.gmpv224.entities.scan_configs',
+- 'tests.protocols.gmpv224.entities.scanners',
+- 'tests.protocols.gmpv224.entities.targets',
+- 'tests.protocols.gmpv224.entities.users',
+- 'tests.protocols.gmpv224.enums',
+- 'tests.protocols.gmpv224.system',
+- 'tests.protocols.gmpv224.system.versions',
 - 'tests.protocols.osp',
 - 'tests.transforms',
 - 'tests.utils',
 - 'tests.xml']
-+ 'gvm.protocols.gmpv214.system']
++ 'gvm.protocols.gmpv224.system']
  
  package_data = \
  {'': ['*']}
