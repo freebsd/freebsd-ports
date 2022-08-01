@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# PROVIDE: notus_scanner
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Configuration settings for ospd_openvas in /etc/rc.conf:
+#
+# notus_scanner_enable:          run notus_scanner service (default=NO)
+# notus_scanner_pidfile:         path to notus_scanner pid file
+# notus_scanner_config:          path to notus_scanner configuration file
+# notus_scanner_flags:           additional flags for notus_scanner server
+#
+
+. /etc/rc.subr
+
+name=notus_scanner
+rcvar=notus_scanner_enable
+
+load_rc_config ${name}
+
+export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
+
+: ${notus_scanner_enable:=NO}
+: ${notus_scanner_pidfile="/var/run/notus-scanner/notus-scanner.pid"}
+: ${notus_scanner_config="/usr/local/etc/gvm/notus-scanner.toml"}
+: ${notus_scanner_flags=""}
+: ${notus_scanner_user="gvm"}
+
+notus_scanner_group="gvm"
+
+pidfile=${notus_scanner_pidfile}
+
+command=/usr/local/bin/notus-scanner
+command_interpreter="%%PYTHON_CMD%%"
+command_args="--pid-file ${pidfile} --config ${notus_scanner_config} --log-file /var/log/gvm/notus-scanner.log ${notus_scanner_flags}"
+
+run_rc_command "$1"
