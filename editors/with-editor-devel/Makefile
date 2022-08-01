@@ -1,9 +1,9 @@
 PORTNAME=	with-editor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.0
-PORTREVISION=	2
+DISTVERSION=	3.2.0-23
+DISTVERSIONSUFFIX=	-gcfcbc27
 CATEGORIES=	editors elisp
-PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
+PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Use the Emacsclient as the $$EDITOR of child processes
@@ -11,13 +11,17 @@ COMMENT=	Use the Emacsclient as the $$EDITOR of child processes
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=28.1.1.0:misc/compat.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=28.1.1.0:misc/compat.el@${EMACS_FLAVOR}
+
 USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
+MAKE_ENV+=	LOAD_PATH="-L ${WRKSRC}/lisp -L ${PREFIX}/${EMACS_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat"
 ALL_TARGET=	lisp info
 
-CONFLICTS_INSTALL=	with-editor-devel-emacs*
+CONFLICTS_INSTALL=	with-editor-emacs*
 
 NO_ARCH=	yes
 
@@ -25,7 +29,7 @@ INFO=		with-editor
 PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/with-editor-autoloads.el \
 		${EMACS_VERSION_SITE_LISPDIR}/with-editor.el \
 		${EMACS_VERSION_SITE_LISPDIR}/with-editor.elc
-PORTDOCS=	AUTHORS.md README.md with-editor.html
+PORTDOCS=	README.org with-editor.html
 
 OPTIONS_DEFINE=	DOCS PDF
 
@@ -47,7 +51,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${WRKSRC}/docs/AUTHORS.md \
+	${INSTALL_DATA} ${WRKSRC}/README.org \
 		${WRKSRC}/docs/with-editor.html ${STAGEDIR}${DOCSDIR}
 
 do-install-PDF-on:
