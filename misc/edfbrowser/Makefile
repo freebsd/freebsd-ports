@@ -1,5 +1,5 @@
 PORTNAME=	edfbrowser
-DISTVERSION=	1.94
+DISTVERSION=	1.95
 CATEGORIES=	misc
 MASTER_SITES=	https://www.teuniz.net/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION:S/.//}_source
