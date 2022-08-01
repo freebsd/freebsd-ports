@@ -25,6 +25,7 @@
     SUBDIR += cutecom
     SUBDIR += cwdaemon
     SUBDIR += cwstudio
+    SUBDIR += cyclonedds
     SUBDIR += dcf77pi
     SUBDIR += deforaos-phone
     SUBDIR += dfu-programmer
