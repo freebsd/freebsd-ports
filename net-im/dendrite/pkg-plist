@@ -8,9 +8,7 @@
 %%PORTNAME%%/bin/furl
 %%PORTNAME%%/bin/generate-config
 %%PORTNAME%%/bin/generate-keys
-%%PORTNAME%%/bin/goose
 %%PORTNAME%%/bin/resolve-state
-%%DATADIR%%/main.wasm
 @sample %%ETCDIR%%/%%PORTNAME%%.yaml.sample
 %%DOCSDIR%%/CONTRIBUTING.md
 %%DOCSDIR%%/FAQ.md
