@@ -1,0 +1,11 @@
+Save real-time clock on reboot
+
+For computers without a real-time clock, this utility enables to store
+the wall-clock on shutdown and restore it on boot, in order to minimize
+the drift as far as possible until e.g. NTP is used to set the correct
+date/time again.
+
+Note that systems using UFS for the root fs won't need this, as the
+clock is already restored from info in the UFS superblock.
+
+WWW: https://github.com/ronaldklop/fakertc
