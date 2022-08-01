@@ -1,0 +1,4 @@
+lib/postgresql/libpg-gvm.so
+share/postgresql/extension/pg-gvm--1.0--22.4.0.sql
+share/postgresql/extension/pg-gvm--22.4.0.sql
+share/postgresql/extension/pg-gvm.control
