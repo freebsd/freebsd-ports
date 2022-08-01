@@ -734,6 +734,7 @@ lib/emby-server/system/dashboard-ui/modules/formdialog.css
 lib/emby-server/system/dashboard-ui/modules/formhelper.js
 lib/emby-server/system/dashboard-ui/modules/fullscreen/fullscreen-dc.js
 lib/emby-server/system/dashboard-ui/modules/fullscreen/fullscreenmanager.js
+lib/emby-server/system/dashboard-ui/modules/genericedit/genericedit.js
 lib/emby-server/system/dashboard-ui/modules/headroom/headroom.css
 lib/emby-server/system/dashboard-ui/modules/headroom/headroom.js
 lib/emby-server/system/dashboard-ui/modules/hlsjs/hls.min.js
@@ -879,7 +880,6 @@ lib/emby-server/system/dashboard-ui/modules/sync/transfermanager.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/artiststab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/basetab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/collectionstab.js
-lib/emby-server/system/dashboard-ui/modules/tabbedview/collectionstab.template.html
 lib/emby-server/system/dashboard-ui/modules/tabbedview/folderstab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/genrestab.js
 lib/emby-server/system/dashboard-ui/modules/tabbedview/itemstab.js
@@ -974,7 +974,6 @@ lib/emby-server/system/dashboard-ui/settings/playback.js
 lib/emby-server/system/dashboard-ui/settings/profile.css
 lib/emby-server/system/dashboard-ui/settings/profile.html
 lib/emby-server/system/dashboard-ui/settings/profile.js
-lib/emby-server/system/dashboard-ui/settings/settings.css
 lib/emby-server/system/dashboard-ui/settings/settings.html
 lib/emby-server/system/dashboard-ui/settings/settings.js
 lib/emby-server/system/dashboard-ui/settings/subtitles.html
