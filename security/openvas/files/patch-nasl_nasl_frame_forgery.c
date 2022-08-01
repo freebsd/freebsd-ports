@@ -60,7 +60,7 @@
 +  sdl->sdl_family = AF_LINK;
 +  sdl->sdl_index = ifindex;
 +  sdl->sdl_alen = ETHER_ADDR_LEN;
-+  sdl->sdl_type = htons (ETH_P_ALL);
++  sdl->sdl_type = ETH_P_ALL;
 +
 +  memcpy (sdl->sdl_data + sdl->sdl_nlen, ether_dst_addr, ETHER_ADDR_LEN);
 +}

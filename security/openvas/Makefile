@@ -1,5 +1,5 @@
 PORTNAME=	openvas
-DISTVERSION=	21.4.4
+DISTVERSION=	22.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -34,6 +34,9 @@ GROUPS=		${USERS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|g_pattern_match_string|g_pattern_spec_match_string|g' ${WRKSRC}/misc/strutils.c
+	@${REINPLACE_CMD} -e 's|-Wunused-but-set-variable|-Wunused-variable|g' ${WRKSRC}/nasl/nasl_grammar.y
+	@${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>||g' ${WRKSRC}/src/attack.c ${WRKSRC}/src/nasl_plugins.c
+	@${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>|#include <unistd.h>|g' ${WRKSRC}//src/pluginload.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/ospd
