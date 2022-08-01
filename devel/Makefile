@@ -776,6 +776,7 @@
     SUBDIR += ghidra
     SUBDIR += ghq
     SUBDIR += ghub
+    SUBDIR += ghub-devel
     SUBDIR += gindent
     SUBDIR += gio-sharp
     SUBDIR += git
