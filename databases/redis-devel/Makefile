@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	7.0.0.20220531
+DISTVERSION=	7.0.4.20220731
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES+=		compiler:c11 cpe gmake
 CPE_VENDOR=	redislabs
 USE_GITHUB=	yes
-GH_TUPLE=	redis:redis:42fbf06
+GH_TUPLE=	redis:redis:2029976
 
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
