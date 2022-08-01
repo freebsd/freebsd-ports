@@ -1,9 +1,8 @@
 bin/ospd-openvas
+@sample etc/gvm/ospd-openvas.conf.sample
 %%PYTHON_SITELIBDIR%%/ospd/__init__.py
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/ospd/__pycache__/__version__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/ospd/__pycache__/__version__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/config%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/config%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/cvss%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -22,8 +21,6 @@ bin/ospd-openvas
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/network%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/ospd%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/ospd%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/ospd/__pycache__/ospd_ssh%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/ospd/__pycache__/ospd_ssh%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/parser%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/parser%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/protocol%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -42,7 +39,8 @@ bin/ospd-openvas
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/vts%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/xml%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd/__pycache__/xml%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/ospd/__version__.py
+%%PYTHON_SITELIBDIR%%/ospd/__pycache__/xmlvt%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd/__pycache__/xmlvt%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd/command/__init__.py
 %%PYTHON_SITELIBDIR%%/ospd/command/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd/command/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -64,7 +62,6 @@ bin/ospd-openvas
 %%PYTHON_SITELIBDIR%%/ospd/misc.py
 %%PYTHON_SITELIBDIR%%/ospd/network.py
 %%PYTHON_SITELIBDIR%%/ospd/ospd.py
-%%PYTHON_SITELIBDIR%%/ospd/ospd_ssh.py
 %%PYTHON_SITELIBDIR%%/ospd/parser.py
 %%PYTHON_SITELIBDIR%%/ospd/protocol.py
 %%PYTHON_SITELIBDIR%%/ospd/resultlist.py
@@ -74,6 +71,7 @@ bin/ospd-openvas
 %%PYTHON_SITELIBDIR%%/ospd/vtfilter.py
 %%PYTHON_SITELIBDIR%%/ospd/vts.py
 %%PYTHON_SITELIBDIR%%/ospd/xml.py
+%%PYTHON_SITELIBDIR%%/ospd/xmlvt.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__init__.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -83,10 +81,18 @@ bin/ospd-openvas
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/daemon%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/db%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/db%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/dryrun%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/dryrun%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/errors%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/errors%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/feed%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/feed%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/gpg_sha_verifier%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/gpg_sha_verifier%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/lock%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/lock%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/notus%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/notus%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/nvticache%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/nvticache%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/openvas%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -98,10 +104,36 @@ bin/ospd-openvas
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__version__.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/daemon.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/db.py
+%%PYTHON_SITELIBDIR%%/ospd_openvas/dryrun.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/errors.py
+%%PYTHON_SITELIBDIR%%/ospd_openvas/feed.py
+%%PYTHON_SITELIBDIR%%/ospd_openvas/gpg_sha_verifier.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/lock.py
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messages/__init__.py
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messages/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messages/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messages/__pycache__/message%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messages/__pycache__/message%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messages/__pycache__/result%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messages/__pycache__/result%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messages/message.py
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messages/result.py
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/__init__.py
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/__pycache__/mqtt%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/__pycache__/mqtt%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/__pycache__/publisher%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/__pycache__/publisher%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/__pycache__/subscriber%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/__pycache__/subscriber%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/mqtt.py
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/publisher.py
+%%PYTHON_SITELIBDIR%%/ospd_openvas/messaging/subscriber.py
+%%PYTHON_SITELIBDIR%%/ospd_openvas/notus.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/nvticache.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/openvas.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/preferencehandler.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/vthelper.py
 @dir(gvm,gvm,750) /var/run/ospd
+@dir etc/gvm
