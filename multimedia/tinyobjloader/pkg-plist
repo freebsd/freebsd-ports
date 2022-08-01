@@ -1,7 +1,7 @@
 include/tiny_obj_loader.h
 lib/libtinyobjloader.so
 lib/libtinyobjloader.so.2
-lib/libtinyobjloader.so.2.0.0-rc.8
+lib/libtinyobjloader.so.2.0.0-rc.9
 lib/tinyobjloader/cmake/tinyobjloader-config-version.cmake
 lib/tinyobjloader/cmake/tinyobjloader-config.cmake
 lib/tinyobjloader/cmake/tinyobjloader-targets-%%CMAKE_BUILD_TYPE%%.cmake
