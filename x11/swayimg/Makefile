@@ -21,7 +21,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		gnome meson pkgconfig
+USES=		meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	artemsen
 MESON_ARGS=	-Dversion="${DISTVERSIONFULL}"
@@ -56,6 +56,7 @@ JXL_MESON_ENABLED=	jxl
 LIBEXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 LIBEXIF_MESON_ENABLED=	exif
 
+LIBRSVG2_USES=		gnome
 LIBRSVG2_USE=		GNOME=cairo,librsvg2
 LIBRSVG2_MESON_ENABLED=	svg
 
