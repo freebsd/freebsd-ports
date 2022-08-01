@@ -1,3 +1,9 @@
+" FreeBSD provides this file for three reasons:
+"   1. Some of the default settings are not great (e.g. backspace)
+"   2. FreeBSD requires some special handling (e.g. g:is_posix)
+"   3. vim-tiny doesn't ship with $VIMRUNTIME/defaults.vim, so any
+"      settings that vim-tiny gets must appear in this file
+
 " defaults.vim will override this file. Sourcing it here and
 " setting the skip flag prevents clobbering settings
 source $VIMRUNTIME/defaults.vim
@@ -19,7 +25,7 @@ set ruler             " Show cursor position
 set ttyfast           " Redraw faster for smoother scrolling
 set wildmenu          " Show menu for tab completion in command mode
 
-try                   
+try
     syntax on         " Enable syntax highlighting
 catch | endtry        " vim-tiny is installed without the syntax files
 
