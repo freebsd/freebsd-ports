@@ -1,0 +1,9 @@
+uiCA is a simulator that can predict the throughput of basic blocks on
+recent Intel microarchitectures. In addition to that, it also provides
+insights into how the code is executed.
+
+uiCA is based on data from uops.info, combined with a detailed pipeline
+model. Like related tools, it assumes that all memory accesses result in
+cache hits.
+
+WWW: https://uops.info/uiCA.html

@@ -106,6 +106,7 @@
     SUBDIR += ttcp
     SUBDIR += typometer
     SUBDIR += ubench
+    SUBDIR += uica
     SUBDIR += unixbench
     SUBDIR += uperf
     SUBDIR += vegeta
