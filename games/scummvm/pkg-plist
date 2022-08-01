@@ -5,6 +5,7 @@ share/applications/scummvm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.BSD
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.FREEFONT
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.GLAD
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.ISC
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.LGPL
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.LUA
@@ -26,6 +27,7 @@ share/pixmaps/scummvm.xpm
 %%DATADIR%%/encoding.dat
 %%DATADIR%%/fonts.dat
 %%DATADIR%%/grim-patch.lab
+%%DATADIR%%/gui-icons.dat
 %%XENGINES%%%%DATADIR%%/hadesch_translations.dat
 %%DATADIR%%/hugo.dat
 %%DATADIR%%/kyra.dat
@@ -72,6 +74,12 @@ share/pixmaps/scummvm.xpm
 %%DATADIR%%/shaders/grim_text.vertex
 %%DATADIR%%/shaders/myst3_box.fragment
 %%DATADIR%%/shaders/myst3_box.vertex
+%%XENGINES%%%%DATADIR%%/shaders/playground3d_bitmap.fragment
+%%XENGINES%%%%DATADIR%%/shaders/playground3d_bitmap.vertex
+%%XENGINES%%%%DATADIR%%/shaders/playground3d_cube.fragment
+%%XENGINES%%%%DATADIR%%/shaders/playground3d_cube.vertex
+%%XENGINES%%%%DATADIR%%/shaders/playground3d_fade.fragment
+%%XENGINES%%%%DATADIR%%/shaders/playground3d_fade.vertex
 %%DATADIR%%/shaders/stark_actor.fragment
 %%DATADIR%%/shaders/stark_actor.vertex
 %%DATADIR%%/shaders/stark_fade.fragment
