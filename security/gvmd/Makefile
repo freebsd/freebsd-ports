@@ -1,5 +1,5 @@
 PORTNAME=	gvmd
-DISTVERSION=	21.4.5
+DISTVERSION=	22.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -14,6 +14,7 @@ LIB_DEPENDS=	libgvm_base.so:security/gvm-libs \
 		libgpgme.so:security/gpgme \
 		libical.so:devel/libical
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
+		${LOCALBASE}/lib/postgresql/libpg-gvm.so:databases/pg-gvm \
 		doxygen>0:devel/doxygen \
 		p5-XML-Twig>=0:textproc/p5-XML-Twig \
 		snmpget:net-mgmt/net-snmp \
@@ -46,6 +47,9 @@ SHEBANG_FILES=	tools/gvm-lsc-rpm-creator \
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/src/manage_sql.c
 	${REINPLACE_CMD} -e 's|+660|660|g' ${WRKSRC}/tools/greenbone-feed-sync.in
+	${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>||g' ${WRKSRC}/src/manage.c \
+		${WRKSRC}/src/gvmd.c ${WRKSRC}/src/manage_sql_secinfo.c \
+		${WRKSRC}/src/manage_sql.c ${WRKSRC}/src/manage_sql_report_formats.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/lib/gvm/gvmd/gnupg

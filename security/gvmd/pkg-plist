@@ -2,8 +2,8 @@ bin/gvm-manage-certs
 @sample etc/gvm/gvmd_log.conf.sample
 @sample etc/gvm/pwpolicy.conf.sample
 lib/libgvm-pg-server.so
-lib/libgvm-pg-server.so.21
-lib/libgvm-pg-server.so.21.4.5
+lib/libgvm-pg-server.so.22
+lib/libgvm-pg-server.so.22.4.0
 sbin/greenbone-certdata-sync
 sbin/greenbone-feed-sync
 sbin/greenbone-scapdata-sync
@@ -44,7 +44,6 @@ share/gvm/gvmd/wizards/quick_task.xml
 share/gvm/gvmd/wizards/reset_task.xml
 share/gvm/scap/cpe_getbyname.xsl
 share/gvm/scap/cve_getbyname.xsl
-share/gvm/scap/ovaldef_getbyname.xsl
 share/man/man1/gvm-manage-certs.1.gz
 share/man/man8/greenbone-certdata-sync.8.gz
 share/man/man8/greenbone-scapdata-sync.8.gz
