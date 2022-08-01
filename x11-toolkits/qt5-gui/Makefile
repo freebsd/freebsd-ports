@@ -36,7 +36,7 @@ USE_GNOME=		glib20
 USE_PERL5=		extract
 USE_QT=			core dbus network buildtools_build qmake_build
 QT_BINARIES=		yes
-QT_CONFIG=		accessibility accessibility-atspi-bridge dbus \
+QT_CONFIG=		accessibility dbus \
 			fontconfig opengl png system-freetype system-jpeg \
 			system-png xcb xcb-glx xcb-render xcb-xlib xinput2 xlib \
 			xrender
@@ -54,9 +54,12 @@ CONFIGURE_ARGS+=	-c++std \
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-OPTIONS_DEFINE=		X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFINE=		X11 LINUXACCESSIBILITY
+OPTIONS_DEFAULT=	X11 LINUXACCESSIBILITY
 OPTIONS_SUB=		yes
+
+OPTIONS_EXCLUDE_aarch64c=	LINUXACCESSIBILITY
+OPTIONS_EXCLUDE_riscv64c=	LINUXACCESSIBILITY
 
 X11_USES=	xorg
 X11_USE=	xorg=x11
@@ -68,6 +71,10 @@ USES+=		gnome
 QT_CONFIG+=	glib
 BUILD_DEPENDS+=	at-spi2-core>=0:accessibility/at-spi2-core
 RUN_DEPENDS+=	xdg-open:devel/xdg-utils
+.endif
+
+.if ${PORT_OPTIONS:MLINUXACCESSIBILITY}
+QT_CONFIG+=	accessibility-atspi-bridge
 .endif
 
 # Build and install QtPlatformSupport and default QPA plugins (XCB,
