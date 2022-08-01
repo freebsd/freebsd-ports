@@ -67,7 +67,6 @@
     SUBDIR += gnome-clocks
     SUBDIR += gnome-contacts
     SUBDIR += gnome-dictionary
-    SUBDIR += gnome-documents
     SUBDIR += gnome-font-viewer
     SUBDIR += gnome-initial-setup
     SUBDIR += gnome-maps
@@ -75,7 +74,6 @@
     SUBDIR += gnome-planner
     SUBDIR += gnome-pomodoro
     SUBDIR += gnome-screenshot
-    SUBDIR += gnome-search-tool
     SUBDIR += gnome-shell-extension-audio-output-switcher
     SUBDIR += gnome-shell-extension-coverflow
     SUBDIR += gnome-shell-extension-dashtodock
@@ -92,7 +90,6 @@
     SUBDIR += gnome-shell-extension-windowoverlay-icons
     SUBDIR += gnome-shell-extra-extensions
     SUBDIR += gnome-sound-recorder
-    SUBDIR += gnome-system-log
     SUBDIR += gnome-todo
     SUBDIR += gnome-tweaks
     SUBDIR += gnome-utils
