@@ -1,6 +1,5 @@
 PORTNAME=	pam_xdg
-PORTVERSION=	s20210916
-PORTREVISION=	1
+PORTVERSION=	s20220802
 CATEGORIES=	sysutils wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +11,7 @@ USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	sdaoden
 GH_PROJECT=	s-toolbox
-GH_TAGNAME=	cdbe3ce
+GH_TAGNAME=	b71cce6
 PLIST_FILES=	lib/${PORTNAME}.so \
 		share/man/man8/${PORTNAME}.8.gz
 
