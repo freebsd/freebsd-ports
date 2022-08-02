@@ -1,0 +1,11 @@
+Quilc is an advanced optimizing compiler for the quantum instruction
+language Quil.
+
+Quil is the quantum instruction language, originally developed at
+Rigetti Computing. In Quil quantum algorithms are expressed using
+Quil's standard gates and instructions. One can also use Quil's
+DEFGATE to define new non-standard gates, and DEFCIRCUIT to build a
+named circuit that can be referenced elsewhere in Quil code (analogous
+to a function in most other programming languages).
+
+WWW: https://github.com/quil-lang/quilc

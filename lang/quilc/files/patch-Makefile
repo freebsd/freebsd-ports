@@ -1,0 +1,11 @@
+--- Makefile.orig	2021-10-26 23:28:04 UTC
++++ Makefile
+@@ -2,7 +2,7 @@ COMMIT_HASH=$(shell git rev-parse --short HEAD)
+ LISP_CACHE ?= $(HOME)/.cache/common-lisp
+ RIGETTI_LISP_LIBRARY_HOME=../
+ SBCL_BIN=sbcl
+-SBCL=$(SBCL_BIN) --noinform --no-userinit --no-sysinit --non-interactive
++SBCL=$(SBCL_BIN) --dynamic-space-size 4096 --noinform --no-userinit --no-sysinit --non-interactive
+ QUICKLISP_HOME=$(HOME)/quicklisp
+ QUICKLISP_SETUP=$(QUICKLISP_HOME)/setup.lisp
+ QUICKLISP=$(SBCL) --load $(QUICKLISP_HOME)/setup.lisp \

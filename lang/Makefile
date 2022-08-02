@@ -293,6 +293,7 @@
     SUBDIR += qmasm
     SUBDIR += qscheme
     SUBDIR += quickjs
+    SUBDIR += quilc
     SUBDIR += racket
     SUBDIR += racket-minimal
     SUBDIR += ratfor

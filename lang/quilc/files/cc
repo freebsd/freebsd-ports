@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/cc -I/usr/local/include "$@"
