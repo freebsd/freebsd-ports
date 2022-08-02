@@ -1,6 +1,5 @@
 PORTNAME=	seclists
-DISTVERSION=	2022.2
-PORTREVISION=	2
+DISTVERSION=	2022.3
 CATEGORIES=	security www
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -19,23 +18,17 @@ GH_PROJECT=	SecLists
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-FILES_TO_BE_REMOVED=	.bin/generate-contributors \
-			.bin/generate-environment-identifiers-dict.sh \
-			.gitattributes \
-			.github/workflows/wordlist-updater_combined_directories.yml \
-			.github/workflows/wordlist-updater_combined_words.yml \
-			.gitignore \
-			CONTRIBUTING.md \
+FILES_TO_BE_REMOVED=	CONTRIBUTING.md \
 			CONTRIBUTORS.md \
 			Discovery/Web-Content/Domino-Hunter/LICENCE \
 			LICENSE \
 			README.md \
 			Web-Shells/laudanum-0.8/GPL
 
-DIRS_TO_BE_REMOVED=	.bin .github/workflows .github
+DIRS_TO_BE_REMOVED=	.bin .github
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
-	cd ${STAGEDIR}${DATADIR} && ${RM} ${FILES_TO_BE_REMOVED} && ${RMDIR} ${DIRS_TO_BE_REMOVED}
+	cd ${STAGEDIR}${DATADIR} && ${RM} ${FILES_TO_BE_REMOVED} && ${RM} -Rf ${DIRS_TO_BE_REMOVED}
 
 .include <bsd.port.mk>
