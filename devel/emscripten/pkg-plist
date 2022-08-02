@@ -335,6 +335,7 @@ lib/emscripten/system/include/SDL/SDL_compat.h
 lib/emscripten/system/include/SDL/SDL_config.h
 lib/emscripten/system/include/SDL/SDL_config.h.in
 lib/emscripten/system/include/SDL/SDL_config_android.h
+lib/emscripten/system/include/SDL/SDL_config_emscripten.h
 lib/emscripten/system/include/SDL/SDL_config_iphoneos.h
 lib/emscripten/system/include/SDL/SDL_config_macosx.h
 lib/emscripten/system/include/SDL/SDL_config_minimal.h
