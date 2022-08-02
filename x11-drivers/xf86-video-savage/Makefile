@@ -1,6 +1,6 @@
 PORTNAME=	xf86-video-savage
 PORTVERSION=	2.3.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-drivers
 
 PATCH_SITES=	https://gitlab.freedesktop.org/xorg/driver/${PORTNAME}/-/commit/
