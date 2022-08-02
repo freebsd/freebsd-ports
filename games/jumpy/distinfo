@@ -1,4 +1,4 @@
-TIMESTAMP = 1646395819
+TIMESTAMP = 1659447630
 SHA256 (rust/crates/adler32-1.2.0.crate) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
 SIZE (rust/crates/adler32-1.2.0.crate) = 6411
 SHA256 (rust/crates/ahash-0.4.7.crate) = 739f4a8db6605981345c5654f3a85b056ce52f37a39d34da03f25bf2151ea16e
@@ -211,5 +211,5 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
 SHA256 (fishfight-fishsticks-95b45b717e427fb5fa1671f3bdf686d7270ad8a1_GH0.tar.gz) = 1ddea5417e7f8aa753545ff66edb2229e7ab33401b59d69c133c4de5988f476d
 SIZE (fishfight-fishsticks-95b45b717e427fb5fa1671f3bdf686d7270ad8a1_GH0.tar.gz) = 10170
-SHA256 (fishfight-jumpy-v0.4.2_GH0.tar.gz) = ad2f1b2f514c693e73fd59bb186f7d0800aab0bb9ee3314c7b315fa6a3c1e524
-SIZE (fishfight-jumpy-v0.4.2_GH0.tar.gz) = 37001164
+SHA256 (fishfight-jumpy-v0.4.3_GH0.tar.gz) = a271780ac77309b34adc6521c0133b1f828e29c0af0dca1cd69098ec584c6992
+SIZE (fishfight-jumpy-v0.4.3_GH0.tar.gz) = 37001761
