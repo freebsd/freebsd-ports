@@ -10,6 +10,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_riscv64=	fails to compile: src/external/atomic_queue/defs.h:45:2: Unknown CPU architecture
 BROKEN_i386=	fails to compile: unknown type name 'Elf64_Auxinfo', see https://github.com/sfztools/sfizz/issues/1110
+BROKEN=		fails to compile: unknown type name '_Bool'
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 RUN_DEPENDS=	zenity:x11/zenity
