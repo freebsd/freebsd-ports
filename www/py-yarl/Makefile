@@ -1,5 +1,5 @@
 PORTNAME=	yarl
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}multidict>0:www/py-multidict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 
-USES=		python:3.6+ pytest
+USES=		python:3.7+ pytest
 USE_PYTHON=	autoplist distutils cython
 
 pre-configure:
