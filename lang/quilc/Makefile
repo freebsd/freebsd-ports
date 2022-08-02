@@ -1,6 +1,7 @@
 PORTNAME=	quilc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.26.0
+PORTREVISION=	1
 CATEGORIES=	lang # quantum-computing
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION} # many files, some are unversioned
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -11,8 +12,7 @@ COMMENT=	Optimizing Quil compiler (for quantum computing)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	curl:ftp/curl \
-		sbcl:lang/sbcl \
+BUILD_DEPENDS=	sbcl:lang/sbcl \
 		cppzmq>0:net/cppzmq
 LIB_DEPENDS=	libblas.so:math/blas \
 		libffi.so:devel/libffi \
@@ -27,7 +27,8 @@ BINARY_ALIAS=	cc=${FILESDIR}/cc \
 		gfortran=gfortran${GCC_DEFAULT} \
 		git=false
 
-PLIST_FILES=	bin/quilc
+PLIST_FILES=	bin/quilc \
+		lib/libexpokit.so
 
 #
 # In order to update dependencies:
@@ -40,6 +41,8 @@ PLIST_FILES=	bin/quilc
 MAINTAINER_MODE=	no
 
 .if (${MAINTAINER_MODE} == "yes")
+BUILD_DEPENDS+=	curl:ftp/curl
+
 do-build:
 	# build, download dependencies during build, and save build log with URLs in it
 	@set -e; set -o pipefail; cd ${WRKSRC} && (${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${TARGET_ALL} 2>&1 | tee -a ${WRKDIR}/build.log)
@@ -72,6 +75,9 @@ post-extract:
 .  endfor
 	# fixups: same effect as https://github.com/cffi/cffi/pull/332
 	@${REINPLACE_CMD} -e 's|:openbsd "libffi.so"|:freebsd "libffi.so"|' ${QL_DIR}/dists/quicklisp/software/cffi_0.24.1/libffi/libffi.lisp
+
+post-install:
+	${INSTALL_LIB} ${QL_DIR}/dists/quicklisp/software/magicl-v0.9.1/expokit/libexpokit.so ${STAGEDIR}${PREFIX}/lib
 
 .endif
 
