@@ -793,6 +793,7 @@
     SUBDIR += ncdu
     SUBDIR += ndmpd
     SUBDIR += neofetch
+    SUBDIR += nerdctl
     SUBDIR += netevent
     SUBDIR += nfcutils
     SUBDIR += nfs-over-tls
