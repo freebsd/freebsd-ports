@@ -41,9 +41,9 @@ MAINTAINER_MODE=	no
 
 .if (${MAINTAINER_MODE} == "yes")
 do-build:
-	# build, download dependencies during build, and collect build log with URLs in it
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${TARGET_ALL} 2>&1 | tee -a ${WRKDIR}/build.log
-	# convert build.log to Makefile.deps
+	# build, download dependencies during build, and save build log with URLs in it
+	@set -e; set -o pipefail; cd ${WRKSRC} && (${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${TARGET_ALL} 2>&1 | tee -a ${WRKDIR}/build.log)
+	# compute Makefile.deps based on URLs in build.log
 	@${FILESDIR}/build-log-to-makefile-deps ${WRKDIR}/build.log > Makefile.deps
 .else
 .  include <Makefile.deps>

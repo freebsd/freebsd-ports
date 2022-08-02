@@ -1,9 +1,21 @@
 #!/bin/sh
 
-set -e
-
+# parse args
 BUILD_LOG=$1
 
+# error handling
+set -e
+set -o pipefail
+
+# write the header
+echo "##"
+echo "## (!!!) This is an auto-generated file."
+echo "## (!!!) Please do not modify manually."
+echo "## (!!!) Instead please follow the instructions in Makefile on how to update the port."
+echo "##"
+echo ""
+
+# write MASTER_SITES_DEPS
 echo "MASTER_SITES_DEPS= \\"
 cat ${BUILD_LOG} | \
 	grep -a "^; Fetching #<URL " | \
@@ -19,6 +31,7 @@ cat ${BUILD_LOG} | \
 	sed -E 's|.*|& \\|'
 echo ""
 
+# write DISTFILES_DEPS
 echo "DISTFILES_DEPS= \\"
 cat ${BUILD_LOG} | \
 	grep -a "^; Fetching #<URL " | \
@@ -32,3 +45,4 @@ cat ${BUILD_LOG} | \
 	sed -E 's|^(.+):([^:-\+\.]*)[-\+\.]([^:]*)$|\1:\2_\3|' | \
 	sed -E 's|^(.+):([^:-\+\.]*)[-\+\.]([^:]*)$|\1:\2_\3|' | \
 	sed -E 's|.*|& \\|'
+echo ""
