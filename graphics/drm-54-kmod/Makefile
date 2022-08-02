@@ -11,6 +11,7 @@ LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64, i386, aarch64, and powerpc64
+IGNORE_FreeBSD_14=	Use drm-510-kmod
 
 CONFLICTS_INSTALL=	drm-devel-kmod drm-current-kmod drm-510-kmod
 
