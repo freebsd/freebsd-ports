@@ -1,6 +1,6 @@
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.19.0
+DISTVERSION=	2.20.0
 CATEGORIES=	sysutils
 EXTRACT_ONLY=	${_DISTFILES:N*.js}
 
@@ -33,7 +33,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
 		danieljoos:wincred:v1.1.2:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
+		dlclark:regexp2:v1.7.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		emirpasic:gods:v1.18.1:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		etcd-io:bbolt:v1.3.6:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		fsnotify:fsnotify:v1.5.4:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
@@ -49,7 +49,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:05595931fe9d:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:1185a9018129:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:2104d58473e0:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:oauth2:c8730f7fcb92:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:0de741cfad7f:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:c0bba94af5f8:golang_sys/vendor/golang.org/x/sys \
@@ -96,7 +96,7 @@ GH_TUPLE=	FiloSottile:age:v1.0.0:filosottile_age/vendor/filippo.io/age \
 		rs:zerolog:v1.27.0:rs_zerolog/vendor/github.com/rs/zerolog \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		shopspring:decimal:v1.3.1:shopspring_decimal/vendor/github.com/shopspring/decimal \
-		spf13:afero:v1.9.0:spf13_afero/vendor/github.com/spf13/afero \
+		spf13:afero:v1.9.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.5.0:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.5.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
