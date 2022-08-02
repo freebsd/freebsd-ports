@@ -17532,3 +17532,4 @@ x11-servers/xephyr|x11-servers/xorg-server@xephyr|2022-08-02|Merged into flavori
 x11-servers/xorg-nestserver|x11-servers/xorg-server@xnest|2022-08-02|Merged into the flavorized version
 x11-servers/xorg-vfbserver|x11-servers/xorg-server@xvfb|2022-08-02|Merged into the flavorized version
 x11-servers/xorg-dmx||2022-08-02|Discontinued upstream
+lang/go117||2022-08-02|Upstream support ended
