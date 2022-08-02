@@ -260,7 +260,6 @@
     SUBDIR += fightorperish
     SUBDIR += fillets-ng
     SUBDIR += filters
-    SUBDIR += fishfight
     SUBDIR += fishsupper
     SUBDIR += five-or-more
     SUBDIR += fkiss
@@ -417,6 +416,7 @@
     SUBDIR += jtans
     SUBDIR += julius
     SUBDIR += jumpnbump
+    SUBDIR += jumpy
     SUBDIR += jutils
     SUBDIR += jvgs
     SUBDIR += jzip
