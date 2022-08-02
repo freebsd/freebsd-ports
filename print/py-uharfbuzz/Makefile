@@ -10,6 +10,8 @@ COMMENT=	Streamlined Cython bindings for the harfbuzz shaping engine
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not build: no matching function for call to 'hb_subset_repack_or_fail'
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
