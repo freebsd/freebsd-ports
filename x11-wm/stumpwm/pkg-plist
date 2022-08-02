@@ -1,3 +1,4 @@
+bin/stumpwm
 %%ASDF_PATHNAME%%/.dir-locals.el
 %%ASDF_PATHNAME%%/bindings.lisp
 %%ASDF_PATHNAME%%/color.lisp
@@ -5,6 +6,9 @@
 %%ASDF_PATHNAME%%/core.lisp
 %%ASDF_PATHNAME%%/debug.lisp
 %%ASDF_PATHNAME%%/dynamic-group.lisp
+%%ASDF_PATHNAME%%/dynamic-mixins/dynamic-mixins.asd
+%%ASDF_PATHNAME%%/dynamic-mixins/src/dynamic-mixins.lisp
+%%ASDF_PATHNAME%%/dynamic-mixins/src/package.lisp
 %%ASDF_PATHNAME%%/dynamic-window.lisp
 %%ASDF_PATHNAME%%/events.lisp
 %%ASDF_PATHNAME%%/fdump.lisp
@@ -27,6 +31,7 @@
 %%ASDF_PATHNAME%%/menu-declarations.lisp
 %%ASDF_PATHNAME%%/menu-definitions.lisp
 %%ASDF_PATHNAME%%/message-window.lisp
+%%ASDF_PATHNAME%%/minor-modes.lisp
 %%ASDF_PATHNAME%%/mode-line-formatters.lisp
 %%ASDF_PATHNAME%%/mode-line.lisp
 %%ASDF_PATHNAME%%/module.lisp
@@ -34,6 +39,7 @@
 %%ASDF_PATHNAME%%/pathnames.lisp
 %%ASDF_PATHNAME%%/primitives.lisp
 %%ASDF_PATHNAME%%/remap-keys.lisp
+%%ASDF_PATHNAME%%/replace-class.lisp
 %%ASDF_PATHNAME%%/sample-stumpwmrc.lisp
 %%ASDF_PATHNAME%%/sbclfasl/bindings.fasl
 %%ASDF_PATHNAME%%/sbclfasl/color.fasl
@@ -41,6 +47,8 @@
 %%ASDF_PATHNAME%%/sbclfasl/core.fasl
 %%ASDF_PATHNAME%%/sbclfasl/debug.fasl
 %%ASDF_PATHNAME%%/sbclfasl/dynamic-group.fasl
+%%ASDF_PATHNAME%%/sbclfasl/dynamic-mixins/src/dynamic-mixins.fasl
+%%ASDF_PATHNAME%%/sbclfasl/dynamic-mixins/src/package.fasl
 %%ASDF_PATHNAME%%/sbclfasl/dynamic-window.fasl
 %%ASDF_PATHNAME%%/sbclfasl/events.fasl
 %%ASDF_PATHNAME%%/sbclfasl/fdump.fasl
@@ -60,6 +68,7 @@
 %%ASDF_PATHNAME%%/sbclfasl/menu-declarations.fasl
 %%ASDF_PATHNAME%%/sbclfasl/menu-definitions.fasl
 %%ASDF_PATHNAME%%/sbclfasl/message-window.fasl
+%%ASDF_PATHNAME%%/sbclfasl/minor-modes.fasl
 %%ASDF_PATHNAME%%/sbclfasl/mode-line-formatters.fasl
 %%ASDF_PATHNAME%%/sbclfasl/mode-line.fasl
 %%ASDF_PATHNAME%%/sbclfasl/module.fasl
@@ -67,6 +76,7 @@
 %%ASDF_PATHNAME%%/sbclfasl/pathnames.fasl
 %%ASDF_PATHNAME%%/sbclfasl/primitives.fasl
 %%ASDF_PATHNAME%%/sbclfasl/remap-keys.fasl
+%%ASDF_PATHNAME%%/sbclfasl/replace-class.fasl
 %%ASDF_PATHNAME%%/sbclfasl/screen.fasl
 %%ASDF_PATHNAME%%/sbclfasl/selection.fasl
 %%ASDF_PATHNAME%%/sbclfasl/stumpwm.fasl
@@ -96,4 +106,3 @@
 %%ASDF_PATHNAME%%/wrappers.lisp
 %%ASDF_PATHNAME%%/wse.lisp
 %%ASDF_REGISTRY%%/stumpwm.asd
-bin/stumpwm
