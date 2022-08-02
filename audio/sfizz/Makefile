@@ -10,7 +10,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_riscv64=	fails to compile: src/external/atomic_queue/defs.h:45:2: Unknown CPU architecture
 BROKEN_i386=	fails to compile: unknown type name 'Elf64_Auxinfo', see https://github.com/sfztools/sfizz/issues/1110
-BROKEN=		fails to compile: unknown type name '_Bool'
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 RUN_DEPENDS=	zenity:x11/zenity
@@ -63,6 +62,12 @@ VST_USE=		${LV2_USE}
 VST_LIB_DEPENDS=	${LV2_LIB_DEPENDS}
 VST_CMAKE_BOOL=		SFIZZ_VST
 
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} < 1301000)
+BROKEN=		fails to compile: unknown type name '_Bool'
+.endif
+
 post-install-LV2-on:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/lib/lv2/sfizz.lv2/Contents/Binary/sfizz.so \
@@ -72,4 +77,4 @@ post-install-VST-on:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/lib/vst3/sfizz.vst3/Contents/x86_64-linux/sfizz.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
