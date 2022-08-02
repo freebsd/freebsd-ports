@@ -6,8 +6,9 @@
  #include <machine/cpufunc.h>
 -#define __rdtsc rdtsc
 -#if (__ARM_ARCH >= 6)  // V6 is the earliest arch that has a standard cyclecount
+-unsigned long long rdtsc(void)
 +#if (__ARM_ARCH >= 6 && __ARM_ARCH <= 7)  // V6 is the earliest arch that has a standard cyclecount
- unsigned long long rdtsc(void)
++unsigned long long __rdtsc(void)
  {
    uint32_t pmccntr;
    uint32_t pmuseren;
