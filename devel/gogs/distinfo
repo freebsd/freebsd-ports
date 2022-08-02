@@ -1,5 +1,5 @@
-TIMESTAMP = 1655031030
-SHA256 (go/devel_gogs/gogs-v0.12.9/v0.12.9.mod) = a9be7c6404f1dadb3c783d6a314268cd042374b5bbd1f74a8516cae254f2dc58
-SIZE (go/devel_gogs/gogs-v0.12.9/v0.12.9.mod) = 3338
-SHA256 (go/devel_gogs/gogs-v0.12.9/v0.12.9.zip) = 36843b5002a69cabf4c140ddad9ad06e0c5f696f138e02ead601dca2fb8d4c13
-SIZE (go/devel_gogs/gogs-v0.12.9/v0.12.9.zip) = 22203054
+TIMESTAMP = 1659444082
+SHA256 (go/devel_gogs/gogs-v0.12.10/v0.12.10.mod) = a9be7c6404f1dadb3c783d6a314268cd042374b5bbd1f74a8516cae254f2dc58
+SIZE (go/devel_gogs/gogs-v0.12.10/v0.12.10.mod) = 3338
+SHA256 (go/devel_gogs/gogs-v0.12.10/v0.12.10.zip) = b95fbc67c03bad2e94aba95a5229bec4a4269e260f874a6733968816ac32be6c
+SIZE (go/devel_gogs/gogs-v0.12.10/v0.12.10.zip) = 22207500
