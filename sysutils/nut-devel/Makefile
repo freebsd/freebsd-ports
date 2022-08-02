@@ -17,12 +17,12 @@ CONFLICTS=	nut-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	networkupstools
-GH_TAGNAME=	4143afd43
-NUT_COMMIT_DATE=	2022.07.18
+GH_TAGNAME=	4e3d0ecce
+NUT_COMMIT_DATE=	2022.08.01
 
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
-USES=		autoreconf:build compiler:c11 gmake libtool pkgconfig python:build
+USES=		autoreconf:build compiler:c11 gmake libtool pkgconfig python
 USE_LDCONFIG=	yes
 
 NUT_USER?=	uucp
@@ -71,6 +71,9 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig \
 		--with-user=${NUT_USER} \
 		--with-group=${NUT_GROUP} \
+		--with-python=${PYTHON_CMD} \
+		--without-python2 \
+		--with-python3=${PYTHON_CMD} \
 		--with-dev
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
