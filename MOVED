@@ -17528,8 +17528,7 @@ deskutils/gnome-documents||2022-08-01|Has expired: Archived upstream
 deskutils/gnome-search-tool||2022-08-01|Has expired: Did not survive gnome3
 security/nextcloud-twofactor_u2f|security/nextcloud-twofactor_webauthn|2022-08-01|Has expired: Upstream deprecated this port in favor of twofactor_webauthn. Check https://github.com/nextcloud/twofactor_webauthn#migration-from-two-factor-u2f for migration instructions
 editors/codelite||2022-08-01|Has expired: Has been broken for over a year.
-x11-servers/xephyr|x11-servers/xorg@xephyr|2022-08-02|Merged into flavorized version
-x11-servers/xorg-nestserver|x11-servers/xorg@xnest|2022-08-02|Merged into the flavorized version
-x11-servers/xorg-nestserver|x11-servers/xorg@xnest|2022-08-02|Merged into the flavorized version
-x11-servers/xorg-vfbserver|x11-servers/xorg@xvfb|2022-08-02|Merged into the flavorized version
+x11-servers/xephyr|x11-servers/xorg-server@xephyr|2022-08-02|Merged into flavorized version
+x11-servers/xorg-nestserver|x11-servers/xorg-server@xnest|2022-08-02|Merged into the flavorized version
+x11-servers/xorg-vfbserver|x11-servers/xorg-server@xvfb|2022-08-02|Merged into the flavorized version
 x11-servers/xorg-dmx||2022-08-02|Discontinued upstream
