@@ -1,3 +1,36 @@
+  <vuln vid="7f8d5435-125a-11ed-9a69-10c37b4ac2ea">
+    <topic>go -- decoding big.Float and big.Rat can panic</topic>
+    <affects>
+      <package>
+	<name>go118</name>
+	<range><lt>1.18.5</lt></range>
+      </package>
+      <package>
+	<name>go117</name>
+	<range><lt>1.17.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/53871">
+	  <p>encoding/gob &amp; math/big: decoding big.Float and
+	    big.Rat can panic</p>
+	  <p>Decoding big.Float and big.Rat types can panic if the
+	    encoded message is too short.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-32189</cvename>
+      <url>https://groups.google.com/g/golang-announce/c/YqYYG87xB10</url>
+    </references>
+    <dates>
+      <discovery>2022-07-14</discovery>
+      <entry>2022-08-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4c26f668-0fd2-11ed-a83d-001b217b3468">
     <topic>Gitlab -- multiple vulnerabilities</topic>
     <affects>
