@@ -16,7 +16,8 @@ LIB_DEPENDS=	libgvm_base.so:security/gvm-libs \
 		libgpgme.so:security/gpgme \
 		libssh.so:security/libssh \
 		libgnutls.so:security/gnutls \
-		libnetsnmp.so:net-mgmt/net-snmp
+		libnetsnmp.so:net-mgmt/net-snmp \
+		libjson-glib-1.0.so:devel/json-glib
 RUN_DEPENDS=	redis-server:databases/redis \
 		snmpget:net-mgmt/net-snmp \
 		rsync:net/rsync \
