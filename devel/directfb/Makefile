@@ -22,7 +22,7 @@ OPTIONS_SUB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		cpe gmake jpeg libtool ncurses pathfix perl5 pkgconfig
+USES=		compiler cpe gmake jpeg libtool ncurses pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 PORTDOCS=	*
@@ -57,6 +57,14 @@ SDL_CONFIGURE_ENABLE=	sdl
 UNIQUE_CONFIGURE_ENABLE=	unique
 TEST_CONFIGURE_WITH=	tests
 
+.include <bsd.port.pre.mk>
+
+# assembly files use old split syntax which clang doesn't like
+.if ${ARCH:Marmv?} && ${COMPILER_TYPE} == "clang"
+BUILD_DEPENDS+=	as:devel/binutils
+CFLAGS+=	-fno-integrated-as
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/need_libc_r=yes/d ; \
@@ -74,4 +82,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/html
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
