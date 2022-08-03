@@ -11,6 +11,8 @@ LICENSE=	NCSA
 USE_GITHUB=	yes
 GH_ACCOUNT=	klange
 
+PORTSCOUT=	ignore:1 # tags are bogus
+
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/nyancat
 
