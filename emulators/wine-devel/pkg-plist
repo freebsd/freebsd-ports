@@ -591,6 +591,8 @@ include/wine/windows/mcx.h
 include/wine/windows/mediaerr.h
 include/wine/windows/mediaobj.h
 include/wine/windows/mediaobj.idl
+include/wine/windows/medparam.h
+include/wine/windows/medparam.idl
 include/wine/windows/metahost.h
 include/wine/windows/metahost.idl
 include/wine/windows/mfapi.h
@@ -887,6 +889,7 @@ include/wine/windows/sqlucode.h
 include/wine/windows/srcrst.idl
 include/wine/windows/srrestoreptapi.h
 include/wine/windows/sspi.h
+%%STAGING%%include/wine/windows/stdole32.idl
 include/wine/windows/stgprop.h
 include/wine/windows/sti.h
 include/wine/windows/storage.h
