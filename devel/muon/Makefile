@@ -10,6 +10,8 @@ COMMENT=	Build system compatible with meson
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	scdoc:textproc/scdoc
+
 USES=		ninja pkgconfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
