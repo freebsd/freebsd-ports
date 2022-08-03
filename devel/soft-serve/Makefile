@@ -1,7 +1,6 @@
 PORTNAME=	soft-serve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
-PORTREVISION=	1
+DISTVERSION=	0.3.3
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -24,11 +23,11 @@ GH_TUPLE=	Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microso
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		caarlos0:env:v6.9.1:caarlos0_env_v6/vendor/github.com/caarlos0/env/v6 \
 		caarlos0:sshmarshal:v0.1.0:caarlos0_sshmarshal/vendor/github.com/caarlos0/sshmarshal \
-		charmbracelet:bubbles:88562515cf7b:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
-		charmbracelet:bubbletea:v0.20.0:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
+		charmbracelet:bubbles:v0.11.0:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
+		charmbracelet:bubbletea:v0.22.0:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
 		charmbracelet:glamour:v0.4.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		charmbracelet:keygen:v0.3.0:charmbracelet_keygen/vendor/github.com/charmbracelet/keygen \
-		charmbracelet:lipgloss:v0.4.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
+		charmbracelet:lipgloss:v0.5.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
 		charmbracelet:wish:v0.5.0:charmbracelet_wish/vendor/github.com/charmbracelet/wish \
 		containerd:console:v1.0.3:containerd_console/vendor/github.com/containerd/console \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
@@ -39,13 +38,13 @@ GH_TUPLE=	Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microso
 		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:b4368b2a2ca4:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
-		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
-		gogs:git-module:v1.6.0:gogs_git_module/vendor/github.com/gogs/git-module \
+		gogs:git-module:v1.6.1:gogs_git_module/vendor/github.com/gogs/git-module \
 		golang:crypto:efcb8507fb70:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:cd36cc0744dd:golang_net/vendor/golang.org/x/net \
-		golang:sys:5a964db01320:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:3681064d5158:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
 		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
@@ -60,15 +59,18 @@ GH_TUPLE=	Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microso
 		microcosm-cc:bluemonday:v1.0.17:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		muesli:ansi:c9f0611b6c70:muesli_ansi/vendor/github.com/muesli/ansi \
+		muesli:cancelreader:v0.2.1:muesli_cancelreader/vendor/github.com/muesli/cancelreader \
+		muesli:mango-cobra:v1.2.0:muesli_mango_cobra/vendor/github.com/muesli/mango-cobra \
+		muesli:mango-pflag:v0.1.0:muesli_mango_pflag/vendor/github.com/muesli/mango-pflag \
 		muesli:mango:v0.1.0:muesli_mango/vendor/github.com/muesli/mango \
 		muesli:reflow:v0.3.0:muesli_reflow/vendor/github.com/muesli/reflow \
 		muesli:roff:v0.1.0:muesli_roff/vendor/github.com/muesli/roff \
-		muesli:termenv:44cd13922739:muesli_termenv/vendor/github.com/muesli/termenv \
+		muesli:termenv:v0.12.0:muesli_termenv/vendor/github.com/muesli/termenv \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		sahilm:fuzzy:v0.1.0:sahilm_fuzzy/vendor/github.com/sahilm/fuzzy \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
-		spf13:cobra:v1.4.0:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.5.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		xanzy:ssh-agent:v0.3.1:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
@@ -93,11 +95,6 @@ PLIST_FILES=	${DOCSDIR_REL}/README.md \
 		bin/${PORTNAME}
 
 .include <bsd.port.options.mk>
-
-# Patch for 32-bit platforms
-.if ${ARCH} == i386 || ${ARCH} == armv7 || ${ARCH} == armv6
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-vendor_github.com_charmbracelet_bubbletea_cancelreader__bsd.go
-.endif
 
 post-install:
 		${MV} ${STAGEDIR}${PREFIX}/bin/soft ${STAGEDIR}${PREFIX}/bin/soft-serve
