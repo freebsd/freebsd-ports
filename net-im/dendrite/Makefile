@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -59,7 +59,7 @@ GH_TUPLE=	Arceliar:ironwood:319147a02d98:arceliar_ironwood/vendor/github.com/Arc
 		golang:image:70e8d0d3baa9:golang_image/vendor/golang.org/x/image \
 		golang:mobile:8578da9835fd:golang_mobile/vendor/golang.org/x/mobile \
 		golang:mod:9b9b3d81d5e3:golang_mod/vendor/golang.org/x/mod \
-		golang:net:1d687d428aca:golang_net/vendor/golang.org/x/net \
+		golang:net:1bab6f366d9e:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
 		golang:term:065cf7ba2467:golang_term/vendor/golang.org/x/term \
@@ -80,15 +80,16 @@ GH_TUPLE=	Arceliar:ironwood:319147a02d98:arceliar_ironwood/vendor/github.com/Arc
 		kardianos:minwinsvc:v1.0.0:kardianos_minwinsvc/vendor/github.com/kardianos/minwinsvc \
 		klauspost:compress:v1.15.9:klauspost_compress/vendor/github.com/klauspost/compress \
 		lib:pq:v1.10.5:lib_pq/vendor/github.com/lib/pq \
-		lucas-clemente:quic-go:v0.26.0:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
+		lucas-clemente:quic-go:v0.28.1:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
 		marten-seemann:qtls-go1-16:v0.1.5:marten_seemann_qtls_go1_16/vendor/github.com/marten-seemann/qtls-go1-16 \
-		marten-seemann:qtls-go1-17:v0.1.1:marten_seemann_qtls_go1_17/vendor/github.com/marten-seemann/qtls-go1-17 \
-		marten-seemann:qtls-go1-18:v0.1.1:marten_seemann_qtls_go1_18/vendor/github.com/marten-seemann/qtls-go1-18 \
+		marten-seemann:qtls-go1-17:v0.1.2:marten_seemann_qtls_go1_17/vendor/github.com/marten-seemann/qtls-go1-17 \
+		marten-seemann:qtls-go1-18:v0.1.2:marten_seemann_qtls_go1_18/vendor/github.com/marten-seemann/qtls-go1-18 \
+		marten-seemann:qtls-go1-19:v0.1.0-beta.1:marten_seemann_qtls_go1_19/vendor/github.com/marten-seemann/qtls-go1-19 \
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-sqlite3-js:28aa791a1c91:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:be2af5ef2e16:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
 		matrix-org:gomatrixserverlib:b6003e522771:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
-		matrix-org:pinecone:1ce778fcde6a:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
+		matrix-org:pinecone:b7a830c08fb9:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.13:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		matttproud:golang_protobuf_extensions:c182affec369:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
