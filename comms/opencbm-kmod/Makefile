@@ -2,7 +2,7 @@ PORTNAME=	opencbm-kmod
 PORTVERSION=	${OCBM_VERSION}
 CATEGORIES=	comms archivers
 
-MAINTAINER=	felix@palmen-it.de
+MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	OpenCBM driver module for parallel-port X[MA]-1541 cables
 
 LICENSE=	GPLv2+

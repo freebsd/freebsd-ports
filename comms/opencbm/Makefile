@@ -6,7 +6,7 @@ PATCHFILES=	077611e1ec27b52081c45c1702ff3812233fdd5e.diff \
 		dfa9dd172e2843a661cdb6cdba09d1c6c2c1b35e.diff \
 		a5fb83548b0ed54372d7615118c8ec9ba338bb9b.diff
 
-MAINTAINER=	felix@palmen-it.de
+MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Commodore CBM serial IEC/IEEE-488 bus utilities
 
 LICENSE=	GPLv2 BSD3CLAUSE

@@ -3,7 +3,7 @@ PORTVERSION=	5.0.19
 PORTREVISION=	1
 CATEGORIES=	emulators
 
-MAINTAINER=	felix@palmen-it.de
+MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Commodore 64 emulator
 
 LICENSE=	GPLv2

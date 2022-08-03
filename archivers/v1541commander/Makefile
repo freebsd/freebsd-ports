@@ -3,7 +3,7 @@ PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers emulators
 
-MAINTAINER=	felix@palmen-it.de
+MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Virtual 1541 disk commander
 
 LICENSE=	BSD2CLAUSE STYLEFONT
