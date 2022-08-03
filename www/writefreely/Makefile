@@ -1,7 +1,7 @@
 PORTNAME=	writefreely
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www textproc
 MASTER_SITES=	https://code.as/core/socks/archive/v1.0.0.tar.gz?dummy=/:core_socks \
 		https://git.mills.io/prologic/go-gopher/archive/:go_gopher

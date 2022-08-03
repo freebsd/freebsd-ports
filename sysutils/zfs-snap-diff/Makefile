@@ -1,7 +1,7 @@
 PORTNAME=	zfs-snap-diff
 PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	ben@lavery-griffiths.com

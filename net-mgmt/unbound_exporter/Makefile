@@ -1,7 +1,7 @@
 PORTNAME=		unbound_exporter
 PORTVERSION=		0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		aduitsis@cpan.org
