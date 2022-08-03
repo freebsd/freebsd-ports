@@ -1,8 +1,7 @@
 PORTNAME=	duply
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	sysutils
-MASTER_SITES=	https://duply.net/projects/ftplicity/files/duply%20%28simple%20duplicity%29/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}.x/
+MASTER_SITES=	SOURCEFORGE/ftplicity/duply%20%28simple%20duplicity%29/2.2.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	michael@ranner.eu
