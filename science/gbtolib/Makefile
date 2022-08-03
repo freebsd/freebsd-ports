@@ -1,5 +1,6 @@
 PORTNAME=	gbtolib
 DISTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	science # chemistry, physics
 MASTER_SITES=	https://zenodo.org/record/5798035/files/
 DISTNAME=	GBTOLib-${DISTVERSION}
@@ -20,6 +21,8 @@ USES=		cmake fortran zip
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_DOC BUILD_TESTING
+
+FFLAGS=		-fdefault-integer-8
 
 OPTIONS_DEFINE=	MPI
 
