@@ -1,6 +1,6 @@
 PORTNAME=	benchmark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
+DISTVERSION=	1.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,9 +19,9 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BENCHMARK_ENABLE_TESTING
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
-CXXFLAGS_clang=	-Wno-thread-safety-analysis # workaround for https://github.com/google/benchmark/issues/655
 CXXFLAGS_gcc=	-Wno-stringop-truncation
-CXXFLAGS+=	-Wno-sign-compare # workaround for https://github.com/google/googletest/issues/1752
+
+BINARY_ALIAS=	git=false
 
 do-test: # Broken: https://github.com/google/benchmark/issues/979
 	@cd ${BUILD_WRKSRC} && \
