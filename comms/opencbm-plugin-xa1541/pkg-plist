@@ -2,4 +2,4 @@ etc/opencbm.conf.d/10xa1541.conf
 lib/opencbm/plugin/libopencbm-xa1541.a
 lib/opencbm/plugin/libopencbm-xa1541.so
 lib/opencbm/plugin/libopencbm-xa1541.so.0
-lib/opencbm/plugin/libopencbm-xa1541.so.0.4.99.102
+lib/opencbm/plugin/libopencbm-xa1541.so.%%OCBM_VERSION%%

@@ -11,9 +11,6 @@ USES=	kmod uidfix
 
 WRKSRC_SUBDIR=	opencbm/sys/freebsd
 
-post-install:
-	${INSTALL_MAN} ${FILESDIR}/opencbm.4 ${STAGEDIR}${PREFIX}/man/man4
-
 .include "../opencbm/Makefile.inc"
 
 .include <bsd.port.mk>
