@@ -10,7 +10,6 @@ WWW=		https://leo-project.net/
 
 LICENSE=	APACHE20
 
-BROKEN_aarch64=		Does not compile: fatal error: lzo/lzo1x.h file not found
 NOT_FOR_ARCHS=		riscv64 sparc64
 NOT_FOR_ARCHS_REASON=	does not build: error Please implement AtomicPointer for this platform
 
@@ -106,6 +105,9 @@ LEOFS_DEPS=	\
 
 GH_TUPLE=	${LEOFS_DEPS:C,(.*)/(.*)=(.*):(.*),\1:\2:\3:\4/deps/\4,}
 
+CFLAGS_aarch64=	-DLEVELDB_CSTDATOMIC_PRESENT
+CFLAGS_armv6=	-DLEVELDB_CSTDATOMIC_PRESENT
+CFLAGS_armv7=	-DLEVELDB_CSTDATOMIC_PRESENT
 CFLAGS_powerpc=	-DLEVELDB_CSTDATOMIC_PRESENT
 CFLAGS_powerpc64=	-DLEVELDB_CSTDATOMIC_PRESENT
 CFLAGS_powerpc64le=	-DLEVELDB_CSTDATOMIC_PRESENT
