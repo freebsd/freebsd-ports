@@ -1,3 +1,74 @@
+  <vuln vid="96a41723-133a-11ed-be3b-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>104.0.5112.79</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2022/08/stable-channel-update-for-desktop.html">
+	  <p>This release contains 27 security fixes, including:</p>
+	  <ul>
+	    <li>[1325699] High CVE-2022-2603: Use after free in Omnibox. Reported by Anonymous on 2022-05-16</li>
+	    <li>[1335316] High CVE-2022-2604: Use after free in Safe Browsing. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-06-10</li>
+	    <li>[1338470] High CVE-2022-2605: Out of bounds read in Dawn. Reported by Looben Yang on 2022-06-22</li>
+	    <li>[1330489] High CVE-2022-2606: Use after free in Managed devices API. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-05-31</li>
+	    <li>[1286203] High CVE-2022-2607: Use after free in Tab Strip. Reported by @ginggilBesel on 2022-01-11</li>
+	    <li>[1330775] High CVE-2022-2608: Use after free in Overview Mode. Reported by Khalil Zhani on 2022-06-01</li>
+	    <li>[1338560] High CVE-2022-2609: Use after free in Nearby Share. Reported by koocola(@alo_cook) and Guang Gong of 360 Vulnerability Research Institute on 2022-06-22</li>
+	    <li>[1278255] Medium CVE-2022-2610: Insufficient policy enforcement in Background Fetch. Reported by Maurice Dauer on 2021-12-09</li>
+	    <li>[1320538] Medium CVE-2022-2611: Inappropriate implementation in Fullscreen API. Reported by Irvan Kurniawan (sourc7) on 2022-04-28</li>
+	    <li>[1321350] Medium CVE-2022-2612: Side-channel information leakage in Keyboard input. Reported by Erik Kraft (erik.kraft5@gmx.at), Martin Schwarzl (martin.schwarzl@iaik.tugraz.at) on 2022-04-30</li>
+	    <li>[1325256] Medium CVE-2022-2613: Use after free in Input. Reported by Piotr Tworek (Vewd) on 2022-05-13</li>
+	    <li>[1341907] Medium CVE-2022-2614: Use after free in Sign-In Flow. Reported by raven at KunLun lab on 2022-07-05</li>
+	    <li>[1268580] Medium CVE-2022-2615: Insufficient policy enforcement in Cookies. Reported by Maurice Dauer on 2021-11-10</li>
+	    <li>[1302159] Medium CVE-2022-2616: Inappropriate implementation in Extensions API. Reported by Alesandro Ortiz on 2022-03-02</li>
+	    <li>[1292451] Medium CVE-2022-2617: Use after free in Extensions API. Reported by @ginggilBesel on 2022-01-31</li>
+	    <li>[1308422] Medium CVE-2022-2618: Insufficient validation of untrusted input in Internals. Reported by asnine on 2022-03-21</li>
+	    <li>[1332881] Medium CVE-2022-2619: Insufficient validation of untrusted input in Settings. Reported by Oliver Dunk on 2022-06-04</li>
+	    <li>[1337304] Medium CVE-2022-2620: Use after free in WebUI. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha Lab on 2022-06-17</li>
+	    <li>[1323449] Medium CVE-2022-2621: Use after free in Extensions. Reported by Huyna at Viettel Cyber Security on 2022-05-07</li>
+	    <li>[1332392] Medium CVE-2022-2622: Insufficient validation of untrusted input in Safe Browsing. Reported by Imre Rad (@ImreRad) and @j00sean on 2022-06-03</li>
+	    <li>[1337798] Medium CVE-2022-2623: Use after free in Offline. Reported by raven at KunLun lab on 2022-06-20</li>
+	    <li>[1339745] Medium CVE-2022-2624: Heap buffer overflow in PDF. Reported by YU-CHANG CHEN and CHIH-YEN CHANG, working with DEVCORE Internship Program on 2022-06-27</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2603</cvename>
+      <cvename>CVE-2022-2604</cvename>
+      <cvename>CVE-2022-2605</cvename>
+      <cvename>CVE-2022-2606</cvename>
+      <cvename>CVE-2022-2607</cvename>
+      <cvename>CVE-2022-2608</cvename>
+      <cvename>CVE-2022-2609</cvename>
+      <cvename>CVE-2022-2610</cvename>
+      <cvename>CVE-2022-2611</cvename>
+      <cvename>CVE-2022-2612</cvename>
+      <cvename>CVE-2022-2613</cvename>
+      <cvename>CVE-2022-2614</cvename>
+      <cvename>CVE-2022-2615</cvename>
+      <cvename>CVE-2022-2616</cvename>
+      <cvename>CVE-2022-2617</cvename>
+      <cvename>CVE-2022-2618</cvename>
+      <cvename>CVE-2022-2619</cvename>
+      <cvename>CVE-2022-2620</cvename>
+      <cvename>CVE-2022-2621</cvename>
+      <cvename>CVE-2022-2622</cvename>
+      <cvename>CVE-2022-2623</cvename>
+      <cvename>CVE-2022-2624</cvename>
+      <url>https://chromereleases.googleblog.com/2022/08/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2022-08-02</discovery>
+      <entry>2022-08-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7f8d5435-125a-11ed-9a69-10c37b4ac2ea">
     <topic>go -- decoding big.Float and big.Rat can panic</topic>
     <affects>
