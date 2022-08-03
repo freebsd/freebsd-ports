@@ -966,7 +966,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-keypd.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-lang.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-lang.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-macs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-macs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calc/calc-map.el.gz
@@ -1043,7 +1044,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-iso.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-julian.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-julian.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-loaddefs.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-loaddefs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-mayan.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-mayan.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/cal-menu.el.gz
@@ -1060,8 +1062,10 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/calendar.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-lib.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-lib.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-loaddefs.el
-%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holiday-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/diary-loaddefs.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holiday-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holiday-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holidays.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/holidays.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/calendar/icalendar.el.gz
@@ -1122,7 +1126,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/generic.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/linux.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/linux.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/locate.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/locate.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/make.el.gz
@@ -1281,7 +1286,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/lex-spp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/lex.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/lex.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/mru-bookmark.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/mru-bookmark.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/semantic/sb.el.gz
@@ -1372,7 +1378,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/insert.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/java.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/java.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/map.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/map.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/srecode/mode.el.gz
@@ -1432,7 +1439,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/dframe.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/dired-aux.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/dired-aux.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/dired-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/dired-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/dired-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/dired-x.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/dired-x.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/dired.el.gz
@@ -1479,8 +1487,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/elide-head.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/advice.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/advice.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/autoload.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/autoload.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/avl-tree.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/avl-tree.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/backquote.el.gz
@@ -1513,7 +1519,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-indent.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-lib.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-lib.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-macs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-macs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/cl-preloaded.el.gz
@@ -1768,7 +1775,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-lang.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-list.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-list.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-log.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-log.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-match.el.gz
@@ -1853,7 +1861,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-cmd.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-ext.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-ext.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-groups.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-groups.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-groups.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-io.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-io.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/eshell/esh-mode.el.gz
@@ -2169,7 +2178,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuf-ext.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuf-macs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuf-macs.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/ibuffer-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/ibuffer-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/ibuffer-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuffer.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ibuffer.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/icomplete.el.gz
@@ -2541,7 +2551,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/leim/quail/welsh.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/linum.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/linum.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/loadhist.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/loadhist.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/loadup.el
@@ -2655,8 +2666,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-buffers.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-comp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-comp.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-compat.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-compat.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-e.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-e.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-folder.el.gz
@@ -2675,7 +2684,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-letter.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-limit.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-limit.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-mime.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-mime.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mh-e/mh-print.el.gz
@@ -2774,8 +2784,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/mairix.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/net-utils.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/net-utils.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/netrc.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/netrc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/network-stream.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/network-stream.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/newst-backend.el.gz
@@ -2856,7 +2864,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gvfs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-integration.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-integration.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-rclone.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-rclone.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sh.el.gz
@@ -2931,6 +2940,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obarray.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/autoarg.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/autoarg.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/autoload.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/autoload.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/bruce.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/bruce.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/cc-compat.el.gz
@@ -2968,6 +2979,10 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/messcompat.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/metamail.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/metamail.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mh-compat.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mh-compat.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/netrc.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/netrc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/nnir.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/nnir.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/otodo-mode.el.gz
@@ -2984,6 +2999,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg-pgp5.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/pgg.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/ps-def.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/ps-def.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/quickurl.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/quickurl.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/rcompile.el.gz
@@ -3010,6 +3027,10 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-mapper.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/uce.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/uce.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/url-about.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/url-about.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/url-dired.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/url-dired.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/url-ns.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/url-ns.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/vc-arch.el.gz
@@ -3215,7 +3236,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-lint.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-list.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-list.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-macro.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-macro.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-macs.el.gz
@@ -3527,11 +3549,10 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/xscheme.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-bdf.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-bdf.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/ps-def.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/ps-def.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-mule.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-mule.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/ps-print-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/ps-print-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/ps-print-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-print.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-print.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/ps-samp.el.gz
@@ -3742,7 +3763,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-global.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-index.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-index.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-parse.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-parse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/reftex-ref.el.gz
@@ -3771,7 +3793,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texinfmt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texinfo.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texinfo.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texinfo-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texinfo-loaddefs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texinfo-loaddefs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texnfo-upd.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/texnfo-upd.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/text-mode.el.gz
@@ -3812,8 +3835,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/type-break.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/uniquify.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/uniquify.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/url/url-about.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/url/url-about.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-auth.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-auth.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-cache.el.gz
@@ -3824,8 +3845,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-cookie.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-dav.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-dav.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/url/url-dired.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/url/url-dired.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-domsuf.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-domsuf.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-expand.el.gz
