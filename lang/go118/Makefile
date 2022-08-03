@@ -1,8 +1,6 @@
-# Created by: Devon H. O'Dell <devon.odell@gmail.com>
-
-DISTVERSION=	1.18.4
+DISTVERSION=	1.18.5
 # Always set PORTREVISION explicitly as otherwise they are inherited from lang/go-devel
-PORTREVISION=	1
+PORTREVISION=	0
 MASTER_SITES=	https://golang.org/dl/ \
 		https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
 		LOCAL/dmgk:bootstrap
