@@ -9,6 +9,8 @@ COMMENT=	Digital audio workstation (DAW) with support for both Audio and MIDI
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	compilation breaks: unknown type name 'intptr_t'; did you mean '__intptr_t', see https://github.com/muse-sequencer/muse/issues/1081
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 		lv2>0:audio/lv2
 LIB_DEPENDS=	libinstpatch-1.0.so:audio/libinstpatch libjack.so:audio/jack \
