@@ -1,7 +1,10 @@
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMESUFFIX=	-server
 
 COMMENT=	TigerVNC Server
+
+EXTRA_PATCHES=	${FILESDIR}/xorg-1.21.patch:-p1 \
+		${FILESDIR}/xvnc-adapt-xorg-1.21.patch:-p1
 
 PATCH_DEPENDS+=	${NONEXISTENT}:x11-servers/xorg-server:patch
 BUILD_DEPENDS+=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri \
@@ -65,7 +68,7 @@ pre-patch:
 post-patch:
 	# do not build tests
 	@${REINPLACE_CMD} -e 's|add_subdirectory(tests)||' ${WRKSRC}/CMakeLists.txt
-	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver$$(${TIGERVNC_XORG_PATCH_VER}).patch
+	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${FILESDIR}/xserver$$(${TIGERVNC_XORG_PATCH_VER}).patch
 
 post-configure:
 	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${AUTORECONF} -fiv
