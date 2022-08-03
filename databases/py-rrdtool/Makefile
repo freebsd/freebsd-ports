@@ -1,9 +1,8 @@
 PORTNAME=	rrdtool
-DISTVERSION=	0.1.15
+DISTVERSION=	0.1.16
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
-# Bindings name is different from https://pypi.org/project/rrdtool/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX} # Bindings name is different from https://pypi.org/project/rrdtool/
 
 MAINTAINER=	darius@dons.net.au
 COMMENT=	Python interface to RRDTool, the graphing and logging utility
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	librrd.so:databases/rrdtool
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/rrdtool*.so
