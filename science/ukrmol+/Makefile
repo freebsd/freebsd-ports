@@ -1,6 +1,6 @@
 PORTNAME=	ukrmol+
 DISTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science # chemistry, physics
 MASTER_SITES=	https://zenodo.org/record/5799134/files/:out \
 		https://zenodo.org/record/5799110/files/:in # the project is a sum of two projects, "in" and "out"
@@ -16,19 +16,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_aarch64=	fails to build: Cannot open module file 'ieee_arithmetic.mod' for reading
 
 LIB_DEPENDS=	libGBTO.so:science/gbtolib \
-		libgsl.so:math/gsl \
 		libopenblas.so:math/openblas
 
 USES=		cmake:testing fortran python:test
 
-CMAKE_ON=	BUILD_SHARED_LIBS WITH_GSL
+CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	WITH_MPI BUILD_DOC WITH_GIT BUILD_TESTING
 CMAKE_TESTING_ON=	BUILD_TESTING
 CMAKE_ARGS=	-DFREEBSD_DOCSDIR=${DOCSDIR} \
 		-DFREEBSD_PYTHON_VER=${PYTHON_VER}
 CMAKE_ARGS+=	-DUKRMOL_OUT_DIR=${WRKSRC_OUT} # the "out" project is built and installed from the "in" project
 
-FFLAGS+=	-I${LOCALBASE}/include/gbtolib
+FFLAGS+=	-I${LOCALBASE}/include/gbtolib \
+		-fdefault-integer-8
 LDFLAGS+=	-lGBTO
 
 WRKSRC_OUT=	${WRKDIR}/ukrmol-out-${PORTVERSION}
