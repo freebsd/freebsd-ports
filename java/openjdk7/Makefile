@@ -13,6 +13,9 @@ LICENSE=	GPLv2
 BROKEN_FreeBSD_13=	does not link: duplicate symbol: fp_g_free
 BROKEN_FreeBSD_14=	does not link: duplicate symbol: fp_g_free
 
+DEPRECATED=		EOLed since 31 July 2022
+EXPIRATION_DATE=	2022-09-03
+
 CPE_VENDOR=	oracle
 
 USE_GITHUB=	yes
