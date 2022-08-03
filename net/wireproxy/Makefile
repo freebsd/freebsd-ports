@@ -10,7 +10,7 @@ COMMENT=	Wireguard client that exposes itself as a socks5 proxy
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.18,modules
 
 GO_MODULE=	github.com/octeep/wireproxy
 GO_TARGET=	./cmd/wireproxy

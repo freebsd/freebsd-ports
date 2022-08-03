@@ -10,7 +10,7 @@ COMMENT=	Set of network penetration tools
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.18,modules
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./main:xray

@@ -10,7 +10,7 @@ COMMENT=	Retrieve files over IPFS and save them locally
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.18,modules
 
 GO_MODULE=	github.com/ipfs/ipget
 

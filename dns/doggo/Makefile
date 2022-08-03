@@ -11,7 +11,7 @@ COMMENT=	Modern command-line DNS client (like dig)
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.18,modules
 
 GO_MODULE=	github.com/mr-karan/doggo
 GO_TARGET=	./cmd/${PORTNAME}

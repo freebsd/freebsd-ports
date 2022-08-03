@@ -8,7 +8,7 @@ COMMENT=	Decentralized cloud object storage
 
 LICENSE=	AGPLv3
 
-USES=		go:modules
+USES=		go:1.18,modules
 USE_GITHUB=	yes
 
 .include "${.CURDIR}/Makefile.deps"

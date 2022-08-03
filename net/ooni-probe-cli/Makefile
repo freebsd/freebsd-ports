@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		go:modules
+USES=		go:1.18,modules
 
 GO_MODULE=	github.com/ooni/probe-cli/v3
 GO_TARGET=	./cmd/ooniprobe

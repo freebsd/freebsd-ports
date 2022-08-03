@@ -13,7 +13,7 @@ COMMENT=	Encrypted file sync tool
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE
 
-USES=		cpe go:modules
+USES=		cpe go:1.18,modules
 
 USE_RC_SUBR=	syncthing syncthing-discosrv syncthing-relaysrv syncthing-relaypoolsrv
 

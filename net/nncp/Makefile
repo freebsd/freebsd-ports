@@ -10,7 +10,7 @@ COMMENT=	Utilities for secure store-and-forward files, mail, command exchanging
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		go:modules,no_targets tar:xz
+USES=		go:1.18,modules,no_targets tar:xz
 
 USE_RC_SUBR=	nncp-caller nncp-daemon nncp-toss
 
