@@ -17,8 +17,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		autoreconf cpe iconv localbase:ldflags ncurses shebangfix tar:xz
+USES=		cpe iconv localbase:ldflags ncurses perl5 shebangfix tar:xz
 
+USE_PERL5=	build
 SHEBANG_LANG=	zsh
 zsh_OLD_CMD=	zsh	# shebang appears as /bin/zsh and just zsh
 SHEBANG_FILES=	Functions/Calendar/* \
@@ -86,8 +87,6 @@ CONFIGURE_ENV+=	ac_cv_lib_iconv_libiconv=no
 .endif
 
 post-patch:
-# FreeBSD's clock_gettime(2) is in libc, not librt; see PR 167857
-	@${REINPLACE_CMD} -e '/LIBS/s|-lrt||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|/etc/|${LOCALBASE}/etc/|" \
 		${WRKSRC}/Functions/MIME/zsh-mime-setup
 	${RM} ${WRKSRC}/Doc/help.txt
