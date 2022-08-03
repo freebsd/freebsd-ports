@@ -19,7 +19,7 @@ USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${LOCALSTATEDIR}
 
-SUB_FILES=	pkg-install pkg-deinstall pkg-message
+SUB_FILES=	pkg-install pkg-message
 SUB_LIST=	LOCALSTATEDIR=${LOCALSTATEDIR} NULLMAIL_USER=${USERS}
 
 USERS=		nullmail
