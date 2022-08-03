@@ -308,9 +308,6 @@ include/pika/futures/traits/promise_local_result.hpp
 include/pika/futures/traits/promise_remote_result.hpp
 include/pika/hardware/bit_manipulation.hpp
 include/pika/hardware/config/defines.hpp
-include/pika/hardware/cpuid.hpp
-include/pika/hardware/cpuid/linux_x86.hpp
-include/pika/hardware/cpuid/msvc.hpp
 include/pika/hardware/timestamp.hpp
 include/pika/hardware/timestamp/bgq.hpp
 include/pika/hardware/timestamp/cuda.hpp

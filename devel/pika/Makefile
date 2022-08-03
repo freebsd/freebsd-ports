@@ -1,6 +1,10 @@
 PORTNAME=	pika
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/pika-org/pika/commit/
+PATCHFILES=	b3f72acf5d4f90ed3dfb9092efe351a9e76fa6e8.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for concurrency and parallelism
