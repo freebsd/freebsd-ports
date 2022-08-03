@@ -12,6 +12,7 @@ include/mctc-lib/mctc_io_filetype.mod
 include/mctc-lib/mctc_io_math.mod
 include/mctc-lib/mctc_io_read.mod
 include/mctc-lib/mctc_io_read_aims.mod
+include/mctc-lib/mctc_io_read_cjson.mod
 include/mctc-lib/mctc_io_read_ctfile.mod
 include/mctc-lib/mctc_io_read_gaussian.mod
 include/mctc-lib/mctc_io_read_genformat.mod
@@ -28,6 +29,7 @@ include/mctc-lib/mctc_io_symbols.mod
 include/mctc-lib/mctc_io_utils.mod
 include/mctc-lib/mctc_io_write.mod
 include/mctc-lib/mctc_io_write_aims.mod
+include/mctc-lib/mctc_io_write_cjson.mod
 include/mctc-lib/mctc_io_write_ctfile.mod
 include/mctc-lib/mctc_io_write_gaussian.mod
 include/mctc-lib/mctc_io_write_genformat.mod
@@ -45,5 +47,5 @@ lib/cmake/mctc-lib/mctc-lib-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mctc-lib/mctc-lib-targets.cmake
 lib/libmctc-lib.so
 lib/libmctc-lib.so.0
-lib/libmctc-lib.so.0.3.0
+lib/libmctc-lib.so.0.3.1
 libdata/pkgconfig/mctc-lib.pc
