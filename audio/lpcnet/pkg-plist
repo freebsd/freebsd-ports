@@ -1,0 +1,7 @@
+bin/lpcnet_dec
+bin/lpcnet_enc
+include/lpcnet/lpcnet_freedv.h
+lib/cmake/lpcnetfreedv/lpcnetfreedv-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/lpcnetfreedv/lpcnetfreedv-config.cmake
+lib/liblpcnetfreedv.so
+lib/liblpcnetfreedv.so.0.2

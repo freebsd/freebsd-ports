@@ -443,6 +443,7 @@
     SUBDIR += logitechmediaserver-sqlplaylist
     SUBDIR += logitechmediaserver-trackstat
     SUBDIR += lollypop
+    SUBDIR += lpcnet
     SUBDIR += lsp-plugins-lv2
     SUBDIR += lua-mpd
     SUBDIR += luppp
