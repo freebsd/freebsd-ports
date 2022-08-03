@@ -36,18 +36,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/fonts/otf/emmentaler-23.otf
 %%DATADIR%%/%%DISTVERSION%%/fonts/otf/emmentaler-26.otf
 %%DATADIR%%/%%DISTVERSION%%/fonts/otf/emmentaler-brace.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyrecursor-bold.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyrecursor-bolditalic.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyrecursor-italic.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyrecursor-regular.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyreheros-bold.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyreheros-bolditalic.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyreheros-italic.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyreheros-regular.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyreschola-bold.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyreschola-bolditalic.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyreschola-italic.otf
-%%DATADIR%%/%%DISTVERSION%%/fonts/otf/texgyreschola-regular.otf
 %%DATADIR%%/%%DISTVERSION%%/fonts/source/common-modules-and-initialization.mf
 %%DATADIR%%/%%DISTVERSION%%/fonts/source/debugging-settings.mf
 %%DATADIR%%/%%DISTVERSION%%/fonts/source/declare-autometric-parameters.mf
@@ -169,7 +157,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/fonts/svg/emmentaler-26.woff
 %%DATADIR%%/%%DISTVERSION%%/fonts/svg/emmentaler-brace.svg
 %%DATADIR%%/%%DISTVERSION%%/fonts/svg/emmentaler-brace.woff
-%%DATADIR%%/%%DISTVERSION%%/ly/Welcome-to-LilyPond-MacOS.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/Welcome_to_LilyPond.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/arabic.ly
 %%DATADIR%%/%%DISTVERSION%%/ly/articulate.ly
