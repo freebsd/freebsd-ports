@@ -10,7 +10,8 @@ PATCH_DEPENDS+=	${NONEXISTENT}:x11-servers/xorg-server:patch
 BUILD_DEPENDS+=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri \
 		${LOCALBASE}/libdata/pkgconfig/fontutil.pc:x11-fonts/font-util \
 		bash:shells/bash
-LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence
+LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence \
+		libxcvt.so:x11/libxcvt
 # almost equivalent to x11-servers/xorg-server's
 RUN_DEPENDS+=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
