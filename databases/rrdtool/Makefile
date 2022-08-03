@@ -1,87 +1,76 @@
 PORTNAME=	rrdtool
-PORTVERSION=	1.7.2
-PORTREVISION=	6
+DISTVERSION=	1.8.0
 CATEGORIES=	databases graphics
-MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/archive/
+MASTER_SITES=	https://github.com/oetiker/rrdtool-1.x/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cpe gmake gnome libtool pathfix pkgconfig shebangfix
+CPE_VENDOR=	rrdtool_project
+USE_GNOME=	glib20 libxml2
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	rrdcached
+SHEBANG_FILES=	examples/rrdcached/rrdcached-size.pl examples/stripes.py
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-tcl
+
+INSTALL_TARGET=	install-strip
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 
 CONFLICTS=	rrdtool12
 
-CONFIGURE_ARGS=	--disable-tcl
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
-USE_RC_SUBR=	rrdcached
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USES=		cpe gmake gnome libtool pathfix pkgconfig shebangfix
-USE_GNOME=	glib20 libxml2
-INSTALL_TARGET=	install-strip
-CPE_VENDOR=	rrdtool_project
-
 PORTEXAMPLES=	cgi-demo.cgi
 
-OPTIONS_DEFINE=	DEJAVU GRAPH MMAP LOCKTIMEOUT NLS PERL PYTHON \
-		RUBY EXAMPLES DOCS
-OPTIONS_DEFAULT=DEJAVU GRAPH MMAP PERL
-OPTIONS_SUB=	yes
-GRAPH_DESC=	Enable the rrdtool graph command (needs cairo)
-DEJAVU_DESC=	Use DejaVu fonts (requires X11)
-LOCKTIMEOUT_DESC=Enable the patch for lock timeout
-MMAP_DESC=	Use mmap in rrd_update
-PERL_DESC=	Build PERL module
-PYTHON_DESC=	Build PYTHON bindings
-RUBY_DESC=	Build RUBY bindings
+OPTIONS_DEFINE=		DEJAVU DOCS EXAMPLES GRAPH LOCKTIMEOUT MMAP NLS PERL \
+			PYTHON RUBY
+OPTIONS_DEFAULT=	DEJAVU GRAPH MMAP PERL
+OPTIONS_SUB=		yes
+DEJAVU_DESC=		Use DejaVu fonts (requires X11)
+GRAPH_DESC=		Enable the rrdtool graph command (needs cairo)
+LOCKTIMEOUT_DESC=	Enable the patch for lock timeout
+MMAP_DESC=		Use mmap in rrd_update
+PERL_DESC=		Build PERL module
+PYTHON_DESC=		Build PYTHON bindings
+RUBY_DESC=		Build RUBY bindings
 
-DEJAVU_RUN_DEPENDS=	dejavu>0:x11-fonts/dejavu
-
-DOCS_CONFIGURE_ENABLE=	docs
-DOCS_USES=		groff
-
-GRAPH_CONFIGURE_OFF=	--disable-rrdcgi --disable-rrd_graph
-GRAPH_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-			libpng.so:graphics/png
-GRAPH_USE=		GNOME=cairo,pango
-LOCKTIMEOUT_EXTRA_PATCHES=${PATCHDIR}/extra-patch-locktimeout
-MMAP_CONFIGURE_ENABLE=	mmap
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USE=		GNOME=intltool
-NLS_USES=		gettext localbase
-PERL_CONFIGURE_OFF=	--disable-perl
-PERL_CONFIGURE_ON=	--enable-perl --enable-perl-site-install
-PERL_MAKE_ARGS=		PERL_MAKE_OPTIONS='PREFIX="${PREFIX}" INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"'
-PERL_USES=		perl5
-PYTHON_CONFIGURE_ENABLE=python
-PYTHON_USES=		python
-PYTHON_USE=		python=flavors,optsuffix
-RUBY_CONFIGURE_ENABLE=	ruby
-RUBY_USE=		RUBY=yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPERL}
-SHEBANG_FILES=	examples/rrdcached/rrdcached-size.pl
-PORTEXAMPLES+=	4charts.pl bigtops.pl minmax.pl perftest.pl \
-		piped-demo.pl shared-demo.pl stripes.pl \
-		rrdcached/RRDCached.pm rrdcached/rrdcached-size.pl
-.endif
-.if ${PORT_OPTIONS:MPYTHON}
-SHEBANG_FILES+=	examples/stripes.py
-PORTEXAMPLES+=	stripes.py
-.endif
+DEJAVU_RUN_DEPENDS=		dejavu>0:x11-fonts/dejavu
+DOCS_USES=			groff
+DOCS_CONFIGURE_ENABLE=		docs
+GRAPH_LIB_DEPENDS=		libfreetype.so:print/freetype2 \
+				libpng.so:graphics/png
+GRAPH_USE=			GNOME=cairo,pango
+GRAPH_CONFIGURE_OFF=		--disable-rrd_graph \
+				--disable-rrdcgi
+LOCKTIMEOUT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-locktimeout
+MMAP_CONFIGURE_ENABLE=		mmap
+NLS_USES=			gettext localbase
+NLS_USE=			GNOME=intltool
+NLS_CONFIGURE_ENABLE=		nls
+PERL_USES=			perl5
+PERL_CONFIGURE_ON=		--enable-perl \
+				--enable-perl-site-install
+PERL_CONFIGURE_OFF=		--disable-perl
+PERL_MAKE_ARGS=			PERL_MAKE_OPTIONS='PREFIX="${PREFIX}" INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"'
+PERL_PORTEXAMPLES=		4charts.pl bigtops.pl minmax.pl perftest.pl \
+				piped-demo.pl rrdcached/rrdcached-size.pl \
+				rrdcached/RRDCached.pm shared-demo.pl \
+				stripes.pl
+PYTHON_USES=			python
+PYTHON_USE=			flavors,optsuffix
+PYTHON_CONFIGURE_ENABLE=	python
+PYTHON_PORTEXAMPLES=		stripes.py
+RUBY_USE=			RUBY=yes
+RUBY_CONFIGURE_ENABLE=		ruby
 
 post-extract:
-	@${REINPLACE_CMD} -E 's|(^rrdcached_LDADD = librrd_th.la)|\1 $$\(ALL_LIBS\)|' \
-		${WRKSRC}/src/Makefile.in
-
 	@${REINPLACE_CMD} -E 's|(^rrdtool_LDADD = librrd.la)|\1 $$\(ALL_LIBS\)|' \
 		${WRKSRC}/src/Makefile.in
 
 post-extract-EXAMPLES-off:
-	@${REINPLACE_CMD} -e '/^SUBDIRS = /s| examples | |' \
+	@${REINPLACE_CMD} -e '/^DIST_SUBDIRS = /s| examples||' \
 		${WRKSRC}/Makefile.in
 
 post-install-EXAMPLES-on:

@@ -1,8 +1,8 @@
---- bindings/python/setup.py.orig	2017-03-10 18:03:11 UTC
+--- bindings/python/setup.py.orig	2022-03-14 14:27:57 UTC
 +++ bindings/python/setup.py
-@@ -1,10 +1,7 @@
- #!/usr/bin/env python
+@@ -2,10 +2,7 @@ import sys
  import os
+ import sys
  
 -try:
 -    from setuptools import setup, Extension
