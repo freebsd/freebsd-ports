@@ -1,0 +1,18 @@
+muon is an implementation of the meson build system in c99 with minimal
+dependencies.
+
+# Non-features
+* bug-for-bug compatibility with meson. In fact, muon aspires to be stricter
+  than meson in cases where meson's implementation seems error prone. muon uses
+  the official meson documentation as its specification.
+* cli compatibility with meson. muon has different flags, subcommands, etc., and
+  should not be renamed/symlinked to meson.
+
+# Features
+* muon analyze - a static analyzer for meson.build files. Capable of doing type
+  inference, checking unused variables, undeclared variables, etc.
+* muon fmt_unstable - a meson.build code formatter
+* An interactive stepping debugger with the dbg() function.
+* Fast
+
+WWW: https://muon.build/

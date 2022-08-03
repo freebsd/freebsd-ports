@@ -1539,6 +1539,7 @@
     SUBDIR += mspdebug
     SUBDIR += mstch
     SUBDIR += mtbl
+    SUBDIR += muon
     SUBDIR += mustache
     SUBDIR += mutagen
     SUBDIR += myrepos
