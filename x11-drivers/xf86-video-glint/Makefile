@@ -9,4 +9,8 @@ COMMENT=	X.Org glint display driver
 USES=		gl xorg-cat:driver
 USE_GL=		gl
 
+BROKEN=		Does not work with recent xorg
+DEPRECATED=	Broken with recent xorg, no fixes upstream
+EXPIRATION_DATE=	2022-09-04
+
 .include <bsd.port.mk>

@@ -8,4 +8,8 @@ COMMENT=	X.Org trident display driver
 
 USES=		xorg-cat:driver
 
+BROKEN=		Does not work with recent xorg
+DEPRECATED=	Broken with recent xorg, no fixes upstream
+EXPIRATION_DATE=	2022-09-04
+
 .include <bsd.port.mk>
