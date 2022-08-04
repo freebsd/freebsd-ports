@@ -9,6 +9,10 @@ COMMENT=	Distributed communication-optimal matrix multiplication algorithm
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 BUILD_DEPENDS=	openmpi>0:net/openmpi
 LIB_DEPENDS=	libopenblas.so:math/openblas
 RUN_DEPENDS=	openmpi>0:net/openmpi
