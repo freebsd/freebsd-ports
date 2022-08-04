@@ -1,3 +1,7 @@
-TIMESTAMP = 1515367493
-SHA256 (irssi-xmpp-0.54.tar.gz) = 1033cc6bf03abaacdb083e1fbe7d75d8a62622339e06d889422d8f0705fa7776
-SIZE (irssi-xmpp-0.54.tar.gz) = 65618
+TIMESTAMP = 1659436456
+SHA256 (cdidier-irssi-xmpp-v0.54_GH0.tar.gz) = 1033cc6bf03abaacdb083e1fbe7d75d8a62622339e06d889422d8f0705fa7776
+SIZE (cdidier-irssi-xmpp-v0.54_GH0.tar.gz) = 65618
+SHA256 (f84cca86f6cbfa34.patch) = 127828da74eb80f003e920e484f4f6fa834b081e8cc6e8a1153d2e0515d2c0ca
+SIZE (f84cca86f6cbfa34.patch) = 29431
+SHA256 (c7728ea5aa2f4e58.patch) = 0c6b906ff1047eda1aa55f0d9952bf74e33a49f8a0c528807f0835de0a61700d
+SIZE (c7728ea5aa2f4e58.patch) = 3930
