@@ -1,50 +1,49 @@
 PORTNAME=	makemkv
-PORTVERSION=	1.17.0
+DISTVERSION=	1.17.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.makemkv.com/download/:makemkv \
 		http://www.makemkv.com/download/old/:makemkv \
 		SF/opencore-amr/fdk-aac/:fdkaac \
 		https://ffmpeg.org/releases/:ffmpeg \
 		https://www.openssl.org/source/old/${OPENSSLVERSION}/:openssl
-DISTFILES=	makemkv-oss-${PORTVERSION}.tar.gz:makemkv \
-		makemkv-bin-${PORTVERSION}.tar.gz:makemkv \
-		fdk-aac-${FDKAACVERSION}.tar.gz:fdkaac \
-		ffmpeg-${FFMPEGVERSION}.tar.bz2:ffmpeg \
-		openssl-${OPENSSLFULLVER}.tar.gz:openssl
+DISTFILES=	${DISTFL_MAKEMKV:=:makemkv} \
+		${DISTFL_FFMPEG:=:ffmpeg} \
+		${DISTFL_OPENSSL:=:openssl}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Video converter reading from DVD and Bluray
 
-# Do not sell. Do not redistribute modified binaries, but
-# explicit permission to distribute a patched makemkvcon given by
-# copyright owner
-LICENSE=	MAKEMKV FDK LGPL21+ OpenSSL
-LICENSE_COMB=	multi
+LICENSE=		MAKEMKV LGPL21+ ${PORT_OPTIONS:MFDK_AAC}
+LICENSE_COMB=		multi
 LICENSE_NAME_MAKEMKV=	The MakeMKV EULA
-LICENSE_NAME_FDK=	The FDK AAC License
-LICENSE_FILE_MAKEMKV=	${WRKDIR}/makemkv-bin-${PORTVERSION}/src/eula_en_linux.txt
-LICENSE_FILE_FDK=	${WRKDIR}/fdk-aac-${FDKAACVERSION}/NOTICE
-LICENSE_PERMS_MAKEMKV=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell \
-			auto-accept
-LICENSE_PERMS_FDK=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell \
-			auto-accept
-LICENSE_DISTFILES_FDK=	fdk-aac-${FDKAACVERSION}.tar.gz
-LICENSE_DISTFILES_LGPL21+ =	ffmpeg-${FFMPEGVERSION}.tar.bz2
-LICENSE_DISTFILES_OpenSSL=	openssl-${OPENSSLFULLVER}.tar.gz
-LICENSE_DISTFILES_MAKEMKV=	makemkv-bin-${PORTVERSION}.tar.gz \
-				makemkv-oss-${PORTVERSION}.tar.gz
+LICENSE_NAME_FDK_AAC=	The FDK AAC License
+LICENSE_FILE_MAKEMKV=	${WRKSRC_bin}/src/eula_en_linux.txt
+LICENSE_FILE_FDK_AAC=	${WRKSRC_fdkaac}/NOTICE
+LICENSE_PERMS_MAKEMKV=	dist-mirror pkg-mirror auto-accept \
+			# eplicit permission granted by copyright owner to \
+			# distribute a patched makemkvcon binary.
+LICENSE_PERMS_FDK_AAC=	auto-accept
+LICENSE_DISTFILES_FDK_AAC=	${DISTFL_FDKAAC}
+LICENSE_DISTFILES_LGPL21+ =	${DISTFL_FFMPEG}
+LICENSE_DISTFILES_MAKEMKV=	${DISTFL_MAKEMKV}
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
-USES=	gmake linux pkgconfig perl5
+USES=		gmake linux pkgconfig perl5
+USE_CSTD=	c11
+USE_CXXSTD=	c++11
 USE_LINUX=	base expat expat:build openssl openssl:build devtools:build
 USE_PERL5=	build
 BUILD_DEPENDS=	${LOCALBASE}/include/expat.h:textproc/expat2 \
 		patchelf>0:sysutils/patchelf \
-		${BUILD_DEPENDS_${FFMPEGARCH}}
-BUILD_DEPENDS_x86=	nasm>0:devel/nasm
+		${BUILD_DEPENDS_${FFMPEG_ARCH}}
+BUILD_DEPENDS_x86=	nasm:devel/nasm
 
-WRKSRC=		${WRKDIR}/makemkv-oss-${PORTVERSION}
+WRKSRC=		${WRKDIR}/makemkv-oss-${DISTVERSION}
+WRKSRC_bin=	${WRKDIR}/makemkv-bin-${DISTVERSION}
+WRKSRC_fdkaac=	${WRKDIR}/fdk-aac-${FDKAACVERSION}
+WRKSRC_ffmpeg=	${WRKDIR}/ffmpeg-${FFMPEGVERSION}
+WRKSRC_openssl=	${WRKDIR}/openssl-${OPENSSLFULLVER}
 
 CONFLICTS_BUILD=	v4l_compat
 
@@ -53,59 +52,54 @@ SUB_LIST=	LINUXBASE=${LINUXBASE}
 PLIST_SUB=	LINUXBASE=${LINUXBASE}
 
 FDKAACVERSION=	2.0.2
-FFMPEGVERSION=	5.0.1
+FFMPEGVERSION=	5.1
 OPENSSLVERSION=	1.0.2
 OPENSSLPATCHLEVEL=	k
 OPENSSLFULLVER=	${OPENSSLVERSION}${OPENSSLPATCHLEVEL}
 
-LINUXARCH=	${ARCH:S/amd64/x86_64/}
-LINUXTRIPLET=	${LINUXARCH}-redhat-linux
-LINUXLIBDIR=	${LINUXBASE}/${"${LINUXARCH:Mi386}" != "":?lib:lib64}
-OPENSSLTARGET=	linux-${LINUXARCH:S/i386/elf/}
-FFMPEGARCH=	${"${LINUXARCH:Maarch64}" != "":?aarch64:x86}
+DISTFL_MAKEMKV=	makemkv-oss-${DISTVERSION}.tar.gz \
+		makemkv-bin-${DISTVERSION}.tar.gz
+DISTFL_FDKAAC=	fdk-aac-${FDKAACVERSION}.tar.gz
+DISTFL_FFMPEG=	ffmpeg-${FFMPEGVERSION}.tar.bz2
+DISTFL_OPENSSL=	openssl-${OPENSSLFULLVER}.tar.gz
 
-OPTIONS_DEFINE=	EXAMPLES
+LINUXLIBDIR=	${LINUXBASE}/${"${ARCH:Mi386}":?lib:lib64}
+OPENSSLTARGET=	linux-${ARCH:S/i386/elf/:S/amd64/x86_64/}
+LINUXLIBS=	libcrypto.so.10 libexpat.so.1 libz.so.1
+LINUXSYSROOT=	${WRKDIR}/gnuroot
 
-PATCHELF_CMD?=	${LOCALBASE}/bin/patchelf
+OPTIONS_DEFINE=		EXAMPLES FDK_AAC
+OPTIONS_DEFAULT=	EXAMPLES
+FDK_AAC_DESC=		Support AAC via statically linked fdk-aac
+FDK_AAC_DISTFILES=	${DISTFL_FDKAAC:=:fdkaac}
+TARGET_ORDER_OVERRIDE=	290:pre-configure-FDK_AAC-on
 
-CPPFLAGS+=	-I${WRKDIR}/gnuroot/include \
-		-I${WRKDIR}/openssl-${OPENSSLFULLVER}/include \
+CC=		${LINUXBASE}/bin/gcc
+CXX=		${LINUXBASE}/bin/g++
+CPPFLAGS+=	-I${LINUXSYSROOT}/include -I${WRKSRC_openssl}/include \
 		-D_linux_ -DFORCE_OPENSSL_NO_EC \
 		${${OSVERSION}<1300000:?-Dcaddr_t=void\* -D__daddr_t_defined:}
-CFLAGS+=	-std=c11
-CXXFLAGS+=	-std=c++11
-LDFLAGS+=	-L${WRKDIR}/gnuroot/lib
+LDFLAGS+=	-L${LINUXSYSROOT}/lib
+PATCHELF_CMD?=	${LOCALBASE}/bin/patchelf
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-gui --host=${LINUXTRIPLET} \
-		--libdir=${PREFIX}/lib/makemkv
-CONFIGURE_ENV=	CC=${LINUXTRIPLET}-gcc CXX=${LINUXTRIPLET}-g++ \
-		PATH=${WRKDIR}/gnuroot/bin:${PATH} \
-		PKG_CONFIG_PATH=${WRKDIR}/gnuroot/lib/pkgconfig
-MAKE_ENV=	PATH=${WRKDIR}/gnuroot/bin:${PATH}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-gui --libdir=${PREFIX}/lib/makemkv
+CONFIGURE_ENV=	PKG_CONFIG_PATH=${LINUXSYSROOT}/lib/pkgconfig
 MAKE_ARGS=	CFLAGS="${CXXFLAGS} ${CPPFLAGS} -std=c11"
-STRIP_CMD=	${WRKDIR}/gnuroot/bin/${LINUXTRIPLET}-strip
+
+FFMPEG_ARCH=		${ARCH:Maarch64:S/^$/x86/}
+FFMPEG_CONFIGURE_ARGS=	--prefix=${LINUXSYSROOT} --pkg-config=pkg-config \
+			--disable-shared --enable-static --enable-pic \
+			--target-os=linux --cc=${CC} \
+			${"${PORT_OPTIONS:MFDK_AAC}":?--enable-libfdk-aac:}
+FFMPEG_CONFIGURE_ENV=	${CONFIGURE_ENV} CFLAGS="${CPPFLAGS} ${CFLAGS}"
+FFMPEG_MAKE_ARGS=	V=1 ARCH=${FFMPEG_ARCH}
+FFMPEG_INSTALL_TARGET=	${ALL_TARGET} ${INSTALL_TARGET}
 
 post-extract:
-		@${MKDIR} ${WRKDIR}/gnuroot/lib
-		@cd ${WRKDIR}/gnuroot/lib; \
-			${LN} -s ${LINUXLIBDIR}/libz.so.1; \
-			${LN} -s libz.so.1 libz.so; \
-			${LN} -s ${LINUXLIBDIR}/libcrypto.so.10; \
-			${LN} -s libcrypto.so.10 libcrypto.so; \
-			${LN} -s ${LINUXLIBDIR}/libexpat.so.1; \
-			${LN} -s libexpat.so.1 libexpat.so
-		@${MKDIR} ${WRKDIR}/gnuroot/include
-		@cd ${WRKDIR}/gnuroot/include; \
-			${LN} -s /usr/include/zlib.h; \
-			${LN} -s /usr/include/zconf.h; \
-			${LN} -s ${LOCALBASE}/include/expat.h; \
-			${LN} -s ${LOCALBASE}/include/expat_config.h; \
-			${LN} -s ${LOCALBASE}/include/expat_external.h
-		@${MKDIR} ${WRKDIR}/gnuroot/bin
-		@cd ${WRKDIR}/gnuroot/bin; \
-		for t in gcc link ld objdump ar nm strip ranlib g++; do \
-			${LN} -s ${LINUXBASE}/bin/$$t ${LINUXTRIPLET}-$$t; \
-		done
+		@${MKDIR} ${LINUXSYSROOT}/lib
+.for lib in ${LINUXLIBS}
+		@${LN} -s ${LINUXLIBDIR}/${lib} ${LINUXSYSROOT}/lib/${lib:R}
+.endfor
 
 post-patch:
 		@${REINPLACE_CMD} -e 's:INSTALL) -D:INSTALL):' \
@@ -116,34 +110,22 @@ post-patch:
 			-e 's:-t \([^ ]*\) \([^ ]*\):\2 \1:' \
 			-e 's:ARCH=:BINARCH=:' \
 			-e 's:bin/$$(ARCH:bin/$$(BINARCH:' \
-			${WRKDIR}/makemkv-bin-${PORTVERSION}/Makefile
+			${WRKSRC_bin}/Makefile
+
+pre-configure-FDK_AAC-on:
+		cd ${WRKSRC_fdkaac}; \
+		${CONFIGURE_ENV} CXX=${CXX} \
+		./configure --prefix=${LINUXSYSROOT} --disable-silent-rules \
+			--disable-shared --enable-static --with-pic; \
+		${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${INSTALL_TARGET}
 
 pre-configure:
-		# FDK AAC
-		cd ${WRKDIR}/fdk-aac-${FDKAACVERSION}; \
-		export PATH=${WRKDIR}/gnuroot/bin:$$PATH; \
-		export CXXFLAGS="${CXXFLAGS}"; \
-		LDFLAGS=-L${WRKDIR}/gnuroot/lib \
-		./configure --prefix=${WRKDIR}/gnuroot \
-			--disable-shared --enable-static --with-pic \
-			--host=${LINUXTRIPLET} --disable-silent-rules; \
-		${MAKE_CMD} ${_MAKE_JOBS} install
-		# ffmpeg
-		cd ${WRKDIR}/ffmpeg-${FFMPEGVERSION}; \
-		export PATH=${WRKDIR}/gnuroot/bin:$$PATH; \
-		export CFLAGS="${CFLAGS}"; \
-		export CPPFLAGS="${CPPFLAGS}"; \
-		PKG_CONFIG_PATH=${WRKDIR}/gnuroot/lib/pkgconfig \
-		LDFLAGS=-L${WRKDIR}/gnuroot/lib \
-		./configure --prefix=${WRKDIR}/gnuroot \
-			--disable-shared --enable-static --enable-pic \
-			--enable-libfdk-aac --pkg-config=pkg-config \
-			--cross-prefix=${LINUXTRIPLET}- --arch=${LINUXARCH} \
-			--target-os=linux --host-cc=${CC}; \
-		CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \
-		${MAKE_CMD} ${_MAKE_JOBS} V=1 ARCH=${FFMPEGARCH} all install
+		cd ${WRKSRC_ffmpeg}; \
+		${FFMPEG_CONFIGURE_ENV} ./configure ${FFMPEG_CONFIGURE_ARGS}; \
+		${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} \
+			${FFMPEG_MAKE_ARGS} ${FFMPEG_INSTALL_TARGET}
 		# OpenSSL headers
-		cd ${WRKDIR}/openssl-${OPENSSLFULLVER}; \
+		cd ${WRKSRC_openssl}; \
 		./Configure --openssldir= --prefix=/usr ${OPENSSLTARGET}
 
 pre-install:
@@ -152,7 +134,7 @@ pre-install:
 post-install:
 		${INSTALL_MAN} ${FILESDIR}/makemkvcon.1 \
 			${STAGEDIR}${PREFIX}/man/man1
-		cd ${WRKDIR}/makemkv-bin-${PORTVERSION}; \
+		cd ${WRKSRC_bin}; \
 		${MKDIR} tmp; \
 		${ECHO_CMD} accepted > tmp/eula_accepted; \
 		${MAKE_CMD} DESTDIR=${STAGEDIR} PREFIX=${PREFIX} install
