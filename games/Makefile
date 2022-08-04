@@ -1009,6 +1009,7 @@
     SUBDIR += urbanterror-data
     SUBDIR += valyriatear
     SUBDIR += vamos
+    SUBDIR += vanilla-conquer
     SUBDIR += vavoom
     SUBDIR += vavoom-extras
     SUBDIR += vectoroids
