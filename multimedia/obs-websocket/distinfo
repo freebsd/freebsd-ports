@@ -1,5 +1,9 @@
-TIMESTAMP = 1655971074
-SHA256 (obsproject-obs-websocket-4.8.0_GH0.tar.gz) = a0b99f8039225305af36ef84d353155173d5878f56187a8988a827b487f15781
-SIZE (obsproject-obs-websocket-4.8.0_GH0.tar.gz) = 173336
+TIMESTAMP = 1659569302
+SHA256 (obsproject-obs-websocket-5.0.1_GH0.tar.gz) = eb0387788f6b1ed4868db1bbe2572879057027bc06e1ebc0e1d284b419244f33
+SIZE (obsproject-obs-websocket-5.0.1_GH0.tar.gz) = 211686
 SHA256 (chriskohlhoff-asio-b73dc1d2c0ecb9452a87c26544d7f71e24342df6_GH0.tar.gz) = e4a5f556e3d562c71f9e569ffa64eae665abd2c61d85a2d275c86042b32f9342
 SIZE (chriskohlhoff-asio-b73dc1d2c0ecb9452a87c26544d7f71e24342df6_GH0.tar.gz) = 1211725
+SHA256 (nlohmann-json-a34e011_GH0.tar.gz) = 8580814d7748cb417eb4e89bab32ae2473ecf055d33cdf18044f09f84eab2db8
+SIZE (nlohmann-json-a34e011_GH0.tar.gz) = 6860457
+SHA256 (nayuki-QR-Code-generator-8518684_GH0.tar.gz) = 0fa3e16822e66343d10ba0ba2787378e44d88686d9836476d2df041a59b729e9
+SIZE (nayuki-QR-Code-generator-8518684_GH0.tar.gz) = 135743

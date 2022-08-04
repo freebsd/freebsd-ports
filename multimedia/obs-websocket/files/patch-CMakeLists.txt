@@ -1,0 +1,23 @@
+- workaround for
+- * https://github.com/obsproject/obs-websocket/issues/973
+- * https://github.com/obsproject/obs-websocket/issues/974
+--- CMakeLists.txt.orig	2022-08-02 21:52:49 UTC
++++ CMakeLists.txt
+@@ -77,7 +77,7 @@ add_subdirectory(deps/json)
+ # Configure files
+ configure_file(
+ 	src/plugin-macros.h.in
+-	../src/plugin-macros.generated.h
++	src/plugin-macros.generated.h
+ )
+ configure_file(
+ 	installer/installer-windows.iss.in
+@@ -303,7 +303,7 @@ endif()
+ if(UNIX AND NOT APPLE)
+ 	include(GNUInstallDirs)
+ 
+-	target_compile_options(obs-websocket PRIVATE -Wall -Wextra -Wpedantic -Werror -Wno-missing-field-initializers)
++	target_compile_options(obs-websocket PRIVATE -Wall -Wextra -Wpedantic -Wno-missing-field-initializers)
+ 
+ 	set_target_properties(obs-websocket PROPERTIES PREFIX "")
+ 	target_link_libraries(obs-websocket obs-frontend-api)
