@@ -185,7 +185,7 @@ PHP_VER=	${FLAVOR:S/^php//}
 # Mk/bsd.default-versions.mk in sync.
 .    if ${PHP_VER} == 82
 PHP_EXT_DIR=   20210903
-PHP_EXT_INC=    hash json openssl pcre spl
+PHP_EXT_INC=    hash json openssl pcre random spl
 .    elif ${PHP_VER} == 81
 PHP_EXT_DIR=   20210902
 PHP_EXT_INC=    hash json openssl pcre spl
@@ -387,8 +387,8 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		memcache memcached mysqli odbc opcache \
 		openssl pcntl pcre pdo pdo_dblib pdo_firebird pdo_mysql \
 		pdo_odbc pdo_pgsql pdo_sqlite phar pgsql posix \
-		pspell radius readline redis session shmop simplexml snmp soap\
-		sockets sodium spl sqlite3 sysvmsg sysvsem sysvshm \
+		pspell radius random readline redis session shmop simplexml snmp \
+		soap sockets sodium spl sqlite3 sysvmsg sysvsem sysvshm \
 		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
 _USE_PHP_VER74=	${_USE_PHP_ALL} pdf

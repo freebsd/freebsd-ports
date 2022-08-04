@@ -1,4 +1,4 @@
---- configure.ac.orig	2021-12-15 02:00:45 UTC
+--- configure.ac.orig	2022-08-02 13:57:03 UTC
 +++ configure.ac
 @@ -55,6 +55,7 @@ AH_BOTTOM([
  
@@ -8,7 +8,7 @@
  #endif /* PHP_CONFIG_H */
  ])
  
-@@ -273,7 +274,6 @@ sinclude(Zend/Zend.m4)
+@@ -279,7 +280,6 @@ dnl --------------------------------------------------
  
  dnl ----------------------------------------------------------------------------
  
@@ -16,7 +16,7 @@
  PHP_HELP_SEPARATOR([SAPI modules:])
  PHP_SHLIB_SUFFIX_NAMES
  PHP_BUILD_PROGRAM
-@@ -614,7 +614,7 @@ memmem \
+@@ -627,7 +627,7 @@ dnl Some systems (like OpenSolaris) do not have nanosl
  AX_FUNC_WHICH_GETHOSTBYNAME_R
  
  dnl Some systems (like OpenSolaris) do not have nanosleep in libc.
@@ -25,7 +25,7 @@
  
  dnl Haiku does not have network api in libc.
  PHP_CHECK_FUNC_LIB(setsockopt, network)
-@@ -1360,7 +1360,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1375,7 +1375,7 @@ EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CON
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
@@ -34,7 +34,7 @@
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1579,7 +1579,7 @@ PHP_SUBST(all_targets)
+@@ -1600,7 +1600,7 @@ PHP_SUBST(install_binary_targets)
  PHP_SUBST(install_targets)
  PHP_SUBST(install_binary_targets)
  

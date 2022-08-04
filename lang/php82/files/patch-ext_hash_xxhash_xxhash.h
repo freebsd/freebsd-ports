@@ -1,6 +1,6 @@
---- ext/hash/xxhash/xxhash.h.orig	2022-01-04 18:37:17 UTC
+--- ext/hash/xxhash/xxhash.h.orig	2022-08-02 13:57:03 UTC
 +++ ext/hash/xxhash/xxhash.h
-@@ -2395,22 +2395,32 @@ XXH_PUBLIC_API XXH64_hash_t XXH64_hashFromCanonical(co
+@@ -3048,22 +3048,32 @@ enum XXH_VECTOR_TYPE /* fake enum */ {
   * inconsistent intrinsics, spotty coverage, and multiple endiannesses.
   */
  #if XXH_VECTOR == XXH_VSX

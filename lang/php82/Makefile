@@ -1,5 +1,5 @@
 PORTNAME=	php82
-DISTVERSION=	8.2.0alpha3
+DISTVERSION=	8.2.0beta2
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~sergey/
@@ -142,19 +142,30 @@ post-build:
 	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} -n "PHP_EXT_DIR=" >> ${WRKDIR}/php.conf
 	@${SH} ${WRKSRC}/scripts/php-config --extension-dir | ${SED} -ne 's,^${PREFIX}/lib/php/,,p' >> ${WRKDIR}/php.conf
-	@${ECHO_CMD} "PHP_EXT_INC=hash json openssl pcre spl" >> ${WRKDIR}/php.conf
+	@${ECHO_CMD} "PHP_EXT_INC=hash json openssl pcre random spl" >> ${WRKDIR}/php.conf
 
 test: build
 	@(cd ${WRKSRC} && ${MAKE} test)
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php-cgi
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/phpdbg
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libphp.so
-	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/sbin/php-fpm
 	${INSTALL_DATA} ${WRKSRC}/php.ini-development ${WRKSRC}/php.ini-production \
 		${WRKDIR}/php.conf ${STAGEDIR}/${PREFIX}/etc
+
+post-install-CLI-on:
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php
+
+post-install-CGI-on:
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/php-cgi
+
+post-install-EMBED-on:
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libphp.so
+
+post-install-FPM-on:
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/sbin/php-fpm
+
+post-install-PHPDBG-on:
+	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/phpdbg
+
 .else
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
