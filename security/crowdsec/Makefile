@@ -1,7 +1,6 @@
 PORTNAME=	crowdsec
-PORTVERSION=	1.3.4	# NOTE: change BUILD_VERSION and BUILD_TAG as well
-PORTREVISION=	3
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4.1
 CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net
@@ -10,20 +9,19 @@ COMMENT=	CrowdSec lightweight and collaborative security engine
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	git:devel/git@lite \
-		jq:textproc/jq
+BUILD_DEPENDS=	git:devel/git@lite
 
 USES=		gmake go:no_targets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crowdsecurity
 GH_PROJECT=	crowdsec
-GH_TAGNAME=	v1.3.4-freebsd
-#GH_TAGNAME is automatically set from DISTVERSION
+GH_TAGNAME=	${DISTVERSIONFULL}-freebsd
+_BUILD_TAG=	527995f
 USE_RC_SUBR=	crowdsec
 
-MAKE_ENV=	BUILD_VERSION="v1.3.4" \
-		BUILD_TAG="c196ed45b62c12d9c6549da927c37c64bd08c642" \
+MAKE_ENV=	BUILD_VERSION="${DISTVERSIONFULL}" \
+		BUILD_TAG="${_BUILD_TAG}" \
 		DEFAULT_CONFIGDIR="${PREFIX}/etc/crowdsec" \
 		DEFAULT_DATADIR="/var/db/crowdsec/data"
 ALL_TARGET=	build
@@ -131,6 +129,9 @@ do-install:
 	@${RM} ${STAGEDIR}${ETCDIR}/crowdsec.service
 	@${RM} ${STAGEDIR}${ETCDIR}/dev.yaml
 	@${RM} ${STAGEDIR}${ETCDIR}/user.yaml
+	@${RM} ${STAGEDIR}${ETCDIR}/acquis_win.yaml
+	@${RM} ${STAGEDIR}${ETCDIR}/config_win.yaml
+	@${RM} ${STAGEDIR}${ETCDIR}/config_win_no_lapi.yaml
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/email
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/http
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/slack
