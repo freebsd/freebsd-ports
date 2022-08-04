@@ -24,6 +24,7 @@ bin/auto-ssh-authorize
 bin/auto-ssh-reverse-authorize
 bin/auto-update-pkgsrc
 bin/auto-using-pkgsrc
+bin/auto-wacom-map-display
 man/man1/auto-add-swap.1.gz
 man/man1/auto-admin.1.gz
 man/man1/auto-update-system.1.gz
@@ -154,8 +155,10 @@ sbin/auto-update-system
 sbin/auto-upgrade-base
 sbin/auto-user-admin
 sbin/auto-useradd
+sbin/auto-wacom-setup
 sbin/auto-web-self-sign
 sbin/auto-web-setup
+sbin/auto-webcam-setup
 sbin/auto-wifi-failover
 sbin/auto-write-cache-toggle
 sbin/auto-xdm-toggle
