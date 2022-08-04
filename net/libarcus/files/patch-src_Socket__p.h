@@ -1,8 +1,4 @@
-Deprecated 2-parameter SetTotalBytesLimit() has be removed since protobuf 3.18.0.
-
-Reference:	https://github.com/protocolbuffers/protobuf/commit/cda795437d00a15f375d3d5e2659adac715459c6
-
---- src/Socket_p.h.orig	2021-10-12 08:14:23 UTC
+--- src/Socket_p.h.orig	2022-04-14 03:31:38 UTC
 +++ src/Socket_p.h
 @@ -548,7 +548,7 @@ namespace Arcus
  

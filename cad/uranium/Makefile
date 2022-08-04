@@ -1,7 +1,6 @@
 PORTNAME=	Uranium
-DISTVERSION=	4.8
-PORTREVISION=	4
 PORTEPOCH=	1
+DISTVERSION=	4.13.1
 CATEGORIES=	cad
 DIST_SUBDIR=	Ultimaker
 
@@ -20,7 +19,6 @@ USES=		cmake gettext python:3.5+ pyqt:5
 USE_PYQT=	pyqt5
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
-GH_TAGNAME=	3ed9c4de
 STRIP=
 NO_ARCH=	yes
 

@@ -1,10 +1,10 @@
 PORTNAME=	pynest2d
-DISTVERSION=	4.12.1
-PORTREVISION=	1
+# XXX there is no 4.13.1
+DISTVERSION=	4.12.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	y@trombik.org
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	CPython bindings for libnest2d by Ultimaker
 
 LICENSE=	LGPL3
@@ -21,7 +21,7 @@ USES=		python:3.6+ cmake compiler:c++11-lang pyqt:5 pkgconfig
 USE_PYTHON=	flavors
 
 USE_GITHUB=	yes
-GH_TUPLE=	Ultimaker:pynest2d:baec470
+GH_ACCOUNT=	Ultimaker
 CMAKE_ARGS=	-DLIBNEST2D_INCLUDE_DIRS=${PREFIX}/include/libnest2d
 
 CONFIGURE_ENV=	CLIPPER_PATH=${LOCALBASE} VERBOSE=y
