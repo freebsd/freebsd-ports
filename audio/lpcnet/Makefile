@@ -1,5 +1,6 @@
 PORTNAME=	lpcnet
 PORTVERSION=	20210629
+PORTREVISION=	1
 CATEGORIES=	audio hamradio
 MASTER_SITES=	http://rowetel.com/downloads/deep/:main \
 		GH:sub
