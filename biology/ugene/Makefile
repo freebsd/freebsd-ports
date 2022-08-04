@@ -10,6 +10,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_aarch64=	Fails to build: invokes x86 asm
 BROKEN_riscv64=	Fails to build: invokes x86 asm
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
 
 RUN_DEPENDS=	bash:shells/bash
 
