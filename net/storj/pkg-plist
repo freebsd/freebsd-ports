@@ -6,6 +6,7 @@ bin/metabase-orphaned-segments
 bin/metabase-verify
 bin/metric-receiver
 bin/multinode
+bin/node-cleanup
 bin/nullify-bad-user-agents
 bin/satellite
 bin/storagenode
