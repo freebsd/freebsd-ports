@@ -7054,6 +7054,7 @@
     SUBDIR += rubygem-zentest
     SUBDIR += rubygem-zhexdump
     SUBDIR += rubygem-zlib
+    SUBDIR += rubygem-zstd-ruby
     SUBDIR += rubymine
     SUBDIR += rudeconfig
     SUBDIR += rudiments
