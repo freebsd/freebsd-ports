@@ -45,7 +45,7 @@ BUILD_DEPENDS+=	curl:ftp/curl
 
 do-build:
 	# build, download dependencies during build, and save build log with URLs in it
-	@set -e; set -o pipefail; cd ${WRKSRC} && (${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${TARGET_ALL} 2>&1 | tee -a ${WRKDIR}/build.log)
+	@set -e; set -o pipefail; cd ${WRKSRC} && (${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${TARGET_ALL} | tee -a ${WRKDIR}/build.log)
 	# compute Makefile.deps based on URLs in build.log
 	@${FILESDIR}/build-log-to-makefile-deps ${WRKDIR}/build.log > Makefile.deps
 .else
