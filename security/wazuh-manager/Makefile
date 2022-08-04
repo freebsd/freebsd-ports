@@ -1,5 +1,6 @@
 PORTNAME=	wazuh
 DISTVERSION=	4.3.6
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/16/libraries/sources/:wazuh_sources \
@@ -116,7 +117,7 @@ WAZUHPREFIX=	/var/ossec
 .if ${OSVERSION} >= 1200500 && ${OSVERSION} < 1300000
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd12-${ARCH}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
-.elif ${OSVERSION} >= 1300500 && ${OSVERSION} < 1400000
+.elif ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .endif
