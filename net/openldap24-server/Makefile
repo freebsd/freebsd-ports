@@ -33,9 +33,9 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 .if defined(CLIENT_ONLY)
-CONFLICTS_INSTALL=	${PORTNAME}2[0-3][5-9]-client ${PORTNAME}-client
+CONFLICTS_INSTALL=	${PORTNAME}2[0-3][5-9]-client ${PORTNAME}2[0-35-9]-client ${PORTNAME}-client
 .else
-CONFLICTS_INSTALL=	${PORTNAME}2[0-3][5-9]-server ${PORTNAME}-server
+CONFLICTS_INSTALL=	${PORTNAME}2[0-3][5-9]-server ${PORTNAME}2[0-35-9]-server ${PORTNAME}-server
 .endif
 
 GNU_CONFIGURE=		yes
