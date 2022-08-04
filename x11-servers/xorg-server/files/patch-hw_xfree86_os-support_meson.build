@@ -1,0 +1,11 @@
+--- hw/xfree86/os-support/meson.build.orig	2022-08-04 15:48:52 UTC
++++ hw/xfree86/os-support/meson.build
+@@ -113,7 +113,7 @@ elif host_machine.system().endswith('bsd')
+         endif
+     elif host_machine.cpu_family() == 'arm'
+         srcs_xorg_os_support += 'bsd/arm_video.c'
+-    elif host_machine.cpu_family() == 'powerpc'
++    elif host_machine.cpu_family() == 'powerpc' or host_machine.cpu_family() == 'ppc64'
+         srcs_xorg_os_support += 'bsd/ppc_video.c'
+     elif host_machine.cpu_family() == 'sparc64'
+         srcs_xorg_os_support += 'bsd/sparc64_video.c'
