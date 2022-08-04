@@ -10,8 +10,9 @@ COMMENT=	Integrated bioinformatics toolkit
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_aarch64=	Fails to build: invokes x86 asm
-BROKEN_riscv64=	Fails to build: invokes x86 asm
+BROKEN_aarch64=	fails to build: invokes x86 asm
+BROKEN_armv7=	fails to build: src/SendReportDialog.cpp:435:20: error: invalid output constraint '=a' in asm, see https://github.com/ugeneunipro/ugene/issues/919
+BROKEN_riscv64=	fails to build: invokes x86 asm
 
 RUN_DEPENDS=	bash:shells/bash
 
