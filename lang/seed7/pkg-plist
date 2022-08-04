@@ -2,6 +2,7 @@ bin/s7
 bin/s7c
 %%DATADIR%%/seed7.vim
 %%DATADIR%%/sd7.vim
+%%DATADIR%%/seed7.nanorc
 lib/seed7/bin/s7_comp.a
 lib/seed7/bin/s7_con.a
 lib/seed7/bin/s7_data.a
@@ -167,6 +168,7 @@ lib/seed7/lib/msgdigest.s7i
 lib/seed7/lib/multiscr.s7i
 lib/seed7/lib/null_file.s7i
 lib/seed7/lib/osfiles.s7i
+lib/seed7/lib/pem.s7i
 lib/seed7/lib/pic_util.s7i
 lib/seed7/lib/pic16.s7i
 lib/seed7/lib/pic32.s7i
