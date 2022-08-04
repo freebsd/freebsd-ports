@@ -10,10 +10,6 @@ COMMENT=	Remote protein homology detection suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-.if !exists(/usr/include/omp.h)
-BROKEN=		requires OpenMP support that is missing on this architecture
-.endif
-
 LIB_DEPENDS=	libmpi.so:net/openmpi
 
 USES=		compiler:c++11-lang cmake perl5 python shebangfix
