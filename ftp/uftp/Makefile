@@ -1,5 +1,5 @@
 PORTNAME=	uftp
-PORTVERSION=	5.0
+PORTVERSION=	5.0.1
 PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/uftp-multicast/source-tar
