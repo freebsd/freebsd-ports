@@ -195,9 +195,9 @@ _USES_extract+=	800:go-post-extract
 # already in MODCACHE), vendor them so we can patch them if needed.
 go-post-extract:
 	@${ECHO_MSG} "===> Tidying ${GO_MODNAME} dependencies";
-	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod tidy -e)
+	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod tidy -e)
 	@${ECHO_MSG} "===> Vendoring ${GO_MODNAME} dependencies";
-	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod vendor -e)
+	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=${GO_MODCACHE} ${GO_CMD} mod vendor -e)
 .  else
 # Legacy (GOPATH) build mode, setup directory structure expected by Go for the main module.
 go-post-extract:
