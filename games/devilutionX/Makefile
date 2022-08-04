@@ -1,5 +1,5 @@
 PORTNAME=	devilutionX
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/diasurgical/devilutionx-assets/releases/download/${DATA_VERSION}/:data
 DISTFILES=	devilutionx.mpq?tag=${DATA_VERSION}:data
@@ -13,14 +13,13 @@ LICENSE_COMB=	multi
 LICENSE_FILE_UNLICENSE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfmt.so:devel/libfmt
+BUILD_DEPENDS=	${LOCALBASE}/include/SimpleIni.h:devel/simpleini
 
 USES=		cmake compiler:c++11-lang dos2unix gettext-tools pkgconfig sdl
 DOS2UNIX_GLOB=	*.cpp *.h CMakeLists.txt
 USE_GITHUB=	yes
 GH_ACCOUNT=	diasurgical
-GH_TAGNAME=	3779a811f176173a4e6450449355449cc3b5d484
 GH_TUPLE=	diasurgical:libsmackerdec:2997ee0e41e91bb723003bc09234be553b190e38:libsmackerdec/_deps/libsmackerdec-src \
-		brofield:simpleini:9b3ed7ec815997bc8c5b9edf140d6bde653e1458:simpleini/_deps/simpleini-src \
 		diasurgical:libmpq:0f10bd1600f406b13932bf5351ba713361262184:libmpq/_deps/libmpq-src
 USE_SDL=	sdl2 image2
 
@@ -51,7 +50,7 @@ ZEROTIER_DESC=		ZeroTier multiplayer option (broken)
 ZEROTIER_BROKEN=	does not build: fatal error: 'sys/appleapiopts.h' file not found
 ZEROTIER_CMAKE_BOOL_OFF=DISABLE_ZERO_TIER
 ZEROTIER_IMPLIES=	NETWORK
-ZEROTIER_GH_TUPLE=	diasurgical:libzt:a34ba7f1cc2e41b05badd25d1b01fdc5fd2f4e02:libzt/_deps/libzt-src \
+ZEROTIER_GH_TUPLE=	diasurgical:libzt:37a2efb0b925df632299ef07dc78c0af5f6b4756:libzt/_deps/libzt-src \
 			diasurgical:ZeroTierOne:b1350ac91118d1bd6bb71c0c41be5f4a30196838:ZeroTierOne/_deps/libzt-src/ext/ZeroTierOne \
 			diasurgical:lwip:1bf7e011caf4e992ad139f6cb8c9818a9c1fbe1b:lwip/_deps/libzt-src/ext/lwip \
 			diasurgical:lwip-contrib:1f9e26e221a41542563834222c4ec8399be1908f:lwipcontrib/_deps/libzt-src/ext/lwip-contrib
@@ -62,7 +61,7 @@ ENCRYPTION_IMPLIES=	NETWORK
 ENCRYPTION_LIB_DEPENDS=	libsodium.so:security/libsodium
 
 SOUND_CMAKE_BOOL_OFF=	NOSOUND
-SOUND_GH_TUPLE=		realnc:SDL_audiolib:1a69135313c79817b38a3a99826d4ac28d627fdf:SDL_audiolib/_deps/sdl_audiolib-src
+SOUND_LIB_DEPENDS=	libSDL_audiolib.so:audio/sdl_audiolib
 
 LTO_CMAKE_BOOL_OFF=	DISABLE_LTO
 
