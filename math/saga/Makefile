@@ -10,6 +10,10 @@ COMMENT=	System for Automated Geoscientific Analyses
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		swig:devel/swig
 LIB_DEPENDS=	libcurl.so:ftp/curl \
