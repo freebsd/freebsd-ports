@@ -1,5 +1,5 @@
 PORTNAME=	jwasm
-PORTVERSION=	2.14
+PORTVERSION=	2.15
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -16,7 +16,7 @@ USES=		alias dos2unix gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	Baron-von-Riedesel
 GH_PROJECT=	JWasm
-GH_TAGNAME=	f0a2fdd
+GH_TAGNAME=	5a5714d
 
 OPTIONS_DEFINE=	DOCS
 
