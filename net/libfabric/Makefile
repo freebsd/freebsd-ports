@@ -9,6 +9,8 @@ COMMENT=	Open Fabric Interfaces
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_riskv64=	configure breaks: Cannot continue, see https://github.com/ofiwg/libfabric/issues/7925
+
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 
 USES=		gmake libtool pkgconfig tar:bz2
