@@ -8,6 +8,10 @@ COMMENT=	Simplified raw editor with the power of film
 
 LICENSE=	GPLv3+
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexiv2.so:graphics/exiv2 \
 		liblensfun.so:graphics/lensfun \
