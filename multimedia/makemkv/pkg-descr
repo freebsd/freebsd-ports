@@ -6,17 +6,8 @@ converter, otherwise called "transcoder". It converts the video clips from
 proprietary (and usually encrypted) disc into a set of MKV files, preserving
 most information but not changing it in any way.
 
-Known issues on FreeBSD:
-
-* Only the commandline interface works, so there is no GUI in this port. The
-  port includes a small manpage to get you started using makemkvcon.
-* makemkvcon always crashes on exit (after completing its job), so be aware
-  this might leave core files on your system.
-* To find optical drives, makemkvcon uses some entries from Linux' sysfs that
-  aren't present on FreeBSD. A script `update-makemkv-drives` is included with
-  the port that fakes these entries. It is run automatically on installation,
-  but if the system's configuration changes, it must be run manually again by
-  root.
+Only the commandline interface works, so there is no GUI in this port. The port
+includes a small manpage to get you started using makemkvcon.
 
 Requirements:
 
