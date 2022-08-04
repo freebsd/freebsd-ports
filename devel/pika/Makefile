@@ -1,6 +1,5 @@
 PORTNAME=	pika
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/pika-org/pika/commit/
@@ -11,9 +10,6 @@ COMMENT=	C++ library for concurrency and parallelism
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
-
-BROKEN_aarch64=	error: 'regparm' is not valid on this platform, see https://github.com/pika-org/pika/issues/331
-BROKEN_armv6=	error: 'regparm' is not valid on this platform, see https://github.com/pika-org/pika/issues/331
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
@@ -26,6 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pika-org
 
 CMAKE_ON=	PIKA_WITH_MALLOC
+CMAKE_ON+=	PIKA_WITH_GENERIC_CONTEXT_COROUTINES # prerequisite, build breaks on aarch64, armv6 w/out it
 CMAKE_TESTING_ON=	PIKA_WITH_TESTS PIKA_WITH_TESTS_UNIT # unclear how to run tests
 CMAKE_TESTING_TARGET=	tests test
 

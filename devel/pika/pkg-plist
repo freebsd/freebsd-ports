@@ -12,7 +12,6 @@ include/pika/allocator_support/allocator_deleter.hpp
 include/pika/allocator_support/config/defines.hpp
 include/pika/allocator_support/internal_allocator.hpp
 include/pika/allocator_support/traits/is_allocator.hpp
-include/pika/any.hpp
 include/pika/assert.hpp
 include/pika/assertion/config/defines.hpp
 include/pika/assertion/current_function.hpp
@@ -101,7 +100,6 @@ include/pika/coroutines/detail/context_impl.hpp.orig
 include/pika/coroutines/detail/context_linux_x86.hpp
 include/pika/coroutines/detail/context_linux_x86.hpp.orig
 include/pika/coroutines/detail/context_posix.hpp
-include/pika/coroutines/detail/context_posix.hpp.orig
 include/pika/coroutines/detail/context_windows_fibers.hpp
 include/pika/coroutines/detail/coroutine_accessor.hpp
 include/pika/coroutines/detail/coroutine_impl.hpp
@@ -116,17 +114,12 @@ include/pika/coroutines/stackless_coroutine.hpp
 include/pika/coroutines/thread_enums.hpp
 include/pika/coroutines/thread_id_type.hpp
 include/pika/cuda.hpp
-include/pika/datastructures/any.hpp
 include/pika/datastructures/config/defines.hpp
 include/pika/datastructures/detail/small_vector.hpp
 include/pika/datastructures/detail/variant.hpp
 include/pika/datastructures/member_pack.hpp
-include/pika/datastructures/optional.hpp
 include/pika/datastructures/traits/is_tuple_like.hpp
-include/pika/datastructures/traits/supports_streaming_with_any.hpp
-include/pika/datastructures/tuple.hpp
 include/pika/datastructures/variant.hpp
-include/pika/datastructures/variant_helper.hpp
 include/pika/debugging/attach_debugger.hpp
 include/pika/debugging/backtrace.hpp
 include/pika/debugging/backtrace/backtrace.hpp
@@ -308,6 +301,9 @@ include/pika/futures/traits/promise_local_result.hpp
 include/pika/futures/traits/promise_remote_result.hpp
 include/pika/hardware/bit_manipulation.hpp
 include/pika/hardware/config/defines.hpp
+include/pika/hardware/cpuid.hpp.orig
+include/pika/hardware/cpuid/linux_x86.hpp.orig
+include/pika/hardware/cpuid/msvc.hpp.orig
 include/pika/hardware/timestamp.hpp
 include/pika/hardware/timestamp/bgq.hpp
 include/pika/hardware/timestamp/cuda.hpp
@@ -421,7 +417,6 @@ include/pika/modules/util.hpp
 include/pika/mpi.hpp
 include/pika/mutex.hpp
 include/pika/numeric.hpp
-include/pika/optional.hpp
 include/pika/pack_traversal/config/defines.hpp
 include/pika/pack_traversal/detail/container_category.hpp
 include/pika/pack_traversal/detail/pack_traversal_async_impl.hpp
@@ -748,7 +743,6 @@ include/pika/thread_support/atomic_count.hpp
 include/pika/thread_support/config/defines.hpp
 include/pika/thread_support/set_thread_name.hpp
 include/pika/thread_support/spinlock.hpp
-include/pika/thread_support/thread_specific_ptr.hpp
 include/pika/thread_support/unlock_guard.hpp
 include/pika/threading/config/defines.hpp
 include/pika/threading/jthread.hpp
@@ -788,15 +782,12 @@ include/pika/threading_base/threading_base_fwd.hpp
 include/pika/threadmanager/config/defines.hpp
 include/pika/threadmanager/threadmanager_fwd.hpp
 include/pika/timing/config/defines.hpp
-include/pika/timing/high_resolution_clock.hpp
 include/pika/timing/high_resolution_timer.hpp
-include/pika/timing/scoped_timer.hpp
 include/pika/timing/steady_clock.hpp
 include/pika/timing/tick_counter.hpp
 include/pika/topology/config/defines.hpp
 include/pika/topology/cpu_mask.hpp
 include/pika/topology/topology.hpp
-include/pika/tuple.hpp
 include/pika/type_support/config/defines.hpp
 include/pika/type_support/decay.hpp
 include/pika/type_support/detail/with_result_of.hpp
@@ -808,7 +799,6 @@ include/pika/type_support/identity.hpp
 include/pika/type_support/lazy_conditional.hpp
 include/pika/type_support/lazy_enable_if.hpp
 include/pika/type_support/pack.hpp
-include/pika/type_support/static.hpp
 include/pika/type_support/unused.hpp
 include/pika/type_support/unwrap_ref.hpp
 include/pika/type_support/void_guard.hpp
@@ -934,4 +924,4 @@ lib/cmake/pika/tests/stable_inplace_merge.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.6.0
+lib/libpika.so.0.7.0
