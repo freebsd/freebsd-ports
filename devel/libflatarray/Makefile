@@ -10,6 +10,10 @@ COMMENT=	Struct of arrays library with object oriented interface for C++
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+.if !exists(/usr/include/omp.h)
+BROKEN=		requires OpenMP support that is missing on this architecture
+.endif
+
 BROKEN_armv7=	test/estimate_optimum_short_vec_type_test.cpp:71:22: error: redefinition of 'expected_arity_for_double'
 
 BUILD_DEPENDS=	boost-libs>=1.48:devel/boost-libs
