@@ -1,5 +1,5 @@
 PORTNAME=	fastapi
-PORTVERSION=	0.78.0
+PORTVERSION=	0.79.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydantic>=1.6.2:devel/py-pydantic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}starlette>=0.19.1:www/py-starlette@${PY_FLAVOR}
 
-USES=		cpe python:3.6+
+USES=		cpe python:3.7+
 CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist concurrent distutils
 
