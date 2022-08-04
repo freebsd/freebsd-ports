@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.1
 CATEGORIES=	devel
 
-MAINTAINER=	kfv@kfv.io
+MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Vishap package manager
 
 LICENSE=	GPLv3

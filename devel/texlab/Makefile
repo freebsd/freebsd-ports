@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.0
 CATEGORIES=	devel
 
-MAINTAINER=	kfv@kfv.io
+MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Language Server Protocol for LaTeX
 
 LICENSE=	GPLv3

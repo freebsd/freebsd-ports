@@ -4,7 +4,7 @@ DISTVERSION=	1.19.12
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	kfv@kfv.io
+MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Cloudflare Workers CLI Tool
 
 LICENSE=	APACHE20 MIT

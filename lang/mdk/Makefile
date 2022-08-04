@@ -3,7 +3,7 @@ PORTVERSION=	1.3.0
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNU/${PORTNAME}/v${PORTVERSION}
 
-MAINTAINER=	kfv@kfv.io
+MAINTAINER=	antranigv@freebsd.am
 COMMENT=	Utilities for developing programs using MIX and MIXAL
 
 LICENSE=	GPLv3
