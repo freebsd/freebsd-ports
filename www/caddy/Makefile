@@ -22,9 +22,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 GO_TARGET=	./cmd/caddy
 # If go.mod is sufficient:
-GO_MODULE=	github.com/caddyserver/caddy/v2
+# GO_MODULE=	github.com/caddyserver/caddy/v2
 # If modules must be specified manually:
-# .include "${.CURDIR}/modules.mk"
+.include "${.CURDIR}/modules.mk"
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
