@@ -795,6 +795,7 @@
     SUBDIR += tetraproc
     SUBDIR += thunar-media-tags-plugin
     SUBDIR += tiatracker
+    SUBDIR += timbre-mill
     SUBDIR += timely-lv2
     SUBDIR += timemachine
     SUBDIR += timidity

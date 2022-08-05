@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2022-08-05 06:57:09 UTC
++++ src/Makefile
+@@ -156,7 +156,7 @@ $(ARTIFACT_TEST_BIN): $(ARTIFACT_DEPS) $(ARTIFACT_OBJ)
+ install: all
+ 	echo "Installing $($(ARTIFACT_ID)_NAME)"
+ 	mkdir -p "$(DESTDIR)$(BINDIR)"
+-	cp $(ARTIFACT_EXE) -t "$(DESTDIR)$(BINDIR)"
++	cp $(ARTIFACT_EXE) "$(DESTDIR)$(BINDIR)"
+ 	ln -sf $(notdir $(ARTIFACT_EXE)) "$(DESTDIR)$(BINDIR)/$(ARTIFACT_EXELINK)"
+ 	echo "Install OK"
+ 

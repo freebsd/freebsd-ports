@@ -1,0 +1,13 @@
+Timbre Mill is a tool for timbral correction of audio files.
+
+The tool allows to specify multiple file groups containing two type of files:
+* master file;
+* child files.
+
+For each file group, the tool performs spectral analysis of master file and each
+child file. After that, it computes the raw inverse impulse responses which
+allow to tune tonal characteristics of the master file to match the tonal
+characteristics of each corresponding child file. These raw IR files allow to
+process audio data as linear-phase finite impulse response filters (FIRs).
+
+WWW: https://github.com/sadko4u/timbre-mill
