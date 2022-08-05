@@ -1,0 +1,7 @@
+--- programs/dtterm/Makefile.am.orig	2021-11-25 16:40:19.896057000 -0800
++++ programs/dtterm/Makefile.am	2021-11-25 17:19:24.691922000 -0800
+@@ -51,4 +51,3 @@
+ if !HAS_UTEMPTER_LIBRARY
+ 	chmod 4755 $(DESTDIR)$(bindir)/dtterm
+ endif
+-	@TIC@ dtterm.ti

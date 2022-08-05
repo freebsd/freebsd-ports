@@ -1,0 +1,8 @@
+--- programs/fontaliases/Makefile.am.orig	2022-07-27 09:52:05.850328000 -0700
++++ programs/fontaliases/Makefile.am	2022-07-27 10:37:08.405264000 -0700
+@@ -33,4 +33,4 @@
+ 
+ install-data-hook:
+ 	$(MKDIR_P) $(DESTDIR)$(fontaliasesconfdir)
+-	$(CP) $(fontaliasesdatadir)/$(FONTS_ALIAS) $(DESTDIR)$(fontaliasesconfdir)/fonts.alias
++	$(CP) $(DESTDIR)$(fontaliasesdatadir)/$(FONTS_ALIAS) $(DESTDIR)$(fontaliasesconfdir)/fonts.alias
