@@ -1,6 +1,7 @@
 PORTNAME=	openfx-arena
 PORTVERSION=	2.4.3
 DISTVERSIONPREFIX=	Natron-
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	libsigrok
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libsigrok/
 
