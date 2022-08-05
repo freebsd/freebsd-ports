@@ -1,5 +1,6 @@
 PORTNAME=	neofetch
 DISTVERSION=	7.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -15,6 +16,8 @@ GH_ACCOUNT=	dylanaraps
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+MAKE_ENV=	PREFIX="${PREFIX}"
 
 OPTIONS_DEFINE=	DOCS
 
