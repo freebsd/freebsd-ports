@@ -1559,6 +1559,7 @@
     SUBDIR += py-django-widget-tweaks
     SUBDIR += py-django32
     SUBDIR += py-django40
+    SUBDIR += py-django41
     SUBDIR += py-django_compressor
     SUBDIR += py-djangocms-admin-style
     SUBDIR += py-djangoql
