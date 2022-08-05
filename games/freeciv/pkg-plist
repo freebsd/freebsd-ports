@@ -210,8 +210,10 @@ share/icons/hicolor/64x64/apps/freeciv-server.png
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/freeciv-nations.mo
 %%QT5%%%%NLS%%share/locale/zh_TW/LC_MESSAGES/freeciv-ruledit.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/freeciv-core.mo
+%%GTK2%%share/metainfo/org.freeciv.gtk2.appdata.xml
 %%GTK3%%share/metainfo/org.freeciv.gtk3.appdata.xml
 %%GTK3%%share/metainfo/org.freeciv.gtk322.appdata.xml
+%%GTK2%%share/metainfo/org.freeciv.mp.gtk2.appdata.xml
 %%GTK3%%share/metainfo/org.freeciv.mp.gtk3.appdata.xml
 %%GTK4%%share/metainfo/org.freeciv.mp.gtk4.appdata.xml
 %%QT5%%share/metainfo/org.freeciv.mp.qt.appdata.xml
