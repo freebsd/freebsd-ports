@@ -1,6 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.20.11
+DISTVERSION=	2.20.12
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:base \
 		LOCAL/mikael/ringrtc/:boringssl \
@@ -100,7 +100,7 @@ MAKE_ARGS=	-C out/${BUILDTYPE}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src/rust
 WEBRTCDIR=	${WRKDIR}/${PORTNAME}-${DISTVERSION}/src/webrtc/src
 
-# fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.20.10/src/rust/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile
+# fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.20.12/src/rust/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile
 CARGO_CRATES=	aes-0.7.5 \
 		aho-corasick-0.7.18 \
 		anyhow-1.0.53 \
@@ -189,7 +189,8 @@ CARGO_CRATES=	aes-0.7.5 \
 		rand_hc-0.2.0 \
 		redox_syscall-0.2.10 \
 		regex-1.5.5 \
-		regex-syntax-0.6.25 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.27 \
 		remove_dir_all-0.5.3 \
 		ring-0.16.20 \
 		rustls-0.19.1 \
