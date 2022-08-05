@@ -15,6 +15,15 @@ BROKEN_mips64=		fails to build: ./config/imake/imake: No such file or directory
 BROKEN_powerpc64=	fails to build: ./config/imake/imake: No such file or directory
 BROKEN_i386=		cannot bind to a temporary of type va_list
 
+# For concurrent testing purposes only. Define DT_ID in make.conf to build
+# a cde-25 pkg which will coexist with cde-24.
+.if defined(CDE_CONCURRENT) && !defined(MASTERDIR)
+DT_ID=	25
+.else
+DT_ID=
+.endif
+PLIST_SUB=	DT_ID=${DT_ID}
+
 BUILD_DEPENDS=	ksh93:shells/ksh93			\
 		bdftopcf:x11-fonts/bdftopcf		\
 		mkfontscale>=0:x11-fonts/mkfontscale	\
@@ -33,9 +42,9 @@ USES=		autoreconf:build iconv:wchar_t gmake jpeg libtool motif perl5 \
 		shebangfix tcl:86 xorg
 SHEBANG_LANG=	pl
 SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate
-DT_PREFIX=	${PREFIX}/dt
+DT_PREFIX=	${PREFIX}/dt${DT_ID}
 USE_LDCONFIG=	${DT_PREFIX}/lib
-USE_RC_SUBR=	dtcms dtlogin
+USE_RC_SUBR=	dtcms${DT_ID} dtlogin${DT_ID}
 USE_XORG=	ice sm x11 xau xdmcp xext xinerama xmu xscrnsaver xt
 
 GNU_CONFIGURE=	yes
@@ -99,8 +108,8 @@ post-patch:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/pam/libpam/pam.conf \
-		${STAGEDIR}${PREFIX}/etc/pam.d/cde.conf
-	@${ECHO_CMD} MANPATH /usr/local/dt/share/man >  ${STAGEDIR}/${PREFIX}/etc/man.d/cde.conf
+		${STAGEDIR}${PREFIX}/etc/pam.d/cde${DT_ID}.conf
+	@${ECHO_CMD} MANPATH /usr/local/dt/share/man >  ${STAGEDIR}/${PREFIX}/etc/man.d/cde${DT_ID}.conf
 	@${FIND} ${STAGEDIR}/${DT_PREFIX} -type f -exec ${SH} -c '${STRIP_CMD} {} > /dev/null 2>&1' \;
 	@cd ${WRKSRC}/examples && @${FIND} . | ${CPIO} -pd ${STAGEDIR}/${DT_PREFIX}/share
 	@cd ${STAGEDIR}/${DT_PREFIX}; ${LN} -s share/examples
