@@ -1,5 +1,5 @@
 PORTNAME=	minetest
-PORTVERSION=	5.5.1
+PORTVERSION=	5.6.0
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,19 +12,17 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libjsoncpp.so:devel/jsoncpp \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++11-lang cpe iconv:wchar_t sqlite
+USES=		cmake compiler:c++14-lang cpe iconv:wchar_t sqlite
 USE_GITHUB=	yes
 # check https://github.com/minetest/minetest/releases for applicable irrlichmt version
-GH_TUPLE=	minetest:irrlicht:1.9.0mt5:irrlicht/lib/irrlichtmt
+GH_TUPLE=	minetest:irrlicht:1.9.0mt7:irrlicht/lib/irrlichtmt
 
 CMAKE_ARGS=	-DCUSTOM_EXAMPLE_CONF_DIR="${PREFIX}/etc" \
-		-DENABLE_SYSTEM_JSONCPP=ON
+CMAKE_ON=	ENABLE_SYSTEM_JSONCPP
 
 TEST_ENV=	${MAKE_ENV} LC_ALL=C.UTF-8
 
 LDFLAGS_i386=	-Wl,-znotext
-
-PORTSCOUT=	skipv:5.4.2-android
 
 PORTDATA=	*
 PORTDOCS=	*
@@ -47,7 +45,7 @@ CLIENT_CMAKE_BOOL=	BUILD_CLIENT
 CLIENT_LIB_DEPENDS=	libpng.so:graphics/png \
 			libfreetype.so:print/freetype2
 CLIENT_USES=		gl jpeg xorg
-CLIENT_USE=		GL=gl XORG=x11,xext,xxf86vm
+CLIENT_USE=		GL=gl XORG=x11,xext,xi
 SERVER_DESC=		Build server
 SERVER_CMAKE_BOOL=	BUILD_SERVER
 
