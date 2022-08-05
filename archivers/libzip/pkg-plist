@@ -9,7 +9,7 @@ lib/cmake/libzip/libzip-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libzip/libzip-targets.cmake
 lib/libzip.so
 lib/libzip.so.5
-lib/libzip.so.5.3
+lib/libzip.so.5.5
 libdata/pkgconfig/libzip.pc
 share/man/man1/zipcmp.1.gz
 share/man/man1/zipmerge.1.gz
@@ -18,8 +18,8 @@ share/man/man3/ZIP_SOURCE_GET_ARGS.3.gz
 share/man/man3/libzip.3.gz
 share/man/man3/zip_add.3.gz
 share/man/man3/zip_add_dir.3.gz
-share/man/man3/zip_compression_method_supported.3.gz
 share/man/man3/zip_close.3.gz
+share/man/man3/zip_compression_method_supported.3.gz
 share/man/man3/zip_delete.3.gz
 share/man/man3/zip_dir_add.3.gz
 share/man/man3/zip_discard.3.gz
@@ -54,6 +54,7 @@ share/man/man3/zip_file_extra_fields_count_by_id.3.gz
 share/man/man3/zip_file_get_comment.3.gz
 share/man/man3/zip_file_get_error.3.gz
 share/man/man3/zip_file_get_external_attributes.3.gz
+share/man/man3/zip_file_is_seekable.3.gz
 share/man/man3/zip_file_rename.3.gz
 share/man/man3/zip_file_replace.3.gz
 share/man/man3/zip_file_set_comment.3.gz
@@ -80,6 +81,7 @@ share/man/man3/zip_libzip_version.3.gz
 share/man/man3/zip_name_locate.3.gz
 share/man/man3/zip_open.3.gz
 share/man/man3/zip_open_from_source.3.gz
+share/man/man3/zip_register_cancel_callback_with_state.3.gz
 share/man/man3/zip_register_progress_callback.3.gz
 share/man/man3/zip_register_progress_callback_with_state.3.gz
 share/man/man3/zip_rename.3.gz
@@ -124,6 +126,7 @@ share/man/man3/zip_source_win32handle.3.gz
 share/man/man3/zip_source_win32handle_create.3.gz
 share/man/man3/zip_source_win32w.3.gz
 share/man/man3/zip_source_win32w_create.3.gz
+share/man/man3/zip_source_window.3.gz
 share/man/man3/zip_source_write.3.gz
 share/man/man3/zip_source_zip.3.gz
 share/man/man3/zip_stat.3.gz
