@@ -29,6 +29,7 @@
     SUBDIR += bmpanel2
     SUBDIR += brisk-menu
     SUBDIR += cde
+    SUBDIR += cde-24
     SUBDIR += cinnamon
     SUBDIR += cinnamon-desktop
     SUBDIR += cinnamon-menus
