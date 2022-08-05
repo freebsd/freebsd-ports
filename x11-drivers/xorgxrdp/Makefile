@@ -35,6 +35,7 @@ OPTIONS_DEFAULT=
 DRI3_DESC=	DRI3/Glamor OpenGL Support
 DRI3_CONFIGURE_ENABLE=	glamor
 DRI3_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
+DRI3_CFLAGS=		-I${LOCALBASE}/include/libdrm
 DRI3_SUB_FILES=		pkg-message
 
 post-patch-DEBUG-on:
