@@ -43,7 +43,7 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%man/man1/rrdlast.1.gz
 %%PORTDOCS%%man/man1/rrdlastupdate.1.gz
 %%PORTDOCS%%man/man1/rrdlist.1.gz
-%%PYTHON%%man/man1/rrdpython.1.gz
+%%PORTDOCS%%%%PYTHON%%man/man1/rrdpython.1.gz
 %%PORTDOCS%%man/man1/rrdresize.1.gz
 %%PORTDOCS%%man/man1/rrdrestore.1.gz
 %%RUBY%%man/man1/rrdruby.1.gz
@@ -80,7 +80,7 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdlast.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdlastupdate.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdlist.html
-%%PYTHON%%%%DOCSDIR%%/html/rrdpython.html
+%%PORTDOCS%%%%PYTHON%%%%DOCSDIR%%/html/rrdpython.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdresize.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rrdrestore.html
 %%RUBY%%%%DOCSDIR%%/html/rrdruby.html
@@ -135,8 +135,8 @@ libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdlastupdate.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdlist.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdlist.txt
-%%PYTHON%%%%DOCSDIR%%/txt/rrdpython.pod
-%%PYTHON%%%%DOCSDIR%%/txt/rrdpython.txt
+%%PORTDOCS%%%%PYTHON%%%%DOCSDIR%%/txt/rrdpython.pod
+%%PORTDOCS%%%%PYTHON%%%%DOCSDIR%%/txt/rrdpython.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdresize.pod
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdresize.txt
 %%PORTDOCS%%%%DOCSDIR%%/txt/rrdrestore.pod
