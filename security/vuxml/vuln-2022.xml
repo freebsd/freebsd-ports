@@ -1,3 +1,34 @@
+  <vuln vid="8bec3994-104d-11ed-a7ac-0800273f11ea">
+    <topic>gitea -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.17.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/20114">
+	  <p>Use git.HOME_PATH for Git HOME directory</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/20332">
+	  <p>Add write check for creating Commit status</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/18697">
+	  <p>Remove deprecated SSH ciphers from default</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.17.0</url>
+    </references>
+    <dates>
+      <discovery>2022-07-12</discovery>
+      <entry>2022-08-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bc43a578-14ec-11ed-856e-d4c9ef517024">
     <topic>Unbound -- Multiple vulnerabilities</topic>
     <affects>
