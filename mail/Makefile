@@ -564,12 +564,9 @@
     SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-identity_smtp
     SUBDIR += roundcube-login_info
-    SUBDIR += roundcube-mobilecube
-    SUBDIR += roundcube-mvision2
     SUBDIR += roundcube-sauserprefs
     SUBDIR += roundcube-thunderbird_labels
     SUBDIR += roundcube-twofactor_gauthenticator
-    SUBDIR += roundcube-umich
     SUBDIR += roundcube-veximaccountadmin
     SUBDIR += roundcube-yubikey_auth
     SUBDIR += rspamd
