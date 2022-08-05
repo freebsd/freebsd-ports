@@ -1,4 +1,4 @@
---- electron/spec-main/api-browser-window-spec.ts.orig	2022-07-21 18:53:47 UTC
+--- electron/spec-main/api-browser-window-spec.ts.orig	2022-08-03 15:31:58 UTC
 +++ electron/spec-main/api-browser-window-spec.ts
 @@ -58,7 +58,7 @@ describe('BrowserWindow module', () => {
        }).not.to.throw();
@@ -108,7 +108,7 @@
        const w = new BrowserWindow();
        const minimize = emittedOnce(w, 'minimize');
        w.minimize();
-@@ -4451,7 +4451,7 @@ describe('BrowserWindow module', () => {
+@@ -4459,7 +4459,7 @@ describe('BrowserWindow module', () => {
        });
  
        // On Linux there is no "resizable" property of a window.
@@ -117,7 +117,7 @@
          const w = new BrowserWindow({ show: false });
          expect(w.resizable).to.be.true('resizable');
  
-@@ -4543,7 +4543,7 @@ describe('BrowserWindow module', () => {
+@@ -4551,7 +4551,7 @@ describe('BrowserWindow module', () => {
      });
    });
  
@@ -126,7 +126,7 @@
      // Not implemented on Linux.
      afterEach(closeAllWindows);
  
-@@ -5483,7 +5483,7 @@ describe('BrowserWindow module', () => {
+@@ -5569,7 +5569,7 @@ describe('BrowserWindow module', () => {
      });
  
      // Linux and arm64 platforms (WOA and macOS) do not return any capture sources
@@ -135,7 +135,7 @@
        const display = screen.getPrimaryDisplay();
  
        const backgroundWindow = new BrowserWindow({
-@@ -5525,7 +5525,7 @@ describe('BrowserWindow module', () => {
+@@ -5611,7 +5611,7 @@ describe('BrowserWindow module', () => {
      afterEach(closeAllWindows);
  
      // Linux/WOA doesn't return any capture sources.

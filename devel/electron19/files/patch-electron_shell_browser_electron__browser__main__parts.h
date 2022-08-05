@@ -1,4 +1,4 @@
---- electron/shell/browser/electron_browser_main_parts.h.orig	2022-05-18 15:31:32 UTC
+--- electron/shell/browser/electron_browser_main_parts.h.orig	2022-08-03 15:31:58 UTC
 +++ electron/shell/browser/electron_browser_main_parts.h
 @@ -61,7 +61,7 @@ class ViewsDelegate;
  class ViewsDelegateMac;
@@ -9,7 +9,16 @@
  class DarkThemeObserver;
  #endif
  
-@@ -139,7 +139,7 @@ class ElectronBrowserMainParts : public content::Brows
+@@ -122,7 +122,7 @@ class ElectronBrowserMainParts : public content::Brows
+       const scoped_refptr<base::SingleThreadTaskRunner>& task_runner);
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   void DetectOzonePlatform();
+ #endif
+ 
+@@ -143,7 +143,7 @@ class ElectronBrowserMainParts : public content::Brows
    std::unique_ptr<display::Screen> screen_;
  #endif
  
