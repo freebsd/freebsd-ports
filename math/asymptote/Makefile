@@ -14,6 +14,7 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
 ONLY_FOR_ARCHS=	amd64 i386
+BROKEN_FreeBSD_12_i386=	./base/plain_filldraw.asy: 21.5: runtime: gmake[2]: *** [Makefile:42: makepen.pdf] Floating point exception (core dumped)
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
