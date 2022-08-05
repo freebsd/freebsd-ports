@@ -1,6 +1,6 @@
---- cmake/build_helpers.cmake.orig	2022-07-26 14:13:07 UTC
+--- cmake/build_helpers.cmake.orig	2022-08-05 10:52:34 UTC
 +++ cmake/build_helpers.cmake
-@@ -297,17 +297,9 @@ function(downloadImHexPatternsFiles dest)
+@@ -352,17 +352,9 @@ function(downloadImHexPatternsFiles dest)
              set(PATTERNS_BRANCH ImHex-v${IMHEX_VERSION})
          endif ()
  
@@ -19,3 +19,11 @@
          endforeach ()
      endif ()
  
+@@ -370,7 +362,6 @@ endfunction()
+ 
+ macro(setupCompilerWarnings target)
+     set(IMHEX_COMMON_FLAGS "-Wall -Wextra -Werror")
+-    set(IMHEX_C_FLAGS "${IMHEX_COMMON_FLAGS} -Wno-restrict -Wno-stringop-overread")
+ 
+     set(CMAKE_C_FLAGS    "${CMAKE_C_FLAGS}    ${IMHEX_C_FLAGS}")
+     set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS}  ${IMHEX_C_FLAGS}")
