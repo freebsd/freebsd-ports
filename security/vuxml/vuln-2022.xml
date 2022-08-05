@@ -1,3 +1,46 @@
+  <vuln vid="bc43a578-14ec-11ed-856e-d4c9ef517024">
+    <topic>Unbound -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><lt>1.16.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs reports:</p>
+	<blockquote cite="https://www.nlnetlabs.nl/projects/unbound/security-advisories/">
+	  <p>novel type of the "ghost domain names" attack. The vulnerability
+	    works by targeting an Unbound instance. Unbound is queried for a
+	    rogue domain name when the cached delegation information is about to
+	    expire. The rogue nameserver delays the response so that the cached
+	    delegation information is expired. Upon receiving the delayed answer
+	    containing the delegation information, Unbound overwrites the now
+	    expired entries. This action can be repeated when the delegation
+	    information is about to expire making the rogue delegation
+	    information ever-updating.</p>
+	  <p>novel type of the "ghost domain names" attack. The vulnerability
+	    works by targeting an Unbound instance. Unbound is queried for a
+	    subdomain of a rogue domain name. The rogue nameserver returns
+	    delegation information for the subdomain that updates Unbound's
+	    delegation cache. This action can be repeated before expiry of the
+	    delegation information by querying Unbound for a second level
+	    subdomain which the rogue nameserver provides new delegation
+	    information.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-30699</cvename>
+      <cvename>CVE-2022-30698</cvename>
+      <url>https://www.nlnetlabs.nl/projects/unbound/security-advisories/</url>
+    </references>
+    <dates>
+      <discovery>2022-08-01</discovery>
+      <entry>2022-08-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df29c391-1046-11ed-a7ac-0800273f11ea">
     <topic>gitea -- multiple issues</topic>
     <affects>
