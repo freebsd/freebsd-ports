@@ -1,3 +1,37 @@
+  <vuln vid="3b47104f-1461-11ed-a0c5-080027240888">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py38-django32</name>
+	<name>py39-django32</name>
+	<name>py310-django32</name>
+	<range><lt>3.2.15</lt></range>
+      </package>
+      <package>
+	<name>py38-django40</name>
+	<name>py39-django40</name>
+	<name>py310-django40</name>
+	<range><lt>4.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2022/aug/03/security-releases/">
+	  <p>CVE-2022-36359: Potential reflected file download vulnerability in FileResponse.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-36359</cvename>
+      <url>https://www.djangoproject.com/weblog/2022/aug/03/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2022-08-01</discovery>
+      <entry>2022-08-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="96a41723-133a-11ed-be3b-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
