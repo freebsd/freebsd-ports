@@ -8,7 +8,7 @@ COMMENT=	SFZ parser and synth C++ library & LV2/VST3 plugins
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_arm64=	fails to compile: fatal error: 'linux/auxvec.h' file not found, see https://github.com/sfztools/sfizz/issues/1118
+BROKEN_aarch64=	fails to compile: fatal error: 'linux/auxvec.h' file not found, see https://github.com/sfztools/sfizz/issues/1118
 BROKEN_armv6=	fails to compile: src/external/cpuid/src/cpuid/detail/init_linux_gcc_arm.hpp: unknown type name 'Elf32_auxv_t', see https://github.com/sfztools/sfizz/issues/1116
 BROKEN_armv7=	fails to compile: src/external/cpuid/src/cpuid/detail/init_linux_gcc_arm.hpp: unknown type name 'Elf32_auxv_t', see https://github.com/sfztools/sfizz/issues/1116
 BROKEN_i386=	fails to compile: unknown type name 'Elf64_Auxinfo', see https://github.com/sfztools/sfizz/issues/1110
