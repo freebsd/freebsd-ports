@@ -1,5 +1,6 @@
 PORTNAME=	hylafax
 PORTVERSION=	6.0.7
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -20,6 +21,9 @@ USE_RC_SUBR=	hylafax
 MAKE_JOBS_UNSAFE=	yes
 HAS_CONFIGURE=		yes
 
+DEPRECATED=	dead upstream, someone port hylafax+ from sourceforge.net instead
+EXPIRATION_DATE=2022-09-30
+
 CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-LIBTIFF="-L${LOCALBASE}/lib -ltiff -ljpeg" \
 		--with-ZLIB=no --with-LIBZ=-lz \
@@ -29,7 +33,7 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-DIR_HTML="${DOCSDIR}" \
 		--with-GETTY=SysV
 CFLAGS+=	-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED -Wall -L${LOCALBASE}/lib
-CONFIGURE_ENV=	ENVOPTS="${CFLAGS}"
+CONFIGURE_ENV=	ENVOPTS="${CFLAGS}" STRIP=/usr/bin/true
 MAKE_ENV+=	ROOT=${STAGEDIR}
 MAKE_ARGS+=	OPTIMIZER="" -DOPTIMIZER
 
@@ -97,6 +101,17 @@ pre-install:
 		${STAGEDIR}${HYLAFAX_SPOOL}/tmp \
 		${STAGEDIR}${HYLAFAX_SPOOL}/info \
 		${STAGEDIR}${HYLAFAX_SPOOL}/log
+
+post-install:
+.for i in bin/faxalter bin/faxcover bin/faxmail bin/faxrm bin/faxstat bin/sendfax \
+bin/sendpage sbin/choptest sbin/cqtest sbin/dialtest sbin/faxabort \
+sbin/faxadduser sbin/faxanswer sbin/faxconfig sbin/faxdeluser \
+sbin/faxgetty sbin/faxinfo sbin/faxlock sbin/faxmodem sbin/faxmsg \
+sbin/faxq sbin/faxqclean sbin/faxquit sbin/faxsend sbin/faxstate \
+sbin/faxwatch sbin/hfaxd sbin/lockname sbin/ondelay sbin/pagesend \
+sbin/tagtest sbin/textfmt sbin/tiffcheck sbin/tsitest sbin/typetest
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${i}
+.endfor
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
