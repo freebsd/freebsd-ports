@@ -1,26 +1,13 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
-PORTREVISION=	6
+DISTVERSION=	0.7rc
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	adb32f3f8f37.patch:-p1 # https://github.com/libjxl/libjxl/pull/193
-PATCHFILES+=	c31dca74e68f.patch:-p1 # https://github.com/libjxl/libjxl/pull/678
-PATCHFILES+=	0b70567432ab.patch:-p1 # https://github.com/libjxl/libjxl/pull/797
-PATCHFILES+=	e0107a6ca637.patch:-p1 # https://github.com/libjxl/libjxl/pull/847
-PATCHFILES+=	e903d53a58b4.patch:-p1 # https://github.com/libjxl/libjxl/pull/1071
-PATCHFILES+=	600b59153882.patch:-p1 # https://github.com/libjxl/libjxl/pull/1156
-PATCHFILES+=	98d25826edc1.patch:-p1 # https://github.com/libjxl/libjxl/pull/1343
-PATCHFILES+=	1f849bd28145.patch:-p1 # https://github.com/libjxl/libjxl/pull/1369
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	JPEG XL reference encoder/decoder
 
-LICENSE=	BSD3CLAUSE ZLIB
-LICENSE_COMB=	multi
-LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
-LICENSE_FILE_ZLIB=	${WRKSRC}/third_party/lodepng/LICENSE
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli \
 		libhwy.so:devel/highway
@@ -31,7 +18,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	jbeich:skcms:6437475:skcms/third_party/skcms \
-		lvandeve:lodepng:48e5364:lodepng/third_party/lodepng \
+		libjxl:testdata:d81acac:testdata/third_party/testdata \
 		webmproject:sjpeg:868ab55:sjpeg/third_party/sjpeg \
 		${NULL}
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
@@ -60,8 +47,7 @@ MANPAGES_BUILD_DEPENDS=	a2x:textproc/asciidoc
 MANPAGES_USES=		python:build
 MANPAGES_CMAKE_BOOL=	JPEGXL_ENABLE_MANPAGES
 
-OPENEXR_LIB_DEPENDS=	libImath.so:math/Imath \
-			libOpenEXR.so:graphics/openexr
+OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
 OPENEXR_CMAKE_BOOL=	JPEGXL_ENABLE_OPENEXR
 
 PIXBUF_USES=		gnome
