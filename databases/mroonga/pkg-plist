@@ -221,5 +221,6 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/source/tutorial/wrapper.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/upgrade.rst
 %%DATADIR%%/install.sql
+%%DATADIR%%/install_plugin.sql
 %%DATADIR%%/uninstall.sql
 %%DATADIR%%/update.sql
