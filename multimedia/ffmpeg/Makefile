@@ -1,6 +1,6 @@
 PORTNAME=	ffmpeg
 PORTVERSION=	4.4.2
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -44,7 +44,7 @@ OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB AOM ARIBB24 ASM ASS BS2B CACA CDIO \
 
 OPTIONS_DEFAULT=	AOM ASM ASS DAV1D DRM FONTCONFIG FREETYPE FREI0R GMP \
 			GNUTLS ICONV LAME LIBXML2 OPTIMIZED_CFLAGS OPUS RTCPU \
-			THEORA V4L VAAPI VDPAU VMAF VORBIS VPX X264 X265 XCB XVID
+			V4L VAAPI VDPAU VMAF VORBIS VPX WEBP X264 X265 XCB
 OPTIONS_DEFAULT_amd64=	SVTAV1
 
 # i386 is too register-starved for LTO (PR257124)
@@ -126,6 +126,7 @@ SVTVP9_DESC=	VP9 encoding via SVT-VP9
 LIBRTMP_DESC=	${RTMP_DESC} via librtmp
 TENSORFLOW_DESC=TensorFlow as a DNN module backend for DNN based filters like sr
 TESSERACT_DESC=	Optical Character Recognition via Tesseract
+THEORA_DESC=	Encoding support for theora via libtheora
 UAVS3D_DESC=	AVS3 decoding via libuavs3d
 VAPOURSYNTH_DESC=	VapourSynth demuxer
 VIDSTAB_DESC=	Video stabilization filter
@@ -133,6 +134,7 @@ VMAF_DESC=	VMAF filter via libvmaf
 VULKAN_DESC=	Vulkan filters
 XAVS2_DESC=	AVS2 encoding via libxavs2
 XCB_DESC=	X11 grabbing using XCB
+XVID_DESC=	Encoding support for MPEG-4 ASP via libxvid
 ZIMG_DESC=	"z" library video scaling filter
 ZMQ_DESC=	Message passing via libzmq${ZMQ_VERSION}
 ZVBI_DESC=	Teletext support via libzvbi
