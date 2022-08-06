@@ -5,7 +5,7 @@
 PORTNAME=	sbcl
 DISTVERSION=	2.2.7
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
@@ -143,7 +143,7 @@ post-patch:
 		${WRKSRC}/doc/manual/start-stop.texinfo
 
 do-build:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} LINKFLAGS="${LDFLAGS}" ${SH} make.sh ${MAKE_SH_ARGS})
+	(cd ${WRKSRC} && ${SH} make.sh ${MAKE_SH_ARGS})
 
 post-build-DOCS-on:
 	${DO_MAKE_BUILD} -C ${WRKSRC}/doc/manual info html
