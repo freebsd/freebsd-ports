@@ -295,6 +295,7 @@ sbin/groonga-httpd-restart
 %%RUBY%%%%DATADIR%%/mruby/LEGAL
 %%DATADIR%%/munin/plugins/groonga_cpu_load_
 %%DATADIR%%/munin/plugins/groonga_cpu_time_
+%%DATADIR%%/munin/plugins/groonga_delta_
 %%DATADIR%%/munin/plugins/groonga_disk_
 %%DATADIR%%/munin/plugins/groonga_memory_
 %%DATADIR%%/munin/plugins/groonga_n_records_
