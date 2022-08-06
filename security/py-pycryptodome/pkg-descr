@@ -5,10 +5,12 @@ PyCrypto (2.6.1):
 * Authenticated encryption modes (GCM, CCM, EAX, SIV, OCB)
 * Accelerated AES on Intel platforms via AES-NI
 * First class support for PyPy
+* Elliptic curves cryptography (NIST P-curves; Ed25519, Ed448)
+* Better and more compact API
 * SHA-3 (including SHAKE XOFs) and BLAKE2 hash algorithms
 * Salsa20 and ChaCha20 stream ciphers
 * scrypt and HKDF
-* Deterministic DSA
+* Deterministic (EC)DSA and EdDSA
 * Password-protected PKCS#8 key containers
 * Shamir's Secret Sharing scheme
 * Random numbers get sourced directly from the OS (and not from
@@ -17,4 +19,4 @@ PyCrypto (2.6.1):
 * Cleaner RSA and DSA key generation (largely based on FIPS 186-4)
 * Major clean ups and simplification of the code base
 
-WWW: https://www.pycryptodome.org/en/latest/
+WWW: https://www.pycryptodome.org/
