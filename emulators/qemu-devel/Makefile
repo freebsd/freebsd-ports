@@ -1,6 +1,5 @@
 PORTNAME=	qemu
-DISTVERSION=	6.1.0.20210928
-PORTREVISION=	2
+DISTVERSION=	7.1.0.20220805
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -30,10 +29,10 @@ USE_PERL5=	build
 USE_PYTHON=	distutils noflavors
 USE_XORG=	pixman
 
-GL_COMMIT=	de8ed1055c2ce18c95f597eb10df360dcb534f99
-GL_TUPLE=	qemu-project:keycodemapdb:d21009b1c9f94b740ea66be8e48a1d8ad8124023:keycodemapdb/ui/keycodemapdb \
-		qemu-project:dtc:e33ce1d6a8c7e54e3ad12cff33690b6da0aee1dc:dtc/dtc \
-		qemu-project:meson:5fa0fd3b473f792bd7333cf6ae6e2f4c851b6108:meson/meson \
+GL_COMMIT=	09ed077d7fae5f825e18ff9a2004dcdd1b165edb
+GL_TUPLE=	qemu-project:keycodemapdb:e15649b83a78f89f57205927022115536d2c1698:keycodemapdb/ui/keycodemapdb \
+		qemu-project:dtc:e37c25677dc946a025002a394172788b3169b3ce:dtc/dtc \
+		qemu-project:meson:3fbcff1c2722988d05c5248f7ab54c53001b1ee1:meson/meson \
 		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/tests/fp/berkeley-softfloat-3 \
 		qemu-project:berkeley-testfloat-3:5a59dcec19327396a011a17fd924aed4fec416b3:berkeleytestfloat3/tests/fp/berkeley-testfloat-3
 
@@ -63,7 +62,7 @@ STATIC_LINK_DESC=	Statically link the executables
 USBREDIR_DESC=		usb device network redirection (experimental!)
 VDE_DESC=		vde dependency (for vde networking)
 X86_TARGETS_DESC=	Build only x86 system targets
-CAPSTONE_CONFIGURE_ON=	--enable-capstone=system --extra-cflags=-I${LOCALBASE}/include/capstone
+CAPSTONE_CONFIGURE_ON=	--enable-capstone --extra-cflags=-I${LOCALBASE}/include/capstone
 CAPSTONE_CONFIGURE_OFF=	--disable-capstone
 CAPSTONE_LIB_DEPENDS=	libcapstone.so:devel/capstone4
 CURL_CONFIGURE_OFF=	--disable-curl
@@ -102,13 +101,13 @@ X11_CONFIGURE_ENABLE=	sdl
 X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
 X11_USES=	sdl
 
-PORTDOCS=	.buildinfo _static/* about/* devel/* docs genindex.html \
-		index.html interop/* objects.inv search.html searchindex.js \
-	       	specs/* system/* tools/* user/*
+PORTDOCS=	.buildinfo _static/* about/* dbus-dbusindex.html devel/* \
+			docs genindex.html index.html interop/* objects.inv \
+			search.html searchindex.js specs/* system/* tools/* user/*
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CONFIGURE_ARGS=	--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
+CONFIGURE_ARGS=	--localstatedir=/var --mandir=man --extra-ldflags=-L\"/usr/lib\" \
 		--extra-ldflags=-L\"${LOCALBASE}/lib\" --enable-debug \
 		--prefix=${PREFIX} --cc=${CC} --enable-netmap --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
