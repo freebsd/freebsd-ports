@@ -1,5 +1,5 @@
 PORTNAME=	azure-cli-core
-PORTVERSION=	2.38.0
+PORTVERSION=	2.39.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ COMMENT=	Microsoft Azure Command-Line Tools Core Module
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=1.8:devel/py-argcomplete@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-cli-telemetry>=1.0.6:sysutils/py-azure-cli-telemetry@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-cli-telemetry>=1.0.7:sysutils/py-azure-cli-telemetry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanfriendly>=10.0:textproc/py-humanfriendly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0:devel/py-jmespath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}knack>=0.9.0:devel/py-knack@${PY_FLAVOR} \
