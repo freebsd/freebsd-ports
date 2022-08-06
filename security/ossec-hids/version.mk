@@ -1,6 +1,5 @@
 PORTNAME=	ossec-hids
-PORTVERSION=	3.6.0
-PORTREVISION?=	1
+PORTVERSION=	3.7.0
 CATEGORIES=	security
 
 MAINTAINER=	dominik.lisiak@bemsoft.pl

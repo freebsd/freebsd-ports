@@ -133,6 +133,7 @@ SHARED_DIR=		${OSSEC_HOME}/etc/shared
 
 SAMPLE_FILES=		${OSSEC_HOME}/etc/local_internal_options.conf \
 			${OSSEC_HOME}/active-response/bin/cloudflare-ban.sh \
+			${OSSEC_HOME}/active-response/bin/ossec-aws-waf.sh \
 			${OSSEC_HOME}/active-response/bin/ossec-pagerduty.sh \
 			${OSSEC_HOME}/active-response/bin/ossec-slack.sh \
 			${OSSEC_HOME}/active-response/bin/ossec-tweeter.sh
