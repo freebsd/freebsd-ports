@@ -1,5 +1,5 @@
 PORTNAME=	hyphy
-DISTVERSION=	2.5.40
+DISTVERSION=	2.5.41
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -9,7 +9,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .if !exists(/usr/include/omp.h)
-BROKEN=		build fails w/out enabled OpenMP, see https://github.com/veg/hyphy/issues/1503
+BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc64le powerpc64 powerpc
