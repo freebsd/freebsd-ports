@@ -1,5 +1,5 @@
 PORTNAME=	pylibmc
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +11,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmemcached.so:databases/libmemcached
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
-		memcached:databases/memcached
+TEST_DEPENDS=	memcached:databases/memcached
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils nose
 
 MAKE_ENV+=	LIBMEMCACHED="${LOCALBASE}"
 
@@ -23,8 +22,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pylibmc*.so
 
 # Note: memcached needs to be running first for this to work
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+#do-test:
 
 .include <bsd.port.mk>
