@@ -1,5 +1,5 @@
-TIMESTAMP = 1654604101
-SHA256 (go/net-im_gotktrix/gotktrix-v0.1.3/v0.1.3.mod) = 353c3e5bd0688c899ec6ceb2d785f7895f37643e511ec56be1c8fca3c4605f6a
-SIZE (go/net-im_gotktrix/gotktrix-v0.1.3/v0.1.3.mod) = 2931
-SHA256 (go/net-im_gotktrix/gotktrix-v0.1.3/v0.1.3.zip) = c49663332add3037bdbc0e497a7d003fb62a13745790a2ff89cd7d87631b5fec
-SIZE (go/net-im_gotktrix/gotktrix-v0.1.3/v0.1.3.zip) = 604406
+TIMESTAMP = 1659678395
+SHA256 (go/net-im_gotktrix/gotktrix-v0.1.4/v0.1.4.mod) = 5223735f62d44520145f46248414db949d4d93c4cbb8bef7eb548a9964b131b9
+SIZE (go/net-im_gotktrix/gotktrix-v0.1.4/v0.1.4.mod) = 2692
+SHA256 (go/net-im_gotktrix/gotktrix-v0.1.4/v0.1.4.zip) = 72e5aec20ffce3bfce807a8bbb51f28bde7711cc98b1e62008d4825c23d3bf33
+SIZE (go/net-im_gotktrix/gotktrix-v0.1.4/v0.1.4.zip) = 587915
