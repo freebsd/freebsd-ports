@@ -1,6 +1,5 @@
 PORTNAME=	Mathics3
-PORTVERSION=	4.0.0
-PORTREVISION=	2
+PORTVERSION=	5.0.2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -53,6 +52,7 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}ipywidgets>0:devel/py-ipywidgets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycountry>0:textproc/py-pycountry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wordcloud>0:textproc/py-wordcloud@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}recordclass>0:devel/py-recordclass@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Mathics_Scanner>0:math/py-mathics-scanner
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
@@ -63,7 +63,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 #GH_ACCOUNT=	${PORTNAME:tl}
 
 USES=		python:3.8+ shebangfix
-USE_PYTHON=	distutils noflavors
+USE_PYTHON=	cython distutils noflavors
+MAKE_ENV+=	USE_CYTHON=yes
 SHEBANG_GLOB=	*.py
 
 .if !defined(WITH_DEBUG)
