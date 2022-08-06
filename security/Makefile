@@ -927,6 +927,7 @@
     SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto
     SUBDIR += py-pycryptodome
+    SUBDIR += py-pycryptodome-test-vectors
     SUBDIR += py-pycryptodomex
     SUBDIR += py-pyelliptic
     SUBDIR += py-pyhanko-certvalidator
