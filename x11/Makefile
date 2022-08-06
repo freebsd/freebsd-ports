@@ -142,6 +142,7 @@
     SUBDIR += konsole
     SUBDIR += lavalauncher
     SUBDIR += lemonbar
+    SUBDIR += lemonbar-xft
     SUBDIR += libICE
     SUBDIR += libSM
     SUBDIR += libX11
