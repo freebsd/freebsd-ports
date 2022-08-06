@@ -5248,6 +5248,7 @@
     SUBDIR += py-sentry-sdk
     SUBDIR += py-serializable
     SUBDIR += py-serpent
+    SUBDIR += py-session-info
     SUBDIR += py-setproctitle
     SUBDIR += py-setuptools
     SUBDIR += py-setuptools-git
