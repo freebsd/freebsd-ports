@@ -10,6 +10,8 @@ COMMENT=	VHDL compiler and simulator
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv6=	executable catches signal during build, see https://github.com/nickg/nvc/issues/500
+
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION}
 TEST_DEPENDS=	check>0:devel/check
