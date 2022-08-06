@@ -1058,6 +1058,7 @@
     SUBDIR += spooles-mpich
     SUBDIR += spot
     SUBDIR += sprng
+    SUBDIR += ssht
     SUBDIR += stan
     SUBDIR += stanmath
     SUBDIR += stp
