@@ -1,11 +1,9 @@
 PORTNAME=	puppetserver
-PORTVERSION=	7.8.0
+PORTVERSION=	7.9.0
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://downloads.puppetlabs.com/puppet/:upstream \
-		https://raw.githubusercontent.com/jruby/jruby/fb3ba4b3543b72e735ba53b51e6b7ec8a9916e1b/lib/ruby/stdlib/ffi/:ffi
+MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	7
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:upstream \
-		ffi.rb:ffi
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	puppet@FreeBSD.org
@@ -40,9 +38,6 @@ GROUPS=		puppet
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 SUB_FILES=	pkg-message
 
-pre-patch:
-	${CP} ${_DISTDIR}/ffi.rb ${WRKSRC}
-
 post-patch:
 .for file in ext/config/logback.xml ext/config/request-logging.xml \
 	ext/config/conf.d/global.conf ext/config/conf.d/puppetserver.conf \
@@ -59,11 +54,11 @@ post-patch:
 		${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e 's|#!/opt/puppetlabs/puppet/bin/ruby|#!${RUBY}|' \
-		${WRKSRC}/ext/cli/ca
+		${WRKSRC}/ext/cli/ca \
+		${WRKSRC}/ext/cli/dropsonde
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/cli/apps
-	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf.d
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/services.d
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/puppet/code
@@ -94,6 +89,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/start ${STAGEDIR}${DATADIR}/cli/apps/start
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/stop ${STAGEDIR}${DATADIR}/cli/apps/stop
 	${INSTALL_DATA} ${WRKSRC}/ext/cli_defaults/cli-defaults.sh ${STAGEDIR}${DATADIR}/cli/cli-defaults.sh
-	${INSTALL_DATA} ${WRKSRC}/ffi.rb ${STAGEDIR}${DATADIR}/lib
 
 .include <bsd.port.mk>
