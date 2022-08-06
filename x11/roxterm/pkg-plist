@@ -24,6 +24,7 @@ share/applications/roxterm.desktop
 share/icons/hicolor/scalable/apps/roxterm.svg
 %%DATADIR%%/Config/Colours/GTK
 %%DATADIR%%/Config/Colours/Nocturne
+%%DATADIR%%/Config/Colours/Nord
 %%DATADIR%%/Config/Colours/Tango
 %%DATADIR%%/Config/Shortcuts/Default
 %%DATADIR%%/roxterm-config.ui
