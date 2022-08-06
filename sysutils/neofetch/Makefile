@@ -17,8 +17,6 @@ GH_ACCOUNT=	dylanaraps
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-MAKE_ENV=	PREFIX="${PREFIX}"
-
 OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
