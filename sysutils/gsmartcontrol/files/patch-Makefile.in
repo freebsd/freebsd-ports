@@ -1,15 +1,6 @@
---- Makefile.in.orig	2017-09-07 12:42:44 UTC
+--- Makefile.in.orig	2022-02-04 09:57:12 UTC
 +++ Makefile.in
-@@ -84,7 +84,7 @@ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile
- 	$(top_srcdir)/configure $(am__configure_deps) \
- 	$(srcdir)/config.h.in $(srcdir)/gsmartcontrol.spec.in \
- 	$(srcdir)/version.in $(srcdir)/compilation_flags.in \
--	$(dist_doc_DATA) $(nobase_dist_doc_DATA) COPYING ChangeLog \
-+	$(dist_doc_DATA) $(nobase_dist_doc_DATA) ChangeLog \
- 	INSTALL NEWS TODO ar-lib config.guess config.sub depcomp \
- 	install-sh missing
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -375,15 +375,7 @@ noinst_DATA = AUTHORS.txt LICENSE_gsmartcontrol.txt RE
+@@ -388,15 +388,7 @@ dist_doc_DATA = AUTHORS.txt ChangeLog NEWS README.txt 
  # These will be installed into docdir.
  # Some of these files are actually needed for compilation (see src/res/Makefile.am).
  dist_doc_DATA = AUTHORS.txt ChangeLog NEWS README.txt \
