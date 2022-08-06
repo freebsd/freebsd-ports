@@ -17,6 +17,7 @@ SHEBANG_FILES=	scripts/checkbashisms.pl
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+PORTSCOUT=	limit:^d\.d+\.d
 WRKSRC=		${WRKDIR}/devscripts-${PORTVERSION}
 
 PLIST_FILES=	bin/checkbashisms \
