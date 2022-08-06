@@ -1,6 +1,7 @@
 PORTNAME=	lemonbar
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -18,6 +19,8 @@ GH_PROJECT=	bar
 USE_PERL5=	build
 USE_XORG=	xcb
 CFLAGS+=	-D__BSD_VISIBLE # for memrchr(3)
+
+CONFLICTS_INSTALL=	lemonbar-xft
 
 PLIST_FILES=	bin/lemonbar \
 		man/man1/lemonbar.1.gz
