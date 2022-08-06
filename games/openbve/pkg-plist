@@ -34,6 +34,8 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/Mechanik/database.xml
 %%DATADIR%%/Data/Compatibility/Mechanik/greysky.png
 %%DATADIR%%/Data/Compatibility/Mechanik/modules.xml
+%%DATADIR%%/Data/Compatibility/Misc.xml
+%%DATADIR%%/Data/Compatibility/Misc/null.csv
 %%DATADIR%%/Data/Compatibility/Poles/pole_1.csv
 %%DATADIR%%/Data/Compatibility/Poles/pole_1.png
 %%DATADIR%%/Data/Compatibility/Poles/pole_2.csv
@@ -45,6 +47,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/Poles/pole_4.csv
 %%DATADIR%%/Data/Compatibility/Poles/pole_metal.png
 %%DATADIR%%/Data/Compatibility/PreTrain/train.dat
+%%DATADIR%%/Data/Compatibility/RoutePatches/Africa.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/America.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Australia.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Brazil.xml
