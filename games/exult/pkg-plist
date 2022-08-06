@@ -11,6 +11,7 @@ bin/textpack
 bin/u7voice2syx
 bin/ucxt
 bin/wuc
+%%GIMP%%libexec/gimp/2.2/plug-ins/u7shp
 man/man1/expack.1.gz
 man/man1/exult_studio.1.gz
 man/man1/ipack.1.gz
@@ -19,7 +20,6 @@ man/man1/splitshp.1.gz
 man/man1/textpack.1.gz
 man/man1/ucc.1.gz
 man/man6/exult.6.gz
-%%GIMP%%libexec/gimp/2.2/plug-ins/u7shp
 share/applications/exult.desktop
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -63,6 +63,7 @@ share/applications/exult.desktop
 %%DATADIR%%/exult_bg.flx
 %%DATADIR%%/exult_si.flx
 %%STUDIO%%%%DATADIR%%/exult_studio.glade
+%%DATADIR%%/exultmsg.txt
 %%DATADIR%%/midisfx.flx
 %%DATADIR%%/u7bgintrinsics.data
 %%DATADIR%%/u7misc.data

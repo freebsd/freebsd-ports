@@ -1,6 +1,5 @@
 PORTNAME=	exult
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0.20220721
+DISTVERSION?=	1.8
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -17,8 +16,6 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 USES=		autoreconf compiler:c++17-lang gmake libtool localbase \
 		pkgconfig sdl xorg
 
-USE_GITHUB=	yes
-GH_TAGNAME=	snapshot-${DISTVERSIONPREFIX}${DISTVERSION}
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_SDL=	mixer2 sdl2
 USE_XORG=	x11 xext
@@ -29,7 +26,16 @@ CONFIGURE_ARGS=	--disable-static \
 		--enable-shared \
 		--with-icondir=${PREFIX}/share/pixmaps
 
+CONFLICTS_INSTALL=	exult-devel
 SUB_FILES=	pkg-message
+PLIST?=		${.CURDIR}/pkg-plist
+
+.if !defined(MASTERDIR)
+MASTER_SITES=	http://prdownloads.sourceforge.net/exult/
+.else
+USE_GITHUB=	yes
+GH_TAGNAME=	snapshot-${DISTVERSIONPREFIX}${DISTVERSION}
+.endif
 
 OPTIONS_DEFINE=		ALSA DEBUG DOCS FLUIDSYNTH GIMP STUDIO
 OPTIONS_DEFAULT=	STUDIO
