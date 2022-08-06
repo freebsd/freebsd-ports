@@ -1,0 +1,9 @@
+Uniform Manifold Approximation and Projection (UMAP) is a dimension reduction
+technique that can be used for visualisation similarly to t-SNE, but also for
+general non-linear dimension reduction. The algorithm is founded on three
+assumptions about the data:
+* The data is uniformly distributed on a Riemannian manifold;
+* The Riemannian metric is locally constant (or can be approximated as such);
+* The manifold is locally connected.
+
+WWW: https://github.com/lmcinnes/umap
