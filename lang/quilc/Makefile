@@ -12,6 +12,8 @@ COMMENT=	Optimizing Quil compiler (for quantum computing)
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	mmap: Cannot allocate memory, see https://bugs.launchpad.net/sbcl/+bug/1983744
+
 BUILD_DEPENDS=	sbcl:lang/sbcl \
 		cppzmq>0:net/cppzmq
 LIB_DEPENDS=	libblas.so:math/blas \
