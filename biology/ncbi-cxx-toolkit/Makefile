@@ -9,6 +9,8 @@ COMMENT=	NCBI C++ Toolkit
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/doc/public/LICENSE
 
+BROKEN_armv6=	platform not defined for FreeBSD arm, see https://github.com/ncbi/ncbi-cxx-toolkit-public/issues/2
+
 LIB_DEPENDS=	libcdd.so:math/cddlib \
 		liblmdb.so:databases/lmdb \
 		libpcre.so:devel/pcre
