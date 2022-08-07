@@ -387,6 +387,7 @@
     SUBDIR += py-gluoncv
     SUBDIR += py-gluonnlp
     SUBDIR += py-halo
+    SUBDIR += py-histoprint
     SUBDIR += py-huepy
     SUBDIR += py-kartograph
     SUBDIR += py-log_symbols

@@ -1,0 +1,10 @@
+histoprint is a package for pretty print of NumPy (and other) histograms to the
+console.
+
+Histoprint uses a mix of terminal color codes and Unicode trickery (i.e.
+combining characters) to plot overlaying histograms. Some terminals are not able
+to display Unicode combining characters correctly. Histoprint can still be used
+in those terminals, but the character set needs to be constrained to the
+non-combining ones.
+
+WWW: https://github.com/scikit-hep/histoprint
