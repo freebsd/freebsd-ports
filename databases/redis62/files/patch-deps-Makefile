@@ -1,5 +1,5 @@
---- deps/Makefile.orig	2021-01-12 09:21:03.000000000 -0500
-+++ deps/Makefile	2021-01-13 11:37:45.979445000 -0500
+--- deps/Makefile.orig	2021-01-12 14:21:03 UTC
++++ deps/Makefile
 @@ -69,7 +69,7 @@
  	LUA_CFLAGS= -D__C99FEATURES__=1
  endif

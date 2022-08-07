@@ -1,5 +1,5 @@
---- src/Makefile.orig	2021-01-12 09:21:03.000000000 -0500
-+++ src/Makefile	2021-01-13 11:52:33.070529000 -0500
+--- src/Makefile.orig	2021-01-12 14:21:03 UTC
++++ src/Makefile
 @@ -16,7 +16,7 @@
  uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
  uname_M := $(shell sh -c 'uname -m 2>/dev/null || echo not')

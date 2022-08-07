@@ -1,5 +1,5 @@
---- deps/lua/src/lua_cjson.c.orig	2019-12-08 07:56:31.419672000 -0500
-+++ deps/lua/src/lua_cjson.c	2019-12-08 07:56:52.389362000 -0500
+--- deps/lua/src/lua_cjson.c.orig	2019-12-08 12:56:31 UTC
++++ deps/lua/src/lua_cjson.c
 @@ -1299,7 +1299,7 @@
   *
   * luaL_setfuncs() is used to create a module table where the functions have
