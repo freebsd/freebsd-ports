@@ -1,0 +1,5 @@
+Python bindings for Boost::Histogram, a C++14 library. This is one of the
+fastest libraries for histogramming, while still providing the power of a full
+histogram object.
+
+WWW: https://github.com/scikit-hep/boost-histogram
