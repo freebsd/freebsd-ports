@@ -1,5 +1,5 @@
 PORTNAME=	ruamel.yaml
-PORTVERSION=	0.16.12
+PORTVERSION=	0.17.21
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ COMMENT=	YAML 1.2 loader/dumper package for Python
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml.clib>=0.1.2:devel/py-ruamel.yaml.clib@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml.clib>=0.2.6:devel/py-ruamel.yaml.clib@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
