@@ -572,6 +572,9 @@ PORTDOCS=		html
 post-patch:
 # Extract (snapshot) version from the port instead of .tag file
 	@${ECHO_CMD} '${DISTVERSIONFULL}' >${WRKSRC}/.tag
+# Respect LOCALBASE for cursors
+	@${REINPLACE_CMD} 's,/usr/share,${LOCALBASE}/share,' \
+		${WRKSRC}/window/src/os/x11/cursor.rs
 
 do-build-DOCS-on:
 # Build HTML documentation similar to ci/build-docs.sh
