@@ -1,5 +1,5 @@
-TIMESTAMP = 1657305345
-SHA256 (brummer10-XUiDesigner-v0.4-7-g47715db_GH0.tar.gz) = 2e6c55c3add0cbf45e51c17f5609177513f4c04f32e6756561469eceb76d7562
-SIZE (brummer10-XUiDesigner-v0.4-7-g47715db_GH0.tar.gz) = 124064
-SHA256 (brummer10-libxputty-d7510f6_GH0.tar.gz) = 98ab0d455cc9560e83cadfe6138e908d408f766446d29335940cc83bb6f86ca4
-SIZE (brummer10-libxputty-d7510f6_GH0.tar.gz) = 548619
+TIMESTAMP = 1659849686
+SHA256 (brummer10-XUiDesigner-v0.4-37-g8f5abdb_GH0.tar.gz) = dd912b9c6533d2962419474f63bbe80b2528ae143009333665aeb9f612d84419
+SIZE (brummer10-XUiDesigner-v0.4-37-g8f5abdb_GH0.tar.gz) = 131790
+SHA256 (brummer10-libxputty-d073c72_GH0.tar.gz) = 7d91b3f9a7187a44b6906f5eb8185e52ba2281ba8df0a6582b4fbf1f06646446
+SIZE (brummer10-libxputty-d073c72_GH0.tar.gz) = 549046

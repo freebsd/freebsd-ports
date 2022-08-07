@@ -1,7 +1,7 @@
 PORTNAME=	xuidesigner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4-7
-DISTVERSIONSUFFIX=	-g47715db
+DISTVERSION=	0.4-37
+DISTVERSIONSUFFIX=	-g8f5abdb
 CATEGORIES=	audio
 #MASTER_SITES=	https://github.com/brummer10/XUiDesigner/releases/download/v${DISTVERSION}/
 DISTNAME=	XUIDesigner_${DISTVERSION}
@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	brummer10
 GH_PROJECT=	XUiDesigner
-GH_TUPLE=	brummer10:libxputty:d7510f6:brummer10_libxputty/libxputty
+GH_TUPLE=	brummer10:libxputty:d073c72:brummer10_libxputty/libxputty
 
 SHEBANG_FILES=	tools/dsp2cc
 
