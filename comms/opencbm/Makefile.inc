@@ -14,6 +14,6 @@ MAKE_ENV=	USER_CFLAGS="${CFLAGS}"
 
 PLIST_SUB=	OCBM_VERSION=${OCBM_VERSION}
 
-PORTSCOUT=	limit:\d\.\d
+PORTSCOUT=	limit:^v\d
 
 PLUGINBASENAME=	${PREFIX}/lib/opencbm/plugin/libopencbm-
