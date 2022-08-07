@@ -1,5 +1,5 @@
 PORTNAME=	fnott
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
