@@ -5,4 +5,4 @@ It can be used as a general robust function minimisation method, but is most
 commonly used for likelihood fits of models to data, and to get model parameter
 error estimates from likelihood profile analysis.
 
-WWW: https://github.com/scikit-hep/iminuit
+WWW: https://iminuit.readthedocs.io/en/stable/

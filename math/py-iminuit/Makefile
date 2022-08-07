@@ -1,5 +1,5 @@
 PORTNAME=	iminuit
-DISTVERSION=	2.12.0
+DISTVERSION=	2.15.2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,8 @@ BUILD_DEPENDS=	cmake:devel/cmake
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		compiler:c++14-lang python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # 2 tests are known to fail, see https://github.com/scikit-hep/iminuit/issues/779
+
+TEST_ENV=      ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>
