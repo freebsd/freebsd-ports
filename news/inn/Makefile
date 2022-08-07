@@ -1,5 +1,5 @@
 PORTNAME?=		inn
-PORTVERSION?=		2.6.5
+PORTVERSION?=		2.7.0
 PORTREVISION?=		0
 CATEGORIES=		news
 MASTER_SITES=		ISC
@@ -21,32 +21,30 @@ CPE_VENDOR=	isc
 
 CONFLICTS?=	inn-current
 
-OPTIONS_DEFINE=		BERKELEYDB GNUPG KERBEROS PYTHON SASL KEYWORDS \
-			LARGE_FILES OPENSSL SETGID_INEWS TAGGED_HASH \
-			UUCP_RNEWS DOCS EXAMPLES
-OPTIONS_DEFAULT=	BERKELEYDB GNUPG KEYWORDS OPENSSL LARGE_FILES \
-			SETGID_INEW UUCP_RNEWS
+OPTIONS_DEFINE=		BERKELEYDB BLACKLISTD GNUPG KERBEROS PYTHON SASL \
+			SQLITE KEYWORDS LARGE_FILES OPENSSL SETGID_INEWS \
+			TAGGED_HASH UUCP_RNEWS DOCS EXAMPLES
+OPTIONS_DEFAULT=	BERKELEYDB BLACKLISTD GNUPG SQLITE KEYWORDS OPENSSL \
+			LARGE_FILES SETGID_INEW UUCP_RNEWS
 OPTIONS_SUB=		yes
 
 KERBEROS_DESC=		Enable Kerberos v5 (for auth_krb5)
 PYTHON_DESC=		Enable support for embedded Python
 SASL_DESC=		Enable SASL (for imapfeed authentication)
+SQLITE_DESC=		Enable SQLite (for ovsqlite overview method)
 TAGGED_HASH_DESC=	Use tagged hash table for history
 LARGE_FILES_DESC=	Support for files larger than 2GB
 KEYWORDS_DESC=		Automatic keyword generation support
 BERKELEYDB_DESC=	Enable BerkeleyDB (for ovdb overview method)
+BLACKLISTD_DESC=	Enable blacklistd support
 OPENSSL_DESC=		Enable OpenSSL (for NNTP over TLS/SSL support)
 GNUPG_DESC=		GnuPG support (for pgpverify control message)
 UUCP_RNEWS_DESC=	Install rnews suitable for use with net/freebsd-uucp
 SETGID_INEWS_DESC=	Enable posting articles locally for all users
 
-.if ${BRANCH:U} == 2.7
-OPTIONS_DEFINE+=		BLACKLISTD SQLITE
-OPTIONS_DEFAULT+=		BLACKLISTD SQLITE
-BLACKLISTD_DESC=		Enable blacklistd support
 BLACKLISTD_CONFIGURE_WITH=	blacklist
-SQLITE_DESC=			Enable SQLite (for ovsqlite overview method)
 
+.if ${BRANCH:U} == 2.8
 PLIST_SUB+=		SNAPSHOT=""
 .else
 PLIST_SUB+=		SNAPSHOT="@comment "
@@ -72,9 +70,9 @@ CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man		\
 
 UUCP_RNEWS_RUN_DEPENDS=	uucp:net/freebsd-uucp
 
-INNLIB_LONG?=		6.1.0
-LIBVER_LONG?=		3.0.5
-LIBSTORAGEVER_LONG?=	3.0.5
+INNLIB_LONG?=		8.0.0
+LIBVER_LONG?=		3.0.6
+LIBSTORAGEVER_LONG?=	3.1.0
 PLIST_SUB+=		LIBVER=${LIBVER_LONG:R:R} LIBVER_LONG=${LIBVER_LONG} \
 			INNLIB=${INNLIB_LONG:R:R} INNLIB_LONG=${INNLIB_LONG} \
 			LIBSTORAGEVER=${LIBSTORAGEVER_LONG:R:R} LIBSTORAGEVER_LONG=${LIBSTORAGEVER_LONG}
@@ -89,9 +87,7 @@ PLIST_SUB+=		SQLITE=""
 TO_BE_STRIPPED+=	bin/ovsqlite-server
 CONFIG_FILES+=		ovsqlite.conf
 .else
-.  if ${BRANCH:U} == 2.7
 CONFIGURE_ARGS+=	--without-sqlite3
-.  endif
 PLIST_SUB+=		SQLITE="@comment "
 .endif
 

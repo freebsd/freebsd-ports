@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20220807:
+  AFFECTS: users of news/inn
+  AUTHOR: kbowling@FreeBSD.org
+
+  The inn port has been updated to 2.7 release.  Users upgrading from
+  prior versions should read through the announcement for any manual
+  upgrading steps that apply to your environment.
+
+  https://lists.isc.org/pipermail/inn-announce/2022-July/000015.html
+
 20220711:
   AFFECTS: users of security/stunnel
   AUTHOR: zi@FreeBSD.org

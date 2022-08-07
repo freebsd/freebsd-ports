@@ -21,9 +21,6 @@ bin/control/ihave.pl
 bin/control/newgroup.pl
 bin/control/rmgroup.pl
 bin/control/sendme.pl
-bin/control/sendsys.pl
-bin/control/senduuname.pl
-bin/control/version.pl
 bin/controlbatch
 bin/controlchan
 bin/convdate
@@ -34,7 +31,6 @@ bin/expire
 bin/expireover
 bin/expirerm
 bin/fastrm
-bin/filechan
 bin/filter/INN.py
 bin/filter/filter_innd.pl
 bin/filter/filter_innd.py
@@ -46,6 +42,7 @@ bin/filter/nnrpd_auth.pl
 bin/filter/nnrpd_auth.py
 bin/filter/nnrpd_dynamic.py
 bin/filter/startup_innd.pl
+bin/gencancel
 bin/getlist
 bin/grephistory
 bin/imapfeed
@@ -94,13 +91,11 @@ bin/rnews.libexec/gunbatch
 bin/scanlogs
 bin/scanspool
 bin/send-ihave
-bin/send-nntp
 bin/send-uucp
 bin/sendinpaths
 bin/sendxbatches
 bin/shlock
 bin/shrinkfile
-bin/signcontrol
 bin/simpleftp
 bin/sm
 bin/tally.control
@@ -130,7 +125,6 @@ include/inn/buffer.h
 include/inn/concat.h
 include/inn/confparse.h
 include/inn/dbz.h
-include/inn/defines.h
 include/inn/dispatch.h
 include/inn/fdflag.h
 include/inn/hashtab.h
@@ -157,6 +151,7 @@ include/inn/portable-macros.h
 include/inn/portable-socket.h
 include/inn/portable-stdbool.h
 include/inn/qio.h
+include/inn/secrets.h
 include/inn/sequence.h
 include/inn/storage.h
 include/inn/system.h
@@ -171,6 +166,7 @@ include/inn/xwrite.h
 lib/perl/INN/Config.pm
 lib/perl/INN/Utils/Shlock.pm
 lib/innreport_inn.pm
+lib/innreport-display.conf
 lib/innshellvars
 lib/innshellvars.pl
 lib/innshellvars.tcl
@@ -182,14 +178,15 @@ lib/libinnhist.a
 lib/libinnhist.so
 lib/libinnhist.so.%%LIBVER%%
 lib/libinnhist.so.%%LIBVER_LONG%%
-lib/libstorage.a
-lib/libstorage.so
-lib/libstorage.so.%%LIBSTORAGEVER%%
-lib/libstorage.so.%%LIBSTORAGEVER_LONG%%
+lib/libinnstorage.a
+lib/libinnstorage.so
+lib/libinnstorage.so.%%LIBSTORAGEVER%%
+lib/libinnstorage.so.%%LIBSTORAGEVER_LONG%%
 @comment --------------------------------------------------------------
 @cwd
 man/man1/convdate.1.gz
 man/man1/fastrm.1.gz
+man/man1/gencancel.1.gz
 man/man1/getlist.1.gz
 man/man1/grephistory.1.gz
 man/man1/inews.1.gz
@@ -205,9 +202,6 @@ man/man1/simpleftp.1.gz
 man/man1/sm.1.gz
 man/man3/INN::Config.3pm.gz
 man/man3/INN::Utils::Shlock.3pm.gz
-man/man3/libauth.3.gz
-man/man3/libinn.3.gz
-man/man3/libinnhist.3.gz
 man/man3/libinn_clientlib.3.gz
 man/man3/libinn_dbz.3.gz
 man/man3/libinn_inndcomm.3.gz
@@ -215,7 +209,10 @@ man/man3/libinn_list.3.gz
 man/man3/libinn_qio.3.gz
 man/man3/libinn_tst.3.gz
 man/man3/libinn_uwildmat.3.gz
-man/man3/libstorage.3.gz
+man/man3/libinnauth.3.gz
+man/man3/libinnstorage.3.gz
+man/man3/libinn.3.gz
+man/man3/libinnhist.3.gz
 man/man5/active.5.gz
 man/man5/active.times.5.gz
 man/man5/buffindexed.conf.5.gz
@@ -227,6 +224,7 @@ man/man5/expire.ctl.5.gz
 man/man5/history.5.gz
 man/man5/incoming.conf.5.gz
 man/man5/inn-radius.conf.5.gz
+man/man5/inn-secrets.conf.5.gz
 man/man5/inn.conf.5.gz
 man/man5/innfeed.conf.5.gz
 man/man5/innreport.conf.5.gz
@@ -265,7 +263,6 @@ man/man8/domain.8.gz
 man/man8/expire.8.gz
 man/man8/expireover.8.gz
 man/man8/expirerm.8.gz
-man/man8/filechan.8.gz
 man/man8/ident.8.gz
 man/man8/imapfeed.8.gz
 man/man8/innbind.8.gz
@@ -303,7 +300,6 @@ man/man8/rc.news.8.gz
 man/man8/scanlogs.8.gz
 man/man8/scanspool.8.gz
 man/man8/send-ihave.8.gz
-man/man8/send-nntp.8.gz
 man/man8/send-uucp.8.gz
 man/man8/sendinpaths.8.gz
 man/man8/sendxbatches.8.gz
@@ -323,6 +319,7 @@ man/man8/writelog.8.gz
 %%EXAMPLESDIR%%/expire.ctl
 %%EXAMPLESDIR%%/incoming.conf
 %%EXAMPLESDIR%%/inn-radius.conf
+%%EXAMPLESDIR%%/inn-secrets.conf
 %%EXAMPLESDIR%%/inn.conf
 %%EXAMPLESDIR%%/innfeed.conf
 %%EXAMPLESDIR%%/innreport.conf
