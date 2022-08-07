@@ -1,30 +1,31 @@
 PORTNAME=	meek
-DISTVERSION=	0.35.0
-PORTREVISION=	4
-CATEGORIES=	security
-MASTER_SITES=	https://gitweb.torproject.org/pluggable-transports/meek.git/snapshot/ \
-		https://gitweb.torproject.org/pluggable-transports/goptlib.git/snapshot/:goptlib
-DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.gz \
-		goptlib-${GOPTLIBVERSION}.tar.gz:goptlib
+DISTVERSIONPREFIX=v
+DISTVERSION=	0.37.0
+CATEGORIES=	security net
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Pluggable transport proxy that relays through third-party server
 
 LICENSE=	CC0-1.0
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/${GO_PKGNAME}/COPYING
 
-USES=		go:modules
-USE_GITHUB=	nodefault
+USES=		cpe go:modules
+USE_GITHUB=	yes
 
-GOPTLIBVERSION=	0.7
-GO_TARGET=	./meek-client \
-		./meek-server
-GH_TUPLE=	\
-		golang:crypto:4b2356b1ed79:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:ff2c4b7c35a0:golang_net/vendor/golang.org/x/net \
-		golang:sys:593003d681fa:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
-		refraction-networking:utls:43c36d3c1f57:refraction_networking_utls/vendor/github.com/refraction-networking/utls
+CPE_VENDOR=	torproject
+
+GO_BUILDFLAGS+=	-ldflags '-s -w'
+GO_PKGNAME=	git.torproject.org/pluggable-transports/meek.git
+GO_TARGET=	./meek-client ./meek-server
+
+GH_ACCOUNT=	torbsd
+GH_SUBDIR=	${GO_PKGNAME}
+GH_TUPLE=	torbsd:goptlib:v1.2.0:torbsd_goptlib/vendor/git.torproject.org/pluggable-transports/goptlib.git \
+		golang:crypto:86341886e292:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:27dd8689420f:golang_net/vendor/golang.org/x/net \
+		golang:sys:4e6760a101f9:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
+		refraction-networking:utls:v1.0.0:refraction_networking_utls/vendor/github.com/refraction-networking/utls
 
 PLIST_FILES=	bin/meek-client \
 		bin/meek-server \
@@ -32,10 +33,6 @@ PLIST_FILES=	bin/meek-client \
 		man/man1/meek-server.1.gz
 
 SUB_FILES=	pkg-message
-
-post-patch:
-	@${MKDIR} ${WRKSRC}/vendor/git.torproject.org/pluggable-transports
-	@${LN} -s ${WRKDIR}/goptlib-${GOPTLIBVERSION} ${WRKSRC}/vendor/git.torproject.org/pluggable-transports/goptlib.git
 
 do-test:
 .for t in ${GO_TARGET}
