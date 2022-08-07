@@ -1,0 +1,6 @@
+Onionprobe is a tool for testing and monitoring the status of
+Tor Onion Services sites. It can run a single time or continuously to
+probe a set of onion services endpoints and paths, optionally
+exporting to Prometheus.
+
+WWW: https://pypi.org/project/onionprobe
