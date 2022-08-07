@@ -1,0 +1,10 @@
+[
+{   type: install
+    message: <<EOM
+Install the math/gmp port to enable accelerated processing with the GNU
+Multiple Precision Arithmetic Library. PyCryptodome will use the
+optional enhancement at runtime automatically if the library is
+available.
+EOM
+}
+]
