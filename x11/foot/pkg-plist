@@ -16,6 +16,7 @@ share/bash-completion/completions/footclient
 share/fish/vendor_completions.d/foot.fish
 share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/apprentice
+%%DATADIR%%/themes/catppuccin
 %%DATADIR%%/themes/derp
 %%DATADIR%%/themes/dracula
 %%DATADIR%%/themes/gruvbox-dark
@@ -24,6 +25,7 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/jetbrains-darcula
 %%DATADIR%%/themes/kitty
 %%DATADIR%%/themes/material-design
+%%DATADIR%%/themes/monokai-pro
 %%DATADIR%%/themes/nord
 %%DATADIR%%/themes/nordiq
 %%DATADIR%%/themes/paper-color-dark
@@ -53,6 +55,9 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/tempus-totus
 %%DATADIR%%/themes/tempus-warp
 %%DATADIR%%/themes/tempus-winter
+%%DATADIR%%/themes/tokyonight-day
+%%DATADIR%%/themes/tokyonight-night
+%%DATADIR%%/themes/tokyonight-storm
 %%DATADIR%%/themes/visibone
 share/icons/hicolor/48x48/apps/foot.png
 share/icons/hicolor/scalable/apps/foot.svg
