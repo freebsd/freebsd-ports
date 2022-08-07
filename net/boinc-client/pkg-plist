@@ -235,17 +235,17 @@ libdata/pkgconfig/libboinc_opencl.pc
 %%MANAGER%%share/pixmaps/boincmgr.16x16.png
 %%MANAGER%%share/pixmaps/boincmgr.32x32.png
 %%MANAGER%%share/pixmaps/boincmgr.48x48.png
-libdata/pkgconfig/libboinc_graphics2.pc
-share/applications/boinc.desktop
+%%X11%%libdata/pkgconfig/libboinc_graphics2.pc
+%%X11%%share/applications/boinc.desktop
 %%SKINS%%share/boinc/skins/Makefile
 %%SKINS%%share/boinc/skins/Makefile.am
 %%SKINS%%share/boinc/skins/Makefile.in
 %%SKINS%%share/boinc/skins/World Community Grid/wcg.ico
 %%SKINS%%share/boinc/skins/World Community Grid/wcg_50.png
 %%SKINS%%share/boinc/skins/World Community Grid/wcg_about.ico
-share/icons/hicolor/64x64/apps/boinc.png
-share/icons/hicolor/scalable/apps/boinc.svg
-share/locale/ka/LC_MESSAGES/BOINC-Manager.mo
+%%SKINS%%share/icons/hicolor/64x64/apps/boinc.png
+%%SKINS%%share/icons/hicolor/scalable/apps/boinc.svg
+%%SKINS%%share/locale/ka/LC_MESSAGES/BOINC-Manager.mo
 @dir share/boinc-manager/skins/Charity Engine
 @dir share/boinc-manager/skins/Default
 @dir share/boinc-manager/skins/GridRepublic
