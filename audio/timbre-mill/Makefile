@@ -10,6 +10,8 @@ COMMENT=	Timbre Mill tool for timbre correction
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265680
+
 LIB_DEPENDS=	libiconv.so:converters/libiconv \
 		libsndfile.so:audio/libsndfile # for some reason binaries aren't linked with shared libs
 
