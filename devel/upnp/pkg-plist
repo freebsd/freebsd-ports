@@ -19,6 +19,7 @@ include/upnp/ithread.h
 include/upnp/ixml.h
 include/upnp/ixmldebug.h
 include/upnp/list.h
+include/upnp/posix_overwrites.h
 include/upnp/upnp.h
 include/upnp/upnpconfig.h
 %%DEBUG%%include/upnp/upnpdebug.h
