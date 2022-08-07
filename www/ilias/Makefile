@@ -1,5 +1,5 @@
 PORTNAME=	ilias
-PORTVERSION=	7.10
+PORTVERSION=	7.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www education
 
@@ -57,6 +57,8 @@ EXTRA_FILES=	%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/mime \
 		%%WWWDIR%%/node_modules/.bin/gl-style-migrate \
 		%%WWWDIR%%/node_modules/.bin/gl-style-validate \
 		%%WWWDIR%%/node_modules/.bin/he \
+		%%WWWDIR%%/node_modules/.bin/is-ci \
+		%%WWWDIR%%/node_modules/.bin/is-docker \
 		%%WWWDIR%%/node_modules/.bin/image-size \
 		%%WWWDIR%%/node_modules/.bin/js-yaml \
 		%%WWWDIR%%/node_modules/.bin/lessc \
@@ -70,11 +72,14 @@ EXTRA_FILES=	%%WWWDIR%%/Modules/Chatroom/chat/node_modules/.bin/mime \
 		%%WWWDIR%%/node_modules/.bin/node-gyp-build-test \
 		%%WWWDIR%%/node_modules/.bin/node-which \
 		%%WWWDIR%%/node_modules/.bin/opencollective-postinstall \
+		%%WWWDIR%%/node_modules/.bin/patch-package \
 		%%WWWDIR%%/node_modules/.bin/pbf \
+		%%WWWDIR%%/node_modules/.bin/rimraf \
 		%%WWWDIR%%/node_modules/.bin/rollup \
 		%%WWWDIR%%/node_modules/.bin/semver \
 		%%WWWDIR%%/node_modules/.bin/terser \
 		%%WWWDIR%%/node_modules/.bin/uuid \
+		%%WWWDIR%%/node_modules/cross-spawn/node_modules/.bin/which \
 		%%WWWDIR%%/test/filter.test.js \
 		%%WWWDIR%%/test/mainbar.test.js
 
