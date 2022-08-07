@@ -1,5 +1,5 @@
---- deps/Makefile.orig	2021-01-13 11:43:05.174197000 -0500
-+++ deps/Makefile	2021-01-13 11:44:13.744658000 -0500
+--- deps/Makefile.orig	2021-01-13 16:43:05 UTC
++++ deps/Makefile
 @@ -83,12 +83,12 @@
  
  .PHONY: lua

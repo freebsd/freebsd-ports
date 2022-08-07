@@ -1,9 +1,9 @@
-PORTNAME=	redis62
+PORTNAME=	redis
 DISTVERSION=	6.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
-DISTNAME=	redis-${PORTVERSION}
+PKGNAMESUFFIX=	62
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
