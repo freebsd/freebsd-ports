@@ -77,6 +77,7 @@
     SUBDIR += jalview
     SUBDIR += jellyfish
     SUBDIR += kallisto
+    SUBDIR += kmcp
     SUBDIR += lamarc
     SUBDIR += libbigwig
     SUBDIR += libgff
