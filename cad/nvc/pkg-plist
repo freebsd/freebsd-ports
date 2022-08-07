@@ -1,8 +1,14 @@
 bin/nvc
+include/vhpi_user.h
 lib/nvc/ieee.08/IEEE.FIXED_FLOAT_TYPES
 lib/nvc/ieee.08/IEEE.FIXED_GENERIC_PKG
 lib/nvc/ieee.08/IEEE.FIXED_GENERIC_PKG-body
 lib/nvc/ieee.08/IEEE.FIXED_PKG
+lib/nvc/ieee.08/IEEE.FLOAT_GENERIC_PKG
+lib/nvc/ieee.08/IEEE.FLOAT_GENERIC_PKG-body
+lib/nvc/ieee.08/IEEE.FLOAT_PKG
+lib/nvc/ieee.08/IEEE.IEEE_BIT_CONTEXT
+lib/nvc/ieee.08/IEEE.IEEE_STD_CONTEXT
 lib/nvc/ieee.08/IEEE.MATH_COMPLEX
 lib/nvc/ieee.08/IEEE.MATH_COMPLEX-body
 lib/nvc/ieee.08/IEEE.MATH_REAL
@@ -24,6 +30,12 @@ lib/nvc/ieee.08/IEEE.STD_LOGIC_SIGNED-body
 lib/nvc/ieee.08/IEEE.STD_LOGIC_TEXTIO
 lib/nvc/ieee.08/IEEE.STD_LOGIC_UNSIGNED
 lib/nvc/ieee.08/IEEE.STD_LOGIC_UNSIGNED-body
+lib/nvc/ieee.08/IEEE.VITAL_MEMORY
+lib/nvc/ieee.08/IEEE.VITAL_MEMORY-body
+lib/nvc/ieee.08/IEEE.VITAL_PRIMITIVES
+lib/nvc/ieee.08/IEEE.VITAL_PRIMITIVES-body
+lib/nvc/ieee.08/IEEE.VITAL_TIMING
+lib/nvc/ieee.08/IEEE.VITAL_TIMING-body
 lib/nvc/ieee.08/_NVC_LIB
 lib/nvc/ieee.08/_index
 lib/nvc/ieee/IEEE.MATH_COMPLEX
@@ -54,6 +66,8 @@ lib/nvc/ieee/IEEE.VITAL_TIMING
 lib/nvc/ieee/IEEE.VITAL_TIMING-body
 lib/nvc/ieee/_NVC_LIB
 lib/nvc/ieee/_index
+lib/nvc/nvc.08/NVC.IEEE_SUPPORT
+lib/nvc/nvc.08/NVC.IEEE_SUPPORT-body
 lib/nvc/nvc.08/NVC.POLYFILL
 lib/nvc/nvc.08/NVC.SIM_PKG
 lib/nvc/nvc.08/_NVC_LIB
@@ -78,4 +92,7 @@ lib/nvc/std/_index
 lib/nvc/synopsys/SYNOPSYS.ATTRIBUTES
 lib/nvc/synopsys/_NVC_LIB
 lib/nvc/synopsys/_index
+libexec/nvc/functions.sh
+libexec/nvc/install-osvvm.sh
+libexec/nvc/install-uvvm.sh
 man/man1/nvc.1.gz
