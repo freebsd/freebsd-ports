@@ -1,3 +1,41 @@
+  <vuln vid="9b9a5f6e-1755-11ed-adef-589cfc01894a">
+    <topic>wolfssl -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>wolfssl</name>
+	<range><lt>5.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>wolfSSL blog  reports:</p>
+	<blockquote cite="https://www.wolfssl.com/wolfssl-5-4-0-release/">
+	  <p>In release 5.4.0 there were 3 vulnerabilities listed as
+	    fixed in wolfSSL. Two relatively new reports, one dealing with a DTLS
+	    1.0/1.2 denial of service attack and the other a ciphertext attack on
+	    ECC/DH operations. The last vulnerability listed was a public
+	    disclosure of a previous attack on AMD devices fixed since wolfSSL
+	    version 5.1.0. Coordination of the disclosure of the attack was done
+	    responsibly, in cooperation with the researchers, waiting for the
+	    public release of the attack details since it affects multiple
+	    security libraries.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-34293</cvename>
+      <cvename>CVE-2020-12966</cvename>
+      <cvename>CVE-2021-46744</cvename>
+      <url>https://github.com/wolfSSL/wolfssl/releases/tag/v5.4.0-stable</url>
+      <url>https://www.amd.com/en/corporate/product-security/bulletin/amd-sb-1013</url>
+      <url>https://www.amd.com/en/corporate/product-security/bulletin/amd-sb-1033</url>
+    </references>
+    <dates>
+      <discovery>2022-07-11</discovery>
+      <entry>2022-08-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8bec3994-104d-11ed-a7ac-0800273f11ea">
     <topic>gitea -- multiple issues</topic>
     <affects>
