@@ -1,5 +1,5 @@
 PORTNAME=	lintr
-DISTVERSION=	2.0.1
+DISTVERSION=	3.0.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,17 +13,25 @@ BUILD_DEPENDS=	R-cran-knitr>0:print/R-cran-knitr
 RUN_DEPENDS=	R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-crayon>0:devel/R-cran-crayon \
 		R-cran-cyclocomp>0:devel/R-cran-cyclocomp \
-		R-cran-rstudioapi>=0.2:devel/R-cran-rstudioapi \
-		R-cran-testthat>=2.2.1:devel/R-cran-testthat \
+		R-cran-glue>0:devel/R-cran-glue \
+		R-cran-backports>0:math/R-cran-backports \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-digest>0:security/R-cran-digest \
 		R-cran-rex>0:textproc/R-cran-rex \
 		R-cran-xml2>=1.0.0:textproc/R-cran-xml2 \
-		R-cran-xmlparsedata>=1.0.3:textproc/R-cran-xmlparsedata \
+		R-cran-xmlparsedata>=1.0.3:textproc/R-cran-xmlparsedata
+TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
+		R-cran-mockery>0:devel/R-cran-mockery \
+		R-cran-rstudioapi>=0.2:devel/R-cran-rstudioapi \
+		R-cran-testthat>=3.0.0:devel/R-cran-testthat \
+		R-cran-tibble>0:devel/R-cran-tibble \
+		R-cran-withr>0:devel/R-cran-withr \
+		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-httr>=1.2.1:www/R-cran-httr
-TEST_DEPENDS=	R-cran-mockery>0:devel/R-cran-mockery \
-		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown
 
 USES=		cran:auto-plist
+
+post-install:
+	@${ECHO_CMD} "@dir ${R_MOD_DIR}/help/figures" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
