@@ -8,13 +8,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High performance Python graph library implemented in Rust
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		cargo python:3.7+
-USE_PYTHON=	autoplist concurrent distutils pytest # all tests fail to run, see https://github.com/Qiskit/rustworkx/issues/655
+USE_PYTHON=	autoplist distutils pytest # all tests fail to run, see https://github.com/Qiskit/rustworkx/issues/655
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Qiskit
