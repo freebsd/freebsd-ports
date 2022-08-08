@@ -11,6 +11,7 @@ COMMENT=	Raw image processing program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_armv7=	compilation fails: use of overloaded operator '[]' is ambiguous, see https://bitbucket.org/agriggio/art/issues/256/build-fails-on-32-bit-architectures-use-of
 BROKEN_i386=	ld: error: undefined symbol: __atomic_load
 
 EXTRACT_DEPENDS=	gtar:archivers/gtar # bsdtar(1) complains about hard links to itself
