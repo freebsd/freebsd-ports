@@ -91,7 +91,9 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/configuration-editing/package.json
 %%DATADIR%%/resources/app/extensions/configuration-editing/package.nls.json
 %%DATADIR%%/resources/app/extensions/configuration-editing/schemas/attachContainer.schema.json
+%%DATADIR%%/resources/app/extensions/configuration-editing/schemas/devContainer.codespaces.schema.json
 %%DATADIR%%/resources/app/extensions/configuration-editing/schemas/devContainer.schema.generated.json
+%%DATADIR%%/resources/app/extensions/configuration-editing/schemas/devContainer.vscode.schema.json
 %%DATADIR%%/resources/app/extensions/cpp/language-configuration.json
 %%DATADIR%%/resources/app/extensions/cpp/package.json
 %%DATADIR%%/resources/app/extensions/cpp/package.nls.json
@@ -179,7 +181,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/git-base/syntaxes/ignore.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/git/README.md
 %%DATADIR%%/resources/app/extensions/git/dist/164.js
-%%DATADIR%%/resources/app/extensions/git/dist/488.js
+%%DATADIR%%/resources/app/extensions/git/dist/391.js
 %%DATADIR%%/resources/app/extensions/git/dist/939.js
 %%DATADIR%%/resources/app/extensions/git/dist/939.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/git/dist/askpass-empty.sh
@@ -214,7 +216,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/git/resources/icons/light/status-untracked.svg
 %%DATADIR%%/resources/app/extensions/github-authentication/README.md
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/164.js
-%%DATADIR%%/resources/app/extensions/github-authentication/dist/488.js
+%%DATADIR%%/resources/app/extensions/github-authentication/dist/391.js
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/939.js
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/939.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/github-authentication/dist/extension.js
@@ -278,10 +280,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/hlsl/package.nls.json
 %%DATADIR%%/resources/app/extensions/hlsl/syntaxes/hlsl.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/html-language-features/README.md
-%%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/278.htmlClientMain.js
-%%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/493.htmlClientMain.js
-%%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/493.htmlClientMain.js.LICENSE.txt
-%%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/955.htmlClientMain.js
 %%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/htmlClientMain.js
 %%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/nls.metadata.json
@@ -316,6 +314,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ini/syntaxes/ini.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/ipynb/README.md
 %%DATADIR%%/resources/app/extensions/ipynb/dist/ipynbMain.js
+%%DATADIR%%/resources/app/extensions/ipynb/notebook-out/cellAttachmentRenderer.js
 %%DATADIR%%/resources/app/extensions/ipynb/package.json
 %%DATADIR%%/resources/app/extensions/ipynb/package.nls.json
 %%DATADIR%%/resources/app/extensions/jake/README.md
@@ -339,10 +338,10 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/javascript/syntaxes/Regular Expressions (JavaScript).tmLanguage
 %%DATADIR%%/resources/app/extensions/javascript/tags-language-configuration.json
 %%DATADIR%%/resources/app/extensions/json-language-features/README.md
+%%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/201.jsonClientMain.js
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/278.jsonClientMain.js
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/493.jsonClientMain.js
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/493.jsonClientMain.js.LICENSE.txt
-%%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/955.jsonClientMain.js
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/jsonClientMain.js
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/nls.metadata.json
@@ -394,14 +393,12 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/markdown-basics/syntaxes/markdown.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/README.md
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/164.js
-%%DATADIR%%/resources/app/extensions/markdown-language-features/dist/488.js
+%%DATADIR%%/resources/app/extensions/markdown-language-features/dist/391.js
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/939.js
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/939.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/extension.js
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/nls.metadata.json
-%%DATADIR%%/resources/app/extensions/markdown-language-features/esbuild-notebook.js
-%%DATADIR%%/resources/app/extensions/markdown-language-features/esbuild-preview.js
 %%DATADIR%%/resources/app/extensions/markdown-language-features/icon.png
 %%DATADIR%%/resources/app/extensions/markdown-language-features/media/highlight.css
 %%DATADIR%%/resources/app/extensions/markdown-language-features/media/index.js
@@ -413,6 +410,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/markdown-language-features/package.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/package.nls.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/schemas/package.schema.json
+%%DATADIR%%/resources/app/extensions/markdown-language-features/server/.npmignore
+%%DATADIR%%/resources/app/extensions/markdown-language-features/server/README.md
+%%DATADIR%%/resources/app/extensions/markdown-language-features/server/dist/node/main.js
+%%DATADIR%%/resources/app/extensions/markdown-language-features/server/package.json
+%%DATADIR%%/resources/app/extensions/markdown-language-features/server/yarn.lock
 %%DATADIR%%/resources/app/extensions/markdown-math/README.md
 %%DATADIR%%/resources/app/extensions/markdown-math/dist/extension.js
 %%DATADIR%%/resources/app/extensions/markdown-math/icon.png
@@ -451,7 +453,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/merge-conflict/package.nls.json
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/README.md
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/164.js
-%%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/488.js
+%%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/391.js
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/939.js
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/939.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/extension.js
@@ -778,7 +780,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/simple-browser/dist/extension.js
 %%DATADIR%%/resources/app/extensions/simple-browser/dist/nls.metadata.header.json
 %%DATADIR%%/resources/app/extensions/simple-browser/dist/nls.metadata.json
-%%DATADIR%%/resources/app/extensions/simple-browser/esbuild-preview.js
 %%DATADIR%%/resources/app/extensions/simple-browser/media/codicon.css
 %%DATADIR%%/resources/app/extensions/simple-browser/media/codicon.ttf
 %%DATADIR%%/resources/app/extensions/simple-browser/media/icon.png
@@ -861,7 +862,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/typescript-basics/syntaxes/jsdoc.ts.injection.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/typescript-language-features/README.md
 %%DATADIR%%/resources/app/extensions/typescript-language-features/dist/164.js
-%%DATADIR%%/resources/app/extensions/typescript-language-features/dist/488.js
+%%DATADIR%%/resources/app/extensions/typescript-language-features/dist/391.js
 %%DATADIR%%/resources/app/extensions/typescript-language-features/dist/939.js
 %%DATADIR%%/resources/app/extensions/typescript-language-features/dist/939.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/typescript-language-features/dist/extension.js
@@ -930,8 +931,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcess.js
 %%DATADIR%%/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js
 %%DATADIR%%/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.nls.js
-%%DATADIR%%/resources/app/out/vs/code/electron-browser/workbench/workbench.html
-%%DATADIR%%/resources/app/out/vs/code/electron-browser/workbench/workbench.js
 %%DATADIR%%/resources/app/out/vs/code/electron-main/main.js
 %%DATADIR%%/resources/app/out/vs/code/electron-main/main.nls.js
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/issue/issueReporter.html
@@ -945,6 +944,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/processExplorer/processExplorerMain.js
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/processExplorer/processExplorerMain.nls.js
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html
+%%DATADIR%%/resources/app/out/vs/code/electron-sandbox/workbench/workbench.js
 %%DATADIR%%/resources/app/out/vs/code/node/cli.js
 %%DATADIR%%/resources/app/out/vs/code/node/cli.nls.js
 %%DATADIR%%/resources/app/out/vs/code/node/cliProcessMain.js
