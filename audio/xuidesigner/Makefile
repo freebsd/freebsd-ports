@@ -1,9 +1,8 @@
 PORTNAME=	xuidesigner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4-37
-DISTVERSIONSUFFIX=	-g8f5abdb
+DISTVERSION=	0.5
 CATEGORIES=	audio
-#MASTER_SITES=	https://github.com/brummer10/XUiDesigner/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/brummer10/XUiDesigner/releases/download/v${DISTVERSION}/
 DISTNAME=	XUIDesigner_${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,11 +21,6 @@ USES=		gmake gnome pkgconfig python shebangfix xorg
 USE_GNOME=	cairo
 USE_XORG=	x11
 USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	brummer10
-GH_PROJECT=	XUiDesigner
-GH_TUPLE=	brummer10:libxputty:d073c72:brummer10_libxputty/libxputty
 
 SHEBANG_FILES=	tools/dsp2cc
 
