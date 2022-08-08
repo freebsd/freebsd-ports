@@ -218,6 +218,7 @@ include/wolfssl/wolfcrypt/sha3.h
 include/wolfssl/wolfcrypt/sha512.h
 include/wolfssl/wolfcrypt/signature.h
 include/wolfssl/wolfcrypt/siphash.h
+include/wolfssl/wolfcrypt/sp_int.h
 include/wolfssl/wolfcrypt/srp.h
 include/wolfssl/wolfcrypt/tfm.h
 include/wolfssl/wolfcrypt/types.h
@@ -229,8 +230,8 @@ include/wolfssl/wolfcrypt/wolfmath.h
 include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
-lib/libwolfssl.so.33
-lib/libwolfssl.so.33.0.0
+lib/libwolfssl.so.34
+lib/libwolfssl.so.34.0.0
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/example/client.c
