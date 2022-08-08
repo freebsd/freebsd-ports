@@ -1,5 +1,5 @@
 PORTNAME=	flexfloat
-DISTVERSION=	g20190814
+DISTVERSION=	g20220606
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,12 +11,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=	unknown type name '__float128'; did you mean '_Float128'?
 BROKEN_armv7=	unknown type name '__float128'; did you mean '_Float128'?
 
-USES=		cmake
+USES=		cmake compiler:c++14-lang
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	oprecomp
-GH_TAGNAME=	6db869087a12d763a94d53e9b0a9d52def270865
-USE_LDCONFIG=	yes
-USE_GCC=	yes # clang doesn't support __float128
+GH_TAGNAME=	ac67200de13ed9584500832a2d38a29c79331c1c
 
 CFLAGS_powerpc64le=	-mfloat128
 CFLAGS_powerpc64=	-mfloat128 -mvsx
@@ -28,7 +28,7 @@ PLIST_FILES=	include/flexfloat/flexfloat.h \
 		include/flexfloat/flexfloat_config.h \
 		lib/libflexfloat.so
 
-do-install:
+do-install: # https://github.com/oprecomp/flexfloat/issues/15
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/flexfloat
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${WRKSRC}/include/*.hpp ${STAGEDIR}${PREFIX}/include/flexfloat
 	${INSTALL_LIB} ${BUILD_WRKSRC}/libflexfloat.so ${STAGEDIR}${PREFIX}/lib
