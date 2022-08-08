@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	-no-accessibility -no-gif -no-libpng -no-libjpeg \
 		-no-openssl -no-gui -no-widgets -no-cups \
 		-no-iconv -no-dbus -no-opengl \
 		-no-egl -no-evdev \
-		-no-fontconfig -no-freetype -no-gtk -no-harfbuzz \
+		-no-fontconfig -no-freetype -no-gtk \
 		-no-libudev -no-xcb -no-xcb-xlib \
 		-no-xkbcommon -no-libinput
 
@@ -47,7 +47,9 @@ USES+=		gnome
 .endif
 
 .if ${ARCH} == aarch64c || ${ARCH} == riscv64c
-CONFIGURE_ARGS+=-no-glib -no-mimetype-database
+CONFIGURE_ARGS+=-no-glib -no-mimetype-database -qt-harfbuzz -no-icu
+.else
+CONFIGURE_ARGS+=-no-harfbuzz
 .endif
 
 # FreeBSD base gained an os-release in r354922, but that does not exist
