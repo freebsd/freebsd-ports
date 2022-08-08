@@ -4734,6 +4734,7 @@
     SUBDIR += py-logutils
     SUBDIR += py-logzero
     SUBDIR += py-louie
+    SUBDIR += py-lru-dict
     SUBDIR += py-lunardate
     SUBDIR += py-lxml
     SUBDIR += py-lxml-stubs
