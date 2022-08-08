@@ -28,6 +28,7 @@ include/KF5/KCoreAddons/KProcess
 include/KF5/KCoreAddons/KProcessList
 include/KF5/KCoreAddons/KRandom
 include/KF5/KCoreAddons/KRandomSequence
+include/KF5/KCoreAddons/KRuntimePlatform
 include/KF5/KCoreAddons/KSandbox
 include/KF5/KCoreAddons/KSharedDataCache
 include/KF5/KCoreAddons/KShell
@@ -73,6 +74,7 @@ include/KF5/KCoreAddons/kprocess.h
 include/KF5/KCoreAddons/kprocesslist.h
 include/KF5/KCoreAddons/krandom.h
 include/KF5/KCoreAddons/krandomsequence.h
+include/KF5/KCoreAddons/kruntimeplatform.h
 include/KF5/KCoreAddons/ksandbox.h
 include/KF5/KCoreAddons/kshareddatacache.h
 include/KF5/KCoreAddons/kshell.h
@@ -91,8 +93,8 @@ lib/cmake/KF5CoreAddons/KF5CoreAddonsTargets.cmake
 lib/cmake/KF5CoreAddons/KF5CoreAddonsToolingTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5CoreAddons/KF5CoreAddonsToolingTargets.cmake
 lib/libKF5CoreAddons.so
-lib/libKF5CoreAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5CoreAddons.so.5
+lib/libKF5CoreAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KCoreAddons.pri
 share/kf5/licenses/ARTISTIC
 share/kf5/licenses/BSD
@@ -128,6 +130,7 @@ share/locale/cs/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/cs/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/csb/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/cy/LC_MESSAGES/kcoreaddons5_qt.qm
+share/locale/cy/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/da/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/da/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/de/LC_MESSAGES/kcoreaddons5_qt.qm

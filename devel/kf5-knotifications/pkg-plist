@@ -28,7 +28,6 @@ lib/libKF5Notifications.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/notification/qmldir
 share/dbus-1/interfaces/kf5_org.kde.StatusNotifierItem.xml
 share/dbus-1/interfaces/kf5_org.kde.StatusNotifierWatcher.xml
-share/kservicetypes5/knotificationplugin.desktop
 share/locale/af/LC_MESSAGES/knotifications5_qt.qm
 share/locale/ar/LC_MESSAGES/knotifications5_qt.qm
 share/locale/as/LC_MESSAGES/knotifications5_qt.qm

@@ -45,11 +45,14 @@ lib/libKF5KrossCore.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF5KrossUi.so
 lib/libKF5KrossUi.so.5
 lib/libKF5KrossUi.so.%%KDE_FRAMEWORKS_VERSION%%
+%%QT_MKSPECDIR%%/modules/qt_KrossCore.pri
+%%QT_MKSPECDIR%%/modules/qt_KrossUi.pri
 %%QT_PLUGINDIR%%/krossmoduleforms.so
 %%QT_PLUGINDIR%%/krossmodulekdetranslation.so
 %%QT_PLUGINDIR%%/krossqts.so
 %%QT_PLUGINDIR%%/script/krossqtsplugin.so
 man/ca/man1/kf5kross.1.gz
+man/ca@valencia/man1/kf5kross.1.gz
 man/de/man1/kf5kross.1.gz
 man/es/man1/kf5kross.1.gz
 man/it/man1/kf5kross.1.gz
@@ -59,8 +62,6 @@ man/pt/man1/kf5kross.1.gz
 man/pt_BR/man1/kf5kross.1.gz
 man/sv/man1/kf5kross.1.gz
 man/uk/man1/kf5kross.1.gz
-%%QT_MKSPECDIR%%/modules/qt_KrossCore.pri
-%%QT_MKSPECDIR%%/modules/qt_KrossUi.pri
 share/locale/af/LC_MESSAGES/kross5.mo
 share/locale/ar/LC_MESSAGES/kross5.mo
 share/locale/as/LC_MESSAGES/kross5.mo
