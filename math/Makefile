@@ -979,6 +979,7 @@
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
     SUBDIR += py-sym
+    SUBDIR += py-symengine
     SUBDIR += py-sympy
     SUBDIR += py-theano
     SUBDIR += py-timple
