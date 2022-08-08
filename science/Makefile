@@ -411,6 +411,7 @@
     SUBDIR += thermofun
     SUBDIR += tinker
     SUBDIR += trilinos
+    SUBDIR += tweedledum
     SUBDIR += udunits
     SUBDIR += ukrmol+
     SUBDIR += v_sim

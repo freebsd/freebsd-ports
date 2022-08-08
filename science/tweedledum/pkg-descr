@@ -1,0 +1,6 @@
+tweedledum is a library for synthesis, compilation, and optimization of quantum
+circuits. The library is written to be scalable up to problem sizes in which
+quantum circuits outperform classical ones. Also, it is meant to be used both
+independently and alongside established tools.
+
+WWW: https://github.com/boschmitt/tweedledum
