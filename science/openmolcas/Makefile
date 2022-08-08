@@ -8,7 +8,8 @@ COMMENT=	Quantum chemistry software package
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	build breaks: Symbol 'maxfilesize' at (1) has no IMPLICIT type; did you mean 'mxfile'?
+BROKEN_armv7=	build breaks: Symbol 'maxfilesize' at (1) has no IMPLICIT type; did you mean 'mxfile'? - see https://gitlab.com/Molcas/OpenMolcas/-/issues/375
+BROKEN_i386=	build breaks: Symbol 'maxfilesize' at (1) has no IMPLICIT type; did you mean 'mxfile'? - see https://gitlab.com/Molcas/OpenMolcas/-/issues/375
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR} \
 		chemps2:science/chemps2
