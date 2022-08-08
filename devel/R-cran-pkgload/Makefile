@@ -1,5 +1,5 @@
 PORTNAME=	pkgload
-DISTVERSION=	1.2.4
+DISTVERSION=	1.3.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -8,18 +8,23 @@ COMMENT=	Simulate Package Installation and Attach
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
+RUN_DEPENDS=	R-cran-cli>=3.3.0:devel/R-cran-cli \
 		R-cran-crayon>0:devel/R-cran-crayon \
 		R-cran-desc>0:devel/R-cran-desc \
-		R-cran-rlang>0:devel/R-cran-rlang \
+		R-cran-glue>0:devel/R-cran-glue \
+		R-cran-rlang>=1.0.3:devel/R-cran-rlang \
 		R-cran-rprojroot>0:devel/R-cran-rprojroot \
-		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
-		R-cran-withr>0:devel/R-cran-withr
+		R-cran-withr>=2.4.3:devel/R-cran-withr \
+		R-cran-fs>0:sysutils/R-cran-fs
 TEST_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp \
 		R-cran-bitops>0:devel/R-cran-bitops \
 		R-cran-covr>0:devel/R-cran-covr \
+		R-cran-pak>0:devel/R-cran-pak \
 		R-cran-pkgbuild>0:devel/R-cran-pkgbuild \
-		R-cran-testthat>0:devel/R-cran-testthat
+		R-cran-remotes>0:devel/R-cran-remotes \
+		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
+		R-cran-testthat>=3.1.0:devel/R-cran-testthat \
+		R-cran-mathjaxr>0:math/R-cran-mathjaxr
 
 USES=		cran:auto-plist
 
