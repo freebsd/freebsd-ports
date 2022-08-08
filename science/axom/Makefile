@@ -10,8 +10,9 @@ COMMENT=	Infrastructure for development of multi-physics applications and tools
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BROKEN_i386=	https://github.com/LLNL/axom/issues/743
-BROKEN_powerpc=	https://github.com/LLNL/axom/issues/743
+BROKEN_armv7=	use of overloaded operator '[]' is ambiguous, see https://github.com/LLNL/axom/issues/743
+BROKEN_i386=	use of overloaded operator '[]' is ambiguous, see https://github.com/LLNL/axom/issues/743
+BROKEN_powerpc=	use of overloaded operator '[]' is ambiguous, see https://github.com/LLNL/axom/issues/743
 
 LIB_DEPENDS=	libconduit.so:science/conduit \
 		libhdf5.so:science/hdf5 \
