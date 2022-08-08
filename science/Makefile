@@ -361,6 +361,7 @@
     SUBDIR += py-thewalrus
     SUBDIR += py-tobler
     SUBDIR += py-trainstation
+    SUBDIR += py-tweedledum
     SUBDIR += py-veusz
     SUBDIR += pybrain
     SUBDIR += pynn
