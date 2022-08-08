@@ -1,5 +1,5 @@
 PORTNAME=	gradle
-PORTVERSION=	7.5
+PORTVERSION=	7.5.1
 CATEGORIES=	devel java
 MASTER_SITES=	https://downloads.gradle.org/distributions/
 EXTRACT_SUFX=	-bin.zip
