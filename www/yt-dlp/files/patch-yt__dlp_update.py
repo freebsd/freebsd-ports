@@ -1,6 +1,6 @@
 - this patch prevents -U from updating yt-dlp - it makes it "unrecognized"
 
---- yt_dlp/update.py.orig	2022-07-18 00:03:50 UTC
+--- yt_dlp/update.py.orig	2022-08-08 22:15:24 UTC
 +++ yt_dlp/update.py
 @@ -39,7 +39,7 @@ def _get_variant_and_executable_path():
  
@@ -15,8 +15,8 @@
      **{variant: f'Auto-update is not supported for unpackaged {name} executable; Re-download the latest release'
         for variant, name in {'win32_dir': 'Windows', 'darwin_dir': 'MacOS', 'linux_dir': 'Linux'}.items()},
      'source': 'You cannot update when running from source code; Use git to pull the latest changes',
--    'unknown': 'It looks like you installed yt-dlp with a package manager, pip or setup.py; Use that to update',
+-    'unknown': 'You installed yt-dlp with a package manager or setup.py; Use that to update',
 +    'unknown': 'Please use the command \'pkg upgrade yt-dlp\' to upgrade.',
-     'other': 'It looks like you are using an unofficial build of yt-dlp; Build the executable again',
+     'other': 'You are using an unofficial build of yt-dlp; Build the executable again',
  }
  
