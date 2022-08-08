@@ -246,9 +246,9 @@ libdata/pkgconfig/libboinc_opencl.pc
 %%SKINS%%share/icons/hicolor/64x64/apps/boinc.png
 %%SKINS%%share/icons/hicolor/scalable/apps/boinc.svg
 %%SKINS%%share/locale/ka/LC_MESSAGES/BOINC-Manager.mo
-@dir share/boinc-manager/skins/Charity Engine
-@dir share/boinc-manager/skins/Default
-@dir share/boinc-manager/skins/GridRepublic
-@dir share/boinc-manager/skins/People for a Smarter Planet/graphic
-@dir share/boinc-manager/skins/ProgressThruProcessors
-@dir share/boinc-manager/skins/World Community Grid
+%%SKINS%%@dir share/boinc-manager/skins/Charity Engine
+%%SKINS%%@dir share/boinc-manager/skins/Default
+%%SKINS%%@dir share/boinc-manager/skins/GridRepublic
+%%SKINS%%@dir share/boinc-manager/skins/People for a Smarter Planet/graphic
+%%SKINS%%@dir share/boinc-manager/skins/ProgressThruProcessors
+%%SKINS%%@dir share/boinc-manager/skins/World Community Grid
