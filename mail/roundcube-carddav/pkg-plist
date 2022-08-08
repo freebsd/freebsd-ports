@@ -60,6 +60,10 @@
 %%WWWDIR%%/dbmigrations/0015-fixmysqlconstraints/mysql.sql
 %%WWWDIR%%/dbmigrations/0015-fixmysqlconstraints/postgres.sql
 %%WWWDIR%%/dbmigrations/0015-fixmysqlconstraints/sqlite3.sql
+%%WWWDIR%%/dbmigrations/0016-increasetextfieldlengths/README.md
+%%WWWDIR%%/dbmigrations/0016-increasetextfieldlengths/mysql.sql
+%%WWWDIR%%/dbmigrations/0016-increasetextfieldlengths/postgres.sql
+%%WWWDIR%%/dbmigrations/0016-increasetextfieldlengths/sqlite3.sql
 %%WWWDIR%%/dbmigrations/INIT-currentschema/mysql.sql
 %%WWWDIR%%/dbmigrations/INIT-currentschema/postgres.sql
 %%WWWDIR%%/dbmigrations/INIT-currentschema/sqlite3.sql
@@ -209,6 +213,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/StreamWrapper.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UploadedFile.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Uri.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriComparator.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriNormalizer.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriResolver.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Utils.php
