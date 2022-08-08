@@ -10,6 +10,6 @@ LICENSE=	GPLv2
 
 USES=		cabal
 
-EXECUTABLES=	bf
+CABAL_EXECUTABLES=	bf
 
 .include <bsd.port.mk>

@@ -49,7 +49,7 @@ USE_CABAL=	OneTuple-0.3.1_2 \
 		vector-0.12.3.1_2 \
 		witherable-0.4.2_3
 
-CABAL_WRAPPER_SCRIPTS=		${EXECUTABLES}
+CABAL_WRAPPER_SCRIPTS=		${CABAL_EXECUTABLES}
 profiteur_DATADIR_VARS=		js-jquery
 
 post-install:

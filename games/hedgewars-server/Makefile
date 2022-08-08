@@ -67,6 +67,6 @@ USE_CABAL=	ConfigFile-1.1.4 \
 		yaml-0.11.4.0 \
 		zlib-0.6.2.1_1
 
-EXECUTABLES=	hedgewars-server checker
+CABAL_EXECUTABLES=	hedgewars-server checker
 
 .include <bsd.port.mk>

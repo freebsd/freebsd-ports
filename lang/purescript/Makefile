@@ -145,7 +145,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		xss-sanitize-0.3.7_1 \
 		zlib-0.6.3.0
 
-EXECUTABLES=	purs
-CABAL_FLAGS=	release
+CABAL_EXECUTABLES=	purs
+CABAL_FLAGS=		release
 
 .include <bsd.port.mk>

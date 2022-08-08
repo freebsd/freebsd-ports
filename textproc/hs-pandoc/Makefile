@@ -26,7 +26,7 @@ TRYPANDOC_USE_CABAL=	HUnit-1.6.2.0 auto-update-0.1.6 byteorder-1.0.4 \
 			time-manager-0.0.0 unix-compat-0.6 unix-time-0.4.7 \
 			unliftio-core-0.2.0.1_2 vault-0.3.1.5_1 void-0.7.3 \
 			wai-3.2.3 wai-extra-3.1.12.1 wai-logger-2.4.0 word8-0.1.3
-TRYPANDOC_EXECUTABLES=	trypandoc
+TRYPANDOC_CABAL_EXECUTABLES=	trypandoc
 
 USE_CABAL=	Glob-0.10.2_3 \
 		HsYAML-0.2.1.1 \
@@ -177,7 +177,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		zlib-0.6.3.0
 
 CABAL_PROJECT=		remove
-EXECUTABLES=		pandoc
+CABAL_EXECUTABLES=	pandoc
 CABAL_WRAPPER_SCRIPTS=	${EXECUTABLES}
 
 OPTIONS_SUB=	yes

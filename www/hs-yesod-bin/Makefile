@@ -129,6 +129,6 @@ USE_CABAL=	HUnit-1.6.2.0 \
 		yaml-0.11.8.0 \
 		zlib-0.6.3.0
 
-EXECUTABLES=	yesod
+CABAL_EXECUTABLES=	yesod
 
 .include <bsd.port.mk>

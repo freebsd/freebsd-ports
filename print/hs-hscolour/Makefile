@@ -11,6 +11,6 @@ LICENSE=	GPLv2
 
 USES=		cabal
 
-EXECUTABLES=	HsColour
+CABAL_EXECUTABLES=	HsColour
 
 .include <bsd.port.mk>

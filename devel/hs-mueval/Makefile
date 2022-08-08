@@ -21,6 +21,6 @@ USE_CABAL=	QuickCheck-2.14.2 \
 		syb-0.7.2.1 \
 		temporary-1.3
 
-EXECUTABLES=	mueval mueval-core
+CABAL_EXECUTABLES=	mueval mueval-core
 
 .include <bsd.port.mk>

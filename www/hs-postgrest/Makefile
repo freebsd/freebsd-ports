@@ -47,7 +47,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/default.conf ${STAGEDIR}${ETCDIR}/default.conf.sample
 	${INSTALL_PROGRAM} \
-		$$(find ${WRKSRC}/dist-newstyle -name ${EXECUTABLES} -type f -perm +111) \
-		${STAGEDIR}${PREFIX}/sbin/${EXECUTABLES}
+		$$(find ${WRKSRC}/dist-newstyle -name ${PORTNAME} -type f -perm +111) \
+		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 
 .include <bsd.port.mk>

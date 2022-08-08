@@ -121,6 +121,6 @@ USE_CABAL=	OneTuple-0.3.1_2 \
 		xml-types-0.3.8 \
 		zlib-0.6.3.0
 
-EXECUTABLES=	hdav
+CABAL_EXECUTABLES=	hdav
 
 .include <bsd.port.mk>

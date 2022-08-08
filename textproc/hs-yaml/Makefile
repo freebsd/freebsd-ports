@@ -59,7 +59,7 @@ USE_CABAL=	OneTuple-0.3.1_2 \
 		vector-algorithms-0.8.0.4_1 \
 		witherable-0.4.2_2
 
-EXECUTABLES=	json2yaml yaml2json
-CABAL_FLAGS=	-no-exe
+CABAL_EXECUTABLES=	json2yaml yaml2json
+CABAL_FLAGS=		-no-exe
 
 .include <bsd.port.mk>

@@ -122,8 +122,7 @@ USE_CABAL=	Diff-0.4.1 \
 		x509-validation-1.6.12 \
 		zlib-0.6.3.0
 
-EXECUTABLES=	dhall-to-bash
-
-CABAL_PROJECT=	remove
+CABAL_EXECUTABLES=	dhall-to-bash
+CABAL_PROJECT=		remove
 
 .include <bsd.port.mk>

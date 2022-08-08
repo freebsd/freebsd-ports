@@ -51,7 +51,7 @@ USE_CABAL=	Diff-0.4.1 \
 		vector-0.12.3.1_2 \
 		witherable-0.4.2_2
 
-EXECUTABLES=	shellcheck
+CABAL_EXECUTABLES=	shellcheck
 
 OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
