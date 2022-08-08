@@ -1,7 +1,7 @@
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ CMAKE_OFF=	BUILD_BENCHMARKS WITH_COTIRE
 OPTIONS_DEFINE=			ARB ECM LLVM MPC TCMALLOC ASSERT
 OPTIONS_SINGLE=			INTCLASS
 OPTIONS_SINGLE_INTCLASS=	GMP GMPXX BOOSTMP FLINT PIRANHA
-OPTIONS_DEFAULT=		ARB ECM LLVM MPC TCMALLOC FLINT # FLINT choice is based on best performance
+OPTIONS_DEFAULT=		ARB ECM LLVM MPC FLINT # FLINT choice is based on best performance, TCMALLOC is broken due to memory corruption issues, see https://github.com/symengine/symengine.py/issues/412
 
 INTCLASS_DESC=		Integer class, use integers from:
 
@@ -50,6 +50,7 @@ MPC_LIB_DEPENDS=	libmpc.so:math/mpc
 TCMALLOC_DESC=		Use tcmalloc from google-perftools (improves performance)
 TCMALLOC_CMAKE_BOOL=	WITH_TCMALLOC
 TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
+TCMALLOC_BROKEN=	associated with a suspected memory corruption problem, see https://github.com/symengine/symengine.py/issues/412
 
 ASSERT_CMAKE_BOOL=	WITH_SYMENGINE_ASSERT
 
