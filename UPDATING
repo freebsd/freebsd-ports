@@ -35,6 +35,16 @@ you update your ports collection, before attempting any port upgrades.
   The environment variable M2_HOME has been replaced with more common
   MAVEN_HOME which can be used to pass a custom Maven home directory.
 
+20220629:
+  AFFECTS: updating x11-servers/xorg-server from a port
+  AUTHOR: se@FreeBSD.org
+
+  The xorg-server port now has a library dependency on x11/libxcvt,
+  which cannot be installed when the previous version of xorg-server
+  is present.  To be able to update xorg-server from a port, the
+  previous version needs to be manually deinstalled to allow libxcvt
+  to be installed.
+
 20220628:
   AFFECTS: users of Erlang and Elixir
   AUTHOR: dch@FreeBSD.org
