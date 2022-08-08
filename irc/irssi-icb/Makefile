@@ -1,6 +1,6 @@
 PORTNAME=	irssi-icb
 PORTVERSION=	0.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 
 MAINTAINER=	fox@FreeBSD.org
@@ -8,8 +8,6 @@ COMMENT=	Irssi plugin for connecting to ICB network
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		does not build: error: use of undeclared identifier 'G_INPUT_READ'
 
 BUILD_DEPENDS=	${LOCALBASE}/include/irssi/src/common.h:irc/irssi
 RUN_DEPENDS=	irssi:irc/irssi
