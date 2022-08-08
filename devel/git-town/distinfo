@@ -1,5 +1,5 @@
-TIMESTAMP = 1642900531
-SHA256 (go/devel_git-town/git-town-v7.7.0/v7.7.0.mod) = 08e5d683211e3058490fe2bb5c871df9c469ac42b6ba8b306f0909290cee7c41
-SIZE (go/devel_git-town/git-town-v7.7.0/v7.7.0.mod) = 680
-SHA256 (go/devel_git-town/git-town-v7.7.0/v7.7.0.zip) = dcd9a489a4e8c23011bbefb17393bdc1f2bb34f1b501b82a062ef1a580c237cd
-SIZE (go/devel_git-town/git-town-v7.7.0/v7.7.0.zip) = 513048
+TIMESTAMP = 1659993877
+SHA256 (go/devel_git-town/git-town-v7.8.0/v7.8.0.mod) = b153ec03a52a6ab9b4fde500cdb95d2d976509641fc38c70b3eac2d38f59325f
+SIZE (go/devel_git-town/git-town-v7.8.0/v7.8.0.mod) = 716
+SHA256 (go/devel_git-town/git-town-v7.8.0/v7.8.0.zip) = 201c7b9eee3dba69e20888f3cba37cedfc79ede953a6c7312193fa78756e1a45
+SIZE (go/devel_git-town/git-town-v7.8.0/v7.8.0.zip) = 472522
