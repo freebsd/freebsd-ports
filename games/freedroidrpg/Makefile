@@ -12,9 +12,6 @@ COMMENT=	Modification of the classical Freedroid engine into an RPG
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: tux_rendering
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: tux_rendering
-
 LIB_DEPENDS=	libpng.so:graphics/png
 
 GNU_CONFIGURE=	yes
@@ -25,6 +22,8 @@ USE_SDL=	sdl image gfx
 CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+CFLAGS+=	-fcommon
 
 PORTDATA=	*
 PORTDOCS=	*
