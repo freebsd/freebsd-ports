@@ -195,7 +195,6 @@
     SUBDIR += octopus
     SUBDIR += openbabel
     SUBDIR += openems
-    SUBDIR += openkim
     SUBDIR += openkim-models
     SUBDIR += openmc
     SUBDIR += openmolcas
