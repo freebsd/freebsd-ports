@@ -10,6 +10,7 @@ COMMENT=	Timbre Mill tool for timbre correction
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	undefined symbol: lsp::aarch64::dsp_init(), see https://github.com/sadko4u/timbre-mill/issues/4
 BROKEN_i386=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265680
 
 LIB_DEPENDS=	libiconv.so:converters/libiconv \
