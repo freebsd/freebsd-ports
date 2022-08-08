@@ -9,6 +9,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=	unknown type name '__float128'; did you mean '_Float128'?
+BROKEN_armv7=	unknown type name '__float128'; did you mean '_Float128'?
 
 USES=		cmake
 USE_GITHUB=	yes
