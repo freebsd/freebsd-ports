@@ -1,0 +1,6 @@
+rustworkx is a general purpose graph library for Python written in Rust to take
+advantage of the performance and safety that Rust provides. It is designed to
+provide a high performance general purpose graph library for any Python
+application.
+
+WWW: https://github.com/Qiskit/rustworkx
