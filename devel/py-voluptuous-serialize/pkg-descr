@@ -1,0 +1,5 @@
+Convert Voluptuous schemas to dictionaries so they can be serialized.
+You can pass a custom serializer to be able to process custom validators.
+If the serializer returns UNSUPPORTED, it will return to normal processing.
+
+WWW: https://github.com/home-assistant-libs/voluptuous-serialize
