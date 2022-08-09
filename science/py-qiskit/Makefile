@@ -1,6 +1,6 @@
 PORTNAME=	qiskit
 DISTVERSION=	0.37.1-4
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-gf178fcc98
 CATEGORIES=	science python # quantum-computing
 MASTER_SITES=	CHEESESHOP
@@ -16,11 +16,13 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qiskit-aer>0:science/py-qiskit-aer@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}qiskit-terra>0:science/py-qiskit-terra@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qiskit-ibmq-provider>0:science/py-qiskit-ibmq-provider@${PY_FLAVOR}
 # optional submodules (list: https://github.com/Qiskit/qiskit#optional-components)
-PY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qiskit-optimization>0:science/py-qiskit-optimization@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qiskit-machine-learning>0:misc/py-qiskit-machine-learning@${PY_FLAVOR}
+OPT_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qiskit-optimization>0:science/py-qiskit-optimization@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-machine-learning>0:misc/py-qiskit-machine-learning@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-nature>0:science/py-qiskit-nature@${PY_FLAVOR}
 
 BUILD_DEPENDS=	${PY_DEPENDS}
-RUN_DEPENDS=	${PY_DEPENDS}
+RUN_DEPENDS=	${PY_DEPENDS} \
+		${OPT_DEPENDS}
 
 USES=		python:3.7+
 USE_PYTHON=	distutils autoplist
