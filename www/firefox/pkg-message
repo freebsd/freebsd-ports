@@ -31,7 +31,7 @@ so use virtual_oss to reroute microphones from non-default devices.
 
 ## Gamepad API
 
-Requires evdev(4) joystick support. On FreeBSD 13.0 enable hgame(4)
+Requires evdev(4) joystick support. On FreeBSD 13 and later enable hgame(4)
 while older versions can use sysutils/iichid or multimedia/webcamd.
 
 ## smb:// issues

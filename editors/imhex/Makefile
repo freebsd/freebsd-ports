@@ -70,7 +70,6 @@ OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}
 
 # Before LLVM13 import to the base system
 .if (${OSMAJOR} == 12 && ${OSVERSION} < 1203505) \
-    || (${OSMAJOR} == 13 && ${OSVERSION} < 1300523) \
     || (${OSMAJOR} == 14 && ${OSVERSION} < 1400042)
 IGNORE=	will not build due to C++20 API functions unavailable in old libc++
 .endif

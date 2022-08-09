@@ -34,11 +34,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	zfs
 GH_TAGNAME=	2d5622f5b
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300013
-IGNORE=	needs FreeBSD 12/13 with AES-CCM support
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-debug --enable-debuginfo
@@ -66,4 +62,4 @@ post-extract:
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -13,12 +13,11 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblz4.so:archivers/liblz4
-TEST_DEPENDS=	gmd5sum:sysutils/coreutils # required by FreeBSD 13.0
 
 USES=		gmake localbase:ldflags tar:zst
 
 ALL_TARGET=	default
-#BINARY_ALIAS=	gmd5sum=md5sum
+BINARY_ALIAS=	gmd5sum=md5sum
 TEST_TARGET=	test
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}" \

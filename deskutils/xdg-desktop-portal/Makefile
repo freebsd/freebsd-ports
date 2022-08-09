@@ -28,7 +28,6 @@ GH_ACCOUNT=	flatpak
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} >= 1400000 && ${OSVERSION} < 1400008) \
- || (${OSVERSION} >= 1300000 && ${OSVERSION} < 1300501) \
  || ${OSVERSION} < 1300000
 IGNORE=		requires O_PATH support in open(2)
 .endif

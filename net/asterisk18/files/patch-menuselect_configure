@@ -1,6 +1,6 @@
---- menuselect/configure.orig	2022-05-12 11:50:59 UTC
+--- menuselect/configure.orig	2022-06-23 15:26:13 UTC
 +++ menuselect/configure
-@@ -5024,7 +5024,7 @@ printf "%s\n" "yes" >&6; }
+@@ -5099,7 +5099,7 @@ else
  printf "%s\n" "yes" >&6; }
  
              PBX_LIBXML2=1

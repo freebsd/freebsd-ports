@@ -49,9 +49,7 @@ FLAVORS=	banks \
 		sienna_cichlid
 
 green_sardine_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
-green_sardine_IGNORE_FreeBSD_13.0=	"Not supported on < 13.1"
 sienna_cichlid_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
-sienna_cichlid_IGNORE_FreeBSD_13.0=	"Not supported on < 13.1"
 
 USES=		kmod uidfix
 
