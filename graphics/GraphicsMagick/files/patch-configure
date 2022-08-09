@@ -69,6 +69,19 @@
  
    # Check for system-dependent libraries X programs must link with.
    # Do this before checking for the system-independent R6 libraries
+@@ -27336,10 +27281,8 @@ $as_echo "no -- some components failed test" >&6; }
+ $as_echo "no -- some components failed test" >&6; }
+         have_jxl='no (failed tests)'
+     else
+-        # JXL is a C++ Lib so requires linking with stdc++.
+-        # TODO: A better solution would be to tell automake to do any linking with
+-        # c++, but I can't figure out a way to get this working.
+-        LIB_JXL='-ljxl -ljxl_threads -lhwy -lbrotlidec -lbrotlienc -lstdc++'
++        # TODO: use pkg-config
++        LIB_JXL='-ljxl -ljxl_threads'
+         LIBS="$LIB_JXL $LIBS"
+ 
+ $as_echo "#define HasJXL 1" >>confdefs.h
 @@ -27703,7 +27649,7 @@ fi
  #
  
