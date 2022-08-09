@@ -5,6 +5,11 @@ include/hexl/eltwise/eltwise-fma-mod.hpp
 include/hexl/eltwise/eltwise-mult-mod.hpp
 include/hexl/eltwise/eltwise-reduce-mod.hpp
 include/hexl/eltwise/eltwise-sub-mod.hpp
+include/hexl/experimental/fft-like/fft-like-avx512-util.hpp
+include/hexl/experimental/fft-like/fft-like-native.hpp
+include/hexl/experimental/fft-like/fft-like.hpp
+include/hexl/experimental/fft-like/fwd-fft-like-avx512.hpp
+include/hexl/experimental/fft-like/inv-fft-like-avx512.hpp
 include/hexl/experimental/misc/lr-mat-vec-mult.hpp
 include/hexl/experimental/seal/dyadic-multiply-internal.hpp
 include/hexl/experimental/seal/dyadic-multiply.hpp
@@ -24,10 +29,10 @@ include/hexl/util/gcc.hpp
 include/hexl/util/msvc.hpp
 include/hexl/util/types.hpp
 include/hexl/util/util.hpp
-lib/cmake/hexl-1.2.4/HEXLConfig.cmake
-lib/cmake/hexl-1.2.4/HEXLConfigVersion.cmake
-lib/cmake/hexl-1.2.4/HEXLTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/hexl-1.2.4/HEXLTargets.cmake
+lib/cmake/hexl-1.2.5/HEXLConfig.cmake
+lib/cmake/hexl-1.2.5/HEXLConfigVersion.cmake
+lib/cmake/hexl-1.2.5/HEXLTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/hexl-1.2.5/HEXLTargets.cmake
 lib/libhexl.so
-lib/libhexl.so.1.2.4
+lib/libhexl.so.1.2.5
 libdata/pkgconfig/hexl.pc
