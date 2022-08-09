@@ -3,7 +3,7 @@ PORTVERSION=	3.38.1
 PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Move tiles so that they reach their places
