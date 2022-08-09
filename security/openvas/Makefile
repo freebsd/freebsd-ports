@@ -1,5 +1,6 @@
 PORTNAME=	openvas
 DISTVERSION=	22.4.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -33,13 +34,17 @@ USE_GNOME=	glib20
 USERS=		gvm
 GROUPS=		${USERS}
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|g_pattern_match_string|g_pattern_spec_match_string|g' ${WRKSRC}/misc/strutils.c
+.if ${OSVERSION} < 1301000
 	@${REINPLACE_CMD} -e 's|-Wunused-but-set-variable|-Wunused-variable|g' ${WRKSRC}/nasl/nasl_grammar.y
+.endif
 	@${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>||g' ${WRKSRC}/src/attack.c ${WRKSRC}/src/nasl_plugins.c
 	@${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>|#include <unistd.h>|g' ${WRKSRC}//src/pluginload.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/ospd
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
