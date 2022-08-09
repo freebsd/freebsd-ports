@@ -1,3 +1,37 @@
+  <vuln vid="1cd0c17a-17c0-11ed-91a5-080027f5fec9">
+    <topic>gnutls -- double free vulnerability</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><ge>3.6.0</ge><lt>3.7.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GnuTLS project reports:</p>
+	<blockquote cite="https://www.gnutls.org/security-new.html#GNUTLS-SA-2022-07-07">
+	  <p>
+	    When gnutls_pkcs7_verify cannot verify signature against
+	    given trust list, it starts creating a chain of
+	    certificates starting from identified signer up to known
+	    root. During the creation of this chain the signer
+	    certificate gets freed which results in double free when
+	    the same signer certificate is freed at the end of the
+	    algorithm.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-2509</cvename>
+      <url>https://www.gnutls.org/security-new.html#GNUTLS-SA-2022-07-07</url>
+    </references>
+    <dates>
+      <discovery>2022-07-07</discovery>
+      <entry>2022-08-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9b9a5f6e-1755-11ed-adef-589cfc01894a">
     <topic>wolfssl -- multiple issues</topic>
     <affects>
