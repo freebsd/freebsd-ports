@@ -23,10 +23,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 		sqlite3>0:databases/sqlite3 \
 		zip>=0:archivers/zip
 
-CONFLICTS_BUILD=	brotli
 CONFLICTS_INSTALL=	certmgr coin-or-disco disco mono mono[0-9]*
 
-USES=	autoreconf bison compiler:c11 cpe gmake iconv libtool \
+USES=	autoreconf bison compiler:c11 cpe gmake iconv libtool localbase \
 	pathfix perl5 python:3.6+ shebangfix tar:xz
 USE_PERL5=	build
 
