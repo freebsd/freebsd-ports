@@ -151,6 +151,8 @@ PERL_MALLOC_DESC=	Use Perl malloc
 SITECUSTOMIZE_DESC=	Run-time customization of @INC
 THREADS_DESC=		Build threaded perl
 
+CFLAGS+=	-DPERL_GCC_BRACE_GROUPS_FORBIDDEN
+
 DEBUG_CONFIGURE_ON=		-DDEBUGGING \
 				-Doptimize="-g"
 DEBUG_CONFIGURE_OFF=		-Doptimize="${CFLAGS}"
