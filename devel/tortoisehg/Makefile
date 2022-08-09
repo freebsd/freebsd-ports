@@ -1,5 +1,5 @@
 PORTNAME=	tortoisehg
-DISTVERSION=	6.1.2
+DISTVERSION=	6.2.1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.mercurial-scm.org/release/tortoisehg/targz/
 
@@ -26,9 +26,6 @@ NLS_USES=	gettext
 
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
-
-# Do not conflict with devel/mercurial, which also installs hgext3rd/__init__.py
-EXTRACT_AFTER_ARGS=	--exclude ${PORTNAME}-${DISTVERSION}/hgext3rd/__init__.py
 
 .include <bsd.port.pre.mk>
 
