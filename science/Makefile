@@ -338,6 +338,7 @@
     SUBDIR += py-pyteomics
     SUBDIR += py-qcelemental
     SUBDIR += py-qcengine
+    SUBDIR += py-qiskit
     SUBDIR += py-qiskit-aer
     SUBDIR += py-qiskit-ibm-provider
     SUBDIR += py-qiskit-ibmq-provider
