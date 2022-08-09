@@ -2,7 +2,7 @@ PORTNAME=	atomix
 PORTVERSION=	3.34.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Yet another little mind game
