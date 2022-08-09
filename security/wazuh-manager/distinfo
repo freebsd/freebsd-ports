@@ -43,5 +43,7 @@ SHA256 (wazuh-4.3.6/wazuh-cache-fbsd12-amd64.tar.gz) = dc4b28b74c37fc7f76790c488
 SIZE (wazuh-4.3.6/wazuh-cache-fbsd12-amd64.tar.gz) = 8436214
 SHA256 (wazuh-4.3.6/wazuh-cache-fbsd13-amd64.tar.gz) = 9bd1770537681f0bae4c7d9adf7a7750dcf5cccf64a7edc335d5afcb16acd22b
 SIZE (wazuh-4.3.6/wazuh-cache-fbsd13-amd64.tar.gz) = 8397011
+SHA256 (wazuh-4.3.6/wazuh-cache-fbsd14-amd64.tar.gz) = cbdee84ab587f09dcce437c13cee42701bc2504af73c43b1a4f2ac13a17d85ec
+SIZE (wazuh-4.3.6/wazuh-cache-fbsd14-amd64.tar.gz) = 8397334
 SHA256 (wazuh-4.3.6/wazuh-wazuh-v4.3.6_GH0.tar.gz) = 81b7d549b5956e59ba2ded9f1305cfda57377858a8560891573a27b9139d2472
 SIZE (wazuh-4.3.6/wazuh-wazuh-v4.3.6_GH0.tar.gz) = 8346134
