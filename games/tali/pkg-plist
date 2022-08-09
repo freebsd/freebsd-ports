@@ -97,6 +97,7 @@ share/help/zh_CN/tali/index.docbook
 share/help/zh_CN/tali/legal.xml
 share/icons/hicolor/scalable/apps/org.gnome.Tali.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Tali-symbolic.svg
+share/locale/ab/LC_MESSAGES/tali.mo
 share/locale/af/LC_MESSAGES/tali.mo
 share/locale/am/LC_MESSAGES/tali.mo
 share/locale/ar/LC_MESSAGES/tali.mo
