@@ -1,5 +1,6 @@
 PORTNAME=	exult
 DISTVERSION?=	1.8
+PORTEPOCH=	1
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
