@@ -3,7 +3,7 @@ PORTVERSION=	1.3.4
 DISTVERSIONPREFIX=	v
 PORTREVISION=	5
 CATEGORIES=	games gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sudoku generating and solving software
