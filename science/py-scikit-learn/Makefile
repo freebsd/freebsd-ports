@@ -1,5 +1,6 @@
 PORTNAME=	scikit-learn
 DISTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +11,10 @@ COMMENT=	Machine learning algorithms for python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}joblib>0:devel/py-joblib@${PY_FLAVOR} \
+		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.3.2:science/py-scipy@${PY_FLAVOR}
+		# threadpoolctl should also be here
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		fortran python:3.7+ localbase
