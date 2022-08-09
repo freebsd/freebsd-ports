@@ -1,5 +1,5 @@
 PORTNAME=	lv2
-PORTVERSION=	1.18.2
+PORTVERSION=	1.18.4
 CATEGORIES=	audio
 MASTER_SITES=	https://lv2plug.in/spec/
 
