@@ -20,7 +20,7 @@
  EOF
  capture cat dummy.c
  if capture "$CCOMPILER -c -M $MKDEPCOPTS dummy.c | grep '^dummy.o[ 	]*:[ 	]*dummy.c'"; then
-@@ -1629,7 +1631,7 @@ pamconv(int num_msg, const struct pam_me
+@@ -1629,7 +1631,7 @@ pamconv(int num_msg, const struct pam_message **msg, s
  {
      return(0);
  }
@@ -52,20 +52,20 @@
 +        f="memmove"
 +	    CheckForLibraryWithArgs $f '(char *)0L, "", 0' -lc || {
 +		CheckForLibraryWithArgs $f '(char *)0L, "", 0' -lg++ && {
-+		    Note "Looks like we need -lg++ for $f"
-+		    MACHDEPLIBS="$MACHDEPLIBS -lg++"
-+		    break;
-+		}
-+	    }
-+        f="strdup"
-+	    CheckForLibraryWithArgs $f '""' -lc || {
-+		CheckForLibraryWithArgs $f '""' -lg++ && {
  		    Note "Looks like we need -lg++ for $f"
  		    MACHDEPLIBS="$MACHDEPLIBS -lg++"
  		    break;
  		}
  	    }
 -	done
++        f="strdup"
++	    CheckForLibraryWithArgs $f '""' -lc || {
++		CheckForLibraryWithArgs $f '""' -lg++ && {
++		    Note "Looks like we need -lg++ for $f"
++		    MACHDEPLIBS="$MACHDEPLIBS -lg++"
++		    break;
++		}
++	    }
      fi
 -    for f in strtoul strerror memmove random; do
 +    f="strtoul"
@@ -173,7 +173,7 @@
  				tiff_bytecount_t="uint32"
  				;;
 -		4.[0])		tiff_runlen_t="uint32"
-+		4.[0123])		tiff_runlen_t="uint32"
++		4.[01234])		tiff_runlen_t="uint32"
  				tiff_offset_t="uint64"
  				tiff_bytecount_t="uint64"
  				echo '#define TIFFHeader	TIFFHeaderClassic'
