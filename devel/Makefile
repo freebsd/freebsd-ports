@@ -4128,6 +4128,7 @@
     SUBDIR += py-asciimatics
     SUBDIR += py-asn1crypto
     SUBDIR += py-aspy.yaml
+    SUBDIR += py-asteval
     SUBDIR += py-astor
     SUBDIR += py-astroid
     SUBDIR += py-astroid253
