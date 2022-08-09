@@ -2,7 +2,7 @@ PORTNAME=	gnome-mahjongg
 DISTVERSION=	3.38.3
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
 PATCHFILES+=	7604f8c8311f.patch:-p1 # https://gitlab.gnome.org/GNOME/gnome-mahjongg/-/merge_requests/26
