@@ -118,6 +118,7 @@
     SUBDIR += innerspace
     SUBDIR += inputplug
     SUBDIR += j4-dmenu-desktop
+    SUBDIR += jbxvt
     SUBDIR += jgmenu
     SUBDIR += kanshi
     SUBDIR += kb2mb2
