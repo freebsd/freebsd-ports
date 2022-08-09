@@ -2,6 +2,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.dokuwiki.org/src/dokuwiki/
 DISTNAME=	${DIST_VER}
@@ -19,7 +20,7 @@ LICENSE_FILE_MIT=		${WRKSRC}/vendor/composer/LICENSE
 
 DIST_VER=	${PORTNAME}-2022-07-31
 USES=		cpe php:web shebangfix tar:tgz
-USE_PHP=	gd hash json mbstring openssl pcre session xml zlib
+USE_PHP=	filter gd hash json mbstring openssl pcre session xml zlib
 NO_ARCH=	YES
 NO_BUILD=	YES
 
