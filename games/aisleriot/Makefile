@@ -2,7 +2,7 @@ PORTNAME=	aisleriot
 DISTVERSION=	3.22.19
 CATEGORIES=	games gnome
 MASTER_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/archive/${PORTVERSION}/
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
 PATCHFILES+=	4bf6fcf5c804.patch:-p1 # https://gitlab.gnome.org/GNOME/aisleriot/-/issues/916
