@@ -544,6 +544,7 @@
     SUBDIR += mapcache
     SUBDIR += mapserver
     SUBDIR += mapyrus
+    SUBDIR += matplotlib-cpp
     SUBDIR += matplotplusplus
     SUBDIR += megapov
     SUBDIR += meh
