@@ -1,3 +1,29 @@
+diff --git config.sub config.sub
+index 5b158ac41..8d618cfec 100644
+--- config.sub
++++ config.sub
+@@ -1159,7 +1159,7 @@ case $cpu-$vendor in
+ 		case $cpu in
+ 			1750a | 580 \
+ 			| a29k \
+-			| aarch64 | aarch64_be \
++			| aarch64 | aarch64c | aarch64_be \
+ 			| abacus \
+ 			| alpha | alphaev[4-8] | alphaev56 | alphaev6[78] \
+ 			| alpha64 | alpha64ev[4-8] | alpha64ev56 | alpha64ev6[78] \
+diff --git configure configure
+index 8da48f587..8c57555fa 100755
+--- configure
++++ configure
+@@ -11572,7 +11572,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to support FTS3" >&5
+ $as_echo_n "checking whether to support FTS3... " >&6; }
+ if test "${enable_fts3}" = "yes" ; then
+-  OPT_FEATURE_FLAGS="${OPT_FEATURE_FLAGS} -DSQLITE_ENABLE_FTS3"
++  OPT_FEATURE_FLAGS="${OPT_FEATURE_FLAGS} -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS"
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+ else
 diff --git create-fossil-manifest create-fossil-manifest
 new file mode 100755
 index 000000000..07fb567b9
@@ -19,6 +45,26 @@ index 000000000..07fb567b9
 +cmp --quiet manifest manifest.tmp || cp -f manifest.tmp manifest
 +rm -f manifest.tmp
 +
+diff --git src/btree.c src/btree.c
+index ba35af03f..6008ac021 100644
+--- src/btree.c
++++ src/btree.c
+@@ -4472,6 +4472,7 @@ static int btreeCursor(
+ 
+   /* Now that no other errors can occur, finish filling in the BtCursor
+   ** variables and link the cursor into the BtShared list.  */
++  assert( EIGHT_BYTE_ALIGNMENT(pCur) );
+   pCur->pgnoRoot = iTable;
+   pCur->iPage = -1;
+   pCur->pKeyInfo = pKeyInfo;
+@@ -8918,6 +8919,7 @@ int sqlite3BtreeInsert(
+         UnpackedRecord r;
+         r.pKeyInfo = pCur->pKeyInfo;
+         r.aMem = pX->aMem;
++        assert( EIGHT_BYTE_ALIGNMENT(r.aMem) );
+         r.nField = pX->nMem;
+         r.default_rc = 0;
+         r.eqSeen = 0;
 diff --git src/mem1.c src/mem1.c
 index 512ab3747..2cdc30aa5 100644
 --- src/mem1.c
@@ -282,7 +328,7 @@ index b45151104..0c9bc6616 100644
  
  /*
 diff --git src/vdbe.c src/vdbe.c
-index 3476c02da..f6199a2bc 100644
+index 3476c02da..1c7ae8cac 100644
 --- src/vdbe.c
 +++ src/vdbe.c
 @@ -266,9 +266,10 @@ static VdbeCursor *allocateCursor(
@@ -299,7 +345,20 @@ index 3476c02da..f6199a2bc 100644
  
    assert( iCur>=0 && iCur<p->nCursor );
    if( p->apCsr[iCur] ){ /*OPTIMIZATION-IF-FALSE*/
-@@ -710,6 +711,7 @@ int sqlite3VdbeExec(
+@@ -302,9 +303,10 @@ static VdbeCursor *allocateCursor(
+   pCx->nField = nField;
+   pCx->aOffset = &pCx->aType[nField];
+   if( eCurType==CURTYPE_BTREE ){
+-    pCx->uc.pCursor = (BtCursor*)
+-        &pMem->z[ROUND8(sizeof(VdbeCursor))+2*sizeof(u32)*nField];
++    assert( EIGHT_BYTE_ALIGNMENT(SQLITE_INT_TO_PTR(basicSize)) );
++    pCx->uc.pCursor = (BtCursor*)&pMem->z[basicSize];
+     sqlite3BtreeCursorZero(pCx->uc.pCursor);
++    assert( EIGHT_BYTE_ALIGNMENT(pCx->uc.pCursor) );
+   }
+   return pCx;
+ }
+@@ -710,6 +712,7 @@ int sqlite3VdbeExec(
    u64 nProgressLimit;        /* Invoke xProgress() when nVmStep reaches this */
  #endif
    Mem *aMem = p->aMem;       /* Copy of p->aMem */
@@ -307,7 +366,7 @@ index 3476c02da..f6199a2bc 100644
    Mem *pIn1 = 0;             /* 1st input operand */
    Mem *pIn2 = 0;             /* 2nd input operand */
    Mem *pIn3 = 0;             /* 3rd input operand */
-@@ -1125,6 +1127,7 @@ case OP_Halt: {
+@@ -1125,6 +1128,7 @@ case OP_Halt: {
      }
      aOp = p->aOp;
      aMem = p->aMem;
@@ -315,7 +374,7 @@ index 3476c02da..f6199a2bc 100644
      pOp = &aOp[pcx];
      break;
    }
-@@ -4494,6 +4497,7 @@ case OP_SeekGT: {       /* jump, in3, group */
+@@ -4494,6 +4498,7 @@ case OP_SeekGT: {       /* jump, in3, group */
      assert( oc!=OP_SeekLT || r.default_rc==+1 );
  
      r.aMem = &aMem[pOp->p3];
@@ -323,7 +382,7 @@ index 3476c02da..f6199a2bc 100644
  #ifdef SQLITE_DEBUG
      { int i; for(i=0; i<r.nField; i++) assert( memIsValid(&r.aMem[i]) ); }
  #endif
-@@ -4886,6 +4890,7 @@ case OP_Found: {        /* jump, in3 */
+@@ -4886,6 +4891,7 @@ case OP_Found: {        /* jump, in3 */
      r.pKeyInfo = pC->pKeyInfo;
      r.nField = (u16)pOp->p4.i;
      r.aMem = pIn3;
@@ -331,7 +390,7 @@ index 3476c02da..f6199a2bc 100644
  #ifdef SQLITE_DEBUG
      for(ii=0; ii<r.nField; ii++){
        assert( memIsValid(&r.aMem[ii]) );
-@@ -6013,6 +6018,7 @@ case OP_IdxInsert: {        /* in2 */
+@@ -6013,6 +6019,7 @@ case OP_IdxInsert: {        /* in2 */
    x.nKey = pIn2->n;
    x.pKey = pIn2->z;
    x.aMem = aMem + pOp->p3;
@@ -339,7 +398,7 @@ index 3476c02da..f6199a2bc 100644
    x.nMem = (u16)pOp->p4.i;
    rc = sqlite3BtreeInsert(pC->uc.pCursor, &x,
         (pOp->p5 & (OPFLAG_APPEND|OPFLAG_SAVEPOSITION|OPFLAG_PREFORMAT)), 
-@@ -6083,6 +6089,7 @@ case OP_IdxDelete: {
+@@ -6083,6 +6090,7 @@ case OP_IdxDelete: {
    r.nField = (u16)pOp->p3;
    r.default_rc = 0;
    r.aMem = &aMem[pOp->p2];
@@ -347,7 +406,7 @@ index 3476c02da..f6199a2bc 100644
    rc = sqlite3BtreeIndexMoveto(pCrsr, &r, &res);
    if( rc ) goto abort_due_to_error;
    if( res==0 ){
-@@ -6270,6 +6277,8 @@ case OP_IdxGE:  {       /* jump */
+@@ -6270,6 +6278,8 @@ case OP_IdxGE:  {       /* jump */
      r.default_rc = 0;
    }
    r.aMem = &aMem[pOp->p3];
@@ -356,7 +415,7 @@ index 3476c02da..f6199a2bc 100644
  #ifdef SQLITE_DEBUG
    {
      int i;
-@@ -6862,6 +6871,8 @@ case OP_Program: {        /* jump */
+@@ -6862,6 +6872,8 @@ case OP_Program: {        /* jump */
      pFrame->nChildCsr = pProgram->nCsr;
      pFrame->pc = (int)(pOp - aOp);
      pFrame->aMem = p->aMem;
@@ -365,7 +424,7 @@ index 3476c02da..f6199a2bc 100644
      pFrame->nMem = p->nMem;
      pFrame->apCsr = p->apCsr;
      pFrame->nCursor = p->nCursor;
-@@ -6876,6 +6887,7 @@ case OP_Program: {        /* jump */
+@@ -6876,6 +6888,7 @@ case OP_Program: {        /* jump */
  #endif
  
      pEnd = &VdbeFrameMem(pFrame)[pFrame->nChildMem];
@@ -373,7 +432,7 @@ index 3476c02da..f6199a2bc 100644
      for(pMem=VdbeFrameMem(pFrame); pMem!=pEnd; pMem++){
        pMem->flags = MEM_Undefined;
        pMem->db = db;
-@@ -6900,6 +6912,7 @@ case OP_Program: {        /* jump */
+@@ -6900,6 +6913,7 @@ case OP_Program: {        /* jump */
    p->nChange = 0;
    p->pFrame = pFrame;
    p->aMem = aMem = VdbeFrameMem(pFrame);
@@ -381,6 +440,54 @@ index 3476c02da..f6199a2bc 100644
    p->nMem = pFrame->nChildMem;
    p->nCursor = (u16)pFrame->nChildCsr;
    p->apCsr = (VdbeCursor **)&aMem[p->nMem];
+diff --git src/vdbeInt.h src/vdbeInt.h
+index 599d06416..275b31171 100644
+--- src/vdbeInt.h
++++ src/vdbeInt.h
+@@ -205,6 +205,7 @@ struct sqlite3_value {
+     int nZero;          /* Extra zero bytes when MEM_Zero and MEM_Blob set */
+     const char *zPType; /* Pointer type when MEM_Term|MEM_Subtype|MEM_Null */
+     FuncDef *pDef;      /* Used only when flags==MEM_Agg */
++    _Alignas(SQLITE_DEFAULT_ALIGNMENT) char ensureAlignment;
+   } u;
+   u16 flags;          /* Some combination of MEM_Null, MEM_Str, MEM_Dyn, etc. */
+   u8  enc;            /* SQLITE_UTF8, SQLITE_UTF16BE, SQLITE_UTF16LE */
+diff --git src/vdbeaux.c src/vdbeaux.c
+index f03196bff..7b8ff5859 100644
+--- src/vdbeaux.c
++++ src/vdbeaux.c
+@@ -2071,6 +2071,7 @@ int sqlite3VdbeNextOpcode(
+ void sqlite3VdbeFrameDelete(VdbeFrame *p){
+   int i;
+   Mem *aMem = VdbeFrameMem(p);
++  assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+   VdbeCursor **apCsr = (VdbeCursor **)&aMem[p->nChildMem];
+   assert( sqlite3VdbeFrameIsValid(p) );
+   for(i=0; i<p->nChildCsr; i++){
+@@ -2424,6 +2425,7 @@ void sqlite3VdbeMakeReady(
+   */
+   x.nNeeded = 0;
+   p->aMem = allocSpace(&x, 0, nMem*sizeof(Mem));
++  assert( EIGHT_BYTE_ALIGNMENT(p->aMem) );
+   p->aVar = allocSpace(&x, 0, nVar*sizeof(Mem));
+   p->apArg = allocSpace(&x, 0, nArg*sizeof(Mem*));
+   p->apCsr = allocSpace(&x, 0, nCursor*sizeof(VdbeCursor*));
+@@ -2525,6 +2527,7 @@ int sqlite3VdbeFrameRestore(VdbeFrame *pFrame){
+   v->aOp = pFrame->aOp;
+   v->nOp = pFrame->nOp;
+   v->aMem = pFrame->aMem;
++  assert( EIGHT_BYTE_ALIGNMENT(v->aMem) );
+   v->nMem = pFrame->nMem;
+   v->apCsr = pFrame->apCsr;
+   v->nCursor = pFrame->nCursor;
+@@ -4008,6 +4011,7 @@ UnpackedRecord *sqlite3VdbeAllocUnpackedRecord(
+   p = (UnpackedRecord *)sqlite3DbMallocRaw(pKeyInfo->db, nByte);
+   if( !p ) return 0;
+   p->aMem = (Mem*)&((char*)p)[ROUND8(sizeof(UnpackedRecord))];
++  assert( EIGHT_BYTE_ALIGNMENT(p->aMem) );
+   assert( pKeyInfo->aSortFlags!=0 );
+   p->pKeyInfo = pKeyInfo;
+   p->nField = pKeyInfo->nKeyField + 1;
 diff --git src/vdbemem.c src/vdbemem.c
 index 570a2eb38..11198dbf6 100644
 --- src/vdbemem.c
