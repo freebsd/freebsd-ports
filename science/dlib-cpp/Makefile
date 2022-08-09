@@ -1,5 +1,5 @@
 PORTNAME=	dlib
-DISTVERSION=	19.22
+DISTVERSION=	19.24
 CATEGORIES=	science devel math
 MASTER_SITES=	http://dlib.net/files/
 PKGNAMESUFFIX=	-cpp
