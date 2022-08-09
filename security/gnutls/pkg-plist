@@ -31,7 +31,7 @@ include/gnutls/x509.h
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.33.1
+lib/libgnutls.so.30.34.1
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.30
 lib/libgnutlsxx.so.30.0.0
@@ -173,9 +173,11 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_cipher_add_auth.3.gz
 %%MAN3%%man/man3/gnutls_cipher_decrypt.3.gz
 %%MAN3%%man/man3/gnutls_cipher_decrypt2.3.gz
+%%MAN3%%man/man3/gnutls_cipher_decrypt3.3.gz
 %%MAN3%%man/man3/gnutls_cipher_deinit.3.gz
 %%MAN3%%man/man3/gnutls_cipher_encrypt.3.gz
 %%MAN3%%man/man3/gnutls_cipher_encrypt2.3.gz
+%%MAN3%%man/man3/gnutls_cipher_encrypt3.3.gz
 %%MAN3%%man/man3/gnutls_cipher_get.3.gz
 %%MAN3%%man/man3/gnutls_cipher_get_block_size.3.gz
 %%MAN3%%man/man3/gnutls_cipher_get_id.3.gz
@@ -190,12 +192,12 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_cipher_suite_info.3.gz
 %%MAN3%%man/man3/gnutls_cipher_tag.3.gz
 %%MAN3%%man/man3/gnutls_ciphersuite_get.3.gz
+%%MAN3%%man/man3/gnutls_compress_certificate_get_selected_method.3.gz
+%%MAN3%%man/man3/gnutls_compress_certificate_set_methods.3.gz
 %%MAN3%%man/man3/gnutls_compression_get.3.gz
 %%MAN3%%man/man3/gnutls_compression_get_id.3.gz
 %%MAN3%%man/man3/gnutls_compression_get_name.3.gz
 %%MAN3%%man/man3/gnutls_compression_list.3.gz
-%%MAN3%%man/man3/gnutls_compress_certificate_get_selected_method.3.gz
-%%MAN3%%man/man3/gnutls_compress_certificate_set_methods.3.gz
 %%MAN3%%man/man3/gnutls_credentials_clear.3.gz
 %%MAN3%%man/man3/gnutls_credentials_get.3.gz
 %%MAN3%%man/man3/gnutls_credentials_set.3.gz
@@ -280,6 +282,7 @@ man/man1/tpmtool.1.gz
 %%MAN3%%man/man3/gnutls_fips140_mode_enabled.3.gz
 %%MAN3%%man/man3/gnutls_fips140_pop_context.3.gz
 %%MAN3%%man/man3/gnutls_fips140_push_context.3.gz
+%%MAN3%%man/man3/gnutls_fips140_run_self_tests.3.gz
 %%MAN3%%man/man3/gnutls_fips140_set_mode.3.gz
 %%MAN3%%man/man3/gnutls_get_library_config.3.gz
 %%MAN3%%man/man3/gnutls_get_system_config_file.3.gz
