@@ -340,6 +340,7 @@
     SUBDIR += py-qcengine
     SUBDIR += py-qiskit-aer
     SUBDIR += py-qiskit-ibm-provider
+    SUBDIR += py-qiskit-optimization
     SUBDIR += py-qiskit-terra
     SUBDIR += py-qspin
     SUBDIR += py-quantities
