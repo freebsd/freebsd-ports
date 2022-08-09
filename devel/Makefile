@@ -4810,6 +4810,7 @@
     SUBDIR += py-nose-cov
     SUBDIR += py-nose-timer
     SUBDIR += py-nose2
+    SUBDIR += py-noseofyeti
     SUBDIR += py-nosexcover
     SUBDIR += py-notebook-shim
     SUBDIR += py-notify2
