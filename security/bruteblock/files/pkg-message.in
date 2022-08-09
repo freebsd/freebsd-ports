@@ -23,7 +23,7 @@ auth.info;authpriv.info                         |exec %%PREFIX%%/sbin/bruteblock
      bruteblockd_table="1"
      bruteblockd_flags="-s 5"
 
-  and start bruteblockd: %%PREFIX%%/etc/rc.d/bruteblockd.sh start
+  and start bruteblockd: %%PREFIX%%/etc/rc.d/bruteblockd start
 
 See bruteblock(8) for more details.
 EOM
