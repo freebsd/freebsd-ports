@@ -1,7 +1,6 @@
 PORTNAME=	grpcui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
-PORTREVISION=	4
+DISTVERSION=	1.3.1
 CATEGORIES=	net www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,14 +26,14 @@ GH_TUPLE=	\
 		golang:net:c89045814202:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:c3d80250170d:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:3f8b81556e12:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:cb27e3aa2013:google_go_genproto/vendor/google.golang.org/genproto \
 		googleapis:google-cloud-go:v0.56.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
-		grpc:grpc-go:v1.44.0:grpc_grpc_go/vendor/google.golang.org/grpc \
-		jhump:protoreflect:c1d18a52a21d:jhump_protoreflect/vendor/github.com/jhump/protoreflect \
+		grpc:grpc-go:011544f72939:grpc_grpc_go/vendor/google.golang.org/grpc \
+		jhump:protoreflect:v1.12.0:jhump_protoreflect/vendor/github.com/jhump/protoreflect \
 		pkg:browser:0a3d74bf9ce4:pkg_browser/vendor/github.com/pkg/browser \
-		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf
+		protocolbuffers:protobuf-go:v1.28.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
