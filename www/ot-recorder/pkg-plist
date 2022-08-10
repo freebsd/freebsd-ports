@@ -3,7 +3,6 @@ bin/ocat
 etc/rc.d/ot-recorder
 sbin/ot-recorder
 %%WWWDIR%%/index.html
-%%WWWDIR%%/config.js
 %%WWWDIR%%/last/index.html
 %%WWWDIR%%/last/last.html
 %%WWWDIR%%/last/manifest.json
@@ -282,6 +281,7 @@ sbin/ot-recorder
 %%WWWDIR%%/test-ws.html
 %%WWWDIR%%/test.txt
 %%WWWDIR%%/utils/debug.js
+%%WWWDIR%%/utils/config.js
 %%WWWDIR%%/utils/map.css
 %%WWWDIR%%/utils/map.js
 %%WWWDIR%%/utils/map_google.js
