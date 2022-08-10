@@ -1,5 +1,6 @@
 PORTNAME=	eigen
 DISTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://gitlab.com/libeigen/eigen/-/archive/${DISTVERSION}/
 
