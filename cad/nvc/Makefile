@@ -45,6 +45,12 @@ CONFIGURE_WRKSRC=	${BUILD_DIR}
 INSTALL_WRKSRC=		${BUILD_DIR}
 CONFIGURE_CMD=		${WRKSRC}/configure
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+CONFIGURE_ARGS+=	--enable-lto=no
+.endif
+
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX} -name "*.so" | ${XARGS} ${STRIP_CMD}
 
