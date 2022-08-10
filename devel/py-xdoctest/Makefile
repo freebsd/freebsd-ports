@@ -1,5 +1,6 @@
 PORTNAME=	xdoctest
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP # has no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,10 +19,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>=2.0.15:devel/py-codecov@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}requests>=2.25.1:www/py-requests@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist pytest # some tests fail, see https://github.com/Erotemic/xdoctest/issues/131
+USE_PYTHON=	distutils concurrent autoplist pytest # some tests fail, see https://github.com/Erotemic/xdoctest/issues/131
 
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+alt-test: # tests using the xdoctest executable
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/xdoctest -m xdoctest
 
 .include <bsd.port.mk>
