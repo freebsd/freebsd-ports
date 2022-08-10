@@ -9,7 +9,7 @@
 +   cpu->pc = uc->uc_mcontext.mc_srr0;
 +   cpu->sp = uc->uc_mcontext.mc_gpr[1];
 +
-+   for (int i = 0; i < 31; i++)
++   for (int i = 0; i < 32; i++)
 +      cpu->regs[i] = uc->uc_mcontext.mc_gpr[i];
  #elif defined __OpenBSD__ && defined __x86_64__
     cpu->pc = uc->sc_rip;
