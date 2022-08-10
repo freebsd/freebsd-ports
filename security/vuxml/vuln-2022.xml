@@ -1,3 +1,36 @@
+  <vuln vid="8eaaf135-1893-11ed-9b22-002590c1f29c">
+    <topic>FreeBSD -- Missing bounds check in 9p message handling</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.1</ge><lt>13.1_1</lt></range>
+	<range><ge>13.0</ge><lt>13.0_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The implementation of lib9p's handling of RWALK messages was
+	missing a bounds check needed when unpacking the message contents.
+	The missing check means that the receipt of a specially crafted
+	message will cause lib9p to overwrite unrelated memory.</p>
+	<h1>Impact:</h1>
+	<p>The bug can be triggered by a malicious bhyve guest kernel to
+	overwrite memory in the bhyve(8) process.  This could potentially lead
+	to user-mode code execution on the host, subject to bhyve's Capsicum
+	sandbox.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23092</cvename>
+      <freebsdsa>SA-22:12.lib9p</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-08-09</discovery>
+      <entry>2022-08-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="02fb9764-1893-11ed-9b22-002590c1f29c">
     <topic>FreeBSD -- Memory disclosure by stale virtual memory mapping</topic>
     <affects>
