@@ -1,3 +1,33 @@
+  <vuln vid="c3610f39-18f1-11ed-9854-641c67a117d8">
+    <topic>varnish -- Denial of Service Vulnerability</topic>
+    <affects>
+      <package>
+	<name>varnish7</name>
+	<range><lt>7.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Varnish Cache Project reports:</p>
+	<blockquote cite="https://varnish-cache.org/security/VSV00009.html">
+	<p>A denial of service attack can be performed against Varnish Cache
+	  servers by specially formatting the reason phrase of the backend response
+	  status line. In order to execute an attack, the attacker would have to
+	  be able to influence the HTTP/1 responses that the Varnish Server
+	  receives from its configured backends. A successful attack would cause
+	  the Varnish Server to assert and automatically restart.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://varnish-cache.org/security/VSV00009.html</url>
+    </references>
+    <dates>
+      <discovery>2022-08-09</discovery>
+      <entry>2022-08-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8eaaf135-1893-11ed-9b22-002590c1f29c">
     <topic>FreeBSD -- Missing bounds check in 9p message handling</topic>
     <affects>
