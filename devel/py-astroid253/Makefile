@@ -26,4 +26,6 @@ CONFLICTS=	${PYTHON_PKGNAMEPREFIX}astroid
 NO_ARCH=	yes
 PYTEST_IGNORED_TESTS=	test_find_distutils_submodules_in_virtualenv
 
+PORTSCOUT=	ignore:1
+
 .include <bsd.port.mk>
