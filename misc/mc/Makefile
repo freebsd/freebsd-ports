@@ -53,16 +53,15 @@ ICONV_CONFIGURE_ENABLE=	charset
 NCURSES_CONFIGURE_ON=	--with-screen=ncurses
 NCURSES_CFLAGS+=	-DNCURSES_WIDECHAR
 
-NLS_CONFIGURE_ENABLE=	nls
+NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
+NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext
-NLS_CPPFLAGS=		-I${LOCALBASE}/include
-NLS_LDFLAGS=		-L${LOCALBASE}/lib
 
 SFTP_LIB_DEPENDS=	libssh2.so:security/libssh2
 SFTP_CONFIGURE_ENABLE=	vfs-sftp
 
 SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
-SLANG_CONFIGURE_ON=	--with-screen=slang --with-slang-includes=${LOCALBASE}/include
+SLANG_CONFIGURE_ON=	--with-screen=slang
 
 SUBSHELL_CONFIGURE_WITH=subshell
 SUBSHELL_SUB_FILES=	pkg-message
@@ -70,8 +69,8 @@ SUBSHELL_SUB_FILES=	pkg-message
 X11_CONFIGURE_WITH=	x
 X11_USES=		xorg
 X11_USE=		xorg=x11,xext
-X11_VARS=		CONFLICTS_INSTALL+="mc-nox11"
-X11_VARS_OFF=		CONFLICTS_INSTALL+="mc"
+X11_VARS=		CONFLICTS_INSTALL=mc-nox11
+X11_VARS_OFF=		CONFLICTS_INSTALL=mc PKGNAMESUFFIX=-nox11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|clang||' ${WRKSRC}/configure
