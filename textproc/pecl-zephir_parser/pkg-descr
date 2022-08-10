@@ -1,0 +1,9 @@
+Zephir is an open source, high-level/domain specific language
+designed to ease the creation and maintainability of extensions for PHP,
+with a focus on type and memory safety. Zephir is an attempt to join good
+things from the C and PHP worlds, looking for opportunities to make
+applications faster.
+
+The Zephir Parser delivered as a C extension for the PHP language.
+
+WWW: https://github.com/zephir-lang/php-zephir-parser

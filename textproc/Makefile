@@ -1212,6 +1212,7 @@
     SUBDIR += pear-YAML
     SUBDIR += pecl-xdiff2
     SUBDIR += pecl-yaml
+    SUBDIR += pecl-zephir_parser
     SUBDIR += peco
     SUBDIR += peg
     SUBDIR += perl2html
