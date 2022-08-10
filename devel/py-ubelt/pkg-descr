@@ -1,0 +1,8 @@
+Ubelt is a small library of robust, tested, documented, and simple functions
+that extend the Python standard library. It has a flat API that all behaves
+similarly on Windows, Mac, and Linux (up to some small unavoidable differences).
+Almost every function in ubelt was written with a doctest. This provides helpful
+documentation and example usage as well as helping achieve 100% test coverage
+(with minor exceptions on Windows).
+
+WWW: https://github.com/Erotemic/ubelt

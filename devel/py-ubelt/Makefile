@@ -1,0 +1,29 @@
+PORTNAME=	ubelt
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.1
+CATEGORIES=	devel python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Python utility belt containing simple tools
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
+		cmake:devel/cmake
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>=2.0.15:devel/py-codecov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.25.1:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xdoctest>=0.14.0:devel/py-xdoctest@${PY_FLAVOR}
+
+USES=		python:3.6+
+USE_PYTHON=	distutils autoplist pytest # 23 errors in tests, see https://github.com/Erotemic/ubelt/issues/127
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Erotemic
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
