@@ -1,11 +1,11 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.35.1
+DISTVERSION=	1.36.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://github.com/forkbomb9/netdata/commit/:dashboard
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		13310caf81048cc71aa315cddbbdce1ee4351903.patch:dashboard
+		23f374d499f3cfc87530989c4e44aeaa1b888a22.patch:dashboard
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nc@FreeBSD.org
@@ -98,7 +98,7 @@ post-patch:
 	    ${PATCH_WRKSRC}/collectors/python.d.plugin/python.d.plugin.in
 
 post-patch-CLOUD-off:
-	cd ${WRKSRC} && gpatch -p1 < ${_DISTDIR}/13310caf81048cc71aa315cddbbdce1ee4351903.patch
+	cd ${WRKSRC} && gpatch -p1 < ${_DISTDIR}/23f374d499f3cfc87530989c4e44aeaa1b888a22.patch
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
