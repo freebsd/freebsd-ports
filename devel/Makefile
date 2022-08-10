@@ -5461,6 +5461,7 @@
     SUBDIR += py-xcaplib
     SUBDIR += py-xdg
     SUBDIR += py-xdis
+    SUBDIR += py-xdoctest
     SUBDIR += py-xerox
     SUBDIR += py-xmltodict
     SUBDIR += py-xstatic
