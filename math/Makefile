@@ -891,6 +891,7 @@
     SUBDIR += py-kiwisolver
     SUBDIR += py-levmar
     SUBDIR += py-libpoly
+    SUBDIR += py-lmfit
     SUBDIR += py-luminol
     SUBDIR += py-mathics
     SUBDIR += py-mathics-scanner
