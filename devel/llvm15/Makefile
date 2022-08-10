@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	14.0.6
+DISTVERSION=	15.0.0rc1
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -87,16 +87,16 @@ OPTIONS_DEFINE_aarch64=	OPENMP
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFINE_powerpc=	COMPILER_RT GOLD
-OPTIONS_DEFINE_powerpc64=	GOLD OPENMP
-OPTIONS_DEFINE_powerpc64le=	GOLD OPENMP
+OPTIONS_DEFINE_powerpc64=	COMPILER_RT GOLD OPENMP
+OPTIONS_DEFINE_powerpc64le=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_riscv64=	COMPILER_RT OPENMP
-OPTIONS_DEFAULT=	BE_AMDGPU BE_STANDARD BE_WASM CLANG EXTRAS FLANG LIT LLD LLDB MLIR PYCLANG
+OPTIONS_DEFAULT=	BE_AMDGPU BE_STANDARD BE_WASM CLANG EXTRAS FLANG LIT LLD LLDB PYCLANG
 OPTIONS_DEFAULT_aarch64=	OPENMP
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
-OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
+OPTIONS_DEFAULT_i386=	COMPILER_RT
 OPTIONS_DEFAULT_powerpc=	COMPILER_RT GOLD
-OPTIONS_DEFAULT_powerpc64=	GOLD OPENMP
-OPTIONS_DEFAULT_powerpc64le=	GOLD OPENMP
+OPTIONS_DEFAULT_powerpc64=	COMPILER_RT GOLD OPENMP
+OPTIONS_DEFAULT_powerpc64le=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_riscv64=	COMPILER_RT OPENMP
 OPTIONS_EXCLUDE_armv6=	FLANG
 OPTIONS_EXCLUDE_armv7=	FLANG
@@ -134,7 +134,7 @@ CLANG_USE=		GNOME=libxml2
 COMPILER_RT_DESC=	Sanitizer libraries
 COMPILER_RT_CMAKE_ON=	-DCOMPILER_RT_INSTALL_PATH=${LLVM_PREFIX}/lib/clang/${LLVM_RELEASE}
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|} \
-			${_COMPILER_RT_BLACKLISTS:S|^|${_CRTBLDIR}/|}
+			${_COMPILER_RT_IGNORELISTS:S|^|${_CRTBLDIR}/|}
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx-markdown-tables>=0:textproc/py-sphinx-markdown-tables@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
 DOCS_CONFLICTS_BUILD=	commonmark-cmark
@@ -171,8 +171,7 @@ LLDB_USES=		lua:53 libedit
 LLDB_VARS=		_USES_PYTHON=python:3.6+
 MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
-OPENMP_CMAKE_ON=	-DLIBOMPTARGET_BUILD_AMDGCN_BCLIB=OFF \
-			-DLIBOMPTARGET_BUILD_DEVICERTL_BCLIB=OFF
+OPENMP_CMAKE_ON=	-DLIBOMPTARGET_BUILD_DEVICERTL_BCLIB=OFF
 OPENMP_PORTDOCS=	openmp
 PYCLANG_DESC=		Install python bindings to libclang
 PYCLANG_IMPLIES=	CLANG
@@ -254,7 +253,7 @@ USES+=		gnome
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
 LLVM_ENABLE_PROJECTS+=	compiler-rt
-COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/fuzzer|profile\/InstrProfData.inc)
+COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/(fuzzer|orc)|profile\/InstrProfData.inc)
 .if ${OSVERSION} < 1300525
 # An unwind.h is require to build.  I think an in-tree one should be used
 # but this seems to work as a workaround...
@@ -400,9 +399,9 @@ _COMPILER_RT_LIBS_i386=	\
 	libclang_rt.ubsan_standalone-i386.so \
 	libclang_rt.ubsan_standalone_cxx-i386.a
 .if ${ARCH} == "amd64"
-_COMPILER_RT_BLACKLISTS=	cfi_ignorelist.txt
-_COMPILER_RT_BLACKLISTS+=	asan_ignorelist.txt
-_COMPILER_RT_BLACKLISTS+=	msan_ignorelist.txt
+_COMPILER_RT_IGNORELISTS=	cfi_ignorelist.txt
+_COMPILER_RT_IGNORELISTS+=	asan_ignorelist.txt
+_COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
 _COMPILER_RT_LIBS=	\
 	libclang_rt.asan-preinit-x86_64.a \
 	libclang_rt.asan-x86_64.a \
@@ -449,15 +448,88 @@ _COMPILER_RT_LIBS=	\
 _COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
 .endif
 .elif ${ARCH} == "i386"
-_COMPILER_RT_BLACKLISTS=	cfi_ignorelist.txt
-_COMPILER_RT_BLACKLISTS+=	asan_ignorelist.txt
+_COMPILER_RT_IGNORELISTS=	cfi_ignorelist.txt
+_COMPILER_RT_IGNORELISTS+=	asan_ignorelist.txt
 _COMPILER_RT_LIBS+=	${_COMPILER_RT_LIBS_i386}
 .elif ${ARCH} == "powerpc"
 _COMPILER_RT_LIBS= \
 	libclang_rt.builtins-powerpc.a \
 	libclang_rt.profile-powerpc.a
+.elif ${ARCH} == "powerpc64"
+_COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
+_COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
+_COMPILER_RT_LIBS= \
+	libclang_rt.asan-powerpc64.a \
+	libclang_rt.asan-powerpc64.a.syms \
+	libclang_rt.asan-powerpc64.so \
+	libclang_rt.asan-preinit-powerpc64.a \
+	libclang_rt.asan_cxx-powerpc64.a \
+	libclang_rt.asan_cxx-powerpc64.a.syms \
+	libclang_rt.asan_static-powerpc64.a \
+	libclang_rt.builtins-powerpc64.a \
+	libclang_rt.msan-powerpc64.a \
+	libclang_rt.msan-powerpc64.a.syms \
+	libclang_rt.msan_cxx-powerpc64.a \
+	libclang_rt.msan_cxx-powerpc64.a.syms \
+	libclang_rt.profile-powerpc64.a \
+	libclang_rt.stats-powerpc64.a \
+	libclang_rt.stats_client-powerpc64.a \
+	libclang_rt.tsan-powerpc64.a \
+	libclang_rt.tsan-powerpc64.a.syms \
+	libclang_rt.tsan-powerpc64.so \
+	libclang_rt.tsan_cxx-powerpc64.a \
+	libclang_rt.tsan_cxx-powerpc64.a.syms \
+	libclang_rt.ubsan_minimal-powerpc64.a \
+	libclang_rt.ubsan_minimal-powerpc64.a.syms \
+	libclang_rt.ubsan_minimal-powerpc64.so \
+	libclang_rt.ubsan_standalone-powerpc64.a \
+	libclang_rt.ubsan_standalone-powerpc64.a.syms \
+	libclang_rt.ubsan_standalone-powerpc64.so \
+	libclang_rt.ubsan_standalone_cxx-powerpc64.a \
+	libclang_rt.ubsan_standalone_cxx-powerpc64.a.syms
+.if exists(/usr/lib32/libc.so.7)
+_COMPILER_RT_LIBS+= \
+	libclang_rt.builtins-powerpc.a \
+	libclang_rt.profile-powerpc.a
+.endif
+.elif ${ARCH} == "powerpc64le"
+_COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
+_COMPILER_RT_IGNORELISTS+=	msan_ignorelist.txt
+_COMPILER_RT_LIBS= \
+	libclang_rt.asan-powerpc64le.a \
+	libclang_rt.asan-powerpc64le.a.syms \
+	libclang_rt.asan-powerpc64le.so \
+	libclang_rt.asan-preinit-powerpc64le.a \
+	libclang_rt.asan_cxx-powerpc64le.a \
+	libclang_rt.asan_cxx-powerpc64le.a.syms \
+	libclang_rt.asan_static-powerpc64le.a \
+	libclang_rt.builtins-powerpc64le.a \
+	libclang_rt.msan-powerpc64le.a \
+	libclang_rt.msan-powerpc64le.a.syms \
+	libclang_rt.msan_cxx-powerpc64le.a \
+	libclang_rt.msan_cxx-powerpc64le.a.syms \
+	libclang_rt.profile-powerpc64le.a \
+	libclang_rt.stats-powerpc64le.a \
+	libclang_rt.stats_client-powerpc64le.a \
+	libclang_rt.tsan-powerpc64le.a \
+	libclang_rt.tsan-powerpc64le.a.syms \
+	libclang_rt.tsan-powerpc64le.so \
+	libclang_rt.tsan_cxx-powerpc64le.a \
+	libclang_rt.tsan_cxx-powerpc64le.a.syms \
+	libclang_rt.ubsan_minimal-powerpc64le.a \
+	libclang_rt.ubsan_minimal-powerpc64le.a.syms \
+	libclang_rt.ubsan_minimal-powerpc64le.so \
+	libclang_rt.ubsan_standalone-powerpc64le.a \
+	libclang_rt.ubsan_standalone-powerpc64le.a.syms \
+	libclang_rt.ubsan_standalone-powerpc64le.so \
+	libclang_rt.ubsan_standalone_cxx-powerpc64le.a \
+	libclang_rt.ubsan_standalone_cxx-powerpc64le.a.syms \
+	libclang_rt.xray-basic-powerpc64le.a \
+	libclang_rt.xray-fdr-powerpc64le.a \
+	libclang_rt.xray-powerpc64le.a \
+	libclang_rt.xray-profiling-powerpc64le.a
 .elif ${ARCH} == "riscv64"
-_COMPILER_RT_BLACKLISTS=	asan_ignorelist.txt
+_COMPILER_RT_IGNORELISTS=	asan_ignorelist.txt
 _COMPILER_RT_LIBS= \
 	libclang_rt.asan-preinit-riscv64.a \
 	libclang_rt.asan-riscv64.a \
@@ -561,14 +633,17 @@ post-install-CLANG-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
 	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
 	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
-	${LN} -s libclang.so.13 ${STAGEDIR}${LLVM_PREFIX}/lib/libclang.so.${LLVM_MAJOR}
 
+post-install-EXTRAS-on:
+	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/clang-tidy/misc/ConfusableTable
 post-install-FLANG-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CodeGen/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Dialect/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/Transforms/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/CMakeFiles
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/flang-new \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/flang
 
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/llvm/utils/lit/lit.py \

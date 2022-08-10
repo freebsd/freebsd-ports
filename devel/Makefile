@@ -1428,6 +1428,7 @@
     SUBDIR += llvm12
     SUBDIR += llvm13
     SUBDIR += llvm14
+    SUBDIR += llvm15
     SUBDIR += llvm70
     SUBDIR += llvm80
     SUBDIR += llvm90

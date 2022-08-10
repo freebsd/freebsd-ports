@@ -14,11 +14,13 @@ LLVM_COMMANDS=	\
 		llvm-cov \
 		llvm-cvtres \
 		llvm-cxxmap \
+		llvm-debuginfod \
 		llvm-debuginfod-find \
 		llvm-diff \
 		llvm-dis \
 		llvm-dlltool \
 		llvm-dwarfdump \
+		llvm-dwarfutil \
 		llvm-dwp \
 		llvm-exegesis \
 		llvm-extract \
@@ -47,6 +49,7 @@ LLVM_COMMANDS=	\
 		llvm-readelf \
 		llvm-readobj \
 		llvm-reduce \
+		llvm-remark-size-diff \
 		llvm-rtdyld \
 		llvm-sim \
 		llvm-size \
@@ -74,8 +77,10 @@ CLANG_COMMANDS=	\
 		clang-cpp \
 		clang-extdef-mapping \
 		clang-format \
+		clang-linker-wrapper \
 		clang-nvlink-wrapper \
 		clang-offload-bundler \
+		clang-offload-packager \
 		clang-offload-wrapper \
 		clang-rename \
 		clang-repl \
@@ -94,6 +99,7 @@ EXTRAS_COMMANDS= \
 		clang-doc \
 		clang-include-fixer \
 		clang-move \
+		clang-pseudo \
 		clang-query \
 		clang-reorder-fields \
 		clang-tidy \
@@ -108,6 +114,7 @@ FLANG_COMMANDS= \
 		fir-opt \
 		flang \
 		flang-new \
+		flang-to-external-fc \
 		tco
 
 LIT_COMMANDS=	\
@@ -134,10 +141,11 @@ MLIR_COMMANDS=	\
 		mlir-linalg-ods-yaml-gen \
 		mlir-lsp-server \
 		mlir-opt \
-		mlir-pdll \
+		mlir-pdll-lsp-server \
 		mlir-reduce \
 		mlir-tblgen \
-		mlir-translate
+		mlir-translate \
+		tblgen-lsp-server
 
 OPENMP_COMMANDS=	\
 		llvm-omp-device-info

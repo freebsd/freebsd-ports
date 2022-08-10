@@ -1,17 +1,11 @@
 --- clang/lib/Headers/CMakeLists.txt.orig
 +++ clang/lib/Headers/CMakeLists.txt
-@@ -75,7 +75,6 @@
-   invpcidintrin.h
+@@ -6,19 +6,10 @@
+   float.h
+   inttypes.h
    iso646.h
-   keylockerintrin.h
 -  limits.h
-   lwpintrin.h
-   lzcntintrin.h
-   mm3dnow.h
-@@ -101,14 +100,7 @@
-   s390intrin.h
-   shaintrin.h
-   smmintrin.h
+   module.modulemap
 -  stdalign.h
 -  stdarg.h
 -  stdatomic.h
@@ -20,14 +14,9 @@
    __stddef_max_align_t.h
 -  stdint.h
 -  stdnoreturn.h
-   tbmintrin.h
    tgmath.h
-   tmmintrin.h
-@@ -117,7 +109,6 @@
    unwind.h
-   vadefs.h
-   vaesintrin.h
 -  varargs.h
-   vecintrin.h
-   vpclmulqdqintrin.h
-   waitpkgintrin.h
+   )
+ 
+ set(arm_common_files
