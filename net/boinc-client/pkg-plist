@@ -25,6 +25,7 @@ include/boinc/graphics2.h
 include/boinc/gui_rpc_client.h
 include/boinc/gutil.h
 include/boinc/hostinfo.h
+include/boinc/keyword.h
 include/boinc/md5.h
 include/boinc/md5_file.h
 include/boinc/mem_usage.h
