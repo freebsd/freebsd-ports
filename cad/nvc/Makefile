@@ -9,6 +9,8 @@ COMMENT=	VHDL compiler and simulator
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	compilation fails: Please port fill_cpu_state to this OS/CPU combination, see https://github.com/nickg/nvc/issues/501
+
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} \
 		bash:shells/bash
