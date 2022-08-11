@@ -92,7 +92,7 @@ GH_TUPLE=	\
 		segmentio:analytics-go:v3.1.0:segmentio_analytics_go/vendor/gopkg.in/segmentio/analytics-go.v3 \
 		segmentio:backo-go:23eae7c10bd3:segmentio_backo_go/vendor/github.com/segmentio/backo-go \
 		shopspring:decimal:v1.2.0:shopspring_decimal/vendor/github.com/shopspring/decimal \
-		spacemonkeygo:monkit:v3.0.17:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
+		spacemonkeygo:monkit:v3.0.19:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
 		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
@@ -100,10 +100,10 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:e2f08365ed65:storj_common/vendor/storj.io/common \
+		storj:common:cd2ef8e1b9b0:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.32:storj_drpc/vendor/storj.io/drpc \
-		storj:monkit-jaeger:3ae4cae696b8:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:e18b72a55f43:storj_private/vendor/storj.io/private \
+		storj:monkit-jaeger:c3a9898b5bca:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
+		storj:private:8515ce4e6b70:storj_private/vendor/storj.io/private \
 		storj:uplink:25d79c31a876:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v72.51.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
@@ -123,4 +123,5 @@ GH_TUPLE=	\
 		zeebo:float16:v0.1.0:zeebo_float16/vendor/github.com/zeebo/float16 \
 		zeebo:incenc:0d92902eec54:zeebo_incenc/vendor/github.com/zeebo/incenc \
 		zeebo:ini:86af75b4f524:zeebo_ini/vendor/github.com/zeebo/ini \
+		zeebo:mwc:v0.0.4:zeebo_mwc/vendor/github.com/zeebo/mwc \
 		zeebo:structs:v1.0.2:zeebo_structs/vendor/github.com/zeebo/structs
