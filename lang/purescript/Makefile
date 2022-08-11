@@ -1,5 +1,5 @@
 PORTNAME=	purescript
-PORTVERSION=	0.15.3
+PORTVERSION=	0.15.4
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,7 +15,7 @@ USE_LOCALE=	en_US.UTF-8
 
 USE_CABAL=	Cabal-3.6.3.0 \
 		Glob-0.10.2_3 \
-		OneTuple-0.3.1_2 \
+		OneTuple-0.3.1_3 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.1 \
@@ -25,15 +25,16 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		alex-3.2.7.1 \
 		ansi-terminal-0.11.3 \
 		ansi-wl-pprint-0.6.9_3 \
-		assoc-1.0.2_2 \
+		assoc-1.0.2_3 \
 		async-2.2.4_1 \
-		attoparsec-0.14.4_1 \
+		attoparsec-0.14.4_2 \
 		auto-update-0.1.6 \
-		base-compat-0.12.1 \
-		base-compat-batteries-0.12.1_2 \
-		base-orphans-0.8.6 \
+		base-compat-0.12.2 \
+		base-compat-batteries-0.12.2 \
+		base-orphans-0.8.7 \
 		basement-0.0.14 \
-		bifunctors-5.5.12 \
+		bifunctors-5.5.12_1 \
+		bitvec-1.1.3.0 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
 		blaze-markup-0.8.2.8_2 \
@@ -44,6 +45,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		cborg-0.2.7.0_1 \
 		cheapskate-0.1.1.2_1 \
 		clock-0.8.3 \
+		cmdargs-0.10.21 \
 		colour-2.3.6 \
 		comonad-5.0.8_1 \
 		conduit-1.3.4.2 \
@@ -57,7 +59,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		data-default-instances-containers-0.0.1 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
-		data-fix-0.3.2_2 \
+		data-fix-0.3.2_3 \
 		data-ordlist-0.4.7.0 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
@@ -65,19 +67,19 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		edit-distance-0.2.2.1_1 \
 		fast-logger-3.1.1 \
 		file-embed-0.0.15.0 \
-		free-5.1.8 \
+		free-5.1.9_1 \
 		fsnotify-0.3.0.1_2 \
 		half-0.3.1 \
 		happy-1.20.0_1 \
-		hashable-1.4.0.2 \
-		haskeline-0.8.2_1 \
-		hsc2hs-0.68.8 \
+		hashable-1.4.1.0 \
+		haskeline-0.8.2_2 \
+		hsc2hs-0.68.8_1 \
 		http-types-0.12.3 \
-		indexed-traversable-0.1.2_1 \
-		indexed-traversable-instances-0.1.1_1 \
-		integer-logarithms-1.0.3.1_2 \
-		invariant-0.5.6 \
-		kan-extensions-5.2.4 \
+		indexed-traversable-0.1.2_2 \
+		indexed-traversable-instances-0.1.1.1 \
+		integer-logarithms-1.0.3.1_3 \
+		invariant-0.6_1 \
+		kan-extensions-5.2.5 \
 		language-javascript-0.7.0.0 \
 		lens-5.1.1_1 \
 		lifted-async-0.10.2.2 \
@@ -95,7 +97,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.3_2 \
 		optparse-applicative-0.17.0.0 \
-		parallel-3.2.2.0_4 \
+		parallel-3.2.2.0_5 \
 		pattern-arrows-0.0.2_1 \
 		primitive-0.7.3.0_2 \
 		process-1.6.13.1_1 \
@@ -104,42 +106,42 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		random-1.2.1.1 \
 		reflection-2.1.6_1 \
 		regex-base-0.94.0.2_1 \
-		regex-tdfa-1.3.1.2_1 \
-		resourcet-1.2.5 \
+		regex-tdfa-1.3.2 \
+		resourcet-1.2.6 \
 		safe-0.3.19 \
-		scientific-0.3.7.0_2 \
-		semialign-1.2.0.1_2 \
+		scientific-0.3.7.0_3 \
+		semialign-1.2.0.1_3 \
 		semigroupoids-5.3.7 \
 		semigroups-0.20 \
 		serialise-0.2.5.0 \
 		sourcemap-0.1.7 \
 		split-0.2.3.4_2 \
-		splitmix-0.1.0.4 \
+		splitmix-0.1.0.4_1 \
 		stm-chans-3.0.0.6 \
 		streaming-commons-0.2.2.4 \
 		strict-0.4.0.1_4 \
 		stringsearch-0.3.6.6_1 \
 		syb-0.7.2.1 \
-		tagged-0.8.6.1_2 \
+		tagged-0.8.6.1_3 \
 		tagsoup-0.14.8 \
-		text-short-0.1.5 \
-		th-abstraction-0.4.3.0 \
-		th-compat-0.1.3_1 \
-		these-1.1.1.1_5 \
-		time-compat-1.9.6.1_3 \
+		text-short-0.1.5_1 \
+		th-abstraction-0.4.4.0 \
+		th-compat-0.1.4 \
+		these-1.1.1.1_6 \
+		time-compat-1.9.6.1_4 \
 		transformers-base-0.4.6 \
-		transformers-compat-0.7.1_1 \
-		type-equality-1_3 \
+		transformers-compat-0.7.2 \
+		type-equality-1_4 \
 		typed-process-0.2.10.1 \
 		uniplate-1.6.13_1 \
 		unix-compat-0.6 \
 		unix-time-0.4.7 \
 		unliftio-core-0.2.0.1_2 \
-		unordered-containers-0.2.19.1 \
+		unordered-containers-0.2.19.1_1 \
 		utf8-string-1.0.2 \
-		uuid-types-1.0.5_2 \
+		uuid-types-1.0.5_3 \
 		vector-0.12.3.1_2 \
-		vector-algorithms-0.8.0.4_2 \
+		vector-algorithms-0.9.0.1 \
 		void-0.7.3 \
 		witherable-0.4.2_3 \
 		xss-sanitize-0.3.7_1 \
