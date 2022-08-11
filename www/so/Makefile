@@ -15,8 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	samtay
 
 PLIST_FILES=	bin/so
-PORTDOCS=	*.md
 PORTDATA=	themes/*.toml
+PORTDOCS=	*.md
 
 OPTIONS_DEFINE=	DOCS
 
@@ -29,5 +29,4 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
-.include "${.CURDIR}/bsd.so.mk"
 .include <bsd.port.mk>
