@@ -1,5 +1,5 @@
 PORTNAME=	mahotas
-PORTVERSION=	1.4.11
+PORTVERSION=	1.4.13
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 
 USE_GCC=	yes
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
