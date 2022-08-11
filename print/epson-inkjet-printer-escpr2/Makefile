@@ -1,14 +1,15 @@
 PORTNAME=	epson-inkjet-printer-escpr2
-DISTVERSION=	1.1.48
+DISTVERSION=	1.1.49
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
-MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/13/52/26/aa037d9dd467507d8ee854be475b4173d0ec691f/:i386 \
-		https://download3.ebz.epson.net/dsc/f/03/00/13/52/26/a4b879d576a72177e92e91cbc42ebee39fda1336/:amd64 \
-		https://download3.ebz.epson.net/dsc/f/03/00/13/52/26/977f2b2c13cc185981479fbd225b802c35c92beb/:SOURCE
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/13/76/47/7dc899751d52b18d92a0b90bb1348ad3daf32851/:i386 \
+		https://download3.ebz.epson.net/dsc/f/03/00/13/76/47/1e4896743ee2c0ee9e2b4c1d00783d113c4f119d/:amd64 \
+		https://download3.ebz.epson.net/dsc/f/03/00/13/76/47/16f624dc1dfad10c3b4eb141c50c651a6360f69a/:SOURCE
 EXTRACT_SUFX=	.rpm
-DISTFILES_amd64=	${DISTNAME}.x86_64${EXTRACT_SUFX}:amd64
-DISTFILES_i386=	${DISTNAME}.i486${EXTRACT_SUFX}:i386
-EXTRACT_ONLY=	${_DISTFILES}
+DISTFILES_amd64=	${DISTNAME}.x86_64${EXTRACT_SUFX}:amd64 \
+		${_SRC_DISTFILES}
+DISTFILES_i386=	${DISTNAME}.i486${EXTRACT_SUFX}:i386 \
+		${_SRC_DISTFILES}
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Epson Inkjet Printer Driver 2 (ESC/P-R) for Linux
@@ -34,7 +35,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/cups/filter/gstoraster:print/cups-filters \
 USES=		linux
 USE_LDCONFIG=	yes
 USE_LINUX=	cups-libs
-SRC_DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}:SOURCE
+_SRC_DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}:SOURCE
 NO_BUILD=	yes
 # PORTSCOUT=ignore:1 MASTER_SITES is changed in each version
 PORTSCOUT=	ignore:1
