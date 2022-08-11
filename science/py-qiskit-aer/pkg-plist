@@ -1,3 +1,4 @@
+%%PYTHON_SITELIBDIR%%/qiskit/providers/__init__.pxd
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/VERSION.txt
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/__init__.py
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -194,15 +195,6 @@
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/noise/passes/__pycache__/relaxation_noise_pass%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/noise/passes/local_noise_pass.py
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/noise/passes/relaxation_noise_pass.py
-%%PYTHON_SITELIBDIR%%/qiskit/providers/aer/primitives/__init__.py
-%%PYTHON_SITELIBDIR%%/qiskit/providers/aer/primitives/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/qiskit/providers/aer/primitives/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/qiskit/providers/aer/primitives/__pycache__/estimator%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/qiskit/providers/aer/primitives/__pycache__/estimator%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/qiskit/providers/aer/primitives/__pycache__/sampler%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/qiskit/providers/aer/primitives/__pycache__/sampler%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/qiskit/providers/aer/primitives/estimator.py
-%%PYTHON_SITELIBDIR%%/qiskit/providers/aer/primitives/sampler.py
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/pulse/__init__.py
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/pulse/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/pulse/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -284,9 +276,3 @@
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/utils/noise_remapper.py
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/utils/noise_transformation.py
 %%PYTHON_SITELIBDIR%%/qiskit/providers/aer/version.py
-%%PYTHON_SITELIBDIR%%/qiskit_aer-0.11.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/qiskit_aer-0.11.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/qiskit_aer-0.11.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/qiskit_aer-0.11.0-py%%PYTHON_VER%%.egg-info/not-zip-safe
-%%PYTHON_SITELIBDIR%%/qiskit_aer-0.11.0-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/qiskit_aer-0.11.0-py%%PYTHON_VER%%.egg-info/top_level.txt
