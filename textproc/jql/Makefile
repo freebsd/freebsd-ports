@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.6
+DISTVERSION=	4.0.7
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yamafaktory
 
 CARGO_CRATES=	ansi_term-0.12.1 \
-		anyhow-1.0.58 \
+		anyhow-1.0.60 \
 		async-attributes-1.1.2 \
 		async-channel-1.6.1 \
 		async-executor-1.4.1 \
@@ -30,42 +30,40 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		block-buffer-0.7.3 \
-		block-padding-0.1.5 \
+		block-buffer-0.10.2 \
 		blocking-1.2.0 \
 		bstr-0.2.17 \
 		bumpalo-3.9.1 \
-		byte-tools-0.3.1 \
-		byteorder-1.4.3 \
 		cache-padded-1.2.0 \
 		cast-0.2.7 \
 		cast-0.3.0 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
-		clap-3.2.8 \
+		clap-3.2.16 \
 		clap_lex-0.2.3 \
 		colored_json-2.1.0 \
 		concurrent-queue-1.2.2 \
+		cpufeatures-0.2.2 \
 		criterion-0.3.6 \
 		criterion-plot-0.4.4 \
 		crossbeam-channel-0.5.4 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.8 \
 		crossbeam-utils-0.8.8 \
+		crypto-common-0.1.6 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
 		ctor-0.1.22 \
-		digest-0.8.1 \
+		digest-0.10.3 \
 		either-1.6.1 \
 		event-listener-2.5.2 \
-		fake-simd-0.1.2 \
 		fastrand-1.7.0 \
 		futures-channel-0.3.21 \
 		futures-core-0.3.21 \
 		futures-io-0.3.21 \
 		futures-lite-1.12.0 \
-		generic-array-0.12.4 \
+		generic-array-0.14.6 \
 		gloo-timers-0.2.3 \
 		half-1.8.2 \
 		hashbrown-0.11.2 \
@@ -80,20 +78,18 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		lazy_static-1.4.0 \
 		libc-0.2.121 \
 		log-0.4.16 \
-		maplit-1.0.2 \
 		memchr-2.4.1 \
 		memoffset-0.6.5 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.1 \
 		once_cell-1.12.0 \
 		oorandom-11.1.3 \
-		opaque-debug-0.2.3 \
 		os_str_bytes-6.0.0 \
 		parking-2.0.0 \
-		pest-2.1.3 \
-		pest_derive-2.1.0 \
-		pest_generator-2.1.3 \
-		pest_meta-2.1.3 \
+		pest-2.2.1 \
+		pest_derive-2.2.1 \
+		pest_generator-2.2.1 \
+		pest_meta-2.2.1 \
 		pin-project-lite-0.2.8 \
 		pin-utils-0.1.0 \
 		plotters-0.3.1 \
@@ -115,8 +111,8 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		serde-1.0.136 \
 		serde_cbor-0.11.2 \
 		serde_derive-1.0.136 \
-		serde_json-1.0.82 \
-		sha-1-0.8.2 \
+		serde_json-1.0.83 \
+		sha-1-0.10.0 \
 		signal-hook-0.3.13 \
 		signal-hook-registry-1.4.0 \
 		slab-0.4.5 \
@@ -126,6 +122,8 @@ CARGO_CRATES=	ansi_term-0.12.1 \
 		termcolor-1.1.3 \
 		textwrap-0.11.0 \
 		textwrap-0.15.0 \
+		thiserror-1.0.32 \
+		thiserror-impl-1.0.32 \
 		tinytemplate-1.2.1 \
 		typenum-1.15.0 \
 		ucd-trie-0.1.3 \
