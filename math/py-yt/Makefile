@@ -1,5 +1,5 @@
 PORTNAME=	yt
-DISTVERSION=	4.0.4
+DISTVERSION=	4.0.5
 CATEGORIES=	math astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,8 +9,6 @@ COMMENT=	Analysis and visualization toolkit for volumetric data
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
-
-BROKEN_i386=	call to 'countOnes' is ambiguous, see https://github.com/yt-project/yt/issues/3477
 
 # dependencies are in setup.cfg
 BUILD_DEPENDS=	${PYNUMPY}
