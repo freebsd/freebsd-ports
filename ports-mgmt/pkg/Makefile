@@ -22,6 +22,8 @@ PORTSCOUT=	ignore:1
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix="${PREFIX}"
 CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
 
+.include <bsd.port.pre.mk>
+
 # Use a submake as 'deinstall install' needs to reevaluate PKG_REGISTER
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
@@ -40,8 +42,6 @@ OPTIONS_DEFINE=	DOCS
 .if !exists(/usr/include/jail.h)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
 MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
