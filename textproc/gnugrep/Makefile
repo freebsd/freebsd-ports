@@ -1,5 +1,6 @@
 PORTNAME=	grep
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
@@ -11,8 +12,11 @@ LICENSE=	GPLv3+
 
 CONFLICTS=	bsd-grep
 
+RUN_DEPENDS=	groff:textproc/groff
+
 USES=		charsetfix cpe tar:xz
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--program-prefix=g
 TEST_TARGET=	check
 
 INFO=		grep
@@ -45,5 +49,10 @@ post-patch:
 post-patch-NLS-off:
 	@${REINPLACE_CMD} '/install-exec-local:/s/install-exec-localcharset//' \
 		${WRKSRC}/lib/Makefile.in
+
+post-install:
+.for p in grep egrep fgrep
+	${LN} -sf g${p} ${STAGEDIR}${PREFIX}/bin/${p}
+.endfor
 
 .include <bsd.port.mk>
