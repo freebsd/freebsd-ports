@@ -193,6 +193,8 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/et.xml
 %%DATADIR%%/data/annotationsDerived/eu.xml
 %%DATADIR%%/data/annotationsDerived/fa.xml
+%%DATADIR%%/data/annotationsDerived/ff.xml
+%%DATADIR%%/data/annotationsDerived/ff_Adlm.xml
 %%DATADIR%%/data/annotationsDerived/fi.xml
 %%DATADIR%%/data/annotationsDerived/fil.xml
 %%DATADIR%%/data/annotationsDerived/fo.xml
@@ -203,6 +205,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/gl.xml
 %%DATADIR%%/data/annotationsDerived/gu.xml
 %%DATADIR%%/data/annotationsDerived/ha.xml
+%%DATADIR%%/data/annotationsDerived/ha_NE.xml
 %%DATADIR%%/data/annotationsDerived/he.xml
 %%DATADIR%%/data/annotationsDerived/hi.xml
 %%DATADIR%%/data/annotationsDerived/hi_Latn.xml
@@ -245,6 +248,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/nl.xml
 %%DATADIR%%/data/annotationsDerived/nn.xml
 %%DATADIR%%/data/annotationsDerived/no.xml
+%%DATADIR%%/data/annotationsDerived/oc.xml
 %%DATADIR%%/data/annotationsDerived/or.xml
 %%DATADIR%%/data/annotationsDerived/pa.xml
 %%DATADIR%%/data/annotationsDerived/pa_Arab.xml
