@@ -1,6 +1,5 @@
 PORTNAME=	qiskit-nature
-DISTVERSION=	0.4.0-29
-DISTVERSIONSUFFIX=	-gfaacc94
+DISTVERSION=	0.4.3
 CATEGORIES=	science python # quantum-computing, quantum-chemistry
 #MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
