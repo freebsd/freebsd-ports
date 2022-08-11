@@ -1,0 +1,1097 @@
+diff --git amdgpu/amdgpu_bo.c amdgpu/amdgpu_bo.c
+index 54b1fb90..0c4b98b0 100644
+--- amdgpu/amdgpu_bo.c
++++ amdgpu/amdgpu_bo.c
+@@ -558,7 +558,7 @@ drm_public int amdgpu_find_bo_by_cpu_mapping(amdgpu_device_handle dev,
+ 	if (i < dev->bo_handles.max_key) {
+ 		atomic_inc(&bo->refcount);
+ 		*buf_handle = bo;
+-		*offset_in_bo = (uintptr_t)cpu - (uintptr_t)bo->cpu_ptr;
++		*offset_in_bo = (char*)cpu - (char*)bo->cpu_ptr;
+ 	} else {
+ 		*buf_handle = NULL;
+ 		*offset_in_bo = 0;
+@@ -609,7 +609,7 @@ drm_public int amdgpu_bo_list_create_raw(amdgpu_device_handle dev,
+ 	args.in.operation = AMDGPU_BO_LIST_OP_CREATE;
+ 	args.in.bo_number = number_of_buffers;
+ 	args.in.bo_info_size = sizeof(struct drm_amdgpu_bo_list_entry);
+-	args.in.bo_info_ptr = (uint64_t)(uintptr_t)buffers;
++	args.in.bo_info_ptr = (uintptr_t)buffers;
+ 
+ 	r = drmCommandWriteRead(dev->fd, DRM_AMDGPU_BO_LIST,
+ 				&args, sizeof(args));
+@@ -663,7 +663,7 @@ drm_public int amdgpu_bo_list_create(amdgpu_device_handle dev,
+ 	args.in.operation = AMDGPU_BO_LIST_OP_CREATE;
+ 	args.in.bo_number = number_of_resources;
+ 	args.in.bo_info_size = sizeof(struct drm_amdgpu_bo_list_entry);
+-	args.in.bo_info_ptr = (uint64_t)(uintptr_t)list;
++	args.in.bo_info_ptr = (uintptr_t)list;
+ 
+ 	for (i = 0; i < number_of_resources; i++) {
+ 		list[i].bo_handle = resources[i]->handle;
+diff --git amdgpu/amdgpu_cs.c amdgpu/amdgpu_cs.c
+index 638fd7d6..5d980729 100644
+--- amdgpu/amdgpu_cs.c
++++ amdgpu/amdgpu_cs.c
+@@ -280,7 +280,7 @@ static int amdgpu_cs_submit_one(amdgpu_context_handle context,
+ 		struct amdgpu_cs_ib_info *ib;
+ 		chunks[i].chunk_id = AMDGPU_CHUNK_ID_IB;
+ 		chunks[i].length_dw = sizeof(struct drm_amdgpu_cs_chunk_ib) / 4;
+-		chunks[i].chunk_data = (uint64_t)(uintptr_t)&chunk_data[i];
++		chunks[i].chunk_data = (drm_uptr_t)(uintptr_t)&chunk_data[i];
+ 
+ 		ib = &ibs_request->ibs[i];
+ 
+@@ -301,7 +301,7 @@ static int amdgpu_cs_submit_one(amdgpu_context_handle context,
+ 		/* fence chunk */
+ 		chunks[i].chunk_id = AMDGPU_CHUNK_ID_FENCE;
+ 		chunks[i].length_dw = sizeof(struct drm_amdgpu_cs_chunk_fence) / 4;
+-		chunks[i].chunk_data = (uint64_t)(uintptr_t)&chunk_data[i];
++		chunks[i].chunk_data = (drm_uptr_t)(uintptr_t)&chunk_data[i];
+ 
+ 		/* fence bo handle */
+ 		chunk_data[i].fence_data.handle = ibs_request->fence_info.handle->handle;
+@@ -334,7 +334,7 @@ static int amdgpu_cs_submit_one(amdgpu_context_handle context,
+ 		chunks[i].chunk_id = AMDGPU_CHUNK_ID_DEPENDENCIES;
+ 		chunks[i].length_dw = sizeof(struct drm_amdgpu_cs_chunk_dep) / 4
+ 			* ibs_request->number_of_dependencies;
+-		chunks[i].chunk_data = (uint64_t)(uintptr_t)dependencies;
++		chunks[i].chunk_data = (drm_uptr_t)(uintptr_t)dependencies;
+ 	}
+ 
+ 	sem_list = &context->sem_list[ibs_request->ip_type][ibs_request->ip_instance][ibs_request->ring];
+@@ -365,7 +365,7 @@ static int amdgpu_cs_submit_one(amdgpu_context_handle context,
+ 		/* dependencies chunk */
+ 		chunks[i].chunk_id = AMDGPU_CHUNK_ID_DEPENDENCIES;
+ 		chunks[i].length_dw = sizeof(struct drm_amdgpu_cs_chunk_dep) / 4 * sem_count;
+-		chunks[i].chunk_data = (uint64_t)(uintptr_t)sem_dependencies;
++		chunks[i].chunk_data = (drm_uptr_t)(uintptr_t)sem_dependencies;
+ 	}
+ 
+ 	r = amdgpu_cs_submit_raw2(dev, context, bo_list_handle, num_chunks,
+@@ -518,7 +518,7 @@ static int amdgpu_ioctl_wait_fences(struct amdgpu_cs_fence *fences,
+ 	}
+ 
+ 	memset(&args, 0, sizeof(args));
+-	args.in.fences = (uint64_t)(uintptr_t)drm_fences;
++	args.in.fences = (drm_uptr_t)(uintptr_t)drm_fences;
+ 	args.in.fence_count = fence_count;
+ 	args.in.wait_all = wait_all;
+ 	args.in.timeout_ns = amdgpu_cs_calculate_timeout(timeout_ns);
+@@ -882,16 +882,16 @@ drm_public int amdgpu_cs_submit_raw(amdgpu_device_handle dev,
+ 				    uint64_t *seq_no)
+ {
+ 	union drm_amdgpu_cs cs;
+-	uint64_t *chunk_array;
++	drm_uptr_t *chunk_array;
+ 	int i, r;
+ 	if (num_chunks == 0)
+ 		return -EINVAL;
+ 
+ 	memset(&cs, 0, sizeof(cs));
+-	chunk_array = alloca(sizeof(uint64_t) * num_chunks);
++	chunk_array = alloca(sizeof(*chunk_array) * num_chunks);
+ 	for (i = 0; i < num_chunks; i++)
+-		chunk_array[i] = (uint64_t)(uintptr_t)&chunks[i];
+-	cs.in.chunks = (uint64_t)(uintptr_t)chunk_array;
++		chunk_array[i] = (drm_uptr_t)(uintptr_t)&chunks[i];
++	cs.in.chunks = (drm_uptr_t)(uintptr_t)chunk_array;
+ 	cs.in.ctx_id = context->id;
+ 	cs.in.bo_list_handle = bo_list_handle ? bo_list_handle->handle : 0;
+ 	cs.in.num_chunks = num_chunks;
+@@ -913,14 +913,14 @@ drm_public int amdgpu_cs_submit_raw2(amdgpu_device_handle dev,
+ 				     uint64_t *seq_no)
+ {
+ 	union drm_amdgpu_cs cs;
+-	uint64_t *chunk_array;
++	drm_uptr_t *chunk_array;
+ 	int i, r;
+ 
+ 	memset(&cs, 0, sizeof(cs));
+-	chunk_array = alloca(sizeof(uint64_t) * num_chunks);
++	chunk_array = alloca(sizeof(*chunk_array) * num_chunks);
+ 	for (i = 0; i < num_chunks; i++)
+-		chunk_array[i] = (uint64_t)(uintptr_t)&chunks[i];
+-	cs.in.chunks = (uint64_t)(uintptr_t)chunk_array;
++		chunk_array[i] = (drm_uptr_t)(uintptr_t)&chunks[i];
++	cs.in.chunks = (drm_uptr_t)(uintptr_t)chunk_array;
+ 	cs.in.ctx_id = context->id;
+ 	cs.in.bo_list_handle = bo_list_handle;
+ 	cs.in.num_chunks = num_chunks;
+diff --git etnaviv/etnaviv_priv.h etnaviv/etnaviv_priv.h
+index eef7f49c..7907569b 100644
+--- etnaviv/etnaviv_priv.h
++++ etnaviv/etnaviv_priv.h
+@@ -194,7 +194,7 @@ struct etna_perfmon_signal
+ 		do { drmMsg("[E] " fmt " (%s:%d)\n", \
+ 				##__VA_ARGS__, __FUNCTION__, __LINE__); } while (0)
+ 
+-#define VOID2U64(x) ((uint64_t)(unsigned long)(x))
++#define VOID2U64(x) ((drm_uptr_t)(uintptr_t)(x))
+ 
+ static inline void get_abs_timeout(struct drm_etnaviv_timespec *tv, uint64_t ns)
+ {
+diff --git exynos/exynos_drm.c exynos/exynos_drm.c
+index 3e322a17..5aee0a0a 100644
+--- exynos/exynos_drm.c
++++ exynos/exynos_drm.c
+@@ -39,7 +39,12 @@
+ #include "exynos_drm.h"
+ #include "exynos_drmif.h"
+ 
+-#define U642VOID(x) ((void *)(unsigned long)(x))
++#ifdef __CHERI_PURE_CAPABILITY__
++/* No casts for CHERI to ensure that drm_uptr_t is used in the structures. */
++#define U642VOID(x) ((void *)(x))
++#else
++#define U642VOID(x) ((void *)(uintptr_t)(x))
++#endif
+ 
+ /*
+  * Create exynos drm device object.
+@@ -356,7 +361,7 @@ exynos_vidi_connection(struct exynos_device *dev, uint32_t connect,
+ 	struct drm_exynos_vidi_connection req = {
+ 		.connection	= connect,
+ 		.extensions	= ext,
+-		.edid		= (uint64_t)(uintptr_t)edid,
++		.edid		= (drm_uptr_t)(uintptr_t)edid,
+ 	};
+ 	int ret;
+ 
+diff --git exynos/exynos_drm.h exynos/exynos_drm.h
+index 50181c40..b247d5b2 100644
+--- exynos/exynos_drm.h
++++ exynos/exynos_drm.h
+@@ -124,7 +124,7 @@ struct drm_exynos_g2d_set_cmdlist {
+ 
+ 	/* for g2d event */
+ 	__u64					event_type;
+-	__u64					user_data;
++	drm_uptr_t				user_data;
+ };
+ 
+ struct drm_exynos_g2d_exec {
+@@ -162,7 +162,7 @@ struct drm_exynos_g2d_exec {
+ 
+ struct drm_exynos_g2d_event {
+ 	struct drm_event	base;
+-	__u64				user_data;
++	drm_uptr_t			user_data;
+ 	__u32				tv_sec;
+ 	__u32				tv_usec;
+ 	__u32				cmdlist_no;
+diff --git exynos/exynos_fimg2d.c exynos/exynos_fimg2d.c
+index ac6fa687..f84f6f23 100644
+--- exynos/exynos_fimg2d.c
++++ exynos/exynos_fimg2d.c
+@@ -323,14 +323,14 @@ static int g2d_flush(struct g2d_context *ctx)
+ 		return -EINVAL;
+ 	}
+ 
+-	cmdlist.cmd = (uint64_t)(uintptr_t)&ctx->cmd[0];
+-	cmdlist.cmd_buf = (uint64_t)(uintptr_t)&ctx->cmd_buf[0];
++	cmdlist.cmd = (drm_uptr_t)(uintptr_t)&ctx->cmd[0];
++	cmdlist.cmd_buf = (drm_uptr_t)(uintptr_t)&ctx->cmd_buf[0];
+ 	cmdlist.cmd_nr = ctx->cmd_nr;
+ 	cmdlist.cmd_buf_nr = ctx->cmd_buf_nr;
+ 
+ 	if (ctx->event_userdata) {
+ 		cmdlist.event_type = G2D_EVENT_NONSTOP;
+-		cmdlist.user_data = (uint64_t)(uintptr_t)(ctx->event_userdata);
++		cmdlist.user_data = (drm_uptr_t)(uintptr_t)(ctx->event_userdata);
+ 		ctx->event_userdata = NULL;
+ 	} else {
+ 		cmdlist.event_type = G2D_EVENT_NOT;
+diff --git freedreno/freedreno_priv.h freedreno/freedreno_priv.h
+index b8eac4b2..57beee35 100644
+--- freedreno/freedreno_priv.h
++++ freedreno/freedreno_priv.h
+@@ -193,8 +193,13 @@ drm_private struct fd_bo *fd_bo_new_ring(struct fd_device *dev,
+ 		do { drmMsg("[E] " fmt " (%s:%d)\n", \
+ 				##__VA_ARGS__, __FUNCTION__, __LINE__); } while (0)
+ 
+-#define U642VOID(x) ((void *)(unsigned long)(x))
+-#define VOID2U64(x) ((uint64_t)(unsigned long)(x))
++#ifdef __CHERI_PURE_CAPABILITY__
++/* No casts for CHERI to ensure that drm_uptr_t is used in the structures. */
++#define U642VOID(x) ((void *)(x))
++#else
++#define U642VOID(x) ((void *)(uintptr_t)(x))
++#endif
++#define VOID2U64(x) ((drm_uptr_t)(uintptr_t)(x))
+ 
+ static inline uint32_t
+ offset_bytes(void *end, void *start)
+diff --git freedreno/msm/msm_ringbuffer.c freedreno/msm/msm_ringbuffer.c
+index 7b9df4a0..26924c78 100644
+--- freedreno/msm/msm_ringbuffer.c
++++ freedreno/msm/msm_ringbuffer.c
+@@ -276,7 +276,7 @@ static int get_cmd(struct fd_ringbuffer *ring, struct msm_cmd *target_cmd,
+ 	if (target_cmd->is_appended_to_submit &&
+ 			!(target_cmd->ring->flags & FD_RINGBUFFER_STREAMING) &&
+ 			!drmHashLookup(msm_ring->cmd_table, (unsigned long)target_cmd, &val)) {
+-		i = VOID2U64(val);
++		i = (uint32_t)VOID2U64(val);
+ 		cmd = &msm_ring->submit.cmds[i];
+ 
+ 		assert(cmd->submit_offset == submit_offset);
+@@ -303,7 +303,7 @@ static int get_cmd(struct fd_ringbuffer *ring, struct msm_cmd *target_cmd,
+ 
+ 	if (!(target_cmd->ring->flags & FD_RINGBUFFER_STREAMING)) {
+ 		drmHashInsert(msm_ring->cmd_table, (unsigned long)target_cmd,
+-				U642VOID(i));
++				U642VOID((uintptr_t)i));
+ 	}
+ 
+ 	target_cmd->size = size;
+diff --git include/drm/amdgpu_drm.h include/drm/amdgpu_drm.h
+index c0a0ad10..718b1c3c 100644
+--- include/drm/amdgpu_drm.h
++++ include/drm/amdgpu_drm.h
+@@ -180,7 +180,7 @@ struct drm_amdgpu_bo_list_in {
+ 	/** Size of each element describing BO */
+ 	__u32 bo_info_size;
+ 	/** Pointer to array describing BOs */
+-	__u64 bo_info_ptr;
++	drm_uptr_t bo_info_ptr;
+ };
+ 
+ struct drm_amdgpu_bo_list_entry {
+@@ -332,7 +332,7 @@ union drm_amdgpu_sched {
+ #define AMDGPU_GEM_USERPTR_REGISTER	(1 << 3)
+ 
+ struct drm_amdgpu_gem_userptr {
+-	__u64		addr;
++	drm_uptr_t 	addr;
+ 	__u64		size;
+ 	/* AMDGPU_GEM_USERPTR_* */
+ 	__u32		flags;
+@@ -469,7 +469,7 @@ struct drm_amdgpu_fence {
+ 
+ struct drm_amdgpu_wait_fences_in {
+ 	/** This points to uint64_t * which points to fences */
+-	__u64 fences;
++	drm_uptr_t fences;
+ 	__u32 fence_count;
+ 	__u32 wait_all;
+ 	__u64 timeout_ns;
+@@ -491,11 +491,11 @@ union drm_amdgpu_wait_fences {
+ /* Sets or returns a value associated with a buffer. */
+ struct drm_amdgpu_gem_op {
+ 	/** GEM object handle */
+-	__u32	handle;
++	__u32		handle;
+ 	/** AMDGPU_GEM_OP_* */
+-	__u32	op;
++	__u32		op;
+ 	/** Input or return value */
+-	__u64	value;
++	drm_uptr_t	value;
+ };
+ 
+ #define AMDGPU_VA_OP_MAP			1
+@@ -576,7 +576,7 @@ struct drm_amdgpu_gem_va {
+ struct drm_amdgpu_cs_chunk {
+ 	__u32		chunk_id;
+ 	__u32		length_dw;
+-	__u64		chunk_data;
++	drm_uptr_t	chunk_data;
+ };
+ 
+ struct drm_amdgpu_cs_in {
+@@ -587,7 +587,7 @@ struct drm_amdgpu_cs_in {
+ 	__u32		num_chunks;
+ 	__u32		flags;
+ 	/** this points to __u64 * which point to cs chunks */
+-	__u64		chunks;
++	drm_uptr_t	chunks;
+ };
+ 
+ struct drm_amdgpu_cs_out {
+@@ -864,7 +864,7 @@ struct drm_amdgpu_query_fw {
+ /* Input structure for the INFO ioctl */
+ struct drm_amdgpu_info {
+ 	/* Where the return value will be stored */
+-	__u64 return_pointer;
++	drm_uptr_t return_pointer;
+ 	/* The size of the return value. Just like "size" in "snprintf",
+ 	 * it limits how many bytes the kernel can write. */
+ 	__u32 return_size;
+diff --git include/drm/drm.h include/drm/drm.h
+index 398c396f..2e9c5877 100644
+--- include/drm/drm.h
++++ include/drm/drm.h
+@@ -40,6 +40,7 @@
+ #include <linux/types.h>
+ #include <asm/ioctl.h>
+ typedef unsigned int drm_handle_t;
++typedef __u64 drm_uptr_t;
+ 
+ #else /* One of the BSDs */
+ 
+@@ -55,6 +56,15 @@ typedef uint32_t __u32;
+ typedef int64_t  __s64;
+ typedef uint64_t __u64;
+ typedef size_t   __kernel_size_t;
++/*
++ * When targeting pure-capability kernels we must pass capabilities, but for
++ * non-purecap we use u64 to avoid the need for 32-bit compat code
++ */
++#ifdef __CHERI_PURE_CAPABILITY__
++typedef uintcap_t drm_uptr_t;
++#else
++typedef uint64_t drm_uptr_t;
++#endif
+ typedef unsigned long drm_handle_t;
+ 
+ #endif
+@@ -882,7 +892,7 @@ struct drm_syncobj_transfer {
+ #define DRM_SYNCOBJ_WAIT_FLAGS_WAIT_FOR_SUBMIT (1 << 1)
+ #define DRM_SYNCOBJ_WAIT_FLAGS_WAIT_AVAILABLE (1 << 2) /* wait for time point to become available */
+ struct drm_syncobj_wait {
+-	__u64 handles;
++	drm_uptr_t handles;
+ 	/* absolute timeout */
+ 	__s64 timeout_nsec;
+ 	__u32 count_handles;
+@@ -892,9 +902,9 @@ struct drm_syncobj_wait {
+ };
+ 
+ struct drm_syncobj_timeline_wait {
+-	__u64 handles;
++	drm_uptr_t handles;
+ 	/* wait on specific timeline point for every handles*/
+-	__u64 points;
++	drm_uptr_t points;
+ 	/* absolute timeout */
+ 	__s64 timeout_nsec;
+ 	__u32 count_handles;
+@@ -905,15 +915,15 @@ struct drm_syncobj_timeline_wait {
+ 
+ 
+ struct drm_syncobj_array {
+-	__u64 handles;
++	drm_uptr_t handles;
+ 	__u32 count_handles;
+ 	__u32 pad;
+ };
+ 
+ #define DRM_SYNCOBJ_QUERY_FLAGS_LAST_SUBMITTED (1 << 0) /* last available point on timeline syncobj */
+ struct drm_syncobj_timeline_array {
+-	__u64 handles;
+-	__u64 points;
++	drm_uptr_t handles;
++	drm_uptr_t points;
+ 	__u32 count_handles;
+ 	__u32 flags;
+ };
+@@ -938,7 +948,7 @@ struct drm_crtc_queue_sequence {
+ 	__u32 crtc_id;
+ 	__u32 flags;
+ 	__u64 sequence;		/* on input, target sequence. on output, actual sequence */
+-	__u64 user_data;	/* user data passed to event */
++	drm_uptr_t user_data;	/* user data passed to event */
+ };
+ 
+ #if defined(__cplusplus)
+@@ -1116,7 +1126,7 @@ struct drm_event {
+ 
+ struct drm_event_vblank {
+ 	struct drm_event base;
+-	__u64 user_data;
++	drm_uptr_t user_data;
+ 	__u32 tv_sec;
+ 	__u32 tv_usec;
+ 	__u32 sequence;
+@@ -1128,7 +1138,7 @@ struct drm_event_vblank {
+  */
+ struct drm_event_crtc_sequence {
+ 	struct drm_event	base;
+-	__u64			user_data;
++	drm_uptr_t			user_data;
+ 	__s64			time_ns;
+ 	__u64			sequence;
+ };
+diff --git include/drm/drm_mode.h include/drm/drm_mode.h
+index 9b6722d4..637cbac5 100644
+--- include/drm/drm_mode.h
++++ include/drm/drm_mode.h
+@@ -260,10 +260,10 @@ struct drm_mode_modeinfo {
+ };
+ 
+ struct drm_mode_card_res {
+-	__u64 fb_id_ptr;
+-	__u64 crtc_id_ptr;
+-	__u64 connector_id_ptr;
+-	__u64 encoder_id_ptr;
++	drm_uptr_t fb_id_ptr;
++	drm_uptr_t crtc_id_ptr;
++	drm_uptr_t connector_id_ptr;
++	drm_uptr_t encoder_id_ptr;
+ 	__u32 count_fbs;
+ 	__u32 count_crtcs;
+ 	__u32 count_connectors;
+@@ -275,7 +275,7 @@ struct drm_mode_card_res {
+ };
+ 
+ struct drm_mode_crtc {
+-	__u64 set_connectors_ptr;
++	drm_uptr_t set_connectors_ptr;
+ 	__u32 count_connectors;
+ 
+ 	__u32 crtc_id; /**< Id */
+@@ -322,11 +322,11 @@ struct drm_mode_get_plane {
+ 	__u32 gamma_size;
+ 
+ 	__u32 count_format_types;
+-	__u64 format_type_ptr;
++	drm_uptr_t format_type_ptr;
+ };
+ 
+ struct drm_mode_get_plane_res {
+-	__u64 plane_id_ptr;
++	drm_uptr_t plane_id_ptr;
+ 	__u32 count_planes;
+ };
+ 
+@@ -425,13 +425,13 @@ enum drm_mode_subconnector {
+  */
+ struct drm_mode_get_connector {
+ 	/** @encoders_ptr: Pointer to ``__u32`` array of object IDs. */
+-	__u64 encoders_ptr;
++	drm_uptr_t encoders_ptr;
+ 	/** @modes_ptr: Pointer to struct drm_mode_modeinfo array. */
+-	__u64 modes_ptr;
++	drm_uptr_t modes_ptr;
+ 	/** @props_ptr: Pointer to ``__u32`` array of property IDs. */
+-	__u64 props_ptr;
++	drm_uptr_t props_ptr;
+ 	/** @prop_values_ptr: Pointer to ``__u64`` array of property values. */
+-	__u64 prop_values_ptr;
++	drm_uptr_t prop_values_ptr;
+ 
+ 	/** @count_modes: Number of modes. */
+ 	__u32 count_modes;
+@@ -515,8 +515,8 @@ struct drm_mode_property_enum {
+ };
+ 
+ struct drm_mode_get_property {
+-	__u64 values_ptr; /* values and blob lengths */
+-	__u64 enum_blob_ptr; /* enum and blob id ptrs */
++	drm_uptr_t values_ptr; /* values and blob lengths */
++	drm_uptr_t enum_blob_ptr; /* enum and blob id ptrs */
+ 
+ 	__u32 prop_id;
+ 	__u32 flags;
+@@ -545,8 +545,8 @@ struct drm_mode_connector_set_property {
+ #define DRM_MODE_OBJECT_ANY 0
+ 
+ struct drm_mode_obj_get_properties {
+-	__u64 props_ptr;
+-	__u64 prop_values_ptr;
++	drm_uptr_t props_ptr;
++	drm_uptr_t prop_values_ptr;
+ 	__u32 count_props;
+ 	__u32 obj_id;
+ 	__u32 obj_type;
+@@ -562,7 +562,7 @@ struct drm_mode_obj_set_property {
+ struct drm_mode_get_blob {
+ 	__u32 blob_id;
+ 	__u32 length;
+-	__u64 data;
++	drm_uptr_t data;
+ };
+ 
+ struct drm_mode_fb_cmd {
+@@ -654,7 +654,7 @@ struct drm_mode_fb_dirty_cmd {
+ 	__u32 flags;
+ 	__u32 color;
+ 	__u32 num_clips;
+-	__u64 clips_ptr;
++	drm_uptr_t clips_ptr;
+ };
+ 
+ struct drm_mode_mode_cmd {
+@@ -709,9 +709,9 @@ struct drm_mode_crtc_lut {
+ 	__u32 gamma_size;
+ 
+ 	/* pointers to arrays */
+-	__u64 red;
+-	__u64 green;
+-	__u64 blue;
++	drm_uptr_t red;
++	drm_uptr_t green;
++	drm_uptr_t blue;
+ };
+ 
+ struct drm_color_ctm {
+@@ -858,7 +858,7 @@ struct drm_mode_crtc_page_flip {
+ 	__u32 fb_id;
+ 	__u32 flags;
+ 	__u32 reserved;
+-	__u64 user_data;
++	drm_uptr_t user_data;
+ };
+ 
+ /*
+@@ -886,7 +886,7 @@ struct drm_mode_crtc_page_flip_target {
+ 	__u32 fb_id;
+ 	__u32 flags;
+ 	__u32 sequence;
+-	__u64 user_data;
++	drm_uptr_t user_data;
+ };
+ 
+ /* create a dumb scanout buffer */
+@@ -933,12 +933,12 @@ struct drm_mode_destroy_dumb {
+ struct drm_mode_atomic {
+ 	__u32 flags;
+ 	__u32 count_objs;
+-	__u64 objs_ptr;
+-	__u64 count_props_ptr;
+-	__u64 props_ptr;
+-	__u64 prop_values_ptr;
+-	__u64 reserved;
+-	__u64 user_data;
++	drm_uptr_t objs_ptr;
++	drm_uptr_t count_props_ptr;
++	drm_uptr_t props_ptr;
++	drm_uptr_t prop_values_ptr;
++	drm_uptr_t reserved;
++	drm_uptr_t user_data;
+ };
+ 
+ struct drm_format_modifier_blob {
+@@ -999,7 +999,7 @@ struct drm_format_modifier {
+  */
+ struct drm_mode_create_blob {
+ 	/** @data: Pointer to data to copy. */
+-	__u64 data;
++	drm_uptr_t data;
+ 	/** @length: Length of data to copy. */
+ 	__u32 length;
+ 	/** @blob_id: Return: new property ID. */
+@@ -1029,7 +1029,7 @@ struct drm_mode_destroy_blob {
+  */
+ struct drm_mode_create_lease {
+ 	/** @object_ids: Pointer to array of object ids (__u32) */
+-	__u64 object_ids;
++	drm_uptr_t object_ids;
+ 	/** @object_count: Number of object ids */
+ 	__u32 object_count;
+ 	/** @flags: flags for new FD (O_CLOEXEC, etc) */
+@@ -1065,7 +1065,7 @@ struct drm_mode_list_lessees {
+ 	 *
+ 	 * Pointer to __u64 array of lessee ids
+ 	 */
+-	__u64 lessees_ptr;
++	drm_uptr_t lessees_ptr;
+ };
+ 
+ /**
+@@ -1092,7 +1092,7 @@ struct drm_mode_get_lease {
+ 	 *
+ 	 * Pointer to __u32 array of object ids.
+ 	 */
+-	__u64 objects_ptr;
++	drm_uptr_t objects_ptr;
+ };
+ 
+ /**
+diff --git include/drm/i915_drm.h include/drm/i915_drm.h
+index 72afd94e..97bc248c 100644
+--- include/drm/i915_drm.h
++++ include/drm/i915_drm.h
+@@ -1636,7 +1636,7 @@ struct drm_i915_reset_stats {
+ };
+ 
+ struct drm_i915_gem_userptr {
+-	__u64 user_ptr;
++	drm_uptr_t user_ptr;
+ 	__u64 user_size;
+ 	__u32 flags;
+ #define I915_USERPTR_READ_ONLY 0x1
+diff --git include/drm/msm_drm.h include/drm/msm_drm.h
+index c06d0a5b..4f6cd068 100644
+--- include/drm/msm_drm.h
++++ include/drm/msm_drm.h
+@@ -172,7 +172,7 @@ struct drm_msm_gem_submit_cmd {
+ 	__u32 size;           /* in, cmdstream size */
+ 	__u32 pad;
+ 	__u32 nr_relocs;      /* in, number of submit_reloc's */
+-	__u64 relocs;         /* in, ptr to array of submit_reloc's */
++	drm_uptr_t relocs;    /* in, ptr to array of submit_reloc's */
+ };
+ 
+ /* Each buffer referenced elsewhere in the cmdstream submit (ie. the
+@@ -218,10 +218,10 @@ struct drm_msm_gem_submit {
+ 	__u32 fence;          /* out */
+ 	__u32 nr_bos;         /* in, number of submit_bo's */
+ 	__u32 nr_cmds;        /* in, number of submit_cmd's */
+-	__u64 bos;            /* in, ptr to array of submit_bo's */
+-	__u64 cmds;           /* in, ptr to array of submit_cmd's */
++	drm_uptr_t bos;       /* in, ptr to array of submit_bo's */
++	drm_uptr_t cmds;      /* in, ptr to array of submit_cmd's */
+ 	__s32 fence_fd;       /* in/out fence fd (see MSM_SUBMIT_FENCE_FD_IN/OUT) */
+-	__u32 queueid;         /* in, submitqueue id */
++	__u32 queueid;        /* in, submitqueue id */
+ };
+ 
+ /* The normal way to synchronize with the GPU is just to CPU_PREP on
+diff --git include/drm/nouveau_drm.h include/drm/nouveau_drm.h
+index 4f941489..662b923b 100644
+--- include/drm/nouveau_drm.h
++++ include/drm/nouveau_drm.h
+@@ -131,7 +131,7 @@ struct drm_nouveau_gem_pushbuf_bo_presumed {
+ };
+ 
+ struct drm_nouveau_gem_pushbuf_bo {
+-	__u64 user_priv;
++	drm_uptr_t user_priv;
+ 	__u32 handle;
+ 	__u32 read_domains;
+ 	__u32 write_domains;
+@@ -164,11 +164,11 @@ struct drm_nouveau_gem_pushbuf_push {
+ struct drm_nouveau_gem_pushbuf {
+ 	__u32 channel;
+ 	__u32 nr_buffers;
+-	__u64 buffers;
++	drm_uptr_t buffers;
+ 	__u32 nr_relocs;
+ 	__u32 nr_push;
+-	__u64 relocs;
+-	__u64 push;
++	drm_uptr_t relocs;
++	drm_uptr_t push;
+ 	__u32 suffix0;
+ 	__u32 suffix1;
+ #define NOUVEAU_GEM_PUSHBUF_SYNC                                    (1ULL << 0)
+diff --git include/drm/radeon_drm.h include/drm/radeon_drm.h
+index a1e385d6..5d526376 100644
+--- include/drm/radeon_drm.h
++++ include/drm/radeon_drm.h
+@@ -968,7 +968,7 @@ struct drm_radeon_gem_va {
+ struct drm_radeon_cs_chunk {
+ 	__u32		chunk_id;
+ 	__u32		length_dw;
+-	__u64		chunk_data;
++	drm_uptr_t	chunk_data;
+ };
+ 
+ /* drm_radeon_cs_reloc.flags */
+@@ -985,7 +985,7 @@ struct drm_radeon_cs {
+ 	__u32		num_chunks;
+ 	__u32		cs_id;
+ 	/* this points to __u64 * which point to cs chunks */
+-	__u64		chunks;
++	drm_uptr_t	chunks;
+ 	/* updates to the limits after this CS ioctl */
+ 	__u64		gart_limit;
+ 	__u64		vram_limit;
+@@ -1049,7 +1049,7 @@ struct drm_radeon_cs {
+ struct drm_radeon_info {
+ 	__u32		request;
+ 	__u32		pad;
+-	__u64		value;
++	drm_uptr_t	value;
+ };
+ 
+ /* Those correspond to the tile index to use, this is to explicitly state
+diff --git include/drm/vmwgfx_drm.h include/drm/vmwgfx_drm.h
+index 2b8d47ea..1d47ad93 100644
+--- include/drm/vmwgfx_drm.h
++++ include/drm/vmwgfx_drm.h
+@@ -711,7 +711,7 @@ struct drm_vmw_fence_arg {
+ 
+ struct drm_vmw_event_fence {
+ 	struct drm_event base;
+-	__u64 user_data;
++	drm_uptr_t user_data;
+ 	__u32 tv_sec;
+ 	__u32 tv_usec;
+ };
+@@ -733,7 +733,7 @@ struct drm_vmw_event_fence {
+  */
+ struct drm_vmw_fence_event_arg {
+ 	__u64 fence_rep;
+-	__u64 user_data;
++	drm_uptr_t user_data;
+ 	__u32 handle;
+ 	__u32 flags;
+ };
+diff --git intel/intel_bufmgr_gem.c intel/intel_bufmgr_gem.c
+index b28ea74d..0521debe 100644
+--- intel/intel_bufmgr_gem.c
++++ intel/intel_bufmgr_gem.c
+@@ -1,7 +1,7 @@
+ /**************************************************************************
+  *
+- * Copyright © 2007 Red Hat Inc.
+- * Copyright © 2007-2012 Intel Corporation
++ * Copyright ï¿½ 2007 Red Hat Inc.
++ * Copyright ï¿½ 2007-2012 Intel Corporation
+  * Copyright 2006 Tungsten Graphics, Inc., Bismarck, ND., USA
+  * All Rights Reserved.
+  *
+@@ -28,7 +28,7 @@
+  *
+  **************************************************************************/
+ /*
+- * Authors: Thomas Hellström <thomas-at-tungstengraphics-dot-com>
++ * Authors: Thomas Hellstrï¿½m <thomas-at-tungstengraphics-dot-com>
+  *          Keith Whitwell <keithw-at-tungstengraphics-dot-com>
+  *	    Eric Anholt <eric@anholt.net>
+  *	    Dave Airlie <airlied@linux.ie>
+@@ -916,7 +916,7 @@ drm_intel_gem_bo_alloc_userptr(drm_intel_bufmgr *bufmgr,
+ 	bo_gem->bo.size = size;
+ 
+ 	memclear(userptr);
+-	userptr.user_ptr = (__u64)((unsigned long)addr);
++	userptr.user_ptr = (drm_uptr_t)(uintptr_t)addr;
+ 	userptr.user_size = size;
+ 	userptr.flags = flags;
+ 
+@@ -985,7 +985,7 @@ has_userptr(drm_intel_bufmgr_gem *bufmgr_gem)
+ 	}
+ 
+ 	memclear(userptr);
+-	userptr.user_ptr = (__u64)(unsigned long)ptr;
++	userptr.user_ptr = (drm_uptr_t)(uintptr_t)ptr;
+ 	userptr.user_size = pgsz;
+ 
+ retry:
+diff --git nouveau/pushbuf.c nouveau/pushbuf.c
+index 5d54f21d..edd4da3f 100644
+--- nouveau/pushbuf.c
++++ nouveau/pushbuf.c
+@@ -126,7 +126,7 @@ pushbuf_kref_fits(struct nouveau_pushbuf *push, struct nouveau_bo *bo,
+ 		if (!(kref->valid_domains & NOUVEAU_GEM_DOMAIN_GART))
+ 			continue;
+ 
+-		kbo = (void *)(unsigned long)kref->user_priv;
++		kbo = (void *)(uintptr_t)kref->user_priv;
+ 		if (!(kref->valid_domains & NOUVEAU_GEM_DOMAIN_VRAM) ||
+ 		    krec->vram_used + kbo->size > dev->vram_limit)
+ 			continue;
+@@ -292,7 +292,7 @@ pushbuf_dump(struct nouveau_pushbuf_krec *krec, int krec_id, int chid)
+ 	kpsh = krec->push;
+ 	for (i = 0; i < krec->nr_push; i++, kpsh++) {
+ 		kref = krec->buffer + kpsh->bo_index;
+-		bo = (void *)(unsigned long)kref->user_priv;
++		bo = (void *)(uintptr_t)kref->user_priv;
+ 		bgn = (uint32_t *)((char *)bo->map + kpsh->offset);
+ 		end = bgn + ((kpsh->length & 0x7fffff) /4);
+ 
+@@ -333,11 +333,11 @@ pushbuf_submit(struct nouveau_pushbuf *push, struct nouveau_object *chan)
+ 	while (krec && krec->nr_push) {
+ 		req.channel = fifo->channel;
+ 		req.nr_buffers = krec->nr_buffer;
+-		req.buffers = (uint64_t)(unsigned long)krec->buffer;
++		req.buffers = (drm_uptr_t)(uintptr_t)krec->buffer;
+ 		req.nr_relocs = krec->nr_reloc;
+ 		req.nr_push = krec->nr_push;
+-		req.relocs = (uint64_t)(unsigned long)krec->reloc;
+-		req.push = (uint64_t)(unsigned long)krec->push;
++		req.relocs = (drm_uptr_t)(uintptr_t)krec->reloc;
++		req.push = (drm_uptr_t)(uintptr_t)krec->push;
+ 		req.suffix0 = nvpb->suffix0;
+ 		req.suffix1 = nvpb->suffix1;
+ 		req.vram_available = 0; /* for valgrind */
+@@ -370,7 +370,7 @@ pushbuf_submit(struct nouveau_pushbuf *push, struct nouveau_object *chan)
+ 
+ 		kref = krec->buffer;
+ 		for (i = 0; i < krec->nr_buffer; i++, kref++) {
+-			bo = (void *)(unsigned long)kref->user_priv;
++			bo = (void *)(uintptr_t)kref->user_priv;
+ 
+ 			info = &kref->presumed;
+ 			if (!info->valid) {
+@@ -414,7 +414,7 @@ pushbuf_flush(struct nouveau_pushbuf *push)
+ 
+ 	kref = krec->buffer;
+ 	for (i = 0; i < krec->nr_buffer; i++, kref++) {
+-		bo = (void *)(unsigned long)kref->user_priv;
++		bo = (void *)(uintptr_t)kref->user_priv;
+ 		cli_kref_set(push->client, bo, NULL, NULL);
+ 		if (push->channel)
+ 			nouveau_bo_ref(NULL, &bo);
+@@ -445,7 +445,7 @@ pushbuf_refn_fail(struct nouveau_pushbuf *push, int sref, int srel)
+ 
+ 	kref = krec->buffer + sref;
+ 	while (krec->nr_buffer-- > sref) {
+-		struct nouveau_bo *bo = (void *)(unsigned long)kref->user_priv;
++		struct nouveau_bo *bo = (void *)(uintptr_t)kref->user_priv;
+ 		cli_kref_set(push->client, bo, NULL, NULL);
+ 		nouveau_bo_ref(NULL, &bo);
+ 		kref++;
+@@ -616,7 +616,7 @@ nouveau_pushbuf_del(struct nouveau_pushbuf **ppush)
+ 		while ((krec = nvpb->list)) {
+ 			kref = krec->buffer;
+ 			while (krec->nr_buffer--) {
+-				unsigned long priv = kref++->user_priv;
++				drm_uptr_t priv = kref++->user_priv;
+ 				struct nouveau_bo *bo = (void *)priv;
+ 				cli_kref_set(nvpb->base.client, bo, NULL, NULL);
+ 				nouveau_bo_ref(NULL, &bo);
+diff --git radeon/radeon_cs_gem.c radeon/radeon_cs_gem.c
+index ef070c60..23836f9e 100644
+--- radeon/radeon_cs_gem.c
++++ radeon/radeon_cs_gem.c
+@@ -162,10 +162,10 @@ static struct radeon_cs_int *cs_gem_create(struct radeon_cs_manager *csm,
+     }
+     csg->chunks[0].chunk_id = RADEON_CHUNK_ID_IB;
+     csg->chunks[0].length_dw = 0;
+-    csg->chunks[0].chunk_data = (uint64_t)(uintptr_t)csg->base.packets;
++    csg->chunks[0].chunk_data = (drm_uptr_t)(uintptr_t)csg->base.packets;
+     csg->chunks[1].chunk_id = RADEON_CHUNK_ID_RELOCS;
+     csg->chunks[1].length_dw = 0;
+-    csg->chunks[1].chunk_data = (uint64_t)(uintptr_t)csg->relocs;
++    csg->chunks[1].chunk_data = (drm_uptr_t)(uintptr_t)csg->relocs;
+     return (struct radeon_cs_int*)csg;
+ }
+ 
+@@ -254,7 +254,7 @@ static int cs_gem_write_reloc(struct radeon_cs_int *cs,
+         }
+         cs->relocs = csg->relocs = tmp;
+         csg->nrelocs += 1;
+-        csg->chunks[1].chunk_data = (uint64_t)(uintptr_t)csg->relocs;
++        csg->chunks[1].chunk_data = (drm_uptr_t)(uintptr_t)csg->relocs;
+     }
+     csg->relocs_bo[csg->base.crelocs] = boi;
+     idx = (csg->base.crelocs++) * RELOC_SIZE;
+@@ -424,7 +424,7 @@ out_err:
+ static int cs_gem_emit(struct radeon_cs_int *cs)
+ {
+     struct cs_gem *csg = (struct cs_gem*)cs;
+-    uint64_t chunk_array[2];
++    drm_uptr_t chunk_array[2];
+     unsigned i;
+     int r;
+ 
+@@ -436,11 +436,11 @@ static int cs_gem_emit(struct radeon_cs_int *cs)
+ #endif
+     csg->chunks[0].length_dw = cs->cdw;
+ 
+-    chunk_array[0] = (uint64_t)(uintptr_t)&csg->chunks[0];
+-    chunk_array[1] = (uint64_t)(uintptr_t)&csg->chunks[1];
++    chunk_array[0] = (drm_uptr_t)(uintptr_t)&csg->chunks[0];
++    chunk_array[1] = (drm_uptr_t)(uintptr_t)&csg->chunks[1];
+ 
+     csg->cs.num_chunks = 2;
+-    csg->cs.chunks = (uint64_t)(uintptr_t)chunk_array;
++    csg->cs.chunks = (drm_uptr_t)(uintptr_t)chunk_array;
+ 
+     r = drmCommandWriteRead(cs->csm->fd, DRM_RADEON_CS,
+                             &csg->cs, sizeof(struct drm_radeon_cs));
+diff --git tests/amdgpu/syncobj_tests.c tests/amdgpu/syncobj_tests.c
+index 690bea01..8846f998 100644
+--- tests/amdgpu/syncobj_tests.c
++++ tests/amdgpu/syncobj_tests.c
+@@ -137,7 +137,7 @@ static int syncobj_command_submission_helper(uint32_t syncobj_handle, bool
+ 
+ 	chunks[0].chunk_id = AMDGPU_CHUNK_ID_IB;
+ 	chunks[0].length_dw = sizeof(struct drm_amdgpu_cs_chunk_ib) / 4;
+-	chunks[0].chunk_data = (uint64_t)(uintptr_t)&chunk_data;
++	chunks[0].chunk_data = (drm_uptr_t)(uintptr_t)&chunk_data;
+ 	chunk_data.ib_data._pad = 0;
+ 	chunk_data.ib_data.va_start = ib_result_mc_address;
+ 	chunk_data.ib_data.ib_bytes = 16 * 4;
+@@ -151,7 +151,7 @@ static int syncobj_command_submission_helper(uint32_t syncobj_handle, bool
+ 		AMDGPU_CHUNK_ID_SYNCOBJ_TIMELINE_WAIT :
+ 		AMDGPU_CHUNK_ID_SYNCOBJ_TIMELINE_SIGNAL;
+ 	chunks[1].length_dw = sizeof(struct drm_amdgpu_cs_chunk_syncobj) / 4;
+-	chunks[1].chunk_data = (uint64_t)(uintptr_t)&syncobj_data;
++	chunks[1].chunk_data = (drm_uptr_t)(uintptr_t)&syncobj_data;
+ 	syncobj_data.handle = syncobj_handle;
+ 	syncobj_data.point = point;
+ 	syncobj_data.flags = DRM_SYNCOBJ_WAIT_FLAGS_WAIT_FOR_SUBMIT;
+@@ -204,7 +204,7 @@ static void *syncobj_wait(void *data)
+ 					      sp->point);
+ 	CU_ASSERT_EQUAL(r, 0);
+ 
+-	return (void *)(long)r;
++	return (void *)(intptr_t)r;
+ }
+ 
+ static void *syncobj_signal(void *data)
+@@ -216,7 +216,7 @@ static void *syncobj_signal(void *data)
+ 					      sp->point);
+ 	CU_ASSERT_EQUAL(r, 0);
+ 
+-	return (void *)(long)r;
++	return (void *)(intptr_t)r;
+ }
+ 
+ static void amdgpu_syncobj_timeline_test(void)
+diff --git tests/hash.c tests/hash.c
+index 4475fba9..1112c345 100644
+--- tests/hash.c
++++ tests/hash.c
+@@ -161,27 +161,27 @@ int main(void)
+     printf("\n***** 256 consecutive integers ****\n");
+     table = drmHashCreate();
+     for (i = 0; i < 256; i++)
+-        drmHashInsert(table, i, (void *)(i << 16 | i));
++        drmHashInsert(table, i, (void *)(uintptr_t)(i << 16 | i));
+     for (i = 0; i < 256; i++)
+-        ret |= check_table(table, i, (void *)(i << 16 | i));
++        ret |= check_table(table, i, (void *)(uintptr_t)(i << 16 | i));
+     compute_dist(table);
+     drmHashDestroy(table);
+ 
+     printf("\n***** 1024 consecutive integers ****\n");
+     table = drmHashCreate();
+     for (i = 0; i < 1024; i++)
+-        drmHashInsert(table, i, (void *)(i << 16 | i));
++        drmHashInsert(table, i, (void *)(uintptr_t)(i << 16 | i));
+     for (i = 0; i < 1024; i++)
+-        ret |= check_table(table, i, (void *)(i << 16 | i));
++        ret |= check_table(table, i, (void *)(uintptr_t)(i << 16 | i));
+     compute_dist(table);
+     drmHashDestroy(table);
+ 
+     printf("\n***** 1024 consecutive page addresses (4k pages) ****\n");
+     table = drmHashCreate();
+     for (i = 0; i < 1024; i++)
+-        drmHashInsert(table, i*4096, (void *)(i << 16 | i));
++        drmHashInsert(table, i*4096, (void *)(uintptr_t)(i << 16 | i));
+     for (i = 0; i < 1024; i++)
+-        ret |= check_table(table, i*4096, (void *)(i << 16 | i));
++        ret |= check_table(table, i*4096, (void *)(uintptr_t)(i << 16 | i));
+     compute_dist(table);
+     drmHashDestroy(table);
+ 
+@@ -189,13 +189,13 @@ int main(void)
+     table = drmHashCreate();
+     srandom(0xbeefbeef);
+     for (i = 0; i < 1024; i++)
+-        drmHashInsert(table, random(), (void *)(i << 16 | i));
++        drmHashInsert(table, random(), (void *)(uintptr_t)(i << 16 | i));
+     srandom(0xbeefbeef);
+     for (i = 0; i < 1024; i++)
+-        ret |= check_table(table, random(), (void *)(i << 16 | i));
++        ret |= check_table(table, random(), (void *)(uintptr_t)(i << 16 | i));
+     srandom(0xbeefbeef);
+     for (i = 0; i < 1024; i++)
+-        ret |= check_table(table, random(), (void *)(i << 16 | i));
++        ret |= check_table(table, random(), (void *)(uintptr_t)(i << 16 | i));
+     compute_dist(table);
+     drmHashDestroy(table);
+ 
+@@ -203,13 +203,13 @@ int main(void)
+     table = drmHashCreate();
+     srandom(0xbeefbeef);
+     for (i = 0; i < 5000; i++)
+-        drmHashInsert(table, random(), (void *)(i << 16 | i));
++        drmHashInsert(table, random(), (void *)(uintptr_t)(i << 16 | i));
+     srandom(0xbeefbeef);
+     for (i = 0; i < 5000; i++)
+-        ret |= check_table(table, random(), (void *)(i << 16 | i));
++        ret |= check_table(table, random(), (void *)(uintptr_t)(i << 16 | i));
+     srandom(0xbeefbeef);
+     for (i = 0; i < 5000; i++)
+-        ret |= check_table(table, random(), (void *)(i << 16 | i));
++        ret |= check_table(table, random(), (void *)(uintptr_t)(i << 16 | i));
+     compute_dist(table);
+     drmHashDestroy(table);
+ 
+diff --git util_double_list.h util_double_list.h
+index 9bdca137..21a399fa 100644
+--- util_double_list.h
++++ util_double_list.h
+@@ -108,9 +108,8 @@ static inline void list_delinit(struct list_head *item)
+     ((__list)->next == (__list))
+ 
+ #ifndef container_of
+-#define container_of(ptr, sample, member)				\
+-    (void *)((char *)(ptr)						\
+-	     - ((char *)&((__typeof__(sample))0)->member))
++#define container_of(ptr, sample, member) \
++    (void *)((char *)(ptr) - offsetof(__typeof__(*(sample)), member))
+ #endif
+ 
+ #define LIST_FOR_EACH_ENTRY(pos, head, member)				\
+diff --git xf86drm.c xf86drm.c
+index 76fdfaab..3dc4227f 100644
+--- xf86drm.c
++++ xf86drm.c
+@@ -3575,7 +3575,7 @@ static int drmParseSubsystemType(int maj, int min)
+      }
+     return subsystem_type;
+ #elif defined(__OpenBSD__) || defined(__DragonFly__) || defined(__FreeBSD__)
+-    return DRM_BUS_PCI;
++    return DRM_BUS_PLATFORM;
+ #else
+ #warning "Missing implementation of drmParseSubsystemType"
+     return -EINVAL;
+@@ -4257,6 +4257,10 @@ static int drmParseOFBusInfo(int maj, int min, char *fullname)
+     fullname[DRM_PLATFORM_DEVICE_NAME_LEN - 1] = '\0';
+     free(name);
+ 
++    return 0;
++#elif defined(__FreeBSD__)
++    strncpy(fullname, "testdev", DRM_PLATFORM_DEVICE_NAME_LEN);
++    fullname[DRM_PLATFORM_DEVICE_NAME_LEN - 1] = '\0';
+     return 0;
+ #else
+ #warning "Missing implementation of drmParseOFBusInfo"
+@@ -4318,6 +4322,12 @@ free:
+ 
+     free(*compatible);
+     return err;
++#elif defined(__FreeBSD__)
++    *compatible = calloc(3 + 1, sizeof(char *));
++    if (!*compatible)
++        return -ENOMEM;
++    (*compatible)[0] = strdup("a");
++    return (0);
+ #else
+ #warning "Missing implementation of drmParseOFDeviceInfo"
+     return -EINVAL;
+@@ -4606,7 +4616,13 @@ drm_public int drmGetDeviceFromDevId(dev_t find_rdev, uint32_t flags, drmDeviceP
+     }
+     node_count = i;
+ 
++#if 0
++	/*
++	 * XXX: something wrong here â€”
++	 * mesa-demos use LLVM PIPE instead of panfrost
++	 */
+     drmFoldDuplicatedDevices(local_devices, node_count);
++#endif
+ 
+     *device = NULL;
+ 
+diff --git xf86drm.h xf86drm.h
+index 1631396a..3dc64d29 100644
+--- xf86drm.h
++++ xf86drm.h
+@@ -800,7 +800,7 @@ typedef struct _drmEventContext {
+ 	void (*sequence_handler)(int fd,
+ 				 uint64_t sequence,
+ 				 uint64_t ns,
+-				 uint64_t user_data);
++				 drm_uptr_t user_data);
+ } drmEventContext, *drmEventContextPtr;
+ 
+ extern int drmHandleEvent(int fd, drmEventContextPtr evctx);
+diff --git xf86drmMode.c xf86drmMode.c
+index 9dc42451..83ac5c14 100644
+--- xf86drmMode.c
++++ xf86drmMode.c
+@@ -59,8 +59,13 @@
+ 
+ #define memclear(s) memset(&s, 0, sizeof(s))
+ 
+-#define U642VOID(x) ((void *)(unsigned long)(x))
+-#define VOID2U64(x) ((uint64_t)(unsigned long)(x))
++#ifdef __CHERI_PURE_CAPABILITY__
++/* No casts for CHERI to ensure that drm_uptr_t is used in the structures. */
++#define U642VOID(x) ((void *)(x))
++#else
++#define U642VOID(x) ((void *)(uintptr_t)(x))
++#endif
++#define VOID2U64(x) ((drm_uptr_t)(uintptr_t)(x))
+ 
+ static inline int DRM_IOCTL(int fd, unsigned long cmd, void *arg)
+ {
