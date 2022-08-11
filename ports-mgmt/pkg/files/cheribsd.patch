@@ -1,0 +1,712 @@
+diff --git external/libucl/uthash/uthash.h external/libucl/uthash/uthash.h
+index 9ed8bea4..4384ef6b 100644
+--- external/libucl/uthash/uthash.h
++++ external/libucl/uthash/uthash.h
+@@ -227,17 +227,17 @@ do {
+         _hd_hh_del = &((delptr)->hh);                                            \
+         if ((delptr) == ELMT_FROM_HH((head)->hh.tbl,(head)->hh.tbl->tail)) {     \
+             (head)->hh.tbl->tail =                                               \
+-                (UT_hash_handle*)((ptrdiff_t)((delptr)->hh.prev) +               \
++                (UT_hash_handle*)((uintptr_t)((delptr)->hh.prev) +               \
+                 (head)->hh.tbl->hho);                                            \
+         }                                                                        \
+         if ((delptr)->hh.prev) {                                                 \
+-            ((UT_hash_handle*)((ptrdiff_t)((delptr)->hh.prev) +                  \
++            ((UT_hash_handle*)((uintptr_t)((delptr)->hh.prev) +                  \
+                     (head)->hh.tbl->hho))->next = (delptr)->hh.next;             \
+         } else {                                                                 \
+             DECLTYPE_ASSIGN(head,(delptr)->hh.next);                             \
+         }                                                                        \
+         if (_hd_hh_del->next) {                                                  \
+-            ((UT_hash_handle*)((ptrdiff_t)_hd_hh_del->next +                     \
++            ((UT_hash_handle*)((uintptr_t)_hd_hh_del->next +                     \
+                     (head)->hh.tbl->hho))->prev =                                \
+                     _hd_hh_del->prev;                                            \
+         }                                                                        \
+diff --git external/picosat/picosat.c external/picosat/picosat.c
+index a007afc9..88f9c099 100644
+--- external/picosat/picosat.c
++++ external/picosat/picosat.c
+@@ -145,7 +145,7 @@ IN THE SOFTWARE.
+ typedef uintptr_t Wrd;
+ #define ISLITREASON(C) (1&(Wrd)C)
+ #define LIT2REASON(L) \
+-  (assert (L->val==TRUE), ((Cls*)(1 + (2*(L - ps->lits)))))
++  (assert (L->val==TRUE), ((Cls*)(Wrd)(1 + (2*(L - ps->lits)))))
+ #define REASON2LIT(C) ((Lit*)(ps->lits + ((Wrd)C)/2))
+ #endif
+ 
+@@ -184,10 +184,11 @@ typedef uintptr_t Wrd;
+ #define RNK2VAR(r) (ps->vars + ((r) - ps->rnks))
+ 
+ #define BLK_FILL_BYTES 8
++#define BLK_OFFSET_BYTES (offsetof(Blk, data))
+ #define SIZE_OF_BLK (sizeof (Blk) - BLK_FILL_BYTES)
+ 
+ #define PTR2BLK(void_ptr) \
+-  ((void_ptr) ? (Blk*)(((char*)(void_ptr)) - SIZE_OF_BLK) : 0)
++  ((void_ptr) ? (Blk*)(((char*)(void_ptr)) - BLK_OFFSET_BYTES) : 0)
+ 
+ #define AVERAGE(a,b) ((b) ? (((double)a) / (double)(b)) : 0.0)
+ #define PERCENT(a,b) (100.0 * AVERAGE(a,b))
+diff --git external/sqlite/sqlite3.c external/sqlite/sqlite3.c
+index eb8d7d5c..653a65d2 100644
+--- external/sqlite/sqlite3.c
++++ external/sqlite/sqlite3.c
+@@ -454,7 +454,7 @@ extern "C" {
+ */
+ #define SQLITE_VERSION        "3.38.5"
+ #define SQLITE_VERSION_NUMBER 3038005
+-#define SQLITE_SOURCE_ID      "2022-05-06 15:25:27 78d9c993d404cdfaa7fdd2973fa1052e3da9f66215cff9c5540ebe55c407d9fe"
++#define SQLITE_SOURCE_ID      "2022-05-06 15:25:27 78d9c993d404cdfaa7fdd2973fa1052e3da9f66215cff9c5540ebe55c407alt1"
+ 
+ /*
+ ** CAPI3REF: Run-Time Library Version Numbers
+@@ -14354,16 +14354,45 @@ typedef INT16_TYPE LogEst;
+ #define LARGEST_UINT64 (0xffffffff|(((u64)0xffffffff)<<32))
+ #define SMALLEST_INT64 (((i64)-1) - LARGEST_INT64)
+ 
++
++#define REQUIRE_CHERI_ALIGNMENT
++#ifdef REQUIRE_CHERI_ALIGNMENT
++# define SQLITE_DEFAULT_ALIGNMENT (sizeof(void*) < 16 ? 16 : sizeof(void*))
++#else
++# define SQLITE_DEFAULT_ALIGNMENT (sizeof(void*) < 8 ? 8 : sizeof(void*))
++#endif
++
+ /*
+ ** Round up a number to the next larger multiple of 8.  This is used
+ ** to force 8-byte alignment on 64-bit architectures.
++**
++** XXXAR: For CHERI, we change these macros to ensure 16-byte alignement since
++** renaming them would cause too many conflicts
+ */
+-#define ROUND8(x)     (((x)+7)&~7)
++#if __has_builtin(__builtin_align_up)
++# define ROUND(x, a) __builtin_align_up(x, a)
++#else
++# define ROUND(x, a)     (((x)+(a-1))&~(a-1))
++#endif
++/* XXX: not actually 8 for CHERI */
++#define ROUND8(x) ROUND(x, SQLITE_DEFAULT_ALIGNMENT)
+ 
+ /*
+ ** Round down to the nearest multiple of 8
+ */
+-#define ROUNDDOWN8(x) ((x)&~7)
++#if __has_builtin(__builtin_align_down)
++# define ROUNDDOWN(x, a) __builtin_align_down(x, 8)
++#else
++# define ROUNDDOWN(x, a) ((x)&~(a-1))
++#endif
++/* XXX: not actually 8 for CHERI */
++#define ROUNDDOWN8(x) ROUNDDOWN(x, SQLITE_DEFAULT_ALIGNMENT)
++
++#if __has_builtin(__builtin_is_aligned)
++# define ALIGNED_TO(X, A) __builtin_is_aligned(X, A)
++#else
++# define ALIGNED_TO(X, A) ((((char*)(X) - (char*)0)&((A)-1))==0)
++#endif
+ 
+ /*
+ ** Assert that the pointer X is aligned to an 8-byte boundary.  This
+@@ -14377,7 +14406,12 @@ typedef INT16_TYPE LogEst;
+ #ifdef SQLITE_4_BYTE_ALIGNED_MALLOC
+ # define EIGHT_BYTE_ALIGNMENT(X)   ((((char*)(X) - (char*)0)&3)==0)
+ #else
+-# define EIGHT_BYTE_ALIGNMENT(X)   ((((char*)(X) - (char*)0)&7)==0)
++/*
++ * For CHERI support we want 16-byte alignment. We also do this for native to
++ * make debugging easier. The macro name is a lie anyway so I don't see why we
++ * should't lie just a little bit more.
++ */
++# define EIGHT_BYTE_ALIGNMENT(X) ALIGNED_TO(X, SQLITE_DEFAULT_ALIGNMENT)
+ #endif
+ 
+ /*
+@@ -22236,6 +22270,7 @@ struct sqlite3_value {
+     int nZero;          /* Extra zero bytes when MEM_Zero and MEM_Blob set */
+     const char *zPType; /* Pointer type when MEM_Term|MEM_Subtype|MEM_Null */
+     FuncDef *pDef;      /* Used only when flags==MEM_Agg */
++    _Alignas(SQLITE_DEFAULT_ALIGNMENT) char ensureAlignment;
+   } u;
+   u16 flags;          /* Some combination of MEM_Null, MEM_Str, MEM_Dyn, etc. */
+   u8  enc;            /* SQLITE_UTF8, SQLITE_UTF16BE, SQLITE_UTF16LE */
+@@ -25138,6 +25173,8 @@ static malloc_zone_t* _sqliteZone_;
+ 
+ #endif /* __APPLE__ or not __APPLE__ */
+ 
++_Static_assert(SQLITE_DEFAULT_ALIGNMENT % sizeof(int64_t) == 0, "");
++
+ /*
+ ** Like malloc(), but remember the size of the allocation
+ ** so that we can find it later using sqlite3MemSize().
+@@ -25160,8 +25197,9 @@ static void *sqlite3MemMalloc(int nByte){
+   sqlite3_int64 *p;
+   assert( nByte>0 );
+   testcase( ROUND8(nByte)!=nByte );
+-  p = SQLITE_MALLOC( nByte+8 );
++  p = SQLITE_MALLOC( nByte+SQLITE_DEFAULT_ALIGNMENT );
+   if( p ){
++    p += (SQLITE_DEFAULT_ALIGNMENT/sizeof(int64_t))-1;
+     p[0] = nByte;
+     p++;
+   }else{
+@@ -25186,7 +25224,7 @@ static void sqlite3MemFree(void *pPrior){
+ #else
+   sqlite3_int64 *p = (sqlite3_int64*)pPrior;
+   assert( pPrior!=0 );
+-  p--;
++  p -= (SQLITE_DEFAULT_ALIGNMENT/sizeof(int64_t));
+   SQLITE_FREE(p);
+ #endif
+ }
+@@ -25232,9 +25270,10 @@ static void *sqlite3MemRealloc(void *pPrior, int nByte){
+   sqlite3_int64 *p = (sqlite3_int64*)pPrior;
+   assert( pPrior!=0 && nByte>0 );
+   assert( nByte==ROUND8(nByte) ); /* EV: R-46199-30249 */
+-  p--;
+-  p = SQLITE_REALLOC(p, nByte+8 );
++  p -= (SQLITE_DEFAULT_ALIGNMENT/sizeof(int64_t));
++  p = SQLITE_REALLOC(p, nByte+SQLITE_DEFAULT_ALIGNMENT );
+   if( p ){
++    p += (SQLITE_DEFAULT_ALIGNMENT/sizeof(int64_t))-1;
+     p[0] = nByte;
+     p++;
+   }else{
+@@ -25357,19 +25396,24 @@ SQLITE_PRIVATE void sqlite3MemSetDefault(void){
+ /*
+ ** Each memory allocation looks like this:
+ **
+-**  ------------------------------------------------------------------------
+-**  | Title |  backtrace pointers |  MemBlockHdr |  allocation |  EndGuard |
+-**  ------------------------------------------------------------------------
++**  --------------------------------------------------------------------------
++**  | Pad | Title | backtrace pointers | MemBlockHdr | allocation | EndGuard |
++**  --------------------------------------------------------------------------
+ **
+ ** The application code sees only a pointer to the allocation.  We have
+ ** to back up from the allocation pointer to find the MemBlockHdr.  The
+ ** MemBlockHdr tells us the size of the allocation and the number of
+ ** backtrace pointers.  There is also a guard word at the end of the
+ ** MemBlockHdr.
++**
++** On CHERI systems we pad the front of the allocation to ensure
++** allocation is sufficently aligned.  We also exclude the EndGuard as it's
++** pointless with bounds.
+ */
+ struct MemBlockHdr {
+   i64 iSize;                          /* Size of this allocation */
+   struct MemBlockHdr *pNext, *pPrev;  /* Linked list of all unfreed memory */
++  void *pAllocation;                  /* What malloc allocated */
+   char nBacktrace;                    /* Number of backtraces on this alloc */
+   char nBacktraceSlots;               /* Available backtrace slots */
+   u8 nTitle;                          /* Bytes of title; includes '\0' */
+@@ -25470,17 +25514,31 @@ static struct MemBlockHdr *sqlite3MemsysGetHeader(const void *pAllocation){
+   u8 *pU8;
+   int nReserve;
+ 
++#ifndef __CHERI_PURE_CAPABILITY__
+   p = (struct MemBlockHdr*)pAllocation;
+   p--;
++#else
++  /*
++   * pAllocation's bounds don't contain p so walk the whole list
++   * to find the original.
++   */
++  for ( p = mem->pFirst; p != NULL; p = p->pNext ) {
++    if ( p + 1 == pAllocation )
++      break;
++  }
++  assert( p != NULL )
++#endif
+   assert( p->iForeGuard==(int)FOREGUARD );
+   nReserve = ROUND8(p->iSize);
+   pInt = (int*)pAllocation;
+   pU8 = (u8*)pAllocation;
++#ifndef __CHERI_PURE_CAPABILITY__
+   assert( pInt[nReserve/sizeof(int)]==(int)REARGUARD );
+   /* This checks any of the "extra" bytes allocated due
+   ** to rounding up to an 8 byte boundary to ensure
+   ** they haven't been overwritten.
+   */
++#endif
+   while( nReserve-- > p->iSize ) assert( pU8[nReserve]==0x65 );
+   return p;
+ }
+@@ -25562,16 +25620,29 @@ static void *sqlite3MemMalloc(int nByte){
+   void *p = 0;
+   int totalSize;
+   int nReserve;
++  int nPad = 0;
+   sqlite3_mutex_enter(mem.mutex);
+   assert( mem.disallow==0 );
+   nReserve = ROUND8(nByte);
+-  totalSize = nReserve + sizeof(*pHdr) + sizeof(int) +
++#ifdef __CHERI_PURE_CAPABILITY__
++  nReserve = __builtin_cheri_round_representable_length(nReserve);
++#endif
++  totalSize = nReserve + sizeof(*pHdr) +
+                mem.nBacktrace*sizeof(void*) + mem.nTitle;
++#ifdef __CHERI_PURE_CAPABILITY__
++  int roundedSize = __builtin_cheri_round_representable_length(totalSize);
++  nPad = roundedSize - totalSize;
++  totalSize = roundedSize;
++#else
++  totalSize += sizeof(int);	/* EndGuard */
++#endif
+   p = malloc(totalSize);
+   if( p ){
+     z = p;
++    z += nPad;
+     pBt = (void**)&z[mem.nTitle];
+     pHdr = (struct MemBlockHdr*)&pBt[mem.nBacktrace];
++    pHdr->pAllocation = p;
+     pHdr->pNext = 0;
+     pHdr->pPrev = mem.pLast;
+     if( mem.pLast ){
+@@ -25601,12 +25672,18 @@ static void *sqlite3MemMalloc(int nByte){
+     pHdr->iSize = nByte;
+     adjustStats(nByte, +1);
+     pInt = (int*)&pHdr[1];
++#ifndef __CHERI_PURE_CAPABILITY__
+     pInt[nReserve/sizeof(int)] = REARGUARD;
++#endif
+     randomFill((char*)pInt, nByte);
+     memset(((char*)pInt)+nByte, 0x65, nReserve-nByte);
+     p = (void*)pInt;
+   }
+   sqlite3_mutex_leave(mem.mutex);
++#ifdef __CHERI_PURE_CAPABILITY__
++  if ( p != NULL )
++    p = __builtin_cheri_bounds_set_exact(p, nReserve);
++#endif
+   return p;
+ }
+ 
+@@ -25617,6 +25694,7 @@ static void sqlite3MemFree(void *pPrior){
+   struct MemBlockHdr *pHdr;
+   void **pBt;
+   char *z;
++  void *p;
+   assert( sqlite3GlobalConfig.bMemstat || sqlite3GlobalConfig.bCoreMutex==0
+        || mem.mutex!=0 );
+   pHdr = sqlite3MemsysGetHeader(pPrior);
+@@ -25637,12 +25715,13 @@ static void sqlite3MemFree(void *pPrior){
+     assert( mem.pLast==pHdr );
+     mem.pLast = pHdr->pPrev;
+   }
++  p = pHdr->pAllocation;
+   z = (char*)pBt;
+   z -= pHdr->nTitle;
+   adjustStats((int)pHdr->iSize, -1);
+   randomFill(z, sizeof(void*)*pHdr->nBacktraceSlots + sizeof(*pHdr) +
+                 (int)pHdr->iSize + sizeof(int) + pHdr->nTitle);
+-  free(z);
++  free(p);
+   sqlite3_mutex_leave(mem.mutex);
+ }
+ 
+@@ -52037,7 +52116,7 @@ static sqlite3_pcache *pcache1Create(int szPage, int szExtra, int bPurgeable){
+   int sz;               /* Bytes of memory required to allocate the new cache */
+ 
+   assert( (szPage & (szPage-1))==0 && szPage>=512 && szPage<=65536 );
+-  assert( szExtra < 300 );
++  assert( szExtra < 400 ); // XXX: with CHERI we get szExtra=384 here
+ 
+   sz = sizeof(PCache1) + sizeof(PGroup)*pcache1.separateCache;
+   pCache = (PCache1 *)sqlite3MallocZero(sz);
+@@ -70653,6 +70732,7 @@ static int btreeCursor(
+ 
+   /* Now that no other errors can occur, finish filling in the BtCursor
+   ** variables and link the cursor into the BtShared list.  */
++  assert( EIGHT_BYTE_ALIGNMENT(pCur) );
+   pCur->pgnoRoot = iTable;
+   pCur->iPage = -1;
+   pCur->pKeyInfo = pKeyInfo;
+@@ -75110,6 +75190,7 @@ SQLITE_PRIVATE int sqlite3BtreeInsert(
+         UnpackedRecord r;
+         r.pKeyInfo = pCur->pKeyInfo;
+         r.aMem = pX->aMem;
++        assert( EIGHT_BYTE_ALIGNMENT(r.aMem) );
+         r.nField = pX->nMem;
+         r.default_rc = 0;
+         r.eqSeen = 0;
+@@ -79231,6 +79312,7 @@ static sqlite3_value *valueNew(sqlite3 *db, struct ValueNewStat4Ctx *p){
+           assert( pRec->pKeyInfo->nAllField==nCol );
+           assert( pRec->pKeyInfo->enc==ENC(db) );
+           pRec->aMem = (Mem *)((u8*)pRec + ROUND8(sizeof(UnpackedRecord)));
++          assert( EIGHT_BYTE_ALIGNMENT(pRec->aMem) );
+           for(i=0; i<nCol; i++){
+             pRec->aMem[i].flags = MEM_Null;
+             pRec->aMem[i].db = db;
+@@ -79741,6 +79823,7 @@ SQLITE_PRIVATE void sqlite3Stat4ProbeFree(UnpackedRecord *pRec){
+     int i;
+     int nCol = pRec->pKeyInfo->nAllField;
+     Mem *aMem = pRec->aMem;
++    assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+     sqlite3 *db = aMem[0].db;
+     for(i=0; i<nCol; i++){
+       sqlite3VdbeMemRelease(&aMem[i]);
+@@ -81872,6 +81955,7 @@ SQLITE_PRIVATE int sqlite3VdbeNextOpcode(
+ SQLITE_PRIVATE void sqlite3VdbeFrameDelete(VdbeFrame *p){
+   int i;
+   Mem *aMem = VdbeFrameMem(p);
++  assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+   VdbeCursor **apCsr = (VdbeCursor **)&aMem[p->nChildMem];
+   assert( sqlite3VdbeFrameIsValid(p) );
+   for(i=0; i<p->nChildCsr; i++){
+@@ -82225,6 +82309,7 @@ SQLITE_PRIVATE void sqlite3VdbeMakeReady(
+   */
+   x.nNeeded = 0;
+   p->aMem = allocSpace(&x, 0, nMem*sizeof(Mem));
++  assert( EIGHT_BYTE_ALIGNMENT(p->aMem) );
+   p->aVar = allocSpace(&x, 0, nVar*sizeof(Mem));
+   p->apArg = allocSpace(&x, 0, nArg*sizeof(Mem*));
+   p->apCsr = allocSpace(&x, 0, nCursor*sizeof(VdbeCursor*));
+@@ -82324,6 +82409,7 @@ SQLITE_PRIVATE int sqlite3VdbeFrameRestore(VdbeFrame *pFrame){
+   v->aOp = pFrame->aOp;
+   v->nOp = pFrame->nOp;
+   v->aMem = pFrame->aMem;
++  assert( EIGHT_BYTE_ALIGNMENT(v->aMem) );
+   v->nMem = pFrame->nMem;
+   v->apCsr = pFrame->apCsr;
+   v->nCursor = pFrame->nCursor;
+@@ -83808,6 +83894,7 @@ SQLITE_PRIVATE UnpackedRecord *sqlite3VdbeAllocUnpackedRecord(
+   p = (UnpackedRecord *)sqlite3DbMallocRaw(pKeyInfo->db, nByte);
+   if( !p ) return 0;
+   p->aMem = (Mem*)&((char*)p)[ROUND8(sizeof(UnpackedRecord))];
++  assert( EIGHT_BYTE_ALIGNMENT(p->aMem) );
+   assert( pKeyInfo->aSortFlags!=0 );
+   p->pKeyInfo = pKeyInfo;
+   p->nField = pKeyInfo->nKeyField + 1;
+@@ -87665,9 +87752,10 @@ static VdbeCursor *allocateCursor(
+ 
+   int nByte;
+   VdbeCursor *pCx = 0;
+-  nByte =
+-      ROUND8(sizeof(VdbeCursor)) + 2*sizeof(u32)*nField +
+-      (eCurType==CURTYPE_BTREE?sqlite3BtreeCursorSize():0);
++  size_t basicSize = ROUND8(ROUND8(sizeof(VdbeCursor)) + 2*sizeof(u32)*nField);
++  assert( EIGHT_BYTE_ALIGNMENT(SQLITE_INT_TO_PTR(basicSize)) );
++  nByte = ROUND8(basicSize + (eCurType==CURTYPE_BTREE?sqlite3BtreeCursorSize():0));
++  assert( EIGHT_BYTE_ALIGNMENT(SQLITE_INT_TO_PTR(nByte)) );
+ 
+   assert( iCur>=0 && iCur<p->nCursor );
+   if( p->apCsr[iCur] ){ /*OPTIMIZATION-IF-FALSE*/
+@@ -87700,8 +87788,9 @@ static VdbeCursor *allocateCursor(
+   pCx->nField = nField;
+   pCx->aOffset = &pCx->aType[nField];
+   if( eCurType==CURTYPE_BTREE ){
+-    pCx->uc.pCursor = (BtCursor*)
+-        &pMem->z[ROUND8(sizeof(VdbeCursor))+2*sizeof(u32)*nField];
++    assert( EIGHT_BYTE_ALIGNMENT(SQLITE_INT_TO_PTR(basicSize)) );
++    pCx->uc.pCursor = (BtCursor*)&pMem->z[basicSize];
++    assert( EIGHT_BYTE_ALIGNMENT(pCx->uc.pCursor) );
+     sqlite3BtreeCursorZero(pCx->uc.pCursor);
+   }
+   return pCx;
+@@ -88131,6 +88220,7 @@ SQLITE_PRIVATE int sqlite3VdbeExec(
+   u64 nProgressLimit;        /* Invoke xProgress() when nVmStep reaches this */
+ #endif
+   Mem *aMem = p->aMem;       /* Copy of p->aMem */
++  assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+   Mem *pIn1 = 0;             /* 1st input operand */
+   Mem *pIn2 = 0;             /* 2nd input operand */
+   Mem *pIn3 = 0;             /* 3rd input operand */
+@@ -88548,6 +88638,7 @@ case OP_Halt: {
+     }
+     aOp = p->aOp;
+     aMem = p->aMem;
++    assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+     pOp = &aOp[pcx];
+     break;
+   }
+@@ -91934,6 +92025,7 @@ case OP_SeekGT: {       /* jump, in3, group */
+     assert( oc!=OP_SeekLT || r.default_rc==+1 );
+ 
+     r.aMem = &aMem[pOp->p3];
++    assert( EIGHT_BYTE_ALIGNMENT(r.aMem) );
+ #ifdef SQLITE_DEBUG
+     { int i; for(i=0; i<r.nField; i++) assert( memIsValid(&r.aMem[i]) ); }
+ #endif
+@@ -92326,6 +92418,7 @@ case OP_Found: {        /* jump, in3 */
+     r.pKeyInfo = pC->pKeyInfo;
+     r.nField = (u16)pOp->p4.i;
+     r.aMem = pIn3;
++    assert( EIGHT_BYTE_ALIGNMENT(r.aMem) );
+ #ifdef SQLITE_DEBUG
+     for(ii=0; ii<r.nField; ii++){
+       assert( memIsValid(&r.aMem[ii]) );
+@@ -93457,6 +93550,7 @@ case OP_IdxInsert: {        /* in2 */
+   x.nKey = pIn2->n;
+   x.pKey = pIn2->z;
+   x.aMem = aMem + pOp->p3;
++  assert( EIGHT_BYTE_ALIGNMENT(x.aMem) );
+   x.nMem = (u16)pOp->p4.i;
+   rc = sqlite3BtreeInsert(pC->uc.pCursor, &x,
+        (pOp->p5 & (OPFLAG_APPEND|OPFLAG_SAVEPOSITION|OPFLAG_PREFORMAT)),
+@@ -93527,6 +93621,7 @@ case OP_IdxDelete: {
+   r.nField = (u16)pOp->p3;
+   r.default_rc = 0;
+   r.aMem = &aMem[pOp->p2];
++  assert( EIGHT_BYTE_ALIGNMENT(r.aMem) );
+   rc = sqlite3BtreeIndexMoveto(pCrsr, &r, &res);
+   if( rc ) goto abort_due_to_error;
+   if( res==0 ){
+@@ -93714,6 +93809,8 @@ case OP_IdxGE:  {       /* jump */
+     r.default_rc = 0;
+   }
+   r.aMem = &aMem[pOp->p3];
++  assert( EIGHT_BYTE_ALIGNMENT(r.aMem) );
++
+ #ifdef SQLITE_DEBUG
+   {
+     int i;
+@@ -94306,6 +94403,8 @@ case OP_Program: {        /* jump */
+     pFrame->nChildCsr = pProgram->nCsr;
+     pFrame->pc = (int)(pOp - aOp);
+     pFrame->aMem = p->aMem;
++    assert( EIGHT_BYTE_ALIGNMENT(pFrame->aMem) );
++
+     pFrame->nMem = p->nMem;
+     pFrame->apCsr = p->apCsr;
+     pFrame->nCursor = p->nCursor;
+@@ -94320,6 +94419,7 @@ case OP_Program: {        /* jump */
+ #endif
+ 
+     pEnd = &VdbeFrameMem(pFrame)[pFrame->nChildMem];
++    assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+     for(pMem=VdbeFrameMem(pFrame); pMem!=pEnd; pMem++){
+       pMem->flags = MEM_Undefined;
+       pMem->db = db;
+@@ -94344,6 +94444,7 @@ case OP_Program: {        /* jump */
+   p->nChange = 0;
+   p->pFrame = pFrame;
+   p->aMem = aMem = VdbeFrameMem(pFrame);
++  assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+   p->nMem = pFrame->nChildMem;
+   p->nCursor = (u16)pFrame->nChildCsr;
+   p->apCsr = (VdbeCursor **)&aMem[p->nMem];
+@@ -98269,6 +98370,7 @@ static int vdbeSorterFlushPMA(VdbeSorter *pSorter){
+       assert( pTask->list.aMemory==0 || pSorter->list.aMemory!=0 );
+ 
+       aMem = pTask->list.aMemory;
++      assert( EIGHT_BYTE_ALIGNMENT(aMem) );
+       pCtx = (void*)pTask;
+       pSorter->iPrev = (u8)(pTask - pSorter->aTask);
+       pTask->list = pSorter->list;
+diff --git external/sqlite/sqlite3.h external/sqlite/sqlite3.h
+index de393da9..4ef161c2 100644
+--- external/sqlite/sqlite3.h
++++ external/sqlite/sqlite3.h
+@@ -148,7 +148,7 @@ extern "C" {
+ */
+ #define SQLITE_VERSION        "3.38.5"
+ #define SQLITE_VERSION_NUMBER 3038005
+-#define SQLITE_SOURCE_ID      "2022-05-06 15:25:27 78d9c993d404cdfaa7fdd2973fa1052e3da9f66215cff9c5540ebe55c407d9fe"
++#define SQLITE_SOURCE_ID      "2022-05-06 15:25:27 78d9c993d404cdfaa7fdd2973fa1052e3da9f66215cff9c5540ebe55c407alt1"
+ 
+ /*
+ ** CAPI3REF: Run-Time Library Version Numbers
+diff --git libpkg/pkg.h.in libpkg/pkg.h.in
+index f950549e..1cd79d3e 100644
+--- libpkg/pkg.h.in
++++ libpkg/pkg.h.in
+@@ -61,9 +61,14 @@ extern "C" {
+ 
+ #define PKG_PORTVERSION "@VERSION@"
+ 
+-/* The OS major version at the time of compilation */
+-#ifdef __FreeBSD__
+-#define OSMAJOR	__FreeBSD__
++/*
++ * The OS major version at the time of compilation.
++ *
++ * CheriBSD doesn't have the notion of the major OS version, i.e. two ABI
++ * versions are always treated as possibly incompatible.
++ */
++#ifdef __CheriBSD_version
++#define OSMAJOR	__CheriBSD_version
+ #endif
+ 
+ /* Not supported under DragonFly */
+diff --git libpkg/pkg_config.c libpkg/pkg_config.c
+index 9f4fd4b0..20032555 100644
+--- libpkg/pkg_config.c
++++ libpkg/pkg_config.c
+@@ -97,13 +97,13 @@ static struct config_entry c[] = {
+ 	{
+ 		PKG_STRING,
+ 		"PKG_DBDIR",
+-		"/var/db/pkg",
++		"/var/db/pkg" PKG_SUFFIX,
+ 		"Where the package databases are stored",
+ 	},
+ 	{
+ 		PKG_STRING,
+ 		"PKG_CACHEDIR",
+-		"/var/cache/pkg",
++		"/var/cache/pkg" PKG_SUFFIX,
+ 		"Directory containing cache of downloaded packages",
+ 	},
+ 	{
+@@ -145,7 +145,7 @@ static struct config_entry c[] = {
+ 	{
+ 		PKG_ARRAY,
+ 		"REPOS_DIR",
+-		"/etc/pkg/,"PREFIX"/etc/pkg/repos/",
++		"/etc/pkg" PKG_SUFFIX "/," PREFIX "/etc/pkg/repos/",
+ 		"Location of the repository configuration files"
+ 	},
+ 	{
+diff --git libpkg/pkg_elf.c libpkg/pkg_elf.c
+index 05512c36..cb30aff4 100644
+--- libpkg/pkg_elf.c
++++ libpkg/pkg_elf.c
+@@ -716,6 +716,62 @@ aeabi_parse_arm_attributes(void *data, size_t length)
+ #undef MOVE
+ }
+ 
++/*
++ * elf_note_analyse_cheribsd() looks for a second ELF note indicating that
++ * a binary was built for CheriBSD and overwrites OS information relevant for
++ * CheriBSD.
++ */
++static void
++elf_note_analyse_cheribsd(Elf_Data *data, GElf_Ehdr *elfhdr, struct os_info *oi)
++{
++	Elf_Note note;
++	char *src;
++	uint32_t version = 0;
++
++	if (strcmp(oi->name, "FreeBSD") != 0) {
++		/*
++		 * Don't overwrite values if a binary was built for a vendor
++		 * other than FreeBSD.
++		 */
++		return;
++	}
++
++	src = data->d_buf;
++
++	while ((uintptr_t)src < ((uintptr_t)data->d_buf + data->d_size)) {
++		memcpy(&note, src, sizeof(note));
++		src += sizeof(note);
++		if (strncmp((const char *)src, "CheriBSD",
++		    note.n_namesz) == 0) {
++			if (note.n_type == NT_VERSION) {
++				break;
++			}
++		}
++		src += roundup2(note.n_namesz + note.n_descsz, 4);
++	}
++	if ((uintptr_t)src >= ((uintptr_t)data->d_buf + data->d_size)) {
++		return;
++	}
++
++	/* Overwrite a vendor with CheriBSD. */
++	free(oi->name);
++	oi->name = xstrdup(src);
++
++	src += roundup2(note.n_namesz, 4);
++	if (elfhdr->e_ident[EI_DATA] == ELFDATA2MSB)
++		version = be32dec(src);
++	else
++		version = le32dec(src);
++
++	/*
++	 * Overwrite a version with a CheriBSD ABI version.
++	 *
++	 * Note that minor and major versions are left from FreeBSD.
++	 */
++	free(oi->version);
++	xasprintf(&oi->version, "%d", version);
++}
++
+ static bool
+ elf_note_analyse(Elf_Data *data, GElf_Ehdr *elfhdr, struct os_info *oi)
+ {
+@@ -810,6 +866,7 @@ elf_note_analyse(Elf_Data *data, GElf_Ehdr *elfhdr, struct os_info *oi)
+ 		xasprintf(&oi->version, "%d", version / 100000);
+ 	}
+ 
++	elf_note_analyse_cheribsd(data, elfhdr, oi);
+ 	return (true);
+ }
+ 
+@@ -826,16 +883,20 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct os_info *oi)
+ 	int fd, i;
+ 	int ret = EPKG_OK;
+ 	const char *arch, *abi, *endian_corres_str, *wordsize_corres_str, *fpu;
+-	bool checkroot;
++	bool checkroot, cheriabi;
+ 	struct os_info loi;
+ 
+ 	const char *abi_files[] = {
+ 		getenv("ABI_FILE"),
++#ifdef PKG_ABI_FILE
++		PKG_ABI_FILE,
++#endif
+ 		_PATH_UNAME,
+ 		_PATH_BSHELL,
+ 	};
+ 
+ 	arch = NULL;
++	cheriabi = false;
+ 
+ 	if (oi == NULL) {
+ 		memset(&loi, 0, sizeof(loi));
+@@ -1003,6 +1064,15 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct os_info *oi)
+ 		    ":%s:%s:%s:%s:%s", arch, wordsize_corres_str,
+ 		    endian_corres_str, abi, fpu);
+ 		break;
++	case EM_AARCH64:
++#if defined(EF_AARCH64_CHERI_PURECAP)
++		if (elfhdr.e_flags & EF_AARCH64_CHERI_PURECAP) {
++			cheriabi = true;
++		}
++#endif
++		snprintf(dest + strlen(dest), sz - strlen(dest), ":%s:%s%s",
++		    arch, wordsize_corres_str, cheriabi ? ":cheri" : "");
++		break;
+ 	case EM_MIPS:
+ 		/*
+ 		 * this is taken from binutils sources:
+@@ -1045,8 +1115,14 @@ pkg_get_myarch_elfparse(char *dest, size_t sz, struct os_info *oi)
+ 				abi = "unknown";
+ 				break;
+ 		}
+-		snprintf(dest + strlen(dest), sz - strlen(dest), ":%s:%s:%s",
+-		    arch, wordsize_corres_str, abi);
++#if defined(EF_RISCV_CHERIABI)
++		if (elfhdr.e_flags & EF_RISCV_CHERIABI) {
++			cheriabi = true;
++		}
++#endif
++		snprintf(dest + strlen(dest), sz - strlen(dest),
++		    ":%s:%s%s:%s",
++		    arch, wordsize_corres_str, cheriabi ? ":cheri" : "", abi);
+ 		break;
+ #endif
+ 	case EM_PPC:
+diff --git libpkg/private/elf_tables.h libpkg/private/elf_tables.h
+index e69d43e2..a72adca0 100644
+--- libpkg/private/elf_tables.h
++++ libpkg/private/elf_tables.h
+@@ -98,6 +98,7 @@ static struct arch_trans machine_arch_translation[] = {
+ 	{ "armv7:32:el:eabi:softfp", "armv7" },
+ 	{ "armv7:32:el:eabi:hardfp", "armv7" },
+ 	{ "aarch64:64", "aarch64" },
++	{ "aarch64:64:cheri", "aarch64c" },
+ 	/* And now MIPS */
+ 	{ "mips:32:el:o32", "mipsel" },
+ 	{ "mips:32:el:n32", "mipsn32el" },
+@@ -109,6 +110,7 @@ static struct arch_trans machine_arch_translation[] = {
+ 	{ "riscv:32:hf", "riscv32" },
+ 	{ "riscv:32:sf", "riscv32sf" },
+ 	{ "riscv:64:hf", "riscv64" },
++	{ "riscv:64:cheri:hf", "riscv64c" },
+ 	{ "riscv:64:sf", "riscv64sf" },
+ 
+ 	{ NULL, NULL }
