@@ -1,0 +1,80 @@
+diff --git generic/tclExecute.c generic/tclExecute.c
+index 8963472e5f..c96f3dea1f 100644
+--- generic/tclExecute.c
++++ generic/tclExecute.c
+@@ -169,7 +169,7 @@ static BuiltinFunc const tclBuiltinFuncTable[] = {
+ typedef struct TEBCdata {
+     ByteCode *codePtr;		/* Constant until the BC returns */
+ 				/* -----------------------------------------*/
+-    ptrdiff_t *catchTop;	/* These fields are used on return TO this */
++    uintptr_t *catchTop;	/* These fields are used on return TO this */
+     Tcl_Obj *auxObjList;	/* this level: they record the state when a */
+     CmdFrame cmdFrame;		/* new codePtr was received for NR */
+                                 /* execution. */
+@@ -424,7 +424,7 @@ VarHashCreateVar(
+ 
+ #define OBJ_AT_DEPTH(n)	*(tosPtr-(n))
+ 
+-#define CURR_DEPTH	((ptrdiff_t) (tosPtr - initTosPtr))
++#define CURR_DEPTH	((uintptr_t) (tosPtr - initTosPtr))
+ 
+ #define STACK_BASE(esPtr) ((esPtr)->stackWords - 1)
+ 
+@@ -2024,7 +2024,7 @@ ArgumentBCEnter(
+  *----------------------------------------------------------------------
+  */
+ #define	bcFramePtr	(&TD->cmdFrame)
+-#define	initCatchTop	((ptrdiff_t *) (TD->stack-1))
++#define	initCatchTop	((uintptr_t *) (TD->stack-1))
+ #define	initTosPtr	((Tcl_Obj **) (initCatchTop+codePtr->maxExceptDepth))
+ #define esPtr		(iPtr->execEnvPtr->execStackPtr)
+ 
+@@ -8064,7 +8064,7 @@ TEBCresume(
+ 
+ 	while (auxObjList) {
+ 	    if ((catchTop != initCatchTop)
+-		    && (*catchTop > (ptrdiff_t)
++		    && (*catchTop > (uintptr_t)
+ 			auxObjList->internalRep.twoPtrValue.ptr2)) {
+ 		break;
+ 	    }
+diff --git generic/tclInt.h generic/tclInt.h
+index 949672b82d..e10279cdad 100644
+--- generic/tclInt.h
++++ generic/tclInt.h
+@@ -2315,7 +2315,11 @@ typedef struct Interp {
+  * (notably tbcload) require it.
+  */
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++#define TCL_ALIGN(x) (((int)(x) + 15) & ~15)
++#else
+ #define TCL_ALIGN(x) (((int)(x) + 7) & ~7)
++#endif
+ 
+ /*
+  * The following enum values are used to specify the runtime platform setting
+diff --git generic/tclPosixStr.c generic/tclPosixStr.c
+index c817faa43e..596417e232 100644
+--- generic/tclPosixStr.c
++++ generic/tclPosixStr.c
+@@ -1069,6 +1069,9 @@ Tcl_SignalId(
+ #endif
+ #if defined(SIGINFO) && (!defined(SIGPWR) || (SIGINFO != SIGPWR))
+     case SIGINFO: return "SIGINFO";
++#endif
++#ifdef SIGPROT
++    case SIGPROT: return "SIGPROT";
+ #endif
+     }
+     return "unknown signal";
+@@ -1203,6 +1206,9 @@ Tcl_SignalMsg(
+ #endif
+ #if defined(SIGINFO) && (!defined(SIGPWR) || (SIGINFO != SIGPWR))
+     case SIGINFO: return "information request";
++#endif
++#ifdef SIGPROT
++    case SIGPROT: return "in-process protection exception";
+ #endif
+     }
+     return "unknown signal";
