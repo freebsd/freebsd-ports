@@ -23,6 +23,7 @@ include/gretl/gretl_array.h
 include/gretl/gretl_bfgs.h
 include/gretl/gretl_btree.h
 include/gretl/gretl_bundle.h
+include/gretl/gretl_cmatrix.h
 include/gretl/gretl_commands.h
 include/gretl/gretl_data_io.h
 include/gretl/gretl_errors.h
@@ -139,12 +140,13 @@ lib/gretl-gtk%%GTK_VER%%/vif.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xlsx_import.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.41
-lib/libgretl-1.0.so.41.0.0
+lib/libgretl-1.0.so.42
+lib/libgretl-1.0.so.42.0.0
 libdata/pkgconfig/gretl.pc
 man/man1/gretl.1.gz
 %%GUI%%share/appdata/gretl.appdata.xml
 %%GUI%%share/applications/gretl.desktop
+%%GUI%%share/applications/gretl_edit.desktop
 %%GUI%%%%DATADIR%%/COPYING
 %%GUI%%%%DATADIR%%/NEWS
 %%GUI%%%%DATADIR%%/data/gnuplot/altpoints.gpsty
@@ -365,12 +367,12 @@ man/man1/gretl.1.gz
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/bias_correction.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/chomoreno_fromeviewswf.gdt
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/coint.gdt
+%%ADDONS%%%%DATADIR%%/functions/SVAR/examples/filesavecheck.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/identification.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/plain.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/restr_example.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/simple_C.inp
 %%ADDONS%%%%DATADIR%%/functions/SVAR/examples/simple_C_wild.inp
-%%ADDONS%%%%DATADIR%%/functions/addons.txt
 %%ADDONS%%%%DATADIR%%/functions/criteria.gfn
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/dbnomics.gfn
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/dbnomics.pdf
