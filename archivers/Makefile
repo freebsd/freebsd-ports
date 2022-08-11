@@ -17,6 +17,7 @@
     SUBDIR += c-blosc
     SUBDIR += c-blosc2
     SUBDIR += cabextract
+    SUBDIR += ccmix
     SUBDIR += cmdpack
     SUBDIR += dact
     SUBDIR += deb2targz
