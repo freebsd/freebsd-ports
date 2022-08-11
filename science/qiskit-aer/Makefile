@@ -1,6 +1,5 @@
 PORTNAME=	qiskit-aer
-DISTVERSION=	0.10.0-72
-DISTVERSIONSUFFIX=	-g021faf8
+DISTVERSION=	0.10.4
 CATEGORIES=	science # quantum-computing
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
